@@ -31,12 +31,6 @@ describe("MANAGER: DEDICATED", function () {
             });
         });
 
-        it("should test if NIC is present.", function () {
-
-            expect(page.nicEl.getText()).toBe("(ls148374-ovh)");
-
-        });
-
     });
 
 });
