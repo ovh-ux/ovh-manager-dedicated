@@ -1,0 +1,28 @@
+<div data-ng-controller="EmailTerminateCtrl">
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="terminate"
+         data-wizard-title="i18n.autorenew_service_EMAIL_DOMAIN_terminate">
+
+        <div data-wizard-step data-wizard-step-valid="canTerminate">
+            <div data-ng-if="canTerminate">
+                <div class="alert alert-danger"
+                     role="alert"
+                     data-i18n-static="autorenew_service_EMAIL_DOMAIN_terminate_info">
+                </div>
+                <p data-i18n-static="autorenew_service_EMAIL_DOMAIN_terminate_procedure"></p>
+                <p data-i18n-static="hosting_dashboard_close_service_question"></p>
+            </div>
+            <div class="text-center"
+                 data-ng-if="loaders.loading">
+                <oui-spinner></oui-spinner>
+            </div>
+            <div data-ng-if="!canTerminate && !loaders.loading"
+                 class="alert alert-danger"
+                 role="alert">
+                <span data-i18n-static="autorenew_service_EMAIL_DOMAIN_terminate_info_impossible"></span>
+            </div>
+        </div>
+
+    </div>
+</div>

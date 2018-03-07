@@ -1,0 +1,128 @@
+<div class="cdn-dedicated-manage">
+    <!-- Loader -->
+    <div class="text-center m-5"
+         data-ng-if="$ctrl.loading">
+        <oui-spinner></oui-spinner>
+    </div> <!-- End of Loader -->
+
+    <!-- Section Content -->
+    <div data-ng-if="!$ctrl.loading">
+        <!-- Header -->
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-9">
+                    <h1 class="word-break mb-0"
+                        data-ng-bind="$ctrl.cdn.serviceName">
+                    </h1>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <dl>
+                                <dt data-i18n-static="cdn_configuration_activity"></dt>
+                                <dd data-ng-bind="trpl('cdn_configuration_activity_page_viewed', $ctrl.cdn.activity, [$ctrl.cdn.activity])"></dd>
+                                <dt data-i18n-static="cdn_configuration_quota"></dt>
+                                <dd data-ng-bind="$ctrl.cdn.quota.value + ' ' + tr('unit_size_' + $ctrl.cdn.quota.unit)"></dd>
+                                <dt>
+                                    <service-expiration-label
+                                        service-infos="$ctrl.serviceInfos">
+                                    </service-expiration-label>
+                                </dt>
+                                <dd>
+                                    <service-expiration-date
+                                        service-name="$ctrl.cdn.serviceName"
+                                        service-type="'CDN_DEDICATED'"
+                                        service-infos="$ctrl.serviceInfos">
+                                    </service-expiration-date>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-sm-6">
+                            <dl>
+                                <dt data-i18n-static="cdn_configuration_savings"></dt>
+                                <dd>
+                                    <span class="d-block"
+                                          data-ng-bind="trpl('cdn_configuration_savings_bandwidth_percentage', $ctrl.cdn.bandwidthHitPercentage, [$ctrl.cdn.bandwidthHitPercentage])">
+                                    </span>
+                                    <span data-ng-bind="trpl('cdn_configuration_savings_request_percentage', $ctrl.cdn.requestHitPercentage, [$ctrl.cdn.requestHitPercentage])"></span>
+                                </dd>
+                                <dt data-i18n-static="cdn_configuration_quota_estimation"></dt>
+                                <dd data-ng-bind="$ctrl.cdn.endingEstimationDate"></dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <ol class="list-inline">
+                        <li class="ml-3">
+                            <img src="images/cdn/icn_domain.png" alt="" />
+                            <span data-ng-bind="trpl('cdn_configuration_domain', $ctrl.cdn.domains, [$ctrl.cdn.domains])"></span>
+                        </li>
+                        <li class="ml-3">
+                            <img src="images/cdn/icn_cdn.png" alt="" />
+                            <span data-ng-bind="$ctrl.cdn.anycast.ipv4"></span>
+                        </li>
+                        <li class="ml-3">
+                            <img src="images/cdn/icn_server.png" alt="" />
+                            <span data-ng-bind="tr('cdn_configuration_backend', [$ctrl.cdn.backends])"></span>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-sm-3 d-flex">
+                    <div class="btn-group ml-auto mt-4">
+                        <button type="button"
+                                class="oui-button oui-button_dropdown mb-0"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                data-toggle="dropdown">
+                            <span data-i18n-static="common_actions"></span>
+                            <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li>
+                                <button type="button"
+                                        class="btn btn-block btn-link"
+                                        data-ng-click="setAction('domain/add/cdn-dedicated-domain-add')"
+                                        data-i18n-static="cdn_configuration_add_domain_title_button">
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button"
+                                        class="btn btn-block btn-link"
+                                        data-ng-click="setAction('domain/rule/order/cdn-dedicated-domain-rule-order')"
+                                        data-i18n-static="cdn_configuration_cacherules_upgrade_title_button">
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button"
+                                        class="btn btn-block btn-link"
+                                        data-ng-click="setAction('quota/order/cdn-dedicated-quota-order')"
+                                        data-i18n-static="cdn_configuration_order_quota_title">
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- End of Header -->
+
+        <!-- Tabs -->
+        <responsive-tabs>
+            <responsive-tab data-state="app.networks.cdn.dedicated">{{ ::i18n.cdn_tab_statistics }}</responsive-tab>
+            <responsive-tab data-state="app.networks.cdn.dedicated.ssl">{{ ::i18n.cdn_tab_ssl }}</responsive-tab>
+            <responsive-tab-more>
+                <i class="fa fa-plus"></i>
+            </responsive-tab-more>
+        </responsive-tabs> <!-- End of Tabs -->
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <div class="alert"
+                 role="alert"
+                 data-ng-class="alertType"
+                 data-ng-if="message">
+                <i class="close icon-remove" data-ng-click="message = null"></i>
+                <span data-ng-bind="message"></span>
+            </div>
+
+            <div data-ui-view="cdnView"></div>
+        </div> <!-- End of Tab Content -->
+    </div>
+
+</div>

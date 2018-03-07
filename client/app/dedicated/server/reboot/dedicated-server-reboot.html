@@ -1,0 +1,40 @@
+<form name="dedicatedServerRebootForm"
+      id="dedicatedServerRebootForm"
+      data-ng-submit="$ctrl.reboot()">
+
+    <div class="modal-header">
+        <button
+            type="button"
+            class="close pull-right"
+            aria-label="{{ ::'wizard_cancel' | UAi18n }}"
+            data-ng-click="$ctrl.close()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <div class="text-center"
+             data-ng-if="$ctrl.isLoading || $ctrl.isRebooting">
+            <oui-spinner></oui-spinner>
+        </div>
+        <div data-ng-if="!$ctrl.isLoading && !$ctrl.isRebooting">
+            <h3 class="modal-title"
+                data-i18n-static="server_configuration_reboot_title">
+            </h3>
+           <p data-ng-bind="tr('server_configuration_reboot_step2_question', [$ctrl.server.name])"></p>
+       </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button"
+                class="btn btn-default"
+                data-ng-click="$ctrl.cancel()"
+                data-i18n-static="wizard_cancel">
+        </button>
+        <button type="submit"
+                class="btn btn-primary"
+                data-ng-disabled="$ctrl.isLoading || $ctrl.isRebooting"
+                data-i18n-static="wizard_confirm">
+        </button>
+    </div>
+</form>

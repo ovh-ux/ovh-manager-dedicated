@@ -1,0 +1,30 @@
+<img class="d-block mx-auto mb-3"
+     alt="{{ infoServer.dcImage }}"
+     data-ng-if="infoServer.dcImage"
+     data-ng-src="images/map/{{ infoServer.dcImage }}.png" />
+<ul class="list-unstyled">
+    <li class="oui-tile__item">
+        <div class="oui-tile__definition">
+            <strong class="d-block"
+                    data-i18n-static="server_configuration_datacenter">
+            </strong>
+            <span data-ng-bind="infoServer.dc || '-'"></span>
+        </div>
+    </li>
+    <li class="oui-tile__item">
+        <div class="oui-tile__definition">
+            <strong class="d-block"
+                    data-i18n-static="server_configuration_rack">
+            </strong>
+            <span data-ng-bind="infoServer.rack || '-'"></span>
+        </div>
+    </li>
+    <li class="oui-tile__item">
+        <div class="oui-tile__definition">
+            <strong class="d-block"
+                    data-i18n-static="server_configuration_server_id">
+            </strong>
+            <span data-ng-bind="infoServer.serverId || '-'"></span>
+        </div>
+    </li>
+</ul>

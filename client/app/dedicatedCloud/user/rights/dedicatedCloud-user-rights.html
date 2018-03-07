@@ -1,0 +1,91 @@
+<div data-ng-controller="DedicatedCloudUserRightsCtrl as ctrl">
+
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="save"
+         data-wizard-title="i18n.dedicatedCloud_USER_right_title">
+
+        <div data-wizard-step
+             data-wizard-step-valid="!ctrl.loading">
+
+            <div class="text-center"
+                 data-ng-if="ctrl.loading">
+                <oui-spinner></oui-spinner>
+            </div>
+
+            <div data-ng-hide="ctrl.loading">
+                <h4 data-ng-bind-html="tr('dedicatedCloud_USER_right_datacenter_title', ctrl.rightsCurrentEdit.datacenterName)"></h4>
+                <div class="form-group">
+                    <label for="right"
+                           class="control-label"
+                           data-i18n-static="dedicatedCloud_USER_right_vsphere">
+                    </label>
+                    <select class="form-control"
+                            id="right"
+                            name="right"
+                            data-ng-options="typeRight as ('dedicatedCloud_USER_right_' + typeRight | UAi18n) for typeRight in ctrl.rights.list.typesRight"
+                            data-ng-model="ctrl.rightsCurrentEdit.right">
+                    </select>
+                    <span class="help-block"
+                          role="alert">
+                        <span class="d-block"
+                              data-i18n-static="dedicatedCloud_USER_right_vsphere_help">
+                        </span>
+                        <em data-ng-bind="tr('dedicatedCloud_USER_right_vsphere_' + ctrl.rightsCurrentEdit.right)"></em>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="vmNetworkRole"
+                           class="control-label"
+                           data-i18n-static="dedicatedCloud_USER_right_vmNetwork">
+                    </label>
+                    <select class="form-control"
+                            id="vmNetworkRole"
+                            name="vmNetworkRole"
+                            data-ng-options="typeRight as ('dedicatedCloud_USER_right_' + typeRight | UAi18n) for typeRight in ctrl.rightsCurrentEdit.vmAllowedNetworkRoles"
+                            data-ng-model="ctrl.rightsCurrentEdit.vmNetworkRole">
+                    </select>
+                    <span class="help-block"
+                          role="alert">
+                        <span class="d-block"
+                              data-i18n-static="dedicatedCloud_USER_right_vmNetwork_help">
+                        </span>
+                        <em data-ng-bind="tr('dedicatedCloud_USER_right_vmNetwork_' + ctrl.rightsCurrentEdit.vmNetworkRole)"></em>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="networkRole"
+                           class="control-label"
+                           data-i18n-static="dedicatedCloud_USER_right_vlan">
+                    </label>
+                    <select class="form-control"
+                            id="networkRole"
+                            name="networkRole"
+                            data-ng-options="typeRight as ('dedicatedCloud_USER_right_' + typeRight | UAi18n ) for typeRight in ctrl.rightsCurrentEdit.allowedNetworkRoles"
+                            data-ng-model="ctrl.rightsCurrentEdit.networkRole">
+                    </select>
+                    <span class="help-block"
+                          role="alert">
+                        <span class="d-block"
+                              data-i18n-static="dedicatedCloud_USER_right_vlan_help">
+                        </span>
+                        <em data-ng-bind="tr('dedicatedCloud_USER_right_vlan_' + ctrl.rightsCurrentEdit.networkRole)"></em>
+                    </span>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"
+                               data-ng-model="ctrl.rightsCurrentEdit.canAddResource" />
+                        <span data-i18n-static="dedicatedCloud_USER_right_resources"></span>
+                    </label>
+                </div>
+                <span class="help-block"
+                      data-i18n-static="dedicatedCloud_USER_right_resources_help">
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

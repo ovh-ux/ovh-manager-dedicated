@@ -1,0 +1,66 @@
+<div data-ng-controller="NasPartitionUpdateCtrl">
+
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="updateSize"
+         data-wizard-title="i18n.nas_partitions_action_update"
+         data-wizard-bread-crumb>
+
+        <div data-wizard-step
+             data-wizard-step-valid="updateValue.sizeP > 9 && updateValue.sizeP <= currentNasPartition.zpoolSize">
+
+            <div class="form-group">
+                <label for="name"
+                       class="control-label"
+                       data-i18n-static="nas_partitions_name">
+                </label>
+                <p class="form-control-static"
+                   id="name"
+                   data-ng-bind="partition.partitionName">
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="sizeP"
+                       class="control-label"
+                       data-i18n-static="nas_partitions_size_in_Gb">
+                </label>
+                <input type="number"
+                        class="form-control"
+                        id="sizeP"
+                        name="sizeP"
+                        min="10"
+                        max="{{ currentNasPartition.zpoolSize }}"
+                        data-ng-model="updateValue.sizeP"
+                        data-ng-change="checkSize()" />
+                <span data-i18n-static="nas_partitions_minimum_size"></span>
+            </div>
+            <div class="form-group">
+                <label for="protocol"
+                       class="control-label"
+                       data-i18n-static="nas_partitions_protocol">
+                </label>
+                <p class="form-control-static"
+                   id="protocol"
+                   data-ng-bind="tr('nas_partitions_protocol_' + partition.protocol)">
+                </p>
+            </div>
+
+            <div data-wizard-step-help>
+                <h5 data-i18n-static="nas_partitions_action_add"></5>
+                <p class="font-weight-bold"
+                   data-i18n-static="nas_partitions_action_add_partition_title">
+                </p>
+                <p data-ng-bind-html="i18n.nas_partitions_action_add_partition_desc"></p>
+            </div>
+
+        </div>
+
+        <div data-wizard-step>
+
+            <p data-ng-bind-html="tr('nas_partitions_action_update_confirmation', [partition.name, updateValue.sizeP])"></p>
+
+        </div>
+
+    </div>
+
+</div>

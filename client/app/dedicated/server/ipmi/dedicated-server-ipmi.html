@@ -1,0 +1,198 @@
+<div class="row"
+     data-ng-controller="ImpiCtrl"
+     data-ng-init="init()">
+
+    <div class="col-md-9">
+        <div data-ovh-alert="server_tab_ipmi_alert"></div>
+
+        <div class="text-center"
+             data-ng-if="loader.loading && !loader.error">
+            <oui-spinner></oui-spinner>
+        </div>
+
+        <div data-ng-if="!loader.loading && !loader.error">
+            <p class="text-danger"
+               data-ng-if="server.state == 'HACKED' || server.state == 'HACKED_BLOCKED'"
+               data-ng-bind-html="tr('server_configuration_impi_disabled', tr('server_configuration_state_' + server.state))">
+            </p>
+
+            <div data-ng-if="server.state != 'HACKED' && server.state != 'HACKED_BLOCKED'">
+
+                <div data-ng-if="!ipmi.model.activated">
+                    <div data-ng-if="!kvm.features">
+                        <p data-i18n-static="server_configuration_impi_off"></p>
+                        <div data-ng-if="kvm.canOrderKvm">
+                            <p data-i18n-static="server_configuration_impi_off_kvm"></p>
+                            <button type="button"
+                                    class="btn btn-default"
+                                    data-ng-click="setAction('kvm/order/dedicated-server-kvm-order', user)">
+                                <span class="fa fa-shopping-cart" aria-hidden="true"></span>
+                                <span data-i18n-static="server_configuration_impi_order_kvm"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div data-ng-if="kvm.features">
+                        <h3 data-i18n-static="server_configuration_kvm_informations"></h3>
+                        <dl>
+                            <dt data-i18n-static="server_configuration_kvm_informations_name"></dt>
+                            <dd data-ng-bind="kvm.features.name"></dd>
+                            <dt data-i18n-static="server_configuration_kvm_informations_ip"></dt>
+                            <dd data-ng-bind="kvm.features.ip"></dd>
+                            <dt data-i18n-static="server_configuration_kvm_informations_expiration"></dt>
+                            <dd data-ng-bind="kvm.features.expiration | date:'longDate'"></dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="text-danger"
+                     data-ng-if="ipmi.model.activated && (disable.otherTask || disable.localTask)"
+                     data-i18n-static="server_configuration_impi_disable">
+                </div>
+
+                <div data-ng-if="ipmi.model.activated && !disable.otherTask && !disable.localTask">
+                    <p data-ng-bind-html="tr('server_configuration_impi_information')"></p>
+                    <ul>
+                        <li data-ng-bind-html="tr('server_configuration_impi_information3', ipmi.model.clientIp || '')"></li>
+                        <li data-ng-bind-html="tr('server_configuration_impi_information2', ipmi.model.clientIp || '')"></li>
+                    </ul>
+                    <p data-ng-if="ipmiHelpUrl"
+                       data-ng-bind-html="tr('server_configuration_impi_SOL_help', [ipmiHelpUrl])">
+                    </p>
+                    <ul class="list-inline mt-4">
+                        <li class="text-center">
+                            <button type="button"
+                                    class="btn btn-default btn-block"
+                                    data-ng-click="startIpmiNavigation()"
+                                    data-ng-disabled="loader.buttonStart || disable.otherTask || disable.localTask">
+                                <span data-i18n-static="server_configuration_impi_navigation"></span>
+                                <oui-spinner class"ml-2"
+                                             data-ng-if="loader.navigationLoading"
+                                             data-size="s">
+                                </oui-spinner>
+                            </button>
+                            <a class="btn btn-default btn-block"
+                               href="{{ loader.navigationReady }}"
+                               target="_blank"
+                               rel="noopener"
+                               data-ng-if="loader.navigationReady && !disable.otherTask && !disable.localTask"
+                               data-i18n-static="server_configuration_impi_navigation_go">
+                            </a>
+                        </li>
+                        <li>
+                            <button type="button"
+                                    class="btn btn-default btn-block"
+                                    data-ng-click="startIpmiJava()"
+                                    data-ng-disabled="loader.buttonStart || disable.otherTask || disable.localTask">
+                                <span data-i18n-static="server_configuration_impi_java"></span>
+                                <oui-spinner class="ml-2"
+                                             data-ng-if="loader.javaLoading"
+                                             data-size="s">
+                                </oui-spinner>
+                            </button>
+                            <button type="button"
+                                    class="btn btn-default btn-block"
+                                    data-ng-if="appletToDownload"
+                                    data-ng-click="downloadApplet()"
+                                    data-i18n-static="server_configuration_impi_java_download">
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div data-ng-if="ipmi.model.activated && disable.testActive">
+                    <div>
+                        <span>
+                            <oui-spinner data-ng-if="loader.httpLoading"
+                                         data-size="s">
+                            </oui-spinner>
+                            <span class="oui-icon oui-icon-error text-danger"
+                                  data-ng-if="loader.httpError">
+                            </span>
+                            <span class="oui-icon oui-icon-success text-success"
+                                  data-ng-if="loader.httpDone">
+                            </span>
+                        </span>
+                        <span class="ml-2"
+                              data-ng-class="{ 'font-weight-bold': loader.httpLoading }"
+                              data-i18n-static="server_configuration_impi_http">
+                        </span>
+                    </div>
+                    <div class="mt-2">
+                        <span>
+                            <oui-spinner data-ng-if="loader.passwordLoading"
+                                         data-size="s">
+                            </oui-spinner>
+                            <span class="oui-icon oui-icon-error text-danger"
+                                  data-ng-if="loader.passwordError">
+                            </span>
+                            <span class="oui-icon oui-icon-success text-success"
+                                  data-ng-if="loader.passwordDone">
+                            </span>
+                        </span>
+                        <span class="ml-2"
+                              data-ng-class="{ 'font-weight-bold': loader.passwordLoading }"
+                              data-i18n-static="server_configuration_impi_password">
+                        </span>
+                    </div>
+                    <div class="mt-2">
+                        <span>
+                            <oui-spinner data-ng-if="loader.pingLoading"
+                                         data-size="s">
+                            </oui-spinner>
+                            <span class="oui-icon oui-icon-error text-danger"
+                                  data-ng-if="loader.pingError">
+                            </span>
+                            <span class="oui-icon oui-icon-success text-success"
+                                  data-ng-if="loader.pingDone">
+                            </span>
+                        </span>
+                        <span class="ml-2"
+                              data-ng-class="{ 'font-weight-bold': loader.pingLoading }"
+                              data-i18n-static="server_configuration_impi_ping">
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3"
+         data-ng-if="!loader.loading && !loader.error">
+        <div data-ng-if="ipmi.model.activated && server.state != 'HACKED' && server.state != 'HACKED_BLOCKED'">
+            <button type="button"
+                    class="btn btn-default btn-block"
+                    data-ng-click="setAction('ipmi/restart/dedicated-server-ipmi-restart')"
+                    data-ng-disabled="disable.restartIpmi || disable.localTask || disable.otherTask">
+                <span>
+                    <span data-i18n-static="server_configuration_impi_reset_interfaces"></span>
+                    <span class="label label-defaut"
+                          data-ng-if="disable.restartIpmi"
+                          data-i18n-static="server_configuration_doing">
+                    </span>
+                </span>
+            </button>
+            <button type="button"
+                    class="btn btn-default btn-block"
+                    data-ng-click="startIpmiTest()"
+                    data-ng-disabled="disable.testIpmi || disable.otherTask || disable.localTask">
+                <span>
+                    <span data-i18n-static="server_configuration_impi_test"></span>
+                    <span class="label label-defaut"
+                          data-ng-if="disable.testIpmi"
+                          data-i18n-static="server_configuration_doing">
+                    </span>
+                </span>
+            </button>
+        </div>
+        <a class="btn btn-default btn-block"
+           title="{{ i18n.server_configuration_kvm_new_window }}"
+           target="_blank"
+           rel="noopener"
+           data-ng-if="kvm.features && !loader.loading"
+           data-ng-href="http://{{ kvm.features.name }}"
+           data-i18n-static="server_configuration_kvm_access">
+        </a>
+    </div>
+
+</div>
+<!-- /.row -->

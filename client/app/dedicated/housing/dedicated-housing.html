@@ -1,0 +1,106 @@
+<div data-ovh-alert="housing_dashboard_alert"></div>
+
+<div class="text-center mt-5"
+     data-ng-hide="!loadingHousingInformations || loadingHousingError">
+    <oui-spinner data-size="l"></oui-spinner>
+</div>
+
+<div data-ng-hide="loadingHousingInformations || loadingHousingError">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="mb-2">
+                    <h1 class="word-break mb-0"
+                        data-ng-hide="reverseModel.edit"
+                        data-ng-bind="housing.name">
+                    </h1>
+                </div>
+            </div>
+            <div class="col-sm-3 d-flex">
+                <div class="btn-group ml-auto mt-4">
+                    <button type="button"
+                            class="oui-button oui-button_dropdown mb-0"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            data-toggle="dropdown">
+                        <span data-i18n-static="common_actions"></span>
+                        <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li data-ng-if="featureAvailability.allowDedicatedServerChangeOwner()">
+                            <a target="_blank"
+                               rel="noopener"
+                               title="{{:: i18n.core_change_owner }} ({{:: i18n.core_new_window }})"
+                               data-ng-href="{{:: changeOwnerUrl }}"
+                               data-i18n-static="core_change_owner">
+                            </a>
+                        </li>
+                        <li data-ng-hide="housing.isExpired"
+                            data-ng-class="{ 'disabled': disable.reboot || disable.byOtherTask || disable.install }">
+                            <button type="button"
+                                    class="btn btn-link"
+                                    data-ng-click="!disable.reboot && !disable.byOtherTask && setAction('reboot/dedicated-housing-reboot')">
+                                <span data-i18n-static="housing_configuration_reboot_title_button"></span>
+                                <span class="d-block"
+                                      data-ng-show="disable.reboot"
+                                      data-i18n-static="housing_configuration_doing">
+                                </span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid px-5"
+         data-ng-show="housing.isExpired">
+        <div class="alert alert-warning mt-5"
+             role="alert"
+             data-i18n-static="common_expired">
+        </div>
+    </div>
+    <div data-ng-hide="loadingHousingInformations || loadingHousingError || housing.isExpired"
+         data-ng-controller="HousingTabsCtrl">
+        <ovh-tabs data-tabs="tabs"
+                  data-selected-tab="selectedTab"
+                  data-change-tab="setSelectedTab"
+                  data-product="housing"
+                  data-menu="tabMenu"
+                  data-tr="tr">
+        </ovh-tabs>
+        <div class="tab-content">
+            <div class="alert alert-info"
+                 role="alert"
+                 data-ng-if="user.ovhSubsidiary === 'FR' && !housingPhoneStopBother">
+                <button type="button"
+                        class="close"
+                        data-dismiss="alert"
+                        data-ng-click="createStopBotherUserPref()">&times;
+                </button>
+                <span data-ng-bind-html="tr('housing_support_phone', housingPhoneNumber)"></span>
+            </div>
+            <div class="tab-pane active"
+                 data-ng-include="!server.isExpired && 'dedicated/housing/' + toKebabCase(selectedTab) + '/dedicated-housing-' + toKebabCase(selectedTab) + '.html' || ''">
+            </div>
+        </div>
+    </div>
+    <div id="currentAction"
+         class="modal fade currentAction"
+         tabindex="-1"
+         data-role="dialog"
+         data-aria-hidden="true"
+         data-backdrop="static">
+        <div class="modal-dialog"
+             data-ng-class="{
+                 'modal-lg': bigModalDialog
+             }">
+            <div id="modal-container"
+                 class="modal-content"
+                 data-ng-include="stepPath">
+            </div>
+            <div id="modal-help"
+                 class="help4wizards">
+            </div>
+        </div>
+    </div>
+</div>

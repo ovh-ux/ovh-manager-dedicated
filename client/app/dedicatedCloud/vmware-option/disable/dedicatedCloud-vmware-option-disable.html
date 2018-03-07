@@ -1,0 +1,82 @@
+<div data-ng-controller="DedicatedCloudDisableVMwareOptionCtrl">
+
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="disable"
+         data-wizard-title="tr('dedicatedCloud_vmware_cancelopt_title_' + currentActionData)"
+         data-wizard-confirm-button-text="i18n.dedicatedCloud_vmware_cancelopt_desactivate">
+
+        <div data-wizard-step
+             data-wizard-step-on-load="loadDisablingPrices"
+             data-wizard-step-valid="!loaders.loading">
+
+            <div class="text-center"
+                 data-ng-if="loaders.loading">
+                <oui-spinner></oui-spinner>
+            </div>
+
+            <div data-ng-if="!loaders.loading">
+                <p data-ng-bind="tr('dedicatedCloud_vmware_cancelopt_message_' + currentActionData)"></p>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col"
+                                data-i18n-static="dedicatedCloud_vmware_orderopt_host_name">
+                            </th>
+                            <th scope="col"
+                                data-i18n-static="dedicatedCloud_vmware_orderopt_datacenter_name">
+                            </th>
+                            <th scope="col"
+                                class="text-right text-wrap"
+                                data-i18n-static="dedicatedCloud_vmware_orderopt_current_price">
+                            </th>
+                            <th scope="col"
+                                class="text-right text-wrap"
+                                data-ng-bind-html="tr('dedicatedCloud_vmware_orderopt_next_price')">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-ng-repeat="p in disablingPrices track by $index">
+                            <th scope="row"
+                                data-ng-bind="::p.name">
+                            </th>
+                            <td data-ng-bind="::p.datacenter"></td>
+                            <td class="text-right">
+                                <span data-ng-if="p.billingType === 'hourly'"
+                                      data-ng-bind="tr('dedicatedCloud_vmware_orderopt_price_hourly', p.current)">
+                                </span>
+                                <span data-ng-if="p.billingType !== 'hourly' && p.billingType !== 'freeSpare'"
+                                      data-ng-bind="p.current">
+                                </span>
+                                <span data-ng-if="p.billingType === 'freeSpare'"
+                                      data-i18n-static="dedicatedCloud_vmware_price_free_spare">
+                                </span>
+                            </td>
+                            <td class="text-right">
+                                <span data-ng-if="p.billingType === 'hourly'"
+                                      data-ng-bind="tr('dedicatedCloud_vmware_orderopt_price_hourly', p.next)">
+                                </span>
+                                <span data-ng-if="p.billingType !== 'hourly' && p.billingType !== 'freeSpare'"
+                                      data-ng-bind="p.next">
+                                </span>
+                                <span data-ng-if="p.billingType === 'freeSpare'"
+                                      data-i18n-static="dedicatedCloud_vmware_price_free_spare">
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="font-italic text-right"
+                   data-ng-bind-html="tr('dedicatedCloud_vmware_orderopt_price_info')">
+                </p>
+                <p class="text-danger text-center"
+                   data-i18n-static="dedicatedCloud_vmware_cancelopt_warning">
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

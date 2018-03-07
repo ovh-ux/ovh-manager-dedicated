@@ -1,0 +1,84 @@
+<div class="dedicated-nas-details-dashboard">
+    <div class="row d-md-flex mb-5">
+        <!-- General Informations -->
+        <div class="col-md-4">
+            <div class="oui-tile mb-5 h-100">
+                <h3 class="oui-tile__title"
+                    data-i18n-static="nas_dashboard_general_informations_tile_title">
+                </h3>
+                <div class="oui-tile__body">
+                    <ul class="list-unstyled">
+                        <li class="oui-tile__item">
+                            <div class="oui-tile__definition">
+                                <strong class="d-block"
+                                        data-i18n-static="nas_dashboard_ip">
+                                </strong>
+                                <span data-ng-bind="$ctrl.nasData.nas.ip"></span>
+                            </div>
+                        </li>
+                        <li class="oui-tile__item">
+                            <div class="oui-tile__definition">
+                                <strong class="d-block"
+                                        data-i18n-static="nas_dashboard_capacity">
+                                </strong>
+                                <span data-ng-bind="$ctrl.nasData.nas.zpoolSize + ' ' + tr('unit_size_GB')"></span>
+                            </div>
+                        </li>
+                        <li class="oui-tile__item">
+                            <div class="oui-tile__definition">
+                                <strong class="d-block"
+                                        data-i18n-static="nas_dashboard_creation_date">
+                                </strong>
+                                <span data-ng-bind="$ctrl.nasData.information.creation | date:'mediumDate'"></span>
+                            </div>
+                        </li>
+                        <li class="oui-tile__item">
+                            <div class="oui-tile__definition">
+                                <div class="d-flex w-100">
+                                    <div>
+                                        <strong class="d-block">
+                                            <service-expiration-label data-service-infos="$ctrl.nasData.information"></service-expiration-label>
+                                        </strong>
+                                        <service-expiration-date data-service-name="$ctrl.nasData.nas.serviceName"
+                                                                 data-service-type="$ctrl.nasData.isNasHa ? 'DEDICATED_NASHA' : 'DEDICATED_NAS'"
+                                                                 data-service-infos="$ctrl.nasData.information"
+                                                                 data-force-hide-renew-action="true">
+                                        </service-expiration-date>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <service-expiration-date data-service-name="$ctrl.nasData.nas.serviceName"
+                                                                 data-service-type="$ctrl.nasData.isNasHa ? 'DEDICATED_NASHA' : 'DEDICATED_NAS'"
+                                                                 data-service-infos="$ctrl.nasData.information"
+                                                                 data-hide-renew-date="true">
+                                        </service-expiration-date>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="oui-tile__item"
+                            data-ng-if="$ctrl.nasData.isNasHa">
+                            <div class="oui-tile__definition">
+                                <div class="d-flex w-100">
+                                    <div>
+                                        <strong class="d-block"
+                                                data-i18n-static="nas_dashboard_monitoring">
+                                        </strong>
+                                        <span class="label"
+                                              data-ng-class="$ctrl.nasData.monitoring.enabled ? 'label-success' : 'label-info'"
+                                              data-ng-bind="$ctrl.nasData.monitoring.enabled ? tr('common_activated') : tr('common_desactivated')">
+                                        </span>
+                                    </div>
+                                    <button class="btn btn-default ml-auto align-self-center"
+                                            data-ng-bind="$ctrl.nasData.monitoring.enabled ? tr('common_desactivate') : tr('common_activate')"
+                                            data-ng-click="$ctrl.updateMonitoringState()"
+                                            data-ng-disabled="$ctrl.loading.monitoring">
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> <!-- End of General Informations -->
+    </div>
+</div>

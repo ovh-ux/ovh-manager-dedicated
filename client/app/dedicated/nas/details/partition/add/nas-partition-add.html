@@ -1,0 +1,81 @@
+<div data-ng-controller="NasPartitionAddCtrl">
+
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="addPartition"
+         data-wizard-title="i18n.nas_partitions_action_add"
+         data-wizard-bread-crumb>
+
+        <div data-wizard-step
+             data-wizard-step-valid="newPartition.name && newPartition.sizeP > 9 && newPartition.sizeP <= currentNasPartition.zpoolSize && newPartition.protocol && !error.name">
+
+            <div class="form-group">
+                <label for="name"
+                       class="control-label"
+                       data-i18n-static="nas_partitions_name">
+                </label>
+                <input type="text"
+                       class="form-control"
+                       id="name"
+                       name="name"
+                       data-ng-model="newPartition.name"
+                       data-ng-change="checkName()" />
+                <span class="text-danger"
+                      data-ng-if="error.name"
+                      data-i18n-static="nas_partitions_name_fail">
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="sizeP"
+                       class="control-label"
+                       data-i18n-static="nas_partitions_size_in_Gb">
+                </label>
+                <input type="number"
+                       class="form-control"
+                       id="sizeP"
+                       name="sizeP"
+                       min="10"
+                       max="{{ currentNasPartition.zpoolSize }}"
+                       data-ng-model="newPartition.sizeP"
+                       data-ng-change="checkSize()" />
+                <span data-i18n-static="nas_partitions_minimum_size"></span>
+            </div>
+            <div class="form-group">
+                <label for="protocol"
+                       class="control-label"
+                       data-i18n-static="nas_partitions_protocol">
+                </label>
+                <select class="form-control"
+                        id="protocol"
+                        name="protocol"
+                        data-ng-options="protocol as tr('nas_partitions_protocol_' + protocol) for protocol in protocols"
+                        data-ng-model="newPartition.protocol">
+                </select>
+            </div>
+
+            <div data-wizard-step-help>
+
+                <h5 data-i18n-static="nas_partitions_action_add_partition_title"></h5>
+                <p data-ng-bind-html="i18n.nas_partitions_action_add_partition_desc"></p>
+
+            </div>
+
+        </div>
+
+        <div data-wizard-step>
+
+            <p data-ng-bind-html="tr('nas_partitions_action_add_confirmation')"></p>
+            <dl>
+                <dt data-i18n-static="nas_partitions_name"></dt>
+                <dd data-ng-bind="newPartition.name"/></dd>
+                <dt data-i18n-static="nas_partitions_size_in_Gb"></dt>
+                <dd data-ng-bind="newPartition.sizeP"/></dd>
+                <dt data-i18n-static="nas_partitions_protocol"></dt>
+                <dd data-ng-bind="tr('nas_partitions_protocol_' + newPartition.protocol)"/></dd>
+            </dl>
+
+        </div>
+
+    </div>
+
+</div>

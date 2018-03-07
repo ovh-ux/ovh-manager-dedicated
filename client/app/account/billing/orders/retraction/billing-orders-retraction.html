@@ -1,0 +1,43 @@
+<div id="billing-payment-retraction"
+     data-ng-controller="Billing.controllers.OrderRetractionCtrl as ctrl">
+
+    <a class="btn btn-link"
+       href="#/billing/orders"
+       title="{{ tr('orders_retract_return_to_orders') }}">
+        <span class="fa fa-chevron-left"
+           aria-hidden="true">
+        </span>
+    </a>
+
+    <h1 data-i18n-static="orders_retract_title">
+    </h1>
+
+    <div data-ng-if="!success">
+        <div data-ovh-alert></div>
+
+        <p data-i18n-static="orders_retract_description1"></p>
+        <p data-i18n-static="orders_retract_description2"></p>
+
+        <p>{{ tr('orders_retract_confirmation', [orderId]) }}</p>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"
+                       data-ng-model=":: confirmed">
+                {{ tr('orders_retract_confirmation_text') }}
+            </label>
+        </div>
+
+        <oui-message type="warning" message="{{ tr('orders_retract_alert') }}"></oui-message>
+
+        <div class="control-group">
+            <a class="oui-button oui-button_secondary" href="#/billing/orders" data-i18n-static="wizard_cancel"></a>
+            <button type="button" class="oui-button oui-button_primary" data-ng-disabled="!confirmed" data-ng-click="ctrl.retract()">{{ tr('wizard_confirm') }}</button>
+        </div>
+    </div>
+
+
+    <div data-ng-if="success">
+        <oui-message type="success" message="{{ tr('orders_retract_success', [orderId]) }}"></oui-message>
+        <a class="oui-button oui-button_secondary" href="#/billing/orders" data-i18n-static="orders_retract_return_to_orders"></a>
+    </div>
+</div>

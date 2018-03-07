@@ -1,0 +1,29 @@
+<div data-ng-controller="Billing.controllers.Mean.Delete">
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="deleteMean"
+         data-wizard-title="i18n.deleteMean_title">
+
+        <div data-wizard-step>
+            <p data-ng-if="selectedMean.type == 'bankAccount'">
+                <strong class="text-danger"
+                        data-i18n-static="paymentMean_delete_message_bankAccount">
+                </strong>
+                <span data-ng-bind="selectedMean.details.iban"></span>
+            </p>
+            <p data-ng-if="selectedMean.type == 'paypal'">
+                <strong class="text-danger"
+                        data-i18n-static="paymentMean_delete_message_paypal">
+                </strong>
+                <span data-ng-bind="selectedMean.details.email"></span>
+            </p>
+            <p data-ng-if="selectedMean.type == 'creditCard'">
+                <strong class="text-danger"
+                        data-i18n-static="paymentMean_delete_message_creditCard">
+                </strong>
+                <span data-ng-bind="selectedMean.details.number"></span>
+            </p>
+        </div>
+
+    </div>
+</div>

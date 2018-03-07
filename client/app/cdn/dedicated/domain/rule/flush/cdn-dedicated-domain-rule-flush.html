@@ -1,0 +1,16 @@
+<div data-ng-controller="CdnFlushRuleCtrl">
+
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="flushRule"
+         data-wizard-title="i18n.cdn_configuration_cacherule_flush_title_button">
+
+        <div data-wizard-step>
+
+            <p data-ng-bind-html="tr('cdn_configuration_flush_confirmation', [cacheRule.fileMatch])"></p>
+
+        </div>
+
+    </div>
+
+</div>

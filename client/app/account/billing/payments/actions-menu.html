@@ -1,0 +1,27 @@
+<ul class="dropdown-menu dropdown-menu-right"
+    uib-dropdown-menu>
+    <li ata-ng-show="(paymentLine.url || paymentLine.htmlUrl) && ctrl.shouldDisplayDepositsLinks()">
+        <a target="_blank"
+           title="{{:: i18n.table_download_html }} ({{:: i18n.core_new_window }})"
+           data-ng-href="{{ :: (paymentLine.htmlUrl || paymentLine.url) }}">
+            <i class="fa fa-file-code-o" aria-hidden="true"></i>
+            <span data-i18n-static="table_download_html"></span>
+        </a>
+    </li>
+    <li data-ng-show="paymentLine.pdfUrl && ctrl.shouldDisplayDepositsLinks()">
+        <a target="_blank"
+           rel="noopener"
+           title="{{:: i18n.table_download_pdf }} ({{:: i18n.core_new_window }})"
+           data-ng-href="{{ :: paymentLine.pdfUrl }}">
+            <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+            <span data-i18n-static="table_download_pdf"></span>
+        </a>
+    </li>
+    <li>
+        <a data-ng-href="#/billing/payments/{{ :: paymentLine.depositId }}/details"
+           data-ng-attr-title="{{ :: tr('payments_details_link') }}">
+            <i class="fa fa-eye" aria-hidden="true"></i>
+            <span data-i18n-static="payments_details_link"></span>
+        </a>
+    </li>
+</ul>

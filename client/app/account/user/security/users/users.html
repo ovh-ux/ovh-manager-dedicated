@@ -1,0 +1,127 @@
+<div data-ng-controller="UserAccountUsersCtrl as $ctrl">
+
+    <div class="page-header">
+        <h1 data-translate="user_users_title"></h1>
+    </div>
+
+    <div class="tab-content">
+
+        <div data-ovh-alert="userUsers"></div>
+
+        <!-- USER ADD BTN -->
+        <button id="btnAddUser"
+                type="button"
+                class="btn btn-primary mb-4"
+                data-ng-click="setAction('security/users/add/user-users-add', user)"
+                data-ng-disabled="$ctrl.usersLoading"
+                data-ng-class="{'disabled': $ctrl.usersLoading}">
+            <span data-translate="user_users_add_user"></span>
+        </button>
+
+        <!-- USERS LIST -->
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th data-translate="user_users_login" scope="col"></th>
+                        <th data-translate="user_users_email" scope="col"></th>
+                        <th data-translate="user_users_creation_date" scope="col"></th>
+                        <th data-translate="user_users_last_update_date" scope="col"></th>
+                        <th data-translate="user_users_status" scope="col"></th>
+                        <th data-translate="user_users_description" scope="col"></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody data-ng-show="$ctrl.usersLoading">
+                    <tr>
+                        <td colspan="7"
+                            class="text-center">
+                            <oui-spinner data-size="s"></oui-spinner>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody data-ng-show="$ctrl.users.length === 0 && !$ctrl.usersLoading">
+                    <tr>
+                        <td colspan="7"
+                            class="text-center font-italic"
+                            data-translate="user_users_table_empty">
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody data-ng-show="$ctrl.users.length > 0 && !$ctrl.usersLoading">
+                    <tr data-ng-repeat="user in $ctrl.users track by $index">
+                        <td data-ng-bind="user.login"></td>
+                        <td data-ng-bind="user.email"></td>
+                        <td data-ng-bind="user.creation | date"></td>
+                        <td data-ng-bind="user.lastUpdate | date"></td>
+                        <td>
+                            <span class="label"
+                                  data-ng-class="{
+                                         'label-success': user.status === 'OK',
+                                         'label-danger': user.status === 'DISABLED'
+                                         }"
+                                  data-ng-bind="'user_users_status_' + user.status | translate">
+                            </span>
+                        </td>
+
+                        <td data-ng-bind="user.description"></td>
+                        <td class="text-right">
+                            <div data-uib-dropdown
+                                 data-dropdown-append-to-body>
+                                <button type="button"
+                                        class="btn btn-link"
+                                        data-uib-dropdown-toggle>
+                                    <span class="ovh-font ovh-font-dots align-top"
+                                          aria-hidden="true">
+                                    </span>
+                                </button>
+                                <ul data-uib-dropdown-menu
+                                    class="dropdown-menu dropdown-menu-right">
+                                    <li>
+                                        <button type="button"
+                                                class="btn btn-link"
+                                                data-ng-click="setAction('security/users/update/user-users-update', user)"
+                                                data-translate="user_users_update">
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button"
+                                                class="btn btn-link"
+                                                data-ng-click="setAction('security/users/delete/user-users-delete', user)"
+                                                data-translate="user_users_delete">
+                                        </button>
+                                    </li>
+                                    <li data-ng-if="user.status === 'DISABLED'">
+                                        <button type="button"
+                                                class="btn btn-link"
+                                                data-ng-click="setAction('security/users/enable/user-users-enable', user)"
+                                                data-translate="user_users_enable">
+                                        </button>
+                                    </li>
+                                    <li data-ng-if="user.status === 'OK'">
+                                        <button type="button"
+                                                class="btn btn-link"
+                                                data-ng-click="setAction('security/users/disable/user-users-disable', user)"
+                                                data-translate="user_users_disable">
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div data-pagination-front
+             data-items="$ctrl.userIds"
+             data-paginated-items="$ctrl.users"
+             data-current-page="currentPage"
+             data-items-per-page="itemsPerPage"
+             data-nb-pages="nbPages"
+             data-transform-item="$ctrl.onTransformItem(item)"
+             data-on-transform-item-done="$ctrl.onTransformItemDone(items)"
+             data-page-placeholder="{{  tr('pagination_page', [currentPage, nbPages])}}"
+             data-item-per-page-placeholder="{{ tr('pagination_display')}}">
+        </div>
+    </div>
+</div>

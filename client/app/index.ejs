@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="shortcut icon" href="<%= basepath %>images/favicon-<%= target %>.ico">
+
+        <title>OVH</title>
+
+        <% if (prodMode) { %>
+            <link rel="stylesheet" media="screen,projection" href="<%= basepath %>css/common.min.css">
+            <link rel="stylesheet" media="screen,projection" href="<%= basepath %>css/app.min.css">
+        <% } else { %>
+            <% for (var i = 0, len = commonCss.length ; i < len ; i++) { %>
+                <link rel="stylesheet" href="<%= basepath%><%= commonCss[i] %>">
+            <% } %>
+
+            <% for (var i = 0, len = css.length ; i < len ; i++) { %>
+                <link rel="stylesheet" href="<%= basepath %><%= css[i] %>">
+            <% } %>
+        <% } %>
+        <% if (target === "US" ) { %>
+            <!-- Start of corp1 Zendesk Widget script -->
+            <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display:none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var e=this.createElement("script");n&&(this.domain=n),e.id="js-iframe-async",e.src="https://assets.zendesk.com/embeddable_framework/main.js",this.t=+new Date,this.zendeskHost="corp1.zendesk.com",this.zEQueue=a,this.body.appendChild(e)},o.write('<body onload="document._l();">'),o.close()}();
+             /*]]>*/</script>
+            <!-- End of corp1 Zendesk Widget script -->
+        <% } %>
+    </head>
+    <body data-ng-app="App" data-ng-controller="SessionCtrl" data-ng-cloak class="ng-cloak">
+        <div class="col-container">
+
+            <!-- Skip to main content -->
+            <div class="skipnav">
+                <a class="oui-button oui-button_link" href=""
+                    data-ng-bind="::i18n.common_skip_to_main_content"
+                    data-ng-click="scrollTo('maincontent')">
+                </a>
+            </div>
+            <!-- /Skip to main content -->
+
+            <oui-navbar fixed
+                data-active-link="dedicated"
+                data-brand="::navbar.brand"
+                data-main-links="::navbar.managerLinks"
+                data-aside-links="::navbar.internalLinks"
+                data-toggler-links="::navbar.responsiveLinks">
+            </oui-navbar>
+
+            <div class="container-fluid h-100 w-100" style="overflow: auto" data-ui-view="app">
+                <div class="row">
+                    <div class="col-sm-4 col-md-2"
+                         data-sidebar-menu>
+                    </div>
+                    <div class="col-sm-8 col-sm-offset-4 col-md-10 col-md-offset-2 px-0 mt-md-0">
+
+                        <!-- Skip content target -->
+                        <div class="skiptarget">
+                            <a id="maincontent" href="">-</a>
+                        </div>
+                        <!-- /Skip content target -->
+
+                        <div data-ng-controller="UserAlertCtrl">
+                            <oui-message dismissable="true"
+                                         data-ng-if="userAlerts.messages"
+                                         data-type="{{ userAlerts.type }}">
+                                <ul class="list-unstyled">
+                                    <li data-ng-repeat="text in userAlerts.messages track by $index"
+                                        data-ng-bind-html="text">
+                                    </li>
+                                </ul>
+                            </oui-message>
+                            <ovh-browser-alert data-ng-if="isLeftMenuVisible"></ovh-browser-alert>
+                            <ovh-task-follow></ovh-task-follow>
+                        </div>
+                        <div class="pb-5"
+                             data-ui-view>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="managerPreload"
+             class="d-flex text-center"
+             data-ng-class="!!navbar && managerPreloadHide">
+            <div class="m-auto">
+                <p class="lead mb-3"
+                   data-i18n-static="preload_welcome">
+                </p>
+                <hr class="my-0" />
+                <h1 class="mt-3 mb-5"
+                    data-i18n-static="preload_manager_ovh">
+                </h1>
+                <div class="mt-5">
+                    <oui-spinner data-size="l"></oui-spinner>
+                </div>
+            </div>
+        </div>
+
+        <div data-ng-controller="UserContractsCtrl">
+            <div id="user-contracts-main-container">
+                <div id="user-contracts-currentAction" class="modal fade currentAction" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div id="modal-container" class="modal-content"
+                             data-ng-include="stepPath">
+                        </div>
+                        <div id="modal-help" class="help4wizards" style="width: 230px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-ng-controller="DoubleAuthBackupCodeCtrl">
+            <div id="double-auth-backup-code-alert" class="modal fade currentAction" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content"
+                         data-ng-include="stepPath">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-ng-include="'components/feedback/feedback.html'"></div>
+
+        <% if (prodMode) { %>
+            <script type="text/javascript">window.console={error:function(){},log:function(){},debug:function(){},warn:function(){},dir:function(){},info:function(){},assert:function(){},clear: function(){}};</script>
+            <script type="text/javascript" src="<%= basepath %>js/app/bin/common.min.js"></script>
+            <script type="text/javascript" src="<%= basepath %>js/app/bin/app.min.js"></script>
+            <script type="text/javascript">
+                var CKEDITOR_BASEPATH = (window.location.pathname !== "/" ? window.location.pathname.split("/").splice(0, window.location.pathname.split("/").length - 1).join("/") : "") + '/node_modules/@bower_components/ckeditor/';
+            </script>
+        <% } else { %>
+            <!-- common -->
+            <% for (var i = 0, len = commonJsFiles.length ; i < len ; i++) { %>
+                <script type="text/javascript" src="<%= basepath %><%= commonJsFiles[i] %>"></script>
+            <% } %>
+            <!-- constants -->
+            <% for (var i = 0, len = constants.length ; i < len ; i++) { %>
+                <script type="text/javascript" src="<%= basepath %><%= constants[i] %>"></script>
+            <% } %>
+            <!-- app -->
+            <% for (var i = 0, len = jsFiles.length ; i < len ; i++) { %>
+                <script type="text/javascript" src="<%= basepath %><%= jsFiles[i] %>"></script>
+            <% } %>
+        <% } %>
+    </body>
+</html>

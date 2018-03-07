@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="vrack_order_title" qtlid="148864">Commander un VRACK</translation>
+   <translation id="vrack_order_url" qtlid="163167">Cliquez ici pour créer un nouveau VRACK.</translation>
+   <translation id="vrack_order_task" qtlid="148890">Votre VRACK est en cours de création. Veuillez réessayer dans quelques minutes.</translation>
+   <translation id="vrack_order_new_title" qtlid="148903">Composez votre VRACK</translation>
+   <translation id="vrack_new_p1" qtlid="148916">L'ajout d'un serveur dans la baie virtuelle nécessite l'option d'utilisation professionnelle. Celle ci sera ajoutée automatiquement lors de la commande si votre serveur ne la possède pas.</translation>
+   <translation id="vrack_new_p2" qtlid="148929">Ajoutez ou retirez vos services de votre vRack :</translation>
+   <translation id="vrack_todo" qtlid="148942">[en cours]</translation>
+   <translation id="vrack_title_out" qtlid="148955">Vos serveurs</translation>
+   <translation id="vrack_title_in" qtlid="148968">Votre VRACK</translation>
+   <translation id="vrack_loading_error" qtlid="148981">Une erreur est survenue.</translation>
+   <translation id="vrack_add" qtlid="37923">Ajouter</translation>
+   <translation id="vrack_delete" qtlid="148994">Enlever</translation>
+   <translation id="vrack_create_title" qtlid="149007">Création d'un vrack</translation>
+   <translation id="vrack_create_count" qtlid="163180">Saisiez le nombre de vrack que vous souhaiter commander :</translation>
+   <translation id="vrack_create_nb" qtlid="163193">Nombre vrack :</translation>
+   <translation id="vrack_create_contacts" qtlid="145371">Je reconnais avoir bien pris connaissance des conditions suivantes :</translation>
+   <translation id="vrack_create_refuse" qtlid="157798">Impossible de commander {0} VRACK :</translation>
+   <translation id="vrack_adding_success" qtlid="174581">La demande d'activation de votre vrack a bien été prise en compte et sera effective dans quelques minutes une fois la commande numéro <a href='{0}' target='_blank'>{1}</a> validée.</translation>
+   <translation id="vrack_adding_error" qtlid="149046">Une erreur est survenu lors de la demande de création du vrack</translation>
+   <translation id="vrack_removeadd_success" qtlid="149059">Votre demande de modification du vrack a bien été prise en compte.</translation>
+   <translation id="vrack_removeadd_partial" qtlid="149072">Votre demande de modification du vrack a été prise en compte pour certains serveurs, mais des erreurs sont survenues pour d'autres.</translation>
+   <translation id="vrack_removeadd_fail" qtlid="149085">Une erreur est survenue lors de la demande de modification du vrack.</translation>
+   <translation id="vrack_message_see_more" qtlid="140677">Voir le détail des erreurs</translation>
+   <translation id="vrack_sd_info" qtlid="149098">Afin d'activer l'intégration de votre serveur dédié au vRack 1.5, il est nécessaire d'effectuer un arping vers l'IP 1.1.1.1 (exemple : arping -i eth1/3 1.1.1.1).</translation>
+   <translation id="vrack_ip_info" qtlid="150918">Une fois votre ip intégré au vrack, vous devrez lui définir une zone pour l'activer en cliquant sur l'icone <i class="icon-warning"></i></translation>
+   <translation id="vrack_ip_warning_doing" qtlid="150931">Une fois l'ip ajouté dans le vrack, il faudra définir la zone.</translation>
+   <translation id="vrack_ip_warning_done" qtlid="150944">La zone de l'ip n'est pas définit. Cliquez pour la définir</translation>
+   <translation id="vrack_zone_update_title" qtlid="150957">Attribution de la zone</translation>
+   <translation id="vrack_zone_update_step1" qtlid="150970">Choisissez la zone que vous voulez attribuer à l'ip <b>{0}</b></translation>
+   <translation id="vrack_zone_update_step2" qtlid="150983">Confirmation de l'attribution d'une zone</translation>
+   <translation id="vrack_zone_update_step2_ip" qtlid="150996">ip :</translation>
+   <translation id="vrack_zone_update_step2_zone" qtlid="151009">zone :</translation>
+   <translation id="vrack_zone_update_success" qtlid="151022">La zone <b>{0}</b> sera attribué a l'ip <b>{1}</b> dans quelques instants</translation>
+   <translation id="vrack_zone_update_error" qtlid="151035">Une erreur est survenu lors de l'attribution de la zone {0} à l'ip {1}</translation>
+   <translation id="vrack_zone_update_error_zone" qtlid="156589">Une erreur est survenu lors de la récupération des zones disponibles pour l'ip {0}</translation>
+   <translation id="vrack_legacy_vrack_version" qtlid="174594">(v1.0)</translation>
+   <translation id="vrack_order_full" qtlid="163310">Vous avez atteint la limite du nombre de vrack disponibles. Vous ne pouvez plus en commander.</translation>
+</translations>

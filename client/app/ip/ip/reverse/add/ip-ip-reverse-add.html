@@ -1,0 +1,56 @@
+<div data-ng-controller="IpAddIpv6Ctrl">
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="addIpv6"
+         data-wizard-title="i18n.ip_table_manage_add_ipv6block">
+
+        <div data-wizard-step
+             data-wizard-step-valid="isValid.all()">
+
+            <p class="alert alert-info"
+               data-i18n-static="ip_table_manage_add_ipv6block_question">
+            </p>
+
+            <form>
+                <div class="form-group">
+                    <label class="control-label"
+                           for="ipv6"
+                           data-i18n-static="ip_ipblock">
+                    </label>
+                    <p class="form-control-static"
+                       data-ng-bind="data.ipBlock.ipBlock">
+                    </p>
+                </div>
+
+                <div class="form-group"
+                     data-ng-class="{
+                         'has-error': model.ipv6 && !isValid.ipv6()
+                     }">
+                    <label class="control-label"
+                           for="ipv6"
+                           data-ng-bind="i18n.ip_table_header_ip_address  + ' ' + (i18n.ip_ipv6)">
+                    </label>
+                    <input type="text"
+                           id="ipv6"
+                           class="form-control"
+                           data-ng-model="model.ipv6">
+                </div>
+
+                <div class="form-group"
+                     data-ng-class="{
+                         'has-error': !isValid.reverse()
+                     }">
+                    <label class="control-label"
+                           for="reverseV6"
+                           data-ng-bind="i18n.ip_table_header_reverse + ' ' + (i18n.optional)">
+                    </label>
+                    <input type="text"
+                           id="reverseV6"
+                           class="form-control"
+                           data-ng-model="model.reverse">
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

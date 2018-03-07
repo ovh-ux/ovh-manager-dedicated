@@ -1,0 +1,453 @@
+<div data-ng-controller="DedicatedCloudUserCtrl">
+    <div data-ovh-alert="{{ alerts.users }}"></div>
+
+    <div data-ng-show="firstStep">
+        <button type="button"
+                class="btn btn-primary mb-5"
+                data-ng-if="dedicatedCloud.solution !== 'VCLOUD'"
+                data-ng-click="setAction('user/add/dedicatedCloud-user-add', passwordPolicy)"
+                data-i18n-static="dedicatedCloud_USER_add_user">
+        </button>
+        <form class="form-inline d-md-flex mb-3"
+              name="usersEntrySearchForm">
+            <span data-i18n-static="dedicatedCloud_user_management_authorization_vsphere"></span>
+            <div class="form-group ml-auto">
+                <div class="input-group">
+                    <input type="text"
+                           class="form-control"
+                           id="searchusersEntry"
+                           name="searchusersEntry"
+                           placeholder="{{:: i18n.dedicatedCloud_search_user }}"
+                           data-ng-disabled="searchLoading"
+                           data-ng-model="usersEntrySearchSelected"
+                           data-ng-model-options="{ debounce: 800 }" />
+                    <div class="input-group-btn"
+                         data-ng-if="usersEntrySearchSelected">
+                        <button type="button"
+                                class="btn btn-default"
+                                aria-label="{{ i18n.common_cancel }}"
+                                data-ng-click="usersEntrySearchSelected = ''"
+                                data-ng-disabled="searchLoading">
+                            <span class="fa fa-times" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <span class="input-group-addon"
+                          data-ng-if="!usersEntrySearchSelected">
+                        <span class="fa fa-search" aria-hidden="true"></span>
+                    </span>
+                </div>
+            </div>
+        </form>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col"
+                            data-i18n-static="dedicatedCloud_USER_name">
+                        </th>
+                        <th scope="col"
+                            data-i18n-static="dedicatedCloud_USER_firstname">
+                        </th>
+                        <th scope="col"
+                            data-i18n-static="dedicatedCloud_USER_lastname">
+                        </th>
+                        <th scope="col"
+                            data-i18n-static="dedicatedCloud_USER_mail">
+                        </th>
+                        <th scope="col"
+                            data-i18n-static="dedicatedCloud_USER_phone">
+                        </th>
+                        <th scope="col"
+                            class="text-center"
+                            data-i18n-static="dedicatedCloud_USER_token_validator">
+                        </th>
+                        <th scope="col"
+                            class="text-center"
+                            data-i18n-static="dedicatedCloud_USER_ip">
+                        </th>
+                        <th scope="col"
+                            class="text-center"
+                            data-i18n-static="dedicatedCloud_USER_ipfo">
+                        </th>
+                        <th scope="col"
+                            class="text-center"
+                            data-ng-show="dedicatedCloud.solution == 'SYSTEMCENTER'"
+                            data-i18n-static="dedicatedCloud_USER_connection_type">
+                        </th>
+                        <th scope="col"
+                            class="text-center"
+                            data-i18n-static="dedicatedCloud_USER_state">
+                        </th>
+                        <th scope="col"
+                            class="text-center min-width">
+                            <button type="button"
+                                    class="btn btn-link p-0"
+                                    title="{{ i18n.common_refresh }}"
+                                    data-ng-click="loadUsers()">
+                                <span class="fa fa-refresh" aria-label="{{ i18n.common_refresh }}"></span>
+                            </button>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody data-ng-show="loading">
+                    <tr>
+                        <td colspan="11"
+                            class="text-center">
+                            <oui-spinner data-size="s"></oui-spinner>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody data-ng-show="!loading && users.length === 0">
+                    <tr>
+                        <td colspan="11"
+                            class="text-center"
+                            data-i18n-static="dedicatedCloud_USER_empty">
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody data-ng-show="!loading && users.length > 0">
+                    <tr data-ng-repeat="user in users | orderBy:'progress'">
+                        <th scope="row"
+                            data-ng-bind="::user.name">
+                        </th>
+                        <td>
+                            <span data-ng-hide="user === userCurrentEditBack"
+                                  data-ng-bind="user.firstName || '-'">
+                            </span>
+                            <input type="text"
+                                   class="form-control"
+                                   data-ng-show="user === userCurrentEditBack"
+                                   data-ng-model="userCurrentEdit.firstName" />
+                        </td>
+                        <td>
+                            <span data-ng-hide="user === userCurrentEditBack"
+                                  data-ng-bind="user.lastName || '-'">
+                            </span>
+                            <input type="text"
+                                   class="form-control"
+                                   data-ng-show="user === userCurrentEditBack"
+                                   data-ng-model="userCurrentEdit.lastName" />
+                        </td>
+                        <td>
+                            <span data-ng-hide="user === userCurrentEditBack"
+                                  data-ng-bind="user.email || '-'">
+                            </span>
+                            <input type="text"
+                                   class="form-control"
+                                   data-ng-show="user === userCurrentEditBack"
+                                   data-ng-model="userCurrentEdit.email" />
+                        </td>
+                        <td>
+                            <span data-ng-hide="user === userCurrentEditBack"
+                                  data-ng-bind="user.phoneNumber || '-'">
+                            </span>
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="{{ tr('dedicatedCloud_USER_phone_example', phoneExample) }}"
+                                   data-ng-show="user === userCurrentEditBack"
+                                   data-ng-model="userCurrentEdit.phoneNumber"
+                                   data-uib-tooltip="{{ tr('dedicatedCloud_USER_phone_hint', phoneExample) }}"
+                                   data-tooltip-placement="top" />
+                        </td>
+                        <td class="text-center">
+                            <span class="fa"
+                                  data-ng-hide="user === userCurrentEditBack"
+                                  data-ng-class="{
+                                      'fa-check': user.isTokenValidator === true,
+                                      'fa-ban': user.isTokenValidator === false
+                                  }">
+                            </span>
+                            <input type="checkbox"
+                                   data-ng-show="user === userCurrentEditBack"
+                                   data-ng-model="userCurrentEdit.tokenValidator" />
+                        </td>
+                        <td class="text-center">
+                            <span class="fa"
+                                  data-ng-hide="user === userCurrentEditBack"
+                                  data-ng-class="{
+                                      'fa-check': user.canManageNetwork === true,
+                                      'fa-ban': user.canManageNetwork === false
+                                  }">
+                            </span>
+                            <input type="checkbox"
+                                   data-ng-show="user === userCurrentEditBack"
+                                   data-ng-model="userCurrentEdit.canManageNetwork" />
+                        </td>
+                        <td class="text-center">
+                            <span class="fa"
+                                  data-ng-hide="user === userCurrentEditBack"
+                                  data-ng-class="{
+                                      'fa-check': user.canManageIpFailOvers === true,
+                                      'fa-ban': user.canManageIpFailOvers === false
+                                  }">
+                            </span>
+                            <input type="checkbox"
+                                   data-ng-show="user === userCurrentEditBack"
+                                   data-ng-model="userCurrentEdit.canManageIpFailOvers" />
+                        </td>
+                        <td class="text-center"
+                            data-ng-show="dedicatedCloud.solution === 'SYSTEMCENTER'">
+                            <span class="fa"
+                                  data-ng-hide="user === userCurrentEditBack"
+                                  data-ng-class="{
+                                      'fa-check': user.fullAdminRo === true,
+                                      'fa-ban': user.fullAdminRo === false
+                                  }"></span>
+                            <input type="checkbox"
+                                   data-ng-show="user === userCurrentEditBack"
+                                   data-ng-model="userCurrentEdit.fullAdminRo" />
+                        </td>
+                        <td class="text-center">
+                            <span data-ng-if="dedicatedCloud.solution !== 'SYSTEMCENTER' || user.name !== 'infraadmin'"
+                                  data-ng-switch="user.state">
+                                <span class="label label-info"
+                                      data-ng-switch-when="CREATING"
+                                      data-i18n-static="dedicatedCloud_USER_state_CREATING">
+                                </span>
+                                <span class="label label-warning"
+                                      data-ng-switch-when="DELETING"
+                                      data-i18n-static="dedicatedCloud_USER_state_DELETING">
+                                </span>
+                                <span class="label label-success"
+                                      data-ng-switch-when="DELIVERED"
+                                      data-i18n-static="dedicatedCloud_USER_state_DELIVERED">
+                                </span>
+                                <span class="label label-danger"
+                                       data-ng-switch-when="ERROR"
+                                       data-i18n-static="dedicatedCloud_USER_state_ERROR"></span>
+                                <span class="label"
+                                      data-ng-switch-default
+                                      data-ng-bind="tr('dedicatedCloud_USER_state_' + user.state)">
+                                </span>
+                            </span>
+                            <span data-ng-if="dedicatedCloud.solution === 'SYSTEMCENTER' && user.name === 'infraadmin'"
+                                  data-ng-switch="user.activationState">
+                                <span class="label label-success"
+                                      data-ng-switch-when="ENABLED"
+                                      data-i18n-static="dedicatedCloud_USER_state_DELIVERED">
+                                </span>
+                                <span class="label label-danger"
+                                      data-ng-switch-when="DISABLED"
+                                      data-i18n-static="dedicatedCloud_USER_state_DISABLED">
+                                </span>
+                                <span class="label"
+                                      data-ng-switch-default
+                                      data-ng-bind="tr('dedicatedCloud_USER_state_' + user.state)">
+                                </span>
+                            </span>
+                        </td>
+                        <td class="text-center">
+                            <div class="btn-group"
+                                 data-ng-if="user.state=='DELIVERED' && user != userCurrentEditBack && !user.isUpdating"
+                                 data-uib-dropdown
+                                 data-dropdown-append-to-body>
+                                <button id="btn-dedicatedCloud-user-action-{{ index }}"
+                                        type="button"
+                                        class="btn btn-link"
+                                        data-uib-dropdown-toggle>
+                                    <span class="ovh-font ovh-font-dots align-top" aria-hidden="true"></span>
+                                    <span class="sr-only"
+                                          data-translate="common_actions">
+                                    </span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-right"
+                                    role="menu"
+                                    aria-labelledby="btn-dedicatedCloud-user-action-{{ index }}"
+                                    data-uib-dropdown-menu>
+                                    <li role="menuitem">
+                                        <button type="button"
+                                                class="btn btn-link"
+                                                data-ng-click="setUserCurrentEdit(user)"
+                                                data-i18n-static="dedicatedCloud_USER_modify">
+                                        </button>
+                                    </li>
+                                    <li role="menuitem">
+                                        <button type="button"
+                                                class="btn btn-link"
+                                                data-ng-click="displayRights(user)"
+                                                data-i18n-static="dedicatedCloud_USER_view_modify_rights_by_DC">
+                                        </button>
+                                    </li>
+                                    <li role="menuitem">
+                                        <button type="button"
+                                                class="btn btn-link"
+                                                data-ng-click="setAction('user/password/reset/dedicatedCloud-user-password-reset', {user: user, passwordPolicy: passwordPolicy})"
+                                                data-i18n-static="dedicatedCloud_USER_change_password">
+                                        </button>
+                                    </li>
+                                    <li role="menuitem"
+                                        data-ng-if="dedicatedCloud.solution !== 'SYSTEMCENTER' && user.name !== 'infraadmin'">
+                                        <button type="button"
+                                                class="btn btn-link"
+                                                data-ng-click="setAction('user/delete/dedicatedCloud-user-delete', user)"
+                                                data-i18n-static="dedicatedCloud_USER_delete">
+                                        </button>
+                                    </li>
+                                    <li role="menuitem"
+                                        data-ng-if="dedicatedCloud.solution !== 'SYSTEMCENTER' && user.name === 'infraadmin'">
+                                        <button type="button"
+                                                class="btn btn-link"
+                                                data-ng-click="setAction('user/delete/dedicatedCloud-user-delete', user)"
+                                                data-i18n-static="dedicatedCloud_USER_delete">
+                                        </button>
+                                    </li>
+                                    <li role="menuitem"
+                                        data-ng-if="dedicatedCloud.solution === 'SYSTEMCENTER' && user.name !== 'infraadmin'">
+                                        <button type="button"
+                                                class="btn btn-link"
+                                                data-ng-click="setAction('user/delete/dedicatedCloud-user-delete', user)"
+                                                data-i18n-static="dedicatedCloud_USER_delete">
+                                        </button>
+                                    </li>
+                                    <li role="menuitem"
+                                        data-ng-if="dedicatedCloud.solution === 'SYSTEMCENTER' && user.name === 'infraadmin' && user.activationState === 'DISABLED'">
+                                        <button type="button"
+                                                class="btn btn-link"
+                                                data-ng-click="setAction('user/enable/dedicatedCloud-user-enable', user)"
+                                                data-i18n-static="dedicatedCloud_USER_enable">
+                                        </button>
+                                    </li>
+                                    <li role="menuitem"
+                                        data-ng-if="dedicatedCloud.solution === 'SYSTEMCENTER' && user.name === 'infraadmin' && user.activationState === 'ENABLED'">
+                                        <button type="button"
+                                                class="btn btn-link"
+                                                data-ng-click="setAction('user/disable/dedicatedCloud-user-disable', user)"
+                                                data-i18n-static="dedicatedCloud_USER_disable">
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div data-ng-if="user === userCurrentEditBack">
+                                <button type"button"
+                                        class="btn btn-link"
+                                        data-ng-show="userCurrentEdit.isValid"
+                                        data-ng-click="saveUserCurrentEdit()">
+                                    <span class="oui-icon oui-icon-success" aria-hidden="true"></span>
+                                </button>
+                                <button type"button"
+                                        class="btn btn-link"
+                                        data-ng-click="cancelUserCurrentEdit()">
+                                    <span class="oui-icon oui-icon-error" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div data-pagination-front
+             data-items="usersId"
+             data-paginated-items="users"
+             data-current-page="currentPage"
+             data-nb-pages="nbPages"
+             data-items-per-page="itemsPerPage"
+             data-transform-item="transformItem(item)"
+             data-on-transform-item-done="onTransformItemDone(items)"
+             data-page-placeholder="{{ tr('pagination_page', [currentPage, nbPages]) }}"
+             data-item-per-page-placeholder="{{ tr('pagination_display') }}">
+        </div>
+    </div>
+
+    <!-- USER RIGHTS -->
+    <div class="row"
+         data-ng-show="!firstStep">
+        <div class="col-sm-9">
+            <button type="button"
+                    class="btn btn-link mb-5"
+                    title="{{ i18n.common_back }}"
+                    data-ng-click="displayUsers()">
+                <span class="fa fa-chevron-left mr-2"
+                      aria-hidden="true">
+                </span>
+                <span data-i18n-static="common_back"></span>
+            </button>
+            <p data-ng-bind-html="tr('dedicatedCloud_USER_rights_management_by_datacenter', [selectedUser.name])"></p>
+            <div class="alert alert-danger"
+                 role="alert"
+                 data-ng-show="warningLine"
+                 data-i18n-static="dedicatedCloud_USER_warning_line">
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col"
+                            data-i18n-static="dedicatedCloud_datacenter_count">
+                        </th>
+                        <th scope="col"
+                            class="text-center"
+                            data-i18n-static="dedicatedCloud_USER_access_vsphere">
+                        </th>
+                        <th scope="col"
+                            class="text-center"
+                            data-i18n-static="dedicatedCloud_USER_resource">
+                        </th>
+                        <th scope="col"
+                            class="text-center"
+                            data-i18n-static="dedicatedCloud_USER_VM_NETWORK_ROLE">
+                        </th>
+                        <th scope="col"
+                            class="text-center"
+                            data-i18n-static="dedicatedCloud_USER_NETWORK_ROLE">
+                        </th>
+                        <th scope="col"
+                            class="text-center">
+                            <button type="button"
+                                    class="btn btn-link p-0"
+                                    title="{{ i18n.common_refresh }}"
+                                    data-ng-click="refreshTableRights()">
+                                <span class="fa fa-refresh" aria-label="{{ i18n.common_refresh }}"></span>
+                            </button>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody data-ng-show="rightsLoading">
+                    <tr>
+                        <td colspan="6"
+                            class="text-center">
+                            <oui-spinner data-size="s"></oui-spinner>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody data-ng-hide="rightsLoading">
+                    <tr data-ng-repeat="(rightIndex, right) in rights.list.results"
+                        data-ng-class="{ 'warningLine': (warningLine && rightsCurrentEdit.datacenterId == right.datacenterId) }">
+                        <th scope="row"
+                            data-ng-bind="right.datacenterName">
+                        </th>
+                        <td class="text-center"
+                            data-ng-bind="tr('dedicatedCloud_USER_right_'+right.right)">
+                        </td>
+                        <td class="text-center">
+                            <span class="fa"
+                                  aria-label="{{ i18n.dedicatedCloud_USER_resource }}"
+                                  data-ng-class="{
+                                      'fa-check': right.canAddResource === true,
+                                      'fa-ban': right.canAddResource === false
+                                  }">
+                            </span>
+                        </td>
+                        <td class="text-center"
+                            data-ng-bind="tr('dedicatedCloud_USER_right_'+right.vmNetworkRole)">
+                        </td>
+                        <td class="text-center"
+                            data-ng-bind="tr('dedicatedCloud_USER_right_'+right.networkRole)">
+                        </td>
+                        <td class="text-center">
+                            <button type="button"
+                                    class="btn btn-link"
+                                    title="{{ tr('dedicatedCloud_USER_right_modify' )}}"
+                                    data-ng-click="setRightsCurrentEdit(rightIndex)">
+                                <span class="oui-icon oui-icon-pen_line" aria-hidden="true"></span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div data-pagination-server-side="rightTable"
+                 data-pagination-server-side-function="loadUserRight"
+                 data-pagination-server-side-paginated-stuff="rights"
+                 data-pagination-server-side-table-loading="rightsLoading">
+            </div>
+        </div>
+    </div>
+</div>

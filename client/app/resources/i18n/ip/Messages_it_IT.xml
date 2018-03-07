@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="module_ip_dashboard_title" qtlid="194216">Gestisci i tuoi indirizzi IP</translation>
+   <translation id="ip_dashboard_error" qtlid="175205">Si è verificato un errore nel caricamento delle tue informazioni</translation>
+   <translation id="ip_services_error" qtlid="210384">Si è verificato un errore durante il caricamento di questi servizi: {0}. Ti preghiamo diirprovare più tardi.</translation>
+   <translation id="ip_block_error" qtlid="175218">Si è verificato un errore nel caricamento delle informazioni di {0}.</translation>
+   <translation id="ip_service_error" qtlid="175231">Si è verificato un errore nel caricamento delle informazioni del servizio {0}.</translation>
+
+   <translation id="ip" qtlid="172696">IP e Sicurezza</translation>
+   <translation id="ip_month" qtlid="40222">mese</translation>
+   <translation id="ip_ip" qtlid="25615">IP</translation>
+   <translation id="ip_iplb" qtlid="223580">IP Load Balancing</translation>
+   <translation id="ip_ipv4" qtlid="101781">IPv4</translation>
+   <translation id="ip_ipv6" qtlid="34126">IPv6</translation>
+   <translation id="ip_ipblock" qtlid="200911">Blocco IP</translation>
+   <translation id="ip_taskpending_label" qtlid="2690">Operazione in corso</translation>
+
+   <translation id="optional" qtlid="175244">Opzionale</translation>
+   <translation id="ip_required_field" qtlid="191434">campo obbligatorio </translation>
+   <translation id="common_available_soon" qtlid="126832">Disponibile prossimamente</translation>
+   <translation id="global_select" qtlid="159046">Seleziona...</translation>
+   <translation id="global_add" qtlid="37923">Aggiungi</translation>
+   <translation id="common_updating" qtlid="223593">Aggiornamento...</translation>
+
+   <translation id="module_ip_tab_ip" qtlid="25615">IP</translation>
+   <translation id="module_ip_tab_ip-lb" qtlid="223580">IP Load Balancing</translation>
+
+   <translation id="ip_loader_loading_uniq" qtlid="210397">Caricamento delle informazioni...</translation>
+   <translation id="ip_loader_loading_state" qtlid="210410">Caricamento del servizio {0} su {1}...</translation>
+   <translation id="ip_loader_tips" qtlid="210423">Attenzione : Puoi selezionare direttamente un servizio dalla lista qui di seguito, al fine di caricare unicamente quel determinato servizio così da accelerare il caricamento della pagina.</translation>
+
+   <translation id="ip_service_PARK" qtlid="204571">Parking degli IP</translation>
+   <translation id="ip_service_UNASSOCIATED" qtlid="204584">IP non-associati</translation>
+
+   <translation id="ip_alerts_none" qtlid="175270">Nessun alert</translation>
+   <translation id="ip_alerts_service_none" qtlid="210436">Nessun alert per questo servizio</translation>
+   <translation id="ip_alerts_1" qtlid="175283">1 alert</translation>
+   <translation id="ip_alerts_other" qtlid="175296">{} alert</translation>
+   <translation id="ip_alerts_service_1" qtlid="210449">1 alert per questo servizio</translation>
+   <translation id="ip_alerts_service_other" qtlid="210462">{} alert per questo servizio</translation>
+   <translation id="ip_alerts_spam" qtlid="175309">Nessun IP bloccato (Antispam)</translation>
+   <translation id="ip_alerts_spam_1" qtlid="175322">1 IP bloccato (Antispam)</translation>
+   <translation id="ip_alerts_spam_other" qtlid="175335">{} IP bloccati (Antispam)</translation>
+   <translation id="ip_alerts_antihack" qtlid="222605">Nessun IP bloccato (Anti-hack)</translation>
+   <translation id="ip_alerts_antihack_1" qtlid="222618">1 IP bloccato (Anti-hack)</translation>
+   <translation id="ip_alerts_antihack_other" qtlid="222631">{} IP bloccati (Anti-hack)</translation>
+   <translation id="ip_alerts_arp" qtlid="210475">Nessun IP bloccato (ARP)</translation>
+   <translation id="ip_alerts_arp_1" qtlid="210488">1 IP bloccato (ARP)</translation>
+   <translation id="ip_alerts_arp_other" qtlid="210501">{} IPs bloccati (ARP)</translation>
+   <translation id="ip_alerts_mitigation" qtlid="175348">Nessun IP attaccato (Mitigazione)</translation>
+   <translation id="ip_alerts_mitigation_1" qtlid="175361">1 IP attaccato (Mitigazione)</translation>
+   <translation id="ip_alerts_mitigation_other" qtlid="175374">{} IP attaccati (Mitigazione)</translation>
+   <translation id="ip_block" qtlid="141366">Blocco:</translation>
+   <translation id="ip_block_all" qtlid="69173">Tutti</translation>
+   <translation id="ip_block_order" qtlid="114378">Ordinare un blocco di IP</translation>
+   <translation id="ip_additional_order" qtlid="181877">Ordina IP aggiuntivi</translation>
+   <translation id="ip_search" qtlid="122275">Ricerca...</translation>
+   <translation id="ip_table_empty" qtlid="106715">Nessun dato da visualizzare</translation>
+   <translation id="ip_table_search" qtlid="98288">Ricerca...</translation>
+   <translation id="ip_table_ipblock_refresh" qtlid="210514">Refresh dell'IP {0}...</translation>
+   <translation id="ip_manage_task_pending" qtlid="210527">Un'operazione è in corso su uno degli IP del tuo server.</translation>
+
+   <translation id="ip_migration" qtlid="194840">Importa IP Failover</translation>
+   <translation id="ip_export" qtlid="250121">Esporta i tuoi IP (CSV)</translation>
+   <translation id="ip_export_csv_expl" qtlid="250134">Il tempo di esportazione richiede pochi secondi e varia in base al numero di IP</translation>
+   <translation id="ip_export_csv_confirm" qtlid="250147">Vuoi davvero esportare gli IP in formato CSV?</translation>
+   <translation id="ip_export_csv_success" qtlid="250160">Esportazione degli IP completata</translation>
+   <translation id="ip_export_csv_error" qtlid="250173">Si è verificato un errore nell'esportazione</translation>
+   <translation id="ip_export_csv_creation_doing" qtlid="250186">Creazione del file in corso, ti preghiamo di attendere...</translation>
+   <translation id="ip_migration_step1_question" qtlid="194853">Per importare un IP, è necessario il codice generato dal manager del server associato all'IP che vuoi trasferire.</translation>
+   <translation id="ip_migration_step1_ip" qtlid="194866">IP o blocco IP:</translation>
+   <translation id="ip_migration_step1_token" qtlid="194879">Codice:</translation>
+   <translation id="ip_migration_step1_error" qtlid="194892">Si è verificato un errore nel recupero dei server disponibili </translation>
+   <translation id="ip_migration_step2_question" qtlid="194905">Seleziona il server di destinazione:</translation>
+   <translation id="ip_migration_step2_service" qtlid="194918">Server di destinazione:</translation>
+   <translation id="ip_migration_step2_error" qtlid="194931">Si è verificato un errore nel controllo delle modalità di trasferimento</translation>
+   <translation id="ip_migration_step2_error_OPTION_NOT_ALLOWED" qtlid="194944">Non disponi dei diritti necessari ad associare {0} al server {1}</translation>
+   <translation id="ip_migration_step2_error_INCOMPATIBLE" qtlid="194957">Il server {1} non è compatibile con {0}</translation>
+   <translation id="ip_migration_step2_error_EXPIRED" qtlid="194970">Il servizio {1} è scaduto.</translation>
+
+   <translation id="ip_migration_step2_checkservice" qtlid="194983">Verifica delle modalità di trasferimento...</translation>
+   <translation id="ip_migration_step2_success" qtlid="194996">Il server {1} è compatibile con {0}</translation>
+   <translation id="ip_migration_step3_question" qtlid="181214">Seleziona la durata:</translation>
+   <translation id="ip_migration_step3_error" qtlid="195009">Si è verificato un errore nel recupero delle durate</translation>
+   <translation id="ip_migration_step5_question" qtlid="177496">Riepilogo del tuo ordine</translation>
+   <translation id="ip_migration_step5_success" qtlid="195022">La richiesta di trasferimento (ordine <a href='{0}' target='_blank'>{1}</a>) è stata presa in carico.</translation>
+   <translation id="ip_migration_step5_error" qtlid="195035">Si è verificato un errore nella richiesta di trasferimento.</translation>
+
+   <translation id="ip_filter_services__ALL" qtlid="181890">Tutti i servizi</translation>
+   <translation id="ip_filter_services__ALERTS" qtlid="181903">Servizi in alert</translation>
+   <translation id="ip_filter_services__PARK" qtlid="210540">Parking degli IP</translation>
+
+   <translation id="ip_filter_services_title_OTHER" qtlid="28603">Altri</translation>
+   <translation id="ip_filter_services_title_CDN" qtlid="99812">CDN</translation>
+   <translation id="ip_filter_services_title_DEDICATED" qtlid="101901">Server Dedicati</translation>
+   <translation id="ip_filter_services_title_HOSTED_SSL" qtlid="210553">Hosted SSL</translation>
+   <translation id="ip_filter_services_title_PRIVATE_CLOUD" qtlid="162205">Dedicated Cloud</translation>
+   <translation id="ip_filter_services_title_VPS" qtlid="23083">VPS</translation>
+   <translation id="ip_filter_services_title_VRACK" qtlid="210566">VRACK</translation>
+   <translation id="ip_filter_services_title_XDSL" qtlid="104614">xDSL</translation>
+   <translation id="ip_filter_services_title_MAIL" qtlid="210579">Server Mail</translation>
+   <translation id="ip_filter_services_title_CLOUD" qtlid="15677">Cloud</translation>
+   <translation id="ip_filter_services_title_IP_LOAD_BALANCING" qtlid="223580">IP Load Balancing</translation>
+
+   <translation id="ip_filter_services_CDN" qtlid="181916">Solo le CDN</translation>
+   <translation id="ip_filter_services_DEDICATED" qtlid="181929">Solo i Server Dedicati</translation>
+   <translation id="ip_filter_services_HOSTED_SSL" qtlid="181942">Solo Hosted SSL</translation>
+   <translation id="ip_filter_services_PCC" qtlid="181955">Solo Dedicated Cloud</translation>
+   <translation id="ip_filter_services_VPS" qtlid="181968">Solo VPS</translation>
+   <translation id="ip_filter_services_VRACK" qtlid="181981">Solo VRACK</translation>
+   <translation id="ip_filter_services_XDSL" qtlid="181994">Solo xDSL</translation>
+   <translation id="ip_filter_services_MAIL" qtlid="191369">Unicamente per i Mail Server</translation>
+
+   <translation id="ip_table_collapseall" qtlid="178835">Nascondi tutto</translation>
+   <translation id="ip_table_not_allowed" qtlid="141379">Non è possibile gestire mitigazione e Firewall Network per questo IP. Per maggiori informazioni, contatta il supporto.</translation>
+   <translation id="ip_table_search_empty" qtlid="141392">Nessun indirizzo IP corrisponde ai tuoi criteri di ricerca</translation>
+   <translation id="ip_table_header_service" qtlid="31042">Servizio</translation>
+   <translation id="ip_table_header_ip_address" qtlid="26191">Indirizzo IP</translation>
+   <translation id="ip_table_header_country" qtlid="25171">Paese</translation>
+   <translation id="ip_table_header_reverse" qtlid="32338">Reverse</translation>
+   <translation id="ip_table_header_virtual_mac" qtlid="141405">MAC virtuale</translation>
+   <translation id="ip_table_header_antispam" qtlid="148331">Antispam</translation>
+   <translation id="ip_table_header_mitigation" qtlid="138233">Mitigazione</translation>
+   <translation id="ip_table_header_security" qtlid="141418">Firewall</translation>
+   <translation id="ip_table_header_game_mitigation" qtlid="232534">Firewall Game</translation>
+   <translation id="ip_table_header_alerts" qtlid="72797">Alert</translation>
+   <translation id="ip_table_header_visiblecols_btn" qtlid="4010">Configura</translation>
+   <translation id="ip_table_header_visiblecols" qtlid="175387">Colonne visibili</translation>
+
+   <translation id="ip_agora_table_header_offer" qtlid="38217">Offerta</translation>
+   <translation id="ip_agora_table_header_quantity" qtlid="37107">Quantità</translation>
+   <translation id="ip_agora_table_header_country" qtlid="182215">Localizzati in</translation>
+   <translation id="ip_agora_table_header_organisation" qtlid="32278">Organizzazione</translation>
+
+   <translation id="ip_table_firewall" qtlid="141418">Firewall</translation>
+   <translation id="ip_table_manage_reverse" qtlid="175400">Modifica il reverse</translation>
+   <translation id="ip_table_manage_reverse_question" qtlid="210592">Inserisci un reverse valido per questo IP e clicca su "Conferma".</translation>
+   <translation id="ip_table_manage_reverse_success" qtlid="151854">L'aggiornamento del Reverse è stato effettuato</translation>
+   <translation id="ip_table_manage_reverse_failure" qtlid="175413">Si è verificato un errore nell'aggiornamento del reverse</translation>
+   <translation id="ip_table_manage_mac" qtlid="141457">Modifica il MAC virtuale</translation>
+
+
+   <translation id="ip_table_manage_mitigation_DEFAULT_to_PERMANENT" qtlid="175426">Mitigazione: modalità permanente</translation>
+   <translation id="ip_table_manage_mitigation_PERMANENT_to_AUTO" qtlid="141470">Mitigazione: modalità auto</translation>
+   <translation id="ip_table_manage_mitigation_stats" qtlid="26671">Statistiche</translation>
+   <translation id="ip_table_manage_firewall_enable" qtlid="222644">Attiva il firewall</translation>
+   <translation id="ip_table_manage_firewall_disable" qtlid="222657">Disattiva il firewall</translation>
+   <translation id="ip_table_manage_firewall_disable_tooltip" qtlid="141509">La mitigazione è attiva, il firewall non può essere disattivato.</translation>
+   <translation id="ip_table_manage_firewall_configure" qtlid="141522">Crea Firewall</translation>
+   <translation id="ip_table_manage_firewall_rules" qtlid="176846">Configura il Firewall</translation>
+   <translation id="ip_table_manage_antispam_unblock" qtlid="148331">Antispam</translation>
+   <translation id="ip_table_manage_game_mitigation" qtlid="232547">Configura il Firewall Game</translation>
+   <translation id="ip_table_manage_add_ipv6block" qtlid="178978">Seleziona un IPv6</translation>
+   <translation id="ip_table_manage_add_ipv6block_question" qtlid="210605">Inserisci un IPv6 valido compreso in questo blocco e clicca su "Conferma".</translation>
+   <translation id="ip_table_manage_add_ipv6block_failure" qtlid="175452">Si è verificato un errore nell'aggiunta di un IPv6.</translation>
+   <translation id="ip_table_manage_select_ipv6block" qtlid="210618">Per selezionare un IPv6 compreso in questo blocco, clicca qui.</translation>
+   <translation id="ip_table_manage_delegate_ipv6block" qtlid="272838">Delega del reverse </translation>
+   <translation id="ip_table_manage_view_iporganisation_details" qtlid="210631">Dettagli dell'organizzazione</translation>
+   <translation id="ip_table_manage_view_iporganisation_change" qtlid="262700">Modifica l'organizzazione</translation>
+
+   <translation id="ip_table_manage_add_virtualmac" qtlid="175465">Aggiungi un MAC virtuale</translation>
+   <translation id="ip_table_manage_view_virtualmac" qtlid="175478">Dettagli del MAC virtuale</translation>
+   <translation id="ip_table_manage_view_virtualmac_question" qtlid="210644">Questi i dettagli del MAC virtuale :</translation>
+   <translation id="ip_table_manage_del_virtualmac" qtlid="175491">Elimina il MAC virtuale</translation>
+   <translation id="ip_virtualmac_add_new" qtlid="175504">Crea un nuovo MAC virtuale</translation>
+   <translation id="ip_virtualmac_add_existing" qtlid="175517">Utilizza un MAC virtuale esistente</translation>
+   <translation id="ip_virtualmac_type" qtlid="2642">Tipo</translation>
+   <translation id="ip_virtualmac_field" qtlid="141405">MAC virtuale</translation>
+   <translation id="ip_virtualmac_machinename" qtlid="175530">Nome della macchina virtuale</translation>
+   <translation id="ip_virtualmac_add_new_success" qtlid="175543">È stato generato un nuovo MAC virtuale, che sarà disponibile sull'IP {0} entro pochi minuti.</translation>
+   <translation id="ip_virtualmac_add_new_failure" qtlid="175556">Si è verificato un errore nella generazione di un nuovo MAC virtuale sull'IP {0}</translation>
+   <translation id="ip_virtualmac_add_existing_success" qtlid="175569">L'IP {0} sarà associato al MAC virtuale esistente entro pochi minuti.</translation>
+   <translation id="ip_virtualmac_add_impossible_server" qtlid="256269">È necessario associare questo IP a un server</translation>
+   <translation id="ip_virtualmac_add_impossible_status" qtlid="256282">Un'operazione è in corso</translation>
+   <translation id="ip_virtualmac_add_impossible_unavailable" qtlid="256295">Servizio non disponibile per questo IP</translation>
+   <translation id="ip_virtualmac_add_impossible_exists" qtlid="256308">Esiste già un MAC virtuale</translation>
+
+
+   <translation id="ip_virtualmac_add_existing_failure" qtlid="175582">Si è verificato un errore nell'associazione di un MAC virtuale esistente all'IP {0}</translation>
+   <translation id="ip_virtualmac_delete_confirmation" qtlid="175595">Vuoi davvero eliminare il MAC virtuale {0} dall'IP {1}?</translation>
+   <translation id="ip_virtualmac_delete_success" qtlid="175608">Il MAC virtuale {0} sarà eliminato dall'IP {1} entro pochi minuti.</translation>
+   <translation id="ip_virtualmac_delete_failure" qtlid="175621">Si è verificato un errore nell'eliminazione del MAC virtuale {0} dell'IP {1}</translation>
+
+   <translation id="ip_failover" qtlid="175634">IP Fail Over</translation>
+   <translation id="ip_failover_short" qtlid="175647">FO</translation>
+   <translation id="ip_failover_impossible_delete" qtlid="281745">Impossibile eliminare questo IP</translation>
+   <translation id="ip_failover_impossible_move" qtlid="281758">Impossibile spostare questo IP</translation>
+   <translation id="ip_failover_cloud_move_info" qtlid="277715">Presto potrai trasferire gli IP Failover Cloud verso altri prodotti OVH</translation>
+   <translation id="ip_position" qtlid="45988">Priorità</translation>
+   <translation id="ip_position_tooltip" qtlid="140469">La lettura delle regole è sequenziale. La regola "0" ha la priorità maggiore.</translation>
+   <translation id="ip_rule" qtlid="54917">Regola</translation>
+   <translation id="ip_status" qtlid="33790">Stato</translation>
+   <translation id="ip_creation_date" qtlid="26419">Data di creazione</translation>
+   <translation id="ip_action" qtlid="56105">Azione</translation>
+   <translation id="ip_protocol" qtlid="19711">Protocollo</translation>
+   <translation id="ip_source_ip" qtlid="138376">IP sorgente</translation>
+   <translation id="ip_source_port" qtlid="141548">Porta sorgente</translation>
+   <translation id="ip_source_port_notice" qtlid="141561">dalla porta sorgente</translation>
+   <translation id="ip_source_port_range_max" qtlid="141574">fino alla porta sorgente (facoltativo)</translation>
+   <translation id="ip_destination_port" qtlid="141587">Porta di destinazione</translation>
+   <translation id="ip_destination_port_notice" qtlid="141600">dalla porta di destinazione</translation>
+   <translation id="ip_destination_port_range_max" qtlid="138454">fino alla porta di destinazione (facoltativo)</translation>
+   <translation id="ip_options" qtlid="23395">Opzioni</translation>
+   <translation id="ip_options_tcp" qtlid="141613">Opzioni TCP</translation>
+   <translation id="ip_options_udp" qtlid="141626">Opzioni UDP</translation>
+   <translation id="ip_port_range_max" qtlid="141639">fino alla porta</translation>
+   <translation id="ip_port_range_from" qtlid="141652">dalla porta</translation>
+   <translation id="ip_rule_status_CREATION_PENDING" qtlid="26227">In creazione</translation>
+   <translation id="ip_rule_status_REMOVAL_PENDING" qtlid="133929">In corso di eliminazione</translation>
+   <translation id="ip_rule_status_OK" qtlid="62028">Attivata</translation>
+   <translation id="ip_description_field" qtlid="9238">Descrizione</translation>
+   <translation id="ip_description_new_title" qtlid="149345">Aggiungi una descrizione</translation>
+   <translation id="ip_description_edit_title" qtlid="175660">Modifica la descrizione</translation>
+   <translation id="ip_description_edit_field" qtlid="103702">Descrizione:</translation>
+   <translation id="ip_description_edit_success" qtlid="175673">La descrizione dell'IP {0} è stata modificata.</translation>
+   <translation id="ip_description_edit_failure" qtlid="175686">Si è verificato un errore nella modifica della descrizione dell'IP {0}</translation>
+
+<!-- ANTISPAM -->
+   <translation id="ip_antispam_current_ip" qtlid="26191">Indirizzo IP</translation>
+   <translation id="ip_antispam_status" qtlid="26443">Stato</translation>
+   <translation id="ip_antispam_date_blocking" qtlid="175699">Data del blocco</translation>
+   <translation id="ip_antispam_date_blocking_end" qtlid="175712">Data di sblocco possibile</translation>
+
+   <translation id="ip_antispam_status_BLOCKED_FOR_SPAM" qtlid="151386">Bloccato</translation>
+   <translation id="ip_antispam_status_UNBLOCKED" qtlid="151399">Non bloccato</translation>
+   <translation id="ip_antispam_status_UNBLOCKING" qtlid="151412">Sblocco in corso</translation>
+
+   <translation id="ip_antispam_periods_table_headers_date" qtlid="24523">Data</translation>
+   <translation id="ip_antispam_periods_table_headers_score" qtlid="151438">Spam score</translation>
+   <translation id="ip_antispam_periods_table_headers_total" qtlid="32458">Totale</translation>
+   <translation id="ip_antispam_periods_table_headers_spamscount" qtlid="151451">Numero di Spam</translation>
+   <translation id="ip_antispam_periods_table_empty" qtlid="37527">Dettagli</translation>
+   <translation id="ip_antispam_periods_table_see_more" qtlid="37527">Dettagli</translation>
+   <translation id="ip_antispam_unblock_title" qtlid="175725">Sblocca l'antispam per l'IP {0}</translation>
+   <translation id="ip_antispam_unblock_button" qtlid="148344">Sblocca l'Antispam</translation>
+   <translation id="ip_antispam_unblock_error" qtlid="148409">Si è verificato un errore durante lo sblocco dell'IP {0}</translation>
+   <translation id="ip_antispam_details_information_title" qtlid="151464">Spam individuati</translation>
+   <translation id="ip_antispam_details_information" qtlid="151477">Qui trovi le informazioni sul periodo di Antispam selezionato:</translation>
+   <translation id="ip_antispam_details_information_search_placeholder" qtlid="140612">Ricerca in corso...</translation>
+   <translation id="ip_antispam_details_information_table_header_ip" qtlid="151490">IP di destinazione</translation>
+   <translation id="ip_antispam_details_information_table_header_messageid" qtlid="151503">Message ID</translation>
+   <translation id="ip_antispam_details_information_table_header_date" qtlid="24523">Data</translation>
+   <translation id="ip_antispam_details_information_table_header_spamscore" qtlid="151516">SpamScore</translation>
+   <translation id="ip_antispam_load_error" qtlid="175738">Si è verificato un errore nel caricamento delle informazioni dell'antispam</translation>
+
+<!-- arp -->
+   <translation id="ip_table_manage_view_arp" qtlid="195347">ARP</translation>
+   <translation id="ip_arp_status_BLOCKED" qtlid="151386">Bloccato</translation>
+   <translation id="ip_arp_status_UNBLOCKING" qtlid="151412">Sblocco in corso</translation>
+   <translation id="ip_arp_status" qtlid="26443">Stato</translation>
+   <translation id="ip_arp_blockedsince" qtlid="134410">Bloccato da</translation>
+   <translation id="ip_arp_remainingtime" qtlid="210657">Tempo residuo (s)</translation>
+   <translation id="ip_arp_unblock" qtlid="200833">Sblocca l'IP</translation>
+   <translation id="ip_arp_unblock_success" qtlid="210670">L'IP verrà sbloccato tra qualche minuto.</translation>
+   <translation id="ip_arp_unblock_failure" qtlid="210683">Un errore è emerso durante lo sblocco dello spam ARP.</translation>
+
+<!-- antihack -->
+   <translation id="ip_table_manage_view_antihack" qtlid="167431">Anti-hack</translation>
+   <translation id="ip_antihack_status_BLOCKED" qtlid="151386">Bloccato</translation>
+   <translation id="ip_antihack_status_UNBLOCKING" qtlid="151412">Sblocco in corso</translation>
+   <translation id="ip_antihack_status" qtlid="26443">Stato</translation>
+   <translation id="ip_antihack_blockedsince" qtlid="134410">Bloccato da</translation>
+   <translation id="ip_antihack_remainingtime" qtlid="210657">Tempo residuo (s)</translation>
+   <translation id="ip_antihack_unblock" qtlid="200833">Sblocca l'IP</translation>
+   <translation id="ip_antihack_unblock_success" qtlid="210670">L'IP verrà sbloccato tra qualche minuto.</translation>
+   <translation id="ip_antihack_unblock_failure" qtlid="222670">Si è verificato un errore nello sblocco dello spam Anti-hack.</translation>
+<!-- Mitigation -->
+   <translation id="ip_mitigation_DEFAULT" qtlid="134215">Automatico</translation>
+   <translation id="ip_block_mitigation_DEFAULT" qtlid="323353">Apri per maggiori dettagli</translation>
+   <translation id="ip_mitigation_PERMANENT" qtlid="175751">Permanente</translation>
+   <translation id="ip_mitigation_FORCED" qtlid="134202">Forzato</translation>
+   <translation id="ip_mitigation_CREATION_PENDING" qtlid="26383">In corso</translation>
+   <translation id="ip_mitigation_REMOVAL_PENDING" qtlid="26383">In corso</translation>
+   <translation id="ip_mitigation_permanent_title_button" qtlid="175764">Attiva la mitigazione permanente</translation>
+   <translation id="ip_mitigation_permanent_title" qtlid="175764">Attiva la mitigazione permanente</translation>
+   <translation id="ip_mitigation_permanent_question" qtlid="175777">Vuoi davvero attivare la mitigazione permanente sull'IP {0}?</translation>
+   <translation id="ip_mitigation_permanent_success" qtlid="175790">La mitigazione sarà attiva e permanente entro pochi minuti sull'IP {0}</translation>
+   <translation id="ip_mitigation_permanent_failed" qtlid="175803">Si è verificato un errore nell'attivazione in modalità permanente sull'IP {0}</translation>
+   <translation id="ip_mitigation_auto_title_button" qtlid="142029">Imposta la mitigazione in modalità auto</translation>
+   <translation id="ip_mitigation_auto_title" qtlid="142029">Imposta la mitigazione in modalità auto</translation>
+   <translation id="ip_mitigation_auto_question" qtlid="142042">Vuoi davvero impostare la mitigazione in modalità auto sull'IP {0}?</translation>
+   <translation id="ip_mitigation_auto_success" qtlid="140508">La mitigazione passerà in modalità automatica in qualche minuto sull'IP {0}</translation>
+   <translation id="ip_mitigation_auto_failed" qtlid="142055">Si è verificato un errore durante l'impostazione della mitigazione in modalità auto sull'IP {0}</translation>
+   <translation id="ip_mitigation_statistics_title" qtlid="26671">Statistiche</translation>
+   <translation id="ip_mitigation_statistics_back_title_button" qtlid="4118">Ritorna</translation>
+   <translation id="ip_mitigation_statistics_current_ip" qtlid="142068">Visualizza le statistiche della mitigazione per l'IP di destinazione: {0}</translation>
+   <translation id="ip_mitigation_statistics_to" qtlid="88725">Dal</translation>
+   <translation id="ip_mitigation_statistics_mode_realtime" qtlid="142081">In tempo reale</translation>
+   <translation id="ip_mitigation_statistics_mode_date" qtlid="142094">In un momento definito</translation>
+   <translation id="ip_mitigation_statistics_input" qtlid="139000">Entrata</translation>
+   <translation id="ip_mitigation_statistics_output" qtlid="142107">Uscita</translation>
+   <translation id="ip_mitigation_statistics_unit_B" qtlid="142120">B/s</translation>
+   <translation id="ip_mitigation_statistics_unit_KB" qtlid="142133">kB/s</translation>
+   <translation id="ip_mitigation_statistics_unit_MB" qtlid="142146">MB/s</translation>
+   <translation id="ip_mitigation_statistics_unit_GB" qtlid="142159">GB/s</translation>
+   <translation id="ip_mitigation_statistics_unit_TB" qtlid="142172">TB/s</translation>
+   <translation id="ip_mitigation_statistics_unit_PB" qtlid="142185">PB/s</translation>
+   <translation id="ip_mitigation_statistics_unit_EB" qtlid="142198">EB/s</translation>
+   <translation id="ip_mitigation_statistics_unit_ZB" qtlid="142211">ZB/s</translation>
+   <translation id="ip_mitigation_statistics_unit_YB" qtlid="142224">YB/s</translation>
+   <translation id="ip_mitigation_statistics_scale" qtlid="139143">Scala</translation>
+   <translation id="ip_mitigation_statistics_statistics_scale_10_S" qtlid="110478">10 secondi</translation>
+   <translation id="ip_mitigation_statistics_statistics_scale_1_M" qtlid="32326">1 minuto</translation>
+   <translation id="ip_mitigation_statistics_statistics_scale_5_M" qtlid="33178">5 minuti</translation>
+   <translation id="ip_mitigation_statistics_reset_zoom" qtlid="142237">Reinizializza lo zoom</translation>
+   <translation id="ip_mitigation_statistics_no_data" qtlid="156602">Le statistiche per l'IP {0} non sono disponibili.</translation>
+
+<!-- GAME MITIGATION -->
+   <translation id="ip_game_mitigation_ACTIVATED" qtlid="99920">Disponibile</translation>
+   <translation id="ip_game_mitigation_title" qtlid="232560">Configura il Firewall Game sull'IP <span class="blue">{0}</span></translation>
+   <translation id="ip_game_mitigation_table_protocol" qtlid="19711">Protocollo</translation>
+   <translation id="ip_game_mitigation_table_port" qtlid="9034">Porta</translation>
+   <translation id="ip_game_mitigation_table_state" qtlid="8230">Stato</translation>
+   <translation id="ip_game_mitigation_table_error" qtlid="232573">Impossibile recuperare le regole del Firewall Game</translation>
+   <translation id="ip_game_mitigation_table_partial_error" qtlid="232586">Errore durante il recupero della regola.</translation>
+   <translation id="ip_game_mitigation_table_partial_error_info" qtlid="232599">Impossibile caricare questa regola (id {0}).</translation>
+   <translation id="ip_game_mitigation_table_empty" qtlid="232612">Nessuna regola di Firewall Game</translation>
+
+   <translation id="ip_game_mitigation_rule_remove_title" qtlid="232625">Cancella una regola</translation>
+   <translation id="ip_game_mitigation_rule_remove" qtlid="232638">Sei sicuro di voler eliminata la regola del protocollo {0} ({1})?</translation>
+   <translation id="ip_game_mitigation_rule_remove_success" qtlid="141665">La regola del firewall sarà eliminata.</translation>
+   <translation id="ip_game_mitigation_rule_remove_error" qtlid="232651">Errore durante l'eliminazione della regola.</translation>
+
+   <translation id="ip_game_mitigation_error" qtlid="232664">Errore: impossibile recuperare lo stato del firewall.</translation>
+
+   <translation id="ip_game_mitigation_state_ok" qtlid="141795">Autorizza</translation>
+   <translation id="ip_game_mitigation_state_deleteRulePending" qtlid="152778">In corso di eliminazione</translation>
+   <translation id="ip_game_mitigation_state_createRulePending" qtlid="29647">In corso di creazione</translation>
+
+   <translation id="ip_game_mitigation_rule_add" qtlid="141730">Aggiungi una regola</translation>
+   <translation id="ip_game_mitigation_rule_add_error" qtlid="232677">Errore durante l'aggiunta della regola.</translation>
+   <translation id="ip_game_mitigation_rule_add_title" qtlid="232690">Aggiungi una nuova regola</translation>
+   <translation id="ip_game_mitigation_rule_add_protocol" qtlid="232703">Protocollo:</translation>
+   <translation id="ip_game_mitigation_rule_add_protocol_enum_hl2Source" qtlid="250199">Half life/source</translation>
+   <translation id="ip_game_mitigation_rule_add_port_from" qtlid="232716">Porta di partenza:</translation>
+   <translation id="ip_game_mitigation_rule_add_port_number" qtlid="232729">La porta deve essere un numero.</translation>
+   <translation id="ip_game_mitigation_rule_add_port_pattern" qtlid="232742">La porta deve essere un numero intero positivo.</translation>
+   <translation id="ip_game_mitigation_rule_add_port_to" qtlid="232755">fino alla porta:</translation>
+   <translation id="ip_game_mitigation_rule_add_init_error" qtlid="232768">Errore: impossibile recuperare elenco dei protocolli.</translation>
+
+   <translation id="ip_game_mitigation_firewall_true" qtlid="232781">La modalità restriction GAME è stata <strong>attivata</strong>. Il traffico in UDP è consentito solo per le regole definite</translation>
+   <translation id="ip_game_mitigation_firewall_false" qtlid="232794">La restrizione GAME è stata <strong>disattivata</strong>. Il traffico UDP verso le porte non definite è consentito ma le regole definite sono ancora valide</translation>
+   <translation id="ip_game_mitigation_firewall_firewallModeEnablePending" qtlid="232807">La modalità restriction GAME <strong>verrà attivata</strong>. Il traffico in UDP sarà consentito solo per le regole definite</translation>
+   <translation id="ip_game_mitigation_firewall_firewallModeDisablePending" qtlid="232820">La modalità restriction GAME <strong>verrà disattivata</strong>. Il traffico UDP verso le porte non definite sarà consentito ma le regole definite resteranno valide</translation>
+
+   <translation id="ip_game_mitigation_firewall_enable_button" qtlid="232833">Attiva la modalità restriction</translation>
+   <translation id="ip_game_mitigation_firewall_enable_title_false" qtlid="232846">Attivazione della modalità restriction GAME</translation>
+   <translation id="ip_game_mitigation_firewall_enable_info_false" qtlid="232859">Sei sicuro di voler attivare la modalità restriction GAME?</translation>
+   <translation id="ip_game_mitigation_firewall_enable_success_false" qtlid="232872">Attivazione della modalità restriction GAME in corso.</translation>
+   <translation id="ip_game_mitigation_firewall_enable_error_false" qtlid="232885">Errore durante l'attivazione della modalità restriction GAME.</translation>
+
+   <translation id="ip_game_mitigation_firewall_disable_button" qtlid="232898">Disattiva la modalità restriction</translation>
+   <translation id="ip_game_mitigation_firewall_enable_title_true" qtlid="232911">Disattivazione della modalità restriction GAME</translation>
+   <translation id="ip_game_mitigation_firewall_enable_info_true" qtlid="232924">Vuoi davvero di voler disattivare la modalità restriction GAME?</translation>
+   <translation id="ip_game_mitigation_firewall_enable_success_true" qtlid="232937">Disattivazione della modalità restriction GAME in corso.</translation>
+   <translation id="ip_game_mitigation_firewall_enable_error_true" qtlid="232950">Errore durante la disattivazione della modalità restriction GAME.</translation>
+
+
+<!-- FIREWALL -->
+   <translation id="ip_firewall_fail" qtlid="164285">Si è verificato un errore durante il caricamento delle informazioni del firewall</translation>
+   <translation id="ip_firewall_edit_rule" qtlid="125888">Modifica la regola</translation>
+   <translation id="ip_firewall_remove_rule" qtlid="125912">Cancella la regola</translation>
+   <translation id="ip_firewall_remove_rule_confirmation" qtlid="210696">Sei sicuro di voler eliminare la regola numero {0} ?</translation>
+   <translation id="ip_firewall_remove_rule_success" qtlid="141665">La regola del firewall sarà eliminata.</translation>
+   <translation id="ip_firewall_remove_rule_fail" qtlid="141678">Si è verificato un errore durante la richiesta di eliminazione della regola del firewall.</translation>
+   <translation id="ip_firewall_enabled" qtlid="141691">Firewall attivo</translation>
+   <translation id="ip_firewall_disabled" qtlid="141704">Firewall non attivo</translation>
+   <translation id="ip_firewall_NOT_CONFIGURED" qtlid="124952">Non configurato</translation>
+   <translation id="ip_firewall_DEACTIVATED" qtlid="24967">Disattivo</translation>
+   <translation id="ip_firewall_ACTIVATED" qtlid="30250">Attivo</translation>
+   <translation id="ip_firewall_PENDING" qtlid="26383">In corso</translation>
+   <translation id="ip_firewall_DISABLE_PENDING" qtlid="210709">Disattivazione...</translation>
+   <translation id="ip_firewall_ENABLE_PENDING" qtlid="210722">Attivazione...</translation>
+   <translation id="ip_firewall_not_yet_activated_short" qtlid="124952">Non configurato</translation>
+   <translation id="ip_firewall_enable_button_title" qtlid="76734">Attiva</translation>
+   <translation id="ip_firewall_disable_button_title" qtlid="90973">Disattiva</translation>
+   <translation id="ip_firewall_title" qtlid="210735">Configurare il firewall dell'IP <span class="blue">{0}</span></translation>
+   <translation id="ip_firewall_add_summary" qtlid="132720">Riepilogo:</translation>
+   <translation id="ip_firewall_add_title" qtlid="141730">Aggiungi una regola</translation>
+   <translation id="ip_firewall_add_rule_success" qtlid="141743">La nuova regola è stata aggiunta.</translation>
+   <translation id="ip_firewall_add_rule_fail" qtlid="141756">Si è verificato un errore durante l'aggiunta della regola.</translation>
+   <translation id="ip_firewall_add_rule_confirm_button_text" qtlid="37923">Aggiungi</translation>
+   <translation id="ip_firewall_modify_title" qtlid="141769">Modifica una regola</translation>
+   <translation id="ip_firewall_modify_rule_success" qtlid="141782">La regola è stata modificata.</translation>
+   <translation id="ip_firewall_modify_rule_fail" qtlid="138662">Si è verificato un errore durante la modifica della regola.</translation>
+   <translation id="ip_firewall_rule_PERMIT" qtlid="141795">Autorizza</translation>
+   <translation id="ip_firewall_rule_permit" qtlid="141795">Autorizza</translation>
+   <translation id="ip_firewall_rule_DENY" qtlid="141808">Rifiuta</translation>
+   <translation id="ip_firewall_rule_deny" qtlid="141808">Rifiuta</translation>
+   <translation id="ip_firewall_rule_protocol_AH" qtlid="176872">AH</translation>
+   <translation id="ip_firewall_rule_protocol_ESP" qtlid="176885">ESP</translation>
+   <translation id="ip_firewall_rule_protocol_GRE" qtlid="176898">GRE</translation>
+   <translation id="ip_firewall_rule_protocol_ICMP" qtlid="19627">ICMP</translation>
+   <translation id="ip_firewall_rule_protocol_IPV_4" qtlid="101781">IPv4</translation>
+   <translation id="ip_firewall_rule_protocol_TCP" qtlid="141821">TCP</translation>
+   <translation id="ip_firewall_rule_protocol_UDP" qtlid="141834">UDP</translation>
+   <translation id="ip_firewall_rule_protocol_ah" qtlid="176872">AH</translation>
+   <translation id="ip_firewall_rule_protocol_esp" qtlid="176885">ESP</translation>
+   <translation id="ip_firewall_rule_protocol_gre" qtlid="176898">GRE</translation>
+   <translation id="ip_firewall_rule_protocol_icmp" qtlid="19627">ICMP</translation>
+   <translation id="ip_firewall_rule_protocol_ipv4" qtlid="101781">IPv4</translation>
+   <translation id="ip_firewall_rule_protocol_tcp" qtlid="141821">TCP</translation>
+   <translation id="ip_firewall_rule_protocol_udp" qtlid="141834">UDP</translation>
+   <translation id="ip_firewall_rule_ip_any" qtlid="141847">tutti</translation>
+   <translation id="ip_firewall_enable_title" qtlid="141860">Attiva il firewall</translation>
+   <translation id="ip_firewall_enable_question" qtlid="141873">Vuoi davvero attivare il firewall sull'IP {0}?</translation>
+   <translation id="ip_firewall_enable_success" qtlid="141886">Il firewall sarà attivato in qualche minuto sull'IP {0}</translation>
+   <translation id="ip_firewall_enable_failed" qtlid="138779">Si è verificato un errore durante l'attivazione del Firewall sull'IP {0}</translation>
+   <translation id="ip_firewall_disable_title" qtlid="141899">Disattiva il firewall</translation>
+   <translation id="ip_firewall_disable_question" qtlid="141912">Vuoi davvero disattivare il firewall sull'IP {0}?</translation>
+   <translation id="ip_firewall_disable_success" qtlid="141925">Il firewall sarà disattivato in pochi minuti sull'IP {0}</translation>
+   <translation id="ip_firewall_disable_failed" qtlid="141938">Si è verificato un errore durante la disattivazione del firewall sull'IP {0}</translation>
+   <translation id="ip_firewall_new_title" qtlid="141951">Crea il firewall</translation>
+   <translation id="ip_firewall_new_question" qtlid="141964">Vuoi davvero attivare la creazione del firewall sull'IP {0}?</translation>
+   <translation id="ip_firewall_new_success" qtlid="141977">Il firewall sarà creato in pochi minuti sull'IP {0}</translation>
+   <translation id="ip_firewall_new_failed" qtlid="141990">Si è verificato un errore durante la creazione del firewall sull'IP {0}</translation>
+   <translation id="ip_firewall_action" qtlid="56105">Azione</translation>
+   <translation id="ip_firewall_protocol" qtlid="19711">Protocollo</translation>
+   <translation id="ip_firewall_source_ip" qtlid="138376">IP sorgente</translation>
+   <translation id="ip_firewall_source_port" qtlid="141548">Porta sorgente</translation>
+   <translation id="ip_firewall_source_port_tooltip" qtlid="175829">La porta sorgente deve essere compresa fra 0 e 65535</translation>
+   <translation id="ip_firewall_destination_port" qtlid="175842">Porta di destinazione</translation>
+   <translation id="ip_firewall_destination_port_tooltip" qtlid="175855">La porta di destinazione deve essere compresa fra 0 e 65535</translation>
+   <translation id="ip_firewall_options" qtlid="23395">Opzioni</translation>
+   <translation id="ip_firewall_status" qtlid="33790">Stato</translation>
+   <translation id="ip_firewall_position" qtlid="45988">Priorità</translation>
+   <translation id="ip_firewall_position_tooltip" qtlid="140469">La lettura delle regole è sequenziale. La regola "0" ha la priorità maggiore.</translation>
+   <translation id="ip_firewall_table_empty" qtlid="151425">Nessun elemento da visualizzare</translation>
+   <translation id="ip_firewall_rule_status_CREATION_PENDING" qtlid="26227">In creazione</translation>
+   <translation id="ip_firewall_rule_status_creationPending" qtlid="26227">In creazione</translation>
+   <translation id="ip_firewall_rule_status_REMOVAL_PENDING" qtlid="133929">In corso di eliminazione</translation>
+   <translation id="ip_firewall_rule_status_removalPending" qtlid="133929">In corso di eliminazione</translation>
+   <translation id="ip_firewall_rule_status_OK" qtlid="30250">Attivo</translation>
+   <translation id="ip_firewall_rule_status_ok" qtlid="30250">Attivo</translation>
+   <translation id="ip_firewall_rule_fragments" qtlid="175868">Fragment</translation>
+   <translation id="ip_firewall_rule_fragments_tooltip" qtlid="175881">Non è possibile scegliere l'opzione di frammentazione avendo definito una porta sorgente o una porta di destinazione.</translation>
+   <translation id="ip_firewall_rule_flags" qtlid="204597">Flags</translation>
+   <translation id="ip_firewall_rule_flags_SYN" qtlid="175907">SYN</translation>
+   <translation id="ip_firewall_rule_flags_syn" qtlid="175907">SYN</translation>
+   <translation id="ip_firewall_rule_flags_ESTABLISHED" qtlid="175920">ESTABLISHED</translation>
+   <translation id="ip_firewall_rule_flags_established" qtlid="175920">ESTABLISHED</translation>
+   <translation id="ip_firewall_rule_flags_NONE" qtlid="30646">Nessuno</translation>
+   <translation id="ip_firewall_rule_flags_none" qtlid="30646">Nessuno</translation>
+   <translation id="ip_firewall_add_summary" qtlid="175933">Verifica le informazioni inserite prima di confermare l'aggiunta della regola.</translation>
+   <translation id="ip_firewall_remove_rule_fail" qtlid="141756">Si è verificato un errore durante l'aggiunta della regola.</translation>
+
+   <translation id="ip_table_manage_delete_ipblock" qtlid="204610">Elimina l'IP Failover</translation>
+   <translation id="ip_table_manage_delete_ipblock_question" qtlid="204623">Per ragioni di sicurezza, ti inviamo un'email con cui confermare l'eliminazione del tuo IP.</translation>
+   <translation id="ip_table_manage_delete_ipblock_question2" qtlid="204636">Vuoi proseguire nella procedura di chiusura dell'IP {0}?</translation>
+   <translation id="ip_table_manage_delete_ipblock_success" qtlid="204649">Ti abbiamo inviato un'email per la conferma della chiusura.</translation>
+   <translation id="ip_table_manage_delete_ipblock_failure" qtlid="204662">Si è verificato un errore nella richiesta di eliminazione dell'IP {0}.</translation>
+
+   <translation id="ip_table_manage_move_ipblock" qtlid="175946">Sposta l'IP Fail Over</translation>
+   <translation id="ip_table_manage_move_ipblock_question" qtlid="175959">Seleziona il servizio di destinazione per l'IP <b>{0}</b>:</translation>
+   <translation id="ip_table_manage_move_ipblock_resume" qtlid="363492">Vuoi davvero trasferire l'IP <b>{0}</b> verso <b>{1}</b></translation>
+   <translation id="ip_table_manage_move_ipblock_from" qtlid="69077">Da</translation>
+   <translation id="ip_table_manage_move_ipblock_to" qtlid="175972">Verso</translation>
+   <translation id="ip_table_manage_move_ipblock_on" qtlid="69101">Su</translation>
+   <translation id="ip_table_manage_move_ipblock_warning_park" qtlid="210748">Attenzione, predisporre un IP nella sezione "Parking degli IP" genera dei costi d'immobilizzazione !</translation>
+   <translation id="ip_table_manage_move_ipblock_warning_taskspending" qtlid="222683">Questo IP è già in fase di trasferimento.</translation>
+   <translation id="ip_table_manage_move_ipblock_ipcanbemovedto" qtlid="175985">L'IP può essere spostato verso questo servizio:</translation>
+   <translation id="ip_table_manage_move_ipblock_validation" qtlid="175998">Clicca su "Conferma" per spostare l'IP. Sarà disponibile in {0} entro pochi minuti.</translation>
+   <translation id="ip_table_manage_move_ipblock_resume_on" qtlid="363505">su {0}</translation>
+   <translation id="ip_table_manage_move_ipblock_success" qtlid="176011">L'IP {0} sarà disponibile in {1} entro pochi minuti.</translation>
+   <translation id="ip_table_manage_move_ipblock_failure" qtlid="176024">Si è verificato un errore nello spostamento dell'IP {0} verso {1}.</translation>
+
+   <translation id="ip_servicetype_DEDICATED" qtlid="101913">Server Dedicato</translation>
+   <translation id="ip_servicetype_dedicatedServer" qtlid="101913">Server Dedicato</translation>
+   <translation id="ip_servicetype_VPS" qtlid="23083">VPS</translation>
+   <translation id="ip_servicetype_vps" qtlid="23083">VPS</translation>
+   <translation id="ip_servicetype_PCC" qtlid="162205">Dedicated Cloud</translation>
+   <translation id="ip_servicetype_dedicatedCloud" qtlid="162205">Dedicated Cloud</translation>
+   <translation id="ip_servicetype_ipLoadbalancing" qtlid="223580">IP Load Balancing</translation>
+   <translation id="ip_servicetype_cloudProject" qtlid="274369">Progetto Cloud</translation>
+   <translation id="ip_servicetype_vRack" qtlid="210566">VRACK</translation>
+   <translation id="ip_servicetype__PARK" qtlid="363518">Parking</translation>
+
+   <translation id="ip_order_quota_full" qtlid="451597">Hai raggiunto la quota massima di indirizzi IP per questo server.</translation>
+   <translation id="ip_order_noservices" qtlid="182020">Non ci sono servizi disponibili per l'ordine</translation>
+   <translation id="ip_order_step1_question" qtlid="182033">Seleziona il servizio per cui vuoi acquistare IP aggiuntivi:</translation>
+   <translation id="ip_order_checkservice" qtlid="182046">Verifica delle condizioni di realizzazione...</translation>
+
+   <translation id="ip_order_loading_error" qtlid="182059">Si è verificato un errore nel caricamento delle informazioni dell'ordine di IP.</translation>
+   <translation id="ip_order_loading_error2" qtlid="369563">Questa azione richiede una verifica o al momento non può essere confermata. ({0})</translation>
+
+
+   <translation id="ip_order_error_OPTION_NOT_ALLOWED" qtlid="182072">Non è possibile ordinare IP aggiuntivi per questo servizio.</translation>
+   <translation id="ip_order_error_OUT" qtlid="182085">Hai raggiunto il limite di IP ordinabili con questo servizio.</translation>
+   <translation id="ip_order_error_EXPIRED" qtlid="191421">Il servizio è scaduto.</translation>
+
+   <translation id="ip_order_step1_ok" qtlid="182098">Clicca su "Avanti" per accedere all'ordine</translation>
+   <translation id="ip_order_add_ipv4_step1_remaining" qtlid="182111">Puoi aggiungere ancora <span class="blue">{0}</span> IPv4 su questo servizio.</translation>
+   <translation id="ip_order_step1_info1" qtlid="182124">Il tuo server può supportare fino a:</translation>
+   <translation id="ip_order_step1_DEDICATED_pre" qtlid="182137"><span class="blue">{0}</span> IP da blocchi di IPv4 Failover</translation>
+   <translation id="ip_order_step1_DEDICATED_v2_pre" qtlid="191382"><span class="blue">{0}</span> prefissi</translation>
+   <translation id="ip_order_step1_DEDICATED_individual_1" qtlid="182163"><span class="blue">1</span> IP Failover singolo</translation>
+   <translation id="ip_order_step1_DEDICATED_v2_individual_1" qtlid="191395"><span class="blue">1</span> prefisso</translation>
+   <translation id="ip_order_step1_DEDICATED_individual_other" qtlid="182176"><span class="blue">{}</span> IP Failover singoli</translation>
+   <translation id="ip_order_step1_DEDICATED_v2_individual_other" qtlid="191408"><span class="blue">{}</span> prefissi</translation>
+   <translation id="ip_order_step1_DEDICATED_minmax" qtlid="182150">(blocchi di <span class="blue">{0}</span> IP min. e di <span class="blue">{1}</span> IP max.)</translation>
+   <translation id="ip_order_step1_DEDICATED_individualblocksize" qtlid="182189">(blocchi di <span class="blue">{0}</span> IP)</translation>
+   <translation id="ip_order_step2_large_block_unavailable" qtlid="304446">Stiamo riscontrando rallentamenti nella consegna dei blocchi IP. In caso di necessità, ti consigliamo di attivare IP singoli (/32). <a href="{0}" target="_blank">Maggiori informazioni.</a></translation>
+
+   <translation id="ip_order_ipnbr" qtlid="182202">Numero di IP</translation>
+   <translation id="ip_order_country" qtlid="182215">Localizzati in</translation>
+   <translation id="ip_order_ipblocksize" qtlid="182228">Dimensione del blocco IP</translation>
+   <translation id="ip_order_networkname" qtlid="182241">Nome rete (netname)</translation>
+   <translation id="ip_order_networkname_help" qtlid="232388">Informazioni visibili nel "WHOIS" (da 2 a 20 caratteri alfanumerici che iniziano con una lettera)</translation>
+   <translation id="ip_order_estimatedclientsnumber" qtlid="182267">Numero di clienti stimato</translation>
+   <translation id="ip_order_estimatedclientsnumber_help" qtlid="182280">Quanti clienti utilizzano questi IP?</translation>
+   <translation id="ip_order_description" qtlid="182293">Descrizione della rete</translation>
+   <translation id="ip_order_description_help" qtlid="182306">Informazioni visibili nel "WHOIS" (fra 3 e 250 caratteri alfanumerici)</translation>
+   <translation id="ip_order_usage" qtlid="109974">Uso</translation>
+   <translation id="ip_order_usage_help" qtlid="182319">Informazioni di base su come il blocco verrà utilizzato (esempi: "web", "ssl", "cloud", ...)</translation>
+   <translation id="ip_order_organisation" qtlid="32278">Organizzazione</translation>
+   <translation id="ip_order_no_organisation_1" qtlid="182332">Per prenotare un blocco di IP, è necessario essere titolare di un'azienda/organizzazione.</translation>
+   <translation id="ip_order_no_organisation_2" qtlid="182345">Clicca qui per accedere alla gestione delle organizzazioni.</translation>
+   <translation id="ip_order_no_professionaluse_1" qtlid="182358">Per questa operazione è necessaria l'opzione "Utilizzo Professionale" (<b>{0}</b>/mese).</translation>
+   <translation id="ip_order_no_professionaluse_2" qtlid="182371">Viene aggiunto automaticamente al tuo ordine.</translation>
+   <translation id="ip_order_ip_count_1" qtlid="182384">1 indirizzo</translation>
+   <translation id="ip_order_ip_count_other" qtlid="182397">{} indirizzi</translation>
+   <translation id="ip_order_select_duration" qtlid="181214">Seleziona la durata:</translation>
+   <translation id="ip_order_select_activation" qtlid="268276">Spese di attivazione:</translation>
+   <translation id="ip_order_abonnement" qtlid="268289">Abbonamento mensile:</translation>
+   <translation id="ip_order_free" qtlid="268302">GRATIS</translation>
+   <translation id="ip_order_bloc" qtlid="268315">Blocco</translation>
+   <translation id="ip_order_renew_PCC" qtlid="268328">I tuoi IP saranno rinnovati automaticamente con la tua infrastruttura Dedicated Cloud.</translation>
+   <translation id="ip_order_resume" qtlid="177496">Riepilogo del tuo ordine</translation>
+   <translation id="ip_order_price_HT" qtlid="146177">Prezzo totale IVA esclusa:</translation>
+   <translation id="ip_order_price_TTC" qtlid="146190">Prezzo totale IVA inclusa:</translation>
+   <translation id="ip_order_final_txt" qtlid="181240">Clicca su "Conferma" per confermare il tuo ordine</translation>
+   <translation id="ip_order_final_txt2" qtlid="181253">Verrai reindirizzato alla nuova interfaccia di pagamento.</translation>
+   <translation id="ip_order_finish_success" qtlid="181266">L'ordine numero <a href='{0}' target='_blank'>{1}</a> è stato preso in carico.</translation>
+   <translation id="ip_order_finish_error" qtlid="182410">Si è verificato un errore nell'ordine di IP aggiuntivi.</translation>
+   <translation id="ip_order_free_activation_fee" qtlid="250212">Attenzione: gli IP aggiuntivi dei server dedicati OVH comportano solo le spese di attivazione, non sono previsti costi di rinnovo mensile</translation>
+
+<!-- ORGANISATION -->
+   <translation id="ip_organisation_title" qtlid="182423">Gestisci le mie organizzazioni</translation>
+   <translation id="ip_organisation_button" qtlid="182436">Le mie organizzazioni</translation>
+
+   <translation id="ip_organisation_table_organisation" qtlid="32278">Organizzazione</translation>
+   <translation id="ip_organisation_table_type" qtlid="2642">Tipo</translation>
+   <translation id="ip_organisation_table_lastname" qtlid="374373">Cognome</translation>
+   <translation id="ip_organisation_table_abuse" qtlid="182449">Abuse</translation>
+   <translation id="ip_organisation_table_email" qtlid="33598">Email</translation>
+   <translation id="ip_organisation_table_address" qtlid="30430">Indirizzo</translation>
+   <translation id="ip_organisation_table_city" qtlid="33310">Città</translation>
+   <translation id="ip_organisation_table_country" qtlid="25171">Paese</translation>
+   <translation id="ip_organisation_table_firstname" qtlid="23323">Nome</translation>
+   <translation id="ip_organisation_table_phone" qtlid="34174">Telefono</translation>
+   <translation id="ip_organisation_table_zip" qtlid="30346">Codice postale</translation>
+   <translation id="ip_organisation_table_state" qtlid="434845">Stato</translation>
+   <translation id="ip_organisation_table_empty" qtlid="182462">Non hai organizzazioni</translation>
+   <translation id="ip_organisation_table_exemple" qtlid="182475">Esempio:</translation>
+
+   <translation id="ip_organisation_add_info" qtlid="182488">Compila il form per inserire una nuova organizzazione:</translation>
+   <translation id="ip_organisation_add_wrong_format" qtlid="149774">Formato non valido</translation>
+   <translation id="ip_organisation_add_email" qtlid="149774">Formato non valido</translation>
+   <translation id="ip_organisation_add_maxlength" qtlid="182501">Sono presenti troppi caratteri</translation>
+   <translation id="ip_organisation_add_required" qtlid="182514">Campo obbligatorio</translation>
+   <translation id="ip_organisation_add_resume" qtlid="4082">Riepilogo</translation>
+   <translation id="ip_organisation_add_step2" qtlid="182527">Verifica che le tue informazioni siano corrette:</translation>
+   <translation id="ip_organisation_add_title" qtlid="182540">Aggiunta di un'organizzazione</translation>
+   <translation id="ip_organisation_add" qtlid="182553">Aggiungi un'organizzazione</translation>
+   <translation id="ip_organisation_add_load_error" qtlid="182566">Si è verificato un errore nel caricamento delle informazioni necessarie all'aggiunta di un'organizzazione</translation>
+   <translation id="ip_organisation_add_success" qtlid="182579">La tua organizzazione è stata presa in carico</translation>
+   <translation id="ip_organisation_add_error" qtlid="182592">Si è verificato un errore nell'aggiunta dell'organizzazione</translation>
+   <translation id="ip_organisation_add_loading_step1" qtlid="182605">Caricamento delle informazioni in corso...</translation>
+   <translation id="ip_organisation_add_loading_step2" qtlid="182618">Aggiunta di una nuova organizzazione in corso...</translation>
+
+   <translation id="ip_organisation_edit_title" qtlid="182631">Modifica di un'organizzazione</translation>
+   <translation id="ip_organisation_edit_success" qtlid="182644">La modifica della tua organizzazione è stata presa in carico</translation>
+   <translation id="ip_organisation_edit_error" qtlid="182657">Si è verificato un errore nella modifica della tua organizzazione</translation>
+
+   <translation id="ip_organisation_delete_loading" qtlid="182670">Rimozione dell'organizzazione in corso...</translation>
+   <translation id="ip_organisation_delete_title" qtlid="182683">Rimozione di un'organizzazione</translation>
+   <translation id="ip_organisation_delete_info" qtlid="182696">Vuoi davvero rimuovere l'organizzazione {0}?</translation>
+   <translation id="ip_organisation_delete_success" qtlid="182709">La rimozione della tua organizzazione è stata presa in carico</translation>
+   <translation id="ip_organisation_delete_error" qtlid="182722">Si è verificato un errore nella rimozione delle tue organizzazioni</translation>
+   <translation id="ip_organisation_delete_error" qtlid="182722">Si è verificato un errore nella rimozione delle tue organizzazioni</translation>
+
+   <translation id="ip_organisation_change_title" qtlid="262713">Seleziona una nuova organizzazione per l'IP <strong>{0}</strong>.</translation>
+   <translation id="ip_organisation_change_organisations" qtlid="262726">Nuova organizzazione:</translation>
+   <translation id="ip_organisation_change_organisations_success" qtlid="262739">La modifica dell'organizzazione sarà effettuata tra pochi minuti.</translation>
+   <translation id="ip_organisation_change_organisations_done" qtlid="262752">La modifica dell'organizzazione è stata effettuata correttamente.</translation>
+   <translation id="ip_organisation_change_organisations_fail" qtlid="262765">Si è verificato un errore ({0}).</translation>
+   <translation id="ip_organisation_edit" qtlid="37875">Modifica</translation>
+   <translation id="ip_organisation_delete" qtlid="2414">Elimina</translation>
+
+   <translation id="iplb_empty" qtlid="223606">Non disponi di IP Load Balancing.</translation>
+   <translation id="iplb_expired" qtlid="223619">Questo IP Load Balancing è scaduto il {0}.</translation>
+   <translation id="iplb_expiration" qtlid="30406">Scadenza</translation>
+   <translation id="iplb_infos_error" qtlid="223632">Si è verificato un errore nel caricamento del tuo IP Load Balancing.</translation>
+   <translation id="iplb_order_title" qtlid="223645">Ordina un IP Load Balancing</translation>
+
+   <translation id="iplb_section_title_informations" qtlid="26551">Informazioni</translation>
+   <translation id="iplb_section_title_zones" qtlid="223658">Datacenter (PoP)</translation>
+   <translation id="iplb_section_title_backends" qtlid="223671">Distributed service (backend)</translation>
+
+   <translation id="iplb_infos_state" qtlid="26443">Stato</translation>
+   <translation id="iplb_infos_stickiness" qtlid="223684">Gestione delle sessioni</translation>
+   <translation id="iplb_infos_ssl" qtlid="21451">Certificato SSL</translation>
+
+   <translation id="iplb_infos_state_blacklisted" qtlid="223697">Blacklistato</translation>
+   <translation id="iplb_infos_state_deleted" qtlid="363531">Eliminato</translation>
+   <translation id="iplb_infos_state_free" qtlid="6862">Libero</translation>
+   <translation id="iplb_infos_state_quarantined" qtlid="223723">In quarantena </translation>
+   <translation id="iplb_infos_state_suspended" qtlid="125096">Sospeso</translation>
+   <translation id="iplb_infos_stickiness_none" qtlid="30646">Nessuno</translation>
+   <translation id="iplb_infos_stickiness_cookie" qtlid="223736">Cookie</translation>
+   <translation id="iplb_infos_stickiness_sourceIp" qtlid="138376">IP sorgente</translation>
+   <translation id="iplb_infos_ssl_none" qtlid="30646">Nessuno</translation>
+   <translation id="iplb_infos_ssl_ovh" qtlid="223749">Fornito da OVH</translation>
+   <translation id="iplb_infos_ssl_customer" qtlid="223762">Fornito dal cliente</translation>
+
+   <translation id="iplb_stickiness_set_question" qtlid="223775">Quale tipo di gestione delle sessioni preferisci?</translation>
+   <translation id="iplb_stickiness_set_success" qtlid="223788">Il valore della gestione delle sessione sarà aggiornato entro pochi minuti.</translation>
+   <translation id="iplb_stickiness_set_failure" qtlid="223801">Si è verificato un errore nella modifica dello stickiness.</translation>
+
+   <translation id="iplb_infos_ssl_order_btn" qtlid="43558">Ordina</translation>
+   <translation id="iplb_infos_ssl_importcustom_btn" qtlid="69869">Importa</translation>
+   <translation id="iplb_infos_ssl_restore_btn" qtlid="36120">Ripristinare</translation>
+   <translation id="iplb_infos_ssl_importcustom_updating" qtlid="223814">Importazione in corso...</translation>
+   <translation id="iplb_infos_ssl_restore_updating" qtlid="223827">Ripristino in corso...</translation>
+
+   <translation id="iplb_ssl_order_title" qtlid="223840">Ordina l'opzione SSL</translation>
+   <translation id="iplb_ssl_order_step1_question" qtlid="223853">Su quale dominio vuoi attivare il certificato SSL?</translation>
+   <translation id="iplb_ssl_order_helptext" qtlid="223866">Un DCV email sarà inviato a <b>{0}</b>.</translation>
+   <translation id="iplb_ssl_order_helptext_domain" qtlid="223879">tuo_dominio.com</translation>
+   <translation id="iplb_ssl_order_helptext2" qtlid="223892">Verifica che questo indirizzo esista prima di effettuare l'ordine. </translation>
+   <translation id="iplb_ssl_order_domain" qtlid="8458">Dominio</translation>
+   <translation id="iplb_ssl_order_not_orderable" qtlid="223905">Non è possibile ordinare l'opzione SSL per questo IP Load Balancing.</translation>
+   <translation id="iplb_ssl_order_success" qtlid="181266">L'ordine numero <a href='{0}' target='_blank'>{1}</a> è stato preso in carico.</translation>
+   <translation id="iplb_ssl_order_failure" qtlid="223918">Si è verificato un errore nell'ordine dell'opzione SSL. </translation>
+
+   <translation id="iplb_ssl_key" qtlid="104326">Chiave</translation>
+   <translation id="iplb_ssl_certificate" qtlid="19771">Certificato</translation>
+   <translation id="iplb_ssl_chain" qtlid="223931">Canale</translation>
+   <translation id="iplb_ssl_import_title" qtlid="223944">Importa un certificato SSL</translation>
+   <translation id="iplb_ssl_import_question" qtlid="223957">Stai per importare il tuo certificato SSL.</translation>
+   <translation id="iplb_ssl_import_question2" qtlid="223970">Attenzione: sarà possibile ripristinare il certificato OVH in seguito</translation>
+   <translation id="iplb_ssl_import_success" qtlid="223983">Il tuo certificato SSL sarà importato entro pochi minuti.</translation>
+   <translation id="iplb_ssl_import_failure" qtlid="223996">Si è verificato un errore nell'importazione del certificato SSL.</translation>
+
+   <translation id="iplb_ssl_restore_title" qtlid="224009">Ripristina il certificato SSL OVH</translation>
+   <translation id="iplb_ssl_restore_question" qtlid="224022">Vuoi davvero ripristinare il certificato SSL OVH?</translation>
+   <translation id="iplb_ssl_restore_question2" qtlid="224035">Invieremo una messaggio DCV a "postmaster@tuo_dominio.com".</translation>
+   <translation id="iplb_ssl_restore_success" qtlid="224048">Il tuo certificato SSL OVH sarà ripristinato dopo la validazione.</translation>
+   <translation id="iplb_ssl_restore_failure" qtlid="224061">Si è verificato un errore durante il ripristino del tuo certificato SSL OVH. </translation>
+
+   <translation id="iplb_zone_internalnatip" qtlid="224074">IP NAT interno</translation>
+   <translation id="iplb_zone_probeip" qtlid="224087">IP del protocollo di test</translation>
+   <translation id="iplb_zone_order_btn" qtlid="43558">Ordina</translation>
+   <translation id="iplb_pop_order_title" qtlid="224100">Ordina un PoP aggiuntivo </translation>
+   <translation id="iplb_pop_order_step1_question" qtlid="224113">Quale datacenter vuoi aggiungere?</translation>
+   <translation id="iplb_pop_order_zone" qtlid="26335">Zona</translation>
+   <translation id="iplb_pop_order_not_orderable" qtlid="224126">Non è possibile ordinare PoP per questo IP Load Balancing.</translation>
+   <translation id="iplb_pop_order_no_pop" qtlid="224139">Non sono presenti PoP disponibili. </translation>
+   <translation id="iplb_pop_order_success" qtlid="181266">L'ordine numero <a href='{0}' target='_blank'>{1}</a> è stato preso in carico.</translation>
+   <translation id="iplb_pop_order_failure" qtlid="224152">Si è verificato un errore durante l'ordine di un nuovo PoP per il tuo IP Load Balancing. </translation>
+
+   <translation id="iplb_table_backends_header_weight" qtlid="47572">Peso</translation>
+   <translation id="iplb_table_backends_header_backend" qtlid="132122">Backend</translation>
+   <translation id="iplb_table_backends_header_zone" qtlid="26335">Zona</translation>
+   <translation id="iplb_table_backends_header_probe" qtlid="224165">Protocollo di test</translation>
+   <translation id="iplb_table_backends_header_mainbackendip" qtlid="224178">È il backend di backup di...</translation>
+   <translation id="iplb_table_backends_no_backends" qtlid="200274">La lista è vuota</translation>
+
+   <translation id="iplb_backend_probe_NONE" qtlid="30646">Nessuno</translation>
+   <translation id="iplb_backend_probe_help_NONE" qtlid="224191">Nessuno: nessuna verifica</translation>
+   <translation id="iplb_backend_probe_help_HTTPICMP" qtlid="224204">HTTP/ICMP: test sulla porta indicata</translation>
+   <translation id="iplb_backend_probe_help_OCO" qtlid="224217">OCO: (Ovh Check Out) Test sulla porta 79</translation>
+
+   <translation id="iplb_backend_add_title" qtlid="224230">Aggiungi un backend </translation>
+   <translation id="iplb_backend_add_question" qtlid="224243">Inserisci tutte le informazioni e poi clicca su "Conferma":</translation>
+   <translation id="iplb_backend_add_ipbackend" qtlid="224256">IP del backend</translation>
+   <translation id="iplb_backend_add_probe" qtlid="224165">Protocollo di test</translation>
+   <translation id="iplb_backend_add_success" qtlid="224269">Il nuovo backend sarà aggiunto entro pochi minuti. </translation>
+   <translation id="iplb_backend_addBackend_failure" qtlid="224282">Si è verificato un errore nell'aggiunta del nuovo backend. </translation>
+   <translation id="iplb_backend_add_no_ipbackend" qtlid="224295">Non sono disponibili backend. </translation>
+   <translation id="iplb_backend_add_error_ipbackend_set" qtlid="224308">Questo backend è già definito.</translation>
+
+   <translation id="iplb_backend_setweight_btn" qtlid="224321">Modifica il peso</translation>
+   <translation id="iplb_backend_probe_btn" qtlid="224334">Modifica il protocollo di test </translation>
+   <translation id="iplb_backend_setbackupstate_btn" qtlid="224347">Definisci come backend di backup</translation>
+   <translation id="iplb_backend_unsetbackupstate_btn" qtlid="224360">Rimuovi dai backend di backup</translation>
+   <translation id="iplb_backend_delete_btn" qtlid="2414">Elimina</translation>
+
+   <translation id="iplb_backend_delete_title" qtlid="224373">Elimina un backend </translation>
+   <translation id="iplb_backend_delete_question" qtlid="224386">Vuoi davvero eliminare questo backend?</translation>
+   <translation id="iplb_backend_delete_deny" qtlid="224399">Non è possibile eliminare questo backend di backup.</translation>
+   <translation id="iplb_backend_delete_success" qtlid="224412">Le backend sarà rimosso entro pochi minuti. </translation>
+   <translation id="iplb_backend_delBackend_failure" qtlid="224425">Si è verificato un errore nella rimozione del backend.</translation>
+
+   <translation id="iplb_backend_setweight_title" qtlid="224321">Modifica il peso</translation>
+   <translation id="iplb_backend_setweight_weight" qtlid="47572">Peso</translation>
+   <translation id="iplb_backend_setweight_question" qtlid="224438">Definisci il peso di questo backend e clicca su "Avanti":</translation>
+   <translation id="iplb_backend_setweight_range" qtlid="255142">Numero intero compreso tra 1 e 100. Valore di default: 8</translation>
+   <translation id="iplb_backend_setweight_help" qtlid="224451">Ad esempio, se il backend A ha un peso di 8 e il backend B di 16, su quest'ultimo verranno indirizzate il doppio delle connessioni. I backend devono essere nello stesso datacenter (PoP) perché il paramentro "peso" sia effettivo per entrambi.</translation>
+   <translation id="iplb_backend_setweight_success" qtlid="224464">Il peso del backend sarà modificato entro pochi minuti. </translation>
+   <translation id="iplb_backend_setweight_failure" qtlid="224477">Si è verificato un errore nella modifica del peso del backend. </translation>
+
+   <translation id="iplb_backend_setprobe_title" qtlid="224334">Modifica il protocollo di test </translation>
+   <translation id="iplb_backend_setprobe_question" qtlid="224490">Definisci il protocollo di test per questo backend e poi clicca su "Conferma":</translation>
+   <translation id="iplb_backend_setprobe_probe" qtlid="224165">Protocollo di test</translation>
+   <translation id="iplb_backend_setprobe_success" qtlid="224503">Il protocollo di test del backend sarà modificato entro pochi minuti.</translation>
+   <translation id="iplb_backend_setprobe_failure" qtlid="224516">Si è verificato un errore durante la modifica del protocollo di test del backend.</translation>
+
+   <translation id="iplb_backend_setbackupstate_title" qtlid="224347">Definisci come backend di backup</translation>
+   <translation id="iplb_backend_setbackupstate_question" qtlid="224529">Seleziona il backend principale, poi clicca su "Conferma":</translation>
+   <translation id="iplb_backend_setbackupstate_help" qtlid="224542">Le richieste vengono reindirizzate su <b>{0}</b> solo se il protocollo di test del backend principale non risponde.</translation>
+   <translation id="iplb_backend_setbackupstate_ipbackend" qtlid="224555">Backend principale</translation>
+   <translation id="iplb_backend_setbackupstate_no_ipbackend" qtlid="224568">Non sono disponibili backend</translation>
+   <translation id="iplb_backend_setbackupstate_success" qtlid="224581">Il backend di backup sarà aggiunto entro pochi istanti. </translation>
+   <translation id="iplb_backend_backupStateSet_failure" qtlid="224594">Si è verificato un errore nella modifica del backend di soccorso. </translation>
+
+   <translation id="iplb_backend_unsetbackupstate_title" qtlid="224360">Rimuovi dai backend di backup</translation>
+   <translation id="iplb_backend_unsetbackupstate_question" qtlid="224607">Vuoi davvero rimuovere questo backend di backup?</translation>
+   <translation id="iplb_backend_unsetbackupstate_success" qtlid="224620">Il backend di backup sarà rimosso entro pochi minuti. </translation>
+   <translation id="iplb_backend_backupStateUnset_failure" qtlid="224633">Si è verificato un errore nella rimozione del backend di backup.</translation>
+
+   <translation id="iplb_section_title_portsredirection" qtlid="224646">Inoltro delle porte </translation>
+   <translation id="iplb_table_portsredirection_header_srcport" qtlid="141548">Porta sorgente</translation>
+   <translation id="iplb_table_portsredirection_header_dstport" qtlid="224659">Porta di destinazione</translation>
+   <translation id="iplb_table_portsredirection_no_ports" qtlid="200274">La lista è vuota</translation>
+   <translation id="iplb_portsredirection_add_title" qtlid="224672">Aggiungi un reindirizzamento delle porte</translation>
+
+   <translation id="iplb_portsredirection_add_question" qtlid="224685">Seleziona una porta sorgente e una porta di destinazione, poi clicca su "Conferma": </translation>
+   <translation id="iplb_portsredirection_add_srcport" qtlid="141548">Porta sorgente</translation>
+   <translation id="iplb_portsredirection_add_dstport" qtlid="224659">Porta di destinazione</translation>
+   <translation id="iplb_portsredirection_add_no_srcport" qtlid="224698">Non ci sono più porte disponibili. </translation>
+   <translation id="iplb_portsredirection_add_success" qtlid="224711">Il reindirizzamento sarà aggiunto entro pochi minuti. </translation>
+   <translation id="iplb_portsredirection_add_failure" qtlid="224724">Si è verificato un errore nell'aggiunta di un reindirizzamento di porta. </translation>
+   <translation id="iplb_portsredirection_delete_title" qtlid="224737">Elimina un reindirizzamento di porta. </translation>
+   <translation id="iplb_portsredirection_delete_question" qtlid="224750">Vuoi davvero eliminare questo reindirizzamento?</translation>
+   <translation id="iplb_portsredirection_delete_success" qtlid="224763">Il reindirizzamento sarà eliminato entro pochi minuti. </translation>
+   <translation id="iplb_portsredirection_delete_failure" qtlid="224776">Si è verificato un errore nell'eliminazione del reindirizzamento delle porte. </translation>
+   <translation id="iplb_backend_generic_failure" qtlid="148981">Si è verificato un errore</translation>
+
+   <translation id="ip_table_manage_delegation_ipv6block" qtlid="272851">Gestisci i server che accettano la delega del reverse</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_limit" qtlid="272864">Inserisci fino a 2 reverse DNS per questi IP</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_no_reverse" qtlid="272877">Nessun reverse DNS delegato</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_add_reverse" qtlid="272890">Aggiungi un DNS</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_reverse_dns" qtlid="44284">Reverse DNS</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_delegation_reverse_dns" qtlid="272903">Delega reverse DNS</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_success" qtlid="272916">La delega del reverse DNS è stata aggiornata correttamente</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_err" qtlid="272929">Si è verificato un errore durante l'aggiunta della delega del reverse DNS:</translation>
+   <translation id="ip_table_manage_delegation_err_INVALID_REVERSE" qtlid="272942">Il reverse DNS deve essere un dominio valido e deve terminare con un punto</translation>
+   <translation id="ip_table_manage_delegation_err_ALREADY_EXISTS" qtlid="272955">Il reverse DNS è già stato configurato</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_delete_question" qtlid="272968">Vuoi davvero eliminare la delega del reverse {1} sul blocco IP {0}?</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_delete_success" qtlid="272981">La delega del reverse DNS è stata eliminata correttamente</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_delete_err" qtlid="272994">Si è verificato un errore durante l'eliminazione della delega del reverse DNS:</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_resume" qtlid="273007">Riepilogo dell'operazione</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_to_add" qtlid="273020">Reverse da aggiungere</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_to_delete" qtlid="273033">Reverse da eliminare</translation>
+</translations>

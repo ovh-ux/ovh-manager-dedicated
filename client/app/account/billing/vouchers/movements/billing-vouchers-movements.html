@@ -1,0 +1,117 @@
+<div>
+
+    <div class="page-header">
+        <h1 data-ng-bind-html="tr('vouchers_movements_title', voucherAccountId)"></h1>
+    </div>
+
+    <div class="tab-content">
+
+        <a href="#/billing/vouchers"
+           data-ng-attr-title="{{:: tr('common_previous') }}">
+            <i class="fa fa-chevron-left"
+               aria-hidden="true">
+            </i>
+            <span data-i18n-static="common_previous"></span>
+        </a>
+
+        <div data-ovh-alert></div>
+
+        <div class="text-center"
+             data-ng-if="loaders.vouchers">
+            <oui-spinner></oui-spinner>
+        </div>
+
+        <table class="table table-hover mt-4">
+            <thead>
+                <tr>
+                    <th scope="col"
+                        class="align-middle"
+                        data-i18n-static="voucher_movements_table_head_id">
+                    </th>
+                    <th scope="col"
+                        class="align-middle"
+                        data-i18n-static="voucher_movements_table_head_description">
+                    </th>
+                    <th scope="col"
+                        class="align-middle"
+                        data-i18n-static="voucher_movements_table_head_date">
+                    </th>
+                    <th scope="col"
+                        class="align-middle"
+                        data-i18n-static="voucher_movements_table_head_amount">
+                    </th>
+                    <th scope="col"
+                        class="align-middle"
+                        data-i18n-static="voucher_movements_table_head_previous_balance">
+                    </th>
+                    <th scope="col"
+                        class="align-middle"
+                        data-i18n-static="voucher_movements_table_head_balance">
+                    </th>
+                    <th scope="col"
+                        class="align-middle"
+                        data-i18n-static="voucher_movements_table_head_operation">
+                    </th>
+                    <th scope="col"
+                        class="align-middle"
+                        data-i18n-static="voucher_movements_table_head_order"></th>
+                    <th scope="col"
+                        class="text-center">
+                        <button class="btn btn-link"
+                                data-ng-attr-title="{{:: tr('refresh') }}"
+                                aria-label="{{:: tr('refresh') }}"
+                                data-ng-click="getMovements(true)">
+                            <i class="fa fa-refresh"
+                               aria-hidden="true">
+                            </i>
+                        </button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody data-ng-show="loaders.movements">
+                <tr>
+                    <td class="text-center"
+                        colspan="9">
+                        <oui-spinner></oui-spinner>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody data-ng-show="movementIds.length === 0 && !loaders.movements">
+                <tr>
+                    <td colspan="9"
+                        class="text-center"
+                        data-i18n-static="voucher_movements_table_empty">
+                    </td>
+                </tr>
+            </tbody>
+            <tbody data-ng-show="!loaders.movements && movements.length > 0">
+                <tr data-ng-repeat="movement in movements track by movement.movementId">
+                    <th scope="row"
+                        data-ng-bind="::movement.movementId">
+                    </th>
+                    <td data-ng-bind="::movement.description"></td>
+                    <td data-ng-bind="::movement.date | date:'medium'"></td>
+                    <td data-ng-bind="::movement.amount.text"></td>
+                    <td data-ng-bind="::movement.previousBalance.text"></td>
+                    <td data-ng-bind="::movement.balance.text"></td>
+                    <td data-ng-bind="::tr('voucher_movements_operation_type_' + movement.operation)"></td>
+                    <td colspan="2"
+                        data-ng-bind="::movement.order">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div data-ng-show="movementIds.length > 5"
+             data-pagination-front
+             data-items="movementIds"
+             data-paginated-items="movements"
+             data-current-page="currentPage"
+             data-nb-pages="nbPages"
+             data-items-per-page="itemsPerPage"
+             data-transform-item="transformItem(item)"
+             data-on-transform-item-done="onTransformItemDone(items)"
+             data-page-placeholder="{{tr('pagination_page', [currentPage, nbPages])}}"
+             data-item-per-page-placeholder="{{tr('pagination_display')}}">
+        </div>
+    </div>
+</div>

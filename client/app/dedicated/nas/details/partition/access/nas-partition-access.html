@@ -1,0 +1,114 @@
+<div class="dedicated-nas-details-partition-access">
+
+    <h2 data-ng-bind="tr('nas_access_of', [$ctrl.partitionName])"></h2>
+
+    <a class="d-inline-block mb-5"
+       data-ui-sref="^"
+       title="{{ i18n.common_back }}">
+        <span class="fa fa-chevron-left mr-2"
+              aria-hidden="true">
+        </span>
+        <span data-i18n-static="common_back"></span>
+    </a>
+
+    <div class="row">
+        <div class="col-md-9">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <th scope="col"
+                            data-i18n-static="nas_access_ip">
+                        </th>
+                        <th scope="col"
+                            class="text-right">
+                            <button type="button"
+                                    class="btn btn-link"
+                                    title="{{ i18n.refresh }}"
+                                    data-ng-click="$ctrl.getAccess(true)">
+                                <span class="fa fa-refresh" aria-hidden="true"></span>
+                            </button>
+                        </th>
+                    </thead>
+                    <tbody data-ng-if="$ctrl.loaders.table">
+                        <tr>
+                            <td colspan="2"
+                                class="text-center">
+                                <oui-spinner data-size="s"></oui-spinner>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody data-ng-if="!$ctrl.loaders.table && $ctrl.table.accessIds.length === 0">
+                        <tr>
+                            <td colspan="2"
+                                class="text-center"
+                                data-i18n-static="nas_snapshot_access_no_data">
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody data-ng-if="!$ctrl.loaders.table && P$ctrl.table.accessIds === null">
+                        <tr>
+                            <td colspan="2"
+                                class="text-center"
+                                data-i18n-static="nas_snapshot_access_no_data_error">
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody data-ng-if="!$ctrl.loaders.table">
+                        <tr data-ng-repeat="access in paginatedTableAccess track by $index">
+                            <th scope="row"
+                                data-ng-bind="access">
+                            </th>
+                            <td class="text-right">
+                                <div class="btn-group"
+                                     data-uib-dropdown
+                                     data-dropdown-append-to-body>
+                                    <button id="btn-dedicated-nas-partition-access-{{ $index }}"
+                                            type="button"
+                                            class="btn btn-link"
+                                            data-uib-dropdown-toggle>
+                                        <span class="ovh-font ovh-font-dots align-top" aria-hidden="true"></span>
+                                        <span class="sr-only"
+                                              data-i18n-static="common_actions">
+                                        </span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-right"
+                                        role="menu"
+                                        aria-labelledby="btn-dedicated-nas-partition-access-{{ $index }}"
+                                        data-uib-dropdown-menu>
+                                        <li role="menuitem">
+                                            <button type="button"
+                                                    class="btn btn-link"
+                                                    data-ng-click="setAction('dedicated/nas/details/partition/access/delete/nas-partition-access-delete.html', {
+                                                        partitionName: $ctrl.partitionName,
+                                                        access: access
+                                                    })"
+                                                    data-i18n-static="common_delete">
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div data-pagination-front
+                 data-items="$ctrl.table.accessIds"
+                 data-paginated-items="paginatedTableAccess"
+                 data-current-page="currentPage"
+                 data-nb-pages="nbPages"
+                 data-refresh="$ctrl.table.refresh"
+                 data-items-per-page="itemsPerPage"
+                 data-page-placeholder="{{tr('pagination_page', [currentPage, nbPages])}}"
+                 data-item-per-page-placeholder="{{tr('pagination_display')}}">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <button type="button"
+                    class="btn btn-block btn-default"
+                    data-ng-click="setAction('dedicated/nas/details/partition/access/add/nas-partition-access-add.html', $ctrl.partitionName)"
+                    data-i18n-static="nas_access_action_add">
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+<td class="align-middle">
+    <label class="control-label"
+           data-ng-attr-title="{{ i18n.autorenew_service_selection_checkbox }}">
+        <input type="checkbox"
+               data-ng-model="service.checked"
+               data-ng-change="services.checkClicked(service)"
+               data-ng-attr-title="{{ i18n.autorenew_service_selection_checkbox }}"/>
+    </label>
+</td>
+
+<td>
+    <button type="button"
+            class="btn btn-link"
+            data-ng-if="service.serviceType === 'HOSTING_DOMAIN'"
+            data-ng-click="expandHostingDomain[service.domain] = !expandHostingDomain[service.domain]"
+            data-ng-attr-title="{{ i18n.autorenew_service_expand_sub_services }}" >
+        <i class="fa fa-plus" data-ng-if="!expandHostingDomain[service.domain]" aria-hidden="true"></i>
+        <i class="fa fa-minus" data-ng-if="expandHostingDomain[service.domain]" aria-hidden="true"></i>
+    </button>
+    <span data-ng-bind-html="tr('autorenew_service_type_'+ service.serviceType)"></span>
+</td>
+
+<td>
+    <span data-ng-bind="::service.serviceId" data-ng-hide="service.serviceType === 'EXCHANGE'"></span>
+    <span data-ng-bind="::service.alternativeId" data-ng-show="service.serviceType === 'EXCHANGE'"></span>
+</td>
+
+<td>
+    <span data-ng-if="service && service.expiration"
+          data-ng-class="getExpirationClass(service)">
+          <billing-renew-date data-service-infos="service"></billing-renew-date>
+    </span>
+</td>
+
+<td>
+  <billing-renew-label data-service-infos="service"></billing-renew-label>
+</td>
+
+<td>
+    <div data-ng-if="!service.subProducts"
+         data-uib-dropdown>
+        <button type="button"
+                class="btn btn-link"
+                data-ng-attr-title="{{ i18n.autorenew_service_action_menu_tooltip }}"
+                data-uib-dropdown-toggle>
+            <span class="ovh-font ovh-font-dots align-top"
+                  aria-hidden="true">
+            </span>
+        </button>
+        <ul data-uib-dropdown-menu
+            data-template-url="{{ BILLING_BASE_URL + 'autoRenew/common/actions-menu.html'}}">
+        </ul>
+    </div>
+</td>

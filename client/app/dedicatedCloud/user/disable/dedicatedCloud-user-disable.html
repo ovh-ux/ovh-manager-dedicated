@@ -1,0 +1,16 @@
+<div data-ng-controller="DedicatedCloudUserDisableCtrl">
+
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="disableUser"
+         data-wizard-title="i18n.dedicatedCloud_USER_disable_title">
+
+        <div data-wizard-step>
+
+            <p data-ng-bind-html="tr('dedicatedCloud_USER_disable_message', user.name)"></p>
+
+        </div>
+
+    </div>
+
+</div>

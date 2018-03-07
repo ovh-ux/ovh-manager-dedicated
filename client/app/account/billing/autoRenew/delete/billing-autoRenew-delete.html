@@ -1,0 +1,19 @@
+<div data-ng-controller="Billing.controllers.AutoRenew.delete">
+
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="deleteRenew"
+         data-wizard-title="i18n.autorenew_service_delete_title"
+         data-wizard-confirm-button-text="i18n.autorenew_service_confirm">
+
+        <div data-wizard-step data-wizard-step-valid="true">
+            <div class="text-center"
+                 data-ng-if="loading">
+                <oui-spinner></oui-spinner>
+            </div>
+            <p data-ng-bind-html="tr('autorenew_service_delete_confirm', [selectedServices[0].domain, selectedServices[0].expirationText])"></p>
+            <p data-ng-bind-html="tr('autorenew_service_delete_warn')"></p>
+        </div>
+
+    </div>
+</div>

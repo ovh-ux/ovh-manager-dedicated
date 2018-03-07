@@ -1,0 +1,17 @@
+<div data-ng-controller="ServerFirewallAsaDisableCtrl">
+
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="disable"
+         data-wizard-title="i18n.server_configuration_firewall_asa_disable_title">
+
+        <div data-wizard-step
+             data-wizard-step-on-load="load">
+
+            <p data-ng-bind-html="tr('server_configuration_firewall_asa_disable_step1_question', [model.name])"></p>
+
+        </div>
+
+    </div>
+
+</div>

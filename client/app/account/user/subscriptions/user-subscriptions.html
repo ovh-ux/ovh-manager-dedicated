@@ -1,0 +1,69 @@
+<div class="module-useraccount-sections-subscriptions-container">
+
+    <div class="page-header">
+        <!-- Subscription -->
+        <h1 data-i18n-static="user_account_title_subscriptions"></h1>
+    </div>
+
+    <div class="tab-content">
+
+        <div data-ovh-alert="SubscriptionAlerter"></div>
+        <!-- <div data-ovh-alert="MailingListAlerter"></div> --> <!-- In case mailing list section come back -->
+
+        <div class="text-center"
+                data-ng-if="subscriptionsLoading || mailingListsLoading">
+            <oui-spinner data-size="m"></oui-spinner>
+        </div>
+
+        <!-- Subscription -->
+        <div data-ng-if="!subscriptionsLoading">
+            <!-- <h2 data-i18n-static="subscriptions_title"></h2> --> <!-- In case mailing list section come back -->
+
+            <table class="table table-hover fixed-layout"
+                   data-ng-if="subscriptions.length">
+                <tbody>
+                    <tr data-ng-repeat="subscription in subscriptions">
+                        <td>
+                            <label for="ovhMagSubscription">
+                                <strong class="d-block mb-3" data-ng-bind="tr('subscriptions_' + subscription.type + '_title')"></strong>
+                                <em data-ng-bind="tr('subscriptions_' + subscription.type + '_subtitle')"></em>
+                            </label>
+                        </td>
+                        <td class="text-left">
+                            <label class="oui-switch oui-switch-toggle">
+                                <input type="checkbox"
+                                       id="ovhMagSubscription"
+                                       class="oui-switch oui-switch__checkbox"
+                                       data-ng-model="subscription.registered"
+                                       data-ng-change="updateUseraccountSubscription(state, subscription.type)" />
+                                <div class="oui-switch__slider"></div>
+                                <i class="oui-icon oui-icon-success" aria-hidden="true"></i>
+                                <i class="oui-icon oui-icon-error" aria-hidden="true"></i>
+                            </label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Mailing List -->
+        <!-- <div data-ng-if="!mailingListsLoading">
+            <h2 data-i18n-static="mailinglists_title"></h2>
+
+            <table class="offset1" data-ng-show="mailingLists.length">
+                <tbody>
+                <tr data-ng-repeat="mailingList in mailingLists">
+                    <td class="subscription-title">
+                        <h3 data-ng-bind="mailingList"></h3>
+                    </td>
+                    <td>
+                        <button class="btn btn-block" style="width: 80px;"
+                                at-internet-click="{ name : 'univers-user::mailing-lists-subscribe::' + mailingList.split('@')[0] }"
+                                data-i18n-static="mailingLists_subscribe" data-ng-click="subscribeToMailingList(mailingList)"></button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div> -->
+    </div>
+</div>

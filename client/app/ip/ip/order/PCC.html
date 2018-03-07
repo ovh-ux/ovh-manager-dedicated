@@ -1,0 +1,121 @@
+<form name="orderIpPCC">
+
+    <div class="form-group">
+        <label class="control-label"
+               for="sizeSelect"
+               data-i18n-static="ip_order_ipblocksize">
+        </label>
+        <select id="sizeSelect"
+                name="sizeSelect"
+                data-ng-model="model.params.size"
+                data-ng-options="r as ('/'+r) for r in orderableIp.size">
+            <option value=""
+                    data-ng-disabled="true"
+                    data-i18n-static="global_select">
+            </option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label"
+               for="countrySelect"
+               data-i18n-static="ip_order_country">
+        </label>
+        <select id="countrySelect"
+                name="countrySelect"
+                data-ng-model="model.params.country"
+                data-ng-options="c as tr('country_'+c.toUpperCase()) for c in orderableIp.countries"
+                data-ng-required="true">
+            <option value=""
+                    data-ng-disabled="true"
+                    data-i18n-static="global_select">
+            </option>
+        </select>
+    </div>
+
+    <div class="form-group"
+         data-ng-class="{
+             'has-error': orderIpPCC.networkName.$dirty && orderIpPCC.networkName.$invalid
+         }">
+        <label class="control-label"
+               for="networkName"
+               data-i18n-static="ip_order_networkname">
+        </label>
+        <input type="text"
+               class="form-control"
+               id="networkName"
+               name="networkName"
+               data-ng-model="model.params.networkName"
+               maxlength="20"
+               data-ng-pattern="/^[a-zA-Z]+\w+$/" />
+        <span class="fa fa-info-circle"
+           data-tooltip-placement="left"
+           data-uib-tooltip="{{i18n.ip_order_networkname_help}}">
+        </span>
+    </div>
+
+    <div class="form-group"
+         data-ng-class="{
+             'has-error': orderIpPCC.estimatedClientsNumber.$dirty && orderIpPCC.estimatedClientsNumber.$invalid
+         }">
+        <label class="control-label"
+               for="estimatedClientsNumber"
+               data-i18n-static="ip_order_estimatedclientsnumber">
+        </label>
+        <input type="number"
+               id="estimatedClientsNumber"
+               name="estimatedClientsNumber"
+               data-ng-model="model.params.estimatedClientsNumber"
+               data-ng-required="true"
+               min="1" />
+        <i class="fa fa-info-circle"
+           data-tooltip-placement="right"
+           data-uib-tooltip="{{i18n.ip_order_estimatedclientsnumber_help}}">
+        </i>
+    </div>
+
+    <div class="form-group"
+         data-ng-class="{
+             'has-error': orderIpPCC.description.$dirty && orderIpPCC.description.$invalid
+         }">
+        <label class="control-label"
+               for="description"
+               data-i18n-static="ip_order_description">
+        </label>
+        <textarea rows="3"
+                  id="description"
+                  name="description"
+                  maxlength="250"
+                  data-ng-minlength="3"
+                  data-ng-pattern="/^[a-zA-Z0-9\.,\-'!\?:;\(\)\+\/=\s]*$/"
+                  data-ng-required="true"
+                  name="description"
+                  style="resize: none;"
+                  data-ng-model="model.params.description">
+        </textarea>
+        <i class="fa fa-info-circle"
+           data-tooltip-placement="left"
+           data-uib-tooltip="{{i18n.ip_order_description_help}}">
+        </i>
+    </div>
+
+    <div class="form-group"
+         data-ng-class="{
+             'has-error': orderIpPCC.usage.$dirty && orderIpPCC.usage.$invalid
+         }">
+        <label class="control-label"
+               for="usage"
+               data-i18n-static="ip_order_usage">
+        </label>
+        <input type="text"
+               id="usage"
+               name="usage"
+               data-ng-model="model.params.usage"
+               data-ng-required="true" />
+        <i class="fa fa-info-circle"
+           data-tooltip-placement="left"
+           data-tooltip="{{i18n.ip_order_usage_help}}">
+        </i>
+    </div>
+
+</form>

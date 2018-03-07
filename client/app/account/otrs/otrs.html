@@ -1,0 +1,275 @@
+<header class="page-header"
+        role="banner">
+    <h1 data-i18n-static="otrs_title"></h1>
+</header>
+<div class="tab-content">
+    <div data-ovh-alert></div>
+    <div data-ovh-alert="otrs_popup_service"></div>
+    <div data-ovh-alert="otrs_popup_status"></div>
+    <div class="clearfix mb-5">
+        <button type="button"
+                class="btn btn-primary"
+                data-ng-click="openDialog()">
+            <span class="oui-icon oui-icon-add" aria-hidden="true"></span>
+            <span data-i18n-static="otrs_newTicket_button"></span>
+        </button>
+        <button type="button"
+                class="btn btn-link float-right"
+                title="{{ showFilters ? tr('i18n.otrs_search_ticket_filters_hide') : tr('otrs_search_ticket_filters_show') }}"
+                data-ng-click="showFilters = !showFilters" >
+            <span class="fa"
+                  aria-hidden="true"
+                  data-ng-class="{
+                      'fa-chevron-right': !showFilters,
+                      'fa-chevron-down': showFilters
+                  }">
+            </span>
+            <span data-i18n-static="otrs_search_ticket_filters"></span>
+        </button>
+    </div>
+    <div data-ng-show="showFilters">
+        <div class="row mb-5">
+            <div class="col-sm-4">
+                <label for="universSearch"
+                       class="control-label"
+                       data-i18n-static="otrs_search_ticket_univers">
+                </label>
+                <select class="form-control"
+                        id="universSearch"
+                        name="universSearch"
+                        required
+                        data-ng-options="universe as i18n['otrs_universe_'+ universe] for universe in universes track by universe"
+                        data-ng-model="selection.universe"
+                        data-ng-change="getServices()">
+                    <option value=""
+                            data-i18n-static="otrs_search_ticket_no_filter">
+                    </option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label for="serviceSearch"
+                       class="control-label">
+                    <span data-i18n-static="otrs_search_ticket_service"></span>
+                    <oui-spinner data-ng-show="loaders.services"
+                                 data-size="s">
+                    </oui-spinner>
+                </label>
+                <select class="form-control"
+                        id="serviceSearch"
+                        name="serviceSearch"
+                        data-ng-options="value as value.serviceDescription group by ( i18n['otrs_service_category_'+value.category] || value.category) for value in list.services"
+                        data-ng-model="search.selectedService"
+                        data-ng-disabled="loaders.services || loaders.tickets || !selection.universe">
+                    <option value=""
+                            data-i18n-static="otrs_search_ticket_no_filter">
+                    </option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label for="statusSearch"
+                       class="control-label"
+                       data-i18n-static="otrs_search_ticket_status">
+                </label>
+                <select class="form-control"
+                        id="statusSearch"
+                        name="statusSearch"
+                        data-ng-model="search.status"
+                        data-ng-disabled="loaders.tickets">
+                    <option value=""
+                            data-i18n-static="otrs_search_ticket_no_filter">
+                    </option>
+                    <option value="open"
+                            data-ng-bind="i18n.otrs_table_ticket_state_open">
+                    </option>
+                    <option value="closed"
+                            data-ng-bind="i18n.otrs_table_ticket_state_closed">
+                    </option>
+                    <option value="archived"
+                            data-ng-bind="i18n.otrs_table_ticket_state_archived">
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-sm-4">
+                <label for="requestspopup"
+                       class="control-label">
+                    <span data-i18n-static="otrs_request_choice"></span>
+                    <oui-spinner data-ng-show="loaders.models"
+                                 data-size="s">
+                    </oui-spinner>
+                </label>
+                <select class="form-control"
+                        id="requestspopup"
+                        name="requestspopup"
+                        data-ng-options="request as ( i18n['otrs_request_'+request] || request ) for request in requests"
+                        data-ng-model="search.category"
+                        data-ng-disabled="loaders.models">
+                     <option value=""
+                             data-i18n-static="otrs_search_ticket_no_filter">
+                    </option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label for="minCreationDateSearch"
+                       class="control-label"
+                       data-i18n-static="otrs_search_ticket_minCreationDate">
+                </label>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button type="button"
+                                class="btn btn-default"
+                                data-ng-click="minCreationDate()">
+                            <span class="fa fa-calendar"></span>
+                        </button>
+                    </span>
+                    <input type="text"
+                           class="form-control"
+                           data-ng-model="search.minCreationDate"
+                           data-ng-required="true"
+                           data-ng-focus="minCreationDate()"
+                           data-uib-datepicker-popup="dd-MMMM-yyyy"
+                           data-is-open="minCreationDateSearch.opened"
+                           data-close-text="Close"
+                           data-show-button-bar="false" />
+                    <span class="input-group-btn"
+                          data-ng-show="search.minCreationDate && !loaders.tickets">
+                        <button type="button"
+                                class="btn btn-default">
+                            <span class="fa fa-times"
+                                 data-ng-click="search.minCreationDate = ''">
+                            </span>
+                        </button>
+                   </span>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <label for="maxCreationDateSearch"
+                       class="control-label"
+                       data-i18n-static="otrs_search_ticket_maxCreationDate">
+                </label>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button type="button"
+                                class="btn btn-default"
+                                data-ng-click="maxCreationDate()">
+                            <span class="fa fa-calendar"></span>
+                        </button>
+                    </span>
+                    <input type="text"
+                           class="form-control"
+                           data-ng-model="search.maxCreationDate"
+                           data-ng-focus="maxCreationDate()"
+                           data-ng-required="true"
+                           data-uib-datepicker-popup="dd-MMMM-yyyy"
+                           data-is-open="maxCreationDateSearch.opened"
+                           data-close-text="Close"
+                           data-show-button-bar="false" />
+                    <span class="input-group-btn"
+                          data-ng-show="search.maxCreationDate && !loaders.tickets">
+                        <button type="button"
+                                class="btn btn-default">
+                            <span class="fa fa-times"
+                                 data-ng-click="search.maxCreationDate = ''">
+                            </span>
+                        </button>
+                   </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col"
+                        data-i18n-static="otrs_table_ticket_ticketNumber">
+                    </th>
+                    <th scope="col"
+                        data-i18n-static="otrs_table_ticket_service">
+                    </th>
+                    <th scope="col"
+                        data-i18n-static="otrs_table_ticket_subject">
+                    </th>
+                    <th scope="col"
+                        data-i18n-static="otrs_table_ticket_lastMessageFrom">
+                    </th>
+                    <th scope="col"
+                        data-i18n-static="otrs_table_ticket_creationDate">
+                    </th>
+                    <th scope="col"
+                        data-i18n-static="otrs_table_ticket_updateDate">
+                    </th>
+                    <th scope="col"
+                        data-i18n-static="otrs_table_ticket_state">
+                    </th>
+                    <th scope="col"
+                        class="min-width">
+                        <button type="button"
+                                class="btn btn-block btn-icon btn-inline"
+                                title="{{ i18n.otrs_table_ticket_refresh }}"
+                                data-ng-click="getTicketsIds(true)">
+                            <span class="fa fa-refresh" aria-hidden="true"></span>
+                        </button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody data-ng-show="loaders.tickets">
+                <tr>
+                    <td colspan="8"
+                        class="text-center">
+                        <oui-spinner data-size="s"></oui-spinner>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody data-ng-show="!loaders.tickets && !tickets.ids.length">
+                <tr>
+                    <td colspan="8"
+                        class="text-center"
+                        data-i18n-static="otrs_table_ticket_nodata">
+                    </td>
+                </tr>
+            </tbody>
+            <tbody data-ng-show="!loaders.tickets && tickets.ids.length">
+                <tr data-ng-repeat="ticket in tickets.detail | orderBy:'creationDate':true track by ticket.ticketNumber">
+                    <th scope="row"
+                        data-ng-bind="::ticket.ticketNumber.toString()"
+                        data-ng-class="{
+                            'text-muted': ticket.state === 'closed'
+                        }">
+                    </th>
+                    <td data-ng-bind="::ticket.serviceDescription || ticket.serviceName || i18n.otrs_service_other_services"></td>
+                    <td data-ng-bind="::ticket.subject"></td>
+                    <td data-ng-bind="tr('otrs_table_ticket_lastMessageFrom_' + ticket.lastMessageFrom)"></td>
+                    <td data-ng-bind="ticket.creationDate | date: 'short'"></td>
+                    <td data-ng-bind="ticket.updateDate | date: 'short'"></td>
+                    <td data-ng-bind="tr('otrs_table_ticket_state_' + ticket.state)"
+                        data-ng-class="{
+                            'text-muted': ticket.state === 'closed'
+                        }">
+                    </td>
+                    <td>
+                        <button type="button"
+                                class="btn btn-link"
+                                title="{{ i18n.otrs_table_ticket_open }}"
+                                data-ng-click="goTo('/ticket/' + ticket.ticketId)">
+                            <span class="fa fa-search" aria-hidden="true"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div data-pagination-front
+         data-items="tickets.ids"
+         data-paginated-items="tickets.detail"
+         data-current-page="currentPage"
+         data-items-per-page="itemsPerPage"
+         data-nb-pages="nbPages"
+         data-transform-item="transformItem(item)"
+         data-on-transform-item-done="onTransformItemDone(items)"
+         data-page-placeholder="{{ tr('pagination_page', [currentPage, nbPages]) }}"
+         data-refresh="refreshTable"
+         data-item-per-page-placeholder="{{ tr('pagination_display') }}">
+    </div>
+</div>

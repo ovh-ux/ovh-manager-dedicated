@@ -1,0 +1,55 @@
+<div data-ng-controller="Billing.controllers.OvhAccountCreateAlert as createAlertCtrl">
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="createAlert"
+         data-wizard-title="i18n.ovhAccount_create_alert"
+         data-wizard-bread-crumb
+         data-wizard-confirm-button-text="i18n.ovhAccount_create_alert_wizard_button">
+
+        <div data-wizard-step
+             data-wizard-step-valid="!createAlertCtrl.loading && checkAmount()">
+
+            <div class="text-center"
+                 data-ng-if="createAlertCtrl.loading">
+                <oui-spinner></oui-spinner>
+            </div>
+
+            <div data-ng-if="!createAlertCtrl.loading">
+
+                <p data-i18n-static="ovhAccount_create_alert_resume"></p>
+
+                <div class="form-group">
+                    <label class="control-label"
+                           data-ng-bind="tr('ovhAccount_create_alert_amount', [ovhAccount.model.balanceCurrencyCode])">
+                    </label>
+                    <div class="input-group">
+                        <input id="appendedInput"
+                               type="text"
+                               class="form-control"
+                               data-ng-disabled="createAlertCtrl.disableAlert"
+                               data-ng-model="createAlertCtrl.amount" />
+                        <span class="input-group-addon"
+                              data-ng-bind="ovhAccount.model.balanceCurrencyCode">
+                        </span>
+                    </div>
+                </div>
+
+                <p data-ng-if="!checkAmount()"
+                   role="alert"
+                   class="text-danger"
+                   data-i18n-static="ovhAccount_create_alert_input_error">
+                </p>
+
+                <div class="checkbox">
+                    <label title="{{ i18n.ovhAccount_delete_alert }}">
+                        <input type="checkbox"
+                               data-ng-model="createAlertCtrl.disableAlert" />
+                        <span data-i18n-static="ovhAccount_delete_alert"></span>
+                    </label>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+ </div>

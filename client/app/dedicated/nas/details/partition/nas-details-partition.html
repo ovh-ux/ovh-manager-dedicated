@@ -1,0 +1,190 @@
+<div class="dedicated-nas-details-partition"
+     data-ui-view>
+
+    <!-- Partition Infos -->
+    <button type="button"
+            class="btn btn-link"
+            data-ng-click="openHelp = !openHelp">
+        <span class="fa mr-2"
+              data-ng-class="{
+                  'fa-chevron-right': !openHelp,
+                  'fa-chevron-down': openHelp
+              }">
+        </span>
+        <span data-i18n-static="nas_partitions_info"></span>
+    </button>
+    <div class="oui-box oui-box_light"
+         data-ng-if="openHelp">
+        <p>
+            <strong data-i18n-static="nas_partitions_info_linux"></strong>
+            <span data-i18n-static="nas_partitions_info_linux_1"></span>
+        </p>
+        <ul>
+            <li>
+                <span data-i18n-static="nas_partitions_info_NFS"></span>
+                <span data-ng-show="nasType == 'nasha'"
+                      data-ng-bind="tr('nas_partitions_info_linux_NFS', [$ctrl.data.nas.ip, $ctrl.data.nas.serviceName])">
+                </span>
+                <span data-ng-show="nasType == 'nas'"
+                      data-ng-bind="tr('nas_partitions_info_linux_NFS_mini', [$ctrl.data.nas.ip, $ctrl.data.nas.mountPath])">
+                </span>
+            </li>
+            <li>
+                <span data-i18n-static="nas_partitions_info_CIFS"></span>
+                <span data-ng-show="nasType == 'nasha'"
+                      data-ng-bind="tr('nas_partitions_info_linux_CIFS', [$ctrl.data.nas.ip, $ctrl.data.nas.serviceName])">
+                </span>
+                <span data-ng-show="nasType == 'nas' && $ctrl.data.nas.mountPath"
+                      data-ng-bind="tr('nas_partitions_info_linux_CIFS_mini', [$ctrl.data.nas.ip, $ctrl.data.nas.mountPath.replace('/','_')])">
+                </span>
+            </li>
+        </ul>
+        <p>
+            <strong data-i18n-static="nas_partitions_info_windows"></strong>
+        </p>
+        <ul>
+            <li>
+                <span data-i18n-static="nas_partitions_info_CIFS"></span>
+                <span data-ng-show="nasType == 'nasha'"
+                      data-ng-bind="tr('nas_partitions_info_windows_CIFS', ['\\\\' + $ctrl.data.nas.ip, '\\' + $ctrl.data.nas.serviceName])">
+                </span>
+                <span data-ng-show="nasType == 'nas' && $ctrl.data.nas.mountPath"
+                      data-ng-bind="tr('nas_partitions_info_windows_CIFS_mini', ['\\\\' + $ctrl.data.nas.ip, '\\' + $ctrl.data.nas.mountPath.replace('/','_')])">
+                </span>
+            </li>
+        </ul>
+    </div> <!-- End of Partition Infos -->
+
+    <div class="row mt-4">
+        <div class="col-sm-9"
+             data-ng-class="{ 'col-xs-12': !$ctrl.data.nas.canCreatePartition }">
+            <table class="table table-hover">
+                <thead>
+                    <th scope="col"
+                        data-i18n-static="nas_partitions_name">
+                    </th>
+                    <th scope="col"
+                        data-i18n-static="nas_partitions_protocol">
+                    </th>
+                    <th scope="col"
+                        data-i18n-static="nas_partitions_size">
+                    </th>
+                    <th scope="col"
+                        class="text-right">
+                        <button type="button"
+                                class="btn btn-link"
+                                title="{{ i18n.refresh }}"
+                                data-ng-click="$ctrl.getPartitions(true)">
+                            <span class="fa fa-refresh" aria-hidden="true"></span>
+                        </button>
+                    </th>
+                </thead>
+                <tbody data-ng-if="$ctrl.loaders.table">
+                    <tr>
+                        <td colspan="4"
+                            class="text-center">
+                            <oui-spinner data-size="s"></oui-spinner>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody data-ng-if="!$ctrl.loaders.table && $ctrl.table.partitionIds.length === 0">
+                    <tr>
+                        <td colspan="4"
+                            class="text-center"
+                            data-i18n-static="nas_partitions_no_data">
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody data-ng-if="!$ctrl.loaders.table && $ctrl.table.partitionIds === null">
+                    <tr>
+                        <td colspan="4"
+                            class="text-center"
+                            data-i18n-static="nas_partitions_no_data_error">
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody data-ng-if="!$ctrl.loaders.table">
+                    <tr data-ng-repeat="partition in $ctrl.table.partitionDetails track by $index">
+                        <th scope="row"
+                            data-ng-bind="partition.partitionName">
+                        </th>
+                        <td data-ng-bind="tr('nas_partitions_protocol_' + partition.protocol)"></td>
+                        <td data-ng-bind="partition.size + ' ' + tr('unit_size_GB')"></td>
+                        <td class="text-right">
+                            <div class="btn-group"
+                                 data-uib-dropdown
+                                 data-dropdown-append-to-body>
+                                <button id="btn-dedicated-nas-partition-{{ $index }}"
+                                        type="button"
+                                        class="btn btn-link"
+                                        data-uib-dropdown-toggle>
+                                    <span class="ovh-font ovh-font-dots align-top" aria-hidden="true"></span>
+                                    <span class="sr-only"
+                                          data-i18n-static="common_actions">
+                                    </span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-right"
+                                    role="menu"
+                                    aria-labelledby="btn-dedicated-nas-partition-{{ $index }}"
+                                    data-uib-dropdown-menu>
+                                    <li role="menuitem"
+                                        data-ng-if="$ctrl.data.nas.canCreatePartition">
+                                        <button type="button"
+                                                class="btn btn-link"
+                                                data-ng-click="$ctrl.data.nas.canCreatePartition && setAction('dedicated/nas/details/partition/update/nas-partition-update.html', {
+                                                    partition: partition,
+                                                    currentNas: $ctrl.data.nas
+                                                })"
+                                                data-i18n-static="nas_partitions_action_update">
+                                        </button>
+                                    </li>
+                                    <li role="menuitem">
+                                        <a class="btn btn-link"
+                                           data-ui-sref="app.networks.nas.details.partition.access({ partitionName: partition.partitionName })"
+                                           data-i18n-static="nas_partitions_action_display_access">
+                                        </a>
+                                    </li>
+                                    <li role="menuitem"
+                                        data-ng-if="$ctrl.isNasha()">
+                                        <a class="btn btn-link"
+                                           data-ui-sref="app.networks.nas.details.partition.snapshot({ partitionName: partition.partitionName })"
+                                           data-i18n-static="nas_partitions_action_display_snapshot">
+                                        </a>
+                                    </li>
+                                    <li data-ng-if="$ctrl.data.nas.canCreatePartition">
+                                        <button type="button"
+                                                class="btn btn-link"
+                                                data-ng-click="$ctrl.data.nas.canCreatePartition && setAction('dedicated/nas/details/partition/delete/nas-partition-delete.html', partition)"
+                                                data-i18n-static="nas_partitions_action_delete">
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div data-pagination-front
+                 data-items="$ctrl.table.partitionIds"
+                 data-paginated-items="$ctrl.table.partitionDetails"
+                 data-current-page="currentPage"
+                 data-nb-pages="nbPages"
+                 data-refresh="$ctrl.table.refresh"
+                 data-items-per-page="itemsPerPage"
+                 data-transform-item="$ctrl.transformItem(item)"
+                 data-on-transform-item-done="$ctrl.onTransformItemDone(items)"
+                 data-page-placeholder="{{tr('pagination_page', [currentPage, nbPages])}}"
+                 data-item-per-page-placeholder="{{tr('pagination_display')}}">
+            </div>
+        </div>
+
+        <div class="col-sm-3"
+             data-ng-if="$ctrl.data.nas.canCreatePartition">
+            <button type="button"
+                    class="btn btn-block btn-default"
+                    data-ng-click="$ctrl.data.nas.canCreatePartition && setAction('dedicated/nas/details/partition/add/nas-partition-add.html', $ctrl.data.nas)"
+                    data-i18n-static="nas_partitions_action_add">
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+.billing-payment-method-add-credit-card {
+    width: 55em;
+
+    .oui-loader__container {
+        margin: auto;
+    }
+
+    .oui-input-formfield,
+    .oui-select-formfield {
+        margin-bottom: 20px;
+    }
+
+    .oui-input-formfield {
+        .oui-input {
+            box-sizing: border-box;
+            padding: 0 @oui-input-padding;
+
+            &:focus {
+                outline: none;
+                border-color: @oui-formfield-label-default-font-color;
+                box-shadow: @oui-input-shadow-focus;
+            }
+        }
+
+        .intl-tel-input > .oui-input {
+            padding-left: 3rem;
+        }
+    }
+}
