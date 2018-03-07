@@ -3,6 +3,9 @@ angular.module("UserAccount").config(($stateProvider) => {
         url: "/services",
         templateUrl: "account/user/contacts/service/user-contacts-service.html",
         controller: "UserAccount.controllers.contactServices",
-        controllerAs: "ctrlServices"
+        controllerAs: "ctrlServices",
+        params: {
+            serviceName: null
+        }
     });
 });
