@@ -19,8 +19,6 @@ angular.module("App")
                     state: "app.license.order"
                 });
 
-                console.log(user.ovhSubsidiary, constants.urls[user.ovhSubsidiary].dedicatedOrder);
-
                 actionsMenuOptions.push({
                     title: $translate.instant("navigation_left_dedicatedServers"),
                     icon: "ovh-font ovh-font-server",
