@@ -1,0 +1,23 @@
+<div class="modal-license-confirm-upgrade-redirection"
+     data-ng-controller="ConfirmUpgradeRedirectionCtrl">
+
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="redirectToUpgrade"
+         data-wizard-confirm-button-text="i18n.license_upgrade_redirection_popup_upgrade"
+         data-wizard-title="tr('license_upgrade_redirection_popup_title', currentActionData.licenseType)">
+
+        <div data-wizard-step>
+
+            <div data-ng-show="!model.deleting && !model.deleted">
+                <i class="icon-warning" aria-hidden="true"></i>
+                <p class="text-info"
+                   data-ng-bind="tr('license_upgrade_redirection_popup_text', currentActionData.licenseType)">
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,88 @@
+<div data-uib-dropdown
+     data-dropdown-append-to-body>
+
+    <button type="button"
+            class="btn btn-link dropdown-toggle"
+            title="{{:: 'common_actions' | UAi18n }}"
+            data-uib-dropdown-toggle>
+        <span class="ovh-font ovh-font-dots align-top"
+              aria-label="{{:: 'common_actions' | UAi18n }}"
+              aria-hidden="true">
+        </span>
+    </button>
+
+    <ul class="dropdown-menu-right"
+        data-uib-dropdown-menu>
+
+        <!-- DESCRIPTION -->
+        <li>
+            <button type="button"
+                    class="btn btn-link"
+                    data-ng-click="setAction('ip/block/description/edit/ip-ip-block-description-edit', { ipBlock: ipBlock })"
+                    data-ng-bind="ipBlock.description && tr('ip_description_edit_title') || tr('ip_description_new_title')">
+            </button>
+        </li>
+
+        <!-- REVERSE:: only for ipv6block -->
+        <li data-ng-if="ipBlock.version === 'IPV6' && !ipBlock.isUniq">
+            <button type="button"
+                    class="btn btn-link"
+                    data-ng-click="setAction('ip/reverse/add/ip-ip-reverse-add', { ipBlock: ipBlock })"
+                    data-i18n-static="ip_table_manage_add_ipv6block">
+            </button>
+        </li>
+
+        <!-- DELEGATION REVERSE:: only for ipv6block -->
+        <li data-ng-if="canReverseDelegations(ipBlock)">
+            <button type="button"
+                    class="btn btn-link"
+                    data-ng-click="setAction('ip/reverse/ip-ip-reverse', { ipBlock: ipBlock })"
+                    data-i18n-static="ip_table_manage_delegate_ipv6block">
+            </button>
+        </li>
+
+        <li class="divider"
+            data-ng-if="ipBlock.type === 'FAILOVER'"
+            role="separator">
+        </li>
+
+        <!-- ORGANISATION -->
+        <li data-ng-if="ipBlock.type === 'FAILOVER' && ipBlock.organizationId">
+            <button type="button"
+                    class="btn btn-link"
+                    data-ng-click="setAction('ip/organisation/view/ip-ip-organisation-view', { ipBlock: ipBlock })"
+                    data-i18n-static="ip_table_manage_view_iporganisation_details">
+            </button>
+        </li>
+
+        <li data-ng-if="ipBlock.type === 'FAILOVER' && ipBlock.organizationId">
+            <button type="button"
+                    class="btn btn-link"
+                    data-ng-click="setAction('ip/organisation/change/ip-ip-organisation-change', { ipBlock: ipBlock })"
+                    data-i18n-static="ip_table_manage_view_iporganisation_change">
+            </button>
+        </li>
+
+        <!-- IPMOVE -->
+        <li data-ng-if="ipBlock.type === 'FAILOVER'">
+            <button type="button"
+                    class="btn btn-link"
+                    data-ng-click="setAction('ip/block/move/ip-ip-block-move', { ipBlock: ipBlock })"
+                    data-i18n-static="ip_table_manage_move_ipblock">
+            </button>
+        </li>
+
+        <!-- IP DELETE -->
+        <li data-ng-if="ipBlock.type == 'FAILOVER'">
+            <button type="button"
+                    class="btn btn-link"
+                    data-ng-click="setAction('ip/block/delete/ip-ip-block-delete', { ipBlock: ipBlock })"
+                    data-uib-tooltip="{{ !ipBlock.canBeTerminated ? tr('ip_failover_impossible_delete') : '' }}"
+                    data-tooltip-placement="left"
+                    data-ng-disabled="!ipBlock.canBeTerminated"
+                    data-i18n-static="ip_table_manage_delete_ipblock">
+            </button>
+        </li>
+
+    </ul>
+</div>

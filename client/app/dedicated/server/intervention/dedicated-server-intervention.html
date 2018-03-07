@@ -1,0 +1,53 @@
+<div data-ng-controller="InterventionCtrl">
+
+    <div class="text-center"
+         data-ng-if="loading">
+        <oui-spinner></oui-spinner>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col"
+                        data-i18n-static="server_configuration_intervention_date">
+                    </th>
+                    <th scope="col"
+                        data-i18n-static="server_configuration_intervention_type">
+                    </th>
+                </tr>
+            </thead>
+            <tbody data-ng-if="interventionsLoading">
+                <tr>
+                    <td colspan="2"
+                        class="text-center">
+                        <oui-spinner data-size="s"></oui-spinner>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody data-ng-if="!interventionsLoading">
+                <tr data-ng-repeat="intervention in interventions.list.results | orderBy:'-intervention.date' track by $index">
+                    <th scope="row"
+                        data-ng-bind="intervention.date | date:'medium'">
+                    </th>
+                    <td data-ng-bind="intervention.type"></td>
+                </tr>
+            </tbody>
+            <tbody data-ng-if="!interventionsLoading && !interventions.list.results.length">
+                <tr>
+                    <td colspan="2"
+                        class="text-center"
+                        data-i18n-static="server_configuration_intervention_empty">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div data-ng-show="!interventionsLoading && interventions.list.results.length > 0"
+         data-pagination-server-side
+         data-pagination-server-side-function="loadInterventions"
+         data-pagination-server-side-paginated-stuff="interventions"
+         data-pagination-server-side-table-loading="interventionsLoading">
+    </div>
+
+</div>

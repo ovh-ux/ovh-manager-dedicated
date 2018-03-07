@@ -1,0 +1,100 @@
+<div data-ng-controller="IpOrganisationCtrl">
+
+    <button class="btn btn-default"
+            data-ng-click="hideOrganisation()"
+            title="{{:: 'common_back' | UAi18n }}">
+        <i class="fa fa-chevron-left"
+           aria-hidden="true">
+        </i>
+        <span data-i18n-static="common_back"></span>
+    </button>
+
+    <h4 data-i18n-static="ip_organisation_title"></h4>
+
+    <div class="form-group">
+        <button class="btn btn-primary"
+                type="button"
+                data-ng-click="setAction('ip/organisation/add-or-edit/ip-ip-organisation-add-or-edit')"
+                data-i18n-static="ip_organisation_add">
+        </button>
+    </div>
+
+    <div class="table-responsive">
+        <table id="module-table-multi"
+               class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col" data-i18n-static="ip_organisation_table_organisation"></th>
+                    <th scope="col" data-i18n-static="ip_organisation_table_type"></th>
+                    <th scope="col" data-i18n-static="ip_organisation_table_lastname"></th>
+                    <th scope="col" data-i18n-static="ip_organisation_table_abuse"></th>
+                    <th scope="col" ></th>
+                </tr>
+            </thead>
+
+            <tbody data-ng-show="loadingOrganisation">
+                <tr>
+                    <td colspan="6"
+                        class="text-center">
+                        <oui-spinner data-size="s"></oui-spinner>
+                    </td>
+                </tr>
+            </tbody>
+
+            <tbody data-ng-show="!organisations.length && !loadingOrganisation">
+                <tr>
+                    <td colspan="6"
+                        class="text-center"
+                        data-i18n-static="ip_organisation_table_empty">
+                    </td>
+                </tr>
+            </tbody>
+
+            <tbody data-ng-show="!loadingOrganisation"
+                   data-ng-repeat="organisation in organisations">
+                <tr>
+                    <th scope="row">
+                        <button type="button"
+                                class="btn btn-link"
+                                data-ng-click="open = !open">
+                            <span class="fa"
+                               data-ng-class="{
+                                   'fa-plus': !open,
+                                   'fa-minus': open
+                               }"
+                               aria-hidden="true">
+                            </span>
+                        </button>
+                    </th>
+                    <td data-ng-bind="organisation.organisationId"></td>
+                    <td data-ng-bind="organisation.registry"></td>
+                    <td>
+                        <span data-ng-bind="organisation.firstname"></span>
+                        <span data-ng-bind="organisation.lastname"></span>
+                    </td>
+                    <td data-ng-bind="organisation.abuse_mailbox"></td>
+                    <td>
+                        <button class="btn btn-link"
+                                type="button"
+                                data-uib-tooltip="{{i18n.ip_organisation_edit}}"
+                                data-ng-click="setAction('ip/organisation/add-or-edit/ip-ip-organisation-add-or-edit', organisation)">
+                            <i class="fa fa-edit"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr data-ng-show="open">
+                    <td></td>
+                    <td colspan="2" data-i18n-static="ip_organisation_table_phone"></td>
+                    <td colspan="3" data-i18n-static="ip_organisation_table_address"></td>
+                </tr>
+                <tr data-ng-show="open">
+                    <td></td>
+                    <td colspan="2" data-ng-bind="organisation.phone"></td>
+                    <td colspan="3" data-ng-bind="organisation | address"></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

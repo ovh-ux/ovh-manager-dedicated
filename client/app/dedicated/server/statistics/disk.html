@@ -1,0 +1,67 @@
+<div class="oui-tile"
+     data-ng-controller="controllers.Server.Stats.Rtm.Disk">
+    <div class="oui-tile__body">
+        <div class="oui-tile__item">
+            <div class="oui-tile__definition">
+                <div class="text-center"
+                     data-ng-if="loading">
+                    <oui-spinner></oui-spinner>
+                </div>
+                <div data-ovh-alert="loadingAlert"></div>
+                <div data-ng-if="!loading">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col"
+                                    data-i18n-static="server_tab_stats_rtm_partions_name">
+                                </th>
+                                <th scope="col"
+                                    data-i18n-static="server_tab_stats_rtm_partions_mountPoint">
+                                </th>
+                                <th scope="col"
+                                    data-i18n-static="server_tab_stats_rtm_partions_usage">
+                                </th>
+                                <th scope="col"
+                                    data-i18n-static="server_tab_stats_rtm_partions_inodeUsage">
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-ng-repeat="partition in partitions track by $index">
+                                <th scope="row"
+                                    data-ng-bind="partition.partition">
+                                </th>
+                                <td data-ng-bind="partition.mountPoint"></td>
+                                <td>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="{{ partition.usage.value }}" aria-valuemin="0" aria-valuemax="100"
+                                             data-ng-class="{
+                                                 'progress-bar-success': partition.usage.value < 51,
+                                                 'progress-bar-warning': partition.usage.value > 50 && partition.usage.value < 81,
+                                                 'progress-bar-danger': partition.usage.value > 80
+                                             }"
+                                             data-ng-style="{ 'width': partition.usage.value + '%' }">
+                                            <span data-ng-bind-template="{{ partition.usage.value }}&nbsp;{{ partition.usage.unit }}"></span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="{{ partition.inodeUsage.value }}" aria-valuemin="0" aria-valuemax="100"
+                                             data-ng-class="{
+                                                 'progress-bar-success': partition.inodeUsage.value < 51,
+                                                 'progress-bar-warning': partition.inodeUsage.value > 50 && partition.inodeUsage.value < 81,
+                                                 'progress-bar-danger': partition.inodeUsage.value > 80
+                                             }"
+                                             data-ng-style="{ 'width': partition.inodeUsage.value + '%' }"></div>
+                                        <span data-ng-bind-template="{{ partition.inodeUsage.value }}&nbsp;{{ partition.inodeUsage.unit }}"></span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

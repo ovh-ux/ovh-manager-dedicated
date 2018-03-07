@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="vrack_order_title" qtlid="148864">Tilaa vrack</translation>
+   <translation id="vrack_order_url" qtlid="163167">Klikkaa tästä luodaksesi uuden virtuaaliräkin</translation>
+   <translation id="vrack_order_task" qtlid="148890">Vrackiasi luodaan. Kokeile myöhemmin uudestaan.</translation>
+   <translation id="vrack_order_new_title" qtlid="148903">Järjestä vrackisi</translation>
+   <translation id="vrack_new_p1" qtlid="148916">Palvelimen lisääminen virtuaaliräkkiin edellyttää ammattikäyttöominaisuutta. Se lisätään tilauksellesi automaattisesti jos palvelimellasi ei sitä ole jo valmiina.</translation>
+   <translation id="vrack_new_p2" qtlid="148929">Lisää/poista palveluita vrackiisi/vrackistasi:</translation>
+   <translation id="vrack_todo" qtlid="148942">[meneillään]</translation>
+   <translation id="vrack_title_out" qtlid="148955">Palvelimet</translation>
+   <translation id="vrack_title_in" qtlid="148968">Vrack</translation>
+   <translation id="vrack_loading_error" qtlid="148981">Tapahtui virhe</translation>
+   <translation id="vrack_add" qtlid="37923">Lisää</translation>
+   <translation id="vrack_delete" qtlid="148994">Poista</translation>
+   <translation id="vrack_create_title" qtlid="149007">Vrackin luonti</translation>
+   <translation id="vrack_create_count" qtlid="163180">Syötä tilattavien vrackien lukumäärä:</translation>
+   <translation id="vrack_create_nb" qtlid="163193">Vrackien lkm:</translation>
+   <translation id="vrack_create_contacts" qtlid="145371">Vahvistan että olen lukenut ja ymmärtänyt seuraavat ehdot:</translation>
+   <translation id="vrack_create_refuse" qtlid="157798">Tilauksen asettaminen vrackille {0} ei ole mahdollinen:</translation>
+   <translation id="vrack_adding_success" qtlid="174581">Virtuaaliräkkiaktivointi toteutetaan heti kunhan tilaus <a href='{0}' target='_blank'>{1}</a> on käsitelty.</translation>
+   <translation id="vrack_adding_error" qtlid="149046">Tapahtui virhe vrackin luontipyynnön rekisteröimisessä</translation>
+   <translation id="vrack_removeadd_success" qtlid="149059">Vrack-muokkauspyyntösi on otettu huomioon onnistuneesti</translation>
+   <translation id="vrack_removeadd_partial" qtlid="149072">Vrack-muokkauspyyntösi otettiin huomioon osalle palvelimista, mutta osan palvelimien kohdalla tapahtui virheitä.</translation>
+   <translation id="vrack_removeadd_fail" qtlid="149085">Tapahtui virhe vrackin muokkausta pyydettäessä</translation>
+   <translation id="vrack_message_see_more" qtlid="140677">Katso virheilmoituksien yksityiskohdat</translation>
+   <translation id="vrack_sd_info" qtlid="149098">Jotta nykyisen palvelimesi integrointi vrack 1.5:een voitaisiin suorittaa, sinun täytyy ajaa arping-komento IP-osoitetta 1.1.1.1 vastan (esim. arping -i eth1/3 1.1.1.1).</translation>
+   <translation id="vrack_ip_info" qtlid="150918">Kun IP-osoitteesi on integroitu vrackiin, sinun täytyy määritellä sille käytettävä alue (zone) klikkaamalla seuraavaa linkkiä:  <i class="icon-warning"></i></translation>
+   <translation id="vrack_ip_warning_doing" qtlid="150931">Sen jälkeen kun IP-osoitteesi on lisätty vrackiin, sille täytyy määritellä käytettävä alue (zone).</translation>
+   <translation id="vrack_ip_warning_done" qtlid="150944">IP-aluetta (zone) ei ole määritelty. Klikkaa tästä määritelläksesi sen</translation>
+   <translation id="vrack_zone_update_title" qtlid="150957">IP-alueen (zonen) määrittely</translation>
+   <translation id="vrack_zone_update_step1" qtlid="150970">Valitse alue (zone) jonka haluat määritellä käyttöön IP-osoitteelle <b>{0}</b></translation>
+   <translation id="vrack_zone_update_step2" qtlid="150983">Aluemäärittelyn vahvistus</translation>
+   <translation id="vrack_zone_update_step2_ip" qtlid="150996">IP:</translation>
+   <translation id="vrack_zone_update_step2_zone" qtlid="151009">Alue:</translation>
+   <translation id="vrack_zone_update_success" qtlid="151022">Alue <b>{0}</b> määritellään käyttöön IP-osoitteelle <b>{1}</b> muutamassa minuutissa</translation>
+   <translation id="vrack_zone_update_error" qtlid="151035">Tapahtui virhe määriteltäessä aluetta {0} käyttöön IP-osoitteelle {1}</translation>
+   <translation id="vrack_zone_update_error_zone" qtlid="156589">Tapahtui virhe noudettaessa IP:lle {0} saatavilla olevia tietueita</translation>
+   <translation id="vrack_legacy_vrack_version" qtlid="174594">(v1.0)</translation>
+   <translation id="vrack_order_full" qtlid="163310">Olet saavuttanut saatavilla olevien virtuaaliräkkien rajan. Et voi tilata enää lisää.</translation>
+</translations>

@@ -1,0 +1,171 @@
+<div>
+
+    <h1 class="page-header"
+        data-i18n-static="payment_mean_add_title">
+    </h1>
+
+    <div class="tab-content">
+
+        <a href="#/billing/mean"
+           title="{{:: tr('payment_mean_back') }}">
+            <i class="fa fa-chevron-left"
+               aria-hidden="true">
+            </i>
+            <span data-i18n-static="payment_mean_back"></span>
+        </a>
+
+        <div data-ovh-alert></div>
+
+        <form name="paymentMeanForm"
+              data-ng-show="!meanAdded"
+              class="mt-4"
+              novalidate>
+
+            <div class="text-center"
+                 data-ng-if="loader.means">
+                <oui-spinner></oui-spinner>
+            </div>
+
+            <div class="form-group w-50"
+                 data-ng-if="!loader.means">
+                <label class="control-label"
+                       for="meanType"
+                       data-i18n-static="mean_table_head_type">
+                </label>
+                <select id="meanType"
+                        name="meanType"
+                        class="form-control"
+                        title="{{ i18n['add_mean_select_title_' + titleTypeOfSelect] }}"
+                        data-ng-disabled="meanIslocked"
+                        data-ng-change="mean.validationType = null;"
+                        data-ng-options="mean as i18n['common_payment_type_' + mean] for mean in means"
+                        data-ng-model="mean.type">
+                    <option value=""
+                            data-ng-disabled="true"
+                            data-ng-bind=":: i18n.common_choose">
+                    </option>
+                </select>
+            </div>
+
+            <div data-ng-if="mean.type"
+                 class="w-50">
+
+                <p data-ng-bind-html="i18n['paymentMean_add_message_' + mean.type + '_' + worldPart] || i18n['paymentMean_add_message_' + mean.type]"></p>
+                <div data-ng-if="mean.type === 'bankAccount'">
+
+                    <div class="form-group">
+                        <label for="iban"
+                               class="control-label required"
+                               data-i18n-static="paymentMean_label_iban">
+                        </label>
+                        <input id="iban"
+                               name="iban"
+                               type="text"
+                               class="form-control"
+                               data-ng-model="mean.iban"
+                               required
+                               data-ng-change="checkIban()"/>
+                        <div data-ng-repeat="(error, hasError) in paymentMeanForm.iban.$error"
+                             role="alert">
+                            <span class="text-danger"
+                                  data-ng-bind="i18n['paymentMean_error_' + error]"
+                                  data-ng-if="hasError && paymentMeanForm.iban.$dirty">
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bic"
+                               class="control-label required"
+                               data-i18n-static="paymentMean_label_bic">
+                        </label>
+                        <input type="text"
+                               id="bic"
+                               name="bic"
+                               type="text"
+                               class="form-control"
+                               data-ng-model="mean.bic"
+                               required
+                               data-ng-change="checkBic()"/>
+                        <div data-ng-repeat="(error, hasError) in paymentMeanForm.bic.$error"
+                             role="alert">
+                            <span class="text-danger"
+                                  data-ng-bind="i18n['paymentMean_error_' + error]"
+                                  data-ng-if="hasError && paymentMeanForm.bic.$dirty">
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ownerAddress"
+                               class="control-label required"
+                               data-i18n-static="paymentMean_label_ownerAddress">
+                        </label>
+                        <input type="text"
+                               id="ownerAddress"
+                               name="ownerAddress"
+                               class="form-control"
+                               data-ng-model="mean.ownerAddress"
+                               data-ng-minlength="5"
+                               data-ng-maxlength="255"
+                               required/>
+                        <div data-ng-repeat="(error, hasError) in paymentMeanForm.ownerAddress.$error"
+                             role="alert">
+                            <span class="text-danger"
+                                  data-ng-bind="i18n['paymentMean_error_' + error]"
+                                  data-ng-if="hasError && paymentMeanForm.ownerAddress.$dirty" >
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ownerName"
+                               class="control-label required"
+                               data-i18n-static="paymentMean_label_ownerName">
+                        </label>
+                        <input type="text"
+                               id="ownerName"
+                               name="ownerName"
+                               class="form-control"
+                               data-ng-model="mean.ownerName"
+                               data-ng-minlength="5"
+                               data-ng-maxlength="255"
+                               required/>
+                        <div data-ng-repeat="(error, hasError) in paymentMeanForm.ownerName.$error"
+                             role="alert">
+                            <span class="text-danger"
+                                  data-ng-bind="i18n['paymentMean_error_' + error]"
+                                  data-ng-if="hasError && paymentMeanForm.ownerName.$dirty">
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="checkbox"
+                     data-ng-show="canPaymentTypeSetDefaultAtCreation(mean.type)">
+                    <label>
+                        <input type="checkbox"
+                               data-ng-model="mean.setDefault" />
+                        <span data-i18n-static="payment_mean_set_default_after_validation"></span>
+                    </label>
+                </div>
+
+                <button type="button"
+                        class="btn btn-primary"
+                        data-ng-show="mean.type"
+                        data-ng-click="add()"
+                        data-i18n-static="payment_mean_add"
+                        data-ng-disabled="(paymentMeanForm.$invalid && paymentMeanForm.$dirty) || !mean.type || loader.add">
+                </button>
+            </div>
+
+            <div data-ng-if="mean.validation">
+                <p data-ng-if="mean.validation.validationType == 'documentToSend'"
+                   data-ng-bind-html="i18n['paymentMean_validation_message_documentToSend']"></p>
+                <p data-ng-if="mean.validation.validationType == 'simpleValidation'"
+                   data-ng-bind-html="i18n['paymentMean_validation_message_simpleValidation']"></p>
+            </div>
+        </form>
+    </div>
+</div>

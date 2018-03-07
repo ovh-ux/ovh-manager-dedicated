@@ -1,0 +1,22 @@
+<div data-ng-controller="IpDeleteVirtualMacCtrl">
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="deleteVirtualMac"
+         data-wizard-hide-cancel-button="loading"
+         data-wizard-title="i18n.ip_table_manage_del_virtualmac">
+
+        <div data-wizard-step
+             data-wizard-step-valid="!loading">
+
+            <div data-ng-show="!loading">
+                <strong class="text-danger"
+                        data-ng-bind="tr('ip_virtualmac_delete_confirmation', [data.ipBlock.service.virtualmac.virtualMacsByIp[data.ip.ip], data.ip.ip])">
+                </strong>
+            </div>
+            <div class="text-center"
+                 data-ng-show="loading">
+                <oui-spinner></oui-spinner>
+            </div>
+        </div>
+    </div>
+</div>

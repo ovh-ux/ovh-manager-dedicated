@@ -1,0 +1,1180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="server_dashboard_loading_error" qtlid="132083">Įvyko klaida siunčiant jūsų paslaugos duomenis.</translation>
+
+   <translation id="server_configuration_doing" qtlid="164272">[Vykdoma]</translation>
+   <translation id="server_tab_IP" qtlid="172696">IP ir saugumas</translation>
+   <translation id="server_tab_IP_block" qtlid="141366">Blokas:</translation>
+   <translation id="server_tab_IP_block_all" qtlid="69173">Visi</translation>
+   <translation id="server_tab_IP_search" qtlid="122275">Ieškoma...</translation>
+   <translation id="server_tab_IP_table_empty" qtlid="141431">Neturite Firewall taisyklių.</translation>
+   <translation id="server_tab_IP_table_not_allowed" qtlid="141379">Negalima valdyti šio IP paskelbimo prieš atakas ir Firewall Network. Norėdami gauti daugiau informacijos, susisiekite su pagalbos skyriumi.</translation>
+   <translation id="server_tab_IP_table_search_empty" qtlid="141392">Joks IP adresas neatitinka paieškos kriterijų</translation>
+   <translation id="server_tab_IP_table_header_ip_address" qtlid="26191">IP adresas</translation>
+   <translation id="server_tab_IP_table_header_country" qtlid="25171">Šalis</translation>
+   <translation id="server_tab_IP_table_header_reverse" qtlid="32338">Reverse</translation>
+   <translation id="server_tab_IP_table_header_virtual_mac" qtlid="141405">Virtualus MAC</translation>
+   <translation id="server_tab_IP_table_header_antispam" qtlid="148331">Anti-spam</translation>
+   <translation id="server_tab_IP_table_header_mitigation" qtlid="138233">Atakos sušvelninimas</translation>
+   <translation id="server_tab_IP_table_header_security" qtlid="141418">Ugniasienė</translation>
+   <translation id="server_tab_IP_table_firewall" qtlid="141418">Ugniasienė</translation>
+   <translation id="server_tab_IP_table_manage_reverse" qtlid="141444">Keisti Reverse</translation>
+   <translation id="server_tab_IP_table_delete_reverse_success" qtlid="179511">Reverse sėkmingai pašalintas.</translation>
+   <translation id="server_tab_IP_table_delete_reverse_failure" qtlid="179524">Klaida šalinant reverse.</translation>
+   <translation id="server_tab_IP_table_manage_reverse_success" qtlid="151854">Reverse naujinimas atliktas</translation>
+   <translation id="server_tab_IP_table_manage_reverse_failure" qtlid="151867">Klaida atnaujinant reverse</translation>
+   <translation id="server_tab_IP_table_manage_mac" qtlid="141457">Keisti virtualų MAC</translation>
+   <translation id="server_tab_IP_table_manage_mitigation_AUTO" qtlid="141470">Paskelbimas: automatinis režimas</translation>
+   <translation id="server_tab_IP_table_manage_mitigation_FORCED" qtlid="138311">Atakos sušvelninimas: rankinis įjungimas</translation>
+   <translation id="server_tab_IP_table_manage_mitigation_stats" qtlid="26671">Statistika</translation>
+   <translation id="server_tab_IP_table_manage_firewall_enable" qtlid="141483">Įjungti ugniasienę</translation>
+   <translation id="server_tab_IP_table_manage_firewall_disable" qtlid="141496">Išjungti ugniasienę</translation>
+   <translation id="server_tab_IP_table_manage_firewall_disable_tooltip" qtlid="141509">Paskelbimas šiuo metu aktyvus, ugniasienė negali būti išjungta.</translation>
+   <translation id="server_tab_IP_table_manage_firewall_configure" qtlid="141522">Sukurti Firewall</translation>
+   <translation id="server_tab_IP_table_manage_firewall_rules" qtlid="141535">Keisti Firewall taisykles</translation>
+   <translation id="server_tab_IP_table_manage_antispam_unblock" qtlid="148331">Anti-spam</translation>
+   <translation id="server_tab_IP_position" qtlid="45988">Pirmumas</translation>
+   <translation id="server_tab_IP_position_tooltip" qtlid="140469">Taisyklės skaitomos eilės tvarka. Taisyklė 0 turi didžiausią pirmenybę.</translation>
+   <translation id="server_tab_IP_rule" qtlid="54917">Taisyklė</translation>
+   <translation id="server_tab_IP_status" qtlid="33790">Būsena</translation>
+   <translation id="server_tab_IP_creation_date" qtlid="26419">Sukūrimo data</translation>
+   <translation id="server_tab_IP_action" qtlid="56105">Veiksmas</translation>
+   <translation id="server_tab_IP_protocol" qtlid="19711">Protokolas</translation>
+   <translation id="server_tab_IP_source_ip" qtlid="138376">IP šaltinis</translation>
+   <translation id="server_tab_IP_source_port" qtlid="141548">Šaltinio prievadas</translation>
+   <translation id="server_tab_IP_source_port_notice" qtlid="141561">nuo šaltinio prievado</translation>
+   <translation id="server_tab_IP_source_port_range_max" qtlid="141574">iki šaltinio prievado (nebūtina)</translation>
+   <translation id="server_tab_IP_destination_port" qtlid="141587">Paskirties prievadas</translation>
+   <translation id="server_tab_IP_destination_port_notice" qtlid="141600">nuo paskirties prievado</translation>
+   <translation id="server_tab_IP_destination_port_range_max" qtlid="138454">iki gavėjo prievado (neprivaloma)</translation>
+   <translation id="server_tab_IP_options" qtlid="23395">Parinktys</translation>
+   <translation id="server_tab_IP_options_tcp" qtlid="141613">TCP parinktys</translation>
+   <translation id="server_tab_IP_options_udp" qtlid="141626">UDP parinktys</translation>
+   <translation id="server_tab_IP_port_range_max" qtlid="141639">iki prievado</translation>
+   <translation id="server_tab_IP_port_range_from" qtlid="141652">nuo prievado</translation>
+   <translation id="server_tab_IP_rule_status_CREATION_PENDING" qtlid="26227">Kuriama</translation>
+   <translation id="server_tab_IP_rule_status_REMOVAL_PENDING" qtlid="133929">Šalinama</translation>
+   <translation id="server_tab_IP_rule_status_OK" qtlid="62028">Įjungta</translation>
+   <translation id="server_tab_STATS" qtlid="204337">Serverio būsena</translation>
+   <translation id="server_tab_STATS_loading_fail" qtlid="148708">Klaida įkeliant statistiką</translation>
+   <translation id="server_tab_stats_network" qtlid="283929">Tinklas:</translation>
+   <translation id="server_tab_stats_network_public" qtlid="447235">Viešojo tinklo sąsaja ({0})</translation>
+   <translation id="server_tab_stats_network_private" qtlid="447248">vRack ({0})</translation>
+   <translation id="server_tab_stats_network_no_vrack" qtlid="283955">vRack (nesukonfigūruota serveryje)</translation>
+   <translation id="server_tab_stats_type" qtlid="105875">Tipas:</translation>
+   <translation id="server_tab_stats_type_ERRORS" qtlid="32146">Klaidos</translation>
+   <translation id="server_tab_stats_type_PACKETS" qtlid="39190">Paketai</translation>
+   <translation id="server_tab_stats_type_TRAFFIC" qtlid="7510">Duomenų srautas</translation>
+   <translation id="server_tab_stats_period" qtlid="145293">Periodas:</translation>
+   <translation id="server_tab_stats_period_HOURLY" qtlid="148721">Pastarąją valandą</translation>
+   <translation id="server_tab_stats_period_DAILY" qtlid="126844">24 paskutinės valandos</translation>
+   <translation id="server_tab_stats_period_WEEKLY" qtlid="126856">7 paskutinės dienos</translation>
+   <translation id="server_tab_stats_period_MONTHLY" qtlid="99632">30 paskutinių dienų</translation>
+   <translation id="server_tab_stats_period_YEARLY" qtlid="148734">12 paskutinių mėnesių</translation>
+   <translation id="server_tab_STATS_legend_upload" qtlid="148747">Įeinantis</translation>
+   <translation id="server_tab_STATS_legend_download" qtlid="148760">Išeinantis</translation>
+   <translation id="server_tab_STATS_legend_y_ERRORS" qtlid="148773">Klaidų skaičius</translation>
+   <translation id="server_tab_STATS_legend_y_PACKETS" qtlid="148786">Paketų skaičius</translation>
+   <translation id="server_tab_STATS_legend_y_TRAFFIC" qtlid="148799">Duomenų srautas</translation>
+   <translation id="server_tab_STATS_legend_no_data" qtlid="148812">Nėra duomenų</translation>
+   <translation id="server_tab_stats_no_chart" qtlid="148825">Negalima rodyti duomenų</translation>
+   <translation id="server_tab_stats_title" qtlid="103077">Tinklo naudojimo grafikai - MRTG</translation>
+   <translation id="server_tab_stats_title_info" qtlid="148838">Multi Router Traffic Grapher - programinė įranga, kurianti tinklo srauto grafikus</translation>
+
+   <translation id="server_tab_stats_legend_mrtg" qtlid="30994">MRTG</translation>
+   <translation id="server_tab_stats_legend_rtm" qtlid="203986">Real Time Monitoring</translation>
+   <translation id="server_tab_stats_legend_location" qtlid="61074">Katalogas diegimui</translation>
+
+   <translation id="server_tab_stats_rtm_label_info" qtlid="29227">Informacija</translation>
+   <translation id="server_tab_stats_rtm_label_period" qtlid="45496">Periodas</translation>
+
+   <translation id="server_tab_stats_rtm_raid" qtlid="110970">RAID</translation>
+   <translation id="server_tab_stats_rtm_title_raid_popover" qtlid="203999">RAID būsena</translation>
+   <translation id="server_tab_stats_rtm_state_raid_details" qtlid="204012">Sužinoti daugiau</translation>
+
+   <translation id="server_tab_stats_rtm_options_label_info" qtlid="204025">Serverio informacija</translation>
+   <translation id="server_tab_stats_rtm_options_label_cpu" qtlid="199884">CPU naudojimas</translation>
+   <translation id="server_tab_stats_rtm_options_label_memory" qtlid="204038">RAM naudojimas</translation>
+   <translation id="server_tab_stats_rtm_options_label_swap" qtlid="204051">SWAP naudojimas</translation>
+   <translation id="server_tab_stats_rtm_options_label_loadavg" qtlid="204064">Load average</translation>
+   <translation id="server_tab_stats_rtm_options_label_disk" qtlid="204077">Diskų būsena</translation>
+
+   <translation id="server_tab_stats_rtm_charts_period_daily" qtlid="126844">24 paskutinės valandos</translation>
+   <translation id="server_tab_stats_rtm_charts_period_monthly" qtlid="99632">30 paskutinių dienų</translation>
+   <translation id="server_tab_stats_rtm_charts_period_weekly" qtlid="126856">7 paskutinės dienos</translation>
+   <translation id="server_tab_stats_rtm_charts_period_yearly" qtlid="148734">12 paskutinių mėnesių</translation>
+
+   <translation id="server_tab_stats_rtm_infos_motherboard" qtlid="193930">Motininė plokštė</translation>
+   <translation id="server_tab_stats_rtm_infos_cpu" qtlid="25555">CPU</translation>
+   <translation id="server_tab_stats_rtm_infos_cpu_core" qtlid="204090">Branduoliai</translation>
+   <translation id="server_tab_stats_rtm_infos_cpu_cache" qtlid="30214">Spartinančioji atmintinė</translation>
+   <translation id="server_tab_stats_rtm_infos_ram" qtlid="31354">RAM</translation>
+   <translation id="server_tab_stats_rtm_infos_rtmVersion" qtlid="193956">Real Time Monitoring versija</translation>
+   <translation id="server_tab_stats_rtm_infos_rtmVersion_update" qtlid="204103">Galimas atnaujinimas</translation>
+   <translation id="server_tab_stats_rtm_infos_kernelVersion" qtlid="204116">Kernel versija</translation>
+   <translation id="server_tab_stats_rtm_infos_disk" qtlid="193943">Diskai</translation>
+
+   <translation id="server_tab_stats_rtm_notInstalled" qtlid="204129">Jūsų serveryje neįdiegtas RTM klientas.</translation>
+   <translation id="server_tab_stats_rtm_new_window" qtlid="222176">Naujas langas</translation>
+   <translation id="server_tab_stats_rtm_guideInfo" qtlid="237737">Norėdami sužinoti daugiau, skaitykite <a href="{0}" target="_bank" title="OVH gidas (naujame lange)">OVH gidą<i class="icon-share-alt"></i></a>.</translation>
+   <translation id="server_tab_stats_rtm_error" qtlid="204155">Įvyko klaida atkuriant duomenis.</translation>
+
+   <translation id="server_tab_stats_rtm_loading" qtlid="8410">Įkraunama...</translation>
+   <translation id="server_tab_stats_rtm_errorData" qtlid="204168">Neprieinama informacija</translation>
+
+   <translation id="server_tab_stats_rtm_uptime" qtlid="31594">Uptime</translation>
+   <translation id="server_tab_stats_rtm_uptime_year_1" qtlid="204181">metai</translation>
+   <translation id="server_tab_stats_rtm_uptime_year_other" qtlid="94135">metai</translation>
+   <translation id="server_tab_stats_rtm_uptime_month_1" qtlid="40222">mėnuo</translation>
+   <translation id="server_tab_stats_rtm_uptime_month_other" qtlid="40222">mėnuo</translation>
+   <translation id="server_tab_stats_rtm_uptime_day_1" qtlid="44248">diena</translation>
+   <translation id="server_tab_stats_rtm_uptime_day_other" qtlid="44260">dienos</translation>
+   <translation id="server_tab_stats_rtm_uptime_hour_1" qtlid="40234">valanda</translation>
+   <translation id="server_tab_stats_rtm_uptime_hour_other" qtlid="44236">valandos</translation>
+   <translation id="server_tab_stats_rtm_uptime_minute_1" qtlid="44212">minutė</translation>
+   <translation id="server_tab_stats_rtm_uptime_minute_other" qtlid="44224">minutės</translation>
+   <translation id="server_tab_stats_rtm_uptime_seconde_1" qtlid="94279">sekundė</translation>
+   <translation id="server_tab_stats_rtm_uptime_seconde_other" qtlid="94291">sekundžių</translation>
+
+   <translation id="server_tab_stats_rtm_profile" qtlid="204194">Serverio profilis</translation>
+   <translation id="server_tab_stats_rtm_usage" qtlid="204207">Serverio naudojimas</translation>
+   <translation id="server_tab_stats_rtm_partions_status" qtlid="204220">Skirsnių būsena</translation>
+   <translation id="server_tab_stats_rtm_partions_error" qtlid="204233">Įvyko klaida kraunant skirsnius</translation>
+   <translation id="server_tab_stats_rtm_partions_name" qtlid="194125">Skirsnio pavadinimas</translation>
+   <translation id="server_tab_stats_rtm_partions_mountPoint" qtlid="110958">Prijungimo taškas</translation>
+   <translation id="server_tab_stats_rtm_partions_usage" qtlid="76758">Naudojama vieta</translation>
+   <translation id="server_tab_stats_rtm_partions_inodeUsage" qtlid="194151">Panaudoti mazgai (inode) </translation>
+
+   <translation id="server_configuration_state_title" qtlid="26443">Būsena</translation>
+   <translation id="server_configuration_state_OK" qtlid="96704">Normalus</translation>
+   <translation id="server_configuration_state_ERROR" qtlid="45508">Klaida</translation>
+   <translation id="server_configuration_state_HACKED" qtlid="101973">Hacked</translation>
+   <translation id="server_configuration_state_HACKED_BLOCKED" qtlid="224997">Hacked and blocked</translation>
+   <translation id="server_configuration_state_info_HACKED" qtlid="225010">Į jūsų serverį buvo įsilaužta, todėl serveris perjungtas į rescue ftp. Prašome patikrinti savo konfigūraciją prieš perkeliant savo serverį į diską. </translation>
+   <translation id="server_configuration_state_info_HACKED_BLOCKED" qtlid="225023">Į jūsų serverį buvo įsilaužta. Prašome susisiekti su pagalba dėl tolimesnių veiksmų.</translation>
+   <translation id="server_remove_hack_button" qtlid="61824">Atblokuoti</translation>
+   <translation id="server_remove_hack_success" qtlid="225036">Jūsų prašymas atblokuoti serverį buvo priimtas.</translation>
+   <translation id="server_remove_hack_fail" qtlid="225049">Įvyko klaida teikiant prašymą atblokuoti serverį.</translation>
+
+   <translation id="server_configuration_renew_service" qtlid="118962">Pratęsti nuomą</translation>
+   <translation id="server_configuration_firewall_fail" qtlid="164285">Klaida įkeliant ugniasienės informaciją</translation>
+   <translation id="server_configuration_firewall_edit_rule" qtlid="125888">Pakeisti taisyklę </translation>
+   <translation id="server_configuration_firewall_remove_rule" qtlid="125912">Pašalinti taisyklę</translation>
+   <translation id="server_configuration_firewall_remove_rule_confirmation" qtlid="138519">Ar tikrai norite ištrinti taisyklę {0}?</translation>
+   <translation id="server_configuration_firewall_remove_rule_success" qtlid="141665">Firewall taisyklė bus ištrinta.</translation>
+   <translation id="server_configuration_firewall_remove_rule_fail" qtlid="141678">Klaida teikiant Firewall taisyklės trynimo prašymą.</translation>
+   <translation id="server_configuration_firewall_enabled" qtlid="141691">Firewall įjungta</translation>
+   <translation id="server_configuration_firewall_disabled" qtlid="141704">Firewall išjungta</translation>
+   <translation id="server_configuration_firewall_short_ACTIVATED" qtlid="30250">Įjungta</translation>
+   <translation id="server_configuration_firewall_short_DEACTIVATED" qtlid="24967">Išjungta</translation>
+   <translation id="server_configuration_firewall_short_AUTO" qtlid="134215">Automatinis</translation>
+   <translation id="server_configuration_firewall_short_PENDING" qtlid="26383">Vykdoma</translation>
+   <translation id="server_configuration_firewall_not_yet_activated_short" qtlid="124952">Nesukonfigūruota</translation>
+   <translation id="server_configuration_firewall_enable_button_title" qtlid="76734">Įjungti</translation>
+   <translation id="server_configuration_firewall_disable_button_title" qtlid="90973">Išjungti</translation>
+   <translation id="server_configuration_firewall_current_ip" qtlid="141717">IP: {0}</translation>
+   <translation id="server_configuration_firewall_add_summary" qtlid="132720">Santrauka:</translation>
+   <translation id="server_configuration_firewall_add_title" qtlid="141730">Įtraukti taisyklę</translation>
+   <translation id="server_configuration_firewall_add_rule_success" qtlid="141743">Nauja taisyklė buvo įtraukta.</translation>
+   <translation id="server_configuration_firewall_add_rule_fail" qtlid="141756">Klaida įtraukiant naują taisyklę.</translation>
+   <translation id="server_configuration_firewall_add_rule_confirm_button_text" qtlid="37923">Pridėti</translation>
+   <translation id="server_configuration_firewall_modify_title" qtlid="141769">Keisti taisyklę</translation>
+   <translation id="server_configuration_firewall_modify_rule_success" qtlid="141782">Taisyklė pakeista.</translation>
+   <translation id="server_configuration_firewall_modify_rule_fail" qtlid="138662">Klaida keičiant taisyklę.</translation>
+   <translation id="server_configuration_firewall_rule_PERMIT" qtlid="141795">Leisti</translation>
+   <translation id="server_configuration_firewall_rule_DENY" qtlid="141808">Atmesti</translation>
+   <translation id="server_configuration_firewall_rule_protocol_ICMP" qtlid="19627">ICMP</translation>
+   <translation id="server_configuration_firewall_rule_protocol_IPV_4" qtlid="101781">IPv4</translation>
+   <translation id="server_configuration_firewall_rule_protocol_TCP" qtlid="141821">TCP</translation>
+   <translation id="server_configuration_firewall_rule_protocol_UDP" qtlid="141834">UDP</translation>
+   <translation id="server_configuration_firewall_rule_ip_any" qtlid="141847">visi</translation>
+   <translation id="server_configuration_firewall_enable_title" qtlid="141860">Įjungti Firewall</translation>
+   <translation id="server_configuration_firewall_enable_question" qtlid="141873">Ar tikrai norite įjungti ugniasienę IP adresui {0}?</translation>
+   <translation id="server_configuration_firewall_enable_success" qtlid="141886">IP adreso {0} ugniasienė bus įjungta po kelių minučių.</translation>
+   <translation id="server_configuration_firewall_enable_failed" qtlid="138779">Klaida įjungiant firewall šiam IP: {0}</translation>
+   <translation id="server_configuration_firewall_disable_title" qtlid="141899">Išjungti Firewall</translation>
+   <translation id="server_configuration_firewall_disable_question" qtlid="141912">Ar tikrai norite išjungti IP adreso {0} ugniasienę?</translation>
+   <translation id="server_configuration_firewall_disable_success" qtlid="141925">IP adreso {0} ugniasienė bus išjungta po kelių minučių.</translation>
+   <translation id="server_configuration_firewall_disable_failed" qtlid="141938">Klaida išjungiant IP adreso {0} Firewall</translation>
+   <translation id="server_configuration_firewall_new_title" qtlid="141951">Sukurti Firewall</translation>
+   <translation id="server_configuration_firewall_new_question" qtlid="141964">Ar tikrai norite įjungti ugniasienės kūrimą IP adresui {0}?</translation>
+   <translation id="server_configuration_firewall_new_success" qtlid="141977">IP adreso {0} ugniasienė bus sukurta po kelių minučių.</translation>
+   <translation id="server_configuration_firewall_new_failed" qtlid="141990">Klaida kuriant IP adreso {0} Firewall</translation>
+   <translation id="server_tab_trafic" qtlid="39202">Duomenų kiekis</translation>
+   <translation id="server_tab_dns" qtlid="168250">Antrinis DNS</translation>
+   <translation id="server_tab_SSH" qtlid="104830">SSH raktai</translation>
+   <translation id="server_tab_LICENSE" qtlid="113658">Licencijos</translation>
+   <translation id="server_tab_cloud_backup" qtlid="180460">Atsarginių kopijų saugykla</translation>
+   <translation id="server_tab_ftp_backup" qtlid="180460">Atsarginių kopijų saugykla</translation>
+   <translation id="server_tab_task" qtlid="96716">Užduotys</translation>
+   <translation id="server_tab_ipmi" qtlid="164298">IPMI</translation>
+   <translation id="server_tab_dashboard" qtlid="204246">Serverio būsena</translation>
+   <translation id="server_configuration_reboot_title_button" qtlid="33538">Perkrauti</translation>
+   <translation id="server_configuration_reboot_title" qtlid="134189">Perkrauti serverį </translation>
+   <translation id="server_configuration_reboot_step1_question" qtlid="133435">Nurodykite perkrovimo priežastį (nebūtina)</translation>
+   <translation id="server_configuration_reboot_step2_question" qtlid="133448">Ar tikrai norite perkrauti savo serverį {0}?</translation>
+   <translation id="server_configuration_reboot_step2_reason" qtlid="133461">Perkrovimo priežastis:</translation>
+   <translation id="server_configuration_reboot_success" qtlid="133474">Jūsų serveris {0} bus perkrautas.</translation>
+   <translation id="server_configuration_reboot_fail" qtlid="133487">Įvyko klaida teikiant prašymą perkrauti serverį.</translation>
+   <translation id="server_configuration_reboot_successfull" qtlid="164311">Jusų serveris {0} buvo perkrautas.</translation>
+   <translation id="server_configuration_reboot_fail_task" qtlid="164324">Klaida perkraunant serverį.</translation>
+   <translation id="server_configuration_monitoring_activate_title_button" qtlid="76734">Įjungti</translation>
+   <translation id="server_configuration_monitoring_activate_title" qtlid="103317">Įjungti stebėjimą</translation>
+   <translation id="server_configuration_monitoring_activate_question" qtlid="133500">Ar tikrai norite įjungti serverio {0} stebėjimą?</translation>
+   <translation id="server_configuration_monitoring_activate_success" qtlid="133513">Stebėjimo paslauga įjungta serveryje {0}</translation>
+   <translation id="server_configuration_monitoring_activate_failed" qtlid="133526">Įvyko klaida įjungiant stebėjimą serveryje {0}</translation>
+   <translation id="server_configuration_monitoring_activate_information" qtlid="208573">Paslaugai nustojus atsakyti į PING užklausas, vykdoma OVH intervencija duomenų centre</translation>
+   <translation id="server_configuration_monitoring_deactivate_title_button" qtlid="90973">Išjungti</translation>
+   <translation id="server_configuration_monitoring_deactivate_title" qtlid="103293">Išjungti stebėjimą</translation>
+   <translation id="server_configuration_monitoring_deactivate_question" qtlid="134345">Ar tikrai norite išjungti serverio {0} stebėjimą?</translation>
+   <translation id="server_configuration_monitoring_deactivate_success" qtlid="133539">Stebėjimo paslauga išjungta serveryje {0}</translation>
+   <translation id="server_configuration_monitoring_deactivate_failed" qtlid="133552">Įvykdo klaida išjungiant stebėjimą serveryje {0}</translation>
+   <translation id="server_configuration_monitoring_deactivate_information" qtlid="208586">OVH intervencija duomenų centre išjungta, paslaugai nustojus atsakyti į PING užklausas</translation>
+   <translation id="server_configuration_antispam_BLOCKED_FOR_SPAM" qtlid="108901">Užblokuotas</translation>
+   <translation id="server_configuration_antispam_UNBLOCKING" qtlid="26383">Vykdoma</translation>
+   <translation id="server_configuration_antispam_UNBLOCKED" qtlid="148357">Neblokuojamas</translation>
+   <translation id="server_configuration_antispam_noblock" qtlid="148357">Neblokuojamas</translation>
+   <translation id="server_configuration_antispam_unblock_button" qtlid="148344">Atblokuoti anti-spam</translation>
+   <translation id="server_configuration_antispam_current_ip" qtlid="103870">IP adresas:</translation>
+   <translation id="server_configuration_antispam_date_blocking" qtlid="148383">Blokavimo data:</translation>
+   <translation id="server_configuration_antispam_date_blocking_end" qtlid="148396">Galima atblokavimo data:</translation>
+   <translation id="server_configuration_antispam_status" qtlid="151373">Būsena:</translation>
+   <translation id="server_configuration_antispam_status_BLOCKED_FOR_SPAM" qtlid="151386">Blokuojama</translation>
+   <translation id="server_configuration_antispam_status_UNBLOCKED" qtlid="151399">Neblokuojama</translation>
+   <translation id="server_configuration_antispam_status_UNBLOCKING" qtlid="151412">Atblokuojama</translation>
+   <translation id="server_configuration_antispam_error" qtlid="148409">Klaida atblokuojant IP {0}</translation>
+   <translation id="server_configuration_antispam_load_error" qtlid="148422">Klaida įkeliant IP {0} ({1})</translation>
+   <translation id="server_tab_IP_antispam_periods_table_empty" qtlid="151425">Nėra jokio elemento ar failo</translation>
+   <translation id="server_tab_IP_antispam_periods_table_headers_date" qtlid="24523">Data</translation>
+   <translation id="server_tab_IP_antispam_periods_table_headers_score" qtlid="151438">Spam score</translation>
+   <translation id="server_tab_IP_antispam_periods_table_headers_total" qtlid="32458">Viso</translation>
+   <translation id="server_tab_IP_antispam_periods_table_headers_spamscount" qtlid="151451">spam kiekis</translation>
+   <translation id="server_tab_IP_antispam_periods_table_see_more" qtlid="37527">Išsamiau</translation>
+   <translation id="server_tab_IP_antispam_details_information_title" qtlid="151464">aptiktas spam</translation>
+   <translation id="server_tab_IP_antispam_details_information" qtlid="151477">Pasirinkto laikotarpio anti-spam informacija:</translation>
+   <translation id="server_tab_IP_antispam_details_information_search_placeholder" qtlid="140612">Ieškoma...</translation>
+   <translation id="server_tab_IP_antispam_details_information_table_header_ip" qtlid="151490">IP dst</translation>
+   <translation id="server_tab_IP_antispam_details_information_table_header_messageid" qtlid="151503">Pranešimo ID</translation>
+   <translation id="server_tab_IP_antispam_details_information_table_header_date" qtlid="24523">Data</translation>
+   <translation id="server_tab_IP_antispam_details_information_table_header_spamscore" qtlid="151516">SpamScore</translation>
+   <translation id="server_configuration_mitigation_ACTIVATED" qtlid="30250">Įjungta</translation>
+   <translation id="server_configuration_mitigation_FORCED" qtlid="134202">Priverstinis</translation>
+   <translation id="server_configuration_mitigation_AUTO" qtlid="134215">Automatinis</translation>
+   <translation id="server_configuration_mitigation_PENDING" qtlid="26383">Vykdoma</translation>
+   <translation id="server_configuration_mitigation_force_title_button" qtlid="142003">Forsuoti paskelbimą</translation>
+   <translation id="server_configuration_mitigation_force_title" qtlid="142003">Forsuoti paskelbimą</translation>
+   <translation id="server_configuration_mitigation_force_question" qtlid="134241">Ar tikrai norite forsuoti IP {0} paskelbimą?</translation>
+   <translation id="server_configuration_mitigation_force_success" qtlid="142016">IP {0} paskelbimas apsaugai bus forsuotas ir aktyvus po kelių akimirkų</translation>
+   <translation id="server_configuration_mitigation_force_failed" qtlid="138922">Klaida forsuojant IP adreso {0} apsaugą.</translation>
+   <translation id="server_configuration_mitigation_auto_title_button" qtlid="142029">Perjungti paskelbimą į automatinį režimą</translation>
+   <translation id="server_configuration_mitigation_auto_title" qtlid="142029">Perjungti paskelbimą į automatinį režimą</translation>
+   <translation id="server_configuration_mitigation_auto_question" qtlid="142042">Ar tikrai norite perjungti IP {0} paskelbimą į automatinį režimą?</translation>
+   <translation id="server_configuration_mitigation_auto_success" qtlid="140508">IP adresui {0} netrukus pradės galioti automatinės apsaugos priemonės </translation>
+   <translation id="server_configuration_mitigation_auto_failed" qtlid="142055">Klaida perjungiant IP {0} paskelbimą į automatinį režimą?</translation>
+   <translation id="server_configuration_mitigation_statistics_title" qtlid="26671">Statistika</translation>
+   <translation id="server_configuration_mitigation_statistics_back_title_button" qtlid="4118">Atgal</translation>
+   <translation id="server_configuration_mitigation_statistics_current_ip" qtlid="142068">Peržiūrėti apsaugos paskelbimo statistiką, kai paskirties IP yra {0}</translation>
+   <translation id="server_configuration_mitigation_statistics_to" qtlid="88725">Nuo</translation>
+   <translation id="server_configuration_mitigation_statistics_mode_realtime" qtlid="142081">Realiu laiku</translation>
+   <translation id="server_configuration_mitigation_statistics_mode_date" qtlid="142094">Nurodytą datą</translation>
+   <translation id="server_configuration_mitigation_statistics_input" qtlid="139000">Įeinantis</translation>
+   <translation id="server_configuration_mitigation_statistics_output" qtlid="142107">Išeinantis</translation>
+   <translation id="server_configuration_mitigation_statistics_unit_B" qtlid="142120">B / s</translation>
+   <translation id="server_configuration_mitigation_statistics_unit_KB" qtlid="142133">kB / s</translation>
+   <translation id="server_configuration_mitigation_statistics_unit_MB" qtlid="142146">MB / s</translation>
+   <translation id="server_configuration_mitigation_statistics_unit_GB" qtlid="142159">GB / s</translation>
+   <translation id="server_configuration_mitigation_statistics_unit_TB" qtlid="142172">TB / s</translation>
+   <translation id="server_configuration_mitigation_statistics_unit_PB" qtlid="142185">PB / s</translation>
+   <translation id="server_configuration_mitigation_statistics_unit_EB" qtlid="142198">EB / s</translation>
+   <translation id="server_configuration_mitigation_statistics_unit_ZB" qtlid="142211">ZB / s</translation>
+   <translation id="server_configuration_mitigation_statistics_unit_YB" qtlid="142224">YB / s</translation>
+   <translation id="server_configuration_mitigation_statistics_scale" qtlid="139143">Skalė</translation>
+   <translation id="server_configuration_mitigation_statistics_statistics_scale_10_S" qtlid="110478">10 sekundžių</translation>
+   <translation id="server_configuration_mitigation_statistics_statistics_scale_1_M" qtlid="32326">1 minutė</translation>
+   <translation id="server_configuration_mitigation_statistics_statistics_scale_5_M" qtlid="33178">5 minutės</translation>
+   <translation id="server_configuration_mitigation_statistics_reset_zoom" qtlid="142237">Iš naujo inicijuoti mastelį</translation>
+   <translation id="server_configuration_mitigation_statistics_no_data" qtlid="156602">IP {0} statistika nepasiekiama.</translation>
+   <translation id="server_configuration_netboot_title_button" qtlid="37875">Keisti</translation>
+   <translation id="server_configuration_netboot_title" qtlid="133565">Pakeisti netboot</translation>
+   <translation id="server_configuration_netboot_unavailable" qtlid="154650">Informacija negalima</translation>
+   <translation id="server_configuration_netboot_title_help_rootdevice" qtlid="151880">Priimami tik root įtaisai:</translation>
+   <translation id="server_configuration_netboot_title_help_rootdevice_list1" qtlid="151893">/dev/hda[0 - N]</translation>
+   <translation id="server_configuration_netboot_title_help_rootdevice_list2" qtlid="151906">/dev/hdb[0 - N]</translation>
+   <translation id="server_configuration_netboot_title_help_rootdevice_list3" qtlid="151919">/dev/sda[0 - N]</translation>
+   <translation id="server_configuration_netboot_title_help_rootdevice_list4" qtlid="151932">/dev/sdb[0 - N]</translation>
+   <translation id="server_configuration_netboot_title_help_rootdevice_list5" qtlid="145150">/dev/md[0 - N]</translation>
+   <translation id="server_configuration_netboot_title_help_rootdevice_list6" qtlid="151308">/dev/rd/c0p0[0 - N]</translation>
+   <translation id="server_configuration_netboot_title_help_rootdevice_list7" qtlid="151945">/dev/ram0</translation>
+   <translation id="server_configuration_netboot_current" qtlid="142718">Šiuo metu pasirinkta serverio {0} įkrova tinklu:</translation>
+   <translation id="server_configuration_netboot_step1_question" qtlid="62558">Ką norite atlikti?</translation>
+   <translation id="server_configuration_netboot_option_harddisk" qtlid="102861">Krauti iš standžiojo disko</translation>
+   <translation id="server_configuration_netboot_option_rescue" qtlid="102873">Įkrauti rescue režimu</translation>
+   <translation id="server_configuration_netboot_option_network" qtlid="142731">Įkrauti tinklu</translation>
+   <translation id="server_configuration_netboot_configuration" qtlid="142744">Konfigūracija:</translation>
+   <translation id="server_configuration_netboot_rescue_choice" qtlid="141015">Galimas Rescue:</translation>
+   <translation id="server_configuration_netboot_rescue_mail" qtlid="262986">Gauti režimo (mode) identifikatorius:</translation>
+   <translation id="server_configuration_netboot_rescue_mail_invalid" qtlid="262999">Neteisingas</translation>
+   <translation id="server_configuration_netboot_kernel_choice" qtlid="142757">Galimas branduolys:</translation>
+   <translation id="server_configuration_netboot_kernel_option" qtlid="142770">Branduolio naudojamos parinktys:</translation>
+   <translation id="server_configuration_netboot_kernel_rootdevice" qtlid="142783">Root įtaisas:</translation>
+   <translation id="server_configuration_netboot_kernel_rootdevice_exemple" qtlid="151958">pavyzdys: žr. pagalbą</translation>
+   <translation id="server_configuration_netboot_loading_error" qtlid="142809">Klaida įkeliant serverio {0} įkrovos tinklu informaciją</translation>
+   <translation id="server_configuration_netboot_step2_question" qtlid="142822">Ar tikrai norite pritaikyti keitimus serveriui {0}?</translation>
+   <translation id="server_configuration_netboot_step2_resume" qtlid="142835">Suvestinė:</translation>
+   <translation id="server_configuration_netboot_step2_type" qtlid="142848">Įkrovos tinklu tipas:</translation>
+   <translation id="server_configuration_netboot_step2_kernel" qtlid="142861">Branduolio pavadinimas:</translation>
+   <translation id="server_configuration_netboot_step2_rescue" qtlid="142874">Rescue pavadinimas:</translation>
+   <translation id="server_configuration_netboot_step2_rescue_mail" qtlid="263012">Rescue mode el. paštas:</translation>
+   <translation id="server_configuration_netboot_success" qtlid="142887">Įkrova tinklu atnaujinta. Galite perkrauti serverį.</translation>
+   <translation id="server_configuration_netboot_fail" qtlid="142900">Klaida atnaujinant serverio {0} įkrovą tinklu</translation>
+   <translation id="server_configuration_resintall_title_button" qtlid="133578">Įdiegti komponentų paketą</translation>
+   <translation id="server_configuration_monitoring" qtlid="31666">Stebėjimas</translation>
+
+   <translation id="server_configuration_monitoring_services" qtlid="243715">Stebimos paslaugos</translation>
+   <translation id="server_configuration_monitoring_services_use" qtlid="243728">Stebėti mano paslaugas</translation>
+
+   <translation id="server_configuration_services_state_links" qtlid="245116">Nuorodos</translation>
+   <translation id="server_configuration_services_state_links_weathermap" qtlid="245129"><a href="{0}" target="_blank">Weathermap</a></translation>
+   <translation id="server_configuration_services_state_links_vms" qtlid="245142"><a href="{0}" target="_blank">VMS</a></translation>
+   <translation id="server_configuration_services_state_links_travaux" qtlid="245155"><a href="{0}" target="_blank">Darbai</a></translation>
+
+   <translation id="server_configuration_profesionnal_use" qtlid="199962">PRO parinktis</translation>
+   <translation id="server_configuration_profesionnal_use_info" qtlid="199975">Negalėsite iš šio serverio jungtis prie NAS, kol nepradėsite naudoti PRO parinkties.</translation>
+   <translation id="server_configuration_profesionnal_use_order_button" qtlid="76734">Įjungti</translation>
+   <translation id="server_configuration_profesionnal_use_order_title" qtlid="200001">PRO parinkties įjungimas</translation>
+   <translation id="server_configuration_profesionnal_use_order_step1" qtlid="200014">Tuojau savo serveriui <b>{0}</b> įjungsite PRO parinktį.</translation>
+   <translation id="server_configuration_profesionnal_use_order_step2_info" qtlid="181214">Pasirinkite trukmę:</translation>
+   <translation id="server_configuration_profesionnal_use_order_step2_error" qtlid="200027">Klaida gaunant PRO parinkties užsakymo informaciją.</translation>
+   <translation id="server_configuration_profesionnal_use_order_step4_info" qtlid="177496">Užsakymo santrauka</translation>
+   <translation id="server_configuration_profesionnal_use_order_step4_price_HT" qtlid="146177">Visa kaina be PVM:</translation>
+   <translation id="server_configuration_profesionnal_use_order_step4_price_TTC" qtlid="146190">Visa kaina su PVM:</translation>
+   <translation id="server_configuration_profesionnal_use_order_step4_final_txt" qtlid="181240">Spragtelėkite "Patvirtinti", kad užbaigtumėte užsakymą.</translation>
+   <translation id="server_configuration_profesionnal_use_order_step4_final_txt2" qtlid="181253">Atsidarys naujas langas ir būsite automatiškai nukreipti į apmokėjimo sąsają.</translation>
+   <translation id="server_configuration_profesionnal_use_order_finish_success" qtlid="181266">Užsakymas nr. <a href='{0}' target='_blank'>{1}</a> užregistruotas.</translation>
+   <translation id="server_configuration_profesionnal_use_order_finish_error" qtlid="181227">Klaida kuriant užsakymą.</translation>
+
+   <translation id="server_tab_USB_STORAGE_order_select_duration" qtlid="181214">Pasirinkite trukmę:</translation>
+
+   <translation id="server_configuration_monitoring_activated" qtlid="30250">Įjungta</translation>
+   <translation id="server_configuration_monitoring_disabled" qtlid="24967">Išjungta</translation>
+   <translation id="server_configuration_distribution" qtlid="151971">Sistema (OS)</translation>
+   <translation id="server_configuration_distribution_none" qtlid="233034">Neįdiegta</translation>
+   <translation id="server_configuration_boot" qtlid="151984">Boot</translation>
+   <translation id="server_configuration_creation" qtlid="371726">Nuomos pradžia nuo</translation>
+   <translation id="server_configuration_datacenter" qtlid="30802">Duomenų centras</translation>
+   <translation id="server_configuration_rack" qtlid="32050">Spinta</translation>
+   <translation id="server_configuration_server_id" qtlid="225915">Serverio ID</translation>
+   <translation id="server_configuration_name" qtlid="151997">OVH pavadinimas</translation>
+   <translation id="server_configuration_description" qtlid="191655">Komercinis pavadinimas</translation>
+   <translation id="server_configuration_description_housing" qtlid="233583">Housing</translation>
+   <translation id="server_configuration_reverse" qtlid="32338">Reverse</translation>
+   <translation id="server_configuration_reverse_not_configured" qtlid="124952">Nesukonfigūruota</translation>
+   <translation id="server_configuration_ipv4" qtlid="167899">IP</translation>
+   <translation id="server_configuration_ipv6" qtlid="191239">IPv6</translation>
+   <translation id="server_configuration_ipv4_manage" qtlid="16301">Valdyti</translation>
+   <translation id="server_configuration_secondary_dns_fail" qtlid="164337">Klaida įkeliant antrinio DNS informaciją</translation>
+   <translation id="server_configuration_secondary_dns_empty" qtlid="351983">Jokio antrinio DNS</translation>
+   <translation id="server_configuration_delete_secondary_dns_title" qtlid="142965">Antrinio DNS trynimas</translation>
+   <translation id="server_configuration_delete_secondary_dns_question" qtlid="142978">Ar tikrai norite ištrinti antrinį DNS '{0}'?</translation>
+   <translation id="server_configuration_delete_secondary_dns_success" qtlid="142991">Antrinis DNS '{0}' buvo sėkmingai ištrintas.</translation>
+   <translation id="server_configuration_delete_secondary_dns_fail" qtlid="142302">Klaida trinant antrinį DNS.</translation>
+   <translation id="server_configuration_add_secondary_dns_title" qtlid="8602">Pridėti domeną</translation>
+   <translation id="server_configuration_secondarydns_add_step1" qtlid="143004">Nurodykite antrinį DNS, kurį norite susieti su savo dedikuotu serveriu:</translation>
+   <translation id="server_configuration_secondarydns_add_step2" qtlid="183788">Turime įsitikinti, kad esate domeno savininkas. Dėl to, prašome domeno <b>{1}</b> DNS zonoje sukurti <b>{0}</b> tipo lauką, su subdomenu <b>{2}</b> ir įrašu <b>{3}</b>. Kai tai atliksite, perkraukite zoną, kad įtrauktumėte antrinį DNS.</translation>
+   <translation id="server_configuration_secondarydns_add_step2_error" qtlid="172722">Klaida gaunant domeno žetono informaciją.</translation>
+   <translation id="server_configuration_secondarydns_add_step3" qtlid="143017">Patvirtinkite naujojo antrinio DNS informaciją:</translation>
+   <translation id="server_configuration_secondarydns_add_success" qtlid="142627">Antrinis DNS '{0}' buvo sėkmingai įtrauktas.</translation>
+   <translation id="server_configuration_secondarydns_add_fail" qtlid="143030">Klaida įtraukiant antrinį DNS.</translation>
+   <translation id="server_configuration_secondarydns_ip" qtlid="25615">IP</translation>
+   <translation id="server_configuration_secondarydns_domain" qtlid="8458">Domenas</translation>
+   <translation id="server_configuration_secondarydns_domain_header" qtlid="8458">Domenas</translation>
+   <translation id="server_configuration_secondarydns_dns" qtlid="32086">DNS</translation>
+   <translation id="server_configuration_secondarydns_creationdate" qtlid="26419">Sukūrimo data</translation>
+   <translation id="server_configuration_secondarydns_confirm_button_text" qtlid="37923">Pridėti</translation>
+   <translation id="server_configuration_add_secondary_dns_success" qtlid="143043">Antrinis DNS sėkmingai įtrauktas.</translation>
+   <translation id="server_configuration_add_secondary_dns_fail" qtlid="143056">Klaida įtraukiant antrinį DNS '{0}'.</translation>
+   <translation id="server_configuration_ips_cannotfetch" qtlid="143069">Negalima gauti serverio IP.</translation>
+   <translation id="server_configuration_no_secondary_dns" qtlid="143082">Nesukonfigūruotas joks antrinis DNS serveris.</translation>
+   <translation id="server_configuration_ftpbackup_fail" qtlid="184256">Klaida įkeliant atsarginių kopijų saugyklos informaciją</translation>
+   <translation id="server_configuration_ftpbackup_none" qtlid="184269">Atsarginių kopijų saugykla nebus sukonfigūruota.</translation>
+   <translation id="server_configuration_ftpbackup_not_available" qtlid="436481">Atsarginio kopijavimo saugykla šiuo metu neprieinama.</translation>
+   <translation id="server_configuration_ftpbackup_login" qtlid="46792">Identifikatorius</translation>
+   <translation id="server_configuration_ftpbackup_name" qtlid="181708">Vardas</translation>
+   <translation id="server_configuration_ftpbackup_usage" qtlid="30382">Naudojimas</translation>
+   <translation id="server_configuration_ftpbackup_delete" qtlid="184282">Ištrinti atsarginių kopijų saugyklą</translation>
+   <translation id="server_configuration_ftpbackup_forgot_password" qtlid="149150">Pamiršote slaptažodį?</translation>
+   <translation id="server_configuration_ftpbackup_activate" qtlid="184295">Įjungti atsarginių kopijų saugyklą</translation>
+   <translation id="server_configuration_ftpbackup_activate_success" qtlid="184308">Atsarginių kopijų saugykla bus įjungta po kelių minučių.</translation>
+   <translation id="server_configuration_ftpbackup_activate_successfull" qtlid="184321">Atsarginių kopijų saugykla bus įjungta.</translation>
+   <translation id="server_configuration_ftpbackup_activate_failure" qtlid="184334">Klaida įjungiant atsarginių kopijų saugyklą.</translation>
+   <translation id="server_configuration_ftpbackup_activate_question" qtlid="184347">Ar tikrai norite šiam serveriui įjungti atsarginių kopijų parinktį?</translation>
+   <translation id="server_configuration_ftpbackup_delete_success" qtlid="184360">Atsarginių kopijų saugykla bus ištrinta po kelių akimirkų.</translation>
+   <translation id="server_configuration_ftpbackup_delete_successfull" qtlid="184373">Atsarginių kopijų saugykla sėkmingai ištrinta.</translation>
+   <translation id="server_configuration_ftpbackup_delete_failure" qtlid="184386">Klaida trinant atsarginių kopijų saugyklą.</translation>
+   <translation id="server_configuration_ftpbackup_delete_question" qtlid="184399">Ar tikrai norite ištrinti atsarginių kopijų saugyklą {0}?</translation>
+   <translation id="server_configuration_ftpbackup_delete_question2" qtlid="164389">Dėmesio, šis veiksmas neatšaukiamas</translation>
+   <translation id="server_configuration_ftpbackup_lost_password" qtlid="149241">Prašymas suteikti naują slaptažodį</translation>
+   <translation id="server_configuration_ftpbackup_lost_password_success" qtlid="149254">Naujas slaptažodis bus išsiųstas serverio administraciniam kontaktui.</translation>
+   <translation id="server_configuration_ftpbackup_lost_password_successfull" qtlid="164402">Naujas slaptažodis bus išsiųstas administraciniam kontaktui.</translation>
+   <translation id="server_configuration_ftpbackup_lost_password_failure" qtlid="149267">Įvyko klaida inicijuojant slaptažodžio keitimą.</translation>
+   <translation id="server_configuration_ftpbackup_lost_password_question" qtlid="184412">Ar tikrai norite sukurti naują atsarginių kopijų saugyklos {0} slaptažodį?</translation>
+
+   <translation id="server_configuration_ftpbackup_order_title" qtlid="184425">Atsarginių kopijų saugyklos disko vietos užsakymas</translation>
+   <translation id="server_configuration_ftpbackup_order_load_failure" qtlid="180486">Klaida gaunant galimų saugyklų sąrašą.</translation>
+   <translation id="server_configuration_ftpbackup_order_load_detail_failure" qtlid="180499">Klaida gaunant saugyklos užsakymo detales</translation>
+   <translation id="server_configuration_ftpbackup_order_load_order_success" qtlid="183801">Saugyklos užsakymas nr. <a href='{0}' target='_blank'>{1}</a> buvo užregistruotas.</translation>
+   <translation id="server_configuration_ftpbackup_order_load_order_failure" qtlid="180525">Klaida užsakant saugyklą</translation>
+   <translation id="server_configuration_ftpbackup_order_type_name" qtlid="4334">Talpa</translation>
+   <translation id="server_configuration_ftpbackup_order_empty_choice" qtlid="237750">Jūsų naudojama paslauga neleidžia užsakyti papildomos saugyklos.</translation>
+   <translation id="server_configuration_ftpbackup_order_type_price" qtlid="180538">Kaina (per mėn. be PVM)</translation>
+   <translation id="server_configuration_ftpbackup_order_resume" qtlid="172228">Užsakymo suvestinė:</translation>
+   <translation id="server_configuration_ftpbackup_order_price_explanation" qtlid="237763">Tai atitinka {0} per mėnesį iki serverio galiojimo laiko pabaigos</translation>
+   <translation id="server_configuration_ftpbackup_order_price_HT" qtlid="146177">Visa kaina be PVM:</translation>
+   <translation id="server_configuration_ftpbackup_order_price_TTC" qtlid="146190">Visa kaina su PVM:</translation>
+   <translation id="server_configuration_ftpbackup_order_contracts" qtlid="145371">Perskaičiau ir sutinku su šiomis sąlygomis:</translation>
+   <translation id="server_configuration_ftpbackup_order_info" qtlid="180551">Galite pasirinkti serverio saugyklos talpą. Dėmesio: vėliau sumažinti talpos negalėsite.</translation>
+
+   <translation id="server_configuration_ftpbackup_access_order" qtlid="180564">Užsakyti disko vietą</translation>
+   <translation id="server_configuration_ftpbackup_access_order_right" qtlid="180577">Neturite pakankamai teisų, kad užsakytumėte</translation>
+   <translation id="server_configuration_ftpbackup_access_add" qtlid="153857">Sukurti prieigą</translation>
+   <translation id="server_configuration_ftpbackup_access_delete" qtlid="180590">Prieigos šalinimas</translation>
+   <translation id="server_configuration_ftpbackup_access_delete_question" qtlid="183814">Ar tikrai norite ištrinti IP bloko <b>{0}</b> prieigą?</translation>
+   <translation id="server_configuration_ftpbackup_access_delete_success" qtlid="183827">IP bloko <b>{0}</b> prieigos prie atsarginių kopijų saugyklos trynimas užregistruotas. Operacija gali trukti kelias minutes</translation>
+   <translation id="server_configuration_ftpbackup_access_delete_failure" qtlid="183840">Klaida bandant ištrinti IP bloko <b>{0}</b> prieigą prie atsarginių kopijų saugyklos</translation>
+   <translation id="server_configuration_ftpbackup_access_add_ip_failure" qtlid="180642">Klaida gaunant leistinus blokus</translation>
+   <translation id="server_configuration_ftpbackup_access_add_success" qtlid="184438">Naujų taisyklių pridėjimas į atsarginių kopijų saugyklą užregistruotas, tai užtruks kelias minutes.</translation>
+   <translation id="server_configuration_ftpbackup_access_add_partial" qtlid="184451">Naujų taisyklių pridėjimas į atsarginių kopijų saugyklą užregistruotas, tačiau tai užtruks kelias minutes. Kol operacija nebus baigta, naujų taisyklių nebus galima pridėti.</translation>
+   <translation id="server_configuration_ftpbackup_access_add_failure" qtlid="184464">Klaida pridedant prieigos prie atsarginių kopijų saugyklos taisykles</translation>
+
+   <translation id="server_configuration_ftpbackup_table_ip" qtlid="167899">IP</translation>
+   <translation id="server_configuration_ftpbackup_table_cifs" qtlid="176740">CIFS</translation>
+   <translation id="server_configuration_ftpbackup_table_ftp" qtlid="50410">FTP</translation>
+   <translation id="server_configuration_ftpbackup_table_nfs" qtlid="6778">NFS</translation>
+   <translation id="server_configuration_ftpbackup_table_status" qtlid="26443">Būsena</translation>
+   <translation id="server_configuration_ftpbackup_table_ip_disable" qtlid="26383">Vykdoma</translation>
+   <translation id="server_configuration_ftpbackup_table_ip_enable" qtlid="30250">Įjungta</translation>
+   <translation id="server_configuration_ftpbackup_table_ip_edit" qtlid="180694">Keisti prieigą</translation>
+   <translation id="server_configuration_ftpbackup_table_ip_delete" qtlid="180707">Pašalinti prieigą</translation>
+   <translation id="server_configuration_ftpbackup_table_ip_modify" qtlid="180720">Keitimų patvirtinimas</translation>
+   <translation id="server_configuration_ftpbackup_table_ip_cancel" qtlid="180733">Keitimų atšaukimas</translation>
+   <translation id="server_configuration_ftpbackup_table_fail" qtlid="211607">Įvyko klaida kraunant prieigą prie atsarginių kopijų saugyklos.</translation>
+
+
+   <translation id="server_configuration_ftpbackup_set_success" qtlid="183853">Prieigos <b>{0}</b> keitimas užregistruotas ir bus atliktas po kelių minučių</translation>
+   <translation id="server_configuration_ftpbackup_set_fail" qtlid="183866">Klaida keičiant <b>{0}</b> prieigą</translation>
+
+   <translation id="server_configuration_ftpbackup_add" qtlid="180772">Teisių suteikimas</translation>
+   <translation id="server_configuration_ftpbackup_add_info" qtlid="180785">Prašome pasirinkti IP bloką, kuriam norite suteikti prieigos teises.</translation>
+   <translation id="server_configuration_ftpbackup_add_info1" qtlid="180798">Blokų sąrašas:</translation>
+   <translation id="server_configuration_ftpbackup_add_info2" qtlid="184477">Kiekvienam IP blokui, nurodytam žemiau, bus suteikta teisė jungtis prie atsarginių kopijų saugyklos:</translation>
+   <translation id="server_configuration_ftpbackup_add_info3" qtlid="180824">Pagal nutylėjimą, turite nurodyti bent vieną prievadą, IP blokai be taisyklių bus automatiškai atmetami.</translation>
+   <translation id="server_configuration_ftpbackup_add_info4" qtlid="180837">Suteiktos teisės:</translation>
+   <translation id="server_configuration_ftpbackup_add_allow" qtlid="141795">Leisti</translation>
+   <translation id="server_configuration_ftpbackup_add_deny" qtlid="141808">Atmesti</translation>
+   <translation id="server_configuration_ftpbackup_add_ip" qtlid="180850">Blokas:</translation>
+   <translation id="server_configuration_ftpbackup_add_authorization" qtlid="180863">Autorizuoti:</translation>
+
+   <translation id="server_configuration_cloudbackup_delete" qtlid="184282">Ištrinti atsarginių kopijų saugyklą</translation>
+
+   <translation id="server_configuration_cloudbackup_delete_success" qtlid="184360">Atsarginių kopijų saugykla bus ištrinta po kelių akimirkų.</translation>
+   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="184373">Atsarginių kopijų saugykla sėkmingai ištrinta.</translation>
+   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="184386">Klaida trinant atsarginių kopijų saugyklą.</translation>
+   <translation id="server_configuration_cloudbackup_delete_question" qtlid="451872">Ar tikrai norite išjungti Backup Storage parinktį?</translation>
+
+   <translation id="server_configuration_cloudbackup_inactive" qtlid="451885">Jūsų Backup Storage neaktyvi.</translation>
+   <translation id="server_configuration_cloudbackup_new_project" qtlid="16493">Naujas projektas</translation>
+   <translation id="server_configuration_cloudbackup_load_fail" qtlid="184256">Klaida įkeliant atsarginių kopijų saugyklos informaciją</translation>
+   <translation id="server_configuration_cloudbackup_load_offers_fail" qtlid="451898">Klaida įkeliant Cloud Backup Storage pasiūlymus</translation>
+   <translation id="server_configuration_cloudbackup_load_projects_fail" qtlid="451911">Klaida įkeliant Cloud projektus</translation>
+   <translation id="server_configuration_cloudbackup_load_agreements_fail" qtlid="451924">Įvyko klaida įkeliant sutartis</translation>
+
+   <translation id="server_configuration_cloudbackup_offer_storage_title" qtlid="451937">{0} - atsarginių kopijų saugyklų, įskaičiuotų į jūsų Dedicated Storage, skaičius</translation>
+   <translation id="server_configuration_cloudbackup_offer_storage_description" qtlid="451950">Pasinaudokite nemokama Cloud saugykla, papildomai pridėta prie jūsų serverio ir skirta jūsų atsarginėms kopijoms. Sprendimas yra plečiamas ir pasiekiamas naudojant įvairius prieigos protokolus (Rsync, SCP, sFTP).</translation>
+   <translation id="server_configuration_cloudbackup_offer_storage_guide_description" qtlid="451963">Peržiūrėti naudojimo gidą</translation>
+
+   <translation id="server_configuration_cloudbackup_subscribe_title" qtlid="451976">Jūsų atsarginių kopijų saugyklos įjungimas</translation>
+   <translation id="server_configuration_cloudbackup_subscribe_description" qtlid="451989">Norėdami įjungti atsarginių kopijų saugyklą (Backup Storage), jūs turėtumėte priskirti naują Cloud projektą, įvesdami jo pavadinimą, ar pasirinkti jau naudojamą Cloud projektą. Tai atliekama nemokamai ir nedelsiant. Jūs gausite prisijungimo duomenis el. paštu.</translation>
+   <translation id="server_configuration_cloudbackup_subscribe_intput_placeholder" qtlid="255298">Projekto pavadinimas</translation>
+   <translation id="server_configuration_cloudbackup_subscribe_agreements_checkbox_text" qtlid="345221">Perskaičiau, supratau ir sutinku su sąlygomis, pateiktomis šiuose dokumentuose:</translation>
+   <translation id="server_configuration_cloudbackup_subscribe_button_text" qtlid="452002">Įjungti mano atsarginių kopijų saugyklą</translation>
+   <translation id="server_configuration_cloudbackup_subscribe_success" qtlid="452015">Jūsų saugykla sėkmingai sukurta.</translation>
+
+   <translation id="server_configuration_cloudbackup_project_SUSPENDED" qtlid="452028">Projektas, susietas su jūsų atsarginių kopijų saugykla, buvo pašalintas.</translation>
+   <translation id="server_configuration_cloudbackup_project_DELETING" qtlid="452041">Atsarginių kopijų saugyklos parinktis išjungiama.</translation>
+   <translation id="server_configuration_cloudbackup_project_DELETED" qtlid="452054">Jūsų serverio atsarginių kopijų saugyklos (Backup Storage) parinktis išjungta. Jūsų PCS konteineris yra veikiantis. Jei jo nepašalinsite, mėnesio pabaigoje jums bus sugeneruota sąskaita už einamąjį vartojimą. </translation>
+   <translation id="server_configuration_cloudbackup_summary_container_label" qtlid="274369">Cloud projektas</translation>
+   <translation id="server_configuration_cloudbackup_summary_objects_label" qtlid="421009">KOnteineris</translation>
+   <translation id="server_configuration_cloudbackup_summary_documentation_label" qtlid="415740">Gidas</translation>
+   <translation id="server_configuration_cloudbackup_summary_usage_label" qtlid="109974">Naudojimas</translation>
+   <translation id="server_configuration_cloudbackup_summary_title_label_storage" qtlid="452067">Jūsų atsarginių kopijų saugyklos konteineris</translation>
+   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="184282">Ištrinti atsarginių kopijų saugyklą</translation>
+
+   <translation id="server_configuration_cloudbackup_container_storage_guide_description" qtlid="452080">Ieškote atsarginio kopijavimo įrankio? OVH jums rekomenduoja Rclone</translation>
+   <translation id="server_configuration_cloudbackup_container_storage_guide_product" qtlid="452093">Rclone</translation>
+
+   <translation id="server_configuration_cloudbackup_manage_user_title" qtlid="227793">Vartotojų valdymas</translation>
+   <translation id="server_configuration_cloudbackup_manage_user_description" qtlid="452106">Valdyti vartotojų prieigą prie OpenStack</translation>
+   <translation id="server_configuration_cloudbackup_manage_user_button" qtlid="452119">Pereiti prie valdymo</translation>
+
+   <translation id="server_tab_intervention" qtlid="149293">Intervencijos</translation>
+   <translation id="server_configuration_intervention_type" qtlid="2642">Tipas</translation>
+   <translation id="server_configuration_intervention_date" qtlid="24523">Data</translation>
+   <translation id="server_configuration_intervention_empty" qtlid="455620">Aucune intervention</translation>
+   <translation id="server_tab_firewall" qtlid="151542">Cisco ASA ugniasienė</translation>
+   <translation id="server_tab_FIREWALLASA_not_activated" qtlid="151555">Nesate užsakę Cisco ASA parinkties.</translation>
+   <translation id="server_tab_FIREWALLASA_not_able_to_order" qtlid="151568">Negalite užsisakyti, kadangi jūsų ID neleidžiama teikti užsakymų serveriui.</translation>
+   <translation id="server_tab_FIREWALLASA_no_options" qtlid="369113">Jūs negalite užsakyti šios parinkties, kadangi ji neprieinama šiam serveriui.</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_firewall" qtlid="141418">Ugniasienė</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_mode" qtlid="15713">Būdas</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_mode_TRANSPARENT" qtlid="151581">Transparent</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_mode_ROUTED" qtlid="151594">Routed</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_ip" qtlid="26191">IP adresas</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_model" qtlid="23023">Modelis</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_model_ASA_5505" qtlid="151607">Cisco ASA 5505</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_model_ASA_5510" qtlid="151620">Cisco ASA 5510</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_model_ASA_5520" qtlid="151633">Cisco ASA 5520</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_model_asa5505" qtlid="151607">Cisco ASA 5505</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_model_asa5510" qtlid="151620">Cisco ASA 5510</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_model_asa5520" qtlid="151633">Cisco ASA 5520</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_state" qtlid="8230">Būsena</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_state_true" qtlid="30250">Įjungta</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_state_false" qtlid="24967">Išjungta</translation>
+   <translation id="server_configuration_firewall_asa_order_title_button" qtlid="151646">Užsisakyti Cisco ASA ugniasienę</translation>
+   <translation id="server_configuration_firewall_asa_order_title" qtlid="151646">Užsisakyti Cisco ASA ugniasienę</translation>
+   <translation id="server_configuration_firewall_asa_ASA_5505" qtlid="151607">Cisco ASA 5505</translation>
+   <translation id="server_configuration_firewall_asa_ASA_5510" qtlid="151620">Cisco ASA 5510</translation>
+   <translation id="server_configuration_firewall_asa_ASA_5520" qtlid="151633">Cisco ASA 5520</translation>
+   <translation id="server_configuration_firewall_asa_asa5505" qtlid="151607">Cisco ASA 5505</translation>
+   <translation id="server_configuration_firewall_asa_asa5510" qtlid="151620">Cisco ASA 5510</translation>
+   <translation id="server_configuration_firewall_asa_asa5520" qtlid="151633">Cisco ASA 5520</translation>
+   <translation id="server_configuration_firewall_asa_order_step1_wanted" qtlid="151659">Pasirinkite norimą Cisco ASA ugniasienę:</translation>
+   <translation id="server_configuration_firewall_asa_order_step1_loading_error" qtlid="170031">Klaida keičiant informaciją</translation>
+   <translation id="server_configuration_firewall_asa_order_step1_bymonth" qtlid="151685">be PVM / mėn.</translation>
+   <translation id="server_configuration_firewall_asa_installation_fee" qtlid="330643">Diegimo mokestis</translation>
+   <translation id="server_configuration_firewall_asa_order_step2_question" qtlid="183879">Papildomos parinkties užsakymas serveriui <span class="italic normal">{0}</span></translation>
+   <translation id="server_configuration_firewall_asa_order_step2_option" qtlid="151711">Parinktis:</translation>
+   <translation id="server_configuration_firewall_asa_order_step2_totalHT" qtlid="169238">Kaina be PVM:</translation>
+   <translation id="server_configuration_firewall_asa_order_step2_totalTTC" qtlid="169251">Kaina su PVM:</translation>
+   <translation id="server_configuration_firewall_asa_order_step2_info" qtlid="151724">Pirmojo mokėjimo metu bus apskaičiuota proporicga suma, pagal dienų iki serverio atnaujinimo skaičių.</translation>
+   <translation id="server_configuration_firewall_asa_order_step2_info2" qtlid="222722">Laikotarpis iki:</translation>
+   <translation id="server_configuration_firewall_asa_order_step2_info3" qtlid="222735">Šios parinkties galiojimo laikas bus sulygintas su paslaugos galiojimo laiku.</translation>
+
+   <translation id="server_configuration_firewall_asa_order_step3_generation_bc" qtlid="169511">Užsakymo generavimas...</translation>
+   <translation id="server_configuration_firewall_asa_order_step3_bc" qtlid="169524">Užsakymas sėkmingai sugeneruotas.</translation>
+   <translation id="server_configuration_firewall_asa_order_step3_continue" qtlid="169537">Užsakymą patvirtinsite spragtelėję "valdyti".</translation>
+   <translation id="server_configuration_firewall_asa_order_step3_explication" qtlid="167886">Atsidarys naujas langas ir būsite automatiškai nukreipti į OVH apmokėjimų sąsają.</translation>
+   <translation id="server_configuration_firewall_asa_order_step3_explication2" qtlid="132291">Dėmesio: parinktis bus aktyvuoja jūsų valdymo sąsajoje per 2 valandas nuo jūsų apmokėjimo patvirtinimo momento. </translation>
+   <translation id="server_configuration_firewall_asa_order_fail" qtlid="151737">Klaida užsakant parinktį.</translation>
+   <translation id="server_configuration_firewall_asa_enable_title_button" qtlid="151750">Cisco ASA ugiansienės įjungimas</translation>
+   <translation id="server_configuration_firewall_asa_enable_title" qtlid="151750">Cisco ASA ugiansienės įjungimas</translation>
+   <translation id="server_configuration_firewall_asa_enable_step1_loading_error" qtlid="170031">Klaida keičiant informaciją</translation>
+   <translation id="server_configuration_firewall_asa_enable_step1_question" qtlid="183892">Ar tikrai norite įjungti Cisco ASA ugniasienę serveryje <span class="normal italic">{0}</span>?</translation>
+   <translation id="server_configuration_firewall_asa_enable_success" qtlid="151776">Cisco ASA ugniasienės įjungimo prašymas sėkmingai užregistruotas ir bus įvykdytas per kelias minutes.</translation>
+   <translation id="server_configuration_firewall_asa_enable_fail" qtlid="151789">Klaida įjungiant Cisco ASA ugniasienę</translation>
+   <translation id="server_configuration_firewall_asa_disable_title_button" qtlid="151802">Cisco ASA ugniasienės atjungimas</translation>
+   <translation id="server_configuration_firewall_asa_disable_title" qtlid="151802">Cisco ASA ugniasienės atjungimas</translation>
+   <translation id="server_configuration_firewall_asa_disable_step1_loading_error" qtlid="170031">Klaida keičiant informaciją</translation>
+   <translation id="server_configuration_firewall_asa_disable_step1_question" qtlid="183905">Ar tikrai norite atjungti Cisco ASA ugniasienę nuo serverio <span class="normal italic">{0}</span>?</translation>
+   <translation id="server_configuration_firewall_asa_disable_success" qtlid="151828">Cisco ASA ugniasienės išjungimo prašymas sėkmingai užregistruotas ir bus įvykdytas per kelias minutes.</translation>
+   <translation id="server_configuration_firewall_asa_disable_fail" qtlid="151841">Klaida išjungiant Cisco ASA ugniasienę</translation>
+   <translation id="server_configuration_task_loading_error" qtlid="164415">Klaida gaunant užduotis</translation>
+   <translation id="server_configuration_task_last_action" qtlid="52231">Paskutinis veiksmas</translation>
+   <translation id="server_configuration_task_function" qtlid="61872">Užduotis</translation>
+   <translation id="server_configuration_task_comment" qtlid="233531">Techninės detalės</translation>
+   <translation id="server_configuration_task_status" qtlid="26443">Būsena</translation>
+   <translation id="server_configuration_task_empty" qtlid="217093">Jokių užduočių</translation>
+   <translation id="server_configuration_task_CHANGE_PASSWORD_BACKUP_FTP" qtlid="184490">Atsarginių kopijų saugyklos slaptažodžio keitimas</translation>
+   <translation id="server_configuration_task_CREATE_BACKUP_FTP" qtlid="184503">Atsarginių kopijų saugyklos kūrimas</translation>
+   <translation id="server_configuration_task_CREATE_PRIVATE_NETWORK" qtlid="164454">Privataus tinklo kūrimas</translation>
+   <translation id="server_configuration_task_DISABLE_FIREWALL" qtlid="164467">Ugniasienės išjungimas</translation>
+   <translation id="server_configuration_task_ENABLE_FIREWALL" qtlid="164480">Ugniasienės įjungimas</translation>
+   <translation id="server_configuration_task_HARD_REBOOT" qtlid="26287">Perkrauti</translation>
+   <translation id="server_configuration_task_MOVE_FLOATING_IP" qtlid="164493">IP failover perkėlimas</translation>
+   <translation id="server_configuration_task_REINSTALL_SERVER" qtlid="90637">Pakartotinis serverio diegimas</translation>
+   <translation id="server_configuration_task_REMOVE_BACKUP_FTP" qtlid="184516">Atsarginių kopijų saugyklos trynimas</translation>
+   <translation id="server_configuration_task_REQUEST_ACCESS_IPMI" qtlid="164519">Prieigos prie IPMI prašymas</translation>
+   <translation id="server_configuration_task_RESET_IPMI" qtlid="164532">Atstatyti IPMO sąsajas</translation>
+   <translation id="server_configuration_task_RESET_IPMI_SESSION" qtlid="164545">Atstatyti IPMI sesijas</translation>
+   <translation id="server_configuration_task_TEST_IPM_IHTTP" qtlid="164558">Patikrinti http (IPMI)</translation>
+   <translation id="server_configuration_task_TEST_IPM_IPASSWORD" qtlid="164571">Patikrinti slaptažodį (IPMI)</translation>
+   <translation id="server_configuration_task_TEST_IPM_IPING" qtlid="164584">Tikrinti ping (IPMI)</translation>
+   <translation id="server_configuration_task_APPLY_BACKUP_FTP_ACLS" qtlid="181110">Atsarginių kopijų saugyklos keitimas</translation>
+   <translation id="server_configuration_task_MIGRATE_BACKUP_FTP" qtlid="181123">Atsarginių kopijų saugyklos migravimas</translation>
+   <translation id="server_configuration_task_VIRTUAL_MAC_ADD" qtlid="164597">Virtualaus MAC pridėjimas</translation>
+   <translation id="server_configuration_task_ADD_VIRTUAL_MAC" qtlid="164597">Virtualaus MAC pridėjimas</translation>
+   <translation id="server_configuration_task_VIRTUAL_MAC_DELETE" qtlid="164610">Virtualaus MAC šalinimas</translation>
+   <translation id="server_configuration_task_REMOVE_VIRTUAL_MAC" qtlid="164610">Virtualaus MAC šalinimas</translation>
+   <translation id="server_configuration_task_status_CANCELLED" qtlid="164623">Atšaukta</translation>
+   <translation id="server_configuration_task_status_CUSTOMER_ERROR" qtlid="164636">Kliento klaida</translation>
+   <translation id="server_configuration_task_status_DOING" qtlid="26383">Vykdoma</translation>
+   <translation id="server_configuration_task_status_DONE" qtlid="26395">Baigta</translation>
+   <translation id="server_configuration_task_status_INIT" qtlid="164649">Inicijavimas</translation>
+   <translation id="server_configuration_task_status_OVH_ERROR" qtlid="45508">Klaida</translation>
+   <translation id="server_configuration_task_status_TODO" qtlid="164662">Apdoroti</translation>
+   <translation id="server_configuration_impi_loading_error" qtlid="164675">Klaida gaunant informaciją</translation>
+   <translation id="server_configuration_impi_reset_interfaces" qtlid="164688">Perkrauti IPMI</translation>
+   <translation id="server_configuration_impi_reset_sessions" qtlid="164701">Panaikinti sesijas</translation>
+   <translation id="server_configuration_impi_off" qtlid="164714">IPMI modulis negalimas su šiuo serveriu.</translation>
+   <translation id="server_configuration_impi_off_kvm" qtlid="229177">Jeigu norite pasinaudoti šia funkcija, turite naudoti KVM.</translation>
+   <translation id="server_configuration_impi_order_kvm" qtlid="229190">Užsakyti KVM</translation>
+   <translation id="server_configuration_impi_disabled" qtlid="225062">Serverio būsena: <b>{0}</b>. IPMI modulis išjungtas.</translation>
+   <translation id="server_configuration_impi_test" qtlid="164727">Bandyti IPMI</translation>
+   <translation id="server_configuration_impi_http" qtlid="164740">Tikrinti prieigą prie IPMI modulio (http)</translation>
+   <translation id="server_configuration_impi_password" qtlid="164753">IPMI sesijos inicijavimas (autentifikacija)</translation>
+   <translation id="server_configuration_impi_ping" qtlid="164766">Patikrinti prieigą prie IPMI modulio (ping)</translation>
+   <translation id="server_configuration_impi_information" qtlid="191837">IPMI jums leidžia prisijunti prie jūsų dedikuoto serverio šiais būdais:</translation>
+   <translation id="server_configuration_impi_information2" qtlid="191850">Inicijuojant 'Remote KVM' sesiją (prieiga prie klaviatūros, pelės ir nuotolinio jūsų serverio darbastalio) iš jūsų IP {0}<ul><li>Iš Java Web Start aplikacijos</li></ul></translation>
+   <translation id="server_configuration_impi_information3" qtlid="191863">Inicijuojant 'Serial Over LAN' sesiją (prieiga prie jūsų serverio komandinės eilutės naudojant saugią jungtį) iš jūsų IP {0}<ul><li>Iš jūsų naršyklės (https)</li></ul></translation>
+   <translation id="server_configuration_impi_start" qtlid="25951">Paleisti</translation>
+   <translation id="server_configuration_impi_navigation" qtlid="257296">Naršyklėje (SoL)</translation>
+   <translation id="server_configuration_impi_navigation_error" qtlid="164818">Klaida bandant prisijungti prie IPMI modulio iš jūsų naršyklės</translation>
+   <translation id="server_configuration_impi_navigation_success" qtlid="164831">Prisijungimas prie IPMI modulio per naršyklę yra paruoštas.</translation>
+   <translation id="server_configuration_impi_navigation_go" qtlid="164844">Pereiti prie konsolės</translation>
+   <translation id="server_configuration_impi_java" qtlid="257309">Naudojant Java applet (KVM)</translation>
+   <translation id="server_configuration_impi_java_download" qtlid="164870">Parsisiųsti java applet</translation>
+   <translation id="server_configuration_impi_java_success" qtlid="164883">Prisijungimas prie IPMI modulio per java applet yra paruoštas.</translation>
+   <translation id="server_configuration_impi_java_error" qtlid="164896">Klaida bandant prisijungti prie IPMI modulio per java applet.</translation>
+   <translation id="server_configuration_impi_java_new" qtlid="164909">Nauja jungtis</translation>
+   <translation id="server_configuration_impi_ssh" qtlid="164922">Per SSH</translation>
+   <translation id="server_configuration_impi_ssh_error" qtlid="164935">Klaida bandant prisijungti prie IPMI modulio per SSH</translation>
+   <translation id="server_configuration_impi_ssh_success" qtlid="164948">Jungtis prie IPMI modulio per SSH paruošta: {0}.</translation>
+   <translation id="server_configuration_impi_restart_title" qtlid="164961">IPMI perkrovimas</translation>
+   <translation id="server_configuration_impi_restart_information" qtlid="164974">Ar tikrai norite perkrauti IPMI modulį?</translation>
+   <translation id="server_configuration_impi_restart_loading" qtlid="164987">IPMI modulis perkraunamas.</translation>
+   <translation id="server_configuration_impi_restart_error" qtlid="165000">Klaida pateikiant IPMI modulio perkrovimo prašymą.</translation>
+   <translation id="server_configuration_impi_restart_error_task" qtlid="165013">Klaida perkraunant IPMI modulį.</translation>
+   <translation id="server_configuration_impi_restart_success" qtlid="165026">IPMI modulis sėkmingai perkrautas.</translation>
+   <translation id="server_configuration_impi_sessions_title" qtlid="165039">IPMI sesijos šalinimas</translation>
+   <translation id="server_configuration_impi_sessions_information" qtlid="165052">Ar tikrai norite pašalinti IPMI modulio sesijas?</translation>
+   <translation id="server_configuration_impi_sessions_loading" qtlid="165065">IPMI modulio sesijos trinamos.</translation>
+   <translation id="server_configuration_impi_sessions_error" qtlid="165078">Klaida prašant perkrauti IPMI modulį.</translation>
+   <translation id="server_configuration_impi_restart_error_task_session" qtlid="165091">Klaida šalinant IPMI modulio sesijas.</translation>
+   <translation id="server_configuration_impi_sessions_success" qtlid="165104">IPMI modulio sesijos sėkmingai ištrintos.</translation>
+   <translation id="server_configuration_impi_disable" qtlid="165117">IPMI modulio funkcijos laikinai išjungtos, kadangi vykdoma kita užduotis. Funkcijos bus įjungtos, kai užduotis bus baigta vykdyti.</translation>
+   <translation id="server_configuration_impi_SOL_help" qtlid="201158">SOL sesijai reikalinga konfigūracija iš Jūsų pusės, spragtelėkite <a href="{0}">čia</a>, kad  gautumėte daugiau informacijos.</translation>
+
+   <translation id="server_configuration_kvm_order_step1_title" qtlid="229203">Pasirinkite trukmę</translation>
+   <translation id="server_configuration_kvm_order_step2_title" qtlid="229216">KVM užsakymas serveriui <em>{0}</em></translation>
+   <translation id="server_configuration_kvm_order_step2_duration" qtlid="156875">Trukmė:</translation>
+   <translation id="server_configuration_kvm_order_step2_details" qtlid="229229">Užsakymo detalės:</translation>
+   <translation id="server_configuration_kvm_order_step2_price" qtlid="181084">Kaina:</translation>
+   <translation id="server_configuration_kvm_order_finish_success" qtlid="181266">Užsakymas nr. <a href='{0}' target='_blank'>{1}</a> užregistruotas.</translation>
+   <translation id="server_configuration_kvm_order_error" qtlid="229242">Klaida užsakant KVM.</translation>
+
+   <translation id="server_configuration_kvm_informations" qtlid="229255">KVM informacija</translation>
+   <translation id="server_configuration_kvm_informations_name" qtlid="100328">Vardas:</translation>
+   <translation id="server_configuration_kvm_informations_ip" qtlid="103870">IP adresas:</translation>
+   <translation id="server_configuration_kvm_informations_expiration" qtlid="229268">Galioja iki:</translation>
+   <translation id="server_configuration_kvm_new_window" qtlid="222176">Naujas langas</translation>
+   <translation id="server_configuration_kvm_access" qtlid="229281">Prisijungti prie KVM</translation>
+   <translation id="server_configuration_kvm_error" qtlid="229294">Klaida gaunant KVM informaciją.</translation>
+
+   <translation id="server_configuration_installation_successfull" qtlid="172761">Serverio {0} diegimas baigtas</translation>
+   <translation id="server_configuration_installation_fail_task" qtlid="191252">Įvyko klaida atkuriant serverio {0} diegimo būseną.</translation>
+   <translation id="server_configuration_installation_fail_state" qtlid="191265">Neįmanoma atkurti diegimo eigos. Susieta užduotis tebevykdoma.</translation>
+   <translation id="server_configuration_installation_ovhinstall" qtlid="172787">Diegti iš OVH šablono</translation>
+   <translation id="server_configuration_installation_gabarit" qtlid="172800">Diegti jūsų šabloną</translation>
+   <translation id="server_configuration_reinstallation_button" qtlid="26503">Diegti iš naujo</translation>
+   <translation id="server_configuration_installation_button" qtlid="108709">Diegti</translation>
+   <translation id="server_configuration_installation_title" qtlid="172813">Serverio diegimas</translation>
+   <translation id="server_configuration_installation_info" qtlid="183931">Tuojau į serverį <b>{0}</b> įdiegsite OS. Pasirinkite diegimo tipą, kurį norite naudoti:</translation>
+   <translation id="server_configuration_installation_warning" qtlid="382537">Dėmesio: diegimo metu visi serverio diskai bus suformatuoti</translation>
+   <translation id="server_configuration_installation_32" qtlid="105046">32 bits</translation>
+   <translation id="server_configuration_installation_64" qtlid="105058">64 bits</translation>
+   <translation id="server_configuration_installation_deprecated" qtlid="172852">Nenaudojama</translation>
+   <translation id="server_configuration_installation_step1_language" qtlid="168874">Kalba:</translation>
+   <translation id="server_configuration_installation_step1_describe" qtlid="103702">Apibūdinimas:</translation>
+   <translation id="server_configuration_installation_BTRFS" qtlid="172943">Btrfs</translation>
+   <translation id="server_configuration_installation_EXT_3" qtlid="172956">Ext3</translation>
+   <translation id="server_configuration_installation_EXT_4" qtlid="172969">Ext4</translation>
+   <translation id="server_configuration_installation_NTFS" qtlid="172982">NTFS</translation>
+   <translation id="server_configuration_installation_XFS" qtlid="211620">XFS</translation>
+   <translation id="server_configuration_installation_ZFS" qtlid="256002">ZFS</translation>
+   <translation id="server_configuration_installation_REISERFS" qtlid="172995">ReiserFS</translation>
+   <translation id="server_configuration_installation_SWAP" qtlid="173008">Swap</translation>
+   <translation id="server_configuration_installation_UFS" qtlid="173021">UFS</translation>
+   <translation id="server_configuration_installation_LOGICAL" qtlid="173034">logical</translation>
+   <translation id="server_configuration_installation_LV" qtlid="173047">lv</translation>
+   <translation id="server_configuration_installation_PRIMARY" qtlid="173060">primary</translation>
+   <translation id="server_configuration_installation_error_save" qtlid="173073">Klaida išsaugant šabloną ({0}).</translation>
+   <translation id="server_configuration_installation_error_hardwareRaid" qtlid="286591">Įvyko klaida atliekant RAID konfigūracijos atsarginį kopijavimą.</translation>
+   <translation id="server_configuration_installation_resume" qtlid="132720">Santrauka:</translation>
+   <translation id="server_configuration_installation_resume_hardwareRaid" qtlid="286604">Hard RAID:</translation>
+
+
+
+   <translation id="server_configuration_installation_form_option" qtlid="185348">Diegimo parinktys:</translation>
+   <translation id="server_configuration_installation_form_gabaritNameSave" qtlid="173099">Šablono pavadinimas:</translation>
+   <translation id="server_configuration_installation_form_gabaritNameSave_pattern" qtlid="173112">Neteisingas formatas.</translation>
+   <translation id="server_configuration_installation_form_changeLog" qtlid="103702">Apibūdinimas:</translation>
+   <translation id="server_configuration_installation_form_customHostname" qtlid="173125">Serverio pavadinimas:</translation>
+   <translation id="server_configuration_installation_form_customHostname_pattern" qtlid="173112">Neteisingas formatas.</translation>
+   <translation id="server_configuration_installation_form_postInstallationScriptLink" qtlid="173138">Diegimo scenarijus (url):</translation>
+   <translation id="server_configuration_installation_form_postInstallationScriptLink_bad_port_script" qtlid="173151">Neteisingas URL prievado numeris.</translation>
+   <translation id="server_configuration_installation_form_postInstallationScriptLink_bad_url_script" qtlid="173164">Neteisingas URL formatas.</translation>
+   <translation id="server_configuration_installation_form_postInstallationScriptLink_bad_protocol_script" qtlid="173177">Neteisingas URL protokolas.</translation>
+   <translation id="server_configuration_installation_form_postInstallationScriptLink_bad_extension_script" qtlid="173190">Neteisingas scenarijaus plėtinys.</translation>
+   <translation id="server_configuration_installation_form_postInstallationScriptLink_help" qtlid="173203">Čia galite nurodyti podiegiminio scenarijaus URL. Jis leis paprastai užbaigti sistemos diegimą. Taip pat galėsite nesunkiai sukonfigūruoti nustatymus ir įdiegti programinę įrangą. Dėmesio: Scenarijus gali būti vykdomas daugiausiai valandą.</translation>
+   <translation id="server_configuration_installation_form_postInstallationScriptLinkReturn" qtlid="195373">Scenarijaus grąžinama reikšmė:</translation>
+   <translation id="server_configuration_installation_form_postInstallationScriptLinkReturn_help" qtlid="173229">Tai visas ar dalis laukiamo rezultato, kurį pateiks vykdomas scenarijus. Galite šį lauką palikti tuščią, tačiau tai yra nepatartina.</translation>
+   <translation id="server_configuration_installation_form_installSqlServer" qtlid="173242">Įdiegti sqlServer</translation>
+   <translation id="server_configuration_installation_form_useDistribKernel" qtlid="173255">Diegti originalų branduolį</translation>
+   <translation id="server_configuration_installation_form_useSpla" qtlid="173268">Naudoti SPLA licenciją</translation>
+   <translation id="server_configuration_installation_form_ssh" qtlid="179797">SSH raktai:</translation>
+   <translation id="server_configuration_installation_form_ssh_fail" qtlid="179810">Negalima rodyti SSH raktų</translation>
+   <translation id="server_configuration_installation_form_ssh_no" qtlid="179823">Be SSH rakto</translation>
+   <translation id="server_configuration_installation_form_ssh_help" qtlid="200859">Raktą pridėkite skyriuje "Mano paskyra"</translation>
+   <translation id="server_configuration_installation_form_nbdisk" qtlid="185361">Suskaidyto disko numeris:</translation>
+
+
+
+   <translation id="server_configuration_installation_ovh_title" qtlid="173281">Diegimas iš OVH šablono</translation>
+   <translation id="server_configuration_installation_ovh_fail_os" qtlid="173294">Klaida gaunant į serverį {0} galimas įdiegti OS.</translation>
+   <translation id="server_configuration_installation_ovh_fail_partition_schemes" qtlid="173307">Klaida nuskaitant serverio {0} skirsnių schemas</translation>
+   <translation id="server_configuration_installation_ovh_beta" qtlid="173320">Beta</translation>
+   <translation id="server_configuration_installation_ovh_desktop_BASIC" qtlid="173333">Baziniai paketai</translation>
+   <translation id="server_configuration_installation_ovh_desktop_CUSTOMER" qtlid="54833">Personalizuota</translation>
+   <translation id="server_configuration_installation_ovh_desktop_HOSTING" qtlid="31990">Talpinimas</translation>
+   <translation id="server_configuration_installation_ovh_desktop_OTHER" qtlid="19963">Kita</translation>
+   <translation id="server_configuration_installation_ovh_desktop_READY_TO_USE" qtlid="173346">Paruošta naudojimui (grafinė sąsaja)</translation>
+   <translation id="server_configuration_installation_ovh_desktop_VIRTUALISATION" qtlid="173359">Virtualizavimas</translation>
+   <translation id="server_configuration_installation_ovh_step1_empty" qtlid="173372">Pagal pasirinktą kategoriją nerasta nei viena Jūsų serveriui tinkanti OS. Pasirinkta kategorija:</translation>
+   <translation id="server_configuration_installation_ovh_step1_info" qtlid="401706">Pasirinkite operacinę sistemą, kurią norite įdiegti serveryje: <b class="text-nowrap">{0}</b></translation>
+   <translation id="server_configuration_installation_ovh_step1_info2" qtlid="173398">Galite iškart pereiti prie diegimo arba keisti kai kuriuos parametrus.</translation>
+   <translation id="server_configuration_installation_ovh_step1_desktop" qtlid="173411">OS tipas:</translation>
+   <translation id="server_configuration_installation_ovh_step1_desktop_licence_info_label" qtlid="406788">Kai kurių OS įdiegimui reikalinga licencija.</translation>
+   <translation id="server_configuration_installation_ovh_step1_desktop_licence_info_text" qtlid="406801">Windows OS (išskyrus Windows HyperV) diegimui reikalinga licencija. Jūs galite pridėti licencijas, kliento valdymo sąsajos skiltyje „Licencijos“.</translation>
+   <translation id="server_configuration_installation_ovh_step1_disk_group" qtlid="382550">Paskirties disko klasteris:</translation>
+   <translation id="server_configuration_installation_ovh_step1_disk_group_warning" qtlid="382563">Dėmesio: Jei paskirties diskas nepasirinktas pagal nutylėjimą ({0}), jūs nebegalėsite personalizuoti hard RAID konfigūracijos.</translation>
+   <translation id="server_configuration_installation_ovh_step1_custom" qtlid="173424">Keisti disko skaidymą</translation>
+   <translation id="server_configuration_installation_ovh_step1_hardwareRaid" qtlid="286617">Asmeninti hard RAID konfigūraciją</translation>
+   <translation id="server_configuration_installation_ovh_step1_hardwareRaid_wrong_location" qtlid="313819">RAID hard konfigūracija prieinama tik serveriams, talpinamiems tame pačiame žemyne, kuriame įregistruoja jūsų kliento paskyra.</translation>
+   <translation id="server_configuration_installation_ovh_step1_hardwareRaid_os_not_supported_short" qtlid="298597">Jokio Hard RAID</translation>
+   <translation id="server_configuration_installation_ovh_step1_hardwareRaid_os_not_supported" qtlid="363893">Ši OS diegimo programa negali perkonfigūruoti jūsų RAID įrangos. Jeigu norite iš naujo konfigūruoti savo RAID įrangą, įsidiekite kitą OS. Konfigūracija bus išsaugota.</translation>
+   <translation id="server_configuration_installation_ovh_step1_virtual_desktop_not_supported" qtlid="406814">Pasirinkta OS ({0}) nesiūlo virtualaus darbalaukio funkcijų. Prireikus, pasirinkite kitą licenciją. Nėra kitų prieinamų OS? Junkitės prie kliento valdymo sąsajos skilties <a href='{1}' target='_blank'>Licencijos</a>.</translation>
+   <translation id="server_configuration_installation_ovh_step1_warning_exist" qtlid="185374">Dėmesio, jūs jau pradėjote OS <b>{0}</b> diegimo konfigūravimą. Pakeitus OS, visi konfigūracijos nustatymai bus panaikinti.</translation>
+   <translation id="server_configuration_installation_ovh_step1_warning_exist_valid" qtlid="185387">Ištrinti ankstesnę konfigūraciją</translation>
+   <translation id="server_configuration_installation_ovh_step1_warning_exist_cancel" qtlid="173463">Nekeisti OS</translation>
+   <translation id="server_configuration_installation_ovh_step2_available_color_help" qtlid="173476">Siekiant pagerinti skirsnių matomumą, spragtelėję žemiau pakeiskite spalvą.</translation>
+   <translation id="server_configuration_installation_ovh_step2_available_order_help" qtlid="173489">Skirsnių kūrimo seka.</translation>
+   <translation id="server_configuration_installation_ovh_stephardraid_info" qtlid="286630">Pasirinkite hard RAID konfigūraciją, kurioje bus įdiegta jūsų pasirinkta operacinė sistema.</translation>
+   <translation id="server_configuration_installation_ovh_stephardraid_error_empty_controller" qtlid="286643">Jokio RAID valdiklio. Jūs negalite konfigūruoti savo hard RAID.</translation>
+   <translation id="server_configuration_installation_ovh_stephardraid_label_controllers" qtlid="286656">RAID valdiklis:</translation>
+   <translation id="server_configuration_installation_ovh_stephardraid_label_disks" qtlid="301890">Diskų skaičius:</translation>
+   <translation id="server_configuration_installation_ovh_stephardraid_label_arrays" qtlid="301903">Klasterių skaičius:</translation>
+   <translation id="server_configuration_installation_ovh_stephardraid_label_raid" qtlid="286682">RAID:</translation>
+   <translation id="server_configuration_installation_ovh_stephardraid_label_space_total" qtlid="173671">Visa vieta:</translation>
+   <translation id="server_configuration_installation_ovh_stephardraid_label_space_available" qtlid="286695">Prieinama disko vieta:</translation>
+   <translation id="server_configuration_installation_ovh_stephardraid_loading_error" qtlid="286708">Klaida įkeliant RAID profilį. Prašome bandyti vėliau.</translation>
+   <translation id="server_configuration_installation_ovh_step2_type" qtlid="2642">Tipas</translation>
+   <translation id="server_configuration_installation_ovh_step2_type_disk" qtlid="173502">Os bus diegiama į šiuos diskus:</translation>
+   <translation id="server_configuration_installation_ovh_step2_type_disk_disable" qtlid="173515">Diskai, kurių diegimas nepaveiks:</translation>
+   <translation id="server_configuration_installation_ovh_step2_show_all_disk" qtlid="173528">Rodyti kitus diskus</translation>
+   <translation id="server_configuration_installation_ovh_step2_hide_all_disk" qtlid="173541">Slėpti kitus diskus</translation>
+   <translation id="server_configuration_installation_ovh_step2_file_system" qtlid="109938">Failų sistema</translation>
+   <translation id="server_configuration_installation_ovh_step2_mount_point" qtlid="110958">Prijungimo taškas</translation>
+   <translation id="server_configuration_installation_ovh_step2_volume_name" qtlid="173554">LVM pavadinimas</translation>
+   <translation id="server_configuration_installation_ovh_step2_raid" qtlid="160047">Raid</translation>
+   <translation id="server_configuration_installation_ovh_step2_raid_help" qtlid="173567">RAID (pradedant RAID 1) kopijuoja duomenis į kelis diskus ir pagerina duomenų patikimumą gedimo atveju. Dėmesio: RAID 0 nekopijuoja duomenų, todėl nepatariame jo naudoti.</translation>
+   <translation id="server_configuration_installation_ovh_step2_available_size" qtlid="173580">Skirsnio dydis</translation>
+   <translation id="server_configuration_installation_ovh_step2_available_size_help" qtlid="173593">Šis dydis atitinka vietą, kurią galėsite naudoti savo duomenų saugojimui.</translation>
+   <translation id="server_configuration_installation_ovh_step2_size" qtlid="173606">Sunaudota vieta</translation>
+   <translation id="server_configuration_installation_ovh_step2_size_help" qtlid="173619">Šis dydis priklauso nuo RAID versijos. Jeigu serveryje yra 2 diskai ir naudojama RAID 1, duomenys rašomi dviejuose diskuose, todėl sunaudojama dviguba vieta. Jeigu vienas diskas sugenda, duomenys neprarandami.</translation>
+   <translation id="server_configuration_installation_ovh_step2_add" qtlid="111294">Sukurti skirsnį</translation>
+   <translation id="server_configuration_installation_ovh_step2_del" qtlid="173632">Patvirtinti trynimą</translation>
+   <translation id="server_configuration_installation_ovh_step2_del_cancel" qtlid="173645">Atšaukti trynimą</translation>
+   <translation id="server_configuration_installation_ovh_step2_raid0_add" qtlid="173658">patvirtinti skirsnį be kopijos</translation>
+   <translation id="server_configuration_installation_ovh_step2_raid0_cancel" qtlid="37863">Anuliuoti</translation>
+   <translation id="server_configuration_installation_ovh_step2_total_size" qtlid="173671">Visa vieta:</translation>
+   <translation id="server_configuration_installation_ovh_step2_remaining_size" qtlid="109141">Likusi vieta:</translation>
+   <translation id="server_configuration_installation_ovh_step2_remaining_size_button" qtlid="109153">Likusi vieta</translation>
+   <translation id="server_configuration_installation_ovh_step2_info" qtlid="183957">OS <b>{0}</b> skirsnių (partitions) schema</translation>
+   <translation id="server_configuration_installation_ovh_step2_scheme" qtlid="173697">Pasirinkite disko skaidymo schemą:</translation>
+   <translation id="server_configuration_installation_ovh_step2_raid_hard" qtlid="173710">(Raid hard)</translation>
+   <translation id="server_configuration_installation_ovh_step2_info_partition_cachecade" qtlid="173723">Pasirinkus CacheCade konfigūraciją, kešavimui skirtos vietos skirsnių negalima keisti</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_empty_scheme" qtlid="173736">OS {1} skirsnių schema nesuderinama su serveriu {0}. Prašome pasirinkti kitą OS.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_size_exceed" qtlid="173749">Viršijate galimą vietą. Prašome sumažinti šio skirsnio dydį.</translation>
+   <translation id="server_configuration_installation_ovh_step2_warning_partition_raid0" qtlid="173762">Dėmesio, jeigu šį skirsnį konfigūruosite su RAID0, gausite daugiau vietos, tačiau net vieno disko gedimo atveju visi duomenys bus prarasti.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_raid0" qtlid="200872">Skirsnis {0} turi būti raid1</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_raid_LV" qtlid="173788">Visi LV skirsniai turi būti su tuo pačiu RAID.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_order" qtlid="173801">Šiam eilės numeriui jau priskirtas skirsnis</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_order_first" qtlid="173814">Pirmasis skirsnis turi būti prijungiamas kaip /boot arba /. Jeigu naudojate abu minėtuosius skirsnius, pirmu numeriu turi būti /boot.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_order_first_win" qtlid="173827">Pirmasis montuojamas skirsnis turi būti C:</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_volumename_empty" qtlid="173840">Būtina nurodyti LV tipo skirsnio pavadinimą</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_volumename_wrong" qtlid="173853">Skirsnio pavadinime negalima naudoti specialiųjų simbolių, pavadinimas neturi viršyti 16 simbolių ir negali būti pvmove bei snapshot.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_volumename_use" qtlid="173866">Toks pavadinimas jau yra</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_empty" qtlid="173879">Būtina nurodyti prijungimo tašką</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_wrong" qtlid="288340">Šis prijungimo taškas negali būti naudojamas, pavadinimas neteisingas. Specialūs simboliai draudžiami (išskyrus _ / -). Didžiausias leistinas simbolių skaičius: 255.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_wrong2" qtlid="173905">Šioje OS negalima naudoti /var/log prijungimo taško. Prašome naudoti /home/log.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_primary" qtlid="250719">Pajungimo taškas c: turi būti pirminis.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_windows" qtlid="173918">Toks prijungimo taškas negali būti naudojamas. Prijungimo taškas turi būti raidė tarp C ir Z bei baigtis :</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_use" qtlid="173931">Toks prijungimo taškas jau yra</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_file_system_swap" qtlid="173944">SWAP skirsnis jau yra</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_file_system_no_swap" qtlid="173957">Būtina sukurti SWAP skirsnį</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_size_swap" qtlid="173970">SWAP dydis negali viršyti {0}</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_size_max" qtlid="173983">GPT nepalaikantis skirsnis negali viršyti {0}</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_size_min_windows" qtlid="173996">Mažiausiais Windows skirsnio dydis yra {0}</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_size_min_reiserfs" qtlid="174009">Mažiausias reiserFS skirsnio dydis yra {0}</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_size_min_boot" qtlid="174022">Mažiausias /boot skirsnio dydis yra {0}</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_size_min_add" qtlid="174035">Neliko laisvos vietos, kurioje būtų galima sukurti skirsnį. Pakeiskite kurio nors skirsnio dydį ar pašalinkite jį apskritai.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_size_min" qtlid="174048">Mažiausias skirsnio dydis yra {0}</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_type_order" qtlid="174061">Pirminis (Primary) skyrsnis turi būti prieš loginį.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_type_order_lv" qtlid="174074">Po LV skirsnios turi sekti LV tipo skirsnis.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_type_logical_lv" qtlid="174087">Negalite turėti loginių ir LVM skirsnių</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_type_primary" qtlid="174100">Negalite turėti daugiau kaip 4 pirminių skirsnių. Daugiau skirsnių galėsite sukurti po to, kai pakeisite vieno skirsnio tipą.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_type_lv_swap" qtlid="174113">SWAP skirsnis nesuderinamas su LV</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_set" qtlid="174126">Klaida keičiant skirsnį {0} ({1})</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_delete" qtlid="174139">Klaida šalinant skirsnį {0} ({1})</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_add" qtlid="174152">Klaida kuriant skirsnį {0} ({1})</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_raid_diskUse" qtlid="185400">Neįtraukėte pakankamai diskų, kad galėtumėte sukurti tokią skirsnių schemą. Bent vieno skirsnio RAID lygis yra per didelis.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_raid_diskUse_icon" qtlid="185413">Ši oskirsnio RAID tipas yra netinkamas pagal naudojamų diskų kiekį.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_raid_0" qtlid="200885">Šį skirsnį padarius Raid 0, nebus galima daryti atsarginių kopijų</translation>
+   <translation id="server_configuration_installation_ovh_step3_info" qtlid="174165">Tuojau pradėsite diegimą iš OVH šablono</translation>
+   <translation id="server_configuration_installation_ovh_step3_error" qtlid="183970">Klaida diegiant OS <b>{0}</b> į serverį <b>{1}</b> (kalba <b>{2}</b> ({3}))</translation>
+   <translation id="server_configuration_installation_ovh_step3_server" qtlid="174191">Serveris:</translation>
+   <translation id="server_configuration_installation_ovh_step3_os" qtlid="174204">OS:</translation>
+   <translation id="server_configuration_installation_ovh_step3_disk_group" qtlid="382576">Diskas:</translation>
+   <translation id="server_configuration_installation_ovh_step3_lang" qtlid="168874">Kalba:</translation>
+   <translation id="server_configuration_installation_ovh_step3_custom" qtlid="174217">Jūsų schema:</translation>
+   <translation id="server_configuration_installation_ovh_step3_partition_order" qtlid="434880">Skirsnis: <b>{0}</b></translation>
+   <translation id="server_configuration_installation_ovh_step3_partition_size" qtlid="434893">Dydis: <b>{0}</b></translation>
+
+   <translation id="server_configuration_installation_ovh_step3_error_integrity" qtlid="179836">Klaida atliekant asmeninio diegimo ({0}) suderinamumo testą. Įdiegti negalima.</translation>
+   <translation id="server_configuration_installation_ovh_step3_error_integrity_info" qtlid="179849">Pataisykite klaidą spragtelėję mygtuką</translation>
+   <translation id="server_configuration_installation_ovh_step3_partiton_variable" qtlid="174243">Kintančio dydžio skirsnis:</translation>
+   <translation id="server_configuration_installation_ovh_step3_partiton_variable_help" qtlid="174256">Siekiant priderinti šabloną, šis skirsnis užims likusią laisvą vietą, todėl visa talpa bus kitokia.</translation>
+   <translation id="server_configuration_installation_ovh_step3_partiton_variable_info" qtlid="183983">Skirsnio <b>{0}</b> dydis bus pakeistas, kad užimtų visą serveryje likusią laisvą vietą.</translation>
+   <translation id="server_configuration_installation_ovh_step3_partiton_none" qtlid="8674">Tuščia</translation>
+   <translation id="server_configuration_installation_ovh_step3_saveGabarit" qtlid="174282">Išsaugoti diegimą:</translation>
+   <translation id="server_configuration_installation_ovh_step3_saveGabarit_help" qtlid="174295">Diegimo kopija (šablonas) leidžia greitai diegti ar perinstaliuoti su naudojama OS suderinamą serverį.</translation>
+   <translation id="server_configuration_installation_ovh_step3_remaining_error" qtlid="174308">Klaida konvertuojant skirsnį {0} į kintančio dydžio ({1}).</translation>
+   <translation id="server_configuration_installation_gabarit_title" qtlid="174321">Diegimas iš jūsų šablono</translation>
+   <translation id="server_configuration_installation_gabarit_step1_info" qtlid="401719">Pasirinkite šabloną, kurį norite įdiegti serveryje: <b class="text-nowrap">{0}</b></translation>
+   <translation id="server_configuration_installation_gabarit_step1_empty" qtlid="174347">Joks serveris nesuderinamas su jūsų šablonais</translation>
+   <translation id="server_configuration_installation_gabarit_step1_delete" qtlid="183996">Ar tikrai norite ištrinti šabloną <b>{0}</b>?</translation>
+   <translation id="server_configuration_installation_gabarit_step1_delete_button_cancel" qtlid="173645">Atšaukti trynimą</translation>
+   <translation id="server_configuration_installation_gabarit_step1_delete_button_valid" qtlid="174373">Ištrinti šabloną</translation>
+   <translation id="server_configuration_installation_gabarit_step1_delete_fail" qtlid="184009">Negalima ištrinti šablono <b>{0}</b> ({1})</translation>
+   <translation id="server_configuration_installation_gabarit_step2_info" qtlid="174399">Tuojau pradėsite diegimą iš šablono</translation>
+   <translation id="server_configuration_installation_gabarit_step2_server" qtlid="174191">Serveris:</translation>
+   <translation id="server_configuration_installation_gabarit_step2_os" qtlid="174412">Šablonas:</translation>
+   <translation id="server_configuration_installation_gabarit_step2_lang" qtlid="168874">Kalba:</translation>
+   <translation id="server_configuration_installation_gabarit_step2_hardwareRaid" qtlid="286721">{0} ({1} diskai(-ų))</translation>
+   <translation id="server_configuration_installation_gabarit_step2_hardwareRaid_incompatible_disks" qtlid="288236">Šiame serveryje yra tik {0} diskas(-ai)/(-ų), tačiau šablonui reikia mažiausiai {1} diskų.</translation>
+   <translation id="server_configuration_installation_gabarit_step2_hardwareRaid_incompatible_noHardwareRaid" qtlid="288249">Šio šablono neįmanoma įdiegti serveryje be Hard RAID parinkties.</translation>
+   <translation id="server_configuration_installation_gabarit_step2_saveGabarit" qtlid="174425">Keisti ir išsaugoti šablono nustatymus:</translation>
+   <translation id="server_configuration_installation_gabarit_step2_error" qtlid="184022">Klaida bandant įdiegti šabloną <b>{0}</b> į serverį <b>{1}</b> (kalba: <b>{2}</b> ({3}))</translation>
+   <translation id="server_configuration_installation_gabarit_step2_invalid" qtlid="301916">Ši RAID konfigūracija yra neteisinga.</translation>
+   <translation id="server_configuration_installation_progress_button" qtlid="174451">Diegimo progresas</translation>
+   <translation id="server_configuration_installation_progress_title" qtlid="174451">Diegimo progresas</translation>
+   <translation id="server_configuration_installation_progress_info" qtlid="174464">Diegimas sėkmingai užregistruotas.</translation>
+   <translation id="server_configuration_installation_progress_button_modal" qtlid="174477">Sumažinti</translation>
+   <translation id="server_configuration_installation_progress_end" qtlid="174490">Diegimas baigtas.</translation>
+   <translation id="server_configuration_installation_progress_cancel_success" qtlid="174503">Diegimo atšaukimas užregistruotas.</translation>
+   <translation id="server_configuration_installation_progress_cancel_fail" qtlid="174516">Klaida bandant atšaukti diegimą ({0})</translation>
+   <translation id="server_configuration_installation_progress_cancel_button" qtlid="111282">Atšaukti diegimą</translation>
+   <translation id="server_configuration_installation_progress_cancel_retry" qtlid="26503">Diegti iš naujo</translation>
+   <translation id="server_configuration_installation_progress_cancel_info" qtlid="174529">Dėmesio, atšaukimas turės pasekmių. Gali būti, kad vis tiek reikės pakartotinai diegti serverį.</translation>
+   <translation id="server_configuration_installation_progress_cancel_button_confirm" qtlid="174542">Patvirtinti</translation>
+   <translation id="server_configuration_installation_progress_cancel_button_cancel" qtlid="37863">Anuliuoti</translation>
+   <translation id="server_configuration_installation_progress_installation_error" qtlid="174555">Klaida diegiant. Pradėkite serverio {0} diegimą iš naujo: {1}</translation>
+   <translation id="server_configuration_installation_progress_installation_error2" qtlid="174568">Klaida diegiant. Diegimas buvo sustabdytas. Jeigu dėl diegimo sistema pradėjo trinti duomenis, galite iš naujo diegti serverį {0}: {1}</translation>
+   <translation id="server_order_bandwidth_title" qtlid="180876">Duomenų srauto užsakymas</translation>
+   <translation id="server_order_bandwidth_vrack_title" qtlid="180876">Duomenų srauto užsakymas</translation>
+   <translation id="server_order_bandwidth_not_available" qtlid="180889">Serveriui {0} negalima užsakyti jokio duomenų srauto plano</translation>
+   <translation id="server_order_bandwidth_help" qtlid="216859">Premium, Platinum ir Ultimate pasiūlymai garantuoja tiklo pralaidumą kokybę geografinėje zonoje, esančioje kuo arčiau jūsų klientų.  </translation>
+   <translation id="select_bandwidth_type_label" qtlid="180902">Plano pasirinkimas</translation>
+   <translation id="select_bandwidth_vrack_type_label" qtlid="180902">Plano pasirinkimas</translation>
+   <translation id="select_traffic_type_label" qtlid="180902">Plano pasirinkimas</translation>
+   <translation id="toggle_button_label_ultimate" qtlid="186988">Ultimate</translation>
+   <translation id="toggle_button_label_premium" qtlid="180941">Premium</translation>
+   <translation id="toggle_button_label_platinum" qtlid="187001">Platinum</translation>
+   <translation id="toggle_button_label_info_ultimate" qtlid="208938">Garantuojama duomenų perdavimo sparta visame tinklo perimetre</translation>
+   <translation id="toggle_button_label_info_premium" qtlid="208951">Garantuojama duomenų perdavimo sparta ribotame tinklo perimetre</translation>
+   <translation id="toggle_button_label_info_platinum" qtlid="208964">Garantuojama duomenų perdavimo sparta pažangiame tinklo perimetre</translation>
+   <translation id="select_bandwidth_value_label_other" qtlid="180954">Galima talpa</translation>
+   <translation id="select_bandwidth_value_label_1" qtlid="180967">Galima talpa</translation>
+   <translation id="select_bandwidth_value_label_choose" qtlid="180980">Talpa...</translation>
+   <translation id="unit_gbps" qtlid="180993">{0} Gbps</translation>
+
+   <translation id="server_order_bandwidth_choose_duration" qtlid="181006">Pasirinkite trukmę</translation>
+   <translation id="server_order_bandwidth_load" qtlid="222059">Įkeliami pasiūlymai...</translation>
+   <translation id="server_order_bandwidth_load_bc" qtlid="181032">Sutarčių generavimas...</translation>
+   <translation id="server_order_bandwidth_error" qtlid="181058">Klaida kuriant užsakymą {0}</translation>
+   <translation id="server_order_bandwidth_resume" qtlid="183307">Cliquez sur "Régler" pour ouvrir le bon de commande.</translation>
+   <translation id="server_order_bandwidth_resume_info" qtlid="454319">Il faut que votre navigateur accepte les pop-up.</translation>
+
+   <translation id="server_order_bandwidth_vrack_choose_duration" qtlid="181006">Pasirinkite trukmę</translation>
+   <translation id="server_order_bandwidth_vrack_load" qtlid="222059">Įkeliami pasiūlymai...</translation>
+   <translation id="server_order_bandwidth_vrack_load_bc" qtlid="401497">Užsakymas generuojamas</translation>
+   <translation id="server_order_bandwidth_vrack_loading_error" qtlid="401510">Klaida keičiant užsakymo duomenis</translation>
+   <translation id="server_order_bandwidth_vrack_success" qtlid="401523">Jūsų vRack tinklo pralaidumo keitimai įsigalios po to, kai apmokėsite <a href='{0}' target='_blank'>užsakymą</a>.</translation>
+   <translation id="server_order_bandwidth_vrack_error" qtlid="401536">Klaida kuriant užsakymą</translation>
+
+   <translation id="server_order_traffic_title" qtlid="407845">Keisti tinklo pralaidumo kvotą</translation>
+   <translation id="server_order_traffic_choose_duration" qtlid="181006">Pasirinkite trukmę</translation>
+   <translation id="server_order_traffic_load" qtlid="222059">Įkeliami pasiūlymai...</translation>
+   <translation id="server_order_traffic_load_bc" qtlid="181032">Sutarčių generavimas...</translation>
+   <translation id="server_order_traffic_loading_error" qtlid="401510">Klaida keičiant užsakymo duomenis</translation>
+   <translation id="server_order_traffic_success" qtlid="407858">Norėdami užbaigti serverio tinklo pralaidumo kvotos keitimą, jūs turėtumėte apmokėti <a href='{0}' target='_blank'>užsakymą</a>.</translation>
+   <translation id="server_order_traffic_error" qtlid="401536">Klaida kuriant užsakymą</translation>
+   <translation id="server_order_traffic_orderable_label_100Mbps-Unlimited" qtlid="407871">Duomenų srautas neribojamas pasirinkus 100 Mbps išorinį tinklo pralaidumą</translation>
+   <translation id="server_order_traffic_orderable_label_250Mbps-Unlimited" qtlid="407884">Duomenų srautas neribojamas pasirinkus 250 Mbps išorinį tinklo pralaidumą</translation>
+   <translation id="server_order_traffic_orderable_label_500Mbps-Unlimited" qtlid="407897">Duomenų srautas neribojamas pasirinkus 500 Mbps išorinį tinklo pralaidumą</translation>
+
+   <translation id="server_cancel_traffic_title" qtlid="407910">Atsisakyti parinkties „Tinklo pralaidumo kvota“</translation>
+   <translation id="server_cancel_traffic_title_question" qtlid="407923">Ar tikrai norite atsisakyti parinkties „Tinklo pralaidumo kvota“?</translation>
+   <translation id="server_cancel_traffic_title_question_information" qtlid="367307">Jūs gausite patvirtinimą el. paštu, adresu {0}. Šis el. laiškas taip pat prieinamas skiltyje „Mano paskyra“.</translation>
+   <translation id="server_cancel_traffic_cancel_success" qtlid="367320">Jums buvo išsiųstas el. laiškas.</translation>
+   <translation id="server_cancel_traffic_cancel_error" qtlid="285023">Įvyko klaida vykdant parinkties atsisakymo užklausą.</translation>
+
+   <translation id="day_1" qtlid="28807">1 diena</translation>
+   <translation id="day_other" qtlid="158578">{} d.</translation>
+   <translation id="month_1" qtlid="70241">1 mėn.</translation>
+   <translation id="month_other" qtlid="158591">{} mėn.</translation>
+   <translation id="year_1" qtlid="70277">1 metai</translation>
+   <translation id="year_other" qtlid="158604">{} metai</translation>
+   <translation id="upto" qtlid="158617">Iki {0}</translation>
+   <translation id="uptofirstdaynextmonth" qtlid="158630">Iki pirmos ateinančio mėnesio dienos</translation>
+   <translation id="engage" qtlid="158643">Įsipareigoti {0}</translation>
+   <translation id="price_ht_label" qtlid="166183">{0}&#160;be PVM</translation>
+   <translation id="price_ttc_label" qtlid="166196">{0}&#160;su PVM</translation>
+   <translation id="price_free" qtlid="130495">Nemokamai</translation>
+   <translation id="price" qtlid="181084">Kaina:</translation>
+   <translation id="contract_next" qtlid="17743">Toliau</translation>
+   <translation id="contract_previous" qtlid="17431">Ankstesnis</translation>
+   <translation id="download_contract" qtlid="180369">Atverti sutartį "{0}" kaip PDF</translation>
+   <translation id="contract_help" qtlid="180382">Norėdami patvirtinti sutartis, pereikite prie jų pabaigos.</translation>
+   <translation id="contracts_list_title" qtlid="180395">Sutarčių, kurias reikia peržiūrėti, kiekis: {0}.</translation>
+   <translation id="contract_list_title" qtlid="180408">Reikia peržiūrėti 1 sutartį</translation>
+   <translation id="contracts_agree" qtlid="180421">Sutinku su sutartimis</translation>
+   <translation id="contract_agree" qtlid="180434">Sutinku su sutartimi</translation>
+
+   <translation id="server_cancel_bandwidth_title" qtlid="286734">Atsisakyti Tinklo pralaidumo parinkties</translation>
+   <translation id="server_cancel_bandwidth_vrack_title" qtlid="286734">Atsisakyti Tinklo pralaidumo parinkties</translation>
+   <translation id="server_cancel_bandwidth_information" qtlid="367307">Jūs gausite patvirtinimą el. paštu, adresu {0}. Šis el. laiškas taip pat prieinamas skiltyje „Mano paskyra“.</translation>
+   <translation id="server_cancel_bandwidth_vrack_information" qtlid="367307">Jūs gausite patvirtinimą el. paštu, adresu {0}. Šis el. laiškas taip pat prieinamas skiltyje „Mano paskyra“.</translation>
+   <translation id="server_cancel_bandwidth_question" qtlid="287371">Ar tikrai norite atsisakyti tinklo pralaidumo parinkties?</translation>
+   <translation id="server_cancel_bandwidth_vrack_question" qtlid="287371">Ar tikrai norite atsisakyti tinklo pralaidumo parinkties?</translation>
+   <translation id="server_cancel_bandwidth_button" qtlid="48646">Atsisakyti</translation>
+   <translation id="server_cancel_bandwidth_cancel_success" qtlid="367320">Jums buvo išsiųstas el. laiškas.</translation>
+   <translation id="server_cancel_bandwidth_vrack_cancel_success" qtlid="367320">Jums buvo išsiųstas el. laiškas.</translation>
+   <translation id="server_cancel_bandwidth_cancel_error" qtlid="285023">Įvyko klaida vykdant parinkties atsisakymo užklausą.</translation>
+   <translation id="server_cancel_bandwidth_cancel_vrack_error" qtlid="285023">Įvyko klaida vykdant parinkties atsisakymo užklausą.</translation>
+   <translation id="server_cancel_bandwidth_confirmation_error" qtlid="367333">Įvyko klaida atkuriant jūsų duomenis.</translation>
+
+   <translation id="server_tab_usb_storage" qtlid="181136">USB diskas</translation>
+   <translation id="server_tab_USB_STORAGE_summary" qtlid="181149">Šiuo metu turite {0} USB diską(-ų). Dar turite {1} laisvą(-us) USB prievadą(-us).</translation>
+   <translation id="server_tab_USB_STORAGE_loading_error" qtlid="135294">Įvyko klaida keičiant duomenis.</translation>
+   <translation id="server_tab_USB_STORAGE_available_slot" qtlid="181162">Galimas prievadas</translation>
+   <translation id="server_tab_USB_STORAGE_add" qtlid="181175">Pridėti diską</translation>
+   <translation id="server_tab_USB_STORAGE_add_select" qtlid="181188">Pasirinkite saugyklos talpą</translation>
+   <translation id="server_tab_USB_STORAGE_add_select_warning" qtlid="212530">Dėmesio: diegimas bus galutinai atliktas. Vėliau jo atšaukti nebus galima.</translation>
+
+
+   <translation id="server_tab_USB_STORAGE_add_capacity" qtlid="181201">{0} GB</translation>
+   <translation id="server_tab_USB_STORAGE_order_select_duration" qtlid="181214">Pasirinkite trukmę:</translation>
+   <translation id="server_tab_USB_STORAGE_order_loading_error" qtlid="135294">Įvyko klaida keičiant duomenis.</translation>
+   <translation id="server_tab_USB_STORAGE_order_finish_error" qtlid="181227">Klaida kuriant užsakymą.</translation>
+   <translation id="server_tab_USB_STORAGE_order_resume" qtlid="177496">Užsakymo santrauka</translation>
+   <translation id="server_tab_USB_STORAGE_order_price_HT" qtlid="146177">Visa kaina be PVM:</translation>
+   <translation id="server_tab_USB_STORAGE_order_price_TTC" qtlid="146190">Visa kaina su PVM:</translation>
+   <translation id="server_tab_USB_STORAGE_order_final_txt" qtlid="181240">Spragtelėkite "Patvirtinti", kad užbaigtumėte užsakymą.</translation>
+   <translation id="server_tab_USB_STORAGE_order_final_txt2" qtlid="181253">Atsidarys naujas langas ir būsite automatiškai nukreipti į apmokėjimo sąsają.</translation>
+   <translation id="server_tab_USB_STORAGE_order_finish_success" qtlid="184048">Užsakymas nr. <a href='{0}' target='_blank'>{1}</a> buvo užregistruotas.</translation>
+
+   <translation id="server_test_ping" qtlid="204259">PING testas</translation>
+   <translation id="server_services_state" qtlid="204272">Paslaugų būsena</translation>
+   <translation id="server_status" qtlid="204285">Būsena</translation>
+   <translation id="server_services" qtlid="34632">Paslaugos</translation>
+   <translation id="server_informations_general" qtlid="27115">Pagrindinė informacija</translation>
+
+   <translation id="server_bandwidth" qtlid="38565">Perduodamų duomenų srautas</translation>
+   <translation id="server_bandwidth_connection" qtlid="32446">Tinklo jungtis</translation>
+   <translation id="server_bandwidth_type" qtlid="2642">Tipas</translation>
+   <translation id="server_bandwidth_type_included" qtlid="204298">Įskaičiuota</translation>
+   <translation id="server_bandwidth_type_platinum" qtlid="204311">Platinum</translation>
+   <translation id="server_bandwidth_type_premium" qtlid="180941">Premium</translation>
+   <translation id="server_bandwidth_type_standard" qtlid="48998">Standard</translation>
+   <translation id="server_bandwidth_type_ultimate" qtlid="186988">Ultimate</translation>
+   <translation id="server_bandwidth_ovh_to_ovh" qtlid="33874">OVH/OVH</translation>
+   <translation id="server_bandwidth_ovh_to_internet" qtlid="373194">Išeinantis tinklo pralaidumas</translation>
+   <translation id="server_bandwidth_internet_to_ovh" qtlid="373207">Įeinantis tinklo pralaidumas</translation>
+   <translation id="server_bandwidth_order_button" qtlid="43558">Užsakyti</translation>
+   <translation id="server_bandwidth_cancel_button" qtlid="286786">Atsisakyti</translation>
+   <translation id="server_bandwidth_option_released" qtlid="286799">(neatnaujinta)</translation>
+   <translation id="server_bandwidth_loading_error" qtlid="204324">Įvyko klaida kraunant duomenis.</translation>
+
+   <translation id="server_bandwidth_vrack" qtlid="401549">Tinklo pralaidumas vRack (privatus)</translation>
+   <translation id="server_bandwidth_vrack_tooltip" qtlid="401562">Duomenų perdavimo sparta vRack viduje</translation>
+   <translation id="server_bandwidth_vrack_order_button" qtlid="43558">Užsakyti</translation>
+   <translation id="server_bandwidth_vrack_change_button" qtlid="37875">Keisti</translation>
+   <translation id="server_bandwidth_vrack_cancel_button" qtlid="286786">Atsisakyti</translation>
+   <translation id="server_bandwidth_vrack_option_released" qtlid="286799">(neatnaujinta)</translation>
+
+   <translation id="server_traffic" qtlid="407936">Išorinio tinklo pralaidumo kvota</translation>
+   <translation id="server_traffic_text" qtlid="407949">Ribojama iki {0}</translation>
+   <translation id="server_traffic_unlimited_text" qtlid="407962">Neribojama</translation>
+   <translation id="server_traffic_order_button" qtlid="127360">Padidinti</translation>
+   <translation id="server_traffic_change_button" qtlid="37875">Keisti</translation>
+   <translation id="server_traffic_cancel_button" qtlid="286786">Atsisakyti</translation>
+   <translation id="server_traffic_loading_error" qtlid="204324">Įvyko klaida kraunant duomenis.</translation>
+   <translation id="server_traffic_option_released" qtlid="286799">(neatnaujinta)</translation>
+
+   <translation id="server_consumption_label" qtlid="25639">Sunaudojimas</translation>
+   <translation id="server_consumption_explanation" qtlid="407975">Serverio tinklo pralaidumas yra ribojamas. Viršijus limitą, serverio išorinis tinklo pralaidumas bus sumažintas. Norėdami išspręsti problemą, jūs turėtumėte padidinti išorinio tinklo pralaidumo kvotą.</translation>
+
+   <translation id="server_consumption_summary_days" qtlid="407988">Liko dienų: {0} iš {1}</translation>
+   <translation id="server_consumption_summary_hours" qtlid="408001">Liko valandų: {0} iš {1}</translation>
+   <translation id="server_consumption_throttled" qtlid="408014">Paslaugos veikimas sulėtintas</translation>
+   <translation id="server_consumption_current_period_label" qtlid="408027">Suvartojimas einamuoju laikotarpiu (iš viso prieinama {0})</translation>
+   <translation id="server_consumption_current_period_remaining" qtlid="408040">Liko: {0}</translation>
+   <translation id="server_consumption_warning_nearquota" qtlid="408053">Greitai pasieksite tinklo pralaidumo {0} limitą.</translation>
+   <translation id="server_consumption_warning_nearquota_increase" qtlid="408066">Padidinti mano kvotą</translation>
+   <translation id="server_consumption_warning_overquota" qtlid="408079">Jūs viršijote tinklo pralaidumo kvotą. Jūsų duomenų perdavimo sparta dabar apribota iki {0}.</translation>
+   <translation id="server_consumption_warning_overquota_increase" qtlid="408092">Norėdami, kad jūsų paslauga vėl veiktų visu pajėgumu, jūs turėtumėte <a href="{0}">padidinti kvotą</a></translation>
+   <translation id="server_tab_MONITORING" qtlid="31666">Stebėjimas</translation>
+   <translation id="server_tab_MONITORING_title" qtlid="243741">Mano paslaugų būsena</translation>
+   <translation id="server_tab_MONITORING_notifications_management" qtlid="243754">Valdyti mano įspėjimus</translation>
+   <translation id="server_tab_MONITORING_back" qtlid="454332">Retour à l’État du serveur</translation>
+   <translation id="server_tab_MONITORING_services" qtlid="243767">Paslaugos, kurioms įjungtas stebėjimas</translation>
+   <translation id="server_tab_MONITORING_state_true" qtlid="103269">aktyvi</translation>
+   <translation id="server_tab_MONITORING_state_false" qtlid="103281">neaktyvi</translation>
+   <translation id="server_tab_MONITORING_table_header_ip" qtlid="25615">IP</translation>
+   <translation id="server_tab_MONITORING_table_header_protocol" qtlid="19711">Protokolas</translation>
+   <translation id="server_tab_MONITORING_table_header_port" qtlid="9034">Prievadas</translation>
+   <translation id="server_tab_MONITORING_table_header_interval" qtlid="243780">Intervalas (sekundėmis)</translation>
+   <translation id="server_tab_MONITORING_table_header_url" qtlid="31402">URL</translation>
+   <translation id="server_tab_MONITORING_table_header_status" qtlid="8230">Būsena</translation>
+   <translation id="server_tab_MONITORING_table_header_notifications" qtlid="68981">Gavėjai</translation>
+   <translation id="server_tab_MONITORING_table_header_refresh" qtlid="218081">Perkrauti lentelę</translation>
+   <translation id="server_tab_MONITORING_table_empty" qtlid="243793">Nėra jokios stebimos paslaugos</translation>
+   <translation id="server_tab_MONITORING_table_action_edit" qtlid="243806">Keisti stebėjimą</translation>
+   <translation id="server_tab_MONITORING_table_action_delete" qtlid="243819">Šalinti stebėjimą</translation>
+   <translation id="server_tab_MONITORING_error" qtlid="243832">Įvyko klaida atkuriant duomenis:</translation>
+   <translation id="server_tab_MONITORING_challenge_text" qtlid="243845">Serverio atsakas</translation>
+   <translation id="server_tab_MONITORING_enabled" qtlid="30250">Įjungta</translation>
+   <translation id="server_tab_MONITORING_click_enable" qtlid="243858">Spauskite norėdami įjungti stebėjimą</translation>
+   <translation id="server_tab_MONITORING_click_disable" qtlid="243871">Spauskite norėdami išjungti stebėjimą</translation>
+
+   <translation id="server_tab_MONITORING_add_step1_title" qtlid="243884">Serverio informacija</translation>
+   <translation id="server_tab_MONITORING_add_url" qtlid="243897">URL testavimui:</translation>
+   <translation id="server_tab_MONITORING_add_ip" qtlid="243910">IP stebėjimui:</translation>
+   <translation id="server_tab_MONITORING_add_port" qtlid="243923">Prievadas stebėjimui:</translation>
+   <translation id="server_tab_MONITORING_add_protocol" qtlid="243936">Protokolas naudojimui:</translation>
+   <translation id="server_tab_MONITORING_add_interval" qtlid="243949">Testavimo intervalas (sekundėmis):</translation>
+   <translation id="server_tab_MONITORING_add_challenge_text" qtlid="243962">Serverio atsakas:</translation>
+   <translation id="server_tab_MONITORING_add_challenge_text_help" qtlid="243975">Įvesti pageidaujamą serverio atsaką testų atlikimo metu</translation>
+   <translation id="server_tab_MONITORING_add_url_invalid" qtlid="243988">Jūs turite nurodyti galiojantį URL adresą</translation>
+   <translation id="server_tab_MONITORING_add_ip_invalid" qtlid="244001">Jūs turite nurodyti galiojantį IP adresą</translation>
+   <translation id="server_tab_MONITORING_add_port_invalid" qtlid="244014">Jūs turite nurodyti galiojantį prievadą</translation>
+   <translation id="server_tab_MONITORING_add_port_text_help" qtlid="244027">Prievado numeris turi būti tarp 1 ir 65535</translation>
+   <translation id="server_tab_MONITORING_add_challengeText_invalid" qtlid="244040">Leidžiami tik šie simboliai: <ul><li>Raidės</li><li>Skaičiai</li> <li>".", "-", "=", "(", ")", "", "/", ";"</li></ul></translation>
+   <translation id="server_tab_MONITORING_add_step2_title" qtlid="244053">Stebėjimo duomenys</translation>
+   <translation id="server_tab_MONITORING_add_step3_title" qtlid="244066">Stebėjimo duomenų santrauka</translation>
+   <translation id="server_tab_MONITORING_add_success" qtlid="244079">Stebėjimas pridėtas sėkmingai.</translation>
+   <translation id="server_tab_MONITORING_add_error" qtlid="244092">Įvyko klaida kuriant stebėjimą:</translation>
+
+   <translation id="server_tab_MONITORING_delete_title" qtlid="243819">Šalinti stebėjimą</translation>
+   <translation id="server_tab_MONITORING_delete_question" qtlid="244105">Ar tikrai norite išjunti stebėjimą IP adresui {0}?</translation>
+   <translation id="server_tab_MONITORING_delete_success" qtlid="244118">Stebėjimas sėkmingai išjungtas.</translation>
+   <translation id="server_tab_MONITORING_delete_error" qtlid="244131">Įvyko klaida išjungiant stebėjimą.</translation>
+
+   <translation id="server_tab_MONITORING_add" qtlid="244144">Stebėti paslaugą</translation>
+
+   <translation id="server_tab_MONITORING_update_success" qtlid="244157">Stebėjimas sėkmingai pakeistas.</translation>
+   <translation id="server_tab_MONITORING_update_error" qtlid="244170">Įvyko klaida keičiant stebėjimą:</translation>
+
+   <translation id="server_tab_MONITORING_notifications_sms" qtlid="244183">Pranešimai SMS žinute</translation>
+   <translation id="server_tab_MONITORING_notification_add_recipient" qtlid="244196">Pridėti gavėją</translation>
+   <translation id="server_tab_MONITORING_notification_remove_recipient" qtlid="2414">Trinti</translation>
+
+   <translation id="server_tab_MONITORING_notifications_email" qtlid="244209">Pranešimai el. paštu </translation>
+   <translation id="server_tab_MONITORING_table_notifications_empty" qtlid="244222">Jokio pranešimo</translation>
+   <translation id="server_tab_MONITORING_table_notifications_email_header_email" qtlid="33598">El. paštas</translation>
+   <translation id="server_tab_MONITORING_table_notifications_email_header_lang" qtlid="30598">Kalba</translation>
+   <translation id="server_tab_MONITORING_table_notifications_email_header_status" qtlid="8230">Būsena</translation>
+   <translation id="server_tab_MONITORING_table_notifications_action_edit" qtlid="244235">Keisti pranešimą</translation>
+   <translation id="server_tab_MONITORING_table_notifications_action_delete" qtlid="244248">Ištrinti pranešimą</translation>
+   <translation id="server_tab_MONITORING_notifications_email_add_step1_title" qtlid="244261">Prašome pateikti informaciją, kuri leidžia gauti įspėjimus el. paštu.</translation>
+   <translation id="server_tab_MONITORING_notifications_email_add_email" qtlid="89028">El. paštas:</translation>
+   <translation id="server_tab_MONITORING_notifications_email_add_email_invalid" qtlid="244274">Jūs turite pateikti galiojantį el. pašto adresą</translation>
+   <translation id="server_tab_MONITORING_notifications_email_add_lang" qtlid="168874">Kalba:</translation>
+   <translation id="server_tab_MONITORING_notifications_email_add_success" qtlid="244287">Pranešimas sėkmingai pridėtas.</translation>
+   <translation id="server_tab_MONITORING_notifications_email_add_error" qtlid="244300">Įvyko klaida kuriant pranešimą:</translation>
+   <translation id="server_tab_MONITORING_notifications_email_update_activate" qtlid="244313">Aktyvuoti pranešimą</translation>
+
+   <translation id="server_tab_MONITORING_notifications_email_add_step2_title" qtlid="244326">Pranešimo el. paštu santrauka ir duomenys</translation>
+
+   <translation id="server_tab_MONITORING_notifications_delete_title" qtlid="244248">Ištrinti pranešimą</translation>
+   <translation id="server_tab_MONITORING_notifications_delete_question" qtlid="244339">Ar tikrai norite ištrinti {0} pranešimą IP adresui {1}?</translation>
+   <translation id="server_tab_MONITORING_notifications_delete_success" qtlid="244352">Pranešimas sėkmingai ištrintas.</translation>
+   <translation id="server_tab_MONITORING_notifications_delete_error" qtlid="244365">Įvyko klaida trinant pranešimą:</translation>
+
+   <translation id="server_tab_MONITORING_notifications_update_success" qtlid="244378">Pranešimas sėkmingai pakeistas.</translation>
+   <translation id="server_tab_MONITORING_notifications_update_error" qtlid="244391">Įvyko klaida keičiant pranešimą:</translation>
+
+   <translation id="server_tab_MONITORING_table_notifications_sms_header_phone" qtlid="244404">Telefono numeris</translation>
+   <translation id="server_tab_MONITORING_table_notifications_sms_header_account" qtlid="31906">SMS abonementas</translation>
+   <translation id="server_tab_MONITORING_table_notifications_sms_header_lang" qtlid="30598">Kalba</translation>
+   <translation id="server_tab_MONITORING_table_notifications_sms_header_from" qtlid="244417">Siuntimo laikas:</translation>
+   <translation id="server_tab_MONITORING_table_notifications_sms_header_to" qtlid="169498">ir</translation>
+   <translation id="server_tab_MONITORING_table_notifications_sms_header_status" qtlid="8230">Būsena</translation>
+   <translation id="server_tab_MONITORING_notifications_sms_account_disable" qtlid="244430">Jūs neturite jokios aktyvios SMS paskyros.</translation>
+
+   <translation id="server_tab_MONITORING_notifications_sms_add_sms" qtlid="244443">SMS paskyra:</translation>
+   <translation id="server_tab_MONITORING_notifications_sms_add_phone" qtlid="244456">Telefono numeris:</translation>
+   <translation id="server_tab_MONITORING_notifications_sms_add_from" qtlid="244469">Įspėjimas nuo:</translation>
+   <translation id="server_tab_MONITORING_notifications_sms_add_to" qtlid="8890">iki</translation>
+   <translation id="server_tab_MONITORING_notifications_sms_add_hours" qtlid="190407">val.</translation>
+   <translation id="server_tab_MONITORING_notifications_sms_add_hour_invalid" qtlid="244482">Jūs turite nurodyti valandą tarp 0 ir 24</translation>
+   <translation id="server_tab_MONITORING_notifications_sms_add_period_invalid" qtlid="244495">Pradžios valanda turi būti prieš pabaigos valandą.</translation>
+   <translation id="server_tab_MONITORING_notifications_sms_add_phone_invalid" qtlid="244508">Jūs turite pateikti telefono numerį formatu +370xxxxxxxx</translation>
+   <translation id="server_tab_MONITORING_notifications_sms_add_success" qtlid="244521">Pranešimas SMS žinute sėkmingai pridėtas.</translation>
+   <translation id="server_tab_MONITORING_notifications_sms_add_step2_title" qtlid="244534">Pranešimo SMS žinute santrauka ir duomenys</translation>
+   <translation id="server_tab_MONITORING_service" qtlid="31042">Paslauga</translation>
+
+   <translation id="server_tab_MONITORING_notification_no_recipient_SMS" qtlid="244547">Joks gavėjas nebus įspėtas SMS žinute</translation>
+   <translation id="server_tab_MONITORING_notification_no_recipient_EMAIL" qtlid="244560">Joks gavėjas nebus įspėtas el. paštu </translation>
+   <translation id="server_tab_MONITORING_show_sms_no_valid_account_help" qtlid="244573">Jūs turite naudotis galiojančia SMS paskyra, kuri turi būti papildyta kreditu SMS įspėjimams</translation>
+
+   <translation id="server_dashboard_change_price" qtlid="256023">Jūsų serverio nuomos kaina keičiasi, spauskite čia norėdami sužinoti daugiau.</translation>
+   <translation id="server_dashboard_change_price_title" qtlid="256036">Naujas tarifas</translation>
+   <translation id="server_dashboard_change_price_info" qtlid="256049">Tarifai, taikomi pratęsiant paslaugų nuomą, nuo spalio 1 d.</translation>
+   <translation id="server_dashboard_change_price_server_name" qtlid="242977">Serverio pavadinimas </translation>
+   <translation id="server_dashboard_change_price_server_old_price" qtlid="256062">Ankstesnė kaina</translation>
+   <translation id="server_dashboard_change_price_server_new_price" qtlid="256075">Nauja kaina</translation>
+   <translation id="server_dashboard_change_price_infos" qtlid="256099">(daugiau informacijos apie kainų pasikeitimus)</translation>
+   <translation id="server_dashboard_change_price_details" qtlid="256112">Norėdami sužinoti daugiau apie pasikeitimus, spragtelėkite čia.</translation>
+
+   <translation id="server_dashboard_change_prices" qtlid="256125">Pasikeitė jūsų serverio kaina,</translation>
+   <translation id="server_dashboard_change_price_click_here" qtlid="131745">spragtelėkite čia</translation>
+   <translation id="server_dashboard_change_price_more" qtlid="256138">daugiau informacijos.</translation>
+
+   <translation id="server_close_service" qtlid="257967">Ištrinti paslaugą</translation>
+   <translation id="server_close_service_form_label" qtlid="451675">Pasirinkite veiksmą</translation>
+   <translation id="server_close_service_form_option_terminate" qtlid="451688">Ištrinti paslaugą nedelsiant</translation>
+   <translation id="server_close_service_form_option_delete_at_expiration" qtlid="451701">Pašalinti paslaugą pasibaigus nuomos laikotarpiui</translation>
+   <translation id="server_close_service_form_option_cancel" qtlid="451714">Atšaukti paslaugos šalinimą</translation>
+   <translation id="server_close_service_warning_data_deletion" qtlid="436494">Pašalinus šį elementą bus galutinai pašalinti visi susiję duomenys.</translation>
+   <translation id="server_close_service_warning_no_refund" qtlid="436507">Pašalinimo veiksmas nesuteikia teisės atgauti sumokėtus pinigus.</translation>
+   <translation id="server_close_service_warning_manual_refund" qtlid="436520">Pašalinimo veiksmas negarantuoja teisės atgauti sumokėtus pinigus. Susisiekite su pagalba, jei turite klausimų apie lėšų grąžinimą.</translation>
+   <translation id="server_close_service_desc" qtlid="260390">Prašymas pašalinti šį serverį gautas. Apie pašalinimo procedūrą informuosime el. paštu.</translation>
+   <translation id="server_close_service_question" qtlid="351996">Ar norite tęsti?</translation>
+   <translation id="server_close_service_success" qtlid="260403">Prašymas pašalinti šį serverį gautas. Apie pašalinimo procedūrą informuosime el. paštu.</translation>
+   <translation id="server_close_service_error" qtlid="260416">Įvyko klaida teikiant prašymą pašalinti serverį:</translation>
+   <translation id="server_close_service_delete_at_expiration_activate_success" qtlid="451727">Prašymas panaikinti serverį pasibaigus nuomos laikotarpiui sėkmingai išsaugotas</translation>
+   <translation id="server_close_service_delete_at_expiration_activate_error" qtlid="451740">Klaida nustatant serverio trynimą baigiantis galiojimo laikui:</translation>
+   <translation id="server_close_service_delete_at_expiration_deactivate_success" qtlid="451753">Užklausa pašalinti serverį pasibaigus galiojimui buvo sustabdyta</translation>
+   <translation id="server_close_service_delete_at_expiration_deactivate_error" qtlid="451766">Įvyko klaida trinant užklausą pašalinti serverį pasibaigus galiojimui:</translation>
+   <translation id="server_close_service_cancel_success" qtlid="451779">Šio serverio pašalinimo užklausa sustabdyta.</translation>
+   <translation id="server_close_service_cancel_error" qtlid="451792">Įvyko klaida stabdant serverio pašalinimo užklausą:</translation>
+
+   <translation id="housing_support_phone" qtlid="290446">Ar žinote? Jūsų Housing paslaugai priskirtas asmeninis konsultantas, su kuriuo galite susisiekti {0} visais klausimais.</translation>
+
+   <translation id="server_autorenew_stop_bother_error" qtlid="290589">Įvyko klaida teikiant prašymą nesiųsti informacijos apie automatinį atnaujinimą.</translation>
+   <translation id="server_autorenew_alert" qtlid="296882">Rinkitės automatinį serverio galiojimo pratęsimą! Daugiau jokių priminimų ir netikėtų atjungimų.</translation>
+   <translation id="server_autorenew_guide" qtlid="290615">Prieiga prie gido</translation>
+   <translation id="server_autorenew_activate" qtlid="98576">Įjungti automatinį naujinimą</translation>
+
+</translations>

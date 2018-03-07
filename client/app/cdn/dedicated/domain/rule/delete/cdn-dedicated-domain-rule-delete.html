@@ -1,0 +1,18 @@
+<div data-ng-controller="CacherulesDeleteCtrl">
+
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="deleteEntry"
+         data-wizard-title="i18n.cdn_configuration_delete_cacherule_title">
+
+        <div data-wizard-step>
+
+            <p class="text-danger"
+               data-ng-bind="tr('cdn_configuration_delete_cacherule_question', entryToDelete.fileMatch)">
+            </p>
+
+        </div>
+
+    </div>
+
+</div>

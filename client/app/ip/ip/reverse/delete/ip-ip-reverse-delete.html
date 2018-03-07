@@ -1,0 +1,14 @@
+<div data-ng-controller="IpIpv6ReverseDelegationDeleteCtrl">
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="deleteIpv6ReverseDelegation"
+         data-wizard-title="i18n.ip_table_manage_delegation_ipv6block">
+
+        <div data-wizard-step>
+            <p class="alert alert-info"
+               role="alert"
+               data-ng-bind="tr('ip_table_manage_delegation_ipv6block_delete_question', [ipBlock.ipBlock,reverse])">
+            </p>
+        </div>
+    </div>
+</div>

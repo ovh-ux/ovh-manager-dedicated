@@ -1,0 +1,175 @@
+<div class="module-useraccount-sections-ssh-container"
+     data-ng-controller="UserAccount.controllers.ssh as ctrlSsh">
+
+    <div class="page-header">
+        <h1 data-i18n-static="user_ssh_title"></h1>
+    </div>
+
+    <div class="tab-content">
+
+        <div data-ovh-alert="userSsh"></div>
+
+        <!-- SSH EXPLAIN -->
+        <div class="alert alert-info"
+             role="alert">
+            <p>
+                <strong data-i18n-static="user_ssh_key_explain_1"></strong>
+            </p>
+            <p data-ng-bind-html="tr('user_ssh_key_explain_2', [ctrlSsh.guides.sshCreate] )"></p>
+            <p data-ng-if="ctrlSsh.user.ovhSubsidiary !== 'US'"
+               data-ng-bind-html="tr('user_ssh_key_explain_3', [ctrlSsh.guides.sshAdd, ctrlSsh.guides.sshChange])">
+            </p>
+        </div>
+
+        <!-- SSH ADD BTN MENU -->
+        <div class="mb-2"
+             data-uib-dropdown>
+            <button id="btnAddSshKey"
+                    type="button"
+                    class="btn btn-primary"
+                    data-uib-dropdown-toggle
+                    data-ng-disabled="ctrlSsh.sshLoading"
+                    data-ng-class="{'disabled': ctrlSsh.sshLoading}">
+                <span data-i18n-static="user_ssh_add_title_button"></span>
+                <span class="fa fa-chevron-down"
+                      aria-hidden="true">
+                </span>
+            </button>
+            <ul class="dropdown-menu"
+                role="menu"
+                aria-labelledby="btnAddSshKey"
+                data-uib-dropdown-menu>
+                <li>
+                    <button type="button"
+                            class="btn btn-link"
+                            data-i18n-static="user_ssh_category_dedicated"
+                            data-ng-click="setAction('ssh/add/dedicated/user-ssh-add-dedicated', ctrlSsh.sshKeyList)">
+                    </button>
+                </li>
+                <li>
+                    <button type="button"
+                            class="btn btn-link"
+                            data-i18n-static="user_ssh_category_cloud"
+                            data-ng-click="setAction('ssh/add/cloud/user-ssh-add-cloud')">
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- SSH LIST -->
+        <div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th data-i18n-static="user_ssh_keyname"></th>
+                        <th>
+                            <select name="category-filter"
+                                    aria-label="{{ :: tr('user_ssh_category_filter') }}"
+                                    id="category-filter"
+                                    class="form-control input-sm"
+                                    data-ng-model="ctrlSsh.filters.categoryFilter"
+                                    data-ng-disabled="ctrlSsh.sshLoading"
+                                    data-ng-change="ctrlSsh.onCategoryFilterChanged(ctrlSsh.filters.categoryFilter)">
+                                <option value="" data-i18n-static="user_ssh_category_all"></option>
+                                <option value="dedicated" data-i18n-static="user_ssh_category_dedicated"></option>
+                                <option value="cloud" data-i18n-static="user_ssh_category_cloud"></option>
+                            </select>
+                        </th>
+                        <th data-i18n-static="user_ssh_key"></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody data-ng-show="ctrlSsh.sshLoading">
+                    <tr>
+                        <td colspan="6"
+                            class="text-center">
+                            <oui-spinner data-size="s"></oui-spinner>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody data-ng-show="ctrlSsh.sshKeyList.length == 0 && !ctrlSsh.sshLoading">
+                    <tr>
+                        <td colspan="6"
+                            class="text-center font-italic"
+                            data-i18n-static="user_ssh_table_empty">
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody data-ng-show="ctrlSsh.sshKeyList.length > 0 && !ctrlSsh.sshLoading">
+                    <tr data-ng-repeat="ssh in ctrlSsh.sshKeys track by $index">
+                        <td class="text-center">
+                            <button type="button"
+                                    class="btn btn-link"
+                                    data-ng-if="ssh.category === 'dedicated'"
+                                    data-ng-click="ctrlSsh.setDefaultDedicatedSshKey(ssh)"
+                                    data-ng-class="{ 'text-primary': ssh.default }"
+                                    data-uib-tooltip="{{ tr('user_ssh_tooltip_default_'+ssh.default) }}"
+                                    data-tooltip-placement="right"
+                                    data-tooltip-append-to-body="true">
+                                <span class="fa fa-key"
+                                      aria-hidden="true">
+                                </span>
+                            </button>
+                        </td>
+                        <td>
+                            <span data-ng-bind-html="ssh.keyName"></span>
+                        </td>
+                        <td>
+                            <span data-ng-bind="tr('user_ssh_category_' + ssh.category)"></span>
+                            <span data-ng-if="ssh.url">
+                                (<a data-ng-href="{{ssh.url}}">{{ :: ssh.serviceDescription}}</a>)
+                            </span>
+                        </td>
+                        <td>
+                            <span class="monospace" data-ng-bind="ssh.key | sshkeyMin"></span>
+                        </td>
+                        <td class="text-right">
+                            <div data-uib-dropdown>
+                                <button type="button"
+                                        class="btn btn-link"
+                                        data-uib-dropdown-toggle>
+                                    <span class="ovh-font ovh-font-dots align-top"
+                                          aria-hidden="true">
+                                    </span>
+                                </button>
+                                <ul data-uib-dropdown-menu
+                                    class="dropdown-menu dropdown-menu-right">
+                                    <li>
+                                        <button type="button"
+                                                class="btn btn-link"
+                                                data-ng-click="setAction('ssh/view/user-ssh-view', ssh)"
+                                                data-i18n-static="user_ssh_key_show">
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button"
+                                                class="btn btn-link"
+                                                data-ng-click="setAction('ssh/delete/user-ssh-delete', ssh)"
+                                                data-i18n-static="user_ssh_key_delete">
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div data-pagination-front
+                 data-items="ctrlSsh.sshKeyList"
+                 data-paginated-items="ctrlSsh.sshKeys"
+                 data-current-page="currentPage"
+                 data-items-per-page="itemsPerPage"
+                 data-nb-pages="nbPages"
+                 data-on-transform-item-done="ctrlSsh.onTransformItemDone(items)"
+                 data-page-placeholder="{{  tr('pagination_page', [currentPage, nbPages])}}"
+                 data-item-per-page-placeholder="{{ tr('pagination_display')}}">
+            </div>
+            <br />
+            <p class="text-muted"
+               data-ng-show="sshKeyList.count > 0 && !sshLoading"
+               data-ng-bind-html="tr('user_ssh_default_help')"></p>
+        </div>
+    </div>
+</div>

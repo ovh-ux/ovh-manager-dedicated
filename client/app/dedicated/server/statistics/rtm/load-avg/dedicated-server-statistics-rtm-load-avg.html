@@ -1,0 +1,14 @@
+<div data-ng-controller="controllers.Server.Stats.Loadavg">
+
+    <div class="text-center"
+         data-ng-if="loading">
+        <oui-spinner></oui-spinner>
+    </div>
+
+    <div id="rtmLoadavg"
+         data-ng-if="!loading"
+         data-chart="rtmLoadavg"
+         data-ng-model="chartData">
+    </div>
+
+</div>

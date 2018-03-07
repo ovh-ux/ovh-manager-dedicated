@@ -1,0 +1,40 @@
+<div data-ng-controller="DedicatedCloudMailingCtrl">
+
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="subscribe"
+         data-wizard-title="tr('dedicatedCloud_subscribe_mailing')">
+
+        <div data-wizard-step
+             data-wizard-step-valid="mailing.email">
+
+            <div class="form-group">
+                <label for="email"
+                       class="control-label"
+                       data-ng-bind="tr('dedicatedCloud_subscribe_mailing_step1', mailing.pcc)">
+                </label>
+                <input type="email"
+                       class="form-control"
+                       id="email"
+                       name="email"
+                       data-ng-model="mailing.email" />
+            </div>
+
+        </div>
+
+        <div data-wizard-step
+             data-wizard-step-valid="!load.loading">
+
+            <div class="text-center"
+                 data-ng-if="load.loading">
+                <oui-spinner></oui-spinner>
+            </div>
+            <p data-ng-if="!load.loading"
+               data-ng-bind="tr('dedicatedCloud_subscribe_mailing_step2', [mailing.email, mailing.pcc])">
+            </p>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,18 @@
+<div data-ng-controller="CdnUpdateDomainCtrl">
+
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="updateDomain"
+         data-wizard-title="domain.mode == 'ON' && tr('cdn_configuration_bypass_domain_title') || tr('cdn_configuration_reactive_domain_title')">
+
+        <div data-wizard-step>
+
+            <p data-ng-bind-html="domain.mode == 'ON' && tr('cdn_configuration_bypass_domain_confirmation', [domain.domain])
+                                  || tr('cdn_configuration_reactive_domain_confirmation', [domain.domain])">
+            </p>
+
+        </div>
+
+    </div>
+
+</div>

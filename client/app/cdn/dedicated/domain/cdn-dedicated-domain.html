@@ -1,0 +1,109 @@
+<div class="cdn-dedicated-domain">
+    <!-- Header -->
+    <div class="page-header">
+        <div class="row">
+            <div class="col-sm-9">
+                 <div class="mb-2">
+                    <h1>
+                        <span data-ng-bind="$ctrl.domain.domain"></span>
+                        <span class="label d-inline-block align-middle ml-3"
+                              data-ng-bind="$ctrl.domain.mode"
+                              data-ng-class="{
+                                  'label-success': $ctrl.domain.mode == 'ON',
+                                  'label-danger': $ctrl.domain.mode =='OFF'
+                              }">
+                        </span>
+                    </h1>
+                </div>
+                <dl>
+                    <dt data-i18n-static="cdn_domain_configuration_cname"></dt>
+                    <dd data-ng-bind="$ctrl.domain.cname"></dd>
+                </dl>
+                <ol class="list-inline">
+                    <li class="ml-3">
+                        <img src="images/cdn/icn_domain.png" alt="" />
+                        <span data-ng-bind="$ctrl.domain.domain"></span>
+                    </li>
+                    <li class="ml-3">
+                        <img src="images/cdn/icn_cdn.png" alt="" />
+                        <span data-ng-bind="$ctrl.domain.anycast.ipv4"></span>
+                    </li>
+                    <li class="ml-3">
+                        <img src="images/cdn/icn_server.png" alt="" />
+                        <span data-ng-bind="$ctrl.domain.backend.ipv4"></span>
+                    </li>
+                </ol>
+            </div>
+            <div class="col-sm-3 d-flex">
+                <div class="btn-group ml-auto mt-4">
+                    <button type="button"
+                            class="oui-button oui-button_dropdown mb-0"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            data-toggle="dropdown">
+                        <span data-i18n-static="common_actions"></span>
+                        <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li>
+                            <button type="button"
+                                    class="btn btn-block btn-link"
+                                    data-ng-click="setAction('domain/flush/cdn-dedicated-domain-flush', $ctrl.domain)"
+                                    data-i18n-static="cdn_domain_configuration_purge_title_button">
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button"
+                                    class="btn btn-block btn-link"
+                                    data-ng-click="setAction('domain/update/cdn-dedicated-domain-domain', $ctrl.domain)"
+                                    data-ng-bind="$ctrl.domain.mode == 'ON' && tr('cdn_domain_configuration_bypass_title_button') || tr('cdn_domain_configuration_reactive_title_button')">
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button"
+                                    class="btn btn-block btn-link"
+                                    data-ng-click="setAction('domain/backend/update/cdn-dedicated-domain-backend-update')"
+                                    data-i18n-static="cdn_domain_configuration_change_backend_title_button">
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button"
+                                    class="btn btn-block btn-link"
+                                    data-ng-click="setAction('domain/delete/cdn-dedicated-domain-delete')"
+                                    data-i18n-static="cdn_domain_configuration_delete_title_button">
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End of Header -->
+
+    <!-- Tabs -->
+    <responsive-tabs>
+        <responsive-tab data-state="app.networks.cdn.dedicated.domain">{{ ::i18n.cdn_domain_tab_rule }}</responsive-tab>
+        <responsive-tab data-state="app.networks.cdn.dedicated.domain.statistics">{{ ::i18n.cdn_domain_tab_statistics }}</responsive-tab>
+        <responsive-tab-more>
+            <i class="fa fa-plus"></i>
+        </responsive-tab-more>
+    </responsive-tabs> <!-- End of Tabs -->
+
+    <!-- Tab Content -->
+    <div class="tab-content">
+        <div class="alert alert-dismissible"
+             role="alert"
+             data-ng-class="alertType"
+             data-ng-if="message">
+            <button type="button"
+                    class="close"
+                    data-dismiss="alert"
+                    aria-label="Close"
+                    data-ng-click="message = null">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <span data-ng-bind="message"></span>
+        </div>
+
+        <div data-ui-view="cdnDomainView"></div>
+    </div> <!-- End of Tab Content -->
+</div>

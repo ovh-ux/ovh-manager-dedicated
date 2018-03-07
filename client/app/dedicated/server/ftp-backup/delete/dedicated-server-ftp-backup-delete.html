@@ -1,0 +1,27 @@
+<div data-ng-controller="DeleteFtpBackupCtrl">
+
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="deleteFtpBackup"
+         data-wizard-title="tr('server_configuration_ftpbackup_delete')">
+
+        <div data-wizard-step
+             data-wizard-step-valid="!loading">
+
+            <div class="text-center"
+                 data-ng-if="loading">
+                <oui-spinner></oui-spinner>
+            </div>
+
+            <div data-ng-if="!loading">
+                <p data-ng-bind-html="tr('server_configuration_ftpbackup_delete_question', [ftpBackup.ftpBackupName])"></p>
+                <p class="font-weight-bold text-center text-danger"
+                   data-ng-bind="tr('server_configuration_ftpbackup_delete_question2')">
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

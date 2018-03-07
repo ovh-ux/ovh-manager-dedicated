@@ -1,0 +1,70 @@
+<form>
+
+    <div class="from-group">
+        <label class="control-label"
+               for="blockSizeSelect"
+               data-i18n-static="ip_order_ipnbr">
+        </label>
+        <select id="blockSizeSelect"
+                name="blockSizeSelect"
+                data-ng-model="model.params.blockSize"
+                data-ng-change="checkDedicatedBlockSize()"
+                data-ng-options="r as trpl('ip_order_ip_count', [r]) for r in orderableIp.ipv4BlockSizesAll">
+            <option value=""
+                    data-ng-disabled="true"
+                    data-i18n-static="global_select">
+            </option>
+        </select>
+    </div>
+
+    <div class="form-group"
+         data-ng-if="!orderableIp.isCanadianServer || model.params.blockSize == 1">
+        <label class="control-label"
+               data-i18n-static="ip_order_country">
+        </label>
+        <select id="countrySelect"
+                name="countrySelect"
+                data-ng-model="model.params.country"
+                data-ng-options="c as tr('country_'+c.toUpperCase()) for c in orderableIp.countries"
+                data-ng-required="true">
+            <option value=""
+                    data-ng-disabled="true"
+                    data-i18n-static="global_select">
+            </option>
+        </select>
+    </div>
+
+    <div data-ng-if="!orderableIp.isCanadianServer">
+        <div class="form-group"
+             data-ng-show="model.params.blockSize > 1 && orderableIp.ipOrganisation.length">
+            <label class="control-label"
+                   for="organisationSelect"
+                   data-i18n-static="ip_order_organisation">
+            </label>
+            <select id="organisationSelect"
+                    name="organisationSelect"
+                    data-ng-model="model.params.organisationId"
+                    data-ng-options="o.organisationId as (o.organisationId + ' (' + o.firstname + ' ' + o.lastname + ')') for o in orderableIp.ipOrganisation"
+                    data-ng-required="true">
+                <option value=""
+                        data-ng-disabled="true"
+                        data-i18n-static="global_select">
+                </option>
+            </select>
+        </div>
+
+        <div class="alert alert-danger"
+             role="alert"
+             data-ng-show="model.params.blockSize > 1 && !orderableIp.ipOrganisation.length">
+            <p data-i18n-static="ip_order_no_organisation_1"></p>
+            <p>
+                <button type="button"
+                        class="btn btn-link"
+                        data-i18n-static="ip_order_no_organisation_2"
+                        data-ng-click="orderOrganisation()">
+                </button>
+            </p>
+        </div>
+    </div>
+
+</form>

@@ -1,0 +1,228 @@
+<div data-ng-controller="ServerTabsCtrl">
+    <div class="text-center mt-5"
+         data-ng-if="loadingServerInformations">
+        <oui-spinner data-size="l"></oui-spinner>
+    </div>
+    <div data-ng-if="!loadingServerInformations && !loadingServerError">
+        <header class="page-header" role="banner">
+            <div class="row">
+                <div class="col-md-9">
+                    <form name="formEditDisplayName"
+                          novalidate>
+                        <div class="mb-3"
+                             data-ng-show="!reverseModel.edit">
+                            <div class="d-flex">
+                                <h1 class="d-inline-block mb-0 word-break"
+                                    data-ng-bind="reverseModel.reverse || tr('server_configuration_reverse_not_configured')">
+                                </h1>
+                                <button type="button"
+                                        title="{{ i18n.wizard_modify }}"
+                                        class="btn btn-icon my-auto ml-2"
+                                        data-ng-click="editReverse()">
+                                    <span class="oui-icon oui-icon-pen_line oui-icon_small" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                            <span class="font-italic"
+                                  data-ng-bind="server.name">
+                            </span>
+                        </div>
+                        <div class="form-group my-4"
+                             data-ng-class="{ 'has-error': formEditDisplayName.txtDisplayName.$dirty && formEditDisplayName.$invalid }"
+                             data-ng-show="reverseModel.edit">
+                            <div class="oui-input-group">
+                                <input type="text"
+                                       class="oui-input"
+                                       name="txtDisplayName"
+                                       data-event-blur="newDisplayName.value = ''"
+                                       data-ng-maxlength="250"
+                                       data-ng-model="newDisplayName.value">
+                                <button type="button"
+                                        class="oui-button oui-button_small-width"
+                                        aria-label="{{ i18n.common_confirm }}"
+                                        data-ng-click="updateReverse()"
+                                        data-ng-disabled="!formEditDisplayName.txtDisplayName.$dirty || formEditDisplayName.$invalid">
+                                    <span class="oui-icon oui-icon-success oui-icon_small" aria-hidden="true"></span>
+                                </button>
+                                <button type="button"
+                                        class="oui-button oui-button_small-width"
+                                        aria-label="{{ i18n.common_cancel }}"
+                                        data-ng-click="cancelReverseUpdate()">
+                                    <span class="oui-icon oui-icon-error oui-icon_small" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                            <div class="help-block"
+                                 data-ng-if="formEditDisplayName.txtDisplayName.$dirty"
+                                 data-ng-messages="formEditDisplayName.txtDisplayName.$error">
+                                <span data-ng-bind="::i18n.hosting_displayName_length"
+                                      data-ng-message="maxlength">
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-3 d-flex">
+                    <div class="btn-group ml-auto mt-4">
+                        <button class="oui-button oui-button_dropdown mb-0"
+                                type="button"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                data-toggle="dropdown">
+                            <span data-i18n-static="common_actions"></span>
+                            <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li data-ng-if="!server.isExpired">
+                                <button type="button"
+                                        class="btn btn-link"
+                                        data-ui-sref="app.dedicated.server.reboot"
+                                        data-ng-disabled="disable.reboot || disable.byOtherTask || disable.install">
+                                    <span>
+                                        <span data-i18n-static="server_configuration_reboot_title_button"></span>
+                                        <span class="label label-default"
+                                              data-ng-show="disable.reboot"
+                                              data-i18n-static="server_configuration_doing">
+                                        </span>
+                                    </span>
+                                </button>
+                            </li>
+                            <li data-ng-if="featureAvailability.allowDedicatedServerRenewByCgi() && server.canOrder && urlRenew">
+                                <a target="_blank"
+                                   data-ng-href="{{ urlRenew }}"
+                                   data-i18n-static="wizard_renew">
+                                </a>
+                            </li>
+                            <li data-ng-if="featureAvailability.allowDedicatedServerRenew()">
+                                <a data-ng-href="{{ '#/billing/autoRenew?selectedType=DEDICATED_SERVER&searchText=' + server.name}}"
+                                   data-i18n-static="wizard_renew">
+                                </a>
+                            </li>
+                            <li data-ng-if="featureAvailability.allowDedicatedServerChangeOwner() && server.commercialRange !== 'housing'">
+                                <a target="_blank"
+                                   title="{{:: i18n.core_change_owner }} ({{:: i18n.core_new_window }})"
+                                   data-ng-href="{{:: changeOwnerUrl }}"
+                                   data-i18n-static="core_change_owner">
+                                </a>
+                            </li>
+                            <li data-ng-if="featureAvailability.hasContactChangement() && !server.isExpired">
+                                <a data-ng-href="{{ '#/useraccount/contacts?tab=SERVICES&serviceName=' + server.name }}"
+                                   data-i18n-static="contacts_management">
+                                </a>
+                            </li>
+                            <li data-ng-hide="server.isExpired">
+                                <button type="button"
+                                        class="btn btn-link"
+                                        data-ng-click="setAction('terminate/dedicated-server-terminate', {
+                                            serviceInfos: serviceInfos
+                                        })"
+                                        data-i18n-static="server_close_service">
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <span data-ng-bind-template="{{ i18n.server_configuration_ipv4 }} : {{ server.ip }}"></span>
+                    <a class="btn btn-transparent"
+                       data-ng-href="{{ '#/configuration/ip?tab=IP&serviceName=' + server.name }}">
+                        <span class="fa fa-gear" aria-hidden="true"></span>
+                        <span data-i18n-static="server_configuration_ipv4_manage"></span>
+                    </a>
+                </div>
+                <div data-ng-bind-template="{{ i18n.server_configuration_ipv6 }} : {{ server.ipv6 }}"></div>
+            </div>
+        </header>
+        <ovh-tabs data-tabs="tabs"
+                  data-selected-tab="selectedTab"
+                  data-product="server"
+                  data-change-tab="setSelectedTab"
+                  data-tr="tr">
+        </ovh-tabs>
+        <div class="tab-content">
+
+            <div class="alert alert-danger"
+                 role="alert"
+                 data-ng-if="server.isExpired"
+                 data-i18n-static="common_expired">
+            </div>
+            <div class="alert alert-danger"
+                 role="alert"
+                 data-ng-if="server.state == 'HACKED' || server.state == 'HACKED_BLOCKED'"
+                 data-ng-bind="tr('server_configuration_state_info_' + server.state)">
+            </div>
+
+            <div class="alert alert-dismissible"
+                 role="alert"
+                 data-ng-class="alertType"
+                 data-ng-show="message">
+                <button type="button"
+                        class="close"
+                        title="{{ tr('browser_alert_close') }}"
+                        data-dismiss="alert"
+                        data-ng-click="message = null">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <span data-ng-bind-html="message"></span>
+            </div>
+            <div class="alert alert-info"
+                 data-ng-if="isHousing && user.ovhSubsidiary === 'FR' && !housingPhoneStopBother">
+                <button type="button"
+                        class="close"
+                        data-dismiss="alert"
+                        data-ng-click="createStopBotherUserPref()">
+                    &times;
+                </button>
+                <i class="fa fa-info"></i>
+                <span data-ng-bind-html="tr('housing_support_phone', housingPhoneNumber)"></span>
+            </div>
+
+
+            <div class="alert alert-info"
+                 data-ng-if="!autoRenew && autoRenewable && !autoRenewStopBother && !loaders.autoRenew">
+                <button type="button"
+                        class="close"
+                        data-dismiss="alert"
+                        data-ng-click="stopBotherAutoRenew()">
+                </button>
+                <span data-ng-bind-html="tr('server_autorenew_alert')"></span>
+                <a href="{{ autoRenewGuide }}"
+                   target="_blank"
+                   class="btn btn-info"
+                   data-ng-if="!hasPaymentMean"
+                   data-i18n-static="server_autorenew_guide">
+                </a>
+                <a class="btn btn-info"
+                   href="#/billing/autoRenew"
+                   data-ng-if="hasPaymentMean"
+                   data-i18n-static="server_autorenew_activate">
+                </a>
+            </div>
+            <div class="alert-server"
+                 data-ovh-alert="server_dashboard_alert">
+            </div>
+            <div class="tab-pane active"
+                 data-ng-include="!server.isExpired && 'dedicated/server/' + toKebabCase(selectedTab) + '/dedicated-server-' + toKebabCase(selectedTab) + '.html' || ''">
+            </div>
+        </div>
+    </div>
+    <div id="currentAction"
+         class="modal fade currentAction"
+         tabindex="-1"
+         role="dialog"
+         aria-hidden="true"
+         data-backdrop="static">
+        <div class="modal-dialog"
+             data-ng-class="{
+                 'modal-lg': bigModalDialog
+             }">
+            <div id="modal-container"
+                 class="modal-content"
+                 data-ng-include="stepPath">
+            </div>
+            <div id="modal-help"
+                 class="help4wizards">
+            </div>
+        </div>
+    </div>
+</div>

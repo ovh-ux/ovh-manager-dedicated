@@ -1,0 +1,44 @@
+<div data-ng-controller="CdnGenerateSslCtrl">
+
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="addSsl"
+         data-wizard-title="i18n.cdn_configuration_generate_ssl_title">
+
+        <div data-wizard-step
+             data-wizard-step-valid="entry.name">
+
+            <p data-i18n-static="cdn_configuration_generate_ssl_step1"></p>
+            <div class="form-group">
+                <label for="name"
+                       class="control-label"
+                       data-i18n-static="cdn_configuration_ssl_name">
+                </label>
+                <input type="text"
+                       class="form-control"
+                       id="name"
+                       name="name"
+                       required
+                       data-ng-model="entry.name"
+                       data-ng-pattern="/^[\S]+$/" />
+            </div>
+
+        </div>
+
+        <div data-wizard-step>
+
+            <p data-i18n-static="cdn_configuration_generate_ssl_step2"></p>
+            <p class="font-weight-bold text-danger"
+               data-ng-if="ssl !== null && !loading"
+               data-i18n-static="cdn_configuration_generate_ssl_step3">
+            </p>
+            <dl>
+                <dt data-i18n-static="cdn_configuration_ssl_name"></dt>
+                <dd data-ng-bind="entry.name"></dd>
+            </dl>
+
+        </div>
+
+    </div>
+
+</div>

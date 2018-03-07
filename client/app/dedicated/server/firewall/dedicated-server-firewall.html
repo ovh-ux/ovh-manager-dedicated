@@ -1,0 +1,74 @@
+<div data-ng-controller="ServerTabFirewallAsaCtrl">
+
+    <div class="text-center"
+         data-ng-if="loading">
+        <oui-spinner></oui-spinner>
+    </div>
+
+    <div data-ovh-alert="dedicated_server_firewall"></div>
+
+    <div class="row"
+         data-ng-if="!loading">
+        <div class="col-md-9">
+            <div data-ng-if="!informations.firewall">
+                <div class="alert alert-info"
+                     role="alert"
+                     data-i18n-static="server_tab_FIREWALLASA_not_activated">
+                </div>
+                <div class="alert alert-warning"
+                     role="alert"
+                     data-ng-if="!server.canOrder || !canOrderAsaOption">
+                    <span data-ng-if="!server.canOrder"
+                          data-i18n-static="server_tab_FIREWALLASA_not_able_to_order">
+                   </span>
+                   <span data-ng-if="!canOrderAsaOption"
+                         data-i18n-static="server_tab_FIREWALLASA_no_options">
+                   </span>
+                </div>
+            </div>
+            <div class="row"
+                 data-ng-if="informations.firewall">
+                <div class="col-md-6">
+                    <dl>
+                        <dt data-i18n-static="server_tab_FIREWALLASA_dashboard_firewall"></dt>
+                        <dd data-ng-bind="informations.firewall"></dd>
+                        <dt data-i18n-static="server_tab_FIREWALLASA_dashboard_model"></dt>
+                        <dd data-ng-bind="tr('server_tab_FIREWALLASA_dashboard_model_' + informations.model)"></dd>
+                        <dt data-i18n-static="server_tab_FIREWALLASA_dashboard_mode"></dt>
+                        <dd data-ng-bind="tr('server_tab_FIREWALLASA_dashboard_mode_' + informations.mode)"></dd>
+                    </dl>
+                </div>
+                <div class="col-md-6">
+                    <dl>
+                        <dt data-i18n-static="server_tab_FIREWALLASA_dashboard_ip"></dt>
+                        <dd data-ng-bind="informations.ip"></dd>
+                        <dt data-i18n-static="server_tab_FIREWALLASA_dashboard_state"></dt>
+                        <dd data-ng-bind="tr('server_tab_FIREWALLASA_dashboard_state_' + informations.enabled)"></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <button type="button"
+                    class="btn btn-default btn-block"
+                    data-ng-if="!informations.firewall"
+                    data-ng-click="setAction('firewall/order/dedicated-server-firewall-order')"
+                    data-ng-disabled="!server.canOrder || !canOrderAsaOption"
+                    data-i18n-static="server_configuration_firewall_asa_order_title_button">
+            </button>
+            <button type="button"
+                    class="btn btn-default btn-block"
+                    data-ng-if="informations.firewall && !informations.enabled"
+                    data-ng-click="setAction('firewall/enable/dedicated-server-firewall-enable')"
+                    data-i18n-static="server_configuration_firewall_asa_enable_title_button">
+            </button>
+            <button type="button"
+                    class="btn btn-default btn-block"
+                    data-ng-if="informations.firewall && informations.enabled"
+                    data-ng-click="setAction('firewall/disable/dedicated-server-firewall-disable')"
+                    data-i18n-static="server_configuration_firewall_asa_disable_title_button">
+            </button>
+        </div>
+    </div>
+
+</div>

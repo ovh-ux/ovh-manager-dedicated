@@ -1,0 +1,37 @@
+<div class="user-contracts">
+    <div class="user-contracts__modal" data-ng-controller="UserContractsAcceptModalCtrl as $ctrl" tabindex="-1">
+        <div class="wizard-title-container">
+            <b data-i18n-static="user_contracts_modal_title"></b>
+        </div>
+        <form class="user-contracts__modal-form">
+            <div class="wizard-step-content-container modal-body">
+                <p data-i18n-static="user_contracts_modal_term_of_service_updated_text"></p>
+                <p data-i18n-static="user_contracts_modal_term_of_service_updated_explanation"></p>
+                <div class="loader" data-ng-if="$ctrl.contracts.loading || $ctrl.saving"></div>
+                <div data-ng-if="!$ctrl.contracts.loading && !$ctrl.saving">
+                    <div data-ng-repeat="contract in $ctrl.contracts.data track by $index" class="user-contracts__modal-contracts">
+                        <a class="bold blue block user-contracts__modal-link" 
+                            target="_blank" 
+                            data-ng-href="{{ contract.pdf }}"
+                            data-i18n-static="{{ 'user_contracts_modal_display_text_' + contract.code }}">
+                        </a>
+                    </div>
+                    <label class="checkbox">
+                        <input type="checkbox" data-ng-model="$ctrl.model.accepted.value">
+                        <span data-i18n-static="user_contracts_modal_checkbox_label"></span>
+                    </label>
+                    <p class="red" data-ng-if="$ctrl.hasSubmitError" data-i18n-static="user_contracts_modal_submit_error"></p>
+                </div>
+            </div>
+            <div class="wizard-btn-container modal-footer">
+                <button class="btn wizard-btn-next" 
+                    data-ng-class="{'disabled': !$ctrl.model.accepted.value || $ctrl.saving}" 
+                    data-ng-disabled="!$ctrl.model.accepted.value || $ctrl.saving"
+                    data-ng-click="$ctrl.agree()"
+                    type="submit">
+                    <span data-i18n-static="user_contracts_modal_submit_button"></span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

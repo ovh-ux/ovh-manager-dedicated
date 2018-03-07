@@ -1,0 +1,1181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="server_dashboard_loading_error" qtlid="132083">Tapahtui virhe ladattaessa palvelun tietoja.</translation>
+
+   <translation id="server_configuration_doing" qtlid="164272">[Meneillään]</translation>
+   <translation id="server_tab_IP" qtlid="172696">IP ja tietoturva</translation>
+   <translation id="server_tab_IP_block" qtlid="141366">Verkko:</translation>
+   <translation id="server_tab_IP_block_all" qtlid="69173">Kaikki</translation>
+   <translation id="server_tab_IP_search" qtlid="122275">Haetaan…</translation>
+   <translation id="server_tab_IP_table_empty" qtlid="141431">Ei palomuurisääntöjä.</translation>
+   <translation id="server_tab_IP_table_not_allowed" qtlid="141379">Mitigaation ja verkkopalomuurin hallinta ei ole mahdollista tälle IP-osoitteelle. Ota yhteys tekniseen tukeemme saadaksesi lisätietoja.</translation>
+   <translation id="server_tab_IP_table_search_empty" qtlid="141392">IP-osoitteita ei löytynyt annetuilla hakutermeillä</translation>
+   <translation id="server_tab_IP_table_header_ip_address" qtlid="26191">IP-osoite</translation>
+   <translation id="server_tab_IP_table_header_country" qtlid="25171">Laskutusmaa</translation>
+   <translation id="server_tab_IP_table_header_reverse" qtlid="32338">Reverse</translation>
+   <translation id="server_tab_IP_table_header_virtual_mac" qtlid="141405">Virtuaalinen MAC</translation>
+   <translation id="server_tab_IP_table_header_antispam" qtlid="148331">Roskapostisuodatus</translation>
+   <translation id="server_tab_IP_table_header_mitigation" qtlid="138233">Mitigaatio</translation>
+   <translation id="server_tab_IP_table_header_security" qtlid="141418">Palomuuri</translation>
+   <translation id="server_tab_IP_table_firewall" qtlid="141418">Palomuuri</translation>
+   <translation id="server_tab_IP_table_manage_reverse" qtlid="141444">Reversen muokkaus</translation>
+   <translation id="server_tab_IP_table_delete_reverse_success" qtlid="179511">Reverse on poistettu.</translation>
+   <translation id="server_tab_IP_table_delete_reverse_failure" qtlid="179524">Tapahtui virhe poistettaessa reverseä</translation>
+   <translation id="server_tab_IP_table_manage_reverse_success" qtlid="151854">Reversepäivitys on suoritettu</translation>
+   <translation id="server_tab_IP_table_manage_reverse_failure" qtlid="151867">Tapahtui virhe reversen päivityksen aikana</translation>
+   <translation id="server_tab_IP_table_manage_mac" qtlid="141457">Virtuaalisen MAC-osoitteen muokkaus</translation>
+   <translation id="server_tab_IP_table_manage_mitigation_AUTO" qtlid="141470">Mitigaatio: automaattitila</translation>
+   <translation id="server_tab_IP_table_manage_mitigation_FORCED" qtlid="138311">Mitigaatio: pakotettu tila</translation>
+   <translation id="server_tab_IP_table_manage_mitigation_stats" qtlid="26671">Tilastot</translation>
+   <translation id="server_tab_IP_table_manage_firewall_enable" qtlid="141483">Aktivoi palomuuri</translation>
+   <translation id="server_tab_IP_table_manage_firewall_disable" qtlid="141496">Deaktivoi palomuuri</translation>
+   <translation id="server_tab_IP_table_manage_firewall_disable_tooltip" qtlid="141509">Mitigaatio on käytössä, palomuuria ei voida poistaa käytöstä.</translation>
+   <translation id="server_tab_IP_table_manage_firewall_configure" qtlid="141522">Luo palomuuri</translation>
+   <translation id="server_tab_IP_table_manage_firewall_rules" qtlid="141535">Muokkaa palomuurisääntöjä</translation>
+   <translation id="server_tab_IP_table_manage_antispam_unblock" qtlid="148331">Roskapostisuodatus</translation>
+   <translation id="server_tab_IP_position" qtlid="45988">Prioriteetti</translation>
+   <translation id="server_tab_IP_position_tooltip" qtlid="140469">Sääntöjen käsittely on peräkkäistä. Säännöllä 0 on suurin prioriteetti.</translation>
+   <translation id="server_tab_IP_rule" qtlid="54917">Sääntö</translation>
+   <translation id="server_tab_IP_status" qtlid="33790">Tila</translation>
+   <translation id="server_tab_IP_creation_date" qtlid="26419">Luontipäivä</translation>
+   <translation id="server_tab_IP_action" qtlid="56105">Toiminto</translation>
+   <translation id="server_tab_IP_protocol" qtlid="19711">Protokolla</translation>
+   <translation id="server_tab_IP_source_ip" qtlid="138376">Lähde-IP</translation>
+   <translation id="server_tab_IP_source_port" qtlid="141548">Lähdeportti</translation>
+   <translation id="server_tab_IP_source_port_notice" qtlid="141561">lähdeportista</translation>
+   <translation id="server_tab_IP_source_port_range_max" qtlid="141574">lähdeporttiin (valinnainen)</translation>
+   <translation id="server_tab_IP_destination_port" qtlid="141587">Kohdeportti</translation>
+   <translation id="server_tab_IP_destination_port_notice" qtlid="141600">kohdeportista</translation>
+   <translation id="server_tab_IP_destination_port_range_max" qtlid="138454">kohdeporttiin (vapaaehtoinen)</translation>
+   <translation id="server_tab_IP_options" qtlid="23395">Valinnat</translation>
+   <translation id="server_tab_IP_options_tcp" qtlid="141613">TCP-asetukset</translation>
+   <translation id="server_tab_IP_options_udp" qtlid="141626">UDP-asetukset</translation>
+   <translation id="server_tab_IP_port_range_max" qtlid="141639">porttiin</translation>
+   <translation id="server_tab_IP_port_range_from" qtlid="141652">portista</translation>
+   <translation id="server_tab_IP_rule_status_CREATION_PENDING" qtlid="26227">Luodaan</translation>
+   <translation id="server_tab_IP_rule_status_REMOVAL_PENDING" qtlid="133929">Poistetaan</translation>
+   <translation id="server_tab_IP_rule_status_OK" qtlid="62028">Aktivoitu</translation>
+   <translation id="server_tab_STATS" qtlid="204337">Palvelimen tila</translation>
+   <translation id="server_tab_STATS_loading_fail" qtlid="148708">Tapahtui virhe tilastoja ladattaessa</translation>
+   <translation id="server_tab_stats_network" qtlid="283929">Verkko:</translation>
+   <translation id="server_tab_stats_network_public" qtlid="447235">Julkisen verkon käyttöliittymä ({0})</translation>
+   <translation id="server_tab_stats_network_private" qtlid="447248">vRack ({0})</translation>
+   <translation id="server_tab_stats_network_no_vrack" qtlid="283955">vRack (ei konfiguroitu tälle palvelimelle)</translation>
+   <translation id="server_tab_stats_type" qtlid="105875">Tyyppi:</translation>
+   <translation id="server_tab_stats_type_ERRORS" qtlid="32146">Virheet</translation>
+   <translation id="server_tab_stats_type_PACKETS" qtlid="39190">Paketit</translation>
+   <translation id="server_tab_stats_type_TRAFFIC" qtlid="7510">Liikenne</translation>
+   <translation id="server_tab_stats_period" qtlid="145293">Aikaväli:</translation>
+   <translation id="server_tab_stats_period_HOURLY" qtlid="148721">Edellinen tunti</translation>
+   <translation id="server_tab_stats_period_DAILY" qtlid="126844">Viimeiset 24 tuntia</translation>
+   <translation id="server_tab_stats_period_WEEKLY" qtlid="126856">Viimeiset 7 päivää</translation>
+   <translation id="server_tab_stats_period_MONTHLY" qtlid="99632">30 päivää</translation>
+   <translation id="server_tab_stats_period_YEARLY" qtlid="148734">Edelliset 12 kuukautta</translation>
+   <translation id="server_tab_STATS_legend_upload" qtlid="148747">Lähetys</translation>
+   <translation id="server_tab_STATS_legend_download" qtlid="148760">Lataus</translation>
+   <translation id="server_tab_STATS_legend_y_ERRORS" qtlid="148773">Virheiden määrä</translation>
+   <translation id="server_tab_STATS_legend_y_PACKETS" qtlid="148786">Pakettien määrä</translation>
+   <translation id="server_tab_STATS_legend_y_TRAFFIC" qtlid="148799">Liikenteen taso</translation>
+   <translation id="server_tab_STATS_legend_no_data" qtlid="148812">Ei dataa</translation>
+   <translation id="server_tab_stats_no_chart" qtlid="148825">Tietoa ei voida näyttää</translation>
+   <translation id="server_tab_stats_title" qtlid="103077">Verkon käyttö — MRTG</translation>
+   <translation id="server_tab_stats_title_info" qtlid="148838">Multi Router Traffic Grapher - ohjelma joka generoi verkkoliikenteestä kuvaajia</translation>
+
+   <translation id="server_tab_stats_legend_mrtg" qtlid="30994">MRTG</translation>
+   <translation id="server_tab_stats_legend_rtm" qtlid="203986">Real Time Monitoring</translation>
+   <translation id="server_tab_stats_legend_location" qtlid="61074">Paikka</translation>
+
+   <translation id="server_tab_stats_rtm_label_info" qtlid="29227">Tiedot</translation>
+   <translation id="server_tab_stats_rtm_label_period" qtlid="45496">Aikaväli</translation>
+
+   <translation id="server_tab_stats_rtm_raid" qtlid="110970">RAID</translation>
+   <translation id="server_tab_stats_rtm_title_raid_popover" qtlid="203999">RAID-järjestelmän tila</translation>
+   <translation id="server_tab_stats_rtm_state_raid_details" qtlid="204012">Katso tiedot</translation>
+
+   <translation id="server_tab_stats_rtm_options_label_info" qtlid="204025">Palvelimen tiedot</translation>
+   <translation id="server_tab_stats_rtm_options_label_cpu" qtlid="199884">Prosessorin käyttö</translation>
+   <translation id="server_tab_stats_rtm_options_label_memory" qtlid="204038">Muistin käyttö</translation>
+   <translation id="server_tab_stats_rtm_options_label_swap" qtlid="204051">SWAPin käyttö</translation>
+   <translation id="server_tab_stats_rtm_options_label_loadavg" qtlid="204064">Load average</translation>
+   <translation id="server_tab_stats_rtm_options_label_disk" qtlid="204077">Levyjen tila</translation>
+
+   <translation id="server_tab_stats_rtm_charts_period_daily" qtlid="126844">Viimeiset 24 tuntia</translation>
+   <translation id="server_tab_stats_rtm_charts_period_monthly" qtlid="99632">30 päivää</translation>
+   <translation id="server_tab_stats_rtm_charts_period_weekly" qtlid="126856">Viimeiset 7 päivää</translation>
+   <translation id="server_tab_stats_rtm_charts_period_yearly" qtlid="148734">Edelliset 12 kuukautta</translation>
+
+   <translation id="server_tab_stats_rtm_infos_motherboard" qtlid="193930">Verkkokortti</translation>
+   <translation id="server_tab_stats_rtm_infos_cpu" qtlid="25555">CPU</translation>
+   <translation id="server_tab_stats_rtm_infos_cpu_core" qtlid="204090">Ytimet</translation>
+   <translation id="server_tab_stats_rtm_infos_cpu_cache" qtlid="30214">Cache</translation>
+   <translation id="server_tab_stats_rtm_infos_ram" qtlid="31354">RAM</translation>
+   <translation id="server_tab_stats_rtm_infos_rtmVersion" qtlid="193956">Real Time Monitoring -versio</translation>
+   <translation id="server_tab_stats_rtm_infos_rtmVersion_update" qtlid="204103">Uusi päivitys on saatavilla</translation>
+   <translation id="server_tab_stats_rtm_infos_kernelVersion" qtlid="204116">Kernelin versio</translation>
+   <translation id="server_tab_stats_rtm_infos_disk" qtlid="193943">Levyt</translation>
+
+   <translation id="server_tab_stats_rtm_notInstalled" qtlid="204129">RTM-asiakasohjelmaa ei ole asennettu palvelimelle.</translation>
+   <translation id="server_tab_stats_rtm_new_window" qtlid="222176">Uusi ikkuna</translation>
+   <translation id="server_tab_stats_rtm_guideInfo" qtlid="237737">Katso tämä <a href="{0}" target="_bank" title="OVH:n ohje (avaa uuden ikkunan)">OVH:n ohje <i class="icon-share-alt"></i></a> saadaksesi lisätietoja.</translation>
+   <translation id="server_tab_stats_rtm_error" qtlid="204155">Tapahtui virhe tietoja haettaessa.</translation>
+
+   <translation id="server_tab_stats_rtm_loading" qtlid="8410">Ladataan…</translation>
+   <translation id="server_tab_stats_rtm_errorData" qtlid="204168">Ei tietoja</translation>
+
+   <translation id="server_tab_stats_rtm_uptime" qtlid="31594">Uptime</translation>
+   <translation id="server_tab_stats_rtm_uptime_year_1" qtlid="204181">vuosi</translation>
+   <translation id="server_tab_stats_rtm_uptime_year_other" qtlid="94135">vuotta</translation>
+   <translation id="server_tab_stats_rtm_uptime_month_1" qtlid="40222">kuukausi</translation>
+   <translation id="server_tab_stats_rtm_uptime_month_other" qtlid="40222">kuukausi</translation>
+   <translation id="server_tab_stats_rtm_uptime_day_1" qtlid="44248">päivä</translation>
+   <translation id="server_tab_stats_rtm_uptime_day_other" qtlid="44260">päivää</translation>
+   <translation id="server_tab_stats_rtm_uptime_hour_1" qtlid="40234">tunti</translation>
+   <translation id="server_tab_stats_rtm_uptime_hour_other" qtlid="44236">tuntia</translation>
+   <translation id="server_tab_stats_rtm_uptime_minute_1" qtlid="44212">minuutti</translation>
+   <translation id="server_tab_stats_rtm_uptime_minute_other" qtlid="44224">minuuttia</translation>
+   <translation id="server_tab_stats_rtm_uptime_seconde_1" qtlid="94279">sekunti</translation>
+   <translation id="server_tab_stats_rtm_uptime_seconde_other" qtlid="94291">sekuntia</translation>
+
+   <translation id="server_tab_stats_rtm_profile" qtlid="204194">Koneen profiili</translation>
+   <translation id="server_tab_stats_rtm_usage" qtlid="204207">Palvelimen käyttö</translation>
+   <translation id="server_tab_stats_rtm_partions_status" qtlid="204220">Levyosioiden tila</translation>
+   <translation id="server_tab_stats_rtm_partions_error" qtlid="204233">Tapahtui virhe ladattaessa levyosioita</translation>
+   <translation id="server_tab_stats_rtm_partions_name" qtlid="194125">Osion nimi</translation>
+   <translation id="server_tab_stats_rtm_partions_mountPoint" qtlid="110958">Liitäntäpiste</translation>
+   <translation id="server_tab_stats_rtm_partions_usage" qtlid="76758">Käytetty tila</translation>
+   <translation id="server_tab_stats_rtm_partions_inodeUsage" qtlid="194151">Käytetyt inodet</translation>
+
+   <translation id="server_configuration_state_title" qtlid="26443">Tila</translation>
+   <translation id="server_configuration_state_OK" qtlid="96704">Normaali</translation>
+   <translation id="server_configuration_state_ERROR" qtlid="45508">Virhe</translation>
+   <translation id="server_configuration_state_HACKED" qtlid="101973">Tietomurto</translation>
+   <translation id="server_configuration_state_HACKED_BLOCKED" qtlid="224997">Murrettu ja lukittu</translation>
+   <translation id="server_configuration_state_info_HACKED" qtlid="225010">Palvelimelle on murtauduttu, minkä vuoksi se on laitettu rescue FTP -tilaan. Tarkista palvelinkonfiguraatio ennen toimenpiteiden suorittamista.</translation>
+   <translation id="server_configuration_state_info_HACKED_BLOCKED" qtlid="225023">Palvelimellesi on murtauduttu. Ota yhteys asiakaspalveluun lisätietojen saamiseksi tilanteen korjaamisesta.</translation>
+   <translation id="server_remove_hack_button" qtlid="61824">Poista esto</translation>
+   <translation id="server_remove_hack_success" qtlid="225036">Tietomurrosta aiheutuneen lukituksen poistopyyntö on rekisteröity.</translation>
+   <translation id="server_remove_hack_fail" qtlid="225049">Tapahtui virhe poistettaessa palvelinta lukitustilasta.</translation>
+
+   <translation id="server_configuration_renew_service" qtlid="118962">Uudista palvelu</translation>
+   <translation id="server_configuration_firewall_fail" qtlid="164285">Tapahtui virhe ladattaessa palomuurin tietoja</translation>
+   <translation id="server_configuration_firewall_edit_rule" qtlid="125888">Muokkaa sääntöä</translation>
+   <translation id="server_configuration_firewall_remove_rule" qtlid="125912">Poista sääntö</translation>
+   <translation id="server_configuration_firewall_remove_rule_confirmation" qtlid="138519">Haluatko varmasti poistaa säännön {0}?</translation>
+   <translation id="server_configuration_firewall_remove_rule_success" qtlid="141665">Palomuurisääntö poistetaan.</translation>
+   <translation id="server_configuration_firewall_remove_rule_fail" qtlid="141678">Tapahtui virhe poistettaessa palomuurisääntöä.</translation>
+   <translation id="server_configuration_firewall_enabled" qtlid="141691">Palomuuri on aktiivinen</translation>
+   <translation id="server_configuration_firewall_disabled" qtlid="141704">Palomuuri ei ole aktiivinen</translation>
+   <translation id="server_configuration_firewall_short_ACTIVATED" qtlid="30250">Aktivoitu</translation>
+   <translation id="server_configuration_firewall_short_DEACTIVATED" qtlid="24967">Deaktivoitu</translation>
+   <translation id="server_configuration_firewall_short_AUTO" qtlid="134215">Automaattinen</translation>
+   <translation id="server_configuration_firewall_short_PENDING" qtlid="26383">Käynnissä</translation>
+   <translation id="server_configuration_firewall_not_yet_activated_short" qtlid="124952">Ei konfiguroitu</translation>
+   <translation id="server_configuration_firewall_enable_button_title" qtlid="76734">Aktivoi</translation>
+   <translation id="server_configuration_firewall_disable_button_title" qtlid="90973">Poista käytöstä</translation>
+   <translation id="server_configuration_firewall_current_ip" qtlid="141717">IP: {0}</translation>
+   <translation id="server_configuration_firewall_add_summary" qtlid="132720">Yhteenveto:</translation>
+   <translation id="server_configuration_firewall_add_title" qtlid="141730">Lisää sääntö</translation>
+   <translation id="server_configuration_firewall_add_rule_success" qtlid="141743">Uusi sääntö on lisätty.</translation>
+   <translation id="server_configuration_firewall_add_rule_fail" qtlid="141756">Tapahtui virhe sääntöä lisättäessä.</translation>
+   <translation id="server_configuration_firewall_add_rule_confirm_button_text" qtlid="37923">Lisää</translation>
+   <translation id="server_configuration_firewall_modify_title" qtlid="141769">Muokkaa sääntöä</translation>
+   <translation id="server_configuration_firewall_modify_rule_success" qtlid="141782">Sääntöä on muokattu.</translation>
+   <translation id="server_configuration_firewall_modify_rule_fail" qtlid="138662">Tapahtui virhe muokattaessa sääntöä</translation>
+   <translation id="server_configuration_firewall_rule_PERMIT" qtlid="141795">Valtuuta</translation>
+   <translation id="server_configuration_firewall_rule_DENY" qtlid="141808">Hylkää</translation>
+   <translation id="server_configuration_firewall_rule_protocol_ICMP" qtlid="19627">ICMP</translation>
+   <translation id="server_configuration_firewall_rule_protocol_IPV_4" qtlid="101781">IPv4</translation>
+   <translation id="server_configuration_firewall_rule_protocol_TCP" qtlid="141821">TCP</translation>
+   <translation id="server_configuration_firewall_rule_protocol_UDP" qtlid="141834">UDP</translation>
+   <translation id="server_configuration_firewall_rule_ip_any" qtlid="141847">kaikki</translation>
+   <translation id="server_configuration_firewall_enable_title" qtlid="141860">Aktivoi palomuuri</translation>
+   <translation id="server_configuration_firewall_enable_question" qtlid="141873">Haluatko varmasti aktivoida palomuurin IP-osoitteelle {0}?</translation>
+   <translation id="server_configuration_firewall_enable_success" qtlid="141886">Palomuuri on käytössä IP-osoitteelle {0} hetken kuluttua.</translation>
+   <translation id="server_configuration_firewall_enable_failed" qtlid="138779">Tapahtui virhe aktivoitaessa palomuuria IP-osoitteelle {0}</translation>
+   <translation id="server_configuration_firewall_disable_title" qtlid="141899">Deaktivoi palomuuri</translation>
+   <translation id="server_configuration_firewall_disable_question" qtlid="141912">Haluatko poistaa palomuurin käytöstä IP-osoitteelta {0}?</translation>
+   <translation id="server_configuration_firewall_disable_success" qtlid="141925">Palomuuri poistetaan käytöstä IP-osoitteelta {0} hetken kuluttua.</translation>
+   <translation id="server_configuration_firewall_disable_failed" qtlid="141938">Tapahtui virhe poistettaessa palomuuria käytöstä IP-osoitteelta {0}</translation>
+   <translation id="server_configuration_firewall_new_title" qtlid="141951">Luo palomuuri</translation>
+   <translation id="server_configuration_firewall_new_question" qtlid="141964">Haluatko varmasti luoda palomuurin IP-osoitteelle {0}?</translation>
+   <translation id="server_configuration_firewall_new_success" qtlid="141977">Palomuuri luodaan IP-osoitteelle {0} hetken kuluttua.</translation>
+   <translation id="server_configuration_firewall_new_failed" qtlid="141990">Tapahtui virhe luotaessa palomuuria IP-osoitteelle {0}</translation>
+   <translation id="server_tab_trafic" qtlid="39202">Liikenne</translation>
+   <translation id="server_tab_dns" qtlid="168250">Toissijainen nimipalvelin</translation>
+   <translation id="server_tab_SSH" qtlid="104830">SSH-avaimet</translation>
+   <translation id="server_tab_LICENSE" qtlid="113658">Lisenssit</translation>
+   <translation id="server_tab_cloud_backup" qtlid="180460">Varmuuskopiotila</translation>
+   <translation id="server_tab_ftp_backup" qtlid="180460">Varmuuskopiotila</translation>
+   <translation id="server_tab_task" qtlid="96716">Tehtävät</translation>
+   <translation id="server_tab_ipmi" qtlid="164298">IPMI</translation>
+   <translation id="server_tab_dashboard" qtlid="204246">Palvelimen tila</translation>
+   <translation id="server_configuration_reboot_title_button" qtlid="33538">Uudelleenkäynnistä</translation>
+   <translation id="server_configuration_reboot_title" qtlid="134189">Uudelleenkäynnistä palvelin</translation>
+   <translation id="server_configuration_reboot_step1_question" qtlid="133435">Syy palvelimen uudelleenkäynnistykselle (vaihtoehtoinen)?</translation>
+   <translation id="server_configuration_reboot_step2_question" qtlid="133448">Haluatko varmasti uudelleenkäynnistää palvelimen {0}?</translation>
+   <translation id="server_configuration_reboot_step2_reason" qtlid="133461">Syy uudelleenkäynnistykselle:</translation>
+   <translation id="server_configuration_reboot_success" qtlid="133474">Palvelimesi {0} uudelleenkäynnistetään.</translation>
+   <translation id="server_configuration_reboot_fail" qtlid="133487">Tapahtui virhe uudelleenkäynnistyspyynnön aikana</translation>
+   <translation id="server_configuration_reboot_successfull" qtlid="164311">Palvelin {0} on uudelleenkäynnistetty.</translation>
+   <translation id="server_configuration_reboot_fail_task" qtlid="164324">Tapahtui virhe uudelleenkäynnistettäessä palvelinta.</translation>
+   <translation id="server_configuration_monitoring_activate_title_button" qtlid="76734">Aktivoi</translation>
+   <translation id="server_configuration_monitoring_activate_title" qtlid="103317">Aktivoi monitorointi</translation>
+   <translation id="server_configuration_monitoring_activate_question" qtlid="133500">Haluatko varmasti aktivoida monitoroinnin palvelimelle {0}?</translation>
+   <translation id="server_configuration_monitoring_activate_success" qtlid="133513">Monitorointi on aktivoitu palvelimelle {0}</translation>
+   <translation id="server_configuration_monitoring_activate_failed" qtlid="133526">Tapahtui virhe aktivoitaessa monitorointia palvelimelle {0}</translation>
+   <translation id="server_configuration_monitoring_activate_information" qtlid="208573">OVH:n palvelinkeskusinterventio aktivoidaan ping-testin estyessä.</translation>
+   <translation id="server_configuration_monitoring_deactivate_title_button" qtlid="90973">Poista käytöstä</translation>
+   <translation id="server_configuration_monitoring_deactivate_title" qtlid="103293">Deaktivoi monitorointi</translation>
+   <translation id="server_configuration_monitoring_deactivate_question" qtlid="134345">Oletko varma, että haluat sammuttaa monitoroinnin palvelimelta {0}?</translation>
+   <translation id="server_configuration_monitoring_deactivate_success" qtlid="133539">Monitorointi on poistettu käytöstä palvelmella {0}</translation>
+   <translation id="server_configuration_monitoring_deactivate_failed" qtlid="133552">Tapahtui virhe poistettaessa monitorointia käytöstä palvelimelta {0}</translation>
+   <translation id="server_configuration_monitoring_deactivate_information" qtlid="208586">Epäonnistuneeseen ping-testiin perustuva OVH:n palvelinkeskusinterventio ei ole käytössä.</translation>
+   <translation id="server_configuration_antispam_BLOCKED_FOR_SPAM" qtlid="108901">Estetty</translation>
+   <translation id="server_configuration_antispam_UNBLOCKING" qtlid="26383">Käynnissä</translation>
+   <translation id="server_configuration_antispam_UNBLOCKED" qtlid="148357">Vapautettu</translation>
+   <translation id="server_configuration_antispam_noblock" qtlid="148357">Vapautettu</translation>
+   <translation id="server_configuration_antispam_unblock_button" qtlid="148344">Poista roskapostisuodattimen esto</translation>
+   <translation id="server_configuration_antispam_current_ip" qtlid="103870">IP-osoite:</translation>
+   <translation id="server_configuration_antispam_date_blocking" qtlid="148383">Esto alkoi:</translation>
+   <translation id="server_configuration_antispam_date_blocking_end" qtlid="148396">Eston poisto mahdollista aikaisintaan:</translation>
+   <translation id="server_configuration_antispam_status" qtlid="151373">Tila:</translation>
+   <translation id="server_configuration_antispam_status_BLOCKED_FOR_SPAM" qtlid="151386">Estetty</translation>
+   <translation id="server_configuration_antispam_status_UNBLOCKED" qtlid="151399">Ei estetty</translation>
+   <translation id="server_configuration_antispam_status_UNBLOCKING" qtlid="151412">Vapautus käynnissä</translation>
+   <translation id="server_configuration_antispam_error" qtlid="148409">Tapahtui virhe poistettaessa IP-osoitteen {0} estoa</translation>
+   <translation id="server_configuration_antispam_load_error" qtlid="148422">Tapahtui virhe ladattaessa IP-osoitetta {0} ({1})</translation>
+   <translation id="server_tab_IP_antispam_periods_table_empty" qtlid="151425">Ei mitään näytettävää</translation>
+   <translation id="server_tab_IP_antispam_periods_table_headers_date" qtlid="24523">Päivämäärä</translation>
+   <translation id="server_tab_IP_antispam_periods_table_headers_score" qtlid="151438">Spämmipisteet</translation>
+   <translation id="server_tab_IP_antispam_periods_table_headers_total" qtlid="32458">Yhteensä</translation>
+   <translation id="server_tab_IP_antispam_periods_table_headers_spamscount" qtlid="151451">Roskapostien lukumäärä:</translation>
+   <translation id="server_tab_IP_antispam_periods_table_see_more" qtlid="37527">Tiedot</translation>
+   <translation id="server_tab_IP_antispam_details_information_title" qtlid="151464">Havaitut roskapostit</translation>
+   <translation id="server_tab_IP_antispam_details_information" qtlid="151477">Roskapostin suodatustiedot valitulle ajanjaksolle:</translation>
+   <translation id="server_tab_IP_antispam_details_information_search_placeholder" qtlid="140612">Etsitään...</translation>
+   <translation id="server_tab_IP_antispam_details_information_table_header_ip" qtlid="151490">Kohde-IP</translation>
+   <translation id="server_tab_IP_antispam_details_information_table_header_messageid" qtlid="151503">Message ID</translation>
+   <translation id="server_tab_IP_antispam_details_information_table_header_date" qtlid="24523">Päivämäärä</translation>
+   <translation id="server_tab_IP_antispam_details_information_table_header_spamscore" qtlid="151516">SpamScore</translation>
+   <translation id="server_configuration_mitigation_ACTIVATED" qtlid="30250">Aktivoitu</translation>
+   <translation id="server_configuration_mitigation_FORCED" qtlid="134202">Pakotettu</translation>
+   <translation id="server_configuration_mitigation_AUTO" qtlid="134215">Automaattinen</translation>
+   <translation id="server_configuration_mitigation_PENDING" qtlid="26383">Käynnissä</translation>
+   <translation id="server_configuration_mitigation_force_title_button" qtlid="142003">Pakota mitigaatio</translation>
+   <translation id="server_configuration_mitigation_force_title" qtlid="142003">Pakota mitigaatio</translation>
+   <translation id="server_configuration_mitigation_force_question" qtlid="134241">Haluatko varmasti pakottaa mitigaation IP-osoitteelle {0}?</translation>
+   <translation id="server_configuration_mitigation_force_success" qtlid="142016">Mitigaatio otetaan käyttöön pakotettuna muutamassa minuutissa IP-osoitteelle {0}</translation>
+   <translation id="server_configuration_mitigation_force_failed" qtlid="138922">Tapahtui virhe aktivoitaessa pakotettua mitigaatiotilaa IP-osoitteelle {0}</translation>
+   <translation id="server_configuration_mitigation_auto_title_button" qtlid="142029">Vaihda mitigaatio automaattitilaan</translation>
+   <translation id="server_configuration_mitigation_auto_title" qtlid="142029">Vaihda mitigaatio automaattitilaan</translation>
+   <translation id="server_configuration_mitigation_auto_question" qtlid="142042">Haluatko varmasti vaihtaa mitigaation automaattitilaan IP-osoitteelle {0}?</translation>
+   <translation id="server_configuration_mitigation_auto_success" qtlid="140508">Mitigaatio muuttuu automaattitilaan hetken kuluttua IP-osoitteelle {0}.</translation>
+   <translation id="server_configuration_mitigation_auto_failed" qtlid="142055">Tapahtui virhe asetettaessa mitigaatiota automaattitilaan IP-osoitteelle {0}</translation>
+   <translation id="server_configuration_mitigation_statistics_title" qtlid="26671">Tilastot</translation>
+   <translation id="server_configuration_mitigation_statistics_back_title_button" qtlid="4118">Takaisin</translation>
+   <translation id="server_configuration_mitigation_statistics_current_ip" qtlid="142068">Katso mitigaatiostatistiikka kohdeosoitteelle: {0}</translation>
+   <translation id="server_configuration_mitigation_statistics_to" qtlid="88725">Mistä</translation>
+   <translation id="server_configuration_mitigation_statistics_mode_realtime" qtlid="142081">Reaaliajassa</translation>
+   <translation id="server_configuration_mitigation_statistics_mode_date" qtlid="142094">Päivämäärän mukaan</translation>
+   <translation id="server_configuration_mitigation_statistics_input" qtlid="139000">Sisääntuleva</translation>
+   <translation id="server_configuration_mitigation_statistics_output" qtlid="142107">Lähtevä</translation>
+   <translation id="server_configuration_mitigation_statistics_unit_B" qtlid="142120">B/s</translation>
+   <translation id="server_configuration_mitigation_statistics_unit_KB" qtlid="142133">kB/s</translation>
+   <translation id="server_configuration_mitigation_statistics_unit_MB" qtlid="142146">MB/s</translation>
+   <translation id="server_configuration_mitigation_statistics_unit_GB" qtlid="142159">GB/s</translation>
+   <translation id="server_configuration_mitigation_statistics_unit_TB" qtlid="142172">TB/s</translation>
+   <translation id="server_configuration_mitigation_statistics_unit_PB" qtlid="142185">PB/s</translation>
+   <translation id="server_configuration_mitigation_statistics_unit_EB" qtlid="142198">EB/s</translation>
+   <translation id="server_configuration_mitigation_statistics_unit_ZB" qtlid="142211">ZB/s</translation>
+   <translation id="server_configuration_mitigation_statistics_unit_YB" qtlid="142224">YB/s</translation>
+   <translation id="server_configuration_mitigation_statistics_scale" qtlid="139143">Skaalaa</translation>
+   <translation id="server_configuration_mitigation_statistics_statistics_scale_10_S" qtlid="110478">10 sekuntia</translation>
+   <translation id="server_configuration_mitigation_statistics_statistics_scale_1_M" qtlid="32326">1 minuutti</translation>
+   <translation id="server_configuration_mitigation_statistics_statistics_scale_5_M" qtlid="33178">5 minuuttia</translation>
+   <translation id="server_configuration_mitigation_statistics_reset_zoom" qtlid="142237">Nollaa zoom</translation>
+   <translation id="server_configuration_mitigation_statistics_no_data" qtlid="156602">Tilastoja ei ole saatavilla IP-osoitteelle {0}.</translation>
+   <translation id="server_configuration_netboot_title_button" qtlid="37875">Muokkaa</translation>
+   <translation id="server_configuration_netboot_title" qtlid="133565">Vaihda Netboot</translation>
+   <translation id="server_configuration_netboot_unavailable" qtlid="154650">Tietoa ei saatavilla</translation>
+   <translation id="server_configuration_netboot_title_help_rootdevice" qtlid="151880">Vain seuraavat root-laitteet ovat tuettuja:</translation>
+   <translation id="server_configuration_netboot_title_help_rootdevice_list1" qtlid="151893">/dev/hda[0 — N]</translation>
+   <translation id="server_configuration_netboot_title_help_rootdevice_list2" qtlid="151906">/dev/hdb[0 — N]</translation>
+   <translation id="server_configuration_netboot_title_help_rootdevice_list3" qtlid="151919">/dev/sda[0 — N]</translation>
+   <translation id="server_configuration_netboot_title_help_rootdevice_list4" qtlid="151932">/dev/sdb[0 — N]</translation>
+   <translation id="server_configuration_netboot_title_help_rootdevice_list5" qtlid="145150">/dev/md[0 — N]</translation>
+   <translation id="server_configuration_netboot_title_help_rootdevice_list6" qtlid="151308">/dev/rd/c0p0[0 — N]</translation>
+   <translation id="server_configuration_netboot_title_help_rootdevice_list7" qtlid="151945">/dev/ram0</translation>
+   <translation id="server_configuration_netboot_current" qtlid="142718">Tämän hetkinen palvelimellesi {0} määritelty netboot:</translation>
+   <translation id="server_configuration_netboot_step1_question" qtlid="62558">Mitä haluaisit tehdä?</translation>
+   <translation id="server_configuration_netboot_option_harddisk" qtlid="102861">Uudelleenkäynnistä kovalevyllä</translation>
+   <translation id="server_configuration_netboot_option_rescue" qtlid="102873">Uudelleenkäynnistä rescue-tilassa</translation>
+   <translation id="server_configuration_netboot_option_network" qtlid="142731">Boottaa verkkotilassa</translation>
+   <translation id="server_configuration_netboot_configuration" qtlid="142744">Konfiguraatio:</translation>
+   <translation id="server_configuration_netboot_rescue_choice" qtlid="141015">Pelastustila saatavilla:</translation>
+   <translation id="server_configuration_netboot_rescue_mail" qtlid="262986">Tilan käyttäjätunnukset lähetetään osoitteeseen:</translation>
+   <translation id="server_configuration_netboot_rescue_mail_invalid" qtlid="262999">Kelpaamaton</translation>
+   <translation id="server_configuration_netboot_kernel_choice" qtlid="142757">Saatavilla oleva kernel:</translation>
+   <translation id="server_configuration_netboot_kernel_option" qtlid="142770">Kerneliin sisältyvät optiot:</translation>
+   <translation id="server_configuration_netboot_kernel_rootdevice" qtlid="142783">Root-laite:</translation>
+   <translation id="server_configuration_netboot_kernel_rootdevice_exemple" qtlid="151958">esimerkki: katso ohjeet</translation>
+   <translation id="server_configuration_netboot_loading_error" qtlid="142809">Tapahtui virhe ladattaessa netboot-dataa palvelimella {0}</translation>
+   <translation id="server_configuration_netboot_step2_question" qtlid="142822">Haluatko varmasti ottaa seuraavat muutokset käyttöön palvelimelle {0}?</translation>
+   <translation id="server_configuration_netboot_step2_resume" qtlid="142835">Yhteenveto:</translation>
+   <translation id="server_configuration_netboot_step2_type" qtlid="142848">Netbootin tyyppi:</translation>
+   <translation id="server_configuration_netboot_step2_kernel" qtlid="142861">Kernelin nimi:</translation>
+   <translation id="server_configuration_netboot_step2_rescue" qtlid="142874">Rescue-nimi:</translation>
+   <translation id="server_configuration_netboot_step2_rescue_mail" qtlid="263012">Varasähköposti:</translation>
+   <translation id="server_configuration_netboot_success" qtlid="142887">Netboot on päivitetty. Sinun täytyy uudelleenkäynnistää palvelimesi.</translation>
+   <translation id="server_configuration_netboot_fail" qtlid="142900">Tapahtui virhe päivitettäessä netbootia palvelimella {0}</translation>
+   <translation id="server_configuration_resintall_title_button" qtlid="133578">Asenna distribuutio</translation>
+   <translation id="server_configuration_monitoring" qtlid="31666">Monitorointi</translation>
+
+   <translation id="server_configuration_monitoring_services" qtlid="243715">Monitoroidut palvelut</translation>
+   <translation id="server_configuration_monitoring_services_use" qtlid="243728">Palvelujen monitorointi</translation>
+
+   <translation id="server_configuration_services_state_links" qtlid="245116">Linkit</translation>
+   <translation id="server_configuration_services_state_links_weathermap" qtlid="245129"><a href="{0}" target="_blank">Weathermap</a></translation>
+   <translation id="server_configuration_services_state_links_vms" qtlid="245142"><a href="{0}" target="_blank">VMS</a></translation>
+   <translation id="server_configuration_services_state_links_travaux" qtlid="245155"><a href="{0}" target="_blank">Tekniset tiedotteet</a></translation>
+
+   <translation id="server_configuration_profesionnal_use" qtlid="199962">Ammattikäyttöoptio</translation>
+   <translation id="server_configuration_profesionnal_use_info" qtlid="199975">Et voi käyttää NAS-palvelua tältä palvelimelta ilman Ammattikäyttö-optiota.</translation>
+   <translation id="server_configuration_profesionnal_use_order_button" qtlid="76734">Aktivoi</translation>
+   <translation id="server_configuration_profesionnal_use_order_title" qtlid="200001">Ammattikäyttö-option aktivointi</translation>
+   <translation id="server_configuration_profesionnal_use_order_step1" qtlid="200014">Olet aktivoimassa Ammattikäyttö-optiota palvelimelle <b>{0}</b></translation>
+   <translation id="server_configuration_profesionnal_use_order_step2_info" qtlid="181214">Valitse kesto:</translation>
+   <translation id="server_configuration_profesionnal_use_order_step2_error" qtlid="200027">Tapahtui virhe haettaessa tilaustietoja Ammattikäyttö-palvelulle.</translation>
+   <translation id="server_configuration_profesionnal_use_order_step4_info" qtlid="177496">Tilauksen yhteenveto</translation>
+   <translation id="server_configuration_profesionnal_use_order_step4_price_HT" qtlid="146177">Kokonaishinta (ALV 0 %):</translation>
+   <translation id="server_configuration_profesionnal_use_order_step4_price_TTC" qtlid="146190">Kokonaishinta (sis. ALV):</translation>
+   <translation id="server_configuration_profesionnal_use_order_step4_final_txt" qtlid="181240">Klikkaa ”Vahvista”-painiketta vahvistaaksesi tilauksesi.</translation>
+   <translation id="server_configuration_profesionnal_use_order_step4_final_txt2" qtlid="181253">Selaimeesi avautuu uusi välilehti ja ohjaudut automaattisesti maksusivulle.</translation>
+   <translation id="server_configuration_profesionnal_use_order_finish_success" qtlid="181266">Tilaus <a href='{0}' target='_blank'>{1}</a> on rekisteröity onnistuneesti.</translation>
+   <translation id="server_configuration_profesionnal_use_order_finish_error" qtlid="181227">Tapahtui virhe luotaessa tilaustasi.</translation>
+
+   <translation id="server_tab_USB_STORAGE_order_select_duration" qtlid="181214">Valitse kesto:</translation>
+
+   <translation id="server_configuration_monitoring_activated" qtlid="30250">Aktivoitu</translation>
+   <translation id="server_configuration_monitoring_disabled" qtlid="24967">Deaktivoitu</translation>
+   <translation id="server_configuration_distribution" qtlid="151971">Järjestelmä (OS)</translation>
+   <translation id="server_configuration_distribution_none" qtlid="233034">Ei asennettu</translation>
+   <translation id="server_configuration_boot" qtlid="151984">Boot</translation>
+   <translation id="server_configuration_creation" qtlid="371726">Palvelimen tilauspäivä</translation>
+   <translation id="server_configuration_datacenter" qtlid="30802">Palvelinkeskus</translation>
+   <translation id="server_configuration_rack" qtlid="32050">Räkki</translation>
+   <translation id="server_configuration_server_id" qtlid="225915">Palvelimen numerotunniste</translation>
+   <translation id="server_configuration_name" qtlid="151997">OVH-nimi</translation>
+   <translation id="server_configuration_description" qtlid="191655">Kaupallinen nimi</translation>
+   <translation id="server_configuration_description_housing" qtlid="233583">Housing</translation>
+   <translation id="server_configuration_reverse" qtlid="32338">Reverse</translation>
+   <translation id="server_configuration_reverse_not_configured" qtlid="124952">Ei konfiguroitu</translation>
+   <translation id="server_configuration_ipv4" qtlid="167899">IP</translation>
+   <translation id="server_configuration_ipv6" qtlid="191239">IPv6</translation>
+   <translation id="server_configuration_ipv4_manage" qtlid="16301">Hallinnoi</translation>
+   <translation id="server_configuration_secondary_dns_fail" qtlid="164337">Tapahtui virhe ladattaessa toissijaisen nimipalvelimen tietoja.</translation>
+   <translation id="server_configuration_secondary_dns_empty" qtlid="351983">Ei toissijaisia nimipalvelimia</translation>
+   <translation id="server_configuration_delete_secondary_dns_title" qtlid="142965">Toissijaisen DNS:n poistaminen</translation>
+   <translation id="server_configuration_delete_secondary_dns_question" qtlid="142978">Haluatko varmasti poistaa toissijaisen nimipalvelimen '{0}'?</translation>
+   <translation id="server_configuration_delete_secondary_dns_success" qtlid="142991">Toissijainen nimipalvelin '{0}' on poistettu onnistuneesti</translation>
+   <translation id="server_configuration_delete_secondary_dns_fail" qtlid="142302">Tapahtui virhe poistettaessa toissijaista nimipalvelinta.</translation>
+   <translation id="server_configuration_add_secondary_dns_title" qtlid="8602">Lisää verkkotunnus</translation>
+   <translation id="server_configuration_secondarydns_add_step1" qtlid="143004">Syötä toissijaisen nimipalvelimen nimi jonka haluat lisätä käyttöön palvelimellesi:</translation>
+   <translation id="server_configuration_secondarydns_add_step2" qtlid="183788">OVH:n on varmistettava että olet verkkotunnuksen omistaja. Lisää tietue <b>{0}</b> verkkotunnuksesi <b>{1}</b>DNS-taulukkoon, aliverkkotunnuksen <b>{2}</b> ja arvon <b>{3}</b> kanssa. Kun olet tehnyt tämän, päivitä DNS-taulukkosi lisätäksesi sen toissijaiselle nimipalvelimelle.</translation>
+   <translation id="server_configuration_secondarydns_add_step2_error" qtlid="172722">Tapahtui virhe haettaessa tietoa verkkotunnuspäätteestä</translation>
+   <translation id="server_configuration_secondarydns_add_step3" qtlid="143017">Vahvista tiedot uutta toissijaista nimipalvelinta koskien:</translation>
+   <translation id="server_configuration_secondarydns_add_success" qtlid="142627">Toissijainen nimipalvelin '{0}' lisättiin onnistuneesti</translation>
+   <translation id="server_configuration_secondarydns_add_fail" qtlid="143030">Tapahtui virhe lisättäessä toissijaista nimipalvelinta.</translation>
+   <translation id="server_configuration_secondarydns_ip" qtlid="25615">IP</translation>
+   <translation id="server_configuration_secondarydns_domain" qtlid="8458">Verkkotunnus</translation>
+   <translation id="server_configuration_secondarydns_domain_header" qtlid="8458">Verkkotunnus</translation>
+   <translation id="server_configuration_secondarydns_dns" qtlid="32086">DNS</translation>
+   <translation id="server_configuration_secondarydns_creationdate" qtlid="26419">Luontipäivä</translation>
+   <translation id="server_configuration_secondarydns_confirm_button_text" qtlid="37923">Lisää</translation>
+   <translation id="server_configuration_add_secondary_dns_success" qtlid="143043">Toissijainen nimipalvelin on lisätty onnistuneesti</translation>
+   <translation id="server_configuration_add_secondary_dns_fail" qtlid="143056">Tapahtui virhe lisättäessä toissijaista nimipalvelinta '{0}'.</translation>
+   <translation id="server_configuration_ips_cannotfetch" qtlid="143069">Palvelimen IP-osoiteluetteloa ei voi hakea</translation>
+   <translation id="server_configuration_no_secondary_dns" qtlid="143082">Toissijaista nimipalvelinta ei ole konfiguroitu.</translation>
+   <translation id="server_configuration_ftpbackup_fail" qtlid="184256">Tapahtui virhe ladattaessa varmuuskopiotilan tietoja</translation>
+   <translation id="server_configuration_ftpbackup_none" qtlid="184269">Varmuuskopiotilaa ei ole konfiguroitu.</translation>
+   <translation id="server_configuration_ftpbackup_not_available" qtlid="436481">Backup storage ei ole käytettävissä tällä hetkellä. </translation>
+   <translation id="server_configuration_ftpbackup_login" qtlid="46792">Käyttäjätunnus</translation>
+   <translation id="server_configuration_ftpbackup_name" qtlid="181708">Nimi</translation>
+   <translation id="server_configuration_ftpbackup_usage" qtlid="30382">Käyttö</translation>
+   <translation id="server_configuration_ftpbackup_delete" qtlid="184282">Poista varmuuskopiotila</translation>
+   <translation id="server_configuration_ftpbackup_forgot_password" qtlid="149150">Unohditko salasanasi?</translation>
+   <translation id="server_configuration_ftpbackup_activate" qtlid="184295">Aktivoi varmuuskopiotila</translation>
+   <translation id="server_configuration_ftpbackup_activate_success" qtlid="184308">Varmuuskopiotila on aktiivinen hetken kuluttua.</translation>
+   <translation id="server_configuration_ftpbackup_activate_successfull" qtlid="184321">Varmuuskopiotila on aktivoitu.</translation>
+   <translation id="server_configuration_ftpbackup_activate_failure" qtlid="184334">Tapahtui virhe varmuuskopiotilaa aktivoitaessa.</translation>
+   <translation id="server_configuration_ftpbackup_activate_question" qtlid="184347">Oletko varma, että haluat aktivoida varmuuskopiotilan tälle palvelimelle?</translation>
+   <translation id="server_configuration_ftpbackup_delete_success" qtlid="184360">Varmuuskopiotila poistetaan hetken kuluttua.</translation>
+   <translation id="server_configuration_ftpbackup_delete_successfull" qtlid="184373">Varmuuskopiotila on poistettu.</translation>
+   <translation id="server_configuration_ftpbackup_delete_failure" qtlid="184386">Tapahtui virhe poistettaessa varmuuskopiotilaa.</translation>
+   <translation id="server_configuration_ftpbackup_delete_question" qtlid="184399">Oletko varma, että haluat poistaa varmuuskopiotilan {0}?</translation>
+   <translation id="server_configuration_ftpbackup_delete_question2" qtlid="164389">Huomaa että tämä toiminto on peruuttamaton</translation>
+   <translation id="server_configuration_ftpbackup_lost_password" qtlid="149241">Uusi salasana</translation>
+   <translation id="server_configuration_ftpbackup_lost_password_success" qtlid="149254">Uusi salasana lähetetään palvelimen admin-yhteyshenkilölle</translation>
+   <translation id="server_configuration_ftpbackup_lost_password_successfull" qtlid="164402">Uusi salasana lähetetään palvelimen admin-asiakastunnukselle.</translation>
+   <translation id="server_configuration_ftpbackup_lost_password_failure" qtlid="149267">Tapahtui virhe nollattaessa salasanaa</translation>
+   <translation id="server_configuration_ftpbackup_lost_password_question" qtlid="184412">Oletko varma, että haluat nollata varmuuskopiotilan {0} salasanan?</translation>
+
+   <translation id="server_configuration_ftpbackup_order_title" qtlid="184425">Varmuuskopiotilan levytilan tilaus</translation>
+   <translation id="server_configuration_ftpbackup_order_load_failure" qtlid="180486">Tapahtui virhe haettaessa tietoa saatavilla olevista tallennustilapalveluista</translation>
+   <translation id="server_configuration_ftpbackup_order_load_detail_failure" qtlid="180499">Tapahtui virhe haettaessa tallennustilatietoa</translation>
+   <translation id="server_configuration_ftpbackup_order_load_order_success" qtlid="183801">Datasäilön tilaus <a href='{0}' target='_blank'>{1}</a> on rekisteröity.</translation>
+   <translation id="server_configuration_ftpbackup_order_load_order_failure" qtlid="180525">Tapahtui virhe tallennustilatilauksen aikana</translation>
+   <translation id="server_configuration_ftpbackup_order_type_name" qtlid="4334">Kapasiteetti</translation>
+   <translation id="server_configuration_ftpbackup_order_empty_choice" qtlid="237750">Et voi tilata lisätallennustilaa tälle palvelimelle.</translation>
+   <translation id="server_configuration_ftpbackup_order_type_price" qtlid="180538">Hinta/kk (ALV. 0 %)</translation>
+   <translation id="server_configuration_ftpbackup_order_resume" qtlid="172228">Yhteenveto tilauksesta:</translation>
+   <translation id="server_configuration_ftpbackup_order_price_explanation" qtlid="237763">Mikä tekee {0} per kuukausi, palvelimen erääntymispäivämäärään asti.</translation>
+   <translation id="server_configuration_ftpbackup_order_price_HT" qtlid="146177">Kokonaishinta (ALV 0 %):</translation>
+   <translation id="server_configuration_ftpbackup_order_price_TTC" qtlid="146190">Kokonaishinta (sis. ALV):</translation>
+   <translation id="server_configuration_ftpbackup_order_contracts" qtlid="145371">Vahvistan, että olen lukenut ja ymmärtänyt seuraavat ehdot:</translation>
+   <translation id="server_configuration_ftpbackup_order_info" qtlid="180551">Valitse palvelimellesi tilattavan tallennustilan kapasiteetti. Huomaa, että kapasiteetin vähennys ei ole mahdollista.</translation>
+
+   <translation id="server_configuration_ftpbackup_access_order" qtlid="180564">Tallennustilan tilaus</translation>
+   <translation id="server_configuration_ftpbackup_access_order_right" qtlid="180577">Sinulla ei ole riittäviä oikeuksia tilausta varten</translation>
+   <translation id="server_configuration_ftpbackup_access_add" qtlid="153857">Lisää pääsyoikeus</translation>
+   <translation id="server_configuration_ftpbackup_access_delete" qtlid="180590">Pääsyoikeuden poisto</translation>
+   <translation id="server_configuration_ftpbackup_access_delete_question" qtlid="183814">Oletko varma, että haluat poistaa pääsyoikeuden IP-osoiteavaruudelta <b>{0}</b>?</translation>
+   <translation id="server_configuration_ftpbackup_access_delete_success" qtlid="183827">Varmuuskopiotilan pääsyoikeuden poisto IP-osoiteavaruudelta <b>{0}</b> a on rekisteröity, mutta toimenpide voi kestää muutaman minuutin</translation>
+   <translation id="server_configuration_ftpbackup_access_delete_failure" qtlid="183840">Tapahtui virhe poistettaessa varmuuskopiotilan pääsyoikeutta IP-osoiteavaruudelta <b>{0}</b></translation>
+   <translation id="server_configuration_ftpbackup_access_add_ip_failure" qtlid="180642">Tapahtui virhe haettaessa sallittujen osoiteavaruuksien listaa</translation>
+   <translation id="server_configuration_ftpbackup_access_add_success" qtlid="184438">Pääsyoikeuden lisäys on rekisteröity, mutta muutoksen voimaan astuminen kestää muutaman minuutin.</translation>
+   <translation id="server_configuration_ftpbackup_access_add_partial" qtlid="184451">Pyyntö varmuuskopiotilan pääsyoikeuksien lisäykselle on rekisteröity, mutta muutoksen voimaan astuminen kestää muutaman minuutin. Joitakin oikeuksia lisättäessä tuli virhe.</translation>
+   <translation id="server_configuration_ftpbackup_access_add_failure" qtlid="184464">Tapahtui virhe pyydettäessä varmuuskopiotilan pääsyoikeuden lisäystä</translation>
+
+   <translation id="server_configuration_ftpbackup_table_ip" qtlid="167899">IP</translation>
+   <translation id="server_configuration_ftpbackup_table_cifs" qtlid="176740">CIFS</translation>
+   <translation id="server_configuration_ftpbackup_table_ftp" qtlid="50410">FTP</translation>
+   <translation id="server_configuration_ftpbackup_table_nfs" qtlid="6778">NFS</translation>
+   <translation id="server_configuration_ftpbackup_table_status" qtlid="26443">Tila</translation>
+   <translation id="server_configuration_ftpbackup_table_ip_disable" qtlid="26383">Käynnissä</translation>
+   <translation id="server_configuration_ftpbackup_table_ip_enable" qtlid="30250">Aktivoitu</translation>
+   <translation id="server_configuration_ftpbackup_table_ip_edit" qtlid="180694">Pääsyoikeuden muokkaus</translation>
+   <translation id="server_configuration_ftpbackup_table_ip_delete" qtlid="180707">Poista pääsyoikeus</translation>
+   <translation id="server_configuration_ftpbackup_table_ip_modify" qtlid="180720">Vahvista muutos</translation>
+   <translation id="server_configuration_ftpbackup_table_ip_cancel" qtlid="180733">Peruuta muutos</translation>
+   <translation id="server_configuration_ftpbackup_table_fail" qtlid="211607">Tapahtui virhe ladattaessa varmuuskopiotilan pääsytietoja.</translation>
+
+
+   <translation id="server_configuration_ftpbackup_set_success" qtlid="183853">Pääsyoikeuden <b>{0}</b> muokkaus on rekisteröity, mutta muutoksen voimaan astuminen kestää muutaman minuutin.</translation>
+   <translation id="server_configuration_ftpbackup_set_fail" qtlid="183866">Tapahtui virhe muokattaessa pääsyoikeutta <b>{0}</b></translation>
+
+   <translation id="server_configuration_ftpbackup_add" qtlid="180772">Pääsyoikeuden lisäys</translation>
+   <translation id="server_configuration_ftpbackup_add_info" qtlid="180785">Valitse IP-osoiteavaruudet, joille haluat sallia pääsyoikeuden.</translation>
+   <translation id="server_configuration_ftpbackup_add_info1" qtlid="180798">Osoiteavaruuksien listaus:</translation>
+   <translation id="server_configuration_ftpbackup_add_info2" qtlid="184477">Olet lisäämässä pääsyoikeutta varmuuskopiotilalle jokaiselle osoiteavaruudelle seuraavasta listasta:</translation>
+   <translation id="server_configuration_ftpbackup_add_info3" qtlid="180824">Sinun täytyy sallia oletusprotokolla. Yhdistämistä ilman sääntöjä olevista IP-osoiteavaruuksista ei hyväksytä.</translation>
+   <translation id="server_configuration_ftpbackup_add_info4" qtlid="180837">Sovellettavat oikeudet:</translation>
+   <translation id="server_configuration_ftpbackup_add_allow" qtlid="141795">Valtuuta</translation>
+   <translation id="server_configuration_ftpbackup_add_deny" qtlid="141808">Hylkää</translation>
+   <translation id="server_configuration_ftpbackup_add_ip" qtlid="180850">Osoite/osoitteet:</translation>
+   <translation id="server_configuration_ftpbackup_add_authorization" qtlid="180863">Valtuutettu:</translation>
+
+   <translation id="server_configuration_cloudbackup_delete" qtlid="184282">Poista varmuuskopiotila</translation>
+
+   <translation id="server_configuration_cloudbackup_delete_success" qtlid="184360">Varmuuskopiotila poistetaan hetken kuluttua.</translation>
+   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="184373">Varmuuskopiotila on poistettu.</translation>
+   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="184386">Tapahtui virhe poistettaessa varmuuskopiotilaa.</translation>
+   <translation id="server_configuration_cloudbackup_delete_question" qtlid="451872">Haluatko varmasti kytkeä Backup Storage -lisäpalvelun pois käytöstä?</translation>
+
+   <translation id="server_configuration_cloudbackup_inactive" qtlid="451885">Varmuuskopiotilasi ei ole aktiivinen.</translation>
+   <translation id="server_configuration_cloudbackup_new_project" qtlid="16493">Uusi projekti</translation>
+   <translation id="server_configuration_cloudbackup_load_fail" qtlid="184256">Tapahtui virhe ladattaessa varmuuskopiotilan tietoja</translation>
+   <translation id="server_configuration_cloudbackup_load_offers_fail" qtlid="451898">Tapahtui virhe Backup Storage cloud -tuotteiden lataamisessa</translation>
+   <translation id="server_configuration_cloudbackup_load_projects_fail" qtlid="451911">Tapahtui virhe cloud-projektin lataamisessa</translation>
+   <translation id="server_configuration_cloudbackup_load_agreements_fail" qtlid="451924">Tapahtui virhe sopimusten lataamisessa</translation>
+
+   <translation id="server_configuration_cloudbackup_offer_storage_title" qtlid="451937">{0} Varmuuskopiotilaa sisältyy Dedicated Storageen</translation>
+   <translation id="server_configuration_cloudbackup_offer_storage_description" qtlid="451950">Hyödynnä maksutonta varmuuskopioillesi osoitettua Cloud-tallennustilaa, joka on ulkoistettu palvelimestasi. Ratkaisu on skaalautuva ja siihen voidaan yhdistää monilla viestintäprotokollilla (Rsync, SCP, sFTP).</translation>
+   <translation id="server_configuration_cloudbackup_offer_storage_guide_description" qtlid="451963">Tutustu käyttöohjeeseemme</translation>
+
+   <translation id="server_configuration_cloudbackup_subscribe_title" qtlid="451976">Varmuuskopiotilan aktivointi</translation>
+   <translation id="server_configuration_cloudbackup_subscribe_description" qtlid="451989">Aktivoidaksesi Varmuuskopiotilan sinun on ensiksi liitettävä siihen uusi Cloud-projekti. Tämä tapahtuu syöttämällä &#13;
+sen nimen tai valitsemalla jo olemassa olevan Cloud-projektin. Tämä on ilmaista ja tapahtuu välittömästi. Saat kirjautumiseen tarvittavat tunnuksesi sähköpostitse.</translation>
+   <translation id="server_configuration_cloudbackup_subscribe_intput_placeholder" qtlid="255298">Projektin nimi</translation>
+   <translation id="server_configuration_cloudbackup_subscribe_agreements_checkbox_text" qtlid="345221">Olen lukenut seuraavissa dokumenteissa kuvatut ehdot ja hyväksyn ne:</translation>
+   <translation id="server_configuration_cloudbackup_subscribe_button_text" qtlid="452002">Aktivoi Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_subscribe_success" qtlid="452015">Tallennustilasi luominen onnistui.</translation>
+
+   <translation id="server_configuration_cloudbackup_project_SUSPENDED" qtlid="452028">Varmuuskopiotilaasi liittyvä projektisi on keskeytetty.</translation>
+   <translation id="server_configuration_cloudbackup_project_DELETING" qtlid="452041">Backup Storage -lisäpalvelua kytketään pois käytöstä.</translation>
+   <translation id="server_configuration_cloudbackup_project_DELETED" qtlid="452054">Palvelimesi Backup Storage -lisäpalvelu on nyt kytketty pois käytöstä. PCS-säilösi on edelleen aktiivinen. Mikäli sitä ei poisteta, sinulta laskutetaan kuun lopussa sen kulutusta vastaava summa.</translation>
+   <translation id="server_configuration_cloudbackup_summary_container_label" qtlid="274369">Cloud-projekti</translation>
+   <translation id="server_configuration_cloudbackup_summary_objects_label" qtlid="421009">Datakontti</translation>
+   <translation id="server_configuration_cloudbackup_summary_documentation_label" qtlid="415740">Ohje</translation>
+   <translation id="server_configuration_cloudbackup_summary_usage_label" qtlid="109974">Käyttö</translation>
+   <translation id="server_configuration_cloudbackup_summary_title_label_storage" qtlid="452067">Varmuuskopiotilan säilösi</translation>
+   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="184282">Poista varmuuskopiotila</translation>
+
+   <translation id="server_configuration_cloudbackup_container_storage_guide_description" qtlid="452080">Etsitkö työkalua tietojesi varmuuskopiointia varten? OVH suosittelee Rclone-työkalua</translation>
+   <translation id="server_configuration_cloudbackup_container_storage_guide_product" qtlid="452093">Rclone</translation>
+
+   <translation id="server_configuration_cloudbackup_manage_user_title" qtlid="227793">Käyttäjähallinta</translation>
+   <translation id="server_configuration_cloudbackup_manage_user_description" qtlid="452106">Hallinnoi käyttäjien OpenStack-pääsyoikeuksia</translation>
+   <translation id="server_configuration_cloudbackup_manage_user_button" qtlid="452119">Mene kyselyyn</translation>
+
+   <translation id="server_tab_intervention" qtlid="149293">Interventiot</translation>
+   <translation id="server_configuration_intervention_type" qtlid="2642">Tyyppi</translation>
+   <translation id="server_configuration_intervention_date" qtlid="24523">Päivämäärä</translation>
+   <translation id="server_configuration_intervention_empty" qtlid="455620">Ei interventioita</translation>
+   <translation id="server_tab_firewall" qtlid="151542">Cisco ASA -palomuuri</translation>
+   <translation id="server_tab_FIREWALLASA_not_activated" qtlid="151555">Et ole tilannut Cisco ASA -palomuuria</translation>
+   <translation id="server_tab_FIREWALLASA_not_able_to_order" qtlid="151568">Et voi tilata palvelua koska asiakastunnuksesi ei ole valtuutettu tekemään tilauksia palvelimen palveluita varten.</translation>
+   <translation id="server_tab_FIREWALLASA_no_options" qtlid="369113">Palvelimelle ei voi tilata tätä lisäoptiota.</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_firewall" qtlid="141418">Palomuuri</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_mode" qtlid="15713">Tila</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_mode_TRANSPARENT" qtlid="151581">Läpinäkyvä</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_mode_ROUTED" qtlid="151594">Reititys</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_ip" qtlid="26191">IP-osoite</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_model" qtlid="23023">Malli</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_model_ASA_5505" qtlid="151607">Cisco ASA 5505</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_model_ASA_5510" qtlid="151620">Cisco ASA 5510</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_model_ASA_5520" qtlid="151633">Cisco ASA 5520</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_model_asa5505" qtlid="151607">Cisco ASA 5505</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_model_asa5510" qtlid="151620">Cisco ASA 5510</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_model_asa5520" qtlid="151633">Cisco ASA 5520</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_state" qtlid="8230">Tila</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_state_true" qtlid="30250">Aktivoitu</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_state_false" qtlid="24967">Deaktivoitu</translation>
+   <translation id="server_configuration_firewall_asa_order_title_button" qtlid="151646">Tilaa Cisco ASA -palomuuri</translation>
+   <translation id="server_configuration_firewall_asa_order_title" qtlid="151646">Tilaa Cisco ASA -palomuuri</translation>
+   <translation id="server_configuration_firewall_asa_ASA_5505" qtlid="151607">Cisco ASA 5505</translation>
+   <translation id="server_configuration_firewall_asa_ASA_5510" qtlid="151620">Cisco ASA 5510</translation>
+   <translation id="server_configuration_firewall_asa_ASA_5520" qtlid="151633">Cisco ASA 5520</translation>
+   <translation id="server_configuration_firewall_asa_asa5505" qtlid="151607">Cisco ASA 5505</translation>
+   <translation id="server_configuration_firewall_asa_asa5510" qtlid="151620">Cisco ASA 5510</translation>
+   <translation id="server_configuration_firewall_asa_asa5520" qtlid="151633">Cisco ASA 5520</translation>
+   <translation id="server_configuration_firewall_asa_order_step1_wanted" qtlid="151659">Valitse haluamasi Cisco ASA -palomuuri:</translation>
+   <translation id="server_configuration_firewall_asa_order_step1_loading_error" qtlid="170031">Tapahtui virhe tietojen latauksen aikana</translation>
+   <translation id="server_configuration_firewall_asa_order_step1_bymonth" qtlid="151685">/kk</translation>
+   <translation id="server_configuration_firewall_asa_installation_fee" qtlid="330643">Asennusmaksu</translation>
+   <translation id="server_configuration_firewall_asa_order_step2_question" qtlid="183879">Option tilaus palvelimelle <span class="italic normal">{0}</span></translation>
+   <translation id="server_configuration_firewall_asa_order_step2_option" qtlid="151711">Valittu vaihtoehto:</translation>
+   <translation id="server_configuration_firewall_asa_order_step2_totalHT" qtlid="169238">Hinta (ALV 0 %)</translation>
+   <translation id="server_configuration_firewall_asa_order_step2_totalTTC" qtlid="169251">Hinta (ALV 24 %)</translation>
+   <translation id="server_configuration_firewall_asa_order_step2_info" qtlid="151724">Sinua laskutetaan ensimmäisen laskun yhteydessä palvelimen uusintapäivämäärää ennen jäljellä olevista päivistä.</translation>
+   <translation id="server_configuration_firewall_asa_order_step2_info2" qtlid="222722">Kausi, asti:</translation>
+   <translation id="server_configuration_firewall_asa_order_step2_info3" qtlid="222735">Tämän lisäpalvelun laskutus on yhtenäistetty palvelun uusintapäivämäärän kanssa.</translation>
+
+   <translation id="server_configuration_firewall_asa_order_step3_generation_bc" qtlid="169511">Tilausta luodaan…</translation>
+   <translation id="server_configuration_firewall_asa_order_step3_bc" qtlid="169524">Tilaus on luotu onnistuneesti.</translation>
+   <translation id="server_configuration_firewall_asa_order_step3_continue" qtlid="169537">Vahvistaaksesi tilauksesi, klikkaa alla olevaa ”Maksa”-nappia.</translation>
+   <translation id="server_configuration_firewall_asa_order_step3_explication" qtlid="167886">Uusi välilehti avataan ja sinut ohjataan OVH:n maksusivulle.</translation>
+   <translation id="server_configuration_firewall_asa_order_step3_explication2" qtlid="132291">Ota huomioon että maksun hyväksymisestä lisäpalvelun aktivointiin omaan hallintapaneeliisi menee keskimäärin noin kaksi (2) tuntia.</translation>
+   <translation id="server_configuration_firewall_asa_order_fail" qtlid="151737">Tapahtui virhe lisäpalvelun tilaamisen aikana</translation>
+   <translation id="server_configuration_firewall_asa_enable_title_button" qtlid="151750">Aktivoi Cisco ASA -palomuuri</translation>
+   <translation id="server_configuration_firewall_asa_enable_title" qtlid="151750">Aktivoi Cisco ASA -palomuuri</translation>
+   <translation id="server_configuration_firewall_asa_enable_step1_loading_error" qtlid="170031">Tapahtui virhe tietojen latauksen aikana</translation>
+   <translation id="server_configuration_firewall_asa_enable_step1_question" qtlid="183892">Haluatko varmasti ottaa Cisco ASAn käyttöön palvelimelle <span class="normal italic">{0}</span>?</translation>
+   <translation id="server_configuration_firewall_asa_enable_success" qtlid="151776">Pyyntö Cisco ASAn deaktivoimiseksi on rekisteröity ja suoritetaan muutamassa minuutissa</translation>
+   <translation id="server_configuration_firewall_asa_enable_fail" qtlid="151789">Tapahtui virhe poistettaessa käytöstä ASA-palomuuria</translation>
+   <translation id="server_configuration_firewall_asa_disable_title_button" qtlid="151802">Deaktivoi ASA-palomuuri</translation>
+   <translation id="server_configuration_firewall_asa_disable_title" qtlid="151802">Deaktivoi ASA-palomuuri</translation>
+   <translation id="server_configuration_firewall_asa_disable_step1_loading_error" qtlid="170031">Tapahtui virhe tietojen latauksen aikana</translation>
+   <translation id="server_configuration_firewall_asa_disable_step1_question" qtlid="183905">Haluatko varmasti poistaa Cisco ASAn käytöstä palvelimelta <span class="normal italic">{0}</span>?</translation>
+   <translation id="server_configuration_firewall_asa_disable_success" qtlid="151828">ASA-palomuurin deaktivointipyyntö on rekisteröity ja astuu voimaan minuuteissa.</translation>
+   <translation id="server_configuration_firewall_asa_disable_fail" qtlid="151841">Tapahtui virhe deaktivoitaessa ASA-palomuuria</translation>
+   <translation id="server_configuration_task_loading_error" qtlid="164415">Tapahtui virhe tehtäviä ladattaessa</translation>
+   <translation id="server_configuration_task_last_action" qtlid="52231">Viimeisin toimenpide</translation>
+   <translation id="server_configuration_task_function" qtlid="61872">Tehtävä</translation>
+   <translation id="server_configuration_task_comment" qtlid="233531">Tekniset tiedot</translation>
+   <translation id="server_configuration_task_status" qtlid="26443">Tila</translation>
+   <translation id="server_configuration_task_empty" qtlid="217093">Ei tehtävää</translation>
+   <translation id="server_configuration_task_CHANGE_PASSWORD_BACKUP_FTP" qtlid="184490">Varmuuskopiotilan salasanan vaihto</translation>
+   <translation id="server_configuration_task_CREATE_BACKUP_FTP" qtlid="184503">Varmuuskopiotilan luonti</translation>
+   <translation id="server_configuration_task_CREATE_PRIVATE_NETWORK" qtlid="164454">Yksityisverkon luonti</translation>
+   <translation id="server_configuration_task_DISABLE_FIREWALL" qtlid="164467">Palomuurin deaktivointi</translation>
+   <translation id="server_configuration_task_ENABLE_FIREWALL" qtlid="164480">Palomuurin aktivointi</translation>
+   <translation id="server_configuration_task_HARD_REBOOT" qtlid="26287">Uudelleenkäynnistys</translation>
+   <translation id="server_configuration_task_MOVE_FLOATING_IP" qtlid="164493">FailOver-IP-osoitteen siirto</translation>
+   <translation id="server_configuration_task_REINSTALL_SERVER" qtlid="90637">Palvelimen uudelleenasennus</translation>
+   <translation id="server_configuration_task_REMOVE_BACKUP_FTP" qtlid="184516">Varmuuskopiotilan poisto</translation>
+   <translation id="server_configuration_task_REQUEST_ACCESS_IPMI" qtlid="164519">IPMI-yhteyden aktivointi</translation>
+   <translation id="server_configuration_task_RESET_IPMI" qtlid="164532">IPMO-rajapinnan nollaus</translation>
+   <translation id="server_configuration_task_RESET_IPMI_SESSION" qtlid="164545">IPMI-istunnon nollaus</translation>
+   <translation id="server_configuration_task_TEST_IPM_IHTTP" qtlid="164558">HTTP-testi (IPMI)</translation>
+   <translation id="server_configuration_task_TEST_IPM_IPASSWORD" qtlid="164571">Salasanatesti (IPMI)</translation>
+   <translation id="server_configuration_task_TEST_IPM_IPING" qtlid="164584">Ping-testi (IPMI)</translation>
+   <translation id="server_configuration_task_APPLY_BACKUP_FTP_ACLS" qtlid="181110">Varmuuskopiotilan muokkaus</translation>
+   <translation id="server_configuration_task_MIGRATE_BACKUP_FTP" qtlid="181123">Varmuuskopiotilan migraatio</translation>
+   <translation id="server_configuration_task_VIRTUAL_MAC_ADD" qtlid="164597">Lisää vMAC</translation>
+   <translation id="server_configuration_task_ADD_VIRTUAL_MAC" qtlid="164597">Lisää vMAC</translation>
+   <translation id="server_configuration_task_VIRTUAL_MAC_DELETE" qtlid="164610">Poista vMAC</translation>
+   <translation id="server_configuration_task_REMOVE_VIRTUAL_MAC" qtlid="164610">Poista vMAC</translation>
+   <translation id="server_configuration_task_status_CANCELLED" qtlid="164623">Peruutettu</translation>
+   <translation id="server_configuration_task_status_CUSTOMER_ERROR" qtlid="164636">Asiakasvirhe</translation>
+   <translation id="server_configuration_task_status_DOING" qtlid="26383">Käynnissä</translation>
+   <translation id="server_configuration_task_status_DONE" qtlid="26395">Päättynyt</translation>
+   <translation id="server_configuration_task_status_INIT" qtlid="164649">Käynnistys</translation>
+   <translation id="server_configuration_task_status_OVH_ERROR" qtlid="45508">Virhe</translation>
+   <translation id="server_configuration_task_status_TODO" qtlid="164662">Käsiteltävä</translation>
+   <translation id="server_configuration_impi_loading_error" qtlid="164675">Tapahtui virhe ladattaessa tietoa.</translation>
+   <translation id="server_configuration_impi_reset_interfaces" qtlid="164688">Uudelleenkäynnistä IPMI</translation>
+   <translation id="server_configuration_impi_reset_sessions" qtlid="164701">Poista istunnot</translation>
+   <translation id="server_configuration_impi_off" qtlid="164714">IPMI-moduuli ei ole saatavilla tällä palvelimella.</translation>
+   <translation id="server_configuration_impi_off_kvm" qtlid="229177">Voit kuitenkin hyötyä tästä ominaisuudesta KVM-ominaisuudellamme.</translation>
+   <translation id="server_configuration_impi_order_kvm" qtlid="229190">Tilaa KVM</translation>
+   <translation id="server_configuration_impi_disabled" qtlid="225062">Palvelimen tila on <b>{0}</b>. Tämän takia IPMI-moduuli ei ole aktiivinen.</translation>
+   <translation id="server_configuration_impi_test" qtlid="164727">IPMI-testaus</translation>
+   <translation id="server_configuration_impi_http" qtlid="164740">IPMI-moduulin käytettävyystesti (HTTP)</translation>
+   <translation id="server_configuration_impi_password" qtlid="164753">IPMI-istunnon käynnistys (todennus)</translation>
+   <translation id="server_configuration_impi_ping" qtlid="164766">IPMI-moduulin käytettävyystesti (ping)</translation>
+   <translation id="server_configuration_impi_information" qtlid="191837">IPMI mahdollistaa sinun kirjautua palvelimelle seuraavilla menetelmillä:</translation>
+   <translation id="server_configuration_impi_information2" qtlid="191850">Käynnistämällä ”Remote KVM”-istunnon (KVM-yhteys etäpalvelimelle) IP-osoitteestasi {0}<ul><li>Java Web Start -sovelman kautta</li></ul></translation>
+   <translation id="server_configuration_impi_information3" qtlid="191863">Käynnistämällä ”Serial Over LAN”-istunnon (suojattu yhteys palvelimesi sarjaporttiin) IP-osoitteesi {0} kautta<ul><li>WWW-selaimesi kautta (https)</li></ul></translation>
+   <translation id="server_configuration_impi_start" qtlid="25951">Käynnistä</translation>
+   <translation id="server_configuration_impi_navigation" qtlid="257296">Selaimella (SoL)</translation>
+   <translation id="server_configuration_impi_navigation_error" qtlid="164818">Tapahtui virhe yhdistettäessä IPMI-moduuliin selaimen kautta</translation>
+   <translation id="server_configuration_impi_navigation_success" qtlid="164831">Yhteys IPMI-moduuliin selaimen kautta on valmis.</translation>
+   <translation id="server_configuration_impi_navigation_go" qtlid="164844">Pääsy konsoliin</translation>
+   <translation id="server_configuration_impi_java" qtlid="257309">Java-sovelmalla (KVM)</translation>
+   <translation id="server_configuration_impi_java_download" qtlid="164870">Lataa Java-sovelma</translation>
+   <translation id="server_configuration_impi_java_success" qtlid="164883">Yhteys IPMI-moduuliin Java-sovelman kautta on valmis.</translation>
+   <translation id="server_configuration_impi_java_error" qtlid="164896">Tapahtui virhe yhdistettäessä IPMI-moduuliin Java-sovelman kautta.</translation>
+   <translation id="server_configuration_impi_java_new" qtlid="164909">Uusi yhteys</translation>
+   <translation id="server_configuration_impi_ssh" qtlid="164922">SSH-yhteydellä</translation>
+   <translation id="server_configuration_impi_ssh_error" qtlid="164935">Tapahtui virhe yhdistettäessä IPMI-moduuliin SSH:lla</translation>
+   <translation id="server_configuration_impi_ssh_success" qtlid="164948">Yhteys IPMI-moduuliin SSH:lla on valmis: {0}.</translation>
+   <translation id="server_configuration_impi_restart_title" qtlid="164961">IPMI uudelleenkäynnistetään</translation>
+   <translation id="server_configuration_impi_restart_information" qtlid="164974">Haluatko varmasti uudelleenkäynnistää IPMIn?</translation>
+   <translation id="server_configuration_impi_restart_loading" qtlid="164987">IPMI uudelleenkäynnistetään…</translation>
+   <translation id="server_configuration_impi_restart_error" qtlid="165000">Tapahtui virhe pyydettäessä IPMI-moduulin uudelleenkäynnistystä. </translation>
+   <translation id="server_configuration_impi_restart_error_task" qtlid="165013">Tapahtui virhe IPMI-moduulin uudelleenkäynnistyksen aikana.</translation>
+   <translation id="server_configuration_impi_restart_success" qtlid="165026">IPMI-moduuli on uudelleenkäynnistetty.</translation>
+   <translation id="server_configuration_impi_sessions_title" qtlid="165039">IPMI-istuntojen poisto</translation>
+   <translation id="server_configuration_impi_sessions_information" qtlid="165052">Haluatko varmasti poistaa IPMI-moduuli-istunnot?</translation>
+   <translation id="server_configuration_impi_sessions_loading" qtlid="165065">Poistetaan IPMI-moduuli-istuntoja…</translation>
+   <translation id="server_configuration_impi_sessions_error" qtlid="165078">Tapahtui virhe pyydettäessä IPMI-moduuli-istuntojen poistoa.</translation>
+   <translation id="server_configuration_impi_restart_error_task_session" qtlid="165091">Tapahtui virhe poistettaessa IPMI-moduuli-istuntoja.</translation>
+   <translation id="server_configuration_impi_sessions_success" qtlid="165104">IPMI-moduuli-istunnot on poistettu.</translation>
+   <translation id="server_configuration_impi_disable" qtlid="165117">IPMI-moduulitoiminnot on poistettu käytöstä väliaikaisesti huoltotöiden takia. Toiminnot ovat käytettävissä jälleen huoltotyön päätyttyä.</translation>
+   <translation id="server_configuration_impi_SOL_help" qtlid="201158">SOL-istuntoa varten tarvitaan asiakkaan tekemä konfigurointi, klikkaa <a href="{0}">tästä</a> lukeaksesi lisätietoja.</translation>
+
+   <translation id="server_configuration_kvm_order_step1_title" qtlid="229203">Valitse kesto</translation>
+   <translation id="server_configuration_kvm_order_step2_title" qtlid="229216">KVM-tilaus palvelimelle <em>{0}</em></translation>
+   <translation id="server_configuration_kvm_order_step2_duration" qtlid="156875">Kesto:</translation>
+   <translation id="server_configuration_kvm_order_step2_details" qtlid="229229">Tilaustiedot:</translation>
+   <translation id="server_configuration_kvm_order_step2_price" qtlid="181084">Hinta:</translation>
+   <translation id="server_configuration_kvm_order_finish_success" qtlid="181266">Tilaus <a href='{0}' target='_blank'>{1}</a> on rekisteröity onnistuneesti.</translation>
+   <translation id="server_configuration_kvm_order_error" qtlid="229242">Tapahtui virhe tilattaessa KVM-järjestelmää.</translation>
+
+   <translation id="server_configuration_kvm_informations" qtlid="229255">KVM-yksityiskohdat</translation>
+   <translation id="server_configuration_kvm_informations_name" qtlid="100328">Nimi:</translation>
+   <translation id="server_configuration_kvm_informations_ip" qtlid="103870">IP-osoite:</translation>
+   <translation id="server_configuration_kvm_informations_expiration" qtlid="229268">Vanheneminen:</translation>
+   <translation id="server_configuration_kvm_new_window" qtlid="222176">Uusi ikkuna</translation>
+   <translation id="server_configuration_kvm_access" qtlid="229281">KVM-pääsy</translation>
+   <translation id="server_configuration_kvm_error" qtlid="229294">Tapahtui virhe ladattaessa KVM-tietoja</translation>
+
+   <translation id="server_configuration_installation_successfull" qtlid="172761">Palvelimen {0} asennus on valmis.</translation>
+   <translation id="server_configuration_installation_fail_task" qtlid="191252">Tapahtui virhe haettaessa palvelimen {0} asennuksen tilaa.</translation>
+   <translation id="server_configuration_installation_fail_state" qtlid="191265">Asennuksen tilaa ei voitu hakea. Siihen liittyvä tehtävä on edelleen kesken.</translation>
+   <translation id="server_configuration_installation_ovhinstall" qtlid="172787">Asennus OVH:n asennusmallista</translation>
+   <translation id="server_configuration_installation_gabarit" qtlid="172800">Asennus omasta asennusmallista</translation>
+   <translation id="server_configuration_reinstallation_button" qtlid="26503">Uudelleenasenna</translation>
+   <translation id="server_configuration_installation_button" qtlid="108709">Asenna</translation>
+   <translation id="server_configuration_installation_title" qtlid="172813">Palvelimen asennus</translation>
+   <translation id="server_configuration_installation_info" qtlid="183931">Olet asentamassa käyttöjärjestelmää palvelimelle <b>{0}</b>. Valitse haluamasi asennuksen tyyppi:</translation>
+   <translation id="server_configuration_installation_warning" qtlid="382537">Huom: kaikki palvelimen levyt formatoidaan asennuksen yhteydessä</translation>
+   <translation id="server_configuration_installation_32" qtlid="105046">32-bittinen</translation>
+   <translation id="server_configuration_installation_64" qtlid="105058">64-bittinen</translation>
+   <translation id="server_configuration_installation_deprecated" qtlid="172852">Vanhentunut</translation>
+   <translation id="server_configuration_installation_step1_language" qtlid="168874">Kieli:</translation>
+   <translation id="server_configuration_installation_step1_describe" qtlid="103702">Kuvaus:</translation>
+   <translation id="server_configuration_installation_BTRFS" qtlid="172943">Btrfs</translation>
+   <translation id="server_configuration_installation_EXT_3" qtlid="172956">Ext3</translation>
+   <translation id="server_configuration_installation_EXT_4" qtlid="172969">Ext4</translation>
+   <translation id="server_configuration_installation_NTFS" qtlid="172982">NTFS</translation>
+   <translation id="server_configuration_installation_XFS" qtlid="211620">XFS</translation>
+   <translation id="server_configuration_installation_ZFS" qtlid="256002">ZFS</translation>
+   <translation id="server_configuration_installation_REISERFS" qtlid="172995">ReiserFS</translation>
+   <translation id="server_configuration_installation_SWAP" qtlid="173008">Swap</translation>
+   <translation id="server_configuration_installation_UFS" qtlid="173021">UFS</translation>
+   <translation id="server_configuration_installation_LOGICAL" qtlid="173034">logical</translation>
+   <translation id="server_configuration_installation_LV" qtlid="173047">lv</translation>
+   <translation id="server_configuration_installation_PRIMARY" qtlid="173060">primary</translation>
+   <translation id="server_configuration_installation_error_save" qtlid="173073">Tapahtui virhe asennusmallin ({0}) tallennuksen aikana.</translation>
+   <translation id="server_configuration_installation_error_hardwareRaid" qtlid="286591">Tapahtui virhe RAID-konfiguraation tallennuksessa.</translation>
+   <translation id="server_configuration_installation_resume" qtlid="132720">Yhteenveto:</translation>
+   <translation id="server_configuration_installation_resume_hardwareRaid" qtlid="286604">RAID-laitteisto:</translation>
+
+
+
+   <translation id="server_configuration_installation_form_option" qtlid="185348">Asennusvaihtoehdot</translation>
+   <translation id="server_configuration_installation_form_gabaritNameSave" qtlid="173099">Asennusmallin nimi:</translation>
+   <translation id="server_configuration_installation_form_gabaritNameSave_pattern" qtlid="173112">Muoto on väärä.</translation>
+   <translation id="server_configuration_installation_form_changeLog" qtlid="103702">Kuvaus:</translation>
+   <translation id="server_configuration_installation_form_customHostname" qtlid="173125">Isäntänimi:</translation>
+   <translation id="server_configuration_installation_form_customHostname_pattern" qtlid="173112">Muoto on väärä.</translation>
+   <translation id="server_configuration_installation_form_postInstallationScriptLink" qtlid="173138">Asennusskripti (osoite):</translation>
+   <translation id="server_configuration_installation_form_postInstallationScriptLink_bad_port_script" qtlid="173151">Osoitteen porttinumero on virheellinen.</translation>
+   <translation id="server_configuration_installation_form_postInstallationScriptLink_bad_url_script" qtlid="173164">Osoitteen muoto on virheellinen.</translation>
+   <translation id="server_configuration_installation_form_postInstallationScriptLink_bad_protocol_script" qtlid="173177">Osoitteen protokolla on virheellinen.</translation>
+   <translation id="server_configuration_installation_form_postInstallationScriptLink_bad_extension_script" qtlid="173190">Skriptin laajennus on virheellinen.</translation>
+   <translation id="server_configuration_installation_form_postInstallationScriptLink_help" qtlid="173203">Tässä voit määritellä asennuksen jälkeisen skriptin osoitteen jonka avulla asennuksen täydennys on mahdollinen. Voit konfiguroida tarvittavat käyttöjärjestelmäasetukset ja asentaa sen avulla mahdolliset sovellukset. Huomaa että skriptin ajoaika on vähintään yksi tunti.</translation>
+   <translation id="server_configuration_installation_form_postInstallationScriptLinkReturn" qtlid="195373">Skriptin palauttama arvo:</translation>
+   <translation id="server_configuration_installation_form_postInstallationScriptLinkReturn_help" qtlid="173229">Täysin tai osittain odotettu tulos verrattuna skriptin ajamisen jälkeiseen oletuspalautteeseen. Voit jättää tämän kentän tyhjäksi mutta emme suosittele sitä.</translation>
+   <translation id="server_configuration_installation_form_installSqlServer" qtlid="173242">SQL-palvelinasennus</translation>
+   <translation id="server_configuration_installation_form_useDistribKernel" qtlid="173255">Alkuperäisen kernelin asennus</translation>
+   <translation id="server_configuration_installation_form_useSpla" qtlid="173268">SPLA-lisenssin käyttö</translation>
+   <translation id="server_configuration_installation_form_ssh" qtlid="179797">SSH-avaimet:</translation>
+   <translation id="server_configuration_installation_form_ssh_fail" qtlid="179810">SSH-avaimia ei voida näyttää</translation>
+   <translation id="server_configuration_installation_form_ssh_no" qtlid="179823">Ilman SSH-avainta</translation>
+   <translation id="server_configuration_installation_form_ssh_help" qtlid="200859">Lisää avain Tili-osiossa</translation>
+   <translation id="server_configuration_installation_form_nbdisk" qtlid="185361">Levyosioiden määrä:</translation>
+
+
+
+   <translation id="server_configuration_installation_ovh_title" qtlid="173281">Asennus OVH:n asennusmallista</translation>
+   <translation id="server_configuration_installation_ovh_fail_os" qtlid="173294">Tapahtui virhe haettaessa käyttöjärjestelmälistausta palvelimelle {0}</translation>
+   <translation id="server_configuration_installation_ovh_fail_partition_schemes" qtlid="173307">Tapahtui virhe haettaessa levyosioskeemaa palvelimelle {0}</translation>
+   <translation id="server_configuration_installation_ovh_beta" qtlid="173320">Beta</translation>
+   <translation id="server_configuration_installation_ovh_desktop_BASIC" qtlid="173333">Perus</translation>
+   <translation id="server_configuration_installation_ovh_desktop_CUSTOMER" qtlid="54833">Räätälöity</translation>
+   <translation id="server_configuration_installation_ovh_desktop_HOSTING" qtlid="31990">Webhotelli</translation>
+   <translation id="server_configuration_installation_ovh_desktop_OTHER" qtlid="19963">Muu</translation>
+   <translation id="server_configuration_installation_ovh_desktop_READY_TO_USE" qtlid="173346">Valmis käytettäväksi (graafinen käyttöliittymä)</translation>
+   <translation id="server_configuration_installation_ovh_desktop_VIRTUALISATION" qtlid="173359">Virtualisointi</translation>
+   <translation id="server_configuration_installation_ovh_step1_empty" qtlid="173372">Ei yhtään palvelimesi kanssa yhteensopivaa käyttöjärjestelmää tässä kategoriassa</translation>
+   <translation id="server_configuration_installation_ovh_step1_info" qtlid="401706">Valitse distribuutio, jonka haluat asentaa palvelimelle: <b class="text-nowrap">{0}</b></translation>
+   <translation id="server_configuration_installation_ovh_step1_info2" qtlid="173398">Voit mennä suoraan asennusosioon missä kustomointi on mahdollinen.</translation>
+   <translation id="server_configuration_installation_ovh_step1_desktop" qtlid="173411">Käyttöjärjestelmän tyyppi:</translation>
+   <translation id="server_configuration_installation_ovh_step1_desktop_licence_info_label" qtlid="406788">Eräät käyttöjärjestelmät vaativat lisenssiä.</translation>
+   <translation id="server_configuration_installation_ovh_step1_desktop_licence_info_text" qtlid="406801">Windows käyttöjärjestelmän asentaminen vaatii lisenssin (paitsi Windows HyperV). Linsenssin voi lisätä hallintapaneelin Lisenssit-osiossa.</translation>
+   <translation id="server_configuration_installation_ovh_step1_disk_group" qtlid="382550">Kohdelevyn klusteri:</translation>
+   <translation id="server_configuration_installation_ovh_step1_disk_group_warning" qtlid="382563">Huom: Jos kohde ei ole oletusvalintana oleva ({0}), ei laitteiston RAID:in konfiguraatioita voida enää personoida.</translation>
+   <translation id="server_configuration_installation_ovh_step1_custom" qtlid="173424">Osioiden konfiguraation kustomointi</translation>
+   <translation id="server_configuration_installation_ovh_step1_hardwareRaid" qtlid="286617">Personoi RAID-laitteiston konfiguraatio</translation>
+   <translation id="server_configuration_installation_ovh_step1_hardwareRaid_wrong_location" qtlid="313819">RAID-laitteiston konfiguraatio on saatavilla ainoastaan oman mantereesi palvelimilla. </translation>
+   <translation id="server_configuration_installation_ovh_step1_hardwareRaid_os_not_supported_short" qtlid="298597">Ei yhtään Hard RAID -laitteistoa</translation>
+   <translation id="server_configuration_installation_ovh_step1_hardwareRaid_os_not_supported" qtlid="363893">Tämä OS-asentaja ei voi konfiguroida RAID-laitettasi. Jos haluat konfiguroida RAID-laitteesi, asenna toinen OS. Tämän jälkeen konfiguraatio säilytetään. </translation>
+   <translation id="server_configuration_installation_ovh_step1_virtual_desktop_not_supported" qtlid="406814">Valitussa ({0})-käyttöjärjestelmässä ei ole virtuaalista työpöytää. Valitse toinen käyttöjärjestelmä tarvittaessa.  Mikäli muita käyttöjärjestelmiä ei näy, mene hallintapaneelin <a href='{1}' target='_blank'>Lisenssit</a>-osioon.</translation>
+   <translation id="server_configuration_installation_ovh_step1_warning_exist" qtlid="185374">Huomioi, että olet aloittanut distribuution <b>{0}</b> asennuksen konfiguroimisen. Distribuution muokkaus poistaa tämän konfiguraation.</translation>
+   <translation id="server_configuration_installation_ovh_step1_warning_exist_valid" qtlid="185387">Poista edellinen konfiguraatio</translation>
+   <translation id="server_configuration_installation_ovh_step1_warning_exist_cancel" qtlid="173463">Älä muuta distribuutiota</translation>
+   <translation id="server_configuration_installation_ovh_step2_available_color_help" qtlid="173476">Parantaaksesi osioidesi näkyvyyttä, voit muuttaa niiden väriä alla olevan säätimen avulla.</translation>
+   <translation id="server_configuration_installation_ovh_step2_available_order_help" qtlid="173489">Levyosioiden luomisen järjestys.</translation>
+   <translation id="server_configuration_installation_ovh_stephardraid_info" qtlid="286630">Valitse konfiguraatio RAID-laitteistolle, johon asennetaan aiemmin valitsemasi käyttöjärjestelmä.</translation>
+   <translation id="server_configuration_installation_ovh_stephardraid_error_empty_controller" qtlid="286643">Ei yhtään RAID-ohjainta. Et voi konfiguroida RAID-laitteistoa.</translation>
+   <translation id="server_configuration_installation_ovh_stephardraid_label_controllers" qtlid="286656">RAID-ohjain:</translation>
+   <translation id="server_configuration_installation_ovh_stephardraid_label_disks" qtlid="301890">Levyjen määrä:</translation>
+   <translation id="server_configuration_installation_ovh_stephardraid_label_arrays" qtlid="301903">Klusterien määrä:</translation>
+   <translation id="server_configuration_installation_ovh_stephardraid_label_raid" qtlid="286682">RAID:</translation>
+   <translation id="server_configuration_installation_ovh_stephardraid_label_space_total" qtlid="173671">Kokonaistila:</translation>
+   <translation id="server_configuration_installation_ovh_stephardraid_label_space_available" qtlid="286695">Saatavilla oleva tila:</translation>
+   <translation id="server_configuration_installation_ovh_stephardraid_loading_error" qtlid="286708">Virhe RAID-profiilin latauksessa. Ole hyvä ja yritä uudelleen.</translation>
+   <translation id="server_configuration_installation_ovh_step2_type" qtlid="2642">Tyyppi</translation>
+   <translation id="server_configuration_installation_ovh_step2_type_disk" qtlid="173502">Tähän asennukseen käytettävät levyt:</translation>
+   <translation id="server_configuration_installation_ovh_step2_type_disk_disable" qtlid="173515">Tähän asennukseen kohdistamattomat levyt:</translation>
+   <translation id="server_configuration_installation_ovh_step2_show_all_disk" qtlid="173528">Näytä muut levyt</translation>
+   <translation id="server_configuration_installation_ovh_step2_hide_all_disk" qtlid="173541">Piilota muut levyt</translation>
+   <translation id="server_configuration_installation_ovh_step2_file_system" qtlid="109938">Tiedostojärjestelmä</translation>
+   <translation id="server_configuration_installation_ovh_step2_mount_point" qtlid="110958">Liitäntäpiste</translation>
+   <translation id="server_configuration_installation_ovh_step2_volume_name" qtlid="173554">LVM-osion nimi</translation>
+   <translation id="server_configuration_installation_ovh_step2_raid" qtlid="160047">RAID</translation>
+   <translation id="server_configuration_installation_ovh_step2_raid_help" qtlid="173567">RAID (RAID 1:stä alkaen) mahdollistaa datan monistamisen useille kiintolevyille datan tallennuksen lujittamista varten. Huomioi että RAID 0 tarjoaa vain nopeushyödyn; toisen kovalevyn hajotessa kaikki data menetetään eikä sen käyttöä täten suositella.</translation>
+   <translation id="server_configuration_installation_ovh_step2_available_size" qtlid="173580">Osion koko</translation>
+   <translation id="server_configuration_installation_ovh_step2_available_size_help" qtlid="173593">Tämä koko edustaa datalle käytettävää kokonaistilaa.</translation>
+   <translation id="server_configuration_installation_ovh_step2_size" qtlid="173606">Käytetty tila</translation>
+   <translation id="server_configuration_installation_ovh_step2_size_help" qtlid="173619">Tila riippuu käytettävästä RAID-tasosta. Jos palvelimella on kaksi kiintolevyä, RAID 1 monistaa datan toiselle levylle ja vikatilanteessa jossa toinen levy hajoaa, dataa ei menetetä.</translation>
+   <translation id="server_configuration_installation_ovh_step2_add" qtlid="111294">Lisää levyosio</translation>
+   <translation id="server_configuration_installation_ovh_step2_del" qtlid="173632">Vahvista poisto</translation>
+   <translation id="server_configuration_installation_ovh_step2_del_cancel" qtlid="173645">Peruuta poisto</translation>
+   <translation id="server_configuration_installation_ovh_step2_raid0_add" qtlid="173658">vahvista tämä osio ilman varmuuskopiointia</translation>
+   <translation id="server_configuration_installation_ovh_step2_raid0_cancel" qtlid="37863">Peruuta</translation>
+   <translation id="server_configuration_installation_ovh_step2_total_size" qtlid="173671">Kokonaistila:</translation>
+   <translation id="server_configuration_installation_ovh_step2_remaining_size" qtlid="109141">Tilaa jäljellä:</translation>
+   <translation id="server_configuration_installation_ovh_step2_remaining_size_button" qtlid="109153">Tilaa jäljellä</translation>
+   <translation id="server_configuration_installation_ovh_step2_info" qtlid="183957">Levyosioskeemakonfiguraatio distribuutiolle <b>{0}</b></translation>
+   <translation id="server_configuration_installation_ovh_step2_scheme" qtlid="173697">Valitse osion skeema:</translation>
+   <translation id="server_configuration_installation_ovh_step2_raid_hard" qtlid="173710">(Hard RAID)</translation>
+   <translation id="server_configuration_installation_ovh_step2_info_partition_cachecade" qtlid="173723">CacheCade-konfiguraatiossa käyttöön annetun välimuistin tila voidaan osioida</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_empty_scheme" qtlid="173736">Yksikään osioskeema ei ole yhteensopiva palvelimen {0} distribuution {1} kanssa. Ole hyvä ja valitse toinen distribuutio.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_size_exceed" qtlid="173749">Ylität käytettävissä olevan tilan. Sinun täytyy vapauttaa tämän osion käytössä olevaa tilaa.</translation>
+   <translation id="server_configuration_installation_ovh_step2_warning_partition_raid0" qtlid="173762">Mikäli konfiguroit osion RAID 0 -tilassa, saat lisätilaa mutta vikatilanteessa jossa toinen levy hajoaa, <b>kaikki</b> data menetetään.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_raid0" qtlid="200872">Levyosion {0} on oltava RAID 1</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_raid_LV" qtlid="173788">Kaikilla LV-osioilla täytyy olla sama RAID-taso.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_order" qtlid="173801">Levyosio on jo määritelty tälle järjestysnumerolle</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_order_first" qtlid="173814">Ensimmäisen osion täytyy olla /boot tai /. Mikäli käytössä on kaksi osiota, /boot täytyy olla järjestyksessä ensimmäisenä.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_order_first_win" qtlid="173827">Ensimmäisen levyosion täytyy olla liitoskohtana ”c:”</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_volumename_empty" qtlid="173840">Osion nimi on pakollinen LV-osioille</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_volumename_wrong" qtlid="173853">Osion nimi ei voi sisältää erikoismerkkejä, ei voi ylittää 16 merkkiä ja täytyy olla eri kuin pvmove ja snapshot.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_volumename_use" qtlid="173866">Osion nimi on jo käytössä</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_empty" qtlid="173879">Liitoskohta on pakollinen</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_wrong" qtlid="288340">Tätä asennuspistettä ei voida käyttää, nimi on virheellinen. Erikoismerkit on kielletty (lukuunottamatta _ / ja -) ja merkkien enimmäismäärä on 255.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_wrong2" qtlid="173905">Liitoskohtaa /var/log ei voida käyttää tällä distribuutiolla. Käytä /home/log.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_primary" qtlid="250719">Liitoskohdan C: on oltava primäärityyppinen.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_windows" qtlid="173918">Tätä liitoskohtaa ei voida käyttää. Sen täytyy olla väliltä c—z ja päättyä ”:”-merkkiin.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_use" qtlid="173931">Liitoskohta on jo käytössä</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_file_system_swap" qtlid="173944">Swap-osio on jo olemassa</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_file_system_no_swap" qtlid="173957">Swap-osio on pakollinen</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_size_swap" qtlid="173970">Swap-osio ei voi ylittää kokoa {0}</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_size_max" qtlid="173983">Osio joka ei tue GPT:tä, ei voi ylittää {0} kokoa</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_size_min_windows" qtlid="173996">Minimikoko Windows-osiolle on {0}</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_size_min_reiserfs" qtlid="174009">Minimikoko ReiserFS-tiedostojärjestelmän levyosiolle on {0}</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_size_min_boot" qtlid="174022">Minimikoko osiolle /boot on {0}</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_size_min_add" qtlid="174035">Sinulla ei ole tarpeeksi tilaa lisätäksesi uutta osiota. Muokkaa tai poista osio vapauttaaksesi tilaa.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_size_min" qtlid="174048">Minimikoko osiolle on {0}</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_type_order" qtlid="174061">Ensisijaista osiota täytyy edeltää ensisijainen osio.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_type_order_lv" qtlid="174074">Levyosiotyyppi LV:n seurana täytyy käyttää LV-levyosioita.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_type_logical_lv" qtlid="174087">Sinulla ei voi olla logical- ja LV-osioita samaan aikaan</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_type_primary" qtlid="174100">Sinulla ei voi olla enempää kuin neljää primary-tyypin osiota. Muuta primary-osion tyyppiä toiseksi lisätäksesi lisäosioita.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_type_lv_swap" qtlid="174113">Osio ei ole LV-yhteensopiva</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_set" qtlid="174126">Tapahtui virhe osion {0} muokkauksen aikana ({1})</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_delete" qtlid="174139">Tapahtui virhe osion {0} poiston aikana ({1})</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_add" qtlid="174152">Tapahtui virhe osion {0} lisäyksen aikana ({1})</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_raid_diskUse" qtlid="185400">Sinulla ei ole tarpeeksi levyjä vapaana tämän levyosioskeeman toteuttamiseksi. Vähintään yhden levyosion RAID-taso on liian korkea.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_raid_diskUse_icon" qtlid="185413">RAID-taso tälle osiolle on liian korkea käytössä olevien levyjen määrään nähden.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_raid_0" qtlid="200885">Levyosion RAID 0 -konfiguraatio ei salli sen varmuuskopiointia</translation>
+   <translation id="server_configuration_installation_ovh_step3_info" qtlid="174165">Olet aloittamassa asennusta OVH:n asennusmallista</translation>
+   <translation id="server_configuration_installation_ovh_step3_error" qtlid="183970">Tapahtui virhe pyydettäessä distribuution <b>{0}</b> asennusta palvelimelle <b>{1}</b> kielellä <b>{2}</b> ({3})</translation>
+   <translation id="server_configuration_installation_ovh_step3_server" qtlid="174191">Palvelin:</translation>
+   <translation id="server_configuration_installation_ovh_step3_os" qtlid="174204">Distribuutio:</translation>
+   <translation id="server_configuration_installation_ovh_step3_disk_group" qtlid="382576">Levy:</translation>
+   <translation id="server_configuration_installation_ovh_step3_lang" qtlid="168874">Kieli:</translation>
+   <translation id="server_configuration_installation_ovh_step3_custom" qtlid="174217">Kustomoitu:</translation>
+   <translation id="server_configuration_installation_ovh_step3_partition_order" qtlid="434880">Osiojako: <b>{0}</b></translation>
+   <translation id="server_configuration_installation_ovh_step3_partition_size" qtlid="434893">Koko: <b>{0}</b></translation>
+
+   <translation id="server_configuration_installation_ovh_step3_error_integrity" qtlid="179836">Kustomoituun asennukseesi ({0}) liittyvän yhdenmukaisuustestin suorituksen aikana havaittiin virhe. Asennus ei ole mahdollinen.</translation>
+   <translation id="server_configuration_installation_ovh_step3_error_integrity_info" qtlid="179849">Ole hyvä ja korjaa virhe klikkaamalla edellinen-painiketta</translation>
+   <translation id="server_configuration_installation_ovh_step3_partiton_variable" qtlid="174243">Dynaaminen osiokoko:</translation>
+   <translation id="server_configuration_installation_ovh_step3_partiton_variable_help" qtlid="174256">Tämä osio käyttää lopun jäljellä olevan tilan asennusmallin mukauttamiseksi palvelimella jonka kokonaistila on eri.</translation>
+   <translation id="server_configuration_installation_ovh_step3_partiton_variable_info" qtlid="183983">Levyosio <b>{0}</b> mukauttaa kokonsa käyttääkseen muun palvelimen jäljellä olevan tilan.</translation>
+   <translation id="server_configuration_installation_ovh_step3_partiton_none" qtlid="8674">Ei mitään</translation>
+   <translation id="server_configuration_installation_ovh_step3_saveGabarit" qtlid="174282">Asennuksen tallennus</translation>
+   <translation id="server_configuration_installation_ovh_step3_saveGabarit_help" qtlid="174295">Asennusmallin tallennus mahdollistaa nopean palvelimen uudelleenasennuksen, joka on yhteensopiva tämän distribuution kanssa.</translation>
+   <translation id="server_configuration_installation_ovh_step3_remaining_error" qtlid="174308">Tapahtui virhe muokattaessa osion {0} dynaamista osiota ({1}).</translation>
+   <translation id="server_configuration_installation_gabarit_title" qtlid="174321">Asennus omasta asennusmallistasi</translation>
+   <translation id="server_configuration_installation_gabarit_step1_info" qtlid="401719">Valitse mallipohja, jonka haluat asentaa palvelimelle: <b class="text-nowrap">{0}</b></translation>
+   <translation id="server_configuration_installation_gabarit_step1_empty" qtlid="174347">Asennusmalleissasi ei ole palvelimelle yhteensopivaa distribuutiota</translation>
+   <translation id="server_configuration_installation_gabarit_step1_delete" qtlid="183996">Haluatko varmasti poistaa asennusmallin <b>{0}</b>?</translation>
+   <translation id="server_configuration_installation_gabarit_step1_delete_button_cancel" qtlid="173645">Peruuta poisto</translation>
+   <translation id="server_configuration_installation_gabarit_step1_delete_button_valid" qtlid="174373">Asennusmallin poisto</translation>
+   <translation id="server_configuration_installation_gabarit_step1_delete_fail" qtlid="184009">Asennusmallin <b>{0}</b> poisto ei onnistu ({1})</translation>
+   <translation id="server_configuration_installation_gabarit_step2_info" qtlid="174399">Olet aloittamassa asennuksen asennusmallista</translation>
+   <translation id="server_configuration_installation_gabarit_step2_server" qtlid="174191">Palvelin:</translation>
+   <translation id="server_configuration_installation_gabarit_step2_os" qtlid="174412">Asennusmalli:</translation>
+   <translation id="server_configuration_installation_gabarit_step2_lang" qtlid="168874">Kieli:</translation>
+   <translation id="server_configuration_installation_gabarit_step2_hardwareRaid" qtlid="286721">{0} ({1} levyä)</translation>
+   <translation id="server_configuration_installation_gabarit_step2_hardwareRaid_incompatible_disks" qtlid="288236">Tällä palvelimella on vain {0} levyä, vaikka asennusmalli vaatii vähintään {1} levyä.</translation>
+   <translation id="server_configuration_installation_gabarit_step2_hardwareRaid_incompatible_noHardwareRaid" qtlid="288249">Tätä asennusmallia ei voida asentaa palvelimelle ilman RAID-laitteistoa.</translation>
+   <translation id="server_configuration_installation_gabarit_step2_saveGabarit" qtlid="174425">Asennusmallin muokkaus ja tallennus</translation>
+   <translation id="server_configuration_installation_gabarit_step2_error" qtlid="184022">Tapahtui virhe pyydettäessä asennusmallin <b>{0}</b> asennusta palvelimelle <b>{1}</b> kielellä <b>{2}</b> ({3})</translation>
+   <translation id="server_configuration_installation_gabarit_step2_invalid" qtlid="301916">Tämä RAID-konfguraatio ei kelpaa.</translation>
+   <translation id="server_configuration_installation_progress_button" qtlid="174451">Asennuksen edistyminen</translation>
+   <translation id="server_configuration_installation_progress_title" qtlid="174451">Asennuksen edistyminen</translation>
+   <translation id="server_configuration_installation_progress_info" qtlid="174464">Asennuspyyntö on rekisteröity.</translation>
+   <translation id="server_configuration_installation_progress_button_modal" qtlid="174477">Pienennä</translation>
+   <translation id="server_configuration_installation_progress_end" qtlid="174490">Asennus on valmis.</translation>
+   <translation id="server_configuration_installation_progress_cancel_success" qtlid="174503">Asennuksen keskeytyspyyntö on rekisteröity.</translation>
+   <translation id="server_configuration_installation_progress_cancel_fail" qtlid="174516">Tapahtui virhe ({0}) asennuksen keskeytystä pyydettäessä</translation>
+   <translation id="server_configuration_installation_progress_cancel_button" qtlid="111282">Peruuta asennus</translation>
+   <translation id="server_configuration_installation_progress_cancel_retry" qtlid="26503">Uudelleenasenna</translation>
+   <translation id="server_configuration_installation_progress_cancel_info" qtlid="174529">Huomioi, että asennuksen peruutus voi aiheuttaa seuraamuksia. On mahdollista, että uudelleenasennus on kuitenkin suoritettava.</translation>
+   <translation id="server_configuration_installation_progress_cancel_button_confirm" qtlid="174542">Vahvista</translation>
+   <translation id="server_configuration_installation_progress_cancel_button_cancel" qtlid="37863">Peruuta</translation>
+   <translation id="server_configuration_installation_progress_installation_error" qtlid="174555">Asennuksen aikana tapahtui virhe. Asennus pysäytettiin. Sinun täytyy käynnistää palvelimen {0} asennus uudelleen: {1}</translation>
+   <translation id="server_configuration_installation_progress_installation_error2" qtlid="174568">Asennuksen aikana tapahtui virhe. Asennus pysäytettiin. Voi olla, että sinun täytyy uudelleenasentaa palvelimesi {0} mikäli järjestelmä on aloittanut datan poistamisen: {1}</translation>
+   <translation id="server_order_bandwidth_title" qtlid="180876">Kaistanleveyden tilaus</translation>
+   <translation id="server_order_bandwidth_vrack_title" qtlid="180876">Kaistanleveyden tilaus</translation>
+   <translation id="server_order_bandwidth_not_available" qtlid="180889">Yhtään kaistanleveyspakettia ei ole saatavilla palvelimelle {0}</translation>
+   <translation id="server_order_bandwidth_help" qtlid="216859">Premium-, Platinum- ja Ultimate-tuotteet takaavat kaistanleveyden tietyllä suuremmalla tai pienemmällä maantieteellisellä alueella lähempänä loppuasiakkaita.</translation>
+   <translation id="select_bandwidth_type_label" qtlid="180902">Tuotteen valinta</translation>
+   <translation id="select_bandwidth_vrack_type_label" qtlid="180902">Tuotteen valinta</translation>
+   <translation id="select_traffic_type_label" qtlid="180902">Tuotteen valinta</translation>
+   <translation id="toggle_button_label_ultimate" qtlid="186988">Ultimate</translation>
+   <translation id="toggle_button_label_premium" qtlid="180941">Premium</translation>
+   <translation id="toggle_button_label_platinum" qtlid="187001">Platinum</translation>
+   <translation id="toggle_button_label_info_ultimate" qtlid="208938">Nopeus taattu koko verkkoalueella</translation>
+   <translation id="toggle_button_label_info_premium" qtlid="208951">Nopeus taattu rajallisella verkkoalueella</translation>
+   <translation id="toggle_button_label_info_platinum" qtlid="208964">Nopeus taattu laajalla verkkoalueella</translation>
+   <translation id="select_bandwidth_value_label_other" qtlid="180954">Saatavilla olevat kapasiteetit</translation>
+   <translation id="select_bandwidth_value_label_1" qtlid="180967">Saatavilla oleva kapasiteetti</translation>
+   <translation id="select_bandwidth_value_label_choose" qtlid="180980">Kapasiteetti...</translation>
+   <translation id="unit_gbps" qtlid="180993">{0} Gb/s</translation>
+
+   <translation id="server_order_bandwidth_choose_duration" qtlid="181006">Valitse kesto</translation>
+   <translation id="server_order_bandwidth_load" qtlid="222059">Palveluita ladataan…</translation>
+   <translation id="server_order_bandwidth_load_bc" qtlid="181032">Sopimusehtojen luonti käynnissä…</translation>
+   <translation id="server_order_bandwidth_error" qtlid="181058">Tapahtui virhe luotaessa tilausta {0}</translation>
+   <translation id="server_order_bandwidth_resume" qtlid="183307">Klikkaa kohtaa "Maksa" tilauksen avaamiseksi.</translation>
+   <translation id="server_order_bandwidth_resume_info" qtlid="454319">Selaimesi on sallittava ponnahdusikkunat.</translation>
+
+   <translation id="server_order_bandwidth_vrack_choose_duration" qtlid="181006">Valitse kesto</translation>
+   <translation id="server_order_bandwidth_vrack_load" qtlid="222059">Palveluita ladataan…</translation>
+   <translation id="server_order_bandwidth_vrack_load_bc" qtlid="401497">Generoidaan tilauslomaketta...</translation>
+   <translation id="server_order_bandwidth_vrack_loading_error" qtlid="401510">Tapahtui virhe tilauksen tietoja muutettaessa</translation>
+   <translation id="server_order_bandwidth_vrack_success" qtlid="401523">Viimeistelläksesi vRackin kaistanleveyden muutoksen ole hyvä ja suorita <a href='{0}' target='_blank'>tilauksen</a> maksu.</translation>
+   <translation id="server_order_bandwidth_vrack_error" qtlid="401536">Tapahtui virhe tilauksen luomisen aikana</translation>
+
+   <translation id="server_order_traffic_title" qtlid="407845">Muuta kaistan kiintiötä</translation>
+   <translation id="server_order_traffic_choose_duration" qtlid="181006">Valitse kesto</translation>
+   <translation id="server_order_traffic_load" qtlid="222059">Palveluita ladataan…</translation>
+   <translation id="server_order_traffic_load_bc" qtlid="181032">Sopimusehtojen luonti käynnissä…</translation>
+   <translation id="server_order_traffic_loading_error" qtlid="401510">Tapahtui virhe tilauksen tietoja muutettaessa</translation>
+   <translation id="server_order_traffic_success" qtlid="407858">Palvelimen kaistan kiintiön lisäämiseksi maksa <a href='{0}' target='_blank'>tilaus</a>.</translation>
+   <translation id="server_order_traffic_error" qtlid="401536">Tapahtui virhe tilauksen luomisen aikana</translation>
+   <translation id="server_order_traffic_orderable_label_100Mbps-Unlimited" qtlid="407871">Rajoittamaton liikenne, lähtevä kaista 100 Mb/s</translation>
+   <translation id="server_order_traffic_orderable_label_250Mbps-Unlimited" qtlid="407884">Rajoittamaton liikenne, lähtevä kaista 250 Mb/s</translation>
+   <translation id="server_order_traffic_orderable_label_500Mbps-Unlimited" qtlid="407897">Rajoittamaton liikenne, lähtevä kaista 500 Mb/s</translation>
+
+   <translation id="server_cancel_traffic_title" qtlid="407910">Irtisano kaistan lisäkiintiö</translation>
+   <translation id="server_cancel_traffic_title_question" qtlid="407923">Oletko varma, että haluat irtisanoa kaistan lisäkiintiön?</translation>
+   <translation id="server_cancel_traffic_title_question_information" qtlid="367307">Vahvistussähköposti lähetetään osoitteeseen {0}. Voit myös katsoa sähköpostin osiosta "Oma tili".</translation>
+   <translation id="server_cancel_traffic_cancel_success" qtlid="367320">Sinulle on lähetetty sähköpostiviesti.</translation>
+   <translation id="server_cancel_traffic_cancel_error" qtlid="285023">Vaihtoehdon perumisessa tapahtui virhe.</translation>
+
+   <translation id="day_1" qtlid="28807">1 päivä</translation>
+   <translation id="day_other" qtlid="158578">{} päivää</translation>
+   <translation id="month_1" qtlid="70241">1 kuukausi</translation>
+   <translation id="month_other" qtlid="158591">{} kuukautta</translation>
+   <translation id="year_1" qtlid="70277">1 vuosi</translation>
+   <translation id="year_other" qtlid="158604">{} vuotta</translation>
+   <translation id="upto" qtlid="158617">{0} asti</translation>
+   <translation id="uptofirstdaynextmonth" qtlid="158630">Seuraavan kuun 1. päivään asti</translation>
+   <translation id="engage" qtlid="158643">Sitoutuminen {0}</translation>
+   <translation id="price_ht_label" qtlid="166183">{0} ALV 0 %</translation>
+   <translation id="price_ttc_label" qtlid="166196">{0}&#160;sis. ALV</translation>
+   <translation id="price_free" qtlid="130495">Ilmainen</translation>
+   <translation id="price" qtlid="181084">Hinta:</translation>
+   <translation id="contract_next" qtlid="17743">Seuraava</translation>
+   <translation id="contract_previous" qtlid="17431">Edellinen</translation>
+   <translation id="download_contract" qtlid="180369">Avaa sopimusehdot ”{0}” PDF-muodossa</translation>
+   <translation id="contract_help" qtlid="180382">Sinun täytyy katsoa sopimusehdot ennen vahvistusta.</translation>
+   <translation id="contracts_list_title" qtlid="180395">{0} luettavaa sopimusehtoa.</translation>
+   <translation id="contract_list_title" qtlid="180408">Yksi luettava sopimusehto.</translation>
+   <translation id="contracts_agree" qtlid="180421">Hyväksyn sopimusehdot</translation>
+   <translation id="contract_agree" qtlid="180434">Hyväksyn sopimusehdot</translation>
+
+   <translation id="server_cancel_bandwidth_title" qtlid="286734">Peru kaistan leveyden valinta</translation>
+   <translation id="server_cancel_bandwidth_vrack_title" qtlid="286734">Peru kaistan leveyden valinta</translation>
+   <translation id="server_cancel_bandwidth_information" qtlid="367307">Vahvistussähköposti lähetetään osoitteeseen {0}. Voit myös katsoa sähköpostin osiosta "Oma tili".</translation>
+   <translation id="server_cancel_bandwidth_vrack_information" qtlid="367307">Vahvistussähköposti lähetetään osoitteeseen {0}. Voit myös katsoa sähköpostin osiosta "Oma tili".</translation>
+   <translation id="server_cancel_bandwidth_question" qtlid="287371">Haluatko varmasti poistaa kaistanleveys -vaihtoehdon?</translation>
+   <translation id="server_cancel_bandwidth_vrack_question" qtlid="287371">Haluatko varmasti poistaa kaistanleveys -vaihtoehdon?</translation>
+   <translation id="server_cancel_bandwidth_button" qtlid="48646">Irtisano</translation>
+   <translation id="server_cancel_bandwidth_cancel_success" qtlid="367320">Sinulle on lähetetty sähköpostiviesti.</translation>
+   <translation id="server_cancel_bandwidth_vrack_cancel_success" qtlid="367320">Sinulle on lähetetty sähköpostiviesti.</translation>
+   <translation id="server_cancel_bandwidth_cancel_error" qtlid="285023">Vaihtoehdon perumisessa tapahtui virhe.</translation>
+   <translation id="server_cancel_bandwidth_cancel_vrack_error" qtlid="285023">Vaihtoehdon perumisessa tapahtui virhe.</translation>
+   <translation id="server_cancel_bandwidth_confirmation_error" qtlid="367333">Tapahtui virhe tietojesi haussa.</translation>
+
+   <translation id="server_tab_usb_storage" qtlid="181136">USB-tallennustila</translation>
+   <translation id="server_tab_USB_STORAGE_summary" qtlid="181149">Palvelimella on {0} USB-paikka(a). Käytettävissä on {1} USB-portti(a).</translation>
+   <translation id="server_tab_USB_STORAGE_loading_error" qtlid="135294">Tapahtui virhe tietoja ladattaessa.</translation>
+   <translation id="server_tab_USB_STORAGE_available_slot" qtlid="181162">Vapaa portti</translation>
+   <translation id="server_tab_USB_STORAGE_add" qtlid="181175">Lisää tallennusväline</translation>
+   <translation id="server_tab_USB_STORAGE_add_select" qtlid="181188">Valitse datasäilön kapasiteetti</translation>
+   <translation id="server_tab_USB_STORAGE_add_select_warning" qtlid="212530">Huomio: asennus on lopullinen. Asennuksen peruutus ei ole mahdollista.</translation>
+
+
+   <translation id="server_tab_USB_STORAGE_add_capacity" qtlid="181201">{0} GB</translation>
+   <translation id="server_tab_USB_STORAGE_order_select_duration" qtlid="181214">Valitse kesto:</translation>
+   <translation id="server_tab_USB_STORAGE_order_loading_error" qtlid="135294">Tapahtui virhe tietoja ladattaessa.</translation>
+   <translation id="server_tab_USB_STORAGE_order_finish_error" qtlid="181227">Tapahtui virhe luotaessa tilaustasi.</translation>
+   <translation id="server_tab_USB_STORAGE_order_resume" qtlid="177496">Tilauksen yhteenveto</translation>
+   <translation id="server_tab_USB_STORAGE_order_price_HT" qtlid="146177">Kokonaishinta (ALV 0 %):</translation>
+   <translation id="server_tab_USB_STORAGE_order_price_TTC" qtlid="146190">Kokonaishinta (sis. ALV):</translation>
+   <translation id="server_tab_USB_STORAGE_order_final_txt" qtlid="181240">Klikkaa ”Vahvista”-painiketta vahvistaaksesi tilauksesi.</translation>
+   <translation id="server_tab_USB_STORAGE_order_final_txt2" qtlid="181253">Selaimeesi avautuu uusi välilehti ja ohjaudut automaattisesti maksusivulle.</translation>
+   <translation id="server_tab_USB_STORAGE_order_finish_success" qtlid="184048">Tilaus <a href='{0}' target='_blank'>{1}</a> on rekisteröity.</translation>
+
+   <translation id="server_test_ping" qtlid="204259">PING-testi</translation>
+   <translation id="server_services_state" qtlid="204272">Palveluiden tila</translation>
+   <translation id="server_status" qtlid="204285">Tilat</translation>
+   <translation id="server_services" qtlid="34632">Palvelut</translation>
+   <translation id="server_informations_general" qtlid="27115">Yleiset tiedot</translation>
+
+   <translation id="server_bandwidth" qtlid="38565">Kaistanleveys</translation>
+   <translation id="server_bandwidth_connection" qtlid="32446">Verkkoyhteys</translation>
+   <translation id="server_bandwidth_type" qtlid="2642">Tyyppi</translation>
+   <translation id="server_bandwidth_type_included" qtlid="204298">Sisältyy</translation>
+   <translation id="server_bandwidth_type_platinum" qtlid="204311">Platinum</translation>
+   <translation id="server_bandwidth_type_premium" qtlid="180941">Premium</translation>
+   <translation id="server_bandwidth_type_standard" qtlid="48998">Standard</translation>
+   <translation id="server_bandwidth_type_ultimate" qtlid="186988">Ultimate</translation>
+   <translation id="server_bandwidth_ovh_to_ovh" qtlid="33874">Kaistanleveys OVH/OVH</translation>
+   <translation id="server_bandwidth_ovh_to_internet" qtlid="373194">Ulosmenevä kaistanleveys</translation>
+   <translation id="server_bandwidth_internet_to_ovh" qtlid="373207">Sisääntuleva kaistanleveys</translation>
+   <translation id="server_bandwidth_order_button" qtlid="43558">Tilaa</translation>
+   <translation id="server_bandwidth_cancel_button" qtlid="286786">Peruuta</translation>
+   <translation id="server_bandwidth_option_released" qtlid="286799">(ei uusittu)</translation>
+   <translation id="server_bandwidth_loading_error" qtlid="204324">Tapahtui virhe tietoja ladattaessa.</translation>
+
+   <translation id="server_bandwidth_vrack" qtlid="401549">BP vRack (yksityinen)</translation>
+   <translation id="server_bandwidth_vrack_tooltip" qtlid="401562">Lähetysnopeus Vrackin sisällä</translation>
+   <translation id="server_bandwidth_vrack_order_button" qtlid="43558">Tilaa</translation>
+   <translation id="server_bandwidth_vrack_change_button" qtlid="37875">Muokkaa</translation>
+   <translation id="server_bandwidth_vrack_cancel_button" qtlid="286786">Peruuta</translation>
+   <translation id="server_bandwidth_vrack_option_released" qtlid="286799">(ei uusittu)</translation>
+
+   <translation id="server_traffic" qtlid="407936">Lähtevän kaistan kiintiö</translation>
+   <translation id="server_traffic_text" qtlid="407949">Enintään {0}</translation>
+   <translation id="server_traffic_unlimited_text" qtlid="407962">Rajoittamaton</translation>
+   <translation id="server_traffic_order_button" qtlid="127360">Kasvata</translation>
+   <translation id="server_traffic_change_button" qtlid="37875">Muokkaa</translation>
+   <translation id="server_traffic_cancel_button" qtlid="286786">Peruuta</translation>
+   <translation id="server_traffic_loading_error" qtlid="204324">Tapahtui virhe tietoja ladattaessa.</translation>
+   <translation id="server_traffic_option_released" qtlid="286799">(ei uusittu)</translation>
+
+   <translation id="server_consumption_label" qtlid="25639">Käyttö</translation>
+   <translation id="server_consumption_explanation" qtlid="407975">Palvelimen kaistan käyttö on rajoitettu. Kun raja ylittyy, palvelimen lähtevä kaista hidastuu. Ongelman korjaamiseksi kasvata lähtevän kaistan kiintiötä.</translation>
+
+   <translation id="server_consumption_summary_days" qtlid="407988">{0} ja {1} päivää jäljellä</translation>
+   <translation id="server_consumption_summary_hours" qtlid="408001">{0} ja {1} tuntia jäljellä</translation>
+   <translation id="server_consumption_throttled" qtlid="408014">Palvelu hidastunut</translation>
+   <translation id="server_consumption_current_period_label" qtlid="408027">Tämän hetkinen tilanne (käytettävissä yhteensä {0})</translation>
+   <translation id="server_consumption_current_period_remaining" qtlid="408040">{0} jäljellä</translation>
+   <translation id="server_consumption_warning_nearquota" qtlid="408053">Olet lähestymässä kaistan täyttä kiintiötä {0}.</translation>
+   <translation id="server_consumption_warning_nearquota_increase" qtlid="408066">Kasvata kiintiötä</translation>
+   <translation id="server_consumption_warning_overquota" qtlid="408079">Kaistan kiintiö on ylittynyt. Siirtonopeus on nyt enintään {0}.</translation>
+   <translation id="server_consumption_warning_overquota_increase" qtlid="408092">Käyttääksesi palvelun täyttä tehoa, voit <a href="{0}">kasvattaa kiintiötä</a></translation>
+   <translation id="server_tab_MONITORING" qtlid="31666">Monitorointi</translation>
+   <translation id="server_tab_MONITORING_title" qtlid="243741">Palvelujen tila</translation>
+   <translation id="server_tab_MONITORING_notifications_management" qtlid="243754">Ilmoitusten hallinta</translation>
+   <translation id="server_tab_MONITORING_back" qtlid="454332">Paluu palvelimen tilaan</translation>
+   <translation id="server_tab_MONITORING_services" qtlid="243767">Monitoroitavat palvelut</translation>
+   <translation id="server_tab_MONITORING_state_true" qtlid="103269">aktivoitu</translation>
+   <translation id="server_tab_MONITORING_state_false" qtlid="103281">deaktivoitu</translation>
+   <translation id="server_tab_MONITORING_table_header_ip" qtlid="25615">IP</translation>
+   <translation id="server_tab_MONITORING_table_header_protocol" qtlid="19711">Protokolla</translation>
+   <translation id="server_tab_MONITORING_table_header_port" qtlid="9034">Portti</translation>
+   <translation id="server_tab_MONITORING_table_header_interval" qtlid="243780">Aikaväli (sekunneissa)</translation>
+   <translation id="server_tab_MONITORING_table_header_url" qtlid="31402">URL</translation>
+   <translation id="server_tab_MONITORING_table_header_status" qtlid="8230">Tila</translation>
+   <translation id="server_tab_MONITORING_table_header_notifications" qtlid="68981">Vastaanottajat</translation>
+   <translation id="server_tab_MONITORING_table_header_refresh" qtlid="218081">Virkistä taulukko</translation>
+   <translation id="server_tab_MONITORING_table_empty" qtlid="243793">Ei monitoroituja palveluita</translation>
+   <translation id="server_tab_MONITORING_table_action_edit" qtlid="243806">Muokkaa monitorointia</translation>
+   <translation id="server_tab_MONITORING_table_action_delete" qtlid="243819">Monitoroinnin poisto</translation>
+   <translation id="server_tab_MONITORING_error" qtlid="243832">Tapahtui virhe tietoja haettaessa:</translation>
+   <translation id="server_tab_MONITORING_challenge_text" qtlid="243845">Palvelimen vastaus</translation>
+   <translation id="server_tab_MONITORING_enabled" qtlid="30250">Aktivoitu</translation>
+   <translation id="server_tab_MONITORING_click_enable" qtlid="243858">Klikkaa monitoroinnin aktivoimiseksi</translation>
+   <translation id="server_tab_MONITORING_click_disable" qtlid="243871">Klikkaa monitoroinnin sulkemiseksi</translation>
+
+   <translation id="server_tab_MONITORING_add_step1_title" qtlid="243884">Palvelimen tiedot</translation>
+   <translation id="server_tab_MONITORING_add_url" qtlid="243897">Testattava URL:</translation>
+   <translation id="server_tab_MONITORING_add_ip" qtlid="243910">Monitoroitava IP:</translation>
+   <translation id="server_tab_MONITORING_add_port" qtlid="243923">Monitoroitava portti:</translation>
+   <translation id="server_tab_MONITORING_add_protocol" qtlid="243936">Käytettävä protokolla:</translation>
+   <translation id="server_tab_MONITORING_add_interval" qtlid="243949">Testin aikaväli (sekunneissa):</translation>
+   <translation id="server_tab_MONITORING_add_challenge_text" qtlid="243962">Palvelimen vastaus:</translation>
+   <translation id="server_tab_MONITORING_add_challenge_text_help" qtlid="243975">Syötä tähän palvelimelta odotettu viesti testiä suoritettaessa</translation>
+   <translation id="server_tab_MONITORING_add_url_invalid" qtlid="243988">Syötä oikea URL-osoite</translation>
+   <translation id="server_tab_MONITORING_add_ip_invalid" qtlid="244001">Syötä oikea IP-osoite</translation>
+   <translation id="server_tab_MONITORING_add_port_invalid" qtlid="244014">Syötä oikea portti</translation>
+   <translation id="server_tab_MONITORING_add_port_text_help" qtlid="244027">Portin on oltava 1 ja 65535 väliltä</translation>
+   <translation id="server_tab_MONITORING_add_challengeText_invalid" qtlid="244040">Ainoastaan seuraavat merkit ovat sallittuja: <ul><li>Kirjaimet</li><li>Luvut</li> <li>".", "-", "=", "(", ")", "", "/", ";"</li></ul></translation>
+   <translation id="server_tab_MONITORING_add_step2_title" qtlid="244053">Monitorointitiedot</translation>
+   <translation id="server_tab_MONITORING_add_step3_title" qtlid="244066">Monitorointitietojen yhteenveto</translation>
+   <translation id="server_tab_MONITORING_add_success" qtlid="244079">Monitorointi lisättiin onnistuneesti.</translation>
+   <translation id="server_tab_MONITORING_add_error" qtlid="244092">Tapahtui virhe monitorointia luodessa:</translation>
+
+   <translation id="server_tab_MONITORING_delete_title" qtlid="243819">Monitoroinnin poisto</translation>
+   <translation id="server_tab_MONITORING_delete_question" qtlid="244105">Oletko varma, että haluat poistaa IP-osoitteen {0} monitoroinnin?</translation>
+   <translation id="server_tab_MONITORING_delete_success" qtlid="244118">Monitorointi poistettiin onnistuneesti.</translation>
+   <translation id="server_tab_MONITORING_delete_error" qtlid="244131">Tapahtui virhe monitorointia poistettaessa:</translation>
+
+   <translation id="server_tab_MONITORING_add" qtlid="244144">Palvelun monitorointi</translation>
+
+   <translation id="server_tab_MONITORING_update_success" qtlid="244157">Monitorointia muokattiin onnistuneesti.</translation>
+   <translation id="server_tab_MONITORING_update_error" qtlid="244170">Tapahtui virhe monitorointia muokattaessa:</translation>
+
+   <translation id="server_tab_MONITORING_notifications_sms" qtlid="244183">Tekstiviesti-ilmoitukset</translation>
+   <translation id="server_tab_MONITORING_notification_add_recipient" qtlid="244196">Lisää vastaanottaja</translation>
+   <translation id="server_tab_MONITORING_notification_remove_recipient" qtlid="2414">Poista</translation>
+
+   <translation id="server_tab_MONITORING_notifications_email" qtlid="244209">Sähköposti-ilmoitukset</translation>
+   <translation id="server_tab_MONITORING_table_notifications_empty" qtlid="244222">Ei ilmoituksia</translation>
+   <translation id="server_tab_MONITORING_table_notifications_email_header_email" qtlid="33598">Sähköposti</translation>
+   <translation id="server_tab_MONITORING_table_notifications_email_header_lang" qtlid="30598">Kieli</translation>
+   <translation id="server_tab_MONITORING_table_notifications_email_header_status" qtlid="8230">Tila</translation>
+   <translation id="server_tab_MONITORING_table_notifications_action_edit" qtlid="244235">Muokkaa ilmoituksia</translation>
+   <translation id="server_tab_MONITORING_table_notifications_action_delete" qtlid="244248">Poista ilmoitukset</translation>
+   <translation id="server_tab_MONITORING_notifications_email_add_step1_title" qtlid="244261">Syötä tiedot sähköposti-ilmoitusten lähettämiseksi.</translation>
+   <translation id="server_tab_MONITORING_notifications_email_add_email" qtlid="89028">Sähköposti:</translation>
+   <translation id="server_tab_MONITORING_notifications_email_add_email_invalid" qtlid="244274">Syötä oikea sähköpostiosoite</translation>
+   <translation id="server_tab_MONITORING_notifications_email_add_lang" qtlid="168874">Kieli:</translation>
+   <translation id="server_tab_MONITORING_notifications_email_add_success" qtlid="244287">Ilmoitukset lisättiin onnistuneesti.</translation>
+   <translation id="server_tab_MONITORING_notifications_email_add_error" qtlid="244300">Tapahtui virhe ilmoituksia luotaessa:</translation>
+   <translation id="server_tab_MONITORING_notifications_email_update_activate" qtlid="244313">Ilmoitusten aktivointi</translation>
+
+   <translation id="server_tab_MONITORING_notifications_email_add_step2_title" qtlid="244326">Sähköposti-ilmoitusten tiedot ja yhteenveto</translation>
+
+   <translation id="server_tab_MONITORING_notifications_delete_title" qtlid="244248">Poista ilmoitukset</translation>
+   <translation id="server_tab_MONITORING_notifications_delete_question" qtlid="244339">Oletko varma, että haluat poistaa {0}-tyyppisen ilmoituksen IP-osoitteelta {1}?</translation>
+   <translation id="server_tab_MONITORING_notifications_delete_success" qtlid="244352">Ilmoitus poistettiin onnistuneesti.</translation>
+   <translation id="server_tab_MONITORING_notifications_delete_error" qtlid="244365">Tapahtui virhe ilmoitusta poistettaessa:</translation>
+
+   <translation id="server_tab_MONITORING_notifications_update_success" qtlid="244378">Ilmoitusta muokattiin onnistuneesti.</translation>
+   <translation id="server_tab_MONITORING_notifications_update_error" qtlid="244391">Tapahtui virhe ilmoitusta muokattaessa:</translation>
+
+   <translation id="server_tab_MONITORING_table_notifications_sms_header_phone" qtlid="244404">Puhelinnumero</translation>
+   <translation id="server_tab_MONITORING_table_notifications_sms_header_account" qtlid="31906">SMS-tili</translation>
+   <translation id="server_tab_MONITORING_table_notifications_sms_header_lang" qtlid="30598">Kieli</translation>
+   <translation id="server_tab_MONITORING_table_notifications_sms_header_from" qtlid="244417">Lähetysten aikaikkuna:</translation>
+   <translation id="server_tab_MONITORING_table_notifications_sms_header_to" qtlid="169498">ja</translation>
+   <translation id="server_tab_MONITORING_table_notifications_sms_header_status" qtlid="8230">Tila</translation>
+   <translation id="server_tab_MONITORING_notifications_sms_account_disable" qtlid="244430">Käytössä ei ole aktiivista SMS-tiliä.</translation>
+
+   <translation id="server_tab_MONITORING_notifications_sms_add_sms" qtlid="244443">SMS-tili:</translation>
+   <translation id="server_tab_MONITORING_notifications_sms_add_phone" qtlid="244456">Puhelinnumero:</translation>
+   <translation id="server_tab_MONITORING_notifications_sms_add_from" qtlid="244469">Ilmoitus:</translation>
+   <translation id="server_tab_MONITORING_notifications_sms_add_to" qtlid="8890">—</translation>
+   <translation id="server_tab_MONITORING_notifications_sms_add_hours" qtlid="190407">t</translation>
+   <translation id="server_tab_MONITORING_notifications_sms_add_hour_invalid" qtlid="244482">Syötä ajankohta 0 ja 24 väliltä</translation>
+   <translation id="server_tab_MONITORING_notifications_sms_add_period_invalid" qtlid="244495">Alkamisajan on oltava pienempi kuin loppumisajan</translation>
+   <translation id="server_tab_MONITORING_notifications_sms_add_phone_invalid" qtlid="244508">Syötä puhelinnumero muodossa +358xxxxxxxxx</translation>
+   <translation id="server_tab_MONITORING_notifications_sms_add_success" qtlid="244521">SMS-ilmoitus lisättiin onnistuneesti.</translation>
+   <translation id="server_tab_MONITORING_notifications_sms_add_step2_title" qtlid="244534">SMS-ilmoitusten tiedot ja yhteenveto</translation>
+   <translation id="server_tab_MONITORING_service" qtlid="31042">Palvelu</translation>
+
+   <translation id="server_tab_MONITORING_notification_no_recipient_SMS" qtlid="244547">SMS-ilmoitusta ei lähetetä kenellekään</translation>
+   <translation id="server_tab_MONITORING_notification_no_recipient_EMAIL" qtlid="244560">Sähköposti-ilmoitusta ei lähetetä kenellekään</translation>
+   <translation id="server_tab_MONITORING_show_sms_no_valid_account_help" qtlid="244573">SMS-ilmoituksia varten sinulla on oltava SMS-tili, jossa on käytettävää saldoa.</translation>
+
+   <translation id="server_dashboard_change_price" qtlid="256023">Palvelimesi kk-hinta muuttuu, klikkaa tästä lisäinfoa saadaksesi.</translation>
+   <translation id="server_dashboard_change_price_title" qtlid="256036">Uusi hinnoittelu</translation>
+   <translation id="server_dashboard_change_price_info" qtlid="256049">Hinnoittelu astuu voimaan 1.10. suoritettaville uusintatilauksille. Hinnat ALV 0.</translation>
+   <translation id="server_dashboard_change_price_server_name" qtlid="242977">Palvelimen nimi</translation>
+   <translation id="server_dashboard_change_price_server_old_price" qtlid="256062">Vanha hinta</translation>
+   <translation id="server_dashboard_change_price_server_new_price" qtlid="256075">Uusi hinta</translation>
+   <translation id="server_dashboard_change_price_infos" qtlid="256099">(+ lisätietoa hinnanmuutoksista)</translation>
+   <translation id="server_dashboard_change_price_details" qtlid="256112">Saadaksesi lisätietoja, klikkaa tästä.</translation>
+
+   <translation id="server_dashboard_change_prices" qtlid="256125">Palvelimesi hinta muuttuu,</translation>
+   <translation id="server_dashboard_change_price_click_here" qtlid="131745">klikkaa tästä</translation>
+   <translation id="server_dashboard_change_price_more" qtlid="256138">saadaksesi lisätietoa.</translation>
+
+   <translation id="server_close_service" qtlid="257967">Palvelun poisto</translation>
+   <translation id="server_close_service_form_label" qtlid="451675">Valitse tehtävä toiminto</translation>
+   <translation id="server_close_service_form_option_terminate" qtlid="451688">Poista palvelu välittömästi</translation>
+   <translation id="server_close_service_form_option_delete_at_expiration" qtlid="451701">Poista palvelu vanhentumispäivänä</translation>
+   <translation id="server_close_service_form_option_cancel" qtlid="451714">Peru palvelun poisto</translation>
+   <translation id="server_close_service_warning_data_deletion" qtlid="436494">Tämän elementin poistaminen johtaa kaikkien tietojen lopulliseen pois pyyhkimiseen.</translation>
+   <translation id="server_close_service_warning_no_refund" qtlid="436507">Palvelun poistamisesta ei myönnetä korvauksia.</translation>
+   <translation id="server_close_service_warning_manual_refund" qtlid="436520">Palvelun poistaminen ei takaa korvausten myöntämistä. Ota yhteyttä asiakaspalveluumme, mikäli sinulla on kysymyksiä mahdollisiin korvauksiin liittyen. </translation>
+   <translation id="server_close_service_desc" qtlid="260390">Saat sähköpostitse lisätietoja tehtävistä toimenpiteistä palvelimen poistamiseksi.</translation>
+   <translation id="server_close_service_question" qtlid="351996">Haluatko jatkaa?</translation>
+   <translation id="server_close_service_success" qtlid="260403">Palvelimen poistopyyntö on rekisteröity. Saat sähköpostitse lisätietoja tehtävistä toimenpiteistä.</translation>
+   <translation id="server_close_service_error" qtlid="260416">Palvelimen poistopyynnössä tapahtui virhe:</translation>
+   <translation id="server_close_service_delete_at_expiration_activate_success" qtlid="451727">Pyyntö koskien palvelimen poistoa vanhentumispäivänä rekisteröitiin</translation>
+   <translation id="server_close_service_delete_at_expiration_activate_error" qtlid="451740">Tapahtui virhe pyydettäessä palvelimen poistoa vanhentumispäivänä koskien palvelinta:</translation>
+   <translation id="server_close_service_delete_at_expiration_deactivate_success" qtlid="451753">Pyyntö poistaa palvelin vanhentumispäivänä on keskeytetty</translation>
+   <translation id="server_close_service_delete_at_expiration_deactivate_error" qtlid="451766">Tapahtui virhe keskeytettäessä pyyntöä poistaa palvelin vanhentumispäivänä koskien palvelinta:</translation>
+   <translation id="server_close_service_cancel_success" qtlid="451779">Palvelimen poistopyyntö keskeytettiin.</translation>
+   <translation id="server_close_service_cancel_error" qtlid="451792">Tapahtui virhe poistopyynnön keskeytyksessä koskien palvelinta:</translation>
+
+   <translation id="housing_support_phone" qtlid="290446">Tiesitkö? Housingpalveluusi sisältyy dedikoitu asiakaspalvelu, numerossa {0}, joka vastaa kaikkiin kysymyksiisi.</translation>
+
+   <translation id="server_autorenew_stop_bother_error" qtlid="290589">Tapahtui virhe pyynnössä, ettei automaattisen uusinnan vuoksi enää häiritä. </translation>
+   <translation id="server_autorenew_alert" qtlid="296882">Helpota elämääsi ja valitse palvelimellesi automaattinen uusinta! Ei enää uudelleenkäynnistyksiä ja ei toivottuja poistoja. </translation>
+   <translation id="server_autorenew_guide" qtlid="290615">Mene ohjeeseen</translation>
+   <translation id="server_autorenew_activate" qtlid="98576">Aktivoi automaattinen uusinta</translation>
+
+</translations>

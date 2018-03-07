@@ -1,0 +1,35 @@
+<td><!-- no checkbox on subproduct --></td>
+
+<td data-ng-bind-html="tr('autorenew_service_type_'+ service.subProducts.domain.serviceType)"></td>
+
+<td>
+    <span data-ng-bind="::service.subProducts.domain.serviceId" data-ng-hide="service.subProducts.domain.serviceType === 'EXCHANGE'"></span>
+    <span data-ng-bind="::service.subProducts.domain.alternativeId" data-ng-show="service.subProducts.domain.serviceType === 'EXCHANGE'"></span>
+</td>
+
+<td>
+    <span data-ng-if="service.subProducts.domain && service.subProducts.domain.expiration"
+          data-ng-class="getExpirationClass(service.subProducts.domain)">
+          <billing-renew-date data-service-infos="service.subProducts.domain"></billing-renew-date>
+    </span>
+</td>
+
+<td>
+  <billing-renew-label data-service-infos="service.subProducts.domain"></billing-renew-label>
+</td>
+
+<td>
+    <div data-uib-dropdown>
+        <button type="button"
+                class="btn btn-link"
+                data-ng-attr-title="{{ i18n.autorenew_service_action_menu_tooltip }}"
+                data-uib-dropdown-toggle>
+            <span class="ovh-font ovh-font-dots align-top"
+                  aria-hidden="true">
+            </span>
+        </button>
+        <ul data-uib-dropdown-menu
+            data-template-url="{{ BILLING_BASE_URL + 'autoRenew/domain/actions-menu.html' }}">
+        </ul>
+    </div>
+</td>

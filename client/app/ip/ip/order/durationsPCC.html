@@ -1,0 +1,41 @@
+<div class="form-group">
+    <div data-ng-if="!loading.durations && durations.available.length">
+        <strong data-i18n-static="ip_order_select_activation"></strong>
+        <div data-ng-repeat="duration in durations.available">
+            <div class="radio">
+                <label>
+                    <input type="radio"
+                           data-ng-model="model.duration"
+                           data-ng-disabled="loading.prices || durations.available.length === 1"
+                           value="{{model.duration}}">
+                    <span data-ng-bind="tr('ip_order_bloc') + ' /' +  model.params.size"></span> :
+                    <span data-ng-bind-html="durations.details[duration].prices | price:user.ovhSubsidiary"></span>
+                    <oui-spinner data-ng-hide="durations.details[duration]"
+                                 data-size="s">
+                    </oui-spinner>
+                </label>
+            </div>
+            <strong data-i18n-static="ip_order_abonnement"></strong>
+            <strong data-ng-if="durations.details[duration].details[1].totalPrice.value === 0"
+                    data-i18n-static="ip_order_free">
+            </strong>
+            <span data-ng-if="durations.details[duration].details[1].totalPrice.value !== 0"
+                  data-ng-bind-html="durations.details[duration].details[1].totalPrice.text">
+            </span>
+        </div>
+
+        <div data-ng-show="orderableIp.professionalUsePrice">
+            <p data-ng-bind-html="tr('ip_order_no_professionaluse_1', orderableIp.professionalUsePrice)"></p>
+            <p data-i18n-static="ip_order_no_professionaluse_2"></p>
+        </div>
+
+        <p class="font-italic text-muted"
+           data-i18n-static="ip_order_renew_PCC">
+        </p>
+    </div>
+
+    <div class="text-center"
+         data-ng-if="loading.durations">
+        <oui-spinner></oui-spinner>
+    </div>
+</div>

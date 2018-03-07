@@ -1,0 +1,24 @@
+<div data-ng-controller="DeleteSecondaryDnsCtrl">
+
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="deleteSecondaryDns"
+         data-wizard-title="i18n.server_configuration_delete_secondary_dns_title">
+
+        <div data-wizard-step
+             data-wizard-step-valid="!loadingDelete">
+
+            <div class="text-center"
+                 data-ng-if="loadingDelete">
+                <oui-spinner></oui-spinner>
+            </div>
+
+            <p data-ng-if="!loadingDelete"
+               data-ng-bind-html="tr('server_configuration_delete_secondary_dns_question', [secdns.domain])">
+            </p>
+
+        </div>
+
+    </div>
+
+</div>

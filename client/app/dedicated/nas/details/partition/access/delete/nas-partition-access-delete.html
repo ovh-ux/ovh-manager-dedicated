@@ -1,0 +1,16 @@
+<div data-ng-controller="NasPartitionAccessDeleteCtrl">
+
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="deleteAccess"
+         data-wizard-title="i18n.nas_access_action_delete_title">
+
+        <div data-wizard-step>
+
+            <p data-ng-bind-html="tr('nas_access_action_delete_confirmation', toDelete.access)"></p>
+
+        </div>
+
+    </div>
+
+</div>

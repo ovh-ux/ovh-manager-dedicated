@@ -1,0 +1,16 @@
+<div data-ng-controller="DedicatedCloudUserDeleteCtrl">
+
+    <div data-wizard
+        data-wizard-on-cancel="resetAction"
+        data-wizard-on-finish="deleteUser"
+        data-wizard-title="i18n.dedicatedCloud_USER_delete_title">
+
+        <div data-wizard-step>
+
+            <span data-ng-bind-html="tr('dedicatedCloud_USER_delete_message', user.name)"></span>
+
+        </div>
+
+    </div>
+
+</div>

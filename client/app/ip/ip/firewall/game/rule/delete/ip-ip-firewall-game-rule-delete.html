@@ -1,0 +1,19 @@
+<div data-ng-controller="RemoveGameFirewallRuleCtrl as RemoveGameFirewallRuleCtrl">
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="removeGameFirewallRule"
+         data-wizard-title="tr('ip_game_mitigation_rule_remove_title')">
+
+        <div data-wizard-step
+             data-wizard-step-valid="!RemoveGameFirewallRuleCtrl.loading">
+            <div data-ng-hide="RemoveGameFirewallRuleCtrl.loading"
+                 data-ng-bind-html="tr('ip_game_mitigation_rule_remove', [RemoveGameFirewallRuleCtrl.datas.rule.protocol, RemoveGameFirewallRuleCtrl.datas.rule.ports.from + (RemoveGameFirewallRuleCtrl.datas.rule.ports.to && RemoveGameFirewallRuleCtrl.datas.rule.ports.to !== RemoveGameFirewallRuleCtrl.datas.rule.ports.from ? ' - ' + RemoveGameFirewallRuleCtrl.datas.rule.ports.to : '')])">
+            </div>
+            <div class="text-center"
+                 data-ng-show="RemoveGameFirewallRuleCtrl.loading">
+                <oui-spinner></oui-spinner>
+            </div>
+        </div>
+    </div>
+</div>
+

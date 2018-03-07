@@ -1,0 +1,32 @@
+<form>
+    <div class="form-group">
+        <label class="control-label"
+               for="numberSelect"
+               data-i18n-static="ip_order_ipnbr">
+        </label>
+        <select id="numberSelect"
+                name="numberSelect"
+                data-ng-model="model.params.number"
+                data-ng-options="r for r in orderableIp.ipRange">
+            <option value=""
+                    data-ng-disabled="true"
+                    data-i18n-static="global_select">
+            </option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label class="control-label"
+               for="country"
+               data-i18n-static="ip_order_country">
+        </label>
+        <select id="country"
+                name="country"
+                data-ng-model="model.params.country"
+                data-ng-options="c as tr('country_'+c.toUpperCase()) for c in orderableIp.countries">
+            <option value=""
+                    data-ng-disabled="true"
+                    data-i18n-static="global_select">
+            </option>
+        </select>
+    </div>
+</form>

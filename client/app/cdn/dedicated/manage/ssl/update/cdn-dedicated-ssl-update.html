@@ -1,0 +1,71 @@
+<div data-ng-controller="CdnUpdateSslCtrl">
+
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="updateSsl"
+         data-wizard-title="i18n.cdn_configuration_update_ssl_title">
+
+        <div data-wizard-step
+             data-wizard-step-valid="entry.certificate && entry.key">
+
+            <p data-i18n-static="cdn_configuration_update_ssl_step1"></p>
+            <div class="form-group">
+                <label for="certificate"
+                       class="control-label"
+                       data-i18n-static="cdn_configuration_ssl_certificate">
+                </label>
+                <textarea class="form-control"
+                          id="certificate"
+                          name="certificate"
+                          rows="5"
+                          data-ng-model="entry.certificate">
+                </textarea>
+            </div>
+            <div class="form-group">
+                <label for="key"
+                       class="control-label"
+                       data-i18n-static="cdn_configuration_ssl_key">
+                </label>
+                <textarea class="form-control"
+                          id="key"
+                          name="key"
+                          rows="5"
+                          data-ng-model="entry.key">
+                </textarea>
+            </div>
+            <div class="form-group">
+                <label for="chain"
+                       class="control-label"
+                       data-i18n-static="cdn_configuration_ssl_chain">
+                </label>
+                <textarea class="form-control"
+                          id="chain"
+                          name="chain"
+                          rows="5"
+                          data-ng-model="entry.chain">
+                </textarea>
+            </div>
+
+        </div>
+
+        <div data-wizard-step>
+
+            <p data-i18n-static="cdn_configuration_update_ssl_step2"></p>
+            <dl>
+                <dt data-i18n-static="cdn_configuration_ssl_certificate"></dt>
+                <dd data-ng-bind-html="entry.certificate"></dd>
+                <dt data-i18n-static="cdn_configuration_ssl_key"></dt>
+                <dd data-ng-bind-html="entry.key"></dd>
+                <dt data-ng-if="entry.chain"
+                    data-i18n-static="cdn_configuration_ssl_chain">
+                </dt>
+                <dd data-ng-if="entry.chain"
+                    data-ng-bind-html="entry.chain">
+                </dd>
+            </dl>
+
+        </div>
+
+    </div>
+
+</div>

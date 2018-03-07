@@ -1,0 +1,39 @@
+<div data-ng-controller="Billing.controllers.HistoryPayDebtCtrl">
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="displayBC"
+         data-wizard-title="i18n.statements_account_debt_payment"
+         data-wizard-title-icon="'icon-renew'"
+         data-wizard-bread-crumb
+         data-wizard-confirm-button-text="i18n.statements_accounts_debt_payment_confirm">
+
+        <div data-wizard-step
+             data-wizard-step-valid="!payDebt.order.url">
+            <p data-i18n-static="statements_account_debt_payment_explanation"></p>
+        </div>
+
+        <div data-wizard-step
+             data-wizard-step-on-load="createDebtPaymentBC"
+             data-wizard-step-valid="payDebt.order.url">
+
+            <!-- SHOW PAYMENT ORDER -->
+            <p data-ng-if="payDebt.order.url"
+               data-ng-bind-html="tr('statements_account_debt_payment_bc_with_amount',
+               [payDebt.order.orderId, payDebt.order.url, payDebt.order.priceWithTax.text])">
+            </p>
+
+            <!-- ERROR -->
+            <div class="alert alert-danger"
+                 role="alert"
+                 data-ng-if="payDebt.error">
+                <span data-i18n-static="statements_account_debt_payment_error"></span>
+            </div>
+
+            <!-- LOADING -->
+            <div class="text-center"
+                 data-ng-if="payDebt.loading">
+                <oui-spinner></oui-spinner>
+            </div>
+        </div>
+    </div>
+</div>

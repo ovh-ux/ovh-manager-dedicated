@@ -1,0 +1,29 @@
+<div class="module-useraccount-sections-contacts-container">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-sm-9">
+                <h1 data-i18n-static="useraccount_contacts"></h1>
+            </div>
+            <div class="col-sm-3 text-right mt-4">
+                <a data-ng-if="!contactCtrl.loaders.init"
+                   class="btn btn-default"
+                   target="_blank"
+                   rel="noopener"
+                   data-ng-href="{{ ::contactCtrl.getAccountCreationUrl() }}"
+                   data-i18n-static="useraccount_contacts_create_new_account">
+                </a>
+            </div>
+        </div>
+    </div>
+    <responsive-tabs>
+        <responsive-tab data-state="app.account.useraccount.contacts.services">{{ ::i18n.useraccount_contacts_tab_SERVICES }}</responsive-tab>
+        <responsive-tab data-state="app.account.useraccount.contacts.requests">{{ ::i18n.useraccount_contacts_tab_REQUESTS }}</responsive-tab>
+        <responsive-tab-more>
+            <i class="fa fa-plus"></i>
+        </responsive-tab-more>
+    </responsive-tabs>
+    <div class="p-5">
+        <div data-ovh-alert="useraccount.alerts.dashboardContacts"></div>
+        <div ui-view></div>
+    </div>
+</div>

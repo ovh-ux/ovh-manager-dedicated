@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="housing_name" qtlid="3818">Nom</translation>
+   <translation id="housing_status" qtlid="26443">Statut</translation>
+   <translation id="housing_edit" qtlid="185452">Editer</translation>
+   <translation id="housing_informations_general" qtlid="26551">Informations</translation>
+   <translation id="housing_tab_dashboard" qtlid="82725">Récapitulatif</translation>
+   <translation id="housing_tab_backup" qtlid="259818">Stockage backup</translation>
+   <translation id="housing_tab_task" qtlid="96716">Tâches</translation>
+   <translation id="housing_expiration_date" qtlid="33010">Date d'expiration</translation>
+   <translation id="housing_creation_date" qtlid="371726">Location débutée le</translation>
+   <translation id="housing_support_phone" qtlid="290446">Le saviez-vous ? Votre prestation de Housing est accompagnée d'un service client dédié, joignable au {0} pour toutes vos questions.</translation>
+
+
+
+   <translation id="housing_tab_stats_legend_bay" qtlid="32050">Baie</translation>
+   <translation id="housing_tab_stats_legend_general" qtlid="69341">Général</translation>
+   <translation id="housing_tab_stats_legend_route" qtlid="259831">Routage</translation>
+   <translation id="housing_tab_stats_legend_network" qtlid="25591">Réseau</translation>
+
+
+
+   <translation id="housing_tab_stats_gateway" qtlid="259844">Passerelle</translation>
+   <translation id="housing_tab_stats_router" qtlid="259857">Routeur</translation>
+   <translation id="housing_tab_stats_port" qtlid="9034">Port</translation>
+   <translation id="housing_tab_stats_ipv4" qtlid="259870">Réseau IpV4</translation>
+   <translation id="housing_tab_stats_ipv6" qtlid="259883">Réseau IpV6</translation>
+   <translation id="housing_tab_stats_securitycode" qtlid="259896">Code de sécurité</translation>
+   <translation id="housing_tab_stats_failure_load" qtlid="97460">Erreur de chargement</translation>
+   <translation id="housing_configuration_ipv4_manage" qtlid="16301">Gérer</translation>
+
+   <translation id="housing_status_ok" qtlid="96704">Normal</translation>
+   <translation id="housing_status_error" qtlid="45508">En erreur</translation>
+   <translation id="housing_status_hacked" qtlid="101973">Hacké</translation>
+   <translation id="housing_status_hacked_blocked" qtlid="224997">Hacké et bloqué</translation>
+
+   <translation id="housing_configuration_reboot_title_button" qtlid="33538">Redémarrer</translation>
+   <translation id="housing_configuration_renew_title_button" qtlid="118962">Renouveler</translation>
+
+   <translation id="housing_configuration_ftpbackup_fail" qtlid="184256">Une erreur est survenue lors du chargement des informations du backup storage</translation>
+   <translation id="housing_configuration_ftpbackup_none" qtlid="184269">Le backup storage n'a pas été configuré.</translation>
+   <translation id="housing_configuration_ftpbackup_login" qtlid="46792">Identifiant</translation>
+   <translation id="housing_configuration_ftpbackup_name" qtlid="3818">Nom</translation>
+   <translation id="housing_configuration_ftpbackup_usage" qtlid="30382">Utilisation</translation>
+   <translation id="housing_configuration_ftpbackup_delete" qtlid="184282">Supprimer le backup storage</translation>
+   <translation id="housing_configuration_ftpbackup_forgot_password" qtlid="123355">Mot de passe oublié ?</translation>
+   <translation id="housing_configuration_ftpbackup_activate" qtlid="184295">Activer le backup storage</translation>
+   <translation id="housing_configuration_ftpbackup_activate_success" qtlid="184308">Le backup storage sera activé dans quelques instants.</translation>
+   <translation id="housing_configuration_ftpbackup_activate_successfull" qtlid="184321">Le backup storage a été activé.</translation>
+   <translation id="housing_configuration_ftpbackup_activate_failure" qtlid="184334">Une erreur est survenue lors de l'activation du backup storage.</translation>
+   <translation id="housing_configuration_ftpbackup_activate_question" qtlid="184347">Etes-vous certain(e) de vouloir activer le service de backup storage pour ce serveur ?</translation>
+   <translation id="housing_configuration_ftpbackup_delete_success" qtlid="184360">Le backup storage sera supprimé dans quelques instants.</translation>
+   <translation id="housing_configuration_ftpbackup_delete_successfull" qtlid="184373">Le backup storage a bien été supprimé.</translation>
+   <translation id="housing_configuration_ftpbackup_delete_failure" qtlid="184386">Une erreur est survenue lors de la suppression du backup storage.</translation>
+   <translation id="housing_configuration_ftpbackup_delete_question" qtlid="184399">Etes-vous certain(e) de vouloir supprimer le backup storage {0} ?</translation>
+   <translation id="housing_configuration_ftpbackup_delete_question2" qtlid="164389">Attention, cette action sera irréversible</translation>
+   <translation id="housing_configuration_ftpbackup_lost_password" qtlid="149241">Demande de nouveau mot de passe</translation>
+   <translation id="housing_configuration_ftpbackup_lost_password_success" qtlid="149254">Un nouveau mot de passe sera envoyé au nic admin du serveur.</translation>
+   <translation id="housing_configuration_ftpbackup_lost_password_successfull" qtlid="164402">Un nouveau mot de passe vient d'être envoyé au nic admin du serveur.</translation>
+   <translation id="housing_configuration_ftpbackup_lost_password_failure" qtlid="149267">Une erreur est survenue lors de la réinitialisation de nouveau mot de passe.</translation>
+   <translation id="housing_configuration_ftpbackup_lost_password_question" qtlid="184412">Etes-vous certain(e) de vouloir réinitialiser le mot de passe pour le backup storage {0} ?</translation>
+
+   <translation id="housing_configuration_ftpbackup_order_title" qtlid="184425">Commande d'espace disque du backup storage</translation>
+   <translation id="housing_configuration_ftpbackup_order_load_failure" qtlid="180486">Une erreur est survenue lors de la récupération de la liste des capacités de stockage disponible.</translation>
+   <translation id="housing_configuration_ftpbackup_order_load_detail_failure" qtlid="180499">Une erreur est survenue lors de la récupération du détail de la commande de stockage</translation>
+   <translation id="housing_configuration_ftpbackup_order_load_order_success" qtlid="183801">La commande numéro <a href='{0}' target='_blank'>{1}</a> de stockage a bien été prise en compte.</translation>
+   <translation id="housing_configuration_ftpbackup_order_load_order_failure" qtlid="180525">Une erreur est survenue lors de la commande de stockage</translation>
+   <translation id="housing_configuration_ftpbackup_order_type_name" qtlid="4334">Capacité</translation>
+   <translation id="housing_configuration_ftpbackup_order_empty_choice" qtlid="237750">Il semble que votre offre ne vous permette pas de commander de l’espace de stockage supplémentaire.</translation>
+   <translation id="housing_configuration_ftpbackup_order_type_price" qtlid="180538">Prix (par mois HT)</translation>
+   <translation id="housing_configuration_ftpbackup_order_resume" qtlid="172228">Résumé de votre commande :</translation>
+   <translation id="housing_configuration_ftpbackup_order_price_explanation" qtlid="237763">Ce qui correspond à {0} par mois jusqu’à la date d’expiration de votre serveur</translation>
+   <translation id="housing_configuration_ftpbackup_order_price_HT" qtlid="146177">Prix total HT :</translation>
+   <translation id="housing_configuration_ftpbackup_order_price_TTC" qtlid="146190">Prix total TTC :</translation>
+   <translation id="housing_configuration_ftpbackup_order_contracts" qtlid="145371">Je reconnais avoir bien pris connaissance des conditions suivantes :</translation>
+   <translation id="housing_configuration_ftpbackup_order_info" qtlid="180551">Choix des capacités de stockage disponible sur votre serveur. Attention il ne sera pas possible de réduire cette capacité.</translation>
+
+   <translation id="housing_configuration_ftpbackup_access_order" qtlid="180564">Commander de l'espace disque</translation>
+   <translation id="housing_configuration_ftpbackup_access_order_right" qtlid="180577">Vous n'avez pas les droits suffisants pour commander</translation>
+   <translation id="housing_configuration_ftpbackup_access_add" qtlid="153857">Ajouter un accès</translation>
+   <translation id="housing_configuration_ftpbackup_access_delete" qtlid="180590">Suppression d'un accès</translation>
+   <translation id="housing_configuration_ftpbackup_access_delete_question" qtlid="183814">Etes-vous certain(e) de vouloir supprimer l'accès du block IP <b>{0}</b> ?</translation>
+   <translation id="housing_configuration_ftpbackup_access_delete_success" qtlid="183827">La suppression de l'accès au backup storage par le block IP <b>{0}</b> a bien été prise en compte mais peut prendre quelques minutes</translation>
+   <translation id="housing_configuration_ftpbackup_access_delete_failure" qtlid="183840">Une erreur est survenue lors de la tentative de suppression de l'accès au backup storage du block IP <b>{0}</b></translation>
+   <translation id="housing_configuration_ftpbackup_access_add_ip_failure" qtlid="180642">Une erreur est survenue lors de la récupération des blocks authorisable</translation>
+   <translation id="housing_configuration_ftpbackup_access_add_success" qtlid="184438">La demande d'ajout de règles d'accès au backup storage a bien été prise en compte mais peut prendre quelques minutes</translation>
+   <translation id="housing_configuration_ftpbackup_access_add_partial" qtlid="184451">La demande d'ajout de certaines règles d'accès au backup storage a bien été prise en compte mais peut prendre quelques minutes. Cependant d'autre règle n'ont pu etre prises en compte.</translation>
+   <translation id="housing_configuration_ftpbackup_access_add_failure" qtlid="184464">Une erreur est survenue lors de la demande d'ajout de règles d'accès au backup storage</translation>
+
+   <translation id="housing_configuration_ftpbackup_table_ip" qtlid="186492">Ip</translation>
+   <translation id="housing_configuration_ftpbackup_table_cifs" qtlid="176740">CIFS</translation>
+   <translation id="housing_configuration_ftpbackup_table_ftp" qtlid="50410">FTP</translation>
+   <translation id="housing_configuration_ftpbackup_table_nfs" qtlid="6778">NFS</translation>
+   <translation id="housing_configuration_ftpbackup_table_status" qtlid="26443">Statut</translation>
+   <translation id="housing_configuration_ftpbackup_table_ip_disable" qtlid="26383">En cours</translation>
+   <translation id="housing_configuration_ftpbackup_table_ip_enable" qtlid="30250">Activé</translation>
+   <translation id="housing_configuration_ftpbackup_table_ip_edit" qtlid="180694">Modifier l'accès</translation>
+   <translation id="housing_configuration_ftpbackup_table_ip_delete" qtlid="180707">Supprimer l'accès</translation>
+   <translation id="housing_configuration_ftpbackup_table_ip_modify" qtlid="180720">Valider la modification</translation>
+   <translation id="housing_configuration_ftpbackup_table_ip_cancel" qtlid="180733">Annuler la modification</translation>
+   <translation id="housing_configuration_ftpbackup_table_fail" qtlid="211607">Une erreur est survenue lors du chargement des accès au backup storage.</translation>
+
+
+   <translation id="housing_configuration_ftpbackup_set_success" qtlid="183853">La modification de l'accès <b>{0}</b> a bien été prise en compte mais peut prendre quelques minutes</translation>
+   <translation id="housing_configuration_ftpbackup_set_fail" qtlid="183866">Une erreur est survenue lors de la modification de l'accès <b>{0}</b></translation>
+
+   <translation id="housing_configuration_ftpbackup_add" qtlid="180772">Ajout d'un accès</translation>
+   <translation id="housing_configuration_ftpbackup_add_info" qtlid="180785">Veuillez choisir le block d'IP que vous souhaitez autoriser ainsi que les options d'accès.</translation>
+   <translation id="housing_configuration_ftpbackup_add_info1" qtlid="180798">Liste des blocks :</translation>
+   <translation id="housing_configuration_ftpbackup_add_info2" qtlid="184477">Vous allez ajouter une règle sur l'accès à votre backup storage pour chaque block d'IP de la liste suivante :</translation>
+   <translation id="housing_configuration_ftpbackup_add_info3" qtlid="180824">Vous devez au moins autoriser un protocole car par défaut, les blocks d'IP n'ayant pas de règle sont refusées.</translation>
+   <translation id="housing_configuration_ftpbackup_add_info4" qtlid="180837">Droits appliqués :</translation>
+   <translation id="housing_configuration_ftpbackup_add_allow" qtlid="141795">Autoriser</translation>
+   <translation id="housing_configuration_ftpbackup_add_deny" qtlid="141808">Refuser</translation>
+   <translation id="housing_configuration_ftpbackup_add_ip" qtlid="180850">Block concerné :</translation>
+   <translation id="housing_configuration_ftpbackup_add_authorization" qtlid="180863">Autoriser en :</translation>
+
+   <translation id="housing_configuration_task_loading_error" qtlid="164415">Une erreur est survenue lors de la récupération des tâches</translation>
+   <translation id="housing_configuration_task_last_action" qtlid="52231">Dernière action</translation>
+   <translation id="housing_configuration_task_function" qtlid="61872">Tâche</translation>
+   <translation id="housing_configuration_task_comment" qtlid="233531">Détail technique</translation>
+   <translation id="housing_configuration_task_status" qtlid="26443">Statut</translation>
+   <translation id="housing_configuration_task_CHANGE_PASSWORD_BACKUP_FTP" qtlid="184490">Changement de mot de passe backup storage</translation>
+   <translation id="housing_configuration_task_CREATE_BACKUP_FTP" qtlid="184503">Création d'un backup storage</translation>
+   <translation id="housing_configuration_task_CREATE_PRIVATE_NETWORK" qtlid="164454">Création d'un réseau privé</translation>
+   <translation id="housing_configuration_task_DISABLE_FIREWALL" qtlid="164467">Désactivation du firewall</translation>
+   <translation id="housing_configuration_task_ENABLE_FIREWALL" qtlid="164480">Activation du firewall</translation>
+   <translation id="housing_configuration_task_HARD_REBOOT" qtlid="26287">Redémarrage</translation>
+   <translation id="housing_configuration_task_MOVE_FLOATING_IP" qtlid="164493">Déplacement d'une IP failover</translation>
+   <translation id="housing_configuration_task_REINSTALL_SERVER" qtlid="90637">Réinstallation du serveur</translation>
+   <translation id="housing_configuration_task_REMOVE_BACKUP_FTP" qtlid="184516">Suppression de backup storage</translation>
+   <translation id="housing_configuration_task_REQUEST_ACCESS_IPMI" qtlid="164519">Demande d'accès à IPMI</translation>
+   <translation id="housing_configuration_task_RESET_IPMI" qtlid="164532">Reset des interfaces IPMO</translation>
+   <translation id="housing_configuration_task_RESET_IPMI_SESSION" qtlid="164545">Reset des sessions IPMI</translation>
+   <translation id="housing_configuration_task_TEST_IPM_IHTTP" qtlid="164558">Test http (IPMI)</translation>
+   <translation id="housing_configuration_task_TEST_IPM_IPASSWORD" qtlid="164571">Test mot de passe (IPMI)</translation>
+   <translation id="housing_configuration_task_TEST_IPM_IPING" qtlid="164584">Test ping (IPMI)</translation>
+   <translation id="housing_configuration_task_APPLY_BACKUP_FTP_ACLS" qtlid="181110">Modification du backup storage</translation>
+   <translation id="housing_configuration_task_MIGRATE_BACKUP_FTP" qtlid="181123">Migration du backup storage</translation>
+   <translation id="housing_configuration_task_VIRTUAL_MAC_ADD" qtlid="164597">Ajout de Mac virtuelle</translation>
+   <translation id="housing_configuration_task_ADD_VIRTUAL_MAC" qtlid="164597">Ajout de Mac virtuelle</translation>
+   <translation id="housing_configuration_task_VIRTUAL_MAC_DELETE" qtlid="164610">Suppression de Mac virtuelle</translation>
+   <translation id="housing_configuration_task_REMOVE_VIRTUAL_MAC" qtlid="164610">Suppression de Mac virtuelle</translation>
+   <translation id="housing_configuration_task_empty" qtlid="217093">Aucune tâche</translation>
+   <translation id="housing_configuration_task_status_cancelled" qtlid="164623">Annulée</translation>
+   <translation id="housing_configuration_task_status_customer_error" qtlid="164636">Erreur client</translation>
+   <translation id="housing_configuration_task_status_doing" qtlid="26383">En cours</translation>
+   <translation id="housing_configuration_task_status_done" qtlid="26395">Terminée</translation>
+   <translation id="housing_configuration_task_status_init" qtlid="164649">Initialisation</translation>
+   <translation id="housing_configuration_task_status_ovh_error" qtlid="45508">En erreur</translation>
+   <translation id="housing_configuration_task_status_todo" qtlid="164662">A traiter</translation>
+
+   <translation id="housing_configuration_reboot_title_button" qtlid="33538">Redémarrer</translation>
+   <translation id="housing_configuration_reboot_title" qtlid="134189">Redémarrer le serveur</translation>
+   <translation id="housing_configuration_reboot_step1_question" qtlid="133435">Raison du redémarrage (optionnel) ?</translation>
+   <translation id="housing_configuration_reboot_step2_question" qtlid="259909">Pour accéder aux option de redémarrage, il est nécessaire de procéder à l'acquisition d'un module complémentaire, voulez-vous continuer ?</translation>
+   <translation id="housing_configuration_reboot_step2_reason" qtlid="133461">Raison du reboot :</translation>
+   <translation id="housing_configuration_reboot_success" qtlid="259922">Vous pouvez maintenant finaliser la transaction via votre bon de commande.</translation>
+   <translation id="housing_configuration_reboot_fail" qtlid="133487">Une erreur est survenue lors de la demande de redémarrage.</translation>
+   <translation id="housing_configuration_reboot_successfull" qtlid="164311">Votre serveur {0} a été redémarré.</translation>
+   <translation id="housing_configuration_reboot_fail_task" qtlid="164324">Une erreur est survenue lors du redémarrage de votre serveur.</translation>
+   <translation id="housing_configuration_reboot_fail_apcinfo" qtlid="259935">Une erreur est survenue lors de la récupération des informations de redémarrage.</translation>
+   <translation id="housing_configuration_reboot_contract" qtlid="259948">Contrat</translation>
+   <translation id="housing_configuration_reboot_contract_name" qtlid="3818">Nom</translation>
+   <translation id="housing_configuration_reboot_contract_content" qtlid="152271">Contenu</translation>
+   <translation id="housing_configuration_reboot_clic" qtlid="127348">Cliquez ici</translation>
+   <translation id="housing_configuration_reboot_details" qtlid="37527">Détails</translation>
+   <translation id="housing_configuration_reboot_domain" qtlid="8458">Domaine</translation>
+   <translation id="housing_configuration_reboot_description" qtlid="9238">Description</translation>
+   <translation id="housing_configuration_reboot_qty" qtlid="37107">Quantité</translation>
+   <translation id="housing_configuration_reboot_price_unit" qtlid="259961">Prix unitaire</translation>
+   <translation id="housing_configuration_reboot_price" qtlid="83913">Prix</translation>
+   <translation id="housing_configuration_reboot_price_ht" qtlid="259974">Hors taxe</translation>
+   <translation id="housing_configuration_reboot_price_tax" qtlid="113586">Taxes</translation>
+   <translation id="housing_configuration_reboot_price_total" qtlid="32458">Total</translation>
+
+
+</translations>
