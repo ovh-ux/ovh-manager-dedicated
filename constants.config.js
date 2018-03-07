@@ -1023,7 +1023,7 @@ for (var lang in constants.US.URLS) {
     }
 }
 
-constants.CA.TOP_GUIDES = _.assign(constants.EU.TOP_GUIDES, constants.CA.TOP_GUIDES);
-constants.US.TOP_GUIDES = _.assign(constants.EU.TOP_GUIDES, constants.US.TOP_GUIDES);
+constants.CA.TOP_GUIDES = _.defaults(constants.CA.TOP_GUIDES, constants.EU.TOP_GUIDES);
+constants.US.TOP_GUIDES = _.defaults(constants.US.TOP_GUIDES, constants.EU.TOP_GUIDES);
 
 module.exports = constants;
