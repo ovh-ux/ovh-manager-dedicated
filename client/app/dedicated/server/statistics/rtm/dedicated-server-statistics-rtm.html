@@ -12,8 +12,8 @@
             <div class="col-md-3">
                 <div class="oui-tile">
                     <h4 class="oui-header_4 oui-tile__title">
-                        <div data-ng-if="server.supportsRTM" data-translate="server_tab_stats_legend_rtm"></div>
-                        <div data-ng-if="!server.supportsRTM" data-translate="server_tab_stats_legend_location"></div>
+                        <div data-ng-if="server.supportsRTM" data-i18n-static="server_tab_stats_legend_rtm"></div>
+                        <div data-ng-if="!server.supportsRTM" data-i18n-static="server_tab_stats_legend_location"></div>
                         <small>
                             <span data-ng-switch="loadingAction">
                                 <span data-ng-switch-when="done">
@@ -174,7 +174,7 @@
                        data-ng-if="rtmInfo.activated != false && !rtmMissing"
                        data-i18n-static="server_tab_stats_rtm_error">
                     </p>
-                </div> 
+                </div>
             </div>
         </div>
 

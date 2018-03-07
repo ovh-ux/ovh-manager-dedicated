@@ -249,7 +249,7 @@ class SessionService {
         }, {
             name: "licences",
             title: this.$translate.instant("navigation_left_licences"),
-            state: "app.license"
+            state: "app.license.dashboard"
         }, {
             name: "ip",
             title: this.$translate.instant("navigation_left_ip"),
