@@ -104,7 +104,7 @@
                                 </a>
                             </li>
                             <li data-ng-if="featureAvailability.hasContactChangement() && !server.isExpired">
-                                <a data-ng-href="{{ '#/useraccount/contacts?tab=SERVICES&serviceName=' + server.name }}"
+                                <a data-ui-sref="app.account.useraccount.contacts.services({ serviceName: server.name })"
                                    data-i18n-static="contacts_management">
                                 </a>
                             </li>
