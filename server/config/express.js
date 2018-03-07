@@ -71,6 +71,7 @@ export default function (app) {
         app.use("/assets", express.static(path.join(config.root, "client/assets")));
         app.use("/tmp", express.static(path.join(config.root, "tmp")));
         app.use("/client", express.static(path.join(config.root, "client")));
+        app.use("/client/app/node_modules", express.static(path.join(config.root, "node_modules")));
         app.use("/client/node_modules", express.static(path.join(config.root, "node_modules")));
         app.use("/dist", express.static(path.join(config.root, "dist")));
         app.use("/node_modules", express.static(path.join(config.root, "node_modules")));
