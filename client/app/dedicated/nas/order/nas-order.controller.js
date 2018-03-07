@@ -22,30 +22,6 @@ angular.module("App").controller("NasOrderCtrl", [
 
         $scope.redirectToCloud = `${constants.nashaUrl}/new`;
 
-        $scope.resetAction = function () {
-            $scope.setAction(false);
-        };
-
-        $scope.setAction = function (action, data) {
-            if (action) {
-                $scope.currentAction = action;
-                $scope.currentActionData = data;
-
-                $scope.stepPath = $scope.currentAction;
-
-                $("#currentAction").modal({
-                    keyboard: true,
-                    backdrop: "static"
-                });
-            } else {
-                $("#currentAction").modal("hide");
-                $scope.currentActionData = null;
-                $timeout(() => {
-                    $scope.stepPath = "";
-                }, 300);
-            }
-        };
-
         $scope.load = function () {
             $scope.nasOrder.loading = true;
             Nas.getOrderList().then(
