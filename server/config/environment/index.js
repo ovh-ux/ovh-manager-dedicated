@@ -36,8 +36,8 @@ const all = {
 
     // SDEV proxy config
     sdev: {
-        nic: "ls148374-ovh",
-        url: "https://api.ovh.com:24743/1.0",
+        nic: "",
+        url: "",
         routes: [] // Routes to redirect to SDEV (can be a regex (eg.: [/^\/dedicated\/server\/\w+/]) or string)
     }
 
