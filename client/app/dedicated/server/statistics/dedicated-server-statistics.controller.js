@@ -146,7 +146,13 @@ angular.module("controllers").controller("controllers.Server.Stats", ($scope, $r
         $scope.data = [];
 
         $scope.labels = _.map(_.get(data, "download.values"), (value, index) =>
-            moment(data.download.pointStart).add(index + 1, "days").calendar());
+            moment(data.download.pointStart)
+                .add(data.download.pointInterval.standardDays * index, "days")
+                .add(data.download.pointInterval.standardHours * index, "hours")
+                .add(data.download.pointInterval.standardMinutes * index, "minutes")
+                .calendar()
+        );
+
         $scope.series.push(translator.tr("server_tab_STATS_legend_download"));
         $scope.series.push(translator.tr("server_tab_STATS_legend_upload"));
         $scope.data.push(_.map(_.get(data, "download.values"), (value) => value.y));
