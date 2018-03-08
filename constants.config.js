@@ -459,11 +459,7 @@ var constants = {
                     }, {
                         title: "core_pcc_top_guide_7_title",
                         atInternetClickTag: "TopGuide-PrivateCloud-7",
-                        url: "https://www.ovh.com/fr/g2413.suppression_dun_hote"
-                    }, {
-                        title: "core_pcc_top_guide_8_title",
-                        atInternetClickTag: "TopGuide-PrivateCloud-8",
-                        url: "https://www.ovh.com/fr/g2414.licences_spla_windows"
+                        url: "https://docs.ovh.com/fr/private-cloud/suppression-d-un-hote/"
                     }, {
                         title: "core_pcc_top_guide_10_title",
                         atInternetClickTag: "TopGuide-PrivateCloud-10",
