@@ -9,14 +9,6 @@
 </td>
 
 <td>
-    <button type="button"
-            class="btn btn-link"
-            data-ng-if="service.serviceType === 'HOSTING_DOMAIN'"
-            data-ng-click="expandHostingDomain[service.domain] = !expandHostingDomain[service.domain]"
-            data-ng-attr-title="{{ i18n.autorenew_service_expand_sub_services }}" >
-        <i class="fa fa-plus" data-ng-if="!expandHostingDomain[service.domain]" aria-hidden="true"></i>
-        <i class="fa fa-minus" data-ng-if="expandHostingDomain[service.domain]" aria-hidden="true"></i>
-    </button>
     <span data-ng-bind-html="tr('autorenew_service_type_'+ service.serviceType)"></span>
 </td>
 
@@ -37,6 +29,14 @@
 </td>
 
 <td>
+    <button type="button"
+            class="btn btn-default"
+            data-ng-if="service.serviceType === 'HOSTING_DOMAIN'"
+            data-ng-click="expandHostingDomain[service.domain] = !expandHostingDomain[service.domain]"
+            data-ng-attr-title="{{ i18n.autorenew_service_expand_sub_services }}" >
+        <i class="fa fa-chevron-right" data-ng-if="!expandHostingDomain[service.domain]" aria-hidden="true"></i>
+        <i class="fa fa-chevron-down" data-ng-if="expandHostingDomain[service.domain]" aria-hidden="true"></i>
+    </button>
     <div data-ng-if="!service.subProducts"
          data-uib-dropdown>
         <button type="button"
