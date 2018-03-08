@@ -128,7 +128,7 @@
                                    data-ng-show="user === userCurrentEditBack"
                                    data-ng-model="userCurrentEdit.lastName" />
                         </td>
-                        <td>
+                        <td data-ng-class="{ 'has-error': !userCurrentEdit.emailValid }">
                             <span data-ng-hide="user === userCurrentEditBack"
                                   data-ng-bind="user.email || '-'">
                             </span>
@@ -137,7 +137,7 @@
                                    data-ng-show="user === userCurrentEditBack"
                                    data-ng-model="userCurrentEdit.email" />
                         </td>
-                        <td>
+                        <td data-ng-class="{ 'has-error': !userCurrentEdit.phoneValid }">
                             <span data-ng-hide="user === userCurrentEditBack"
                                   data-ng-bind="user.phoneNumber || '-'">
                             </span>
