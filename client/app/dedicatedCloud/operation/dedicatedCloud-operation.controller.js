@@ -59,7 +59,7 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
 
         self.showRelatedService = function (params) {
             if (params.userId) {
-                $scope.setSelectedTab("USERS");
+                $scope.setSelectedTab("user");
             } else if (params.orderId) {
                 Orders.getOrder(params.orderId)
                     .then((order) => {
