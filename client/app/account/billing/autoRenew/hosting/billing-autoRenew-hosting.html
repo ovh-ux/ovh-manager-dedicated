@@ -16,16 +16,17 @@
 </td>
 
 <td>
-    <div data-linkedpopover="{{ BILLING_BASE_URL + 'autoRenew/hosting/actions-menu.html'}}"
-         data-linkedpopover-placement="left"
-         data-linkedpopover-single="true"
-         data-linkedpopover-remote="true">
-
+    <div data-uib-dropdown>
         <button type="button"
                 class="btn btn-link"
-                data-ng-attr-title="{{ i18n.autorenew_service_action_menu_tooltip }}">
+                data-ng-attr-title="{{ i18n.autorenew_service_action_menu_tooltip }}"
+                data-uib-dropdown-toggle>
             <span class="ovh-font ovh-font-dots align-top"
-               aria-hidden="true"></span>
+                    aria-hidden="true">
+            </span>
         </button>
+        <ul data-uib-dropdown-menu
+            data-template-url="{{ BILLING_BASE_URL + 'autoRenew/hosting/actions-menu.html' }}">
+        </ul>
     </div>
 </td>
