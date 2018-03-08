@@ -1,6 +1,6 @@
 angular.module("App").config(($stateProvider) => {
     $stateProvider.state("app.dedicatedClouds", {
-        url: "/configuration/dedicated_cloud/:productId",
+        url: "/configuration/dedicated_cloud/:productId?action&token",
         templateUrl: "dedicatedCloud/dedicatedCloud.html",
         controller: "DedicatedCloudCtrl",
         resolve: {
