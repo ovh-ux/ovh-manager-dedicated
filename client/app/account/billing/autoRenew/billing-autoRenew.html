@@ -14,7 +14,7 @@
             <button type="button"
                     class="close"
                     data-ng-click="automaticRenewV2Mean.noMeanMessageClose()"
-                    data-i18n-static="browser_alert_close"
+                    title="{{ i18n.browser_alert_close }}"
                     data-dismiss="alert">
             </button>
             <ul>
@@ -176,7 +176,6 @@
             </div>
         </div>
 
-        <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -326,7 +325,6 @@
                 </tbody>
 
             </table>
-        </div>
         <div data-pagination-server-side="serviceTable"
              data-pagination-server-side-function="getServices"
              data-pagination-server-side-paginated-stuff="services.data"
