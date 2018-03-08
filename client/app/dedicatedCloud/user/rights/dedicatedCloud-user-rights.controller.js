@@ -1,40 +1,52 @@
-class DedicatedCloudUserRightsCtrl {
-    constructor ($scope, $stateParams, DedicatedCloud) {
-        this.$scope = $scope;
-        this.$stateParams = $stateParams;
-        this.DedicatedCloud = DedicatedCloud;
+angular.module("App").controller("DedicatedCloudUserRightsCtrl", function ($scope, $stateParams, DedicatedCloud) {
+    "use strict";
 
-        this.rightIndex = $scope.currentActionData.rightIndex;
-        this.rightsCurrentEdit = $scope.currentActionData.rightsCurrentEdit;
-        this.selectedUser = $scope.currentActionData.selectedUser;
-        this.rights = $scope.currentActionData.rights;
+    const self = this;
 
-        this.$scope.save = () => {
-            this.setUserRight(this.rightIndex);
-        };
-    }
+    self.selectedUser = null;
+    self.rights = null;
 
-    setUserRight (rightIndex) {
-        const $scope = this.$scope;
-        this.saving = true;
-        if (this.rightsCurrentEdit.right === "DISABLED") {
-            this.rightsCurrentEdit.canAddResource = false;
-            this.rightsCurrentEdit.vmNetworkRole = "NO_ACCESS";
-            this.rightsCurrentEdit.networkRole = "NO_ACCESS";
-        }
+    self.loading = {
+        init: false,
+        rights: false
+    };
 
-        this.DedicatedCloud.setUserRights(this.$stateParams.productId, this.selectedUser.userId, this.rightsCurrentEdit)
-            .then((data) => {
-                $scope.setMessage($scope.tr("dedicatedCloud_USER_right_set_success", [this.selectedUser.name, this.rights.list.results[rightIndex].datacenterName]), data);
-            })
-            .catch((err) => {
-                $scope.setMessage($scope.tr("dedicatedCloud_USER_right_set_fail", [this.selectedUser.name, this.rights.list.results[rightIndex].datacenterName]), { type: "ERROR", message: err.message });
-            })
-            .finally(() => {
-                this.saving = false;
-                $scope.resetAction();
-            });
-    }
-}
+    /* =====================================
+    =            RIGHTS LOADING            =
+    ====================================== */
 
-angular.module("App").controller("DedicatedCloudUserRightsCtrl", DedicatedCloudUserRightsCtrl);
+    self.loadUserRight = function (elementsByPage, elementsToSkip) {
+        self.loading.rights = true;
+
+        DedicatedCloud.getUserRights($stateParams.productId, $stateParams.userId, elementsByPage, elementsToSkip).then((results) => {
+            self.rights = results;
+        }, (data) => {
+            $scope.setMessage($scope.tr("dedicatedCloud_users_rights_loading_error"), data);
+        }).finally(() => {
+            self.loading.rights = false;
+        });
+    };
+
+    self.refreshTableRights = function () {
+        $scope.$broadcast("paginationServerSide.reload", "rightTable");
+    };
+
+    /* -----  End of RIGHTS LOADING  ------ */
+
+    /* =====================================
+    =            INITIALIZATION            =
+    ====================================== */
+
+    self.$onInit = function () {
+        self.loading.init = true;
+
+        return DedicatedCloud.getUserDetail($stateParams.productId, $stateParams.userId).then((details) => {
+            self.selectedUser = details;
+        }).finally(() => {
+            self.loading.init = false;
+        });
+    };
+
+    /* -----  End of INITIALIZATION  ------ */
+
+});

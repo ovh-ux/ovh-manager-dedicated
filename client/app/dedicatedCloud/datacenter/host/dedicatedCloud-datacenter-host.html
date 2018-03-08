@@ -1,0 +1,95 @@
+<div class="dedicatedCloud-datacenter-hosts">
+    <div class="text-center"
+         data-ng-if="loaders.datacenter">
+        <oui-spinner></oui-spinner>
+    </div>
+    <div class="row"
+         data-ng-if="!loaders.datacenter">
+        <div class="col-sm-9">
+            <table class="table table-hover">
+                <thead>
+                    <th scope="col"
+                        data-i18n-static="dedicatedCloud_tab_host_name">
+                    </th>
+                    <th scope="col"
+                        data-i18n-static="dedicatedCloud_tab_host_profile">
+                    </th>
+                    <th scope="col"
+                        data-i18n-static="dedicatedCloud_tab_host_billing">
+                    </th>
+                    <th scope="col"
+                        data-i18n-static="dedicatedCloud_tab_host_status">
+                    </th>
+                    <th scope="col"
+                        data-i18n-static="dedicatedCloud_tab_host_consumption">
+                    </th>
+                </thead>
+                <tbody data-ng-show="loaders.hosts">
+                    <tr>
+                        <td colspan="5"
+                            class="text-center">
+                            <oui-spinner data-size="s"></oui-spinner>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody data-ng-show="!loaders.hosts && hosts.list.results.length == 0">
+                    <tr>
+                        <td colspan="5"
+                            class="text-center"
+                            data-i18n-static="dedicatedCloud_tab_host_empty">
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody data-ng-show="!loaders.hosts && hosts.list.results.length > 0">
+                    <tr data-ng-repeat="host in hosts.list.results track by $index">
+                        <th scope="row"
+                            data-ng-bind="host.name">
+                        </th>
+                        <td data-ng-bind="host.profile"></td>
+                        <td>
+                            <span class="d-block"
+                                  data-ng-bind="tr('dedicatedCloud_tab_host_billing_'+host.billingType)">
+                            </span>
+                            <button type="button"
+                                    class="btn btn-link p-0"
+                                    data-ng-show="datacenter.model.canOrderHosts && host.billingType === 'HOURLY'"
+                                    data-ng-click="setAction('resource/upgrade/dedicatedCloud-resource-upgrade', {upgradeType: datacenter.model.isUpgradable && 'demoToMonthly' || 'hourlyToMonthly', type: 'host', id: host.hostId})"
+                                    data-i18n-static="dedicatedCloud_updateResource_toMonthly">
+                            </button>
+                        </td>
+                        <td data-ng-bind="tr('dedicatedCloud_tab_host_status_'+host.status)"></td>
+                        <td>
+                            <span data-ng-show="host.billingType === 'HOURLY' && host.consumption"
+                                  data-ng-bind="trpl('dedicatedCloud_tab_host_hourly_usage', host.consumption.value, [host.consumption.value])"
+                                  data-uib-tooltip="{{ tr('dedicatedCloud_tab_host_hourly_usage_update', [(host.lastUpdate|date:'short')]) }}"
+                                  data-tooltip-placement="top">
+                            </span>
+                            <span data-ng-show="host.billingType === 'HOURLY' && !host.consumption"
+                                  data-i18n-static="dedicatedCloud_tab_host_hourly_usage_na">
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div data-pagination-server-side
+                 data-pagination-server-side-function="loadHosts"
+                 data-pagination-server-side-paginated-stuff="hosts"
+                 data-pagination-server-side-table-loading="loaders.hosts">
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <button type="button"
+                    class="btn btn-block btn-default"
+                    data-ng-click="setAction('datacenter/host/order/dedicatedCloud-datacenter-host-order', datacenter.model, true)"
+                    data-ng-disabled="!datacenter.model.canOrderHosts"
+                    data-i18n-static="dedicatedCloud_order_Host">
+            </button>
+            <div class="label"
+                 data-ng-if="datacenter.model.hasDiscountAMD"
+                 data-uib-tooltip="{{ tr('dedicatedCloud_discount_AMD') }}"
+                 data-tooltip-placement="top"
+                 data-i18n-static="dedicatedCloud_discount">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,4 @@
-<div data-ng-controller="DedicatedCloudTabsCtrl"
-     id="main-container"
+<div id="main-container"
      data-ui-view>
 
     <div class="text-center mt-5"
@@ -141,12 +140,31 @@
                 </div>
             </div>
         </header>
-        <ovh-tabs data-tabs="dedicatedCloudTab.tabs"
-                  data-selected-tab="selectedTab"
-                  data-product="dedicatedCloud"
-                  data-change-tab="setSelectedTab"
-                  data-tr="tr">
-        </ovh-tabs>
+
+        <!-- Tabs -->
+        <responsive-tabs>
+            <responsive-tab data-state="app.dedicatedClouds">{{ ::i18n.dedicatedCloud_tab_dashboard }}</responsive-tab>
+            <responsive-tab data-state="app.dedicatedClouds.datacenters"
+                            data-ng-if="!dedicatedCloud.isExpired">
+                {{ ::i18n.dedicatedCloud_tab_datacenter }}
+            </responsive-tab>
+            <responsive-tab data-state="app.dedicatedClouds.users"
+                            data-ng-if="!dedicatedCloud.isExpired">
+                {{ ::i18n.dedicatedCloud_tab_user }}
+            </responsive-tab>
+            <responsive-tab data-state="app.dedicatedClouds.security"
+                            data-ng-if="!dedicatedCloud.isExpired">
+                {{ ::i18n.dedicatedCloud_tab_security }}
+            </responsive-tab>
+            <responsive-tab data-state="app.dedicatedClouds.operation"
+                            data-ng-if="!dedicatedCloud.isExpired">
+                {{ ::i18n.dedicatedCloud_tab_operation }}
+            </responsive-tab>
+            <responsive-tab-more>
+                <i class="fa fa-plus"></i>
+            </responsive-tab-more>
+        </responsive-tabs> <!-- End of Tabs -->
+
         <div class="tab-content">
 
             <div class="alert alert-dismissible"
@@ -187,9 +205,8 @@
 
             <div data-ovh-alert="dedicatedCloud_alert"></div>
 
-            <div class="tab-pane active"
-                 data-ng-include="'dedicatedCloud/' + toKebabCase(selectedTab) + '/dedicatedCloud-' + toKebabCase(selectedTab)  + '.html'">
-            </div>
+            <div data-ui-view="pccView"></div>
+
         </div>
     </div>
 

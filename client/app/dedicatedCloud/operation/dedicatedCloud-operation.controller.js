@@ -190,7 +190,7 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
                 .catch((err) => {
                     Alerter.alertFromSWS($scope.tr("dedicatedCloud_OPERATIONS_error"), err, "dedicatedCloud_alert");
                 })
-                .then(DedicatedCloud.getSelected)
+                .then(() => DedicatedCloud.getSelected($stateParams.productId))
                 .then((cloud) => {
                     self.name = cloud.name;
                 })
