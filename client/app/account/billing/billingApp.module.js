@@ -237,7 +237,7 @@ angular
              * ROUTE: Service termination
              */
             $stateProvider.state("app.account.billing.confirmTerminate", {
-                url: "/confirmTerminate",
+                url: "/confirmTerminate?id&token",
                 templateUrl: `${BILLING_BASE_URL}confirmTerminate/billing-confirmTerminate.html`,
                 controller: "Billing.controllers.TerminateServiceCtrl",
                 controllerAs: "TerminateServiceCtrl"

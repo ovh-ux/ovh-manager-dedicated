@@ -415,7 +415,7 @@ var constants = {
                     }, {
                         title: "core_sd_top_guide_7_title",
                         atInternetClickTag: "TopGuide-DedicatedServers-7",
-                        url: "https://www.ovh.com/fr/g920.rescue_mode"
+                        url: "https://docs.ovh.com/fr/dedicated/ovh-rescue/"
                     }, {
                         title: "core_sd_top_guide_8_title",
                         atInternetClickTag: "TopGuide-DedicatedServers-8",
@@ -435,23 +435,23 @@ var constants = {
                     {
                         title: "core_pcc_top_guide_1_title",
                         atInternetClickTag: "TopGuide-PrivateCloud-1",
-                        url: "https://pccdocs.ovh.net/display/VS/Se+loguer+sur+l%27interface"
+                        url: "https://docs.ovh.com/fr/private-cloud/connexion-interface-vsphere/"
                     }, {
                         title: "core_pcc_top_guide_2_title",
                         atInternetClickTag: "TopGuide-PrivateCloud-2",
-                        url: "https://pccdocs.ovh.net/pages/viewpage.action?pageId=2883604"
+                        url: "https://docs.ovh.com/fr/private-cloud/deploiement-d-une-machine-virtuelle/"
                     }, {
                         title: "core_pcc_top_guide_3_title",
                         atInternetClickTag: "TopGuide-PrivateCloud-3",
-                        url: "https://www.ovh.com/fr/g582.configure_an_ip_address_on_a_virtual_machine"
+                        url: "https://docs.ovh.com/fr/private-cloud/configuration-ip-machine-virtuelle/"
                     }, {
                         title: "core_pcc_top_guide_4_title",
                         atInternetClickTag: "TopGuide-PrivateCloud-4",
-                        url: "https://www.ovh.com/fr/g587.modify_the_hardware_configuration_of_your_virtual_machine"
+                        url: "https://docs.ovh.com/fr/private-cloud/modification-des-ressources-d-une-machine-virtuelle/"
                     }, {
                         title: "core_pcc_top_guide_5_title",
                         atInternetClickTag: "TopGuide-PrivateCloud-5",
-                        url: "https://www.ovh.com/fr/g589.sftp_connection"
+                        url: "https://docs.ovh.com/fr/private-cloud/connexion-en-sftp/"
                     }, {
                         title: "core_pcc_top_guide_6_title",
                         atInternetClickTag: "TopGuide-PrivateCloud-6",
@@ -459,11 +459,7 @@ var constants = {
                     }, {
                         title: "core_pcc_top_guide_7_title",
                         atInternetClickTag: "TopGuide-PrivateCloud-7",
-                        url: "https://www.ovh.com/fr/g2413.suppression_dun_hote"
-                    }, {
-                        title: "core_pcc_top_guide_8_title",
-                        atInternetClickTag: "TopGuide-PrivateCloud-8",
-                        url: "https://www.ovh.com/fr/g2414.licences_spla_windows"
+                        url: "https://docs.ovh.com/fr/private-cloud/suppression-d-un-hote/"
                     }, {
                         title: "core_pcc_top_guide_10_title",
                         atInternetClickTag: "TopGuide-PrivateCloud-10",
@@ -1023,7 +1019,7 @@ for (var lang in constants.US.URLS) {
     }
 }
 
-constants.CA.TOP_GUIDES = _.assign(constants.EU.TOP_GUIDES, constants.CA.TOP_GUIDES);
-constants.US.TOP_GUIDES = _.assign(constants.EU.TOP_GUIDES, constants.US.TOP_GUIDES);
+constants.CA.TOP_GUIDES = _.defaults(constants.CA.TOP_GUIDES, constants.EU.TOP_GUIDES);
+constants.US.TOP_GUIDES = _.defaults(constants.US.TOP_GUIDES, constants.EU.TOP_GUIDES);
 
 module.exports = constants;

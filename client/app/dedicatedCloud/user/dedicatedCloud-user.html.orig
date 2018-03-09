@@ -27,6 +27,7 @@
                                     data-ng-disabled="searchLoading">
                                 <span class="fa fa-times" aria-hidden="true"></span>
                             </button>
+<<<<<<< HEAD
                         </div>
                         <span class="input-group-addon"
                               data-ng-if="!usersEntrySearchSelected">
@@ -111,6 +112,125 @@
                             <td>
                                 <span data-ng-hide="user === userCurrentEditBack"
                                       data-ng-bind="user.firstName || '-'">
+=======
+                        </th>
+                    </tr>
+                </thead>
+                <tbody data-ng-show="loading">
+                    <tr>
+                        <td colspan="11"
+                            class="text-center">
+                            <oui-spinner data-size="s"></oui-spinner>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody data-ng-show="!loading && users.length === 0">
+                    <tr>
+                        <td colspan="11"
+                            class="text-center"
+                            data-i18n-static="dedicatedCloud_USER_empty">
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody data-ng-show="!loading && users.length > 0">
+                    <tr data-ng-repeat="user in users | orderBy:'progress'">
+                        <th scope="row"
+                            data-ng-bind="::user.name">
+                        </th>
+                        <td>
+                            <span data-ng-hide="user === userCurrentEditBack"
+                                  data-ng-bind="user.firstName || '-'">
+                            </span>
+                            <input type="text"
+                                   class="form-control"
+                                   data-ng-show="user === userCurrentEditBack"
+                                   data-ng-model="userCurrentEdit.firstName" />
+                        </td>
+                        <td>
+                            <span data-ng-hide="user === userCurrentEditBack"
+                                  data-ng-bind="user.lastName || '-'">
+                            </span>
+                            <input type="text"
+                                   class="form-control"
+                                   data-ng-show="user === userCurrentEditBack"
+                                   data-ng-model="userCurrentEdit.lastName" />
+                        </td>
+                        <td data-ng-class="{ 'has-error': !userCurrentEdit.emailValid }">
+                            <span data-ng-hide="user === userCurrentEditBack"
+                                  data-ng-bind="user.email || '-'">
+                            </span>
+                            <input type="text"
+                                   class="form-control"
+                                   data-ng-show="user === userCurrentEditBack"
+                                   data-ng-model="userCurrentEdit.email" />
+                        </td>
+                        <td data-ng-class="{ 'has-error': !userCurrentEdit.phoneValid }">
+                            <span data-ng-hide="user === userCurrentEditBack"
+                                  data-ng-bind="user.phoneNumber || '-'">
+                            </span>
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="{{ tr('dedicatedCloud_USER_phone_example', phoneExample) }}"
+                                   data-ng-show="user === userCurrentEditBack"
+                                   data-ng-model="userCurrentEdit.phoneNumber"
+                                   data-uib-tooltip="{{ tr('dedicatedCloud_USER_phone_hint', phoneExample) }}"
+                                   data-tooltip-placement="top" />
+                        </td>
+                        <td class="text-center">
+                            <span class="fa"
+                                  data-ng-hide="user === userCurrentEditBack"
+                                  data-ng-class="{
+                                      'fa-check': user.isTokenValidator === true,
+                                      'fa-ban': user.isTokenValidator === false
+                                  }">
+                            </span>
+                            <input type="checkbox"
+                                   data-ng-show="user === userCurrentEditBack"
+                                   data-ng-model="userCurrentEdit.tokenValidator" />
+                        </td>
+                        <td class="text-center">
+                            <span class="fa"
+                                  data-ng-hide="user === userCurrentEditBack"
+                                  data-ng-class="{
+                                      'fa-check': user.canManageNetwork === true,
+                                      'fa-ban': user.canManageNetwork === false
+                                  }">
+                            </span>
+                            <input type="checkbox"
+                                   data-ng-show="user === userCurrentEditBack"
+                                   data-ng-model="userCurrentEdit.canManageNetwork" />
+                        </td>
+                        <td class="text-center">
+                            <span class="fa"
+                                  data-ng-hide="user === userCurrentEditBack"
+                                  data-ng-class="{
+                                      'fa-check': user.canManageIpFailOvers === true,
+                                      'fa-ban': user.canManageIpFailOvers === false
+                                  }">
+                            </span>
+                            <input type="checkbox"
+                                   data-ng-show="user === userCurrentEditBack"
+                                   data-ng-model="userCurrentEdit.canManageIpFailOvers" />
+                        </td>
+                        <td class="text-center"
+                            data-ng-show="dedicatedCloud.solution === 'SYSTEMCENTER'">
+                            <span class="fa"
+                                  data-ng-hide="user === userCurrentEditBack"
+                                  data-ng-class="{
+                                      'fa-check': user.fullAdminRo === true,
+                                      'fa-ban': user.fullAdminRo === false
+                                  }"></span>
+                            <input type="checkbox"
+                                   data-ng-show="user === userCurrentEditBack"
+                                   data-ng-model="userCurrentEdit.fullAdminRo" />
+                        </td>
+                        <td class="text-center">
+                            <span data-ng-if="dedicatedCloud.solution !== 'SYSTEMCENTER' || user.name !== 'infraadmin'"
+                                  data-ng-switch="user.state">
+                                <span class="label label-info"
+                                      data-ng-switch-when="CREATING"
+                                      data-i18n-static="dedicatedCloud_USER_state_CREATING">
+>>>>>>> 772f1443b4f2701cbfd308fb7832a10200c38d36
                                 </span>
                                 <input type="text"
                                        class="form-control"
@@ -126,7 +246,7 @@
                                        data-ng-show="user === userCurrentEditBack"
                                        data-ng-model="userCurrentEdit.lastName" />
                             </td>
-                            <td data-ng-class="{ 'has-error': !userCurrentEdit.emailValid }">
+                            <td>
                                 <span data-ng-hide="user === userCurrentEditBack"
                                       data-ng-bind="user.email || '-'">
                                 </span>
@@ -135,7 +255,7 @@
                                        data-ng-show="user === userCurrentEditBack"
                                        data-ng-model="userCurrentEdit.email" />
                             </td>
-                            <td data-ng-class="{ 'has-error': !userCurrentEdit.phoneValid }">
+                            <td>
                                 <span data-ng-hide="user === userCurrentEditBack"
                                       data-ng-bind="user.phoneNumber || '-'">
                                 </span>

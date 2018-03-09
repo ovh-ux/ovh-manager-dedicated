@@ -1,0 +1,42 @@
+angular.module("App").config(($stateProvider) => {
+    $stateProvider.state("app.dedicatedClouds", {
+<<<<<<< HEAD
+        url: "/configuration/dedicated_cloud/:productId",
+        views: {
+            "": {
+                templateUrl: "dedicatedCloud/dedicatedCloud.html",
+                controller: "DedicatedCloudCtrl"
+            },
+            "pccView@app.dedicatedClouds": {
+                templateUrl: "dedicatedCloud/dashboard/dedicatedCloud-dashboard.html"
+            }
+        },
+=======
+        url: "/configuration/dedicated_cloud/:productId?action&token",
+        templateUrl: "dedicatedCloud/dedicatedCloud.html",
+        controller: "DedicatedCloudCtrl",
+        resolve: {
+            translator: [
+                "translator",
+                function (translator) {
+                    return translator.load(["dedicatedcloud"]).then(() => translator);
+                }
+            ]
+        }
+    });
+
+    $stateProvider.state("app.dedicatedCloudsNetwork", {
+        url: "/configuration/dedicated_cloud/:productId/network/",
+        templateUrl: "dedicatedCloud/network/dedicatedCloud-network.html",
+        controller: "DedicatedCloudSubNetworkCtrl",
+>>>>>>> 772f1443b4f2701cbfd308fb7832a10200c38d36
+        resolve: {
+            translator: [
+                "translator",
+                function (translator) {
+                    return translator.load(["dedicatedcloud"]).then(() => translator);
+                }
+            ]
+        }
+    });
+});
