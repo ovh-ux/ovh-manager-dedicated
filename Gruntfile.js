@@ -2,7 +2,7 @@ module.exports = function (grunt) {
     "use strict";
 
     function isProd () {
-        return grunt.option("mode") === "prod" || grunt.option("type") !== undefined;
+        return grunt.option("mode") === "prod";
     }
 
     const _ = require("lodash");
@@ -937,16 +937,6 @@ module.exports = function (grunt) {
             }
         },
 
-        // To release
-        bump: {
-            options: {
-                pushTo: "origin",
-                files: ["package.json"],
-                updateConfigs: ["pkg"],
-                commitFiles: ["-a"]
-            }
-        },
-
         ngAnnotate: {
             dist: {
                 files: [{
@@ -1164,21 +1154,4 @@ module.exports = function (grunt) {
         "open",
         "watch"
     ]);
-
-    /*
-     * --type=patch
-     * --type=minor
-     * --type=major
-     */
-    grunt.registerTask("release", "Release", () => {
-        const type = grunt.option("type");
-        if (isProd()) {
-            mode = "prod";
-            grunt.task.run([`bump-only:${type}`, "bump-commit"]);
-        } else {
-            grunt.verbose.or.write(`You try to release in a weird version type [${type}]`).error();
-            grunt.fail.warn("Please try with --type=patch|minor|major");
-        }
-    });
-
 };

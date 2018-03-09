@@ -1,5 +1,6 @@
 #### SYSTEM COMMAND ####
 NODE=node
+NPM=npm
 YARN=yarn
 GRUNT=grunt
 GIT=git
@@ -101,7 +102,7 @@ build-us: deps
 	$(TAR) $(DIST_US_TAR) $(DIST_US_DIR)
 
 release: deps
-	$(GRUNT) release --type=$(type)
+	$(NPM) version $(type) -m "Release v%s"
 
 
 ###############
