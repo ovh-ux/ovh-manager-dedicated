@@ -1,3 +1,13 @@
+<a name="9.0.9"></a>
+## [9.0.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.8...v9.0.9) (2018-03-09)
+
+
+### Bug Fixes
+
+* **installation:** fix custom template ([a1c3a3b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a1c3a3b))
+
+
+
 <a name="9.0.6"></a>
 ## [9.0.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.5...v9.0.6) (2018-03-08)
 
