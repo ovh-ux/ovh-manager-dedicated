@@ -86,7 +86,7 @@
                     <td data-ng-include="'dedicatedCloud/progressBar.html'">
                     <td data-ng-bind="::operation.description"></td>
                     <td>
-                        <ul class="list-unstyled">
+                        <ul class="list-unstyled m-0">
                             <!-- 0 || 1 operation -->
                             <li id="{{:: operation.taskId }}"
                                 data-ng-if="operation.relatedServices.length <= 1"
@@ -97,7 +97,7 @@
                                 </span>
                                 <span data-ng-switch-when="callback">
                                     <button type="button"
-                                            class="btn btn-link"
+                                            class="btn btn-link py-0"
                                             data-ng-click="ctrlOperations.showRelatedService(relatedService.action.params)"
                                             data-ng-bind="::relatedService.label">
                                     </button>
@@ -115,7 +115,7 @@
                                       data-ng-bind="::operation.relatedServices[0].label">
                                 </span>
                                 <button type="button"
-                                        class="btn btn-link py-0"
+                                        class="btn btn-link p-0"
                                         data-ng-if="operation.relatedServices[0].action.type === 'callback'"
                                         data-ng-click="ctrlOperations.showRelatedService(operation.relatedServices[0].action.params)"
                                         data-ng-bind="::operation.relatedService[0].label">
@@ -125,7 +125,7 @@
                                    data-ng-bind="::operation.relatedServices[0].label">
                                 </a>
                                 <button type="button"
-                                        class="btn btn-link py-0"
+                                        class="btn btn-link p-0"
                                         data-ng-click="ctrlOperations.toggleExpandOperation($event, operation)">
                                     <span class="fa fa-arrow-down" aria-hidden="true"></span>
                                 </button>
@@ -139,7 +139,7 @@
                                       data-ng-bind="::relatedService.label">
                                 </span>
                                 <button type="button"
-                                        class="btn btn-link py-0"
+                                        class="btn btn-link p-0"
                                         data-ng-switch-when="callback"
                                         data-ng-click="ctrlOperations.showRelatedService(relatedService.action.params)"
                                         data-ng-bind="::relatedService.label">
@@ -149,7 +149,7 @@
                                    data-ng-bind="::relatedService.label">
                                 </a>
                                 <button type="button"
-                                        class="btn btn-link py-0"
+                                        class="btn btn-link p-0"
                                         data-ng-click="ctrlOperations.toggleExpandOperation($event, operation)">
                                     <span class="fa fa-arrow-up"
                                           aria-hidden="true"
