@@ -1,10 +1,11 @@
-angular.module("App").controller("DedicatedCloudSubDatacenterVeeamCtrl", ($scope, $stateParams, DedicatedCloud, $rootScope, VEEAM_STATE_ENUM) => {
+angular.module("App").controller("DedicatedCloudSubDatacenterVeeamCtrl", ($q, $scope, $stateParams, DedicatedCloud, $rootScope, VEEAM_STATE_ENUM) => {
     "use strict";
 
     $scope.veeam = {
         model: null,
         constants: VEEAM_STATE_ENUM
     };
+    $scope.host = null;
     $scope.loading = false;
 
     $rootScope.$on("datacenter.veeam.reload", () => {
@@ -13,16 +14,17 @@ angular.module("App").controller("DedicatedCloudSubDatacenterVeeamCtrl", ($scope
 
     $scope.loadVeeam = function (forceRefresh) {
         $scope.loading = true;
-        DedicatedCloud.getVeeam($stateParams.productId, $stateParams.datacenterId, forceRefresh).then(
-            (veeam) => {
-                $scope.veeam.model = veeam;
-                $scope.loading = false;
-            },
-            (data) => {
-                $scope.loading = false;
-                $scope.setMessage($scope.tr("dedicatedCloud_tab_veeam_loading_error"), angular.extend(data, { type: "ERROR" }));
-            }
-        );
+        return $q.all({
+            veeam: DedicatedCloud.getVeeam($stateParams.productId, $stateParams.datacenterId, forceRefresh),
+            host: DedicatedCloud.getHostsLexi($stateParams.productId, $stateParams.datacenterId)
+        }).then((data) => {
+            $scope.veeam.model = data.veeam;
+            $scope.host = data.host;
+            $scope.loading = false;
+        }, (data) => {
+            $scope.loading = false;
+            $scope.setMessage($scope.tr("dedicatedCloud_tab_veeam_loading_error"), angular.extend(data, { type: "ERROR" }));
+        });
     };
 
     $scope.canBeActivated = function () {
