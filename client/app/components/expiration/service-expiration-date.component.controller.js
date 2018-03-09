@@ -5,6 +5,7 @@
             $scope.tr = $rootScope.tr;
             $scope.i18n = $rootScope.i18n;
             this.constants = constants;
+            this.inline = false;
         }
 
         $onInit () {

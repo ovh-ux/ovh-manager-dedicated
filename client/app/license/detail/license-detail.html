@@ -1,13 +1,14 @@
 <div class="page-header">
-    <h1 data-ng-bind="i18n['license_dashboard_title'] + ' - ' + i18n['license_designation_' + license.type]"></h1>
+    <h1 data-i18n-static="license_dashboard_title"></h1>
 </div>
 <div class="tab-content">
-    <div data-ovh-alert></div>
     <div class="text-center"
          data-ng-if="loadLicense">
         <oui-spinner></oui-spinner>
     </div>
     <div data-ng-if="!loadLicense">
+        <h2 data-ng-bind="i18n['license_dashboard_title'] + ' - ' + i18n['license_designation_' + license.type]"></h2>
+        <div data-ovh-alert></div>
         <a data-ui-sref="app.license.dashboard"
            title="{{:: i18n.licence_details_title }}">
             <span class="fa fa-chevron-left mr-2"

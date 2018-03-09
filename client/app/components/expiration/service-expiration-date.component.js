@@ -8,7 +8,8 @@
             forceHideRenewAction: "<",
             hideRenewDate: "<",
             serviceType: "<",
-            serviceName: "<"
+            serviceName: "<",
+            inline: "<"
         },
         controller: "ServiceExpirationDateComponentCtrl"
     });

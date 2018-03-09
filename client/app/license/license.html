@@ -36,170 +36,77 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid px-5">
+    <div class="tab-content">
+        <h2 data-i18n-static="license_dashboard_subtitle"></h2>
         <div data-ovh-alert></div>
-        <div class="table-responsive mt-5">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">
-                            <div class="btn-group"
-                                 data-uib-dropdown>
-                                <button id="dLabelLicence"
-                                        type="button"
-                                        class="btn btn-link"
-                                        data-uib-dropdown-toggle>
-                                    {{ i18n['license_dashboard_table_title_type'] }} {{ i18n['license_designation_' + filterType] && licencesTableLoading == false && " ( " + licenses.list.results.length + " " + i18n['license_designation_' + filterType] + " )" || "" }}
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu"
-                                    data-uib-dropdown-menu role="menu"
-                                    aria-labelledby="dLabelLicence">
-                                    <li role="menuitem"
-                                        data-ng-class="{ 'selected': type == filterType }"
-                                        data-ng-repeat="type in licenses.availableTypes">
-                                        <button type="button"
-                                                class="btn btn-link"
-                                                data-ng-click="search(type)"
-                                                data-ng-bind="i18n['license_designation_' + type] || '-'">
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </th>
-                        <th scope="col"
-                            data-i18n-static="license_dashboard_table_title_id">
-                        </th>
-                        <th scope="col"
-                            data-i18n-static="license_dashboard_table_title_ip">
-                        </th>
-                        <th scope="col"
-                            data-i18n-static="license_dashboard_table_title_service">
-                        </th>
-                        <th scope="col"
-                            colspan="2"
-                            data-i18n-static="license_dashboard_table_title_expiration">
-                        </th>
-                    </tr>
-                </thead>
-                <tbody data-ng-show="licencesTableLoading">
-                    <tr>
-                        <td colspan="6"
-                            class="text-center">
-                            <oui-spinner data-size="s"></oui-spinner>
-                        </td>
-                    </tr>
-                </tbody>
-                <tbody data-ng-show="!licencesTableLoading && licenses.list.results.length == 0">
-                    <tr>
-                        <td colspan="6"
-                            class="text-center"
-                            data-i18n-static="license_dashboard_table_empty">
-                        </td>
-                    </tr>
-                </tbody>
-                <tbody data-ng-show="!licencesTableLoading && licenses.list.results.length > 0">
-                    <tr data-ng-repeat="license in licenses.list.results"
-                        data-ng-show="license.billingStatus !== 'EXPIRED'">
-                        <th scope="row">
-                            <img alt="{{ license.type }}"
-                                 width="20"
-                                 height="20"
-                                 data-ng-src="images/license/{{license.type}}_icon.png" />
-                            <span data-ng-show="license.type != licenseTypes.SPLA"
-                                  data-ng-bind="tr('license_designation_' + license.type + '_version_' + license.version)">
-                            </span>
-                            <span data-ng-show="license.type == licenseTypes.SPLA"
-                                  data-ng-bind="tr('license_designation_' + license.type + '_type_' + license.splaType)">
-                            </span>
-                        </th>
-                        <td data-ng-bind="::license.id || '-'"></td>
-                        <td data-ng-bind="::license.ip || '-'"></td>
-                        <td data-ng-bind="::license.serviceName || '-'"></td>
-                        <td>
-                            <service-expiration-label
-                                service-infos="license">
-                            </service-expiration-label>
-                            <service-expiration-date
-                                hide-renew-action="true"
-                                service-name="license.id"
-                                service-type=""
-                                service-infos="license">
-                            </service-expiration-date>
-                        </td>
-                        <td>
-                            <div class="btn-group"
-                                 data-uib-dropdown
-                                 data-dropdown-append-to-body>
-                                <button id="btn-license-action-{{ index }}"
-                                        type="button"
-                                        class="btn btn-link"
-                                        data-uib-dropdown-toggle>
-                                    <span class="ovh-font ovh-font-dots align-top" aria-hidden="true"></span>
-                                    <span class="sr-only"
-                                          data-i18n-static="common_actions">
-                                    </span>
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-right"
-                                    role="menu"
-                                    aria-labelledby="btn-license-action-{{ index }}"
-                                    data-uib-dropdown-menu>
-                                    <li role="menuitem">
-                                        <a class="btn btn-link"
-                                           data-ui-sref="app.license.detail({
-                                               licenceId: getLicenseId(license)
-                                           })"
-                                           data-i18n-static="license_dashboard_table_popover_details">
-                                        </a>
-                                    </li>
-                                    <li role="menuitem"
-                                        data-ng-show="license.canBeMoved === true && !license.isExpired">
-                                        <button type="button"
-                                                class="btn btn-link"
-                                                data-ng-click="setAction('migrate/license-migrate', { 'license': license })"
-                                                data-i18n-static="license_dashboard_table_popover_move">
-                                        </button>
-                                    </li>
-                                    <li role="menuitem"
-                                        data-ng-show="license.type === licenseTypes.SPLA">
-                                        <button type="button"
-                                                class="btn btn-link"
-                                                data-ng-click="setAction('spla/revoke/license-spla-revoke', { 'license': license })"
-                                                data-i18n-static="license_dashboard_table_popover_revoke">
-                                        </button>
-                                    </li>
-                                    <li role="menuitem"
-                                        data-ng-show="license.canBeUpgraded === true && !license.isExpired">
-                                        <a class="btn btn-link"
-                                           data-ui-sref="app.license.upgrade({
-                                               licenceId: getLicenseId(license)
-                                           })"
-                                           data-i18n-static="license_dashboard_table_popover_upgrade">
-                                        </a>
-                                    </li>
-                                    <li role="menuitem"
-                                        data-ng-if="license.isExpired">
-                                        <a target="_blank"
-                                           rel="noopener"
-                                           data-ng-href="{{ getRenewUrl() + license['id'] }}"
-                                           data-i18n-static="license_dashboard_table_popover_renew">
-                                        </a>
-                                    </li>
-                                    <li role="menuitem"
-                                        data-ng-if="license.type !== licenseTypes.SPLA && !license.isExpired">
-                                        <button type="button"
-                                                class="btn btn-link"
-                                                data-ng-click="setAction('delete/license-delete', { 'license': license })"
-                                                data-i18n-static="license_dashboard_table_popover_delete">
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <oui-datagrid rows-loader="loadDatagridLicences($config)">
+            <oui-column title="tr('license_dashboard_table_title_type')"
+                        property="id">
+                <span data-ng-show="$row.type != licenseTypes.SPLA"
+                      data-ng-bind="tr('license_designation_' + $row.type + '_version_' + $row.version)">
+                </span>
+                <span data-ng-show="$row.type == licenseTypes.SPLA"
+                      data-ng-bind="tr('license_designation_' + $row.type + '_type_' + $row.splaType)">
+                </span>
+            </oui-column>
+            <oui-column title="tr('license_dashboard_table_title_id')"
+                        property="id"
+                        type="text">
+            </oui-column>
+            <oui-column title="tr('license_dashboard_table_title_ip')"
+                        property="ip"
+                        type="text">
+            </oui-column>
+            <oui-column title="tr('license_dashboard_table_title_service')"
+                        property="serviceName"
+                        type="text">
+            </oui-column>
+            <oui-column title="tr('license_dashboard_table_title_expiration')"
+                        property="expiration">
+                <service-expiration-label
+                    service-infos="$row">
+                </service-expiration-label>
+                <service-expiration-date
+                    hide-renew-action="true"
+                    service-name="$row.id"
+                    service-type=""
+                    service-infos="$row"
+                    inline="true">
+                </service-expiration-date>
+            </oui-column>
+
+            <oui-action-menu align="end" compact>
+                <oui-action-menu-item
+                    text="{{:: tr('license_dashboard_table_popover_details') }}"
+                    href="{{ $state.href('app.license.detail', { licenceId: getLicenseId($row) }) }}">
+                </oui-action-menu-item>
+                <oui-action-menu-item
+                    data-ng-if="$row.canBeMoved === true && !$row.isExpired"
+                    text="{{:: tr('license_dashboard_table_popover_move') }}"
+                    on-click="setAction('migrate/license-migrate', { 'license': $row })">
+                </oui-action-menu-item>
+                <oui-action-menu-item
+                    data-ng-if="$row.type === licenseTypes.SPLA"
+                    text="{{:: tr('license_dashboard_table_popover_revoke') }}"
+                    on-click="setAction('spla/revoke/license-spla-revoke', { 'license': $row })">
+                </oui-action-menu-item>
+                <oui-action-menu-item
+                    data-ng-if="$row.canBeUpgraded === true && !$row.isExpired"
+                    text="{{:: tr('license_dashboard_table_popover_upgrade') }}"
+                    href="{{ $state.href('app.license.upgrade', { licenceId: getLicenseId($row) }) }}">
+                </oui-action-menu-item>
+                <oui-action-menu-item
+                    data-ng-if="$row.isExpired"
+                    text="{{:: tr('license_dashboard_table_popover_renew') }}"
+                    href="{{ getRenewUrl() + $row.id }}">
+                </oui-action-menu-item>
+                <oui-action-menu-item
+                    data-ng-if="$row.type !== licenseTypes.SPLA && !$row.isExpired"
+                    text="{{:: tr('license_dashboard_table_popover_delete') }}"
+                    on-click="setAction('delete/license-delete', { 'license': $row })">
+                </oui-action-menu-item>
+            </oui-action-menu>
+        </oui-datagrid>
         <div data-ng-show="!licencesTableLoading && licenses.list.results.length > 0"
              data-pagination-server-side="licensesPagination"
              data-pagination-server-side-function="loadLicenses"
