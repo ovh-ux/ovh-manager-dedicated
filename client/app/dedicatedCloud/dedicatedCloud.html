@@ -143,22 +143,29 @@
 
         <!-- Tabs -->
         <responsive-tabs>
-            <responsive-tab data-state="app.dedicatedClouds">{{ ::i18n.dedicatedCloud_tab_dashboard }}</responsive-tab>
+            <responsive-tab data-state="app.dedicatedClouds"
+                            data-dropdown-title="{{ i18n.dedicatedCloud_tab_dashboard }}">
+                {{ i18n.dedicatedCloud_tab_dashboard }}
+            </responsive-tab>
             <responsive-tab data-state="app.dedicatedClouds.datacenters"
+                            data-dropdown-title="{{ i18n.dedicatedCloud_tab_datacenter }}"
                             data-ng-if="!dedicatedCloud.isExpired">
-                {{ ::i18n.dedicatedCloud_tab_datacenter }}
+                {{ i18n.dedicatedCloud_tab_datacenter }}
             </responsive-tab>
             <responsive-tab data-state="app.dedicatedClouds.users"
+                            data-dropdown-title="{{ i18n.dedicatedCloud_tab_user }}"
                             data-ng-if="!dedicatedCloud.isExpired">
-                {{ ::i18n.dedicatedCloud_tab_user }}
+                {{ i18n.dedicatedCloud_tab_user }}
             </responsive-tab>
             <responsive-tab data-state="app.dedicatedClouds.security"
+                            data-dropdown-title="{{ i18n.dedicatedCloud_tab_security }}"
                             data-ng-if="!dedicatedCloud.isExpired">
-                {{ ::i18n.dedicatedCloud_tab_security }}
+                {{ i18n.dedicatedCloud_tab_security }}
             </responsive-tab>
             <responsive-tab data-state="app.dedicatedClouds.operation"
+                            data-dropdown-title="{{ i18n.dedicatedCloud_tab_operation }}"
                             data-ng-if="!dedicatedCloud.isExpired">
-                {{ ::i18n.dedicatedCloud_tab_operation }}
+                {{ i18n.dedicatedCloud_tab_operation }}
             </responsive-tab>
             <responsive-tab-more>
                 <i class="fa fa-plus"></i>

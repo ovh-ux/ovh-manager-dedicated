@@ -14,7 +14,7 @@ angular.module("App").controller("DedicatedCloudOrderVMwareOptionCtrl", ($scope,
                 pcc: DedicatedCloud.getSelected($stateParams.productId),
                 commercialRanges: DedicatedCloud.isOptionToggable($stateParams.productId, $scope.option, "disabled", false)
             })
-            .then((data) => DedicatedCloud.fetchAllHostsPrices($stateParams.productId, data.commercialRanges.data.oldCommercialVersion, data.commercialRanges.data.newCommercialVersion, data.pcc.location))
+            .then((data) => DedicatedCloud.fetchAllHostsPrices($stateParams.productId, data.commercialRanges.oldCommercialVersion, data.commercialRanges.newCommercialVersion, data.pcc.location))
             .then((data) => {
                 $scope.prices = data.current.map((host, index) =>
                     _.assign(_.pick(host, ["datacenter", "name", "billingType"]), {

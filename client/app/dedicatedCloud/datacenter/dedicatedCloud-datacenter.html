@@ -122,11 +122,26 @@
         </header>
         <!-- Tabs -->
         <responsive-tabs>
-            <responsive-tab data-state="app.dedicatedClouds.datacenter">{{ ::i18n.dedicatedCloud_tab_dashboard }}</responsive-tab>
-            <responsive-tab data-state="app.dedicatedClouds.datacenter.hosts">{{ ::i18n.dedicatedCloud_tab_host }}</responsive-tab>
-            <responsive-tab data-state="app.dedicatedClouds.datacenter.datastores">{{ ::i18n.dedicatedCloud_tab_datastore }}</responsive-tab>
-            <responsive-tab data-state="app.dedicatedClouds.datacenter.backup">{{ ::i18n.dedicatedCloud_tab_backup }}</responsive-tab>
-            <responsive-tab data-state="app.dedicatedClouds.datacenter.license">{{ ::i18n.dedicatedCloud_tab_license }}</responsive-tab>
+            <responsive-tab data-state="app.dedicatedClouds.datacenter"
+                            data-dropdown-title="{{ i18n.dedicatedCloud_tab_dashboard }}">
+                {{ ::i18n.dedicatedCloud_tab_dashboard }}
+            </responsive-tab>
+            <responsive-tab data-state="app.dedicatedClouds.datacenter.hosts"
+                            data-dropdown-title="{{ i18n.dedicatedCloud_tab_host }}">
+                {{ ::i18n.dedicatedCloud_tab_host }}
+            </responsive-tab>
+            <responsive-tab data-state="app.dedicatedClouds.datacenter.datastores"
+                            data-dropdown-title="{{ i18n.dedicatedCloud_tab_datastore }}">
+                {{ ::i18n.dedicatedCloud_tab_datastore }}
+            </responsive-tab>
+            <responsive-tab data-state="app.dedicatedClouds.datacenter.backup"
+                            data-dropdown-title="{{ i18n.dedicatedCloud_tab_backup }}">
+                {{ ::i18n.dedicatedCloud_tab_backup }}
+            </responsive-tab>
+            <responsive-tab data-state="app.dedicatedClouds.datacenter.license"
+                            data-dropdown-title="{{ i18n.dedicatedCloud_tab_license }}">
+                {{ ::i18n.dedicatedCloud_tab_license }}
+            </responsive-tab>
             <responsive-tab-more>
                 <i class="fa fa-plus"></i>
             </responsive-tab-more>
