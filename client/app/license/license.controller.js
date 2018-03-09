@@ -1,10 +1,11 @@
 angular.module("Module.license.controllers").controller("LicenseCtrl", [
     "$scope",
+    "$state",
     "License",
     "$timeout",
     "constants",
     "Billing.URLS",
-    ($scope, License, $timeout, constants, billingUrls) => {
+    ($scope, $state, License, $timeout, constants, billingUrls) => {
         $scope.licencesTableLoading = false;
         $scope.licenses = null;
         $scope.licenseTypes = {
@@ -17,6 +18,7 @@ angular.module("Module.license.controllers").controller("LicenseCtrl", [
             WINDOWS: "WINDOWS"
         };
         $scope.filterType = null;
+        $scope.$state = $state;
 
         /**
          * Search
@@ -49,6 +51,13 @@ angular.module("Module.license.controllers").controller("LicenseCtrl", [
                 }, 300);
             }
         };
+
+        $scope.loadDatagridLicences = ({ offset, pageSize }) => $scope.loadLicenses(pageSize, offset - 1).then((licenses) => ({
+            data: _.get(licenses, "list.results"),
+            meta: {
+                totalCount: licenses.count
+            }
+        }));
 
         /**
          * Load licenses.
