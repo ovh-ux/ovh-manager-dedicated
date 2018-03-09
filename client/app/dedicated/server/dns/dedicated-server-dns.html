@@ -7,9 +7,8 @@
 
     <div data-ng-if="!loading">
         <button type="button"
-                class="btn btn-primary mb-5"
+                class="btn btn-default mb-4"
                 data-ng-click="setAction('dns/add/dedicated-server-dns-add', secondaryDns)">
-            <span class="oui-icon oui-icon-add" aria-hidden="true"></span>
             <span data-i18n-static="server_configuration_add_secondary_dns_title"></span>
         </button>
         <p data-ng-if="!secondaryDnsList"
