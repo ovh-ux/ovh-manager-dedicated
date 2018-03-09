@@ -1924,7 +1924,7 @@ angular
                         urlPath: path.installationMe
                     });
                 }
-                return $q.when(true);
+                return $q.when();
             });
         };
 
