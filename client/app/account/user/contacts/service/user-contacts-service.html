@@ -13,7 +13,7 @@
                                 data-ng-model="ctrlServices.categoryFilter"
                                 data-ng-options="category as (i18n['useraccount_contacts_service_category_'+category] ||  category) for category in ctrlServices.categories | orderBy:i18n['useraccount_contacts_service_category_'+category] || category"
                                 data-ng-disabled="ctrlServices.loaders.services"
-                                data-ng-change="ctrlServices.onCategoryChanged()">
+                                data-ng-change="ctrlServices.updateFilters()">
                             <option value="" data-i18n-static="useraccount_contacts_service_all_categories"></option>
                         </select>
                     </th>
@@ -24,7 +24,7 @@
                                 data-ng-model="ctrlServices.serviceFilter"
                                 data-ng-options="value as value.serviceName group by ( i18n['useraccount_contacts_service_category_'+value.category] || value.category) for value in ctrlServices.allServices | orderBy:['category', 'serviceName']"
                                 data-ng-disabled="ctrlServices.loaders.services"
-                                data-ng-change="ctrlServices.onServiceChanged()">
+                                data-ng-change="ctrlServices.updateFilters()">
                             <option value="" data-i18n-static="useraccount_contacts_all_services"></option>
                         </select>
                     </th>
@@ -148,5 +148,4 @@
          data-page-placeholder="{{tr('pagination_page', [currentPage, nbPages])}}"
          data-item-per-page-placeholder="{{tr('pagination_display')}}">
     </div>
-
 </div>
