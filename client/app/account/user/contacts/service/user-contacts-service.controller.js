@@ -41,7 +41,8 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.co
             $q.all([getUser(), self.getServices(true)]).then(() => {
                 if ($stateParams.serviceName) {
                     self.serviceFilter = _.find(self.allServices, (service) => service.serviceName === $stateParams.serviceName);
-                    self.onServiceChanged();
+                    self.categoryFilter = $stateParams.category;
+                    self.updateFilters();
                 }
             });
         }
@@ -63,7 +64,6 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.co
                                 self.categories.push(s.category);
                             }
                         });
-
                         self.servicesIds = Object.keys(servicesTemp);
                         self.allServices = servicesFiltered;
                         allServicesIds = angular.copy(self.servicesIds);
@@ -101,23 +101,13 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.co
             }
         };
 
-        self.onCategoryChanged = function () {
-            if (!self.categoryFilter) {
-                self.servicesIds = allServicesIds;
-            } else {
-                self.servicesIds = allServicesIds.filter((id) => id.indexOf(self.categoryFilter) === 0);
-            }
-        };
+        self.updateFilters = function () {
+            $location.search("serviceName", _.get(self.serviceFilter, "serviceName", null));
+            $location.search("category", _.get(self, "categoryFilter", null));
 
-        self.onServiceChanged = function () {
-            if (!self.serviceFilter) {
-                self.servicesIds = allServicesIds;
-                $location.search("serviceName", null);
-                self.onCategoryChanged();
-            } else {
-                self.servicesIds = allServicesIds.filter((id) => id.indexOf(self.serviceFilter.serviceName) !== -1);
-                $location.search("serviceName", self.serviceFilter.serviceName);
-            }
+            self.servicesIds = allServicesIds
+                .filter((id) => self.categoryFilter ? id.indexOf(self.categoryFilter) === 0 : true)
+                .filter((id) => self.serviceFilter ? id.indexOf(self.serviceFilter.serviceName) !== -1 : true);
         };
 
         self.openEditLine = function (index, service) {
