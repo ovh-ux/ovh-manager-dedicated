@@ -1,3 +1,15 @@
+<a name="9.0.10"></a>
+## [9.0.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.9...v9.0.10) (2018-03-12)
+
+
+### Bug Fixes
+
+* **autorenew:** fix activation modal ([4800f03](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4800f03))
+* **otrs:** fix text not displaying ([a01442c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a01442c))
+* **user:** add contact url redirection for legacy url ([25cda75](https://github.com/ovh-ux/ovh-manager-dedicated/commit/25cda75))
+
+
+
 <a name="9.0.9"></a>
 ## [9.0.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.8...v9.0.9) (2018-03-09)
 
