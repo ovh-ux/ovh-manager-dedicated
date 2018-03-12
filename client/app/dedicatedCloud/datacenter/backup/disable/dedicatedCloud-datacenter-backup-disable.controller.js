@@ -1,23 +1,55 @@
-angular.module("App").controller("DedicatedCloudSubDatacenterVeeamBackupDisableCtrl", ($scope, $stateParams, DedicatedCloud, $rootScope) => {
-    "use strict";
+angular.module("App").controller("DedicatedCloudSubDatacenterVeeamBackupDisableCtrl", class {
 
-    $scope.datacenterName = $scope.currentActionData;
-    $scope.loading = false;
+    constructor ($stateParams, $uibModalInstance, translator, Alerter, DedicatedCloud) {
+        // dependencies injections
+        this.$stateParams = $stateParams;
+        this.$uibModalInstance = $uibModalInstance;
+        this.translator = translator;
+        this.Alerter = Alerter;
+        this.DedicatedCloud = DedicatedCloud;
 
-    $scope.disableBackup = function () {
-        $scope.loading = true;
-        DedicatedCloud.disableVeeam($stateParams.productId, $stateParams.datacenterId).then(
-            () => {
-                $scope.resetAction();
-                $scope.loading = false;
-                $scope.setMessage($scope.tr("dedicatedCloud_tab_veeam_disable_success", $scope.datacenterName), true);
-            },
-            (data) => {
-                $scope.resetAction();
-                $scope.loading = false;
-                $rootScope.$broadcast("datacenter.veeam.reload");
-                $scope.setMessage($scope.tr("dedicatedCloud_tab_veeam_disable_fail", $scope.datacenterName), angular.extend(data, { type: "ERROR" }));
-            }
-        );
-    };
+        // controller attributes
+        this.loading = {
+            init: false,
+            disable: false
+        };
+
+        this.datacenter = null;
+    }
+
+    /* =============================
+    =            EVENTS            =
+    ============================== */
+
+    onConfirmBtnClick () {
+        this.loading.disable = true;
+
+        return this.DedicatedCloud.disableVeeam(this.$stateParams.productId, this.$stateParams.datacenterId).then(() => {
+            this.Alerter.success(this.translator.tr("dedicatedCloud_tab_veeam_disable_success", this.datacenter.name), "dedicatedCloudDatacenterAlert");
+        }).catch((error) => {
+            this.Alerter.error(this.translator.tr("dedicatedCloud_tab_veeam_disable_fail", this.datacenter.name), error, "dedicatedCloudDatacenterAlert");
+        }).finally(() => {
+            this.loading.disable = false;
+            this.$uibModalInstance.close();
+        });
+    }
+
+    /* -----  End of EVENTS  ------ */
+
+    /* =====================================
+    =            INITIALIZATION            =
+    ====================================== */
+
+    $onInit () {
+        this.loading.disable = true;
+
+        return this.DedicatedCloud.getDatacenterInfoProxy(this.$stateParams.productId, this.$stateParams.datacenterId).then((datacenter) => {
+            this.datacenter = datacenter;
+        }).finally(() => {
+            this.loading.disable = false;
+        });
+    }
+
+    /* -----  End of INITIALIZATION  ------ */
+
 });

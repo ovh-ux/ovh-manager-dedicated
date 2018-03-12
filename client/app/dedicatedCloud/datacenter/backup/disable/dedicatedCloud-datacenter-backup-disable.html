@@ -1,28 +1,50 @@
-<div data-ng-controller="DedicatedCloudSubDatacenterVeeamBackupDisableCtrl">
+<div class="oui-modal oui-modal_shadow">
 
-    <div data-wizard
-         data-wizard-on-cancel="resetAction"
-         data-wizard-on-finish="disableBackup"
-         data-wizard-title="i18n.dedicatedCloud_tab_veeam_disable_title">
+    <div class="oui-modal__header">
+        <button type="button"
+                class="oui-icon oui-icon-close_thin oui-modal__close-button"
+                aria-label="{{ i18n.wizard_close }}"
+                data-ng-click="$ctrl.$uibModalInstance.close()"
+                data-ng-disabled="$ctrl.loading.disable">
+        </button>
+    </div>
 
-        <div data-wizard-step
-             data-wizard-step-valid="!loading">
+    <div class="oui-modal__body text-center oui-modal__body_no-icon"
+         data-ng-if="$ctrl.loading.init || $ctrl.loading.disable">
+        <oui-spinner></oui-spinner>
+    </div>
 
-            <div class="text-center"
-                 data-ng-if="loading">
-                <oui-spinner></oui-spinner>
-            </div>
+    <div class="oui-modal__body"
+         data-ng-if="!$ctrl.loading.init && !$ctrl.loading.disable">
 
-            <div data-ng-if="!loading">
-                <p data-ng-bind-html="tr('dedicatedCloud_tab_veeam_disable_message', datacenterName)"></p>
-                <p data-ng-bind-html="tr('dedicatedCloud_tab_veeam_disable_message2')"></p>
-                <p class="text-center text-danger"
-                   data-i18n-static="dedicatedCloud_tab_veeam_disable_message_alert">
-               </p>
-            </div>
+        <i class="oui-icon oui-icon-help_circle oui-icon_bicolor"
+           aria-hidden="true">
+        </i>
 
+        <div class="oui-modal__body-text">
+            <h2 class="oui-modal__title"
+                data-i18n-static="dedicatedCloud_tab_veeam_disable_title">
+            </h2>
+
+            <p data-ng-bind-html="tr('dedicatedCloud_tab_veeam_disable_message', $ctrl.datacenter.name)"></p>
+            <p data-ng-bind-html="tr('dedicatedCloud_tab_veeam_disable_message2')"></p>
+            <strong data-i18n-static="dedicatedCloud_tab_veeam_disable_message_alert"></strong>
         </div>
+    </div>
 
+    <div class="oui-modal__footer">
+        <button type="button"
+                class="oui-button oui-button_secondary"
+                data-i18n-static="wizard_cancel"
+                data-ng-click="$ctrl.$uibModalInstance.close()"
+                data-ng-disabled="$ctrl.loading.disable">
+        </button>
+        <button type="button"
+                class="oui-button oui-button_primary"
+                data-i18n-static="wizard_confirm"
+                data-ng-disabled="$ctrl.loading.init || $ctrl.loading.disable"
+                data-ng-click="$ctrl.onConfirmBtnClick()">
+        </button>
     </div>
 
 </div>

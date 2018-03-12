@@ -14,20 +14,16 @@
             <dd data-ng-bind="tr('dedicatedCloud_tab_veeam_' + veeam.model.state.toUpperCase())"></dd>
         </dl>
         <div class="col-sm-3">
-            <button type="button"
-                    class="btn btn-block btn-default"
-                    data-ng-if="veeam.model.state === veeam.constants.DISABLED && host.length"
-                    data-ng-click="canBeActivated() && setAction('datacenter/backup/enable/dedicatedCloud-datacenter-backup-enable', datacenter.model.name)"
-                    data-ng-disabled="!canBeActivated()"
-                    data-i18n-static="dedicatedCloud_tab_veeam_on">
-            </button>
-            <button type="button"
-                    class="btn btn-block btn-default"
-                    data-ng-if="veeam.model.state === veeam.constants.ENABLED && host.length"
-                    data-ng-click="canBeDisabled() && setAction('datacenter/backup/disable/dedicatedCloud-datacenter-backup-disable', datacenter.model.name)"
-                    data-ng-disabled="!canBeDisabled()"
-                    data-i18n-static="dedicatedCloud_tab_veeam_off">
-            </button>
+            <a class="btn btn-block btn-default"
+               data-i18n-static="dedicatedCloud_tab_veeam_on"
+               data-ng-if="veeam.model.state === veeam.constants.DISABLED"
+               data-ui-sref="app.dedicatedClouds.datacenter.backup.enable">
+            </a>
+            <a class="btn btn-block btn-default"
+               data-i18n-static="dedicatedCloud_tab_veeam_off"
+               data-ng-if="veeam.model.state === veeam.constants.ENABLED"
+               data-ui-sref="app.dedicatedClouds.datacenter.backup.disable">
+            </a>
         </div>
     </div>
 </div>

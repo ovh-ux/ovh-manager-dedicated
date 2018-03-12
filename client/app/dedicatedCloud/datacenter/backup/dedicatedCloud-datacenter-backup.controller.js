@@ -1,11 +1,10 @@
-angular.module("App").controller("DedicatedCloudSubDatacenterVeeamCtrl", ($q, $scope, $stateParams, DedicatedCloud, $rootScope, VEEAM_STATE_ENUM) => {
+angular.module("App").controller("DedicatedCloudSubDatacenterVeeamCtrl", ($scope, $stateParams, DedicatedCloud, $rootScope, VEEAM_STATE_ENUM) => {
     "use strict";
 
     $scope.veeam = {
         model: null,
         constants: VEEAM_STATE_ENUM
     };
-    $scope.host = null;
     $scope.loading = false;
 
     $rootScope.$on("datacenter.veeam.reload", () => {
@@ -14,12 +13,9 @@ angular.module("App").controller("DedicatedCloudSubDatacenterVeeamCtrl", ($q, $s
 
     $scope.loadVeeam = function (forceRefresh) {
         $scope.loading = true;
-        return $q.all({
-            veeam: DedicatedCloud.getVeeam($stateParams.productId, $stateParams.datacenterId, forceRefresh),
-            host: DedicatedCloud.getHostsLexi($stateParams.productId, $stateParams.datacenterId)
-        }).then((data) => {
-            $scope.veeam.model = data.veeam;
-            $scope.host = data.host;
+
+        return DedicatedCloud.getVeeam($stateParams.productId, $stateParams.datacenterId, forceRefresh).then((veeam) => {
+            $scope.veeam.model = veeam;
             $scope.loading = false;
         }, (data) => {
             $scope.loading = false;
