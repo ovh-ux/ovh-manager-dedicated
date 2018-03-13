@@ -401,7 +401,7 @@ angular
                         if ($scope.installation.partitionSchemesList.length > 0) {
                             showPartition();
                         }
-
+                        return null;
                     },
                     (data) => {
                         $scope.loader.loading = false;
