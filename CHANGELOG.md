@@ -1,3 +1,14 @@
+<a name="9.0.11"></a>
+## [9.0.11](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.10...v9.0.11) (2018-03-13)
+
+
+### Bug Fixes
+
+* **billing:** fix filter on service page ([ce0b6c8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ce0b6c8))
+* **dedicatedserver:** fix template installation ([f53eb38](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f53eb38))
+
+
+
 <a name="9.0.10"></a>
 ## [9.0.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.9...v9.0.10) (2018-03-12)
 
