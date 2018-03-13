@@ -384,7 +384,7 @@ angular
                                 name: `hardwareRaid-${$scope.installation.hardwareRaid.raid}`,
                                 priority: 50
                             };
-                            Server.createPartitioningScheme($stateParams.productId, $scope.informations.gabaritName, newPartitioningScheme)
+                            return Server.createPartitioningScheme($stateParams.productId, $scope.informations.gabaritName, newPartitioningScheme)
                                 .then(() => Server.cloneDefaultPartitioningScheme($stateParams.productId, $scope.informations.gabaritName, `hardwareRaid-${$scope.installation.hardwareRaid.raid}`))
                                 .then(() => {
                                     $scope.installation.partitionSchemesList.push(newPartitioningScheme);
@@ -396,12 +396,12 @@ angular
                                     $scope.resetAction();
                                     Alerter.alertFromSWS($scope.tr("server_configuration_installation_ovh_stephardraid_loading_error"), error, "server_dashboard_alert");
                                 });
-                        } else {
-                            $scope.installation.partitionSchemesList = _.sortBy($scope.installation.partitionSchemesList, "priority");
-                            if ($scope.installation.partitionSchemesList.length > 0) {
-                                showPartition();
-                            }
                         }
+                        $scope.installation.partitionSchemesList = _.sortBy($scope.installation.partitionSchemesList, "priority");
+                        if ($scope.installation.partitionSchemesList.length > 0) {
+                            showPartition();
+                        }
+
                     },
                     (data) => {
                         $scope.loader.loading = false;

@@ -938,7 +938,7 @@ angular
 
         this.cloneDefaultPartitioningScheme = function (productId, gabaritName, newPartitioningSchemeName) {
             return self
-                .get("{gabaritName}/partitionScheme/default/partition", {
+                .get(productId, "{gabaritName}/partitionScheme/default/partition", {
                     urlParams: {
                         gabaritName
                     },
@@ -948,20 +948,21 @@ angular
                 .then((mountpoints) => {
                     const getMountpoints = _.map(mountpoints, (mountpoint) =>
                         self
-                            .get("{gabaritName}/partitionScheme/{schemeName}/partition/{mountpoint}", {
+                            .get(productId, "{gabaritName}/partitionScheme/{schemeName}/partition/{mountpoint}", {
                                 urlParams: {
                                     gabaritName,
                                     schemeName: newPartitioningSchemeName,
                                     mountpoint
                                 },
                                 proxypass: true,
-                                urlPath: path.installationMe
+                                urlPath: path.installationMe,
+                                returnErrorKey: null
                             })
                             .catch((data) => data.status === 404 ? "no_mountpoint" : $q.reject(data))
                             .then((status) => {
                                 if (status === "no_mountpoint") {
                                     return self
-                                        .get("{gabaritName}/partitionScheme/default/partition/{mountpoint}", {
+                                        .get(productId, "{gabaritName}/partitionScheme/default/partition/{mountpoint}", {
                                             urlParams: {
                                                 gabaritName,
                                                 mountpoint
