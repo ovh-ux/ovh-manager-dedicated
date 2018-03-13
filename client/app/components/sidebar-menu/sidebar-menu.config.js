@@ -132,7 +132,7 @@ angular.module("App")
                                     _.forEach(results, (result) => {
                                         SidebarMenu.addMenuItem({
                                             title: result.displayName,
-                                            state: "app.dedicatedClouds.dataCenter",
+                                            state: "app.dedicatedClouds.datacenter",
                                             stateParams: {
                                                 productId: pcc.name,
                                                 datacenterId: result.id

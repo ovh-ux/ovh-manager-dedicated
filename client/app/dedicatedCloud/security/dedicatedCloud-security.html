@@ -1,4 +1,7 @@
-<div data-ng-controller="DedicatedCloudSecurityCtrl">
+<div class="dedicatedCloud-security">
+
+    <h2 data-i18n-static="dedicatedCloud_tab_security"></h2>
+
     <div class="text-center"
          data-ng-show="loaders.policiesInfo">
         <oui-spinner></oui-spinner>
@@ -27,7 +30,7 @@
                         <thead>
                             <tr>
                                 <th scope="col"
-                                    class="min-width">
+                                    class="min-width text-center">
                                     <input type="checkbox"
                                            data-tri-state-checkbox
                                            data-tsc-ids-all="policies.model.fullNetworksList"

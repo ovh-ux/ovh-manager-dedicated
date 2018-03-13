@@ -1,4 +1,7 @@
-<div data-ng-controller="DedicatedCloudSubDatacentersHostCtrl">
+<div class="dedicatedCloud-datacenter-hosts">
+
+    <h2 data-i18n-static="dedicatedCloud_tab_host"></h2>
+
     <div class="text-center"
          data-ng-if="loaders.datacenter">
         <oui-spinner></oui-spinner>
@@ -53,7 +56,7 @@
                             <button type="button"
                                     class="btn btn-link p-0"
                                     data-ng-show="datacenter.model.canOrderHosts && host.billingType === 'HOURLY'"
-                                    data-ng-click="setAction('../resource/upgrade/dedicatedCloud-resource-upgrade', {upgradeType: datacenter.model.isUpgradable && 'demoToMonthly' || 'hourlyToMonthly', type: 'host', id: host.hostId})"
+                                    data-ng-click="setAction('resource/upgrade/dedicatedCloud-resource-upgrade', {upgradeType: datacenter.model.isUpgradable && 'demoToMonthly' || 'hourlyToMonthly', type: 'host', id: host.hostId})"
                                     data-i18n-static="dedicatedCloud_updateResource_toMonthly">
                             </button>
                         </td>
@@ -80,7 +83,7 @@
         <div class="col-sm-3">
             <button type="button"
                     class="btn btn-block btn-default"
-                    data-ng-click="setAction('datacenter/datacenter/host/order/dedicatedCloud-datacenter-datacenter-host-order', datacenter.model, true)"
+                    data-ng-click="setAction('datacenter/host/order/dedicatedCloud-datacenter-host-order', datacenter.model, true)"
                     data-ng-disabled="!datacenter.model.canOrderHosts"
                     data-i18n-static="dedicatedCloud_order_Host">
             </button>
