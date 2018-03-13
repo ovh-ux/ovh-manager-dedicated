@@ -686,7 +686,8 @@ module.exports = function (grunt) {
                                 "chart.js",
                                 "ovh-angular-responsive-tabs",
                                 "ngCkeditor",
-                                "Module.otrs"
+                                "Module.otrs",
+                                "ovhNgRavenConfig"
                             ];
                             _.forEach(assets[target].modules, (module) => {
                                 if (/^ovh-module\-([0-9a-zA-Z]+)$/.test(module)) {
