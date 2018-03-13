@@ -15,24 +15,6 @@
                         </span>
                     </h1>
                 </div>
-                <dl>
-                    <dt data-i18n-static="cdn_domain_configuration_cname"></dt>
-                    <dd data-ng-bind="$ctrl.domain.cname"></dd>
-                </dl>
-                <ol class="list-inline">
-                    <li class="ml-3">
-                        <img src="images/cdn/icn_domain.png" alt="" />
-                        <span data-ng-bind="$ctrl.domain.domain"></span>
-                    </li>
-                    <li class="ml-3">
-                        <img src="images/cdn/icn_cdn.png" alt="" />
-                        <span data-ng-bind="$ctrl.domain.anycast.ipv4"></span>
-                    </li>
-                    <li class="ml-3">
-                        <img src="images/cdn/icn_server.png" alt="" />
-                        <span data-ng-bind="$ctrl.domain.backend.ipv4"></span>
-                    </li>
-                </ol>
             </div>
             <div class="col-sm-3 d-flex">
                 <div class="btn-group ml-auto mt-4">
@@ -81,8 +63,8 @@
 
     <!-- Tabs -->
     <responsive-tabs>
-        <responsive-tab data-state="app.networks.cdn.dedicated.domain">{{ ::i18n.cdn_domain_tab_rule }}</responsive-tab>
-        <responsive-tab data-state="app.networks.cdn.dedicated.domain.statistics">{{ ::i18n.cdn_domain_tab_statistics }}</responsive-tab>
+        <responsive-tab data-state="app.networks.cdn.dedicated.domain">{{ ::i18n.cdn_domain_tab_statistics }}</responsive-tab>
+        <responsive-tab data-state="app.networks.cdn.dedicated.domain.rule">{{ ::i18n.cdn_domain_tab_rule }}</responsive-tab>
         <responsive-tab-more>
             <i class="fa fa-plus"></i>
         </responsive-tab-more>
