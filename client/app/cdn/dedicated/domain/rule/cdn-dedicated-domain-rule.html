@@ -45,133 +45,52 @@
                         </div>
                     </div>
                 </form>
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col"
-                                    data-i18n-static="cdn_cacherule_table_header_filetype">
-                                </th>
-                                <th scope="col"
-                                    data-i18n-static="cdn_cacherule_table_header_rule">
-                                </th>
-                                <th scope="col"
-                                    data-i18n-static="cdn_cacherule_table_header_cachetype">
-                                </th>
-                                <th scope="col"
-                                    class="text-right"
-                                    data-i18n-static="cdn_cacherule_table_header_ttl">
-                                </th>
-                                <th scope="col"
-                                    colspan="2"
-                                    class="text-center"
-                                    data-i18n-static="cdn_cacherule_table_header_state">
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody data-ng-show="cacheRules.count == 0">
-                            <tr>
-                                <td colspan="9"
-                                    class="text-center"
-                                    data-i18n-static="cdn_cacherule_table_search_empty">
-                                </td>
-                            </tr>
-                        </tbody>
-                        <tbody data-ng-show="cacheRulesTableLoading">
-                            <tr>
-                                <td colspan="9"
-                                    class="text-center">
-                                    <oui-spinner data-size="s"></oui-spinner>
-                                </td>
-                            </tr>
-                        </tbody>
-                        <tbody data-ng-show="!cacheRulesTableLoading">
-                            <tr data-ng-repeat="cacherule in cacheRules.list.results track by $index">
-                                <th scope="row"
-                                    data-ng-bind="tr('cdn_cacherule_'+cacherule.fileType)">
-                                </th>
-                                <td data-ng-bind="cacherule.fileMatch"></td>
-                                <td data-ng-bind="tr('cdn_cacherule_'+cacherule.cacheType)"></td>
-                                <td class="text-right"
-                                    data-ng-bind="cacherule.cacheType === 'FORCE_CACHE' ? cacherule.ttl : '-'">
-                                </td>
-                                <td class="text-center">
-                                    <span class="label"
-                                          data-ng-class="{
-                                              'label-success': cacherule.status == 'ON',
-                                              'label-info': cacherule.status == 'UPDATING' || cacherule.status == 'CREATING'
-                                          }"
-                                          data-ng-bind="tr('cdn_cacherule_status_' + cacherule.status)">
-                                    </span>
-                                </td>
-                                <td class="text-right">
-                                    <div class="btn-group"
-                                         data-uib-dropdown
-                                         data-dropdown-append-to-body>
-                                        <button id="btn-cdn-dedicated-domain-rule-action-{{ index }}"
-                                                type="button"
-                                                class="btn btn-link"
-                                                data-uib-dropdown-toggle>
-                                            <span class="ovh-font ovh-font-dots align-top" aria-hidden="true"></span>
-                                            <span class="sr-only"
-                                                  data-translate="common_actions">
-                                            </span>
-                                        </button>
-                                        <ul class="dropdown-menu dropdown-menu-right"
-                                            role="menu"
-                                            aria-labelledby="btn-cdn-dedicated-domain-rule-action-{{ index }}"
-                                            data-uib-dropdown-menu>
-                                            <li role="menuitem">
-                                                <button type="button"
-                                                        class="btn btn-link"
-                                                        data-ng-click="setAction('domain/rule/flush/cdn-dedicated-domain-rule-flush', cacherule)"
-                                                        data-i18n-static="cdn_configuration_cacherule_flush_title_button">
-                                                </button>
-                                            </li>
-                                            <li role="menuitem"
-                                                data-ng-show="cacherule.status != 'UPDATING' && cacherule.cacheType == 'FORCE_CACHE'">
-                                                <button type="button"
-                                                        class="btn btn-link"
-                                                        data-ng-click="setAction('domain/rule/update/cdn-dedicated-domain-rule-update', cacherule)"
-                                                        data-i18n-static="cdn_configuration_cacherule_update_title_button">
-                                                </button>
-                                            </li>
-                                            <li role="menuitem"
-                                                data-ng-show="cacherule && cacherule.status == 'ON'">
-                                                <button type="button"
-                                                        class="btn btn-link"
-                                                        data-ng-click="setAction('domain/rule/deactivate/cdn-dedicated-domain-rule-deactivate', cacherule)"
-                                                        data-i18n-static="cdn_configuration_cacherule_deactivate_title_button">
-                                                </button>
-                                            </li>
-                                            <li role="menuitem"
-                                                data-ng-show="cacherule && cacherule.status == 'OFF'">
-                                                <button type="button"
-                                                        class="btn-link"
-                                                        data-ng-click="setAction('domain/rule/activate/cdn-dedicated-domain-rule-activate', cacherule)"
-                                                        data-i18n-static="cdn_configuration_cacherule_activate_title_button">
-                                                </button>
-                                            </li>
-                                            <li role="menuitem"
-                                                data-ng-show="cacherule.status != 'DELETING'">
-                                                <button type="button"
-                                                        class="btn-link"
-                                                        data-ng-click="setAction('domain/rule/delete/cdn-dedicated-domain-rule-delete', cacherule)"
-                                                        data-i18n-static="cdn_configuration_delete_cacherule_title_button">
-                                                </button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div data-pagination-server-side
-                     data-pagination-server-side-function="loadCacheRules"
-                     data-pagination-server-side-paginated-stuff="cacheRules"
-                     data-pagination-server-side-table-loading="cacheRulesTableLoading">
-                </div>
+                <oui-datagrid data-ng-init="loadCacheRules()"
+                              data-rows="cacheRules.list.results">
+                    <oui-column data-title="tr('cdn_cacherule_table_header_filetype')">
+                        <span data-ng-bind="tr('cdn_cacherule_'+ $row.fileType)"></span>
+                    </oui-column>
+                    <oui-column data-title="tr('cdn_cacherule_table_header_rule')"
+                                data-property="fileMatch">
+                    </oui-column>
+                    <oui-column data-title="tr('cdn_cacherule_table_header_cachetype')">
+                        <span data-ng-bind="tr('cdn_cacherule_'+ $row.cacheType)"></span>
+                    </oui-column>
+                    <oui-column data-title="tr('cdn_cacherule_table_header_ttl')">
+                        <span data-ng-bind="$row.cacheType === 'FORCE_CACHE' ? $row.ttl : '-'"></span>
+                    </oui-column>
+                    <oui-column data-title="tr('cdn_cacherule_table_header_state')">
+                        <span class="label label-default"
+                              data-ng-class="{
+                                  'label-success': $row.status == 'ON',
+                                  'label-info': $row.status == 'UPDATING' || $row.status == 'CREATING'
+                              }"
+                              data-ng-bind="tr('cdn_cacherule_status_' + $row.status)">
+                        </span>
+                    </oui-column>
+                    <oui-action-menu data-align="end"
+                                     data-compact>
+                        <oui-action-menu-item data-text="{{:: tr('cdn_configuration_cacherule_flush_title_button') }}"
+                                              data-on-click="setAction('domain/rule/flush/cdn-dedicated-domain-rule-flush', $row)">
+                        </oui-action-menu-item>
+                        <oui-action-menu-item data-text="{{:: tr('cdn_configuration_cacherule_update_title_button') }}"
+                                              data-ng-if="$row.status != 'UPDATING' && $row.cacheType == 'FORCE_CACHE'"
+                                              data-on-click="setAction('domain/rule/update/cdn-dedicated-domain-rule-update', $row)">
+                        </oui-action-menu-item>
+                        <oui-action-menu-item data-text="{{:: tr('cdn_configuration_cacherule_deactivate_title_button') }}"
+                                              data-ng-if="$row && $row.status == 'ON'"
+                                              data-on-click="setAction('domain/rule/deactivate/cdn-dedicated-domain-rule-deactivate', $row)">
+                        </oui-action-menu-item>
+                        <oui-action-menu-item data-text="{{:: tr('cdn_configuration_cacherule_activate_title_button') }}"
+                                              data-ng-if="$row && $row.status == 'OFF'"
+                                              data-on-click="setAction('domain/rule/activate/cdn-dedicated-domain-rule-activate', $row)">
+                        </oui-action-menu-item>
+                        <oui-action-menu-item data-text="{{:: tr('cdn_configuration_delete_cacherule_title_button') }}"
+                                              data-ng-if="$row.status != 'DELETING'"
+                                              data-on-click="setAction('domain/rule/delete/cdn-dedicated-domain-rule-delete', $row)">
+                        </oui-action-menu-item>
+                    </oui-action-menu>
+                </oui-datagrid>
             </div>
         </div>
         <div class="col-sm-3">

@@ -17,13 +17,14 @@ angular.module("App").controller("NasPartitionAccessCtrl", function ($scope, $st
     self.getAccess = function (forceRefresh) {
         self.loaders.table = true;
 
-        Nas.getAccessIds($stateParams.nasId, self.partitionName, forceRefresh)
+        return Nas.getAccessIds($stateParams.nasId, self.partitionName, forceRefresh)
             .then(
                 (accessIds) => {
                     self.table.accessIds = accessIds;
                     if (forceRefresh) {
                         self.table.refresh = !self.table.refresh;
                     }
+                    return self.table.accessIds;
                 },
                 (data) => {
                     self.table.accessIds = null;
@@ -35,6 +36,16 @@ angular.module("App").controller("NasPartitionAccessCtrl", function ($scope, $st
                 self.loaders.table = false;
             });
     };
+
+    self.loadDatagridAccess = ({ offset, pageSize }) => self.getAccess(true).then((access) => {
+        const data = access.slice(offset - 1, offset - 1 + pageSize);
+        return {
+            data,
+            meta: {
+                totalCount: access.length
+            }
+        };
+    });
 
     $scope.$on("nas_access_updated", () => {
         self.getAccess(true);

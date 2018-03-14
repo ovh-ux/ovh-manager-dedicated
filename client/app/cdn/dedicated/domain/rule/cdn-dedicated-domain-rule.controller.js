@@ -2,7 +2,6 @@ angular.module("App").controller("CdnDomainTabCacheRuleCtrl", ($scope, $statePar
     $scope.loading = true;
 
     $scope.cacheRules = null;
-    $scope.cacheRulesTableLoading = false;
     $scope.cacheRulesEntrySearchSelected = null;
 
     $scope.$watch(
@@ -24,16 +23,14 @@ angular.module("App").controller("CdnDomainTabCacheRuleCtrl", ($scope, $statePar
     );
 
     function reloadCacheRules () {
-        $scope.$broadcast("paginationServerSide.reload");
+        $scope.loadCacheRules();
     }
 
     $scope.loadCacheRules = function (cacheRuleCount, offset) {
-        $scope.cacheRulesTableLoading = true;
         $scope.searchLoading = true;
         CdnDomain.getCacheRules($stateParams.productId, $stateParams.domain, cacheRuleCount, offset, $scope.cacheRulesEntrySearchSelected).then((cacheRules) => {
             $scope.cacheRules = cacheRules;
             $scope.loading = false;
-            $scope.cacheRulesTableLoading = false;
             $scope.searchLoading = false;
         });
     };
