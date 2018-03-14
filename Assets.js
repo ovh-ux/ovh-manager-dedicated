@@ -167,6 +167,7 @@ module.exports = {
             "node_modules/ovh-angular-sso-auth-modal-plugin/dist/ovh-angular-sso-auth-modal-plugin.min.js",
             "node_modules/raven-js/dist/raven.min.js",
             "node_modules/raven-js/dist/plugins/angular.min.js",
+            "node_modules/ovh-ng-raven-config/dist/ovh-ng-raven-config.min.js",
             "node_modules/ui-select/dist/select.min.js",
             "node_modules/angular-resource/angular-resource.min.js",
             "node_modules/jsurl/lib/jsurl.js",
