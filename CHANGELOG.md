@@ -1,3 +1,14 @@
+<a name="9.0.15"></a>
+## [9.0.15](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.14...v9.0.15) (2018-03-14)
+
+
+### Bug Fixes
+
+* **codeowners:** set owners to the whole repository ([78e8893](https://github.com/ovh-ux/ovh-manager-dedicated/commit/78e8893))
+* **double authentication:** remove backup code rejection ([6c98b04](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6c98b04))
+
+
+
 <a name="9.0.14"></a>
 ## [9.0.14](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.13...v9.0.14) (2018-03-14)
 
