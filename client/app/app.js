@@ -20,18 +20,6 @@ angular
             return config;
         }
     }))
-    .factory("ravenInterceptor", ($q, Raven) => ({
-        responseError (response) {
-            if (response.status === 429 || response.status >= 500) {
-                Raven.captureMessage([response.status, response.config.url, JSON.stringify(response.data)].join(" - "), {
-                    extra: {
-                        "x-ovh-queryid": response.headers("x-ovh-queryid")
-                    }
-                });
-            }
-            return $q.reject(response);
-        }
-    }))
     .config(($httpProvider, constants) => {
         if (constants.prodMode) {
             $httpProvider.interceptors.push("ravenInterceptor");
