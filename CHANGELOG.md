@@ -1,3 +1,18 @@
+<a name="9.0.14"></a>
+## [9.0.14](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.13...v9.0.14) (2018-03-14)
+
+
+
+<a name="9.0.13"></a>
+## [9.0.13](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.12...v9.0.13) (2018-03-14)
+
+
+
+<a name="9.0.12"></a>
+## [9.0.12](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.11...v9.0.12) (2018-03-14)
+
+
+
 <a name="9.0.11"></a>
 ## [9.0.11](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.10...v9.0.11) (2018-03-13)
 
@@ -28,6 +43,26 @@
 ### Bug Fixes
 
 * **installation:** fix custom template ([a1c3a3b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a1c3a3b))
+
+
+
+<a name="9.0.8"></a>
+## [9.0.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.7...v9.0.8) (2018-03-09)
+
+
+### Bug Fixes
+
+* **user:** manage legacy url for contact edition ([4706908](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4706908))
+
+
+
+<a name="9.0.7"></a>
+## [9.0.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.6...v9.0.7) (2018-03-09)
+
+
+### Bug Fixes
+
+* **user:** fix edit contact page ([0ba3048](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0ba3048))
 
 
 
