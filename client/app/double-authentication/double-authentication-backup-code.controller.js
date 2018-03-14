@@ -37,7 +37,9 @@ angular.module("App").controller(
                     if (this.$scope.backupCodeStatus.status === "enabled" && this.$scope.backupCodeStatus.remaining <= 3) {
                         this.$scope.setAction("doubleAuthAlert", this.$scope.backupCodeStatus);
                     }
-                }).catch((err) => this.$q.reject(err));
+                }).catch(() => {
+                    this.$scope.backupCodeStatus = null;
+                });
 
             this.$scope.getDoubleAuthBackupCode();
         }
