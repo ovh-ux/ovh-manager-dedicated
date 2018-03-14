@@ -20,11 +20,6 @@ angular
             return config;
         }
     }))
-    .config(($httpProvider, constants) => {
-        if (constants.prodMode) {
-            $httpProvider.interceptors.push("ravenInterceptor");
-        }
-    })
     .config([
         "ovh-proxy-request.proxyProvider",
         (proxy) => {
