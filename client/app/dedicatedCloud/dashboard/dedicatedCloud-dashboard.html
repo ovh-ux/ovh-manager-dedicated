@@ -223,7 +223,7 @@
                                         </div>
                                         <button type="button"
                                                 class="btn btn-default ml-auto align-self-center"
-                                                data-ng-if="options[optionName].state === 'disabled' && allDisabled() && !anyEnabling() && nsxAndVropsCompliantPcc()"
+                                                data-ng-if="target !== 'US' && options[optionName].state === 'disabled' && allDisabled() && !anyEnabling() && nsxAndVropsCompliantPcc()"
                                                 data-ng-click="setAction('security-options/dedicatedCloud-security-option-order', optionName)"
                                                 data-i18n-static="dedicatedCloud_options_activate">
                                         </button>
