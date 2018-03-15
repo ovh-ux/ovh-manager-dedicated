@@ -1,3 +1,13 @@
+<a name="9.0.17"></a>
+## [9.0.17](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.16...v9.0.17) (2018-03-15)
+
+
+### Bug Fixes
+
+* **cdn:** fix broken chart legend ([2fa86f1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2fa86f1))
+
+
+
 <a name="9.0.16"></a>
 ## [9.0.16](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.15...v9.0.16) (2018-03-15)
 
