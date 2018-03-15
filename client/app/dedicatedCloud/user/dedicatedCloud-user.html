@@ -74,6 +74,11 @@
                         data-i18n-static="dedicatedCloud_USER_ipfo">
                     </th>
                     <th scope="col"
+                        data-ng-if="nsxOptions === 'enabled'"
+                        class="text-center"
+                        data-i18n-static="dedicatedCloud_USER_nsx">
+                    </th>
+                    <th scope="col"
                         class="text-center"
                         data-ng-show="dedicatedCloud.solution == 'SYSTEMCENTER'"
                         data-i18n-static="dedicatedCloud_USER_connection_type">
@@ -188,6 +193,19 @@
                         <input type="checkbox"
                                data-ng-show="user === userCurrentEditBack"
                                data-ng-model="userCurrentEdit.canManageIpFailOvers" />
+                    </td>
+                    <td class="text-center"
+                        data-ng-if="nsxOptions === 'enabled'">
+                        <span class="fa"
+                              data-ng-hide="user === userCurrentEditBack"
+                              data-ng-class="{
+                                  'fa-check': user.nsxRight === true,
+                                  'fa-ban': user.nsxRight === false
+                              }">
+                        </span>
+                        <input type="checkbox"
+                               data-ng-show="user === userCurrentEditBack"
+                               data-ng-model="userCurrentEdit.nsxRight" />
                     </td>
                     <td class="text-center"
                         data-ng-show="dedicatedCloud.solution === 'SYSTEMCENTER'">

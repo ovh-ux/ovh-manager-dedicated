@@ -136,11 +136,15 @@ angular.module("App").controller("DedicatedCloudUserCtrl", function ($scope, $st
     );
 
     function init () {
-        DedicatedCloud.getPasswordPolicy($stateParams.productId).then((policy) => {
-            $scope.passwordPolicy = policy;
+        $q.all({
+            policy: DedicatedCloud.getPasswordPolicy($stateParams.productId),
+            nsxOptions: DedicatedCloud.getOptionState("nsx", $stateParams.productId)
+        }).then((response) => {
+            $scope.passwordPolicy = response.policy;
+            $scope.nsxOptions = response.nsxOptions;
         });
 
-        $scope.loadUsers();
+        return $scope.loadUsers();
     }
 
     $scope.loadUsers = function () {
