@@ -49,13 +49,13 @@
              data-ng-class="{ 'col-xs-12': !$ctrl.data.nas.canCreatePartition }">
             <oui-datagrid data-rows-loader="$ctrl.loadDatagridPartitions($config)"
                           data-row-loader="$ctrl.transformItem($row)">
-                <oui-column data-title="tr('nas_partitions_name')"
+                <oui-column data-title=":: tr('nas_partitions_name')"
                             data-property="partitionName">
                 </oui-column>
-                <oui-column data-title="tr('nas_partitions_protocol')">
+                <oui-column data-title=":: tr('nas_partitions_protocol')">
                     <span data-ng-bind="tr('nas_partitions_protocol_' + $row.protocol)"></span>
                 </oui-column>
-                <oui-column data-title="tr('nas_partitions_size')">
+                <oui-column data-title=":: tr('nas_partitions_size')">
                     <span data-ng-bind="$row.size + ' ' + tr('unit_size_GB')"></span>
                 </oui-column>
                 <oui-action-menu data-align="end"
