@@ -287,4 +287,11 @@ angular
             });
         });
     })
+    .config([
+        "$qProvider",
+        function ($qProvider) {
+            "use strict";
+            $qProvider.errorOnUnhandledRejections(false);
+        }
+    ])
     .constant("UNIVERSE", "DEDICATED");
