@@ -1,3 +1,13 @@
+<a name="9.0.16"></a>
+## [9.0.16](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.15...v9.0.16) (2018-03-15)
+
+
+### Bug Fixes
+
+* **guide:** fix us monitoring guide ([e4e07b4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e4e07b4))
+
+
+
 <a name="9.0.15"></a>
 ## [9.0.15](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.14...v9.0.15) (2018-03-14)
 
