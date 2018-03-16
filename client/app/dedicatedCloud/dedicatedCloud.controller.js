@@ -4,7 +4,7 @@ angular.module("App").controller("DedicatedCloudCtrl", [
     "$stateParams",
     "$q",
     "$log",
-    "constants",
+    "featureAvailability",
     "step",
     "DedicatedCloud",
     "translator",
@@ -12,7 +12,7 @@ angular.module("App").controller("DedicatedCloudCtrl", [
     // "Module.otrs.services.otrs",
     "Module.services.notification",
     "User",
-    function ($scope, $timeout, $stateParams, $q, $log, constants, step, DedicatedCloud, Translator, /* Otrs,*/ Notification, User) {
+    function ($scope, $timeout, $stateParams, $q, $log, featureAvailability, step, DedicatedCloud, Translator, /* Otrs,*/ Notification, User) {
         "use strict";
 
         const tr = Translator.tr;
@@ -22,7 +22,7 @@ angular.module("App").controller("DedicatedCloudCtrl", [
         $scope.loadingInformations = true;
         $scope.loadingError = false;
         $scope.dedicatedCloud = null;
-        $scope.target = constants.target;
+        $scope.featureAvailability = featureAvailability;
 
         $scope.notifications = {
             HDS_READY_NOTIFICATION: false

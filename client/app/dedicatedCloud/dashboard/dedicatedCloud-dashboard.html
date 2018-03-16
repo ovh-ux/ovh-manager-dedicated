@@ -3,7 +3,10 @@
         <div class="row d-md-flex mb-5">
 
             <!-- GENERAL INFORMATIONS -->
-            <div class="col-md-4">
+            <div data-ng-class="{
+                    'col-md-4': featureAvailability.allowDedicatedServerComplianceOptions(),
+                    'col-md-6': !featureAvailability.allowDedicatedServerComplianceOptions()
+                 }">
                 <div class="oui-tile mb-5 h-100">
                     <h3 class="oui-tile__title"
                         data-i18n-static="dedicatedCloud_information_title">
@@ -93,7 +96,10 @@
             </div>
 
             <!-- PCC OPTIONS -->
-            <div class="col-md-4"
+            <div data-ng-class="{
+                    'col-md-4': featureAvailability.allowDedicatedServerComplianceOptions(),
+                    'col-md-6': !featureAvailability.allowDedicatedServerComplianceOptions()
+                 }"
                  data-ng-if="!dedicatedCloud.isExpired">
                 <div class="oui-tile mb-5 h-100">
                     <h3 class="oui-tile__title"
@@ -181,7 +187,7 @@
 
             <!-- PCI DSS, HDS AND HIPAA -->
             <div class="col-md-4"
-                 data-ng-if="!dedicatedCloud.isExpired">
+                 data-ng-if="featureAvailability.allowDedicatedServerComplianceOptions() && !dedicatedCloud.isExpired">
                 <div class="oui-tile mb-5 h-100">
                     <h3 class="oui-tile__title">
                         <span data-i18n-static="dedicatedCloud_options_security_title"></span>
@@ -223,7 +229,7 @@
                                         </div>
                                         <button type="button"
                                                 class="btn btn-default ml-auto align-self-center"
-                                                data-ng-if="target !== 'US' && options[optionName].state === 'disabled' && allDisabled() && !anyEnabling() && nsxAndVropsCompliantPcc()"
+                                                data-ng-if="options[optionName].state === 'disabled' && allDisabled() && !anyEnabling() && nsxAndVropsCompliantPcc()"
                                                 data-ng-click="setAction('security-options/dedicatedCloud-security-option-order', optionName)"
                                                 data-i18n-static="dedicatedCloud_options_activate">
                                         </button>
