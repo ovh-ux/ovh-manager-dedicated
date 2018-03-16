@@ -1835,7 +1835,7 @@ angular
 
             selectedLanguage = translator.getSelectedAvailableLanguage();
             try {
-                lang = selectedLanguage.value.replace(/_\w{2}$/, "").toUpperCase();
+                lang = selectedLanguage.value.replace(/^\w{2}_/, "").toUpperCase();
             } catch (e) {
                 lang = fallbackLang;
                 throw e;
