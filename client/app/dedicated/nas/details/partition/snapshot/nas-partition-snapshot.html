@@ -17,19 +17,7 @@
                data-ng-if="$ctrl.disable.taskDoing"
                data-i18n-static="nas_snapshot_informations_task">
             </p>
-            <button type="button"
-                    class="btn btn-link"
-                    data-ng-click="openHelpSnapshot = !openHelpSnapshot">
-                <span class="fa mr-2"
-                      data-ng-class="{
-                          'fa-chevron-right': !openHelpSnapshot,
-                          'fa-chevron-down': openHelpSnapshot
-                      }">
-                </span>
-                <span data-ng-bind="i18n.nas_snapshot_info"></span>
-            </button>
-            <div class="oui-box oui-box_light"
-                  data-ng-if="openHelpSnapshot">
+            <div class="oui-box oui-box_light">
                 <p data-i18n-static="nas_snapshot_informations"></p>
                 <strong data-i18n-static="nas_snapshot_informations_size"></strong>
             </div>
