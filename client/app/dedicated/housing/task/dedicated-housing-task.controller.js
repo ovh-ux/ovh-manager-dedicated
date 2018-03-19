@@ -1,48 +1,28 @@
-angular.module("App").controller("HousingTaskCtrl", ($scope, $stateParams, Housing, TASK_STATUS, Alerter) => {
-    "use strict";
+angular.module("App")
+    .controller("HousingTaskCtrl", class DedicatedHousingTaskController {
+        constructor ($scope, $stateParams, Alerter, Housing, TASK_STATUS) {
+            this.$scope = $scope;
+            this.$stateParams = $stateParams;
+            this.Alerter = Alerter;
+            this.Housing = Housing;
+            this.TASK_STATUS = TASK_STATUS;
+        }
 
-    $scope.tasks = null;
-    $scope.task_status = TASK_STATUS;
+        loadDatagridTasks ({ offset, pageSize }) {
+            return this.Housing.getTaskIds(this.$stateParams.productId)
+                .then((ids) => {
+                    const part = ids.slice(offset - 1, offset - 1 + pageSize);
+                    return {
+                        data: part.map((id) => ({ id })),
+                        meta: {
+                            totalCount: ids.length
+                        }
+                    };
+                })
+                .catch((err) => this.Alerter.alertFromSWS(this.$scope.tr("housing_configuration_task_loading_error"), err, "housing_tab_tasks_alert"));
+        }
 
-    function init () {
-        $scope.loading = true;
-        Housing.getTaskIds($stateParams.productId).then((ids) => {
-            if (ids.length === 0) {
-                $scope.loading = false;
-            }
-            $scope.taskIds = ids;
-        });
-    }
-
-    $scope.reloadTasks = function () {
-        $scope.loading = true;
-        $scope.loadTasks();
-    };
-
-    $scope.transformItem = function (id) {
-        return Housing.getTask($stateParams.productId, id);
-    };
-
-    $scope.onTransformItemDone = function () {
-        $scope.loading = false;
-    };
-
-    $scope.loadTasks = function () {
-        $scope.loading = true;
-        $scope.error = false;
-
-        Housing.getTasks($stateParams.productId).then(
-            (results) => {
-                $scope.tasks = results;
-                $scope.loading = false;
-            },
-            (err) => {
-                $scope.loading = false;
-                $scope.error = true;
-                Alerter.alertFromSWS($scope.tr("housing_configuration_task_loading_error"), err, "housing_tab_tasks_alert");
-            }
-        );
-    };
-
-    init();
-});
+        transformItem ({ id }) {
+            return this.Housing.getTask(this.$stateParams.productId, id);
+        }
+    });
