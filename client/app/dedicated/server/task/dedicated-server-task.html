@@ -1,65 +1,26 @@
 <div data-ng-controller="TaskCtrl">
+    <h2 data-i18n-static="server_tab_task"></h2>
+    <div data-ovh-alert="taskAlert"></div>
     <p data-i18n-static="server_configuration_no_interventions"></p>
-    <table class="table"
-           data-ng-class="{
-               'table-hover':tasks.list.results.length > 0
-           }">
-        <thead>
-            <tr>
-                <th scope="col"
-                    data-i18n-static="server_configuration_task_last_action">
-                </th>
-                <th scope="col"
-                    data-i18n-static="server_configuration_task_function">
-                </th>
-                <th scope="col"
-                    data-i18n-static="server_configuration_task_comment">
-                </th>
-                <th scope="col"
-                    data-i18n-static="server_configuration_task_status">
-                </th>
-            </tr>
-        </thead>
-        <tbody data-ng-if="loading">
-            <tr>
-                <td colspan="4"
-                    class="text-center">
-                    <oui-spinner data-size="s"></oui-spinner>
-                </td>
-            </tr>
-        </tbody>
-        <tbody data-ng-if="!loading && !tasks.list.results.length">
-            <tr>
-                <td colspan="4"
-                    class="text-center"
-                    data-i18n-static="server_configuration_task_empty">
-                </td>
-            </tr>
-        </tbody>
-        <tbody data-ng-if="!loading && tasks.list.results.length > 0">
-            <tr data-ng-repeat="task in tasks.list.results track by $index">
-                <th scope="row"
-                    data-ng-bind="task.lastUpdate | date: 'medium'">
-                </th>
-                <td data-ng-bind="i18n['server_configuration_task_'+ task.function] || task.function"></td>
-                <td data-ng-bind="task.comment"></td>
-                <td>
-                    <span class="label"
-                          data-ng-bind="tr('server_configuration_task_status_'+ task.status)"
-                          data-ng-class="{
-                              'label-success': task.status == task_status.DONE,
-                              'label-info': task.status == task_status.DOING,
-                              'label-important': task.status == task_status.OVH_ERROR || task.status == task_status.CUSTOMER_ERROR,
-                              'label-warning': task.status == task_status.INIT || task.status == task_status.TODO
-                          }">
-                    </span>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <div data-pagination-server-side="tasksTable"
-         data-pagination-server-side-function="loadTasks"
-         data-pagination-server-side-paginated-stuff="tasks"
-         data-pagination-server-side-table-loading="loading">
-    </div>
+    <oui-datagrid data-rows-loader="loadDatagridTasks($config)">
+        <oui-column data-title=":: tr('server_configuration_task_last_action')">
+            <span data-ng-bind="$row.lastUpdate | date: 'medium'"></span>
+        </oui-column>
+        <oui-column data-title=":: tr('server_configuration_task_function')">
+            <span data-ng-bind="i18n['server_configuration_task_'+ $row.function] || $row.function"></span>
+        </oui-column>
+        <oui-column data-title=":: tr('server_configuration_task_comment')">
+            <span data-ng-bind="$row.comment"></span>
+        </oui-column>
+        <oui-column data-title=":: tr('server_configuration_task_status')">
+            <span data-ng-bind="tr('server_configuration_task_status_'+ $row.status)"
+                  data-ng-class="{
+                      'label-success': $row.status === task_status.DONE,
+                      'label-info': $row.status === task_status.DOING,
+                      'label-important': $row.status === task_status.OVH_ERROR || $row.status === task_status.CUSTOMER_ERROR,
+                      'label-warning': $row.status === task_status.INIT || $row.status === task_status.TODO
+                  }">
+            </span>
+        </oui-column>
+    </oui-datagrid>
 </div>
