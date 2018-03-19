@@ -1,48 +1,20 @@
-angular.module("App").controller("HousingTaskCtrl", ($scope, $stateParams, Housing, TASK_STATUS, Alerter) => {
+angular.module("App").controller("HousingTaskCtrl", ($scope, $stateParams, $q, Housing, TASK_STATUS, Alerter) => {
     "use strict";
 
-    $scope.tasks = null;
-    $scope.task_status = TASK_STATUS;
+    $scope.transformItem = function (task) {
+        return Housing.getTask($stateParams.productId, task.id);
+    };
 
-    function init () {
-        $scope.loading = true;
-        Housing.getTaskIds($stateParams.productId).then((ids) => {
-            if (ids.length === 0) {
-                $scope.loading = false;
+    $scope.loadDatagridTasks = ({ offset, pageSize }) => Housing.getTaskIds($stateParams.productId).then((ids) => {
+        const part = ids.slice(offset - 1, offset - 1 + pageSize);
+        return {
+            data: part.map((id) => ({ id })),
+            meta: {
+                totalCount: ids.length
             }
-            $scope.taskIds = ids;
-        });
-    }
-
-    $scope.reloadTasks = function () {
-        $scope.loading = true;
-        $scope.loadTasks();
-    };
-
-    $scope.transformItem = function (id) {
-        return Housing.getTask($stateParams.productId, id);
-    };
-
-    $scope.onTransformItemDone = function () {
-        $scope.loading = false;
-    };
-
-    $scope.loadTasks = function () {
-        $scope.loading = true;
-        $scope.error = false;
-
-        Housing.getTasks($stateParams.productId).then(
-            (results) => {
-                $scope.tasks = results;
-                $scope.loading = false;
-            },
-            (err) => {
-                $scope.loading = false;
-                $scope.error = true;
-                Alerter.alertFromSWS($scope.tr("housing_configuration_task_loading_error"), err, "housing_tab_tasks_alert");
-            }
-        );
-    };
-
-    init();
+        };
+    }).catch((err) => {
+        Alerter.alertFromSWS($scope.tr("housing_configuration_task_loading_error"), err, "housing_tab_tasks_alert");
+        return $q.reject(err);
+    });
 });

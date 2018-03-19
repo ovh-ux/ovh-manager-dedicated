@@ -1,76 +1,27 @@
 <div data-ng-controller="HousingTaskCtrl">
+    <h2 data-i18n-static="housing_tab_task"></h2>
     <div data-ovh-alert='housing_tab_tasks_alert'></div>
     <p data-i18n-static="housing_configuration_no_interventions"></p>
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th scope="col"
-                    data-i18n-static="housing_configuration_task_last_action">
-                </th>
-                <th scope="col"
-                    data-i18n-static="housing_configuration_task_function">
-                </th>
-                <th scope="col"
-                    data-i18n-static="housing_configuration_task_comment">
-                </th>
-                <th scope="col">
-                    <span data-i18n-static="housing_configuration_task_status"></span>
-                    <button type="button"
-                            class="btn btn-link float-right py-0"
-                            title="{{ i18n.refresh }}"
-                            data-ng-click="reloadTasks()">
-                        <span class="fa fa-refresh" aria-hidden="true"></span>
-                    </button>
-                </th>
-            </tr>
-        </thead>
-        <tbody data-ng-if="loading">
-            <tr>
-                <td colspan="4"
-                    class="text-center">
-                    <oui-spinner data-size="s"></oui-spinner>
-                </td>
-            </tr>
-        </tbody>
-        <tbody data-ng-if="!loading && tasksDetail.length === 0">
-            <tr>
-                <td colspan="4"
-                    class="text-center"
-                    data-i18n-static="housing_configuration_task_empty">
-                </td>
-            </tr>
-        </tbody>
-        <tbody data-ng-if="!loading && tasksDetail.length > 0">
-            <tr data-ng-repeat="task in tasksDetail track by $index">
-                <th scope="row"
-                    data-ng-bind="::task.lastUpdate | date: 'medium'">
-                </th>
-                <td data-ng-bind="::i18n['housing_configuration_task_'+ task.function] || task.function"></td>
-                <td data-ng-bind="::task.comment || '-'"></td>
-                <td>
-                    <span class="label"
-                          data-ng-bind="tr('housing_configuration_task_status_'+ task.status)"
-                          data-ng-class="{
-                              'label-success': task.status == task_status.DONE.toLowerCase(),
-                              'label-info': task.status == task_status.DOING.toLowerCase(),
-                              'label-danger': task.status == task_status.OVH_ERROR.toLowerCase() || task.status == task_status.CUSTOMER_ERROR.toLowerCase(),
-                              'label-warning': task.status == task_status.INIT.toLowerCase() || task.status == task_status.TODO.toLowerCase()
-                          }">
-                    </span>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <div data-pagination-front
-         data-items="taskIds"
-         data-paginated-items="tasksDetail"
-         data-current-page="currentPage"
-         data-nb-pages="nbPages"
-         data-items-per-page="itemsPerPage"
-         data-transform-item="transformItem(item)"
-         data-on-transform-item-done="onTransformItemDone(items)"
-         data-page-placeholder="{{tr('pagination_page', [currentPage, nbPages])}}"
-         data-item-per-page-placeholder="{{tr('pagination_display')}}"
-         data-refresh="reloadTasks">
-    </div>
+    <oui-datagrid data-rows-loader="loadDatagridTasks($config)"
+                  data-row-loader="transformItem($row)">
+        <oui-column data-title=":: tr('housing_configuration_task_last_action')">
+            <span data-ng-bind="$row.lastUpdate | date: 'medium'"></span>
+        </oui-column>
+        <oui-column data-title=":: tr('housing_configuration_task_function')">
+            <span data-ng-bind="i18n['housing_configuration_task_'+ $row.function] || $row.function"></span>
+        </oui-column>
+        <oui-column data-title=":: tr('housing_configuration_task_comment')">
+            <span data-ng-bind="$row.comment || '-'"></span>
+        </oui-column>
+        <oui-column data-title=":: tr('housing_configuration_task_status')">
+            <span data-ng-bind="tr('housing_configuration_task_status_'+ $row.status)"
+                  data-ng-class="{
+                      'label-success': $row.status === task_status.DONE.toLowerCase(),
+                      'label-info': $row.status === task_status.DOING.toLowerCase(),
+                      'label-danger': $row.status === task_status.OVH_ERROR.toLowerCase() || $row.status === task_status.CUSTOMER_ERROR.toLowerCase(),
+                      'label-warning': $row.status === task_status.INIT.toLowerCase() || $row.status === task_status.TODO.toLowerCase()
+                  }">
+            </span>
+        </oui-column>
+    </oui-datagrid>
 </div>
