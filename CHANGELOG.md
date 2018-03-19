@@ -1,3 +1,34 @@
+<a name="9.0.17"></a>
+## [9.0.17](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.16...v9.0.17) (2018-03-15)
+
+
+### Bug Fixes
+
+* **cdn:** fix broken chart legend ([2fa86f1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2fa86f1))
+
+
+
+<a name="9.0.16"></a>
+## [9.0.16](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.15...v9.0.16) (2018-03-15)
+
+
+### Bug Fixes
+
+* **guide:** fix us monitoring guide ([e4e07b4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e4e07b4))
+
+
+
+<a name="9.0.15"></a>
+## [9.0.15](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.14...v9.0.15) (2018-03-14)
+
+
+### Bug Fixes
+
+* **codeowners:** set owners to the whole repository ([78e8893](https://github.com/ovh-ux/ovh-manager-dedicated/commit/78e8893))
+* **double authentication:** remove backup code rejection ([6c98b04](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6c98b04))
+
+
+
 <a name="9.0.14"></a>
 ## [9.0.14](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.13...v9.0.14) (2018-03-14)
 

@@ -8,8 +8,12 @@ angular.module("App").controller("CdnStatisticsCtrl", ($scope, $stateParams, tra
         $scope.series = [];
         $scope.data = [];
 
-        $scope.labels = _.map(_.get(data, "cdn.values"), (value, index) =>
-            moment(_.get(data.backend || data.cdn, "pointStart")).add(index + 1, "days").calendar());
+        $scope.labels = _.map(_.get(data, "cdn.values"), (value, index) => {
+            const source = data.backend || data.cdn;
+            const start = _.get(source, "pointStart");
+            const interval = _.get(source, "pointInterval.standardSeconds");
+            return moment(start).add((index + 1) * interval, "seconds").calendar();
+        });
         $scope.series.push(translator.tr(`cdn_stats_legend_${$scope.model.dataType.toLowerCase()}_cdn`));
         $scope.series.push(translator.tr(`cdn_stats_legend_${$scope.model.dataType.toLowerCase()}_backend`));
         $scope.data.push(_.map(_.get(data, "cdn.value"), (value) => value.y));

@@ -867,7 +867,7 @@ var constants = {
                 dedicatedIpmi      : "http://help.ovh.co.uk/IpmiSol",
                 changeOwner: "https://www.ovh.co.uk/cgi-bin/procedure/procedureChangeOwner.cgi",
                 domainOrderTrade   : "https://www.ovh.co.uk/order/domain/#/legacy/domain/trade/informations?options=~~(domain~~'{domain})",
-                RealTimeMonitoring : "http://help.ovh.co.uk/RealTimeMonitoring",
+                RealTimeMonitoring : "https://support.ovhcloud.com/hc/en-us/articles/115001821044-Learning-About-OVH-US-Monitoring",
                 exchangeOrder: "https://www.ovh.com/ca/en/emails/hosted-exchange/",
                 renewAlign : "https://www.ovh.co.uk/cgi-bin/order/renew.cgi?alignDate=1&csid=0",
                 faq: "https://www.ovh.com/ca/en/dedicated-servers/faq.xml",
