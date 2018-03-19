@@ -1,8 +1,8 @@
 angular.module("App").controller("DedicatedCloudMailingCtrl", class DedicatedCloudMailingCtrl {
 
-    constructor ($uibModalInstance, User, dedicatedCloudMailingList, Alerter, translator) {
+    constructor ($state, User, dedicatedCloudMailingList, Alerter, translator) {
         // dependencies injections
-        this.$uibModalInstance = $uibModalInstance;
+        this.$state = $state;
         this.User = User;
         this.dedicatedCloudMailingList = dedicatedCloudMailingList;
         this.Alerter = Alerter;
@@ -18,8 +18,6 @@ angular.module("App").controller("DedicatedCloudMailingCtrl", class DedicatedClo
         this.model = {
             email: null
         };
-
-        this.subscribeToMailingList = this.onWidzardFinish.bind(this);
     }
 
     /* =============================
@@ -34,9 +32,13 @@ angular.module("App").controller("DedicatedCloudMailingCtrl", class DedicatedClo
         ).catch((error) =>
             this.Alerter.error([this.translator.tr("dedicatedCloud_subscribe_mailing_step2_error", this.model.email), _.get(error, "message")].join(". "), "dedicatedCloud_alert")
         ).finally(() => {
-            this.$uibModalInstance.close();
+            this.onWidzardCandel();
             this.loading.subscribe = false;
         });
+    }
+
+    onWidzardCandel () {
+        this.$state.go("^");
     }
 
     /* -----  End of EVENTS  ------ */

@@ -225,7 +225,9 @@ angular
                         controller: state.controller,
                         controllerAs: state.controllerAs || "$ctrl"
                     });
-                    modalInstance.result.finally(() => $state.go("^"));
+
+                    // if backdrop is clicked be sure to redirect to previous state
+                    modalInstance.result.catch(() => $state.go("^"));
                 }
             });
         });
