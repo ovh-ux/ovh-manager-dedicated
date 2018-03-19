@@ -1,9 +1,9 @@
 angular.module("App")
     .controller("DedicatedServerMonitoringUpdateCtrl", class DedicatedServerMonitoringUpdateCtrl {
-        constructor ($q, $stateParams, $uibModalInstance, Alerter, translator, Server) {
+        constructor ($q, $stateParams, $state, Alerter, translator, Server) {
             this.$q = $q;
             this.$stateParams = $stateParams;
-            this.$uibModalInstance = $uibModalInstance;
+            this.$state = $state;
             this.Alerter = Alerter;
             this.translator = translator;
             this.Server = Server;
@@ -58,11 +58,7 @@ angular.module("App")
                 });
         }
 
-        cancel (reason = null) {
-            return this.$uibModalInstance.dismiss(reason);
-        }
-
         close () {
-            return this.$uibModalInstance.close(true);
+            this.$state.go("^");
         }
     });

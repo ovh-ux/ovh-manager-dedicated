@@ -4,7 +4,7 @@
         <button type="button"
                 class="oui-icon oui-icon-close_thin oui-modal__close-button"
                 aria-label="{{ i18n.wizard_close }}"
-                data-ng-click="$ctrl.$uibModalInstance.close()"
+                data-ng-click="$ctrl.onCancelBtnClick()"
                 data-ng-disabled="$ctrl.loading.enable">
         </button>
     </div>
@@ -45,7 +45,7 @@
         <button type="button"
                 class="oui-button oui-button_secondary"
                 data-i18n-static="wizard_cancel"
-                data-ng-click="$ctrl.$uibModalInstance.close()"
+                data-ng-click="$ctrl.onCancelBtnClick()"
                 data-ng-disabled="$ctrl.loading.enable">
         </button>
         <button type="button"
