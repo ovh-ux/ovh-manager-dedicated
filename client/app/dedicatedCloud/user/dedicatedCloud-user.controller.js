@@ -135,7 +135,7 @@ angular.module("App").controller("DedicatedCloudUserCtrl", function ($scope, $st
         true
     );
 
-    function init () {
+    this.$onInit = function () {
         $q.all({
             policy: DedicatedCloud.getPasswordPolicy($stateParams.productId),
             nsxOptions: DedicatedCloud.getOptionState("nsx", $stateParams.productId)
@@ -145,7 +145,7 @@ angular.module("App").controller("DedicatedCloudUserCtrl", function ($scope, $st
         });
 
         return $scope.loadUsers();
-    }
+    };
 
     $scope.loadUsers = function () {
         $scope.loading = true;
@@ -262,5 +262,4 @@ angular.module("App").controller("DedicatedCloudUserCtrl", function ($scope, $st
         return _.find($scope.users, (u) => u.userId === user.userId);
     }
 
-    init();
 });
