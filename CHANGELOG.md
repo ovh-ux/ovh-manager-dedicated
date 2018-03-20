@@ -1,3 +1,13 @@
+<a name="9.0.18"></a>
+## [9.0.18](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.17...v9.0.18) (2018-03-20)
+
+
+### Bug Fixes
+
+* **license:** temporary fix spla license screen for us customers ([5933f41](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5933f41))
+
+
+
 <a name="9.0.17"></a>
 ## [9.0.17](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.16...v9.0.17) (2018-03-15)
 
