@@ -1,18 +1,11 @@
 <div data-ng-controller="IpOrganisationCtrl">
 
-    <button class="btn btn-default"
-            data-ng-click="hideOrganisation()"
-            title="{{:: 'common_back' | UAi18n }}">
-        <i class="fa fa-chevron-left"
-           aria-hidden="true">
-        </i>
-        <span data-i18n-static="common_back"></span>
-    </button>
+    <oui-back-button data-title="{{:: tr('ip_organisation_title') }}"
+                     data-on-click="hideOrganisation()">
+    </oui-back-button>
 
-    <h4 data-i18n-static="ip_organisation_title"></h4>
-
-    <div class="form-group">
-        <button class="btn btn-primary"
+    <div class="mt-5 mb-2">
+        <button class="btn btn-default"
                 type="button"
                 data-ng-click="setAction('ip/organisation/add-or-edit/ip-ip-organisation-add-or-edit')"
                 data-i18n-static="ip_organisation_add">
@@ -60,8 +53,8 @@
                                 data-ng-click="open = !open">
                             <span class="fa"
                                data-ng-class="{
-                                   'fa-plus': !open,
-                                   'fa-minus': open
+                                   'fa-chevron-right': !open,
+                                   'fa-chevron-down': open
                                }"
                                aria-hidden="true">
                             </span>
@@ -75,12 +68,12 @@
                     </td>
                     <td data-ng-bind="organisation.abuse_mailbox"></td>
                     <td>
-                        <button class="btn btn-link"
-                                type="button"
-                                data-uib-tooltip="{{i18n.ip_organisation_edit}}"
-                                data-ng-click="setAction('ip/organisation/add-or-edit/ip-ip-organisation-add-or-edit', organisation)">
-                            <i class="fa fa-edit"></i>
-                        </button>
+                        <oui-action-menu align="end"
+                                         compact>
+                            <oui-action-menu-item text="{{:: tr('ip_organisation_edit') }}"
+                                                  on-click="setAction('ip/organisation/add-or-edit/ip-ip-organisation-add-or-edit', organisation)">
+                            </oui-action-menu-item>
+                        </oui-action-menu>
                     </td>
                 </tr>
                 <tr data-ng-show="open">

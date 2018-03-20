@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpOrganisationCtrl", ($scope, $rootScope, Ip, IpOrganisation, Alerter) => {
+angular.module("Module.ip.controllers").controller("IpOrganisationCtrl", ($scope, Ip, IpOrganisation, Alerter) => {
     $scope.alert = "ip_organisation_alerter";
     $scope.loadingOrganisation = false;
     $scope.organisations = null;
@@ -26,6 +26,6 @@ angular.module("Module.ip.controllers").controller("IpOrganisationCtrl", ($scope
     }
 
     $scope.hideOrganisation = function () {
-        $rootScope.$broadcast("ips.display", "table");
+        $scope.$emit("ips.display", "table");
     };
 });
