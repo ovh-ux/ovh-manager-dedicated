@@ -1,30 +1,20 @@
 angular.module("App").controller("DedicatedCloudDatacentersCtrl", ($scope, $state, $stateParams, constants, DedicatedCloud) => {
     "use strict";
 
-    $scope.datacenters = null;
-    $scope.constants = constants;
-
-    $scope.loadDatacenters = function (elementsByPage, elementsToSkip) {
-        $scope.loading = true;
-        $scope.error = false;
-        DedicatedCloud.getDatacentersInformations($stateParams.productId, elementsByPage, elementsToSkip)
-            .then(
-                (datacenters) => {
-                    $scope.datacenters = datacenters;
-                },
-                (data) => {
-                    $scope.resetAction();
-                    $scope.error = true;
-                    $scope.setMessage($scope.tr("dedicatedCloud_datacenters_loading_error"), {
-                        message: data.message,
-                        type: "ERROR"
-                    });
-                }
-            )
-            .finally(() => {
-                $scope.loading = false;
-            });
-    };
+    $scope.loadDatacenters = ({ offset, pageSize }) => DedicatedCloud.getDatacentersInformations($stateParams.productId, pageSize, offset - 1).then((result) => ({
+        data: _.get(result, "list.results"),
+        meta: {
+            totalCount: result.count
+        }
+    })).catch((err) => {
+        $scope.resetAction();
+        $scope.setMessage($scope.tr("dedicatedCloud_datacenters_loading_error"), {
+            message: err.message,
+            type: "ERROR"
+        });
+    }).finally(() => {
+        $scope.loading = false;
+    });
 
     $scope.hasDiscount = function (datacenter) {
         const hasDiscount = DedicatedCloud.hasDiscount(datacenter);
