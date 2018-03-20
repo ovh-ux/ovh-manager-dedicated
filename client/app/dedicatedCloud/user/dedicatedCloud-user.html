@@ -74,6 +74,11 @@
                         data-i18n-static="dedicatedCloud_USER_ipfo">
                     </th>
                     <th scope="col"
+                        data-ng-if="nsxOptions === 'enabled'"
+                        class="text-center"
+                        data-i18n-static="dedicatedCloud_USER_nsx">
+                    </th>
+                    <th scope="col"
                         class="text-center"
                         data-ng-show="dedicatedCloud.solution == 'SYSTEMCENTER'"
                         data-i18n-static="dedicatedCloud_USER_connection_type">
@@ -95,7 +100,7 @@
             </thead>
             <tbody data-ng-show="loading">
                 <tr>
-                    <td colspan="11"
+                    <td colspan="12"
                         class="text-center">
                         <oui-spinner data-size="s"></oui-spinner>
                     </td>
@@ -103,7 +108,7 @@
             </tbody>
             <tbody data-ng-show="!loading && users.length === 0">
                 <tr>
-                    <td colspan="11"
+                    <td colspan="12"
                         class="text-center"
                         data-i18n-static="dedicatedCloud_USER_empty">
                     </td>
@@ -188,6 +193,19 @@
                         <input type="checkbox"
                                data-ng-show="user === userCurrentEditBack"
                                data-ng-model="userCurrentEdit.canManageIpFailOvers" />
+                    </td>
+                    <td class="text-center"
+                        data-ng-if="nsxOptions === 'enabled'">
+                        <span class="fa"
+                              data-ng-hide="user === userCurrentEditBack"
+                              data-ng-class="{
+                                  'fa-check': user.nsxRight === true,
+                                  'fa-ban': user.nsxRight === false
+                              }">
+                        </span>
+                        <input type="checkbox"
+                               data-ng-show="user === userCurrentEditBack"
+                               data-ng-model="userCurrentEdit.nsxRight" />
                     </td>
                     <td class="text-center"
                         data-ng-show="dedicatedCloud.solution === 'SYSTEMCENTER'">

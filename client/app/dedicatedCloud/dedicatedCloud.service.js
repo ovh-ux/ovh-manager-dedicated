@@ -777,7 +777,8 @@ angular
                     lastName: user.lastName,
                     email: user.email,
                     phoneNumber: user.phoneNumber,
-                    tokenValidator: user.tokenValidator
+                    tokenValidator: user.tokenValidator,
+                    nsxRight: user.nsxRight
                 }
             }).then((task) => {
                 self.pollUserTasks(serviceName, {
