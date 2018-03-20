@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudDatacentersCtrl", ($scope, $state, $stateParams, constants, DedicatedCloud) => {
+angular.module("App").controller("DedicatedCloudDatacentersCtrl", ($q, $scope, $state, $stateParams, constants, DedicatedCloud) => {
     "use strict";
 
     $scope.loadDatacenters = ({ offset, pageSize }) => DedicatedCloud.getDatacentersInformations($stateParams.productId, pageSize, offset - 1).then((result) => ({
@@ -12,6 +12,7 @@ angular.module("App").controller("DedicatedCloudDatacentersCtrl", ($scope, $stat
             message: err.message,
             type: "ERROR"
         });
+        return $q.reject(err);
     }).finally(() => {
         $scope.loading = false;
     });
