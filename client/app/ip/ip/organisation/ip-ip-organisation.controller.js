@@ -1,31 +1,39 @@
-angular.module("Module.ip.controllers").controller("IpOrganisationCtrl", ($scope, $rootScope, Ip, IpOrganisation, Alerter) => {
-    $scope.alert = "ip_organisation_alerter";
-    $scope.loadingOrganisation = false;
-    $scope.organisations = null;
+angular.module("Module.ip.controllers")
+    .controller("IpOrganisationCtrl", class IpOrganisationController {
+        constructor ($scope, Ip, IpOrganisation, Alerter) {
+            this.$scope = $scope;
+            this.Ip = Ip;
+            this.IpOrganisation = IpOrganisation;
+            this.Alerter = Alerter;
+        }
 
-    $scope.$on("ips.organisation.display", () => {
-        $scope.organisations = null;
-        loadOrganisations();
-    });
+        $onInit () {
+            this.$scope.alert = "ip_organisation_alerter";
+            this.$scope.loadingOrganisation = false;
+            this.$scope.organisations = null;
 
-    function loadOrganisations () {
-        $scope.organisations = null;
-        $scope.loadingOrganisation = true;
-        IpOrganisation.getIpOrganisation()
-            .then(
-                (organisations) => {
-                    $scope.organisations = organisations;
-                },
-                (data) => {
-                    Alerter.alertFromSWS($scope.i18n.ip_organisation_load_error, data.data, $scope.alert);
-                }
-            )
-            .finally(() => {
-                $scope.loadingOrganisation = false;
+            this.$scope.$on("ips.organisation.display", () => {
+                this.$scope.organisations = null;
+                this.loadOrganisations();
             });
-    }
+        }
 
-    $scope.hideOrganisation = function () {
-        $rootScope.$broadcast("ips.display", "table");
-    };
-});
+        loadOrganisations () {
+            this.$scope.organisations = null;
+            this.$scope.loadingOrganisation = true;
+            return this.IpOrganisation.getIpOrganisation()
+                .then((organisations) => {
+                    this.$scope.organisations = organisations;
+                })
+                .catch((data) => {
+                    this.Alerter.alertFromSWS(this.$scope.i18n.ip_organisation_load_error, data.data, this.$scope.alert);
+                })
+                .finally(() => {
+                    this.$scope.loadingOrganisation = false;
+                });
+        }
+
+        hideOrganisation () {
+            return this.$scope.$emit("ips.display", "table");
+        }
+    });
