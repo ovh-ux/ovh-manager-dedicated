@@ -24,6 +24,7 @@
                 <thead>
                     <tr>
                         <th data-translate="user_users_login" scope="col"></th>
+                        <th data-translate="user_users_full_login" scope="col"></th>
                         <th data-translate="user_users_email" scope="col"></th>
                         <th data-translate="user_users_creation_date" scope="col"></th>
                         <th data-translate="user_users_last_update_date" scope="col"></th>
@@ -34,7 +35,7 @@
                 </thead>
                 <tbody data-ng-show="$ctrl.usersLoading">
                     <tr>
-                        <td colspan="7"
+                        <td colspan="8"
                             class="text-center">
                             <oui-spinner data-size="s"></oui-spinner>
                         </td>
@@ -42,7 +43,7 @@
                 </tbody>
                 <tbody data-ng-show="$ctrl.users.length === 0 && !$ctrl.usersLoading">
                     <tr>
-                        <td colspan="7"
+                        <td colspan="8"
                             class="text-center font-italic"
                             data-translate="user_users_table_empty">
                         </td>
@@ -51,6 +52,7 @@
                 <tbody data-ng-show="$ctrl.users.length > 0 && !$ctrl.usersLoading">
                     <tr data-ng-repeat="user in $ctrl.users track by $index">
                         <td data-ng-bind="user.login"></td>
+                        <td data-ng-bind="user.fullLogin"></td>
                         <td data-ng-bind="user.email"></td>
                         <td data-ng-bind="user.creation | date"></td>
                         <td data-ng-bind="user.lastUpdate | date"></td>
