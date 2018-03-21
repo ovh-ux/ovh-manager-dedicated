@@ -53,7 +53,7 @@ angular.module("App").controller("DedicatedCloudDatacentersHostOrderUSCtrl", fun
         }])}`;
     };
 
-    this.init = () => {
+    this.$onInit = () => {
         this.loading = true;
         return User.getUrlOf("express_order").then((url) => {
             this.expressOrderUrl = url;
@@ -66,7 +66,5 @@ angular.module("App").controller("DedicatedCloudDatacentersHostOrderUSCtrl", fun
             this.loading = false;
         });
     };
-
-    this.init();
 });
 
