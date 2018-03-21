@@ -20,11 +20,28 @@ angular.module("App").controller("DedicatedCloudDatacentersDatastoreOrderUSCtrl"
             urlParams: {
                 serviceName: this.serviceName
             }
-        }).then((offers) => _.filter(offers, { family: "datastore" })).then((offers) => {
-            const sortedResult = _.sortBy(offers, (item) => item.prices[0].price.value);
+        }).then((offers) => {
+            const filtered = _.filter(offers, { family: "datastore" });
+            return filtered;
+        }).then((offers) => this.OvhHttp.get("/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/orderableFilerProfiles", {
+            rootPath: "apiv6",
+            urlParams: {
+                serviceName: this.serviceName,
+                datacenterId: this.datacenterId
+            }
+        }).then((profiles) => {
+            const result = [];
+            angular.forEach(offers, (offer) => {
+                const profile = _.filter(profiles, { name: offer.planCode });
+                if (_.size(profile) === 1) {
+                    offer.profile = _.first(profile);
+                    result.push(offer);
+                }
+            });
+            const sortedResult = _.sortBy(result, (item) => item.prices[0].price.value);
             this.selectedOffer = _.first(sortedResult);
             return sortedResult;
-        });
+        }));
     }
 
     fetchDatagridOffers () {
