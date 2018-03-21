@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudDatacentersHostOrderUSCtrl", function ($scope, $state, $q, OvhHttp, User, serviceName, datacenterId) {
+angular.module("App").controller("DedicatedCloudDatacentersDatastoreOrderUSCtrl", function ($scope, $state, $q, OvhHttp, User, serviceName, datacenterId) {
     "use strict";
 
     this.selectedOffer = null;
@@ -8,25 +8,11 @@ angular.module("App").controller("DedicatedCloudDatacentersHostOrderUSCtrl", fun
     this.fetchOffers = () => OvhHttp.get("/order/cartServiceOption/privateCloud/{serviceName}", {
         rootPath: "apiv6",
         urlParams: { serviceName }
-    }).then((offers) => _.filter(offers, { family: "host" })).then((offers) => OvhHttp.get("/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/orderableHostProfiles", {
-        rootPath: "apiv6",
-        urlParams: {
-            serviceName,
-            datacenterId
-        }
-    }).then((profiles) => {
-        const result = [];
-        angular.forEach(offers, (offer) => {
-            const profile = _.filter(profiles, { name: offer.planCode });
-            if (profile.length === 1) {
-                offer.profile = _.first(profile);
-                result.push(offer);
-            }
-        });
-        const sortedResult = _.sortBy(result, (item) => item.prices[0].price.value);
+    }).then((offers) => _.filter(offers, { family: "datastore" })).then((offers) => {
+        const sortedResult = _.sortBy(offers, (item) => item.prices[0].price.value);
         this.selectedOffer = _.first(sortedResult);
         return sortedResult;
-    }));
+    });
 
     this.fetchDatagridOffers = () => this.fetchOffers().then((offers) => ({
         data: offers,
@@ -35,7 +21,7 @@ angular.module("App").controller("DedicatedCloudDatacentersHostOrderUSCtrl", fun
         }
     }));
 
-    this.getBackUrl = () => $state.href("app.dedicatedClouds.datacenter.hosts");
+    this.getBackUrl = () => $state.href("app.dedicatedClouds.datacenter.datastores");
 
     this.getOrderUrl = () => {
         const price = _.first(this.selectedOffer.prices);
@@ -58,7 +44,7 @@ angular.module("App").controller("DedicatedCloudDatacentersHostOrderUSCtrl", fun
         return User.getUrlOf("express_order").then((url) => {
             this.expressOrderUrl = url;
         }).catch((err) => {
-            $scope.setMessage($scope.tr("dedicatedCloud_tab_hosts_loading_error"), {
+            $scope.setMessage($scope.tr("dedicatedCloud_tab_datastores_loading_error"), {
                 message: err.message || err,
                 type: "ERROR"
             });

@@ -1,4 +1,5 @@
 angular.module("App").config(($stateProvider) => {
+
     $stateProvider.state("app.dedicatedClouds.datacenter.datastores", {
         url: "/datastores",
         reloadOnSearch: false,
@@ -7,6 +8,22 @@ angular.module("App").config(($stateProvider) => {
                 templateUrl: "dedicatedCloud/datacenter/datastore/dedicatedCloud-datacenter-datastore.html",
                 controller: "DedicatedCloudSubDatacentersDatastoreCtrl"
             }
+        }
+    });
+
+    $stateProvider.state("app.dedicatedClouds.datacenter.datastores.orderUS", {
+        url: "/order",
+        reloadOnSearch: false,
+        views: {
+            "pccDatacenterView@app.dedicatedClouds.datacenter": {
+                templateUrl: "dedicatedCloud/datacenter/datastore/orderUS/dedicatedCloud-datacenter-datastore-orderUS.html",
+                controller: "DedicatedCloudDatacentersDatastoreOrderUSCtrl",
+                controllerAs: "$ctrl"
+            }
+        },
+        resolve: {
+            serviceName: ($stateParams) => $stateParams.productId,
+            datacenterId: ($stateParams) => $stateParams.datacenterId
         }
     });
 });

@@ -6,6 +6,7 @@ angular.module("App").controller("DedicatedCloudSubDatacentersHostCtrl", ($scope
         hosts: false,
         datacenter: true
     };
+    $scope.constants = constants;
 
     $scope.loadHosts = function (elementsByPage, elementsToSkip) {
         $scope.loaders.hosts = true;
