@@ -597,11 +597,22 @@ angular
                 },
                 data: {
                     right: _.camelCase(right.right),
-                    canAddRessource: right.canAddResource,
+                    canAddRessource: right.canAddRessource,
                     vmNetworkRole: _.camelCase(right.vmNetworkRole),
                     networkRole: _.camelCase(right.networkRole)
                 },
                 broadcast: "dedicatedCloud.users.right.refresh"
+            });
+        };
+
+        this.getUserRight = function (serviceName, userId, rightId) {
+            return OvhHttp.get("/dedicatedCloud/{serviceName}/user/{userId}/right/{rightId}", {
+                rootPath: "apiv6",
+                urlParams: {
+                    serviceName,
+                    userId,
+                    rightId
+                }
             });
         };
 
@@ -766,7 +777,8 @@ angular
                     lastName: user.lastName,
                     email: user.email,
                     phoneNumber: user.phoneNumber,
-                    tokenValidator: user.tokenValidator
+                    tokenValidator: user.tokenValidator,
+                    nsxRight: user.nsxRight
                 }
             }).then((task) => {
                 self.pollUserTasks(serviceName, {

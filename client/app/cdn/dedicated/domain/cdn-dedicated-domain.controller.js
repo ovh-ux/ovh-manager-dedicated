@@ -17,6 +17,7 @@ angular.module("App").controller("CdnDomainCtrl", class CdnDomainCtrl {
 
         return this.CdnDomain.getSelected(this.$stateParams.productId, this.$stateParams.domain, true).then((result) => {
             this.domain = result;
+            this.$scope.domain = result;
         }).catch((error) => {
             this.$scope.setMessage(this.translator.tr("cdn_domain_dashboard_loading_error"), error);
         }).finally(() => {

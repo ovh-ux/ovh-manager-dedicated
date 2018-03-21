@@ -103,6 +103,10 @@ class FeatureAvailability {
         return this.allow("EU", "CA");
     }
 
+    allowDedicatedServerComplianceOptions () {
+        return this.deny("US");
+    }
+
     allowIPFailoverImport () {
         return this.deny("US");
     }

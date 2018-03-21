@@ -1,5 +1,4 @@
-<div data-ng-controller="DedicatedCloudTabsCtrl"
-     id="main-container"
+<div id="main-container"
      data-ui-view>
 
     <div class="text-center mt-5"
@@ -78,7 +77,7 @@
                             </li>
                             <li>
                                 <a class="btn btn-link"
-                                   href="#/configuration/license"
+                                   data-ui-sref="app.license.order"
                                    data-i18n-static="dedicatedCloud_order_license">
                                 </a>
                             </li>
@@ -141,12 +140,38 @@
                 </div>
             </div>
         </header>
-        <ovh-tabs data-tabs="dedicatedCloudTab.tabs"
-                  data-selected-tab="selectedTab"
-                  data-product="dedicatedCloud"
-                  data-change-tab="setSelectedTab"
-                  data-tr="tr">
-        </ovh-tabs>
+
+        <!-- Tabs -->
+        <responsive-tabs>
+            <responsive-tab data-state="app.dedicatedClouds"
+                            data-dropdown-title="{{ i18n.dedicatedCloud_tab_dashboard }}">
+                <span data-i18n-static="dedicatedCloud_tab_dashboard"></span>
+            </responsive-tab>
+            <responsive-tab data-state="app.dedicatedClouds.datacenters"
+                            data-dropdown-title="{{ i18n.dedicatedCloud_tab_datacenter }}"
+                            data-ng-if="!dedicatedCloud.isExpired">
+                <span data-i18n-static="dedicatedCloud_tab_datacenter"></span>
+            </responsive-tab>
+            <responsive-tab data-state="app.dedicatedClouds.users"
+                            data-dropdown-title="{{ i18n.dedicatedCloud_tab_user }}"
+                            data-ng-if="!dedicatedCloud.isExpired">
+                <span data-i18n-static="dedicatedCloud_tab_user"></span>
+            </responsive-tab>
+            <responsive-tab data-state="app.dedicatedClouds.security"
+                            data-dropdown-title="{{ i18n.dedicatedCloud_tab_security }}"
+                            data-ng-if="!dedicatedCloud.isExpired">
+                <span data-i18n-static="dedicatedCloud_tab_security"></span>
+            </responsive-tab>
+            <responsive-tab data-state="app.dedicatedClouds.operation"
+                            data-dropdown-title="{{ i18n.dedicatedCloud_tab_operation }}"
+                            data-ng-if="!dedicatedCloud.isExpired">
+                <span data-i18n-static="dedicatedCloud_tab_operation"></span>
+            </responsive-tab>
+            <responsive-tab-more>
+                <i class="fa fa-plus"></i>
+            </responsive-tab-more>
+        </responsive-tabs> <!-- End of Tabs -->
+
         <div class="tab-content">
 
             <div class="alert alert-dismissible"
@@ -187,9 +212,8 @@
 
             <div data-ovh-alert="dedicatedCloud_alert"></div>
 
-            <div class="tab-pane active"
-                 data-ng-include="'dedicatedCloud/' + toKebabCase(selectedTab) + '/dedicatedCloud-' + toKebabCase(selectedTab)  + '.html'">
-            </div>
+            <div data-ui-view="pccView"></div>
+
         </div>
     </div>
 

@@ -1,4 +1,4 @@
-angular.module("App").controller("PartitionCtrl", function ($stateParams, $scope, Nas, Alerter) {
+angular.module("App").controller("PartitionCtrl", function ($stateParams, $scope, $state, Nas, Alerter) {
     const alerterId = "NasAlert";
     const self = this;
 
@@ -31,10 +31,20 @@ angular.module("App").controller("PartitionCtrl", function ($stateParams, $scope
         });
     };
 
+    self.loadDatagridPartitions = ({ offset, pageSize }) => self.getPartitions().then(() => {
+        const part = self.table.partitionIds.slice(offset - 1, offset - 1 + pageSize);
+        return {
+            data: part.map((id) => ({ id })),
+            meta: {
+                totalCount: self.table.partitionIds.length
+            }
+        };
+    });
+
     self.getPartitions = function (forceRefresh) {
         self.loaders.table = true;
 
-        Nas.getPartitionsIds($stateParams.nasId, forceRefresh)
+        return Nas.getPartitionsIds($stateParams.nasId, forceRefresh)
             .then(
                 (partitionIds) => {
                     self.table.partitionIds = partitionIds;
@@ -58,12 +68,15 @@ angular.module("App").controller("PartitionCtrl", function ($stateParams, $scope
     });
 
     self.transformItem = function (partition) {
-        self.loaders.table = true;
-        return Nas.getPartition($stateParams.nasId, partition);
+        return Nas.getPartition($stateParams.nasId, partition.id);
     };
 
-    self.onTransformItemDone = function () {
-        self.loaders.table = false;
+    self.displayAccess = (partition) => {
+        $state.go("app.networks.nas.details.partition.access", { partitionName: partition.partitionName });
+    };
+
+    self.displaySnapshots = (partition) => {
+        $state.go("app.networks.nas.details.partition.snapshot", { partitionName: partition.partitionName });
     };
 
     // TOOLS

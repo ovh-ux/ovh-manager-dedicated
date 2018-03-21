@@ -1,4 +1,7 @@
 <div data-ng-controller="DedicatedCloudSubDatacentersDatastoreCtrl">
+
+    <h2 data-i18n-static="dedicatedCloud_tab_datastore"></h2>
+
     <div class="text-center"
          data-ng-if="loading">
         <oui-spinner></oui-spinner>
@@ -61,9 +64,9 @@
                                   data-ng-bind="tr('dedicatedCloud_tab_datastores_billing_' + datastore.billing)">
                             </span>
                             <button type="button"
-                                    class="btn btn-link"
+                                    class="btn btn-link p-0"
                                     data-ng-show="datacenter.model.canOrderFilers && datastore.billing == 'HOURLY'"
-                                    data-ng-click="setAction('../resource/upgrade/dedicatedCloud-resource-upgrade', {
+                                    data-ng-click="setAction('resource/upgrade/dedicatedCloud-resource-upgrade', {
                                         upgradeType: datacenter.model.isUpgradable && 'demoToMonthly' || 'hourlyToMonthly',
                                         type: 'filer',
                                         id: datastore.id
@@ -99,7 +102,7 @@
         <div class="col-sm-3">
             <button type="button"
                     class="btn btn-block btn-default"
-                    data-ng-click="setAction('datacenter/datacenter/datastore/order/dedicatedCloud-datacenter-datacenter-datastore-order', datacenter.model, true)"
+                    data-ng-click="setAction('datacenter/datastore/order/dedicatedCloud-datacenter-datastore-order', datacenter.model, true)"
                     data-ng-disabled="!datacenter.model.canOrderFilers"
                     data-i18n-static="dedicatedCloud_order_Datastore">
             </button>

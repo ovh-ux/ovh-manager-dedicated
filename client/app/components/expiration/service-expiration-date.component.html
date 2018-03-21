@@ -1,5 +1,5 @@
-<div>
-    <div data-ng-if="$ctrl.constants.target !== 'US'">
+<span data-ng-class="{ 'd-block': !$ctrl.inline }">
+    <span data-ng-if="$ctrl.constants.target !== 'US'">
         <a class="mr-2"
             data-ng-href="{{:: $ctrl.getRenewUrl() }}"
             data-ng-bind=":: $ctrl.serviceInfos.expiration | date:'mediumDate'"
@@ -13,5 +13,5 @@
            data-ng-href="{{:: $ctrl.getRenewUrl() }}"
            data-i18n-static="core_service_renew_button">
         </a>
-    </div>
-</div>
+    </span>
+</span>

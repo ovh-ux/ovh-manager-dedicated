@@ -5,8 +5,9 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
     "DedicatedCloud",
     "BillingOrders",
     "Alerter",
+    "$state",
     "$stateParams",
-    function ($scope, $q, $window, DedicatedCloud, Orders, Alerter, $stateParams) {
+    function ($scope, $q, $window, DedicatedCloud, Orders, Alerter, $state, $stateParams) {
         "use strict";
 
         const self = this;
@@ -59,7 +60,7 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
 
         self.showRelatedService = function (params) {
             if (params.userId) {
-                $scope.setSelectedTab("user");
+                $state.go("app.dedicatedClouds.users");
             } else if (params.orderId) {
                 Orders.getOrder(params.orderId)
                     .then((order) => {
@@ -102,13 +103,22 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
                     let url;
                     switch (field) {
                     case "datacenterId":
-                        url = `#/configuration/dedicated_cloud/${self.name}/datacenter/${operation.datacenterId}`;
+                        url = $state.href("app.dedicatedClouds.datacenter", {
+                            productId: self.name,
+                            datacenterId: operation.datacenterId
+                        });
                         break;
                     case "hostId":
-                        url = `#/configuration/dedicated_cloud/${self.name}/datacenter/${operation.datacenterId}?tab=HOSTS`;
+                        url = $state.href("app.dedicatedClouds.datacenter.hosts", {
+                            productId: self.name,
+                            datacenterId: operation.datacenterId
+                        });
                         break;
                     case "filerId":
-                        url = `#/configuration/dedicated_cloud/${self.name}/datacenter/${operation.datacenterId}?tab=DATASTORES`;
+                        url = $state.href("app.dedicatedClouds.datacenter.datastores", {
+                            productId: self.name,
+                            datacenterId: operation.datacenterId
+                        });
                         break;
                     default:
                         break;
@@ -190,7 +200,7 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
                 .catch((err) => {
                     Alerter.alertFromSWS($scope.tr("dedicatedCloud_OPERATIONS_error"), err, "dedicatedCloud_alert");
                 })
-                .then(DedicatedCloud.getSelected)
+                .then(() => DedicatedCloud.getSelected($stateParams.productId))
                 .then((cloud) => {
                     self.name = cloud.name;
                 })

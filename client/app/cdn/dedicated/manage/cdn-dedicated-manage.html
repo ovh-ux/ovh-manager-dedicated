@@ -14,55 +14,6 @@
                     <h1 class="word-break mb-0"
                         data-ng-bind="$ctrl.cdn.serviceName">
                     </h1>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <dl>
-                                <dt data-i18n-static="cdn_configuration_activity"></dt>
-                                <dd data-ng-bind="trpl('cdn_configuration_activity_page_viewed', $ctrl.cdn.activity, [$ctrl.cdn.activity])"></dd>
-                                <dt data-i18n-static="cdn_configuration_quota"></dt>
-                                <dd data-ng-bind="$ctrl.cdn.quota.value + ' ' + tr('unit_size_' + $ctrl.cdn.quota.unit)"></dd>
-                                <dt>
-                                    <service-expiration-label
-                                        service-infos="$ctrl.serviceInfos">
-                                    </service-expiration-label>
-                                </dt>
-                                <dd>
-                                    <service-expiration-date
-                                        service-name="$ctrl.cdn.serviceName"
-                                        service-type="'CDN_DEDICATED'"
-                                        service-infos="$ctrl.serviceInfos">
-                                    </service-expiration-date>
-                                </dd>
-                            </dl>
-                        </div>
-                        <div class="col-sm-6">
-                            <dl>
-                                <dt data-i18n-static="cdn_configuration_savings"></dt>
-                                <dd>
-                                    <span class="d-block"
-                                          data-ng-bind="trpl('cdn_configuration_savings_bandwidth_percentage', $ctrl.cdn.bandwidthHitPercentage, [$ctrl.cdn.bandwidthHitPercentage])">
-                                    </span>
-                                    <span data-ng-bind="trpl('cdn_configuration_savings_request_percentage', $ctrl.cdn.requestHitPercentage, [$ctrl.cdn.requestHitPercentage])"></span>
-                                </dd>
-                                <dt data-i18n-static="cdn_configuration_quota_estimation"></dt>
-                                <dd data-ng-bind="$ctrl.cdn.endingEstimationDate"></dd>
-                            </dl>
-                        </div>
-                    </div>
-                    <ol class="list-inline">
-                        <li class="ml-3">
-                            <img src="images/cdn/icn_domain.png" alt="" />
-                            <span data-ng-bind="trpl('cdn_configuration_domain', $ctrl.cdn.domains, [$ctrl.cdn.domains])"></span>
-                        </li>
-                        <li class="ml-3">
-                            <img src="images/cdn/icn_cdn.png" alt="" />
-                            <span data-ng-bind="$ctrl.cdn.anycast.ipv4"></span>
-                        </li>
-                        <li class="ml-3">
-                            <img src="images/cdn/icn_server.png" alt="" />
-                            <span data-ng-bind="tr('cdn_configuration_backend', [$ctrl.cdn.backends])"></span>
-                        </li>
-                    </ol>
                 </div>
                 <div class="col-sm-3 d-flex">
                     <div class="btn-group ml-auto mt-4">

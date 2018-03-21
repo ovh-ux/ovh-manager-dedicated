@@ -37,8 +37,8 @@ angular.module("App").controller("DedicatedCloudSecurityOptionOrderCtrl", ($stat
                 $scope.loaders.loading = true;
                 return $q.all([checkUser(), canEnableOption()]).then((results) => {
                     $scope.loaders.loading = false;
-                    if (results[1].oldCommercialVersion) {
-                        $scope.commercialRanges = results[1];
+                    if (results[1].data.oldCommercialVersion) {
+                        $scope.commercialRanges = results[1].data;
                     }
                 });
             default:

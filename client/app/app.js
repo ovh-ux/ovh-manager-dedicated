@@ -206,29 +206,31 @@ angular
         $httpProvider.interceptors.push("translateInterceptor");
 
         let modalInstance = null;
-        $transitionsProvider.onBefore({}, (transition) => {
-            transition.addResolvable({
-                token: "layout",
-                deps: ["$state", "$uibModal"],
-                resolveFn: ($state, $uibModal) => {
-                    const source = transition.from();
-                    const state = transition.to();
-                    if (source.layout === "modal") {
-                        if (modalInstance) {
-                            modalInstance.close();
-                        }
-                    }
-                    if (state.layout === "modal") {
-                        modalInstance = $uibModal.open({
-                            templateUrl: state.templateUrl,
-                            controller: state.controller,
-                            controllerAs: state.controllerAs || "$ctrl"
-                        });
-                        modalInstance.result.finally(() => $state.go("^"));
-                    }
+
+        $transitionsProvider.onSuccess({}, (transition) => {
+            transition.promise.finally(() => {
+                const source = transition.from();
+                const state = transition.to();
+
+                const $state = transition.injector().get("$state");
+                const $uibModal = transition.injector().get("$uibModal");
+
+                if (source.layout === "modal" && modalInstance) {
+                    modalInstance.close();
+                }
+
+                if (state.layout === "modal") {
+                    modalInstance = $uibModal.open({
+                        templateUrl: state.templateUrl,
+                        controller: state.controller,
+                        controllerAs: state.controllerAs || "$ctrl"
+                    });
+                    modalInstance.result.finally(() => $state.go("^"));
                 }
             });
+        });
 
+        $transitionsProvider.onBefore({}, (transition) => {
             transition.addResolvable({
                 token: "translations",
                 deps: ["$translate", "$translatePartialLoader"],
