@@ -13,7 +13,6 @@ angular.module("App").config(($stateProvider) => {
 
     $stateProvider.state("app.dedicatedClouds.datacenter.hosts.orderUS", {
         url: "/order",
-        reloadOnSearch: false,
         views: {
             "pccDatacenterView@app.dedicatedClouds.datacenter": {
                 templateUrl: "dedicatedCloud/datacenter/host/orderUS/dedicatedCloud-datacenter-host-orderUS.html",
