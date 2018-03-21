@@ -79,17 +79,9 @@ angular.module("Module.ip.controllers").controller("IpFirewallAddRuleCtrl", ($sc
         $scope.loading = true;
 
         // set empty string to null values to avoid API error
-        if ($scope.rule.source.trim() === "") {
-            $scope.rule.source = null;
-        }
-
-        if ($scope.rule.sourcePort.trim() === "") {
-            $scope.rule.sourcePort = null;
-        }
-
-        if ($scope.rule.destinationPort.trim() === "") {
-            $scope.rule.destinationPort = null;
-        }
+        $scope.rule.source = _.isEmpty($scope.rule.source.trim()) ? null : $scope.rule.source;
+        $scope.rule.sourcePort = _.isEmpty($scope.rule.sourcePort.trim()) ? null : $scope.rule.sourcePort;
+        $scope.rule.destinationPort = _.isEmpty($scope.rule.destinationPort.trim()) ? null : $scope.rule.destinationPort;
 
         IpFirewall.addFirewallRule($scope.data.ipBlock, $scope.data.ip, $scope.rule).then(
             (data) => {
