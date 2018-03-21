@@ -83,8 +83,7 @@
         <div class="col-sm-3">
             <button type="button"
                     class="btn btn-block btn-default"
-                    data-ng-click="setAction('datacenter/host/order/dedicatedCloud-datacenter-host-order', datacenter.model, true)"
-                    data-ng-disabled="!datacenter.model.canOrderHosts"
+                    data-ng-click="orderHost(datacenter)"
                     data-i18n-static="dedicatedCloud_order_Host">
             </button>
             <div class="label"
