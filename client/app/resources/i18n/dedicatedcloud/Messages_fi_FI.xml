@@ -145,6 +145,7 @@
    <translation id="dedicatedCloud_tab_licences_active_spla_fail" qtlid="154910">Tapahtui virhe pyydettäessä SPLA-lisenssin aktivointia</translation>
    <translation id="dedicatedCloud_tab_backup" qtlid="28147">Varmuuskopiot</translation>
    <translation id="dedicatedCloud_tab_veeam_on" qtlid="75030">Aktivoi varmuuskopio</translation>
+   <translation id="dedicatedCloud_tab_veeam_on_disabled" qtlid="471925">Il est nécessaire que votre datacentre dispose d'au minimum un host afin d'activer le backup.</translation>
    <translation id="dedicatedCloud_tab_veeam_off" qtlid="154923">Deaktivoi varmuuskopio</translation>
    <translation id="dedicatedCloud_tab_veeam_state" qtlid="101997">Tila:</translation>
    <translation id="dedicatedCloud_tab_veeam_loading_error" qtlid="149488">Tapahtui virhe ladattaessa varmuuskopiotietoja</translation>
@@ -262,6 +263,7 @@
    <translation id="dedicatedCloud_USER_backup" qtlid="28147">Varmuuskopiot</translation>
    <translation id="dedicatedCloud_USER_ip" qtlid="167899">IP</translation>
    <translation id="dedicatedCloud_USER_ipfo" qtlid="157694">IP FailOver</translation>
+   <translation id="dedicatedCloud_USER_nsx" qtlid="471938">Interface NSX</translation>
    <translation id="dedicatedCloud_USER_allow_reading" qtlid="146593">anna luku-oikeus</translation>
    <translation id="dedicatedCloud_USER_allow_reading_and_writing" qtlid="146606">anna luku- ja kirjoitus-oikeus</translation>
    <translation id="dedicatedCloud_USER_all_refused" qtlid="146619">hylkää kaikki</translation>
@@ -275,30 +277,47 @@
    <translation id="dedicatedCloud_USER_right_valid" qtlid="147850">vahvista muutokset</translation>
    <translation id="dedicatedCloud_USER_right_cancel" qtlid="147863">peruuta muutokset</translation>
    <translation id="dedicatedCloud_USER_right_DISABLED" qtlid="30646">Ei ole</translation>
+   <translation id="dedicatedCloud_USER_right_disabled" qtlid="30646">Ei ole</translation>
    <translation id="dedicatedCloud_USER_right_NO_ACCESS" qtlid="30646">Ei ole</translation>
+   <translation id="dedicatedCloud_USER_right_noAccess" qtlid="30646">Ei ole</translation>
    <translation id="dedicatedCloud_USER_right_READONLY" qtlid="17333">Vain luku</translation>
+   <translation id="dedicatedCloud_USER_right_readonly" qtlid="17333">Vain luku</translation>
    <translation id="dedicatedCloud_USER_right_READWRITE" qtlid="146671">Luku/kirjoitus</translation>
+   <translation id="dedicatedCloud_USER_right_readwrite" qtlid="146671">Luku/kirjoitus</translation>
    <translation id="dedicatedCloud_USER_right_ADMIN" qtlid="210176">Operaattori</translation>
+   <translation id="dedicatedCloud_USER_right_admin" qtlid="210176">Operaattori</translation>
    <translation id="dedicatedCloud_USER_right_MANAGER" qtlid="210189">Administraattori</translation>
+   <translation id="dedicatedCloud_USER_right_manager" qtlid="210189">Administraattori</translation>
    <translation id="dedicatedCloud_USER_right_title" qtlid="433164">Käyttöoikeuksien muokkaus</translation>
    <translation id="dedicatedCloud_USER_right_datacenter_title" qtlid="433177">Konesali: <b>{0}</b></translation>
    <translation id="dedicatedCloud_USER_right_vsphere" qtlid="146567">vSphere-kirjautuminen</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_help" qtlid="433190">Yleiset vSphere-käyttöoikeudet</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_ADMIN" qtlid="433203">Varattu OVH:lle, ainoastaan administraattoreille</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_admin" qtlid="433203">Varattu OVH:lle, ainoastaan administraattoreille</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_DISABLED" qtlid="308541">Ei pääsyoikeutta</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_disabled" qtlid="308541">Ei pääsyoikeutta</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_READONLY" qtlid="433216">Vain lukuoikeus</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_readonly" qtlid="433216">Vain lukuoikeus</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_READWRITE" qtlid="433229">Kirjoitusoikeus</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_readwrite" qtlid="433229">Kirjoitusoikeus</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork" qtlid="200755">Pääsy vmNetworkiin</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork_help" qtlid="433242">Julkista verkkoa koskevat hallintaoikeudet (vSphere-käyttöliittymässä nimellä VM Network).</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork_ADMIN" qtlid="433255">Mahdollistaa virtuaalikoneiden konfiguroinnin julkisessa verkossa</translation>
+   <translation id="dedicatedCloud_USER_right_vmNetwork_admin" qtlid="433255">Mahdollistaa virtuaalikoneiden konfiguroinnin julkisessa verkossa</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork_NO_ACCESS" qtlid="308541">Ei pääsyoikeutta</translation>
+   <translation id="dedicatedCloud_USER_right_vmNetwork_noAccess" qtlid="308541">Ei pääsyoikeutta</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork_READONLY" qtlid="433216">Vain lukuoikeus</translation>
+   <translation id="dedicatedCloud_USER_right_vmNetwork_readonly" qtlid="433216">Vain lukuoikeus</translation>
    <translation id="dedicatedCloud_USER_right_vlan" qtlid="200768">Pääsy V(x)LANeihin</translation>
    <translation id="dedicatedCloud_USER_right_vlan_help" qtlid="433268">Yksityistä verkkoa koskevat hallintaoikeudet (Dedicated Cloud -palveluilla VXlan ja SDDC-palveluilla VLAN)</translation>
    <translation id="dedicatedCloud_USER_right_vlan_ADMIN" qtlid="433281">Mahdollistaa virtuaalikoneiden konfiguroinnin yksityisessä verkossa</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_admin" qtlid="433281">Mahdollistaa virtuaalikoneiden konfiguroinnin yksityisessä verkossa</translation>
    <translation id="dedicatedCloud_USER_right_vlan_NO_ACCESS" qtlid="308541">Ei pääsyoikeutta</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_noAccess" qtlid="308541">Ei pääsyoikeutta</translation>
    <translation id="dedicatedCloud_USER_right_vlan_READONLY" qtlid="433216">Vain lukuoikeus</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_readonly" qtlid="433216">Vain lukuoikeus</translation>
    <translation id="dedicatedCloud_USER_right_vlan_MANAGER" qtlid="433294">Mahdollistaa virtuaalikytkimen porttiryhmien hallinnoinnin (luominen, muokkaus, poisto). Ainoastaan SDDC-palveluille. </translation>
+   <translation id="dedicatedCloud_USER_right_vlan_manager" qtlid="433294">Mahdollistaa virtuaalikytkimen porttiryhmien hallinnoinnin (luominen, muokkaus, poisto). Ainoastaan SDDC-palveluille. </translation>
    <translation id="dedicatedCloud_USER_right_resources" qtlid="146580">Resurssien lisäys</translation>
    <translation id="dedicatedCloud_USER_right_resources_help" qtlid="433307">Oikeus ylimääräisten resurssien lisäämiseen vSphere-asiakasohjelmassa OVH:n liitännäistä käyttämällä.</translation>
    <translation id="dedicatedCloud_USER_add_user" qtlid="7810">Luo käyttäjä</translation>
