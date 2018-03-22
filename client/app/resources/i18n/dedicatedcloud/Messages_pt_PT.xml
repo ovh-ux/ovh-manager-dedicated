@@ -100,7 +100,7 @@ Em vigor durante o mês em curso.</translation>
    <translation id="dedicatedCloud_tab_host_billing_UNDEFINED" qtlid="126284">Indefinido</translation>
    <translation id="dedicatedCloud_tab_host_status" qtlid="8230">Estado</translation>
    <translation id="dedicatedCloud_tab_host_status_ADDING" qtlid="154741">A adicionar</translation>
-   <translation id="dedicatedCloud_tab_host_status_DELIVERED" qtlid="55133">Ativo</translation>
+   <translation id="dedicatedCloud_tab_host_status_DELIVERED" qtlid="55133">Ativado</translation>
    <translation id="dedicatedCloud_tab_host_status_ERROR" qtlid="26407">Erro</translation>
    <translation id="dedicatedCloud_tab_host_status_REMOVING" qtlid="146645">Eliminação em curso</translation>
    <translation id="dedicatedCloud_tab_host_status_UNKNOWN" qtlid="77142">Desconhecido</translation>
@@ -127,7 +127,7 @@ Em vigor durante o mês em curso.</translation>
    <translation id="dedicatedCloud_tab_datastores_hourly_consumption_other" qtlid="296895">{0} horas</translation>
    <translation id="dedicatedCloud_tab_datastores_status" qtlid="8230">Estado</translation>
    <translation id="dedicatedCloud_tab_datastores_status_ADDING" qtlid="154741">A adicionar</translation>
-   <translation id="dedicatedCloud_tab_datastores_status_DELIVERED" qtlid="55133">Ativo</translation>
+   <translation id="dedicatedCloud_tab_datastores_status_DELIVERED" qtlid="55133">Ativado</translation>
    <translation id="dedicatedCloud_tab_datastores_status_ERROR" qtlid="26407">Erro</translation>
    <translation id="dedicatedCloud_tab_datastores_status_REMOVING" qtlid="146645">Eliminação em curso</translation>
    <translation id="dedicatedCloud_tab_datastores_status_UNKNOWN" qtlid="77142">Desconhecido</translation>
@@ -146,6 +146,7 @@ Em vigor durante o mês em curso.</translation>
    <translation id="dedicatedCloud_tab_licences_active_spla_fail" qtlid="154910">Ocorreu um erro aquando do pedido de ativação da licença spla.</translation>
    <translation id="dedicatedCloud_tab_backup" qtlid="28147">Backup</translation>
    <translation id="dedicatedCloud_tab_veeam_on" qtlid="75030">Activar o backup</translation>
+   <translation id="dedicatedCloud_tab_veeam_on_disabled" qtlid="471925">Il est nécessaire que votre datacentre dispose d'au minimum un host afin d'activer le backup.</translation>
    <translation id="dedicatedCloud_tab_veeam_off" qtlid="154923">Desativar o backup</translation>
    <translation id="dedicatedCloud_tab_veeam_state" qtlid="101997">Estado:</translation>
    <translation id="dedicatedCloud_tab_veeam_loading_error" qtlid="149488">Ocorreu um erro aquando do carregamento das informações dos backups.</translation>
@@ -249,7 +250,7 @@ Em vigor durante o mês em curso.</translation>
    <translation id="dedicatedCloud_USER_modify" qtlid="37875">Alterar</translation>
    <translation id="dedicatedCloud_USER_view_modify_rights_by_DC" qtlid="146489">Ver / Modificar as permissões por DC</translation>
    <translation id="dedicatedCloud_USER_delete" qtlid="7882">Eliminar este utilizador</translation>
-   <translation id="dedicatedCloud_USER_delete_title" qtlid="7666">Eliminar um utilizador </translation>
+   <translation id="dedicatedCloud_USER_delete_title" qtlid="7666">Eliminar utilizador </translation>
    <translation id="dedicatedCloud_USER_delete_message" qtlid="183489">Quer mesmo eliminar o utilizador <b>{0}</b>?</translation>
    <translation id="dedicatedCloud_USER_delete_success" qtlid="183502">O pedido de eliminação do utilizador <b>{0}</b> foi concretizado</translation>
    <translation id="dedicatedCloud_USER_delete_fail" qtlid="183515">Ocorreu um erro durante da eliminação do utilizador <b>{0}</b></translation>
@@ -263,6 +264,7 @@ Em vigor durante o mês em curso.</translation>
    <translation id="dedicatedCloud_USER_backup" qtlid="28147">Backup</translation>
    <translation id="dedicatedCloud_USER_ip" qtlid="167899">IP</translation>
    <translation id="dedicatedCloud_USER_ipfo" qtlid="157694">Ip FailOver</translation>
+   <translation id="dedicatedCloud_USER_nsx" qtlid="471938">Interface NSX</translation>
    <translation id="dedicatedCloud_USER_allow_reading" qtlid="146593">Autorizar a leitura</translation>
    <translation id="dedicatedCloud_USER_allow_reading_and_writing" qtlid="146606">Autorizar a leitura e escrita</translation>
    <translation id="dedicatedCloud_USER_all_refused" qtlid="146619">recusar tudo</translation>
@@ -271,39 +273,56 @@ Em vigor durante o mês em curso.</translation>
    <translation id="dedicatedCloud_USER_state_DELETING" qtlid="146645">Eliminação em curso</translation>
    <translation id="dedicatedCloud_USER_state_DELIVERED" qtlid="30250">Ativado</translation>
    <translation id="dedicatedCloud_USER_state_DISABLED" qtlid="24967">Desativado</translation>
-   <translation id="dedicatedCloud_USER_state_ERROR" qtlid="45508">Em erro</translation>
+   <translation id="dedicatedCloud_USER_state_ERROR" qtlid="45508">Com erro</translation>
    <translation id="dedicatedCloud_USER_right_modify" qtlid="147837">modificar as permissões</translation>
    <translation id="dedicatedCloud_USER_right_valid" qtlid="147850">validar alterações</translation>
    <translation id="dedicatedCloud_USER_right_cancel" qtlid="147863">anular alterações</translation>
    <translation id="dedicatedCloud_USER_right_DISABLED" qtlid="30646">Nenhum</translation>
+   <translation id="dedicatedCloud_USER_right_disabled" qtlid="30646">Nenhum</translation>
    <translation id="dedicatedCloud_USER_right_NO_ACCESS" qtlid="30646">Nenhum</translation>
+   <translation id="dedicatedCloud_USER_right_noAccess" qtlid="30646">Nenhum</translation>
    <translation id="dedicatedCloud_USER_right_READONLY" qtlid="17333">Apenas leitura</translation>
+   <translation id="dedicatedCloud_USER_right_readonly" qtlid="17333">Apenas leitura</translation>
    <translation id="dedicatedCloud_USER_right_READWRITE" qtlid="146671">Leitura/Escrita</translation>
+   <translation id="dedicatedCloud_USER_right_readwrite" qtlid="146671">Leitura/Escrita</translation>
    <translation id="dedicatedCloud_USER_right_ADMIN" qtlid="210176">Operador</translation>
+   <translation id="dedicatedCloud_USER_right_admin" qtlid="210176">Operador</translation>
    <translation id="dedicatedCloud_USER_right_MANAGER" qtlid="210189">Administrador</translation>
+   <translation id="dedicatedCloud_USER_right_manager" qtlid="210189">Administrador</translation>
    <translation id="dedicatedCloud_USER_right_title" qtlid="433164">Alteração das permissões de acesso</translation>
    <translation id="dedicatedCloud_USER_right_datacenter_title" qtlid="433177">Datacenter : <b>{0}</b></translation>
    <translation id="dedicatedCloud_USER_right_vsphere" qtlid="146567">Acesso à interface vSphere</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_help" qtlid="433190">Permissões globais de utilizador no vSphere </translation>
    <translation id="dedicatedCloud_USER_right_vsphere_ADMIN" qtlid="433203">Reservado à OVH (administradores apenas)</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_admin" qtlid="433203">Reservado à OVH (administradores apenas)</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_DISABLED" qtlid="308541">Sem acesso</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_disabled" qtlid="308541">Sem acesso</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_READONLY" qtlid="433216">Acesso só de leitura</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_readonly" qtlid="433216">Acesso só de leitura</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_READWRITE" qtlid="433229">Acesso de escrita</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_readwrite" qtlid="433229">Acesso de escrita</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork" qtlid="200755">Acesso à vmNetwork</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork_help" qtlid="433242">Permissões de gestão da parte da rede pública  &#13;
 (chamada VM Network na interface vSphere)</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork_ADMIN" qtlid="433255">Permite configurar máquinas virtuais na rede pública</translation>
+   <translation id="dedicatedCloud_USER_right_vmNetwork_admin" qtlid="433255">Permite configurar máquinas virtuais na rede pública</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork_NO_ACCESS" qtlid="308541">Sem acesso</translation>
+   <translation id="dedicatedCloud_USER_right_vmNetwork_noAccess" qtlid="308541">Sem acesso</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork_READONLY" qtlid="433216">Acesso só de leitura</translation>
+   <translation id="dedicatedCloud_USER_right_vmNetwork_readonly" qtlid="433216">Acesso só de leitura</translation>
    <translation id="dedicatedCloud_USER_right_vlan" qtlid="200768">Acesso às V(x)Lans</translation>
    <translation id="dedicatedCloud_USER_right_vlan_help" qtlid="433268">Pernmissões de gestão da parte da rede privada (VxLan para Dedicated Cloud, e VLAN para SDDC)</translation>
    <translation id="dedicatedCloud_USER_right_vlan_ADMIN" qtlid="433281">Permite configurar máquinas virtuais na rede privada</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_admin" qtlid="433281">Permite configurar máquinas virtuais na rede privada</translation>
    <translation id="dedicatedCloud_USER_right_vlan_NO_ACCESS" qtlid="308541">Sem acesso</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_noAccess" qtlid="308541">Sem acesso</translation>
    <translation id="dedicatedCloud_USER_right_vlan_READONLY" qtlid="433216">Acesso só de leitura</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_readonly" qtlid="433216">Acesso só de leitura</translation>
    <translation id="dedicatedCloud_USER_right_vlan_MANAGER" qtlid="433294">Permite gerir «port grups» do switch virtual (criação, alteração, eliminação). Apenas para SDCC.</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_manager" qtlid="433294">Permite gerir «port grups» do switch virtual (criação, alteração, eliminação). Apenas para SDCC.</translation>
    <translation id="dedicatedCloud_USER_right_resources" qtlid="146580">Adição de recursos</translation>
    <translation id="dedicatedCloud_USER_right_resources_help" qtlid="433307">Permissões para acrescentar recursos adicionais através do plugin OVH na vSphere Client</translation>
-   <translation id="dedicatedCloud_USER_add_user" qtlid="7810">Criar um utilizador</translation>
+   <translation id="dedicatedCloud_USER_add_user" qtlid="7810">Criar utilizador</translation>
    <translation id="dedicatedCloud_USER_add_user_password_error" qtlid="277338">A password está incorreta</translation>
    <translation id="dedicatedCloud_USER_change_password_repeat_fail" qtlid="277351">As 2 passwords devem ser idênticas</translation>
    <translation id="dedicatedCloud_users_password_loading_start" qtlid="277364">A sua password será modificada dentro de instantes.</translation>
@@ -332,16 +351,16 @@ Em vigor durante o mês em curso.</translation>
    <translation id="dedicatedCloud_USER_add_user_cant_set_password" qtlid="382706">Poderá de seguida escolher a password ao utilizar a sua interface web certificada.</translation>
    <translation id="dedicatedCloud_USER_add_user_password_length" qtlid="277455">A password deve ser compreendida entre {0} e {1} caracteres.</translation>
 
-   <translation id="dedicatedCloud_USER_reset_password" qtlid="48057">Reinicializar a password</translation>
-   <translation id="dedicatedCloud_USER_change_password" qtlid="80394">Alterar password</translation>
+   <translation id="dedicatedCloud_USER_reset_password" qtlid="48057">Renovar palavra-passe</translation>
+   <translation id="dedicatedCloud_USER_change_password" qtlid="80394">Alterar palavra-passe</translation>
    <translation id="dedicatedCloud_USER_reset_password_confirmation" qtlid="183554">Quer mesmo reinicializar a password de <b>{0}</b>?</translation>
    <translation id="dedicatedCloud_USER_change_password_confirmation" qtlid="277468">Indique a nova password para o utilizador <b>{0}</b> :</translation>
    <translation id="dedicatedCloud_USER_change_password_informations" qtlid="277481">Se não indicar a password, uma password será gerada automaticamente e será enviada por e-mail.</translation>
    <translation id="dedicatedCloud_USER_change_password_infos" qtlid="277494">Clique para mais informações</translation>
    <translation id="dedicatedCloud_USER_change_password_incorrect" qtlid="277507">A password não respeita as regras de formatação</translation>
    <translation id="dedicatedCloud_USER_change_password_incorrect" qtlid="277507">A password não respeita as regras de formatação</translation>
-   <translation id="dedicatedCloud_USER_change_password_new" qtlid="17177">Nova password</translation>
-   <translation id="dedicatedCloud_USER_change_password_repeat" qtlid="9382">Confirmação da password</translation>
+   <translation id="dedicatedCloud_USER_change_password_new" qtlid="17177">Nova palavra-passe</translation>
+   <translation id="dedicatedCloud_USER_change_password_repeat" qtlid="9382">Confirmação da palavra-passe</translation>
    <translation id="dedicatedCloud_USER_change_password_digitMandatory" qtlid="277520">No mínimo um número</translation>
    <translation id="dedicatedCloud_USER_change_password_letterMandatory" qtlid="277533">No mínimo uma letra</translation>
    <translation id="dedicatedCloud_USER_change_password_lowercaseLetterMandatory" qtlid="277546">As letras devem estar em minúsculas</translation>
@@ -468,7 +487,7 @@ Em vigor durante o mês em curso.</translation>
    <translation id="dedicatedCloud_order_final_txt" qtlid="181240">Clique no botão "Validar" para confirmar a sua encomenda.</translation>
    <translation id="dedicatedCloud_order_final_txt2" qtlid="181253">Irá visualizar um novo separador, e será automaticamente reencaminhado para a página de pagamento.</translation>
    <translation id="dedicatedCloud_order_finish_success" qtlid="184048">A encomenda número <a href='{0}' target='_blank'>{1}</a> foi corretamente tomada em conta.</translation>
-   <translation id="dedicatedCloud_order_finish_error" qtlid="181227">Erro na criação da nota de encomenda.</translation>
+   <translation id="dedicatedCloud_order_finish_error" qtlid="181227">Erro ao gerar nota de encomenda.</translation>
    <translation id="dedicatedCloud_order_loading_error" qtlid="135294">Erro ao carregar a informação.</translation>
    <translation id="dedicatedCloud_USER_connection_type" qtlid="95059">Diagnóstico</translation>
 
