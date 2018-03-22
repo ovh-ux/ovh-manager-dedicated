@@ -45,6 +45,13 @@ angular.module("App").run(($q, $translatePartialLoader, $translate, SidebarMenu,
                 state: "app.account.useraccount.advanced"
             }, myAccountMenu);
         }
+
+        if (constants.target === "US") {
+            SidebarMenu.addMenuItem({
+                title: $translate.instant("menu_users_management"),
+                state: "app.account.useraccount.users"
+            }, myAccountMenu);
+        }
     }
 
     function buildBillingMenu () {
