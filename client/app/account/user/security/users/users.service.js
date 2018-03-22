@@ -6,13 +6,13 @@ angular.module("UserAccount.services").service("UseraccountUsersService", class 
     }
 
     getUsers () {
-        return this.ovhHttp.get("/me/user", {
+        return this.ovhHttp.get("/me/identity/user", {
             rootPath: "apiv6"
         });
     }
 
     getUser (user) {
-        return this.ovhHttp.get("/me/user/{user}", {
+        return this.ovhHttp.get("/me/identity/user/{user}", {
             rootPath: "apiv6",
             urlParams: {
                 user
@@ -21,7 +21,7 @@ angular.module("UserAccount.services").service("UseraccountUsersService", class 
     }
 
     addUser (data) {
-        return this.ovhHttp.post("/me/user", {
+        return this.ovhHttp.post("/me/identity/user", {
             rootPath: "apiv6",
             data,
             broadcast: "useraccount.security.users.refresh"
@@ -29,7 +29,7 @@ angular.module("UserAccount.services").service("UseraccountUsersService", class 
     }
 
     updateUser (data) {
-        return this.ovhHttp.put("/me/user/{user}", {
+        return this.ovhHttp.put("/me/identity/user/{user}", {
             rootPath: "apiv6",
             urlParams: {
                 user: data.login
@@ -43,7 +43,7 @@ angular.module("UserAccount.services").service("UseraccountUsersService", class 
     }
 
     deleteUser (user) {
-        return this.ovhHttp.delete("/me/user/{user}", {
+        return this.ovhHttp.delete("/me/identity/user/{user}", {
             rootPath: "apiv6",
             urlParams: {
                 user: user.login
@@ -53,7 +53,7 @@ angular.module("UserAccount.services").service("UseraccountUsersService", class 
     }
 
     enableUser (user) {
-        return this.ovhHttp.post("/me/user/{user}/enable", {
+        return this.ovhHttp.post("/me/identity/user/{user}/enable", {
             rootPath: "apiv6",
             urlParams: {
                 user: user.login
@@ -63,7 +63,7 @@ angular.module("UserAccount.services").service("UseraccountUsersService", class 
     }
 
     disableUser (user) {
-        return this.ovhHttp.post("/me/user/{user}/disable", {
+        return this.ovhHttp.post("/me/identity/user/{user}/disable", {
             rootPath: "apiv6",
             urlParams: {
                 user: user.login
