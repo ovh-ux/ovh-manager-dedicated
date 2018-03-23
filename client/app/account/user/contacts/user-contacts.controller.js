@@ -1,42 +1,38 @@
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.contactCtrl", [
-    "$location",
-    "$scope",
-    "User",
-    "AccountCreationURLS",
-    "Alerter",
-    function ($location, $scope, User, ACCOUNT_CREATION_URLS, Alerter) {
-        "use strict";
+angular.module("UserAccount.controllers")
+    .controller("UserAccount.controllers.contactCtrl", class AccountUserContactsController {
+        constructor ($location, $q, $scope, AccountCreationURLS, Alerter, OvhApiMe) {
+            this.$location = $location;
+            this.$q = $q;
+            this.$scope = $scope;
+            this.AccountCreationURLS = AccountCreationURLS;
+            this.Alerter = Alerter;
+            this.OvhApiMe = OvhApiMe;
+        }
 
-        const self = this;
-
-        self.loaders = {
-            init: false
-        };
-
-        self.user = null;
-
-        self.getAccountCreationUrl = function () {
-            const subs = self.user.ovhSubsidiary || "FR";
-            const languageSpecificSubs = "{$language}_{$subs}";
-            const newNicUrl = ACCOUNT_CREATION_URLS[languageSpecificSubs] || ACCOUNT_CREATION_URLS[subs] || ACCOUNT_CREATION_URLS.FR;
-            const returnUrl = $location.absUrl();
-            return `${newNicUrl}?redirectTo=${returnUrl}`;
-        };
-
-        function init () {
-            self.loaders.init = true;
-            User.getUser()
+        $onInit () {
+            this.loaders = {
+                init: false
+            };
+            this.user = null;
+            this.loaders.init = true;
+            return this.OvhApiMe.Lexi().get().$promise
                 .then((user) => {
-                    self.user = user;
+                    this.user = user;
                 })
                 .catch((err) => {
-                    Alerter.alertFromSWS($scope.tr("user_account_contacts_error"), err, "useraccount.alerts.dashboardContacts");
+                    this.Alerter.alertFromSWS(this.$scope.tr("user_account_contacts_error"), err, "useraccount.alerts.dashboardContacts");
+                    return this.$q.reject(err);
                 })
                 .finally(() => {
-                    self.loaders.init = false;
+                    this.loaders.init = false;
                 });
         }
 
-        init();
-    }
-]);
+        getAccountCreationUrl () {
+            const subs = _.get(this.user, "ovhSubsidiary", "FR");
+            const languageSpecificSubs = "{$language}_{$subs}";
+            const newNicUrl = this.AccountCreationURLS[languageSpecificSubs] || this.AccountCreationURLS[subs] || this.AccountCreationURLS.FR;
+            const returnUrl = this.$location.absUrl();
+            return `${newNicUrl}?redirectTo=${returnUrl}`;
+        }
+    });
