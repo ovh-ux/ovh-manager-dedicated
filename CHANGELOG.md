@@ -1,3 +1,77 @@
+<a name="9.1.2"></a>
+## [9.1.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.1.1...v9.1.2) (2018-03-22)
+
+
+### Bug Fixes
+
+* update route, /me/user has moved to /me/identity/user ([29af383](https://github.com/ovh-ux/ovh-manager-dedicated/commit/29af383))
+
+
+
+<a name="9.1.1"></a>
+## [9.1.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.1.0...v9.1.1) (2018-03-22)
+
+
+### Bug Fixes
+
+* **dedicated server firewall:** prevent multiple alert displaying ([f0f86d8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f0f86d8))
+* **dedicatedcloud datacenters:** add dropdown-append-to-body ([f8867e7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f8867e7))
+* **sso auth modal:** load translations from npm folder instead of bower ([1854628](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1854628))
+
+
+### Features
+
+* **multi users:** add link in sidebar menu ([6c3fc4f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6c3fc4f))
+
+
+
+<a name="9.1.0"></a>
+# [9.1.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.19...v9.1.0) (2018-03-21)
+
+
+### Bug Fixes
+
+* **cdn:** add tiles to statistics view for cdn & cdn domains ([503320f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/503320f))
+* **dedicated cloud:** remove security options for US cust ([32ad0c8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/32ad0c8))
+* **dedicatedcloud:** fix after quality check ([298ddbc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/298ddbc))
+* **dedicatedcloud:** fix old href to ui-sref ([de1ea01](https://github.com/ovh-ux/ovh-manager-dedicated/commit/de1ea01))
+* **dedicatedcloud:** fix tabs display on resolution width 1200 ([97c5fb2](https://github.com/ovh-ux/ovh-manager-dedicated/commit/97c5fb2))
+* **dedicatedcloud:** remove unecessary folder ([b446076](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b446076))
+* **dedicatedcloud backup:** display button if dc has at least 1 host ([48eb1dd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/48eb1dd))
+* **dedicatedcloud user:** add EN translations for test ([2bb0018](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2bb0018))
+* **dedicatedcloud user:** fix after review ([562f10d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/562f10d))
+* **dedicatedcloud user rights:** fix translations ([ca36231](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ca36231))
+* **license:** add oui-datagrid, fix title ([b14870f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b14870f))
+* **nas:** add oui-datagrid ([53fe190](https://github.com/ovh-ux/ovh-manager-dedicated/commit/53fe190))
+* **nas:** code review ([79f68da](https://github.com/ovh-ux/ovh-manager-dedicated/commit/79f68da))
+* **pcc:** hide compliante options for us customers until it is available ([dc58eff](https://github.com/ovh-ux/ovh-manager-dedicated/commit/dc58eff))
+* **sd:** button design primary -> default ([386bcb7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/386bcb7))
+* **server:** fix rtm link language detection ([77b1d6f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/77b1d6f))
+
+
+### Features
+
+* **dedicatedcloud:** add backup actions to ui-router ([9a2e40c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9a2e40c))
+* **dedicatedcloud:** use ui-router in dedicatedCloud section ([0dba0de](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0dba0de))
+* **dedicatedcloud user:** nsx user right edit ([6bfd54a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6bfd54a))
+
+
+
+<a name="9.0.19"></a>
+## [9.0.19](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.18...v9.0.19) (2018-03-20)
+
+
+
+<a name="9.0.18"></a>
+## [9.0.18](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.17...v9.0.18) (2018-03-20)
+
+
+### Bug Fixes
+
+* **license:** temporary fix spla license screen for us customers ([5933f41](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5933f41))
+
+
+
 <a name="9.0.17"></a>
 ## [9.0.17](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.16...v9.0.17) (2018-03-15)
 

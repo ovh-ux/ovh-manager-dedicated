@@ -102,8 +102,8 @@
         <div class="col-sm-3">
             <button type="button"
                     class="btn btn-block btn-default"
-                    data-ng-click="setAction('datacenter/datastore/order/dedicatedCloud-datacenter-datastore-order', datacenter.model, true)"
-                    data-ng-disabled="!datacenter.model.canOrderFilers"
+                    data-ng-disabled="!datacenter.model.canOrderFilers && constants.target !== 'US'"
+                    data-ng-click="orderDatastore(datacenter)"
                     data-i18n-static="dedicatedCloud_order_Datastore">
             </button>
         </div>

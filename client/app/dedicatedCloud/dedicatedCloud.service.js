@@ -411,6 +411,19 @@ angular
         /* ------- SUB DATACENTER LICENCES -------*/
 
         this.getDatacenterLicence = function (serviceName) {
+            // @TODO fix spla order
+            // temporary fix spla license display for US customers
+            if (constants.target === "US") {
+                return OvhHttp.get("/dedicatedCloud/{serviceName}", {
+                    rootPath: "apiv6",
+                    urlParams: {
+                        serviceName
+                    }
+                }).then((pcc) => ({
+                    canOrderSpla: false,
+                    isSplaActive: !pcc.spla
+                }));
+            }
             return $q
                 .all({
                     pcc: OvhHttp.get("/dedicatedCloud/{serviceName}", {
@@ -764,7 +777,8 @@ angular
                     lastName: user.lastName,
                     email: user.email,
                     phoneNumber: user.phoneNumber,
-                    tokenValidator: user.tokenValidator
+                    tokenValidator: user.tokenValidator,
+                    nsxRight: user.nsxRight
                 }
             }).then((task) => {
                 self.pollUserTasks(serviceName, {

@@ -61,8 +61,8 @@
    <translation id="dedicatedCloud_configuration_order_datastores_step1_type" qtlid="2642">Type</translation>
    <translation id="dedicatedCloud_configuration_order_datastores_step2_details" qtlid="146034">Summary of your datastore order:</translation>
    <translation id="dedicatedCloud_configuration_order_datastores_step2_profile" qtlid="146047">Profile:</translation>
-   <translation id="dedicatedCloud_configuration_order_datastores_step2_monthly_price_HT" qtlid="146060">Monthly price excl. VAT:</translation>
-   <translation id="dedicatedCloud_configuration_order_datastores_step2_monthly_price_TTC" qtlid="146073">Monthly price incl. VAT:</translation>
+   <translation id="dedicatedCloud_configuration_order_datastores_step2_monthly_price_HT" qtlid="146060">Monthly price excl. GST:</translation>
+   <translation id="dedicatedCloud_configuration_order_datastores_step2_monthly_price_TTC" qtlid="146073">Monthly price incl. GST:</translation>
    <translation id="dedicatedCloud_configuration_order_datastores_step2_confirm" qtlid="167873">To confirm your order, please proceed with the payment by clicking the "Order" button below.</translation>
    <translation id="dedicatedCloud_configuration_order_datastores_step2_explication" qtlid="167886">A new tab will open, and you will be automatically redirected to the OVH payment interface.</translation>
    <translation id="dedicatedCloud_configuration_order_datastores_step2_contracts" qtlid="145371">I have read and understood the following conditions:</translation>
@@ -72,11 +72,11 @@
    <translation id="dedicatedCloud_configuration_order_datastores_finish_success" qtlid="183359">The datastore order number <a href='{0}' target='_blank'>{1}</a> has been registered.</translation>
    <translation id="dedicatedCloud_configuration_order_datastores_finish_fail" qtlid="147759">An error occurred on ordering a datastore on the datacentre {0}</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_step1_question" qtlid="146138">Choose a host profile:</translation>
-   <translation id="dedicatedCloud_configuration_order_hosts_step1_rate" qtlid="146151">Price excl. VAT</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_step1_rate" qtlid="146151">Price excl. GST</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_step1_monthly_rate" qtlid="146086">(monthly)</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_step2_details" qtlid="146164">Summary of your host order:</translation>
-   <translation id="dedicatedCloud_configuration_order_hosts_step2_monthly_price_HT" qtlid="146177">Total price ex. VAT:</translation>
-   <translation id="dedicatedCloud_configuration_order_hosts_step2_monthly_price_TTC" qtlid="146190">Total price incl. VAT:</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_step2_monthly_price_HT" qtlid="146177">Total price ex. GST:</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_step2_monthly_price_TTC" qtlid="146190">Total price incl. GST:</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_step2_confirm" qtlid="167873">To confirm your order, please proceed with the payment by clicking the "Order" button below.</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_step2_explication" qtlid="167886">A new tab will open, and you will be automatically redirected to the OVH payment interface.</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_step2_contracts" qtlid="145371">I have read and understood the following conditions:</translation>
@@ -110,6 +110,26 @@
    <translation id="dedicatedCloud_tab_host_hourly_usage_other" qtlid="296895">{0} hours</translation>
    <translation id="dedicatedCloud_tab_host_hourly_usage_na" qtlid="94783">Not available</translation>
    <translation id="dedicatedCloud_tab_host_hourly_usage_update" qtlid="296908">As of {0}</translation>
+
+   <translation id="dedicatedCloud_host_order_title" qtlid="472081">Commander un host</translation>
+   <translation id="dedicatedCloud_host_order_info" qtlid="472094">Vous pouvez personnaliser votre cloud privé en ajoutant des hosts. Vous serez ensuite redirigé vers un nouvel onglet pour finaliser votre commande.</translation>
+   <translation id="dedicatedCloud_host_order_select" qtlid="472107">Sélectionner un type d'host :</translation>
+   <translation id="dedicatedCloud_host_order_host" qtlid="135229">Host</translation>
+   <translation id="dedicatedCloud_host_order_price" qtlid="83913">Price</translation>
+   <translation id="dedicatedCloud_host_order_speed" qtlid="146203">CPU Speed</translation>
+   <translation id="dedicatedCloud_host_order_memory" qtlid="31354">RAM</translation>
+   <translation id="dedicatedCloud_host_order_cores" qtlid="33070">Number of cores</translation>
+   <translation id="dedicatedCloud_host_order_quantity" qtlid="472120">Quantité :</translation>
+   <translation id="dedicatedCloud_host_order_confirm" qtlid="333828">Confirmer la commande</translation>
+
+   <translation id="dedicatedCloud_datastore_order_title" qtlid="472133">Commander un datastore</translation>
+   <translation id="dedicatedCloud_datastore_order_info" qtlid="472146">Vous pouvez personnaliser votre cloud privé en ajoutant des datastores. Vous serez ensuite redirigé dans un nouvel onglet pour finaliser votre commande.</translation>
+   <translation id="dedicatedCloud_datastore_order_select" qtlid="472159">Sélectionner un type de datastore :</translation>
+   <translation id="dedicatedCloud_datastore_order_type" qtlid="2642">Type</translation>
+   <translation id="dedicatedCloud_datastore_order_price" qtlid="83913">Price</translation>
+   <translation id="dedicatedCloud_datastore_order_quantity" qtlid="472120">Quantité :</translation>
+   <translation id="dedicatedCloud_datastore_order_confirm" qtlid="333828">Confirmer la commande</translation>
+
    <translation id="dedicatedCloud_tab_datastore" qtlid="154780">Data stores</translation>
    <translation id="dedicatedCloud_tab_datastores_name" qtlid="3818">Name</translation>
    <translation id="dedicatedCloud_tab_datastores_profile" qtlid="23035">Profile</translation>
@@ -145,6 +165,7 @@
    <translation id="dedicatedCloud_tab_licences_active_spla_fail" qtlid="154910">An error occurred on requesting activation of the SPLA licence.</translation>
    <translation id="dedicatedCloud_tab_backup" qtlid="28147">Backup</translation>
    <translation id="dedicatedCloud_tab_veeam_on" qtlid="75030">Activate the backup</translation>
+   <translation id="dedicatedCloud_tab_veeam_on_disabled" qtlid="471925">Il est nécessaire que votre datacentre dispose d'au minimum un host afin d'activer le backup.</translation>
    <translation id="dedicatedCloud_tab_veeam_off" qtlid="154923">Deactivate backup</translation>
    <translation id="dedicatedCloud_tab_veeam_state" qtlid="101997">Status:</translation>
    <translation id="dedicatedCloud_tab_veeam_loading_error" qtlid="149488">An error occurred on loading the backup information.</translation>
@@ -262,6 +283,7 @@
    <translation id="dedicatedCloud_USER_backup" qtlid="28147">Backup</translation>
    <translation id="dedicatedCloud_USER_ip" qtlid="167899">IP</translation>
    <translation id="dedicatedCloud_USER_ipfo" qtlid="157694">Failover IP</translation>
+   <translation id="dedicatedCloud_USER_nsx" qtlid="471938">Interface NSX</translation>
    <translation id="dedicatedCloud_USER_allow_reading" qtlid="146593">authorise read-only </translation>
    <translation id="dedicatedCloud_USER_allow_reading_and_writing" qtlid="146606">authorise read-write</translation>
    <translation id="dedicatedCloud_USER_all_refused" qtlid="146619">refuse all</translation>
@@ -275,30 +297,47 @@
    <translation id="dedicatedCloud_USER_right_valid" qtlid="147850">Confirm modifications</translation>
    <translation id="dedicatedCloud_USER_right_cancel" qtlid="147863">Cancel modifications</translation>
    <translation id="dedicatedCloud_USER_right_DISABLED" qtlid="30646">No</translation>
+   <translation id="dedicatedCloud_USER_right_disabled" qtlid="30646">No</translation>
    <translation id="dedicatedCloud_USER_right_NO_ACCESS" qtlid="30646">No</translation>
+   <translation id="dedicatedCloud_USER_right_noAccess" qtlid="30646">No</translation>
    <translation id="dedicatedCloud_USER_right_READONLY" qtlid="17333">Read only</translation>
+   <translation id="dedicatedCloud_USER_right_readonly" qtlid="17333">Read only</translation>
    <translation id="dedicatedCloud_USER_right_READWRITE" qtlid="146671">Read/Write</translation>
+   <translation id="dedicatedCloud_USER_right_readwrite" qtlid="146671">Read/Write</translation>
    <translation id="dedicatedCloud_USER_right_ADMIN" qtlid="210176">Provider</translation>
+   <translation id="dedicatedCloud_USER_right_admin" qtlid="210176">Provider</translation>
    <translation id="dedicatedCloud_USER_right_MANAGER" qtlid="210189">Administrator</translation>
+   <translation id="dedicatedCloud_USER_right_manager" qtlid="210189">Administrator</translation>
    <translation id="dedicatedCloud_USER_right_title" qtlid="433164">Editing rights</translation>
    <translation id="dedicatedCloud_USER_right_datacenter_title" qtlid="433177">Datacentre: <b>{0}</b></translation>
    <translation id="dedicatedCloud_USER_right_vsphere" qtlid="146567">vSphere access</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_help" qtlid="433190">Global user rights on vSphere</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_ADMIN" qtlid="433203">Reserved for OVH, for administrators only</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_admin" qtlid="433203">Reserved for OVH, for administrators only</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_DISABLED" qtlid="308541">No access</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_disabled" qtlid="308541">No access</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_READONLY" qtlid="433216">Read-only access</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_readonly" qtlid="433216">Read-only access</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_READWRITE" qtlid="433229">Write access</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_readwrite" qtlid="433229">Write access</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork" qtlid="200755">Access to the VM Network</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork_help" qtlid="433242">Management rights over the public network section (a.k.a VM Network in the vSphere interface)</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork_ADMIN" qtlid="433255">Allows VMs to be configured on a public network</translation>
+   <translation id="dedicatedCloud_USER_right_vmNetwork_admin" qtlid="433255">Allows VMs to be configured on a public network</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork_NO_ACCESS" qtlid="308541">No access</translation>
+   <translation id="dedicatedCloud_USER_right_vmNetwork_noAccess" qtlid="308541">No access</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork_READONLY" qtlid="433216">Read-only access</translation>
+   <translation id="dedicatedCloud_USER_right_vmNetwork_readonly" qtlid="433216">Read-only access</translation>
    <translation id="dedicatedCloud_USER_right_vlan" qtlid="200768">Access to the V(X)LAN</translation>
    <translation id="dedicatedCloud_USER_right_vlan_help" qtlid="433268">Management rights over the private network section (VXLAN for Dedicated Cloud and VLAN for SDDC)</translation>
    <translation id="dedicatedCloud_USER_right_vlan_ADMIN" qtlid="433281">Allows VMs to be configured on a private network</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_admin" qtlid="433281">Allows VMs to be configured on a private network</translation>
    <translation id="dedicatedCloud_USER_right_vlan_NO_ACCESS" qtlid="308541">No access</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_noAccess" qtlid="308541">No access</translation>
    <translation id="dedicatedCloud_USER_right_vlan_READONLY" qtlid="433216">Read-only access</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_readonly" qtlid="433216">Read-only access</translation>
    <translation id="dedicatedCloud_USER_right_vlan_MANAGER" qtlid="433294">Allows port groups to be managed on the virtual switch (creation, modification, deletion). For SDDCs only.</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_manager" qtlid="433294">Allows port groups to be managed on the virtual switch (creation, modification, deletion). For SDDCs only.</translation>
    <translation id="dedicatedCloud_USER_right_resources" qtlid="146580">Add resources</translation>
    <translation id="dedicatedCloud_USER_right_resources_help" qtlid="433307">Right to add additional resources through the OVH plugin in the vSphere client.</translation>
    <translation id="dedicatedCloud_USER_add_user" qtlid="7810">Create User</translation>
@@ -461,8 +500,8 @@
    <translation id="dedicatedCloud_USER_add_user_step3_rights" qtlid="202590">Right</translation>
    <translation id="dedicatedCloud_USER_add_user_step3_mail" qtlid="21679">Mail</translation>
    <translation id="dedicatedCloud_updateResource_toMonthly" qtlid="269162">Switch to monthly subscription</translation>
-   <translation id="dedicatedCloud_order_price_HT" qtlid="146177">Total price ex. VAT:</translation>
-   <translation id="dedicatedCloud_order_price_TTC" qtlid="146190">Total price incl. VAT:</translation>
+   <translation id="dedicatedCloud_order_price_HT" qtlid="146177">Total price ex. GST:</translation>
+   <translation id="dedicatedCloud_order_price_TTC" qtlid="146190">Total price incl. GST:</translation>
    <translation id="dedicatedCloud_order_final_txt" qtlid="181240">Click "Confirm" to confirm your order.</translation>
    <translation id="dedicatedCloud_order_final_txt2" qtlid="181253">A new tab will open and you will be automatically redirected to the payment interface.</translation>
    <translation id="dedicatedCloud_order_finish_success" qtlid="184048">Order number <a href='{0}' target='_blank'>{1}</a> has been registered.</translation>

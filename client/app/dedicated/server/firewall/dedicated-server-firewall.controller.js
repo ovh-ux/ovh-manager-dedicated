@@ -1,44 +1,75 @@
-angular.module("App").controller("ServerTabFirewallAsaCtrl", ($scope, $q, $stateParams, Server, ServerFirewallAsa) => {
-    $scope.informations = null;
-    $scope.server = null;
-    $scope.canOrderAsaOption = false;
-    $scope.loading = true;
+angular.module("App")
+    .controller("ServerTabFirewallAsaCtrl", class ServerTabFirewallAsaCtrl {
+        constructor ($q, $scope, $stateParams, Alerter, Server, ServerFirewallAsa, translator) {
+            this.$q = $q;
+            this.$scope = $scope;
+            this.$stateParams = $stateParams;
+            this.Alerter = Alerter;
+            this.Server = Server;
+            this.ServerFirewallAsa = ServerFirewallAsa;
+            this.translator = translator;
 
-    function init () {
-        $scope.informations = null;
-        $q.allSettled([initServer(), initOptions(), initInformations()]).finally(() => {
-            $scope.loading = false;
-        });
-    }
+            this.$scope.$on(this.ServerFirewallAsa.events.firewallAsaChanged, () => this.$onInit());
+        }
 
-    function initServer () {
-        return Server.getSelected($stateParams.productId).then((server) => {
-            $scope.server = server;
-        });
-    }
+        $onInit () {
+            this.server = null;
+            this.canOrderAsaOption = false;
+            this.informations = null;
 
-    function initOptions () {
-        return ServerFirewallAsa.getOptionList($stateParams.productId).then((availableOptions) => {
-            if (availableOptions && availableOptions.results.length > 0) {
-                $scope.canOrderAsaOption = true;
-            }
-        });
-    }
+            this.isLoading = true;
+            return this.$q
+                .all({
+                    server: this.getServer(),
+                    optionList: this.getOptionList(),
+                    informations: this.getInformations()
+                })
+                .catch((err) => this.Alerter.error([this.translator.tr("server_configuration_firewall_fail"), _.get(err, "message", "")].join(" "), "dedicated_server_firewall"))
+                .finally(() => {
+                    this.isLoading = false;
+                });
+        }
 
-    function initInformations () {
-        return ServerFirewallAsa.getInformations($stateParams.productId).then(
-            (data) => {
-                $scope.informations = data;
-            },
-            (data) => {
-                $scope.setMessage($scope.tr("server_configuration_firewall_fail"), data);
-            }
-        );
-    }
+        /**
+         * Get selected server.
+         * @return {Promise}
+         */
+        getServer () {
+            return this.Server
+                .getSelected(this.$stateParams.productId)
+                .then((server) => {
+                    this.server = server;
+                    return server;
+                })
+                .catch((err) => this.$q.reject(err));
+        }
 
-    $scope.$on(ServerFirewallAsa.events.firewallAsaChanged, () => {
-        init();
+        /**
+         * Get option list.
+         * @return {Promise}
+         */
+        getOptionList () {
+            return this.ServerFirewallAsa
+                .getOptionList(this.$stateParams.productId)
+                .then((availableOptions) => {
+                    if (availableOptions && availableOptions.results.length > 0) {
+                        this.canOrderAsaOption = true;
+                    }
+                })
+                .catch((err) => this.$q.reject(err));
+        }
+
+        /**
+         * Get informations.
+         * @return {Promise}
+         */
+        getInformations () {
+            return this.ServerFirewallAsa
+                .getInformations(this.$stateParams.productId)
+                .then((informations) => {
+                    this.informations = informations;
+                    return informations;
+                })
+                .catch((err) => this.$q.reject(err));
+        }
     });
-
-    init();
-});
