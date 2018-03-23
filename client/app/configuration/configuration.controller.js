@@ -45,7 +45,8 @@ angular.module("App").controller("ConfigurationCtrl", class ConfigurationCtrl {
                 this.DedicatedCloud.getDescription()
                     .then((ids) => {
                         if (ids && ids.length > 0) {
-                            this.$scope.guide.sections.push("pcc");
+                            // TODO: uncomment when all guides are available on ovhcloud.com.
+                            // this.$scope.guide.sections.push("pcc");
                             deferred.resolve(this.$scope.guide.sections);
                         }
                     })

@@ -145,6 +145,7 @@
    <translation id="dedicatedCloud_tab_licences_active_spla_fail" qtlid="154910">Er is een fout opgetreden bij het aanvragen van de activering van de SPLA-licentie.</translation>
    <translation id="dedicatedCloud_tab_backup" qtlid="28147">Backup</translation>
    <translation id="dedicatedCloud_tab_veeam_on" qtlid="75030">De backup activeren</translation>
+   <translation id="dedicatedCloud_tab_veeam_on_disabled" qtlid="471925">Il est nécessaire que votre datacentre dispose d'au minimum un host afin d'activer le backup.</translation>
    <translation id="dedicatedCloud_tab_veeam_off" qtlid="154923">De backup deactiveren</translation>
    <translation id="dedicatedCloud_tab_veeam_state" qtlid="101997">Status:</translation>
    <translation id="dedicatedCloud_tab_veeam_loading_error" qtlid="149488">Er is een fout opgetreden tijdens het laden van de backup informatie.</translation>
@@ -262,6 +263,7 @@
    <translation id="dedicatedCloud_USER_backup" qtlid="28147">Backup</translation>
    <translation id="dedicatedCloud_USER_ip" qtlid="167899">IP</translation>
    <translation id="dedicatedCloud_USER_ipfo" qtlid="157694">Failover IP</translation>
+   <translation id="dedicatedCloud_USER_nsx" qtlid="471938">Interface NSX</translation>
    <translation id="dedicatedCloud_USER_allow_reading" qtlid="146593">Read-only autoriseren</translation>
    <translation id="dedicatedCloud_USER_allow_reading_and_writing" qtlid="146606">Lezen en schrijven autoriseren</translation>
    <translation id="dedicatedCloud_USER_all_refused" qtlid="146619">alles weigeren</translation>
@@ -275,30 +277,47 @@
    <translation id="dedicatedCloud_USER_right_valid" qtlid="147850">de wijzigingen valideren</translation>
    <translation id="dedicatedCloud_USER_right_cancel" qtlid="147863">de wijzigingen annuleren</translation>
    <translation id="dedicatedCloud_USER_right_DISABLED" qtlid="30646">Geen</translation>
+   <translation id="dedicatedCloud_USER_right_disabled" qtlid="30646">Geen</translation>
    <translation id="dedicatedCloud_USER_right_NO_ACCESS" qtlid="30646">Geen</translation>
+   <translation id="dedicatedCloud_USER_right_noAccess" qtlid="30646">Geen</translation>
    <translation id="dedicatedCloud_USER_right_READONLY" qtlid="17333">read-only</translation>
+   <translation id="dedicatedCloud_USER_right_readonly" qtlid="17333">read-only</translation>
    <translation id="dedicatedCloud_USER_right_READWRITE" qtlid="146671">Read/Write</translation>
+   <translation id="dedicatedCloud_USER_right_readwrite" qtlid="146671">Read/Write</translation>
    <translation id="dedicatedCloud_USER_right_ADMIN" qtlid="210176">Operator</translation>
+   <translation id="dedicatedCloud_USER_right_admin" qtlid="210176">Operator</translation>
    <translation id="dedicatedCloud_USER_right_MANAGER" qtlid="210189">Beheerder</translation>
+   <translation id="dedicatedCloud_USER_right_manager" qtlid="210189">Beheerder</translation>
    <translation id="dedicatedCloud_USER_right_title" qtlid="433164">Wijziging rechten</translation>
    <translation id="dedicatedCloud_USER_right_datacenter_title" qtlid="433177">Datacenter: <b>{0}</b></translation>
    <translation id="dedicatedCloud_USER_right_vsphere" qtlid="146567">vSphere toegang</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_help" qtlid="433190">Algemene gebruikersrechten op vSphere</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_ADMIN" qtlid="433203">Gereserveerd voor OVH, enkel voor administrators</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_admin" qtlid="433203">Gereserveerd voor OVH, enkel voor administrators</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_DISABLED" qtlid="308541">Geen toegang</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_disabled" qtlid="308541">Geen toegang</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_READONLY" qtlid="433216">Alleen-lezen toegang</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_readonly" qtlid="433216">Alleen-lezen toegang</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_READWRITE" qtlid="433229">Schrijf-toegang</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_readwrite" qtlid="433229">Schrijf-toegang</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork" qtlid="200755">Toegang tot vmNetwork</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork_help" qtlid="433242">Beheersrechten over het publieke netwerk gedeelte (VM-netwerk in de vSphere-interface)</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork_ADMIN" qtlid="433255">Zorgt ervoor dat VM's kunnen worden geconfigureerd op een openbaar netwerk</translation>
+   <translation id="dedicatedCloud_USER_right_vmNetwork_admin" qtlid="433255">Zorgt ervoor dat VM's kunnen worden geconfigureerd op een openbaar netwerk</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork_NO_ACCESS" qtlid="308541">Geen toegang</translation>
+   <translation id="dedicatedCloud_USER_right_vmNetwork_noAccess" qtlid="308541">Geen toegang</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork_READONLY" qtlid="433216">Alleen-lezen toegang</translation>
+   <translation id="dedicatedCloud_USER_right_vmNetwork_readonly" qtlid="433216">Alleen-lezen toegang</translation>
    <translation id="dedicatedCloud_USER_right_vlan" qtlid="200768">Toegang tot V(x)Lan's</translation>
    <translation id="dedicatedCloud_USER_right_vlan_help" qtlid="433268">Beheersrechten over het privénetwerk gedeelte (VXLAN voor Dedicated Cloud en VLAN voor SDDC)</translation>
    <translation id="dedicatedCloud_USER_right_vlan_ADMIN" qtlid="433281">Zorgt ervoor dat VM's kunnen worden geconfigureerd op een privénetwerk</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_admin" qtlid="433281">Zorgt ervoor dat VM's kunnen worden geconfigureerd op een privénetwerk</translation>
    <translation id="dedicatedCloud_USER_right_vlan_NO_ACCESS" qtlid="308541">Geen toegang</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_noAccess" qtlid="308541">Geen toegang</translation>
    <translation id="dedicatedCloud_USER_right_vlan_READONLY" qtlid="433216">Alleen-lezen toegang</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_readonly" qtlid="433216">Alleen-lezen toegang</translation>
    <translation id="dedicatedCloud_USER_right_vlan_MANAGER" qtlid="433294">Hiermee kunnen portgroepen worden beheerd op de virtuele switch (creatie, wijziging, verwijdering). Alleen voor SDDC's.</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_manager" qtlid="433294">Hiermee kunnen portgroepen worden beheerd op de virtuele switch (creatie, wijziging, verwijdering). Alleen voor SDDC's.</translation>
    <translation id="dedicatedCloud_USER_right_resources" qtlid="146580">Toevoegen van resources</translation>
    <translation id="dedicatedCloud_USER_right_resources_help" qtlid="433307">Recht om extra resources toe te voegen via de OVH-plugin in de vSphere-client.</translation>
    <translation id="dedicatedCloud_USER_add_user" qtlid="7810">Een gebruiker registreren</translation>
