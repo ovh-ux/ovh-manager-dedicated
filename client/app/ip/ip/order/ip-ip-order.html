@@ -12,8 +12,11 @@
 
             <div data-ng-show="!loading.services && servicesList.length">
                 <p data-i18n-static="ip_order_step1_question"></p>
-                <form>
-                    <div class="form-group">
+                <form name="ipIpOrderForm">
+                    <div class="form-group"
+                         data-ng-class="{
+                             'has-error': ipIpOrderForm.serviceSelector.$touched && orderableIpError
+                         }">
                         <label class="control-label"
                                for="serviceSelector"
                                data-i18n-static="ip_table_header_service">
@@ -30,6 +33,11 @@
                                     data-i18n-static="global_select">
                             </option>
                         </select>
+                        <span class="help-block"
+                              role="alert"
+                              data-ng-show="orderableIpError"
+                              data-ng-bind="tr('ip_order_error_'+orderableIpError)">
+                        </span>
                     </div>
                 </form>
 
@@ -37,13 +45,6 @@
                 <div data-ng-show="loading.serviceCanBeOrdered">
                     <span data-i18n-static="ip_order_checkservice"></span>
                     <oui-spinner data-size="s"></oui-spinner>
-                </div>
-
-                <!-- ERROR -->
-                <div class="alert alert-danger"
-                     data-ng-show="orderableIpError"
-                     role="alert">
-                    <p data-ng-bind="tr('ip_order_error_'+orderableIpError)"></p>
                 </div>
 
                 <!-- OKEY -->

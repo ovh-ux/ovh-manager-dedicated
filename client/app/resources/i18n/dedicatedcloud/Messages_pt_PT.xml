@@ -91,7 +91,7 @@ Em vigor durante o mês em curso.</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_finish_fail" qtlid="146255">Erro ao processar encomenda de host para o datacenter {0}</translation>
    <translation id="dedicatedCloud_tab_no_data" qtlid="146372">Sem dados</translation>
    <translation id="dedicatedCloud_tab_host" qtlid="51763">Hosts</translation>
-   <translation id="dedicatedCloud_tab_host_name" qtlid="3818">Nome</translation>
+   <translation id="dedicatedCloud_tab_host_name" qtlid="3818">Apelido</translation>
    <translation id="dedicatedCloud_tab_host_profile" qtlid="23035">Perfil</translation>
    <translation id="dedicatedCloud_tab_host_billing" qtlid="32950">Faturação</translation>
    <translation id="dedicatedCloud_tab_host_billing_HOURLY" qtlid="149358">À hora</translation>
@@ -111,8 +111,28 @@ Em vigor durante o mês em curso.</translation>
    <translation id="dedicatedCloud_tab_host_hourly_usage_other" qtlid="296895">{0} horas</translation>
    <translation id="dedicatedCloud_tab_host_hourly_usage_na" qtlid="94783">Não disponível</translation>
    <translation id="dedicatedCloud_tab_host_hourly_usage_update" qtlid="296908">Na data de {0}</translation>
+
+   <translation id="dedicatedCloud_host_order_title" qtlid="472081">Commander un host</translation>
+   <translation id="dedicatedCloud_host_order_info" qtlid="472094">Vous pouvez personnaliser votre cloud privé en ajoutant des hosts. Vous serez ensuite redirigé vers un nouvel onglet pour finaliser votre commande.</translation>
+   <translation id="dedicatedCloud_host_order_select" qtlid="472107">Sélectionner un type d'host :</translation>
+   <translation id="dedicatedCloud_host_order_host" qtlid="135229">Host</translation>
+   <translation id="dedicatedCloud_host_order_price" qtlid="83913">Preço</translation>
+   <translation id="dedicatedCloud_host_order_speed" qtlid="146203">Frequência CPU</translation>
+   <translation id="dedicatedCloud_host_order_memory" qtlid="31354">RAM</translation>
+   <translation id="dedicatedCloud_host_order_cores" qtlid="33070">Número de núcleos</translation>
+   <translation id="dedicatedCloud_host_order_quantity" qtlid="472120">Quantité :</translation>
+   <translation id="dedicatedCloud_host_order_confirm" qtlid="333828">Confirmer la commande</translation>
+
+   <translation id="dedicatedCloud_datastore_order_title" qtlid="472133">Commander un datastore</translation>
+   <translation id="dedicatedCloud_datastore_order_info" qtlid="472146">Vous pouvez personnaliser votre cloud privé en ajoutant des datastores. Vous serez ensuite redirigé dans un nouvel onglet pour finaliser votre commande.</translation>
+   <translation id="dedicatedCloud_datastore_order_select" qtlid="472159">Sélectionner un type de datastore :</translation>
+   <translation id="dedicatedCloud_datastore_order_type" qtlid="2642">Tipo</translation>
+   <translation id="dedicatedCloud_datastore_order_price" qtlid="83913">Preço</translation>
+   <translation id="dedicatedCloud_datastore_order_quantity" qtlid="472120">Quantité :</translation>
+   <translation id="dedicatedCloud_datastore_order_confirm" qtlid="333828">Confirmer la commande</translation>
+
    <translation id="dedicatedCloud_tab_datastore" qtlid="154780">Datastores</translation>
-   <translation id="dedicatedCloud_tab_datastores_name" qtlid="3818">Nome</translation>
+   <translation id="dedicatedCloud_tab_datastores_name" qtlid="3818">Apelido</translation>
    <translation id="dedicatedCloud_tab_datastores_profile" qtlid="23035">Perfil</translation>
    <translation id="dedicatedCloud_tab_datastores_type" qtlid="2642">Tipo</translation>
    <translation id="dedicatedCloud_tab_datastores_size" qtlid="7726">Dimensão</translation>
@@ -338,7 +358,7 @@ Em vigor durante o mês em curso.</translation>
    <translation id="dedicatedCloud_users_add_done" qtlid="277442">O novo utilizador foi criado com sucesso.</translation>
 
    <translation id="dedicatedCloud_USER_add_user_step1_question" qtlid="202538">Queira preencher este formulário para proceder à criação de um novo utilizador:</translation>
-   <translation id="dedicatedCloud_USER_add_user_name" qtlid="3818">Nome</translation>
+   <translation id="dedicatedCloud_USER_add_user_name" qtlid="3818">Apelido</translation>
    <translation id="dedicatedCloud_USER_add_user_password" qtlid="2270">Palavra-passe</translation>
    <translation id="dedicatedCloud_USER_add_user_mail" qtlid="21679">Mail</translation>
    <translation id="dedicatedCloud_USER_add_user_step2_question" qtlid="200781">Que permissão deseja atribuir a <b>{0}</b> ?</translation>
@@ -540,7 +560,7 @@ Em vigor durante o mês em curso.</translation>
    <translation id="dedicatedCloud_dashboard_change_price_more" qtlid="256138">para mais informações.</translation>
    <translation id="dedicatedCloud_dashboard_change_price_title" qtlid="264745">Novo preço para {0}</translation>
    <translation id="dedicatedCloud_dashboard_change_price_info" qtlid="264758">Preços aplicáveis para toda as renovações efetuadas a partir de 30 de Novembro</translation>
-   <translation id="dedicatedCloud_dashboard_change_price_name" qtlid="3818">Nome</translation>
+   <translation id="dedicatedCloud_dashboard_change_price_name" qtlid="3818">Apelido</translation>
    <translation id="dedicatedCloud_dashboard_change_price_dedicatedCloud_type" qtlid="2642">Tipo</translation>
    <translation id="dedicatedCloud_dashboard_change_price_old_price" qtlid="256062">Preço antigo</translation>
    <translation id="dedicatedCloud_dashboard_change_price_new_price" qtlid="256075">Novo preço</translation>
@@ -551,7 +571,7 @@ Em vigor durante o mês em curso.</translation>
    <translation id="dedicatedCloud_options_state_disabled" qtlid="24967">Desativado</translation>
    <translation id="dedicatedCloud_options_state_disabling" qtlid="154962">Em curso de desativação</translation>
    <translation id="dedicatedCloud_options_activate" qtlid="76734">Ativar</translation>
-   <translation id="dedicatedCloud_options_unactivate" qtlid="90973">Desactivar</translation>
+   <translation id="dedicatedCloud_options_unactivate" qtlid="90973">Desativar</translation>
    <translation id="dedicatedCloud_options_discover" qtlid="342823">Descobrir esta opçãol</translation>
    <translation id="dedicatedCloud_options_vrops" qtlid="342836">VMware vRealize Operations (vRops)</translation>
    <translation id="dedicatedCloud_options_nsx" qtlid="342849">VMware Network Virtualization (NSX)</translation>
@@ -559,7 +579,7 @@ Em vigor durante o mês em curso.</translation>
    <translation id="dedicatedCloud_vmware_orderopt_title_vrops" qtlid="342862">Ativar a opção VMware vROps</translation>
    <translation id="dedicatedCloud_vmware_orderopt_title_nsx" qtlid="342875">Ativar a opção VMware NSX</translation>
    <translation id="dedicatedCloud_vmware_orderopt_info" qtlid="342888">Vai ser efetuado um ajuste ao preço dos seus hosts na próxima renovação:</translation>
-   <translation id="dedicatedCloud_vmware_orderopt_host_name" qtlid="3818">Nome</translation>
+   <translation id="dedicatedCloud_vmware_orderopt_host_name" qtlid="3818">Apelido</translation>
    <translation id="dedicatedCloud_vmware_orderopt_datacenter_name" qtlid="30802">Datacenter</translation>
    <translation id="dedicatedCloud_vmware_orderopt_current_price" qtlid="342901">Faturação deste mês</translation>
    <translation id="dedicatedCloud_vmware_orderopt_next_price" qtlid="342914">Faturação do próximo mês&#42;</translation>
@@ -584,7 +604,7 @@ Em vigor durante o mês em curso.</translation>
 
    <translation id="dedicatedCloud_tab_operation" qtlid="31078">Operações</translation>
    <translation id="dedicatedCloud_OPERATIONS_taskId" qtlid="16445">Referência</translation>
-   <translation id="dedicatedCloud_OPERATIONS_name" qtlid="3818">Nome</translation>
+   <translation id="dedicatedCloud_OPERATIONS_name" qtlid="3818">Apelido</translation>
    <translation id="dedicatedCloud_OPERATIONS_type" qtlid="2642">Tipo</translation>
    <translation id="dedicatedCloud_OPERATIONS_progression" qtlid="61608">Progressão (Todos)</translation>
    <translation id="dedicatedCloud_OPERATIONS_comment" qtlid="25975">Comentário</translation>
@@ -669,7 +689,7 @@ Em vigor durante o mês em curso.</translation>
    <translation id="dedicatedCloud_options_check_error" qtlid="374282">Oops, ocorreu um erro aquando da verificação dos pré-requisitos...</translation>
    <translation id="dedicatedCloud_options_load_prices_error" qtlid="374295">Ocorreu um erro aquando do carregamento dos preços da opção</translation>
    <translation id="dedicatedCloud_options_info" qtlid="374308">O preço dos seus hosts será superior na próxima renovação:</translation>
-   <translation id="dedicatedCloud_options_order_host_name" qtlid="3818">Nome</translation>
+   <translation id="dedicatedCloud_options_order_host_name" qtlid="3818">Apelido</translation>
    <translation id="dedicatedCloud_options_order_datacenter_name" qtlid="30802">Datacenter</translation>
    <translation id="dedicatedCloud_options_order_current_price" qtlid="342901">Faturação deste mês</translation>
    <translation id="dedicatedCloud_options_order_next_price" qtlid="374321">Faturação do próximo mês</translation>

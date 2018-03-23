@@ -6,9 +6,22 @@
          data-ng-if="loaders.datacenter">
         <oui-spinner></oui-spinner>
     </div>
-    <div class="row"
-         data-ng-if="!loaders.datacenter">
-        <div class="col-sm-9">
+    <div data-ng-if="!loaders.datacenter">
+        <div class="mb-2">
+            <button type="button"
+                    class="btn btn-default"
+                    data-ng-disabled="!datacenter.model.canOrderHosts && constants.target !== 'US'"
+                    data-ng-click="orderHost(datacenter)"
+                    data-i18n-static="dedicatedCloud_order_Host">
+            </button>
+            <div class="label"
+                 data-ng-if="datacenter.model.hasDiscountAMD"
+                 data-uib-tooltip="{{ tr('dedicatedCloud_discount_AMD') }}"
+                 data-tooltip-placement="top"
+                 data-i18n-static="dedicatedCloud_discount">
+            </div>
+        </div>
+        <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
                     <th scope="col"
@@ -74,25 +87,11 @@
                     </tr>
                 </tbody>
             </table>
-            <div data-pagination-server-side
-                 data-pagination-server-side-function="loadHosts"
-                 data-pagination-server-side-paginated-stuff="hosts"
-                 data-pagination-server-side-table-loading="loaders.hosts">
-            </div>
         </div>
-        <div class="col-sm-3">
-            <button type="button"
-                    class="btn btn-block btn-default"
-                    data-ng-click="setAction('datacenter/host/order/dedicatedCloud-datacenter-host-order', datacenter.model, true)"
-                    data-ng-disabled="!datacenter.model.canOrderHosts"
-                    data-i18n-static="dedicatedCloud_order_Host">
-            </button>
-            <div class="label"
-                 data-ng-if="datacenter.model.hasDiscountAMD"
-                 data-uib-tooltip="{{ tr('dedicatedCloud_discount_AMD') }}"
-                 data-tooltip-placement="top"
-                 data-i18n-static="dedicatedCloud_discount">
-            </div>
+        <div data-pagination-server-side
+             data-pagination-server-side-function="loadHosts"
+             data-pagination-server-side-paginated-stuff="hosts"
+             data-pagination-server-side-table-loading="loaders.hosts">
         </div>
     </div>
 </div>

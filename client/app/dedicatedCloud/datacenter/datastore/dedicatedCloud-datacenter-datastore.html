@@ -6,9 +6,14 @@
          data-ng-if="loading">
         <oui-spinner></oui-spinner>
     </div>
-    <div class="row"
-         data-ng-if="!loading">
-        <div class="col-sm-9">
+    <div data-ng-if="!loading">
+        <button type="button"
+                class="btn btn-default mb-2"
+                data-ng-disabled="!datacenter.model.canOrderFilers && constants.target !== 'US'"
+                data-ng-click="orderDatastore(datacenter)"
+                data-i18n-static="dedicatedCloud_order_Datastore">
+        </button>
+        <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -39,7 +44,7 @@
                     <tr>
                         <td colspan="7"
                             class="text-center">
-                            <oui-spinner></oui-spinner>
+                            <oui-spinner data-size="s"></oui-spinner>
                         </td>
                     </tr>
                 </tbody>
@@ -93,19 +98,11 @@
                     </tr>
                 </tbody>
             </table>
-            <div data-pagination-server-side
-                 data-pagination-server-side-function="loadDatastores"
-                 data-pagination-server-side-paginated-stuff="datastores"
-                 data-pagination-server-side-table-loading="loading">
-            </div>
         </div>
-        <div class="col-sm-3">
-            <button type="button"
-                    class="btn btn-block btn-default"
-                    data-ng-click="setAction('datacenter/datastore/order/dedicatedCloud-datacenter-datastore-order', datacenter.model, true)"
-                    data-ng-disabled="!datacenter.model.canOrderFilers"
-                    data-i18n-static="dedicatedCloud_order_Datastore">
-            </button>
+        <div data-pagination-server-side
+             data-pagination-server-side-function="loadDatastores"
+             data-pagination-server-side-paginated-stuff="datastores"
+             data-pagination-server-side-table-loading="loading">
         </div>
     </div>
 </div>
