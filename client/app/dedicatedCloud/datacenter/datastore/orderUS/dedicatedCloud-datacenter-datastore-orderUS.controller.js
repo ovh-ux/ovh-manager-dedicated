@@ -59,13 +59,15 @@ angular.module("App").controller("DedicatedCloudDatacentersDatastoreOrderUSCtrl"
 
     getOrderUrl () {
         const price = _.first(this.selectedOffer.prices);
+        const normalizedQuantity = Math.floor(this.quantity);
+
         return `${this.expressOrderUrl}review?products=${JSURL.stringify([{
             productId: "privateCloud",
             serviceName: this.serviceName,
             planCode: this.selectedOffer.planCode,
             duration: price.duration,
             pricingMode: price.pricingMode,
-            quantity: this.quantity,
+            quantity: normalizedQuantity,
             configuration: [{
                 label: "datacenter_id",
                 values: [this.datacenterId]
