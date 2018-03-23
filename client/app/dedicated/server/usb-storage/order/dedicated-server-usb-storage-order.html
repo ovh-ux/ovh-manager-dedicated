@@ -12,8 +12,11 @@
 
             <form name="orderUsbDiskForm">
                 <div class="form-group">
-                    <label class="control-label"
-                           data-i18n-static="server_tab_USB_STORAGE_add_select">
+                    <label class="control-label">
+                        <span class="d-block"
+                              data-i18n-static="server_tab_USB_STORAGE_add_select">
+                        </span>
+                        <span data-i18n-static="server_tab_USB_STORAGE_add_select_warning"></span>
                     </label>
                     <div class="radio"
                          data-ng-repeat="capacity in informations.capacities track by $index">
@@ -27,9 +30,6 @@
                     </div>
                 </div>
             </form>
-            <p class="text-danger"
-               data-i18n-static="server_tab_USB_STORAGE_add_select_warning">
-            </p>
 
         </div>
 
