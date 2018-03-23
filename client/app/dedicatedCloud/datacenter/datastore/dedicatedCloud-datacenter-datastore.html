@@ -6,106 +6,101 @@
          data-ng-if="loading">
         <oui-spinner></oui-spinner>
     </div>
-    <div class="row"
-         data-ng-if="!loading">
-        <div class="col-sm-9">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col"
-                            data-i18n-static="dedicatedCloud_tab_datastores_name">
-                        </th>
-                        <th scope="col"
-                            data-i18n-static="dedicatedCloud_tab_datastores_profile">
-                        </th>
-                        <th scope="col"
-                            data-i18n-static="dedicatedCloud_tab_datastores_type">
-                        </th>
-                        <th scope="col"
-                            data-i18n-static="dedicatedCloud_tab_datastores_size">
-                        </th>
-                        <th scope="col"
-                            data-i18n-static="dedicatedCloud_tab_datastores_billing">
-                        </th>
-                        <th scope="col"
-                            data-i18n-static="dedicatedCloud_tab_datastores_status">
-                        </th>
-                        <th scope="col"
-                            data-i18n-static="dedicatedCloud_tab_datastores_consumption">
-                        </th>
-                    </tr>
-                </thead>
-                <tbody data-ng-show="loading">
-                    <tr>
-                        <td colspan="7"
-                            class="text-center">
-                            <oui-spinner></oui-spinner>
-                        </td>
-                    </tr>
-                </tbody>
-                <tbody data-ng-show="!loading && datastores.list.results.length == 0">
-                    <tr>
-                        <td colspan="7"
-                            class="text-center"
-                            data-i18n-static="dedicatedCloud_tab_datastores_empty">
-                        </td>
-                    </tr>
-                </tbody>
-                <tbody data-ng-show="!loading && datastores.list.results.length > 0">
-                    <tr data-ng-repeat="datastore in datastores.list.results track by $index">
-                        <th scope="row"
-                            data-ng-bind="datastore.name">
-                        </th>
-                        <td data-ng-bind="datastore.profile"></td>
-                        <td data-ng-bind="datastore.fullProfile"></td>
-                        <td data-ng-bind="datastore.size.value + ' ' + tr('unit_size_' + datastore.size.unit)"></td>
-                        <td>
-                            <span class="d-block"
-                                  data-ng-bind="tr('dedicatedCloud_tab_datastores_billing_' + datastore.billing)">
-                            </span>
-                            <button type="button"
-                                    class="btn btn-link p-0"
-                                    data-ng-show="datacenter.model.canOrderFilers && datastore.billing == 'HOURLY'"
-                                    data-ng-click="setAction('resource/upgrade/dedicatedCloud-resource-upgrade', {
-                                        upgradeType: datacenter.model.isUpgradable && 'demoToMonthly' || 'hourlyToMonthly',
-                                        type: 'filer',
-                                        id: datastore.id
-                                    })"
-                                    data-i18n-static="dedicatedCloud_updateResource_toMonthly">
-                            </button>
-                        </td>
-                        <td data-ng-bind="tr('dedicatedCloud_tab_datastores_status_' + datastore.status)"></td>
-                        <td>
-                            <span data-ng-if="datastore.billing === 'HOURLY' && isNan(datastore.consumption)"
-                                  data-i18n-static="dedicatedCloud_tab_datastores_hourly_consumption_na">
-                            </span>
-                            <span data-ng-if="datastore.billing === 'HOURLY' && datastore.consumption <= 1"
-                                  data-i18n-static="dedicatedCloud_tab_datastores_hourly_consumption_1"
-                                  data-uib-tooltip="{{ tr('dedicatedCloud_tab_host_hourly_usage_update', [(datastore.consumptionLastUpdate|date:'short')]) }}"
-                                  data-tooltip-placement="top">
-                            </span>
-                            <span data-ng-if="datastore.billing === 'HOURLY' && datastore.consumption > 1"
-                                  data-ng-bind="tr('dedicatedCloud_tab_datastores_hourly_consumption_other', [datastore.consumption])"
-                                  data-uib-tooltip="{{ tr('dedicatedCloud_tab_host_hourly_usage_update', [(datastore.consumptionLastUpdate|date:'short')]) }}"
-                                  data-tooltip-placement="top">
-                            </span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div data-pagination-server-side
-                 data-pagination-server-side-function="loadDatastores"
-                 data-pagination-server-side-paginated-stuff="datastores"
-                 data-pagination-server-side-table-loading="loading">
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <button type="button"
-                    class="btn btn-block btn-default"
-                    data-ng-disabled="!datacenter.model.canOrderFilers && constants.target !== 'US'"
-                    data-ng-click="orderDatastore(datacenter)"
-                    data-i18n-static="dedicatedCloud_order_Datastore">
-            </button>
+    <div data-ng-if="!loading">
+        <button type="button"
+                class="btn btn-default mb-2"
+                data-ng-disabled="!datacenter.model.canOrderFilers && constants.target !== 'US'"
+                data-ng-click="orderDatastore(datacenter)"
+                data-i18n-static="dedicatedCloud_order_Datastore">
+        </button>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col"
+                        data-i18n-static="dedicatedCloud_tab_datastores_name">
+                    </th>
+                    <th scope="col"
+                        data-i18n-static="dedicatedCloud_tab_datastores_profile">
+                    </th>
+                    <th scope="col"
+                        data-i18n-static="dedicatedCloud_tab_datastores_type">
+                    </th>
+                    <th scope="col"
+                        data-i18n-static="dedicatedCloud_tab_datastores_size">
+                    </th>
+                    <th scope="col"
+                        data-i18n-static="dedicatedCloud_tab_datastores_billing">
+                    </th>
+                    <th scope="col"
+                        data-i18n-static="dedicatedCloud_tab_datastores_status">
+                    </th>
+                    <th scope="col"
+                        data-i18n-static="dedicatedCloud_tab_datastores_consumption">
+                    </th>
+                </tr>
+            </thead>
+            <tbody data-ng-show="loading">
+                <tr>
+                    <td colspan="7"
+                        class="text-center">
+                        <oui-spinner></oui-spinner>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody data-ng-show="!loading && datastores.list.results.length == 0">
+                <tr>
+                    <td colspan="7"
+                        class="text-center"
+                        data-i18n-static="dedicatedCloud_tab_datastores_empty">
+                    </td>
+                </tr>
+            </tbody>
+            <tbody data-ng-show="!loading && datastores.list.results.length > 0">
+                <tr data-ng-repeat="datastore in datastores.list.results track by $index">
+                    <th scope="row"
+                        data-ng-bind="datastore.name">
+                    </th>
+                    <td data-ng-bind="datastore.profile"></td>
+                    <td data-ng-bind="datastore.fullProfile"></td>
+                    <td data-ng-bind="datastore.size.value + ' ' + tr('unit_size_' + datastore.size.unit)"></td>
+                    <td>
+                        <span class="d-block"
+                              data-ng-bind="tr('dedicatedCloud_tab_datastores_billing_' + datastore.billing)">
+                        </span>
+                        <button type="button"
+                                class="btn btn-link p-0"
+                                data-ng-show="datacenter.model.canOrderFilers && datastore.billing == 'HOURLY'"
+                                data-ng-click="setAction('resource/upgrade/dedicatedCloud-resource-upgrade', {
+                                    upgradeType: datacenter.model.isUpgradable && 'demoToMonthly' || 'hourlyToMonthly',
+                                    type: 'filer',
+                                    id: datastore.id
+                                })"
+                                data-i18n-static="dedicatedCloud_updateResource_toMonthly">
+                        </button>
+                    </td>
+                    <td data-ng-bind="tr('dedicatedCloud_tab_datastores_status_' + datastore.status)"></td>
+                    <td>
+                        <span data-ng-if="datastore.billing === 'HOURLY' && isNan(datastore.consumption)"
+                              data-i18n-static="dedicatedCloud_tab_datastores_hourly_consumption_na">
+                        </span>
+                        <span data-ng-if="datastore.billing === 'HOURLY' && datastore.consumption <= 1"
+                              data-i18n-static="dedicatedCloud_tab_datastores_hourly_consumption_1"
+                              data-uib-tooltip="{{ tr('dedicatedCloud_tab_host_hourly_usage_update', [(datastore.consumptionLastUpdate|date:'short')]) }}"
+                              data-tooltip-placement="top">
+                        </span>
+                        <span data-ng-if="datastore.billing === 'HOURLY' && datastore.consumption > 1"
+                              data-ng-bind="tr('dedicatedCloud_tab_datastores_hourly_consumption_other', [datastore.consumption])"
+                              data-uib-tooltip="{{ tr('dedicatedCloud_tab_host_hourly_usage_update', [(datastore.consumptionLastUpdate|date:'short')]) }}"
+                              data-tooltip-placement="top">
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div data-pagination-server-side
+             data-pagination-server-side-function="loadDatastores"
+             data-pagination-server-side-paginated-stuff="datastores"
+             data-pagination-server-side-table-loading="loading">
         </div>
     </div>
 </div>
