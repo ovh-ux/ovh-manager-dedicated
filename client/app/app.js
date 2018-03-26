@@ -215,6 +215,8 @@ angular
                 const $state = transition.injector().get("$state");
                 const $uibModal = transition.injector().get("$uibModal");
 
+                console.log($state.$current.parent.resolvables);
+
                 if (source.layout === "modal" && modalInstance) {
                     modalInstance.close();
                 }
