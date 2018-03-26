@@ -12,7 +12,7 @@ angular.module("Module.ip.controllers").controller("IpFirewallAddRuleCtrl", ($sc
     };
 
     $scope.resetOptionField = function () {
-        if ($scope.rule.protocol !== "TCP") {
+        if ($scope.rule.protocol !== "tcp") {
             delete $scope.rule.tcpOptions;
         } else {
             if (!$scope.rule.tcpOptions) {
@@ -21,7 +21,7 @@ angular.module("Module.ip.controllers").controller("IpFirewallAddRuleCtrl", ($sc
             $scope.rule.tcpOptions.option = "NONE";
         }
 
-        if ($scope.rule.protocol !== "TCP" && $scope.rule.protocol !== "UDP") {
+        if ($scope.rule.protocol !== "tcp" && $scope.rule.protocol !== "udp") {
             delete $scope.rule.sourcePort;
             delete $scope.rule.destinationPort;
         }
@@ -57,7 +57,7 @@ angular.module("Module.ip.controllers").controller("IpFirewallAddRuleCtrl", ($sc
         }
 
         // sourcePort && destinationPort
-        if ($scope.rule.protocol === "TCP" || $scope.rule.protocol === "UDP") {
+        if ($scope.rule.protocol === "tcp" || $scope.rule.protocol === "udp") {
             $scope.validator.sourcePort = $scope.rule.sourcePort ? !isNaN($scope.rule.sourcePort) && !($scope.rule.sourcePort < 0 || $scope.rule.sourcePort > 65535) : true;
             $scope.validator.destinationPort = $scope.rule.destinationPort ? !isNaN($scope.rule.destinationPort) && !($scope.rule.destinationPort < 0 || $scope.rule.destinationPort > 65535) : true;
         } else {
@@ -66,7 +66,7 @@ angular.module("Module.ip.controllers").controller("IpFirewallAddRuleCtrl", ($sc
         }
 
         // Fragment
-        if ($scope.rule.tcpOptions && $scope.rule.tcpOptions.fragments === true && $scope.rule.protocol === "TCP") {
+        if ($scope.rule.tcpOptions && $scope.rule.tcpOptions.fragments === true && $scope.rule.protocol === "tcp") {
             $scope.validator.fragment = ($scope.rule.sourcePort == null || $scope.rule.sourcePort === "") && ($scope.rule.destinationPort == null || $scope.rule.destinationPort === "");
         } else {
             $scope.validator.fragment = true;
