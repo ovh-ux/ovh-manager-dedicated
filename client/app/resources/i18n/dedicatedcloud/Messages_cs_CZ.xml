@@ -110,6 +110,26 @@
    <translation id="dedicatedCloud_tab_host_hourly_usage_other" qtlid="296895">{0} hod.</translation>
    <translation id="dedicatedCloud_tab_host_hourly_usage_na" qtlid="94783">Není dostupný</translation>
    <translation id="dedicatedCloud_tab_host_hourly_usage_update" qtlid="296908">Dne {0}</translation>
+
+   <translation id="dedicatedCloud_host_order_title" qtlid="472081">Commander un host</translation>
+   <translation id="dedicatedCloud_host_order_info" qtlid="472094">Vous pouvez personnaliser votre cloud privé en ajoutant des hosts. Vous serez ensuite redirigé vers un nouvel onglet pour finaliser votre commande.</translation>
+   <translation id="dedicatedCloud_host_order_select" qtlid="472107">Sélectionner un type d'host :</translation>
+   <translation id="dedicatedCloud_host_order_host" qtlid="135229">Host</translation>
+   <translation id="dedicatedCloud_host_order_price" qtlid="83913">Cena</translation>
+   <translation id="dedicatedCloud_host_order_speed" qtlid="146203">Rychlost CPU</translation>
+   <translation id="dedicatedCloud_host_order_memory" qtlid="31354">RAM</translation>
+   <translation id="dedicatedCloud_host_order_cores" qtlid="33070">Počet jader</translation>
+   <translation id="dedicatedCloud_host_order_quantity" qtlid="472120">Quantité :</translation>
+   <translation id="dedicatedCloud_host_order_confirm" qtlid="333828">Confirmer la commande</translation>
+
+   <translation id="dedicatedCloud_datastore_order_title" qtlid="472133">Commander un datastore</translation>
+   <translation id="dedicatedCloud_datastore_order_info" qtlid="472146">Vous pouvez personnaliser votre cloud privé en ajoutant des datastores. Vous serez ensuite redirigé dans un nouvel onglet pour finaliser votre commande.</translation>
+   <translation id="dedicatedCloud_datastore_order_select" qtlid="472159">Sélectionner un type de datastore :</translation>
+   <translation id="dedicatedCloud_datastore_order_type" qtlid="2642">Typ</translation>
+   <translation id="dedicatedCloud_datastore_order_price" qtlid="83913">Cena</translation>
+   <translation id="dedicatedCloud_datastore_order_quantity" qtlid="472120">Quantité :</translation>
+   <translation id="dedicatedCloud_datastore_order_confirm" qtlid="333828">Confirmer la commande</translation>
+
    <translation id="dedicatedCloud_tab_datastore" qtlid="154780">Datastore</translation>
    <translation id="dedicatedCloud_tab_datastores_name" qtlid="3818">Název</translation>
    <translation id="dedicatedCloud_tab_datastores_profile" qtlid="23035">Profil</translation>
@@ -145,6 +165,7 @@
    <translation id="dedicatedCloud_tab_licences_active_spla_fail" qtlid="154910">Při aktivaci SPLA licence došlo k chybě.</translation>
    <translation id="dedicatedCloud_tab_backup" qtlid="28147">Záloha</translation>
    <translation id="dedicatedCloud_tab_veeam_on" qtlid="75030">Aktivovat zálohu</translation>
+   <translation id="dedicatedCloud_tab_veeam_on_disabled" qtlid="471925">Il est nécessaire que votre datacentre dispose d'au minimum un host afin d'activer le backup.</translation>
    <translation id="dedicatedCloud_tab_veeam_off" qtlid="154923">Deaktivovat zálohu</translation>
    <translation id="dedicatedCloud_tab_veeam_state" qtlid="101997">Stav:</translation>
    <translation id="dedicatedCloud_tab_veeam_loading_error" qtlid="149488">Při načítání informací o záloze došlo k chybě.</translation>
@@ -262,6 +283,7 @@
    <translation id="dedicatedCloud_USER_backup" qtlid="28147">Záloha</translation>
    <translation id="dedicatedCloud_USER_ip" qtlid="167899">IP</translation>
    <translation id="dedicatedCloud_USER_ipfo" qtlid="157694">IP FailOver</translation>
+   <translation id="dedicatedCloud_USER_nsx" qtlid="471938">Interface NSX</translation>
    <translation id="dedicatedCloud_USER_allow_reading" qtlid="146593">autorizovat pouze čtení</translation>
    <translation id="dedicatedCloud_USER_allow_reading_and_writing" qtlid="146606">autorizovat čtení-zápis</translation>
    <translation id="dedicatedCloud_USER_all_refused" qtlid="146619">odmítnout vše</translation>
@@ -275,30 +297,47 @@
    <translation id="dedicatedCloud_USER_right_valid" qtlid="147850">Potvrdit změny</translation>
    <translation id="dedicatedCloud_USER_right_cancel" qtlid="147863">Zrušit změny</translation>
    <translation id="dedicatedCloud_USER_right_DISABLED" qtlid="30646">Ne</translation>
+   <translation id="dedicatedCloud_USER_right_disabled" qtlid="30646">Ne</translation>
    <translation id="dedicatedCloud_USER_right_NO_ACCESS" qtlid="30646">Ne</translation>
+   <translation id="dedicatedCloud_USER_right_noAccess" qtlid="30646">Ne</translation>
    <translation id="dedicatedCloud_USER_right_READONLY" qtlid="17333">Pouze pro čtení</translation>
+   <translation id="dedicatedCloud_USER_right_readonly" qtlid="17333">Pouze pro čtení</translation>
    <translation id="dedicatedCloud_USER_right_READWRITE" qtlid="146671">Čtení/Zápis</translation>
+   <translation id="dedicatedCloud_USER_right_readwrite" qtlid="146671">Čtení/Zápis</translation>
    <translation id="dedicatedCloud_USER_right_ADMIN" qtlid="210176">Operátor</translation>
+   <translation id="dedicatedCloud_USER_right_admin" qtlid="210176">Operátor</translation>
    <translation id="dedicatedCloud_USER_right_MANAGER" qtlid="210189">Administrátor</translation>
+   <translation id="dedicatedCloud_USER_right_manager" qtlid="210189">Administrátor</translation>
    <translation id="dedicatedCloud_USER_right_title" qtlid="433164">Úprava práv</translation>
    <translation id="dedicatedCloud_USER_right_datacenter_title" qtlid="433177">Datacentrum: <b>{0}</b></translation>
    <translation id="dedicatedCloud_USER_right_vsphere" qtlid="146567">Přístup k vSphere</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_help" qtlid="433190">Globální uživatelská práva vSphere</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_ADMIN" qtlid="433203">Vyhrazeno pro OVH (pouze pro administrátory)</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_admin" qtlid="433203">Vyhrazeno pro OVH (pouze pro administrátory)</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_DISABLED" qtlid="308541">Žádný přístup</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_disabled" qtlid="308541">Žádný přístup</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_READONLY" qtlid="433216">Read-only přístup</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_readonly" qtlid="433216">Read-only přístup</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_READWRITE" qtlid="433229">Read-write přístup</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_readwrite" qtlid="433229">Read-write přístup</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork" qtlid="200755">Přístup k vmNetwork</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork_help" qtlid="433242">Práva pro správu ve veřejné části sítě (VM Network v rozhraní vSphere).</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork_ADMIN" qtlid="433255">Umožňuje provádět konfiguraci virtuálních strojů ve veřejné síti</translation>
+   <translation id="dedicatedCloud_USER_right_vmNetwork_admin" qtlid="433255">Umožňuje provádět konfiguraci virtuálních strojů ve veřejné síti</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork_NO_ACCESS" qtlid="308541">Žádný přístup</translation>
+   <translation id="dedicatedCloud_USER_right_vmNetwork_noAccess" qtlid="308541">Žádný přístup</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork_READONLY" qtlid="433216">Read-only přístup</translation>
+   <translation id="dedicatedCloud_USER_right_vmNetwork_readonly" qtlid="433216">Read-only přístup</translation>
    <translation id="dedicatedCloud_USER_right_vlan" qtlid="200768">Přístup k V(X)LAN</translation>
    <translation id="dedicatedCloud_USER_right_vlan_help" qtlid="433268">Práva pro správu v privátní části sítě (VxLan pro Dedicated Cloud a VLAN pro SDDC).</translation>
    <translation id="dedicatedCloud_USER_right_vlan_ADMIN" qtlid="433281">Umožňuje provádět konfiguraci virtuálních strojů v privátní síti</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_admin" qtlid="433281">Umožňuje provádět konfiguraci virtuálních strojů v privátní síti</translation>
    <translation id="dedicatedCloud_USER_right_vlan_NO_ACCESS" qtlid="308541">Žádný přístup</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_noAccess" qtlid="308541">Žádný přístup</translation>
    <translation id="dedicatedCloud_USER_right_vlan_READONLY" qtlid="433216">Read-only přístup</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_readonly" qtlid="433216">Read-only přístup</translation>
    <translation id="dedicatedCloud_USER_right_vlan_MANAGER" qtlid="433294">Umožňuje provádět správu skupinových portů virtuálních switchů (vytváření, modifikace, odstranění). Pouze pro SDDC.</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_manager" qtlid="433294">Umožňuje provádět správu skupinových portů virtuálních switchů (vytváření, modifikace, odstranění). Pouze pro SDDC.</translation>
    <translation id="dedicatedCloud_USER_right_resources" qtlid="146580">Přidat zdroje</translation>
    <translation id="dedicatedCloud_USER_right_resources_help" qtlid="433307">Právo na přidávání přídavných zdrojů v rozhraní vSphere (prostřednictvím pluginu OVH)</translation>
    <translation id="dedicatedCloud_USER_add_user" qtlid="7810">Vytvořit uživatele</translation>

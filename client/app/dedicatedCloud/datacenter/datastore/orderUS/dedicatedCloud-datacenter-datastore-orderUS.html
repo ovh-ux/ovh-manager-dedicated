@@ -1,0 +1,43 @@
+<oui-spinner data-ng-if="$ctrl.loading">
+</oui-spinner>
+<div data-ng-if="!$ctrl.loading">
+    <oui-back-button data-href="{{:: $ctrl.getBackUrl() }}"
+                     data-title="{{:: tr('dedicatedCloud_datastore_order_title') }}">
+    </oui-back-button>
+    <div data-ovh-alert></div>
+    <p data-i18n-static="dedicatedCloud_datastore_order_info"></p>
+    <p data-i18n-static="dedicatedCloud_datastore_order_select"></p>
+    <oui-datagrid data-rows-loader="$ctrl.fetchDatagridOffers()">
+        <oui-column data-title=":: tr('dedicatedCloud_datastore_order_type')">
+            <oui-radio data-text="{{ $row.productName }}"
+                       data-name="selectedOffer"
+                       data-model="$ctrl.selectedOffer"
+                       data-value="$row">
+            </oui-radio>
+        </oui-column>
+        <oui-column data-title=":: tr('dedicatedCloud_datastore_order_price')">
+            <span data-ng-bind="$row.prices[0].price.text"></span>
+            <br />
+            <small data-ng-bind="$row.prices[0].description"></small>
+        </oui-column>
+    </oui-datagrid>
+    <p data-i18n-static="dedicatedCloud_datastore_order_quantity"></p>
+    <oui-numeric data-model="$ctrl.quantity"
+                 data-disabled="!$ctrl.selectedOffer"
+                 data-min="1">
+    </oui-numeric>
+    <div class="mt-4">
+        <oui-button data-variant="primary"
+                    data-disabled="!$ctrl.selectedOffer"
+                    data-ng-if="!$ctrl.selectedOffer"
+                    data-text="{{:: tr('dedicatedCloud_datastore_order_confirm') }}">
+        </oui-button>
+        <a class="btn btn-primary"
+           href="{{ $ctrl.getOrderUrl() }}"
+           target="_blank"
+           rel="noopener"
+           data-i18n-static="dedicatedCloud_datastore_order_confirm"
+           data-ng-if="$ctrl.selectedOffer">
+        </a>
+    </div>
+</div>

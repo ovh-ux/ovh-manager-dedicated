@@ -1,3 +1,30 @@
+<a name="9.1.2"></a>
+## [9.1.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.1.1...v9.1.2) (2018-03-22)
+
+
+### Bug Fixes
+
+* update route, /me/user has moved to /me/identity/user ([29af383](https://github.com/ovh-ux/ovh-manager-dedicated/commit/29af383))
+
+
+
+<a name="9.1.1"></a>
+## [9.1.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.1.0...v9.1.1) (2018-03-22)
+
+
+### Bug Fixes
+
+* **dedicated server firewall:** prevent multiple alert displaying ([f0f86d8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f0f86d8))
+* **dedicatedcloud datacenters:** add dropdown-append-to-body ([f8867e7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f8867e7))
+* **sso auth modal:** load translations from npm folder instead of bower ([1854628](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1854628))
+
+
+### Features
+
+* **multi users:** add link in sidebar menu ([6c3fc4f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6c3fc4f))
+
+
+
 <a name="9.1.0"></a>
 # [9.1.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.0.19...v9.1.0) (2018-03-21)
 

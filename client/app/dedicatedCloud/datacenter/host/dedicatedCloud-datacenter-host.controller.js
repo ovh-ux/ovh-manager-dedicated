@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudSubDatacentersHostCtrl", ($scope, $stateParams, $q, DedicatedCloud) => {
+angular.module("App").controller("DedicatedCloudSubDatacentersHostCtrl", ($scope, $state, $stateParams, $q, constants, DedicatedCloud) => {
     "use strict";
 
     $scope.hosts = null;
@@ -6,6 +6,7 @@ angular.module("App").controller("DedicatedCloudSubDatacentersHostCtrl", ($scope
         hosts: false,
         datacenter: true
     };
+    $scope.constants = constants;
 
     $scope.loadHosts = function (elementsByPage, elementsToSkip) {
         $scope.loaders.hosts = true;
@@ -49,6 +50,14 @@ angular.module("App").controller("DedicatedCloudSubDatacentersHostCtrl", ($scope
 
     $scope.init = function () {
         $scope.getDatacenterCommercialRange($scope.datacenter.model.id);
+    };
+
+    $scope.orderHost = (datacenter) => {
+        if (constants.target === "US") {
+            $state.go("app.dedicatedClouds.datacenter.hosts.orderUS");
+        } else {
+            $scope.setAction("datacenter/host/order/dedicatedCloud-datacenter-host-order", datacenter.model, true);
+        }
     };
 
     $scope.init();

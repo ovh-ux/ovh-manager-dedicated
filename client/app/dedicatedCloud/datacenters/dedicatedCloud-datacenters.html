@@ -9,119 +9,118 @@
             data-i18n-static="dedicatedCloud_configuration_add_datacenter_title">
     </button>
 
-    <div class="table-responsive">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th scope="col"
-                        data-i18n-static="dedicatedCloud_tab_datacenter">
-                    </th>
-                    <th scope="col"
-                        class="text-center"
-                        data-i18n-static="dedicatedCloud_DATACENTERS_CPU">
-                    </th>
-                    <th scope="col"
-                        class="text-center"
-                        data-i18n-static="dedicatedCloud_DATACENTERS_RAM">
-                    </th>
-                    <th scope="col"
-                        class="text-center"
-                        data-i18n-static="dedicatedCloud_DATACENTERS_DISK">
-                    </th>
-                    <th></th>
-                </tr>
-            </thead>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col"
+                    data-i18n-static="dedicatedCloud_tab_datacenter">
+                </th>
+                <th scope="col"
+                    class="text-center"
+                    data-i18n-static="dedicatedCloud_DATACENTERS_CPU">
+                </th>
+                <th scope="col"
+                    class="text-center"
+                    data-i18n-static="dedicatedCloud_DATACENTERS_RAM">
+                </th>
+                <th scope="col"
+                    class="text-center"
+                    data-i18n-static="dedicatedCloud_DATACENTERS_DISK">
+                </th>
+                <th></th>
+            </tr>
+        </thead>
 
-            <tbody data-ng-if="loading">
-                <tr>
-                    <td colspan="5"
-                        class="text-center">
-                        <oui-spinner data-size="s"></oui-spinner>
-                    </td>
-                </tr>
-            </tbody>
+        <tbody data-ng-if="loading">
+            <tr>
+                <td colspan="5"
+                    class="text-center">
+                    <oui-spinner data-size="s"></oui-spinner>
+                </td>
+            </tr>
+        </tbody>
 
-            <tbody data-ng-hide="loading">
-                <tr data-ng-repeat="datacenter in datacenters.list.results">
-                    <th scope="row">
-                        <span data-ng-bind="datacenter.name"></span>
-                        <div class="label label-info"
-                             data-ng-if="hasDiscount(datacenter)"
-                             data-tooltip="{{ tr('dedicatedCloud_discount_AMD') }}"
-                             data-tooltip-placement="top">
-                            <i class="fa fa-arrow-down"></i>
-                            <span class="text-uppercase"
-                                  data-i18n-static="dedicatedCloud_discount">
-                            </span>
-                        </div>
-                    </td>
-                    <td class="text-center">
-                        <span class="label label-info"
-                              data-ng-if="datacenter.cpuSize == null || datacenter.cpuSize.value == null || datacenter.cpuSize.unit == null"
-                              data-i18n-static="dedicatedCloud_tab_no_data">
+        <tbody data-ng-hide="loading">
+            <tr data-ng-repeat="datacenter in datacenters.list.results">
+                <th scope="row">
+                    <span data-ng-bind="datacenter.name"></span>
+                    <div class="label label-info"
+                         data-ng-if="hasDiscount(datacenter)"
+                         data-tooltip="{{ tr('dedicatedCloud_discount_AMD') }}"
+                         data-tooltip-placement="top">
+                        <i class="fa fa-arrow-down"></i>
+                        <span class="text-uppercase"
+                              data-i18n-static="dedicatedCloud_discount">
                         </span>
-                        <span data-ng-if="datacenter.cpuSize !== null && datacenter.cpuSize.value !== null && datacenter.cpuSize.unit !== null"
-                              data-ng-bind="datacenter.cpuSize.value + ' ' + tr('unit_frequency_' + datacenter.cpuSize.unit)">
+                    </div>
+                </td>
+                <td class="text-center">
+                    <span class="label label-info"
+                          data-ng-if="datacenter.cpuSize == null || datacenter.cpuSize.value == null || datacenter.cpuSize.unit == null"
+                          data-i18n-static="dedicatedCloud_tab_no_data">
+                    </span>
+                    <span data-ng-if="datacenter.cpuSize !== null && datacenter.cpuSize.value !== null && datacenter.cpuSize.unit !== null"
+                          data-ng-bind="datacenter.cpuSize.value + ' ' + tr('unit_frequency_' + datacenter.cpuSize.unit)">
+                    </span>
+                </td>
+                <td class="text-center">
+                    <span class="label label-info"
+                          data-ng-if="datacenter.ramSize == null || datacenter.ramSize.value == null || datacenter.ramSize.unit == null"
+                          data-i18n-static="dedicatedCloud_tab_no_data">
+                    </span>
+                    <span data-ng-if="datacenter.ramSize !== null && datacenter.ramSize.value !== null && datacenter.ramSize.unit !== null"
+                          data-ng-bind="datacenter.ramSize.value + ' ' + tr('unit_size_' + datacenter.ramSize.unit)">
+                    </span>
+                </td>
+                <td class="text-center">
+                    <span class="label label-info"
+                          data-ng-if="datacenter.filerSize == null || datacenter.filerSize.value == null || datacenter.filerSize.unit == null"
+                          data-i18n-static="dedicatedCloud_tab_no_data">
+                    </span>
+                    <span data-ng-if="datacenter.filerSize !== null && datacenter.filerSize.value !== null && datacenter.filerSize.unit !== null"
+                          data-ng-bind="datacenter.filerSize.value + ' ' + tr('unit_size_' + datacenter.filerSize.unit)">
+                    </span>
+                </td>
+                <td class="text-right"
+                    data-uib-dropdown>
+                    <button type="button"
+                            class="btn btn-link pt-0"
+                            data-uib-dropdown-toggle>
+                        <span aria-hidden="true"
+                              class="ovh-font ovh-font-dots">
                         </span>
-                    </td>
-                    <td class="text-center">
-                        <span class="label label-info"
-                              data-ng-if="datacenter.ramSize == null || datacenter.ramSize.value == null || datacenter.ramSize.unit == null"
-                              data-i18n-static="dedicatedCloud_tab_no_data">
-                        </span>
-                        <span data-ng-if="datacenter.ramSize !== null && datacenter.ramSize.value !== null && datacenter.ramSize.unit !== null"
-                              data-ng-bind="datacenter.ramSize.value + ' ' + tr('unit_size_' + datacenter.ramSize.unit)">
-                        </span>
-                    </td>
-                    <td class="text-center">
-                        <span class="label label-info"
-                              data-ng-if="datacenter.filerSize == null || datacenter.filerSize.value == null || datacenter.filerSize.unit == null"
-                              data-i18n-static="dedicatedCloud_tab_no_data">
-                        </span>
-                        <span data-ng-if="datacenter.filerSize !== null && datacenter.filerSize.value !== null && datacenter.filerSize.unit !== null"
-                              data-ng-bind="datacenter.filerSize.value + ' ' + tr('unit_size_' + datacenter.filerSize.unit)">
-                        </span>
-                    </td>
-                    <td class="text-right"
-                        data-uib-dropdown>
-                        <button type="button"
-                                class="btn btn-link pt-0"
-                                data-uib-dropdown-toggle>
-                            <span aria-hidden="true"
-                                  class="ovh-font ovh-font-dots">
-                            </span>
-                        </button>
-                        <ul data-uib-dropdown-menu
-                            class="dropdown-menu dropdown-menu-right">
-                            <li>
-                                <button type="button"
-                                        class="btn btn-link"
-                                        data-ng-disabled="getRight('host')"
-                                        data-ng-click="setAction('datacenter/host/order/dedicatedCloud-datacenter-host-order', datacenter)">
-                                    <span data-i18n-static="dedicatedCloud_order_Host"></span>
-                                    <div class="label label-info"
-                                         data-ng-if="hasDiscount(datacenter)">
-                                        <i class="fa fa-arrow-down"></i>
-                                        <span class="text-uppercase"
-                                              data-i18n-static="dedicatedCloud_discount">
-                                        </span>
-                                    </div>
-                                </button>
-                            </li>
-                            <li>
-                                <button type="button"
-                                        class="btn btn-link"
-                                        data-ng-disabled="getRight('filer')"
-                                        data-ng-click="setAction('datacenter/datastore/order/dedicatedCloud-datacenter-datastore-order', datacenter)"
-                                        data-i18n-static="dedicatedCloud_order_Datastore">
-                                </button>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                    </button>
+                    <ul data-uib-dropdown-menu
+                        data-dropdown-append-to-body
+                        class="dropdown-menu dropdown-menu-right">
+                        <li>
+                            <button type="button"
+                                    class="btn btn-link"
+                                    data-ng-disabled="getRight('host') && constants.target !== 'US'"
+                                    data-ng-click="orderHost(datacenter)">
+                                <span data-i18n-static="dedicatedCloud_order_Host"></span>
+                                <div class="label label-info"
+                                     data-ng-if="hasDiscount(datacenter)">
+                                    <i class="fa fa-arrow-down"></i>
+                                    <span class="text-uppercase"
+                                          data-i18n-static="dedicatedCloud_discount">
+                                    </span>
+                                </div>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button"
+                                    class="btn btn-link"
+                                    data-ng-disabled="getRight('filer') && constants.target !== 'US'"
+                                    data-ng-click="orderDatastore(datacenter)"
+                                    data-i18n-static="dedicatedCloud_order_Datastore">
+                            </button>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <div data-pagination-server-side
          data-pagination-server-side-function="loadDatacenters"
          data-pagination-server-side-paginated-stuff="datacenters"

@@ -147,7 +147,7 @@
 
    <translation id="server_configuration_state_title" qtlid="26443">Estado</translation>
    <translation id="server_configuration_state_OK" qtlid="96704">Normal</translation>
-   <translation id="server_configuration_state_ERROR" qtlid="45508">Em erro</translation>
+   <translation id="server_configuration_state_ERROR" qtlid="45508">Com erro</translation>
    <translation id="server_configuration_state_HACKED" qtlid="101973">Hackeado</translation>
    <translation id="server_configuration_state_HACKED_BLOCKED" qtlid="224997">Servidor em modo "hacked" e bloqueado</translation>
    <translation id="server_configuration_state_info_HACKED" qtlid="225010">O seu servidor foi "hackeado" e, por conseguinte, foi colocado em modo netboot "rescue FTP". Por favor, verifique a configuração antes de colocar o servidor em modo netboot "disco rígido".</translation>
@@ -171,7 +171,7 @@
    <translation id="server_configuration_firewall_short_PENDING" qtlid="26383">Em curso</translation>
    <translation id="server_configuration_firewall_not_yet_activated_short" qtlid="124952">Não configurado</translation>
    <translation id="server_configuration_firewall_enable_button_title" qtlid="76734">Ativar</translation>
-   <translation id="server_configuration_firewall_disable_button_title" qtlid="90973">Desactivar</translation>
+   <translation id="server_configuration_firewall_disable_button_title" qtlid="90973">Desativar</translation>
    <translation id="server_configuration_firewall_current_ip" qtlid="141717">IP : {0}</translation>
    <translation id="server_configuration_firewall_add_summary" qtlid="132720">Resumo:</translation>
    <translation id="server_configuration_firewall_add_title" qtlid="141730">Adicionar uma regra</translation>
@@ -225,7 +225,7 @@
    <translation id="server_configuration_monitoring_activate_failed" qtlid="133526">Ocorreu um erro aquando da ativação do sistema de monitoring no servidor {0}</translation>
    <translation id="server_configuration_monitoring_activate_information" qtlid="208573">Em caso de falha na resposta ao Ping, será efetuada uma intervenção no datacenter.&#13;
 </translation>
-   <translation id="server_configuration_monitoring_deactivate_title_button" qtlid="90973">Desactivar</translation>
+   <translation id="server_configuration_monitoring_deactivate_title_button" qtlid="90973">Desativar</translation>
    <translation id="server_configuration_monitoring_deactivate_title" qtlid="103293">Desactivar o monitoring</translation>
    <translation id="server_configuration_monitoring_deactivate_question" qtlid="134345">Têm a certeza de que deseja desativar o monitoring do servidor {0}?</translation>
    <translation id="server_configuration_monitoring_deactivate_success" qtlid="133539">O sistema de monitoring está inativo no servidor {0}</translation>
@@ -352,7 +352,7 @@
    <translation id="server_configuration_profesionnal_use_order_step4_final_txt" qtlid="181240">Clique no botão "Validar" para confirmar a sua encomenda.</translation>
    <translation id="server_configuration_profesionnal_use_order_step4_final_txt2" qtlid="181253">Irá visualizar um novo separador, e será automaticamente reencaminhado para a página de pagamento.</translation>
    <translation id="server_configuration_profesionnal_use_order_finish_success" qtlid="181266">A encomenda número <a href='{0}' target='_blank'>{1}</a> foi registada.</translation>
-   <translation id="server_configuration_profesionnal_use_order_finish_error" qtlid="181227">Erro na criação da nota de encomenda.</translation>
+   <translation id="server_configuration_profesionnal_use_order_finish_error" qtlid="181227">Erro ao gerar nota de encomenda.</translation>
 
    <translation id="server_tab_USB_STORAGE_order_select_duration" qtlid="181214">Selecione a duração:</translation>
 
@@ -580,10 +580,10 @@
    <translation id="server_configuration_firewall_asa_disable_fail" qtlid="151841">Ocorreu um erro aquando da desativação da firewall Cisco ASA</translation>
    <translation id="server_configuration_task_loading_error" qtlid="164415">Erro no acesso à informação sobre as tarefas</translation>
    <translation id="server_configuration_task_last_action" qtlid="52231">Última ação </translation>
-   <translation id="server_configuration_task_function" qtlid="61872">Tarefa</translation>
-   <translation id="server_configuration_task_comment" qtlid="233531">Detalhe técnico</translation>
+   <translation id="server_configuration_task_function" qtlid="61872">Operação</translation>
+   <translation id="server_configuration_task_comment" qtlid="233531">Detalhes técnicos</translation>
    <translation id="server_configuration_task_status" qtlid="26443">Estado</translation>
-   <translation id="server_configuration_task_empty" qtlid="217093">Nenhum trabalho</translation>
+   <translation id="server_configuration_task_empty" qtlid="217093">Nenhuma operação</translation>
    <translation id="server_configuration_task_CHANGE_PASSWORD_BACKUP_FTP" qtlid="184490">Alteração da password do backup storage</translation>
    <translation id="server_configuration_task_CREATE_BACKUP_FTP" qtlid="184503">Criação de um backup storage</translation>
    <translation id="server_configuration_task_CREATE_PRIVATE_NETWORK" qtlid="164454">Criação de uma rede privada</translation>
@@ -605,12 +605,12 @@
    <translation id="server_configuration_task_ADD_VIRTUAL_MAC" qtlid="164597">Adição do Mac virtual</translation>
    <translation id="server_configuration_task_VIRTUAL_MAC_DELETE" qtlid="164610">Eliminação do Mac Virtual</translation>
    <translation id="server_configuration_task_REMOVE_VIRTUAL_MAC" qtlid="164610">Eliminação do Mac Virtual</translation>
-   <translation id="server_configuration_task_status_CANCELLED" qtlid="164623">Anulado</translation>
+   <translation id="server_configuration_task_status_CANCELLED" qtlid="164623">Anulada</translation>
    <translation id="server_configuration_task_status_CUSTOMER_ERROR" qtlid="164636">Erro com a aplicação cliente</translation>
    <translation id="server_configuration_task_status_DOING" qtlid="26383">Em curso</translation>
-   <translation id="server_configuration_task_status_DONE" qtlid="26395">Terminado</translation>
+   <translation id="server_configuration_task_status_DONE" qtlid="26395">Terminada</translation>
    <translation id="server_configuration_task_status_INIT" qtlid="164649">Inicialização</translation>
-   <translation id="server_configuration_task_status_OVH_ERROR" qtlid="45508">Em erro</translation>
+   <translation id="server_configuration_task_status_OVH_ERROR" qtlid="45508">Com erro</translation>
    <translation id="server_configuration_task_status_TODO" qtlid="164662">A tratar</translation>
    <translation id="server_configuration_impi_loading_error" qtlid="164675">Ocorreu um erro aquando da recuperação das informações</translation>
    <translation id="server_configuration_impi_reset_interfaces" qtlid="164688">Reiniciar o IPMI</translation>
@@ -663,7 +663,7 @@
    <translation id="server_configuration_kvm_order_error" qtlid="229242">Ocorreu um erro aquando da encomenda do seu KVM.</translation>
 
    <translation id="server_configuration_kvm_informations" qtlid="229255">Informações do seu KVM</translation>
-   <translation id="server_configuration_kvm_informations_name" qtlid="100328">Nome :</translation>
+   <translation id="server_configuration_kvm_informations_name" qtlid="100328">Nome:</translation>
    <translation id="server_configuration_kvm_informations_ip" qtlid="103870">Endereço IP:</translation>
    <translation id="server_configuration_kvm_informations_expiration" qtlid="229268">Validade:</translation>
    <translation id="server_configuration_kvm_new_window" qtlid="222176">Nova janela</translation>
@@ -976,7 +976,7 @@
    <translation id="server_tab_USB_STORAGE_add_capacity" qtlid="181201">{0} GB</translation>
    <translation id="server_tab_USB_STORAGE_order_select_duration" qtlid="181214">Selecione a duração:</translation>
    <translation id="server_tab_USB_STORAGE_order_loading_error" qtlid="135294">Erro ao carregar a informação.</translation>
-   <translation id="server_tab_USB_STORAGE_order_finish_error" qtlid="181227">Erro na criação da nota de encomenda.</translation>
+   <translation id="server_tab_USB_STORAGE_order_finish_error" qtlid="181227">Erro ao gerar nota de encomenda.</translation>
    <translation id="server_tab_USB_STORAGE_order_resume" qtlid="177496">Resumo da nota de encomenda</translation>
    <translation id="server_tab_USB_STORAGE_order_price_HT" qtlid="146177">Preço total sem IVA:</translation>
    <translation id="server_tab_USB_STORAGE_order_price_TTC" qtlid="146190">Preço total com IVA:</translation>
@@ -1040,7 +1040,7 @@
    <translation id="server_tab_MONITORING_back" qtlid="454332">Voltar ao Estado do servidor</translation>
    <translation id="server_tab_MONITORING_services" qtlid="243767">Serviços em curso de monitorização</translation>
    <translation id="server_tab_MONITORING_state_true" qtlid="103269">activado</translation>
-   <translation id="server_tab_MONITORING_state_false" qtlid="103281">desactivado</translation>
+   <translation id="server_tab_MONITORING_state_false" qtlid="103281">desativado</translation>
    <translation id="server_tab_MONITORING_table_header_ip" qtlid="25615">IP</translation>
    <translation id="server_tab_MONITORING_table_header_protocol" qtlid="19711">Protocolo</translation>
    <translation id="server_tab_MONITORING_table_header_port" qtlid="9034">Porta</translation>
@@ -1048,7 +1048,7 @@
    <translation id="server_tab_MONITORING_table_header_url" qtlid="31402">URL</translation>
    <translation id="server_tab_MONITORING_table_header_status" qtlid="8230">Estado</translation>
    <translation id="server_tab_MONITORING_table_header_notifications" qtlid="68981">Destinatários</translation>
-   <translation id="server_tab_MONITORING_table_header_refresh" qtlid="218081">Recarregar tabela</translation>
+   <translation id="server_tab_MONITORING_table_header_refresh" qtlid="218081">Atualizar tabela</translation>
    <translation id="server_tab_MONITORING_table_empty" qtlid="243793">Nenhum serviço monitorizado</translation>
    <translation id="server_tab_MONITORING_table_action_edit" qtlid="243806">Modificar a monitorização</translation>
    <translation id="server_tab_MONITORING_table_action_delete" qtlid="243819">Eliminar a monitorização</translation>

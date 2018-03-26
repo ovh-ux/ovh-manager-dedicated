@@ -10,17 +10,19 @@
              data-wizard-step-valid="areMigrationOptionsValids()"
              data-wizard-step-on-load="getIps">
 
-            <strong data-i18n-static="license_migrate_step1_question"></strong>
+            <p data-i18n-static="license_migrate_step1_question"></p>
 
-            <oui-spinner data-ng-show="loaders.ips"></oui-spinner>
+            <div class="text-center"
+                 data-ng-show="loaders.ips">
+                <oui-spinner></oui-spinner>
+            </div>
 
             <div data-ng-show="loaders.ips == false">
                 <strong class="text-danger"
                         data-ng-show="availableIpBlock.ips.length == 0"
                         data-i18n-static="license_migrate_step1_no_ip_available">
                 </strong>
-                <form class="form-horizontal"
-                      name="ipForm"
+                <form name="ipForm"
                       data-ng-show="availableIpBlock.ips.length > 0">
                     <div class="form-group">
                         <label for="selectedIpBlock"
@@ -40,7 +42,7 @@
                     </div>
                     <div class="form-group"
                          data-ng-class="{
-                             'has-error': !ipValid.value
+                             'has-error': ipForm.selectedIpBlock.$touched && !ipValid.value
                          }">
                         <label for="targetIp"
                                class="control-label"
@@ -54,35 +56,33 @@
                                data-ng-show="!oneIp"
                                data-ng-model="selected.ip"
                                data-ng-change="ipIsValid()" />
-                        <span data-ng-show="oneIp"
-                              data-ng-bind="selected.ip">
-                        </span>
+                        <input type="text"
+                               class="oui-input"
+                               readonly
+                               data-ng-show="oneIp"
+                               data-ng-value="selected.ip" />
+                        <span class="help-block"
+                              role="alert"
+                              data-ng-show="selected.ip && ipValid.value">
+                            <span class="d-block"
+                                  data-ng-show="loaders.canBeMovedTo">
+                               <oui-spinner data-size="s"></oui-spinner>
+                               <span data-i18n-static="license_migrate_step1_compatibility_loading"></span>
+                            </span>
+                            <span class="d-block"
+                                  data-ng-hide="loaders.canBeMovedTo">
+                                <span data-ng-show="ipCanBeMoved.value === true">
+                                    <span class="oui-icon oui-icon-success_circle align-middle text-success" aria-hidden="true"></span>
+                                    <span data-i18n-static="license_migrate_step1_compatibility_ok"></span>
+                                </span>
+                                <span data-ng-show="ipCanBeMoved.value === false">
+                                    <span class="oui-icon oui-icon-error_circle align-middle text-danger" aria-hidden="true"></span>
+                                    <span data-i18n-static="license_migrate_step1_compatibility_nok"></span>
+                                </span>
+                            </span>
+                       </span>
                     </div>
                 </form>
-                <div data-ng-show="selected.ip && ipValid.value">
-                    <div data-ng-show="loaders.canBeMovedTo">
-                        <oui-spinner data-size="s"
-                                    data-inline="true">
-                        </oui-spinner>
-                        <span class="ml-2"
-                              data-i18n-static="license_migrate_step1_compatibility_loading">
-                        </span>
-                    </div>
-                    <div data-ng-hide="loaders.canBeMovedTo">
-                        <div data-ng-show="ipCanBeMoved.value == true">
-                            <i class="icon-ok" aria-hidden="true"></i>
-                            <span class="mt-2"
-                                  data-i18n-static="license_migrate_step1_compatibility_ok">
-                            </span>
-                        </div>
-                        <div data-ng-show="ipCanBeMoved.value == false">
-                            <i class="icon-remove" aria-hidden="true"></i>
-                            <span class="mt-2"
-                                  data-i18n-static="license_migrate_step1_compatibility_nok">
-                            </span>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>
