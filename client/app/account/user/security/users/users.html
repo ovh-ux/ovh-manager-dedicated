@@ -8,10 +8,16 @@
 
         <div data-ovh-alert="userUsers"></div>
 
+        <oui-message data-type="info">
+            <p class="m-0"
+               data-translate="user_users_info">
+            </p>
+        </oui-message>
+
         <!-- USER ADD BTN -->
         <button id="btnAddUser"
                 type="button"
-                class="btn btn-primary mb-4"
+                class="btn btn-primary my-4"
                 data-ng-click="setAction('security/users/add/user-users-add', user)"
                 data-ng-disabled="$ctrl.usersLoading"
                 data-ng-class="{'disabled': $ctrl.usersLoading}">
