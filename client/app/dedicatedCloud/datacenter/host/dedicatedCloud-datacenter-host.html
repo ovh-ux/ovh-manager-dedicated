@@ -69,7 +69,11 @@
                             <button type="button"
                                     class="btn btn-link p-0"
                                     data-ng-show="datacenter.model.canOrderHosts && host.billingType === 'HOURLY'"
-                                    data-ng-click="setAction('resource/upgrade/dedicatedCloud-resource-upgrade', {upgradeType: datacenter.model.isUpgradable && 'demoToMonthly' || 'hourlyToMonthly', type: 'host', id: host.hostId})"
+                                    data-ng-click="setAction('resource/upgrade/dedicatedCloud-resource-upgrade', {
+                                        upgradeType: datacenter.model.isUpgradable && 'demoToMonthly' || 'hourlyToMonthly',
+                                        type: 'host',
+                                        id: host.hostId
+                                    })"
                                     data-i18n-static="dedicatedCloud_updateResource_toMonthly">
                             </button>
                         </td>
