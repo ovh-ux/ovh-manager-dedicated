@@ -1,40 +1,42 @@
 <div data-ng-controller="DedicatedCloudHostToMonthlyCtrl">
+
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="upgradedResource"
          data-wizard-title="i18n.dedicatedCloud_updateResource_toMonthly"
-         data-wizard-title-icon="'icon-calendar2'"
-         data-wizard-bread-crumb
-         class="network">
+         data-wizard-bread-crumb>
 
         <!-- Step 2: Durations -->
         <div data-wizard-step
              data-wizard-step-on-load="getDurations"
              data-wizard-step-valid="model.duration">
 
-            <div class="control-group">
-                <div data-ng-hide="loading.durations">
-                    <p class="blue bold" data-i18n-static="server_tab_USB_STORAGE_order_select_duration"></p>
-                    <div class="row-fluid" data-ng-repeat="duration in durations.available">
-                        <div class="radio offset1">
-                            <label>
-                                <input type="radio" data-ng-model="model.duration"
-                                       data-ng-disabled="loading.prices || durations.available.length == 1"
-                                       value="{{duration}}">
-                                {{ duration | duration:'longDate' }}
-                                &nbsp;:&nbsp;
-                                <span data-ng-bind-html="durations.details[duration].prices | price:ovhSubsidiary"></span>
-                                <div data-ng-hide="durations.details[duration]" class="loader-inline"></div>
-                            </label>
-                        </div>
-                    </div>
+             <div class="text-center"
+                  data-ng-show="loading.durations">
+                <oui-spinner></oui-spinner>
+             </div>
 
-                </div>
-
-                <div class="row-fluid mtop70" data-ng-show="loading.durations">
-                    <div class="span12 loader" data-i18n-static="license_loading"></div>
+            <div data-ng-hide="loading.durations">
+                <p data-i18n-static="server_tab_USB_STORAGE_order_select_duration"></p>
+                <div class="radio"
+                     data-ng-repeat="duration in durations.available track by $index">
+                    <label>
+                        <input type="radio"
+                               value="{{ duration }}"
+                               data-ng-model="model.duration"
+                               data-ng-disabled="loading.prices || durations.available.length == 1" />
+                        <span>
+                            <span data-ng-bind="duration | duration:'longDate'"></span>
+                            &nbsp;:&nbsp;
+                            <span data-ng-bind-html="durations.details[duration].prices | price:ovhSubsidiary"></span>
+                            <oui-spinner data-ng-hide="durations.details[duration]"
+                                         data-size="s">
+                            </oui-spinner>
+                        </span>
+                    </label>
                 </div>
             </div>
+
         </div>
 
         <!-- Step 3: Contracts -->
@@ -44,7 +46,8 @@
 
             <div data-contracts="durations.details[model.duration].contracts"
                  data-full-text="false"
-                 data-ng-model="agree.value"></div>
+                 data-ng-model="agree.value">
+            </div>
 
         </div>
 
@@ -53,47 +56,56 @@
              data-wizard-step-on-previous="backToContracts"
              data-wizard-step-valid="!loading.validation">
 
-            <div data-ng-show="!loading.validation">
-                <p class="bold blue center" data-i18n-static="server_tab_USB_STORAGE_order_resume"></p>
-
-                <div class="order-resume-list">
-                    <table class="table table-condensed">
-                        <tbody>
-                        <tr data-ng-repeat="detail in durations.details[model.duration].details">
-                            <td data-ng-bind="detail.description"></td>
-                            <td class="right bold" data-ng-bind="getResumePrice(detail.totalPrice)"></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="order-resume">
-                    <table class="table table-condensed">
-                        <tbody>
-                        <tr>
-                            <td class="right">
-                                <span class="bold" data-i18n-static="dedicatedCloud_order_price_HT"></span>
-                                <span class="red bold" data-ng-bind="durations.details[model.duration].prices.withoutTax.text"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="right">
-                                <span class="bold" data-i18n-static="dedicatedCloud_order_price_TTC"></span>
-                                <span class="red bold" data-ng-bind="durations.details[model.duration].prices.withTax.text"></span>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <br />
-                <p class="fs12 lh12" data-i18n-static="dedicatedCloud_order_final_txt"></p>
-                <p class="fs11 lh12 italic muted" data-i18n-static="dedicatedCloud_order_final_txt2"></p>
+            <div class="text-center"
+                 data-ng-show="loading.validation">
+                <oui-spinner></oui-spinner>
             </div>
 
-            <div class="row-fluid pull-left mtop70" data-ng-show="loading.validation">
-                <div class="span12 loader"></div>
+            <div data-ng-show="!loading.validation">
+                <p data-i18n-static="server_tab_USB_STORAGE_order_resume"></p>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr data-ng-repeat="detail in durations.details[model.duration].details track by $index">
+                                <th scope="row"
+                                    class="text-wrap"
+                                    data-ng-bind="detail.description">
+                                </th>
+                                <td class="text-right"
+                                    data-ng-bind="getResumePrice(detail.totalPrice)">
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2"
+                                    class="text-right">
+                                    <strong data-i18n-static="dedicatedCloud_order_price_HT"></strong>
+                                    <strong class="text-danger"
+                                            data-ng-bind="durations.details[model.duration].prices.withoutTax.text">
+                                    </strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"
+                                    class="text-right">
+                                    <strong data-i18n-static="dedicatedCloud_order_price_TTC"></strong>
+                                    <strong class="text-danger"
+                                            data-ng-bind="durations.details[model.duration].prices.withTax.text">
+                                    </strong>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <p data-i18n-static="dedicatedCloud_order_final_txt"></p>
+                <p class="font-italic text-muted"
+                   data-i18n-static="dedicatedCloud_order_final_txt2">
+                </p>
             </div>
 
         </div>
+
     </div>
+
 </div>
