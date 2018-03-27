@@ -3,7 +3,9 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addFtpBackup"
-         data-wizard-title="tr('server_configuration_ftpbackup_add')">
+         data-wizard-title="tr('server_configuration_ftpbackup_add')"
+         data-wizard-confirm-button-text="tr('common_terminate')"
+         data-wizard-hide-cancel-button="true">
 
         <div data-wizard-step
              data-wizard-step-valid="!loading && access.ip && (access.cifs || access.ftp || access.nfs)"

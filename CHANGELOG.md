@@ -1,3 +1,41 @@
+<a name="9.2.1"></a>
+## [9.2.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.0...v9.2.1) (2018-03-27)
+
+
+### Bug Fixes
+
+* **dedicatedcloud hds:** fix step 3 validation ([e1981da](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e1981da))
+
+
+
+<a name="9.2.0"></a>
+# [9.2.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.1.2...v9.2.0) (2018-03-26)
+
+
+### Bug Fixes
+
+* improve some modals content ([30607e3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/30607e3))
+* **account user contacts:** TypeError property ovhSubsidiary ([1b3dc8c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1b3dc8c))
+* **dashboard:** hide PCC guides from US customers ([5113611](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5113611))
+* **dedicated server ftp-backup access:** update confirm button text ([0b34881](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0b34881))
+* **dedicatedcloud dashboard:** reduce icon size ([fed541a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/fed541a))
+* **pcc datacenter:** code review ([5f37d6f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5f37d6f))
+* **pcc order:** fix button href ([631bc21](https://github.com/ovh-ux/ovh-manager-dedicated/commit/631bc21))
+* **pcc order:** fix quantity, fix order button location ([6d2a479](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6d2a479))
+* **us pcc order:** FR translations ([245f197](https://github.com/ovh-ux/ovh-manager-dedicated/commit/245f197))
+
+
+### Features
+
+* **pcc datastore order:** add pcc datastore order for us target ([2e485ce](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2e485ce))
+* **pcc host order:** add pcc host order for us target ([062efde](https://github.com/ovh-ux/ovh-manager-dedicated/commit/062efde))
+* **pcc us order:** code review ([57c00f4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/57c00f4))
+* **pcc us order:** code review) ([33586c3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/33586c3))
+* **pcc us order:** filter filers ([e25233b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e25233b))
+* **pcc us order:** fix trads ([6b065cb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6b065cb))
+
+
+
 <a name="9.1.2"></a>
 ## [9.1.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.1.1...v9.1.2) (2018-03-22)
 

@@ -1,4 +1,5 @@
-<div data-ng-controller="NasPartitionAddCtrl">
+<form name="dedicatedNasDetailsPartitionAddForm"
+      data-ng-controller="NasPartitionAddCtrl">
 
     <div data-wizard
          data-wizard-on-cancel="resetAction"
@@ -7,9 +8,13 @@
          data-wizard-bread-crumb>
 
         <div data-wizard-step
-             data-wizard-step-valid="newPartition.name && newPartition.sizeP > 9 && newPartition.sizeP <= currentNasPartition.zpoolSize && newPartition.protocol && !error.name">
+             data-wizard-step-valid="dedicatedNasDetailsPartitionAddForm.$valid">
 
-            <div class="form-group">
+            <!-- NAME -->
+            <div class="form-group"
+                 data-ng-class="{
+                     'has-error': dedicatedNasDetailsPartitionAddForm.name.$touched && dedicatedNasDetailsPartitionAddForm.name.$invalid
+                 }">
                 <label for="name"
                        class="control-label"
                        data-i18n-static="nas_partitions_name">
@@ -18,17 +23,31 @@
                        class="form-control"
                        id="name"
                        name="name"
+                       required
                        data-ng-model="newPartition.name"
-                       data-ng-change="checkName()" />
-                <span class="text-danger"
-                      data-ng-if="error.name"
-                      data-i18n-static="nas_partitions_name_fail">
+                       data-ng-pattern="/^[A-Za-z0-9]{1,20}$/" />
+                <span class="help-block"
+                      role="alert"
+                      data-ng-if="dedicatedNasDetailsPartitionAddForm.name.$touched"
+                      data-ng-messages="dedicatedNasDetailsPartitionAddForm.name.$error">
+                    <span data-ng-message="required"
+                          data-i18n-static="nas_partitions_name_error_required">
+                    </span>
+                    <span data-ng-message="pattern"
+                          data-i18n-static="nas_partitions_name_fail">
+                    </span>
                 </span>
-            </div>
-            <div class="form-group">
+            </div>  <!-- END OF NAME -->
+
+            <!-- SIZEP -->
+            <div class="form-group"
+                 data-ng-class="{
+                     'has-error': dedicatedNasDetailsPartitionAddForm.sizeP.$touched && dedicatedNasDetailsPartitionAddForm.sizeP.$invalid
+                 }">
                 <label for="sizeP"
-                       class="control-label"
-                       data-i18n-static="nas_partitions_size_in_Gb">
+                       class="control-label">
+                   <span data-i18n-static="nas_partitions_size_in_Gb"></span>
+                   <span data-i18n-static="nas_partitions_minimum_size"></span>
                 </label>
                 <input type="number"
                        class="form-control"
@@ -36,11 +55,30 @@
                        name="sizeP"
                        min="10"
                        max="{{ currentNasPartition.zpoolSize }}"
+                       required
                        data-ng-model="newPartition.sizeP"
                        data-ng-change="checkSize()" />
-                <span data-i18n-static="nas_partitions_minimum_size"></span>
-            </div>
-            <div class="form-group">
+                <span class="help-block"
+                      role="alert"
+                      data-ng-if="dedicatedNasDetailsPartitionAddForm.sizeP.$touched"
+                      data-ng-messages="dedicatedNasDetailsPartitionAddForm.sizeP.$error">
+                    <span data-ng-message="required"
+                          data-i18n-static="nas_partitions_size_error_required">
+                    </span>
+                    <span data-ng-message="min"
+                          data-ng-bind="tr('nas_partitions_size_error_min_max', [newPartition.minSizeP, currentNasPartition.zpoolSize])">
+                    </span>
+                    <span data-ng-message="max"
+                          data-ng-bind="tr('nas_partitions_size_error_min_max', [newPartition.minSizeP, currentNasPartition.zpoolSize])">
+                    </span>
+                </span>
+            </div> <!-- END OF SIZEP -->
+
+            <!-- PROTOCOL -->
+            <div class="form-group"
+                 data-ng-class="{
+                     'has-error': dedicatedNasDetailsPartitionAddForm.protocol.$touched && dedicatedNasDetailsPartitionAddForm.protocol.$invalid
+                 }">
                 <label for="protocol"
                        class="control-label"
                        data-i18n-static="nas_partitions_protocol">
@@ -48,10 +86,19 @@
                 <select class="form-control"
                         id="protocol"
                         name="protocol"
+                        required
                         data-ng-options="protocol as tr('nas_partitions_protocol_' + protocol) for protocol in protocols"
                         data-ng-model="newPartition.protocol">
                 </select>
-            </div>
+                <span class="help-block"
+                      role="alert"
+                      data-ng-if="dedicatedNasDetailsPartitionAddForm.protocol.$touched"
+                      data-ng-messages="dedicatedNasDetailsPartitionAddForm.protocol.$error">
+                    <span data-ng-message="required"
+                          data-i18n-static="nas_partitions_protocol_error_required">
+                    </span>
+                </span>
+            </div> <!-- END OF PROTOCOL -->
 
             <div data-wizard-step-help>
 
@@ -78,4 +125,4 @@
 
     </div>
 
-</div>
+</form>
