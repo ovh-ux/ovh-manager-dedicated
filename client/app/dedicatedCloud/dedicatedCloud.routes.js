@@ -18,9 +18,12 @@ angular.module("App").config(($stateProvider) => {
                     return translator.load(["dedicatedcloud"]).then(() => translator);
                 }
             ],
-            modals () {
+            modalConfigurations () {
                 return {
-                    test: "coucou"
+                    "ml-subscribe": {
+                        templateUrl: "dedicatedCloud/mailing-list/subscribe/dedicatedCloud-mailing-list-subscribe.html",
+                        controller: "DedicatedCloudMailingCtrl"
+                    }
                 };
             }
         }

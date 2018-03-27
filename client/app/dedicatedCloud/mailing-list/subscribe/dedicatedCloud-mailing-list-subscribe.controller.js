@@ -38,7 +38,9 @@ angular.module("App").controller("DedicatedCloudMailingCtrl", class DedicatedClo
     }
 
     onWidzardCandel () {
-        this.$state.go("^");
+        this.$state.go(this.$state.current.name, { modal: null }, {
+            reload: false
+        });
     }
 
     /* -----  End of EVENTS  ------ */

@@ -205,35 +205,93 @@ angular
     .config(($transitionsProvider, $httpProvider) => {
         $httpProvider.interceptors.push("translateInterceptor");
 
-        let modalInstance = null;
+        /*
+            Modal management - 2 ways to declare a modal:
+            1)  create a state with attribute 'layout' setted to value 'modal'. For example :
+                ```
+                $stateProvider.state("app.myModalState", {
+                    url: "/myModal",
+                    templateUrl: "/path/to/modal/html"
+                    controller: "modalCtrl"
+                });
+                ```
+                This method can be used when there is no child states that needs to display the modal.
 
+            2)  The problem with solution one is that if direct parent state (of the modal state) and child states (of the parent state) need to display the same modal, if you try to access the modal state url from a child,
+                you will be redirect to the parent and the view behind the modal will be the view of the parent (not of the current child).
+                To avoid this problem, you can:
+                - add the optional `modal` query param to the url of the parent scope;
+                - define the configuration of your modals into a resolve callback ('modalConfigurations') of your state.
+                For example:
+                ```
+                $stateProvider.state("app.parentState", {
+                    url: "/parentPath?modal",
+                    ...
+                    resolve: {
+                        modalConfigurations () {
+                            return {
+                                "myModal": {
+                                    templateUrl: "/path/to/modal/html",
+                                    controller: "modalCtrl"
+                                }
+                            };
+                        }
+                    }
+                });
+                ```
+                Like this you will be abble to display the modal from your parent AND from your child states without break the views behind the modal.
+         */
+
+        let modalInstance = null;
         $transitionsProvider.onSuccess({}, (transition) => {
             transition.promise.finally(() => {
-                const source = transition.from();
                 const state = transition.to();
-
                 const $state = transition.injector().get("$state");
+                const $stateParams = transition.injector().get("$stateParams");
                 const $uibModal = transition.injector().get("$uibModal");
 
-                console.log($state.$current.parent.resolvables);
+                let modalConfiguration;
+                let modalPromiseCatch = () => $state.go("^");
 
-                if (source.layout === "modal" && modalInstance) {
+                // close previous modal
+                if (modalInstance) {
                     modalInstance.close();
                 }
 
-                if (state.layout === "modal") {
-                    modalInstance = $uibModal.open({
+                if (state.layout === "modal") { // first way
+                    modalConfiguration = {
                         templateUrl: state.templateUrl,
                         controller: state.controller,
                         controllerAs: state.controllerAs || "$ctrl"
-                    });
+                    };
+                } else if ($stateParams.modal) { // second way
+                    const modalConfigurationsResolve = _.find($state.$current.resolvables, { token: "modalConfigurations" }) || _.find($state.$current.parent.resolvables, { token: "modalConfigurations" });
 
-                    // if backdrop is clicked be sure to redirect to previous state
-                    modalInstance.result.catch(() => $state.go("^"));
+                    if (modalConfigurationsResolve) {
+                        modalConfiguration = _.get(modalConfigurationsResolve.resolveFn(), $stateParams.modal);
+                        if (modalConfiguration) {
+                            modalConfiguration = angular.extend({
+                                controllerAs: "$ctrl"
+                            }, modalConfiguration);
+
+                            modalPromiseCatch = () => $state.go($state.current.name, { modal: null }, { reload: false });
+                        }
+                    }
+                }
+
+                // display the modal
+                if (modalConfiguration) {
+                    modalInstance = $uibModal.open(modalConfiguration);
+
+                    // if backdrop is clicked - be sure to close the modal (by going to previous state or by setting modal param to null)
+                    modalInstance.result.catch(modalPromiseCatch);
                 }
             });
         });
 
+        /*
+            Translations loading from ui state resolve
+         */
         $transitionsProvider.onBefore({}, (transition) => {
             transition.addResolvable({
                 token: "translations",
