@@ -1,3 +1,13 @@
+<a name="9.2.1"></a>
+## [9.2.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.0...v9.2.1) (2018-03-27)
+
+
+### Bug Fixes
+
+* **dedicatedcloud hds:** fix step 3 validation ([e1981da](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e1981da))
+
+
+
 <a name="9.2.0"></a>
 # [9.2.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.1.2...v9.2.0) (2018-03-26)
 
