@@ -54,7 +54,7 @@ angular.module("App").controller("DedicatedCloudMailingCtrl", class DedicatedClo
 
         // need to check if user can subscribe to ML
         return this.dedicatedCloudMailingList.getAvailableMailingLists().then((mailingLists) => {
-            this.canSubscribe = _.indexOf(mailingLists, "pcc@ml.ovh.net") > -1;
+            this.canSubscribe = _.some(mailingLists, "pcc@ml.ovh.net");
 
             if (this.canSubscribe) {
                 return this.User.getUser().then((user) => {
