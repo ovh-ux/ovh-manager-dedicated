@@ -1,5 +1,5 @@
 <div id="main-container"
-     data-ui-view>
+     data-ui-view="dedicatedCloudView">
 
     <div class="text-center mt-5"
          data-ng-if="loadingInformations && !loadingError">
@@ -88,11 +88,10 @@
                                 </a>
                             </li>
                             <li data-ng-if="dedicatedCloud.canSubscribe">
-                                <button type="button"
-                                        class="btn btn-link"
-                                        data-ng-click="setAction('mailing-list/subscribe/dedicatedCloud-mailing-list-subscribe', dedicatedCloud.canSubscribe)"
-                                        data-i18n-static="dedicatedCloud_subscribe_mailing">
-                                </button>
+                                <a class="btn btn-link"
+                                   data-ui-sref="({ modal: 'ml-subscribe' })"
+                                   data-i18n-static="dedicatedCloud_subscribe_mailing">
+                                </a>
                             </li>
                             <li data-ng-if="dedicatedCloud.upgradable">
                                 <button type="button"
