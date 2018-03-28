@@ -1,3 +1,7 @@
+@rem-base: rem-base(10px);
+
+@import "@{oui-path}/packages/oui/stylekit";
+
 // OVH-UI-KIT Bootstrap theme.
 @import "./ovh-ui-kit-bs/src/ovh-ui-kit-bs";
 
@@ -75,6 +79,9 @@
 @bs-path: "./bootstrap";
 @oui-path: "./ovh-ui-kit";
 @ovh-universe-color: @oui-color-turquoise;
+
+@oui-icon-dist-folder: "../../../node_modules/ovh-ui-kit/dist/icons";
+@oui-font-source-sans-pro-folder: "../../../node_modules/ovh-ui-kit/packages/oui-typography/fonts/source-sans-pro";
 
 @actions-menu-item-link-icon-hover-bg-color: @ovh-universe-color;
 @SIDEBAR_MENU_ACTIVE_COLOR: @ovh-universe-color;

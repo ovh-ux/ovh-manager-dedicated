@@ -60,6 +60,7 @@ module.exports = function (grunt) {
         // Config
         pkg: grunt.file.readJSON("package.json"),
         bowerdir: "node_modules/@bower_components",
+        npmdir: "node_modules",
         builddir: "tmp",
         publicdir: "client/app",
         distdir: "dist/client", // put in dist/client dir to be ISO with new stack
@@ -259,12 +260,6 @@ module.exports = function (grunt) {
                     },
                     {
                         expand: true,
-                        cwd: "nodes_modules/ovh-ui-kit-bs/dist/fonts",
-                        src: ["**/*"],
-                        dest: "<%= publicdir %>/css/fonts"
-                    },
-                    {
-                        expand: true,
                         cwd: "<%= serverdir %>/mocks/apiv6",
                         src: "**",
                         dest: "<%= builddir %>/server/mocks/apiv6"
@@ -292,9 +287,9 @@ module.exports = function (grunt) {
                         dest: "<%= distdir %>/js/app/bin/"
                     }, {
                         expand: true,
-                        cwd: "node_modules/ovh-ui-kit-bs/dist/fonts",
-                        src: ["**/*"],
-                        dest: "<%= distdir %>/css/fonts"
+                        cwd: "<%= npmdir %>/ovh-ui-kit",
+                        src: ["**"],
+                        dest: "<%= distdir %>/<%= npmdir %>/ovh-ui-kit"
                     }, {
                         expand: true,
                         cwd: "<%= publicdir %>/css/open-sans/",
