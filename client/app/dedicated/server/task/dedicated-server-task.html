@@ -18,7 +18,7 @@
                   data-ng-class="{
                       'label-success': $row.status === $ctrl.TASK_STATUS.DONE,
                       'label-info': $row.status === $ctrl.TASK_STATUS.DOING,
-                      'label-important': $row.status === $ctrl.TASK_STATUS.OVH_ERROR || $row.status === $ctrl.TASK_STATUS.CUSTOMER_ERROR,
+                      'label-danger': $row.status === $ctrl.TASK_STATUS.OVH_ERROR || $row.status === $ctrl.TASK_STATUS.CUSTOMER_ERROR,
                       'label-warning': $row.status === $ctrl.TASK_STATUS.INIT || $row.status === $ctrl.TASK_STATUS.TODO
                   }">
             </span>
