@@ -541,6 +541,9 @@ var constants = {
             SN : "https://www.ovh.sn/cgi-bin/order/renew.cgi?domainChooser={serviceName}",
             TN : "https://www.ovh.com/tn/cgi-bin/order/renew.cgi?domainChooser={serviceName}",
             WE : "https://ca.ovh.com/fr/cgi-bin/order/renew.cgi?domainChooser={serviceName}"
+        },
+        REDIRECT_URLS: {
+            listTicket: "https://www.ovh.com/manager/dedicated/index.html#/ticket"
         }
     },
     CA : {
@@ -825,6 +828,9 @@ var constants = {
             SN : "https://www.ovh.sn/cgi-bin/order/renew.cgi?domainChooser={serviceName}",
             TN : "https://www.ovh.com/tn/cgi-bin/order/renew.cgi?domainChooser={serviceName}",
             WE : "https://ca.ovh.com/fr/cgi-bin/order/renew.cgi?domainChooser={serviceName}"
+        },
+        REDIRECT_URLS: {
+            listTicket: "https://ca.ovh.com/manager/index.html#/ticket"
         }
     },
     US : {
@@ -991,6 +997,9 @@ var constants = {
             SN : "https://www.ovh.sn/cgi-bin/order/renew.cgi?domainChooser={serviceName}",
             TN : "https://www.ovh.com/tn/cgi-bin/order/renew.cgi?domainChooser={serviceName}",
             WE : "https://ca.ovh.com/fr/cgi-bin/order/renew.cgi?domainChooser={serviceName}"
+        },
+        REDIRECT_URLS: {
+            listTicket: "https://ovhcloud.com/manager/dedicated/index.html#/ticket"
         }
     }
 };

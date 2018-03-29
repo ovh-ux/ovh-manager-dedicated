@@ -218,7 +218,7 @@ angular.module("Module.license.controllers").controller("LicenseOrderCtrl", ($sc
     function init () {
         $scope.agoraEnabled = featureAvailability.allowLicenseAgoraOrder();
 
-        OvhApiMe.Lexi().get().$promise.then((user) => {
+        OvhApiMe.v6().get().$promise.then((user) => {
             $scope.user = user;
         });
 
