@@ -1,17 +1,22 @@
 "use strict";
 angular.module("UserAccount.controllers").controller("UserAccountUsersUpdateCtrl", class UserAccountUsersUpdateCtrl {
 
-    constructor ($scope, UseraccountUsersService, Alerter, $translate) {
+    constructor ($scope, User, UseraccountUsersService, Alerter, $translate) {
         this.$scope = $scope;
+        this.userService = User;
         this.usersService = UseraccountUsersService;
         this.alerter = Alerter;
         this.$translate = $translate;
+        this.me = null;
         this.user = angular.copy($scope.currentActionData);
         this.loader = false;
         this.DESCRIPTION_MAX_LENGTH = 255;
     }
 
     $onInit () {
+        this.userService.getUser().then((data) => {
+            this.me = data;
+        });
         this.$scope.updateUser = this.updateUser.bind(this);
     }
 
