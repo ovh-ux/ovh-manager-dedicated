@@ -20,70 +20,90 @@
                     <div data-ng-show="statisticsScalesAvailable">
 
                         <form>
-                            <div class="control-group">
-                                <div class="controls">
-                                    <label class="radio">
-                                        <input type="radio"
-                                               name="mode"
-                                               value="realTime"
-                                               data-ng-model="model.mode">
-                                        {{tr('ip_mitigation_statistics_mode_realtime')}}
-                                    </label>
-                                    <label class="radio">
-                                        <input type="radio"
-                                               name="mode"
-                                               value="date"
-                                               data-ng-model="model.mode">
-                                        {{tr('ip_mitigation_statistics_mode_date')}}
-                                    </label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio"
+                                           name="mode"
+                                           value="realTime"
+                                           data-ng-model="model.mode">
+                                    <span data-i18n-static="ip_mitigation_statistics_mode_realtime"></span>
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio"
+                                           name="mode"
+                                           value="date"
+                                           data-ng-model="model.mode">
+                                    <span data-i18n-static="ip_mitigation_statistics_mode_date"></span>
+                                </label>
+                            </div>
+
+                            <hr data-ng-if="model.mode === 'date'" />
+
+                            <div class="form-group"
+                                 data-ng-if="model.mode === 'date'">
+                                <label for="statTo"
+                                       data-i18n-static="ip_mitigation_statistics_to">
+                                </label>
+                                <div class="input-group date-picker-input">
+                                    <input type="text"
+                                           class="form-control"
+                                           id="statTo"
+                                           name="statTo"
+                                           data-ng-disabled="statsLoading"
+                                           data-ng-model="model.from"
+                                           data-uib-datepicker-popup="{{ datePicker.dateFormat }}"
+                                           data-datepicker-options="{ maxDate: datePicker.maxDate }"
+                                           data-is-open="datePicker.isOpen"
+                                           data-show-button-bar="false"
+                                           data-ng-change="getStatistics()" />
+                                    <span class="input-group-btn">
+                                        <button type="button"
+                                                class="btn btn-default"
+                                                data-ng-click="datePicker.isOpen = !datePicker.isOpen">
+                                            <span class="fa fa-calendar"
+                                                  aria-hidden="true">
+                                            </span>
+                                        </button>
+                                    </span>
                                 </div>
                             </div>
-                        </form>
 
-                        <div data-ng-show="model.mode == 'date'">
-                            <hr />
-                            <div class="row-fluid">
-                                <div class="span7">
-                                    <span data-i18n-static="ip_mitigation_statistics_to"></span> :
-                                    <div class="inline">
-                                        <div class="input-prepend no-space"
-                                            data-dtp-placement="bottom"
-                                            data-ng-disabled="statsLoading"
-                                            data-ng-model="model.from"
-                                            data-date-time-picker
-                                            data-dtp-autoclose="true"
-                                            data-dtp-type="date"
-                                            data-dtp-min-view-mode="days"
-                                            data-dtp-end-date="{{today.toString()}}"
-                                            data-ng-change="getStatistics()"
-                                            data-dtp-model-timezone="local">
-                                            <span class="add-on">
-                                               <i data-time-icon="icon-time" data-date-icon="icon-calendar" style="margin: 2px 0 0 2px;"></i>
-                                            </span>
-                                            <input type="text" style="width: 175px;">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="span5">
-                                    <span data-i18n-static="ip_mitigation_statistics_scale"></span> :
-                                    <select name="period" class="input-medium"
+                            <div class="form-group"
+                                 data-ng-if="model.mode === 'date'">
+                                <label for="statScale"
+                                       data-i18n-static="ip_mitigation_statistics_scale">
+                                </label>
+                                <select name="period"
+                                        class="form-control"
+                                        id="statScale"
                                         data-ng-disabled="statsLoading"
                                         data-ng-change="getStatistics()"
                                         data-ng-options="i18n['ip_mitigation_statistics_statistics_scale' + option] for option in statisticsScalesAvailable"
                                         data-ng-model="model.scale">
-                                    </select>
-                                </div>
+                                </select>
                             </div>
-                        </div>
+
+                            <hr data-ng-if="model.mode === 'date'" />
+
+                        </form>
                     </div>
                 </div>
             </div>
             <div data-ng-if="(model.from || model.mode == 'realTime') && !stats.noData">
                 <div data-ng-if="stats && (!statsLoading || model.mode == 'realTime')">
-                    <div data-chart="statsChart" data-ng-model="chartOptions" data-chart-title="{{i18n.statistics}}" id="statsChart"></div>
+                    <canvas id="statsChart"
+                            class="chart chart-line"
+                            data-chart-data="chartData"
+                            data-chart-series="chartSeries"
+                            data-chart-labels="chartLabels"
+                            data-chart-options="chartOptions">
+                    </canvas>
                 </div>
-                <div data-ng-if="(!stats || model.mode == 'date') && statsLoading">
-                    <div class="loader"></div>
+                <div class="text-center"
+                     data-ng-if="(!stats || model.mode == 'date') && statsLoading">
+                    <oui-spinner></oui-spinner>
                 </div>
             </div>
             <p class="center red" data-ng-if="stats.noData" data-ng-bind="tr('ip_mitigation_statistics_no_data', data.ip.ip)"></p>
