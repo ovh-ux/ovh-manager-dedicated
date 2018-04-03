@@ -225,14 +225,13 @@ angular
             // build child states that need to be ignored
             // 1st: all child states of each states that need to be ignored
             // 2nd: current layout state doesn't need to have itself as modal child
-            let tmpToIgnore = [];
             layoutState.layout.ignoreChilds.forEach((childState) => {
-                tmpToIgnore = tmpToIgnore.concat(_.map(getChildStates(childState), "name"));
+                layoutState.layout.ignoreChilds = layoutState.layout.ignoreChilds.concat(_.map(getChildStates(childState), "name"));
             });
-            layoutState.layout.ignoreChilds.push(tmpToIgnore, layoutState.name);
+            layoutState.layout.ignoreChilds.push(layoutState.name);
 
             // remove child states that need to be ignored
-            childStates = _.difference(childStates, layoutState.layout.ignoreChilds);
+            childStates = _.xor(childStates, layoutState.layout.ignoreChilds);
 
             // create child state with layout settings applied
             const modalSateSuffix = _.last(layoutState.name.split("."));
