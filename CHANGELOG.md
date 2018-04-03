@@ -1,3 +1,15 @@
+<a name="9.2.2"></a>
+## [9.2.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.1...v9.2.2) (2018-04-03)
+
+
+### Bug Fixes
+
+* **ckeditor:** fix CKEDITOR_BASEPATH initialization ([d85c6c5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d85c6c5))
+* **ip mitigation:** fix html ([b77c402](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b77c402))
+* **ip mitigation:** use chart js to render mitigation stats ([0ce984a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0ce984a))
+
+
+
 <a name="9.2.1"></a>
 ## [9.2.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.0...v9.2.1) (2018-03-27)
 
