@@ -69,8 +69,8 @@ angular
         translatorProvider.setAvailableLanguages(LANGUAGES);
     })
 
-    .config(($urlRouterProvider) => {
-        $urlRouterProvider.otherwise("/configuration");
+    .config(($urlServiceProvider) => {
+        $urlServiceProvider.rules.otherwise("/configuration");
     })
 
     /*= ========= AT-INTERNET ========== */
@@ -202,92 +202,122 @@ angular
         $translateProvider.use(defaultLanguage);
         $translateProvider.fallbackLanguage("fr_FR");
     })
-    .config(($transitionsProvider, $httpProvider) => {
-        $httpProvider.interceptors.push("translateInterceptor");
 
-        /*
-            Modal management - 2 ways to declare a modal:
-            1)  create a state with attribute 'layout' setted to value 'modal'. For example :
-                ```
-                $stateProvider.state("app.myModalState", {
-                    url: "/myModal",
-                    templateUrl: "/path/to/modal/html"
-                    controller: "modalCtrl"
-                });
-                ```
-                This method can be used when there is no child states that needs to display the modal.
+    // ui router modal layout definition
+    .run(($stateRegistry, $urlService) => {
+        /**
+         *  As initial URL synchronization is delayed we can check all modal layout states and check if toChilds attribute is setted. For these states we will need to create new states as follow:
+         *  We will take the direct parent of the modal layout state and create new states with the same layout configuration to all of its child states.
+         */
+        const layoutStates = _.filter($stateRegistry.states, (state) => _.get(state, "layout.toChilds") === true || _.get(state, "layout.toChilds", []).length);
+        const getChildStates = (parentStateName) => _.filter($stateRegistry.states, (state) => _.startsWith(state.name, `${parentStateName}.`));
 
-            2)  The problem with solution one is that if direct parent state (of the modal state) and child states (of the parent state) need to display the same modal, if you try to access the modal state url from a child,
-                you will be redirect to the parent and the view behind the modal will be the view of the parent (not of the current child).
-                To avoid this problem, you can:
-                - add the optional `modal` query param to the url of the parent scope;
-                - define the configuration of your modals into a resolve callback ('modalConfigurations') of your state.
-                For example:
-                ```
-                $stateProvider.state("app.parentState", {
-                    url: "/parentPath?modal",
-                    ...
-                    resolve: {
-                        modalConfigurations () {
-                            return {
-                                "myModal": {
-                                    templateUrl: "/path/to/modal/html",
-                                    controller: "modalCtrl"
-                                }
-                            };
-                        }
+        layoutStates.forEach((layoutState) => {
+            let childStates;
+
+            // build child states that need modal layout applied
+            if (angular.isArray(layoutState.layout.toChilds)) {
+                childStates = layoutState.layout.toChilds;
+            } else {
+                childStates = _.map(getChildStates(layoutState.parent.name), "name");
+            }
+
+            // build child states that need to be ignored
+            // 1st: all child states of each states that need to be ignored
+            // 2nd: current layout state doesn't need to have itself as modal child
+            let tmpToIgnore = [];
+            layoutState.layout.ignoreChilds.forEach((childState) => {
+                tmpToIgnore = tmpToIgnore.concat(_.map(getChildStates(childState), "name"));
+            });
+            layoutState.layout.ignoreChilds.push(tmpToIgnore, layoutState.name);
+
+            // remove child states that need to be ignored
+            childStates = _.difference(childStates, layoutState.layout.ignoreChilds);
+
+            // create child state with layout settings applied
+            const modalSateSuffix = _.last(layoutState.name.split("."));
+            childStates.forEach((childState) => {
+                $stateRegistry.register({
+                    name: `${childState}.${modalSateSuffix}`,
+                    url: layoutState.self.url,
+                    templateUrl: layoutState.self.templateUrl,
+                    controller: layoutState.self.controller,
+                    layout: { // don't know why full config must be defined???
+                        name: "modal",
+                        toChilds: false,
+                        ignoreChilds: []
                     }
                 });
-                ```
-                Like this you will be abble to display the modal from your parent AND from your child states without break the views behind the modal.
-         */
+            });
+        });
 
+        $urlService.listen(); // Start responding to URL changes
+        $urlService.sync(); // Find the matching URL and invoke the handler
+    })
+    .config(($urlServiceProvider, $stateProvider, $transitionsProvider) => {
         let modalInstance = null;
+
+        /**
+         *  Delay initial URL synchronization.
+         *  As we will create some states later (at run phase), maybe the url we want to access is not yet configured. So wait a moment that all states are declared (at config phase) and re-launch the URL sync later.
+         */
+        $urlServiceProvider.deferIntercept();
+
+        /**
+         *  Create a decorator for our new state attribute 'layout'.
+         *  For modal layout, the attribute can be a string or an object:
+         *  - if string - value must be 'modal'
+         *  - if object - avaiable attributes are:
+         *      - name: the value must be 'modal'.
+         *      - toChilds (default value: 'false'):
+         *          - can be a boolean: 'true' to declare the modal state to all direct parent childs.
+         *          - or an array of string that contains the childs of the direct parents where the modal needs to be displayed.
+         *      - ignoreChilds: an array of string that contains states names where the modal state doesn't need to be displayed.
+         */
+        $stateProvider.decorator("layout", (state) => {
+            let modalLayout;
+
+            if (state.self.layout === "modal" || _.get(state, "self.layout.name") === "modal") {
+                modalLayout = {
+                    name: "modal",
+                    toChilds: state.self.layout.toChilds || false,
+                    ignoreChilds: state.self.layout.ignoreChilds || []
+                };
+            }
+
+            return modalLayout;
+        });
+
+        /**
+         *  Use onSuccess hook to manage the modal display.
+         */
         $transitionsProvider.onSuccess({}, (transition) => {
             transition.promise.finally(() => {
                 const state = transition.to();
-                const $state = transition.injector().get("$state");
-                const $stateParams = transition.injector().get("$stateParams");
-                const $uibModal = transition.injector().get("$uibModal");
-
-                let modalConfiguration;
-                let modalPromiseCatch = () => $state.go("^");
 
                 // close previous modal
                 if (modalInstance) {
                     modalInstance.close();
                 }
 
-                if (state.layout === "modal") { // first way
-                    modalConfiguration = {
+                if (_.get(state, "layout.name") === "modal") {
+                    const $state = transition.injector().get("$state");
+                    const $uibModal = transition.injector().get("$uibModal");
+
+                    modalInstance = $uibModal.open({
                         templateUrl: state.templateUrl,
                         controller: state.controller,
                         controllerAs: state.controllerAs || "$ctrl"
-                    };
-                } else if ($stateParams.modal) { // second way
-                    const modalConfigurationsResolve = _.find($state.$current.resolvables, { token: "modalConfigurations" }) || _.find($state.$current.parent.resolvables, { token: "modalConfigurations" });
+                    });
 
-                    if (modalConfigurationsResolve) {
-                        modalConfiguration = _.get(modalConfigurationsResolve.resolveFn(), $stateParams.modal);
-                        if (modalConfiguration) {
-                            modalConfiguration = angular.extend({
-                                controllerAs: "$ctrl"
-                            }, modalConfiguration);
-
-                            modalPromiseCatch = () => $state.go($state.current.name, { modal: null }, { reload: false });
-                        }
-                    }
-                }
-
-                // display the modal
-                if (modalConfiguration) {
-                    modalInstance = $uibModal.open(modalConfiguration);
-
-                    // if backdrop is clicked - be sure to close the modal (by going to previous state or by setting modal param to null)
-                    modalInstance.result.catch(modalPromiseCatch);
+                    // if backdrop is clicked - be sure to close the modal
+                    modalInstance.result.catch(() => $state.go("^"));
                 }
             });
         });
+    })
+    .config(($transitionsProvider, $httpProvider) => {
+        $httpProvider.interceptors.push("translateInterceptor");
 
         /*
             Translations loading from ui state resolve
