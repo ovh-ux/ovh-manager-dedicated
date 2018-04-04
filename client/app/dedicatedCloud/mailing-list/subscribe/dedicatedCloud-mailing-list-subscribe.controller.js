@@ -34,12 +34,12 @@ angular.module("App").controller("DedicatedCloudMailingCtrl", class DedicatedClo
         ).catch((error) =>
             this.Alerter.error([this.translator.tr("dedicatedCloud_subscribe_mailing_step2_error", this.model.email), _.get(error, "message")].join(". "), "dedicatedCloud_alert")
         ).finally(() => {
-            this.onWidzardCandel();
+            this.onWidzardCancel();
             this.loading.subscribe = false;
         });
     }
 
-    onWidzardCandel () {
+    onWidzardCancel () {
         this.$state.go("^");
     }
 
