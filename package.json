@@ -1,6 +1,6 @@
 {
   "name": "ovh-manager-dedicated",
-  "version": "9.2.1",
+  "version": "9.2.2",
   "private": true,
   "description": "OVH Control Panel Dedicated UI",
   "main": "server/app.js",
@@ -100,6 +100,7 @@
     "babel-plugin-transform-object-assign": "^6.8.0",
     "babel-preset-es2015": "^6.18.0",
     "base64url": "^2.0.0",
+    "chalk": "^2.3.2",
     "compression": "^1.6.2",
     "ejs": "~0.8.4",
     "errorhandler": "^1.5.0",
@@ -126,7 +127,6 @@
     "grunt-newer": "^1.3.0",
     "grunt-ng-annotate": "~2.0.2",
     "grunt-ng-constant": "~1.0.0",
-    "grunt-open": "^0.2.3",
     "grunt-postcss": "^0.6.0",
     "grunt-prettier-eslint": "^0.1.0",
     "grunt-protractor-runner": "^3.0.0",

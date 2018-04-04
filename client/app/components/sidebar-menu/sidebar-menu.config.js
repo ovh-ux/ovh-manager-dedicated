@@ -1,8 +1,8 @@
 angular.module("App")
-    .run(($q, SidebarMenu, Products, User, constants, $translatePartialLoader, $translate, DedicatedCloud, Nas, CdnDomain, featureAvailability) => {
+    .run(($q, SidebarMenu, Products, User, $translatePartialLoader, $translate, DedicatedCloud, Nas, CdnDomain, featureAvailability) => {
 
         function buildSidebarActions () {
-            return User.getUser().then((user) => {
+            return User.getUrlOf("dedicatedOrder").then((dedicatedOrderUrl) => {
                 const actionsMenuOptions = [];
 
                 if (featureAvailability.hasNas()) {
@@ -22,7 +22,7 @@ angular.module("App")
                 actionsMenuOptions.push({
                     title: $translate.instant("navigation_left_dedicatedServers"),
                     icon: "ovh-font ovh-font-server",
-                    href: constants.urls[user.ovhSubsidiary].dedicatedOrder,
+                    href: dedicatedOrderUrl,
                     target: "_blank"
                 });
 
