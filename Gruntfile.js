@@ -19,6 +19,12 @@ module.exports = function (grunt) {
     const target = grunt.option("target") || grunt.option("zone") || "EU";
     const targetsAvailable = ["EU", "CA", "US"];
 
+    let doOpen = grunt.option("open");
+    if (doOpen === undefined) {
+        // Default value
+        doOpen = true;
+    }
+
     const filesJsModules = _.map(
         assets[target].modules,
         (module) => {
@@ -1148,11 +1154,15 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask("serve", [
+    var serveTasks = [
         "buildDev",
         "env:dev",
         "express:dev",
-        "open",
-        "watch"
-    ]);
+    ];
+    if (doOpen) {
+        serveTasks.push('open');
+    }
+    serveTasks.push('watch');
+
+    grunt.registerTask("serve", serveTasks);
 };
