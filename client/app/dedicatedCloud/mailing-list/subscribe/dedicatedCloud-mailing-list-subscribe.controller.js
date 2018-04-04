@@ -18,6 +18,8 @@ angular.module("App").controller("DedicatedCloudMailingCtrl", class DedicatedClo
         this.model = {
             email: null
         };
+
+        this.pccMl = "pcc@ml.ovh.net";
     }
 
     /* =============================
@@ -27,7 +29,7 @@ angular.module("App").controller("DedicatedCloudMailingCtrl", class DedicatedClo
     onWidzardFinish () {
         this.loading.subscribe = true;
 
-        return this.dedicatedCloudMailingList.postMailingList(this.model.email, "pcc@ml.ovh.net").then(() =>
+        return this.dedicatedCloudMailingList.postMailingList(this.model.email, this.pccMl).then(() =>
             this.Alerter.success(this.translator.tr("dedicatedCloud_subscribe_mailing_step2_success", this.model.email), "dedicatedCloud")
         ).catch((error) =>
             this.Alerter.error([this.translator.tr("dedicatedCloud_subscribe_mailing_step2_error", this.model.email), _.get(error, "message")].join(". "), "dedicatedCloud_alert")
@@ -52,7 +54,7 @@ angular.module("App").controller("DedicatedCloudMailingCtrl", class DedicatedClo
 
         // need to check if user can subscribe to ML
         return this.dedicatedCloudMailingList.getAvailableMailingLists().then((mailingLists) => {
-            this.canSubscribe = _.some(mailingLists, "pcc@ml.ovh.net");
+            this.canSubscribe = mailingLists.indexOf(this.pccMl) > -1;
 
             if (this.canSubscribe) {
                 return this.User.getUser().then((user) => {
