@@ -1,3 +1,13 @@
+<a name="9.2.3"></a>
+## [9.2.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.2...v9.2.3) (2018-04-04)
+
+
+### Bug Fixes
+
+* **sidebar:** use User.getUrlOf for url retrieval ([333c452](https://github.com/ovh-ux/ovh-manager-dedicated/commit/333c452))
+
+
+
 <a name="9.2.2"></a>
 ## [9.2.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.1...v9.2.2) (2018-04-03)
 
