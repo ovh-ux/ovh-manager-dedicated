@@ -1,25 +1,37 @@
-angular.module("App").controller("DedicatedCloudTerminateCtrl", ($scope, $stateParams, constants, DedicatedCloud, Alerter) => {
-    "use strict";
+angular.module("App").controller("DedicatedCloudTerminateCtrl", class DedicatedCloudTerminateCtrl {
 
-    $scope.hosting = $scope.currentActionData;
-    $scope.loaders = {
-        loading: false
-    };
+    constructor ($state, $stateParams, translator, DedicatedCloud, Alerter) {
+        this.$state = $state;
+        this.$stateParams = $stateParams;
+        this.translator = translator;
+        this.DedicatedCloud = DedicatedCloud;
+        this.Alerter = Alerter;
 
-    $scope.terminate = function () {
-        $scope.loaders.loading = true;
-        DedicatedCloud.terminate($stateParams.productId)
-            .then(
-                () => {
-                    Alerter.success($scope.tr("dedicatedCloud_close_service_success"), $scope.alerts.dashboard);
-                },
-                (err) => {
-                    Alerter.alertFromSWS($scope.tr("dedicatedCloud_close_service_error"), err, $scope.alerts.dashboard);
-                }
-            )
+        this.loading = {
+            terminate: false
+        };
+    }
+
+    /* =============================
+    =            EVENTS            =
+    ============================== */
+
+    onTerminateBtnClick () {
+        this.loading.terminate = true;
+
+        return this.DedicatedCloud.terminate(`${this.$stateParams.productId} lksqhjf lqhsfkj sqhfkqfsh`)
+            .then(() => this.Alerter.success(this.translator.tr("dedicatedCloud_close_service_success"), "dedicatedCloud"))
+            .catch((error) => this.Alerter.alertFromSWS(this.translator.tr("dedicatedCloud_close_service_error"), error, "dedicatedCloud"))
             .finally(() => {
-                $scope.loaders.loading = false;
-                $scope.resetAction();
+                this.loading.terminate = false;
+                this.onCancelBtnClick();
             });
-    };
+    }
+
+    onCancelBtnClick () {
+        this.$state.go("^");
+    }
+
+    /* -----  End of EVENTS  ------ */
+
 });

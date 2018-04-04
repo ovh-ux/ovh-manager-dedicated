@@ -1,21 +1,21 @@
-<div data-ng-controller="DedicatedCloudTerminateCtrl">
+<div class="dedicatedCloud-mailing-list-subscribe">
 
-    <div data-wizard
-         data-wizard-on-cancel="resetAction"
-         data-wizard-on-finish="terminate"
-         data-wizard-title="i18n.dedicatedCloud_close_service">
+    <oui-modal data-title="{{ i18n.dedicatedCloud_close_service }}"
+               data-primary-action="$ctrl.onTerminateBtnClick()"
+               data-primary-label="{{ i18n.wizard_confirm }}"
+               data-secondary-action="$ctrl.onCancelBtnClick()"
+               data-secondary-label="{{ i18n.wizard_cancel }}"
+               data-on-dismiss="$ctrl.onCancelBtnClick()"
+               data-loading="$ctrl.loading.terminate">
 
-        <div data-wizard-step>
+        <oui-message class="d-block my-4"
+                     data-type="error">
+            <span data-i18n-static="dedicatedCloud_close_service_warning"></span>
+        </oui-message>
 
-            <div class="alert alert-danger"
-                 role="alert"
-                 data-i18n-static="dedicatedCloud_close_service_warning">
-            </div>
-            <p data-i18n-static="dedicatedCloud_close_service_desc"></p>
-            <p data-i18n-static="dedicatedCloud_close_service_question"></p>
+        <p data-i18n-static="dedicatedCloud_close_service_desc"></p>
+        <p data-i18n-static="dedicatedCloud_close_service_question"></p>
 
-        </div>
-
-    </div>
+    </oui-modal>
 
 </div>
