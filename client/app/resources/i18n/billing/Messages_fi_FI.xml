@@ -37,8 +37,8 @@
    <translation id="autorenew_service_update_date_button_caption" qtlid="300253">Tasaa uusimispäivät.</translation>
    <translation id="autorenew_service_resiliate_button" qtlid="56337">Irtisano palvelu</translation>
    <translation id="autorenew_service_resiliate_button_title" qtlid="243604">Palvelun irtisanominen: {0}</translation>
-   <translation id="autorenew_service_disable_button" qtlid="416085">Poista automaattinen maksu</translation>
-   <translation id="autorenew_service_enable_button" qtlid="416098">Aktivoi manuaalinen maksu</translation>
+   <translation id="autorenew_service_disable_button" qtlid="416085">Poista automaattinen maksu käytöstä</translation>
+   <translation id="autorenew_service_enable_button" qtlid="416098">Aktivoi automaattinen maksu</translation>
    <translation id="autorenew_service_renew_button" qtlid="416111">Maksa palvelu</translation>
    <translation id="autorenew_service_renew_button_title" qtlid="416124">Maksa palvelu: {0} (Uusi ikkuna)</translation>
    <translation id="autorenew_service_canceldelete_button" qtlid="285350">Peru irtisanominen</translation>
@@ -149,13 +149,13 @@
    <translation id="billing_date_range_text" qtlid="374456">{0} - {1}</translation>
    <translation id="autorenew_service_confirm" qtlid="31498">Hyväksy</translation>
 
-   <translation id="autorenew_service_disable_autorenew_title" qtlid="416085">Poista automaattinen maksu</translation>
+   <translation id="autorenew_service_disable_autorenew_title" qtlid="416085">Poista automaattinen maksu käytöstä</translation>
    <translation id="autorenew_service_disable_autorenew_desc1" qtlid="416189"><strong>{0}</strong>-palvelun automaattinen maksu poistetaan.</translation>
    <translation id="autorenew_service_disable_autorenew_desc2" qtlid="416202">Palvelun säilyttämiseksi suorita maksu hyvissä ajoin ennen nykyisen tilauskauden loppua. <br/> Muussa tapauksessa palvelu <strong>irtisanotaan automaattisesti tilauskauden päätyttyä</strong> {0} ja siihen liittyvä data poistetaan automaattisesti ja peruuttamattomasti.</translation>
    <translation id="autorenew_service_disable_autorenew_desc3" qtlid="416215">Automaattisen maksun voi ottaa uudelleen käyttöön siihen asti, että tilauskauden päättymiseen on 24 tuntia.</translation>
    <translation id="autorenew_service_disable_autorenew_warn" qtlid="416228">Palvelun erääntymisestä ei lähetetä muistutusviestejä.</translation>
 
-   <translation id="autorenew_service_enable_autorenew_title" qtlid="416098">Aktivoi manuaalinen maksu</translation>
+   <translation id="autorenew_service_enable_autorenew_title" qtlid="416098">Aktivoi automaattinen maksu</translation>
    <translation id="autorenew_service_enable_autorenew_desc1" qtlid="416241">Automaattinen maksu aktivoidaan palvelulle <strong>{0}</strong>.</translation>
    <translation id="autorenew_service_enable_autorenew_desc2" qtlid="416254">Palvelu uusitaan automaattisesti {0}.</translation>
    <translation id="autorenew_service_enable_autorenew_desc3" qtlid="416267">Voit muuttaa maksuväliä.</translation>
@@ -178,7 +178,7 @@
    <translation id="autorenew_service_activate_alert" qtlid="381959">Vähintään yhdessä palvelussasi on automaattinen uusinta, mutta et ole vielä hyväksynyt valintaa. </translation>
 
    <translation id="autorenew_service_disable_all_domains" qtlid="416280">Poista automaattinen maksu verkkotunnuksilta</translation>
-   <translation id="autorenew_service_disable_all_domains_title" qtlid="416085">Poista automaattinen maksu</translation>
+   <translation id="autorenew_service_disable_all_domains_title" qtlid="416085">Poista automaattinen maksu käytöstä</translation>
    <translation id="autorenew_service_disable_all_domains_desc1" qtlid="444761"><strong>Kaikkien verkkotunnustesi</strong> automaattinen maksu poistetaan käytöstä ainoastaan niiltä, joiden laskutusyhteyshenkilö olet.</translation>
    <translation id="autorenew_service_disable_all_domains_desc2" qtlid="416306">Palvelujen säilyttämiseksi suorita maksu hyvissä ajoin ennen nykyisen tilauskauden loppua.</translation>
    <translation id="autorenew_service_disable_all_domains_desc3" qtlid="416319">Muussa tapauksessa palvelut <strong>irtisanotaan automaattisesti tilauskauden päätyttyä</strong> {0} ja niihin liittyvä data poistetaan peruuttamattomasti.</translation>
@@ -344,6 +344,7 @@
    <translation id="refunds_table_head_total_with_VAT" qtlid="20647">Arvonlisäverollinen hinta</translation>
    <translation id="refunds_table_download" qtlid="39286">Lataa</translation>
    <translation id="refunds_table_empty" qtlid="184126">Valitulle ajanjaksolle ei ole hyvityslaskuja</translation>
+   <translation id="refunds_table_account_no_information" qtlid="472671">Tietoja ei saatavilla</translation>
    <translation id="ovhAccount_partial_error" qtlid="191902">Joitakin siirtoja ei näytetä virhetilanteen takia, mutta tämä ei vaikuta maksuun.</translation>
    <translation id="ovhAccount_title2" qtlid="383950">Prepaid-tilin tapahtumat</translation>
    <translation id="ovhAccount_no_account" qtlid="383963">Sinulla ei ole prepaid-tiliä</translation>
