@@ -48,7 +48,9 @@ export function login (req, res) {
 export function auth (req, res) {
     const origin = req.headers.host;
     const protocol = req.protocol || "http";
-    const headers = req.headers;
+    const headers = {
+        contentType: "application/json"
+    };
     headers.host = config.ssoAuth.host;
 
     proxy.post({
