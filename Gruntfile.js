@@ -117,11 +117,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-        open: {
-            server: {
-                url: "https://localhost:<%= express.options.port %>"
-            }
-        },
 
         eslint: {
             options: {
@@ -1147,7 +1142,6 @@ module.exports = function (grunt) {
         "buildDev",
         "env:dev",
         "express:dev",
-        "open",
         "watch"
     ]);
 };
