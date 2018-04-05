@@ -8,7 +8,7 @@
         <div class="row-fluid">
             <div class="module-useraccount-sections-contacts-container span12">
 
-                <div class="row-fluid marginb10">
+                <div class="row-fluid mb-3">
                     <div class="span2">
                         <button data-ng-click="ctrl.addContact()"
                                 class="btn btn-block expert fs12" type="button">
@@ -30,7 +30,7 @@
 
                     <tbody data-ng-show="ctrl.loaders.contacts">
                         <tr>
-                            <td colspan="4" class="center">
+                            <td colspan="4" class="text-center">
                                 <span class="span12 loader center"></span>
                             </td>
                         </tr>
@@ -38,7 +38,7 @@
 
                     <tbody data-ng-show="!ctrl.loaders.contacts && ctrl.services.length === 0">
                         <tr>
-                            <td colspan="4" class="center">
+                            <td colspan="4" class="text-center">
                                 <span data-i18n-static="useraccount_contacts_no_services"></span>
                             </td>
                         </tr>
@@ -50,7 +50,7 @@
                             <td class="wordbreak" data-ng-bind="::service.lastName"></td>
                             <td class="wordbreak" data-ng-bind="::service.email"></td>
 
-                            <td class="center">
+                            <td class="text-center">
                                 <div class="dropdown pull-right" dropdown>
                                     <a class="dropdown-toggle" dropdown-toggle href="#">
                                         <i class="icon-action-multiple"></i>&nbsp;<span class="caret"></span>

@@ -213,7 +213,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
             }
 
             let exchangeAbsoluteUrl;
-            if (constants.target === "EU" && constants.UNIVERS !== "web") {
+            if (constants.target === "EU") {
                 // if other univers (cloud, dedicated, etc) redirect towards web univers
                 exchangeAbsoluteUrl = constants.MANAGER_URLS.web;
             } else {
@@ -221,7 +221,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
             }
 
             $http
-                .get(["/sws/exchange", organization, exchangeName].join("/"), {
+                .get(`/sws/exchange/${organization}/${exchangeName}`, {
                     serviceType: "aapi"
                 })
                 .then((exchange) => {

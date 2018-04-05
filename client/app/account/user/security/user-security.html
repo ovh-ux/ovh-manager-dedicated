@@ -54,7 +54,7 @@
                                     data-i18n-static="user_account_security_password_title">
                                 </h4>
                                 <button type="button"
-                                        class="oui-button oui-button_primary float-right no-margin"
+                                        class="oui-button oui-button_primary float-right m-0"
                                         data-ng-click="setAction('password/user-password')"
                                         data-i18n-static="user_account_edit">
                                 </button>
@@ -583,7 +583,7 @@
                                                     data-i18n-static="user_ipRestrictions_ip">
                                                 </th>
                                                 <th scope="col"
-                                                    class="center">
+                                                    class="text-center">
                                                     <span data-i18n-static="user_ipRestrictions_alert"></span>
                                                     <span class="oui-icon oui-icon-help_circle"
                                                           data-uib-tooltip="{{ tr('user_ipRestrictions_alert_information') }}"
@@ -595,7 +595,7 @@
                                                 <th scope="col"
                                                     data-i18n-static="user_ipRestrictions_rule">
                                                 </th>
-                                                <th class="center"></th>
+                                                <th class="text-center"></th>
                                             </tr>
                                         </thead>
                                         <tbody data-ng-show="loaders.list">
@@ -608,7 +608,7 @@
                                         </tbody>
                                         <tbody data-ng-show="list.length == 0 && !loaders.list">
                                             <tr>
-                                                <td class="center"
+                                                <td class="text-center"
                                                     colspan="4"
                                                     data-i18n-static="user_ipRestrictions_table_empty">
                                                 </td>
@@ -619,7 +619,7 @@
                                                 <th scope="row"
                                                     data-ng-bind="restriction.ip">
                                                 </th>
-                                                <td class="center">
+                                                <td class="text-center">
                                                     <span class="glyphicon"
                                                           data-ng-hide="restriction == ipRestrictionCurrentEditBack"
                                                           data-ng-class="{
