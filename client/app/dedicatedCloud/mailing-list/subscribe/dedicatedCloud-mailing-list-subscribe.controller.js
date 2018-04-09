@@ -19,7 +19,7 @@ angular.module("App").controller("DedicatedCloudMailingCtrl", class DedicatedClo
             email: null
         };
 
-        this.pccMl = DEDICATEDCLOUD_MAILING_LIST;
+        this.pccMl = `${DEDICATEDCLOUD_MAILING_LIST}lqkjsflqjs`;
     }
 
     /* =============================
