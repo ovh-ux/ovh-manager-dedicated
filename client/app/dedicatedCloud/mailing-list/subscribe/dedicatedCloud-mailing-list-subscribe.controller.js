@@ -1,6 +1,6 @@
 angular.module("App").controller("DedicatedCloudMailingCtrl", class DedicatedCloudMailingCtrl {
 
-    constructor ($state, User, dedicatedCloudMailingList, Alerter, translator) {
+    constructor ($state, User, dedicatedCloudMailingList, Alerter, translator, DEDICATEDCLOUD_MAILING_LIST) {
         // dependencies injections
         this.$state = $state;
         this.User = User;
@@ -19,7 +19,7 @@ angular.module("App").controller("DedicatedCloudMailingCtrl", class DedicatedClo
             email: null
         };
 
-        this.pccMl = "pcc@ml.ovh.net";
+        this.pccMl = `${DEDICATEDCLOUD_MAILING_LIST}lqkjsflqjs`;
     }
 
     /* =============================
@@ -34,12 +34,12 @@ angular.module("App").controller("DedicatedCloudMailingCtrl", class DedicatedClo
         ).catch((error) =>
             this.Alerter.error([this.translator.tr("dedicatedCloud_subscribe_mailing_step2_error", this.model.email), _.get(error, "message")].join(". "), "dedicatedCloud")
         ).finally(() => {
-            this.onWidzardCandel();
+            this.onWidzardCancel();
             this.loading.subscribe = false;
         });
     }
 
-    onWidzardCandel () {
+    onWidzardCancel () {
         this.$state.go("^");
     }
 
