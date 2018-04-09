@@ -209,8 +209,8 @@ angular
          *  As initial URL synchronization is delayed we can check all modal layout states and check if toChilds attribute is setted. For these states we will need to create new states as follow:
          *  We will take the direct parent of the modal layout state and create new states with the same layout configuration to all of its child states.
          */
-        const layoutStates = _.filter($stateRegistry.states, (state) => _.get(state, "layout.toChilds") === true || _.get(state, "layout.toChilds", []).length);
-        const getChildStates = (parentStateName) => _.filter($stateRegistry.states, (state) => _.startsWith(state.name, `${parentStateName}.`));
+        const layoutStates = _.filter($stateRegistry.states, ({ layout }) => _.get(layout, "toChilds") === true || _.size(layout, "toChilds", []));
+        const getChildStates = (parentStateName) => _.filter($stateRegistry.states, ({ name }) => _.startsWith(name, `${parentStateName}.`));
 
         layoutStates.forEach((layoutState) => {
             let childStates;
@@ -276,7 +276,7 @@ angular
         $stateProvider.decorator("layout", (state) => {
             let modalLayout;
 
-            if (state.self.layout === "modal" || _.get(state, "self.layout.name") === "modal") {
+            if (_.get(state, "self.layout") === "modal" || _.get(state, "self.layout.name") === "modal") {
                 modalLayout = {
                     name: "modal",
                     toChilds: state.self.layout.toChilds || false,
