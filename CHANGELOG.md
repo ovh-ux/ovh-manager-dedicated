@@ -1,3 +1,13 @@
+<a name="9.2.6"></a>
+## [9.2.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.5...v9.2.6) (2018-04-09)
+
+
+### Bug Fixes
+
+* ui-kit font path ([e2b96e4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e2b96e4))
+
+
+
 <a name="9.2.5"></a>
 ## [9.2.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.4...v9.2.5) (2018-04-09)
 
