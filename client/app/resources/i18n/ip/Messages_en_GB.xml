@@ -403,14 +403,14 @@
    <translation id="ip_firewall_rule_protocol_tcp" qtlid="141821">TCP</translation>
    <translation id="ip_firewall_rule_protocol_udp" qtlid="141834">UDP</translation>
    <translation id="ip_firewall_rule_ip_any" qtlid="141847">all</translation>
-   <translation id="ip_firewall_enable_title" qtlid="141860">Activate firewall</translation>
+   <translation id="ip_firewall_enable_title" qtlid="141860">Enable firewall</translation>
    <translation id="ip_firewall_enable_question" qtlid="141873">Are you sure you want to enable the firewall on the {0} IP?</translation>
    <translation id="ip_firewall_enable_success" qtlid="141886">The firewall will be enabled in a few moments on {0} IP.</translation>
    <translation id="ip_firewall_enable_failed" qtlid="138779">An error occurred on enabling the firewall on {0} IP</translation>
    <translation id="ip_firewall_disable_title" qtlid="141899">Disable the firewall</translation>
    <translation id="ip_firewall_disable_question" qtlid="141912">Are you sure you want to disable the firewall on the {0} IP?</translation>
-   <translation id="ip_firewall_disable_success" qtlid="141925">The firewall will be disabled in a few moments on {0} IP.</translation>
-   <translation id="ip_firewall_disable_failed" qtlid="141938">An error occurred on disabling the firewall on the {0} IP</translation>
+   <translation id="ip_firewall_disable_success" qtlid="141925">The firewall will be disabled in a few moments on the IP {0}.</translation>
+   <translation id="ip_firewall_disable_failed" qtlid="141938">An error occurred on disabling the firewall on the IP {0}.</translation>
    <translation id="ip_firewall_new_title" qtlid="141951">Create firewall</translation>
    <translation id="ip_firewall_new_question" qtlid="141964">Are you sure you want to create the firewall on the {0} IP?</translation>
    <translation id="ip_firewall_new_success" qtlid="141977">The firewall will be created in a few moments on the {0} IP.</translation>
@@ -440,8 +440,8 @@
    <translation id="ip_firewall_rule_flags_syn" qtlid="175907">SYN</translation>
    <translation id="ip_firewall_rule_flags_ESTABLISHED" qtlid="175920">ESTABLISHED</translation>
    <translation id="ip_firewall_rule_flags_established" qtlid="175920">ESTABLISHED</translation>
-   <translation id="ip_firewall_rule_flags_NONE" qtlid="30646">No</translation>
-   <translation id="ip_firewall_rule_flags_none" qtlid="30646">No</translation>
+   <translation id="ip_firewall_rule_flags_NONE" qtlid="30646">None</translation>
+   <translation id="ip_firewall_rule_flags_none" qtlid="30646">None</translation>
    <translation id="ip_firewall_add_summary" qtlid="175933">Please check the information entered before you confirm the adding of the rule.</translation>
    <translation id="ip_firewall_remove_rule_fail" qtlid="141756">An error occurred on adding the rule.</translation>
 
@@ -607,10 +607,10 @@
    <translation id="iplb_infos_state_free" qtlid="6862">Free</translation>
    <translation id="iplb_infos_state_quarantined" qtlid="223723">In quarantine</translation>
    <translation id="iplb_infos_state_suspended" qtlid="125096">Suspended</translation>
-   <translation id="iplb_infos_stickiness_none" qtlid="30646">No</translation>
+   <translation id="iplb_infos_stickiness_none" qtlid="30646">None</translation>
    <translation id="iplb_infos_stickiness_cookie" qtlid="223736">Cookie</translation>
    <translation id="iplb_infos_stickiness_sourceIp" qtlid="138376">Source IP</translation>
-   <translation id="iplb_infos_ssl_none" qtlid="30646">No</translation>
+   <translation id="iplb_infos_ssl_none" qtlid="30646">None</translation>
    <translation id="iplb_infos_ssl_ovh" qtlid="223749">Provided by OVH</translation>
    <translation id="iplb_infos_ssl_customer" qtlid="223762">Provided by the customer</translation>
 
@@ -667,7 +667,7 @@
    <translation id="iplb_table_backends_header_mainbackendip" qtlid="224178">Is the emergency back-end of...</translation>
    <translation id="iplb_table_backends_no_backends" qtlid="200274">The list is empty.</translation>
 
-   <translation id="iplb_backend_probe_NONE" qtlid="30646">No</translation>
+   <translation id="iplb_backend_probe_NONE" qtlid="30646">None</translation>
    <translation id="iplb_backend_probe_help_NONE" qtlid="224191">None: no verification</translation>
    <translation id="iplb_backend_probe_help_HTTPICMP" qtlid="224204">HTTP/ICMP: Tests on the indicated port</translation>
    <translation id="iplb_backend_probe_help_OCO" qtlid="224217">OCO: (OVH Check-out) Tests on port 79</translation>
