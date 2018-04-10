@@ -18,7 +18,7 @@
    <translation id="autorenew_service_renew_change" qtlid="37875">Edit</translation>
    <translation id="autorenew_service_frequency" qtlid="405279">Type</translation>
    <translation id="autorenew_service_renew_mass_migration_soon" qtlid="398768">The migration of existing products towards the new automatic renewal engine will be offered soon.</translation>
-   <translation id="autorenew_service_renew_requires_mean_and_date" qtlid="349325">In order to finalise the activation of the automatic renewal, please add a new payment method so that you will be able to choose your withdrawal date.</translation>
+   <translation id="autorenew_service_renew_requires_mean_and_date" qtlid="349325">In order to finalise the activation of automatic renewal, please add a new payment method so that you will be able to choose your withdrawal date.</translation>
    <translation id="autorenew_service_renew_auto" qtlid="134215">Automatic</translation>
    <translation id="autorenew_service_renew_manuel" qtlid="219797">Manual</translation>
    <translation id="autorenew_service_renew_delete_at_expiration" qtlid="399736">Cancel on expiry</translation>
@@ -41,10 +41,10 @@
    <translation id="autorenew_service_enable_button" qtlid="416098">Activate automatic payment</translation>
    <translation id="autorenew_service_renew_button" qtlid="416111">Pay for the service</translation>
    <translation id="autorenew_service_renew_button_title" qtlid="416124">Pay for service: {0} (new window)</translation>
-   <translation id="autorenew_service_canceldelete_button" qtlid="285350">Cancel cancellation </translation>
+   <translation id="autorenew_service_canceldelete_button" qtlid="285350">Cancel termination </translation>
    <translation id="autorenew_service_canceldelete_button_title" qtlid="243695">Cancel my request to terminate the service: {0}</translation>
    <translation id="autorenew_service_renew_frequency_title" qtlid="212998">Payment frequency</translation>
-   <translation id="autorenew_service_renew_frequency_value" qtlid="402971">Automatic: All the {0} months </translation>
+   <translation id="autorenew_service_renew_frequency_value" qtlid="402971">Automatic: Every {0} months </translation>
    <translation id="autorenew_search_input_title" qtlid="300629">Search for services by ID. </translation>
    <translation id="autorenew_service_expand_sub_services" qtlid="300642">Display or hide associated services. </translation>
    <translation id="autorenew_service_select_all_checkbox" qtlid="300655">Select all services. </translation>
@@ -111,7 +111,7 @@
    <translation id="autorenew_service_type_MIS" qtlid="285408">Managed infrastructure </translation>
    <translation id="autorenew_service_type_HOSTING_RESELLER" qtlid="325289">Multi-site hosting</translation>
    <translation id="autorenew_service_type_EMAIL_DOMAIN" qtlid="286513">MX Plan</translation>
-   <translation id="autorenew_service_type_EMAIL_PRO" qtlid="374893">E-mail Pro</translation>
+   <translation id="autorenew_service_type_EMAIL_PRO" qtlid="374893">Business Email</translation>
    <translation id="autorenew_service_type_VIP" qtlid="104626">VIP</translation>
 
    <translation id="autorenew_service_type_CAAS_CONTAINERS" qtlid="343148">CaaS Containers</translation>
@@ -183,7 +183,7 @@
    <translation id="autorenew_service_disable_all_domains_desc2" qtlid="416306">To keep using your services, you must make your next payments before their expiry date.</translation>
    <translation id="autorenew_service_disable_all_domains_desc3" qtlid="416319">Failure to do so will result in your services <strong>being automatically cancelled on their expiry date</strong>. All data linked to the automatic payment of your services will be irreversibly deleted.</translation>
    <translation id="autorenew_service_disable_all_domains_desc4" qtlid="416332">You can reactivate automatic payment for your services up to 24 days before they expire.</translation>
-   <translation id="autorenew_service_disable_all_domains_success" qtlid="436007">Your request to disable automatic payment has been processed. It will take effect in a few hours.</translation>
+   <translation id="autorenew_service_disable_all_domains_success" qtlid="436007">Your request to disable automatic payment has been received. It will take effect in a few hours.</translation>
 
    <translation id="billingError" qtlid="184074">An has error occurred while loading the information</translation>
    <translation id="title_from" qtlid="226214">from</translation>
@@ -217,21 +217,21 @@
    <translation id="common_payment_type_deferredPaymentAccount" qtlid="406931">Deferred payment account</translation>
    <translation id="common_payment_type_DEFERRED_PAYMENT_ACCOUNT" qtlid="406931">Deferred payment account</translation>
    <translation id="common_payment_type_deposit" qtlid="139728">Deposit</translation>
-   <translation id="common_payment_type_edinar" qtlid="139741"></translation>
+   <translation id="common_payment_type_edinar" qtlid="139741">e-DINAR</translation>
    <translation id="common_payment_type_fidelityPoints" qtlid="139754">Loyalty points</translation>
    <translation id="common_payment_type_FIDELITY_POINTS" qtlid="139754">Loyalty points</translation>
    <translation id="common_payment_type_free" qtlid="130495">Free</translation>
-   <translation id="common_payment_type_ideal" qtlid="139767"></translation>
+   <translation id="common_payment_type_ideal" qtlid="139767">iDEAL</translation>
    <translation id="common_payment_type_mandat" qtlid="139780">Postal order</translation>
-   <translation id="common_payment_type_multibanco" qtlid="139793"></translation>
-   <translation id="common_payment_type_none" qtlid="30646">No</translation>
+   <translation id="common_payment_type_multibanco" qtlid="139793">Multibanco</translation>
+   <translation id="common_payment_type_none" qtlid="30646">None</translation>
    <translation id="common_payment_type_ovhAccount" qtlid="48926">Prepaid account</translation>
    <translation id="common_payment_type_OVH_ACCOUNT" qtlid="48926">Prepaid account</translation>
-   <translation id="common_payment_type_paymentMandate" qtlid="139819"></translation>
-   <translation id="common_payment_type_PAYMENT_MANDATE" qtlid="139819"></translation>
+   <translation id="common_payment_type_paymentMandate" qtlid="139819">Payment order</translation>
+   <translation id="common_payment_type_PAYMENT_MANDATE" qtlid="139819">Payment order</translation>
    <translation id="common_payment_type_paypal" qtlid="98228">PayPal</translation>
    <translation id="common_payment_type_payu" qtlid="373480">PayU</translation>
-   <translation id="common_payment_type_platnosci" qtlid="139832"></translation>
+   <translation id="common_payment_type_platnosci" qtlid="139832">Płatności</translation>
    <translation id="common_payment_type_refund" qtlid="139845">Credit note</translation>
    <translation id="common_payment_type_transfer" qtlid="89833">Transfer</translation>
    <translation id="common_payment_type_withdrawal" qtlid="139858">Recurring payment</translation>
@@ -270,20 +270,20 @@
    <translation id="history_table_head_actions" qtlid="72809">Actions</translation>
    <translation id="history_table_actions_tooltip" qtlid="374547">More details of this bill </translation>
    <translation id="history_table_empty" qtlid="140027">You have no invoices for the month selected</translation>
-   <translation id="history_table_information_not_available" qtlid="374560">Information not-available </translation>
+   <translation id="history_table_information_not_available" qtlid="374560">Information not available </translation>
    <translation id="history_table_debt_due_immediately" qtlid="343265">Immediate</translation>
    <translation id="history_table_debt_paid" qtlid="34596">Paid</translation>
 
    <translation id="payments_error" qtlid="177522">An error occurred. We apologise for any inconvenience caused.</translation>
    <translation id="payments_title" qtlid="398781">Payment tracking</translation>
-   <translation id="payments_description" qtlid="398794">The following list shows payments that were made with your default payment method. Each of these payments can include one or several invoices. </translation>
+   <translation id="payments_description" qtlid="398794">The following list shows payments that were made with your default payment method. Each of these payments can include one or several bills. </translation>
    <translation id="payments_table_head_date" qtlid="398807">Payment date</translation>
    <translation id="payments_table_head_id" qtlid="16445">Reference</translation>
    <translation id="payments_table_head_type" qtlid="140014">Payment method</translation>
    <translation id="payments_table_head_amount" qtlid="190459">Total sum</translation>
    <translation id="payments_table_head_actions" qtlid="72809">Actions</translation>
    <translation id="payments_table_actions_tooltip" qtlid="398820">More information on this payment</translation>
-   <translation id="payments_table_type_not_available" qtlid="374560">Information not-available </translation>
+   <translation id="payments_table_type_not_available" qtlid="374560">Information not available </translation>
    <translation id="payments_table_empty" qtlid="398833">You have no payment for the selected period.</translation>
    <translation id="payments_details_link" qtlid="398846">See payment details</translation>
    <translation id="payment_details_payment_id" qtlid="16445">Reference</translation>
@@ -329,7 +329,7 @@
    <translation id="orders_retract_confirmation_text" qtlid="410676">Yes, I want to cancel that order.</translation>
    <translation id="orders_retract_description1" qtlid="410689">You have a right of withdrawal for a period of 14 days, starting on the date of the order. In the event of withdrawal, you will receive a refund - within 30 days from the withdrawal - for the money originally paid, minus the days of service usage on a prorate basis. </translation>
    <translation id="orders_retract_description2" qtlid="410702">Warning: withdrawal done through this form is valid for all products associated with this order. Withdrawal is effective immediately.</translation>
-   <translation id="orders_retract_alert" qtlid="410715">Confirmation will result in the automatic and irreversible deletion of all data associated with this order (including backups). Before you continue and confirm your withdrawal, it is your responsibility to take all necessary measures for the safekeeping of your data and the continuity of your activities. OVH assumes no responsibility in that regard.</translation>
+   <translation id="orders_retract_alert" qtlid="410715">Confirmation will result in the automatic and irreversible deletion of all data associated with this order (including backups). Before you continue and confirm your withdrawal, it is your responsibility to take all necessary measures for the safekeeping of your data and the continuity of your activities. OVH assumes no responsibility in this regard.</translation>
    <translation id="orders_retract_success" qtlid="410728">Order {0} has been cancelled.</translation>
    <translation id="orders_retract_error" qtlid="410741">An error has occurred during the cancellation of your order.</translation>
 
@@ -342,8 +342,8 @@
    <translation id="refunds_table_head_total_with_VAT" qtlid="20647">Amount incl. VAT</translation>
    <translation id="refunds_table_download" qtlid="39286">Download</translation>
    <translation id="refunds_table_empty" qtlid="184126">You don't have any credits for the period selected.</translation>
-   <translation id="refunds_table_account_no_information" qtlid="472671">Informations indisponibles</translation>
-   <translation id="ovhAccount_partial_error" qtlid="191902">Some movements are not displayed due to an error, but the credit will not be affected.</translation>
+   <translation id="refunds_table_account_no_information" qtlid="472671">No information available</translation>
+   <translation id="ovhAccount_partial_error" qtlid="191902">Some movements are not displayed due to an error, but the balance will not be affected.</translation>
    <translation id="ovhAccount_title2" qtlid="383950">Transactions on my prepaid account</translation>
    <translation id="ovhAccount_no_account" qtlid="383963">You don't have a prepaid account</translation>
    <translation id="ovhAccount_balance" qtlid="140144">Balance:</translation>
@@ -377,7 +377,7 @@
    <translation id="ovhAccount_create_alert_wizard_button" qtlid="369927">Set threshold </translation>
    <translation id="ovhAccount_create_alert_success" qtlid="369940">Your alert has been registered. </translation>
    <translation id="ovhAccount_create_alert_error" qtlid="369953">Your alert could not be registered due to a problem.</translation>
-   <translation id="ovhAccount_create_alert_amount_resume" qtlid="369966">Alter threshold set: {0}</translation>
+   <translation id="ovhAccount_create_alert_amount_resume" qtlid="369966">Alert threshold set: {0}</translation>
    <translation id="ovhAccount_no_alert" qtlid="369979">No alert set </translation>
    <translation id="ovhAccount_create_alert_input_error" qtlid="369992">Please enter a positive whole number </translation>
 
@@ -395,11 +395,12 @@
    <translation id="payment_mean_contact_presentation_reuse_contact" qtlid="381868">by using an already existing contact</translation>
    <translation id="payment_mean_contact_presentation_create_contact" qtlid="381881">by creating a new contact</translation>
    <translation id="payment_mean_contact_presentation_billingContactId_title" qtlid="451374">Credit card address</translation>
+   <translation id="payment_mean_contact_presentation_new_card_title">Enter a new card</translation>
    <translation id="payment_mean_contact_presentation_update_title_billingContactId" qtlid="451032">Change credit card address</translation>
    <translation id="payment_mean_contact_presentation_update_label" qtlid="37875">Edit</translation>
    <translation id="payment_mean_contact_presentation_phone_label" qtlid="451387">Tel:</translation>
    <translation id="payment_mean_contact_presentation_email_label" qtlid="116322">Email:</translation>
-   <translation id="payment_mean_contact_creation_main_title" qtlid="381790">Contact creation</translation>
+   <translation id="payment_mean_contact_creation_main_title" qtlid="381790">Creating a contact</translation>
    <translation id="payment_mean_contact_creation_mandatory_fields_rules_explained" qtlid="381842">By default, only mandatory fields (marked with an asterisk) are displayed. Use the button placed at the beginning of each section to display all fields you can fill in.</translation>
    <translation id="payment_mean_contact_creation_fieldset_GENERAL_INFORMATIONS" qtlid="27115">General information</translation>
    <translation id="payment_mean_contact_creation_fieldset_LEGAL" qtlid="321377">Legal data </translation>
@@ -419,8 +420,8 @@
    <translation id="payment_mean_contact_creation_label_spareEmail" qtlid="92153">Backup email address</translation>
    <translation id="payment_mean_contact_creation_label_email" qtlid="33598">Email address</translation>
    <translation id="payment_mean_contact_creation_label_address_line1" qtlid="30430">Address</translation>
-   <translation id="payment_mean_contact_creation_label_address_line2" qtlid="321637">Adress (line 1)</translation>
-   <translation id="payment_mean_contact_creation_label_address_line3" qtlid="321650">Adress (line 2)</translation>
+   <translation id="payment_mean_contact_creation_label_address_line2" qtlid="321637">Address (line 1)</translation>
+   <translation id="payment_mean_contact_creation_label_address_line3" qtlid="321650">Address (line 2)</translation>
    <translation id="payment_mean_contact_creation_label_address_otherDetails" qtlid="321663">Adress (other)</translation>
    <translation id="payment_mean_contact_creation_label_address_zip" qtlid="30346">Postcode</translation>
    <translation id="payment_mean_contact_creation_label_address_city" qtlid="33310">City</translation>
@@ -431,10 +432,10 @@
    <translation id="payment_mean_contact_creation_label_organisation" qtlid="32278">Organisation</translation>
    <translation id="payment_mean_contact_creation_label_organisationType" qtlid="321676">Type of organisation </translation>
    <translation id="payment_mean_contact_creation_label_organisationName" qtlid="191109">Name of organisation</translation>
-   <translation id="payment_mean_contact_creation_label_vat" qtlid="92201">Inter community VAT number</translation>
+   <translation id="payment_mean_contact_creation_label_vat" qtlid="92201">Intra-Community VAT number</translation>
    <translation id="payment_mean_contact_creation_label_birthCity" qtlid="163856">Place of birth</translation>
-   <translation id="payment_mean_contact_creation_label_birthZip" qtlid="307865">Birthplace post code </translation>
-   <translation id="payment_mean_contact_creation_label_birthCountry" qtlid="269877">Birth country </translation>
+   <translation id="payment_mean_contact_creation_label_birthZip" qtlid="307865">Postcode of place of birth</translation>
+   <translation id="payment_mean_contact_creation_label_birthCountry" qtlid="269877">Country of birth</translation>
    <translation id="payment_mean_contact_creation_label_cellPhone" qtlid="321689">Phone </translation>
    <translation id="payment_mean_contact_creation_label_nationalIdentificationNumber" qtlid="268562">Tax code</translation>
    <translation id="payment_mean_contact_creation_label_companyNationalIdentificationNumber" qtlid="268562">Tax code</translation>
@@ -472,7 +473,7 @@
    <translation id="payment_mean_contact_creation_country_BM" qtlid="239545">Bermuda</translation>
    <translation id="payment_mean_contact_creation_country_BN" qtlid="239558">Brunei Darussalam</translation>
    <translation id="payment_mean_contact_creation_country_BO" qtlid="239571">Plurinational State Of Bolivia</translation>
-   <translation id="payment_mean_contact_creation_country_BQ" qtlid="239584">Bonaire, Saint Eustatius, and Saba</translation>
+   <translation id="payment_mean_contact_creation_country_BQ" qtlid="239584">Bonaire, Sint Eustatius and Saba</translation>
    <translation id="payment_mean_contact_creation_country_BR" qtlid="239597">Brazil</translation>
    <translation id="payment_mean_contact_creation_country_BS" qtlid="187300">Bahamas</translation>
    <translation id="payment_mean_contact_creation_country_BT" qtlid="239610">Bhutan</translation>
@@ -755,21 +756,21 @@
    <translation id="paymentMean_label_ownerName" qtlid="177041">Name of account owner</translation>
    <translation id="paymentMean_label_ownerAddress" qtlid="177054">Address of account owner</translation>
    <translation id="paymentMean_error_bic_bank" qtlid="177067">The bank code is incorrect.</translation>
-   <translation id="paymentMean_error_bic_valid" qtlid="177080"></translation>
+   <translation id="paymentMean_error_bic_valid" qtlid="177080">The sort code is incorrect.</translation>
    <translation id="paymentMean_error_required" qtlid="177093">This field is required</translation>
-   <translation id="paymentMean_error_iban_base" qtlid="177106"></translation>
-   <translation id="paymentMean_error_iban_country" qtlid="177119"></translation>
-   <translation id="paymentMean_error_iban_key" qtlid="177132"></translation>
-   <translation id="paymentMean_error_iban_valid" qtlid="177145"></translation>
+   <translation id="paymentMean_error_iban_base" qtlid="177106">The base of the IBAN is incorrect.</translation>
+   <translation id="paymentMean_error_iban_country" qtlid="177119">The country of the IBAN is incorrect.</translation>
+   <translation id="paymentMean_error_iban_key" qtlid="177132">The key of the IBAN is incorrect.</translation>
+   <translation id="paymentMean_error_iban_valid" qtlid="177145">The IBAN is incorrect.</translation>
    <translation id="paymentMean_error_minlength" qtlid="179680">There must be at least 5 characters.</translation>
    <translation id="paymentMean_error_maxlength" qtlid="177171">The text must be fewer than 255 characters.</translation>
    <translation id="paymentType_delete_error" qtlid="177184">Error on deleting the payment method</translation>
-   <translation id="paymentType_modify_error" qtlid="436354">An error has occurred modifying payment method</translation>
+   <translation id="paymentType_modify_error" qtlid="436354">An error has occurred modifying the payment method</translation>
    <translation id="paymentType_delete_success" qtlid="177197">Payment method deleted</translation>
    <translation id="paymentMean_add_message_paypal" qtlid="229671">By clicking on the "Add" button, you can log in to your PayPal account and allow OVH to debit your PayPal account when you receive your next bills.</translation>
    <translation id="paymentMean_add_message_creditCard" qtlid="363865">To check that your card is registered, we will try to take a payment. <br/> Please note that we will not withdraw any money, once we receive confirmation from your bank.<br/><b class="blue">Your bank card will be enabled immediately.</b></translation>
    <translation id="paymentMean_add_message_creditCard_CA" qtlid="267422">When OVH requests debit authorisation it may appear that there has been a change in your account balance. However in reality OVH will not debit your account and nothing will appear on your bank statement. </translation>
-   <translation id="paymentMean_add_message_bankAccount" qtlid="325562">By clicking the "Add" button, a document will be downloaded. <br/> Please follow the procedure as described in the document to validate the payment method. Your bank account will be validated within 24 to 48 hours, from the time that the direct debit authorisation has been received. </translation>
+   <translation id="paymentMean_add_message_bankAccount" qtlid="325562">When you click on the "Add" button, a document will be downloaded. <br/> Please follow the procedure as described in the document to validate the payment method. Your bank account will be approved within 24 to 48 hours, from the time that the direct debit authorisation has been received. </translation>
    <translation id="paymentType_status_valid" qtlid="177249">Confirmed</translation>
    <translation id="paymentType_status_expired" qtlid="58676">Expired</translation>
    <translation id="paymentType_status_proposedByCustomer" qtlid="90205">Pending confirmation </translation>
@@ -782,13 +783,13 @@
    <translation id="paymentType_status_created" qtlid="90205">Pending confirmation </translation>
    <translation id="paymentType_status_error" qtlid="45508">Error</translation>
    <translation id="paymentType_status_validforcredit" qtlid="436393">Valid for credit</translation>
-   <translation id="paymentType_add_error" qtlid="177262">An error occured while deleting the payment method</translation>
+   <translation id="paymentType_add_error" qtlid="177262">An error occured while adding the payment method</translation>
    <translation id="paymentType_status_pendingValidation" qtlid="90133">Validation in progress</translation>
    <translation id="paymentType_status_waiting_for_documents" qtlid="325575">Pending receipt</translation>
    <translation id="payment_mean_add_paypal" qtlid="177275">Launch a PayPal subscription</translation>
    <translation id="payement_mean_add_creditCard" qtlid="177288">Generate a purchase order</translation>
    <translation id="payment_mean_get_validation" qtlid="177301">Retrieve validation procedure</translation>
-   <translation id="payment_mean_return_by_mail_procedure" qtlid="325588">Procedure to be returned by mail</translation>
+   <translation id="payment_mean_return_by_mail_procedure" qtlid="325588">Procedure to be returned by post</translation>
    <translation id="paymentType_add_success_url" qtlid="363878"><a href="{0}" target="_blank">Click here</a> to finish registering your payment method.</translation>
    <translation id="paymentType_bankAccount_add_success_with_download" qtlid="325601">The bank account has been added, and will be activated once it has been validated. Please follow the <a href="{0}" target="_blank">procedure described in this document</a> to validate the payment method to be sent by post.</translation>
    <translation id="paymentType_bankAccount_pending_validation" qtlid="325614">You added a bank account through your customer control panel. We are currently waiting for you to send us by mail your direct debit approval on that account.</translation>
@@ -804,13 +805,13 @@
 
    <translation id="ovhAccount_table_type_CANCEL_CREDIT" qtlid="191928">Credit cancellation </translation>
    <translation id="ovhAccount_table_type_CANCEL_CREDIT_BILL" qtlid="181604">Invoice cancellation</translation>
-   <translation id="ovhAccount_table_type_CANCEL_CREDIT_REFUND" qtlid="181617">Credit cancellation</translation>
+   <translation id="ovhAccount_table_type_CANCEL_CREDIT_REFUND" qtlid="181617">Credit note cancellation</translation>
    <translation id="ovhAccount_table_type_CANCEL_CREDIT_STATEMENT_INCOME" qtlid="384002">Prepaid account cancellation</translation>
    <translation id="ovhAccount_table_type_CANCEL_CREDIT_STATEMENT_OUTCOME" qtlid="181643">Bank transfer cancellation</translation>
 
    <translation id="ovhAccount_table_type_CANCEL_DEBIT" qtlid="191941">Cancel debit</translation>
    <translation id="ovhAccount_table_type_CANCEL_DEBIT_BILL" qtlid="181604">Invoice cancellation</translation>
-   <translation id="ovhAccount_table_type_CANCEL_DEBIT_REFUND" qtlid="181617">Credit cancellation</translation>
+   <translation id="ovhAccount_table_type_CANCEL_DEBIT_REFUND" qtlid="181617">Credit note cancellation</translation>
    <translation id="ovhAccount_table_type_CANCEL_DEBIT_STATEMENT_INCOME" qtlid="384002">Prepaid account cancellation</translation>
    <translation id="ovhAccount_table_type_CANCEL_DEBIT_STATEMENT_OUTCOME" qtlid="181643">Bank transfer cancellation</translation>
 
@@ -853,21 +854,21 @@
    <translation id="ovhAccount_table_type_payment_CHEQUE" qtlid="139715">Cheque</translation>
    <translation id="ovhAccount_table_type_payment_CREDIT_CARD" qtlid="89809">Credit card</translation>
    <translation id="ovhAccount_table_type_payment_DEPOSIT" qtlid="177405">Upfront</translation>
-   <translation id="ovhAccount_table_type_payment_DEBT_ACCOUNT" qtlid="224906">Payment overdue</translation>
-   <translation id="ovhAccount_table_type_payment_EDINAR" qtlid="139741"></translation>
+   <translation id="ovhAccount_table_type_payment_DEBT_ACCOUNT" qtlid="224906">Debit account</translation>
+   <translation id="ovhAccount_table_type_payment_EDINAR" qtlid="139741">e-DINAR</translation>
    <translation id="ovhAccount_table_type_payment_FIDELITY_POINTS" qtlid="177418">Loyalty points</translation>
    <translation id="ovhAccount_table_type_payment_FREE" qtlid="130495">Free</translation>
-   <translation id="ovhAccount_table_type_payment_IDEAL" qtlid="139767"></translation>
+   <translation id="ovhAccount_table_type_payment_IDEAL" qtlid="139767">iDEAL</translation>
    <translation id="ovhAccount_table_type_payment_MANDAT" qtlid="177431">Mandate</translation>
-   <translation id="ovhAccount_table_type_payment_MULTIBANCO" qtlid="139793"></translation>
-   <translation id="ovhAccount_table_type_payment_NONE" qtlid="30646">No</translation>
+   <translation id="ovhAccount_table_type_payment_MULTIBANCO" qtlid="139793">Multibanco</translation>
+   <translation id="ovhAccount_table_type_payment_NONE" qtlid="30646">None</translation>
    <translation id="ovhAccount_table_type_payment_OVH_ACCOUNT" qtlid="48926">Prepaid account</translation>
    <translation id="ovhAccount_table_type_payment_PAYMENT_MANDATE" qtlid="177431">Mandate</translation>
    <translation id="ovhAccount_table_type_payment_PAYPAL" qtlid="98228">PayPal</translation>
-   <translation id="ovhAccount_table_type_payment_PLATNOSCI" qtlid="139832"></translation>
+   <translation id="ovhAccount_table_type_payment_PLATNOSCI" qtlid="139832">Płatności</translation>
    <translation id="ovhAccount_table_type_payment_REFUND" qtlid="139845">Credit note</translation>
    <translation id="ovhAccount_table_type_payment_TRANSFER" qtlid="89833">Transfer</translation>
-   <translation id="ovhAccount_table_type_payment_WITHDRAWAL" qtlid="177444"></translation>
+   <translation id="ovhAccount_table_type_payment_WITHDRAWAL" qtlid="177444">Bank withdrawal</translation>
 
 
    <translation id="ovhAccount_retrieve_title" qtlid="287215">Transfer to a bank account </translation>
@@ -903,7 +904,7 @@
    <translation id="telconso_callin" qtlid="189978">{0} % of calls received</translation>
    <translation id="telconso_faxout" qtlid="189991">{0} % of faxes sent</translation>
    <translation id="telconso_faxin" qtlid="190004">{0} % of faxes received</translation>
-   <translation id="telconso_to_fixe" qtlid="190017">To fixed lines</translation>
+   <translation id="telconso_to_fixe" qtlid="190017">To landlines</translation>
    <translation id="telconso_to_mobiles" qtlid="190030">To mobiles</translation>
    <translation id="telconso_to_special" qtlid="190043">To special numbers</translation>
    <translation id="telconso_send_fax" qtlid="87945">Send a fax</translation>
@@ -946,13 +947,13 @@
    <translation id="tel_conso_tabs_inc" qtlid="190095">Received</translation>
    <translation id="tel_conso_tabs_out" qtlid="77970">Issued</translation>
    <translation id="tel_conso_tabs_trs" qtlid="190329">Transferred</translation>
-   <translation id="tel_conso_tabs_incfix" qtlid="190342">From fixed lines</translation>
+   <translation id="tel_conso_tabs_incfix" qtlid="190342">From landlines</translation>
    <translation id="tel_conso_tabs_incmob" qtlid="190355">From mobiles</translation>
    <translation id="tel_conso_tabs_incspe" qtlid="190368">From special numbers</translation>
-   <translation id="tel_conso_tabs_outfix" qtlid="190017">To fixed lines</translation>
+   <translation id="tel_conso_tabs_outfix" qtlid="190017">To landlines</translation>
    <translation id="tel_conso_tabs_outmob" qtlid="190030">To mobiles</translation>
    <translation id="tel_conso_tabs_outspe" qtlid="190043">To special numbers</translation>
-   <translation id="tel_conso_tabs_trsfix" qtlid="190017">To fixed lines</translation>
+   <translation id="tel_conso_tabs_trsfix" qtlid="190017">To landlines</translation>
    <translation id="tel_conso_tabs_trsmob" qtlid="190030">To mobiles</translation>
    <translation id="tel_conso_tabs_trsspe" qtlid="190043">To special numbers</translation>
    <translation id="tel_conso_tabs_sent" qtlid="190381">Sent</translation>
@@ -963,11 +964,11 @@
    <translation id="tel_conso_min" qtlid="190420">min</translation>
    <translation id="tel_conso_s" qtlid="190433">s</translation>
 
-   <translation id="tel_lastconso_title" qtlid="190446">My phone usage for previous months</translation>
+   <translation id="tel_lastconso_title" qtlid="190446">My phone usage for the previous months</translation>
    <translation id="tel_lastconso_month" qtlid="37803">Month</translation>
    <translation id="tel_lastconso_priceplan" qtlid="190459">Total sum</translation>
    <translation id="tel_lastconso_outplan" qtlid="190160">Fixed rate</translation>
-   <translation id="tel_lastconso_sheet" qtlid="190472">Summaries of usage</translation>
+   <translation id="tel_lastconso_sheet" qtlid="190472">Usage statements</translation>
    <translation id="tel_lastconso_sheet_down" qtlid="39286">Download</translation>
    <translation id="tel_lastconso_sheet_progress" qtlid="26383">In progress</translation>
    <translation id="tel_lastconso_month_date_display" qtlid="190485">MMM yyyy</translation>
@@ -984,7 +985,7 @@
    <translation id="fidelity_header_balance" qtlid="89785">Balance</translation>
    <translation id="fidelity_points" qtlid="6194">point(s)</translation>
    <translation id="fidelity_creditOrder_title" qtlid="260645">Credit your account</translation>
-   <translation id="fidelity_creditOrder_step1_msg" qtlid="260658">You can credit your account to settle your bills, or to pay for upcoming bills in advance. (1 point = 0,01 {0} ex. VAT)</translation>
+   <translation id="fidelity_creditOrder_step1_msg" qtlid="260658">You can credit your account to settle your bills, or to pay for upcoming bills in advance. (1 point = 0.01 {0} ex. VAT)</translation>
    <translation id="fidelity_creditOrder_step1_amount" qtlid="260671">Amount (in points)</translation>
    <translation id="fidelity_creditOrder_step1_erreurformat" qtlid="260684">The amount entered is incorrect. Please use numbers only. </translation>
    <translation id="fidelity_creditOrder_step1_erreurmin" qtlid="260697">The amount of credit must be at least {0} points.</translation>
@@ -1030,11 +1031,11 @@
 
    <translation id="hosting_dashboard_service_guide" qtlid="268577">Remove hosting package</translation>
    <translation id="hosting_dashboard_close_service_question" qtlid="215533">Do you want to receive this email? </translation>
-   <translation id="hosting_dashboard_close_service_success" qtlid="370148">We have processed your requested to delete your hosting packing. We will send you an email containing the procedure to take.</translation>
+   <translation id="hosting_dashboard_close_service_success" qtlid="370148">We have processed your requested to delete your hosting package. We will send you an email containing the procedure to follow.</translation>
    <translation id="hosting_dashboard_close_service_error" qtlid="255469">Unable to close your web hosting package due to the following error:</translation>
    <translation id="hosting_dashboard_close_service" qtlid="255417">Delete my web hosting package</translation>
-   <translation id="hosting_dashboard_close_service_warning" qtlid="255430">When a web hosting package is deleted, all the data linked to it is lost. No refund will be granted for a deleted web hosting package.</translation>
-   <translation id="hosting_dashboard_close_service_desc1" qtlid="370161">You will get an email containing the procedure for closing your hosting package so you can confirm its immediate deletion. </translation>
+   <translation id="hosting_dashboard_close_service_warning" qtlid="255430">When a web hosting package is deleted, all the data linked to it is lost. No refund will be granted for any deleted web hosting packages.</translation>
+   <translation id="hosting_dashboard_close_service_desc1" qtlid="370161">You will get an email containing the procedure for closing your hosting package so you can confirm that it is to be deleted immediately.</translation>
 
    <translation id="voucher_table_head_id" qtlid="8194">ID</translation>
    <translation id="voucher_table_head_balance" qtlid="270930">Balance</translation>
@@ -1076,11 +1077,11 @@
    <translation id="statements_account_no_default_payment_mean" qtlid="353309">You have not specified a default payment method. </translation>
    <translation id="statements_account_invalid_default_payment_mean" qtlid="353322">Your default payment method is no longer valid. </translation>
    <translation id="statements_account_manage_my_payment_means" qtlid="287514">Manage my payment methods </translation>
-   <translation id="statements_account_pay_debt_button" qtlid="349179">Pay my balance immediately</translation>
+   <translation id="statements_account_pay_debt_button" qtlid="349179">Pay balance immediately</translation>
    <translation id="statements_account_debt_payment" qtlid="344240">Balance payment</translation>
    <translation id="statements_account_debt_payment_explanation" qtlid="353335">This action will generate a purchase order so you can immediately settle an amount. This purchase order will be valid for one hour.</translation>
    <translation id="statements_account_debt_payment_bc_with_amount" qtlid="353348">The <a href="{1}" target="_blank">purchase order{0}</a> has been generated for a total of {2}.</translation>
-   <translation id="statements_accounts_debt_payment_confirm" qtlid="344227">Pay my balance</translation>
+   <translation id="statements_accounts_debt_payment_confirm" qtlid="344227">Pay balance</translation>
    <translation id="statements_account_debt_payment_order_generated" qtlid="344266">The <a href="{1}" target="_blank">purchase order{0}</a> has been generated. You can now pay your balance.</translation>
    <translation id="statements_account_debt_payment_error" qtlid="344279">An error has occurred. We apologise for any inconvenience this may have caused.</translation>
    <translation id="statements_table_caption" qtlid="343252">Orders to your account</translation>
@@ -1096,12 +1097,12 @@
    <translation id="statements_table_order_link" qtlid="343304">See the order {0} in a new window.</translation>
    <translation id="statements_table_detail_label" qtlid="374586">See details of this bill. </translation>
    <translation id="statements_table_detail_link" qtlid="343317">See details for this debt {0}.</translation>
-   <translation id="statements_table_pay_debt_button" qtlid="349179">Pay my balance immediately</translation>
+   <translation id="statements_table_pay_debt_button" qtlid="349179">Pay balance immediately</translation>
 
    <translation id="statements_summary_error" qtlid="343330">An error occurred while retrieving your account balance.</translation>
    <translation id="statements_detail_error" qtlid="343343">An error occurred while retrieving your account details.</translation>
    <translation id="statements_single_debt_error" qtlid="343356">An error occurred while retrieving the details of line {0}.</translation>
-   <translation id="statements_payment_mean_error" qtlid="349192">An error has occurred during the extraction of your payment method.</translation>
+   <translation id="statements_payment_mean_error" qtlid="349192">An error has occurred while retrieving your payment method.</translation>
 
 <!-- STATEMENTS - DETAILS -->
    <translation id="statements_details_summary_title" qtlid="343369">Order summary</translation>
@@ -1117,7 +1118,7 @@
    <translation id="statements_details_table_header_amount" qtlid="45328">Amount</translation>
    <translation id="statements_details_table_header_document" qtlid="343447">Document</translation>
    <translation id="statements_details_table_order_link" qtlid="343460">Opening the order associated with this operation in a new window.</translation>
-   <translation id="statements_details_table_invoice_html_link" qtlid="349205">See the invoice in HMTL version (new window).</translation>
+   <translation id="statements_details_table_invoice_html_link" qtlid="349205">See the invoice in HMTL (new window).</translation>
    <translation id="statements_details_table_invoice_pdf_link" qtlid="349218">See the invoice in PDF version (new window).</translation>
 
 <!-- STATEMENTS - OPERATION STATUS -->
@@ -1139,11 +1140,11 @@
 
    <translation id="statements_operation_description_paypal_manual" qtlid="343603">Manual payment with PayPal </translation>
    <translation id="statements_operation_description_paypal_automatic" qtlid="343616">Automatic withdrawal from a PayPal account</translation>
-   <translation id="statements_operation_description_refund_paypal" qtlid="343629">Reimbursement from a PayPal account</translation>
+   <translation id="statements_operation_description_refund_paypal" qtlid="343629">Reimbursement to a PayPal account</translation>
    <translation id="statements_operation_description_unpaid_paypal" qtlid="343642">PayPal account withdrawal declined</translation>
 
    <translation id="statements_operation_description_sepa_automatic" qtlid="343655">Automatic withdrawal from a bank account</translation>
-   <translation id="statements_operation_description_refund_sepa" qtlid="343668">Reimbursement from a bank account</translation>
+   <translation id="statements_operation_description_refund_sepa" qtlid="343668">Reimbursement to a bank account</translation>
    <translation id="statements_operation_description_unpaid_sepa" qtlid="343681">Bank account withdrawal declined</translation>
 
    <translation id="statements_operation_description_credit_account_automatic" qtlid="343694">Automatic withdrawal from a prepaid OVH account</translation>
@@ -1175,7 +1176,7 @@
    <translation id="terminate_service_services_frequency" qtlid="30442">Frequency</translation>
    <translation id="terminate_service_reason_title" qtlid="440009">Reason for cancelling</translation>
    <translation id="terminate_service_reason_LACK_OF_PERFORMANCES" qtlid="299975">The system performance is inadequate</translation>
-   <translation id="terminate_service_reason_NOT_NEEDED_ANYMORE" qtlid="299949">I am not using this solution anymore</translation>
+   <translation id="terminate_service_reason_NOT_NEEDED_ANYMORE" qtlid="299949">I am not using this solution any more</translation>
    <translation id="terminate_service_reason_MIGRATED_TO_ANOTHER_OVH_PRODUCT" qtlid="300014">I am using another OVH solution </translation>
    <translation id="terminate_service_reason_MIGRATED_TO_COMPETITOR" qtlid="300027">I am using a solution from a different company </translation>
    <translation id="terminate_service_reason_NOT_RELIABLE" qtlid="299988">The solution is not reliable enough</translation>
@@ -1183,7 +1184,7 @@
    <translation id="terminate_service_reason_TOO_EXPENSIVE" qtlid="300001">The solution is not in my budget </translation>
    <translation id="terminate_service_reason_TOO_HARD_TO_USE" qtlid="299962">The tools are too complicated</translation>
    <translation id="terminate_service_reason_text" qtlid="440022">Would you like to provide more details, or give a suggestion?</translation>
-   <translation id="terminate_service_error" qtlid="440035">Sorry, an error has occurred loading the page.</translation>
+   <translation id="terminate_service_error" qtlid="440035">Sorry, an error has occurred whilst loading the page.</translation>
    <translation id="terminate_service_confirmation_error" qtlid="440048">An error has occurred whilst confirming your service cancellation.</translation>
    <translation id="terminate_service_confirmation_success" qtlid="440061">You have successfully cancelled your services. A confirmation email will be sent to you in the next few minutes. If you have any queries, please feel free to contact our support team.</translation>
    <translation id="terminate_service_confirm" qtlid="440074">Confirm cancellation</translation>
@@ -1199,14 +1200,14 @@
    <translation id="terminate_service_type_dedicated_ceph" qtlid="318946">Ceph as a Service</translation>
    <translation id="terminate_service_type_dedicated_housing" qtlid="371476">Housing server </translation>
    <translation id="terminate_service_type_dedicated_nas" qtlid="440126">Dedicated NAS</translation>
-   <translation id="terminate_service_type_dedicated_nasha" qtlid="440139">Dedicated HA-NAS</translation>
+   <translation id="terminate_service_type_dedicated_nasha" qtlid="440139">Dedicated HA NAS</translation>
    <translation id="terminate_service_type_dedicated_server" qtlid="66032">Dedicated Server</translation>
    <translation id="terminate_service_type_deskaas" qtlid="440152">DeskaaS</translation>
    <translation id="terminate_service_type_domain" qtlid="440165">Domain</translation>
    <translation id="terminate_service_type_domain_zone" qtlid="440178">Domain zone</translation>
    <translation id="terminate_service_type_email_domain" qtlid="286513">MX Plan</translation>
    <translation id="terminate_service_type_email_exchange" qtlid="80430">Exchange</translation>
-   <translation id="terminate_service_type_email_pro" qtlid="374893">E-mail Pro</translation>
+   <translation id="terminate_service_type_email_pro" qtlid="374893">Business Email</translation>
    <translation id="terminate_service_type_freefax" qtlid="440191">Free FAX</translation>
    <translation id="terminate_service_type_hosting_privateDatabase" qtlid="219966">Private SQL hosting</translation>
    <translation id="terminate_service_type_hosting_reseller" qtlid="325289">Multi-site hosting</translation>
