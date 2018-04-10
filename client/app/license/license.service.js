@@ -371,7 +371,8 @@ angular.module("Module.license.services").service("License", [
                 data: {},
                 clearAllCache: true,
                 broadcast: "paginationServerSide.reload",
-                broadcastParam: "licensesPagination"
+                broadcastParam: "licensesPagination",
+                returnErrorKey: ""
             });
         };
 
