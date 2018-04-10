@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="server_dashboard_loading_error" qtlid="132083">An error has occurred loading your service information.</translation>
+   <translation id="server_dashboard_loading_error" qtlid="132083">An error has occurred while loading your service information.</translation>
 
    <translation id="server_configuration_doing" qtlid="164272">[In progress]</translation>
    <translation id="server_tab_IP" qtlid="172696">IP and Security</translation>
@@ -22,7 +22,7 @@
    <translation id="server_tab_IP_table_delete_reverse_success" qtlid="179511">The reverse has been deleted.</translation>
    <translation id="server_tab_IP_table_delete_reverse_failure" qtlid="179524">An error occurred on deleting the reverse</translation>
    <translation id="server_tab_IP_table_manage_reverse_success" qtlid="151854">The reverse update has been carried out.</translation>
-   <translation id="server_tab_IP_table_manage_reverse_failure" qtlid="151867">An error occurred on updating the reverse</translation>
+   <translation id="server_tab_IP_table_manage_reverse_failure" qtlid="151867">An error occurred when updating the reverse</translation>
    <translation id="server_tab_IP_table_manage_mac" qtlid="141457">Modify Virtual MAC</translation>
    <translation id="server_tab_IP_table_manage_mitigation_AUTO" qtlid="141470">Mitigation: auto mode </translation>
    <translation id="server_tab_IP_table_manage_mitigation_FORCED" qtlid="138311">Mitigation: forced mode</translation>
@@ -188,14 +188,14 @@
    <translation id="server_configuration_firewall_rule_protocol_TCP" qtlid="141821">TCP</translation>
    <translation id="server_configuration_firewall_rule_protocol_UDP" qtlid="141834">UDP</translation>
    <translation id="server_configuration_firewall_rule_ip_any" qtlid="141847">all</translation>
-   <translation id="server_configuration_firewall_enable_title" qtlid="141860">Activate firewall</translation>
+   <translation id="server_configuration_firewall_enable_title" qtlid="141860">Enable firewall</translation>
    <translation id="server_configuration_firewall_enable_question" qtlid="141873">Are you sure you want to enable the firewall on the {0} IP?</translation>
    <translation id="server_configuration_firewall_enable_success" qtlid="141886">The firewall will be enabled in a few moments on {0} IP.</translation>
    <translation id="server_configuration_firewall_enable_failed" qtlid="138779">An error occurred on enabling the firewall on {0} IP</translation>
    <translation id="server_configuration_firewall_disable_title" qtlid="141899">Disable the firewall</translation>
    <translation id="server_configuration_firewall_disable_question" qtlid="141912">Are you sure you want to disable the firewall on the {0} IP?</translation>
-   <translation id="server_configuration_firewall_disable_success" qtlid="141925">The firewall will be disabled in a few moments on {0} IP.</translation>
-   <translation id="server_configuration_firewall_disable_failed" qtlid="141938">An error occurred on disabling the firewall on the {0} IP</translation>
+   <translation id="server_configuration_firewall_disable_success" qtlid="141925">The firewall will be disabled in a few moments on the IP {0}.</translation>
+   <translation id="server_configuration_firewall_disable_failed" qtlid="141938">An error occurred on disabling the firewall on the IP {0}.</translation>
    <translation id="server_configuration_firewall_new_title" qtlid="141951">Create firewall</translation>
    <translation id="server_configuration_firewall_new_question" qtlid="141964">Are you sure you want to create the firewall on the {0} IP?</translation>
    <translation id="server_configuration_firewall_new_success" qtlid="141977">The firewall will be created in a few moments on the {0} IP.</translation>
@@ -229,7 +229,7 @@
    <translation id="server_configuration_monitoring_deactivate_question" qtlid="134345">Are you sure that you want to disable the monitoring on the {0} server?</translation>
    <translation id="server_configuration_monitoring_deactivate_success" qtlid="133539">Monitoring is disabled on the {0} server</translation>
    <translation id="server_configuration_monitoring_deactivate_failed" qtlid="133552">An error occurred on disabling the monitoring on the {0} server</translation>
-   <translation id="server_configuration_monitoring_deactivate_information" qtlid="208586">OVH datacentre intervention disabled in case of ping test failure.</translation>
+   <translation id="server_configuration_monitoring_deactivate_information" qtlid="208586">OVH datacentre intervention disabled in the event of ping test failure.</translation>
    <translation id="server_configuration_antispam_BLOCKED_FOR_SPAM" qtlid="108901">Blocked</translation>
    <translation id="server_configuration_antispam_UNBLOCKING" qtlid="26383">In progress</translation>
    <translation id="server_configuration_antispam_UNBLOCKED" qtlid="148357">Unblocked</translation>
@@ -265,7 +265,7 @@
    <translation id="server_configuration_mitigation_force_title" qtlid="142003">Force mitigation</translation>
    <translation id="server_configuration_mitigation_force_question" qtlid="134241">Are you sure you want to force the mitigation on the IP {0}?</translation>
    <translation id="server_configuration_mitigation_force_success" qtlid="142016">The mitigation will be enabled and forced in a few moments on the IP {0}</translation>
-   <translation id="server_configuration_mitigation_force_failed" qtlid="138922">An error occurred on enabling forced mode on IP {0}</translation>
+   <translation id="server_configuration_mitigation_force_failed" qtlid="138922">An error occurred while enabling forced mode on IP {0}</translation>
    <translation id="server_configuration_mitigation_auto_title_button" qtlid="142029">Switch the mitigation to auto mode</translation>
    <translation id="server_configuration_mitigation_auto_title" qtlid="142029">Switch the mitigation to auto mode</translation>
    <translation id="server_configuration_mitigation_auto_question" qtlid="142042">Are you sure you want to switch the mitigation to automatic mode on the IP {0}?</translation>
@@ -307,9 +307,9 @@
    <translation id="server_configuration_netboot_title_help_rootdevice_list7" qtlid="151945">/dev/ram0</translation>
    <translation id="server_configuration_netboot_current" qtlid="142718">Netboot currently configured on your server {0}:</translation>
    <translation id="server_configuration_netboot_step1_question" qtlid="62558">What would you like to do?</translation>
-   <translation id="server_configuration_netboot_option_harddisk" qtlid="102861">Boot on the hard disk</translation>
-   <translation id="server_configuration_netboot_option_rescue" qtlid="102873">Boot on rescue mode </translation>
-   <translation id="server_configuration_netboot_option_network" qtlid="142731">Boot up in network mode</translation>
+   <translation id="server_configuration_netboot_option_harddisk" qtlid="102861">Boot from the hard disk</translation>
+   <translation id="server_configuration_netboot_option_rescue" qtlid="102873">Boot in rescue mode </translation>
+   <translation id="server_configuration_netboot_option_network" qtlid="142731">Boot in network mode</translation>
    <translation id="server_configuration_netboot_configuration" qtlid="142744">Configuration:</translation>
    <translation id="server_configuration_netboot_rescue_choice" qtlid="141015">Rescue available:</translation>
    <translation id="server_configuration_netboot_rescue_mail" qtlid="262986">Get your updated username:</translation>
@@ -393,10 +393,10 @@
    <translation id="server_configuration_secondarydns_confirm_button_text" qtlid="37923">Add</translation>
    <translation id="server_configuration_add_secondary_dns_success" qtlid="143043">The secondary DNS has been successfully added.</translation>
    <translation id="server_configuration_add_secondary_dns_fail" qtlid="143056">An error occurred on adding the secondary DNS '{0}'.</translation>
-   <translation id="server_configuration_ips_cannotfetch" qtlid="143069">Not possible to obtain the liste of the server's IPs.</translation>
+   <translation id="server_configuration_ips_cannotfetch" qtlid="143069">Not possible to obtain the list of the server's IPs.</translation>
    <translation id="server_configuration_no_secondary_dns" qtlid="143082">No secondary DNS has been configured.</translation>
-   <translation id="server_configuration_ftpbackup_fail" qtlid="184256">An error has occurred loading the Backup Storage information</translation>
-   <translation id="server_configuration_ftpbackup_none" qtlid="184269">The Backup Storage has not been configured</translation>
+   <translation id="server_configuration_ftpbackup_fail" qtlid="184256">An error has occurred while loading the Backup Storage information</translation>
+   <translation id="server_configuration_ftpbackup_none" qtlid="184269">The Backup Storage has not been configured.</translation>
    <translation id="server_configuration_ftpbackup_not_available" qtlid="436481">Backup Storage is not available at this time.</translation>
    <translation id="server_configuration_ftpbackup_login" qtlid="46792">ID</translation>
    <translation id="server_configuration_ftpbackup_name" qtlid="181708">Name</translation>
@@ -406,13 +406,13 @@
    <translation id="server_configuration_ftpbackup_activate" qtlid="184295">Activate the Backup Storage</translation>
    <translation id="server_configuration_ftpbackup_activate_success" qtlid="184308">The backup storage will be activated.</translation>
    <translation id="server_configuration_ftpbackup_activate_successfull" qtlid="184321">Backup storage has been activated.</translation>
-   <translation id="server_configuration_ftpbackup_activate_failure" qtlid="184334">An error occurred on activating the backup storage.</translation>
+   <translation id="server_configuration_ftpbackup_activate_failure" qtlid="184334">An error occurred while activating the backup storage.</translation>
    <translation id="server_configuration_ftpbackup_activate_question" qtlid="184347">Are you sure you want to activate the backup storage service for this server?</translation>
    <translation id="server_configuration_ftpbackup_delete_success" qtlid="184360">The Backup Storage will be deleted shortly.</translation>
    <translation id="server_configuration_ftpbackup_delete_successfull" qtlid="184373">The Backup Storage has been deleted.</translation>
-   <translation id="server_configuration_ftpbackup_delete_failure" qtlid="184386">An error has occurred deleting the Backup Storage.</translation>
+   <translation id="server_configuration_ftpbackup_delete_failure" qtlid="184386">An error has occurred whilst deleting the Backup Storage.</translation>
    <translation id="server_configuration_ftpbackup_delete_question" qtlid="184399">Are you sure you want to delete the {0} backup storage?</translation>
-   <translation id="server_configuration_ftpbackup_delete_question2" qtlid="164389">Warning, this action cannot be reversed</translation>
+   <translation id="server_configuration_ftpbackup_delete_question2" qtlid="164389">Warning: this action cannot be undone</translation>
    <translation id="server_configuration_ftpbackup_lost_password" qtlid="149241">New password request</translation>
    <translation id="server_configuration_ftpbackup_lost_password_success" qtlid="149254">A new password will be sent to the admin NIC of the server.</translation>
    <translation id="server_configuration_ftpbackup_lost_password_successfull" qtlid="164402">A new password will be sent to the server admin NIC.</translation>
@@ -423,27 +423,27 @@
    <translation id="server_configuration_ftpbackup_order_load_failure" qtlid="180486">An error occurred on retrieving the list of storage capacities available.</translation>
    <translation id="server_configuration_ftpbackup_order_load_detail_failure" qtlid="180499">An error occurred on retrieving the details of the storage order</translation>
    <translation id="server_configuration_ftpbackup_order_load_order_success" qtlid="183801">Storage order number <a href='{0}' target='_blank'>{1}</a> has been registered.</translation>
-   <translation id="server_configuration_ftpbackup_order_load_order_failure" qtlid="180525">An error occurred on placing the storage order</translation>
+   <translation id="server_configuration_ftpbackup_order_load_order_failure" qtlid="180525">An error occurred while placing the storage order</translation>
    <translation id="server_configuration_ftpbackup_order_type_name" qtlid="4334">Capacity</translation>
-   <translation id="server_configuration_ftpbackup_order_empty_choice" qtlid="237750">You are unable to order additional storage space for this server.</translation>
+   <translation id="server_configuration_ftpbackup_order_empty_choice" qtlid="237750">You are unable to order additional storage space for this server with your current package.</translation>
    <translation id="server_configuration_ftpbackup_order_type_price" qtlid="180538">Price (per month ex. VAT)</translation>
    <translation id="server_configuration_ftpbackup_order_resume" qtlid="172228">Your order summary:</translation>
    <translation id="server_configuration_ftpbackup_order_price_explanation" qtlid="237763">Which translates to {0} per month until your server's expiry date</translation>
    <translation id="server_configuration_ftpbackup_order_price_HT" qtlid="146177">Total price ex. VAT:</translation>
    <translation id="server_configuration_ftpbackup_order_price_TTC" qtlid="146190">Total price incl. VAT:</translation>
    <translation id="server_configuration_ftpbackup_order_contracts" qtlid="145371">I have read and understood the following conditions:</translation>
-   <translation id="server_configuration_ftpbackup_order_info" qtlid="180551">Choice of storage capacities available on your server. Warning, it will not be possible to reduce this capacity.</translation>
+   <translation id="server_configuration_ftpbackup_order_info" qtlid="180551">Choice of storage capacities available on your server. Warning: it will not be possible to reduce this capacity.</translation>
 
    <translation id="server_configuration_ftpbackup_access_order" qtlid="180564">Order disk space</translation>
-   <translation id="server_configuration_ftpbackup_access_order_right" qtlid="180577">You don't have the required permission to order</translation>
+   <translation id="server_configuration_ftpbackup_access_order_right" qtlid="180577">You don't have the required permissions to order</translation>
    <translation id="server_configuration_ftpbackup_access_add" qtlid="153857">Add an access</translation>
    <translation id="server_configuration_ftpbackup_access_delete" qtlid="180590">Delete an access</translation>
    <translation id="server_configuration_ftpbackup_access_delete_question" qtlid="183814">Are you sure you want to delete the access for the IP block <b>{0}</b>?</translation>
    <translation id="server_configuration_ftpbackup_access_delete_success" qtlid="183827">The deletion of the access to the Backup Storage for IP block <b>{0}</b> has been registered but may take a few minutes</translation>
    <translation id="server_configuration_ftpbackup_access_delete_failure" qtlid="183840">An error occurred on attempting to delete the access to the <b>{0}</b> IP block backup storage </translation>
-   <translation id="server_configuration_ftpbackup_access_add_ip_failure" qtlid="180642">A error occurred on retrieving authorisable blocks </translation>
+   <translation id="server_configuration_ftpbackup_access_add_ip_failure" qtlid="180642">A error occurred while retrieving authorisable blocks </translation>
    <translation id="server_configuration_ftpbackup_access_add_success" qtlid="184438">The request to add access rules to the backup storage has been registered but may take a few minutes</translation>
-   <translation id="server_configuration_ftpbackup_access_add_partial" qtlid="184451">The request to add access rules to the backup storage has been registered but may take a few minutes for some. However, errors occurred for others.</translation>
+   <translation id="server_configuration_ftpbackup_access_add_partial" qtlid="184451">The request to add access rules to the backup storage has been registered but may take a few minutes for some rules. However, errors occurred for others.</translation>
    <translation id="server_configuration_ftpbackup_access_add_failure" qtlid="184464">An error occurred when requesting to add access rules to the backup storage </translation>
 
    <translation id="server_configuration_ftpbackup_table_ip" qtlid="167899">IP</translation>
@@ -478,12 +478,12 @@
 
    <translation id="server_configuration_cloudbackup_delete_success" qtlid="184360">The Backup Storage will be deleted shortly.</translation>
    <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="184373">The Backup Storage has been deleted.</translation>
-   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="184386">An error has occurred deleting the Backup Storage.</translation>
+   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="184386">An error has occurred whilst deleting the Backup Storage.</translation>
    <translation id="server_configuration_cloudbackup_delete_question" qtlid="451872">Are you sure you want to disable the Backup Storage option?</translation>
 
    <translation id="server_configuration_cloudbackup_inactive" qtlid="451885">Your Backup Storage option is disabled.</translation>
    <translation id="server_configuration_cloudbackup_new_project" qtlid="16493">New projet</translation>
-   <translation id="server_configuration_cloudbackup_load_fail" qtlid="184256">An error has occurred loading the Backup Storage information</translation>
+   <translation id="server_configuration_cloudbackup_load_fail" qtlid="184256">An error has occurred while loading the Backup Storage information</translation>
    <translation id="server_configuration_cloudbackup_load_offers_fail" qtlid="451898">An error has occurred loading Backup Storage cloud solutions</translation>
    <translation id="server_configuration_cloudbackup_load_projects_fail" qtlid="451911">An error has occurred loading cloud projects</translation>
    <translation id="server_configuration_cloudbackup_load_agreements_fail" qtlid="451924">An error has occurred loading contracts</translation>
@@ -577,21 +577,21 @@
    <translation id="server_configuration_firewall_asa_disable_step1_question" qtlid="183905">Do you really want to disable the Cisco ASA firewall on your server <span class="normal italic">{0}</span>?</translation>
    <translation id="server_configuration_firewall_asa_disable_success" qtlid="151828">The request to disable the Cisco ASA firewall has been registered and will be effective within minutes.</translation>
    <translation id="server_configuration_firewall_asa_disable_fail" qtlid="151841">An error occurred on disabling the Cisco ASA firewall</translation>
-   <translation id="server_configuration_task_loading_error" qtlid="164415">An error occurred on retrieving the tasks</translation>
+   <translation id="server_configuration_task_loading_error" qtlid="164415">An error occurred while retrieving the tasks</translation>
    <translation id="server_configuration_task_last_action" qtlid="52231">Recent action</translation>
    <translation id="server_configuration_task_function" qtlid="61872">Task</translation>
    <translation id="server_configuration_task_comment" qtlid="233531">Technical details</translation>
    <translation id="server_configuration_task_status" qtlid="26443">Status</translation>
    <translation id="server_configuration_task_empty" qtlid="217093">No task</translation>
    <translation id="server_configuration_task_CHANGE_PASSWORD_BACKUP_FTP" qtlid="184490">Backup storage password change</translation>
-   <translation id="server_configuration_task_CREATE_BACKUP_FTP" qtlid="184503">Backup storage creation</translation>
-   <translation id="server_configuration_task_CREATE_PRIVATE_NETWORK" qtlid="164454">Private network creation</translation>
-   <translation id="server_configuration_task_DISABLE_FIREWALL" qtlid="164467">Firewall disabling</translation>
-   <translation id="server_configuration_task_ENABLE_FIREWALL" qtlid="164480">Firewall enable</translation>
+   <translation id="server_configuration_task_CREATE_BACKUP_FTP" qtlid="184503">Creating backup storage</translation>
+   <translation id="server_configuration_task_CREATE_PRIVATE_NETWORK" qtlid="164454">Creating a private network</translation>
+   <translation id="server_configuration_task_DISABLE_FIREWALL" qtlid="164467">Disable firewall</translation>
+   <translation id="server_configuration_task_ENABLE_FIREWALL" qtlid="164480">Enable firewall</translation>
    <translation id="server_configuration_task_HARD_REBOOT" qtlid="26287">Reboot</translation>
    <translation id="server_configuration_task_MOVE_FLOATING_IP" qtlid="164493">Failover IP transfer</translation>
-   <translation id="server_configuration_task_REINSTALL_SERVER" qtlid="90637">Server re-installation</translation>
-   <translation id="server_configuration_task_REMOVE_BACKUP_FTP" qtlid="184516">Backup storage deletion</translation>
+   <translation id="server_configuration_task_REINSTALL_SERVER" qtlid="90637">Reinstall server</translation>
+   <translation id="server_configuration_task_REMOVE_BACKUP_FTP" qtlid="184516">Delete backup storage</translation>
    <translation id="server_configuration_task_REQUEST_ACCESS_IPMI" qtlid="164519">IPMI access request</translation>
    <translation id="server_configuration_task_RESET_IPMI" qtlid="164532">IPMO interface reset</translation>
    <translation id="server_configuration_task_RESET_IPMI_SESSION" qtlid="164545">IPMI session reset</translation>
@@ -651,7 +651,7 @@
    <translation id="server_configuration_impi_restart_error_task_session" qtlid="165091">An error occurred on deleting the IPMI module sessions.</translation>
    <translation id="server_configuration_impi_sessions_success" qtlid="165104">The IPMI module sessions have been deleted.</translation>
    <translation id="server_configuration_impi_disable" qtlid="165117">The IPMI module functions have been temporarily disabled because a task is in progress. They will be re-enabled once the task has been completed.</translation>
-   <translation id="server_configuration_impi_monitoring_warning" qtlid="472658">Pensez à désactiver le monitoring de vos services avant d'installer un système d'exploitation depuis IPMI.</translation>
+   <translation id="server_configuration_impi_monitoring_warning" qtlid="472658">Remember to deactivate the monitoring for your services before installing an operating system from IPMI.</translation>
    <translation id="server_configuration_impi_SOL_help" qtlid="201158">You need to configure the SOL session. Click <a href="{0}">here</a> for more information.</translation>
 
    <translation id="server_configuration_kvm_order_step1_title" qtlid="229203">Choose the duration</translation>
