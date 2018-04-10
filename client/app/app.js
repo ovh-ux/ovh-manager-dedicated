@@ -292,7 +292,7 @@ angular
          */
         $transitionsProvider.onSuccess({}, (transition) => {
             transition.promise.finally(() => {
-                const state = transition.to();
+                const state = transition.$to();
 
                 // close previous modal
                 if (modalInstance) {
