@@ -16,7 +16,10 @@ angular.module("Module.license.controllers").controller("LicenseDeleteCtrl", ($s
                         Alerter.success($scope.tr("license_delete_success"));
                     },
                     (err) => {
-                        Alerter.alertFromSWS($scope.tr("license_delete_fail"), err.message);
+                        if (err && err.status === 460) {
+                            return Alerter.alertFromSWS($scope.tr("license_delete_already_terminating"));
+                        }
+                        return Alerter.alertFromSWS($scope.tr("license_delete_fail"), err.message);
                     }
                 )
                 .finally(() => {
