@@ -1,3 +1,13 @@
+<a name="9.2.8"></a>
+## [9.2.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.7...v9.2.8) (2018-04-10)
+
+
+### Bug Fixes
+
+* **license delete:** display message if already terminating ([4595cdd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4595cdd))
+
+
+
 <a name="9.2.7"></a>
 ## [9.2.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.6...v9.2.7) (2018-04-10)
 
