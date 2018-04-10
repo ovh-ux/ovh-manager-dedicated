@@ -38,8 +38,8 @@
    <translation id="housing_configuration_reboot_title_button" qtlid="33538">Restart</translation>
    <translation id="housing_configuration_renew_title_button" qtlid="118962">Renew</translation>
 
-   <translation id="housing_configuration_ftpbackup_fail" qtlid="184256">An error has occurred loading the Backup Storage information</translation>
-   <translation id="housing_configuration_ftpbackup_none" qtlid="184269">The Backup Storage has not been configured</translation>
+   <translation id="housing_configuration_ftpbackup_fail" qtlid="184256">An error has occurred while loading the Backup Storage information</translation>
+   <translation id="housing_configuration_ftpbackup_none" qtlid="184269">The Backup Storage has not been configured.</translation>
    <translation id="housing_configuration_ftpbackup_login" qtlid="46792">ID</translation>
    <translation id="housing_configuration_ftpbackup_name" qtlid="3818">Name</translation>
    <translation id="housing_configuration_ftpbackup_usage" qtlid="30382">Use</translation>
@@ -48,13 +48,13 @@
    <translation id="housing_configuration_ftpbackup_activate" qtlid="184295">Activate the Backup Storage</translation>
    <translation id="housing_configuration_ftpbackup_activate_success" qtlid="184308">The backup storage will be activated.</translation>
    <translation id="housing_configuration_ftpbackup_activate_successfull" qtlid="184321">Backup storage has been activated.</translation>
-   <translation id="housing_configuration_ftpbackup_activate_failure" qtlid="184334">An error occurred on activating the backup storage.</translation>
+   <translation id="housing_configuration_ftpbackup_activate_failure" qtlid="184334">An error occurred while activating the backup storage.</translation>
    <translation id="housing_configuration_ftpbackup_activate_question" qtlid="184347">Are you sure you want to activate the backup storage service for this server?</translation>
    <translation id="housing_configuration_ftpbackup_delete_success" qtlid="184360">The Backup Storage will be deleted shortly.</translation>
    <translation id="housing_configuration_ftpbackup_delete_successfull" qtlid="184373">The Backup Storage has been deleted.</translation>
-   <translation id="housing_configuration_ftpbackup_delete_failure" qtlid="184386">An error has occurred deleting the Backup Storage.</translation>
+   <translation id="housing_configuration_ftpbackup_delete_failure" qtlid="184386">An error has occurred whilst deleting the Backup Storage.</translation>
    <translation id="housing_configuration_ftpbackup_delete_question" qtlid="184399">Are you sure you want to delete the {0} backup storage?</translation>
-   <translation id="housing_configuration_ftpbackup_delete_question2" qtlid="164389">Warning, this action cannot be reversed</translation>
+   <translation id="housing_configuration_ftpbackup_delete_question2" qtlid="164389">Warning: this action cannot be undone</translation>
    <translation id="housing_configuration_ftpbackup_lost_password" qtlid="149241">New password request</translation>
    <translation id="housing_configuration_ftpbackup_lost_password_success" qtlid="149254">A new password will be sent to the admin NIC of the server.</translation>
    <translation id="housing_configuration_ftpbackup_lost_password_successfull" qtlid="164402">A new password will be sent to the server admin NIC.</translation>
@@ -65,27 +65,27 @@
    <translation id="housing_configuration_ftpbackup_order_load_failure" qtlid="180486">An error occurred on retrieving the list of storage capacities available.</translation>
    <translation id="housing_configuration_ftpbackup_order_load_detail_failure" qtlid="180499">An error occurred on retrieving the details of the storage order</translation>
    <translation id="housing_configuration_ftpbackup_order_load_order_success" qtlid="183801">Storage order number <a href='{0}' target='_blank'>{1}</a> has been registered.</translation>
-   <translation id="housing_configuration_ftpbackup_order_load_order_failure" qtlid="180525">An error occurred on placing the storage order</translation>
+   <translation id="housing_configuration_ftpbackup_order_load_order_failure" qtlid="180525">An error occurred while placing the storage order</translation>
    <translation id="housing_configuration_ftpbackup_order_type_name" qtlid="4334">Capacity</translation>
-   <translation id="housing_configuration_ftpbackup_order_empty_choice" qtlid="237750">You are unable to order additional storage space for this server.</translation>
+   <translation id="housing_configuration_ftpbackup_order_empty_choice" qtlid="237750">You are unable to order additional storage space for this server with your current package.</translation>
    <translation id="housing_configuration_ftpbackup_order_type_price" qtlid="180538">Price (per month ex. VAT)</translation>
    <translation id="housing_configuration_ftpbackup_order_resume" qtlid="172228">Your order summary:</translation>
    <translation id="housing_configuration_ftpbackup_order_price_explanation" qtlid="237763">Which translates to {0} per month until your server's expiry date</translation>
    <translation id="housing_configuration_ftpbackup_order_price_HT" qtlid="146177">Total price ex. VAT:</translation>
    <translation id="housing_configuration_ftpbackup_order_price_TTC" qtlid="146190">Total price incl. VAT:</translation>
    <translation id="housing_configuration_ftpbackup_order_contracts" qtlid="145371">I have read and understood the following conditions:</translation>
-   <translation id="housing_configuration_ftpbackup_order_info" qtlid="180551">Choice of storage capacities available on your server. Warning, it will not be possible to reduce this capacity.</translation>
+   <translation id="housing_configuration_ftpbackup_order_info" qtlid="180551">Choice of storage capacities available on your server. Warning: it will not be possible to reduce this capacity.</translation>
 
    <translation id="housing_configuration_ftpbackup_access_order" qtlid="180564">Order disk space</translation>
-   <translation id="housing_configuration_ftpbackup_access_order_right" qtlid="180577">You don't have the required permission to order</translation>
+   <translation id="housing_configuration_ftpbackup_access_order_right" qtlid="180577">You don't have the required permissions to order</translation>
    <translation id="housing_configuration_ftpbackup_access_add" qtlid="153857">Add an access</translation>
    <translation id="housing_configuration_ftpbackup_access_delete" qtlid="180590">Delete an access</translation>
    <translation id="housing_configuration_ftpbackup_access_delete_question" qtlid="183814">Are you sure you want to delete the access for the IP block <b>{0}</b>?</translation>
    <translation id="housing_configuration_ftpbackup_access_delete_success" qtlid="183827">The deletion of the access to the Backup Storage for IP block <b>{0}</b> has been registered but may take a few minutes</translation>
    <translation id="housing_configuration_ftpbackup_access_delete_failure" qtlid="183840">An error occurred on attempting to delete the access to the <b>{0}</b> IP block backup storage </translation>
-   <translation id="housing_configuration_ftpbackup_access_add_ip_failure" qtlid="180642">A error occurred on retrieving authorisable blocks </translation>
+   <translation id="housing_configuration_ftpbackup_access_add_ip_failure" qtlid="180642">A error occurred while retrieving authorisable blocks </translation>
    <translation id="housing_configuration_ftpbackup_access_add_success" qtlid="184438">The request to add access rules to the backup storage has been registered but may take a few minutes</translation>
-   <translation id="housing_configuration_ftpbackup_access_add_partial" qtlid="184451">The request to add access rules to the backup storage has been registered but may take a few minutes for some. However, errors occurred for others.</translation>
+   <translation id="housing_configuration_ftpbackup_access_add_partial" qtlid="184451">The request to add access rules to the backup storage has been registered but may take a few minutes for some rules. However, errors occurred for others.</translation>
    <translation id="housing_configuration_ftpbackup_access_add_failure" qtlid="184464">An error occurred when requesting to add access rules to the backup storage </translation>
 
    <translation id="housing_configuration_ftpbackup_table_ip" qtlid="186492">IP</translation>
@@ -116,20 +116,20 @@
    <translation id="housing_configuration_ftpbackup_add_ip" qtlid="180850">Block involved:</translation>
    <translation id="housing_configuration_ftpbackup_add_authorization" qtlid="180863">Authorise in:</translation>
 
-   <translation id="housing_configuration_task_loading_error" qtlid="164415">An error occurred on retrieving the tasks</translation>
+   <translation id="housing_configuration_task_loading_error" qtlid="164415">An error occurred while retrieving the tasks</translation>
    <translation id="housing_configuration_task_last_action" qtlid="52231">Recent action</translation>
    <translation id="housing_configuration_task_function" qtlid="61872">Task</translation>
    <translation id="housing_configuration_task_comment" qtlid="233531">Technical details</translation>
    <translation id="housing_configuration_task_status" qtlid="26443">Status</translation>
    <translation id="housing_configuration_task_CHANGE_PASSWORD_BACKUP_FTP" qtlid="184490">Backup storage password change</translation>
-   <translation id="housing_configuration_task_CREATE_BACKUP_FTP" qtlid="184503">Backup storage creation</translation>
-   <translation id="housing_configuration_task_CREATE_PRIVATE_NETWORK" qtlid="164454">Private network creation</translation>
-   <translation id="housing_configuration_task_DISABLE_FIREWALL" qtlid="164467">Firewall disabling</translation>
-   <translation id="housing_configuration_task_ENABLE_FIREWALL" qtlid="164480">Firewall enable</translation>
+   <translation id="housing_configuration_task_CREATE_BACKUP_FTP" qtlid="184503">Creating backup storage</translation>
+   <translation id="housing_configuration_task_CREATE_PRIVATE_NETWORK" qtlid="164454">Creating a private network</translation>
+   <translation id="housing_configuration_task_DISABLE_FIREWALL" qtlid="164467">Disable firewall</translation>
+   <translation id="housing_configuration_task_ENABLE_FIREWALL" qtlid="164480">Enable firewall</translation>
    <translation id="housing_configuration_task_HARD_REBOOT" qtlid="26287">Reboot</translation>
    <translation id="housing_configuration_task_MOVE_FLOATING_IP" qtlid="164493">Failover IP transfer</translation>
-   <translation id="housing_configuration_task_REINSTALL_SERVER" qtlid="90637">Server re-installation</translation>
-   <translation id="housing_configuration_task_REMOVE_BACKUP_FTP" qtlid="184516">Backup storage deletion</translation>
+   <translation id="housing_configuration_task_REINSTALL_SERVER" qtlid="90637">Reinstall server</translation>
+   <translation id="housing_configuration_task_REMOVE_BACKUP_FTP" qtlid="184516">Delete backup storage</translation>
    <translation id="housing_configuration_task_REQUEST_ACCESS_IPMI" qtlid="164519">IPMI access request</translation>
    <translation id="housing_configuration_task_RESET_IPMI" qtlid="164532">IPMO interface reset</translation>
    <translation id="housing_configuration_task_RESET_IPMI_SESSION" qtlid="164545">IPMI session reset</translation>
