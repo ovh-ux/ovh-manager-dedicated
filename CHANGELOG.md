@@ -1,3 +1,21 @@
+<a name="9.2.7"></a>
+## [9.2.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.6...v9.2.7) (2018-04-10)
+
+
+### Bug Fixes
+
+* **bootstrap fonts path:** copy glyphicons font ([7f6659a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7f6659a))
+* **dedicated server:** add HIL DC location ([a564239](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a564239))
+* **license order:** replace deprecated loader to oui-spinner ([f023cb5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f023cb5))
+
+
+### Features
+
+* **billing:** improve add payment method view ([8166a1d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8166a1d))
+* **i18n:** retrieve translations ([70df3bb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/70df3bb))
+
+
+
 <a name="9.2.6"></a>
 ## [9.2.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.5...v9.2.6) (2018-04-09)
 
