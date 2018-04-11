@@ -547,33 +547,23 @@ module.exports = function (grunt) {
                 constants: {
                     constants: {
                         prodMode: mode === "prod",
-                        availableViewMode: {
-                            views: ["simple", "expert"],
-                            defaultViewMode: "simple"
-                        },
                         swsProxyRootPath: "<%= swsProxyPath %>",
                         aapiRootPath: "<%= aapiPath %>",
                         target,
                         renew: constants[target].RENEW_URL,
-                        loginUrl: constants[target].loginUrl,
                         urls: constants[target].URLS,
                         UNIVERS: constants[target].UNIVERS,
-                        UNIVERSE: constants[target].UNIVERSE,
                         UNIVERSES: constants[target].UNIVERSES,
                         TOP_GUIDES: constants[target].TOP_GUIDES,
                         weatherMapUrl: constants[target].weatherMapUrl,
                         vmsUrl: constants[target].vmsUrl,
                         travauxUrl: constants[target].travauxUrl,
-                        aapiHeaderName: "X-Ovh-Session",
-                        changelog_url: constants[target].changelog_url,
                         publicCloudUrl: constants[target].publicCloudUrl,
-                        vrackUrl: constants[target].vrackUrl,
                         nashaUrl: constants[target].nashaUrl,
                         MANAGER_URLS: constants[target].MANAGER_URLS,
                         NO_AUTORENEW_COUNTRIES: constants[target].NO_AUTORENEW_COUNTRIES
                     },
-                    LANGUAGES: constants[target].LANGUAGES,
-                    website_url: constants[target].website_url
+                    LANGUAGES: constants[target].LANGUAGES
                 }
             },
             devUa: {
@@ -710,34 +700,23 @@ module.exports = function (grunt) {
                 constants: {
                     constants: {
                         prodMode: mode === "prod",
-                        availableViewMode: {
-                            views: ["simple", "expert"],
-                            defaultViewMode: "simple"
-                        },
                         aapiRootPath: "<%= aapiPath %>",
                         target,
                         renew: constants[target].RENEW_URL,
-                        loginUrl: constants[target].loginUrl,
                         urls: constants[target].URLS,
                         UNIVERS: constants[target].UNIVERS,
-                        UNIVERSE: constants[target].UNIVERSE,
                         UNIVERSES: constants[target].UNIVERSES,
                         TOP_GUIDES: constants[target].TOP_GUIDES,
                         weatherMapUrl: constants[target].weatherMapUrl,
                         vmsUrl: constants[target].vmsUrl,
                         travauxUrl: constants[target].travauxUrl,
-                        changelog_url: constants[target].changelog_url,
                         swsProxyRootPath: "<%= swsProxyPath %>",
-                        aapiHeaderName: "X-Ovh-2api-Session",
                         publicCloudUrl: constants[target].publicCloudUrl,
-                        vrackUrl: constants[target].vrackUrl,
                         nashaUrl: constants[target].nashaUrl,
                         MANAGER_URLS: constants[target].MANAGER_URLS,
                         NO_AUTORENEW_COUNTRIES: constants[target].NO_AUTORENEW_COUNTRIES
                     },
-                    LANGUAGES: constants[target].LANGUAGES,
-                    website_url: constants[target].website_url
-
+                    LANGUAGES: constants[target].LANGUAGES
                 }
             },
             distUa: {

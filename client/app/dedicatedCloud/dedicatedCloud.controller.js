@@ -8,11 +8,9 @@ angular.module("App").controller("DedicatedCloudCtrl", [
     "step",
     "DedicatedCloud",
     "translator",
-
-    // "Module.otrs.services.otrs",
     "Module.services.notification",
     "User",
-    function ($scope, $timeout, $stateParams, $q, $log, featureAvailability, step, DedicatedCloud, Translator, /* Otrs,*/ Notification, User) {
+    function ($scope, $timeout, $stateParams, $q, $log, featureAvailability, step, DedicatedCloud, Translator, Notification, User) {
         "use strict";
 
         const tr = Translator.tr;

@@ -15,10 +15,10 @@
                         <th data-i18n-static="useraccount_contacts_task_from_account"></th>
                         <th data-i18n-static="useraccount_contacts_task_to_account"></th>
                         <th data-i18n-static="useraccount_contacts_task_contact_types"></th>
-                        <th style="width: 60px;" class="center" data-i18n-static="useraccount_contacts_task_request_date"></th>
-                        <th style="width: 60px;" class="center" data-i18n-static="useraccount_contacts_task_done_date"></th>
-                        <th style="width: 50px;" class="center" data-i18n-static="useraccount_contacts_task_state"></th>
-                        <th class="center" colspan="2" style="width: 35px;">
+                        <th style="width: 60px;" class="text-center" data-i18n-static="useraccount_contacts_task_request_date"></th>
+                        <th style="width: 60px;" class="text-center" data-i18n-static="useraccount_contacts_task_done_date"></th>
+                        <th style="width: 50px;" class="text-center" data-i18n-static="useraccount_contacts_task_state"></th>
+                        <th class="text-center" colspan="2" style="width: 35px;">
                             <button class="btn btn-block btn-icon btn-inline" title="{{::i18n.useraccount_contacts_task_refresh}}"
                                     data-ng-click="ctrlContactRequestsSend.getContactChangeTasks()">
                                 <i class="icon icon-white icon-refresh pointer"></i>
@@ -29,7 +29,7 @@
 
                 <tbody data-ng-show="ctrlContactRequestsSend.loaders.tasks">
                     <tr>
-                        <td colspan="8" class="center">
+                        <td colspan="8" class="text-center">
                             <span class="span12 loader center"></span>
                         </td>
                     </tr>
@@ -37,7 +37,7 @@
 
                 <tbody data-ng-show="!ctrlContactRequestsSend.loaders.tasks && ctrlContactRequestsSend.contactTasksDetails.length === 0">
                     <tr>
-                        <td colspan="8" class="center">
+                        <td colspan="8" class="text-center">
                             <span data-i18n-static="useraccount_contacts_no_task"></span>
                         </td>
                     </tr>
@@ -57,9 +57,9 @@
                                 </li>
                             </ul>
                         </td>
-                        <td class="center" data-ng-bind="::task.dateRequest | date: 'short'"></td>
-                        <td class="center" data-ng-bind="::task.dateDone | date: 'short'"></td>
-                        <td class="center">
+                        <td class="text-center" data-ng-bind="::task.dateRequest | date: 'short'"></td>
+                        <td class="text-center" data-ng-bind="::task.dateDone | date: 'short'"></td>
+                        <td class="text-center">
                             <span class="label" data-ng-bind="tr('useraccount_contacts_task_state_' + task.state)"
                                   data-ng-class="{'label-important': task.state === 'refused',
                                                  'label-success': task.state === 'done',
@@ -68,7 +68,7 @@
                                                  }">
                             </span>
                         </td>
-                        <td class="center">
+                        <td class="text-center">
                             <button class="btn btn-icon btn-transparent"
                                     data-ng-click="setAction('contacts/request/change/user-contacts-request-change', {action: 'ACCEPT', method: 'SEND', task: task})"
                                     data-ng-if="task.state === 'validatingByCustomers' && !task.hasPendingChange"
@@ -77,7 +77,7 @@
                                 <i class="icon-ok"></i>
                             </button>
                         </td>
-                         <td class="center">
+                         <td class="text-center">
                             <button class="btn btn-icon btn-transparent"
                                     data-ng-click="setAction('contacts/request/change/user-contacts-request-change', {action: 'REFUSE', method: 'SEND', task: task})"
                                     data-ng-if="task.state === 'validatingByCustomers'  && !task.hasPendingChange"
