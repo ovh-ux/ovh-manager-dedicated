@@ -71,6 +71,14 @@ angular
                 controller: "UserAccount.controllers.Infos"
             });
 
+            $stateProvider.state("app.account.useraccount.credentials", {
+                url: "/credentials",
+                templateUrl: `${baseUrl}credentials/user-credentials.html`,
+                controller: "UserAccount.controllers.credentials",
+                controllerAs: "ctrl"
+            });
+
+
             if (target === "EU" || target === "CA") {
 
                 $stateProvider.state("app.account.useraccount.emails", {
