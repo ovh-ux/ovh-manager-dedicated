@@ -5,8 +5,6 @@ class UserContractsCtrl {
         this.featureAvailability = featureAvailability;
         this.User = User;
         this.UserContractService = UserContractService;
-
-        this.$scope.resetAction = () => this.resetAction();
     }
 
     $onInit () {
@@ -15,7 +13,6 @@ class UserContractsCtrl {
                 if (contracts.length) {
                     this.$scope.currentAction = "modal/user-contracts-accept";
                     this.$scope.stepPath = "user-contracts/modal/user-contracts-accept.html";
-
                     $("#user-contracts-currentAction").modal({
                         keyboard: false,
                         backdrop: "static"
@@ -23,14 +20,6 @@ class UserContractsCtrl {
                 }
             });
         }
-    }
-
-    resetAction () {
-        $("#user-contracts-currentAction").modal("hide");
-        this.$scope.currentActionData = null;
-        this.$timeout(function () {
-            this.$scope.stepPath = "";
-        }, 300);
     }
 }
 

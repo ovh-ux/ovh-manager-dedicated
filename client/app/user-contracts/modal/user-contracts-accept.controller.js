@@ -1,7 +1,8 @@
 class UserContractsAcceptModalCtrl {
-    constructor ($scope, UserContractService) {
+    constructor ($scope, UserContractService, translator) {
         this.$scope = $scope;
         this.UserContractService = UserContractService;
+        this.translator = translator;
 
         this.model = {
             accepted: {
@@ -26,14 +27,14 @@ class UserContractsAcceptModalCtrl {
     }
 
     $onInit () {
-        this.contracts.load();
+        return this.contracts.load();
     }
 
     agree () {
         this.saving = true;
         this.hasSubmitError = false;
         this.UserContractService.acceptAgreements(this.contracts.data)
-            .then(() => this.$scope.resetAction())
+            .then(() => $("#user-contracts-currentAction").modal("hide"))
             .catch(() => {
                 this.model.accepted.value = false;
                 this.hasSubmitError = true;
@@ -41,6 +42,14 @@ class UserContractsAcceptModalCtrl {
             .finally(() => {
                 this.saving = false;
             });
+    }
+
+    getCheckboxLabel () {
+        const codes = _.pluck(this.contracts.data, "code");
+        if (_.size(codes) > 1) {
+            return this.translator.tr("user_contracts_modal_checkbox_label_both");
+        }
+        return this.translator.tr(`user_contracts_modal_checkbox_label_${codes[0]}`);
     }
 }
 
