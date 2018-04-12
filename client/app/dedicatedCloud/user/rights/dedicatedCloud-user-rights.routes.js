@@ -2,10 +2,13 @@ angular.module("App").config(($stateProvider) => {
 
     $stateProvider.state("app.dedicatedClouds.users.rights", {
         url: "/:userId/rights",
-        reloadOnSearch: false,
-        templateUrl: "dedicatedCloud/user/rights/dedicatedCloud-user-rights.html",
-        controller: "DedicatedCloudUserRightsCtrl",
-        controllerAs: "$ctrl"
+        views: {
+            pccUserView: {
+                templateUrl: "dedicatedCloud/user/rights/dedicatedCloud-user-rights.html",
+                controller: "DedicatedCloudUserRightsCtrl",
+                controllerAs: "$ctrl"
+            }
+        }
     });
 
 });
