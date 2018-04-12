@@ -570,7 +570,8 @@ module.exports = function (grunt) {
                         vrackUrl: constants[target].vrackUrl,
                         nashaUrl: constants[target].nashaUrl,
                         MANAGER_URLS: constants[target].MANAGER_URLS,
-                        NO_AUTORENEW_COUNTRIES: constants[target].NO_AUTORENEW_COUNTRIES
+                        NO_AUTORENEW_COUNTRIES: constants[target].NO_AUTORENEW_COUNTRIES,
+                        REDIRECT_URLS: constants[target].REDIRECT_URLS
                     },
                     LANGUAGES: constants[target].LANGUAGES,
                     website_url: constants[target].website_url
@@ -733,7 +734,8 @@ module.exports = function (grunt) {
                         vrackUrl: constants[target].vrackUrl,
                         nashaUrl: constants[target].nashaUrl,
                         MANAGER_URLS: constants[target].MANAGER_URLS,
-                        NO_AUTORENEW_COUNTRIES: constants[target].NO_AUTORENEW_COUNTRIES
+                        NO_AUTORENEW_COUNTRIES: constants[target].NO_AUTORENEW_COUNTRIES,
+                        REDIRECT_URLS: constants[target].REDIRECT_URLS
                     },
                     LANGUAGES: constants[target].LANGUAGES,
                     website_url: constants[target].website_url

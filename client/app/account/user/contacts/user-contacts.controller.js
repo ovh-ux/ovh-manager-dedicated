@@ -15,7 +15,7 @@ angular.module("UserAccount.controllers")
             };
             this.user = null;
             this.loaders.init = true;
-            return this.OvhApiMe.Lexi().get().$promise
+            return this.OvhApiMe.v6().get().$promise
                 .then((user) => {
                     this.user = user;
                 })
