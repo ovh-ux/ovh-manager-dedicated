@@ -30,5 +30,4 @@ angular.module("UserAccount.controllers")
                 });
         }
 
-});
-
+    });

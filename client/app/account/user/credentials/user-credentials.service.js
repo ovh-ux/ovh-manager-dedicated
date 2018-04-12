@@ -1,43 +1,40 @@
-angular.module("UserAccount.services").service("UseraccountCredentialsService", [
-    "OvhHttp",
-    function (OvhHttp) {
-        "use strict";
+angular.module("UserAccount.services")
+    .service("UseraccountCredentialsService", class UseraccountCredentialsService {
+        constructor (OvhHttp) {
+            this.OvhHttp = OvhHttp;
+        }
 
-        const self = this;
-
-        self.getCredentials = function () {
-            return OvhHttp.get("/me/api/credential", {
+        getCredentials () {
+            return this.OvhHttp.get("/me/api/credential", {
                 rootPath: "apiv6"
             });
-        };
+        }
 
-        self.getCredential = function (credentialId) {
-            return OvhHttp.get("/me/api/credential/{credentialId}", {
+        getCredential (credentialId) {
+            return this.OvhHttp.get("/me/api/credential/{credentialId}", {
                 rootPath: "apiv6",
                 urlParams: {
                     credentialId
                 }
             });
-        };
+        }
 
-        self.getApplication = function (credentialId) {
-            return OvhHttp.get("/me/api/credential/{credentialId}/application", {
+        getApplication (credentialId) {
+            return this.OvhHttp.get("/me/api/credential/{credentialId}/application", {
                 rootPath: "apiv6",
                 urlParams: {
                     credentialId
                 }
             });
-        };
+        }
 
-        self.deleteCredential = function (credentialId) {
-            return OvhHttp.delete("/me/api/credential/{credentialId}", {
+        deleteCredential (credentialId) {
+            return this.OvhHttp.delete("/me/api/credential/{credentialId}", {
                 rootPath: "apiv6",
                 urlParams: {
                     credentialId
                 },
                 broadcast: "useraccount.credentials.refresh"
             });
-        };
-    }
-]);
-
+        }
+    });
