@@ -1,3 +1,13 @@
+<a name="9.2.10"></a>
+## [9.2.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.9...v9.2.10) (2018-04-12)
+
+
+### Bug Fixes
+
+* **contracts:** closing modal on validate ([32b64a1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/32b64a1))
+
+
+
 <a name="9.2.9"></a>
 ## [9.2.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.8...v9.2.9) (2018-04-12)
 
