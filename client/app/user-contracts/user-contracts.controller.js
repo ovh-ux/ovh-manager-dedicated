@@ -15,7 +15,8 @@ class UserContractsCtrl {
                 if (contracts.length) {
                     this.$scope.currentAction = "modal/user-contracts-accept";
                     this.$scope.stepPath = "user-contracts/modal/user-contracts-accept.html";
-                    $("#currentAction").modal({
+
+                    $("#user-contracts-currentAction").modal({
                         keyboard: false,
                         backdrop: "static"
                     });
