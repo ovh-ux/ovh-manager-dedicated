@@ -261,6 +261,12 @@ module.exports = function (grunt) {
                     },
                     {
                         expand: true,
+                        cwd: "node_modules/bootstrap/fonts/",
+                        src: ["**"],
+                        dest: "<%= publicdir %>/css/fonts/"
+                    },
+                    {
+                        expand: true,
                         cwd: "node_modules/ovh-ui-kit/dist/icons/",
                         src: ["**"],
                         dest: "<%= publicdir %>/css/icons/"
@@ -285,6 +291,11 @@ module.exports = function (grunt) {
                         cwd: "<%= npmdir %>/ovh-ui-kit",
                         src: ["**"],
                         dest: "<%= distdir %>/<%= npmdir %>/ovh-ui-kit"
+                    }, {
+                        expand: true,
+                        cwd: "<%= npmdir %>/bootstrap",
+                        src: ["**"],
+                        dest: "<%= distdir %>/<%= npmdir %>/bootstrap"
                     }, {
                         expand: true,
                         cwd: "<%= publicdir %>/css/open-sans/",
@@ -371,6 +382,11 @@ module.exports = function (grunt) {
                         cwd: "<%= bowerdir %>/ckeditor",
                         src: ["**"],
                         dest: "<%= distdir %>/<%= bowerdir %>/ckeditor"
+                    }, {
+                        expand: true,
+                        cwd: "node_modules/bootstrap/fonts/",
+                        src: ["**"],
+                        dest: "<%= distdir %>/css/fonts/"
                     }, {
                         expand: true,
                         cwd: "node_modules/ovh-ui-kit/dist/icons/",
@@ -554,7 +570,8 @@ module.exports = function (grunt) {
                         vrackUrl: constants[target].vrackUrl,
                         nashaUrl: constants[target].nashaUrl,
                         MANAGER_URLS: constants[target].MANAGER_URLS,
-                        NO_AUTORENEW_COUNTRIES: constants[target].NO_AUTORENEW_COUNTRIES
+                        NO_AUTORENEW_COUNTRIES: constants[target].NO_AUTORENEW_COUNTRIES,
+                        REDIRECT_URLS: constants[target].REDIRECT_URLS
                     },
                     LANGUAGES: constants[target].LANGUAGES,
                     website_url: constants[target].website_url
@@ -717,7 +734,8 @@ module.exports = function (grunt) {
                         vrackUrl: constants[target].vrackUrl,
                         nashaUrl: constants[target].nashaUrl,
                         MANAGER_URLS: constants[target].MANAGER_URLS,
-                        NO_AUTORENEW_COUNTRIES: constants[target].NO_AUTORENEW_COUNTRIES
+                        NO_AUTORENEW_COUNTRIES: constants[target].NO_AUTORENEW_COUNTRIES,
+                        REDIRECT_URLS: constants[target].REDIRECT_URLS
                     },
                     LANGUAGES: constants[target].LANGUAGES,
                     website_url: constants[target].website_url

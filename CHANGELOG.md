@@ -1,3 +1,67 @@
+<a name="9.2.8"></a>
+## [9.2.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.7...v9.2.8) (2018-04-10)
+
+
+### Bug Fixes
+
+* **license delete:** display message if already terminating ([4595cdd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4595cdd))
+
+
+
+<a name="9.2.7"></a>
+## [9.2.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.6...v9.2.7) (2018-04-10)
+
+
+### Bug Fixes
+
+* **bootstrap fonts path:** copy glyphicons font ([7f6659a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7f6659a))
+* **dedicated server:** add HIL DC location ([a564239](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a564239))
+* **license order:** replace deprecated loader to oui-spinner ([f023cb5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f023cb5))
+
+
+### Features
+
+* **billing:** improve add payment method view ([8166a1d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8166a1d))
+* **i18n:** retrieve translations ([70df3bb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/70df3bb))
+
+
+
+<a name="9.2.6"></a>
+## [9.2.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.5...v9.2.6) (2018-04-09)
+
+
+### Bug Fixes
+
+* ui-kit font path ([e2b96e4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e2b96e4))
+
+
+
+<a name="9.2.5"></a>
+## [9.2.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.4...v9.2.5) (2018-04-09)
+
+
+### Bug Fixes
+
+* **account billing refunds:** fix payment type info unavailable ([d3f4ef3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d3f4ef3))
+* **dedicated server:** add HIL DC location ([d184ea4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d184ea4))
+* **dedicated server ipmi:** fix typo ([0e1e2b7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0e1e2b7))
+* **dedicatedcloud resource upgrade:** migrate from bs2 to bs3 ([5504e8b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5504e8b))
+* **firewall rule:** avoid errors and set null values to rule attributes ([dd4d184](https://github.com/ovh-ux/ovh-manager-dedicated/commit/dd4d184))
+* **firewall rule:** fix after review ([83cffb1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/83cffb1))
+* **firewall rule:** fix firewall rule creation ([d109bf4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d109bf4))
+* **firewall rule:** fix trim on undefined error ([f4fbd98](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f4fbd98))
+* **ipmi:** fix after review ([4112fd6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4112fd6))
+* **sso:** fix sso auth login for dev mode ([7675468](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7675468))
+
+
+### Features
+
+* **dedicated server ipmi:** add information of os installation in IPMI ([70d9e5c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/70d9e5c))
+* **multi users:** add account id col ([cfa503a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/cfa503a))
+* **users:** add explain message ([9977dcb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9977dcb))
+
+
+
 <a name="9.2.4"></a>
 ## [9.2.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.3...v9.2.4) (2018-04-05)
 

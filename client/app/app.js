@@ -385,4 +385,7 @@ angular
             $qProvider.errorOnUnhandledRejections(false);
         }
     ])
+    .config((OtrsPopupProvider, constants) => {
+        OtrsPopupProvider.setBaseUrlTickets(_.get(constants, "REDIRECT_URLS.listTicket", null));
+    })
     .constant("UNIVERSE", "DEDICATED");

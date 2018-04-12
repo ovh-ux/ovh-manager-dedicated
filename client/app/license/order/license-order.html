@@ -245,10 +245,9 @@
                         <span data-ng-show="loaders.bc"
                               data-i18n-static="license_order_step4_generating">
                         </span>
-                        <img class="ajax-loader"
-                             alt=""
-                             data-ng-show="loaders.bc"
-                             data-ng-src="images/license/ajax-loader.gif" />
+                        <oui-spinner data-ng-show="loaders.bc"
+                                     data-size="s">
+                        </oui-spinner>
                     </div>
                     <div class="col-md-3"
                          data-ng-if="agoraEnabled">
