@@ -1,3 +1,13 @@
+<a name="9.2.9"></a>
+## [9.2.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.8...v9.2.9) (2018-04-12)
+
+
+### Bug Fixes
+
+* **contracts:** wrong modal id ([14140d7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/14140d7))
+
+
+
 <a name="9.2.8"></a>
 ## [9.2.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.7...v9.2.8) (2018-04-10)
 
