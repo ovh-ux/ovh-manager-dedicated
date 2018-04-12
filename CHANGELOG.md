@@ -1,3 +1,13 @@
+<a name="9.2.11"></a>
+## [9.2.11](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.10...v9.2.11) (2018-04-12)
+
+
+### Bug Fixes
+
+* **user contracts:** enhance modal layout ([5355502](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5355502))
+
+
+
 <a name="9.2.10"></a>
 ## [9.2.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.9...v9.2.10) (2018-04-12)
 
