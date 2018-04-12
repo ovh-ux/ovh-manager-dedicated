@@ -26,7 +26,7 @@ class UserContractsCtrl {
     }
 
     resetAction () {
-        $("#currentAction").modal("hide");
+        $("#user-contracts-currentAction").modal("hide");
         this.$scope.currentActionData = null;
         this.$timeout(function () {
             this.$scope.stepPath = "";
