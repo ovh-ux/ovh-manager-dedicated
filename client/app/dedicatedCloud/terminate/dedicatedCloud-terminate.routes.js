@@ -6,7 +6,10 @@ angular.module("App").config(($stateProvider) => {
         layout: {
             name: "modal",
             toChilds: true,
-            ignoreChilds: ["app.dedicatedClouds.datacenter"]
+            ignoreChilds: [
+                "app.dedicatedClouds.datacenter",
+                "app.dedicatedClouds.terminate-confirm"
+            ]
         }
     });
 });

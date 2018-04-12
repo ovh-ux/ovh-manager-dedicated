@@ -243,12 +243,6 @@ angular.module("App").controller("DedicatedCloudCtrl", [
                 });
         }
 
-        function handleCancelConfirmation () {
-            if ($stateParams.action === "confirmcancel") {
-                $scope.setAction("terminate/confirm/dedicatedCloud-terminate-confirm");
-            }
-        }
-
         function loadNewPrices () {
             return DedicatedCloud.getNewPrices($stateParams.productId).then((newPrices) => {
                 $scope.newPriceInformation = newPrices.resources;
