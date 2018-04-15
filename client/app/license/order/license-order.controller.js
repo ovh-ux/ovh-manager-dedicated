@@ -1,4 +1,4 @@
-angular.module("Module.license.controllers").controller("LicenseOrderCtrl", ($scope, $timeout, License, $q, OvhApiMe, Alerter, $filter, featureAvailability, LicenseOrder) => {
+angular.module("Module.license").controller("LicenseOrderCtrl", ($scope, $timeout, $translate, License, $q, OvhApiMe, Alerter, $filter, featureAvailability, LicenseOrder) => {
     $scope.alerts = {
         order: "license.alerts.order"
     };
@@ -384,7 +384,7 @@ angular.module("Module.license.controllers").controller("LicenseOrderCtrl", ($sc
                 },
                 (data) => {
                     $scope.loaders.durations = false;
-                    Alerter.alertFromSWS($scope.tr("license_order_loading_error"), data.data, $scope.alerts.order);
+                    Alerter.alertFromSWS($translate.instant("license_order_loading_error"), data.data, $scope.alerts.order);
                 }
             );
         }

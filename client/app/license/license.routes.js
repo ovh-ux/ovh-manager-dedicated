@@ -9,6 +9,7 @@ angular
         $stateProvider.state("app.license.dashboard", {
             url: "",
             templateUrl: "license/license.html",
-            controller: "LicenseCtrl"
+            controller: "LicenseCtrl",
+            translations: ["common", "license"]
         });
     });

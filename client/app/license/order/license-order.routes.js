@@ -4,6 +4,7 @@ angular
         $stateProvider.state("app.license.order", {
             url: "/order",
             templateUrl: "license/order/license-order.html",
-            controller: "LicenseOrderCtrl"
+            controller: "LicenseOrderCtrl",
+            translations: ["license"]
         });
     });

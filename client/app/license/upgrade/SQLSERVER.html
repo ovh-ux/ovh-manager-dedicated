@@ -1,7 +1,7 @@
 <div class="form-group">
     <label for="optionVersion"
            class="control-label"
-           data-i18n-static="license_order_step2_version">
+           data-translate="license_order_step2_version">
     </label>
     <select class="form-control"
             id="optionVersion"
@@ -9,7 +9,7 @@
             data-ng-options="optionVersion as (i18n['license_designation_' + license.type + '_version_' + optionVersion.value] || optionVersion.value) for optionVersion in getOptionVersions()"
             data-ng-model="selected.options['SQLSERVER'].version">
         <option value=""
-               data-i18n-static="license_upgrade_common_no_change">
+               data-translate="license_upgrade_common_no_change">
         </option>
     </select>
 </div>

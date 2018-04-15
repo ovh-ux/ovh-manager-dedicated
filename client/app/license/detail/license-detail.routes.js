@@ -4,6 +4,7 @@ angular
         $stateProvider.state("app.license.detail", {
             url: "/:licenceId/detail",
             templateUrl: "license/detail/license-detail.html",
-            controller: "LicenseDetailsCtrl"
+            controller: "LicenseDetailsCtrl",
+            translations: ["license"]
         });
     });
