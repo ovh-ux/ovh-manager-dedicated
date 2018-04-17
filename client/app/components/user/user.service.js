@@ -38,6 +38,7 @@ angular.module("services").service("User", [
                                 ovhSubsidiary: result.me.ovhSubsidiary,
                                 spareEmail: result.me.spareEmail,
                                 legalform: result.me.legalform,
+                                customerCode: result.me.customerCode,
                                 isEnterprise: _.indexOf(result.certificates, "enterprise") > -1
                             };
                         }
