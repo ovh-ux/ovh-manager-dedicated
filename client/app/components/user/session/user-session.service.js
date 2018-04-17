@@ -378,6 +378,9 @@ class SessionService {
                     }, {
                         title: this.$translate.instant("menu_advanced"),
                         state: "app.account.useraccount.advanced"
+                    }, {
+                        title: this.$translate.instant("menu_users_management"),
+                        state: "app.account.useraccount.users"
                     }]
                 },
 
