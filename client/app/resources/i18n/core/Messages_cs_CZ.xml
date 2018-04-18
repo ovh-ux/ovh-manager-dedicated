@@ -538,8 +538,8 @@
    <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="343967">Počet účtů PayPal hlásících chybu: <strong>{0}</strong>. Běžte do <a href="#/billing/mean" class="alert-link">sekce fakturace</a> a proveďte potřebná ověření, případně zadejte novou platební metodu.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="374958">Záporný zůstatek na Vašem předplaceném účtu je <strong>{0}</strong> k datu {{ '{1}' | date:'medium'}}. Pro vyřešení této situace přejděte prosím do <a href="#/billing/ovhaccount" class="alert-link"> sekce "Fakturace"</a>.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369545">Vaše aktuální dlužná částka činní <strong>{0}</strong> (včetně  doposud neuhrazených pohledávek {1}). Pro uhrazení prosím přejděte do <a href="#/billing/statements" class="alert-link">sekce "Fakturace"</a>.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="343993">Váš aktuální dluh: <strong>{0}</strong>. Běžte do <a href="#/billing/statements" class="alert-link">sekce fakturace</a> a zjednejte nápravu.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369545">Vaše aktuální dlužná částka činní <strong>{0}</strong> (včetně  doposud neuhrazených pohledávek {1}). Pro uhrazení prosím přejděte do <a href="{2}" class="alert-link">sekce "Fakturace"</a>.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="343993">Váš aktuální dluh: <strong>{0}</strong>. Běžte do <a href="{1}" class="alert-link">sekce fakturace</a> a zjednejte nápravu.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="383919">Váš předplacený účet dosáhl Vámi stanovené hranice. Pro více informací přejděte prosím do <a href="#/billing/ovhaccount" class="alert-link"> sekce "Fakturace"</a>.</translation>
 
@@ -553,6 +553,9 @@
    <translation id="core_service_expiration_manual_renew" qtlid="377571">Datum expirace</translation>
    <translation id="core_service_expiration_auto_renew" qtlid="414986">Obnovení je naplánováno na</translation>
    <translation id="core_service_renew_button" qtlid="118962">Obnovit</translation>
+
+   <translation id="core_user_enterprise_retail_prices">Note : Les prix indiqués sont des prix standards du catalogue et peuvent ne pas refléter les conditions négociées. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
+   <translation id="core_user_enterprise_retail_prices_hpc">Note : Les prix indiqués sont une estimation basée sur le calcul au prorata de ce module pour l'aligner sur la période de facturation de votre contrat actuel. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
 
    <translation id="browser_alert_not_supported" qtlid="405357">Váš prohlížeč není podporován.</translation>
    <translation id="browser_alert_deprecated" qtlid="405370">Váš prohlížeč je zastaralý a může představovat riziko po stránce kompatibility a zabezpečení.</translation>

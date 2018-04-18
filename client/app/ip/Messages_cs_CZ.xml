@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="module_ip_dashboard_title" qtlid="194216">Správa IP</translation>
+   <translation id="ip_dashboard_error" qtlid="175205">Při načítání Vašich dat došlo k chybě.</translation>
+   <translation id="ip_services_error" qtlid="210384">Při načítání služeb: {0} došlo k chybě. Zkuste to prosím později.</translation>
+   <translation id="ip_block_error" qtlid="175218">Při načítání dat o {0} došlo k chybě.</translation>
+   <translation id="ip_service_error" qtlid="175231">Při načítání dat služby {0} došlo k chybě.</translation>
+
+   <translation id="ip" qtlid="172696">IP a Bezpečnost</translation>
+   <translation id="ip_month" qtlid="40222">měsíc</translation>
+   <translation id="ip_ip" qtlid="25615">IP</translation>
+   <translation id="ip_iplb" qtlid="223580">IP Load Balancing</translation>
+   <translation id="ip_ipv4" qtlid="101781">IPv4</translation>
+   <translation id="ip_ipv6" qtlid="34126">IPv6</translation>
+   <translation id="ip_ipblock" qtlid="200911">IP Blok</translation>
+   <translation id="ip_taskpending_label" qtlid="2690">Probíhá zpracování...</translation>
+
+   <translation id="optional" qtlid="175244">Volitelné</translation>
+   <translation id="ip_required_field" qtlid="191434">povinné pole</translation>
+   <translation id="common_available_soon" qtlid="126832">Dostupné již brzy</translation>
+   <translation id="global_select" qtlid="159046">Zvolte...</translation>
+   <translation id="global_add" qtlid="37923">Přidat</translation>
+   <translation id="common_updating" qtlid="223593">Aktualizace...</translation>
+
+   <translation id="module_ip_tab_ip" qtlid="25615">IP</translation>
+   <translation id="module_ip_tab_ip-lb" qtlid="223580">IP Load Balancing</translation>
+
+   <translation id="ip_loader_loading_uniq" qtlid="210397">Načítání dat...</translation>
+   <translation id="ip_loader_loading_state" qtlid="210410">Načítání služby {0} na {1}...</translation>
+   <translation id="ip_loader_tips" qtlid="210423">Tip: Můžete si zvolit přímo ze seznamu níže pro načtení pouze dané služby a díky tomu zrychlit načítání.</translation>
+
+   <translation id="ip_service_PARK" qtlid="204571">Parkování IP</translation>
+   <translation id="ip_service_UNASSOCIATED" qtlid="204584">Nepřiřazené IP</translation>
+
+   <translation id="ip_alerts_none" qtlid="175270">Žádné upozornění</translation>
+   <translation id="ip_alerts_service_none" qtlid="210436">Žádné upozornění pro tuto službu</translation>
+   <translation id="ip_alerts_1" qtlid="175283">1 upozornění</translation>
+   <translation id="ip_alerts_other" qtlid="175296">{} upozornění</translation>
+   <translation id="ip_alerts_service_1" qtlid="210449">1 upozornění pro tuto službu</translation>
+   <translation id="ip_alerts_service_other" qtlid="210462">{} upozornění pro tuto službu</translation>
+   <translation id="ip_alerts_spam" qtlid="175309">Žádná IP není blokována (Anti-spam)</translation>
+   <translation id="ip_alerts_spam_1" qtlid="175322">1 IP je blokována (Anti-spam)</translation>
+   <translation id="ip_alerts_spam_other" qtlid="175335">{} IP je blokováno (Anti-spam)</translation>
+   <translation id="ip_alerts_antihack" qtlid="222605">Žádná blokovaná IP (Anti-hack)</translation>
+   <translation id="ip_alerts_antihack_1" qtlid="222618">1 blokovaná IP (Anti-hack)</translation>
+   <translation id="ip_alerts_antihack_other" qtlid="222631">{} blokovaných IP (Anti-hack)</translation>
+   <translation id="ip_alerts_arp" qtlid="210475">Žádné blokované IP (ARP)</translation>
+   <translation id="ip_alerts_arp_1" qtlid="210488">1 blokovaná IP (ARP)</translation>
+   <translation id="ip_alerts_arp_other" qtlid="210501">{} blokovaných IP (ARP)</translation>
+   <translation id="ip_alerts_mitigation" qtlid="175348">Žádná IP nebyla napadena (Zmírnění)</translation>
+   <translation id="ip_alerts_mitigation_1" qtlid="175361">1 IP je napadena (zmírnění)</translation>
+   <translation id="ip_alerts_mitigation_other" qtlid="175374">{} IP je napadeno (zmírnění)</translation>
+   <translation id="ip_block" qtlid="141366">Blok:</translation>
+   <translation id="ip_block_all" qtlid="69173">Vše</translation>
+   <translation id="ip_block_order" qtlid="114378">Objednat blok IP</translation>
+   <translation id="ip_additional_order" qtlid="181877">Objednání přídavných IP</translation>
+   <translation id="ip_search" qtlid="122275">Vyhledávání...</translation>
+   <translation id="ip_table_empty" qtlid="106715">Žádná data k zobrazení</translation>
+   <translation id="ip_table_search" qtlid="98288">Vyhledávání...</translation>
+   <translation id="ip_table_ipblock_refresh" qtlid="210514">Aktualizace IP {0}...</translation>
+   <translation id="ip_manage_task_pending" qtlid="210527">Na jedné IP na serveru právě probíhá operace.</translation>
+
+   <translation id="ip_migration" qtlid="194840">Import IP failover</translation>
+   <translation id="ip_export" qtlid="250121">Exportovat mé IP adresy</translation>
+   <translation id="ip_export_csv_expl" qtlid="250134">Export Vašich IP může trvat několik sekund v závislosti na jejich počtu.</translation>
+   <translation id="ip_export_csv_confirm" qtlid="250147">Opravdu si přejete provést export Vašich IP v CSV formátu?</translation>
+   <translation id="ip_export_csv_success" qtlid="250160">Vaše IP byly exportovány.</translation>
+   <translation id="ip_export_csv_error" qtlid="250173">Chyba: není možné exportovat IP.</translation>
+   <translation id="ip_export_csv_creation_doing" qtlid="250186">Vytváření souboru. Vyčkejte prosím...</translation>
+   <translation id="ip_migration_step1_question" qtlid="194853">Abyste mohli postoupit k importu IP adresy, musíte znát klíč (jednorázové heslo), které bylo vygenerováno ze Zákaznického prostoru serveru, na který je aktuálně směrována IP adresa, kterou chcete migrovat.</translation>
+   <translation id="ip_migration_step1_ip" qtlid="194866">IP či Blok IP:</translation>
+   <translation id="ip_migration_step1_token" qtlid="194879">Jednorázový kód:</translation>
+   <translation id="ip_migration_step1_error" qtlid="194892">Při získávání dostupných serverů došlo k chybě</translation>
+   <translation id="ip_migration_step2_question" qtlid="194905">Zvolte si cílový server:</translation>
+   <translation id="ip_migration_step2_service" qtlid="194918">Cílový server:</translation>
+   <translation id="ip_migration_step2_error" qtlid="194931">Při získávání migračních metod došlo k chybě</translation>
+   <translation id="ip_migration_step2_error_OPTION_NOT_ALLOWED" qtlid="194944">Nemáte oprávnění přiřadit {0} k serveru {1}</translation>
+   <translation id="ip_migration_step2_error_INCOMPATIBLE" qtlid="194957">Server {1} není kompatibilní s {0}</translation>
+   <translation id="ip_migration_step2_error_EXPIRED" qtlid="194970">Služba {1} expirovala.</translation>
+
+   <translation id="ip_migration_step2_checkservice" qtlid="194983">Ověření migračních metod...</translation>
+   <translation id="ip_migration_step2_success" qtlid="194996">Server {1} je kompatibilní s {0}</translation>
+   <translation id="ip_migration_step3_question" qtlid="181214">Zvolte období:</translation>
+   <translation id="ip_migration_step3_error" qtlid="195009">Při získávání délky období došlo k chybě</translation>
+   <translation id="ip_migration_step5_question" qtlid="177496">Shrnutí Vaší objednávky</translation>
+   <translation id="ip_migration_step5_success" qtlid="195022">Migrační požadavek (objednávka <a href='{0}' target='_blank'>{1}</a>) byl úspěšně přijat.</translation>
+   <translation id="ip_migration_step5_error" qtlid="195035">Při přijetí Vašeho požadavku o migraci došlo k chybě.</translation>
+
+   <translation id="ip_filter_services__ALL" qtlid="181890">Všechny služby</translation>
+   <translation id="ip_filter_services__ALERTS" qtlid="181903">Služby s upozorněním</translation>
+   <translation id="ip_filter_services__PARK" qtlid="210540">Parkování IP</translation>
+
+   <translation id="ip_filter_services_title_OTHER" qtlid="28603">Jiné</translation>
+   <translation id="ip_filter_services_title_CDN" qtlid="99812">CDN</translation>
+   <translation id="ip_filter_services_title_DEDICATED" qtlid="101901">Dedikované servery</translation>
+   <translation id="ip_filter_services_title_HOSTED_SSL" qtlid="210553">Hosted SSL</translation>
+   <translation id="ip_filter_services_title_PRIVATE_CLOUD" qtlid="162205">Dedicated Cloud</translation>
+   <translation id="ip_filter_services_title_VPS" qtlid="23083">VPS</translation>
+   <translation id="ip_filter_services_title_VRACK" qtlid="210566">vRack</translation>
+   <translation id="ip_filter_services_title_XDSL" qtlid="104614">xDSL</translation>
+   <translation id="ip_filter_services_title_MAIL" qtlid="210579">Mail servery</translation>
+   <translation id="ip_filter_services_title_CLOUD" qtlid="15677">Cloud</translation>
+   <translation id="ip_filter_services_title_IP_LOAD_BALANCING" qtlid="223580">IP Load Balancing</translation>
+
+   <translation id="ip_filter_services_CDN" qtlid="181916">Pouze CDN</translation>
+   <translation id="ip_filter_services_DEDICATED" qtlid="181929">Pouze dedikované servery</translation>
+   <translation id="ip_filter_services_HOSTED_SSL" qtlid="181942">Pouze Hosted SSL</translation>
+   <translation id="ip_filter_services_PCC" qtlid="181955">Pouze Dedicated Cloud</translation>
+   <translation id="ip_filter_services_VPS" qtlid="181968">Pouze VPS</translation>
+   <translation id="ip_filter_services_VRACK" qtlid="181981">Pouze VRACK</translation>
+   <translation id="ip_filter_services_XDSL" qtlid="181994">Pouze xDSL</translation>
+   <translation id="ip_filter_services_MAIL" qtlid="191369">Pouze mail servery</translation>
+
+   <translation id="ip_table_collapseall" qtlid="178835">Skrýt vše</translation>
+   <translation id="ip_table_not_allowed" qtlid="141379">Není možné spravovat zmírnění a síťový firewall pro tuto IP adresu. Pro více informací kontaktujte podporu.</translation>
+   <translation id="ip_table_search_empty" qtlid="141392">Vyhledávacím kritériím neodpovídá žádná IP adresa</translation>
+   <translation id="ip_table_header_service" qtlid="31042">Služba</translation>
+   <translation id="ip_table_header_ip_address" qtlid="26191">Adresa IP</translation>
+   <translation id="ip_table_header_country" qtlid="25171">Země</translation>
+   <translation id="ip_table_header_reverse" qtlid="32338">Reverzní záznam</translation>
+   <translation id="ip_table_header_virtual_mac" qtlid="141405">Virtuální MAC</translation>
+   <translation id="ip_table_header_antispam" qtlid="148331">Anti-spam</translation>
+   <translation id="ip_table_header_mitigation" qtlid="138233">Zmírnění (anti-DDoS)</translation>
+   <translation id="ip_table_header_security" qtlid="141418">Firewall</translation>
+   <translation id="ip_table_header_game_mitigation" qtlid="232534">Firewall GAME</translation>
+   <translation id="ip_table_header_alerts" qtlid="72797">Upozornění</translation>
+   <translation id="ip_table_header_visiblecols_btn" qtlid="4010">Nastavení</translation>
+   <translation id="ip_table_header_visiblecols" qtlid="175387">Viditelné sloupce</translation>
+
+   <translation id="ip_agora_table_header_offer" qtlid="38217">Nabídka</translation>
+   <translation id="ip_agora_table_header_quantity" qtlid="37107">Kvantita</translation>
+   <translation id="ip_agora_table_header_country" qtlid="182215">Umístěno v</translation>
+   <translation id="ip_agora_table_header_organisation" qtlid="32278">Organizace</translation>
+
+   <translation id="ip_table_firewall" qtlid="141418">Firewall</translation>
+   <translation id="ip_table_manage_reverse" qtlid="175400">Změnit reverzní záznam</translation>
+   <translation id="ip_table_manage_reverse_question" qtlid="210592">Zadejte platnou reverzní cestu pro tuto IP a klikněte na "Potvrdit".</translation>
+   <translation id="ip_table_manage_reverse_success" qtlid="151854">Byla provedena aktualizace reverzního záznamu</translation>
+   <translation id="ip_table_manage_reverse_failure" qtlid="175413">Při aktualizaci reverzního záznamu došlo k chybě.</translation>
+   <translation id="ip_table_manage_mac" qtlid="141457">Změnit virtuální MAC</translation>
+
+
+   <translation id="ip_table_manage_mitigation_DEFAULT_to_PERMANENT" qtlid="175426">Zmírnění: trvalý režim</translation>
+   <translation id="ip_table_manage_mitigation_PERMANENT_to_AUTO" qtlid="141470">Zmírnění: automatický režim</translation>
+   <translation id="ip_table_manage_mitigation_stats" qtlid="26671">Statistiky</translation>
+   <translation id="ip_table_manage_firewall_enable" qtlid="222644">Aktivovat firewall</translation>
+   <translation id="ip_table_manage_firewall_disable" qtlid="222657">Deaktivovat firewall</translation>
+   <translation id="ip_table_manage_firewall_disable_tooltip" qtlid="141509">V současnosti je povoleno zmírnění, firewall nemůže být zobrazen.</translation>
+   <translation id="ip_table_manage_firewall_configure" qtlid="141522">Vytvořit Firewall</translation>
+   <translation id="ip_table_manage_firewall_rules" qtlid="176846">Nastavit Firewall</translation>
+   <translation id="ip_table_manage_antispam_unblock" qtlid="148331">Anti-spam</translation>
+   <translation id="ip_table_manage_game_mitigation" qtlid="232547">Nastavení firewallu GAME</translation>
+   <translation id="ip_table_manage_add_ipv6block" qtlid="178978">Volba IPv6</translation>
+   <translation id="ip_table_manage_add_ipv6block_question" qtlid="210605">Zadejte platnou IPv6 z tohoto bloku a klikněte na "Potvrdit".</translation>
+   <translation id="ip_table_manage_add_ipv6block_failure" qtlid="175452">Při přidávání IPv6 došlo k chybě.</translation>
+   <translation id="ip_table_manage_select_ipv6block" qtlid="210618">Můžete si zvolit IPv6 z bloku kliknutím zde.</translation>
+   <translation id="ip_table_manage_delegate_ipv6block" qtlid="272838">Delegace reverzu</translation>
+   <translation id="ip_table_manage_view_iporganisation_details" qtlid="210631">Detaily organizace</translation>
+   <translation id="ip_table_manage_view_iporganisation_change" qtlid="262700">Změna organizace</translation>
+
+   <translation id="ip_table_manage_add_virtualmac" qtlid="175465">Přidat virtuální MAC</translation>
+   <translation id="ip_table_manage_view_virtualmac" qtlid="175478">Detaily virtuální MAC</translation>
+   <translation id="ip_table_manage_view_virtualmac_question" qtlid="210644">Zde jsou informace na virtuální Mac:</translation>
+   <translation id="ip_table_manage_del_virtualmac" qtlid="175491">Vymazat virtuální MAC</translation>
+   <translation id="ip_virtualmac_add_new" qtlid="175504">Vytvořit novou virtuální MAC</translation>
+   <translation id="ip_virtualmac_add_existing" qtlid="175517">Použít existující virtuální MAC</translation>
+   <translation id="ip_virtualmac_type" qtlid="2642">Typ</translation>
+   <translation id="ip_virtualmac_field" qtlid="141405">Virtuální MAC</translation>
+   <translation id="ip_virtualmac_machinename" qtlid="175530">Název virtuálního serveru</translation>
+   <translation id="ip_virtualmac_add_new_success" qtlid="175543">Bude generována nová virtuální MAC, která bude brzy dostupná pro IP {0}.</translation>
+   <translation id="ip_virtualmac_add_new_failure" qtlid="175556">Při generování nové virtuální MAC na IP {0} došlo k chybě.</translation>
+   <translation id="ip_virtualmac_add_existing_success" qtlid="175569">IP {0} bude brzy přiřazena k existující virtuální MAC.</translation>
+   <translation id="ip_virtualmac_add_impossible_server" qtlid="256269">Nejprve musíte IP adresu propojit se serverem.</translation>
+   <translation id="ip_virtualmac_add_impossible_status" qtlid="256282">Probíhá operace...</translation>
+   <translation id="ip_virtualmac_add_impossible_unavailable" qtlid="256295">Na této IP adrese není služba dostupná</translation>
+   <translation id="ip_virtualmac_add_impossible_exists" qtlid="256308">Virtuální MAC adresa již existuje </translation>
+
+
+   <translation id="ip_virtualmac_add_existing_failure" qtlid="175582">Při přiřazování existující virtuální MAC k IP {0} došlo k chybě.</translation>
+   <translation id="ip_virtualmac_delete_confirmation" qtlid="175595">Opravdu si přejete vymazat virtuální MAC {0} z IP {1}?</translation>
+   <translation id="ip_virtualmac_delete_success" qtlid="175608">Virtuální MAC {0} bude během několika minut vymazána z IP {1}.</translation>
+   <translation id="ip_virtualmac_delete_failure" qtlid="175621">Při mazání virtuální MAC {0} z IP {1} došlo k chybě.</translation>
+
+   <translation id="ip_failover" qtlid="175634">IP Failover</translation>
+   <translation id="ip_failover_short" qtlid="175647">FO</translation>
+   <translation id="ip_failover_impossible_delete" qtlid="281745">Tuto IP nelze odstranit</translation>
+   <translation id="ip_failover_impossible_move" qtlid="281758">Tuto IP nelze převést</translation>
+   <translation id="ip_failover_cloud_move_info" qtlid="277715">Brzy bude možné přenášet IP Failover Cloud na jiné služby OVH.</translation>
+   <translation id="ip_position" qtlid="45988">Priorita</translation>
+   <translation id="ip_position_tooltip" qtlid="140469">Čtení pravidel je prováděno postupně. Pravidlo 0 má nejvyšší prioritu.</translation>
+   <translation id="ip_rule" qtlid="54917">Pravidlo</translation>
+   <translation id="ip_status" qtlid="33790">Stav</translation>
+   <translation id="ip_creation_date" qtlid="26419">Datum vytvoření</translation>
+   <translation id="ip_action" qtlid="56105">Akce</translation>
+   <translation id="ip_protocol" qtlid="19711">Protokol</translation>
+   <translation id="ip_source_ip" qtlid="138376">IP zdroje</translation>
+   <translation id="ip_source_port" qtlid="141548">Port zdroje</translation>
+   <translation id="ip_source_port_notice" qtlid="141561">ze zdrojového portu</translation>
+   <translation id="ip_source_port_range_max" qtlid="141574">do zdrojového portu (fakultativní)</translation>
+   <translation id="ip_destination_port" qtlid="141587">Cílový port</translation>
+   <translation id="ip_destination_port_notice" qtlid="141600">z cílového portu</translation>
+   <translation id="ip_destination_port_range_max" qtlid="138454">na cílový port (volitelný)</translation>
+   <translation id="ip_options" qtlid="23395">Možnosti</translation>
+   <translation id="ip_options_tcp" qtlid="141613">Možnosti TCP</translation>
+   <translation id="ip_options_udp" qtlid="141626">Možnosti UDP</translation>
+   <translation id="ip_port_range_max" qtlid="141639">na port</translation>
+   <translation id="ip_port_range_from" qtlid="141652">z portu</translation>
+   <translation id="ip_rule_status_CREATION_PENDING" qtlid="26227">Vytváří se</translation>
+   <translation id="ip_rule_status_REMOVAL_PENDING" qtlid="133929">Odstraňování</translation>
+   <translation id="ip_rule_status_OK" qtlid="62028">Aktivováno</translation>
+   <translation id="ip_description_field" qtlid="9238">Popis</translation>
+   <translation id="ip_description_new_title" qtlid="149345">Přidat popis</translation>
+   <translation id="ip_description_edit_title" qtlid="175660">Upravit popis</translation>
+   <translation id="ip_description_edit_field" qtlid="103702">Popis:</translation>
+   <translation id="ip_description_edit_success" qtlid="175673">Popis IP {0} byl upraven.</translation>
+   <translation id="ip_description_edit_failure" qtlid="175686">Při úpravě popisu IP {0} došlo k chybě.</translation>
+
+<!-- ANTISPAM -->
+   <translation id="ip_antispam_current_ip" qtlid="26191">Adresa IP</translation>
+   <translation id="ip_antispam_status" qtlid="26443">Stav</translation>
+   <translation id="ip_antispam_date_blocking" qtlid="175699">Datum blokace</translation>
+   <translation id="ip_antispam_date_blocking_end" qtlid="175712">Datum možného odblokování</translation>
+
+   <translation id="ip_antispam_status_BLOCKED_FOR_SPAM" qtlid="151386">Blokovaná</translation>
+   <translation id="ip_antispam_status_UNBLOCKED" qtlid="151399">Není blokovaná</translation>
+   <translation id="ip_antispam_status_UNBLOCKING" qtlid="151412">Probíhá odblokování...</translation>
+
+   <translation id="ip_antispam_periods_table_headers_date" qtlid="24523">Datum</translation>
+   <translation id="ip_antispam_periods_table_headers_score" qtlid="151438">Spam score</translation>
+   <translation id="ip_antispam_periods_table_headers_total" qtlid="32458">Celkem</translation>
+   <translation id="ip_antispam_periods_table_headers_spamscount" qtlid="151451">Počet spam e-mailů</translation>
+   <translation id="ip_antispam_periods_table_empty" qtlid="37527">Detaily</translation>
+   <translation id="ip_antispam_periods_table_see_more" qtlid="37527">Detaily</translation>
+   <translation id="ip_antispam_unblock_title" qtlid="175725">Odblokovat anti-spam pro IP {0}</translation>
+   <translation id="ip_antispam_unblock_button" qtlid="148344">Odblokovat anti-spam</translation>
+   <translation id="ip_antispam_unblock_error" qtlid="148409">Při odblokování IP {0} došlo k chybě</translation>
+   <translation id="ip_antispam_details_information_title" qtlid="151464">Spam detekován</translation>
+   <translation id="ip_antispam_details_information" qtlid="151477">Zde jsou informace o zvoleném období anti-spam:</translation>
+   <translation id="ip_antispam_details_information_search_placeholder" qtlid="140612">Hledání...</translation>
+   <translation id="ip_antispam_details_information_table_header_ip" qtlid="151490">Cílová IP</translation>
+   <translation id="ip_antispam_details_information_table_header_messageid" qtlid="151503">ID zprávy</translation>
+   <translation id="ip_antispam_details_information_table_header_date" qtlid="24523">Datum</translation>
+   <translation id="ip_antispam_details_information_table_header_spamscore" qtlid="151516">SpamScore</translation>
+   <translation id="ip_antispam_load_error" qtlid="175738">Při načítání dat anti-spam došlo k chybě.</translation>
+
+<!-- arp -->
+   <translation id="ip_table_manage_view_arp" qtlid="195347">ARP</translation>
+   <translation id="ip_arp_status_BLOCKED" qtlid="151386">Blokovaná</translation>
+   <translation id="ip_arp_status_UNBLOCKING" qtlid="151412">Probíhá odblokování...</translation>
+   <translation id="ip_arp_status" qtlid="26443">Stav</translation>
+   <translation id="ip_arp_blockedsince" qtlid="134410">Blokováno od</translation>
+   <translation id="ip_arp_remainingtime" qtlid="210657">Zbývající čas</translation>
+   <translation id="ip_arp_unblock" qtlid="200833">Odblokovat IP</translation>
+   <translation id="ip_arp_unblock_success" qtlid="210670">IP bude odblokována během několika minut.</translation>
+   <translation id="ip_arp_unblock_failure" qtlid="210683">Při odblokování ARP spam došlo k chybě.</translation>
+
+<!-- antihack -->
+   <translation id="ip_table_manage_view_antihack" qtlid="167431">Anti-hack</translation>
+   <translation id="ip_antihack_status_BLOCKED" qtlid="151386">Blokovaná</translation>
+   <translation id="ip_antihack_status_UNBLOCKING" qtlid="151412">Probíhá odblokování...</translation>
+   <translation id="ip_antihack_status" qtlid="26443">Stav</translation>
+   <translation id="ip_antihack_blockedsince" qtlid="134410">Blokováno od</translation>
+   <translation id="ip_antihack_remainingtime" qtlid="210657">Zbývající čas</translation>
+   <translation id="ip_antihack_unblock" qtlid="200833">Odblokovat IP</translation>
+   <translation id="ip_antihack_unblock_success" qtlid="210670">IP bude odblokována během několika minut.</translation>
+   <translation id="ip_antihack_unblock_failure" qtlid="222670">Při deaktivování anti-hack spamu došlo k chybě.</translation>
+<!-- Mitigation -->
+   <translation id="ip_mitigation_DEFAULT" qtlid="134215">Automatické</translation>
+   <translation id="ip_block_mitigation_DEFAULT" qtlid="323353">Otevřte pro více informací</translation>
+   <translation id="ip_mitigation_PERMANENT" qtlid="175751">Trvalé</translation>
+   <translation id="ip_mitigation_FORCED" qtlid="134202">Vynucený</translation>
+   <translation id="ip_mitigation_CREATION_PENDING" qtlid="26383">Probíhá</translation>
+   <translation id="ip_mitigation_REMOVAL_PENDING" qtlid="26383">Probíhá</translation>
+   <translation id="ip_mitigation_permanent_title_button" qtlid="175764">Umožňuje trvalé zmírnění</translation>
+   <translation id="ip_mitigation_permanent_title" qtlid="175764">Umožňuje trvalé zmírnění</translation>
+   <translation id="ip_mitigation_permanent_question" qtlid="175777">Opravdu chcete aktivovat trvalé zmírnění pro IP {0}?</translation>
+   <translation id="ip_mitigation_permanent_success" qtlid="175790">Trvalé zmírnění bude na IP {0} brzy aktivováno.</translation>
+   <translation id="ip_mitigation_permanent_failed" qtlid="175803">Při aktivaci trvalého zmírnění na IP {0} došlo k chybě.</translation>
+   <translation id="ip_mitigation_auto_title_button" qtlid="142029">Přepnout zmírnění do režimu auto</translation>
+   <translation id="ip_mitigation_auto_title" qtlid="142029">Přepnout zmírnění do režimu auto</translation>
+   <translation id="ip_mitigation_auto_question" qtlid="142042">Opravdu si přejete přepnout zmírnění na IP {0} do automatického režimu?</translation>
+   <translation id="ip_mitigation_auto_success" qtlid="140508">Zmírnění bude během několika sekund přepnuto do automatického režimu na IP {0}</translation>
+   <translation id="ip_mitigation_auto_failed" qtlid="142055">Při přepínání zmírnění na {0} do automatického režimu došlo k chybě</translation>
+   <translation id="ip_mitigation_statistics_title" qtlid="26671">Statistiky</translation>
+   <translation id="ip_mitigation_statistics_back_title_button" qtlid="4118">Zpět</translation>
+   <translation id="ip_mitigation_statistics_current_ip" qtlid="142068">Zobrazit statistiku zmírnění pro cílovou IP: {0}</translation>
+   <translation id="ip_mitigation_statistics_to" qtlid="88725">Od</translation>
+   <translation id="ip_mitigation_statistics_mode_realtime" qtlid="142081">V reálném čase</translation>
+   <translation id="ip_mitigation_statistics_mode_date" qtlid="142094">Uvedením data</translation>
+   <translation id="ip_mitigation_statistics_input" qtlid="139000">Vstup</translation>
+   <translation id="ip_mitigation_statistics_output" qtlid="142107">Odchozí</translation>
+   <translation id="ip_mitigation_statistics_unit_B" qtlid="142120">B/s</translation>
+   <translation id="ip_mitigation_statistics_unit_KB" qtlid="142133">kB/s</translation>
+   <translation id="ip_mitigation_statistics_unit_MB" qtlid="142146">MB/s</translation>
+   <translation id="ip_mitigation_statistics_unit_GB" qtlid="142159">GB/s</translation>
+   <translation id="ip_mitigation_statistics_unit_TB" qtlid="142172">TB/s</translation>
+   <translation id="ip_mitigation_statistics_unit_PB" qtlid="142185">PB/s</translation>
+   <translation id="ip_mitigation_statistics_unit_EB" qtlid="142198">EB/s</translation>
+   <translation id="ip_mitigation_statistics_unit_ZB" qtlid="142211">ZB/s</translation>
+   <translation id="ip_mitigation_statistics_unit_YB" qtlid="142224">YB/s</translation>
+   <translation id="ip_mitigation_statistics_scale" qtlid="139143">Stupnice</translation>
+   <translation id="ip_mitigation_statistics_statistics_scale_10_S" qtlid="110478">10 sekund</translation>
+   <translation id="ip_mitigation_statistics_statistics_scale_1_M" qtlid="32326">1 minuta</translation>
+   <translation id="ip_mitigation_statistics_statistics_scale_5_M" qtlid="33178">5 minut</translation>
+   <translation id="ip_mitigation_statistics_reset_zoom" qtlid="142237">Restart zoom</translation>
+   <translation id="ip_mitigation_statistics_no_data" qtlid="156602">Statistiky pro IP {0} nejsou dostupné.</translation>
+
+<!-- GAME MITIGATION -->
+   <translation id="ip_game_mitigation_ACTIVATED" qtlid="99920">Dostupný</translation>
+   <translation id="ip_game_mitigation_title" qtlid="232560">Nastavení GAME firewallu podle IP <span class="blue">{0}</span></translation>
+   <translation id="ip_game_mitigation_table_protocol" qtlid="19711">Protokol</translation>
+   <translation id="ip_game_mitigation_table_port" qtlid="9034">Port</translation>
+   <translation id="ip_game_mitigation_table_state" qtlid="8230">Stav</translation>
+   <translation id="ip_game_mitigation_table_error" qtlid="232573">Nelze získat pravidla firewallu GAME.</translation>
+   <translation id="ip_game_mitigation_table_partial_error" qtlid="232586">Při získávání pravidel došlo k chybě.</translation>
+   <translation id="ip_game_mitigation_table_partial_error_info" qtlid="232599">Není možné našíst pravidlo (id {0}).</translation>
+   <translation id="ip_game_mitigation_table_empty" qtlid="232612">Nemáte žádná pravidla pro firewall GAME.</translation>
+
+   <translation id="ip_game_mitigation_rule_remove_title" qtlid="232625">Mazání pravidla</translation>
+   <translation id="ip_game_mitigation_rule_remove" qtlid="232638">Opravdu si přejete vymazat pravidlo protokolu {0} ({1})?</translation>
+   <translation id="ip_game_mitigation_rule_remove_success" qtlid="141665">Pravidlo Firewallu bude vymazáno.</translation>
+   <translation id="ip_game_mitigation_rule_remove_error" qtlid="232651">Při mazání pravidla došlo k chybě.</translation>
+
+   <translation id="ip_game_mitigation_error" qtlid="232664">Došlo k chybě. Nelze získat stav firewallu.</translation>
+
+   <translation id="ip_game_mitigation_state_ok" qtlid="141795">Povolit</translation>
+   <translation id="ip_game_mitigation_state_deleteRulePending" qtlid="152778">Mazáni</translation>
+   <translation id="ip_game_mitigation_state_createRulePending" qtlid="29647">Probíhá vytváření</translation>
+
+   <translation id="ip_game_mitigation_rule_add" qtlid="141730">Přidat pravidlo</translation>
+   <translation id="ip_game_mitigation_rule_add_error" qtlid="232677">Při přidávání nového pravidla došlo k chybě.</translation>
+   <translation id="ip_game_mitigation_rule_add_title" qtlid="232690">Přidat nové pravidlo:</translation>
+   <translation id="ip_game_mitigation_rule_add_protocol" qtlid="232703">Protokol:</translation>
+   <translation id="ip_game_mitigation_rule_add_protocol_enum_hl2Source" qtlid="250199">Half life/source</translation>
+   <translation id="ip_game_mitigation_rule_add_port_from" qtlid="232716">Odchozí port:</translation>
+   <translation id="ip_game_mitigation_rule_add_port_number" qtlid="232729">Port musí být číslo.</translation>
+   <translation id="ip_game_mitigation_rule_add_port_pattern" qtlid="232742">Port musí být celé nezáporné číslo.</translation>
+   <translation id="ip_game_mitigation_rule_add_port_to" qtlid="232755">na port:</translation>
+   <translation id="ip_game_mitigation_rule_add_init_error" qtlid="232768">Došlo k chybě. Nelze získat seznam protokolu.</translation>
+
+   <translation id="ip_game_mitigation_firewall_true" qtlid="232781">Omezení GAME je nyní <strong>aktivní</strong>. UDP přenos dat je povolen pouze podle nadefinovaných pravidel.</translation>
+   <translation id="ip_game_mitigation_firewall_false" qtlid="232794">Omezení GAME je nyní <strong>neaktivní</strong>. UDP přenos dat na nedefinované porty bude povolen, ale budou se nadále používat i nadefinovaná pravidla.</translation>
+   <translation id="ip_game_mitigation_firewall_firewallModeEnablePending" qtlid="232807">Omezení GAME <strong>bude aktivováno</strong>. UDP přenos dat bude povolen pouze podle nadefinovaných pravidel.</translation>
+   <translation id="ip_game_mitigation_firewall_firewallModeDisablePending" qtlid="232820">Omezení GAME <strong>bude deaktivováno</strong>. UDP přenos dat na nedefinované porty bude povolen, ale budou se nadále používat i nadefinovaná pravidla.</translation>
+
+   <translation id="ip_game_mitigation_firewall_enable_button" qtlid="232833">Aktivování omezení</translation>
+   <translation id="ip_game_mitigation_firewall_enable_title_false" qtlid="232846">Aktivování režimu omezení GAME</translation>
+   <translation id="ip_game_mitigation_firewall_enable_info_false" qtlid="232859">Opravdu si přejete aktivovat režim omezení GAME?</translation>
+   <translation id="ip_game_mitigation_firewall_enable_success_false" qtlid="232872">Režim omezení GAME bude aktivován za několik sekund.</translation>
+   <translation id="ip_game_mitigation_firewall_enable_error_false" qtlid="232885">Při aktivaci režimu omezení GAME došlo k chybě.</translation>
+
+   <translation id="ip_game_mitigation_firewall_disable_button" qtlid="232898">Deaktivace omezení</translation>
+   <translation id="ip_game_mitigation_firewall_enable_title_true" qtlid="232911">Deaktivace režimu omezení GAME</translation>
+   <translation id="ip_game_mitigation_firewall_enable_info_true" qtlid="232924">Opravdu si přejete deaktivovat režim omezení GAME?</translation>
+   <translation id="ip_game_mitigation_firewall_enable_success_true" qtlid="232937">Režim omezení GAME bude deaktivován za několik sekund.</translation>
+   <translation id="ip_game_mitigation_firewall_enable_error_true" qtlid="232950">Při deaktivaci režimu omezení GAME došlo k chybě.</translation>
+
+
+<!-- FIREWALL -->
+   <translation id="ip_firewall_fail" qtlid="164285">Během načítání informací o firewallu došlo k chybě</translation>
+   <translation id="ip_firewall_edit_rule" qtlid="125888">Změna pravidla</translation>
+   <translation id="ip_firewall_remove_rule" qtlid="125912">Vymazat pravidlo</translation>
+   <translation id="ip_firewall_remove_rule_confirmation" qtlid="210696">Opravdu si přejete vymazet pravidlo číslo {0}?</translation>
+   <translation id="ip_firewall_remove_rule_success" qtlid="141665">Pravidlo Firewallu bude vymazáno.</translation>
+   <translation id="ip_firewall_remove_rule_fail" qtlid="141678">Při požadavku o vymazání pravidla firewallu došlo k chybě.</translation>
+   <translation id="ip_firewall_enabled" qtlid="141691">Firewall je povolen</translation>
+   <translation id="ip_firewall_disabled" qtlid="141704">Firewall je zakázán</translation>
+   <translation id="ip_firewall_NOT_CONFIGURED" qtlid="124952">Není nastaven</translation>
+   <translation id="ip_firewall_DEACTIVATED" qtlid="24967">Neaktivní</translation>
+   <translation id="ip_firewall_ACTIVATED" qtlid="30250">Aktivní</translation>
+   <translation id="ip_firewall_PENDING" qtlid="26383">Probíhá</translation>
+   <translation id="ip_firewall_DISABLE_PENDING" qtlid="210709">Deaktivování...</translation>
+   <translation id="ip_firewall_ENABLE_PENDING" qtlid="210722">Aktivování...</translation>
+   <translation id="ip_firewall_not_yet_activated_short" qtlid="124952">Není nastaven</translation>
+   <translation id="ip_firewall_enable_button_title" qtlid="76734">Aktivovat</translation>
+   <translation id="ip_firewall_disable_button_title" qtlid="90973">Deaktivovat</translation>
+   <translation id="ip_firewall_title" qtlid="210735">Nastavit firewall IP <span class="blue">{0}</span></translation>
+   <translation id="ip_firewall_add_summary" qtlid="132720">Shrnutí:</translation>
+   <translation id="ip_firewall_add_title" qtlid="141730">Přidat pravidlo</translation>
+   <translation id="ip_firewall_add_rule_success" qtlid="141743">Bylo přidáno nové pravidlo</translation>
+   <translation id="ip_firewall_add_rule_fail" qtlid="141756">Při přidávání pravidla došlo k chybě.</translation>
+   <translation id="ip_firewall_add_rule_confirm_button_text" qtlid="37923">Přidat</translation>
+   <translation id="ip_firewall_modify_title" qtlid="141769">Změnit pravidlo</translation>
+   <translation id="ip_firewall_modify_rule_success" qtlid="141782">Pravidlo bylo změněno.</translation>
+   <translation id="ip_firewall_modify_rule_fail" qtlid="138662">Při změně pravdila došlo k chybě.</translation>
+   <translation id="ip_firewall_rule_PERMIT" qtlid="141795">Povolit</translation>
+   <translation id="ip_firewall_rule_permit" qtlid="141795">Povolit</translation>
+   <translation id="ip_firewall_rule_DENY" qtlid="141808">Odmítnout</translation>
+   <translation id="ip_firewall_rule_deny" qtlid="141808">Odmítnout</translation>
+   <translation id="ip_firewall_rule_protocol_AH" qtlid="176872">AH</translation>
+   <translation id="ip_firewall_rule_protocol_ESP" qtlid="176885">ESP</translation>
+   <translation id="ip_firewall_rule_protocol_GRE" qtlid="176898">GRE</translation>
+   <translation id="ip_firewall_rule_protocol_ICMP" qtlid="19627">ICMP</translation>
+   <translation id="ip_firewall_rule_protocol_IPV_4" qtlid="101781">IPv4</translation>
+   <translation id="ip_firewall_rule_protocol_TCP" qtlid="141821">TCP</translation>
+   <translation id="ip_firewall_rule_protocol_UDP" qtlid="141834">UDP</translation>
+   <translation id="ip_firewall_rule_protocol_ah" qtlid="176872">AH</translation>
+   <translation id="ip_firewall_rule_protocol_esp" qtlid="176885">ESP</translation>
+   <translation id="ip_firewall_rule_protocol_gre" qtlid="176898">GRE</translation>
+   <translation id="ip_firewall_rule_protocol_icmp" qtlid="19627">ICMP</translation>
+   <translation id="ip_firewall_rule_protocol_ipv4" qtlid="101781">IPv4</translation>
+   <translation id="ip_firewall_rule_protocol_tcp" qtlid="141821">TCP</translation>
+   <translation id="ip_firewall_rule_protocol_udp" qtlid="141834">UDP</translation>
+   <translation id="ip_firewall_rule_ip_any" qtlid="141847">vše</translation>
+   <translation id="ip_firewall_enable_title" qtlid="141860">Aktivovat firewall</translation>
+   <translation id="ip_firewall_enable_question" qtlid="141873">Opravdu si přejete aktivovat firewall na IP {0}?</translation>
+   <translation id="ip_firewall_enable_success" qtlid="141886">Firewall na IP {0} bude aktivován během několika sekund.</translation>
+   <translation id="ip_firewall_enable_failed" qtlid="138779">Při aktivaci firewallu na IP {0} došlo k chybě</translation>
+   <translation id="ip_firewall_disable_title" qtlid="141899">Deaktivovat firewall</translation>
+   <translation id="ip_firewall_disable_question" qtlid="141912">Opravdu si přejete deaktivovat firewall na IP {0}?</translation>
+   <translation id="ip_firewall_disable_success" qtlid="141925">Firewall na IP {0} bude deaktivován během několika sekund.</translation>
+   <translation id="ip_firewall_disable_failed" qtlid="141938">Při deaktivaci firewallu na IP {0} došlo k chybě</translation>
+   <translation id="ip_firewall_new_title" qtlid="141951">Vytvořit firewall</translation>
+   <translation id="ip_firewall_new_question" qtlid="141964">Opravdu si přejete vytvořit firewall na IP {0}?</translation>
+   <translation id="ip_firewall_new_success" qtlid="141977">Firewall na IP {0} bude vytvořen během několika sekund.</translation>
+   <translation id="ip_firewall_new_failed" qtlid="141990">Při vytváření firewallu na IP {0} došlo k chybě</translation>
+   <translation id="ip_firewall_action" qtlid="56105">Akce</translation>
+   <translation id="ip_firewall_protocol" qtlid="19711">Protokol</translation>
+   <translation id="ip_firewall_source_ip" qtlid="138376">IP zdroje</translation>
+   <translation id="ip_firewall_source_port" qtlid="141548">Port zdroje</translation>
+   <translation id="ip_firewall_source_port_tooltip" qtlid="175829">Port zdroje musí být z rozsahu 0 až 65535.</translation>
+   <translation id="ip_firewall_destination_port" qtlid="175842">Cílový port</translation>
+   <translation id="ip_firewall_destination_port_tooltip" qtlid="175855">Cílový port musí být z rozsahu 0 až 65535.</translation>
+   <translation id="ip_firewall_options" qtlid="23395">Možnosti</translation>
+   <translation id="ip_firewall_status" qtlid="33790">Stav</translation>
+   <translation id="ip_firewall_position" qtlid="45988">Priorita</translation>
+   <translation id="ip_firewall_position_tooltip" qtlid="140469">Čtení pravidel je prováděno postupně. Pravidlo 0 má nejvyšší prioritu.</translation>
+   <translation id="ip_firewall_table_empty" qtlid="151425">Není zde nic k zobrazení</translation>
+   <translation id="ip_firewall_rule_status_CREATION_PENDING" qtlid="26227">Vytváří se</translation>
+   <translation id="ip_firewall_rule_status_creationPending" qtlid="26227">Vytváří se</translation>
+   <translation id="ip_firewall_rule_status_REMOVAL_PENDING" qtlid="133929">Odstraňování</translation>
+   <translation id="ip_firewall_rule_status_removalPending" qtlid="133929">Odstraňování</translation>
+   <translation id="ip_firewall_rule_status_OK" qtlid="30250">Aktivní</translation>
+   <translation id="ip_firewall_rule_status_ok" qtlid="30250">Aktivní</translation>
+   <translation id="ip_firewall_rule_fragments" qtlid="175868">Fragmenty</translation>
+   <translation id="ip_firewall_rule_fragments_tooltip" qtlid="175881">Nemůžete si zvolit možnost fragmentace, jestliže jste definovali zdrojový a/nebo cílový port.</translation>
+   <translation id="ip_firewall_rule_flags" qtlid="204597">Vlajky</translation>
+   <translation id="ip_firewall_rule_flags_SYN" qtlid="175907">SYN</translation>
+   <translation id="ip_firewall_rule_flags_syn" qtlid="175907">SYN</translation>
+   <translation id="ip_firewall_rule_flags_ESTABLISHED" qtlid="175920">ESTABLISHED</translation>
+   <translation id="ip_firewall_rule_flags_established" qtlid="175920">ESTABLISHED</translation>
+   <translation id="ip_firewall_rule_flags_NONE" qtlid="30646">Ne</translation>
+   <translation id="ip_firewall_rule_flags_none" qtlid="30646">Ne</translation>
+   <translation id="ip_firewall_add_summary" qtlid="175933">Před přidáním pravidla prosím zkontrolujte zadané informace.</translation>
+   <translation id="ip_firewall_remove_rule_fail" qtlid="141756">Při přidávání pravidla došlo k chybě.</translation>
+
+   <translation id="ip_table_manage_delete_ipblock" qtlid="204610">Vymazat IP Failover</translation>
+   <translation id="ip_table_manage_delete_ipblock_question" qtlid="204623">Z bezpečnostních důvodů Vám zašleme e-mail pro potvrzení vymazání IP adresy.</translation>
+   <translation id="ip_table_manage_delete_ipblock_question2" qtlid="204636">Chcete opravdu pokračovat v rušení IP {0}?</translation>
+   <translation id="ip_table_manage_delete_ipblock_success" qtlid="204649">Právě Vám byl zaslán e-mail pro potvrzení zrušení.</translation>
+   <translation id="ip_table_manage_delete_ipblock_failure" qtlid="204662">Při provádění požadavku na vymazání IP {0} došlo k chybě.</translation>
+
+   <translation id="ip_table_manage_move_ipblock" qtlid="175946">Přesunout IP Failover</translation>
+   <translation id="ip_table_manage_move_ipblock_question" qtlid="175959">Zvolte cílovou službu pro IP <b>{0}</b>:</translation>
+   <translation id="ip_table_manage_move_ipblock_resume" qtlid="363492">Jste si jisti, že chcete IP adresu <b>{0}</b> přenést na <b>{1}</b>?</translation>
+   <translation id="ip_table_manage_move_ipblock_from" qtlid="69077">Od</translation>
+   <translation id="ip_table_manage_move_ipblock_to" qtlid="175972">Na</translation>
+   <translation id="ip_table_manage_move_ipblock_on" qtlid="69101">Dne</translation>
+   <translation id="ip_table_manage_move_ipblock_warning_park" qtlid="210748">Pozor: přesun IP na "Parkovaná IP" bude mít za následek navýšení ceny.</translation>
+   <translation id="ip_table_manage_move_ipblock_warning_taskspending" qtlid="222683">Tato IP již byla přesunuta.</translation>
+   <translation id="ip_table_manage_move_ipblock_ipcanbemovedto" qtlid="175985">IP může být přesunuta na tuto službu:</translation>
+   <translation id="ip_table_manage_move_ipblock_validation" qtlid="175998">Pro přesun IP klikněte na "Potvrdit". IP pak bude během několika minut dostupná na {0}.</translation>
+   <translation id="ip_table_manage_move_ipblock_resume_on" qtlid="363505">na {0}</translation>
+   <translation id="ip_table_manage_move_ipblock_success" qtlid="176011">IP {0} bude brzy dostupná na {1}.</translation>
+   <translation id="ip_table_manage_move_ipblock_failure" qtlid="176024">Při přesunu IP z {0} na {1} došlo k chybě.</translation>
+
+   <translation id="ip_servicetype_DEDICATED" qtlid="101913">Dedikovaný server</translation>
+   <translation id="ip_servicetype_dedicatedServer" qtlid="101913">Dedikovaný server</translation>
+   <translation id="ip_servicetype_VPS" qtlid="23083">VPS</translation>
+   <translation id="ip_servicetype_vps" qtlid="23083">VPS</translation>
+   <translation id="ip_servicetype_PCC" qtlid="162205">Dedicated Cloud</translation>
+   <translation id="ip_servicetype_dedicatedCloud" qtlid="162205">Dedicated Cloud</translation>
+   <translation id="ip_servicetype_ipLoadbalancing" qtlid="223580">IP Load Balancing</translation>
+   <translation id="ip_servicetype_cloudProject" qtlid="274369">Projekt Cloud</translation>
+   <translation id="ip_servicetype_vRack" qtlid="210566">vRack</translation>
+   <translation id="ip_servicetype__PARK" qtlid="363518">Parking</translation>
+
+   <translation id="ip_order_quota_full" qtlid="451597">Le quota maximal d'IPs a été atteint pour ce serveur.</translation>
+   <translation id="ip_order_noservices" qtlid="182020">Nemáte žádné dostupné služby k objednání.</translation>
+   <translation id="ip_order_step1_question" qtlid="182033">Zvolte si službu, na kterou chcete objednat přídavné IP adresy:</translation>
+   <translation id="ip_order_checkservice" qtlid="182046">Ověřování oprávněnosti...</translation>
+
+   <translation id="ip_order_loading_error" qtlid="182059">Při načítání informací o objednávce IP došlo k chybě.</translation>
+   <translation id="ip_order_loading_error2" qtlid="369563">Tato akce vyžaduje ověření nebo nemůže být v současné době schválena. ({0})</translation>
+
+
+   <translation id="ip_order_error_OPTION_NOT_ALLOWED" qtlid="182072">Nemůžete objednat přídavné IP adresy na tuto službu.</translation>
+   <translation id="ip_order_error_OUT" qtlid="182085">Dosáhli jste maximálního počtu IP adres, které můžete na této službě mít.</translation>
+   <translation id="ip_order_error_EXPIRED" qtlid="191421">Služba expirovala.</translation>
+
+   <translation id="ip_order_step1_ok" qtlid="182098">Pro vytvoření objednávky klikněte na "Další".</translation>
+   <translation id="ip_order_add_ipv4_step1_remaining" qtlid="182111">Můžete přidat dalších <span class="blue">{0}</span> IPv4 adres k této službě.</translation>
+   <translation id="ip_order_step1_info1" qtlid="182124">Váš server může podporovat až:</translation>
+   <translation id="ip_order_step1_DEDICATED_pre" qtlid="182137"><span class="blue">{0}</span> IP z bloků IPv4 failover</translation>
+   <translation id="ip_order_step1_DEDICATED_v2_pre" qtlid="191382"><span class="blue">{0}</span> koncovky</translation>
+   <translation id="ip_order_step1_DEDICATED_individual_1" qtlid="182163"><span class="blue">1</span> samostatných IP failover</translation>
+   <translation id="ip_order_step1_DEDICATED_v2_individual_1" qtlid="191395"><span class="blue">1</span> koncovka</translation>
+   <translation id="ip_order_step1_DEDICATED_individual_other" qtlid="182176"><span class="blue">{}</span> samostatných IP failover</translation>
+   <translation id="ip_order_step1_DEDICATED_v2_individual_other" qtlid="191408"><span class="blue">{}</span> koncovky</translation>
+   <translation id="ip_order_step1_DEDICATED_minmax" qtlid="182150">(blok minimálně <span class="blue">{0}</span> IP a maximálně <span class="blue">{1}</span> IP)</translation>
+   <translation id="ip_order_step1_DEDICATED_individualblocksize" qtlid="182189">(blok <span class="blue">{0}</span> IP)</translation>
+   <translation id="ip_order_step2_large_block_unavailable" qtlid="304446">Momentálně zaznamenáváme zpoždění v dodávkách bloků IP adres. Pro případ nouze doporučujeme objednávat jednotlivé IP adresy (/32). <a href="{0}" target="_blank">Více informací.</a></translation>
+
+   <translation id="ip_order_ipnbr" qtlid="182202">Počet IP</translation>
+   <translation id="ip_order_country" qtlid="182215">Umístěno v</translation>
+   <translation id="ip_order_ipblocksize" qtlid="182228">Velikost bloku IP</translation>
+   <translation id="ip_order_networkname" qtlid="182241">Název sítě (netname)</translation>
+   <translation id="ip_order_networkname_help" qtlid="232388">Informace viditelná ve WHOIS (2 až 20 alfanumerických znaků začínajících písmenem)</translation>
+   <translation id="ip_order_estimatedclientsnumber" qtlid="182267">Předpokládaný počet zákazníků</translation>
+   <translation id="ip_order_estimatedclientsnumber_help" qtlid="182280">Kolik zákazníků bude hostováno na těchto IP adresách?</translation>
+   <translation id="ip_order_description" qtlid="182293">Popis sítě</translation>
+   <translation id="ip_order_description_help" qtlid="182306">Informace zobrazené ve "WHOIS" (mezi 3 a 250 alfanumerickými znaky)</translation>
+   <translation id="ip_order_usage" qtlid="109974">Použití</translation>
+   <translation id="ip_order_usage_help" qtlid="182319">Základní informace o použití tohoto bloku (například: "web", "ssl", "cloud", ...)</translation>
+   <translation id="ip_order_organisation" qtlid="32278">Organizace</translation>
+   <translation id="ip_order_no_organisation_1" qtlid="182332">Před rezervováním bloku IP musíte mít organizaci.</translation>
+   <translation id="ip_order_no_organisation_2" qtlid="182345">Pro správu organizace klikněte zde.</translation>
+   <translation id="ip_order_no_professionaluse_1" qtlid="182358">Tato služba vyžaduje "Profesionální použití" (<b>{0}</b>/měsíc).</translation>
+   <translation id="ip_order_no_professionaluse_2" qtlid="182371">Bude automaticky přidána do Vaší objednávky.</translation>
+   <translation id="ip_order_ip_count_1" qtlid="182384">1 adresa</translation>
+   <translation id="ip_order_ip_count_other" qtlid="182397">{} adresy</translation>
+   <translation id="ip_order_select_duration" qtlid="181214">Zvolte období:</translation>
+   <translation id="ip_order_select_activation" qtlid="268276">Aktivační poplatek:</translation>
+   <translation id="ip_order_abonnement" qtlid="268289">Měsíční předplatné:</translation>
+   <translation id="ip_order_free" qtlid="268302">V CENĚ</translation>
+   <translation id="ip_order_bloc" qtlid="268315">Blok</translation>
+   <translation id="ip_order_renew_PCC" qtlid="268328">Vaše IP adresy budou na Vaší infrastruktuře Dedicated Cloud automaticky obnoveny.</translation>
+   <translation id="ip_order_resume" qtlid="177496">Shrnutí Vaší objednávky</translation>
+   <translation id="ip_order_price_HT" qtlid="146177">Celková cena bez DPH:</translation>
+   <translation id="ip_order_price_TTC" qtlid="146190">Celková cena s DPH:</translation>
+   <translation id="ip_order_final_txt" qtlid="181240">Pro potvrzení objednávky klikněte na tlačítko "Schválit".</translation>
+   <translation id="ip_order_final_txt2" qtlid="181253">Otevře se nová záložka a budete automaticky přesměrování na platební rozhraní.</translation>
+   <translation id="ip_order_finish_success" qtlid="181266">Byla vytvořena objednávka <a href='{0}' target='_blank'>{1}</a>.</translation>
+   <translation id="ip_order_finish_error" qtlid="182410">Při objednávání přídavných IP adres došlo k chybě.</translation>
+   <translation id="ip_order_free_activation_fee" qtlid="250212">Jestliže máte server s IP adresami zdarma již v ceně, nebudou Vám po obnovení Vašeho serveru účtovány tyto aktivační poplatky.</translation>
+
+<!-- ORGANISATION -->
+   <translation id="ip_organisation_title" qtlid="182423">Správa mých organizací</translation>
+   <translation id="ip_organisation_button" qtlid="182436">Mé organizace</translation>
+
+   <translation id="ip_organisation_table_organisation" qtlid="32278">Organizace</translation>
+   <translation id="ip_organisation_table_type" qtlid="2642">Typ</translation>
+   <translation id="ip_organisation_table_lastname" qtlid="3818">Název</translation>
+   <translation id="ip_organisation_table_abuse" qtlid="182449">Abuse kontakt</translation>
+   <translation id="ip_organisation_table_email" qtlid="33598">E-mail</translation>
+   <translation id="ip_organisation_table_address" qtlid="30430">Adresa</translation>
+   <translation id="ip_organisation_table_city" qtlid="33310">Město</translation>
+   <translation id="ip_organisation_table_country" qtlid="25171">Země</translation>
+   <translation id="ip_organisation_table_firstname" qtlid="23323">Jméno</translation>
+   <translation id="ip_organisation_table_phone" qtlid="34174">Telefon</translation>
+   <translation id="ip_organisation_table_zip" qtlid="30346">PSČ</translation>
+   <translation id="ip_organisation_table_state" qtlid="434845">Stát</translation>
+   <translation id="ip_organisation_table_empty" qtlid="182462">Nemáte žádnou organizaci</translation>
+   <translation id="ip_organisation_table_exemple" qtlid="182475">Příklad:</translation>
+
+   <translation id="ip_organisation_add_info" qtlid="182488">Vyplňte formulář pro vytvoření nové organizace:</translation>
+   <translation id="ip_organisation_add_wrong_format" qtlid="149774">Neplatný formát</translation>
+   <translation id="ip_organisation_add_email" qtlid="149774">Neplatný formát</translation>
+   <translation id="ip_organisation_add_maxlength" qtlid="182501">Příliš mnoho znaků</translation>
+   <translation id="ip_organisation_add_required" qtlid="182514">Povinná pole</translation>
+   <translation id="ip_organisation_add_resume" qtlid="4082">Shrnutí</translation>
+   <translation id="ip_organisation_add_step2" qtlid="182527">Zkontrolujte prosím, zda jsou zadané informace správné</translation>
+   <translation id="ip_organisation_add_title" qtlid="182540">Přidat organizaci</translation>
+   <translation id="ip_organisation_add" qtlid="182553">Přidat organizaci</translation>
+   <translation id="ip_organisation_add_load_error" qtlid="182566">Při načítání informací nutných pro přidání organizace došlo k chybě</translation>
+   <translation id="ip_organisation_add_success" qtlid="182579">Vaše organizace byla registrována</translation>
+   <translation id="ip_organisation_add_error" qtlid="182592">Při přidávání organizace došlo k chybě</translation>
+   <translation id="ip_organisation_add_loading_step1" qtlid="182605">Načítání informací...</translation>
+   <translation id="ip_organisation_add_loading_step2" qtlid="182618">Přidávání nové organizace...</translation>
+
+   <translation id="ip_organisation_edit_title" qtlid="182631">Změnit organizaci</translation>
+   <translation id="ip_organisation_edit_success" qtlid="182644">Vaše organizace byla změněna</translation>
+   <translation id="ip_organisation_edit_error" qtlid="182657">Při změně Vaší organizace došlo k chybě</translation>
+
+   <translation id="ip_organisation_delete_loading" qtlid="182670">Mazání...</translation>
+   <translation id="ip_organisation_delete_title" qtlid="182683">Vymazání organizace</translation>
+   <translation id="ip_organisation_delete_info" qtlid="182696">Opravdu chcete vymazat organizaci {0}?</translation>
+   <translation id="ip_organisation_delete_success" qtlid="182709">Vaše organizace byla vymazána.</translation>
+   <translation id="ip_organisation_delete_error" qtlid="182722">Při mazání Vaší organizace došlo k chybě</translation>
+   <translation id="ip_organisation_delete_error" qtlid="182722">Při mazání Vaší organizace došlo k chybě</translation>
+
+   <translation id="ip_organisation_change_title" qtlid="262713">Zvolte novou organizaci pro IP <strong>{0}</strong>.</translation>
+   <translation id="ip_organisation_change_organisations" qtlid="262726">Nová organizace:</translation>
+   <translation id="ip_organisation_change_organisations_success" qtlid="262739">Vaše organizace bude brzy změněna.</translation>
+   <translation id="ip_organisation_change_organisations_done" qtlid="262752">Vaše organizace byla změněna.</translation>
+   <translation id="ip_organisation_change_organisations_fail" qtlid="262765">Došlo k chybě ({0}).</translation>
+   <translation id="ip_organisation_edit" qtlid="37875">Upravit</translation>
+   <translation id="ip_organisation_delete" qtlid="2414">Odstranit</translation>
+
+   <translation id="iplb_empty" qtlid="223606">Nemáte IP Load Balancing.</translation>
+   <translation id="iplb_expired" qtlid="223619">Tento IP Load Balancing expiruje {0}.</translation>
+   <translation id="iplb_expiration" qtlid="30406">Expirace</translation>
+   <translation id="iplb_infos_error" qtlid="223632">Při pokusu o změnu IP Load Balancingu došlo k chybě.</translation>
+   <translation id="iplb_order_title" qtlid="223645">Objednat IP Load Balancing</translation>
+
+   <translation id="iplb_section_title_informations" qtlid="26551">Informace</translation>
+   <translation id="iplb_section_title_zones" qtlid="223658">Datacentra (PoP)</translation>
+   <translation id="iplb_section_title_backends" qtlid="223671">Distribuované služby (backendy)</translation>
+
+   <translation id="iplb_infos_state" qtlid="26443">Stav</translation>
+   <translation id="iplb_infos_stickiness" qtlid="223684">Správa relace</translation>
+   <translation id="iplb_infos_ssl" qtlid="21451">SSL certifikát</translation>
+
+   <translation id="iplb_infos_state_blacklisted" qtlid="223697">Na blacklistu</translation>
+   <translation id="iplb_infos_state_deleted" qtlid="363531">Smazáno</translation>
+   <translation id="iplb_infos_state_free" qtlid="6862">Volné</translation>
+   <translation id="iplb_infos_state_quarantined" qtlid="223723">V karanténě</translation>
+   <translation id="iplb_infos_state_suspended" qtlid="125096">Zrušit</translation>
+   <translation id="iplb_infos_stickiness_none" qtlid="30646">Ne</translation>
+   <translation id="iplb_infos_stickiness_cookie" qtlid="223736">Cookie</translation>
+   <translation id="iplb_infos_stickiness_sourceIp" qtlid="138376">IP zdroje</translation>
+   <translation id="iplb_infos_ssl_none" qtlid="30646">Ne</translation>
+   <translation id="iplb_infos_ssl_ovh" qtlid="223749">Poskytnuté od OVH</translation>
+   <translation id="iplb_infos_ssl_customer" qtlid="223762">Poskytnuté zákazníky</translation>
+
+   <translation id="iplb_stickiness_set_question" qtlid="223775">Jaký typ správy relace byste chtěl?</translation>
+   <translation id="iplb_stickiness_set_success" qtlid="223788">Správa relace bude aktualizována během několika minut.</translation>
+   <translation id="iplb_stickiness_set_failure" qtlid="223801">Při pokusu o změnu došlo k chybě.</translation>
+
+   <translation id="iplb_infos_ssl_order_btn" qtlid="43558">Objednat</translation>
+   <translation id="iplb_infos_ssl_importcustom_btn" qtlid="69869">Import</translation>
+   <translation id="iplb_infos_ssl_restore_btn" qtlid="36120">Obnovení</translation>
+   <translation id="iplb_infos_ssl_importcustom_updating" qtlid="223814">Importování...</translation>
+   <translation id="iplb_infos_ssl_restore_updating" qtlid="223827">Obnovování...</translation>
+
+   <translation id="iplb_ssl_order_title" qtlid="223840">Objednat možnost SSL</translation>
+   <translation id="iplb_ssl_order_step1_question" qtlid="223853">K jaké doméně byste rádi přidali SSL certifikát?</translation>
+   <translation id="iplb_ssl_order_helptext" qtlid="223866">DCV e-mail bude zaslán na <b>{0}</b>.</translation>
+   <translation id="iplb_ssl_order_helptext_domain" qtlid="223879">vase_domena.com</translation>
+   <translation id="iplb_ssl_order_helptext2" qtlid="223892">Před vytvořením objednávky se ujistěte, že adresa existuje. </translation>
+   <translation id="iplb_ssl_order_domain" qtlid="8458">Doména</translation>
+   <translation id="iplb_ssl_order_not_orderable" qtlid="223905">Nemůžete objednat SSL možnost pro tento IP Load Balancing.</translation>
+   <translation id="iplb_ssl_order_success" qtlid="181266">Byla vytvořena objednávka <a href='{0}' target='_blank'>{1}</a>.</translation>
+   <translation id="iplb_ssl_order_failure" qtlid="223918">Při pokusu o objednání SSL možnosti došlo k chybě.</translation>
+
+   <translation id="iplb_ssl_key" qtlid="104326">Klíč</translation>
+   <translation id="iplb_ssl_certificate" qtlid="19771">Certifikát</translation>
+   <translation id="iplb_ssl_chain" qtlid="223931">Kanál</translation>
+   <translation id="iplb_ssl_import_title" qtlid="223944">Import SSL certifikátu</translation>
+   <translation id="iplb_ssl_import_question" qtlid="223957">Chystáte se importovat svůj vlastní SSL certifikát.</translation>
+   <translation id="iplb_ssl_import_question2" qtlid="223970">Poznámka: jestliže si to budete přát, můžete OVH certifikát později obnovit.</translation>
+   <translation id="iplb_ssl_import_success" qtlid="223983">Váš SSL certifikát bude importován během několika minut.</translation>
+   <translation id="iplb_ssl_import_failure" qtlid="223996">Při pokusu o import Vašeho SSL certifikátu došlo k chybě.</translation>
+
+   <translation id="iplb_ssl_restore_title" qtlid="224009">Obnovení OVH SSL certifikátu</translation>
+   <translation id="iplb_ssl_restore_question" qtlid="224022">Opravdu chcete obnovit OVH SSL certifikát?</translation>
+   <translation id="iplb_ssl_restore_question2" qtlid="224035">DCV e-mail bude zaslán na "postmaster@vase_domena.com".</translation>
+   <translation id="iplb_ssl_restore_success" qtlid="224048">Váš OVH SSL certifikát bude obnoven jakmile dojde k jeho schválení.</translation>
+   <translation id="iplb_ssl_restore_failure" qtlid="224061">Při pokusu o obnovení OVH SSL certifikátu došlo k chybě.</translation>
+
+   <translation id="iplb_zone_internalnatip" qtlid="224074">NAT interní IP</translation>
+   <translation id="iplb_zone_probeip" qtlid="224087">IP test protokolu</translation>
+   <translation id="iplb_zone_order_btn" qtlid="43558">Objednat</translation>
+   <translation id="iplb_pop_order_title" qtlid="224100">Objednat dodatečné PoP</translation>
+   <translation id="iplb_pop_order_step1_question" qtlid="224113">Jaké datacentrum byste si chtěli přidat?</translation>
+   <translation id="iplb_pop_order_zone" qtlid="26335">Zóna</translation>
+   <translation id="iplb_pop_order_not_orderable" qtlid="224126">Pro tento IP Load Balancing nemůžete objednat PoP.</translation>
+   <translation id="iplb_pop_order_no_pop" qtlid="224139">Nejsou zde žádné dostupné PoP.</translation>
+   <translation id="iplb_pop_order_success" qtlid="181266">Byla vytvořena objednávka <a href='{0}' target='_blank'>{1}</a>.</translation>
+   <translation id="iplb_pop_order_failure" qtlid="224152">Při objednávání nového PoP pro Váš IP Load Balancing došlo k chybě.</translation>
+
+   <translation id="iplb_table_backends_header_weight" qtlid="47572">Váha</translation>
+   <translation id="iplb_table_backends_header_backend" qtlid="132122">Backend</translation>
+   <translation id="iplb_table_backends_header_zone" qtlid="26335">Zóna</translation>
+   <translation id="iplb_table_backends_header_probe" qtlid="224165">Testovací protokol</translation>
+   <translation id="iplb_table_backends_header_mainbackendip" qtlid="224178">Je zabezpečený back-end...</translation>
+   <translation id="iplb_table_backends_no_backends" qtlid="200274">Seznam je prázdný.</translation>
+
+   <translation id="iplb_backend_probe_NONE" qtlid="30646">Ne</translation>
+   <translation id="iplb_backend_probe_help_NONE" qtlid="224191">Není: žádné ověření</translation>
+   <translation id="iplb_backend_probe_help_HTTPICMP" qtlid="224204">HTTP/ICMP: testy na zadaných portech</translation>
+   <translation id="iplb_backend_probe_help_OCO" qtlid="224217">OCO: (Ovh Check Out) Testy na portu 79</translation>
+
+   <translation id="iplb_backend_add_title" qtlid="224230">Přidat back-end</translation>
+   <translation id="iplb_backend_add_question" qtlid="224243">Vyplňte informace a klikněte na "Schválit":</translation>
+   <translation id="iplb_backend_add_ipbackend" qtlid="224256">IP back-endu</translation>
+   <translation id="iplb_backend_add_probe" qtlid="224165">Testovací protokol</translation>
+   <translation id="iplb_backend_add_success" qtlid="224269">Nový back-end bude přidán za několik sekund.</translation>
+   <translation id="iplb_backend_addBackend_failure" qtlid="224282">Při pokusu o přidání nového back-end došlo k chybě.</translation>
+   <translation id="iplb_backend_add_no_ipbackend" qtlid="224295">Není zde žádný dostupný back-end.</translation>
+   <translation id="iplb_backend_add_error_ipbackend_set" qtlid="224308">Tento back-end byl již nastaven.</translation>
+
+   <translation id="iplb_backend_setweight_btn" qtlid="224321">Změnit váhu</translation>
+   <translation id="iplb_backend_probe_btn" qtlid="224334">Změnit testovací protokol</translation>
+   <translation id="iplb_backend_setbackupstate_btn" qtlid="224347">Nastavit bezpečnostní back-end</translation>
+   <translation id="iplb_backend_unsetbackupstate_btn" qtlid="224360">Odebrat bezpečnostní back-end</translation>
+   <translation id="iplb_backend_delete_btn" qtlid="2414">Odstranit</translation>
+
+   <translation id="iplb_backend_delete_title" qtlid="224373">Vymazat back-end</translation>
+   <translation id="iplb_backend_delete_question" qtlid="224386">Opravdu chcete vymazat tento back-end?</translation>
+   <translation id="iplb_backend_delete_deny" qtlid="224399">Nemůžete vymazat bezpečnostní back-end.</translation>
+   <translation id="iplb_backend_delete_success" qtlid="224412">Tento back-end bude vymazán za několik sekund.</translation>
+   <translation id="iplb_backend_delBackend_failure" qtlid="224425">Při pokusu o vymazání back-end došlo k chybě.</translation>
+
+   <translation id="iplb_backend_setweight_title" qtlid="224321">Změnit váhu</translation>
+   <translation id="iplb_backend_setweight_weight" qtlid="47572">Váha</translation>
+   <translation id="iplb_backend_setweight_question" qtlid="224438">Zadejte váhu back-end a poté klikněte na "Schválit":</translation>
+   <translation id="iplb_backend_setweight_range" qtlid="255142">Celé číslo mezi 1 a 100: Implicitní hodnota: 8</translation>
+   <translation id="iplb_backend_setweight_help" qtlid="224451">Například jestliže má back-end A váhu 8 a back-end B má váhu 16, pak back-end B obdrží 2x více přenosu dat, nežli back-end A. Back-endy musí být umístěny ve stejném datacentru (PoP), aby zátěž zasáhla oba dva.</translation>
+   <translation id="iplb_backend_setweight_success" qtlid="224464">Váha back-end bude změněna během několika sekund.</translation>
+   <translation id="iplb_backend_setweight_failure" qtlid="224477">Při pokusu o změnu váhy back-end došlo k chybě.</translation>
+
+   <translation id="iplb_backend_setprobe_title" qtlid="224334">Změnit testovací protokol</translation>
+   <translation id="iplb_backend_setprobe_question" qtlid="224490">Nastavte protokol pro test tohoto back-end a poté klikněte na "Schválit":</translation>
+   <translation id="iplb_backend_setprobe_probe" qtlid="224165">Testovací protokol</translation>
+   <translation id="iplb_backend_setprobe_success" qtlid="224503">Protokol pro testování back-end bude během několika sekund změněn.</translation>
+   <translation id="iplb_backend_setprobe_failure" qtlid="224516">Při pokusu o změnu protokolu na otestování back-end došlo k chybě.</translation>
+
+   <translation id="iplb_backend_setbackupstate_title" qtlid="224347">Nastavit bezpečnostní back-end</translation>
+   <translation id="iplb_backend_setbackupstate_question" qtlid="224529">Zvolte hlavní back-end a klikněte na "Schválit":</translation>
+   <translation id="iplb_backend_setbackupstate_help" qtlid="224542">Požadavky budou přesměrovány na <b>{0}</b> pouze za předpokladu, že protokol pro testování hlavního back-end již nebude odpovídat.</translation>
+   <translation id="iplb_backend_setbackupstate_ipbackend" qtlid="224555">Hlavní back-end</translation>
+   <translation id="iplb_backend_setbackupstate_no_ipbackend" qtlid="224568">Nemáte dostupný žádný back-end</translation>
+   <translation id="iplb_backend_setbackupstate_success" qtlid="224581">Nouzové back-endy budou přidány během několika sekund.</translation>
+   <translation id="iplb_backend_backupStateSet_failure" qtlid="224594">Při změně nouzového back-endu došlo k chybě.</translation>
+
+   <translation id="iplb_backend_unsetbackupstate_title" qtlid="224360">Odebrat bezpečnostní back-end</translation>
+   <translation id="iplb_backend_unsetbackupstate_question" qtlid="224607">Opravdu si přejete odstranit tento nouzový back-end?</translation>
+   <translation id="iplb_backend_unsetbackupstate_success" qtlid="224620">Nouzový back-end bude odebrán za několik sekund.</translation>
+   <translation id="iplb_backend_backupStateUnset_failure" qtlid="224633">Při mazání nouzového back-end došlo k chybě.</translation>
+
+   <translation id="iplb_section_title_portsredirection" qtlid="224646">Port přesměrování</translation>
+   <translation id="iplb_table_portsredirection_header_srcport" qtlid="141548">Port zdroje</translation>
+   <translation id="iplb_table_portsredirection_header_dstport" qtlid="224659">Cílový port</translation>
+   <translation id="iplb_table_portsredirection_no_ports" qtlid="200274">Seznam je prázdný.</translation>
+   <translation id="iplb_portsredirection_add_title" qtlid="224672">Přidat přesměrování portu</translation>
+
+   <translation id="iplb_portsredirection_add_question" qtlid="224685">Zvolte zdroj a cílový port a klikněte na "Schválit":</translation>
+   <translation id="iplb_portsredirection_add_srcport" qtlid="141548">Port zdroje</translation>
+   <translation id="iplb_portsredirection_add_dstport" qtlid="224659">Cílový port</translation>
+   <translation id="iplb_portsredirection_add_no_srcport" qtlid="224698">Nemáte dostupné žádné zdrojové porty.</translation>
+   <translation id="iplb_portsredirection_add_success" qtlid="224711">Přesměrování portu bude provedeno během několika sekund.</translation>
+   <translation id="iplb_portsredirection_add_failure" qtlid="224724">Při přidávání přesměrování portu došlo k chybě.</translation>
+   <translation id="iplb_portsredirection_delete_title" qtlid="224737">Vymazat přesměrování portu</translation>
+   <translation id="iplb_portsredirection_delete_question" qtlid="224750">Opravdu chcete vymazat toto přesměrování portu?</translation>
+   <translation id="iplb_portsredirection_delete_success" qtlid="224763">Přesměrování portu bude vymazáno za několik sekund.</translation>
+   <translation id="iplb_portsredirection_delete_failure" qtlid="224776">Při pokusu o vymazání portu přesměrování došlo k chybě.</translation>
+   <translation id="iplb_backend_generic_failure" qtlid="148981">Došlo k chybě.</translation>
+
+   <translation id="ip_table_manage_delegation_ipv6block" qtlid="272851">Správa serverů, které akceptují delegaci reverzu</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_limit" qtlid="272864">Zadejte až 2 reverzní DNS pro tento rozsah IP.</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_no_reverse" qtlid="272877">Není delegován žádný DNS reverz</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_add_reverse" qtlid="272890">Přidat DNS</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_reverse_dns" qtlid="44284">Reverzní DNS</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_delegation_reverse_dns" qtlid="272903">Delegace reverzu DNS</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_success" qtlid="272916">Delegace reverzu DNS byla úspěšně provedena.</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_err" qtlid="272929">Během přidávání delegace reverzu DNS došlo k chybě:</translation>
+   <translation id="ip_table_manage_delegation_err_INVALID_REVERSE" qtlid="272942">Reverzní DNS musí být platný název domény a musí někam směrovat.</translation>
+   <translation id="ip_table_manage_delegation_err_ALREADY_EXISTS" qtlid="272955">Reverzní DNS je již nakonfigurován.</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_delete_question" qtlid="272968">Skutečně chcete odstranit delegaci reverzu {1} na bloku IP adres {0}?</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_delete_success" qtlid="272981">Delegace reverzního DNS byla úspěšně odstraněna.</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_delete_err" qtlid="272994">Během odstraňování delegace reverzního DNS došlo k chybě:</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_resume" qtlid="273007">Výsledek operace</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_to_add" qtlid="273020">Reverzy k přidání</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_to_delete" qtlid="273033">Reverzy k odstranění</translation>
+</translations>

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="user_users_title" qtlid="227793">Zarządzanie użytkownikami </translation>
-   <translation id="user_users_info" qtlid="472645">Aby użytkownik mógł się zalogować do interfejsu, musi podać swój identyfikator i nazwę użytkownika oddzielone ukośnikiem "/" (kolumna "Identyfikator") oraz hasło.</translation>
+   <translation id="user_users_info">Afin de se connecter à l'interface, l'utilisateur devra renseigner votre identifiant <strong>{{customerCode}}</strong> et son nom d'utilisateur séparé par un "/" ainsi que son mot de passe.</translation>
+   <translation id="user_users_info_example">Exemple: <strong>{{customerCode}}/{{login}}</strong></translation>
    <translation id="user_users_add_user" qtlid="7150">Dodaj użytkownika</translation>
    <translation id="user_users_login" qtlid="56045">Nazwa użytkownika</translation>
-   <translation id="user_users_full_login" qtlid="46792">Identyfikator</translation>
    <translation id="user_users_email" qtlid="50686">Adresy email</translation>
-   <translation id="user_users_creation_date" qtlid="26419">Data utworzenia</translation>
+   <translation id="user_users_creation_date">Création</translation>
    <translation id="user_users_last_update_date" qtlid="228748">Data aktualizacji</translation>
+   <translation id="user_users_last_password_update_date">Changement de mot de passe</translation>
    <translation id="user_users_status" qtlid="26443">Status</translation>
    <translation id="user_users_description" qtlid="9238">Opis</translation>
    <translation id="user_users_table_empty" qtlid="215741">Brak użytkownika</translation>
@@ -18,6 +19,11 @@
    <translation id="user_users_status_DISABLED" qtlid="24967">Wyłączony</translation>
 
    <translation id="user_users_error" qtlid="299384">Wystąpił błąd:</translation>
+
+   <translation id="user_users_role">Privilège</translation>
+   <translation id="user_roles_admin">Administrateur</translation>
+   <translation id="user_roles_regular">Utilisateur</translation>
+   <translation id="user_roles_unprivileged">Aucun</translation>
 
    <translation id="user_users_disable" qtlid="199078">Wyłącz użytkownika</translation>
    <translation id="user_users_delete_modal_step1_question" qtlid="455451">Czy na pewno chcesz usunąć użytkownika <strong>{{login}}</strong>?</translation>

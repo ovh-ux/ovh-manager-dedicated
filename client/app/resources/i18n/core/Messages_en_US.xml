@@ -538,7 +538,7 @@
    <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="343967">You have <strong>{{count}}</strong> PayPal account(s) in default. Please go to the <a href="{{link}}" class="alert-link">billing section </a> to check the situation and/or enter a new payment method.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="374958">Your prepaid account is owing <strong>{0}</strong> as of {{ '{1}' | date:'medium'}}. Please go to <a href="#/billing/ovhaccount" class="alert-link">billing</a> to settle your account.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369545">You owe <strong>{0}</strong> (including an amount of {1} unmatured). Please go to <a href="#/billing/statements" class="alert-link">the billing section</a> to settle the amount.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369545">You owe <strong>{0}</strong> (including an amount of {1} unmatured). Please go to <a href="{2}" class="alert-link">the billing section</a> to settle the amount.</translation>
    <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="343993">You owe <strong>{{value}}</strong>. Please go to the <a href="#/billing/statements" class="alert-link">billing section</a> to correct the situation.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="383919">Your prepaid account has reached the threshold you set for it. Please go to <a href="#/billing/ovhaccount" class="alert-link">the billing section</a> for more information.</translation>
@@ -554,8 +554,8 @@
    <translation id="core_service_expiration_auto_renew" qtlid="414986">Renewal due on</translation>
    <translation id="core_service_renew_button" qtlid="118962">Renew</translation>
 
-   <translation id="core_user_enterprise_retail_prices">Prices shown are standard catalog prices and may not reflect negotiated terms. Consult your monthly invoice for accurate pricing.</translation>
-   <translation id="core_user_enterprise_retail_prices_hpc">Prices shown are an estimate based on pro-rating this add-on to align with your current contract billing period. Consult your monthly invoice for accurate pricing.</translation>
+   <translation id="core_user_enterprise_retail_prices">Note : Les prix indiqués sont des prix standards du catalogue et peuvent ne pas refléter les conditions négociées. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
+   <translation id="core_user_enterprise_retail_prices_hpc">Note : Les prix indiqués sont une estimation basée sur le calcul au prorata de ce module pour l'aligner sur la période de facturation de votre contrat actuel. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
 
    <translation id="browser_alert_not_supported" qtlid="405357">Your browser is not supported. </translation>
    <translation id="browser_alert_deprecated" qtlid="405370">Your browser is not up to date and may contain security vulnerabilities or compatibility issues. </translation>

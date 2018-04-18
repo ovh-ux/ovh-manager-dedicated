@@ -8,7 +8,7 @@
    <translation id="select_product_on_top" qtlid="123499">Seleccione arriba el producto que desee configurar.</translation>
    <translation id="index_nav_bar_logo_alt" qtlid="133344">Área de cliente Dedicado OVH</translation>
    <translation id="universe_univers-cloud_name" qtlid="15677">Cloud</translation>
-   <translation id="universe_univers-dedicated_name" qtlid="31738">Serviços Dedicados</translation>
+   <translation id="universe_univers-dedicated_name" qtlid="31738">Dedicado</translation>
    <translation id="universe_univers-telecom_name" qtlid="135827">Telecom</translation>
    <translation id="universe_univers-web_name" qtlid="135840">Web</translation>
    <translation id="universe_univers-sunrise_name" qtlid="232401">Sunrise</translation>
@@ -538,8 +538,8 @@
    <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="343967">Se ha registrado un error en <strong>{0}</strong> cuenta(s) PayPal. Acceda a <a href="#/billing/mean" class="alert-link">«Facturación»</a> para realizar las comprobaciones necesarias y/o registrar una nueva forma de pago.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="374958">Su cuenta de prepago tiene un saldo negativo de <strong>{0}</strong> a {{ '{1}' | date:'medium'}}. Acceda a la sección «<a href="#/billing/ovhaccount" class="alert-link">Facturación</a>» para regularizar su situación.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369545">Tiene un saldo negativo de <strong>{0}</strong> (incluyendo un importe de {1} no vencido). Acceda a la sección <a href="#/billing/statements" class="alert-link">«Facturación»</a> para regularizar su situación.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="343993">Tiene un saldo pendiente de <strong>{0}</strong>. Acceda a <a href="#/billing/statements" class="alert-link"> «Facturación»</a> para regularizar su situación.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369545">Tiene un saldo negativo de <strong>{0}</strong> (incluyendo un importe de {1} no vencido). Acceda a la sección <a href="{2}" class="alert-link">«Facturación»</a> para regularizar su situación.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="343993">Tiene un saldo pendiente de <strong>{0}</strong>. Acceda a <a href="{1}" class="alert-link"> «Facturación»</a> para regularizar su situación.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="383919">Su cuenta de prepago ha alcanzado el umbral que usted ha establecido. Para más información, acceda a la sección «<a href="#/billing/ovhaccount" class="alert-link">Facturación</a>».</translation>
 
@@ -553,6 +553,9 @@
    <translation id="core_service_expiration_manual_renew" qtlid="377571">Debe renovarse el</translation>
    <translation id="core_service_expiration_auto_renew" qtlid="414986">Renovación prevista el</translation>
    <translation id="core_service_renew_button" qtlid="118962">Renovar</translation>
+
+   <translation id="core_user_enterprise_retail_prices">Note : Les prix indiqués sont des prix standards du catalogue et peuvent ne pas refléter les conditions négociées. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
+   <translation id="core_user_enterprise_retail_prices_hpc">Note : Les prix indiqués sont une estimation basée sur le calcul au prorata de ce module pour l'aligner sur la période de facturation de votre contrat actuel. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
 
    <translation id="browser_alert_not_supported" qtlid="405357">Su navegador no es compatible.</translation>
    <translation id="browser_alert_deprecated" qtlid="405370">Su&#160;navegador no está actualizado y puede contener fallos de seguridad o compatibilidad.</translation>

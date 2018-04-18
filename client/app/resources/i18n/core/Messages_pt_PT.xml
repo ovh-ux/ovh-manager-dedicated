@@ -538,8 +538,8 @@
    <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="343967">Tem <strong>{0}</strong> conta(s) PayPal em erro. Aceda <a href="#/billing/mean" class="alert-link">à secção faturação</a> para verificar os dados ou registar um novo método de pagamento.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="374958">A sua conta pré-paga tem um saldo negativo de <strong>{0}</strong> na data de {{ '{1}' | date:'medium'}}. Aceda à <a href="#/billing/ovhaccount" class="alert-link">secção de faturação</a> para regularizar a situação.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369545">Tem um saldo negativo de <strong>{0}</strong> (incluindo um montante de {1} não vencido). Aceda à <a href="#/billing/statements" class="alert-link">secção de faturação</a> para regularizar a situação</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="343993">Tem uma dívida de <strong>{0}</strong>. Aceda <a href="#/billing/statements" class="alert-link">à secção faturação</a> para regularizar a situação.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369545">Tem um saldo negativo de <strong>{0}</strong> (incluindo um montante de {1} não vencido). Aceda à <a href="{2}" class="alert-link">secção de faturação</a> para regularizar a situação</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="343993">Tem uma dívida de <strong>{0}</strong>. Aceda <a href="{1}" class="alert-link">à secção faturação</a> para regularizar a situação.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="383919">A sua conta pré-paga atingiu o limite. Aceda à <a href="#/billing/ovhaccount" class="alert-link">secção de faturação</a> para obter mais informações.</translation>
 
@@ -553,6 +553,9 @@
    <translation id="core_service_expiration_manual_renew" qtlid="377571">A renovar em</translation>
    <translation id="core_service_expiration_auto_renew" qtlid="414986">Renovação prevista para</translation>
    <translation id="core_service_renew_button" qtlid="118962">Renovar</translation>
+
+   <translation id="core_user_enterprise_retail_prices">Note : Les prix indiqués sont des prix standards du catalogue et peuvent ne pas refléter les conditions négociées. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
+   <translation id="core_user_enterprise_retail_prices_hpc">Note : Les prix indiqués sont une estimation basée sur le calcul au prorata de ce module pour l'aligner sur la période de facturation de votre contrat actuel. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
 
    <translation id="browser_alert_not_supported" qtlid="405357">O seu browser não é compatível</translation>
    <translation id="browser_alert_deprecated" qtlid="405370">O seu browser não está atualizado e pode ter falhas de segurança ou problemas de compatibilidade.</translation>
