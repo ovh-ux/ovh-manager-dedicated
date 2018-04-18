@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="user_users_title" qtlid="227793">Käyttäjähallinta</translation>
-   <translation id="user_users_info" qtlid="472645">Jotta käyttäjä voi kirjautua käyttöliittymään, täytyy hänen syöttää tunnuksesi, sen käyttäjänimen erotettuna "/" merkillä (taulukossa sarake Käyttäjätunnus") sekä salasanan.</translation>
+   <translation id="user_users_info">Afin de se connecter à l'interface, l'utilisateur devra renseigner votre identifiant <strong>{{customerCode}}</strong> et son nom d'utilisateur séparé par un "/" ainsi que son mot de passe.</translation>
+   <translation id="user_users_info_example">Exemple: <strong>{{customerCode}}/{{login}}</strong></translation>
    <translation id="user_users_add_user" qtlid="7150">Lisää käyttäjä</translation>
    <translation id="user_users_login" qtlid="56045">Käyttäjätunnus</translation>
-   <translation id="user_users_full_login" qtlid="46792">Käyttäjätunnus</translation>
    <translation id="user_users_email" qtlid="50686">Sähköpostiosoite</translation>
-   <translation id="user_users_creation_date" qtlid="26419">Luontipäivä</translation>
+   <translation id="user_users_creation_date">Création</translation>
    <translation id="user_users_last_update_date" qtlid="228748">Päivitysajankohta</translation>
+   <translation id="user_users_last_password_update_date">Changement de mot de passe</translation>
    <translation id="user_users_status" qtlid="26443">Tila</translation>
    <translation id="user_users_description" qtlid="9238">Kuvaus</translation>
    <translation id="user_users_table_empty" qtlid="215741">Ei käyttäjiä</translation>
@@ -18,6 +19,11 @@
    <translation id="user_users_status_DISABLED" qtlid="24967">Deaktivoitu</translation>
 
    <translation id="user_users_error" qtlid="299384">Tapahtui virhe:</translation>
+
+   <translation id="user_users_role">Privilège</translation>
+   <translation id="user_roles_admin">Administrateur</translation>
+   <translation id="user_roles_regular">Utilisateur</translation>
+   <translation id="user_roles_unprivileged">Aucun</translation>
 
    <translation id="user_users_disable" qtlid="199078">Käyttäjän deaktivointi</translation>
    <translation id="user_users_delete_modal_step1_question" qtlid="455451">Haluatko varmasti poistaa käyttäjän <strong>{{login}}</strong>?</translation>

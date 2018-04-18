@@ -1,4 +1,4 @@
-angular.module("Module.license").controller("LicenseOrderCtrl", ($scope, $timeout, $translate, License, $q, OvhApiMe, Alerter, $filter, featureAvailability, LicenseOrder) => {
+angular.module("Module.license").controller("LicenseOrderCtrl", ($scope, $timeout, $translate, License, $q, User, Alerter, $filter, featureAvailability, LicenseOrder) => {
     $scope.alerts = {
         order: "license.alerts.order"
     };
@@ -217,23 +217,19 @@ angular.module("Module.license").controller("LicenseOrderCtrl", ($scope, $timeou
 
     function init () {
         $scope.agoraEnabled = featureAvailability.allowLicenseAgoraOrder();
-
-        OvhApiMe.v6().get().$promise.then((user) => {
-            $scope.user = user;
-        });
-
         $scope.loaders.ips = true;
-
-        return License.ips().then(
-            (data) => {
-                $scope.availableIpBlock = data;
-                $scope.loaders.ips = false;
-            },
-            () => {
-                $scope.availableIpBlock = {};
-                $scope.loaders.ips = false;
-            }
-        );
+        return $q.all({
+            ips: License.ips(),
+            user: User.getUser()
+        }).then((results) => {
+            $scope.availableIpBlock = results.ips;
+            $scope.user = results.user;
+        }).catch((err) => {
+            $scope.availableIpBlock = {};
+            Alerter.alertFromSWS($scope.tr("license_details_loading_error"), err, $scope.alerts.order);
+        }).finally(() => {
+            $scope.loaders.ips = false;
+        });
     }
 
     $scope.ipIsValid = function () {

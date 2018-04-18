@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="module_ip_dashboard_title" qtlid="194216">Valdyti IP adresus</translation>
+   <translation id="ip_dashboard_error" qtlid="175205">Įvyko klaida įkeliant jūsų duomenis.</translation>
+   <translation id="ip_services_error" qtlid="210384">Įvyko klaida įkeliant šias paslaugas: {0}. Prašome bandyti vėliau.</translation>
+   <translation id="ip_block_error" qtlid="175218">Įvyko klaida įkeliant {0} duomenis.</translation>
+   <translation id="ip_service_error" qtlid="175231">Įvyko klaida įkeliant paslaugos {0} duomenis.</translation>
+
+   <translation id="ip" qtlid="172696">IP ir saugumas</translation>
+   <translation id="ip_month" qtlid="40222">mėnuo</translation>
+   <translation id="ip_ip" qtlid="25615">IP</translation>
+   <translation id="ip_iplb" qtlid="223580">IP Load Balancing</translation>
+   <translation id="ip_ipv4" qtlid="101781">IPv4</translation>
+   <translation id="ip_ipv6" qtlid="34126">IPv6</translation>
+   <translation id="ip_ipblock" qtlid="200911">IP blokas</translation>
+   <translation id="ip_taskpending_label" qtlid="2690">Užduotis vykdoma</translation>
+
+   <translation id="optional" qtlid="175244">Pasirinktinai</translation>
+   <translation id="ip_required_field" qtlid="191434">privalomi laukai</translation>
+   <translation id="common_available_soon" qtlid="126832">Jau greitai </translation>
+   <translation id="global_select" qtlid="159046">Pasirinkite...</translation>
+   <translation id="global_add" qtlid="37923">Pridėti</translation>
+   <translation id="common_updating" qtlid="223593">Naujinama...</translation>
+
+   <translation id="module_ip_tab_ip" qtlid="25615">IP</translation>
+   <translation id="module_ip_tab_ip-lb" qtlid="223580">IP Load Balancing</translation>
+
+   <translation id="ip_loader_loading_uniq" qtlid="210397">Informacijos įkėlimas...</translation>
+   <translation id="ip_loader_loading_state" qtlid="210410">Paslaugos įkėlimas: {0} iš {1}...</translation>
+   <translation id="ip_loader_tips" qtlid="210423">Patarimas: Jūs galite pasirinkti paslaugą iš žemiau esančio sąrašo, jei norite įkelti tik šią paslaugą ir taip paspartinti viso puslapio įkėlimą.  </translation>
+
+   <translation id="ip_service_PARK" qtlid="204571">IP adresų parkavimas</translation>
+   <translation id="ip_service_UNASSOCIATED" qtlid="204584">Nesusieti IP adresai</translation>
+
+   <translation id="ip_alerts_none" qtlid="175270">Jokio įspėjimo</translation>
+   <translation id="ip_alerts_service_none" qtlid="210436">Jokio įspėjimo šiai paslaugai</translation>
+   <translation id="ip_alerts_1" qtlid="175283">1 įspėjimas</translation>
+   <translation id="ip_alerts_other" qtlid="175296">{} įspėjimai(-ų)</translation>
+   <translation id="ip_alerts_service_1" qtlid="210449">1 įspėjimas šiai paslaugai</translation>
+   <translation id="ip_alerts_service_other" qtlid="210462">{} įspėjimai(-ų) paslaugai</translation>
+   <translation id="ip_alerts_spam" qtlid="175309">Jokio užblokuoto IP (Anti-spam)</translation>
+   <translation id="ip_alerts_spam_1" qtlid="175322">1 užblokuotas IP (Anti-spam)</translation>
+   <translation id="ip_alerts_spam_other" qtlid="175335">{} užblokuoti(-ų) IP (Anti-spam)</translation>
+   <translation id="ip_alerts_antihack" qtlid="222605">Nėra blokuojamo IP (Anti-hack)</translation>
+   <translation id="ip_alerts_antihack_1" qtlid="222618">1 blokuojamas IP (Anti-hack)</translation>
+   <translation id="ip_alerts_antihack_other" qtlid="222631">{} blokuojami IP (Anti-hack)</translation>
+   <translation id="ip_alerts_arp" qtlid="210475">Jokio užblokuoto IP adreso (ARP)</translation>
+   <translation id="ip_alerts_arp_1" qtlid="210488">1 užblokuotas IP adresas (ARP)</translation>
+   <translation id="ip_alerts_arp_other" qtlid="210501">{} užblokuoti(-ų) IP (ARP)</translation>
+   <translation id="ip_alerts_mitigation" qtlid="175348">Jokio atakuoto IP (Apsauga nuo atakų)</translation>
+   <translation id="ip_alerts_mitigation_1" qtlid="175361">1 atakuotas IP (Apsauga nuo atakų)</translation>
+   <translation id="ip_alerts_mitigation_other" qtlid="175374">{} atakuoti(-ų) IP (Apsauga nuo atakų)</translation>
+   <translation id="ip_block" qtlid="141366">Blokas:</translation>
+   <translation id="ip_block_all" qtlid="69173">Visi</translation>
+   <translation id="ip_block_order" qtlid="114378">Užsakyti IP bloką</translation>
+   <translation id="ip_additional_order" qtlid="181877">Užsakyti papildomus IP</translation>
+   <translation id="ip_search" qtlid="122275">Ieškoma...</translation>
+   <translation id="ip_table_empty" qtlid="106715">Nėra duomenų</translation>
+   <translation id="ip_table_search" qtlid="98288">Paieška...</translation>
+   <translation id="ip_table_ipblock_refresh" qtlid="210514">IP {0} informacijos atnaujinimas...</translation>
+   <translation id="ip_manage_task_pending" qtlid="210527">Viename iš jūsų serveryje esančių IP adresų vykdoma operacija.</translation>
+
+   <translation id="ip_migration" qtlid="194840">Importuoti IP failover</translation>
+   <translation id="ip_export" qtlid="250121">Eksportuoti mano IP (CSV)</translation>
+   <translation id="ip_export_csv_expl" qtlid="250134">Jūsų IP adresų eksportavimas trunka vos kelias sekundes (atsižvelgiant į turimų IP adresų kiekį).</translation>
+   <translation id="ip_export_csv_confirm" qtlid="250147">Ar tikrai norite eksportuoti IP adresus CSV formatu?</translation>
+   <translation id="ip_export_csv_success" qtlid="250160">Jūsų IP adresų eksportas baigtas.</translation>
+   <translation id="ip_export_csv_error" qtlid="250173">Įvyko klaida eksportuojant.</translation>
+   <translation id="ip_export_csv_creation_doing" qtlid="250186">Failas kuriamas, prašome palaukti</translation>
+   <translation id="ip_migration_step1_question" qtlid="194853">Norėdami importuoti IP, jūs turite žinoti kodą (token), sugeneruotą iš tvarkytuvo, kuriame administruojamas su perkeltinu IP susietas serveris.</translation>
+   <translation id="ip_migration_step1_ip" qtlid="194866">IP arba IP blokas:</translation>
+   <translation id="ip_migration_step1_token" qtlid="194879">Kodas (token):</translation>
+   <translation id="ip_migration_step1_error" qtlid="194892">Įvyko klaida gaunant prieinamų serverių sąrašą </translation>
+   <translation id="ip_migration_step2_question" qtlid="194905">Pasirinkite paskirties serverį:</translation>
+   <translation id="ip_migration_step2_service" qtlid="194918">Paskirties serveris:</translation>
+   <translation id="ip_migration_step2_error" qtlid="194931">Įvyko klaida tikrinant perkėlimo sąlygas</translation>
+   <translation id="ip_migration_step2_error_OPTION_NOT_ALLOWED" qtlid="194944">Jūs neturite reikiamų teisių, kad susietumėte {0} su serveriu {1}</translation>
+   <translation id="ip_migration_step2_error_INCOMPATIBLE" qtlid="194957">Serveris {1} nesuderinamas su {0}</translation>
+   <translation id="ip_migration_step2_error_EXPIRED" qtlid="194970">Paslauga {1} nustojo galioti.</translation>
+
+   <translation id="ip_migration_step2_checkservice" qtlid="194983">Tikrinamos perkėlimo sąlygos...</translation>
+   <translation id="ip_migration_step2_success" qtlid="194996">Serveris {1} suderinamas su {0}</translation>
+   <translation id="ip_migration_step3_question" qtlid="181214">Pasirinkite trukmę:</translation>
+   <translation id="ip_migration_step3_error" qtlid="195009">Įvyko klaida gaunant duomenis apie trukmę</translation>
+   <translation id="ip_migration_step5_question" qtlid="177496">Užsakymo santrauka</translation>
+   <translation id="ip_migration_step5_success" qtlid="195022">Prašymas dėl perkėlimo (užsakymas <a href='{0}' target='_blank'>{1}</a>) buvo priimtas.</translation>
+   <translation id="ip_migration_step5_error" qtlid="195035">Įvyko klaidą teikiant prašymą dėl perkėlimo.</translation>
+
+   <translation id="ip_filter_services__ALL" qtlid="181890">Visos paslaugos</translation>
+   <translation id="ip_filter_services__ALERTS" qtlid="181903">Paslaugos su įspėjimu</translation>
+   <translation id="ip_filter_services__PARK" qtlid="210540">IP adresų parkavimas</translation>
+
+   <translation id="ip_filter_services_title_OTHER" qtlid="28603">Kita</translation>
+   <translation id="ip_filter_services_title_CDN" qtlid="99812">CDN</translation>
+   <translation id="ip_filter_services_title_DEDICATED" qtlid="101901">Skirtieji serveriai</translation>
+   <translation id="ip_filter_services_title_HOSTED_SSL" qtlid="210553">Hosted SSL</translation>
+   <translation id="ip_filter_services_title_PRIVATE_CLOUD" qtlid="162205">Dedicated Cloud</translation>
+   <translation id="ip_filter_services_title_VPS" qtlid="23083">VPS</translation>
+   <translation id="ip_filter_services_title_VRACK" qtlid="210566">vRack</translation>
+   <translation id="ip_filter_services_title_XDSL" qtlid="104614">xDSL</translation>
+   <translation id="ip_filter_services_title_MAIL" qtlid="210579">El. pašto serveriai</translation>
+   <translation id="ip_filter_services_title_CLOUD" qtlid="15677">Cloud</translation>
+   <translation id="ip_filter_services_title_IP_LOAD_BALANCING" qtlid="223580">IP Load Balancing</translation>
+
+   <translation id="ip_filter_services_CDN" qtlid="181916">Tik CDN</translation>
+   <translation id="ip_filter_services_DEDICATED" qtlid="181929">Tik dedikuoti serveriai</translation>
+   <translation id="ip_filter_services_HOSTED_SSL" qtlid="181942">Tik Hosted SSL</translation>
+   <translation id="ip_filter_services_PCC" qtlid="181955">Tik Dedicated Cloud</translation>
+   <translation id="ip_filter_services_VPS" qtlid="181968">Tik VPS</translation>
+   <translation id="ip_filter_services_VRACK" qtlid="181981">Tik VRACK</translation>
+   <translation id="ip_filter_services_XDSL" qtlid="181994">Tik xDSL</translation>
+   <translation id="ip_filter_services_MAIL" qtlid="191369">Tik el. pašto serveriai</translation>
+
+   <translation id="ip_table_collapseall" qtlid="178835">Viską replikuoti</translation>
+   <translation id="ip_table_not_allowed" qtlid="141379">Negalima valdyti šio IP paskelbimo prieš atakas ir Firewall Network. Norėdami gauti daugiau informacijos, susisiekite su pagalbos skyriumi.</translation>
+   <translation id="ip_table_search_empty" qtlid="141392">Joks IP adresas neatitinka paieškos kriterijų</translation>
+   <translation id="ip_table_header_service" qtlid="31042">Paslauga</translation>
+   <translation id="ip_table_header_ip_address" qtlid="26191">IP adresas</translation>
+   <translation id="ip_table_header_country" qtlid="25171">Šalis</translation>
+   <translation id="ip_table_header_reverse" qtlid="32338">Reverse</translation>
+   <translation id="ip_table_header_virtual_mac" qtlid="141405">Virtualus MAC</translation>
+   <translation id="ip_table_header_antispam" qtlid="148331">Anti-spam</translation>
+   <translation id="ip_table_header_mitigation" qtlid="138233">Atakos sušvelninimas</translation>
+   <translation id="ip_table_header_security" qtlid="141418">Ugniasienė</translation>
+   <translation id="ip_table_header_game_mitigation" qtlid="232534">Game firewall</translation>
+   <translation id="ip_table_header_alerts" qtlid="72797">Įspėjimai</translation>
+   <translation id="ip_table_header_visiblecols_btn" qtlid="4010">Konfigūruoti</translation>
+   <translation id="ip_table_header_visiblecols" qtlid="175387">Matomi stulpeliai</translation>
+
+   <translation id="ip_agora_table_header_offer" qtlid="38217">Pasiūlymas</translation>
+   <translation id="ip_agora_table_header_quantity" qtlid="37107">Kiekis</translation>
+   <translation id="ip_agora_table_header_country" qtlid="182215">Lokalizuota:</translation>
+   <translation id="ip_agora_table_header_organisation" qtlid="32278">Organizacija</translation>
+
+   <translation id="ip_table_firewall" qtlid="141418">Ugniasienė</translation>
+   <translation id="ip_table_manage_reverse" qtlid="175400">Keisti revers</translation>
+   <translation id="ip_table_manage_reverse_question" qtlid="210592">Įveskite galiojantį reversą šiam IP adresui ir spauskite "Patvirtinti".</translation>
+   <translation id="ip_table_manage_reverse_success" qtlid="151854">Reverse naujinimas atliktas</translation>
+   <translation id="ip_table_manage_reverse_failure" qtlid="175413">Įvyko klaida atnaujinant reversą.</translation>
+   <translation id="ip_table_manage_mac" qtlid="141457">Keisti virtualų MAC</translation>
+
+
+   <translation id="ip_table_manage_mitigation_DEFAULT_to_PERMANENT" qtlid="175426">Apsauga nuo atakų: nuolatinė apsauga (permanent mode)</translation>
+   <translation id="ip_table_manage_mitigation_PERMANENT_to_AUTO" qtlid="141470">Paskelbimas: automatinis režimas</translation>
+   <translation id="ip_table_manage_mitigation_stats" qtlid="26671">Statistika</translation>
+   <translation id="ip_table_manage_firewall_enable" qtlid="222644">Įjungti firewall</translation>
+   <translation id="ip_table_manage_firewall_disable" qtlid="222657">Išjungti firewall</translation>
+   <translation id="ip_table_manage_firewall_disable_tooltip" qtlid="141509">Paskelbimas šiuo metu aktyvus, ugniasienė negali būti išjungta.</translation>
+   <translation id="ip_table_manage_firewall_configure" qtlid="141522">Sukurti Firewall</translation>
+   <translation id="ip_table_manage_firewall_rules" qtlid="176846">Konfigūruoti ugniasienę</translation>
+   <translation id="ip_table_manage_antispam_unblock" qtlid="148331">Anti-spam</translation>
+   <translation id="ip_table_manage_game_mitigation" qtlid="232547">Konfigūruoti Game firewall</translation>
+   <translation id="ip_table_manage_add_ipv6block" qtlid="178978">Pasirinkti IPv6</translation>
+   <translation id="ip_table_manage_add_ipv6block_question" qtlid="210605">Įveskite galiojantį IPv6 adresą, esantį šiame bloke, ir spauskite "Patvirtinti".</translation>
+   <translation id="ip_table_manage_add_ipv6block_failure" qtlid="175452">Įvyko klaida pridedant IPv6.</translation>
+   <translation id="ip_table_manage_select_ipv6block" qtlid="210618">Jūs galite pasirinkti IPv6 adresą, esantį šiame bloke, paspaudę čia.  </translation>
+   <translation id="ip_table_manage_delegate_ipv6block" qtlid="272838">Reverso delegavimas</translation>
+   <translation id="ip_table_manage_view_iporganisation_details" qtlid="210631">Organizacijos duomenys</translation>
+   <translation id="ip_table_manage_view_iporganisation_change" qtlid="262700">Pakeisti organizaciją</translation>
+
+   <translation id="ip_table_manage_add_virtualmac" qtlid="175465">Pridėti virtualų MAC</translation>
+   <translation id="ip_table_manage_view_virtualmac" qtlid="175478">Plačiau apie virtualų MAC</translation>
+   <translation id="ip_table_manage_view_virtualmac_question" qtlid="210644">Virtualaus MAC duomenys:</translation>
+   <translation id="ip_table_manage_del_virtualmac" qtlid="175491">Pašalinti virtualų MAC</translation>
+   <translation id="ip_virtualmac_add_new" qtlid="175504">Sukurti naują virtualų MAC</translation>
+   <translation id="ip_virtualmac_add_existing" qtlid="175517">Naudoti egzistuojantį virtualų MAC</translation>
+   <translation id="ip_virtualmac_type" qtlid="2642">Tipas</translation>
+   <translation id="ip_virtualmac_field" qtlid="141405">Virtualus MAC</translation>
+   <translation id="ip_virtualmac_machinename" qtlid="175530">Virtualios mašinos pavadinimas</translation>
+   <translation id="ip_virtualmac_add_new_success" qtlid="175543">Naujas virtualus MAC jau sugeneruotas ir bus prieinamas IP {0} po kelių minučių.</translation>
+   <translation id="ip_virtualmac_add_new_failure" qtlid="175556">Įvyko klaida generuojant naują virtualų MAC IP adresui {0}</translation>
+   <translation id="ip_virtualmac_add_existing_success" qtlid="175569">IP {0} bus susietas su egzistuojančiu virtualiu MAC po kelių minučių.  </translation>
+   <translation id="ip_virtualmac_add_impossible_server" qtlid="256269">Turite priskirti šį IP serveriui.</translation>
+   <translation id="ip_virtualmac_add_impossible_status" qtlid="256282">Operacija vykdoma.</translation>
+   <translation id="ip_virtualmac_add_impossible_unavailable" qtlid="256295">Paslauga negalima su šiuo IP.</translation>
+   <translation id="ip_virtualmac_add_impossible_exists" qtlid="256308">Virtualus MAC jau egzistuoja.</translation>
+
+
+   <translation id="ip_virtualmac_add_existing_failure" qtlid="175582">Įvyko klaida priskiriant egzistuojantį virtualų MAC IP adresui {0}</translation>
+   <translation id="ip_virtualmac_delete_confirmation" qtlid="175595">Ar tikrai norite pašalinti virtualų MAC {0} iš IP {1}?</translation>
+   <translation id="ip_virtualmac_delete_success" qtlid="175608">Virtualus MAC {0} bus pašalintas iš IP adreso {1} po kelių minučių.</translation>
+   <translation id="ip_virtualmac_delete_failure" qtlid="175621">Įvyko klaida šalinant virtualų MAC {0} iš IP adreso {1}</translation>
+
+   <translation id="ip_failover" qtlid="175634">IP Failover</translation>
+   <translation id="ip_failover_short" qtlid="175647">FO</translation>
+   <translation id="ip_failover_impossible_delete" qtlid="281745">Šis IP adresas negali būti pašalintas</translation>
+   <translation id="ip_failover_impossible_move" qtlid="281758">Šis IP adresas negali būti perkeltas</translation>
+   <translation id="ip_failover_cloud_move_info" qtlid="277715">Artimiausiu metu galėsite perkelti Cloud IP Failover į kitus OVH produktus.</translation>
+   <translation id="ip_position" qtlid="45988">Pirmumas</translation>
+   <translation id="ip_position_tooltip" qtlid="140469">Taisyklės skaitomos eilės tvarka. Taisyklė 0 turi didžiausią pirmenybę.</translation>
+   <translation id="ip_rule" qtlid="54917">Taisyklė</translation>
+   <translation id="ip_status" qtlid="33790">Būsena</translation>
+   <translation id="ip_creation_date" qtlid="26419">Sukūrimo data</translation>
+   <translation id="ip_action" qtlid="56105">Veiksmas</translation>
+   <translation id="ip_protocol" qtlid="19711">Protokolas</translation>
+   <translation id="ip_source_ip" qtlid="138376">IP šaltinis</translation>
+   <translation id="ip_source_port" qtlid="141548">Šaltinio prievadas</translation>
+   <translation id="ip_source_port_notice" qtlid="141561">nuo šaltinio prievado</translation>
+   <translation id="ip_source_port_range_max" qtlid="141574">iki šaltinio prievado (nebūtina)</translation>
+   <translation id="ip_destination_port" qtlid="141587">Paskirties prievadas</translation>
+   <translation id="ip_destination_port_notice" qtlid="141600">nuo paskirties prievado</translation>
+   <translation id="ip_destination_port_range_max" qtlid="138454">iki gavėjo prievado (neprivaloma)</translation>
+   <translation id="ip_options" qtlid="23395">Parinktys</translation>
+   <translation id="ip_options_tcp" qtlid="141613">TCP parinktys</translation>
+   <translation id="ip_options_udp" qtlid="141626">UDP parinktys</translation>
+   <translation id="ip_port_range_max" qtlid="141639">iki prievado</translation>
+   <translation id="ip_port_range_from" qtlid="141652">nuo prievado</translation>
+   <translation id="ip_rule_status_CREATION_PENDING" qtlid="26227">Kuriama</translation>
+   <translation id="ip_rule_status_REMOVAL_PENDING" qtlid="133929">Šalinama</translation>
+   <translation id="ip_rule_status_OK" qtlid="62028">Įjungta</translation>
+   <translation id="ip_description_field" qtlid="9238">Apibūdinimas</translation>
+   <translation id="ip_description_new_title" qtlid="149345">Pridėti apibūdinimą</translation>
+   <translation id="ip_description_edit_title" qtlid="175660">Redaguoti aprašymą</translation>
+   <translation id="ip_description_edit_field" qtlid="103702">Apibūdinimas:</translation>
+   <translation id="ip_description_edit_success" qtlid="175673">IP {0} aprašymas buvo pakeistas.</translation>
+   <translation id="ip_description_edit_failure" qtlid="175686">Įvyko klaida redaguojant IP {0} aprašymą</translation>
+
+<!-- ANTISPAM -->
+   <translation id="ip_antispam_current_ip" qtlid="26191">IP adresas</translation>
+   <translation id="ip_antispam_status" qtlid="26443">Būsena</translation>
+   <translation id="ip_antispam_date_blocking" qtlid="175699">Blokavimo data</translation>
+   <translation id="ip_antispam_date_blocking_end" qtlid="175712">Galimo atblokavimo data</translation>
+
+   <translation id="ip_antispam_status_BLOCKED_FOR_SPAM" qtlid="151386">Blokuojama</translation>
+   <translation id="ip_antispam_status_UNBLOCKED" qtlid="151399">Neblokuojama</translation>
+   <translation id="ip_antispam_status_UNBLOCKING" qtlid="151412">Atblokuojama</translation>
+
+   <translation id="ip_antispam_periods_table_headers_date" qtlid="24523">Data</translation>
+   <translation id="ip_antispam_periods_table_headers_score" qtlid="151438">Spam score</translation>
+   <translation id="ip_antispam_periods_table_headers_total" qtlid="32458">Viso</translation>
+   <translation id="ip_antispam_periods_table_headers_spamscount" qtlid="151451">spam kiekis</translation>
+   <translation id="ip_antispam_periods_table_empty" qtlid="37527">Išsamiau</translation>
+   <translation id="ip_antispam_periods_table_see_more" qtlid="37527">Išsamiau</translation>
+   <translation id="ip_antispam_unblock_title" qtlid="175725">Atblokuoti anti-spam IP adresui {0}</translation>
+   <translation id="ip_antispam_unblock_button" qtlid="148344">Atblokuoti anti-spam</translation>
+   <translation id="ip_antispam_unblock_error" qtlid="148409">Klaida atblokuojant IP {0}</translation>
+   <translation id="ip_antispam_details_information_title" qtlid="151464">aptiktas spam</translation>
+   <translation id="ip_antispam_details_information" qtlid="151477">Pasirinkto laikotarpio anti-spam informacija:</translation>
+   <translation id="ip_antispam_details_information_search_placeholder" qtlid="140612">Ieškoma...</translation>
+   <translation id="ip_antispam_details_information_table_header_ip" qtlid="151490">IP dst</translation>
+   <translation id="ip_antispam_details_information_table_header_messageid" qtlid="151503">Pranešimo ID</translation>
+   <translation id="ip_antispam_details_information_table_header_date" qtlid="24523">Data</translation>
+   <translation id="ip_antispam_details_information_table_header_spamscore" qtlid="151516">SpamScore</translation>
+   <translation id="ip_antispam_load_error" qtlid="175738">Įvyko klaida įkeliant anti-spam duomenis.</translation>
+
+<!-- arp -->
+   <translation id="ip_table_manage_view_arp" qtlid="195347">ARP</translation>
+   <translation id="ip_arp_status_BLOCKED" qtlid="151386">Blokuojama</translation>
+   <translation id="ip_arp_status_UNBLOCKING" qtlid="151412">Atblokuojama</translation>
+   <translation id="ip_arp_status" qtlid="26443">Būsena</translation>
+   <translation id="ip_arp_blockedsince" qtlid="134410">Užblokuotas nuo </translation>
+   <translation id="ip_arp_remainingtime" qtlid="210657">Likęs laikas (s)</translation>
+   <translation id="ip_arp_unblock" qtlid="200833">Atblokuoti IP</translation>
+   <translation id="ip_arp_unblock_success" qtlid="210670">IP adresas bus atblokuotas po kelių minučių.</translation>
+   <translation id="ip_arp_unblock_failure" qtlid="210683">Įvyko klaida atblokuojant SPAM ARP.</translation>
+
+<!-- antihack -->
+   <translation id="ip_table_manage_view_antihack" qtlid="167431">Anti-Hack</translation>
+   <translation id="ip_antihack_status_BLOCKED" qtlid="151386">Blokuojama</translation>
+   <translation id="ip_antihack_status_UNBLOCKING" qtlid="151412">Atblokuojama</translation>
+   <translation id="ip_antihack_status" qtlid="26443">Būsena</translation>
+   <translation id="ip_antihack_blockedsince" qtlid="134410">Užblokuotas nuo </translation>
+   <translation id="ip_antihack_remainingtime" qtlid="210657">Likęs laikas (s)</translation>
+   <translation id="ip_antihack_unblock" qtlid="200833">Atblokuoti IP</translation>
+   <translation id="ip_antihack_unblock_success" qtlid="210670">IP adresas bus atblokuotas po kelių minučių.</translation>
+   <translation id="ip_antihack_unblock_failure" qtlid="222670">Klaida atblokuojant Anti-hack dėl SPAM.</translation>
+<!-- Mitigation -->
+   <translation id="ip_mitigation_DEFAULT" qtlid="134215">Automatinis</translation>
+   <translation id="ip_block_mitigation_DEFAULT" qtlid="323353">Atidaryti išsamesniam susipažinimui</translation>
+   <translation id="ip_mitigation_PERMANENT" qtlid="175751">Nuolatinė</translation>
+   <translation id="ip_mitigation_FORCED" qtlid="134202">Priverstinis</translation>
+   <translation id="ip_mitigation_CREATION_PENDING" qtlid="26383">Vykdoma</translation>
+   <translation id="ip_mitigation_REMOVAL_PENDING" qtlid="26383">Vykdoma</translation>
+   <translation id="ip_mitigation_permanent_title_button" qtlid="175764">Įjungti nuolatinę apsaugą nuo atakų</translation>
+   <translation id="ip_mitigation_permanent_title" qtlid="175764">Įjungti nuolatinę apsaugą nuo atakų</translation>
+   <translation id="ip_mitigation_permanent_question" qtlid="175777">Ar tikrai norite įjungti nuolatinę apsaugą nuo atakų IP adresui {0}?</translation>
+   <translation id="ip_mitigation_permanent_success" qtlid="175790">Apsauga bus įjungta po kelių minučių ir galios nuolat IP adresui {0}</translation>
+   <translation id="ip_mitigation_permanent_failed" qtlid="175803">Įvyko klaida įjungiant nuolatinę apsaugą (permanent mode) IP adresui {0}</translation>
+   <translation id="ip_mitigation_auto_title_button" qtlid="142029">Perjungti paskelbimą į automatinį režimą</translation>
+   <translation id="ip_mitigation_auto_title" qtlid="142029">Perjungti paskelbimą į automatinį režimą</translation>
+   <translation id="ip_mitigation_auto_question" qtlid="142042">Ar tikrai norite perjungti IP {0} paskelbimą į automatinį režimą?</translation>
+   <translation id="ip_mitigation_auto_success" qtlid="140508">IP adresui {0} netrukus pradės galioti automatinės apsaugos priemonės </translation>
+   <translation id="ip_mitigation_auto_failed" qtlid="142055">Klaida perjungiant IP {0} paskelbimą į automatinį režimą?</translation>
+   <translation id="ip_mitigation_statistics_title" qtlid="26671">Statistika</translation>
+   <translation id="ip_mitigation_statistics_back_title_button" qtlid="4118">Atgal</translation>
+   <translation id="ip_mitigation_statistics_current_ip" qtlid="142068">Peržiūrėti apsaugos paskelbimo statistiką, kai paskirties IP yra {0}</translation>
+   <translation id="ip_mitigation_statistics_to" qtlid="88725">Nuo</translation>
+   <translation id="ip_mitigation_statistics_mode_realtime" qtlid="142081">Realiu laiku</translation>
+   <translation id="ip_mitigation_statistics_mode_date" qtlid="142094">Nurodytą datą</translation>
+   <translation id="ip_mitigation_statistics_input" qtlid="139000">Įeinantis</translation>
+   <translation id="ip_mitigation_statistics_output" qtlid="142107">Išeinantis</translation>
+   <translation id="ip_mitigation_statistics_unit_B" qtlid="142120">B / s</translation>
+   <translation id="ip_mitigation_statistics_unit_KB" qtlid="142133">kB / s</translation>
+   <translation id="ip_mitigation_statistics_unit_MB" qtlid="142146">MB / s</translation>
+   <translation id="ip_mitigation_statistics_unit_GB" qtlid="142159">GB / s</translation>
+   <translation id="ip_mitigation_statistics_unit_TB" qtlid="142172">TB / s</translation>
+   <translation id="ip_mitigation_statistics_unit_PB" qtlid="142185">PB / s</translation>
+   <translation id="ip_mitigation_statistics_unit_EB" qtlid="142198">EB / s</translation>
+   <translation id="ip_mitigation_statistics_unit_ZB" qtlid="142211">ZB / s</translation>
+   <translation id="ip_mitigation_statistics_unit_YB" qtlid="142224">YB / s</translation>
+   <translation id="ip_mitigation_statistics_scale" qtlid="139143">Skalė</translation>
+   <translation id="ip_mitigation_statistics_statistics_scale_10_S" qtlid="110478">10 sekundžių</translation>
+   <translation id="ip_mitigation_statistics_statistics_scale_1_M" qtlid="32326">1 minutė</translation>
+   <translation id="ip_mitigation_statistics_statistics_scale_5_M" qtlid="33178">5 minutės</translation>
+   <translation id="ip_mitigation_statistics_reset_zoom" qtlid="142237">Iš naujo inicijuoti mastelį</translation>
+   <translation id="ip_mitigation_statistics_no_data" qtlid="156602">IP {0} statistika nepasiekiama.</translation>
+
+<!-- GAME MITIGATION -->
+   <translation id="ip_game_mitigation_ACTIVATED" qtlid="99920">Galimi</translation>
+   <translation id="ip_game_mitigation_title" qtlid="232560">Konfigūruoti IP adreso <span class="blue">{0}</span> ugniasienę</translation>
+   <translation id="ip_game_mitigation_table_protocol" qtlid="19711">Protokolas</translation>
+   <translation id="ip_game_mitigation_table_port" qtlid="9034">Prievadas</translation>
+   <translation id="ip_game_mitigation_table_state" qtlid="8230">Būsena</translation>
+   <translation id="ip_game_mitigation_table_error" qtlid="232573">Negalima nuskaityti Game firewall taisyklių.</translation>
+   <translation id="ip_game_mitigation_table_partial_error" qtlid="232586">Klaida nuskaitant taisykles.</translation>
+   <translation id="ip_game_mitigation_table_partial_error_info" qtlid="232599">Ši taisyklė (id {0}) negali būti taikoma.</translation>
+   <translation id="ip_game_mitigation_table_empty" qtlid="232612">Neturite Game firewall taisyklių.</translation>
+
+   <translation id="ip_game_mitigation_rule_remove_title" qtlid="232625">Taisyklės trynimas</translation>
+   <translation id="ip_game_mitigation_rule_remove" qtlid="232638">Ar tikrai norite ištrinti protokolo {0} ({1}) taisyklę?</translation>
+   <translation id="ip_game_mitigation_rule_remove_success" qtlid="141665">Firewall taisyklė bus ištrinta.</translation>
+   <translation id="ip_game_mitigation_rule_remove_error" qtlid="232651">Klaida trinant taisyklę.</translation>
+
+   <translation id="ip_game_mitigation_error" qtlid="232664">Klaida. Negalima nuskaityti ugniasienės būsenos.</translation>
+
+   <translation id="ip_game_mitigation_state_ok" qtlid="141795">Leisti</translation>
+   <translation id="ip_game_mitigation_state_deleteRulePending" qtlid="152778">Trinama</translation>
+   <translation id="ip_game_mitigation_state_createRulePending" qtlid="29647">Kuriama</translation>
+
+   <translation id="ip_game_mitigation_rule_add" qtlid="141730">Įtraukti taisyklę</translation>
+   <translation id="ip_game_mitigation_rule_add_error" qtlid="232677">Klaida pridedant šią taisyklę.</translation>
+   <translation id="ip_game_mitigation_rule_add_title" qtlid="232690">Naujos taisyklės pridėjimas</translation>
+   <translation id="ip_game_mitigation_rule_add_protocol" qtlid="232703">Protokolas:</translation>
+   <translation id="ip_game_mitigation_rule_add_protocol_enum_hl2Source" qtlid="250199">Half life / source</translation>
+   <translation id="ip_game_mitigation_rule_add_port_from" qtlid="232716">Pradžios prievadas:</translation>
+   <translation id="ip_game_mitigation_rule_add_port_number" qtlid="232729">Prievadas turi būti skaičius.</translation>
+   <translation id="ip_game_mitigation_rule_add_port_pattern" qtlid="232742">Prievadas turi būti teigiamas skaičius.</translation>
+   <translation id="ip_game_mitigation_rule_add_port_to" qtlid="232755">iki prievado:</translation>
+   <translation id="ip_game_mitigation_rule_add_init_error" qtlid="232768">Klaida. Negalima gauti protokolų sąrašo.</translation>
+
+   <translation id="ip_game_mitigation_firewall_true" qtlid="232781">GAME apribojimai yra <strong>įjungti</strong>, UDP srautas leidžiamas tik į nurodytus prievadus</translation>
+   <translation id="ip_game_mitigation_firewall_false" qtlid="232794">GAME apribojimai yra <strong>išjungti</strong>, UDP srautas į nenurodytus prievadus leidžiamas, nustatytos taisyklės yra taikomos</translation>
+   <translation id="ip_game_mitigation_firewall_firewallModeEnablePending" qtlid="232807">GAME režimo apribojimai <strong>bus įjungti</strong>, srautas bus galimas tik per UDP, pagal nustatytas taisykles</translation>
+   <translation id="ip_game_mitigation_firewall_firewallModeDisablePending" qtlid="232820">GAME režimo apribojimai <strong>bus išjungti</strong>, UDP srautas į nenurodytus prievadus bus leidžiamas, taip pat bus taikomos nustatytos taisyklės</translation>
+
+   <translation id="ip_game_mitigation_firewall_enable_button" qtlid="232833">Įjungti apribojimus</translation>
+   <translation id="ip_game_mitigation_firewall_enable_title_false" qtlid="232846">GAME režimo apribojimų įjungimas</translation>
+   <translation id="ip_game_mitigation_firewall_enable_info_false" qtlid="232859">Ar tikrai norite įjungti GAME režimo apribojimus?</translation>
+   <translation id="ip_game_mitigation_firewall_enable_success_false" qtlid="232872">GAME režimo apribojimai bus įjungti po kelių sekundžių.</translation>
+   <translation id="ip_game_mitigation_firewall_enable_error_false" qtlid="232885">Klaida įjungiant GAME režimo apribojimus.</translation>
+
+   <translation id="ip_game_mitigation_firewall_disable_button" qtlid="232898">Išjungti apribojimus</translation>
+   <translation id="ip_game_mitigation_firewall_enable_title_true" qtlid="232911">GAME režimo apribojimų išjungimas</translation>
+   <translation id="ip_game_mitigation_firewall_enable_info_true" qtlid="232924">Ar tikrai norite išjungti GAME režimo apribojimus?</translation>
+   <translation id="ip_game_mitigation_firewall_enable_success_true" qtlid="232937">GAME režimo apribojimai bus išjungti artimiausiu metu.</translation>
+   <translation id="ip_game_mitigation_firewall_enable_error_true" qtlid="232950">Klaida išjungiant GAME režimo apribojimus.</translation>
+
+
+<!-- FIREWALL -->
+   <translation id="ip_firewall_fail" qtlid="164285">Klaida įkeliant ugniasienės informaciją</translation>
+   <translation id="ip_firewall_edit_rule" qtlid="125888">Pakeisti taisyklę </translation>
+   <translation id="ip_firewall_remove_rule" qtlid="125912">Pašalinti taisyklę</translation>
+   <translation id="ip_firewall_remove_rule_confirmation" qtlid="210696">Ar tikrai norite pašalinti taisyklę nr. {0}?</translation>
+   <translation id="ip_firewall_remove_rule_success" qtlid="141665">Firewall taisyklė bus ištrinta.</translation>
+   <translation id="ip_firewall_remove_rule_fail" qtlid="141678">Klaida teikiant Firewall taisyklės trynimo prašymą.</translation>
+   <translation id="ip_firewall_enabled" qtlid="141691">Firewall įjungta</translation>
+   <translation id="ip_firewall_disabled" qtlid="141704">Firewall išjungta</translation>
+   <translation id="ip_firewall_NOT_CONFIGURED" qtlid="124952">Nesukonfigūruota</translation>
+   <translation id="ip_firewall_DEACTIVATED" qtlid="24967">Išjungta</translation>
+   <translation id="ip_firewall_ACTIVATED" qtlid="30250">Įjungta</translation>
+   <translation id="ip_firewall_PENDING" qtlid="26383">Vykdoma</translation>
+   <translation id="ip_firewall_DISABLE_PENDING" qtlid="210709">Išjungimas...</translation>
+   <translation id="ip_firewall_ENABLE_PENDING" qtlid="210722">Aktyvavimas...</translation>
+   <translation id="ip_firewall_not_yet_activated_short" qtlid="124952">Nesukonfigūruota</translation>
+   <translation id="ip_firewall_enable_button_title" qtlid="76734">Įjungti</translation>
+   <translation id="ip_firewall_disable_button_title" qtlid="90973">Išjungti</translation>
+   <translation id="ip_firewall_title" qtlid="210735">Konfigūruoti ugniasienę IP adresui <span class="blue">{0}</span> </translation>
+   <translation id="ip_firewall_add_summary" qtlid="132720">Santrauka:</translation>
+   <translation id="ip_firewall_add_title" qtlid="141730">Įtraukti taisyklę</translation>
+   <translation id="ip_firewall_add_rule_success" qtlid="141743">Nauja taisyklė buvo įtraukta.</translation>
+   <translation id="ip_firewall_add_rule_fail" qtlid="141756">Klaida įtraukiant naują taisyklę.</translation>
+   <translation id="ip_firewall_add_rule_confirm_button_text" qtlid="37923">Pridėti</translation>
+   <translation id="ip_firewall_modify_title" qtlid="141769">Keisti taisyklę</translation>
+   <translation id="ip_firewall_modify_rule_success" qtlid="141782">Taisyklė pakeista.</translation>
+   <translation id="ip_firewall_modify_rule_fail" qtlid="138662">Klaida keičiant taisyklę.</translation>
+   <translation id="ip_firewall_rule_PERMIT" qtlid="141795">Leisti</translation>
+   <translation id="ip_firewall_rule_permit" qtlid="141795">Leisti</translation>
+   <translation id="ip_firewall_rule_DENY" qtlid="141808">Atmesti</translation>
+   <translation id="ip_firewall_rule_deny" qtlid="141808">Atmesti</translation>
+   <translation id="ip_firewall_rule_protocol_AH" qtlid="176872">AH</translation>
+   <translation id="ip_firewall_rule_protocol_ESP" qtlid="176885">ESP</translation>
+   <translation id="ip_firewall_rule_protocol_GRE" qtlid="176898">GRE</translation>
+   <translation id="ip_firewall_rule_protocol_ICMP" qtlid="19627">ICMP</translation>
+   <translation id="ip_firewall_rule_protocol_IPV_4" qtlid="101781">IPv4</translation>
+   <translation id="ip_firewall_rule_protocol_TCP" qtlid="141821">TCP</translation>
+   <translation id="ip_firewall_rule_protocol_UDP" qtlid="141834">UDP</translation>
+   <translation id="ip_firewall_rule_protocol_ah" qtlid="176872">AH</translation>
+   <translation id="ip_firewall_rule_protocol_esp" qtlid="176885">ESP</translation>
+   <translation id="ip_firewall_rule_protocol_gre" qtlid="176898">GRE</translation>
+   <translation id="ip_firewall_rule_protocol_icmp" qtlid="19627">ICMP</translation>
+   <translation id="ip_firewall_rule_protocol_ipv4" qtlid="101781">IPv4</translation>
+   <translation id="ip_firewall_rule_protocol_tcp" qtlid="141821">TCP</translation>
+   <translation id="ip_firewall_rule_protocol_udp" qtlid="141834">UDP</translation>
+   <translation id="ip_firewall_rule_ip_any" qtlid="141847">visi</translation>
+   <translation id="ip_firewall_enable_title" qtlid="141860">Įjungti Firewall</translation>
+   <translation id="ip_firewall_enable_question" qtlid="141873">Ar tikrai norite įjungti ugniasienę IP adresui {0}?</translation>
+   <translation id="ip_firewall_enable_success" qtlid="141886">IP adreso {0} ugniasienė bus įjungta po kelių minučių.</translation>
+   <translation id="ip_firewall_enable_failed" qtlid="138779">Klaida įjungiant firewall šiam IP: {0}</translation>
+   <translation id="ip_firewall_disable_title" qtlid="141899">Išjungti Firewall</translation>
+   <translation id="ip_firewall_disable_question" qtlid="141912">Ar tikrai norite išjungti IP adreso {0} ugniasienę?</translation>
+   <translation id="ip_firewall_disable_success" qtlid="141925">IP adreso {0} ugniasienė bus išjungta po kelių minučių.</translation>
+   <translation id="ip_firewall_disable_failed" qtlid="141938">Klaida išjungiant IP adreso {0} Firewall</translation>
+   <translation id="ip_firewall_new_title" qtlid="141951">Sukurti Firewall</translation>
+   <translation id="ip_firewall_new_question" qtlid="141964">Ar tikrai norite įjungti ugniasienės kūrimą IP adresui {0}?</translation>
+   <translation id="ip_firewall_new_success" qtlid="141977">IP adreso {0} ugniasienė bus sukurta po kelių minučių.</translation>
+   <translation id="ip_firewall_new_failed" qtlid="141990">Klaida kuriant IP adreso {0} Firewall</translation>
+   <translation id="ip_firewall_action" qtlid="56105">Veiksmas</translation>
+   <translation id="ip_firewall_protocol" qtlid="19711">Protokolas</translation>
+   <translation id="ip_firewall_source_ip" qtlid="138376">IP šaltinis</translation>
+   <translation id="ip_firewall_source_port" qtlid="141548">Šaltinio prievadas</translation>
+   <translation id="ip_firewall_source_port_tooltip" qtlid="175829">Šaltinio prievadas turi būti tarp 0 ir 65535</translation>
+   <translation id="ip_firewall_destination_port" qtlid="175842">Paskirties prievadas</translation>
+   <translation id="ip_firewall_destination_port_tooltip" qtlid="175855">Paskirties prievadas turi būti tarp 0 ir 65535</translation>
+   <translation id="ip_firewall_options" qtlid="23395">Parinktys</translation>
+   <translation id="ip_firewall_status" qtlid="33790">Būsena</translation>
+   <translation id="ip_firewall_position" qtlid="45988">Pirmumas</translation>
+   <translation id="ip_firewall_position_tooltip" qtlid="140469">Taisyklės skaitomos eilės tvarka. Taisyklė 0 turi didžiausią pirmenybę.</translation>
+   <translation id="ip_firewall_table_empty" qtlid="151425">Nėra jokio elemento ar failo</translation>
+   <translation id="ip_firewall_rule_status_CREATION_PENDING" qtlid="26227">Kuriama</translation>
+   <translation id="ip_firewall_rule_status_creationPending" qtlid="26227">Kuriama</translation>
+   <translation id="ip_firewall_rule_status_REMOVAL_PENDING" qtlid="133929">Šalinama</translation>
+   <translation id="ip_firewall_rule_status_removalPending" qtlid="133929">Šalinama</translation>
+   <translation id="ip_firewall_rule_status_OK" qtlid="30250">Įjungta</translation>
+   <translation id="ip_firewall_rule_status_ok" qtlid="30250">Įjungta</translation>
+   <translation id="ip_firewall_rule_fragments" qtlid="175868">Fragmentai</translation>
+   <translation id="ip_firewall_rule_fragments_tooltip" qtlid="175881">Jūs negalite rinktis fragmento parinkties apibrėžę  šaltinio prievadą ir/ar paskirties prievadą.</translation>
+   <translation id="ip_firewall_rule_flags" qtlid="204597">Vėliavos</translation>
+   <translation id="ip_firewall_rule_flags_SYN" qtlid="175907">SYN</translation>
+   <translation id="ip_firewall_rule_flags_syn" qtlid="175907">SYN</translation>
+   <translation id="ip_firewall_rule_flags_ESTABLISHED" qtlid="175920">ESTABLISHED</translation>
+   <translation id="ip_firewall_rule_flags_established" qtlid="175920">ESTABLISHED</translation>
+   <translation id="ip_firewall_rule_flags_NONE" qtlid="30646">Nėra</translation>
+   <translation id="ip_firewall_rule_flags_none" qtlid="30646">Nėra</translation>
+   <translation id="ip_firewall_add_summary" qtlid="175933">Patikrinkite įvestus duomenis prieš patvirtindami taisyklės įtraukimą.</translation>
+   <translation id="ip_firewall_remove_rule_fail" qtlid="141756">Klaida įtraukiant naują taisyklę.</translation>
+
+   <translation id="ip_table_manage_delete_ipblock" qtlid="204610">Pašalinti IP failover</translation>
+   <translation id="ip_table_manage_delete_ipblock_question" qtlid="204623">Dėl saugumo priežasčių jums išsiųsime el. laišką, patvirtinantį IP adreso pašalinimą.</translation>
+   <translation id="ip_table_manage_delete_ipblock_question2" qtlid="204636">Norite tęsti IP {0} atsisakymo procedūrą?</translation>
+   <translation id="ip_table_manage_delete_ipblock_success" qtlid="204649">Jums buvo išsiųstas el. laiškas, patvirtinantis atsisakymą.</translation>
+   <translation id="ip_table_manage_delete_ipblock_failure" qtlid="204662">Įvyko klaida teikiant prašymą pašalinti IP {0}.</translation>
+
+   <translation id="ip_table_manage_move_ipblock" qtlid="175946">Perkelti IP Failover</translation>
+   <translation id="ip_table_manage_move_ipblock_question" qtlid="175959">Patikrinkite paskirties paslaugą IP adresui <b>{0}</b>:</translation>
+   <translation id="ip_table_manage_move_ipblock_resume" qtlid="363492">Ar tikrai norite perkelti IP <b>{0}</b> į <b>{1}</b></translation>
+   <translation id="ip_table_manage_move_ipblock_from" qtlid="69077">Nuo</translation>
+   <translation id="ip_table_manage_move_ipblock_to" qtlid="175972">Į</translation>
+   <translation id="ip_table_manage_move_ipblock_on" qtlid="69101">Iš</translation>
+   <translation id="ip_table_manage_move_ipblock_warning_park" qtlid="210748">Dėmesio: atlikus IP adreso perkėlimą į "IP Parking", bus taikomas papildomas mokestis už nenaudojamą IP!</translation>
+   <translation id="ip_table_manage_move_ipblock_warning_taskspending" qtlid="222683">Šis IP jau perkeliamas.</translation>
+   <translation id="ip_table_manage_move_ipblock_ipcanbemovedto" qtlid="175985">Ar IP gali būti perkeltas į paslaugą:</translation>
+   <translation id="ip_table_manage_move_ipblock_validation" qtlid="175998">Norėdami perkelti IP spauskite "Patvirtinti". IP bus prieinamas {0} po kelių minučių.</translation>
+   <translation id="ip_table_manage_move_ipblock_resume_on" qtlid="363505">į {0}</translation>
+   <translation id="ip_table_manage_move_ipblock_success" qtlid="176011">IP {0} bus prieinamas {1} po kelių minučių.</translation>
+   <translation id="ip_table_manage_move_ipblock_failure" qtlid="176024">Įvyko klaida perkeliant IP {0} į {1}.</translation>
+
+   <translation id="ip_servicetype_DEDICATED" qtlid="101913">Dedikuotas serveris</translation>
+   <translation id="ip_servicetype_dedicatedServer" qtlid="101913">Dedikuotas serveris</translation>
+   <translation id="ip_servicetype_VPS" qtlid="23083">VPS</translation>
+   <translation id="ip_servicetype_vps" qtlid="23083">VPS</translation>
+   <translation id="ip_servicetype_PCC" qtlid="162205">Dedicated Cloud</translation>
+   <translation id="ip_servicetype_dedicatedCloud" qtlid="162205">Dedicated Cloud</translation>
+   <translation id="ip_servicetype_ipLoadbalancing" qtlid="223580">IP Load Balancing</translation>
+   <translation id="ip_servicetype_cloudProject" qtlid="274369">Cloud projektas</translation>
+   <translation id="ip_servicetype_vRack" qtlid="210566">vRack</translation>
+   <translation id="ip_servicetype__PARK" qtlid="363518">Parking</translation>
+
+   <translation id="ip_order_quota_full" qtlid="451597">Le quota maximal d'IPs a été atteint pour ce serveur.</translation>
+   <translation id="ip_order_noservices" qtlid="182020">Neturite paslaugų, kurioms galėtumėte kurti užsakymus.</translation>
+   <translation id="ip_order_step1_question" qtlid="182033">Pasirinkite paslaugas, kurioms norite užsakyti papildomus IP adresus:</translation>
+   <translation id="ip_order_checkservice" qtlid="182046">Tinkamumo tikrinimas...</translation>
+
+   <translation id="ip_order_loading_error" qtlid="182059">Klaida įkeliant IP užsakymo informaciją.</translation>
+   <translation id="ip_order_loading_error2" qtlid="369563">Šiam veiksmui atlikti reikalingas patikrinimas ar šiuo metu veiksmas negali būti patvirtintas. ({0})</translation>
+
+
+   <translation id="ip_order_error_OPTION_NOT_ALLOWED" qtlid="182072">Negalite šiai paslaugai užsakyti papildomo IP.</translation>
+   <translation id="ip_order_error_OUT" qtlid="182085">Pasiekėte IP adresų kiekio, kurį galite užsakyti serveriui, limitą.</translation>
+   <translation id="ip_order_error_EXPIRED" qtlid="191421">Paslaugos galiojimas baigėsi.</translation>
+
+   <translation id="ip_order_step1_ok" qtlid="182098">Spragtelėkite "Toliau", kad pereitumėte prie užsakymo.</translation>
+   <translation id="ip_order_add_ipv4_step1_remaining" qtlid="182111">Šiai paslaugai dar galima priskirti IPv4 adresų: <span class="blue">{0}</span>.</translation>
+   <translation id="ip_order_step1_info1" qtlid="182124">Jūsų serveris palaiko iki:</translation>
+   <translation id="ip_order_step1_DEDICATED_pre" qtlid="182137"><span class="blue">{0}</span> IPv4 adresų blokai</translation>
+   <translation id="ip_order_step1_DEDICATED_v2_pre" qtlid="191382"><span class="blue">{0}</span> prefiksai</translation>
+   <translation id="ip_order_step1_DEDICATED_individual_1" qtlid="182163"><span class="blue">1</span> IP failover</translation>
+   <translation id="ip_order_step1_DEDICATED_v2_individual_1" qtlid="191395"><span class="blue">1</span> prefiksas</translation>
+   <translation id="ip_order_step1_DEDICATED_individual_other" qtlid="182176"><span class="blue">{}</span> pavieniai IP failover</translation>
+   <translation id="ip_order_step1_DEDICATED_v2_individual_other" qtlid="191408"><span class="blue">{}</span> prefiksai</translation>
+   <translation id="ip_order_step1_DEDICATED_minmax" qtlid="182150">(mažiausiai <span class="blue">{0}</span> IP blokai ir daugiausiai <span class="blue">{1}</span> IP blokai)</translation>
+   <translation id="ip_order_step1_DEDICATED_individualblocksize" qtlid="182189">(<span class="blue">{0}</span> IP blokai)</translation>
+   <translation id="ip_order_step2_large_block_unavailable" qtlid="304446">Atsiprašome, šiuo metu IP adresų blokų suteikimas vėluoja. Jei IP adresų reikia skubiai, rekomenduojame užsakyti pavienius IP adresus (/32). <a href="{0}" target="_blank">Daugiau informacijos.</a></translation>
+
+   <translation id="ip_order_ipnbr" qtlid="182202">IP kiekis</translation>
+   <translation id="ip_order_country" qtlid="182215">Lokalizuota:</translation>
+   <translation id="ip_order_ipblocksize" qtlid="182228">IP bloko dydis</translation>
+   <translation id="ip_order_networkname" qtlid="182241">Tinklo pavadinimas (netname)</translation>
+   <translation id="ip_order_networkname_help" qtlid="232388">Informacija, matoma "WHOIS" (nuo 2 iki 20 raidinių ar skaitinių simbolių, turi prasidėti raide)</translation>
+   <translation id="ip_order_estimatedclientsnumber" qtlid="182267">Numatomas klientų skaičius</translation>
+   <translation id="ip_order_estimatedclientsnumber_help" qtlid="182280">Kiek klientų naudos šiuos IP?</translation>
+   <translation id="ip_order_description" qtlid="182293">Tinklo apibūdinimas</translation>
+   <translation id="ip_order_description_help" qtlid="182306">"WHOIS" matoma informacija (3 - 250 skaitinių ir/ar raidinių simbolių)</translation>
+   <translation id="ip_order_usage" qtlid="109974">Naudojimas</translation>
+   <translation id="ip_order_usage_help" qtlid="182319">Bendra informacija, kam naudosite bloka (pavyzdžiai: "web", "ssl", "cloud"...)</translation>
+   <translation id="ip_order_organisation" qtlid="32278">Organizacija</translation>
+   <translation id="ip_order_no_organisation_1" qtlid="182332">Prieš užsakydami IP blokus turite įvesti organizacijos duomenis.</translation>
+   <translation id="ip_order_no_organisation_2" qtlid="182345">Spragtelėkite čia, kad pereitumėte prie organizacijos valdymo.</translation>
+   <translation id="ip_order_no_professionaluse_1" qtlid="182358">Šiai paslaugai reikalinga "profesionalaus naudojimo" parinktis (<b>{0}</b>/mėn.).</translation>
+   <translation id="ip_order_no_professionaluse_2" qtlid="182371">Tai bus automatiškai įtraukta į užsakymą.</translation>
+   <translation id="ip_order_ip_count_1" qtlid="182384">1 adresas</translation>
+   <translation id="ip_order_ip_count_other" qtlid="182397">{} adresai(-ų)</translation>
+   <translation id="ip_order_select_duration" qtlid="181214">Pasirinkite trukmę:</translation>
+   <translation id="ip_order_select_activation" qtlid="268276">Aktyvacijos mokestis:</translation>
+   <translation id="ip_order_abonnement" qtlid="268289">Mėnesinis mokestis:</translation>
+   <translation id="ip_order_free" qtlid="268302">NEMOKAMAI</translation>
+   <translation id="ip_order_bloc" qtlid="268315">Blokas</translation>
+   <translation id="ip_order_renew_PCC" qtlid="268328">Jūsų IP adresai bus automatiškai atnaujinti kartu su Dedicated Cloud infrastruktūra.</translation>
+   <translation id="ip_order_resume" qtlid="177496">Užsakymo santrauka</translation>
+   <translation id="ip_order_price_HT" qtlid="146177">Visa kaina be PVM:</translation>
+   <translation id="ip_order_price_TTC" qtlid="146190">Visa kaina su PVM:</translation>
+   <translation id="ip_order_final_txt" qtlid="181240">Spragtelėkite "Patvirtinti", kad užbaigtumėte užsakymą.</translation>
+   <translation id="ip_order_final_txt2" qtlid="181253">Atsidarys naujas langas ir būsite automatiškai nukreipti į apmokėjimo sąsają.</translation>
+   <translation id="ip_order_finish_success" qtlid="181266">Užsakymas nr. <a href='{0}' target='_blank'>{1}</a> užregistruotas.</translation>
+   <translation id="ip_order_finish_error" qtlid="182410">Klaida užsakant papildomus IP.</translation>
+   <translation id="ip_order_free_activation_fee" qtlid="250212">Pasirinkus nemokamų IP adresų abonementą, vienkartinis IP adreso diegimo mokestis nebus taikomas pratęsiant serverio nuomą.</translation>
+
+<!-- ORGANISATION -->
+   <translation id="ip_organisation_title" qtlid="182423">Organizacijų valdymas</translation>
+   <translation id="ip_organisation_button" qtlid="182436">Mano organizacijos</translation>
+
+   <translation id="ip_organisation_table_organisation" qtlid="32278">Organizacija</translation>
+   <translation id="ip_organisation_table_type" qtlid="2642">Tipas</translation>
+   <translation id="ip_organisation_table_lastname" qtlid="3818">Pavadinimas</translation>
+   <translation id="ip_organisation_table_abuse" qtlid="182449">Piktnaudžiavimas</translation>
+   <translation id="ip_organisation_table_email" qtlid="33598">El. paštas</translation>
+   <translation id="ip_organisation_table_address" qtlid="30430">Adresas</translation>
+   <translation id="ip_organisation_table_city" qtlid="33310">Miestas</translation>
+   <translation id="ip_organisation_table_country" qtlid="25171">Šalis</translation>
+   <translation id="ip_organisation_table_firstname" qtlid="23323">Vardas</translation>
+   <translation id="ip_organisation_table_phone" qtlid="34174">Telefono numeris</translation>
+   <translation id="ip_organisation_table_zip" qtlid="30346">Pašto kodas</translation>
+   <translation id="ip_organisation_table_state" qtlid="434845">Valstija</translation>
+   <translation id="ip_organisation_table_empty" qtlid="182462">neturite jokios organizacijos</translation>
+   <translation id="ip_organisation_table_exemple" qtlid="182475">Pvz.:</translation>
+
+   <translation id="ip_organisation_add_info" qtlid="182488">Užpildykite šią formą, kad išsaugotumėte naują informaciją:</translation>
+   <translation id="ip_organisation_add_wrong_format" qtlid="149774">Neteisingas formatas</translation>
+   <translation id="ip_organisation_add_email" qtlid="149774">Neteisingas formatas</translation>
+   <translation id="ip_organisation_add_maxlength" qtlid="182501">Per daug simbolių</translation>
+   <translation id="ip_organisation_add_required" qtlid="182514">Privalomas laukas</translation>
+   <translation id="ip_organisation_add_resume" qtlid="4082">Santrauka</translation>
+   <translation id="ip_organisation_add_step2" qtlid="182527">Prašome patikrinti informacijos tinkamumą:</translation>
+   <translation id="ip_organisation_add_title" qtlid="182540">Organizacijos pridėjimas</translation>
+   <translation id="ip_organisation_add" qtlid="182553">Pridėti organizaciją</translation>
+   <translation id="ip_organisation_add_load_error" qtlid="182566">Klaida įkeliant informaciją, reikalingą organizacijos pridėjimui</translation>
+   <translation id="ip_organisation_add_success" qtlid="182579">Jūsų organizacija išsaugota</translation>
+   <translation id="ip_organisation_add_error" qtlid="182592">Klaida pridedant organizaciją</translation>
+   <translation id="ip_organisation_add_loading_step1" qtlid="182605">Įkeliama informacija...</translation>
+   <translation id="ip_organisation_add_loading_step2" qtlid="182618">Nauja organizacija pridedama...</translation>
+
+   <translation id="ip_organisation_edit_title" qtlid="182631">Organizacijos redagavimas</translation>
+   <translation id="ip_organisation_edit_success" qtlid="182644">Organizacijos redagavimas sėkmingai užregistruotas</translation>
+   <translation id="ip_organisation_edit_error" qtlid="182657">Klaida redaguojant organizaciją</translation>
+
+   <translation id="ip_organisation_delete_loading" qtlid="182670">Organizacija trinama...</translation>
+   <translation id="ip_organisation_delete_title" qtlid="182683">Organizacijos trynimas</translation>
+   <translation id="ip_organisation_delete_info" qtlid="182696">Ar tikrai norite ištrinti organizaciją {0}?</translation>
+   <translation id="ip_organisation_delete_success" qtlid="182709">Organizacijos trynimas užregistruotas</translation>
+   <translation id="ip_organisation_delete_error" qtlid="182722">Klaida trinant organizaciją</translation>
+   <translation id="ip_organisation_delete_error" qtlid="182722">Klaida trinant organizaciją</translation>
+
+   <translation id="ip_organisation_change_title" qtlid="262713">Pasirinkite naują organizaciją IP adresui <strong>{0}</strong>.</translation>
+   <translation id="ip_organisation_change_organisations" qtlid="262726">Nauja organizacija:</translation>
+   <translation id="ip_organisation_change_organisations_success" qtlid="262739">Organizacija bus pakeista per kelias minutes.</translation>
+   <translation id="ip_organisation_change_organisations_done" qtlid="262752">Organizacijos keitimas atliktas.</translation>
+   <translation id="ip_organisation_change_organisations_fail" qtlid="262765">Įvyko klaida ({0}).</translation>
+   <translation id="ip_organisation_edit" qtlid="37875">Keisti</translation>
+   <translation id="ip_organisation_delete" qtlid="2414">Trinti</translation>
+
+   <translation id="iplb_empty" qtlid="223606">Jūs neturite IP Load Balancing.</translation>
+   <translation id="iplb_expired" qtlid="223619">Šis IP Load Balancing baigė galioti {0}.</translation>
+   <translation id="iplb_expiration" qtlid="30406">Galioja iki</translation>
+   <translation id="iplb_infos_error" qtlid="223632">Klaida įkeliant IP Load Balancing.</translation>
+   <translation id="iplb_order_title" qtlid="223645">Užsakyti IP Load Balancing</translation>
+
+   <translation id="iplb_section_title_informations" qtlid="26551">Informacija</translation>
+   <translation id="iplb_section_title_zones" qtlid="223658">Duomenų centrai (PoP)</translation>
+   <translation id="iplb_section_title_backends" qtlid="223671">Paskirstytos paslaugos (backends)</translation>
+
+   <translation id="iplb_infos_state" qtlid="26443">Būsena</translation>
+   <translation id="iplb_infos_stickiness" qtlid="223684">Sesijų valdymas</translation>
+   <translation id="iplb_infos_ssl" qtlid="21451">SSL sertifikatas</translation>
+
+   <translation id="iplb_infos_state_blacklisted" qtlid="223697">Juodajame sąraše</translation>
+   <translation id="iplb_infos_state_deleted" qtlid="363531">Ištrinta</translation>
+   <translation id="iplb_infos_state_free" qtlid="6862">Laisva</translation>
+   <translation id="iplb_infos_state_quarantined" qtlid="223723">Karantine</translation>
+   <translation id="iplb_infos_state_suspended" qtlid="125096">Pristabdyta</translation>
+   <translation id="iplb_infos_stickiness_none" qtlid="30646">Nėra</translation>
+   <translation id="iplb_infos_stickiness_cookie" qtlid="223736">Cookie</translation>
+   <translation id="iplb_infos_stickiness_sourceIp" qtlid="138376">IP šaltinis</translation>
+   <translation id="iplb_infos_ssl_none" qtlid="30646">Nėra</translation>
+   <translation id="iplb_infos_ssl_ovh" qtlid="223749">OVH</translation>
+   <translation id="iplb_infos_ssl_customer" qtlid="223762">Kliento</translation>
+
+   <translation id="iplb_stickiness_set_question" qtlid="223775">Kokio sesijų tipo norite?</translation>
+   <translation id="iplb_stickiness_set_success" qtlid="223788">Sesijų valdymo reikšmė bus atnaujinta po kelių minučių.</translation>
+   <translation id="iplb_stickiness_set_failure" qtlid="223801">Klaida keičiant stickiness.</translation>
+
+   <translation id="iplb_infos_ssl_order_btn" qtlid="43558">Užsakyti</translation>
+   <translation id="iplb_infos_ssl_importcustom_btn" qtlid="69869">Importuoti</translation>
+   <translation id="iplb_infos_ssl_restore_btn" qtlid="36120">Atkurti</translation>
+   <translation id="iplb_infos_ssl_importcustom_updating" qtlid="223814">Importuojama...</translation>
+   <translation id="iplb_infos_ssl_restore_updating" qtlid="223827">Atkuriama...</translation>
+
+   <translation id="iplb_ssl_order_title" qtlid="223840">Užsakyti SSL parinktį</translation>
+   <translation id="iplb_ssl_order_step1_question" qtlid="223853">Kuriam domenui norite priskirti SSL sertifikatą?</translation>
+   <translation id="iplb_ssl_order_helptext" qtlid="223866">DCV laiškas bus siunčiamas adresu <b>{0}</b>.</translation>
+   <translation id="iplb_ssl_order_helptext_domain" qtlid="223879">jusu_domenas.com</translation>
+   <translation id="iplb_ssl_order_helptext2" qtlid="223892">Prieš užsakydami įsitikinkite, kad toks adresas jau egzistuoja.</translation>
+   <translation id="iplb_ssl_order_domain" qtlid="8458">Domenas</translation>
+   <translation id="iplb_ssl_order_not_orderable" qtlid="223905">Negalite šiam IP Load Balancing užsakyti SSL.</translation>
+   <translation id="iplb_ssl_order_success" qtlid="181266">Užsakymas nr. <a href='{0}' target='_blank'>{1}</a> užregistruotas.</translation>
+   <translation id="iplb_ssl_order_failure" qtlid="223918">Klaida užsakant SSL sertifikatą.</translation>
+
+   <translation id="iplb_ssl_key" qtlid="104326">Raktas</translation>
+   <translation id="iplb_ssl_certificate" qtlid="19771">Sertifikatas</translation>
+   <translation id="iplb_ssl_chain" qtlid="223931">Grandinė</translation>
+   <translation id="iplb_ssl_import_title" qtlid="223944">Importuoti SSL sertifikatą</translation>
+   <translation id="iplb_ssl_import_question" qtlid="223957">Tuojau importuosite savo SSL sertifikatą.</translation>
+   <translation id="iplb_ssl_import_question2" qtlid="223970">Pastaba: jeigu pageidausite, vėliau galėsite atkurti OVH sertifikatą.</translation>
+   <translation id="iplb_ssl_import_success" qtlid="223983">Jūsų SSL sertifikatas bus importuotas po kelių minučių.</translation>
+   <translation id="iplb_ssl_import_failure" qtlid="223996">Klaida importuojant SSL sertifikatą.</translation>
+
+   <translation id="iplb_ssl_restore_title" qtlid="224009">Atkurti OVH SSL sertifikatą</translation>
+   <translation id="iplb_ssl_restore_question" qtlid="224022">Ar tikrai norite atkurti OVH SSL sertifikatą?</translation>
+   <translation id="iplb_ssl_restore_question2" qtlid="224035">DCV laiškas bus siunčiamas adresu "postmaster@jsus_domenas.com".</translation>
+   <translation id="iplb_ssl_restore_success" qtlid="224048">OVH SSL sertifikatas bus atkurtas po patvirtinimo.</translation>
+   <translation id="iplb_ssl_restore_failure" qtlid="224061">Klaida atkuriant OVH SSL sertifikatą.</translation>
+
+   <translation id="iplb_zone_internalnatip" qtlid="224074">vidinis NAT IP</translation>
+   <translation id="iplb_zone_probeip" qtlid="224087">Testavimo protokolo IP</translation>
+   <translation id="iplb_zone_order_btn" qtlid="43558">Užsakyti</translation>
+   <translation id="iplb_pop_order_title" qtlid="224100">Užsakyti papildomą PoP</translation>
+   <translation id="iplb_pop_order_step1_question" qtlid="224113">Kurį duomenų centrą norite įtraukti?</translation>
+   <translation id="iplb_pop_order_zone" qtlid="26335">Zona</translation>
+   <translation id="iplb_pop_order_not_orderable" qtlid="224126">Negalite šiam IP Load Balancing užsakyti PoP.</translation>
+   <translation id="iplb_pop_order_no_pop" qtlid="224139">Nėra daugiau galimų PoP.</translation>
+   <translation id="iplb_pop_order_success" qtlid="181266">Užsakymas nr. <a href='{0}' target='_blank'>{1}</a> užregistruotas.</translation>
+   <translation id="iplb_pop_order_failure" qtlid="224152">Klaida užsakant naują PoP jūsų IP Load Balancing.</translation>
+
+   <translation id="iplb_table_backends_header_weight" qtlid="47572">Vertė</translation>
+   <translation id="iplb_table_backends_header_backend" qtlid="132122">Backend</translation>
+   <translation id="iplb_table_backends_header_zone" qtlid="26335">Zona</translation>
+   <translation id="iplb_table_backends_header_probe" qtlid="224165">Testavimo protokolas</translation>
+   <translation id="iplb_table_backends_header_mainbackendip" qtlid="224178">Yra atsarginis backend...</translation>
+   <translation id="iplb_table_backends_no_backends" qtlid="200274">Sąrašas tuščias.</translation>
+
+   <translation id="iplb_backend_probe_NONE" qtlid="30646">Nėra</translation>
+   <translation id="iplb_backend_probe_help_NONE" qtlid="224191">Jokio: Jokio tikrinimo</translation>
+   <translation id="iplb_backend_probe_help_HTTPICMP" qtlid="224204">HTTP/ICMP: Testavimai nurodytuose prievaduose</translation>
+   <translation id="iplb_backend_probe_help_OCO" qtlid="224217">OCO (Ovh Check Out): Testavimas 79 prievade</translation>
+
+   <translation id="iplb_backend_add_title" qtlid="224230">Įtraukti backend</translation>
+   <translation id="iplb_backend_add_question" qtlid="224243">Įveskite informaciją ir spragtelėkite "Patvirtinti":</translation>
+   <translation id="iplb_backend_add_ipbackend" qtlid="224256">Backend IP</translation>
+   <translation id="iplb_backend_add_probe" qtlid="224165">Testavimo protokolas</translation>
+   <translation id="iplb_backend_add_success" qtlid="224269">Naujas backend bus įvestas po kelių akimirkų.</translation>
+   <translation id="iplb_backend_addBackend_failure" qtlid="224282">Klaida įtraukiant naują backend.</translation>
+   <translation id="iplb_backend_add_no_ipbackend" qtlid="224295">Nėra galimų backend.</translation>
+   <translation id="iplb_backend_add_error_ipbackend_set" qtlid="224308">Šis backend jau nurodytas.</translation>
+
+   <translation id="iplb_backend_setweight_btn" qtlid="224321">Keisti svarbą</translation>
+   <translation id="iplb_backend_probe_btn" qtlid="224334">Keisti testavimo protokolą</translation>
+   <translation id="iplb_backend_setbackupstate_btn" qtlid="224347">Nustatyti kaip atsarginį backend</translation>
+   <translation id="iplb_backend_unsetbackupstate_btn" qtlid="224360">Nenaudoti kaip atsarginio backend</translation>
+   <translation id="iplb_backend_delete_btn" qtlid="2414">Trinti</translation>
+
+   <translation id="iplb_backend_delete_title" qtlid="224373">Ištrinti backend</translation>
+   <translation id="iplb_backend_delete_question" qtlid="224386">Ar tikrai norite ištrinti šį backend?</translation>
+   <translation id="iplb_backend_delete_deny" qtlid="224399">Negalite ištrinti atsarginio backend.</translation>
+   <translation id="iplb_backend_delete_success" qtlid="224412">Backend bus ištrintas po kelių akimirkų.</translation>
+   <translation id="iplb_backend_delBackend_failure" qtlid="224425">Klaida šalinant backend.</translation>
+
+   <translation id="iplb_backend_setweight_title" qtlid="224321">Keisti svarbą</translation>
+   <translation id="iplb_backend_setweight_weight" qtlid="47572">Vertė</translation>
+   <translation id="iplb_backend_setweight_question" qtlid="224438">Nurodykite backend svarbą ir spragtelėkite "Patvirtinti":</translation>
+   <translation id="iplb_backend_setweight_range" qtlid="255142">Sveikasis skaičius nuo 1 iki 100. Vertė pagal nutylėjimą: 8</translation>
+   <translation id="iplb_backend_setweight_help" qtlid="224451">Pavyzdžiui, jeigu backend A svarba yra 8, o backend B svarba yra 16, pastarasis gaus dvigubai daugiau užklausų nei backend A. Backends turi būti tame pačiame centre (PoP), kad svarba pradėtų veikti.</translation>
+   <translation id="iplb_backend_setweight_success" qtlid="224464">Backend svarba pakeičiama per kelias akimirkas.</translation>
+   <translation id="iplb_backend_setweight_failure" qtlid="224477">Klaida keičiant backend svarbą.</translation>
+
+   <translation id="iplb_backend_setprobe_title" qtlid="224334">Keisti testavimo protokolą</translation>
+   <translation id="iplb_backend_setprobe_question" qtlid="224490">Nurodykite backend testavimo protokolą, po to spragtelėkite "Patvirtinti":</translation>
+   <translation id="iplb_backend_setprobe_probe" qtlid="224165">Testavimo protokolas</translation>
+   <translation id="iplb_backend_setprobe_success" qtlid="224503">Backend testavimo protokolas bus pakeistas per kelias minutes.</translation>
+   <translation id="iplb_backend_setprobe_failure" qtlid="224516">Klaida keičiant backend testavimo protokolą.</translation>
+
+   <translation id="iplb_backend_setbackupstate_title" qtlid="224347">Nustatyti kaip atsarginį backend</translation>
+   <translation id="iplb_backend_setbackupstate_question" qtlid="224529">Pasirinkite pagrindinį backend, po to spragtelėkite "Patvirtinti":</translation>
+   <translation id="iplb_backend_setbackupstate_help" qtlid="224542">Užklausos į <b>{0}</b> bus nukreiptos tik tada, kai pagrindinio backend testavimo protokolas nepateiks atsakymo.</translation>
+   <translation id="iplb_backend_setbackupstate_ipbackend" qtlid="224555">Pagrindinis backend</translation>
+   <translation id="iplb_backend_setbackupstate_no_ipbackend" qtlid="224568">Neturite galimo backend</translation>
+   <translation id="iplb_backend_setbackupstate_success" qtlid="224581">Atsarginis backend bus pridėtas po kelių akimirkų.</translation>
+   <translation id="iplb_backend_backupStateSet_failure" qtlid="224594">Klaida keičiant atsarginį backend.</translation>
+
+   <translation id="iplb_backend_unsetbackupstate_title" qtlid="224360">Nenaudoti kaip atsarginio backend</translation>
+   <translation id="iplb_backend_unsetbackupstate_question" qtlid="224607">Ar tikrai norite pašalinti atsarginį backend?</translation>
+   <translation id="iplb_backend_unsetbackupstate_success" qtlid="224620">Atsarginis backend bus pašalintas po kelių akimirkų.</translation>
+   <translation id="iplb_backend_backupStateUnset_failure" qtlid="224633">Klaida šalinant atsarginį backend.</translation>
+
+   <translation id="iplb_section_title_portsredirection" qtlid="224646">Prievadų nukreipimas</translation>
+   <translation id="iplb_table_portsredirection_header_srcport" qtlid="141548">Šaltinio prievadas</translation>
+   <translation id="iplb_table_portsredirection_header_dstport" qtlid="224659">Paskirties prievadas</translation>
+   <translation id="iplb_table_portsredirection_no_ports" qtlid="200274">Sąrašas tuščias.</translation>
+   <translation id="iplb_portsredirection_add_title" qtlid="224672">Pridėti prievadų nukreipimus</translation>
+
+   <translation id="iplb_portsredirection_add_question" qtlid="224685">Pasirinkite šaltinio prievadą ir spragtelėkite "Patvirtinti":</translation>
+   <translation id="iplb_portsredirection_add_srcport" qtlid="141548">Šaltinio prievadas</translation>
+   <translation id="iplb_portsredirection_add_dstport" qtlid="224659">Paskirties prievadas</translation>
+   <translation id="iplb_portsredirection_add_no_srcport" qtlid="224698">Neturite daugiau galimų šaltinio prievadų.</translation>
+   <translation id="iplb_portsredirection_add_success" qtlid="224711">Prievadų nukreipimas bus aktyvus po kelių akimirkų.</translation>
+   <translation id="iplb_portsredirection_add_failure" qtlid="224724">Klaida kuriant prievadų nukreipimą.</translation>
+   <translation id="iplb_portsredirection_delete_title" qtlid="224737">Ištrinti prievadų nukreipimą.</translation>
+   <translation id="iplb_portsredirection_delete_question" qtlid="224750">Ar tikrai norite ištrinti šį prievadų nukreipimą?</translation>
+   <translation id="iplb_portsredirection_delete_success" qtlid="224763">Nukreipimas bus ištrintas po kelių akimirkų.</translation>
+   <translation id="iplb_portsredirection_delete_failure" qtlid="224776">Klaida trinant prievadų nukreipimus.</translation>
+   <translation id="iplb_backend_generic_failure" qtlid="148981">Klaida.</translation>
+
+   <translation id="ip_table_manage_delegation_ipv6block" qtlid="272851">Serverių, priimančių reverso delegavimą, valdymas</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_limit" qtlid="272864">Pridėkite iki 2 DNS reversų šiam IP adresų telkiniui.</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_no_reverse" qtlid="272877">Nedeleguotas joks DNS reversas</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_add_reverse" qtlid="272890">Pridėti DNS</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_reverse_dns" qtlid="44284">Reverse DNS</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_delegation_reverse_dns" qtlid="272903">DNS reverso delegavimas</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_success" qtlid="272916">DNS reverso delegavimas sėkmingai atnaujintas.</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_err" qtlid="272929">Įvyko klaida pridedant DNS reverso delegavimą:</translation>
+   <translation id="ip_table_manage_delegation_err_INVALID_REVERSE" qtlid="272942">DNS reversas turi būti galiojantis domenas, ir pabaigoje turi būti taškas.</translation>
+   <translation id="ip_table_manage_delegation_err_ALREADY_EXISTS" qtlid="272955">DNS reversas jau buvo sukonfigūruotas.</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_delete_question" qtlid="272968">Ar tikrai norite pašalinti reverso {1} delegavimą IP blokui {0}?</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_delete_success" qtlid="272981">DNS reverso delegavimas sėkmingai ištrintas.</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_delete_err" qtlid="272994">Įvyko klaida trinant DNS reverso delegavimą:</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_resume" qtlid="273007">Operacijos santrauka</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_to_add" qtlid="273020">Pridėti reversą(-us)</translation>
+   <translation id="ip_table_manage_delegation_ipv6block_to_delete" qtlid="273033">Pašalinti reversą(-us)</translation>
+</translations>

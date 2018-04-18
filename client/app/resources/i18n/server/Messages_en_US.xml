@@ -615,7 +615,7 @@
    <translation id="server_configuration_impi_reset_interfaces" qtlid="164688">Reboot the IPMI</translation>
    <translation id="server_configuration_impi_reset_sessions" qtlid="164701">Delete the sessions</translation>
    <translation id="server_configuration_impi_off" qtlid="164714">The IPMI module is not available on this server.</translation>
-   <translation id="server_configuration_impi_off_kvm" qtlid="229177">However, you benefit from this feature with a KVM.</translation>
+   <translation id="server_configuration_impi_off_kvm" qtlid="229177">However, you can use a KVM to benefit from this feature.</translation>
    <translation id="server_configuration_impi_order_kvm" qtlid="229190">Order a KVM</translation>
    <translation id="server_configuration_impi_disabled" qtlid="225062">The server status is <b>{0}</b>. The IPMI module is therefore disabled.</translation>
    <translation id="server_configuration_impi_test" qtlid="164727">Testing the IPMI</translation>
@@ -805,7 +805,7 @@
    <translation id="server_configuration_installation_ovh_step2_error_partition_volumename_wrong" qtlid="173853">The volume name must not contain any special symbols, it must not exceed 16 characters and it must be different from pvmove and snapshot.</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_volumename_use" qtlid="173866">This volume name is already in use.</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_empty" qtlid="173879">The mount point is mandatory.</translation>
-   <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_wrong" qtlid="288340">This mount point cannot be used, the name is incorrect. Special characters are not allowed (except _ / and -) the maximum number of characters is 255.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_wrong" qtlid="288340">This mount point cannot be used: the name is incorrect. Special characters are not allowed (except _ / and -) and the maximum number of characters is 255.</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_wrong2" qtlid="173905">The mount point /var/log is not authorized for this distribution. You must use /home/log.</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_primary" qtlid="250719">Mount point c: must be a primary type of partition.</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_windows" qtlid="173918">This mount point cannot be used. It must be between c and z and end with:</translation>
@@ -970,7 +970,7 @@
    <translation id="server_tab_USB_STORAGE_available_slot" qtlid="181162">Port available</translation>
    <translation id="server_tab_USB_STORAGE_add" qtlid="181175">Add a disk</translation>
    <translation id="server_tab_USB_STORAGE_add_select" qtlid="181188">Select a storage capacity</translation>
-   <translation id="server_tab_USB_STORAGE_add_select_warning" qtlid="212530">Warning: the installation is permanent. It won't be possible to remove it later.</translation>
+   <translation id="server_tab_USB_STORAGE_add_select_warning" qtlid="212530">Warning: the installation is permanent. It will not be possible to remove it later.</translation>
 
 
    <translation id="server_tab_USB_STORAGE_add_capacity" qtlid="181201">{0} GB</translation>
@@ -1098,7 +1098,7 @@
    <translation id="server_tab_MONITORING_table_notifications_action_edit" qtlid="244235">Change the alert</translation>
    <translation id="server_tab_MONITORING_table_notifications_action_delete" qtlid="244248">Delete the alert</translation>
    <translation id="server_tab_MONITORING_notifications_email_add_step1_title" qtlid="244261">Please enter the information so that you can receive email alerts.</translation>
-   <translation id="server_tab_MONITORING_notifications_email_add_email" qtlid="89028">Email:</translation>
+   <translation id="server_tab_MONITORING_notifications_email_add_email" qtlid="89028">Email address:</translation>
    <translation id="server_tab_MONITORING_notifications_email_add_email_invalid" qtlid="244274">Please enter a valid email address</translation>
    <translation id="server_tab_MONITORING_notifications_email_add_lang" qtlid="168874">Language:</translation>
    <translation id="server_tab_MONITORING_notifications_email_add_success" qtlid="244287">Alert added.</translation>

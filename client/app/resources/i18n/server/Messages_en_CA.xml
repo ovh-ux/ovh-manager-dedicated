@@ -615,7 +615,7 @@
    <translation id="server_configuration_impi_reset_interfaces" qtlid="164688">Reboot the IPMI</translation>
    <translation id="server_configuration_impi_reset_sessions" qtlid="164701">Delete the sessions</translation>
    <translation id="server_configuration_impi_off" qtlid="164714">The IPMI module is not available on this server.</translation>
-   <translation id="server_configuration_impi_off_kvm" qtlid="229177">However, you benefit from this feature with a KVM.</translation>
+   <translation id="server_configuration_impi_off_kvm" qtlid="229177">However, you can use a KVM to benefit from this feature.</translation>
    <translation id="server_configuration_impi_order_kvm" qtlid="229190">Order a KVM</translation>
    <translation id="server_configuration_impi_disabled" qtlid="225062">The server status is <b>{0}</b>. The IPMI module is therefore disabled.</translation>
    <translation id="server_configuration_impi_test" qtlid="164727">Testing the IPMI</translation>
@@ -744,7 +744,7 @@
    <translation id="server_configuration_installation_ovh_step1_info2" qtlid="173398">You can proceed directly to the installation or you can customize it.</translation>
    <translation id="server_configuration_installation_ovh_step1_desktop" qtlid="173411">Type of operating system:</translation>
    <translation id="server_configuration_installation_ovh_step1_desktop_licence_info_label" qtlid="406788">Some OS need a licence.</translation>
-   <translation id="server_configuration_installation_ovh_step1_desktop_licence_info_text" qtlid="406801">You need a licence to install a Windows OS (apart from for Windows HyperV). You can add licences in the Licences section in the customer account. </translation>
+   <translation id="server_configuration_installation_ovh_step1_desktop_licence_info_text" qtlid="406801">You need a licence to install a Windows OS (with the exception of Windows HyperV). You can add licences in the Licences section in the customer account. </translation>
    <translation id="server_configuration_installation_ovh_step1_disk_group" qtlid="382550">Target disk array: </translation>
    <translation id="server_configuration_installation_ovh_step1_disk_group_warning" qtlid="382563">Warning: Unless you have selected the target disk array ({0}), you will not be able to customise the hardware RAID configuration.</translation>
    <translation id="server_configuration_installation_ovh_step1_custom" qtlid="173424">Customize the partition configuration</translation>
@@ -752,7 +752,7 @@
    <translation id="server_configuration_installation_ovh_step1_hardwareRaid_wrong_location" qtlid="313819">The Hardware RAID configuration is only available for servers located on the same continent as your customer account.</translation>
    <translation id="server_configuration_installation_ovh_step1_hardwareRaid_os_not_supported_short" qtlid="298597">No Hard RAID</translation>
    <translation id="server_configuration_installation_ovh_step1_hardwareRaid_os_not_supported" qtlid="363893">This OS installer cannot reconfigure your  RAID. If you want to reconfigure your hardware RAID, please install another OS. The configuration will then be saved.</translation>
-   <translation id="server_configuration_installation_ovh_step1_virtual_desktop_not_supported" qtlid="406814">The ({0}) chosen OS does not have virtual machine functionality, choose another licence if you need to. No other OS available? Go to the <a href='{1}' target='_blank'>Licences</a> section in the customer account.</translation>
+   <translation id="server_configuration_installation_ovh_step1_virtual_desktop_not_supported" qtlid="406814">The ({0}) chosen OS does not have virtual machine functionality. Choose another licence if you need to. No other OS available? Go to the <a href='{1}' target='_blank'>Licences</a> section in the customer account.</translation>
    <translation id="server_configuration_installation_ovh_step1_warning_exist" qtlid="185374">Warning: you have started to configure an installation on a <b>{0}</b> distribution. Modifying the distribution will delete this configuration.</translation>
    <translation id="server_configuration_installation_ovh_step1_warning_exist_valid" qtlid="185387">Delete the previous configuration</translation>
    <translation id="server_configuration_installation_ovh_step1_warning_exist_cancel" qtlid="173463">Do not change the distribution</translation>
@@ -805,7 +805,7 @@
    <translation id="server_configuration_installation_ovh_step2_error_partition_volumename_wrong" qtlid="173853">The volume name must not contain any special symbols, it must not exceed 16 characters and it must be different from pvmove and snapshot.</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_volumename_use" qtlid="173866">This volume name is already in use.</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_empty" qtlid="173879">The mount point is mandatory.</translation>
-   <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_wrong" qtlid="288340">This mount point cannot be used, the name is incorrect. Special characters are not allowed (except _ / and -) the maximum number of characters is 255.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_wrong" qtlid="288340">This mount point cannot be used: the name is incorrect. Special characters are not allowed (except _ / and -) and the maximum number of characters is 255.</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_wrong2" qtlid="173905">The mount point /var/log is not authorized for this distribution. You must use /home/log.</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_primary" qtlid="250719">Mount point c: must be a primary type of partition.</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_windows" qtlid="173918">This mount point cannot be used. It must be between c and z and end with:</translation>
@@ -970,7 +970,7 @@
    <translation id="server_tab_USB_STORAGE_available_slot" qtlid="181162">Port available</translation>
    <translation id="server_tab_USB_STORAGE_add" qtlid="181175">Add a disk</translation>
    <translation id="server_tab_USB_STORAGE_add_select" qtlid="181188">Select a storage capacity</translation>
-   <translation id="server_tab_USB_STORAGE_add_select_warning" qtlid="212530">Warning: the installation is permanent. It won't be possible to remove it later.</translation>
+   <translation id="server_tab_USB_STORAGE_add_select_warning" qtlid="212530">Warning: the installation is permanent. It will not be possible to remove it later.</translation>
 
 
    <translation id="server_tab_USB_STORAGE_add_capacity" qtlid="181201">{0} GB</translation>
@@ -1098,7 +1098,7 @@
    <translation id="server_tab_MONITORING_table_notifications_action_edit" qtlid="244235">Change the alert</translation>
    <translation id="server_tab_MONITORING_table_notifications_action_delete" qtlid="244248">Delete the alert</translation>
    <translation id="server_tab_MONITORING_notifications_email_add_step1_title" qtlid="244261">Please enter the information so that you can receive email alerts.</translation>
-   <translation id="server_tab_MONITORING_notifications_email_add_email" qtlid="89028">Email:</translation>
+   <translation id="server_tab_MONITORING_notifications_email_add_email" qtlid="89028">Email address:</translation>
    <translation id="server_tab_MONITORING_notifications_email_add_email_invalid" qtlid="244274">Please enter a valid email address</translation>
    <translation id="server_tab_MONITORING_notifications_email_add_lang" qtlid="168874">Language:</translation>
    <translation id="server_tab_MONITORING_notifications_email_add_success" qtlid="244287">Alert added.</translation>

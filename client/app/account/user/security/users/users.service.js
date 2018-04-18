@@ -28,15 +28,16 @@ angular.module("UserAccount.services").service("UseraccountUsersService", class 
         });
     }
 
-    updateUser (data) {
+    updateUser ({ login, email, description, group }) {
         return this.ovhHttp.put("/me/identity/user/{user}", {
             rootPath: "apiv6",
             urlParams: {
-                user: data.login
+                user: login
             },
             data: {
-                email: data.email,
-                description: data.description
+                email,
+                description,
+                group
             },
             broadcast: "useraccount.security.users.refresh"
         });
