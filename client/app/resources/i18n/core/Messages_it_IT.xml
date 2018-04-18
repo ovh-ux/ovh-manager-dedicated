@@ -541,10 +541,10 @@
    <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="343967"><strong>{0}</strong> account PayPal risultano in errore. Accedi alla <a href="#/billing/mean" class="alert-link">sezione fatturazione</a> per effettuare una verifica o registrare un nuovo metodo di pagamento.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="374958">Il tuo conto prepagato ha un saldo negativo di <strong>{0}</strong> al {{ '{1}' | date:'medium'}}. Accedi alla <a href="#/billing/ovhaccount" class="alert-link">sezione fatturazione</a> per regolarizzare la situazione.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369545">Il tuo conto ha un saldo negativo di <strong>{0}</strong> (di cui un importo di {1} non scaduto). Accedi alla <a href="{2}" class="alert-link">sezione fatturazione</a> per regolarizzare la tua situazione.&#13;
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369545">Il tuo conto ha un saldo negativo di <strong>{0}</strong> (di cui un importo di {1} non scaduto). Accedi alla <a href="#/billing/statements" class="alert-link">sezione fatturazione</a> per regolarizzare la tua situazione.&#13;
 &#13;
    </translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="343993">Il tuo conto ha un saldo negativo di <strong>{0}</strong>. Accedi alla <a href="{1}" class="alert-link">sezione fatturazione</a> per regolarizzare la situazione.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="343993">Il tuo conto ha un saldo negativo di <strong>{0}</strong>. Accedi alla <a href="#/billing/statements" class="alert-link">sezione fatturazione</a> per regolarizzare la situazione.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="383919">Il tuo conto prepagato ha raggiunto la soglia massima definita. Per maggiori informazioni, accedi alla <a href="#/billing/ovhaccount" class="alert-link">sezione fatturazione</a>.&#13;
 &#13;
@@ -561,9 +561,6 @@
    <translation id="core_service_expiration_manual_renew" qtlid="377571">Da rinnovare il</translation>
    <translation id="core_service_expiration_auto_renew" qtlid="414986">Rinnovo previsto il</translation>
    <translation id="core_service_renew_button" qtlid="118962">Rinnova</translation>
-
-   <translation id="core_user_enterprise_retail_prices">Note : Les prix indiqués sont des prix standards du catalogue et peuvent ne pas refléter les conditions négociées. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
-   <translation id="core_user_enterprise_retail_prices_hpc">Note : Les prix indiqués sont une estimation basée sur le calcul au prorata de ce module pour l'aligner sur la période de facturation de votre contrat actuel. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
 
    <translation id="browser_alert_not_supported" qtlid="405357">Il tuo browser non è supportato</translation>
    <translation id="browser_alert_deprecated" qtlid="405370">Il tuo browser non è aggiornato e potrebbe contenere bug di sicurezza o di compatibilità.</translation>
