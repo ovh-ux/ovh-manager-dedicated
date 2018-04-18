@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="billing_history_balance_title">Pay my balance</translation>
+    <translation id="billing_history_balance_cancel">Cancel</translation>
+    <translation id="billing_history_balance_explain">Your balance is currently {{ balance }}.</translation>
+    <translation id="billing_history_balance_no_balance">No balance has been found on your account. Please <a data-ui-sref="{{ backState }}">click here</a> to go back to your bill list.</translation>
+    <translation id="billing_history_balance_choose_payment_method">Choose the payment method</translation>
+    <translation id="billing_history_balance_add_payment_method">Add a payment method</translation>
+    <translation id="billing_history_balance_no_payment_method">You don't have valid payment method to pay your balance. Please <a data-ui-sref="{{ addPaymentMethodState }}">add a valid payment method</a> before pay it.</translation>
+    <translation id="billing_history_balance_payment_doing">A balance payment is already in progress. Please wait that this paiement is done before paying a new balance.</translation>
+    <translation id="billing_history_balance_payment_go_tracking">Go to <a data-ui-sref="{{ trackState }}">tracking page</a> for more informations.</translation>
+
+    <translation id="billing_history_balance_load_error">An error occured while loading your balance.</translation>
+    <translation id="billing_history_balance_pay_success">The payment of your balance has been taken into account. Payment will be made in a few moments. Go to <a href="{{ trackHref }}">tracking page</a> for more informations.</translation>
+    <translation id="billing_history_balance_pay_error">An error occured while paying your balance.</translation>
+</translations>

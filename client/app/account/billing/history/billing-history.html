@@ -4,7 +4,8 @@
         <h1 data-i18n-static="history_title2"></h1>
     </div>
 
-    <div class="tab-content">
+    <div class="tab-content"
+         data-ui-view>
 
         <div class="alert"
              role="alert"
@@ -36,9 +37,15 @@
                         class="btn btn-default"
                         data-i18n-static="statements_account_pay_debt_button"
                         data-ng-click="ctrl.payAllDebts()"
-                        data-ng-if="ctrl.debtAccount.active"
+                        data-ng-if="ctrl.debtAccount.active && target !== 'US'"
                         data-ng-disabled="ctrl.debtAccount.dueAmount.value === 0">
                 </button>
+                <a type="button"
+                   class="btn btn-default"
+                   data-i18n-static="statements_account_pay_debt_button"
+                   data-ng-if="ctrl.debtAccount.active && target === 'US'"
+                   data-ui-sref="app.account.billing.history.balance">
+                </a>
                 <button type="button"
                         class="btn btn-default"
                         data-export-csv="ctrl.getDatasToExport()"

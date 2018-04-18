@@ -71,6 +71,13 @@ angular.module("Billing.services").service("BillingDebtAccount", function ($q, $
         });
     };
 
+    this.payDebtWithPaymentMethod = function (paymentMethodId) {
+        return OvhHttp.post("/me/debtAccount/pay", {
+            rootPath: "apiv6",
+            paymentMethodId
+        });
+    };
+
     this.clearCache = function () {
         _.forOwn(cache, (cacheName) => {
             const cacheInstance = $cacheFactory.get(cacheName);
@@ -79,4 +86,5 @@ angular.module("Billing.services").service("BillingDebtAccount", function ($q, $
             }
         });
     };
+
 });
