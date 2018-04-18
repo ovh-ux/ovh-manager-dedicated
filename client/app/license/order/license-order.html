@@ -1,5 +1,5 @@
 <header class="page-header" role="banner">
-    <h1 data-i18n-static="license_order_title"></h1>
+    <h1 data-translate="license_order_title"></h1>
 </header>
 
 <div class="text-center"
@@ -18,13 +18,13 @@
        <span class="fa fa-chevron-left mr-2"
              aria-hidden="true">
        </span>
-       <span data-i18n-static="license_details_back"></span>
+       <span data-translate="license_details_back"></span>
     </a>
 
     <div class="alert alert-warning"
          data-ng-if="availableIpBlock.ips.length === 0"
          role="alert"
-         data-i18n-static="license_order_no_license_available">
+         data-translate="license_order_no_license_available">
     </div>
 
     <oui-message class="d-block mb-4"
@@ -38,12 +38,12 @@
         <div class="col-md-10 col-lg-6 mx-md-auto">
 
             <!-- step 1 -->
-            <h2 data-i18n-static="license_order_step1_title"></h2>
+            <h2 data-translate="license_order_step1_title"></h2>
 
             <div class="form-group">
                 <label for="selectedIpBlock"
                        class="control-label"
-                       data-i18n-static="license_order_step1_ip_block">
+                       data-translate="license_order_step1_ip_block">
                 </label>
                 <div class="input-group">
                     <select class="form-control"
@@ -52,7 +52,7 @@
                             data-ng-options="ip as getBlockDisplay(ip) group by ip.serviceName for ip in availableIpBlock.ips | filter:filters.block.type | filter:filters.block.search"
                             data-ng-model="selected.ipBlock">
                         <option value=""
-                                data-i18n-static="license_order_step1_ip_block_none">
+                                data-translate="license_order_step1_ip_block_none">
                         </option>
                     </select>
                     <span class="input-group-addon"
@@ -74,7 +74,7 @@
                  }">
                 <label for="targetIp"
                        class="control-label"
-                       data-i18n-static="license_order_step1_ip">
+                       data-translate="license_order_step1_ip">
                 </label>
                 <input type="text"
                        class="form-control"
@@ -114,28 +114,29 @@
                      }" />
                 <p class="text-danger text-center"
                    data-ng-show="nbLicence.value == 0 && loaders.orderableVersion != true"
-                   data-ng-bind="tr('license_order_step1_no_license_available', [selected.ip])">
+                   data-translate="license_order_step1_no_license_available"
+                   data-translate-values="{ ip: selected.ip }">
                 </p>
             </div>
 
             <!-- step 2-->
             <div data-ng-show="selected.licenseType">
-                <h2 data-i18n-static="license_order_step2_title"></h2>
+                <h2 data-translate="license_order_step2_title"></h2>
 
                 <div class="form-group">
                     <label for="optionVersion"
                            class="control-label">
-                        <span data-i18n-static="license_order_step2_version"></span>
+                        <span data-translate="license_order_step2_version"></span>
                         <span class="text-danger"> *</span>
                     </label>
                     <select class="form-control"
                             id="optionVersion"
                             name="optionVersion"
-                            data-ng-options="optionVersion as (i18n['license_designation_' + selected.licenseType + '_version_' + optionVersion.value] || optionVersion.value) for optionVersion in types[selected.licenseType].options[0].options"
+                            data-ng-options="optionVersion as (('license_designation_' + selected.licenseType + '_version_' + optionVersion.value) | translate) for optionVersion in types[selected.licenseType].options[0].options"
                             data-ng-model="selected.version">
                         <option value=""
                                 data-ng-disabled="true"
-                                data-i18n-static="license_order_common_choose">
+                                data-translate="license_order_common_choose">
                         </option>
                     </select>
                 </div>
@@ -147,10 +148,10 @@
                 <div class="alert alert-warning"
                      role="alert"
                      data-ng-if="selected.version.potentialProblems.length > 0">
-                    <p data-i18n-static="license_potential_problem"></p>
+                    <p data-translate="license_potential_problem"></p>
                     <ul>
                         <li data-ng-repeat="problem in selected.version.potentialProblems track by $index">
-                            <span>{{ i18n['license_potential_problem_' + problem] }}</span>
+                            <span>{{ 'license_potential_problem_' + problem | translate}}</span>
                         </li>
                     </ul>
                 </div>
@@ -159,12 +160,12 @@
             <div class="text-center"
                  data-ng-show="loaders.durations">
                 <oui-spinner></oui-spinner>
-                <span data-i18n-static="license_loading"></span>
+                <span data-translate="license_loading"></span>
             </div>
 
             <!-- step 3-->
             <div data-ng-show="isSelectionValid()">
-                <h2 data-i18n-static="license_order_step3_title"></h2>
+                <h2 data-translate="license_order_step3_title"></h2>
 
                 <div class="radio"
                      data-ng-hide="loaders.durations"
@@ -186,35 +187,35 @@
                 <div class="text-center"
                      data-ng-show="loaders.durations">
                     <oui-spinner></oui-spinner>
-                    <span data-i18n-static="license_loading"></span>
+                    <span data-translate="license_loading"></span>
                 </div>
             </div>
 
             <!-- Step 4: Contracts and validation -->
             <div data-ng-show="selected.duration">
-                <h2 data-i18n-static="license_order_step4_title"></h2>
+                <h2 data-translate="license_order_step4_title"></h2>
 
                 <div class="row"
                      data-ng-hide="order.url">
                     <div class="col-md-9">
                         <strong class="text-primary"
                                 data-ng-if="!agoraEnabled && durations.details[selected.duration].contracts.length == 0"
-                                data-i18n-static="license_order_step4_question">
+                                data-translate="license_order_step4_question">
                         </strong>
                         <strong class="text-primary"
                                 data-ng-if="agoraEnabled && durations.details[selected.duration].contracts.length == 0"
-                                data-i18n-static="license_order_step4_clic_here">
+                                data-translate="license_order_step4_clic_here">
                         </strong>
 
                         <div data-ng-if="!agoraEnabled"
                              data-ng-show="durations.details[selected.duration].contracts.length > 0">
                             <strong class="text-primary"
                                     data-ng-if="!agoraEnabled"
-                                    data-i18n-static="license_order_step4_contracts_ask">
+                                    data-translate="license_order_step4_contracts_ask">
                             </strong>
                             <strong class="text-primary"
                                     data-ng-if="agoraEnabled"
-                                    data-i18n-static="license_order_step4_contracts_agora_ask">
+                                    data-translate="license_order_step4_contracts_agora_ask">
                             </strong>
                             <table class="table table-hover">
                                 <tbody>
@@ -233,7 +234,7 @@
                                 <label>
                                     <input type="checkbox"
                                            data-ng-model="contractsValidated.value" />
-                                    <span data-i18n-static="license_order_step4_contracts_check"></span>
+                                    <span data-translate="license_order_step4_contracts_check"></span>
                                 </label>
                             </div>
                         </div>
@@ -249,7 +250,7 @@
                             {{ i18n.license_order_step4_generate }}
                         </button>
                         <span data-ng-show="loaders.bc"
-                              data-i18n-static="license_order_step4_generating">
+                              data-translate="license_order_step4_generating">
                         </span>
                         <oui-spinner data-ng-show="loaders.bc"
                                      data-size="s">
@@ -273,18 +274,18 @@
                     <div class="row">
                         <div class="col-md-9">
                             <p class="text-primary font-weight-bold"
-                               data-i18n-static="license_order_step4_generated">
+                               data-translate="license_order_step4_generated">
                             </p>
                             <span class="d-block"
-                                  data-i18n-static="license_order_step4_clic_here">
+                                  data-translate="license_order_step4_clic_here">
                             </span>
-                            <span data-i18n-static="license_order_step4_bc_information"></span>
+                            <span data-translate="license_order_step4_bc_information"></span>
                         </div>
                         <div class="col-md-3">
                             <button type="button"
                                     class="btn btn-default btn-block"
                                     data-ng-click="openBc()"
-                                    data-i18n-static="license_order_step4_pay_button">
+                                    data-translate="license_order_step4_pay_button">
                             </button>
                         </div>
                     </div>

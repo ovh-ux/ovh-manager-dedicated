@@ -1,5 +1,6 @@
-angular.module("Module.license.controllers").controller("LicenseDetailsCtrl", [
+angular.module("Module.license").controller("LicenseDetailsCtrl", [
     "$scope",
+    "$translate",
     "License",
     "$stateParams",
     "$timeout",
@@ -9,7 +10,7 @@ angular.module("Module.license.controllers").controller("LicenseDetailsCtrl", [
     "$window",
     "Alerter",
 
-    function ($scope, License, $stateParams, $timeout, $location, constants, billingUrls, $window, Alerter) {
+    function ($scope, $translate, License, $stateParams, $timeout, $location, constants, billingUrls, $window, Alerter) {
         "use strict";
 
         $scope.loadLicense = true;
@@ -44,7 +45,7 @@ angular.module("Module.license.controllers").controller("LicenseDetailsCtrl", [
                     return $scope.license;
                 })
                 .catch(() => {
-                    Alerter.alertFromSWS($scope.tr("license_details_loading_error"));
+                    Alerter.alertFromSWS($translate.instant("license_details_loading_error"));
                 });
         }
 
@@ -61,7 +62,7 @@ angular.module("Module.license.controllers").controller("LicenseDetailsCtrl", [
                     return isTaskRunning;
                 })
                 .catch(() => {
-                    Alerter.alertFromSWS($scope.tr("license_directadmin_changeOs_loading_error"));
+                    Alerter.alertFromSWS($translate.instant("license_directadmin_changeOs_loading_error"));
                 });
         }
 

@@ -18,12 +18,12 @@
 
             <div data-ng-show="model.options.availableServers.length">
                 <p class="font-weight-bold"
-                   data-i18n-static="license_spla_add_step1_question">
+                   data-translate="license_spla_add_step1_question">
                 </p>
                 <div class="form-group">
                     <label for="availableServers"
                            class="control-label"
-                           data-i18n-static="license_spla_add_step1_server">
+                           data-translate="license_spla_add_step1_server">
                     </label>
                     <select class="form-control"
                             id="availableServers"
@@ -33,7 +33,7 @@
                         <option selected="selected"
                                 value=""
                                 data-ng-disabled="true"
-                                data-i18n-static="license_spla_add_step1_server_placeholder">
+                                data-translate="license_spla_add_step1_server_placeholder">
                         </option>
                     </select>
                 </div>
@@ -41,7 +41,7 @@
 
             <p class="text-danger"
                data-ng-show="model.options.availableServers.length != null && !model.options.availableServers.length"
-               data-i18n-static="license_spla_add_step1_server_unavailable">
+               data-translate="license_spla_add_step1_server_unavailable">
             </p>
 
         </div>
@@ -51,7 +51,7 @@
              data-wizard-step-valid="model.selected.type && model.selected.serial">
 
             <p class="font-weight-bold"
-               data-i18n-static="license_spla_add_step2_question">
+               data-translate="license_spla_add_step2_question">
             </p>
 
             <div class="text-center"
@@ -61,7 +61,7 @@
 
             <p class="text-danger"
                data-ng-show="model.options.availableTypes != null && model.options.availableTypes.length == 0"
-               data-i18n-static="license_spla_add_step2_no_space_left">
+               data-translate="license_spla_add_step2_no_space_left">
             </p>
 
             <div data-ng-show="model.options.availableTypes != null && model.options.availableTypes.length > 0">
@@ -69,17 +69,17 @@
                 <div class="form-group">
                     <label for="availableTypes"
                            class="control-label"
-                           data-i18n-static="license_spla_add_step2_type">
+                           data-translate="license_spla_add_step2_type">
                     </label>
                     <select class="form-control"
                             id="availableTypes"
                             name="availableTypes"
-                            data-ng-options="type as tr('license_spla_add_common_type_' + type) for type in model.options.availableTypes"
+                            data-ng-options="type as (('license_spla_add_common_type_' + type) | translate) for type in model.options.availableTypes"
                             data-ng-model="model.selected.type">
                         <option selected="selected"
                                 value=""
                                 data-ng-disabled="true"
-                                data-i18n-static="license_spla_add_step2_type_placeholder">
+                                data-translate="license_spla_add_step2_type_placeholder">
                         </option>
                     </select>
                 </div>
@@ -88,7 +88,7 @@
                 <div class="form-group">
                     <label for="serial"
                            class="control-label"
-                           data-i18n-static="license_spla_add_step2_serial">
+                           data-translate="license_spla_add_step2_serial">
                     </label>
                     <input type="text"
                            class="form-control"
@@ -106,14 +106,14 @@
         <div data-wizard-step>
 
             <p class="font-weight-bold"
-               data-i18n-static="license_spla_add_step3_question">
+               data-translate="license_spla_add_step3_question">
             </p>
             <dl>
-                <dt data-i18n-static="license_spla_add_step3_server"></dt>
+                <dt data-translate="license_spla_add_step3_server"></dt>
                 <dd data-ng-bind="model.selected.server"></dd>
-                <dt data-i18n-static="license_spla_add_step3_type"></dt>
-                <dd data-ng-bind="tr('license_spla_add_common_type_' + model.selected.type)"></dd>
-                <dt data-i18n-static="license_spla_add_step3_serial"></dt>
+                <dt data-translate="license_spla_add_step3_type"></dt>
+                <dd data-ng-bind="('license_spla_add_common_type_' + model.selected.type) | translate"></dd>
+                <dt data-translate="license_spla_add_step3_serial"></dt>
                 <dd data-ng-bind="model.selected.serial"></dd>
             </dl>
 

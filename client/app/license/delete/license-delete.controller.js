@@ -1,4 +1,4 @@
-angular.module("Module.license.controllers").controller("LicenseDeleteCtrl", ($scope, License, Alerter) => {
+angular.module("Module.license").controller("LicenseDeleteCtrl", ($scope, $translate, License, Alerter) => {
     $scope.model = {
         license: $scope.currentActionData.license,
         deleting: false,
@@ -13,13 +13,13 @@ angular.module("Module.license.controllers").controller("LicenseDeleteCtrl", ($s
                     () => {
                         $scope.model.deleting = false;
                         $scope.model.deleted = true;
-                        Alerter.success($scope.tr("license_delete_success"));
+                        Alerter.success($translate.instant("license_delete_success"));
                     },
                     (err) => {
-                        if (err && err.status === 460) {
-                            return Alerter.alertFromSWS($scope.tr("license_delete_already_terminating"));
+                        if (_.get(err, "status") === 460) {
+                            return Alerter.alertFromSWS($translate.instant("license_delete_already_terminating"));
                         }
-                        return Alerter.alertFromSWS($scope.tr("license_delete_fail"), err.message);
+                        return Alerter.alertFromSWS($translate.instant("license_delete_fail"), err.data.message);
                     }
                 )
                 .finally(() => {
