@@ -9,11 +9,9 @@ module.exports = function (grunt) {
     const assets = require("./Assets");
     const constants = require("./constants.config");
 
-    const Http = require("http");
-    const Https = require("https");
     const glob = require("glob");
 
-    let mode = grunt.option("mode") || "dev";
+    const mode = grunt.option("mode") || "dev";
     const basepath = grunt.option("base-path") || (isProd() ? "" : "../../");
     const target = grunt.option("target") || grunt.option("zone") || "EU";
     const targetsAvailable = ["EU", "CA", "US"];
