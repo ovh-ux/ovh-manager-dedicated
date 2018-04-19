@@ -1,4 +1,4 @@
-<div data-ng-controller="FtpBackupCtrl">
+<div data-ng-controller="DedicatedServerFtpBackupController as $ctrl">
 
     <div class="text-center"
          data-ng-if="loading">
@@ -76,7 +76,7 @@
                                 class="text-right">
                                 <button type="button"
                                         class="btn btn-link"
-                                        data-ng-click="refreshTab()"
+                                        data-ng-click="$ctrl.refreshTab()"
                                         data-translate-attr="{ title: 'refresh' }">
                                     <span class="fa fa-refresh" aria-hidden="true"></span>
                                 </button>
@@ -95,55 +95,31 @@
                         <tr data-ng-repeat="ipbackup in ftpBackupTable.list.results track by $index">
                             <td data-ng-bind="ipbackup.ipBlock"></td>
                             <td class="text-center">
-                                <button type="button"
-                                        class="btn btn-link"
-                                        data-ng-if="ipbackup !== ipbackupCurrentEditBack"
-                                        data-ng-click="ipbackup.isApplied && setIpBackupCurrentEdit(ipbackup, 'cifs')">
-                                    <span class="fa"
-                                          aria-hidden="true"
-                                          data-ng-class="{
-                                              'fa-check': ipbackup.cifs == true,
-                                              'fa-ban': ipbackup.cifs == false
-                                          }">
-                                    </span>
-                                </button>
-                                <input type="checkbox"
-                                       data-ng-if="ipbackup == ipbackupCurrentEditBack"
-                                       data-ng-model="ipbackupCurrentEdit.cifs" />
+                                <span class="fa"
+                                      aria-hidden="true"
+                                      data-ng-class="{
+                                          'fa-check': ipbackup.cifs === true,
+                                          'fa-ban': ipbackup.cifs === false
+                                      }">
+                                </span>
                             </td>
                             <td class="text-center">
-                                <button type="button"
-                                        class="btn btn-link"
-                                        data-ng-if="ipbackup !== ipbackupCurrentEditBack"
-                                        data-ng-click="ipbackup.isApplied && setIpBackupCurrentEdit(ipbackup, 'ftp')">
-                                    <span class="fa"
-                                          aria-hidden="true"
-                                          data-ng-class="{
-                                              'fa-check': ipbackup.ftp == true,
-                                              'fa-ban': ipbackup.ftp == false
-                                          }">
-                                    </span>
-                                </button>
-                                <input type="checkbox"
-                                       data-ng-if="ipbackup == ipbackupCurrentEditBack"
-                                       data-ng-model="ipbackupCurrentEdit.ftp" />
+                                <span class="fa"
+                                      aria-hidden="true"
+                                      data-ng-class="{
+                                          'fa-check': ipbackup.ftp === true,
+                                          'fa-ban': ipbackup.ftp === false
+                                      }">
+                                </span>
                             </td>
                             <td class="text-center">
-                                <button type="button"
-                                        class="btn btn-link"
-                                        data-ng-if="ipbackup !== ipbackupCurrentEditBack"
-                                        data-ng-click="ipbackup.isApplied && setIpBackupCurrentEdit(ipbackup, 'nfs')">
-                                    <span class="fa"
-                                          aria-hidden="true"
-                                          data-ng-class="{
-                                              'fa-check': ipbackup.nfs == true,
-                                              'fa-ban': ipbackup.nfs == false
-                                          }">
-                                    </span>
-                                </button>
-                                <input type="checkbox"
-                                       data-ng-if="ipbackup == ipbackupCurrentEditBack"
-                                       data-ng-model="ipbackupCurrentEdit.nfs" />
+                                <span class="fa"
+                                      aria-hidden="true"
+                                      data-ng-class="{
+                                          'fa-check': ipbackup.nfs === true,
+                                          'fa-ban': ipbackup.nfs === false
+                                      }">
+                                </span>
                             </td>
                             <td class="text-center">
                                 <span class="label label-success"
@@ -155,50 +131,17 @@
                                       data-i18n-static="server_configuration_ftpbackup_table_ip_disable">
                                 </span>
                             </td>
-                            <td>
-                                <div data-ng-if="ipbackup != ipbackupCurrentEditBack && !disable.deleteFtp && ipbackup.isApplied">
-                                    <button type="button"
-                                            class="btn btn-link"
-                                            data-ng-click="setIpBackupCurrentEdit(ipbackup)"
-                                            data-uib-tooltip="{{ i18n.server_configuration_ftpbackup_table_ip_edit }}"
-                                            data-tooltip-append-to-body="true">
-                                        <span class="oui-icon oui-icon-pen_line" aria-hidden="true"></span>
-                                    </button>
-                                </div>
-                                <div data-ng-if="ipbackup == ipbackupCurrentEditBack && !loadingEdit && ipbackup.isApplied">
-                                    <button type="button"
-                                            class="btn btn-link"
-                                            data-ng-click="cancelIpBackupCurrentEdit()"
-                                            data-uib-tooltip="{{ i18n.server_configuration_ftpbackup_table_ip_cancel }}"
-                                            data-tooltip-append-to-body="true">
-                                        <span class="oui-icon oui-icon-error" aria-hidden="true"></span>
-                                    </button>
-                                </div>
-                            </td>
-                            <td>
-                                <div data-ng-if="ipbackup != ipbackupCurrentEditBack && !disable.deleteFtp && ipbackup.isApplied">
-                                    <button type="button"
-                                            class="btn btn-link"
-                                            data-ng-click="setAction('ftp-backup/access/delete/dedicated-server-ftp-backup-access-delete', ipbackup)"
-                                            data-uib-tooltip="{{ i18n.server_configuration_ftpbackup_table_ip_delete }}"
-                                            data-tooltip-append-to-body="true">
-                                        <span class="oui-icon oui-icon-trash_line" aria-hidden="true"></span>
-                                    </button>
-                                </div>
-                                <div data-ng-if="ipbackup == ipbackupCurrentEditBack && !loadingEdit && ipbackup.isApplied">
-                                    <button type="button"
-                                            class="btn btn-link"
-                                            data-ng-if="ipbackupCurrentEdit.cifs || ipbackupCurrentEdit.ftp || ipbackupCurrentEdit.nfs"
-                                            data-ng-click="saveIpBackupCurrentEdit()"
-                                            data-uib-tooltip="{{ i18n.server_configuration_ftpbackup_table_ip_modify }}"
-                                            data-tooltip-append-to-body="true">
-                                        <span class="fa fa-check" aria-hidden="true"></span>
-                                    </button>
-                                </div>
-                                <oui-spinner data-ng-if="ipbackup == ipbackupCurrentEditBack && loadingEdit"
-                                             data-size="s"
-                                             data-inline="true">
-                                </oui-spinner>
+                            <td colspan="2"
+                                class="text-right">
+                                <oui-action-menu data-align="end"
+                                                 data-compact>
+                                    <oui-action-menu-item data-text="{{:: i18n.server_configuration_ftpbackup_table_ip_edit }}"
+                                                          data-on-click="setAction('ftp-backup/access/update/dedicated-server-ftp-backup-access-update', ipbackup)">
+                                    </oui-action-menu-item>
+                                    <oui-action-menu-item data-text="{{ i18n.server_configuration_ftpbackup_table_ip_delete }}"
+                                                          data-on-click="setAction('ftp-backup/access/delete/dedicated-server-ftp-backup-access-delete', ipbackup)">
+                                    </oui-action-menu-item>
+                                </oui-action-menu>
                             </td>
                         </tr>
                     </tbody>
@@ -226,8 +169,8 @@
                 <span class="icon-backupftp-password" aria-hidden="true"></span>
                 <span data-i18n-static="server_configuration_ftpbackup_forgot_password"></span>
                 <span class="d-block"
-                     data-ng-if="disable.passwordFtp"
-                     data-i18n-static="server_configuration_doing">
+                      data-ng-if="disable.passwordFtp"
+                      data-i18n-static="server_configuration_doing">
                 </span>
             </button>
             <button type="button"

@@ -1,25 +1,32 @@
-angular.module("App").controller("DeleteAccessFtpBackupCtrl", ($scope, Server, $rootScope, Alerter, $stateParams) => {
-    const alert = "server_tab_ftpbackup_alert";
+angular.module("App")
+    .controller("DedicatedServerFtpBackupAccessDeleteController", class DedicatedServerFtpBackupAccessDeleteController {
+        constructor ($rootScope, $scope, $stateParams, Alerter, Server) {
+            this.$rootScope = $rootScope;
+            this.$scope = $scope;
+            this.$stateParams = $stateParams;
+            this.Alerter = Alerter;
+            this.Server = Server;
+        }
 
-    $scope.access = $scope.currentActionData.ipBlock;
-    $scope.loading = false;
+        $onInit () {
+            this.access = _.get(this.$scope, "currentActionData.ipBlock", {});
+        }
 
-    $scope.deleteAccessFtpBackup = function () {
-        $scope.loading = true;
-
-        Server.deleteFtpBackupIp($stateParams.productId, $scope.access)
-            .then(
-                () => {
-                    $rootScope.$broadcast("server.ftpBackup.access.load");
-                    Alerter.success($scope.tr("server_configuration_ftpbackup_access_delete_success", $scope.access), alert);
-                },
-                (data) => {
-                    Alerter.alertFromSWS($scope.tr("server_configuration_ftpbackup_access_delete_failure", $scope.access), data.data, alert);
-                }
-            )
-            .finally(() => {
-                $scope.resetAction();
-                $scope.loading = false;
-            });
-    };
-});
+        /**
+         * Delete FTP backup access.
+         * @return {Promise}
+         */
+        deleteFtpBackupAccess () {
+            this.isDeleting = true;
+            return this.Server.deleteFtpBackupIp(this.$stateParams.productId, this.access)
+                .then(() => {
+                    this.$rootScope.$broadcast("server.ftpBackup.access.load");
+                    this.Alerter.success(this.$scope.tr("server_configuration_ftpbackup_access_delete_success", this.access), "server_tab_ftpbackup_alert");
+                })
+                .catch((err) => this.Alerter.alertFromSWS(this.$scope.tr("server_configuration_ftpbackup_access_delete_failure", this.access), err, "server_tab_ftpbackup_alert"))
+                .finally(() => {
+                    this.isDeleting = false;
+                    this.$scope.resetAction();
+                });
+        }
+    });

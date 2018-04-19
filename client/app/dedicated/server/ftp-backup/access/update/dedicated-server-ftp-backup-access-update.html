@@ -1,0 +1,20 @@
+<div data-ng-controller="DedicatedServerFtpBackupAccessUpdateController as $ctrl">
+    <oui-modal data-title="{{:: i18n.server_configuration_ftpbackup_access_edit }}"
+               data-primary-action="$ctrl.updateFtpBackupAccess()"
+               data-primary-label="{{:: i18n.wizard_confirm }}"
+               data-secondary-action="resetAction()"
+               data-secondary-label="{{:: i18n.wizard_cancel }}"
+               data-on-dismiss="resetAction()"
+               data-loading="$ctrl.isUpdating">
+        <p data-ng-bind-html="tr('server_configuration_ftpbackup_access_edit_info', [$ctrl.access.ipBlock])"></p>
+        <oui-checkbox data-text="{{:: i18n.server_configuration_ftpbackup_table_cifs }}"
+                      data-model="$ctrl.form.access.cifs">
+        </oui-checkbox>
+        <oui-checkbox data-text="{{:: i18n.server_configuration_ftpbackup_table_ftp }}"
+                      data-model="$ctrl.form.access.ftp">
+        </oui-checkbox>
+        <oui-checkbox data-text="{{:: i18n.server_configuration_ftpbackup_table_nfs }}"
+                      data-model="$ctrl.form.access.nfs">
+        </oui-checkbox>
+    </oui-modal>
+</div>
