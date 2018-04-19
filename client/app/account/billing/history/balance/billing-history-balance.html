@@ -58,7 +58,7 @@
                         <div class="form-group">
                             <label data-translate="billing_history_balance_choose_payment_method"></label>
                             <select class="form-control"
-                                    data-ng-options="method as method.description for method in $ctrl.paymentMethods"
+                                    data-ng-options="method as (method.description || method.publicLabel) for method in $ctrl.paymentMethods"
                                     data-ng-model="$ctrl.model.paymentMethod">
                             </select>
                         </div>
