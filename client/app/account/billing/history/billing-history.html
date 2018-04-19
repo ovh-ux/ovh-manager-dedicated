@@ -43,7 +43,7 @@
                 <a type="button"
                    class="btn btn-default"
                    data-i18n-static="statements_account_pay_debt_button"
-                   data-ng-if="ctrl.debtAccount.active && target === 'US'"
+                   data-ng-if="ctrl.debtAccount.active && ctrl.debtAccount.dueAmount.value > 0 && target === 'US'"
                    data-ui-sref="app.account.billing.history.balance">
                 </a>
                 <button type="button"
