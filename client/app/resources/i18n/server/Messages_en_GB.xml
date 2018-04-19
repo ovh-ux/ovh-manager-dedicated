@@ -489,7 +489,7 @@
    <translation id="server_configuration_cloudbackup_load_agreements_fail" qtlid="451924">An error has occurred loading contracts</translation>
 
    <translation id="server_configuration_cloudbackup_offer_storage_title" qtlid="451937">{0} of Backup Storage included with your Dedicated Storage</translation>
-   <translation id="server_configuration_cloudbackup_offer_storage_description" qtlid="451950">Get a free cloud-based storage space separate from your server, and dedicated to your backups. The solution is scalable, and can be reached via several access protocols (Rsync, SCP, sFTP).</translation>
+   <translation id="server_configuration_cloudbackup_offer_storage_description" qtlid="451950">Get a free cloud-based storage space separate to your server, and dedicated to your backups. The solution is scalable, and can be reached via several access protocols (Rsync, SCP, sFTP).</translation>
    <translation id="server_configuration_cloudbackup_offer_storage_guide_description" qtlid="451963">View our user guide</translation>
 
    <translation id="server_configuration_cloudbackup_subscribe_title" qtlid="451976">Enable your Backup Storage option</translation>
@@ -556,14 +556,14 @@
    <translation id="server_configuration_firewall_asa_order_step2_totalHT" qtlid="169238">Price ex. VAT:</translation>
    <translation id="server_configuration_firewall_asa_order_step2_totalTTC" qtlid="169251">Price incl. VAT:</translation>
    <translation id="server_configuration_firewall_asa_order_step2_info" qtlid="151724">For the first payment, you will be invoiced pro rata for the number of days remaining before your server renewal date.</translation>
-   <translation id="server_configuration_firewall_asa_order_step2_info2" qtlid="222722">Period until:</translation>
+   <translation id="server_configuration_firewall_asa_order_step2_info2" qtlid="222722">Period from:</translation>
    <translation id="server_configuration_firewall_asa_order_step2_info3" qtlid="222735">The billing for this option will be synchronised with your service's renewal date.</translation>
 
    <translation id="server_configuration_firewall_asa_order_step3_generation_bc" qtlid="169511">Generating purchase order...</translation>
    <translation id="server_configuration_firewall_asa_order_step3_bc" qtlid="169524">The purchase order has been generated.</translation>
    <translation id="server_configuration_firewall_asa_order_step3_continue" qtlid="169537">To confirm your order, please click the "Pay" button below.</translation>
    <translation id="server_configuration_firewall_asa_order_step3_explication" qtlid="167886">A new tab will open, and you will be automatically redirected to the OVH payment interface.</translation>
-   <translation id="server_configuration_firewall_asa_order_step3_explication2" qtlid="132291">Please note that a delay of approximately 2 hours is required from the time of your payment being accepted for the activation of the option to be taken into account on your Dedicated Control Panel.</translation>
+   <translation id="server_configuration_firewall_asa_order_step3_explication2" qtlid="132291">Please note that a delay of approximately 2 hours is required from the time of your payment being accepted, for the activation of the option to be taken into account on your Dedicated Control Panel.</translation>
    <translation id="server_configuration_firewall_asa_order_fail" qtlid="151737">An error occurred on ordering the option.</translation>
    <translation id="server_configuration_firewall_asa_enable_title_button" qtlid="151750">Enable the Cisco ASA firewall </translation>
    <translation id="server_configuration_firewall_asa_enable_title" qtlid="151750">Enable the Cisco ASA firewall </translation>
@@ -576,9 +576,9 @@
    <translation id="server_configuration_firewall_asa_disable_step1_loading_error" qtlid="170031">An error occurred on loading the information.</translation>
    <translation id="server_configuration_firewall_asa_disable_step1_question" qtlid="183905">Do you really want to disable the Cisco ASA firewall on your server <span class="normal italic">{0}</span>?</translation>
    <translation id="server_configuration_firewall_asa_disable_success" qtlid="151828">The request to disable the Cisco ASA firewall has been registered and will be effective within minutes.</translation>
-   <translation id="server_configuration_firewall_asa_disable_fail" qtlid="151841">An error occurred when disabling the Cisco ASA firewall</translation>
+   <translation id="server_configuration_firewall_asa_disable_fail" qtlid="151841">An error occurred on disabling the Cisco ASA firewall</translation>
    <translation id="server_configuration_task_loading_error" qtlid="164415">An error occurred while retrieving the tasks</translation>
-   <translation id="server_configuration_task_last_action" qtlid="52231">Most recent action</translation>
+   <translation id="server_configuration_task_last_action" qtlid="52231">Recent action</translation>
    <translation id="server_configuration_task_function" qtlid="61872">Task</translation>
    <translation id="server_configuration_task_comment" qtlid="233531">Technical details</translation>
    <translation id="server_configuration_task_status" qtlid="26443">Status</translation>
@@ -615,7 +615,7 @@
    <translation id="server_configuration_impi_reset_interfaces" qtlid="164688">Reboot the IPMI</translation>
    <translation id="server_configuration_impi_reset_sessions" qtlid="164701">Delete the sessions</translation>
    <translation id="server_configuration_impi_off" qtlid="164714">The IPMI module is not available on this server.</translation>
-   <translation id="server_configuration_impi_off_kvm" qtlid="229177">However, you can use a KVM to benefit from this feature.</translation>
+   <translation id="server_configuration_impi_off_kvm" qtlid="229177">However, you benefit from this feature with a KVM.</translation>
    <translation id="server_configuration_impi_order_kvm" qtlid="229190">Order a KVM</translation>
    <translation id="server_configuration_impi_disabled" qtlid="225062">The server status is <b>{0}</b>. The IPMI module is therefore disabled.</translation>
    <translation id="server_configuration_impi_test" qtlid="164727">Test the IPMI</translation>
@@ -643,7 +643,7 @@
    <translation id="server_configuration_impi_restart_loading" qtlid="164987">Rebooting IPMI module...</translation>
    <translation id="server_configuration_impi_restart_error" qtlid="165000">An error occurred on requesting the IPMI module reboot.</translation>
    <translation id="server_configuration_impi_restart_error_task" qtlid="165013">An error occurred on rebooting the IPMI module.</translation>
-   <translation id="server_configuration_impi_restart_success" qtlid="165026">The IPMI module has been rebooted.</translation>
+   <translation id="server_configuration_impi_restart_success" qtlid="165026">The IPMI module rebooted.</translation>
    <translation id="server_configuration_impi_sessions_title" qtlid="165039">Deleting the IPMI sessions</translation>
    <translation id="server_configuration_impi_sessions_information" qtlid="165052">Do you really want to delete the IPMI module sessions?</translation>
    <translation id="server_configuration_impi_sessions_loading" qtlid="165065">Deleting IPMI module sessions...</translation>
@@ -697,7 +697,7 @@
    <translation id="server_configuration_installation_LOGICAL" qtlid="173034">logical</translation>
    <translation id="server_configuration_installation_LV" qtlid="173047">LV</translation>
    <translation id="server_configuration_installation_PRIMARY" qtlid="173060">primary</translation>
-   <translation id="server_configuration_installation_error_save" qtlid="173073">An error occurred on saving the template ({0}).</translation>
+   <translation id="server_configuration_installation_error_save" qtlid="173073">An error occurred on loading the template ({0}).</translation>
    <translation id="server_configuration_installation_error_hardwareRaid" qtlid="286591">An error occurred when saving the RAID configuration.</translation>
    <translation id="server_configuration_installation_resume" qtlid="132720">Summary:</translation>
    <translation id="server_configuration_installation_resume_hardwareRaid" qtlid="286604">RAID hardware:</translation>
@@ -717,7 +717,7 @@
    <translation id="server_configuration_installation_form_postInstallationScriptLink_bad_extension_script" qtlid="173190">Invalid script extension.</translation>
    <translation id="server_configuration_installation_form_postInstallationScriptLink_help" qtlid="173203">You can enter the post-installation script URL here. It enables easy finalisation of your system installation. You can easily configure your preferences and install software. Attention: the maximum script execution time is 1 hour.</translation>
    <translation id="server_configuration_installation_form_postInstallationScriptLinkReturn" qtlid="195373">Script return value:</translation>
-   <translation id="server_configuration_installation_form_postInstallationScriptLinkReturn_help" qtlid="173229">It involves all or part of the expected result on standard exit following execution of the script. You can leave this field empty but this is not advisable.</translation>
+   <translation id="server_configuration_installation_form_postInstallationScriptLinkReturn_help" qtlid="173229">It involves all or part of the expected result on standard exit following execution of the script. You can leave this field empty but it's not advisable.</translation>
    <translation id="server_configuration_installation_form_installSqlServer" qtlid="173242">Install SQL server</translation>
    <translation id="server_configuration_installation_form_useDistribKernel" qtlid="173255">Install original kernel</translation>
    <translation id="server_configuration_installation_form_useSpla" qtlid="173268">Use SPLA licence </translation>
@@ -744,16 +744,16 @@
    <translation id="server_configuration_installation_ovh_step1_info2" qtlid="173398">You can proceed directly to installation or you can customise it.</translation>
    <translation id="server_configuration_installation_ovh_step1_desktop" qtlid="173411">Type of OS:</translation>
    <translation id="server_configuration_installation_ovh_step1_desktop_licence_info_label" qtlid="406788">Some OS need a licence.</translation>
-   <translation id="server_configuration_installation_ovh_step1_desktop_licence_info_text" qtlid="406801">You need a licence to install a Windows OS (with the exception of Windows HyperV). You can add licences in the Licences section in the customer account. </translation>
+   <translation id="server_configuration_installation_ovh_step1_desktop_licence_info_text" qtlid="406801">You need a licence to install a Windows OS (apart from for Windows HyperV). You can add licences in the Licences section in the customer account. </translation>
    <translation id="server_configuration_installation_ovh_step1_disk_group" qtlid="382550">Target disk array: </translation>
    <translation id="server_configuration_installation_ovh_step1_disk_group_warning" qtlid="382563">Warning: Unless you have selected the target disk array ({0}), you will not be able to customise the hardware RAID configuration.</translation>
    <translation id="server_configuration_installation_ovh_step1_custom" qtlid="173424">Customise the partition configuration</translation>
    <translation id="server_configuration_installation_ovh_step1_hardwareRaid" qtlid="286617">Customise the RAID hardware configuration </translation>
    <translation id="server_configuration_installation_ovh_step1_hardwareRaid_wrong_location" qtlid="313819">The Hardware RAID configuration is only available for servers located on the same continent as your customer account.</translation>
-   <translation id="server_configuration_installation_ovh_step1_hardwareRaid_os_not_supported_short" qtlid="298597">No HardRAID</translation>
+   <translation id="server_configuration_installation_ovh_step1_hardwareRaid_os_not_supported_short" qtlid="298597">No Hard RAID</translation>
    <translation id="server_configuration_installation_ovh_step1_hardwareRaid_os_not_supported" qtlid="363893">This OS installer cannot reconfigure your RAID. If you want to reconfigure your hardware RAID, please install another OS. The configuration will then be saved.</translation>
-   <translation id="server_configuration_installation_ovh_step1_virtual_desktop_not_supported" qtlid="406814">The ({0}) chosen OS does not have virtual machine functionality. Choose another licence if you need to. No other OS available? Go to the <a href='{1}' target='_blank'>Licences</a> section in the customer account.</translation>
-   <translation id="server_configuration_installation_ovh_step1_warning_exist" qtlid="185374">Warning: you have started to configure an installation on distribution <b>{0}</b>. Modifying the distribution will delete this configuration.</translation>
+   <translation id="server_configuration_installation_ovh_step1_virtual_desktop_not_supported" qtlid="406814">The ({0}) chosen OS does not have virtual machine functionality, choose another licence if you need to. No other OS available? Go to the <a href='{1}' target='_blank'>Licences</a> section in the customer account.</translation>
+   <translation id="server_configuration_installation_ovh_step1_warning_exist" qtlid="185374">Warning, you have started to configure an installation on distribution <b>{0}</b>. Modifying the distribution will delete this configuration.</translation>
    <translation id="server_configuration_installation_ovh_step1_warning_exist_valid" qtlid="185387">Delete the previous configuration</translation>
    <translation id="server_configuration_installation_ovh_step1_warning_exist_cancel" qtlid="173463">Do not change the distribution</translation>
    <translation id="server_configuration_installation_ovh_step2_available_color_help" qtlid="173476">In order to improve the visibility of partitions, you can change their colour by clicking on the bar above.</translation>
@@ -802,16 +802,16 @@
    <translation id="server_configuration_installation_ovh_step2_error_partition_order_first" qtlid="173814">The primary partition must have /boot or / as the mount point. If the 2 partitions are present, /boot must be placed in primary position.</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_order_first_win" qtlid="173827">The primary partition must have the following as mount point c:</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_volumename_empty" qtlid="173840">The volume name is compulsory for an LV partition. </translation>
-   <translation id="server_configuration_installation_ovh_step2_error_partition_volumename_wrong" qtlid="173853">The volume name must not contain special symbols, must not exceed 16 characters and must be different from pvmove and snapshot.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_volumename_wrong" qtlid="173853">The volume name must not contain special symbols, it must not exceed 16 characters and it must be different from pvmove and snapshot.</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_volumename_use" qtlid="173866">This volume name is already in use.</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_empty" qtlid="173879">The mount point is compulsory.</translation>
-   <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_wrong" qtlid="288340">This mount point cannot be used: the name is incorrect. Special characters are not allowed (except _ / and -) and the maximum number of characters is 255.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_wrong" qtlid="288340">This mount point cannot be used, the name is incorrect. Special characters are not allowed (except _ / and -) the maximum number of characters is 255.</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_wrong2" qtlid="173905">The mount point /var/log is not authorised for this distribution. You must use /home/log.</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_primary" qtlid="250719">Mount point c: must be primary type.</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_windows" qtlid="173918">The mount point cannot be used. It must be between c and z and end with:</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_mountPoint_use" qtlid="173931">This mount point is already in use.</translation>
-   <translation id="server_configuration_installation_ovh_step2_error_partition_file_system_swap" qtlid="173944">The swap partition already exists.</translation>
-   <translation id="server_configuration_installation_ovh_step2_error_partition_file_system_no_swap" qtlid="173957">The swap partition is compulsory.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_file_system_swap" qtlid="173944">The Swap partition already exists.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_file_system_no_swap" qtlid="173957">The Swap partition is compulsory.</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_size_swap" qtlid="173970">The swap partition cannot exceed {0}.</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_size_max" qtlid="173983">A partition that doesn't support GPT cannot exceed {0}.</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_size_min_windows" qtlid="173996">The minimum size of a Windows partition is {0}.</translation>
@@ -821,14 +821,14 @@
    <translation id="server_configuration_installation_ovh_step2_error_partition_size_min" qtlid="174048">The minimum size of a partition is {0}</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_type_order" qtlid="174061">A primary partition must be preceded by a primary partition.</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_type_order_lv" qtlid="174074">An LV partition must be followed by an LV partition.</translation>
-   <translation id="server_configuration_installation_ovh_step2_error_partition_type_logical_lv" qtlid="174087">You cannot have a logical partition and an LV partition at the same time.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_partition_type_logical_lv" qtlid="174087">You cannot have a logical partition logique and an LV partition at the same time.</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_type_primary" qtlid="174100">You cannot have more than 4 primary partitions. Change 1 primary partition to another type in order to add other partitions.</translation>
    <translation id="server_configuration_installation_ovh_step2_error_partition_type_lv_swap" qtlid="174113">Swap partitions are not compatible with LV partitions.</translation>
-   <translation id="server_configuration_installation_ovh_step2_error_set" qtlid="174126">An error occurred when modifying the partition {0} ({1})</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_set" qtlid="174126">An error occurred on modifying the partition {0} ({1})</translation>
    <translation id="server_configuration_installation_ovh_step2_error_delete" qtlid="174139">An error occurred on deleting the partition  {0} ({1}).</translation>
-   <translation id="server_configuration_installation_ovh_step2_error_add" qtlid="174152">An error occurred when adding the partition {0} ({1}).</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_add" qtlid="174152">An error occurred on adding the partition {0} ({1}).</translation>
    <translation id="server_configuration_installation_ovh_step2_error_raid_diskUse" qtlid="185400">You aren't making enough disks available to create this partition scheme. The RAID level of at least one partition is too high.</translation>
-   <translation id="server_configuration_installation_ovh_step2_error_raid_diskUse_icon" qtlid="185413">The RAID level for this partition is too high for the number of disks in use.</translation>
+   <translation id="server_configuration_installation_ovh_step2_error_raid_diskUse_icon" qtlid="185413">The RAID level for this partition is too high in relation to the number of disks in use.</translation>
    <translation id="server_configuration_installation_ovh_step2_error_raid_0" qtlid="200885">The RAID 0 configuration of this partition will not allow backups</translation>
    <translation id="server_configuration_installation_ovh_step3_info" qtlid="174165">You are about to launch an OVH template installation.</translation>
    <translation id="server_configuration_installation_ovh_step3_error" qtlid="183970">An error occurred on requesting to install the <b>{0}</b> distribution on the <b>{1}</b> server with the <b>{2}</b> ({3}) language</translation>
@@ -843,7 +843,7 @@
    <translation id="server_configuration_installation_ovh_step3_error_integrity" qtlid="179836">An error was detected during the consistency test of your ({0}) customised installation. Installation is not possible.</translation>
    <translation id="server_configuration_installation_ovh_step3_error_integrity_info" qtlid="179849">Please correct the error by clicking on the previous button</translation>
    <translation id="server_configuration_installation_ovh_step3_partiton_variable" qtlid="174243">Variable partition size:</translation>
-   <translation id="server_configuration_installation_ovh_step3_partiton_variable_help" qtlid="174256">This partition will occupy the remaining available space in order to adapt this template to a server with a different total space.</translation>
+   <translation id="server_configuration_installation_ovh_step3_partiton_variable_help" qtlid="174256">This partition will occupy the remaining available space in order to adapt this template on a server with a different total space.</translation>
    <translation id="server_configuration_installation_ovh_step3_partiton_variable_info" qtlid="183983">The partition <b>{0}</b> will thus adapt its size in order to occupy the remaining space of another server.</translation>
    <translation id="server_configuration_installation_ovh_step3_partiton_none" qtlid="8674">None</translation>
    <translation id="server_configuration_installation_ovh_step3_saveGabarit" qtlid="174282">Save this installation:</translation>
@@ -948,8 +948,8 @@
    <translation id="contract_help" qtlid="180382">Scroll down to the contracts in order to confirm them.</translation>
    <translation id="contracts_list_title" qtlid="180395">There are {0} contracts to read.</translation>
    <translation id="contract_list_title" qtlid="180408">There is 1 contract to read.</translation>
-   <translation id="contracts_agree" qtlid="180421">Accept the contracts</translation>
-   <translation id="contract_agree" qtlid="180434">Accept the contract</translation>
+   <translation id="contracts_agree" qtlid="180421">I accept the Terms & conditions</translation>
+   <translation id="contract_agree" qtlid="180434">I accept the Terms & conditions</translation>
 
    <translation id="server_cancel_bandwidth_title" qtlid="286734">Cancel bandwidth option </translation>
    <translation id="server_cancel_bandwidth_vrack_title" qtlid="286734">Cancel bandwidth option </translation>
@@ -966,16 +966,16 @@
 
    <translation id="server_tab_usb_storage" qtlid="181136">USB storage</translation>
    <translation id="server_tab_USB_STORAGE_summary" qtlid="181149">You currently have {0} USB drives. You have {1} USB port(s) available.</translation>
-   <translation id="server_tab_USB_STORAGE_loading_error" qtlid="135294">An error has occurred when loading the information.</translation>
+   <translation id="server_tab_USB_STORAGE_loading_error" qtlid="135294">An error has occurred loading the information.</translation>
    <translation id="server_tab_USB_STORAGE_available_slot" qtlid="181162">Port available</translation>
    <translation id="server_tab_USB_STORAGE_add" qtlid="181175">Add a disk</translation>
    <translation id="server_tab_USB_STORAGE_add_select" qtlid="181188">Select a storage capacity</translation>
-   <translation id="server_tab_USB_STORAGE_add_select_warning" qtlid="212530">Warning: the installation is permanent. It will not be possible to remove it later.</translation>
+   <translation id="server_tab_USB_STORAGE_add_select_warning" qtlid="212530">Warning: the installation is permanent. It won't be possible to remove it later.</translation>
 
 
    <translation id="server_tab_USB_STORAGE_add_capacity" qtlid="181201">{0} GB</translation>
    <translation id="server_tab_USB_STORAGE_order_select_duration" qtlid="181214">Select the duration:</translation>
-   <translation id="server_tab_USB_STORAGE_order_loading_error" qtlid="135294">An error has occurred when loading the information.</translation>
+   <translation id="server_tab_USB_STORAGE_order_loading_error" qtlid="135294">An error has occurred loading the information.</translation>
    <translation id="server_tab_USB_STORAGE_order_finish_error" qtlid="181227">An error has occurred generating the purchase order.</translation>
    <translation id="server_tab_USB_STORAGE_order_resume" qtlid="177496">Order summary</translation>
    <translation id="server_tab_USB_STORAGE_order_price_HT" qtlid="146177">Total price ex. VAT:</translation>
@@ -1035,7 +1035,7 @@
    <translation id="server_consumption_warning_overquota" qtlid="408079">You have exceeded your bandwidth quota. Your transfer speed is now capped at {0}.</translation>
    <translation id="server_consumption_warning_overquota_increase" qtlid="408092">In order for your service to regain full power you have to <a href="{0}">increase your quota</a></translation>
    <translation id="server_tab_MONITORING" qtlid="31666">Monitoring</translation>
-   <translation id="server_tab_MONITORING_title" qtlid="243741">Status of my services</translation>
+   <translation id="server_tab_MONITORING_title" qtlid="243741">State of my services</translation>
    <translation id="server_tab_MONITORING_notifications_management" qtlid="243754">Manage my notifications</translation>
    <translation id="server_tab_MONITORING_back" qtlid="454332">Back to server status</translation>
    <translation id="server_tab_MONITORING_services" qtlid="243767">Services being monitored</translation>
@@ -1070,7 +1070,7 @@
    <translation id="server_tab_MONITORING_add_ip_invalid" qtlid="244001">You must enter a valid IP address</translation>
    <translation id="server_tab_MONITORING_add_port_invalid" qtlid="244014">You must enter a valid port</translation>
    <translation id="server_tab_MONITORING_add_port_text_help" qtlid="244027">The port must be between 1 and 65535</translation>
-   <translation id="server_tab_MONITORING_add_challengeText_invalid" qtlid="244040">Only the following characters are allowed: <ul><li>Letters</li><li>Numbers</li> <li>".", "-", "=", "(", ")", "", "/", ";"</li></ul></translation>
+   <translation id="server_tab_MONITORING_add_challengeText_invalid" qtlid="244040">Only the following characters are allowed: <ul><li>Les lettres</li><li>Les chiffes</li> <li>".", "-", "=", "(", ")", "", "/", ";"</li></ul></translation>
    <translation id="server_tab_MONITORING_add_step2_title" qtlid="244053">Monitoring details</translation>
    <translation id="server_tab_MONITORING_add_step3_title" qtlid="244066">Monitoring overview</translation>
    <translation id="server_tab_MONITORING_add_success" qtlid="244079">Monitoring has been added.</translation>
@@ -1098,7 +1098,7 @@
    <translation id="server_tab_MONITORING_table_notifications_action_edit" qtlid="244235">Change the alert</translation>
    <translation id="server_tab_MONITORING_table_notifications_action_delete" qtlid="244248">Delete the alert</translation>
    <translation id="server_tab_MONITORING_notifications_email_add_step1_title" qtlid="244261">Please enter the information so that you can receive email alerts.</translation>
-   <translation id="server_tab_MONITORING_notifications_email_add_email" qtlid="89028">Email address:</translation>
+   <translation id="server_tab_MONITORING_notifications_email_add_email" qtlid="89028">Email:</translation>
    <translation id="server_tab_MONITORING_notifications_email_add_email_invalid" qtlid="244274">Please enter a valid email address</translation>
    <translation id="server_tab_MONITORING_notifications_email_add_lang" qtlid="168874">Language:</translation>
    <translation id="server_tab_MONITORING_notifications_email_add_success" qtlid="244287">Alert added.</translation>
@@ -1148,7 +1148,7 @@
    <translation id="server_dashboard_change_price_infos" qtlid="256099">(+ info on price changes)</translation>
    <translation id="server_dashboard_change_price_details" qtlid="256112">For more information on the price changes, click here.</translation>
 
-   <translation id="server_dashboard_change_prices" qtlid="256125">The price of your server has changed.</translation>
+   <translation id="server_dashboard_change_prices" qtlid="256125">The price of your server will change,</translation>
    <translation id="server_dashboard_change_price_click_here" qtlid="131745">click here</translation>
    <translation id="server_dashboard_change_price_more" qtlid="256138">for more information.</translation>
 
@@ -1158,9 +1158,9 @@
    <translation id="server_close_service_form_option_delete_at_expiration" qtlid="451701">Delete service on its expiry date</translation>
    <translation id="server_close_service_form_option_cancel" qtlid="451714">Cancel service deletion</translation>
    <translation id="server_close_service_warning_data_deletion" qtlid="436494">The deletion of your service will permanently erase all corresponding data.</translation>
-   <translation id="server_close_service_warning_no_refund" qtlid="436507">The process of deletion does not entitle you to a refund.</translation>
+   <translation id="server_close_service_warning_no_refund" qtlid="436507">The process of deletion does not grant any refund.</translation>
    <translation id="server_close_service_warning_manual_refund" qtlid="436520">Deletion of your service does not guarantee that a refund will be issued. Please reach out to support if you have questions regarding the eligibility of a refund for this service.</translation>
-   <translation id="server_close_service_desc" qtlid="260390">An email containing the procedure for deleting this server will be sent to you.</translation>
+   <translation id="server_close_service_desc" qtlid="260390">An email containing the procedure for the deletion of this server will be sent to you.</translation>
    <translation id="server_close_service_question" qtlid="351996">Do you want to continue? </translation>
    <translation id="server_close_service_success" qtlid="260403">The request for the deletion of this server has been received. An email containing the procedure will be sent to you.</translation>
    <translation id="server_close_service_error" qtlid="260416">An error has occurred while deleting this server:</translation>
@@ -1171,7 +1171,7 @@
    <translation id="server_close_service_cancel_success" qtlid="451779">The deletion request for this server has been suspended.</translation>
    <translation id="server_close_service_cancel_error" qtlid="451792">An error has occurred suspending the deletion request for this server:</translation>
 
-   <translation id="housing_support_phone" qtlid="290446">Did you know? Your Housing service comes with a dedicated customer service adviser, whom you can contact at {0} for all your questions.  </translation>
+   <translation id="housing_support_phone" qtlid="290446">Did you know? You're Housing service comes with a dedicated customer service adviser, whom you can contact at {0} for all your questions.  </translation>
 
    <translation id="server_autorenew_stop_bother_error" qtlid="290589">There was an error when sending the request to stop showing you information about automatic renewal. </translation>
    <translation id="server_autorenew_alert" qtlid="296882">Make your life easier by choosing automatic server renewal! Wave goodbye to reminders and missed renewals. </translation>

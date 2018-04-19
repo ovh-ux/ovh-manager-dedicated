@@ -538,8 +538,8 @@
    <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="343967">Jūs pridėjote <strong>{0}</strong> PayPal paskyrą(-as)/(-ų), kurioje(-iose) yra klaidų. Jūs galite atlikti patikrą ir/ar užregistruoti naują mokėjimo priemonę <a href="#/billing/mean" class="alert-link">sąskaitų ir mokėjimų skiltyje</a>.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="374958">Jūsų išankstinio mokėjimo paskyroje skola: <strong>{0}</strong> dienai: {{ '{1}' | date:'medium'}}. Jūs galite apmokėti skolą <a href="#/billing/ovhaccount" class="alert-link">sąskaitų ir mokėjimų skiltyje</a>.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369545">Jūs turite skolą: <strong>{0}</strong> (laiku neapmokėta suma: {1}). Jūs galite apmokėti skolą <a href="{2}" class="alert-link">sąskaitų ir mokėjimų skiltyje</a>.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="343993">Jūsų skola yra <strong>{0}</strong>. Jūs galite apmokėti likusią sumą <a href="{1}" class="alert-link">sąskaitų ir mokėjimų skiltyje</a>.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369545">Jūs turite skolą: <strong>{0}</strong> (laiku neapmokėta suma: {1}). Jūs galite apmokėti skolą <a href="#/billing/statements" class="alert-link">sąskaitų ir mokėjimų skiltyje</a>.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="343993">Jūsų skola yra <strong>{0}</strong>. Jūs galite apmokėti likusią sumą <a href="#/billing/statements" class="alert-link">sąskaitų ir mokėjimų skiltyje</a>.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="383919">Jūsų išankstinio mokėjimo paskyroje pasiektas jūsų nustatytas limitas. Daugiau informacijos <a href="#/billing/ovhaccount" class="alert-link">sąskaitų ir mokėjimų skiltyje</a>.</translation>
 
@@ -553,9 +553,6 @@
    <translation id="core_service_expiration_manual_renew" qtlid="377571">Pratęsti galiojimą</translation>
    <translation id="core_service_expiration_auto_renew" qtlid="414986">Galiojimo pratęsimo data:</translation>
    <translation id="core_service_renew_button" qtlid="118962">Pratęsti nuomą</translation>
-
-   <translation id="core_user_enterprise_retail_prices">Note : Les prix indiqués sont des prix standards du catalogue et peuvent ne pas refléter les conditions négociées. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
-   <translation id="core_user_enterprise_retail_prices_hpc">Note : Les prix indiqués sont une estimation basée sur le calcul au prorata de ce module pour l'aligner sur la période de facturation de votre contrat actuel. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
 
    <translation id="browser_alert_not_supported" qtlid="405357">Jūsų naršyklė nepalaikoma.</translation>
    <translation id="browser_alert_deprecated" qtlid="405370">Jūsų naršyklė neatnaujinta, galimos saugumo ar suderinamumo spragos.</translation>
