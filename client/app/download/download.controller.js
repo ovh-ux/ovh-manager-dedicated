@@ -22,4 +22,4 @@ class DownloadCtrl {
     }
 }
 
-angular.module("Module.download.controllers").controller("DownloadCtrl", DownloadCtrl);
+angular.module("Module.download").controller("DownloadCtrl", DownloadCtrl);
