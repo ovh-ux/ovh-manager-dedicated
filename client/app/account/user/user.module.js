@@ -105,15 +105,12 @@ angular
                 controller: "UserAccount.controllers.doubleAuth"
             });
 
-            if (target === "US") {
-                $stateProvider.state("app.account.useraccount.users", {
-                    url: "/security/users",
-                    templateUrl: `${baseUrl}security/users/users.html`,
-                    controller: "UserAccountUsersCtrl",
-                    translations: ["account/user/security/users"]
-                });
-            }
-
+            $stateProvider.state("app.account.useraccount.users", {
+                url: "/security/users",
+                templateUrl: `${baseUrl}security/users/users.html`,
+                controller: "UserAccountUsersCtrl",
+                translations: ["account/user/security/users"]
+            });
         }
     ])
     .constant("sshkey-regex", [

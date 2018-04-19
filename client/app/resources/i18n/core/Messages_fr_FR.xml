@@ -538,8 +538,8 @@
    <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="343967">Vous avez <strong>{0}</strong> compte(s) PayPal en erreur. Rendez-vous dans <a href="#/billing/mean" class="alert-link">la section facturation</a> pour effectuer les vérifications et/ou enregistrer un nouveau moyen de paiement.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="374958">Votre compte prépayé est débiteur de <strong>{0}</strong> au {{ '{1}' | date:'medium'}}. Rendez-vous dans <a href="#/billing/ovhaccount" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369545">Vous avez une dette de <strong>{0}</strong> (dont un montant de {1} non échu). Rendez-vous dans <a href="#/billing/statements" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="343993">Vous avez une dette de <strong>{0}</strong>. Rendez-vous dans <a href="#/billing/statements" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369545">Vous avez une dette de <strong>{0}</strong> (dont un montant de {1} non échu). Rendez-vous dans <a href="{2}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="343993">Vous avez une dette de <strong>{0}</strong>. Rendez-vous dans <a href="{1}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="383919">Votre compte prépayé a atteint le seuil que vous avez défini. Rendez-vous dans <a href="#/billing/ovhaccount" class="alert-link">la section facturation</a> pour plus d'informations.</translation>
 
@@ -554,8 +554,8 @@
    <translation id="core_service_expiration_auto_renew" qtlid="414986">Renouvellement prévu le</translation>
    <translation id="core_service_renew_button" qtlid="118962">Renouveler</translation>
 
-   <translation id="core_user_enterprise_retail_prices">Note : Les prix indiqués sont des prix standards du catalogue et peuvent ne pas refléter les conditions négociées. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
-   <translation id="core_user_enterprise_retail_prices_hpc">Note : Les prix indiqués sont une estimation basée sur le calcul au prorata de ce module pour l'aligner sur la période de facturation de votre contrat actuel. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
+   <translation id="core_user_enterprise_retail_prices" qtlid="480776">Note : Les prix indiqués sont des prix standards du catalogue et peuvent ne pas refléter les conditions négociées. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
+   <translation id="core_user_enterprise_retail_prices_hpc" qtlid="480789">Note : Les prix indiqués sont une estimation basée sur le calcul au prorata de ce module pour l'aligner sur la période de facturation de votre contrat actuel. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
 
    <translation id="browser_alert_not_supported" qtlid="405357">Votre navigateur n'est pas supporté.</translation>
    <translation id="browser_alert_deprecated" qtlid="405370">Votre navigateur n'est pas à jour et peut contenir des failles de sécurité ou de compatibilité.</translation>

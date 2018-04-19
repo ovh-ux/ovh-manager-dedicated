@@ -64,7 +64,9 @@
                             <oui-message dismissable="true"
                                          data-ng-if="userAlerts.messages"
                                          data-type="{{ userAlerts.type }}">
-                                <ul class="list-unstyled">
+                                <ul data-ng-class="{
+                                    'list-unstyled': userAlerts.messages.length === 1
+                                }">
                                     <li data-ng-repeat="text in userAlerts.messages track by $index"
                                         data-ng-bind-html="text">
                                     </li>
