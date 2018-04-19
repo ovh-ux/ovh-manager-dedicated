@@ -21,6 +21,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.History", 
     };
 
     self.debtAccount = { active: false };
+    self.target = constants.target;
 
     self.colSpan = COL_SPAN_DEBT_LEGACY;
 
