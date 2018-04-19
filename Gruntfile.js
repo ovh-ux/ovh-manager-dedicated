@@ -970,37 +970,9 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask("test", (target, option) => {
-        if (target === "e2e") {
-
-            // Check if it's a remote test
-            if (process.env.E2E_BASE_URL && !/^https?:\/\/localhost/.test(process.env.E2E_BASE_URL)) {
-                option = "remote";
-            }
-
-            if (option === "remote") {
-                return grunt.task.run([
-                    "protractor"
-                ]);
-
-            }
-
-            return grunt.task.run([ // not implemented, plz use remote
-                "buildDev",
-                "protractor"
-            ]);
-
-
-        }
-        return grunt.task.run([
-            "eslint"
-        ]);
-
-    });
+    grunt.registerTask("test", ["eslint"]);
 
     grunt.registerTask("default", ["build"]);
-
-    grunt.registerTask("jshintBabel", ["eslint", "babel"]);
 
     grunt.registerTask("buildProd", [
         "clean",
