@@ -14,4 +14,4 @@ class DownloadService {
     }
 }
 
-angular.module("Module.download.services").service("DownloadService", DownloadService);
+angular.module("Module.download").service("DownloadService", DownloadService);

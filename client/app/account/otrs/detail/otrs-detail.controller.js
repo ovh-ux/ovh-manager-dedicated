@@ -1,11 +1,10 @@
 angular.module("Module.otrs.controllers").controller("otrsDetailCtrl", [
     "$scope",
     "$injector",
-    "$sanitize",
     "$location",
     "Module.otrs.services.otrs",
     "Alerter",
-    function ($scope, $injector, $sanitize, $location, Otrs, Alerter) {
+    function ($scope, $injector, $location, Otrs, Alerter) {
         "use strict";
 
         const $routerParams = $injector.has("$stateParams") ? $injector.get("$stateParams") : $injector.get("$routeParams");
