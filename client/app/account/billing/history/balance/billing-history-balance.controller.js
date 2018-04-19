@@ -85,7 +85,6 @@ angular.module("Billing.controllers").controller("BillingHistoryBalanceCtrl", cl
 
             return this.depositRequests;
         }).catch((error) => {
-            console.log(error);
             this.Alerter.alertFromSWS(this.$translate.instant("billing_history_balance_load_error"), {
                 message: _.get(error, "data.message"),
                 type: "ERROR"
