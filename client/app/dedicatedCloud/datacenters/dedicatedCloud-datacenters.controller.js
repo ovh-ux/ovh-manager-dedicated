@@ -1,56 +1,60 @@
-angular.module("App").controller("DedicatedCloudDatacentersCtrl", ($scope, $state, $stateParams, constants, DedicatedCloud) => {
-    "use strict";
+angular.module("App")
+    .controller("DedicatedCloudDatacentersCtrl", class DedicatedCloudDatacentersController {
+        constructor ($q, $scope, $state, $stateParams, constants, DedicatedCloud) {
+            this.$q = $q;
+            this.$scope = $scope;
+            this.$state = $state;
+            this.$stateParams = $stateParams;
+            this.constants = constants;
+            this.DedicatedCloud = DedicatedCloud;
+        }
 
-    $scope.datacenters = null;
-    $scope.constants = constants;
-
-    $scope.loadDatacenters = function (elementsByPage, elementsToSkip) {
-        $scope.loading = true;
-        $scope.error = false;
-        DedicatedCloud.getDatacentersInformations($stateParams.productId, elementsByPage, elementsToSkip)
-            .then(
-                (datacenters) => {
-                    $scope.datacenters = datacenters;
-                },
-                (data) => {
-                    $scope.resetAction();
-                    $scope.error = true;
-                    $scope.setMessage($scope.tr("dedicatedCloud_datacenters_loading_error"), {
-                        message: data.message,
+        loadDatacenters ({ offset, pageSize }) {
+            return this.DedicatedCloud.getDatacentersInformations(this.$stateParams.productId, pageSize, offset - 1)
+                .then((result) => ({
+                    data: _.get(result, "list.results"),
+                    meta: {
+                        totalCount: result.count
+                    }
+                }))
+                .catch((err) => {
+                    this.$scope.resetAction();
+                    this.$scope.setMessage(this.$scope.tr("dedicatedCloud_datacenters_loading_error"), {
+                        message: err.message,
                         type: "ERROR"
                     });
-                }
-            )
-            .finally(() => {
-                $scope.loading = false;
-            });
-    };
-
-    $scope.hasDiscount = function (datacenter) {
-        const hasDiscount = DedicatedCloud.hasDiscount(datacenter);
-        if (hasDiscount) {
-            $scope.discount.AMDPCC = true;
+                    return this.$q.reject(err);
+                })
+                .finally(() => {
+                    this.$scope.loading = false;
+                });
         }
-        return hasDiscount;
-    };
 
-    $scope.orderDatastore = (datacenter) => {
-        if (constants.target === "US") {
-            $state.go("app.dedicatedClouds.datacenter.datastores.orderUS", {
-                datacenterId: datacenter.id
-            });
-        } else {
-            $scope.setAction("datacenter/datastore/order/dedicatedCloud-datacenter-datastore-order", datacenter, true);
+        hasDiscount (datacenter) {
+            const hasDiscount = this.DedicatedCloud.hasDiscount(datacenter);
+            if (hasDiscount) {
+                this.$scope.discount.AMDPCC = true;
+            }
+            return hasDiscount;
         }
-    };
 
-    $scope.orderHost = (datacenter) => {
-        if (constants.target === "US") {
-            $state.go("app.dedicatedClouds.datacenter.hosts.orderUS", {
-                datacenterId: datacenter.id
-            });
-        } else {
-            $scope.setAction("datacenter/host/order/dedicatedCloud-datacenter-host-order", datacenter, true);
+        orderDatastore (datacenter) {
+            if (this.constants.target === "US") {
+                this.$state.go("app.dedicatedClouds.datacenter.datastores.orderUS", {
+                    datacenterId: datacenter.id
+                });
+            } else {
+                this.$scope.setAction("datacenter/datastore/order/dedicatedCloud-datacenter-datastore-order", datacenter, true);
+            }
         }
-    };
-});
+
+        orderHost (datacenter) {
+            if (this.constants.target === "US") {
+                this.$state.go("app.dedicatedClouds.datacenter.hosts.orderUS", {
+                    datacenterId: datacenter.id
+                });
+            } else {
+                this.$scope.setAction("datacenter/host/order/dedicatedCloud-datacenter-host-order", datacenter, true);
+            }
+        }
+    });
