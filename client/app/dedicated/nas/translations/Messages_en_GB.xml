@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nas_order_loading_error" qtlid="171968">An error has occurred loading the list of NAS available for order</translation>
+   <translation id="nas_order_title" qtlid="171981">Order a NAS</translation>
+   <translation id="nas_order_month" qtlid="37803">Month</translation>
+   <translation id="nas_can_order_warning" qtlid="192851">You don't have any services compatible with the NAS product. </translation>
+   <translation id="nas_order_migration_info" qtlid="406827">Please note to order new new HA-NAS solutions, you will need to use the "Order" button under <a href="{0}" target="_self">the Cloud tab</a></translation>
+   <translation id="nas_migration_info" qtlid="406840">Please note that you now manage your HA-NAS and buy new HA-NAS products from the Cloud tab, under the <a href="{0}" target="_self">"Platform and services"</a> section. There are also new features in this section. </translation>
+   <translation id="nas_order_nasha_1200_G" qtlid="171994">Hybrid HA-NAS 1.2 TB</translation>
+   <translation id="nas_order_nasha_13200_G" qtlid="172007">Hybrid HA-NAS 13.2 TB</translation>
+   <translation id="nas_order_nasha_2400_G" qtlid="172020">Hybrid HA-NAS 2.4 TB</translation>
+   <translation id="nas_order_nasha_300_G" qtlid="172033">Hybrid HA-NAS 300 GB</translation>
+   <translation id="nas_order_nasha_3600_G" qtlid="172046">Hybrid HA-NAS 3.6 TB</translation>
+   <translation id="nas_order_nasha_600_G" qtlid="172059">Hybrid HA-NAS 600 GB</translation>
+   <translation id="nas_order_nasha_7200_G" qtlid="172072">Hybrid HA-NAS 7.2 TB</translation>
+   <translation id="nas_order_nashaSSD" qtlid="172085">HA-NAS 100 GB SSD</translation>
+   <translation id="nas_order_nasha_19200_G" qtlid="243445">Hybrid HA-NAS 19.2 TB</translation>
+   <translation id="nas_order_nasha_26400_G" qtlid="243458">Hybrid HA-NAS 26.4 TB</translation>
+   <translation id="nas_order_nas_1000_G" qtlid="222748">1 TB NAS</translation>
+   <translation id="nas_order_nas_NFS_100_G" qtlid="172111">MiniNAS 100 GB NFS</translation>
+   <translation id="nas_order_nas_CIFS_100_G" qtlid="172137">MiniNAS 100 GB CIFS</translation>
+   <translation id="nas_order_name" qtlid="78498">Type of NAS</translation>
+   <translation id="nas_order_price" qtlid="172150">Price ex. VAT (1 month)</translation>
+   <translation id="nas_order_duration" qtlid="172163">Duration:</translation>
+   <translation id="nas_order_nas_protocol" qtlid="172176">Protocol:</translation>
+   <translation id="nas_order_nas_datacenter" qtlid="102057">Datacentre:</translation>
+   <translation id="nas_order_datacenter" qtlid="120342">Choose your datacentre:</translation>
+   <translation id="nas_order_datacenter_RBX" qtlid="120414">Roubaix</translation>
+   <translation id="nas_order_datacenter_BHS" qtlid="172189">Beauharnois</translation>
+   <translation id="nas_order_datacenter_SBG" qtlid="172202">Strasbourg</translation>
+   <translation id="nas_order_datacenter_GRA" qtlid="264192">Gravelines</translation>
+   <translation id="nas_order_button" qtlid="43558">Order</translation>
+   <translation id="nas_order_bc_loading_error" qtlid="172215">An error has occurred retrieving the purchase order</translation>
+   <translation id="nas_order_bc_resume" qtlid="172228">Your order summary:</translation>
+   <translation id="nas_order_bc_contracts" qtlid="145371">I have read and understood the following conditions:</translation>
+   <translation id="nas_order_bc_price_HT" qtlid="146177">Total price ex. VAT:</translation>
+   <translation id="nas_order_bc_price_TTC" qtlid="146190">Total price incl. VAT:</translation>
+   <translation id="nas_order_bc_finish_success" qtlid="183762">The order number <a href='{0}' target='_blank'>{1}</a> of your NAS has been registered.</translation>
+   <translation id="nas_order_bc_finish_fail" qtlid="172254">An error has occurred ordering your NAS</translation>
+   <translation id="nas_snapshot_informations_valid" qtlid="172267">Confirm modifications</translation>
+   <translation id="nas_snapshot_informations_cancel" qtlid="172280">Cancel modifications</translation>
+   <translation id="nas_dashboard_loading_error" qtlid="153584">An error has occurred loading the NAS information</translation>
+   <translation id="nas_dashboard_update_success_enabled" qtlid="244971">Monitoring has been activated</translation>
+   <translation id="nas_dashboard_update_success_disabled" qtlid="244984">Monitoring has been deactivated</translation>
+   <translation id="nas_dashboard_update_error" qtlid="244997">An error has occurred modifying NAS details</translation>
+   <translation id="nas_dashboard_ip" qtlid="167899">IP</translation>
+   <translation id="nas_dashboard_capacity" qtlid="75822">Total capacity</translation>
+   <translation id="nas_dashboard_creation_date" qtlid="26419">Creation date</translation>
+   <translation id="nas_dashboard_monitoring" qtlid="31666">Monitoring</translation>
+   <translation id="nas_tab_dashboard" qtlid="27115">General information</translation>
+   <translation id="nas_tab_partition" qtlid="120835">Partitions</translation>
+   <translation id="nas_partitions_info" qtlid="172462">About partitions</translation>
+   <translation id="nas_partitions_info_linux" qtlid="172475">on Linux:</translation>
+   <translation id="nas_partitions_info_windows" qtlid="172488">on Windows:</translation>
+   <translation id="nas_partitions_info_linux_1" qtlid="172501">make sure that your partition file system is supported</translation>
+   <translation id="nas_partitions_info_NFS" qtlid="172514">NFS partition mount:</translation>
+   <translation id="nas_partitions_info_linux_NFS" qtlid="209216">mount -t nfs {0}:/{1}/NAME_PARTITION_1 /mnt/</translation>
+   <translation id="nas_partitions_info_linux_NFS_mini" qtlid="209229">mount -t nfs {0}:/{1} /mnt/</translation>
+   <translation id="nas_partitions_info_CIFS" qtlid="172540">CIFS partition mount:</translation>
+   <translation id="nas_partitions_info_linux_CIFS" qtlid="172553">mount -t cifs //{0}/{1}_NOM_PARTITION_1 /mnt/ -ouid=nobody,gid=nogroup,password=''</translation>
+   <translation id="nas_partitions_info_linux_CIFS_mini" qtlid="184230">mount -t cifs //{0}/{1} /mnt/ -ouid=nobody,gid=nogroup,password=''</translation>
+   <translation id="nas_partitions_info_windows_CIFS" qtlid="172605">net use z: {0}{1}_NOM_PARTITION_1</translation>
+   <translation id="nas_partitions_info_windows_CIFS_mini" qtlid="184243">net use z: {0}{1}</translation>
+   <translation id="nas_partitions_no_data" qtlid="172293">No partitions available</translation>
+   <translation id="nas_partitions_no_data_error" qtlid="243643">Cannot display partitions</translation>
+   <translation id="nas_partitions_minimum_size" qtlid="153597">(10 GB min)</translation>
+   <translation id="nas_partitions_loading_error" qtlid="153610">An error has occurred loading the partitions</translation>
+   <translation id="nas_partitions_name" qtlid="3818">Name</translation>
+   <translation id="nas_partitions_name_fail" qtlid="472211">The name is invalid.</translation>
+   <translation id="nas_partitions_name_error_required" qtlid="472224">Please enter a name.</translation>
+   <translation id="nas_partitions_protocol" qtlid="19711">Protocol</translation>
+   <translation id="nas_partitions_protocol_CIFS" qtlid="176740">CIFS</translation>
+   <translation id="nas_partitions_protocol_NFS" qtlid="6778">NFS</translation>
+   <translation id="nas_partitions_protocol_NFS_CIFS" qtlid="176753">NFS CIFS</translation>
+   <translation id="nas_partitions_protocol_error_required" qtlid="472237">Please enter a protocol.</translation>
+   <translation id="nas_partitions_size" qtlid="7726">Size</translation>
+   <translation id="nas_partitions_size_in_Gb" qtlid="153623">Size (GB)</translation>
+   <translation id="nas_partitions_size_error_required" qtlid="472250">Please enter a size in GB.</translation>
+   <translation id="nas_partitions_size_error_min_max" qtlid="472263">The size must be between {0} and {1} GB.</translation>
+   <translation id="nas_partitions_action_update" qtlid="172319">Modify size</translation>
+   <translation id="nas_partitions_action_display_access" qtlid="153636">Display access</translation>
+   <translation id="nas_partitions_action_display_snapshot" qtlid="172332">Frequency of snapshots</translation>
+   <translation id="nas_partitions_action_delete" qtlid="2414">Delete</translation>
+   <translation id="nas_partitions_action_add" qtlid="120919">Create a partition</translation>
+   <translation id="nas_partitions_action_add_partition_title" qtlid="153662">Choose a protocol</translation>
+   <translation id="nas_partitions_action_add_partition_desc" qtlid="183775"><ul><li>CIFS: exchange protocol for Windows servers</li><li>NFS: exchange protocol for Linux/Unix servers</li><li>NFS_CIFS: enables shared exchange between Windows and Linux/Unix servers</li></ul></translation>
+   <translation id="nas_partitions_action_add_confirmation" qtlid="153688">Are you sure you want to add the following partition:</translation>
+   <translation id="nas_partitions_action_add_success" qtlid="153701">The partition {0} will be added shortly</translation>
+   <translation id="nas_partitions_action_add_failure" qtlid="153714">An error occurred on creating the partition {0}.</translation>
+   <translation id="nas_partitions_action_add_init" qtlid="243656">An error occurred when retrieving information on adding a partition.</translation>
+   <translation id="nas_partitions_action_update_confirmation" qtlid="153740">Are you sure you want to change the size of the partition {0} to {1} GB?</translation>
+   <translation id="nas_partitions_action_update_success" qtlid="153753">The size of the partition {0} will be updated shortly</translation>
+   <translation id="nas_partitions_action_update_failure" qtlid="153766">An error occurred on updating the size of the partition {0}.</translation>
+   <translation id="nas_partitions_action_delete_title" qtlid="153779">Delete a partition</translation>
+   <translation id="nas_partitions_action_delete_confirmation" qtlid="153792">Are you sure you want to delete the partition {0}?</translation>
+   <translation id="nas_partitions_action_delete_success" qtlid="172345">The partition {0} will be deleted shortly.</translation>
+   <translation id="nas_partitions_action_delete_failure" qtlid="153818">An error occurred on deleting the partition {0}</translation>
+   <translation id="nas_access_loading_error" qtlid="153831">An error has occurred loading the access</translation>
+   <translation id="nas_ip_loading_error" qtlid="467170">An error has occurred loading addresses and IP ranges.</translation>
+   <translation id="nas_access_of" qtlid="153844">Authorise IP addresses on the partition {0}</translation>
+   <translation id="nas_access_ip" qtlid="167899">IP</translation>
+   <translation id="nas_access_action_add" qtlid="153857">Add an access</translation>
+   <translation id="nas_access_action_add_message" qtlid="383906">Add an address or an IP block</translation>
+   <translation id="nas_access_action_add_confirmation" qtlid="153883">Are you sure you want to add the access {0}?</translation>
+   <translation id="nas_access_action_add_success" qtlid="153896">The access {0} will be created shortly.</translation>
+   <translation id="nas_access_action_add_failure" qtlid="153909">An error occurred on creating the access {0}</translation>
+   <translation id="nas_access_action_delete_title" qtlid="153922">Delete an access</translation>
+   <translation id="nas_access_action_delete_confirmation" qtlid="153935">Are you sure you want to remove the access {0}?</translation>
+   <translation id="nas_access_action_delete_success" qtlid="153948">Removal of the access{0} will be effective shortly.</translation>
+   <translation id="nas_access_action_delete_failure" qtlid="153961">An error occurred on removing the access {0}.</translation>
+   <translation id="nas_snapshot_loading_error" qtlid="153974">An error occurred on retrieving the snapshots.</translation>
+   <translation id="nas_snapshot_info" qtlid="172579">About snapshots</translation>
+   <translation id="nas_snapshot_informations" qtlid="172358">A snapshot is an instantaneous capture of the status of your NAS, at the precise moment that the snapashot is taken.</translation>
+   <translation id="nas_snapshot_informations_size" qtlid="172371">Warning: snapshots use up space on your partition in order to function properly. No snapshot history is saved: for snapshots of the same frequency, the last snapshot taken will overwrite the previous one.</translation>
+   <translation id="nas_snapshot_type" qtlid="172384">Snapshot frequency</translation>
+   <translation id="nas_snapshot_of" qtlid="154013">Snapshot of the partition {0}</translation>
+   <translation id="nas_snapshot_action_add" qtlid="154026">Add a snapshot</translation>
+   <translation id="nas_snapshot_set_success" qtlid="172397">The snapshot frequency modification will take effect shortly.</translation>
+   <translation id="nas_snapshot_set_failure" qtlid="243669">An error occurred when updating the snapshot intervals. Not updated: {0}</translation>
+   <translation id="nas_snapshot_set_success_fail" qtlid="172423">An error occurred on modifying some frequencies.</translation>
+   <translation id="nas_snapshot_informations_task" qtlid="172436">Frequency modification has been temporarily disabled as there are tasks in progress.</translation>
+   <translation id="nas_snapshot_access_no_data" qtlid="172449">No access available</translation>
+   <translation id="nas_snapshot_access_no_data_error" qtlid="243682">Cannot display accesses.</translation>
+   <translation id="nas_snapshot_day-1" qtlid="154091">Every day</translation>
+   <translation id="nas_snapshot_day-2" qtlid="154104">Every 2 days</translation>
+   <translation id="nas_snapshot_day-3" qtlid="154117">Every 3 days</translation>
+   <translation id="nas_snapshot_day-7" qtlid="8806">Weekly</translation>
+   <translation id="nas_snapshot_hour-1" qtlid="8782">Hourly</translation>
+   <translation id="nas_snapshot_hour-6" qtlid="154130">Every 6 hours</translation>
+
+   <translation id="nas_dashboard_general_informations_tile_title" qtlid="27115">General information</translation>
+</translations>
