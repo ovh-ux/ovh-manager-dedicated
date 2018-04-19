@@ -5,6 +5,11 @@
                      data-title="{{:: tr('dedicatedCloud_host_order_title') }}">
     </oui-back-button>
     <div data-ovh-alert></div>
+    <oui-message class="d-block mb-4"
+                 data-type="info"
+                 data-ng-if="$ctrl.user.isEnterprise"
+                 data-i18n-static="core_user_enterprise_retail_prices_hpc">
+    </oui-message>
     <p data-i18n-static="dedicatedCloud_host_order_info"></p>
     <p data-i18n-static="dedicatedCloud_host_order_select"></p>
     <oui-datagrid data-rows-loader="$ctrl.fetchDatagridOffers()">

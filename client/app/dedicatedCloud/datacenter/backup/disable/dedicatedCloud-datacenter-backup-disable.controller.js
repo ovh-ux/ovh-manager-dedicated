@@ -1,9 +1,9 @@
 angular.module("App").controller("DedicatedCloudSubDatacenterVeeamBackupDisableCtrl", class {
 
-    constructor ($stateParams, $uibModalInstance, translator, Alerter, DedicatedCloud) {
+    constructor ($stateParams, $state, translator, Alerter, DedicatedCloud) {
         // dependencies injections
         this.$stateParams = $stateParams;
-        this.$uibModalInstance = $uibModalInstance;
+        this.$state = $state;
         this.translator = translator;
         this.Alerter = Alerter;
         this.DedicatedCloud = DedicatedCloud;
@@ -30,8 +30,12 @@ angular.module("App").controller("DedicatedCloudSubDatacenterVeeamBackupDisableC
             this.Alerter.error(this.translator.tr("dedicatedCloud_tab_veeam_disable_fail", this.datacenter.name), error, "dedicatedCloudDatacenterAlert");
         }).finally(() => {
             this.loading.disable = false;
-            this.$uibModalInstance.close();
+            this.onCancelBtnClick();
         });
+    }
+
+    onCancelBtnClick () {
+        this.$state.go("^");
     }
 
     /* -----  End of EVENTS  ------ */

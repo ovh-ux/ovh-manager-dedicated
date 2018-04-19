@@ -64,7 +64,9 @@
                             <oui-message dismissable="true"
                                          data-ng-if="userAlerts.messages"
                                          data-type="{{ userAlerts.type }}">
-                                <ul class="list-unstyled">
+                                <ul data-ng-class="{
+                                    'list-unstyled': userAlerts.messages.length === 1
+                                }">
                                     <li data-ng-repeat="text in userAlerts.messages track by $index"
                                         data-ng-bind-html="text">
                                     </li>
@@ -122,6 +124,8 @@
         </div>
 
         <div data-ng-include="'components/feedback/feedback.html'"></div>
+
+        <div data-otrs-popup></div>
 
         <% if (prodMode) { %>
             <script type="text/javascript">window.console={error:function(){},log:function(){},debug:function(){},warn:function(){},dir:function(){},info:function(){},assert:function(){},clear: function(){}};</script>

@@ -1,10 +1,10 @@
 angular.module("App")
     .controller("DedicatedServerRebootCtrl", class DedicatedServerRebootCtrl {
-        constructor ($q, $scope, $stateParams, $uibModalInstance, Alerter, Server) {
+        constructor ($q, $scope, $stateParams, $state, Alerter, Server) {
             this.$q = $q;
             this.$scope = $scope;
             this.$stateParams = $stateParams;
-            this.$uibModalInstance = $uibModalInstance;
+            this.$state = $state;
             this.Alerter = Alerter;
             this.Server = Server;
         }
@@ -49,11 +49,7 @@ angular.module("App")
                 });
         }
 
-        cancel (reason = null) {
-            return this.$uibModalInstance.dismiss(reason);
-        }
-
         close () {
-            return this.$uibModalInstance.close(true);
+            return this.$state.go("^");
         }
     });

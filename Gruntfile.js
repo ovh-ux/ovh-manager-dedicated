@@ -9,7 +9,6 @@ module.exports = function (grunt) {
     const assets = require("./Assets");
     const constants = require("./constants.config");
 
-    const Async = require("async");
     const Http = require("http");
     const Https = require("https");
     const glob = require("glob");
@@ -570,7 +569,8 @@ module.exports = function (grunt) {
                         vrackUrl: constants[target].vrackUrl,
                         nashaUrl: constants[target].nashaUrl,
                         MANAGER_URLS: constants[target].MANAGER_URLS,
-                        NO_AUTORENEW_COUNTRIES: constants[target].NO_AUTORENEW_COUNTRIES
+                        NO_AUTORENEW_COUNTRIES: constants[target].NO_AUTORENEW_COUNTRIES,
+                        REDIRECT_URLS: constants[target].REDIRECT_URLS
                     },
                     LANGUAGES: constants[target].LANGUAGES,
                     website_url: constants[target].website_url
@@ -733,7 +733,8 @@ module.exports = function (grunt) {
                         vrackUrl: constants[target].vrackUrl,
                         nashaUrl: constants[target].nashaUrl,
                         MANAGER_URLS: constants[target].MANAGER_URLS,
-                        NO_AUTORENEW_COUNTRIES: constants[target].NO_AUTORENEW_COUNTRIES
+                        NO_AUTORENEW_COUNTRIES: constants[target].NO_AUTORENEW_COUNTRIES,
+                        REDIRECT_URLS: constants[target].REDIRECT_URLS
                     },
                     LANGUAGES: constants[target].LANGUAGES,
                     website_url: constants[target].website_url
@@ -969,92 +970,6 @@ module.exports = function (grunt) {
         }
     });
 
-    function pingUrl (toPing, next) {
-        let getter;
-        grunt.verbose.writeln("ping url \"%s\"", toPing.url);
-
-        if (/^https/.test(toPing.url)) {
-            getter = Https;
-        } else {
-            getter = Http;
-        }
-
-        getter.get(toPing.url, (res) => {
-            grunt.log.write(".");
-            toPing.result = res.statusCode;
-            if (res.statusCode === 301) {
-                grunt.log.writeln(" ");
-                grunt.log.warn("%s | \"%s\" -> %s", toPing.path, toPing.url, res.statusCode);
-                grunt.log.warn(" please update to \"%s\"", res.headers.location);
-            } else if (res.statusCode > 399) {
-                grunt.log.writeln(" ");
-                grunt.log.error("%s | \"%s\" -> %s", toPing.path, toPing.url, res.statusCode);
-            }
-            next();
-        }).on("error", (e) => {
-            grunt.log.writeln(" ");
-            grunt.log.warn("%s | \"%s\" -> Error.", toPing.path, toPing.url);
-            next(e);
-        });
-    }
-
-    function deepSearchAndFollowLink (thing, result, path) {
-        if (!result) {
-            throw new Error("deepSearchAndFollowLink(): missing a ref to push url and path to check.");
-        }
-        if (!thing) {
-            return null;
-        }
-        if (!path) {
-            path = "";
-        }
-
-        switch (typeof thing) {
-        case "string":
-            if (/^https?:\/\//.test(thing) && !/\{\w+\}/.test(thing)) {
-                result.push({ path, url: thing, result: null });
-            }
-            break;
-        case "object":
-            _.forEach(thing, (value, key) => {
-                deepSearchAndFollowLink(value, result, [path, ".", key].join(""));
-            });
-            break;
-        default:
-            /* nothing to do */
-            break;
-        }
-
-    }
-
-    grunt.registerTask("checkUrlsInConstants", "ping all urls found in ./constants.config.js", function () {
-        const constants = require("./constants.config.js");
-        const linksToPing = [];
-        const done = this.async();
-
-        grunt.verbose.writeln("collect all url in constants.");
-        deepSearchAndFollowLink(constants, linksToPing);
-        grunt.log.writeln("%d urls collected.", linksToPing.length);
-
-        grunt.log.writeln("ping of urls, please be patient:");
-        Async.eachLimit(linksToPing, 100, pingUrl, (err) => {
-            let errors;
-            if (err) {
-                grunt.log.error("Unable to ping all urls", err);
-                return done(false);
-            }
-
-            errors = _.filter(linksToPing, (p) => !p.result || p.result > 399);
-            grunt.log.writeln(" done.");
-            grunt.log.ok("%d tested urls", linksToPing.length);
-            if (errors && errors.length) {
-                grunt.log.error("%d urls in error.", errors.length);
-                return done(false);
-            }
-            done(true);
-        });
-    });
-
     grunt.registerTask("test", (target, option) => {
         if (target === "e2e") {
 
@@ -1078,8 +993,7 @@ module.exports = function (grunt) {
 
         }
         return grunt.task.run([
-            "eslint"/* ,
-                "checkUrlsInConstants"*/
+            "eslint"
         ]);
 
     });

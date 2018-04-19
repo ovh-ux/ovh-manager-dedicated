@@ -10,6 +10,7 @@ angular.module("App").config(($stateProvider) => {
                 templateUrl: "dedicatedCloud/dashboard/dedicatedCloud-dashboard.html"
             }
         },
+        reloadOnSearch: false,
         resolve: {
             translator: [
                 "translator",

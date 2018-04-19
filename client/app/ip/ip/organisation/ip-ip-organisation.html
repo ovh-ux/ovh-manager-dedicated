@@ -1,38 +1,32 @@
-<div data-ng-controller="IpOrganisationCtrl">
-
-    <button class="btn btn-default"
-            data-ng-click="hideOrganisation()"
-            title="{{:: 'common_back' | UAi18n }}">
-        <i class="fa fa-chevron-left"
-           aria-hidden="true">
-        </i>
-        <span data-i18n-static="common_back"></span>
+<div data-ng-controller="IpOrganisationCtrl as $ctrl">
+    <oui-back-button data-title="{{:: tr('ip_organisation_title') }}"
+                     data-on-click="$ctrl.hideOrganisation()">
+    </oui-back-button>
+    <button class="btn btn-default mb-4"
+            type="button"
+            data-ng-click="setAction('ip/organisation/add-or-edit/ip-ip-organisation-add-or-edit')"
+            data-i18n-static="ip_organisation_add">
     </button>
-
-    <h4 data-i18n-static="ip_organisation_title"></h4>
-
-    <div class="form-group">
-        <button class="btn btn-primary"
-                type="button"
-                data-ng-click="setAction('ip/organisation/add-or-edit/ip-ip-organisation-add-or-edit')"
-                data-i18n-static="ip_organisation_add">
-        </button>
-    </div>
-
     <div class="table-responsive">
-        <table id="module-table-multi"
-               class="table table-hover">
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th scope="col"></th>
-                    <th scope="col" data-i18n-static="ip_organisation_table_organisation"></th>
-                    <th scope="col" data-i18n-static="ip_organisation_table_type"></th>
-                    <th scope="col" data-i18n-static="ip_organisation_table_lastname"></th>
-                    <th scope="col" data-i18n-static="ip_organisation_table_abuse"></th>
-                    <th scope="col" ></th>
+                    <th scope="col"
+                        data-i18n-static="ip_organisation_table_organisation">
+                    </th>
+                    <th scope="col"
+                        data-i18n-static="ip_organisation_table_type">
+                    </th>
+                    <th scope="col"
+                        data-i18n-static="ip_organisation_table_lastname">
+                    </th>
+                    <th scope="col"
+                        data-i18n-static="ip_organisation_table_abuse">
+                    </th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
-
             <tbody data-ng-show="loadingOrganisation">
                 <tr>
                     <td colspan="6"
@@ -41,7 +35,6 @@
                     </td>
                 </tr>
             </tbody>
-
             <tbody data-ng-show="!organisations.length && !loadingOrganisation">
                 <tr>
                     <td colspan="6"
@@ -50,7 +43,6 @@
                     </td>
                 </tr>
             </tbody>
-
             <tbody data-ng-show="!loadingOrganisation"
                    data-ng-repeat="organisation in organisations">
                 <tr>
@@ -60,8 +52,8 @@
                                 data-ng-click="open = !open">
                             <span class="fa"
                                data-ng-class="{
-                                   'fa-plus': !open,
-                                   'fa-minus': open
+                                   'fa-chevron-right': !open,
+                                   'fa-chevron-down': open
                                }"
                                aria-hidden="true">
                             </span>
@@ -75,26 +67,33 @@
                     </td>
                     <td data-ng-bind="organisation.abuse_mailbox"></td>
                     <td>
-                        <button class="btn btn-link"
-                                type="button"
-                                data-uib-tooltip="{{i18n.ip_organisation_edit}}"
-                                data-ng-click="setAction('ip/organisation/add-or-edit/ip-ip-organisation-add-or-edit', organisation)">
-                            <i class="fa fa-edit"></i>
-                        </button>
+                        <oui-action-menu data-align="end"
+                                         data-compact>
+                            <oui-action-menu-item data-text="{{:: tr('ip_organisation_edit') }}"
+                                                  data-on-click="setAction('ip/organisation/add-or-edit/ip-ip-organisation-add-or-edit', organisation)">
+                            </oui-action-menu-item>
+                        </oui-action-menu>
                     </td>
                 </tr>
                 <tr data-ng-show="open">
                     <td></td>
-                    <td colspan="2" data-i18n-static="ip_organisation_table_phone"></td>
-                    <td colspan="3" data-i18n-static="ip_organisation_table_address"></td>
+                    <td colspan="2"
+                        data-i18n-static="ip_organisation_table_phone">
+                    </td>
+                    <td colspan="3"
+                        data-i18n-static="ip_organisation_table_address">
+                    </td>
                 </tr>
                 <tr data-ng-show="open">
                     <td></td>
-                    <td colspan="2" data-ng-bind="organisation.phone"></td>
-                    <td colspan="3" data-ng-bind="organisation | address"></td>
+                    <td colspan="2"
+                        data-ng-bind="organisation.phone">
+                    </td>
+                    <td colspan="3"
+                        data-ng-bind="organisation | address">
+                    </td>
                 </tr>
             </tbody>
         </table>
-
     </div>
 </div>
