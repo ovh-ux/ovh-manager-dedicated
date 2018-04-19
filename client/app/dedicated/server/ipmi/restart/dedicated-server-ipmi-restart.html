@@ -3,7 +3,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="restartIpmi"
-         data-wizard-title="tr('server_configuration_impi_restart_title')"
+         data-wizard-title="{{ 'server_configuration_impi_restart_title' | translate }}"
          data-wizard-hide-cancel-button="loading">
 
         <div data-wizard-step
@@ -15,7 +15,7 @@
             </div>
 
             <p data-ng-if="!loading"
-               data-ng-bind-html="tr('server_configuration_impi_restart_information')">
+               data-ng-bind-html="{{ 'server_configuration_impi_restart_information' | translate }}">
             </p>
 
         </div>

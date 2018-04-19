@@ -3,9 +3,9 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="displayBC"
-         data-wizard-title="i18n.cdn_configuration_backend_upgrade_title"
+         data-wizard-title="{{ 'cdn_configuration_backend_upgrade_title' | translate }}"
          data-wizard-bread-crumb
-         data-wizard-confirm-button-text="i18n.wizard_pay">
+         data-wizard-confirm-button-text="{{ 'wizard_pay' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-on-load="loadBackendPrice"
@@ -19,7 +19,7 @@
             <div data-ng-if="price">
                 <label for="count"
                        class="control-label"
-                       data-i18n-static="cdn_configuration_backend_upgrade_step1_explanation">
+                       data-translate="cdn_configuration_backend_upgrade_step1_explanation">
                 </label>
                 <input type="number"
                        class="form-control"
@@ -27,7 +27,7 @@
                        max="1000"
                        data-ng-model="choices.count"
                        data-ng-pattern="/^[0-9]{1,4}$/" />
-                <span data-i18n-static="cdn_configuration_backend_upgrade_step1_tarif"></span>
+                <span data-translate="cdn_configuration_backend_upgrade_step1_tarif"></span>
                 <span class="text-danger"
                       data-ng-bind="tr('cdn_configuration_backend_upgrade_step1_tarif2', [price.unitaryPrice])">
                 </span>
@@ -69,26 +69,26 @@
 
             <p data-ng-bind-html="tr('cdn_configuration_backend_upgrade_step3_question', [choices.count, cdn.serviceName])"></p>
             <dl>
-                <dt data-i18n-static="cdn_configuration_backend_upgrade_step3_totalHT"></dt>
+                <dt data-translate="cdn_configuration_backend_upgrade_step3_totalHT"></dt>
                 <dd class="text-danger"
                     data-ng-bind="choices.order.withoutTax">
                 </dd>
-                <dt data-i18n-static="cdn_configuration_backend_upgrade_step3_totalTTC"></dt>
+                <dt data-translate="cdn_configuration_backend_upgrade_step3_totalTTC"></dt>
                 <dd class="text-danger"
                     data-ng-bind="choices.order.withTax">
                 </dd>
             </dl>
-            <p data-i18n-static="cdn_configuration_backend_upgrade_step3_id"></p>
+            <p data-translate="cdn_configuration_backend_upgrade_step3_id"></p>
             <div class="checkbox">
                 <label>
                     <input type="checkbox"
                            data-ng-model="contractsValidated.value" />
-                    <span data-i18n-static="cdn_configuration_backend_upgrade_step3_contracts"></span>
+                    <span data-translate="cdn_configuration_backend_upgrade_step3_contracts"></span>
                     <span data-ng-repeat="contract in choices.order.contracts">
                         <span data-ng-show="($index+1) == choices.order.contracts.length"
-                              data-i18n-static="cdn_configuration_backend_upgrade_step3_contracts_and">
+                              data-translate="cdn_configuration_backend_upgrade_step3_contracts_and">
                         </span>
-                        <span data-i18n-static="cdn_configuration_backend_upgrade_step3_contracts_of"></span>
+                        <span data-translate="cdn_configuration_backend_upgrade_step3_contracts_of"></span>
                         <a target="_blank"
                            href="{{ contract.url }}"
                            data-ng-bind="contract.name">
@@ -109,14 +109,14 @@
             <div class="text-center"
                  data-ng-if="!url">
                 <oui-spinner></oui-spinner>
-                <p data-i18n-static="cdn_configuration_backend_upgrade_step4_generation_bc"></p>
+                <p data-translate="cdn_configuration_backend_upgrade_step4_generation_bc"></p>
             </div>
 
             <div data-ng-if="url">
-                <p data-i18n-static="cdn_configuration_backend_upgrade_step4_bc"></p>
-                <p data-i18n-static="cdn_configuration_backend_upgrade_step4_continue"></p>
-                <p data-i18n-static="cdn_configuration_backend_upgrade_step4_explication2"></p>
-                <em data-i18n-static="cdn_configuration_backend_upgrade_step4_explication"></em>
+                <p data-translate="cdn_configuration_backend_upgrade_step4_bc"></p>
+                <p data-translate="cdn_configuration_backend_upgrade_step4_continue"></p>
+                <p data-translate="cdn_configuration_backend_upgrade_step4_explication2"></p>
+                <em data-translate="cdn_configuration_backend_upgrade_step4_explication"></em>
             </div>
 
         </div>

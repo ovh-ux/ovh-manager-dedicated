@@ -1,6 +1,4 @@
-angular.module("Billing.controllers").controller("Billing.controllers.OvhAccount", ($scope, $filter, $timeout, translator, BILLING_BASE_URL, BillingOvhAccount, User, BillingmessageParser, BillingdateRangeSelection) => {
-    const tr = translator.tr;
-
+angular.module("Billing.controllers").controller("Billing.controllers.OvhAccount", ($scope, $filter, $timeout, $translate, BILLING_BASE_URL, BillingOvhAccount, User, BillingmessageParser, BillingdateRangeSelection) => {
     $scope.ovhAccountLoading = false;
     $scope.ovhAccountsLoading = false;
     $scope.ovhAccount = {
@@ -37,7 +35,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.OvhAccount
                 }
             })
             .catch((err) => {
-                $scope.setMessage(tr("ovhAccount_get_accounts_error"), err.data);
+                $scope.setMessage($translate.instant("ovhAccount_get_accounts_error"), err.data);
             })
             .finally(() => {
                 $scope.ovhAccountsLoading = false;
@@ -63,7 +61,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.OvhAccount
                 $scope.ovhAccount.model = account;
             })
             .catch((err) => {
-                $scope.setMessage(tr("ovhAccount_renew_step2_error"), err.data);
+                $scope.setMessage($translate.instant("ovhAccount_renew_step2_error"), err.data);
             })
             .finally(() => {
                 $scope.ovhAccountLoading = false;
@@ -122,7 +120,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.OvhAccount
     };
 
     $scope.getDatasToExport = function () {
-        const datasToReturn = [[$scope.tr("ovhAccount_table_head_id"), $scope.tr("ovhAccount_table_head_date"), $scope.tr("ovhAccount_table_head_debit"), $scope.tr("ovhAccount_table_head_credit")]];
+        const datasToReturn = [[$translate.instant("ovhAccount_table_head_id"), $translate.instant("ovhAccount_table_head_date"), $translate.instant("ovhAccount_table_head_debit"), $translate.instant("ovhAccount_table_head_credit")]];
         $scope.csvLoading = true;
         return BillingOvhAccount.getBillingOvhAccount({
             count: 0,

@@ -6,7 +6,7 @@
 
     <div data-ovh-alert="{{ alerts.upgrade }}"></div>
 
-    <a title="{{ i18n.license_upgrade_title }}"
+    <a title="{{ 'license_upgrade_title' | translate }}"
        data-ui-sref="app.license.dashboard">
        <span class="fa fa-chevron-left mr-2"
              aria-hidden="true">
@@ -180,7 +180,7 @@
                         <label>
                             <input type="checkbox"
                                    data-ng-model="contractsValidated.value" />
-                            {{ i18n.license_order_step4_contracts_check }}
+                            {{ 'license_order_step4_contracts_check' | translate }}
                         </label>
                     </div>
                 </div>

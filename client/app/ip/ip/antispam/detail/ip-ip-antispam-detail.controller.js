@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpAntispamDetailsCtrl", ($scope, Ip, IpSpam, $timeout, Alerter) => {
+angular.module("Module.ip.controllers").controller("IpAntispamDetailsCtrl", ($scope, $translate, Ip, IpSpam, $timeout, Alerter) => {
     $scope.tableLoading = false;
     $scope.details = null;
     $scope.pageSizes = [5, 10, 15];
@@ -39,7 +39,7 @@ angular.module("Module.ip.controllers").controller("IpAntispamDetailsCtrl", ($sc
             (reason) => {
                 $scope.tableLoading = false;
                 $scope.resetAction();
-                Alerter.alertFromSWS($scope.tr("server_configuration_mitigation_auto_success"), reason);
+                Alerter.alertFromSWS($translate.instant("server_configuration_mitigation_auto_success"), reason);
             }
         );
     };

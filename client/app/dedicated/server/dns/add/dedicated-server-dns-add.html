@@ -3,9 +3,9 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addSecondaryDns"
-         data-wizard-title="i18n.server_configuration_add_secondary_dns_title"
+         data-wizard-title="{{ 'server_configuration_add_secondary_dns_title' | translate }}"
          data-wizard-bread-crumb
-         data-wizard-confirm-button-text="i18n.server_configuration_secondarydns_confirm_button_text">
+         data-wizard-confirm-button-text="{{ 'server_configuration_secondarydns_confirm_button_text' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-on-load="loadIpList"
@@ -17,11 +17,11 @@
             </div>
 
             <div data-ng-if="!loading">
-                <p data-i18n-static="server_configuration_secondarydns_add_step1"></p>
+                <p data-translate="server_configuration_secondarydns_add_step1"></p>
                 <form name="addForm">
                     <div class="form-group">
                         <label class="control-label"
-                               data-i18n-static="server_configuration_secondarydns_ip">
+                               data-translate="server_configuration_secondarydns_ip">
                         </label>
                         <div class="type-off input-block-level"
                              data-type-off
@@ -44,7 +44,7 @@
                     <div class="form-group">
                         <label for="domain"
                                class="control-label"
-                               data-i18n-static="server_configuration_secondarydns_domain">
+                               data-translate="server_configuration_secondarydns_domain">
                         </label>
                         <input type="text"
                                class="form-control"
@@ -83,11 +83,11 @@
             </div>
 
              <div data-ng-if="!loading">
-                <p data-i18n-static="server_configuration_secondarydns_add_step3"></p>
+                <p data-translate="server_configuration_secondarydns_add_step3"></p>
                 <dl>
-                    <dt data-i18n-static="server_configuration_secondarydns_ip"></dt>
+                    <dt data-translate="server_configuration_secondarydns_ip"></dt>
                     <dd data-ng-bind="entry.ip"></dd>
-                    <dt data-i18n-static="server_configuration_secondarydns_domain"></dt>
+                    <dt data-translate="server_configuration_secondarydns_domain"></dt>
                     <dd data-ng-bind-html="entry.domain"></dd>
                 </dl>
             </div>

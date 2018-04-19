@@ -3,14 +3,14 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="modifyPolicyLogout"
-         data-wizard-title="i18n.dedicatedCloud_configuration_security_policy_logout_title">
+         data-wizard-title="{{ 'dedicatedCloud_configuration_security_policy_logout_title' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-valid="policyLogoutCtrl.selectedLogoutPolicy.value">
 
             <label for="logoutPolicy"
                    class="control-label"
-                   data-i18n-static="dedicatedCloud_configuration_security_policy_logout_step1_question">
+                   data-translate="dedicatedCloud_configuration_security_policy_logout_step1_question">
             </label>
             <select class="form-control"
                     id="logoutPolicy"
@@ -19,7 +19,7 @@
                     data-ng-model="policyLogoutCtrl.selectedLogoutPolicy.value">
                 <option value=""
                         data-ng-disabled="true"
-                        data-i18n-static="dedicatedCloud_configuration_security_policy_logout_step1_value">
+                        data-translate="dedicatedCloud_configuration_security_policy_logout_step1_value">
                 </option>
             </select>
 

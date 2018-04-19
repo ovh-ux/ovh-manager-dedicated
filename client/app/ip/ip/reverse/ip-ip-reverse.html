@@ -2,23 +2,23 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addIpv6ReverseDelegation"
-         data-wizard-title="i18n.ip_table_manage_delegation_ipv6block">
+         data-wizard-title="{{ 'ip_table_manage_delegation_ipv6block' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-valid="isValid()">
 
             <p class="alert alert-info"
                role="alert"
-               data-i18n-static="ip_table_manage_delegation_ipv6block_limit">
+               data-translate="ip_table_manage_delegation_ipv6block_limit">
             </p>
 
             <form>
                 <div class="form-group">
                     <label class="control-label"
-                           data-i18n-static="ip_table_manage_delegation_ipv6block_reverse_dns">
+                           data-translate="ip_table_manage_delegation_ipv6block_reverse_dns">
                     </label>
                     <p data-ng-show="model.reverses.length === 0"
-                       data-i18n-static="ip_table_manage_delegation_ipv6block_no_reverse">
+                       data-translate="ip_table_manage_delegation_ipv6block_no_reverse">
                     </p>
                     <ul data-ng-show="model.reverses.length > 0"
                         class="list-unstyled">
@@ -26,10 +26,10 @@
                             <strong data-ng-bind="reverse"></strong>
                             <button type="button"
                                     class="btn btn-link"
-                                    title="{{:: 'common_delete' | UAi18n }}"
+                                    title="{{:: 'common_delete' | translate }}"
                                     data-ng-click="deleteReverse(reverse)">
                                 <i class="fa fa-trash"
-                                   aria-label="{{:: 'common_delete' | UAi18n }}"
+                                   aria-label="{{:: 'common_delete' | translate }}"
                                    aria-hidden="true">
                                 </i>
                             </button>
@@ -43,7 +43,7 @@
                      }">
                     <label class="control-label"
                            for="reverse"
-                           data-i18n-static="ip_table_manage_delegation_ipv6block_add_reverse">
+                           data-translate="ip_table_manage_delegation_ipv6block_add_reverse">
                     </label>
                     <input type="text"
                            id="reverse"
@@ -52,16 +52,16 @@
                     <button type="button"
                             class="btn btn-block btn-default"
                             data-ng-disabled="model.reverses.length >= 2"
-                            data-i18n-static="global_add"
+                            data-translate="global_add"
                             data-ng-click="addReverse()">
                     </button>
                     <div class="text-danger"
                          role="alert">
                         <p data-ng-show="errors.INVALID_DNS"
-                           data-i18n-static="ip_table_manage_delegation_err_INVALID_REVERSE">
+                           data-translate="ip_table_manage_delegation_err_INVALID_REVERSE">
                         </p>
                         <p data-ng-show="errors.ALREADY_EXISTS"
-                           data-i18n-static="ip_table_manage_delegation_err_ALREADY_EXISTS">
+                           data-translate="ip_table_manage_delegation_err_ALREADY_EXISTS">
                         </p>
                     </div>
                 </div>
@@ -76,12 +76,12 @@
 
             <p class="alert alert-info"
                role="alert"
-               data-i18n-static="ip_table_manage_delegation_ipv6block_resume">
+               data-translate="ip_table_manage_delegation_ipv6block_resume">
             </p>
 
             <dl class="dl-horizontal">
                 <dt data-ng-if="reversesToAdd.length > 0"
-                    data-i18n-static="ip_table_manage_delegation_ipv6block_to_add"></dt>
+                    data-translate="ip_table_manage_delegation_ipv6block_to_add"></dt>
                 <dd data-ng-if="reversesToAdd.length > 0">
                     <ul>
                         <li data-ng-repeat="reverse in reversesToAdd"
@@ -90,7 +90,7 @@
                     </ul>
                 </dd>
                 <dt data-ng-if="reversesToDelete.length > 0"
-                    data-i18n-static="ip_table_manage_delegation_ipv6block_to_delete"></dt>
+                    data-translate="ip_table_manage_delegation_ipv6block_to_delete"></dt>
                 <dd data-ng-if="reversesToDelete.length > 0">
                     <ul>
                         <li data-ng-repeat="reverse in reversesToDelete"

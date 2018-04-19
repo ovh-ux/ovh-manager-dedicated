@@ -1,9 +1,10 @@
 angular.module("UserAccount.controllers").controller("UserAccount.controllers.doubleAuth.totp.edit", [
     "$rootScope",
     "$scope",
+    "$translate",
     "UserAccount.services.doubleAuth.totp",
     "Alerter",
-    function ($rootScope, $scope, DoubleAuthTotpService, Alerter) {
+    function ($rootScope, $scope, $translate, DoubleAuthTotpService, Alerter) {
         "use strict";
 
         $scope.totp = {
@@ -39,7 +40,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
                     Alerter.success($scope.tr("", "doubleAuthAlertTotp"));
                     $rootScope.$broadcast("doubleAuthTOTP.reload");
                 })
-                .catch((err) => Alerter.alertFromSWS($scope.tr("user_security_double_auth_totp_edit_error"), err.data, "doubleAuthAlertTotp"))
+                .catch((err) => Alerter.alertFromSWS($translate.instant("user_security_double_auth_totp_edit_error"), err.data, "doubleAuthAlertTotp"))
                 .finally(() => {
                     $scope.totp.isEditing = false;
                     $scope.resetAction();

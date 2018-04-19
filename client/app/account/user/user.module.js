@@ -129,12 +129,10 @@ angular
     ])
     .run([
         "$controller",
-        "translator",
         "UserAccount.constants",
         "$rootScope",
-        function ($controller, translator, userAccountConstants, $rootScope) {
+        function ($controller, userAccountConstants, $rootScope) {
             "use strict";
-            translator.load(["useraccount", "countries", "newAccountForm"]);
             $rootScope.target = userAccountConstants.target;
             $rootScope.worldPart = userAccountConstants.target;
         }

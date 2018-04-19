@@ -4,7 +4,7 @@
          data-wizard-on-cancel="cancel"
          data-wizard-on-finish="validateBackupCode"
          data-wizard-bread-crumb
-         data-wizard-title="i18n.user_account_security_double_auth_type_backup_code_modal_title">
+         data-wizard-title="{{ 'user_account_security_double_auth_type_backup_code_modal_title' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-on-load="generateBackupCode">
@@ -16,20 +16,20 @@
 
             <div data-ng-if="!backupCode.codes">
                 <h2 class="wizard-title-sub"
-                    data-i18n-static="user_account_security_double_auth_type_backup_code_modal_generate">
+                    data-translate="user_account_security_double_auth_type_backup_code_modal_generate">
                 </h2>
                 <strong class="text-danger mb-4"
-                        data-i18n-static="user_account_security_double_auth_type_backup_code_modal_generate_info">
+                        data-translate="user_account_security_double_auth_type_backup_code_modal_generate_info">
                 </strong>
             </div>
 
             <div data-ng-if="!backupCode.isGenerating && backupCode.codes">
                 <h2 class="wizard-title-sub"
-                    data-i18n-static="user_account_security_double_auth_type_backup_code_modal_list">
+                    data-translate="user_account_security_double_auth_type_backup_code_modal_list">
                 </h2>
                 <pre class="new-security-section-wizard-backup-codes"><div data-ng-repeat="code in backupCode.codes" data-ng-bind="code"></div></pre>
                 <p class="font-weight-bold text-danger"
-                   data-i18n-static="user_account_security_double_auth_type_backup_code_modal_validate_info1">
+                   data-translate="user_account_security_double_auth_type_backup_code_modal_validate_info1">
                 </p>
             </div>
 

@@ -3,9 +3,9 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="openBC"
-         data-wizard-title="i18n.server_order_bandwidth_vrack_title"
+         data-wizard-title="{{ 'server_order_bandwidth_vrack_title' | translate }}"
          data-wizard-bread-crumb
-         data-wizard-confirm-button-text="i18n.wizard_pay">
+         data-wizard-confirm-button-text="{{ 'wizard_pay' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-valid="ctrl.steps[0].isValid()"
@@ -14,12 +14,12 @@
             <div class="text-center"
                  data-ng-if="ctrl.steps[0].isLoading()">
                 <oui-spinner></oui-spinner>
-                <span data-i18n-static="server_order_bandwidth_vrack_load"></span>
+                <span data-translate="server_order_bandwidth_vrack_load"></span>
             </div>
 
             <form data-ng-if="!ctrl.steps[0].isLoading()">
                 <label class="control-label"
-                       data-i18n-static="select_bandwidth_vrack_type_label">
+                       data-translate="select_bandwidth_vrack_type_label">
                 </label>
                 <div class="radio"
                      data-ng-repeat="bandwidth in ctrl.orderableBandwidths.data track by bandwidth.value">
@@ -42,13 +42,13 @@
                  data-ng-if="ctrl.steps[1].isLoading()">
                 <oui-spinner></oui-spinner>
                 <span class="d-block"
-                      data-i18n-static="server_order_bandwidth_vrack_load">
+                      data-translate="server_order_bandwidth_vrack_load">
                 </span>
             </div>
 
             <form data-ng-if="!ctrl.steps[1].isLoading()">
                 <label class="control-label"
-                       data-i18n-static="server_order_bandwidth_choose_duration">
+                       data-translate="server_order_bandwidth_choose_duration">
                 </label>
                 <div class="radio"
                      data-ng-repeat="duration in ctrl.orderableDurations.data track by duration.durations">
@@ -72,15 +72,15 @@
                  data-ng-if="ctrl.steps[2].isLoading()">
                 <oui-spinner></oui-spinner>
                 <span class="d-block"
-                      data-i18n-static="server_order_bandwidth_vrack_load_bc">
+                      data-translate="server_order_bandwidth_vrack_load_bc">
                 </span>
             </div>
 
             <p data-ng-if="!ctrl.steps[2].isLoading()">
                 <span class="d-block"
-                      data-ng-bind="i18n.server_order_bandwidth_resume">
+                      data-ng-bind="{{ 'server_order_bandwidth_resume' | translate }}">
                 </span>
-                <em data-ng-bind="i18n.server_order_bandwidth_resume_info"></em>
+                <em data-ng-bind="{{ 'server_order_bandwidth_resume_info' | translate }}"></em>
             </p>
 
         </div>

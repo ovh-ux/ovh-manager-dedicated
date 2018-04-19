@@ -1,7 +1,7 @@
 <div>
 
     <div class="page-header">
-        <h1 data-i18n-static="refunds_title2"></h1>
+        <h1 data-translate="refunds_title2"></h1>
     </div>
 
     <div class="tab-content">
@@ -28,10 +28,10 @@
                     <th scope="col"
                         class="text-center align-middle">
                         <span data-ng-if="fuseRefundOpen();"
-                              data-i18n-static="refunds_table_head_date">
+                              data-translate="refunds_table_head_date">
                         </span>
                         <span data-billing-sorting-field-button=""
-                              data-label="{{ :: tr('refunds_table_head_date') }}"
+                              data-label="{{ :: 'refunds_table_head_date' | translate }}"
                               data-associated-field="date"
                               data-active-field="orderByState.predicate"
                               data-reverse-order="orderByState.reverse"
@@ -41,10 +41,10 @@
                     <th scope="col"
                         class="align-middle">
                         <span data-ng-if="fuseRefundOpen();"
-                              data-i18n-static="refunds_table_head_id">
+                              data-translate="refunds_table_head_id">
                         </span>
                         <span data-billing-sorting-field-button=""
-                              data-label="{{ :: tr('refunds_table_head_id') }}"
+                              data-label="{{ :: 'refunds_table_head_id' | translate }}"
                               data-associated-field="refundId"
                               data-active-field="orderByState.predicate"
                               data-reverse-order="orderByState.reverse"
@@ -54,10 +54,10 @@
                     <th scope="col"
                         class="align-middle">
                         <span data-ng-if="fuseRefundOpen();"
-                              data-i18n-static="refunds_table_head_bill">
+                              data-translate="refunds_table_head_bill">
                         </span>
                         <span data-billing-sorting-field-button=""
-                              data-label="{{ :: tr('refunds_table_head_bill') }}"
+                              data-label="{{ :: 'refunds_table_head_bill' | translate }}"
                               data-associated-field="originalBillId"
                               data-active-field="orderByState.predicate"
                               data-reverse-order="orderByState.reverse"
@@ -67,10 +67,10 @@
                     <th scope="col"
                         class="align-middle">
                         <span data-ng-if="fuseRefundOpen();"
-                              data-i18n-static="refunds_table_head_account">
+                              data-translate="refunds_table_head_account">
                         </span>
                         <label data-billing-sorting-field-button=""
-                               data-label="{{ :: tr('refunds_table_head_account') }}"
+                               data-label="{{ :: 'refunds_table_head_account' | translate }}"
                                data-associated-field="paymentType"
                                data-active-field="orderByState.predicate"
                                data-reverse-order="orderByState.reverse"
@@ -87,11 +87,11 @@
                         class="text-right align-middle">
                         <span data-ng-if="fuseRefundOpen();"
                               data-ng-bind="isVATNeeded &&
-                                            tr('refunds_table_head_total_with_VAT') ||
-                                            tr('refunds_table_head_total')">
+                                            ('refunds_table_head_total_with_VAT' | translate) ||
+                                            ('refunds_table_head_total' | translate)">
                         </span>
                         <span data-billing-sorting-field-button=""
-                              data-label="{{ :: isVATNeeded && tr('refunds_table_head_total_with_VAT') || tr('refunds_table_head_total') }}"
+                              data-label="{{ :: isVATNeeded && ('refunds_table_head_total_with_VAT' | translate) || ('refunds_table_head_total' | translate) }}"
                               data-associated-field="priceWithTax"
                               data-active-field="orderByState.predicate"
                               data-reverse-order="orderByState.reverse"
@@ -113,7 +113,7 @@
                 <tr>
                     <td colspan="6"
                         class="text-center"
-                        data-i18n-static="refunds_table_empty">
+                        data-translate="refunds_table_empty">
                     </td>
                 </tr>
             </tbody>
@@ -137,7 +137,7 @@
                               data-ng-bind-template="{{tr('common_payment_type_' + refundsLine.paymentType)}} {{refundsLine.paymentIdentifier}}">
                         </span>
                         <span data-ng-if="!refundsLine.paymentType"
-                              data-i18n-static="refunds_table_account_no_information">
+                              data-translate="refunds_table_account_no_information">
                         </span>
                     </td>
                     <td class="text-right">
@@ -158,18 +158,18 @@
                                     <a target="_blank"
                                        rel="noopener"
                                        data-ng-show="refundsLine.url"
-                                       title="{{:: i18n.table_download_pdf }} ({{:: i18n.core_new_window }})"
+                                       title="{{ 'table_download_pdf' | translate }} ({{ 'core_new_window' | translate }})"
                                        href="{{refundsLine.url}}"
-                                       data-ng-bind="i18n.table_download_html">
+                                       data-ng-bind="{{ 'table_download_html' | translate }}">
                                     </a>
                                 </li>
                                 <li>
                                     <a target="_blank"
                                        rel="noopener"
                                        data-ng-show="refundsLine.pdfUrl"
-                                       title="{{:: i18n.table_download_pdf }} ({{:: i18n.core_new_window }})"
+                                       title="{{ 'table_download_pdf' | translate }} ({{ 'core_new_window' | translate }})"
                                        href="{{refundsLine.pdfUrl}}"
-                                       data-ng-bind="i18n.table_download_pdf">
+                                       data-ng-bind="{{ 'table_download_pdf' | translate }}">
                                     </a>
                                 </li>
                             </ul>

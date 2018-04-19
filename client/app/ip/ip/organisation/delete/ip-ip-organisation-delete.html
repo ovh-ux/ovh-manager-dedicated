@@ -2,14 +2,14 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="deleteOrganisation"
-         data-wizard-title="tr('ip_organisation_delete_title')">
+         data-wizard-title="{{ 'ip_organisation_delete_title' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-valid="!load">
             <div class="text-center"
                  data-ng-show="load">
                 <oui-spinner></oui-spinner>
-                <p data-i18n-static="ip_organisation_delete_loading"></p>
+                <p data-translate="ip_organisation_delete_loading"></p>
             </div>
             <p data-ng-hide="load.loading">
                 <strong class="text-danger"

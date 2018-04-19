@@ -1,4 +1,4 @@
-angular.module("Billing.controllers").controller("Billing.controllers.HistoryPayDebtCtrl", ($scope, $window, translator, Alerter, BillingDebtAccount) => {
+angular.module("Billing.controllers").controller("Billing.controllers.HistoryPayDebtCtrl", ($scope, $window, $translate, Alerter, BillingDebtAccount) => {
     $scope.payDebt = {
         error: null,
         loading: false,
@@ -7,7 +7,10 @@ angular.module("Billing.controllers").controller("Billing.controllers.HistoryPay
 
     $scope.displayBC = function () {
         $scope.resetAction();
-        Alerter.success(translator.tr("statements_account_debt_payment_order_generated", [$scope.payDebt.order.orderId, $scope.payDebt.order.url]));
+        Alerter.success($translate.instant("statements_account_debt_payment_order_generated", {
+            t0: $scope.payDebt.order.orderId,
+            t1: $scope.payDebt.order.url
+        }));
         $window.open($scope.payDebt.order.url, "_blank");
     };
 
@@ -20,7 +23,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.HistoryPay
             })
             .catch((err) => {
                 $scope.payDebt.error = err;
-                Alerter.alertFromSWS(translator.tr("statements_account_debt_payment_error"), err.message);
+                Alerter.alertFromSWS($translate.instant("statements_account_debt_payment_error"), err.message);
             })
             .finally(() => {
                 $scope.payDebt.loading = false;

@@ -1,6 +1,6 @@
 <div data-ng-controller="CdnTabSslCtrl">
 
-    <h2 data-i18n-static="cdn_tab_ssl"></h2>
+    <h2 data-translate="cdn_tab_ssl"></h2>
 
     <div class="text-center"
          data-ng-show="loading">
@@ -9,19 +9,19 @@
     <div class="row"
          data-ng-show="ssl == null && !loading">
         <div class="col-sm-9"
-             data-i18n-static="cdn_configuration_no_ssl">
+             data-translate="cdn_configuration_no_ssl">
         </div>
         <div class="col-sm-3">
             <button type="button"
                     class="btn btn-block btn-default"
                     data-ng-click="setAction('manage/ssl/add/cdn-dedicated-ssl-add')"
-                    data-i18n-static="cdn_configuration_add_ssl_title">
+                    data-translate="cdn_configuration_add_ssl_title">
             </button>
             <button type="button"
                     class="btn btn-block btn-default"
                     data-ng-click="setAction('manage/ssl/generate/cdn-dedicated-ssl-generate', ssl)"
                     data-ng-if="!disableDelCertificat()"
-                    data-i18n-static="cdn_configuration_generate_ssl_title">
+                    data-translate="cdn_configuration_generate_ssl_title">
             </button>
         </div>
     </div>
@@ -29,11 +29,11 @@
          data-ng-show="ssl != null && !loading">
         <div class="col-sm-9">
             <dl>
-                <dt data-i18n-static="cdn_configuration_ssl_name"></dt>
+                <dt data-translate="cdn_configuration_ssl_name"></dt>
                 <dd data-ng-bind="ssl.name"></dd>
-                <dt data-i18n-static="cdn_configuration_ssl_cn"></dt>
+                <dt data-translate="cdn_configuration_ssl_cn"></dt>
                 <dd data-ng-bind="ssl.cn"></dd>
-                <dt data-i18n-static="cdn_configuration_ssl_status"></dt>
+                <dt data-translate="cdn_configuration_ssl_status"></dt>
                 <dd>
                     <span class="label"
                           data-ng-class="getBadgeClass(ssl.status)"
@@ -43,11 +43,11 @@
                           data-ng-bind="taskErrorMessage">
                     </span>
                 </dd>
-                <dt data-i18n-static="cdn_configuration_ssl_certificateValidFrom"></dt>
+                <dt data-translate="cdn_configuration_ssl_certificateValidFrom"></dt>
                 <dd data-ng-bind="ssl.certificateValidFrom | date:'mediumDate'"></dd>
-                <dt data-i18n-static="cdn_configuration_ssl_certificateValidTo"></dt>
+                <dt data-translate="cdn_configuration_ssl_certificateValidTo"></dt>
                 <dd data-ng-bind="ssl.certificateValidTo | date:'mediumDate'"></dd>
-                <dt data-i18n-static="cdn_configuration_ssl_certificateProvider"></dt>
+                <dt data-translate="cdn_configuration_ssl_certificateProvider"></dt>
                 <dd data-ng-bind="tr('cdn_configuration_ssl_provider_' + ssl.certificateProvider)"></dd>
             </dl>
         </div>
@@ -56,19 +56,19 @@
                     class="btn btn-block btn-default"
                     data-ng-if="!disableDelCertificat()"
                     data-ng-click="setAction('manage/ssl/generate/cdn-dedicated-ssl-generate', ssl)"
-                    data-i18n-static="cdn_configuration_generate_ssl_title">
+                    data-translate="cdn_configuration_generate_ssl_title">
             </button>
             <button type="button"
                     class="btn btn-block btn-default"
                     data-ng-if="!disableDelCertificat()"
                     data-ng-click="setAction('manage/ssl/update/cdn-dedicated-ssl-update', ssl)"
-                    data-i18n-static="cdn_configuration_update_ssl_title">
+                    data-translate="cdn_configuration_update_ssl_title">
             </button>
             <button type="button"
                     class="btn btn-block btn-default"
                     data-ng-if="!disableDelCertificat()"
                     data-ng-click="setAction('manage/ssl/delete/cdn-dedicated-ssl-delete', ssl)"
-                    data-i18n-static="cdn_configuration_delete_ssl_title">
+                    data-translate="cdn_configuration_delete_ssl_title">
             </button>
         </div>
     </div>

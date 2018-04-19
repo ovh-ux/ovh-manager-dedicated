@@ -226,7 +226,7 @@ angular.module("Module.license").controller("LicenseOrderCtrl", ($scope, $timeou
             $scope.user = results.user;
         }).catch((err) => {
             $scope.availableIpBlock = {};
-            Alerter.alertFromSWS($scope.tr("license_details_loading_error"), err, $scope.alerts.order);
+            Alerter.alertFromSWS($translate.instant("license_details_loading_error"), err, $scope.alerts.order);
         }).finally(() => {
             $scope.loaders.ips = false;
         });

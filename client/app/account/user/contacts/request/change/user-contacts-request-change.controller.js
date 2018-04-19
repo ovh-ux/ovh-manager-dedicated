@@ -1,10 +1,11 @@
 angular.module("UserAccount.controllers").controller("UserAccount.controllers.contacts.request", [
     "$scope",
     "$stateParams",
+    "$translate",
     "UserAccount.services.Contacts",
     "Alerter",
     "User",
-    function ($scope, $stateParams, Contacts, Alerter, User) {
+    function ($scope, $stateParams, $translate, Contacts, Alerter, User) {
         "use strict";
 
         $scope.task = angular.copy($scope.currentActionData.task);
@@ -100,7 +101,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.co
                     $scope.user = user;
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("user_account_contacts_error"), err, "useraccount.alerts.dashboardContacts");
+                    Alerter.alertFromSWS($translate.instant("user_account_contacts_error"), err, "useraccount.alerts.dashboardContacts");
                 }
             );
         }

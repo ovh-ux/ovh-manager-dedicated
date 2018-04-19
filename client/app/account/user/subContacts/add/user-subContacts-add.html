@@ -11,11 +11,11 @@
                                 'error': newAccountForm.firstName.$dirty && newAccountForm.firstName.$error,
                                 'success' : newAccountForm.firstName.$dirty && newAccountForm.firstName.$valid}">
                     <label>
-                        <span data-i18n-static="user_account_firstname"></span>
+                        <span data-translate="user_account_firstname"></span>
                         <sup class="red">*</sup>
                     </label>
                     <input type="text" name="firstName"
-                           placeholder="{{i18n.user_account_firstname}}"
+                           placeholder="{{ 'user_account_firstname' | translate }}"
                            data-ng-model="model.firstName" required/>
                 </div>
 
@@ -24,18 +24,18 @@
                                 'error': newAccountForm.lastName.$dirty && newAccountForm.lastName.$error,
                                 'success' : newAccountForm.lastName.$dirty && newAccountForm.lastName.$valid }">
                     <label>
-                        <span data-i18n-static="user_account_lastname"></span>
+                        <span data-translate="user_account_lastname"></span>
                         <sup class="red">*</sup>
                     </label>
                     <input type="text" name="lastName"
-                           placeholder="{{i18n.user_account_lastname}}"
+                           placeholder="{{ 'user_account_lastname' | translate }}"
                            data-ng-model="model.lastName" required/>
                 </div>
 
                 <!-- legalform -->
                 <div class="form-group top-space-5">
                     <label class="control-label">
-                        <span data-i18n-static="useraccount_sub_contacts_add_form_legalform_label"></span>
+                        <span data-translate="useraccount_sub_contacts_add_form_legalform_label"></span>
                         <sup class="red">*</sup>
                     </label>
                     <select name="legalform"
@@ -47,7 +47,7 @@
                 <!-- Language -->
                 <div class="form-group top-space-5">
                     <label class="control-label">
-                        <span data-i18n-static="useraccount_sub_contacts_add_form_language_label"></span>
+                        <span data-translate="useraccount_sub_contacts_add_form_language_label"></span>
                         <sup class="red">*</sup>
                     </label>
                     <select name="language" id="language"
@@ -56,7 +56,7 @@
                     </select>
                     <div data-ng-messages="newAccountForm.language.$error" role="alert">
                         <div class="text-error" data-ng-message="required">
-                            <p data-i18n-static="useraccount_contacts_owner_required"></p>
+                            <p data-translate="useraccount_contacts_owner_required"></p>
                         </div>
                     </div>
                 </div>
@@ -66,28 +66,28 @@
                                 'error': newAccountForm.email.$dirty && newAccountForm.email.$error,
                                 'success' : newAccountForm.email.$dirty && newAccountForm.email.$valid }">
                     <label class="control-label">
-                        <span data-i18n-static="user_account_email"></span>
+                        <span data-translate="user_account_email"></span>
                         <sup class="red">*</sup>
                     </label>
                     <input type='email' name="email"
-                           placeholder="{{i18n.user_account_email}}"
+                           placeholder="{{ 'user_account_email' | translate }}"
                            data-ng-model="model.email" required/>
                 </div>
 
                 <!-- Phone -->
                 <div class="form-group top-space-5">
                     <label class="control-label">
-                        <span data-i18n-static="useraccount_contacts_owner_phone"></span>
+                        <span data-translate="useraccount_contacts_owner_phone"></span>
                         <sup class="red">*</sup>
                     </label>
                     <input id="phone" name="phone"
                            type="text"
                            maxlength="250"
-                           placeholder="{{i18n.useraccount_contacts_owner_phone}}"
+                           placeholder="{{ 'useraccount_contacts_owner_phone' | translate }}"
                            data-ng-model="model.phone" required/>
                     <div data-ng-messages="newAccountForm.phone.$error" role="alert">
                         <div class="text-error" data-ng-message="maxlength">
-                            <p data-i18n-static="useraccount_contacts_owner_to_long"></p>
+                            <p data-translate="useraccount_contacts_owner_to_long"></p>
                         </div>
                     </div>
                 </div>
@@ -95,10 +95,10 @@
                 <!-- organisation -->
                 <div class="form-group top-space-5" data-ng-if="model.legalForm !== 'individual'">
                     <label class="control-label">
-                        <span data-i18n-static="useraccount_contacts_owner_organisation"></span>
+                        <span data-translate="useraccount_contacts_owner_organisation"></span>
                     </label>
                     <input name="organisationName" type='text'
-                           placeholder="{{i18n.useraccount_contacts_owner_organisation}}"
+                           placeholder="{{ 'useraccount_contacts_owner_organisation' | translate }}"
                            data-ng-model="model.organisationName"/>
                 </div>
 
@@ -107,11 +107,11 @@
                                 'error': newAccountForm.address.line1.$dirty && newAccountForm.address.line1.$error,
                                 'success' : newAccountForm.address.line1.$dirty && newAccountForm.address.line1.$valid }">
                     <label class="control-label">
-                        <span data-i18n-static="user_account_address"></span>
+                        <span data-translate="user_account_address"></span>
                         <sup class="red">*</sup>
                     </label>
                     <input type='text'
-                           placeholder="{{i18n.user_account_address}}"
+                           placeholder="{{ 'user_account_address' | translate }}"
                            name="address"
                            data-ng-model="model.address.line1" required/>
                 </div>
@@ -121,11 +121,11 @@
                                 'error': newAccountForm.address.city.$dirty && newAccountForm.address.city.$error,
                                 'success' : newAccountForm.address.city.$dirty && newAccountForm.address.city.$valid }">
                     <label class="control-label">
-                        <span data-i18n-static="user_account_city"></span>
+                        <span data-translate="user_account_city"></span>
                         <sup class="red">*</sup>
                     </label>
                     <input type="text" name="city"
-                           placeholder="{{i18n.user_account_city}}"
+                           placeholder="{{ 'user_account_city' | translate }}"
                            data-ng-model="model.address.city" required/>
                 </div>
 
@@ -134,7 +134,7 @@
                                 'error': newAccountForm.address.country.$dirty && newAccountForm.address.country.$error,
                                 'success' : newAccountForm.address.country.$dirty && newAccountForm.address.country.$valid }">
                     <label class="control-label">
-                        <span data-i18n-static="user_account_country"></span>
+                        <span data-translate="user_account_country"></span>
                         <sup class="red">*</sup>
                     </label>
                     <select name="country"
@@ -149,7 +149,7 @@
                                 'error': newAccountForm.address.zip.$dirty &&  newAccountForm.address.zip.$error,
                                 'success' : newAccountForm.address.zip.$dirty &&  newAccountForm.address.zip.$valid }">
                     <label class="control-label">
-                        <span data-i18n-static="user_account_zip"></span>
+                        <span data-translate="user_account_zip"></span>
                         <sup class="red">*</sup>
                     </label>
                     <input type='text' name="zip" style="width: 60px;"
@@ -159,22 +159,22 @@
                 <div class="top-space">
                     <button type="submit" class="btn btn-block btn-action btn-simple pull-right"
                             data-ng-disabled="newAccountForm.$invalid"
-                            data-i18n-static="user_account_OK"></button>
+                            data-translate="user_account_OK"></button>
                     <button type="button" class="btn btn-block btn-action btn-simple" style="float:left"
                             data-ng-click="goBack()"
-                            data-i18n-static="user_account_cancel"></button>
+                            data-translate="user_account_cancel"></button>
                 </div>
             </form>
         </div>
         <div class="row-fluid" data-ng-hide="loading">
             <p>
                 <span class="red">* </span>
-                <span data-i18n-static="useraccount_sub_contacts_order_sql_mandatory_field"></span>
+                <span data-translate="useraccount_sub_contacts_order_sql_mandatory_field"></span>
             </p>
         </div>
     </div>
 
     <div class="row-fluid mtop70" data-ng-show="loading">
-        <div class="span12 loader" data-i18n-static="loading_message"></div>
+        <div class="span12 loader" data-translate="loading_message"></div>
     </div>
 </div>

@@ -4,7 +4,7 @@
          data-wizard-on-cancel="cancel"
          data-wizard-on-finish="deleteBackupCode"
          data-wizard-bread-crumb
-         data-wizard-title="i18n.user_account_security_double_auth_type_backup_code_modal_title">
+         data-wizard-title="{{ 'user_account_security_double_auth_type_backup_code_modal_title' | translate }}">
 
         <div data-wizard-step>
             <div data-ovh-alert="doubleAuthAlertBackupCodeDelete"></div>
@@ -15,13 +15,13 @@
                      }">
                     <label class="control-label"
                            for="code"
-                           data-i18n-static="user_account_security_double_auth_type_backup_code_modal_validate_label">
+                           data-translate="user_account_security_double_auth_type_backup_code_modal_validate_label">
                     </label>
                     <input type="text"
                            class="form-control"
                            id="code"
                            name="code"
-                           placeholder="{{ tr('user_account_security_double_auth_type_backup_code_modal_validate_placeholder') }}"
+                           placeholder="{{ 'user_account_security_double_auth_type_backup_code_modal_validate_placeholder' | translate }}"
                            required
                            data-ng-model="backupCode.code"
                            data-ng-disabled="backupCode.isDeleting">
@@ -35,7 +35,7 @@
                           data-ng-if="userAccountDeleteBackupCodeForm.code.$touched"
                           data-ng-messages="userAccountDeleteBackupCodeForm.code.$error">
                         <span data-ng-message="required"
-                              data-i18n-static="user_account_security_double_auth_type_sms_modal_add_code_error_required">
+                              data-translate="user_account_security_double_auth_type_sms_modal_add_code_error_required">
                         </span>
                     </span>
                     </div>

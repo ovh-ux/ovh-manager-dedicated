@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpGameFirewallCtrl", function ($scope, $rootScope, Ip, IpGameFirewall, Alerter, $q) {
+angular.module("Module.ip.controllers").controller("IpGameFirewallCtrl", function ($scope, $rootScope, $translate, Ip, IpGameFirewall, Alerter, $q) {
     "use strict";
 
     const self = this;
@@ -66,7 +66,7 @@ angular.module("Module.ip.controllers").controller("IpGameFirewallCtrl", functio
                                 self.table.rules.push(rule);
                             },
                             (error) => {
-                                self.table.rules.push({ errorMessage: $scope.tr("ip_game_mitigation_table_partial_error_info", ruleId) });
+                                self.table.rules.push({ errorMessage: $translate.instant("ip_game_mitigation_table_partial_error_info", { t0: ruleId }) });
                                 return $q.reject(error);
                             }
                         )
@@ -81,7 +81,7 @@ angular.module("Module.ip.controllers").controller("IpGameFirewallCtrl", functio
                                 // nothing
                             },
                             () => {
-                                Alerter.error($scope.tr("ip_game_mitigation_table_partial_error"), alert);
+                                Alerter.error($translate.instant("ip_game_mitigation_table_partial_error"), alert);
                             }
                         )
                         .finally(() => {

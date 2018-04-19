@@ -1,4 +1,4 @@
-angular.module("App").controller("ServerInstallationGabaritCtrl", ($rootScope, $scope, $q, Server, $filter, Alerter, $stateParams) => {
+angular.module("App").controller("ServerInstallationGabaritCtrl", ($rootScope, $scope, $q, $translate, Server, $filter, Alerter, $stateParams) => {
     $scope.installation = {
         server: angular.copy($scope.currentActionData),
         familyType: [],
@@ -60,7 +60,7 @@ angular.module("App").controller("ServerInstallationGabaritCtrl", ($rootScope, $
             })
             .catch((data) => {
                 $scope.resetAction();
-                Alerter.alertFromSWS($scope.tr("server_configuration_installation_ovh_fail_os", $scope.installation.server.name), data.data, "server_dashboard_alert");
+                Alerter.alertFromSWS($translate.instant("server_configuration_installation_ovh_fail_os", { t0: $scope.installation.server.name }), data.data, "server_dashboard_alert");
             })
             .finally(() => {
                 $scope.loader.loading = false;
@@ -120,10 +120,10 @@ angular.module("App").controller("ServerInstallationGabaritCtrl", ($rootScope, $
             })
             .catch((error) => {
                 if (Server.isHardRaidLocationError(error)) {
-                    $scope.errorGab.ws = $scope.tr("server_configuration_installation_ovh_step1_hardwareRaid_wrong_location");
+                    $scope.errorGab.ws = $translate.instant("server_configuration_installation_ovh_step1_hardwareRaid_wrong_location");
                     $scope.informations.hardwareRaidCompatible = false;
                 } else if (Server.isHardRaidUnavailableError(error)) {
-                    $scope.errorGab.ws = $scope.tr("server_configuration_installation_gabarit_step2_hardwareRaid_incompatible_noHardwareRaid");
+                    $scope.errorGab.ws = $translate.instant("server_configuration_installation_gabarit_step2_hardwareRaid_incompatible_noHardwareRaid");
                     $scope.informations.hardwareRaidCompatible = false;
                 } else {
                     $q.reject(error);
@@ -133,7 +133,7 @@ angular.module("App").controller("ServerInstallationGabaritCtrl", ($rootScope, $
                 if (tempHardwareRaid) {
                     $scope.informations.hardwareRaid = tempHardwareRaid;
                     if (!$scope.installation.server.raidController) {
-                        $scope.errorGab.ws = $scope.tr("server_configuration_installation_gabarit_step2_hardwareRaid_incompatible_noHardwareRaid");
+                        $scope.errorGab.ws = $translate.instant("server_configuration_installation_gabarit_step2_hardwareRaid_incompatible_noHardwareRaid");
                         $scope.informations.hardwareRaidCompatible = false;
                     } else {
                         $scope.informations.hardwareRaid.disks = getDisks($scope.informations.hardwareRaid.disks);
@@ -146,7 +146,7 @@ angular.module("App").controller("ServerInstallationGabaritCtrl", ($rootScope, $
             })
             .catch((error) => {
                 $scope.resetAction();
-                Alerter.alertFromSWS($scope.tr("server_configuration_installation_ovh_fail_partition_schemes", $scope.installation.server.name), error, "server_dashboard_alert");
+                Alerter.alertFromSWS($translate.instant("server_configuration_installation_ovh_fail_partition_schemes", { t0: $scope.installation.server.name }), error, "server_dashboard_alert");
             })
             .finally(() => {
                 $scope.loader.loading = false;
@@ -204,7 +204,7 @@ angular.module("App").controller("ServerInstallationGabaritCtrl", ($rootScope, $
                 },
                 (data) => {
                     $scope.loader.loading = false;
-                    $scope.errorGab.ws = $scope.tr("server_configuration_installation_error_save", data.data.message);
+                    $scope.errorGab.ws = $translate.instant("server_configuration_installation_error_save", { t0: data.data.message });
                 }
             );
         } else {

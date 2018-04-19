@@ -1,4 +1,4 @@
-angular.module("App").controller("NasPartitionSnapshotCtrl", function ($scope, $stateParams, $rootScope, Nas, Alerter) {
+angular.module("App").controller("NasPartitionSnapshotCtrl", function ($scope, $stateParams, $rootScope, $translate, Nas, Alerter) {
     const alerterId = "NasAlert";
     const self = this;
 
@@ -24,7 +24,7 @@ angular.module("App").controller("NasPartitionSnapshotCtrl", function ($scope, $
             },
             (data) => {
                 self.loading = false;
-                Alerter.alertFromSWS($scope.tr("nas_snapshot_loading_error"), data, alerterId);
+                Alerter.alertFromSWS($translate.instant("nas_snapshot_loading_error"), data, alerterId);
             }
         );
         getTaskInProgress();
@@ -64,7 +64,7 @@ angular.module("App").controller("NasPartitionSnapshotCtrl", function ($scope, $
                 .then(
                     () => {
                         $rootScope.$broadcast("nas_launch_task");
-                        Alerter.success($scope.tr("nas_snapshot_set_success"), alerterId);
+                        Alerter.success($translate.instant("nas_snapshot_set_success"), alerterId);
                         self.snapshots.save = null;
                         self.disable.taskDoing = true;
                     },

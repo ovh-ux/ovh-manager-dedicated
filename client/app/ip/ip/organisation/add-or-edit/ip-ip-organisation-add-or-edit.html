@@ -2,7 +2,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addOrganisation"
-         data-wizard-title="formOrganisation.edit && tr('ip_organisation_edit_title') || tr('ip_organisation_add_title')">
+         data-wizard-title="formOrganisation.edit && ('ip_organisation_edit_title' | translate) || ('ip_organisation_add_title' | translate)">
 
         <div data-wizard-step
              data-wizard-step-valid="formOrganisation.formValid && !load.loading && !load.request"
@@ -11,14 +11,14 @@
             <div class="text-center"
                  data-ng-if="load.loading">
                 <oui-spinner></oui-spinner>
-                <p data-i18n-static="ip_organisation_add_loading_step1"></p>
+                <p data-translate="ip_organisation_add_loading_step1"></p>
             </div>
 
             <div data-ng-hide="load.loading">
                 <p class="alert alert-info"
                    data-ng-hide="formOrganisation.edit"
                    role="alert">
-                    <span data-i18n-static="ip_organisation_add_info"></span>
+                    <span data-translate="ip_organisation_add_info"></span>
                 </p>
                 <form id="organisationForm"
                       name="organisationForm"
@@ -27,7 +27,7 @@
                     <div class="form-group">
                         <label for="registry"
                                class="control-label"
-                               data-i18n-static="ip_organisation_table_type">
+                               data-translate="ip_organisation_table_type">
                         </label>
                         <select id="registry"
                                 name="registry"
@@ -42,7 +42,7 @@
                     <div class="form-group">
                         <label for="firstname"
                                class="control-label"
-                               data-i18n-static="ip_organisation_table_firstname">
+                               data-translate="ip_organisation_table_firstname">
                         </label>
                         <input type="text"
                                class="form-control"
@@ -62,7 +62,7 @@
                     <div class="form-group">
                         <label for="lastname"
                                class="control-label"
-                               data-i18n-static="ip_organisation_table_lastname">
+                               data-translate="ip_organisation_table_lastname">
                         </label>
                         <input type="text"
                                class="form-control"
@@ -82,7 +82,7 @@
                     <div class="form-group">
                         <label for="country"
                                class="control-label"
-                               data-i18n-static="ip_organisation_table_country">
+                               data-translate="ip_organisation_table_country">
                         </label>
                         <select data-ng-model="newOrganisation.country"
                                 data-ng-change="countryChange()"
@@ -101,7 +101,7 @@
                     <div class="form-group">
                         <label for="email"
                                class="control-label"
-                               data-i18n-static="ip_organisation_table_email">
+                               data-translate="ip_organisation_table_email">
                         </label>
                         <input type="email"
                                class="form-control"
@@ -121,7 +121,7 @@
                     <div class="form-group">
                         <label for="address"
                                class="control-label"
-                               data-i18n-static="ip_organisation_table_address">
+                               data-translate="ip_organisation_table_address">
                         </label>
                         <input type="text"
                                class="form-control"
@@ -141,7 +141,7 @@
                     <div class="form-group">
                         <label for="city"
                                class="control-label"
-                               data-i18n-static="ip_organisation_table_city">
+                               data-translate="ip_organisation_table_city">
                         </label>
                         <input type="text"
                                class="form-control"
@@ -162,7 +162,7 @@
                          data-ng-if="showState()">
                         <label for="state"
                                class="control-label"
-                               data-i18n-static="ip_organisation_table_state">
+                               data-translate="ip_organisation_table_state">
                         </label>
                         <input type="text"
                                class="form-control"
@@ -181,7 +181,7 @@
                     <div class="form-group">
                         <label for="zip"
                                class="control-label"
-                               data-i18n-static="ip_organisation_table_zip">
+                               data-translate="ip_organisation_table_zip">
                         </label>
                         <input type="text"
                                class="form-control"
@@ -201,7 +201,7 @@
                     <div class="form-group">
                         <label for="phone"
                                class="control-label"
-                               data-i18n-static="ip_organisation_table_phone">
+                               data-translate="ip_organisation_table_phone">
                         </label>
                         <input type="text"
                                class="form-control"
@@ -227,37 +227,37 @@
             <div class="text-center"
                  data-ng-show="load.loading">
                 <oui-spinner></oui-spinner>
-                <p data-i18n-static="ip_organisation_add_loading_step2"></p>
+                <p data-translate="ip_organisation_add_loading_step2"></p>
             </div>
             <div data-ng-hide="load.loading">
                 <div class="alert alert-info"
                      role="alert"
-                     data-i18n-static="ip_organisation_add_step2">
+                     data-translate="ip_organisation_add_step2">
                 </div>
                 <dl class="dl-horizontal">
-                    <dt data-i18n-static="ip_organisation_table_type"></dt>
+                    <dt data-translate="ip_organisation_table_type"></dt>
                     <dd data-ng-bind="newOrganisation.registry"></dd>
-                    <dt data-i18n-static="ip_organisation_table_lastname"></dt>
+                    <dt data-translate="ip_organisation_table_lastname"></dt>
                     <dd data-ng-bind="newOrganisation.lastname"></dd>
-                    <dt data-i18n-static="ip_organisation_table_firstname"></dt>
+                    <dt data-translate="ip_organisation_table_firstname"></dt>
                     <dd data-ng-bind="newOrganisation.firstname"></dd>
-                    <dt data-i18n-static="ip_organisation_table_country"></dt>
+                    <dt data-translate="ip_organisation_table_country"></dt>
                     <dd data-ng-bind="i18n['country_' + newOrganisation.country] || newOrganisation.country"></dd>
-                    <dt data-i18n-static="ip_organisation_table_email"></dt>
+                    <dt data-translate="ip_organisation_table_email"></dt>
                     <dd data-ng-bind="newOrganisation.abuse_mailbox"></dd>
-                    <dt data-i18n-static="ip_organisation_table_address"></dt>
+                    <dt data-translate="ip_organisation_table_address"></dt>
                     <dd data-ng-bind="newOrganisation.address"></dd>
                     <dt data-ng-if="showState()"
-                        data-i18n-static="ip_organisation_table_state">
+                        data-translate="ip_organisation_table_state">
                     </dt>
                     <dd data-ng-if="showState()"
                         data-ng-bind="newOrganisation.state">
                     </dd>
-                    <dt data-i18n-static="ip_organisation_table_zip"></dt>
+                    <dt data-translate="ip_organisation_table_zip"></dt>
                     <dd data-ng-bind="newOrganisation.zip || '-'"></dd>
-                    <dt data-i18n-static="ip_organisation_table_city"></dt>
+                    <dt data-translate="ip_organisation_table_city"></dt>
                     <dd data-ng-bind="newOrganisation.city"></dd>
-                    <dt data-i18n-static="ip_organisation_table_phone"></dt>
+                    <dt data-translate="ip_organisation_table_phone"></dt>
                     <dd data-ng-bind="newOrganisation.phone"></dd>
                 </dl>
             </div>

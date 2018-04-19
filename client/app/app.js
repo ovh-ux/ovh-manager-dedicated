@@ -65,10 +65,6 @@ angular
         OvhHttpProvider.returnSuccessKey = "data"; // By default, request return response.data
         OvhHttpProvider.returnErrorKey = "data"; // By default, request return error.data
     })
-    .config((LANGUAGES, translatorProvider) => {
-        translatorProvider.setAvailableLanguages(LANGUAGES);
-    })
-
     .config(($urlServiceProvider) => {
         $urlServiceProvider.rules.otherwise("/configuration");
     })
@@ -156,9 +152,6 @@ angular
             delete queryParams.redirectTo;
             $location.search(queryParams);
         }
-    })
-    .run((translator) => {
-        translator.load(["core", "doubleAuth", "components", "user-contracts"]);
     })
     .run((storage) => {
         storage.setKeyPrefix("com.ovh.univers.dedicated.");

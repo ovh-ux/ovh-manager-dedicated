@@ -3,7 +3,7 @@
 
         <div data-ovh-alert="InfoAlert"></div>
 
-        <h1 data-i18n-static="useraccount_sub_contacts"></h1>
+        <h1 data-translate="useraccount_sub_contacts"></h1>
 
         <div class="row-fluid">
             <div class="module-useraccount-sections-contacts-container span12">
@@ -13,7 +13,7 @@
                         <button data-ng-click="ctrl.addContact()"
                                 class="btn btn-block expert fs12" type="button">
                             <i class="fa fa-plus"></i>
-                            <span data-i18n-static="useraccount_sub_contacts_table_action_add"></span>
+                            <span data-translate="useraccount_sub_contacts_table_action_add"></span>
                         </button>
                     </div>
                 </div>
@@ -21,10 +21,10 @@
                 <table class="table table-hover pretty">
                     <thead>
                         <tr>
-                            <th data-i18n-static="useraccount_sub_contacts_table_header_name"></th>
-                            <th data-i18n-static="useraccount_sub_contacts_table_header_last_name"></th>
-                            <th data-i18n-static="useraccount_sub_contacts_table_header_email"></th>
-                            <th data-i18n-static="useraccount_sub_contacts_table_header_action" style="width: 20px;"></th>
+                            <th data-translate="useraccount_sub_contacts_table_header_name"></th>
+                            <th data-translate="useraccount_sub_contacts_table_header_last_name"></th>
+                            <th data-translate="useraccount_sub_contacts_table_header_email"></th>
+                            <th data-translate="useraccount_sub_contacts_table_header_action" style="width: 20px;"></th>
                         </tr>
                     </thead>
 
@@ -39,7 +39,7 @@
                     <tbody data-ng-show="!ctrl.loaders.contacts && ctrl.services.length === 0">
                         <tr>
                             <td colspan="4" class="center">
-                                <span data-i18n-static="useraccount_contacts_no_services"></span>
+                                <span data-translate="useraccount_contacts_no_services"></span>
                             </td>
                         </tr>
                     </tbody>
@@ -57,7 +57,7 @@
                                     </a>
                                     <ul class="dropdown-menu" data-role="menu" data-aria-labelledby="dLabel">
                                         <li data-ng-click="ctrl.updateContact(service)">
-                                            <span data-i18n-static="useraccount_sub_contacts_table_action_edit"></span>
+                                            <span data-translate="useraccount_sub_contacts_table_action_edit"></span>
                                         </li>
                                     </ul>
                                 </div>
@@ -76,7 +76,7 @@
                      data-transform-item="ctrl.transformItem(item)"
                      data-on-transform-item-done="ctrl.onTransformItemDone(items)"
                      data-page-placeholder="{{tr('pagination_page', [currentPage, nbPages])}}"
-                     data-item-per-page-placeholder="{{tr('pagination_display')}}"></div>
+                     data-item-per-page-placeholder="{{ 'pagination_display' | translate }}"></div>
             </div>
         </div>
 

@@ -1,6 +1,6 @@
 <div class="dedicatedCloud-security">
 
-    <h2 data-i18n-static="dedicatedCloud_tab_security"></h2>
+    <h2 data-translate="dedicatedCloud_tab_security"></h2>
 
     <div class="text-center"
          data-ng-show="loaders.policiesInfo">
@@ -10,13 +10,13 @@
          data-ng-if="!loaders.policiesInfo">
         <div class="col-sm-9">
             <dl>
-                <dt data-i18n-static="dedicatedCloud_SECURITY_expiration_session"></dt>
-                <dd data-ng-bind="policies.info.userSessionTimeout == 0 && tr('dedicatedCloud_SECURITY_expiration_session_never') || tr('dedicatedCloud_SECURITY_expiration_session_value', [policies.info.userSessionTimeout])"></dd>
-                <dt data-i18n-static="dedicatedCloud_SECURITY_nb_simultaneous_connection"></dt>
-                <dd data-ng-bind="policies.info.userLimitConcurrentSession == 0 && tr('dedicatedCloud_SECURITY_nb_simultaneous_connection_none') || policies.info.userLimitConcurrentSession"></dd>
-                <dt data-i18n-static="dedicatedCloud_SECURITY_userAccess_policy"></dt>
+                <dt data-translate="dedicatedCloud_SECURITY_expiration_session"></dt>
+                <dd data-ng-bind="policies.info.userSessionTimeout == 0 && ('dedicatedCloud_SECURITY_expiration_session_never' | translate) || tr('dedicatedCloud_SECURITY_expiration_session_value', [policies.info.userSessionTimeout])"></dd>
+                <dt data-translate="dedicatedCloud_SECURITY_nb_simultaneous_connection"></dt>
+                <dd data-ng-bind="policies.info.userLimitConcurrentSession == 0 && ('dedicatedCloud_SECURITY_nb_simultaneous_connection_none' | translate) || policies.info.userLimitConcurrentSession"></dd>
+                <dt data-translate="dedicatedCloud_SECURITY_userAccess_policy"></dt>
                 <dd data-ng-bind="tr('dedicatedCloud_SECURITY_userAccess_policy_' + policies.info.userAccessPolicy)"></dd>
-                <dt data-i18n-static="dedicatedCloud_SECURITY_logout_policy"></dt>
+                <dt data-translate="dedicatedCloud_SECURITY_logout_policy"></dt>
                 <dd data-ng-bind="tr('dedicatedCloud_SECURITY_logout_policy_' + policies.info.logoutPolicy)"></dd>
             </dl>
             <div class="text-center"
@@ -24,7 +24,7 @@
                 <oui-spinner></oui-spinner>
             </div>
             <div data-ng-hide="loaders.table">
-                <p data-i18n-static="dedicatedCloud_SECURITY_title"></p>
+                <p data-translate="dedicatedCloud_SECURITY_title"></p>
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
@@ -38,21 +38,21 @@
                                            data-tsc-on-click="globalCheckboxPoliciesStateChange(state)" />
                                 </th>
                                 <th scope="col"
-                                    data-i18n-static="dedicatedCloud_SECURITY_IP_name">
+                                    data-translate="dedicatedCloud_SECURITY_IP_name">
                                 </th>
                                 <th scope="col"
-                                    data-i18n-static="dedicatedCloud_SECURITY_allow">
+                                    data-translate="dedicatedCloud_SECURITY_allow">
                                 </th>
                                 <th scope="col"
                                     colspan="2"
-                                    data-i18n-static="dedicatedCloud_SECURITY_description">
+                                    data-translate="dedicatedCloud_SECURITY_description">
                                 </th>
                             </tr>
                         </thead>
                         <tbody data-ng-show="policies.model.list.results.length == 0">
                             <tr>
                                 <td colspan="5"
-                                    data-i18n-static="dedicatedCloud_SECURITY_empty_policies">
+                                    data-translate="dedicatedCloud_SECURITY_empty_policies">
                                 </td>
                             </tr>
                         </tbody>
@@ -100,14 +100,14 @@
                                                 <button type="button"
                                                         class="btn btn-link"
                                                         data-ng-click="setAction('security/update/dedicatedCloud-security-update', policy)"
-                                                        data-i18n-static="dedicatedCloud_SECURITY_modify">
+                                                        data-translate="dedicatedCloud_SECURITY_modify">
                                                 </button>
                                             </li>
                                             <li role="menuitem">
                                                 <button type="button"
                                                         class="btn btn-link"
                                                         data-ng-click="setAction('security/delete/dedicatedCloud-security-delete', { selectedPolicies: [policy.id], policies: policies.model.list.results })"
-                                                        data-i18n-static="dedicatedCloud_SECURITY_delete">
+                                                        data-translate="dedicatedCloud_SECURITY_delete">
                                                 </button>
                                             </li>
                                         </ul>
@@ -128,27 +128,27 @@
             <button type="button"
                     class="btn btn-block btn-default"
                     data-ng-click="setAction('security/session-timeout/update/dedicatedCloud-security-session-timeout-update', policies.info.userSessionTimeout)"
-                    data-i18n-static="dedicatedCloud_SECURITY_change_timeout">
+                    data-translate="dedicatedCloud_SECURITY_change_timeout">
             </button>
             <button type="button"
                     class="btn btn-block btn-default"
                     data-ng-click="setAction('security/simultaneous-connection/update/dedicatedCloud-security-max-simultaneous-connection', policies.info.userLimitConcurrentSession)"
-                    data-i18n-static="dedicatedCloud_SECURITY_change_nb_simultaneous_connection">
+                    data-translate="dedicatedCloud_SECURITY_change_nb_simultaneous_connection">
             </button>
             <button type="button"
                     class="btn btn-block btn-default"
                     data-ng-click="setAction('security/access/dedicatedCloud-security-access')"
-                    data-i18n-static="dedicatedCloud_SECURITY_access_policy">
+                    data-translate="dedicatedCloud_SECURITY_access_policy">
             </button>
             <button type="button"
                     class="btn btn-block btn-default"
                     data-ng-click="setAction('security/logout/dedicatedCloud-security-logout')"
-                    data-i18n-static="dedicatedCloud_SECURITY_logout_policy">
+                    data-translate="dedicatedCloud_SECURITY_logout_policy">
             </button>
             <button type="button"
                     class="btn btn-block btn-default"
                     data-ng-click="setAction('security/add/dedicatedCloud-security-add')"
-                    data-i18n-static="dedicatedCloud_SECURITY_add_IP">
+                    data-translate="dedicatedCloud_SECURITY_add_IP">
             </button>
             <button type="button"
                     class="btn btn-block btn-default"
@@ -157,7 +157,7 @@
                         policies: policies.model.list.results
                     })"
                     data-ng-disabled="selectedPolicies.length == 0"
-                    data-i18n-static="dedicatedCloud_SECURITY_delete_IP">
+                    data-translate="dedicatedCloud_SECURITY_delete_IP">
             </button>
         </div>
     </div>

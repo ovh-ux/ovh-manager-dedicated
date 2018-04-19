@@ -1,8 +1,9 @@
 angular.module("UserAccount.controllers").controller("UserAccount.controllers.subcontacts.delete", [
     "$scope",
+    "$translate",
     "UserAccount.services.Contacts",
     "Alerter",
-    function ($scope, Contacts, Alerter) {
+    function ($scope, $translate, Contacts, Alerter) {
         "use strict";
 
         $scope.data = $scope.currentActionData;
@@ -12,11 +13,11 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.su
                 .then(
                     () => {
                         _.delay(() => {
-                            Alerter.success($scope.tr("useraccount_sub_contacts_delete_success_message"), "InfoAlert");
+                            Alerter.success($translate.instant("useraccount_sub_contacts_delete_success_message"), "InfoAlert");
                         }, 500);
                     },
                     (err) => {
-                        Alerter.alertFromSWS($scope.tr("useraccount_sub_contacts_delete_error_message"), err, "InfoAlert");
+                        Alerter.alertFromSWS($translate.instant("useraccount_sub_contacts_delete_error_message"), err, "InfoAlert");
                     }
                 )
                 .finally(() => {

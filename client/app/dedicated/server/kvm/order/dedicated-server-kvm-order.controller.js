@@ -1,4 +1,4 @@
-angular.module("App").controller("KvmOrderCtrl", ($scope, $rootScope, $stateParams, Server, Alerter) => {
+angular.module("App").controller("KvmOrderCtrl", ($scope, $rootScope, $stateParams, $translate, Server, Alerter) => {
     "use strict";
 
     $scope.user = $scope.currentActionData;
@@ -25,13 +25,13 @@ angular.module("App").controller("KvmOrderCtrl", ($scope, $rootScope, $statePara
                             });
                         },
                         (err) => {
-                            Alerter.alertFromSWS($scope.tr("server_configuration_kvm_order_error"), err.data);
+                            Alerter.alertFromSWS($translate.instant("server_configuration_kvm_order_error"), err.data);
                             $scope.resetAction();
                         }
                     );
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("server_configuration_kvm_order_error"), err.data);
+                    Alerter.alertFromSWS($translate.instant("server_configuration_kvm_order_error"), err.data);
                     $scope.resetAction();
                 }
             )
@@ -56,7 +56,7 @@ angular.module("App").controller("KvmOrderCtrl", ($scope, $rootScope, $statePara
                     window.open(data.url, "_blank");
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("server_configuration_kvm_order_error"), err.data);
+                    Alerter.alertFromSWS($translate.instant("server_configuration_kvm_order_error"), err.data);
                 }
             )
             .finally(() => {

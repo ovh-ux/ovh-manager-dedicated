@@ -6,7 +6,7 @@
         <button
             type="button"
             class="close pull-right"
-            aria-label="{{ ::'wizard_cancel' | UAi18n }}"
+            aria-label="{{ ::'wizard_cancel' | translate }}"
             data-ng-click="$ctrl.close()">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -20,11 +20,11 @@
         <div data-ng-if="!$ctrl.isLoading && !$ctrl.isUpdating">
             <h3 class="modal-title"
                 data-ng-if="$ctrl.server.monitored"
-                data-ng-bind="tr('server_configuration_monitoring_deactivate_title')">
+                data-ng-bind="{{ 'server_configuration_monitoring_deactivate_title' | translate }}">
             </h3>
             <h3 class="modal-title"
                 data-ng-if="!$ctrl.server.monitored"
-                data-ng-bind="tr('server_configuration_monitoring_activate_title_button')">
+                data-ng-bind="{{ 'server_configuration_monitoring_activate_title_button' | translate }}">
             </h3>
             <p data-ng-if="$ctrl.server.monitored"
                data-ng-bind="tr('server_configuration_monitoring_deactivate_question', [$ctrl.server.name])">
@@ -39,12 +39,12 @@
         <button type="button"
                 class="btn btn-default"
                 data-ng-click="$ctrl.close()"
-                data-i18n-static="wizard_cancel">
+                data-translate="wizard_cancel">
         </button>
         <button type="submit"
                 class="btn btn-primary"
                 data-ng-disabled="$ctrl.isLoading || $ctrl.isUpdating"
-                data-i18n-static="wizard_confirm">
+                data-translate="wizard_confirm">
         </button>
     </div>
 </form>

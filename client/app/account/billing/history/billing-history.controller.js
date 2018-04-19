@@ -1,8 +1,6 @@
-angular.module("Billing.controllers").controller("Billing.controllers.History", function ($scope, $timeout, $q, $log, translator, BillingHistory, BillingUser, BillingDebtAccount, BillingmessageParser, BillingPaymentInformation, BillingdateRangeSelection) { // eslint-disable-line max-len
+angular.module("Billing.controllers").controller("Billing.controllers.History", function ($scope, $timeout, $q, $log, $translate, BillingHistory, BillingUser, BillingDebtAccount, BillingmessageParser, BillingPaymentInformation, BillingdateRangeSelection) { // eslint-disable-line max-len
     "use strict";
     const self = this;
-
-    const tr = translator.tr;
 
     const COL_SPAN_DEBT_ACCOUNT = 6; // [référence, date, amount, balance due, date due, actions]
     const COL_SPAN_DEBT_LEGACY = 4; // [référence, date, amount, actions]
@@ -56,13 +54,15 @@ angular.module("Billing.controllers").controller("Billing.controllers.History", 
 
                 const historyErrors = self.history.filter((hist) => hist.error);
                 if (historyErrors.length > 0) {
-                    $scope.setMessage(tr("history_invoice_loading_errors", [historyErrors.length]), { alertType: "ERROR" });
+                    $scope.setMessage($translate.instant("history_invoice_loading_errors", {
+                        t0: historyErrors.length
+                    }), { alertType: "ERROR" });
                 }
             })
             .catch((err) => {
                 $log.error(err);
                 err.data.alertType = "ERROR";
-                $scope.setMessage(tr("billingError"), err.data);
+                $scope.setMessage($translate.instant("billingError"), err.data);
             })
             .finally(() => {
                 $timeout(() => {
@@ -87,15 +87,21 @@ angular.module("Billing.controllers").controller("Billing.controllers.History", 
     this.getDatasToExport = function () {
         const dateFrom = BillingdateRangeSelection.dateFrom;
         const dateTo = BillingdateRangeSelection.dateTo;
-        const INFORMATION_NOT_AVAILABLE = tr("history_table_information_not_available");
-        const DEBT_DUE_IMMEDIATELY = tr("history_table_debt_due_immediately");
-        const DEBT_PAID = tr("history_table_debt_paid");
+        const INFORMATION_NOT_AVAILABLE = $translate.instant("history_table_information_not_available");
+        const DEBT_DUE_IMMEDIATELY = $translate.instant("history_table_debt_due_immediately");
+        const DEBT_PAID = $translate.instant("history_table_debt_paid");
 
-        const headers = [tr("history_table_head_id"), tr("history_table_head_order_id"), tr("history_table_head_date"), tr("history_table_head_total"), tr("history_table_head_total_with_VAT")];
+        const headers = [
+            $translate.instant("history_table_head_id"),
+            $translate.instant("history_table_head_order_id"),
+            $translate.instant("history_table_head_date"),
+            $translate.instant("history_table_head_total"),
+            $translate.instant("history_table_head_total_with_VAT")
+        ];
 
         if (self.debtAccount.active) {
-            headers.push(tr("history_table_head_balance_due"));
-            headers.push(tr("history_table_head_due_date"));
+            headers.push($translate.instant("history_table_head_balance_due"));
+            headers.push($translate.instant("history_table_head_due_date"));
         }
 
         self.loaders.export = true;
@@ -127,7 +133,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.History", 
                 return [headers].concat(rows);
             })
             .catch((err) => {
-                $scope.setMessage(tr("billingError"), err.data);
+                $scope.setMessage($translate.instant("billingError"), err.data);
                 $log.error(err);
             })
             .finally(() => {
@@ -191,7 +197,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.History", 
                 self.hasValidDefaultPaymentMean = hasDefault;
             })
             .catch(() => {
-                $scope.setMessage(tr("statements_payment_mean_error"), {
+                $scope.setMessage($translate.instant("statements_payment_mean_error"), {
                     alertType: "ERROR"
                 });
             })
@@ -218,7 +224,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.History", 
                 if (err.status === 404) {
                     return null;
                 }
-                return $scope.setMessage($scope.tr("billingError"), {
+                return $scope.setMessage($scope.$translate.instant("billingError"), {
                     alertType: "ERROR"
                 });
             });

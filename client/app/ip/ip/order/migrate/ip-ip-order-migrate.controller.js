@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpMigrateController", ($scope, $q, Ip, IpOrder, User, Alerter, $rootScope, Validator) => {
+angular.module("Module.ip.controllers").controller("IpMigrateController", ($scope, $q, $translate, Ip, IpOrder, User, Alerter, $rootScope, Validator) => {
     $scope.loading = {
         step1: false,
         checkServiceMigrateable: false,
@@ -69,7 +69,7 @@ angular.module("Module.ip.controllers").controller("IpMigrateController", ($scop
                 $scope.loading.step2 = false;
             },
             (data) => {
-                Alerter.alertFromSWS($scope.tr("ip_migration_step1_error"), data.data);
+                Alerter.alertFromSWS($translate.instant("ip_migration_step1_error"), data.data);
                 $scope.loading.step1 = false;
                 $scope.resetAction();
             }
@@ -110,14 +110,14 @@ angular.module("Module.ip.controllers").controller("IpMigrateController", ($scop
                             $scope.migrateableIpError = "EXPIRED";
                         } else {
                             $scope.migrateableIpError = "ANOTHER";
-                            Alerter.alertFromSWS($scope.tr("ip_migration_step1_error"), data.data, "otrs_alert_migration");
+                            Alerter.alertFromSWS($translate.instant("ip_migration_step1_error"), data.data, "otrs_alert_migration");
                         }
                     }
                 );
             },
             (data) => {
                 $scope.loading.checkServiceMigrateable = false;
-                Alerter.alertFromSWS($scope.tr("ip_migration_step2_error"), data); // no data.data
+                Alerter.alertFromSWS($translate.instant("ip_migration_step2_error"), data); // no data.data
                 $scope.resetAction();
             }
         );
@@ -147,7 +147,7 @@ angular.module("Module.ip.controllers").controller("IpMigrateController", ($scop
                 $scope.loading.prices = false;
             },
             (data) => {
-                Alerter.alertFromSWS($scope.tr("ip_migration_step3_error"), data.data);
+                Alerter.alertFromSWS($translate.instant("ip_migration_step3_error"), data.data);
                 $scope.resetAction();
             }
         );
@@ -175,7 +175,7 @@ angular.module("Module.ip.controllers").controller("IpMigrateController", ($scop
     ==============================*/
 
     $scope.getResumePrice = function (price) {
-        return price.value === 0 ? $scope.tr("price_free") : $scope.tr("price_ht_label", [price.text]);
+        return price.value === 0 ? $translate.instant("price_free") : $translate.instant("price_ht_label", { t0: price.text });
     };
 
     $scope.migrateIp = function () {
@@ -187,7 +187,7 @@ angular.module("Module.ip.controllers").controller("IpMigrateController", ($scop
                     window.open(order.url, "_blank");
                 },
                 (data) => {
-                    Alerter.alertFromSWS($scope.tr("ip_migration_step5_error"), data.data);
+                    Alerter.alertFromSWS($translate.instant("ip_migration_step5_error"), data.data);
                 }
             )
             .finally(() => {

@@ -13,7 +13,7 @@
     <div data-ovh-alert="{{ alerts.order }}"></div>
 
     <a class="d-inline-block mb-5"
-       title="{{ i18n.license_details_back }}"
+       title="{{ 'license_details_back' | translate }}"
        data-ng-href="#/configuration/license" >
        <span class="fa fa-chevron-left mr-2"
              aria-hidden="true">
@@ -30,7 +30,7 @@
     <oui-message class="d-block mb-4"
                  data-type="info"
                  data-ng-if="user.isEnterprise"
-                 data-i18n-static="core_user_enterprise_retail_prices">
+                 data-translate="core_user_enterprise_retail_prices">
     </oui-message>
 
     <div class="row d-md-flex"
@@ -247,7 +247,7 @@
                                 data-ng-hide="loaders.bc"
                                 data-ng-click="generateBc()">
                             <i class="icon-order-licence" aria-hidden="true"></i>
-                            {{ i18n.license_order_step4_generate }}
+                            {{ 'license_order_step4_generate' | translate }}
                         </button>
                         <span data-ng-show="loaders.bc"
                               data-translate="license_order_step4_generating">
@@ -264,7 +264,7 @@
                            data-ng-if="selected.agoraUrl"
                            data-ng-hide="loaders.bc">
                             <i class="icon-order-licence" style="margin-top: 5px !important"></i>
-                            {{ i18n.license_order_step4_pay_button }}
+                            {{ 'license_order_step4_pay_button' | translate }}
                         </a>
                     </div>
                 </div>

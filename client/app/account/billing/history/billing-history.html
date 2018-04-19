@@ -1,7 +1,7 @@
 <div>
 
     <div class="page-header">
-        <h1 data-i18n-static="history_title2"></h1>
+        <h1 data-translate="history_title2"></h1>
     </div>
 
     <div class="tab-content">
@@ -23,18 +23,18 @@
 
             <p class="text-warning"
                data-ng-if="!ctrl.hasValidDefaultPaymentMean"
-               data-ng-bind-html="tr('statements_account_amount_to_pay', [ctrl.debtAccount.dueAmount.text])"></p>
+               data-translate="statements_account_amount_to_pay" data-translate-values="{ t0: ctrl.debtAccount.dueAmount.text }"></p>
 
             <p class="text-info"
                data-ng-if="ctrl.hasValidDefaultPaymentMean"
-               data-ng-bind-html="tr('statements_account_amount_automatically_collected', [ctrl.debtAccount.dueAmount.text])"></p>
+               data-translate="statements_account_amount_automatically_collected" data-translate-values="{ t0: ctrl.debtAccount.dueAmount.text }"></p>
         </div>
 
         <div class="row">
             <div class="col-md-4">
                 <button type="button"
                         class="btn btn-default"
-                        data-i18n-static="statements_account_pay_debt_button"
+                        data-translate="statements_account_pay_debt_button"
                         data-ng-click="ctrl.payAllDebts()"
                         data-ng-if="ctrl.debtAccount.active"
                         data-ng-disabled="ctrl.debtAccount.dueAmount.value === 0">
@@ -44,7 +44,7 @@
                         data-export-csv="ctrl.getDatasToExport()"
                         data-export-csv-separator=";"
                         data-ng-disabled="ctrl.loaders.export"
-                        data-i18n-static="billing_export_csv">
+                        data-translate="billing_export_csv">
                 </button>
             </div>
             <div class="col-md-8">
@@ -57,11 +57,11 @@
                         <input class="form-control"
                                type="search"
                                maxlength="50"
-                               placeholder="{{ i18n.history_table_head_id }}"
+                               placeholder="{{ 'history_table_head_id' | translate }}"
                                data-ng-model-options="{ debounce: 1000 }"
                                data-ng-model="ctrl.searchText"
                                data-ng-change="ctrl.onSearchTextChanged()"
-                               data-ng-attr-title="{{ i18n.history_table_head_id }}"
+                               data-ng-attr-title="{{ 'history_table_head_id' | translate }}"
                                autofocus>
                         <span class="input-group-addon">
                             <i class="fa fa-search" aria-hidden="true"></i>
@@ -76,7 +76,7 @@
                 <tr>
                     <th scope="col">
                         <span data-billing-sorting-field-button=""
-                              data-label="{{ :: tr('history_table_head_id') }}"
+                              data-label="{{ :: 'history_table_head_id' | translate }}"
                               data-associated-field="billId"
                               data-active-field="ctrl.orderByState.predicate"
                               data-reverse-order="ctrl.orderByState.reverse"
@@ -84,7 +84,7 @@
                     </th>
                     <th scope="col">
                         <span data-billing-sorting-field-button=""
-                              data-label="{{ :: tr('history_table_head_date') }}"
+                              data-label="{{ :: 'history_table_head_date' | translate }}"
                               data-associated-field="date"
                               data-active-field="ctrl.orderByState.predicate"
                               data-reverse-order="ctrl.orderByState.reverse"
@@ -92,7 +92,7 @@
                     </th>
                     <th scope="col">
                         <span data-billing-sorting-field-button=""
-                              data-label="{{ :: ctrl.isVATNeeded && tr('history_table_head_total_with_VAT') || tr('history_table_head_total') }}"
+                              data-label="{{ :: ctrl.isVATNeeded && ('history_table_head_total_with_VAT' | translate) || ('history_table_head_total' | translate) }}"
                               data-associated-field="priceWithTax.value"
                               data-active-field="ctrl.orderByState.predicate"
                               data-reverse-order="ctrl.orderByState.reverse"
@@ -100,14 +100,14 @@
                     </th>
                     <th scope="col"
                         data-ng-if="ctrl.debtAccount.active"
-                        data-i18n-static="history_table_head_balance_due">
+                        data-translate="history_table_head_balance_due">
                     </th>
                     <th scope="col"
                         data-ng-if="ctrl.debtAccount.active"
-                        data-i18n-static="history_table_head_due_date">
+                        data-translate="history_table_head_due_date">
                     </th>
                     <th scope="col"
-                        data-i18n-static="history_table_head_actions">
+                        data-translate="history_table_head_actions">
                     </th>
                 </tr>
             </thead>
@@ -125,7 +125,7 @@
                 <tr>
                     <td colspan="{{ ctrl.colSpan }}"
                         class="text-center"
-                        data-i18n-static="history_table_empty">
+                        data-translate="history_table_empty">
                     </td>
                 </tr>
             </tbody>
@@ -138,12 +138,12 @@
 
                     <td>
                         <span data-ng-show="historyLine.date" data-ng-bind=":: historyLine.date | date:'mediumDate'"></span>
-                        <span data-ng-hide="historyLine.date" data-i18n-static="history_table_information_not_available"></span>
+                        <span data-ng-hide="historyLine.date" data-translate="history_table_information_not_available"></span>
                     </td>
 
                     <td>
                         <span data-ng-show="historyLine.priceWithTax" data-ng-bind=":: historyLine.priceWithTax.text"></span>
-                        <span data-ng-hide="historyLine.priceWithTax" data-i18n-static="history_table_information_not_available"></span>
+                        <span data-ng-hide="historyLine.priceWithTax" data-translate="history_table_information_not_available"></span>
                     </td>
 
                     <td data-ng-if="ctrl.debtAccount.active"
@@ -159,7 +159,7 @@
                                                !(historyLine.debt.pendingAmount.value > 0 || historyLine.debt.todoAmount.value > 0)) }"></span>
 
                         <span data-ng-if="!historyLine.debt"
-                              data-i18n-static="history_table_information_not_available"></span>
+                              data-translate="history_table_information_not_available"></span>
                     </td>
 
                     <td data-ng-if="ctrl.debtAccount.active"
@@ -170,15 +170,15 @@
                     <td data-ng-if="ctrl.debtAccount.active"
                         data-ng-hide="historyLine.loadingDebt">
                         <span data-ng-if="historyLine.debt">
-                            <span data-ng-if="historyLine.debt.dueAmount.value === 0" data-i18n-static="history_table_debt_paid"></span>
+                            <span data-ng-if="historyLine.debt.dueAmount.value === 0" data-translate="history_table_debt_paid"></span>
                             <span data-ng-if="historyLine.debt.dueAmount.value > 0 && historyLine.debt.dueDate" data-ng-bind=":: historyLine.debt.dueDate | date:'mediumDate'"></span>
                             <span class="text-warning"
                                   data-ng-if="historyLine.debt.dueAmount.value > 0 && !historyLine.debt.dueDate"
-                                  data-i18n-static="history_table_debt_due_immediately">
+                                  data-translate="history_table_debt_due_immediately">
                             </span>
                         </span>
                         <span data-ng-if="!historyLine.debt"
-                              data-i18n-static="history_table_information_not_available">
+                              data-translate="history_table_information_not_available">
                         </span>
                     </td>
 

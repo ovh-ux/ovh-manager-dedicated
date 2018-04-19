@@ -3,7 +3,7 @@
          data-wizard-on-cancel="cancelAction"
          data-wizard-on-finish="updateReverse"
          data-wizard-hide-cancel-button="loading"
-         data-wizard-title="i18n.ip_table_manage_reverse">
+         data-wizard-title="{{ 'ip_table_manage_reverse' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-valid="!loading && (!model.reverse || isValid())">
@@ -11,14 +11,14 @@
             <div data-ng-show="!loading">
                 <p class="alert alert-info"
                    role="alert"
-                   data-i18n-static="ip_table_manage_reverse_question">
+                   data-translate="ip_table_manage_reverse_question">
                 </p>
 
                 <form>
                     <div class="form-group">
                         <label class="control-label"
                                for="ipv6"
-                               data-i18n-static="ip_table_header_ip_address">
+                               data-translate="ip_table_header_ip_address">
                         </label>
                         <p class="form-control-static"
                            data-ng-bind="data.ip.ip">
@@ -30,7 +30,7 @@
                          }">
                         <label class="control-label"
                                for="rev"
-                               data-i18n-static="ip_table_header_reverse">
+                               data-translate="ip_table_header_reverse">
                         </label>
                         <input data-ng-model="model.reverse"
                                type="text"

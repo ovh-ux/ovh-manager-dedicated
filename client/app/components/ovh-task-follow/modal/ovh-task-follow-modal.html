@@ -1,11 +1,11 @@
 <div>
     <div class="modal-header">
         <h3 class="modal-title float-left"
-            data-i18n-static="ovh_task_follow_modal_title">
+            data-translate="ovh_task_follow_modal_title">
         </h3>
         <button type="button"
                 class="close float-right"
-                aria-label="{{ ::'cancel' | UAi18n }}"
+                aria-label="{{ ::'cancel' | translate }}"
                 data-ng-click="$ctrl.cancel()">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -29,7 +29,7 @@
                 </uib-accordion-heading>
                 <div data-ng-repeat="comment in task.comments track by $index">
                     <p class="text-danger"
-                       data-i18n-static="ovh_task_follow_modal_comment"
+                       data-translate="ovh_task_follow_modal_comment"
                        data-translate-values="{ date: ((comment.date_added * 1000) | date:'medium') }">
                     </p>
                     <p style="white-space: pre-wrap;"

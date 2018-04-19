@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudUserDeleteCtrl", ($scope, $stateParams, DedicatedCloud) => {
+angular.module("App").controller("DedicatedCloudUserDeleteCtrl", ($scope, $stateParams, $translate, DedicatedCloud) => {
     "use strict";
 
     $scope.user = $scope.currentActionData;
@@ -6,10 +6,10 @@ angular.module("App").controller("DedicatedCloudUserDeleteCtrl", ($scope, $state
         $scope.resetAction();
         DedicatedCloud.deleteUser($stateParams.productId, $scope.user.userId).then(
             () => {
-                $scope.setMessage($scope.tr("dedicatedCloud_USER_delete_success", $scope.user.name));
+                $scope.setMessage($translate.instant("dedicatedCloud_USER_delete_success", { t0: $scope.user.name }));
             },
             (data) => {
-                $scope.setMessage($scope.tr("dedicatedCloud_USER_delete_fail", $scope.user.name), {
+                $scope.setMessage($translate.instant("dedicatedCloud_USER_delete_fail", { t0: $scope.user.name }), {
                     type: "ERROR",
                     message: data.message
                 });

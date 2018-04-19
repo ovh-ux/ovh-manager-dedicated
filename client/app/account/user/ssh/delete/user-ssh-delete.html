@@ -2,10 +2,10 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="deleteSshKey"
-         data-wizard-title="i18n.user_ssh_delete_modal_title">
+         data-wizard-title="{{ 'user_ssh_delete_modal_title' | translate }}">
 
         <div data-wizard-step>
-            <p class="text-danger" data-ng-bind-html="tr('user_ssh_delete_modal_step1_question', [data.name])"></p>
+            <p class="text-danger" data-translate="user_ssh_delete_modal_step1_question" data-translate-values="{ t0: data.name }"></p>
         </div>
 
     </div>

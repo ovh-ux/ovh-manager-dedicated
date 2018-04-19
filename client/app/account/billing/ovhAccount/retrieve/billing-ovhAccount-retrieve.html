@@ -2,11 +2,11 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="retrieve"
-         data-wizard-title="i18n.ovhAccount_retrieve_title"
-         data-wizard-confirm-button-text="i18n.wizard_pay">
+         data-wizard-title="{{ 'ovhAccount_retrieve_title' | translate }}"
+         data-wizard-confirm-button-text="{{ 'wizard_pay' | translate }}">
 
         <div data-wizard-step>
-            <p data-i18n-static="ovhAccount_retrieve_explanation"></p>
+            <p data-translate="ovhAccount_retrieve_explanation"></p>
         </div>
 
         <div data-wizard-step
@@ -20,7 +20,7 @@
 
             <form name="$parent.retrieveForm"
                   data-ng-show="!loading">
-                <span data-i18n-static="ovhAccount_retrieve_amount_disponible"></span>
+                <span data-translate="ovhAccount_retrieve_amount_disponible"></span>
                 <strong id="credit"
                         name="credit"
                         data-ng-bind="accountModel.balanceText">
@@ -28,7 +28,7 @@
                 <div class="form-group">
                     <label for="amount"
                            class="control-label"
-                           data-i18n-static="ovhAccount_retrieve_amount">
+                           data-translate="ovhAccount_retrieve_amount">
                     </label>
                     <input type="number"
                            id="amount"
@@ -40,7 +40,7 @@
                 <div class="form-group">
                     <label for="account"
                            class="control-label"
-                           data-i18n-static="ovhAccount_retrieve_account">
+                           data-translate="ovhAccount_retrieve_account">
                     </label>
                     <div class="row">
                         <div class="col-xs-10">
@@ -54,11 +54,11 @@
                         </div>
                         <div class="col-xs-2">
                             <button type="button"
-                                    data-uib-tooltip="{{tr('ovhAccount_retrieve_account_add')}}"
+                                    data-uib-tooltip="{{ 'ovhAccount_retrieve_account_add' | translate }}"
                                     data-ng-click="goToAddBankAccount()"
                                     class="btn btn-default pull-right">
                                 <i class="fa fa-plus"
-                                   aria-label="{{tr('ovhAccount_retrieve_account_add')}}"
+                                   aria-label="{{ 'ovhAccount_retrieve_account_add' | translate }}"
                                    aria-hidden="true">
                                 </i>
                             </button>
@@ -75,12 +75,12 @@
             <div class="text-center">
                 <oui-spinner data-ng-if="loading"></oui-spinner>
                 <div data-ng-if="!loading">
-                    <span data-i18n-static="ovhAccount_retrieve_resume_1"></span>
+                    <span data-translate="ovhAccount_retrieve_resume_1"></span>
                     <strong class="text-danger"
                             data-ng-bind-html="retrieveOrder.prices | price:user.ovhSubsidiary">
                     </strong>
-                    <span data-i18n-static="ovhAccount_retrieve_resume_2"></span>( <em data-ng-bind="retrieve.account.iban"></em> ) ?
-                    <p data-i18n-static="ovhAccount_retrieve_tips"></p>
+                    <span data-translate="ovhAccount_retrieve_resume_2"></span>( <em data-ng-bind="retrieve.account.iban"></em> ) ?
+                    <p data-translate="ovhAccount_retrieve_tips"></p>
                 </div>
             </div>
         </div>

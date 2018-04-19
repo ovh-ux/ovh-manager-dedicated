@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("AddGameFirewallRuleCtrl", function ($scope, $rootScope, Alerter, Ip, IpGameFirewall) {
+angular.module("Module.ip.controllers").controller("AddGameFirewallRuleCtrl", function ($scope, $rootScope, $translate, Alerter, Ip, IpGameFirewall) {
     "use strict";
 
     const self = this;
@@ -43,7 +43,7 @@ angular.module("Module.ip.controllers").controller("AddGameFirewallRuleCtrl", fu
                     self.enums.protocols = model["ip.GameMitigationRuleProtocolEnum"].enum;
                 },
                 (data) => {
-                    Alerter.alertFromSWS($scope.tr("ip_game_mitigation_rule_add_init_error"), data.data, alert);
+                    Alerter.alertFromSWS($translate.instant("ip_game_mitigation_rule_add_init_error"), data.data, alert);
                     $scope.resetAction();
                 }
             )
@@ -73,7 +73,7 @@ angular.module("Module.ip.controllers").controller("AddGameFirewallRuleCtrl", fu
                 $scope.resetAction();
             },
             (data) => {
-                Alerter.alertFromSWS($scope.tr("ip_game_mitigation_rule_add_error"), data, alertadd);
+                Alerter.alertFromSWS($translate.instant("ip_game_mitigation_rule_add_error"), data, alertadd);
                 self.loading = false;
             }
         );

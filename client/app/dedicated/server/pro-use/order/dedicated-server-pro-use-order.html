@@ -3,7 +3,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="orderProUse"
-         data-wizard-title="tr('server_configuration_profesionnal_use_order_title')">
+         data-wizard-title="{{ 'server_configuration_profesionnal_use_order_title' | translate }}">
 
         <div data-wizard-step>
             <p data-ng-bind-html="tr('server_configuration_profesionnal_use_order_step1', model.nameServer)"></p>
@@ -17,11 +17,11 @@
             <div class="text-center"
                  data-ng-if="loading.durations">
                 <oui-spinner></oui-spinner>
-                <span data-i18n-static="license_loading"></span>
+                <span data-translate="license_loading"></span>
             </div>
 
             <div data-ng-if="!loading.durations">
-                <p data-i18n-static="server_configuration_profesionnal_use_order_step2_info"></p>
+                <p data-translate="server_configuration_profesionnal_use_order_step2_info"></p>
                 <div class="radio"
                      data-ng-repeat="duration in durations.available track by $index">
                     <label>
@@ -65,7 +65,7 @@
             </div>
 
             <div data-ng-if="!loading.validation">
-                <p data-i18n-static="server_configuration_profesionnal_use_order_step4_info"></p>
+                <p data-translate="server_configuration_profesionnal_use_order_step4_info"></p>
                 <table class="table table-hover">
                     <tbody>
                         <tr data-ng-repeat="detail in durations.details[model.duration].details">
@@ -80,7 +80,7 @@
                     <tbody>
                         <tr>
                             <td class="text-right">
-                                <strong data-i18n-static="server_configuration_profesionnal_use_order_step4_price_HT"></strong>
+                                <strong data-translate="server_configuration_profesionnal_use_order_step4_price_HT"></strong>
                                 <strong class="text-danger"
                                         data-ng-bind="durations.details[model.duration].prices.withoutTax.text">
                                 </strong>
@@ -88,7 +88,7 @@
                         </tr>
                         <tr>
                             <td class="text-right">
-                                <strong data-i18n-static="server_configuration_profesionnal_use_order_step4_price_TTC"></strong>
+                                <strong data-translate="server_configuration_profesionnal_use_order_step4_price_TTC"></strong>
                                 <strong class="text-danger"
                                         data-ng-bind="durations.details[model.duration].prices.withTax.text">
                                 </strong>
@@ -96,9 +96,9 @@
                         </tr>
                     </tbody>
                 </table>
-                <p data-i18n-static="server_configuration_profesionnal_use_order_step4_final_txt"></p>
+                <p data-translate="server_configuration_profesionnal_use_order_step4_final_txt"></p>
                 <p class="font-italic text-muted"
-                   data-i18n-static="server_configuration_profesionnal_use_order_step4_final_txt2">
+                   data-translate="server_configuration_profesionnal_use_order_step4_final_txt2">
                 </p>
             </div>
 

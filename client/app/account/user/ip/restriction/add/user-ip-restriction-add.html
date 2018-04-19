@@ -2,15 +2,15 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addRestriction"
-         data-wizard-title="i18n.user_ipRestrictions_add">
+         data-wizard-title="{{ 'user_ipRestrictions_add' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-valid="isValid">
-            <p data-i18n-static="user_ipRestrictions_add_informations"></p>
+            <p data-translate="user_ipRestrictions_add_informations"></p>
 
             <form class="form-horizontal">
                 <div class="form-group">
-                    <label data-i18n-static="user_ipRestrictions_ip" class="col-xs-3 control-label" for="inputIp"></label>
+                    <label data-translate="user_ipRestrictions_ip" class="col-xs-3 control-label" for="inputIp"></label>
 
                     <div class="col-xs-9">
                         <input type="text"
@@ -23,9 +23,9 @@
                 <div class="form-group">
                     <label class="col-xs-3 control-label"
                            for="inputWarning">
-                        <span data-i18n-static="user_ipRestrictions_alert"></span>
+                        <span data-translate="user_ipRestrictions_alert"></span>
                         <span class="oui-icon oui-icon-help_circle security-icon-help"
-                              data-uib-tooltip="{{tr('user_ipRestrictions_alert_information')}}"
+                              data-uib-tooltip="{{ 'user_ipRestrictions_alert_information' | translate }}"
                               data-tooltip-placement="bottom" class="icon-question-sign subdued"
                               aria-hidden="true">
                         </span>
@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label data-i18n-static="user_ipRestrictions_rule"
+                    <label data-translate="user_ipRestrictions_rule"
                            class="col-xs-3 control-label"
                            for="inputRule">
                     </label>
@@ -51,8 +51,8 @@
                         <select class="form-control"
                                 data-ng-model="restriction.rule"
                                 id="inputRule">
-                            <option value="ACCEPT">{{tr('user_ipRestrictions_rule_ACCEPT')}}</option>
-                            <option value="DENY">{{tr('user_ipRestrictions_rule_DENY')}}</option>
+                            <option value="ACCEPT">{{ 'user_ipRestrictions_rule_ACCEPT' | translate }}</option>
+                            <option value="DENY">{{ 'user_ipRestrictions_rule_DENY' | translate }}</option>
                         </select>
                     </div>
                 </div>
@@ -62,14 +62,14 @@
 
         <div data-wizard-step>
 
-            <p data-i18n-static="user_ipRestrictions_add_summary"></p>
+            <p data-translate="user_ipRestrictions_add_summary"></p>
 
             <dl class="dl-horizontal">
-                <dt data-i18n-static="user_ipRestrictions_ip"></dt>
+                <dt data-translate="user_ipRestrictions_ip"></dt>
                 <dd data-ng-bind="restriction.ip"></dd>
 
                 <dt>
-                    <span data-i18n-static="user_ipRestrictions_alert"></span>
+                    <span data-translate="user_ipRestrictions_alert"></span>
                 </dt>
                 <dd>
                     <span data-ng-class="{
@@ -80,7 +80,7 @@
                     </span>
                 </dd>
 
-                <dt data-i18n-static="user_ipRestrictions_rule"></dt>
+                <dt data-translate="user_ipRestrictions_rule"></dt>
                 <dd data-ng-bind="tr('user_ipRestrictions_rule_'+restriction.rule)"></dd>
 
             </dl>

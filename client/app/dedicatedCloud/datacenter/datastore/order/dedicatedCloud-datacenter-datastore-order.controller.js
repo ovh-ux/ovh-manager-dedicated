@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudDatacentersOrderDatastoresCtrl", ($scope, $stateParams, DedicatedCloud, translator) => {
+angular.module("App").controller("DedicatedCloudDatacentersOrderDatastoresCtrl", ($scope, $stateParams, DedicatedCloud, $translate) => {
 
     $scope.orderDatastores = {
         datacenter: null,
@@ -27,13 +27,15 @@ angular.module("App").controller("DedicatedCloudDatacentersOrderDatastoresCtrl",
                     (data) => {
                         $scope.resetAction();
                         $scope.orderDatastores.loading = false;
-                        $scope.setMessage(translator.tr("dedicatedCloud_configuration_order_datastores_finish_fail", [$scope.orderDatastores.datacenter.name]), angular.extend(data, { type: "ERROR" }));
+                        $scope.setMessage($translate.instant("dedicatedCloud_configuration_order_datastores_finish_fail", {
+                            t0: $scope.orderDatastores.datacenter.name
+                        }), angular.extend(data, { type: "ERROR" }));
                     }
                 );
             },
             (data) => {
                 $scope.orderDatastores.loading = false;
-                $scope.setMessage($scope.tr("dedicatedCloud_configuration_order_hosts_finish_fail"), angular.extend(data, { type: "ERROR" }));
+                $scope.setMessage($translate.instant("dedicatedCloud_configuration_order_hosts_finish_fail"), angular.extend(data, { type: "ERROR" }));
             }
         );
     };
@@ -62,7 +64,9 @@ angular.module("App").controller("DedicatedCloudDatacentersOrderDatastoresCtrl",
             (data) => {
                 $scope.orderDatastores.loading = false;
                 $scope.resetAction();
-                $scope.setMessage(translator.tr("dedicatedCloud_configuration_order_datastores_finish_fail", [$scope.orderDatastores.datacenter.name]), angular.extend(data, { type: "ERROR" }));
+                $scope.setMessage($translate.instant("dedicatedCloud_configuration_order_datastores_finish_fail", {
+                    t0: $scope.orderDatastores.datacenter.name
+                }), angular.extend(data, { type: "ERROR" }));
             }
         );
     };
@@ -72,9 +76,14 @@ angular.module("App").controller("DedicatedCloudDatacentersOrderDatastoresCtrl",
         DedicatedCloud.orderDatastores($stateParams.productId, $scope.orderDatastores.datacenter.id, $scope.orderDatastores.selectedModel.name, $scope.orderDatastores.quantityToOrder)
             .then((data) => {
                 window.open(data.url, "_blank");
-                $scope.setMessage(translator.tr("dedicatedCloud_configuration_order_datastores_finish_success", [data.url, data.orderId]), true);
+                $scope.setMessage($translate.instant("dedicatedCloud_configuration_order_datastores_finish_success", {
+                    t0: data.url,
+                    t1: data.orderId
+                }), true);
             })
-            .catch((err) => $scope.setMessage(translator.tr("dedicatedCloud_configuration_order_datastores_finish_fail", [$scope.orderDatastores.datacenter.name]), angular.extend(err, { type: "ERROR" })))
+            .catch((err) => $scope.setMessage($translate.instant("dedicatedCloud_configuration_order_datastores_finish_fail", {
+                t0: $scope.orderDatastores.datacenter.name
+            }), angular.extend(err, { type: "ERROR" })))
             .finally(() => {
                 $scope.orderDatastores.loading = false;
                 $scope.resetAction();

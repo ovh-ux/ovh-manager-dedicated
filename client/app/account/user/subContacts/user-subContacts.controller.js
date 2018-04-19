@@ -1,5 +1,6 @@
 angular.module("UserAccount.controllers").controller("UserAccount.controllers.subcontacts", [
     "$scope",
+    "$translate",
     "UserAccount.services.Contacts",
     "Alerter",
     "$stateParams",
@@ -7,7 +8,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.su
     "User",
     "$q",
 
-    function ($scope, Contacts, Alerter, $stateParams, $location, User, $q) {
+    function ($scope, $translate, Contacts, Alerter, $stateParams, $location, User, $q) {
         "use strict";
 
         const self = this;
@@ -29,7 +30,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.su
                     self.user = user;
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("user_account_contacts_error"), err, "InfoAlert");
+                    Alerter.alertFromSWS($translate.instant("user_account_contacts_error"), err, "InfoAlert");
                 }
             );
         }
@@ -50,7 +51,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.su
                         self.contactsIds = contacts.reverse();
                     },
                     (err) => {
-                        Alerter.alertFromSWS($scope.tr("user_account_contacts_error"), err, "InfoAlert");
+                        Alerter.alertFromSWS($translate.instant("user_account_contacts_error"), err, "InfoAlert");
                     }
                 )
                 .finally(() => {

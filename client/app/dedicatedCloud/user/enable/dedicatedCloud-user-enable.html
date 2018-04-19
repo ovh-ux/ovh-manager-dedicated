@@ -3,12 +3,12 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="enableUser"
-         data-wizard-title="i18n.dedicatedCloud_USER_enable_title">
+         data-wizard-title="{{ 'dedicatedCloud_USER_enable_title' | translate }}">
 
         <div data-wizard-step>
 
             <p class="text-danger">
-                <strong data-i18n-static="dedicatedCloud_USER_enable_infos"></strong>
+                <strong data-translate="dedicatedCloud_USER_enable_infos"></strong>
             </p>
             <p data-ng-bind-html="tr('dedicatedCloud_USER_enable_message', user.name)"></p>
 

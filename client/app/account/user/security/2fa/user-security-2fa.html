@@ -7,7 +7,7 @@
          data-wizard-hide-previous-button="!step2.hasError"
          data-wizard-hide-cancel-button="step4.isActive"
          data-wizard-bread-crumb
-         data-wizard-title="i18n.user_account_security_double_auth_action_activate">
+         data-wizard-title="{{ 'user_account_security_double_auth_action_activate' | translate }}">
 
         <!-- WELCOME -->
         <div data-wizard-step>
@@ -20,12 +20,12 @@
                 </span>
                 <div class="media-body">
                     <h2 class="wizard-title-sub"
-                        data-i18n-static="user_account_security_double_auth_wizard_welcome_title">
+                        data-translate="user_account_security_double_auth_wizard_welcome_title">
                     </h2>
                     <p class="mt-4"
-                       data-i18n-static="user_account_security_double_auth_wizard_welcome_info1">
+                       data-translate="user_account_security_double_auth_wizard_welcome_info1">
                     </p>
-                    <p data-i18n-static="user_account_security_double_auth_wizard_welcome_info2"></p>
+                    <p data-translate="user_account_security_double_auth_wizard_welcome_info2"></p>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@
              data-wizard-step-valid="doesStep1IsValid()">
 
             <h2 class="wizard-title-sub"
-                data-i18n-static="user_account_security_double_auth_wizard_choice_title">
+                data-translate="user_account_security_double_auth_wizard_choice_title">
             </h2>
 
             <!-- SMS -->
@@ -51,15 +51,15 @@
                 <label class="oui-radio__label-container"
                        for="sms">
                     <span class="oui-radio__label"
-                          data-i18n-static="user_account_security_double_auth_type_sms"></span>
+                          data-translate="user_account_security_double_auth_type_sms"></span>
                     <span class="oui-radio__description">
                         <img class="pull-left new-security-section-wizard-choice-icon"
-                             alt="{{ tr('user_account_security_double_auth_type_sms_alt') }}"
+                             alt="{{ 'user_account_security_double_auth_type_sms_alt' | translate }}"
                              src="images/user-account/security/sms.svg"
                              width="42"
                              height="42">
                         <span class="block"
-                              data-i18n-static="user_account_security_double_auth_type_sms_info">
+                              data-translate="user_account_security_double_auth_type_sms_info">
                         </span>
                     </span>
                 </label>
@@ -76,16 +76,16 @@
                 <label class="oui-radio__label-container"
                        for="totp">
                     <span class="oui-radio__label"
-                          data-i18n-static="user_account_security_double_auth_type_totp">
+                          data-translate="user_account_security_double_auth_type_totp">
                     </span>
                     <span class="oui-radio__description">
                         <img class="pull-left new-security-section-wizard-choice-icon"
-                             alt="{{ tr('user_account_security_double_auth_type_totp_alt') }}"
+                             alt="{{ 'user_account_security_double_auth_type_totp_alt' | translate }}"
                              src="images/user-account/security/app.svg"
                              width="42"
                              height="42">
                         <span class="block"
-                              data-i18n-static="user_account_security_double_auth_type_totp_info">
+                              data-translate="user_account_security_double_auth_type_totp_info">
                         </span>
                     </span>
                 </label>
@@ -102,16 +102,16 @@
                 <label class="oui-radio__label-container"
                        for="u2f">
                     <span class="oui-radio__label"
-                          data-i18n-static="user_account_security_double_auth_type_u2f">
+                          data-translate="user_account_security_double_auth_type_u2f">
                     </span>
                     <span class="oui-radio__description">
                         <img class="pull-left new-security-section-wizard-choice-icon"
-                             alt="{{ tr('user_account_security_double_auth_type_u2f_alt') }}"
+                             alt="{{ 'user_account_security_double_auth_type_u2f_alt' | translate }}"
                              src="images/user-account/security/key.svg"
                              width="42"
                              height="42">
                         <span class="block"
-                              data-i18n-static="user_account_security_double_auth_type_u2f_info">
+                              data-translate="user_account_security_double_auth_type_u2f_info">
                         </span>
                     </span>
                 </label>
@@ -119,7 +119,7 @@
 
             <!-- READ MORE -->
             <!--
-            <span data-i18n-static="user_account_security_double_auth_wizard_choice_read_more">
+            <span data-translate="user_account_security_double_auth_wizard_choice_read_more">
             -->
         </div>
 
@@ -137,9 +137,9 @@
                 </div>
 
                 <h2 class="wizard-title-sub"
-                    data-i18n-static="user_account_security_double_auth_type_sms_action_add">
+                    data-translate="user_account_security_double_auth_type_sms_action_add">
                 </h2>
-                <p data-i18n-static="user_account_security_double_auth_type_sms_modal_add_number_info"></p>
+                <p data-translate="user_account_security_double_auth_type_sms_modal_add_number_info"></p>
                 <form name="$ctrl.userAccountAdd2faSmsForm">
                     <div class="form-group"
                          data-ng-class="{
@@ -147,14 +147,14 @@
                          }">
                         <label class="control-label"
                                for="phone"
-                               data-i18n-static="user_account_security_double_auth_type_sms_modal_add_number_label">
+                               data-translate="user_account_security_double_auth_type_sms_modal_add_number_label">
                         </label>
                         <div class="input-group">
                             <input type="text"
                                    class="form-control"
                                    id="phone"
                                    name="phone"
-                                   placeholder="{{ tr('user_account_security_double_auth_type_sms_modal_add_number_label') }}"
+                                   placeholder="{{ 'user_account_security_double_auth_type_sms_modal_add_number_label' | translate }}"
                                    data-ng-model="step2.sms.phone"
                                    data-ng-pattern="/^\+(?:[0-9] ?){6,14}[0-9]$/"
                                    data-ng-disabled="step2.sms.isSendingCode">
@@ -163,7 +163,7 @@
                                         class="btn btn-default"
                                         data-ng-click="fetchSmsCode()"
                                         data-ng-disabled="step2.sms.isSendingCode || !step2.sms.phone"
-                                        data-i18n-static="user_account_security_double_auth_wizard_sms_send">
+                                        data-translate="user_account_security_double_auth_wizard_sms_send">
                                 </button>
                             </div>
                         </div>
@@ -172,7 +172,7 @@
                               data-ng-if="$ctrl.userAccountAdd2faSmsForm.phone.$touched"
                               data-ng-messages="$ctrl.userAccountAdd2faSmsForm.phone.$error">
                             <span data-ng-message="pattern"
-                                  data-i18n-static="user_security_double_auth_sms_invalid_number">
+                                  data-translate="user_security_double_auth_sms_invalid_number">
                             </span>
                         </span>
                     </div>
@@ -183,7 +183,7 @@
                          }">
                         <label class="control-label"
                                for="code"
-                               data-i18n-static="user_account_security_double_auth_type_sms_modal_add_code_placeholder">
+                               data-translate="user_account_security_double_auth_type_sms_modal_add_code_placeholder">
                         </label>
                         <input type="text"
                                class="form-control"
@@ -203,10 +203,10 @@
                               data-ng-if="$ctrl.userAccountAdd2faSmsForm.code.$touched"
                               data-ng-messages="$ctrl.userAccountAdd2faSmsForm.code.$error">
                             <span data-ng-message="required"
-                                  data-i18n-static="user_account_security_double_auth_type_sms_modal_add_code_error_required">
+                                  data-translate="user_account_security_double_auth_type_sms_modal_add_code_error_required">
                             </span>
                             <span data-ng-message="pattern"
-                                  data-i18n-static="user_account_security_double_auth_type_sms_modal_add_code_error_pattern">
+                                  data-translate="user_account_security_double_auth_type_sms_modal_add_code_error_pattern">
                             </span>
                         </span>
                     </div>
@@ -217,7 +217,7 @@
                          }">
                         <label class="control-label"
                                for="description"
-                               data-i18n-static="user_account_security_double_auth_type_sms_modal_edit_description_placeholder">
+                               data-translate="user_account_security_double_auth_type_sms_modal_edit_description_placeholder">
                         </label>
                         <input type="text"
                                class="form-control"
@@ -230,7 +230,7 @@
                               data-ng-if="$ctrl.userAccountAdd2faSmsForm.description.$touched"
                               data-ng-messages="$ctrl.userAccountAdd2faSmsForm.description.$error">
                             <span data-ng-message="maxlength"
-                                  data-i18n-static="user_account_security_double_auth_type_sms_modal_add_description_error_maxlength">
+                                  data-translate="user_account_security_double_auth_type_sms_modal_add_description_error_maxlength">
                             </span>
                         </span>
                     </div>
@@ -247,7 +247,7 @@
                      data-ovh-alert="doubleAuthAlert2fa">
                 </div>
                 <h2 class="wizard-title-sub"
-                    data-i18n-static="user_account_security_double_auth_type_totp_modal_add_app_scan">
+                    data-translate="user_account_security_double_auth_type_totp_modal_add_app_scan">
                 </h2>
                 <div class="row">
                     <div class="col-md-6 text-center">
@@ -276,13 +276,13 @@
                              }">
                             <label class="control-label"
                                    for="code"
-                                   data-i18n-static="user_account_security_double_auth_type_totp_modal_add_app_code_label">
+                                   data-translate="user_account_security_double_auth_type_totp_modal_add_app_code_label">
                             </label>
                             <input type="text"
                                    class="form-control"
                                    id="code"
                                    name="code"
-                                   placeholder="{{ tr('user_account_security_double_auth_type_totp_modal_add_app_code_placeholder') }}"
+                                   placeholder="{{ 'user_account_security_double_auth_type_totp_modal_add_app_code_placeholder' | translate }}"
                                    required
                                    data-ng-model="step2.totp.code"
                                    data-ng-pattern="/^\d{6}$/"
@@ -297,10 +297,10 @@
                                   data-ng-if="$ctrl.userAccountAdd2faTotpForm.code.$touched"
                                   data-ng-messages="$ctrl.userAccountAdd2faTotpForm.code.$error">
                                 <span data-ng-message="required"
-                                      data-i18n-static="user_account_security_double_auth_type_sms_modal_add_code_error_required">
+                                      data-translate="user_account_security_double_auth_type_sms_modal_add_code_error_required">
                                 </span>
                                 <span data-ng-message="pattern"
-                                    data-i18n-static="user_account_security_double_auth_type_sms_modal_add_code_error_pattern">
+                                    data-translate="user_account_security_double_auth_type_sms_modal_add_code_error_pattern">
                                 </span>
                             </span>
                         </div>
@@ -310,13 +310,13 @@
                              }">
                             <label class="control-label"
                                    for="description"
-                                   data-i18n-static="user_account_security_double_auth_type_totp_modal_edit_description_label">
+                                   data-translate="user_account_security_double_auth_type_totp_modal_edit_description_label">
                             </label>
                             <input type="text"
                                    class="form-control"
                                    id="description"
                                    name="description"
-                                   placeholder="{{ tr('user_account_security_double_auth_type_totp_modal_edit_description_placeholder') }}"
+                                   placeholder="{{ 'user_account_security_double_auth_type_totp_modal_edit_description_placeholder' | translate }}"
                                    data-ng-model="step2.totp.description"
                                    data-ng-maxlength="100">
                             <span class="help-block"
@@ -324,7 +324,7 @@
                                   data-ng-if="$ctrl.userAccountAdd2faTotpForm.description.$touched"
                                   data-ng-messages="$ctrl.userAccountAdd2faTotpForm.description.$error">
                                 <span data-ng-message="maxlength"
-                                      data-i18n-static="user_account_security_double_auth_type_sms_modal_add_description_error_maxlength">
+                                      data-translate="user_account_security_double_auth_type_sms_modal_add_description_error_maxlength">
                                 </span>
                             </span>
                         </div>
@@ -335,7 +335,7 @@
             <!-- U2F -->
             <div data-ng-if="step1.doubleAuthType === 'u2f' && step2.isActive">
                 <h2 class="wizard-title-sub"
-                    data-i18n-static="user_account_security_double_auth_type_u2f_modal_add_key">
+                    data-translate="user_account_security_double_auth_type_u2f_modal_add_key">
                 </h2>
                 <div data-ng-show="step2.hasError"
                      data-ovh-alert="doubleAuthAlert2fa">
@@ -345,18 +345,18 @@
                     <button class="oui-button oui-button_secondary"
                             type="button"
                             data-ng-click="addKey()"
-                            data-i18n-static="user_account_security_double_auth_type_u2f_modal_add_key_action_new">
+                            data-translate="user_account_security_double_auth_type_u2f_modal_add_key_action_new">
                     </button>
                 </div>
                 <div data-ng-if="!step2.hasError">
                     <div class="text-center"
                          data-ng-if="!step2.u2f.registerChallenge">
                         <oui-spinner></oui-spinner>
-                        <p data-i18n-static="user_account_security_double_auth_type_u2f_modal_add_key_info"></p>
+                        <p data-translate="user_account_security_double_auth_type_u2f_modal_add_key_info"></p>
                     </div>
 
                     <div data-ng-if="step2.u2f.registerChallenge">
-                        <p class="bold text-success" data-i18n-static="user_account_security_double_auth_wizard_u2f_add_success"></p>
+                        <p class="bold text-success" data-translate="user_account_security_double_auth_wizard_u2f_add_success"></p>
                         <form name="$ctrl.userAccountAdd2faU2fDescriptionForm">
                             <div class="form-group"
                                  data-ng-class="{
@@ -364,13 +364,13 @@
                                  }">
                                 <label class="control-label"
                                        for="description"
-                                       data-i18n-static="user_account_security_double_auth_type_u2f_modal_edit_description_label">
+                                       data-translate="user_account_security_double_auth_type_u2f_modal_edit_description_label">
                                 </label>
                                 <input type="text"
                                        class="form-control"
                                        id="description"
                                        name="description"
-                                       placeholder="{{ tr('user_account_security_double_auth_type_u2f_modal_edit_description_placeholder') }}"
+                                       placeholder="{{ 'user_account_security_double_auth_type_u2f_modal_edit_description_placeholder' | translate }}"
                                        data-ng-model="step2.u2f.description"
                                        data-ng-maxlength="100">
                                 <span class="help-block"
@@ -378,7 +378,7 @@
                                       data-ng-if="$ctrl.userAccountAdd2faU2fDescriptionForm.description.$touched"
                                       data-ng-messages="$ctrl.userAccountAdd2faU2fDescriptionForm.description.$error">
                                     <span data-ng-message="maxlength"
-                                          data-i18n-static="user_account_security_double_auth_type_sms_modal_add_description_error_maxlength">
+                                          data-translate="user_account_security_double_auth_type_sms_modal_add_description_error_maxlength">
                                     </span>
                                 </span>
                             </div>
@@ -398,7 +398,7 @@
             </div>
 
             <h2 class="wizard-title-sub"
-                data-i18n-static="user_account_security_double_auth_type_backup_code">
+                data-translate="user_account_security_double_auth_type_backup_code">
             </h2>
 
             <div class="text-center"
@@ -410,27 +410,27 @@
                  data-ng-if="!step3.backupCode.isGenerating">
                 <span class="media-left">
                     <img class="media-object"
-                         alt="{{ tr('user_account_security_double_auth_type_backup_code_alt') }}"
+                         alt="{{ 'user_account_security_double_auth_type_backup_code_alt' | translate }}"
                          width="42"
                          height="42"
                          src="images/user-account/security/code.svg">
                 </span>
                 <div class="media-body">
                     <p data-ng-if="step1.doubleAuthType === 'sms'"
-                       data-i18n-static="user_account_security_double_auth_type_backup_code_info">
+                       data-translate="user_account_security_double_auth_type_backup_code_info">
                     </p>
                     <p data-ng-if="step1.doubleAuthType === 'totp'"
-                       data-i18n-static="user_account_security_double_auth_type_backup_code_info_totp">
+                       data-translate="user_account_security_double_auth_type_backup_code_info_totp">
                     </p>
                     <p data-ng-if="step1.doubleAuthType === 'u2f'"
-                       data-i18n-static="user_account_security_double_auth_type_backup_code_info_u2f">
+                       data-translate="user_account_security_double_auth_type_backup_code_info_u2f">
                     </p>
                     <strong class="d-block mb-3"
-                            data-i18n-static="user_account_security_double_auth_type_backup_code_modal_list">
+                            data-translate="user_account_security_double_auth_type_backup_code_modal_list">
                     </strong>
                     <pre class="new-security-section-wizard-backup-codes"><div data-ng-repeat="code in step3.backupCode.codes" data-ng-bind="code"></div></pre>
                     <p class="text-danger">
-                        <strong data-i18n-static="user_account_security_double_auth_type_backup_code_modal_validate_info1"></strong>
+                        <strong data-translate="user_account_security_double_auth_type_backup_code_modal_validate_info1"></strong>
                     </p>
                 </div>
             </div>
@@ -443,9 +443,9 @@
                      src="images/user-account/security/success.svg"
                      width="148"
                      height="148">
-                <h2 data-i18n-static="user_account_security_double_auth_wizard_congratulation_title"></h2>
-                <h3 data-i18n-static="user_account_security_double_auth_wizard_congratulation_info1"></h3>
-                <p data-ng-bind-html="tr('user_account_security_double_auth_wizard_congratulation_info2')"></p>
+                <h2 data-translate="user_account_security_double_auth_wizard_congratulation_title"></h2>
+                <h3 data-translate="user_account_security_double_auth_wizard_congratulation_info1"></h3>
+                <p data-ng-bind-html="{{ 'user_account_security_double_auth_wizard_congratulation_info2' | translate }}"></p>
             </div>
         </div>
 

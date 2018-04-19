@@ -20,25 +20,25 @@
 
                 <div data-ng-if="!ipmi.model.activated">
                     <div data-ng-if="!kvm.features">
-                        <p data-i18n-static="server_configuration_impi_off"></p>
+                        <p data-translate="server_configuration_impi_off"></p>
                         <div data-ng-if="kvm.canOrderKvm">
-                            <p data-i18n-static="server_configuration_impi_off_kvm"></p>
+                            <p data-translate="server_configuration_impi_off_kvm"></p>
                             <button type="button"
                                     class="btn btn-default"
                                     data-ng-click="setAction('kvm/order/dedicated-server-kvm-order', user)">
                                 <span class="fa fa-shopping-cart" aria-hidden="true"></span>
-                                <span data-i18n-static="server_configuration_impi_order_kvm"></span>
+                                <span data-translate="server_configuration_impi_order_kvm"></span>
                             </button>
                         </div>
                     </div>
                     <div data-ng-if="kvm.features">
-                        <h3 data-i18n-static="server_configuration_kvm_informations"></h3>
+                        <h3 data-translate="server_configuration_kvm_informations"></h3>
                         <dl>
-                            <dt data-i18n-static="server_configuration_kvm_informations_name"></dt>
+                            <dt data-translate="server_configuration_kvm_informations_name"></dt>
                             <dd data-ng-bind="kvm.features.name"></dd>
-                            <dt data-i18n-static="server_configuration_kvm_informations_ip"></dt>
+                            <dt data-translate="server_configuration_kvm_informations_ip"></dt>
                             <dd data-ng-bind="kvm.features.ip"></dd>
-                            <dt data-i18n-static="server_configuration_kvm_informations_expiration"></dt>
+                            <dt data-translate="server_configuration_kvm_informations_expiration"></dt>
                             <dd data-ng-bind="kvm.features.expiration | date:'longDate'"></dd>
                         </dl>
                     </div>
@@ -46,18 +46,18 @@
 
                 <div class="text-danger"
                      data-ng-if="ipmi.model.activated && (disable.otherTask || disable.localTask)"
-                     data-i18n-static="server_configuration_impi_disable">
+                     data-translate="server_configuration_impi_disable">
                 </div>
 
                 <div data-ng-if="ipmi.model.activated && !disable.otherTask && !disable.localTask">
-                    <p data-ng-bind-html="tr('server_configuration_impi_information')"></p>
+                    <p data-ng-bind-html="{{ 'server_configuration_impi_information' | translate }}"></p>
                     <ul>
                         <li data-ng-bind-html="tr('server_configuration_impi_information3', ipmi.model.clientIp || '')"></li>
                         <li data-ng-bind-html="tr('server_configuration_impi_information2', ipmi.model.clientIp || '')"></li>
                     </ul>
-                    <p data-i18n-static="server_configuration_impi_monitoring_warning"></p>
+                    <p data-translate="server_configuration_impi_monitoring_warning"></p>
                     <p data-ng-if="ipmiHelpUrl"
-                       data-ng-bind-html="tr('server_configuration_impi_SOL_help', [ipmiHelpUrl])">
+                       data-translate="server_configuration_impi_SOL_help" data-translate-values="{ t0: ipmiHelpUrl }">
                     </p>
                     <ul class="list-inline mt-4">
                         <li class="text-center">
@@ -65,7 +65,7 @@
                                     class="btn btn-default btn-block"
                                     data-ng-click="startIpmiNavigation()"
                                     data-ng-disabled="loader.buttonStart || disable.otherTask || disable.localTask">
-                                <span data-i18n-static="server_configuration_impi_navigation"></span>
+                                <span data-translate="server_configuration_impi_navigation"></span>
                                 <oui-spinner class"ml-2"
                                              data-ng-if="loader.navigationLoading"
                                              data-size="s">
@@ -76,7 +76,7 @@
                                target="_blank"
                                rel="noopener"
                                data-ng-if="loader.navigationReady && !disable.otherTask && !disable.localTask"
-                               data-i18n-static="server_configuration_impi_navigation_go">
+                               data-translate="server_configuration_impi_navigation_go">
                             </a>
                         </li>
                         <li>
@@ -84,7 +84,7 @@
                                     class="btn btn-default btn-block"
                                     data-ng-click="startIpmiJava()"
                                     data-ng-disabled="loader.buttonStart || disable.otherTask || disable.localTask">
-                                <span data-i18n-static="server_configuration_impi_java"></span>
+                                <span data-translate="server_configuration_impi_java"></span>
                                 <oui-spinner class="ml-2"
                                              data-ng-if="loader.javaLoading"
                                              data-size="s">
@@ -94,7 +94,7 @@
                                     class="btn btn-default btn-block"
                                     data-ng-if="appletToDownload"
                                     data-ng-click="downloadApplet()"
-                                    data-i18n-static="server_configuration_impi_java_download">
+                                    data-translate="server_configuration_impi_java_download">
                             </button>
                         </li>
                     </ul>
@@ -114,7 +114,7 @@
                         </span>
                         <span class="ml-2"
                               data-ng-class="{ 'font-weight-bold': loader.httpLoading }"
-                              data-i18n-static="server_configuration_impi_http">
+                              data-translate="server_configuration_impi_http">
                         </span>
                     </div>
                     <div class="mt-2">
@@ -131,7 +131,7 @@
                         </span>
                         <span class="ml-2"
                               data-ng-class="{ 'font-weight-bold': loader.passwordLoading }"
-                              data-i18n-static="server_configuration_impi_password">
+                              data-translate="server_configuration_impi_password">
                         </span>
                     </div>
                     <div class="mt-2">
@@ -148,7 +148,7 @@
                         </span>
                         <span class="ml-2"
                               data-ng-class="{ 'font-weight-bold': loader.pingLoading }"
-                              data-i18n-static="server_configuration_impi_ping">
+                              data-translate="server_configuration_impi_ping">
                         </span>
                     </div>
                 </div>
@@ -165,10 +165,10 @@
                     data-ng-click="setAction('ipmi/restart/dedicated-server-ipmi-restart')"
                     data-ng-disabled="disable.restartIpmi || disable.localTask || disable.otherTask">
                 <span>
-                    <span data-i18n-static="server_configuration_impi_reset_interfaces"></span>
+                    <span data-translate="server_configuration_impi_reset_interfaces"></span>
                     <span class="label label-defaut"
                           data-ng-if="disable.restartIpmi"
-                          data-i18n-static="server_configuration_doing">
+                          data-translate="server_configuration_doing">
                     </span>
                 </span>
             </button>
@@ -177,21 +177,21 @@
                     data-ng-click="startIpmiTest()"
                     data-ng-disabled="disable.testIpmi || disable.otherTask || disable.localTask">
                 <span>
-                    <span data-i18n-static="server_configuration_impi_test"></span>
+                    <span data-translate="server_configuration_impi_test"></span>
                     <span class="label label-defaut"
                           data-ng-if="disable.testIpmi"
-                          data-i18n-static="server_configuration_doing">
+                          data-translate="server_configuration_doing">
                     </span>
                 </span>
             </button>
         </div>
         <a class="btn btn-default btn-block"
-           title="{{ i18n.server_configuration_kvm_new_window }}"
+           title="{{ 'server_configuration_kvm_new_window' | translate }}"
            target="_blank"
            rel="noopener"
            data-ng-if="kvm.features && !loader.loading"
            data-ng-href="http://{{ kvm.features.name }}"
-           data-i18n-static="server_configuration_kvm_access">
+           data-translate="server_configuration_kvm_access">
         </a>
     </div>
 

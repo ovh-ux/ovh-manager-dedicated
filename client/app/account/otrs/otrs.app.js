@@ -14,11 +14,9 @@ angular
         });
     })
     .run([
-        "translator",
         "Module.otrs.services.otrs",
-        function (translator, Otrs) {
+        function (Otrs) {
             "use strict";
-            translator.load(["otrs"]);
             Otrs.init();
         }
     ]);

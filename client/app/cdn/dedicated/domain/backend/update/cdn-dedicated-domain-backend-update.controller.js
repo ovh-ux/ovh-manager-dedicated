@@ -1,4 +1,4 @@
-angular.module("App").controller("CdnModifyBackendCtrl", ($scope, $stateParams, Cdn, CdnDomain) => {
+angular.module("App").controller("CdnModifyBackendCtrl", ($scope, $stateParams, $translate, Cdn, CdnDomain) => {
     $scope.backends = null;
     $scope.domain = null;
 
@@ -18,7 +18,7 @@ angular.module("App").controller("CdnModifyBackendCtrl", ($scope, $stateParams, 
                 $scope.domain = data;
             },
             (data) => {
-                $scope.setMessage($scope.tr("cdn_domain_configuration_change_backend_fail", $scope.domain.domain), data);
+                $scope.setMessage($translate.instant("cdn_domain_configuration_change_backend_fail", { t0: $scope.domain.domain }), data);
             }
         );
     };
@@ -68,10 +68,10 @@ angular.module("App").controller("CdnModifyBackendCtrl", ($scope, $stateParams, 
         $scope.resetAction();
         CdnDomain.modifyBackend($stateParams.productId, $stateParams.domain, $scope.existingBackend.value).then(
             () => {
-                $scope.setMessage($scope.tr("cdn_domain_configuration_change_backend_success", $scope.domain.domain), true);
+                $scope.setMessage($translate.instant("cdn_domain_configuration_change_backend_success", { t0: $scope.domain.domain }), true);
             },
             (data) => {
-                $scope.setMessage($scope.tr("cdn_domain_configuration_change_backend_fail"), angular.extend(data, { type: "ERROR" }));
+                $scope.setMessage($translate.instant("cdn_domain_configuration_change_backend_fail"), angular.extend(data, { type: "ERROR" }));
             }
         );
     };

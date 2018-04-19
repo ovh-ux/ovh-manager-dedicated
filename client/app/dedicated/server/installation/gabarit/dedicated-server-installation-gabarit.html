@@ -3,7 +3,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="install"
-         data-wizard-title="tr('server_configuration_installation_gabarit_title')"
+         data-wizard-title="{{ 'server_configuration_installation_gabarit_title' | translate }}"
          data-wizard-hide-cancel-button="loader.loading"
          data-wizard-bread-crumb>
 
@@ -17,7 +17,7 @@
             </div>
 
             <div data-ng-if="!loader.loading">
-                <span data-ng-bind-html="tr('server_configuration_installation_gabarit_step1_info', [installation.server.name])"></span>
+                <span data-translate="server_configuration_installation_gabarit_step1_info" data-translate-values="{ t0: installation.server.name }"></span>
                 <div class="panel-group"
                      id="accordion"
                      role="tablist"
@@ -61,17 +61,17 @@
                                             </span>
                                             <span class="text-warning"
                                                   data-ng-show="gabarit.isDeprecated "
-                                                  data-i18n-static="server_configuration_installation_deprecated">
+                                                  data-translate="server_configuration_installation_deprecated">
                                             </span>
                                             <span class="text-warning"
                                                   data-ng-show="constants.server.raidController && distribution.hardRaidConfiguration === false"
-                                                  data-i18n-static="server_configuration_installation_ovh_step1_hardwareRaid_os_not_supported_short">
+                                                  data-translate="server_configuration_installation_ovh_step1_hardwareRaid_os_not_supported_short">
                                             </span>
                                             <button type="button"
                                                     class="btn btn-link ml-2"
                                                     data-ng-if="installation.deleteGabarit !== gabarit"
                                                     data-ng-click="installation.deleteGabarit = gabarit"
-                                                    data-i18n-static="common_delete">
+                                                    data-translate="common_delete">
                                             </button>
                                         </span>
                                     </label>
@@ -84,7 +84,7 @@
                      data-ng-if="installation.selectGabarit && !installation.deleteGabarit">
                     <label for="selectLanguage"
                            class="control-label"
-                           data-i18n-static="server_configuration_installation_step1_language">
+                           data-translate="server_configuration_installation_step1_language">
                     </label>
                     <select class="form-control"
                             id="selectLanguage"
@@ -102,12 +102,12 @@
                         <button type="button"
                                 class="btn btn-default"
                                 data-ng-click="installation.deleteGabarit = null"
-                                data-i18n-static="server_configuration_installation_gabarit_step1_delete_button_cancel">
+                                data-translate="server_configuration_installation_gabarit_step1_delete_button_cancel">
                         </button>
                         <button type="button"
                                 class="btn btn-primary"
                                 data-ng-click="deleteGabarit()"
-                                data-i18n-static="server_configuration_installation_gabarit_step1_delete_button_valid">
+                                data-translate="server_configuration_installation_gabarit_step1_delete_button_valid">
                         </button>
                     </div>
                 </div>
@@ -131,33 +131,33 @@
             </div>
 
             <div data-ng-hide="loader.loading || loader.loadingForm">
-                <p data-i18n-static="server_configuration_installation_gabarit_step2_info"></p>
+                <p data-translate="server_configuration_installation_gabarit_step2_info"></p>
                 <ul>
                     <li>
-                        <span data-i18n-static="server_configuration_installation_gabarit_step2_server"></span>
+                        <span data-translate="server_configuration_installation_gabarit_step2_server"></span>
                         <strong data-ng-bind="installation.server.name"></strong>
                     </li>
                     <li>
-                        <span data-i18n-static="server_configuration_installation_gabarit_step2_os"></span>
+                        <span data-translate="server_configuration_installation_gabarit_step2_os"></span>
                         <strong data-ng-bind="installation.selectGabarit.displayName"></strong>
                     </li>
                     <li>
-                        <span data-i18n-static="server_configuration_installation_gabarit_step2_lang"></span>
+                        <span data-translate="server_configuration_installation_gabarit_step2_lang"></span>
                         <strong data-ng-bind="installation.selectLanguage"></strong>
                     </li>
                     <li data-ng-if="informations.hardwareRaid">
-                        <span data-i18n-static="server_configuration_installation_resume_hardwareRaid"></span>
+                        <span data-translate="server_configuration_installation_resume_hardwareRaid"></span>
                         <strong
                               data-ng-if="informations.hardwareRaid.mode"
                               data-ng-bind-html="tr('server_configuration_installation_gabarit_step2_hardwareRaid', [informations.hardwareRaid.mode, informations.hardwareRaid.disks.length])">
                         </strong>
                         <strong
                               data-ng-if="informations.hardwareRaid && !informations.hardwareRaid.mode"
-                              data-i18n-static="customized">
+                              data-translate="customized">
                         </strong>
                     </li>
                 </ul>
-                <strong data-i18n-static="server_configuration_installation_form_option"></strong>
+                <strong data-translate="server_configuration_installation_form_option"></strong>
                 <form id="optionForm"
                       role="form"
                       name="optionForm"
@@ -170,7 +170,7 @@
                                    name="saveGabarit"
                                    data-ng-change="nameGabaritValidator()"
                                    data-ng-model="installation.options.saveGabarit" />
-                            <span data-i18n-static="server_configuration_installation_gabarit_step2_saveGabarit"></span>
+                            <span data-translate="server_configuration_installation_gabarit_step2_saveGabarit"></span>
                         </label>
                     </div>
 
@@ -182,7 +182,7 @@
                          }">
                         <label for="gabaritNameSave"
                                class="control-label"
-                               data-i18n-static="server_configuration_installation_form_gabaritNameSave">
+                               data-translate="server_configuration_installation_form_gabaritNameSave">
                         </label>
                         <input type="text"
                                class="form-control"
@@ -195,7 +195,7 @@
                         <span class="help-block errorFormLabel"
                               role="alert"
                               data-ng-if="optionForm.gabaritNameSave.$invalid && optionForm.$dirty"
-                              data-i18n-static="server_configuration_installation_form_gabaritNameSave_pattern">
+                              data-translate="server_configuration_installation_form_gabaritNameSave_pattern">
                         </span>
                     </div>
 
@@ -204,7 +204,7 @@
                          data-ng-if="installation.options.saveGabarit">
                         <label for="changeLog"
                                class="control-label"
-                               data-i18n-static="server_configuration_installation_form_changeLog">
+                               data-translate="server_configuration_installation_form_changeLog">
                         </label>
                         <textarea id="changeLog"
                                   class="form-control"
@@ -221,7 +221,7 @@
                          }">
                         <label for="customHostname"
                                class="control-label"
-                               data-i18n-static="server_configuration_installation_form_customHostname">
+                               data-translate="server_configuration_installation_form_customHostname">
                         </label>
                         <input type="text"
                                name="customHostname"
@@ -233,7 +233,7 @@
                         <span class="help-block errorFormLabel"
                               role="alert"
                               data-ng-if="optionForm.customHostname.$invalid && optionForm.$dirty"
-                              data-i18n-static="server_configuration_installation_form_customHostname_pattern">
+                              data-translate="server_configuration_installation_form_customHostname_pattern">
                         </span>
                     </div>
 
@@ -244,7 +244,7 @@
                         }">
                         <label for="postInstallationScriptLink"
                                class="control-label"
-                               data-i18n-static="server_configuration_installation_form_postInstallationScriptLink">
+                               data-translate="server_configuration_installation_form_postInstallationScriptLink">
                         </label>
                         <input type="text"
                                id="postInstallationScriptLink"
@@ -254,7 +254,7 @@
                                data-ng-change="postInstallationScriptLinkValidator()"
                                data-ng-trim="true" />
                         <span class="icon-question-sign"
-                              data-uib-tooltip="{{ tr('server_configuration_installation_form_postInstallationScriptLink_help') }}"
+                              data-uib-tooltip="{{ 'server_configuration_installation_form_postInstallationScriptLink_help' | translate }}"
                               data-tooltip-placement="left">
                         </span>
                         <div class="errorFormLabel"
@@ -271,7 +271,7 @@
                          data-ng-if="installation.options.postInstallationScriptLink != null && installation.options.postInstallationScriptLink != ''">
                         <label for="postInstallationScriptReturn"
                                class="control-label"
-                               data-i18n-static="server_configuration_installation_form_postInstallationScriptLinkReturn">
+                               data-translate="server_configuration_installation_form_postInstallationScriptLinkReturn">
                         </label>
                         <input type="text"
                                class="form-control"
@@ -280,7 +280,7 @@
                                data-ng-model="installation.options.postInstallationScriptReturn"
                                data-ng-trim="true" />
                         <span class="icon-question-sign"
-                              data-uib-tooltip="{{ tr('server_configuration_installation_form_postInstallationScriptLinkReturn_help') }}"
+                              data-uib-tooltip="{{ 'server_configuration_installation_form_postInstallationScriptLinkReturn_help' | translate }}"
                               data-tooltip-placement="left">
                         </span>
                     </div>
@@ -292,7 +292,7 @@
                             <input type="checkbox"
                                    id="useDistributionKernel"
                                    data-ng-model="installation.options.useDistributionKernel" />
-                            <span data-i18n-static="server_configuration_installation_form_useDistribKernel"></span>
+                            <span data-translate="server_configuration_installation_form_useDistribKernel"></span>
                         </label>
                     </div>
 
@@ -303,7 +303,7 @@
                             <input type="checkbox"
                                    id="installSqlServer"
                                    data-ng-model="installation.options.installSqlServer" />
-                            <span data-i18n-static="server_configuration_installation_form_installSqlServer"></span>
+                            <span data-translate="server_configuration_installation_form_installSqlServer"></span>
                         </label>
                     </div>
 
@@ -314,7 +314,7 @@
                             <input type="checkbox"
                                    id="useSpla"
                                    data-ng-model="installation.options.useSpla" />
-                            <span data-i18n-static="server_configuration_installation_form_useSpla"></span>
+                            <span data-translate="server_configuration_installation_form_useSpla"></span>
                         </label>
                     </div>
 
@@ -323,7 +323,7 @@
                          data-ng-if="installation.selectGabarit.family !== 'WINDOWS'">
                         <label for="sshKeyName"
                                class="control-label"
-                               data-i18n-static="server_configuration_installation_form_ssh">
+                               data-translate="server_configuration_installation_form_ssh">
                         </label>
                         <div data-ng-if="!sshList.error">
                             <select class="form-control"
@@ -331,16 +331,16 @@
                                     name="sshKeyName"
                                     data-ng-options="sskkey for sskkey in sshList.model"
                                     data-ng-model="installation.options.sshKeyName">
-                                <option value="" data-i18n-static="server_configuration_installation_form_ssh_no"></option>
+                                <option value="" data-translate="server_configuration_installation_form_ssh_no"></option>
                             </select>
                             <span class="icon-question-sign"
-                                  data-uib-tooltip="{{ tr('server_configuration_installation_form_ssh_help') }}"
+                                  data-uib-tooltip="{{ 'server_configuration_installation_form_ssh_help' | translate }}"
                                   data-tooltip-placement="left">
                             </span>
                         </div>
                         <div class="mt-1 text-danger"
                              data-ng-if="sshList.error"
-                             data-i18n-static="server_configuration_installation_form_ssh_fail">
+                             data-translate="server_configuration_installation_form_ssh_fail">
                         </div>
                     </div>
 
@@ -349,7 +349,7 @@
                          data-ng-if="informations.nbDisk > 1">
                         <label for="nbDiskUse"
                                class="control-label"
-                               data-i18n-static="server_configuration_installation_form_nbdisk">
+                               data-translate="server_configuration_installation_form_nbdisk">
                         </label>
                         <select class="form-control"
                                 id="nbDiskUse"

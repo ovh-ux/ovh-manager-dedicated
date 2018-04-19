@@ -19,7 +19,7 @@
                 <span class="label label-success ml-2"
                       data-ng-repeat="freeSlot in usbInformations.numberOfFreeSlot track by $index">
                     <span class="icon-ok icon-white" aria-hidden="true"></span>
-                    <span data-ng-bind="tr('server_tab_USB_STORAGE_available_slot')"></span>
+                    <span data-ng-bind="{{ 'server_tab_USB_STORAGE_available_slot' | translate }}"></span>
                 </span>
             </div>
         </div>
@@ -28,7 +28,7 @@
                     class="btn btn-default btn-block"
                     data-ng-click="setAction('usb-storage/order/dedicated-server-usb-storage-order', usbInformations)"
                     data-ng-disabled="!usbInformations.orderable || server.order.indexOf('usbKey') === -1"
-                    data-i18n-static="server_tab_USB_STORAGE_add">
+                    data-translate="server_tab_USB_STORAGE_add">
             </button>
         </div>
     </div>

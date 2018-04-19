@@ -3,7 +3,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="upgradedResource"
-         data-wizard-title="i18n.dedicatedCloud_updateResource_toMonthly"
+         data-wizard-title="{{ 'dedicatedCloud_updateResource_toMonthly' | translate }}"
          data-wizard-bread-crumb>
 
         <!-- Step 2: Durations -->
@@ -17,7 +17,7 @@
              </div>
 
             <div data-ng-hide="loading.durations">
-                <p data-i18n-static="server_tab_USB_STORAGE_order_select_duration"></p>
+                <p data-translate="server_tab_USB_STORAGE_order_select_duration"></p>
                 <div class="radio"
                      data-ng-repeat="duration in durations.available track by $index">
                     <label>
@@ -62,7 +62,7 @@
             </div>
 
             <div data-ng-show="!loading.validation">
-                <p data-i18n-static="server_tab_USB_STORAGE_order_resume"></p>
+                <p data-translate="server_tab_USB_STORAGE_order_resume"></p>
                 <div class="table-responsive">
                     <table class="table">
                         <tbody>
@@ -80,7 +80,7 @@
                             <tr>
                                 <td colspan="2"
                                     class="text-right">
-                                    <strong data-i18n-static="dedicatedCloud_order_price_HT"></strong>
+                                    <strong data-translate="dedicatedCloud_order_price_HT"></strong>
                                     <strong class="text-danger"
                                             data-ng-bind="durations.details[model.duration].prices.withoutTax.text">
                                     </strong>
@@ -89,7 +89,7 @@
                             <tr>
                                 <td colspan="2"
                                     class="text-right">
-                                    <strong data-i18n-static="dedicatedCloud_order_price_TTC"></strong>
+                                    <strong data-translate="dedicatedCloud_order_price_TTC"></strong>
                                     <strong class="text-danger"
                                             data-ng-bind="durations.details[model.duration].prices.withTax.text">
                                     </strong>
@@ -98,9 +98,9 @@
                         </tfoot>
                     </table>
                 </div>
-                <p data-i18n-static="dedicatedCloud_order_final_txt"></p>
+                <p data-translate="dedicatedCloud_order_final_txt"></p>
                 <p class="font-italic text-muted"
-                   data-i18n-static="dedicatedCloud_order_final_txt2">
+                   data-translate="dedicatedCloud_order_final_txt2">
                 </p>
             </div>
 

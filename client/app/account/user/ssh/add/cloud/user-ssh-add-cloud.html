@@ -2,15 +2,15 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addCloudSshKey"
-         data-wizard-confirm-button-text="i18n.user_ssh_add_cloud_modal_step1_confirm_text"
-         data-wizard-title="i18n.user_ssh_add_modal_title"
+         data-wizard-confirm-button-text="{{ 'user_ssh_add_cloud_modal_step1_confirm_text' | translate }}"
+         data-wizard-title="{{ 'user_ssh_add_modal_title' | translate }}"
          data-wizard-title-icon="icon-ssh-add"
          class="user-ssh">
 
         <div data-wizard-step
              data-wizard-step-valid="formIsValid()">
             <h2 class="wizard-title-sub"
-                data-i18n-static="user_ssh_add_cloud_modal_step1_question">
+                data-translate="user_ssh_add_cloud_modal_step1_question">
             </h2>
 
             <div class="text-center"
@@ -23,7 +23,7 @@
                 <div class="form-group">
                     <label for="selectCloudProject"
                            class="control-label required"
-                           data-i18n-static="user_ssh_add_cloud_modal_project">
+                           data-translate="user_ssh_add_cloud_modal_project">
                     </label>
 
                     <select id="selectCloudProject"

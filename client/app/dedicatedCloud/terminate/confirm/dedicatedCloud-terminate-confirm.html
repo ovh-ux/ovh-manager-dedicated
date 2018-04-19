@@ -3,15 +3,15 @@
     <div data-wizard
          data-wizard-on-cancel="cancel"
          data-wizard-on-finish="confirm"
-         data-wizard-title="i18n.dedicatedCloud_confirm_close_service"
-         data-wizard-confirm-button-text="i18n.dedicatedCloud_confirm_close_confirm"
-         data-wizard-cancel-button-text="i18n.dedicatedCloud_confirm_close_cancel">
+         data-wizard-title="{{ 'dedicatedCloud_confirm_close_service' | translate }}"
+         data-wizard-confirm-button-text="{{ 'dedicatedCloud_confirm_close_confirm' | translate }}"
+         data-wizard-cancel-button-text="{{ 'dedicatedCloud_confirm_close_cancel' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-valid="!loaders.loading && form.reason">
 
             <p class="text-info">
-                <strong data-i18n-static="dedicatedCloud_confirm_close_question"></strong>
+                <strong data-translate="dedicatedCloud_confirm_close_question"></strong>
             </p>
             <div class="radio"
                  data-ng-repeat="reason in reasons track by $index">
@@ -24,7 +24,7 @@
                 </label>
             </div>
             <p class="text-info">
-                <strong data-i18n-static="dedicatedCloud_confirm_close_feedback"></strong>
+                <strong data-translate="dedicatedCloud_confirm_close_feedback"></strong>
             </p>
             <textarea class="form-control no-resize"
                       rows="6"

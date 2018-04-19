@@ -7,11 +7,12 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew.
     "$rootScope",
     "$scope",
     "$q",
+    "$translate",
     "BillingAutoRenew",
     "Alerter",
     "AUTORENEW_EVENT",
     "UserContractService",
-    function ($rootScope, $scope, $q, AutoRenew, Alerter, AUTORENEW_EVENT, UserContractService) {
+    function ($rootScope, $scope, $q, $translate, AutoRenew, Alerter, AUTORENEW_EVENT, UserContractService) {
         "use strict";
 
         $scope.selectedServices = $scope.currentActionData.services;
@@ -60,7 +61,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew.
                             })))
                     )
                     .catch((err) => {
-                        Alerter.set("alert-danger", $scope.tr("autorenew_service_update_step2_error"));
+                        Alerter.set("alert-danger", $translate.instant("autorenew_service_update_step2_error"));
                         return $q.reject(err);
                     })
                     .finally(() => {
@@ -104,10 +105,10 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew.
                 .then(() => AutoRenew.updateServices(result))
                 .then(() => {
                     $scope.$emit(AUTORENEW_EVENT.MODIFY, result);
-                    Alerter.set("alert-success", $scope.tr("autorenew_service_update_step2_success"));
+                    Alerter.set("alert-success", $translate.instant("autorenew_service_update_step2_success"));
                 })
                 .catch((err) => {
-                    Alerter.alertFromSWS($scope.tr("autorenew_service_update_step2_error"), err);
+                    Alerter.alertFromSWS($translate.instant("autorenew_service_update_step2_error"), err);
                     return $q.reject(err);
                 });
 
@@ -126,10 +127,12 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew.
                             renewDay: renewDay > 0 && renewDay <= 30 ? renewDay : 1
                         })
                             .then(() => {
-                                Alerter.set("alert-success", $scope.tr("autorenew_service_update_renewal_activation_notice"));
+                                Alerter.set("alert-success", $translate.instant("autorenew_service_update_renewal_activation_notice"));
                             })
                             .catch((err) => {
-                                Alerter.set("alert-danger", $scope.tr("autorenew_service_update_renewal_activation_error", [err]));
+                                Alerter.set("alert-danger", $translate.instant("autorenew_service_update_renewal_activation_error", {
+                                    t0: err
+                                }));
                                 return $q.reject(err);
                             });
                     })
@@ -181,7 +184,9 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew.
                 message = $scope.i18n.autorenew_service_update_period_12;
                 break;
             default:
-                message = $scope.tr("autorenew_service_update_period_month", [period]);
+                message = $translate.instant("autorenew_service_update_period_month", {
+                    t0: period
+                });
             }
             return message;
         };

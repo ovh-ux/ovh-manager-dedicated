@@ -3,13 +3,13 @@
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="deletePortsRedirection"
          data-wizard-hide-cancel-button="loading"
-         data-wizard-title="i18n.iplb_portsredirection_delete_title">
+         data-wizard-title="{{ 'iplb_portsredirection_delete_title' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-valid="!loading">
 
             <p data-ng-hide="loading"
-               data-i18n-static="iplb_portsredirection_delete_question">
+               data-translate="iplb_portsredirection_delete_question">
             </p>
 
             <div class="text-center"

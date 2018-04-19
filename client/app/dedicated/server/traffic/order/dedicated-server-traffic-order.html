@@ -3,9 +3,9 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="openBC"
-         data-wizard-title="i18n.server_order_traffic_title"
+         data-wizard-title="{{ 'server_order_traffic_title' | translate }}"
          data-wizard-bread-crumb
-         data-wizard-confirm-button-text="i18n.wizard_pay">
+         data-wizard-confirm-button-text="{{ 'wizard_pay' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-valid="ctrl.steps[0].isValid()"
@@ -14,11 +14,11 @@
             <div class="text-center"
                  data-ng-if="ctrl.steps[0].isLoading()">
                 <oui-spinner></oui-spinner>
-                <span data-i18n-static="server_order_traffic_load"></span>
+                <span data-translate="server_order_traffic_load"></span>
             </div>
 
             <form data-ng-if="!ctrl.steps[0].isLoading()">
-                <p data-i18n-static="select_traffic_type_label"></p>
+                <p data-translate="select_traffic_type_label"></p>
                 <div class="radio"
                      data-ng-repeat="traffic in ctrl.orderables.data track by traffic.value">
                     <label>
@@ -39,11 +39,11 @@
             <div class="text-center"
                  data-ng-if="ctrl.steps[1].isLoading()">
                 <oui-spinner></oui-spinner>
-                <span data-i18n-static="server_order_traffic_load"></span>
+                <span data-translate="server_order_traffic_load"></span>
             </div>
 
             <form data-ng-if="!ctrl.steps[1].isLoading()">
-                <p data-i18n-static="server_order_traffic_choose_duration"></p>
+                <p data-translate="server_order_traffic_choose_duration"></p>
                 <div class="radio"
                      data-ng-repeat="duration in ctrl.durations.data track by duration.durations">
                     <label>
@@ -65,14 +65,14 @@
             <div class="text-center"
                  data-ng-if="ctrl.steps[3].isLoading()">
                 <oui-spinner></oui-spinner>
-                <span data-i18n-static="server_order_traffic_load_bc"></span>
+                <span data-translate="server_order_traffic_load_bc"></span>
             </div>
 
             <p data-ng-if="!ctrl.steps[3].isLoading()">
                 <span class="d-block"
-                      data-ng-bind="i18n.server_order_bandwidth_resume">
+                      data-ng-bind="{{ 'server_order_bandwidth_resume' | translate }}">
                 </span>
-                <em data-ng-bind="i18n.server_order_bandwidth_resume_info"></em>
+                <em data-ng-bind="{{ 'server_order_bandwidth_resume_info' | translate }}"></em>
             </p>
 
         </div>

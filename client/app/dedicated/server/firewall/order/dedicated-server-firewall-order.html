@@ -4,8 +4,8 @@
          data-wizard-bread-crumb
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="displayBC"
-         data-wizard-title="i18n.server_configuration_firewall_asa_order_title"
-         data-wizard-confirm-button-text="i18n.wizard_pay">
+         data-wizard-title="{{ 'server_configuration_firewall_asa_order_title' | translate }}"
+         data-wizard-confirm-button-text="{{ 'wizard_pay' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-valid="model.wantedAsText"
@@ -16,7 +16,7 @@
                 <oui-spinner></oui-spinner>
             </div>
 
-            <p data-ng-bind-html="tr('server_configuration_firewall_asa_order_step1_wanted')"></p>
+            <p data-ng-bind-html="{{ 'server_configuration_firewall_asa_order_step1_wanted' | translate }}"></p>
             <table class="table table-hover"
                    data-ng-if="model.optionDetails">
                 <tr data-ng-repeat="option in model.optionDetails track by $index">
@@ -29,13 +29,13 @@
                     <td data-ng-bind="tr('server_configuration_firewall_asa_' + option.model)"></td>
                     <td>
                         <strong class="text-danger"
-                                data-ng-bind="option.unitaryPrice + ' ' + tr('server_configuration_firewall_asa_order_step1_bymonth')">
+                                data-ng-bind="option.unitaryPrice + ' ' + ('server_configuration_firewall_asa_order_step1_bymonth' | translate)">
                         </strong>
                         <div data-ng-if="option.installationFee">
                             <strong class="text-danger"
                                     data-ng-bind="'+' + option.installationFee.totalPrice.text">
                             </strong>
-                            <span>(<span data-i18n-static="server_configuration_firewall_asa_installation_fee"></span>)</span>
+                            <span>(<span data-translate="server_configuration_firewall_asa_installation_fee"></span>)</span>
                         </div>
                     </td>
                 </tr>
@@ -47,17 +47,17 @@
              data-wizard-step-valid="!model.wanted.contracts.length || model.validContract"
              data-wizard-step-on-load="evalWantedModel">
 
-            <p data-ng-bind-html="tr('server_configuration_firewall_asa_order_step2_question', [server.name])"></p>
+            <p data-translate="server_configuration_firewall_asa_order_step2_question" data-translate-values="{ t0: server.name }"></p>
             <dl>
-                <dt data-i18n-static="server_configuration_firewall_asa_order_step2_info2"></dt>
+                <dt data-translate="server_configuration_firewall_asa_order_step2_info2"></dt>
                 <dd data-ng-bind="server.expiration|date:'mediumDate'"></dd>
-                <dt data-i18n-static="server_configuration_firewall_asa_order_step2_option"></dt>
+                <dt data-translate="server_configuration_firewall_asa_order_step2_option"></dt>
                 <dd data-ng-bind="tr('server_configuration_firewall_asa_' + model.wanted.model)"></dd>
-                <dt data-i18n-static="server_configuration_firewall_asa_order_step2_totalHT"></dt>
+                <dt data-translate="server_configuration_firewall_asa_order_step2_totalHT"></dt>
                 <dd class="font-weight-bold text-danger"
                     data-ng-bind="model.wanted.withoutTax">
                 </dd>
-                <dt data-i18n-static="server_configuration_firewall_asa_order_step2_totalTTC"></dt>
+                <dt data-translate="server_configuration_firewall_asa_order_step2_totalTTC"></dt>
                 <dd class="font-weight-bold text-danger"
                     data-ng-bind="model.wanted.withTax">
                 </dd>
@@ -69,7 +69,7 @@
                                id="validateContracts"
                                name="validateContract"
                                data-ng-model="model.validContract" />
-                        <span data-ng-bind="tr('server_configuration_ftpbackup_order_contracts')"></span>
+                        <span data-ng-bind="{{ 'server_configuration_ftpbackup_order_contracts' | translate }}"></span>
                     </label>
                 </div>
                 <ul>
@@ -83,7 +83,7 @@
                 </ul>
             </div>
             <p class="font-italic"
-               data-i18n-static="server_configuration_firewall_asa_order_step2_info3">
+               data-translate="server_configuration_firewall_asa_order_step2_info3">
             </p>
 
         </div>
@@ -95,17 +95,17 @@
             <div class="text-center"
                  data-ng-if="!model.url">
                 <oui-spinner></oui-spinner>
-                <span data-i18n-static="server_configuration_firewall_asa_order_step3_generation_bc"></span>
+                <span data-translate="server_configuration_firewall_asa_order_step3_generation_bc"></span>
             </div>
 
             <div data-ng-if="model.url">
-                <p data-i18n-static="server_configuration_firewall_asa_order_step3_bc"></p>
+                <p data-translate="server_configuration_firewall_asa_order_step3_bc"></p>
                 <p class="font-weight-bold"
-                   data-i18n-static="server_configuration_firewall_asa_order_step3_continue">
+                   data-translate="server_configuration_firewall_asa_order_step3_continue">
                 </p>
-                <p data-i18n-static="server_configuration_firewall_asa_order_step3_explication"></p>
+                <p data-translate="server_configuration_firewall_asa_order_step3_explication"></p>
                 <p class="font-italic"
-                   data-i18n-static="server_configuration_firewall_asa_order_step3_explication2">
+                   data-translate="server_configuration_firewall_asa_order_step3_explication2">
                 </p>
             </div>
 

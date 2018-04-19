@@ -4,7 +4,7 @@
 
     <!-- Title -->
     <div class="page-header">
-        <h1 data-i18n-static="user_account_security_title"></h1>
+        <h1 data-translate="user_account_security_title"></h1>
     </div>
 
     <div class="tab-content">
@@ -12,17 +12,17 @@
             <div class="col-md-10 col-lg-8 mx-md-auto">
 
                 <div class="oui-message mb-4"
-                     data-ng-bind-html="tr('user_account_security_password_and_auth_method_info')">
+                     data-ng-bind-html="{{ 'user_account_security_password_and_auth_method_info' | translate }}">
                 </div>
 
                 <!-- Alert -->
                 <div class="alert alert-info"
                      role="alert">
                     <strong class="d-inline-block mb-3"
-                            data-i18n-static="user_account_security_alert_warning"></strong>
+                            data-translate="user_account_security_alert_warning"></strong>
                     <p>
-                        <span data-i18n-static="user_account_security_alert_warning_info1"></span><br>
-                        <span data-i18n-static="user_account_security_alert_warning_info2"></span>
+                        <span data-translate="user_account_security_alert_warning_info1"></span><br>
+                        <span data-translate="user_account_security_alert_warning_info2"></span>
                     </p>
                 </div>
 
@@ -44,19 +44,19 @@
                         <div class="media media-first-level">
                             <span class="media-left">
                                 <img class="media-object"
-                                     alt="{{ tr('user_account_security_password_title') }}"
+                                     alt="{{ 'user_account_security_password_title' | translate }}"
                                      width="16"
                                      height="16"
                                      src="images/user-account/security/icon-password.png">
                             </span>
                             <div class="media-body">
                                 <h4 class="media-heading float-left"
-                                    data-i18n-static="user_account_security_password_title">
+                                    data-translate="user_account_security_password_title">
                                 </h4>
                                 <button type="button"
                                         class="oui-button oui-button_primary float-right no-margin"
                                         data-ng-click="setAction('password/user-password')"
-                                        data-i18n-static="user_account_edit">
+                                        data-translate="user_account_edit">
                                 </button>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                         <div class="media media-first-level">
                             <span class="media-left">
                                 <img class="media-object"
-                                     alt="{{ tr('user_account_security_double_auth_title') }}"
+                                     alt="{{ 'user_account_security_double_auth_title' | translate }}"
                                      width="16"
                                      height="16"
                                      src="images/user-account/security/icon-2fa.png">
@@ -75,21 +75,21 @@
                             <div class="media-body">
                                 <strong class="text-success text-uppercase float-right"
                                         data-ng-if="has2faActivated()"
-                                        data-i18n-static="user_account_security_double_auth_status_activate">
+                                        data-translate="user_account_security_double_auth_status_activate">
                                 </strong>
 
                                 <h4 class="media-heading"
-                                    data-i18n-static="user_account_security_double_auth_title">
+                                    data-translate="user_account_security_double_auth_title">
                                 </h4>
 
                                 <div class="clearfix"
                                      data-ng-if="!has2faEnabled()">
                                     <p class="text-warning"
-                                       data-i18n-static="user_account_security_double_auth_info"></p>
+                                       data-translate="user_account_security_double_auth_info"></p>
                                     <button type="button"
                                             class="oui-button oui-button_primary float-right"
                                             data-ng-click="setAction('security/2fa/user-security-2fa')"
-                                            data-i18n-static="user_account_security_double_auth_action_activate">
+                                            data-translate="user_account_security_double_auth_action_activate">
                                     </button>
                                 </div>
 
@@ -102,7 +102,7 @@
                                          data-ng-if="does2faSmsIsAvailable()">
                                         <span class="media-left">
                                             <img class="media-object"
-                                                 alt="{{ tr('user_account_security_double_auth_type_sms_alt') }}"
+                                                 alt="{{ 'user_account_security_double_auth_type_sms_alt' | translate }}"
                                                  width="42"
                                                  height="42"
                                                  src="images/user-account/security/sms.svg">
@@ -126,10 +126,10 @@
                                                        }">
                                                     </i>
                                                 </span>
-                                                <span data-i18n-static="user_account_security_double_auth_type_sms"></span>
+                                                <span data-translate="user_account_security_double_auth_type_sms"></span>
                                             </h5>
                                             <div data-ovh-alert="doubleAuthAlertSms"></div>
-                                            <p data-i18n-static="user_account_security_double_auth_type_sms_info"></p>
+                                            <p data-translate="user_account_security_double_auth_type_sms_info"></p>
                                             <table class="table table-condensed"
                                                    data-ng-if="sms.smsAccounts.length"
                                                    data-ng-class="{
@@ -139,11 +139,11 @@
                                                     <tr>
                                                         <th scope="col"
                                                             width="25%"
-                                                            data-i18n-static="user_account_security_double_auth_type_sms_table_column_phonenumber">
+                                                            data-translate="user_account_security_double_auth_type_sms_table_column_phonenumber">
                                                         </th>
                                                         <th scope="col"
                                                             width="65%"
-                                                            data-i18n-static="user_account_security_double_auth_type_sms_table_column_description">
+                                                            data-translate="user_account_security_double_auth_type_sms_table_column_description">
                                                         </th>
                                                         <th scope="col" width="40px">&nbsp;</th>
                                                     </tr>
@@ -159,7 +159,7 @@
                                                             </span>
                                                             <span class="small"
                                                                   data-ng-if="smsAccount.lastUsedDate">
-                                                                  (<span data-i18n-static="user_account_security_double_auth_type_sms_table_last_used_date"></span> <span data-ng-bind="smsAccount.lastUsedDate | date:'longDate'"></span>)
+                                                                  (<span data-translate="user_account_security_double_auth_type_sms_table_last_used_date"></span> <span data-ng-bind="smsAccount.lastUsedDate | date:'longDate'"></span>)
                                                             </span>
                                                         </td>
                                                         <td class="text-right">
@@ -178,14 +178,14 @@
                                                                         <button type="button"
                                                                                 class="btn btn-link"
                                                                                 data-ng-click="setAction('security/sms/edit/user-security-sms-edit', smsAccount)"
-                                                                                data-i18n-static="user_account_security_double_auth_type_sms_table_action_update">
+                                                                                data-translate="user_account_security_double_auth_type_sms_table_action_update">
                                                                         </button>
                                                                     </li>
                                                                     <li>
                                                                         <button type="button"
                                                                                 class="btn btn-link"
                                                                                 data-ng-click="setAction('security/sms/delete/user-security-sms-delete', smsAccount)"
-                                                                                data-i18n-static="user_account_security_double_auth_type_sms_table_action_delete">
+                                                                                data-translate="user_account_security_double_auth_type_sms_table_action_delete">
                                                                         </button>
                                                                     </li>
                                                                 </ul>
@@ -197,7 +197,7 @@
                                             <button class="oui-button oui-button_secondary"
                                                     type="button"
                                                     data-ng-click="setAction('security/sms/add/user-security-sms-add', sms.smsAccounts)"
-                                                    data-i18n-static="user_account_security_double_auth_type_sms_action_add">
+                                                    data-translate="user_account_security_double_auth_type_sms_action_add">
                                             </button>
                                         </div>
                                     </div>
@@ -208,7 +208,7 @@
                                          data-ng-init="init()">
                                         <span class="media-left">
                                             <img class="media-object"
-                                                 alt="{{ tr('user_account_security_double_auth_type_totp_alt') }}"
+                                                 alt="{{ 'user_account_security_double_auth_type_totp_alt' | translate }}"
                                                  width="42"
                                                  height="42"
                                                  src="images/user-account/security/app.svg">
@@ -232,10 +232,10 @@
                                                        }">
                                                     </i>
                                                 </span>
-                                                <span data-i18n-static="user_account_security_double_auth_type_totp"></span>
+                                                <span data-translate="user_account_security_double_auth_type_totp"></span>
                                             </h5>
                                             <div data-ovh-alert="doubleAuthAlertTotp"></div>
-                                            <p data-i18n-static="user_account_security_double_auth_type_totp_info"></p>
+                                            <p data-translate="user_account_security_double_auth_type_totp_info"></p>
                                             <table class="table table-condensed"
                                                    data-ng-if="totp.totpAccounts.length"
                                                    data-ng-class="{
@@ -245,7 +245,7 @@
                                                     <tr>
                                                         <th scope="col"
                                                             width="90%"
-                                                            data-i18n-static="user_account_security_double_auth_type_totp_table_column_description">
+                                                            data-translate="user_account_security_double_auth_type_totp_table_column_description">
                                                         </th>
                                                         <th scope="col" width="40px;">&nbsp;</th>
                                                     </tr>
@@ -259,11 +259,11 @@
                                                             </span>
                                                             <span class="block normal"
                                                                   data-ng-if="!totpAccount.description"
-                                                                  data-i18n-static="user_account_security_double_auth_type_totp_table_description_empty">
+                                                                  data-translate="user_account_security_double_auth_type_totp_table_description_empty">
                                                             </span>
                                                             <span class="small"
                                                                   data-ng-if="totpAccount.lastUsedDate">
-                                                                  (<span data-i18n-static="user_account_security_double_auth_type_totp_table_last_used_date"></span> <span data-ng-bind="totpAccount.lastUsedDate | date:'longDate'"></span>)
+                                                                  (<span data-translate="user_account_security_double_auth_type_totp_table_last_used_date"></span> <span data-ng-bind="totpAccount.lastUsedDate | date:'longDate'"></span>)
                                                             </span>
                                                         </th>
                                                         <td class="text-right">
@@ -282,14 +282,14 @@
                                                                         <button type="button"
                                                                                 class="btn btn-link"
                                                                                 data-ng-click="setAction('security/totp/edit/user-security-totp-edit', totpAccount)"
-                                                                                data-i18n-static="user_account_security_double_auth_type_totp_table_action_update">
+                                                                                data-translate="user_account_security_double_auth_type_totp_table_action_update">
                                                                         </button>
                                                                     </li>
                                                                     <li>
                                                                         <button type="button"
                                                                                 class="btn btn-link"
                                                                                 data-ng-click="setAction('security/totp/delete/user-security-totp-delete', totpAccount)"
-                                                                                data-i18n-static="user_account_security_double_auth_type_totp_table_action_delete">
+                                                                                data-translate="user_account_security_double_auth_type_totp_table_action_delete">
                                                                         </button>
                                                                     </li>
                                                                 </ul>
@@ -301,7 +301,7 @@
                                             <button class="oui-button oui-button_secondary"
                                                     type="button"
                                                     data-ng-click="setAction('security/totp/add/user-security-totp-add', doubleAuth)"
-                                                    data-i18n-static="user_account_security_double_auth_type_totp_action_add">
+                                                    data-translate="user_account_security_double_auth_type_totp_action_add">
                                             </button>
                                         </div>
                                     </div>
@@ -312,7 +312,7 @@
                                          data-ng-init="init()">
                                         <span class="float-left">
                                             <img class="media-object"
-                                                 alt="{{ tr('user_account_security_double_auth_type_u2f_alt') }}"
+                                                 alt="{{ 'user_account_security_double_auth_type_u2f_alt' | translate }}"
                                                  width="42"
                                                  height="42"
                                                  src="images/user-account/security/key.svg">
@@ -336,10 +336,10 @@
                                                        }">
                                                     </i>
                                                 </span>
-                                                <span data-i18n-static="user_account_security_double_auth_type_u2f"></span>
+                                                <span data-translate="user_account_security_double_auth_type_u2f"></span>
                                             </h5>
                                             <div data-ovh-alert="doubleAuthAlertU2f"></div>
-                                            <p data-i18n-static="user_account_security_double_auth_type_u2f_info"></p>
+                                            <p data-translate="user_account_security_double_auth_type_u2f_info"></p>
                                             <table class="table table-condensed"
                                                    data-ng-if="u2f.u2fAccounts.length"
                                                    data-ng-class="{
@@ -349,7 +349,7 @@
                                                     <tr>
                                                         <th scope="col"
                                                             width="90%"
-                                                            data-i18n-static="user_account_security_double_auth_type_u2f_table_column_description">
+                                                            data-translate="user_account_security_double_auth_type_u2f_table_column_description">
                                                         </th>
                                                         <th scope="col" width="40px">&nbsp;</th>
                                                     </tr>
@@ -363,11 +363,11 @@
                                                             </span>
                                                             <span class="block normal"
                                                                   data-ng-if="!u2fAccount.description"
-                                                                  data-i18n-static="user_account_security_double_auth_type_u2f_table_description_empty">
+                                                                  data-translate="user_account_security_double_auth_type_u2f_table_description_empty">
                                                             </span>
                                                             <span class="small"
                                                                   data-ng-if="u2fAccount.lastUsedDate">
-                                                                  (<span data-i18n-static="user_account_security_double_auth_type_u2f_table_last_used_date"></span> <span data-ng-bind="u2fAccount.lastUsedDate | date:'longDate'"></span>)
+                                                                  (<span data-translate="user_account_security_double_auth_type_u2f_table_last_used_date"></span> <span data-ng-bind="u2fAccount.lastUsedDate | date:'longDate'"></span>)
                                                             </span>
                                                         </th>
                                                         <td class="text-right">
@@ -386,14 +386,14 @@
                                                                         <button type="button"
                                                                                 class="btn btn-link"
                                                                                 data-ng-click="setAction('security/u2f/edit/user-security-u2f-edit', u2fAccount)"
-                                                                                data-i18n-static="user_account_security_double_auth_type_u2f_table_action_update">
+                                                                                data-translate="user_account_security_double_auth_type_u2f_table_action_update">
                                                                         </button>
                                                                     </li>
                                                                     <li>
                                                                         <button type="button"
                                                                                 class="btn btn-link"
                                                                                 data-ng-click="setAction('security/u2f/delete/user-security-u2f-delete', u2fAccount)"
-                                                                                data-i18n-static="user_account_security_double_auth_type_u2f_table_action_delete">
+                                                                                data-translate="user_account_security_double_auth_type_u2f_table_action_delete">
                                                                         </button>
                                                                     </li>
                                                                 </ul>
@@ -405,7 +405,7 @@
                                             <button class="oui-button oui-button_secondary"
                                                     type="button"
                                                     data-ng-click="setAction('security/u2f/add/user-security-u2f-add', doubleAuth)"
-                                                    data-i18n-static="user_account_security_double_auth_type_u2f_action_add">
+                                                    data-translate="user_account_security_double_auth_type_u2f_action_add">
                                             </button>
                                         </div>
                                     </div>
@@ -416,7 +416,7 @@
                                          data-ng-init="init()">
                                         <span class="float-left">
                                             <img class="media-object"
-                                                 alt="{{ tr('user_account_security_double_auth_type_backup_code_alt') }}"
+                                                 alt="{{ 'user_account_security_double_auth_type_backup_code_alt' | translate }}"
                                                  width="42"
                                                  height="42"
                                                  src="images/user-account/security/code.svg">
@@ -440,10 +440,10 @@
                                                        }">
                                                     </i>
                                                 </span>
-                                                <span data-i18n-static="user_account_security_double_auth_type_backup_code"></span>
+                                                <span data-translate="user_account_security_double_auth_type_backup_code"></span>
                                             </h5>
                                             <div data-ovh-alert="doubleAuthAlertBackupCode"></div>
-                                            <p data-i18n-static="user_account_security_double_auth_type_backup_code_info"></p>
+                                            <p data-translate="user_account_security_double_auth_type_backup_code_info"></p>
                                             <p data-ng-if="backupCode.sotpAccount.status && backupCode.sotpAccount.status !== 'needCodeValidation'"
                                                data-ng-class="{
                                                    'text-success': backupCode.sotpAccount.remaining > 5,
@@ -456,17 +456,17 @@
                                                     type="button"
                                                     data-ng-click="setAction('security/backupCode/manage/user-security-backupCode-manage', backupCode.sotpAccount)">
                                                     <span data-ng-if="backupCode.sotpAccount.status && backupCode.sotpAccount.status !== 'needCodeValidation'"
-                                                          data-i18n-static="user_account_security_double_auth_type_backup_code_action_manage">
+                                                          data-translate="user_account_security_double_auth_type_backup_code_action_manage">
                                                     </span>
                                                     <span data-ng-if="!(backupCode.sotpAccount.status && backupCode.sotpAccount.status !== 'needCodeValidation')"
-                                                          data-i18n-static="user_account_security_double_auth_type_backup_code_action_generate">
+                                                          data-translate="user_account_security_double_auth_type_backup_code_action_generate">
                                                     </span>
                                             </button>
                                             <button data-ng-if="backupCode.sotpAccount.status && backupCode.sotpAccount.status !== 'needCodeValidation'"
                                                     class="oui-button oui-button_secondary"
                                                     type="button"
                                                     data-ng-click="setAction('security/backupCode/delete/user-security-backupCode', backupCode.sotpAccount)"
-                                                    data-i18n-static="user_account_security_double_auth_type_backup_code_action_delete">
+                                                    data-translate="user_account_security_double_auth_type_backup_code_action_delete">
                                             </button>
                                         </div>
                                     </div>
@@ -482,18 +482,18 @@
                              data-ng-init="initIpRestrictions()">
                             <span class="media-left">
                                 <img class="media-object"
-                                     alt="{{ tr('user_account_security_ip_restrictions_alt') }}"
+                                     alt="{{ 'user_account_security_ip_restrictions_alt' | translate }}"
                                      src="images/user-account/security/icon-ip-restriction.png">
                             </span>
                             <div class="media-body">
                                 <h4 class="media-heading float-left"
-                                    data-i18n-static="user_ipRestrictions_title">
+                                    data-translate="user_ipRestrictions_title">
                                 </h4>
 
                                 <button type="button"
                                         class="oui-button oui-button_primary float-right"
                                         data-ng-click="ipRestrictionsShow()"
-                                        data-i18n-static="user_ipRestrictions_activate"
+                                        data-translate="user_ipRestrictions_activate"
                                         data-ng-if="!ipRestrictionsVisible">
                                 </button>
 
@@ -503,7 +503,7 @@
                                     <div data-ovh-alert="ipRestrictionAlert"></div>
 
                                     <!-- Default Rule -->
-                                    <h5 data-i18n-static="user_ipRestrictions_default_rule"></h5>
+                                    <h5 data-translate="user_ipRestrictions_default_rule"></h5>
 
                                     <div class="text-center"
                                          data-ng-if="loaders.defaultRule">
@@ -516,7 +516,7 @@
                                         <div class="form-group">
                                             <label class="col-md-2 control-label"
                                                     for="inputRule"
-                                                    data-i18n-static="user_ipRestrictions_rule">
+                                                    data-translate="user_ipRestrictions_rule">
                                             </label>
                                             <div class="col-md-4">
                                                 <select id="inputRule"
@@ -524,23 +524,23 @@
                                                         data-ng-model="defaultRule.rule"
                                                         data-ng-change="updateRestrictionButtonDisabled()">
                                                     <option value="accept"
-                                                            data-i18n-static="user_ipRestrictions_rule_ACCEPT">
+                                                            data-translate="user_ipRestrictions_rule_ACCEPT">
                                                     </option>
                                                     <option value="deny"
-                                                            data-i18n-static="user_ipRestrictions_rule_DENY">
+                                                            data-translate="user_ipRestrictions_rule_DENY">
                                                     </option>
                                                 </select>
                                                 <p class="help-block text-danger"
                                                    data-ng-if="defaultConfDisabled"
-                                                   data-i18n-static="user_ipRestrictions_error_disable"></p>
+                                                   data-translate="user_ipRestrictions_error_disable"></p>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-2 control-label"
                                                     for="inputWarning">
-                                                <span data-i18n-static="user_ipRestrictions_alert"></span>
+                                                <span data-translate="user_ipRestrictions_alert"></span>
                                                 <span class="oui-icon oui-icon-help_circle"
-                                                      data-uib-tooltip="{{ tr('user_ipRestrictions_alert_information') }}"
+                                                      data-uib-tooltip="{{ 'user_ipRestrictions_alert_information' | translate }}"
                                                       data-tooltip-placement="bottom"
                                                       data-tooltip-append-to-body="true"
                                                       aria-hidden="true">
@@ -560,7 +560,7 @@
                                             <div class="col-md-offset-2 col-md-4">
                                                 <button type="submit"
                                                         class="btn btn-default"
-                                                        data-i18n-static="user_account_OK">
+                                                        data-translate="user_account_OK">
                                                 </button>
                                             </div>
                                         </div>
@@ -574,26 +574,26 @@
                                                'table-hover table-striped': list.length > 1
                                            }">
                                         <caption>
-                                            <h5 data-i18n-static="user_ipRestrictions_list"></h5>
+                                            <h5 data-translate="user_ipRestrictions_list"></h5>
                                         </caption>
                                         <thead>
                                             <tr>
                                                 <th scope="col"
                                                     class="text-uppercase"
-                                                    data-i18n-static="user_ipRestrictions_ip">
+                                                    data-translate="user_ipRestrictions_ip">
                                                 </th>
                                                 <th scope="col"
                                                     class="center">
-                                                    <span data-i18n-static="user_ipRestrictions_alert"></span>
+                                                    <span data-translate="user_ipRestrictions_alert"></span>
                                                     <span class="oui-icon oui-icon-help_circle"
-                                                          data-uib-tooltip="{{ tr('user_ipRestrictions_alert_information') }}"
+                                                          data-uib-tooltip="{{ 'user_ipRestrictions_alert_information' | translate }}"
                                                           data-tooltip-placement="right"
                                                           data-tooltip-append-to-body="true"
                                                           aria-hidden="true">
                                                     </span>
                                                 </th>
                                                 <th scope="col"
-                                                    data-i18n-static="user_ipRestrictions_rule">
+                                                    data-translate="user_ipRestrictions_rule">
                                                 </th>
                                                 <th class="center"></th>
                                             </tr>
@@ -610,7 +610,7 @@
                                             <tr>
                                                 <td class="center"
                                                     colspan="4"
-                                                    data-i18n-static="user_ipRestrictions_table_empty">
+                                                    data-translate="user_ipRestrictions_table_empty">
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -646,10 +646,10 @@
                                                         <select class="form-control"
                                                                 data-ng-model="ipRestrictionCurrentEdit.rule">
                                                             <option value="ACCEPT"
-                                                                    data-i18n-static="user_ipRestrictions_rule_ACCEPT">
+                                                                    data-translate="user_ipRestrictions_rule_ACCEPT">
                                                             </option>
                                                             <option value="DENY"
-                                                                    data-i18n-static="user_ipRestrictions_rule_DENY">
+                                                                    data-translate="user_ipRestrictions_rule_DENY">
                                                             </option>
                                                         </select>
                                                     </div>
@@ -673,14 +673,14 @@
                                                                 <button type="button"
                                                                         class="btn btn-link"
                                                                         data-ng-click="setIpRestrictionCurrentEdit(restriction)"
-                                                                        data-i18n-static="user_ipRestrictions_update">
+                                                                        data-translate="user_ipRestrictions_update">
                                                                 </button>
                                                             </li>
                                                             <li>
                                                                 <button type="button"
                                                                         class="btn btn-link"
                                                                         data-ng-click="setAction('ip/restriction/delete/user-ip-restriction-delete', restriction)"
-                                                                        data-i18n-static="user_ipRestrictions_delete">
+                                                                        data-translate="user_ipRestrictions_delete">
                                                                 </button>
                                                             </li>
                                                         </ul>
@@ -704,7 +704,7 @@
                                     <button type="button"
                                             class="oui-button oui-button_secondary"
                                             data-ng-click="setAction('ip/restriction/add/user-ip-restriction-add')"
-                                            data-i18n-static="user_ipRestrictions_add">
+                                            data-translate="user_ipRestrictions_add">
                                     </button>
                                 </div>
                             </div>

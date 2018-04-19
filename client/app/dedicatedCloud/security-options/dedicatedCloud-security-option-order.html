@@ -4,7 +4,7 @@
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="subscribeOption"
          data-wizard-title="tr('dedicatedCloud_options_security_modal_title_enabling_' + optionName)"
-         data-wizard-confirm-button-text="i18n.wizard_order">
+         data-wizard-confirm-button-text="{{ 'wizard_order' | translate }}">
 
         <!-- STEP 1 -->
         <div data-wizard-step
@@ -12,12 +12,12 @@
              data-wizard-step-on-load="checkCompliance">
 
             <div class="row-fluid">
-                <p data-i18n-static="dedicatedCloud_options_security_step1_info"></p>
+                <p data-translate="dedicatedCloud_options_security_step1_info"></p>
                 <ul class="checklist">
                     <li class="checklist__item"
                         data-ng-class="getCheckItemClass('nsx')">
                         <span class="checklist-item__name"
-                              data-i18n-static="dedicatedCloud_options_nsx_checklist">
+                              data-translate="dedicatedCloud_options_nsx_checklist">
                         </span>
                         <span class="checklist-item__value"
                               data-ng-hide="loaders.checks.nsx"
@@ -27,7 +27,7 @@
                     <li class="checklist__item"
                         data-ng-class="getCheckItemClass('vrops')">
                         <span class="checklist-item__name"
-                              data-i18n-static="dedicatedCloud_options_vrops_checklist">
+                              data-translate="dedicatedCloud_options_vrops_checklist">
                         </span>
                         <span class="checklist-item__value"
                               data-ng-hide="loaders.checks.vrops"
@@ -44,21 +44,21 @@
              data-wizard-step-valid="checks.trustedIp && checks.restrictedAccess"
              data-wizard-step-on-load="checkCompliance">
 
-            <p data-i18n-static="dedicatedCloud_options_security_step2_info"></p>
+            <p data-translate="dedicatedCloud_options_security_step2_info"></p>
             <ul class="checklist">
                 <li class="checklist__item"
                     data-ng-class="getCheckItemClass('restrictedAccess')">
                     <span class="checklist-item__name"
-                        data-i18n-static="dedicatedCloud_options_restricted_access_checklist">
+                        data-translate="dedicatedCloud_options_restricted_access_checklist">
                     </span>
                     <span class="checklist-item__value"
-                          data-i18n-static="{{'dedicatedCloud_options_security_useraccesspolicy_FILTERED' + userAccessPolicy}}">
+                          data-translate="{{'dedicatedCloud_options_security_useraccesspolicy_FILTERED' + userAccessPolicy}}">
                     </span>
                 </li>
                 <li class="checklist__item"
                     data-ng-class="getCheckItemClass('trustedIp')">
                     <span class="checklist-item__name"
-                          data-i18n-static="dedicatedCloud_options_trusted_ip_checklist">
+                          data-translate="dedicatedCloud_options_trusted_ip_checklist">
                     </span>
                     <span class="checklist-item__value"
                           data-ng-bind="listIp.length"
@@ -66,15 +66,15 @@
                     </span>
                     <div class="checklist-list-ip"
                          data-ng-show="!loaders.checks.trustedIp">
-                        <p data-i18n-static="dedicatedCloud_options_trusted_ip_list_title"></p>
+                        <p data-translate="dedicatedCloud_options_trusted_ip_list_title"></p>
                         <div class="checklist-list-ip__container">
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
                                         <th scope="col"
-                                            data-i18n-static="dedicatedCloud_SECURITY_IP_name">
+                                            data-translate="dedicatedCloud_SECURITY_IP_name">
                                         </th>
-                                        <th data-i18n-static="dedicatedCloud_SECURITY_description"></th>
+                                        <th data-translate="dedicatedCloud_SECURITY_description"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -104,24 +104,24 @@
             </div>
 
             <div data-ng-show="!loaders.loading">
-                <p data-i18n-static="dedicatedCloud_options_security_step3_info"></p>
+                <p data-translate="dedicatedCloud_options_security_step3_info"></p>
                 <div class="userslist"
                      data-ng-show="!loaders.checks.user">
-                    <p data-i18n-static="dedicatedCloud_options_security_step3_list_title"></p>
+                    <p data-translate="dedicatedCloud_options_security_step3_list_title"></p>
                     <table class="table table-hover">
                         <thead>
                             <tr>
                                 <th scope="col"
-                                    data-i18n-static="dedicatedCloud_options_user_name">
+                                    data-translate="dedicatedCloud_options_user_name">
                                 </th>
                                 <th scope="col"
-                                    data-i18n-static="dedicatedCloud_options_user_name_lastname">
+                                    data-translate="dedicatedCloud_options_user_name_lastname">
                                 </th>
                                 <th scope="col"
-                                    data-i18n-static="dedicatedCloud_options_user_email">
+                                    data-translate="dedicatedCloud_options_user_email">
                                 </th>
                                 <th scope="col"
-                                    data-i18n-static="dedicatedCloud_options_user_phonenumber">
+                                    data-translate="dedicatedCloud_options_user_phonenumber">
                                 </th>
                             </tr>
                         </thead>
@@ -158,13 +158,13 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th data-i18n-static="dedicatedCloud_options_order_host_name"></th>
-                            <th data-i18n-static="dedicatedCloud_options_order_datacenter_name"></th>
+                            <th data-translate="dedicatedCloud_options_order_host_name"></th>
+                            <th data-translate="dedicatedCloud_options_order_datacenter_name"></th>
                             <th class="text-right text-wrap"
-                                data-i18n-static="dedicatedCloud_options_order_current_price">
+                                data-translate="dedicatedCloud_options_order_current_price">
                             </th>
                             <th class="text-right text-wrap"
-                                data-i18n-static="dedicatedCloud_options_order_next_price">
+                                data-translate="dedicatedCloud_options_order_next_price">
                             </th>
                         </tr>
                     </thead>
@@ -182,7 +182,7 @@
                                       data-ng-bind="p.current">
                                 </span>
                                 <span data-ng-if="p.billingType === 'freeSpare'"
-                                      data-i18n-static="dedicatedCloud_options_order_price_free_spare">
+                                      data-translate="dedicatedCloud_options_order_price_free_spare">
                                 </span>
                             </td>
                             <td class="text-right">
@@ -192,14 +192,14 @@
                                       data-ng-bind="p.next">
                                 </span>
                                 <span data-ng-if="p.billingType === 'freeSpare'"
-                                      data-i18n-static="dedicatedCloud_options_order_price_free_spare">
+                                      data-translate="dedicatedCloud_options_order_price_free_spare">
                                 </span>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <p class="font-italic text-right" data-ng-bind-html="tr('dedicatedCloud_options_order_price_info')"></p>
-                <p data-i18n-static="dedicatedCloud_options_order_sms_confirmation"></p>
+                <p class="font-italic text-right" data-ng-bind-html="{{ 'dedicatedCloud_options_order_price_info' | translate }}"></p>
+                <p data-translate="dedicatedCloud_options_order_sms_confirmation"></p>
             </div>
 
         </div>

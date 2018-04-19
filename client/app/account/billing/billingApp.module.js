@@ -244,7 +244,6 @@ angular
             });
         }
     ])
-    .run((translator, $rootScope, constants) => {
-        translator.load(["billing"]);
+    .run(($rootScope, constants) => {
         $rootScope.worldPart = constants.target;
     });

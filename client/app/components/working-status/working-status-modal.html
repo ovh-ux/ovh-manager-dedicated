@@ -3,9 +3,9 @@
     <div data-wizard
          data-wizard-on-cancel="closeModal"
          data-wizard-on-finish="closeModal"
-         data-wizard-title="tr('modal_working_status_title')"
+         data-wizard-title="{{ 'modal_working_status_title' | translate }}"
          data-wizard-hide-cancel-button="true"
-         data-wizard-confirm-button-text="tr('wizard_close')">
+         data-wizard-confirm-button-text="{{ 'wizard_close' | translate }}">
 
         <div data-wizard-step>
 
@@ -13,7 +13,7 @@
                 <h5>
                     <a target="_blank"
                        rel="noopener"
-                       title="{{ work.title }} ({{ tr('core_new_window') }})"
+                       title="{{ work.title }} ({{ 'core_new_window' | translate }})"
                        data-ng-href="{{ work.link }}"
                        data-ng-bind="work.title">
                     </a>
@@ -22,15 +22,15 @@
                 <p data-ng-bind-html="work.summary"></p>
                 <ul class="list-inline font-italic">
                     <li>
-                        <strong data-ng-bind="tr('modal_working_status_type')"></strong>
+                        <strong data-ng-bind="{{ 'modal_working_status_type' | translate }}"></strong>
                         <span data-ng-bind="work.details.type"></span>
                     </li>
                     <li>
-                        <strong data-ng-bind="tr('modal_working_status_category')"></strong>
+                        <strong data-ng-bind="{{ 'modal_working_status_category' | translate }}"></strong>
                         <span data-ng-bind="work.details.category"></span>
                     </li>
                     <li>
-                        <strong data-ng-bind="tr('modal_working_status_status')"></strong>
+                        <strong data-ng-bind="{{ 'modal_working_status_status' | translate }}"></strong>
                         <span data-ng-bind="work.details.status"></span>
                     </li>
                 </ul>

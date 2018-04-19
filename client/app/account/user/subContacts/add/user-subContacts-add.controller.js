@@ -1,13 +1,14 @@
 angular.module("UserAccount.controllers").controller("UserAccount.controllers.subcontacts.add", [
     "$scope",
     "$location",
+    "$translate",
     "UserAccount.services.Infos",
     "Alerter",
     "UserAccount.services.Contacts",
     "$stateParams",
     "LANGUAGES",
 
-    function ($scope, $location, UseraccountInfos, Alerter, Contacts, $stateParams, languagesEnum) {
+    function ($scope, $location, $translate, UseraccountInfos, Alerter, Contacts, $stateParams, languagesEnum) {
         "use strict";
 
         $scope.loading = false;
@@ -47,7 +48,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.su
                     $scope.model.country = me.country;
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("user_account_info_error"), err, "InfoAlert");
+                    Alerter.alertFromSWS($translate.instant("user_account_info_error"), err, "InfoAlert");
                 }
             );
 
@@ -61,7 +62,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.su
                     }
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("user_account_info_error"), err, "InfoAlert");
+                    Alerter.alertFromSWS($translate.instant("user_account_info_error"), err, "InfoAlert");
                 }
             );
 
@@ -81,12 +82,12 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.su
                 Contacts.updateContact($scope.model).then(
                     () => {
                         _.delay(() => {
-                            Alerter.success($scope.tr("useraccount_sub_contacts_add_success_message"), "InfoAlert");
+                            Alerter.success($translate.instant("useraccount_sub_contacts_add_success_message"), "InfoAlert");
                         }, 500);
                         $scope.goBack();
                     },
                     (err) => {
-                        Alerter.alertFromSWS($scope.tr("useraccount_sub_contacts_add_error_message"), err, "InfoAlert");
+                        Alerter.alertFromSWS($translate.instant("useraccount_sub_contacts_add_error_message"), err, "InfoAlert");
                     }
                 );
             }

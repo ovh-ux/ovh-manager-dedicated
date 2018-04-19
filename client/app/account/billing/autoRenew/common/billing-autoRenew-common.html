@@ -1,15 +1,15 @@
 <td class="align-middle">
     <label class="control-label"
-           data-ng-attr-title="{{ i18n.autorenew_service_selection_checkbox }}">
+           data-ng-attr-title="{{ 'autorenew_service_selection_checkbox' | translate }}">
         <input type="checkbox"
                data-ng-model="service.checked"
                data-ng-change="services.checkClicked(service)"
-               data-ng-attr-title="{{ i18n.autorenew_service_selection_checkbox }}"/>
+               data-ng-attr-title="{{ 'autorenew_service_selection_checkbox' | translate }}"/>
     </label>
 </td>
 
 <td>
-    <span data-ng-bind-html="tr('autorenew_service_type_'+ service.serviceType)"></span>
+    <span data-ng-bind-html="('autorenew_service_type_' + service.serviceType) | translate)"></span>
 </td>
 
 <td>
@@ -33,7 +33,7 @@
             class="btn btn-default"
             data-ng-if="service.serviceType === 'HOSTING_DOMAIN'"
             data-ng-click="expandHostingDomain[service.domain] = !expandHostingDomain[service.domain]"
-            data-ng-attr-title="{{ i18n.autorenew_service_expand_sub_services }}" >
+            data-ng-attr-title="{{ 'autorenew_service_expand_sub_services' | translate }}" >
         <i class="fa fa-chevron-right" data-ng-if="!expandHostingDomain[service.domain]" aria-hidden="true"></i>
         <i class="fa fa-chevron-down" data-ng-if="expandHostingDomain[service.domain]" aria-hidden="true"></i>
     </button>
@@ -41,7 +41,7 @@
          data-uib-dropdown>
         <button type="button"
                 class="btn btn-link"
-                data-ng-attr-title="{{ i18n.autorenew_service_action_menu_tooltip }}"
+                data-ng-attr-title="{{ 'autorenew_service_action_menu_tooltip' | translate }}"
                 data-uib-dropdown-toggle>
             <span class="ovh-font ovh-font-dots align-top"
                   aria-hidden="true">

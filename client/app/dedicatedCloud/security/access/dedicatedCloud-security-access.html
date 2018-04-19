@@ -3,21 +3,21 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="modifyPolicyAccess"
-         data-wizard-title="i18n.dedicatedCloud_configuration_security_policy_access_title">
+         data-wizard-title="{{ 'dedicatedCloud_configuration_security_policy_access_title' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-valid="policyAccessCtrl.selectedAccessPolicy.value">
 
             <label for="accessPolicy"
                    class="control-label"
-                   data-i18n-static="dedicatedCloud_configuration_security_policy_access_step1_question">
+                   data-translate="dedicatedCloud_configuration_security_policy_access_step1_question">
             </label>
             <select class="form-control"
                     data-ng-options="type as tr('dedicatedCloud_SECURITY_access_policy_' + type) for type in policyAccessCtrl.selectedAccessPolicy.policies"
                     data-ng-model="policyAccessCtrl.selectedAccessPolicy.value">
                 <option value=""
                         data-ng-disabled="true"
-                        data-i18n-static="dedicatedCloud_configuration_security_policy_access_step1_value">
+                        data-translate="dedicatedCloud_configuration_security_policy_access_step1_value">
                 </option>
             </select>
 

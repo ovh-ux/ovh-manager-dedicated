@@ -10,13 +10,6 @@ angular.module("App").config(($stateProvider) => {
                 templateUrl: "dedicatedCloud/datacenter/dashboard/dedicatedCloud-datacenter-dashboard.html"
             }
         },
-        resolve: {
-            translator: [
-                "translator",
-                function (translator) {
-                    return translator.load(["dedicatedcloud"]).then(() => translator);
-                }
-            ]
-        }
+        translations: ["dedicated/cloud"]
     });
 });

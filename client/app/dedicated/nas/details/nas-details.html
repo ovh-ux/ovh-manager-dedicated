@@ -17,10 +17,10 @@
 
         <!-- Tabs -->
         <responsive-tabs>
-            <responsive-tab data-state="app.networks.nas.details">{{ ::i18n.nas_tab_dashboard }}</responsive-tab>
+            <responsive-tab data-state="app.networks.nas.details">{{ 'nas_tab_dashboard' | translate }}</responsive-tab>
             <responsive-tab data-state="app.networks.nas.details.partition"
                             data-ng-if="$ctrl.nasData.information.status !== 'expired'">
-                {{ ::i18n.nas_tab_partition }}
+                {{ 'nas_tab_partition' | translate }}
             </responsive-tab>
             <responsive-tab-more>
                 <i class="fa fa-plus"></i>
@@ -33,7 +33,7 @@
             <div class="alert alert-warning"
                  role="alert"
                  data-ng-show="$ctrl.nasData.information.status === 'expired'"
-                 data-i18n-static="common_expired">
+                 data-translate="common_expired">
             </div>
 
             <oui-message class="d-block mb-4"

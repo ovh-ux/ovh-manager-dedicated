@@ -7,7 +7,7 @@
                 data-ng-class="{ 'disabled': editionDisabled(service) }"
                 data-ng-disabled="editionDisabled(service)">
             <i class="fa fa-pencil" aria-hidden="true"></i>
-            <span data-i18n-static="autorenew_service_update_button_caption"></span>
+            <span data-translate="autorenew_service_update_button_caption"></span>
         </button>
     </li>
 
@@ -16,7 +16,7 @@
                 class="btn btn-link"
                 data-ng-click="cancelDeleteService(service, user)">
             <i class="fa fa-close" aria-hidden="true"></i>
-            <span data-i18n-static="autorenew_service_canceldelete_button"></span>
+            <span data-translate="autorenew_service_canceldelete_button"></span>
         </button>
     </li>
 
@@ -25,9 +25,9 @@
                 class="btn btn-link"
                 data-ng-disabled="service.renew.forced"
                 data-ng-click="gotoRenew(service)"
-                title="{{ tr('autorenew_service_renew_button_title', [service.serviceId]) }}">
+                title="{{ 'autorenew_service_renew_button_title' | translate:{t0: service.serviceId} }}">
             <i class="fa fa-refresh" aria-hidden="true"></i>
-            <span data-i18n-static="autorenew_service_renew_button"></span>
+            <span data-translate="autorenew_service_renew_button"></span>
         </button>
     </li>
 
@@ -36,7 +36,7 @@
                 class="btn btn-link"
                 data-ng-click="gotoExchangeRenew(service)">
             <i class="fa fa-refresh" aria-hidden="true"></i>
-            <span data-i18n-static="autorenew_service_renew_button"></span>
+            <span data-translate="autorenew_service_renew_button"></span>
         </button>
     </li>
 
@@ -47,7 +47,7 @@
                 data-ng-disabled="!canResiliate(service, user)"
                 data-ng-click="canResiliate(service, user) && resiliateService(service)">
             <i class="fa fa-trash" aria-hidden="true"></i>
-            <span data-i18n-static="autorenew_service_resiliate_button"></span>
+            <span data-translate="autorenew_service_resiliate_button"></span>
         </button>
     </li>
 
@@ -56,7 +56,7 @@
                 class="btn btn-link"
                 data-ng-click="terminateHostingWeb(service)">
             <i class="fa fa-trash" aria-hidden="true"></i>
-            <span data-i18n-static="hosting_dashboard_service_guide"></span>
+            <span data-translate="hosting_dashboard_service_guide"></span>
         </button>
     </li>
 
@@ -65,7 +65,7 @@
                 class="btn btn-link"
                 data-ng-click="terminateEmail(service)">
             <i class="fa fa-trash" aria-hidden="true"></i>
-            <span data-i18n-static="autorenew_service_EMAIL_DOMAIN_terminate"></span>
+            <span data-translate="autorenew_service_EMAIL_DOMAIN_terminate"></span>
         </button>
     </li>
 
@@ -74,7 +74,7 @@
                 class="btn btn-link"
                 data-ng-click="disableAutorenew(service)">
             <i class="fa fa-power-off" aria-hidden="true"></i>
-            <span data-i18n-static="autorenew_service_disable_button"></span>
+            <span data-translate="autorenew_service_disable_button"></span>
         </button>
     </li>
     <li data-ng-if="canEnableAutorenew(service)">
@@ -82,7 +82,7 @@
                 class="btn btn-link"
                 data-ng-click="enableAutorenew(service)">
             <i class="fa fa-calendar" aria-hidden="true"></i>
-            <span data-i18n-static="autorenew_service_enable_button"></span>
+            <span data-translate="autorenew_service_enable_button"></span>
         </button>
     </li>
 </ul>

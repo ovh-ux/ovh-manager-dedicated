@@ -3,7 +3,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="deleteSecondaryDns"
-         data-wizard-title="i18n.server_configuration_delete_secondary_dns_title">
+         data-wizard-title="{{ 'server_configuration_delete_secondary_dns_title' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-valid="!loadingDelete">
@@ -14,7 +14,7 @@
             </div>
 
             <p data-ng-if="!loadingDelete"
-               data-ng-bind-html="tr('server_configuration_delete_secondary_dns_question', [secdns.domain])">
+               data-translate="server_configuration_delete_secondary_dns_question" data-translate-values="{ t0: secdns.domain }">
             </p>
 
         </div>

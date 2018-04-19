@@ -3,8 +3,8 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="goInstall"
-         data-wizard-title="tr('server_configuration_installation_title')"
-         data-wizard-confirm-button-text="i18n.common_next">
+         data-wizard-title="{{ 'server_configuration_installation_title' | translate }}"
+         data-wizard-confirm-button-text="{{ 'common_next' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-on-load="load">
@@ -12,7 +12,7 @@
             <p data-ng-bind-html="tr('server_configuration_installation_info', server.name)"></p>
             <div class="alert alert-warning"
                  role="alert"
-                 data-i18n-static="server_configuration_installation_warning">
+                 data-translate="server_configuration_installation_warning">
             </div>
             <div class="radio">
                 <label>
@@ -21,7 +21,7 @@
                            name="choiceInstall"
                            data-ng-model="choice.value"
                            data-ng-value="choice.ovh" />
-                    <span data-i18n-static="server_configuration_installation_ovhinstall"></span>
+                    <span data-translate="server_configuration_installation_ovhinstall"></span>
                 </label>
             </div>
             <div class="radio">
@@ -31,7 +31,7 @@
                            name="choiceInstall"
                            data-ng-model="choice.value"
                            data-ng-value="choice.personal" />
-                    <span data-i18n-static="server_configuration_installation_gabarit"></span>
+                    <span data-translate="server_configuration_installation_gabarit"></span>
                 </label>
             </div>
 

@@ -1,6 +1,6 @@
 <div data-ng-controller="CdnStatisticsCtrl">
 
-    <h2 data-i18n-static="cdn_tab_statistics"></h2>
+    <h2 data-translate="cdn_tab_statistics"></h2>
 
     <div class="row d-md-flex mb-5">
         <div class="col-md-6">
@@ -13,7 +13,7 @@
                                 <div class="d-flex w-100">
                                     <div>
                                         <strong class="d-block"
-                                                data-i18n-static="cdn_configuration_activity">
+                                                data-translate="cdn_configuration_activity">
                                         </strong>
                                         <span data-ng-bind="trpl('cdn_configuration_activity_page_viewed', $ctrl.cdn.activity, [$ctrl.cdn.activity])">
                                         </span>
@@ -27,7 +27,7 @@
                                 <div class="d-flex w-100">
                                     <div>
                                         <strong class="d-block"
-                                                data-i18n-static="cdn_configuration_savings">
+                                                data-translate="cdn_configuration_savings">
                                         </strong>
                                         <span class="d-block"
                                               data-ng-bind="trpl('cdn_configuration_savings_bandwidth_percentage', $ctrl.cdn.bandwidthHitPercentage, [$ctrl.cdn.bandwidthHitPercentage])">
@@ -44,7 +44,7 @@
                                 <div class="d-flex w-100">
                                     <div>
                                         <strong class="d-block"
-                                                data-i18n-static="cdn_configuration_quota">
+                                                data-translate="cdn_configuration_quota">
                                         </strong>
                                         <span data-ng-bind="$ctrl.cdn.quota.value + ' ' + tr('unit_size_' + $ctrl.cdn.quota.unit)">
                                         </span>
@@ -58,7 +58,7 @@
                                 <div class="d-flex w-100">
                                     <div>
                                         <strong class="d-block"
-                                                data-i18n-static="cdn_configuration_quota_estimation">
+                                                data-translate="cdn_configuration_quota_estimation">
                                         </strong>
                                         <span data-ng-bind="$ctrl.cdn.endingEstimationDate">
                                         </span>
@@ -148,7 +148,7 @@
                 <div class="col-sm-6">
                     <label for="datatype"
                            class="oui-label d-inline-block align-middle mr-2">
-                        <span data-i18n-static="cdn_statistics_visualize"></span>&nbsp;:
+                        <span data-translate="cdn_statistics_visualize"></span>&nbsp;:
                     </label>
                     <div class="oui-select mb-0 oui-select_inline align-middle">
                         <select name="datatype"
@@ -164,7 +164,7 @@
                 <div class="col-sm-6">
                     <label for="period"
                            class="oui-label d-inline-block align-middle mr-2">
-                        <span data-i18n-static="cdn_statistics_from"></span>&nbsp;
+                        <span data-translate="cdn_statistics_from"></span>&nbsp;
                     </label>
                     <div class="oui-select mb-0 oui-select_inline align-middle">
                         <select name="period"

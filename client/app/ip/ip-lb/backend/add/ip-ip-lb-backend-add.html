@@ -3,14 +3,14 @@
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addBackend"
          data-wizard-hide-cancel-button="loading"
-         data-wizard-title="i18n.iplb_backend_add_title">
+         data-wizard-title="{{ 'iplb_backend_add_title' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-valid="stepIsValid">
 
             <div data-ng-hide="loading || !allowedBackends.length">
 
-                <p data-i18n-static="iplb_backend_add_question"></p>
+                <p data-translate="iplb_backend_add_question"></p>
 
                 <form>
                     <div class="form-group"
@@ -19,7 +19,7 @@
                          }">
                         <label class="control-label"
                                for="ipblockBackend"
-                               data-i18n-static="iplb_backend_add_ipbackend">
+                               data-translate="iplb_backend_add_ipbackend">
                         </label>
                         <select name="ipblockBackend"
                                 id="ipblockBackend"
@@ -43,13 +43,13 @@
                         <span class="text-danger"
                               role="alert"
                               data-ng-if="isAlreadySet"
-                              data-i18n-static="iplb_backend_add_error_ipbackend_set">
+                              data-translate="iplb_backend_add_error_ipbackend_set">
                         </span>
                     </div>
                     <div class="form-group">
                         <label class="control-label"
                                for="probe"
-                               data-i18n-static="iplb_backend_add_probe">
+                               data-translate="iplb_backend_add_probe">
                         </label>
                         <select name="probe"
                                 id="probe"
@@ -58,14 +58,14 @@
                                 data-ng-required="true"
                                 data-ng-options="probe as (i18n['iplb_backend_probe_' + probe.toUpperCase()] || probe.toUpperCase()) for probe in probes | orderBy:orderByProbeAlias">
                         </select>
-                        <p data-i18n-static="iplb_backend_probe_help_NONE"></p>
-                        <p data-i18n-static="iplb_backend_probe_help_HTTPICMP"></p>
-                        <p data-i18n-static="iplb_backend_probe_help_OCO"></p>
+                        <p data-translate="iplb_backend_probe_help_NONE"></p>
+                        <p data-translate="iplb_backend_probe_help_HTTPICMP"></p>
+                        <p data-translate="iplb_backend_probe_help_OCO"></p>
                     </div>
                     <div class="form-group">
                         <label class="control-label"
                                for="weight"
-                               data-i18n-static="iplb_backend_setweight_weight">
+                               data-translate="iplb_backend_setweight_weight">
                         </label>
                         <input type="number"
                                name="weight"
@@ -76,9 +76,9 @@
                                step="1"
                                data-ng-model="model.weight"
                                data-ng-model-options="{ 'allowInvalid': true }"/>
-                        <p data-i18n-static="iplb_backend_setweight_range">
+                        <p data-translate="iplb_backend_setweight_range">
                         </p>
-                        <p data-i18n-static="iplb_backend_setweight_help">
+                        <p data-translate="iplb_backend_setweight_help">
                        </p>
                     </div>
                 </form>
@@ -87,7 +87,7 @@
             <p class="alert alert-danger"
                role="alert"
                data-ng-if="!loading && !allowedBackends.length"
-               data-i18n-static="iplb_backend_add_no_ipbackend">
+               data-translate="iplb_backend_add_no_ipbackend">
             </p>
 
             <div class="text-center"

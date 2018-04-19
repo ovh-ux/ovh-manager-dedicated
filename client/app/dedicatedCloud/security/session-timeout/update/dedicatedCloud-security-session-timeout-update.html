@@ -3,19 +3,19 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="updateSessionTimeout"
-         data-wizard-title="i18n.dedicatedCloud_configuration_security_update_session_timeout_title"
+         data-wizard-title="{{ 'dedicatedCloud_configuration_security_update_session_timeout_title' | translate }}"
          data-wizard-bread-crumb>
 
         <div data-wizard-step
              data-wizard-step-valid="(sessionTimeoutCtrl.sessionTimeout.value != null && sessionTimeoutCtrl.sessionTimeout.value >= 0) || sessionTimeoutCtrl.sessionTimeout.never">
 
-            <p data-ng-bind-html="tr('dedicatedCloud_configuration_security_update_session_timeout_step1_question')"></p>
+            <p data-ng-bind-html="{{ 'dedicatedCloud_configuration_security_update_session_timeout_step1_question' | translate }}"></p>
             <form>
                 <div class="checkbox">
                     <label>
                         <input type="checkbox"
                                data-ng-model="sessionTimeoutCtrl.sessionTimeout.never" />
-                        <span data-i18n-static="dedicatedCloud_configuration_security_update_session_timeout_step1_never"></span>
+                        <span data-translate="dedicatedCloud_configuration_security_update_session_timeout_step1_never"></span>
                     </label>
                 </div>
 
@@ -23,7 +23,7 @@
                      data-ng-hide="sessionTimeoutCtrl.sessionTimeout.never">
                     <label for="sessionTimeout"
                            class="control-label"
-                           data-i18n-static="dedicatedCloud_configuration_security_update_session_timeout_step1_unit">
+                           data-translate="dedicatedCloud_configuration_security_update_session_timeout_step1_unit">
                     </label>
                     <input type="number"
                            class="form-control"
@@ -39,9 +39,9 @@
         <div data-wizard-step>
 
             <div data-ng-bind-html="tr('dedicatedCloud_configuration_security_update_session_timeout_step2_question', [
-            sessionTimeoutCtrl.sessionTimeout.current == 0 && tr('dedicatedCloud_SECURITY_expiration_session_never') ||
+            sessionTimeoutCtrl.sessionTimeout.current == 0 && ('dedicatedCloud_SECURITY_expiration_session_never' | translate) ||
             tr('dedicatedCloud_SECURITY_expiration_session_value',[sessionTimeoutCtrl.sessionTimeout.current]),
-            sessionTimeoutCtrl.sessionTimeout.never && tr('dedicatedCloud_SECURITY_expiration_session_never') ||
+            sessionTimeoutCtrl.sessionTimeout.never && ('dedicatedCloud_SECURITY_expiration_session_never' | translate) ||
             tr('dedicatedCloud_SECURITY_expiration_session_value',[sessionTimeoutCtrl.sessionTimeout.value])])"></div>
 
         </div>

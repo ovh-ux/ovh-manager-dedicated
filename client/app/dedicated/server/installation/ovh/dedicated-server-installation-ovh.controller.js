@@ -9,7 +9,7 @@ angular
         raid50: "raid50",
         raid60: "raid60"
     })
-    .controller("ServerInstallationOvhCtrl", ($rootScope, $scope, $q, $stateParams, Server, $filter, Alerter, TEMPLATE_OS_HARDWARE_RAID_ENUM) => {
+    .controller("ServerInstallationOvhCtrl", ($rootScope, $scope, $q, $stateParams, $translate, Server, $filter, Alerter, TEMPLATE_OS_HARDWARE_RAID_ENUM) => {
         "use strict";
 
         $scope.units = {
@@ -251,7 +251,7 @@ angular
                 })
                 .catch((data) => {
                     $scope.resetAction();
-                    Alerter.alertFromSWS($scope.tr("server_configuration_installation_ovh_fail_os", $scope.constants.server.name), data.data, "server_dashboard_alert");
+                    Alerter.alertFromSWS($translate.instant("server_configuration_installation_ovh_fail_os", { t0: $scope.constants.server.name }), data.data, "server_dashboard_alert");
                 });
             const getSshKeys = Server.getSshKey($stateParams.productId).then((data) => {
                 $scope.sshList = data;
@@ -330,7 +330,7 @@ angular
                     $scope.informations.hardwareRaid.error.notAvailable = Server.isHardRaidUnavailableError(error);
                     if (!$scope.informations.hardwareRaid.error.wrongLocation && !$scope.informations.hardwareRaid.error.notAvailable) {
                         $scope.resetAction();
-                        Alerter.alertFromSWS($scope.tr("server_configuration_installation_ovh_stephardraid_loading_error"), error.data, "server_dashboard_alert");
+                        Alerter.alertFromSWS($translate.instant("server_configuration_installation_ovh_stephardraid_loading_error"), error.data, "server_dashboard_alert");
                     }
                 });
             }
@@ -394,7 +394,7 @@ angular
                                 .catch((error) => {
                                     $scope.loader.loading = false;
                                     $scope.resetAction();
-                                    Alerter.alertFromSWS($scope.tr("server_configuration_installation_ovh_stephardraid_loading_error"), error, "server_dashboard_alert");
+                                    Alerter.alertFromSWS($translate.instant("server_configuration_installation_ovh_stephardraid_loading_error"), error, "server_dashboard_alert");
                                 });
                         }
                         $scope.installation.partitionSchemesList = _.sortBy($scope.installation.partitionSchemesList, "priority");
@@ -406,7 +406,7 @@ angular
                     (data) => {
                         $scope.loader.loading = false;
                         $scope.resetAction();
-                        Alerter.alertFromSWS($scope.tr("server_configuration_installation_ovh_fail_partition_schemes", $scope.constants.server.name), data.data, "server_dashboard_alert");
+                        Alerter.alertFromSWS($translate.instant("server_configuration_installation_ovh_fail_partition_schemes", { t0: $scope.constants.server.name }), data.data, "server_dashboard_alert");
                     }
                 );
             }
@@ -481,7 +481,7 @@ angular
                 (data) => {
                     $scope.loader.loading = false;
                     $scope.resetAction();
-                    $scope.setMessage($scope.tr("server_configuration_installation_ovh_fail_partition_schemes", $scope.constants.server.name), data.data);
+                    $scope.setMessage($translate.instant("server_configuration_installation_ovh_fail_partition_schemes", { t0: $scope.constants.server.name }), data.data);
                 }
             );
         }
@@ -1630,7 +1630,7 @@ angular
                     },
                     (data) => {
                         $scope.loader.loading = false;
-                        $scope.errorInst.ws = $scope.tr("server_configuration_installation_ovh_step3_error_integrity", data);
+                        $scope.errorInst.ws = $translate.instant("server_configuration_installation_ovh_step3_error_integrity", { t0: data });
                     }
                 );
                 addRemainingSize();
@@ -1781,7 +1781,7 @@ angular
                 (data) => {
                     $scope.loader.loading = false;
                     $scope.saveRemainingSize($scope.installation.saveSize, true);
-                    $scope.errorInst.wsinstall = $scope.tr("server_configuration_installation_error_save", data.data.message);
+                    $scope.errorInst.wsinstall = $translate.instant("server_configuration_installation_error_save", { t0: data.data.message });
                 }
             );
         }
@@ -1802,7 +1802,7 @@ angular
                 .catch(() => {
                     $scope.loader.loading = false;
                     $scope.saveRemainingSize($scope.installation.saveSize, true);
-                    $scope.errorInst.wsinstall = $scope.tr("server_configuration_installation_error_hardwareRaid");
+                    $scope.errorInst.wsinstall = $translate.instant("server_configuration_installation_error_hardwareRaid");
                 });
         }
 

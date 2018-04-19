@@ -7,11 +7,11 @@
     <div class="tab-content">
 
         <a href="#/billing/vouchers"
-           data-ng-attr-title="{{:: tr('common_previous') }}">
+           data-ng-attr-title="{{ :: 'common_previous' | translate }}">
             <i class="fa fa-chevron-left"
                aria-hidden="true">
             </i>
-            <span data-i18n-static="common_previous"></span>
+            <span data-translate="common_previous"></span>
         </a>
 
         <div data-ovh-alert></div>
@@ -26,40 +26,40 @@
                 <tr>
                     <th scope="col"
                         class="align-middle"
-                        data-i18n-static="voucher_movements_table_head_id">
+                        data-translate="voucher_movements_table_head_id">
                     </th>
                     <th scope="col"
                         class="align-middle"
-                        data-i18n-static="voucher_movements_table_head_description">
+                        data-translate="voucher_movements_table_head_description">
                     </th>
                     <th scope="col"
                         class="align-middle"
-                        data-i18n-static="voucher_movements_table_head_date">
+                        data-translate="voucher_movements_table_head_date">
                     </th>
                     <th scope="col"
                         class="align-middle"
-                        data-i18n-static="voucher_movements_table_head_amount">
+                        data-translate="voucher_movements_table_head_amount">
                     </th>
                     <th scope="col"
                         class="align-middle"
-                        data-i18n-static="voucher_movements_table_head_previous_balance">
+                        data-translate="voucher_movements_table_head_previous_balance">
                     </th>
                     <th scope="col"
                         class="align-middle"
-                        data-i18n-static="voucher_movements_table_head_balance">
+                        data-translate="voucher_movements_table_head_balance">
                     </th>
                     <th scope="col"
                         class="align-middle"
-                        data-i18n-static="voucher_movements_table_head_operation">
+                        data-translate="voucher_movements_table_head_operation">
                     </th>
                     <th scope="col"
                         class="align-middle"
-                        data-i18n-static="voucher_movements_table_head_order"></th>
+                        data-translate="voucher_movements_table_head_order"></th>
                     <th scope="col"
                         class="text-center">
                         <button class="btn btn-link"
-                                data-ng-attr-title="{{:: tr('refresh') }}"
-                                aria-label="{{:: tr('refresh') }}"
+                                data-ng-attr-title="{{ :: 'refresh' | translate }}"
+                                aria-label="{{ :: 'refresh' | translate }}"
                                 data-ng-click="getMovements(true)">
                             <i class="fa fa-refresh"
                                aria-hidden="true">
@@ -80,7 +80,7 @@
                 <tr>
                     <td colspan="9"
                         class="text-center"
-                        data-i18n-static="voucher_movements_table_empty">
+                        data-translate="voucher_movements_table_empty">
                     </td>
                 </tr>
             </tbody>
@@ -111,7 +111,7 @@
              data-transform-item="transformItem(item)"
              data-on-transform-item-done="onTransformItemDone(items)"
              data-page-placeholder="{{tr('pagination_page', [currentPage, nbPages])}}"
-             data-item-per-page-placeholder="{{tr('pagination_display')}}">
+             data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
         </div>
     </div>
 </div>

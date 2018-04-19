@@ -2,9 +2,9 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="createAlert"
-         data-wizard-title="i18n.ovhAccount_create_alert"
+         data-wizard-title="{{ 'ovhAccount_create_alert' | translate }}"
          data-wizard-bread-crumb
-         data-wizard-confirm-button-text="i18n.ovhAccount_create_alert_wizard_button">
+         data-wizard-confirm-button-text="{{ 'ovhAccount_create_alert_wizard_button' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-valid="!createAlertCtrl.loading && checkAmount()">
@@ -16,7 +16,7 @@
 
             <div data-ng-if="!createAlertCtrl.loading">
 
-                <p data-i18n-static="ovhAccount_create_alert_resume"></p>
+                <p data-translate="ovhAccount_create_alert_resume"></p>
 
                 <div class="form-group">
                     <label class="control-label"
@@ -37,14 +37,14 @@
                 <p data-ng-if="!checkAmount()"
                    role="alert"
                    class="text-danger"
-                   data-i18n-static="ovhAccount_create_alert_input_error">
+                   data-translate="ovhAccount_create_alert_input_error">
                 </p>
 
                 <div class="checkbox">
-                    <label title="{{ i18n.ovhAccount_delete_alert }}">
+                    <label title="{{ 'ovhAccount_delete_alert' | translate }}">
                         <input type="checkbox"
                                data-ng-model="createAlertCtrl.disableAlert" />
-                        <span data-i18n-static="ovhAccount_delete_alert"></span>
+                        <span data-translate="ovhAccount_delete_alert"></span>
                     </label>
                 </div>
 

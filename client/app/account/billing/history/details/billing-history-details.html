@@ -3,34 +3,34 @@
 
     <div data-ng-if="loading.init">
         <div class="loader"></div>
-        <p class="text-center" data-i18n-static="statements_details_page_loader"></p>
+        <p class="text-center" data-translate="statements_details_page_loader"></p>
     </div>
 
     <a class="btn btn-default btn-module-billing btn-module-billing-back pull-left tspace rightspace"
        href="#/billing/history"
-       title="{{ tr('statements_details_return_to_statements') }}">
+       title="{{ 'statements_details_return_to_statements' | translate }}">
         <i class="icon-backward"></i>
     </a>
 
     <section class="operation-list" data-ng-if="!loading.init">
-        <h1 class="black-title" data-i18n-static="statements_details_operations_title" ></h1>
+        <h1 class="black-title" data-translate="statements_details_operations_title" ></h1>
 
         <table class="billing-table table table-hover pretty top-space" >
-            <caption class="sr-only" data-i18n-static="statements_details_table_caption"></caption>
+            <caption class="sr-only" data-translate="statements_details_table_caption"></caption>
             <thead>
                 <tr>
-                    <th data-i18n-static="statements_details_table_header_date"></th>
-                    <th data-i18n-static="statements_details_table_header_operation"></th>
-                    <th data-i18n-static="statements_details_table_header_status"></th>
-                    <th data-i18n-static="statements_details_table_header_amount"></th>
-                    <th data-i18n-static="statements_details_table_header_document"></th>
+                    <th data-translate="statements_details_table_header_date"></th>
+                    <th data-translate="statements_details_table_header_operation"></th>
+                    <th data-translate="statements_details_table_header_status"></th>
+                    <th data-translate="statements_details_table_header_amount"></th>
+                    <th data-translate="statements_details_table_header_document"></th>
                 </tr>
             </thead>
 
             <tbody data-ng-if="!loading.init && operationIds.length === 0 ">
                 <tr>
                     <td colspan="5">
-                        <p class="text-center" data-i18n-static="statements_table_no_detail"></p>
+                        <p class="text-center" data-translate="statements_table_no_detail"></p>
                     </td>
                 </tr>
             </tbody>
@@ -46,7 +46,7 @@
                             <a class="btn btn-icon"
                                data-ng-if="!bill"
                                data-ng-href="{{ ::order.url }}"
-                               data-ng-attr-title="{{ tr('statements_details_table_order_link') }}"
+                               data-ng-attr-title="{{ 'statements_details_table_order_link' | translate }}"
                                target="_blank">
                                 <i class="fa fa-code"></i>
                             </a>
@@ -54,7 +54,7 @@
                             <a class="btn btn-icon"
                                data-ng-if="bill"
                                data-ng-href="{{ ::bill.url }}"
-                               data-ng-attr-title="{{ tr('statements_details_table_invoice_html_link') }}"
+                               data-ng-attr-title="{{ 'statements_details_table_invoice_html_link' | translate }}"
                                target="_blank">
                                 <i class="fa fa-code"></i>
                             </a>
@@ -62,7 +62,7 @@
                             <a class="btn btn-icon"
                                data-ng-if="bill"
                                data-ng-href="{{ ::bill.pdfUrl }}"
-                               data-ng-attr-title="{{ tr('statements_details_table_invoice_pdf_link') }}"
+                               data-ng-attr-title="{{ 'statements_details_table_invoice_pdf_link' | translate }}"
                                target="_blank">
                                 <i class="fa fa-file-pdf-o"></i>
                             </a>
@@ -93,7 +93,7 @@
                          data-transform-item="transformItem(item)"
                          data-on-transform-item-done="onTransformItemDone(items)"
                          data-page-placeholder="{{ tr('pagination_page', [pagination.currentPage, pagination.nbPages]) }}"
-                         data-item-per-page-placeholder="{{ tr('pagination_display') }}">
+                         data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
                     </div>
                 </td>
             </tr>

@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudVMwareOptionCtrl", ($scope, $stateParams, $q, DedicatedCloud, User, constants, Poller) => {
+angular.module("App").controller("DedicatedCloudVMwareOptionCtrl", ($scope, $stateParams, $q, $translate, DedicatedCloud, User, constants, Poller) => {
     "use strict";
 
     $scope.options = {
@@ -42,7 +42,7 @@ angular.module("App").controller("DedicatedCloudVMwareOptionCtrl", ($scope, $sta
                         if (toggable.error.data.message === "Not available yet") {
                             option.state = null; // dont show
                         } else {
-                            option.toggableMessage = $scope.tr("dedicatedCloud_vmware_option_not_compatible");
+                            option.toggableMessage = $translate.instant("dedicatedCloud_vmware_option_not_compatible");
                         }
                     } else if (toggable.error && toggable.error.status === 409) {
                         option.toggableMessage = $scope.tr(`dedicatedCloud_vmware_option_not_${option.state === "enabled" ? "enabled" : "disabled"}`);
@@ -159,7 +159,7 @@ angular.module("App").controller("DedicatedCloudVMwareOptionCtrl", ($scope, $sta
         const toggable = DedicatedCloud.isOptionToggable($stateParams.productId, option, "disabling");
         $scope.options[option].state = "disabling";
         $scope.options[option].toggable = toggable.toggable;
-        $scope.options[option].toggableMessage = $scope.tr("dedicatedCloud_options_state_disabling");
+        $scope.options[option].toggableMessage = $translate.instant("dedicatedCloud_options_state_disabling");
         initTasks();
     });
 
@@ -167,7 +167,7 @@ angular.module("App").controller("DedicatedCloudVMwareOptionCtrl", ($scope, $sta
         const toggable = DedicatedCloud.isOptionToggable($stateParams.productId, option, "enabling");
         $scope.options[option].state = "enabling";
         $scope.options[option].toggable = toggable.toggable;
-        $scope.options[option].toggableMessage = $scope.tr("dedicatedCloud_options_state_enabling");
+        $scope.options[option].toggableMessage = $translate.instant("dedicatedCloud_options_state_enabling");
         initTasks();
     });
 

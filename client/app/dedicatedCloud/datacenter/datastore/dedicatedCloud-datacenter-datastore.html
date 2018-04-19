@@ -1,6 +1,6 @@
 <div data-ng-controller="DedicatedCloudSubDatacentersDatastoreCtrl">
 
-    <h2 data-i18n-static="dedicatedCloud_tab_datastore"></h2>
+    <h2 data-translate="dedicatedCloud_tab_datastore"></h2>
 
     <div class="text-center"
          data-ng-if="loading">
@@ -11,32 +11,32 @@
                 class="btn btn-default mb-2"
                 data-ng-disabled="!datacenter.model.canOrderFilers && constants.target !== 'US'"
                 data-ng-click="orderDatastore(datacenter)"
-                data-i18n-static="dedicatedCloud_order_Datastore">
+                data-translate="dedicatedCloud_order_Datastore">
         </button>
         <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col"
-                            data-i18n-static="dedicatedCloud_tab_datastores_name">
+                            data-translate="dedicatedCloud_tab_datastores_name">
                         </th>
                         <th scope="col"
-                            data-i18n-static="dedicatedCloud_tab_datastores_profile">
+                            data-translate="dedicatedCloud_tab_datastores_profile">
                         </th>
                         <th scope="col"
-                            data-i18n-static="dedicatedCloud_tab_datastores_type">
+                            data-translate="dedicatedCloud_tab_datastores_type">
                         </th>
                         <th scope="col"
-                            data-i18n-static="dedicatedCloud_tab_datastores_size">
+                            data-translate="dedicatedCloud_tab_datastores_size">
                         </th>
                         <th scope="col"
-                            data-i18n-static="dedicatedCloud_tab_datastores_billing">
+                            data-translate="dedicatedCloud_tab_datastores_billing">
                         </th>
                         <th scope="col"
-                            data-i18n-static="dedicatedCloud_tab_datastores_status">
+                            data-translate="dedicatedCloud_tab_datastores_status">
                         </th>
                         <th scope="col"
-                            data-i18n-static="dedicatedCloud_tab_datastores_consumption">
+                            data-translate="dedicatedCloud_tab_datastores_consumption">
                         </th>
                     </tr>
                 </thead>
@@ -52,7 +52,7 @@
                     <tr>
                         <td colspan="7"
                             class="text-center"
-                            data-i18n-static="dedicatedCloud_tab_datastores_empty">
+                            data-translate="dedicatedCloud_tab_datastores_empty">
                         </td>
                     </tr>
                 </tbody>
@@ -76,16 +76,16 @@
                                         type: 'filer',
                                         id: datastore.id
                                     })"
-                                    data-i18n-static="dedicatedCloud_updateResource_toMonthly">
+                                    data-translate="dedicatedCloud_updateResource_toMonthly">
                             </button>
                         </td>
                         <td data-ng-bind="tr('dedicatedCloud_tab_datastores_status_' + datastore.status)"></td>
                         <td>
                             <span data-ng-if="datastore.billing === 'HOURLY' && isNan(datastore.consumption)"
-                                  data-i18n-static="dedicatedCloud_tab_datastores_hourly_consumption_na">
+                                  data-translate="dedicatedCloud_tab_datastores_hourly_consumption_na">
                             </span>
                             <span data-ng-if="datastore.billing === 'HOURLY' && datastore.consumption <= 1"
-                                  data-i18n-static="dedicatedCloud_tab_datastores_hourly_consumption_1"
+                                  data-translate="dedicatedCloud_tab_datastores_hourly_consumption_1"
                                   data-uib-tooltip="{{ tr('dedicatedCloud_tab_host_hourly_usage_update', [(datastore.consumptionLastUpdate|date:'short')]) }}"
                                   data-tooltip-placement="top">
                             </span>

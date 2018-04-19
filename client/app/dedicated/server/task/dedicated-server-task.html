@@ -1,18 +1,18 @@
 <div data-ng-controller="TaskCtrl as $ctrl">
-    <h2 data-i18n-static="server_tab_task"></h2>
+    <h2 data-translate="server_tab_task"></h2>
     <div data-ovh-alert="taskAlert"></div>
-    <p data-i18n-static="server_configuration_no_interventions"></p>
+    <p data-translate="server_configuration_no_interventions"></p>
     <oui-datagrid data-rows-loader="$ctrl.loadDatagridTasks($config)">
-        <oui-column data-title=":: tr('server_configuration_task_last_action')">
+        <oui-column data-title=":: 'server_configuration_task_last_action' | translate">
             <span data-ng-bind="$row.lastUpdate | date: 'medium'"></span>
         </oui-column>
-        <oui-column data-title=":: tr('server_configuration_task_function')">
+        <oui-column data-title=":: 'server_configuration_task_function' | translate">
             <span data-ng-bind="i18n['server_configuration_task_'+ $row.function] || $row.function"></span>
         </oui-column>
-        <oui-column data-title=":: tr('server_configuration_task_comment')">
+        <oui-column data-title=":: 'server_configuration_task_comment' | translate">
             <span data-ng-bind="$row.comment"></span>
         </oui-column>
-        <oui-column data-title=":: tr('server_configuration_task_status')">
+        <oui-column data-title=":: 'server_configuration_task_status' | translate">
             <span class="label"
                   data-ng-bind="tr('server_configuration_task_status_' + $row.status)"
                   data-ng-class="{

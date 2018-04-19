@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpDashboardCtrl", ($scope, $rootScope, $location, $timeout, $q, featureAvailability, Ip, IpReverse, IpFirewall, IpMitigation, IpVirtualMac, IpOrganisation, Alerter, Validator) => {
+angular.module("Module.ip.controllers").controller("IpDashboardCtrl", ($scope, $rootScope, $location, $timeout, $q, $translate, featureAvailability, Ip, IpReverse, IpFirewall, IpMitigation, IpVirtualMac, IpOrganisation, Alerter, Validator) => {
     "use strict";
 
     $scope.currentView = "table";
@@ -222,17 +222,17 @@ angular.module("Module.ip.controllers").controller("IpDashboardCtrl", ($scope, $
     $scope.getVirtualMacMessage = function (ipBlock) {
         if (ipBlock.service && ipBlock.service.category) {
             if (ipBlock.service.category !== "DEDICATED") {
-                return $scope.tr("ip_virtualmac_add_impossible_server");
+                return $translate.instant("ip_virtualmac_add_impossible_server");
             }
 
             if (ipBlock.service.virtualmac.status === "PENDING") {
-                return $scope.tr("ip_virtualmac_add_impossible_status");
+                return $translate.instant("ip_virtualmac_add_impossible_status");
             }
 
             if (ipBlock.service.virtualmac.status === "OK") {
-                return $scope.tr("ip_virtualmac_add_impossible_exists");
+                return $translate.instant("ip_virtualmac_add_impossible_exists");
             }
-            return $scope.tr("ip_virtualmac_add_impossible_unavailable");
+            return $translate.instant("ip_virtualmac_add_impossible_unavailable");
         }
 
         return null;
@@ -367,7 +367,7 @@ angular.module("Module.ip.controllers").controller("IpDashboardCtrl", ($scope, $
                 ipBlock.loaded = true;
             })
             .catch((err) => {
-                Alerter.alertFromSWS($scope.tr("ip_service_error", [ipBlock.ipBlock]), err.data);
+                Alerter.alertFromSWS($translate.instant("ip_service_error", { t0: ipBlock.ipBlock }), err.data);
             })
             .finally(() => {
                 ipBlock.loading = false;
@@ -449,7 +449,7 @@ angular.module("Module.ip.controllers").controller("IpDashboardCtrl", ($scope, $
     $scope.$on("organisation.change.done", () => {
         init();
         loadDashboard();
-        Alerter.success($scope.tr("ip_organisation_change_organisations_done"));
+        Alerter.success($translate.instant("ip_organisation_change_organisations_done"));
     });
 
     // Views switch
@@ -513,11 +513,11 @@ angular.module("Module.ip.controllers").controller("IpDashboardCtrl", ($scope, $
         IpReverse.updateReverse(ipBlock.service, ipBlock.ipBlock, ip.ip, ip.reverseEditValue).then(
             () => {
                 $rootScope.$broadcast("ips.table.refreshBlock", ipBlock);
-                Alerter.success($scope.tr("ip_table_manage_reverse_success"));
+                Alerter.success($translate.instant("ip_table_manage_reverse_success"));
             },
             (data) => {
                 ipBlock.refreshing = false;
-                Alerter.alertFromSWS($scope.tr("ip_table_manage_reverse_failure"), data);
+                Alerter.alertFromSWS($translate.instant("ip_table_manage_reverse_failure"), data);
             }
         );
     };

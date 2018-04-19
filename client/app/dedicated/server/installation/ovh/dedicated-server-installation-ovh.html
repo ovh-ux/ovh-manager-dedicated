@@ -3,7 +3,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="saveRemainingSize"
-         data-wizard-title="tr('server_configuration_installation_ovh_title')"
+         data-wizard-title="{{ 'server_configuration_installation_ovh_title' | translate }}"
          data-wizard-hide-cancel-button="loader.loading"
          data-wizard-bread-crumb>
 
@@ -18,11 +18,11 @@
             </div>
 
             <div data-ng-hide="loader.loading">
-                <p data-ng-bind-html="tr('server_configuration_installation_ovh_step1_info', [constants.server.name])"></p>
+                <p data-translate="server_configuration_installation_ovh_step1_info" data-translate-values="{ t0: constants.server.name }"></p>
                 <div class="form-group">
                     <label for="selectDesktopType"
                            class="control-label"
-                           data-i18n-static="server_configuration_installation_ovh_step1_desktop">
+                           data-translate="server_configuration_installation_ovh_step1_desktop">
                     </label>
                     <select class="form-control"
                             id="selectDesktopType"
@@ -33,9 +33,9 @@
                     </select>
                 </div>
                 <p data-ng-if="hasLicencedOs()">
-                    <span data-i18n-static="server_configuration_installation_ovh_step1_desktop_licence_info_label"></span>
+                    <span data-translate="server_configuration_installation_ovh_step1_desktop_licence_info_label"></span>
                     <i class="fa fa-question-circle"
-                       data-uib-tooltip="{{ tr('server_configuration_installation_ovh_step1_desktop_licence_info_text') }}"
+                       data-uib-tooltip="{{ 'server_configuration_installation_ovh_step1_desktop_licence_info_text' | translate }}"
                        data-tooltip-placement="bottom"
                        data-tooltip-append-to-body="false">
                     </i>
@@ -83,11 +83,11 @@
                                             </span>
                                             <span class="text-warning"
                                                   data-ng-show="distribution.isDeprecated "
-                                                  data-i18n-static="server_configuration_installation_deprecated">
+                                                  data-translate="server_configuration_installation_deprecated">
                                             </span>
                                             <span class="text-warning"
                                                   data-ng-show="constants.server.raidController && distribution.hardRaidConfiguration === false"
-                                                  data-i18n-static="server_configuration_installation_ovh_step1_hardwareRaid_os_not_supported_short">
+                                                  data-translate="server_configuration_installation_ovh_step1_hardwareRaid_os_not_supported_short">
                                             </span>
                                         </span>
                                     </label>
@@ -104,7 +104,7 @@
                      data-ng-show="installation.selectDistribution && !installation.warningExistPartition">
                     <label for="selectLanguage"
                            class="control-label"
-                           data-i18n-static="server_configuration_installation_step1_language">
+                           data-translate="server_configuration_installation_step1_language">
                     </label>
                     <select class="form-control"
                             id="selectLanguage"
@@ -116,7 +116,7 @@
                 <div class="control-group clearfix">
                     <label for="diskGroup"
                            class="control-label"
-                           data-i18n-static="server_configuration_installation_ovh_step1_disk_group">
+                           data-translate="server_configuration_installation_ovh_step1_disk_group">
                     </label>
                     <select class="form-control float-left w-50 mr-4"
                             id="diskGroup"
@@ -126,14 +126,14 @@
                             data-ng-disabled="!canEditDiskGroup()">
                     </select>
                     <oui-spinner class="align-middle"
-                                 aria-label="{{ i18n.common_loading }}"
+                                 aria-label="{{ 'common_loading' | translate }}"
                                  data-ng-if="loader.loadingCapabilities"
                                  data-size="s">
                     </oui-spinner>
                 </div>
                 <span class="text-danger"
                       data-ng-if="canEditDiskGroup() && raidIsPersonnalizable()"
-                      data-ng-bind-html="tr('server_configuration_installation_ovh_step1_disk_group_warning', [informations.diskGroups[0].description])">
+                      data-translate="server_configuration_installation_ovh_step1_disk_group_warning" data-translate-values="{ t0: informations.diskGroups[0].description }">
                 </span>
 
                 <div data-ng-hide="installation.warningExistPartition || informations.gabaritName != null">
@@ -145,15 +145,15 @@
                             <input type="checkbox"
                                    data-ng-model="installation.raidSetup"
                                    data-ng-disabled="!canPersonnalizeRaid()" />
-                            <span data-i18n-static="server_configuration_installation_ovh_step1_hardwareRaid"></span>
+                            <span data-translate="server_configuration_installation_ovh_step1_hardwareRaid"></span>
                         </label>
                     </div>
                     <p class="text-danger">
                         <span data-ng-if="installation.selectDistribution.hardRaidConfiguration === false"
-                              data-i18n-static="server_configuration_installation_ovh_step1_hardwareRaid_os_not_supported">
+                              data-translate="server_configuration_installation_ovh_step1_hardwareRaid_os_not_supported">
                         </span>
                         <span data-ng-if="informations.hardwareRaid.error.wrongLocation"
-                              data-i18n-static="server_configuration_installation_ovh_step1_hardwareRaid_wrong_location">
+                              data-translate="server_configuration_installation_ovh_step1_hardwareRaid_wrong_location">
                         </span>
                     </p>
                 </div>
@@ -167,7 +167,7 @@
                         <input type="checkbox"
                                data-ng-model="installation.customInstall"
                                data-ng-disabled="informations.gabaritName != null" />
-                        <span data-i18n-static="server_configuration_installation_ovh_step1_custom"></span>
+                        <span data-translate="server_configuration_installation_ovh_step1_custom"></span>
                     </label>
                 </div>
 
@@ -179,12 +179,12 @@
                         <button type="button"
                                 class="btn btn-link mb-3"
                                 data-ng-click="cancelSetSelectDistribution()"
-                                data-i18n-static="server_configuration_installation_ovh_step1_warning_exist_cancel">
+                                data-translate="server_configuration_installation_ovh_step1_warning_exist_cancel">
                         </button>
                         <button type="button"
                                 class="btn btn-default"
                                 data-ng-click="setSelectDistribution(installation.saveSelectDistribution, true)"
-                                data-i18n-static="server_configuration_installation_ovh_step1_warning_exist_valid">
+                                data-translate="server_configuration_installation_ovh_step1_warning_exist_valid">
                         </button>
                     </p>
                 </div>
@@ -209,16 +209,16 @@
 
             <div data-ng-if="!loader.loading">
                 <p data-ng-if="informations.hardwareRaid.profile.controllers.length === 0"
-                     data-i18n-static="server_configuration_installation_ovh_stephardraid_error_empty_controller">
+                     data-translate="server_configuration_installation_ovh_stephardraid_error_empty_controller">
                 </p>
                 <form id="hardwareRaidForm"
                       name="hardwareRaidForm"
                       data-ng-if="informations.hardwareRaid.profile.controllers.length > 0">
-                    <p data-i18n-static="server_configuration_installation_ovh_stephardraid_info"></p>
+                    <p data-translate="server_configuration_installation_ovh_stephardraid_info"></p>
                     <div class="form-group">
                         <label for="hardwareRaidController"
                                class="control-label"
-                               data-i18n-static="server_configuration_installation_ovh_stephardraid_label_controllers">
+                               data-translate="server_configuration_installation_ovh_stephardraid_label_controllers">
                         </label>
                         <select class="form-control"
                                 id="hardwareRaidController"
@@ -231,7 +231,7 @@
                     <div class="form-group">
                         <label for="hardwareRaidRaidMode"
                                class="control-label"
-                               data-i18n-static="server_configuration_installation_ovh_stephardraid_label_raid">
+                               data-translate="server_configuration_installation_ovh_stephardraid_label_raid">
                         </label>
                         <select class="form-control"
                                 id="hardwareRaidRaidMode"
@@ -245,7 +245,7 @@
                     <div class="form-group">
                         <label for="hardwareRaidNbDisks"
                                class="control-label"
-                               data-i18n-static="server_configuration_installation_ovh_stephardraid_label_disks">
+                               data-translate="server_configuration_installation_ovh_stephardraid_label_disks">
                         </label>
                         <select class="form-control"
                                 id="hardwareRaidNbDisks"
@@ -259,7 +259,7 @@
                     <div class="form-group">
                         <label for="hardwareaRidNbArrays"
                                class="control-label"
-                               data-i18n-static="server_configuration_installation_ovh_stephardraid_label_arrays">
+                               data-translate="server_configuration_installation_ovh_stephardraid_label_arrays">
                         </label>
                         <select id="hardwareaRidNbArrays"
                                 class="form-control"
@@ -272,7 +272,7 @@
 
                     <div class="form-group">
                         <label class="control-label"
-                               data-i18n-static="server_configuration_installation_ovh_stephardraid_label_space_total">
+                               data-translate="server_configuration_installation_ovh_stephardraid_label_space_total">
                         </label>
                         <p class="form-control-static"
                            data-ng-if="installation.hardwareRaid.totalSpace"
@@ -282,7 +282,7 @@
 
                     <div class="form-group">
                         <label class="control-label"
-                               data-i18n-static="server_configuration_installation_ovh_stephardraid_label_space_available">
+                               data-translate="server_configuration_installation_ovh_stephardraid_label_space_available">
                         </label>
                         <p class="form-control-static"
                            data-ng-if="installation.hardwareRaid.availableSpace"
@@ -293,7 +293,7 @@
                     <div class="alert alert-danger"
                          role="alert"
                          data-ng-if="installation.hardwareRaid.error"
-                         data-i18n-static="server_configuration_installation_gabarit_step2_invalid">
+                         data-translate="server_configuration_installation_gabarit_step2_invalid">
                     </div>
                 </form>
             </div>
@@ -323,11 +323,11 @@
 
                 <p data-ng-if="informations.isCachecade">
                     <span class="icon-info-sign" aria-hidden="true"></span>
-                    <span data-i18n-static="server_configuration_installation_ovh_step2_info_partition_cachecade"></span>
+                    <span data-translate="server_configuration_installation_ovh_step2_info_partition_cachecade"></span>
                 </p>
 
                 <div>
-                    <span data-i18n-static="server_configuration_installation_ovh_step2_type_disk"></span>
+                    <span data-translate="server_configuration_installation_ovh_step2_type_disk"></span>
                     <select class="form-control"
                             data-ng-show="informations.nbDisk > 1"
                             data-ng-options="nbdisk as nbdisk for nbdisk in getNbDisqueList(informations.nbDisk)"
@@ -337,11 +337,11 @@
                     <strong data-ng-hide="informations.nbDisk > 1" data-ng-bind="informations.nbPhysicalDisk"></strong>&nbsp;
                     <strong data-ng-bind="informations.typeDisk"></strong>&nbsp;
                     <strong data-ng-show="informations.raidController"
-                            data-i18n-static="server_configuration_installation_ovh_step2_raid_hard">
+                            data-translate="server_configuration_installation_ovh_step2_raid_hard">
                     </strong>&nbsp;
-                    <span data-i18n-static="server_configuration_installation_ovh_step2_total_size"></span>
+                    <span data-translate="server_configuration_installation_ovh_step2_total_size"></span>
                     <strong data-ng-bind="getDisplaySize(informations.totalSize)"></strong>&nbsp;
-                    <span data-i18n-static="server_configuration_installation_ovh_step2_remaining_size"></span>
+                    <span data-translate="server_configuration_installation_ovh_step2_remaining_size"></span>
                     <strong data-ng-bind="getDisplaySize(informations.remainingSize)"></strong>
                 </div>
 
@@ -364,7 +364,7 @@
                 <div data-ng-show="informations.otherDisk.length > 0 && informations.showAllDisk"
                      data-ng-repeat="disk in informations.otherDisk">
                     <div class="text-right">
-                        <span data-i18n-static="server_configuration_installation_ovh_step2_type_disk_disable"></span>
+                        <span data-translate="server_configuration_installation_ovh_step2_type_disk_disable"></span>
                         <strong data-ng-bind="disk.nbDisk"></strong>&nbsp;
                         <strong data-ng-bind="disk.typeDisk"></strong>&nbsp;
                         (<strong data-ng-bind="getDisplaySize(disk.sizeDisk)"></strong>)
@@ -380,13 +380,13 @@
                             class="btn btn-default"
                             data-ng-if="!informations.showAllDisk"
                             data-ng-click="informations.showAllDisk = true"
-                            data-ng-bind="tr('server_configuration_installation_ovh_step2_show_all_disk')">
+                            data-ng-bind="{{ 'server_configuration_installation_ovh_step2_show_all_disk' | translate }}">
                     </button>
                     <button type="button"
                             class="btn btn-default"
                             data-ng-if="informations.showAllDisk"
                             data-ng-click="informations.showAllDisk = false"
-                            data-ng-bind="tr('server_configuration_installation_ovh_step2_hide_all_disk')">
+                            data-ng-bind="{{ 'server_configuration_installation_ovh_step2_hide_all_disk' | translate }}">
                     </button>
                 </div>
 
@@ -397,32 +397,32 @@
                                 <th></th>
                                 <th>
                                     <span class="fa fa-question-circle"
-                                          data-uib-tooltip="{{ tr('server_configuration_installation_ovh_step2_available_order_help') }}"
+                                          data-uib-tooltip="{{ 'server_configuration_installation_ovh_step2_available_order_help' | translate }}"
                                           data-tooltip-placement="right">
                                     </span>
                                 </th>
-                                <th data-i18n-static="server_configuration_installation_ovh_step2_type"></th>
-                                <th data-i18n-static="server_configuration_installation_ovh_step2_file_system"></th>
-                                <th data-i18n-static="server_configuration_installation_ovh_step2_mount_point"></th>
-                                <th data-i18n-static="server_configuration_installation_ovh_step2_volume_name"></th>
+                                <th data-translate="server_configuration_installation_ovh_step2_type"></th>
+                                <th data-translate="server_configuration_installation_ovh_step2_file_system"></th>
+                                <th data-translate="server_configuration_installation_ovh_step2_mount_point"></th>
+                                <th data-translate="server_configuration_installation_ovh_step2_volume_name"></th>
                                 <th data-ng-show="installation.nbDiskUse > 1 && !informations.raidController">
-                                    <span data-i18n-static="server_configuration_installation_ovh_step2_raid"></span>
+                                    <span data-translate="server_configuration_installation_ovh_step2_raid"></span>
                                     <span class="icon-question-sign icon-white"
-                                          data-uib-tooltip="{{ tr('server_configuration_installation_ovh_step2_raid_help') }}"
+                                          data-uib-tooltip="{{ 'server_configuration_installation_ovh_step2_raid_help' | translate }}"
                                           data-tooltip-placement="left">
                                     </span>
                                 </th>
                                 <th>
-                                    <span data-i18n-static="server_configuration_installation_ovh_step2_available_size"></span>
+                                    <span data-translate="server_configuration_installation_ovh_step2_available_size"></span>
                                     <span class="icon-question-sign icon-white"
-                                          data-uib-tooltip="{{ tr('server_configuration_installation_ovh_step2_available_size_help') }}"
+                                          data-uib-tooltip="{{ 'server_configuration_installation_ovh_step2_available_size_help' | translate }}"
                                           data-tooltip-placement="left">
                                     </span>
                                 </th>
                                 <th data-ng-show="installation.nbDiskUse > 1 && !informations.raidController">
-                                    <span data-i18n-static="server_configuration_installation_ovh_step2_size"></span>
+                                    <span data-translate="server_configuration_installation_ovh_step2_size"></span>
                                     <span class="icon-question-sign icon-white"
-                                          data-uib-tooltip="{{ tr('server_configuration_installation_ovh_step2_size_help') }}"
+                                          data-uib-tooltip="{{ 'server_configuration_installation_ovh_step2_size_help' | translate }}"
                                           data-tooltip-placement="left">
                                    </span>
                                 </th>
@@ -528,15 +528,15 @@
                                             data-ng-change="validationRaid(partition)">
                                     </select>
                                     <span class="oui-icon oui-icon-warning_circle"
-                                          aria-label="{{ i18n.server_configuration_installation_ovh_step2_error_raid_diskUse_icon }}"
+                                          aria-label="{{ 'server_configuration_installation_ovh_step2_error_raid_diskUse_icon' | translate }}"
                                           data-ng-show="partition.hasWarning && !isSetPartition(partition)"
-                                          data-uib-tooltip="{{ i18n.server_configuration_installation_ovh_step2_error_raid_diskUse_icon }}"
+                                          data-uib-tooltip="{{ 'server_configuration_installation_ovh_step2_error_raid_diskUse_icon' | translate }}"
                                           data-tooltip-placement="top">
                                     </span>
                                     <span class="oui-icon oui-icon-warning_circle"
-                                          aria-label="{{ i18n.server_configuration_installation_ovh_step2_error_raid_0 }}"
+                                          aria-label="{{ 'server_configuration_installation_ovh_step2_error_raid_0' | translate }}"
                                           data-ng-show="!partition.hasWarning && !isSetPartition(partition) && partition.raid == constants.warningRaid0"
-                                          data-uib-tooltip="{{ i18n.server_configuration_installation_ovh_step2_error_raid_0 }}"
+                                          data-uib-tooltip="{{ 'server_configuration_installation_ovh_step2_error_raid_0' | translate }}"
                                           data-tooltip-placement="top">
                                     </span>
                                 </td>
@@ -561,7 +561,7 @@
                                             <button type="button"
                                                     class="btn btn-default"
                                                     data-ng-click="getFullSize(partition)"
-                                                    title="{{ i18n.server_configuration_installation_ovh_step2_remaining_size_button }}">
+                                                    title="{{ 'server_configuration_installation_ovh_step2_remaining_size_button' | translate }}">
                                                 <span class="fa fa-expand" aria-hidden="true"></span>
                                             </button>
                                         </span>
@@ -574,7 +574,7 @@
                                                data-ng-change="validationSize(partition)" />
                                         <span class="input-group-addon"
                                               data-ng-show="isSetPartition(partition)"
-                                              data-i18n-static="unit_size_MB">
+                                              data-translate="unit_size_MB">
                                         </span>
                                     </div>
                                 </td>
@@ -699,7 +699,7 @@
                                         <span class="input-group-btn">
                                             <button type="button"
                                                     class="btn btn-default"
-                                                    title="{{ i18n.server_configuration_installation_ovh_step2_remaining_size_button }}"
+                                                    title="{{ 'server_configuration_installation_ovh_step2_remaining_size_button' | translate }}"
                                                     data-ng-click="getFullSize(newPartition)">
                                                 <span class="fa fa-expand" aria-hidden="true"></span>
                                             </button>
@@ -711,7 +711,7 @@
                                                data-ng-model="newPartition.partitionSize"
                                                data-ng-change="validationSize(newPartition)" />
                                         <span class="input-group-addon"
-                                              data-i18n-static="unit_size_MB">
+                                              data-translate="unit_size_MB">
                                         </span>
                                     </div>
                                 </td>
@@ -746,67 +746,67 @@
                             data-ng-hide="setPartition.delModel != null || setPartition.save || newPartition.display"
                             data-ng-click="displayNewPartition()"
                             data-ng-disabled="configError.raidDiskUse"
-                            data-i18n-static="server_configuration_installation_ovh_step2_add">
+                            data-translate="server_configuration_installation_ovh_step2_add">
                     </button>
                     <button type="button"
                             class="btn btn-danger"
                             data-ng-show="setPartition.delModel != null"
                             data-ng-click="!buttonControl.deleteInProgress && deleteValidPartition()"
-                            data-i18n-static="server_configuration_installation_ovh_step2_del">
+                            data-translate="server_configuration_installation_ovh_step2_del">
                     </button>
                     <button type="button"
                             class="btn btn-default"
                             data-ng-show="setPartition.delModel != null"
                             data-ng-click="!buttonControl.deleteInProgress && deleteCancelPartition()"
-                            data-i18n-static="server_configuration_installation_ovh_step2_del_cancel">
+                            data-translate="server_configuration_installation_ovh_step2_del_cancel">
                     </button>
 
                     <button type="button"
                             class="btn btn-link"
                             data-ng-show="buttonControl.displayAddConfirmation && !buttonControl.setInProgress && !buttonControl.addInProgress"
                             data-ng-click="validPartition()"
-                            data-i18n-static="server_configuration_installation_ovh_step2_raid0_add">
+                            data-translate="server_configuration_installation_ovh_step2_raid0_add">
                     </button>
                     <button type="button"
                             class="btn btn-default"
                             data-ng-show="buttonControl.displayAddConfirmation && !buttonControl.setInProgress && !buttonControl.addInProgress"
                             data-ng-click="!buttonControl.setInProgress && !buttonControl.addInProgress && cancelRaid0Partition()"
-                            data-i18n-static="server_configuration_installation_ovh_step2_raid0_cancel">
+                            data-translate="server_configuration_installation_ovh_step2_raid0_cancel">
                     </button>
                 </div>
 
                 <div>
                     <ul>
-                        <li data-ng-show="warning.raid0"><i style="margin-right: 5px;" class="icon-warning"></i><span class="red" data-i18n-static="server_configuration_installation_ovh_step2_warning_partition_raid0"></span></li>
+                        <li data-ng-show="warning.raid0"><i style="margin-right: 5px;" class="icon-warning"></i><span class="red" data-translate="server_configuration_installation_ovh_step2_warning_partition_raid0"></span></li>
                         <li data-ng-show="errorInst.raid0"><span class="red" data-ng-bind="tr('server_configuration_installation_ovh_step2_error_partition_raid0', newPartition.display && newPartition.mountPoint || installation.partitionSchemeModels[setPartition.indexSet].mountPoint)"></span></li>
-                        <li data-ng-show="errorInst.partitionSizeToAdd"><span class="red" data-i18n-static="server_configuration_installation_ovh_step2_error_partition_size_min_add"></span></li>
-                        <li data-ng-show="errorInst.partitionSizeOver"><span class="red" data-i18n-static="server_configuration_installation_ovh_step2_error_partition_size_exceed"></span></li>
-                        <li data-ng-show="errorInst.order"><span class="red" data-i18n-static="server_configuration_installation_ovh_step2_error_partition_order"></span></li>
-                        <li data-ng-show="errorInst.orderFirst"><span class="red" data-i18n-static="server_configuration_installation_ovh_step2_error_partition_order_first"></span></li>
-                        <li data-ng-show="errorInst.orderFirstWin"><span class="red" data-i18n-static="server_configuration_installation_ovh_step2_error_partition_order_first_win"></span></li>
-                        <li data-ng-show="errorInst.typePrimary"><span class="red" data-i18n-static="server_configuration_installation_ovh_step2_error_partition_type_primary"></span></li>
-                        <li data-ng-show="errorInst.volumeNameEmpty"><span class="red" data-i18n-static="server_configuration_installation_ovh_step2_error_partition_volumename_empty"></span></li>
-                        <li data-ng-show="errorInst.volumeName"><span class="red" data-i18n-static="server_configuration_installation_ovh_step2_error_partition_volumename_wrong"></span></li>
-                        <li data-ng-show="errorInst.volumeNameUse"><span class="red" data-i18n-static="server_configuration_installation_ovh_step2_error_partition_volumename_use"></span></li>
-                        <li data-ng-show="errorInst.mountPointEmpty"><span class="red" data-i18n-static="server_configuration_installation_ovh_step2_error_partition_mountPoint_empty"></span></li>
-                        <li data-ng-show="errorInst.mountPointUse"><span class="red" data-i18n-static="server_configuration_installation_ovh_step2_error_partition_mountPoint_use"></span></li>
-                        <li data-ng-show="errorInst.mountPoint"><span class="red" data-i18n-static="server_configuration_installation_ovh_step2_error_partition_mountPoint_wrong"></span></li>
-                        <li data-ng-show="errorInst.mountPoint2"><span class="red" data-i18n-static="server_configuration_installation_ovh_step2_error_partition_mountPoint_wrong2"></span></li>
-                        <li data-ng-show="errorInst.mountPointPrimary"><span class="red" data-i18n-static="server_configuration_installation_ovh_step2_error_partition_mountPoint_primary"></span></li>
-                        <li data-ng-show="errorInst.mountPointWindows"><span class="red" data-i18n-static="server_configuration_installation_ovh_step2_error_partition_mountPoint_windows"></span></li>
-                        <li data-ng-show="errorInst.fileSystemSwap"><span class="red" data-i18n-static="server_configuration_installation_ovh_step2_error_partition_file_system_swap"></span></li>
-                        <li data-ng-show="errorInst.fileSystemNoSwap"><span class="red" data-i18n-static="server_configuration_installation_ovh_step2_error_partition_file_system_no_swap"></span></li>
+                        <li data-ng-show="errorInst.partitionSizeToAdd"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_size_min_add"></span></li>
+                        <li data-ng-show="errorInst.partitionSizeOver"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_size_exceed"></span></li>
+                        <li data-ng-show="errorInst.order"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_order"></span></li>
+                        <li data-ng-show="errorInst.orderFirst"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_order_first"></span></li>
+                        <li data-ng-show="errorInst.orderFirstWin"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_order_first_win"></span></li>
+                        <li data-ng-show="errorInst.typePrimary"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_type_primary"></span></li>
+                        <li data-ng-show="errorInst.volumeNameEmpty"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_volumename_empty"></span></li>
+                        <li data-ng-show="errorInst.volumeName"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_volumename_wrong"></span></li>
+                        <li data-ng-show="errorInst.volumeNameUse"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_volumename_use"></span></li>
+                        <li data-ng-show="errorInst.mountPointEmpty"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_mountPoint_empty"></span></li>
+                        <li data-ng-show="errorInst.mountPointUse"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_mountPoint_use"></span></li>
+                        <li data-ng-show="errorInst.mountPoint"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_mountPoint_wrong"></span></li>
+                        <li data-ng-show="errorInst.mountPoint2"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_mountPoint_wrong2"></span></li>
+                        <li data-ng-show="errorInst.mountPointPrimary"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_mountPoint_primary"></span></li>
+                        <li data-ng-show="errorInst.mountPointWindows"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_mountPoint_windows"></span></li>
+                        <li data-ng-show="errorInst.fileSystemSwap"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_file_system_swap"></span></li>
+                        <li data-ng-show="errorInst.fileSystemNoSwap"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_file_system_no_swap"></span></li>
                         <li data-ng-show="errorInst.partitionSizeSwap"><span class="red" data-ng-bind="tr('server_configuration_installation_ovh_step2_error_partition_size_swap', getDisplaySize(constants.maxSizeSwap))"></span></li>
                         <li data-ng-show="errorInst.partitionSize"><span class="red" data-ng-bind="tr('server_configuration_installation_ovh_step2_error_partition_size_max', getDisplaySize(constants.maxSizePartition))"></span></li>
                         <li data-ng-show="errorInst.partitionSizeWindows"><span class="red" data-ng-bind="tr('server_configuration_installation_ovh_step2_error_partition_size_min_windows', getDisplaySize(constants.minSizeWindows))"></span></li>
                         <li data-ng-show="errorInst.partitionSizeReiserfs"><span class="red" data-ng-bind="tr('server_configuration_installation_ovh_step2_error_partition_size_min_reiserfs', getDisplaySize(constants.minSizeReiserfs))"></span></li>
                         <li data-ng-show="errorInst.partitionSizeBoot"><span class="red" data-ng-bind="tr('server_configuration_installation_ovh_step2_error_partition_size_min_boot', getDisplaySize(constants.minSizeBoot))"></span></li>
                         <li data-ng-show="errorInst.partitionSizeMin"><span class="red" data-ng-bind="tr('server_configuration_installation_ovh_step2_error_partition_size_min', getDisplaySize(constants.minSizePartition))"></span></li>
-                        <li data-ng-show="errorInst.orderType"><span class="red" data-i18n-static="server_configuration_installation_ovh_step2_error_partition_type_order"></span></li>
-                        <li data-ng-show="errorInst.typeLvSwap"><span class="red" data-i18n-static="server_configuration_installation_ovh_step2_error_partition_type_lv_swap"></span></li>
-                        <li data-ng-show="errorInst.typeLogicalLv"><span class="red" data-i18n-static="server_configuration_installation_ovh_step2_error_partition_type_logical_lv"></span></li>
-                        <li data-ng-show="errorInst.raidLv"><span class="red" data-i18n-static="server_configuration_installation_ovh_step2_error_partition_raid_LV"></span></li>
-                        <li data-ng-show="configError.raidDiskUse"><span class="red" data-i18n-static="server_configuration_installation_ovh_step2_error_raid_diskUse"></span></li>
+                        <li data-ng-show="errorInst.orderType"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_type_order"></span></li>
+                        <li data-ng-show="errorInst.typeLvSwap"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_type_lv_swap"></span></li>
+                        <li data-ng-show="errorInst.typeLogicalLv"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_type_logical_lv"></span></li>
+                        <li data-ng-show="errorInst.raidLv"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_raid_LV"></span></li>
+                        <li data-ng-show="configError.raidDiskUse"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_raid_diskUse"></span></li>
                         <li data-ng-show="errorInst.ws"><span class="red" data-ng-bind-html="errorInst.ws"></span></li>
                     </ul>
                 </div>
@@ -827,7 +827,7 @@
                 <oui-spinner></oui-spinner>
             </div>
             <div data-ng-if="!loader.loading">
-                <p data-i18n-static="server_configuration_installation_ovh_step3_info"></p>
+                <p data-translate="server_configuration_installation_ovh_step3_info"></p>
 
                 <div class="table-responsive">
                     <table class="table table-hover">
@@ -835,42 +835,42 @@
                             <tr>
                                 <th scope="col">
                                     <span class="icon-question-sign icon-white"
-                                          data-uib-tooltip="{{ tr('server_configuration_installation_ovh_step2_available_order_help') }}"
+                                          data-uib-tooltip="{{ 'server_configuration_installation_ovh_step2_available_order_help' | translate }}"
                                           data-tooltip-placement="right">
                                     </span>
                                 </th>
                                 <th scope="col"
-                                    data-i18n-static="server_configuration_installation_ovh_step2_type">
+                                    data-translate="server_configuration_installation_ovh_step2_type">
                                 </th>
                                 <th scope="col"
-                                    data-i18n-static="server_configuration_installation_ovh_step2_file_system">
+                                    data-translate="server_configuration_installation_ovh_step2_file_system">
                                 </th>
                                 <th scope="col"
-                                    data-i18n-static="server_configuration_installation_ovh_step2_mount_point">
+                                    data-translate="server_configuration_installation_ovh_step2_mount_point">
                                 </th>
                                 <th scope="col"
-                                    data-i18n-static="server_configuration_installation_ovh_step2_volume_name">
+                                    data-translate="server_configuration_installation_ovh_step2_volume_name">
                                 </th>
                                 <th scope="col"
                                     data-ng-if="installation.nbDiskUse > 1 && !informations.raidController">
-                                    <span data-i18n-static="server_configuration_installation_ovh_step2_raid"></span>
+                                    <span data-translate="server_configuration_installation_ovh_step2_raid"></span>
                                     <span class="icon-question-sign icon-white"
-                                          data-uib-tooltip="{{ tr('server_configuration_installation_ovh_step2_raid_help') }}"
+                                          data-uib-tooltip="{{ 'server_configuration_installation_ovh_step2_raid_help' | translate }}"
                                           data-tooltip-placement="left">
                                     </span>
                                 </th>
                                 <th scope="col">
-                                    <span data-i18n-static="server_configuration_installation_ovh_step2_available_size"></span>
+                                    <span data-translate="server_configuration_installation_ovh_step2_available_size"></span>
                                     <span class="icon-question-sign icon-white"
-                                          data-uib-tooltip="{{ tr('server_configuration_installation_ovh_step2_available_size_help') }}"
+                                          data-uib-tooltip="{{ 'server_configuration_installation_ovh_step2_available_size_help' | translate }}"
                                           data-tooltip-placement="left">
                                     </span>
                                 </th>
                                 <th scope="col"
                                     data-ng-if="installation.nbDiskUse > 1 && !informations.raidController">
-                                    <span data-i18n-static="server_configuration_installation_ovh_step2_size"></span>
+                                    <span data-translate="server_configuration_installation_ovh_step2_size"></span>
                                     <span class="icon-question-sign icon-white"
-                                          data-uib-tooltip="{{ tr('server_configuration_installation_ovh_step2_size_help') }}"
+                                          data-uib-tooltip="{{ 'server_configuration_installation_ovh_step2_size_help' | translate }}"
                                           data-tooltip-placement="left">
                                     </span>
                                 </th>
@@ -897,7 +897,7 @@
                                     </span>
                                     <span class="icon-warning"
                                           data-ng-if="partition.hasWarning"
-                                          data-uib-tooltip="{{ i18n.server_configuration_installation_ovh_step2_error_raid_diskUse_icon }}"
+                                          data-uib-tooltip="{{ 'server_configuration_installation_ovh_step2_error_raid_diskUse_icon' | translate }}"
                                           data-tooltip-placement="top">
                                    </span>
                                 </td>
@@ -922,50 +922,50 @@
                 </div>
 
                 <div class="mt-4">
-                    <h5 data-i18n-static="server_configuration_installation_resume"></h5>
+                    <h5 data-translate="server_configuration_installation_resume"></h5>
                     <dl>
-                        <dt data-i18n-static="server_configuration_installation_ovh_step3_server"></dt>
+                        <dt data-translate="server_configuration_installation_ovh_step3_server"></dt>
                         <dd data-ng-bind="constants.server.name"></dd>
-                        <dt data-i18n-static="server_configuration_installation_ovh_step3_os"></dt>
+                        <dt data-translate="server_configuration_installation_ovh_step3_os"></dt>
                         <dd data-ng-bind="installation.selectDistribution.displayName"></dd>
-                        <dt data-i18n-static="server_configuration_installation_ovh_step3_lang"></dt>
+                        <dt data-translate="server_configuration_installation_ovh_step3_lang"></dt>
                         <dd data-ng-bind="installation.selectLanguage"></dd>
-                        <dt data-i18n-static="server_configuration_installation_ovh_step3_disk_group"></dt>
+                        <dt data-translate="server_configuration_installation_ovh_step3_disk_group"></dt>
                         <dd data-ng-bind="installation.diskGroup.description"></dd>
-                        <dt data-i18n-static="server_configuration_installation_ovh_step3_custom"></dt>
+                        <dt data-translate="server_configuration_installation_ovh_step3_custom"></dt>
                         <dd>
                             <span data-ng-if="installation.customInstall"
-                                  data-i18n-static="wizard_yes">
+                                  data-translate="wizard_yes">
                             </span>
                             <span data-ng-if="!installation.customInstall"
-                                  data-i18n-static="wizard_no">
+                                  data-translate="wizard_no">
                             </span>
                         </dd>
                     </dl>
 
                     <div data-ng-if="installation.hardwareRaid.raid">
-                        <h5 data-i18n-static="server_configuration_installation_resume_hardwareRaid"></h5>
+                        <h5 data-translate="server_configuration_installation_resume_hardwareRaid"></h5>
                         <dl>
-                            <dt data-i18n-static="server_configuration_installation_ovh_stephardraid_label_controllers"></dt>
+                            <dt data-translate="server_configuration_installation_ovh_stephardraid_label_controllers"></dt>
                             <dd data-ng-bind="installation.hardwareRaid.controller.model + ' (' + installation.hardwareRaid.controller.type + ')'"></dd>
-                            <dt data-i18n-static="server_configuration_installation_ovh_stephardraid_label_disks"></dt>
+                            <dt data-translate="server_configuration_installation_ovh_stephardraid_label_disks"></dt>
                             <dd data-ng-bind="installation.hardwareRaid.disks"></dd>
-                            <dt data-i18n-static="server_configuration_installation_ovh_stephardraid_label_raid"></dt>
+                            <dt data-translate="server_configuration_installation_ovh_stephardraid_label_raid"></dt>
                             <dd data-ng-bind="installation.hardwareRaid.raid"></dd>
                         </dl>
                     </div>
 
-                    <h5 data-i18n-static="server_configuration_installation_form_option"></h5>
+                    <h5 data-translate="server_configuration_installation_form_option"></h5>
                     <form id="optionForm"
                           name="optionForm"
                           data-ng-controller="ServerInstallationFormCtrl">
 
                         <!-- saveGabarit -->
                         <label>
-                            <span data-i18n-static="server_configuration_installation_ovh_step3_saveGabarit"></span>
+                            <span data-translate="server_configuration_installation_ovh_step3_saveGabarit"></span>
                             <span class="fa fa-question-circle"
-                                  aria-label="{{ tr('server_configuration_installation_ovh_step3_saveGabarit_help') }}"
-                                  data-uib-tooltip="{{ tr('server_configuration_installation_ovh_step3_saveGabarit_help') }}"
+                                  aria-label="{{ 'server_configuration_installation_ovh_step3_saveGabarit_help' | translate }}"
+                                  data-uib-tooltip="{{ 'server_configuration_installation_ovh_step3_saveGabarit_help' | translate }}"
                                   data-tooltip-placement="right">
                             </span>
                         </label>
@@ -989,7 +989,7 @@
                              }">
                             <label for="gabaritNameSave"
                                    class="control-label"
-                                   data-i18n-static="server_configuration_installation_form_gabaritNameSave">
+                                   data-translate="server_configuration_installation_form_gabaritNameSave">
                             </label>
                             <input type="text"
                                    class="form-control"
@@ -1002,7 +1002,7 @@
                             <span class="help-block"
                                   role="alert"
                                   data-ng-if="optionForm.gabaritNameSave.$invalid && optionForm.$dirty"
-                                  data-i18n-static="server_configuration_installation_form_gabaritNameSave_pattern">
+                                  data-translate="server_configuration_installation_form_gabaritNameSave_pattern">
                             </span>
                         </div>
 
@@ -1011,9 +1011,9 @@
                             data-ng-show="installation.customInstall && installation.options.saveGabarit == true && installation.variablePartition != null">
                             <label for="variablePartition"
                                    class="control-label">
-                                <span data-i18n-static="server_configuration_installation_ovh_step3_partiton_variable"></span>&nbsp;
+                                <span data-translate="server_configuration_installation_ovh_step3_partiton_variable"></span>&nbsp;
                                 <span class="icon-warning"
-                                      data-uib-tooltip="{{ tr('server_configuration_installation_ovh_step3_partiton_variable_help') }}"
+                                      data-uib-tooltip="{{ 'server_configuration_installation_ovh_step3_partiton_variable_help' | translate }}"
                                       data-tooltip-placement="right">
                                 </span>
                             </label>
@@ -1022,7 +1022,7 @@
                                     data-ng-options="partition as partition.mountPoint for partition in getMountPoint()"
                                     data-ng-model="installation.options.variablePartition">
                                 <option value=""
-                                        data-ng-bind="tr('server_configuration_installation_ovh_step3_partiton_none')">
+                                        data-ng-bind="{{ 'server_configuration_installation_ovh_step3_partiton_none' | translate }}">
                                 </option>
                             </select>
                         </div>
@@ -1032,7 +1032,7 @@
                              data-ng-show="installation.options.saveGabarit == true">
                             <label for="changeLog"
                                    class="control-label"
-                                   data-i18n-static="server_configuration_installation_form_changeLog">
+                                   data-translate="server_configuration_installation_form_changeLog">
                             </label>
                             <textarea class="form-control"
                                       id="changeLog"
@@ -1049,7 +1049,7 @@
                             }">
                             <label for="customHostname"
                                    class="control-label"
-                                   data-i18n-static="server_configuration_installation_form_customHostname">
+                                   data-translate="server_configuration_installation_form_customHostname">
                             </label>
                             <input type="text"
                                    class="form-control"
@@ -1061,7 +1061,7 @@
                                 <span class="help-block"
                                       role="alert"
                                       data-ng-if="optionForm.customHostname.$invalid && optionForm.$dirty"
-                                      data-i18n-static="server_configuration_installation_form_customHostname_pattern">
+                                      data-translate="server_configuration_installation_form_customHostname_pattern">
                                 </span>
                             </div>
                         </div>
@@ -1073,9 +1073,9 @@
                              }">
                             <label for="postInstallationScriptLink"
                                    class="control-label">
-                                <span data-i18n-static="server_configuration_installation_form_postInstallationScriptLink"></span>&nbsp;
+                                <span data-translate="server_configuration_installation_form_postInstallationScriptLink"></span>&nbsp;
                                 <span class="fa fa-question-circle"
-                                      data-uib-tooltip="{{ tr('server_configuration_installation_form_postInstallationScriptLink_help') }}"
+                                      data-uib-tooltip="{{ 'server_configuration_installation_form_postInstallationScriptLink_help' | translate }}"
                                       data-tooltip-placement="right">
                                 </span>
                             </label>
@@ -1101,9 +1101,9 @@
                              data-ng-show="installation.options.postInstallationScriptLink != null && installation.options.postInstallationScriptLink != ''">
                             <label for="postInstallationScriptReturn"
                                    class="control-label">
-                                <span data-i18n-static="server_configuration_installation_form_postInstallationScriptLinkReturn"></span>
+                                <span data-translate="server_configuration_installation_form_postInstallationScriptLinkReturn"></span>
                                 <span class="fa fa-question-circle"
-                                      data-uib-tooltip="{{ tr('server_configuration_installation_form_postInstallationScriptLinkReturn_help') }}"
+                                      data-uib-tooltip="{{ 'server_configuration_installation_form_postInstallationScriptLinkReturn_help' | translate }}"
                                       data-tooltip-placement="right">
                                 </span>
                             </label>
@@ -1121,7 +1121,7 @@
                             <label>
                                 <input type="checkbox"
                                        data-ng-model="installation.options.useDistributionKernel" />
-                                <span data-i18n-static="server_configuration_installation_form_useDistribKernel"></span>
+                                <span data-translate="server_configuration_installation_form_useDistribKernel"></span>
                             </label>
                         </div>
 
@@ -1131,7 +1131,7 @@
                             <label>
                                 <input type="checkbox"
                                        data-ng-model="installation.options.installSqlServer" />
-                                <span data-i18n-static="server_configuration_installation_form_installSqlServer"></span>
+                                <span data-translate="server_configuration_installation_form_installSqlServer"></span>
                             </label>
                         </div>
 
@@ -1140,7 +1140,7 @@
                              data-ng-show="installation.selectDistribution.family == constants.warningWindows">
                             <label>
                                 <input type="checkbox" data-ng-model="installation.options.useSpla" />
-                                <span data-i18n-static="server_configuration_installation_form_useSpla"></span>
+                                <span data-translate="server_configuration_installation_form_useSpla"></span>
                             </label>
                         </div>
 
@@ -1149,9 +1149,9 @@
                              data-ng-hide="installation.selectDistribution.family == constants.warningWindows">
                             <label for="sshKeyName"
                                    class="control-label">
-                                <span data-i18n-static="server_configuration_installation_form_ssh"></span>&nbsp;
+                                <span data-translate="server_configuration_installation_form_ssh"></span>&nbsp;
                                 <span class="fa fa-question-circle"
-                                      data-uib-tooltip="{{ tr('server_configuration_installation_form_ssh_help') }}"
+                                      data-uib-tooltip="{{ 'server_configuration_installation_form_ssh_help' | translate }}"
                                       data-tooltip-placement="right">
                                 </span>
                             </label>
@@ -1162,12 +1162,12 @@
                                     data-ng-options="sskkey for sskkey in sshList"
                                     data-ng-model="installation.options.sshKeyName">
                                 <option value=""
-                                        data-i18n-static="server_configuration_installation_form_ssh_no">
+                                        data-translate="server_configuration_installation_form_ssh_no">
                                 </option>
                             </select>
                             <p class="form-control-static text-danger"
                                data-ng-if="sshList.error"
-                               data-i18n-static="server_configuration_installation_form_ssh_fail">
+                               data-translate="server_configuration_installation_form_ssh_fail">
                             </p>
                         </div>
 
@@ -1176,7 +1176,7 @@
                              data-ng-show="informations.nbDisk > 1 && !installation.customInstall">
                             <label for="nbDiskUse"
                                    class="control-label"
-                                   data-i18n-static="server_configuration_installation_form_nbdisk">
+                                   data-translate="server_configuration_installation_form_nbdisk">
                             </label>
                             <select class="form-control"
                                     id="nbDiskUse"
@@ -1189,11 +1189,11 @@
                         <div data-ng-if="configError.raidDiskUse || (installation.options.variablePartition && installation.options.saveGabarit)">
                             <p class="text-danger"
                                data-ng-if="configError.raidDiskUse"
-                               data-i18n-static="server_configuration_installation_ovh_step2_error_raid_diskUse">
+                               data-translate="server_configuration_installation_ovh_step2_error_raid_diskUse">
                             </p>
                             <p class="text-danger"
                                data-ng-if="installation.options.variablePartition && installation.options.saveGabarit"
-                               data-ng-bind-html="tr('server_configuration_installation_ovh_step3_partiton_variable_info', [installation.options.variablePartition.mountPoint])">
+                               data-translate="server_configuration_installation_ovh_step3_partiton_variable_info" data-translate-values="{ t0: installation.options.variablePartition.mountPoint }">
                             </p>
                         </div>
 
@@ -1204,7 +1204,7 @@
                        data-ng-bind-html="errorInst.ws">
                     </p>
                     <p data-ng-if="errorInst.ws"
-                       data-i18n-static="server_configuration_installation_ovh_step3_error_integrity_info">
+                       data-translate="server_configuration_installation_ovh_step3_error_integrity_info">
                     </p>
                 </div>
                 <p class="text-danger"

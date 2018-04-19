@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpOrderCtrl", ($scope, $rootScope, $q, Ip, IpOrder, IpOrganisation, User, Alerter, translator, constants) => {
+angular.module("Module.ip.controllers").controller("IpOrderCtrl", ($scope, $rootScope, $q, $translate, Ip, IpOrder, IpOrganisation, User, Alerter, translator, constants) => {
     const alertId = "ip_order_alert";
 
     $scope.model = {};
@@ -22,7 +22,7 @@ angular.module("Module.ip.controllers").controller("IpOrderCtrl", ($scope, $root
             $scope.servicesList = results.servicesList;
             $scope.user = results.user;
         }).catch((err) => {
-            Alerter.alertFromSWS($scope.tr("ip_order_loading_error"), err);
+            Alerter.alertFromSWS($translate.instant("ip_order_loading_error"), err);
         }).finally(() => {
             $scope.loading.services = false;
         });
@@ -61,7 +61,7 @@ angular.module("Module.ip.controllers").controller("IpOrderCtrl", ($scope, $root
                     $scope.orderableIpError = "EXPIRED";
                 } else {
                     $scope.loading.serviceCanBeOrdered = false;
-                    Alerter.alertFromSWS($scope.tr("ip_order_loading_error"), data.data);
+                    Alerter.alertFromSWS($translate.instant("ip_order_loading_error"), data.data);
                 }
             })
             .finally(() => {
@@ -120,7 +120,7 @@ angular.module("Module.ip.controllers").controller("IpOrderCtrl", ($scope, $root
                 $scope.loading.form = false;
             },
             (data) => {
-                Alerter.alertFromSWS($scope.tr("ip_order_loading_error"), data.data ? data.data : data);
+                Alerter.alertFromSWS($translate.instant("ip_order_loading_error"), data.data ? data.data : data);
                 $scope.loading.form = false;
             }
         );
@@ -268,7 +268,7 @@ angular.module("Module.ip.controllers").controller("IpOrderCtrl", ($scope, $root
 ==============================*/
 
     $scope.getResumePrice = function (price) {
-        return price.value === 0 ? $scope.tr("price_free") : $scope.tr("price_ht_label", [price.text]);
+        return price.value === 0 ? $translate.instant("price_free") : $translate.instant("price_ht_label", { t0: price.text });
     };
 
     $scope.confirmOrder = function () {
@@ -280,7 +280,7 @@ angular.module("Module.ip.controllers").controller("IpOrderCtrl", ($scope, $root
                     window.open(order.url, "_blank");
                 },
                 (data) => {
-                    Alerter.alertFromSWS($scope.tr("ip_order_finish_error"), data.data);
+                    Alerter.alertFromSWS($translate.instant("ip_order_finish_error"), data.data);
                 }
             )
             .finally(() => {

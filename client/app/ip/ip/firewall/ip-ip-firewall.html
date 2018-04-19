@@ -3,10 +3,10 @@
     <button class="btn btn-default"
             data-ng-click="hideFirewall()">
         <i class="fa fa-chevron-left"></i>
-        <span data-i18n-static="common_back"></span>
+        <span data-translate="common_back"></span>
     </button>
 
-    <h4 data-ng-bind-html="tr('ip_firewall_title', [selectedIp])" ></h4>
+    <h4 data-translate="ip_firewall_title" data-translate-values="{ t0: selectedIp }" ></h4>
 
     <div class="alert alert-danger"
          role="alert"
@@ -17,7 +17,7 @@
     <button type="button"
             class="btn btn-primary"
             data-ng-click="setAction('ip/firewall/rule/add/ip-ip-firewall-rule-add', { ipBlock: selectedBlock, ip: selectedIp })"
-            data-i18n-static="ip_firewall_add_title">
+            data-translate="ip_firewall_add_title">
     </button>
 
     <div class="table-responsive mt-2"
@@ -27,32 +27,32 @@
             <thead>
                 <tr>
                     <th scope="col">
-                        <span data-i18n-static="ip_firewall_position"></span>
+                        <span data-translate="ip_firewall_position"></span>
                         <i class="fa fa-info-circle"
-                           data-uib-tooltip="{{i18n.ip_firewall_position_tooltip}}"
+                           data-uib-tooltip="{{ 'ip_firewall_position_tooltip' | translate }}"
                            data-tooltip-placement="right">
                         </i>
                     </th>
                     <th scope="col"
-                        data-i18n-static="ip_firewall_action">
+                        data-translate="ip_firewall_action">
                     </th>
                     <th scope="col"
-                        data-i18n-static="ip_firewall_protocol">
+                        data-translate="ip_firewall_protocol">
                     </th>
                     <th scope="col"
-                        data-i18n-static="ip_firewall_source_ip">
+                        data-translate="ip_firewall_source_ip">
                     </th>
                     <th scope="col"
-                        data-i18n-static="ip_firewall_source_port">
+                        data-translate="ip_firewall_source_port">
                     </th>
                     <th scope="col"
-                        data-i18n-static="ip_firewall_destination_port">
+                        data-translate="ip_firewall_destination_port">
                     </th>
                     <th scope="col"
-                        data-i18n-static="ip_firewall_options">
+                        data-translate="ip_firewall_options">
                     </th>
                     <th scope="col"
-                        data-i18n-static="ip_firewall_status">
+                        data-translate="ip_firewall_status">
                     </th>
                     <th scope="col"></th>
                 </tr>
@@ -71,7 +71,7 @@
                 <tr>
                     <td class="text-center"
                         colspan="9">
-                        <span data-i18n-static="ip_firewall_table_empty"></span>
+                        <span data-translate="ip_firewall_table_empty"></span>
                     </td>
                 </tr>
             </tbody>
@@ -87,7 +87,7 @@
                               data-ng-bind="rule.source">
                         </span>
                         <span data-ng-show="rule.source == 'any'"
-                              data-i18n-static="ip_firewall_rule_ip_any">
+                              data-translate="ip_firewall_rule_ip_any">
                         </span>
                     </td>
                     <td data-ng-bind="rule.sourcePort | ipFirewallRulePort"></td>
@@ -104,13 +104,13 @@
                     <td>
                         <button type="button"
                                 class="btn btn-link"
-                                data-uib-tooltip="{{i18n.ip_firewall_remove_rule}}"
+                                data-uib-tooltip="{{ 'ip_firewall_remove_rule' | translate }}"
                                 data-tooltip-placement="left"
                                 data-tooltip-append-to-body="true"
                                 data-ng-click="setAction('ip/firewall/rule/delete/ip-ip-firewall-rule-delete', { ipBlock: selectedBlock, ip: selectedIp, rule: rule })"
                                 data-ng-show="rule.state === 'ok'">
                             <span class="fa fa-trash"
-                                  aria-label="{{:: 'common_delete' | UAi18n }}"
+                                  aria-label="{{:: 'common_delete' | translate }}"
                                   aria-hidden="true">
                             </span>
                         </button>

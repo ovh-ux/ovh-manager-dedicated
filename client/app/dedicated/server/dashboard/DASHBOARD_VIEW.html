@@ -6,7 +6,7 @@
             <!-- GENERAL INFORMATIONS -->
             <div class="oui-tile mb-5 h-100">
                 <h3 class="oui-tile__title"
-                    data-i18n-static="server_informations_general">
+                    data-translate="server_informations_general">
                 </h3>
                 <div class="oui-tile__body">
                     <ul class="list-unstyled">
@@ -16,7 +16,7 @@
                                 <div class="d-flex w-100">
                                     <div>
                                         <strong class="d-block"
-                                                data-i18n-static="server_configuration_state_title">
+                                                data-translate="server_configuration_state_title">
                                         </strong>
                                         <span class="label"
                                               data-ng-class="{
@@ -29,11 +29,11 @@
                                     </div>
                                     <button type="button"
                                             class="btn btn-default ml-auto my-auto text-wrap"
-                                            title="{{ tr('server_remove_hack_button') }}"
+                                            title="{{ 'server_remove_hack_button' | translate }}"
                                             data-ng-if="server.state == 'HACKED' || server.state == 'HACKED_BLOCKED'"
                                             data-ng-click="removeHack()"
                                             data-ng-disabled="server.state == 'HACKED_BLOCKED'"
-                                            data-i18n-static="server_remove_hack_button">
+                                            data-translate="server_remove_hack_button">
                                     </button>
                                 </div>
                             </div>
@@ -44,17 +44,17 @@
                                 <div class="d-flex w-100">
                                     <div>
                                         <strong class="d-block"
-                                                data-i18n-static="server_configuration_distribution">
+                                                data-translate="server_configuration_distribution">
                                         </strong>
                                         <span data-ng-if="server.os" data-ng-bind="server.os"></span>
                                         <span class="label label-warning"
                                               data-ng-if="!server.os"
-                                              data-i18n-static="server_configuration_distribution_none">
+                                              data-translate="server_configuration_distribution_none">
                                         </span>
                                     </div>
                                     <button type="button"
                                             class="btn btn-default ml-auto my-auto text-wrap"
-                                            title="{{ tr('server_configuration_installation_progress_button') }}"
+                                            title="{{ 'server_configuration_installation_progress_button' | translate }}"
                                             data-ng-if="!server.isExpired && server.commercialRange !== 'housing' && disable.installationInProgress"
                                             data-ng-click="setAction('installation/progress/dedicated-server-installation-progress', server)"
                                             data-ng-disabled="disable.reboot || disable.byOtherTask">
@@ -66,23 +66,23 @@
                                               aria-hidden="true"
                                               data-ng-if="disable.installationInProgressError">
                                         </span>
-                                        <span data-i18n-static="server_configuration_installation_progress_button"></span>
+                                        <span data-translate="server_configuration_installation_progress_button"></span>
                                     </button>
                                     <button type="button"
                                             class="btn btn-default ml-auto my-auto text-wrap"
-                                            title="{{ tr('server_configuration_reinstallation_button') }}"
+                                            title="{{ 'server_configuration_reinstallation_button' | translate }}"
                                             data-ng-if="server.os && !server.isExpired && server.commercialRange !== 'housing' && !disable.installationInProgress"
                                             data-ng-click="setAction('installation/choice/dedicated-server-installation-choice', server)"
                                             data-ng-disabled="disable.reboot || disable.byOtherTask"
-                                            data-i18n-static="server_configuration_reinstallation_button">
+                                            data-translate="server_configuration_reinstallation_button">
                                     </button>
                                     <button type="button"
                                             class="btn btn-default ml-auto my-auto text-wrap"
-                                            title="{{ tr('server_configuration_installation_button') }}"
+                                            title="{{ 'server_configuration_installation_button' | translate }}"
                                             data-ng-if="!server.os && !server.isExpired && server.commercialRange !== 'housing' && !disable.installationInProgress"
                                             data-ng-click="setAction('installation/choice/dedicated-server-installation-choice', server)"
                                             data-ng-disabled="disable.reboot || disable.byOtherTask"
-                                            data-i18n-static="server_configuration_installation_button">
+                                            data-translate="server_configuration_installation_button">
                                     </button>
                                 </div>
                             </div>
@@ -93,25 +93,25 @@
                                 <div class="d-flex w-100">
                                     <div>
                                         <strong class="d-block"
-                                                data-i18n-static="server_configuration_boot">
+                                                data-translate="server_configuration_boot">
                                         </strong>
                                         <span data-ng-if="server.netbootLabel"
                                               data-ng-bind="server.netbootLabel">
                                         </span>
                                         <span class="text-muted"
                                               data-ng-if="!server.netbootLabel"
-                                              data-i18n-static="server_configuration_netboot_unavailable">
+                                              data-translate="server_configuration_netboot_unavailable">
                                             -
                                         </span>
                                     </div>
                                     <div class="ml-auto my-auto">
                                         <button type="button"
                                                 class="btn btn-default ml-auto my-auto text-wrap"
-                                                title="{{ tr('server_configuration_netboot_title_button') }}"
+                                                title="{{ 'server_configuration_netboot_title_button' | translate }}"
                                                 data-ng-if="!server.isExpired"
                                                 data-ng-click="setAction('netboot/dedicated-server-netboot')"
                                                 data-ng-disabled="disable.reboot || disable.byOtherTask || server.state == 'HACKED' || server.state == 'HACKED_BLOCKED' || (disable.installationInProgress && !disable.installationInProgressError)"
-                                                data-i18n-static="server_configuration_netboot_title_button">
+                                                data-translate="server_configuration_netboot_title_button">
                                         </button>
                                     </div>
                                 </div>
@@ -120,9 +120,9 @@
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
                                 <strong class="d-block"
-                                        data-i18n-static="server_configuration_description">
+                                        data-translate="server_configuration_description">
                                 </strong>
-                                <span data-ng-bind="server.commercialRange !== 'housing' ? server.description || '-' : tr('server_configuration_description_housing')"></span>
+                                <span data-ng-bind="server.commercialRange !== 'housing' ? server.description || '-' : ('server_configuration_description_housing' | translate)"></span>
                             </div>
                         </li>
                         <li class="oui-tile__item">
@@ -147,7 +147,7 @@
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
                                 <strong class="d-block"
-                                        data-i18n-static="server_configuration_creation">
+                                        data-translate="server_configuration_creation">
                                 </strong>
                                 <span data-ng-bind="server.creation|date:'mediumDate'"></span>
                             </div>
@@ -158,7 +158,7 @@
                                 <div class="d-flex w-100">
                                     <div>
                                         <strong class="d-block"
-                                                data-i18n-static="server_configuration_profesionnal_use">
+                                                data-translate="server_configuration_profesionnal_use">
                                         </strong>
                                         <span class="label label-danger"
                                               data-ng-class="{
@@ -170,16 +170,16 @@
                                         <span class="icon-info-sign middle"
                                               data-ng-if="!server.hasProfessionalUse"
                                               data-tooltip-placement="right"
-                                              data-uib-tooltip="{{ i18n.server_configuration_profesionnal_use_info }}">
+                                              data-uib-tooltip="{{ 'server_configuration_profesionnal_use_info' | translate }}">
                                         </span>
                                     </div>
                                     <button type="button"
                                             class="btn btn-default ml-auto my-auto text-wrap"
-                                            title="{{ tr('server_configuration_profesionnal_use_order_button') }}"
+                                            title="{{ 'server_configuration_profesionnal_use_order_button' | translate }}"
                                             data-ng-if="!server.isExpired && server.availableProfessionalUse && !server.hasProfessionalUse"
                                             data-ng-click="setAction('pro-use/order/dedicated-server-pro-use-order', server.name)"
                                             data-ng-disabled="server.order.indexOf('professionalUse') == -1"
-                                            data-i18n-static="server_configuration_profesionnal_use_order_button">
+                                            data-translate="server_configuration_profesionnal_use_order_button">
                                     </button>
                                 </div>
                             </div>
@@ -194,7 +194,7 @@
             <!-- BANDWITH -->
             <div class="oui-tile mb-5 h-100">
                 <h3 class="oui-tile__title"
-                    data-i18n-static="server_bandwidth">
+                    data-translate="server_bandwidth">
                 </h3>
                 <div class="oui-tile__body"
                      data-ng-if="bandwithError">
@@ -212,31 +212,31 @@
                                 <div class="d-flex w-100">
                                     <div>
                                         <strong class="d-block"
-                                                data-i18n-static="server_bandwidth_type">
+                                                data-translate="server_bandwidth_type">
                                         </strong>
                                         <span data-ng-bind="tr('server_bandwidth_type_' + bandwidth.bandwidth.type)"></span>
                                     </div>
                                     <div class="ml-auto my-auto" data-ng-switch="bandwidthOption">
                                         <button type="button"
                                                 class="btn btn-default ml-auto my-auto text-wrap"
-                                                title="{{ tr('server_bandwidth_cancel_button') }}"
+                                                title="{{ 'server_bandwidth_cancel_button' | translate }}"
                                                 data-ng-if="!server.isExpired && bandwidthOption === 'subscribed' && featureAvailability.allowDedicatedServerBandwidthOption()"
                                                 data-ng-switch-when="subscribed"
                                                 data-ng-click="setAction('bandwidth/cancel/dedicated-server-bandwidth-cancel', server.name)"
                                                 data-ng-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
-                                                data-i18n-static="server_bandwidth_cancel_button">
+                                                data-translate="server_bandwidth_cancel_button">
                                         </button>
                                         <span data-ng-switch-when="released"
-                                              data-i18n-static="server_bandwidth_option_released">
+                                              data-translate="server_bandwidth_option_released">
                                         </span>
                                         <button type="button"
                                                 class="btn btn-default ml-auto my-auto text-wrap"
-                                                title="{{ tr('server_bandwidth_order_button') }}"
+                                                title="{{ 'server_bandwidth_order_button' | translate }}"
                                                 data-ng-if="!server.isExpired && server.canOrderBandwith && featureAvailability.allowDedicatedServerOrderBandwidthOption()"
                                                 data-ng-switch-when="notSubscribed"
                                                 data-ng-click="setAction('bandwidth/order/dedicated-server-bandwidth-order', server.name)"
                                                 data-ng-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
-                                                data-i18n-static="server_bandwidth_order_button">
+                                                data-translate="server_bandwidth_order_button">
                                         </button>
                                     </div>
                                 </div>
@@ -245,7 +245,7 @@
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
                                 <strong class="d-block"
-                                        data-i18n-static="server_bandwidth_connection">
+                                        data-translate="server_bandwidth_connection">
                                 </strong>
                                 <span data-ng-bind="bandwidth.connection | bandwidth"></span>
                             </div>
@@ -253,7 +253,7 @@
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
                                 <strong class="d-block"
-                                        data-i18n-static="server_bandwidth_ovh_to_ovh">
+                                        data-translate="server_bandwidth_ovh_to_ovh">
                                 </strong>
                                 <span data-ng-bind="bandwidth.bandwidth.OvhToOvh | bandwidth"></span>
                             </div>
@@ -261,13 +261,13 @@
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
                                 <strong class="d-block"
-                                        data-i18n-static="server_bandwidth_ovh_to_internet">
+                                        data-translate="server_bandwidth_ovh_to_internet">
                                 </strong>
                                 <span data-ng-bind="bandwidth.bandwidth.OvhToInternet | bandwidth"></span>
                                 <span data-ng-if="server.canOrderQuota">
                                     <button type="button"
                                             class="btn btn-default ml-auto my-auto text-wrap"
-                                            title="{{ tr('server_traffic_order_button') }}"
+                                            title="{{ 'server_traffic_order_button' | translate }}"
                                             data-ng-if="!traffic.hasQuota && canOrderTraffic() && canOrderMoreTraffic() && trafficOption !== 'released'"
                                             data-ng-click="setAction('traffic/order/dedicated-server-traffic-order', server.name)"
                                             data-ng-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
@@ -277,8 +277,8 @@
                                 <span class="text-danger"
                                       data-ng-if="traffic.usage.isThrottled">
                                     <span> - </span>
-                                    <span data-i18n-static="server_consumption_throttled"></span>
-                                    <span data-uib-tooltip="{{ tr('server_consumption_explanation') }}"
+                                    <span data-translate="server_consumption_throttled"></span>
+                                    <span data-uib-tooltip="{{ 'server_consumption_explanation' | translate }}"
                                           data-tooltip-placement="top">
                                         <span class="icon-question-sign"></span>
                                     </span>
@@ -291,7 +291,7 @@
                                 <div class="d-flex w-100">
                                     <div>
                                         <strong class="d-block"
-                                                data-i18n-static="server_traffic">
+                                                data-translate="server_traffic">
                                         </strong>
                                         <span data-ng-if="traffic.usage.outputQuotaSize.text"
                                               data-ng-bind="tr('server_traffic_text', [traffic.usage.outputQuotaSize.text])">
@@ -302,7 +302,7 @@
                                     </div>
                                     <button type="button"
                                             class="btn btn-default ml-auto my-auto text-wrap"
-                                            title="{{ tr('server_traffic_order_button') }}"
+                                            title="{{ 'server_traffic_order_button' | translate }}"
                                             data-ng-if="traffic.hasQuota && canOrderTraffic() && canOrderMoreTraffic()"
                                             data-ng-click="setAction('traffic/order/dedicated-server-traffic-order', server.name)"
                                             data-ng-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
@@ -312,16 +312,16 @@
                                 <div class="d-flex w-100">
                                     <div>
                                         <span data-ng-if="trafficOption === 'released'"
-                                              data-i18n-static="server_traffic_option_released">
+                                              data-translate="server_traffic_option_released">
                                         </span>
                                     </div>
                                     <button type="button"
                                             class="btn btn-default ml-auto my-auto text-wrap"
-                                            title="{{ tr('server_traffic_cancel_button') }}"
+                                            title="{{ 'server_traffic_cancel_button' | translate }}"
                                             data-ng-if="!server.isExpired && trafficOption === 'subscribed' && trafficOption !== 'released'"
                                             data-ng-click="setAction('traffic/cancel/dedicated-server-traffic-cancel', server.name)"
                                             data-ng-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
-                                            data-i18n-static="server_traffic_cancel_button">
+                                            data-translate="server_traffic_cancel_button">
                                     </button>
                                 </div>
                             </div>
@@ -329,7 +329,7 @@
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
                                 <strong class="d-block"
-                                        data-i18n-static="server_bandwidth_internet_to_ovh">
+                                        data-translate="server_bandwidth_internet_to_ovh">
                                 </strong>
                                 <span data-ng-bind="bandwidth.bandwidth.InternetToOvh | bandwidth"></span>
                             </div>
@@ -338,9 +338,9 @@
                             data-ng-if="bandwidth.vrack.bandwidth">
                             <div class="oui-tile__definition">
                                 <strong class="d-block">
-                                    <span data-i18n-static="server_bandwidth_vrack"></span>
+                                    <span data-translate="server_bandwidth_vrack"></span>
                                     <span class="fa fa-question-circle"
-                                          data-uib-tooltip="{{ tr('server_bandwidth_vrack_tooltip') }}"
+                                          data-uib-tooltip="{{ 'server_bandwidth_vrack_tooltip' | translate }}"
                                           data-tooltip-placement="top"
                                           data-tooltip-append-to-body="true">
                                     </span>
@@ -351,7 +351,7 @@
                                     </div>
                                     <button type="button"
                                             class="btn btn-default ml-auto my-auto text-wrap"
-                                            title="{{ tr('server_bandwidth_vrack_order_button') }}"
+                                            title="{{ 'server_bandwidth_vrack_order_button' | translate }}"
                                             data-ng-if="canOrderVrackBandwidth() && canOrderMoreVrackBandwidth()"
                                             data-ng-click="setAction('bandwidth-vrack/order/dedicated-server-bandwidth-vrack-order', server.name)"
                                             data-ng-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
@@ -361,16 +361,16 @@
                                 <div class="d-flex w-100">
                                     <div>
                                         <span data-ng-if="bandwidthVrackOption === 'released'"
-                                              data-i18n-static="server_bandwidth_vrack_option_released">
+                                              data-translate="server_bandwidth_vrack_option_released">
                                         </span>
                                     </div>
                                     <button type="button"
                                             class="btn btn-default ml-auto my-auto text-wrap"
-                                            title="{{ tr('server_bandwidth_vrack_cancel_button') }}"
+                                            title="{{ 'server_bandwidth_vrack_cancel_button' | translate }}"
                                             data-ng-if="!server.isExpired && bandwidthVrackOption === 'subscribed'"
                                             data-ng-click="setAction('bandwidth-vrack/cancel/dedicated-server-bandwidth-vrack-cancel', server.name)"
                                             data-ng-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
-                                            data-i18n-static="server_bandwidth_vrack_cancel_button">
+                                            data-translate="server_bandwidth_vrack_cancel_button">
                                     </button>
                                 </div>
                             </div>
@@ -386,7 +386,7 @@
             <div class="oui-tile mb-5 h-100"
                  data-ng-if="server.commercialRange !== 'housing'">
                 <h3 class="oui-tile__title"
-                    data-i18n-static="server_services_state">
+                    data-translate="server_services_state">
                 </h3>
                 <div class="oui-tile__body">
                     <ul class="list-unstyled">
@@ -395,7 +395,7 @@
                                 <div class="d-flex w-100">
                                     <div>
                                         <strong class="d-block"
-                                                data-i18n-static="server_configuration_monitoring">
+                                                data-translate="server_configuration_monitoring">
                                         </strong>
                                         <span class="label"
                                               data-ng-class="{
@@ -403,16 +403,16 @@
                                                   'label-danger': !server.monitored
                                               }"
                                               data-ng-bind="tr('server_configuration_monitoring_' + (server.monitored && 'activated' || 'disabled'))"
-                                              data-uib-tooltip="{{ server.monitored && tr('server_configuration_monitoring_activate_information') || tr('server_configuration_monitoring_deactivate_information') }}"
+                                              data-uib-tooltip="{{ server.monitored && ('server_configuration_monitoring_activate_information' | translate) || ('server_configuration_monitoring_deactivate_information' | translate) }}"
                                               data-tooltip-placement="right">
                                         </span>
                                     </div>
                                     <button type="button"
                                             class="btn btn-default ml-auto my-auto text-wrap"
-                                            title="{{ server.monitored && tr('server_configuration_monitoring_deactivate_title_button') || tr('server_configuration_monitoring_activate_title_button') }}"
+                                            title="{{ server.monitored && ('server_configuration_monitoring_deactivate_title_button' | translate) || ('server_configuration_monitoring_activate_title_button' | translate) }}"
                                             data-ng-if="!server.isExpired"
                                             data-ui-sref="app.dedicated.server.monitoringUpdate"
-                                            data-ng-bind="server.monitored && tr('server_configuration_monitoring_deactivate_title_button') || tr('server_configuration_monitoring_activate_title_button')">
+                                            data-ng-bind="server.monitored && ('server_configuration_monitoring_deactivate_title_button' | translate) || ('server_configuration_monitoring_activate_title_button' | translate)">
                                     </button>
                                 </div>
                             </div>
@@ -420,7 +420,7 @@
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
                                 <strong class="d-block"
-                                        data-i18n-static="server_configuration_monitoring_services">
+                                        data-translate="server_configuration_monitoring_services">
                                 </strong>
                                 <span class="label d-inline-block mr-2"
                                       data-ng-repeat="monitoringProtocol in monitoringProtocolEnum"
@@ -430,19 +430,19 @@
                                 <button type="button"
                                         class="btn btn-default btn-block mt-3 text-wrap"
                                         data-ng-click="currentView.value = 'SERVICES_MONITORING'"
-                                        data-i18n-static="server_configuration_monitoring_services_use">
+                                        data-translate="server_configuration_monitoring_services_use">
                                 </button>
                             </div>
                         </li>
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
                                 <p>
-                                    <strong data-i18n-static="server_configuration_services_state_links"></strong>
+                                    <strong data-translate="server_configuration_services_state_links"></strong>
                                 </p>
                                 <ul>
-                                    <li data-ng-bind-html="tr('server_configuration_services_state_links_weathermap', [servicesStateLinks.weathermap])"></li>
-                                    <li data-ng-bind-html="tr('server_configuration_services_state_links_vms', [servicesStateLinks.vms])"></li>
-                                    <li data-ng-bind-html="tr('server_configuration_services_state_links_travaux', [servicesStateLinks.travaux])"></li>
+                                    <li data-translate="server_configuration_services_state_links_weathermap" data-translate-values="{ t0: servicesStateLinks.weathermap }"></li>
+                                    <li data-translate="server_configuration_services_state_links_vms" data-translate-values="{ t0: servicesStateLinks.vms }"></li>
+                                    <li data-translate="server_configuration_services_state_links_travaux" data-translate-values="{ t0: servicesStateLinks.travaux }"></li>
                                 </ul>
                             </div>
                         </li>
@@ -481,10 +481,10 @@
     <div class="oui-tile mb-5">
         <h3 class="oui-tile__title">
             <span class="d-block"
-                  data-i18n-static="server_tab_stats_legend_mrtg">
+                  data-translate="server_tab_stats_legend_mrtg">
             </span>
             <span class="small"
-                  data-ng-bind="tr('server_tab_stats_title_info')">
+                  data-ng-bind="{{ 'server_tab_stats_title_info' | translate }}">
             </span>
         </h3>
         <div class="oui-tile__body text-center"
@@ -501,7 +501,7 @@
                                 <div>
                                     <label for="networkChoice"
                                            class="oui-label d-inline-block align-middle mr-2"
-                                           data-i18n-static="server_tab_stats_network">
+                                           data-translate="server_tab_stats_network">
                                     </label>
                                     <div class="oui-select mb-0 oui-select_inline align-middle">
                                         <select class="oui-select__input"
@@ -522,7 +522,7 @@
                                 <div>
                                     <label for="typeChoice"
                                            class="oui-label d-inline-block align-middle mr-2"
-                                           data-i18n-static="server_tab_stats_type">
+                                           data-translate="server_tab_stats_type">
                                     </label>
                                     <div class="oui-select mb-0 oui-select_inline align-middle">
                                         <select class="form-control"
@@ -538,7 +538,7 @@
                                 <div>
                                     <label for="periodeChoice"
                                            class="oui-label d-inline-block align-middle mr-2"
-                                           data-i18n-static="server_tab_stats_period">
+                                           data-translate="server_tab_stats_period">
                                     </label>
                                     <div class="oui-select mb-0 oui-select_inline align-middle">
                                         <select class="form-control"
@@ -563,7 +563,7 @@
                         <div class="alert alert-danger"
                              role="alert"
                              data-ng-if="serverStatsLoad.error"
-                             data-i18n-static="server_tab_stats_no_chart">
+                             data-translate="server_tab_stats_no_chart">
                         </div>
                     </div>
                 </li>

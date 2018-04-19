@@ -1,6 +1,5 @@
 angular.module("Billing.filters").filter("debtOperationDescription", [
-    "translator",
-    function (translator) {
+    function ($translate) {
         "use strict";
 
         const BASE_I18N_SLUG = "statements_operation_description_";
@@ -15,7 +14,7 @@ angular.module("Billing.filters").filter("debtOperationDescription", [
             }
 
             const slug = getDescriptionSlug(debtOperation);
-            return translator.tr(slug);
+            return $translate.instant(slug);
         };
     }
 ]);

@@ -3,9 +3,9 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="displayBC"
-         data-wizard-title="i18n.dedicatedCloud_order_Host"
+         data-wizard-title="{{ 'dedicatedCloud_order_Host' | translate }}"
          data-wizard-bread-crumb
-         data-wizard-confirm-button-text="i18n.wizard_order">
+         data-wizard-confirm-button-text="{{ 'wizard_order' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-on-load="loadHostsProfiles"
@@ -17,7 +17,7 @@
             </div>
 
             <div data-ng-hide="orderHosts.loading">
-                <p data-i18n-static="dedicatedCloud_configuration_order_hosts_step1_question"></p>
+                <p data-translate="dedicatedCloud_configuration_order_hosts_step1_question"></p>
                 <table class="table table-hover mb-5">
                     <thead>
                         <tr>
@@ -26,29 +26,29 @@
                             </th>
                             <th scope="col"
                                 class="text-center"
-                                data-i18n-static="dedicatedCloud_configuration_order_hosts">
+                                data-translate="dedicatedCloud_configuration_order_hosts">
                             </th>
                             <th scope="col"
                                 class="text-right"
-                                data-i18n-static="dedicatedCloud_configuration_order_hosts_processor_speed">
+                                data-translate="dedicatedCloud_configuration_order_hosts_processor_speed">
                             </th>
                             <th scope="col"
                                 class="text-right">
                                 <span class="d-block"
-                                      data-i18n-static="dedicatedCloud_configuration_order_hosts_memory">
+                                      data-translate="dedicatedCloud_configuration_order_hosts_memory">
                                 </span>
-                                <span data-i18n-static="dedicatedCloud_configuration_order_hosts_memory_ecc"></span>
+                                <span data-translate="dedicatedCloud_configuration_order_hosts_memory_ecc"></span>
                             </th>
                             <th scope="col"
                                 class="text-right"
-                                data-i18n-static="dedicatedCloud_configuration_order_hosts_nb_cores">
+                                data-translate="dedicatedCloud_configuration_order_hosts_nb_cores">
                             </th>
                             <th scope="col"
                                 class="text-right">
                                 <span class="d-block"
-                                      data-i18n-static="dedicatedCloud_configuration_order_hosts_step1_rate">
+                                      data-translate="dedicatedCloud_configuration_order_hosts_step1_rate">
                                 </span>
-                                <small data-i18n-static="dedicatedCloud_configuration_order_hosts_step1_monthly_rate"></small>
+                                <small data-translate="dedicatedCloud_configuration_order_hosts_step1_monthly_rate"></small>
                             </th>
                         </tr>
                     </thead>
@@ -88,14 +88,14 @@
                 <div class="form-group">
                     <label for="quantity"
                            class="control-label"
-                           data-i18n-static="dedicatedCloud_configuration_order_hosts_billing_quantity">
+                           data-translate="dedicatedCloud_configuration_order_hosts_billing_quantity">
                     </label>
                     <oui-numeric id="quantity"
                                  name="quantity"
                                  model="orderHosts.quantityToOrder">
                     </oui-numeric>
                 </div>
-                <span data-ng-show="showDiscount">* {{ tr('dedicatedCloud_discount_explanation') }}</span>
+                <span data-ng-show="showDiscount">* {{ 'dedicatedCloud_discount_explanation' | translate }}</span>
             </div>
 
         </div>
@@ -110,25 +110,25 @@
             </div>
 
             <div data-ng-hide="orderHosts.loading">
-                <p data-i18n-static="dedicatedCloud_configuration_order_hosts_step2_details"></p>
+                <p data-translate="dedicatedCloud_configuration_order_hosts_step2_details"></p>
                 <table class="table table-hover">
                     <thead>
                         <tr>
                             <th scope="col"
                                 class="text-center"
-                                data-i18n-static="dedicatedCloud_configuration_order_hosts">
+                                data-translate="dedicatedCloud_configuration_order_hosts">
                             </th>
                             <th scope="col"
                                 class="text-right"
-                                data-i18n-static="dedicatedCloud_configuration_order_hosts_processor_speed">
+                                data-translate="dedicatedCloud_configuration_order_hosts_processor_speed">
                             </th>
                             <th scope="col"
                                 class="text-right"
-                                data-i18n-static="dedicatedCloud_configuration_order_hosts_memory">
+                                data-translate="dedicatedCloud_configuration_order_hosts_memory">
                             </th>
                             <th scope="col"
                                 class="text-right"
-                                data-i18n-static="dedicatedCloud_configuration_order_hosts_nb_cores">
+                                data-translate="dedicatedCloud_configuration_order_hosts_nb_cores">
                             </th>
                         </tr>
                     </thead>
@@ -152,11 +152,11 @@
                 </table>
                 <ul class="list-unstyled text-center">
                     <li>
-                        <span data-i18n-static="dedicatedCloud_configuration_order_hosts_billing_quantity"></span>
+                        <span data-translate="dedicatedCloud_configuration_order_hosts_billing_quantity"></span>
                         <strong data-ng-bind="orderHosts.quantityToOrder"></strong>
                     </li>
                     <li>
-                        <span data-i18n-static="dedicatedCloud_configuration_order_hosts_step2_monthly_price_HT"></span>
+                        <span data-translate="dedicatedCloud_configuration_order_hosts_step2_monthly_price_HT"></span>
                         <strong class="text-danger"
                                 data-ng-bind="orderHosts.orderResult.prices.withoutTax.text">
                         </strong>
@@ -166,29 +166,29 @@
                         </span>
                     </li>
                     <li>
-                        <span data-i18n-static="dedicatedCloud_configuration_order_hosts_step2_monthly_price_TTC"></span>
+                        <span data-translate="dedicatedCloud_configuration_order_hosts_step2_monthly_price_TTC"></span>
                         <strong class="text-danger"
                                 data-ng-bind="orderHosts.orderResult.prices.withTax.text">
                         </strong>
                     </li>
                 </ul>
                 <p data-ng-show="hasDiscount(orderHosts.selectedModel)"
-                   data-ng-bind="'*' + tr('dedicatedCloud_discount_explanation')">
+                   data-ng-bind="'*' + ('dedicatedCloud_discount_explanation' | translate)">
                 </p>
-                <p data-i18n-static="dedicatedCloud_configuration_order_hosts_step2_confirm"></p>
-                <p data-i18n-static="dedicatedCloud_configuration_order_hosts_step2_explication"></p>
+                <p data-translate="dedicatedCloud_configuration_order_hosts_step2_confirm"></p>
+                <p data-translate="dedicatedCloud_configuration_order_hosts_step2_explication"></p>
                 <div class="checkbox">
                     <label>
                         <input type="checkbox"
                                data-ng-model="orderHosts.agreeContract" />
-                        <span data-i18n-static="dedicatedCloud_configuration_order_hosts_step2_contracts"></span>
+                        <span data-translate="dedicatedCloud_configuration_order_hosts_step2_contracts"></span>
                     </label>
                 </div>
                 <ul>
                     <li data-ng-repeat="contract in orderHosts.orderResult.contracts track by $index">
                         <a target="_blank"
                            rel="noopener"
-                           title="{{ contract.name }} ({{ i18n.core_new_window }})"
+                           title="{{ contract.name }} ({{ 'core_new_window' | translate }})"
                            data-ng-href="{{ contract.url }}"
                            data-ng-bind="contract.name">
                         </a>

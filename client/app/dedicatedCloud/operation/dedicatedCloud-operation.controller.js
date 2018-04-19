@@ -7,7 +7,8 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
     "Alerter",
     "$state",
     "$stateParams",
-    function ($scope, $q, $window, DedicatedCloud, Orders, Alerter, $state, $stateParams) {
+    "$translate",
+    function ($scope, $q, $window, DedicatedCloud, Orders, Alerter, $state, $stateParams, $translate) {
         "use strict";
 
         const self = this;
@@ -36,7 +37,7 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
                     self.operationIds = operationIds.reverse();
                 })
                 .catch((err) => {
-                    Alerter.alertFromSWS($scope.tr("dedicatedCloud_OPERATIONS_error"), err, "dedicatedCloud_alert");
+                    Alerter.alertFromSWS($translate.instant("dedicatedCloud_OPERATIONS_error"), err, "dedicatedCloud_alert");
                 })
                 .finally(() => {
                     self.loaders.operations = false;
@@ -67,7 +68,7 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
                         $window.open(order.url);
                     })
                     .catch((err) => {
-                        Alerter.alertFromSWS($scope.tr("dedicatedCloud_OPERATIONS_error"), err, "dedicatedCloud_alert");
+                        Alerter.alertFromSWS($translate.instant("dedicatedCloud_OPERATIONS_error"), err, "dedicatedCloud_alert");
                     });
             }
         };
@@ -180,10 +181,10 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
                 data: { executionDate: operation.executionDate }
             })
                 .then(() => {
-                    Alerter.success($scope.tr("dedicatedCloud_OPERATIONS_success"), "dedicatedCloud_alert");
+                    Alerter.success($translate.instant("dedicatedCloud_OPERATIONS_success"), "dedicatedCloud_alert");
                 })
                 .catch((err) => {
-                    Alerter.alertFromSWS($scope.tr("dedicatedCloud_OPERATIONS_error"), err, "dedicatedCloud_alert");
+                    Alerter.alertFromSWS($translate.instant("dedicatedCloud_OPERATIONS_error"), err, "dedicatedCloud_alert");
                 })
                 .finally(() => {
                     self.loaders.updating = false;
@@ -198,7 +199,7 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
                     self.stateEnum = data.models["dedicatedCloud.TaskStateEnum"].enum;
                 })
                 .catch((err) => {
-                    Alerter.alertFromSWS($scope.tr("dedicatedCloud_OPERATIONS_error"), err, "dedicatedCloud_alert");
+                    Alerter.alertFromSWS($translate.instant("dedicatedCloud_OPERATIONS_error"), err, "dedicatedCloud_alert");
                 })
                 .then(() => DedicatedCloud.getSelected($stateParams.productId))
                 .then((cloud) => {

@@ -42,7 +42,7 @@ class DedicatedCloudUserRightsEditCtrl {
             });
         }).catch((error) => {
             this.$scope.resetAction();
-            this.$scope.setMessage(this.$scope.tr("dedicatedCloud_USER_right_get_fail"), {
+            this.$scope.setMessage(this.$translate.instant("dedicatedCloud_USER_right_get_fail"), {
                 type: "ERROR",
                 message: error.message
             });

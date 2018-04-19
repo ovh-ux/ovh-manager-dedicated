@@ -1,19 +1,19 @@
 <div class="dedicatedCloud-operation">
 
-    <h2 data-i18n-static="dedicatedCloud_tab_operation"></h2>
+    <h2 data-translate="dedicatedCloud_tab_operation"></h2>
 
     <div class="table-responsive">
         <table class="table table-hover">
             <thead>
                 <tr>
                     <th scope="col"
-                        data-i18n-static="dedicatedCloud_OPERATIONS_taskId">
+                        data-translate="dedicatedCloud_OPERATIONS_taskId">
                     </th>
                     <th scope="col"
-                        data-i18n-static="dedicatedCloud_OPERATIONS_name">
+                        data-translate="dedicatedCloud_OPERATIONS_name">
                     </th>
                     <th scope="col"
-                        data-i18n-static="dedicatedCloud_OPERATIONS_type">
+                        data-translate="dedicatedCloud_OPERATIONS_type">
                     </th>
                     <th scope="col">
                         <select class="form-control"
@@ -24,36 +24,36 @@
                                 data-ng-change="ctrlOperations.onStateChanged()"
                                 data-ng-disabled="ctrlOperations.loaders.models">
                             <option value=""
-                                    data-i18n-static="dedicatedCloud_OPERATIONS_progression">
+                                    data-translate="dedicatedCloud_OPERATIONS_progression">
                             </option>
                         </select>
                     </th>
                     <th scope="col"
-                        data-i18n-static="dedicatedCloud_OPERATIONS_comment">
+                        data-translate="dedicatedCloud_OPERATIONS_comment">
                     </th>
                     <th scope="col"
-                        data-i18n-static="dedicatedCloud_OPERATIONS_related_services">
+                        data-translate="dedicatedCloud_OPERATIONS_related_services">
                     </th>
                     <th scope="col"
-                        data-i18n-static="dedicatedCloud_OPERATIONS_created_from">
+                        data-translate="dedicatedCloud_OPERATIONS_created_from">
                     </th>
                     <th scope="col"
-                        data-i18n-static="dedicatedCloud_OPERATIONS_created_by">
+                        data-translate="dedicatedCloud_OPERATIONS_created_by">
                     </th>
                     <th scope="col"
-                        data-i18n-static="dedicatedCloud_OPERATIONS_date_treatment">
+                        data-translate="dedicatedCloud_OPERATIONS_date_treatment">
                     </th>
                     <th scope="col"
-                        data-i18n-static="dedicatedCloud_OPERATIONS_date_end">
+                        data-translate="dedicatedCloud_OPERATIONS_date_end">
                     </th>
                     <th scope="col"
-                        data-i18n-static="dedicatedCloud_OPERATIONS_date_update">
+                        data-translate="dedicatedCloud_OPERATIONS_date_update">
                     </th>
                     <th scope="col"
                         class="text-center">
                         <button type="button"
                                 class="btn btn-link"
-                                title="{{ i18n.common_refresh }}"
+                                title="{{ 'common_refresh' | translate }}"
                                 data-ng-click="ctrlOperations.getOperations()">
                             <span class="fa fa-refresh" aria-hidden="true"></span>
                         </button>
@@ -72,7 +72,7 @@
                 <tr>
                     <td colspan="12"
                         class="text-center"
-                        data-i18n-static="dedicatedCloud_OPERATIONS_empty">
+                        data-translate="dedicatedCloud_OPERATIONS_empty">
                     </td>
                 </tr>
             </tbody>
@@ -166,7 +166,7 @@
                             <span data-ng-bind="operation.executionDate | date:'medium'"></span>
                             <button type="button"
                                     class="btn btn-link"
-                                    title="{{:: tr('dedicatedCloud_OPERATIONS_date_treatment_edit') }}"
+                                    title="{{ :: 'dedicatedCloud_OPERATIONS_date_treatment_edit' | translate }}"
                                     data-ng-show="operation.progress === 0 && operation.type === 'maintenance' && maintenanceDateFrom !== null && maintenanceDateTo !== null"
                                     data-ng-click="prevDate = operation.executionDate;editMode = true">
                                 <span class="oui-icon oui-icon-pen_line" aria-hidden="true"></span>
@@ -193,13 +193,13 @@
                             </div>
                             <button type="button"
                                     class="btn btn-link"
-                                    title="{{:: tr('dedicatedCloud_OPERATIONS_date_treatment_save') }}"
+                                    title="{{ :: 'dedicatedCloud_OPERATIONS_date_treatment_save' | translate }}"
                                     data-ng-click="ctrlOperations.updateOperation(operation);editMode = false">
                                 <span class="fa fa-check" aria-hidden="true"></span>
                             </button>
                             <button type="button"
                                     class="btn btn-link"
-                                    title="{{:: tr('dedicatedCloud_OPERATIONS_date_treatment_cancel') }}"
+                                    title="{{ :: 'dedicatedCloud_OPERATIONS_date_treatment_cancel' | translate }}"
                                     data-ng-click="editMode = false; operation.executionDate = prevDate">
                                 <span class="fa fa-times" aria-hidden="true"></span>
                             </button>
@@ -222,6 +222,6 @@
          data-nb-pages="nbPages"
          data-items-per-page="itemsPerPage"
          data-page-placeholder="{{ tr('pagination_page', [currentPage, nbPages]) }}"
-         data-item-per-page-placeholder="{{ tr('pagination_display') }}">
+         data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
     </div>
 </div>

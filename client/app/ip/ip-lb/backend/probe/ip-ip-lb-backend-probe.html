@@ -3,19 +3,19 @@
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="setProbe"
          data-wizard-hide-cancel-button="loading"
-         data-wizard-title="i18n.iplb_backend_setprobe_title">
+         data-wizard-title="{{ 'iplb_backend_setprobe_title' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-valid="!loading && model.probe">
 
             <div data-ng-hide="loading">
-                <p data-i18n-static="iplb_backend_setprobe_question"></p>
+                <p data-translate="iplb_backend_setprobe_question"></p>
 
                 <form>
                     <div class="form-group">
                         <label class="control-label required"
                                for="probe"
-                               data-i18n-static="iplb_backend_setprobe_probe">
+                               data-translate="iplb_backend_setprobe_probe">
                         </label>
                         <select name="probe"
                                 id="probe"
@@ -24,9 +24,9 @@
                                 data-ng-options="probe as (i18n['iplb_backend_probe_' + probe.toUpperCase()] || probe.toUpperCase()) for probe in probes | orderBy:orderByProbeAlias">
                         </select>
                         <div class="help-block">
-                            <p data-i18n-static="iplb_backend_probe_help_NONE"></p>
-                            <p data-i18n-static="iplb_backend_probe_help_HTTPICMP"></p>
-                            <p data-i18n-static="iplb_backend_probe_help_OCO"></p>
+                            <p data-translate="iplb_backend_probe_help_NONE"></p>
+                            <p data-translate="iplb_backend_probe_help_HTTPICMP"></p>
+                            <p data-translate="iplb_backend_probe_help_OCO"></p>
                         </div>
                     </div>
                 </form>

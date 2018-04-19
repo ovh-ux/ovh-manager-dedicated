@@ -1,4 +1,4 @@
-angular.module("App").controller("UsbStorageCtrl", ($scope, $stateParams, Server, Alerter) => {
+angular.module("App").controller("UsbStorageCtrl", ($scope, $stateParams, $translate, Server, Alerter) => {
     "use strict";
 
     $scope.loading = true;
@@ -21,7 +21,7 @@ angular.module("App").controller("UsbStorageCtrl", ($scope, $stateParams, Server
             },
             (error) => {
                 $scope.loading = false;
-                Alerter.alertFromSWS($scope.tr("server_tab_USB_STORAGE_loading_error"), error.data, "loadingError");
+                Alerter.alertFromSWS($translate.instant("server_tab_USB_STORAGE_loading_error"), error.data, "loadingError");
             }
         );
     };

@@ -1,10 +1,9 @@
 class DedicatedCloudSecurityMaxSimultaneousConnectionsCtrl {
-    constructor ($scope, $stateParams, DedicatedCloud, translator) {
+    constructor ($scope, $stateParams, DedicatedCloud, $translate) {
         this.$scope = $scope;
         this.$stateParams = $stateParams;
         this.DedicatedCloud = DedicatedCloud;
-        this.translator = translator;
-        this.tr = translator.tr;
+        this.$translate = $translate;
 
         this.maxSimultaneousConnections = {
             value: null,
@@ -19,7 +18,7 @@ class DedicatedCloudSecurityMaxSimultaneousConnectionsCtrl {
         this.DedicatedCloud.updateMaxConcurrentConnections(this.$stateParams.productId, this.maxSimultaneousConnections.value)
             .then((data) => {
                 this.$scope.setMessage(
-                    this.tr("dedicatedCloud_SECURITY_change_nb_simultaneous_connection_success"),
+                    this.$translate.instant("dedicatedCloud_SECURITY_change_nb_simultaneous_connection_success"),
                     _.assign(
                         {
                             type: "success"
@@ -29,7 +28,7 @@ class DedicatedCloudSecurityMaxSimultaneousConnectionsCtrl {
                 );
             })
             .catch((err) => {
-                this.$scope.setMessage(this.tr("dedicatedCloud_SECURITY_change_nb_simultaneous_connection_failure"), err.data);
+                this.$scope.setMessage(this.$translate.instant("dedicatedCloud_SECURITY_change_nb_simultaneous_connection_failure"), err.data);
             });
     }
 }

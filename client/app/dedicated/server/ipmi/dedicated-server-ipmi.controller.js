@@ -1,4 +1,4 @@
-angular.module("App").controller("ImpiCtrl", ($scope, Server, Polling, Alerter, User, $sce, $stateParams) => {
+angular.module("App").controller("ImpiCtrl", ($scope, $translate, Server, Polling, Alerter, User, $sce, $stateParams) => {
     $scope.ttl = "5";
     $scope.alert = "server_tab_ipmi_alert";
 
@@ -96,7 +96,7 @@ angular.module("App").controller("ImpiCtrl", ($scope, Server, Polling, Alerter, 
                                     $scope.kvm.features = features;
                                 },
                                 (err) => {
-                                    Alerter.alertFromSWS($scope.tr("server_configuration_kvm_error"), err.data, $scope.alert);
+                                    Alerter.alertFromSWS($translate.instant("server_configuration_kvm_error"), err.data, $scope.alert);
                                 }
                             )
                             .finally(() => {
@@ -136,7 +136,7 @@ angular.module("App").controller("ImpiCtrl", ($scope, Server, Polling, Alerter, 
             (err) => {
                 $scope.loader.loading = false;
                 $scope.loader.error = true;
-                Alerter.alertFromSWS($scope.tr("server_configuration_impi_loading_error"), err, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("server_configuration_impi_loading_error"), err, $scope.alert);
             }
         );
     }
@@ -200,7 +200,7 @@ angular.module("App").controller("ImpiCtrl", ($scope, Server, Polling, Alerter, 
             (data) => {
                 $scope.loader.navigationLoading = false;
                 $scope.loader.buttonStart = false;
-                Alerter.alertFromSWS($scope.tr("server_configuration_impi_navigation_error"), data.data, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("server_configuration_impi_navigation_error"), data.data, $scope.alert);
             }
         );
     };
@@ -217,7 +217,7 @@ angular.module("App").controller("ImpiCtrl", ($scope, Server, Polling, Alerter, 
             (data) => {
                 $scope.loader.navigationLoading = false;
                 $scope.loader.buttonStart = false;
-                Alerter.alertFromSWS($scope.tr("server_configuration_impi_navigation_error"), data, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("server_configuration_impi_navigation_error"), data, $scope.alert);
             }
         );
     }
@@ -229,12 +229,12 @@ angular.module("App").controller("ImpiCtrl", ($scope, Server, Polling, Alerter, 
                 $scope.loader.buttonStart = false;
                 $scope.loader.navigationReady = connect.value;
                 window.open(connect.value, "_blank");
-                Alerter.alertFromSWS($scope.tr("server_configuration_impi_navigation_success"), true, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("server_configuration_impi_navigation_success"), true, $scope.alert);
             },
             (data) => {
                 $scope.loader.navigationLoading = false;
                 $scope.loader.buttonStart = false;
-                Alerter.alertFromSWS($scope.tr("server_configuration_impi_navigation_error"), data.data, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("server_configuration_impi_navigation_error"), data.data, $scope.alert);
             }
         );
     }
@@ -252,7 +252,7 @@ angular.module("App").controller("ImpiCtrl", ($scope, Server, Polling, Alerter, 
             (err) => {
                 $scope.loader.javaLoading = false;
                 $scope.loader.buttonStart = false;
-                Alerter.alertFromSWS($scope.tr("server_configuration_impi_java_error"), err, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("server_configuration_impi_java_error"), err, $scope.alert);
             }
         );
     };
@@ -269,13 +269,13 @@ angular.module("App").controller("ImpiCtrl", ($scope, Server, Polling, Alerter, 
             (data) => {
                 $scope.loader.javaLoading = false;
                 $scope.loader.buttonStart = false;
-                Alerter.alertFromSWS($scope.tr("server_configuration_impi_java_error"), data, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("server_configuration_impi_java_error"), data, $scope.alert);
             }
         );
     }
 
     function getIpmiJava () {
-        Alerter.alertFromSWS($scope.tr("server_configuration_impi_java_success"), true, $scope.alert);
+        Alerter.alertFromSWS($translate.instant("server_configuration_impi_java_success"), true, $scope.alert);
         $scope.loader.javaLoading = false;
         $scope.loader.buttonStart = false;
         $scope.loader.javaReady = true;
@@ -306,7 +306,7 @@ angular.module("App").controller("ImpiCtrl", ($scope, Server, Polling, Alerter, 
                 }
             },
             (err) => {
-                Alerter.alertFromSWS($scope.tr("server_configuration_impi_java_error"), err, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("server_configuration_impi_java_error"), err, $scope.alert);
             }
         );
     }
@@ -344,7 +344,7 @@ angular.module("App").controller("ImpiCtrl", ($scope, Server, Polling, Alerter, 
             (data) => {
                 setHttpState(false, false, false);
                 $scope.disable.testIpmi = true;
-                Alerter.alertFromSWS($scope.tr("server_configuration_impi_loading_error"), data, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("server_configuration_impi_loading_error"), data, $scope.alert);
             }
         );
     }
@@ -382,7 +382,7 @@ angular.module("App").controller("ImpiCtrl", ($scope, Server, Polling, Alerter, 
             (data) => {
                 $scope.disable.testIpmi = false;
                 setPasswordState(false, false, false);
-                Alerter.alertFromSWS($scope.tr("server_configuration_impi_loading_error"), data, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("server_configuration_impi_loading_error"), data, $scope.alert);
             }
         );
     }
@@ -422,7 +422,7 @@ angular.module("App").controller("ImpiCtrl", ($scope, Server, Polling, Alerter, 
             (data) => {
                 $scope.disable.testIpmi = false;
                 setPingState(false, false, false);
-                Alerter.alertFromSWS($scope.tr("server_configuration_impi_loading_error"), data, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("server_configuration_impi_loading_error"), data, $scope.alert);
             }
         );
     }
@@ -465,7 +465,7 @@ angular.module("App").controller("ImpiCtrl", ($scope, Server, Polling, Alerter, 
                 if (Polling.isResolve(state)) {
                     $scope.disable.restartIpmi = false;
                     $scope.disable.localTask = false;
-                    Alerter.alertFromSWS($scope.tr("server_configuration_impi_restart_success"), true, $scope.alert);
+                    Alerter.alertFromSWS($translate.instant("server_configuration_impi_restart_success"), true, $scope.alert);
                 } else {
                     startIpmiPollRestart(task);
                 }
@@ -473,7 +473,7 @@ angular.module("App").controller("ImpiCtrl", ($scope, Server, Polling, Alerter, 
             (data) => {
                 $scope.disable.restartIpmi = false;
                 $scope.disable.localTask = false;
-                Alerter.alertFromSWS($scope.tr("server_configuration_impi_restart_error_task"), data, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("server_configuration_impi_restart_error_task"), data, $scope.alert);
             }
         );
     }
@@ -493,7 +493,7 @@ angular.module("App").controller("ImpiCtrl", ($scope, Server, Polling, Alerter, 
                 if (Polling.isResolve(state)) {
                     $scope.disable.restartSession = false;
                     $scope.disable.localTask = false;
-                    Alerter.alertFromSWS($scope.tr("server_configuration_impi_sessions_success"), true, $scope.alert);
+                    Alerter.alertFromSWS($translate.instant("server_configuration_impi_sessions_success"), true, $scope.alert);
                 } else {
                     startIpmiPollSessionsReset(task);
                 }
@@ -501,7 +501,7 @@ angular.module("App").controller("ImpiCtrl", ($scope, Server, Polling, Alerter, 
             (data) => {
                 $scope.disable.restartSession = false;
                 $scope.disable.localTask = false;
-                Alerter.alertFromSWS($scope.tr("server_configuration_impi_restart_error_task_session"), data, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("server_configuration_impi_restart_error_task_session"), data, $scope.alert);
             }
         );
     }

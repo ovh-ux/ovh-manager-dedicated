@@ -3,13 +3,13 @@
     <div data-ovh-alert></div>
 
     <div class="page-header">
-        <h1 data-i18n-static="payments_title"></h1>
+        <h1 data-translate="payments_title"></h1>
     </div>
 
     <div class="tab-content">
         <p class="alert alert-info"
            role="alert"
-           data-i18n-static="payments_description">
+           data-translate="payments_description">
         </p>
         <div class="row">
             <div class="col-md-6">
@@ -18,7 +18,7 @@
                         data-export-csv="ctrl.getDatasToExport()"
                         data-export-csv-separator=";"
                         data-ng-disabled="ctrl.loaders.payments"
-                        data-i18n-static="billing_export_csv">
+                        data-translate="billing_export_csv">
                 </button>
             </div>
             <div class="col-md-6">
@@ -35,7 +35,7 @@
                     <th scope="col"
                         class="align-middle">
                         <span data-billing-sorting-field-button=""
-                              data-label="{{ :: tr('payments_table_head_id') }}"
+                              data-label="{{ :: 'payments_table_head_id' | translate }}"
                               data-associated-field="depositId"
                               data-active-field="ctrl.orderByState.predicate"
                               data-reverse-order="ctrl.orderByState.reverse"
@@ -44,7 +44,7 @@
                     <th scope="col"
                         class="align-middle">
                         <span data-billing-sorting-field-button=""
-                              data-label="{{ :: tr('payments_table_head_date') }}"
+                              data-label="{{ :: 'payments_table_head_date' | translate }}"
                               data-associated-field="date"
                               data-active-field="ctrl.orderByState.predicate"
                               data-reverse-order="ctrl.orderByState.reverse"
@@ -53,14 +53,14 @@
                     <th scope="col"
                         class="align-middle">
                         <span data-billing-sorting-field-button=""
-                              data-label="{{ :: tr('payments_table_head_amount') }}"
+                              data-label="{{ :: 'payments_table_head_amount' | translate }}"
                               data-associated-field="amount.value"
                               data-active-field="ctrl.orderByState.predicate"
                               data-reverse-order="ctrl.orderByState.reverse"
                               data-on-change="ctrl.onOrderStateChanged"></span>
                     </th>
                     <th scope="col">
-                        {{ :: tr('payments_table_head_type') }}
+                        {{ :: 'payments_table_head_type' | translate }}
                         <select class="form-control input-sm"
                                 data-ng-if="!ctrl.loaders.payments"
                                 data-ng-options="tr('common_payment_type_' + paymentType) for paymentType in ctrl.paymentTypes.values track by paymentType"
@@ -70,7 +70,7 @@
                     </th>
                     <th scope="col"
                         class="align-middle"
-                        data-i18n-static="payments_table_head_actions"
+                        data-translate="payments_table_head_actions"
                         data-ng-if="ctrl.displayActionsCol()">
                     </th>
                 </tr>
@@ -87,7 +87,7 @@
                 <tr>
                     <td colspan="{{ ctrl.displayActionsCol() ? 5 : 4 }}"
                         class="text-center"
-                        data-i18n-static="payments_table_empty">
+                        data-translate="payments_table_empty">
                     </td>
                 </tr>
             </tbody>
@@ -101,7 +101,7 @@
                         <div data-uib-dropdown>
                             <button type="button"
                                     class="btn btn-link"
-                                    data-ng-attr-title="{{:: i18n.payments_table_actions_tooltip }}"
+                                    data-ng-attr-title="{{ 'payments_table_actions_tooltip' | translate }}"
                                     data-uib-dropdown-toggle>
                                 <span class="ovh-font ovh-font-dots align-top"
                                       aria-hidden="true">

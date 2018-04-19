@@ -3,9 +3,9 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="displayOrder"
-         data-wizard-title="i18n.cdn_configuration_order_quota_title"
+         data-wizard-title="{{ 'cdn_configuration_order_quota_title' | translate }}"
          data-wizard-bread-crumb
-         data-wizard-confirm-button-text="i18n.wizard_pay">
+         data-wizard-confirm-button-text="{{ 'wizard_pay' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-on-load="loadQuotaInformations"
@@ -18,7 +18,7 @@
 
             <div data-ng-if="orderInformations">
                 <label class="control-label"
-                       data-i18n-static="cdn_configuration_order_quota_step1_pricing">
+                       data-translate="cdn_configuration_order_quota_step1_pricing">
                 </label>
                 <div class="radio"
                      data-ng-repeat="price in orderInformations track by $index">
@@ -38,30 +38,30 @@
 
             <p data-ng-bind-html="tr('cdn_configuration_order_quota_step2_question',  [choices.count, cdn.serviceName])"></p>
             <dl>
-                <dt data-i18n-static="cdn_configuration_order_quota_step2_totalWithoutTax"></dt>
+                <dt data-translate="cdn_configuration_order_quota_step2_totalWithoutTax"></dt>
                 <dd class="text-danger"
                     data-ng-bind="choices.order.withoutTax">
                 </dd>
-                <dt data-i18n-static="cdn_configuration_order_quota_step2_totalWithTax"></dt>
+                <dt data-translate="cdn_configuration_order_quota_step2_totalWithTax"></dt>
                 <dd class="text-danger"
                     data-ng-bind="choices.order.withTax">
                 </dd>
             </dl>
-            <p data-i18n-static="cdn_configuration_cacherules_upgrade_step3_id"></p>
+            <p data-translate="cdn_configuration_cacherules_upgrade_step3_id"></p>
             <div class="checkbox">
                 <label>
                     <input type="checkbox"
                            id="contractsValidated"
                            data-ng-model="contractsValidated.value" />
-                    <span data-i18n-static="cdn_configuration_order_quota_step2_contracts"></span>
+                    <span data-translate="cdn_configuration_order_quota_step2_contracts"></span>
                     <span data-ng-repeat="contract in choices.order.contracts">
-                        <span data-i18n-static="cdn_configuration_order_quota_step2_contracts_and"
+                        <span data-translate="cdn_configuration_order_quota_step2_contracts_and"
                               data-ng-show="($index+1) == choices.order.contracts.length">
                         </span>
-                        <span data-i18n-static="cdn_configuration_order_quota_step2_contracts_of"></span>
+                        <span data-translate="cdn_configuration_order_quota_step2_contracts_of"></span>
                         <a target="_blank"
                            rel="noopener"
-                           title="{{ contract.name }} ({{ i18n.core_new_window }})"
+                           title="{{ contract.name }} ({{ 'core_new_window' | translate }})"
                            data-ng-href="{{ contract.url }}">
                             <span class="oui-link"
                                   data-ng-bind="contract.name">
@@ -83,16 +83,16 @@
             <div class="text-center"
                  data-ng-if="!url">
                 <oui-spinner></oui-spinner>
-                <p data-i18n-static="cdn_configuration_order_quota_step3_bc_loading"></p>
+                <p data-translate="cdn_configuration_order_quota_step3_bc_loading"></p>
             </div>
 
             <div data-ng-if="url">
-                <p data-i18n-static="cdn_configuration_order_quota_step3_confirmation"></p>
+                <p data-translate="cdn_configuration_order_quota_step3_confirmation"></p>
                 <p class="font-weight-bold"
-                   data-i18n-static="cdn_configuration_order_quota_step3_continue">
+                   data-translate="cdn_configuration_order_quota_step3_continue">
                 </p>
-                <p data-i18n-static="cdn_configuration_order_quota_step3_explanation"></p>
-                <em data-i18n-static="cdn_configuration_order_quota_step3_explanation2"></em>
+                <p data-translate="cdn_configuration_order_quota_step3_explanation"></p>
+                <em data-translate="cdn_configuration_order_quota_step3_explanation2"></em>
             </div>
 
         </div>

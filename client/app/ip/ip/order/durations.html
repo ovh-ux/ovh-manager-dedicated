@@ -1,10 +1,10 @@
 <div class="form-group">
     <div data-ng-if="!loading.durations && durations.available.length">
         <strong data-ng-if="isMonthlyVps()"
-                data-i18n-static="ip_order_select_duration">
+                data-translate="ip_order_select_duration">
         </strong>
         <strong data-ng-if="!isMonthlyVps()"
-                data-i18n-static="ip_order_select_activation">
+                data-translate="ip_order_select_activation">
         </strong>
         <div data-ng-repeat="duration in durations.available">
             <div class="radio">
@@ -14,13 +14,13 @@
                            data-ng-disabled="loading.prices || durations.available.length === 1"
                            value="{{duration}}">
                     <span data-ng-if="!isMonthlyVps()"
-                          data-ng-bind="tr('ip_order_ipnbr') + ' ' + model.params.number ">
+                          data-ng-bind="('ip_order_ipnbr' | translate) + ' ' + model.params.number ">
                     </span>
                     <span data-ng-if="isMonthlyVps()"
                           data-ng-bind="duration | duration:'longDate'">
                     </span>
                     <span data-ng-if="model.service.serviceType === 'DEDICATED'"
-                          data-ng-bind="trpl('ip_order_ip_count', model.params.blockSize)">
+                          data-ng-bind="(model.params.blockSize > 1 ? 'ip_order_ip_count_other' : 'ip_order_ip_count_1') | translate">
                     </span> :
                     <span data-ng-bind-html="durations.details[duration].prices | price:user.ovhSubsidiary"></span>
                     <oui-spinner data-ng-hide="durations.details[duration]"
@@ -32,11 +32,11 @@
 
         <div data-ng-show="orderableIp.professionalUsePrice">
             <p data-ng-bind-html="tr('ip_order_no_professionaluse_1', orderableIp.professionalUsePrice)"></p>
-            <p data-i18n-static="ip_order_no_professionaluse_2"></p>
+            <p data-translate="ip_order_no_professionaluse_2"></p>
         </div>
 
         <p class="font-italic text-muted"
-           data-i18n-static="ip_order_free_activation_fee">
+           data-translate="ip_order_free_activation_fee">
         </p>
     </div>
 

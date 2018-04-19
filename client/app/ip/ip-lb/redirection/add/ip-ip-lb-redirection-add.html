@@ -3,19 +3,19 @@
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addPortsRedirection"
          data-wizard-hide-cancel-button="loading"
-         data-wizard-title="i18n.iplb_portsredirection_add_title">
+         data-wizard-title="{{ 'iplb_portsredirection_add_title' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-valid="!loading && model.srcPort && model.dstPort">
 
             <div data-ng-hide="loading || !allowedSrcPorts.length">
-                <p data-i18n-static="iplb_portsredirection_add_question"></p>
+                <p data-translate="iplb_portsredirection_add_question"></p>
 
                 <form>
                     <div class="form-group">
                         <label class="control-label required"
                                for="srcPort"
-                               data-i18n-static="iplb_portsredirection_add_srcport">
+                               data-translate="iplb_portsredirection_add_srcport">
                         </label>
                         <select name="srcPort"
                                 id="srcPort"
@@ -28,7 +28,7 @@
                     <div class="form-group">
                         <label class="control-label required"
                                for="dstPort"
-                               data-i18n-static="iplb_portsredirection_add_dstport">
+                               data-translate="iplb_portsredirection_add_dstport">
                         </label>
                         <input type="number"
                                name="dstPort"
@@ -45,7 +45,7 @@
             <p class="alert alert-danger"
                role="alert"
                data-ng-if="!loading && !allowedSrcPorts.length"
-               data-i18n-static="iplb_portsredirection_add_no_srcport">
+               data-translate="iplb_portsredirection_add_no_srcport">
             </p>
 
             <div class="text-danger"

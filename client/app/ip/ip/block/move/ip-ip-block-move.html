@@ -3,7 +3,7 @@
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="moveIpBlock"
          data-wizard-hide-cancel-button="loading.save"
-         data-wizard-title="i18n.ip_table_manage_move_ipblock">
+         data-wizard-title="{{ 'ip_table_manage_move_ipblock' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-valid="canMove()">
@@ -11,7 +11,7 @@
             <div data-ng-show="!loading.init && !noTasksPending">
                 <p class="alert alert-danger"
                    role="alert"
-                   data-i18n-static="ip_table_manage_move_ipblock_warning_taskspending">
+                   data-translate="ip_table_manage_move_ipblock_warning_taskspending">
                 </p>
             </div>
 
@@ -22,7 +22,7 @@
                 <form>
                     <div class="form-group">
                         <label class="control-label"
-                               data-i18n-static="ip_table_manage_move_ipblock_from">
+                               data-translate="ip_table_manage_move_ipblock_from">
                         </label>
                         <p class="form-control-static"
                            data-ng-bind="i18n['ip_service' + data.ipBlock.routedTo] || data.ipBlock.routedTo">
@@ -31,7 +31,7 @@
                     <div class="form-group">
                         <label class="control-label"
                                for="serviceNameSelect"
-                               data-i18n-static="ip_table_manage_move_ipblock_to">
+                               data-translate="ip_table_manage_move_ipblock_to">
                         </label>
                         <select id="serviceNameSelect"
                                 name="serviceNameSelect"
@@ -45,7 +45,7 @@
                          data-ng-if="model.serviceName && model.serviceName.nexthop.length">
                         <label class="control-label"
                                for="nexthopSelect"
-                               data-i18n-static="ip_table_manage_move_ipblock_on">
+                               data-translate="ip_table_manage_move_ipblock_on">
                         </label>
                         <select id="nexthopSelect"
                                 name="nexthopSelect"
@@ -59,7 +59,7 @@
                 <p class="alert alert-warning"
                    role="alert"
                    data-ng-show="model.serviceName == '_PARK'"
-                   data-i18n-static="ip_table_manage_move_ipblock_warning_park">
+                   data-translate="ip_table_manage_move_ipblock_warning_park">
                 </p>
             </div>
             <div data-ng-show="loading.init"
@@ -81,7 +81,7 @@
                 <p class="alert alert-warning"
                    role="alert"
                    data-ng-show="model.serviceName && model.serviceName.service == '_PARK'"
-                   data-i18n-static="ip_table_manage_move_ipblock_warning_park">
+                   data-translate="ip_table_manage_move_ipblock_warning_park">
                 </p>
             </div>
 

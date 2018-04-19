@@ -1,4 +1,4 @@
-angular.module("controllers").controller("controllers.Server.Stats", ($scope, $rootScope, $stateParams, $filter, $q, Server, translator, Alerter, BandwidthVrackOrderService, ServerTrafficService, ServerOrderTrafficService, featureAvailability) => {
+angular.module("controllers").controller("controllers.Server.Stats", ($scope, $rootScope, $stateParams, $filter, $q, Server, $translate, Alerter, BandwidthVrackOrderService, ServerTrafficService, ServerOrderTrafficService, featureAvailability) => {
     $scope.currentView = {
         value: "DASHBOARD"
     };
@@ -39,7 +39,7 @@ angular.module("controllers").controller("controllers.Server.Stats", ($scope, $r
                 ServerOrderTrafficService.getOrderables($stateParams.productId).then((trafficOrderables) => ($scope.trafficOrderables = trafficOrderables.data)),
                 ServerOrderTrafficService.getOption($stateParams.productId).then((trafficOption) => ($scope.trafficOption = trafficOption.data))
             ])
-            .catch((data) => Alerter.alertFromSWS($scope.tr("server_bandwidth_loading_error"), data.data, "bandwithError"))
+            .catch((data) => Alerter.alertFromSWS($translate.instant("server_bandwidth_loading_error"), data.data, "bandwithError"))
             .finally(() => {
                 $scope.bandwidthInformationsLoad = false;
             });
@@ -100,7 +100,7 @@ angular.module("controllers").controller("controllers.Server.Stats", ($scope, $r
             .catch((data) => {
                 $scope.serverStatsLoad.error = true;
                 if (nameServer && data) {
-                    $scope.setMessage(translator.tr("server_tab_STATS_loading_fail"), data.data);
+                    $scope.setMessage($translate.instant("server_tab_STATS_loading_fail"), data.data);
                 }
             })
             .finally(() => {
@@ -111,10 +111,10 @@ angular.module("controllers").controller("controllers.Server.Stats", ($scope, $r
     $scope.removeHack = function () {
         Server.removeHack($stateParams.productId).then(
             () => {
-                $scope.setMessage($scope.tr("server_remove_hack_success"));
+                $scope.setMessage($translate.instant("server_remove_hack_success"));
             },
             (data) => {
-                $scope.setMessage($scope.tr("server_remove_hack_fail"), data.data);
+                $scope.setMessage($translate.instant("server_remove_hack_fail"), data.data);
             }
         );
     };
@@ -133,7 +133,7 @@ angular.module("controllers").controller("controllers.Server.Stats", ($scope, $r
             .catch((data) => {
                 $scope.serverStatsLoad.error = true;
                 if (data) {
-                    $scope.setMessage(translator.tr("server_tab_STATS_loading_fail"), data.data);
+                    $scope.setMessage($translate.instant("server_tab_STATS_loading_fail"), data.data);
                 }
             })
             .finally(() => {
@@ -153,8 +153,8 @@ angular.module("controllers").controller("controllers.Server.Stats", ($scope, $r
                 .calendar()
         );
 
-        $scope.series.push(translator.tr("server_tab_STATS_legend_download"));
-        $scope.series.push(translator.tr("server_tab_STATS_legend_upload"));
+        $scope.series.push($translate.instant("server_tab_STATS_legend_download"));
+        $scope.series.push($translate.instant("server_tab_STATS_legend_upload"));
         $scope.data.push(_.map(_.get(data, "download.values"), (value) => value.y));
         $scope.data.push(_.map(_.get(data, "upload.values"), (value) => value.y));
     }

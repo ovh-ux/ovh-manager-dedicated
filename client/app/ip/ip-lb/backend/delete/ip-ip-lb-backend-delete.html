@@ -3,18 +3,18 @@
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="deleteBackend"
          data-wizard-hide-cancel-button="loading"
-         data-wizard-title="i18n.iplb_backend_delete_title">
+         data-wizard-title="{{ 'iplb_backend_delete_title' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-valid="!data.backend.mainBackendIp && !loading">
 
             <div data-ng-hide="loading">
                 <p data-ng-if="!data.backend.mainBackendIp" 
-                   data-i18n-static="iplb_backend_delete_question">
+                   data-translate="iplb_backend_delete_question">
                 </p>
                 <p data-ng-if="data.backend.mainBackendIp"
                    class="text-danger"
-                   data-i18n-static="iplb_backend_delete_deny">
+                   data-translate="iplb_backend_delete_deny">
                 </p>
             </div>
 

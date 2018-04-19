@@ -1,6 +1,6 @@
 <div class="module-useraccount-sections-contacts-container">
 
-    <p data-ng-bind-html="tr('useraccount_contacts_services_infos')"></p>
+    <p data-ng-bind-html="{{ 'useraccount_contacts_services_infos' | translate }}"></p>
 
     <div class="table-responsive">
         <table class="table table-hover">
@@ -14,7 +14,7 @@
                                 data-ng-options="category as (i18n['useraccount_contacts_service_category_'+category] ||  category) for category in ctrlServices.categories | orderBy:i18n['useraccount_contacts_service_category_'+category] || category"
                                 data-ng-disabled="ctrlServices.loaders.services"
                                 data-ng-change="ctrlServices.updateFilters()">
-                            <option value="" data-i18n-static="useraccount_contacts_service_all_categories"></option>
+                            <option value="" data-translate="useraccount_contacts_service_all_categories"></option>
                         </select>
                     </th>
                     <th>
@@ -25,16 +25,16 @@
                                 data-ng-options="value as value.serviceName group by ( i18n['useraccount_contacts_service_category_'+value.category] || value.category) for value in ctrlServices.allServices | orderBy:['category', 'serviceName']"
                                 data-ng-disabled="ctrlServices.loaders.services"
                                 data-ng-change="ctrlServices.updateFilters()">
-                            <option value="" data-i18n-static="useraccount_contacts_all_services"></option>
+                            <option value="" data-translate="useraccount_contacts_all_services"></option>
                         </select>
                     </th>
-                    <th data-i18n-static="useraccount_contacts_services_contact_admin"></th>
-                    <th data-i18n-static="useraccount_contacts_services_contact_tech"></th>
-                    <th data-i18n-static="useraccount_contacts_services_contact_billing"></th>
+                    <th data-translate="useraccount_contacts_services_contact_admin"></th>
+                    <th data-translate="useraccount_contacts_services_contact_tech"></th>
+                    <th data-translate="useraccount_contacts_services_contact_billing"></th>
                     <th class="text-center" colspan="2">
                         <button type="button"
                                 class="btn btn-link"
-                                title="{{i18n.useraccount_contacts_task_refresh}}"
+                                title="{{ 'useraccount_contacts_task_refresh' | translate }}"
                                 data-ng-click="ctrlServices.getServices(true)">
                             <span class="fa fa-refresh"
                                   aria-hidden="true">
@@ -56,7 +56,7 @@
                 <tr>
                     <td colspan="6"
                         class="text-center"
-                        data-i18n-static="useraccount_contacts_no_services">
+                        data-translate="useraccount_contacts_no_services">
                     </td>
                 </tr>
             </tbody>
@@ -81,14 +81,14 @@
                                 class="btn btn-link"
                                 data-ng-if="!service.hasTask"
                                 data-ng-click="ctrlServices.openEditLine($index, service)"
-                                data-i18n-static="useraccount_contacts_services_edit">
+                                data-translate="useraccount_contacts_services_edit">
                             <span class="fa fa-pencil"
                                   aria-hidden="true">
                             </span>
                         </button>
                         <span class="fa fa-hourglass-start"
                               data-ng-if="service.hasTask"
-                              title="{{ i18n.useraccount_contacts_change_doing }}"
+                              title="{{ 'useraccount_contacts_change_doing' | translate }}"
                               aria-hidden="true">
                         </span>
                     </td>
@@ -116,7 +116,7 @@
                                 class="btn btn-link"
                                 data-ng-disabled="!service.newContactAdmin || !service.newContactTech || !service.newContactBilling"
                                 data-ng-click="ctrlServices.changeContact(service)"
-                                data-i18n-static="useraccount_contacts_services_edit">
+                                data-translate="useraccount_contacts_services_edit">
                             <span class="fa fa-check"
                                   aria-hidden="true">
                             </span>
@@ -126,7 +126,7 @@
                         <button type="button"
                                 class="btn btn-link"
                                 data-ng-click="ctrlServices.editLine = -1"
-                                data-i18n-static="useraccount_contacts_services_edit">
+                                data-translate="useraccount_contacts_services_edit">
                             <span class="fa fa-times"
                                   aria-hidden="true">
                             </span>
@@ -146,6 +146,6 @@
          data-transform-item="ctrlServices.transformItem(item)"
          data-on-transform-item-done="ctrlServices.onTransformItemDone(items)"
          data-page-placeholder="{{tr('pagination_page', [currentPage, nbPages])}}"
-         data-item-per-page-placeholder="{{tr('pagination_display')}}">
+         data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
     </div>
 </div>

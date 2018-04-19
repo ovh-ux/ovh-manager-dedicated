@@ -3,21 +3,21 @@
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="importCustomSsl"
          data-wizard-hide-cancel-button="loading"
-         data-wizard-title="i18n.iplb_ssl_import_title">
+         data-wizard-title="{{ 'iplb_ssl_import_title' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-valid="!loading && model.key && model.certificate">
 
             <div data-ng-hide="loading">
 
-                <p data-i18n-static="iplb_ssl_import_question"></p>
-                <p data-i18n-static="iplb_ssl_import_question2"></p>
+                <p data-translate="iplb_ssl_import_question"></p>
+                <p data-translate="iplb_ssl_import_question2"></p>
 
                 <form>
                     <div class="form-group">
                         <label class="control-label required"
                                for="key"
-                               data-i18n-static="iplb_ssl_key">
+                               data-translate="iplb_ssl_key">
                         </label>
                         <textarea rows="3"
                             data-ng-required="true"
@@ -30,7 +30,7 @@
                     <div class="form-group">
                         <label class="control-label required"
                                for="certificate"
-                               data-i18n-static="iplb_ssl_certificate">
+                               data-translate="iplb_ssl_certificate">
                         </label>
                         <textarea rows="3"
                             data-ng-required="true"
@@ -43,7 +43,7 @@
                     <div class="form-group">
                         <label class="control-label"
                                for="chain"
-                               data-i18n-static="iplb_ssl_chain">
+                               data-translate="iplb_ssl_chain">
                         </label>
                         <textarea rows="3"
                             class="form-control"

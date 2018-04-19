@@ -3,9 +3,9 @@
          data-wizard-on-cancel="closeAction"
          data-wizard-on-finish="closeAction"
          data-wizard-hide-cancel-button="true"
-         data-wizard-confirm-button-text="i18n.wizard_close"
+         data-wizard-confirm-button-text="{{ 'wizard_close' | translate }}"
          data-wizard-keydown-disabled="true"
-         data-wizard-title="i18n.ip_mitigation_statistics_title"
+         data-wizard-title="{{ 'ip_mitigation_statistics_title' | translate }}"
          data-wizard-title-icon="mitigationStatusAuto == false && 'icon-mitigation-auto' || 'icon-mitigation-active'"
          class="module-ip-modal">
 
@@ -26,7 +26,7 @@
                                            name="mode"
                                            value="realTime"
                                            data-ng-model="model.mode">
-                                    <span data-i18n-static="ip_mitigation_statistics_mode_realtime"></span>
+                                    <span data-translate="ip_mitigation_statistics_mode_realtime"></span>
                                 </label>
                             </div>
                             <div class="radio">
@@ -35,7 +35,7 @@
                                            name="mode"
                                            value="date"
                                            data-ng-model="model.mode">
-                                    <span data-i18n-static="ip_mitigation_statistics_mode_date"></span>
+                                    <span data-translate="ip_mitigation_statistics_mode_date"></span>
                                 </label>
                             </div>
 
@@ -44,7 +44,7 @@
                             <div class="form-group"
                                  data-ng-if="model.mode === 'date'">
                                 <label for="statTo"
-                                       data-i18n-static="ip_mitigation_statistics_to">
+                                       data-translate="ip_mitigation_statistics_to">
                                 </label>
                                 <div class="input-group date-picker-input">
                                     <input type="text"
@@ -73,7 +73,7 @@
                             <div class="form-group"
                                  data-ng-if="model.mode === 'date'">
                                 <label for="statScale"
-                                       data-i18n-static="ip_mitigation_statistics_scale">
+                                       data-translate="ip_mitigation_statistics_scale">
                                 </label>
                                 <select name="period"
                                         class="form-control"

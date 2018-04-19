@@ -2,8 +2,8 @@
      data-ng-controller="UserCtrl">
     <div class="text-center mt-5 py-5">
         <h1 class="d-inline">
-            <span data-i18n-static="welcome_to_your_manager_1"></span>
-            <span data-i18n-static="welcome_to_your_manager_2"></span>
+            <span data-translate="welcome_to_your_manager_1"></span>
+            <span data-translate="welcome_to_your_manager_2"></span>
         </h1>
         <p class="lead"
            data-ng-bind-html="tr('core_top_guides_header',[guide.all])">
@@ -22,10 +22,10 @@
                          data-ng-repeat="link in guide.links[section] track by $index">
                         <a target="_blank"
                            class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
-                           title="{{ link.title | UAi18n }}"
+                           title="{{ link.title | translate }}"
                            data-ng-href="{{ link.url }}"
                            data-at-internet-click="{ name:  link.atInternetClickTag }">
-                            <span data-ng-bind="link.title | UAi18n"></span>
+                            <span data-ng-bind="link.title | translate"></span>
                             <span class="fa fa-external-link my-auto ml-auto" aria-hidden="true"></span>
                         </a>
                     </div>

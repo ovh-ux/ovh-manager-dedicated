@@ -1,7 +1,7 @@
 <div>
 
     <div class="page-header">
-        <h1 data-i18n-static="ovhAccount_title2"></h1>
+        <h1 data-translate="ovhAccount_title2"></h1>
     </div>
 
     <div class="tab-content">
@@ -26,20 +26,20 @@
 
         <p data-ng-if="!ovhAccountLoading && ovhAccount.model.hasOvhAccount">
             <span data-ng-if="!ovhAccountsLoading && !ovhAccount.list.length"
-                  data-i18n-static="ovhAccount_no_account">
+                  data-translate="ovhAccount_no_account">
             </span>
             <span data-ng-if="!ovhAccountsLoading && !ovhAccount.choice.canBeCredited"
-                  data-i18n-static="ovhAccount_table_head_crediter_none">
+                  data-translate="ovhAccount_table_head_crediter_none">
             </span>
             <span class="text-danger"
                   role="alert"
                   data-ng-hide="ovhAccountLoading || ovhAccountsLoading || !ovhAccount.model.hasOvhAccount || ovhAccount.model.list.state !== 'PARTIAL'"
-                  data-i18n-static="ovhAccount_partial_error">
+                  data-translate="ovhAccount_partial_error">
             </span>
         </p>
 
         <p data-ng-hide="ovhAccountLoading || !ovhAccount.model.hasOvhAccount || !ovhAccount.choice">
-            <span data-i18n-static="ovhAccount_balance"></span>
+            <span data-translate="ovhAccount_balance"></span>
             <span data-ng-bind=":: ovhAccount.model.lastUpdate | date:'mediumDate'"></span>
             <span class="ml-2"
                   data-ng-class="getPriceClasses(ovhAccount.model.balance.value)"
@@ -52,20 +52,20 @@
             <span data-ng-if="ovhAccount.model.alertThreshold > 0"
                   data-ng-bind="tr('ovhAccount_create_alert_amount_resume', [ovhAccount.model.alertThreshold /100 + ' ' + ovhAccount.model.balanceCurrencyCode])"></span>
             <span data-ng-if="ovhAccount.model.alertThreshold <= 0"
-                  data-i18n-static="ovhAccount_no_alert"></span>
+                  data-translate="ovhAccount_no_alert"></span>
         </p>
 
         <div class="btn-group my-4"
              data-ng-if="!ovhAccountsLoading">
             <button class="btn btn-primary"
                     type="button"
-                    data-i18n-static="ovhAccount_table_head_crediter"
+                    data-translate="ovhAccount_table_head_crediter"
                     data-ng-disabled="!ovhAccount.choice.canBeCredited"
                     data-ng-click="setAction('renew', ovhAccount.model, 'ovhaccount')">
             </button>
             <button class="btn btn-default"
                     type="button"
-                    data-i18n-static="ovhAccount_retrieve_title"
+                    data-translate="ovhAccount_retrieve_title"
                     data-ng-if="user && user.ovhSubsidiary === 'FR'"
                     data-ng-hide="ovhAccountLoading || !ovhAccount.model.hasOvhAccount"
                     data-ng-click="setAction('retrieve', ovhAccount.model, 'ovhaccount')"
@@ -78,7 +78,7 @@
                 <i class="fa fa-bell-o"
                    aria-hidden="true">
                 </i>
-                <span data-i18n-static="ovhAccount_create_alert"></span>
+                <span data-translate="ovhAccount_create_alert"></span>
             </button>
         </div>
 
@@ -89,7 +89,7 @@
                     data-export-csv="getDatasToExport()"
                     data-export-csv-separator=";"
                     data-ng-disabled="historyLoading || csvLoading"
-                    data-i18n-static="billing_export_csv">
+                    data-translate="billing_export_csv">
             </button>
             <div class="float-right text-right"
                  data-billing-date-range
@@ -102,29 +102,29 @@
             <thead>
                 <tr>
                     <th scope="col"
-                        data-i18n-static="ovhAccount_table_head_date">
+                        data-translate="ovhAccount_table_head_date">
                     </th>
                     <th scope="col"
-                        data-i18n-static="ovhAccount_table_head_id">
+                        data-translate="ovhAccount_table_head_id">
                     </th>
                     <th scope="col"
-                        data-i18n-static="ovhAccount_table_head_type">
+                        data-translate="ovhAccount_table_head_type">
                     </th>
                     <th scope="col"
-                        data-i18n-static="ovhAccount_table_head_payment_type">
-                    </th>
-                    <th scope="col"
-                        class="text-right"
-                        data-i18n-static="ovhAccount_table_head_debit">
+                        data-translate="ovhAccount_table_head_payment_type">
                     </th>
                     <th scope="col"
                         class="text-right"
-                        data-i18n-static="ovhAccount_table_head_credit">
+                        data-translate="ovhAccount_table_head_debit">
+                    </th>
+                    <th scope="col"
+                        class="text-right"
+                        data-translate="ovhAccount_table_head_credit">
                     </th>
                     <th scope="col"
                         colspan="2"
                         class="text-center"
-                        data-i18n-static="ovhAccount_table_head_remaining">
+                        data-translate="ovhAccount_table_head_remaining">
                     </th>
                 </tr>
             </thead>
@@ -140,7 +140,7 @@
                 <tr>
                     <td colspan="8"
                         class="text-center"
-                        data-i18n-static="ovhAccount_table_empty">
+                        data-translate="ovhAccount_table_empty">
                     </td>
                 </tr>
             </tbody>
@@ -148,7 +148,7 @@
                 <tr>
                     <td colspan="8"
                         class="text-center"
-                        data-i18n-static="ovhAccount_no_account">
+                        data-translate="ovhAccount_no_account">
                     </td>
                 </tr>
             </tbody>
@@ -181,7 +181,7 @@
                         <a target="_blank"
                            data-ng-if="ovhAccountLine.url"
                            href="{{ovhAccountLine.url}}"
-                           title="{{i18n.table_download_html}}">
+                           title="{{ 'table_download_html' | translate }}">
                             <i class="fa fa-code"
                                aria-hidden="true">
                             </i>

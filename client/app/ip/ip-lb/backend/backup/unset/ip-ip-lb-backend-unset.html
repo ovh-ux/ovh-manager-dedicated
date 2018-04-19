@@ -3,13 +3,13 @@
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="unsetBackupState"
          data-wizard-hide-cancel-button="loading"
-         data-wizard-title="i18n.iplb_backend_unsetbackupstate_title">
+         data-wizard-title="{{ 'iplb_backend_unsetbackupstate_title' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-valid="!loading">
 
             <p data-ng-hide="loading"
-               data-i18n-static="iplb_backend_unsetbackupstate_question"></p>
+               data-translate="iplb_backend_unsetbackupstate_question"></p>
 
             <div class="text-center"
                  data-ng-show="loading">

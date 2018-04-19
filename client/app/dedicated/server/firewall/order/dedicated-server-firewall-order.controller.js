@@ -1,4 +1,4 @@
-angular.module("App").controller("ServerFirewallAsaOrderCtrl", ($scope, $stateParams, Server, ServerFirewallAsa) => {
+angular.module("App").controller("ServerFirewallAsaOrderCtrl", ($scope, $stateParams, $translate, Server, ServerFirewallAsa) => {
     $scope.model = {
         wanted: null,
         wantedAsText: null,
@@ -16,7 +16,7 @@ angular.module("App").controller("ServerFirewallAsaOrderCtrl", ($scope, $statePa
                 },
                 (data) => {
                     $scope.resetAction();
-                    $scope.setMessage($scope.tr("server_configuration_firewall_asa_order_step1_loading_error"), data);
+                    $scope.setMessage($translate.instant("server_configuration_firewall_asa_order_step1_loading_error"), data);
                 }
             );
             ServerFirewallAsa.getOptionList($stateParams.productId).then(
@@ -25,7 +25,7 @@ angular.module("App").controller("ServerFirewallAsaOrderCtrl", ($scope, $statePa
                 },
                 (err) => {
                     $scope.resetAction();
-                    $scope.setMessage($scope.tr("server_configuration_firewall_asa_order_step1_loading_error"), err);
+                    $scope.setMessage($translate.instant("server_configuration_firewall_asa_order_step1_loading_error"), err);
                 }
             );
         }
@@ -44,7 +44,7 @@ angular.module("App").controller("ServerFirewallAsaOrderCtrl", ($scope, $statePa
             },
             (data) => {
                 $scope.resetAction();
-                $scope.setMessage($scope.tr("server_configuration_firewall_asa_order_fail"), data);
+                $scope.setMessage($translate.instant("server_configuration_firewall_asa_order_fail"), data);
             }
         );
     };

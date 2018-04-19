@@ -3,7 +3,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addAccess"
-         data-wizard-title="i18n.nas_access_action_add"
+         data-wizard-title="{{ 'nas_access_action_add' | translate }}"
          data-wizard-bread-crumb>
 
         <div data-wizard-step
@@ -18,7 +18,7 @@
                  data-ng-if="!loading">
                 <label for="ip"
                        class="control-label"
-                       data-i18n-static="nas_access_action_add_message">
+                       data-translate="nas_access_action_add_message">
                 </label>
                 <select class="form-control"
                         id="ip"

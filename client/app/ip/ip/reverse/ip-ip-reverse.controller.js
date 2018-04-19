@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpReverseUpdateCtrl", ($scope, $rootScope, Ip, IpReverse, Alerter, Validator, $location, $q) => {
+angular.module("Module.ip.controllers").controller("IpReverseUpdateCtrl", ($scope, $rootScope, $translate, Ip, IpReverse, Alerter, Validator, $location, $q) => {
     function init (data) {
         $scope.data = data || $scope.currentActionData;
         $scope.model = { reverse: angular.copy($scope.data.ip.reverse ? punycode.toUnicode($scope.data.ip.reverse) : "") };
@@ -16,10 +16,10 @@ angular.module("Module.ip.controllers").controller("IpReverseUpdateCtrl", ($scop
             .then(
                 () => {
                     $rootScope.$broadcast("ips.table.refreshBlock", $scope.data.ipBlock);
-                    Alerter.success($scope.tr("ip_table_manage_reverse_success"));
+                    Alerter.success($translate.instant("ip_table_manage_reverse_success"));
                 },
                 (data) => {
-                    Alerter.alertFromSWS($scope.tr("ip_table_manage_reverse_failure"), data);
+                    Alerter.alertFromSWS($translate.instant("ip_table_manage_reverse_failure"), data);
                 }
             )
             .finally(() => {
@@ -46,7 +46,7 @@ angular.module("Module.ip.controllers").controller("IpReverseUpdateCtrl", ($scop
                     }
                 },
                 (data) => {
-                    Alerter.alertFromSWS($scope.tr("ip_dashboard_error"), data);
+                    Alerter.alertFromSWS($translate.instant("ip_dashboard_error"), data);
                 }
             )
             .then(

@@ -16,7 +16,7 @@ class DownloadCtrl {
         return this.DownloadService.getBillUrl(this.$stateParams.id, this.$stateParams.type, this.$stateParams.extension)
             .then((url) => this.$window.open(url, "_self"))
             .catch((err) => {
-                this.Alerter.error(this.$scope.tr("download_bill_error"));
+                this.Alerter.error(this.$translate.instant("download_bill_error"));
                 return this.$q.reject(err);
             });
     }

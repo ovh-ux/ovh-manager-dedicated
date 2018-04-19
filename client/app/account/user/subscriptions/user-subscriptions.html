@@ -2,7 +2,7 @@
 
     <div class="page-header">
         <!-- Subscription -->
-        <h1 data-i18n-static="user_account_title_subscriptions"></h1>
+        <h1 data-translate="user_account_title_subscriptions"></h1>
     </div>
 
     <div class="tab-content">
@@ -17,7 +17,7 @@
 
         <!-- Subscription -->
         <div data-ng-if="!subscriptionsLoading">
-            <!-- <h2 data-i18n-static="subscriptions_title"></h2> --> <!-- In case mailing list section come back -->
+            <!-- <h2 data-translate="subscriptions_title"></h2> --> <!-- In case mailing list section come back -->
 
             <table class="table table-hover fixed-layout"
                    data-ng-if="subscriptions.length">
@@ -48,7 +48,7 @@
 
         <!-- Mailing List -->
         <!-- <div data-ng-if="!mailingListsLoading">
-            <h2 data-i18n-static="mailinglists_title"></h2>
+            <h2 data-translate="mailinglists_title"></h2>
 
             <table class="offset1" data-ng-show="mailingLists.length">
                 <tbody>
@@ -59,7 +59,7 @@
                     <td>
                         <button class="btn btn-block" style="width: 80px;"
                                 at-internet-click="{ name : 'univers-user::mailing-lists-subscribe::' + mailingList.split('@')[0] }"
-                                data-i18n-static="mailingLists_subscribe" data-ng-click="subscribeToMailingList(mailingList)"></button>
+                                data-translate="mailingLists_subscribe" data-ng-click="subscribeToMailingList(mailingList)"></button>
                     </td>
                 </tr>
                 </tbody>

@@ -3,7 +3,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="modifyBackend"
-         data-wizard-title="i18n.cdn_domain_configuration_change_backend_title"
+         data-wizard-title="{{ 'cdn_domain_configuration_change_backend_title' | translate }}"
          data-wizard-bread-crumb>
 
         <div data-wizard-step
@@ -12,7 +12,7 @@
 
             <p data-ng-bind="tr('cdn_domain_configuration_change_backend_step1_question', [domain.domain])"></p>
             <div data-ng-if="currentBackend">
-                <span data-i18n-static="cdn_domain_configuration_change_backend_step1_current"></span>
+                <span data-translate="cdn_domain_configuration_change_backend_step1_current"></span>
                 <span data-ng-bind="currentBackend"></span>
             </div>
             <div class="text-center"
@@ -24,7 +24,7 @@
                      data-ng-if="backends.results">
                     <label for="existingBackend"
                            class="control-label"
-                           data-i18n-static="cdn_domain_configuration_change_backend_step1_existing">
+                           data-translate="cdn_domain_configuration_change_backend_step1_existing">
                     </label>
                     <select class="form-control"
                             data-ng-options="backend.ipv4 as backend.ipv4 for backend in backends.results"
@@ -32,7 +32,7 @@
                         <option value=""
                                 disabled="disabled"
                                 selected="selected"
-                                data-i18n-static="cdn_configuration_add_domain_step2_default_backend">
+                                data-translate="cdn_configuration_add_domain_step2_default_backend">
                         </option>
                     </select>
                 </div>
@@ -41,14 +41,14 @@
                    	<button type="button"
                             class="btn btn-link"
                             data-ng-click="buyDomains()"
-                            data-i18n-static="cdn_domain_configuration_change_backend_step1_full_buy">
+                            data-translate="cdn_domain_configuration_change_backend_step1_full_buy">
                     </button>
                 </div>
                 <div class="form-group"
                      data-ng-if="!maxBackendsReached()">
                     <label for="newBackend"
                            class="control-label"
-                           data-i18n-static="cdn_domain_configuration_change_backend_step1_new">
+                           data-translate="cdn_domain_configuration_change_backend_step1_new">
                     </label>
                     <input type="text"
                            class="form-control"
@@ -62,14 +62,14 @@
 
         <div data-wizard-step>
 
-            <p data-ng-bind-html="tr('cdn_domain_configuration_change_backend_step2_question', [domain.domain])"></p>
+            <p data-translate="cdn_domain_configuration_change_backend_step2_question" data-translate-values="{ t0: domain.domain }"></p>
             <dl>
-                <dt data-i18n-static="cdn_domain_configuration_change_backend_step2_current"></dt>
+                <dt data-translate="cdn_domain_configuration_change_backend_step2_current"></dt>
                 <dd data-ng-if="currentBackend"
                     data-ng-bind="currentBackend">
                 </dd>
                 <dd data-ng-if="!currentBackend">-</dd>
-                <dt data-i18n-static="cdn_domain_configuration_change_backend_step2_new"></dt>
+                <dt data-translate="cdn_domain_configuration_change_backend_step2_new"></dt>
                 <dd data-ng-if="existingBackend.value"
                     data-ng-bind="existingBackend.value">
                 </dd>

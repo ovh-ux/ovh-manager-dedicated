@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IplbBackendAddCtrl", ($scope, $rootScope, $q, Ip, Iplb, Alerter, IpRange) => {
+angular.module("Module.ip.controllers").controller("IplbBackendAddCtrl", ($scope, $rootScope, $q, $translate, Ip, Iplb, Alerter, IpRange) => {
     $scope.data = $scope.currentActionData; // service
 
     $scope.weightConf = {
@@ -88,7 +88,7 @@ angular.module("Module.ip.controllers").controller("IplbBackendAddCtrl", ($scope
                     });
                 },
                 (reason) => {
-                    Alerter.alertFromSWS($scope.tr("iplb_backend_addBackend_failure"), reason);
+                    Alerter.alertFromSWS($translate.instant("iplb_backend_addBackend_failure"), reason);
                 }
             )
             .finally(() => {

@@ -2,7 +2,7 @@
      data-ui-view="pccUserView">
     <div data-ovh-alert="{{ alerts.users }}"></div>
 
-    <h2 data-i18n-static="dedicatedCloud_user_management_authorization_vsphere"></h2>
+    <h2 data-translate="dedicatedCloud_user_management_authorization_vsphere"></h2>
 
     <form class="form-inline d-md-flex mb-3"
           name="usersEntrySearchForm">
@@ -11,7 +11,7 @@
                 class="btn btn-default"
                 data-ng-click="setAction('user/add/dedicatedCloud-user-add', passwordPolicy)"
                 data-ng-if="dedicatedCloud.solution !== 'VCLOUD'"
-                data-i18n-static="dedicatedCloud_USER_add_user">
+                data-translate="dedicatedCloud_USER_add_user">
         </button>
 
         <div class="form-group ml-auto">
@@ -20,7 +20,7 @@
                        class="form-control"
                        id="searchusersEntry"
                        name="searchusersEntry"
-                       placeholder="{{:: i18n.dedicatedCloud_search_user }}"
+                       placeholder="{{ 'dedicatedCloud_search_user' | translate }}"
                        data-ng-disabled="searchLoading"
                        data-ng-model="usersEntrySearchSelected"
                        data-ng-model-options="{ debounce: 800 }" />
@@ -28,7 +28,7 @@
                      data-ng-if="usersEntrySearchSelected">
                     <button type="button"
                             class="btn btn-default"
-                            aria-label="{{ i18n.common_cancel }}"
+                            aria-label="{{ 'common_cancel' | translate }}"
                             data-ng-click="usersEntrySearchSelected = ''"
                             data-ng-disabled="searchLoading">
                         <span class="fa fa-times" aria-hidden="true"></span>
@@ -47,53 +47,53 @@
             <thead>
                 <tr>
                     <th scope="col"
-                        data-i18n-static="dedicatedCloud_USER_name">
+                        data-translate="dedicatedCloud_USER_name">
                     </th>
                     <th scope="col"
-                        data-i18n-static="dedicatedCloud_USER_firstname">
+                        data-translate="dedicatedCloud_USER_firstname">
                     </th>
                     <th scope="col"
-                        data-i18n-static="dedicatedCloud_USER_lastname">
+                        data-translate="dedicatedCloud_USER_lastname">
                     </th>
                     <th scope="col"
-                        data-i18n-static="dedicatedCloud_USER_mail">
+                        data-translate="dedicatedCloud_USER_mail">
                     </th>
                     <th scope="col"
-                        data-i18n-static="dedicatedCloud_USER_phone">
-                    </th>
-                    <th scope="col"
-                        class="text-center"
-                        data-i18n-static="dedicatedCloud_USER_token_validator">
+                        data-translate="dedicatedCloud_USER_phone">
                     </th>
                     <th scope="col"
                         class="text-center"
-                        data-i18n-static="dedicatedCloud_USER_ip">
+                        data-translate="dedicatedCloud_USER_token_validator">
                     </th>
                     <th scope="col"
                         class="text-center"
-                        data-i18n-static="dedicatedCloud_USER_ipfo">
+                        data-translate="dedicatedCloud_USER_ip">
+                    </th>
+                    <th scope="col"
+                        class="text-center"
+                        data-translate="dedicatedCloud_USER_ipfo">
                     </th>
                     <th scope="col"
                         data-ng-if="nsxOptions === 'enabled'"
                         class="text-center"
-                        data-i18n-static="dedicatedCloud_USER_nsx">
+                        data-translate="dedicatedCloud_USER_nsx">
                     </th>
                     <th scope="col"
                         class="text-center"
                         data-ng-show="dedicatedCloud.solution == 'SYSTEMCENTER'"
-                        data-i18n-static="dedicatedCloud_USER_connection_type">
+                        data-translate="dedicatedCloud_USER_connection_type">
                     </th>
                     <th scope="col"
                         class="text-center"
-                        data-i18n-static="dedicatedCloud_USER_state">
+                        data-translate="dedicatedCloud_USER_state">
                     </th>
                     <th scope="col"
                         class="text-center min-width">
                         <button type="button"
                                 class="btn btn-link p-0"
-                                title="{{ i18n.common_refresh }}"
+                                title="{{ 'common_refresh' | translate }}"
                                 data-ng-click="loadUsers()">
-                            <span class="fa fa-refresh" aria-label="{{ i18n.common_refresh }}"></span>
+                            <span class="fa fa-refresh" aria-label="{{ 'common_refresh' | translate }}"></span>
                         </button>
                     </th>
                 </tr>
@@ -110,7 +110,7 @@
                 <tr>
                     <td colspan="12"
                         class="text-center"
-                        data-i18n-static="dedicatedCloud_USER_empty">
+                        data-translate="dedicatedCloud_USER_empty">
                     </td>
                 </tr>
             </tbody>
@@ -224,19 +224,19 @@
                               data-ng-switch="user.state">
                             <span class="label label-info"
                                   data-ng-switch-when="CREATING"
-                                  data-i18n-static="dedicatedCloud_USER_state_CREATING">
+                                  data-translate="dedicatedCloud_USER_state_CREATING">
                             </span>
                             <span class="label label-warning"
                                   data-ng-switch-when="DELETING"
-                                  data-i18n-static="dedicatedCloud_USER_state_DELETING">
+                                  data-translate="dedicatedCloud_USER_state_DELETING">
                             </span>
                             <span class="label label-success"
                                   data-ng-switch-when="DELIVERED"
-                                  data-i18n-static="dedicatedCloud_USER_state_DELIVERED">
+                                  data-translate="dedicatedCloud_USER_state_DELIVERED">
                             </span>
                             <span class="label label-danger"
                                    data-ng-switch-when="ERROR"
-                                   data-i18n-static="dedicatedCloud_USER_state_ERROR"></span>
+                                   data-translate="dedicatedCloud_USER_state_ERROR"></span>
                             <span class="label"
                                   data-ng-switch-default
                                   data-ng-bind="tr('dedicatedCloud_USER_state_' + user.state)">
@@ -246,11 +246,11 @@
                               data-ng-switch="user.activationState">
                             <span class="label label-success"
                                   data-ng-switch-when="ENABLED"
-                                  data-i18n-static="dedicatedCloud_USER_state_DELIVERED">
+                                  data-translate="dedicatedCloud_USER_state_DELIVERED">
                             </span>
                             <span class="label label-danger"
                                   data-ng-switch-when="DISABLED"
-                                  data-i18n-static="dedicatedCloud_USER_state_DISABLED">
+                                  data-translate="dedicatedCloud_USER_state_DISABLED">
                             </span>
                             <span class="label"
                                   data-ng-switch-default
@@ -280,7 +280,7 @@
                                     <button type="button"
                                             class="btn btn-link"
                                             data-ng-click="setUserCurrentEdit(user)"
-                                            data-i18n-static="dedicatedCloud_USER_modify">
+                                            data-translate="dedicatedCloud_USER_modify">
                                     </button>
                                 </li>
                                 <li role="menuitem">
@@ -288,14 +288,14 @@
                                     <a type="button"
                                        class="btn btn-link"
                                        data-ui-sref="app.dedicatedClouds.users.rights({ userId: user.userId })"
-                                       data-i18n-static="dedicatedCloud_USER_view_modify_rights_by_DC">
+                                       data-translate="dedicatedCloud_USER_view_modify_rights_by_DC">
                                     </a>
                                 </li>
                                 <li role="menuitem">
                                     <button type="button"
                                             class="btn btn-link"
                                             data-ng-click="setAction('user/password/reset/dedicatedCloud-user-password-reset', {user: user, passwordPolicy: passwordPolicy})"
-                                            data-i18n-static="dedicatedCloud_USER_change_password">
+                                            data-translate="dedicatedCloud_USER_change_password">
                                     </button>
                                 </li>
                                 <li role="menuitem"
@@ -303,7 +303,7 @@
                                     <button type="button"
                                             class="btn btn-link"
                                             data-ng-click="setAction('user/delete/dedicatedCloud-user-delete', user)"
-                                            data-i18n-static="dedicatedCloud_USER_delete">
+                                            data-translate="dedicatedCloud_USER_delete">
                                     </button>
                                 </li>
                                 <li role="menuitem"
@@ -311,7 +311,7 @@
                                     <button type="button"
                                             class="btn btn-link"
                                             data-ng-click="setAction('user/delete/dedicatedCloud-user-delete', user)"
-                                            data-i18n-static="dedicatedCloud_USER_delete">
+                                            data-translate="dedicatedCloud_USER_delete">
                                     </button>
                                 </li>
                                 <li role="menuitem"
@@ -319,7 +319,7 @@
                                     <button type="button"
                                             class="btn btn-link"
                                             data-ng-click="setAction('user/delete/dedicatedCloud-user-delete', user)"
-                                            data-i18n-static="dedicatedCloud_USER_delete">
+                                            data-translate="dedicatedCloud_USER_delete">
                                     </button>
                                 </li>
                                 <li role="menuitem"
@@ -327,7 +327,7 @@
                                     <button type="button"
                                             class="btn btn-link"
                                             data-ng-click="setAction('user/enable/dedicatedCloud-user-enable', user)"
-                                            data-i18n-static="dedicatedCloud_USER_enable">
+                                            data-translate="dedicatedCloud_USER_enable">
                                     </button>
                                 </li>
                                 <li role="menuitem"
@@ -335,7 +335,7 @@
                                     <button type="button"
                                             class="btn btn-link"
                                             data-ng-click="setAction('user/disable/dedicatedCloud-user-disable', user)"
-                                            data-i18n-static="dedicatedCloud_USER_disable">
+                                            data-translate="dedicatedCloud_USER_disable">
                                     </button>
                                 </li>
                             </ul>
@@ -367,6 +367,6 @@
          data-transform-item="transformItem(item)"
          data-on-transform-item-done="onTransformItemDone(items)"
          data-page-placeholder="{{ tr('pagination_page', [currentPage, nbPages]) }}"
-         data-item-per-page-placeholder="{{ tr('pagination_display') }}">
+         data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
     </div>
 </div>

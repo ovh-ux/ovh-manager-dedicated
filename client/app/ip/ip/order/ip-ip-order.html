@@ -3,7 +3,7 @@
          data-wizard-bread-crumb="true"
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="confirmOrder"
-         data-wizard-title="i18n.ip_additional_order">
+         data-wizard-title="{{ 'ip_additional_order' | translate }}">
 
         <!-- Step 1: Select a service -->
         <div data-wizard-step
@@ -11,7 +11,7 @@
              data-wizard-step-valid="model.service && orderableIp && !orderableIpError">
 
             <div data-ng-show="!loading.services && servicesList.length">
-                <p data-i18n-static="ip_order_step1_question"></p>
+                <p data-translate="ip_order_step1_question"></p>
                 <form name="ipIpOrderForm">
                     <div class="form-group"
                          data-ng-class="{
@@ -19,7 +19,7 @@
                          }">
                         <label class="control-label"
                                for="serviceSelector"
-                               data-i18n-static="ip_table_header_service">
+                               data-translate="ip_table_header_service">
                         </label>
                         <select id="serviceSelector"
                                 name="serviceSelector"
@@ -30,7 +30,7 @@
                                 data-ng-change="serviceCanBeOrdered()">
                             <option value=""
                                     data-ng-disabled="true"
-                                    data-i18n-static="global_select">
+                                    data-translate="global_select">
                             </option>
                         </select>
                         <span class="help-block"
@@ -43,7 +43,7 @@
 
                 <!-- Checking... -->
                 <div data-ng-show="loading.serviceCanBeOrdered">
-                    <span data-i18n-static="ip_order_checkservice"></span>
+                    <span data-translate="ip_order_checkservice"></span>
                     <oui-spinner data-size="s"></oui-spinner>
                 </div>
 
@@ -51,7 +51,7 @@
                 <div data-ng-show="model.service && orderableIp && !orderableIpError">
 
                     <div data-ng-show="model.service.serviceType == 'DEDICATED'">
-                        <p data-i18n-static="ip_order_step1_info1"></p>
+                        <p data-translate="ip_order_step1_info1"></p>
                         <ul>
                             <li data-ng-repeat="ip in orderableIp.ipv4"
                                 data-ng-bind-html="ip | availableIpText">
@@ -60,14 +60,14 @@
                     </div>
 
                     <p data-ng-show="model.service.serviceType == 'VPS'"
-                       data-ng-bind-html="tr('ip_order_add_ipv4_step1_remaining', [orderableIp.maximumAdditionnalIp])"></p>
+                       data-translate="ip_order_add_ipv4_step1_remaining" data-translate-values="{ t0: orderableIp.maximumAdditionnalIp }"></p>
 
-                    <p data-i18n-static="ip_order_step1_ok"></p>
+                    <p data-translate="ip_order_step1_ok"></p>
                 </div>
             </div>
 
             <div data-ng-show="!loading.services && !servicesList.length"
-                 data-i18n-static="ip_order_noservices">
+                 data-translate="ip_order_noservices">
             </div>
 
             <div data-ng-show="loading.services"
@@ -124,7 +124,7 @@
              data-wizard-step-valid="!loading.validation">
 
             <div data-ng-show="!loading.validation">
-                <p data-i18n-static="ip_order_resume"></p>
+                <p data-translate="ip_order_resume"></p>
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <tbody>
@@ -144,7 +144,7 @@
                             <tr>
                                 <td class="text-right">
                                     <span class="font-weight-bold"
-                                          data-i18n-static="ip_order_price_HT">
+                                          data-translate="ip_order_price_HT">
                                     </span>
                                     <span class="text-danger font-weight-bold"
                                           data-ng-bind="durations.details[model.duration].prices.withoutTax.text">
@@ -154,7 +154,7 @@
                             <tr>
                                 <td class="text-right">
                                     <span class="font-weight-bold"
-                                          data-i18n-static="ip_order_price_TTC">
+                                          data-translate="ip_order_price_TTC">
                                     </span>
                                     <span class="text-danger font-weight-bold"
                                           data-ng-bind="durations.details[model.duration].prices.withTax.text">
@@ -166,10 +166,10 @@
                 </div>
 
                 <p class="font-weight-bold"
-                   data-i18n-static="ip_order_final_txt">
+                   data-translate="ip_order_final_txt">
                 </p>
                 <p class="text-muted"
-                   data-i18n-static="ip_order_final_txt2">
+                   data-translate="ip_order_final_txt2">
                 </p>
             </div>
 

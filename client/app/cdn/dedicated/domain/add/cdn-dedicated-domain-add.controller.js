@@ -1,4 +1,4 @@
-angular.module("App").controller("CdnAddDomainsCtrl", ($scope, $stateParams, Cdn) => {
+angular.module("App").controller("CdnAddDomainsCtrl", ($scope, $stateParams, $translate, Cdn) => {
     "use strict";
 
     $scope.backends = null;
@@ -54,7 +54,7 @@ angular.module("App").controller("CdnAddDomainsCtrl", ($scope, $stateParams, Cdn
                 $scope.setMessage($scope.tr("cdn_configuration_add_domain_success", [$scope.domain.domain, $scope.domain.backend]), true);
             },
             (data) => {
-                $scope.setMessage($scope.tr("cdn_configuration_add_domain_fail"), data);
+                $scope.setMessage($translate.instant("cdn_configuration_add_domain_fail"), data);
             }
         );
     };

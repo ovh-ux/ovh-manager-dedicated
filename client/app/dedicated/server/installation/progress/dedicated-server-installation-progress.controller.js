@@ -1,4 +1,4 @@
-angular.module("App").controller("ServerInstallationProgressCtrl", ($scope, Server, Polling, $rootScope, $stateParams) => {
+angular.module("App").controller("ServerInstallationProgressCtrl", ($scope, $translate, Server, Polling, $rootScope, $stateParams) => {
     const doingStatus = ["doing"];
     const endingStatus = ["done"];
 
@@ -93,11 +93,11 @@ angular.module("App").controller("ServerInstallationProgressCtrl", ($scope, Serv
         Server.cancelTask($stateParams.productId, $scope.progress.task.id).then(
             () => {
                 $scope.progress.disableCancel = true;
-                $scope.progress.ws = $scope.tr("server_configuration_installation_progress_cancel_success");
+                $scope.progress.ws = $translate.instant("server_configuration_installation_progress_cancel_success");
             },
             (data) => {
                 $scope.progress.disableCancel = true;
-                $scope.progress.wsFail = $scope.tr("server_configuration_installation_progress_cancel_fail", data.data.message);
+                $scope.progress.wsFail = $translate.instant("server_configuration_installation_progress_cancel_fail", { t0: data.data.message });
             }
         );
     };

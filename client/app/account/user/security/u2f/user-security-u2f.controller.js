@@ -1,9 +1,10 @@
 angular.module("UserAccount.controllers").controller("UserAccount.controllers.doubleAuth.u2f", [
     "$scope",
     "$q",
+    "$translate",
     "UserAccount.services.doubleAuth.u2f",
     "Alerter",
-    function ($scope, $q, DoubleAuthU2fService, Alerter) {
+    function ($scope, $q, $translate, DoubleAuthU2fService, Alerter) {
         "use strict";
 
         $scope.u2f = {
@@ -47,7 +48,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
                 .then((u2fAccounts) => {
                     $scope.u2f.u2fAccounts = u2fAccounts;
                 })
-                .catch((err) => Alerter.alertFromSWS($scope.tr("user_totpRestrictions_add_error"), err.data, "doubleAuthAlert"))
+                .catch((err) => Alerter.alertFromSWS($translate.instant("user_totpRestrictions_add_error"), err.data, "doubleAuthAlert"))
                 .finally(() => {
                     $scope.u2f.isLoading = false;
                 });

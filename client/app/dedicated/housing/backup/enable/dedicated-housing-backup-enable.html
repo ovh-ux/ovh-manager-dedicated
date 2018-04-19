@@ -3,7 +3,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="activateFtpBackup"
-         data-wizard-title="tr('housing_configuration_ftpbackup_activate')">
+         data-wizard-title="{{ 'housing_configuration_ftpbackup_activate' | translate }}">
 
         <div data-wizard-step
              data-wizard-step-valid="!loading">
@@ -14,7 +14,7 @@
             </div>
 
             <p data-ng-if="!loading"
-               data-i18n-static="housing_configuration_ftpbackup_activate_question">
+               data-translate="housing_configuration_ftpbackup_activate_question">
             </p>
 
         </div>

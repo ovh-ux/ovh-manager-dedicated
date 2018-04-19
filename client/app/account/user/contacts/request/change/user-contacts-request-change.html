@@ -14,8 +14,8 @@
             </div>
 
             <div data-ng-show="!loaders.loading">
-                <p data-ng-bind-html="tr('user_account_contacts_refuse_info', [task.serviceDomain])"></p>
-                <p data-ng-bind-html="tr('user_account_contacts_received_info_roles', [task.fromAccount])"
+                <p data-translate="user_account_contacts_refuse_info" data-translate-values="{ t0: task.serviceDomain }"></p>
+                <p data-translate="user_account_contacts_received_info_roles" data-translate-values="{ t0: task.fromAccount }"
                    data-ng-if="method === 'RECEIVED'"></p>
                 <p data-ng-bind-html="tr('user_account_contacts_send_info_roles', [task.toAccount, task.fromAccount])"
                    data-ng-if="method === 'SEND'"></p>
@@ -27,13 +27,13 @@
 
                 <div data-ng-if="action !== 'RESEND'">
 
-                    <p data-i18n-static="user_account_contacts_token_info"></p>
+                    <p data-translate="user_account_contacts_token_info"></p>
 
                     <form name="ctrl.formChangeContact">
                         <div class="form-group"
                              data-ng-class="{ 'has-error': ctrl.formChangeContact.changeContactToken.$touched && ctrl.formChangeContact.changeContactToken.$invalid }">
                             <label for="changeContactToken" class="control-label"
-                                   data-i18n-static="user_account_contacts_token">
+                                   data-translate="user_account_contacts_token">
                             </label>
                             <input type="text"
                                    class="form-control"
@@ -46,7 +46,7 @@
                                   role="alert"
                                   data-ng-if="ctrl.formChangeContact.changeContactToken.$touched">
                                 <span data-ng-message="required"
-                                      data-i18n-static="user_account_contacts_token_required">
+                                      data-translate="user_account_contacts_token_required">
                                 </span>
                             </span>
                         </div>
