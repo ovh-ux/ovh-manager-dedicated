@@ -188,6 +188,9 @@ angular
         $translateProvider.use(defaultLanguage);
         $translateProvider.fallbackLanguage("fr_FR");
     })
+    .run(($translatePartialLoader) => {
+        $translatePartialLoader.addPart("common");
+    })
     .config([
         "$qProvider",
         function ($qProvider) {

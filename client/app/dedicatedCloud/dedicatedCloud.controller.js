@@ -51,7 +51,6 @@ angular.module("App").controller("DedicatedCloudCtrl", [
                     }
                     $scope.dedicatedCloudDescription.model = angular.copy($scope.dedicatedCloud.description);
                     loadNewPrices();
-                    handleCancelConfirmation();
                     $scope.showHdsReadyNotificationIfRequired($scope.HDS_READY_NOTIFICATION);
                 })
                 .catch((data) => {

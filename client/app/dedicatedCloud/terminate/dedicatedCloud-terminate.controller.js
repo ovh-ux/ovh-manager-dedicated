@@ -1,10 +1,10 @@
 angular.module("App").controller("DedicatedCloudTerminateCtrl", class DedicatedCloudTerminateCtrl {
 
-    constructor ($state, $stateParams, translator, DedicatedCloud, Alerter) {
+    constructor ($state, $stateParams, translator, OvhApiDedicatedCloud, Alerter) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.translator = translator;
-        this.DedicatedCloud = DedicatedCloud;
+        this.OvhApiDedicatedCloud = OvhApiDedicatedCloud;
         this.Alerter = Alerter;
 
         this.loading = {
@@ -19,7 +19,9 @@ angular.module("App").controller("DedicatedCloudTerminateCtrl", class DedicatedC
     onTerminateBtnClick () {
         this.loading.terminate = true;
 
-        return this.DedicatedCloud.terminate(`${this.$stateParams.productId} lksqhjf lqhsfkj sqhfkqfsh`)
+        return this.OvhApiDedicatedCloud.v6().terminate({
+            serviceName: this.$stateParams.productId
+        }).$promise
             .then(() => this.Alerter.success(this.translator.tr("dedicatedCloud_close_service_success"), "dedicatedCloud"))
             .catch((error) => this.Alerter.alertFromSWS(this.translator.tr("dedicatedCloud_close_service_error"), error, "dedicatedCloud"))
             .finally(() => {

@@ -1,39 +1,34 @@
-<div data-ng-controller="DedicatedCloudConfirmTerminateCtrl">
+<form class="dedicatedCloud-terminate-confirm"
+      name="$ctrl.terminateConfirmForm"
+      novalidate
+      data-ng-submit="$ctrl.onTerminateConfirmFormSubmit()">
 
-    <div data-wizard
-         data-wizard-on-cancel="cancel"
-         data-wizard-on-finish="confirm"
-         data-wizard-title="i18n.dedicatedCloud_confirm_close_service"
-         data-wizard-confirm-button-text="i18n.dedicatedCloud_confirm_close_confirm"
-         data-wizard-cancel-button-text="i18n.dedicatedCloud_confirm_close_cancel">
+    <oui-modal data-title="{{ :: i18n.dedicatedCloud_confirm_close_service }}"
+               data-on-dismiss="$ctrl.onModalDismiss()"
+               data-primary-label="{{ :: i18n.dedicatedCloud_confirm_close_confirm }}"
+               data-primary-action="$ctrl.onModalPrimaryBtnClick()"
+               data-secondary-label="{{ :: i18n.dedicatedCloud_confirm_close_cancel }}"
+               data-secondary-action="$ctrl.onModalSecondaryBtnClick()"
+               data-loading="$ctrl.loading.confirm">
 
-        <div data-wizard-step
-             data-wizard-step-valid="!loaders.loading && form.reason">
+        <oui-field label="{{ :: i18n.dedicatedCloud_confirm_close_question }}">
+            <oui-radio data-ng-repeat="reason in $ctrl.reasons track by $index"
+                       name="reasons"
+                       data-text="{{ tr('dedicatedCloud_confirm_close_reason_' + reason.toLowerCase()) }}"
+                       data-model="$ctrl.model.reason"
+                       data-value="reason">
+            </oui-radio>
+        </oui-field>
 
-            <p class="text-info">
-                <strong data-i18n-static="dedicatedCloud_confirm_close_question"></strong>
-            </p>
-            <div class="radio"
-                 data-ng-repeat="reason in reasons track by $index">
-                <label>
-                    <input type="radio"
-                           name="reasons"
-                           value="{{ reason }}"
-                           data-ng-model="form.reason">
-                    <span data-ng-bind="tr('dedicatedCloud_confirm_close_reason_' + reason.toLowerCase())"></span>
-                </label>
-            </div>
-            <p class="text-info">
-                <strong data-i18n-static="dedicatedCloud_confirm_close_feedback"></strong>
-            </p>
-            <textarea class="form-control no-resize"
-                      rows="6"
-                      maxlength="450"
-                      data-ng-model="form.commentary">
-            </textarea>
+        <oui-field data-label="{{ :: i18n.dedicatedCloud_confirm_close_feedback }}"
+                   data-size="xl">
+            <oui-textarea data-model="$ctrl.model.commentary"
+                          data-maxlength="450"
+                          data-name="commentary"
+                          data-rows="6">
+            </oui-textarea>
+        </oui-field>
 
-        </div>
+    </oui-modal>
 
-    </div>
-
-</div>
+</form>

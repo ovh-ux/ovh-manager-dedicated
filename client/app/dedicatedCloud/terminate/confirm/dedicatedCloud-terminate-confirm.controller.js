@@ -1,31 +1,63 @@
-angular.module("App").controller("DedicatedCloudConfirmTerminateCtrl", ($scope, $stateParams, $location, DedicatedCloud, Alerter) => {
-    "use strict";
+angular.module("App").controller("DedicatedCloudConfirmTerminateCtrl", class DedicatedCloudConfirmTerminateCtrl {
 
-    $scope.form = {};
-    $scope.loaders = {
-        loading: false
-    };
+    constructor ($state, $stateParams, OvhApiDedicatedCloud, Alerter, translator) {
+        this.$state = $state;
+        this.$stateParams = $stateParams;
+        this.OvhApiDedicatedCloud = OvhApiDedicatedCloud;
+        this.Alerter = Alerter;
+        this.translator = translator;
 
-    $scope.reasons = ["LACK_OF_PERFORMANCES", "TOO_EXPENSIVE", "TOO_HARD_TO_USE", "NOT_RELIABLE", "NOT_NEEDED_ANYMORE", "MIGRATED_TO_COMPETITOR", "MIGRATED_TO_ANOTHER_OVH_PRODUCT", "OTHER"];
+        this.terminateConfirmForm = null;
+        this.reasons = ["LACK_OF_PERFORMANCES", "TOO_EXPENSIVE", "TOO_HARD_TO_USE", "NOT_RELIABLE", "NOT_NEEDED_ANYMORE", "MIGRATED_TO_COMPETITOR", "MIGRATED_TO_ANOTHER_OVH_PRODUCT", "OTHER"];
 
-    $scope.confirm = function () {
-        $scope.loaders.loading = true;
-        DedicatedCloud.confirmTerminate($stateParams.productId, $scope.form.reason, $stateParams.token, $scope.form.commentary)
-            .then(() => {
-                Alerter.success($scope.tr("dedicatedCloud_confirm_close_success"), $scope.alerts.dashboard);
-            })
-            .catch((err) => {
-                Alerter.alertFromSWS($scope.tr("dedicatedCloud_confirm_close_error"), err.data, $scope.alerts.dashboard);
-            })
-            .finally(() => {
-                $scope.loaders.loading = false;
-                $location.search("action", null);
-                $scope.resetAction();
-            });
-    };
+        this.loading = {
+            confirm: false
+        };
 
-    $scope.cancel = function () {
-        $location.search("action", null);
-        $scope.resetAction();
-    };
+        this.model = {
+            reason: _.first(this.reasons),
+            commentary: null
+        };
+    }
+
+    /* =============================
+    =            EVENTS            =
+    ============================== */
+
+    onModalDismiss () {
+        this.$state.go("^");
+    }
+
+    onModalSecondaryBtnClick () {
+        this.$state.go("^");
+    }
+
+    onTerminateConfirmFormSubmit () {
+        if (!this.terminateConfirmForm.$valid) {
+            return false;
+        }
+
+        this.loading.confirm = true;
+
+        return this.OvhApiDedicatedCloud.v6().confirmTermination({
+            serviceName: this.$stateParams.productId
+        }, {
+            commentary: this.model.commentary,
+            reason: this.model.reason,
+            token: this.$stateParams.token
+        }).$promise.then(() => {
+            this.Alerter.success(this.translator.tr("dedicatedCloud_confirm_close_success"), "dedicatedCloud_alert");
+        }).catch((error) => {
+            this.Alerter.alertFromSWS(this.translator.tr("dedicatedCloud_confirm_close_error"), {
+                message: _.get(error, "message"),
+                type: "ERROR"
+            }, "dedicatedCloud_alert");
+        }).finally(() => {
+            this.loading.confirm = false;
+            this.$state.go("^");
+        });
+    }
+
+    /* -----  End of EVENTS  ------ */
+
 });
