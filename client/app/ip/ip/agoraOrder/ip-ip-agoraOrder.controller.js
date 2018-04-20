@@ -10,8 +10,12 @@ angular.module("Module.ip.controllers").controller("agoraIpOrderCtrl", ["$scope"
 
         this.loadServices = () => {
             this.loading.services = true;
-            return AgoraOrder.getServices().then((data) => {
-                this.services = data;
+            return $q.all({
+                user: User.getUser(),
+                services: AgoraOrder.getServices()
+            }).then((results) => {
+                this.user = results.user;
+                this.services = results.services;
             }).catch((err) => {
                 Alerter.error(translator.tr("ip_order_loading_error"));
                 $scope.resetAction();

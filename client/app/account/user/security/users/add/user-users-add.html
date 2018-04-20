@@ -6,6 +6,10 @@
 
         <div data-wizard-step
              data-wizard-step-valid="$ctrl.userAccountUsersAddForm.$valid">
+            <p data-translate="user_users_info"
+               data-translate-values="{customerCode: $ctrl.me.customerCode}">
+            </p>
+
             <h2 class="wizard-title-sub"
                 data-translate="user_users_add_modal_step1_question"
                 data-translate-values="{login: $ctrl.user.login}">
@@ -39,6 +43,7 @@
                         <span data-ng-message="required" data-translate="user_users_add_required"></span>
                         <span data-ng-message="pattern" data-translate="user_users_add_login_pattern_error"></span>
                     </span>
+                    <small class="help-block text-muted" data-ng-bind="$ctrl.me.customerCode + '/' + $ctrl.user.login"/>
                 </div>
 
                 <div class="form-group"
@@ -85,6 +90,24 @@
                         <span data-ng-message="minlength" data-translate="user_users_add_password_length_error"
                               data-translate-values="{passwordMinLength: $ctrl.PASSWORD_MIN_LENGTH}"></span>
                     </span>
+                </div>
+
+                <div class="form-group">
+
+                    <label class="control-label"
+                           for="group"
+                           data-translate="user_users_role">
+                    </label>
+                    <select
+                           class="form-control"
+                           id="group"
+                           name="group"
+                           required
+                           data-ng-model="$ctrl.user.group">
+                                <option value="ADMIN" data-translate="user_roles_admin"></option>
+                                <option value="DEFAULT" data-translate="user_roles_regular"></option>
+                                <option value="UNPRIVILEGED" data-translate="user_roles_unprivileged"></option>
+                    </select>
                 </div>
 
                 <div class="form-group"

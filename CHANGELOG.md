@@ -1,3 +1,43 @@
+<a name="9.2.12"></a>
+## [9.2.12](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.11...v9.2.12) (2018-04-19)
+
+
+### Bug Fixes
+
+* temporarily remove debt messages for US ([639c738](https://github.com/ovh-ux/ovh-manager-dedicated/commit/639c738))
+
+
+
+<a name="9.2.11"></a>
+## [9.2.11](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.10...v9.2.11) (2018-04-12)
+
+
+### Bug Fixes
+
+* **user contracts:** enhance modal layout ([5355502](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5355502))
+
+
+
+<a name="9.2.10"></a>
+## [9.2.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.9...v9.2.10) (2018-04-12)
+
+
+### Bug Fixes
+
+* **contracts:** closing modal on validate ([32b64a1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/32b64a1))
+
+
+
+<a name="9.2.9"></a>
+## [9.2.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.8...v9.2.9) (2018-04-12)
+
+
+### Bug Fixes
+
+* **contracts:** wrong modal id ([14140d7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/14140d7))
+
+
+
 <a name="9.2.8"></a>
 ## [9.2.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.7...v9.2.8) (2018-04-10)
 
