@@ -5,9 +5,9 @@ angular.module("services").service("User", [
     "constants",
     "Billing.constants",
     "Products",
-    "translator",
+    "$translate",
     "OvhHttp",
-    function ($rootScope, $http, $q, constants, billingConstants, Products, translator, OvhHttp) {
+    function ($rootScope, $http, $q, constants, billingConstants, Products, $translate, OvhHttp) {
         "use strict";
 
         const self = this;
@@ -88,7 +88,7 @@ angular.module("services").service("User", [
                 .get("/me/alerts", {
                     serviceType: "aapi",
                     params: {
-                        lang: translator.getLanguage(),
+                        lang: $translate.use(),
                         target: constants.target,
                         universe: "DEDICATED"
                     }
