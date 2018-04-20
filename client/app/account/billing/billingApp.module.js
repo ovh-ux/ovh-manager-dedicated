@@ -24,6 +24,7 @@ angular
                 controller: "Billing.controllers.main",
                 templateUrl: `${BILLING_BASE_URL}/billing.html`,
                 "abstract": true,
+                translations: ["account/billing"],
                 resolve: {
                     denyEnterprise: denyBillingSectionForEnterpriseResolve
                 }
@@ -34,6 +35,7 @@ angular
                 controller: "Billing.controllers.main",
                 templateUrl: `${BILLING_BASE_URL}/billing.html`,
                 "abstract": true,
+                translations: ["account/billing"],
                 resolve: {
                     denyEnterprise: denyBillingSectionForEnterpriseResolve
                 }
@@ -44,6 +46,7 @@ angular
                 controller: "Billing.controllers.main",
                 templateUrl: `${BILLING_BASE_URL}/billing.html`,
                 "abstract": true,
+                translations: ["account/billing"],
                 resolve: {
                     denyEnterprise: denyBillingSectionForEnterpriseResolve
                 }
@@ -54,6 +57,7 @@ angular
                 controller: "Billing.controllers.main",
                 templateUrl: `${BILLING_BASE_URL}/billing.html`,
                 "abstract": true,
+                translations: ["account/billing"],
                 resolve: {
                     denyEnterprise: denyBillingSectionForEnterpriseResolve
                 }

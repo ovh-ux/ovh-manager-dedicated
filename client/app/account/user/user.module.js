@@ -14,6 +14,7 @@ angular
                 url: "/useraccount",
                 controller: "UserAccount.controllers.main",
                 templateUrl: `${baseUrl}/user.html`,
+                translations: ["account/user"],
                 "abstract": true
             });
 
@@ -21,7 +22,8 @@ angular
                 url: "/useraccount",
                 controller: "UserAccount.controllers.main",
                 templateUrl: `${baseUrl}/user.html`,
-                "abstract": true
+                "abstract": true,
+                translations: ["account/user"]
             });
 
             if (target === "EU") {
