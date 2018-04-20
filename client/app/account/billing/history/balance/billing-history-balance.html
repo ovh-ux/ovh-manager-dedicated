@@ -13,24 +13,22 @@
 
     <div data-ng-if="!$ctrl.loading.init && !$ctrl.loading.pay">
 
-        <div data-ng-if="$ctrl.balance && !$ctrl.balance.active">
-            <oui-message data-type="info">
-                <span data-translate="billing_history_balance_no_balance"
-                      data-translate-values="{ backState: '^' }"
-                      data-translate-compile>
-                </span>
-            </oui-message>
-        </div>
+        <oui-message data-type="info"
+                     data-ng-if="$ctrl.balance && !$ctrl.balance.active">
+            <span data-translate="billing_history_balance_no_balance"
+                  data-translate-values="{ backState: '^' }"
+                  data-translate-compile>
+            </span>
+        </oui-message>
 
-        <div data-ng-if="!$ctrl.balance && $ctrl.depositRequests.length">
-            <oui-message data-type="info">
-                <p data-translate="billing_history_balance_payment_doing"></p>
-                <span data-translate="billing_history_balance_payment_go_tracking"
-                      data-translate-values="{ trackState: 'app.account.billing.payments.request' }"
-                      data-translate-compile>
-                </span>
-            </oui-message>
-        </div>
+        <oui-message data-type="info"
+                     data-ng-if="!$ctrl.balance && $ctrl.depositRequests.length">
+            <p data-translate="billing_history_balance_payment_doing"></p>
+            <span data-translate="billing_history_balance_payment_go_tracking"
+                  data-translate-values="{ trackState: 'app.account.billing.payments.request' }"
+                  data-translate-compile>
+            </span>
+        </oui-message>
 
         <div data-ng-if="$ctrl.balance && $ctrl.balance.active && !$ctrl.paymentAccepted">
             <div class="mb-4">
@@ -56,8 +54,11 @@
                 <div class="col-md-6">
                     <form data-ng-submit="$ctrl.onBalancePayFormSubmit()">
                         <div class="form-group">
-                            <label data-translate="billing_history_balance_choose_payment_method"></label>
+                            <label data-translate="billing_history_balance_choose_payment_method"
+                                   for="selectPaymentMethod">
+                            </label>
                             <select class="form-control"
+                                    id="selectPaymentMethod"
                                     data-ng-options="method as (method.description || method.publicLabel) for method in $ctrl.paymentMethods"
                                     data-ng-model="$ctrl.model.paymentMethod">
                             </select>
