@@ -20,7 +20,7 @@
 
                 <div class="form-group">
                     <label class="control-label"
-                           data-ng-bind="tr('ovhAccount_create_alert_amount', [ovhAccount.model.balanceCurrencyCode])">
+                           data-ng-bind="'ovhAccount_create_alert_amount' | translate:{ t0: ovhAccount.model.balanceCurrencyCode }">
                     </label>
                     <div class="input-group">
                         <input id="appendedInput"

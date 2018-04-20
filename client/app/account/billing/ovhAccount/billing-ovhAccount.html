@@ -50,7 +50,8 @@
 
         <p data-ng-if="!ovhAccountLoading && ovhAccount.model.hasOvhAccount">
             <span data-ng-if="ovhAccount.model.alertThreshold > 0"
-                  data-ng-bind="tr('ovhAccount_create_alert_amount_resume', [ovhAccount.model.alertThreshold /100 + ' ' + ovhAccount.model.balanceCurrencyCode])"></span>
+                  data-translate="ovhAccount_create_alert_amount_resume"
+                  data-translate-values="{ t0: ovhAccount.model.alertThreshold /100 + ' ' + ovhAccount.model.balanceCurrencyCode }"></span>
             <span data-ng-if="ovhAccount.model.alertThreshold <= 0"
                   data-translate="ovhAccount_no_alert"></span>
         </p>
@@ -158,11 +159,11 @@
                     </td>
                     <td data-ng-bind="ovhAccountLine.factureNumber || '-'">
                     </td>
-                    <td data-ng-bind="tr('ovhAccount_table_type_' + ovhAccountLine.operation + (ovhAccountLine.type && ('_' + ovhAccountLine.type) || ''))">
+                    <td data-ng-bind="'ovhAccount_table_type_' + ovhAccountLine.operation + (ovhAccountLine.type && ('_' + ovhAccountLine.type) || '') | translate">
                     </td>
                     <td>
                         <span data-ng-if="ovhAccountLine.type"
-                              data-ng-bind="tr('ovhAccount_table_type_payment_' + ovhAccountLine.paymentType)">
+                              data-translate="{{ 'ovhAccount_table_type_payment_' + ovhAccountLine.paymentType }}">
                         </span>
                         <span data-ng-if="!ovhAccountLine.type"
                               data-ng-bind="ovhAccountLine.description">

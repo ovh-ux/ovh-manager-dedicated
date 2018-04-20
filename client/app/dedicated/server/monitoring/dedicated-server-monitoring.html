@@ -396,7 +396,7 @@
                                       'fa fa-remove': !monitoring.enabled
                                   }">
                             </span>
-                            <span data-ng-bind="tr('server_tab_MONITORING_state_' + monitoring.enabled) || monitoring.enabled"></span>
+                            <span data-ng-bind="('server_tab_MONITORING_state_' + monitoring.enabled | translate) || monitoring.enabled"></span>
                         </button>
                     </td>
                     <td data-ng-if="ctrlMonitoring.editMode !== monitoring.monitoringId">
@@ -509,7 +509,7 @@
                                                    class="form-control"
                                                    name="monitoringUrl"
                                                    pattern="^(?:(ftp|http|https):\/\/)?(?:[\w-]+\.)+[a-z]{2,15}$"
-                                                   aria-label="tr('{{ server_tab_MONITORING_add_url }}')"
+                                                   aria-label="{{ server_tab_MONITORING_add_url | translate }}"
                                                    data-ng-show="ctrlMonitoringUpdate.monitoring.protocol === 'DNS'"
                                                    data-ng-model="ctrlMonitoringUpdate.monitoring.url"
                                                    data-ng-required="ctrlMonitoringUpdate.monitoring.protocol === 'DNS'" />
@@ -784,7 +784,7 @@
          data-current-page="currentPage"
          data-nb-pages="nbPages"
          data-items-per-page="itemsPerPage"
-         data-page-placeholder="{{tr('pagination_page', [ctrlMonitoring.currentPage.monitorings, ctrlMonitoring.nbPages])}}"
+         data-page-placeholder="{{ 'pagination_page' | translate:{ t0: ctrlMonitoring.currentPage.monitorings, t1: ctrlMonitoring.nbPages } }}"
          data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
     </div>
 

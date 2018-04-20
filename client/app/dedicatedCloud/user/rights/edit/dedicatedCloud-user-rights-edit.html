@@ -14,7 +14,7 @@
             </div>
 
             <div data-ng-if="!ctrl.loading.init && !ctrl.loading.save">
-                <h5 data-ng-bind-html="tr('dedicatedCloud_USER_right_datacenter_title', ctrl.datacenter.name)"></h5>
+                <h5 data-ng-bind-html="'dedicatedCloud_USER_right_datacenter_title' | translate:{ t0: ctrl.datacenter.name })"></h5>
                 <div class="form-group">
                     <label for="right"
                            class="control-label"
@@ -31,7 +31,7 @@
                         <span class="d-block"
                               data-translate="dedicatedCloud_USER_right_vsphere_help">
                         </span>
-                        <em data-ng-bind="tr('dedicatedCloud_USER_right_vsphere_' + ctrl.right.right)"></em>
+                        <em data-translate="{{ 'dedicatedCloud_USER_right_vsphere_' + ctrl.right.right }}"></em>
                     </span>
                 </div>
                 <div class="form-group">
@@ -50,7 +50,7 @@
                         <span class="d-block"
                               data-translate="dedicatedCloud_USER_right_vmNetwork_help">
                         </span>
-                        <em data-ng-bind="tr('dedicatedCloud_USER_right_vmNetwork_' + ctrl.right.vmNetworkRole)"></em>
+                        <em data-translate="{{ 'dedicatedCloud_USER_right_vmNetwork_' + ctrl.right.vmNetworkRole }}"></em>
                     </span>
                 </div>
                 <div class="form-group">
@@ -69,7 +69,7 @@
                         <span class="d-block"
                               data-translate="dedicatedCloud_USER_right_vlan_help">
                         </span>
-                        <em data-ng-bind="tr('dedicatedCloud_USER_right_vlan_' + ctrl.right.networkRole)"></em>
+                        <em data-translate="{{ 'dedicatedCloud_USER_right_vlan_' + ctrl.right.networkRole }}"></em>
                     </span>
                 </div>
                 <div class="checkbox">

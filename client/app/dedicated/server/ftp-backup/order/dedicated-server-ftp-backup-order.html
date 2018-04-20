@@ -79,7 +79,7 @@
                     </p>
                     <p class="text-center"
                        data-ng-if="detail.explanation">
-                        (<span data-ng-bind-html="tr('server_configuration_ftpbackup_order_price_explanation',[detail.explanation.price])"></span>)
+                        (<span data-ng-bind-html="'server_configuration_ftpbackup_order_price_explanation' | translate:{ t0: detail.explanation.price }"></span>)
                     </p>
                 </div>
                 <p class="mt-2 text-center">

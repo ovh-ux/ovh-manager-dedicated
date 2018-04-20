@@ -41,7 +41,7 @@
                 </label>
                 <p class="form-control-static"
                    id="protocol"
-                   data-ng-bind="tr('nas_partitions_protocol_' + partition.protocol)">
+                   data-translate="{{ 'nas_partitions_protocol_' + partition.protocol }}">
                 </p>
             </div>
 
@@ -57,7 +57,7 @@
 
         <div data-wizard-step>
 
-            <p data-ng-bind-html="tr('nas_partitions_action_update_confirmation', [partition.name, updateValue.sizeP])"></p>
+            <p data-ng-bind-html="'nas_partitions_action_update_confirmation' | translate:{ t0: partition.name, t1: updateValue.sizeP }"></p>
 
         </div>
 

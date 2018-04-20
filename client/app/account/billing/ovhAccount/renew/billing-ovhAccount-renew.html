@@ -15,7 +15,7 @@
             </h2>
             <div class="form-group">
                 <label class="control-label"
-                       data-ng-bind="tr('ovhAccount_renew_step1_amount', [ovhAccount.model.balanceCurrencyCode])">
+                       data-ng-bind="'ovhAccount_renew_step1_amount' | translate:{ t0: ovhAccount.model.balanceCurrencyCode }">
                 </label>
                 <input type="text"
                        class="form-control"
@@ -26,7 +26,7 @@
                 <span data-ng-show="accountRenew.erreurMin"
                       role="alert"
                       class="text-danger"
-                      data-ng-bind="tr('ovhAccount_renew_step1_erreurmin', [currency(ovhAccount.model.balanceCurrencyCode)])">
+                      data-ng-bind="'ovhAccount_renew_step1_erreurmin' | translate:{ t0: currency(ovhAccount.model.balanceCurrencyCode }">
                 </span>
                 <span data-ng-show="accountRenew.erreurFormat"
                       role="alert"

@@ -11,13 +11,13 @@
         <div class="col-sm-9">
             <dl>
                 <dt data-translate="dedicatedCloud_SECURITY_expiration_session"></dt>
-                <dd data-ng-bind="policies.info.userSessionTimeout == 0 && ('dedicatedCloud_SECURITY_expiration_session_never' | translate) || tr('dedicatedCloud_SECURITY_expiration_session_value', [policies.info.userSessionTimeout])"></dd>
+                <dd data-ng-bind="policies.info.userSessionTimeout == 0 && ('dedicatedCloud_SECURITY_expiration_session_never' | translate) || 'dedicatedCloud_SECURITY_expiration_session_value' | translate:{ t0: policies.info.userSessionTimeout }"></dd>
                 <dt data-translate="dedicatedCloud_SECURITY_nb_simultaneous_connection"></dt>
                 <dd data-ng-bind="policies.info.userLimitConcurrentSession == 0 && ('dedicatedCloud_SECURITY_nb_simultaneous_connection_none' | translate) || policies.info.userLimitConcurrentSession"></dd>
                 <dt data-translate="dedicatedCloud_SECURITY_userAccess_policy"></dt>
-                <dd data-ng-bind="tr('dedicatedCloud_SECURITY_userAccess_policy_' + policies.info.userAccessPolicy)"></dd>
+                <dd data-translate="{{ 'dedicatedCloud_SECURITY_userAccess_policy_' + policies.info.userAccessPolicy }}"></dd>
                 <dt data-translate="dedicatedCloud_SECURITY_logout_policy"></dt>
-                <dd data-ng-bind="tr('dedicatedCloud_SECURITY_logout_policy_' + policies.info.logoutPolicy)"></dd>
+                <dd data-translate="{{ 'dedicatedCloud_SECURITY_logout_policy_' + policies.info.logoutPolicy }}"></dd>
             </dl>
             <div class="text-center"
                  data-ng-show="loaders.table">
@@ -74,7 +74,7 @@
                                               'label-danger': policy.status == 'TO_DELETE',
                                               'label-warning': policy.status == 'TO_UPDATE'
                                           }"
-                                          data-ng-bind="tr('dedicatedCloud_configuration_SECURITY_status_' + policy.status)">
+                                          data-translate="{{ 'dedicatedCloud_configuration_SECURITY_status_' + policy.status }}">
                                     </span>
                                 </td>
                                 <td data-ng-bind="policy.description"></td>

@@ -9,7 +9,7 @@
         <div data-wizard-step
             data-wizard-step-on-load="loadAmount"
             data-wizard-step-valid="renewStepValidator()">
-            <p data-ng-bind="tr('fidelity_creditOrder_step1_msg', currency.symbol)">
+            <p data-ng-bind="'fidelity_creditOrder_step1_msg'|translate:{ t0: currency.symbol }">
             </p>
             <label for="amount"
                    class="control-label"
@@ -24,12 +24,12 @@
             <span data-ng-show="creditOrder.erreurMin"
                   class="text-danger"
                   role="alert"
-                  data-ng-bind="tr('fidelity_creditOrder_step1_erreurmin', [creditOrder.min])">
+                  data-ng-bind="'fidelity_creditOrder_step1_erreurmin' | translate:{ t0: creditOrder.min }">
             </span>
             <span data-ng-show="creditOrder.erreurMax"
                   class="text-danger"
                   role="alert"
-                  data-ng-bind="tr('fidelity_creditOrder_step1_erreurmax', [creditOrder.max])">
+                  data-ng-bind="'fidelity_creditOrder_step1_erreurmax' | translate:{ t0: creditOrder.max }">
             </span>
             <span data-ng-show="creditOrder.erreurFormat"
                   class="text-danger"

@@ -64,7 +64,7 @@
                         <td data-ng-bind="host.profile"></td>
                         <td>
                             <span class="d-block"
-                                  data-ng-bind="tr('dedicatedCloud_tab_host_billing_'+host.billingType)">
+                                  data-translate="{{ 'dedicatedCloud_tab_host_billing_'+host.billingType }}">
                             </span>
                             <button type="button"
                                     class="btn btn-link p-0"
@@ -77,11 +77,11 @@
                                     data-translate="dedicatedCloud_updateResource_toMonthly">
                             </button>
                         </td>
-                        <td data-ng-bind="tr('dedicatedCloud_tab_host_status_'+host.status)"></td>
+                        <td data-translate="{{ 'dedicatedCloud_tab_host_status_'+host.status }}"></td>
                         <td>
                             <span data-ng-show="host.billingType === 'HOURLY' && host.consumption"
                                   data-ng-bind="trpl('dedicatedCloud_tab_host_hourly_usage', host.consumption.value, [host.consumption.value])"
-                                  data-uib-tooltip="{{ tr('dedicatedCloud_tab_host_hourly_usage_update', [(host.lastUpdate|date:'short')]) }}"
+                                  data-uib-tooltip="{{ 'dedicatedCloud_tab_host_hourly_usage_update' | translate:{ t0: host.lastUpdate|date:'short' } }}"
                                   data-tooltip-placement="top">
                             </span>
                             <span data-ng-show="host.billingType === 'HOURLY' && !host.consumption"

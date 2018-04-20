@@ -9,7 +9,7 @@
         <div data-wizard-step
              data-wizard-step-on-load="load">
 
-            <p data-ng-bind-html="tr('server_configuration_installation_info', server.name)"></p>
+            <p data-ng-bind-html="'server_configuration_installation_info' | translate:{ t0: server.name }"></p>
             <div class="alert alert-warning"
                  role="alert"
                  data-translate="server_configuration_installation_warning">

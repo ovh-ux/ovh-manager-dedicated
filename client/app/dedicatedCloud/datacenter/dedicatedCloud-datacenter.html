@@ -17,7 +17,7 @@
                              data-ng-if="!datacenterName.editMode && !datacenterDescription.editMode">
                             <div class="d-flex">
                                 <h1 class="d-inline-block mb-0 word-break"
-                                    data-ng-bind="datacenterName.model || tr('dedicatedCloud_datacenter_no_name', [datacenter.id])">
+                                    data-ng-bind="datacenterName.model || 'dedicatedCloud_datacenter_no_name' | translate:{ t0: datacenter.id }">
                                 </h1>
                                 <button type="button"
                                         title="{{ 'wizard_modify' | translate }}"

@@ -26,7 +26,8 @@
                         <input type="radio"
                                value="{{ price.quantity }}"
                                data-ng-model="choices.count" />
-                        <span data-ng-bind="tr('cdn_configuration_cacherules_upgrade_step1_tarif2', [price.unitaryPrice, price.quantity])"></span>
+                        <span data-translate="cdn_configuration_cacherules_upgrade_step1_tarif2"
+                              data-translate-values="{ t0: price.unitaryPrice, t1: price.quantity }"></span>
                     </label>
                 </div>
             </div>
@@ -44,7 +45,8 @@
 
             <div data-ng-if="orders">
                 <label class="control-label"
-                       data-ng-bind="tr('cdn_configuration_cacherules_upgrade_step2_durations', [choices.count])">
+                       data-translate="cdn_configuration_cacherules_upgrade_step2_durations"
+                       data-translate-values="{ t0: choices.count }">
                 </label>
                 <div class="radio"
                      data-ng-repeat="order in orders track by $index">
@@ -52,7 +54,8 @@
                         <input type="radio"
                                value="{{ order.duration.duration }}"
                                data-ng-model="choices.duration">
-                        <span data-ng-bind="tr('cdn_configuration_cacherules_upgrade_step2_duration_total', [order.duration.formattedDuration, order.withoutTax])"></span>
+                        <span data-translate="cdn_configuration_cacherules_upgrade_step2_duration_total"
+                              data-translate-values="{ t0: order.duration.formattedDuration, t1: order.withoutTax }"></span>
                     </label>
                 </div>
             </div>
@@ -63,7 +66,7 @@
              data-wizard-step-valid="contractsValidated.value"
              data-wizard-step-on-load="updateOrder">
 
-            <p data-ng-bind-html="tr('cdn_configuration_cacherules_upgrade_step3_question', [choices.count, cdn.serviceName])"></p>
+            <p data-ng-bind-html="'cdn_configuration_cacherules_upgrade_step3_question' | translate:{ t0: choices.count, t1: cdn.serviceName }"></p>
             <dl>
                 <dt data-translate="cdn_configuration_cacherules_upgrade_step3_totalHT"></dt>
                 <dd class="text-danger"

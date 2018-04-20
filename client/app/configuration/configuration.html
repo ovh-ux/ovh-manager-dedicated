@@ -6,7 +6,7 @@
             <span data-translate="welcome_to_your_manager_2"></span>
         </h1>
         <p class="lead"
-           data-ng-bind-html="tr('core_top_guides_header',[guide.all])">
+           data-ng-bind-html="'core_top_guides_header' | translate:{ t0: guide.all }">
         </p>
     </div>
     <div class="row d-md-flex"
@@ -15,7 +15,7 @@
             <div class="oui-tile mb-5"
                  data-ng-repeat="section in guide.sections track by $index">
                 <h2 class="oui-tile__title"
-                    data-ng-bind="tr('core_type_of_guide_' + section)">
+                    data-translate="{{ 'core_type_of_guide_' + section }}">
                 </h2>
                 <div class="oui-tile__body">
                     <div class="oui-tile__item oui-tile__item_button"

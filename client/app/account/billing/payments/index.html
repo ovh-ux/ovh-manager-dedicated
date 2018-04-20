@@ -63,7 +63,7 @@
                         {{ :: 'payments_table_head_type' | translate }}
                         <select class="form-control input-sm"
                                 data-ng-if="!ctrl.loaders.payments"
-                                data-ng-options="tr('common_payment_type_' + paymentType) for paymentType in ctrl.paymentTypes.values track by paymentType"
+                                data-ng-options="('common_payment_type_' + paymentType | translate) for paymentType in ctrl.paymentTypes.values track by paymentType"
                                 data-ng-model="ctrl.paymentTypes.model"
                                 data-ng-change="ctrl.onOrderStateChanged()">
                         </select>

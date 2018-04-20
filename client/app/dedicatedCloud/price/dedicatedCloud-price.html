@@ -3,7 +3,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="resetAction"
-         data-wizard-title="tr('dedicatedCloud_dashboard_change_price_title', [dedicatedCloud.name])"
+         data-wizard-title="'dedicatedCloud_dashboard_change_price_title' | translate:{ t0: dedicatedCloud.name }"
          data-wizard-confirm-button-text="{{ 'global_OK' | translate }}">
 
         <div data-wizard-step>
@@ -53,7 +53,7 @@
                  data-nb-pages="nbPages"
                  data-transform-item="transformItem(item)"
                  data-on-transform-item-done="onTransformItemDone(items)"
-                 data-page-placeholder="{{ tr('pagination_page', [currentPage, nbPages]) }}"
+                 data-page-placeholder="{{ 'pagination_page' | translate:{ t0: currentPage, t1: nbPages } }}"
                  data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
             </div>
             <a target="_blank"

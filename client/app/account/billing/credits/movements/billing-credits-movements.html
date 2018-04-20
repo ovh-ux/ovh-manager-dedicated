@@ -1,5 +1,6 @@
 <header class="page-header" role="banner">
-    <h1 data-ng-bind="tr('billing_credit_balance_movements_title', [$ctrl.balance.balanceName])"></h1>
+    <h1 data-translate="billing_credit_balance_movements_title"
+        data-translate-values="{ t0: $ctrl.balance.balanceName }"></h1>
 </header>
 <div class="tab-content">
     <a class="d-inline-block mb-5"
@@ -80,7 +81,7 @@
              data-transform-item="$ctrl.getMovementDetails(item)"
              data-on-transform-item-notify="$ctrl.pushMovementDetails(item)"
              data-on-transform-item-done="$ctrl.onDetailsDone(items)"
-             data-page-placeholder="{{tr('pagination_page', [$ctrl.currentPage, $ctrl.nbPages])}}"
+             data-page-placeholder="{{ 'pagination_page' | translate:{ t0: $ctrl.currentPage, t1: $ctrl.nbPages } }}"
              data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
         </div>
     </div>

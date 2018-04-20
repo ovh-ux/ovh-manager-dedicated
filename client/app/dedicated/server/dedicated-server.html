@@ -149,7 +149,7 @@
             <div class="alert alert-danger"
                  role="alert"
                  data-ng-if="server.state == 'HACKED' || server.state == 'HACKED_BLOCKED'"
-                 data-ng-bind="tr('server_configuration_state_info_' + server.state)">
+                 data-translate="{{ 'server_configuration_state_info_' + server.state }}">
             </div>
 
             <div class="alert alert-dismissible"
@@ -174,7 +174,7 @@
                     &times;
                 </button>
                 <i class="fa fa-info"></i>
-                <span data-ng-bind-html="tr('housing_support_phone', housingPhoneNumber)"></span>
+                <span data-ng-bind-html="'housing_support_phone' | translate:{ t0: housingPhoneNumber }"></span>
             </div>
 
 

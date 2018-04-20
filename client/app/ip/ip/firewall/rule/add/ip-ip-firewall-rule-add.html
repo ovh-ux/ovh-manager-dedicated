@@ -38,7 +38,7 @@
                                    data-ng-value="action"
                                    data-ng-model="rule.action"
                                    required>
-                            <span data-ng-bind="tr('ip_firewall_rule_'+action)"></span>
+                            <span data-translate="{{ 'ip_firewall_rule_'+action }}"></span>
                         </label>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                             class="form-control"
                             data-ng-model="rule.protocol"
                             data-ng-change="resetOptionField()"
-                            data-ng-options="value as tr('ip_firewall_rule_protocol_'+value) for value in constants.protocols"
+                            data-ng-options="value as ('ip_firewall_rule_protocol_'+value | translate) for value in constants.protocols"
                             required>
                     </select>
                 </div>
@@ -142,7 +142,7 @@
                                    data-ng-value="tcpAction"
                                    id="{{'tcpAction'+key}}"
                                    data-ng-model="rule.tcpOptions.option">
-                            <span data-ng-bind="tr('ip_firewall_rule_flags_'+tcpAction)"></span>
+                            <span data-translate="{{ 'ip_firewall_rule_flags_'+tcpAction }}"></span>
                         </label>
                     </div>
                 </div>
@@ -191,7 +191,7 @@
                     </dd>
 
                     <dt data-ng-show="rule.protocol === 'tcp'" data-translate="ip_firewall_rule_flags"></dt>
-                    <dd data-ng-show="rule.protocol === 'tcp'" data-ng-bind="rule.tcpOptions.option && tr('ip_firewall_rule_flags_'+rule.tcpOptions.option) || ('ip_firewall_rule_flags_NONE' | translate)"></dd>
+                    <dd data-ng-show="rule.protocol === 'tcp'" data-ng-bind="rule.tcpOptions.option && ('ip_firewall_rule_flags_'+rule.tcpOptions.option | translate) || ('ip_firewall_rule_flags_NONE' | translate)"></dd>
 
                 </dl>
             </div>

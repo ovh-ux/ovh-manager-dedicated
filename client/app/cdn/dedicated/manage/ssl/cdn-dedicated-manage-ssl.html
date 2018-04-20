@@ -37,7 +37,7 @@
                 <dd>
                     <span class="label"
                           data-ng-class="getBadgeClass(ssl.status)"
-                          data-ng-bind="tr('cdn_configuration_ssl_state_' + ssl.status.toUpperCase())"></span>
+                          data-ng-bind="'cdn_configuration_ssl_state_' + ssl.status.toUpperCase() | translate"></span>
                     <span class="text-danger ml-3"
                           data-ng-if="taskErrorMessage"
                           data-ng-bind="taskErrorMessage">
@@ -48,7 +48,7 @@
                 <dt data-translate="cdn_configuration_ssl_certificateValidTo"></dt>
                 <dd data-ng-bind="ssl.certificateValidTo | date:'mediumDate'"></dd>
                 <dt data-translate="cdn_configuration_ssl_certificateProvider"></dt>
-                <dd data-ng-bind="tr('cdn_configuration_ssl_provider_' + ssl.certificateProvider)"></dd>
+                <dd data-translate="{{ 'cdn_configuration_ssl_provider_' + ssl.certificateProvider }}"></dd>
             </dl>
         </div>
         <div class="col-sm-3">

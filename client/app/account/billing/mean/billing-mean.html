@@ -131,7 +131,7 @@
                                    data-ng-value="true"
                                    data-ng-change="setAsDefaultPaymentMean(mean, 'paypal')">
                         </td>
-                        <td data-ng-bind=":: tr('paymentType_status_' + mean.state)"></td>
+                        <td data-translate="{{ :: 'paymentType_status_' + mean.state }}"></td>
                         <td data-ng-if=":: isCreditWithThreeDsValidation() && hasMean(paymentsMean.creditCards)"></td>
                         <td class="text-center">
                             <button type="button"
@@ -224,7 +224,7 @@
                                       'label-success': mean.threeDsValidated,
                                       'label-danger': !mean.threeDsValidated
                                   }"
-                                  data-ng-bind=":: tr('mean_table_head_3d_secure_' + mean.threeDsValidated)">
+                                  data-translate=":: ('mean_table_head_3d_secure_' + mean.threeDsValidated) | translate">
                             </span>
                         </td>
                         <td class="text-center">
@@ -407,7 +407,7 @@
                                    data-ng-change="setAsDefaultPaymentMean(mean, 'deferredPaymentAccount')"
                                    data-ng-disabled="mean.state === 'pendingValidation'">
                         </td>
-                        <td data-ng-bind=":: tr('paymentType_status_' + mean.state)"></td>
+                        <td data-ng-bind=":: 'paymentType_status_' + mean.state | translate"></td>
                         <td data-ng-if=":: isCreditWithThreeDsValidation() && hasMean(paymentsMean.creditCards)"></td>
                         <td class="text-center">
                             <button type="button"

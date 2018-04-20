@@ -7,7 +7,10 @@
         <div data-wizard-step
              data-wizard-step-valid="!RemoveGameFirewallRuleCtrl.loading">
             <div data-ng-hide="RemoveGameFirewallRuleCtrl.loading"
-                 data-ng-bind-html="tr('ip_game_mitigation_rule_remove', [RemoveGameFirewallRuleCtrl.datas.rule.protocol, RemoveGameFirewallRuleCtrl.datas.rule.ports.from + (RemoveGameFirewallRuleCtrl.datas.rule.ports.to && RemoveGameFirewallRuleCtrl.datas.rule.ports.to !== RemoveGameFirewallRuleCtrl.datas.rule.ports.from ? ' - ' + RemoveGameFirewallRuleCtrl.datas.rule.ports.to : '')])">
+                 data-ng-bind-html="'ip_game_mitigation_rule_remove' | translate:{
+                    t0: RemoveGameFirewallRuleCtrl.datas.rule.protocol,
+                    t1: RemoveGameFirewallRuleCtrl.datas.rule.ports.from + (RemoveGameFirewallRuleCtrl.datas.rule.ports.to && RemoveGameFirewallRuleCtrl.datas.rule.ports.to !== RemoveGameFirewallRuleCtrl.datas.rule.ports.from ? ' - ' + RemoveGameFirewallRuleCtrl.datas.rule.ports.to : '')
+                }">
             </div>
             <div class="text-center"
                  data-ng-show="RemoveGameFirewallRuleCtrl.loading">

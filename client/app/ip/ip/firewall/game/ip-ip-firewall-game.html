@@ -13,10 +13,10 @@
 
     <div data-ng-hide="IpGameFirewallCtrl.loaders.firewall">
         <p data-ng-show="IpGameFirewallCtrl.datas.firewall.state === IpGameFirewallCtrl.constantes.OK"
-           data-ng-bind-html="tr('ip_game_mitigation_firewall_'+  IpGameFirewallCtrl.datas.firewall.firewallModeEnabled)">
+           data-ng-bind-html="('ip_game_mitigation_firewall_'+ IpGameFirewallCtrl.datas.firewall.firewallModeEnabled | translate)">
         </p>
         <p data-ng-show="IpGameFirewallCtrl.datas.firewall.state && IpGameFirewallCtrl.datas.firewall.state !== IpGameFirewallCtrl.constantes.OK"
-           data-ng-bind-html="tr('ip_game_mitigation_firewall_'+  IpGameFirewallCtrl.datas.firewall.state)">
+           data-ng-bind-html="('ip_game_mitigation_firewall_'+ IpGameFirewallCtrl.datas.firewall.state | translate)">
         </p>
         <p class="text-danger"
            data-ng-hide="IpGameFirewallCtrl.datas.firewall.state"
@@ -99,7 +99,7 @@
                         data-ng-bind="rule.ports.from + (rule.ports.to && rule.ports.to !== rule.ports.from ? ' - ' + rule.ports.to : '')">
                     </td>
                     <td data-ng-if="!rule.errorMessage"
-                        data-ng-bind="tr('ip_game_mitigation_state_' + rule.state)">
+                        data-translate="{{ 'ip_game_mitigation_state_' + rule.state }}">
                     </td>
                     <td data-ng-if="!rule.errorMessage">
                         <button type="button"

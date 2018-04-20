@@ -12,7 +12,7 @@
         <div data-wizard-step
             data-wizard-step-on-load="loadStatisticsScale">
             <div data-ng-if="!stats.noData">
-                <p class="bold blue" data-ng-bind="tr('ip_mitigation_statistics_current_ip', [data.ip.ip])"></p>
+                <p class="bold blue" data-ng-bind="'ip_mitigation_statistics_current_ip' | translate:{ t0: data.ip.ip }"></p>
                 <div>
                     <div data-ng-hide="statisticsScalesAvailable">
                         <div class="loader"></div>
@@ -106,7 +106,7 @@
                     <oui-spinner></oui-spinner>
                 </div>
             </div>
-            <p class="center red" data-ng-if="stats.noData" data-ng-bind="tr('ip_mitigation_statistics_no_data', data.ip.ip)"></p>
+            <p class="center red" data-ng-if="stats.noData" data-ng-bind="'ip_mitigation_statistics_no_data' | translate:{ t0: data.ip.ip }"></p>
         </div>
     </div>
 </div>

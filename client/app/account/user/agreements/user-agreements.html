@@ -38,7 +38,7 @@
                     <tr data-ng-repeat="agreement in toActivate.list.results track by $index">
                         <th scope="row">
                             <a data-ng-href="{{ '#/useraccount/agreements/' + agreement.id + '/details' }}"
-                               data-ng-bind="tr('user_agreements_agreed', [agreement.name])">
+                               data-ng-bind="'user_agreements_agreed' | translate:{ t0: agreement.name }">
                             </a>
                         </th>
                         <td class="text-right">
@@ -63,7 +63,7 @@
                                                 class="btn btn-link"
                                                 data-ng-click="accept(agreement.id)"
                                                 data-translate="user_agreements_accept"
-                                                title="{{ tr('user_agreements_accept_title', agreement.name) }}">
+                                                title="{{ 'user_agreements_accept_title' | translate:{ t0: agreement.name } }}">
                                         </button>
                                     </li>
                                     <li>
@@ -72,7 +72,7 @@
                                            rel="noopener"
                                            data-ng-href="{{agreement.pdfUrl}}"
                                            data-translate="user_agreements_download_pdf"
-                                           title="{{ tr('user_agreements_download_pdf_title', agreement.name) }}">
+                                           title="{{ 'user_agreements_download_pdf_title' | translate:{ t0: agreement.name } }}">
                                         </a>
                                     </li>
                                 </ul>
@@ -144,14 +144,14 @@
                                     'label-success': agreement.state == 'OK',
                                     'label-danger': agreement.state == 'TODO'
                                 }"
-                                data-ng-bind="tr('user_agreements_status_'+agreement.state)"></span>
+                                data-translate="{{ 'user_agreements_status_'+agreement.state }}"></span>
                     </td>
                     <td data-ng-bind="agreement.date | date:'short'"></td>
                     <td>
                         <a target="_blank"
                            rel="noopener"
                            data-ng-href="{{agreement.pdfUrl}}"
-                           title="{{ tr('user_agreements_download_pdf_title', agreement.name) }}">
+                           title="{{ 'user_agreements_download_pdf_title' | translate:{ t0: agreement.name } }}">
                             <span class="fa fa-download"
                                   aria-hidden="true">
                             </span>

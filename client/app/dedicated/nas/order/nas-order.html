@@ -26,7 +26,7 @@
                     <select class="form-control"
                             id="datacenterSelected"
                             name="datacenterSelected"
-                            data-ng-options="datacenter as tr('nas_order_datacenter_' + datacenter) for datacenter in nasOrder.model.nasHAZoneEnumList"
+                            data-ng-options="datacenter as ('nas_order_datacenter_' + datacenter | translate) for datacenter in nasOrder.model.nasHAZoneEnumList"
                             data-ng-model="nasOrder.datacenterSelected"
                             data-ng-change="selectNas() && selectNasha()">
                     </select>
@@ -54,7 +54,7 @@
                                                data-ng-value="$index"
                                                data-ng-model="nasOrder.nashaSelectedIndex"
                                                data-ng-click="selectNasha(nas)" />
-                                        <span data-ng-bind="tr('nas_order_nasha' + nas.model)"></span>
+                                        <span data-translate="{{ 'nas_order_nasha' + nas.model }}"></span>
                                     </label>
                                 </div>
                             </th>
@@ -72,7 +72,7 @@
                                                value="{{ $index }}"
                                                data-ng-model="nasOrder.nasSelectedIndex"
                                                data-ng-click="selectNas(nas)" />
-                                        <span data-ng-bind="tr('nas_order_nas'+ (nas.protocol && '_' + nas.protocol || '') + nas.model)"></span>
+                                        <span data-ng-bind="('nas_order_nas'+ ((nas.protocol && '_' + nas.protocol || '') | translate) + nas.model)"></span>
                                     </label>
                                 </div>
                             </th>

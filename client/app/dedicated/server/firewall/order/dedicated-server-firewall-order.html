@@ -26,7 +26,7 @@
                                value="{{ option }}"
                                data-ng-model="model.wantedAsText" />
                     </td>
-                    <td data-ng-bind="tr('server_configuration_firewall_asa_' + option.model)"></td>
+                    <td data-translate="{{ 'server_configuration_firewall_asa_' + option.model }}"></td>
                     <td>
                         <strong class="text-danger"
                                 data-ng-bind="option.unitaryPrice + ' ' + ('server_configuration_firewall_asa_order_step1_bymonth' | translate)">
@@ -52,7 +52,7 @@
                 <dt data-translate="server_configuration_firewall_asa_order_step2_info2"></dt>
                 <dd data-ng-bind="server.expiration|date:'mediumDate'"></dd>
                 <dt data-translate="server_configuration_firewall_asa_order_step2_option"></dt>
-                <dd data-ng-bind="tr('server_configuration_firewall_asa_' + model.wanted.model)"></dd>
+                <dd data-translate="{{ 'server_configuration_firewall_asa_' + model.wanted.model }}"></dd>
                 <dt data-translate="server_configuration_firewall_asa_order_step2_totalHT"></dt>
                 <dd class="font-weight-bold text-danger"
                     data-ng-bind="model.wanted.withoutTax">

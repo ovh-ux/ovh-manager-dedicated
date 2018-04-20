@@ -20,7 +20,7 @@
                   data-translate="dedicatedCloud_OPERATIONS_state_canceled">
             </span>
             <span data-ng-switch-default
-                  data-ng-bind="tr('dedicatedCloud_OPERATIONS_state_' + operation.state) + ' (' + operation.progress + '%)'">
+                  data-ng-bind="('dedicatedCloud_OPERATIONS_state_' + operation.state | translate) + ' (' + operation.progress + '%)'">
             </span>
         </span>
     </div>

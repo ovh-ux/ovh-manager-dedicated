@@ -37,7 +37,8 @@
         <div class="alert alert-danger"
              role="alert"
              data-ng-if="!loading.infos && selectedIplb.isExpired"
-             data-ng-bind="tr('iplb_expired', selectedIplb.expiration)">
+             data-translate="iplb_expired"
+             data-translate-values="{ t0: selectedIplb.expiration }">
         </div>
 
         <div data-ng-if="!loading.infos && !selectedIplb.isExpired && iplbList.length > 0">
@@ -277,7 +278,7 @@
                  data-paginated-items="selectedIplb.backendDetails"
                  data-transform-item="transformItemBackend(item)"
                  data-on-transform-item-done="onTransformItemBackendDone(items)"
-                 data-page-placeholder="{{tr('pagination_page', [currentPage, nbPages])}}"
+                 data-page-placeholder="{{'pagination_page' | translate:{ t0: currentPage, t1: nbPages }}}"
                  data-items-per-page="itemsPerPage"
                  data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
             </div>
@@ -343,7 +344,7 @@
                  data-paginated-items="selectedIplb.portsRedirectionDetails"
                  data-transform-item="transformItemPortsRedirection(item)"
                  data-on-transform-item-done="onTransformItemPortsRedirectionDone(items)"
-                 data-page-placeholder="{{tr('pagination_page', [currentPage, nbPages])}}"
+                 data-page-placeholder="{{'pagination_page' | translate:{ t0: currentPage, t1: nbPages }}}"
                  data-items-per-page="itemsPerPage2"
                  data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
             </div>

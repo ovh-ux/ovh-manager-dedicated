@@ -67,7 +67,7 @@
             </div>
 
             <div data-ng-if="!loadTokenLoading"
-                 data-ng-bind-html="tr('server_configuration_secondarydns_add_step2', [token.fieldType, entry.domain, token.subDomain, token.fieldValue])">
+                 data-ng-bind-html="'server_configuration_secondarydns_add_step2' | translate: { t0: token.fieldType, t1: entry.domain, t2: token.subDomain, t3: token.fieldValue }">
             </div>
 
             <div data-ovh-alert="addTokenAlert"></div>

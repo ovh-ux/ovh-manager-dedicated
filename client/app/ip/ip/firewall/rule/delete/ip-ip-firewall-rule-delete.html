@@ -8,7 +8,7 @@
         <div data-wizard-step
              data-wizard-step-valid="!loading">
 
-            <p data-ng-show="!loading" data-ng-bind="tr('ip_firewall_remove_rule_confirmation', [data.rule.sequence])">
+            <p data-ng-show="!loading" data-ng-bind="'ip_firewall_remove_rule_confirmation' | translate:{ t0: data.rule.sequence }">
             </p>
 
             <div class="text-center"

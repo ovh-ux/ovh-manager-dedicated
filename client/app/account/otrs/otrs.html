@@ -240,10 +240,10 @@
                     </th>
                     <td data-ng-bind="::ticket.serviceDescription || ticket.serviceName || i18n.otrs_service_other_services"></td>
                     <td data-ng-bind="::ticket.subject"></td>
-                    <td data-ng-bind="tr('otrs_table_ticket_lastMessageFrom_' + ticket.lastMessageFrom)"></td>
+                    <td data-translate="{{ 'otrs_table_ticket_lastMessageFrom_' + ticket.lastMessageFrom }}"></td>
                     <td data-ng-bind="ticket.creationDate | date: 'short'"></td>
                     <td data-ng-bind="ticket.updateDate | date: 'short'"></td>
-                    <td data-ng-bind="tr('otrs_table_ticket_state_' + ticket.state)"
+                    <td data-translate="{{ 'otrs_table_ticket_state_' + ticket.state }}"
                         data-ng-class="{
                             'text-muted': ticket.state === 'closed'
                         }">
@@ -268,7 +268,7 @@
          data-nb-pages="nbPages"
          data-transform-item="transformItem(item)"
          data-on-transform-item-done="onTransformItemDone(items)"
-         data-page-placeholder="{{ tr('pagination_page', [currentPage, nbPages]) }}"
+         data-page-placeholder="{{ 'pagination_page' | translate:{ t0: currentPage, t1: nbPages } }}"
          data-refresh="refreshTable"
          data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
     </div>

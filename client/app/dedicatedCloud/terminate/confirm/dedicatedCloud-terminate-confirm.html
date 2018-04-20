@@ -20,7 +20,7 @@
                            name="reasons"
                            value="{{ reason }}"
                            data-ng-model="form.reason">
-                    <span data-ng-bind="tr('dedicatedCloud_confirm_close_reason_' + reason.toLowerCase())"></span>
+                    <span data-translate="{{ 'dedicatedCloud_confirm_close_reason_' + reason.toLowerCase() }}"></span>
                 </label>
             </div>
             <p class="text-info">

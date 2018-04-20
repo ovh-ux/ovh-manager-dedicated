@@ -22,19 +22,19 @@
         <oui-column data-title=":: 'dedicatedCloud_DATACENTERS_CPU' | translate">
             <span data-ng-if="$row.cpuSize === null || $row.cpuSize.value === null || $row.cpuSize.unit === null">-</span>
             <span data-ng-if="$row.cpuSize !== null && $row.cpuSize.value !== null && $row.cpuSize.unit !== null"
-                  data-ng-bind="$row.cpuSize.value + ' ' + tr('unit_frequency_' + $row.cpuSize.unit)">
+                  data-ng-bind="$row.cpuSize.value + ' ' + ('unit_frequency_' + $row.cpuSize.unit | translate)">
             </span>
         </oui-column>
         <oui-column data-title=":: 'dedicatedCloud_DATACENTERS_RAM' | translate">
                 <span data-ng-if="$row.ramSize === null || $row.ramSize.value === null || $row.ramSize.unit === null">-</span>
                 <span data-ng-if="$row.ramSize !== null && $row.ramSize.value !== null && $row.ramSize.unit !== null"
-                      data-ng-bind="$row.ramSize.value + ' ' + tr('unit_size_' + $row.ramSize.unit)">
+                      data-ng-bind="$row.ramSize.value + ' ' + ('unit_size_' + $row.ramSize.unit | translate)">
                 </span>
         </oui-column>
         <oui-column data-title=":: 'dedicatedCloud_DATACENTERS_DISK' | translate">
                 <span data-ng-if="$row.filerSize === null || $row.filerSize.value === null || $row.filerSize.unit === null">-</span>
                 <span data-ng-if="$row.filerSize !== null && $row.filerSize.value !== null && $row.filerSize.unit !== null"
-                      data-ng-bind="$row.filerSize.value + ' ' + tr('unit_size_' + $row.filerSize.unit)">
+                      data-ng-bind="$row.filerSize.value + ' ' + ('unit_size_' + $row.filerSize.unit | translate)">
                 </span>
         </oui-column>
         <oui-action-menu data-align="end"

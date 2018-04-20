@@ -26,7 +26,7 @@
                 data-translate="dedicatedCloud_tab_veeam_disable_title">
             </h2>
 
-            <p data-ng-bind-html="tr('dedicatedCloud_tab_veeam_disable_message', $ctrl.datacenter.name)"></p>
+            <p data-ng-bind-html="'dedicatedCloud_tab_veeam_disable_message' | translate:{ t0: $ctrl.datacenter.name }"></p>
             <p data-ng-bind-html="{{ 'dedicatedCloud_tab_veeam_disable_message2' | translate }}"></p>
             <strong data-translate="dedicatedCloud_tab_veeam_disable_message_alert"></strong>
         </div>

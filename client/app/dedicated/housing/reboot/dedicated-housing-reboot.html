@@ -14,7 +14,7 @@
             </div>
 
             <p data-ng-if="!loading"
-               data-ng-bind="tr('housing_configuration_reboot_step2_question', [housing.name])">
+               data-ng-bind="'housing_configuration_reboot_step2_question' | translate:{ t0: housing.name }">
             </p>
 
         </div>

@@ -61,7 +61,7 @@
                 <td class="wordbreak">
                     <ul class="list-unstyled mb-0">
                         <li data-ng-repeat="type in ::task.contactTypes track by $index"
-                            data-ng-bind="tr('useraccount_contacts_'+ type) || type">
+                            data-ng-bind="('useraccount_contacts_'+ type | translate)  || type">
                         </li>
                     </ul>
                 </td>
@@ -88,12 +88,12 @@
                     <div data-ng-switch-when="validatingByCustomers">
                         <div data-ng-if="task.hasPendingChange">
                             <span class="label label-info"
-                                  data-ng-bind-html="tr('useraccount_contacts_task_waiting_for_other', [ctrlContactRequests.user.nichandle ===  task.toAccount ? task.fromAccount : task.toAccount])">
+                                  data-ng-bind-html="'useraccount_contacts_task_waiting_for_other' | translate:{ t0: ctrlContactRequests.user.nichandle ===  task.toAccount ? task.fromAccount : task.toAccount }">
                             </span>
                         </div>
                         <div data-ng-if="!task.hasPendingChange">
                             <span class="fa fa-hourglass-start text-warning"
-                               data-simplepopover="{{::tr('useraccount_contacts_task_info_security', [ctrlContactRequests.user.email])}}"
+                               data-simplepopover="{{::'useraccount_contacts_task_info_security' | translate:{ t0: ctrlContactRequests.user.email }}}"
                                data-simplepopover-title="{{ 'useraccount_contacts_task_waiting_for_me' | translate }}"
                                data-simplepopover-placement="top"
                                data-simplepopover-single="true"
@@ -103,7 +103,7 @@
                     </div>
                     <div data-ng-switch-default>
                         <span class="label label-default"
-                              data-ng-bind="tr('useraccount_contacts_task_state_' + task.state)">
+                              data-translate="{{ 'useraccount_contacts_task_state_' + task.state }}">
                         </span>
                         <small data-ng-bind="::task.dateDone | date:'short'"></small>
                     </div>
@@ -169,7 +169,7 @@
          data-nb-pages="nbPages"
          data-transform-item="ctrlContactRequests.transformItem(item)"
          data-on-transform-item-done="ctrlContactRequests.onTransformItemDone(items)"
-         data-page-placeholder="{{tr('pagination_page', [currentPage, nbPages])}}"
+         data-page-placeholder="{{'pagination_page' | translate:{ t0: currentPage, t1: nbPages }}}"
          data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
     </div>
 

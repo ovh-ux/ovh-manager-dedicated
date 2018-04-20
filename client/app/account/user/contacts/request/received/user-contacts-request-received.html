@@ -51,7 +51,7 @@
                         <td class="wordbreak">
                             <ul>
                                 <li data-ng-repeat="type in ::task.contactTypes"
-                                    data-ng-bind="tr('useraccount_contacts_'+ type) || type">
+                                    data-ng-bind="('useraccount_contacts_'+ type | translate)  || type">
 
                                 </li>
                             </ul>
@@ -59,7 +59,7 @@
                         <td class="center" data-ng-bind="::task.dateRequest | date: 'short'"></td>
                         <td class="center" data-ng-bind="::task.dateDone | date: 'short'"></td>
                         <td class="center">
-                             <span class="label" data-ng-bind="tr('useraccount_contacts_task_state_' + task.state)"
+                             <span class="label" data-translate="{{ 'useraccount_contacts_task_state_' + task.state }}"
                                   data-ng-class="{'label-important': task.state === 'refused',
                                                  'label-success': task.state === 'done',
                                                  'label-warning': task.state === 'aborted',
@@ -99,7 +99,7 @@
                  data-nb-pages="nbPages"
                  data-transform-item="ctrlContactRequestsReceived.transformItem(item)"
                  data-on-transform-item-done="ctrlContactRequestsReceived.onTransformItemDone(items)"
-                 data-page-placeholder="{{tr('pagination_page', [currentPage, nbPages])}}"
+                 data-page-placeholder="{{'pagination_page' | translate:{ t0: currentPage, t1: nbPages }}}"
                  data-item-per-page-placeholder="{{ 'pagination_display' | translate }}"></div>
         </div>
     </div>

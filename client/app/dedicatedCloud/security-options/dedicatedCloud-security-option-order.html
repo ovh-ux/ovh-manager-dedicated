@@ -3,7 +3,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="subscribeOption"
-         data-wizard-title="tr('dedicatedCloud_options_security_modal_title_enabling_' + optionName)"
+         data-wizard-title="'dedicatedCloud_options_security_modal_title_enabling_' + optionName | translate"
          data-wizard-confirm-button-text="{{ 'wizard_order' | translate }}">
 
         <!-- STEP 1 -->
@@ -21,7 +21,7 @@
                         </span>
                         <span class="checklist-item__value"
                               data-ng-hide="loaders.checks.nsx"
-                              data-ng-bind="tr(getItemStatusText('nsx'))">
+                              data-ng-bind="getItemStatusText('nsx') | translate">
                         </span>
                     </li>
                     <li class="checklist__item"
@@ -31,7 +31,7 @@
                         </span>
                         <span class="checklist-item__value"
                               data-ng-hide="loaders.checks.vrops"
-                              data-ng-bind="tr(getItemStatusText('vrops'))">
+                              data-ng-bind="getItemStatusText('vrops') | translate">
                         </span>
                     </li>
                 </ul>
@@ -176,7 +176,8 @@
                             <td data-ng-bind="::p.datacenter"></td>
                             <td class="text-right">
                                 <span data-ng-if="p.billingType === 'hourly'"
-                                      data-ng-bind="tr('dedicatedCloud_options_order_price_hourly', p.current)">
+                                      data-translate="dedicatedCloud_options_order_price_hourly"
+                                      data-translate-values="{ t0: p.current }">
                                 </span>
                                 <span data-ng-if="p.billingType !== 'hourly' && p.billingType !== 'freeSpare'"
                                       data-ng-bind="p.current">
@@ -187,7 +188,8 @@
                             </td>
                             <td class="text-right">
                                 <span data-ng-if="p.billingType === 'hourly'"
-                                      data-ng-bind="tr('dedicatedCloud_options_order_price_hourly', p.next)"></span>
+                                      data-translate="dedicatedCloud_options_order_price_hourly"
+                                      data-translate-values="{ t0: p.next }"></span>
                                 <span data-ng-if="p.billingType !== 'hourly' && p.billingType !== 'freeSpare'"
                                       data-ng-bind="p.next">
                                 </span>

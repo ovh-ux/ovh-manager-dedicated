@@ -63,7 +63,7 @@
                                 name="serviceSelect"
                                 class="form-control"
                                 data-ng-model="migrate.service"
-                                data-ng-options="service as service.serviceName group by tr('ip_servicetype_' + service.serviceType) for service in servicesList"
+                                data-ng-options="service as service.serviceName group by ('ip_servicetype_' + service.serviceType | translate) for service in servicesList"
                                 data-ng-disabled="migrate.service && loading.checkServiceMigrateable"
                                 data-ng-change="checkServiceMigrateable()">
                             <option value=""
@@ -84,14 +84,14 @@
                 <div class="alert alert-danger"
                      role="alert"
                      data-ng-show="migrateableIpError && !loading.checkServiceMigrateable && i18n['ip_migration_step2_error_' + migrateableIpError]">
-                    <p data-ng-bind="tr('ip_migration_step2_error_' + migrateableIpError, [migrate.ip, migrate.service.serviceName])"></p>
+                    <p data-ng-bind="'ip_migration_step2_error_' + migrateableIpError | translate:{ t0: migrate.ip, t1: migrate.service.serviceName }"></p>
                 </div>
 
                 <!-- SUCCESS -->
                 <div class="alert alert-success"
                      role="alert"
                      data-ng-hide="migrateableIpError || loading.checkServiceMigrateable || migrate.service == null">
-                    <p data-ng-bind="tr('ip_migration_step2_success', [migrate.ip, migrate.service.serviceName])"></p>
+                    <p data-ng-bind="'ip_migration_step2_success' | translate:{ t0: migrate.ip, t1: migrate.service.serviceName }"></p>
                 </div>
             </div>
         </div>

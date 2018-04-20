@@ -66,10 +66,12 @@
                           data-translate="nas_partitions_size_error_required">
                     </span>
                     <span data-ng-message="min"
-                          data-ng-bind="tr('nas_partitions_size_error_min_max', [newPartition.minSizeP, currentNasPartition.zpoolSize])">
+                          data-translate="nas_partitions_size_error_min_max"
+                          data-translate-values="{ t0: newPartition.minSizeP, t1: currentNasPartition.zpoolSize }">
                     </span>
                     <span data-ng-message="max"
-                          data-ng-bind="tr('nas_partitions_size_error_min_max', [newPartition.minSizeP, currentNasPartition.zpoolSize])">
+                          data-translate="nas_partitions_size_error_min_max"
+                          data-translate-values="{ t0: newPartition.minSizeP, t1: currentNasPartition.zpoolSize }">
                     </span>
                 </span>
             </div> <!-- END OF SIZEP -->
@@ -87,7 +89,7 @@
                         id="protocol"
                         name="protocol"
                         required
-                        data-ng-options="protocol as tr('nas_partitions_protocol_' + protocol) for protocol in protocols"
+                        data-ng-options="protocol as ('nas_partitions_protocol_' + protocol | translate) for protocol in protocols"
                         data-ng-model="newPartition.protocol">
                 </select>
                 <span class="help-block"
@@ -118,7 +120,7 @@
                 <dt data-translate="nas_partitions_size_in_Gb"></dt>
                 <dd data-ng-bind="newPartition.sizeP"/></dd>
                 <dt data-translate="nas_partitions_protocol"></dt>
-                <dd data-ng-bind="tr('nas_partitions_protocol_' + newPartition.protocol)"/></dd>
+                <dd data-translate="{{ 'nas_partitions_protocol_' + newPartition.protocol }}"/></dd>
             </dl>
 
         </div>

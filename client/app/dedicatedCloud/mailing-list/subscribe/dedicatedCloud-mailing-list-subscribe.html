@@ -26,7 +26,8 @@
                     data-translate="dedicatedCloud_subscribe_mailing">
                 </h2>
 
-                <p data-ng-bind="tr('dedicatedCloud_subscribe_mailing_disabled', $ctrl.pccMl)"></p>
+                <p data-translate="dedicatedCloud_subscribe_mailing_disabled"
+                    data-translate-values="{ t0: $ctrl.pccMl }"></p>
             </div>
         </div>
 
@@ -58,7 +59,8 @@
                 <div class="form-group">
                     <label for="email"
                            class="control-label"
-                           data-ng-bind="tr('dedicatedCloud_subscribe_mailing_step1', 'pcc@ml.ovh.net')">
+                           data-translate="dedicatedCloud_subscribe_mailing_step1"
+                           data-translate-values="{ t0: 'pcc@ml.ovh.net' }">
                     </label>
                     <input type="email"
                            class="form-control wizard-container"
@@ -79,7 +81,8 @@
                 <oui-spinner></oui-spinner>
             </div>
             <p data-ng-if="!$ctrl.loading.subscribe"
-               data-ng-bind="tr('dedicatedCloud_subscribe_mailing_step2', [$ctrl.model.email, 'pcc@ml.ovh.net'])">
+               data-translate="dedicatedCloud_subscribe_mailing_step2"
+               data-translate-values="{ t0: $ctrl.model.email, t1: 'pcc@ml.ovh.net' }">
             </p>
 
         </div>

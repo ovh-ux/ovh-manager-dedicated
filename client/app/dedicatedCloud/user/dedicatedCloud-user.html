@@ -152,10 +152,10 @@
                         </span>
                         <input type="text"
                                class="form-control"
-                               placeholder="{{ tr('dedicatedCloud_USER_phone_example', phoneExample) }}"
+                               placeholder="{{ 'dedicatedCloud_USER_phone_example' | translate:{ t0: phoneExample } }}"
                                data-ng-show="user === userCurrentEditBack"
                                data-ng-model="userCurrentEdit.phoneNumber"
-                               data-uib-tooltip="{{ tr('dedicatedCloud_USER_phone_hint', phoneExample) }}"
+                               data-uib-tooltip="{{ 'dedicatedCloud_USER_phone_hint' | translate:{ t0: phoneExample } }}"
                                data-tooltip-placement="top" />
                     </td>
                     <td class="text-center">
@@ -239,7 +239,7 @@
                                    data-translate="dedicatedCloud_USER_state_ERROR"></span>
                             <span class="label"
                                   data-ng-switch-default
-                                  data-ng-bind="tr('dedicatedCloud_USER_state_' + user.state)">
+                                  data-translate="{{ 'dedicatedCloud_USER_state_' + user.state }}">
                             </span>
                         </span>
                         <span data-ng-if="dedicatedCloud.solution === 'SYSTEMCENTER' && user.name === 'infraadmin'"
@@ -254,7 +254,7 @@
                             </span>
                             <span class="label"
                                   data-ng-switch-default
-                                  data-ng-bind="tr('dedicatedCloud_USER_state_' + user.state)">
+                                  data-translate="{{ 'dedicatedCloud_USER_state_' + user.state }}">
                             </span>
                         </span>
                     </td>
@@ -366,7 +366,7 @@
          data-items-per-page="itemsPerPage"
          data-transform-item="transformItem(item)"
          data-on-transform-item-done="onTransformItemDone(items)"
-         data-page-placeholder="{{ tr('pagination_page', [currentPage, nbPages]) }}"
+         data-page-placeholder="{{ 'pagination_page' | translate:{ t0: currentPage, t1: nbPages } }}"
          data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
     </div>
 </div>

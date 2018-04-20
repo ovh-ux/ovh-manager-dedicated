@@ -63,10 +63,10 @@
                         </th>
                         <td data-ng-bind="datastore.profile"></td>
                         <td data-ng-bind="datastore.fullProfile"></td>
-                        <td data-ng-bind="datastore.size.value + ' ' + tr('unit_size_' + datastore.size.unit)"></td>
+                        <td data-ng-bind="datastore.size.value + ' ' + ('unit_size_' + datastore.size.unit | translate)"></td>
                         <td>
                             <span class="d-block"
-                                  data-ng-bind="tr('dedicatedCloud_tab_datastores_billing_' + datastore.billing)">
+                                  data-translate="{{ 'dedicatedCloud_tab_datastores_billing_' + datastore.billing }}">
                             </span>
                             <button type="button"
                                     class="btn btn-link p-0"
@@ -79,19 +79,19 @@
                                     data-translate="dedicatedCloud_updateResource_toMonthly">
                             </button>
                         </td>
-                        <td data-ng-bind="tr('dedicatedCloud_tab_datastores_status_' + datastore.status)"></td>
+                        <td data-translate="{{ 'dedicatedCloud_tab_datastores_status_' + datastore.status }}"></td>
                         <td>
                             <span data-ng-if="datastore.billing === 'HOURLY' && isNan(datastore.consumption)"
                                   data-translate="dedicatedCloud_tab_datastores_hourly_consumption_na">
                             </span>
                             <span data-ng-if="datastore.billing === 'HOURLY' && datastore.consumption <= 1"
                                   data-translate="dedicatedCloud_tab_datastores_hourly_consumption_1"
-                                  data-uib-tooltip="{{ tr('dedicatedCloud_tab_host_hourly_usage_update', [(datastore.consumptionLastUpdate|date:'short')]) }}"
+                                  data-uib-tooltip="{{ 'dedicatedCloud_tab_host_hourly_usage_update' | translate:{ t0: datastore.consumptionLastUpdate|date:'short' } }}"
                                   data-tooltip-placement="top">
                             </span>
                             <span data-ng-if="datastore.billing === 'HOURLY' && datastore.consumption > 1"
-                                  data-ng-bind="tr('dedicatedCloud_tab_datastores_hourly_consumption_other', [datastore.consumption])"
-                                  data-uib-tooltip="{{ tr('dedicatedCloud_tab_host_hourly_usage_update', [(datastore.consumptionLastUpdate|date:'short')]) }}"
+                                  data-ng-bind="'dedicatedCloud_tab_datastores_hourly_consumption_other' | translate:{ t0: datastore.consumption }"
+                                  data-uib-tooltip="{{ 'dedicatedCloud_tab_host_hourly_usage_update' | translate:{ t0: datastore.consumptionLastUpdate|date:'short' } }}"
                                   data-tooltip-placement="top">
                             </span>
                         </td>

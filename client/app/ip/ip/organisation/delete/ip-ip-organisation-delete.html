@@ -13,7 +13,7 @@
             </div>
             <p data-ng-hide="load.loading">
                 <strong class="text-danger"
-                        data-ng-bind="tr('ip_organisation_delete_info', currentActionData)">
+                        data-ng-bind="'ip_organisation_delete_info' | translate:{ t0: currentActionData })">
                 </strong>
             </p>
         </div>

@@ -46,7 +46,7 @@
                                         <strong class="d-block"
                                                 data-translate="cdn_configuration_quota">
                                         </strong>
-                                        <span data-ng-bind="$ctrl.cdn.quota.value + ' ' + tr('unit_size_' + $ctrl.cdn.quota.unit)">
+                                        <span data-ng-bind="$ctrl.cdn.quota.value + ' ' + ('unit_size_' + $ctrl.cdn.quota.unit | translate)">
                                         </span>
                                     </div>
                                 </div>
@@ -124,7 +124,8 @@
                                 <div class="d-flex w-100">
                                     <div>
                                         <img src="images/cdn/icn_server.png" alt="" />
-                                        <span data-ng-bind="tr('cdn_configuration_backend', [$ctrl.cdn.backends])"></span>
+                                        <span data-translate="cdn_configuration_backend"
+                                              data-translate-values="{ t0: $ctrl.cdn.backends }"></span>
                                     </div>
                                 </div>
                             </div>

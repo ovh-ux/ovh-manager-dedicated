@@ -16,7 +16,11 @@
             <span data-ng-bind-html="message"></span>
         </div>
         <p data-ng-if="!fidelityAccountLoading && fidelityAccount"
-           data-ng-bind="tr('fidelity_balance_info', [getLastUpdate('mediumDate'), fidelityAccount.balance])">
+           data-translate="fidelity_balance_info"
+           data-translate-values="{
+               t0: getLastUpdate('mediumDate'),
+               t1: fidelityAccount.balance
+           }">
         </p>
         <p class="text-center"
            data-ng-if="!fidelityAccountLoading && !fidelityAccount"
@@ -121,7 +125,7 @@
              data-on-transform-item-get-promise="getPromise(promise)"
              data-on-transform-item-notify="onTransformItemNotify(item)"
              data-on-transform-item-done="onTransformItemDone(items)"
-             data-page-placeholder="{{tr('pagination_page', [currentPage, nbPages])}}"
+             data-page-placeholder="{{ 'pagination_page' | translate:{ t0: currentPage, t1: nbPages } }}"
              data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
         </div>
 

@@ -28,7 +28,7 @@
                         <strong class="d-block"
                                 data-translate="nas_order_nas_datacenter">
                         </strong>
-                        <span data-ng-bind=" tr('nas_order_datacenter_' + choice.datacenter)"></span>
+                        <span data-ng-bind="'nas_order_datacenter_' + choice.datacenter | translate"></span>
                     </li>
                     <li data-ng-repeat="detail in bc.model.details track by $index">
                         <strong class="d-block"

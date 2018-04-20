@@ -23,7 +23,7 @@
                     <select class="form-control"
                             id="fileType"
                             name="fileType"
-                            data-ng-options="type as tr('cdn_domain_configuration_cacherule_create_filetype_' + type) for type in infos.fileTypes"
+                            data-ng-options="type as ('cdn_domain_configuration_cacherule_create_filetype_' + type | translate) for type in infos.fileTypes"
                             data-ng-model="entry.fileType">
                         <option value=""
                                 disabled
@@ -55,7 +55,7 @@
                                    name="cachetype"
                                    value="{{ cachetype }}"
                                    data-ng-model="entry.cacheType" />
-                            <span data-ng-bind="tr('cdn_domain_configuration_cacherule_create_cachetype_' + cachetype)"></span>
+                            <span data-translate="{{ 'cdn_domain_configuration_cacherule_create_cachetype_' + cachetype }}"></span>
                         </label>
                     </di>
                 </div>
@@ -82,7 +82,7 @@
 
             <div class="text-danger"
                  data-ng-if="entry.fileType"
-                 data-ng-bind="tr('cdn_domain_configuration_cacherule_create_step1_information_' + entry.fileType)">
+                 data-translate="{{ 'cdn_domain_configuration_cacherule_create_step1_information_' + entry.fileType }}">
             </div>
 
         </div>
@@ -92,11 +92,11 @@
             <p data-translate="cdn_domain_configuration_cacherule_create_step2_question"></p>
             <dl>
                 <dt data-translate="cdn_domain_configuration_cacherule_create_filetype"></dt>
-                <dd data-ng-bind="tr('cdn_domain_configuration_cacherule_create_filetype_' + entry.fileType)"></dd>
+                <dd data-translate="{{ 'cdn_domain_configuration_cacherule_create_filetype_' + entry.fileType }}"></dd>
                 <dt data-translate="cdn_domain_configuration_cacherule_create_filematch"></dt>
                 <dd data-ng-bind="entry.fileMatch"></dd>
                 <dt data-translate="cdn_domain_configuration_cacherule_create_cachetype"></dt>
-                <dd data-ng-bind="tr('cdn_domain_configuration_cacherule_create_cachetype_' + entry.cacheType)"></dd>
+                <dd data-translate="{{ 'cdn_domain_configuration_cacherule_create_cachetype_' + entry.cacheType }}"></dd>
                 <dt data-translate="cdn_domain_configuration_cacherule_create_ttl"
                     data-ng-if="entry.cacheType !== 'NO_CACHE'">
                 </dt>

@@ -25,7 +25,7 @@
         <select id="countrySelect"
                 name="countrySelect"
                 data-ng-model="model.params.country"
-                data-ng-options="c as tr('country_'+c.toUpperCase()) for c in orderableIp.countries"
+                data-ng-options="c as ('country_'+c.toUpperCase() | translate) for c in orderableIp.countries"
                 data-ng-required="true">
             <option value=""
                     data-ng-disabled="true"

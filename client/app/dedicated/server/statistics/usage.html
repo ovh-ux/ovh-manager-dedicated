@@ -11,7 +11,7 @@
                         <select class="form-control"
                                 id="info"
                                 name="selectRtmOption"
-                                data-ng-options="tr('server_tab_stats_rtm_options_label_' + option.label) for option in optionsRtm"
+                                data-ng-options="('server_tab_stats_rtm_options_label_' + option.label | translate) for option in optionsRtm"
                                 data-ng-model="rtmOptions.value"
                                 data-ng-change="changeRtmOptions()">
                         </select>
@@ -25,7 +25,7 @@
                         <select class="form-control"
                                 id="period"
                                 name="period"
-                                data-ng-options="tr('server_tab_stats_rtm_charts_period_' + period) for period in periods"
+                                data-ng-options="('server_tab_stats_rtm_charts_period_' + period | translate) for period in periods"
                                 data-ng-model="selectedPeriod.value"
                                 data-ng-change="changePeriod()">
                         </select>

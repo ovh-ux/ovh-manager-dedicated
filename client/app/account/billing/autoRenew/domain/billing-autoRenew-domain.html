@@ -1,6 +1,6 @@
 <td><!-- no checkbox on subproduct --></td>
 
-<td data-ng-bind-html="tr('autorenew_service_type_'+ service.subProducts.domain.serviceType)"></td>
+<td data-translate="{{ 'autorenew_service_type_'+ service.subProducts.domain.serviceType }}"></td>
 
 <td>
     <span data-ng-bind="::service.subProducts.domain.serviceId" data-ng-hide="service.subProducts.domain.serviceType === 'EXCHANGE'"></span>

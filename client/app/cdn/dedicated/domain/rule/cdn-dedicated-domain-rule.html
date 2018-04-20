@@ -48,13 +48,13 @@
                 <oui-datagrid data-ng-init="loadCacheRules()"
                               data-rows="cacheRules.list.results">
                     <oui-column data-title="{{ 'cdn_cacherule_table_header_filetype' | translate }}">
-                        <span data-ng-bind="tr('cdn_cacherule_'+ $row.fileType)"></span>
+                        <span data-translate="{{ 'cdn_cacherule_'+ $row.fileType }}"></span>
                     </oui-column>
                     <oui-column data-title="{{ 'cdn_cacherule_table_header_rule' | translate }}"
                                 data-property="fileMatch">
                     </oui-column>
                     <oui-column data-title="{{ 'cdn_cacherule_table_header_cachetype' | translate }}">
-                        <span data-ng-bind="tr('cdn_cacherule_'+ $row.cacheType)"></span>
+                        <span data-translate="{{ 'cdn_cacherule_'+ $row.cacheType }}"></span>
                     </oui-column>
                     <oui-column data-title="{{ 'cdn_cacherule_table_header_ttl' | translate }}">
                         <span data-ng-bind="$row.cacheType === 'FORCE_CACHE' ? $row.ttl : '-'"></span>
@@ -65,7 +65,7 @@
                                   'label-success': $row.status === 'ON',
                                   'label-info': $row.status === 'UPDATING' || $row.status === 'CREATING'
                               }"
-                              data-ng-bind="tr('cdn_cacherule_status_' + $row.status)">
+                              data-translate="{{ 'cdn_cacherule_status_' + $row.status }}">
                         </span>
                     </oui-column>
                     <oui-action-menu data-align="end"

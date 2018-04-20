@@ -6,7 +6,7 @@
          data-wizard-title="{{ 'server_configuration_profesionnal_use_order_title' | translate }}">
 
         <div data-wizard-step>
-            <p data-ng-bind-html="tr('server_configuration_profesionnal_use_order_step1', model.nameServer)"></p>
+            <p data-ng-bind-html="'server_configuration_profesionnal_use_order_step1' | translate:{ t0: model.nameServer }"></p>
         </div>
 
         <!-- Step 2: Durations -->

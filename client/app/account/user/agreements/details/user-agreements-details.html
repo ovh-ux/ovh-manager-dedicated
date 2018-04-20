@@ -55,7 +55,7 @@
 
         <div data-ng-if="ctrl.isCGVContract && ctrl.isIndividual">
             <h2 data-translate="user_agreement_details_subtitle3"></h2>
-            <p  data-ng-bind-html="tr('user_agreement_details_paragraph3', '#/ticket')"></p>
+            <p  data-ng-bind-html="'user_agreement_details_paragraph3' | translate:{ t0: '#/ticket' }"></p>
         </div>
 
         <div data-ng-if="!ctrl.loading">
@@ -66,7 +66,7 @@
                             <input type="checkbox"
                                    data-ng-model="ctrl.confirmed"
                                    data-ng-disabled="ctrl.alreadyAccepted">
-                            <span data-ng-bind="tr('user_agreement_details_confirmation_text', [ctrl.contract.name])"></span>
+                            <span data-ng-bind="'user_agreement_details_confirmation_text' | translate:{ t0: ctrl.contract.name }"></span>
                         </label>
                     </div>
                 </div>

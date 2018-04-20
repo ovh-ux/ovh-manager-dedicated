@@ -17,7 +17,7 @@
 
             <div data-ng-show="!loading.init && noTasksPending">
 
-                <p data-ng-bind-html="tr('ip_table_manage_move_ipblock_question', data.ipBlock.ipBlock)"></p>
+                <p data-ng-bind-html="'ip_table_manage_move_ipblock_question' | translate:{ t0: data.ipBlock.ipBlock }"></p>
 
                 <form>
                     <div class="form-group">
@@ -73,10 +73,14 @@
 
             <div data-ng-show="!loading.save">
                 <p class="text-center">
-                    <span data-ng-bind-html="tr('ip_table_manage_move_ipblock_resume', [data.ipBlock.ipBlock, (i18n['ip_service' + model.serviceName.service] || model.serviceName.service)])">
+                    <span data-ng-bind-html="'ip_table_manage_move_ipblock_resume' | translate:{ t0: data.ipBlock.ipBlock, t1: (('ip_service' + model.serviceName.service | translate) || model.serviceName.service) }">
                     </span>
                     <span data-ng-if="model.nexthop"
-                          data-ng-bind="tr('ip_table_manage_move_ipblock_resume_on',  (i18n['ip_service' + model.nexthop] || model.nexthop))"></span> ?
+                          data-translate="ip_table_manage_move_ipblock_resume_on"
+                          data-translate-values="{
+                              t0: ('ip_service' + model.nexthop | translate) || model.nexthop
+                          }">
+                    </span> ?
                 </p>
                 <p class="alert alert-warning"
                    role="alert"

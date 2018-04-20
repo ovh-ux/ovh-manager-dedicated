@@ -1,6 +1,7 @@
 <div class="dedicated-nas-details-partition-snapshot">
 
-    <h2 data-ng-bind="tr('nas_snapshot_of', [$ctrl.partitionName])"></h2>
+    <h2 data-translate="nas_snapshot_of"
+        data-translate-values="{ t0: $ctrl.partitionName }"></h2>
 
     <a class="d-inline-block mb-5"
        data-ui-sref="^"
@@ -63,7 +64,7 @@
                     <tr data-ng-repeat="snapshot in $ctrl.snapshots.model track by $index">
                         <td class="min-width text-center">
                             <span class="fa"
-                                  aria-label="{{ tr('nas_snapshot_' + snapshot.type) }}"
+                                  aria-label="{{ ('nas_snapshot_' + snapshot.type) | translate }}"
                                   data-ng-if="!$ctrl.snapshots.save"
                                   data-ng-class="{
                                       'fa-check': snapshot.active == true,
@@ -74,7 +75,7 @@
                                    data-ng-if="$ctrl.snapshots.save"
                                    data-ng-model="snapshot.active" />
                         </td>
-                        <td data-ng-bind="tr('nas_snapshot_' + snapshot.type)"></td>
+                        <td data-translate="{{ 'nas_snapshot_' + snapshot.type }}"></td>
                     </tr>
                 </tbody>
             </table>

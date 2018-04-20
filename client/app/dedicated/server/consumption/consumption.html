@@ -9,10 +9,11 @@
     </h2>
     <span class="text-danger"
           data-ng-if="!ctrl.traffic.loading"
-          data-ng-bind="tr('server_consumption_summary_' + ctrl.traffic.data.usage.resetQuotaTimeLeft.unit, [
-              ctrl.traffic.data.usage.remainingOutputQuotaSize.text,
-              ctrl.traffic.data.usage.resetQuotaTimeLeft.value
-          ])"
+          data-translate="{{ 'server_consumption_summary_' + ctrl.traffic.data.usage.resetQuotaTimeLeft.unit }}"
+          data-translate-values="{
+            t0: ctrl.traffic.data.usage.remainingOutputQuotaSize.text,
+            t1: ctrl.traffic.data.usage.resetQuotaTimeLeft.value
+          }"
           data-ng-class="{ 'danger': state.overQuota }">
     </span>
     <span class="text-danger"
@@ -28,7 +29,7 @@
     </div>
 
     <div data-ng-if="!ctrl.server.loading && !ctrl.traffic.loading">
-        <span data-ng-bind="tr('server_consumption_current_period_label', [ctrl.traffic.data.usage.outputQuotaSize.text])"></span>
+        <span data-ng-bind="'server_consumption_current_period_label' | translate:{ t0: ctrl.traffic.data.usage.outputQuotaSize.text }"></span>
         <button type="button"
                 class="btn btn-default"
                 title="{{ 'server_traffic_order_button' | translate }}"
@@ -36,7 +37,7 @@
                 data-ng-click="setAction('traffic/order/dedicated-server-traffic-order', ctrl.server.data.name)"
                 data-ng-disabled="ctrl.server.data.state === 'HACKED' || ctrl.server.data.state === 'HACKED_BLOCKED'">
             <span class="fa fa-shopping-cart" aria-hidden="true"></span>
-            <span data-ng-bind="tr(ctrl.trafficOption.data !== 'subscribed' ? 'server_traffic_order_button' : 'server_traffic_change_button')"></span>
+            <span data-translate="{{ ctrl.trafficOption.data !== 'subscribed' ? 'server_traffic_order_button' : 'server_traffic_change_button' }}"></span>
         </button>
     </div>
 
@@ -60,7 +61,7 @@
         <div class="col-md-6">
             <div class="mt-2">
                 <span data-ng-bind="ctrl.traffic.data.usage.outputQuotaUsed.text"></span> /
-                <span data-ng-bind="tr('server_consumption_current_period_remaining', [ctrl.traffic.data.usage.remainingOutputQuotaSize.text])"></span>
+                <span data-ng-bind="'server_consumption_current_period_remaining' | translate:{ t0: ctrl.traffic.data.usage.remainingOutputQuotaSize.text }"></span>
             </div>
         </div>
     </div>

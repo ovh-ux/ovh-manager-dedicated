@@ -31,7 +31,7 @@
         </div>
 
         <div data-ng-show="orderableIp.professionalUsePrice">
-            <p data-ng-bind-html="tr('ip_order_no_professionaluse_1', orderableIp.professionalUsePrice)"></p>
+            <p data-ng-bind-html="'ip_order_no_professionaluse_1' | translate:{ t0: orderableIp.professionalUsePrice }"></p>
             <p data-translate="ip_order_no_professionaluse_2"></p>
         </div>
 

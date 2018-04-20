@@ -29,7 +29,7 @@
                        data-ng-pattern="/^[0-9]{1,4}$/" />
                 <span data-translate="cdn_configuration_backend_upgrade_step1_tarif"></span>
                 <span class="text-danger"
-                      data-ng-bind="tr('cdn_configuration_backend_upgrade_step1_tarif2', [price.unitaryPrice])">
+                      data-ng-bind="'cdn_configuration_backend_upgrade_step1_tarif2' | translate:{ t0: price.unitaryPrice }">
                 </span>
             </div>
 
@@ -47,7 +47,7 @@
             <div data-ng-if="orders">
                 <label for="duration"
                        class="control-label"
-                       data-ng-bind="tr('cdn_configuration_backend_upgrade_step2_durations', [choices.count])">
+                       data-ng-bind="'cdn_configuration_backend_upgrade_step2_durations' | translate:{ t0: choices.count }">
                 </label>
                 <div class="radio"
                      data-ng-repeat="order in orders track by $index">
@@ -56,7 +56,8 @@
                                name="duration"
                                value="{{ order.duration.duration }}"
                                data-ng-model="choices.duration" />
-                        <span data-ng-bind="tr('cdn_configuration_backend_upgrade_step2_duration_total', [order.duration.formattedDuration, order.withoutTax])"></span>
+                        <span data-translate="cdn_configuration_backend_upgrade_step2_duration_total"
+                              data-translate-values="{ t0: order.duration.formattedDuration, t1: order.withoutTax }"></span>
                     </label>
                 </div>
             </div>
@@ -67,7 +68,7 @@
              data-wizard-step-valid="contractsValidated.value"
              data-wizard-step-on-load="updateOrder">
 
-            <p data-ng-bind-html="tr('cdn_configuration_backend_upgrade_step3_question', [choices.count, cdn.serviceName])"></p>
+            <p data-ng-bind-html="'cdn_configuration_backend_upgrade_step3_question' | translate:{ t0: choices.count, t1: cdn.serviceName }"></p>
             <dl>
                 <dt data-translate="cdn_configuration_backend_upgrade_step3_totalHT"></dt>
                 <dd class="text-danger"

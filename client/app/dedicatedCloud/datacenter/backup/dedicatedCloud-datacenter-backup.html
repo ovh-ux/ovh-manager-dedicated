@@ -11,7 +11,7 @@
          data-ng-if="!loading && veeam.model">
         <dl class="col-sm-9">
             <dt data-translate="dedicatedCloud_tab_veeam_state"></dt>
-            <dd data-ng-bind="tr('dedicatedCloud_tab_veeam_' + veeam.model.state.toUpperCase())"></dd>
+            <dd data-translate="{{ 'dedicatedCloud_tab_veeam_' + veeam.model.state.toUpperCase() }}"></dd>
         </dl>
         <div class="col-sm-3">
             <a class="btn btn-block btn-default"

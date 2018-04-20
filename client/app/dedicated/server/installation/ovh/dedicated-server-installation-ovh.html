@@ -27,7 +27,7 @@
                     <select class="form-control"
                             id="selectDesktopType"
                             name="selectDesktopType"
-                            data-ng-options="desktop as tr('server_configuration_installation_ovh_desktop_' + desktop) for desktop in installation.desktopType"
+                            data-ng-options="desktop as ('server_configuration_installation_ovh_desktop_' + desktop | translate) for desktop in installation.desktopType"
                             data-ng-model="installation.selectDesktopType"
                             data-ng-change="installation.hasData = false; setSelectDistribution(null);">
                     </select>
@@ -79,7 +79,7 @@
                                         </span>
                                         <span>
                                             <span class="text-muted"
-                                                  data-ng-bind="tr('server_configuration_installation' + distribution.bitFormat)">
+                                                  data-translate="{{ 'server_configuration_installation' + distribution.bitFormat }}">
                                             </span>
                                             <span class="text-warning"
                                                   data-ng-show="distribution.isDeprecated "
@@ -98,7 +98,7 @@
                 </div>
                 <p class="text-danger"
                    data-ng-if="!hasVirtualDesktop()"
-                   data-ng-bind-html="tr('server_configuration_installation_ovh_step1_virtual_desktop_not_supported', [installation.selectDistribution.displayName, '#/configuration/license'])">
+                   data-ng-bind-html="'server_configuration_installation_ovh_step1_virtual_desktop_not_supported' | translate:{ t0: installation.selectDistribution.displayName, t1: '#/configuration/license' }">
                 </p>
                 <div class="form-group"
                      data-ng-show="installation.selectDistribution && !installation.warningExistPartition">
@@ -173,7 +173,7 @@
 
                 <div data-ng-show="installation.warningExistPartition">
                     <p class="text-danger"
-                       data-ng-bind-html="tr('server_configuration_installation_ovh_step1_warning_exist', installation.selectDistribution.displayName)">
+                       data-ng-bind-html="'server_configuration_installation_ovh_step1_warning_exist' | translate:{ t0: installation.selectDistribution.displayName }">
                     </p>
                     <p class="text-center">
                         <button type="button"
@@ -315,11 +315,12 @@
                 <oui-spinner></oui-spinner>
             </div>
             <p data-ng-hide="loader.loading || installation.partitionSchemesList.length > 0"
-               data-ng-bind="tr('server_configuration_installation_ovh_step2_error_empty_scheme', [constants.server.name, installation.selectDistribution.displayName])">
+               data-translate="server_configuration_installation_ovh_step2_error_empty_scheme"
+               data-translate-values="{ t0: constants.server.name, t1: installation.selectDistribution.displayName }">
             </p>
 
             <div data-ng-hide="loader.loading || installation.partitionSchemesList.length == 0">
-                <div data-ng-bind-html="tr('server_configuration_installation_ovh_step2_info', installation.selectDistribution.displayName)"></div>
+                <div data-ng-bind-html="'server_configuration_installation_ovh_step2_info' | translate:{ t0: installation.selectDistribution.displayName }"></div>
 
                 <p data-ng-if="informations.isCachecade">
                     <span class="icon-info-sign" aria-hidden="true"></span>
@@ -460,11 +461,11 @@
                                         'has-error': isSetPartition(partition) && hasErrorType()
                                     }">
                                     <span data-ng-if="!isSetPartition(partition)"
-                                          data-ng-bind="tr('server_configuration_installation_' + partition.typePartition)">
+                                          data-translate="{{ 'server_configuration_installation_' + partition.typePartition }}">
                                     </span>
                                     <select class="form-control"
                                             data-ng-if="isSetPartition(partition)"
-                                            data-ng-options="type as tr('server_configuration_installation_' + type) for type in constants.partitionTypeList"
+                                            data-ng-options="type as ('server_configuration_installation_' + type | translate) for type in constants.partitionTypeList"
                                             data-ng-model="partition.typePartition"
                                             data-ng-change="validationType(partition)">
                                     </select>
@@ -474,11 +475,11 @@
                                         'has-error': isSetPartition(partition) && hasErrorFileSystem()
                                     }">
                                     <span data-ng-hide="isSetPartition(partition) && partition.fileSystem != constants.warningSwap"
-                                          data-ng-bind="tr('server_configuration_installation_' + partition.fileSystem)">
+                                          data-translate="{{ 'server_configuration_installation_' + partition.fileSystem }}">
                                     </span>
                                     <select class="form-control"
                                             data-ng-if="isSetPartition(partition) && partition.fileSystem != constants.warningSwap"
-                                            data-ng-options="fileSystem as tr('server_configuration_installation_' + fileSystem) for fileSystem in constants.fileSystemList"
+                                            data-ng-options="fileSystem as ('server_configuration_installation_' + fileSystem | translate) for fileSystem in constants.fileSystemList"
                                             data-ng-model="partition.fileSystem"
                                             data-ng-change="validationFileSystem(partition)">
                                     </select>
@@ -642,7 +643,7 @@
                                         'has-error': hasErrorType()
                                     }">
                                     <select class="form-control"
-                                            data-ng-options="type as tr('server_configuration_installation_' + type) for type in constants.partitionTypeList"
+                                            data-ng-options="type as ('server_configuration_installation_' + type | translate) for type in constants.partitionTypeList"
                                             data-ng-model="newPartition.typePartition"
                                             data-ng-change="validationType(newPartition)">
                                     </select>
@@ -652,7 +653,7 @@
                                         'has-error': hasErrorFileSystem()
                                     }">
                                     <select class="form-control"
-                                            data-ng-options="fileSystem as tr('server_configuration_installation_' + fileSystem) for fileSystem in constants.fileSystemList"
+                                            data-ng-options="fileSystem as ('server_configuration_installation_' + fileSystem | translate) for fileSystem in constants.fileSystemList"
                                             data-ng-model="newPartition.fileSystem"
                                             data-ng-change="validationFileSystem(newPartition)">
                                     </select>
@@ -778,7 +779,7 @@
                 <div>
                     <ul>
                         <li data-ng-show="warning.raid0"><i style="margin-right: 5px;" class="icon-warning"></i><span class="red" data-translate="server_configuration_installation_ovh_step2_warning_partition_raid0"></span></li>
-                        <li data-ng-show="errorInst.raid0"><span class="red" data-ng-bind="tr('server_configuration_installation_ovh_step2_error_partition_raid0', newPartition.display && newPartition.mountPoint || installation.partitionSchemeModels[setPartition.indexSet].mountPoint)"></span></li>
+                        <li data-ng-show="errorInst.raid0"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_raid0" data-translate-values="{ t0: newPartition.display && newPartition.mountPoint || installation.partitionSchemeModels[setPartition.indexSet].mountPoint }}"></span></li>
                         <li data-ng-show="errorInst.partitionSizeToAdd"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_size_min_add"></span></li>
                         <li data-ng-show="errorInst.partitionSizeOver"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_size_exceed"></span></li>
                         <li data-ng-show="errorInst.order"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_order"></span></li>
@@ -796,12 +797,12 @@
                         <li data-ng-show="errorInst.mountPointWindows"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_mountPoint_windows"></span></li>
                         <li data-ng-show="errorInst.fileSystemSwap"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_file_system_swap"></span></li>
                         <li data-ng-show="errorInst.fileSystemNoSwap"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_file_system_no_swap"></span></li>
-                        <li data-ng-show="errorInst.partitionSizeSwap"><span class="red" data-ng-bind="tr('server_configuration_installation_ovh_step2_error_partition_size_swap', getDisplaySize(constants.maxSizeSwap))"></span></li>
-                        <li data-ng-show="errorInst.partitionSize"><span class="red" data-ng-bind="tr('server_configuration_installation_ovh_step2_error_partition_size_max', getDisplaySize(constants.maxSizePartition))"></span></li>
-                        <li data-ng-show="errorInst.partitionSizeWindows"><span class="red" data-ng-bind="tr('server_configuration_installation_ovh_step2_error_partition_size_min_windows', getDisplaySize(constants.minSizeWindows))"></span></li>
-                        <li data-ng-show="errorInst.partitionSizeReiserfs"><span class="red" data-ng-bind="tr('server_configuration_installation_ovh_step2_error_partition_size_min_reiserfs', getDisplaySize(constants.minSizeReiserfs))"></span></li>
-                        <li data-ng-show="errorInst.partitionSizeBoot"><span class="red" data-ng-bind="tr('server_configuration_installation_ovh_step2_error_partition_size_min_boot', getDisplaySize(constants.minSizeBoot))"></span></li>
-                        <li data-ng-show="errorInst.partitionSizeMin"><span class="red" data-ng-bind="tr('server_configuration_installation_ovh_step2_error_partition_size_min', getDisplaySize(constants.minSizePartition))"></span></li>
+                        <li data-ng-show="errorInst.partitionSizeSwap"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_size_swap" data-translate-values="{ t0: getDisplaySize(constants.maxSizeSwap) }"></span></li>
+                        <li data-ng-show="errorInst.partitionSize"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_size_max" data-translate-values="{ t0: getDisplaySize(constants.maxSizePartition) }"></span></li>
+                        <li data-ng-show="errorInst.partitionSizeWindows"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_size_min_windows" data-translate-values="{ t0: getDisplaySize(constants.minSizeWindows) }"></span></li>
+                        <li data-ng-show="errorInst.partitionSizeReiserfs"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_size_min_reiserfs" data-translate-values="{ t0: getDisplaySize(constants.minSizeReiserfs) }"></span></li>
+                        <li data-ng-show="errorInst.partitionSizeBoot"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_size_min_boot" data-translate-values="{ t0: getDisplaySize(constants.minSizeBoot) }"></span></li>
+                        <li data-ng-show="errorInst.partitionSizeMin"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_size_min" data-translate-values="{ t0: getDisplaySize(constants.minSizePartition) }"></span></li>
                         <li data-ng-show="errorInst.orderType"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_type_order"></span></li>
                         <li data-ng-show="errorInst.typeLvSwap"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_type_lv_swap"></span></li>
                         <li data-ng-show="errorInst.typeLogicalLv"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_type_logical_lv"></span></li>
@@ -881,8 +882,8 @@
                                 <th scope="row"
                                     data-ng-bind="partition.order">
                                 </th>
-                                <td data-ng-bind="tr('server_configuration_installation_' + partition.typePartition)"></td>
-                                <td data-ng-bind="tr('server_configuration_installation_' + partition.fileSystem)"></td>
+                                <td data-translate="{{ 'server_configuration_installation_' + partition.typePartition }}"></td>
+                                <td data-translate="{{ 'server_configuration_installation_' + partition.fileSystem }}"></td>
                                 <td data-ng-bind="partition.mountPoint"></td>
                                 <td>
                                     <span data-ng-if="partition.typePartition != constants.warningLV"> - </span>

@@ -89,7 +89,7 @@
              data-items-per-page="ctrl.pagination.itemsPerPage"
              data-transform-item="ctrl.transformItem(item)"
              data-on-transform-item-done="ctrl.onTransformItemDone(items)"
-             data-page-placeholder="{{ tr('pagination_page', [ctrl.pagination.currentPage, ctrl.pagination.nbPages]) }}"
+             data-page-placeholder="{{ 'pagination_page' | translate:{ t0: ctrl.pagination.currentPage, t1: ctrl.pagination.nbPages } }}"
              data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
         </div>
     </div>

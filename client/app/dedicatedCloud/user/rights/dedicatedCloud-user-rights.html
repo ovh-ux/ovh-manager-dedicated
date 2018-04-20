@@ -6,7 +6,7 @@
     </div>
 
     <div data-ng-if="!$ctrl.loading.init">
-        <h2 data-ng-bind-html="tr('dedicatedCloud_USER_rights_management_by_datacenter', [$ctrl.selectedUser.name])"></h2>
+        <h2 data-ng-bind-html="'dedicatedCloud_USER_rights_management_by_datacenter' | translate:{ t0: $ctrl.selectedUser.name }"></h2>
 
         <a class="d-inline-block mb-5"
            data-ui-sref="^"
@@ -73,7 +73,7 @@
                                 data-ng-bind="right.datacenterName">
                             </th>
                             <td class="text-center"
-                                data-ng-bind="tr('dedicatedCloud_USER_right_'+right.right)">
+                                data-translate="{{ 'dedicatedCloud_USER_right_'+right.right }}">
                             </td>
                             <td class="text-center">
                                 <span class="fa"
@@ -85,15 +85,15 @@
                                 </span>
                             </td>
                             <td class="text-center"
-                                data-ng-bind="tr('dedicatedCloud_USER_right_'+right.vmNetworkRole)">
+                                data-translate="{{ 'dedicatedCloud_USER_right_'+right.vmNetworkRole }}">
                             </td>
                             <td class="text-center"
-                                data-ng-bind="tr('dedicatedCloud_USER_right_'+right.networkRole)">
+                                data-translate="{{ 'dedicatedCloud_USER_right_'+right.networkRole }}">
                             </td>
                             <td class="text-center">
                                 <button type="button"
                                         class="btn btn-link"
-                                        title="{{ tr('dedicatedCloud_USER_right_modify' )}}"
+                                        title="{{ 'dedicatedCloud_USER_right_modify' | translate }}"
                                         data-ng-click="setAction('user/rights/edit/dedicatedCloud-user-rights-edit', { rightId: right.rightId })">
                                     <span class="oui-icon oui-icon-pen_line" aria-hidden="true"></span>
                                 </button>

@@ -48,7 +48,7 @@
                                     <td>
                                         <label for="bandwith-{{ $index }}"
                                                class="control-label"
-                                               data-ng-bind="tr('toggle_button_label_info_' + bandwith)">
+                                               data-translate="{{ 'toggle_button_label_info_' + bandwith }}">
                                         </label>
                                     </td>
                                 </tr>
@@ -67,14 +67,14 @@
                                 name="selectedBandwidth"
                                 data-ng-if="orderable[selectedBandwidthTypes.value].length > 1"
                                 data-ng-model="selectedBandwidth.value"
-                                data-ng-options="bandwidth as tr('unit_gbps' , [bandwidth]) for bandwidth in orderable[selectedBandwidthTypes.value]">
+                                data-ng-options="bandwidth as ('unit_gbps' | translate:{ t0: bandwidth }) for bandwidth in orderable[selectedBandwidthTypes.value]">
                             <option value=""
                                     disabled="disabled"
                                     data-translate="select_bandwidth_value_label_choose">
                             </option>
                         </select>
                         <span data-ng-if="orderable[selectedBandwidthTypes.value].length == 1"
-                              data-ng-bind="tr('unit_gbps', [selectedBandwidth.value])">
+                              data-ng-bind="'unit_gbps' | translate:{ t0: selectedBandwidth.value }">
                         </span>
                     </div>
                 </fieldset>
@@ -82,7 +82,7 @@
 
             <p class="text-danger"
                data-ng-if="!orderable.orderable && !orderable.orderable && !loaders.orderableVersion"
-               data-ng-bind="tr('server_order_bandwidth_not_available', [currentActionData])">
+               data-ng-bind="'server_order_bandwidth_not_available' | translate:{ t0: currentActionData }">
             </p>
 
         </div>

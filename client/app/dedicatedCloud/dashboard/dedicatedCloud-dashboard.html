@@ -18,7 +18,7 @@
                                     <strong class="d-block"
                                             data-translate="dedicatedCloud_type">
                                     </strong>
-                                    <span data-ng-bind="tr('dedicatedCloud_type_' + dedicatedCloud.solution) + ' ' + (dedicatedCloud.solution === 'VSPHERE' && dedicatedCloud.version ? dedicatedCloud.version.major : '')"></span>
+                                    <span data-translate="{{ ('dedicatedCloud_type_' + dedicatedCloud.solution) + ' ' + (dedicatedCloud.solution === 'VSPHERE' && dedicatedCloud.version ? dedicatedCloud.version.major : '') }}"></span>
                                 </div>
                             </li>
                             <li class="oui-tile__item">
@@ -123,7 +123,7 @@
                                             <strong class="d-block"
                                                     data-translate="dedicatedCloud_options_nsx">
                                             </strong>
-                                            <span data-ng-bind="options.nsx.toggable ? tr('dedicatedCloud_options_state_' + options.nsx.state) : options.nsx.toggableMessage"></span>
+                                            <span data-ng-bind="options.nsx.toggable ? ('dedicatedCloud_options_state_' + options.nsx.state | translate) : options.nsx.toggableMessage"></span>
                                             <a class="d-block"
                                                target="_blank"
                                                rel="noopener"
@@ -159,7 +159,7 @@
                                             <strong class="d-block"
                                                     data-translate="dedicatedCloud_options_vrops">
                                             </strong>
-                                            <span data-ng-bind="options.vrops.toggable ? tr('dedicatedCloud_options_state_' + options.vrops.state) : options.vrops.toggableMessage"></span>
+                                            <span data-ng-bind="options.vrops.toggable ? ('dedicatedCloud_options_state_' + options.vrops.state | translate) : options.vrops.toggableMessage"></span>
                                             <a class="d-block"
                                                target="_blank"
                                                rel="noopener"
@@ -213,9 +213,9 @@
                                     <div class="d-flex w-100">
                                         <div class="w-75">
                                             <strong class="d-block"
-                                                    data-ng-bind="tr('dedicatedCloud_options_' + optionName)">
+                                                    data-translate="{{ 'dedicatedCloud_options_' + optionName }}">
                                             </strong>
-                                            <span data-ng-bind="tr('dedicatedCloud_options_state_' + options[optionName].state)"></span>
+                                            <span data-ng-bind="'dedicatedCloud_options_state_' + options[optionName].state | translate"></span>
                                             <a class="d-block"
                                                target="_blank"
                                                rel="noopener"

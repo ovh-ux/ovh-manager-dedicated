@@ -82,7 +82,7 @@
                         data-ng-bind="::operation.taskId">
                     </th>
                     <td data-ng-bind="::operation.name"></td>
-                    <td data-ng-bind="::tr('dedicatedCloud_OPERATIONS_type_' + operation.type)"></td>
+                    <td data-ng-bind="::('dedicatedCloud_OPERATIONS_type_' + operation.type) | translate"></td>
                     <td data-ng-include="'dedicatedCloud/progressBar.html'">
                     <td data-ng-bind="::operation.description"></td>
                     <td>
@@ -221,7 +221,7 @@
          data-current-page="currentPage"
          data-nb-pages="nbPages"
          data-items-per-page="itemsPerPage"
-         data-page-placeholder="{{ tr('pagination_page', [currentPage, nbPages]) }}"
+         data-page-placeholder="{{ 'pagination_page' | translate:{ t0: currentPage, t1: nbPages } }}"
          data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
     </div>
 </div>

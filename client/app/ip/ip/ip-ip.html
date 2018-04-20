@@ -79,7 +79,7 @@
                 <!-- Loader -->
                 <div data-ng-if="loading.table && state.loaded < state.total">
                     <div data-ng-if="state.total > 1">
-                        <strong data-ng-bind="tr('ip_loader_loading_state', [state.loaded + 1, state.total])"></strong>
+                        <strong data-ng-translate="ip_loader_loading_state" data-translate-values="{ t0: state.loaded + 1, t1: state.total }"></strong>
                         <div class="progress">
                             <div class="progress-bar progress-bar-info progress-bar-striped"
                                  role="progressbar"
@@ -202,7 +202,7 @@
                             <oui-spinner size="s"></oui-spinner>
                         </td>
                         <td colspan="42">
-                            <span data-ng-bind="tr('ip_table_ipblock_refresh', [ipBlock.ipBlock])"></span>
+                            <span data-ng-bind="'ip_table_ipblock_refresh' | translate:{ t0: ipBlock.ipBlock }"></span>
                         </td>
                     </tr>
 
@@ -423,7 +423,7 @@
                                       'badge': ip.mitigation === 'CREATION_PENDING' || ip.mitigation === 'REMOVAL_PENDING',
                                       'font-weight-bold': ip.mitigation === 'FORCED'
                                   }"
-                                  data-ng-bind="tr('ip_mitigation_' + (ip.mitigation || 'DEFAULT'))">
+                                  data-ng-bind="'ip_mitigation_' + (ip.mitigation || 'DEFAULT') | translate">
                             </span>
                         </td>
 
@@ -434,7 +434,7 @@
                                       'badge': ip.firewall === 'ENABLE_PENDING' || ip.firewall === 'DISABLE_PENDING',
                                       'font-weight-bold': ip.firewall === 'ACTIVATED'
                                   }"
-                                  data-ng-bind="tr('ip_firewall_' + (ip.firewall || 'NOT_CONFIGURED'))">
+                                  data-ng-bind="'ip_firewall_' + (ip.firewall || 'NOT_CONFIGURED') | translate">
                             </span>
                         </td>
 

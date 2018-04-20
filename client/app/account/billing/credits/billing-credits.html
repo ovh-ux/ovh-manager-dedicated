@@ -126,7 +126,7 @@
                  data-transform-item="$ctrl.getBalanceDetails(item)"
                  data-on-transform-item-notify="$ctrl.pushBalanceDetails(item)"
                  data-on-transform-item-done="$ctrl.onDetailsDone(items)"
-                 data-page-placeholder="{{tr('pagination_page', [$ctrl.currentPage, $ctrl.nbPages])}}"
+                 data-page-placeholder="{{ 'pagination_page' | translate:{ t0: $ctrl.currentPage, t1: $ctrl.nbPages } }}"
                  data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
             </div>
         </div>

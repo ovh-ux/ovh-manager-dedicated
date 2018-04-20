@@ -10,7 +10,7 @@
             <p class="text-danger">
                 <strong data-translate="dedicatedCloud_USER_enable_infos"></strong>
             </p>
-            <p data-ng-bind-html="tr('dedicatedCloud_USER_enable_message', user.name)"></p>
+            <p data-ng-bind-html="'dedicatedCloud_USER_enable_message' | translate:{ t0: user.name }"></p>
 
         </div>
 

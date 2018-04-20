@@ -24,7 +24,7 @@
                                       'label-warning' : housing.status === 'error',
                                       'label-important': housing.status === 'hacked' || housing.status === 'hacked_blocked'
                                   }"
-                                  data-ng-bind="tr('housing_status_' + housing.status)">
+                                  data-translate="{{ 'housing_status_' + housing.status }}">
                             </span>
                         </div>
                     </li>

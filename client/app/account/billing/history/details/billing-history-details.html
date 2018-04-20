@@ -92,7 +92,7 @@
                          data-items-per-page="pagination.itemsPerPage"
                          data-transform-item="transformItem(item)"
                          data-on-transform-item-done="onTransformItemDone(items)"
-                         data-page-placeholder="{{ tr('pagination_page', [pagination.currentPage, pagination.nbPages]) }}"
+                         data-page-placeholder="{{ 'pagination_page' | translate: { t0: pagination.currentPage, t1: pagination.nbPages } }}"
                          data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
                     </div>
                 </td>

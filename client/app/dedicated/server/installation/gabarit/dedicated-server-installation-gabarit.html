@@ -57,7 +57,7 @@
                                         </span>
                                         <span>
                                             <span class="text-muted"
-                                                  data-ng-bind="tr('server_configuration_installation' + gabarit.bitFormat)">
+                                                  data-translate="{{ 'server_configuration_installation' + gabarit.bitFormat }}">
                                             </span>
                                             <span class="text-warning"
                                                   data-ng-show="gabarit.isDeprecated "
@@ -96,7 +96,7 @@
 
                 <div data-ng-if="installation.deleteGabarit">
                     <p class="text-danger"
-                       data-ng-bind-html="tr('server_configuration_installation_gabarit_step1_delete', installation.deleteGabarit.displayName)">
+                       data-ng-bind-html="'server_configuration_installation_gabarit_step1_delete' | translate:{ t0: installation.deleteGabarit.displayName }">
                     </p>
                     <div class="text-center">
                         <button type="button"
@@ -149,7 +149,7 @@
                         <span data-translate="server_configuration_installation_resume_hardwareRaid"></span>
                         <strong
                               data-ng-if="informations.hardwareRaid.mode"
-                              data-ng-bind-html="tr('server_configuration_installation_gabarit_step2_hardwareRaid', [informations.hardwareRaid.mode, informations.hardwareRaid.disks.length])">
+                              data-ng-bind-html="'server_configuration_installation_gabarit_step2_hardwareRaid' | translate:{ t0: informations.hardwareRaid.mode, t1: informations.hardwareRaid.disks.length }">
                         </strong>
                         <strong
                               data-ng-if="informations.hardwareRaid && !informations.hardwareRaid.mode"

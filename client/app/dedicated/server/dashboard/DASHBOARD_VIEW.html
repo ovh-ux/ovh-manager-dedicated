@@ -24,7 +24,7 @@
                                                   'label-warning': server.state == 'ERROR',
                                                   'label-danger': server.state == 'HACKED' || server.state == 'HACKED_BLOCKED'
                                               }"
-                                              data-ng-bind="tr('server_configuration_state_' + server.state)">
+                                              data-translate="{{ 'server_configuration_state_' + server.state }}">
                                         </span>
                                     </div>
                                     <button type="button"
@@ -165,7 +165,7 @@
                                                   'label-success': server.hasProfessionalUse,
                                                   'label-danger': !server.hasProfessionalUse
                                               }"
-                                              data-ng-bind="tr('server_configuration_monitoring_' + (server.hasProfessionalUse &amp;&amp; 'activated' || 'disabled'))">
+                                              data-ng-bind="'server_configuration_monitoring_' + (server.hasProfessionalUse &amp;&amp; 'activated' || 'disabled') | translate">
                                         </span>
                                         <span class="icon-info-sign middle"
                                               data-ng-if="!server.hasProfessionalUse"
@@ -214,7 +214,7 @@
                                         <strong class="d-block"
                                                 data-translate="server_bandwidth_type">
                                         </strong>
-                                        <span data-ng-bind="tr('server_bandwidth_type_' + bandwidth.bandwidth.type)"></span>
+                                        <span data-translate="{{ 'server_bandwidth_type_' + bandwidth.bandwidth.type }}"></span>
                                     </div>
                                     <div class="ml-auto my-auto" data-ng-switch="bandwidthOption">
                                         <button type="button"
@@ -271,7 +271,7 @@
                                             data-ng-if="!traffic.hasQuota && canOrderTraffic() && canOrderMoreTraffic() && trafficOption !== 'released'"
                                             data-ng-click="setAction('traffic/order/dedicated-server-traffic-order', server.name)"
                                             data-ng-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
-                                            data-ng-bind="tr(trafficOption !== 'subscribed' ? 'server_traffic_order_button' : 'server_traffic_change_button')">
+                                            data-ng-bind="(trafficOption !== 'subscribed' ? 'server_traffic_order_button' : 'server_traffic_change_button') | translate">
                                     </button>
                                 </span>
                                 <span class="text-danger"
@@ -294,10 +294,12 @@
                                                 data-translate="server_traffic">
                                         </strong>
                                         <span data-ng-if="traffic.usage.outputQuotaSize.text"
-                                              data-ng-bind="tr('server_traffic_text', [traffic.usage.outputQuotaSize.text])">
+                                              data-translate="server_traffic_text"
+                                              data-translate-values="{ t0: traffic.usage.outputQuotaSize.text }">
                                         </span>
                                         <span data-ng-if="!traffic.usage.outputQuotaSize.text"
-                                              data-ng-bind="tr('server_traffic_unlimited_text', [(bandwidth.bandwidth.OvhToInternet | bandwidth)])">
+                                              data-translate="server_traffic_unlimited_text"
+                                              data-translate-values="{ t0: bandwidth.bandwidth.OvhToInternet | bandwidth }">
                                         </span>
                                     </div>
                                     <button type="button"
@@ -306,7 +308,7 @@
                                             data-ng-if="traffic.hasQuota && canOrderTraffic() && canOrderMoreTraffic()"
                                             data-ng-click="setAction('traffic/order/dedicated-server-traffic-order', server.name)"
                                             data-ng-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
-                                            data-ng-bind="tr(trafficOption !== 'subscribed' ? 'server_traffic_order_button' : 'server_traffic_change_button')">
+                                            data-ng-bind="(trafficOption !== 'subscribed' ? 'server_traffic_order_button' : 'server_traffic_change_button') | translate">
                                     </button>
                                 </div>
                                 <div class="d-flex w-100">
@@ -355,7 +357,7 @@
                                             data-ng-if="canOrderVrackBandwidth() && canOrderMoreVrackBandwidth()"
                                             data-ng-click="setAction('bandwidth-vrack/order/dedicated-server-bandwidth-vrack-order', server.name)"
                                             data-ng-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
-                                            data-ng-bind="tr(bandwidthVrackOption !== 'subscribed' ? 'server_bandwidth_vrack_order_button' : 'server_bandwidth_vrack_change_button')">
+                                            data-ng-bind="(bandwidthVrackOption !== 'subscribed' ? 'server_bandwidth_vrack_order_button' : 'server_bandwidth_vrack_change_button') | translate">
                                     </button>
                                 </div>
                                 <div class="d-flex w-100">
@@ -402,7 +404,7 @@
                                                   'label-success': server.monitored,
                                                   'label-danger': !server.monitored
                                               }"
-                                              data-ng-bind="tr('server_configuration_monitoring_' + (server.monitored && 'activated' || 'disabled'))"
+                                              data-translate="{{ ('server_configuration_monitoring_' + (server.monitored && 'activated' || 'disabled')) }}"
                                               data-uib-tooltip="{{ server.monitored && ('server_configuration_monitoring_activate_information' | translate) || ('server_configuration_monitoring_deactivate_information' | translate) }}"
                                               data-tooltip-placement="right">
                                         </span>

@@ -3,10 +3,10 @@
     <h1>
         <span data-ng-bind="{{ 'otrs_detail_title' | translate }}"></span>
         <span data-ng-show="ticket.ticketNumber"
-              data-ng-bind="tr('otrs_detail_title2', [ticket.ticketNumber])">
+              data-ng-bind="'otrs_detail_title2' | translate:{ t0: ticket.ticketNumber }">
         </span>
         <span data-ng-show="ticket.state && !loaders.close"
-              data-ng-bind="tr('otrs_detail_title3_' + ticket.state)">
+              data-translate="{{ 'otrs_detail_title3_' + ticket.state }}">
         </span>
         <oui-spinner data-ng-show="loaders.close"
                      data-size="s">
@@ -94,7 +94,7 @@
                          data-ng-class="{
                             'oui-box_light col-sm-offset2 customer-message': message.from === 'customer'
                         }">
-                        <strong data-ng-bind="tr('otrs_detail_from_' + message.from)"></strong>
+                        <strong data-translate="{{ 'otrs_detail_from_' + message.from }}"></strong>
                         <pre data-ng-bind-html="message.body | htmlStringLinky:'_blank'"
                              style="background-color: transparent; border: none; word-break: normal;">
                         </pre>

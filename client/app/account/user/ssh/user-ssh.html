@@ -15,9 +15,9 @@
             <p>
                 <strong data-translate="user_ssh_key_explain_1"></strong>
             </p>
-            <p data-ng-bind-html="tr('user_ssh_key_explain_2', [ctrlSsh.guides.sshCreate] )"></p>
+            <p data-ng-bind-html="'user_ssh_key_explain_2' | translate:{ t0: ctrlSsh.guides.sshCreate }"></p>
             <p data-ng-if="ctrlSsh.user.ovhSubsidiary !== 'US'"
-               data-ng-bind-html="tr('user_ssh_key_explain_3', [ctrlSsh.guides.sshAdd, ctrlSsh.guides.sshChange])">
+               data-ng-bind-html="'user_ssh_key_explain_3' | translate:{ t0: ctrlSsh.guides.sshAdd, t2: ctrlSsh.guides.sshChange }">
             </p>
         </div>
 
@@ -104,7 +104,7 @@
                                     data-ng-if="ssh.category === 'dedicated'"
                                     data-ng-click="ctrlSsh.setDefaultDedicatedSshKey(ssh)"
                                     data-ng-class="{ 'text-primary': ssh.default }"
-                                    data-uib-tooltip="{{ tr('user_ssh_tooltip_default_'+ssh.default) }}"
+                                    data-uib-tooltip="{{ 'user_ssh_tooltip_default_'+ssh.default | translate }}"
                                     data-tooltip-placement="right"
                                     data-tooltip-append-to-body="true">
                                 <span class="fa fa-key"
@@ -116,7 +116,7 @@
                             <span data-ng-bind-html="ssh.keyName"></span>
                         </td>
                         <td>
-                            <span data-ng-bind="tr('user_ssh_category_' + ssh.category)"></span>
+                            <span data-translate="{{ 'user_ssh_category_' + ssh.category }}"></span>
                             <span data-ng-if="ssh.url">
                                 (<a data-ng-href="{{ssh.url}}">{{ :: ssh.serviceDescription}}</a>)
                             </span>
@@ -163,7 +163,7 @@
                  data-items-per-page="itemsPerPage"
                  data-nb-pages="nbPages"
                  data-on-transform-item-done="ctrlSsh.onTransformItemDone(items)"
-                 data-page-placeholder="{{  tr('pagination_page', [currentPage, nbPages])}}"
+                 data-page-placeholder="{{  'pagination_page' | translate:{ t0: currentPage, t1: nbPages }}}"
                  data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
             </div>
             <br />

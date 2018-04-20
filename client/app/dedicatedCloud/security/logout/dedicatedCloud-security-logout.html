@@ -15,7 +15,7 @@
             <select class="form-control"
                     id="logoutPolicy"
                     name="logoutPolicy"
-                    data-ng-options="type as tr('dedicatedCloud_SECURITY_logout_policy_' + type) for type in dedicatedCloud.userLogoutPolicyEnum"
+                    data-ng-options="type as ('dedicatedCloud_SECURITY_logout_policy_' + type | translate) for type in dedicatedCloud.userLogoutPolicyEnum"
                     data-ng-model="policyLogoutCtrl.selectedLogoutPolicy.value">
                 <option value=""
                         data-ng-disabled="true"

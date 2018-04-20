@@ -3,7 +3,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="order"
-         data-wizard-title="tr('dedicatedCloud_vmware_orderopt_title_' + currentActionData)"
+         data-wizard-title="'dedicatedCloud_vmware_orderopt_title_' + currentActionData | translate"
          data-wizard-confirm-button-text="{{ 'dedicatedCloud_vmware_orderopt_activate' | translate }}">
 
         <div data-wizard-step
@@ -45,7 +45,8 @@
                             <td data-ng-bind="::p.datacenter"></td>
                             <td class="text-right">
                                 <span data-ng-if="p.billingType === 'hourly'"
-                                      data-ng-bind="tr('dedicatedCloud_vmware_orderopt_price_hourly', p.current)">
+                                      data-translate="dedicatedCloud_vmware_orderopt_price_hourly"
+                                      data-translate-values="{ t0: p.current }">
                                 </span>
                                 <span data-ng-if="p.billingType !== 'hourly' && p.billingType !== 'freeSpare'"
                                       data-ng-bind="p.current">
@@ -56,7 +57,8 @@
                             </td>
                             <td class="text-right">
                                 <span data-ng-if="p.billingType === 'hourly'"
-                                      data-ng-bind="tr('dedicatedCloud_vmware_orderopt_price_hourly', p.next)">
+                                      data-ng-bind="dedicatedCloud_vmware_orderopt_price_hourly"
+                                      data-translate-values="{ t0: p.next }">
                                 </span>
                                 <span data-ng-if="p.billingType !== 'hourly' && p.billingType !== 'freeSpare'"
                                       data-ng-bind="p.next">

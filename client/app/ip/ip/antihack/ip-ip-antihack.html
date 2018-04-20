@@ -12,7 +12,7 @@
             <div data-ng-show="!loading">
                 <dl class="dl-horizontal">
                     <dt data-translate="ip_antihack_status"></dt>
-                    <dd data-ng-bind="details.state ? tr('ip_antihack_status_' + details.state.toUpperCase()) : '/'"></dd>
+                    <dd data-ng-bind="details.state ? ('ip_antihack_status_' + details.state.toUpperCase() | translate) : '/'"></dd>
                     <dt data-translate="ip_antihack_blockedsince"></dt>
                     <dd data-ng-bind="details.blockedSince || '/' | date:'medium'"></dd>
                     <dt data-translate="ip_antihack_remainingtime"></dt>

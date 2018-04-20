@@ -7,7 +7,8 @@
                     <span data-translate="common_back"></span>
                 </button>
 
-                <h4 data-ng-bind="tr('ip_antispam_unblock_title', ipSpamming)"></h4>
+                <h4 data-translate="ip_antispam_unblock_title"
+                    data-translate-values="{ t0: ipSpamming }"></h4>
             </div>
 
             <div class="row-fluid pull-left" data-ng-show="loadingAntispam">
@@ -21,7 +22,7 @@
 
                     <dt data-translate="ip_antispam_status"></dt>
                     <dd>
-                        <span data-ng-if="ipspam.state && ipspam.state !== 'UNBLOCKING'" data-ng-bind="tr('ip_antispam_status_' + ipspam.state)"></span>
+                        <span data-ng-if="ipspam.state && ipspam.state !== 'UNBLOCKING'" data-translate="{{ 'ip_antispam_status_' + ipspam.state }}"></span>
                         <span data-ng-if="ipspam.state && ipspam.state === 'UNBLOCKING'" class="badge" data-translate="ip_antispam_status_UNBLOCKING"></span>
                     </dd>
                 </dl>

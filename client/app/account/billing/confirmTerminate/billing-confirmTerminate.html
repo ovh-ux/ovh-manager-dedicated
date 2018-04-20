@@ -66,7 +66,7 @@
                     <tbody>
                         <tr>
                             <th scope="row"
-                                data-ng-bind="tr('terminate_service_type_' + TerminateServiceCtrl.serviceInfos.serviceType)">
+                                data-translate="{{ 'terminate_service_type_' + TerminateServiceCtrl.serviceInfos.serviceType }}">
                             </th>
                             <td data-ng-bind="TerminateServiceCtrl.serviceInfos.domain"></td>
                             <td>
@@ -97,7 +97,7 @@
                            id="reason-{{reason}}" />
                     <label class="oui-radio__label-container" for="reason-{{reason}}">
                         <span class="oui-radio__label"
-                              data-ng-bind="tr('terminate_service_reason_' + reason)"></span>
+                              data-translate="{{ 'terminate_service_reason_' + reason }}"></span>
                     </label>
                 </div>
 
@@ -105,7 +105,7 @@
                     <label for="reason_text"
                            class="oui-field__label oui-label"
                            data-translate="terminate_service_reason_text"
-                           data-ng-bind="tr('autorenew_service_type_' + TerminateServiceCtrl.serviceType)">
+                           data-translate="{{ 'autorenew_service_type_' + TerminateServiceCtrl.serviceType }}">
                     </label>
                     <div class="oui-field__content">
                         <div class="oui-field-control oui-field-control_6">

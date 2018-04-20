@@ -76,12 +76,12 @@
                               'fa fa-check': restriction.warning,
                               'fa fa-times': !restriction.warning
                           }"
-                          aria-label="{{ tr('common_' + (restriction.warning ? 'yes' : 'no')) | translate }}">
+                          aria-label="{{ 'common_' + (restriction.warning ? 'yes' : 'no') | translate }}">
                     </span>
                 </dd>
 
                 <dt data-translate="user_ipRestrictions_rule"></dt>
-                <dd data-ng-bind="tr('user_ipRestrictions_rule_'+restriction.rule)"></dd>
+                <dd data-translate="{{ 'user_ipRestrictions_rule_'+restriction.rule }}"></dd>
 
             </dl>
         </div>
