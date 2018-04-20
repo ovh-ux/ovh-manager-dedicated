@@ -1,10 +1,10 @@
 angular.module("App").controller("ConfigurationCtrl", class ConfigurationCtrl {
-    constructor ($q, $scope, $state, $stateParams, translator, featureAvailability, constants, DedicatedCloud) {
+    constructor ($q, $scope, $state, $stateParams, $translate, featureAvailability, constants, DedicatedCloud) {
         this.$q = $q;
         this.$scope = $scope;
         this.$state = $state;
         this.$stateParams = $stateParams;
-        this.translator = translator;
+        this.$translate = $translate;
         this.featureAvailability = featureAvailability;
         this.constants = constants;
         this.DedicatedCloud = DedicatedCloud;
@@ -63,10 +63,6 @@ angular.module("App").controller("ConfigurationCtrl", class ConfigurationCtrl {
     }
 
     getSelectedLanguage () {
-        try {
-            return this.translator.getSelectedAvailableLanguage().value;
-        } catch (e) { // eslint-disable-line no-unused-vars
-            return this.fallbackLanguage;
-        }
+        return this.$translate.use();
     }
 });
