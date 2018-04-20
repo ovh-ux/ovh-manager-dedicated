@@ -50,7 +50,7 @@
                 </div>
 
                 <div data-ng-if="ipmi.model.activated && !disable.otherTask && !disable.localTask">
-                    <p data-ng-bind-html="{{ 'server_configuration_impi_information' | translate }}"></p>
+                    <p data-ng-bind-html="'server_configuration_impi_information' | translate "></p>
                     <ul>
                         <li data-ng-bind-html="'server_configuration_impi_information3' | translate: {t0: ipmi.model.clientIp || ''}"></li>
                         <li data-ng-bind-html="'server_configuration_impi_information2' | translate: {t0: ipmi.model.clientIp || ''}"></li>

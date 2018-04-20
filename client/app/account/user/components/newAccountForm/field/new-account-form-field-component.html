@@ -6,9 +6,9 @@
            class="control-label">
         <span data-ng-bind="$ctrl.getTranslatedArea()"
               data-ng-if="$ctrl.rule.fieldName === 'area'"></span>
-        <span data-i18n="{{ 'signup_field_' + $ctrl.rule.fieldName }}"></span>
+        <span data-translate="{{ 'signup_field_' + $ctrl.rule.fieldName }}"></span>
         <em data-ng-if="!$ctrl.rule.mandatory"
-            data-i18n="signup_not_mandatory_field"></em>
+            data-translate="signup_not_mandatory_field"></em>
     </label>
 
     <!-- TEXT INPUT -->
@@ -95,7 +95,7 @@
         </input>
         <p class="help-block" role="alert"
            data-ng-if="$ctrl.fieldset['ovh_field_' + $ctrl.rule.fieldName].$error.emailAvailable && $ctrl.value"
-           data-i18n="signup_email_in_use"></p>
+           data-translate="signup_email_in_use"></p>
     </div>
 
     <!-- PASSWORD INPUT -->
@@ -114,7 +114,7 @@
         </input>
         <p class="help-block" role="alert"
            data-ng-if="$ctrl.fieldset['ovh_field_' + $ctrl.rule.fieldName].$error.pattern"
-           data-i18n="signup_password_invalid">
+           data-translate="signup_password_invalid">
         </p>
     </div>
 

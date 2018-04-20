@@ -4,7 +4,8 @@ angular
         $stateProvider.state("app.account.otrs-ticket", {
             url: "/ticket",
             templateUrl: "account/otrs/otrs.html",
-            controller: "otrsCtrl"
+            controller: "otrsCtrl",
+            translations: ["account/otrs"]
         });
 
         $stateProvider.state("app.account.otrs-ticket-details", {

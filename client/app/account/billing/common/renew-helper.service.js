@@ -12,7 +12,7 @@ angular.module("Billing.services").service("BillingrenewHelper", function ($filt
         if (moment().isAfter(moment(service.expiration))) {
             translationId = "autorenew_service_after_expiration_date";
         }
-        return $translate.instant(translationId, [$filter("date")(service.expiration, "mediumDate")]);
+        return $translate.instant(translationId, { t0: $filter("date")(service.expiration, "mediumDate") });
     };
 
     this.getRenewLabel = (service) => {

@@ -163,13 +163,13 @@
                  data-items-per-page="itemsPerPage"
                  data-nb-pages="nbPages"
                  data-on-transform-item-done="ctrlSsh.onTransformItemDone(items)"
-                 data-page-placeholder="{{  'pagination_page' | translate:{ t0: currentPage, t1: nbPages }}}"
+                 data-page-placeholder="{{ 'pagination_page' | translate:{ t0: currentPage, t1: nbPages } }}"
                  data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
             </div>
             <br />
             <p class="text-muted"
                data-ng-show="sshKeyList.count > 0 && !sshLoading"
-               data-ng-bind-html="{{ 'user_ssh_default_help' | translate }}"></p>
+               data-ng-bind-html="'user_ssh_default_help' | translate"></p>
         </div>
     </div>
 </div>

@@ -38,7 +38,7 @@
                         id="universSearch"
                         name="universSearch"
                         required
-                        data-ng-options="universe as i18n['otrs_universe_'+ universe] for universe in universes track by universe"
+                        data-ng-options="universe as ('otrs_universe_'+ universe | translate) for universe in universes track by universe"
                         data-ng-model="selection.universe"
                         data-ng-change="getServices()">
                     <option value=""
@@ -57,7 +57,7 @@
                 <select class="form-control"
                         id="serviceSearch"
                         name="serviceSearch"
-                        data-ng-options="value as value.serviceDescription group by ( i18n['otrs_service_category_'+value.category] || value.category) for value in list.services"
+                        data-ng-options="value as value.serviceDescription group by ( ('otrs_service_category_'+value.category | translate) || value.category) for value in list.services"
                         data-ng-model="search.selectedService"
                         data-ng-disabled="loaders.services || loaders.tickets || !selection.universe">
                     <option value=""
@@ -79,13 +79,13 @@
                             data-translate="otrs_search_ticket_no_filter">
                     </option>
                     <option value="open"
-                            data-ng-bind="{{ 'otrs_table_ticket_state_open' | translate }}">
+                            data-ng-bind="'otrs_table_ticket_state_open' | translate">
                     </option>
                     <option value="closed"
-                            data-ng-bind="{{ 'otrs_table_ticket_state_closed' | translate }}">
+                            data-ng-bind="'otrs_table_ticket_state_closed' | translate">
                     </option>
                     <option value="archived"
-                            data-ng-bind="{{ 'otrs_table_ticket_state_archived' | translate }}">
+                            data-ng-bind="'otrs_table_ticket_state_archived' | translate">
                     </option>
                 </select>
             </div>

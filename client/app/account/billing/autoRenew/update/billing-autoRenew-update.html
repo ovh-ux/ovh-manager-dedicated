@@ -6,7 +6,7 @@
          data-wizard-title="{{ 'autorenew_service_update_title' | translate }}">
 
         <div data-wizard-step data-wizard-step-valid="hasChanged">
-            <p data-ng-bind-html="{{ 'autorenew_service_update_intro' | translate }}"></p>
+            <p data-ng-bind-html="'autorenew_service_update_intro' | translate "></p>
 
             <table class="table table-hover">
                 <thead>
@@ -31,7 +31,7 @@
                             <span data-ng-bind="::service.serviceId | sliceContent:25"></span>
                         </th>
                         <td>
-                            <span data-ng-bind-html="{{ 'autorenew_service_type_'+ service.serviceType }}"></span>
+                            <span data-ng-bind-html="'autorenew_service_type_'+ service.serviceType | translate"></span>
                         </td>
                         <td>
                             <select name="renewType"
@@ -68,7 +68,7 @@
              data-wizard-step-on-load="loadContracts"
              data-wizard-step-valid="agree.value">
 
-            <p data-ng-bind-html="{{ 'autorenew_service_update_step2_summary' | translate }}"></p>
+            <p data-ng-bind-html="'autorenew_service_update_step2_summary' | translate "></p>
 
             <table class="table table-hover">
                 <thead>

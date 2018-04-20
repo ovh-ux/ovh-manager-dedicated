@@ -172,7 +172,7 @@
                 <p data-translate="dedicatedCloud_USER_add_user_step3_question1" data-translate-values="{ t0: newUser.name }"></p>
                 <dl>
                     <dt data-translate="dedicatedCloud_USER_add_user_step3_rights"></dt>
-                    <dd data-ng-bind-html="{{ ('dedicatedCloud_USER_add_user_which_rights_' + {'readwrite': 'rw', 'readonly': 'ro', 'disabled': 'none'}[newUser.right] | translate) + ' ' }}"></dd>
+                    <dd data-ng-bind-html="('dedicatedCloud_USER_add_user_which_rights_' + {'readwrite': 'rw', 'readonly': 'ro', 'disabled': 'none'}[newUser.right] | translate) + ' '"></dd>
                     <dt data-translate="dedicatedCloud_USER_add_user_step3_mail"></dt>
                     <dd data-ng-bind="newUser.email || '-'"></dd>
                 </dl>

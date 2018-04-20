@@ -354,13 +354,12 @@ angular
         $transitionsProvider.onBefore({}, (transition) => {
             transition.addResolvable({
                 token: "translations",
-                deps: ["$translate", "$translatePartialLoader", "$state", "$q"],
-                resolveFn: ($translate, $translatePartialLoader, $state, $q) => {
+                deps: ["$translate", "$translatePartialLoader", "$state"],
+                resolveFn: ($translate, $translatePartialLoader, $state) => {
                     const state = transition.to();
                     const stateParts = state.name.match(/[^\.]+/g);
                     const stateList = [];
                     let stateName = "";
-                    let result = $q.when(null);
 
                     angular.forEach(stateParts, (part) => {
                         stateName = stateName ? `${stateName}.${part}` : part;
@@ -370,25 +369,18 @@ angular
                     angular.forEach(stateList, (stateElt) => {
                         const translations = getStateTranslationParts($state.get(stateElt));
                         angular.forEach(translations, (part) => {
-                            result = result.then(() => {
-                                console.log(part);
-                                return $translatePartialLoader.addPart(part);
-                            });
+                            $translatePartialLoader.addPart(part);
                         });
                     });
 
-                    return result.then(() => $translate.refresh());
+                    return $translate.refresh();
                 }
             });
         });
     })
-    .config([
-        "$qProvider",
-        function ($qProvider) {
-            "use strict";
-            $qProvider.errorOnUnhandledRejections(false);
-        }
-    ])
+    .config(($qProvider) => {
+        $qProvider.errorOnUnhandledRejections(false);
+    })
     .config((OtrsPopupProvider, constants) => {
         OtrsPopupProvider.setBaseUrlTickets(_.get(constants, "REDIRECT_URLS.listTicket", null));
     })

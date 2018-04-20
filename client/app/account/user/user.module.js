@@ -70,7 +70,8 @@ angular
             $stateProvider.state("app.account.useraccount.infos", {
                 url: "/infos",
                 templateUrl: `${baseUrl}infos/user-infos.html`,
-                controller: "UserAccount.controllers.Infos"
+                controller: "UserAccount.controllers.Infos",
+                translations: ["account/user/newAccountForm"]
             });
 
             if (target === "EU" || target === "CA") {

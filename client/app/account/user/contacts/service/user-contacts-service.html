@@ -1,6 +1,6 @@
 <div class="module-useraccount-sections-contacts-container">
 
-    <p data-ng-bind-html="{{ 'useraccount_contacts_services_infos' | translate }}"></p>
+    <p data-ng-bind-html="'useraccount_contacts_services_infos' | translate "></p>
 
     <div class="table-responsive">
         <table class="table table-hover">
@@ -11,7 +11,7 @@
                                 id="category-filter"
                                 class="form-control input-sm"
                                 data-ng-model="ctrlServices.categoryFilter"
-                                data-ng-options="category as (i18n['useraccount_contacts_service_category_'+category] ||  category) for category in ctrlServices.categories | orderBy:i18n['useraccount_contacts_service_category_'+category] || category"
+                                data-ng-options="category as (('useraccount_contacts_service_category_'+category | translate) ||  category) for category in ctrlServices.categories | orderBy:('useraccount_contacts_service_category_'+category | translate) || category"
                                 data-ng-disabled="ctrlServices.loaders.services"
                                 data-ng-change="ctrlServices.updateFilters()">
                             <option value="" data-translate="useraccount_contacts_service_all_categories"></option>
@@ -22,7 +22,7 @@
                                 id="services-filter"
                                 class="form-control input-sm"
                                 data-ng-model="ctrlServices.serviceFilter"
-                                data-ng-options="value as value.serviceName group by ( i18n['useraccount_contacts_service_category_'+value.category] || value.category) for value in ctrlServices.allServices | orderBy:['category', 'serviceName']"
+                                data-ng-options="value as value.serviceName group by ( ('useraccount_contacts_service_category_'+value.category | translate) || value.category) for value in ctrlServices.allServices | orderBy:['category', 'serviceName']"
                                 data-ng-disabled="ctrlServices.loaders.services"
                                 data-ng-change="ctrlServices.updateFilters()">
                             <option value="" data-translate="useraccount_contacts_all_services"></option>
@@ -62,9 +62,9 @@
             </tbody>
 
             <tbody data-ng-show="!ctrlServices.loaders.services && ctrlServices.services.length > 0">
-                <tr data-ng-repeat="service in ctrlServices.services | orderBy:i18n['useraccount_contacts_service_category_'+services.category] || servicescategory track by $index">
+                <tr data-ng-repeat="service in ctrlServices.services | orderBy:('useraccount_contacts_service_category_'+services.category | translate) || servicescategory track by $index">
                     <td class="wordbreak"
-                        data-ng-bind="i18n['useraccount_contacts_service_category_'+service.category] || value.category"></td>
+                        data-ng-bind="('useraccount_contacts_service_category_'+service.category | translate) || value.category"></td>
                     <td class="wordbreak" data-ng-bind="::service.serviceName"></td>
                     <td class="wordbreak" data-ng-if="ctrlServices.editLine !== $index"
                         data-ng-bind="::service.contactAdmin"
@@ -145,7 +145,7 @@
          data-nb-pages="nbPages"
          data-transform-item="ctrlServices.transformItem(item)"
          data-on-transform-item-done="ctrlServices.onTransformItemDone(items)"
-         data-page-placeholder="{{'pagination_page' | translate:{ t0: currentPage, t1: nbPages }}}"
+         data-page-placeholder="'pagination_page' | translate:{ t0: currentPage, t1: nbPages }"
          data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
     </div>
 </div>

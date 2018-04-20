@@ -16,7 +16,7 @@
             </div>
 
             <div data-ng-if="progress.installationTask">
-                <div data-ng-bind-html="{{ 'server_configuration_installation_progress_info' | translate }}"></div>
+                <div data-ng-bind-html="'server_configuration_installation_progress_info' | translate "></div>
                 <div class="mb-3">
                     <span data-ng-class="{ 'text-danger': progress.errorStep > 0 }"
                           data-ng-bind="progress.currentStep">
