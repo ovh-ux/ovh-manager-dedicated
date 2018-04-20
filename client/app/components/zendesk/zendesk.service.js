@@ -1,6 +1,6 @@
 class zendeskService {
-    constructor (Translator, User) {
-        this.Translator = Translator;
+    constructor ($translate, User) {
+        this.$translate = $translate;
         this.User = User;
     }
 
@@ -25,7 +25,7 @@ class zendeskService {
             fi_FI: "fi",
             cs_CZ: "cs"
         };
-        const translatorLang = this.Translator.getLanguage();
+        const translatorLang = this.$translate.use();
         if (languageCorrespondance[translatorLang]) {
             selectedLanguageCode = languageCorrespondance[translatorLang];
         }
@@ -60,4 +60,4 @@ class zendeskService {
     }
 }
 
-angular.module("services").service("zendesk", ["translator", "User", zendeskService]);
+angular.module("services").service("zendesk", ["$translate", "User", zendeskService]);

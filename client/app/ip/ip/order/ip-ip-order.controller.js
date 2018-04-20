@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpOrderCtrl", ($scope, $rootScope, $q, $translate, Ip, IpOrder, IpOrganisation, User, Alerter, translator, constants) => {
+angular.module("Module.ip.controllers").controller("IpOrderCtrl", ($scope, $rootScope, $q, $translate, Ip, IpOrder, IpOrganisation, User, Alerter, constants) => {
     const alertId = "ip_order_alert";
 
     $scope.model = {};
@@ -89,7 +89,7 @@ angular.module("Module.ip.controllers").controller("IpOrderCtrl", ($scope, $root
                 $scope.orderableIp.countries = countries;
                 $scope.isCanadianService = _.findIndex(countries, "CA") !== -1 || countries.indexOf("us") !== -1;
                 if (!$scope.isCanadianService) {
-                    $scope.ipShortageWarnUrl = translator.getLanguage() === "fr_FR" ? constants.urls.FR.ipShortageWarnUrl : constants.urls.GB.ipShortageWarnUrl;
+                    $scope.ipShortageWarnUrl = $translate.use() === "fr_FR" ? constants.urls.FR.ipShortageWarnUrl : constants.urls.GB.ipShortageWarnUrl;
                 }
             })
         );
