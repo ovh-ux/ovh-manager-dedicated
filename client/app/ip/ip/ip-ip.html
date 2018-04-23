@@ -143,7 +143,7 @@
                     name="serviceSelector"
                     data-ng-model="filters.service"
                     data-ng-change="selectService()"
-                    data-ng-options="service as (i18n['ip_filter_services_' + service.serviceName] || service.serviceName) group by (i18n['ip_filter_services_title_' + service.category] || service.category) for service in services">
+                    data-ng-options="service as (('ip_filter_services_' + service.serviceName) | translateAlt: service.serviceName) group by (('ip_filter_services_title_' + service.category) | translateAlt: service.category) for service in services">
             </select>
         </div>
 
@@ -151,7 +151,7 @@
             <p>
                 <span data-translate="ip_filter_services__PARK"></span>
                 <strong class="text-danger"
-                        data-ng-bind="('price_ht_label' | translate:{t0: parkPrice}) + ' / ' + i18n.ip_month + ' / ' + i18n.ip_ip">
+                        data-ng-bind-html="('price_ht_label' | translate:{t0: parkPrice}) + ' / ' + ('ip_month' | translate) + ' / ' + ('ip_ip' | translate)">
                 </strong>
             </p>
         </div>

@@ -80,7 +80,7 @@
                                         id="statScale"
                                         data-ng-disabled="statsLoading"
                                         data-ng-change="getStatistics()"
-                                        data-ng-options="i18n['ip_mitigation_statistics_statistics_scale' + option] for option in statisticsScalesAvailable"
+                                        data-ng-options="('ip_mitigation_statistics_statistics_scale' + option | translate) for option in statisticsScalesAvailable"
                                         data-ng-model="model.scale">
                                 </select>
                             </div>

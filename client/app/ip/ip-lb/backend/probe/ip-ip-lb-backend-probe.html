@@ -21,7 +21,7 @@
                                 id="probe"
                                 class="form-control"
                                 data-ng-model="model.probe"
-                                data-ng-options="probe as (i18n['iplb_backend_probe_' + probe.toUpperCase()] || probe.toUpperCase()) for probe in probes | orderBy:orderByProbeAlias">
+                                data-ng-options="probe as (('iplb_backend_probe_' + probe.toUpperCase()) | translateAlt: probe.toUpperCase()) for probe in probes | orderBy:orderByProbeAlias">
                         </select>
                         <div class="help-block">
                             <p data-translate="iplb_backend_probe_help_NONE"></p>
