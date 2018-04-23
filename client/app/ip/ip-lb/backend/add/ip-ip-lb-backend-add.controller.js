@@ -68,7 +68,8 @@ angular.module("Module.ip.controllers").controller("IplbBackendAddCtrl", ($scope
     }
 
     $scope.orderByProbeAlias = function (a) {
-        return $scope.i18n[`iplb_backend_probe_${a.toUpperCase()}`] || a.toUpperCase();
+        const result = $translate.instant(`iplb_backend_probe_${a.toUpperCase()}`);
+        return result === "iplb_backend_probe_" ? a.toUpperCase() : result;
     };
 
     /* Action */
