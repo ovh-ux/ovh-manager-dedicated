@@ -106,7 +106,10 @@
                     <oui-spinner></oui-spinner>
                 </div>
             </div>
-            <p class="center red" data-ng-if="stats.noData" data-ng-bind="'ip_mitigation_statistics_no_data' | translate:{ t0: data.ip.ip }"></p>
+            <p class="text-center text-danger"
+               data-ng-if="stats.noData"
+               data-ng-bind="'ip_mitigation_statistics_no_data' | translate:{ t0: data.ip.ip }">
+            </p>
         </div>
     </div>
 </div>
