@@ -77,7 +77,9 @@ angular.module("controllers").controller("controllers.Server.Stats", ($scope, $r
                 $scope.networks = _.map(stats.interfaces, (networkInterface) => ({
                     id: networkInterface.mac,
                     linkType: networkInterface.linkType,
-                    displayName: $scope.tr(`server_tab_stats_network_${networkInterface.linkType}`, [networkInterface.mac]),
+                    displayName: $translate.instant(`server_tab_stats_network_${networkInterface.linkType}`, {
+                        t0: networkInterface.mac
+                    }),
                     disabled: networkInterface.disabled
                 }));
 

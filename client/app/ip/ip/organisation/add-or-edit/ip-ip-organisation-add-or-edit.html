@@ -90,7 +90,7 @@
                                 name="country"
                                 class="form-control"
                                 data-ng-required="true"
-                                data-ng-options="country as i18n['country_' + country] || country for country in list.country | orderBy:orderByCountryAlias">
+                                data-ng-options="country as ('country_' + country | translateAlt: country) for country in list.country | orderBy:orderByCountryAlias">
                         </select>
                         <div data-ng-show="load.request"
                              class="text-center">
