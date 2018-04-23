@@ -38,7 +38,7 @@
                         <label class="control-label"
                                data-translate="ip_organisation_table_country">
                         </label>
-                        <p class="form-control-static" data-ng-bind="i18n['country_' + orga.country] || orga.country"></p>
+                        <p class="form-control-static" data-ng-bind="('country_' + orga.country | translateAlt: orga.country)"></p>
                     </div>
                     <div class="form-group">
                         <label class="control-label"
