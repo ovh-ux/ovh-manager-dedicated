@@ -1,25 +1,5 @@
 angular
     .module("App")
-    .factory("serviceTypeInterceptor", () => ({
-        request (config) {
-            if (/^(\/?engine\/)?2api(\-m)?\//.test(config.url)) {
-                config.url = config.url.replace(/^(\/?engine\/)?2api(\-m)?/, "");
-                config.serviceType = "aapi";
-            }
-
-            if (/^apiv6\//.test(config.url)) {
-                config.url = config.url.replace(/^apiv6/, "");
-                config.serviceType = "apiv6";
-            }
-
-            if (/^apiv7\//.test(config.url)) {
-                config.url = config.url.replace(/^apiv7/, "");
-                config.serviceType = "apiv7";
-            }
-
-            return config;
-        }
-    }))
     .config([
         "ovh-proxy-request.proxyProvider",
         (proxy) => {
@@ -27,32 +7,6 @@ angular
             proxy.pathPrefix("apiv6");
         }
     ])
-    .config((ssoAuthenticationProvider, $httpProvider, constants) => {
-        ssoAuthenticationProvider.setLoginUrl(constants.loginUrl);
-        ssoAuthenticationProvider.setLogoutUrl(`${constants.loginUrl}?action=disconnect`);
-
-        if (!constants.prodMode) {
-            ssoAuthenticationProvider.setUserUrl("engine/apiv6/me");
-        }
-
-        ssoAuthenticationProvider.setConfig([
-            {
-                serviceType: "apiv6",
-                urlPrefix: constants.prodMode ? "/engine/apiv6" : "engine/apiv6"
-            },
-            {
-                serviceType: "aapi",
-                urlPrefix: constants.prodMode ? "/engine/2api" : "engine/2api"
-            },
-            {
-                serviceType: "apiv7",
-                urlPrefix: constants.prodMode ? "/engine/apiv7" : "engine/apiv7"
-            }
-        ]);
-
-        $httpProvider.interceptors.push("serviceTypeInterceptor");
-        $httpProvider.interceptors.push("ssoAuthInterceptor");
-    })
     .config(($locationProvider) => {
         $locationProvider.hashPrefix("");
     })
@@ -87,40 +41,6 @@ angular
         ROUTABLE_BLOCK: /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\/(\d|[1-2]\d|3[0-2]))$/,
         ROUTABLE_IP: /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/,
         ROUTABLE_BLOCK_OR_IP: /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\/(\d|[1-2]\d|3[0-2]))?$/
-    })
-    .constant("FIREWALL_RULE_ACTIONS", {
-        ALLOW: "PERMIT",
-        DENY: "DENY"
-    })
-    .constant("FIREWALL_RULE_PROTOCOLS", {
-        IPV_4: "IPv4",
-        UDP: "UDP",
-        TCP: "TCP",
-        ICMP: "ICMP"
-    })
-    .constant("FIREWALL_STATUSES", {
-        ACTIVATED: "ACTIVATED",
-        DEACTIVATED: "DEACTIVATED",
-        NOT_CONFIGURED: "NOT_CONFIGURED"
-    })
-    .constant("MITIGATION_STATUSES", {
-        ACTIVATED: "ACTIVATED",
-        AUTO: "AUTO",
-        FORCED: "FORCED"
-    })
-    .constant("STATISTICS_SCALE", {
-        TENSECS: "_10_S",
-        ONEMIN: "_1_M",
-        FIVEMINS: "_5_M"
-    })
-    .constant("TASK_STATUS", {
-        CANCELLED: "CANCELLED",
-        CUSTOMER_ERROR: "CUSTOMER_ERROR",
-        DOING: "DOING",
-        DONE: "DONE",
-        INIT: "INIT",
-        OVH_ERROR: "OVH_ERROR",
-        TODO: "TODO"
     })
     .config((BillingVantivConfiguratorProvider, BILLING_VANTIV) => {
         BillingVantivConfiguratorProvider.setScriptUrl(BILLING_VANTIV.SCRIPTS.PROD);
