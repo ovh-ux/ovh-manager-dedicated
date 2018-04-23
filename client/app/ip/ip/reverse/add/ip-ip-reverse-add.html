@@ -28,7 +28,7 @@
                      }">
                     <label class="control-label"
                            for="ipv6"
-                           data-ng-bind="i18n.ip_table_header_ip_address  + ' ' + (i18n.ip_ipv6)">
+                           data-ng-bind="('ip_table_header_ip_address' | translate)  + ' ' + ('ip_ipv6' | translate)">
                     </label>
                     <input type="text"
                            id="ipv6"
@@ -42,7 +42,7 @@
                      }">
                     <label class="control-label"
                            for="reverseV6"
-                           data-ng-bind="i18n.ip_table_header_reverse + ' ' + (i18n.optional)">
+                           data-ng-bind="('ip_table_header_reverse' | translate) + ' ' + ('optional' | translate)">
                     </label>
                     <input type="text"
                            id="reverseV6"
