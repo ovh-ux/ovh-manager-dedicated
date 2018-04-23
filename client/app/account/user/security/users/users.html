@@ -9,8 +9,13 @@
         <div data-ovh-alert="userUsers"></div>
 
         <oui-message data-type="info">
-            <p class="m-0"
-               data-translate="user_users_info">
+            <span class="d-block"
+               data-translate="user_users_info"
+               data-translate-values="{customerCode: $ctrl.me.customerCode}">
+            </span>
+            <span data-ng-if="$ctrl.users.length !== 0 && !$ctrl.usersLoading"
+                  data-translate="user_users_info_example"
+                  data-translate-values="{customerCode: $ctrl.me.customerCode, login: $ctrl.users[0].login}">
             </p>
         </oui-message>
 
@@ -30,18 +35,15 @@
                 <thead>
                     <tr>
                         <th data-translate="user_users_login" scope="col"></th>
-                        <th data-translate="user_users_full_login" scope="col"></th>
-                        <th data-translate="user_users_email" scope="col"></th>
+                        <th data-translate="user_users_role" scope="col"></th>
                         <th data-translate="user_users_creation_date" scope="col"></th>
-                        <th data-translate="user_users_last_update_date" scope="col"></th>
-                        <th data-translate="user_users_status" scope="col"></th>
-                        <th data-translate="user_users_description" scope="col"></th>
-                        <th></th>
+                        <th data-translate="user_users_last_password_update_date" scope="col"></th>
+                        <th data-translate="user_users_status" colspan="2" scope="col"></th>
                     </tr>
                 </thead>
                 <tbody data-ng-show="$ctrl.usersLoading">
                     <tr>
-                        <td colspan="8"
+                        <td colspan="6"
                             class="text-center">
                             <oui-spinner data-size="s"></oui-spinner>
                         </td>
@@ -49,7 +51,7 @@
                 </tbody>
                 <tbody data-ng-show="$ctrl.users.length === 0 && !$ctrl.usersLoading">
                     <tr>
-                        <td colspan="8"
+                        <td colspan="6"
                             class="text-center font-italic"
                             data-translate="user_users_table_empty">
                         </td>
@@ -57,11 +59,17 @@
                 </tbody>
                 <tbody data-ng-show="$ctrl.users.length > 0 && !$ctrl.usersLoading">
                     <tr data-ng-repeat="user in $ctrl.users track by $index">
-                        <td data-ng-bind="user.login"></td>
-                        <td data-ng-bind="user.fullLogin"></td>
-                        <td data-ng-bind="user.email"></td>
+                        <td>
+                            <strong class="d-block"
+                                    data-ng-bind="user.login">
+                            </strong>
+                            <span class="text-muted"
+                                  data-ng-bind="user.description">
+                            </span>
+                        </td>
+                        <td data-ng-bind="'user_roles_' + user.role | lowercase | translate"></td>
                         <td data-ng-bind="user.creation | date"></td>
-                        <td data-ng-bind="user.lastUpdate | date"></td>
+                        <td data-ng-bind="user.passwordLastUpdate | date"></td>
                         <td>
                             <span class="label"
                                   data-ng-class="{
@@ -72,7 +80,6 @@
                             </span>
                         </td>
 
-                        <td data-ng-bind="user.description"></td>
                         <td class="text-right">
                             <div data-uib-dropdown
                                  data-dropdown-append-to-body>
