@@ -60,10 +60,10 @@ angular.module("Module.ip.controllers").controller("IpMoveIpBlockCtrl", ($scope,
             Ip.moveIpBlockToPark($scope.data.ipBlock.ipBlock)
                 .then(
                     () => {
-                        Alerter.success($scope.tr("ip_table_manage_move_ipblock_success", [$scope.data.ipBlock.ipBlock, $scope.i18n[`ip_service${$scope.model.serviceName.service}`] || $scope.model.serviceName.service]));
+                        Alerter.success($scope.tr("ip_table_manage_move_ipblock_success", [$scope.data.ipBlock.ipBlock, $translate.instant(`ip_service${$scope.model.serviceName.service}`) || $scope.model.serviceName.service]));
                     },
                     (reason) => {
-                        Alerter.alertFromSWS($scope.tr("ip_table_manage_move_ipblock_failure", [$scope.data.ipBlock.ipBlock, $scope.i18n[`ip_service${$scope.model.serviceName.service}`] || $scope.model.serviceName.service]), reason);
+                        Alerter.alertFromSWS($scope.tr("ip_table_manage_move_ipblock_failure", [$scope.data.ipBlock.ipBlock, $translate.instant(`ip_service${$scope.model.serviceName.service}`) || $scope.model.serviceName.service]), reason);
                     }
                 )
                 .finally(() => {
