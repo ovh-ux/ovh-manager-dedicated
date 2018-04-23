@@ -70,12 +70,6 @@ angular
                 controllerAs: "ctrl"
             });
 
-            $stateProvider.state("app.account.debtDetails", {
-                url: "/history/:debtId/details",
-                templateUrl: `${BILLING_BASE_URL}history/details/billing-history-details.html`,
-                controller: "Billing.controllers.HistoryDetailsCtrl"
-            });
-
             /**
              * ROUTE: Payments
              */
