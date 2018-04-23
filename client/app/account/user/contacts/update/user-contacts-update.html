@@ -30,7 +30,7 @@
 
                             <div class="controls">
                                 <div data-ng-if="!edit.value || isReadonly('legalForm')">
-                                    {{::i18n["useraccount_contacts_owner_legalform_" + ownerModel.legalForm] || '-' }}
+                                    <span data-ng-bind="('useraccount_contacts_owner_legalform_' + ownerModel.legalForm) | translateAlt:'-'"></span>
                                 </div>
 
                                 <select name="legalForm"
@@ -41,7 +41,7 @@
                                         maxlength="250"
                                         data-ng-required="isMandatory('legalForm')"
                                         data-ng-readonly="isReadonly('legalForm')"
-                                        data-ng-options="i18n['user_account_legalform_' + legalform] for legalform in controls.legalforms">
+                                        data-ng-options="(('user_account_legalform_' + legalform) | translate) for legalform in controls.legalforms">
                                 </select>
                                 <div data-ng-if="edit.value" data-ng-messages="accountForm.legalForm.$error" role="alert">
 
@@ -326,12 +326,12 @@
 
                             <div class="controls">
                                 <div data-ng-hide="edit.value">
-                                    {{ i18n['useraccount_contacts_owner_gender_' + ownerModel.gender] || '-' }}
+                                    <span data-ng-bind="('useraccount_contacts_owner_gender_' + ownerModel.gender) | translateAlt:'-'"></span>
                                 </div>
                                 <select class="form-control"
                                         data-ng-model="ownerModel.gender"
                                         data-ng-if="edit.value"
-                                        data-ng-options="i18n['useraccount_contacts_owner_gender_' + gender] for gender in controls.genders"
+                                        data-ng-options="(('useraccount_contacts_owner_gender_' + gender) | translate) for gender in controls.genders"
                                         id="gender"
                                         name="gender"
                                         data-ng-required="isMandatory('gender')">
@@ -356,12 +356,12 @@
 
                             <div class="controls">
                                 <div data-ng-show="!edit.value">
-                                    {{::i18n["country_" + ownerModel.nationality] || "-"}}
+                                    <span data-ng-bind="('country_' + ownerModel.nationality) | translateAlt:'-'"></span>
                                 </div>
                                 <select class="form-control"
                                         data-ng-model="ownerModel.nationality"
                                         data-ng-if="edit.value"
-                                        data-ng-options="i18n['country_' + country] for country in controls.countries"
+                                        data-ng-options="(('country_' + country) | translate) for country in controls.countries"
                                         name="nationality"
                                         id="nationality"
                                         data-ng-required="isMandatory('nationality')">
@@ -402,12 +402,13 @@
                             </label>
 
                             <div class="controls">
-                                <div data-ng-show="!edit.value" data-ng-bind="i18n['country_' + ownerModel.birthCountry] || '-' ">
+                                <div data-ng-show="!edit.value"
+                                     data-ng-bind="('country_' + ownerModel.birthCountry) | translateAlt:'-'">
                                 </div>
                                 <select class="form-control"
                                         data-ng-show="edit.value" type="text"
                                         data-ng-model="ownerModel.birthCountry"
-                                        data-ng-options="i18n['country_' + country] for country in controls.countries"
+                                        data-ng-options="(('country_' + country) | translate) for country in controls.countries"
                                         id="birthCountry"
                                         name="birthCountry"
                                         maxlength="250"
@@ -669,11 +670,12 @@
 
                             <div class="controls">
                                 <div data-ng-hide="edit.value && !isReadonly('address.country')"
-                                     data-ng-bind="i18n['country_' + ownerModel.address.country] || '-' "></div>
+                                     data-ng-bind="('country_' + ownerModel.address.country) | translateAlt:'-'">
+                                </div>
                                 <select class="form-control"
                                         data-ng-show="edit.value && !isReadonly('address.country')" type="text"
                                         data-ng-model="ownerModel.address.country"
-                                        data-ng-options="i18n['country_' + country] for country in controls.countries"
+                                        data-ng-options="(('country_' + country) | translate) for country in controls.countries"
                                         id="addressCountry"
                                         name="addressCountry"
                                         data-ng-required="isMandatory('address.country')" >
@@ -864,7 +866,7 @@
                                     title="{{ 'useraccount_contacts_owner_update_name_title' | translate }}"
                                     data-ng-model="ownerModel.updateName"
                                     required>
-                                    <span class="fs11" data-ng-bind="::i18n.useraccount_contacts_owner_update_name_info"></span>
+                                    <span data-ng-bind=":: ('useraccount_contacts_owner_update_name_info') | translate"></span>
                                 </label>
                             </div>
                         </div>
