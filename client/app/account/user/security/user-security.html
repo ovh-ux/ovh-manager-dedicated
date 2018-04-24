@@ -445,12 +445,18 @@
                                             <div data-ovh-alert="doubleAuthAlertBackupCode"></div>
                                             <p data-translate="user_account_security_double_auth_type_backup_code_info"></p>
                                             <p data-ng-if="backupCode.sotpAccount.status && backupCode.sotpAccount.status !== 'needCodeValidation'"
+                                               data-ng-pluralize
+                                               data-count="backupCode.sotpAccount.remaining"
+                                               data-when="{
+                                                   '0': ('user_security_double_auth_backup_regenerate_codes_remaining' | translate),
+                                                   'one': ('user_security_double_auth_backup_regenerate_codes_remaining_1' | translate),
+                                                   'other': ('user_security_double_auth_backup_regenerate_codes_remaining_other' | translate:{ count: {} })
+                                               }"
                                                data-ng-class="{
                                                    'text-success': backupCode.sotpAccount.remaining > 5,
                                                    'text-warning': backupCode.sotpAccount.remaining < 6 && backupCode.sotpAccount.remaining > 3,
                                                    'text-error': backupCode.sotpAccount.remaining < 4
-                                               }"
-                                               data-ng-bind-html="trpl('user_security_double_auth_backup_regenerate_codes_remaining', backupCode.sotpAccount.remaining,  [backupCode.sotpAccount.remaining])">
+                                               }">
                                             </p>
                                             <button class="oui-button oui-button_secondary"
                                                     type="button"
