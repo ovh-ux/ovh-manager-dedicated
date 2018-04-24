@@ -3,10 +3,11 @@ angular.module("Module.ip.controllers").controller("IpMainCtrl", [
     "$timeout",
     "$stateParams",
     "$location",
+    "$translate",
     "Alerter",
     "constants",
     "featureAvailability",
-    function ($scope, $timeout, $stateParams, $location, Alerter, constants, featureAvailability) {
+    function ($scope, $timeout, $stateParams, $location, $translate, Alerter, constants, featureAvailability) {
         "use strict";
 
         const defaultTab = "ip";
@@ -72,7 +73,7 @@ angular.module("Module.ip.controllers").controller("IpMainCtrl", [
                 type = reason.action;
             }
 
-            Alerter.error($scope.tr(`iplb_backend_${type}_failure`), "polling_action");
+            Alerter.error($translate.instant(`iplb_backend_${type}_failure`), "polling_action");
         });
     }
 ]);

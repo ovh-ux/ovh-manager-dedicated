@@ -219,7 +219,9 @@ angular.module("Module.ip.controllers").controller("IpOrderCtrl", ($scope, $root
                 $scope.loading.durations = false;
             },
             (err) => {
-                Alerter.error($scope.tr("ip_order_loading_error2", [err.data ? err.data.message : err.message]), alertId);
+                Alerter.error($translate.instant("ip_order_loading_error2", {
+                    t0: err.data ? err.data.message : err.message
+                }), alertId);
 
                 $scope.loading.durations = false;
             }
@@ -276,7 +278,10 @@ angular.module("Module.ip.controllers").controller("IpOrderCtrl", ($scope, $root
         IpOrder.postOrder($scope.model.service, $scope.model.params, $scope.model.duration)
             .then(
                 (order) => {
-                    Alerter.alertFromSWS($scope.tr("ip_order_finish_success", [order.url, order.orderId]), { idTask: order.orderId, state: "OK" });
+                    Alerter.alertFromSWS($translate.instant("ip_order_finish_success", {
+                        t0: order.url,
+                        t1: order.orderId
+                    }), { idTask: order.orderId, state: "OK" });
                     window.open(order.url, "_blank");
                 },
                 (data) => {
