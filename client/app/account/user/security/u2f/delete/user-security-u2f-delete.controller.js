@@ -80,7 +80,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
                     }
                     $scope.u2f.isLoading = false;
                     $scope.u2f.hasError = true;
-                    Alerter.error($scope.tr(key), "doubleAuthAlertU2fDelete");
+                    Alerter.error($translate.instant(key), "doubleAuthAlertU2fDelete");
                 })
                 .finally(() => {
                     $scope.u2f.isLoading = false;

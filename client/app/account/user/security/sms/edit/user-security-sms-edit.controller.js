@@ -37,7 +37,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
             $scope.sms.isEditing = true;
             return DoubleAuthSmsService.edit($scope.sms.smsAccount.id, $scope.sms.description)
                 .then(() => {
-                    Alerter.success($scope.tr("user_account_security_double_auth_type_sms_edit_success", "doubleAuthAlertSms"));
+                    Alerter.success($translate.instant("user_account_security_double_auth_type_sms_edit_success", "doubleAuthAlertSms"));
                     $rootScope.$broadcast("doubleAuthSMS.reload");
                 })
                 .catch((err) => Alerter.alertFromSWS($translate.instant("user_account_security_double_auth_type_sms_edit_error"), err, "doubleAuthAlertSms"))

@@ -1,9 +1,10 @@
 angular.module("UserAccount.controllers").controller("UserAccount.controllers.doubleAuth.u2f.add", [
     "$rootScope",
     "$scope",
+    "$translate",
     "UserAccount.services.doubleAuth.u2f",
     "Alerter",
-    function ($rootScope, $scope, DoubleAuthU2fService, Alerter) {
+    function ($rootScope, $scope, $translate, DoubleAuthU2fService, Alerter) {
         "use strict";
 
         $scope.u2f = {
@@ -71,7 +72,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
                         key = "user_account_security_double_auth_type_u2f_add_error";
                     }
                     $scope.u2f.hasError = true;
-                    Alerter.error($scope.tr(key), "doubleAuthAlertU2fAdd");
+                    Alerter.error($translate.instant(key), "doubleAuthAlertU2fAdd");
                 })
                 .finally(() => {
                     $scope.u2f.isAdding = false;

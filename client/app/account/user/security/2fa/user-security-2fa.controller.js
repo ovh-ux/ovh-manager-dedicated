@@ -144,7 +144,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
                         key = "user_account_security_double_auth_type_u2f_add_error";
                     }
                     $scope.step2.hasError = true;
-                    Alerter.error($scope.tr(key), "doubleAuthAlert2fa");
+                    Alerter.error($translate.instant(key), "doubleAuthAlert2fa");
                 });
         };
 

@@ -37,7 +37,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
             $scope.totp.isEditing = true;
             return DoubleAuthTotpService.edit($scope.totp.totpAccount.id, $scope.totp.description)
                 .then(() => {
-                    Alerter.success($scope.tr("", "doubleAuthAlertTotp"));
+                    Alerter.success($translate.instant("", "doubleAuthAlertTotp"));
                     $rootScope.$broadcast("doubleAuthTOTP.reload");
                 })
                 .catch((err) => Alerter.alertFromSWS($translate.instant("user_security_double_auth_totp_edit_error"), err.data, "doubleAuthAlertTotp"))
