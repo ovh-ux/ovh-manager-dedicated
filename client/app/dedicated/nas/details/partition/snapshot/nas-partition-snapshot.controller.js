@@ -74,10 +74,12 @@ angular.module("App").controller("NasPartitionSnapshotCtrl", function ($scope, $
                         }
                         const listError = [];
                         angular.forEach(data, (error) => {
-                            listError.push($scope.tr(`nas_snapshot_${error.type}`));
+                            listError.push($translate.instant(`nas_snapshot_${error.type}`));
                         });
                         load();
-                        Alerter.error($scope.tr("nas_snapshot_set_failure", listError.join(", ")), alerterId);
+                        Alerter.error($translate.instant("nas_snapshot_set_failure", {
+                            t0: listError.join(", ")
+                        }), alerterId);
                     }
                 )
                 .finally(() => {

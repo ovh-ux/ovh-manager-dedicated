@@ -1,8 +1,9 @@
 class DedicatedCloudUserRightsEditCtrl {
-    constructor ($scope, $q, $stateParams, DedicatedCloud) {
+    constructor ($scope, $q, $stateParams, $translate, DedicatedCloud) {
         this.$scope = $scope;
         this.$q = $q;
         this.$stateParams = $stateParams;
+        this.$translate = $translate;
         this.DedicatedCloud = DedicatedCloud;
 
         this.user = null;
@@ -55,9 +56,15 @@ class DedicatedCloudUserRightsEditCtrl {
         this.loading.save = true;
 
         return this.DedicatedCloud.setUserRights(this.$stateParams.productId, this.$stateParams.userId, this.right).then(() => {
-            this.$scope.setMessage(this.$scope.tr("dedicatedCloud_USER_right_set_success", [this.user.name, this.datacenter.name]), true);
+            this.$scope.setMessage(this.$translate.instant("dedicatedCloud_USER_right_set_success", {
+                t0: this.user.name,
+                t1: this.datacenter.name
+            }), true);
         }).catch((err) => {
-            this.$scope.setMessage(this.$scope.tr("dedicatedCloud_USER_right_set_fail", [this.user.name, this.datacenter.name]), {
+            this.$scope.setMessage(this.$translate.instant("dedicatedCloud_USER_right_set_fail", {
+                t0: this.user.name,
+                t1: this.datacenter.name
+            }), {
                 type: "ERROR",
                 message: err.message
             });

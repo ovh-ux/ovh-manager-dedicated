@@ -138,7 +138,10 @@ angular.module("App").controller("ServerInstallationGabaritCtrl", ($rootScope, $
                     } else {
                         $scope.informations.hardwareRaid.disks = getDisks($scope.informations.hardwareRaid.disks);
                         if ($scope.installation.server.nbPhysicalDisk < $scope.informations.hardwareRaid.disks.length) {
-                            $scope.errorGab.ws = $scope.tr("server_configuration_installation_gabarit_step2_hardwareRaid_incompatible_disks", [$scope.installation.server.nbPhysicalDisk, $scope.informations.hardwareRaid.disks.length]);
+                            $scope.errorGab.ws = $translate.instant("server_configuration_installation_gabarit_step2_hardwareRaid_incompatible_disks", {
+                                t0: $scope.installation.server.nbPhysicalDisk,
+                                t1: $scope.informations.hardwareRaid.disks.length
+                            });
                             $scope.informations.hardwareRaidCompatible = false;
                         }
                     }
@@ -180,7 +183,10 @@ angular.module("App").controller("ServerInstallationGabaritCtrl", ($rootScope, $
                 $scope.installation.deleteGabarit = null;
             },
             (data) => {
-                $scope.errorGab.ws = $scope.tr("server_configuration_installation_gabarit_step1_delete_fail", [$scope.installation.deleteGabarit.displayName, data.data.message]);
+                $scope.errorGab.ws = $translate.instant("server_configuration_installation_gabarit_step1_delete_fail", {
+                    t0: $scope.installation.deleteGabarit.displayName,
+                    t1: data.data.message
+                });
             }
         );
     };
@@ -234,7 +240,12 @@ angular.module("App").controller("ServerInstallationGabaritCtrl", ($rootScope, $
                     $scope.setAction("installation/progress/dedicated-server-installation-progress", $scope.installation.server);
                 },
                 (data) => {
-                    $scope.errorGab.ws = $scope.tr("server_configuration_installation_gabarit_step2_error", [$scope.installation.selectGabarit.displayName, $scope.installation.server.name, $scope.installation.selectLanguage, data.message]);
+                    $scope.errorGab.ws = $translate.instant("server_configuration_installation_gabarit_step2_error", {
+                        t0: $scope.installation.selectGabarit.displayName,
+                        t1: $scope.installation.server.name,
+                        t2: $scope.installation.selectLanguage,
+                        t3: data.message
+                    });
                 }
             )
             .finally(() => {
