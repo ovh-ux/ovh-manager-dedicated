@@ -35,14 +35,14 @@
                 <select id="meanType"
                         name="meanType"
                         class="form-control"
-                        title="{{ i18n['add_mean_select_title_' + titleTypeOfSelect] }}"
+                        title="{{ 'add_mean_select_title_' + titleTypeOfSelect | translate }}"
                         data-ng-disabled="meanIslocked"
                         data-ng-change="mean.validationType = null;"
-                        data-ng-options="mean as i18n['common_payment_type_' + mean] for mean in means"
+                        data-ng-options="mean as (('common_payment_type_' + mean) | translate) for mean in means"
                         data-ng-model="mean.type">
                     <option value=""
                             data-ng-disabled="true"
-                            data-ng-bind=":: i18n.common_choose">
+                            data-translate="common_choose">
                     </option>
                 </select>
             </div>
@@ -50,7 +50,7 @@
             <div data-ng-if="mean.type"
                  class="w-50">
 
-                <p data-ng-bind-html="i18n['paymentMean_add_message_' + mean.type + '_' + worldPart] || i18n['paymentMean_add_message_' + mean.type]"></p>
+                <p data-ng-bind="('paymentMean_add_message_' + mean.type) | translate"></p>
                 <div data-ng-if="mean.type === 'bankAccount'">
 
                     <div class="form-group">
@@ -68,7 +68,7 @@
                         <div data-ng-repeat="(error, hasError) in paymentMeanForm.iban.$error"
                              role="alert">
                             <span class="text-danger"
-                                  data-ng-bind="i18n['paymentMean_error_' + error]"
+                                  data-ng-bind="('paymentMean_error_' + error) | translate"
                                   data-ng-if="hasError && paymentMeanForm.iban.$dirty">
                             </span>
                         </div>
@@ -90,7 +90,7 @@
                         <div data-ng-repeat="(error, hasError) in paymentMeanForm.bic.$error"
                              role="alert">
                             <span class="text-danger"
-                                  data-ng-bind="i18n['paymentMean_error_' + error]"
+                                  data-ng-bind="('paymentMean_error_' + error) | translate"
                                   data-ng-if="hasError && paymentMeanForm.bic.$dirty">
                             </span>
                         </div>
@@ -112,7 +112,7 @@
                         <div data-ng-repeat="(error, hasError) in paymentMeanForm.ownerAddress.$error"
                              role="alert">
                             <span class="text-danger"
-                                  data-ng-bind="i18n['paymentMean_error_' + error]"
+                                  data-ng-bind="('paymentMean_error_' + error) | translate"
                                   data-ng-if="hasError && paymentMeanForm.ownerAddress.$dirty" >
                             </span>
                         </div>
@@ -134,7 +134,7 @@
                         <div data-ng-repeat="(error, hasError) in paymentMeanForm.ownerName.$error"
                              role="alert">
                             <span class="text-danger"
-                                  data-ng-bind="i18n['paymentMean_error_' + error]"
+                                  data-ng-bind="('paymentMean_error_' + error) | translate"
                                   data-ng-if="hasError && paymentMeanForm.ownerName.$dirty">
                             </span>
                         </div>
@@ -160,12 +160,6 @@
                 </button>
             </div>
 
-            <div data-ng-if="mean.validation">
-                <p data-ng-if="mean.validation.validationType == 'documentToSend'"
-                   data-ng-bind-html="i18n['paymentMean_validation_message_documentToSend']"></p>
-                <p data-ng-if="mean.validation.validationType == 'simpleValidation'"
-                   data-ng-bind-html="i18n['paymentMean_validation_message_simpleValidation']"></p>
-            </div>
         </form>
     </div>
 </div>

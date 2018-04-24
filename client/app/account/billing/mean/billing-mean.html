@@ -216,7 +216,7 @@
                                    data-ng-disabled="mean.state !== 'valid'"
                                    data-ng-change="setAsDefaultPaymentMean(mean, 'creditCard')">
                         </td>
-                        <td data-translate="paymentType_status_{{ mean.state | lowercase }}"></td>
+                        <td data-ng-bind="'paymentType_status_' + mean.state | translate"></td>
                         <td class="text-center"
                             data-ng-if="isCreditWithThreeDsValidation()">
                             <span class="label"
@@ -224,7 +224,7 @@
                                       'label-success': mean.threeDsValidated,
                                       'label-danger': !mean.threeDsValidated
                                   }"
-                                  data-translate=":: ('mean_table_head_3d_secure_' + mean.threeDsValidated) | translate">
+                                  data-ng-bind="::(mean.threeDsValidated ? 'mean_table_head_3d_secure_true' : 'mean_table_head_3d_secure_false') | translate">
                             </span>
                         </td>
                         <td class="text-center">
@@ -309,7 +309,7 @@
                         </td>
                         <td>
                             <span data-ng-if="mean.state !== 'pendingValidation'"
-                                  data-ng-bind="i18n['paymentType_status_' + mean.state]">
+                                  data-ng-bind="('paymentType_status_' + mean.state) | translate">
                             </span>
                             <span data-ng-if="mean.state === 'pendingValidation'"
                                   data-translate="paymentType_status_waiting_for_documents">
