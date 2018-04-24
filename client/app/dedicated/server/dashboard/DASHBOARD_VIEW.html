@@ -449,14 +449,12 @@
                         <li class="oui-tile__item"
                             data-ng-if="worldPart !== 'US'">
                             <div class="oui-tile__definition">
-                                <div data-working-status
-                                     data-modal-id="'worksDedicatedServers'"
-                                     data-product-type="'dedicated_server'"
-                                     data-works-details="works"
-                                     data-show-affiliated="true"
-                                     data-show-only-active="true"
-                                     data-tr="tr">
-                                </div>
+                                <p><span data-i18n-static="core_works_description"></span></p>
+                                <button type="button"
+                                        class="btn btn-block btn-default"
+                                        data-ng-click="currentView.value = 'WORKS'"
+                                        data-i18n-static="core_works_link">
+                                </button>
                             </div>
                         </li>
                     </ul>

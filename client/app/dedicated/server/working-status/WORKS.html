@@ -1,0 +1,38 @@
+<div data-ng-controller="WorkingStatusCtrl as $ctrl">
+
+    <button class="oui-button oui-button_link oui-button_icon-left" type="button"
+            data-ng-click="currentView.value = 'DASHBOARD'">
+        <span class="oui-icon oui-icon-chevron-left" aria-hidden="true"></span>
+        <span data-i18n-static="common_back"></span>
+    </button>
+
+    <h1 data-i18n-static="modal_working_status_title"></h1>
+
+    <div data-ng-repeat="work in $ctrl.worksDetails track by $index">
+        <h5>
+            <a target="_blank"
+               rel="noopener"
+               title="{{ work.title }} ({{ tr('core_new_window') }})"
+               data-ng-href="{{ work.link }}"
+               data-ng-bind="work.title">
+            </a>
+        </h5>
+        <em data-ng-bind="work.date | date:'short'"></em>
+        <p data-ng-bind-html="work.summary"></p>
+        <ul class="list-inline font-italic">
+            <li>
+                <strong data-i18n-static="modal_working_status_type"></strong>
+                <span data-ng-bind="work.details.type"></span>
+            </li>
+            <li>
+                <strong data-i18n-static="modal_working_status_category"></strong>
+                <span data-ng-bind="work.details.category"></span>
+            </li>
+            <li>
+                <strong data-i18n-static="modal_working_status_status"></strong>
+                <span data-ng-bind="work.details.status"></span>
+            </li>
+        </ul>
+        <hr>
+    </div>
+</div>
