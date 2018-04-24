@@ -80,8 +80,14 @@
                         <td data-translate="{{ 'dedicatedCloud_tab_host_status_'+host.status }}"></td>
                         <td>
                             <span data-ng-show="host.billingType === 'HOURLY' && host.consumption"
-                                  data-ng-bind="trpl('dedicatedCloud_tab_host_hourly_usage', host.consumption.value, [host.consumption.value])"
-                                  data-uib-tooltip="{{ 'dedicatedCloud_tab_host_hourly_usage_update' | translate:{ t0: host.lastUpdate|date:'short' } }}"
+                                  data-ng-pluralize
+                                  data-count="host.consumption.value"
+                                  data-when="{
+                                      '0': ('dedicatedCloud_tab_host_hourly_usage_na' | translate),
+                                      'one': ('dedicatedCloud_tab_host_hourly_usage_1' | translate),
+                                      'other': ('dedicatedCloud_tab_host_hourly_usage_other' | translate: { count: {} })
+                                  }"
+                                  data-uib-tooltip="{{ 'dedicatedCloud_tab_host_hourly_usage_update' | translate:{ t0: (host.lastUpdate|date:'short') } }}"
                                   data-tooltip-placement="top">
                             </span>
                             <span data-ng-show="host.billingType === 'HOURLY' && !host.consumption"
