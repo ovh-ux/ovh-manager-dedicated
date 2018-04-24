@@ -210,7 +210,10 @@ angular.module("App").controller("DedicatedCloudHostToMonthlyCtrl", ($stateParam
         const windowRef = $window.open();
         DedicatedCloud.upgradedResource($stateParams.productId, upgradeType, $scope.model.duration, resourceType, resourceId)
             .then((order) => {
-                const message = $scope.tr("dedicatedCloud_order_finish_success", [order.url, order.orderId]);
+                const message = $translate.instant("dedicatedCloud_order_finish_success", {
+                    t0: order.url,
+                    t1: order.orderId
+                });
                 $scope.setMessage(message, true);
                 Alerter.alertFromSWS(message, { idTask: order.orderId, state: "OK" });
                 orderUrl = order.url;

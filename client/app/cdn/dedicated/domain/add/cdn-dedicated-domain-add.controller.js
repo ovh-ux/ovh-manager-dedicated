@@ -51,7 +51,10 @@ angular.module("App").controller("CdnAddDomainsCtrl", ($scope, $stateParams, $tr
         $scope.resetAction();
         Cdn.addDomain($stateParams.productId, $scope.domain).then(
             () => {
-                $scope.setMessage($scope.tr("cdn_configuration_add_domain_success", [$scope.domain.domain, $scope.domain.backend]), true);
+                $scope.setMessage($translate.instant("cdn_configuration_add_domain_success", {
+                    t0: $scope.domain.domain,
+                    t1: $scope.domain.backend
+                }), true);
             },
             (data) => {
                 $scope.setMessage($translate.instant("cdn_configuration_add_domain_fail"), data);

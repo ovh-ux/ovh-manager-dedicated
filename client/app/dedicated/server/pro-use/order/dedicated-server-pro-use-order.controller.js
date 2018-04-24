@@ -81,7 +81,10 @@ angular.module("App").controller("ServerOrderProUseCtrl", ($scope, $stateParams,
         Server.orderProUse($stateParams.productId, $scope.model.duration).then(
             (order) => {
                 $scope.loading.validation = false;
-                Alerter.alertFromSWS($scope.tr("server_configuration_profesionnal_use_order_finish_success", [order.url, order.orderId]), { idTask: order.orderId, state: "OK" });
+                Alerter.alertFromSWS($translate.instant("server_configuration_profesionnal_use_order_finish_success", {
+                    t0: order.url,
+                    t1: order.orderId
+                }), { idTask: order.orderId, state: "OK" });
                 window.open(order.url, "_blank");
                 $scope.resetAction();
             },

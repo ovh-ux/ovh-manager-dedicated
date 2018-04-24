@@ -40,7 +40,10 @@ angular.module("App").controller("NasOrderValidationCtrl", ($scope, Nas, $rootSc
         window.open(bc.url, "_blank");
         $rootScope.$broadcast("nas.order.init");
         $scope.resetAction();
-        Alerter.success($scope.tr("nas_order_bc_finish_success", [bc.url, bc.orderId]));
+        Alerter.success($translate.instant("nas_order_bc_finish_success", {
+            t0: bc.url,
+            t1: bc.orderId
+        }));
     }
 
     function postNasFail (data) {

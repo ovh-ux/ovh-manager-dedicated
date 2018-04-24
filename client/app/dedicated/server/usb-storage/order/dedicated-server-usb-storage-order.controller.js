@@ -95,7 +95,10 @@ angular.module("App").controller("UsbStorageOrderCtrl", ($rootScope, $scope, $q,
         Server.orderUsbStorage($stateParams.productId, $scope.model.capacity, $scope.model.duration).then(
             (order) => {
                 $scope.loading.validation = false;
-                Alerter.alertFromSWS($scope.tr("server_tab_USB_STORAGE_order_finish_success", [order.url, order.orderId]), { idTask: order.orderId, state: "OK" });
+                Alerter.alertFromSWS($translate.instant("server_tab_USB_STORAGE_order_finish_success", {
+                    t0: order.url,
+                    t1: order.orderId
+                }), { idTask: order.orderId, state: "OK" });
                 window.open(order.url, "_blank");
                 $scope.resetAction();
             },

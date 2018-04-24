@@ -46,7 +46,10 @@ angular.module("App").controller("FtpBackupOrdercontroller", ($scope, $statePara
         Server.postFtpBackupOrderDetail($stateParams.productId, $scope.order.bc.duration, $scope.order.model[$scope.order.choiceIndex].capacity).then(
             (data) => {
                 window.open(data.url, "_blank");
-                Alerter.alertFromSWS($scope.tr("server_configuration_ftpbackup_order_load_order_success", [data.url, data.orderId]), true, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("server_configuration_ftpbackup_order_load_order_success", {
+                    t0: data.url,
+                    t1: data.orderId
+                }), true, $scope.alert);
                 $scope.loading = false;
                 $scope.resetAction();
             },

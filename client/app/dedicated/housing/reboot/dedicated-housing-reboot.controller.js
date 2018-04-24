@@ -20,7 +20,9 @@ angular.module("App").controller("HousingRebootCtrl", ($scope, $stateParams, $tr
         Housing.rebootOrder($stateParams.productId)
             .then(
                 (order) => {
-                    Alerter.success($scope.tr("housing_configuration_reboot_success", "housing_dashboard_alert"));
+                    Alerter.success($translate.instant("housing_configuration_reboot_success", {
+                        t0: "housing_dashboard_alert"
+                    }));
                     window.open(order.url, "_blank").focus();
                 },
                 (err) => {

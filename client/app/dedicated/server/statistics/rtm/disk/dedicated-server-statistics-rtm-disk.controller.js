@@ -8,7 +8,7 @@ angular.module("controllers").controller("controllers.Server.Stats.Rtm.Disk", ($
         },
         (err) => {
             $scope.loading = false;
-            Alerter.alertFromSWS($scope.tr(""), err);
+            Alerter.alertFromSWS("", err);
         }
     );
 });

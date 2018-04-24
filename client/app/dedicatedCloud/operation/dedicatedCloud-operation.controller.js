@@ -48,8 +48,8 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
             self.loaders.operations = true;
             return DedicatedCloud.getOperation($stateParams.productId, { taskId: item })
                 .then((op) => {
-                    const friendlyNameBy = $scope.tr(`dedicatedCloud_OPERATIONS_createdby_${op.createdBy.replace(/-/g, "_")}`);
-                    const friendlyNameFrom = $scope.tr(`dedicatedCloud_OPERATIONS_createdfrom_${op.createdFrom.replace(/-/g, "_")}`);
+                    const friendlyNameBy = $translate.instant(`dedicatedCloud_OPERATIONS_createdby_${op.createdBy.replace(/-/g, "_")}`);
+                    const friendlyNameFrom = $translate.instant(`dedicatedCloud_OPERATIONS_createdfrom_${op.createdFrom.replace(/-/g, "_")}`);
                     op.createdBy = friendlyNameBy.indexOf("/!\\") === 0 ? op.createdBy : friendlyNameBy;
                     op.createdFrom = friendlyNameFrom.indexOf("/!\\") === 0 ? op.createdFrom : friendlyNameFrom;
                     op.isDone = _.includes(self.doneStates, op.state);
@@ -90,7 +90,9 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
                 const value = operation[field];
                 if (!_.isNull(value)) {
                     operation.relatedServices.push({
-                        label: $scope.tr(baseTrad + field, [value]),
+                        label: $translate.instant(baseTrad + field, {
+                            t0: value
+                        }),
                         action: { type: "label" },
                         field
                     });
@@ -126,7 +128,9 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
                     }
 
                     operation.relatedServices.push({
-                        label: $scope.tr(baseTrad + field, [value]),
+                        label: $translate.instant(baseTrad + field, {
+                            t0: value
+                        }),
                         action: { type: "url", url },
                         field
                     });
@@ -142,7 +146,9 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
                     const params = _.pick(operation, ["datacenterId", "serviceName"]);
                     params[field] = value;
                     operation.relatedServices.push({
-                        label: $scope.tr(baseTrad + field, [value]),
+                        label: $translate.instant(baseTrad + field, {
+                            t0: value
+                        }),
                         action: { type: "callback", params },
                         field
                     });
