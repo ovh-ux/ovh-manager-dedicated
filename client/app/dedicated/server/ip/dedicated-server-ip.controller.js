@@ -213,14 +213,6 @@ angular.module("App").controller("ServerIpFirewallCtrl", [
             }
         };
 
-        //    $scope.toggleFirewall = function (enabled) {
-        //        Server.toggleFirewall($scope.selectedIp.ip, enabled).then(function (data) {
-        //            $scope.setMessage($scope.tr('server_configuration_firewall_toggle_firewall_success'), data);
-        //        }, function (data) {
-        //            $scope.setMessage($scope.tr('server_configuration_firewall_toggle_firewall_fail'), data);
-        //        });
-        //    };
-        //
         $scope.hideFirewall = function () {
             $scope.displayed = false;
             $rootScope.$broadcast("ips.display");
