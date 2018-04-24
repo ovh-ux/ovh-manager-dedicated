@@ -11,7 +11,8 @@ angular
         $stateProvider.state("app.account.otrs-ticket-details", {
             url: "/ticket/:ticketId",
             templateUrl: "account/otrs/detail/otrs-detail.html",
-            controller: "otrsDetailCtrl"
+            controller: "otrsDetailCtrl",
+            translations: ["account/otrs"]
         });
     })
     .run([

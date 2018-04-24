@@ -1,7 +1,7 @@
 <header class="page-header"
         role="header">
     <h1>
-        <span data-ng-bind="{{ 'otrs_detail_title' | translate }}"></span>
+        <span data-ng-bind="'otrs_detail_title' | translate"></span>
         <span data-ng-show="ticket.ticketNumber"
               data-ng-bind="'otrs_detail_title2' | translate:{ t0: ticket.ticketNumber }">
         </span>
@@ -35,15 +35,15 @@
                     <dt data-translate="otrs_detail_subject"></dt>
                     <dd data-ng-bind="ticket.subject"></dd>
                     <dt data-translate="otrs_detail_serviceName"></dt>
-                    <dd data-ng-bind="ticket.serviceDescription || ticket.serviceName || i18n.otrs_service_other_services"></dd>
+                    <dd data-ng-bind="ticket.serviceDescription || ticket.serviceName || (('otrs_service_other_services') | translate)"></dd>
                     <dt data-ng-if="ticket.product"
                         data-translate="otrs_popup_category">
                     </dt>
                     <dd data-ng-if="ticket.product"
-                        data-ng-bind="( i18n['otrs_service_category_' + ticket.product] || ticket.product)">
+                        data-ng-bind="(('otrs_service_category_' + ticket.product) | translateAlt:ticket.product)">
                     </dd>
                     <dt data-translate="otrs_popup_type"></dt>
-                    <dd data-ng-bind="( i18n['otrs_types_' + ticket.type] || ticket.type)"></dd>
+                    <dd data-ng-bind="(('otrs_types_' + ticket.type) | translateAlt:ticket.type)"></dd>
                 </dl>
                 <dl class="col-sm-6">
                     <dt data-translate="otrs_detail_creationDate"></dt>

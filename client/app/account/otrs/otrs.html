@@ -102,7 +102,7 @@
                 <select class="form-control"
                         id="requestspopup"
                         name="requestspopup"
-                        data-ng-options="request as ( i18n['otrs_request_'+request] || request ) for request in requests"
+                        data-ng-options="request as (('otrs_request_' + request ) | translateAlt:request) for request in requests"
                         data-ng-model="search.category"
                         data-ng-disabled="loaders.models">
                      <option value=""
@@ -238,7 +238,7 @@
                             'text-muted': ticket.state === 'closed'
                         }">
                     </th>
-                    <td data-ng-bind="::ticket.serviceDescription || ticket.serviceName || i18n.otrs_service_other_services"></td>
+                    <td data-ng-bind="::ticket.serviceDescription || ticket.serviceName || (('otrs_service_other_services') | translate)"></td>
                     <td data-ng-bind="::ticket.subject"></td>
                     <td data-translate="{{ 'otrs_table_ticket_lastMessageFrom_' + ticket.lastMessageFrom }}"></td>
                     <td data-ng-bind="ticket.creationDate | date: 'short'"></td>
