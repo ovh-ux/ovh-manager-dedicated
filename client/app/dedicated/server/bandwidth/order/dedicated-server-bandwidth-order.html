@@ -3,9 +3,9 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="openBC"
-         data-wizard-title="{{ 'server_order_bandwidth_title' | translate }}"
+         data-wizard-title="'server_order_bandwidth_title' | translate"
          data-wizard-bread-crumb
-         data-wizard-confirm-button-text="{{ 'wizard_pay' | translate }}">
+         data-wizard-confirm-button-text="'wizard_pay' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="orderable.orderable && !loaders.orderableVersion && selectedBandwidth.value && selectedBandwidthTypes.value"
@@ -42,13 +42,13 @@
                                     <td>
                                         <label for="bandwith-{{ $index }}"
                                                class="control-label"
-                                               data-ng-bind="i18n['toggle_button_label_' + bandwith] || bandwith">
+                                               data-ng-bind="('toggle_button_label_' + bandwith) | translateAlt: bandwith">
                                         </label>
                                     </td>
                                     <td>
                                         <label for="bandwith-{{ $index }}"
                                                class="control-label"
-                                               data-translate="{{ 'toggle_button_label_info_' + bandwith }}">
+                                               data-ng-bind="('toggle_button_label_info_' + bandwith) | translate">
                                         </label>
                                     </td>
                                 </tr>
@@ -60,7 +60,12 @@
                     <div class="form-group">
                         <label for="selectedBandwidth"
                                class="control-label"
-                               data-ng-bind="trpl('select_bandwidth_value_label', orderable[selectedBandwidthTypes.value].length)">
+                               data-ng-pluralize
+                               data-count="orderable[selectedBandwidthTypes.value].length"
+                               data-when="{
+                                   'one': ('select_bandwidth_value_label_1' | translate),
+                                   'other': ('select_bandwidth_value_label_other' | translate)
+                               }">
                         </label>
                         <select id="selectedBandwidth"
                                 class="form-control"
