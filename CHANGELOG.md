@@ -1,3 +1,13 @@
+<a name="9.2.12"></a>
+## [9.2.12](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.11...v9.2.12) (2018-04-19)
+
+
+### Bug Fixes
+
+* temporarily remove debt messages for US ([639c738](https://github.com/ovh-ux/ovh-manager-dedicated/commit/639c738))
+
+
+
 <a name="9.2.11"></a>
 ## [9.2.11](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.10...v9.2.11) (2018-04-12)
 
