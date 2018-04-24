@@ -178,10 +178,10 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew.
             let message = "";
             switch (period) {
             case 0:
-                message = $scope.i18n.autorenew_service_renew_manuel;
+                message = $translate.instant("autorenew_service_renew_manuel");
                 break;
             case 12:
-                message = $scope.i18n.autorenew_service_update_period_12;
+                message = $translate.instant("autorenew_service_update_period_12");
                 break;
             default:
                 message = $translate.instant("autorenew_service_update_period_month", {
