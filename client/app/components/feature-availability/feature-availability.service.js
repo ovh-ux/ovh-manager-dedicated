@@ -139,6 +139,10 @@ class FeatureAvailability {
         return this.deny("US");
     }
 
+    hasVrackAccessibleFromSidebar () {
+        return this.allow("US");
+    }
+
     allow (...args) {
         return Array.from(args).indexOf(this.target) > -1;
     }

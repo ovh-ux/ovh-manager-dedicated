@@ -840,7 +840,7 @@ var constants = {
         vmsUrl : "http://status.ovh.net/vms/",
         travauxUrl : "http://status.ovh.net/",
         publicCloudUrl : "/manager/cloud/index.html#/",
-        vrackUrl : "/manager/cloud/index.html#/vrack",
+        vrackUrl : "https://ovhcloud.com/manager/cloud/index.html#/vrack",
         nashaUrl: "/manager/cloud/index.html#/paas/nasha",
         UNIVERS      : "dedicated",
         UNIVERSES : {

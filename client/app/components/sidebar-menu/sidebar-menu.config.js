@@ -1,5 +1,5 @@
 angular.module("App")
-    .run(($q, SidebarMenu, Products, User, $translatePartialLoader, $translate, DedicatedCloud, Nas, CdnDomain, featureAvailability) => {
+    .run(($q, SidebarMenu, Products, User, $translatePartialLoader, $translate, DedicatedCloud, Nas, CdnDomain, featureAvailability, constants) => {
 
         function buildSidebarActions () {
             return User.getUrlOf("dedicatedOrder").then((dedicatedOrderUrl) => {
@@ -98,6 +98,16 @@ angular.module("App")
                 state: "app.ip",
                 icon: "ovh-font ovh-font-ip"
             });
+
+            if (featureAvailability.hasVrackAccessibleFromSidebar()) {
+                SidebarMenu.addMenuItem({
+                    name: "vrack",
+                    title: $translate.instant("navigation_left_vrack"),
+                    url: constants.vrackUrl,
+                    target: "_self",
+                    icon: "ovh-font ovh-font-vRack"
+                });
+            }
 
             const productsPromise = Products.getProductsByType().then((products) => {
                 const pending = [];
