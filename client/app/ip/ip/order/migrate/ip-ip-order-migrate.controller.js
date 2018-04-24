@@ -183,7 +183,10 @@ angular.module("Module.ip.controllers").controller("IpMigrateController", ($scop
         IpOrder.postMigrateIpOrder($scope.migrate)
             .then(
                 (order) => {
-                    Alerter.alertFromSWS($scope.tr("ip_migration_step5_success", [order.url, order.orderId]), { idTask: order.orderId, state: "OK" });
+                    Alerter.alertFromSWS($translate.instant("ip_migration_step5_success", {
+                        t0: order.url,
+                        t1: order.orderId
+                    }), { idTask: order.orderId, state: "OK" });
                     window.open(order.url, "_blank");
                 },
                 (data) => {

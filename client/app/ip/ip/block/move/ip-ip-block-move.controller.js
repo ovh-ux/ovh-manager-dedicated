@@ -60,10 +60,16 @@ angular.module("Module.ip.controllers").controller("IpMoveIpBlockCtrl", ($scope,
             Ip.moveIpBlockToPark($scope.data.ipBlock.ipBlock)
                 .then(
                     () => {
-                        Alerter.success($scope.tr("ip_table_manage_move_ipblock_success", [$scope.data.ipBlock.ipBlock, $translate.instant(`ip_service${$scope.model.serviceName.service}`) || $scope.model.serviceName.service]));
+                        Alerter.success($translate.instant("ip_table_manage_move_ipblock_success", {
+                            t0: $scope.data.ipBlock.ipBlock,
+                            t1: $translate.instant(`ip_service${$scope.model.serviceName.service}`) || $scope.model.serviceName.service
+                        }));
                     },
                     (reason) => {
-                        Alerter.alertFromSWS($scope.tr("ip_table_manage_move_ipblock_failure", [$scope.data.ipBlock.ipBlock, $translate.instant(`ip_service${$scope.model.serviceName.service}`) || $scope.model.serviceName.service]), reason);
+                        Alerter.alertFromSWS($translate.instant("ip_table_manage_move_ipblock_failure", {
+                            t0: $scope.data.ipBlock.ipBlock,
+                            t1: $translate.instant(`ip_service${$scope.model.serviceName.service}`) || $scope.model.serviceName.service
+                        }), reason);
                     }
                 )
                 .finally(() => {
@@ -73,10 +79,16 @@ angular.module("Module.ip.controllers").controller("IpMoveIpBlockCtrl", ($scope,
             Ip.moveIpBlock($scope.model.serviceName.service, $scope.data.ipBlock.ipBlock, $scope.model.nexthop)
                 .then(
                     () => {
-                        Alerter.success($scope.tr("ip_table_manage_move_ipblock_success", [$scope.data.ipBlock.ipBlock, $scope.model.serviceName.service]));
+                        Alerter.success($translate.instant("ip_table_manage_move_ipblock_success", {
+                            t0: $scope.data.ipBlock.ipBlock,
+                            t1: $scope.model.serviceName.service
+                        }));
                     },
                     (reason) => {
-                        Alerter.alertFromSWS($scope.tr("ip_table_manage_move_ipblock_failure", [$scope.data.ipBlock.ipBlock, $scope.model.serviceName.service]), reason);
+                        Alerter.alertFromSWS($translate.instant("ip_table_manage_move_ipblock_failure", {
+                            t0: $scope.data.ipBlock.ipBlock,
+                            t1: $scope.model.serviceName.service
+                        }), reason);
                     }
                 )
                 .finally(() => {

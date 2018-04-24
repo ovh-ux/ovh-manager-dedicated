@@ -297,7 +297,9 @@ angular.module("Module.ip.controllers").controller("IpDashboardCtrl", ($scope, $
 
                 mainQueue = $q.all(queue).then(() => {
                     if ($scope.servicesInError.length) {
-                        Alerter.error($scope.tr("ip_services_error", [$scope.servicesInError.join(", ")]));
+                        Alerter.error($translate.instant("ip_services_error", {
+                            t0: $scope.servicesInError.join(", ")
+                        }));
                     }
                     $scope.containsAllServices = $scope.getAll && $scope.filters.service.serviceName === "_ALL";
                 });

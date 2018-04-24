@@ -64,7 +64,10 @@ angular.module("Module.ip.controllers").controller("IplbOrderPopCtrl", ($scope, 
         Iplb.postOrderPop($scope.data.value, $scope.model.pop)
             .then(
                 (order) => {
-                    Alerter.success($scope.tr("iplb_pop_order_success", [order.url, order.orderId]));
+                    Alerter.success($translate.instant("iplb_pop_order_success", {
+                        t0: order.url,
+                        t1: order.orderId
+                    }));
                     window.open(order.url, "_blank");
                 },
                 (data) => {

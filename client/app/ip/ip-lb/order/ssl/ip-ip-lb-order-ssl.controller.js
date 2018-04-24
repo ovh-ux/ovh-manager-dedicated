@@ -16,7 +16,9 @@ angular.module("Module.ip.controllers").controller("IplbOrderSslCtrl", ($scope, 
     });
 
     $scope.$watch("model.domain", () => {
-        $scope.helptext = $scope.tr("iplb_ssl_order_helptext", `postmaster@${$scope.isValid() ? $scope.model.domain : $translate.instant("iplb_ssl_order_helptext_domain")}`);
+        $scope.helptext = $translate.instant("iplb_ssl_order_helptext", {
+            t0: `postmaster@${$scope.isValid() ? $scope.model.domain : $translate.instant("iplb_ssl_order_helptext_domain")}`
+        });
     });
 
     $scope.isValid = function () {
@@ -56,7 +58,10 @@ angular.module("Module.ip.controllers").controller("IplbOrderSslCtrl", ($scope, 
         Iplb.postOrderSsl($scope.data.value, $scope.model.domain)
             .then(
                 (order) => {
-                    Alerter.success($scope.tr("iplb_ssl_order_success", [order.url, order.orderId]));
+                    Alerter.success($translate.instant("iplb_ssl_order_success", {
+                        t0: order.url,
+                        t1: order.orderId
+                    }));
                     window.open(order.url, "_blank");
                 },
                 (data) => {

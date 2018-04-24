@@ -30,7 +30,7 @@ angular.module("Module.ip.controllers").controller("AddGameFirewallRuleCtrl", fu
     self.loading = false;
 
     $scope.getProtocoleText = function (protocol) {
-        const tradText = $scope.tr(`ip_game_mitigation_rule_add_protocol_enum_${protocol}`);
+        const tradText = $translate.instant(`ip_game_mitigation_rule_add_protocol_enum_${protocol}`);
         return !/^\/!\\.*/.test(tradText) ? tradText : protocol;
     };
 
