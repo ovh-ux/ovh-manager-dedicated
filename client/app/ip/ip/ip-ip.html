@@ -22,10 +22,22 @@
                                     class="btn btn-link"
                                     data-ng-click="viewServicesInAlert()">
                                 <span data-ng-if="filters.service.serviceName === '_ALL'"
-                                      data-ng-bind="trpl('ip_alerts', alertsCount()) + ' :'">
+                                      data-ng-pluralize
+                                      data-count="alertsCount()"
+                                      data-when="{
+                                          '0': ('ip_alerts_none' | translate) + ' :',
+                                          'one': ('ip_alerts_1' | translate) + ' :',
+                                          'other': ('ip_alerts_other' | translate: { count: {} }) + ' :'
+                                      }">
                                 </span>
                                 <span data-ng-if="filters.service.serviceName !== '_ALL'"
-                                      data-ng-bind="trpl('ip_alerts_service', alertsCount()) + ' :'">
+                                      data-ng-pluralize
+                                      data-count="alertsCount()"
+                                      data-when="{
+                                          '0': ('ip_alerts_service_none' | translate) + ' :',
+                                          'one': ('ip_alerts_service_1' | translate) + ' :',
+                                          'other': ('ip_alerts_service_other' | translate: { count: {} }) + ' :'
+                                      }">
                                 </span>
                             </button>
                         </p>
@@ -34,7 +46,14 @@
                             <button type="button"
                                     class="btn btn-link"
                                     data-ng-click="viewServicesInAlert()">
-                                <span>{{ trpl('ip_alerts_spam', (alerts.spam.length)) }}</span>
+                                <span data-ng-pluralize
+                                      data-count="alerts.spam.length"
+                                      data-when="{
+                                          '0': ('ip_alerts_spam' | translate),
+                                          'one': ('ip_alerts_spam_1' | translate),
+                                          'other': ('ip_alerts_spam_other' | translate: { count: {} })
+                                      }">
+                                </span>
                             </button>
                         </p>
 
@@ -42,7 +61,14 @@
                             <button type="button"
                                     class="btn btn-link"
                                     data-ng-click="viewServicesInAlert()">
-                                <span>{{ trpl('ip_alerts_antihack', (alerts.antihack.length)) }}</span>
+                                <span data-ng-pluralize
+                                      data-count="alerts.antihack.length"
+                                      data-when="{
+                                          '0': ('ip_alerts_antihack' | translate),
+                                          'one': ('ip_alerts_antihack_1' | translate),
+                                          'other': ('ip_alerts_antihack_other' | translate: { count: {} })
+                                      }">
+                                </span>
                             </button>
                         </p>
 
@@ -50,7 +76,14 @@
                             <button type="button"
                                     class="btn btn-link"
                                     data-ng-click="viewServicesInAlert()">
-                                <span>{{ trpl('ip_alerts_arp', (alerts.arp.length)) }}</span>
+                                <span data-ng-pluralize
+                                      data-count="alerts.arp.length"
+                                      data-when="{
+                                          '0': ('ip_alerts_arp' | translate),
+                                          'one': ('ip_alerts_arp_1' | translate),
+                                          'other': ('ip_alerts_arp_other' | translate: { count: {} })
+                                      }">
+                                </span>
                             </button>
                         </p>
 
@@ -58,7 +91,14 @@
                             <button type="button"
                                     class="btn btn-link"
                                     data-ng-click="viewServicesInAlert()">
-                                <span>{{ trpl('ip_alerts_mitigation', (alerts.mitigation.length)) }}</span>
+                                <span data-ng-pluralize
+                                      data-count="alerts.mitigation.length"
+                                      data-when="{
+                                          '0': ('ip_alerts_mitigation' | translate),
+                                          'one': ('ip_alerts_mitigation_1' | translate),
+                                          'other': ('ip_alerts_mitigation_other' | translate: { count: {} })
+                                      }">
+                                </span>
                             </button>
                         </p>
                     </div>
@@ -303,7 +343,7 @@
                         <td>
                             <div class="text-warning"
                                  data-ng-if="alertsCount(ipBlock)"
-                                 data-uib-tooltip="{{ trpl('ip_alerts_spam', (ipBlock.alerts.spam.length)) + ', ' + trpl('ip_alerts_antihack', (ipBlock.alerts.antihack.length)) + ', ' + trpl('ip_alerts_arp', (ipBlock.alerts.arp.length)) + ', ' + trpl('ip_alerts_mitigation', (ipBlock.alerts.mitigation.length)) }}"
+                                 data-uib-tooltip="{{ alertsTooltip(ipBlock) }}"
                                  data-tooltip-placement="left">
                                 <span class="fa fa-warning"
                                       aria-hidden="true">

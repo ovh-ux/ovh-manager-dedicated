@@ -346,6 +346,14 @@ angular.module("Module.ip.controllers").controller("IpDashboardCtrl", ($scope, $
         return $scope.alerts.spam.length + $scope.alerts.antihack.length + $scope.alerts.arp.length + $scope.alerts.mitigation.length;
     };
 
+    $scope.alertsTooltip = function (ipBlock) {
+        const spam = $translate.instant("ip_alerts_spam_other").replace("{}", ipBlock.alerts.spam.length);
+        const hack = $translate.instant("ip_alerts_antihack_other").replace("{}", ipBlock.alerts.antihack.length);
+        const arp = $translate.instant("ip_alerts_arp_other").replace("{}", ipBlock.alerts.arp.length);
+        const mitigation = $translate.instant("ip_alerts_mitigation_other").replace("{}", ipBlock.alerts.mitigation.length);
+        return `${spam}, ${hack}, ${arp}, ${mitigation}`;
+    };
+
     // Return a promise !
     // 'forceOpen' param is optional
     $scope.toggleIp = function (ipBlock, forceOpen) {
