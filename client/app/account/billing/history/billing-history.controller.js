@@ -1,4 +1,4 @@
-angular.module("Billing.controllers").controller("Billing.controllers.History", function ($scope, $timeout, $q, $log, $translate, BillingHistory, BillingUser, BillingDebtAccount, BillingmessageParser, BillingPaymentInformation, BillingdateRangeSelection) { // eslint-disable-line max-len
+angular.module("Billing.controllers").controller("Billing.controllers.History", function ($scope, $timeout, $q, $log, $translate, BillingHistory, BillingUser, BillingDebtAccount, BillingmessageParser, BillingPaymentInformation, BillingdateRangeSelection, constants) { // eslint-disable-line max-len
     "use strict";
     const self = this;
 
@@ -19,6 +19,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.History", 
     };
 
     self.debtAccount = { active: false };
+    self.target = constants.target;
 
     self.colSpan = COL_SPAN_DEBT_LEGACY;
 

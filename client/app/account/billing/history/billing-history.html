@@ -18,7 +18,7 @@
             <span data-ng-bind-html="ctrl.message"></span>
         </div>
 
-        <div data-ng-if="ctrl.debtAccount.active"
+        <div data-ng-if="ctrl.debtAccount.active && ctrl.target !== 'US'"
              data-ng-show="!ctrl.loaders.paymentMeans && ctrl.debtAccount.dueAmount.value > 0" >
 
             <p class="text-warning"
@@ -36,7 +36,7 @@
                         class="btn btn-default"
                         data-translate="statements_account_pay_debt_button"
                         data-ng-click="ctrl.payAllDebts()"
-                        data-ng-if="ctrl.debtAccount.active"
+                        data-ng-if="ctrl.debtAccount.active && ctrl.target !== 'US'"
                         data-ng-disabled="ctrl.debtAccount.dueAmount.value === 0">
                 </button>
                 <button type="button"
