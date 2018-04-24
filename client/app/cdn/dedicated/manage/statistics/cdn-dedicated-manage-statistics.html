@@ -15,7 +15,13 @@
                                         <strong class="d-block"
                                                 data-translate="cdn_configuration_activity">
                                         </strong>
-                                        <span data-ng-bind="trpl('cdn_configuration_activity_page_viewed', $ctrl.cdn.activity, [$ctrl.cdn.activity])">
+                                        <span data-ng-pluralize
+                                              data-count="$ctrl.cdn.activity"
+                                              data-when="{
+                                                  '0': ('cdn_configuration_activity_page_viewed_0' | translate),
+                                                  'one': ('cdn_configuration_activity_page_viewed_one' | translate),
+                                                  'other': ('cdn_configuration_activity_page_viewed_other' | translate: { count: {} })
+                                              }">
                                         </span>
                                     </div>
                                 </div>
@@ -30,9 +36,20 @@
                                                 data-translate="cdn_configuration_savings">
                                         </strong>
                                         <span class="d-block"
-                                              data-ng-bind="trpl('cdn_configuration_savings_bandwidth_percentage', $ctrl.cdn.bandwidthHitPercentage, [$ctrl.cdn.bandwidthHitPercentage])">
+                                              data-ng-pluralize
+                                              data-count="$ctrl.cdn.bandwidthHitPercentage"
+                                              data-when="{
+                                                  '0': ('cdn_configuration_savings_bandwidth_percentage_default' | translate),
+                                                  'other': ('cdn_configuration_savings_bandwidth_percentage' | translate: { count: {} })
+                                              }">
                                         </span>
-                                        <span data-ng-bind="trpl('cdn_configuration_savings_request_percentage', $ctrl.cdn.requestHitPercentage, [$ctrl.cdn.requestHitPercentage])">
+                                        <span class="d-block"
+                                              data-ng-pluralize
+                                              data-count="$ctrl.cdn.requestHitPercentage"
+                                              data-when="{
+                                                  '0': ('cdn_configuration_savings_request_percentage_default' | translate),
+                                                  'other': ('cdn_configuration_savings_request_percentage' | translate: { count: {} })
+                                              }">
                                         </span>
                                     </div>
                                 </div>
@@ -102,7 +119,14 @@
                                     <div>
 
                                         <img src="images/cdn/icn_domain.png" alt="" />
-                                        <span data-ng-bind="trpl('cdn_configuration_domain', $ctrl.cdn.domains, [$ctrl.cdn.domains])"></span>
+                                        <span data-ng-pluralize
+                                              data-count="$ctrl.cdn.domains"
+                                              data-when="{
+                                                  '0': ('cdn_configuration_domain_0' | translate),
+                                                  'one': ('cdn_configuration_domain_one' | translate),
+                                                  'other': ('cdn_configuration_domain_other' | translate: { count: {} })
+                                              }">
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -155,7 +179,7 @@
                         <select name="datatype"
                                 class="oui-select__input"
                                 id="datatype"
-                                data-ng-options="i18n['cdn_stats_type_' + option] for option in consts.types"
+                                data-ng-options="('cdn_stats_type_' + option) | translate for option in consts.types"
                                 data-ng-model="model.dataType"
                                 data-ng-change="getStatistics()">
                         </select>
@@ -171,7 +195,7 @@
                         <select name="period"
                                 class="oui-select__input"
                                 id="period"
-                                data-ng-options="i18n['cdn_statistics_period_' + option] for option in consts.periods"
+                                data-ng-options="('cdn_statistics_period_' + option) | translate for option in consts.periods"
                                 data-ng-model="model.period"
                                 data-ng-change="getStatistics()">
                         </select>
