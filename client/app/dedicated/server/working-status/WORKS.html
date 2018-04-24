@@ -1,12 +1,8 @@
 <div data-ng-controller="WorkingStatusCtrl as $ctrl">
 
-    <button class="oui-button oui-button_link oui-button_icon-left" type="button"
-            data-ng-click="currentView.value = 'DASHBOARD'">
-        <span class="oui-icon oui-icon-chevron-left" aria-hidden="true"></span>
-        <span data-i18n-static="common_back"></span>
-    </button>
-
-    <h1 data-i18n-static="modal_working_status_title"></h1>
+    <oui-back-button on-click="currentView.value = 'DASHBOARD'"
+                     data-title="{{:: tr('modal_working_status_title') }}">
+    </oui-back-button>
 
     <div data-ng-repeat="work in $ctrl.worksDetails track by $index">
         <h5>
