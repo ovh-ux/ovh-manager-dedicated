@@ -35,7 +35,7 @@ angular.module("App").controller("MonitoringCtrl", function ($rootScope, $scope,
                     self.languageEnum = models.data.models["dedicated.server.AlertLanguageEnum"].enum;
                 },
                 (err) => {
-                    Alerter.alertFromSWS(translate.instant("server_tab_MONITORING_error"), err.data, "monitoringAlert");
+                    Alerter.alertFromSWS($translate.instant("server_tab_MONITORING_error"), err.data, "monitoringAlert");
                 }
             )
             .finally(() => {
