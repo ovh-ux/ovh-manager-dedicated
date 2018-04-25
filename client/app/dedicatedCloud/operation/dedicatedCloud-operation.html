@@ -19,7 +19,7 @@
                         <select class="form-control"
                                 id="state-filter"
                                 name="state-filter"
-                                data-ng-options="state as (i18n['dedicatedCloud_OPERATIONS_state_' + state]) for state in ctrlOperations.stateEnum | orderBy : (i18n['dedicatedCloud_OPERATIONS_state_' + state])"
+                                data-ng-options="state as (('dedicatedCloud_OPERATIONS_state_' + state) | translate) for state in ctrlOperations.stateEnum | orderBy : ('dedicatedCloud_OPERATIONS_state_' + state) | translate"
                                 data-ng-model="ctrlOperations.stateFilter"
                                 data-ng-change="ctrlOperations.onStateChanged()"
                                 data-ng-disabled="ctrlOperations.loaders.models">

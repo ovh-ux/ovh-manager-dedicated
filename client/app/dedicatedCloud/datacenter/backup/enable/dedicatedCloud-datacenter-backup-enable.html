@@ -50,7 +50,7 @@
         </button>
         <button type="button"
                 class="oui-button oui-button_primary"
-                data-ng-bind="$ctrl.loading.init || !$ctrl.hosts.length ? i18n.global_OK : i18n.wizard_confirm"
+                data-ng-bind="$ctrl.loading.init || !$ctrl.hosts.length ? ('global_OK' | translate) : ('wizard_confirm' | translate)"
                 data-ng-disabled="$ctrl.loading.init || $ctrl.loading.enable"
                 data-ng-click="$ctrl.onConfirmBtnClick()">
         </button>

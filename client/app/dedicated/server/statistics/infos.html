@@ -39,7 +39,7 @@
                                 </strong>
                                 <span>
                                     <span data-ng-repeat="memory in infoRtm.memory.list track by $index"
-                                          data-ng-bind="memory.number + 'x ' + memory.value + i18n['unit_size_'+memory.unit]">
+                                          data-ng-bind="memory.number + 'x ' + memory.value + (('unit_size_' + memory.unit) | translate)">
                                     </span>
                                 </span>
                             </div>
@@ -51,7 +51,7 @@
                                 </strong>
                                 <span>
                                     <span data-ng-repeat="diskGroup in server.diskGroups track by $index"
-                                          data-ng-bind="diskGroup.numberOfDisks + '&nbsp;x&nbsp;' + diskGroup.diskSize.value + ' ' + i18n['unit_size_'+diskGroup.diskSize.unit]">
+                                          data-ng-bind="diskGroup.numberOfDisks + '&nbsp;x&nbsp;' + diskGroup.diskSize.value + ' ' + (('unit_size_' + diskGroup.diskSize.unit) | translate)">
                                     </span>
                                 </span>
                             </div>

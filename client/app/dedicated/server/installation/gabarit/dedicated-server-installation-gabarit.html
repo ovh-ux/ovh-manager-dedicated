@@ -261,7 +261,7 @@
                              data-ng-if="optionForm.postInstallationScriptLink.$invalid && optionForm.$dirty">
                             <span data-ng-if="value"
                                   data-ng-repeat="(error, value) in optionForm.postInstallationScriptLink.$error">
-                                {{ i18n['server_configuration_installation_form_postInstallationScriptLink_' + error] || error }}
+                                {{ ('server_configuration_installation_form_postInstallationScriptLink_' + error) | translateAlt: error }}
                             </span>
                         </div>
                     </div>

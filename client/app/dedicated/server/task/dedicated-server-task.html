@@ -7,7 +7,7 @@
             <span data-ng-bind="$row.lastUpdate | date: 'medium'"></span>
         </oui-column>
         <oui-column data-title=":: 'server_configuration_task_function' | translate">
-            <span data-ng-bind="i18n['server_configuration_task_'+ $row.function] || $row.function"></span>
+            <span data-ng-bind="('server_configuration_task_'+ $row.function) | translateAlt: $row.function"></span>
         </oui-column>
         <oui-column data-title=":: 'server_configuration_task_comment' | translate">
             <span data-ng-bind="$row.comment"></span>
