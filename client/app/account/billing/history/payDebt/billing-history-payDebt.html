@@ -2,10 +2,9 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="displayBC"
-         data-wizard-title="{{ 'statements_account_debt_payment' | translate }}"
-         data-wizard-title-icon="'icon-renew'"
+         data-wizard-title="::'statements_account_debt_payment' | translate"
          data-wizard-bread-crumb
-         data-wizard-confirm-button-text="{{ 'statements_accounts_debt_payment_confirm' | translate }}">
+         data-wizard-confirm-button-text="::'statements_accounts_debt_payment_confirm' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="!payDebt.order.url">
@@ -18,14 +17,18 @@
 
             <!-- SHOW PAYMENT ORDER -->
             <p data-ng-if="payDebt.order.url"
-               data-ng-bind-html="'statements_account_debt_payment_bc_with_amount' | translate:{ t0: payDebt.order.orderId, t1: payDebt.order.url, t2: payDebt.order.priceWithTax.text}">
+               data-ng-bind-html="'statements_account_debt_payment_bc_with_amount' | translate:{
+                   t0: payDebt.order.orderId,
+                   t1: payDebt.order.url,
+                   t2: payDebt.order.priceWithTax.text
+               }">
             </p>
 
             <!-- ERROR -->
             <div class="alert alert-danger"
                  role="alert"
-                 data-ng-if="payDebt.error">
-                <span data-translate="statements_account_debt_payment_error"></span>
+                 data-ng-if="payDebt.error"
+                 data-translate="statements_account_debt_payment_error">
             </div>
 
             <!-- LOADING -->

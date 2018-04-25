@@ -2,9 +2,9 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="createAlert"
-         data-wizard-title="{{ 'ovhAccount_create_alert' | translate }}"
+         data-wizard-title="::'ovhAccount_create_alert' | translate"
          data-wizard-bread-crumb
-         data-wizard-confirm-button-text="{{ 'ovhAccount_create_alert_wizard_button' | translate }}">
+         data-wizard-confirm-button-text="::'ovhAccount_create_alert_wizard_button' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="!createAlertCtrl.loading && checkAmount()">
