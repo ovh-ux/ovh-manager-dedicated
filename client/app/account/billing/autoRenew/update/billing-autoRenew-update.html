@@ -3,18 +3,21 @@
     <div data-wizard
          data-wizard-on-cancel="closeAction"
          data-wizard-on-finish="updateRenew"
-         data-wizard-title="{{ 'autorenew_service_update_title' | translate }}">
+         data-wizard-title="::'autorenew_service_update_title' | translate">
 
-        <div data-wizard-step data-wizard-step-valid="hasChanged">
-            <p data-ng-bind-html="'autorenew_service_update_intro' | translate "></p>
+        <div data-wizard-step
+             data-wizard-step-valid="hasChanged">
+            <p data-ng-bind-html="'autorenew_service_update_intro' | translate"></p>
 
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col"
-                            data-translate="autorenew_service_name"></th>
+                            data-translate="autorenew_service_name">
+                        </th>
                         <th scope="col"
-                            data-translate="autorenew_service_type" ></th>
+                            data-translate="autorenew_service_type">
+                        </th>
                         <th scope="col"
                             class="text-nowrap">
                             <span data-translate="autorenew_service_renew"></span>
@@ -63,20 +66,20 @@
             </table>
         </div>
 
-
         <div data-wizard-step
              data-wizard-step-on-load="loadContracts"
              data-wizard-step-valid="agree.value">
 
-            <p data-ng-bind-html="'autorenew_service_update_step2_summary' | translate "></p>
-
+            <p data-ng-bind-html="'autorenew_service_update_step2_summary' | translate"></p>
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col"
-                            data-translate="autorenew_service_name"></th>
+                            data-translate="autorenew_service_name">
+                        </th>
                         <th scope="col"
-                            data-translate="autorenew_service_type" ></th>
+                            data-translate="autorenew_service_type">
+                        </th>
                         <th scope="col"
                             class="text-nowrap">
                             <span data-translate="autorenew_service_update_now"></span>
@@ -87,32 +90,38 @@
                         </th>
                     </tr>
                 </thead>
-
-
                 <tbody>
                     <tr data-ng-repeat="service in selectedServices | orderBy:'serviceType':false track by $index">
                         <th scope="row">
                             <span data-ng-bind="service.serviceId | sliceContent:25"></span>
                         </th>
                         <td>
-                            <span data-translate="{{ 'autorenew_service_type_'+ service.serviceType }}"></span>
+                            <span data-ng-bind="'autorenew_service_type_' + service.serviceType | translate"></span>
                         </td>
 
                         <td>
                             <div data-ng-if="service.renew.automatic">
                                 <span data-translate="autorenew_service_renew_auto"></span>:
-                                <span data-ng-if="service.renew.period" data-ng-bind="getPeriodTranslation(service.renew.period)"></span>
+                                <span data-ng-if="service.renew.period"
+                                      data-ng-bind="getPeriodTranslation(service.renew.period)">
+                                </span>
                             </div>
-                            <span data-ng-if="!service.renew.automatic" data-translate="autorenew_service_renew_manuel"></span>
+                            <span data-ng-if="!service.renew.automatic"
+                                  data-translate="autorenew_service_renew_manuel">
+                            </span>
                         </td>
 
                         <td class="text-center"
-                            data-ng-class="{'font-weight-bold' : hasChange(service)}">
+                            data-ng-class="{'font-weight-bold': hasChange(service)}">
                             <div data-ng-if="service.newRenewType === 'auto'">
                                 <span data-translate="autorenew_service_renew_auto"></span>:
-                                <span data-ng-if="service.newRenewPeriod" data-ng-bind="getPeriodTranslation(service.newRenewPeriod)"></span>
+                                <span data-ng-if="service.newRenewPeriod"
+                                      data-ng-bind="getPeriodTranslation(service.newRenewPeriod)">
+                                </span>
                             </div>
-                            <span data-ng-if="service.newRenewType === 'manuel'" data-translate="autorenew_service_renew_manuel"></span>
+                            <span data-ng-if="service.newRenewType === 'manuel'"
+                                  data-translate="autorenew_service_renew_manuel">
+                            </span>
                         </td>
                     </tr>
                 </tbody>
@@ -128,6 +137,9 @@
                  data-full-text="false"
                  data-ng-model="agree.value">
             </div>
+
         </div>
+
     </div>
+
 </div>

@@ -2,9 +2,10 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="terminate"
-         data-wizard-title="{{ 'autorenew_service_EMAIL_DOMAIN_terminate' | translate }}">
+         data-wizard-title="::'autorenew_service_EMAIL_DOMAIN_terminate' | translate">
 
-        <div data-wizard-step data-wizard-step-valid="canTerminate">
+        <div data-wizard-step
+             data-wizard-step-valid="canTerminate">
             <div data-ng-if="canTerminate">
                 <div class="alert alert-danger"
                      role="alert"
@@ -19,8 +20,8 @@
             </div>
             <div data-ng-if="!canTerminate && !loaders.loading"
                  class="alert alert-danger"
-                 role="alert">
-                <span data-translate="autorenew_service_EMAIL_DOMAIN_terminate_info_impossible"></span>
+                 role="alert"
+                 data-translate="autorenew_service_EMAIL_DOMAIN_terminate_info_impossible">
             </div>
         </div>
 
