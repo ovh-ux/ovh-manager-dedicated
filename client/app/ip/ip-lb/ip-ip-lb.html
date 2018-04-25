@@ -278,7 +278,7 @@
                  data-paginated-items="selectedIplb.backendDetails"
                  data-transform-item="transformItemBackend(item)"
                  data-on-transform-item-done="onTransformItemBackendDone(items)"
-                 data-page-placeholder="{{'pagination_page' | translate:{ t0: currentPage, t1: nbPages }}}"
+                 data-page-placeholder="{{ 'pagination_page' | translate:{ t0: currentPage, t1: nbPages } }}"
                  data-items-per-page="itemsPerPage"
                  data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
             </div>
@@ -344,7 +344,7 @@
                  data-paginated-items="selectedIplb.portsRedirectionDetails"
                  data-transform-item="transformItemPortsRedirection(item)"
                  data-on-transform-item-done="onTransformItemPortsRedirectionDone(items)"
-                 data-page-placeholder="{{'pagination_page' | translate:{ t0: currentPage, t1: nbPages }}}"
+                 data-page-placeholder="{{ 'pagination_page' | translate: { t0: currentPage, t1: nbPages } }}"
                  data-items-per-page="itemsPerPage2"
                  data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
             </div>

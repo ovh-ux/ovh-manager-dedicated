@@ -93,7 +93,7 @@
                         </div>
                         <div data-ng-if="!task.hasPendingChange">
                             <span class="fa fa-hourglass-start text-warning"
-                               data-simplepopover="{{::'useraccount_contacts_task_info_security' | translate:{ t0: ctrlContactRequests.user.email }}}"
+                               data-simplepopover="{{::'useraccount_contacts_task_info_security' | translate:{ t0: ctrlContactRequests.user.email } }}"
                                data-simplepopover-title="{{ 'useraccount_contacts_task_waiting_for_me' | translate }}"
                                data-simplepopover-placement="top"
                                data-simplepopover-single="true"
@@ -169,7 +169,7 @@
          data-nb-pages="nbPages"
          data-transform-item="ctrlContactRequests.transformItem(item)"
          data-on-transform-item-done="ctrlContactRequests.onTransformItemDone(items)"
-         data-page-placeholder="{{'pagination_page' | translate:{ t0: currentPage, t1: nbPages }}}"
+         data-page-placeholder="{{'pagination_page' | translate:{ t0: currentPage, t1: nbPages } }}"
          data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
     </div>
 
