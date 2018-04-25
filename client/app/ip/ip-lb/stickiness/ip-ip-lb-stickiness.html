@@ -20,7 +20,7 @@
                                        value="none"
                                        data-ng-disabled="data.infos.stickiness === 'none'"
                                        data-ng-model="model.choice">
-                                <span data-ng-bind="{{ 'iplb_infos_stickiness_none' | translate }}"></span>
+                                <span data-ng-bind=":: 'iplb_infos_stickiness_none' | translate"></span>
                             </label>
                         </div>
                         <div class="radio">
@@ -30,7 +30,7 @@
                                        value="cookie"
                                        data-ng-disabled="data.infos.stickiness === 'cookie'"
                                        data-ng-model="model.choice">
-                                <span data-ng-bind="{{ 'iplb_infos_stickiness_cookie' | translate }}"></span>
+                                <span data-ng-bind=":: 'iplb_infos_stickiness_cookie' | translate"></span>
                             </label>
                         </div>
                         <div class="radio">
@@ -40,7 +40,7 @@
                                        value="sourceIp"
                                        data-ng-disabled="data.infos.stickiness === 'sourceIp'"
                                        data-ng-model="model.choice">
-                                <span data-ng-bind="{{ 'iplb_infos_stickiness_sourceIp' | translate }}"></span>
+                                <span data-ng-bind=":: 'iplb_infos_stickiness_sourceIp' | translate"></span>
                             </label>
                         </div>
                     </div>

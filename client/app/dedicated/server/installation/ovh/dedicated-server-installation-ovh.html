@@ -381,13 +381,13 @@
                             class="btn btn-default"
                             data-ng-if="!informations.showAllDisk"
                             data-ng-click="informations.showAllDisk = true"
-                            data-ng-bind="{{ 'server_configuration_installation_ovh_step2_show_all_disk' | translate }}">
+                            data-ng-bind=":: 'server_configuration_installation_ovh_step2_show_all_disk' | translate">
                     </button>
                     <button type="button"
                             class="btn btn-default"
                             data-ng-if="informations.showAllDisk"
                             data-ng-click="informations.showAllDisk = false"
-                            data-ng-bind="{{ 'server_configuration_installation_ovh_step2_hide_all_disk' | translate }}">
+                            data-ng-bind=":: 'server_configuration_installation_ovh_step2_hide_all_disk' | translate">
                     </button>
                 </div>
 
@@ -1023,7 +1023,7 @@
                                     data-ng-options="partition as partition.mountPoint for partition in getMountPoint()"
                                     data-ng-model="installation.options.variablePartition">
                                 <option value=""
-                                        data-ng-bind="{{ 'server_configuration_installation_ovh_step3_partiton_none' | translate }}">
+                                        data-ng-bind=":: 'server_configuration_installation_ovh_step3_partiton_none' | translate">
                                 </option>
                             </select>
                         </div>

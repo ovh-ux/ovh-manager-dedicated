@@ -60,7 +60,7 @@
                 </div>
                 <p class="text-danger"
                    data-ng-show="progress.failStatut"
-                   data-ng-bind="{{ 'server_configuration_installation_fail_state' | translate }}">
+                   data-ng-bind=":: 'server_configuration_installation_fail_state' | translate">
                 </p>
                 <ul class="list-unstyled"
                     data-ng-show="progress.errorMessage || progress.ws || progress.wsFail">

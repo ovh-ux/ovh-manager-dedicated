@@ -160,7 +160,7 @@
                                        data-ng-show="refundsLine.url"
                                        title="{{ 'table_download_pdf' | translate }} ({{ 'core_new_window' | translate }})"
                                        href="{{refundsLine.url}}"
-                                       data-ng-bind="{{ 'table_download_html' | translate }}">
+                                       data-ng-bind=":: 'table_download_html' | translate">
                                     </a>
                                 </li>
                                 <li>
@@ -169,7 +169,7 @@
                                        data-ng-show="refundsLine.pdfUrl"
                                        title="{{ 'table_download_pdf' | translate }} ({{ 'core_new_window' | translate }})"
                                        href="{{refundsLine.pdfUrl}}"
-                                       data-ng-bind="{{ 'table_download_pdf' | translate }}">
+                                       data-ng-bind=":: 'table_download_pdf' | translate">
                                     </a>
                                 </li>
                             </ul>

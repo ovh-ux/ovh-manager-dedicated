@@ -18,7 +18,7 @@
                                    name="choiceRadio"
                                    value="new"
                                    data-ng-model="model.choice">
-                            <span data-ng-bind="{{ 'ip_virtualmac_add_new' | translate }}"></span>
+                            <span data-ng-bind=":: 'ip_virtualmac_add_new' | translate"></span>
                         </label>
                     </div>
                     <div class="radio">
@@ -27,7 +27,7 @@
                                    name="choiceRadio"
                                    value="existing"
                                    data-ng-model="model.choice">
-                            <span data-ng-bind="{{ 'ip_virtualmac_add_existing' | translate }}"></span>
+                            <span data-ng-bind=":: 'ip_virtualmac_add_existing' | translate"></span>
                         </label>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                      data-ng-show="model.choice == 'new'">
                     <label class="control-label"
                            for="typeSelect"
-                           data-ng-bind="{{ 'ip_virtualmac_type' | translate }}">
+                           data-ng-bind=":: 'ip_virtualmac_type' | translate">
                     </label>
                     <select id="typeSelect"
                             name="typeSelect"
@@ -51,7 +51,7 @@
                      data-ng-show="model.choice == 'existing'">
                     <label class="control-label"
                            for="macAddressSelect"
-                           data-ng-bind="{{ 'ip_virtualmac_field' | translate }}">
+                           data-ng-bind=":: 'ip_virtualmac_field' | translate">
                     </label>
                     <select id="macAddressSelect"
                             name="macAddressSelect"
@@ -65,7 +65,7 @@
                 <div class="form-group">
                     <label class="control-label"
                            for="virtualMachineName"
-                           data-ng-bind="{{ 'ip_virtualmac_machinename' | translate }}">
+                           data-ng-bind=":: 'ip_virtualmac_machinename' | translate">
                     </label>
                     <input type="text"
                            id="virtualMachineName"

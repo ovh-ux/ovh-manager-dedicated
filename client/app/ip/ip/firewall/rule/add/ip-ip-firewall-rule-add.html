@@ -14,7 +14,7 @@
                 <div class="form-group">
                     <label class="control-label"
                            for="sequenceSelect"
-                           data-ng-bind="{{ 'ip_firewall_position' | translate }}">
+                           data-ng-bind=":: 'ip_firewall_position' | translate">
                     </label>
                     <select class="form-control"
                             id="sequenceSelect"
@@ -28,7 +28,7 @@
                 <div class="form-group">
                     <label class="control-label"
                            for="actionsRadio"
-                           data-ng-bind="{{ 'ip_firewall_action' | translate }}">
+                           data-ng-bind=":: 'ip_firewall_action' | translate">
                     </label>
                     <div class="radio">
                         <label data-ng-repeat="(key, action) in constants.actions">
@@ -46,7 +46,7 @@
                 <div class="form-group">
                     <label class="control-label"
                            for="protocolSelect"
-                           data-ng-bind="{{ 'ip_firewall_protocol' | translate }}">
+                           data-ng-bind=":: 'ip_firewall_protocol' | translate">
                     </label>
                     <select id="protocolSelect"
                             name="protocolSelect"
@@ -126,7 +126,7 @@
                         <label>
                             <input type="checkbox"
                                    data-ng-model="rule.tcpOptions.fragments">
-                            <span data-ng-bind="{{ 'ip_firewall_rule_fragments' | translate }}"></span>
+                            <span data-ng-bind=":: 'ip_firewall_rule_fragments' | translate"></span>
                             <span data-ng-show="validator.fragment === false"
                                   class="fa fa-info-circle"
                                   data-tooltip="{{ 'ip_firewall_rule_fragments_tooltip' | translate }}"

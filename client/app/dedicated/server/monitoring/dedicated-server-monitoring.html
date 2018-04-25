@@ -617,13 +617,13 @@
                                             data-ng-if="ctrlMonitoringUpdate.emailNotificationsToDelete.indexOf(emailNotification) === -1"
                                             data-ng-click="ctrlMonitoringUpdate.removeEMailNotification(emailNotification)">
                                         <i class="icon icon-trash pointer"></i>
-                                        <span data-ng-bind="{{ 'server_tab_MONITORING_notification_remove_recipient' | translate }}"></span>
+                                        <span data-ng-bind=":: 'server_tab_MONITORING_notification_remove_recipient' | translate"></span>
                                     </button>
                                     <button type="button"
                                             class="btn btn-link"
                                             data-ng-if="ctrlMonitoringUpdate.emailNotificationsToDelete.indexOf(emailNotification) !== -1"
                                             data-ng-click="ctrlMonitoringUpdate.cancelDeleteEMailNotification(emailNotification)"
-                                            data-ng-bind="{{ 'server_tab_MONITORING_notification_add_recipient' | translate }}">
+                                            data-ng-bind=":: 'server_tab_MONITORING_notification_add_recipient' | translate">
                                     </button>
                                 </div>
 
@@ -748,13 +748,13 @@
                                             type="button"
                                             data-ng-if="ctrlMonitoringUpdate.smsNotificationsToDelete.indexOf(smsNotification) === -1"
                                             data-ng-click="ctrlMonitoringUpdate.removeSmsNotification(smsNotification)"
-                                            data-ng-bind="{{ 'server_tab_MONITORING_notification_remove_recipient' | translate }}">
+                                            data-ng-bind=":: 'server_tab_MONITORING_notification_remove_recipient' | translate">
                                     </button>
                                     <button class="btn btn-default"
                                             type="button"
                                             data-ng-if="ctrlMonitoringUpdate.smsNotificationsToDelete.indexOf(smsNotification) !== -1"
                                             data-ng-click="ctrlMonitoringUpdate.cancelDeleteSmslNotification(smsNotification)"
-                                            data-ng-bind="{{ 'server_tab_MONITORING_notification_add_recipient' | translate }}">
+                                            data-ng-bind=":: 'server_tab_MONITORING_notification_add_recipient' | translate">
                                     </button>
                                 </div>
 
