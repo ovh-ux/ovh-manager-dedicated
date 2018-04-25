@@ -22,15 +22,15 @@
                 <p data-ng-bind-html="work.summary"></p>
                 <ul class="list-inline font-italic">
                     <li>
-                        <strong data-ng-bind="{{ 'modal_working_status_type' | translate }}"></strong>
+                        <strong data-ng-bind=":: 'modal_working_status_type' | translate"></strong>
                         <span data-ng-bind="work.details.type"></span>
                     </li>
                     <li>
-                        <strong data-ng-bind="{{ 'modal_working_status_category' | translate }}"></strong>
+                        <strong data-ng-bind=":: 'modal_working_status_category' | translate"></strong>
                         <span data-ng-bind="work.details.category"></span>
                     </li>
                     <li>
-                        <strong data-ng-bind="{{ 'modal_working_status_status' | translate }}"></strong>
+                        <strong data-ng-bind=":: 'modal_working_status_status' | translate"></strong>
                         <span data-ng-bind="work.details.status"></span>
                     </li>
                 </ul>

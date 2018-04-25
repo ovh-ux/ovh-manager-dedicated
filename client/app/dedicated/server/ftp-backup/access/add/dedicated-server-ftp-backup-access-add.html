@@ -17,8 +17,8 @@
             </div>
 
             <div data-ng-if="!loading">
-                <p data-ng-bind="{{ 'server_configuration_ftpbackup_add_info' | translate }}"></p>
-                <p data-ng-bind="{{ 'server_configuration_ftpbackup_add_info3' | translate }}"></p>
+                <p data-ng-bind=":: 'server_configuration_ftpbackup_add_info' | translate"></p>
+                <p data-ng-bind=":: 'server_configuration_ftpbackup_add_info3' | translate"></p>
                  <label for="ip"
                         class="control-label"
                         data-translate="server_configuration_ftpbackup_add_ip">
@@ -74,7 +74,7 @@
                 <p data-ng-bind-html="'server_configuration_ftpbackup_add_info2' | translate "></p>
                 <div class="row">
                     <div class="col-md-6">
-                        <p data-ng-bind="{{ 'server_configuration_ftpbackup_add_info1' | translate }}"></p>
+                        <p data-ng-bind=":: 'server_configuration_ftpbackup_add_info1' | translate"></p>
                         <ul>
                             <li data-ng-repeat="block in access.ip track by $index"
                                 data-ng-bind="block">

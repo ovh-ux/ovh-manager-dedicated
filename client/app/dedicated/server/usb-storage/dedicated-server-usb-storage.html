@@ -23,7 +23,7 @@
                 <span class="label label-success ml-2"
                       data-ng-repeat="freeSlot in usbInformations.numberOfFreeSlot track by $index">
                     <span class="icon-ok icon-white" aria-hidden="true"></span>
-                    <span data-ng-bind="{{ 'server_tab_USB_STORAGE_available_slot' | translate }}"></span>
+                    <span data-ng-bind=":: 'server_tab_USB_STORAGE_available_slot' | translate"></span>
                 </span>
             </div>
         </div>
