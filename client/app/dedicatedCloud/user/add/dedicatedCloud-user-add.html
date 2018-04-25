@@ -40,7 +40,7 @@
                           role="alert"
                           data-ng-show="hasError(userForm.name) && value == true">
                         <span data-ng-repeat="(error, value) in userForm.name.$error"
-                              data-ng-bind="i18n['dedicatedCloud_USER_add_user_' + error] || error">
+                              data-ng-bind="('dedicatedCloud_USER_add_user_' + error) | translateAlt: error">
                         </span>
                     </span>
                 </div>

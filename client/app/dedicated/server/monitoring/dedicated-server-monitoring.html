@@ -265,7 +265,7 @@
                                         <select class="form-control"
                                                 id="select-lang-sms{{ $index }}"
                                                 name="select-lang-sms{{ $index }}"
-                                                data-ng-options="lang as i18n['language_'+lang] for lang in ctrlMonitoring.languageEnum"
+                                                data-ng-options="lang as (('language_' + lang) | translate) for lang in ctrlMonitoring.languageEnum"
                                                 data-ng-model="smsNotification.language">
                                         </select>
                                     </div>
@@ -317,7 +317,7 @@
                                         <select class="form-control"
                                                 id="select-lang-add{{ $index }}"
                                                 name="select-lang-add{{ $index }}"
-                                                data-ng-options="lang as i18n['language_'+lang] for lang in ctrlMonitoring.languageEnum"
+                                                data-ng-options="lang as (('language_' + lang) | translate) for lang in ctrlMonitoring.languageEnum"
                                                 data-ng-model="emailNotification.language"
                                                 data-ng-required="emailNotification.email">
                                         </select>
@@ -388,7 +388,7 @@
                     <td data-ng-if="ctrlMonitoring.editMode !== monitoring.monitoringId">
                         <button type="button"
                                 class="btn btn-link px-0"
-                                title="{{ monitoring.enabled ? i18n.server_tab_MONITORING_click_disable : i18n.server_tab_MONITORING_click_enable }}"
+                                title="{{ (monitoring.enabled ? 'server_tab_MONITORING_click_disable' : 'server_tab_MONITORING_click_enable') | translate }}"
                                 data-ng-click="ctrlMonitoring.toggleStatus(monitoring)">
                             <span class="fa"
                                   data-ng-class="{
@@ -594,7 +594,7 @@
                                         <select class="form-control"
                                                 id="select-lang-update{{ $index }}"
                                                 name="select-lang-update{{ $index }}"
-                                                data-ng-options="lang as i18n['language_'+lang] for lang in ctrlMonitoring.languageEnum"
+                                                data-ng-options="lang as (('language_' + lang) | translate) for lang in ctrlMonitoring.languageEnum"
                                                 data-ng-model="emailNotification.language"
                                                 data-ng-required="emailNotification.email">
                                         </select>
@@ -727,7 +727,7 @@
                                         <select class="form-control"
                                                 id="select-lang-sms{{ $index }}"
                                                 name="select-lang-sms{{ $index }}"
-                                                data-ng-options="lang as i18n['language_'+lang] for lang in ctrlMonitoring.languageEnum"
+                                                data-ng-options="lang as (('language_' + lang) | translate) for lang in ctrlMonitoring.languageEnum"
                                                 data-ng-model="smsNotification.language">
                                         </select>
                                     </div>
