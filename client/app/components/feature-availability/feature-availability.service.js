@@ -143,6 +143,10 @@ class FeatureAvailability {
         return this.allow("US");
     }
 
+    allowVrackOrder () {
+        return this.allow("US");
+    }
+
     allow (...args) {
         return Array.from(args).indexOf(this.target) > -1;
     }
