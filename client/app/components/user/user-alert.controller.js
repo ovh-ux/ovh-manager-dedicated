@@ -3,8 +3,7 @@ angular.module("App").controller("UserAlertCtrl", [
     "translator",
     "$scope",
     "$interpolate",
-    "constants",
-    function (User, translator, $scope, $interpolate, constants) {
+    function (User, translator, $scope, $interpolate) {
         "use strict";
 
         User.getUserAlerts().then((alerts) => {
@@ -17,7 +16,7 @@ angular.module("App").controller("UserAlertCtrl", [
                         case "DEBTACCOUNT_DEBT":
                             if (_.get(alert, "data.debtAccount.unmaturedAmount.value", 0) > 0) {
                                 messages.push(translator.tr("me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT", [_.get(alert, "data.debtAccount.dueAmount.text"), _.get(alert, "data.debtAccount.unmaturedAmount.text"), "#/billing/history"]));
-                            } else if (constants.target !== "US") {
+                            } else {
                                 messages.push(translator.tr("me_alerts_DEBTACCOUNT_DEBT", [_.get(alert, "data.debtAccount.dueAmount.text"), "#/billing/history"]));
                             }
                             break;
