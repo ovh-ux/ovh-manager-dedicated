@@ -74,12 +74,6 @@ angular
                 controllerAs: "ctrl"
             });
 
-            $stateProvider.state("app.account.debtDetails", {
-                url: "/history/:debtId/details",
-                templateUrl: `${BILLING_BASE_URL}history/details/billing-history-details.html`,
-                controller: "Billing.controllers.HistoryDetailsCtrl"
-            });
-
             /**
              * ROUTE: Payments
              */
@@ -155,8 +149,10 @@ angular
 
             if (constants.target === "US") {
                 $stateProvider.state("app.account.payment.meanAdd", {
-                    url: "/mean/add",
-                    templateUrl: `${BILLING_BASE_URL}paymentMethod/add/index.html`
+                    url: "/mean/add?from",
+                    templateUrl: `${BILLING_BASE_URL}paymentMethod/add/index.html`,
+                    controller: "PaymentMethodAddCtrl",
+                    controllerAs: "$ctrl"
                 });
             } else {
                 $stateProvider.state("app.account.payment.meanAdd", {

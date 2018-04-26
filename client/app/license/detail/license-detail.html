@@ -66,11 +66,11 @@
                     <dd data-ng-show="license.domainNumber">
                         {{ ('license_designation_' + license.type + '_domain_number_' + license.domainNumber) | translate }}
                     </dd>
-                    <dt data-ng-show="license.id && license.type != licenseTypes.SPLA"
+                    <dt data-ng-show="license.licenseId && license.type != licenseTypes.SPLA"
                         data-translate="license_details_title_id">
                     </dt>
-                    <dd data-ng-show="license.id && license.type != licenseTypes.SPLA"
-                        data-ng-bind="license.id">
+                    <dd data-ng-show="license.licenseId && license.type != licenseTypes.SPLA"
+                        data-ng-bind="license.licenseId">
                     </dd>
                     <dt data-ng-show="license.splaStatus"
                         data-translate="license_details_title_splaStatus">

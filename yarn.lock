@@ -84,15 +84,15 @@
   dependencies:
     "@uirouter/core" "5.0.17"
 
-"@bower_components/angular-ui-utils@angular-ui/ui-utils#~0.2.3":
+"@bower_components/angular-ui-utils@angular-ui/ui-utils#~0.2.3", ui-utils@angular-ui/ui-utils#~0.2.3:
   version "0.0.0"
   resolved "https://codeload.github.com/angular-ui/ui-utils/tar.gz/125cb72d692f9f116454f338f6a5471f3088f9b9"
 
-"@bower_components/angular-ui-validate@angular-ui/ui-validate#~1.2.2":
+"@bower_components/angular-ui-validate@angular-ui/ui-validate#~1.2.2", angular-ui-validate@angular-ui/ui-validate#~1.2.2:
   version "1.2.3"
   resolved "https://codeload.github.com/angular-ui/ui-validate/tar.gz/0d982055360032be2421b969fa1c83bf053e735a"
 
-"@bower_components/bootstrap-datetimepicker@tarruda/bootstrap-datetimepicker#~0.0.11":
+"@bower_components/bootstrap-datetimepicker@tarruda/bootstrap-datetimepicker#~0.0.11", bootstrap-datetimepicker@tarruda/bootstrap-datetimepicker#~0.0.11:
   version "0.0.10"
   resolved "https://codeload.github.com/tarruda/bootstrap-datetimepicker/tar.gz/c26217db8840e5aa8f56e343ce307581960543c9"
 
@@ -100,39 +100,39 @@
   version "4.0.0-beta"
   resolved "https://codeload.github.com/twbs/bootstrap/tar.gz/35f80bb12e4e71fd777ee60ffa43711d8f84b1a6"
 
-"@bower_components/ckeditor@ckeditor/ckeditor-releases#^4.7.2":
+"@bower_components/ckeditor@ckeditor/ckeditor-releases#^4.7.2", ckeditor@ckeditor/ckeditor-releases#^4.7.2:
   version "4.9.2"
   resolved "https://codeload.github.com/ckeditor/ckeditor-releases/tar.gz/993eb4fba6a70545f6c50da1988d39ecd9cf47a3"
 
-"@bower_components/international-phone-number@mareczek/international-phone-number#^0.0.16":
+"@bower_components/international-phone-number@mareczek/international-phone-number#^0.0.16", international-phone-number@mareczek/international-phone-number#^0.0.16:
   version "0.0.11"
   resolved "https://codeload.github.com/mareczek/international-phone-number/tar.gz/28055517d453a2f11e9035f2761243b6878df258"
 
-"@bower_components/lodash@lodash/lodash#~3.10.1":
+"@bower_components/lodash@lodash/lodash#~3.10.1", lodash@lodash/lodash#~3.10.1, lodash@~3.10.0:
   version "3.10.1"
   resolved "https://codeload.github.com/lodash/lodash/tar.gz/dfbd78f71de0550068fc82ce6e013d443e5037d7"
 
-"@bower_components/messenger@HubSpot/messenger#~1.4.1":
+"@bower_components/messenger@HubSpot/messenger#~1.4.1", messenger@HubSpot/messenger#~1.4.1:
   version "1.4.2"
   resolved "https://codeload.github.com/HubSpot/messenger/tar.gz/a3df9a62a1677af45fb130e226a6cbf98c0cecf0"
 
-"@bower_components/ng-ckeditor@esvit/ng-ckeditor#^0.2.1":
+"@bower_components/ng-ckeditor@esvit/ng-ckeditor#^0.2.1", ng-ckeditor@esvit/ng-ckeditor#^0.2.1:
   version "0.2.0"
   resolved "https://codeload.github.com/esvit/ng-ckeditor/tar.gz/8b9ece340f7d90bb3167604cc9d317c8041058c3"
 
-"@bower_components/ng-slide-down@TheRusskiy/ng-slide-down#^1.0.0":
+"@bower_components/ng-slide-down@TheRusskiy/ng-slide-down#^1.0.0", ng-slide-down@TheRusskiy/ng-slide-down#^1.0.0:
   version "1.2.0"
   resolved "https://codeload.github.com/TheRusskiy/ng-slide-down/tar.gz/efdb323572486b7922ae46a638f153c8d5ee9a2e"
 
-"@bower_components/ovh-angular-browser-alert@ovh-ux/ovh-angular-browser-alert#^1.0.0":
+"@bower_components/ovh-angular-browser-alert@ovh-ux/ovh-angular-browser-alert#^1.0.0", ovh-angular-browser-alert@ovh-ux/ovh-angular-browser-alert#^1.0.0:
   version "1.0.0"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-browser-alert/tar.gz/8336865a63083e009ae66241b13fec92762c35d3"
 
-"@bower_components/qrcode@janantala/qrcode.js#~1.0.x":
+"@bower_components/qrcode@janantala/qrcode.js#~1.0.x", qrcode.js@janantala/qrcode.js#~1.0.x:
   version "1.0.2"
   resolved "https://codeload.github.com/janantala/qrcode.js/tar.gz/2c20b467901740e6e32308b100d2df1125d4f6ac"
 
-"@bower_components/randexp@fent/randexp.js#~0.4.0":
+"@bower_components/randexp@fent/randexp.js#~0.4.0", randexp@fent/randexp.js#~0.4.0:
   version "0.4.9"
   resolved "https://codeload.github.com/fent/randexp.js/tar.gz/8d7f1f99da57c509419b0fc3164e7e8b4d77a58b"
   dependencies:
@@ -4301,10 +4301,6 @@ lodash@~0.9.2:
 lodash@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-1.0.2.tgz#8f57560c83b59fc270bd3d561b690043430e2551"
-
-lodash@~3.10.0, lodash@~3.10.1:
-  version "3.10.1"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
 lodash@~3.3.0:
   version "3.3.1"

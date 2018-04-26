@@ -1,4 +1,4 @@
-angular.module("Billing.controllers").controller("Billing.controllers.PaymentsCtrl", function ($filter, $log, $q, $scope, $timeout, $translate, constants, Alerter, BillingPayments, BillingdateRangeSelection, featureAvailability) {
+angular.module("Billing.controllers").controller("Billing.controllers.PaymentsCtrl", function ($filter, $log, $q, $scope, $timeout, $state, $translate, constants, Alerter, BillingPayments, BillingdateRangeSelection, featureAvailability, OvhApiMe) {
     "use strict";
 
     this.paginatedPayments = null;
@@ -24,6 +24,9 @@ angular.module("Billing.controllers").controller("Billing.controllers.PaymentsCt
         this.orderByState = { predicate, reverse };
         $scope.$broadcast("paginationServerSide.loadPage", "1", "paymentsTable");
     };
+
+    this.paymentRequests = null;
+    this.paymentRequestsHref = $state.href("app.account.billing.payments.request");
 
     function getPaymentsSortOrder ({ predicate, reverse }) {
         return {
@@ -116,4 +119,14 @@ angular.module("Billing.controllers").controller("Billing.controllers.PaymentsCt
     this.shouldDisplayDepositsLinks = () => featureAvailability.showPDFAndHTMLDepositLinks();
 
     this.displayActionsCol = () => constants.target !== "US";
+
+    this.$onInit = () => {
+        if (constants.target === "US") {
+            return OvhApiMe.DepositRequest().v6().query().$promise.then((depositRequests) => {
+                this.paymentRequests = depositRequests;
+            });
+        }
+
+        return null;
+    };
 });

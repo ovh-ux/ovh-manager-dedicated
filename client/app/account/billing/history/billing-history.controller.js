@@ -24,6 +24,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.History", 
     self.colSpan = COL_SPAN_DEBT_LEGACY;
 
     self.hasValidDefaultPaymentMean = true;
+    self.target = constants.target;
 
     this.loadHistory = function (limit, offset) {
         const sort = getHistorySortOrder(self.orderByState);
