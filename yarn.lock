@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@babel/code-frame@7.0.0-beta.44", "@babel/code-frame@^7.0.0-beta.40":
+"@babel/code-frame@7.0.0-beta.44":
   version "7.0.0-beta.44"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.0.0-beta.44.tgz#2a02643368de80916162be70865c97774f3adbd9"
   dependencies:
@@ -55,7 +55,7 @@
     babylon "7.0.0-beta.44"
     lodash "^4.2.0"
 
-"@babel/traverse@^7.0.0-beta.40":
+"@babel/traverse@7.0.0-beta.44":
   version "7.0.0-beta.44"
   resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.0.0-beta.44.tgz#a970a2c45477ad18017e2e465a0606feee0d2966"
   dependencies:
@@ -70,7 +70,7 @@
     invariant "^2.2.0"
     lodash "^4.2.0"
 
-"@babel/types@7.0.0-beta.44", "@babel/types@^7.0.0-beta.40":
+"@babel/types@7.0.0-beta.44":
   version "7.0.0-beta.44"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.0.0-beta.44.tgz#6b1b164591f77dec0a0342aca995f2d046b3a757"
   dependencies:
@@ -78,21 +78,21 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@bower_components/angular-ui-router@angular-ui/angular-ui-router-bower#^1.0.0":
+"@bower_components/angular-ui-router@angular-ui/angular-ui-router-bower#^1.0.0", "@uirouter/angularjs@angular-ui/angular-ui-router-bower#^1.0.0":
   version "1.0.15"
   resolved "https://codeload.github.com/angular-ui/angular-ui-router-bower/tar.gz/35fb8a9a6c6e345de3238582bc300a5cdd4ff649"
   dependencies:
     "@uirouter/core" "5.0.17"
 
-"@bower_components/angular-ui-utils@angular-ui/ui-utils#~0.2.3":
+"@bower_components/angular-ui-utils@angular-ui/ui-utils#~0.2.3", ui-utils@angular-ui/ui-utils#~0.2.3:
   version "0.0.0"
   resolved "https://codeload.github.com/angular-ui/ui-utils/tar.gz/125cb72d692f9f116454f338f6a5471f3088f9b9"
 
-"@bower_components/angular-ui-validate@angular-ui/ui-validate#~1.2.2":
+"@bower_components/angular-ui-validate@angular-ui/ui-validate#~1.2.2", angular-ui-validate@angular-ui/ui-validate#~1.2.2:
   version "1.2.3"
   resolved "https://codeload.github.com/angular-ui/ui-validate/tar.gz/0d982055360032be2421b969fa1c83bf053e735a"
 
-"@bower_components/bootstrap-datetimepicker@tarruda/bootstrap-datetimepicker#~0.0.11":
+"@bower_components/bootstrap-datetimepicker@tarruda/bootstrap-datetimepicker#~0.0.11", bootstrap-datetimepicker@tarruda/bootstrap-datetimepicker#~0.0.11:
   version "0.0.10"
   resolved "https://codeload.github.com/tarruda/bootstrap-datetimepicker/tar.gz/c26217db8840e5aa8f56e343ce307581960543c9"
 
@@ -100,39 +100,39 @@
   version "4.0.0-beta"
   resolved "https://codeload.github.com/twbs/bootstrap/tar.gz/35f80bb12e4e71fd777ee60ffa43711d8f84b1a6"
 
-"@bower_components/ckeditor@ckeditor/ckeditor-releases#^4.7.2":
-  version "4.9.1"
-  resolved "https://codeload.github.com/ckeditor/ckeditor-releases/tar.gz/e0b461194197838f9ee52f11b2b469dde9e1b8f8"
+"@bower_components/ckeditor@ckeditor/ckeditor-releases#^4.7.2", ckeditor@ckeditor/ckeditor-releases#^4.7.2:
+  version "4.9.2"
+  resolved "https://codeload.github.com/ckeditor/ckeditor-releases/tar.gz/993eb4fba6a70545f6c50da1988d39ecd9cf47a3"
 
-"@bower_components/international-phone-number@mareczek/international-phone-number#^0.0.16":
+"@bower_components/international-phone-number@mareczek/international-phone-number#^0.0.16", international-phone-number@mareczek/international-phone-number#^0.0.16:
   version "0.0.11"
   resolved "https://codeload.github.com/mareczek/international-phone-number/tar.gz/28055517d453a2f11e9035f2761243b6878df258"
 
-"@bower_components/lodash@lodash/lodash#~3.10.1":
+"@bower_components/lodash@lodash/lodash#~3.10.1", lodash@lodash/lodash#~3.10.1, lodash@~3.10.0:
   version "3.10.1"
   resolved "https://codeload.github.com/lodash/lodash/tar.gz/dfbd78f71de0550068fc82ce6e013d443e5037d7"
 
-"@bower_components/messenger@HubSpot/messenger#~1.4.1":
+"@bower_components/messenger@HubSpot/messenger#~1.4.1", messenger@HubSpot/messenger#~1.4.1:
   version "1.4.2"
   resolved "https://codeload.github.com/HubSpot/messenger/tar.gz/a3df9a62a1677af45fb130e226a6cbf98c0cecf0"
 
-"@bower_components/ng-ckeditor@esvit/ng-ckeditor#^0.2.1":
+"@bower_components/ng-ckeditor@esvit/ng-ckeditor#^0.2.1", ng-ckeditor@esvit/ng-ckeditor#^0.2.1:
   version "0.2.0"
   resolved "https://codeload.github.com/esvit/ng-ckeditor/tar.gz/8b9ece340f7d90bb3167604cc9d317c8041058c3"
 
-"@bower_components/ng-slide-down@TheRusskiy/ng-slide-down#^1.0.0":
+"@bower_components/ng-slide-down@TheRusskiy/ng-slide-down#^1.0.0", ng-slide-down@TheRusskiy/ng-slide-down#^1.0.0:
   version "1.2.0"
   resolved "https://codeload.github.com/TheRusskiy/ng-slide-down/tar.gz/efdb323572486b7922ae46a638f153c8d5ee9a2e"
 
-"@bower_components/ovh-angular-browser-alert@ovh-ux/ovh-angular-browser-alert#^1.0.0":
+"@bower_components/ovh-angular-browser-alert@ovh-ux/ovh-angular-browser-alert#^1.0.0", ovh-angular-browser-alert@ovh-ux/ovh-angular-browser-alert#^1.0.0:
   version "1.0.0"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-browser-alert/tar.gz/8336865a63083e009ae66241b13fec92762c35d3"
 
-"@bower_components/qrcode@janantala/qrcode.js#~1.0.x":
+"@bower_components/qrcode@janantala/qrcode.js#~1.0.x", qrcode.js@janantala/qrcode.js#~1.0.x:
   version "1.0.2"
   resolved "https://codeload.github.com/janantala/qrcode.js/tar.gz/2c20b467901740e6e32308b100d2df1125d4f6ac"
 
-"@bower_components/randexp@fent/randexp.js#~0.4.0":
+"@bower_components/randexp@fent/randexp.js#~0.4.0", randexp@fent/randexp.js#~0.4.0:
   version "0.4.9"
   resolved "https://codeload.github.com/fent/randexp.js/tar.gz/8d7f1f99da57c509419b0fc3164e7e8b4d77a58b"
   dependencies:
@@ -270,8 +270,8 @@
     rimraf "^2.5.2"
 
 "@microsoft/load-themed-styles@^1.7.2":
-  version "1.7.50"
-  resolved "https://registry.yarnpkg.com/@microsoft/load-themed-styles/-/load-themed-styles-1.7.50.tgz#0c79530152f797ce5df313a80117732b620802a6"
+  version "1.7.53"
+  resolved "https://registry.yarnpkg.com/@microsoft/load-themed-styles/-/load-themed-styles-1.7.53.tgz#27b2a85bcc09768c8ec2b652ffd98804279a87c5"
 
 "@ovh-ux/ovh-utils-angular@^12.3.x":
   version "12.3.0"
@@ -396,8 +396,8 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
 angular-aria@^1.6.9:
-  version "1.6.9"
-  resolved "https://registry.yarnpkg.com/angular-aria/-/angular-aria-1.6.9.tgz#150fa603ba7f604f48e3715b76ab3ec4b78971a6"
+  version "1.6.10"
+  resolved "https://registry.yarnpkg.com/angular-aria/-/angular-aria-1.6.10.tgz#472bfff8682c4cfe634d4bfda0524443e07e3501"
 
 angular-chart.js@^1.1.1:
   version "1.1.1"
@@ -407,8 +407,8 @@ angular-chart.js@^1.1.1:
     chart.js "2.3.x"
 
 angular-cookies@^1.6.9:
-  version "1.6.9"
-  resolved "https://registry.yarnpkg.com/angular-cookies/-/angular-cookies-1.6.9.tgz#7cadddab1eda8a2fce6901d19e651be5cd320758"
+  version "1.6.10"
+  resolved "https://registry.yarnpkg.com/angular-cookies/-/angular-cookies-1.6.10.tgz#20a014d501242e2edacd21397c0e5480e08dee00"
 
 angular-dynamic-locale@~0.1.27:
   version "0.1.35"
@@ -417,12 +417,12 @@ angular-dynamic-locale@~0.1.27:
     "@types/angular" "^1.6.25"
 
 angular-i18n@^1.6.0:
-  version "1.6.9"
-  resolved "https://registry.yarnpkg.com/angular-i18n/-/angular-i18n-1.6.9.tgz#d901faf0c375e858af60eead2d8e49d716a53bfd"
+  version "1.6.10"
+  resolved "https://registry.yarnpkg.com/angular-i18n/-/angular-i18n-1.6.10.tgz#16d9d6e6f9501a2cb80bce30c5cd1c76ddb5a545"
 
 angular-messages@^1.6.0:
-  version "1.6.9"
-  resolved "https://registry.yarnpkg.com/angular-messages/-/angular-messages-1.6.9.tgz#c6958a32ab49316af36e3e5ac6f94c361571fa72"
+  version "1.6.10"
+  resolved "https://registry.yarnpkg.com/angular-messages/-/angular-messages-1.6.10.tgz#09eedc5b50db99eeed9776414428c587c1259715"
 
 angular-qr@^0.2.3:
   version "0.2.3"
@@ -431,24 +431,24 @@ angular-qr@^0.2.3:
     qrcode-genetator "^1.0.2"
 
 angular-resource@^1.6.7:
-  version "1.6.9"
-  resolved "https://registry.yarnpkg.com/angular-resource/-/angular-resource-1.6.9.tgz#d02334b7cb96353e245966ad044c0c673df7b685"
+  version "1.6.10"
+  resolved "https://registry.yarnpkg.com/angular-resource/-/angular-resource-1.6.10.tgz#28c1834e9fa623467d2f9894716a4e6c7e077459"
 
 angular-route@^1.6.9:
-  version "1.6.9"
-  resolved "https://registry.yarnpkg.com/angular-route/-/angular-route-1.6.9.tgz#73c63cec6a8a6b924698aec635eac32aa41f5e2b"
+  version "1.6.10"
+  resolved "https://registry.yarnpkg.com/angular-route/-/angular-route-1.6.10.tgz#4247a32eab19495624623e96c1626dfba17ebf21"
 
 angular-sanitize@1.3.x, angular-sanitize@~1.3.0:
   version "1.3.20"
   resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.3.20.tgz#5b1caa4176b8db2039d7d1c1527537a61be3cd67"
 
 angular-sanitize@^1.6.9:
-  version "1.6.9"
-  resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.6.9.tgz#1adba33f6f513e5f93e3aca8071bef53666739ea"
+  version "1.6.10"
+  resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.6.10.tgz#635a362afb2dd040179f17d3a5455962b2c1918f"
 
 angular-translate@^2.17.0:
-  version "2.17.0"
-  resolved "https://registry.yarnpkg.com/angular-translate/-/angular-translate-2.17.0.tgz#0871e50bec65eb30f6fbe6d83e4bee6bc5fcb474"
+  version "2.17.1"
+  resolved "https://registry.yarnpkg.com/angular-translate/-/angular-translate-2.17.1.tgz#0fe526cabd6f6b39db34e344047f0e3c1978296e"
   dependencies:
     angular ">=1.2.26 <=1.6"
 
@@ -461,8 +461,8 @@ angular@1.3.x, angular@~1.3.0:
   resolved "https://registry.yarnpkg.com/angular/-/angular-1.3.20.tgz#b23a3d7c5e7f99f7d95b9b4d49b9ac355269baee"
 
 angular@1.x, "angular@>=1.2.26 <=1.6", angular@^1.6.9:
-  version "1.6.9"
-  resolved "https://registry.yarnpkg.com/angular/-/angular-1.6.9.tgz#bc812932e18909038412d594a5990f4bb66c0619"
+  version "1.6.10"
+  resolved "https://registry.yarnpkg.com/angular/-/angular-1.6.10.tgz#eed3080a34d29d0f681ff119b18ce294e3f74826"
 
 animate.css@^3.5.0:
   version "3.6.1"
@@ -690,13 +690,13 @@ babel-core@^6.0.12, babel-core@^6.18.2, babel-core@^6.26.0:
     source-map "^0.5.6"
 
 babel-eslint@^8.0.3:
-  version "8.2.2"
-  resolved "http://registry.npmjs.org/babel-eslint/-/babel-eslint-8.2.2.tgz#1102273354c6f0b29b4ea28a65f97d122296b68b"
+  version "8.2.3"
+  resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-8.2.3.tgz#1a2e6681cc9bc4473c32899e59915e19cd6733cf"
   dependencies:
-    "@babel/code-frame" "^7.0.0-beta.40"
-    "@babel/traverse" "^7.0.0-beta.40"
-    "@babel/types" "^7.0.0-beta.40"
-    babylon "^7.0.0-beta.40"
+    "@babel/code-frame" "7.0.0-beta.44"
+    "@babel/traverse" "7.0.0-beta.44"
+    "@babel/types" "7.0.0-beta.44"
+    babylon "7.0.0-beta.44"
     eslint-scope "~3.7.1"
     eslint-visitor-keys "^1.0.0"
 
@@ -1089,7 +1089,7 @@ babel-types@^6.19.0, babel-types@^6.24.1, babel-types@^6.26.0:
     lodash "^4.17.4"
     to-fast-properties "^1.0.3"
 
-babylon@7.0.0-beta.44, babylon@^7.0.0-beta.40:
+babylon@7.0.0-beta.44:
   version "7.0.0-beta.44"
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-7.0.0-beta.44.tgz#89159e15e6e30c5096e22d738d8c0af8a0e8ca1d"
 
@@ -1304,8 +1304,8 @@ camelcase@^4.1.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
 
 caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-  version "1.0.30000827"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000827.tgz#bd2839dd196093b44c28c17f93513140c9d92588"
+  version "1.0.30000830"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000830.tgz#6e45255b345649fd15ff59072da1e12bb3de2f13"
 
 caseless@~0.11.0:
   version "0.11.0"
@@ -1323,8 +1323,8 @@ center-align@^0.1.1:
     lazy-cache "^1.0.3"
 
 chalk@*, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.2:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.3.2.tgz#250dc96b07491bfd601e648d66ddf5f60c7a5c65"
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.0.tgz#a060a297a6b57e15b61ca63ce84995daa0fe6e52"
   dependencies:
     ansi-styles "^3.2.1"
     escape-string-regexp "^1.0.5"
@@ -1671,11 +1671,11 @@ conventional-changelog-atom@^0.2.8:
     q "^1.5.1"
 
 conventional-changelog-cli@^1.3.14:
-  version "1.3.21"
-  resolved "https://registry.yarnpkg.com/conventional-changelog-cli/-/conventional-changelog-cli-1.3.21.tgz#f6b063102ba34c0f2bec552249ee233e0762e0a4"
+  version "1.3.22"
+  resolved "https://registry.yarnpkg.com/conventional-changelog-cli/-/conventional-changelog-cli-1.3.22.tgz#13570fe1728f56f013ff7a88878ff49d5162a405"
   dependencies:
     add-stream "^1.0.0"
-    conventional-changelog "^1.1.23"
+    conventional-changelog "^1.1.24"
     lodash "^4.2.1"
     meow "^4.0.0"
     tempfile "^1.1.1"
@@ -1686,9 +1686,9 @@ conventional-changelog-codemirror@^0.3.8:
   dependencies:
     q "^1.5.1"
 
-conventional-changelog-core@^2.0.10:
-  version "2.0.10"
-  resolved "https://registry.yarnpkg.com/conventional-changelog-core/-/conventional-changelog-core-2.0.10.tgz#3e47565ef9d148bcdceab6de6b3651a16dd28dc8"
+conventional-changelog-core@^2.0.11:
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/conventional-changelog-core/-/conventional-changelog-core-2.0.11.tgz#19b5fbd55a9697773ed6661f4e32030ed7e30287"
   dependencies:
     conventional-changelog-writer "^3.0.9"
     conventional-commits-parser "^2.1.7"
@@ -1704,9 +1704,9 @@ conventional-changelog-core@^2.0.10:
     read-pkg-up "^1.0.1"
     through2 "^2.0.0"
 
-conventional-changelog-ember@^0.3.11:
-  version "0.3.11"
-  resolved "https://registry.yarnpkg.com/conventional-changelog-ember/-/conventional-changelog-ember-0.3.11.tgz#56ca9b418ee9d7f089bea34307d57497420d72a6"
+conventional-changelog-ember@^0.3.12:
+  version "0.3.12"
+  resolved "https://registry.yarnpkg.com/conventional-changelog-ember/-/conventional-changelog-ember-0.3.12.tgz#b7d31851756d0fcb49b031dffeb6afa93b202400"
   dependencies:
     q "^1.5.1"
 
@@ -1760,15 +1760,15 @@ conventional-changelog-writer@^3.0.9:
     split "^1.0.0"
     through2 "^2.0.0"
 
-conventional-changelog@^1.1.23:
-  version "1.1.23"
-  resolved "https://registry.yarnpkg.com/conventional-changelog/-/conventional-changelog-1.1.23.tgz#4ac72af8b9ea9af260e97acf556c19d8b2da970e"
+conventional-changelog@^1.1.24:
+  version "1.1.24"
+  resolved "https://registry.yarnpkg.com/conventional-changelog/-/conventional-changelog-1.1.24.tgz#3d94c29c960f5261c002678315b756cdd3d7d1f0"
   dependencies:
     conventional-changelog-angular "^1.6.6"
     conventional-changelog-atom "^0.2.8"
     conventional-changelog-codemirror "^0.3.8"
-    conventional-changelog-core "^2.0.10"
-    conventional-changelog-ember "^0.3.11"
+    conventional-changelog-core "^2.0.11"
+    conventional-changelog-ember "^0.3.12"
     conventional-changelog-eslint "^1.0.9"
     conventional-changelog-express "^0.3.6"
     conventional-changelog-jquery "^0.1.0"
@@ -2300,9 +2300,9 @@ eventemitter2@~0.4.13:
   version "0.4.14"
   resolved "https://registry.yarnpkg.com/eventemitter2/-/eventemitter2-0.4.14.tgz#8f61b75cde012b2e9eb284d4545583b5643b61ab"
 
-eventemitter3@1.x.x:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-1.2.0.tgz#1c86991d816ad1e504750e73874224ecf3bec508"
+eventemitter3@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-3.0.1.tgz#4ce66c3fc5b5a6b9f2245e359e1938f1ab10f960"
 
 exec-sh@^0.2.1:
   version "0.2.1"
@@ -2577,6 +2577,12 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
+follow-redirects@^1.0.0:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.4.1.tgz#d8120f4518190f55aac65bb6fc7b85fcd666d6aa"
+  dependencies:
+    debug "^3.1.0"
+
 font-awesome@~4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
@@ -2692,7 +2698,7 @@ gauge@~2.7.3:
     strip-ansi "^3.0.1"
     wide-align "^1.1.0"
 
-gaze@^1.0.0:
+gaze@^1.0.0, gaze@^1.1.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/gaze/-/gaze-1.1.2.tgz#847224677adb8870d679257ed3388fdb61e40105"
   dependencies:
@@ -3037,12 +3043,12 @@ grunt-contrib-uglify@~0.2.4:
     uglify-js "~2.4.0"
 
 grunt-contrib-watch@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/grunt-contrib-watch/-/grunt-contrib-watch-1.0.0.tgz#84a1a7a1d6abd26ed568413496c73133e990018f"
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/grunt-contrib-watch/-/grunt-contrib-watch-1.0.1.tgz#ca65934b6e04dbd26da684d598f79ee22f47fdac"
   dependencies:
     async "^1.5.0"
-    gaze "^1.0.0"
-    lodash "^3.10.1"
+    gaze "^1.1.0"
+    lodash "^4.0.0"
     tiny-lr "^0.2.1"
 
 grunt-env@^0.4.4:
@@ -3477,11 +3483,12 @@ http-proxy-middleware@^0.17.3:
     micromatch "^2.3.11"
 
 http-proxy@^1.16.2:
-  version "1.16.2"
-  resolved "https://registry.yarnpkg.com/http-proxy/-/http-proxy-1.16.2.tgz#06dff292952bf64dbe8471fa9df73066d4f37742"
+  version "1.17.0"
+  resolved "https://registry.yarnpkg.com/http-proxy/-/http-proxy-1.17.0.tgz#7ad38494658f84605e2f6db4436df410f4e5be9a"
   dependencies:
-    eventemitter3 "1.x.x"
-    requires-port "1.x.x"
+    eventemitter3 "^3.0.0"
+    follow-redirects "^1.0.0"
+    requires-port "^1.0.0"
 
 http-signature@~1.1.0:
   version "1.1.1"
@@ -3645,9 +3652,13 @@ invert-kv@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6"
 
-ipaddr.js@1.6.0, ipaddr.js@^1.6.0:
+ipaddr.js@1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.6.0.tgz#e3fa357b773da619f26e95f049d055c72796f86b"
+
+ipaddr.js@^1.6.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.7.0.tgz#2206ed334afc32e01fed3ee838b6b2521068b9d2"
 
 is-arrayish@^0.2.1:
   version "0.2.1"
@@ -4279,10 +4290,6 @@ lodash@^2.4.1, lodash@~2.4.1:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-2.4.2.tgz#fadd834b9683073da179b3eae6d9c0d15053f73e"
 
-lodash@^3.10.1, lodash@~3.10.0, lodash@~3.10.1:
-  version "3.10.1"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
-
 lodash@^4.0.0, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.8.2, lodash@~4.17.4, lodash@~4.17.5:
   version "4.17.5"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
@@ -4343,8 +4350,8 @@ lru-cache@^4.0.1:
     yallist "^2.1.2"
 
 lusca@^1.4.1:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/lusca/-/lusca-1.5.2.tgz#5230a0c635fb60c1f30efbd0d95341bca3ed788e"
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/lusca/-/lusca-1.6.0.tgz#18f3ceda2f8518dbaf976bf3b59b8eb9e058a0d5"
   dependencies:
     tsscmp "^1.0.5"
 
@@ -4476,8 +4483,8 @@ mimic-fn@^1.0.0:
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-1.2.0.tgz#820c86a39334640e99516928bd03fca88057d022"
 
 minimalistic-assert@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/minimalistic-assert/-/minimalistic-assert-1.0.0.tgz#702be2dda6b37f4836bcb3f5db56641b64a1d3d3"
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/minimalistic-assert/-/minimalistic-assert-1.0.1.tgz#2e194de044626d4a10e7f7fbc00ce73e83e4d5c7"
 
 minimatch@0.3:
   version "0.3.0"
@@ -4545,8 +4552,8 @@ modify-values@^1.0.0:
   resolved "https://registry.yarnpkg.com/modify-values/-/modify-values-1.0.1.tgz#b3939fa605546474e3e3e3c63d64bd43b4ee6022"
 
 moment@^2.10.2, moment@^2.10.6, moment@^2.20.1:
-  version "2.22.0"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.0.tgz#7921ade01017dd45186e7fee5f424f0b8663a730"
+  version "2.22.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.1.tgz#529a2e9bf973f259c9643d237fda84de3a26e8ad"
 
 morgan@^1.8.1:
   version "1.9.0"
@@ -4893,8 +4900,8 @@ osenv@0.0.3:
   resolved "https://registry.yarnpkg.com/osenv/-/osenv-0.0.3.tgz#cd6ad8ddb290915ad9e22765576025d411f29cb6"
 
 ovh-angular-actions-menu@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/ovh-angular-actions-menu/-/ovh-angular-actions-menu-3.0.0.tgz#7564cb94a9e8823f61efe20b9cf513bcad169ff8"
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/ovh-angular-actions-menu/-/ovh-angular-actions-menu-3.1.0.tgz#d1cb53373c9b82bb07babefd9c489b42a14ce30e"
 
 ovh-angular-export-csv@^0.3.2:
   version "0.3.2"
@@ -4939,8 +4946,8 @@ ovh-angular-responsive-tabs@^4.0.0:
   resolved "https://registry.yarnpkg.com/ovh-angular-responsive-tabs/-/ovh-angular-responsive-tabs-4.0.0.tgz#85b66d7032612c3ed1a14cb29f83d1331b50c1df"
 
 ovh-angular-sidebar-menu@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/ovh-angular-sidebar-menu/-/ovh-angular-sidebar-menu-7.0.0.tgz#672042c42241fe4df18bed22155b99283c40b088"
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/ovh-angular-sidebar-menu/-/ovh-angular-sidebar-menu-7.1.0.tgz#606f72bd63a427e6e2ea241f88a6900a21672395"
 
 ovh-angular-sso-auth-modal-plugin@^2.0.1:
   version "2.0.1"
@@ -4963,8 +4970,8 @@ ovh-angular-user-pref@^0.3.1:
   resolved "https://registry.yarnpkg.com/ovh-angular-user-pref/-/ovh-angular-user-pref-0.3.1.tgz#07f5792513651f3262ae4879c174423649b08307"
 
 ovh-api-services@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-3.0.0.tgz#251fa0ae0bc76f500a490a3bf0fa258cfe7410a2"
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-3.4.0.tgz#fcd9729d4200fbcdf516ab26fa3028b17cd1d221"
   dependencies:
     grunt-injector "^0.6.0"
 
@@ -4987,19 +4994,19 @@ ovh-protractor-jasmine2-logs-reporter@0.0.1:
     q "^1.4.1"
 
 ovh-ui-angular@^2.5.0:
-  version "2.10.1"
-  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.10.1.tgz#e360794bba77df21c2eb4bde17e364fad6920485"
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.11.0.tgz#ddff01c38545cfda3509c69f2dfdf43729ff7e6a"
   dependencies:
     escape-string-regexp "^1.0.5"
     popper.js "^1.12.9"
 
 ovh-ui-kit-bs@~1.1.x:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/ovh-ui-kit-bs/-/ovh-ui-kit-bs-1.1.1.tgz#67d0ed6982127301368a85c32103e20156c1d8e7"
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/ovh-ui-kit-bs/-/ovh-ui-kit-bs-1.1.3.tgz#a0defa62f0c00b753d45ce586b342512a753e9ce"
 
 ovh-ui-kit@^2.7.1:
-  version "2.10.0"
-  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.10.0.tgz#aca4a4dab9414e16c6cc4b6007eb3bf1f4150b3d"
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.11.0.tgz#9060a0be4705ea4a4eafd3a6e9180fe6c1bc6ba2"
   dependencies:
     less-plugin-remcalc "^0.0.1"
 
@@ -5205,8 +5212,8 @@ prettier-eslint@^6.2.2:
     require-relative "^0.8.7"
 
 prettier@^1.6.0:
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.11.1.tgz#61e43fc4cd44e68f2b0dfc2c38cd4bb0fccdcc75"
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.12.1.tgz#c1ad20e803e7749faf905a409d2367e06bbe7325"
 
 pretty-format@^20.0.3:
   version "20.0.3"
@@ -5381,8 +5388,8 @@ raphael@^2.2.7:
     eve-raphael "0.5.0"
 
 raven-js@^3.22.3:
-  version "3.24.1"
-  resolved "https://registry.yarnpkg.com/raven-js/-/raven-js-3.24.1.tgz#7327e08786248517eedd36205bf50f1047821ffa"
+  version "3.24.2"
+  resolved "https://registry.yarnpkg.com/raven-js/-/raven-js-3.24.2.tgz#c5cacb363b198812e80cd4c6714e5e478549ebcf"
 
 raw-body@1.1.3:
   version "1.1.3"
@@ -5726,7 +5733,7 @@ require-uncached@^1.0.3:
     caller-path "^0.1.0"
     resolve-from "^1.0.0"
 
-requires-port@1.x.x:
+requires-port@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
 
@@ -5752,8 +5759,8 @@ resolve-global@^0.1.0:
     global-dirs "^0.1.0"
 
 resolve@^1.1.6:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.7.0.tgz#2bdf5374811207285df0df652b78f118ab8f3c5e"
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.7.1.tgz#aadd656374fd298aee895bc026b8297418677fd3"
   dependencies:
     path-parse "^1.0.5"
 
@@ -6133,8 +6140,8 @@ sshpk@^1.7.0:
     tweetnacl "~0.14.0"
 
 stable@~0.1.3, stable@~0.1.5:
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/stable/-/stable-0.1.6.tgz#910f5d2aed7b520c6e777499c1f32e139fdecb10"
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/stable/-/stable-0.1.7.tgz#06e1e4213460252e4f20da89a32cb4a0dbe5f2b2"
 
 stack-trace@0.0.7:
   version "0.0.7"
@@ -6266,8 +6273,8 @@ supports-color@^3.2.3:
     has-flag "^1.0.0"
 
 supports-color@^5.2.0, supports-color@^5.3.0:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-5.3.0.tgz#5b24ac15db80fa927cf5227a4a33fd3c4c7676c0"
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-5.4.0.tgz#1c6b337402c2137605efe19f10fec390f6faab54"
   dependencies:
     has-flag "^3.0.0"
 
@@ -6643,8 +6650,8 @@ window-size@0.1.0:
   resolved "https://registry.yarnpkg.com/window-size/-/window-size-0.1.0.tgz#5438cd2ea93b202efa3a19fe8887aee7c94f9c9d"
 
 winston@^2.3.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/winston/-/winston-2.4.1.tgz#a3a9265105564263c6785b4583b8c8aca26fded6"
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/winston/-/winston-2.4.2.tgz#3ca01f763116fc48db61053b7544e750431f8db0"
   dependencies:
     async "~1.0.0"
     colors "1.0.x"

@@ -6,11 +6,20 @@
         <h1 data-i18n-static="payments_title"></h1>
     </div>
 
-    <div class="tab-content">
+    <div class="tab-content"
+         data-ui-view>
         <p class="alert alert-info"
            role="alert"
            data-i18n-static="payments_description">
         </p>
+
+        <div class="mb-4"
+             data-ng-if="ctrl.paymentRequests.length">
+            <oui-message data-type="info">
+                <span data-ng-bind-html="tr('payments_request_pending', [ctrl.paymentRequestsHref])"></span>
+            </oui-message>
+        </div>
+
         <div class="row">
             <div class="col-md-6">
                 <button type="button"

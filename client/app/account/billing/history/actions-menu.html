@@ -31,7 +31,7 @@
               data-ng-if="historyLine.debt">
         </span>
         <a data-ng-if="historyLine.debt"
-           data-ng-href="#/billing/history/{{ :: historyLine.debt.debtId }}/details"
+           data-ui-sref="app.account.billing.history.debtDetails({ debtId: historyLine.debt.debtId })"
            data-ng-attr-title="{{ tr('statements_table_detail_link', [historyLine.billId]) }}"
            data-i18n-static="statements_table_detail_label">
         </a>
@@ -52,10 +52,17 @@
     <li data-ng-if="historyLine.debt && historyLine.debt.dueAmount.value > 0 && !historyLine.debt.paymentOrder.url">
         <span class="fa fa-credit-card" aria-hidden="true"></span>
         <button class="btn btn-link btn-debt"
+                data-ng-if="ctrl.target !== 'US'"
                 type="button"
                 data-ng-click="ctrl.paySingleDebt(historyLine.debt)"
                 data-i18n-static="statements_table_pay_debt_button">
         </button>
+
+        <a class="btn btn-link btn-debt"
+           data-ng-if="ctrl.target === 'US'"
+           data-ui-sref="app.account.billing.history.balance"
+           data-i18n-static="statements_table_pay_debt_button">
+        </a>
     </li>
 
     <li data-ng-if="historyLine.debt && historyLine.debt.todoAmount.value > 0 && historyLine.debt.paymentOrder.url">

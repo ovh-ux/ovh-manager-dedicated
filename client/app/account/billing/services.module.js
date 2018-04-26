@@ -44,3 +44,14 @@ angular.module("Billing.constants").constant("IBAN_BIC_RULES", {
     BIC_REGEXP: /^([A-Z]{4})([A-Z]{2})(\w{2})(\w{3})?$/g,
     IBAN_REGEXP: /^([A-Z]{2})(\d{2})(.*)$/g
 });
+
+// TODO : remove this when ovh-angular-apiv7 npm install is fixed
+angular.module("Billing.services").service("BillingBill", ($resource) => $resource("/me/bill/:billId", {
+    billId: "@billId"
+}, {
+    getById: {
+        serviceType: "apiv7",
+        method: "GET",
+        isArray: true
+    }
+}));
