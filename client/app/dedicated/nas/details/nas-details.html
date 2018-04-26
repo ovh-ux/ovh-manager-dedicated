@@ -39,7 +39,11 @@
             <oui-message class="d-block mb-4"
                          data-ng-if="$ctrl.nasData.isNasHa"
                          type="info">
-                <span data-ng-bind-html="'nas_migration_info', {t0: $ctrl.redirectToCloud}"></span>
+                <span data-translate="nas_migration_info"
+                      data-translate-values="{
+                          t0: $ctrl.redirectToCloud
+                      }">
+                </span>
             </oui-message>
 
             <div data-ovh-alert="NasAlert"></div>
