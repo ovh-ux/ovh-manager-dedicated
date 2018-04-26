@@ -56,7 +56,7 @@ angular.module("filters").filter("price", ($translate) => {
             if (taxes.HTOnly) {
                 return `<b class="red">${price.withoutTax.text}</b>`;
             }
-            return `<b class="red">${$translate.instant("price_ht_label", [price.withoutTax.text])}</b><i class="small"> (${$translate.instant("price_ttc_label", { t0: price.withTax.text })})</i>`;
+            return `<b class="red">${$translate.instant("price_ht_label", { price: price.withoutTax.text })}</b><i class="small"> (${$translate.instant("price_ttc_label", { price: price.withTax.text })})</i>`;
         }
         return `<b class="red">${$translate.instant("price_free")}</b>`;
     }
