@@ -1,7 +1,6 @@
 <div data-ng-controller="TaskCtrl as $ctrl">
     <h2 data-translate="server_tab_task"></h2>
     <div data-ovh-alert="taskAlert"></div>
-    <p data-translate="server_configuration_no_interventions"></p>
     <oui-datagrid data-rows-loader="$ctrl.loadDatagridTasks($config)">
         <oui-column data-title=":: 'server_configuration_task_last_action' | translate">
             <span data-ng-bind="$row.lastUpdate | date: 'medium'"></span>
