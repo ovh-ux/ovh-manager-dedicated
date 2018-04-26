@@ -81,9 +81,12 @@
                                 class="btn btn-link"
                                 data-ng-if="!service.hasTask"
                                 data-ng-click="ctrlServices.openEditLine($index, service)"
-                                data-translate="useraccount_contacts_services_edit">
+                                data-ng-attr-title="{{:: 'common_change' | translate }}">
                             <span class="fa fa-pencil"
                                   aria-hidden="true">
+                            </span>
+                            <span class="sr-only"
+                                  data-translate="common_change">
                             </span>
                         </button>
                         <span class="fa fa-hourglass-start"
@@ -116,9 +119,12 @@
                                 class="btn btn-link"
                                 data-ng-disabled="!service.newContactAdmin || !service.newContactTech || !service.newContactBilling"
                                 data-ng-click="ctrlServices.changeContact(service)"
-                                data-translate="useraccount_contacts_services_edit">
+                                data-ng-attr-title="{{:: 'common_confirm' | translate }}">
                             <span class="fa fa-check"
                                   aria-hidden="true">
+                            </span>
+                            <span class="sr-only"
+                                  data-translate="common_confirm">
                             </span>
                         </button>
                     </td>
@@ -126,9 +132,12 @@
                         <button type="button"
                                 class="btn btn-link"
                                 data-ng-click="ctrlServices.editLine = -1"
-                                data-translate="useraccount_contacts_services_edit">
+                                data-ng-attr-title="{{:: 'common_cancel' | translate }}">
                             <span class="fa fa-times"
                                   aria-hidden="true">
+                            </span>
+                            <span class="sr-only"
+                                  data-translate="common_cancel">
                             </span>
                         </button>
                     </td>
