@@ -1,3 +1,28 @@
+<a name="9.2.14"></a>
+## [9.2.14](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.13...v9.2.14) (2018-04-26)
+
+
+### Bug Fixes
+
+* display pay debt button only when dueAmount is more than 0 in US ([7ddaf4f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7ddaf4f))
+* display publicLabel when no description on payment method ([47c933c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/47c933c))
+* fix after review ([954e4e6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/954e4e6))
+* fix and refactor billing history details view ([eb5ca18](https://github.com/ovh-ux/ovh-manager-dedicated/commit/eb5ca18))
+* fix link to state for new payment method ([550da86](https://github.com/ovh-ux/ovh-manager-dedicated/commit/550da86))
+* fix payment method label in select ([d63a331](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d63a331))
+* fix some trads and remove EU link for US ([31a03bd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/31a03bd))
+* package.json and remove unnecessary comments ([cee68a3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/cee68a3))
+* pass payment method id in pay debt request ([52d8cdd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/52d8cdd))
+* update DEBTACCOUNT_DEBT translation for US test ([2c00d62](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2c00d62))
+* upgrade ovh-api-services version ([8c4b472](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8c4b472))
+
+
+### Features
+
+* **debtaccount:** manage debt for US customers ([431b3c8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/431b3c8))
+
+
+
 <a name="9.2.13"></a>
 ## [9.2.13](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.12...v9.2.13) (2018-04-25)
 
