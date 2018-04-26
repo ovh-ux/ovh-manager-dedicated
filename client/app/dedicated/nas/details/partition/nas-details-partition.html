@@ -80,7 +80,8 @@
                     <span data-translate="{{ 'nas_partitions_protocol_' + $row.protocol }}"></span>
                 </oui-column>
                 <oui-column data-title=":: 'nas_partitions_size' | translate">
-                    <span data-translate="$row.size + ' ' + ('unit_size_GB' | translate)"></span>
+                    <span data-ng-bind="$row.size"></span>
+                    <span data-translate="unit_size_GB"></span>
                 </oui-column>
                 <oui-action-menu data-align="end"
                                  data-compact>
