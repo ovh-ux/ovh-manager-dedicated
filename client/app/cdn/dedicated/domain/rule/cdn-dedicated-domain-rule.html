@@ -47,19 +47,19 @@
                 </form>
                 <oui-datagrid data-ng-init="loadCacheRules()"
                               data-rows="cacheRules.list.results">
-                    <oui-column data-title="{{ 'cdn_cacherule_table_header_filetype' | translate }}">
+                    <oui-column data-title="'cdn_cacherule_table_header_filetype' | translate">
                         <span data-translate="{{ 'cdn_cacherule_'+ $row.fileType }}"></span>
                     </oui-column>
-                    <oui-column data-title="{{ 'cdn_cacherule_table_header_rule' | translate }}"
+                    <oui-column data-title="'cdn_cacherule_table_header_rule' | translate"
                                 data-property="fileMatch">
                     </oui-column>
-                    <oui-column data-title="{{ 'cdn_cacherule_table_header_cachetype' | translate }}">
+                    <oui-column data-title="'cdn_cacherule_table_header_cachetype' | translate">
                         <span data-translate="{{ 'cdn_cacherule_'+ $row.cacheType }}"></span>
                     </oui-column>
-                    <oui-column data-title="{{ 'cdn_cacherule_table_header_ttl' | translate }}">
+                    <oui-column data-title="'cdn_cacherule_table_header_ttl' | translate">
                         <span data-ng-bind="$row.cacheType === 'FORCE_CACHE' ? $row.ttl : '-'"></span>
                     </oui-column>
-                    <oui-column data-title="{{ 'cdn_cacherule_table_header_state' | translate }}">
+                    <oui-column data-title="'cdn_cacherule_table_header_state' | translate">
                         <span class="label label-default"
                               data-ng-class="{
                                   'label-success': $row.status === 'ON',
