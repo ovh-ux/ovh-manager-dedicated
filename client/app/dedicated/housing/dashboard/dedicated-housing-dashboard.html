@@ -31,15 +31,10 @@
                     <li class="oui-tile__item">
                         <div class="oui-tile__definition">
                             <strong data-translate="housing_name"></strong>
-                            <div>
-                                <span data-ng-show="housing.name"
-                                      data-ng-bind="housing.name">
-                                </span>
-                                <span class="text-muted"
-                                      data-ng-hide="!housing.name"
-                                      data-translate="housing_configuration_name_unavailable">
-                                </span>
-                            </div>
+                            <span class="d-block"
+                                  data-ng-show="housing.name"
+                                  data-ng-bind="housing.name || '-'">
+                            </span>
                         </div>
                     </li>
                     <li class="oui-tile__item">
