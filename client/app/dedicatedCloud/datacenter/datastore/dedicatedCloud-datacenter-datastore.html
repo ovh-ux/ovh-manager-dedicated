@@ -86,12 +86,12 @@
                             </span>
                             <span data-ng-if="datastore.billing === 'HOURLY' && datastore.consumption <= 1"
                                   data-translate="dedicatedCloud_tab_datastores_hourly_consumption_1"
-                                  data-uib-tooltip="{{ 'dedicatedCloud_tab_host_hourly_usage_update' | translate:{ t0: datastore.consumptionLastUpdate|date:'short' } }}"
+                                  data-uib-tooltip="{{ 'dedicatedCloud_tab_host_hourly_usage_update' | translate:{ t0: (datastore.consumptionLastUpdate|date:'short') } }}"
                                   data-tooltip-placement="top">
                             </span>
                             <span data-ng-if="datastore.billing === 'HOURLY' && datastore.consumption > 1"
                                   data-ng-bind="'dedicatedCloud_tab_datastores_hourly_consumption_other' | translate:{ t0: datastore.consumption }"
-                                  data-uib-tooltip="{{ 'dedicatedCloud_tab_host_hourly_usage_update' | translate:{ t0: datastore.consumptionLastUpdate|date:'short' } }}"
+                                  data-uib-tooltip="{{ 'dedicatedCloud_tab_host_hourly_usage_update' | translate:{ t0: (datastore.consumptionLastUpdate|date:'short') } }}"
                                   data-tooltip-placement="top">
                             </span>
                         </td>
