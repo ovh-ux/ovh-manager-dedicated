@@ -935,18 +935,18 @@
    <translation id="month_other" qtlid="158591">{} mois</translation>
    <translation id="year_1" qtlid="70277">1 an</translation>
    <translation id="year_other" qtlid="158604">{} ans</translation>
-   <translation id="upto" qtlid="158617">Jusqu'au {0}</translation>
+   <translation id="upto">Jusqu'au {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Jusqu'au premier jour du prochain mois</translation>
    <translation id="engage" qtlid="158643">S'engager {0}</translation>
-   <translation id="price_ht_label" qtlid="166183">{0}&#160;HT</translation>
-   <translation id="price_ttc_label" qtlid="166196">{0}&#160;TTC</translation>
+   <translation id="price_ht_label">{{ price }}&#160;HT</translation>
+   <translation id="price_ttc_label">{{ price }}&#160;TTC</translation>
    <translation id="price_free" qtlid="130495">Gratuit</translation>
    <translation id="price" qtlid="181084">Prix :</translation>
    <translation id="contract_next" qtlid="17743">Suivant</translation>
    <translation id="contract_previous" qtlid="17431">Précédent</translation>
-   <translation id="download_contract" qtlid="180369">Ouvrir le contrat "{0}" en PDF</translation>
+   <translation id="download_contract">Ouvrir le contrat "{{ name }}" en PDF</translation>
    <translation id="contract_help" qtlid="180382">Il faut faire défiler les contrats pour pouvoir les valider.</translation>
-   <translation id="contracts_list_title" qtlid="180395">Il y a {0} contrats à consulter.</translation>
+   <translation id="contracts_list_title">Il y a {{ count }} contrats à consulter.</translation>
    <translation id="contract_list_title" qtlid="180408">Il y a 1 contrat à consulter.</translation>
    <translation id="contracts_agree" qtlid="180421">J'accepte les contrats</translation>
    <translation id="contract_agree" qtlid="180434">J'accepte le contrat</translation>
