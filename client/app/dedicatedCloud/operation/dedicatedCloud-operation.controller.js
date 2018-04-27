@@ -50,8 +50,8 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
                 .then((op) => {
                     const friendlyNameBy = $translate.instant(`dedicatedCloud_OPERATIONS_createdby_${op.createdBy.replace(/-/g, "_")}`);
                     const friendlyNameFrom = $translate.instant(`dedicatedCloud_OPERATIONS_createdfrom_${op.createdFrom.replace(/-/g, "_")}`);
-                    op.createdBy = friendlyNameBy.indexOf("/!\\") === 0 ? op.createdBy : friendlyNameBy;
-                    op.createdFrom = friendlyNameFrom.indexOf("/!\\") === 0 ? op.createdFrom : friendlyNameFrom;
+                    op.createdBy = friendlyNameBy.startsWith("dedicatedCloud_OPERATIONS_createdby_") ? op.createdBy : friendlyNameBy;
+                    op.createdFrom = friendlyNameFrom.startsWith("dedicatedCloud_OPERATIONS_createdfrom_") ? op.createdFrom : friendlyNameFrom;
                     op.isDone = _.includes(self.doneStates, op.state);
                     return op;
                 })
