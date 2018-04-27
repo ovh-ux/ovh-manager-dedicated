@@ -9,7 +9,7 @@
         <div data-wizard-step
             data-wizard-step-on-load="loadAmount"
             data-wizard-step-valid="renewStepValidator()">
-            <p data-ng-bind="'fidelity_creditOrder_step1_msg' | translate:{ t0: currency.symbol }"></p>
+            <p data-ng-bind-html="'fidelity_creditOrder_step1_msg' | translate:{ t0: currency.symbol }"></p>
             <label for="amount"
                    class="control-label"
                    data-ng-bind="'fidelity_creditOrder_step1_amount' | translate">
