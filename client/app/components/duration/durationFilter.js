@@ -29,7 +29,7 @@ angular.module("filters").filter("duration", [
             } else if (upto.test(duration)) {
                 if (uptoDuration.test(duration)) {
                     d = duration.match(uptoDuration)[2];
-                    return $translate.instant("upto", dateFormat ? $filter("date")(d, dateFormat) : d);
+                    return $translate.instant("upto", { date: dateFormat ? $filter("date")(d, dateFormat) : d });
                 }
                 return $translate.instant("uptofirstdaynextmonth");
             } else if (engage.test(duration)) {
