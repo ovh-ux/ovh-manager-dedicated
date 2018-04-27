@@ -50,7 +50,7 @@
             <div data-ng-if="mean.type"
                  class="w-50">
 
-                <p data-ng-bind="('paymentMean_add_message_' + mean.type) | translate"></p>
+                <p data-ng-bind-html="('paymentMean_add_message_' + mean.type) | translate"></p>
                 <div data-ng-if="mean.type === 'bankAccount'">
 
                     <div class="form-group">
