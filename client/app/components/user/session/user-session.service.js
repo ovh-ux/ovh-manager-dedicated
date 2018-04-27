@@ -376,6 +376,9 @@ class SessionService {
                         title: this.$translate.instant("menu_ssh"),
                         state: "app.account.useraccount.ssh"
                     }, {
+                        title: this.$translate.instant("menu_credentials"),
+                        state: "app.account.useraccount.credentials"
+                    }, {
                         title: this.$translate.instant("menu_advanced"),
                         state: "app.account.useraccount.advanced"
                     }, {

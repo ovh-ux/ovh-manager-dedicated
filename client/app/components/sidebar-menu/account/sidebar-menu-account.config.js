@@ -39,6 +39,11 @@ angular.module("App").run(($q, $translatePartialLoader, $translate, SidebarMenu,
             state: "app.account.useraccount.ssh"
         }, myAccountMenu);
 
+        SidebarMenu.addMenuItem({
+            title: $translate.instant("menu_credentials"),
+            state: "app.account.useraccount.credentials"
+        }, myAccountMenu);
+
         if (constants.target === "EU" || constants.target === "CA") {
             SidebarMenu.addMenuItem({
                 title: $translate.instant("menu_advanced"),
