@@ -249,12 +249,18 @@ angular.module("Billing.controllers").controller("Billing.controllers.History", 
                         alertType: "ERROR"
                     });
                 }),
-            OvhApiMe.Billing().InvoicesByPostalMail().v6().get().$promise
-                .then((result) => {
-                    this.canSetInvoiceByPostalMail = true;
-                    this.invoicesByPostalMail = result.data;
-                    this.tmpInvoicesChoice = angular.copy(this.invoicesByPostalMail);
-                })
+            OvhApiMe.v6().get().$promise.then((user) => {
+                if (user.country === "FR") {
+                    return OvhApiMe.Billing().InvoicesByPostalMail().v6().get().$promise
+                        .then((result) => {
+                            this.canSetInvoiceByPostalMail = true;
+                            this.invoicesByPostalMail = result.data;
+                            this.tmpInvoicesChoice = angular.copy(this.invoicesByPostalMail);
+                        });
+                }
+
+                return user;
+            })
         ]).finally(() => {
             this.isLoading = false;
         });
