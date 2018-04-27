@@ -1,4 +1,4 @@
-angular.module("Billing.controllers").controller("Billing.controllers.History", function ($scope, $timeout, $q, $log, $translate, BillingHistory, BillingUser, BillingDebtAccount, BillingmessageParser, BillingPaymentInformation, BillingdateRangeSelection, constants) { // eslint-disable-line max-len
+angular.module("Billing.controllers").controller("Billing.controllers.History", function ($scope, $timeout, $q, $log, $translate, BillingHistory, BillingUser, BillingDebtAccount, BillingmessageParser, BillingPaymentInformation, BillingdateRangeSelection, OvhApiMe, constants) { // eslint-disable-line max-len
     "use strict";
     const self = this;
 
@@ -151,6 +151,18 @@ angular.module("Billing.controllers").controller("Billing.controllers.History", 
         $scope.setAction("payDebt", debt, "history");
     };
 
+    this.openValidationModal = function () {
+        const data = {
+            choice: this.invoicesByPostalMail,
+            saveData: this.tmpInvoicesChoice
+        };
+        $scope.setAction("validateInvoicesChange", data);
+    };
+
+    $scope.cancelChoiceModal = function () {
+        self.invoicesByPostalMail = angular.copy(self.tmpInvoicesChoice);
+    };
+
     $scope.setMessage = function (message, data) {
         const msg = BillingmessageParser(message, data);
         self.message = msg.message;
@@ -208,27 +220,39 @@ angular.module("Billing.controllers").controller("Billing.controllers.History", 
             });
     }
 
-    (function init (_self) {
+    this.$onInit = function () {
+        this.isLoading = true;
         BillingUser.isVATNeeded().then((result) => {
-            _self.isVATNeeded = result;
+            this.isVATNeeded = result;
         });
+        this.canSetInvoiceByMail = false;
 
         loadDefaultPaymentMethod();
 
-        BillingDebtAccount.getDebtAccount()
-            .then((debtAccount) => {
-                _self.debtAccount = debtAccount;
-                if (_self.debtAccount.active) {
-                    _self.colSpan = COL_SPAN_DEBT_ACCOUNT;
-                }
-            })
-            .catch((err) => {
-                if (err.status === 404) {
-                    return null;
-                }
-                return $scope.setMessage($scope.$translate.instant("billingError"), {
-                    alertType: "ERROR"
-                });
-            });
-    })(this);
+        return $q.all([
+            BillingDebtAccount.getDebtAccount()
+                .then((debtAccount) => {
+                    this.debtAccount = debtAccount;
+                    if (this.debtAccount.active) {
+                        this.colSpan = COL_SPAN_DEBT_ACCOUNT;
+                    }
+                })
+                .catch((err) => {
+                    if (err.status === 404) {
+                        return null;
+                    }
+                    return $scope.setMessage($scope.$translate.instant("billingError"), {
+                        alertType: "ERROR"
+                    });
+                }),
+            OvhApiMe.Billing().InvoicesByPostalMail().v6().get().$promise
+                .then((result) => {
+                    this.canSetInvoiceByPostalMail = true;
+                    this.invoicesByPostalMail = result.data;
+                    this.tmpInvoicesChoice = angular.copy(this.invoicesByPostalMail);
+                })
+        ]).finally(() => {
+            this.isLoading = false;
+        });
+    };
 });
