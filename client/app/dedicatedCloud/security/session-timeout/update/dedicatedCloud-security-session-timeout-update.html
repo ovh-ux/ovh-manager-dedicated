@@ -37,14 +37,11 @@
         </div>
 
         <div data-wizard-step>
-
-            <div data-ng-bind-html="'dedicatedCloud_configuration_security_update_session_timeout_step2_question' | translate: {
-                t0: sessionTimeoutCtrl.sessionTimeout.current == 0 && ('dedicatedCloud_SECURITY_expiration_session_never' | translate) ||
-                'dedicatedCloud_SECURITY_expiration_session_value' | translate:{ t0: sessionTimeoutCtrl.sessionTimeout.current },
-                sessionTimeoutCtrl.sessionTimeout.never && ('dedicatedCloud_SECURITY_expiration_session_never' | translate) ||
-                'dedicatedCloud_SECURITY_expiration_session_value' | translate:{ t0: sessionTimeoutCtrl.sessionTimeout.value }
-            }"></div>
-
+            <p data-ng-bind-html="'dedicatedCloud_configuration_security_update_session_timeout_step2_question' | translate: {
+                t0: (sessionTimeoutCtrl.sessionTimeout.current === 0 ? (('dedicatedCloud_SECURITY_expiration_session_never') | translate) : ('dedicatedCloud_SECURITY_expiration_session_value') | translate:{ t0: sessionTimeoutCtrl.sessionTimeout.current }),
+                t1: (sessionTimeoutCtrl.sessionTimeout.never ? (('dedicatedCloud_SECURITY_expiration_session_never') | translate) : ('dedicatedCloud_SECURITY_expiration_session_value') | translate: { t0: sessionTimeoutCtrl.sessionTimeout.value })
+            }">
+            </p>
         </div>
     </div>
 

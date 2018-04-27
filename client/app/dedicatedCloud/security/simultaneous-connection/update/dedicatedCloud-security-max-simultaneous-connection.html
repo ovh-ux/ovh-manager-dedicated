@@ -26,12 +26,11 @@
 
         <div data-wizard-step>
 
-            <div data-ng-bind-html="'dedicatedCloud_configuration_security_max_concurrent_connections_step2_question' | translate: {
-                maxSimultaneousConnectionsCtrl.maxSimultaneousConnections.current == 0 && ('dedicatedCloud_SECURITY_nb_simultaneous_connection_none' | translate) ||
-                'dedicatedCloud_SECURITY_nb_simultaneous_connection_value' | translate:{ t0: maxSimultaneousConnectionsCtrl.maxSimultaneousConnections.current },
-                maxSimultaneousConnectionsCtrl.maxSimultaneousConnections.value == 0 && ('dedicatedCloud_SECURITY_nb_simultaneous_connection_none' | translate) ||
-                'dedicatedCloud_SECURITY_nb_simultaneous_connection_value' | translate:{ t0: maxSimultaneousConnectionsCtrl.maxSimultaneousConnections.value }
-            }"></div>
+            <p data-ng-bind-html="'dedicatedCloud_configuration_security_max_concurrent_connections_step2_question' | translate: {
+                t0: (maxSimultaneousConnectionsCtrl.maxSimultaneousConnections.current === 0 ? (('dedicatedCloud_SECURITY_nb_simultaneous_connection_none') | translate) : ('dedicatedCloud_SECURITY_nb_simultaneous_connection_value') | translate:{ t0: maxSimultaneousConnectionsCtrl.maxSimultaneousConnections.current }),
+                t1: (maxSimultaneousConnectionsCtrl.maxSimultaneousConnections.value === 0 ? (('dedicatedCloud_SECURITY_nb_simultaneous_connection_none') | translate) : ('dedicatedCloud_SECURITY_nb_simultaneous_connection_value') | translate: { t0: maxSimultaneousConnectionsCtrl.maxSimultaneousConnections.value })
+            }">
+            </p>
 
         </div>
 
