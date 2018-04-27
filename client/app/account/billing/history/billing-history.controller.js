@@ -1,4 +1,8 @@
+<<<<<<< 12b766e24e5f8bba7c439f97563027975ce97697
 angular.module("Billing.controllers").controller("Billing.controllers.History", function ($scope, $timeout, $q, $log, $translate, BillingHistory, BillingUser, BillingDebtAccount, BillingmessageParser, BillingPaymentInformation, BillingdateRangeSelection, OvhApiMe, constants) { // eslint-disable-line max-len
+=======
+angular.module("Billing.controllers").controller("Billing.controllers.History", function ($scope, $timeout, $q, $log, translator, BillingHistory, BillingUser, BillingDebtAccount, BillingmessageParser, BillingPaymentInformation, BillingdateRangeSelection, OvhApiMe, constants) { // eslint-disable-line max-len
+>>>>>>> fix(): ovh-api-services version
     "use strict";
     const self = this;
 
