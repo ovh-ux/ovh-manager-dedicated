@@ -38,7 +38,7 @@
                     <tr data-ng-repeat="agreement in toActivate.list.results track by $index">
                         <th scope="row">
                             <a data-ng-href="{{ '#/useraccount/agreements/' + agreement.id + '/details' }}"
-                               data-ng-bind="'user_agreements_agreed' | translate:{ t0: agreement.name }">
+                               data-ng-bind-html="'user_agreements_agreed' | translate:{ t0: agreement.name }">
                             </a>
                         </th>
                         <td class="text-right">
