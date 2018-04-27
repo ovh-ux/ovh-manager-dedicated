@@ -1,8 +1,9 @@
 angular.module("App").controller("NasDetailsDashboardCtrl", class NasDetailsDashboardCtrl {
 
-    constructor ($stateParams, nasData, Nas, Alerter) {
+    constructor ($stateParams, $translate, nasData, Nas, Alerter) {
         // injections
         this.$stateParams = $stateParams;
+        this.$translate = $translate;
         this.nasData = nasData;
         this.Nas = Nas;
         this.Alerter = Alerter;
@@ -17,8 +18,8 @@ angular.module("App").controller("NasDetailsDashboardCtrl", class NasDetailsDash
         this.loading.monitoring = true;
 
         return this.Nas.updateNasDetails(this.$stateParams.nasId, this.nasData.nas.customName, !this.nasData.monitoring.enabled).then(() => {
-            this.Alerter.success(this.$translate.instant(`nas_dashboard_update_success_${this.nasData.monitoring.enabled ? "disabled" : "enabled"}`), "NasAlert");
             this.nasData.monitoring.enabled = !this.nasData.monitoring.enabled;
+            this.Alerter.success(this.$translate.instant(`nas_dashboard_update_success_${this.nasData.monitoring.enabled ? "disabled" : "enabled"}`), "NasAlert");
         }).catch((error) => {
             this.Alerter.alertFromSWS(this.$translate.instant("nas_dashboard_update_error"), error, "NasAlert");
         }).finally(() => {
