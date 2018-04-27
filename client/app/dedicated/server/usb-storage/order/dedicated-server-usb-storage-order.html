@@ -100,7 +100,7 @@
                         <tr data-ng-repeat="detail in durations.details[model.duration].details track by $index">
                             <td data-ng-bind="detail.description"></td>
                             <td class="text-right font-weigth-bold"
-                                data-ng-bind="getResumePrice(detail.totalPrice)">
+                                data-ng-bind-html="getResumePrice(detail.totalPrice)">
                             </td>
                         </tr>
                     </tbody>

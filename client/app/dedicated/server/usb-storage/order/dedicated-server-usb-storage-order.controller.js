@@ -87,7 +87,7 @@ angular.module("App").controller("UsbStorageOrderCtrl", ($rootScope, $scope, $q,
         ==============================*/
 
     $scope.getResumePrice = function (price) {
-        return price.value === 0 ? $translate.instant("price_free") : $translate.instant("price_ht_label", { t0: price.text });
+        return price.value === 0 ? $translate.instant("price_free") : $translate.instant("price_ht_label", { price: price.text });
     };
 
     $scope.orderUsbDisk = function () {
