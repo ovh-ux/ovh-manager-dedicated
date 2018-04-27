@@ -9,7 +9,6 @@ angular.module("App").config(($stateProvider) => {
             "pccDatacenterView@app.dedicatedClouds.datacenter": {
                 templateUrl: "dedicatedCloud/datacenter/dashboard/dedicatedCloud-datacenter-dashboard.html"
             }
-        },
-        translations: ["dedicated/cloud"]
+        }
     });
 });

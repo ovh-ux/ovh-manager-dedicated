@@ -232,40 +232,18 @@ angular
         $httpProvider.interceptors.push("translateInterceptor");
 
         const getStateTranslationParts = (state) => {
-            if (!state.translations) {
-                return [];
-            }
-            const templateUrlTab = [];
-            let translationsTab = state.translations;
+            let result = state.translations || [];
             if (state.views) {
                 angular.forEach(state.views, (value) => {
 
                     if (_.isUndefined(value.noTranslations) && !value.noTranslations) {
-                        if (value.templateUrl) {
-                            templateUrlTab.push(value.templateUrl);
-                        }
                         if (value.translations) {
-                            translationsTab = _.union(translationsTab, value.translations);
+                            result = _.union(result, value.translations);
                         }
                     }
                 });
             }
-
-            angular.forEach(templateUrlTab, (templateUrl) => {
-                let routeTmp = templateUrl.substring(templateUrl.indexOf("/") + 1, templateUrl.lastIndexOf("/"));
-                let index = routeTmp.lastIndexOf("/");
-
-                while (index > 0) {
-                    translationsTab.push(routeTmp);
-                    routeTmp = routeTmp.substring(0, index);
-                    index = routeTmp.lastIndexOf("/");
-                }
-
-                translationsTab.push(routeTmp);
-            });
-
-            translationsTab = _.uniq(translationsTab);
-            return translationsTab;
+            return _.uniq(result);
         };
 
         /*
