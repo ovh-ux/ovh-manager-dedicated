@@ -9,7 +9,8 @@
             hideRenewDate: "<",
             serviceType: "<",
             serviceName: "<",
-            inline: "<"
+            inline: "<",
+            useUiKit: "<?"
         },
         controller: "ServiceExpirationDateComponentCtrl"
     });

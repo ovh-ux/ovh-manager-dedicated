@@ -1,11 +1,13 @@
 (() => {
     "use strict";
     class ServiceExpirationDateComponentCtrl {
-        constructor ($scope, $rootScope, constants) {
+        constructor ($attrs, $scope, $rootScope, constants) {
             $scope.tr = $rootScope.tr;
             $scope.i18n = $rootScope.i18n;
+            this.$attrs = $attrs;
             this.constants = constants;
             this.inline = false;
+            this.useUiKit = false;
         }
 
         $onInit () {
@@ -13,6 +15,10 @@
             const hasValidServiceName = _.isString(this.serviceName);
             if (!hasValidServiceInfos || !hasValidServiceName) {
                 throw new Error("serviceExpirationDate: Missing parameter(s)");
+            }
+
+            if (angular.isDefined(this.$attrs.useUiKit) && this.$attrs.useUiKit === "") {
+                this.useUiKit = true;
             }
         }
 
