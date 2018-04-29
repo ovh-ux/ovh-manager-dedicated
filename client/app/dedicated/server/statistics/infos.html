@@ -1,16 +1,16 @@
 <div data-ng-controller="controllers.Server.Stats.Info">
     <div class="text-center"
-         data-ng-if="loading">
+        data-ng-if="loading">
         <oui-spinner></oui-spinner>
     </div>
     <div class="row d-md-flex"
-         data-ng-if="!loading">
+        data-ng-if="!loading">
         <div class="col-md-4">
             <div class="oui-tile mb-5 h-100">
                 <h5 class="oui-header_5 oui-tile__title"
                     data-translate="server_tab_stats_rtm_location"></h5>
                 <div class="oui-tile__body"
-                     data-ng-include="'dedicated/server/location/dedicated-server-location.html'">
+                    data-ng-include="'dedicated/server/location/dedicated-server-location.html'">
                 </div>
             </div>
         </div>
