@@ -3,21 +3,35 @@
     <div data-ng-switch="loadingAction">
 
         <div class="text-center"
-             data-ng-switch-when="loading">
+            data-ng-switch-when="loading">
             <oui-spinner></oui-spinner>
         </div>
 
         <div class="row"
-             data-ng-switch-when="done">
+            data-ng-switch-when="done">
             <div class="col-md-3">
+<<<<<<< cd154df69322f935357247420581f5ee4179a933
                 <div class="oui-tile">
                     <h4 class="oui-header_4 oui-tile__title">
                         <div data-ng-if="server.supportsRTM" data-translate="server_tab_stats_legend_rtm"></div>
                         <div data-ng-if="!server.supportsRTM" data-translate="server_tab_stats_legend_location"></div>
+=======
+
+                <div class="oui-tile mb-5">
+                    <h4 class="oui-header_4 oui-tile__title"
+                        data-ng-if="server.supportsRTM"
+                        data-i18n-static="server_tab_stats_legend_rtm"></h4>
+                    <p class="oui-tile__legend"
+                        data-ng-if="!server.supportsRTM"
+                        data-i18n-static="server_tab_stats_legend_location"></p>
+
+                    <h5 class="oui-header_5 oui-tile__title">
+>>>>>>> fix(server): update sd rtm to use ui-kit
                         <small>
                             <span data-ng-switch="loadingAction">
                                 <span data-ng-switch-when="done">
                                     <span data-ng-pluralize
+<<<<<<< cd154df69322f935357247420581f5ee4179a933
                                           data-count="uptime.y"
                                           data-when="{
                                               '0': '',
@@ -76,14 +90,75 @@
                                 <span data-ng-switch-when="error" data-ng-if="server.supportsRTM">
                                     <span data-ng-if="rtmInfo.activated != false"
                                           data-translate="server_tab_stats_rtm_errorData">
+=======
+                                        data-count="uptime.y"
+                                        data-when="{
+                                            '0': '',
+                                            '1': '1 {{ i18n.server_tab_stats_rtm_uptime_year_1 }}',
+                                            'other': '{} {{ i18n.server_tab_stats_rtm_uptime_year_other }}'
+                                        }">
+                                    </span>
+                                    <span data-ng-pluralize
+                                        data-count="uptime.mo"
+                                        data-when="{
+                                            '0': '',
+                                            '1': '1 {{ i18n.server_tab_stats_rtm_uptime_month_1 }}',
+                                            'other': '{} {{ i18n.server_tab_stats_rtm_uptime_month_other }}'
+                                        }">
+                                    </span>
+                                    <span data-ng-pluralize
+                                        data-count="uptime.d"
+                                        data-ng-if="!uptime.y"
+                                        data-when="{
+                                            '0': '',
+                                            '1': '1 {{ i18n.server_tab_stats_rtm_uptime_day_1 }}',
+                                            'other': '{} {{ i18n.server_tab_stats_rtm_uptime_day_other }}'
+                                        }">
+                                    </span>
+                                    <span data-ng-pluralize
+                                        data-count="uptime.h"
+                                        data-ng-if="!uptime.mo"
+                                        data-when="{
+                                            '0': '',
+                                            '1': '1 {{ i18n.server_tab_stats_rtm_uptime_hour_1 }}',
+                                            'other': '{} {{ i18n.server_tab_stats_rtm_uptime_hour_other }}'
+                                        }">
+                                    </span>
+                                    <span data-ng-pluralize
+                                        data-count="uptime.m"
+                                        data-ng-if="!uptime.d"
+                                        data-when="{
+                                            '0': '',
+                                            '1': '1 {{ i18n.server_tab_stats_rtm_uptime_minute_1 }}',
+                                            'other': '{} {{ i18n.server_tab_stats_rtm_uptime_minute_other }}'
+                                        }">
+                                    </span>
+                                    <span data-ng-pluralize
+                                        data-count="uptime.s"
+                                        data-ng-if="!uptime.h"
+                                        data-when="{
+                                            '0': '',
+                                            '1': '1 {{ i18n.server_tab_stats_rtm_uptime_seconde_1 }}',
+                                            'other': '{} {{ i18n.server_tab_stats_rtm_uptime_seconde_other }}'
+                                        }">
+                                    </span>
+                                </span>
+                                <span data-ng-switch-when="loading"
+                                    data-i18n-static="server_tab_stats_rtm_loading">
+                                </span>
+                                <span data-ng-switch-when="error" data-ng-if="server.supportsRTM">
+                                    <span data-ng-if="rtmInfo.activated != false"
+                                        data-i18n-static="server_tab_stats_rtm_errorData">
+>>>>>>> fix(server): update sd rtm to use ui-kit
                                     </span>
                                 </span>
                             </span>
                         </small>
-                    </h4>
+                    </h5>
                     <div class="oui-tile__body">
-                        <ul class="list-unstyled"
+                        <div class="oui-tile__item"
                             data-ng-if="rtmInfo.activated">
+<<<<<<< cd154df69322f935357247420581f5ee4179a933
                             <li class="oui-tile__item">
                                 <div class="oui-tile__definition">
                                     <strong class="d-block"
@@ -96,56 +171,84 @@
                                               'label-important': loadInfo.cpu && loadInfo.cpu.value >= 85
                                           }">
                                         CPU
+=======
+                            <dl class="oui-tile__definition">
+                                <dt class="oui-tile__term"
+                                    data-i18n-static="server_status"></dt>
+                                <dd class="oui-tile__description">
+                                    <span class="oui-status"
+                                        data-ng-class="{
+                                            'oui-status_success': loadInfo.cpu && loadInfo.cpu.value < 60,
+                                            'oui-status_warning': loadInfo.cpu && loadInfo.cpu.value >= 60 && loadInfo.cpu.value < 85,
+                                            'oui-status_error': loadInfo.cpu && loadInfo.cpu.value >= 85
+                                        }" data-ng-bind=":: tr('server_tab_stats_rtm_infos_cpu')">
+>>>>>>> fix(server): update sd rtm to use ui-kit
                                     </span>
-                                    <span class="label mr-2"
-                                          data-ng-class="{
-                                              'label-success': loadInfo.memory && loadInfo.memory.value < 60,
-                                              'label-warning': loadInfo.memory && loadInfo.memory.value >= 60 && loadInfo.memory.value < 85,
-                                              'label-important': loadInfo.memory && loadInfo.memory.value >= 85
-                                          }">
-                                        RAM
+                                    <span class="oui-status"
+                                        data-ng-class="{
+                                            'oui-status_success': loadInfo.memory && loadInfo.memory.value < 60,
+                                            'oui-status_warning': loadInfo.memory && loadInfo.memory.value >= 60 && loadInfo.memory.value < 85,
+                                            'oui-status_error': loadInfo.memory && loadInfo.memory.value >= 85
+                                        }" data-ng-bind=":: tr('server_tab_stats_rtm_infos_ram')">
                                     </span>
-                                    <span class="label"
-                                          data-ng-class="{
-                                              'label-success': loadInfo.swap && loadInfo.swap.value < 60,
-                                              'label-warning': loadInfo.swap && loadInfo.swap.value >= 60 && loadInfo.swap.value < 85,
-                                              'label-important': loadInfo.swap && loadInfo.swap.value >= 85
-                                          }">
-                                        SWAP
+                                    <span class="oui-status"
+                                        data-ng-class="{
+                                            'oui-status_success': loadInfo.swap && loadInfo.swap.value < 60,
+                                            'oui-status_warning': loadInfo.swap && loadInfo.swap.value >= 60 && loadInfo.swap.value < 85,
+                                            'oui-status_error': loadInfo.swap && loadInfo.swap.value >= 85
+                                        }" data-ng-bind=":: tr('server_tab_stats_rtm_infos_swap')">
                                     </span>
-                                </div>
-                            </li>
-                        </ul>
+                                </dd>
+                            </dl>
+                        </div>
                         <div class="oui-tile__item oui-tile__item_button">
                             <button type="button"
-                                    class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
-                                    data-ng-click="selectTab('infos')"
+                                class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
+                                data-ng-click="selectTab('infos')">
+                                <span data-i18n-static="server_tab_stats_rtm_profile"
                                     data-ng-class="{
+<<<<<<< cd154df69322f935357247420581f5ee4179a933
                                         'ml-3': selectedTab.value == 'infos'
                                     }">
                                 <span data-translate="server_tab_stats_rtm_profile"></span>
+=======
+                                        'pl-3': selectedTab.value == 'infos'
+                                    }"></span>
+>>>>>>> fix(server): update sd rtm to use ui-kit
                                 <span class="oui-icon oui-icon-chevron-right" aria-hidden="true"></span>
                             </button>
                         </div>
                         <div class="oui-tile__item oui-tile__item_button">
                             <button type="button"
-                                    class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
-                                    data-ng-click="selectTab('usage')"
+                                class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
+                                data-ng-click="selectTab('usage')">
+                                <span data-i18n-static="server_tab_stats_rtm_usage"
                                     data-ng-class="{
+<<<<<<< cd154df69322f935357247420581f5ee4179a933
                                         'ml-3': selectedTab.value == 'usage'
                                     }">
                                 <span data-translate="server_tab_stats_rtm_usage"></span>
+=======
+                                        'pl-3': selectedTab.value == 'usage'
+                                    }"></span>
+>>>>>>> fix(server): update sd rtm to use ui-kit
                                 <span class="oui-icon oui-icon-chevron-right" aria-hidden="true"></span>
                             </button>
                         </div>
                         <div class="oui-tile__item oui-tile__item_button">
                             <button type="button"
-                                    class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
-                                    data-ng-click="selectTab('disk')"
+                                class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
+                                data-ng-click="selectTab('disk')">
+                                <span data-i18n-static="server_tab_stats_rtm_partions_status"
                                     data-ng-class="{
+<<<<<<< cd154df69322f935357247420581f5ee4179a933
                                         'ml-3': selectedTab.value == 'disk'
                                     }">
                                 <span data-translate="server_tab_stats_rtm_partions_status"></span>
+=======
+                                        'pl-3': selectedTab.value == 'disk'
+                                    }"></span>
+>>>>>>> fix(server): update sd rtm to use ui-kit
                                 <span class="oui-icon oui-icon-chevron-right" aria-hidden="true"></span>
                             </button>
                         </div>
@@ -153,26 +256,37 @@
                 </div>
             </div>
             <div class="col-md-9"
-                 data-ng-if="rtmInfo.activated"
-                 data-ng-include="'dedicated/server/statistics/' + selectedTab.value + '.html'">
+                data-ng-if="rtmInfo.activated"
+                data-ng-include="'dedicated/server/statistics/' + selectedTab.value + '.html'">
             </div>
         </div>
 
         <div class="oui-tile mb-5 h-100"
-             data-ng-switch-when="error">
+            data-ng-switch-when="error">
+            <h4 class="oui-header_4 oui-tile__title"
+                data-i18n-static="server_tab_stats_rtm_location"></h4>
             <div class="oui-tile__body">
                 <div data-ng-include="'dedicated/server/location/dedicated-server-location.html'"></div>
                 <div data-ng-if="server.supportsRTM">
                     <div class="text-center mt-5"
-                         data-ng-if="rtmMissing">
+                        data-ng-if="rtmMissing">
                         <p class="lead"
+<<<<<<< cd154df69322f935357247420581f5ee4179a933
                            data-translate="server_tab_stats_rtm_notInstalled">
+=======
+                            data-i18n-static="server_tab_stats_rtm_notInstalled">
+>>>>>>> fix(server): update sd rtm to use ui-kit
                         </p>
                         <p data-translate="server_tab_stats_rtm_guideInfo" data-translate-values="{ t0: rtmUrl }"></p>
                     </div>
                     <p class="text-danger mt-5"
+<<<<<<< cd154df69322f935357247420581f5ee4179a933
                        data-ng-if="rtmInfo.activated != false && !rtmMissing"
                        data-translate="server_tab_stats_rtm_error">
+=======
+                        data-ng-if="rtmInfo.activated != false && !rtmMissing"
+                        data-i18n-static="server_tab_stats_rtm_error">
+>>>>>>> fix(server): update sd rtm to use ui-kit
                     </p>
                 </div>
             </div>
