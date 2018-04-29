@@ -1,3 +1,4 @@
+<<<<<<< cd154df69322f935357247420581f5ee4179a933
 <img class="d-block mx-auto mb-3"
      alt="{{ infoServer.dcImage }}"
      data-ng-if="infoServer.dcImage"
@@ -28,3 +29,37 @@
         </div>
     </li>
 </ul>
+=======
+<div class="oui-tile__item">
+    <img class="d-block mx-auto mb-3"
+    alt="{{ infoServer.dcImage }}"
+    data-ng-if="infoServer.dcImage"
+    data-ng-src="images/map/{{ infoServer.dcImage }}.png" />
+</div>
+<div class="oui-tile__item">
+    <dl class="oui-tile__definition">
+        <dt class="oui-tile__term"
+            data-i18n-static="server_configuration_datacenter"></dt>
+        <dd class="oui-tile__description"
+            data-ng-bind="infoServer.dc || '-'"></dd>
+    </dl>
+</div>
+<div class="oui-tile__item">
+    <dl class="oui-tile__definition">
+        <dt class="oui-tile__term"
+            data-i18n-static="server_configuration_rack"></dt>
+        <dd class="oui-tile__description"
+            data-ng-bind="infoServer.rack || '-'"></dd>
+    </dl>
+</div>
+<div class="oui-tile__item">
+    <dl class="oui-tile__definition">
+        <dt class="oui-tile__term"
+            data-i18n-static="server_configuration_server_id"></dt>
+        <dd class="oui-tile__description"
+            data-ng-bind="infoServer.serverId || '-'"></dd>
+    </dl>
+</div>
+
+
+>>>>>>> fix(server): update sd rtm to use ui-kit
