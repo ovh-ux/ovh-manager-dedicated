@@ -34,6 +34,7 @@
 </a>
 <oui-action-menu
     data-ng-if="$ctrl.useUiKit && $ctrl.constants.target !== 'US' && !$ctrl.forceHideRenewAction && ((!$ctrl.isAutoRenew() && $ctrl.getRenewUrl() && !$ctrl.hideRenewAction) || ($ctrl.serviceInfos.status === 'expired'))"
+    aria-label="{{:: tr('menu_action_label', tr('core_service_expiration_label')) }}"
     align="end" compact>
     <oui-action-menu-item
         data-text="{{:: tr('core_service_renew_button') }}"
