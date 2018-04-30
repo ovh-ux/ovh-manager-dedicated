@@ -586,7 +586,8 @@
                                 data-i18n-static="server_bandwidth_type"></dt>
                             <dd class="oui-tile__description">
                                 <span data-ng-bind="tr('server_bandwidth_type_' + bandwidth.bandwidth.type)"></span>
-                                <small data-ng-if="bandwidthOption === 'released'"
+                                <small class="oui-tile__extra"
+                                       data-ng-if="bandwidthOption === 'released'"
                                        data-i18n-static="server_bandwidth_option_released"></small>
                             </dd>
                         </dl>
@@ -702,7 +703,8 @@
                                 <span data-ng-if="!traffic.usage.outputQuotaSize.text"
                                       data-ng-bind="tr('server_traffic_unlimited_text', [(bandwidth.bandwidth.OvhToInternet | bandwidth)])">
                                 </span>
-                                <small data-ng-if="trafficOption === 'released'"
+                                <small class="oui-tile__extra"
+                                       data-ng-if="trafficOption === 'released'"
                                        data-i18n-static="server_traffic_option_released"></small>
                             </dd>
                         </dl>
@@ -749,7 +751,8 @@
                             </dt>
                             <dd class="oui-tile__description">
                                 <span data-ng-bind="bandwidth.vrack.bandwidth | bandwidth"></span>
-                                <small data-ng-if="bandwidthVrackOption === 'released'"
+                                <small class="oui-tile__extra"
+                                       data-ng-if="bandwidthVrackOption === 'released'"
                                        data-i18n-static="server_bandwidth_vrack_option_released"></small>
                             </dd>
                         </dl>
