@@ -1,24 +1,23 @@
 <div data-ng-controller="controllers.Server.Stats.Info">
-
     <div class="text-center"
-        data-ng-if="loading">
+         data-ng-if="loading">
         <oui-spinner></oui-spinner>
     </div>
-
     <div class="row d-md-flex"
-        data-ng-if="!loading">
+         data-ng-if="!loading">
         <div class="col-md-4">
             <div class="oui-tile mb-5 h-100">
                 <h5 class="oui-header_5 oui-tile__title"
                     data-i18n-static="server_tab_stats_rtm_location"></h5>
                 <div class="oui-tile__body"
-                    data-ng-include="'dedicated/server/location/dedicated-server-location.html'">
+                     data-ng-include="'dedicated/server/location/dedicated-server-location.html'">
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="oui-tile mb-5 h-100">
                 <h5 class="oui-header_5 oui-tile__title"
+<<<<<<< 1931d176dd8c42a50e51ef0ff88b3fe11d244b72
                     data-i18n-static="server_tab_stats_rtm_profile"></h4>
                 <div class="oui-tile__body">
 <<<<<<< cd154df69322f935357247420581f5ee4179a933
@@ -114,6 +113,58 @@
                     </div>
 >>>>>>> fix(server): update sd rtm to use ui-kit
                 </div>
+=======
+                    data-i18n-static="server_tab_stats_rtm_profile">
+                    </h4>
+                    <div class="oui-tile__body">
+                        <div class="oui-tile__item">
+                            <dl class="oui-tile__definition">
+                                <dt class="oui-tile__term"
+                                    data-i18n-static="server_tab_stats_rtm_infos_cpu"></dt>
+                                <dd class="oui-tile__description">
+                                    <span class-
+                                          "d-block"
+                                          data-ng-bind="infoRtm.cpu.name || '-'"></span>
+                                    <span data-i18n-static="server_tab_stats_rtm_infos_cpu_core"></span> :
+                                    <span class="d-block"
+                                          data-ng-bind="infoRtm.cpu.core || '-'"></span>
+                                    <span data-i18n-static="server_tab_stats_rtm_infos_cpu_cache"></span> :
+                                    <span data-ng-bind="infoRtm.cpu.cache.value + infoRtm.cpu.cache.unit"></span>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="oui-tile__item">
+                            <dl class="oui-tile__definition">
+                                <dt class="oui-tile__term"
+                                    data-i18n-static="server_tab_stats_rtm_infos_ram"></dt>
+                                <dd class="oui-tile__description">
+                                    <span data-ng-repeat="memory in infoRtm.memory.list track by $index"
+                                          data-ng-bind="memory.number + 'x ' + memory.value + i18n['unit_size_'+memory.unit]">
+                                    </span>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="oui-tile__item">
+                            <dl class="oui-tile__definition">
+                                <dt class="oui-tile__term"
+                                    data-i18n-static="server_tab_stats_rtm_infos_disk"></dt>
+                                <dd class="oui-tile__description">
+                                    <span data-ng-repeat="diskGroup in server.diskGroups track by $index"
+                                          data-ng-bind="diskGroup.numberOfDisks + '&nbsp;x&nbsp;' + diskGroup.diskSize.value + ' ' + i18n['unit_size_'+diskGroup.diskSize.unit]">
+                                    </span>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="oui-tile__item">
+                            <dl class="oui-tile__definition">
+                                <dt class="oui-tile__term"
+                                    data-i18n-static="server_tab_stats_rtm_infos_motherboard"></dt>
+                                <dd class="oui-tile__description"
+                                    data-ng-bind="infoRtm.motherboard.name || '-'"></dd>
+                            </dl>
+                        </div>
+                    </div>
+>>>>>>> fix(server): fix data html attributes
             </div>
         </div>
         <div class="col-md-4">
@@ -161,11 +212,12 @@
                                 <span data-ng-bind="infoRtm.rtmVersion.installedVersion || '-'"></span>
                                 <p data-ng-if="infoRtm.rtmVersion.needsUpdate">
                                     <a href="{{ updateRtmLinkForCurrentLang }}"
-                                        target="_blank"
-                                        rel="noopener"
-                                        title="{{ tr('server_tab_stats_rtm_infos_rtmVersion_update') }} ({{ tr('server_tab_stats_rtm_new_window') }})">
+                                       target="_blank"
+                                       rel="noopener"
+                                       title="{{ tr('server_tab_stats_rtm_infos_rtmVersion_update') }} ({{ tr('server_tab_stats_rtm_new_window') }})">
                                         <span data-i18n-static="server_tab_stats_rtm_infos_rtmVersion_update"></span>
-                                        <span class="icon-share-alt" aria-hidden="true"></span>
+                                        <span class="icon-share-alt"
+                                              aria-hidden="true"></span>
                                     </a>
                                 </p>
                             </dd>

@@ -7,6 +7,7 @@
                 <form class="form-inline">
                     <div class="form-group">
                         <label for="info"
+<<<<<<< 1931d176dd8c42a50e51ef0ff88b3fe11d244b72
 <<<<<<< cd154df69322f935357247420581f5ee4179a933
                                class="control-label"
                                data-translate="server_tab_stats_rtm_label_info">
@@ -28,11 +29,23 @@
                             data-ng-model="rtmOptions.value"
                             data-ng-change="changeRtmOptions()">
 >>>>>>> fix(server): update sd rtm to use ui-kit
+=======
+                               class="control-label"
+                               data-i18n-static="server_tab_stats_rtm_label_info">
+                        </label>
+                        <select class="form-control"
+                                id="info"
+                                name="selectRtmOption"
+                                data-ng-options="tr('server_tab_stats_rtm_options_label_' + option.label) for option in optionsRtm"
+                                data-ng-model="rtmOptions.value"
+                                data-ng-change="changeRtmOptions()">
+>>>>>>> fix(server): fix data html attributes
                         </select>
                     </div>
                     <div class="form-group"
-                        data-ng-if="rtmOptions.value.period">
+                         data-ng-if="rtmOptions.value.period">
                         <label for="period"
+<<<<<<< 1931d176dd8c42a50e51ef0ff88b3fe11d244b72
 <<<<<<< cd154df69322f935357247420581f5ee4179a933
                                class="control-label"
                                data-translate="server_tab_stats_rtm_label_period">
@@ -54,6 +67,17 @@
                             data-ng-model="selectedPeriod.value"
                             data-ng-change="changePeriod()">
 >>>>>>> fix(server): update sd rtm to use ui-kit
+=======
+                               class="control-label"
+                               data-i18n-static="server_tab_stats_rtm_label_period">
+                        </label>
+                        <select class="form-control"
+                                id="period"
+                                name="period"
+                                data-ng-options="tr('server_tab_stats_rtm_charts_period_' + period) for period in periods"
+                                data-ng-model="selectedPeriod.value"
+                                data-ng-change="changePeriod()">
+>>>>>>> fix(server): fix data html attributes
                         </select>
                     </div>
                 </form>
