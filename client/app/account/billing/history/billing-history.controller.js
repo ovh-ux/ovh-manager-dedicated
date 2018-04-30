@@ -1,8 +1,4 @@
-<<<<<<< 12b766e24e5f8bba7c439f97563027975ce97697
 angular.module("Billing.controllers").controller("Billing.controllers.History", function ($scope, $timeout, $q, $log, $translate, BillingHistory, BillingUser, BillingDebtAccount, BillingmessageParser, BillingPaymentInformation, BillingdateRangeSelection, OvhApiMe, constants) { // eslint-disable-line max-len
-=======
-angular.module("Billing.controllers").controller("Billing.controllers.History", function ($scope, $timeout, $q, $log, translator, BillingHistory, BillingUser, BillingDebtAccount, BillingmessageParser, BillingPaymentInformation, BillingdateRangeSelection, OvhApiMe, constants) { // eslint-disable-line max-len
->>>>>>> fix(): ovh-api-services version
     "use strict";
     const self = this;
 
@@ -241,27 +237,26 @@ angular.module("Billing.controllers").controller("Billing.controllers.History", 
                         this.colSpan = COL_SPAN_DEBT_ACCOUNT;
                     }
                 })
-                .catch((err) => {
-                    if (err.status === 404) {
-                        return null;
-                    }
-                    return $scope.setMessage($scope.$translate.instant("billingError"), {
-                        alertType: "ERROR"
-                    });
-                }),
+                .catch((err) => err),
             OvhApiMe.v6().get().$promise.then((user) => {
                 if (user.country === "FR") {
-                    return OvhApiMe.Billing().InvoicesByPostalMail().v6().get().$promise
+                    OvhApiMe.Billing().InvoicesByPostalMail().v6().get().$promise
                         .then((result) => {
                             this.canSetInvoiceByPostalMail = true;
                             this.invoicesByPostalMail = result.data;
                             this.tmpInvoicesChoice = angular.copy(this.invoicesByPostalMail);
                         });
                 }
-
-                return user;
-            })
-        ]).finally(() => {
+            }).catch((err) => err)
+        ]).catch((err) => {
+            if (err.status === 404) {
+                return null;
+            }
+            return $scope.setMessage($scope.$translate.instant("billingError"), {
+                message: _.get(err, "data.message"),
+                type: "ERROR"
+            });
+        }).finally(() => {
             this.isLoading = false;
         });
     };

@@ -31,6 +31,13 @@ angular.module("Billing.services").service("BillingmessageParser", [
                 return { message, alertType: ALERT_LEVELS.SUCCESS };
             }
 
+            if (message) {
+                return {
+                    message,
+                    alertType: ALERT_MAP[data.type] || ""
+                };
+            }
+
             if (data.message) {
                 return {
                     message: `${message}(${data.message})`,
