@@ -202,11 +202,11 @@
                 <h4 class="oui-header_4 oui-tile__title"
                     data-translate="server_bandwidth"></h4>
                 <div class="oui-tile__body"
-                    data-ng-if="bandwithError">
+                     data-ng-if="bandwithError">
                     <div ovh-alert="bandwithError"></div>
                 </div>
                 <div class="oui-tile__body text-center"
-                    data-ng-if="bandwidthInformationsLoad">
+                     data-ng-if="bandwidthInformationsLoad">
                     <oui-spinner></oui-spinner>
                 </div>
                 <div class="oui-tile__body"
@@ -534,13 +534,13 @@
 
     <!-- QUOTA -->
     <div class="mb-5"
-        data-ng-if="traffic.hasQuota"
-        data-ng-include="'dedicated/server/consumption/consumption.html'">
+         data-ng-if="traffic.hasQuota"
+         data-ng-include="'dedicated/server/consumption/consumption.html'">
     </div>
 
     <!-- RTM -->
     <div class="mb-5"
-        data-ng-include="'dedicated/server/statistics/rtm/dedicated-server-statistics-rtm.html'">
+         data-ng-include="'dedicated/server/statistics/rtm/dedicated-server-statistics-rtm.html'">
     </div>
 
     <!-- MRTG -->
