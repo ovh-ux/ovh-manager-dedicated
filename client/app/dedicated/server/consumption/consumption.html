@@ -3,28 +3,28 @@
     <div class="oui-tile">
         <h4 class="oui-header_4 oui-tile__title">
             <span data-i18n-static="server_consumption_label"></span>
-            <i class="oui-icon oui-icon-help_circle oui-tooltip__trigger"
-                oui-tooltip="{{:: tr('server_consumption_explanation') }}"></i>
+            <span class="oui-icon oui-icon-help_circle oui-tooltip__trigger"
+                  oui-tooltip="{{:: tr('server_consumption_explanation') }}"></span>
         </h4>
         <div class="oui-tile__body text-center"
-            data-ng-if="ctrl.server.loading || ctrl.traffic.loading">
+             data-ng-if="ctrl.server.loading || ctrl.traffic.loading">
             <oui-spinner></oui-spinner>
         </div>
         <div class="oui-tile__body"
-            data-ng-if="!ctrl.server.loading && !ctrl.traffic.loading">
+             data-ng-if="!ctrl.server.loading && !ctrl.traffic.loading">
             <div class="oui-tile__item"
-                data-ng-if="ctrl.traffic.data.usage.resetQuotaTimeLeft && ctrl.traffic.data.usage.isThrottled">
+                 data-ng-if="ctrl.traffic.data.usage.resetQuotaTimeLeft && ctrl.traffic.data.usage.isThrottled">
                 <span class="text-danger"
-                    data-ng-if="ctrl.traffic.data.usage.resetQuotaTimeLeft"
-                    data-ng-bind="tr('server_consumption_summary_' + ctrl.traffic.data.usage.resetQuotaTimeLeft.unit, [
+                      data-ng-if="ctrl.traffic.data.usage.resetQuotaTimeLeft"
+                      data-ng-bind="tr('server_consumption_summary_' + ctrl.traffic.data.usage.resetQuotaTimeLeft.unit, [
                         ctrl.traffic.data.usage.remainingOutputQuotaSize.text,
                         ctrl.traffic.data.usage.resetQuotaTimeLeft.value
-                    ])"
-                    data-ng-class="{ 'danger': state.overQuota }">
+                      ])"
+                      data-ng-class="{ 'danger': state.overQuota }">
                 </span>
                 <span class="text-danger"
-                    data-ng-if="ctrl.traffic.data.usage.isThrottled"
-                    data-ng-class="{ 'danger': ctrl.traffic.data.usage.overQuota }">
+                      data-ng-if="ctrl.traffic.data.usage.isThrottled"
+                      data-ng-class="{ 'danger': ctrl.traffic.data.usage.overQuota }">
                     <span> - </span>
                     <span data-i18n-static="server_consumption_throttled"></span>
                 </span>
@@ -36,32 +36,33 @@
                     <dd class="oui-tile__description"
                         data-ng-if="ctrl.traffic.data.usage.outputQuotaUsed.value">
                         <div class="oui-progress oui-progress_info"
-                            data-ng-class="{
+                             data-ng-class="{
                                 'oui-progress_warning': ctrl.traffic.data.usage.nearQuota,
                                 'oui-progress_error': ctrl.traffic.data.usage.overQuota
                             }">
                             <div class="oui-progress__bar"
-                                role="progressbar"
-                                aria-valuemin="0"
-                                aria-valuemax="{{ ctrl.traffic.data.usage.outputQuotaSize.value }}"
-                                aria-valuenow="{{ ctrl.traffic.data.usage.outputQuotaUsed.value }}"
-                                data-ng-style="{ 'width': ctrl.traffic.data.usage.remainingOutputQuotaSize.percent + '%' }"
-                                data-ng-class="{
+                                 role="progressbar"
+                                 aria-valuemin="0"
+                                 aria-valuemax="{{ ctrl.traffic.data.usage.outputQuotaSize.value }}"
+                                 aria-valuenow="{{ ctrl.traffic.data.usage.outputQuotaUsed.value }}"
+                                 data-ng-style="{ 'width': ctrl.traffic.data.usage.remainingOutputQuotaSize.percent + '%' }"
+                                 data-ng-class="{
                                     'oui-progress__bar_warning': ctrl.traffic.data.usage.nearQuota,
                                     'oui-progress__bar_error': ctrl.traffic.data.usage.overQuota
-                                }">
+                                 }">
                                 <span class="oui-progress__label"
-                                    data-ng-bind-template="{{ ctrl.traffic.data.usage.outputQuotaUsed.text }}"></span>
+                                      data-ng-bind-template="{{ ctrl.traffic.data.usage.outputQuotaUsed.text }}"></span>
                             </div>
                         </div>
                         <span data-ng-bind="tr('server_consumption_current_period_remaining', [ctrl.traffic.data.usage.remainingOutputQuotaSize.text])"></span>
                     </dd>
                 </dl>
                 <div class="oui-tile__actions"
-                    data-ng-if="ctrl.canOrderTraffic() && ctrl.canOrderMoreTraffic()">
+                     data-ng-if="ctrl.canOrderTraffic() && ctrl.canOrderMoreTraffic()">
                     <oui-action-menu
                         aria-label="{{:: tr('menu_action_label', tr('server_consumption_current_period_label')) }}"
-                        align="end" compact>
+                        data-align="end"
+                        data-compact>
                         <oui-action-menu-item
                             data-text="{{ tr(ctrl.trafficOption.data !== 'subscribed' ? 'server_traffic_order_button' : 'server_traffic_change_button') }}"
                             data-aria-label="{{:: tr('server_traffic_order_button') }}"
@@ -69,7 +70,6 @@
                             data-disabled="ctrl.server.data.state === 'HACKED' || ctrl.server.data.state === 'HACKED_BLOCKED'"></oui-action-menu-item>
                     </oui-action-menu>
                 </div>
-
             </div>
         </div>
     </div>
