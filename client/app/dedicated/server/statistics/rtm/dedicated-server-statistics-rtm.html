@@ -3,12 +3,12 @@
     <div data-ng-switch="loadingAction">
 
         <div class="text-center"
-            data-ng-switch-when="loading">
+             data-ng-switch-when="loading">
             <oui-spinner></oui-spinner>
         </div>
 
         <div class="row"
-            data-ng-switch-when="done">
+             data-ng-switch-when="done">
             <div class="col-md-3">
 
                 <div class="oui-tile mb-5">
@@ -82,7 +82,7 @@
                                 <span data-ng-switch-when="error"
                                       data-ng-if="server.supportsRTM">
                                     <span data-ng-if="rtmInfo.activated != false"
-                                        data-translate="server_tab_stats_rtm_errorData">
+                                          data-translate="server_tab_stats_rtm_errorData">
                                     </span>
                                 </span>
                             </span>
@@ -159,8 +159,8 @@
                 </div>
             </div>
             <div class="col-md-9"
-                data-ng-if="rtmInfo.activated"
-                data-ng-include="'dedicated/server/statistics/' + selectedTab.value + '.html'">
+                 data-ng-if="rtmInfo.activated"
+                 data-ng-include="'dedicated/server/statistics/' + selectedTab.value + '.html'">
             </div>
         </div>
 
@@ -172,7 +172,7 @@
                 <div data-ng-include="'dedicated/server/location/dedicated-server-location.html'"></div>
                 <div data-ng-if="server.supportsRTM">
                     <div class="text-center mt-5"
-                        data-ng-if="rtmMissing">
+                         data-ng-if="rtmMissing">
                         <p class="lead"
                            data-translate="server_tab_stats_rtm_notInstalled">
                         </p>
