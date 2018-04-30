@@ -1,32 +1,32 @@
 <span data-ng-if="!$ctrl.useUiKit && $ctrl.constants.target !== 'US'"
-    data-ng-class="{ 'd-block': !$ctrl.inline }">
+      data-ng-class="{ 'd-block': !$ctrl.inline }">
     <a class="mr-2"
-        data-ng-href="{{:: $ctrl.getRenewUrl() }}"
-        data-ng-bind=":: $ctrl.serviceInfos.expiration | date:'mediumDate'"
-        data-ng-if="!$ctrl.hideRenewDate">
+       data-ng-href="{{:: $ctrl.getRenewUrl() }}"
+       data-ng-bind=":: $ctrl.serviceInfos.expiration | date:'mediumDate'"
+       data-ng-if="!$ctrl.hideRenewDate">
     </a>
-
     <a target="_blank"
-        class="btn btn-default"
-        title="{{:: tr('core_service_renew_button') }}"
-        data-ng-if="!$ctrl.forceHideRenewAction && ((!$ctrl.isAutoRenew() && $ctrl.getRenewUrl() && !$ctrl.hideRenewAction) || ($ctrl.serviceInfos.status === 'expired'))"
-        data-ng-href="{{:: $ctrl.getRenewUrl() }}"
-        data-i18n-static="core_service_renew_button">
+       class="btn btn-default"
+       title="{{:: tr('core_service_renew_button') }}"
+       data-ng-if="!$ctrl.forceHideRenewAction && ((!$ctrl.isAutoRenew() && $ctrl.getRenewUrl() && !$ctrl.hideRenewAction) || ($ctrl.serviceInfos.status === 'expired'))"
+       data-ng-href="{{:: $ctrl.getRenewUrl() }}"
+       data-i18n-static="core_service_renew_button">
     </a>
 </span>
 
-<a
-    class="oui-link"
-    data-ng-href="{{:: $ctrl.getRenewUrl() }}"
-    data-ng-bind=":: $ctrl.serviceInfos.expiration | date:'mediumDate'"
-    data-ng-if="$ctrl.useUiKit && $ctrl.constants.target !== 'US' && !$ctrl.hideRenewDate">
+<a class="oui-link"
+   data-ng-href="{{:: $ctrl.getRenewUrl() }}"
+   data-ng-bind=":: $ctrl.serviceInfos.expiration | date:'mediumDate'"
+   data-ng-if="$ctrl.useUiKit && $ctrl.constants.target !== 'US' && !$ctrl.hideRenewDate">
 </a>
 <oui-action-menu
     data-ng-if="$ctrl.useUiKit && $ctrl.constants.target !== 'US' && !$ctrl.forceHideRenewAction && ((!$ctrl.isAutoRenew() && $ctrl.getRenewUrl() && !$ctrl.hideRenewAction) || ($ctrl.serviceInfos.status === 'expired'))"
     aria-label="{{:: tr('menu_action_label', tr('core_service_expiration_label')) }}"
-    align="end" compact>
+    data-align="end"
+    data-compact>
     <oui-action-menu-item
         data-text="{{:: tr('core_service_renew_button') }}"
         data-aria-label="{{:: tr('core_service_renew_button') }}"
-        data-href="{{:: $ctrl.getRenewUrl() }}"></oui-action-menu-item>
+        data-href="{{:: $ctrl.getRenewUrl() }}">
+    </oui-action-menu-item>
 </oui-action-menu>
