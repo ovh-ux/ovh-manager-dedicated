@@ -6,6 +6,10 @@
             <div data-ng-include="'dedicated/server/dashboard/DASHBOARD_VIEW.html'"></div>
         </div>
 
+        <div data-ng-switch-when="WORKS">
+            <div data-ng-include="'dedicated/server/working-status/WORKS.html'"></div>
+        </div>
+
         <div data-ng-switch-when="SERVICES_MONITORING">
             <div data-ng-include="'dedicated/server/monitoring/dedicated-server-monitoring.html'"></div>
         </div>
