@@ -85,7 +85,7 @@ angular.module("App").controller("DedicatedCloudDatacentersHostOrderUSCtrl", cla
             this.expressOrderUrl = results.url;
             this.user = results.user;
         }).catch((err) => {
-            this.$scope.setMessage(this.$scope.tr("dedicatedCloud_tab_hosts_loading_error"), {
+            this.$scope.setMessage(this.$translate.instant("dedicatedCloud_tab_hosts_loading_error"), {
                 message: err.message || err,
                 type: "ERROR"
             });

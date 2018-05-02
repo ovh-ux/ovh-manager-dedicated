@@ -3,7 +3,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addFtpBackup"
-         data-wizard-title="tr('housing_configuration_ftpbackup_add')">
+         data-wizard-title=":: 'housing_configuration_ftpbackup_add' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="!loading && access.ip && (access.cifs || access.ftp || access.nfs)"
@@ -15,11 +15,11 @@
             </div>
 
             <div data-ng-if="!loading">
-                <p data-i18n-static="housing_configuration_ftpbackup_add_info"></p>
-                <p data-i18n-static="housing_configuration_ftpbackup_add_info3"></p>
+                <p data-translate="housing_configuration_ftpbackup_add_info"></p>
+                <p data-translate="housing_configuration_ftpbackup_add_info3"></p>
                 <label for="listIp"
                        class="control-label"
-                       data-i18n-static="housing_configuration_ftpbackup_add_ip">
+                       data-translate="housing_configuration_ftpbackup_add_ip">
                 </label>
                 <select class="form-control"
                         id="listIp"
@@ -31,28 +31,28 @@
                 <form class="form form-inline">
                     <div class="form-group">
                         <p class="form-control-static"
-                           data-i18n-static="housing_configuration_ftpbackup_add_authorization">
+                           data-translate="housing_configuration_ftpbackup_add_authorization">
                         </p>
                     </div>
                     <div class="checkbox px-5">
                         <label>
                             <input type="checkbox"
                                    data-ng-model="access.cifs" />
-                            <span data-i18n-static="housing_configuration_ftpbackup_table_cifs"></span>
+                            <span data-translate="housing_configuration_ftpbackup_table_cifs"></span>
                         </label>
                     </div>
                     <div class="checkbox px-5">
                         <label>
                             <input type="checkbox"
                                    data-ng-model="access.ftp" />
-                            <span data-i18n-static="housing_configuration_ftpbackup_table_ftp"></span>
+                            <span data-translate="housing_configuration_ftpbackup_table_ftp"></span>
                         </label>
                     </div>
                     <div class="checkbox px-5">
                         <label>
                             <input type="checkbox"
                                    data-ng-model="access.nfs" />
-                            <span data-i18n-static="housing_configuration_ftpbackup_table_nfs"></span>
+                            <span data-translate="housing_configuration_ftpbackup_table_nfs"></span>
                         </label>
                     </div>
                 </form>
@@ -69,10 +69,10 @@
             </div>
 
             <div data-ng-if="!loading">
-                <p data-i18n-static="housing_configuration_ftpbackup_add_info2"></p>
+                <p data-translate="housing_configuration_ftpbackup_add_info2"></p>
                 <div class="row">
                     <div class="col-md-6">
-                        <p data-i18n-static="housing_configuration_ftpbackup_add_info1"></p>
+                        <p data-translate="housing_configuration_ftpbackup_add_info1"></p>
                         <ul>
                             <li data-ng-repeat="block in access.ip track by $index"
                                 data-ng-bind="block">
@@ -80,33 +80,33 @@
                         </ul>
                     </div>
                     <div class="col-md-6">
-                        <p data-i18n-static="housing_configuration_ftpbackup_add_info4"></p>
+                        <p data-translate="housing_configuration_ftpbackup_add_info4"></p>
                         <ul>
                             <li>
-                                <span data-i18n-static="housing_configuration_ftpbackup_table_cifs"></span> :
+                                <span data-translate="housing_configuration_ftpbackup_table_cifs"></span> :
                                 <strong data-ng-if="access.cifs"
-                                        data-i18n-static="housing_configuration_ftpbackup_add_allow">
+                                        data-translate="housing_configuration_ftpbackup_add_allow">
                                 </strong>
                                 <strong data-ng-if="!access.cifs"
-                                        data-i18n-static="housing_configuration_ftpbackup_add_deny">
+                                        data-translate="housing_configuration_ftpbackup_add_deny">
                                 </strong>
                             </li>
                             <li>
-                                <span data-i18n-static="housing_configuration_ftpbackup_table_ftp"></span> :
+                                <span data-translate="housing_configuration_ftpbackup_table_ftp"></span> :
                                 <strong data-ng-if="access.ftp"
-                                        data-i18n-static="housing_configuration_ftpbackup_add_allow">
+                                        data-translate="housing_configuration_ftpbackup_add_allow">
                                 </strong>
                                 <strong data-ng-if="!access.ftp"
-                                        data-i18n-static="housing_configuration_ftpbackup_add_deny">
+                                        data-translate="housing_configuration_ftpbackup_add_deny">
                                 </strong>
                             </li>
                             <li>
-                                <span data-i18n-static="housing_configuration_ftpbackup_table_nfs"></span> :
+                                <span data-translate="housing_configuration_ftpbackup_table_nfs"></span> :
                                 <strong data-ng-if="access.nfs"
-                                        data-i18n-static="housing_configuration_ftpbackup_add_allow">
+                                        data-translate="housing_configuration_ftpbackup_add_allow">
                                 </strong>
                                 <strong data-ng-if="!access.nfs"
-                                        data-i18n-static="housing_configuration_ftpbackup_add_deny">
+                                        data-translate="housing_configuration_ftpbackup_add_deny">
                                 </strong>
                             </li>
                         </ul>

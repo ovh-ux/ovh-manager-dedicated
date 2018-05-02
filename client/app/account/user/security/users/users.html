@@ -135,8 +135,8 @@
              data-nb-pages="nbPages"
              data-transform-item="$ctrl.onTransformItem(item)"
              data-on-transform-item-done="$ctrl.onTransformItemDone(items)"
-             data-page-placeholder="{{  tr('pagination_page', [currentPage, nbPages])}}"
-             data-item-per-page-placeholder="{{ tr('pagination_display')}}">
+             data-page-placeholder="{{  'pagination_page' | translate:{ t0: currentPage, t1: nbPages } }}"
+             data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
         </div>
     </div>
 </div>

@@ -3,7 +3,7 @@
  * @name Billing.controllers.Method.Add'
  * @description
  */
-angular.module("Billing.controllers").controller("Billing.controllers.Mean.Add", ($scope, $location, $q, IBAN_BIC_RULES, BillingMean, BillingUser, Alerter) => {
+angular.module("Billing.controllers").controller("Billing.controllers.Mean.Add", ($scope, $location, $q, $translate, IBAN_BIC_RULES, BillingMean, BillingUser, Alerter) => {
     $scope.loader = {
         add: false,
         means: false
@@ -125,16 +125,20 @@ angular.module("Billing.controllers").controller("Billing.controllers.Mean.Add",
                 $scope.meanAdded = true;
 
                 if (response && $scope.mean.type === "bankAccount") {
-                    Alerter.set("alert-success", [$scope.tr("paymentType_bankAccount_add_success_with_download", [response.url]), $scope.tr("paymentType_bankAccount_processing_delay")].join(" "));
+                    Alerter.set("alert-success", [$translate.instant("paymentType_bankAccount_add_success_with_download", {
+                        t0: response.url
+                    }), $translate.instant("paymentType_bankAccount_processing_delay")].join(" "));
 
                     return response;
                 }
 
-                Alerter.set("alert-success", $scope.tr("paymentType_add_success_url", [response.url]));
+                Alerter.set("alert-success", $translate.instant("paymentType_add_success_url", {
+                    t0: response.url
+                }));
                 return response;
             })
             .catch((reason) => {
-                Alerter.set("alert-danger", reason.data.message || $scope.tr("paymentType_add_error"));
+                Alerter.set("alert-danger", reason.data.message || $translate.instant("paymentType_add_error"));
                 return $q.reject(reason);
             })
             .finally(() => {
@@ -208,7 +212,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.Mean.Add",
                 setPaymentMeansInScope(meanTypes);
             })
             .catch((error) => {
-                Alerter.set("alert-danger", $scope.tr("add_mean_unable_to_get_payment_means"), error);
+                Alerter.set("alert-danger", $translate.instant("add_mean_unable_to_get_payment_means"), error);
                 $scope.meanIslocked = true;
             })
             .finally(() => {

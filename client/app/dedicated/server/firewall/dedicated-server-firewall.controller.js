@@ -1,13 +1,13 @@
 angular.module("App")
     .controller("ServerTabFirewallAsaCtrl", class ServerTabFirewallAsaCtrl {
-        constructor ($q, $scope, $stateParams, Alerter, Server, ServerFirewallAsa, translator) {
+        constructor ($q, $scope, $stateParams, Alerter, Server, ServerFirewallAsa, $translate) {
             this.$q = $q;
             this.$scope = $scope;
             this.$stateParams = $stateParams;
             this.Alerter = Alerter;
             this.Server = Server;
             this.ServerFirewallAsa = ServerFirewallAsa;
-            this.translator = translator;
+            this.$translate = $translate;
 
             this.$scope.$on(this.ServerFirewallAsa.events.firewallAsaChanged, () => this.$onInit());
         }
@@ -24,7 +24,7 @@ angular.module("App")
                     optionList: this.getOptionList(),
                     informations: this.getInformations()
                 })
-                .catch((err) => this.Alerter.error([this.translator.tr("server_configuration_firewall_fail"), _.get(err, "message", "")].join(" "), "dedicated_server_firewall"))
+                .catch((err) => this.Alerter.error([this.$translate.instant("server_configuration_firewall_fail"), _.get(err, "message", "")].join(" "), "dedicated_server_firewall"))
                 .finally(() => {
                     this.isLoading = false;
                 });

@@ -1,12 +1,13 @@
 angular.module("UserAccount.controllers").controller("UserAccount.controllers.ssh", [
     "$scope",
     "$q",
+    "$translate",
     "UserAccount.services.ssh",
     "User",
     "constants",
     "$log",
     "Alerter",
-    function ($scope, $q, UseraccountSshService, User, constants, $log, Alerter) {
+    function ($scope, $q, $translate, UseraccountSshService, User, constants, $log, Alerter) {
         "use strict";
         const self = this;
 
@@ -20,7 +21,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.ss
                     self.sshKeyList = sshKeys;
                 })
                 .catch((err) => {
-                    Alerter.error(`${$scope.tr("user_ssh_error")} ${_.get(err, "message") || err}`, "userSsh");
+                    Alerter.error(`${$translate.instant("user_ssh_error")} ${_.get(err, "message") || err}`, "userSsh");
                 })
                 .finally(() => {
                     self.sshLoading = false;
@@ -36,14 +37,14 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.ss
                 () => {
                     if (!sshObj.default) {
                         // Switch to true
-                        Alerter.success($scope.tr("user_ssh_default_on_success_message", sshObj.keyName), "userSsh");
+                        Alerter.success($translate.instant("user_ssh_default_on_success_message", { t0: sshObj.keyName }), "userSsh");
                     } else {
                         // Switch to false
-                        Alerter.success($scope.tr("user_ssh_default_off_success_message"), "userSsh");
+                        Alerter.success($translate.instant("user_ssh_default_off_success_message"), "userSsh");
                     }
                 },
                 (err) => {
-                    Alerter.error(`${$scope.tr("user_ssh_default_error_message")} ${_.get(err, "message") || err}`, "userSsh");
+                    Alerter.error(`${$translate.instant("user_ssh_default_error_message")} ${_.get(err, "message") || err}`, "userSsh");
                 }
             );
         };

@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudSubDatacenterVeeamCtrl", ($scope, $stateParams, DedicatedCloud, $rootScope, VEEAM_STATE_ENUM) => {
+angular.module("App").controller("DedicatedCloudSubDatacenterVeeamCtrl", ($scope, $stateParams, $translate, DedicatedCloud, $rootScope, VEEAM_STATE_ENUM) => {
     "use strict";
 
     $scope.veeam = {
@@ -19,7 +19,7 @@ angular.module("App").controller("DedicatedCloudSubDatacenterVeeamCtrl", ($scope
             $scope.loading = false;
         }, (data) => {
             $scope.loading = false;
-            $scope.setMessage($scope.tr("dedicatedCloud_tab_veeam_loading_error"), angular.extend(data, { type: "ERROR" }));
+            $scope.setMessage($translate.instant("dedicatedCloud_tab_veeam_loading_error"), angular.extend(data, { type: "ERROR" }));
         });
     };
 

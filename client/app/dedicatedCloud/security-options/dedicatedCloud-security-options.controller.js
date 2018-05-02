@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudSecurityOptionsCtrl", ($q, $stateParams, $scope, Alerter, constants, DedicatedCloud, User, Poller, DEDICATED_CLOUD_CONSTANTS) => {
+angular.module("App").controller("DedicatedCloudSecurityOptionsCtrl", ($q, $stateParams, $scope, $translate, Alerter, constants, DedicatedCloud, User, Poller, DEDICATED_CLOUD_CONSTANTS) => {
     "use strict";
 
     $scope.loading = true;
@@ -40,7 +40,7 @@ angular.module("App").controller("DedicatedCloudSecurityOptionsCtrl", ($q, $stat
         return $q
             .all([loadOptionsStates(), loadVropsAndNsxCompatibility()])
             .catch((err) => {
-                Alerter.alertFromSWS($scope.tr("dedicatedCloud_dashboard_loading_error"), err, $scope.alerts.dashboard);
+                Alerter.alertFromSWS($translate.instant("dedicatedCloud_dashboard_loading_error"), err, $scope.alerts.dashboard);
             })
             .finally(() => {
                 $scope.loading = false;

@@ -29,7 +29,7 @@ angular.module("App")
                 })
                 .catch(() => {
                     this.$scope.resetAction();
-                    this.Alerter.error(this.$scope.tr("nas_partitions_action_add_init"), this.alerterId);
+                    this.Alerter.error(this.$translate.instant("nas_partitions_action_add_init"), this.alerterId);
                 });
         }
 
@@ -49,8 +49,8 @@ angular.module("App")
                 .addPartition(this.$stateParams.nasId, this.$scope.newPartition.name, this.$scope.newPartition.protocol, this.$scope.newPartition.sizeP)
                 .then((task) => {
                     this.$rootScope.$broadcast("nas_launch_task", task);
-                    this.Alerter.success(this.$scope.tr("nas_partitions_action_add_success", this.$scope.newPartition.name), this.alerterId);
+                    this.Alerter.success(this.$translate.instant("nas_partitions_action_add_success", { t0: this.$scope.newPartition.name }), this.alerterId);
                 })
-                .catch((err) => this.Alerter.alertFromSWS(this.$scope.tr("nas_partitions_action_add_failure", this.$scope.newPartition.name), err, this.alerterId));
+                .catch((err) => this.Alerter.alertFromSWS(this.$translate.instant("nas_partitions_action_add_failure", { t0: this.$scope.newPartition.name }), err, this.alerterId));
         }
     });

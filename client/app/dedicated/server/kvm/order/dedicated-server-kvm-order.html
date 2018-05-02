@@ -4,15 +4,15 @@
          data-wizard-bread-crumb="true"
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="confirmOrder"
-         data-wizard-title="i18n.server_configuration_impi_order_kvm"
-         data-wizard-confirm-button-text="i18n.wizard_pay">
+         data-wizard-title=":: 'server_configuration_impi_order_kvm' | translate"
+         data-wizard-confirm-button-text=":: 'wizard_pay' | translate">
 
         <!-- Get Durations -->
         <div data-wizard-step
              data-wizard-step-valid="order.durationSelected"
              data-wizard-step-on-load="loadOptionDetails">
 
-            <p data-i18n-static="server_configuration_kvm_order_step1_title"></p>
+            <p data-translate="server_configuration_kvm_order_step1_title"></p>
 
             <div class="text-center"
                  data-ng-if="!order.details">
@@ -41,11 +41,11 @@
              data-wizard-step-valid="confirmOrder"
              data-wizard-step-on-load="loadDetail">
 
-            <p data-ng-bind-html="tr('server_configuration_kvm_order_step2_title', [server.name])"></p>
+            <p data-translate="server_configuration_kvm_order_step2_title" data-translate-values="{ t0: server.name }"></p>
             <dl>
-                <dt data-i18n-static="server_configuration_kvm_order_step2_duration"></dt>
+                <dt data-translate="server_configuration_kvm_order_step2_duration"></dt>
                 <dd data-ng-bind="order.durationSelected | duration:'mediumDate'"></dd>
-                <dt data-i18n-static="server_configuration_kvm_order_step2_details"></dt>
+                <dt data-translate="server_configuration_kvm_order_step2_details"></dt>
                 <dd>
                     <ul>
                         <li data-ng-repeat="detail in orderDetail.details track by $index"
@@ -53,12 +53,12 @@
                         </li>
                     </ul>
                 </dd>
-                <dt data-i18n-static="server_configuration_kvm_order_step2_price"></dt>
+                <dt data-translate="server_configuration_kvm_order_step2_price"></dt>
                 <dd class="text-danger"
                     data-ng-bind-html="orderDetail.prices | price:user.ovhSubsidiary">
                 </dd>
             </dl>
-            <p data-ng-bind-html="i18n.server_order_bandwidth_resume"></p>
+            <p data-ng-bind-html="'server_order_bandwidth_resume' | translate "></p>
 
         </div>
 

@@ -1,7 +1,7 @@
 angular.module("Billing.controllers").controller("Billing.controllers.Credits", class BillingCreditsCtrl {
-    constructor (Alerter, translator, BillingCredits, BillingUser) {
+    constructor (Alerter, $translate, BillingCredits, BillingUser) {
         this.Alerter = Alerter;
-        this.translator = translator;
+        this.$translate = $translate;
         this.billingCredits = BillingCredits;
         this.User = BillingUser;
 
@@ -65,12 +65,12 @@ angular.module("Billing.controllers").controller("Billing.controllers.Credits", 
         this.loading.creditCode = true;
         return this.User.addCreditCode(this.model.creditCode)
             .then((result) => {
-                this.Alerter.success(this.translator.tr("voucher_credit_code_success", [result.amount.text]));
+                this.Alerter.success(this.$translate.instant("voucher_credit_code_success", [result.amount.text]));
                 this.model.creditCode = null;
                 this.$onInit();
             })
             .catch((err) => {
-                this.Alerter.alertFromSWS(this.translator.tr("voucher_credit_code_error"), err);
+                this.Alerter.alertFromSWS(this.$translate.instant("voucher_credit_code_error"), err);
             })
             .finally(() => {
                 this.loading.creditCode = false;
@@ -115,7 +115,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.Credits", 
                 this.balances = balances;
             })
             .catch((error) => {
-                this.Alerter.set("alert-danger", [this.translator.tr("billing_credit_balance_movements_load_error"), _.get(error, "message")].join(" "));
+                this.Alerter.set("alert-danger", [this.$translate.instant("billing_credit_balance_movements_load_error"), _.get(error, "message")].join(" "));
             })
             .finally(() => {
                 this.loading.init = false;

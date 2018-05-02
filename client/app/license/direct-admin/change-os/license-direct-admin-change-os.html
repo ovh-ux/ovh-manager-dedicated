@@ -3,7 +3,7 @@
     <div data-wizard
          data-wizard-on-cancel="exit"
          data-wizard-on-finish="changeOs"
-         data-wizard-title="i18n.license_directadmin_changeOs_title"
+         data-wizard-title=":: 'license_directadmin_changeOs_title' | translate"
          data-wizard-title-icon="'icon-migrate'"
          data-wizard-bread-crumb>
 
@@ -17,7 +17,7 @@
                      data-ng-if="!model.modifying">
                     <label for="directAdminOsSelection"
                            class="control-label"
-                           data-i18n-static="license_directadmin_changeOs_chooseOs">
+                           data-translate="license_directadmin_changeOs_chooseOs">
                     </label>
                     <select class="form-control"
                             id="directAdminOsSelection"
@@ -29,13 +29,13 @@
                 <div class="text-center"
                      data-ng-show="model.modifying">
                     <oui-spinner></oui-spinner>
-                    <span data-i18n-static="license_directadmin_changingOs"></span>
+                    <span data-translate="license_directadmin_changingOs"></span>
                 </div>
             </div>
 
             <div class="text-center text-warning"
                  data-ng-if="model.operationIsPending"
-                 data-i18n-static="license_directadmin_changeOs_taskExists">
+                 data-translate="license_directadmin_changeOs_taskExists">
             </div>
 
         </div>

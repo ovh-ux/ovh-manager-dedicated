@@ -4,9 +4,9 @@ angular.module("App").controller("ServerIpMitigationStatisticsCtrl", [
     "STATISTICS_SCALE",
     "$filter",
     "$timeout",
-    "translator",
+    "$translate",
 
-    function ($scope, Server, statisticsScale, $filter, $timeout, translator) {
+    function ($scope, Server, statisticsScale, $filter, $timeout, $translate) {
         "use strict";
 
         $scope.selectedIpAndBlock = $scope.currentActionData;
@@ -77,10 +77,10 @@ angular.module("App").controller("ServerIpMitigationStatisticsCtrl", [
                     shared: true,
                     formatter () {
                         let text = $filter("date")(new Date(this.x + offset), "dd/MM - HH:mm:ss");
-                        text += `<br/>${translator.tr("server_configuration_mitigation_statistics_input")} : ${this.points[0].point.formatted.value} ${translator.tr(
+                        text += `<br/>${$translate.instant("server_configuration_mitigation_statistics_input")} : ${this.points[0].point.formatted.value} ${$translate.instant(
                             `server_configuration_mitigation_statistics_unit_${this.points[0].point.formatted.unit}`
                         )}`;
-                        text += `<br/>${translator.tr("server_configuration_mitigation_statistics_output")} : ${this.points[1].point.formatted.value} ${translator.tr(
+                        text += `<br/>${$translate.instant("server_configuration_mitigation_statistics_output")} : ${this.points[1].point.formatted.value} ${$translate.instant(
                             `server_configuration_mitigation_statistics_unit_${this.points[1].point.formatted.unit}`
                         )}`;
                         return text;

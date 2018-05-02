@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpIpv6ReverseDelegationDeleteCtrl", ($scope, $rootScope, Ip, IpReverse, Alerter) => {
+angular.module("Module.ip.controllers").controller("IpIpv6ReverseDelegationDeleteCtrl", ($scope, $rootScope, $translate, Ip, IpReverse, Alerter) => {
     $scope.ipBlock = $scope.currentActionData.ipBlock;
     $scope.reverse = $scope.currentActionData.reverse;
 
@@ -9,10 +9,10 @@ angular.module("Module.ip.controllers").controller("IpIpv6ReverseDelegationDelet
         IpReverse.deleteDelegation($scope.ipBlock.ipBlock, $scope.reverse).then(
             () => {
                 $rootScope.$broadcast("ips.table.refreshBlock", $scope.ipBlock);
-                Alerter.success($scope.tr("ip_table_manage_delegation_ipv6block_delete_success"));
+                Alerter.success($translate.instant("ip_table_manage_delegation_ipv6block_delete_success"));
             },
             (err) => {
-                Alerter.alertFromSWS($scope.tr("ip_table_manage_delegation_ipv6block_delete_err"), err);
+                Alerter.alertFromSWS($translate.instant("ip_table_manage_delegation_ipv6block_delete_err"), err);
             }
         );
     };

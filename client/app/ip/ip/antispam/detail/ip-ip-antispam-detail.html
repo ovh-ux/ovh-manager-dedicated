@@ -2,15 +2,15 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="resetAction"
-         data-wizard-title="i18n.ip_antispam_details_information_title"
+         data-wizard-title=":: 'ip_antispam_details_information_title' | translate"
          data-wizard-title-icon="'icon-server-monitoring-activate'"
          data-wizard-hide-cancel-button="true"
          data-wizard-keydown-disabled>
 
         <div data-wizard-step>
-            <span style="margin-bottom: 10px;" class="row-fluid" data-i18n-static="ip_antispam_details_information"></span>
+            <span style="margin-bottom: 10px;" class="row-fluid" data-translate="ip_antispam_details_information"></span>
             <div class="input-append">
-                <input type="text" data-ng-model="model.search" placeholder="{{i18n.ip_antispam_details_information_search_placeholder}}">
+                <input type="text" data-ng-model="model.search" placeholder="{{ 'ip_antispam_details_information_search_placeholder' | translate }}">
                 <span class="add-on">
                     <i data-ng-show="model.search" data-ng-click="model.search = ''" class="icon-remove"></i>
                     <i data-ng-show="!model.search" class="icon-search"></i>
@@ -20,10 +20,10 @@
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th data-i18n-static="ip_antispam_details_information_table_header_date"></th>
-                        <th data-i18n-static="ip_antispam_details_information_table_header_ip"></th>
-                        <th data-i18n-static="ip_antispam_details_information_table_header_spamscore"></th>
-                        <th data-i18n-static="ip_antispam_details_information_table_header_messageid"></th>
+                        <th data-translate="ip_antispam_details_information_table_header_date"></th>
+                        <th data-translate="ip_antispam_details_information_table_header_ip"></th>
+                        <th data-translate="ip_antispam_details_information_table_header_spamscore"></th>
+                        <th data-translate="ip_antispam_details_information_table_header_messageid"></th>
                     </tr>
                 </thead>
 

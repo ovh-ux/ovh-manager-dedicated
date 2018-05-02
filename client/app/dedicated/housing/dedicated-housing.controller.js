@@ -2,13 +2,14 @@ angular.module("App").controller("HousingCtrl", [
     "$scope",
     "$stateParams",
     "$timeout",
+    "$translate",
     "Housing",
     "User",
     "Alerter",
     "ovhUserPref",
     "constants",
     "featureAvailability",
-    function ($scope, $stateParams, $timeout, Housing, User, Alerter, ovhUserPref, constants, featureAvailability) {
+    function ($scope, $stateParams, $timeout, $translate, Housing, User, Alerter, ovhUserPref, constants, featureAvailability) {
         "use strict";
 
         $scope.loadingHousingInformations = true;
@@ -33,7 +34,7 @@ angular.module("App").controller("HousingCtrl", [
                     $scope.loadingHousingInformations = false;
                 })
                 .catch((err) => {
-                    Alerter.alertFromSWS($scope.tr("housing_tab_stats_failure_load"), err, "housing_dashboard_alert");
+                    Alerter.alertFromSWS($translate.instant("housing_tab_stats_failure_load"), err, "housing_dashboard_alert");
                     $scope.loadingHousingError = true;
                 });
 

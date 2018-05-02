@@ -1,4 +1,4 @@
-angular.module("App").controller("NasPartitionUpdateCtrl", ($scope, $stateParams, Nas, $rootScope, Alerter) => {
+angular.module("App").controller("NasPartitionUpdateCtrl", ($scope, $stateParams, $translate, Nas, $rootScope, Alerter) => {
     const alerterId = "NasAlert";
 
     $scope.partition = $scope.currentActionData.partition;
@@ -18,10 +18,10 @@ angular.module("App").controller("NasPartitionUpdateCtrl", ($scope, $stateParams
         Nas.updatePartitionSize($stateParams.nasId, $scope.partition.partitionName, $scope.updateValue.sizeP).then(
             () => {
                 $rootScope.$broadcast("nas_launch_task");
-                Alerter.success($scope.tr("nas_partitions_action_update_success", $scope.partition.partitionName), alerterId);
+                Alerter.success($translate.instant("nas_partitions_action_update_success", { t0: $scope.partition.partitionName }), alerterId);
             },
             (data) => {
-                Alerter.alertFromSWS($scope.tr("nas_partitions_action_update_failure", $scope.partition.partitionName), data, alerterId);
+                Alerter.alertFromSWS($translate.instant("nas_partitions_action_update_failure", { t0: $scope.partition.partitionName }), data, alerterId);
             }
         );
     };

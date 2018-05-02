@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudDatacentersOrderHostsCtrl", ($scope, $stateParams, DedicatedCloud, translator) => {
+angular.module("App").controller("DedicatedCloudDatacentersOrderHostsCtrl", ($scope, $stateParams, DedicatedCloud, $translate) => {
     "use strict";
 
     $scope.orderHosts = {
@@ -28,12 +28,14 @@ angular.module("App").controller("DedicatedCloudDatacentersOrderHostsCtrl", ($sc
                         },
                         (data) => {
                             $scope.resetAction();
-                            $scope.setMessage(translator.tr("dedicatedCloud_configuration_order_hosts_finish_fail", [$scope.orderHosts.datacenter.name]), angular.extend(data, { type: "ERROR" }));
+                            $scope.setMessage($translate.instant("dedicatedCloud_configuration_order_hosts_finish_fail", {
+                                t0: $scope.orderHosts.datacenter.name
+                            }), angular.extend(data, { type: "ERROR" }));
                         }
                     );
                 },
                 (data) => {
-                    $scope.setMessage($scope.tr("dedicatedCloud_configuration_order_hosts_finish_fail"), angular.extend(data, { type: "ERROR" }));
+                    $scope.setMessage($translate.instant("dedicatedCloud_configuration_order_hosts_finish_fail"), angular.extend(data, { type: "ERROR" }));
                 }
             )
             .finally(() => {
@@ -74,7 +76,9 @@ angular.module("App").controller("DedicatedCloudDatacentersOrderHostsCtrl", ($sc
                 },
                 (data) => {
                     $scope.resetAction();
-                    $scope.setMessage(translator.tr("dedicatedCloud_configuration_order_hosts_finish_fail", [$scope.orderHosts.datacenter.name]), angular.extend(data, { type: "ERROR" }));
+                    $scope.setMessage($translate.instant("dedicatedCloud_configuration_order_hosts_finish_fail", {
+                        t0: $scope.orderHosts.datacenter.name
+                    }), angular.extend(data, { type: "ERROR" }));
                 }
             )
             .finally(() => {
@@ -89,10 +93,15 @@ angular.module("App").controller("DedicatedCloudDatacentersOrderHostsCtrl", ($sc
             .then(
                 (data) => {
                     window.open(data.url, "_blank");
-                    $scope.setMessage(translator.tr("dedicatedCloud_configuration_order_hosts_finish_success", [data.url, data.orderId]), "true");
+                    $scope.setMessage($translate.instant("dedicatedCloud_configuration_order_hosts_finish_success", {
+                        t0: data.url,
+                        t1: data.orderId
+                    }), "true");
                 },
                 (data) => {
-                    $scope.setMessage(translator.tr("dedicatedCloud_configuration_order_hosts_finish_fail", [$scope.orderHosts.datacenter.name]), angular.extend(data, { type: "ERROR" }));
+                    $scope.setMessage($translate.instant("dedicatedCloud_configuration_order_hosts_finish_fail", {
+                        t0: $scope.orderHosts.datacenter.name
+                    }), angular.extend(data, { type: "ERROR" }));
                 }
             )
             .finally(() => {
@@ -102,7 +111,7 @@ angular.module("App").controller("DedicatedCloudDatacentersOrderHostsCtrl", ($sc
     };
 });
 
-angular.module("App").controller("DedicatedCloudHostToMonthlyCtrl", ($stateParams, $rootScope, $scope, $q, $window, DedicatedCloud, Alerter, User) => {
+angular.module("App").controller("DedicatedCloudHostToMonthlyCtrl", ($stateParams, $rootScope, $scope, $q, $window, $translate, DedicatedCloud, Alerter, User) => {
     "use strict";
 
     const resourceId = $scope.currentActionData ? $scope.currentActionData.id : null;
@@ -161,7 +170,7 @@ angular.module("App").controller("DedicatedCloudHostToMonthlyCtrl", ($stateParam
                 $scope.loading.prices = false;
             },
             (data) => {
-                Alerter.alertFromSWS($scope.tr("dedicatedCloud_order_loading_error"), data.data);
+                Alerter.alertFromSWS($translate.instant("dedicatedCloud_order_loading_error"), data.data);
                 $scope.loading.durations = false;
             }
         );
@@ -189,7 +198,7 @@ angular.module("App").controller("DedicatedCloudHostToMonthlyCtrl", ($stateParam
         ==============================*/
 
     $scope.getResumePrice = function (price) {
-        return price.value === 0 ? $scope.tr("price_free") : $scope.tr("price_ht_label", [price.text]);
+        return price.value === 0 ? $translate.instant("price_free") : $translate.instant("price_ht_label", { t0: price.text });
     };
 
     $scope.upgradedResource = function () {
@@ -201,14 +210,17 @@ angular.module("App").controller("DedicatedCloudHostToMonthlyCtrl", ($stateParam
         const windowRef = $window.open();
         DedicatedCloud.upgradedResource($stateParams.productId, upgradeType, $scope.model.duration, resourceType, resourceId)
             .then((order) => {
-                const message = $scope.tr("dedicatedCloud_order_finish_success", [order.url, order.orderId]);
+                const message = $translate.instant("dedicatedCloud_order_finish_success", {
+                    t0: order.url,
+                    t1: order.orderId
+                });
                 $scope.setMessage(message, true);
                 Alerter.alertFromSWS(message, { idTask: order.orderId, state: "OK" });
                 orderUrl = order.url;
                 $scope.resetAction();
             })
             .catch((data) => {
-                const message = $scope.tr("dedicatedCloud_order_finish_error");
+                const message = $translate.instant("dedicatedCloud_order_finish_error");
                 $scope.setMessage(message, angular.extend(data, { type: "ERROR" }));
                 Alerter.alertFromSWS(message, data.data);
             })

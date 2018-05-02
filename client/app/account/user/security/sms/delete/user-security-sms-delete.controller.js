@@ -2,9 +2,10 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
     "$rootScope",
     "$scope",
     "$q",
+    "$translate",
     "UserAccount.services.doubleAuth.sms",
     "Alerter",
-    function ($rootScope, $scope, $q, DoubleAuthSmsService, Alerter) {
+    function ($rootScope, $scope, $q, $translate, DoubleAuthSmsService, Alerter) {
         "use strict";
 
         $scope.sms = {
@@ -43,11 +44,11 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
             return promise
                 .then(() => DoubleAuthSmsService.delete($scope.sms.smsAccount.id, $scope.sms.code))
                 .then(() => {
-                    Alerter.success($scope.tr("user_account_security_double_auth_type_sms_delete_success"), "doubleAuthAlertSms");
+                    Alerter.success($translate.instant("user_account_security_double_auth_type_sms_delete_success"), "doubleAuthAlertSms");
                     $rootScope.$broadcast("doubleAuthSMS.reload");
                     $scope.resetAction();
                 })
-                .catch((err) => Alerter.alertFromSWS($scope.tr("user_account_security_double_auth_type_sms_delete_error"), err, "doubleAuthAlertSmsDelete"))
+                .catch((err) => Alerter.alertFromSWS($translate.instant("user_account_security_double_auth_type_sms_delete_error"), err, "doubleAuthAlertSmsDelete"))
                 .finally(() => {
                     $scope.sms.isDeleting = false;
                 });
@@ -76,7 +77,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
             $scope.sms.isLoading = true;
             return promise
                 .catch((err) => {
-                    Alerter.alertFromSWS($scope.tr("user_account_security_double_auth_type_sms_delete_send_code_error"), err.data, "doubleAuthAlertSms");
+                    Alerter.alertFromSWS($translate.instant("user_account_security_double_auth_type_sms_delete_send_code_error"), err.data, "doubleAuthAlertSms");
                     $scope.resetAction();
                 })
                 .finally(() => {

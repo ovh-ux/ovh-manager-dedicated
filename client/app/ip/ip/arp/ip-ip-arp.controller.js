@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpViewArpCtrl", ($scope, $rootScope, Ip, IpArp, Alerter) => {
+angular.module("Module.ip.controllers").controller("IpViewArpCtrl", ($scope, $rootScope, $translate, Ip, IpArp, Alerter) => {
     $scope.data = $scope.currentActionData;
     $scope.loading = true;
 
@@ -16,10 +16,10 @@ angular.module("Module.ip.controllers").controller("IpViewArpCtrl", ($scope, $ro
             .then(
                 () => {
                     $rootScope.$broadcast("ips.table.refreshBlock", $scope.data.ipBlock);
-                    Alerter.success($scope.tr("ip_arp_unblock_success"));
+                    Alerter.success($translate.instant("ip_arp_unblock_success"));
                 },
                 (data) => {
-                    Alerter.alertFromSWS($scope.tr("ip_arp_unblock_failure"), data);
+                    Alerter.alertFromSWS($translate.instant("ip_arp_unblock_failure"), data);
                 }
             )
             .finally(() => {

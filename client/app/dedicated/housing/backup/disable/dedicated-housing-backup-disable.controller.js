@@ -1,6 +1,6 @@
 // --------------DSABLE BACKUP------------------
 
-angular.module("App").controller("HousingDeleteFtpBackupCtrl", ($scope, $stateParams, Housing, Alerter) => {
+angular.module("App").controller("HousingDeleteFtpBackupCtrl", ($scope, $stateParams, $translate, Housing, Alerter) => {
     "use strict";
 
     const alert = "housing_tab_ftpbackup_alert";
@@ -13,10 +13,10 @@ angular.module("App").controller("HousingDeleteFtpBackupCtrl", ($scope, $statePa
         Housing.deleteFtpBackup($stateParams.productId)
             .then(
                 () => {
-                    Alerter.success($scope.tr("housing_configuration_ftpbackup_delete_success"), alert);
+                    Alerter.success($translate.instant("housing_configuration_ftpbackup_delete_success"), alert);
                 },
                 (data) => {
-                    Alerter.alertFromSWS($scope.tr("housing_configuration_ftpbackup_delete_failure"), data, alert);
+                    Alerter.alertFromSWS($translate.instant("housing_configuration_ftpbackup_delete_failure"), data, alert);
                 }
             )
             .finally(() => {

@@ -1,10 +1,9 @@
 class DedicatedCloudSecurityPolicyAccessCtrl {
-    constructor ($scope, $stateParams, DedicatedCloud, translator) {
+    constructor ($scope, $stateParams, DedicatedCloud, $translate) {
         this.$scope = $scope;
         this.$stateParams = $stateParams;
         this.DedicatedCloud = DedicatedCloud;
-        this.translator = translator;
-        this.tr = translator.tr;
+        this.$translate = $translate;
 
         this.selectedAccessPolicy = {
             policies: [],
@@ -28,7 +27,7 @@ class DedicatedCloudSecurityPolicyAccessCtrl {
         this.DedicatedCloud.modifyPolicyAccess(this.$stateParams.productId, this.selectedAccessPolicy.value)
             .then((data) => {
                 this.$scope.setMessage(
-                    this.tr("dedicatedCloud_configuration_SECURITY_policy_access_success"),
+                    this.$translate.instant("dedicatedCloud_configuration_SECURITY_policy_access_success"),
                     _.assign(
                         {
                             type: "success"
@@ -38,7 +37,7 @@ class DedicatedCloudSecurityPolicyAccessCtrl {
                 );
             })
             .catch((err) => {
-                this.$scope.setMessage(this.tr("dedicatedCloud_configuration_SECURITY_policy_access_fail"), err.data);
+                this.$scope.setMessage(this.$translate.instant("dedicatedCloud_configuration_SECURITY_policy_access_fail"), err.data);
             });
     }
 }

@@ -1,4 +1,4 @@
-angular.module("App").controller("DeleteAccessFtpBackupCtrl", ($scope, Server, $rootScope, Alerter, $stateParams) => {
+angular.module("App").controller("DeleteAccessFtpBackupCtrl", ($scope, Server, $rootScope, $translate, Alerter, $stateParams) => {
     const alert = "server_tab_ftpbackup_alert";
 
     $scope.access = $scope.currentActionData.ipBlock;
@@ -11,10 +11,10 @@ angular.module("App").controller("DeleteAccessFtpBackupCtrl", ($scope, Server, $
             .then(
                 () => {
                     $rootScope.$broadcast("server.ftpBackup.access.load");
-                    Alerter.success($scope.tr("server_configuration_ftpbackup_access_delete_success", $scope.access), alert);
+                    Alerter.success($translate.instant("server_configuration_ftpbackup_access_delete_success", { t0: $scope.access }), alert);
                 },
                 (data) => {
-                    Alerter.alertFromSWS($scope.tr("server_configuration_ftpbackup_access_delete_failure", $scope.access), data.data, alert);
+                    Alerter.alertFromSWS($translate.instant("server_configuration_ftpbackup_access_delete_failure", { t0: $scope.access }), data.data, alert);
                 }
             )
             .finally(() => {

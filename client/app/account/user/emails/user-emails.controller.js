@@ -2,10 +2,11 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.em
     "$q",
     "$location",
     "$scope",
+    "$translate",
     "UserAccount.services.emails",
     "Alerter",
 
-    function ($q, $location, $scope, Emails, Alerter) {
+    function ($q, $location, $scope, $translate, Emails, Alerter) {
         "use strict";
         const self = this;
 
@@ -34,7 +35,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.em
                     $scope.emails.ids = table.reverse();
                 })
                 .catch((err) => {
-                    Alerter.alertFromSWS($scope.tr("user_account_table_email_error"), null, "user_account_email");
+                    Alerter.alertFromSWS($translate.instant("user_account_table_email_error"), null, "user_account_email");
                     return $q.reject(err);
                 })
                 .finally(() => {
@@ -45,7 +46,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.em
         $scope.transformItem = (emailId) => {
             $scope.loaders.emails = true;
             return Emails.getEmail(emailId).catch((err) => {
-                Alerter.alertFromSWS($scope.tr("user_account_table_email_error"), null, "user_account_email");
+                Alerter.alertFromSWS($translate.instant("user_account_table_email_error"), null, "user_account_email");
                 return $q.reject(err);
             });
         };

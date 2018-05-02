@@ -3,11 +3,12 @@
     <div data-wizard
         data-wizard-on-cancel="resetAction"
         data-wizard-on-finish="deleteUser"
-        data-wizard-title="i18n.dedicatedCloud_USER_delete_title">
+        data-wizard-title=":: 'dedicatedCloud_USER_delete_title' | translate">
 
         <div data-wizard-step>
 
-            <span data-ng-bind-html="tr('dedicatedCloud_USER_delete_message', user.name)"></span>
+            <span data-translate="dedicatedCloud_USER_delete_message"
+                  data-translate-values="{ t0: user.name }"></span>
 
         </div>
 

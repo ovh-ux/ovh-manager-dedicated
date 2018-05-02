@@ -2,9 +2,10 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
     "$rootScope",
     "$scope",
     "$q",
+    "$translate",
     "UserAccount.services.doubleAuth.totp",
     "Alerter",
-    function ($rootScope, $scope, $q, DoubleAuthTotpService, Alerter) {
+    function ($rootScope, $scope, $q, $translate, DoubleAuthTotpService, Alerter) {
         "use strict";
 
         $scope.totp = {
@@ -42,11 +43,11 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
             return promise
                 .then(() => DoubleAuthTotpService.delete($scope.totp.totpAccount.id, $scope.totp.code))
                 .then(() => {
-                    Alerter.success($scope.tr("user_security_double_auth_totp_delete_success"), "doubleAuthAlertTotp");
+                    Alerter.success($translate.instant("user_security_double_auth_totp_delete_success"), "doubleAuthAlertTotp");
                     $rootScope.$broadcast("doubleAuthTOTP.reload");
                     $scope.resetAction();
                 })
-                .catch((err) => Alerter.alertFromSWS($scope.tr("user_security_double_auth_totp_delete_error"), err.data, "doubleAuthAlertTotpDelete"))
+                .catch((err) => Alerter.alertFromSWS($translate.instant("user_security_double_auth_totp_delete_error"), err.data, "doubleAuthAlertTotpDelete"))
                 .finally(() => {
                     $scope.totp.isDeleting = false;
                 });

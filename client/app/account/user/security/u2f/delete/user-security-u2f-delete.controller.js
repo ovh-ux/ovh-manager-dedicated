@@ -2,9 +2,10 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
     "$rootScope",
     "$scope",
     "$q",
+    "$translate",
     "UserAccount.services.doubleAuth.u2f",
     "Alerter",
-    function ($rootScope, $scope, $q, DoubleAuthU2fService, Alerter) {
+    function ($rootScope, $scope, $q, $translate, DoubleAuthU2fService, Alerter) {
         "use strict";
 
         $scope.u2f = {
@@ -38,7 +39,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
                     $scope.resetAction();
                 })
                 .catch((err) => {
-                    Alerter.alertFromSWS($scope.tr("user_account_security_double_auth_type_u2f_delete_error"), err.data, "doubleAuthAlertU2f");
+                    Alerter.alertFromSWS($translate.instant("user_account_security_double_auth_type_u2f_delete_error"), err.data, "doubleAuthAlertU2f");
                 })
                 .finally(() => {
                     $scope.u2f.isDeleting = false;
@@ -79,7 +80,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
                     }
                     $scope.u2f.isLoading = false;
                     $scope.u2f.hasError = true;
-                    Alerter.error($scope.tr(key), "doubleAuthAlertU2fDelete");
+                    Alerter.error($translate.instant(key), "doubleAuthAlertU2fDelete");
                 })
                 .finally(() => {
                     $scope.u2f.isLoading = false;

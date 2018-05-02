@@ -1,18 +1,24 @@
-angular.module("Module.ip.controllers").controller("IpFirewallToggleCtrl", ($scope, $rootScope, Ip, IpFirewall, translator, Alerter, $location) => {
+angular.module("Module.ip.controllers").controller("IpFirewallToggleCtrl", ($scope, $rootScope, Ip, IpFirewall, $translate, Alerter, $location) => {
     // Hack because the condition in the template wouldn't change depending on the mitigation status
     $scope.translations = {};
 
     function init (data) {
         $scope.data = data || $scope.currentActionData;
         if ($scope.data.ip.firewall === "ACTIVATED") {
-            $scope.translations.wizardTitle = translator.tr("ip_firewall_disable_title");
-            $scope.translations.wizardQuestion = translator.tr("ip_firewall_disable_question", [$scope.data.ip.ip]);
+            $scope.translations.wizardTitle = $translate.instant("ip_firewall_disable_title");
+            $scope.translations.wizardQuestion = $translate.instant("ip_firewall_disable_question", {
+                t0: $scope.data.ip.ip
+            });
         } else if ($scope.data.ip.firewall === "DEACTIVATED") {
-            $scope.translations.wizardTitle = translator.tr("ip_firewall_enable_title");
-            $scope.translations.wizardQuestion = translator.tr("ip_firewall_enable_question", [$scope.data.ip.ip]);
+            $scope.translations.wizardTitle = $translate.instant("ip_firewall_enable_title");
+            $scope.translations.wizardQuestion = $translate.instant("ip_firewall_enable_question", {
+                t0: $scope.data.ip.ip
+            });
         } else {
-            $scope.translations.wizardTitle = translator.tr("ip_firewall_new_title");
-            $scope.translations.wizardQuestion = translator.tr("ip_firewall_new_question", [$scope.data.ip.ip]);
+            $scope.translations.wizardTitle = $translate.instant("ip_firewall_new_title");
+            $scope.translations.wizardQuestion = $translate.instant("ip_firewall_new_question", {
+                t0: $scope.data.ip.ip
+            });
         }
     }
 
@@ -32,10 +38,14 @@ angular.module("Module.ip.controllers").controller("IpFirewallToggleCtrl", ($sco
                 .then(
                     () => {
                         $rootScope.$broadcast("ips.table.refreshBlock", $scope.data.ipBlock);
-                        Alerter.success(translator.tr("ip_firewall_new_success", $scope.data.ip.ip));
+                        Alerter.success($translate.instant("ip_firewall_new_success", {
+                            t0: $scope.data.ip.ip
+                        }));
                     },
                     (data) => {
-                        Alerter.alertFromSWS(translator.tr("ip_firewall_new_failed", $scope.data.ip.ip), data);
+                        Alerter.alertFromSWS($translate.instant("ip_firewall_new_failed", {
+                            t0: $scope.data.ip.ip
+                        }), data);
                     }
                 )
                 .finally(() => {
@@ -47,16 +57,24 @@ angular.module("Module.ip.controllers").controller("IpFirewallToggleCtrl", ($sco
                     () => {
                         $rootScope.$broadcast("ips.table.refreshBlock", $scope.data.ipBlock);
                         if (newStatus === false) {
-                            Alerter.success(translator.tr("ip_firewall_disable_success", $scope.data.ip.ip));
+                            Alerter.success($translate.instant("ip_firewall_disable_success", {
+                                t0: $scope.data.ip.ip
+                            }));
                         } else if (newStatus === true) {
-                            Alerter.success(translator.tr("ip_firewall_enable_success", $scope.data.ip.ip));
+                            Alerter.success($translate.instant("ip_firewall_enable_success", {
+                                t0: $scope.data.ip.ip
+                            }));
                         }
                     },
                     (data) => {
                         if (newStatus === false) {
-                            Alerter.alertFromSWS(translator.tr("ip_firewall_disable_failed", $scope.data.ip.ip), data);
+                            Alerter.alertFromSWS($translate.instant("ip_firewall_disable_failed", {
+                                t0: $scope.data.ip.ip
+                            }), data);
                         } else if (newStatus === true) {
-                            Alerter.alertFromSWS(translator.tr("ip_firewall_enable_failed", $scope.data.ip.ip), data);
+                            Alerter.alertFromSWS($translate.instant("ip_firewall_enable_failed", {
+                                t0: $scope.data.ip.ip
+                            }), data);
                         }
                     }
                 )

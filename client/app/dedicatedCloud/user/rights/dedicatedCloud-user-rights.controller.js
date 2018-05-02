@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudUserRightsCtrl", function ($scope, $stateParams, DedicatedCloud) {
+angular.module("App").controller("DedicatedCloudUserRightsCtrl", function ($scope, $stateParams, $translate, DedicatedCloud) {
     "use strict";
 
     const self = this;
@@ -21,7 +21,7 @@ angular.module("App").controller("DedicatedCloudUserRightsCtrl", function ($scop
         DedicatedCloud.getUserRights($stateParams.productId, $stateParams.userId, elementsByPage, elementsToSkip).then((results) => {
             self.rights = results;
         }, (data) => {
-            $scope.setMessage($scope.tr("dedicatedCloud_users_rights_loading_error"), data);
+            $scope.setMessage($translate.instant("dedicatedCloud_users_rights_loading_error"), data);
         }).finally(() => {
             self.loading.rights = false;
         });

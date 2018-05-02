@@ -3,7 +3,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="activateFtpBackup"
-         data-wizard-title="tr('server_configuration_ftpbackup_activate')">
+         data-wizard-title=":: 'server_configuration_ftpbackup_activate' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="!loading">
@@ -14,7 +14,7 @@
             </div>
 
             <p data-ng-if="!loading"
-               data-ng-bind="tr('server_configuration_ftpbackup_activate_question')">
+               data-ng-bind=":: 'server_configuration_ftpbackup_activate_question' | translate">
             </p>
 
         </div>

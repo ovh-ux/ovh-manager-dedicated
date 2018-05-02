@@ -24,6 +24,7 @@ angular
                 controller: "Billing.controllers.main",
                 templateUrl: `${BILLING_BASE_URL}/billing.html`,
                 "abstract": true,
+                translations: ["account/billing"],
                 resolve: {
                     denyEnterprise: denyBillingSectionForEnterpriseResolve
                 }
@@ -34,6 +35,7 @@ angular
                 controller: "Billing.controllers.main",
                 templateUrl: `${BILLING_BASE_URL}/billing.html`,
                 "abstract": true,
+                translations: ["account/billing"],
                 resolve: {
                     denyEnterprise: denyBillingSectionForEnterpriseResolve
                 }
@@ -44,6 +46,7 @@ angular
                 controller: "Billing.controllers.main",
                 templateUrl: `${BILLING_BASE_URL}/billing.html`,
                 "abstract": true,
+                translations: ["account/billing"],
                 resolve: {
                     denyEnterprise: denyBillingSectionForEnterpriseResolve
                 }
@@ -54,6 +57,7 @@ angular
                 controller: "Billing.controllers.main",
                 templateUrl: `${BILLING_BASE_URL}/billing.html`,
                 "abstract": true,
+                translations: ["account/billing"],
                 resolve: {
                     denyEnterprise: denyBillingSectionForEnterpriseResolve
                 }
@@ -93,14 +97,16 @@ angular
             $stateProvider.state("app.account.orders", {
                 url: "/billing/orders",
                 templateUrl: `${BILLING_BASE_URL}orders/billing-orders.html`,
-                controller: "Billing.controllers.Orders"
+                controller: "Billing.controllers.Orders",
+                translations: ["account/billing"]
             });
 
             $stateProvider.state("app.account.ordersRetract", {
                 url: "/billing/orders/:id/retract",
                 templateUrl: `${BILLING_BASE_URL}orders/retraction/billing-orders-retraction.html`,
                 controller: "Billing.controllers.OrderRetractionCtrl",
-                controllerAs: "ctrl"
+                controllerAs: "ctrl",
+                translations: ["account/billing"]
             });
 
             /**
@@ -240,7 +246,6 @@ angular
             });
         }
     ])
-    .run((translator, $rootScope, constants) => {
-        translator.load(["billing"]);
+    .run(($rootScope, constants) => {
         $rootScope.worldPart = constants.target;
     });

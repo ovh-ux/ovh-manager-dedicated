@@ -1,4 +1,4 @@
-angular.module("App").controller("CdnAddSslCtrl", ($scope, $stateParams, Cdn) => {
+angular.module("App").controller("CdnAddSslCtrl", ($scope, $stateParams, $translate, Cdn) => {
     "use strict";
 
     $scope.entry = {};
@@ -7,10 +7,10 @@ angular.module("App").controller("CdnAddSslCtrl", ($scope, $stateParams, Cdn) =>
         $scope.resetAction();
         Cdn.addSsl($stateParams.productId, $scope.entry).then(
             () => {
-                $scope.setMessage($scope.tr("cdn_configuration_add_ssl_success"), true);
+                $scope.setMessage($translate.instant("cdn_configuration_add_ssl_success"), true);
             },
             (data) => {
-                $scope.setMessage($scope.tr("cdn_configuration_add_ssl_fail"), data);
+                $scope.setMessage($translate.instant("cdn_configuration_add_ssl_fail"), data);
             }
         );
     };

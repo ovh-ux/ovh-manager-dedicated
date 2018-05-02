@@ -3,19 +3,19 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="deleteLicense"
-         data-wizard-title="i18n.license_delete_title"
+         data-wizard-title=":: 'license_delete_title' | translate"
          data-wizard-title-icon="'icon-add-licenses'">
 
         <div data-wizard-step>
 
             <div data-ng-show="!model.deleting && !model.deleted">
                 <p class="font-weigth-bold"
-                   data-i18n-static="license_delete_step1_question">
+                   data-translate="license_delete_step1_question">
                 </p>
                 <dl>
-                    <dt data-i18n-static="license_delete_server"></dt>
+                    <dt data-translate="license_delete_server"></dt>
                     <dd data-ng-bind="::model.license.serviceName"></dd>
-                    <dt data-i18n-static="license_delete_serial"></dt>
+                    <dt data-translate="license_delete_serial"></dt>
                     <dd data-ng-bind="::model.license.id"></dd>
                 </dl>
             </div>
@@ -23,11 +23,11 @@
             <div class="text-center"
                   data-ng-show="model.deleting">
                 <oui-spinner></oui-spinner>
-                <strong data-i18n-static="license_delete_step1_deleting"></strong>
+                <strong data-translate="license_delete_step1_deleting"></strong>
             </div>
 
             <span data-ng-show="model.deleted"
-                  data-i18n-static="license_delete_success">
+                  data-translate="license_delete_success">
             </span>
 
         </div>

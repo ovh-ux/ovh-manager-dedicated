@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpAddIpv6Ctrl", ($scope, $rootScope, Ip, IpReverse, Alerter, Validator) => {
+angular.module("Module.ip.controllers").controller("IpAddIpv6Ctrl", ($scope, $rootScope, $translate, Ip, IpReverse, Alerter, Validator) => {
     "use strict";
 
     $scope.data = $scope.currentActionData;
@@ -13,7 +13,7 @@ angular.module("Module.ip.controllers").controller("IpAddIpv6Ctrl", ($scope, $ro
                     $rootScope.$broadcast("ips.table.refreshBlock", $scope.data.ipBlock);
                 },
                 (reason) => {
-                    Alerter.alertFromSWS($scope.tr("ip_table_manage_add_ipv6block_failure"), reason);
+                    Alerter.alertFromSWS($translate.instant("ip_table_manage_add_ipv6block_failure"), reason);
                 }
             );
         } else {

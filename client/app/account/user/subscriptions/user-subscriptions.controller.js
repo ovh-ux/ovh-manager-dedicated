@@ -1,9 +1,10 @@
 angular.module("UserAccount.controllers").controller("UserAccount.controllers.Subscriptions", [
     "$scope",
+    "$translate",
     "UserAccount.services.Subscriptions",
     "User",
     "Alerter",
-    function ($scope, UseraccountSubscriptions, User, Alerter) {
+    function ($scope, $translate, UseraccountSubscriptions, User, Alerter) {
         "use strict";
 
         $scope.subscriptions = {};
@@ -17,7 +18,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.Su
                         $scope.subscriptions = data;
                     },
                     (err) => {
-                        Alerter.alertFromSWS($scope.tr("subscriptions_error"), err, "SubscriptionAlerter");
+                        Alerter.alertFromSWS($translate.instant("subscriptions_error"), err, "SubscriptionAlerter");
                     }
                 )
                 .finally(() => {
@@ -27,7 +28,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.Su
 
         $scope.updateUseraccountSubscription = function (state, type) {
             UseraccountSubscriptions.updateUseraccountSubscription(type, state).catch((err) => {
-                Alerter.alertFromSWS($scope.tr("subscriptions_error"), err, "SubscriptionAlerter");
+                Alerter.alertFromSWS($translate.instant("subscriptions_error"), err, "SubscriptionAlerter");
             });
         };
 

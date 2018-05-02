@@ -1,8 +1,9 @@
 angular.module("UserAccount.controllers").controller("UserAccount.controllers.doubleAuth.backupCode", [
     "$scope",
+    "$translate",
     "UserAccount.services.doubleAuth.backupCode",
     "Alerter",
-    function ($scope, DoubleAuthBackupCodeService, Alerter) {
+    function ($scope, $translate, DoubleAuthBackupCodeService, Alerter) {
         "use strict";
 
         $scope.backupCode = {
@@ -48,7 +49,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
                 })
                 .catch((err) => {
                     if (err.status !== 404) {
-                        Alerter.alertFromSWS($scope.tr("user_account_security_double_auth_type_backup_code_error"), err.data, "doubleAuthAlert");
+                        Alerter.alertFromSWS($translate.instant("user_account_security_double_auth_type_backup_code_error"), err.data, "doubleAuthAlert");
                     }
                     $scope.backupCode.status = null;
                 })

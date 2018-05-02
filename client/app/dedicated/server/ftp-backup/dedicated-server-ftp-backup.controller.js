@@ -1,4 +1,4 @@
-angular.module("App").controller("FtpBackupCtrl", ($scope, $http, Server, Polling, Alerter, featureAvailability, $stateParams) => {
+angular.module("App").controller("FtpBackupCtrl", ($scope, $http, $translate, Server, Polling, Alerter, featureAvailability, $stateParams) => {
     const alert = "server_tab_ftpbackup_alert";
 
     $scope.ftpBackup = {
@@ -59,7 +59,7 @@ angular.module("App").controller("FtpBackupCtrl", ($scope, $http, Server, Pollin
                 },
                 (err) => {
                     if (err.code !== 404) {
-                        Alerter.alertFromSWS($scope.tr("server_configuration_ftpbackup_table_fail"), err, alert);
+                        Alerter.alertFromSWS($translate.instant("server_configuration_ftpbackup_table_fail"), err, alert);
                     }
                 }
             )
@@ -101,12 +101,12 @@ angular.module("App").controller("FtpBackupCtrl", ($scope, $http, Server, Pollin
             Server.putFtpBackupIp($stateParams.productId, $scope.ipbackupCurrentEdit.ipBlock, $scope.ipbackupCurrentEdit.ftp, $scope.ipbackupCurrentEdit.nfs, $scope.ipbackupCurrentEdit.cifs)
                 .then(
                     () => {
-                        Alerter.success($scope.tr("server_configuration_ftpbackup_set_success", $scope.ipbackupCurrentEdit.ipBlock), alert);
+                        Alerter.success($translate.instant("server_configuration_ftpbackup_set_success", { t0: $scope.ipbackupCurrentEdit.ipBlock }), alert);
                         $scope.refreshTab();
                         getApply();
                     },
                     (data) => {
-                        Alerter.alertFromSWS($scope.tr("server_configuration_ftpbackup_set_fail", $scope.ipbackupCurrentEdit.ipBlock), data.data, alert);
+                        Alerter.alertFromSWS($translate.instant("server_configuration_ftpbackup_set_fail", { t0: $scope.ipbackupCurrentEdit.ipBlock }), data.data, alert);
                         conditionnalReloadAccess();
                     }
                 )
@@ -206,7 +206,7 @@ angular.module("App").controller("FtpBackupCtrl", ($scope, $http, Server, Pollin
         Server.addTaskFast($stateParams.productId, task, $scope.$id).then(
             (state) => {
                 if (Polling.isResolve(state)) {
-                    Alerter.success($scope.tr("server_configuration_ftpbackup_activate_successfull"), alert);
+                    Alerter.success($translate.instant("server_configuration_ftpbackup_activate_successfull"), alert);
                     $scope.disable.activeFtp = false;
                     $scope.$broadcast("server.ftpbackup.reload");
                 } else {
@@ -215,7 +215,7 @@ angular.module("App").controller("FtpBackupCtrl", ($scope, $http, Server, Pollin
             },
             (data) => {
                 $scope.disable.activeFtp = false;
-                Alerter.alertFromSWS($scope.tr("server_configuration_ftpbackup_activate_failure"), data, alert);
+                Alerter.alertFromSWS($translate.instant("server_configuration_ftpbackup_activate_failure"), data, alert);
             }
         );
     }
@@ -234,7 +234,7 @@ angular.module("App").controller("FtpBackupCtrl", ($scope, $http, Server, Pollin
             (state) => {
                 if (Polling.isResolve(state)) {
                     $scope.disable.deleteFtp = false;
-                    Alerter.success($scope.tr("server_configuration_ftpbackup_delete_successfull"), alert);
+                    Alerter.success($translate.instant("server_configuration_ftpbackup_delete_successfull"), alert);
                     $scope.$broadcast("server.ftpbackup.reload");
                 } else {
                     startFtpBackupPollDelete(task);
@@ -242,7 +242,7 @@ angular.module("App").controller("FtpBackupCtrl", ($scope, $http, Server, Pollin
             },
             (data) => {
                 $scope.disable.deleteFtp = false;
-                Alerter.alertFromSWS($scope.tr("server_configuration_ftpbackup_delete_failure"), data, alert);
+                Alerter.alertFromSWS($translate.instant("server_configuration_ftpbackup_delete_failure"), data, alert);
             }
         );
     }
@@ -261,14 +261,14 @@ angular.module("App").controller("FtpBackupCtrl", ($scope, $http, Server, Pollin
             (state) => {
                 if (Polling.isResolve(state)) {
                     $scope.disable.passwordFtp = false;
-                    Alerter.success($scope.tr("server_configuration_ftpbackup_lost_password_successfull"), alert);
+                    Alerter.success($translate.instant("server_configuration_ftpbackup_lost_password_successfull"), alert);
                 } else {
                     startFtpBackupPollPassword(task);
                 }
             },
             (data) => {
                 $scope.disable.passwordFtp = false;
-                Alerter.alertFromSWS($scope.tr("server_configuration_ftpbackup_lost_password_failure"), data, alert);
+                Alerter.alertFromSWS($translate.instant("server_configuration_ftpbackup_lost_password_failure"), data, alert);
             }
         );
     }

@@ -1,11 +1,11 @@
 <header class="page-header">
-    <h1 data-i18n-static="payment_mean_add_title"></h1>
+    <h1 data-translate="payment_mean_add_title"></h1>
 </header>
 
 <div class="tab-content"
      id="billing-payment-method-add">
 
-    <oui-back-button data-title="{{:: $ctrl.$stateParams.from ? tr('common_back') : tr('payment_mean_back')}}"
+    <oui-back-button data-title="{{:: ($ctrl.$stateParams.from ? 'common_back' : 'payment_mean_back') | translate }}"
                      data-href="{{ $ctrl.$state.href($ctrl.$stateParams.from || 'app.account.payment.mean({})') }}">
     </oui-back-button>
 

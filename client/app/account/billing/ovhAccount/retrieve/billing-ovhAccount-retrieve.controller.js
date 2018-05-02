@@ -1,4 +1,4 @@
-angular.module("Billing.controllers").controller("Billing.controllers.OvhAccountRetrieve", ($scope, $location, $timeout, $window, $q, Alerter, BillingOvhAccount, BillingPaymentInformation, User, OVH_ACCOUNT_EVENT) => {
+angular.module("Billing.controllers").controller("Billing.controllers.OvhAccountRetrieve", ($scope, $location, $timeout, $window, $q, $translate, Alerter, BillingOvhAccount, BillingPaymentInformation, User, OVH_ACCOUNT_EVENT) => {
     $scope.accountModel = $scope.currentActionData;
     $scope.retrieve = {
         amount: 0,
@@ -35,7 +35,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.OvhAccount
                 });
             })
             .catch((err) => {
-                Alerter.alertFromSWS($scope.tr("ovhAccount_retrieve_error"), err);
+                Alerter.alertFromSWS($translate.instant("ovhAccount_retrieve_error"), err);
                 $scope.resetAction();
             })
             .finally(() => ($scope.loading = false));
@@ -43,7 +43,9 @@ angular.module("Billing.controllers").controller("Billing.controllers.OvhAccount
 
     $scope.retrieve = () => {
         $window.open($scope.retrieveOrder.url);
-        Alerter.success($scope.tr("ovhAccount_retrieve_success", [$scope.retrieveOrder.url]));
+        Alerter.success($translate.instant("ovhAccount_retrieve_success", {
+            t0: $scope.retrieveOrder.url
+        }));
         $scope.resetAction();
     };
 });

@@ -6,7 +6,8 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.co
     "$location",
     "User",
     "$q",
-    function ($scope, Contacts, Alerter, $stateParams, $location, User, $q) {
+    "$translate",
+    function ($scope, Contacts, Alerter, $stateParams, $location, User, $q, $translate) {
         "use strict";
 
         const self = this;
@@ -32,7 +33,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.co
                     self.user = user;
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("user_account_contacts_error"), err, "useraccount.alerts.dashboardContacts");
+                    Alerter.alertFromSWS($translate.instant("user_account_contacts_error"), err, "useraccount.alerts.dashboardContacts");
                 }
             );
         }
@@ -69,7 +70,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.co
                         allServicesIds = angular.copy(self.servicesIds);
                     },
                     (err) => {
-                        Alerter.alertFromSWS($scope.tr("user_account_contacts_error"), err, "useraccount.alerts.dashboardContacts");
+                        Alerter.alertFromSWS($translate.instant("user_account_contacts_error"), err, "useraccount.alerts.dashboardContacts");
                     }
                 )
                 .finally(() => {
@@ -128,10 +129,10 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.co
                 .then(
                     () => {
                         self.editLine = -1;
-                        Alerter.success($scope.tr("user_account_change_contacts_success"), "useraccount.alerts.dashboardContacts");
+                        Alerter.success($translate.instant("user_account_change_contacts_success"), "useraccount.alerts.dashboardContacts");
                     },
                     (err) => {
-                        Alerter.alertFromSWS($scope.tr("user_account_change_contacts_error"), err, "useraccount.alerts.dashboardContacts");
+                        Alerter.alertFromSWS($translate.instant("user_account_change_contacts_error"), err, "useraccount.alerts.dashboardContacts");
                     }
                 )
                 .finally(() => {

@@ -2,20 +2,20 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addIpv6"
-         data-wizard-title="i18n.ip_table_manage_add_ipv6block">
+         data-wizard-title=":: 'ip_table_manage_add_ipv6block' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="isValid.all()">
 
             <p class="alert alert-info"
-               data-i18n-static="ip_table_manage_add_ipv6block_question">
+               data-translate="ip_table_manage_add_ipv6block_question">
             </p>
 
             <form>
                 <div class="form-group">
                     <label class="control-label"
                            for="ipv6"
-                           data-i18n-static="ip_ipblock">
+                           data-translate="ip_ipblock">
                     </label>
                     <p class="form-control-static"
                        data-ng-bind="data.ipBlock.ipBlock">
@@ -28,7 +28,7 @@
                      }">
                     <label class="control-label"
                            for="ipv6"
-                           data-ng-bind="i18n.ip_table_header_ip_address  + ' ' + (i18n.ip_ipv6)">
+                           data-ng-bind="('ip_table_header_ip_address' | translate)  + ' ' + ('ip_ipv6' | translate)">
                     </label>
                     <input type="text"
                            id="ipv6"
@@ -42,7 +42,7 @@
                      }">
                     <label class="control-label"
                            for="reverseV6"
-                           data-ng-bind="i18n.ip_table_header_reverse + ' ' + (i18n.optional)">
+                           data-ng-bind="('ip_table_header_reverse' | translate) + ' ' + ('optional' | translate)">
                     </label>
                     <input type="text"
                            id="reverseV6"

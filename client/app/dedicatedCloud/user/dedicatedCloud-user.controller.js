@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudUserCtrl", function ($scope, $stateParams, $timeout, $q, DedicatedCloud, Alerter, constants) {
+angular.module("App").controller("DedicatedCloudUserCtrl", function ($scope, $stateParams, $timeout, $q, $translate, DedicatedCloud, Alerter, constants) {
     "use strict";
 
     $scope.firstStep = true;
@@ -27,29 +27,29 @@ angular.module("App").controller("DedicatedCloudUserCtrl", function ($scope, $st
     // POLLING
     //---------------------------------------------
     $scope.$on("dedicatedCloud.enableUser.start", () => {
-        $scope.setMessage($scope.tr("dedicatedCloud_USER_enable_activation"));
+        $scope.setMessage($translate.instant("dedicatedCloud_USER_enable_activation"));
     });
 
     $scope.$on("dedicatedCloud.enableUser.done", () => {
         $scope.$broadcast("paginationServerSide.reload", "userTable");
-        $scope.setMessage($scope.tr("dedicatedCloud_USER_enable_success"));
+        $scope.setMessage($translate.instant("dedicatedCloud_USER_enable_success"));
     });
 
     $scope.$on("dedicatedCloud.enableUser.error", (event, err) => {
-        $scope.setMessage($scope.tr("dedicatedCloud_USER_enable_fail"), { message: err.message, type: "ERROR" });
+        $scope.setMessage($translate.instant("dedicatedCloud_USER_enable_fail"), { message: err.message, type: "ERROR" });
     });
 
     $scope.$on("dedicatedCloud.disableUser.start", () => {
-        $scope.setMessage($scope.tr("dedicatedCloud_USER_disable_deactivation"));
+        $scope.setMessage($translate.instant("dedicatedCloud_USER_disable_deactivation"));
     });
 
     $scope.$on("dedicatedCloud.disableUser.done", () => {
         $scope.$broadcast("paginationServerSide.reload", "userTable");
-        $scope.setMessage($scope.tr("dedicatedCloud_USER_disable_success"));
+        $scope.setMessage($translate.instant("dedicatedCloud_USER_disable_success"));
     });
 
     $scope.$on("dedicatedCloud.disableUser.error", (event, err) => {
-        $scope.setMessage($scope.tr("dedicatedCloud_USER_disable_fail"), { message: err.data, type: "ERROR" });
+        $scope.setMessage($translate.instant("dedicatedCloud_USER_disable_fail"), { message: err.data, type: "ERROR" });
     });
 
     $scope.$on("$destroy", () => {
@@ -102,19 +102,19 @@ angular.module("App").controller("DedicatedCloudUserCtrl", function ($scope, $st
 
     // -- PASSWORD POLLING
     $scope.$on("dedicatedCloud.password.update.poll.start", () => {
-        Alerter.success($scope.tr("dedicatedCloud_users_password_loading_start"), $scope.alerts.users);
+        Alerter.success($translate.instant("dedicatedCloud_users_password_loading_start"), $scope.alerts.users);
     });
 
     $scope.$on("dedicatedCloud.password.update.poll.doing", () => {
-        Alerter.success($scope.tr("dedicatedCloud_users_password_loading_doing"), $scope.alerts.users);
+        Alerter.success($translate.instant("dedicatedCloud_users_password_loading_doing"), $scope.alerts.users);
     });
 
     $scope.$on("dedicatedCloud.password.update.poll.done", () => {
-        Alerter.success($scope.tr("dedicatedCloud_users_password_loading_done"), $scope.alerts.users);
+        Alerter.success($translate.instant("dedicatedCloud_users_password_loading_done"), $scope.alerts.users);
     });
 
     $scope.$on("dedicatedCloud.password.update.poll.error", (pollObject, err) => {
-        Alerter.alertFromSWS($scope.tr("dedicatedCloud_users_password_loading_error"), err, $scope.alerts.users);
+        Alerter.alertFromSWS($translate.instant("dedicatedCloud_users_password_loading_error"), err, $scope.alerts.users);
     });
 
     $scope.$watch(
@@ -159,7 +159,7 @@ angular.module("App").controller("DedicatedCloudUserCtrl", function ($scope, $st
                 },
                 (err) => {
                     $scope.error = false;
-                    $scope.setMessage($scope.tr("dedicatedCloud_users_loading_error"), {
+                    $scope.setMessage($translate.instant("dedicatedCloud_users_loading_error"), {
                         type: "ERROR",
                         message: err.message
                     });
@@ -200,12 +200,12 @@ angular.module("App").controller("DedicatedCloudUserCtrl", function ($scope, $st
     $scope.saveUserCurrentEdit = function () {
         DedicatedCloud.updateUser($stateParams.productId, $scope.userCurrentEdit).then(
             () => {
-                $scope.setMessage($scope.tr("dedicatedCloud_USER_set_success", $scope.userCurrentEdit.name), { type: "ok" });
+                $scope.setMessage($translate.instant("dedicatedCloud_USER_set_success", { t0: $scope.userCurrentEdit.name }), { type: "ok" });
                 $scope.userCurrentEditBack = null;
                 findUser($scope.userCurrentEdit).isUpdating = true;
             },
             (err) => {
-                $scope.setMessage($scope.tr("dedicatedCloud_USER_set_fail", $scope.userCurrentEdit.name), { type: "ERROR", message: err.message }, $scope.alerts.users);
+                $scope.setMessage($translate.instant("dedicatedCloud_USER_set_fail", { t0: $scope.userCurrentEdit.name }), { type: "ERROR", message: err.message }, $scope.alerts.users);
                 $scope.userCurrentEditBack = null;
             }
         );

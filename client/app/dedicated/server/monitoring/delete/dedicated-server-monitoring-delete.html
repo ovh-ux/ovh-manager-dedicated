@@ -3,7 +3,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="deleteMonitoring"
-         data-wizard-title="tr('server_tab_MONITORING_delete_title')">
+         data-wizard-title=":: 'server_tab_MONITORING_delete_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="!loading">
@@ -14,7 +14,7 @@
             </div>
 
             <p data-ng-if="!loading"
-               data-ng-bind-html="tr('server_tab_MONITORING_delete_question', [monitoring.ip])">
+               data-translate="server_tab_MONITORING_delete_question" data-translate-values="{ t0: monitoring.ip }">
             </p>
 
         </div>
