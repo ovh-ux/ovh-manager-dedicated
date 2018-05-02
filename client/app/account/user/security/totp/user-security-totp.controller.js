@@ -1,9 +1,10 @@
 angular.module("UserAccount.controllers").controller("UserAccount.controllers.doubleAuth.totp", [
     "$scope",
     "$q",
+    "$translate",
     "UserAccount.services.doubleAuth.totp",
     "Alerter",
-    function ($scope, $q, DoubleAuthTotpService, Alerter) {
+    function ($scope, $q, $translate, DoubleAuthTotpService, Alerter) {
         "use strict";
 
         $scope.totp = {
@@ -47,7 +48,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
                 .then((totpAccounts) => {
                     $scope.totp.totpAccounts = totpAccounts;
                 })
-                .catch((err) => Alerter.alertFromSWS($scope.tr("user_account_security_double_auth_type_totp_error"), err.data, "doubleAuthAlert"))
+                .catch((err) => Alerter.alertFromSWS($translate.instant("user_account_security_double_auth_type_totp_error"), err.data, "doubleAuthAlert"))
                 .finally(() => {
                     $scope.totp.isLoading = false;
                 });

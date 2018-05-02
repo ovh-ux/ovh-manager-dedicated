@@ -3,7 +3,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="orderCapacity"
-         data-wizard-title="tr('server_configuration_ftpbackup_order_title')">
+         data-wizard-title=":: 'server_configuration_ftpbackup_order_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="!loading && order.choiceIndex != null"
@@ -15,16 +15,16 @@
             </div>
 
             <div data-ng-if="!loading">
-                <p data-i18n-static="server_configuration_ftpbackup_order_info"></p>
+                <p data-translate="server_configuration_ftpbackup_order_info"></p>
                 <table class="table table-hover"
                        data-ng-if="order.model.length">
                     <thead>
                         <tr>
                             <th colspan="2"
-                                data-i18n-static="server_configuration_ftpbackup_order_type_name">
+                                data-translate="server_configuration_ftpbackup_order_type_name">
                             </th>
                             <th class="text-right"
-                                data-i18n-static="server_configuration_ftpbackup_order_type_price">
+                                data-translate="server_configuration_ftpbackup_order_type_price">
                             </th>
                         </tr>
                     </thead>
@@ -40,7 +40,7 @@
                             </td>
                             <td>
                                 <label for="capacityChoice-{{ $index }}"
-                                       data-ng-bind="orderType.capacity + ' ' + tr('unit_size_GB')">
+                                       data-ng-bind="orderType.capacity + ' ' + ('unit_size_GB' | translate)">
                                 </label>
                             </td>
                             <td class="text-right">
@@ -53,7 +53,7 @@
                 </table>
                 <strong class="text-danger"
                         data-ng-if="!order.model.length"
-                        data-i18n-static="server_configuration_ftpbackup_order_empty_choice">
+                        data-translate="server_configuration_ftpbackup_order_empty_choice">
                 </strong>
             </div>
 
@@ -69,7 +69,7 @@
             </div>
 
             <div data-ng-if="!loading">
-                <p data-i18n-static="server_configuration_ftpbackup_order_resume"></p>
+                <p data-translate="server_configuration_ftpbackup_order_resume"></p>
                 <div data-ng-repeat="detail in order.bc.details track by $index">
                     <p>
                         <span data-ng-bind="detail.description"></span> :
@@ -79,16 +79,16 @@
                     </p>
                     <p class="text-center"
                        data-ng-if="detail.explanation">
-                        (<span data-ng-bind-html="tr('server_configuration_ftpbackup_order_price_explanation',[detail.explanation.price])"></span>)
+                        (<span data-ng-bind-html="'server_configuration_ftpbackup_order_price_explanation' | translate:{ t0: detail.explanation.price }"></span>)
                     </p>
                 </div>
                 <p class="mt-2 text-center">
-                    <span data-i18n-static="server_configuration_ftpbackup_order_price_HT"></span>
+                    <span data-translate="server_configuration_ftpbackup_order_price_HT"></span>
                     <strong class="text-danger"
                             data-ng-bind="order.bc.prices.withoutTax.text">
                     </strong>
                     <br/>
-                    <span data-i18n-static="server_configuration_ftpbackup_order_price_TTC"></span>
+                    <span data-translate="server_configuration_ftpbackup_order_price_TTC"></span>
                     <strong class="text-danger"
                             data-ng-bind="order.bc.prices.withTax.text">
                     </strong>
@@ -98,7 +98,7 @@
                     <label>
                         <input type="checkbox"
                                data-ng-model="order.agreeContract" />
-                        <span data-i18n-static="server_configuration_ftpbackup_order_contracts"></span>
+                        <span data-translate="server_configuration_ftpbackup_order_contracts"></span>
                     </label>
                     <ul>
                         <li data-ng-repeat="contract in order.bc.contracts track by $index">

@@ -1,8 +1,8 @@
 class UserContractsAcceptModalCtrl {
-    constructor ($scope, UserContractService, translator) {
+    constructor ($scope, UserContractService, $translate) {
         this.$scope = $scope;
         this.UserContractService = UserContractService;
-        this.translator = translator;
+        this.$translate = $translate;
 
         this.model = {
             accepted: {
@@ -47,9 +47,9 @@ class UserContractsAcceptModalCtrl {
     getCheckboxLabel () {
         const codes = _.pluck(this.contracts.data, "code");
         if (_.size(codes) > 1) {
-            return this.translator.tr("user_contracts_modal_checkbox_label_both");
+            return this.$translate.instant("user_contracts_modal_checkbox_label_both");
         }
-        return this.translator.tr(`user_contracts_modal_checkbox_label_${codes[0]}`);
+        return this.$translate.instant(`user_contracts_modal_checkbox_label_${codes[0]}`);
     }
 }
 

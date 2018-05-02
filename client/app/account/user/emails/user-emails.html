@@ -1,25 +1,25 @@
 <div class="module-useraccount-sections-emails-container">
 
     <div class="page-header">
-        <h1 data-i18n-static="user_account_email_list_title"></h1>
+        <h1 data-translate="user_account_email_list_title"></h1>
     </div>
 
     <div class="tab-content">
         <div data-ovh-alert="user_account_email"></div>
         <p class="my-5">
-            <span data-i18n-static="user_account_email_info"></span><br />
-            <span data-i18n-static="user_account_email_assitance_info"></span>
-            <a href="#/ticket" data-i18n-static="user_account_email_assitance_title"></a>
+            <span data-translate="user_account_email_info"></span><br />
+            <span data-translate="user_account_email_assitance_info"></span>
+            <a href="#/ticket" data-translate="user_account_email_assitance_title"></a>
         </p>
         <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th data-i18n-static="user_account_table_email_subject"></th>
-                        <th class="text-center" data-i18n-static="user_account_table_email_date"></th>
+                        <th data-translate="user_account_table_email_subject"></th>
+                        <th class="text-center" data-translate="user_account_table_email_date"></th>
                         <th class="text-center" style="width: 35px;">
                             <button class="btn btn-link"
-                                    title="{{ i18n.user_account_table_email_refresh }}"
+                                    title="{{ 'user_account_table_email_refresh' | translate }}"
                                     data-ng-click="getEmailIds(true)"
                                     data-ng-disabled="loaders.emails">
                                 <span class="fa fa-refresh"></span>
@@ -39,7 +39,7 @@
                     <tr>
                         <td colspan="3"
                             class="text-center"
-                            data-i18n-static="user_account_table_email_nodata">
+                            data-translate="user_account_table_email_nodata">
                         </td>
                     </tr>
                 </tbody>
@@ -81,8 +81,8 @@
              data-nb-pages="nbPages"
              data-transform-item="transformItem(item)"
              data-on-transform-item-done="onTransformItemDone(items)"
-             data-page-placeholder="{{ tr('pagination_page', [currentPage, nbPages]) }}"
-             data-item-per-page-placeholder="{{ tr('pagination_display') }}"></div>
+             data-page-placeholder="{{ 'pagination_page' | translate:{ t0: currentPage, t1: nbPages } }}"
+             data-item-per-page-placeholder="{{ 'pagination_display' | translate }}"></div>
         </div>
 
     </div>

@@ -71,7 +71,7 @@ angular.module("App").controller("NasDetailsCtrl", class NasDetailsCtrl {
             },
             (data) => {
                 this.loaders.nas = false;
-                this.Alerter.alertFromSWS(this.$scope.tr("nas_dashboard_loading_error"), data, this.alerterId);
+                this.Alerter.alertFromSWS(this.$translate.instant("nas_dashboard_loading_error"), data, this.alerterId);
             }
         );
 
@@ -83,7 +83,7 @@ angular.module("App").controller("NasDetailsCtrl", class NasDetailsCtrl {
             },
             (data) => {
                 this.loaders.information = false;
-                this.Alerter.alertFromSWS(this.$scope.tr("nas_dashboard_loading_error"), data, this.alerterId);
+                this.Alerter.alertFromSWS(this.$translate.instant("nas_dashboard_loading_error"), data, this.alerterId);
             }
         );
 

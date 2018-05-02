@@ -11,14 +11,7 @@ angular.module("App").config(($stateProvider, $urlServiceProvider) => {
             }
         },
         reloadOnSearch: false,
-        resolve: {
-            translator: [
-                "translator",
-                function (translator) {
-                    return translator.load(["dedicatedcloud"]).then(() => translator);
-                }
-            ]
-        }
+        translations: ["dedicatedCloud"]
     });
 
     // ensure compatibility with links sended by emails like #/configuration/dedicated_cloud/pcc-123456?action=confirmcancel&token=myToken

@@ -9,11 +9,9 @@ module.exports = function (grunt) {
     const assets = require("./Assets");
     const constants = require("./constants.config");
 
-    const Http = require("http");
-    const Https = require("https");
     const glob = require("glob");
 
-    let mode = grunt.option("mode") || "dev";
+    const mode = grunt.option("mode") || "dev";
     const basepath = grunt.option("base-path") || (isProd() ? "" : "../../");
     const target = grunt.option("target") || grunt.option("zone") || "EU";
     const targetsAvailable = ["EU", "CA", "US"];
@@ -970,37 +968,9 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask("test", (target, option) => {
-        if (target === "e2e") {
-
-            // Check if it's a remote test
-            if (process.env.E2E_BASE_URL && !/^https?:\/\/localhost/.test(process.env.E2E_BASE_URL)) {
-                option = "remote";
-            }
-
-            if (option === "remote") {
-                return grunt.task.run([
-                    "protractor"
-                ]);
-
-            }
-
-            return grunt.task.run([ // not implemented, plz use remote
-                "buildDev",
-                "protractor"
-            ]);
-
-
-        }
-        return grunt.task.run([
-            "eslint"
-        ]);
-
-    });
+    grunt.registerTask("test", ["eslint"]);
 
     grunt.registerTask("default", ["build"]);
-
-    grunt.registerTask("jshintBabel", ["eslint", "babel"]);
 
     grunt.registerTask("buildProd", [
         "clean",

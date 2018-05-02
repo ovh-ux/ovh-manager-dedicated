@@ -1,6 +1,6 @@
 <div>
     <h1 class="page-header"
-        data-i18n-static="payment_mean_title">
+        data-translate="payment_mean_title">
     </h1>
 
     <div class="tab-content">
@@ -10,9 +10,9 @@
         <p class="alert alert-info"
            role="alert"
            data-ng-if="guide">
-            <span data-i18n-static="autorenew_service_autorenew_guide_help"></span>
+            <span data-translate="autorenew_service_autorenew_guide_help"></span>
             <a data-ng-href="{{guide}}" target="_blank">
-                <span data-i18n-static="autorenew_guide_help"></span>
+                <span data-translate="autorenew_guide_help"></span>
                 <i class="fa fa-external-link"
                    aria-hidden="true">
                 </i>
@@ -22,13 +22,13 @@
         <a class="btn btn-default"
            data-ng-if="canAddPaymentMeans"
            data-ng-href="#/billing/mean/add"
-           data-i18n-static="payment_mean_add_title">
+           data-translate="payment_mean_add_title">
         </a>
         <button type="button" class="btn btn-default"
-                title="{{ i18n.payment_mean_action_unavailable_for_our_subsidiary }}"
+                title="{{ 'payment_mean_action_unavailable_for_our_subsidiary' | translate }}"
                 data-ng-if="!canAddPaymentMeans"
                 disabled="disabled"
-                data-i18n-static="payment_mean_add_title">
+                data-translate="payment_mean_add_title">
         </button>
 
         <div class="table-responsive">
@@ -37,23 +37,23 @@
                     <tr>
                         <th scope="col"
                             colspan="3"
-                            data-i18n-static="mean_table_head_type">
+                            data-translate="mean_table_head_type">
                         </th>
                         <th scope="col"
-                            data-i18n-static="mean_table_head_description">
+                            data-translate="mean_table_head_description">
                         </th>
                         <th scope="col"
-                            data-i18n-static="payment_mean_set_default">
+                            data-translate="payment_mean_set_default">
                         </th>
                         <th scope="col"
-                            data-i18n-static="mean_table_head_state">
+                            data-translate="mean_table_head_state">
                         </th>
                         <th scope="col"
                             data-ng-if="isCreditWithThreeDsValidation() && hasMean(paymentsMean.creditCards)"
-                            data-i18n-static="mean_table_head_3d_secure">
+                            data-translate="mean_table_head_3d_secure">
                         </th>
                         <th scope="col"
-                            data-i18n-static="payment_mean_delete_payment_mean">
+                            data-translate="payment_mean_delete_payment_mean">
                         </th>
                     </tr>
                 </thead>
@@ -69,21 +69,21 @@
                     <tr>
                         <td data-ng-attr-colspan="{{:: isCreditWithThreeDsValidation() && hasMean(paymentsMean.creditCards) ? 8 : 7 }}"
                             class="text-center"
-                            data-i18n-static="common_payment_type_none">
+                            data-translate="common_payment_type_none">
                         </td>
                     </tr>
                 </tbody>
                 <tbody data-ng-if="!loading.means && hasMean(paymentsMean.paypals)">
                     <tr data-ng-repeat="mean in paymentsMean.paypals track by mean.id">
                         <th scope="row"
-                            data-i18n-static="common_payment_type_paypal">
+                            data-translate="common_payment_type_paypal">
                         </th>
                         <td colspan="2"
                             data-ng-bind=":: mean.email">
                         </td>
                         <td>
                             <div data-ng-show="!editMode">
-                                <em data-i18n-static="payment_mean_no_description"
+                                <em data-translate="payment_mean_no_description"
                                     data-ng-if="!mean.description">
                                 </em>
                                 <span data-ng-bind="mean.description"
@@ -92,7 +92,7 @@
                                 <button type="button"
                                         class="btn btn-link"
                                         data-ng-click="editMode = true"
-                                        title="{{:: tr('payment_mean_description_edit') }}">
+                                        title="{{ :: 'payment_mean_description_edit' | translate }}">
                                     <i class="fa fa-edit"
                                        aria-hidden="true">
                                     </i>
@@ -107,7 +107,7 @@
                                     <button type="button"
                                             class="btn btn-default"
                                             data-ng-click="updateMean('paypal', mean, newDescription); editMode = false"
-                                            title="{{:: tr('payment_mean_description_save') }}">
+                                            title="{{ :: 'payment_mean_description_save' | translate }}">
                                         <i class="fa fa-check"
                                            aria-hidden="true">
                                         </i>
@@ -117,7 +117,7 @@
                                     <button type="button"
                                             class="btn btn-default"
                                             data-ng-click="newDescription = ''; editMode = false"
-                                            title="{{:: tr('payment_mean_description_cancel') }}">
+                                            title="{{ :: 'payment_mean_description_cancel' | translate }}">
                                         <i class="fa fa-times"
                                            aria-hidden="true">
                                         </i>
@@ -131,14 +131,14 @@
                                    data-ng-value="true"
                                    data-ng-change="setAsDefaultPaymentMean(mean, 'paypal')">
                         </td>
-                        <td data-ng-bind=":: tr('paymentType_status_' + mean.state)"></td>
+                        <td data-translate="{{ :: 'paymentType_status_' + mean.state }}"></td>
                         <td data-ng-if=":: isCreditWithThreeDsValidation() && hasMean(paymentsMean.creditCards)"></td>
                         <td class="text-center">
                             <button type="button"
                                     class="btn btn-link"
                                     data-ng-disabled="mean.defaultPaymentMean"
                                     data-ng-click="setAction('delete', { details: mean, type: 'paypal' }, 'mean')"
-                                    title="{{:: tr('payment_mean_delete_payment_mean') }}">
+                                    title="{{ :: 'payment_mean_delete_payment_mean' | translate }}">
                                 <i class="fa fa-trash"
                                    aria-hidden="true">
                                 </i>
@@ -149,7 +149,7 @@
                 <tbody data-ng-if="!loading.means && hasMean(paymentsMean.creditCards)">
                     <tr data-ng-repeat="mean in paymentsMean.creditCards track by mean.id">
                         <th scope="row"
-                            data-i18n-static="common_payment_type_creditCard"></th>
+                            data-translate="common_payment_type_creditCard"></th>
                         <td class="text-center"
                             data-ng-if="mean.getIcon">
                             <img width="37"
@@ -161,13 +161,13 @@
                             <span data-ng-bind="::mean.number"></span>
                             <br />
                             <span data-ng-if="isCreditWithExpiration()"
-                                  data-i18n-static="common_payment_type_creditCard_expiration_date">
+                                  data-translate="common_payment_type_creditCard_expiration_date">
                             </span>
                             <span data-ng-bind="mean.expirationDate|date:'MM/yyyy'"></span>
                         </td>
                         <td>
                             <div data-ng-show="!editMode">
-                                <em data-i18n-static="payment_mean_no_description"
+                                <em data-translate="payment_mean_no_description"
                                     data-ng-if="!mean.description">
                                 </em>
                                 <span data-ng-bind="mean.description"
@@ -176,7 +176,7 @@
                                 <button type="button"
                                         class="btn btn-link"
                                         data-ng-click="editMode = true"
-                                        title="{{:: tr('payment_mean_description_edit') }}">
+                                        title="{{ :: 'payment_mean_description_edit' | translate }}">
                                     <i class="fa fa-edit"
                                        aria-hidden="true">
                                     </i>
@@ -191,7 +191,7 @@
                                     <button type="button"
                                             class="btn btn-default"
                                             data-ng-click="updateMean('creditCard', mean, newDescription); editMode = false"
-                                            title="{{:: tr('payment_mean_description_save') }}">
+                                            title="{{ :: 'payment_mean_description_save' | translate }}">
                                         <i class="fa fa-check"
                                            aria-hidden="true">
                                         </i>
@@ -201,7 +201,7 @@
                                     <button type="button"
                                             class="btn btn-default"
                                             data-ng-click="newDescription = ''; editMode = false"
-                                            title="{{:: tr('payment_mean_description_cancel') }}">
+                                            title="{{ :: 'payment_mean_description_cancel' | translate }}">
                                         <i class="fa fa-times"
                                            aria-hidden="true">
                                         </i>
@@ -216,7 +216,7 @@
                                    data-ng-disabled="mean.state !== 'valid'"
                                    data-ng-change="setAsDefaultPaymentMean(mean, 'creditCard')">
                         </td>
-                        <td data-i18n-static="paymentType_status_{{ mean.state | lowercase }}"></td>
+                        <td data-ng-bind="'paymentType_status_' + mean.state | translate"></td>
                         <td class="text-center"
                             data-ng-if="isCreditWithThreeDsValidation()">
                             <span class="label"
@@ -224,7 +224,7 @@
                                       'label-success': mean.threeDsValidated,
                                       'label-danger': !mean.threeDsValidated
                                   }"
-                                  data-ng-bind=":: tr('mean_table_head_3d_secure_' + mean.threeDsValidated)">
+                                  data-ng-bind="::(mean.threeDsValidated ? 'mean_table_head_3d_secure_true' : 'mean_table_head_3d_secure_false') | translate">
                             </span>
                         </td>
                         <td class="text-center">
@@ -232,9 +232,9 @@
                                     class="btn btn-link"
                                     data-ng-disabled="mean.defaultPaymentMean"
                                     data-ng-click="setAction('delete', { details: mean, type: 'creditCard' }, 'mean')"
-                                    title="{{:: tr('payment_mean_delete_payment_mean') }}">
+                                    title="{{ :: 'payment_mean_delete_payment_mean' | translate }}">
                                 <i class="fa fa-trash"
-                                   aria-label="{{:: tr('payment_mean_delete_payment_mean') }}"
+                                   aria-label="{{ :: 'payment_mean_delete_payment_mean' | translate }}"
                                    aria-hidden="true">
                                 </i>
                             </button>
@@ -247,13 +247,13 @@
                         }"
                         data-ng-repeat="mean in paymentsMean.bankAccounts track by mean.id">
                         <th scope="row"
-                            data-i18n-static="common_payment_type_bankAccount"></th>
+                            data-translate="common_payment_type_bankAccount"></th>
                         <td colspan="2"
                             data-ng-bind=":: mean.iban">
                         </td>
                         <td>
                             <div data-ng-show="!editMode">
-                                <em data-i18n-static="payment_mean_no_description"
+                                <em data-translate="payment_mean_no_description"
                                     data-ng-if="!mean.description">
                                 </em>
                                 <span data-ng-bind="mean.description"
@@ -262,7 +262,7 @@
                                 <button type="button"
                                         class="btn btn-link"
                                         data-ng-click="editMode = true"
-                                        title="{{:: tr('payment_mean_description_edit') }}">
+                                        title="{{ :: 'payment_mean_description_edit' | translate }}">
                                     <i class="fa fa-edit"
                                        aria-hidden="true">
                                     </i>
@@ -277,7 +277,7 @@
                                     <button type="button"
                                             class="btn btn-default"
                                             data-ng-click="updateMean('bankAccount', mean, newDescription); editMode = false"
-                                            title="{{:: tr('payment_mean_description_save') }}">
+                                            title="{{ :: 'payment_mean_description_save' | translate }}">
                                         <i class="fa fa-check"
                                            aria-hidden="true">
                                         </i>
@@ -287,7 +287,7 @@
                                     <button type="button"
                                             class="btn btn-default"
                                             data-ng-click="newDescription = ''; editMode = false"
-                                            title="{{:: tr('payment_mean_description_cancel') }}">
+                                            title="{{ :: 'payment_mean_description_cancel' | translate }}">
                                         <i class="fa fa-times"
                                            aria-hidden="true">
                                         </i>
@@ -298,7 +298,7 @@
                         <td class="text-center">
                             <label for="setDefaultPaymentMean{{ $id }}"
                                    class="sr-only"
-                                   data-i18n-static="payment_mean_radio_select_default">
+                                   data-translate="payment_mean_radio_select_default">
                             </label>
                             <input id="setDefaultPaymentMean{{ $id }}"
                                    type="radio"
@@ -309,16 +309,16 @@
                         </td>
                         <td>
                             <span data-ng-if="mean.state !== 'pendingValidation'"
-                                  data-ng-bind="i18n['paymentType_status_' + mean.state]">
+                                  data-ng-bind="('paymentType_status_' + mean.state) | translate">
                             </span>
                             <span data-ng-if="mean.state === 'pendingValidation'"
-                                  data-i18n-static="paymentType_status_waiting_for_documents">
+                                  data-translate="paymentType_status_waiting_for_documents">
                             </span>
                             <p data-ng-if="mean.state === 'pendingValidation'">
                                 <a data-ng-href="{{ mean.validationDocumentLink  }}"
                                    target="_blank"
-                                   title="{{ i18n.payment_mean_return_by_mail_procedure }} {{ billing_common_link_new_window }}"
-                                   data-i18n-static="payment_mean_return_by_mail_procedure">
+                                   title="{{ 'payment_mean_return_by_mail_procedure' | translate }} {{ billing_common_link_new_window }}"
+                                   data-translate="payment_mean_return_by_mail_procedure">
                                 </a>
                             </p>
                         </td>
@@ -328,7 +328,7 @@
                                     class="btn btn-link"
                                     data-ng-disabled="mean.defaultPaymentMean"
                                     data-ng-click="setAction('delete', { details: mean, type: 'bankAccount' }, 'mean');"
-                                    title="{{:: tr('payment_mean_delete_payment_mean') }}">
+                                    title="{{ :: 'payment_mean_delete_payment_mean' | translate }}">
                                 <i class="fa fa-trash"
                                    aria-hidden="true">
                                 </i>
@@ -342,13 +342,13 @@
                         }"
                         data-ng-repeat="mean in paymentsMean.deferredPaymentAccounts track by mean.id">
                         <th scope="row"
-                            data-i18n-static="common_payment_type_deferredPaymentAccount"></th>
+                            data-translate="common_payment_type_deferredPaymentAccount"></th>
                         <td colspan="2"
                             data-ng-bind=":: mean.label">
                         </td>
                         <td>
                             <div data-ng-show="!editMode">
-                                <em data-i18n-static="payment_mean_no_description"
+                                <em data-translate="payment_mean_no_description"
                                     data-ng-show="!mean.description">
                                 </em>
                                 <span data-ng-bind="mean.description"
@@ -358,7 +358,7 @@
                                         class="btn btn-link"
                                         data-ng-click="editMode = true">
                                     <i class="fa fa-edit"
-                                       aria-label="{{:: tr('payment_mean_description_edit') }}"
+                                       aria-label="{{ :: 'payment_mean_description_edit' | translate }}"
                                        aria-hidden="true">
                                     </i>
                                 </button>
@@ -367,7 +367,7 @@
                                  class="input-group">
                                 <label for="descriptionTextInput{{ $id }}"
                                        class="sr-only"
-                                       data-i18n-static="payment_mean_description_input">
+                                       data-translate="payment_mean_description_input">
                                 </label>
                                 <input id="descriptionTextInput{{ $id }}"
                                        class="form-control"
@@ -377,7 +377,7 @@
                                     <button type="button"
                                             class="btn btn-default"
                                             data-ng-click="updateMean('deferredPaymentAccount', mean, newDescription); editMode = false"
-                                            title="tr('payment_mean_description_save')">
+                                            title="{{ 'payment_mean_description_save' | translate }}">
                                         <i class="fa fa-check"
                                            aria-hidden="true">
                                         </i>
@@ -387,7 +387,7 @@
                                     <button type="button"
                                             class="btn btn-default"
                                             data-ng-click="newDescription = ''; editMode = false"
-                                            title="tr('payment_mean_description_cancel')">
+                                            title="{{ 'payment_mean_description_cancel' | translate }}">
                                         <i class="fa fa-times"
                                            aria-hidden="true">
                                         </i>
@@ -398,7 +398,7 @@
                         <td class="text-center">
                             <label for="setDefaultPaymentMean{{ $id }}"
                                    class="sr-only"
-                                   data-i18n-static="payment_mean_radio_select_default">
+                                   data-translate="payment_mean_radio_select_default">
                             </label>
                             <input id="setDefaultPaymentMean{{ $id }}"
                                    type="radio"
@@ -407,13 +407,13 @@
                                    data-ng-change="setAsDefaultPaymentMean(mean, 'deferredPaymentAccount')"
                                    data-ng-disabled="mean.state === 'pendingValidation'">
                         </td>
-                        <td data-ng-bind=":: tr('paymentType_status_' + mean.state)"></td>
+                        <td data-ng-bind=":: 'paymentType_status_' + mean.state | translate"></td>
                         <td data-ng-if=":: isCreditWithThreeDsValidation() && hasMean(paymentsMean.creditCards)"></td>
                         <td class="text-center">
                             <button type="button"
                                     class="btn btn-link"
                                     data-ng-disabled="true"
-                                    title="{{:: tr('payment_mean_delete_payment_mean') }}">
+                                    title="{{ :: 'payment_mean_delete_payment_mean' | translate }}">
                                 <i class="fa fa-trash"
                                    aria-hidden="true">
                                 </i>

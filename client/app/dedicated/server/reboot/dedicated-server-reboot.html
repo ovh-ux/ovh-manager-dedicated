@@ -6,7 +6,7 @@
         <button
             type="button"
             class="close pull-right"
-            aria-label="{{ ::'wizard_cancel' | UAi18n }}"
+            aria-label="{{ ::'wizard_cancel' | translate }}"
             data-ng-click="$ctrl.close()">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -19,9 +19,10 @@
         </div>
         <div data-ng-if="!$ctrl.isLoading && !$ctrl.isRebooting">
             <h3 class="modal-title"
-                data-i18n-static="server_configuration_reboot_title">
+                data-translate="server_configuration_reboot_title">
             </h3>
-           <p data-ng-bind="tr('server_configuration_reboot_step2_question', [$ctrl.server.name])"></p>
+           <p data-translate="server_configuration_reboot_step2_question"
+            data-translate-values="{ t0: $ctrl.server.name }"></p>
        </div>
     </div>
 
@@ -29,12 +30,12 @@
         <button type="button"
                 class="btn btn-default"
                 data-ng-click="$ctrl.close()"
-                data-i18n-static="wizard_cancel">
+                data-translate="wizard_cancel">
         </button>
         <button type="submit"
                 class="btn btn-primary"
                 data-ng-disabled="$ctrl.isLoading || $ctrl.isRebooting"
-                data-i18n-static="wizard_confirm">
+                data-translate="wizard_confirm">
         </button>
     </div>
 </form>

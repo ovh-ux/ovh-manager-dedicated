@@ -1,6 +1,6 @@
 // --------------DELETE ACCESS------------------
 
-angular.module("App").controller("HousingDeleteAccessFtpBackupCtrl", ($rootScope, $scope, $stateParams, Housing, Alerter) => {
+angular.module("App").controller("HousingDeleteAccessFtpBackupCtrl", ($rootScope, $scope, $stateParams, $translate, Housing, Alerter) => {
     "use strict";
 
     const alert = "housing_tab_ftpbackup_alert";
@@ -14,10 +14,10 @@ angular.module("App").controller("HousingDeleteAccessFtpBackupCtrl", ($rootScope
         Housing.deleteFtpBackupIp($stateParams.productId, $scope.access)
             .then(
                 () => {
-                    Alerter.success($scope.tr("housing_configuration_ftpbackup_access_delete_success", $scope.access), alert);
+                    Alerter.success($translate.instant("housing_configuration_ftpbackup_access_delete_success", { t0: $scope.access }), alert);
                 },
                 (data) => {
-                    Alerter.alertFromSWS($scope.tr("housing_configuration_ftpbackup_access_delete_failure", $scope.access), data, alert);
+                    Alerter.alertFromSWS($translate.instant("housing_configuration_ftpbackup_access_delete_failure", { t0: $scope.access }), data, alert);
                 }
             )
             .finally(() => {

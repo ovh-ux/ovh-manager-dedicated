@@ -1,11 +1,11 @@
 angular.module("App").controller("DedicatedCloudConfirmTerminateCtrl", class DedicatedCloudConfirmTerminateCtrl {
 
-    constructor ($state, $stateParams, OvhApiDedicatedCloud, Alerter, translator) {
+    constructor ($state, $stateParams, OvhApiDedicatedCloud, Alerter, $translate) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.OvhApiDedicatedCloud = OvhApiDedicatedCloud;
         this.Alerter = Alerter;
-        this.translator = translator;
+        this.$translate = $translate;
 
         this.terminateConfirmForm = null;
         this.reasons = ["LACK_OF_PERFORMANCES", "TOO_EXPENSIVE", "TOO_HARD_TO_USE", "NOT_RELIABLE", "NOT_NEEDED_ANYMORE", "MIGRATED_TO_COMPETITOR", "MIGRATED_TO_ANOTHER_OVH_PRODUCT", "OTHER"];
@@ -46,9 +46,9 @@ angular.module("App").controller("DedicatedCloudConfirmTerminateCtrl", class Ded
             reason: this.model.reason,
             token: this.$stateParams.token
         }).$promise.then(() => {
-            this.Alerter.success(this.translator.tr("dedicatedCloud_confirm_close_success"), "dedicatedCloud_alert");
+            this.Alerter.success(this.$translate.instant("dedicatedCloud_confirm_close_success"), "dedicatedCloud_alert");
         }).catch((error) => {
-            this.Alerter.alertFromSWS(this.translator.tr("dedicatedCloud_confirm_close_error"), {
+            this.Alerter.alertFromSWS(this.$translate.instant("dedicatedCloud_confirm_close_error"), {
                 message: _.get(error, "message"),
                 type: "ERROR"
             }, "dedicatedCloud_alert");

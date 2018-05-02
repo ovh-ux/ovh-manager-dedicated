@@ -7,15 +7,12 @@ angular.module("App").controller("DedicatedCloudCtrl", [
     "featureAvailability",
     "step",
     "DedicatedCloud",
-    "translator",
-
-    // "Module.otrs.services.otrs",
+    "$translate",
     "Module.services.notification",
     "User",
-    function ($scope, $timeout, $stateParams, $q, $log, featureAvailability, step, DedicatedCloud, Translator, /* Otrs,*/ Notification, User) {
+    function ($scope, $timeout, $stateParams, $q, $log, featureAvailability, step, DedicatedCloud, $translate, Notification, User) {
         "use strict";
 
-        const tr = Translator.tr;
         $scope.HDS_READY_NOTIFICATION = "HDS_READY_NOTIFICATION";
 
         $scope.alerts = { dashboard: "dedicatedCloud_alert" };
@@ -47,7 +44,7 @@ angular.module("App").controller("DedicatedCloudCtrl", [
                     Object.assign($scope.dedicatedCloud, dedicatedCloud);
                     $scope.dedicatedCloud.isExpired = dedicatedCloud.status === "expired";
                     if ($scope.dedicatedCloud.isExpired) {
-                        $scope.setMessage(tr("common_expired"), { type: "cancelled" });
+                        $scope.setMessage($translate.instant("common_expired"), { type: "cancelled" });
                     }
                     $scope.dedicatedCloudDescription.model = angular.copy($scope.dedicatedCloud.description);
                     loadNewPrices();
@@ -55,7 +52,7 @@ angular.module("App").controller("DedicatedCloudCtrl", [
                 })
                 .catch((data) => {
                     $scope.loadingError = true;
-                    $scope.setMessage(tr("dedicatedCloud_dashboard_loading_error"), { message: data.message, type: "ERROR" });
+                    $scope.setMessage($translate.instant("dedicatedCloud_dashboard_loading_error"), { message: data.message, type: "ERROR" });
                 })
                 .finally(() => {
                     $scope.loadingInformations = false;
@@ -85,12 +82,12 @@ angular.module("App").controller("DedicatedCloudCtrl", [
             DedicatedCloud.updateDescription($stateParams.productId, $scope.dedicatedCloudDescription.model)
                 .then(
                     (data) => {
-                        $scope.setMessage(tr("dedicatedCloud_edit_description_success"), data);
+                        $scope.setMessage($translate.instant("dedicatedCloud_edit_description_success"), data);
                         $scope.dedicatedCloud.description = angular.copy($scope.dedicatedCloudDescription.model);
                     },
                     (data) => {
                         $scope.dedicatedCloudDescription.model = angular.copy($scope.dedicatedCloud.description);
-                        $scope.setMessage(tr("dedicatedCloud_edit_description_fail", [$scope.dedicatedCloud.name]), data.data);
+                        $scope.setMessage($translate.instant("dedicatedCloud_edit_description_fail", [$scope.dedicatedCloud.name]), data.data);
                     }
                 )
                 .finally(() => {
@@ -204,10 +201,10 @@ angular.module("App").controller("DedicatedCloudCtrl", [
                 })
                 .then(() => {
                     $scope.stopNotification($scope.HDS_READY_NOTIFICATION);
-                    $scope.setMessage(tr("dedicatedCloud_contact_me_success"));
+                    $scope.setMessage($translate.instant("dedicatedCloud_contact_me_success"));
                 })
                 .catch((error) => {
-                    $scope.setMessage($scope.tr("dedicatedCloud_contact_me_fail"), { message: error.message, type: "ERROR" });
+                    $scope.setMessage($translate.instant("dedicatedCloud_contact_me_fail"), { message: error.message, type: "ERROR" });
                     $log.error(error);
                 });
         };
@@ -226,7 +223,7 @@ angular.module("App").controller("DedicatedCloudCtrl", [
         $scope.getUserAccessPolicyLabel = function () {
             const policy = _.get($scope, "dedicatedCloud.userAccessPolicy");
             if (policy) {
-                return tr(`dedicatedCloud_user_access_policy_${_.snakeCase(policy).toUpperCase()}`);
+                return $translate.instant(`dedicatedCloud_user_access_policy_${_.snakeCase(policy).toUpperCase()}`);
             }
             return "-";
         };

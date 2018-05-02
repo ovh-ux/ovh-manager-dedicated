@@ -1,4 +1,4 @@
-angular.module("App").controller("UsbStorageOrderCtrl", ($rootScope, $scope, $q, $stateParams, Server, User, Alerter) => {
+angular.module("App").controller("UsbStorageOrderCtrl", ($rootScope, $scope, $q, $stateParams, $translate, Server, User, Alerter) => {
     "use strict";
 
     User.getUser().then((user) => {
@@ -59,7 +59,7 @@ angular.module("App").controller("UsbStorageOrderCtrl", ($rootScope, $scope, $q,
                 $scope.loading.prices = false;
             },
             (data) => {
-                Alerter.alertFromSWS($scope.tr("server_tab_USB_STORAGE_order_loading_error"), data.data);
+                Alerter.alertFromSWS($translate.instant("server_tab_USB_STORAGE_order_loading_error"), data.data);
                 $scope.loading.durations = false;
             }
         );
@@ -87,7 +87,7 @@ angular.module("App").controller("UsbStorageOrderCtrl", ($rootScope, $scope, $q,
         ==============================*/
 
     $scope.getResumePrice = function (price) {
-        return price.value === 0 ? $scope.tr("price_free") : $scope.tr("price_ht_label", [price.text]);
+        return price.value === 0 ? $translate.instant("price_free") : $translate.instant("price_ht_label", { price: price.text });
     };
 
     $scope.orderUsbDisk = function () {
@@ -95,13 +95,16 @@ angular.module("App").controller("UsbStorageOrderCtrl", ($rootScope, $scope, $q,
         Server.orderUsbStorage($stateParams.productId, $scope.model.capacity, $scope.model.duration).then(
             (order) => {
                 $scope.loading.validation = false;
-                Alerter.alertFromSWS($scope.tr("server_tab_USB_STORAGE_order_finish_success", [order.url, order.orderId]), { idTask: order.orderId, state: "OK" });
+                Alerter.alertFromSWS($translate.instant("server_tab_USB_STORAGE_order_finish_success", {
+                    t0: order.url,
+                    t1: order.orderId
+                }), { idTask: order.orderId, state: "OK" });
                 window.open(order.url, "_blank");
                 $scope.resetAction();
             },
             (data) => {
                 $scope.loading.validation = false;
-                Alerter.alertFromSWS($scope.tr("server_tab_USB_STORAGE_order_finish_error"), data.data);
+                Alerter.alertFromSWS($translate.instant("server_tab_USB_STORAGE_order_finish_error"), data.data);
             }
         );
     };

@@ -1,4 +1,4 @@
-angular.module("App").controller("BackendsAddCtrl", ($scope, $stateParams, Cdn) => {
+angular.module("App").controller("BackendsAddCtrl", ($scope, $stateParams, $translate, Cdn) => {
     "use strict";
 
     $scope.price = null;
@@ -30,7 +30,7 @@ angular.module("App").controller("BackendsAddCtrl", ($scope, $stateParams, Cdn) 
             },
             (data) => {
                 $scope.resetAction();
-                $scope.setMessage($scope.tr("cdn_configuration_backend_upgrade_fail"), data);
+                $scope.setMessage($translate.instant("cdn_configuration_backend_upgrade_fail"), data);
             }
         );
     };
@@ -50,7 +50,7 @@ angular.module("App").controller("BackendsAddCtrl", ($scope, $stateParams, Cdn) 
             },
             (data) => {
                 $scope.resetAction();
-                $scope.setMessage($scope.tr("cdn_configuration_backend_upgrade_fail"), data);
+                $scope.setMessage($translate.instant("cdn_configuration_backend_upgrade_fail"), data);
             }
         );
     };

@@ -1,4 +1,4 @@
-angular.module("App").controller("NasPartitionAccessAddCtrl", ($scope, $stateParams, Nas, REGEX, $rootScope, Alerter) => {
+angular.module("App").controller("NasPartitionAccessAddCtrl", ($scope, $stateParams, $translate, Nas, REGEX, $rootScope, Alerter) => {
     const alerterId = "NasAlert";
 
     $scope.partitionName = $scope.currentActionData;
@@ -13,7 +13,7 @@ angular.module("App").controller("NasPartitionAccessAddCtrl", ($scope, $statePar
         $scope.authorizableIps = values;
     }).catch((error) => {
         $scope.resetAction();
-        Alerter.alertFromSWS($scope.tr("nas_ip_loading_error"), error, alerterId);
+        Alerter.alertFromSWS($translate.instant("nas_ip_loading_error"), error, alerterId);
     }).finally(() => {
         $scope.loading = false;
     });
@@ -27,10 +27,10 @@ angular.module("App").controller("NasPartitionAccessAddCtrl", ($scope, $statePar
         Nas.addAccess($stateParams.nasId, $scope.partitionName, $scope.newAccess.ip.ip).then(
             (task) => {
                 $rootScope.$broadcast("nas_launch_task", task);
-                Alerter.success($scope.tr("nas_access_action_add_success", $scope.newAccess.ip.ip), alerterId);
+                Alerter.success($translate.instant("nas_access_action_add_success", { t0: $scope.newAccess.ip.ip }), alerterId);
             },
             (data) => {
-                Alerter.alertFromSWS($scope.tr("nas_access_action_add_failure", $scope.newAccess.ip.ip), data, alerterId);
+                Alerter.alertFromSWS($translate.instant("nas_access_action_add_failure", { t0: $scope.newAccess.ip.ip }), data, alerterId);
             }
         );
     };

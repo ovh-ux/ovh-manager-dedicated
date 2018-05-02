@@ -1,9 +1,10 @@
 angular.module("UserAccount.controllers").controller("UserAccount.controllers.ssh.dedicated.add", [
     "$scope",
+    "$translate",
     "UserAccount.services.ssh",
     "$timeout",
     "Alerter",
-    function ($scope, UseraccountSsh, $timeout, Alerter) {
+    function ($scope, $translate, UseraccountSsh, $timeout, Alerter) {
         "use strict";
 
         const fullSshList = $scope.currentActionData || [];
@@ -14,10 +15,10 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.ss
         $scope.addDedicatedSshKey = function () {
             UseraccountSsh.addDedicatedSshKey($scope.model).then(
                 () => {
-                    Alerter.success($scope.tr("user_ssh_add_success_message"));
+                    Alerter.success($translate.instant("user_ssh_add_success_message"));
                 },
                 (failure) => {
-                    Alerter.alertFromSWS($scope.tr("user_ssh_add_error_message"), failure.data);
+                    Alerter.alertFromSWS($translate.instant("user_ssh_add_error_message"), failure.data);
                 }
             );
             $scope.resetAction();

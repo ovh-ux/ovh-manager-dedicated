@@ -7,7 +7,7 @@
                 data-ng-class="{ 'disabled': editionDisabled(service.subProducts.domain) }"
                 data-ng-disabled="editionDisabled(service.subProducts.domain)">
             <i class="fa fa-pencil" aria-hidden="true"></i>
-            <span data-i18n-static="autorenew_service_update_button_caption"></span>
+            <span data-translate="autorenew_service_update_button_caption"></span>
         </button>
     </li>
 
@@ -16,16 +16,16 @@
                 class="btn btn-link"
                 data-ng-click="cancelDeleteService(service.subProducts.domain)">
             <i class="fa fa-close" aria-hidden="true"></i>
-            <span data-i18n-static="autorenew_service_canceldelete_button"></span>
+            <span data-translate="autorenew_service_canceldelete_button"></span>
         </button>
     </li>
 
     <li data-ng-if="service.subProducts.domain.serviceType !== 'EXCHANGE'">
         <a target="_blank"
-           title="{{ tr('autorenew_service_renew_button_title', [service.subProducts.domain.serviceId]) }}"
+           title="{{ 'autorenew_service_renew_button_title' | translate:{ t0: service.subProducts.domain.serviceId } }}"
            data-ng-href="{{ getRenewUrl() + service.subProducts.domain.serviceId }}">
             <i class="fa fa-refresh" aria-hidden="true"></i>
-            <span data-i18n-static="autorenew_service_renew_button"></span>
+            <span data-translate="autorenew_service_renew_button"></span>
         </a>
     </li>
 
@@ -36,7 +36,7 @@
                 data-ng-disabled="!canResiliate(service.subProducts.domain, user)"
                 data-ng-click="canResiliate(service.subProducts.domain, user) && resiliateService(service.subProducts.domain)">
             <i class="fa fa-trash" aria-hidden="true"></i>
-            <span data-i18n-static="autorenew_service_resiliate_button"></span>
+            <span data-translate="autorenew_service_resiliate_button"></span>
         </button>
     </li>
 
@@ -45,7 +45,7 @@
                 class="btn btn-link"
                 data-ng-click="terminateHostingWeb(service.subProducts.domain)">
             <i class="fa fa-trash" aria-hidden="true"></i>
-            <span data-i18n-static="hosting_dashboard_service_guide"></span>
+            <span data-translate="hosting_dashboard_service_guide"></span>
         </button>
     </li>
 
@@ -54,7 +54,7 @@
                 class="btn btn-link"
                 data-ng-click="disableAutorenew(service.subProducts.domain)">
             <i class="fa fa-power-off" aria-hidden="true"></i>
-            <span data-i18n-static="autorenew_service_disable_button"></span>
+            <span data-translate="autorenew_service_disable_button"></span>
         </button>
     </li>
 
@@ -63,7 +63,7 @@
                 class="btn btn-link"
                 data-ng-click="enableAutorenew(service.subProducts.domain)">
             <i class="fa fa-calendar" aria-hidden="true"></i>
-            <span data-i18n-static="autorenew_service_enable_button"></span>
+            <span data-translate="autorenew_service_enable_button"></span>
         </button>
     </li>
 </ul>

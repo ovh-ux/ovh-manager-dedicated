@@ -1,4 +1,4 @@
-angular.module("App").controller("CdnDomainStatisticsCtrl", ($scope, $stateParams, translator, Cdn, CdnDomain) => {
+angular.module("App").controller("CdnDomainStatisticsCtrl", ($scope, $stateParams, $translate, Cdn, CdnDomain) => {
     $scope.model = null;
     $scope.consts = null;
     $scope.loadingStats = false;
@@ -10,8 +10,8 @@ angular.module("App").controller("CdnDomainStatisticsCtrl", ($scope, $stateParam
 
         $scope.labels = _.map(_.get(data, "cdn.values"), (value, index) =>
             moment(data.backend.pointStart).add(index + 1, "days").calendar());
-        $scope.series.push(translator.tr(`cdn_stats_legend_${$scope.model.dataType.toLowerCase()}_cdn`));
-        $scope.series.push(translator.tr(`cdn_stats_legend_${$scope.model.dataType.toLowerCase()}_backend`));
+        $scope.series.push($translate.instant(`cdn_stats_legend_${$scope.model.dataType.toLowerCase()}_cdn`));
+        $scope.series.push($translate.instant(`cdn_stats_legend_${$scope.model.dataType.toLowerCase()}_backend`));
         $scope.data.push(_.map(_.get(data, "cdn.values"), (value) => value.y));
         $scope.data.push(_.map(_.get(data, "backend.values"), (value) => value.y));
     }

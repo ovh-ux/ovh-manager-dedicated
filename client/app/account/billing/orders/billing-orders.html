@@ -1,7 +1,7 @@
 <div>
 
     <div class="page-header">
-        <h1 data-i18n-static="orders_page_title"></h1>
+        <h1 data-translate="orders_page_title"></h1>
     </div>
 
     <div class="tab-content">
@@ -13,12 +13,12 @@
                     <input type="text"
                            class="form-control"
                            maxlength="50"
-                           placeholder="{{ i18n.orders_table_head_id }}"
+                           placeholder="{{ 'orders_table_head_id' | translate }}"
                            autofocus
                            data-ng-model-options="{ debounce: 1000 }"
                            data-ng-model="activeFilter.orderId"
                            data-ng-change="getOrders()"
-                           data-ng-attr-title="{{ i18n.orders_search_input_title }}" />
+                           data-ng-attr-title="{{ 'orders_search_input_title' | translate }}" />
                     <span class="input-group-addon">
                         <span class="fa fa-search"
                               aria-hidden="true">
@@ -33,33 +33,33 @@
                 <tr>
                     <th scope="col"
                         class="align-middle"
-                        data-i18n-static="orders_table_head_date">
+                        data-translate="orders_table_head_date">
                     </th>
                     <th scope="col"
                         class="align-middle"
-                        data-i18n-static="orders_table_head_id">
+                        data-translate="orders_table_head_id">
                     </th>
                     <th scope="col"
                         class="align-middle">
                         <label for="orderTableStatusFilterSelect"
-                               data-i18n-static="orders_table_head_status"></label>
+                               data-translate="orders_table_head_status"></label>
                         <select class="form-control input-sm"
                                 id="orderTableStatusFilterSelect"
                                 data-ng-options="statusFilter as statusFilter.label for statusFilter in statusFilters"
                                 data-ng-model="activeFilter.status"
                                 data-ng-change="getOrders()"
-                                data-ng-attr-title="{{ i18n.orders_table_head_status }}">
+                                data-ng-attr-title="{{ 'orders_table_head_status' | translate }}">
                         </select>
                     </th>
                     <th scope="col"
                         class="align-middle"
                         data-ng-if="isVATNeeded"
-                        data-i18n-static="orders_table_head_total_taxes_included">
+                        data-translate="orders_table_head_total_taxes_included">
                     </th>
                     <th scope="col"
                         class="align-middle text-right"
                         data-ng-if="!isVATNeeded"
-                        data-i18n-static="orders_table_head_total">
+                        data-translate="orders_table_head_total">
                     </th>
                     <th scope="col"
                         class="align-middle text-center">
@@ -87,12 +87,12 @@
                     <td data-ng-if="activeFilter.status.id === 'all'"
                         colspan="6"
                         class="text-center"
-                        data-i18n-static="orders_table_empty">
+                        data-translate="orders_table_empty">
                     </td>
                     <td data-ng-if="activeFilter.status.id !== 'all'"
                         colspan="6"
                         class="text-center">
-                        <p data-i18n-static="orders_table_empty_with_filter"></p>
+                        <p data-translate="orders_table_empty_with_filter"></p>
                         <ul class="list-unstyled">
                             <li data-ng-bind="activeFilter.status.label"></li>
                         </ul>
@@ -120,7 +120,7 @@
                               data-ng-bind="order.statusText">
                         </span>
                         <span data-ng-if="order.status === 'notPaid' && order.expired"
-                              data-i18n-static="orders_order_bc_expired">
+                              data-translate="orders_order_bc_expired">
                         </span>
                     </td>
                     <td data-ng-if="isVATNeeded"
@@ -136,7 +136,7 @@
                             <button id="btn-account-billing-orders-action-{{ index }}"
                                     type="button"
                                     class="btn btn-link"
-                                    aria-label="{{ i18n.common_actions }}"
+                                    aria-label="{{ 'common_actions' | translate }}"
                                     data-uib-dropdown-toggle>
                                 <span class="ovh-font ovh-font-dots" aria-hidden="true"></span>
                             </button>
@@ -150,8 +150,8 @@
                                     <a target="_blank"
                                        rel="noopener"
                                        data-ng-href="{{ ::order.url }}"
-                                       data-ng-attr-title="{{ i18n.table_download_html_order }}"
-                                       data-i18n-static="table_download_html_order">
+                                       data-ng-attr-title="{{ 'table_download_html_order' | translate }}"
+                                       data-translate="table_download_html_order">
                                     </a>
                                 </li>
                                 <li data-ng-if="order.bill.url"
@@ -160,8 +160,8 @@
                                     <a target="_blank"
                                        rel="noopener"
                                        data-ng-href="{{ ::order.bill.url }}"
-                                       data-ng-attr-title="{{ i18n.table_download_html_invoice }}"
-                                       data-i18n-static="table_download_html_invoice">
+                                       data-ng-attr-title="{{ 'table_download_html_invoice' | translate }}"
+                                       data-translate="table_download_html_invoice">
                                     </a>
                                 </li>
                                 <li data-ng-if="order.bill.pdfUrl"
@@ -170,16 +170,16 @@
                                     <a target="_blank"
                                        rel="noopener"
                                        data-ng-href="{{ ::order.bill.pdfUrl }}"
-                                       data-ng-attr-title="{{ i18n.table_download_pdf_invoice }}"
-                                       data-i18n-static="table_download_pdf_invoice">
+                                       data-ng-attr-title="{{ 'table_download_pdf_invoice' | translate }}"
+                                       data-translate="table_download_pdf_invoice">
                                     </a>
                                 </li>
                                 <li data-ng-if="order.canRetract"
                                     role="menuitem">
                                     <span class="fa fa-times" aria-hidden="true"></span>
                                     <a data-ng-href="#/billing/orders/{{ :: order.orderId }}/retract"
-                                       data-ng-attr-title="{{ :: tr('orders_order_action_retract') }}"
-                                       data-i18n-static="orders_order_action_retract">
+                                       data-ng-attr-title="{{ :: 'orders_order_action_retract' | translate }}"
+                                       data-translate="orders_order_action_retract">
                                     </a>
                                 </li>
                             </ul>
@@ -198,8 +198,8 @@
              data-transform-item="transformItem(item)"
              data-on-transform-item-notify="onTransformItemNotify(item)"
              data-on-transform-item-done="onTransformItemDone(items)"
-             data-page-placeholder="{{ tr('pagination_page', [currentPage, nbPages]) }}"
-             data-item-per-page-placeholder="{{ tr('pagination_display') }}">
+             data-page-placeholder="{{ 'pagination_page' | translate:{ t0: currentPage, t1: nbPages } }}"
+             data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
         </div>
     </div>
 </div>

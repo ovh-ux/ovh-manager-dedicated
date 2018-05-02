@@ -1,7 +1,7 @@
 <div id="billing-autorenew">
 
     <div class="page-header">
-        <h1 data-i18n-static="autorenew_title"></h1>
+        <h1 data-translate="autorenew_title"></h1>
     </div>
 
     <div class="tab-content">
@@ -14,17 +14,17 @@
             <button type="button"
                     class="close"
                     data-ng-click="automaticRenewV2Mean.noMeanMessageClose()"
-                    title="{{ i18n.browser_alert_close }}"
+                    title="{{ 'browser_alert_close' | translate }}"
                     data-dismiss="alert">
             </button>
             <ul>
-                <li data-ng-if="!automaticRenewV2Mean.allowed" data-i18n-static="autorenew_service_renew_requires_mean_and_date"></li>
+                <li data-ng-if="!automaticRenewV2Mean.allowed" data-translate="autorenew_service_renew_requires_mean_and_date"></li>
                 <li data-ng-if="automaticRenewV2Mean.allowed && !nicRenew.active">
-                    <span data-i18n-static="autorenew_service_activate_alert"></span>
+                    <span data-translate="autorenew_service_activate_alert"></span>
                     <button class="btn btn-default"
                             type="button"
                             data-ng-click="setAction('active', { nicRenew: nicRenew }, 'autoRenew')"
-                            data-i18n-static="autorenew_service_active_title">
+                            data-translate="autorenew_service_active_title">
                     </button>
                 </li>
             </ul>
@@ -38,17 +38,17 @@
                     data-ng-click="hideAutorenewMassMigrationAlert = true"
                     data-dismiss="alert">
             </button>
-            <span data-i18n-static="autorenew_service_renew_mass_migration_soon"></span>
+            <span data-translate="autorenew_service_renew_mass_migration_soon"></span>
         </div>
 
         <p class="alert alert-info"
            data-ng-if="guide"
            role="alert">
-            <span data-i18n-static="autorenew_service_autorenew_guide_help"></span>
+            <span data-translate="autorenew_service_autorenew_guide_help"></span>
             <a data-ng-href="{{guide}}"
                target="_blank"
                rel="noopener">
-                <span data-i18n-static="autorenew_guide_help"></span>
+                <span data-translate="autorenew_guide_help"></span>
                 <i class="fa fa-external-link"
                    aria-hidden="true">
                 </i>
@@ -60,7 +60,7 @@
             <div class="form-group col-md-4">
                 <label for="billingAutoRenewNicBillingSelect"
                        class="control-label"
-                       data-i18n-static="autorenew_service_autorenew_contact_filter">
+                       data-translate="autorenew_service_autorenew_contact_filter">
                 </label>
                 <select id="billingAutoRenewNicBillingSelect"
                         class="form-control"
@@ -70,7 +70,7 @@
                         data-ng-change="onNicBillingChange();"
                         data-ng-options="nicBilling for nicBilling in nicBillingFilter.values track by nicBilling"                        >
                     <option value=""
-                            data-i18n-static="autorenew_service_autorenew_contact_filter_all">
+                            data-translate="autorenew_service_autorenew_contact_filter_all">
                     </option>
                 </select>
             </div>
@@ -81,7 +81,7 @@
             <div class="form-group col-md-4">
                 <label for="autorenewDaySelect"
                        class="control-label"
-                       data-i18n-static="autorenew_service_autorenew_day">
+                       data-translate="autorenew_service_autorenew_day">
                 </label>
                 <select id="autorenewDaySelect"
                         name="renewDay"
@@ -91,7 +91,7 @@
                         data-ng-model="nicRenew.renewDay"
                         data-ng-model-options='{ debounce: 1000 }'
                         data-ng-change="onAutoRenewChange()"
-                        data-uib-tooltip="{{ tr('autorenew_service_autorenew_day_tooltip') }}"
+                        data-uib-tooltip="{{ 'autorenew_service_autorenew_day_tooltip' | translate }}"
                         data-uib-tooltip-append-to-body="true">
                 </select>
             </div>
@@ -100,18 +100,18 @@
         <div class="well well-sm"
              data-ng-if="services.selected.length > 0 || selected.both">
             <p class="text-info"
-               data-i18n-static="autorenew_service_mass_actions_caption">
+               data-translate="autorenew_service_mass_actions_caption">
             </p>
             <button type="button"
                     class="btn btn-default"
                     data-ng-click="updateServices()"
-                    data-i18n-static="autorenew_service_update_button_caption">
+                    data-translate="autorenew_service_update_button_caption">
             </button>
             <button type="button"
                     class="btn btn-default"
                     data-ng-click="manualRenew()"
                     data-ng-disabled="selected.hasOnlyForcedRenew"
-                    data-i18n-static="manualrenew_service_update_button_caption">
+                    data-translate="manualrenew_service_update_button_caption">
             </button>
         </div>
 
@@ -122,7 +122,8 @@
                         data-export-csv="getDatasToExport()"
                         data-export-csv-separator=";"
                         data-ng-disabled="load.exportCSV"
-                        data-i18n-static="billing_export_csv">
+                        >
+                        <span data-translate="billing_export_csv"></span>
                 </button>
                 <div class="btn-group">
                     <button type="button"
@@ -130,20 +131,20 @@
                             data-toggle="dropdown"
                             aria-haspopup="true"
                             aria-expanded="false">
-                        <span data-i18n-static="autorenew_service_action_title"></span>
+                        <span data-translate="autorenew_service_action_title"></span>
                         <span class="fa fa-chevron-down"
                               aria-hidden="true"></span>
                     </button>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#/billing/mean"
-                               data-i18n-static="autorenew_manage_my_payment_means">
+                               data-translate="autorenew_manage_my_payment_means">
                             </a>
                         </li>
                         <li>
                             <a data-ng-if="automaticRenewV2Mean.available"
                                data-ng-href="{{ urls.renewAlign }}"
-                               data-i18n-static="autorenew_service_update_date_button_caption"
+                               data-translate="autorenew_service_update_date_button_caption"
                                target="_blank">
                             </a>
                         </li>
@@ -152,7 +153,7 @@
                                     type="button"
                                     data-ng-if="canDisableAllDomains"
                                     data-ng-click="disableAutorenewForDomains()"
-                                    data-i18n-static="autorenew_service_disable_all_domains">
+                                    data-translate="autorenew_service_disable_all_domains">
                             </button>
                         </li>
                     </ul>
@@ -163,11 +164,11 @@
                     <input class="form-control"
                            type="search"
                            maxlength="50"
-                           placeholder="{{ i18n.autorenew_service_name }}"
+                           placeholder="{{ 'autorenew_service_name' | translate }}"
                            data-ng-model-options="{ debounce: 1000 }"
                            data-ng-model="searchText"
                            data-ng-change="onSearchTextChanged()"
-                           data-ng-attr-title="{{ i18n.autorenew_search_input_title }}"
+                           data-ng-attr-title="{{ 'autorenew_search_input_title' | translate }}"
                            autofocus />
                     <span class="input-group-addon">
                         <i class="fa fa-search"></i>
@@ -182,13 +183,13 @@
                         <th scope="col"
                             class="align-middle">
                             <span class="sr-only"
-                                  data-i18n-static="autorenew_service_select_all_checkbox"></span>
+                                  data-translate="autorenew_service_select_all_checkbox"></span>
                             <input type="checkbox"
                                    data-tri-state-checkbox="delegationSelectAll"
                                    data-tsc-ids-all="services.data.list.results"
                                    data-tsc-ids-selected="services.selected"
                                    data-tsc-on-click="checkboxStateChange(state)"
-                                   data-ng-attr-title="{{ i18n.autorenew_service_select_all_checkbox }}" />
+                                   data-ng-attr-title="{{ 'autorenew_service_select_all_checkbox' | translate }}" />
                             <span class="d-inline-block"
                                   data-ng-if="!services.loading"
                                   data-linkedpopover="{{BILLING_BASE_URL + 'autoRenew/popoverMenu.html'}}"
@@ -197,7 +198,7 @@
                                   data-linkedpopover-remote="true" >
                                 <button type="button"
                                         class="btn btn-xs btn-link"
-                                        data-ng-attr-title="{{ i18n.exchange_tab_ACCOUNTS_menu_account_tooltip }}" >
+                                        data-ng-attr-title="{{ 'exchange_tab_ACCOUNTS_menu_account_tooltip' | translate }}" >
                                     <span class="fa fa-filter"
                                           aria-hidden="true">
                                     </span>
@@ -218,7 +219,7 @@
                             class="align-middle">
                             <a href=""
                                data-ng-click="order('serviceId');"
-                               data-i18n-static="autorenew_service_name"></a>
+                               data-translate="autorenew_service_name"></a>
                             <i data-ng-if="orderByState.predicate == 'serviceId' && !fuseServicesOpen()"
                                data-ng-class="{
                                    'fa fa-chevron-up': !orderByState.reverse,
@@ -230,7 +231,7 @@
                             class="align-middle">
                             <a href=""
                                data-ng-click="order('expiration');">
-                                <span data-i18n-static="autorenew_service_date"></span>
+                                <span data-translate="autorenew_service_date"></span>
                                 <i data-ng-if="orderByState.predicate == 'expiration'"
                                    data-ng-class="{
                                        'fa fa-chevron-up' : !orderByState.reverse,
@@ -240,7 +241,7 @@
                             </a>
                             <select class="form-control input-sm"
                                     data-ng-if="!services.loading"
-                                    data-ng-options="tr('services_filter_duration_' + renew) for renew in renewFilter.values"
+                                    data-ng-options="(('services_filter_duration_' + renew) | translate) for renew in renewFilter.values"
                                     data-ng-model="renewFilter.model"
                                     data-ng-change="onSelectedrenewChange()">
                             </select>
@@ -249,7 +250,7 @@
                             class="align-middle">
                             <a href=""
                                data-ng-click="order('renewLabel');">
-                                <span data-i18n-static="autorenew_service_renew_frequency_title"></span>
+                                <span data-translate="autorenew_service_renew_frequency_title"></span>
                                 <i data-ng-if="orderByState.predicate == 'renewLabel'"
                                    data-ng-class="{
                                         'fa fa-chevron-up' : !orderByState.reverse,
@@ -266,7 +267,7 @@
                         </th>
                         <th scope="col"
                             class="align-middle"
-                            data-i18n-static="autorenew_service_action_title">
+                            data-translate="autorenew_service_action_title">
                         </th>
                     </tr>
                 </thead>
@@ -284,7 +285,7 @@
                     <tr>
                         <td class="text-center"
                             colspan="6">
-                            <span data-i18n-static="autorenew_empty"></span>
+                            <span data-translate="autorenew_empty"></span>
                         </td>
                     </tr>
                 </tbody>

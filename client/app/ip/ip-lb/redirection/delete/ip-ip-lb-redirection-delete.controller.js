@@ -1,38 +1,28 @@
-angular.module("Module.ip.controllers").controller("IplbPortsRedirectionDeleteCtrl", [
-    "$scope",
-    "$rootScope",
-    "Iplb",
-    "Alerter",
-    "$stateParams",
+angular.module("Module.ip.controllers").controller("IplbPortsRedirectionDeleteCtrl", ($scope, $rootScope, $translate, Iplb, Alerter, $stateParams) => {
+    $scope.data = $scope.currentActionData; // service
 
-    function ($scope, $rootScope, Iplb, Alerter, $stateParams) {
-        "use strict";
+    $scope.loading = false;
 
-        $scope.data = $scope.currentActionData; // service
+    /* Action */
 
-        $scope.loading = false;
-
-        /* Action */
-
-        $scope.deletePortsRedirection = function () {
-            $scope.loading = true;
-            Iplb.deletePortsRedirection($scope.data.selectedIplb.value, $scope.data.srcPort)
-                .then(
-                    (task) => {
-                        Iplb.pollPortList({
-                            serviceName: $stateParams.serviceName,
-                            taskId: task.id,
-                            taskFunction: task.action
-                        });
-                        Alerter.success($scope.tr("iplb_portsredirection_delete_success"));
-                    },
-                    (reason) => {
-                        Alerter.alertFromSWS($scope.tr("iplb_portsredirection_delete_failure"), reason);
-                    }
-                )
-                .finally(() => {
-                    $scope.resetAction();
-                });
-        };
-    }
-]);
+    $scope.deletePortsRedirection = function () {
+        $scope.loading = true;
+        Iplb.deletePortsRedirection($scope.data.selectedIplb.value, $scope.data.srcPort)
+            .then(
+                (task) => {
+                    Iplb.pollPortList({
+                        serviceName: $stateParams.serviceName,
+                        taskId: task.id,
+                        taskFunction: task.action
+                    });
+                    Alerter.success($translate.instant("iplb_portsredirection_delete_success"));
+                },
+                (reason) => {
+                    Alerter.alertFromSWS($translate.instant("iplb_portsredirection_delete_failure"), reason);
+                }
+            )
+            .finally(() => {
+                $scope.resetAction();
+            });
+    };
+});

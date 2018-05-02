@@ -3,7 +3,7 @@
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addVirtualMac"
          data-wizard-hide-cancel-button="loading"
-         data-wizard-title="i18n.ip_table_manage_add_virtualmac">
+         data-wizard-title=":: 'ip_table_manage_add_virtualmac' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="!loading && isValid()">
@@ -18,7 +18,7 @@
                                    name="choiceRadio"
                                    value="new"
                                    data-ng-model="model.choice">
-                            <span data-ng-bind="i18n.ip_virtualmac_add_new"></span>
+                            <span data-ng-bind=":: 'ip_virtualmac_add_new' | translate"></span>
                         </label>
                     </div>
                     <div class="radio">
@@ -27,7 +27,7 @@
                                    name="choiceRadio"
                                    value="existing"
                                    data-ng-model="model.choice">
-                            <span data-ng-bind="i18n.ip_virtualmac_add_existing"></span>
+                            <span data-ng-bind=":: 'ip_virtualmac_add_existing' | translate"></span>
                         </label>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                      data-ng-show="model.choice == 'new'">
                     <label class="control-label"
                            for="typeSelect"
-                           data-ng-bind="i18n.ip_virtualmac_type">
+                           data-ng-bind=":: 'ip_virtualmac_type' | translate">
                     </label>
                     <select id="typeSelect"
                             name="typeSelect"
@@ -51,7 +51,7 @@
                      data-ng-show="model.choice == 'existing'">
                     <label class="control-label"
                            for="macAddressSelect"
-                           data-ng-bind="i18n.ip_virtualmac_field">
+                           data-ng-bind=":: 'ip_virtualmac_field' | translate">
                     </label>
                     <select id="macAddressSelect"
                             name="macAddressSelect"
@@ -65,7 +65,7 @@
                 <div class="form-group">
                     <label class="control-label"
                            for="virtualMachineName"
-                           data-ng-bind="i18n.ip_virtualmac_machinename">
+                           data-ng-bind=":: 'ip_virtualmac_machinename' | translate">
                     </label>
                     <input type="text"
                            id="virtualMachineName"

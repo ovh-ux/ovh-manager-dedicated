@@ -2,7 +2,7 @@
     <div class="page-header">
         <div class="row">
             <div class="col-sm-9">
-                <h1 data-i18n-static="useraccount_contacts"></h1>
+                <h1 data-translate="useraccount_contacts"></h1>
             </div>
             <div class="col-sm-3 text-right mt-4">
                 <a data-ng-if="!contactCtrl.loaders.init"
@@ -10,14 +10,14 @@
                    target="_blank"
                    rel="noopener"
                    data-ng-href="{{ ::contactCtrl.getAccountCreationUrl() }}"
-                   data-i18n-static="useraccount_contacts_create_new_account">
+                   data-translate="useraccount_contacts_create_new_account">
                 </a>
             </div>
         </div>
     </div>
     <responsive-tabs>
-        <responsive-tab data-state="app.account.useraccount.contacts.services">{{ ::i18n.useraccount_contacts_tab_SERVICES }}</responsive-tab>
-        <responsive-tab data-state="app.account.useraccount.contacts.requests">{{ ::i18n.useraccount_contacts_tab_REQUESTS }}</responsive-tab>
+        <responsive-tab data-state="app.account.useraccount.contacts.services">{{ 'useraccount_contacts_tab_SERVICES' | translate }}</responsive-tab>
+        <responsive-tab data-state="app.account.useraccount.contacts.requests">{{ 'useraccount_contacts_tab_REQUESTS' | translate }}</responsive-tab>
         <responsive-tab-more>
             <i class="fa fa-plus"></i>
         </responsive-tab-more>

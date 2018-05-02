@@ -1,7 +1,7 @@
 <div>
 
     <div class="page-header">
-        <h1 data-i18n-static="billing_credits_title"></h1>
+        <h1 data-translate="billing_credits_title"></h1>
     </div>
 
     <div class="tab-content">
@@ -10,7 +10,7 @@
 
         <label for="creditCode"
                class="control-label"
-               data-i18n-static="voucher_credit_code_add_label">
+               data-translate="voucher_credit_code_add_label">
         </label>
         <form class="form-inline"
               data-ng-submit="$ctrl.addCreditCode()">
@@ -19,12 +19,12 @@
                        id="creditCode"
                        name="creditCode"
                        class="form-control"
-                       placeholder="{{ i18n.voucher_credit_code_add_placholder }}"
+                       placeholder="{{ 'voucher_credit_code_add_label' | translate }}"
                        data-ng-model="$ctrl.model.creditCode"
                        autofocus />
                 <button type="submit"
                         class="btn btn-primary"
-                        data-i18n-static="voucher_credit_code_add_submit"
+                        data-translate="voucher_credit_code_add_submit"
                         data-ng-disabled="$ctrl.loading.creditCode || !$ctrl.model.creditCode">
                 </button>
             </div>
@@ -35,31 +35,31 @@
                 <thead>
                     <tr>
                         <th scope="col"
-                            data-i18n-static="billing_credit_balance_header_name">
+                            data-translate="billing_credit_balance_header_name">
                         </th>
                         <th class="text-center"
                             scope="col"
-                            data-i18n-static="billing_credit_balance_header_creation_date">
+                            data-translate="billing_credit_balance_header_creation_date">
                         </th>
                         <th class="text-center"
                             scope="col"
-                            data-i18n-static="billing_credit_balance_header_last_update_date">
+                            data-translate="billing_credit_balance_header_last_update_date">
                         </th>
                         <th class="text-right"
                             scope="col"
-                            data-i18n-static="billing_credit_balance_header_amount">
+                            data-translate="billing_credit_balance_header_amount">
                         </th>
                         <th class="text-center"
                             scope="col"
-                            data-i18n-static="billing_credit_balance_header_expiration_date">
+                            data-translate="billing_credit_balance_header_expiration_date">
                         </th>
                         <th class="text-right"
                             scope="col"
-                            data-i18n-static="billing_credit_balance_header_expiration_amount">
+                            data-translate="billing_credit_balance_header_expiration_amount">
                         </th>
                         <th class="text-right"
                             scope="col"
-                            data-i18n-static="billing_credit_balance_header_movements">
+                            data-translate="billing_credit_balance_header_movements">
                         </th>
                     </tr>
                 </thead>
@@ -77,7 +77,7 @@
                     <tr>
                         <td class="text-center"
                             colspan="7"
-                            data-i18n-static="billing_credits_none">
+                            data-translate="billing_credits_none">
                         </td>
                     </tr>
                 </tbody>
@@ -107,7 +107,7 @@
                             </span>
                         </td>
                         <td class="text-right">
-                            <a title="{{ tr('billing_credit_balance_movements_details') }}"
+                            <a title="{{ 'billing_credit_balance_movements_details' | translate }}"
                                data-ng-href="{{ '#/billing/credits/' + balance.balanceName + '/movements' }}">
                                 <span class="fa fa-list-ul"></span>
                             </a>
@@ -126,8 +126,8 @@
                  data-transform-item="$ctrl.getBalanceDetails(item)"
                  data-on-transform-item-notify="$ctrl.pushBalanceDetails(item)"
                  data-on-transform-item-done="$ctrl.onDetailsDone(items)"
-                 data-page-placeholder="{{tr('pagination_page', [$ctrl.currentPage, $ctrl.nbPages])}}"
-                 data-item-per-page-placeholder="{{tr('pagination_display')}}">
+                 data-page-placeholder="{{ 'pagination_page' | translate:{ t0: $ctrl.currentPage, t1: $ctrl.nbPages } }}"
+                 data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
             </div>
         </div>
     </div>

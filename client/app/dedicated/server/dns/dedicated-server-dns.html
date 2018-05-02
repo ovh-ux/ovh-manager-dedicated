@@ -9,27 +9,27 @@
         <button type="button"
                 class="btn btn-default mb-4"
                 data-ng-click="setAction('dns/add/dedicated-server-dns-add', secondaryDns)">
-            <span data-i18n-static="server_configuration_add_secondary_dns_title"></span>
+            <span data-translate="server_configuration_add_secondary_dns_title"></span>
         </button>
         <p data-ng-if="!secondaryDnsList"
-           data-i18n-static="server_configuration_no_secondary_dns">
+           data-translate="server_configuration_no_secondary_dns">
         </p>
         <table class="table table-hover"
                data-ng-if="secondaryDnsList">
             <thead>
                 <tr>
                     <th scope="col"
-                        data-i18n-static="server_configuration_secondarydns_domain_header">
+                        data-translate="server_configuration_secondarydns_domain_header">
                     </th>
                     <th scope="col"
-                        data-i18n-static="server_configuration_secondarydns_dns">
+                        data-translate="server_configuration_secondarydns_dns">
                     </th>
                     <th scope="col"
-                        data-i18n-static="server_configuration_secondarydns_ip">
+                        data-translate="server_configuration_secondarydns_ip">
                     </th>
                     <th scope="col"
                         colspan="2"
-                        data-i18n-static="server_configuration_secondarydns_creationdate">
+                        data-translate="server_configuration_secondarydns_creationdate">
                     </th>
                 </tr>
             </thead>
@@ -37,7 +37,7 @@
                 <tr>
                     <td colspan="5"
                         class="text-center"
-                        data-i18n-static="server_configuration_secondary_dns_empty">
+                        data-translate="server_configuration_secondary_dns_empty">
                     </td>
                 </tr>
             </tbody>

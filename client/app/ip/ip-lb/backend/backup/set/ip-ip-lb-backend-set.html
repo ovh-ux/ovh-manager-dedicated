@@ -3,18 +3,18 @@
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="setBackupState"
          data-wizard-hide-cancel-button="loading"
-         data-wizard-title="i18n.iplb_backend_setbackupstate_title">
+         data-wizard-title=":: 'iplb_backend_setbackupstate_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="!loading && !loadingAvailableBackends && model.mainBackendIp">
 
             <div data-ng-hide="loading || !allowedBackendsIds.length">
-                <p data-i18n-static="iplb_backend_setbackupstate_question"></p>
+                <p data-translate="iplb_backend_setbackupstate_question"></p>
                 <form>
                     <div class="form-group">
                         <label class="control-label"
                                for="mainBackendIp"
-                               data-i18n-static="iplb_backend_setbackupstate_ipbackend">
+                               data-translate="iplb_backend_setbackupstate_ipbackend">
                         </label>
                         <select name="mainBackendIp"
                                 id="mainBackendIp"
@@ -25,14 +25,14 @@
                         </select>
                     </div>
                 </form>
-                <p data-ng-bind-html="tr('iplb_backend_setbackupstate_help', data.backend.backend)">
+                <p data-ng-bind-html="'iplb_backend_setbackupstate_help' | translate:{ t0: data.backend.backend }">
                 </p>
             </div>
 
             <p class="alert alert-danger"
                role="alert"
                data-ng-if="!loading && !loadingAvailableBackends && !allowedBackendsIds.length"
-               data-i18n-static="iplb_backend_setbackupstate_no_ipbackend">
+               data-translate="iplb_backend_setbackupstate_no_ipbackend">
             </p>
 
             <div class="text-center"

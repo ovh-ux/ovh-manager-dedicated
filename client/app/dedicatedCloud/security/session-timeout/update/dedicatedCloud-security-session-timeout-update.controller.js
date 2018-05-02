@@ -1,10 +1,9 @@
 class DedicatedCloudSecurityUpdateSessionTimeoutCtrl {
-    constructor ($scope, $stateParams, DedicatedCloud, translator) {
+    constructor ($scope, $stateParams, DedicatedCloud, $translate) {
         this.$scope = $scope;
         this.$stateParams = $stateParams;
         this.DedicatedCloud = DedicatedCloud;
-        this.translator = translator;
-        this.tr = translator.tr;
+        this.$translate = $translate;
 
         this.sessionTimeout = {
             value: null,
@@ -20,7 +19,7 @@ class DedicatedCloudSecurityUpdateSessionTimeoutCtrl {
         this.DedicatedCloud.updateSessionExpiration(this.$stateParams.productId, (this.sessionTimeout.never && "0") || this.sessionTimeout.value)
             .then((data) => {
                 this.$scope.setMessage(
-                    this.tr("dedicatedCloud_configuration_SECURITY_update_session_timeout_success"),
+                    this.$translate.instant("dedicatedCloud_configuration_SECURITY_update_session_timeout_success"),
                     _.assign(
                         {
                             type: "success"
@@ -30,7 +29,7 @@ class DedicatedCloudSecurityUpdateSessionTimeoutCtrl {
                 );
             })
             .catch((err) => {
-                this.$scope.setMessage(this.tr("dedicatedCloud_configuration_SECURITY_update_session_timeout_fail"), err.data);
+                this.$scope.setMessage(this.$translate.instant("dedicatedCloud_configuration_SECURITY_update_session_timeout_fail"), err.data);
             });
     }
 }

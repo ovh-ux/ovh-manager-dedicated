@@ -1,9 +1,10 @@
 angular.module("UserAccount.controllers").controller("UserAccount.controllers.doubleAuth.sms", [
     "$scope",
     "$q",
+    "$translate",
     "UserAccount.services.doubleAuth.sms",
     "Alerter",
-    function ($scope, $q, DoubleAuthSmsService, Alerter) {
+    function ($scope, $q, $translate, DoubleAuthSmsService, Alerter) {
         "use strict";
 
         $scope.sms = {
@@ -47,7 +48,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
                 .then((smsAccounts) => {
                     $scope.sms.smsAccounts = smsAccounts;
                 })
-                .catch((err) => Alerter.alertFromSWS($scope.tr("user_account_security_double_auth_type_sms_error"), err.data, "doubleAuthAlert"))
+                .catch((err) => Alerter.alertFromSWS($translate.instant("user_account_security_double_auth_type_sms_error"), err.data, "doubleAuthAlert"))
                 .finally(() => {
                     $scope.sms.isLoading = false;
                 });

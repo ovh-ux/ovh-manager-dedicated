@@ -1,4 +1,4 @@
-angular.module("Billing.controllers").controller("Billing.controllers.Orders", ($q, $log, $scope, $location, Alerter, BillingOrders, BillingOrdersApiv7, BillingOrderStatusEnum, BillingOrdersStatusFilters, BillingUser) => {
+angular.module("Billing.controllers").controller("Billing.controllers.Orders", ($q, $log, $scope, $location, $translate, Alerter, BillingOrders, BillingOrdersApiv7, BillingOrderStatusEnum, BillingOrdersStatusFilters, BillingUser) => {
     $scope.itemsPerPage = 10;
     $scope.orderIds = [];
     $scope.loaders = {
@@ -89,7 +89,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.Orders", (
             })
             .catch((err) => {
                 $log.error(err);
-                Alerter.alertFromSWS($scope.tr("orders_informations_error"), err.data);
+                Alerter.alertFromSWS($translate.instant("orders_informations_error"), err.data);
                 return $q.reject(err);
             })
             .finally(() => {
@@ -103,7 +103,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.Orders", (
             .then((order) => {
                 order.status = $scope.ordersStatus[order.orderId];
                 order.expired = moment().isAfter(order.expirationDate);
-                order.statusText = $scope.tr(`orders_order_status_${_.snakeCase(order.status)}`);
+                order.statusText = $translate.instant(`orders_order_status_${_.snakeCase(order.status)}`);
                 return order;
             })
             .then((order) => {
@@ -123,7 +123,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.Orders", (
             .catch((err) => ({
                 error: err,
                 orderId: item,
-                statusText: $scope.tr("orders_order_loading_error")
+                statusText: $translate.instant("orders_order_loading_error")
             }));
     };
 

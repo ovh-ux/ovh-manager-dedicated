@@ -1,0 +1,1264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="autorenew_title" qtlid="287527">Gérer mes services</translation>
+   <translation id="autorenew_myservices" qtlid="212881">Mes services</translation>
+   <translation id="autorenew" qtlid="219758">Renouvellements</translation>
+   <translation id="autorenew_service" qtlid="34632">Services</translation>
+   <translation id="autorenew_service_name" qtlid="266952">Nom du service</translation>
+   <translation id="autorenew_service_type" qtlid="2642">Type</translation>
+   <translation id="autorenew_service_date" qtlid="401685">Date de renouvellement</translation>
+   <translation id="autorenew_service_expiration_date" qtlid="212868">Expire le {0}</translation>
+   <translation id="autorenew_service_expiration_warning" qtlid="264361">Attention, votre service expire avant la date de prélèvement. Celui-ci doit être renouvelé manuellement avant de pouvoir activer le renouvellement automatique.</translation>
+   <translation id="autorenew_service_autorenew_go_to_payment_mean" qtlid="351656">Pour gérer les moyens de paiement utilisés sur votre renouvellement automatique, cliquez <a href="#/billing/mean">ici</a>.</translation>
+   <translation id="autorenew_manage_my_payment_means" qtlid="287514">Gérer mes moyens de paiement</translation>
+   <translation id="autorenew_service_autorenew_go_to_autorenew" qtlid="351669">Pour gérer le renouvellement de vos services, cliquez <a href="#/billing/autoRenew">ici</a>.</translation>
+   <translation id="autorenew_service_after_expiration_date" qtlid="349312">Expiré le {0}</translation>
+   <translation id="autorenew_service_renew" qtlid="168172">Renouvellement</translation>
+   <translation id="autorenew_service_renew_change" qtlid="37875">Modifier</translation>
+   <translation id="autorenew_service_frequency" qtlid="405279">Type</translation>
+   <translation id="autorenew_service_renew_mass_migration_soon" qtlid="398768">La migration des produits existants vers le nouveau dispositif de renouvellement automatique sera proposée prochainement.</translation>
+   <translation id="autorenew_service_renew_requires_mean_and_date" qtlid="349325">Afin de finaliser l'activation du renouvellement automatique, veuillez ajouter un moyen de paiement et ensuite il vous sera possible de sélectionner votre date de prélèvement.</translation>
+   <translation id="autorenew_service_renew_auto" qtlid="134215">Automatique</translation>
+   <translation id="autorenew_service_renew_manuel" qtlid="219797">Manuel</translation>
+   <translation id="autorenew_service_renew_delete_at_expiration" qtlid="399736">Résiliation à l'expiration</translation>
+   <translation id="autorenew_service_renew_manual_payment" qtlid="416059">Auto : Désactivé</translation>
+   <translation id="autorenew_service_renew_year" qtlid="402880">Auto : Tous les ans</translation>
+   <translation id="autorenew_service_renew_month" qtlid="402893">Auto : Tous les mois</translation>
+   <translation id="autorenew_service_renew_3months" qtlid="402906">Trimestriel</translation>
+   <translation id="autorenew_service_renew_6months" qtlid="402919">Semestriel</translation>
+   <translation id="autorenew_service_renew_frequency_value" qtlid="402932">Tous les {0} mois</translation>
+   <translation id="autorenew_service_renew_years_frequency_value" qtlid="402945">Auto : Tous les {0} ans</translation>
+   <translation id="manualrenew_service_update_button_caption" qtlid="416111">Payer le service</translation>
+   <translation id="manualrenew_onlyauto_alert" qtlid="264166">Vous n'avez séléctionné que des renouvellements automatiques.</translation>
+   <translation id="autorenew_empty" qtlid="219810">Vous n'avez aucun service</translation>
+   <translation id="autorenew_service_mass_actions_caption" qtlid="300227">Actions sur les éléments sélectionnés :</translation>
+   <translation id="autorenew_service_update_button_caption" qtlid="416072">Modifier la fréquence de paiement</translation>
+   <translation id="autorenew_service_update_date_button_caption" qtlid="300253">Aligner les dates de renouvellement.</translation>
+   <translation id="autorenew_service_resiliate_button" qtlid="56337">Résilier le service</translation>
+   <translation id="autorenew_service_resiliate_button_title" qtlid="243604">Résilier le service : {0}</translation>
+   <translation id="autorenew_service_disable_button" qtlid="416085">Désactiver le paiement automatique</translation>
+   <translation id="autorenew_service_enable_button" qtlid="416098">Activer le paiement automatique</translation>
+   <translation id="autorenew_service_renew_button" qtlid="416111">Payer le service</translation>
+   <translation id="autorenew_service_renew_button_title" qtlid="416124">Payer le service : {0} (Nouvelle fenêtre)</translation>
+   <translation id="autorenew_service_canceldelete_button" qtlid="285350">Annuler la résiliation</translation>
+   <translation id="autorenew_service_canceldelete_button_title" qtlid="243695">Annuler ma demande de résiliation : {0}</translation>
+   <translation id="autorenew_service_renew_frequency_title" qtlid="212998">Fréquence de paiement</translation>
+   <translation id="autorenew_service_renew_frequency_value" qtlid="402971">Auto : Tous les {0} mois</translation>
+   <translation id="autorenew_search_input_title" qtlid="300629">Rechercher mes services par identifiant.</translation>
+   <translation id="autorenew_service_expand_sub_services" qtlid="300642">Afficher ou cacher les services associés.</translation>
+   <translation id="autorenew_service_select_all_checkbox" qtlid="300655">Tout sélectionner les services.</translation>
+   <translation id="autorenew_service_selection_checkbox" qtlid="300668">Sélectionner ce service.</translation>
+   <translation id="autorenew_service_action_title" qtlid="72809">Actions</translation>
+   <translation id="autorenew_service_action_menu_tooltip" qtlid="300681">Plus d'actions sur ce service</translation>
+   <translation id="autorenew_service_action_title" qtlid="72809">Actions</translation>
+   <translation id="autorenew_service_autorenew_active_checkbox_label" qtlid="369401">Autoriser le renouvellement automatique sur les services désignés</translation>
+   <translation id="autorenew_service_autorenew_day" qtlid="229515">Jour de renouvellement automatique:</translation>
+   <translation id="autorenew_service_autorenew_day_tooltip" qtlid="229528">Si vous avez des services en renouvellement automatique, vous pouvez choisir leur jour de renouvellement</translation>
+   <translation id="autorenew_service_autorenew_day_inactive" qtlid="105310">Inactif</translation>
+   <translation id="autorenew_service_autorenew_day_inactive_warning" qtlid="229541">Les renouvellements automatiques ne fonctionnent que si un jour de renouvellement est sélectionné.</translation>
+   <translation id="autorenew_service_autorenew_guide_help" qtlid="275688">Besoin d'aide pour vos renouvellements ?</translation>
+   <translation id="autorenew_service_autorenew_update" qtlid="369414">Mise à jour de vos paramètres de renouvellement automatique.</translation>
+   <translation id="autorenew_service_update_renewal_activation_notice" qtlid="369427">Le renouvellement automatique a été activé sur le(s) service(s) désigné(s) ainsi que votre compte.</translation>
+   <translation id="autorenew_service_update_renewal_activation_error" qtlid="369440">Vous avez sélectionné le renouvellement automatique pour au moins un service mais nous n'avons pas pu activé le renouvellement automatique sur votre compte : {0}</translation>
+   <translation id="autorenew_guide_help" qtlid="156732">Consultez nos guides en ligne.</translation>
+   <translation id="autorenew_service_delete_title" qtlid="56337">Résilier le service</translation>
+   <translation id="autorenew_service_canceldelete_title" qtlid="416137">Annuler la résiliation d’un service</translation>
+   <translation id="autorenew_service_delete_confirm" qtlid="416150">Le service {0} <strong>sera automatiquement résilié</strong> le {1}.</translation>
+   <translation id="autorenew_service_delete_warn" qtlid="416163">Les données liées à ce service seront automatiquement supprimées de manière irréversible.&#160;Vous pourrez revenir sur cette décision jusqu'à 24h avant la date d’expiration.</translation>
+   <translation id="autorenew_service_canceldelete_confirm" qtlid="416176">Souhaitez-vous annuler la résiliation du service <strong>{0}</strong>?</translation>
+   <translation id="autorenew_service_update_intro" qtlid="351708">Choisissez le type de renouvellement souhaité (automatique ou manuel).<br /> Pour le renouvellement automatique, vous pourrez également choisir la fréquence des prélèvements.</translation>
+   <translation id="autorenew_service_select_intro" qtlid="221058">Sélectionner tous :</translation>
+   <translation id="autorenew_service_select_automatic" qtlid="221071">- les renouvellements automatiques</translation>
+   <translation id="autorenew_service_select_manual" qtlid="221084">- les renouvellements manuels</translation>
+   <translation id="autorenew_service_type_ALL" qtlid="229606">Tous les services</translation>
+   <translation id="autorenew_service_type_ALL_DOM" qtlid="270293">Pack AllDom</translation>
+   <translation id="autorenew_service_type_CDN_DEDICATED" qtlid="219862">CDN Dédié</translation>
+   <translation id="autorenew_service_type_CDN_WEBSITE" qtlid="219875">CDN Site web</translation>
+   <translation id="autorenew_service_type_CDN_WEBSTORAGE" qtlid="219888">CDN WebStorage</translation>
+   <translation id="autorenew_service_type_CLUSTER_HADOOP" qtlid="219901">Cluster Hadoop</translation>
+   <translation id="autorenew_service_type_DEDICATED_NAS" qtlid="219914">Dedicated Nas</translation>
+   <translation id="autorenew_service_type_DEDICATED_NASHA" qtlid="219927">Dedicated NasHa</translation>
+   <translation id="autorenew_service_autorenew_contact_filter" qtlid="405292">Choisissez votre contact de facturation</translation>
+   <translation id="autorenew_service_autorenew_contact_filter_all" qtlid="69173">Tous</translation>
+   <translation id="autorenew_service_autorenew_filter" qtlid="2606">Filtres</translation>
+   <translation id="autorenew_service_type_DEDICATED_SERVER" qtlid="66032">Serveur Dédié</translation>
+   <translation id="autorenew_service_type_DEDICATED_HOUSING" qtlid="371476">Serveur Housing</translation>
+   <translation id="autorenew_service_type_DEDICATED_CLOUD" qtlid="20131">Private Cloud</translation>
+   <translation id="autorenew_service_type_DOMAIN" qtlid="8458">Domaine</translation>
+   <translation id="autorenew_service_type_HOSTING_PRIVATE_DATABASE" qtlid="219966">Hébergement base SQL privée</translation>
+   <translation id="autorenew_service_type_HOSTING_WEB" qtlid="219979">Hébergement web</translation>
+   <translation id="autorenew_service_type_IP_LOADBALANCING" qtlid="407832">Ip Load Balancing</translation>
+   <translation id="autorenew_service_type_IP_LOADBALANCER" qtlid="219992">Ip Load Balancer</translation>
+   <translation id="autorenew_service_type_LICENCE_CLOUD_LINUX" qtlid="220005">Licence CloudLinux</translation>
+   <translation id="autorenew_service_type_LICENCE_CPANEL" qtlid="220018">Licence_cPanel</translation>
+   <translation id="autorenew_service_type_LICENCE_DIRECT_ADMIN" qtlid="220031">Licence DirectAdmin</translation>
+   <translation id="autorenew_service_type_LICENCE_PLESK" qtlid="220044">Licence Plesk</translation>
+   <translation id="autorenew_service_type_LICENCE_SQL_SERVER" qtlid="398943">Licence SQL Server</translation>
+   <translation id="autorenew_service_type_LICENCE_OFFICE" qtlid="398956">Licence Office 365</translation>
+   <translation id="autorenew_service_type_LICENCE_VIRTUOZZO" qtlid="220070">Licence Virtuozzo</translation>
+   <translation id="autorenew_service_type_LICENCE_WINDOWS" qtlid="62666">Licence Windows</translation>
+   <translation id="autorenew_service_type_LICENCE_WORKLIGHT" qtlid="220083">Licence Worklight</translation>
+   <translation id="autorenew_service_type_XDSL" qtlid="229619">Ligne xDSL</translation>
+   <translation id="autorenew_service_type_OVER_THE_BOX" qtlid="281977">OverTheBox</translation>
+   <translation id="autorenew_service_type_PACK" qtlid="229632">Pack xDSL</translation>
+   <translation id="autorenew_service_type_ROUTER" qtlid="220096">Router</translation>
+   <translation id="autorenew_service_type_TELEPHONY" qtlid="29299">Téléphonie</translation>
+   <translation id="autorenew_service_type_EXCHANGE" qtlid="80430">Exchange</translation>
+   <translation id="autorenew_service_type_SMS" qtlid="28243">SMS</translation>
+   <translation id="autorenew_service_type_VPS" qtlid="23083">VPS</translation>
+   <translation id="autorenew_service_type_HOSTING_DOMAIN" qtlid="285049">Hébergement web + domaine</translation>
+   <translation id="autorenew_service_type_MIS" qtlid="285408">Infrastructure managée</translation>
+   <translation id="autorenew_service_type_HOSTING_RESELLER" qtlid="325289">Hébergement multisite</translation>
+   <translation id="autorenew_service_type_EMAIL_DOMAIN" qtlid="286513">MX Plan</translation>
+   <translation id="autorenew_service_type_EMAIL_PRO" qtlid="374893">E-mail Pro</translation>
+   <translation id="autorenew_service_type_VIP" qtlid="104626">VIP</translation>
+
+   <translation id="autorenew_service_type_CAAS_CONTAINERS" qtlid="343148">CaaS Containers</translation>
+   <translation id="autorenew_service_type_CAAS_REGISTRY" qtlid="401672">CaaS Registry</translation>
+   <translation id="autorenew_service_type_DBAAS_QUEUE" qtlid="343161">DBaaS Queue</translation>
+   <translation id="autorenew_service_type_DBAAS_TIMESERIES" qtlid="343174">DBaaS Timeseries</translation>
+   <translation id="autorenew_service_type_DBAAS_LOGS" qtlid="366385">Logs Data Platform</translation>
+   <translation id="autorenew_service_type_DEDICATED_CEPH" qtlid="318946">Ceph as a Service</translation>
+   <translation id="autorenew_service_type_DESKAAS" qtlid="303952">Cloud Desktop</translation>
+   <translation id="autorenew_service_type_HORIZONVIEW" qtlid="324977">Cloud Desktop Infrastructure</translation>
+   <translation id="autorenew_service_type_PAAS_DATABASE" qtlid="343187">PaaS Database</translation>
+   <translation id="autorenew_service_type_PAAS_MONITORING" qtlid="343200">PaaS Monitoring</translation>
+   <translation id="autorenew_service_type_SAAS_CSP2" qtlid="343213">Office 365 Revendeur</translation>
+   <translation id="autorenew_service_type_SSL_GATEWAY" qtlid="400105">SSL Gateway</translation>
+   <translation id="autorenew_service_type_SHAREPOINT" qtlid="298352">Sharepoint</translation>
+   <translation id="autorenew_service_type_VEEAM_CLOUD_CONNECT" qtlid="231370">Veeam Cloud Connect</translation>
+   <translation id="autorenew_service_type_METRICS" qtlid="383525">Metrics</translation>
+
+   <translation id="autorenew_service_billing_warning" qtlid="229645">Vous n'avez pas le droit de modifier cette donnée</translation>
+   <translation id="autorenew_service_readonly_warning" qtlid="220122">Le renouvellement de ce service est déja activé et ne peut etre désactivé</translation>
+   <translation id="autorenew_service_at_service" qtlid="277702">Le renouvellement se gère directement dans votre service</translation>
+   <translation id="autorenew_service_update_title" qtlid="221097">Mise à jour des renouvellements</translation>
+   <translation id="autorenew_service_update_actual" qtlid="31270">Actuellement</translation>
+   <translation id="autorenew_service_update_new" qtlid="9274">Nouveau</translation>
+   <translation id="autorenew_service_update_period_month" qtlid="220148">{0} mois</translation>
+   <translation id="autorenew_service_update_period_12" qtlid="220161">1 année</translation>
+   <translation id="autorenew_service_update_step2_summary" qtlid="221110">Récapitulatif de vos choix:</translation>
+   <translation id="autorenew_service_update_now" qtlid="31270">Actuellement</translation>
+   <translation id="autorenew_service_update_future" qtlid="221123">Nouvelle valeur</translation>
+   <translation id="autorenew_service_update_step2_error" qtlid="177522">Une erreur est survenue, veuillez nous excuser pour la gêne occasionnée.</translation>
+   <translation id="autorenew_service_update_step2_success" qtlid="220174">Operation effectuée avec succès.</translation>
+   <translation id="billing_export_csv" qtlid="231773">Exporter en CSV</translation>
+   <translation id="billing_common_link_new_window" qtlid="300694">(nouvelle fenêtre)</translation>
+   <translation id="billing_date_range_choose_custom_date" qtlid="374443">Définir une période</translation>
+   <translation id="billing_date_range_text" qtlid="374456">Du {0} au {1}</translation>
+   <translation id="autorenew_service_confirm" qtlid="31498">Confirmer</translation>
+
+   <translation id="autorenew_service_disable_autorenew_title" qtlid="416085">Désactiver le paiement automatique</translation>
+   <translation id="autorenew_service_disable_autorenew_desc1" qtlid="416189">Le paiement automatique de votre service <strong>{0}</strong> sera désactivé.</translation>
+   <translation id="autorenew_service_disable_autorenew_desc2" qtlid="416202">Pour conserver votre service, vous devez effectuer votre prochain paiement avant la date d’expiration. <br/> A défaut, votre service sera <strong>automatiquement résilié à sa date d'expiration,</strong> le {0}. Les données liées à ce service seront automatiquement supprimées de manière irréversible.</translation>
+   <translation id="autorenew_service_disable_autorenew_desc3" qtlid="416215">Vous pourrez réactiver le paiement automatique jusqu'à 24 heures avant la date d'expiration.</translation>
+   <translation id="autorenew_service_disable_autorenew_warn" qtlid="416228">Aucune relance par email ne vous sera envoyée pour vous informer de la fin de votre service.</translation>
+
+   <translation id="autorenew_service_enable_autorenew_title" qtlid="416098">Activer le paiement automatique</translation>
+   <translation id="autorenew_service_enable_autorenew_desc1" qtlid="416241">Le paiement automatique de votre service <strong>{0}</strong> sera activé.</translation>
+   <translation id="autorenew_service_enable_autorenew_desc2" qtlid="416254">Votre service sera automatiquement renouvelé à la date du {0}.</translation>
+   <translation id="autorenew_service_enable_autorenew_desc3" qtlid="416267">Vous pourrez paramétrer la fréquence des paiements.</translation>
+
+   <translation id="autorenew_service_renew_0" qtlid="69173">Tous</translation>
+
+   <translation id="autorenew_service_type_HOSTING_RESELLER" qtlid="325276">Revendeur d'hébergement</translation>
+
+   <translation id="autorenew_service_EMAIL_DOMAIN_terminate" qtlid="370070">Supprimer le MX Plan</translation>
+   <translation id="autorenew_service_EMAIL_DOMAIN_terminate_info" qtlid="370083">La suppression d'un MX Plan entraîne l'effacement définitif de toutes les données correspondantes. L'action de supprimer un MX Plan n'octroie aucun remboursement.</translation>
+   <translation id="autorenew_service_EMAIL_DOMAIN_terminate_info_impossible" qtlid="370096">Vous ne pouvez pas supprimer votre e-mail car il est lié à un hébergement web.</translation>
+   <translation id="autorenew_service_EMAIL_DOMAIN_terminate_procedure" qtlid="370109">Un e-mail contenant la procédure de fermeture de votre MX Plan vous permettant de valider la suppression immédiate vous sera envoyé.</translation>
+   <translation id="autorenew_service_EMAIL_DOMAIN_terminate_success" qtlid="370122">Votre demande de fermeture de votre MX Plan a été prise en compte. Un e-mail contenant la procédure vous a été envoyé.</translation>
+   <translation id="autorenew_service_EMAIL_DOMAIN_terminate_error" qtlid="370135">Une erreur est survenue lors de la demande de fermeture de votre MX Plan :</translation>
+
+
+   <translation id="autorenew_service_activate_confirm" qtlid="381933">Voulez-vous activer le renouvellement automatique sur les services désignés ?</translation>
+   <translation id="autorenew_service_activate_success" qtlid="381946">Le renouvellement automatique a été activé avec succès sur les services désignés.</translation>
+   <translation id="autorenew_service_active_title" qtlid="98576">Activer le renouvellement automatique</translation>
+   <translation id="autorenew_service_activate_alert" qtlid="381959">Vous avez au moins un service en renouvellement automatique mais vous n'avez pas encore autorisé cette option.</translation>
+
+   <translation id="autorenew_service_disable_all_domains" qtlid="416280">Désactiver le paiement automatique pour les domaines</translation>
+   <translation id="autorenew_service_disable_all_domains_title" qtlid="416085">Désactiver le paiement automatique</translation>
+   <translation id="autorenew_service_disable_all_domains_desc1" qtlid="444761">Le paiement automatique de <strong>tous vos noms de domaine</strong> sera désactivé uniquement sur ceux dont vous êtes le contact de facturation.</translation>
+   <translation id="autorenew_service_disable_all_domains_desc2" qtlid="416306">Pour conserver vos services, vous devez effectuer vos prochains paiements avant leurs dates d’expiration.</translation>
+   <translation id="autorenew_service_disable_all_domains_desc3" qtlid="416319">A défaut, vos services <strong>seront automatiquement résiliés à leurs dates d'expiration</strong>. Les données liées au paiement automatique de vos services seront supprimées de manière irréversible.</translation>
+   <translation id="autorenew_service_disable_all_domains_desc4" qtlid="416332">Vous pourrez réactiver le paiement automatique de vos services jusqu'à 24 heures avant leurs dates d'expiration.</translation>
+   <translation id="autorenew_service_disable_all_domains_success" qtlid="436007">Votre demande de désactivation du paiement automatique a été prise en compte. Elle sera effective d'ici quelques heures.</translation>
+
+   <translation id="billingError" qtlid="184074">Une erreur s'est produite lors du chargement des informations</translation>
+   <translation id="title_from" qtlid="226214">du</translation>
+   <translation id="title_to" qtlid="226227">au</translation>
+   <translation id="period_tooltip_from" qtlid="215039">Sélectionnez une date de début</translation>
+   <translation id="period_tooltip_to" qtlid="215052">Sélectionnez une date de fin</translation>
+   <translation id="table_download_html" qtlid="184087">Voir la version HTML</translation>
+   <translation id="table_download_pdf" qtlid="184100">Voir la version PDF</translation>
+   <translation id="table_download_html_order" qtlid="452153">Voir la commande au format HTML</translation>
+   <translation id="table_download_pdf_order" qtlid="452166">Voir la commande au format PDF</translation>
+   <translation id="table_download_html_invoice" qtlid="452179">Voir la facture au format HTML</translation>
+   <translation id="table_download_pdf_invoice" qtlid="452192">Voir la facture au format PDF</translation>
+   <translation id="table_download_pdf_beta" qtlid="285108">Voir la version PDF (Beta)</translation>
+   <translation id="todo" qtlid="4106">A venir</translation>
+   <translation id="wizard_order" qtlid="43558">Commander</translation>
+   <translation id="wizard_cancel" qtlid="37863">Annuler</translation>
+   <translation id="wizard_confirm" qtlid="26047">Valider</translation>
+   <translation id="wizard_pay" qtlid="130183">Régler</translation>
+   <translation id="wizard_renew" qtlid="118962">Renouveler</translation>
+   <translation id="wizard_next" qtlid="17743">Suivant</translation>
+   <translation id="wizard_previous" qtlid="17431">Précédent</translation>
+   <translation id="common_order_ascending" qtlid="374469">tri par ordre croissant</translation>
+   <translation id="common_order_descending" qtlid="374482">tri par ordre décroissant</translation>
+   <translation id="common_payment_type_cash" qtlid="139689">Liquide</translation>
+   <translation id="common_payment_type_chargeback" qtlid="139702">Paiement refusé</translation>
+   <translation id="common_payment_type_cheque" qtlid="139715">Chèque</translation>
+   <translation id="common_payment_type_creditCard" qtlid="89809">Carte bancaire</translation>
+   <translation id="common_payment_type_CREDIT_CARD" qtlid="89809">Carte bancaire</translation>
+   <translation id="common_payment_type_debtAccount" qtlid="406377">Prélèvement SEPA</translation>
+   <translation id="common_payment_type_DEBT_ACCOUNT" qtlid="406377">Prélèvement SEPA</translation>
+   <translation id="common_payment_type_deferredPaymentAccount" qtlid="406931">Compte de paiement différé</translation>
+   <translation id="common_payment_type_DEFERRED_PAYMENT_ACCOUNT" qtlid="406931">Compte de paiement différé</translation>
+   <translation id="common_payment_type_deposit" qtlid="139728">Deposit</translation>
+   <translation id="common_payment_type_edinar" qtlid="139741">e-DINAR</translation>
+   <translation id="common_payment_type_fidelityPoints" qtlid="139754">Points fidélité</translation>
+   <translation id="common_payment_type_FIDELITY_POINTS" qtlid="139754">Points fidélité</translation>
+   <translation id="common_payment_type_free" qtlid="130495">Gratuit</translation>
+   <translation id="common_payment_type_ideal" qtlid="139767">iDEAL</translation>
+   <translation id="common_payment_type_mandat" qtlid="139780">Mandat cash</translation>
+   <translation id="common_payment_type_multibanco" qtlid="139793">Multibanco</translation>
+   <translation id="common_payment_type_none" qtlid="30646">Aucun</translation>
+   <translation id="common_payment_type_ovhAccount" qtlid="48926">Compte prépayé</translation>
+   <translation id="common_payment_type_OVH_ACCOUNT" qtlid="48926">Compte prépayé</translation>
+   <translation id="common_payment_type_paymentMandate" qtlid="139819">Mandat administratif</translation>
+   <translation id="common_payment_type_PAYMENT_MANDATE" qtlid="139819">Mandat administratif</translation>
+   <translation id="common_payment_type_paypal" qtlid="98228">Paypal</translation>
+   <translation id="common_payment_type_payu" qtlid="373480">PayU</translation>
+   <translation id="common_payment_type_platnosci" qtlid="139832">Płatności</translation>
+   <translation id="common_payment_type_refund" qtlid="139845">Avoir</translation>
+   <translation id="common_payment_type_transfer" qtlid="89833">Virement</translation>
+   <translation id="common_payment_type_withdrawal" qtlid="139858">Prélèvement</translation>
+   <translation id="common_payment_type_bankAccount" qtlid="176911">Compte bancaire</translation>
+   <translation id="common_payment_type_BANK_ACCOUNT" qtlid="176911">Compte bancaire</translation>
+   <translation id="common_payment_type_digitalLaunchPad" qtlid="277728">Digital launchpad</translation>
+   <translation id="common_payment_type_DIGITAL_LAUNCH_PAD" qtlid="277728">Digital launchpad</translation>
+   <translation id="common_payment_type_unavailable" qtlid="373493">Information sur le paiement non-disponible</translation>
+   <translation id="common_payment_type_0" qtlid="69173">Tous</translation>
+   <translation id="common_see_another_month" qtlid="139871">Voir un autre mois</translation>
+   <translation id="common_choose" qtlid="84153">Choisir</translation>
+   <translation id="common_payment_type_creditCard_expiration_date" qtlid="108769">Date d'expiration :</translation>
+
+   <translation id="common_time_period_in_years" qtlid="374495">{0} ans</translation>
+   <translation id="common_time_period_one_year" qtlid="70277">1 an</translation>
+   <translation id="common_time_period_in_months" qtlid="220148">{0} mois</translation>
+   <translation id="common_time_period_one_month" qtlid="70241">1 mois</translation>
+
+   <translation id="pagination_page">Page {{ current }} / {{ last }}</translation>
+   <translation id="pagination_display" qtlid="69353">Afficher</translation>
+   <translation id="pagination_display_all" qtlid="139884">Tout</translation>
+   <translation id="pagination_go" qtlid="224880">Ok</translation>
+   <translation id="history_title2" qtlid="159540">Mes factures</translation>
+   <translation id="history_invoice_loading_errors" qtlid="402984">Une erreur est survenue lors de la récupération de {0} facture(s).</translation>
+
+   <translation id="history_table_head_date" qtlid="374508">Date d'émission</translation>
+   <translation id="history_table_head_id" qtlid="16445">Référence</translation>
+   <translation id="history_table_head_order_id" qtlid="289250">Numéro de commande</translation>
+   <translation id="history_table_head_product" qtlid="66752">Produit</translation>
+   <translation id="history_table_head_payment" qtlid="140014">Moyen de paiement</translation>
+   <translation id="history_table_head_payment_select_filter" qtlid="402997">Filtrer par moyen de paiement</translation>
+   <translation id="history_table_head_total_with_VAT" qtlid="20647">Montant TTC</translation>
+   <translation id="history_table_head_total" qtlid="45328">Montant</translation>
+   <translation id="history_table_head_balance_due" qtlid="374521">Solde à payer</translation>
+   <translation id="history_table_head_due_date" qtlid="374534">Date due</translation>
+   <translation id="history_table_head_actions" qtlid="72809">Actions</translation>
+   <translation id="history_table_actions_tooltip" qtlid="374547">Plus de détails sur cette facture</translation>
+   <translation id="history_table_empty" qtlid="140027">Vous n'avez pas de facture pour le mois sélectionné</translation>
+   <translation id="history_table_information_not_available" qtlid="374560">Information non-disponible</translation>
+   <translation id="history_table_debt_due_immediately" qtlid="343265">Immédiate</translation>
+   <translation id="history_table_debt_paid" qtlid="34596">Payée</translation>
+
+   <translation id="payments_error" qtlid="177522">Une erreur est survenue, veuillez nous excuser pour la gêne occasionnée.</translation>
+   <translation id="payments_title" qtlid="398781">Suivi des paiements</translation>
+   <translation id="payments_description" qtlid="398794">La liste suivante présente les paiements qui ont été réalisés sur votre moyen de paiement par défaut. Chacun des paiements peut regrouper une ou plusieurs factures.</translation>
+   <translation id="payments_table_head_date" qtlid="398807">Date de paiement</translation>
+   <translation id="payments_table_head_id" qtlid="16445">Référence</translation>
+   <translation id="payments_table_head_type" qtlid="140014">Moyen de paiement</translation>
+   <translation id="payments_table_head_amount" qtlid="190459">Montant total</translation>
+   <translation id="payments_table_head_actions" qtlid="72809">Actions</translation>
+   <translation id="payments_table_actions_tooltip" qtlid="398820">Plus de détails sur ce paiement</translation>
+   <translation id="payments_table_type_not_available" qtlid="374560">Information non-disponible</translation>
+   <translation id="payments_table_empty" qtlid="398833">Vous n'avez pas de paiement pour la période sélectionnée.</translation>
+   <translation id="payments_request_pending">Un règlement de solde est en cours. Cliquez <a href="{0}">sur ce lien</a> pour en savoir plus.</translation>
+   <translation id="payments_details_link" qtlid="398846">Voir les détails pour ce paiement</translation>
+   <translation id="payment_details_payment_id" qtlid="16445">Référence</translation>
+   <translation id="payment_details_payment_date" qtlid="24523">Date</translation>
+   <translation id="payment_details_payment_amount" qtlid="190459">Montant total</translation>
+   <translation id="payment_details_table_header_id" qtlid="398859">Référence de facture</translation>
+   <translation id="payment_details_table_header_date" qtlid="374508">Date d'émission</translation>
+   <translation id="payment_details_table_header_payment" qtlid="398872">Montant de l'opération</translation>
+   <translation id="payment_details_table_header_document" qtlid="343447">Document</translation>
+   <translation id="payment_details_title" qtlid="398885">Détails du paiement</translation>
+   <translation id="payments_details_table_empty" qtlid="398898">Aucun détail disponible.</translation>
+   <translation id="payment_details_return_to_payments" qtlid="343421">Retour à la page précédente</translation>
+
+   <translation id="orders_page_title" qtlid="282809">Mes commandes</translation>
+   <translation id="orders_table_head_date" qtlid="24523">Date</translation>
+   <translation id="orders_table_head_id" qtlid="289250">Numéro de commande</translation>
+   <translation id="orders_table_head_status" qtlid="33790">État</translation>
+   <translation id="orders_table_head_total_taxes_included" qtlid="282822">Montant avec taxes</translation>
+   <translation id="orders_table_head_total" qtlid="45328">Montant</translation>
+   <translation id="orders_table_empty" qtlid="282835">Vous n'avez pas de commande.</translation>
+   <translation id="orders_table_empty_with_filter" qtlid="290459">Vous n'avez pas de commande pour ces critères:</translation>
+   <translation id="orders_informations_error" qtlid="218302">Une erreur s'est produite :</translation>
+   <translation id="orders_order_status_cancelled" qtlid="164623">Annulée</translation>
+   <translation id="orders_order_status_cancelling" qtlid="282848">Annulation en cours</translation>
+   <translation id="orders_order_status_checking" qtlid="33802">Validation</translation>
+   <translation id="orders_order_status_delivered" qtlid="282861">Finalisée</translation>
+   <translation id="orders_order_status_delivering" qtlid="282874">Livraison en cours</translation>
+   <translation id="orders_order_status_documents_requested" qtlid="282887">En attente de documents</translation>
+   <translation id="orders_order_status_not_paid" qtlid="282900">Paiement non reçu</translation>
+   <translation id="orders_order_status_unknown" qtlid="77142">Inconnu</translation>
+   <translation id="orders_order_bc_expired" qtlid="289263">Commande expirée</translation>
+   <translation id="orders_order_status_filter_progress" qtlid="26383">En cours</translation>
+   <translation id="orders_order_status_filter_all" qtlid="290472">Toutes</translation>
+   <translation id="orders_order_status_filter_terminated" qtlid="290485">Terminées</translation>
+   <translation id="orders_order_status_filter_expired" qtlid="290498">Expirées</translation>
+   <translation id="orders_order_loading_error" qtlid="324964">Erreur lors de la récupération de cette commande</translation>
+   <translation id="orders_search_input_title" qtlid="403010">Rechercher mes commandes par identifiant.</translation>
+   <translation id="orders_table_actions_tooltip" qtlid="405512">Plus de détails sur cette commande</translation>
+   <translation id="orders_order_action_retract" qtlid="410624">Annuler la commande</translation>
+   <translation id="orders_retract_return_to_orders" qtlid="410637">Retourner à mes commandes</translation>
+   <translation id="orders_retract_title" qtlid="410650">Rétractation du/des services de la commande</translation>
+   <translation id="orders_retract_confirmation" qtlid="410663">Voulez-vous vraiment annuler votre commande {0}?</translation>
+   <translation id="orders_retract_confirmation_text" qtlid="410676">Oui je désire annuler cette commande.</translation>
+   <translation id="orders_retract_description1" qtlid="410689">Vous disposez d’un droit de rétractation de 14 jours à compter de la date de commande. En cas de rétractation, vous serez remboursé dans un délai de 30 jours à compter de la demande de rétractation, des sommes initialement versées déduction faite des jours de Services consommés au prorata temporis.</translation>
+   <translation id="orders_retract_description2" qtlid="410702">Attention, la rétractation via ce formulaire vaut pour tous les produits associés à cette commande. La rétractation prend effet immédiatement.</translation>
+   <translation id="orders_retract_alert" qtlid="410715">La confirmation entrainera la suppression automatique, immédiate et irréversible de l’ensemble des données liées à cette commande (y compris leur sauvegarde et back-up). Avant de poursuivre et de confirmer votre rétractation, il vous appartient de prendre toutes les mesures nécessaire à la conservation de vos données et à la poursuite de vos activités. OVH décline toute responsabilité à ce titre.</translation>
+   <translation id="orders_retract_success" qtlid="410728">Votre commande {0} a bien été annulée.</translation>
+   <translation id="orders_retract_error" qtlid="410741">Une erreur s'est produite lors de l'annulation de votre commande.</translation>
+
+   <translation id="refunds_title2" qtlid="184113">Mes avoirs</translation>
+   <translation id="refunds_table_head_date" qtlid="24523">Date</translation>
+   <translation id="refunds_table_head_id" qtlid="16445">Référence</translation>
+   <translation id="refunds_table_head_bill" qtlid="140066">Associé à la facture</translation>
+   <translation id="refunds_table_head_account" qtlid="140079">Crédité sur</translation>
+   <translation id="refunds_table_head_total" qtlid="45328">Montant</translation>
+   <translation id="refunds_table_head_total_with_VAT" qtlid="20647">Montant TTC</translation>
+   <translation id="refunds_table_download" qtlid="39286">Télécharger</translation>
+   <translation id="refunds_table_empty" qtlid="184126">Vous n'avez pas d'avoir pour la période sélectionnée</translation>
+   <translation id="refunds_table_account_no_information" qtlid="472671">Informations indisponibles</translation>
+   <translation id="ovhAccount_partial_error" qtlid="191902">Suite à une erreur, certains mouvements ne sont pas affichés. Cependant le solde n'est pas affecté.</translation>
+   <translation id="ovhAccount_title2" qtlid="383950">Mouvements sur mon compte prépayé</translation>
+   <translation id="ovhAccount_no_account" qtlid="383963">Vous n'avez pas de compte prépayé</translation>
+   <translation id="ovhAccount_balance" qtlid="140144">Situation au</translation>
+   <translation id="ovhAccount_table_head_date" qtlid="24523">Date</translation>
+   <translation id="ovhAccount_table_head_id" qtlid="16445">Référence</translation>
+   <translation id="ovhAccount_table_head_product" qtlid="66752">Produit</translation>
+   <translation id="ovhAccount_table_head_remaining" qtlid="89785">Solde</translation>
+   <translation id="ovhAccount_table_head_type" qtlid="2642">Type</translation>
+   <translation id="ovhAccount_table_head_debit" qtlid="89749">Débit</translation>
+   <translation id="ovhAccount_table_head_credit" qtlid="89761">Crédit</translation>
+   <translation id="ovhAccount_table_head_crediter" qtlid="177327">Créditer</translation>
+   <translation id="ovhAccount_table_head_crediter_none" qtlid="227143">Ce compte ne peut pas être crédité.</translation>
+   <translation id="ovhAccount_table_head_download" qtlid="39286">Télécharger</translation>
+   <translation id="ovhAccount_table_empty" qtlid="383976">Vous n'avez pas de mouvements sur votre compte prépayé pour le mois sélectionné</translation>
+   <translation id="ovhAccount_table_error" qtlid="177340">Une erreur s'est produite. Impossible d'afficher les informations</translation>
+
+   <translation id="ovhAccount_retrieve_account" qtlid="287085">Sélectionnez votre compte bancaire :</translation>
+   <translation id="ovhAccount_retrieve_amount" qtlid="287098">Montant à transférer :</translation>
+   <translation id="ovhAccount_retrieve_account_add" qtlid="287111">Ajouter un compte bancaire</translation>
+   <translation id="ovhAccount_retrieve_amount_disponible" qtlid="287124">Somme disponible :</translation>
+   <translation id="ovhAccount_retrieve_error" qtlid="287137">Suite à une erreur votre opération n'a pas pu être effectuée.</translation>
+   <translation id="ovhAccount_retrieve_explanation" qtlid="287150">Vous avez la possibilité de lancer un virement d'un montant choisi depuis votre compte client OVH vers un compte bancaire. Veuillez noter que seules les sommes issues des reversements et des remboursements sont disponibles.</translation>
+   <translation id="ovhAccount_retrieve_success" qtlid="287163">Votre demande a été traité avec succès. Afin de valider le bon de commande, <a href="{0}" target="_blank">cliquez ici.</a></translation>
+   <translation id="ovhAccount_retrieve_resume_1" qtlid="287176">Confirmez-vous le virement de</translation>
+   <translation id="ovhAccount_retrieve_resume_2" qtlid="383989">de votre compte prépayé vers votre compte bancaire</translation>
+   <translation id="ovhAccount_retrieve_tips" qtlid="287202">Cliquez sur "Régler" pour ouvrir le bon de commande. Il faut que votre navigateur accepte les pop-up.</translation>
+   <translation id="ovhAccount_create_alert" qtlid="369875">Définir une alerte</translation>
+   <translation id="ovhAccount_create_alert_resume" qtlid="369888">Vous serez alerté par e-mail lorsque le solde de votre compte passera en dessous du seuil d'alerte.</translation>
+   <translation id="ovhAccount_delete_alert" qtlid="369901">Désactiver les alertes concernant le solde sur votre compte :</translation>
+   <translation id="ovhAccount_create_alert_amount" qtlid="369914">Montant du seuil d'alerte :</translation>
+   <translation id="ovhAccount_create_alert_wizard_button" qtlid="369927">Définir</translation>
+   <translation id="ovhAccount_create_alert_success" qtlid="369940">Votre alerte a bien été enregistrée.</translation>
+   <translation id="ovhAccount_create_alert_error" qtlid="369953">Votre alerte n'a pas pu être correctement enregistrée suite à un problème.</translation>
+   <translation id="ovhAccount_create_alert_amount_resume" qtlid="369966">Montant du seuil d'alerte défini : {0}</translation>
+   <translation id="ovhAccount_no_alert" qtlid="369979">Aucune alerte définie</translation>
+   <translation id="ovhAccount_create_alert_input_error" qtlid="369992">Nous n'acceptons que les nombres entiers positifs.</translation>
+
+   <translation id="payment_mean_title" qtlid="139949">Mes moyens de paiement</translation>
+   <translation id="payment_mean_back" qtlid="440490">Retourner à mes moyens de paiement</translation>
+   <translation id="payment_mean_loading_error" qtlid="436315">Erreur lors du chargement de la page</translation>
+   <translation id="payment_mean_no_register" qtlid="176937">Vous n'avez aucun moyen de paiement enregistré.</translation>
+   <translation id="payment_mean_add" qtlid="37923">Ajouter</translation>
+   <translation id="payment_mean_add_title" qtlid="90253">Ajouter un moyen de paiement</translation>
+   <translation id="payment_mean_action_unavailable_for_our_subsidiary" qtlid="244586">Cette action n’est pas supportée pour votre pays.</translation>
+   <translation id="payment_mean_default" qtlid="101193">Par défaut</translation>
+   <translation id="payment_mean_set_default" qtlid="224893">Moyen de paiement par défaut</translation>
+   <translation id="payment_mean_set_default_after_validation" qtlid="349140">Je veux sélectionner ce moyen de paiement par défaut dès sa validation.</translation>
+
+   <translation id="payment_mean_contact_presentation_reuse_contact" qtlid="381868">en utilisant un contact déjà existant</translation>
+   <translation id="payment_mean_contact_presentation_create_contact" qtlid="381881">en créant un nouveau contact</translation>
+   <translation id="payment_mean_contact_presentation_billingContactId_title" qtlid="451374">Credit card address</translation>
+   <translation id="payment_mean_contact_presentation_new_card_title" qtlid="480867">Entrez une nouvelle carte</translation>
+   <translation id="payment_mean_contact_presentation_update_title_billingContactId" qtlid="451032">Changer l'adresse de la carte de crédit</translation>
+   <translation id="payment_mean_contact_presentation_update_label" qtlid="37875">Modifier</translation>
+   <translation id="payment_mean_contact_presentation_phone_label" qtlid="451387">Tél :</translation>
+   <translation id="payment_mean_contact_presentation_email_label" qtlid="116322">E-mail :</translation>
+   <translation id="payment_mean_contact_creation_main_title" qtlid="381790">Création d'un contact</translation>
+   <translation id="payment_mean_contact_creation_mandatory_fields_rules_explained" qtlid="381842">Par défaut seuls les champs obligatoires (marqués d'un astérisque) sont affichés. Utilisez le bouton positionné en début de chaque section pour afficher l'intégralité des champs que vous pouvez renseigner.</translation>
+   <translation id="payment_mean_contact_creation_fieldset_GENERAL_INFORMATIONS" qtlid="27115">Informations générales</translation>
+   <translation id="payment_mean_contact_creation_fieldset_LEGAL" qtlid="321377">Données juridiques</translation>
+   <translation id="payment_mean_contact_creation_fieldset_PROFILE" qtlid="23035">Profil</translation>
+   <translation id="payment_mean_contact_creation_fieldset_CONTACTS" qtlid="32206">Contacts</translation>
+   <translation id="payment_mean_contact_creation_label_gender" qtlid="238739">Civilité</translation>
+   <translation id="payment_mean_contact_creation_label_firstName" qtlid="23323">Prénom</translation>
+   <translation id="payment_mean_contact_creation_label_lastName" qtlid="374373">Nom</translation>
+   <translation id="payment_mean_contact_creation_label_nationality" qtlid="38073">Nationalité</translation>
+   <translation id="payment_mean_contact_creation_label_country" qtlid="25171">Pays</translation>
+   <translation id="payment_mean_contact_creation_label_address_country" qtlid="25171">Pays</translation>
+   <translation id="payment_mean_contact_creation_label_address_province" qtlid="38577">Province</translation>
+   <translation id="payment_mean_contact_creation_label_address_state" qtlid="8230">État</translation>
+   <translation id="payment_mean_contact_creation_label_address_area" qtlid="32434">Région</translation>
+   <translation id="payment_mean_contact_creation_label_legalform" qtlid="381855">Statut juridique</translation>
+   <translation id="payment_mean_contact_creation_label_email_confirmation" qtlid="321156">Confirmation email</translation>
+   <translation id="payment_mean_contact_creation_label_spareEmail" qtlid="92153">Email de secours</translation>
+   <translation id="payment_mean_contact_creation_label_email" qtlid="33598">Email</translation>
+   <translation id="payment_mean_contact_creation_label_address_line1" qtlid="30430">Adresse</translation>
+   <translation id="payment_mean_contact_creation_label_address_line2" qtlid="321637">Adresse (complément 1)</translation>
+   <translation id="payment_mean_contact_creation_label_address_line3" qtlid="321650">Adresse (complément 2)</translation>
+   <translation id="payment_mean_contact_creation_label_address_otherDetails" qtlid="321663">Adresse (autre)</translation>
+   <translation id="payment_mean_contact_creation_label_address_zip" qtlid="30346">Code postal</translation>
+   <translation id="payment_mean_contact_creation_label_address_city" qtlid="33310">Ville</translation>
+   <translation id="payment_mean_contact_creation_label_birthDay" qtlid="321169">Date d'anniversaire</translation>
+   <translation id="payment_mean_contact_creation_label_phone" qtlid="34174">Téléphone</translation>
+   <translation id="payment_mean_contact_creation_label_fax" qtlid="32926">Fax</translation>
+   <translation id="payment_mean_contact_creation_label_language" qtlid="30598">Langue</translation>
+   <translation id="payment_mean_contact_creation_label_organisation" qtlid="32278">Organisation</translation>
+   <translation id="payment_mean_contact_creation_label_organisationType" qtlid="321676">Type d'organisation</translation>
+   <translation id="payment_mean_contact_creation_label_organisationName" qtlid="191109">Nom de l'organisation</translation>
+   <translation id="payment_mean_contact_creation_label_vat" qtlid="92201">TVA intra communautaire</translation>
+   <translation id="payment_mean_contact_creation_label_birthCity" qtlid="163856">Ville de naissance</translation>
+   <translation id="payment_mean_contact_creation_label_birthZip" qtlid="307865">Code postal de naissance</translation>
+   <translation id="payment_mean_contact_creation_label_birthCountry" qtlid="269877">Pays de naissance</translation>
+   <translation id="payment_mean_contact_creation_label_cellPhone" qtlid="321689">Téléphone mobile</translation>
+   <translation id="payment_mean_contact_creation_label_nationalIdentificationNumber" qtlid="268562">Code fiscal</translation>
+   <translation id="payment_mean_contact_creation_label_companyNationalIdentificationNumber" qtlid="268562">Code fiscal</translation>
+   <translation id="payment_mean_contact_creation_label_associationNationalIdentificationNumber" qtlid="163895">Numéro d'identification national</translation>
+   <translation id="payment_mean_contact_creation_label_optional" qtlid="451400">(Optionnel)</translation>
+   <translation id="payment_mean_contact_creation_gender_male" qtlid="321611">Masculin</translation>
+   <translation id="payment_mean_contact_creation_gender_female" qtlid="321624">Féminin</translation>
+   <translation id="payment_mean_contact_creation_country_AC" qtlid="383788">Ascension Island</translation>
+   <translation id="payment_mean_contact_creation_country_AD" qtlid="239324">Andorra</translation>
+   <translation id="payment_mean_contact_creation_country_AE" qtlid="239337">United Arab Emirates</translation>
+   <translation id="payment_mean_contact_creation_country_AF" qtlid="172683">Afghanistan</translation>
+   <translation id="payment_mean_contact_creation_country_AG" qtlid="239350">Antigua And Barbuda</translation>
+   <translation id="payment_mean_contact_creation_country_AI" qtlid="187040">Anguilla</translation>
+   <translation id="payment_mean_contact_creation_country_AL" qtlid="239363">Albania</translation>
+   <translation id="payment_mean_contact_creation_country_AM" qtlid="239376">Armenia</translation>
+   <translation id="payment_mean_contact_creation_country_AO" qtlid="187066">Angola</translation>
+   <translation id="payment_mean_contact_creation_country_AQ" qtlid="239389">Antarctica</translation>
+   <translation id="payment_mean_contact_creation_country_AR" qtlid="239402">Argentina</translation>
+   <translation id="payment_mean_contact_creation_country_AS" qtlid="239415">American Samoa</translation>
+   <translation id="payment_mean_contact_creation_country_AT" qtlid="239428">Austria</translation>
+   <translation id="payment_mean_contact_creation_country_AU" qtlid="239441">Australia</translation>
+   <translation id="payment_mean_contact_creation_country_AW" qtlid="187105">Aruba</translation>
+   <translation id="payment_mean_contact_creation_country_AX" qtlid="320129">Åland Islands</translation>
+   <translation id="payment_mean_contact_creation_country_AZ" qtlid="239454">Azerbaijan</translation>
+   <translation id="payment_mean_contact_creation_country_BA" qtlid="239467">Bosnia and Herzegovina</translation>
+   <translation id="payment_mean_contact_creation_country_BB" qtlid="239480">Barbados</translation>
+   <translation id="payment_mean_contact_creation_country_BD" qtlid="187157">Bangladesh</translation>
+   <translation id="payment_mean_contact_creation_country_BE" qtlid="239493">Belgium</translation>
+   <translation id="payment_mean_contact_creation_country_BF" qtlid="187170">Burkina Faso</translation>
+   <translation id="payment_mean_contact_creation_country_BG" qtlid="239506">Bulgaria</translation>
+   <translation id="payment_mean_contact_creation_country_BH" qtlid="239519">Bahrain</translation>
+   <translation id="payment_mean_contact_creation_country_BI" qtlid="187196">Burundi</translation>
+   <translation id="payment_mean_contact_creation_country_BJ" qtlid="239532">Benin</translation>
+   <translation id="payment_mean_contact_creation_country_BL" qtlid="187222">Saint Barthélemy</translation>
+   <translation id="payment_mean_contact_creation_country_BM" qtlid="239545">Bermuda</translation>
+   <translation id="payment_mean_contact_creation_country_BN" qtlid="239558">Brunei Darussalam</translation>
+   <translation id="payment_mean_contact_creation_country_BO" qtlid="239571">Plurinational State Of Bolivia</translation>
+   <translation id="payment_mean_contact_creation_country_BQ" qtlid="239584">Bonaire, Saint Eustatius And Saba</translation>
+   <translation id="payment_mean_contact_creation_country_BR" qtlid="239597">Brazil</translation>
+   <translation id="payment_mean_contact_creation_country_BS" qtlid="187300">Bahamas</translation>
+   <translation id="payment_mean_contact_creation_country_BT" qtlid="239610">Bhutan</translation>
+   <translation id="payment_mean_contact_creation_country_BW" qtlid="187326">Botswana</translation>
+   <translation id="payment_mean_contact_creation_country_BY" qtlid="239623">Belarus</translation>
+   <translation id="payment_mean_contact_creation_country_BZ" qtlid="187352">Belize</translation>
+   <translation id="payment_mean_contact_creation_country_CA" qtlid="108733">Canada</translation>
+   <translation id="payment_mean_contact_creation_country_CC" qtlid="239636">Cocos (Keeling) Islands</translation>
+   <translation id="payment_mean_contact_creation_country_CD" qtlid="239649">Democratic Republic Of Congo</translation>
+   <translation id="payment_mean_contact_creation_country_CF" qtlid="239662">Central African Republic</translation>
+   <translation id="payment_mean_contact_creation_country_CG" qtlid="239675">Republic Of Congo</translation>
+   <translation id="payment_mean_contact_creation_country_CH" qtlid="239688">Switzerland</translation>
+   <translation id="payment_mean_contact_creation_country_CI" qtlid="239701">Cote d'Ivoire</translation>
+   <translation id="payment_mean_contact_creation_country_CK" qtlid="239714">Cook Islands</translation>
+   <translation id="payment_mean_contact_creation_country_CL" qtlid="239727">Chile</translation>
+   <translation id="payment_mean_contact_creation_country_CM" qtlid="239740">Cameroon</translation>
+   <translation id="payment_mean_contact_creation_country_CN" qtlid="239753">China</translation>
+   <translation id="payment_mean_contact_creation_country_CO" qtlid="239766">Colombia</translation>
+   <translation id="payment_mean_contact_creation_country_CR" qtlid="187495">Costa Rica</translation>
+   <translation id="payment_mean_contact_creation_country_CU" qtlid="187508">Cuba</translation>
+   <translation id="payment_mean_contact_creation_country_CV" qtlid="239779">Cape Verde</translation>
+   <translation id="payment_mean_contact_creation_country_CW" qtlid="239792">Curacao</translation>
+   <translation id="payment_mean_contact_creation_country_CX" qtlid="239805">Christmas Island</translation>
+   <translation id="payment_mean_contact_creation_country_CY" qtlid="239818">Cyprus</translation>
+   <translation id="payment_mean_contact_creation_country_CZ" qtlid="239831">Czech Republic</translation>
+   <translation id="payment_mean_contact_creation_country_DE" qtlid="239844">Germany</translation>
+   <translation id="payment_mean_contact_creation_country_DG" qtlid="377890">Diego Garcia</translation>
+   <translation id="payment_mean_contact_creation_country_DJ" qtlid="187560">Djibouti</translation>
+   <translation id="payment_mean_contact_creation_country_DK" qtlid="239857">Denmark</translation>
+   <translation id="payment_mean_contact_creation_country_DM" qtlid="239870">Dominica</translation>
+   <translation id="payment_mean_contact_creation_country_DO" qtlid="239883">Dominican Republic</translation>
+   <translation id="payment_mean_contact_creation_country_DZ" qtlid="239896">Algeria</translation>
+   <translation id="payment_mean_contact_creation_country_EA" qtlid="383801">Autonomous City of Ceuta</translation>
+   <translation id="payment_mean_contact_creation_country_EC" qtlid="239909">Ecuador</translation>
+   <translation id="payment_mean_contact_creation_country_EE" qtlid="239922">Estonia</translation>
+   <translation id="payment_mean_contact_creation_country_EG" qtlid="239935">Egypt</translation>
+   <translation id="payment_mean_contact_creation_country_EH" qtlid="239948">Western Sahara</translation>
+   <translation id="payment_mean_contact_creation_country_ER" qtlid="239961">Eritrea</translation>
+   <translation id="payment_mean_contact_creation_country_ES" qtlid="239974">Spain</translation>
+   <translation id="payment_mean_contact_creation_country_ET" qtlid="239987">Ethiopia</translation>
+   <translation id="payment_mean_contact_creation_country_FI" qtlid="240000">Finland</translation>
+   <translation id="payment_mean_contact_creation_country_FJ" qtlid="240013">Fiji</translation>
+   <translation id="payment_mean_contact_creation_country_FK" qtlid="240026">Falkland Islands</translation>
+   <translation id="payment_mean_contact_creation_country_FM" qtlid="240039">Federated States Of Micronesia</translation>
+   <translation id="payment_mean_contact_creation_country_FO" qtlid="240052">Faroe Islands</translation>
+   <translation id="payment_mean_contact_creation_country_FR" qtlid="29047">France</translation>
+   <translation id="payment_mean_contact_creation_country_GA" qtlid="187742">Gabon</translation>
+   <translation id="payment_mean_contact_creation_country_GB" qtlid="240065">United Kingdom</translation>
+   <translation id="payment_mean_contact_creation_country_UK" qtlid="240065">United Kingdom</translation>
+   <translation id="payment_mean_contact_creation_country_GD" qtlid="240078">Grenada</translation>
+   <translation id="payment_mean_contact_creation_country_GE" qtlid="240091">Georgia</translation>
+   <translation id="payment_mean_contact_creation_country_GF" qtlid="240104">French Guiana</translation>
+   <translation id="payment_mean_contact_creation_country_GG" qtlid="240117">Guernsey</translation>
+   <translation id="payment_mean_contact_creation_country_GH" qtlid="187807">Ghana</translation>
+   <translation id="payment_mean_contact_creation_country_GI" qtlid="187820">Gibraltar</translation>
+   <translation id="payment_mean_contact_creation_country_GL" qtlid="240130">Greenland</translation>
+   <translation id="payment_mean_contact_creation_country_GM" qtlid="240143">Gambia</translation>
+   <translation id="payment_mean_contact_creation_country_GN" qtlid="240156">Guinea</translation>
+   <translation id="payment_mean_contact_creation_country_GP" qtlid="187872">Guadeloupe</translation>
+   <translation id="payment_mean_contact_creation_country_GQ" qtlid="240169">Equatorial Guinea</translation>
+   <translation id="payment_mean_contact_creation_country_GR" qtlid="240182">Greece</translation>
+   <translation id="payment_mean_contact_creation_country_GS" qtlid="320142">South Georgia and the South Sandwich Islands</translation>
+   <translation id="payment_mean_contact_creation_country_GT" qtlid="187911">Guatemala</translation>
+   <translation id="payment_mean_contact_creation_country_GU" qtlid="187924">Guam</translation>
+   <translation id="payment_mean_contact_creation_country_GW" qtlid="240195">Guinea-bissau</translation>
+   <translation id="payment_mean_contact_creation_country_GY" qtlid="187950">Guyana</translation>
+   <translation id="payment_mean_contact_creation_country_HK" qtlid="94099">Hong Kong</translation>
+   <translation id="payment_mean_contact_creation_country_HN" qtlid="187976">Honduras</translation>
+   <translation id="payment_mean_contact_creation_country_HR" qtlid="240208">Croatia</translation>
+   <translation id="payment_mean_contact_creation_country_HT" qtlid="240221">Haiti</translation>
+   <translation id="payment_mean_contact_creation_country_HU" qtlid="240234">Hungary</translation>
+   <translation id="payment_mean_contact_creation_country_IC" qtlid="383814">Canary Islands</translation>
+   <translation id="payment_mean_contact_creation_country_ID" qtlid="240247">Indonesia</translation>
+   <translation id="payment_mean_contact_creation_country_IE" qtlid="240260">Ireland</translation>
+   <translation id="payment_mean_contact_creation_country_IL" qtlid="240273">Israel</translation>
+   <translation id="payment_mean_contact_creation_country_IM" qtlid="240286">Isle Of Man</translation>
+   <translation id="payment_mean_contact_creation_country_IN" qtlid="240299">India</translation>
+   <translation id="payment_mean_contact_creation_country_IO" qtlid="240312">British Indian Ocean Territory</translation>
+   <translation id="payment_mean_contact_creation_country_IQ" qtlid="188067">Iraq</translation>
+   <translation id="payment_mean_contact_creation_country_IR" qtlid="240325">Islamic Republic Of Iran</translation>
+   <translation id="payment_mean_contact_creation_country_IS" qtlid="240338">Iceland</translation>
+   <translation id="payment_mean_contact_creation_country_IT" qtlid="240351">Italy</translation>
+   <translation id="payment_mean_contact_creation_country_JE" qtlid="188106">Jersey</translation>
+   <translation id="payment_mean_contact_creation_country_JM" qtlid="240364">Jamaica</translation>
+   <translation id="payment_mean_contact_creation_country_JO" qtlid="240377">Jordan</translation>
+   <translation id="payment_mean_contact_creation_country_JP" qtlid="240390">Japan</translation>
+   <translation id="payment_mean_contact_creation_country_KE" qtlid="188158">Kenya</translation>
+   <translation id="payment_mean_contact_creation_country_KG" qtlid="240403">Kyrgyzstan</translation>
+   <translation id="payment_mean_contact_creation_country_KH" qtlid="240416">Cambodia</translation>
+   <translation id="payment_mean_contact_creation_country_KI" qtlid="188197">Kiribati</translation>
+   <translation id="payment_mean_contact_creation_country_KM" qtlid="240429">Comoros</translation>
+   <translation id="payment_mean_contact_creation_country_KN" qtlid="240442">Saint Kitts And Nevis</translation>
+   <translation id="payment_mean_contact_creation_country_KP" qtlid="240455">Democratic People's Republic Of Korea</translation>
+   <translation id="payment_mean_contact_creation_country_KR" qtlid="240468">Republic Of Korea</translation>
+   <translation id="payment_mean_contact_creation_country_KW" qtlid="240481">Kuwait</translation>
+   <translation id="payment_mean_contact_creation_country_KY" qtlid="240494">Cayman Islands</translation>
+   <translation id="payment_mean_contact_creation_country_KZ" qtlid="188288">Kazakhstan</translation>
+   <translation id="payment_mean_contact_creation_country_LA" qtlid="240507">Lao People's Democratic Republic</translation>
+   <translation id="payment_mean_contact_creation_country_LB" qtlid="240520">Lebanon</translation>
+   <translation id="payment_mean_contact_creation_country_LC" qtlid="240533">Saint Lucia</translation>
+   <translation id="payment_mean_contact_creation_country_LI" qtlid="188340">Liechtenstein</translation>
+   <translation id="payment_mean_contact_creation_country_LK" qtlid="188353">Sri Lanka</translation>
+   <translation id="payment_mean_contact_creation_country_LR" qtlid="240546">Liberia</translation>
+   <translation id="payment_mean_contact_creation_country_LS" qtlid="188379">Lesotho</translation>
+   <translation id="payment_mean_contact_creation_country_LT" qtlid="240559">Lithuania</translation>
+   <translation id="payment_mean_contact_creation_country_LU" qtlid="43474">Luxembourg</translation>
+   <translation id="payment_mean_contact_creation_country_LV" qtlid="240572">Latvia</translation>
+   <translation id="payment_mean_contact_creation_country_LY" qtlid="240585">Libya</translation>
+   <translation id="payment_mean_contact_creation_country_MA" qtlid="240598">Morocco</translation>
+   <translation id="payment_mean_contact_creation_country_MC" qtlid="43486">Monaco</translation>
+   <translation id="payment_mean_contact_creation_country_MD" qtlid="240611">Moldova</translation>
+   <translation id="payment_mean_contact_creation_country_ME" qtlid="240624">Montenegro</translation>
+   <translation id="payment_mean_contact_creation_country_MF" qtlid="240637">Saint Martin</translation>
+   <translation id="payment_mean_contact_creation_country_MG" qtlid="188457">Madagascar</translation>
+   <translation id="payment_mean_contact_creation_country_MH" qtlid="240650">Marshall Islands</translation>
+   <translation id="payment_mean_contact_creation_country_MK" qtlid="240663">The Former Yugoslav Republic Of Macedonia</translation>
+   <translation id="payment_mean_contact_creation_country_ML" qtlid="188483">Mali</translation>
+   <translation id="payment_mean_contact_creation_country_MM" qtlid="188496">Myanmar</translation>
+   <translation id="payment_mean_contact_creation_country_MN" qtlid="240676">Mongolia</translation>
+   <translation id="payment_mean_contact_creation_country_MO" qtlid="188522">Macao</translation>
+   <translation id="payment_mean_contact_creation_country_MP" qtlid="240689">Northern Mariana Islands</translation>
+   <translation id="payment_mean_contact_creation_country_MQ" qtlid="188548">Martinique</translation>
+   <translation id="payment_mean_contact_creation_country_MR" qtlid="240702">Mauritania</translation>
+   <translation id="payment_mean_contact_creation_country_MS" qtlid="188574">Montserrat</translation>
+   <translation id="payment_mean_contact_creation_country_MT" qtlid="240715">Malta</translation>
+   <translation id="payment_mean_contact_creation_country_MU" qtlid="240728">Mauritius</translation>
+   <translation id="payment_mean_contact_creation_country_MV" qtlid="188587">Maldives</translation>
+   <translation id="payment_mean_contact_creation_country_MW" qtlid="188600">Malawi</translation>
+   <translation id="payment_mean_contact_creation_country_MX" qtlid="240741">Mexico</translation>
+   <translation id="payment_mean_contact_creation_country_MY" qtlid="240754">Malaysia</translation>
+   <translation id="payment_mean_contact_creation_country_MZ" qtlid="188639">Mozambique</translation>
+   <translation id="payment_mean_contact_creation_country_NA" qtlid="240767">Namibia</translation>
+   <translation id="payment_mean_contact_creation_country_NC" qtlid="240780">New Caledonia</translation>
+   <translation id="payment_mean_contact_creation_country_NE" qtlid="188678">Niger</translation>
+   <translation id="payment_mean_contact_creation_country_NF" qtlid="240793">Norfolk Island</translation>
+   <translation id="payment_mean_contact_creation_country_NG" qtlid="240806">Nigeria</translation>
+   <translation id="payment_mean_contact_creation_country_NI" qtlid="188717">Nicaragua</translation>
+   <translation id="payment_mean_contact_creation_country_NL" qtlid="240819">Netherlands</translation>
+   <translation id="payment_mean_contact_creation_country_NO" qtlid="240832">Norway</translation>
+   <translation id="payment_mean_contact_creation_country_NP" qtlid="240845">Nepal</translation>
+   <translation id="payment_mean_contact_creation_country_NR" qtlid="188743">Nauru</translation>
+   <translation id="payment_mean_contact_creation_country_NU" qtlid="240858">Niue</translation>
+   <translation id="payment_mean_contact_creation_country_NZ" qtlid="240871">New Zealand</translation>
+   <translation id="payment_mean_contact_creation_country_OM" qtlid="188782">Oman</translation>
+   <translation id="payment_mean_contact_creation_country_PA" qtlid="188795">Panama</translation>
+   <translation id="payment_mean_contact_creation_country_PE" qtlid="240884">Peru</translation>
+   <translation id="payment_mean_contact_creation_country_PF" qtlid="240897">French Polynesia</translation>
+   <translation id="payment_mean_contact_creation_country_PG" qtlid="240910">Papua New Guinea</translation>
+   <translation id="payment_mean_contact_creation_country_PH" qtlid="188847">Philippines</translation>
+   <translation id="payment_mean_contact_creation_country_PK" qtlid="188860">Pakistan</translation>
+   <translation id="payment_mean_contact_creation_country_PL" qtlid="240923">Poland</translation>
+   <translation id="payment_mean_contact_creation_country_PM" qtlid="240936">Saint Pierre And Miquelon</translation>
+   <translation id="payment_mean_contact_creation_country_PN" qtlid="320155">Pitcairn Islands</translation>
+   <translation id="payment_mean_contact_creation_country_PR" qtlid="240949">Puerto Rico</translation>
+   <translation id="payment_mean_contact_creation_country_PS" qtlid="240962">Palestinian Territory, Occupied</translation>
+   <translation id="payment_mean_contact_creation_country_PT" qtlid="40882">Portugal</translation>
+   <translation id="payment_mean_contact_creation_country_PW" qtlid="240975">Palau</translation>
+   <translation id="payment_mean_contact_creation_country_PY" qtlid="188938">Paraguay</translation>
+   <translation id="payment_mean_contact_creation_country_QA" qtlid="188951">Qatar</translation>
+   <translation id="payment_mean_contact_creation_country_RE" qtlid="240988">Reunion</translation>
+   <translation id="payment_mean_contact_creation_country_RO" qtlid="241001">Romania</translation>
+   <translation id="payment_mean_contact_creation_country_RS" qtlid="241014">Serbia</translation>
+   <translation id="payment_mean_contact_creation_country_RU" qtlid="241027">Russian Federation</translation>
+   <translation id="payment_mean_contact_creation_country_RW" qtlid="189003">Rwanda</translation>
+   <translation id="payment_mean_contact_creation_country_SA" qtlid="241040">Saudi Arabia</translation>
+   <translation id="payment_mean_contact_creation_country_SB" qtlid="241053">Solomon Islands</translation>
+   <translation id="payment_mean_contact_creation_country_SC" qtlid="189042">Seychelles</translation>
+   <translation id="payment_mean_contact_creation_country_SD" qtlid="241066">Sudan</translation>
+   <translation id="payment_mean_contact_creation_country_SE" qtlid="241079">Sweden</translation>
+   <translation id="payment_mean_contact_creation_country_SG" qtlid="241092">Singapore</translation>
+   <translation id="payment_mean_contact_creation_country_SH" qtlid="241105">Saint Helena, Ascension And Tristan Da Cunha</translation>
+   <translation id="payment_mean_contact_creation_country_SI" qtlid="241118">Slovenia</translation>
+   <translation id="payment_mean_contact_creation_country_SJ" qtlid="241131">Svalbard And Jan Mayen</translation>
+   <translation id="payment_mean_contact_creation_country_SK" qtlid="241144">Slovakia</translation>
+   <translation id="payment_mean_contact_creation_country_SL" qtlid="189107">Sierra Leone</translation>
+   <translation id="payment_mean_contact_creation_country_SM" qtlid="241157">San Marino</translation>
+   <translation id="payment_mean_contact_creation_country_SN" qtlid="241170">Senegal</translation>
+   <translation id="payment_mean_contact_creation_country_SO" qtlid="241183">Somalia</translation>
+   <translation id="payment_mean_contact_creation_country_SR" qtlid="189146">Suriname</translation>
+   <translation id="payment_mean_contact_creation_country_SS" qtlid="241196">South Sudan</translation>
+   <translation id="payment_mean_contact_creation_country_ST" qtlid="241209">São Tomé and Príncipe</translation>
+   <translation id="payment_mean_contact_creation_country_SV" qtlid="189185">El Salvador</translation>
+   <translation id="payment_mean_contact_creation_country_SX" qtlid="241222">Sint Maarten</translation>
+   <translation id="payment_mean_contact_creation_country_SY" qtlid="241235">Syrian Arab Republic</translation>
+   <translation id="payment_mean_contact_creation_country_SZ" qtlid="189224">Swaziland</translation>
+   <translation id="payment_mean_contact_creation_country_TA" qtlid="383827">Tristan dã Cunha</translation>
+   <translation id="payment_mean_contact_creation_country_TC" qtlid="241248">Turks And Caicos Islands</translation>
+   <translation id="payment_mean_contact_creation_country_TD" qtlid="241261">Chad</translation>
+   <translation id="payment_mean_contact_creation_country_TF" qtlid="320168">French Southern Territories</translation>
+   <translation id="payment_mean_contact_creation_country_TG" qtlid="189276">Togo</translation>
+   <translation id="payment_mean_contact_creation_country_TH" qtlid="241274">Thailand</translation>
+   <translation id="payment_mean_contact_creation_country_TJ" qtlid="241287">Tajikistan</translation>
+   <translation id="payment_mean_contact_creation_country_TK" qtlid="189315">Tokelau</translation>
+   <translation id="payment_mean_contact_creation_country_TL" qtlid="241300">East Timor</translation>
+   <translation id="payment_mean_contact_creation_country_TM" qtlid="241313">Turkmenistan</translation>
+   <translation id="payment_mean_contact_creation_country_TN" qtlid="241326">Tunisia</translation>
+   <translation id="payment_mean_contact_creation_country_TO" qtlid="189367">Tonga</translation>
+   <translation id="payment_mean_contact_creation_country_TR" qtlid="241339">Turkey</translation>
+   <translation id="payment_mean_contact_creation_country_TT" qtlid="241352">Trinidad And Tobago</translation>
+   <translation id="payment_mean_contact_creation_country_TV" qtlid="189393">Tuvalu</translation>
+   <translation id="payment_mean_contact_creation_country_TW" qtlid="241365">Taiwan, Province Of China</translation>
+   <translation id="payment_mean_contact_creation_country_TZ" qtlid="241378">United Republic Of Tanzania</translation>
+   <translation id="payment_mean_contact_creation_country_UA" qtlid="43774">Ukraine</translation>
+   <translation id="payment_mean_contact_creation_country_UG" qtlid="241391">Uganda</translation>
+   <translation id="payment_mean_contact_creation_country_UM" qtlid="320181">United States Minor Outlying Islands</translation>
+   <translation id="payment_mean_contact_creation_country_US" qtlid="114390">United States</translation>
+   <translation id="payment_mean_contact_creation_country_UY" qtlid="189458">Uruguay</translation>
+   <translation id="payment_mean_contact_creation_country_UZ" qtlid="241404">Uzbekistan</translation>
+   <translation id="payment_mean_contact_creation_country_VA" qtlid="241417">Vatican City State</translation>
+   <translation id="payment_mean_contact_creation_country_VC" qtlid="241430">Saint Vincent And The Grenadines</translation>
+   <translation id="payment_mean_contact_creation_country_VE" qtlid="241443">Bolivarian Republic Of Venezuela</translation>
+   <translation id="payment_mean_contact_creation_country_VG" qtlid="241456">Virgin Islands (British)</translation>
+   <translation id="payment_mean_contact_creation_country_VI" qtlid="241469">Virgin Islands (US)</translation>
+   <translation id="payment_mean_contact_creation_country_VN" qtlid="189549">Viet Nam</translation>
+   <translation id="payment_mean_contact_creation_country_VU" qtlid="189562">Vanuatu</translation>
+   <translation id="payment_mean_contact_creation_country_WF" qtlid="241482">Wallis And Futuna</translation>
+   <translation id="payment_mean_contact_creation_country_WS" qtlid="189588">Samoa</translation>
+   <translation id="payment_mean_contact_creation_country_XK" qtlid="383840">Kosovo</translation>
+   <translation id="payment_mean_contact_creation_country_YE" qtlid="241495">Yemen</translation>
+   <translation id="payment_mean_contact_creation_country_YT" qtlid="189614">Mayotte</translation>
+   <translation id="payment_mean_contact_creation_country_ZA" qtlid="241508">South Africa</translation>
+   <translation id="payment_mean_contact_creation_country_ZM" qtlid="241521">Zambia</translation>
+   <translation id="payment_mean_contact_creation_country_ZW" qtlid="189653">Zimbabwe</translation>
+   <translation id="payment_mean_contact_creation_country_UNKNOWN" qtlid="383853">Mon pays n'est pas dans cette liste</translation>
+   <translation id="payment_mean_contact_creation_legalform_individual" qtlid="163869">Individuel</translation>
+   <translation id="payment_mean_contact_creation_legalform_association" qtlid="34138">Association</translation>
+   <translation id="payment_mean_contact_creation_legalform_corporation" qtlid="49022">Entreprise</translation>
+   <translation id="payment_mean_contact_creation_legalform_administration" qtlid="30538">Administration</translation>
+   <translation id="payment_mean_contact_creation_legalform_personalcorporation" qtlid="400118">Travailleur indépendant</translation>
+   <translation id="payment_mean_contact_creation_legalform_other" qtlid="19963">Autre</translation>
+   <translation id="payment_mean_contact_creation_language_de_DE" qtlid="31618">Allemand</translation>
+   <translation id="payment_mean_contact_creation_language_en_AU" qtlid="381712">Anglais (Australien)</translation>
+   <translation id="payment_mean_contact_creation_language_en_CA" qtlid="324925">Anglais (Canadien)</translation>
+   <translation id="payment_mean_contact_creation_language_en_GB" qtlid="33838">Anglais</translation>
+   <translation id="payment_mean_contact_creation_language_en_US" qtlid="381725">Anglais (États Unis)</translation>
+   <translation id="payment_mean_contact_creation_language_es_ES" qtlid="33454">Espagnol</translation>
+   <translation id="payment_mean_contact_creation_language_fr_CA" qtlid="324912">Français (Canadien)</translation>
+   <translation id="payment_mean_contact_creation_language_fr_FR" qtlid="29684">Français</translation>
+   <translation id="payment_mean_contact_creation_language_fr_MA" qtlid="330058">Français (Maroc)</translation>
+   <translation id="payment_mean_contact_creation_language_fr_SN" qtlid="330071">Français (Sénégal)</translation>
+   <translation id="payment_mean_contact_creation_language_fr_TN" qtlid="330084">Français (Tunisie)</translation>
+   <translation id="payment_mean_contact_creation_language_pl_PL" qtlid="32746">Polonais</translation>
+   <translation id="payment_mean_contact_creation_language_cs_CZ" qtlid="239259">Tchéque</translation>
+   <translation id="payment_mean_contact_creation_language_fi_FI" qtlid="239272">Finnois</translation>
+   <translation id="payment_mean_contact_creation_language_en_IE" qtlid="152089">Irlandais</translation>
+   <translation id="payment_mean_contact_creation_language_it_IT" qtlid="33502">Italien</translation>
+   <translation id="payment_mean_contact_creation_language_lt_LT" qtlid="31222">Lituanien</translation>
+   <translation id="payment_mean_contact_creation_language_nl_NL" qtlid="33982">Néerlandais</translation>
+   <translation id="payment_mean_contact_creation_language_pt_PT" qtlid="30370">Portugais</translation>
+   <translation id="payment_mean_contact_contact_creation_submit" qtlid="451413">Confirmer et enregistrer</translation>
+   <translation id="payment_mean_contact_contact_creation_cancel" qtlid="37863">Annuler</translation>
+
+   <translation id="mean_manage_my_services" qtlid="287527">Gérer mes services</translation>
+   <translation id="mean_table_head_creation_date" qtlid="26419">Date de création</translation>
+   <translation id="mean_table_head_description" qtlid="9238">Description</translation>
+   <translation id="mean_table_head_type" qtlid="176950">Type de paiement</translation>
+   <translation id="mean_table_head_options" qtlid="23395">Options</translation>
+   <translation id="payment_mean_no_description" qtlid="17971">Aucune description</translation>
+   <translation id="payment_mean_description_error" qtlid="275247">Une erreur est survenue lors de la modification de la description :</translation>
+   <translation id="payment_mean_default_mean_error" qtlid="177522">Une erreur est survenue, veuillez nous excuser pour la gêne occasionnée.</translation>
+   <translation id="add_mean_select_title_choose" qtlid="244599">Faites votre choix</translation>
+   <translation id="add_mean_select_title_no_choice" qtlid="244612">Aucun autre choix possible</translation>
+   <translation id="add_mean_unable_to_get_payment_means" qtlid="244625">Impossible d’obtenir les moyens de paiement disponibles</translation>
+   <translation id="mean_table_head_state" qtlid="8230">État</translation>
+   <translation id="mean_table_head_actions" qtlid="72809">Actions</translation>
+   <translation id="mean_table_head_3d_secure" qtlid="274876">3D Secure</translation>
+   <translation id="mean_table_head_3d_secure_true" qtlid="34776">Oui</translation>
+   <translation id="mean_table_head_3d_secure_false" qtlid="34788">Non</translation>
+   <translation id="mean_table_tooltip_more_actions" qtlid="436328">Plus d'actions pour ce moyen de paiement</translation>
+   <translation id="deleteMean_title" qtlid="176963">Suppression d'un moyen de paiement</translation>
+   <translation id="paymentMean_delete_message_paypal" qtlid="176976">Attention, vous allez supprimer définitivement le moyen de paiement associé au compte paypal :</translation>
+   <translation id="paymentMean_delete_message_bankAccount" qtlid="176989">Attention, vous allez supprimer définitivement le moyen de paiement associé au compte bancaire :</translation>
+   <translation id="paymentMean_delete_message_creditCard" qtlid="177002">Attention, vous allez supprimer définitivement le moyen de paiement associé à la carte du numéro :</translation>
+   <translation id="paymentMean_label_creditcard_owner_name" qtlid="436341">Nom inscrit sur la carte bancaire</translation>
+   <translation id="paymentMean_label_creditcard_number" qtlid="30778">Numéro</translation>
+   <translation id="paymentMean_label_creditcard_validation" qtlid="33802">Validation</translation>
+   <translation id="paymentMean_label_creditcard_expiration" qtlid="30406">Expiration</translation>
+   <translation id="paymentMean_label_iban" qtlid="177015">IBAN</translation>
+   <translation id="paymentMean_label_bic" qtlid="177028">BIC</translation>
+   <translation id="paymentMean_label_ownerName" qtlid="177041">Nom du propriétaire du compte</translation>
+   <translation id="paymentMean_label_ownerAddress" qtlid="177054">Adresse du propriétaire du compte</translation>
+   <translation id="paymentMean_error_bic_bank" qtlid="177067">Le code de la banque est incorrect.</translation>
+   <translation id="paymentMean_error_bic_valid" qtlid="177080">Le BIC est invalide.</translation>
+   <translation id="paymentMean_error_required" qtlid="177093">Ce champs est requis.</translation>
+   <translation id="paymentMean_error_iban_base" qtlid="177106">la base de l'IBAN est invalide.</translation>
+   <translation id="paymentMean_error_iban_country" qtlid="177119">Le pays de l'IBAN est invalide.</translation>
+   <translation id="paymentMean_error_iban_key" qtlid="177132">La clef de l'IBAN est invalide.</translation>
+   <translation id="paymentMean_error_iban_valid" qtlid="177145">L'IBAN est invalide.</translation>
+   <translation id="paymentMean_error_minlength" qtlid="179680">Il faut au moins 5 caractères.</translation>
+   <translation id="paymentMean_error_maxlength" qtlid="177171">Le texte doit être plus petit que 255 caractères.</translation>
+   <translation id="paymentType_delete_error" qtlid="177184">Erreur lors de la suppression du moyen de paiement</translation>
+   <translation id="paymentType_modify_error" qtlid="436354">Erreur lors de la modification du moyen de paiement</translation>
+   <translation id="paymentType_delete_success" qtlid="177197">Moyen de paiement supprimé</translation>
+   <translation id="paymentMean_add_message_paypal" qtlid="229671">En cliquant sur le bouton "Ajouter", vous pourrez vous connecter sur votre compte Paypal afin de valider un abonnement permettant à OVH d'effectuer des débits sur votre compte Paypal lors de l'édition de vos prochaines factures.</translation>
+   <translation id="paymentMean_add_message_creditCard" qtlid="363865">Afin de valider l'enregistrement de votre carte bancaire, nous allons procéder à une tentative de paiement. <br/> Le montant d'1 euro ne sera donc pas débité sur votre compte suite à la confirmation de votre banque.<br/><b class="blue">Votre carte bancaire sera activée immédiatement.</b></translation>
+   <translation id="paymentMean_add_message_creditCard_CA" qtlid="267422">OVH demande l'autorisation de débit, qui peut apparaître comme un mouvement en cours sur votre compte, mais ne demandera pas la finalisation de cette autorisation, le montant ne vous sera donc pas débité ou sera remboursé par votre institution bancaire.</translation>
+   <translation id="paymentMean_add_message_bankAccount" qtlid="325562">En cliquant sur le bouton "Ajouter", un document sera téléchargé. <br/> Veuillez suivre la procédure décrite dans le document pour valider le moyen de paiement. Votre compte bancaire sera validé dans les 24h à 48h à compter de la réception de votre autorisation de prélévement.</translation>
+   <translation id="paymentType_status_valid" qtlid="177249">Validé</translation>
+   <translation id="paymentType_status_expired" qtlid="58676">Expiré</translation>
+   <translation id="paymentType_status_proposedByCustomer" qtlid="90205">En attente de validation</translation>
+   <translation id="paymentType_status_tooManyFailures" qtlid="316034">Invalide (trop de tentatives de validation en erreur)</translation>
+   <translation id="paymentType_status_broken" qtlid="436367">Brisé</translation>
+   <translation id="paymentType_status_canceled" qtlid="27631">Annulé</translation>
+   <translation id="paymentType_status_canceling" qtlid="409792">En cours d'annulation</translation>
+   <translation id="paymentType_status_canceledbycustomer" qtlid="436380">Annulé par l'utilisateur</translation>
+   <translation id="paymentType_status_canceled_by_customer" qtlid="436380">Annulé par l'utilisateur</translation>
+   <translation id="paymentType_status_created" qtlid="90205">En attente de validation</translation>
+   <translation id="paymentType_status_error" qtlid="45508">En erreur</translation>
+   <translation id="paymentType_status_validforcredit" qtlid="436393">Valide pour crédit</translation>
+   <translation id="paymentType_add_error" qtlid="177262">Erreur lors de l'ajout du moyen de paiement</translation>
+   <translation id="paymentType_status_pendingValidation" qtlid="90133">En cours de validation</translation>
+   <translation id="paymentType_status_waiting_for_documents" qtlid="325575">En attente de réception</translation>
+   <translation id="payment_mean_add_paypal" qtlid="177275">Lancer un abonnement Paypal</translation>
+   <translation id="payement_mean_add_creditCard" qtlid="177288">Générer un bon de commande</translation>
+   <translation id="payment_mean_get_validation" qtlid="177301">Récupérer la procédure de validation</translation>
+   <translation id="payment_mean_return_by_mail_procedure" qtlid="325588">Procédure à retourner par voie postale</translation>
+   <translation id="paymentType_add_success_url" qtlid="363878"><a href="{0}" target="_blank">Cliquez ici</a> pour finaliser l'enregistrement de votre moyen de paiement.</translation>
+   <translation id="paymentType_bankAccount_add_success_with_download" qtlid="325601">Le compte bancaire a été ajouté, il sera actif une fois validé. Veuillez suivre la <a href="{0}" target="_blank">procédure décrite dans ce document</a> pour valider le moyen de paiement à retourner par voie postale.</translation>
+   <translation id="paymentType_bankAccount_pending_validation" qtlid="325614">Vous avez ajouté un compte bancaire sur votre espace client pour lequel nous sommes dans l'attente de votre autorisation de prélèvement à nous retourner par voie postale.</translation>
+   <translation id="paymentType_bankAccount_processing_delay" qtlid="325627">Votre compte bancaire sera validé dans les 24h à 48h à compter de la réception de votre autorisation de prélèvement.</translation>
+   <translation id="payment_mean_radio_select_default" qtlid="406944">Désigner ce moyen de paiement automatique par défaut.</translation>
+   <translation id="payment_mean_select_default" qtlid="436406">Désigner comme moyen par défaut.</translation>
+   <translation id="payment_mean_delete_payment_mean" qtlid="406957">Effacer ce moyen de paiement.</translation>
+   <translation id="payment_mean_description_add" qtlid="436419">Ajouter une description.</translation>
+   <translation id="payment_mean_description_edit" qtlid="436432">Modifier la description.</translation>
+   <translation id="payment_mean_description_input" qtlid="406970">Description du moyen de paiement</translation>
+   <translation id="payment_mean_description_save" qtlid="406983">Enregistrer la description</translation>
+   <translation id="payment_mean_description_cancel" qtlid="406996">Annuler les changements à la description</translation>
+
+   <translation id="ovhAccount_table_type_CANCEL_CREDIT" qtlid="191928">Annulation crédit</translation>
+   <translation id="ovhAccount_table_type_CANCEL_CREDIT_BILL" qtlid="181604">Annulation facture</translation>
+   <translation id="ovhAccount_table_type_CANCEL_CREDIT_REFUND" qtlid="181617">Annulation avoir</translation>
+   <translation id="ovhAccount_table_type_CANCEL_CREDIT_STATEMENT_INCOME" qtlid="384002">Annulation approvisionnement compte prépayé</translation>
+   <translation id="ovhAccount_table_type_CANCEL_CREDIT_STATEMENT_OUTCOME" qtlid="181643">Annulation virement vers compte bancaire</translation>
+
+   <translation id="ovhAccount_table_type_CANCEL_DEBIT" qtlid="191941">Annulation débit</translation>
+   <translation id="ovhAccount_table_type_CANCEL_DEBIT_BILL" qtlid="181604">Annulation facture</translation>
+   <translation id="ovhAccount_table_type_CANCEL_DEBIT_REFUND" qtlid="181617">Annulation avoir</translation>
+   <translation id="ovhAccount_table_type_CANCEL_DEBIT_STATEMENT_INCOME" qtlid="384002">Annulation approvisionnement compte prépayé</translation>
+   <translation id="ovhAccount_table_type_CANCEL_DEBIT_STATEMENT_OUTCOME" qtlid="181643">Annulation virement vers compte bancaire</translation>
+
+   <translation id="ovhAccount_table_type_CANCEL_PRE_DEBIT" qtlid="191941">Annulation débit</translation>
+   <translation id="ovhAccount_table_type_CANCEL_PRE_DEBIT_BILL" qtlid="89725">Facture</translation>
+   <translation id="ovhAccount_table_type_CANCEL_PRE_DEBIT_REFUND" qtlid="139845">Avoir</translation>
+   <translation id="ovhAccount_table_type_CANCEL_PRE_DEBIT_STATEMENT_INCOME" qtlid="384015">Approvisionnement compte prépayé</translation>
+   <translation id="ovhAccount_table_type_CANCEL_PRE_DEBIT_STATEMENT_OUTCOME" qtlid="177366">Virement vers compte bancaire</translation>
+
+   <translation id="ovhAccount_table_type_CREDIT" qtlid="89761">Crédit</translation>
+   <translation id="ovhAccount_table_type_CREDIT_BILL" qtlid="89725">Facture</translation>
+   <translation id="ovhAccount_table_type_CREDIT_DEPOSIT" qtlid="177405">Acompte</translation>
+   <translation id="ovhAccount_table_type_CREDIT_REFUND" qtlid="139845">Avoir</translation>
+   <translation id="ovhAccount_table_type_CREDIT_STATEMENT_INCOME" qtlid="384015">Approvisionnement compte prépayé</translation>
+   <translation id="ovhAccount_table_type_CREDIT_STATEMENT_OUTCOME" qtlid="177366">Virement vers compte bancaire</translation>
+
+   <translation id="ovhAccount_table_type_DEBIT" qtlid="89749">Débit</translation>
+   <translation id="ovhAccount_table_type_DEBIT_BILL" qtlid="89725">Facture</translation>
+   <translation id="ovhAccount_table_type_DEBIT_REFUND" qtlid="139845">Avoir</translation>
+   <translation id="ovhAccount_table_type_DEBIT_STATEMENT_INCOME" qtlid="384015">Approvisionnement compte prépayé</translation>
+   <translation id="ovhAccount_table_type_DEBIT_STATEMENT_OUTCOME" qtlid="177366">Virement vers compte bancaire</translation>
+   <translation id="ovhAccount_table_type_DEBIT_WITHDRAWAL" qtlid="89749">Débit</translation>
+
+   <translation id="ovhAccount_table_type_PRE_CREDIT" qtlid="89761">Crédit</translation>
+   <translation id="ovhAccount_table_type_PRE_CREDIT_BILL" qtlid="89725">Facture</translation>
+   <translation id="ovhAccount_table_type_PRE_CREDIT_REFUND" qtlid="139845">Avoir</translation>
+   <translation id="ovhAccount_table_type_PRE_CREDIT_STATEMENT_INCOME" qtlid="384015">Approvisionnement compte prépayé</translation>
+   <translation id="ovhAccount_table_type_PRE_CREDIT_STATEMENT_OUTCOME" qtlid="177366">Virement vers compte bancaire</translation>
+
+   <translation id="ovhAccount_table_type_PRE_DEBIT" qtlid="89749">Débit</translation>
+   <translation id="ovhAccount_table_type_PRE_DEBIT_BILL" qtlid="89725">Facture</translation>
+   <translation id="ovhAccount_table_type_PRE_DEBIT_REFUND" qtlid="139845">Avoir</translation>
+   <translation id="ovhAccount_table_type_PRE_DEBIT_STATEMENT_INCOME" qtlid="384015">Approvisionnement compte prépayé</translation>
+   <translation id="ovhAccount_table_type_PRE_DEBIT_STATEMENT_OUTCOME" qtlid="177366">Virement vers compte bancaire</translation>
+
+
+   <translation id="ovhAccount_table_head_payment_type" qtlid="140014">Moyen de paiement</translation>
+   <translation id="ovhAccount_table_type_payment_CASH" qtlid="177379">Espèce</translation>
+   <translation id="ovhAccount_table_type_payment_CHARGEBACK" qtlid="177392">Annulation de paiement</translation>
+   <translation id="ovhAccount_table_type_payment_CHEQUE" qtlid="139715">Chèque</translation>
+   <translation id="ovhAccount_table_type_payment_CREDIT_CARD" qtlid="89809">Carte bancaire</translation>
+   <translation id="ovhAccount_table_type_payment_DEPOSIT" qtlid="177405">Acompte</translation>
+   <translation id="ovhAccount_table_type_payment_DEBT_ACCOUNT" qtlid="224906">Compte débiteur</translation>
+   <translation id="ovhAccount_table_type_payment_EDINAR" qtlid="139741">e-DINAR</translation>
+   <translation id="ovhAccount_table_type_payment_FIDELITY_POINTS" qtlid="177418">Points fidélités</translation>
+   <translation id="ovhAccount_table_type_payment_FREE" qtlid="130495">Gratuit</translation>
+   <translation id="ovhAccount_table_type_payment_IDEAL" qtlid="139767">iDEAL</translation>
+   <translation id="ovhAccount_table_type_payment_MANDAT" qtlid="177431">Mandat</translation>
+   <translation id="ovhAccount_table_type_payment_MULTIBANCO" qtlid="139793">Multibanco</translation>
+   <translation id="ovhAccount_table_type_payment_NONE" qtlid="30646">Aucun</translation>
+   <translation id="ovhAccount_table_type_payment_OVH_ACCOUNT" qtlid="48926">Compte prépayé</translation>
+   <translation id="ovhAccount_table_type_payment_PAYMENT_MANDATE" qtlid="177431">Mandat</translation>
+   <translation id="ovhAccount_table_type_payment_PAYPAL" qtlid="98228">Paypal</translation>
+   <translation id="ovhAccount_table_type_payment_PLATNOSCI" qtlid="139832">Płatności</translation>
+   <translation id="ovhAccount_table_type_payment_REFUND" qtlid="139845">Avoir</translation>
+   <translation id="ovhAccount_table_type_payment_TRANSFER" qtlid="89833">Virement</translation>
+   <translation id="ovhAccount_table_type_payment_WITHDRAWAL" qtlid="177444">Prélèvement bancaire</translation>
+
+
+   <translation id="ovhAccount_retrieve_title" qtlid="287215">Virement vers un compte bancaire</translation>
+
+
+   <translation id="ovhAccount_renew_title" qtlid="384028">Créditez votre compte prépayé</translation>
+   <translation id="ovhAccount_renew_step1_msg" qtlid="108384">Vous pouvez créditer votre compte pour régler vos factures, ou anticiper le paiement des factures suivantes.</translation>
+   <translation id="ovhAccount_renew_step1_erreurmin" qtlid="229763">Le montant du crédit doit être au moins de 10 {0} et votre solde de compte doit être positif.</translation>
+   <translation id="ovhAccount_renew_step1_erreurformat" qtlid="243474">Le montant saisi est incorrect, veuillez utiliser uniquement des chiffres avec comme caractère de séparation le point ou la virgule.</translation>
+   <translation id="ovhAccount_renew_step1_amount" qtlid="177483">Montant ({0}) :</translation>
+   <translation id="ovhAccount_renew_step2_msg" qtlid="177496">Résumé de votre commande</translation>
+   <translation id="ovhAccount_renew_step2_credit" qtlid="177509">Montant qui sera crédité :</translation>
+   <translation id="ovhAccount_renew_step2_error" qtlid="177522">Une erreur est survenue, veuillez nous excuser pour la gêne occasionnée.</translation>
+   <translation id="ovhAccount_renew_step2_success" qtlid="384041">Votre crédit (commande N° <a href='{0}' target='_blank'>{1}</a>) sera effectif sur votre compte prépayé à réception de votre paiement.</translation>
+
+   <translation id="ovhAccount_account_list_error" qtlid="227156">Une erreur est survenue lors de la récupération la liste de vos comptes</translation>
+   <translation id="ovhAccount_account_list_title" qtlid="227169">- Compte</translation>
+   <translation id="ovhAccount_account_list_empty" qtlid="227182">Aucun compte a afficher</translation>
+
+   <translation id="telconso_menu_this_month" qtlid="20203">Mois en cours</translation>
+   <translation id="telconso_menu_last_month" qtlid="189848">Mois précédents</translation>
+   <translation id="telconso_search" qtlid="189861">Rechercher une ligne</translation>
+   <translation id="telconso_table_empty" qtlid="189874">Aucun élément à afficher</translation>
+   <translation id="telconso_table_line_empty" qtlid="189887">Aucune ligne à afficher</translation>
+   <translation id="telconso_title_current_month" qtlid="189900">Mon suivi conso téléphonie du {0} au {1}</translation>
+   <translation id="telconso_consumption" qtlid="25639">Consommation</translation>
+   <translation id="telconso_plan_to" qtlid="189913">Forfait à {0}</translation>
+   <translation id="telconso_allowed_outplan" qtlid="189926">Hors-forfait autorisé</translation>
+   <translation id="telconso_service_name_consumption" qtlid="25639">Consommation</translation>
+   <translation id="telconso_nb_lines" qtlid="189939">Nombre de lignes :</translation>
+   <translation id="telconso_nb_groups" qtlid="189952">Nombre de groupes :</translation>
+   <translation id="telconso_callout" qtlid="189965">{0} % d'appels émis</translation>
+   <translation id="telconso_callin" qtlid="189978">{0} % d'appels reçus</translation>
+   <translation id="telconso_faxout" qtlid="189991">{0} % de fax émis</translation>
+   <translation id="telconso_faxin" qtlid="190004">{0} % de fax reçus</translation>
+   <translation id="telconso_to_fixe" qtlid="190017">Vers les fixes</translation>
+   <translation id="telconso_to_mobiles" qtlid="190030">Vers les mobiles</translation>
+   <translation id="telconso_to_special" qtlid="190043">Vers les numéros spéciaux</translation>
+   <translation id="telconso_send_fax" qtlid="87945">Envoi de fax</translation>
+   <translation id="telconso_fax" qtlid="32926">Fax</translation>
+   <translation id="telconso_calls" qtlid="190056">Nombre d'appels</translation>
+   <translation id="telconso_faxs" qtlid="190069">Nombre de fax</translation>
+   <translation id="telconso_anonymous" qtlid="190082">Anonyme</translation>
+
+   <translation id="telconso_in" qtlid="190095">Reçus</translation>
+   <translation id="telconso_out" qtlid="77970">Emis</translation>
+   <translation id="telconso_com_time" qtlid="190108">Temps de com.</translation>
+   <translation id="telconso_call_count" qtlid="190121">Nombre</translation>
+   <translation id="telconso_line" qtlid="42802">Ligne</translation>
+   <translation id="telconso_lines" qtlid="190134">Lignes</translation>
+   <translation id="telconso_price" qtlid="96860">Tarif</translation>
+   <translation id="telconso_outplan" qtlid="190147">Hors-forfait (HT)</translation>
+   <translation id="telconso_group_outplan" qtlid="190160">Hors-forfait</translation>
+   <translation id="telconso_group" qtlid="59507">Groupe</translation>
+   <translation id="telconso_all_groups" qtlid="190173">Tous les groupes</translation>
+   <translation id="telconso_select_group" qtlid="190186">Selectionnez un groupe pour plus d'informations</translation>
+   <translation id="telconso_calls_details" qtlid="190199">Détails des appels</translation>
+   <translation id="telconso_fax_details" qtlid="190212">Détails des fax</translation>
+   <translation id="telconso_line_myline" qtlid="190225">Ma ligne {0}</translation>
+   <translation id="telconso_line_include" qtlid="190238">Conso incluses dans le forfait</translation>
+   <translation id="telconso_line_outplan" qtlid="190251">Conso hors-forfait</translation>
+   <translation id="telconso_next_billing" qtlid="190264">Date de prochaine facture:</translation>
+
+   <translation id="tel_conso_conso_date" qtlid="24523">Date</translation>
+   <translation id="tel_conso_conso_num_emit" qtlid="58364">Numéro appelant</translation>
+   <translation id="tel_conso_conso_num_recv" qtlid="81234">Numéro appelé</translation>
+   <translation id="tel_conso_conso_tranfert" qtlid="190277">Redirigé vers</translation>
+   <translation id="tel_conso_conso_time" qtlid="8218">Durée</translation>
+   <translation id="tel_conso_conso_include" qtlid="190290">Inclus</translation>
+   <translation id="tel_conso_conso_outplan" qtlid="190147">Hors-forfait (HT)</translation>
+   <translation id="tel_conso_conso_included" qtlid="190290">Inclus</translation>
+   <translation id="tel_conso_conso_notincluded" qtlid="190303">Non inclus</translation>
+
+   <translation id="tel_conso_calls" qtlid="190316">appels</translation>
+
+   <translation id="tel_conso_tabs_inc" qtlid="190095">Reçus</translation>
+   <translation id="tel_conso_tabs_out" qtlid="77970">Emis</translation>
+   <translation id="tel_conso_tabs_trs" qtlid="190329">Transférés</translation>
+   <translation id="tel_conso_tabs_incfix" qtlid="190342">Depuis les fixes</translation>
+   <translation id="tel_conso_tabs_incmob" qtlid="190355">Depuis les mobiles</translation>
+   <translation id="tel_conso_tabs_incspe" qtlid="190368">Depuis les numéros spéciaux</translation>
+   <translation id="tel_conso_tabs_outfix" qtlid="190017">Vers les fixes</translation>
+   <translation id="tel_conso_tabs_outmob" qtlid="190030">Vers les mobiles</translation>
+   <translation id="tel_conso_tabs_outspe" qtlid="190043">Vers les numéros spéciaux</translation>
+   <translation id="tel_conso_tabs_trsfix" qtlid="190017">Vers les fixes</translation>
+   <translation id="tel_conso_tabs_trsmob" qtlid="190030">Vers les mobiles</translation>
+   <translation id="tel_conso_tabs_trsspe" qtlid="190043">Vers les numéros spéciaux</translation>
+   <translation id="tel_conso_tabs_sent" qtlid="190381">Envoyés</translation>
+   <translation id="tel_conso_tabs_received" qtlid="190095">Reçus</translation>
+
+   <translation id="tel_conso_error" qtlid="190394">une erreur est survenue pendant le chargement des informations</translation>
+   <translation id="tel_conso_h" qtlid="190407">h</translation>
+   <translation id="tel_conso_min" qtlid="190420">min</translation>
+   <translation id="tel_conso_s" qtlid="190433">s</translation>
+
+   <translation id="tel_lastconso_title" qtlid="190446">Mon relevé téléphonique des mois précédents</translation>
+   <translation id="tel_lastconso_month" qtlid="37803">Mois</translation>
+   <translation id="tel_lastconso_priceplan" qtlid="190459">Montant total</translation>
+   <translation id="tel_lastconso_outplan" qtlid="190160">Hors-forfait</translation>
+   <translation id="tel_lastconso_sheet" qtlid="190472">Relevés de consommation</translation>
+   <translation id="tel_lastconso_sheet_down" qtlid="39286">Télécharger</translation>
+   <translation id="tel_lastconso_sheet_progress" qtlid="26383">En cours</translation>
+   <translation id="tel_lastconso_month_date_display" qtlid="190485">MMM yyyy</translation>
+
+
+<!-- Fidelity -->
+   <translation id="fidelity_title" qtlid="260606">Mon espace fidélité</translation>
+   <translation id="fidelity_get_accounts_error" qtlid="260619">Une erreur est survenue pendant le chargement des informations</translation>
+   <translation id="fidelity_header_date" qtlid="24523">Date</translation>
+   <translation id="fidelity_header_order" qtlid="260632">Transaction</translation>
+   <translation id="fidelity_header_operation" qtlid="32482">Opération</translation>
+   <translation id="fidelity_header_credit" qtlid="89761">Crédit</translation>
+   <translation id="fidelity_header_debit" qtlid="89749">Débit</translation>
+   <translation id="fidelity_header_balance" qtlid="89785">Solde</translation>
+   <translation id="fidelity_points" qtlid="6194">point(s)</translation>
+   <translation id="fidelity_creditOrder_title" qtlid="260645">Créditer votre compte</translation>
+   <translation id="fidelity_creditOrder_step1_msg" qtlid="260658">Vous pouvez créditer votre compte pour régler vos factures, ou anticiper le paiement des factures suivantes. (1 point = 0,01 {0} HT)</translation>
+   <translation id="fidelity_creditOrder_step1_amount" qtlid="260671">Montant (en points)</translation>
+   <translation id="fidelity_creditOrder_step1_erreurformat" qtlid="260684">Le montant saisi est incorrect, veuillez utiliser uniquement des chiffres.</translation>
+   <translation id="fidelity_creditOrder_step1_erreurmin" qtlid="260697">Le montant du crédit doit être au moins de {0} points.</translation>
+   <translation id="fidelity_creditOrder_step1_erreurmax" qtlid="260710">Le montant maximum du crédit est de {0} points.</translation>
+   <translation id="fidelity_creditOrder_step2_msg" qtlid="177496">Résumé de votre commande</translation>
+   <translation id="fidelity_creditOrder_step2_credit" qtlid="260723">Montant qui sera crédité:</translation>
+   <translation id="fidelity_creditOrder_step2_error" qtlid="260619">Une erreur est survenue pendant le chargement des informations</translation>
+
+   <translation id="fidelity_creditOrder_step2_success" qtlid="384041">Votre crédit (commande N° <a href='{0}' target='_blank'>{1}</a>) sera effectif sur votre compte prépayé à réception de votre paiement.</translation>
+   <translation id="fidelity_no_item" qtlid="260736">Aucun élément à afficher.</translation>
+
+   <translation id="fidelity_balance_info" qtlid="260749">Situation au {0} : {1} point(s)</translation>
+   <translation id="fidelity_no_account" qtlid="261543">Vous ne disposez pas de compte fidélité</translation>
+
+   <translation id="sla_table_head_date" qtlid="24523">Date</translation>
+   <translation id="sla_table_head_description" qtlid="9238">Description</translation>
+   <translation id="sla_table_head_refund" qtlid="266900">Compensation</translation>
+   <translation id="sla_table_apply" qtlid="41326">Appliquer</translation>
+   <translation id="sla_informations_error" qtlid="444774">Une erreur est survenue lors de la récupération des informations. Veuillez réessayer ultérieurement :</translation>
+   <translation id="sla_apply_error" qtlid="266913">Une erreur est survenue lors de la demande de compensation :</translation>
+   <translation id="sla_apply_success" qtlid="266926">La demande de compensation a bien été prise en compte. Elle sera effective d'ici quelques heures.</translation>
+   <translation id="sla_apply_no_data" qtlid="266939">Vous n'avez droit à aucune compensation.</translation>
+   <translation id="sla_table_head_service_name" qtlid="266952">Nom du service</translation>
+   <translation id="sla_table_head_service_description" qtlid="266965">Description du service</translation>
+   <translation id="sla_table_head_service_sla_plan" qtlid="267292">SLA contractuel</translation>
+   <translation id="sla_table_head_service_sla_application" qtlid="266991">Avantage octroyé</translation>
+   <translation id="sla_table_services_empty" qtlid="259172">Aucun service</translation>
+   <translation id="sla_informations" qtlid="267004">Voici la liste des opérations de compensation auxquelles vous êtes éligible. Pour bénéficier de ces dernières, veuillez cliquer sur le bouton "Appliquer" correspondant.</translation>
+   <translation id="sla_informations_end" qtlid="444745">Vous avez jusqu'au {0} pour effectuer votre demande d'indemnisation et obtenir les dédommagements alloués dans le cadre de nos SLA.</translation>
+   <translation id="sla_informations_applied" qtlid="444787">Votre demande a bien été prise en compte et sera traitée dans les plus brefs délais.</translation>
+   <translation id="sla_informations_applied_all" qtlid="444800">Vos demandes ont bien été prises en compte et seront traitées dans les plus brefs délais.</translation>
+   <translation id="sla_informations_status_created" qtlid="444813">Créée</translation>
+   <translation id="sla_informations_status_notApplicable" qtlid="444826">Non applicable</translation>
+   <translation id="sla_informations_status_completed" qtlid="444839">Validée</translation>
+   <translation id="sla_informations_status_requested" qtlid="343525">En cours de traitement</translation>
+
+
+   <translation id="services_filter_duration_0" qtlid="69173">Tous</translation>
+   <translation id="services_filter_duration_weeks" qtlid="267489">Expirant dans une semaine</translation>
+   <translation id="services_filter_duration_renew_month" qtlid="405486">Renouvelé dans un mois</translation>
+   <translation id="services_filter_duration_months" qtlid="267502">Expirant dans un mois</translation>
+   <translation id="services_filter_duration_expired" qtlid="267515">Expirés</translation>
+
+   <translation id="hosting_dashboard_service_guide" qtlid="268577">Supprimer l'hébergement</translation>
+   <translation id="hosting_dashboard_close_service_question" qtlid="215533">Souhaitez-vous recevoir cet e-mail ?</translation>
+   <translation id="hosting_dashboard_close_service_success" qtlid="370148">Votre demande de fermeture d'hébergement a été prise en compte. Un e-mail contenant la procédure vous a été envoyé.</translation>
+   <translation id="hosting_dashboard_close_service_error" qtlid="255469">Une erreur est survenue lors de la demande de fermeture de votre hébergement :</translation>
+   <translation id="hosting_dashboard_close_service" qtlid="255417">Supprimer mon hébergement</translation>
+   <translation id="hosting_dashboard_close_service_warning" qtlid="255430">La suppression d'un hébergement entraîne l'effacement définitif de toutes les données correspondantes. L'action de supprimer un hébergement n'octroie aucun remboursement.</translation>
+   <translation id="hosting_dashboard_close_service_desc1" qtlid="370161">Un e-mail contenant la procédure de fermeture de votre hébergement vous permettant de valider la suppression immédiate vous sera envoyé.</translation>
+
+   <translation id="voucher_table_head_id" qtlid="8194">ID</translation>
+   <translation id="voucher_table_head_balance" qtlid="270930">Balance</translation>
+   <translation id="voucher_table_head_voucher_open_date" qtlid="270943">Date d'ouverture</translation>
+   <translation id="voucher_table_head_voucher_last_update" qtlid="191291">Dernière mise à jour</translation>
+   <translation id="voucher_table_empty" qtlid="234539">Aucun voucher</translation>
+   <translation id="voucher_informations_error" qtlid="218302">Une erreur s'est produite :</translation>
+
+   <translation id="voucher_credit_code_add_label" qtlid="444274">Ajouter un code voucher</translation>
+   <translation id="voucher_credit_code_add_placeholder" qtlid="37647">Code</translation>
+   <translation id="voucher_credit_code_add_submit" qtlid="37923">Ajouter</translation>
+   <translation id="voucher_credit_code_success" qtlid="444287">Votre crédit de <strong>{0}</strong> a bien été généré, vous pouvez procéder à votre commande.</translation>
+   <translation id="voucher_credit_code_error" qtlid="444300">Code voucher incorrect</translation>
+
+   <translation id="vouchers_title" qtlid="270917">Mes vouchers</translation>
+   <translation id="vouchers_movements_title" qtlid="270956">Mouvements sur le voucher <strong>{0}</strong></translation>
+   <translation id="voucher_movements_table_head_id" qtlid="8194">ID</translation>
+   <translation id="voucher_movements_table_head_description" qtlid="9238">Description</translation>
+   <translation id="voucher_movements_table_head_date" qtlid="24523">Date</translation>
+   <translation id="voucher_movements_table_head_amount" qtlid="45328">Montant</translation>
+   <translation id="voucher_movements_table_head_previous_balance" qtlid="270969">Balance précédente</translation>
+   <translation id="voucher_movements_table_head_balance" qtlid="270930">Balance</translation>
+   <translation id="voucher_movements_table_head_operation" qtlid="32482">Opération</translation>
+   <translation id="voucher_movements_table_head_order" qtlid="8302">Commande</translation>
+   <translation id="voucher_movements_table_empty" qtlid="270982">Aucun mouvement</translation>
+
+   <translation id="voucher_movements_operation_type_cancel-credit" qtlid="270995">Crédit annulé</translation>
+   <translation id="voucher_movements_operation_type_cancel-debit" qtlid="271008">Débit annulé</translation>
+   <translation id="voucher_movements_operation_type_cancel-pre-debit" qtlid="271021">Annulation pré-débit</translation>
+   <translation id="voucher_movements_operation_type_credit" qtlid="89761">Crédit</translation>
+   <translation id="voucher_movements_operation_type_debit" qtlid="89749">Débit</translation>
+   <translation id="voucher_movements_operation_type_pre-credit" qtlid="271034">Pré-crédit</translation>
+   <translation id="voucher_movements_operation_type_pre-debit" qtlid="271047">Pré-débit</translation>
+
+<!-- STATEMENTS -->
+   <translation id="statements_account_automatic_payment_inactive" qtlid="374573">Le prélèvement automatique n'est pas possible pour le renouvellement de vos services.</translation>
+   <translation id="statements_account_amount_automatically_collected" qtlid="349153">Un montant de <strong>{0}</strong> sera prélevé de votre moyen de paiement par défaut.</translation>
+   <translation id="statements_account_amount_to_pay" qtlid="349166">Un montant de <strong>{0}</strong> est dû pour le renouvellement de vos services.</translation>
+   <translation id="statements_account_no_default_payment_mean" qtlid="353309">Vous n'avez pas désigné de moyen de paiement par défaut.</translation>
+   <translation id="statements_account_invalid_default_payment_mean" qtlid="353322">Votre moyen de paiement par défaut n'est plus valide.</translation>
+   <translation id="statements_account_manage_my_payment_means" qtlid="287514">Gérer mes moyens de paiement</translation>
+   <translation id="statements_account_pay_debt_button" qtlid="349179">Régler mon solde immédiatement</translation>
+   <translation id="statements_account_debt_payment" qtlid="344240">Réglement du solde</translation>
+   <translation id="statements_account_debt_payment_explanation" qtlid="353335">Cette action créera un bon de commande permettant de payer immédiatement un solde. Ce bon de commande sera valide durant une heure.</translation>
+   <translation id="statements_account_debt_payment_bc_with_amount" qtlid="353348">Le <a href="{1}" target="_blank">bon de commande {0}</a> a été généré pour un montant de {2}.</translation>
+   <translation id="statements_accounts_debt_payment_confirm" qtlid="344227">Régler mon solde</translation>
+   <translation id="statements_account_debt_payment_order_generated" qtlid="344266">Le <a href="{1}" target="_blank">bon de commande {0}</a> a été généré pour vous permettre de régler votre solde.</translation>
+   <translation id="statements_account_debt_payment_error" qtlid="344279">Une erreur est survenue, veuillez nous excuser pour la gêne occasionnée.</translation>
+   <translation id="statements_table_caption" qtlid="343252">Commandes à votre comptes</translation>
+   <translation id="statements_table_header_order" qtlid="8302">Commande</translation>
+   <translation id="statements_table_header_date" qtlid="24523">Date</translation>
+   <translation id="statements_table_header_due_date" qtlid="98348">Date d'échéance</translation>
+   <translation id="statements_table_no_due_date" qtlid="343265">Immédiate</translation>
+   <translation id="statements_table_header_amount" qtlid="45328">Montant</translation>
+   <translation id="statements_table_header_balance" qtlid="343278">Balance due</translation>
+   <translation id="statements_table_header_details" qtlid="37527">Détails</translation>
+   <translation id="statements_table_no_detail" qtlid="271871">Aucune donnée disponible.</translation>
+   <translation id="statements_table_invoice_link" qtlid="343291">Consulter la facture {0} dans une nouvelle fenêtre.</translation>
+   <translation id="statements_table_order_link" qtlid="343304">Consulter la commande {0} dans une nouvelle fenêtre.</translation>
+   <translation id="statements_table_detail_label" qtlid="374586">Voir les détails pour cette facture.</translation>
+   <translation id="statements_table_detail_link" qtlid="343317">Voir les détails pour cette dette {0}.</translation>
+   <translation id="statements_table_pay_debt_button" qtlid="349179">Régler mon solde immédiatement</translation>
+
+   <translation id="statements_summary_error" qtlid="343330">Une erreur est survenue dans l'obtention de la balance de votre compte.</translation>
+   <translation id="statements_detail_error" qtlid="343343">Une erreur est survenue dans l'obtention du détails de votre compte.</translation>
+   <translation id="statements_single_debt_error" qtlid="343356">Une erreur est survenue dans l'obtention du détails de cette ligne {0}.</translation>
+   <translation id="statements_payment_mean_error" qtlid="349192">Une erreur est survenue dans l'obtention de vos moyens de paiement</translation>
+
+<!-- STATEMENTS - DETAILS -->
+   <translation id="statements_details_summary_title" qtlid="343369">Sommaire de la commande</translation>
+   <translation id="statements_details_operations_title" qtlid="343382">Historique des opérations</translation>
+   <translation id="statements_details_page_loader" qtlid="343395">Chargement des informations ...</translation>
+   <translation id="statements_details_page_operations" qtlid="343408">Une erreur est survenue dans l'obtention de l'historique des opérations.</translation>
+   <translation id="statements_details_return_to_statements" qtlid="343421">Retour à la page précédente</translation>
+
+   <translation id="statements_details_table_caption" qtlid="343434">Listes des opérations sur la facture</translation>
+   <translation id="statements_details_table_header_date" qtlid="24523">Date</translation>
+   <translation id="statements_details_table_header_operation" qtlid="32482">Opération</translation>
+   <translation id="statements_details_table_header_status" qtlid="33790">État</translation>
+   <translation id="statements_details_table_header_amount" qtlid="45328">Montant</translation>
+   <translation id="statements_details_table_header_document" qtlid="343447">Document</translation>
+   <translation id="statements_details_table_order_link" qtlid="343460">Ouvrir la commande associée à cette opération dans une nouvelle fenêtre.</translation>
+   <translation id="statements_details_table_invoice_html_link" qtlid="349205">Consulter la facture en version html (nouvelle fenêtre).</translation>
+   <translation id="statements_details_table_invoice_pdf_link" qtlid="349218">Consulter la facture en version pdf (nouvelle fenêtre).</translation>
+
+<!-- STATEMENTS - OPERATION STATUS -->
+   <translation id="statements_operation_status_done" qtlid="343486">Complétée</translation>
+   <translation id="statements_operation_status_cancelled" qtlid="164623">Annulée</translation>
+   <translation id="statements_operation_status_failed" qtlid="343499">Échouée</translation>
+   <translation id="statements_operation_status_todo" qtlid="349338">En attente de paiement</translation>
+   <translation id="statements_operation_status_pending" qtlid="343525">En cours de traitement</translation>
+   <translation id="statements_operation_status_paid" qtlid="34596">Payée</translation>
+
+<!-- STATEMENTS - OPERATION DESCRIPTION -->
+   <translation id="statements_operation_description_order" qtlid="312376">Création de la commande</translation>
+   <translation id="statements_operation_description_cancel" qtlid="343538">Annulation d'une opération</translation>
+
+   <translation id="statements_operation_description_creditcard_manual" qtlid="343551">Paiement manuel sur carte de crédit</translation>
+   <translation id="statements_operation_description_creditcard_automatic" qtlid="343564">Débit automatique sur carte de crédit</translation>
+   <translation id="statements_operation_description_refund_creditcard" qtlid="343577">Remboursement sur carte de crédit</translation>
+   <translation id="statements_operation_description_unpaid_creditcard" qtlid="343590">Débit refusé sur carte de crédit</translation>
+
+   <translation id="statements_operation_description_paypal_manual" qtlid="343603">Paiement manuel sur PayPal</translation>
+   <translation id="statements_operation_description_paypal_automatic" qtlid="343616">Débit automatique sur compte PayPal</translation>
+   <translation id="statements_operation_description_refund_paypal" qtlid="343629">Remboursement sur compte PayPal</translation>
+   <translation id="statements_operation_description_unpaid_paypal" qtlid="343642">Débit refusé sur compte PayPal</translation>
+
+   <translation id="statements_operation_description_sepa_automatic" qtlid="343655">Prélèvement automatique sur compte bancaire</translation>
+   <translation id="statements_operation_description_refund_sepa" qtlid="343668">Remboursement sur compte bancaire</translation>
+   <translation id="statements_operation_description_unpaid_sepa" qtlid="343681">Prélèvement refusé sur compte bancaire</translation>
+
+   <translation id="statements_operation_description_credit_account_automatic" qtlid="343694">Prélèvement automatique sur compte prépayé OVH</translation>
+   <translation id="statements_operation_description_refund_credit_account" qtlid="343707">Remboursement sur compte prépayé OVH</translation>
+   <translation id="statements_operation_description_unpaid_credit_account" qtlid="343720">Annulation d'un versement via le compte prépayé OVH</translation>
+
+   <translation id="statements_operation_description_check_manual" qtlid="343733">Paiement par chèque</translation>
+   <translation id="statements_operation_description_refund_check" qtlid="343746">Remboursement par chèque</translation>
+   <translation id="statements_operation_description_unpaid_check" qtlid="343759">Chèque refusé</translation>
+
+   <translation id="statements_operation_description_transfer_manual" qtlid="343772">Paiement par virement bancaire</translation>
+   <translation id="statements_operation_description_refund_check" qtlid="343785">Remboursement d'un virement bancaire</translation>
+   <translation id="statements_operation_description_unpaid_transfer" qtlid="343798">Virement bancaire refusé</translation>
+
+   <translation id="statements_operation_description_warrant_manual" qtlid="343811">Paiement par mandat</translation>
+   <translation id="statements_operation_description_refund_warrant" qtlid="343824">Remboursement d'un mandat</translation>
+   <translation id="statements_operation_description_unpaid_warrant" qtlid="343837">Mandat refusé</translation>
+
+   <translation id="statements_operation_description_refund" qtlid="89797">Remboursement</translation>
+   <translation id="statements_operation_description_refund_unknown" qtlid="89797">Remboursement</translation>
+
+   <translation id="terminate_service_title" qtlid="439957">Formulaire de résiliation</translation>
+   <translation id="terminate_service_information_title" qtlid="439970">Résiliation de votre service</translation>
+   <translation id="terminate_service_information_text" qtlid="439983">Le service sera résilié dès votre confirmation. Ceci entraînera la suppression automatique, immédiate et irréversible de l’ensemble des données liées à ce service (y compris leurs sauvegardes). Avant de poursuivre et de confirmer votre résiliation, il vous appartient de prendre toutes les mesures nécessaires pour conserver vos données. OVH décline toute responsabilité à ce titre.</translation>
+   <translation id="terminate_service_services_title" qtlid="439996">Services affectés par la résiliation</translation>
+   <translation id="terminate_service_services_service" qtlid="31042">Service</translation>
+   <translation id="terminate_service_services_name" qtlid="3818">Nom</translation>
+   <translation id="terminate_service_services_renew" qtlid="168172">Renouvellement</translation>
+   <translation id="terminate_service_services_frequency" qtlid="30442">Fréquence</translation>
+   <translation id="terminate_service_reason_title" qtlid="440009">Raison de votre résiliation</translation>
+   <translation id="terminate_service_reason_LACK_OF_PERFORMANCES" qtlid="299975">Les performances du systèmes sont insuffisantes</translation>
+   <translation id="terminate_service_reason_NOT_NEEDED_ANYMORE" qtlid="299949">Je n'utilise plus le service</translation>
+   <translation id="terminate_service_reason_MIGRATED_TO_ANOTHER_OVH_PRODUCT" qtlid="300014">J'utilise un autre service OVH</translation>
+   <translation id="terminate_service_reason_MIGRATED_TO_COMPETITOR" qtlid="300027">J'utilise le service d'un concurrent</translation>
+   <translation id="terminate_service_reason_NOT_RELIABLE" qtlid="299988">Le service manque de fiabilité</translation>
+   <translation id="terminate_service_reason_OTHER" qtlid="300040">Autres...</translation>
+   <translation id="terminate_service_reason_TOO_EXPENSIVE" qtlid="300001">Le service coûte trop cher</translation>
+   <translation id="terminate_service_reason_TOO_HARD_TO_USE" qtlid="299962">Les outils sont trop complexes</translation>
+   <translation id="terminate_service_reason_text" qtlid="440022">Souhaitez-vous nous donner plus de détails ou nous partager une suggestion ?</translation>
+   <translation id="terminate_service_error" qtlid="440035">Nous sommes désolés, une erreur s'est produite lors du chargement de la page.</translation>
+   <translation id="terminate_service_confirmation_error" qtlid="440048">Une erreur s'est produite lors de la confirmation de l'arrêt de votre service.</translation>
+   <translation id="terminate_service_confirmation_success" qtlid="440061">Vous avez bien résilié vos services. Une confirmation vous sera envoyée par courriel dans les prochaines minutes. Notre équipe support reste à votre disposition pour toute question.</translation>
+   <translation id="terminate_service_confirm" qtlid="440074">Je confirme la résiliation</translation>
+   <translation id="terminate_service_type_allDom" qtlid="270293">Pack AllDom</translation>
+   <translation id="terminate_service_type_caas_containers" qtlid="343148">CaaS Containers</translation>
+   <translation id="terminate_service_type_caas_registry" qtlid="440087">Registre CaaS</translation>
+   <translation id="terminate_service_type_cdn_dedicated" qtlid="219862">CDN Dédié</translation>
+   <translation id="terminate_service_type_cloud" qtlid="15677">Cloud</translation>
+   <translation id="terminate_service_type_cloud_project" qtlid="440100">Project Cloud</translation>
+   <translation id="terminate_service_type_dbaas_logs" qtlid="343174">DBaaS Timeseries</translation>
+   <translation id="terminate_service_type_dbaas_queue" qtlid="343161">DBaaS Queue</translation>
+   <translation id="terminate_service_type_dedicatedCloud" qtlid="440113">Cloud Privé</translation>
+   <translation id="terminate_service_type_dedicated_ceph" qtlid="318946">Ceph as a Service</translation>
+   <translation id="terminate_service_type_dedicated_housing" qtlid="371476">Serveur Housing</translation>
+   <translation id="terminate_service_type_dedicated_nas" qtlid="440126">Nas Dédié</translation>
+   <translation id="terminate_service_type_dedicated_nasha" qtlid="440139">NasHa Dédié</translation>
+   <translation id="terminate_service_type_dedicated_server" qtlid="66032">Serveur Dédié</translation>
+   <translation id="terminate_service_type_deskaas" qtlid="440152">DeskAaS</translation>
+   <translation id="terminate_service_type_domain" qtlid="440165">Domain</translation>
+   <translation id="terminate_service_type_domain_zone" qtlid="440178">Domain zone</translation>
+   <translation id="terminate_service_type_email_domain" qtlid="286513">MX Plan</translation>
+   <translation id="terminate_service_type_email_exchange" qtlid="80430">Exchange</translation>
+   <translation id="terminate_service_type_email_pro" qtlid="374893">E-mail Pro</translation>
+   <translation id="terminate_service_type_freefax" qtlid="440191">Free FAX</translation>
+   <translation id="terminate_service_type_hosting_privateDatabase" qtlid="219966">Hébergement base SQL privée</translation>
+   <translation id="terminate_service_type_hosting_reseller" qtlid="325289">Hébergement multisite</translation>
+   <translation id="terminate_service_type_hosting_web" qtlid="219979">Hébergement web</translation>
+   <translation id="terminate_service_type_ipLoadbalancing" qtlid="440204">Load Balancing</translation>
+   <translation id="terminate_service_type_ip_loadBalancing" qtlid="440217">Équilibreur de charge IP</translation>
+   <translation id="terminate_service_type_license_cloudLinux" qtlid="220005">Licence CloudLinux</translation>
+   <translation id="terminate_service_type_license_office" qtlid="398956">Licence Office 365</translation>
+   <translation id="terminate_service_type_license_plesk" qtlid="220044">Licence Plesk</translation>
+   <translation id="terminate_service_type_license_cpanel" qtlid="350157">Licence CPanel</translation>
+   <translation id="terminate_service_type_license_windows" qtlid="62666">Licence Windows</translation>
+   <translation id="terminate_service_type_metrics" qtlid="383525">Metrics</translation>
+   <translation id="terminate_service_type_msServices_sharepoint" qtlid="298352">Sharepoint</translation>
+   <translation id="terminate_service_type_overTheBox" qtlid="281977">OverTheBox</translation>
+   <translation id="terminate_service_type_paas_database" qtlid="343187">PaaS Database</translation>
+   <translation id="terminate_service_type_paas_monitoring" qtlid="343200">PaaS Monitoring</translation>
+   <translation id="terminate_service_type_pack_xdsl" qtlid="229632">Pack xDSL</translation>
+   <translation id="terminate_service_type_router" qtlid="259857">Routeur</translation>
+   <translation id="terminate_service_type_saas_csp2" qtlid="343213">Office 365 Revendeur</translation>
+   <translation id="terminate_service_type_sms" qtlid="28243">SMS</translation>
+   <translation id="terminate_service_type_sms_virtualNumbers" qtlid="440230">SMS numéro virtuel</translation>
+   <translation id="terminate_service_type_sslGateway" qtlid="400105">SSL Gateway</translation>
+   <translation id="terminate_service_type_stack_mis" qtlid="440243">MIS</translation>
+   <translation id="terminate_service_type_telephony" qtlid="29299">Téléphonie</translation>
+   <translation id="terminate_service_type_telephony_aliases" qtlid="29299">Téléphonie</translation>
+   <translation id="terminate_service_type_telephony_lines" qtlid="29299">Téléphonie</translation>
+   <translation id="terminate_service_type_telephony_trunks" qtlid="29299">Téléphonie</translation>
+   <translation id="terminate_service_type_veeamCloudConnect" qtlid="231370">Veeam Cloud Connect</translation>
+   <translation id="terminate_service_type_vps" qtlid="23083">VPS</translation>
+   <translation id="terminate_service_type_xdsl" qtlid="229619">Ligne xDSL</translation>
+
+<!-- CREDITS -->
+   <translation id="billing_credits_title" qtlid="448920">Mes comptes de crédits</translation>
+   <translation id="billing_credits_none" qtlid="448933">Vous n'avez pas de compte de crédits</translation>
+   <translation id="billing_credit_balance_load_error" qtlid="448946">Une erreur est survenue lors du chargement de vos comptes de crédits.</translation>
+   <translation id="billing_credit_balance_header_name" qtlid="3818">Nom</translation>
+   <translation id="billing_credit_balance_header_creation_date" qtlid="26419">Date de création</translation>
+   <translation id="billing_credit_balance_header_last_update_date" qtlid="191291">Dernière mise à jour</translation>
+   <translation id="billing_credit_balance_header_expiration_date" qtlid="33010">Date d'expiration</translation>
+   <translation id="billing_credit_balance_header_expiration_amount" qtlid="448959">Montant arrivant à expiration</translation>
+   <translation id="billing_credit_balance_header_amount" qtlid="45328">Montant</translation>
+   <translation id="billing_credit_balance_header_movements" qtlid="448972">Mouvements</translation>
+   <translation id="billing_credit_balance_movements_details" qtlid="448985">Détails des mouvements</translation>
+   <translation id="billing_credit_balance_movements_title" qtlid="448998">Détails des mouvements de votre compte de crédits {0}</translation>
+   <translation id="billing_credit_balance_movements_back" qtlid="454254">Retour à mes comptes de crédits</translation>
+   <translation id="billing_credit_balance_movements_header_date" qtlid="24523">Date</translation>
+   <translation id="billing_credit_balance_movements_header_operation" qtlid="32482">Opération</translation>
+   <translation id="billing_credit_balance_header_order" qtlid="8302">Commande</translation>
+   <translation id="billing_credit_balance_movements_operation_credit" qtlid="89761">Crédit</translation>
+   <translation id="billing_credit_balance_movements_operation_debit" qtlid="89749">Débit</translation>
+   <translation id="billing_credit_balance_movements_load_error" qtlid="449011">Une erreur est survenue lors du chargement des mouvements de votre votre compte de crédits.</translation>
+   <translation id="billing_credit_back" qtlid="449024">Retourner à mes comptes de crédits</translation>
+</translations>

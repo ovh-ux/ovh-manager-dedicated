@@ -21,7 +21,7 @@
                                     data-ng-bind="dedicatedCloud.description">
                                 </h1>
                                 <button type="button"
-                                        title="{{ i18n.wizard_modify }}"
+                                        title="{{ 'wizard_modify' | translate }}"
                                         class="btn btn-icon my-auto ml-2"
                                         data-ng-click="editDescription()">
                                     <span class="oui-icon oui-icon-pen_line oui-icon_small" aria-hidden="true"></span>
@@ -38,14 +38,14 @@
                                        data-ng-model="dedicatedCloudDescription.model">
                                 <button type="submit"
                                         class="oui-button oui-button_small-width"
-                                        aria-label="{{ i18n.dedicatedCloud_edit_description_valid }}"
+                                        aria-label="{{ 'dedicatedCloud_edit_description_valid' | translate }}"
                                         data-ng-click="setDescription()"
                                         data-ng-disabled="!formEditDisplayName.newDisplayName.$dirty || formEditDisplayName.$invalid">
                                     <span class="oui-icon oui-icon-success oui-icon_small" aria-hidden="true"></span>
                                 </button>
                                 <button type="button"
                                         class="oui-button oui-button_small-width"
-                                        aria-label="{{ i18n.dedicatedCloud_edit_description_cancel }}"
+                                        aria-label="{{ 'dedicatedCloud_edit_description_cancel' | translate }}"
                                         data-ng-click="cancelDescription()">
                                     <span class="oui-icon oui-icon-error oui-icon_small" aria-hidden="true"></span>
                                 </button>
@@ -60,7 +60,7 @@
                                 aria-haspopup="true"
                                 aria-expanded="false"
                                 data-toggle="dropdown">
-                            <span data-i18n-static="common_actions"></span>
+                            <span data-translate="common_actions"></span>
                             <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-right">
@@ -72,25 +72,25 @@
                                             type: 'all'
                                         })"
                                         data-ng-disabled="getRight('host') || getRight('filer')"
-                                        data-i18n-static="dedicatedCloud_updateResource_toMonthly">
+                                        data-translate="dedicatedCloud_updateResource_toMonthly">
                                 </button>
                             </li>
                             <li>
                                 <a class="btn btn-link"
                                    data-ui-sref="app.license.order"
-                                   data-i18n-static="dedicatedCloud_order_license">
+                                   data-translate="dedicatedCloud_order_license">
                                 </a>
                             </li>
                             <li>
                                 <a class="btn btn-link"
                                    href="#/configuration/ip?serviceName={{dedicatedCloud.name}}"
-                                   data-i18n-static="dedicatedCloud_order_block">
+                                   data-translate="dedicatedCloud_order_block">
                                 </a>
                             </li>
                             <li data-ng-if="dedicatedCloud.canSubscribe">
                                 <a class="btn btn-link"
                                    data-ui-sref=".ml-subscribe"
-                                   data-i18n-static="dedicatedCloud_subscribe_mailing">
+                                   data-translate="dedicatedCloud_subscribe_mailing">
                                 </a>
                             </li>
                             <li data-ng-if="dedicatedCloud.upgradable">
@@ -100,22 +100,21 @@
                                             upgradeType: 'demoToMonthly',
                                             type: 'account'
                                         })"
-                                        data-i18n-static="dedicatedCloud_upgrade_button">
+                                        data-translate="dedicatedCloud_upgrade_button">
                                 </button>
                             </li>
                             <li>
-                                <button type="button"
-                                        class="btn btn-link"
-                                        data-ui-sref=".terminate"
-                                        data-i18n-static="dedicatedCloud_close_service">
-                                </button>
+                                <a class="btn btn-link"
+                                   data-ui-sref=".terminate"
+                                   data-translate="dedicatedCloud_close_service">
+                                </a>
                             </li>
                             <li data-ng-if="dedicatedCloud.vScopeUrl">
                                 <a class="btn btn-link"
                                    target="_blank"
                                    data-ng-href="{{dedicatedCloud.vScopeUrl}}"
                                    rel="noopener">
-                                    <span data-i18n-static="dedicatedCloud_datacenter_go_vscope"></span>
+                                    <span data-translate="dedicatedCloud_datacenter_go_vscope"></span>
                                     <i class="fa fa-external-link ml-1"></i>
                                 </a>
                             </li>
@@ -124,7 +123,7 @@
                                    data-ng-href="{{dedicatedCloud.webInterfaceUrl}}"
                                    target="_blank"
                                    rel="noopener">
-                                    <span data-i18n-static="dedicatedCloud_datacenter_go_web_interface"></span>
+                                    <span data-translate="dedicatedCloud_datacenter_go_web_interface"></span>
                                     <i class="fa fa-external-link ml-1"></i>
                                 </a>
                             </li>
@@ -133,7 +132,7 @@
                                    data-ng-href="{{dedicatedCloud.certifiedInterfaceUrl}}"
                                    target="_blank"
                                    rel="noopener">
-                                    <span data-i18n-static="dedicatedCloud_datacenter_go_certified_web_interface"></span>
+                                    <span data-translate="dedicatedCloud_datacenter_go_certified_web_interface"></span>
                                     <i class="fa fa-external-link ml-1"></i>
                                 </a>
                             </li>
@@ -146,28 +145,28 @@
         <!-- Tabs -->
         <responsive-tabs>
             <responsive-tab data-state="app.dedicatedClouds"
-                            data-dropdown-title="{{ i18n.dedicatedCloud_tab_dashboard }}">
-                <span data-i18n-static="dedicatedCloud_tab_dashboard"></span>
+                            data-dropdown-title="{{ 'dedicatedCloud_tab_dashboard' | translate }}">
+                <span data-translate="dedicatedCloud_tab_dashboard"></span>
             </responsive-tab>
             <responsive-tab data-state="app.dedicatedClouds.datacenters"
-                            data-dropdown-title="{{ i18n.dedicatedCloud_tab_datacenter }}"
+                            data-dropdown-title="{{ 'dedicatedCloud_tab_datacenter' | translate }}"
                             data-ng-if="!dedicatedCloud.isExpired">
-                <span data-i18n-static="dedicatedCloud_tab_datacenter"></span>
+                <span data-translate="dedicatedCloud_tab_datacenter"></span>
             </responsive-tab>
             <responsive-tab data-state="app.dedicatedClouds.users"
-                            data-dropdown-title="{{ i18n.dedicatedCloud_tab_user }}"
+                            data-dropdown-title="{{ 'dedicatedCloud_tab_user' | translate }}"
                             data-ng-if="!dedicatedCloud.isExpired">
-                <span data-i18n-static="dedicatedCloud_tab_user"></span>
+                <span data-translate="dedicatedCloud_tab_user"></span>
             </responsive-tab>
             <responsive-tab data-state="app.dedicatedClouds.security"
-                            data-dropdown-title="{{ i18n.dedicatedCloud_tab_security }}"
+                            data-dropdown-title="{{ 'dedicatedCloud_tab_security' | translate }}"
                             data-ng-if="!dedicatedCloud.isExpired">
-                <span data-i18n-static="dedicatedCloud_tab_security"></span>
+                <span data-translate="dedicatedCloud_tab_security"></span>
             </responsive-tab>
             <responsive-tab data-state="app.dedicatedClouds.operation"
-                            data-dropdown-title="{{ i18n.dedicatedCloud_tab_operation }}"
+                            data-dropdown-title="{{ 'dedicatedCloud_tab_operation' | translate }}"
                             data-ng-if="!dedicatedCloud.isExpired">
-                <span data-i18n-static="dedicatedCloud_tab_operation"></span>
+                <span data-translate="dedicatedCloud_tab_operation"></span>
             </responsive-tab>
             <responsive-tab-more>
                 <i class="fa fa-plus"></i>
@@ -193,10 +192,10 @@
                     &times;
                 </button>
                 <i class="fa fa-info" aria-hidden="true"></i>
-                <span data-ng-bind-html="tr('dedicatedCloud_banner_hdc_ready_label')"></span>
+                <span data-ng-bind-html="'dedicatedCloud_banner_hdc_ready_label' | translate "></span>
                 <a class="btn btn-link"
                    role="button"
-                   data-i18n-static="dedicatedCloud_banner_hdc_ready_contact_me"
+                   data-translate="dedicatedCloud_banner_hdc_ready_contact_me"
                    data-ng-click="contactMeForHds()">
                 </a>
             </div>
@@ -209,7 +208,7 @@
                     &times;
                 </button>
                 <i class="fa fa-exclamation"></i>
-                <span data-i18n-static="dedicatedCloud_discount_AMD"></span>
+                <span data-translate="dedicatedCloud_discount_AMD"></span>
             </div>
 
             <div data-ovh-alert="dedicatedCloud_alert"></div>

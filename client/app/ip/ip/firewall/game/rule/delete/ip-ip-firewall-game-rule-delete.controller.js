@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("RemoveGameFirewallRuleCtrl", function ($scope, Ip, $rootScope, Alerter, IpGameFirewall) {
+angular.module("Module.ip.controllers").controller("RemoveGameFirewallRuleCtrl", function ($scope, $translate, Ip, $rootScope, Alerter, IpGameFirewall) {
     "use strict";
 
     const self = this;
@@ -13,11 +13,11 @@ angular.module("Module.ip.controllers").controller("RemoveGameFirewallRuleCtrl",
         IpGameFirewall.deleteRule(self.datas.ipblock, self.datas.ip, self.datas.rule.id)
             .then(
                 () => {
-                    Alerter.success($scope.tr("ip_game_mitigation_rule_remove_success"), alert);
+                    Alerter.success($translate.instant("ip_game_mitigation_rule_remove_success"), alert);
                     $rootScope.$broadcast("ips.gameFirewall.display.remove", self.datas.rule.id);
                 },
                 (data) => {
-                    Alerter.alertFromSWS($scope.tr("ip_game_mitigation_rule_remove_error"), data, alert);
+                    Alerter.alertFromSWS($translate.instant("ip_game_mitigation_rule_remove_error"), data, alert);
                 }
             )
             .finally(() => {

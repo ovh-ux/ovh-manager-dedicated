@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpDeleteVirtualMacCtrl", ($scope, $rootScope, Ip, IpVirtualMac, Alerter) => {
+angular.module("Module.ip.controllers").controller("IpDeleteVirtualMacCtrl", ($scope, $rootScope, $translate, Ip, IpVirtualMac, Alerter) => {
     $scope.data = $scope.currentActionData; // service and sub
 
     /* Action */
@@ -10,10 +10,16 @@ angular.module("Module.ip.controllers").controller("IpDeleteVirtualMacCtrl", ($s
                 () => {
                     $rootScope.$broadcast("ips.table.refreshVmac", $scope.data.ipBlock);
 
-                    Alerter.success($scope.tr("ip_virtualmac_delete_success", [$scope.data.ipBlock.service.virtualmac.virtualMacsByIp[$scope.data.ip.ip], $scope.data.ip.ip]));
+                    Alerter.success($translate.instant("ip_virtualmac_delete_success", {
+                        t0: $scope.data.ipBlock.service.virtualmac.virtualMacsByIp[$scope.data.ip.ip],
+                        t1: $scope.data.ip.ip
+                    }));
                 },
                 (reason) => {
-                    Alerter.alertFromSWS($scope.tr("ip_virtualmac_delete_failure", [$scope.data.ipBlock.service.virtualmac.virtualMacsByIp[$scope.data.ip.ip], $scope.data.ip.ip]), reason);
+                    Alerter.alertFromSWS($translate.instant("ip_virtualmac_delete_failure", {
+                        t0: $scope.data.ipBlock.service.virtualmac.virtualMacsByIp[$scope.data.ip.ip],
+                        t1: $scope.data.ip.ip
+                    }), reason);
                 }
             )
             .finally(() => {

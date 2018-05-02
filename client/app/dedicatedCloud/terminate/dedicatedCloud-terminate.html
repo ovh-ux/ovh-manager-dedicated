@@ -1,20 +1,20 @@
 <div class="dedicatedCloud-terminate">
 
-    <oui-modal data-title="{{ i18n.dedicatedCloud_close_service }}"
+    <oui-modal data-title="{{ :: 'dedicatedCloud_close_service' | translate }}"
                data-primary-action="$ctrl.onTerminateBtnClick()"
-               data-primary-label="{{ i18n.wizard_confirm }}"
+               data-primary-label="{{ :: 'wizard_confirm' | translate }}"
                data-secondary-action="$ctrl.onCancelBtnClick()"
-               data-secondary-label="{{ i18n.wizard_cancel }}"
+               data-secondary-label="{{ :: 'wizard_cancel' | translate }}"
                data-on-dismiss="$ctrl.onCancelBtnClick()"
                data-loading="$ctrl.loading.terminate">
 
         <oui-message class="d-block my-4"
                      data-type="error">
-            <span data-i18n-static="dedicatedCloud_close_service_warning"></span>
+            <span data-translate="dedicatedCloud_close_service_warning"></span>
         </oui-message>
 
-        <p data-i18n-static="dedicatedCloud_close_service_desc"></p>
-        <p data-i18n-static="dedicatedCloud_close_service_question"></p>
+        <p data-translate="dedicatedCloud_close_service_desc"></p>
+        <p data-translate="dedicatedCloud_close_service_question"></p>
 
     </oui-modal>
 

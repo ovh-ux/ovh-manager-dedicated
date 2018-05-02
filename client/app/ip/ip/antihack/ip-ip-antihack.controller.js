@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpViewAntihackCtrl", ($scope, $rootScope, Ip, IpAntihack, Alerter) => {
+angular.module("Module.ip.controllers").controller("IpViewAntihackCtrl", ($scope, $rootScope, $translate, Ip, IpAntihack, Alerter) => {
     $scope.data = $scope.currentActionData;
     $scope.loading = true;
 
@@ -16,10 +16,10 @@ angular.module("Module.ip.controllers").controller("IpViewAntihackCtrl", ($scope
             .then(
                 () => {
                     $rootScope.$broadcast("ips.table.refreshBlock", $scope.data.ipBlock);
-                    Alerter.success($scope.tr("ip_antihack_unblock_success"));
+                    Alerter.success($translate.instant("ip_antihack_unblock_success"));
                 },
                 (data) => {
-                    Alerter.alertFromSWS($scope.tr("ip_antihack_unblock_failure"), data);
+                    Alerter.alertFromSWS($translate.instant("ip_antihack_unblock_failure"), data);
                 }
             )
             .finally(() => {

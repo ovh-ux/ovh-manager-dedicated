@@ -3,6 +3,7 @@ angular.module("App").config(($stateProvider) => {
         url: "/configuration",
         templateUrl: "configuration/configuration.html",
         controller: "ConfigurationCtrl",
-        controllerAs: "$ctrl"
+        controllerAs: "$ctrl",
+        translations: ["common"]
     });
 });

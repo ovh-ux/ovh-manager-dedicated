@@ -1,4 +1,4 @@
-angular.module("App").controller("MonitoringUpdateCtrl", function ($rootScope, $scope, $stateParams, Server, Alerter, $q) {
+angular.module("App").controller("MonitoringUpdateCtrl", function ($rootScope, $scope, $stateParams, $translate, Server, Alerter, $q) {
     "use strict";
 
     const self = this;
@@ -214,7 +214,7 @@ angular.module("App").controller("MonitoringUpdateCtrl", function ($rootScope, $
             .then(
                 () => {
                     self.baseMonitoring = self.monitoring;
-                    Alerter.success($scope.tr("server_tab_MONITORING_update_success"), "monitoringAlert");
+                    Alerter.success($translate.instant("server_tab_MONITORING_update_success"), "monitoringAlert");
                     $rootScope.$broadcast("server.monitoring.reload");
                     $scope.$parent.ctrlMonitoring.editMode = null;
                 },
@@ -223,7 +223,7 @@ angular.module("App").controller("MonitoringUpdateCtrl", function ($rootScope, $
                         message: _.uniq(errors.map((err) => err.data.message)).join(", ")
                     };
 
-                    Alerter.alertFromSWS($scope.tr("server_tab_MONITORING_update_error"), displayErrors, "monitoringAlert");
+                    Alerter.alertFromSWS($translate.instant("server_tab_MONITORING_update_error"), displayErrors, "monitoringAlert");
                 }
             )
             .finally(() => {

@@ -1,4 +1,4 @@
-angular.module("Module.license.services").service("License", [
+angular.module("Module.license").service("License", [
     "Api",
     "constants",
     "$q",
@@ -264,15 +264,15 @@ angular.module("Module.license.services").service("License", [
             });
         };
 
-        this.canLicenceBeMovedTo = function (data) {
+        this.canLicenceBeMovedTo = function ({ type, id, destinationIp }) {
             return OvhHttp.get("/license/{type}/{id}/canLicenseBeMovedTo", {
                 rootPath: "apiv6",
                 urlParams: {
-                    type: angular.lowercase(data.type),
-                    id: data.id
+                    type,
+                    id
                 },
                 params: {
-                    destinationIp: data.destinationIp
+                    destinationIp
                 }
             });
         };
@@ -348,7 +348,7 @@ angular.module("Module.license.services").service("License", [
             });
         };
 
-        this.tasks = (licence, action, status) =>
+        this.tasks = (licence, action = "", status = "") =>
             OvhHttp.get("/license/{type}/{serviceName}/tasks", {
                 rootPath: "apiv6",
                 urlParams: {
@@ -356,8 +356,8 @@ angular.module("Module.license.services").service("License", [
                     serviceName: licence.id
                 },
                 data: {
-                    action: action || "",
-                    status: status || ""
+                    action,
+                    status
                 }
             });
 
@@ -376,12 +376,12 @@ angular.module("Module.license.services").service("License", [
             });
         };
 
-        this.getLicence = function (id, type) {
+        this.getLicence = function (serviceName, type) {
             return OvhHttp.get("/license/{type}/{serviceName}", {
                 rootPath: "apiv6",
                 urlParams: {
                     type: getLicenseType(type),
-                    serviceName: id
+                    serviceName
                 }
             });
         };

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="user_users_title" qtlid="227793">Verwaltung der Benutzer</translation>
-   <translation id="user_users_info" qtlid="472645">Damit sich ein Benutzer in das Interface einloggen kann, muss er Ihre Kundenkennung und seinen Benutzernamen, getrennt durch ein "/" (Spalte "Kennung"), sowie das Passwort eingeben.</translation>
+   <translation id="user_users_info" qtlid="480750">Afin de se connecter à l'interface, l'utilisateur devra renseigner votre identifiant <strong>{{customerCode}}</strong> et son nom d'utilisateur séparé par un "/" ainsi que son mot de passe.</translation>
+   <translation id="user_users_info_example" qtlid="480763">Exemple: <strong>{{customerCode}}/{{login}}</strong></translation>
    <translation id="user_users_add_user" qtlid="7150">Einen Benutzer hinzufügen</translation>
    <translation id="user_users_login" qtlid="56045">Benutzername</translation>
-   <translation id="user_users_full_login" qtlid="46792">Kennung</translation>
    <translation id="user_users_email" qtlid="50686">E-Mail Adresse</translation>
-   <translation id="user_users_creation_date" qtlid="26419">Erstellungsdatum</translation>
+   <translation id="user_users_creation_date" qtlid="26791">Erstellung</translation>
    <translation id="user_users_last_update_date" qtlid="228748">Datum des Updates</translation>
+   <translation id="user_users_last_password_update_date" qtlid="106427">Passwort-Änderung</translation>
    <translation id="user_users_status" qtlid="26443">Status</translation>
    <translation id="user_users_description" qtlid="9238">Beschreibung</translation>
    <translation id="user_users_table_empty" qtlid="215741">Keine Benutzer</translation>
@@ -18,6 +19,11 @@
    <translation id="user_users_status_DISABLED" qtlid="24967">Deaktiviert</translation>
 
    <translation id="user_users_error" qtlid="299384">Es ist ein Fehler aufgetreten:</translation>
+
+   <translation id="user_users_role" qtlid="73697">Rechte</translation>
+   <translation id="user_roles_admin" qtlid="43948">Administrator</translation>
+   <translation id="user_roles_regular" qtlid="7450">Benutzer</translation>
+   <translation id="user_roles_unprivileged" qtlid="30646">Keiner</translation>
 
    <translation id="user_users_disable" qtlid="199078">Den Benutzer deaktivieren</translation>
    <translation id="user_users_delete_modal_step1_question" qtlid="455451">Sind Sie sicher, dass Sie den Benutzer <strong>{{login}}</strong> löschen möchten?</translation>

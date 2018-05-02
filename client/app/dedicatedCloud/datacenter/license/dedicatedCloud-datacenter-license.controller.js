@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudSubDatacenterLicencesCtrl", ($scope, $stateParams, DedicatedCloud, $rootScope) => {
+angular.module("App").controller("DedicatedCloudSubDatacenterLicencesCtrl", ($scope, $stateParams, $translate, DedicatedCloud, $rootScope) => {
     "use strict";
 
     $scope.licences = {
@@ -26,7 +26,7 @@ angular.module("App").controller("DedicatedCloudSubDatacenterLicencesCtrl", ($sc
             (data) => {
                 $scope.loading.licences = false;
                 $scope.loading.error = true;
-                $scope.setMessage($scope.tr("dedicatedCloud_dashboard_loading_error"), angular.extend(data, { type: "ERROR" }));
+                $scope.setMessage($translate.instant("dedicatedCloud_dashboard_loading_error"), angular.extend(data, { type: "ERROR" }));
             }
         );
     };

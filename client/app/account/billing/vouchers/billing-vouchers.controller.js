@@ -1,4 +1,4 @@
-angular.module("Billing.controllers").controller("Billing.controllers.Vouchers", ($scope, BillingVouchers, Alerter) => {
+angular.module("Billing.controllers").controller("Billing.controllers.Vouchers", ($scope, $translate, BillingVouchers, Alerter) => {
     $scope.voucherIds = [];
 
     $scope.loaders = {
@@ -23,7 +23,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.Vouchers",
                 }
             },
             (err) => {
-                Alerter.alertFromSWS($scope.tr("voucher_informations_error"), err);
+                Alerter.alertFromSWS($translate.instant("voucher_informations_error"), err);
             }
         );
     };

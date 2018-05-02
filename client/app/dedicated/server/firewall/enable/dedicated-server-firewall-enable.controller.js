@@ -1,4 +1,4 @@
-angular.module("App").controller("ServerFirewallAsaEnableCtrl", ($scope, $stateParams, Server, ServerFirewallAsa) => {
+angular.module("App").controller("ServerFirewallAsaEnableCtrl", ($scope, $stateParams, $translate, Server, ServerFirewallAsa) => {
     $scope.model = null;
 
     $scope.load = function () {
@@ -8,7 +8,7 @@ angular.module("App").controller("ServerFirewallAsaEnableCtrl", ($scope, $stateP
             },
             (data) => {
                 $scope.resetAction();
-                $scope.setMessage($scope.tr("server_configuration_firewall_asa_enable_step1_loading_error"), data);
+                $scope.setMessage($translate.instant("server_configuration_firewall_asa_enable_step1_loading_error"), data);
             }
         );
     };
@@ -17,10 +17,10 @@ angular.module("App").controller("ServerFirewallAsaEnableCtrl", ($scope, $stateP
         $scope.resetAction();
         ServerFirewallAsa.changeFirewallState($stateParams.productId, true).then(
             (data) => {
-                $scope.setMessage($scope.tr("server_configuration_firewall_asa_enable_success"), data);
+                $scope.setMessage($translate.instant("server_configuration_firewall_asa_enable_success"), data);
             },
             (data) => {
-                $scope.setMessage($scope.tr("server_configuration_firewall_asa_enable_fail"), data);
+                $scope.setMessage($translate.instant("server_configuration_firewall_asa_enable_fail"), data);
             }
         );
     };

@@ -1,10 +1,11 @@
 angular.module("UserAccount.controllers").controller("UserAccount.controllers.contacts.request", [
     "$scope",
     "$stateParams",
+    "$translate",
     "UserAccount.services.Contacts",
     "Alerter",
     "User",
-    function ($scope, $stateParams, Contacts, Alerter, User) {
+    function ($scope, $stateParams, $translate, Contacts, Alerter, User) {
         "use strict";
 
         $scope.task = angular.copy($scope.currentActionData.task);
@@ -53,7 +54,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.co
         };
 
         $scope.getWizardTitle = function () {
-            return $scope.tr(CONTACT_REQUEST_WIZARD_TITLES[$scope.action]);
+            return $translate.instant(CONTACT_REQUEST_WIZARD_TITLES[$scope.action]);
         };
 
         $scope.changeContactRequest = function () {
@@ -82,10 +83,10 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.co
                         }
                         $stateParams.taskId = null;
                         $stateParams.token = null;
-                        Alerter.success($scope.tr(messages[$scope.action].success), "useraccount.alerts.dashboardContacts");
+                        Alerter.success($translate.instant(messages[$scope.action].success), "useraccount.alerts.dashboardContacts");
                     },
                     (err) => {
-                        Alerter.alertFromSWS($scope.tr(messages[$scope.action].error), err, "useraccount.alerts.dashboardContacts");
+                        Alerter.alertFromSWS($translate.instant(messages[$scope.action].error), err, "useraccount.alerts.dashboardContacts");
                     }
                 )
                 .finally(() => {
@@ -100,7 +101,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.co
                     $scope.user = user;
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("user_account_contacts_error"), err, "useraccount.alerts.dashboardContacts");
+                    Alerter.alertFromSWS($translate.instant("user_account_contacts_error"), err, "useraccount.alerts.dashboardContacts");
                 }
             );
         }
