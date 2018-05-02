@@ -1,19 +1,19 @@
 angular.module("Billing.controllers").controller("Billing.controllers.HistoryValidateInvoicesChangeCtrl", class {
 
-    constructor ($scope, OvhApiMe, Alerter, translator) {
+    constructor ($scope, $translate, OvhApiMe, Alerter) {
         this.$scope = $scope;
         this.OvhApiMe = OvhApiMe;
         this.Alerter = Alerter;
-        this.tr = translator.tr;
+        this.$translate = $translate;
     }
 
     confirmChoice () {
         this.OvhApiMe.Billing().InvoicesByPostalMail().v6().post({
             enable: this.invoicesByPostalMail
         }).$promise.then(() => {
-            this.$scope.setMessage(this.tr("history_invoices_choice_modal_update_success"), "true");
+            this.$scope.setMessage(this.$translate.instant("history_invoices_choice_modal_update_success"), "true");
         }).catch((err) => {
-            this.$scope.setMessage(this.tr("history_invoices_choice_modal_update_error"), err.data);
+            this.$scope.setMessage(this.$translate.instant("history_invoices_choice_modal_update_error"), err.data);
         }).finally(() => this.$scope.setAction());
     }
 
@@ -25,7 +25,4 @@ angular.module("Billing.controllers").controller("Billing.controllers.HistoryVal
     $onInit () {
         this.invoicesByPostalMail = this.$scope.currentActionData.choice;
     }
-
-    // history_invoices_choice_modal_update_success
-    // history_invoices_choice_modal_update_error
 });

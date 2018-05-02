@@ -11,8 +11,8 @@
 
     <div class="modal-body">
         <h3 class="modal-title">
-            <span data-ng-if="$ctrl.invoicesByPostalMail" data-i18n-static="history_invoices_choice_modal_activation"></span>
-            <span data-ng-if="!$ctrl.invoicesByPostalMail" data-i18n-static="history_invoices_choice_modal_deactivation"></span>
+            <span data-ng-if="$ctrl.invoicesByPostalMail" data-translate="history_invoices_choice_modal_activation"></span>
+            <span data-ng-if="!$ctrl.invoicesByPostalMail" data-translate="history_invoices_choice_modal_deactivation"></span>
         </h3>
     </div>
 
@@ -21,12 +21,12 @@
             <button type="button"
                     class="btn btn-default btn-cancel"
                     data-ng-click="$ctrl.cancelChoice()"
-                    data-i18n-static="common_no">
+                    data-translate="common_no">
             </button>
             <button type="submit"
                     class="btn btn-primary"
                     data-ng-click="$ctrl.confirmChoice()"
-                    data-i18n-static="common_yes">
+                    data-translate="common_yes">
             </button>
         </div>
     </div>

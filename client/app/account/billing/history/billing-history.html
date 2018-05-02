@@ -37,7 +37,7 @@
 
         <div class="form-group" data-ng-if="ctrl.canSetInvoiceByPostalMail">
             <oui-checkbox class="d-inline-block ml-3"
-                          data-text="{{ i18n.history_invoices_postal_mail }}"
+                          data-text="{{'history_invoices_postal_mail' | translate}}"
                           data-on-change="ctrl.invoicesByPostalMail = modelValue;ctrl.openValidationModal()"
                           data-model="ctrl.invoicesByPostalMail">
             </oui-checkbox>
