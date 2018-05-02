@@ -370,9 +370,6 @@ class SessionService {
                         state: "app.account.useraccount.emails"
                     },
                     (this.constants.target === "EU") && {
-                        title: this.$translate.instant("menu_subscriptions"),
-                        state: "app.account.useraccount.subscriptions"
-                    }, {
                         title: this.$translate.instant("menu_ssh"),
                         state: "app.account.useraccount.ssh"
                     }, {
