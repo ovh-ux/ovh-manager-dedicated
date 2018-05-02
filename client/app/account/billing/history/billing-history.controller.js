@@ -236,8 +236,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.History", 
                     if (this.debtAccount.active) {
                         this.colSpan = COL_SPAN_DEBT_ACCOUNT;
                     }
-                })
-                .catch((err) => err),
+                }),
             OvhApiMe.v6().get().$promise.then((user) => {
                 if (user.country === "FR") {
                     OvhApiMe.Billing().InvoicesByPostalMail().v6().get().$promise
@@ -247,7 +246,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.History", 
                             this.tmpInvoicesChoice = angular.copy(this.invoicesByPostalMail);
                         });
                 }
-            }).catch((err) => err)
+            })
         ]).catch((err) => {
             if (err.status === 404) {
                 return null;
