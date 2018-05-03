@@ -26,27 +26,6 @@ angular
                 translations: ["account/user"]
             });
 
-            if (target === "EU") {
-                $stateProvider.state("app.account.useraccount.subContacts", {
-                    url: "/subContacts",
-                    templateUrl: `${baseUrl}subContacts/user-subContacts.html`,
-                    controller: "UserAccount.controllers.subcontacts",
-                    controllerAs: "ctrl"
-                });
-
-                $stateProvider.state("app.account.useraccount.subContacts.add", {
-                    url: "/add",
-                    templateUrl: `${baseUrl}subContacts/add/user-subContacts-add.html`,
-                    controller: "UserAccount.controllers.subcontacts.add"
-                });
-
-                $stateProvider.state("app.account.useraccount.subContacts.edit", {
-                    url: "/:contactId",
-                    templateUrl: `${baseUrl}subContacts/edit/user-subContacts-edit.html`,
-                    controller: "UserAccount.controllers.subcontacts.edit"
-                });
-            }
-
             $stateProvider.state("app.account.useraccount.ssh", {
                 url: "/ssh",
                 templateUrl: `${baseUrl}ssh/user-ssh.html`,
