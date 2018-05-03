@@ -674,35 +674,6 @@
                                 <span data-ng-if="!traffic.usage.outputQuotaSize.text"
                                       data-ng-bind="tr('server_traffic_unlimited_text', [(bandwidth.bandwidth.OvhToInternet | bandwidth)])">
                                 </span>
-                            </dd>
-                        </dl>
-                        <div class="oui-tile__actions"
-                             data-ng-if="traffic.hasQuota && canOrderTraffic() && canOrderMoreTraffic()">
-                            <oui-action-menu
-                                aria-label="{{:: tr('menu_action_label', tr('server_traffic')) }}"
-                                data-align="end"
-                                data-compact>
-                                <oui-action-menu-item
-                                    data-text="{{tr(trafficOption !== 'subscribed' ? 'server_traffic_order_button' : 'server_traffic_change_button') }}"
-                                    data-aria-label="{{:: tr('server_traffic_order_button') }}"
-                                    data-on-click="setAction('traffic/order/dedicated-server-traffic-order', server.name)"
-                                    data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'">
-                                </oui-action-menu-item>
-                            </oui-action-menu>
-                        </div>
-                    </div>
-                    <div class="oui-tile__item"
-                         data-ng-if="server.canOrderQuota">
-                        <dl class="oui-tile__definition">
-                            <dt class="oui-tile__term"
-                                data-i18n-static="server_traffic"></dt>
-                            <dd class="oui-tile__description">
-                                <span data-ng-if="traffic.usage.outputQuotaSize.text"
-                                      data-ng-bind="tr('server_traffic_text', [traffic.usage.outputQuotaSize.text])">
-                                </span>
-                                <span data-ng-if="!traffic.usage.outputQuotaSize.text"
-                                      data-ng-bind="tr('server_traffic_unlimited_text', [(bandwidth.bandwidth.OvhToInternet | bandwidth)])">
-                                </span>
                                 <small class="oui-tile__extra"
                                        data-ng-if="trafficOption === 'released'"
                                        data-i18n-static="server_traffic_option_released"></small>
