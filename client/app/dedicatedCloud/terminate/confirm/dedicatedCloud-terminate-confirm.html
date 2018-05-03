@@ -14,7 +14,7 @@
         <oui-field label="{{ :: 'dedicatedCloud_confirm_close_question' | translate }}">
             <oui-radio data-ng-repeat="reason in $ctrl.reasons track by $index"
                        name="reasons"
-                       data-text="{{ :: (dedicatedCloud_confirm_close_reason_' + reason.toLowerCase()) | translate }}"
+                       data-text="{{ :: ('dedicatedCloud_confirm_close_reason_' + reason.toLowerCase()) | translate }}"
                        data-model="$ctrl.model.reason"
                        data-value="reason">
             </oui-radio>
