@@ -1,10 +1,14 @@
 <div>
-
     <div class="page-header">
         <h1 data-translate="history_title2"></h1>
     </div>
 
+    <div class="text-center" data-ng-if="ctrl.isLoading">
+        <oui-spinner></oui-spinner>
+    </div>
+
     <div class="tab-content"
+         data-ng-if="!ctrl.isLoading"
          data-ui-view>
 
         <div class="alert"
@@ -29,6 +33,14 @@
             <p class="text-info"
                data-ng-if="ctrl.hasValidDefaultPaymentMean"
                data-translate="statements_account_amount_automatically_collected" data-translate-values="{ t0: ctrl.debtAccount.dueAmount.text }"></p>
+        </div>
+
+        <div class="form-group" data-ng-if="ctrl.canSetInvoiceByPostalMail">
+            <oui-checkbox class="d-inline-block ml-3"
+                          data-text="{{'history_invoices_postal_mail' | translate}}"
+                          data-on-change="ctrl.invoicesByPostalMail = modelValue;ctrl.openValidationModal()"
+                          data-model="ctrl.invoicesByPostalMail">
+            </oui-checkbox>
         </div>
 
         <div class="row">
