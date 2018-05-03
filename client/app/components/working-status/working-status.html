@@ -1,17 +1,15 @@
 <div data-ng-if="worksDetails && worksDetails.length">
     <p>
-        <span data-ng-bind="tr('core_works_description')"></span>
+        <span data-ng-bind=":: 'core_works_description' | translate"></span>
     </p>
     <button type="button"
             class="btn btn-block btn-default"
             data-ng-click="openListModal(worksDetails)"
-            data-ng-bind="tr('core_works_link')">
+            data-ng-bind=":: 'core_works_link' | translate">
     </button>
     <div id="{{ modalId }}"
          class="modal fade currentAction"
-         tabindex="-1"
-         role="dialog"
-         aria-hidden="true">
+         role="dialog">
         <div class="modal-dialog">
             <div class="modal-content"
                  data-ng-include="worksStepPath">

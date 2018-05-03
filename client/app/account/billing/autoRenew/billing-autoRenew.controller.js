@@ -21,8 +21,9 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
     "BillingPaymentInformation",
     "BillingrenewHelper",
     "User",
+    "$translate",
 
-    function ($scope, $location, $filter, $q, $http, $window, $timeout, Alerter, AUTORENEW_EVENT, constants, billingUrls, BILLING_BASE_URL, AutoRenew, PaymentInformation, renewHelper, User) {
+    function ($scope, $location, $filter, $q, $http, $window, $timeout, Alerter, AUTORENEW_EVENT, constants, billingUrls, BILLING_BASE_URL, AutoRenew, PaymentInformation, renewHelper, User, $translate) {
         "use strict";
 
         /**
@@ -37,7 +38,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
 
         const ALL_SERVICE_TYPES = {
             key: "ALL",
-            text: $scope.tr("autorenew_service_type_ALL")
+            text: $translate.instant("autorenew_service_type_ALL")
         };
 
         let initLoading = true;
@@ -476,10 +477,10 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
         $scope.getDatasToExport = function () {
             $scope.exportCSV.load = true;
 
-            const datasToReturn = [[$scope.tr("autorenew_service_type"), $scope.tr("autorenew_service_name"), $scope.tr("autorenew_service_date"), $scope.tr("autorenew_service_renew_frequency_title")]];
+            const datasToReturn = [[$translate.instant("autorenew_service_type"), $translate.instant("autorenew_service_name"), $translate.instant("autorenew_service_date"), $translate.instant("autorenew_service_renew_frequency_title")]];
 
             angular.forEach($scope.services.data.list.results, (service) => {
-                datasToReturn.push([$scope.tr(`autorenew_service_type_${service.serviceType}`), service.serviceId, `${renewHelper.getRenewDateFormated(service)} ${$filter("date")(service.expiration, "mediumDate")}`, service.renewLabel]);
+                datasToReturn.push([$translate.instant(`autorenew_service_type_${service.serviceType}`), service.serviceId, `${renewHelper.getRenewDateFormated(service)} ${$filter("date")(service.expiration, "mediumDate")}`, service.renewLabel]);
             });
 
             return datasToReturn;
@@ -664,7 +665,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
             const serviceTypePromise = AutoRenew.getServicesTypes().then((result) => {
                 $scope.servicesTypes = _.map(result, (value) => ({
                     key: value,
-                    text: $scope.tr(`autorenew_service_type_${value}`)
+                    text: $translate.instant(`autorenew_service_type_${value}`)
                 }));
 
                 $scope.servicesTypes = $scope.servicesTypes.sort((a, b) => a.text.toLowerCase().localeCompare(b.text.toLowerCase()));

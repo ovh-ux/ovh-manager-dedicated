@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpOrderCtrl", ($scope, $rootScope, $q, Ip, IpOrder, IpOrganisation, User, Alerter, translator, constants) => {
+angular.module("Module.ip.controllers").controller("IpOrderCtrl", ($scope, $rootScope, $q, $translate, Ip, IpOrder, IpOrganisation, User, Alerter, constants) => {
     const alertId = "ip_order_alert";
 
     $scope.model = {};
@@ -22,7 +22,7 @@ angular.module("Module.ip.controllers").controller("IpOrderCtrl", ($scope, $root
             $scope.servicesList = results.servicesList;
             $scope.user = results.user;
         }).catch((err) => {
-            Alerter.alertFromSWS($scope.tr("ip_order_loading_error"), err);
+            Alerter.alertFromSWS($translate.instant("ip_order_loading_error"), err);
         }).finally(() => {
             $scope.loading.services = false;
         });
@@ -61,7 +61,7 @@ angular.module("Module.ip.controllers").controller("IpOrderCtrl", ($scope, $root
                     $scope.orderableIpError = "EXPIRED";
                 } else {
                     $scope.loading.serviceCanBeOrdered = false;
-                    Alerter.alertFromSWS($scope.tr("ip_order_loading_error"), data.data);
+                    Alerter.alertFromSWS($translate.instant("ip_order_loading_error"), data.data);
                 }
             })
             .finally(() => {
@@ -89,7 +89,7 @@ angular.module("Module.ip.controllers").controller("IpOrderCtrl", ($scope, $root
                 $scope.orderableIp.countries = countries;
                 $scope.isCanadianService = _.findIndex(countries, "CA") !== -1 || countries.indexOf("us") !== -1;
                 if (!$scope.isCanadianService) {
-                    $scope.ipShortageWarnUrl = translator.getLanguage() === "fr_FR" ? constants.urls.FR.ipShortageWarnUrl : constants.urls.GB.ipShortageWarnUrl;
+                    $scope.ipShortageWarnUrl = $translate.use() === "fr_FR" ? constants.urls.FR.ipShortageWarnUrl : constants.urls.GB.ipShortageWarnUrl;
                 }
             })
         );
@@ -120,7 +120,7 @@ angular.module("Module.ip.controllers").controller("IpOrderCtrl", ($scope, $root
                 $scope.loading.form = false;
             },
             (data) => {
-                Alerter.alertFromSWS($scope.tr("ip_order_loading_error"), data.data ? data.data : data);
+                Alerter.alertFromSWS($translate.instant("ip_order_loading_error"), data.data ? data.data : data);
                 $scope.loading.form = false;
             }
         );
@@ -219,7 +219,9 @@ angular.module("Module.ip.controllers").controller("IpOrderCtrl", ($scope, $root
                 $scope.loading.durations = false;
             },
             (err) => {
-                Alerter.error($scope.tr("ip_order_loading_error2", [err.data ? err.data.message : err.message]), alertId);
+                Alerter.error($translate.instant("ip_order_loading_error2", {
+                    t0: err.data ? err.data.message : err.message
+                }), alertId);
 
                 $scope.loading.durations = false;
             }
@@ -268,7 +270,7 @@ angular.module("Module.ip.controllers").controller("IpOrderCtrl", ($scope, $root
 ==============================*/
 
     $scope.getResumePrice = function (price) {
-        return price.value === 0 ? $scope.tr("price_free") : $scope.tr("price_ht_label", [price.text]);
+        return price.value === 0 ? $translate.instant("price_free") : $translate.instant("price_ht_label", { t0: price.text });
     };
 
     $scope.confirmOrder = function () {
@@ -276,11 +278,14 @@ angular.module("Module.ip.controllers").controller("IpOrderCtrl", ($scope, $root
         IpOrder.postOrder($scope.model.service, $scope.model.params, $scope.model.duration)
             .then(
                 (order) => {
-                    Alerter.alertFromSWS($scope.tr("ip_order_finish_success", [order.url, order.orderId]), { idTask: order.orderId, state: "OK" });
+                    Alerter.alertFromSWS($translate.instant("ip_order_finish_success", {
+                        t0: order.url,
+                        t1: order.orderId
+                    }), { idTask: order.orderId, state: "OK" });
                     window.open(order.url, "_blank");
                 },
                 (data) => {
-                    Alerter.alertFromSWS($scope.tr("ip_order_finish_error"), data.data);
+                    Alerter.alertFromSWS($translate.instant("ip_order_finish_error"), data.data);
                 }
             )
             .finally(() => {

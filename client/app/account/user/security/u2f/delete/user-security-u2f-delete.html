@@ -3,13 +3,13 @@
     <div data-wizard
          data-wizard-hide-cancel-button="true"
          data-wizard-on-cancel="cancel"
-         data-wizard-title="i18n.user_account_security_double_auth_type_u2f_modal_title">
+         data-wizard-title="::'user_account_security_double_auth_type_u2f_modal_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-on-load="init"
              data-wizard-step-valid="doesStepIsValid()">
             <h2 class="wizard-title-sub"
-                data-i18n-static="user_account_security_double_auth_type_u2f_modal_delete_key">
+                data-translate="user_account_security_double_auth_type_u2f_modal_delete_key">
             </h2>
 
             <div class="text-center"
@@ -23,7 +23,7 @@
                     <oui-spinner></oui-spinner>
                 </div>
 
-                <p data-i18n-static="user_account_security_double_auth_type_u2f_modal_delete_key_info"></p>
+                <p data-translate="user_account_security_double_auth_type_u2f_modal_delete_key_info"></p>
             </div>
 
             <div data-ng-show="!u2f.isLoading && u2f.hasError">
@@ -32,7 +32,7 @@
                     <button class="oui-button oui-button_secondary"
                             type="button"
                             data-ng-click="init()"
-                            data-i18n-static="user_account_security_double_auth_type_u2f_modal_delete_key_action_relaunch">
+                            data-translate="user_account_security_double_auth_type_u2f_modal_delete_key_action_relaunch">
                     </button>
                 </div>
             </div>

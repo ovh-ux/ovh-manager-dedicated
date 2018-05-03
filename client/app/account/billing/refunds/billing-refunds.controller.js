@@ -1,5 +1,4 @@
-angular.module("Billing.controllers").controller("Billing.controllers.Refunds", function ($scope, BillingRefunds, translator, BillingUser, BillingmessageParser, BillingdateRangeSelection) {
-    const tr = translator.tr;
+angular.module("Billing.controllers").controller("Billing.controllers.Refunds", function ($scope, BillingRefunds, $translate, BillingUser, BillingmessageParser, BillingdateRangeSelection) {
     const FUSE_CAPACITY = 300;
 
     $scope.refundsLoading = false;
@@ -28,7 +27,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.Refunds", 
                 result = moment(a[predicate]) - moment(b[predicate]);
                 break;
             case "paymentType":
-                result = tr(`common_payment_type_${a[predicate]}${a.paymentIdentifier}`).localeCompare(tr(`common_payment_type_${b[predicate]}${b.paymentIdentifier}`));
+                result = $translate.instant(`common_payment_type_${a[predicate]}${a.paymentIdentifier}`).localeCompare($translate.instant(`common_payment_type_${b[predicate]}${b.paymentIdentifier}`));
                 break;
             case "priceWithTax":
                 result = a[predicate].value - b[predicate].value;
@@ -83,7 +82,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.Refunds", 
                 });
             })
             .catch((err) => {
-                $scope.setMessage(tr("ovhAccount_renew_step2_error"), err.data);
+                $scope.setMessage($translate.instant("ovhAccount_renew_step2_error"), err.data);
             });
     };
 

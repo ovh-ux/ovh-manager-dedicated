@@ -1,4 +1,4 @@
-angular.module("App").controller("CacherulesCreateCtrl", ($scope, $stateParams, CdnDomain, Alerter) => {
+angular.module("App").controller("CacherulesCreateCtrl", ($scope, $stateParams, $translate, CdnDomain, Alerter) => {
     $scope.alert = "cdn_domain_tab_rules_alert";
     $scope.infos = null;
     $scope.entry = {};
@@ -15,7 +15,7 @@ angular.module("App").controller("CacherulesCreateCtrl", ($scope, $stateParams, 
                 $scope.infos = data;
             },
             (data) => {
-                Alerter.alertFromSWS($scope.tr("cdn_domain_configuration_cacherule_create_fail"), data, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("cdn_domain_configuration_cacherule_create_fail"), data, $scope.alert);
             }
         );
     };
@@ -46,10 +46,10 @@ angular.module("App").controller("CacherulesCreateCtrl", ($scope, $stateParams, 
         $scope.resetAction();
         CdnDomain.createCacherule($stateParams.productId, $stateParams.domain, $scope.entry.cacheType, $scope.entry.fileMatch, $scope.entry.fileType, $scope.entry.ttl).then(
             () => {
-                Alerter.alertFromSWS($scope.tr("cdn_domain_configuration_cacherule_create_success"), true, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("cdn_domain_configuration_cacherule_create_success"), true, $scope.alert);
             },
             (data) => {
-                Alerter.alertFromSWS($scope.tr("cdn_domain_configuration_cacherule_create_fail"), data, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("cdn_domain_configuration_cacherule_create_fail"), data, $scope.alert);
             }
         );
     };

@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudUserAddCtrl", ($scope, $stateParams, DedicatedCloud, Alerter) => {
+angular.module("App").controller("DedicatedCloudUserAddCtrl", ($scope, $stateParams, $translate, DedicatedCloud, Alerter) => {
     "use strict";
 
     const regCase = new RegExp("[A-Z]");
@@ -35,10 +35,10 @@ angular.module("App").controller("DedicatedCloudUserAddCtrl", ($scope, $statePar
         DedicatedCloud.addUser($stateParams.productId, $scope.newUser)
             .then(
                 () => {
-                    Alerter.success($scope.tr("dedicatedCloud_users_add_start"), $scope.alerts.users);
+                    Alerter.success($translate.instant("dedicatedCloud_users_add_start"), $scope.alerts.users);
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("dedicatedCloud_users_add_error"), err, $scope.alerts.users);
+                    Alerter.alertFromSWS($translate.instant("dedicatedCloud_users_add_error"), err, $scope.alerts.users);
                 }
             )
             .finally(() => {
@@ -63,7 +63,7 @@ angular.module("App").controller("DedicatedCloudUserAddCtrl", ($scope, $statePar
                 $scope.canSetPassword = !hasSecurityOption;
             })
             .catch((err) => {
-                Alerter.alertFromSWS($scope.tr("dedicatedCloud_users_password_reset_check_error"), err, $scope.alerts.users);
+                Alerter.alertFromSWS($translate.instant("dedicatedCloud_users_password_reset_check_error"), err, $scope.alerts.users);
             })
             .finally(() => {
                 $scope.loaders.init = false;

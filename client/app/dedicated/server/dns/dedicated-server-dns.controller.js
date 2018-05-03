@@ -1,4 +1,4 @@
-angular.module("App").controller("SecondaryDnsCtrl", ($scope, $http, $stateParams, Server) => {
+angular.module("App").controller("SecondaryDnsCtrl", ($scope, $http, $stateParams, $translate, Server) => {
     $scope.loading = true;
     $scope.secondaryDnsList = null;
 
@@ -11,7 +11,7 @@ angular.module("App").controller("SecondaryDnsCtrl", ($scope, $http, $stateParam
             },
             (err) => {
                 $scope.loading = false;
-                $scope.setMessage($scope.tr("server_configuration_secondary_dns_fail"), err);
+                $scope.setMessage($translate.instant("server_configuration_secondary_dns_fail"), err);
             }
         );
     }

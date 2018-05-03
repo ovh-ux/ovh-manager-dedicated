@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpAntispamCtrl", ($rootScope, $timeout, $scope, $location, $stateParams, Alerter, Ip, IpSpam) => {
+angular.module("Module.ip.controllers").controller("IpAntispamCtrl", ($rootScope, $timeout, $scope, $location, $stateParams, $translate, Alerter, Ip, IpSpam) => {
     $scope.ipspam = null;
 
     function init (params) {
@@ -35,7 +35,7 @@ angular.module("Module.ip.controllers").controller("IpAntispamCtrl", ($rootScope
             (reason) => {
                 $scope.loadingAntispam = false;
                 $scope.loadingPeriods = false;
-                Alerter.alertFromSWS($scope.tr("ip_antispam_load_error"), reason);
+                Alerter.alertFromSWS($translate.instant("ip_antispam_load_error"), reason);
             }
         );
     };
@@ -59,7 +59,7 @@ angular.module("Module.ip.controllers").controller("IpAntispamCtrl", ($rootScope
                 }, 99);
             },
             (data) => {
-                Alerter.alertFromSWS($scope.tr("ip_antispam_unblock_error", [$scope.ipspam.ip]), data.data);
+                Alerter.alertFromSWS($translate.instant("ip_antispam_unblock_error", { t0: $scope.ipspam.ip }), data.data);
             }
         );
     };

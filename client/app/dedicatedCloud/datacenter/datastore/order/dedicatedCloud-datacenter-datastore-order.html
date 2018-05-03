@@ -3,9 +3,9 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="displayBC"
-         data-wizard-title="i18n.dedicatedCloud_order_Datastore"
+         data-wizard-title=":: 'dedicatedCloud_order_Datastore' | translate"
          data-wizard-bread-crumb
-         data-wizard-confirm-button-text="i18n.wizard_order">
+         data-wizard-confirm-button-text=":: 'wizard_order' | translate">
 
         <div data-wizard-step
              data-wizard-step-on-load="loadDatastoresProfiles"
@@ -17,7 +17,7 @@
             </div>
 
             <div data-ng-if="!orderDatastores.loading">
-                <p data-i18n-static="dedicatedCloud_configuration_order_datastores_step1_question"></p>
+                <p data-translate="dedicatedCloud_configuration_order_datastores_step1_question"></p>
                 <table class="table table-hover mb-5">
                     <thead>
                         <tr>
@@ -26,16 +26,16 @@
                             </th>
                             <th scope="col"
                                 class="text-center"
-                                data-i18n-static="dedicatedCloud_configuration_order_datastores_step1_profile">
+                                data-translate="dedicatedCloud_configuration_order_datastores_step1_profile">
                             </th>
                             <th scope="col"
                                 class="text-center"
-                                data-i18n-static="dedicatedCloud_configuration_order_datastores_step1_type">
+                                data-translate="dedicatedCloud_configuration_order_datastores_step1_type">
                             </th>
                             <th scope="col"
                                 class="text-right">
-                                <span data-i18n-static="dedicatedCloud_configuration_order_datastores_rate"></span>
-                                <small data-i18n-static="dedicatedCloud_configuration_order_datastores_monthly_rate"></small>
+                                <span data-translate="dedicatedCloud_configuration_order_datastores_rate"></span>
+                                <small data-translate="dedicatedCloud_configuration_order_datastores_monthly_rate"></small>
                             </th>
                         </tr>
                     </thead>
@@ -63,7 +63,7 @@
                 <div class="form-group">
                     <label for="quantity"
                            class="control-label"
-                           data-i18n-static="dedicatedCloud_configuration_order_datastores_billing_quantity">
+                           data-translate="dedicatedCloud_configuration_order_datastores_billing_quantity">
                     </label>
                     <oui-numeric id="quantity"
                                  name="quantity"
@@ -84,43 +84,43 @@
             </div>
 
             <div data-ng-if="!orderDatastores.loading">
-                <p data-i18n-static="dedicatedCloud_configuration_order_datastores_step2_details"></p>
+                <p data-translate="dedicatedCloud_configuration_order_datastores_step2_details"></p>
                 <ul class="list-unstyled text-center">
                     <li>
-                        <span data-i18n-static="dedicatedCloud_configuration_order_datastores_step2_profile"></span>
+                        <span data-translate="dedicatedCloud_configuration_order_datastores_step2_profile"></span>
                         <strong data-ng-bind="orderDatastores.selectedModel.name"></strong>
                     </li>
                     <li>
-                        <span data-i18n-static="dedicatedCloud_configuration_order_datastores_billing_quantity"></span>
+                        <span data-translate="dedicatedCloud_configuration_order_datastores_billing_quantity"></span>
                         <strong data-ng-bind="orderDatastores.quantityToOrder"></strong>
                     </li>
                     <li>
-                        <span data-i18n-static="dedicatedCloud_configuration_order_datastores_step2_monthly_price_HT"></span>
+                        <span data-translate="dedicatedCloud_configuration_order_datastores_step2_monthly_price_HT"></span>
                         <strong class="text-danger"
                                 data-ng-bind="orderDatastores.orderResult.prices.withoutTax.text">
                         </strong>
                     </li>
                     <li>
-                        <span data-i18n-static="dedicatedCloud_configuration_order_datastores_step2_monthly_price_TTC"></span>
+                        <span data-translate="dedicatedCloud_configuration_order_datastores_step2_monthly_price_TTC"></span>
                         <strong class="text-danger"
                                 data-ng-bind="orderDatastores.orderResult.prices.withTax.text">
                         </strong>
                     </li>
                 </ul>
-                <p data-i18n-static="dedicatedCloud_configuration_order_datastores_step2_confirm"></p>
-                <p data-i18n-static="dedicatedCloud_configuration_order_datastores_step2_explication"></p>
+                <p data-translate="dedicatedCloud_configuration_order_datastores_step2_confirm"></p>
+                <p data-translate="dedicatedCloud_configuration_order_datastores_step2_explication"></p>
                 <div class="checkbox">
                     <label>
                         <input type="checkbox"
                                data-ng-model="orderDatastores.agreeContract" />
-                        <span data-i18n-static="dedicatedCloud_configuration_order_datastores_step2_contracts"></span>
+                        <span data-translate="dedicatedCloud_configuration_order_datastores_step2_contracts"></span>
                     </label>
                 </div>
                 <ul>
                     <li data-ng-repeat="contract in orderDatastores.orderResult.contracts track by $index">
                         <a target="_blank"
                            rel="noopener"
-                           title="{{ contract.name }} ({{ i18n.core_new_window }})"
+                           title="{{ contract.name }} ({{ 'core_new_window' | translate }})"
                            data-ng-href="{{ contract.url }}"
                            data-ng-bind="contract.name">
                         </a>

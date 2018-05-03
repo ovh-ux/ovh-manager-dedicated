@@ -1,8 +1,8 @@
-angular.module("App").controller("CacherulesActivateAllCtrl", ($scope, CdnDomain, Alerter, $stateParams) => {
+angular.module("App").controller("CacherulesActivateAllCtrl", ($scope, $translate, CdnDomain, Alerter, $stateParams) => {
     const resultMessages = {
-        OK: $scope.tr("cdn_configuration_allcacherule_activate_success"),
-        PARTIAL: $scope.tr("cdn_configuration_allcacherule_activate_partial"),
-        ERROR: $scope.tr("cdn_configuration_allcacherule_activate_fail")
+        OK: $translate.instant("cdn_configuration_allcacherule_activate_success"),
+        PARTIAL: $translate.instant("cdn_configuration_allcacherule_activate_partial"),
+        ERROR: $translate.instant("cdn_configuration_allcacherule_activate_fail")
     };
     $scope.alert = "cdn_domain_tab_rules_alert";
 

@@ -1,17 +1,17 @@
 <div class="module-useraccount-sections-emails-container">
 
     <div class="page-header">
-        <h1 data-i18n-static="user_account_email_detail"></h1>
+        <h1 data-translate="user_account_email_detail"></h1>
     </div>
 
     <div class="tab-content">
         <a class="d-inline-block mb-5"
            data-ng-href="{{'#/useraccount/emails?currentPage=' + previousPage }}"
-           title="{{ i18n.user_account_email_back }}">
+           title="{{ 'user_account_email_back' | translate }}">
             <span class="fa fa-chevron-left mr-2"
                   aria-hidden="true">
             </span>
-            <span data-i18n-static="user_account_email_back"></span>
+            <span data-translate="user_account_email_back"></span>
         </a>
 
         <div data-ovh-alert="user_account_email_detail"></div>
@@ -25,7 +25,7 @@
             <h2 data-ng-bind="email.subject"></h2>
 
             <p>
-                <strong data-i18n-static="user_account_email_detail_date"></strong>
+                <strong data-translate="user_account_email_detail_date"></strong>
                 <span data-ng-bind="email.date | date : 'short'"></span>
             </p>
 
@@ -37,10 +37,10 @@
                                 data-ng-if="email.bodyCook"
                                 data-ng-click="email.displayBodyCook = !email.displayBodyCook">
                             <span data-ng-if="email.displayBodyCook"
-                                  data-i18n-static="user_account_detail_raw_version">
+                                  data-translate="user_account_detail_raw_version">
                             </span>
                             <span data-ng-if="!email.displayBodyCook"
-                                  data-i18n-static="user_account_detail_cook_version">
+                                  data-translate="user_account_detail_cook_version">
                             </span>
                             <span class="fa"
                                   data-ng-class="{ 'fa-eye': email.displayBodyCook, 'fa-eye-slash': !email.displayBodyCook }"

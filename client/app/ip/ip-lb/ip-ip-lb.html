@@ -10,12 +10,12 @@
         <div class="row">
             <div class="col-md-9">
                 <p data-ng-if="!iplbList.length"
-                   data-i18n-static="iplb_empty">
+                   data-translate="iplb_empty">
                 </p>
                 <form data-ng-if="iplbList.length">
                     <label for="iplb"
                            class="control-label"
-                           data-i18n-static="ip_iplb">
+                           data-translate="ip_iplb">
                     </label>
                     <select name="iplb"
                             id="iplb"
@@ -37,76 +37,77 @@
         <div class="alert alert-danger"
              role="alert"
              data-ng-if="!loading.infos && selectedIplb.isExpired"
-             data-ng-bind="tr('iplb_expired', selectedIplb.expiration)">
+             data-translate="iplb_expired"
+             data-translate-values="{ t0: selectedIplb.expiration }">
         </div>
 
         <div data-ng-if="!loading.infos && !selectedIplb.isExpired && iplbList.length > 0">
             <div class="row">
                 <div class="col-md-6">
 
-                    <h3 data-i18n-static="iplb_section_title_informations"></h3>
+                    <h3 data-translate="iplb_section_title_informations"></h3>
                     <dl class="dl-horizontal">
 
-                        <dt data-i18n-static="ip_iplb"></dt>
+                        <dt data-translate="ip_iplb"></dt>
                         <dd data-ng-bind="selectedIplb.infos.ipLoadBalancing"></dd>
 
-                        <dt data-i18n-static="iplb_infos_state"></dt>
+                        <dt data-translate="iplb_infos_state"></dt>
                         <dd>
                             <span class="label"
                                   data-ng-class="{
                                       'label-success': selectedIplb.infos.state === 'ok',
                                       'label-warning': selectedIplb.infos.state !== 'ok'
                                   }"
-                                  data-ng-bind="i18n['iplb_infos_state_' + selectedIplb.infos.state] || selectedIplb.infos.state">
+                                  data-ng-bind="('iplb_infos_state_' + selectedIplb.infos.state) | translateAlt: selectedIplb.infos.state">
                             </span>
                         </dd>
 
-                        <dt data-i18n-static="iplb_expiration"></dt>
+                        <dt data-translate="iplb_expiration"></dt>
                         <dd data-ng-bind="selectedIplb.expiration | date:'mediumDate'"></dd>
 
                         <!-- stickiness -->
-                        <dt data-i18n-static="iplb_infos_stickiness"></dt>
+                        <dt data-translate="iplb_infos_stickiness"></dt>
                         <dd data-ng-if="!selectedIplb.polling.stickiness">
-                            <span data-ng-bind="i18n['iplb_infos_stickiness_' + selectedIplb.infos.stickiness] || selectedIplb.infos.stickiness"></span>
+                            <span data-ng-bind="('iplb_infos_stickiness_' + selectedIplb.infos.stickiness) | translateAlt: selectedIplb.infos.stickiness"></span>
                             <button type="button"
                                     class="btn btn-default"
                                     data-ng-click="setAction('ip-lb/stickiness/ip-ip-lb-stickiness', selectedIplb)"
-                                    data-i18n-static="wizard_modify">
+                                    data-translate="wizard_modify">
                             </button>
                         </dd>
 
                         <dd data-ng-if="selectedIplb.polling.stickiness">
                             <span class="label label-default"
-                                  data-i18n-static="common_updating">
+                                  data-translate="common_updating">
                             </span>
                         </dd>
 
                         <!-- ssl -->
-                        <dt data-i18n-static="iplb_infos_ssl"></dt>
+                        <dt data-translate="iplb_infos_ssl"></dt>
                         <dd data-ng-if="!selectedIplb.polling.activateSsl && !selectedIplb.polling.desactivateSsl">
-                            <span data-ng-bind="i18n['iplb_infos_ssl_' + selectedIplb.infos.ssl] || selectedIplb.infos.ssl"></span>
+                            <span data-ng-bind="('iplb_infos_ssl_' + selectedIplb.infos.ssl) | translateAlt: selectedIplb.infos.ssl"></span>
                             <button type="button"
                                     class="btn btn-default"
                                     data-ng-if="worldPart !== 'CA' && selectedIplb.infos.ssl === 'none'"
                                     data-ng-click="setAction('ip-lb/order/ssl/ip-ip-lb-order-ssl', selectedIplb)"
-                                    data-i18n-static="iplb_infos_ssl_order_btn">
+                                    data-translate="iplb_infos_ssl_order_btn">
                             </button>
                             <button type="button"
                                     class="btn btn-default"
                                     data-ng-if="selectedIplb.infos.ssl === 'ovh'"
                                     data-ng-click="setAction('ip-lb/ssl/import/ip-ip-lb-ssl-import', selectedIplb)"
-                                    data-i18n-static="iplb_infos_ssl_importcustom_btn">
+                                    data-translate="iplb_infos_ssl_importcustom_btn">
                             </button>
                             <button type="button"
                                     class="btn btn-default"
                                     data-ng-if="selectedIplb.infos.ssl === 'customer'"
                                     data-ng-click="setAction('ip-lb/ssl/restore/ip-ip-lb-ssl-restore', selectedIplb)"
-                                    data-i18n-static="iplb_infos_ssl_restore_btn">
+                                    data-translate="iplb_infos_ssl_restore_btn">
                             </button>
                         </dd>
                         <dd data-ng-if="selectedIplb.polling.activateSsl || selectedIplb.polling.desactivateSsl">
                             <span class="label label-default"
-                                  data-i18n-static="common_updating">
+                                  data-translate="common_updating">
                             </span>
                         </dd>
                     </dl>
@@ -114,12 +115,12 @@
                 </div>
                 <div class="col-md-6">
                     <h3>
-                        <span data-i18n-static="iplb_section_title_zones"></span>
+                        <span data-translate="iplb_section_title_zones"></span>
                         <button type="button"
                                 class="btn btn-link float-right"
                                 data-ng-if="worldPart !== 'CA'"
                                 data-ng-click="setAction('ip-lb/order/zone/ip-ip-lb-order-zone', selectedIplb)"
-                                data-i18n-static="iplb_zone_order_btn">
+                                data-translate="iplb_zone_order_btn">
                         </button>
                     </h3>
                     <div class="row">
@@ -143,9 +144,9 @@
                                      data-ng-if="selectedIplb.zone.selected"
                                      data-ng-src="images/map/{{ selectedIplb.zone.selected.toUpperCase() }}.png"/>
                                 <dl>
-                                    <dt data-i18n-static="iplb_zone_internalnatip"></dt>
+                                    <dt data-translate="iplb_zone_internalnatip"></dt>
                                     <dd data-ng-bind="selectedIplb.zone.internalNatIp || '/'"></dd>
-                                    <dt data-i18n-static="iplb_zone_probeip"></dt>
+                                    <dt data-translate="iplb_zone_probeip"></dt>
                                     <dd data-ng-bind="selectedIplb.zone.probeIp || '/'"></dd>
                                 </dl>
                             </div>
@@ -159,13 +160,13 @@
             </div>
 
             <!-- backends -->
-            <h3 data-i18n-static="iplb_section_title_backends"></h3>
+            <h3 data-translate="iplb_section_title_backends"></h3>
 
             <button type="button"
                     class="btn btn-primary"
                     data-ng-click="setAction('ip-lb/backend/add/ip-ip-lb-backend-add', selectedIplb)"
                     data-ng-disabled="backendTaskDoing"
-                    data-i18n-static="iplb_backend_add_title">
+                    data-translate="iplb_backend_add_title">
             </button>
 
             <div class="table-responsive mt-2">
@@ -173,19 +174,19 @@
                     <thead>
                         <tr>
                             <th scope="col"
-                                data-i18n-static="iplb_table_backends_header_weight">
+                                data-translate="iplb_table_backends_header_weight">
                             </th>
                             <th scope="col"
-                                data-i18n-static="iplb_table_backends_header_zone">
+                                data-translate="iplb_table_backends_header_zone">
                             </th>
                             <th scope="col"
-                                data-i18n-static="iplb_table_backends_header_backend">
+                                data-translate="iplb_table_backends_header_backend">
                             </th>
                             <th scope="col"
-                                data-i18n-static="iplb_table_backends_header_mainbackendip">
+                                data-translate="iplb_table_backends_header_mainbackendip">
                             </th>
                             <th scope="col"
-                                data-i18n-static="iplb_table_backends_header_probe">
+                                data-translate="iplb_table_backends_header_probe">
                             </th>
                             <th scope="col"></th>
                         </tr>
@@ -202,7 +203,7 @@
                         <tr data-ng-if="!selectedIplb.backendDetails.length && !loading.backends">
                             <td colspan="6"
                                 class="text-center"
-                                data-i18n-static="iplb_table_backends_no_backends">
+                                data-translate="iplb_table_backends_no_backends">
                             </td>
                         </tr>
                         <!--backends-->
@@ -213,7 +214,7 @@
                             <td data-ng-bind="backend.zone.toUpperCase()"></td>
                             <td data-ng-bind="backend.backend"></td>
                             <td data-ng-bind="backend.mainBackendIp || '-'"></td>
-                            <td data-ng-bind="i18n['iplb_backend_probe_' + backend.probe.toUpperCase()] || backend.probe.toUpperCase()"></td>
+                            <td data-ng-bind="('iplb_backend_probe_' + backend.probe.toUpperCase()) | translateAlt: backend.probe.toUpperCase()"></td>
                             <td>
                                 <div data-uib-dropdown>
                                     <button type="button"
@@ -230,21 +231,21 @@
                                             <button type="button"
                                                     class="btn btn-link"
                                                     data-ng-click="setAction('ip-lb/backend/weight/ip-ip-lb-backend-weight', { selectedIplb: selectedIplb, backend: backend })"
-                                                    data-i18n-static="iplb_backend_setweight_btn">
+                                                    data-translate="iplb_backend_setweight_btn">
                                             </button>
                                         </li>
                                         <li data-ng-if="!backend.mainBackendIp">
                                             <button type="button"
                                                     class="btn btn-link"
                                                     data-ng-click="setAction('ip-lb/backend/backup/set/ip-ip-lb-backend-set', { selectedIplb: selectedIplb, backend: backend })"
-                                                    data-i18n-static="iplb_backend_setbackupstate_btn">
+                                                    data-translate="iplb_backend_setbackupstate_btn">
                                             </button>
                                         </li>
                                         <li>
                                             <button type="button"
                                                     class="btn btn-link"
                                                     data-ng-click="setAction('ip-lb/backend/probe/ip-ip-lb-backend-probe', { selectedIplb: selectedIplb, backend: backend })"
-                                                    data-i18n-static="iplb_backend_probe_btn">
+                                                    data-translate="iplb_backend_probe_btn">
                                             </button>
                                         </li>
                                         <li class="divider"></li>
@@ -252,14 +253,14 @@
                                             <button type="button"
                                                     class="btn btn-link"
                                                     data-ng-click="setAction('ip-lb/backend/backup/unset/ip-ip-lb-backend-unset', { selectedIplb: selectedIplb, backend: backend })"
-                                                    data-i18n-static="iplb_backend_unsetbackupstate_btn">
+                                                    data-translate="iplb_backend_unsetbackupstate_btn">
                                             </button>
                                         </li>
                                         <li>
                                             <button type="button"
                                                     class="btn btn-link"
                                                     data-ng-click="setAction('ip-lb/backend/delete/ip-ip-lb-backend-delete', { selectedIplb: selectedIplb, backend: backend })"
-                                                    data-i18n-static="iplb_backend_delete_btn">
+                                                    data-translate="iplb_backend_delete_btn">
                                             </button>
                                         </li>
                                     </ul>
@@ -277,27 +278,27 @@
                  data-paginated-items="selectedIplb.backendDetails"
                  data-transform-item="transformItemBackend(item)"
                  data-on-transform-item-done="onTransformItemBackendDone(items)"
-                 data-page-placeholder="{{tr('pagination_page', [currentPage, nbPages])}}"
+                 data-page-placeholder="{{ 'pagination_page' | translate:{ t0: currentPage, t1: nbPages } }}"
                  data-items-per-page="itemsPerPage"
-                 data-item-per-page-placeholder="{{tr('pagination_display')}}">
+                 data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
             </div>
         </div>
 
-        <h3 data-i18n-static="iplb_section_title_portsredirection"></h3>
+        <h3 data-translate="iplb_section_title_portsredirection"></h3>
         <button type="button"
                 class="btn btn-primary"
                 data-ng-click="setAction('ip-lb/redirection/add/ip-ip-lb-redirection-add', selectedIplb)"
-                data-i18n-static="iplb_portsredirection_add_title">
+                data-translate="iplb_portsredirection_add_title">
         </button>
         <div class="table-responsive mt-2">
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col"
-                            data-i18n-static="iplb_table_portsredirection_header_srcport">
+                            data-translate="iplb_table_portsredirection_header_srcport">
                         </th>
                         <th scope="col"
-                            data-i18n-static="iplb_table_portsredirection_header_dstport">
+                            data-translate="iplb_table_portsredirection_header_dstport">
                         </th>
                         <th scope="col"></th>
                     </tr>
@@ -314,7 +315,7 @@
                     <tr data-ng-if="!selectedIplb.portsRedirectionDetails.length && !loading.ports">
                         <td colspan="3"
                             class="text-center"
-                            data-i18n-static="iplb_table_portsredirection_no_ports">
+                            data-translate="iplb_table_portsredirection_no_ports">
                         </td>
                     </tr>
                     <!--ports-->
@@ -343,9 +344,9 @@
                  data-paginated-items="selectedIplb.portsRedirectionDetails"
                  data-transform-item="transformItemPortsRedirection(item)"
                  data-on-transform-item-done="onTransformItemPortsRedirectionDone(items)"
-                 data-page-placeholder="{{tr('pagination_page', [currentPage, nbPages])}}"
+                 data-page-placeholder="{{ 'pagination_page' | translate: { t0: currentPage, t1: nbPages } }}"
                  data-items-per-page="itemsPerPage2"
-                 data-item-per-page-placeholder="{{tr('pagination_display')}}">
+                 data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
             </div>
         </div>
 

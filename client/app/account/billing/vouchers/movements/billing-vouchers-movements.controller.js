@@ -1,4 +1,4 @@
-angular.module("Billing.controllers").controller("Billing.controllers.Vouchers.Movements", ($scope, BillingVouchers, $stateParams, Alerter) => {
+angular.module("Billing.controllers").controller("Billing.controllers.Vouchers.Movements", ($scope, $translate, BillingVouchers, $stateParams, Alerter) => {
     $scope.movementIds = [];
     $scope.voucherAccountId = $stateParams.voucherAccountId;
 
@@ -25,7 +25,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.Vouchers.M
             },
             (err) => {
                 $scope.loaders.movements = false;
-                Alerter.alertFromSWS($scope.tr("voucher_informations_error"), err);
+                Alerter.alertFromSWS($translate.instant("voucher_informations_error"), err);
             }
         );
     };

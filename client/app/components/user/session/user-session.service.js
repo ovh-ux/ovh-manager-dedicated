@@ -1,10 +1,10 @@
 class SessionService {
-    constructor ($q, $translate, $translatePartialLoader, constants, translator, CdnDomain, DedicatedCloud, Nas, Products, User, LANGUAGES, OtrsPopupService, ssoAuthentication, featureAvailability) {
+    constructor ($q, $translate, $translatePartialLoader, constants, CdnDomain, DedicatedCloud, Nas, Products, User, LANGUAGES, OtrsPopupService, ssoAuthentication, featureAvailability) {
         this.$q = $q;
         this.$translate = $translate;
         this.$translatePartialLoader = $translatePartialLoader;
         this.constants = constants;
-        this.translator = translator;
+        this.$translate = $translate;
         this.cdnDomain = CdnDomain;
         this.dedicatedCloud = DedicatedCloud;
         this.nas = Nas;
@@ -322,7 +322,7 @@ class SessionService {
             label: _(currentLanguage).get("name"),
             "class": "oui-navbar-menu_language",
             title: _(currentLanguage).get("value").split("_")[0].toUpperCase(),
-            headerTitle: this.translator.tr("global_language"),
+            headerTitle: this.$translate.instant("global_language"),
             subLinks: _(this.LANGUAGES)
                 .filter((language) => _(language).has("name", "value"))
                 .map((language) => ({

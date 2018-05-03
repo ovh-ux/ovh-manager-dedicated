@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudTerminateCtrl", ($scope, $stateParams, constants, DedicatedCloud, Alerter) => {
+angular.module("App").controller("DedicatedCloudTerminateCtrl", ($scope, $stateParams, $translate, constants, DedicatedCloud, Alerter) => {
     "use strict";
 
     $scope.hosting = $scope.currentActionData;
@@ -11,10 +11,10 @@ angular.module("App").controller("DedicatedCloudTerminateCtrl", ($scope, $stateP
         DedicatedCloud.terminate($stateParams.productId)
             .then(
                 () => {
-                    Alerter.success($scope.tr("dedicatedCloud_close_service_success"), $scope.alerts.dashboard);
+                    Alerter.success($translate.instant("dedicatedCloud_close_service_success"), $scope.alerts.dashboard);
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("dedicatedCloud_close_service_error"), err, $scope.alerts.dashboard);
+                    Alerter.alertFromSWS($translate.instant("dedicatedCloud_close_service_error"), err, $scope.alerts.dashboard);
                 }
             )
             .finally(() => {

@@ -1,4 +1,4 @@
-angular.module("App").controller("CacherulesAddCtrl", ($scope, $stateParams, cdnDedicatedOrderRule, Alerter) => {
+angular.module("App").controller("CacherulesAddCtrl", ($scope, $stateParams, $translate, cdnDedicatedOrderRule, Alerter) => {
     $scope.alert = "cdn_domain_tab_rules_alert";
     $scope.prices = null;
     $scope.choices = {
@@ -28,7 +28,7 @@ angular.module("App").controller("CacherulesAddCtrl", ($scope, $stateParams, cdn
             },
             (data) => {
                 $scope.resetAction();
-                Alerter.alertFromSWS($scope.tr("cdn_configuration_cacherules_upgrade_fail"), data, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("cdn_configuration_cacherules_upgrade_fail"), data, $scope.alert);
             }
         );
     };
@@ -48,7 +48,7 @@ angular.module("App").controller("CacherulesAddCtrl", ($scope, $stateParams, cdn
             },
             (data) => {
                 $scope.resetAction();
-                Alerter.alertFromSWS($scope.tr("cdn_configuration_cacherules_upgrade_fail"), data, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("cdn_configuration_cacherules_upgrade_fail"), data, $scope.alert);
             }
         );
     };

@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpMitigationStatisticsCtrl", ($scope, $locale, Ip, IpMitigation, $filter, $timeout, translator) => {
+angular.module("Module.ip.controllers").controller("IpMitigationStatisticsCtrl", ($scope, $locale, Ip, IpMitigation, $filter, $timeout, $translate) => {
     "use strict";
 
     $scope.data = $scope.currentActionData;
@@ -31,8 +31,8 @@ angular.module("Module.ip.controllers").controller("IpMitigationStatisticsCtrl",
                 .format("Y/MM/DD HH:mm:ss")
         );
 
-        $scope.chartSeries.push(translator.tr("ip_mitigation_statistics_input"));
-        $scope.chartSeries.push(translator.tr("ip_mitigation_statistics_output"));
+        $scope.chartSeries.push($translate.instant("ip_mitigation_statistics_input"));
+        $scope.chartSeries.push($translate.instant("ip_mitigation_statistics_output"));
 
         $scope.chartData.push(_.map(_.get($scope.stats, "valuesIn"), (value) => value.y));
         $scope.chartData.push(_.map(_.get($scope.stats, "valuesOut"), (value) => value.y));

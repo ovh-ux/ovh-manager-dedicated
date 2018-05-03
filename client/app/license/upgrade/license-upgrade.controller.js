@@ -1,4 +1,4 @@
-angular.module("Module.license.controllers").controller("LicenseUpgradeCtrl", ($scope, License, $q, Alerter, $filter, $stateParams) => {
+angular.module("Module.license").controller("LicenseUpgradeCtrl", ($scope, $translate, License, $q, Alerter, $filter, $stateParams) => {
     $scope.alerts = {
         upgrade: "license.alerts.upgrade"
     };
@@ -99,10 +99,10 @@ angular.module("Module.license.controllers").controller("LicenseUpgradeCtrl", ($
 
                     $scope.selected.options = getResetedOptions();
                 } else {
-                    Alerter.alertFromSWS($scope.tr("license_upgrade_common_no_upgrade"), "ERROR", $scope.alerts.upgrade);
+                    Alerter.alertFromSWS($translate.instant("license_upgrade_common_no_upgrade"), "ERROR", $scope.alerts.upgrade);
                 }
             } else {
-                Alerter.alertFromSWS($scope.tr("license_order_loading_error"), "ERROR", $scope.alerts.upgrade);
+                Alerter.alertFromSWS($translate.instant("license_order_loading_error"), "ERROR", $scope.alerts.upgrade);
             }
 
             $scope.loaders.orderableVersion = false;
@@ -213,7 +213,7 @@ angular.module("Module.license.controllers").controller("LicenseUpgradeCtrl", ($
 
                 (data) => {
                     $scope.loaders.durations = false;
-                    Alerter.alertFromSWS($scope.tr("license_order_loading_error"), data.data, $scope.alerts.upgrade);
+                    Alerter.alertFromSWS($translate.instant("license_order_loading_error"), data.data, $scope.alerts.upgrade);
                 }
             );
         }
@@ -240,7 +240,7 @@ angular.module("Module.license.controllers").controller("LicenseUpgradeCtrl", ($
                 $scope.loaders.bc = false;
             },
             (data) => {
-                Alerter.alertFromSWS($scope.tr("license_order_loading_error"), data.data, $scope.alerts.upgrade);
+                Alerter.alertFromSWS($translate.instant("license_order_loading_error"), data.data, $scope.alerts.upgrade);
                 $scope.loaders.bc = false;
             }
         );

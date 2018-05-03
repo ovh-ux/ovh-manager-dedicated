@@ -3,16 +3,16 @@
          data-wizard-on-cancel="closeAction"
          data-wizard-on-finish="closeAction"
          data-wizard-hide-cancel-button="true"
-         data-wizard-confirm-button-text="i18n.wizard_close"
+         data-wizard-confirm-button-text=":: 'wizard_close' | translate"
          data-wizard-keydown-disabled="true"
-         data-wizard-title="i18n.ip_mitigation_statistics_title"
+         data-wizard-title=":: 'ip_mitigation_statistics_title' | translate"
          data-wizard-title-icon="mitigationStatusAuto == false && 'icon-mitigation-auto' || 'icon-mitigation-active'"
          class="module-ip-modal">
 
         <div data-wizard-step
             data-wizard-step-on-load="loadStatisticsScale">
             <div data-ng-if="!stats.noData">
-                <p class="bold blue" data-ng-bind="tr('ip_mitigation_statistics_current_ip', [data.ip.ip])"></p>
+                <p class="bold blue" data-ng-bind="'ip_mitigation_statistics_current_ip' | translate:{ t0: data.ip.ip }"></p>
                 <div>
                     <div data-ng-hide="statisticsScalesAvailable">
                         <div class="loader"></div>
@@ -26,7 +26,7 @@
                                            name="mode"
                                            value="realTime"
                                            data-ng-model="model.mode">
-                                    <span data-i18n-static="ip_mitigation_statistics_mode_realtime"></span>
+                                    <span data-translate="ip_mitigation_statistics_mode_realtime"></span>
                                 </label>
                             </div>
                             <div class="radio">
@@ -35,7 +35,7 @@
                                            name="mode"
                                            value="date"
                                            data-ng-model="model.mode">
-                                    <span data-i18n-static="ip_mitigation_statistics_mode_date"></span>
+                                    <span data-translate="ip_mitigation_statistics_mode_date"></span>
                                 </label>
                             </div>
 
@@ -44,7 +44,7 @@
                             <div class="form-group"
                                  data-ng-if="model.mode === 'date'">
                                 <label for="statTo"
-                                       data-i18n-static="ip_mitigation_statistics_to">
+                                       data-translate="ip_mitigation_statistics_to">
                                 </label>
                                 <div class="input-group date-picker-input">
                                     <input type="text"
@@ -73,14 +73,14 @@
                             <div class="form-group"
                                  data-ng-if="model.mode === 'date'">
                                 <label for="statScale"
-                                       data-i18n-static="ip_mitigation_statistics_scale">
+                                       data-translate="ip_mitigation_statistics_scale">
                                 </label>
                                 <select name="period"
                                         class="form-control"
                                         id="statScale"
                                         data-ng-disabled="statsLoading"
                                         data-ng-change="getStatistics()"
-                                        data-ng-options="i18n['ip_mitigation_statistics_statistics_scale' + option] for option in statisticsScalesAvailable"
+                                        data-ng-options="('ip_mitigation_statistics_statistics_scale' + option | translate) for option in statisticsScalesAvailable"
                                         data-ng-model="model.scale">
                                 </select>
                             </div>
@@ -106,7 +106,10 @@
                     <oui-spinner></oui-spinner>
                 </div>
             </div>
-            <p class="center red" data-ng-if="stats.noData" data-ng-bind="tr('ip_mitigation_statistics_no_data', data.ip.ip)"></p>
+            <p class="text-center text-danger"
+               data-ng-if="stats.noData"
+               data-ng-bind="'ip_mitigation_statistics_no_data' | translate:{ t0: data.ip.ip }">
+            </p>
         </div>
     </div>
 </div>

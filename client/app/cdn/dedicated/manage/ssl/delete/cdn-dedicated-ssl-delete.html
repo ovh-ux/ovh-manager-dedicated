@@ -4,11 +4,11 @@
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="deleteSsl"
          data-wizard-step-valid="wizard_yes"
-         data-wizard-title="i18n.cdn_configuration_delete_ssl_title">
+         data-wizard-title=":: 'cdn_configuration_delete_ssl_title' | translate">
 
         <div data-wizard-step>
 
-            <p data-ng-bind-html="tr('cdn_configuration_ssl_delete_confirmation', [ssl.name])"></p>
+            <p data-translate="cdn_configuration_ssl_delete_confirmation" data-translate-values="{ t0: ssl.name }"></p>
 
         </div>
 

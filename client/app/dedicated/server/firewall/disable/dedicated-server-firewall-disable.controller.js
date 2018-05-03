@@ -1,4 +1,4 @@
-angular.module("App").controller("ServerFirewallAsaDisableCtrl", ($scope, $stateParams, Server, ServerFirewallAsa, Alerter) => {
+angular.module("App").controller("ServerFirewallAsaDisableCtrl", ($scope, $stateParams, $translate, Server, ServerFirewallAsa, Alerter) => {
     $scope.model = null;
 
     $scope.load = function () {
@@ -8,7 +8,7 @@ angular.module("App").controller("ServerFirewallAsaDisableCtrl", ($scope, $state
             },
             (data) => {
                 $scope.resetAction();
-                $scope.setMessage($scope.tr("server_configuration_firewall_asa_disable_step1_loading_error"), data);
+                $scope.setMessage($translate.instant("server_configuration_firewall_asa_disable_step1_loading_error"), data);
             }
         );
     };
@@ -16,7 +16,7 @@ angular.module("App").controller("ServerFirewallAsaDisableCtrl", ($scope, $state
     $scope.disable = function () {
         $scope.resetAction();
         ServerFirewallAsa.changeFirewallState($stateParams.productId, false)
-            .then(() => Alerter.success($scope.tr("server_configuration_firewall_asa_disable_success"), "dedicated_server_firewall"))
-            .catch((err) => Alerter.alertFromSWS($scope.tr("server_configuration_firewall_asa_disable_fail"), err, "dedicated_server_firewall"));
+            .then(() => Alerter.success($translate.instant("server_configuration_firewall_asa_disable_success"), "dedicated_server_firewall"))
+            .catch((err) => Alerter.alertFromSWS($translate.instant("server_configuration_firewall_asa_disable_fail"), err, "dedicated_server_firewall"));
     };
 });

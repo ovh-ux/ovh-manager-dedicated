@@ -1,8 +1,8 @@
 angular.module("Billing.controllers").controller("Billing.controllers.CreditsMovements", class BillingCreditsCtrl {
-    constructor ($q, $stateParams, translator, Alerter, BillingCredits) {
+    constructor ($q, $stateParams, $translate, Alerter, BillingCredits) {
         this.$q = $q;
         this.$stateParams = $stateParams;
-        this.translator = translator;
+        this.$translate = $translate;
         this.Alerter = Alerter;
         this.billingCredits = BillingCredits;
 
@@ -29,7 +29,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.CreditsMov
         this.loading.getMovement = true;
 
         return this.billingCredits.getBalanceMovement(this.$stateParams.balanceName, movementId).catch((error) => {
-            this.Alerter.set("alert-danger", [this.translator.tr("billing_credit_balance_movements_load_error"), _.get(error, "message")].join(" "));
+            this.Alerter.set("alert-danger", [this.$translate.instant("billing_credit_balance_movements_load_error"), _.get(error, "message")].join(" "));
         });
     }
 
@@ -55,7 +55,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.CreditsMov
                 this.balance = balance;
             })
             .catch((error) => {
-                this.Alerter.set("alert-danger", [this.translator.tr("billing_credit_balance_movements_load_error"), _.get(error, "message")].join(" "));
+                this.Alerter.set("alert-danger", [this.$translate.instant("billing_credit_balance_movements_load_error"), _.get(error, "message")].join(" "));
             });
     }
 
@@ -66,7 +66,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.CreditsMov
                 this.movements = movements;
             })
             .catch((error) => {
-                this.Alerter.set("alert-danger", [this.translator.tr("billing_credit_balance_movements_load_error"), _.get(error, "message")].join(" "));
+                this.Alerter.set("alert-danger", [this.$translate.instant("billing_credit_balance_movements_load_error"), _.get(error, "message")].join(" "));
             });
     }
 

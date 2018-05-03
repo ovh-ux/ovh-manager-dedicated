@@ -1,4 +1,4 @@
-angular.module("App").controller("HousingFtpBackupCtrl", ($scope, $http, $stateParams, Polling, Alerter, Housing) => {
+angular.module("App").controller("HousingFtpBackupCtrl", ($scope, $http, $stateParams, $translate, Polling, Alerter, Housing) => {
     "use strict";
 
     const alert = "housing_tab_ftpbackup_alert";
@@ -92,12 +92,12 @@ angular.module("App").controller("HousingFtpBackupCtrl", ($scope, $http, $stateP
             Housing.putFtpBackupIp($stateParams.productId, $scope.ipbackupCurrentEdit.ipBlock, $scope.ipbackupCurrentEdit.ftp, $scope.ipbackupCurrentEdit.nfs, $scope.ipbackupCurrentEdit.cifs)
                 .then(
                     () => {
-                        Alerter.success($scope.tr("housing_configuration_ftpbackup_set_success", $scope.ipbackupCurrentEdit.ipBlock), alert);
+                        Alerter.success($translate.instant("housing_configuration_ftpbackup_set_success", { t0: $scope.ipbackupCurrentEdit.ipBlock }), alert);
                         getApply();
                         startEditPolling($scope.ipbackupCurrentEdit.ipBlock);
                     },
                     (data) => {
-                        Alerter.alertFromSWS($scope.tr("housing_configuration_ftpbackup_set_fail", $scope.ipbackupCurrentEdit.ipBlock), data, alert);
+                        Alerter.alertFromSWS($translate.instant("housing_configuration_ftpbackup_set_fail", { t0: $scope.ipbackupCurrentEdit.ipBlock }), data, alert);
                         conditionnalReloadAccess();
                     }
                 )
@@ -209,7 +209,7 @@ angular.module("App").controller("HousingFtpBackupCtrl", ($scope, $http, $stateP
         Housing.addTaskFast($stateParams.productId, task, $scope.$id).then(
             (state) => {
                 if (Polling.isResolve(state)) {
-                    Alerter.success($scope.tr("housing_configuration_ftpbackup_activate_successfull"), alert);
+                    Alerter.success($translate.instant("housing_configuration_ftpbackup_activate_successfull"), alert);
                     $scope.disable.activeFtp = false;
                     $scope.$broadcast("housing.ftpbackup.reload");
                 } else {
@@ -218,7 +218,7 @@ angular.module("App").controller("HousingFtpBackupCtrl", ($scope, $http, $stateP
             },
             (data) => {
                 $scope.disable.activeFtp = false;
-                Alerter.alertFromSWS($scope.tr("housing_configuration_ftpbackup_activate_failure"), data, alert);
+                Alerter.alertFromSWS($translate.instant("housing_configuration_ftpbackup_activate_failure"), data, alert);
             }
         );
     }
@@ -235,7 +235,7 @@ angular.module("App").controller("HousingFtpBackupCtrl", ($scope, $http, $stateP
             (state) => {
                 if (Polling.isResolve(state)) {
                     $scope.disable.deleteFtp = false;
-                    Alerter.success($scope.tr("housing_configuration_ftpbackup_delete_successfull"), alert);
+                    Alerter.success($translate.instant("housing_configuration_ftpbackup_delete_successfull"), alert);
                     $scope.$broadcast("housing.ftpbackup.reload");
                 } else {
                     startFtpBackupPollDelete(task);
@@ -243,7 +243,7 @@ angular.module("App").controller("HousingFtpBackupCtrl", ($scope, $http, $stateP
             },
             (data) => {
                 $scope.disable.deleteFtp = false;
-                Alerter.alertFromSWS($scope.tr("housing_configuration_ftpbackup_delete_failure"), data, alert);
+                Alerter.alertFromSWS($translate.instant("housing_configuration_ftpbackup_delete_failure"), data, alert);
             }
         );
     }
@@ -260,7 +260,7 @@ angular.module("App").controller("HousingFtpBackupCtrl", ($scope, $http, $stateP
             (state) => {
                 if (Polling.isResolve(state)) {
                     $scope.disable.passwordFtp = false;
-                    Alerter.success($scope.tr("housing_configuration_ftpbackup_lost_password_successfull"), alert);
+                    Alerter.success($translate.instant("housing_configuration_ftpbackup_lost_password_successfull"), alert);
                 } else {
                     startFtpBackupPollPassword(task);
                 }

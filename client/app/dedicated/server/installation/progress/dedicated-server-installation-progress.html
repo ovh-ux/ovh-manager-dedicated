@@ -3,8 +3,8 @@
     <div data-wizard
          data-wizard-on-cancel="reduce"
          data-wizard-on-finish="reduce"
-         data-wizard-title="tr('server_configuration_installation_progress_title')"
-         data-wizard-confirm-button-text="i18n.server_configuration_installation_progress_button_modal"
+         data-wizard-title=":: 'server_configuration_installation_progress_title' | translate"
+         data-wizard-confirm-button-text=":: 'server_configuration_installation_progress_button_modal' | translate"
          data-wizard-hide-cancel-button>
 
         <div data-wizard-step
@@ -16,7 +16,7 @@
             </div>
 
             <div data-ng-if="progress.installationTask">
-                <div data-ng-bind-html="tr('server_configuration_installation_progress_info')"></div>
+                <div data-ng-bind-html="'server_configuration_installation_progress_info' | translate "></div>
                 <div class="mb-3">
                     <span data-ng-class="{ 'text-danger': progress.errorStep > 0 }"
                           data-ng-bind="progress.currentStep">
@@ -37,44 +37,46 @@
                             class="btn btn-danger"
                             data-ng-hide="progress.disableCancel || progress.errorMessage || progress.installationCancel || progress.endInstallation"
                             data-ng-click="progress.installationCancel = true"
-                            data-i18n-static="server_configuration_installation_progress_cancel_button">
+                            data-translate="server_configuration_installation_progress_cancel_button">
                     </button>
                     <button type="button"
                             class="btn btn-default"
                             data-ng-if="!progress.disableCancel && !progress.errorMessage && progress.installationCancel && !progress.endInstallation"
                             data-ng-click="progress.installationCancel = false"
-                            data-i18n-static="server_configuration_installation_progress_cancel_button_cancel">
+                            data-translate="server_configuration_installation_progress_cancel_button_cancel">
                     </button>
                     <button type="button"
                             class="btn btn-danger"
                             data-ng-if="!progress.disableCancel && !progress.errorMessage && progress.installationCancel && !progress.endInstallation"
                             data-ng-click="cancelInstall()"
-                            data-i18n-static="server_configuration_installation_progress_cancel_button_confirm">
+                            data-translate="server_configuration_installation_progress_cancel_button_confirm">
                     </button>
                     <button type="button"
                             class="btn btn-default"
                             data-ng-if="progress.errorMessage"
                             data-ng-click="setAction('installation/choice/dedicated-server-installation-choice', progress.server)"
-                            data-i18n-static="server_configuration_installation_progress_cancel_retry">
+                            data-translate="server_configuration_installation_progress_cancel_retry">
                     </button>
                 </div>
                 <p class="text-danger"
                    data-ng-show="progress.failStatut"
-                   data-ng-bind="tr('server_configuration_installation_fail_state')">
+                   data-ng-bind=":: 'server_configuration_installation_fail_state' | translate">
                 </p>
                 <ul class="list-unstyled"
                     data-ng-show="progress.errorMessage || progress.ws || progress.wsFail">
                     <li class="text-danger"
                         data-ng-show="progress.errorMessage && progress.currentStepNum > 2"
-                        data-ng-bind="tr('server_configuration_installation_progress_installation_error', [progress.server.name, progress.errorMessage])">
+                        data-translate="server_configuration_installation_progress_installation_error"
+                        data-translate-values="{ t0: progress.server.name, t1: progress.errorMessage }">
                     </li>
                     <li class="text-danger"
                         data-ng-show="progress.errorMessage && progress.currentStepNum < 3"
-                        data-ng-bind="tr('server_configuration_installation_progress_installation_error2', [progress.server.name, progress.errorMessage])">
+                        data-translate="server_configuration_installation_progress_installation_error2"
+                        data-translate-values="{ t0: progress.server.name, t1: progress.errorMessage }">
                     </li>
                     <li class="text-danger"
                         data-ng-show="!progress.disableCancel && !progress.errorMessage && progress.installationCancel && !progress.endInstallation"
-                        data-i18n-static="server_configuration_installation_progress_cancel_info">
+                        data-translate="server_configuration_installation_progress_cancel_info">
                     </li>
                     <li data-ng-show="progress.ws && !progress.wsFail && !progress.errorMessage"
                         data-ng-bind="progress.ws">

@@ -3,14 +3,14 @@
          data-wizard-bread-crumb="true"
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="confirmOrder"
-         data-wizard-title="i18n.iplb_ssl_order_title">
+         data-wizard-title=":: 'iplb_ssl_order_title' | translate">
 
         <!-- Step 1: Select a service -->
         <div data-wizard-step
              data-wizard-step-valid="!loading.init && isOrderable && isValid()">
 
             <div data-ng-show="!loading.init && isOrderable">
-                <p data-i18n-static="iplb_ssl_order_step1_question"></p>
+                <p data-translate="iplb_ssl_order_step1_question"></p>
 
                 <form>
                     <div class="form-group"
@@ -19,7 +19,7 @@
                          }">
                         <label class="control-label required"
                                for="domain"
-                               data-i18n-static="iplb_ssl_order_domain">
+                               data-translate="iplb_ssl_order_domain">
                         </label>
                         <input type="text"
                                name="domain"
@@ -29,12 +29,12 @@
                     </div>
                 </form>
                 <p data-ng-bind-html="helptext"></p>
-                <p data-i18n-static="iplb_ssl_order_helptext2"></p>
+                <p data-translate="iplb_ssl_order_helptext2"></p>
             </div>
 
             <div class="alert alert-danger"
                  data-ng-show="!loading.init && !isOrderable"
-                 data-i18n-static="iplb_ssl_order_not_orderable"
+                 data-translate="iplb_ssl_order_not_orderable"
                  role="alert">
             </div>
 
@@ -64,7 +64,7 @@
              data-wizard-step-valid="!loading.validation">
 
             <div data-ng-show="!loading.validation">
-                <p data-i18n-static="ip_order_resume"></p>
+                <p data-translate="ip_order_resume"></p>
 
                 <div class="table-responsive">
                     <table class="table table-hover">
@@ -84,7 +84,7 @@
                             <tr>
                                 <td class="text-right">
                                     <span class="font-weight-bold"
-                                          data-i18n-static="ip_order_price_HT">
+                                          data-translate="ip_order_price_HT">
                                     </span>
                                     <span class="text-danger font-weight-bold"
                                           data-ng-bind="order.prices.withoutTax.text">
@@ -94,7 +94,7 @@
                             <tr>
                                 <td class="text-right">
                                     <span class="font-weight-bold"
-                                          data-i18n-static="ip_order_price_TTC">
+                                          data-translate="ip_order_price_TTC">
                                     </span>
                                     <span class="text-danger font-weight-bold"
                                           data-ng-bind="order.prices.withTax.text">
@@ -105,8 +105,8 @@
                     </table>
                 </div>
 
-                <p data-i18n-static="ip_order_final_txt"></p>
-                <p data-i18n-static="ip_order_final_txt2"></p>
+                <p data-translate="ip_order_final_txt"></p>
+                <p data-translate="ip_order_final_txt2"></p>
             </div>
 
             <div class="text-center"

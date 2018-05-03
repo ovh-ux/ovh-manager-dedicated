@@ -1,10 +1,10 @@
 angular.module("App").controller("CdnDomainCtrl", class CdnDomainCtrl {
 
-    constructor ($scope, $stateParams, translator, CdnDomain) {
+    constructor ($scope, $stateParams, $translate, CdnDomain) {
         // injections
         this.$scope = $scope;
         this.$stateParams = $stateParams;
-        this.translator = translator;
+        this.$translate = $translate;
         this.CdnDomain = CdnDomain;
 
         // attributes used in view
@@ -19,7 +19,7 @@ angular.module("App").controller("CdnDomainCtrl", class CdnDomainCtrl {
             this.domain = result;
             this.$scope.domain = result;
         }).catch((error) => {
-            this.$scope.setMessage(this.translator.tr("cdn_domain_dashboard_loading_error"), error);
+            this.$scope.setMessage(this.$translate.instant("cdn_domain_dashboard_loading_error"), error);
         }).finally(() => {
             this.loading = false;
         });

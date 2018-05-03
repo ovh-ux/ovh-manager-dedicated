@@ -2,6 +2,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.Mean", [
     "$scope",
     "$q",
     "$log",
+    "$translate",
     "BILLING_BASE_URL",
     "Billing.constants",
     "BillingPaymentInformation",
@@ -9,7 +10,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.Mean", [
     "User",
     "Alerter",
     "PAYMENT_EVENT",
-    function ($scope, $q, $log, baseUrl, BILLING_CONSTANTS, Mean, User, UserApp, Alerter, PAYMENT_EVENT) {
+    function ($scope, $q, $log, $translate, baseUrl, BILLING_CONSTANTS, Mean, User, UserApp, Alerter, PAYMENT_EVENT) {
         "use strict";
 
         const PAYMENT_TYPES = BILLING_CONSTANTS.paymentMeans;
@@ -43,7 +44,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.Mean", [
                 })
                 .catch((err) => {
                     $log.error(err);
-                    Alerter.alertFromSWS($scope.tr("billingError"), err);
+                    Alerter.alertFromSWS($translate.instant("billingError"), err);
                     $scope.paymentsMean = [];
                 })
                 .finally(() => {
@@ -62,7 +63,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.Mean", [
                 })
                 .catch((err) => {
                     mean.defaultPaymentMean = false;
-                    Alerter.alertFromSWS($scope.tr("payment_mean_default_mean_error"), err);
+                    Alerter.alertFromSWS($translate.instant("payment_mean_default_mean_error"), err);
                     return $q.reject(err);
                 });
         };
@@ -99,7 +100,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.Mean", [
                     mean.description = description;
                 })
                 .catch((err) => {
-                    Alerter.alertFromSWS($scope.tr("payment_mean_description_error"), err);
+                    Alerter.alertFromSWS($translate.instant("payment_mean_description_error"), err);
                 })
                 .finally(() => {
                     $scope.loading.means = false;
@@ -126,7 +127,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.Mean", [
             const bankAccountsPendingValidation = _.filter(paymentMeans.bankAccounts, (bankAccount) => bankAccount.state === "pendingValidation" && !!bankAccount.validationDocumentLink);
 
             if (bankAccountsPendingValidation.length > 0) {
-                const warningMessage = [$scope.tr("paymentType_bankAccount_pending_validation"), $scope.tr("paymentType_bankAccount_processing_delay")].join(" ");
+                const warningMessage = [$translate.instant("paymentType_bankAccount_pending_validation"), $translate.instant("paymentType_bankAccount_processing_delay")].join(" ");
                 Alerter.alertFromSWS(warningMessage);
             }
         }

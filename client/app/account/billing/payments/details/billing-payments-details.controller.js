@@ -1,6 +1,4 @@
-angular.module("Billing.controllers").controller("Billing.controllers.PaymentDetailsCtrl", function ($q, $log, translator, $stateParams, Alerter, BillingPayments) {
-    const tr = translator.tr;
-
+angular.module("Billing.controllers").controller("Billing.controllers.PaymentDetailsCtrl", function ($q, $log, $stateParams, $translate, Alerter, BillingPayments) {
     this.loading = {
         init: false
     };
@@ -14,7 +12,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.PaymentDet
     this.transformItem = (billId) => {
         this.loading.init = true;
         return BillingPayments.getBillDetails(this.paymentId, billId).catch((err) => {
-            Alerter.alertFromSWS(tr("payments_error"), err.data);
+            Alerter.alertFromSWS($translate.instant("payments_error"), err.data);
             $log.error(err);
             return $q.reject(err);
         });
@@ -34,7 +32,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.PaymentDet
                 this.payment = payment;
             })
             .catch((err) => {
-                Alerter.alertFromSWS(tr("payments_error"), err.data);
+                Alerter.alertFromSWS($translate.instant("payments_error"), err.data);
                 this.loading.init = false;
                 return $q.reject(err);
             })

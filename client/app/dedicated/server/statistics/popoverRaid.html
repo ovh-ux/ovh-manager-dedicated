@@ -6,12 +6,12 @@
         'text-warning': infoRaid.name == 'REBUILDING',
         'text-error': infoRaid.name == 'KO'
        }">
-        <span data-ng-bind="infoRaid.value + ' ' + i18n.server_tab_stats_rtm_raid + ' ' + infoRaid.name"></span>
+        <span data-ng-bind="infoRaid.value + ' ' + ('server_tab_stats_rtm_raid' | translate) + ' ' + infoRaid.name"></span>
     </p>
 
     <button type="button"
             class="btn btn-link"
             data-ng-click="switchOptionRtm('disk')"
-            data-i18n-static="server_tab_stats_rtm_state_raid_details">
+            data-translate="server_tab_stats_rtm_state_raid_details">
     </button>
 </div>

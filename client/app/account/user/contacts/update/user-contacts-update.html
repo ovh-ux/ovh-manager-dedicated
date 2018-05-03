@@ -2,7 +2,7 @@
     <div class="module-useraccount-sections-contacts-details-container">
 
     <div class="page-header p-5">
-        <h2 data-i18n-static="useraccount_contacts_details"></h2>
+        <h2 data-translate="useraccount_contacts_details"></h2>
     </div>
 
     <div data-ovh-alert="{{alerts.updateOwner}}"></div>
@@ -24,13 +24,13 @@
                             'success' : accountForm.legalForm.$dirty && accountForm.legalForm.$valid
                         }">
                             <label class="control-label" for="legalForm">
-                                {{::i18n.useraccount_contacts_owner_legalform}}
+                                {{ 'useraccount_contacts_owner_legalform' | translate }}
                                 <strong class="text-danger" data-ng-if="isMandatory('legalForm')">*</strong>
                             </label>
 
                             <div class="controls">
                                 <div data-ng-if="!edit.value || isReadonly('legalForm')">
-                                    {{::i18n["useraccount_contacts_owner_legalform_" + ownerModel.legalForm] || '-' }}
+                                    <span data-ng-bind="('useraccount_contacts_owner_legalform_' + ownerModel.legalForm) | translateAlt:'-'"></span>
                                 </div>
 
                                 <select name="legalForm"
@@ -41,23 +41,23 @@
                                         maxlength="250"
                                         data-ng-required="isMandatory('legalForm')"
                                         data-ng-readonly="isReadonly('legalForm')"
-                                        data-ng-options="i18n['user_account_legalform_' + legalform] for legalform in controls.legalforms">
+                                        data-ng-options="(('user_account_legalform_' + legalform) | translate) for legalform in controls.legalforms">
                                 </select>
                                 <div data-ng-if="edit.value" data-ng-messages="accountForm.legalForm.$error" role="alert">
 
                                     <div class="text-danger" data-ng-message="required" data-ng-if="isMandatory('legalForm')" >
-                                        <p data-i18n-static="useraccount_contacts_owner_required"></p>
+                                        <p data-translate="useraccount_contacts_owner_required"></p>
                                     </div>
                                     <div class="text-danger" data-ng-message="maxlength">
-                                        <p data-i18n-static="useraccount_contacts_owner_to_long"></p>
+                                        <p data-translate="useraccount_contacts_owner_to_long"></p>
                                     </div>
                                     <div class="tspace5" data-ng-if="edit.value && isReadonly('legalform') && hasTrade && isMandatory('legalform')">
                                         <i class="fa fa-info-circle"></i>
-                                        <strong data-i18n-static="useraccount_contacts_owner_update_legalform_info"></strong>
+                                        <strong data-translate="useraccount_contacts_owner_update_legalform_info"></strong>
                                         <a data-ng-href="{{domainOrderTradeUrl}}"
-                                           title="{{::i18n.core_new_window}}"
+                                           title="{{ 'core_new_window' | translate }}"
                                            target="_blank"
-                                           data-i18n-static="useraccount_contacts_owner_update_email_go"></a>
+                                           data-translate="useraccount_contacts_owner_update_email_go"></a>
                                         <i class="fa fa-external-link"></i>
                                     </div>
                                 </div>
@@ -75,7 +75,7 @@
                                 }"
                                 data-ng-if="ownerModel.legalForm === 'corporation' || ownerModel.legalForm === 'association'">
                                 <label class="control-label" for="organisationName">
-                                    {{::i18n.useraccount_contacts_owner_organisation}}
+                                    {{ 'useraccount_contacts_owner_organisation' | translate }}
                                     <strong class="text-danger" data-ng-if="isMandatory('organisationName')">*</strong>
                                 </label>
                                 <div class="controls">
@@ -90,20 +90,20 @@
                                         data-ng-readonly="isReadonly('organisationName')" />
                                     <div data-ng-if="edit.value" data-ng-messages="accountForm.organisation.$error" role="alert">
                                         <div class="text-danger" data-ng-message="required">
-                                            <p data-i18n-static="useraccount_contacts_owner_required" data-ng-if="isMandatory('organisationName')" ></p>
+                                            <p data-translate="useraccount_contacts_owner_required" data-ng-if="isMandatory('organisationName')" ></p>
                                         </div>
                                         <div class="text-danger" data-ng-message="maxlength">
-                                            <p data-i18n-static="useraccount_contacts_owner_to_long"></p>
+                                            <p data-translate="useraccount_contacts_owner_to_long"></p>
                                         </div>
                                     </div>
 
                                     <div data-ng-if="edit.value && isReadonly('organisationName') && hasTrade && isMandatory('organisationName')">
                                         <i class="fa fa-info-circle"></i>
-                                        <strong data-i18n-static="useraccount_contacts_owner_update_organisationName_info"></strong>
+                                        <strong data-translate="useraccount_contacts_owner_update_organisationName_info"></strong>
                                         <a data-ng-href="{{domainOrderTradeUrl}}"
-                                           title="{{::i18n.core_new_window}}"
+                                           title="{{ 'core_new_window' | translate }}"
                                            target="_blank"
-                                           data-i18n-static="useraccount_contacts_owner_update_email_go"></a>
+                                           data-translate="useraccount_contacts_owner_update_email_go"></a>
                                         <i class="fa fa-external-link"></i>
                                     </div>
                                 </div>
@@ -116,7 +116,7 @@
                                     'success' : accountForm.organisationType.$dirty && accountForm.organisationType.$valid
                                 }">
                                 <label class="control-label" for="organisationType">
-                                    {{::i18n.useraccount_contacts_owner_organisation_type}}
+                                    {{ 'useraccount_contacts_owner_organisation_type' | translate }}
                                     <strong class="text-danger" data-ng-if="isMandatory('organisationType')">*</strong>
                                 </label>
                                 <div class="controls">
@@ -131,10 +131,10 @@
                                         data-ng-readonly="isReadonly('organisationType')" />
                                     <div data-ng-if="edit.value" data-ng-messages="accountForm.organisationType.$error" role="alert">
                                         <div class="text-danger" data-ng-message="required">
-                                            <p data-i18n-static="useraccount_contacts_owner_required" data-ng-if="isMandatory('organisationType')" ></p>
+                                            <p data-translate="useraccount_contacts_owner_required" data-ng-if="isMandatory('organisationType')" ></p>
                                         </div>
                                         <div class="text-danger" data-ng-message="maxlength">
-                                            <p data-i18n-static="useraccount_contacts_owner_to_long"></p>
+                                            <p data-translate="useraccount_contacts_owner_to_long"></p>
                                         </div>
                                     </div>
                                 </div>
@@ -147,7 +147,7 @@
                                     'success' : accountForm.companyNationalIdentificationNumber.$dirty && accountForm.companyNationalIdentificationNumber.$valid
                                 }">
                                 <label class="control-label" for="companyNationalIdentificationNumber">
-                                    {{::i18n.useraccount_contacts_owner_company_national_identification_number}}
+                                    {{ 'useraccount_contacts_owner_company_national_identification_number' | translate }}
                                     <strong class="text-danger" data-ng-if="isMandatory('companyNationalIdentificationNumber')">*</strong>
                                 </label>
                                 <div class="controls">
@@ -162,10 +162,10 @@
                                         data-ng-readonly="isReadonly('companyNationalIdentificationNumber')" />
                                     <div data-ng-if="edit.value" data-ng-messages="accountForm.companyNationalIdentificationNumber.$error" role="alert">
                                         <div class="text-danger" data-ng-message="required">
-                                            <p data-i18n-static="useraccount_contacts_owner_required" data-ng-if="isMandatory('companyNationalIdentificationNumber')" ></p>
+                                            <p data-translate="useraccount_contacts_owner_required" data-ng-if="isMandatory('companyNationalIdentificationNumber')" ></p>
                                         </div>
                                         <div class="text-danger" data-ng-message="maxlength">
-                                            <p data-i18n-static="useraccount_contacts_owner_to_long"></p>
+                                            <p data-translate="useraccount_contacts_owner_to_long"></p>
                                         </div>
                                     </div>
                                 </div>
@@ -179,7 +179,7 @@
                                      'success' : accountForm.vat.$dirty && accountForm.vat.$valid
                                  }">
                                 <label for="vat" class="control-label"
-                                       data-i18n-static="useraccount_contacts_owner_tva"></label>
+                                       data-translate="useraccount_contacts_owner_tva"></label>
 
                                 <div class="controls">
                                     <div data-ng-if="!edit.value" data-ng-bind="ownerModel.vat || '-' "></div>
@@ -192,7 +192,7 @@
                                            data-ng-model="ownerModel.vat"/>
                                     <div data-ng-if="edit.value" data-ng-messages="accountForm.vat.$error" role="alert">
                                         <div class="text-danger" data-ng-message="maxlength">
-                                            <p data-i18n-static="useraccount_contacts_owner_to_long"></p>
+                                            <p data-translate="useraccount_contacts_owner_to_long"></p>
                                         </div>
                                     </div>
                                 </div>
@@ -206,7 +206,7 @@
                             'success' : accountForm.firstName.$dirty && accountForm.firstName.$valid
                         }">
                             <label class="control-label" for="firstName">
-                                {{::i18n.useraccount_contacts_owner_firstname}}
+                                {{ 'useraccount_contacts_owner_firstname' | translate }}
                                 <strong class="text-danger" data-ng-if="isMandatory('firstName')">*</strong>
                             </label>
 
@@ -223,19 +223,19 @@
                                        data-ng-readonly="isReadonly('firstName')" />
                                 <div data-ng-if="edit.value" data-ng-messages="accountForm.firstName.$error" role="alert">
                                     <div class="text-danger" data-ng-message="required" data-ng-if="isMandatory('firstName')" >
-                                        <p data-i18n-static="useraccount_contacts_owner_required"></p>
+                                        <p data-translate="useraccount_contacts_owner_required"></p>
                                     </div>
                                     <div class="text-danger" data-ng-message="maxlength">
-                                        <p data-i18n-static="useraccount_contacts_owner_to_long"></p>
+                                        <p data-translate="useraccount_contacts_owner_to_long"></p>
                                     </div>
 
                                     <div data-ng-if="edit.value && isReadonly('firstName') && hasTrade && isMandatory('firstName')">
                                         <i class="fa fa-info-circle"></i>
-                                        <strong data-i18n-static="useraccount_contacts_owner_update_firstName_info"></strong>
+                                        <strong data-translate="useraccount_contacts_owner_update_firstName_info"></strong>
                                         <a data-ng-href="{{domainOrderTradeUrl}}"
-                                           title="{{::i18n.core_new_window}}"
+                                           title="{{ 'core_new_window' | translate }}"
                                            target="_blank"
-                                           data-i18n-static="useraccount_contacts_owner_update_email_go"></a>
+                                           data-translate="useraccount_contacts_owner_update_email_go"></a>
                                         <i class="fa fa-external-link"></i>
                                     </div>
                                 </div>
@@ -248,7 +248,7 @@
                             'success' : accountForm.lastName.$dirty && accountForm.lastName.$valid
                         }">
                             <label for="lastName" class="control-label">
-                                {{::i18n.useraccount_contacts_owner_lastname}}
+                                {{ 'useraccount_contacts_owner_lastname' | translate }}
                                 <strong class="text-danger" data-ng-if="isMandatory('lastName')">*</strong>
                             </label>
 
@@ -264,19 +264,19 @@
                                        data-ng-readonly="isReadonly('lastName')"  />
                                 <div data-ng-if="edit.value" data-ng-messages="accountForm.lastName.$error" role="alert">
                                     <div class="text-danger" data-ng-message="required" data-ng-if="isMandatory('lastName')" >
-                                        <p data-i18n-static="useraccount_contacts_owner_required"></p>
+                                        <p data-translate="useraccount_contacts_owner_required"></p>
                                     </div>
                                     <div class="text-danger" data-ng-message="maxlength">
-                                        <p data-i18n-static="useraccount_contacts_owner_to_long"></p>
+                                        <p data-translate="useraccount_contacts_owner_to_long"></p>
                                     </div>
 
                                     <div data-ng-if="edit.value && isReadonly('lastName') && hasTrade && isMandatory('lastName')">
                                         <i class="fa fa-info-circle"></i>
-                                        <strong data-i18n-static="useraccount_contacts_owner_update_lastName_info"></strong>
+                                        <strong data-translate="useraccount_contacts_owner_update_lastName_info"></strong>
                                         <a data-ng-href="{{domainOrderTradeUrl}}"
-                                           title="{{::i18n.core_new_window}}"
+                                           title="{{ 'core_new_window' | translate }}"
                                            target="_blank"
-                                           data-i18n-static="useraccount_contacts_owner_update_email_go"></a>
+                                           data-translate="useraccount_contacts_owner_update_email_go"></a>
                                         <i class="fa fa-external-link"></i>
                                     </div>
                                 </div>
@@ -290,7 +290,7 @@
                                 'success' : accountForm.nationalIdentificationNumber.$dirty && accountForm.nationalIdentificationNumber.$valid
                             }">
                             <label class="control-label" for="nationalIdentificationNumber">
-                                {{::i18n.useraccount_contacts_owner_individual_national_identification_number}}
+                                {{ 'useraccount_contacts_owner_individual_national_identification_number' | translate }}
                                 <strong class="text-danger" data-ng-if="isMandatory('nationalIdentificationNumber')">*</strong>
                             </label>
                             <div class="controls">
@@ -305,10 +305,10 @@
                                     data-ng-readonly="isReadonly('nationalIdentificationNumber')" />
                                 <div data-ng-if="edit.value" data-ng-messages="accountForm.nationalIdentificationNumber.$error" role="alert">
                                     <div class="text-danger" data-ng-message="required">
-                                        <p data-i18n-static="useraccount_contacts_owner_required" data-ng-if="isMandatory('nationalIdentificationNumber')" ></p>
+                                        <p data-translate="useraccount_contacts_owner_required" data-ng-if="isMandatory('nationalIdentificationNumber')" ></p>
                                     </div>
                                     <div class="text-danger" data-ng-message="maxlength">
-                                        <p data-i18n-static="useraccount_contacts_owner_to_long"></p>
+                                        <p data-translate="useraccount_contacts_owner_to_long"></p>
                                     </div>
                                 </div>
                             </div>
@@ -320,25 +320,25 @@
                             'success' : accountForm.gender.$dirty && accountForm.gender.$valid
                         }">
                             <label class="control-label" for="gender">
-                                {{::i18n.useraccount_contacts_owner_gender}}
+                                {{ 'useraccount_contacts_owner_gender' | translate }}
                                 <strong class="text-danger" data-ng-if="isMandatory('gender')">*</strong>
                             </label>
 
                             <div class="controls">
                                 <div data-ng-hide="edit.value">
-                                    {{ i18n['useraccount_contacts_owner_gender_' + ownerModel.gender] || '-' }}
+                                    <span data-ng-bind="('useraccount_contacts_owner_gender_' + ownerModel.gender) | translateAlt:'-'"></span>
                                 </div>
                                 <select class="form-control"
                                         data-ng-model="ownerModel.gender"
                                         data-ng-if="edit.value"
-                                        data-ng-options="i18n['useraccount_contacts_owner_gender_' + gender] for gender in controls.genders"
+                                        data-ng-options="(('useraccount_contacts_owner_gender_' + gender) | translate) for gender in controls.genders"
                                         id="gender"
                                         name="gender"
                                         data-ng-required="isMandatory('gender')">
                                 </select>
                                 <div data-ng-if="edit.value" data-ng-messages="accountForm.gender.$error" role="alert">
                                     <div class="text-danger" data-ng-message="required" data-ng-if="isMandatory('gender')" >
-                                        <p data-i18n-static="useraccount_contacts_owner_required"></p>
+                                        <p data-translate="useraccount_contacts_owner_required"></p>
                                     </div>
                                 </div>
                             </div>
@@ -350,25 +350,25 @@
                             'success'   : accountForm.nationality.$dirty && accountForm.nationality.$valid
                         }">
                             <label class="control-label" for="nationality">
-                                {{::i18n.useraccount_contacts_owner_nationality}}
+                                {{ 'useraccount_contacts_owner_nationality' | translate }}
                                 <strong class="text-danger" data-ng-if="isMandatory('nationality')">*</strong>
                             </label>
 
                             <div class="controls">
                                 <div data-ng-show="!edit.value">
-                                    {{::i18n["country_" + ownerModel.nationality] || "-"}}
+                                    <span data-ng-bind="('country_' + ownerModel.nationality) | translateAlt:'-'"></span>
                                 </div>
                                 <select class="form-control"
                                         data-ng-model="ownerModel.nationality"
                                         data-ng-if="edit.value"
-                                        data-ng-options="i18n['country_' + country] for country in controls.countries"
+                                        data-ng-options="(('country_' + country) | translate) for country in controls.countries"
                                         name="nationality"
                                         id="nationality"
                                         data-ng-required="isMandatory('nationality')">
                                 </select>
                                 <div data-ng-if="edit.value" data-ng-messages="accountForm.nationality.$error" role="alert">
                                     <div class="text-danger" data-ng-message="required" data-ng-if="isMandatory('nationality')">
-                                        <p data-i18n-static="useraccount_contacts_owner_required"></p>
+                                        <p data-translate="useraccount_contacts_owner_required"></p>
                                     </div>
                                 </div>
                             </div>
@@ -380,7 +380,7 @@
                             'success'   : accountForm.birthDay.$dirty && accountForm.birthDay.$valid
                         }">
                             <label class="control-label" for="birthDay">
-                                {{::i18n.useraccount_contacts_owner_birthDay}}
+                                {{ 'useraccount_contacts_owner_birthDay' | translate }}
                             </label>
 
                             <div class="controls">
@@ -397,17 +397,18 @@
                                 'success'   : accountForm.birthCountry.$dirty && accountForm.birthCountry.$valid
                         }">
                             <label class="control-label" for="country">
-                                {{::i18n.useraccount_contacts_owner_birthCountry}}
+                                {{ 'useraccount_contacts_owner_birthCountry' | translate }}
                                 <strong class="text-danger" data-ng-if="isMandatory('birthCountry')">*</strong>
                             </label>
 
                             <div class="controls">
-                                <div data-ng-show="!edit.value" data-ng-bind="i18n['country_' + ownerModel.birthCountry] || '-' ">
+                                <div data-ng-show="!edit.value"
+                                     data-ng-bind="('country_' + ownerModel.birthCountry) | translateAlt:'-'">
                                 </div>
                                 <select class="form-control"
                                         data-ng-show="edit.value" type="text"
                                         data-ng-model="ownerModel.birthCountry"
-                                        data-ng-options="i18n['country_' + country] for country in controls.countries"
+                                        data-ng-options="(('country_' + country) | translate) for country in controls.countries"
                                         id="birthCountry"
                                         name="birthCountry"
                                         maxlength="250"
@@ -416,7 +417,7 @@
                                 </select>
                                 <div data-ng-if="edit.value" data-ng-messages="accountForm.birthCountry.$error" role="alert">
                                     <div class="text-danger" data-ng-message="maxlength">
-                                        <p data-i18n-static="useraccount_contacts_owner_to_long"></p>
+                                        <p data-translate="useraccount_contacts_owner_to_long"></p>
                                     </div>
                                 </div>
                             </div>
@@ -428,7 +429,7 @@
                                 'success'   : accountForm.birthCity.$dirty && accountForm.birthCity.$valid
                         }">
                             <label class="control-label" for="birthCity">
-                                {{::i18n.useraccount_contacts_owner_birthCity}}
+                                {{ 'useraccount_contacts_owner_birthCity' | translate }}
                                 <strong class="text-danger" data-ng-if="isMandatory('birthCity')">*</strong>
                             </label>
 
@@ -445,7 +446,7 @@
                                        data-ng-readonly="isReadonly('birthCity')"  />
                                 <div data-ng-if="edit.value" data-ng-messages="accountForm.birthCity.$error" role="alert">
                                     <div class="text-danger" data-ng-message="maxlength">
-                                        <p data-i18n-static="useraccount_contacts_owner_to_long"></p>
+                                        <p data-translate="useraccount_contacts_owner_to_long"></p>
                                     </div>
                                 </div>
                             </div>
@@ -457,7 +458,7 @@
                                 'success' : accountForm.birthZip.$dirty && accountForm.birthZip.$valid
                         }">
                             <label class="control-label" for="birthZip">
-                                {{::i18n.useraccount_contacts_owner_birthZip}}
+                                {{ 'useraccount_contacts_owner_birthZip' | translate }}
                                 <strong class="text-danger" data-ng-if="isMandatory('birthZip')">*</strong>
                             </label>
 
@@ -474,7 +475,7 @@
                                        data-ng-readonly="isReadonly('birthZip')" />
                                 <div data-ng-if="edit.value" data-ng-messages="accountForm.birthZip.$error" role="alert">
                                     <div class="text-danger" data-ng-message="maxlength">
-                                        <p data-i18n-static="useraccount_contacts_owner_to_long"></p>
+                                        <p data-translate="useraccount_contacts_owner_to_long"></p>
                                     </div>
                                 </div>
                             </div>
@@ -486,7 +487,7 @@
                             'success' : accountForm.language.$dirty && accountForm.language.$valid
                         }">
                             <label class="control-label">
-                                {{::i18n.useraccount_contacts_owner_language}}
+                                {{ 'useraccount_contacts_owner_language' | translate }}
                                 <strong class="text-danger">*</strong>
                             </label>
 
@@ -503,7 +504,7 @@
                                 </select>
                                 <div data-ng-if="edit.value" data-ng-messages="accountForm.language.$error" role="alert">
                                     <div class="text-danger" data-ng-message="required">
-                                        <p data-i18n-static="useraccount_contacts_owner_required"></p>
+                                        <p data-translate="useraccount_contacts_owner_required"></p>
                                     </div>
                                 </div>
                             </div>
@@ -515,7 +516,7 @@
                                 'success' : accountForm.addressLine1.$dirty && accountForm.addressLine1.$valid
                         }">
                             <label class="control-label" for="addressLine1">
-                                {{::i18n.useraccount_contacts_owner_address_1}}
+                                {{ 'useraccount_contacts_owner_address_1' | translate }}
                                 <strong class="text-danger" data-ng-if="isMandatory('address.line1')">*</strong>
                             </label>
 
@@ -532,10 +533,10 @@
                                        data-ng-readonly="isReadonly('address.line1')" />
                                 <div data-ng-if="edit.value" data-ng-messages="accountForm.addressLine1.$error" role="alert">
                                     <div class="text-danger" data-ng-message="required" data-ng-if="isMandatory('address.line1')">
-                                        <p data-i18n-static="useraccount_contacts_owner_required"></p>
+                                        <p data-translate="useraccount_contacts_owner_required"></p>
                                     </div>
                                     <div class="text-danger" data-ng-message="maxlength">
-                                        <p data-i18n-static="useraccount_contacts_owner_to_long"></p>
+                                        <p data-translate="useraccount_contacts_owner_to_long"></p>
                                     </div>
                                 </div>
                             </div>
@@ -546,7 +547,7 @@
                                 'error': accountForm.addressLine2.$dirty && accountForm.addressLine2.$error,
                                 'success' : accountForm.addressLine2.$dirty && accountForm.addressLine2.$valid
                         }">
-                            <label for="addressLine2" data-i18n-static="useraccount_contacts_owner_address_2"
+                            <label for="addressLine2" data-translate="useraccount_contacts_owner_address_2"
                                    class="control-label">
                             </label>
 
@@ -561,7 +562,7 @@
                                        data-ng-model="ownerModel.address.line2"/>
                                 <div data-ng-if="edit.value" data-ng-messages="accountForm.addressLine2.$error" role="alert">
                                     <div class="text-danger" data-ng-message="maxlength">
-                                        <p data-i18n-static="useraccount_contacts_owner_to_long"></p>
+                                        <p data-translate="useraccount_contacts_owner_to_long"></p>
                                     </div>
                                 </div>
                             </div>
@@ -573,7 +574,7 @@
                                 'success' : accountForm.addressLine3.$dirty && accountForm.addressLine3.$valid
                         }">
                             <label for="addressLine3"
-                                   data-i18n-static="useraccount_contacts_owner_address_3"
+                                   data-translate="useraccount_contacts_owner_address_3"
                                    class="control-label"></label>
 
                             <div class="controls">
@@ -587,7 +588,7 @@
                                        data-ng-model="ownerModel.address.line3"/>
                                 <div data-ng-if="edit.value" data-ng-messages="accountForm.addressLine3.$error" role="alert">
                                     <div class="text-danger" data-ng-message="maxlength">
-                                        <p data-i18n-static="useraccount_contacts_owner_to_long"></p>
+                                        <p data-translate="useraccount_contacts_owner_to_long"></p>
                                     </div>
                                 </div>
                             </div>
@@ -599,7 +600,7 @@
                                 'success' : accountForm.zip.$dirty && accountForm.zip.$valid
                         }">
                             <label class="control-label" for="zip">
-                                {{::i18n.useraccount_contacts_owner_zip}}
+                                {{ 'useraccount_contacts_owner_zip' | translate }}
                                 <strong class="text-danger" data-ng-if="isMandatory('address.zip')">*</strong>
                             </label>
 
@@ -616,10 +617,10 @@
                                        data-ng-readonly="isReadonly('address.zip')"/>
                                 <div data-ng-if="edit.value" data-ng-messages="accountForm.zip.$error" role="alert">
                                     <div class="text-danger" data-ng-message="required" data-ng-if="isMandatory('address.zip')">
-                                        <p data-i18n-static="useraccount_contacts_owner_required"></p>
+                                        <p data-translate="useraccount_contacts_owner_required"></p>
                                     </div>
                                     <div class="text-danger" data-ng-message="maxlength">
-                                        <p data-i18n-static="useraccount_contacts_owner_to_long"></p>
+                                        <p data-translate="useraccount_contacts_owner_to_long"></p>
                                     </div>
                                 </div>
                             </div>
@@ -631,7 +632,7 @@
                                 'success' : accountForm.addressCity.$dirty && accountForm.addressCity.$valid
                         }">
                             <label class="control-label" for="addressCity">
-                                {{::i18n.useraccount_contacts_owner_city}}
+                                {{ 'useraccount_contacts_owner_city' | translate }}
                                 <strong class="text-danger" data-ng-if="isMandatory('address.city')">*</strong>
                             </label>
 
@@ -648,10 +649,10 @@
                                        data-ng-readonly="isReadonly('address.city')" />
                                 <div data-ng-if="edit.value" data-ng-messages="accountForm.city.$error" role="alert">
                                     <div class="text-danger" data-ng-message="required" data-ng-if="isMandatory('address.city')">
-                                        <p data-i18n-static="useraccount_contacts_owner_required"></p>
+                                        <p data-translate="useraccount_contacts_owner_required"></p>
                                     </div>
                                     <div class="text-danger" data-ng-message="maxlength">
-                                        <p data-i18n-static="useraccount_contacts_owner_to_long"></p>
+                                        <p data-translate="useraccount_contacts_owner_to_long"></p>
                                     </div>
                                 </div>
                             </div>
@@ -663,24 +664,25 @@
                                 'success' : accountForm.addressCountry.$dirty && accountForm.addressCountry.$valid
                         }">
                             <label class="control-label" for="addressCountry">
-                                {{::i18n.useraccount_contacts_owner_country}}
+                                {{ 'useraccount_contacts_owner_country' | translate }}
                                 <strong class="text-danger" data-ng-if="isMandatory('address.country')">*</strong>
                             </label>
 
                             <div class="controls">
                                 <div data-ng-hide="edit.value && !isReadonly('address.country')"
-                                     data-ng-bind="i18n['country_' + ownerModel.address.country] || '-' "></div>
+                                     data-ng-bind="('country_' + ownerModel.address.country) | translateAlt:'-'">
+                                </div>
                                 <select class="form-control"
                                         data-ng-show="edit.value && !isReadonly('address.country')" type="text"
                                         data-ng-model="ownerModel.address.country"
-                                        data-ng-options="i18n['country_' + country] for country in controls.countries"
+                                        data-ng-options="(('country_' + country) | translate) for country in controls.countries"
                                         id="addressCountry"
                                         name="addressCountry"
                                         data-ng-required="isMandatory('address.country')" >
                                 </select>
                                 <div data-ng-if="edit.value" data-ng-messages="accountForm.addressCountry.$error" role="alert">
                                     <div class="text-danger" data-ng-message="maxlength">
-                                        <p data-i18n-static="useraccount_contacts_owner_to_long"></p>
+                                        <p data-translate="useraccount_contacts_owner_to_long"></p>
                                     </div>
                                 </div>
                             </div>
@@ -692,7 +694,7 @@
                                 'success' : accountForm.addressProvince.$dirty && accountForm.addressProvince.$valid
                         }">
                             <label for="addressProvince" class="control-label">
-                                {{::i18n.useraccount_contacts_owner_province}}
+                                {{ 'useraccount_contacts_owner_province' | translate }}
                                 <strong class="text-danger" data-ng-if="isMandatory('address.province')">*</strong>
                             </label>
 
@@ -709,10 +711,10 @@
                                        data-ng-readonly="isReadonly('address.province')" />
                                 <div data-ng-if="edit.value" data-ng-messages="accountForm.province.$error" role="alert">
                                     <div class="text-danger" data-ng-message="required" data-ng-if="isMandatory('address.province')">
-                                        <p data-i18n-static="useraccount_contacts_owner_required"></p>
+                                        <p data-translate="useraccount_contacts_owner_required"></p>
                                     </div>
                                     <div class="text-danger" data-ng-message="maxlength">
-                                        <p data-i18n-static="useraccount_contacts_owner_to_long"></p>
+                                        <p data-translate="useraccount_contacts_owner_to_long"></p>
                                     </div>
                                 </div>
                             </div>
@@ -725,7 +727,7 @@
                         }">
 
                             <label for="phone" class="control-label">
-                                {{::i18n.useraccount_contacts_owner_phone}}
+                                {{ 'useraccount_contacts_owner_phone' | translate }}
                                 <strong class="text-danger" data-ng-if="isMandatory('phone')">*</strong>
                             </label>
 
@@ -742,10 +744,10 @@
                                        data-ng-readonly="isReadonly('phone')"/>
                                 <div data-ng-if="edit.value" data-ng-messages="accountForm.phone.$error" role="alert">
                                     <div class="text-danger" data-ng-message="required" data-ng-if="isMandatory('phone')">
-                                        <p data-i18n-static="useraccount_contacts_owner_required"></p>
+                                        <p data-translate="useraccount_contacts_owner_required"></p>
                                     </div>
                                     <div class="text-danger" data-ng-message="maxlength">
-                                        <p data-i18n-static="useraccount_contacts_owner_to_long"></p>
+                                        <p data-translate="useraccount_contacts_owner_to_long"></p>
                                     </div>
                                 </div>
                             </div>
@@ -757,7 +759,7 @@
                                 'success' : accountForm.cellPhone.$dirty && accountForm.cellPhone.$valid
                         }">
                             <label for="cellPhone"
-                                   data-i18n-static="useraccount_contacts_owner_cellPhone"
+                                   data-translate="useraccount_contacts_owner_cellPhone"
                                    class="control-label"></label>
 
                             <div class="controls">
@@ -770,7 +772,7 @@
                                        data-ng-model="ownerModel.cellPhone"/>
                                 <div data-ng-if="edit.value" data-ng-messages="accountForm.cellPhone.$error" role="alert">
                                     <div class="text-danger" data-ng-message="maxlength">
-                                        <p data-i18n-static="useraccount_contacts_owner_to_long"></p>
+                                        <p data-translate="useraccount_contacts_owner_to_long"></p>
                                     </div>
                                 </div>
                             </div>
@@ -782,7 +784,7 @@
                                 'success' : accountForm.fax.$dirty && accountForm.fax.$valid
                         }">
                             <label for="fax"
-                                   data-i18n-static="useraccount_contacts_owner_fax"
+                                   data-translate="useraccount_contacts_owner_fax"
                                    class="control-label"></label>
 
                             <div class="controls">
@@ -795,7 +797,7 @@
                                        data-ng-model="ownerModel.fax"/>
                                 <div data-ng-if="edit.value" data-ng-messages="accountForm.fax.$error" role="alert">
                                     <div class="text-danger" data-ng-message="maxlength">
-                                        <p data-i18n-static="useraccount_contacts_owner_to_long"></p>
+                                        <p data-translate="useraccount_contacts_owner_to_long"></p>
                                     </div>
                                 </div>
                             </div>
@@ -807,7 +809,7 @@
                                 'success' : accountForm.email.$dirty && accountForm.email.$valid
                         }">
                             <label class="control-label" for="email">
-                                {{::i18n.useraccount_contacts_owner_email}}
+                                {{ 'useraccount_contacts_owner_email' | translate }}
                                 <strong class="text-danger" data-ng-if="isMandatory('email')">*</strong>
                             </label>
 
@@ -827,23 +829,23 @@
                                        data-ng-readonly="isReadonly('email')"/>
                                 <div data-ng-if="edit.value" data-ng-messages="accountForm.email.$error" role="alert">
                                     <div class="text-danger" data-ng-message="required" data-ng-if="isMandatory('email')">
-                                        <p data-i18n-static="useraccount_contacts_owner_required"></p>
+                                        <p data-translate="useraccount_contacts_owner_required"></p>
                                     </div>
                                     <div class="text-danger" data-ng-message="maxlength">
-                                        <p data-i18n-static="useraccount_contacts_owner_to_long"></p>
+                                        <p data-translate="useraccount_contacts_owner_to_long"></p>
                                     </div>
                                     <div class="text-danger" data-ng-message="pattern">
-                                        <p data-i18n-static="useraccount_contacts_owner_email_pattern"></p>
+                                        <p data-translate="useraccount_contacts_owner_email_pattern"></p>
                                     </div>
                                 </div>
 
                                 <div data-ng-if="edit.value && isReadonly('email') && hasTrade && isMandatory('email')">
                                     <i class="fa fa-info-circle"></i>
-                                    <strong data-i18n-static="useraccount_contacts_owner_update_email_info"></strong>
+                                    <strong data-translate="useraccount_contacts_owner_update_email_info"></strong>
                                     <a data-ng-href="{{domainOrderTradeUrl}}"
-                                       title="{{::i18n.core_new_window}}"
+                                       title="{{ 'core_new_window' | translate }}"
                                        target="_blank"
-                                       data-i18n-static="useraccount_contacts_owner_update_email_go"></a>
+                                       data-translate="useraccount_contacts_owner_update_email_go"></a>
                                     <i class="fa fa-external-link"></i>
                                 </div>
                             </div>
@@ -861,10 +863,10 @@
                                     type="checkbox"
                                     id="updateName"
                                     name="updateName"
-                                    title="{{::i18n.useraccount_contacts_owner_update_name_title}}"
+                                    title="{{ 'useraccount_contacts_owner_update_name_title' | translate }}"
                                     data-ng-model="ownerModel.updateName"
                                     required>
-                                    <span class="fs11" data-ng-bind="::i18n.useraccount_contacts_owner_update_name_info"></span>
+                                    <span data-ng-bind=":: ('useraccount_contacts_owner_update_name_info') | translate"></span>
                                 </label>
                             </div>
                         </div>
@@ -874,18 +876,18 @@
                             <button type="button" class="btn btn-default"
                                     data-ng-click="cancel();"
                                     data-ng-disabled="loaders.update"
-                                    data-i18n-static="useraccount_contacts_owner_cancel"></button>
+                                    data-translate="useraccount_contacts_owner_cancel"></button>
                             <button type="submit" class="btn btn-primary"
                                     data-ng-click="save();"
                                     data-ng-disabled="accountForm.$invalid || loaders.update"
-                                    data-i18n-static="useraccount_contacts_owner_ok"></button>
+                                    data-translate="useraccount_contacts_owner_ok"></button>
                         </div>
                     </form>
                 </div>
 
                 <div class="col-md-6 alert"
                      data-ng-if="!loaders.owner && domainsownerModel.length">
-                        <p data-i18n-static="useraccount_contacts_owner_domains_linked"></p>
+                        <p data-translate="useraccount_contacts_owner_domains_linked"></p>
                         <ul>
                             <li data-ng-repeat="domain in domainsOwner" data-ng-bind="domain"></li>
                         </ul>
@@ -894,18 +896,18 @@
                 <div class="col-md-3" data-ng-show="!loaders.owner && !edit.value">
                     <p>
                         <a data-ng-href="{{changeOwnerUrl}}" target="_blank"
-                            title="{{::i18n.useraccount_contacts_owner_change_owner}}">
-                            <span data-i18n-static="useraccount_contacts_owner_change_owner"></span>
+                            title="{{ 'useraccount_contacts_owner_change_owner' | translate }}">
+                            <span data-translate="useraccount_contacts_owner_change_owner"></span>
                             <i class="fa fa-external-link"></i>
                         </a>
-                        <sup class="tooltip-help" data-tooltip-placement="top" data-tooltip="{{tr('useraccount_contacts_owner_tooltip_will_pay')}}">?</sup>
+                        <sup class="tooltip-help" data-tooltip-placement="top" data-tooltip="{{ 'useraccount_contacts_owner_tooltip_will_pay' | translate }}">?</sup>
                     </p>
                     <div class="text-right">
                         <button type="button"
                                 class="btn btn-default"
                                 data-ng-click="edit();"
                                 >
-                            <span data-ng-bind="tr('useraccount_contacts_owner_edit')"></span>
+                            <span data-ng-bind=":: 'useraccount_contacts_owner_edit' | translate"></span>
                         </button>
                     </div>
             </div>

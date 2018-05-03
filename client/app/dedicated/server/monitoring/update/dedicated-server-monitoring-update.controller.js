@@ -1,11 +1,11 @@
 angular.module("App")
     .controller("DedicatedServerMonitoringUpdateCtrl", class DedicatedServerMonitoringUpdateCtrl {
-        constructor ($q, $stateParams, $state, Alerter, translator, Server) {
+        constructor ($q, $stateParams, $state, Alerter, $translate, Server) {
             this.$q = $q;
             this.$stateParams = $stateParams;
             this.$state = $state;
             this.Alerter = Alerter;
-            this.translator = translator;
+            this.$translate = $translate;
             this.Server = Server;
         }
 
@@ -38,17 +38,25 @@ angular.module("App")
             return this.Server.updateMonitoring(this.$stateParams.productId, !monitored)
                 .then(() => {
                     if (monitored === true) {
-                        this.Alerter.success(this.translator.tr("server_configuration_monitoring_deactivate_success", this.server.name), "server_dashboard_alert");
+                        this.Alerter.success(this.$translate.instant("server_configuration_monitoring_deactivate_success", {
+                            t0: this.server.name
+                        }), "server_dashboard_alert");
                     } else {
-                        this.Alerter.success(this.translator.tr("server_configuration_monitoring_activate_success", this.server.name), "server_dashboard_alert");
+                        this.Alerter.success(this.$translate.instant("server_configuration_monitoring_activate_success", {
+                            t0: this.server.name
+                        }), "server_dashboard_alert");
                     }
                     return this.close();
                 })
                 .catch((err) => {
                     if (monitored === true) {
-                        this.Alerter.error(this.translator.tr("server_configuration_monitoring_deactivate_failed", this.server.name), err, "server_dashboard_alert");
+                        this.Alerter.error(this.$translate.instant("server_configuration_monitoring_deactivate_failed", {
+                            t0: this.server.name
+                        }), err, "server_dashboard_alert");
                     } else {
-                        this.Alerter.error(this.translator.tr("server_configuration_monitoring_activate_failed", this.server.name), err, "server_dashboard_alert");
+                        this.Alerter.error(this.$translate.instant("server_configuration_monitoring_activate_failed", {
+                            t0: this.server.name
+                        }), err, "server_dashboard_alert");
                     }
                     this.$q.reject(err);
                     return this.cancel(err);

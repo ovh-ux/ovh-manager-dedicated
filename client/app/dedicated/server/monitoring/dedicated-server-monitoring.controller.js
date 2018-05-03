@@ -1,4 +1,4 @@
-angular.module("App").controller("MonitoringCtrl", function ($rootScope, $scope, Server, IpRange, Alerter, $q, $stateParams) {
+angular.module("App").controller("MonitoringCtrl", function ($rootScope, $scope, $translate, Server, IpRange, Alerter, $q, $stateParams) {
     const self = this;
     self.currentMonitoring = { value: null };
     self.ips = [];
@@ -35,7 +35,7 @@ angular.module("App").controller("MonitoringCtrl", function ($rootScope, $scope,
                     self.languageEnum = models.data.models["dedicated.server.AlertLanguageEnum"].enum;
                 },
                 (err) => {
-                    Alerter.alertFromSWS(self.tr("server_tab_MONITORING_error"), err.data, "monitoringAlert");
+                    Alerter.alertFromSWS($translate.instant("server_tab_MONITORING_error"), err.data, "monitoringAlert");
                 }
             )
             .finally(() => {
@@ -51,7 +51,7 @@ angular.module("App").controller("MonitoringCtrl", function ($rootScope, $scope,
             },
             (err) => {
                 if (err.status !== 404) {
-                    Alerter.alertFromSWS($scope.tr("server_tab_MONITORING_error"), err.data, "monitoringAlert");
+                    Alerter.alertFromSWS($translate.instant("server_tab_MONITORING_error"), err.data, "monitoringAlert");
                 }
             }
         );
@@ -67,7 +67,7 @@ angular.module("App").controller("MonitoringCtrl", function ($rootScope, $scope,
                 });
             },
             (err) => {
-                Alerter.alertFromSWS($scope.tr("server_tab_MONITORING_error"), err.data, "monitoringAlert");
+                Alerter.alertFromSWS($translate.instant("server_tab_MONITORING_error"), err.data, "monitoringAlert");
             }
         );
     };
@@ -78,7 +78,7 @@ angular.module("App").controller("MonitoringCtrl", function ($rootScope, $scope,
         Server.updateServiceMonitoring($stateParams.productId, monitoring.monitoringId, _.omit(monitoring, ["emailNotifications", "smsNotifications"]))
             .catch((err) => {
                 monitoring.enabled = !monitoring.enabled;
-                Alerter.alertFromSWS($scope.tr("server_tab_MONITORING_error"), err.data, "monitoringAlert");
+                Alerter.alertFromSWS($translate.instant("server_tab_MONITORING_error"), err.data, "monitoringAlert");
             })
             .finally(() => {
                 self.loaders.monitorings = false;
@@ -96,7 +96,7 @@ angular.module("App").controller("MonitoringCtrl", function ($rootScope, $scope,
                     self.monitoringServicesIds = monitoringIds;
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("server_tab_MONITORING_error"), err.data, "monitoringAlert");
+                    Alerter.alertFromSWS($translate.instant("server_tab_MONITORING_error"), err.data, "monitoringAlert");
                 }
             )
             .finally(() => {

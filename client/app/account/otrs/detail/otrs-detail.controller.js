@@ -1,11 +1,11 @@
 angular.module("Module.otrs.controllers").controller("otrsDetailCtrl", [
     "$scope",
     "$injector",
-    "$sanitize",
     "$location",
+    "$translate",
     "Module.otrs.services.otrs",
     "Alerter",
-    function ($scope, $injector, $sanitize, $location, Otrs, Alerter) {
+    function ($scope, $injector, $location, $translate, Otrs, Alerter) {
         "use strict";
 
         const $routerParams = $injector.has("$stateParams") ? $injector.get("$stateParams") : $injector.get("$routeParams");
@@ -31,7 +31,7 @@ angular.module("Module.otrs.controllers").controller("otrsDetailCtrl", [
                         }
                     },
                     (err) => {
-                        Alerter.error($scope.tr("otrs_detail_error", $scope.ticket.ticketId), err, "otrs_detail");
+                        Alerter.error($translate.instant("otrs_detail_error", { t0: $scope.ticket.ticketId }), err, "otrs_detail");
                     }
                 )
                 .finally(() => {
@@ -46,7 +46,7 @@ angular.module("Module.otrs.controllers").controller("otrsDetailCtrl", [
                     $scope.messages = messages;
                 })
                 .catch((err) => {
-                    Alerter.alertFromSWS($scope.tr("otrs_detail_message_error", $scope.ticket.ticketId), err, "otrs_message");
+                    Alerter.alertFromSWS($translate.instant("otrs_detail_message_error", { t0: $scope.ticket.ticketId }), err, "otrs_message");
                 })
                 .finally(() => {
                     $scope.loaders.messages = false;
@@ -59,7 +59,7 @@ angular.module("Module.otrs.controllers").controller("otrsDetailCtrl", [
                     $scope.categories = models.models["support.TicketProductEnum"].enum;
                 })
                 .catch((err) => {
-                    Alerter.alertFromSWS($scope.tr("otrs_detail_message_error"), err, "otrs_message");
+                    Alerter.alertFromSWS($translate.instant("otrs_detail_message_error"), err, "otrs_message");
                 });
         }
 
@@ -111,7 +111,7 @@ angular.module("Module.otrs.controllers").controller("otrsDetailCtrl", [
                         loadMessage();
                     })
                     .catch((err) => {
-                        Alerter.alertFromSWS($scope.tr("otrs_detail_reply_error"), err, "otrs_replyClose");
+                        Alerter.alertFromSWS($translate.instant("otrs_detail_reply_error"), err, "otrs_replyClose");
                     })
                     .finally(() => {
                         $scope.loaders.reply = false;
@@ -128,7 +128,7 @@ angular.module("Module.otrs.controllers").controller("otrsDetailCtrl", [
                         init();
                     })
                     .catch((err) => {
-                        Alerter.alertFromSWS($scope.tr("otrs_detail_close_error"), err, "otrs_replyClose");
+                        Alerter.alertFromSWS($translate.instant("otrs_detail_close_error"), err, "otrs_replyClose");
                     })
                     .finally(() => {
                         $scope.loaders.close = false;

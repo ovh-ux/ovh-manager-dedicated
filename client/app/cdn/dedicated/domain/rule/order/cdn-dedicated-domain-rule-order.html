@@ -3,9 +3,9 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="displayBC"
-         data-wizard-title="i18n.cdn_configuration_cacherules_upgrade_title"
+         data-wizard-title=":: 'cdn_configuration_cacherules_upgrade_title' | translate"
          data-wizard-bread-crumb
-         data-wizard-confirm-button-text="i18n.wizard_pay">
+         data-wizard-confirm-button-text=":: 'wizard_pay' | translate">
 
         <div data-wizard-step
              data-wizard-step-on-load="loadCacherulesPrice"
@@ -18,7 +18,7 @@
 
             <div data-ng-if="prices">
                 <label class="control-label"
-                       data-i18n-static="cdn_configuration_cacherules_upgrade_step1_tarif">
+                       data-translate="cdn_configuration_cacherules_upgrade_step1_tarif">
                 </label>
                 <div class="radio"
                      data-ng-repeat="price in prices track by $index">
@@ -26,7 +26,8 @@
                         <input type="radio"
                                value="{{ price.quantity }}"
                                data-ng-model="choices.count" />
-                        <span data-ng-bind="tr('cdn_configuration_cacherules_upgrade_step1_tarif2', [price.unitaryPrice, price.quantity])"></span>
+                        <span data-translate="cdn_configuration_cacherules_upgrade_step1_tarif2"
+                              data-translate-values="{ t0: price.unitaryPrice, t1: price.quantity }"></span>
                     </label>
                 </div>
             </div>
@@ -44,7 +45,8 @@
 
             <div data-ng-if="orders">
                 <label class="control-label"
-                       data-ng-bind="tr('cdn_configuration_cacherules_upgrade_step2_durations', [choices.count])">
+                       data-translate="cdn_configuration_cacherules_upgrade_step2_durations"
+                       data-translate-values="{ t0: choices.count }">
                 </label>
                 <div class="radio"
                      data-ng-repeat="order in orders track by $index">
@@ -52,7 +54,8 @@
                         <input type="radio"
                                value="{{ order.duration.duration }}"
                                data-ng-model="choices.duration">
-                        <span data-ng-bind="tr('cdn_configuration_cacherules_upgrade_step2_duration_total', [order.duration.formattedDuration, order.withoutTax])"></span>
+                        <span data-translate="cdn_configuration_cacherules_upgrade_step2_duration_total"
+                              data-translate-values="{ t0: order.duration.formattedDuration, t1: order.withoutTax }"></span>
                     </label>
                 </div>
             </div>
@@ -63,32 +66,32 @@
              data-wizard-step-valid="contractsValidated.value"
              data-wizard-step-on-load="updateOrder">
 
-            <p data-ng-bind-html="tr('cdn_configuration_cacherules_upgrade_step3_question', [choices.count, cdn.serviceName])"></p>
+            <p data-ng-bind-html="'cdn_configuration_cacherules_upgrade_step3_question' | translate:{ t0: choices.count, t1: cdn.serviceName }"></p>
             <dl>
-                <dt data-i18n-static="cdn_configuration_cacherules_upgrade_step3_totalHT"></dt>
+                <dt data-translate="cdn_configuration_cacherules_upgrade_step3_totalHT"></dt>
                 <dd class="text-danger"
                     data-ng-bind="choices.order.withoutTax">
                 </dd>
-                <dt data-i18n-static="cdn_configuration_cacherules_upgrade_step3_totalTTC"></dt>
+                <dt data-translate="cdn_configuration_cacherules_upgrade_step3_totalTTC"></dt>
                 <dd class="text-danger"
                     data-ng-bind="choices.order.withTax">
                 </dd>
             </dl>
-            <p data-i18n-static="cdn_configuration_cacherules_upgrade_step3_id"></p>
+            <p data-translate="cdn_configuration_cacherules_upgrade_step3_id"></p>
             <div class="checkbox">
                 <label>
                     <input type="checkbox"
                            id="contractsValidated"
                            data-ng-model="contractsValidated.value" />
-                    <span data-i18n-static="cdn_configuration_cacherules_upgrade_step3_contracts"></span>
+                    <span data-translate="cdn_configuration_cacherules_upgrade_step3_contracts"></span>
                     <span data-ng-repeat="contract in choices.order.contracts">
-                        <span data-i18n-static="cdn_configuration_cacherules_upgrade_step3_contracts_and"
+                        <span data-translate="cdn_configuration_cacherules_upgrade_step3_contracts_and"
                               data-ng-if="($index+1) == choices.order.contracts.length">
                         </span>
-                        <span data-i18n-static="cdn_configuration_cacherules_upgrade_step3_contracts_of"></span>
+                        <span data-translate="cdn_configuration_cacherules_upgrade_step3_contracts_of"></span>
                         <a target="_blank"
                            rel="noopener"
-                           title="{{ contract.name }} ({{ i18n.core_new_window }})"
+                           title="{{ contract.name }} ({{ 'core_new_window' | translate }})"
                            data-ng-href="{{ contract.url }}">
                             <span class="oui-link"
                                   data-ng-bind="contract.name">
@@ -111,14 +114,14 @@
             <div class="text-center"
                  data-ng-if="!url" >
                 <oui-spinner></oui-spinner>
-                <p data-i18n-static="cdn_configuration_cacherules_upgrade_step4_generation_bc"></p>
+                <p data-translate="cdn_configuration_cacherules_upgrade_step4_generation_bc"></p>
             </div>
 
             <div data-ng-if="url">
-                <p data-i18n-static="cdn_configuration_cacherules_upgrade_step4_bc"></p>
-                <p data-i18n-static="cdn_configuration_cacherules_upgrade_step4_continue"></p>
-                <p data-i18n-static="cdn_configuration_cacherules_upgrade_step4_explication2"></p>
-                <em data-i18n-static="cdn_configuration_cacherules_upgrade_step4_explication"></em>
+                <p data-translate="cdn_configuration_cacherules_upgrade_step4_bc"></p>
+                <p data-translate="cdn_configuration_cacherules_upgrade_step4_continue"></p>
+                <p data-translate="cdn_configuration_cacherules_upgrade_step4_explication2"></p>
+                <em data-translate="cdn_configuration_cacherules_upgrade_step4_explication"></em>
             </div>
 
         </div>

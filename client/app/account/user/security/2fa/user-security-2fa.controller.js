@@ -2,12 +2,13 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
     "$rootScope",
     "$scope",
     "$q",
+    "$translate",
     "UserAccount.services.doubleAuth.backupCode",
     "UserAccount.services.doubleAuth.sms",
     "UserAccount.services.doubleAuth.totp",
     "UserAccount.services.doubleAuth.u2f",
     "Alerter",
-    function ($rootScope, $scope, $q, DoubleAuthBackupCodeService, DoubleAuthSmsService, DoubleAuthTotpService, DoubleAuthU2fService, Alerter) {
+    function ($rootScope, $scope, $q, $translate, DoubleAuthBackupCodeService, DoubleAuthSmsService, DoubleAuthTotpService, DoubleAuthU2fService, Alerter) {
         "use strict";
 
         $scope.step1 = {
@@ -143,7 +144,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
                         key = "user_account_security_double_auth_type_u2f_add_error";
                     }
                     $scope.step2.hasError = true;
-                    Alerter.error($scope.tr(key), "doubleAuthAlert2fa");
+                    Alerter.error($translate.instant(key), "doubleAuthAlert2fa");
                 });
         };
 
@@ -167,7 +168,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
                     .catch((err) => {
                         $scope.step2.hasError = true;
                         Alerter.alertFromSWS(
-                            $scope.tr("user_account_security_double_auth_type_sms_error_validate"),
+                            $translate.instant("user_account_security_double_auth_type_sms_error_validate"),
                             {
                                 message: err.data.message,
                                 type: "error"
@@ -187,7 +188,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
                     .catch((err) => {
                         $scope.step2.hasError = true;
                         Alerter.alertFromSWS(
-                            $scope.tr("user_account_security_double_auth_type_totp_error_validate"),
+                            $translate.instant("user_account_security_double_auth_type_totp_error_validate"),
                             {
                                 message: err.data.message,
                                 type: "error"

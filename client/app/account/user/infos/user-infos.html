@@ -2,11 +2,11 @@
 
     <div class="page-header">
         <!-- ACCOUNT MODIFICATIONS -->
-        <h1 data-i18n-static="user_account_title_infos"
+        <h1 data-translate="user_account_title_infos"
             data-ng-if="!controls.validateEmailChange">
         </h1>
         <!-- EMAIL VALIDATION FORM -->
-        <h1 data-i18n-static="user_account_task_change_email_validation_title"
+        <h1 data-translate="user_account_task_change_email_validation_title"
             data-ng-if="controls.validateEmailChange">
         </h1>
     </div>
@@ -32,16 +32,16 @@
                     </p>
                     <p class="mb-3">
                         <span class="label label-info"
-                              data-ng-bind-html="tr('user_account_email_pending_validation', [controls.taskEmailChangeTodo.newEmail])">
+                              data-translate="user_account_email_pending_validation" data-translate-values="{ t0: controls.taskEmailChangeTodo.newEmail }">
                         </span>
                     </p>
                     <p class="mb-3"
-                       data-ng-bind-html="tr('user_account_email_validation_help', [user.email])">
+                       data-translate="user_account_email_validation_help" data-translate-values="{ t0: user.email }">
                     </p>
                     <button type="button"
                             class="btn btn-primary btn-lg ml-0"
                             data-ng-click="validateTaskWithToken()"
-                            data-i18n-static="user_account_email_token_received">
+                            data-translate="user_account_email_token_received">
                     </button>
                 </div>
             </div>
@@ -56,12 +56,12 @@
                 <span class="fa fa-chevron-left mr-2"
                       aria-hidden="true">
                 </span>
-                <span data-i18n-static="common_back"></span>
+                <span data-translate="common_back"></span>
             </button>
 
             <div class="row">
                 <div class="col-md-6">
-                    <strong data-ng-bind="tr('user_account_task_change_email_validation', [controls.validateEmailChange.data.newEmail])">
+                    <strong data-ng-bind="'user_account_task_change_email_validation' | translate:{ t0: controls.validateEmailChange.data.newEmail }">
                     </strong>
 
                     <div class="text-center"
@@ -77,7 +77,7 @@
                         <div class="form-group">
                             <label for="validation_token"
                                    class="control-label"
-                                   data-i18n-static="user_account_email_token"></label>
+                                   data-translate="user_account_email_token"></label>
                             <input id="validation_token"
                                    class="form-control"
                                    type="text"
@@ -93,14 +93,14 @@
                                                       !controls.validateEmailChange.taskId || controls.validateEmailChange.error
                                                       || controls.validateEmailChange.loading"
                                     data-ng-click="refuseEmail()"
-                                    data-i18n-static="user_account_email_token_refuse">
+                                    data-translate="user_account_email_token_refuse">
                             </button>
                             <button type="submit"
                                     class="btn btn-primary"
                                     data-ng-disabled="!controls.validateEmailChange.token ||
                                                       !controls.validateEmailChange.taskId || controls.validateEmailChange.error
                                                       || controls.validateEmailChange.loading"
-                                    data-i18n-static="user_account_email_token_accept">
+                                    data-translate="user_account_email_token_accept">
                             </button>
                         </div>
                     </form>

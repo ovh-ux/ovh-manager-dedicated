@@ -1,7 +1,7 @@
 angular.module("filters").filter("duration", [
-    "translator",
+    "$translate",
     "$filter",
-    function (translator, $filter) {
+    function ($translate, $filter) {
         "use strict";
 
         const unitHash = {
@@ -23,17 +23,21 @@ angular.module("filters").filter("duration", [
             if (simpleDurationReg.test(duration)) {
                 d = +duration.match(simpleDurationReg)[1];
                 unit = unitHash[duration.match(simpleDurationReg)[2] || "m"];
-                return translator.trpl(unit, d);
+                return d > 1 ? $translate.instant(`${unit}_other`, {
+                    t0: d
+                }) : $translate.instant(`${unit}_1`);
             } else if (upto.test(duration)) {
                 if (uptoDuration.test(duration)) {
                     d = duration.match(uptoDuration)[2];
-                    return translator.tr("upto", dateFormat ? $filter("date")(d, dateFormat) : d);
+                    return $translate.instant("upto", { date: dateFormat ? $filter("date")(d, dateFormat) : d });
                 }
-                return translator.tr("uptofirstdaynextmonth");
+                return $translate.instant("uptofirstdaynextmonth");
             } else if (engage.test(duration)) {
                 d = +duration.match(engage)[2];
                 unit = unitHash[duration.match(engage)[3] || "m"];
-                return translator.tr("engage", translator.trpl(unit, d));
+                return $translate.instant("engage", d > 1 ? $translate.instant(`${unit}_other`, {
+                    t0: d
+                }) : $translate.instant(`${unit}_1`));
             }
             return duration;
         };

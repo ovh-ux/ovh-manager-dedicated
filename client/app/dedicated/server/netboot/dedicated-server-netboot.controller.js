@@ -1,4 +1,4 @@
-angular.module("controllers").controller("controllers.Server.Netboot", ($scope, Server, Alerter, $q, $stateParams) => {
+angular.module("controllers").controller("controllers.Server.Netboot", ($scope, Server, Alerter, $q, $stateParams, $translate) => {
     const regRootDevice1 = new RegExp("^/dev/[hs]d[ab][0-9]+$");
     const regRootDevice2 = new RegExp("^/dev/md[0-9]+$");
     const regRootDevice3 = new RegExp("^/dev/rd/c0p0[0-9]+$");
@@ -106,10 +106,10 @@ angular.module("controllers").controller("controllers.Server.Netboot", ($scope, 
             .all(promiseList)
             .then(
                 () => {
-                    Alerter.success($scope.tr("server_configuration_netboot_success"), alertId);
+                    Alerter.success($translate.instant("server_configuration_netboot_success"), alertId);
                 },
                 (data) => {
-                    Alerter.alertFromSWS($scope.tr("server_configuration_netboot_fail", [$scope.server.name]), data.data);
+                    Alerter.alertFromSWS($translate.instant("server_configuration_netboot_fail", { t0: $scope.server.name }), data.data);
                 }
             )
             .finally(() => {
@@ -132,7 +132,7 @@ angular.module("controllers").controller("controllers.Server.Netboot", ($scope, 
                 },
                 (data) => {
                     $scope.resetAction();
-                    Alerter.alertFromSWS($scope.tr("server_configuration_netboot_loading_error", [$scope.server.name]), data.data);
+                    Alerter.alertFromSWS($translate.instant("server_configuration_netboot_loading_error", { t0: $scope.server.name }), data.data);
                 }
             )
             .finally(() => {
@@ -146,7 +146,7 @@ angular.module("controllers").controller("controllers.Server.Netboot", ($scope, 
                 $scope.currentNetboot.rescueMail = server.rescueMail;
             },
             (data) => {
-                Alerter.alertFromSWS($scope.tr("server_configuration_netboot_loading_error", [$scope.server.name]), data.data);
+                Alerter.alertFromSWS($translate.instant("server_configuration_netboot_loading_error", { t0: $scope.server.name }), data.data);
             }
         );
     }

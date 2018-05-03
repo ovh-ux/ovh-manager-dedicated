@@ -1,4 +1,4 @@
-angular.module("App").controller("MonitoringDeleteCtrl", ($rootScope, $scope, $stateParams, Server, Alerter) => {
+angular.module("App").controller("MonitoringDeleteCtrl", ($rootScope, $scope, $stateParams, $translate, Server, Alerter) => {
     "use strict";
 
     $scope.monitoring = $scope.currentActionData;
@@ -12,10 +12,10 @@ angular.module("App").controller("MonitoringDeleteCtrl", ($rootScope, $scope, $s
             .then(
                 () => {
                     $rootScope.$broadcast("server.monitoring.reload");
-                    Alerter.success($scope.tr("server_tab_MONITORING_delete_success"), "monitoringAlert");
+                    Alerter.success($translate.instant("server_tab_MONITORING_delete_success"), "monitoringAlert");
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("server_tab_MONITORING_delete_error"), err.data, "monitoringAlert");
+                    Alerter.alertFromSWS($translate.instant("server_tab_MONITORING_delete_error"), err.data, "monitoringAlert");
                 }
             )
             .finally(() => {

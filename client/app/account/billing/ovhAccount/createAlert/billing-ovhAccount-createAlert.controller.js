@@ -1,4 +1,4 @@
-angular.module("Billing.controllers").controller("Billing.controllers.OvhAccountCreateAlert", function ($scope, BillingOvhAccount, Alerter, OVH_ACCOUNT_EVENT) {
+angular.module("Billing.controllers").controller("Billing.controllers.OvhAccountCreateAlert", function ($scope, $translate, BillingOvhAccount, Alerter, OVH_ACCOUNT_EVENT) {
     const self = this;
 
     self.amount = $scope.currentActionData ? String($scope.currentActionData / 100) : "0";
@@ -11,9 +11,9 @@ angular.module("Billing.controllers").controller("Billing.controllers.OvhAccount
             .then(() => {
                 $scope.$emit(OVH_ACCOUNT_EVENT.ALERT);
                 $scope.loadOvhAccount();
-                Alerter.success($scope.tr("ovhAccount_create_alert_success"));
+                Alerter.success($translate.instant("ovhAccount_create_alert_success"));
             })
-            .catch((err) => Alerter.alertFromSWS($scope.tr("ovhAccount_create_alert_error"), err))
+            .catch((err) => Alerter.alertFromSWS($translate.instant("ovhAccount_create_alert_error"), err))
             .finally(() => $scope.resetAction());
     };
 

@@ -12,8 +12,8 @@
             <div class="col-md-3">
                 <div class="oui-tile">
                     <h4 class="oui-header_4 oui-tile__title">
-                        <div data-ng-if="server.supportsRTM" data-i18n-static="server_tab_stats_legend_rtm"></div>
-                        <div data-ng-if="!server.supportsRTM" data-i18n-static="server_tab_stats_legend_location"></div>
+                        <div data-ng-if="server.supportsRTM" data-translate="server_tab_stats_legend_rtm"></div>
+                        <div data-ng-if="!server.supportsRTM" data-translate="server_tab_stats_legend_location"></div>
                         <small>
                             <span data-ng-switch="loadingAction">
                                 <span data-ng-switch-when="done">
@@ -21,16 +21,16 @@
                                           data-count="uptime.y"
                                           data-when="{
                                               '0': '',
-                                              '1': '1 {{ i18n.server_tab_stats_rtm_uptime_year_1 }}',
-                                              'other': '{} {{ i18n.server_tab_stats_rtm_uptime_year_other }}'
+                                              '1': '1 {{ &quot;server_tab_stats_rtm_uptime_year_1&quot; | translate }}',
+                                              'other': '{} {{ &quot;server_tab_stats_rtm_uptime_year_other&quot; | translate }}'
                                           }">
                                     </span>
                                     <span data-ng-pluralize
                                           data-count="uptime.mo"
                                           data-when="{
                                               '0': '',
-                                              '1': '1 {{ i18n.server_tab_stats_rtm_uptime_month_1 }}',
-                                              'other': '{} {{ i18n.server_tab_stats_rtm_uptime_month_other }}'
+                                              '1': '1 {{ &quot;server_tab_stats_rtm_uptime_month_1&quot; | translate }}',
+                                              'other': '{} {{ &quot;server_tab_stats_rtm_uptime_month_other&quot; | translate }}'
                                           }">
                                     </span>
                                     <span data-ng-pluralize
@@ -38,8 +38,8 @@
                                           data-ng-if="!uptime.y"
                                           data-when="{
                                               '0': '',
-                                              '1': '1 {{ i18n.server_tab_stats_rtm_uptime_day_1 }}',
-                                              'other': '{} {{ i18n.server_tab_stats_rtm_uptime_day_other }}'
+                                              '1': '1 {{ &quot;server_tab_stats_rtm_uptime_day_1&quot; | translate }}',
+                                              'other': '{} {{ &quot;server_tab_stats_rtm_uptime_day_other&quot; | translate }}'
                                           }">
                                     </span>
                                     <span data-ng-pluralize
@@ -47,8 +47,8 @@
                                           data-ng-if="!uptime.mo"
                                           data-when="{
                                               '0': '',
-                                              '1': '1 {{ i18n.server_tab_stats_rtm_uptime_hour_1 }}',
-                                              'other': '{} {{ i18n.server_tab_stats_rtm_uptime_hour_other }}'
+                                              '1': '1 {{ &quot;server_tab_stats_rtm_uptime_hour_1&quot; | translate }}',
+                                              'other': '{} {{ &quot;server_tab_stats_rtm_uptime_hour_other&quot; | translate }}'
                                           }">
                                     </span>
                                     <span data-ng-pluralize
@@ -56,8 +56,8 @@
                                           data-ng-if="!uptime.d"
                                           data-when="{
                                               '0': '',
-                                              '1': '1 {{ i18n.server_tab_stats_rtm_uptime_minute_1 }}',
-                                              'other': '{} {{ i18n.server_tab_stats_rtm_uptime_minute_other }}'
+                                              '1': '1 {{ &quot;server_tab_stats_rtm_uptime_minute_1&quot; | translate }}',
+                                              'other': '{} {{ &quot;server_tab_stats_rtm_uptime_minute_other&quot; | translate }}'
                                           }">
                                     </span>
                                     <span data-ng-pluralize
@@ -65,17 +65,17 @@
                                           data-ng-if="!uptime.h"
                                           data-when="{
                                               '0': '',
-                                              '1': '1 {{ i18n.server_tab_stats_rtm_uptime_seconde_1 }}',
-                                              'other': '{} {{ i18n.server_tab_stats_rtm_uptime_seconde_other }}'
+                                              '1': '1 {{ &quot;server_tab_stats_rtm_uptime_seconde_1&quot; | translate }}',
+                                              'other': '{} {{ &quot;server_tab_stats_rtm_uptime_seconde_other&quot; | translate }}'
                                           }">
                                     </span>
                                 </span>
                                 <span data-ng-switch-when="loading"
-                                      data-i18n-static="server_tab_stats_rtm_loading">
+                                      data-translate="server_tab_stats_rtm_loading">
                                 </span>
                                 <span data-ng-switch-when="error" data-ng-if="server.supportsRTM">
                                     <span data-ng-if="rtmInfo.activated != false"
-                                          data-i18n-static="server_tab_stats_rtm_errorData">
+                                          data-translate="server_tab_stats_rtm_errorData">
                                     </span>
                                 </span>
                             </span>
@@ -87,7 +87,7 @@
                             <li class="oui-tile__item">
                                 <div class="oui-tile__definition">
                                     <strong class="d-block"
-                                            data-i18n-static="server_status">
+                                            data-translate="server_status">
                                     </strong>
                                     <span class="label mr-2"
                                           data-ng-class="{
@@ -123,7 +123,7 @@
                                     data-ng-class="{
                                         'ml-3': selectedTab.value == 'infos'
                                     }">
-                                <span data-i18n-static="server_tab_stats_rtm_profile"></span>
+                                <span data-translate="server_tab_stats_rtm_profile"></span>
                                 <span class="oui-icon oui-icon-chevron-right" aria-hidden="true"></span>
                             </button>
                         </div>
@@ -134,7 +134,7 @@
                                     data-ng-class="{
                                         'ml-3': selectedTab.value == 'usage'
                                     }">
-                                <span data-i18n-static="server_tab_stats_rtm_usage"></span>
+                                <span data-translate="server_tab_stats_rtm_usage"></span>
                                 <span class="oui-icon oui-icon-chevron-right" aria-hidden="true"></span>
                             </button>
                         </div>
@@ -145,7 +145,7 @@
                                     data-ng-class="{
                                         'ml-3': selectedTab.value == 'disk'
                                     }">
-                                <span data-i18n-static="server_tab_stats_rtm_partions_status"></span>
+                                <span data-translate="server_tab_stats_rtm_partions_status"></span>
                                 <span class="oui-icon oui-icon-chevron-right" aria-hidden="true"></span>
                             </button>
                         </div>
@@ -166,13 +166,13 @@
                     <div class="text-center mt-5"
                          data-ng-if="rtmMissing">
                         <p class="lead"
-                           data-i18n-static="server_tab_stats_rtm_notInstalled">
+                           data-translate="server_tab_stats_rtm_notInstalled">
                         </p>
-                        <p data-ng-bind-html="tr('server_tab_stats_rtm_guideInfo', [rtmUrl])"></p>
+                        <p data-translate="server_tab_stats_rtm_guideInfo" data-translate-values="{ t0: rtmUrl }"></p>
                     </div>
                     <p class="text-danger mt-5"
                        data-ng-if="rtmInfo.activated != false && !rtmMissing"
-                       data-i18n-static="server_tab_stats_rtm_error">
+                       data-translate="server_tab_stats_rtm_error">
                     </p>
                 </div>
             </div>

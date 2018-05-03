@@ -62,7 +62,7 @@ class ServerConsumptionCtrl {
     }
 
     initTrafficOrder () {
-        this.$q.all([this.initTrafficOption(), this.initTrafficOrderables()]).catch((data) => this.Alerter.alertFromSWS(this.$scope.tr("server_traffic_loading_error"), data.data, "trafficError"));
+        this.$q.all([this.initTrafficOption(), this.initTrafficOrderables()]).catch((data) => this.Alerter.alertFromSWS(this.$translate.instant("server_traffic_loading_error"), data.data, "trafficError"));
     }
 
     initTrafficOption () {
@@ -107,13 +107,13 @@ class ServerConsumptionCtrl {
                 $scope.state.throttled = $scope.consumptionData.throttled.status;
                 if ($scope.state.overQuota) {
                     Alerter.alertFromSWS([
-                        $scope.tr("server_consumption_warning_overquota", $scope.consumptionData.throttled.speed)
-                        //$scope.tr("server_consumption_warning_overquota_increase")
+                        $translate.instant("server_consumption_warning_overquota", { t0: $scope.consumptionData.throttled.speed })
+                        //$translate.instant("server_consumption_warning_overquota_increase")
                     ].join(" "), null, $scope.alert);
                 } else if ($scope.state.nearQuota) {
                     Alerter.alertFromSWS([
-                        $scope.tr("server_consumption_warning_nearquota", $scope.consumption.total.text)
-                        //$scope.tr("server_consumption_warning_nearquota_increase")
+                        $translate.instant("server_consumption_warning_nearquota", { t0: $scope.consumption.total.text })
+                        //$translate.instant("server_consumption_warning_nearquota_increase")
                     ].join(" "), null, $scope.alert);
                 }
             }
