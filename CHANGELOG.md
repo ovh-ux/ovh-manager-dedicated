@@ -1,3 +1,13 @@
+<a name="9.2.16"></a>
+## [9.2.16](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.15...v9.2.16) (2018-05-03)
+
+
+### Bug Fixes
+
+* **modal:** remove aria-hidden and tab-index ([e48e50c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e48e50c))
+
+
+
 <a name="9.2.15"></a>
 ## [9.2.15](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.14...v9.2.15) (2018-05-03)
 
