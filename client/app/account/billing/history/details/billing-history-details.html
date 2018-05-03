@@ -1,104 +1,51 @@
-<div id="billing-statements-details" data-ng-controller="Billing.controllers.HistoryDetailsCtrl">
-    <div data-ovh-alert></div>
+<div class="billing-statements-details">
 
-    <div data-ng-if="loading.init">
-        <div class="loader"></div>
-        <p class="text-center" data-i18n-static="statements_details_page_loader"></p>
+    <oui-back-button data-title="{{ :: ('billing_history_details' | translate) }}"
+                     data-href="{{ $ctrl.$state.href('^') }}">
+    </oui-back-button>
+
+    <div data-ng-if="$ctrl.loading.init"
+         class="text-center">
+        <oui-spinner></oui-spinner>
     </div>
 
-    <a class="btn btn-default btn-module-billing btn-module-billing-back pull-left tspace rightspace"
-       href="#/billing/history"
-       title="{{ tr('statements_details_return_to_statements') }}">
-        <i class="icon-backward"></i>
-    </a>
+    <div data-ovh-alert="billing_debt_details"></div>
 
-    <section class="operation-list" data-ng-if="!loading.init">
-        <h1 class="black-title" data-i18n-static="statements_details_operations_title" ></h1>
+    <oui-datagrid data-ng-if="!$ctrl.loading.init"
+                  data-rows="$ctrl.operations">
+        <oui-column data-title=":: 'billing_history_details_table_header_date' | translate">
+            <span data-ng-bind="$row.date | date:'mediumDate'"></span>
+        </oui-column>
+        <oui-column data-title=":: 'billing_history_details_table_header_operation' | translate">
+            <span data-translate="{{ :: 'billing_history_details_type_' + $row.type.toLowerCase() }}"></span>
+        </oui-column>
+        <oui-column data-title=":: 'billing_history_details_table_header_status' | translate">
+            <span data-translate="{{ :: 'billing_history_details_status_' + $row.status.toLowerCase() }}"></span>
+        </oui-column>
+        <oui-column data-title=":: 'billing_history_details_table_header_amount' | translate"
+                    data-property="amount.text">
+        </oui-column>
+        <oui-action-menu data-ng-if="$row.type === 'ORDER'"
+                         data-align="end"
+                         data-compact>
+            <oui-action-menu-item data-ng-if="!$ctrl.bill"
+                                  data-text="{{ 'billing_history_details_table_order_link' | translate }}"
+                                  data-href="{{ :: $ctrl.order.url }}"
+                                  data-external>
+            </oui-action-menu-item>
 
-        <table class="billing-table table table-hover pretty top-space" >
-            <caption class="sr-only" data-i18n-static="statements_details_table_caption"></caption>
-            <thead>
-                <tr>
-                    <th data-i18n-static="statements_details_table_header_date"></th>
-                    <th data-i18n-static="statements_details_table_header_operation"></th>
-                    <th data-i18n-static="statements_details_table_header_status"></th>
-                    <th data-i18n-static="statements_details_table_header_amount"></th>
-                    <th data-i18n-static="statements_details_table_header_document"></th>
-                </tr>
-            </thead>
+            <oui-action-menu-item data-ng-if="$ctrl.bill"
+                                  data-text="{{ 'billing_history_details_table_bill_html_link' | translate }}"
+                                  data-href="{{ :: $ctrl.bill.url }}"
+                                  data-external>
+            </oui-action-menu-item>
 
-            <tbody data-ng-if="!loading.init && operationIds.length === 0 ">
-                <tr>
-                    <td colspan="5">
-                        <p class="text-center" data-i18n-static="statements_table_no_detail"></p>
-                    </td>
-                </tr>
-            </tbody>
-
-            <tbody data-ng-if="!loading.init && operationIds.length > 0 ">
-                <tr data-ng-repeat="operation in operations track by operation.operationId">
-                    <td data-ng-bind="::operation.date | date:'mediumDate'"></td>
-                    <td data-ng-bind="::operation | debtOperationDescription"></td>
-                    <td data-ng-class="'operation-status-' + (operation.status | lowercase)" data-ng-bind="::operation | debtOperationStatus"></td>
-                    <td data-ng-bind="::operation.amount.text"></td>
-                    <td data-ng-switch="operation.type">
-                        <span data-ng-switch-when="ORDER">
-                            <a class="btn btn-icon"
-                               data-ng-if="!bill"
-                               data-ng-href="{{ ::order.url }}"
-                               data-ng-attr-title="{{ tr('statements_details_table_order_link') }}"
-                               target="_blank">
-                                <i class="fa fa-code"></i>
-                            </a>
-
-                            <a class="btn btn-icon"
-                               data-ng-if="bill"
-                               data-ng-href="{{ ::bill.url }}"
-                               data-ng-attr-title="{{ tr('statements_details_table_invoice_html_link') }}"
-                               target="_blank">
-                                <i class="fa fa-code"></i>
-                            </a>
-
-                            <a class="btn btn-icon"
-                               data-ng-if="bill"
-                               data-ng-href="{{ ::bill.pdfUrl }}"
-                               data-ng-attr-title="{{ tr('statements_details_table_invoice_pdf_link') }}"
-                               target="_blank">
-                                <i class="fa fa-file-pdf-o"></i>
-                            </a>
-                        </span>
-                    </td>
-                </tr>
-            </tbody>
-
-            <tbody data-ng-if="loading.init || loading.operations">
-                <tr>
-                    <td colspan="5">
-                        <div class="loader"></div>
-                    </td>
-                </tr>
-            </tbody>
-
-            <!-- PAGINATION -->
-            <tfoot data-ng-show="!loading.init && operationIds.length > 5">
-            <tr>
-                <td colspan="5">
-                    <div class="pagination new-pagination"
-                         data-pagination-front
-                         data-items="operationIds"
-                         data-paginated-items="operations"
-                         data-current-page="pagination.currentPage"
-                         data-nb-pages="pagination.nbPages"
-                         data-items-per-page="pagination.itemsPerPage"
-                         data-transform-item="transformItem(item)"
-                         data-on-transform-item-done="onTransformItemDone(items)"
-                         data-page-placeholder="{{ tr('pagination_page', [pagination.currentPage, pagination.nbPages]) }}"
-                         data-item-per-page-placeholder="{{ tr('pagination_display') }}">
-                    </div>
-                </td>
-            </tr>
-            </tfoot>
-        </table>
-    </section>
+            <oui-action-menu-item data-ng-if="$ctrl.bill"
+                                  data-text="{{ 'billing_history_details_table_bill_pdf_link' | translate }}"
+                                  data-href="{{ :: $ctrl.bill.pdfUrl }}"
+                                  data-external>
+            </oui-action-menu-item>
+        </oui-action-menu>
+    </oui-datagrid>
 
 </div>

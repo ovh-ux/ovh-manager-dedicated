@@ -1,6 +1,6 @@
 // --------------RENEW PASSWORD------------------
 
-angular.module("App").controller("HousingRequestFtpBackupPasswordCtrl", ($scope, $stateParams, Housing, Alerter) => {
+angular.module("App").controller("HousingRequestFtpBackupPasswordCtrl", ($scope, $stateParams, $translate, Housing, Alerter) => {
     "use strict";
 
     const alert = "housing_tab_ftpbackup_alert";
@@ -13,10 +13,10 @@ angular.module("App").controller("HousingRequestFtpBackupPasswordCtrl", ($scope,
         Housing.requestFtpBackupPassword($stateParams.productId)
             .then(
                 () => {
-                    Alerter.success($scope.tr("housing_configuration_ftpbackup_lost_password_success"), alert);
+                    Alerter.success($translate.instant("housing_configuration_ftpbackup_lost_password_success"), alert);
                 },
                 (data) => {
-                    Alerter.alertFromSWS($scope.tr("housing_configuration_ftpbackup_lost_password_failure"), data, alert);
+                    Alerter.alertFromSWS($translate.instant("housing_configuration_ftpbackup_lost_password_failure"), data, alert);
                 }
             )
             .finally(() => {

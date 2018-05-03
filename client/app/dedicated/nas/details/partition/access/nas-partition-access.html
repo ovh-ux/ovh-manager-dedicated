@@ -1,25 +1,26 @@
 <div class="dedicated-nas-details-partition-access">
 
-    <h2 data-ng-bind="tr('nas_access_of', [$ctrl.partitionName])"></h2>
+    <h2 data-translate="nas_access_of"
+        data-translate-values="{ t0: $ctrl.partitionName }"></h2>
 
     <a class="d-inline-block mb-5"
        data-ui-sref="^"
-       title="{{ i18n.common_back }}">
+       title="{{ 'common_back' | translate }}">
         <span class="fa fa-chevron-left mr-2"
               aria-hidden="true">
         </span>
-        <span data-i18n-static="common_back"></span>
+        <span data-translate="common_back"></span>
     </a>
 
     <div class="row">
         <div class="col-md-9">
             <oui-datagrid data-rows-loader="$ctrl.loadDatagridAccess($config)">
-                <oui-column data-title="tr('nas_access_ip')">
+                <oui-column data-title="'nas_access_ip' | translate">
                     <span data-ng-bind="$row"></span>
                 </oui-column>
                 <oui-action-menu data-align="end"
                                  data-compact>
-                    <oui-action-menu-item data-text="{{:: tr('common_delete') }}"
+                    <oui-action-menu-item data-text="{{ :: 'common_delete' | translate }}"
                                           data-ng-click="setAction('dedicated/nas/details/partition/access/delete/nas-partition-access-delete.html', {
                                               partitionName: $ctrl.partitionName,
                                               access: $row
@@ -32,7 +33,7 @@
             <button type="button"
                     class="btn btn-block btn-default"
                     data-ng-click="setAction('dedicated/nas/details/partition/access/add/nas-partition-access-add.html', $ctrl.partitionName)"
-                    data-i18n-static="nas_access_action_add">
+                    data-translate="nas_access_action_add">
             </button>
         </div>
     </div>

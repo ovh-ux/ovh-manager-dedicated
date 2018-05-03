@@ -3,6 +3,7 @@ angular.module("Module.license")
         $stateProvider.state("app.license.upgrade", {
             url: "/:licenceId/upgrade",
             templateUrl: "license/upgrade/license-upgrade.html",
-            controller: "LicenseUpgradeCtrl"
+            controller: "LicenseUpgradeCtrl",
+            translations: ["license"]
         });
     });

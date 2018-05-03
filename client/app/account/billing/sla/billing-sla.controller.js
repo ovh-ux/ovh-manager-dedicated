@@ -1,4 +1,4 @@
-angular.module("Billing.controllers").controller("Billing.controllers.Sla", ($scope, BillingSla, Alerter, $q, atInternet) => {
+angular.module("Billing.controllers").controller("Billing.controllers.Sla", ($scope, $translate, BillingSla, Alerter, $q, atInternet) => {
     $scope.slaIds = [];
 
     $scope.loaders = {
@@ -26,7 +26,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.Sla", ($sc
                 }
             },
             (err) => {
-                Alerter.alertFromSWS($scope.tr("sla_informations_error"), err);
+                Alerter.alertFromSWS($translate.instant("sla_informations_error"), err);
             }
         );
     };
@@ -63,10 +63,10 @@ angular.module("Billing.controllers").controller("Billing.controllers.Sla", ($sc
         BillingSla.applySla({ id: sla.id })
             .then(
                 () => {
-                    Alerter.success($scope.tr("sla_apply_success"));
+                    Alerter.success($translate.instant("sla_apply_success"));
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("sla_apply_error"), err);
+                    Alerter.alertFromSWS($translate.instant("sla_apply_error"), err);
                 }
             )
             .finally(() => {

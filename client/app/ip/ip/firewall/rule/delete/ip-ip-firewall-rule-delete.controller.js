@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpFirewallRemoveRuleCtrl", ($scope, $rootScope, Ip, IpFirewall, Alerter) => {
+angular.module("Module.ip.controllers").controller("IpFirewallRemoveRuleCtrl", ($scope, $rootScope, $translate, Ip, IpFirewall, Alerter) => {
     $scope.data = $scope.currentActionData;
 
     $scope.removeRule = function () {
@@ -9,7 +9,7 @@ angular.module("Module.ip.controllers").controller("IpFirewallRemoveRuleCtrl", (
                     $rootScope.$broadcast("ips.firewall.informations.reload", data);
                 },
                 (data) => {
-                    Alerter.alertFromSWS($scope.tr("ip_firewall_remove_rule_fail"), data.data);
+                    Alerter.alertFromSWS($translate.instant("ip_firewall_remove_rule_fail"), data.data);
                 }
             )
             .finally(() => {

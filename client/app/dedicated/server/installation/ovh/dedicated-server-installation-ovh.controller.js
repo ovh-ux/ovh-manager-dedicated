@@ -9,7 +9,7 @@ angular
         raid50: "raid50",
         raid60: "raid60"
     })
-    .controller("ServerInstallationOvhCtrl", ($rootScope, $scope, $q, $stateParams, Server, $filter, Alerter, TEMPLATE_OS_HARDWARE_RAID_ENUM) => {
+    .controller("ServerInstallationOvhCtrl", ($rootScope, $scope, $q, $stateParams, $translate, Server, $filter, Alerter, TEMPLATE_OS_HARDWARE_RAID_ENUM) => {
         "use strict";
 
         $scope.units = {
@@ -251,7 +251,7 @@ angular
                 })
                 .catch((data) => {
                     $scope.resetAction();
-                    Alerter.alertFromSWS($scope.tr("server_configuration_installation_ovh_fail_os", $scope.constants.server.name), data.data, "server_dashboard_alert");
+                    Alerter.alertFromSWS($translate.instant("server_configuration_installation_ovh_fail_os", { t0: $scope.constants.server.name }), data.data, "server_dashboard_alert");
                 });
             const getSshKeys = Server.getSshKey($stateParams.productId).then((data) => {
                 $scope.sshList = data;
@@ -330,7 +330,7 @@ angular
                     $scope.informations.hardwareRaid.error.notAvailable = Server.isHardRaidUnavailableError(error);
                     if (!$scope.informations.hardwareRaid.error.wrongLocation && !$scope.informations.hardwareRaid.error.notAvailable) {
                         $scope.resetAction();
-                        Alerter.alertFromSWS($scope.tr("server_configuration_installation_ovh_stephardraid_loading_error"), error.data, "server_dashboard_alert");
+                        Alerter.alertFromSWS($translate.instant("server_configuration_installation_ovh_stephardraid_loading_error"), error.data, "server_dashboard_alert");
                     }
                 });
             }
@@ -394,7 +394,7 @@ angular
                                 .catch((error) => {
                                     $scope.loader.loading = false;
                                     $scope.resetAction();
-                                    Alerter.alertFromSWS($scope.tr("server_configuration_installation_ovh_stephardraid_loading_error"), error, "server_dashboard_alert");
+                                    Alerter.alertFromSWS($translate.instant("server_configuration_installation_ovh_stephardraid_loading_error"), error, "server_dashboard_alert");
                                 });
                         }
                         $scope.installation.partitionSchemesList = _.sortBy($scope.installation.partitionSchemesList, "priority");
@@ -406,7 +406,7 @@ angular
                     (data) => {
                         $scope.loader.loading = false;
                         $scope.resetAction();
-                        Alerter.alertFromSWS($scope.tr("server_configuration_installation_ovh_fail_partition_schemes", $scope.constants.server.name), data.data, "server_dashboard_alert");
+                        Alerter.alertFromSWS($translate.instant("server_configuration_installation_ovh_fail_partition_schemes", { t0: $scope.constants.server.name }), data.data, "server_dashboard_alert");
                     }
                 );
             }
@@ -481,7 +481,7 @@ angular
                 (data) => {
                     $scope.loader.loading = false;
                     $scope.resetAction();
-                    $scope.setMessage($scope.tr("server_configuration_installation_ovh_fail_partition_schemes", $scope.constants.server.name), data.data);
+                    $scope.setMessage($translate.instant("server_configuration_installation_ovh_fail_partition_schemes", { t0: $scope.constants.server.name }), data.data);
                 }
             );
         }
@@ -616,7 +616,10 @@ angular
                         },
                         (data) => {
                             $scope.buttonControl.addInProgress = false;
-                            $scope.errorInst.ws = $scope.tr("server_configuration_installation_ovh_step2_error_add", [$scope.newPartition.mountPoint, data.data.message]);
+                            $scope.errorInst.ws = $translate.instant("server_configuration_installation_ovh_step2_error_add", {
+                                t0: $scope.newPartition.mountPoint,
+                                t1: data.data.message
+                            });
                         }
                     );
                 }
@@ -686,7 +689,10 @@ angular
                         },
                         (data) => {
                             $scope.buttonControl.setInProgress = false;
-                            $scope.errorInst.ws = $scope.tr("server_configuration_installation_ovh_step2_error_set", [partitionToSet.mountPoint, data.message]);
+                            $scope.errorInst.ws = $translate.instant("server_configuration_installation_ovh_step2_error_set", {
+                                t0: partitionToSet.mountPoint,
+                                t1: data.message
+                            });
                         }
                     );
                 }
@@ -725,7 +731,10 @@ angular
                 },
                 (data) => {
                     $scope.buttonControl.deleteInProgress = false;
-                    $scope.errorInst.ws = $scope.tr("server_configuration_installation_ovh_step2_error_delete", [$scope.setPartition.delModel.mountPoint, data.data.message]);
+                    $scope.errorInst.ws = $translate.instant("server_configuration_installation_ovh_step2_error_delete", {
+                        t0: $scope.setPartition.delModel.mountPoint,
+                        t1: data.data.message
+                    });
                 }
             );
         };
@@ -1218,7 +1227,7 @@ angular
                 if (octetsSize >= 1000 && unitIndex < $scope.units.model.length - 1) {
                     return $scope.getDisplaySize(octetsSize / 1000, unitIndex + 1);
                 }
-                return `${parseFloat(octetsSize).toFixed(1)} ${$scope.tr(`unit_size_${$scope.units.model[unitIndex].label}`)}`;
+                return `${parseFloat(octetsSize).toFixed(1)} ${$translate.instant(`unit_size_${$scope.units.model[unitIndex].label}`)}`;
             }
             return "";
         };
@@ -1630,7 +1639,7 @@ angular
                     },
                     (data) => {
                         $scope.loader.loading = false;
-                        $scope.errorInst.ws = $scope.tr("server_configuration_installation_ovh_step3_error_integrity", data);
+                        $scope.errorInst.ws = $translate.instant("server_configuration_installation_ovh_step3_error_integrity", { t0: data });
                     }
                 );
                 addRemainingSize();
@@ -1712,7 +1721,10 @@ angular
                         (data) => {
                             $scope.loader.loading = false;
                             if (size === 0) {
-                                $scope.errorInst.wsinstall = $scope.tr("server_configuration_installation_ovh_step3_remaining_error", [$scope.installation.options.variablePartition.mountPoint, data.message]);
+                                $scope.errorInst.wsinstall = $translate.instant("server_configuration_installation_ovh_step3_remaining_error", {
+                                    t0: $scope.installation.options.variablePartition.mountPoint,
+                                    t1: data.message
+                                });
                             } // else it's revert size
                         }
                     );
@@ -1781,7 +1793,7 @@ angular
                 (data) => {
                     $scope.loader.loading = false;
                     $scope.saveRemainingSize($scope.installation.saveSize, true);
-                    $scope.errorInst.wsinstall = $scope.tr("server_configuration_installation_error_save", data.data.message);
+                    $scope.errorInst.wsinstall = $translate.instant("server_configuration_installation_error_save", { t0: data.data.message });
                 }
             );
         }
@@ -1802,7 +1814,7 @@ angular
                 .catch(() => {
                     $scope.loader.loading = false;
                     $scope.saveRemainingSize($scope.installation.saveSize, true);
-                    $scope.errorInst.wsinstall = $scope.tr("server_configuration_installation_error_hardwareRaid");
+                    $scope.errorInst.wsinstall = $translate.instant("server_configuration_installation_error_hardwareRaid");
                 });
         }
 
@@ -1832,7 +1844,12 @@ angular
                 },
                 (data) => {
                     $scope.saveRemainingSize($scope.installation.saveSize, true);
-                    $scope.errorInst.wsinstall = $scope.tr("server_configuration_installation_ovh_step3_error", [$scope.installation.selectDistribution.displayName, $scope.constants.server.name, $scope.installation.selectLanguage, data.message]);
+                    $scope.errorInst.wsinstall = $translate.instant("server_configuration_installation_ovh_step3_error", {
+                        t0: $scope.installation.selectDistribution.displayName,
+                        t1: $scope.constants.server.name,
+                        t2: $scope.installation.selectLanguage,
+                        t3: data.message
+                    });
                     $scope.loader.loading = false;
                 }
             );

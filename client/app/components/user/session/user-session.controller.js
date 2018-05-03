@@ -1,10 +1,8 @@
 angular.module("App")
-    .controller("SessionCtrl", ($scope, $document, translator, SessionService) => {
+    .controller("SessionCtrl", ($scope, $document, $translate, SessionService) => {
         "use strict";
 
-        $scope.$watch("i18n.global_app_title", () => {
-            translator.setTitle($scope.tr("global_app_title"));
-        });
+        $document.title = $translate.instant("global_app_title");
 
         // Scroll to anchor id
         $scope.scrollTo = (id) => {

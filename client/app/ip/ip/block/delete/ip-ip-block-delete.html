@@ -3,16 +3,17 @@
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="deleteIpBlock"
          data-wizard-hide-cancel-button="loading"
-         data-wizard-title="i18n.ip_table_manage_delete_ipblock">
+         data-wizard-title=":: 'ip_table_manage_delete_ipblock' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="!loading">
 
             <div data-ng-show="!loading">
                 <p class="text-danger"
-                   data-ng-bind="tr('ip_table_manage_delete_ipblock_question2', data.ipBlock.ipBlock)">
+                   data-translate="ip_table_manage_delete_ipblock_question2"
+                   data-translate-values="{ t0: data.ipBlock.ipBlock }">
                 </p>
-                <p data-i18n-static="ip_table_manage_delete_ipblock_question">
+                <p data-translate="ip_table_manage_delete_ipblock_question">
                 </p>
             </div>
 

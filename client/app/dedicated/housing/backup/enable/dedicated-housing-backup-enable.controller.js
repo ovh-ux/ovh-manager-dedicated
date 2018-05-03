@@ -1,6 +1,6 @@
 // --------------ENABLE BACKUP------------------
 
-angular.module("App").controller("HousingActivateFtpBackupCtrl", ($scope, $stateParams, Housing, Alerter) => {
+angular.module("App").controller("HousingActivateFtpBackupCtrl", ($scope, $stateParams, $translate, Housing, Alerter) => {
     const alert = "housing_tab_ftpbackup_alert";
 
     $scope.loading = false;
@@ -11,10 +11,10 @@ angular.module("App").controller("HousingActivateFtpBackupCtrl", ($scope, $state
         Housing.activateFtpBackup($stateParams.productId)
             .then(
                 () => {
-                    Alerter.success($scope.tr("housing_configuration_ftpbackup_activate_success"), alert);
+                    Alerter.success($translate.instant("housing_configuration_ftpbackup_activate_success"), alert);
                 },
                 (data) => {
-                    Alerter.alertFromSWS($scope.tr("housing_configuration_ftpbackup_activate_failure"), data, alert);
+                    Alerter.alertFromSWS($translate.instant("housing_configuration_ftpbackup_activate_failure"), data, alert);
                 }
             )
             .finally(() => {

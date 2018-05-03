@@ -1,6 +1,4 @@
-angular.module("Billing.controllers").controller("Billing.controllers.OvhAccountRenew", ($scope, $rootScope, BillingOvhAccount, translator, OVH_ACCOUNT_EVENT) => {
-    const tr = translator.tr;
-
+angular.module("Billing.controllers").controller("Billing.controllers.OvhAccountRenew", ($scope, $rootScope, $translate, BillingOvhAccount, OVH_ACCOUNT_EVENT) => {
     $scope.accountRenew = {
         amount: null,
         account: null,
@@ -31,14 +29,17 @@ angular.module("Billing.controllers").controller("Billing.controllers.OvhAccount
             (data) => {
                 $scope.accountRenew.loading = false;
                 $scope.resetAction();
-                $scope.setMessage(tr("ovhAccount_renew_step2_error"), data.data);
+                $scope.setMessage($translate.instant("ovhAccount_renew_step2_error"), data.data);
             }
         );
     };
 
     $scope.displayBC = function () {
         $scope.resetAction();
-        $scope.setMessage(tr("ovhAccount_renew_step2_success", [$scope.accountRenew.BC.url, $scope.accountRenew.BC.orderId]));
+        $scope.setMessage($translate.instant("ovhAccount_renew_step2_success", {
+            t0: $scope.accountRenew.BC.url,
+            t1: $scope.accountRenew.BC.orderId
+        }));
         window.open($scope.accountRenew.BC.url, "_blank");
     };
 

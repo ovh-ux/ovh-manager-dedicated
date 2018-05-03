@@ -1,4 +1,4 @@
-angular.module("App").controller("ActivateFtpBackupCtrl", ($scope, $stateParams, Server, Alerter) => {
+angular.module("App").controller("ActivateFtpBackupCtrl", ($scope, $stateParams, $translate, Server, Alerter) => {
     const alert = "server_tab_ftpbackup_alert";
 
     $scope.loading = false;
@@ -9,10 +9,10 @@ angular.module("App").controller("ActivateFtpBackupCtrl", ($scope, $stateParams,
         Server.activateFtpBackup($stateParams.productId)
             .then(
                 () => {
-                    Alerter.success($scope.tr("server_configuration_ftpbackup_activate_success"), alert);
+                    Alerter.success($translate.instant("server_configuration_ftpbackup_activate_success"), alert);
                 },
                 (data) => {
-                    Alerter.alertFromSWS($scope.tr("server_configuration_ftpbackup_activate_failure"), data.data, alert);
+                    Alerter.alertFromSWS($translate.instant("server_configuration_ftpbackup_activate_failure"), data.data, alert);
                 }
             )
             .finally(() => {

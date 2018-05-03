@@ -3,7 +3,7 @@
     <div data-wizard
          data-wizard-on-cancel="cancel"
          data-wizard-on-finish="deleteDoubleAuthSms"
-         data-wizard-title="i18n.user_account_security_double_auth_type_sms_modal_title">
+         data-wizard-title="::'user_account_security_double_auth_type_sms_modal_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-on-load="init"
@@ -18,14 +18,14 @@
                 <div data-ovh-alert="doubleAuthAlertSmsDelete"></div>
 
                 <h2 class="wizard-title-sub"
-                    data-i18n-static="user_account_security_double_auth_type_sms_modal_delete_number">
+                    data-translate="user_account_security_double_auth_type_sms_modal_delete_number">
                 </h2>
                 <p>
-                    <strong data-i18n-static="user_account_security_double_auth_type_sms_modal_delete_number_info"></strong>
+                    <strong data-translate="user_account_security_double_auth_type_sms_modal_delete_number_info"></strong>
                 </p>
                 <p class="red"
                    data-ng-if="sms.smsAccount.status !== 'disabled'"
-                   data-i18n-static="user_smsRestrictions_delete_informations_warn">
+                   data-translate="user_smsRestrictions_delete_informations_warn">
                 </p>
                 <form name="userAccountDeleteSmsCodeForm"
                       data-ng-if="sms.smsAccount.status === 'enabled'">
@@ -35,7 +35,7 @@
                          }">
                         <label class="control-label"
                                for="code"
-                               data-i18n-static="user_smsRestrictions_code">
+                               data-translate="user_smsRestrictions_code">
                         </label>
                         <input type="password"
                                class="form-control"
@@ -54,7 +54,7 @@
                               data-ng-if="userAccountDeleteSmsCodeForm.code.$touched"
                               data-ng-messages="userAccountDeleteSmsCodeForm.code.$error">
                             <span data-ng-message="required"
-                                  data-i18n-static="user_account_security_double_auth_type_sms_modal_add_code_error_required">
+                                  data-translate="user_account_security_double_auth_type_sms_modal_add_code_error_required">
                             </span>
                         </span>
                     </div>

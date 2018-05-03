@@ -3,10 +3,10 @@
 
     <button type="button"
             class="btn btn-link dropdown-toggle"
-            title="{{:: 'common_actions' | UAi18n }}"
+            title="{{:: 'common_actions' | translate }}"
             data-uib-dropdown-toggle>
         <span class="ovh-font ovh-font-dots align-top"
-              aria-label="{{:: 'common_actions' | UAi18n }}"
+              aria-label="{{:: 'common_actions' | translate }}"
               aria-hidden="true">
         </span>
     </button>
@@ -19,7 +19,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/block/description/edit/ip-ip-block-description-edit', { ipBlock: ipBlock })"
-                    data-ng-bind="ipBlock.description && tr('ip_description_edit_title') || tr('ip_description_new_title')">
+                    data-ng-bind="ipBlock.description && ('ip_description_edit_title' | translate) || ('ip_description_new_title' | translate)">
             </button>
         </li>
 
@@ -28,7 +28,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/reverse/add/ip-ip-reverse-add', { ipBlock: ipBlock })"
-                    data-i18n-static="ip_table_manage_add_ipv6block">
+                    data-translate="ip_table_manage_add_ipv6block">
             </button>
         </li>
 
@@ -37,7 +37,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/reverse/ip-ip-reverse', { ipBlock: ipBlock })"
-                    data-i18n-static="ip_table_manage_delegate_ipv6block">
+                    data-translate="ip_table_manage_delegate_ipv6block">
             </button>
         </li>
 
@@ -51,7 +51,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/organisation/view/ip-ip-organisation-view', { ipBlock: ipBlock })"
-                    data-i18n-static="ip_table_manage_view_iporganisation_details">
+                    data-translate="ip_table_manage_view_iporganisation_details">
             </button>
         </li>
 
@@ -59,7 +59,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/organisation/change/ip-ip-organisation-change', { ipBlock: ipBlock })"
-                    data-i18n-static="ip_table_manage_view_iporganisation_change">
+                    data-translate="ip_table_manage_view_iporganisation_change">
             </button>
         </li>
 
@@ -68,7 +68,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/block/move/ip-ip-block-move', { ipBlock: ipBlock })"
-                    data-i18n-static="ip_table_manage_move_ipblock">
+                    data-translate="ip_table_manage_move_ipblock">
             </button>
         </li>
 
@@ -77,10 +77,10 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/block/delete/ip-ip-block-delete', { ipBlock: ipBlock })"
-                    data-uib-tooltip="{{ !ipBlock.canBeTerminated ? tr('ip_failover_impossible_delete') : '' }}"
+                    data-uib-tooltip="{{ !ipBlock.canBeTerminated ? ('ip_failover_impossible_delete' | translate) : '' }}"
                     data-tooltip-placement="left"
                     data-ng-disabled="!ipBlock.canBeTerminated"
-                    data-i18n-static="ip_table_manage_delete_ipblock">
+                    data-translate="ip_table_manage_delete_ipblock">
             </button>
         </li>
 

@@ -3,19 +3,19 @@
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="setWeight"
          data-wizard-hide-cancel-button="loading"
-         data-wizard-title="i18n.iplb_backend_setweight_title">
+         data-wizard-title=":: 'iplb_backend_setweight_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="!loading && model.weight">
 
             <div data-ng-hide="loading">
-                <p data-i18n-static="iplb_backend_setweight_question"></p>
+                <p data-translate="iplb_backend_setweight_question"></p>
 
                 <form>
                     <div class="form-group">
                         <label class="control-label required"
                                for="weight"
-                               data-i18n-static="iplb_backend_setweight_weight">
+                               data-translate="iplb_backend_setweight_weight">
                         </label>
                         <input type="number"
                                name="weight"
@@ -28,7 +28,7 @@
                     </div>
                 </form>
 
-                <p data-i18n-static="iplb_backend_setweight_help"></p>
+                <p data-translate="iplb_backend_setweight_help"></p>
             </div>
 
             <div class="text-center"

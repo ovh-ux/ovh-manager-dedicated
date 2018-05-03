@@ -3,20 +3,20 @@
          data-wizard-bread-crumb="true"
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="confirmOrder"
-         data-wizard-title="i18n.iplb_pop_order_title">
+         data-wizard-title=":: 'iplb_pop_order_title' | translate">
 
         <!-- Step 1: Select a service -->
         <div data-wizard-step
              data-wizard-step-valid="!loading.init && isOrderable && model.pop">
 
             <div data-ng-show="!loading.init && isOrderable && availablePop.length">
-                <p data-i18n-static="iplb_pop_order_step1_question"></p>
+                <p data-translate="iplb_pop_order_step1_question"></p>
 
                 <form>
                     <div class="form-group">
                         <label class="control-label required"
                                for="domain"
-                               data-i18n-static="iplb_pop_order_zone">
+                               data-translate="iplb_pop_order_zone">
                         </label>
                         <select name="pop"
                                 id="pop"
@@ -29,10 +29,10 @@
             </div>
 
             <div data-ng-show="!loading.init && !isOrderable"
-                 data-i18n-static="iplb_pop_order_not_orderable">
+                 data-translate="iplb_pop_order_not_orderable">
             </div>
             <div data-ng-show="!loading.init && isOrderable && !availablePop.length"
-                 data-i18n-static="iplb_pop_order_no_pop">
+                 data-translate="iplb_pop_order_no_pop">
             </div>
 
             <div data-ng-show="loading.init"
@@ -62,7 +62,7 @@
              data-wizard-step-valid="!loading.validation">
 
             <div data-ng-show="!loading.validation">
-                <p data-i18n-static="ip_order_resume"></p>
+                <p data-translate="ip_order_resume"></p>
 
                 <div class="table-responsive">
                     <table class="table table-hover">
@@ -82,7 +82,7 @@
                             <tr>
                                 <td class="text-right">
                                     <span class="font-weight-bold"
-                                          data-i18n-static="ip_order_price_HT">
+                                          data-translate="ip_order_price_HT">
                                     </span>
                                     <span class="text-danger font-weight-bold"
                                           data-ng-bind="order.prices.withoutTax.text">
@@ -92,7 +92,7 @@
                             <tr>
                                 <td class="text-right">
                                     <span class="font-weight-bold"
-                                          data-i18n-static="ip_order_price_TTC">
+                                          data-translate="ip_order_price_TTC">
                                     </span>
                                     <span class="text-danger font-weight-bold"
                                           data-ng-bind="order.prices.withTax.text">
@@ -103,8 +103,8 @@
                     </table>
                 </div>
 
-                <p data-i18n-static="ip_order_final_txt"></p>
-                <p data-i18n-static="ip_order_final_txt2"></p>
+                <p data-translate="ip_order_final_txt"></p>
+                <p data-translate="ip_order_final_txt2"></p>
             </div>
 
             <div class="text-center"

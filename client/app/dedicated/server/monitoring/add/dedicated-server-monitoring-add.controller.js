@@ -1,4 +1,4 @@
-angular.module("App").controller("MonitoringAddCtrl", function ($rootScope, $scope, $stateParams, Server, Alerter, $q) {
+angular.module("App").controller("MonitoringAddCtrl", function ($rootScope, $scope, $stateParams, $translate, Server, Alerter, $q) {
     "use strict";
 
     const self = this;
@@ -91,11 +91,11 @@ angular.module("App").controller("MonitoringAddCtrl", function ($rootScope, $sco
                     addEMailNotifications(monitoring);
                     addSmsNotifications(monitoring);
 
-                    Alerter.success($scope.tr("server_tab_MONITORING_add_success"), "monitoringAlert");
+                    Alerter.success($translate.instant("server_tab_MONITORING_add_success"), "monitoringAlert");
                     $scope.$parent.ctrlMonitoring.addMode = false;
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("server_tab_MONITORING_add_error"), err.data, "monitoringAlert");
+                    Alerter.alertFromSWS($translate.instant("server_tab_MONITORING_add_error"), err.data, "monitoringAlert");
                 }
             )
             .finally(() => {
@@ -120,7 +120,7 @@ angular.module("App").controller("MonitoringAddCtrl", function ($rootScope, $sco
 
         $q.allSettled(promises).catch((errors) => {
             const displayErrors = _.uniq(errors.map((err) => err.data));
-            Alerter.alertFromSWS($scope.tr("server_tab_MONITORING_notifications_email_add_error"), displayErrors, "monitoringAlert");
+            Alerter.alertFromSWS($translate.instant("server_tab_MONITORING_notifications_email_add_error"), displayErrors, "monitoringAlert");
         });
     }
 
@@ -142,7 +142,7 @@ angular.module("App").controller("MonitoringAddCtrl", function ($rootScope, $sco
 
         $q.allSettled(promises).catch((errors) => {
             const displayErrors = _.uniq(errors.map((err) => err.data));
-            Alerter.alertFromSWS($scope.tr("server_tab_MONITORING_notifications_email_add_error"), displayErrors, "monitoringAlert");
+            Alerter.alertFromSWS($translate.instant("server_tab_MONITORING_notifications_email_add_error"), displayErrors, "monitoringAlert");
         });
     }
 

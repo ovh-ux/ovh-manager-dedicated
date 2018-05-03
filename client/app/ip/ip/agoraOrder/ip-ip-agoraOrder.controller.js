@@ -1,5 +1,5 @@
-angular.module("Module.ip.controllers").controller("agoraIpOrderCtrl", ["$scope", "$rootScope", "$window", "$q", "$log", "IpAgoraOrder", "IpOrganisation", "User", "Alerter", "translator",
-    function ($scope, $rootScope, $window, $q, $log, AgoraOrder, Organisation, User, Alerter, translator) {
+angular.module("Module.ip.controllers").controller("agoraIpOrderCtrl", ["$scope", "$rootScope", "$window", "$q", "$log", "IpAgoraOrder", "IpOrganisation", "User", "Alerter", "$translate",
+    function ($scope, $rootScope, $window, $q, $log, AgoraOrder, Organisation, User, Alerter, $translate) {
         "use strict";
 
         this.model = {
@@ -17,7 +17,7 @@ angular.module("Module.ip.controllers").controller("agoraIpOrderCtrl", ["$scope"
                 this.user = results.user;
                 this.services = results.services;
             }).catch((err) => {
-                Alerter.error(translator.tr("ip_order_loading_error"));
+                Alerter.error($translate.instant("ip_order_loading_error"));
                 $scope.resetAction();
                 return $q.reject(err);
             }).finally(() => {
@@ -28,7 +28,7 @@ angular.module("Module.ip.controllers").controller("agoraIpOrderCtrl", ["$scope"
         // need to be scoped because of how wizard-step works
         $scope.loadServices = this.loadServices.bind(this);
 
-        this.getServiceTypeLabel = (type) => translator.tr(`ip_filter_services_title_${type}`);
+        this.getServiceTypeLabel = (type) => $translate.instant(`ip_filter_services_title_${type}`);
 
         this.loadIpOffers = () => {
             this.loading.ipOffers = true;
@@ -47,7 +47,7 @@ angular.module("Module.ip.controllers").controller("agoraIpOrderCtrl", ["$scope"
 
             return $q.all([ipOffersPromise, ipOrganisationPromise])
                 .catch((err) => {
-                    Alerter.error(translator.tr("ip_order_loading_error"));
+                    Alerter.error($translate.instant("ip_order_loading_error"));
                     $scope.resetAction();
                     return $q.reject(err);
                 })
@@ -72,7 +72,7 @@ angular.module("Module.ip.controllers").controller("agoraIpOrderCtrl", ["$scope"
                 quantities: _.range(1, maximumQuantity + 1),
                 countries: countryCodes.map((countryCode) => ({
                     code: countryCode,
-                    description: translator.tr(`country_${countryCode.toUpperCase()}`)
+                    description: $translate.instant(`country_${countryCode.toUpperCase()}`)
                 })),
 
                 // Only ip block offer has a maximum quantity of 1. This is a way to distinguish an ip block offer from a single ip address offer.
@@ -118,7 +118,7 @@ angular.module("Module.ip.controllers").controller("agoraIpOrderCtrl", ["$scope"
                     $window.open(`${url}review?products=${JSURL.stringify([productToOrder])}`, "_blank");
                 })
                 .catch((err) => {
-                    Alerter.error(translator.tr("ip_order_finish_error"));
+                    Alerter.error($translate.instant("ip_order_finish_error"));
                     $scope.resetAction();
                     return $q.reject(err);
                 })

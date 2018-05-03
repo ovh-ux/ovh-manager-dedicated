@@ -4,9 +4,8 @@ angular.module("Billing.directives").component("billingRenewDate", {
     },
     controller: [
         "$filter",
-        "translator",
         "BillingrenewHelper",
-        function ($filter, translator, renewHelper) {
+        function ($filter, renewHelper) {
             "use strict";
 
             this.init = function () {

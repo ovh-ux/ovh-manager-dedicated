@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpIpv6ReverseDelegationCtrl", ($scope, $rootScope, Ip, IpReverse, Alerter, Validator, $q) => {
+angular.module("Module.ip.controllers").controller("IpIpv6ReverseDelegationCtrl", ($scope, $rootScope, $translate, Ip, IpReverse, Alerter, Validator, $q) => {
     $scope.data = $scope.currentActionData;
 
     $scope.model = {
@@ -62,19 +62,19 @@ angular.module("Module.ip.controllers").controller("IpIpv6ReverseDelegationCtrl"
                     $q.all(queueToAdd).then(
                         () => {
                             $rootScope.$broadcast("ips.table.refreshBlock", $scope.data.ipBlock);
-                            Alerter.success($scope.tr("ip_table_manage_delegation_ipv6block_success"));
+                            Alerter.success($translate.instant("ip_table_manage_delegation_ipv6block_success"));
                         },
                         (err) => {
-                            Alerter.alertFromSWS($scope.tr("ip_table_manage_delegation_ipv6block_err"), err);
+                            Alerter.alertFromSWS($translate.instant("ip_table_manage_delegation_ipv6block_err"), err);
                         }
                     );
                 } else {
                     $rootScope.$broadcast("ips.table.refreshBlock", $scope.data.ipBlock);
-                    Alerter.success($scope.tr("ip_table_manage_delegation_ipv6block_success"));
+                    Alerter.success($translate.instant("ip_table_manage_delegation_ipv6block_success"));
                 }
             },
             (err) => {
-                Alerter.alertFromSWS($scope.tr("ip_table_manage_delegation_ipv6block_err"), err);
+                Alerter.alertFromSWS($translate.instant("ip_table_manage_delegation_ipv6block_err"), err);
             }
         );
     };

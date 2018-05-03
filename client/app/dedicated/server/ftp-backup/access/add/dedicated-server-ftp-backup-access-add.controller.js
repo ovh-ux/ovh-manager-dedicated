@@ -1,4 +1,4 @@
-angular.module("App").controller("AddAccessFtpBackupCtrl", ($scope, Server, $rootScope, Alerter, $stateParams) => {
+angular.module("App").controller("AddAccessFtpBackupCtrl", ($scope, $translate, Server, $rootScope, Alerter, $stateParams) => {
     const alert = "server_tab_ftpbackup_alert";
 
     $scope.access = {
@@ -20,16 +20,16 @@ angular.module("App").controller("AddAccessFtpBackupCtrl", ($scope, Server, $roo
             (data) => {
                 $scope.resetAction();
                 $scope.loading = false;
-                Alerter.alertFromSWS($scope.tr("server_configuration_ftpbackup_access_add_ip_failure"), data.data, alert);
+                Alerter.alertFromSWS($translate.instant("server_configuration_ftpbackup_access_add_ip_failure"), data.data, alert);
             }
         );
     };
 
     $scope.addFtpBackup = function () {
         const resultMessages = {
-            OK: $scope.tr("server_configuration_ftpbackup_access_add_success"),
-            PARTIAL: $scope.tr("server_configuration_ftpbackup_access_add_partial"),
-            ERROR: $scope.tr("server_configuration_ftpbackup_access_add_failure")
+            OK: $translate.instant("server_configuration_ftpbackup_access_add_success"),
+            PARTIAL: $translate.instant("server_configuration_ftpbackup_access_add_partial"),
+            ERROR: $translate.instant("server_configuration_ftpbackup_access_add_failure")
         };
 
         $scope.loading = true;

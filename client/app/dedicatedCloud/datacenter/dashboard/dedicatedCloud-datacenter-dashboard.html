@@ -3,22 +3,22 @@
         <div class="col-md-4">
             <div class="oui-tile mb-5 h-100">
                 <h3 class="oui-tile__title"
-                    data-i18n-static="dedicatedCloud_information_title">
+                    data-translate="dedicatedCloud_information_title">
                 </h3>
                 <div class="oui-tile__body">
                     <ul class="list-unstyled">
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
                                 <strong class="d-block"
-                                        data-i18n-static="dedicatedCloud_datacenter_commercial_name">
+                                        data-translate="dedicatedCloud_datacenter_commercial_name">
                                 </strong>
-                                <span data-ng-bind="tr('dedicatedCloud_datacenter_commercial_name_' + datacenter.model.commercialName)"></span>
+                                <span data-translate="{{ 'dedicatedCloud_datacenter_commercial_name_' + datacenter.model.commercialName }}"></span>
                             </div>
                         </li>
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
                                 <strong class="d-block"
-                                        data-i18n-static="dedicatedCloud_datacenter_host">
+                                        data-translate="dedicatedCloud_datacenter_host">
                                 </strong>
                                 <span data-ng-bind="datacenter.model.hosts"></span>
                             </div>
@@ -26,7 +26,7 @@
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
                                 <strong class="d-block"
-                                        data-i18n-static="dedicatedCloud_datacenter_datastore">
+                                        data-translate="dedicatedCloud_datacenter_datastore">
                                 </strong>
                                 <span data-ng-bind="datacenter.model.filers"></span>
                             </div>
@@ -34,10 +34,10 @@
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
                                 <strong class="d-block"
-                                        data-i18n-static="dedicatedCloud_datacenter_VM_Backup">
+                                        data-translate="dedicatedCloud_datacenter_VM_Backup">
                                 </strong>
                                 <span class="label label-info"
-                                      data-i18n-static="dedicatedCloud_coming_soon">
+                                      data-translate="dedicatedCloud_coming_soon">
                                 </span>
                             </div>
                         </li>

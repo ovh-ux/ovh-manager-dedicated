@@ -4,10 +4,10 @@
 
     <button type="button"
             class="btn btn-link dropdown-toggle"
-            title="{{:: 'common_actions' | UAi18n }}"
+            title="{{:: 'common_actions' | translate }}"
             data-uib-dropdown-toggle>
         <span class="ovh-font ovh-font-dots align-top"
-              aria-label="{{:: 'common_actions' | UAi18n }}"
+              aria-label="{{:: 'common_actions' | translate }}"
               aria-hidden="true">
         </span>
     </button>
@@ -20,7 +20,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/block/description/edit/ip-ip-block-description-edit', { ipBlock: ipBlock })"
-                    data-ng-bind="ipBlock.description && tr('ip_description_edit_title') || tr('ip_description_new_title')">
+                    data-ng-bind="ipBlock.description && ('ip_description_edit_title' | translate) || ('ip_description_new_title' | translate)">
             </button>
         </li>
 
@@ -28,7 +28,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/reverse/update/ip-ip-reverse-update', { ipBlock: ipBlock, ip: ip })"
-                    data-i18n-static="ip_table_manage_reverse">
+                    data-translate="ip_table_manage_reverse">
             </button>
         </li>
 
@@ -41,10 +41,10 @@
 
     <button type="button"
             class="btn btn-link dropdown-toggle"
-            title="{{:: 'common_actions' | UAi18n }}"
+            title="{{:: 'common_actions' | translate }}"
             data-uib-dropdown-toggle>
         <span class="ovh-font ovh-font-dots align-top"
-              aria-label="{{:: 'common_actions' | UAi18n }}"
+              aria-label="{{:: 'common_actions' | translate }}"
               aria-hidden="true">
         </span>
     </button>
@@ -58,7 +58,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/block/description/edit/ip-ip-block-description-edit', { ipBlock: ipBlock })"
-                    data-ng-bind="ipBlock.description && tr('ip_description_edit_title') || tr('ip_description_new_title')">
+                    data-ng-bind="ipBlock.description && ('ip_description_edit_title' | translate) || ('ip_description_new_title' | translate)">
             </button>
         </li>
 
@@ -67,7 +67,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/reverse/update/ip-ip-reverse-update', { ipBlock: ipBlock, ip: ip })"
-                    data-i18n-static="ip_table_manage_reverse">
+                    data-translate="ip_table_manage_reverse">
             </button>
         </li>
 
@@ -81,7 +81,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/virtual-mac/add/ip-ip-virtual-mac-add', { ipBlock: ipBlock, ip: ip })"
-                    data-i18n-static="ip_table_manage_add_virtualmac"
+                    data-translate="ip_table_manage_add_virtualmac"
                     data-ng-disabled="ipBlock.service.category !== 'DEDICATED' || ipBlock.service.virtualmac.status !== 'OK' || ipBlock.service.virtualmac.virtualMacsByIp[ip.ip]"
                     data-tooltip-placement="left"
                     data-uib-tooltip="{{ ipBlock.service.category === 'DEDICATED' && ipBlock.service.virtualmac.status === 'OK' && ipBlock.service.virtualmac.virtualMacsByIp[ip.ip] ? getVirtualMacMessage(ipBlock) : '' }}">
@@ -91,14 +91,14 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/virtual-mac/ip-ip-virtual-mac', { ipBlock: ipBlock, ip: ip })"
-                    data-i18n-static="ip_table_manage_view_virtualmac">
+                    data-translate="ip_table_manage_view_virtualmac">
             </button>
         </li>
         <li data-ng-if="ipBlock.service.category == 'DEDICATED' && ipBlock.type == 'FAILOVER' && ipBlock.service.virtualmac.status === 'OK' && ipBlock.service.virtualmac.virtualMacsByIp[ip.ip]">
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/virtual-mac/delete/ip-ip-virtual-mac-delete', { ipBlock: ipBlock, ip: ip })"
-                    data-i18n-static="ip_table_manage_del_virtualmac">
+                    data-translate="ip_table_manage_del_virtualmac">
             </button>
         </li>
 
@@ -112,7 +112,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/mitigation/update/ip-ip-mitigation-update', { ipBlock: ipBlock, ip: ip })"
-                    data-i18n-static="ip_table_manage_mitigation_DEFAULT_to_PERMANENT">
+                    data-translate="ip_table_manage_mitigation_DEFAULT_to_PERMANENT">
             </button>
         </li>
         <!-- MITIGATION::SWITCH PERMANENT > DEFAULT -->
@@ -120,7 +120,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/mitigation/update/ip-ip-mitigation-update', { ipBlock: ipBlock, ip: ip })"
-                    data-i18n-static="ip_table_manage_mitigation_PERMANENT_to_AUTO">
+                    data-translate="ip_table_manage_mitigation_PERMANENT_to_AUTO">
             </button>
         </li>
 
@@ -129,7 +129,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/mitigation/statistics/ip-ip-mitigation-statistics', { ipBlock: ipBlock, ip: ip })"
-                    data-i18n-static="ip_table_manage_mitigation_stats">
+                    data-translate="ip_table_manage_mitigation_stats">
             </button>
         </li>
 
@@ -143,7 +143,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="displayGameFirewall(ipBlock, ip)"
-                    data-i18n-static="ip_table_manage_game_mitigation">
+                    data-translate="ip_table_manage_game_mitigation">
             </button>
         </li>
 
@@ -157,7 +157,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/firewall/toggle/ip-ip-firewall-toggle', { ipBlock: ipBlock, ip: ip })"
-                    data-i18n-static="ip_table_manage_firewall_configure">
+                    data-translate="ip_table_manage_firewall_configure">
             </button>
         </li>
         <!-- FIREWALL::ENABLE -->
@@ -165,7 +165,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/firewall/toggle/ip-ip-firewall-toggle', { ipBlock: ipBlock, ip: ip })"
-                    data-i18n-static="ip_table_manage_firewall_enable">
+                    data-translate="ip_table_manage_firewall_enable">
             </button>
         </li>
         <!-- FIREWALL::DISABLE -->
@@ -173,16 +173,16 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/firewall/toggle/ip-ip-firewall-toggle', { ipBlock: ipBlock, ip: ip })"
-                    data-i18n-static="ip_table_manage_firewall_disable">
+                    data-translate="ip_table_manage_firewall_disable">
             </button>
         </li>
         <!-- FIREWALL::DISABLED -->
         <li data-ng-if="ip.mitigation && ip.mitigation != 'DEFAULT'">
             <button type="button"
                     class="btn btn-link"
-                    data-i18n-static="ip_table_manage_firewall_disable"
+                    data-translate="ip_table_manage_firewall_disable"
                     data-tooltip-placement="left"
-                    data-uib-tooltip="{{i18n.ip_table_manage_firewall_disable_tooltip}}"
+                    data-uib-tooltip="{{ 'ip_table_manage_firewall_disable_tooltip' | translate }}"
                     disabled>
             </button>
         </li>
@@ -191,7 +191,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="displayFirewall(ipBlock, ip)"
-                    data-i18n-static="ip_table_manage_firewall_rules">
+                    data-translate="ip_table_manage_firewall_rules">
             </button>
         </li>
 
@@ -205,7 +205,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="displayAntispam(ipBlock, ip)"
-                    data-i18n-static="ip_table_manage_antispam_unblock">
+                    data-translate="ip_table_manage_antispam_unblock">
             </button>
         </li>
 
@@ -214,7 +214,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/antihack/ip-ip-antihack', { ipBlock: ipBlock, ip: ip })"
-                    data-i18n-static="ip_table_manage_view_antihack">
+                    data-translate="ip_table_manage_view_antihack">
             </button>
         </li>
 
@@ -223,7 +223,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/arp/ip-ip-arp', { ipBlock: ipBlock, ip: ip })"
-                    data-i18n-static="ip_table_manage_view_arp">
+                    data-translate="ip_table_manage_view_arp">
             </button>
         </li>
 
@@ -237,7 +237,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/organisation/view/ip-ip-organisation-view', { ipBlock: ipBlock })"
-                    data-i18n-static="ip_table_manage_view_iporganisation_details">
+                    data-translate="ip_table_manage_view_iporganisation_details">
             </button>
         </li>
 
@@ -245,7 +245,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/organisation/change/ip-ip-organisation-change', { ipBlock: ipBlock })"
-                    data-i18n-static="ip_table_manage_view_iporganisation_change">
+                    data-translate="ip_table_manage_view_iporganisation_change">
             </button>
         </li>
 
@@ -254,7 +254,7 @@
             <button type="button"
                     class="btn btn-link"
                     data-ng-click="setAction('ip/block/move/ip-ip-block-move', { ipBlock: ipBlock })"
-                    data-i18n-static="ip_table_manage_move_ipblock">
+                    data-translate="ip_table_manage_move_ipblock">
             </button>
         </li>
 
@@ -264,9 +264,9 @@
                     class="btn btn-link"
                     data-ng-click="setAction('ip/block/delete/ip-ip-block-delete', { ipBlock: ipBlock })"
                     data-ng-disabled="!ipBlock.canBeTerminated"
-                    data-uib-tooltip="{{ !ipBlock.canBeTerminated ? tr('ip_failover_impossible_delete') : '' }}"
+                    data-uib-tooltip="{{ !ipBlock.canBeTerminated ? ('ip_failover_impossible_delete' | translate) : '' }}"
                     data-tooltip-placement="left"
-                    data-i18n-static="ip_table_manage_delete_ipblock">
+                    data-translate="ip_table_manage_delete_ipblock">
             </button>
         </li>
 

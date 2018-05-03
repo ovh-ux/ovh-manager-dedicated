@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpOrganisationChangeCtrl", ($scope, Ip, IpOrganisation, Alerter) => {
+angular.module("Module.ip.controllers").controller("IpOrganisationChangeCtrl", ($scope, $translate, Ip, IpOrganisation, Alerter) => {
     const currentOrganisationId = $scope.currentActionData.ipBlock.organizationId;
     $scope.alert = "polling_action";
     $scope.loader = false;
@@ -29,10 +29,10 @@ angular.module("Module.ip.controllers").controller("IpOrganisationChangeCtrl", (
         })
             .then(
                 () => {
-                    Alerter.alertFromSWS($scope.tr("ip_organisation_change_organisations_success"));
+                    Alerter.alertFromSWS($translate.instant("ip_organisation_change_organisations_success"));
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("ip_organisation_change_organisations_fail", [err.message]));
+                    Alerter.alertFromSWS($translate.instant("ip_organisation_change_organisations_fail", { t0: err.message }));
                 }
             )
             .finally(() => {

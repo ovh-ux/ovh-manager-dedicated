@@ -1,7 +1,5 @@
-angular.module("Billing.controllers").controller("Billing.controllers.PaymentsCtrl", function ($filter, $log, $q, $scope, $timeout, translator, constants, Alerter, BillingPayments, BillingdateRangeSelection, featureAvailability) {
+angular.module("Billing.controllers").controller("Billing.controllers.PaymentsCtrl", function ($filter, $log, $q, $scope, $timeout, $state, $translate, constants, Alerter, BillingPayments, BillingdateRangeSelection, featureAvailability, OvhApiMe) {
     "use strict";
-
-    const tr = translator.tr;
 
     this.paginatedPayments = null;
     this.paymentTypes = {
@@ -26,6 +24,9 @@ angular.module("Billing.controllers").controller("Billing.controllers.PaymentsCt
         this.orderByState = { predicate, reverse };
         $scope.$broadcast("paginationServerSide.loadPage", "1", "paymentsTable");
     };
+
+    this.paymentRequests = null;
+    this.paymentRequestsHref = $state.href("app.account.billing.payments.request");
 
     function getPaymentsSortOrder ({ predicate, reverse }) {
         return {
@@ -67,11 +68,13 @@ angular.module("Billing.controllers").controller("Billing.controllers.PaymentsCt
 
                 const paymentsErrors = this.paginatedPayments.filter((payment) => payment.error);
                 if (paymentsErrors.length > 0) {
-                    Alerter.alertFromSWS(tr("payments_error", [paymentsErrors.length]), { alertType: "ERROR" });
+                    Alerter.alertFromSWS($translate.instant("payments_error", {
+                        t0: paymentsErrors.length
+                    }), { alertType: "ERROR" });
                 }
             })
             .catch((err) => {
-                Alerter.alertFromSWS(tr("payments_error"), err);
+                Alerter.alertFromSWS($translate.instant("payments_error"), err);
                 return $q.reject(err);
             })
             .finally(() => {
@@ -82,12 +85,12 @@ angular.module("Billing.controllers").controller("Billing.controllers.PaymentsCt
     };
 
     this.getDatasToExport = () => {
-        const datasToReturn = [[tr("payments_table_head_id"), tr("payments_table_head_date"), tr("payments_table_head_amount"), tr("payments_table_head_type")]];
+        const datasToReturn = [[$translate.instant("payments_table_head_id"), $translate.instant("payments_table_head_date"), $translate.instant("payments_table_head_amount"), $translate.instant("payments_table_head_type")]];
 
         return datasToReturn.concat(this.paginatedPayments.map((payment) => [payment.billId, $filter("date")(payment.date, "mediumDate"), payment.amount.text, this.getTranslatedPaiementType(payment)]));
     };
 
-    this.getTranslatedPaiementType = (payment) => payment.paymentInfo ? tr(`common_payment_type_${payment.paymentInfo.paymentType}`) : tr("payments_table_type_not_available");
+    this.getTranslatedPaiementType = (payment) => payment.paymentInfo ? $translate.instant(`common_payment_type_${payment.paymentInfo.paymentType}`) : $translate.instant("payments_table_type_not_available");
 
     this.setAction = (action, data) => {
         const actionModalSelector = $("#currentAction");
@@ -116,4 +119,14 @@ angular.module("Billing.controllers").controller("Billing.controllers.PaymentsCt
     this.shouldDisplayDepositsLinks = () => featureAvailability.showPDFAndHTMLDepositLinks();
 
     this.displayActionsCol = () => constants.target !== "US";
+
+    this.$onInit = () => {
+        if (constants.target === "US") {
+            return OvhApiMe.DepositRequest().v6().query().$promise.then((depositRequests) => {
+                this.paymentRequests = depositRequests;
+            });
+        }
+
+        return null;
+    };
 });

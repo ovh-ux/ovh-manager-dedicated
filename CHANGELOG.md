@@ -1,3 +1,78 @@
+<a name="9.2.14"></a>
+## [9.2.14](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.13...v9.2.14) (2018-04-26)
+
+
+### Bug Fixes
+
+* display pay debt button only when dueAmount is more than 0 in US ([7ddaf4f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7ddaf4f))
+* display publicLabel when no description on payment method ([47c933c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/47c933c))
+* fix after review ([954e4e6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/954e4e6))
+* fix and refactor billing history details view ([eb5ca18](https://github.com/ovh-ux/ovh-manager-dedicated/commit/eb5ca18))
+* fix link to state for new payment method ([550da86](https://github.com/ovh-ux/ovh-manager-dedicated/commit/550da86))
+* fix payment method label in select ([d63a331](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d63a331))
+* fix some trads and remove EU link for US ([31a03bd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/31a03bd))
+* package.json and remove unnecessary comments ([cee68a3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/cee68a3))
+* pass payment method id in pay debt request ([52d8cdd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/52d8cdd))
+* update DEBTACCOUNT_DEBT translation for US test ([2c00d62](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2c00d62))
+* upgrade ovh-api-services version ([8c4b472](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8c4b472))
+
+
+### Features
+
+* **debtaccount:** manage debt for US customers ([431b3c8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/431b3c8))
+
+
+
+<a name="9.2.13"></a>
+## [9.2.13](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.12...v9.2.13) (2018-04-25)
+
+
+### Bug Fixes
+
+* display info to the enterprise customer concerning retail prices ([0290db9](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0290db9))
+* rename services to v6 and v7 ([f216afd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f216afd)), closes [ovh-ux/ovh-api-services#68](https://github.com/ovh-ux/ovh-api-services/issues/68)
+* use internal state definition instead of initial declaration ([e678a71](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e678a71))
+* **billing confirm terminate:** add missing translation key for cpanel ([5ccc6c9](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5ccc6c9))
+* **dedicated ml-subscribe:** fix _.some to indexOf ([2cd6665](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2cd6665))
+* **dedicatedcloud:** fix after review ([aaf976b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/aaf976b))
+* **dedicatedcloud:** fix ml subscribe modal display on user view ([b9a3e4c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b9a3e4c))
+* **dedicatedcloud:** remove unecessary translation for ml subscribe ([34fbc7d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/34fbc7d))
+* **dedicatedcloud ml subscribe:** fix after review ([43bf071](https://github.com/ovh-ux/ovh-manager-dedicated/commit/43bf071))
+* **dedicatedcloud ml subscribe:** remove mock in modal ([67d44f8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/67d44f8))
+* **housing tasks:** replace table with oui-datagrid ([c9cf573](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c9cf573))
+* **ip:** improve ip organisation table to match ovh oui-kit style ([b87f61c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b87f61c))
+* **layout modal:** fix toChilds detection ([deb092f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/deb092f))
+* **me-alerts:** fix bad links to billing statements ([539f6ef](https://github.com/ovh-ux/ovh-manager-dedicated/commit/539f6ef))
+* **modal layout:** fix unecessary child states applied to layout ([e675707](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e675707))
+* **pcc datacenters:** replace table with oui-datagrid ([adae0dc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/adae0dc))
+* **pcc datacenters:** tooltip if has discount ([e76c1f4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e76c1f4))
+* **server tasks:** replace table with oui-datagrid ([980a8bc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/980a8bc))
+* **sidebar:** users management section available in all targets ([c871e7a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c871e7a)), closes [#161](https://github.com/ovh-ux/ovh-manager-dedicated/issues/161)
+* **uibmodal stateful:** update stateful modal closing methods ([d0e4c21](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d0e4c21))
+* **yarn.lock:** fix ovh-utils-angular version ([64ee416](https://github.com/ovh-ux/ovh-manager-dedicated/commit/64ee416))
+* fix after review ([c363375](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c363375))
+* fix typo ([b3beaeb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b3beaeb))
+* set link instead of button for .go('^') onClick ([c7900c0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c7900c0))
+
+
+### Features
+
+* **dedicatedcloud:** subscribe to ML modal through ui-router ([4b788ce](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4b788ce))
+* **dedicatedcloud:** wip - migrate modal to states ([5201f3f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5201f3f))
+* handle roles in user tab ([eac1205](https://github.com/ovh-ux/ovh-manager-dedicated/commit/eac1205))
+
+
+
+<a name="9.2.12"></a>
+## [9.2.12](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.11...v9.2.12) (2018-04-19)
+
+
+### Bug Fixes
+
+* temporarily remove debt messages for US ([639c738](https://github.com/ovh-ux/ovh-manager-dedicated/commit/639c738))
+
+
+
 <a name="9.2.11"></a>
 ## [9.2.11](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.10...v9.2.11) (2018-04-12)
 

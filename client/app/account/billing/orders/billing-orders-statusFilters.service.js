@@ -1,4 +1,4 @@
-angular.module("Billing.services").service("BillingOrdersStatusFilters", ($q, translator, BillingOrderStatusEnum) => {
+angular.module("Billing.services").service("BillingOrdersStatusFilters", ($q, $translate, BillingOrderStatusEnum) => {
     "use strict";
 
     let filterConfig;
@@ -7,17 +7,17 @@ angular.module("Billing.services").service("BillingOrdersStatusFilters", ($q, tr
         return BillingOrderStatusEnum.getEnum().then((statusEnum) => [
             {
                 id: "all",
-                label: translator.tr("orders_order_status_filter_all"),
+                label: $translate.instant("orders_order_status_filter_all"),
                 statusList: []
             },
             {
                 id: "in-progress",
-                label: translator.tr("orders_order_status_filter_progress"),
+                label: $translate.instant("orders_order_status_filter_progress"),
                 statusList: [statusEnum.CANCELLING, statusEnum.CHECKING, statusEnum.DELIVERING, statusEnum.DOCUMENTS_REQUESTED, statusEnum.UNKNOWN]
             },
             {
                 id: "unpaid",
-                label: translator.tr("orders_order_status_not_paid"),
+                label: $translate.instant("orders_order_status_not_paid"),
                 statusList: [statusEnum.NOT_PAID],
                 getFilter () {
                     return {
@@ -27,7 +27,7 @@ angular.module("Billing.services").service("BillingOrdersStatusFilters", ($q, tr
             },
             {
                 id: "terminated",
-                label: translator.tr("orders_order_status_filter_terminated"),
+                label: $translate.instant("orders_order_status_filter_terminated"),
                 statusList: [statusEnum.DELIVERED, statusEnum.CANCELLED]
             }
         ]);

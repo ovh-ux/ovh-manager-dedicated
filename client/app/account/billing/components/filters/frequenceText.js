@@ -1,6 +1,5 @@
 angular.module("Billing.filters").filter("autorenewFrequenceText", [
-    "translator",
-    function (translator) {
+    function ($translate) {
         "use strict";
 
         const BASE_I18N_SLUG = "autorenew_service_renew_";
@@ -21,9 +20,9 @@ angular.module("Billing.filters").filter("autorenewFrequenceText", [
                 slug = `${BASE_I18N_SLUG}year`;
                 break;
             default:
-                return translator.tr(`${BASE_I18N_SLUG}frequency_value`, [period]);
+                return $translate.instant(`${BASE_I18N_SLUG}frequency_value`, [period]);
             }
-            return translator.tr(slug);
+            return $translate.instant(slug);
         };
     }
 ]);

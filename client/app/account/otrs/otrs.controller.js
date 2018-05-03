@@ -3,12 +3,13 @@ angular.module("Module.otrs.controllers").controller("otrsCtrl", [
     "$scope",
     "$location",
     "$timeout",
+    "$translate",
     "OtrsPopupService",
     "Module.otrs.services.otrs",
     "Alerter",
     "constants",
     "OTRS_POPUP_UNIVERSES",
-    function ($rootScope, $scope, $location, $timeout, OtrsPopupService, Otrs, Alerter, constants, OTRS_POPUP_UNIVERSES) {
+    function ($rootScope, $scope, $location, $timeout, $translate, OtrsPopupService, Otrs, Alerter, constants, OTRS_POPUP_UNIVERSES) {
         "use strict";
         let firstLoading = false;
 
@@ -62,7 +63,7 @@ angular.module("Module.otrs.controllers").controller("otrsCtrl", [
                         $scope.requests = models.models["support.TicketCategoryEnum"].enum;
                     },
                     (err) => {
-                        Alerter.alertFromSWS($scope.tr("otrs_popup_get_types_error"), err, "otrs_popup_sent");
+                        Alerter.alertFromSWS($translate.instant("otrs_popup_get_types_error"), err, "otrs_popup_sent");
                     }
                 )
                 .finally(() => {
@@ -118,7 +119,7 @@ angular.module("Module.otrs.controllers").controller("otrsCtrl", [
                         $scope.tickets.ids = table;
                     },
                     (err) => {
-                        Alerter.alertFromSWS($scope.tr("otrs_table_ticket_error"), err);
+                        Alerter.alertFromSWS($translate.instant("otrs_table_ticket_error"), err);
                     }
                 )
                 .finally(() => {
@@ -194,7 +195,7 @@ angular.module("Module.otrs.controllers").controller("otrsCtrl", [
                         }
                     },
                     (err) => {
-                        Alerter.alertFromSWS($scope.tr("otrs_search_ticket_get_services_error"), err, "otrs_popup_service");
+                        Alerter.alertFromSWS($translate.instant("otrs_search_ticket_get_services_error"), err, "otrs_popup_service");
                     }
                 )
                 .finally(() => {

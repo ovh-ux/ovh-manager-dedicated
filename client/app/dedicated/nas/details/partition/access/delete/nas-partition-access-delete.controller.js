@@ -1,4 +1,4 @@
-angular.module("App").controller("NasPartitionAccessDeleteCtrl", ($scope, $stateParams, Nas, $rootScope, Alerter) => {
+angular.module("App").controller("NasPartitionAccessDeleteCtrl", ($scope, $stateParams, $translate, Nas, $rootScope, Alerter) => {
     const alerterId = "NasAlert";
 
     $scope.toDelete = $scope.currentActionData;
@@ -8,10 +8,10 @@ angular.module("App").controller("NasPartitionAccessDeleteCtrl", ($scope, $state
         Nas.deleteAccess($stateParams.nasId, $scope.toDelete.partitionName, $scope.toDelete.access).then(
             (task) => {
                 $rootScope.$broadcast("nas_launch_task", task);
-                Alerter.success($scope.tr("nas_access_action_delete_success", $scope.toDelete.access), alerterId);
+                Alerter.success($translate.instant("nas_access_action_delete_success", { t0: $scope.toDelete.access }), alerterId);
             },
             (data) => {
-                Alerter.alertFromSWS($scope.tr("nas_access_action_delete_failure", $scope.toDelete.access), data, alerterId);
+                Alerter.alertFromSWS($translate.instant("nas_access_action_delete_failure", { t0: $scope.toDelete.access }), data, alerterId);
             }
         );
     };

@@ -1,11 +1,11 @@
 <div data-ng-controller="IpOrganisationCtrl as $ctrl">
-    <oui-back-button data-title="{{:: tr('ip_organisation_title') }}"
+    <oui-back-button data-title="{{ :: 'ip_organisation_title' | translate }}"
                      data-on-click="$ctrl.hideOrganisation()">
     </oui-back-button>
     <button class="btn btn-default mb-4"
             type="button"
             data-ng-click="setAction('ip/organisation/add-or-edit/ip-ip-organisation-add-or-edit')"
-            data-i18n-static="ip_organisation_add">
+            data-translate="ip_organisation_add">
     </button>
     <div class="table-responsive">
         <table class="table table-hover">
@@ -13,16 +13,16 @@
                 <tr>
                     <th scope="col"></th>
                     <th scope="col"
-                        data-i18n-static="ip_organisation_table_organisation">
+                        data-translate="ip_organisation_table_organisation">
                     </th>
                     <th scope="col"
-                        data-i18n-static="ip_organisation_table_type">
+                        data-translate="ip_organisation_table_type">
                     </th>
                     <th scope="col"
-                        data-i18n-static="ip_organisation_table_lastname">
+                        data-translate="ip_organisation_table_lastname">
                     </th>
                     <th scope="col"
-                        data-i18n-static="ip_organisation_table_abuse">
+                        data-translate="ip_organisation_table_abuse">
                     </th>
                     <th scope="col"></th>
                 </tr>
@@ -39,7 +39,7 @@
                 <tr>
                     <td colspan="6"
                         class="text-center"
-                        data-i18n-static="ip_organisation_table_empty">
+                        data-translate="ip_organisation_table_empty">
                     </td>
                 </tr>
             </tbody>
@@ -69,7 +69,7 @@
                     <td>
                         <oui-action-menu data-align="end"
                                          data-compact>
-                            <oui-action-menu-item data-text="{{:: tr('ip_organisation_edit') }}"
+                            <oui-action-menu-item data-text="{{ :: 'ip_organisation_edit' | translate }}"
                                                   data-on-click="setAction('ip/organisation/add-or-edit/ip-ip-organisation-add-or-edit', organisation)">
                             </oui-action-menu-item>
                         </oui-action-menu>
@@ -78,10 +78,10 @@
                 <tr data-ng-show="open">
                     <td></td>
                     <td colspan="2"
-                        data-i18n-static="ip_organisation_table_phone">
+                        data-translate="ip_organisation_table_phone">
                     </td>
                     <td colspan="3"
-                        data-i18n-static="ip_organisation_table_address">
+                        data-translate="ip_organisation_table_address">
                     </td>
                 </tr>
                 <tr data-ng-show="open">

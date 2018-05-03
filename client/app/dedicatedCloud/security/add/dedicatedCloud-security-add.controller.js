@@ -1,6 +1,5 @@
-angular.module("App").controller("DedicatedCloudSecurityPolicyAddCtrl", ($scope, $stateParams, DedicatedCloud, translator, REGEX) => {
+angular.module("App").controller("DedicatedCloudSecurityPolicyAddCtrl", ($scope, $stateParams, DedicatedCloud, $translate, REGEX) => {
     "use strict";
-    const tr = translator.tr;
 
     $scope.regex = REGEX;
     $scope.newNetwork = {
@@ -11,10 +10,10 @@ angular.module("App").controller("DedicatedCloudSecurityPolicyAddCtrl", ($scope,
         $scope.resetAction();
         DedicatedCloud.addSecurityPolicy($stateParams.productId, $scope.newNetwork).then(
             (data) => {
-                $scope.setMessage(tr("dedicatedCloud_configuration_SECURITY_policy_add_success"), data);
+                $scope.setMessage($translate.instant("dedicatedCloud_configuration_SECURITY_policy_add_success"), data);
             },
             (data) => {
-                $scope.setMessage(tr("dedicatedCloud_configuration_SECURITY_policy_add_fail", [$scope.newNetwork.value]), data.data);
+                $scope.setMessage($translate.instant("dedicatedCloud_configuration_SECURITY_policy_add_fail", [$scope.newNetwork.value]), data.data);
             }
         );
     };

@@ -9,22 +9,22 @@
                  }">
                 <div class="oui-tile mb-5 h-100">
                     <h3 class="oui-tile__title"
-                        data-i18n-static="dedicatedCloud_information_title">
+                        data-translate="dedicatedCloud_information_title">
                     </h3>
                     <div class="oui-tile__body">
                         <ul class="list-unstyled">
                             <li class="oui-tile__item">
                                 <div class="oui-tile__definition">
                                     <strong class="d-block"
-                                            data-i18n-static="dedicatedCloud_type">
+                                            data-translate="dedicatedCloud_type">
                                     </strong>
-                                    <span data-ng-bind="tr('dedicatedCloud_type_' + dedicatedCloud.solution) + ' ' + (dedicatedCloud.solution === 'VSPHERE' && dedicatedCloud.version ? dedicatedCloud.version.major : '')"></span>
+                                    <span data-translate="{{ ('dedicatedCloud_type_' + dedicatedCloud.solution) + ' ' + (dedicatedCloud.solution === 'VSPHERE' && dedicatedCloud.version ? dedicatedCloud.version.major : '') }}"></span>
                                 </div>
                             </li>
                             <li class="oui-tile__item">
                                 <div class="oui-tile__definition">
                                     <strong class="d-block"
-                                            data-i18n-static="dedicatedCloud_commercialRange">
+                                            data-translate="dedicatedCloud_commercialRange">
                                     </strong>
                                     <span data-ng-bind="dedicatedCloud.commercialRange"></span>
                                 </div>
@@ -32,7 +32,7 @@
                             <li class="oui-tile__item">
                                 <div class="oui-tile__definition">
                                     <strong class="d-block"
-                                            data-i18n-static="dedicatedCloud_pcc_zone">
+                                            data-translate="dedicatedCloud_pcc_zone">
                                     </strong>
                                     <span data-ng-bind="dedicatedCloud.location"></span>
                                 </div>
@@ -40,7 +40,7 @@
                             <li class="oui-tile__item">
                                 <div class="oui-tile__definition">
                                     <strong class="d-block"
-                                            data-i18n-static="dedicatedCloud_access">
+                                            data-translate="dedicatedCloud_access">
                                     </strong>
                                     <span data-ng-bind="getUserAccessPolicyLabel()"></span>
                                 </div>
@@ -48,17 +48,17 @@
                             <li class="oui-tile__item">
                                 <div class="oui-tile__definition">
                                     <strong class="d-block"
-                                            data-i18n-static="dedicatedCloud_bandwidth">
+                                            data-translate="dedicatedCloud_bandwidth">
                                     </strong>
                                     <span class="label label-default"
-                                          data-i18n-static="dedicatedCloud_coming_soon">
+                                          data-translate="dedicatedCloud_coming_soon">
                                     </span>
                                 </div>
                             </li>
                             <li class="oui-tile__item">
                                 <div class="oui-tile__definition">
                                     <strong class="d-block"
-                                            data-i18n-static="dedicatedCloud_datacenter_count">
+                                            data-translate="dedicatedCloud_datacenter_count">
                                     </strong>
                                     <span data-ng-bind="dedicatedCloud.datacenterCount"></span>
                                 </div>
@@ -67,7 +67,7 @@
                                 data-ng-if="dedicatedCloud.ipRipeCount > 0">
                                 <div class="oui-tile__definition">
                                     <strong class="d-block"
-                                            data-i18n-static="dedicatedCloud_nb_bloc_IP_ripe">
+                                            data-translate="dedicatedCloud_nb_bloc_IP_ripe">
                                     </strong>
                                     <span data-ng-bind="dedicatedCloud.ipRipeCount"></span>
                                 </div>
@@ -76,7 +76,7 @@
                                 data-ng-if="dedicatedCloud.ipArinCount > 0">
                                 <div class="oui-tile__definition">
                                     <strong class="d-block"
-                                            data-i18n-static="dedicatedCloud_nb_bloc_IP_arin">
+                                            data-translate="dedicatedCloud_nb_bloc_IP_arin">
                                     </strong>
                                     <span data-ng-bind="dedicatedCloud.ipArinCount"></span>
                                 </div>
@@ -85,9 +85,9 @@
                                 data-ng-if="dedicatedCloud.ipRipeCount === 0">
                                 <div class="oui-tile__definition">
                                     <strong class="d-block"
-                                            data-i18n-static="dedicatedCloud_nb_bloc_IP">
+                                            data-translate="dedicatedCloud_nb_bloc_IP">
                                     </strong>
-                                    <span data-i18n-static="dedicatedCloud_nb_bloc_IP_no_data"></span>
+                                    <span data-translate="dedicatedCloud_nb_bloc_IP_no_data"></span>
                                 </div>
                             </li>
                         </ul>
@@ -103,7 +103,7 @@
                  data-ng-if="!dedicatedCloud.isExpired">
                 <div class="oui-tile mb-5 h-100">
                     <h3 class="oui-tile__title"
-                        data-i18n-static="dedicatedCloud_options_title">
+                        data-translate="dedicatedCloud_options_title">
                     </h3>
                     <div class="oui-tile__body">
                         <ul class="list-unstyled"
@@ -121,14 +121,14 @@
                                     <div class="d-flex w-100">
                                         <div>
                                             <strong class="d-block"
-                                                    data-i18n-static="dedicatedCloud_options_nsx">
+                                                    data-translate="dedicatedCloud_options_nsx">
                                             </strong>
-                                            <span data-ng-bind="options.nsx.toggable ? tr('dedicatedCloud_options_state_' + options.nsx.state) : options.nsx.toggableMessage"></span>
+                                            <span data-ng-bind="options.nsx.toggable ? ('dedicatedCloud_options_state_' + options.nsx.state | translate) : options.nsx.toggableMessage"></span>
                                             <a class="d-block"
                                                target="_blank"
                                                rel="noopener"
                                                data-ng-href="{{ options.nsx.guide }}">
-                                                <span data-i18n-static="dedicatedCloud_options_discover"></span>
+                                                <span data-translate="dedicatedCloud_options_discover"></span>
                                                 <span class="fa fa-external-link"
                                                       aria-hidden="true">
                                                 </span>
@@ -138,7 +138,7 @@
                                                 class="btn btn-default ml-auto align-self-center"
                                                 data-ng-if="options.nsx.toggable"
                                                 data-ng-click="setAction('vmware-option/' + (options.nsx.state === 'enabled' ? 'disable' : 'order') + '/dedicatedCloud-vmware-option-' + (options.nsx.state === 'enabled' ? 'disable' : 'order'), 'nsx')"
-                                                data-i18n-static="{{ options.nsx.state === 'enabled' ? 'dedicatedCloud_options_unactivate' : 'dedicatedCloud_options_activate'}}">
+                                                data-translate="{{ options.nsx.state === 'enabled' ? 'dedicatedCloud_options_unactivate' : 'dedicatedCloud_options_activate'}}">
                                         </button>
                                     </div>
                                 </div>
@@ -157,15 +157,15 @@
                                     <div class="d-flex w-100">
                                         <div>
                                             <strong class="d-block"
-                                                    data-i18n-static="dedicatedCloud_options_vrops">
+                                                    data-translate="dedicatedCloud_options_vrops">
                                             </strong>
-                                            <span data-ng-bind="options.vrops.toggable ? tr('dedicatedCloud_options_state_' + options.vrops.state) : options.vrops.toggableMessage"></span>
+                                            <span data-ng-bind="options.vrops.toggable ? ('dedicatedCloud_options_state_' + options.vrops.state | translate) : options.vrops.toggableMessage"></span>
                                             <a class="d-block"
                                                target="_blank"
                                                rel="noopener"
-                                               title="{{ i18n.dedicatedCloud_options_discover }} ({{ i18n.core_new_window }})"
+                                               title="{{ 'dedicatedCloud_options_discover' | translate }} ({{ 'core_new_window' | translate }})"
                                                data-ng-href="{{ options.vrops.guide }}">
-                                                <span data-i18n-static="dedicatedCloud_options_discover"></span>
+                                                <span data-translate="dedicatedCloud_options_discover"></span>
                                                 <span class="fa fa-external-link"
                                                       aria-hidden="true">
                                                 </span>
@@ -175,7 +175,7 @@
                                                 class="btn btn-default ml-auto align-self-center"
                                                 data-ng-if="options.vrops.toggable"
                                                 data-ng-click="setAction('vmware-option/' + (options.vrops.state === 'enabled' ? 'disable' : 'order') + '/dedicatedCloud-vmware-option-' + (options.vrops.state === 'enabled' ? 'disable' : 'order'), 'vrops')"
-                                                data-i18n-static="{{ options.vrops.state === 'enabled' ? 'dedicatedCloud_options_unactivate' : 'dedicatedCloud_options_activate'}}">
+                                                data-translate="{{ options.vrops.state === 'enabled' ? 'dedicatedCloud_options_unactivate' : 'dedicatedCloud_options_activate'}}">
                                         </button>
                                     </div>
                                 </div>
@@ -190,9 +190,10 @@
                  data-ng-if="featureAvailability.allowDedicatedServerComplianceOptions() && !dedicatedCloud.isExpired">
                 <div class="oui-tile mb-5 h-100">
                     <h3 class="oui-tile__title">
-                        <span data-i18n-static="dedicatedCloud_options_security_title"></span>
+                        <span data-translate="dedicatedCloud_options_security_title"></span>
                         <span class="fa fa-question-circle small"
-                              data-uib-tooltip-html="tr('dedicatedCloud_options_security_title_tooltip')"
+                              data-uib-tooltip-html="'dedicatedCloud_options_security_title_tooltip' | translate"
+                              data-tooltip-placement="bottom"
                               data-tooltip-append-to-body="true">
                         </span>
                     </h3>
@@ -213,15 +214,15 @@
                                     <div class="d-flex w-100">
                                         <div class="w-75">
                                             <strong class="d-block"
-                                                    data-ng-bind="tr('dedicatedCloud_options_' + optionName)">
+                                                    data-translate="{{ 'dedicatedCloud_options_' + optionName }}">
                                             </strong>
-                                            <span data-ng-bind="tr('dedicatedCloud_options_state_' + options[optionName].state)"></span>
+                                            <span data-ng-bind="'dedicatedCloud_options_state_' + options[optionName].state | translate"></span>
                                             <a class="d-block"
                                                target="_blank"
                                                rel="noopener"
-                                               title="{{ i18n.dedicatedCloud_options_discover }} ({{ i18n.core_new_window }})"
+                                               title="{{ 'dedicatedCloud_options_discover' | translate }} ({{ 'core_new_window' | translate }})"
                                                data-ng-href="{{ guides[optionName] }}">
-                                                <span data-i18n-static="dedicatedCloud_options_discover"></span>
+                                                <span data-translate="dedicatedCloud_options_discover"></span>
                                                 <span class="fa fa-external-link"
                                                       aria-hidden="true">
                                                 </span>
@@ -231,7 +232,7 @@
                                                 class="btn btn-default ml-auto align-self-center"
                                                 data-ng-if="options[optionName].state === 'disabled' && allDisabled() && !anyEnabling() && nsxAndVropsCompliantPcc()"
                                                 data-ng-click="setAction('security-options/dedicatedCloud-security-option-order', optionName)"
-                                                data-i18n-static="dedicatedCloud_options_activate">
+                                                data-translate="dedicatedCloud_options_activate">
                                         </button>
                                     </div>
                                 </div>

@@ -17,7 +17,7 @@ angular.module("App")
                     }
                 }))
                 .catch((err) => {
-                    this.Alerter.alertFromSWS(this.$scope.tr("server_configuration_task_loading_error"), err, "taskAlert");
+                    this.Alerter.alertFromSWS(this.$translate.instant("server_configuration_task_loading_error"), err, "taskAlert");
                 });
         }
     });

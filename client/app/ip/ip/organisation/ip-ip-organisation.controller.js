@@ -1,7 +1,8 @@
 angular.module("Module.ip.controllers")
     .controller("IpOrganisationCtrl", class IpOrganisationController {
-        constructor ($scope, Ip, IpOrganisation, Alerter) {
+        constructor ($scope, $translate, Ip, IpOrganisation, Alerter) {
             this.$scope = $scope;
+            this.$translate = $translate;
             this.Ip = Ip;
             this.IpOrganisation = IpOrganisation;
             this.Alerter = Alerter;
@@ -26,7 +27,7 @@ angular.module("Module.ip.controllers")
                     this.$scope.organisations = organisations;
                 })
                 .catch((data) => {
-                    this.Alerter.alertFromSWS(this.$scope.i18n.ip_organisation_load_error, data.data, this.$scope.alert);
+                    this.Alerter.alertFromSWS(this.$translate.instant("ip_organisation_load_error"), data.data, this.$scope.alert);
                 })
                 .finally(() => {
                     this.$scope.loadingOrganisation = false;

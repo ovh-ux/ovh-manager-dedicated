@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="user_users_title" qtlid="227793">Gestion des utilisateurs</translation>
-   <translation id="user_users_info" qtlid="472645">Pour qu'un utilisateur puisse se connecter à l'interface, il devra renseigner votre identifiant et son nom d'utilisateur séparé par un "/" (colonne "Identifiant" du tableau) ainsi que son mot de passe.</translation>
+   <translation id="user_users_info" qtlid="480750">Afin de se connecter à l'interface, l'utilisateur devra renseigner votre identifiant <strong>{{customerCode}}</strong> et son nom d'utilisateur séparé par un "/" ainsi que son mot de passe.</translation>
+   <translation id="user_users_info_example" qtlid="480763">Exemple: <strong>{{customerCode}}/{{login}}</strong></translation>
    <translation id="user_users_add_user" qtlid="7150">Ajouter un utilisateur</translation>
    <translation id="user_users_login" qtlid="56045">Nom d'utilisateur</translation>
-   <translation id="user_users_full_login" qtlid="46792">Identifiant</translation>
    <translation id="user_users_email" qtlid="50686">Adresse courriel</translation>
-   <translation id="user_users_creation_date" qtlid="26419">Date de création</translation>
+   <translation id="user_users_creation_date" qtlid="26791">Création</translation>
    <translation id="user_users_last_update_date" qtlid="228748">Date de mise à jour</translation>
+   <translation id="user_users_last_password_update_date" qtlid="106427">Changement de mot de passe</translation>
    <translation id="user_users_status" qtlid="26443">Statut</translation>
    <translation id="user_users_description" qtlid="9238">Description</translation>
    <translation id="user_users_table_empty" qtlid="215741">Aucun utilisateur</translation>
@@ -18,6 +19,11 @@
    <translation id="user_users_status_DISABLED" qtlid="24967">Désactivé</translation>
 
    <translation id="user_users_error" qtlid="299384">Une erreur est survenue :</translation>
+
+   <translation id="user_users_role" qtlid="73697">Privilège</translation>
+   <translation id="user_roles_admin" qtlid="43948">Administrateur</translation>
+   <translation id="user_roles_regular" qtlid="7450">Utilisateur</translation>
+   <translation id="user_roles_unprivileged" qtlid="30646">Aucun</translation>
 
    <translation id="user_users_disable" qtlid="199078">Désactiver l'utilisateur</translation>
    <translation id="user_users_delete_modal_step1_question" qtlid="455451">Êtes-vous sur de vouloir supprimer l'utilisateur <strong>{{login}}</strong> ?</translation>

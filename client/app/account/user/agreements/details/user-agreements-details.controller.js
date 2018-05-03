@@ -4,9 +4,9 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.ag
     "$log",
     "UserAccount.services.agreements",
     "Alerter",
-    "translator",
+    "$translate",
     "User",
-    function ($stateParams, $q, $log, Service, Alerter, translator, User) {
+    function ($stateParams, $q, $log, Service, Alerter, $translate, User) {
         "use strict";
 
         const CGV_AGREEMENT_ID = 1635;
@@ -29,7 +29,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.ag
                     this.isCGVContract = this.agreement.contractId === CGV_AGREEMENT_ID;
                 })
                 .catch((err) => {
-                    Alerter.error(translator.tr("user_agreements_error"), "agreements_details_alerter");
+                    Alerter.error($translate.instant("user_agreements_error"), "agreements_details_alerter");
                     return $q.reject(err);
                 })
                 .finally(() => {
@@ -41,10 +41,10 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.ag
             Service.accept($stateParams.id)
                 .then(() => {
                     this.accepted = true;
-                    Alerter.success(translator.tr("user_agreement_details_success"), "agreements_details_alerter");
+                    Alerter.success($translate.instant("user_agreement_details_success"), "agreements_details_alerter");
                 })
                 .catch((err) => {
-                    Alerter.error(translator.tr("user_agreement_details_error"), "agreements_details_alerter");
+                    Alerter.error($translate.instant("user_agreement_details_error"), "agreements_details_alerter");
                     $q.reject(err);
                 });
         };

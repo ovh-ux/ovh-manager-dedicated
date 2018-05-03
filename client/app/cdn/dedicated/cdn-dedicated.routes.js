@@ -17,6 +17,7 @@ angular.module("App").config(($stateProvider) => {
                 controller: "CdnStatisticsCtrl"
             }
         },
+        translations: ["cdn/dedicated"],
         reloadOnSearch: false
     });
 

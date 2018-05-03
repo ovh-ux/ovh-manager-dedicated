@@ -6,9 +6,10 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.up
     "$q",
     "$location",
     "$timeout",
+    "$translate",
     "AVAILABLE_LANGUAGE",
     "Alerter",
-    function (Contacts, $scope, $stateParams, $q, $location, $timeout, AVAILABLE_LANGUAGE, Alerter) {
+    function (Contacts, $scope, $stateParams, $q, $location, $timeout, $translate, AVAILABLE_LANGUAGE, Alerter) {
         "use strict";
 
         $scope.languages = AVAILABLE_LANGUAGE;
@@ -145,7 +146,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.up
                     },
                     (err) => {
                         $scope.domainsOwner = [];
-                        Alerter.alertFromSWS($scope.tr("user_account_info_error"), err, $scope.alerts.updateOwner);
+                        Alerter.alertFromSWS($translate.instant("user_account_info_error"), err, $scope.alerts.updateOwner);
                     }
                 );
         };
@@ -163,10 +164,10 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.up
                 .then(
                     (newOwnerData) => {
                         $scope.owner = angular.copy(newOwnerData);
-                        Alerter.success($scope.tr("useraccount_contacts_owner_success"), $scope.alerts.updateOwner);
+                        Alerter.success($translate.instant("useraccount_contacts_owner_success"), $scope.alerts.updateOwner);
                     },
                     (err) => {
-                        Alerter.alertFromSWS($scope.tr("useraccount_contacts_owner_error"), err, $scope.alerts.updateOwner);
+                        Alerter.alertFromSWS($translate.instant("useraccount_contacts_owner_error"), err, $scope.alerts.updateOwner);
                     }
                 )
                 .finally(() => {

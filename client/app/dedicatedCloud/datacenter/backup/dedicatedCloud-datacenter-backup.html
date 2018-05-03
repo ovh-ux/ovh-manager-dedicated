@@ -1,6 +1,6 @@
 <div data-ng-controller="DedicatedCloudSubDatacenterVeeamCtrl">
 
-    <h2 data-i18n-static="dedicatedCloud_tab_backup"></h2>
+    <h2 data-translate="dedicatedCloud_tab_backup"></h2>
 
     <div class="text-center"
          data-ng-if="loading">
@@ -10,17 +10,17 @@
     <div class="row"
          data-ng-if="!loading && veeam.model">
         <dl class="col-sm-9">
-            <dt data-i18n-static="dedicatedCloud_tab_veeam_state"></dt>
-            <dd data-ng-bind="tr('dedicatedCloud_tab_veeam_' + veeam.model.state.toUpperCase())"></dd>
+            <dt data-translate="dedicatedCloud_tab_veeam_state"></dt>
+            <dd data-translate="{{ 'dedicatedCloud_tab_veeam_' + veeam.model.state.toUpperCase() }}"></dd>
         </dl>
         <div class="col-sm-3">
             <a class="btn btn-block btn-default"
-               data-i18n-static="dedicatedCloud_tab_veeam_on"
+               data-translate="dedicatedCloud_tab_veeam_on"
                data-ng-if="veeam.model.state === veeam.constants.DISABLED"
                data-ui-sref="app.dedicatedClouds.datacenter.backup.enable">
             </a>
             <a class="btn btn-block btn-default"
-               data-i18n-static="dedicatedCloud_tab_veeam_off"
+               data-translate="dedicatedCloud_tab_veeam_off"
                data-ng-if="veeam.model.state === veeam.constants.ENABLED"
                data-ui-sref="app.dedicatedClouds.datacenter.backup.disable">
             </a>
