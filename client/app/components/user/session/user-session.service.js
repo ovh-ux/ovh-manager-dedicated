@@ -368,8 +368,7 @@ class SessionService {
                     (this.constants.target === "EU" || this.constants.target === "CA") && {
                         title: this.$translate.instant("menu_emails"),
                         state: "app.account.useraccount.emails"
-                    },
-                    (this.constants.target === "EU") && {
+                    }, {
                         title: this.$translate.instant("menu_ssh"),
                         state: "app.account.useraccount.ssh"
                     }, {
