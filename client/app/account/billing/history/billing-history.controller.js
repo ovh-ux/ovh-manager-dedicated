@@ -220,6 +220,29 @@ angular.module("Billing.controllers").controller("Billing.controllers.History", 
             });
     }
 
+    function getDebtAccount () {
+        return BillingDebtAccount.getDebtAccount()
+            .then((debtAccount) => {
+                self.debtAccount = debtAccount;
+                if (self.debtAccount.active === true) {
+                    self.colSpan = COL_SPAN_DEBT_ACCOUNT;
+                }
+            });
+    }
+
+    function getInvoicesByPostalMailOption () {
+        return OvhApiMe.v6().get().$promise.then((user) => {
+            if (user.country === "FR") {
+                OvhApiMe.Billing().InvoicesByPostalMail().v6().get().$promise
+                    .then((result) => {
+                        self.canSetInvoiceByPostalMail = true;
+                        self.invoicesByPostalMail = result.data;
+                        self.tmpInvoicesChoice = angular.copy(self.invoicesByPostalMail);
+                    });
+            }
+        });
+    }
+
     this.$onInit = function () {
         this.isLoading = true;
         BillingUser.isVATNeeded().then((result) => {
@@ -230,25 +253,10 @@ angular.module("Billing.controllers").controller("Billing.controllers.History", 
         loadDefaultPaymentMethod();
 
         return $q.all([
-            BillingDebtAccount.getDebtAccount()
-                .then((debtAccount) => {
-                    this.debtAccount = debtAccount;
-                    if (this.debtAccount.active) {
-                        this.colSpan = COL_SPAN_DEBT_ACCOUNT;
-                    }
-                }),
-            OvhApiMe.v6().get().$promise.then((user) => {
-                if (user.country === "FR") {
-                    OvhApiMe.Billing().InvoicesByPostalMail().v6().get().$promise
-                        .then((result) => {
-                            this.canSetInvoiceByPostalMail = true;
-                            this.invoicesByPostalMail = result.data;
-                            this.tmpInvoicesChoice = angular.copy(this.invoicesByPostalMail);
-                        });
-                }
-            })
+            getDebtAccount(),
+            getInvoicesByPostalMailOption()
         ]).catch((err) => {
-            if (err.status === 404) {
+            if (_.isNumber(err.status) && err.status === 404) {
                 return null;
             }
             return $scope.setMessage($scope.$translate.instant("billingError"), {

@@ -31,10 +31,10 @@ angular.module("Billing.services").service("BillingmessageParser", [
                 return { message, alertType: ALERT_LEVELS.SUCCESS };
             }
 
-            if (message) {
+            if (!_.isEmpty(message)) {
                 return {
                     message,
-                    alertType: ALERT_MAP[data.type] || ""
+                    alertType: _(ALERT_MAP).get(data.type, "")
                 };
             }
 
