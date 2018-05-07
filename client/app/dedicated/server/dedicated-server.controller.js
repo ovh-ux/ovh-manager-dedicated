@@ -1,4 +1,4 @@
-angular.module("App").controller("ServerCtrl", ($scope, $timeout, $stateParams, $translate, Server, Polling, $q, constants, User, ovhUserPref, featureAvailability) => {
+angular.module("App").controller("ServerCtrl", (NO_AUTORENEW_COUNTRIES, WEATHERMAP_URL, $scope, $timeout, $stateParams, $translate, Server, Polling, $q, constants, User, ovhUserPref, featureAvailability) => {
     "use strict";
 
     const errorStatus = ["customer_error", "ovh_error", "error", "cancelled"];
@@ -314,7 +314,7 @@ angular.module("App").controller("ServerCtrl", ($scope, $timeout, $stateParams, 
                 $scope.monitoringProtocolEnum = data[0].data.models["dedicated.server.MonitoringProtocolEnum"].enum;
                 $scope.serviceMonitoring = data[1];
                 $scope.servicesStateLinks = {
-                    weathermap: constants.weatherMapUrl,
+                    weathermap: WEATHERMAP_URL,
                     vms: constants.vmsUrl,
                     travaux: constants.travauxUrl
                 };
@@ -450,7 +450,7 @@ angular.module("App").controller("ServerCtrl", ($scope, $timeout, $stateParams, 
     // Auto renew
     $scope.hasAutoRenew = () => {
         $scope.autoRenew = false;
-        if (constants.NO_AUTORENEW_COUNTRIES.indexOf($scope.user.ovhSubsidiary) === -1) {
+        if (NO_AUTORENEW_COUNTRIES.indexOf($scope.user.ovhSubsidiary) === -1) {
             return $q
                 .all({
                     serverServiceInfo: Server.getServiceInfos($stateParams.productId),
