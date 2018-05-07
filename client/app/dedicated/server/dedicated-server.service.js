@@ -319,11 +319,15 @@ angular
 
         /* ------- SECONDARY DNS -------*/
 
-        this.getSecondaryDnsList = function (serviceName) {
+        this.getSecondaryDnsList = function (serviceName, count, offset) {
             return OvhHttp.get("/sws/dedicated/server/{serviceName}/secondaryDNS", {
                 rootPath: "2api",
                 urlParams: {
                     serviceName
+                },
+                params: {
+                    count,
+                    offset
                 }
             });
         };
