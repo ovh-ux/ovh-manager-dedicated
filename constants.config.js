@@ -5,24 +5,9 @@ const _ = require("lodash");
 var constants = {
     EU : {
         RENEW_URL : "https://eu.ovh.com/cgi-bin/order/renew.cgi?domainChooser={serviceName}",
-        loginUrl  : "/auth",
-        weatherMapUrl : "http://weathermap.ovh.net/",
         vmsUrl : "http://travaux.ovh.net/vms/",
         travauxUrl : "http://travaux.ovh.net/",
-        publicCloudUrl : "https://www.ovh.com/manager/cloud/index.html#/",
-        vrackUrl : "https://www.ovh.com/manager/cloud/index.html#/vrack",
-        nashaUrl: "https://www.ovh.com/manager/cloud/index.html#/paas/nasha",
         UNIVERS      : "dedicated",
-        UNIVERSES : {
-            "PORTAL": "PORTAL",
-            "WEB": "WEB",
-            "DEDICATED": "DEDICATED",
-            "CLOUD": "CLOUD",
-            "TELECOM": "TELECOM",
-            "SUNRISE": "SUNRISE",
-            "PARTNERS": "PARTNERS",
-            "V3": "V3"
-        },
         URLS      : {
             CZ : {
                 support: "http://www.ovh.cz/podpora/",
@@ -355,7 +340,6 @@ var constants = {
                 cs_CZ : "http://www.ovh.cz/podpora/new_nic.xml"
             }
         },
-        changelog_url : "engine/2api/changelog",
         MANAGER_URLS : {
             "portal"    : "https://www.ovh.com/manager/portal/index.html#/",
             "web"       : "https://www.ovh.com/manager/web/index.html#/",
@@ -366,20 +350,6 @@ var constants = {
             "partners"  : "https://www.ovh.com/manager/partners",
             "labs"      : "https://www.ovh.com/manager/sunrise/uxlabs/"
         },
-        NO_AUTORENEW_COUNTRIES : [
-            "ASIA",
-            "AU",
-            "CZ",
-            "PL",
-            "CA",
-            "QC",
-            "SG",
-            "WE",
-            "WS",
-            "MA",
-            "TN",
-            "SN"
-        ],
         TOP_GUIDES : {
             all: {
                 fr_FR: "https://www.ovh.com/fr/support/knowledge/",
@@ -548,25 +518,10 @@ var constants = {
     },
     CA : {
         RENEW_URL : "https://ca.ovh.com/cgi-bin/order/renew.cgi?domainChooser={serviceName}",
-        weatherMapUrl : "http://weathermap.ovh.net/",
-        loginUrl : "/auth",
         vmsUrl : "http://status.ovh.net/vms/",
         travauxUrl : "http://status.ovh.net/",
-        publicCloudUrl : "https://ca.ovh.com/manager/cloud/index.html#/",
-        vrackUrl : "https://ca.ovh.com/manager/cloud/index.html#/vrack",
-        nashaUrl: "https://ca.ovh.com/manager/cloud/index.html#/paas/nasha",
         UNIVERS      : "dedicated",
-        UNIVERSES : {
-            "PORTAL": "PORTAL",
-            "WEB": "WEB",
-            "DEDICATED": "DEDICATED",
-            "CLOUD": "CLOUD",
-            "TELECOM": "TELECOM",
-            "SUNRISE": "SUNRISE",
-            "V3": "V3"
-        },
         URLS      : {
-            loginUrl : "/auth",
             ASIA: {
                 support: "http://www.ovh.co.uk/support/",
                 support_contact: "https://www.ovh.com/ca/en/support/",
@@ -765,26 +720,11 @@ var constants = {
                 cs_CZ : "http://www.ovh.cz/podpora/new_nic.xml"
             }
         },
-        changelog_url : "engine/2api/changelog/",
         MANAGER_URLS : {
             "dedicated" : "https://ca.ovh.com/manager/index.html#/",
             "cloud"     : "https://ca.ovh.com/manager/cloud/index.html#/",
             "sunrise"   : "https://ca.ovh.com/manager/sunrise/index.html#/"
         },
-        NO_AUTORENEW_COUNTRIES : [
-            "ASIA",
-            "AU",
-            "CZ",
-            "PL",
-            "CA",
-            "QC",
-            "SG",
-            "WE",
-            "WS",
-            "MA",
-            "TN",
-            "SN"
-        ],
         TOP_GUIDES: {},
         accountCreation: {
             DE : "http://www.ovh.de/support/new_nic.xml",
@@ -835,24 +775,10 @@ var constants = {
     },
     US : {
         RENEW_URL : "/cgi-bin/order/renew.cgi?domainChooser={serviceName}",
-        weatherMapUrl : "http://weathermap.ovh.net/",
-        loginUrl : "/auth",
         vmsUrl : "http://status.ovh.net/vms/",
         travauxUrl : "http://status.ovh.net/",
-        publicCloudUrl : "/manager/cloud/index.html#/",
-        vrackUrl : "/manager/cloud/index.html#/vrack",
-        nashaUrl: "/manager/cloud/index.html#/paas/nasha",
-        UNIVERS      : "dedicated",
-        UNIVERSES : {
-            "PORTAL": "PORTAL",
-            "WEB": "WEB",
-            "DEDICATED": "DEDICATED",
-            "CLOUD": "CLOUD",
-            "TELECOM": "TELECOM",
-            "SUNRISE": "SUNRISE"
-        },
-        URLS      : {
-            loginUrl : "/auth",
+        UNIVERS : "dedicated",
+        URLS : {
             US: {
                 express_order: "https://ovh.us/order/express/#/express/",
                 support: "http://www.ovh.co.uk/support/",
@@ -925,25 +851,10 @@ var constants = {
                 cs_CZ : "http://www.ovh.cz/podpora/new_nic.xml"
             }
         },
-        changelog_url : "engine/2api/changelog/",
         MANAGER_URLS : {
             "dedicated": "https://www.ovhcloud.com/manager/dedicated/",
             //"cloud"     : "/manager/cloud/index.html#/"
         },
-        NO_AUTORENEW_COUNTRIES : [
-            "ASIA",
-            "AU",
-            "CZ",
-            "PL",
-            "CA",
-            "QC",
-            "SG",
-            "WE",
-            "WS",
-            "MA",
-            "TN",
-            "SN"
-        ],
         TOP_GUIDES: {
             sd: {
                 en_GB: [
