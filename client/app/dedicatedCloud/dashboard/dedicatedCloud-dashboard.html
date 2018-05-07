@@ -18,7 +18,7 @@
                                     <strong class="d-block"
                                             data-translate="dedicatedCloud_type">
                                     </strong>
-                                    <span data-translate="{{ ('dedicatedCloud_type_' + dedicatedCloud.solution) + ' ' + (dedicatedCloud.solution === 'VSPHERE' && dedicatedCloud.version ? dedicatedCloud.version.major : '') }}"></span>
+                                    <span data-ng-bind="('dedicatedCloud_type_' + dedicatedCloud.solution | translate) + ' ' + (dedicatedCloud.solution === 'VSPHERE' && dedicatedCloud.version ? dedicatedCloud.version.major : '')"></span>
                                 </div>
                             </li>
                             <li class="oui-tile__item">
