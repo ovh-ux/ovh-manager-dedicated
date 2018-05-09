@@ -115,7 +115,7 @@
    <translation id="wizard_renew" qtlid="118962">Renovar</translation>
    <translation id="wizard_next" qtlid="17743">Siguiente</translation>
    <translation id="wizard_previous" qtlid="17431">Anterior</translation>
-   <translation id="wizard_breadcrumb" qtlid="158682">Etapa {0} de {1}</translation>
+   <translation id="wizard_breadcrumb">Étape {{ currentStep }} sur {{ stepCount }}</translation>
    <translation id="pagination_page" qtlid="129123">Página {0}/{1}</translation>
    <translation id="pagination_go" qtlid="31522">OK</translation>
    <translation id="pagination_display" qtlid="69353">Ver</translation>
@@ -188,12 +188,14 @@
    <translation id="common_no" qtlid="34788">No</translation>
    <translation id="common_delete" qtlid="2414">Eliminar</translation>
    <translation id="required" qtlid="182514">Campo obligatorio</translation>
-
+   <translation id="required_fields" qtlid="433550">Los campos con asterisco son obligatorios.</translation>
+   <translation id="select_placeholder" qtlid="447963">Seleccione...</translation>
+   <translation id="common_newtab" qtlid="402165">nueva pestaña</translation>
    <translation id="contract_next" qtlid="17743">Siguiente</translation>
    <translation id="contract_previous" qtlid="17431">Anterior</translation>
-   <translation id="download_contract" qtlid="180369">Abrir el contrato «{0}» en PDF</translation>
+   <translation id="download_contract">Ouvrir le contrat "{{ name }}" en PDF</translation>
    <translation id="contract_help" qtlid="180382">Hay que recorrer los contratos completos para poder aceptarlos.</translation>
-   <translation id="contracts_list_title" qtlid="180395">Hay {0} contratos pendientes de consultar.</translation>
+   <translation id="contracts_list_title">Il y a {{ count }} contrats à consulter.</translation>
    <translation id="contract_list_title" qtlid="180408">Hay un contrato pendiente de consultar.</translation>
    <translation id="contracts_agree" qtlid="180421">Acepto los contratos</translation>
    <translation id="contract_agree" qtlid="180434">Acepto el contrato</translation>
@@ -201,13 +203,13 @@
    <translation id="day_1" qtlid="28807">1 día</translation>
    <translation id="day_other" qtlid="158578">{} días</translation>
    <translation id="month_1" qtlid="70241">1 mes</translation>
-   <translation id="month_other" qtlid="158591">{} meses</translation>
+   <translation id="month_other">{0} mois</translation>
    <translation id="year_1" qtlid="70277">1 año</translation>
    <translation id="year_other" qtlid="158604">{} años</translation>
-   <translation id="upto" qtlid="158617">Hasta el {0}</translation>
+   <translation id="upto">Jusqu'au {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Hasta el día 1 del mes siguiente</translation>
    <translation id="engage" qtlid="158643">Contratar {0}</translation>
-   <translation id="price_ht_label" qtlid="166183">{0}&#160;+ IVA</translation>
+   <translation id="price_ht_label">{{ price }}&#160;HT</translation>
    <translation id="price_ttc_label" qtlid="166196">{0}&#160;IVA incl.</translation>
    <translation id="price_free" qtlid="195776">Incluido</translation>
    <translation id="price_label_yearly" qtlid="288977">/año</translation>
@@ -539,8 +541,8 @@
    <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="343967">Se ha registrado un error en <strong>{0}</strong> cuenta(s) PayPal. Acceda a <a href="#/billing/mean" class="alert-link">«Facturación»</a> para realizar las comprobaciones necesarias y/o registrar una nueva forma de pago.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="374958">Su cuenta de prepago tiene un saldo negativo de <strong>{0}</strong> a {{ '{1}' | date:'medium'}}. Acceda a la sección «<a href="#/billing/ovhaccount" class="alert-link">Facturación</a>» para regularizar su situación.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369545">Tiene un saldo negativo de <strong>{0}</strong> (incluyendo un importe de {1} no vencido). Acceda a la sección <a href="{2}" class="alert-link">«Facturación»</a> para regularizar su situación.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="343993">Tiene un saldo pendiente de <strong>{0}</strong>. Acceda a <a href="{1}" class="alert-link"> «Facturación»</a> para regularizar su situación.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369545">Tiene un saldo pendiente de <strong>{0}</strong> (incluyendo un importe de {1} no vencido). Acceda a la sección <a href="{2}" class="alert-link">«Facturación»</a> para regularizar su situación.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="343993">Tiene un saldo pendiente de <strong>{0}</strong>. Acceda a la sección <a href="{1}" class="alert-link">«Facturación»</a> para regularizar su situación.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="383919">Su cuenta de prepago ha alcanzado el umbral que usted ha establecido. Para más información, acceda a la sección «<a href="#/billing/ovhaccount" class="alert-link">Facturación</a>».</translation>
 
@@ -555,8 +557,8 @@
    <translation id="core_service_expiration_auto_renew" qtlid="414986">Renovación prevista el</translation>
    <translation id="core_service_renew_button" qtlid="118962">Renovar</translation>
 
-   <translation id="core_user_enterprise_retail_prices" qtlid="480776">Note : Les prix indiqués sont des prix standards du catalogue et peuvent ne pas refléter les conditions négociées. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
-   <translation id="core_user_enterprise_retail_prices_hpc" qtlid="480789">Note : Les prix indiqués sont une estimation basée sur le calcul au prorata de ce module pour l'aligner sur la période de facturation de votre contrat actuel. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
+   <translation id="core_user_enterprise_retail_prices" qtlid="480776">Atención: Los precios indicados son precios estándares del catálogo y no pueden reflejar las condiciones negociadas. Consulte su factura mensual para una información más detallada.</translation>
+   <translation id="core_user_enterprise_retail_prices_hpc" qtlid="480789">Atención: Los precios indicados son una estimación basada en el cálculo proporcional de este módulo para adaptarlo al período de facturación de su actual contrato. Consulte su factura mensual para una información más detallada.</translation>
 
    <translation id="browser_alert_not_supported" qtlid="405357">Su navegador no es compatible.</translation>
    <translation id="browser_alert_deprecated" qtlid="405370">Su&#160;navegador no está actualizado y puede contener fallos de seguridad o compatibilidad.</translation>

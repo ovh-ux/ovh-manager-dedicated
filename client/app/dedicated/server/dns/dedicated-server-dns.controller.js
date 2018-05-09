@@ -1,22 +1,23 @@
-angular.module("App").controller("SecondaryDnsCtrl", ($scope, $http, $stateParams, $translate, Server) => {
-    $scope.loading = true;
-    $scope.secondaryDnsList = null;
+angular.module("App").controller("SecondaryDnsCtrl", ($scope, $timeout, $stateParams, $translate, Server) => {
 
-    function init () {
-        $scope.loading = true;
-        Server.getSecondaryDnsList($stateParams.productId).then(
-            (data) => {
-                $scope.secondaryDnsList = data.list.results;
-                $scope.loading = false;
-            },
-            (err) => {
-                $scope.loading = false;
-                $scope.setMessage($translate.instant("server_configuration_secondary_dns_fail"), err);
+    $scope.loadSecondaryDns = ({ offset, pageSize }) => Server.getSecondaryDnsList($stateParams.productId, pageSize, offset - 1).then(
+        (result) => ({
+            data: _.get(result, "list.results"),
+            meta: {
+                totalCount: result.count
             }
-        );
-    }
+        }),
+        (err) => {
+            $scope.setMessage($translate.instant("server_configuration_secondary_dns_fail"), err);
+        }
+    );
 
-    $scope.$on("dedicated.secondarydns.reload", init);
+    $scope.refresh = () => {
+        $scope.reload = true;
+        $timeout(() => {
+            $scope.reload = false;
+        });
+    };
 
-    init();
+    $scope.$on("dedicated.secondarydns.reload", $scope.refresh);
 });
