@@ -39,8 +39,6 @@ angular.module("Module.otrs.controllers").controller("otrsCtrl", [
                 subject: null
             };
 
-            moment.locale($scope.selectedLanguage.value.split("_")[0]);
-
             $scope.tickets = {
                 ids: [],
                 detail: []
