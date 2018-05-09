@@ -55,7 +55,7 @@
    <translation id="autorenew_service_autorenew_active_checkbox_label" qtlid="369401">Hyväksy automaattinen uusinta ilmoitetuille palveluille</translation>
    <translation id="autorenew_service_autorenew_day" qtlid="229515">Automaattiuusinnan päivämäärä:</translation>
    <translation id="autorenew_service_autorenew_day_tooltip" qtlid="229528">Mikäli uudistat palvelut automaattisesti, voit valita päivämäärän milloin palvelut uusiutuvat</translation>
-   <translation id="autorenew_service_autorenew_day_inactive" qtlid="105310">Toimeton</translation>
+   <translation id="autorenew_service_autorenew_day_inactive" qtlid="105310">Pois käytöstä</translation>
    <translation id="autorenew_service_autorenew_day_inactive_warning" qtlid="229541">Automaattiuusinta toimii vain mikäli uusintapäivämäärä on valittu.</translation>
    <translation id="autorenew_service_autorenew_guide_help" qtlid="275688">Tarvitseko apua palveluiden uusimiseen?</translation>
    <translation id="autorenew_service_autorenew_update" qtlid="369414">Automaattisen uusinnan asetusten päivitys</translation>
@@ -250,12 +250,18 @@
    <translation id="common_time_period_in_months" qtlid="220148">{0} kk</translation>
    <translation id="common_time_period_one_month" qtlid="70241">1 kuukausi</translation>
 
-   <translation id="pagination_page" qtlid="129123">Sivu {0}/{1}</translation>
+   <translation id="pagination_page">Page {{ current }} / {{ last }}</translation>
    <translation id="pagination_display" qtlid="69353">Näytä</translation>
    <translation id="pagination_display_all" qtlid="139884">Kaikki</translation>
    <translation id="pagination_go" qtlid="224880">Ok</translation>
    <translation id="history_title2" qtlid="159540">Laskut</translation>
    <translation id="history_invoice_loading_errors" qtlid="402984">Tapahtui virhe {0} laskua haettaessa.</translation>
+   <translation id="history_invoices_postal_mail">Recevoir mes factures au format papier</translation>
+
+   <translation id="history_invoices_choice_modal_activation">Voulez-vous confirmer l'activation de cette option ?</translation>
+   <translation id="history_invoices_choice_modal_deactivation">Voulez-vous confirmer la désactivation de cette option ?</translation>
+   <translation id="history_invoices_choice_modal_update_success">Le paramètre a bien été mis à jour</translation>
+   <translation id="history_invoices_choice_modal_update_error">Une erreur est survenue lors de la mise à jour du paramètre</translation>
 
    <translation id="history_table_head_date" qtlid="374508">Laskun päivämäärä</translation>
    <translation id="history_table_head_id" qtlid="16445">Viite</translation>
@@ -286,6 +292,7 @@
    <translation id="payments_table_actions_tooltip" qtlid="398820">Maksun lisätiedot</translation>
    <translation id="payments_table_type_not_available" qtlid="374560">Tietoja ei saatavilla</translation>
    <translation id="payments_table_empty" qtlid="398833">Valitulla jaksolla ei ole maksuja.</translation>
+   <translation id="payments_request_pending">Un règlement de solde est en cours. Cliquez <a href="{0}">sur ce lien</a> pour en savoir plus.</translation>
    <translation id="payments_details_link" qtlid="398846">Katso maksun tiedot</translation>
    <translation id="payment_details_payment_id" qtlid="16445">Viite</translation>
    <translation id="payment_details_payment_date" qtlid="24523">Päivämäärä</translation>
