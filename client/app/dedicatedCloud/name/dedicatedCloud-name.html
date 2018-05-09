@@ -1,0 +1,30 @@
+<div data-ng-controller="DedicatedCloudNameCtrl as $ctrl">
+    <div data-wizard
+         data-wizard-on-cancel="$ctrl.closeModal.bind($ctrl)"
+         data-wizard-on-finish="$ctrl.updateDescription.bind($ctrl)"
+         data-wizard-title="'dedicatedCloud_' + $ctrl.translateWord + '_modify_title' | translate"
+         data-wizard-confirm-button-text="'common_change' | translate">
+
+         <div class="text-center"
+             data-ng-if="$ctrl.updating">
+             <oui-spinner></oui-spinner>
+         </div>
+
+        <div data-wizard-step
+             data-wizard-step-valid="!$ctrl.updating">
+
+            <div class="form-group"
+                 data-ng-if="!$ctrl.updating">
+                <label for="description"
+                       class="control-label"
+                       data-translate="{{ 'dedicatedCloud_' + $ctrl.translateWord }}">
+                </label>
+                <input type="text"
+                       id="description"
+                       name="description"
+                       class="form-control"
+                       data-ng-model="$ctrl.newValue"/>
+            </div>
+        </div>
+    </div>
+</div>

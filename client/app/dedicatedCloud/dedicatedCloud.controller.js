@@ -1,5 +1,6 @@
 angular.module("App").controller("DedicatedCloudCtrl", [
     "$scope",
+    "$state",
     "$timeout",
     "$stateParams",
     "$q",
@@ -10,7 +11,7 @@ angular.module("App").controller("DedicatedCloudCtrl", [
     "$translate",
     "Module.services.notification",
     "User",
-    function ($scope, $timeout, $stateParams, $q, $log, featureAvailability, step, DedicatedCloud, $translate, Notification, User) {
+    function ($scope, $state, $timeout, $stateParams, $q, $log, featureAvailability, step, DedicatedCloud, $translate, Notification, User) {
         "use strict";
 
         $scope.HDS_READY_NOTIFICATION = "HDS_READY_NOTIFICATION";
@@ -37,6 +38,36 @@ angular.module("App").controller("DedicatedCloudCtrl", [
 
         $scope.dedicatedCloud = {};
 
+        function showNotificationIfRequired (notification) {
+            Notification.checkIfStopNotification(notification, $stateParams.productId)
+                .then((stopNotification) => {
+                    $scope.notifications[notification] = !stopNotification;
+                })
+                .catch((error) => {
+                    $scope.notifications[notification] = true;
+                    $log.error(error);
+                });
+        }
+
+        function handleCancelConfirmation () {
+            if ($stateParams.action === "confirmcancel") {
+                $scope.setAction("terminate/confirm/dedicatedCloud-terminate-confirm");
+            }
+        }
+
+        function loadNewPrices () {
+            return DedicatedCloud.getNewPrices($stateParams.productId).then((newPrices) => {
+                $scope.newPriceInformation = newPrices.resources;
+                $scope.hasChangePrices = newPrices.resources.filter((resource) => resource.changed === true).length > 0;
+            });
+        }
+
+        function loadUserInfo () {
+            return User.getUser().then((user) => {
+                $scope.dedicatedCloud.email = user.email;
+            });
+        }
+
         $scope.loadDedicatedCloud = function () {
             $scope.message = null;
             DedicatedCloud.getSelected($stateParams.productId, true)
@@ -48,6 +79,8 @@ angular.module("App").controller("DedicatedCloudCtrl", [
                     }
                     $scope.dedicatedCloudDescription.model = angular.copy($scope.dedicatedCloud.description);
                     loadNewPrices();
+                    handleCancelConfirmation();
+                    loadUserInfo();
                     $scope.showHdsReadyNotificationIfRequired($scope.HDS_READY_NOTIFICATION);
                 })
                 .catch((data) => {
@@ -102,6 +135,10 @@ angular.module("App").controller("DedicatedCloudCtrl", [
 
         $scope.getRight = function (order) {
             return $scope.dedicatedCloud ? $.inArray(order, $scope.dedicatedCloud.orderRight) === -1 : false;
+        };
+
+        $scope.stateGo = function (stateName) {
+            $state.go(stateName);
         };
 
         // Action + message
@@ -227,24 +264,6 @@ angular.module("App").controller("DedicatedCloudCtrl", [
             }
             return "-";
         };
-
-        function showNotificationIfRequired (notification) {
-            Notification.checkIfStopNotification(notification, $stateParams.productId)
-                .then((stopNotification) => {
-                    $scope.notifications[notification] = !stopNotification;
-                })
-                .catch((error) => {
-                    $scope.notifications[notification] = true;
-                    $log.error(error);
-                });
-        }
-
-        function loadNewPrices () {
-            return DedicatedCloud.getNewPrices($stateParams.productId).then((newPrices) => {
-                $scope.newPriceInformation = newPrices.resources;
-                $scope.hasChangePrices = newPrices.resources.filter((resource) => resource.changed === true).length > 0;
-            });
-        }
 
         $scope.loadDedicatedCloud();
     }

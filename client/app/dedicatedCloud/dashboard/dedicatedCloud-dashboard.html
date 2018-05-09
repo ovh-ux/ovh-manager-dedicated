@@ -15,6 +15,26 @@
                         <div class="oui-tile__item">
                             <dl class="oui-tile__definition">
                                 <dt class="oui-tile__term"
+                                    data-translate="dedicatedCloud_description"></dt>
+                                <dd class="oui-tile__description"
+                                    data-ng-bind="dedicatedCloud.description"></dd>
+                            </dl>
+                            <div class="oui-tile__actions">
+                                <oui-action-menu
+                                    aria-label="{{:: 'menu_action_label' | translate:{t0: ('dedicatedCloud_description' | translate)} }}"
+                                    data-compact
+                                    data-align="end">
+                                    <oui-action-menu-item
+                                        aria-label="{{:: 'common_change' | translate }}"
+                                        data-text="{{:: 'common_change' | translate }}"
+                                        on-click="setAction('name/dedicatedCloud-name',  { value: dedicatedCloud.description, path: 'dedicatedCloud.description'})">
+                                    </oui-action-menu-item>
+                                </oui-action-menu>
+                            </div>
+                        </div>
+                        <div class="oui-tile__item">
+                            <dl class="oui-tile__definition">
+                                <dt class="oui-tile__term"
                                     data-translate="dedicatedCloud_type"></dt>
                                 <dd class="oui-tile__description"
                                     data-translate="{{ ('dedicatedCloud_type_' + dedicatedCloud.solution) + ' ' + (dedicatedCloud.solution === 'VSPHERE' && dedicatedCloud.version ? dedicatedCloud.version.major : '') }}"></dd>
@@ -70,6 +90,18 @@
                                 <dd class="oui-tile__description"
                                     data-ng-bind="dedicatedCloud.ipRipeCount"></dd>
                             </dl>
+                            <div class="oui-tile__actions">
+                                <oui-action-menu
+                                    aria-label="{{:: 'menu_action_label' | translate:{t0: ('dedicatedCloud_order_block' | translate)} }}"
+                                    data-compact
+                                    data-align="end">
+                                    <oui-action-menu-item
+                                        aria-label="{{:: 'dedicatedCloud_order_block' | translate }}"
+                                        data-text="{{:: 'dedicatedCloud_order_block' | translate }}"
+                                        data-href="#/configuration/ip?serviceName={{dedicatedCloud.name}}">
+                                    </oui-action-menu-item>
+                                </oui-action-menu>
+                            </div>
                         </div>
                         <div class="oui-tile__item"
                              data-ng-if="dedicatedCloud.ipArinCount > 0">
@@ -79,6 +111,18 @@
                                 <dd class="oui-tile__description"
                                     data-ng-bind="dedicatedCloud.ipArinCount"></dd>
                             </dl>
+                            <div class="oui-tile__actions">
+                                <oui-action-menu
+                                    aria-label="{{:: 'menu_action_label' | translate:{t0: ('dedicatedCloud_order_block' | translate)} }}"
+                                    data-compact
+                                    data-align="end">
+                                    <oui-action-menu-item
+                                        aria-label="{{:: 'dedicatedCloud_order_block' | translate }}"
+                                        data-text="{{:: 'dedicatedCloud_order_block' | translate }}"
+                                        data-href="#/configuration/ip?serviceName={{dedicatedCloud.name}}">
+                                    </oui-action-menu-item>
+                                </oui-action-menu>
+                            </div>
                         </div>
                         <div class="oui-tile__item"
                              data-ng-if="dedicatedCloud.ipRipeCount === 0">
@@ -88,6 +132,18 @@
                                 <dd class="oui-tile__description"
                                     data-translate="dedicatedCloud_nb_bloc_IP_no_data"></dd>
                             </dl>
+                            <div class="oui-tile__actions">
+                                <oui-action-menu
+                                    aria-label="{{:: 'menu_action_label' | translate:{t0: ('dedicatedCloud_order_block' | translate)} }}"
+                                    data-compact
+                                    data-align="end">
+                                    <oui-action-menu-item
+                                        aria-label="{{:: 'dedicatedCloud_order_block' | translate }}"
+                                        data-text="{{:: 'dedicatedCloud_order_block' | translate }}"
+                                        data-href="#/configuration/ip?serviceName={{dedicatedCloud.name}}">
+                                    </oui-action-menu-item>
+                                </oui-action-menu>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -248,6 +304,105 @@
                 </div>
             </div>
 
+        </div>
+
+        <div class="row d-md-flex mb-5">
+            <div class="col-md-4">
+                <div class="oui-tile mb-5 h-100">
+                    <h3 class="oui-header_4 oui-tile__title">
+                        <span data-translate="dedicatedCloud_subscription_title"></span>
+                    </h3>
+                    <div class="oui-tile__body">
+                        <div class="oui-tile__item"
+                             data-ng-if="dedicatedCloud.isEnableMonthly">
+                            <dl class="oui-tile__definition"
+                                data-ng-if="!loading">
+                                <dt class="oui-tile__term"
+                                    data-translate="{{ 'dedicatedCloud_subscription_resource' }}"></dt>
+                                <dd class="oui-tile__description"
+                                    data-translate="{{ dedicatedCloud.isEnableMonthly ? 'dedicatedCloud_subscription_resource_yearly' : 'dedicatedCloud_subscription_resource_monthly' }}">
+                                </dd>
+                            </dl>
+                            <div class="oui-tile__actions">
+                                <oui-action-menu
+                                    aria-label="{{:: 'menu_action_label' | translate:{t0: ('dedicatedCloud_updateResource_toMonthly' | translate)} }}"
+                                    data-compact
+                                    data-align="end">
+                                    <oui-action-menu-item
+                                        aria-label="{{:: 'dedicatedCloud_updateResource_toMonthly' | translate }}"
+                                        data-text="{{:: 'dedicatedCloud_updateResource_toMonthly' | translate }}"
+                                        on-click="setAction('resource/upgrade/dedicatedCloud-resource-upgrade', {
+                                            upgradeType: 'hourlyToMonthly',
+                                            type: 'all'
+                                        })">
+                                    </oui-action-menu-item>
+                                </oui-action-menu>
+                            </div>
+                        </div>
+                        <div class="oui-tile__item">
+                            <dl class="oui-tile__definition"
+                                data-ng-if="!loading">
+                                <dt class="oui-tile__term"
+                                    data-translate="{{ 'dedicatedCloud_subscription_licence' }}"></dt>
+                                <dd class="oui-tile__description"></dd>
+                            </dl>
+                            <div class="oui-tile__actions">
+                                <oui-action-menu
+                                    aria-label="{{:: 'menu_action_label' | translate:{t0: ('dedicatedCloud_order_license' | translate)} }}"
+                                    data-compact
+                                    data-align="end">
+                                    <oui-action-menu-item
+                                        aria-label="{{:: 'dedicatedCloud_order_license' | translate }}"
+                                        data-text="{{:: 'dedicatedCloud_order_license' | translate }}"
+                                        data-on-click="stateGo('app.license.order')">
+                                    </oui-action-menu-item>
+                                </oui-action-menu>
+                            </div>
+                        </div>
+                        <div class="oui-tile__item">
+                            <dl class="oui-tile__definition"
+                                data-ng-if="!loading">
+                                <dt class="oui-tile__term"
+                                    data-translate="{{ 'dedicatedCloud_subscription_mailing_list' }}"></dt>
+                                <dd class="oui-tile__description"
+                                    data-ng-bind="dedicatedCloud.email"></dd>
+                            </dl>
+                            <div class="oui-tile__actions">
+                                <oui-action-menu
+                                    aria-label="{{:: 'menu_action_label' | translate:{t0: ('dedicatedCloud_subscribe_mailing' | translate)} }}"
+                                    data-compact
+                                    data-align="end">
+                                    <oui-action-menu-item
+                                        aria-label="{{:: 'dedicatedCloud_subscribe_mailing' | translate }}"
+                                        data-text="{{:: 'dedicatedCloud_subscribe_mailing' | translate }}"
+                                        data-on-click="stateGo('.ml-subscribe')">
+                                    </oui-action-menu-item>
+                                </oui-action-menu>
+                            </div>
+                        </div>
+                        <div class="oui-tile__item">
+                            <dl class="oui-tile__definition"
+                                data-ng-if="!loading">
+                                <dt class="oui-tile__term"
+                                    data-translate="{{ 'dedicatedCloud_subscription_renew' }}"></dt>
+                                <dd class="oui-tile__description"></dd>
+                            </dl>
+                            <div class="oui-tile__actions">
+                                <oui-action-menu
+                                    aria-label="{{:: 'menu_action_label' | translate:{t0: ('dedicatedCloud_close_service' | translate)} }}"
+                                    data-compact
+                                    data-align="end">
+                                    <oui-action-menu-item
+                                        aria-label="{{:: 'dedicatedCloud_close_service' | translate }}"
+                                        data-text="{{:: 'dedicatedCloud_close_service' | translate }}"
+                                        data-on-click="setAction('terminate/dedicatedCloud-terminate', dedicatedCloud)">
+                                    </oui-action-menu-item>
+                                </oui-action-menu>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
