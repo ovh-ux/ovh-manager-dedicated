@@ -1,4 +1,4 @@
-angular.module("App").controller("RequestFtpBackupPasswordCtrl", ($scope, $stateParams, Server, Alerter) => {
+angular.module("App").controller("RequestFtpBackupPasswordCtrl", ($scope, $stateParams, $translate, Server, Alerter) => {
     const alert = "server_tab_ftpbackup_alert";
     $scope.ftpBackup = $scope.currentActionData;
     $scope.loading = false;
@@ -9,10 +9,10 @@ angular.module("App").controller("RequestFtpBackupPasswordCtrl", ($scope, $state
         Server.requestFtpBackupPassword($stateParams.productId)
             .then(
                 () => {
-                    Alerter.success($scope.tr("server_configuration_ftpbackup_lost_password_success"), alert);
+                    Alerter.success($translate.instant("server_configuration_ftpbackup_lost_password_success"), alert);
                 },
                 (data) => {
-                    Alerter.alertFromSWS($scope.tr("server_configuration_ftpbackup_lost_password_failure"), data.data, alert);
+                    Alerter.alertFromSWS($translate.instant("server_configuration_ftpbackup_lost_password_failure"), data.data, alert);
                 }
             )
             .finally(() => {

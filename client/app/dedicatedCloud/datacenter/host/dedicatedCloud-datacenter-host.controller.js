@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudSubDatacentersHostCtrl", ($scope, $state, $stateParams, $q, constants, DedicatedCloud) => {
+angular.module("App").controller("DedicatedCloudSubDatacentersHostCtrl", ($scope, $state, $stateParams, $q, $translate, constants, DedicatedCloud) => {
     "use strict";
 
     $scope.hosts = null;
@@ -19,7 +19,7 @@ angular.module("App").controller("DedicatedCloudSubDatacentersHostCtrl", ($scope
                 $scope.hosts.list.results = hostsWithUsage;
             })
             .catch((data) => {
-                $scope.setMessage($scope.tr("dedicatedCloud_tab_hosts_loading_error"), angular.extend(data, { type: "ERROR" }));
+                $scope.setMessage($translate.instant("dedicatedCloud_tab_hosts_loading_error"), angular.extend(data, { type: "ERROR" }));
             })
             .finally(() => {
                 $scope.loaders.hosts = false;

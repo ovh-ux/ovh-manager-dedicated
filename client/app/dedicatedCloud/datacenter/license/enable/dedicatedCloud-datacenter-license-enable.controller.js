@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudSubDatacenterLicencesSplaEnableCtrl", ($scope, $stateParams, DedicatedCloud, $rootScope) => {
+angular.module("App").controller("DedicatedCloudSubDatacenterLicencesSplaEnableCtrl", ($scope, $stateParams, $translate, DedicatedCloud, $rootScope) => {
     "use strict";
 
     $scope.spla = {
@@ -17,7 +17,7 @@ angular.module("App").controller("DedicatedCloudSubDatacenterLicencesSplaEnableC
             (data) => {
                 $scope.spla.loading = false;
                 $scope.resetAction();
-                $scope.setMessage($scope.tr("dedicatedCloud_tab_licences_active_spla_load_fail"), angular.extend(data, { type: "ERROR" }));
+                $scope.setMessage($translate.instant("dedicatedCloud_tab_licences_active_spla_load_fail"), angular.extend(data, { type: "ERROR" }));
             }
         );
     };
@@ -29,13 +29,16 @@ angular.module("App").controller("DedicatedCloudSubDatacenterLicencesSplaEnableC
                 $scope.spla.loading = false;
                 $scope.resetAction();
                 window.open(data.url, "_blank");
-                $scope.setMessage($scope.tr("dedicatedCloud_tab_licences_active_spla_success", [data.url, data.orderId]), true);
+                $scope.setMessage($translate.instant("dedicatedCloud_tab_licences_active_spla_success", {
+                    t0: data.url,
+                    t1: data.orderId
+                }), true);
             },
             (data) => {
                 $scope.spla.loading = false;
                 $scope.resetAction();
                 $rootScope.$broadcast("datacenter.veeam.reload");
-                $scope.setMessage($scope.tr("dedicatedCloud_tab_licences_active_spla_fail"), angular.extend(data, { type: "ERROR" }));
+                $scope.setMessage($translate.instant("dedicatedCloud_tab_licences_active_spla_fail"), angular.extend(data, { type: "ERROR" }));
             }
         );
     };

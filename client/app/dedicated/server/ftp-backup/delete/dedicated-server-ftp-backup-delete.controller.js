@@ -1,4 +1,4 @@
-angular.module("App").controller("DeleteFtpBackupCtrl", ($scope, $stateParams, Server, Alerter) => {
+angular.module("App").controller("DeleteFtpBackupCtrl", ($scope, $stateParams, $translate, Server, Alerter) => {
     const alert = "server_tab_ftpbackup_alert";
     $scope.ftpBackup = $scope.currentActionData;
     $scope.loading = false;
@@ -9,10 +9,10 @@ angular.module("App").controller("DeleteFtpBackupCtrl", ($scope, $stateParams, S
         Server.deleteFtpBackup($stateParams.productId)
             .then(
                 () => {
-                    Alerter.success($scope.tr("server_configuration_ftpbackup_delete_success"), alert);
+                    Alerter.success($translate.instant("server_configuration_ftpbackup_delete_success"), alert);
                 },
                 (data) => {
-                    Alerter.alertFromSWS($scope.tr("server_configuration_ftpbackup_delete_failure"), data.data, alert);
+                    Alerter.alertFromSWS($translate.instant("server_configuration_ftpbackup_delete_failure"), data.data, alert);
                 }
             )
             .finally(() => {

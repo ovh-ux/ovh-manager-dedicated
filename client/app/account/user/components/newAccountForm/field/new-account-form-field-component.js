@@ -10,22 +10,16 @@ angular.module("ovhSignupApp").component("newAccountFormField", {
     controller: [
         "$scope",
         "$filter",
-        "translator",
+        "$translate",
         "$q",
         "$timeout",
         "NewAccountFormConfig",
         "UserAccount.conf.BASE_URL",
 
-        function ($scope, $filter, translator, $q, $timeout, NewAccountFormConfig, BASE_URL) {
+        function ($scope, $filter, $translate, $q, $timeout, NewAccountFormConfig, BASE_URL) {
             "use strict";
 
             $scope.getTemplateUrl = () => `${BASE_URL}components/newAccountForm/field/new-account-form-field-component.html`;
-
-            // because i'm cheap and lazy
-            const $translate = {
-                instant: translator.tr
-            };
-            this.tr = $translate.instant;
 
             this.$onInit = function () {
                 // unique field identifier

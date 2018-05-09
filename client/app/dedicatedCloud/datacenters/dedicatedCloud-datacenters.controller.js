@@ -19,7 +19,7 @@ angular.module("App")
                 }))
                 .catch((err) => {
                     this.$scope.resetAction();
-                    this.$scope.setMessage(this.$scope.tr("dedicatedCloud_datacenters_loading_error"), {
+                    this.$scope.setMessage(this.$translate.instant("dedicatedCloud_datacenters_loading_error"), {
                         message: err.message,
                         type: "ERROR"
                     });

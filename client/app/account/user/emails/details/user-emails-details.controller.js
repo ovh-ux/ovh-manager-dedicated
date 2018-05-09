@@ -4,8 +4,9 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.em
     "UserAccount.services.emails",
     "Alerter",
     "$location",
+    "$translate",
 
-    function ($scope, $stateParams, Emails, Alerter, $location) {
+    function ($scope, $stateParams, Emails, Alerter, $location, $translate) {
         "use strict";
 
         $scope.previousPage = $location.search() && $location.search().previousPage ? $location.search().previousPage : 1;
@@ -46,7 +47,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.em
                         $scope.email.displayBodyCook = !!$scope.email.bodyCook;
                     },
                     (err) => {
-                        Alerter.error($scope.tr("otrs_email_detail_error", $scope.email.emailId), err.data, "otrs_email_detail");
+                        Alerter.error($translate.instant("otrs_email_detail_error", { t0: $scope.email.emailId }), err.data, "otrs_email_detail");
                     }
                 )
                 .finally(() => {

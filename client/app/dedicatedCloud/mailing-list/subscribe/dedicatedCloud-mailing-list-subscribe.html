@@ -5,7 +5,7 @@
 
         <div class="oui-modal__header">
             <a class="oui-icon oui-icon-close_thin oui-modal__close-button"
-               aria-label="{{ i18n.wizard_close }}"
+               aria-label="{{ 'wizard_close' | translate }}"
                data-ui-sref="^">
             </a>
         </div>
@@ -23,21 +23,22 @@
 
             <div class="oui-modal__body-text">
                 <h2 class="oui-modal__title"
-                    data-i18n-static="dedicatedCloud_subscribe_mailing">
+                    data-translate="dedicatedCloud_subscribe_mailing">
                 </h2>
 
-                <p data-ng-bind="tr('dedicatedCloud_subscribe_mailing_disabled', $ctrl.pccMl)"></p>
+                <p data-translate="dedicatedCloud_subscribe_mailing_disabled"
+                    data-translate-values="{ t0: $ctrl.pccMl }"></p>
             </div>
         </div>
 
         <div class="oui-modal__footer">
             <a class="oui-button oui-button_secondary"
-               data-i18n-static="wizard_cancel"
+               data-translate="wizard_cancel"
                data-ui-sref="^"
                data-ng-disabled="$ctrl.loading.enable">
             </a>
             <a class="oui-button oui-button_primary"
-               data-i18n-static="global_OK"
+               data-translate="global_OK"
                data-ng-disabled="$ctrl.loading.init || $ctrl.loading.enable"
                data-ui-sref="^">
             </a>
@@ -48,7 +49,7 @@
     <div data-wizard
          data-wizard-on-cancel="$ctrl.onWidzardCancel.bind($ctrl)"
          data-wizard-on-finish="$ctrl.onWidzardFinish.bind($ctrl)"
-         data-wizard-title="tr('dedicatedCloud_subscribe_mailing')"
+         data-wizard-title=":: 'dedicatedCloud_subscribe_mailing' | translate"
          data-ng-if="!$ctrl.loading.init && $ctrl.canSubscribe">
 
         <div data-wizard-step
@@ -58,7 +59,8 @@
                 <div class="form-group">
                     <label for="email"
                            class="control-label"
-                           data-ng-bind="tr('dedicatedCloud_subscribe_mailing_step1', 'pcc@ml.ovh.net')">
+                           data-translate="dedicatedCloud_subscribe_mailing_step1"
+                           data-translate-values="{ t0: 'pcc@ml.ovh.net' }">
                     </label>
                     <input type="email"
                            class="form-control wizard-container"
@@ -79,7 +81,8 @@
                 <oui-spinner></oui-spinner>
             </div>
             <p data-ng-if="!$ctrl.loading.subscribe"
-               data-ng-bind="tr('dedicatedCloud_subscribe_mailing_step2', [$ctrl.model.email, 'pcc@ml.ovh.net'])">
+               data-translate="dedicatedCloud_subscribe_mailing_step2"
+               data-translate-values="{ t0: $ctrl.model.email, t1: 'pcc@ml.ovh.net' }">
             </p>
 
         </div>

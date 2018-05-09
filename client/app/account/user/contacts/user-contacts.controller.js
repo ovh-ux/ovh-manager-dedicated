@@ -20,7 +20,7 @@ angular.module("UserAccount.controllers")
                     this.user = user;
                 })
                 .catch((err) => {
-                    this.Alerter.alertFromSWS(this.$scope.tr("user_account_contacts_error"), err, "useraccount.alerts.dashboardContacts");
+                    this.Alerter.alertFromSWS(this.$translate.instant("user_account_contacts_error"), err, "useraccount.alerts.dashboardContacts");
                     return this.$q.reject(err);
                 })
                 .finally(() => {

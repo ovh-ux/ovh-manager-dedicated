@@ -1,8 +1,9 @@
 angular.module("UserAccount.controllers").controller("UserAccount.controllers.agreements", [
     "$scope",
+    "$translate",
     "UserAccount.services.agreements",
     "Alerter",
-    function ($scope, Service, Alerter) {
+    function ($scope, $translate, Service, Alerter) {
         "use strict";
 
         function init () {
@@ -28,7 +29,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.ag
                 .then((agreements) => {
                     $scope.list = agreements;
                 }, (err) => {
-                    Alerter.error(`${$scope.tr("user_agreements_error")} ${_.get(err, "message") || err}`, "agreements_alerter");
+                    Alerter.error(`${$translate.instant("user_agreements_error")} ${_.get(err, "message") || err}`, "agreements_alerter");
                 })
                 .then(() => {
                     $scope.loading = false;

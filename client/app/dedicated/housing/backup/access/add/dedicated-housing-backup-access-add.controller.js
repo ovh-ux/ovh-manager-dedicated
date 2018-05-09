@@ -1,6 +1,6 @@
 // --------------ADD ACCESS------------------
 
-angular.module("App").controller("HousingAddAccessFtpBackupCtrl", ($rootScope, $scope, Housing, $stateParams, Alerter) => {
+angular.module("App").controller("HousingAddAccessFtpBackupCtrl", ($rootScope, $scope, $translate, Housing, $stateParams, Alerter) => {
     "use strict";
 
     const alert = "housing_tab_ftpbackup_alert";
@@ -25,16 +25,16 @@ angular.module("App").controller("HousingAddAccessFtpBackupCtrl", ($rootScope, $
             },
             (data) => {
                 $scope.resetAction();
-                Alerter.alertFromSWS($scope.tr("housing_configuration_ftpbackup_access_add_ip_failure"), data, alert);
+                Alerter.alertFromSWS($translate.instant("housing_configuration_ftpbackup_access_add_ip_failure"), data, alert);
             }
         );
     };
 
     $scope.addFtpBackup = function () {
         const resultMessages = {
-            OK: $scope.tr("housing_configuration_ftpbackup_access_add_success"),
-            PARTIAL: $scope.tr("housing_configuration_ftpbackup_access_add_partial"),
-            ERROR: $scope.tr("housing_configuration_ftpbackup_access_add_failure")
+            OK: $translate.instant("housing_configuration_ftpbackup_access_add_success"),
+            PARTIAL: $translate.instant("housing_configuration_ftpbackup_access_add_partial"),
+            ERROR: $translate.instant("housing_configuration_ftpbackup_access_add_failure")
         };
 
         $scope.loading = true;

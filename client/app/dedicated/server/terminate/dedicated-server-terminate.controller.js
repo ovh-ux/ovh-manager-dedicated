@@ -32,9 +32,9 @@ angular.module("App").controller("ServerTerminateCtrl", class ServerTerminateCtr
         switch (this.cancelSubscriptionForm.cancelMethod) {
         case "terminate":
             promise = this.Server.terminate(this.$stateParams.productId)
-                .then(() => this.Alerter.success(this.$scope.tr("server_close_service_success"), "server_dashboard_alert"))
+                .then(() => this.Alerter.success(this.$translate.instant("server_close_service_success"), "server_dashboard_alert"))
                 .catch((err) => {
-                    this.Alerter.alertFromSWS(this.$scope.tr("server_close_service_error"), err, "server_dashboard_alert");
+                    this.Alerter.alertFromSWS(this.$translate.instant("server_close_service_error"), err, "server_dashboard_alert");
                     return this.$q.reject(err);
                 });
             break;
@@ -43,9 +43,9 @@ angular.module("App").controller("ServerTerminateCtrl", class ServerTerminateCtr
             _.set(serviceInfosRenew, "renew.deleteAtExpiration", true);
 
             promise = this.Server.updateServiceInfos(this.$stateParams.productId, serviceInfosRenew)
-                .then(() => this.Alerter.success(this.$scope.tr("server_close_service_delete_at_expiration_activate_success"), "server_dashboard_alert"))
+                .then(() => this.Alerter.success(this.$translate.instant("server_close_service_delete_at_expiration_activate_success"), "server_dashboard_alert"))
                 .catch((err) => {
-                    this.Alerter.alertFromSWS(this.$scope.tr("server_close_service_delete_at_expiration_activate_error"), err, "server_dashboard_alert");
+                    this.Alerter.alertFromSWS(this.$translate.instant("server_close_service_delete_at_expiration_activate_error"), err, "server_dashboard_alert");
                     return this.$q.reject(err);
                 });
             break;
@@ -54,9 +54,9 @@ angular.module("App").controller("ServerTerminateCtrl", class ServerTerminateCtr
             _.set(serviceInfosRenew, "renew.deleteAtExpiration", false);
 
             promise = this.Server.updateServiceInfos(this.$stateParams.productId, serviceInfosRenew)
-                .then(() => this.Alerter.success(this.$scope.tr("server_close_service_cancel_success"), "server_dashboard_alert"))
+                .then(() => this.Alerter.success(this.$translate.instant("server_close_service_cancel_success"), "server_dashboard_alert"))
                 .catch((err) => {
-                    this.Alerter.alertFromSWS(this.$scope.tr("server_close_service_cancel_error"), err, "server_dashboard_alert");
+                    this.Alerter.alertFromSWS(this.$translate.instant("server_close_service_cancel_error"), err, "server_dashboard_alert");
                     return this.$q.reject(err);
                 });
             break;

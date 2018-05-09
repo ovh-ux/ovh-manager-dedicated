@@ -1,12 +1,13 @@
 angular.module("UserAccount.controllers").controller("UserAccount.controllers.doubleAuth", [
     "$scope",
     "$q",
+    "$translate",
     "UserAccount.services.doubleAuth.sms",
     "UserAccount.services.doubleAuth.totp",
     "UserAccount.services.doubleAuth.u2f",
     "UserAccount.services.doubleAuth.backupCode",
     "Alerter",
-    function ($scope, $q, DoubleAuthSmsService, DoubleAuthTotpService, DoubleAuthU2fService, DoubleAuthBackupCodeService, Alerter) {
+    function ($scope, $q, $translate, DoubleAuthSmsService, DoubleAuthTotpService, DoubleAuthU2fService, DoubleAuthBackupCodeService, Alerter) {
         "use strict";
 
         $scope.doubleAuth = {
@@ -39,7 +40,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
                         return smsDetails;
                     })
                 )
-                .catch((err) => Alerter.alertFromSWS($scope.tr("user_account_security_double_auth_type_sms_error"), err.data, "doubleAuthAlert"));
+                .catch((err) => Alerter.alertFromSWS($translate.instant("user_account_security_double_auth_type_sms_error"), err.data, "doubleAuthAlert"));
         }
 
         /**
@@ -60,7 +61,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
                         return totpDetails;
                     })
                 )
-                .catch((err) => Alerter.alertFromSWS($scope.tr("user_account_security_double_auth_type_totp_error"), err.data, "doubleAuthAlert"));
+                .catch((err) => Alerter.alertFromSWS($translate.instant("user_account_security_double_auth_type_totp_error"), err.data, "doubleAuthAlert"));
         }
 
         /**
@@ -81,7 +82,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
                         return u2fDetails;
                     })
                 )
-                .catch((err) => Alerter.alertFromSWS($scope.tr("user_account_security_double_auth_type_u2f_error"), err.data, "doubleAuthAlert"));
+                .catch((err) => Alerter.alertFromSWS($translate.instant("user_account_security_double_auth_type_u2f_error"), err.data, "doubleAuthAlert"));
         }
 
         /**
@@ -98,7 +99,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
                 })
                 .catch((err) => {
                     if (err.status !== 404) {
-                        Alerter.alertFromSWS($scope.tr("user_account_security_double_auth_type_backup_code_error"), err.data, "doubleAuthAlert");
+                        Alerter.alertFromSWS($translate.instant("user_account_security_double_auth_type_backup_code_error"), err.data, "doubleAuthAlert");
                     }
                     $scope.doubleAuth.backupCode = "disabled";
                 });
@@ -155,7 +156,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
             $scope.doubleAuth.isLoading = true;
             return $q
                 .all(promises)
-                .catch((err) => Alerter.alertFromSWS($scope.tr("user_account_security_double_auth_error"), err.data, "doubleAuthAlert"))
+                .catch((err) => Alerter.alertFromSWS($translate.instant("user_account_security_double_auth_error"), err.data, "doubleAuthAlert"))
                 .finally(() => {
                     $scope.doubleAuth.isLoading = false;
                 });

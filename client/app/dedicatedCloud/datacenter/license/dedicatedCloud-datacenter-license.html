@@ -1,6 +1,6 @@
 <div data-ng-controller="DedicatedCloudSubDatacenterLicencesCtrl">
 
-    <h2 data-i18n-static="dedicatedCloud_tab_license"></h2>
+    <h2 data-translate="dedicatedCloud_tab_license"></h2>
 
     <div class="text-center"
          data-ng-if="loading.licences">
@@ -10,8 +10,8 @@
          data-ng-show="!loading.licences && licences.spla != null">
         <div class="col-sm-9">
             <dl>
-                <dt data-i18n-static="dedicatedCloud_tab_licences_spla_state"></dt>
-                <dd data-ng-bind="tr('dedicatedCloud_tab_licences_spla_state_' + licences.spla)"></dd>
+                <dt data-translate="dedicatedCloud_tab_licences_spla_state"></dt>
+                <dd data-translate="{{ 'dedicatedCloud_tab_licences_spla_state_' + licences.spla }}"></dd>
             </dl>
         </div>
         <div class="col-sm-3">
@@ -20,7 +20,7 @@
                     data-ng-hide="licences.spla"
                     data-ng-click="canBeActivatedSpla() && setAction('datacenter/license/enable/dedicatedCloud-datacenter-license-enable')"
                     data-ng-disabled="!canBeActivatedSpla"
-                    data-i18n-static="dedicatedCloud_tab_licences_spla_on">
+                    data-translate="dedicatedCloud_tab_licences_spla_on">
             </button>
         </div>
     </div>

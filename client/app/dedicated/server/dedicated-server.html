@@ -13,10 +13,10 @@
                              data-ng-show="!reverseModel.edit">
                             <div class="d-flex">
                                 <h1 class="d-inline-block mb-0 word-break"
-                                    data-ng-bind="reverseModel.reverse || tr('server_configuration_reverse_not_configured')">
+                                    data-ng-bind="reverseModel.reverse || ('server_configuration_reverse_not_configured' | translate)">
                                 </h1>
                                 <button type="button"
-                                        title="{{ i18n.wizard_modify }}"
+                                        title="{{ 'wizard_modify' | translate }}"
                                         class="btn btn-icon my-auto ml-2"
                                         data-ng-click="editReverse()">
                                     <span class="oui-icon oui-icon-pen_line oui-icon_small" aria-hidden="true"></span>
@@ -38,14 +38,14 @@
                                        data-ng-model="newDisplayName.value">
                                 <button type="button"
                                         class="oui-button oui-button_small-width"
-                                        aria-label="{{ i18n.common_confirm }}"
+                                        aria-label="{{ 'common_confirm' | translate }}"
                                         data-ng-click="updateReverse()"
                                         data-ng-disabled="!formEditDisplayName.txtDisplayName.$dirty || formEditDisplayName.$invalid">
                                     <span class="oui-icon oui-icon-success oui-icon_small" aria-hidden="true"></span>
                                 </button>
                                 <button type="button"
                                         class="oui-button oui-button_small-width"
-                                        aria-label="{{ i18n.common_cancel }}"
+                                        aria-label="{{ 'common_cancel' | translate }}"
                                         data-ng-click="cancelReverseUpdate()">
                                     <span class="oui-icon oui-icon-error oui-icon_small" aria-hidden="true"></span>
                                 </button>
@@ -53,7 +53,7 @@
                             <div class="help-block"
                                  data-ng-if="formEditDisplayName.txtDisplayName.$dirty"
                                  data-ng-messages="formEditDisplayName.txtDisplayName.$error">
-                                <span data-ng-bind="::i18n.hosting_displayName_length"
+                                <span data-translate="hosting_displayName_length"
                                       data-ng-message="maxlength">
                                 </span>
                             </div>
@@ -67,7 +67,7 @@
                                 aria-haspopup="true"
                                 aria-expanded="false"
                                 data-toggle="dropdown">
-                            <span data-i18n-static="common_actions"></span>
+                            <span data-translate="common_actions"></span>
                             <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-right">
@@ -77,10 +77,10 @@
                                         data-ui-sref="app.dedicated.server.reboot"
                                         data-ng-disabled="disable.reboot || disable.byOtherTask || disable.install">
                                     <span>
-                                        <span data-i18n-static="server_configuration_reboot_title_button"></span>
+                                        <span data-translate="server_configuration_reboot_title_button"></span>
                                         <span class="label label-default"
                                               data-ng-show="disable.reboot"
-                                              data-i18n-static="server_configuration_doing">
+                                              data-translate="server_configuration_doing">
                                         </span>
                                     </span>
                                 </button>
@@ -88,24 +88,24 @@
                             <li data-ng-if="featureAvailability.allowDedicatedServerRenewByCgi() && server.canOrder && urlRenew">
                                 <a target="_blank"
                                    data-ng-href="{{ urlRenew }}"
-                                   data-i18n-static="wizard_renew">
+                                   data-translate="wizard_renew">
                                 </a>
                             </li>
                             <li data-ng-if="featureAvailability.allowDedicatedServerRenew()">
                                 <a data-ng-href="{{ '#/billing/autoRenew?selectedType=DEDICATED_SERVER&searchText=' + server.name}}"
-                                   data-i18n-static="wizard_renew">
+                                   data-translate="wizard_renew">
                                 </a>
                             </li>
                             <li data-ng-if="featureAvailability.allowDedicatedServerChangeOwner() && server.commercialRange !== 'housing'">
                                 <a target="_blank"
-                                   title="{{:: i18n.core_change_owner }} ({{:: i18n.core_new_window }})"
+                                   title="{{ 'core_change_owner' | translate }} ({{ 'core_new_window' | translate }})"
                                    data-ng-href="{{:: changeOwnerUrl }}"
-                                   data-i18n-static="core_change_owner">
+                                   data-translate="core_change_owner">
                                 </a>
                             </li>
                             <li data-ng-if="featureAvailability.hasContactChangement() && !server.isExpired">
                                 <a data-ui-sref="app.account.useraccount.contacts.services({ serviceName: server.name })"
-                                   data-i18n-static="contacts_management">
+                                   data-translate="contacts_management">
                                 </a>
                             </li>
                             <li data-ng-hide="server.isExpired">
@@ -114,7 +114,7 @@
                                         data-ng-click="setAction('terminate/dedicated-server-terminate', {
                                             serviceInfos: serviceInfos
                                         })"
-                                        data-i18n-static="server_close_service">
+                                        data-translate="server_close_service">
                                 </button>
                             </li>
                         </ul>
@@ -123,14 +123,14 @@
             </div>
             <div>
                 <div>
-                    <span data-ng-bind-template="{{ i18n.server_configuration_ipv4 }} : {{ server.ip }}"></span>
+                    <span data-ng-bind-template="{{ 'server_configuration_ipv4' | translate }} : {{ server.ip }}"></span>
                     <a class="btn btn-transparent"
                        data-ng-href="{{ '#/configuration/ip?tab=IP&serviceName=' + server.name }}">
                         <span class="fa fa-gear" aria-hidden="true"></span>
-                        <span data-i18n-static="server_configuration_ipv4_manage"></span>
+                        <span data-translate="server_configuration_ipv4_manage"></span>
                     </a>
                 </div>
-                <div data-ng-bind-template="{{ i18n.server_configuration_ipv6 }} : {{ server.ipv6 }}"></div>
+                <div data-ng-bind-template="{{ 'server_configuration_ipv6' | translate }} : {{ server.ipv6 }}"></div>
             </div>
         </header>
         <ovh-tabs data-tabs="tabs"
@@ -144,12 +144,12 @@
             <div class="alert alert-danger"
                  role="alert"
                  data-ng-if="server.isExpired"
-                 data-i18n-static="common_expired">
+                 data-translate="common_expired">
             </div>
             <div class="alert alert-danger"
                  role="alert"
                  data-ng-if="server.state == 'HACKED' || server.state == 'HACKED_BLOCKED'"
-                 data-ng-bind="tr('server_configuration_state_info_' + server.state)">
+                 data-translate="{{ 'server_configuration_state_info_' + server.state }}">
             </div>
 
             <div class="alert alert-dismissible"
@@ -158,7 +158,7 @@
                  data-ng-show="message">
                 <button type="button"
                         class="close"
-                        title="{{ tr('browser_alert_close') }}"
+                        title="{{ 'browser_alert_close' | translate }}"
                         data-dismiss="alert"
                         data-ng-click="message = null">
                     <span aria-hidden="true">&times;</span>
@@ -174,7 +174,7 @@
                     &times;
                 </button>
                 <i class="fa fa-info"></i>
-                <span data-ng-bind-html="tr('housing_support_phone', housingPhoneNumber)"></span>
+                <span data-ng-bind-html="'housing_support_phone' | translate:{ t0: housingPhoneNumber }"></span>
             </div>
 
 
@@ -185,17 +185,17 @@
                         data-dismiss="alert"
                         data-ng-click="stopBotherAutoRenew()">
                 </button>
-                <span data-ng-bind-html="tr('server_autorenew_alert')"></span>
+                <span data-ng-bind-html="'server_autorenew_alert' | translate "></span>
                 <a href="{{ autoRenewGuide }}"
                    target="_blank"
                    class="btn btn-info"
                    data-ng-if="!hasPaymentMean"
-                   data-i18n-static="server_autorenew_guide">
+                   data-translate="server_autorenew_guide">
                 </a>
                 <a class="btn btn-info"
                    href="#/billing/autoRenew"
                    data-ng-if="hasPaymentMean"
-                   data-i18n-static="server_autorenew_activate">
+                   data-translate="server_autorenew_activate">
                 </a>
             </div>
             <div class="alert-server"

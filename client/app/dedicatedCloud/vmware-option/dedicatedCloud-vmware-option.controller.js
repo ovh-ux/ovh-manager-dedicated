@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudVMwareOptionCtrl", ($scope, $stateParams, $q, DedicatedCloud, User, constants, Poller) => {
+angular.module("App").controller("DedicatedCloudVMwareOptionCtrl", ($scope, $stateParams, $q, $translate, DedicatedCloud, User, constants, Poller) => {
     "use strict";
 
     $scope.options = {
@@ -42,21 +42,23 @@ angular.module("App").controller("DedicatedCloudVMwareOptionCtrl", ($scope, $sta
                         if (toggable.error.data.message === "Not available yet") {
                             option.state = null; // dont show
                         } else {
-                            option.toggableMessage = $scope.tr("dedicatedCloud_vmware_option_not_compatible");
+                            option.toggableMessage = $translate.instant("dedicatedCloud_vmware_option_not_compatible");
                         }
                     } else if (toggable.error && toggable.error.status === 409) {
-                        option.toggableMessage = $scope.tr(`dedicatedCloud_vmware_option_not_${option.state === "enabled" ? "enabled" : "disabled"}`);
+                        option.toggableMessage = $translate.instant(`dedicatedCloud_vmware_option_not_${option.state === "enabled" ? "enabled" : "disabled"}`);
                     } else {
-                        option.toggableMessage = $scope.tr(`dedicatedCloud_options_state_${option.state}`);
+                        option.toggableMessage = $translate.instant(`dedicatedCloud_options_state_${option.state}`);
                     }
                 }
             })
             .catch((err) => {
                 option.error = err;
                 $scope.setMessage(
-                    $scope.tr("dedicatedCloud_dashboard_loading_error", {
-                        message: err.data ? "" : err.message,
-                        type: "ERROR"
+                    $translate.instant("dedicatedCloud_dashboard_loading_error", {
+                        t0: {
+                            message: err.data ? "" : err.message,
+                            type: "ERROR"
+                        }
                     })
                 );
             });
@@ -126,7 +128,7 @@ angular.module("App").controller("DedicatedCloudVMwareOptionCtrl", ($scope, $sta
                     return pollOptionTask(taskObject).then(() => {
                         const taskOption = getTaskOption(taskObject);
                         taskOption.toggable = false;
-                        taskOption.toggableMessage = $scope.tr($scope.taskNameToOptionMap[taskObject.name].toggableMessage);
+                        taskOption.toggableMessage = $translate.instant($scope.taskNameToOptionMap[taskObject.name].toggableMessage);
 
                         if (!$scope.polledTasks[taskOption.name]) {
                             $scope.polledTasks[taskOption.name] = [];
@@ -159,7 +161,7 @@ angular.module("App").controller("DedicatedCloudVMwareOptionCtrl", ($scope, $sta
         const toggable = DedicatedCloud.isOptionToggable($stateParams.productId, option, "disabling");
         $scope.options[option].state = "disabling";
         $scope.options[option].toggable = toggable.toggable;
-        $scope.options[option].toggableMessage = $scope.tr("dedicatedCloud_options_state_disabling");
+        $scope.options[option].toggableMessage = $translate.instant("dedicatedCloud_options_state_disabling");
         initTasks();
     });
 
@@ -167,7 +169,7 @@ angular.module("App").controller("DedicatedCloudVMwareOptionCtrl", ($scope, $sta
         const toggable = DedicatedCloud.isOptionToggable($stateParams.productId, option, "enabling");
         $scope.options[option].state = "enabling";
         $scope.options[option].toggable = toggable.toggable;
-        $scope.options[option].toggableMessage = $scope.tr("dedicatedCloud_options_state_enabling");
+        $scope.options[option].toggableMessage = $translate.instant("dedicatedCloud_options_state_enabling");
         initTasks();
     });
 

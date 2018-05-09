@@ -14,11 +14,11 @@ class PaymentMethodCtrl {
         this.BillingPaymentMethod.remove(paymentMethod)
             .then(() => {
                 this._refreshPaymentMethodList().catch((error) => {
-                    this.Alerter.alertFromSWS(this.$scope.tr("payment_mean_loading_error"), error.message);
+                    this.Alerter.alertFromSWS(this.$translate.instant("payment_mean_loading_error"), error.message);
                 });
             })
             .catch((error) => {
-                this.Alerter.alertFromSWS(this.$scope.tr("paymentType_delete_error"), error.message);
+                this.Alerter.alertFromSWS(this.$translate.instant("paymentType_delete_error"), error.message);
                 this.$q.reject(error);
             });
     }
@@ -41,7 +41,7 @@ class PaymentMethodCtrl {
                     }
                 })
                 .catch((error) => {
-                    this.Alerter.alertFromSWS(this.$scope.tr("paymentType_modify_error"), error.message);
+                    this.Alerter.alertFromSWS(this.$translate.instant("paymentType_modify_error"), error.message);
                     this.$q.reject(error);
                 });
         }
@@ -80,7 +80,7 @@ class PaymentMethodCtrl {
                 });
             })
             .catch((error) => {
-                this.Alerter.alertFromSWS(this.$scope.tr("payment_mean_loading_error"), error.message);
+                this.Alerter.alertFromSWS(this.$translate.instant("payment_mean_loading_error"), error.message);
                 this.$log.error(error);
             })
             .finally(() => {

@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudUserResetPasswordCtrl", ($q, $stateParams, $scope, DedicatedCloud, Alerter) => {
+angular.module("App").controller("DedicatedCloudUserResetPasswordCtrl", ($q, $stateParams, $scope, $translate, DedicatedCloud, Alerter) => {
     "use strict";
 
     $scope.canBeResetHere = false;
@@ -21,7 +21,7 @@ angular.module("App").controller("DedicatedCloudUserResetPasswordCtrl", ($q, $st
         $scope.loading = true;
         DedicatedCloud.resetUserPassword($stateParams.productId, $scope.user, $scope.user.password)
             .catch((err) => {
-                Alerter.alertFromSWS($scope.tr("dedicatedCloud_users_password_loading_error"), err, $scope.alerts.users);
+                Alerter.alertFromSWS($translate.instant("dedicatedCloud_users_password_loading_error"), err, $scope.alerts.users);
             })
             .finally(() => {
                 $scope.loading = false;
@@ -47,7 +47,7 @@ angular.module("App").controller("DedicatedCloudUserResetPasswordCtrl", ($q, $st
                 return null;
             })
             .catch((err) => {
-                Alerter.alertFromSWS($scope.tr("dedicatedCloud_users_password_reset_check_error"), err, $scope.alerts.users);
+                Alerter.alertFromSWS($translate.instant("dedicatedCloud_users_password_reset_check_error"), err, $scope.alerts.users);
             })
             .finally(() => {
                 $scope.loading = false;

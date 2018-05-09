@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IplbPortsRedirectionAddCtrl", ($scope, $rootScope, $q, Ip, Iplb, Alerter) => {
+angular.module("Module.ip.controllers").controller("IplbPortsRedirectionAddCtrl", ($scope, $rootScope, $q, $translate, Ip, Iplb, Alerter) => {
     $scope.data = $scope.currentActionData; // service
 
     $scope.model = {};
@@ -22,10 +22,10 @@ angular.module("Module.ip.controllers").controller("IplbPortsRedirectionAddCtrl"
                         taskId: task.id,
                         taskFunction: task.action
                     });
-                    Alerter.success($scope.tr("iplb_portsredirection_add_success"));
+                    Alerter.success($translate.instant("iplb_portsredirection_add_success"));
                 },
                 (reason) => {
-                    Alerter.alertFromSWS($scope.tr("iplb_portsredirection_add_failure"), reason);
+                    Alerter.alertFromSWS($translate.instant("iplb_portsredirection_add_failure"), reason);
                 }
             )
             .finally(() => {

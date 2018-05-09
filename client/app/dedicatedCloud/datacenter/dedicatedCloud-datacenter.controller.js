@@ -1,7 +1,5 @@
-angular.module("App").controller("DedicatedCloudSubDatacenterCtrl", ($scope, $stateParams, $timeout, $location, DedicatedCloud, translator) => {
+angular.module("App").controller("DedicatedCloudSubDatacenterCtrl", ($scope, $stateParams, $timeout, $translate, $location, DedicatedCloud) => {
     "use strict";
-
-    const tr = translator.tr;
 
     $scope.loadingInformations = true;
     $scope.loadingError = false;
@@ -36,7 +34,7 @@ angular.module("App").controller("DedicatedCloudSubDatacenterCtrl", ($scope, $st
             (data) => {
                 $scope.loadingInformations = false;
                 $scope.loadingError = true;
-                $scope.setMessage($scope.tr("dedicatedCloud_dashboard_loading_error"), angular.extend(data, { type: "ERROR" }));
+                $scope.setMessage($translate.instant("dedicatedCloud_dashboard_loading_error"), angular.extend(data, { type: "ERROR" }));
             }
         );
         DedicatedCloud.getDescription($stateParams.productId).then((dedicatedCloudDescription) => {
@@ -67,13 +65,15 @@ angular.module("App").controller("DedicatedCloudSubDatacenterCtrl", ($scope, $st
         $scope.datacenterName.loading = true;
         DedicatedCloud.updateDatacenterName($stateParams.productId, $stateParams.datacenterId, $scope.datacenterName.model).then(
             () => {
-                $scope.setMessage(tr("dedicatedCloud_datacenter_edit_name_success"), true);
+                $scope.setMessage($translate.instant("dedicatedCloud_datacenter_edit_name_success"), true);
                 $scope.datacenter.model.description = angular.copy($scope.datacenterName.model);
                 $scope.datacenterName.loading = false;
             },
             (data) => {
                 $scope.datacenterName.model = angular.copy($scope.datacenter.model.name);
-                $scope.setMessage(tr("dedicatedCloud_datacenter_edit_name_fail", [$scope.datacenter.model.name]), angular.extend(data, { type: "ERROR" }));
+                $scope.setMessage($translate.instant("dedicatedCloud_datacenter_edit_name_fail", {
+                    t0: $scope.datacenter.model.name
+                }), angular.extend(data, { type: "ERROR" }));
                 $scope.datacenterName.loading = false;
             }
         );
@@ -86,13 +86,15 @@ angular.module("App").controller("DedicatedCloudSubDatacenterCtrl", ($scope, $st
         $scope.datacenterDescription.loading = true;
         DedicatedCloud.updateDatacenterDescription($stateParams.productId, $stateParams.datacenterId, $scope.datacenterDescription.model).then(
             () => {
-                $scope.setMessage(tr("dedicatedCloud_datacenter_edit_description_success"), true);
+                $scope.setMessage($translate.instant("dedicatedCloud_datacenter_edit_description_success"), true);
                 $scope.datacenter.model.description = angular.copy($scope.datacenterDescription.model);
                 $scope.datacenterDescription.loading = false;
             },
             (data) => {
                 $scope.datacenterDescription.model = angular.copy($scope.datacenter.model.description);
-                $scope.setMessage(tr("dedicatedCloud_datacenter_edit_description_fail", [$scope.datacenter.model.name]), angular.extend(data, { type: "ERROR" }));
+                $scope.setMessage($translate.instant("dedicatedCloud_datacenter_edit_description_fail", {
+                    t0: $scope.datacenter.model.name
+                }), angular.extend(data, { type: "ERROR" }));
                 $scope.datacenterDescription.loading = false;
             }
         );

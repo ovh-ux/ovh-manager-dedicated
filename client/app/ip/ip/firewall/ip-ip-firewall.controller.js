@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpFirewallCtrl", ($scope, $rootScope, $timeout, Ip, IpFirewall, $location, $route) => {
+angular.module("Module.ip.controllers").controller("IpFirewallCtrl", ($scope, $rootScope, $timeout, $translate, Ip, IpFirewall, $location, $route) => {
     $scope.selectedBlock = null;
     $scope.selectedIp = null;
     $scope.rules = null;
@@ -41,7 +41,7 @@ angular.module("Module.ip.controllers").controller("IpFirewallCtrl", ($scope, $r
                             angular.forEach($scope.rules.list.results, (result, i) => {
                                 options = [];
                                 if (result.fragments) {
-                                    options.push($scope.tr("ip_firewall_rule_fragments"));
+                                    options.push($translate.instant("ip_firewall_rule_fragments"));
                                 }
                                 if (result.tcpOption) {
                                     options.push(result.tcpOption);

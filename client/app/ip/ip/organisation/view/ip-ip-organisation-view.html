@@ -1,10 +1,10 @@
 <div data-ng-controller="IpOrganisationViewCtrl">
     <div data-wizard
          data-wizard-hide-cancel-button="true"
-         data-wizard-confirm-button-text="i18n.wizard_close"
+         data-wizard-confirm-button-text=":: 'wizard_close' | translate"
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="resetAction"
-         data-wizard-title="i18n.ip_table_manage_view_iporganisation_details">
+         data-wizard-title=":: 'ip_table_manage_view_iporganisation_details' | translate">
 
         <div data-wizard-step>
             <div data-ng-show="!loading">
@@ -12,68 +12,68 @@
                 <form>
                     <div class="form-group">
                         <label class="control-label"
-                               data-i18n-static="ip_organisation_table_organisation">
+                               data-translate="ip_organisation_table_organisation">
                         </label>
                         <p class="form-control-static" data-ng-bind="orga.organisationId"></p>
                     </div>
                     <div class="form-group">
                         <label class="control-label"
-                               data-i18n-static="ip_organisation_table_type">
+                               data-translate="ip_organisation_table_type">
                         </label>
                         <p class="form-control-static" data-ng-bind="orga.registry"></p>
                     </div>
                     <div class="form-group">
                         <label class="control-label"
-                               data-i18n-static="ip_organisation_table_lastname">
+                               data-translate="ip_organisation_table_lastname">
                         </label>
                         <p class="form-control-static" data-ng-bind="orga.lastname"></p>
                     </div>
                     <div class="form-group">
                         <label class="control-label"
-                               data-i18n-static="ip_organisation_table_firstname">
+                               data-translate="ip_organisation_table_firstname">
                         </label>
                         <p class="form-control-static" data-ng-bind="orga.firstname"></p>
                     </div>
                     <div class="form-group">
                         <label class="control-label"
-                               data-i18n-static="ip_organisation_table_country">
+                               data-translate="ip_organisation_table_country">
                         </label>
-                        <p class="form-control-static" data-ng-bind="i18n['country_' + orga.country] || orga.country"></p>
+                        <p class="form-control-static" data-ng-bind="('country_' + orga.country | translateAlt: orga.country)"></p>
                     </div>
                     <div class="form-group">
                         <label class="control-label"
-                               data-i18n-static="ip_organisation_table_email">
+                               data-translate="ip_organisation_table_email">
                         </label>
                         <p class="form-control-static" data-ng-bind="orga.abuse_mailbox"></p>
                     </div>
                     <div class="form-group">
                         <label class="control-label"
-                               data-i18n-static="ip_organisation_table_address">
+                               data-translate="ip_organisation_table_address">
                         </label>
                         <p class="form-control-static" data-ng-bind="orga.address"></p>
                     </div>
                     <div class="form-group"
                          data-ng-if="showState()">
                         <label class="control-label"
-                               data-i18n-static="ip_organisation_table_state">
+                               data-translate="ip_organisation_table_state">
                         </label>
                         <p class="form-control-static" data-ng-bind="orga.state"></p>
                     </div>
                     <div class="form-group">
                         <label class="control-label"
-                               data-i18n-static="ip_organisation_table_zip">
+                               data-translate="ip_organisation_table_zip">
                         </label>
                         <p class="form-control-static" data-ng-bind="orga.zip || '-'"></p>
                     </div>
                     <div class="form-group">
                         <label class="control-label"
-                               data-i18n-static="ip_organisation_table_city">
+                               data-translate="ip_organisation_table_city">
                         </label>
                         <p class="form-control-static" data-ng-bind="orga.city"></p>
                     </div>
                     <div class="form-group">
                         <label class="control-label"
-                               data-i18n-static="ip_organisation_table_phone">
+                               data-translate="ip_organisation_table_phone">
                         </label>
                         <p class="form-control-static" data-ng-bind="orga.phone"></p>
                     </div>

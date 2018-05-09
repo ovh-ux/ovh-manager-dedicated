@@ -1,4 +1,4 @@
-angular.module("App").controller("HousingRebootCtrl", ($scope, $stateParams, Housing, Alerter) => {
+angular.module("App").controller("HousingRebootCtrl", ($scope, $stateParams, $translate, Housing, Alerter) => {
     $scope.getRebootPrices = function () {
         $scope.loading = true;
         Housing.getRebootPrices($stateParams.productId)
@@ -7,7 +7,7 @@ angular.module("App").controller("HousingRebootCtrl", ($scope, $stateParams, Hou
                     $scope.contract = contract;
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("housing_configuration_reboot_fail_apcinfo"), err, "housing_tab_reboot_alert");
+                    Alerter.alertFromSWS($translate.instant("housing_configuration_reboot_fail_apcinfo"), err, "housing_tab_reboot_alert");
                 }
             )
             .finally(() => {
@@ -20,11 +20,13 @@ angular.module("App").controller("HousingRebootCtrl", ($scope, $stateParams, Hou
         Housing.rebootOrder($stateParams.productId)
             .then(
                 (order) => {
-                    Alerter.success($scope.tr("housing_configuration_reboot_success", "housing_dashboard_alert"));
+                    Alerter.success($translate.instant("housing_configuration_reboot_success", {
+                        t0: "housing_dashboard_alert"
+                    }));
                     window.open(order.url, "_blank").focus();
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("housing_configuration_reboot_fail"), err, "housing_dashboard_alert");
+                    Alerter.alertFromSWS($translate.instant("housing_configuration_reboot_fail"), err, "housing_dashboard_alert");
                 }
             )
             .finally(() => {

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="billing_history_details" qtlid="343382">Taakgeschiedenis</translation>
+   <translation id="billing_history_details_load_error" qtlid="343408">Er is een fout opgetreden tijdens het ophalen van de taakgeschiedenis. </translation>
+
+   <translation id="billing_history_details_table_header_date" qtlid="24523">Datum</translation>
+   <translation id="billing_history_details_table_header_operation" qtlid="32482">Operatie</translation>
+   <translation id="billing_history_details_table_header_status" qtlid="33790">Status</translation>
+   <translation id="billing_history_details_table_header_amount" qtlid="45328">Bedrag</translation>
+
+   <translation id="billing_history_details_table_order_link">Détails de la commande associée</translation>
+   <translation id="billing_history_details_table_order_link_title" qtlid="343460">Open de bestelling van deze taak in een nieuw venster. </translation>
+   <translation id="billing_history_details_table_bill_html_link">Facture en version html</translation>
+   <translation id="billing_history_details_table_bill_html_link_title" qtlid="349205">Bekijk de factuur in HTML-versie (nieuw venster).</translation>
+   <translation id="billing_history_details_table_bill_pdf_link">Facture en version pdf</translation>
+   <translation id="billing_history_details_table_bill_pdf_link_title" qtlid="349218">Bekijk de factuur in PDF-versie (nieuw venster).</translation>
+
+<!-- STATEMENTS - OPERATION STATUS -->
+   <translation id="billing_history_details_status_done" qtlid="343486">Voltooid</translation>
+   <translation id="billing_history_details_status_cancelled" qtlid="164623">Geannuleerd</translation>
+   <translation id="billing_history_details_status_failed" qtlid="343499">Mislukt</translation>
+   <translation id="billing_history_details_status_todo" qtlid="349338">In afwachting van betaling</translation>
+   <translation id="billing_history_details_status_pending" qtlid="343525">Wordt verwerkt</translation>
+   <translation id="billing_history_details_status_paid" qtlid="34596">Betaald</translation>
+
+<!-- STATEMENTS - OPERATION DESCRIPTION -->
+   <translation id="billing_history_details_type_order" qtlid="312376">Bestelling aanmaak</translation>
+   <translation id="billing_history_details_type_cancel" qtlid="343538">Annuleer een taak</translation>
+
+   <translation id="billing_history_details_type_creditcard_manual" qtlid="343551">Maandelijkse creditkaart betaling</translation>
+   <translation id="billing_history_details_type_creditcard_automatic" qtlid="343564">Automatische incasso op een creditkaart</translation>
+   <translation id="billing_history_details_type_refund_creditcard" qtlid="343577">Creditkaart terugbetaling</translation>
+   <translation id="billing_history_details_type_unpaid_creditcard" qtlid="343590">Creditkaart incasso geweigerd</translation>
+
+   <translation id="billing_history_details_type_paypal_manual" qtlid="343603">Maandelijkse betaling middels PayPal</translation>
+   <translation id="billing_history_details_type_paypal_automatic" qtlid="343616">Automatische incasso vanaf een PayPal account</translation>
+   <translation id="billing_history_details_type_refund_paypal" qtlid="343629">Terugbetaling vanaf een PayPal account</translation>
+   <translation id="billing_history_details_type_unpaid_paypal" qtlid="343642">PayPal incasso is geweigerd</translation>
+
+   <translation id="billing_history_details_type_sepa_automatic" qtlid="343655">Automatische incasso vanaf een bankrekening</translation>
+   <translation id="billing_history_details_type_refund_sepa" qtlid="343668">Terugbetaling vanaf een bankrekening</translation>
+   <translation id="billing_history_details_type_unpaid_sepa" qtlid="343681">Bankrekening incasso is geweigerd</translation>
+
+   <translation id="billing_history_details_type_credit_account_automatic" qtlid="343694">Automatische incasso vanaf een prepaid OVH account</translation>
+   <translation id="billing_history_details_type_refund_credit_account" qtlid="343707">Terugbetaling via een prepaid OVH account</translation>
+   <translation id="billing_history_details_type_unpaid_credit_account" qtlid="343720">Annulatie van een voorschot via het prepaid OVH account</translation>
+
+   <translation id="billing_history_details_type_check_manual" qtlid="343733">Betaling per cheque </translation>
+   <translation id="billing_history_details_type_refund_check" qtlid="343746">Terugbetaling per cheque </translation>
+   <translation id="billing_history_details_type_unpaid_check" qtlid="343759">Cheque geweigerd</translation>
+
+   <translation id="billing_history_details_type_transfer_manual" qtlid="343772">Betaling via overschrijving</translation>
+   <translation id="billing_history_details_type_refund_check" qtlid="343785">Terugbetaling van een overschrijving</translation>
+   <translation id="billing_history_details_type_unpaid_transfer" qtlid="343798">Overschrijving geweigerd</translation>
+
+   <translation id="billing_history_details_type_warrant_manual" qtlid="343811">Betaling via postwissel</translation>
+   <translation id="billing_history_details_type_refund_warrant" qtlid="343824">Terugbetaling van een postwissel</translation>
+   <translation id="billing_history_details_type_unpaid_warrant" qtlid="343837">Postwissel geweigerd</translation>
+
+   <translation id="billing_history_details_type_refund" qtlid="89797">Terugbetaling</translation>
+   <translation id="billing_history_details_type_refund_unknown" qtlid="89797">Terugbetaling</translation>
+</translations>

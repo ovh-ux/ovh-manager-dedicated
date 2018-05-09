@@ -3,7 +3,7 @@
     <div data-ovh-alert></div>
 
     <div class="page-header">
-        <h1 data-i18n-static="menu_sla"></h1>
+        <h1 data-translate="menu_sla"></h1>
     </div>
 
     <div class="tab-content">
@@ -15,13 +15,13 @@
 
         <p class="text-center"
            data-ng-if="!loaders.slas && (slas.length <= 0 || allNotApplicable())"
-           data-i18n-static="sla_apply_no_data">
+           data-translate="sla_apply_no_data">
         </p>
 
         <div class="panel-group"
              id="accordionSla"
              data-ng-if="!loaders.slas && (slas.length > 0 && !allNotApplicable())">
-            <p data-i18n-static="sla_informations"
+            <p data-translate="sla_informations"
                data-ng-if="!allRequested() && !allCompleted()">
             </p>
             <div class="panel panel-default"
@@ -57,7 +57,7 @@
                                    aria-hidden="true">
                                 </i>
                                 <p class="oui-message__body"
-                                   data-ng-bind="tr('sla_informations_end', [(sla.endDate | date:'short')])">
+                                   data-ng-bind="'sla_informations_end' | translate:{ t0: (sla.endDate | date:'short') }">
                                 </p>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                             <button class="btn btn-primary"
                                     data-ng-if="sla.canBeApplied"
                                     data-ng-click="applySla(sla)"
-                                    data-i18n-static="sla_table_apply">
+                                    data-translate="sla_table_apply">
                             </button>
                         </div>
 
@@ -80,7 +80,7 @@
                                       'label-info': sla.status === 'created',
                                       'label-default': sla.status === 'notApplicable'
                                   }"
-                                  data-ng-bind="tr('sla_informations_status_' + sla.status)">
+                                  data-translate="{{ 'sla_informations_status_' + sla.status }}">
                             </span>
                         </div>
                     </a>
@@ -92,16 +92,16 @@
                             <thead>
                                 <tr>
                                     <th scope="col"
-                                        data-i18n-static="sla_table_head_service_name">
+                                        data-translate="sla_table_head_service_name">
                                     </th>
                                     <th scope="col"
-                                        data-i18n-static="sla_table_head_service_description">
+                                        data-translate="sla_table_head_service_description">
                                     </th>
                                     <th scope="col"
-                                        data-i18n-static="sla_table_head_service_sla_plan">
+                                        data-translate="sla_table_head_service_sla_plan">
                                     </th>
                                     <th scope="col"
-                                        data-i18n-static="sla_table_head_service_sla_application">
+                                        data-translate="sla_table_head_service_sla_application">
                                     </th>
                                 </tr>
                             </thead>
@@ -117,7 +117,7 @@
                                 <tr>
                                     <td colspan="4"
                                         class="text-center"
-                                        data-i18n-static="sla_table_services_empty">
+                                        data-translate="sla_table_services_empty">
                                     </td>
                                 </tr>
                             </tbody>
@@ -146,8 +146,8 @@
              data-transform-item="transformItem(item)"
              data-on-transform-item-notify="onTransformItemNotify(item)"
              data-on-transform-item-done="onTransformItemDone(items)"
-             data-page-placeholder="{{tr('pagination_page', [currentPage, nbPages])}}"
-             data-item-per-page-placeholder="{{tr('pagination_display')}}">
+             data-page-placeholder="{{'pagination_page' | translate:{ t0: currentPage, t1: nbPages } }}"
+             data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
         </div>
     </div>
 </div>

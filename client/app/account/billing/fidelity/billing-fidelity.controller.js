@@ -1,7 +1,5 @@
-angular.module("Billing.controllers").controller("Billing.controllers.Fidelity", ($scope, $filter, translator, BillingFidelity, BillingUser, BillingmessageParser, BillingdateRangeSelection) => {
+angular.module("Billing.controllers").controller("Billing.controllers.Fidelity", ($scope, $filter, $translate, BillingFidelity, BillingUser, BillingmessageParser, BillingdateRangeSelection) => {
     "use strict";
-
-    const tr = translator.tr;
 
     $scope.fidelityLoading = false;
     $scope.fidelityAccountLoading = false;
@@ -26,7 +24,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.Fidelity",
                 $scope.tasksId = movements.reverse();
             })
             .catch((data) => {
-                $scope.setMessage(tr("fidelity_get_movements_error"), data.data);
+                $scope.setMessage($translate.instant("fidelity_get_movements_error"), data.data);
                 $scope.loaders.tasks = false;
             })
             .finally(() => {
@@ -86,7 +84,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.Fidelity",
             })
             .catch((data) => {
                 if (data.status !== 404) {
-                    $scope.setMessage(tr("fidelity_get_accounts_error"), data.data);
+                    $scope.setMessage($translate.instant("fidelity_get_accounts_error"), data.data);
                 } else {
                     $scope.fidelityAccount = null;
                 }

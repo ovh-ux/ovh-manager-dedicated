@@ -2,31 +2,31 @@
 </oui-spinner>
 <div data-ng-if="!$ctrl.loading">
     <oui-back-button data-href="{{:: $ctrl.getBackUrl() }}"
-                     data-title="{{:: tr('dedicatedCloud_datastore_order_title') }}">
+                     data-title="{{ :: 'dedicatedCloud_datastore_order_title' | translate }}">
     </oui-back-button>
     <div data-ovh-alert></div>
     <oui-message class="d-block mb-4"
                  data-type="info"
                  data-ng-if="$ctrl.user.isEnterprise"
-                 data-i18n-static="core_user_enterprise_retail_prices_hpc">
+                 data-translate="core_user_enterprise_retail_prices_hpc">
     </oui-message>
-    <p data-i18n-static="dedicatedCloud_datastore_order_info"></p>
-    <p data-i18n-static="dedicatedCloud_datastore_order_select"></p>
+    <p data-translate="dedicatedCloud_datastore_order_info"></p>
+    <p data-translate="dedicatedCloud_datastore_order_select"></p>
     <oui-datagrid data-rows-loader="$ctrl.fetchDatagridOffers()">
-        <oui-column data-title=":: tr('dedicatedCloud_datastore_order_type')">
+        <oui-column data-title=":: 'dedicatedCloud_datastore_order_type' | translate">
             <oui-radio data-text="{{ $row.productName }}"
                        data-name="selectedOffer"
                        data-model="$ctrl.selectedOffer"
                        data-value="$row">
             </oui-radio>
         </oui-column>
-        <oui-column data-title=":: tr('dedicatedCloud_datastore_order_price')">
+        <oui-column data-title=":: 'dedicatedCloud_datastore_order_price' | translate">
             <span data-ng-bind="$row.prices[0].price.text"></span>
             <br />
             <small data-ng-bind="$row.prices[0].description"></small>
         </oui-column>
     </oui-datagrid>
-    <p data-i18n-static="dedicatedCloud_datastore_order_quantity"></p>
+    <p data-translate="dedicatedCloud_datastore_order_quantity"></p>
     <oui-numeric data-model="$ctrl.quantity"
                  data-disabled="!$ctrl.selectedOffer"
                  data-min="1">
@@ -35,13 +35,13 @@
         <oui-button data-variant="primary"
                     data-disabled="!$ctrl.selectedOffer"
                     data-ng-if="!$ctrl.selectedOffer"
-                    data-text="{{:: tr('dedicatedCloud_datastore_order_confirm') }}">
+                    data-text="{{ :: 'dedicatedCloud_datastore_order_confirm' | translate }}">
         </oui-button>
         <a class="btn btn-primary"
            href="{{ $ctrl.getOrderUrl() }}"
            target="_blank"
            rel="noopener"
-           data-i18n-static="dedicatedCloud_datastore_order_confirm"
+           data-translate="dedicatedCloud_datastore_order_confirm"
            data-ng-if="$ctrl.selectedOffer">
         </a>
     </div>

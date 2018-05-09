@@ -1,12 +1,12 @@
 angular.module("App").controller("CdnManageCtrl", class CdnManageCtrl {
 
-    constructor ($scope, $q, $stateParams, $filter, translator, Cdn) {
+    constructor ($scope, $q, $stateParams, $filter, $translate, Cdn) {
         // injections
         this.$scope = $scope;
         this.$q = $q;
         this.$stateParams = $stateParams;
         this.$filter = $filter;
-        this.translator = translator;
+        this.$translate = $translate;
         this.Cdn = Cdn;
 
         // attributes used in view
@@ -30,7 +30,7 @@ angular.module("App").controller("CdnManageCtrl", class CdnManageCtrl {
             if (!endingDay) {
                 this.cdn.endingEstimationDate = "-";
             } else if (endingDay > 90) {
-                this.cdn.endingEstimationDate = this.translator.tr("cdn_configuration_more_than_three_month");
+                this.cdn.endingEstimationDate = this.$translate.instant("cdn_configuration_more_than_three_month");
             } else {
                 date.setDate(date.getDate() + endingDay);
                 this.cdn.endingEstimationDate = this.$filter("date")(date, "mediumDate");
@@ -52,7 +52,7 @@ angular.module("App").controller("CdnManageCtrl", class CdnManageCtrl {
                 this.serviceInfos = errServiceInfos.data;
             }
 
-            this.$scope.setMessage(this.translator.tr("cdn_dashboard_loading_error"), {
+            this.$scope.setMessage(this.$translate.instant("cdn_dashboard_loading_error"), {
                 message: errs.map((data) => data.data.message).join(", "),
                 type: "ERROR"
             });

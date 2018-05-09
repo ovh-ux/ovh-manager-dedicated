@@ -1,4 +1,4 @@
-angular.module("App").controller("OrderQuotaCtrl", ($scope, $stateParams, cdnDedicatedOrderQuota) => {
+angular.module("App").controller("OrderQuotaCtrl", ($scope, $stateParams, $translate, cdnDedicatedOrderQuota) => {
     $scope.orderInformations = null;
     $scope.choices = {
         count: null,
@@ -27,7 +27,7 @@ angular.module("App").controller("OrderQuotaCtrl", ($scope, $stateParams, cdnDed
             })
             .catch(() => {
                 $scope.resetAction();
-                $scope.setMessage($scope.tr("cdn_configuration_order_quota_step1_fail"), { type: "ERROR" });
+                $scope.setMessage($translate.instant("cdn_configuration_order_quota_step1_fail"), { type: "ERROR" });
             });
     };
 
@@ -39,7 +39,7 @@ angular.module("App").controller("OrderQuotaCtrl", ($scope, $stateParams, cdnDed
             })
             .catch(() => {
                 $scope.resetAction();
-                $scope.setMessage($scope.tr("cdn_configuration_order_quota_step3_fail"), { type: "ERROR" });
+                $scope.setMessage($translate.instant("cdn_configuration_order_quota_step3_fail"), { type: "ERROR" });
             });
     };
 

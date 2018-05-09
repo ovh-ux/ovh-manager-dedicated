@@ -58,4 +58,4 @@ class LicenseOrder {
     }
 }
 
-angular.module("Module.license.services").service("LicenseOrder", LicenseOrder);
+angular.module("Module.license").service("LicenseOrder", LicenseOrder);

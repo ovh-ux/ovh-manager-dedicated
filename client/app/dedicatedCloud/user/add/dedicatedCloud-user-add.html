@@ -3,7 +3,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addUser"
-         data-wizard-title="i18n.dedicatedCloud_USER_add_user"
+         data-wizard-title=":: 'dedicatedCloud_USER_add_user' | translate"
          data-wizard-bread-crumb>
 
         <div data-wizard-step
@@ -20,13 +20,13 @@
                   data-ng-if="!loaders.init"
                   data-ng-controller="DedicatedCloudUserAddFormCtrl">
                 <p>
-                    <strong data-i18n-static="dedicatedCloud_USER_add_user_step1_question"></strong>
+                    <strong data-translate="dedicatedCloud_USER_add_user_step1_question"></strong>
                 </p>
                 <div class="form-group"
                      data-ng-class="getClassLabel(userForm.name)">
                     <label for="name"
                            class="control-label required"
-                           data-i18n-static="dedicatedCloud_USER_add_user_name" >
+                           data-translate="dedicatedCloud_USER_add_user_name" >
                     </label>
                     <input type="text"
                            class="form-control"
@@ -40,7 +40,7 @@
                           role="alert"
                           data-ng-show="hasError(userForm.name) && value == true">
                         <span data-ng-repeat="(error, value) in userForm.name.$error"
-                              data-ng-bind="i18n['dedicatedCloud_USER_add_user_' + error] || error">
+                              data-ng-bind="('dedicatedCloud_USER_add_user_' + error) | translateAlt: error">
                         </span>
                     </span>
                 </div>
@@ -48,7 +48,7 @@
                      data-ng-if="canSetPassword && passwordPolicy">
                     <label for="password"
                            class="control-label"
-                           data-i18n-static="dedicatedCloud_USER_add_user_password">
+                           data-translate="dedicatedCloud_USER_add_user_password">
                     </label>
                     <input type="password"
                            class="form-control"
@@ -61,36 +61,36 @@
                                 class="btn btn-default"
                                 data-ng-if="userForm.password.$dirty && userForm.$error.checkPassword"
                                 data-ng-click="showError.checkPassword = !showError.checkPassword">
-                            <span data-i18n-static="dedicatedCloud_USER_change_password_incorrect"></span>
+                            <span data-translate="dedicatedCloud_USER_change_password_incorrect"></span>
                             <span class="fa fa-info-circle"
-                                  aria-label="{{ i18n.dedicatedCloud_USER_change_password_incorrect }}"
-                                  data-uib-tooltip="{{ tr('dedicatedCloud_USER_change_password_infos') }}"
+                                  aria-label="{{ 'dedicatedCloud_USER_change_password_incorrect' | translate }}"
+                                  data-uib-tooltip="{{ 'dedicatedCloud_USER_change_password_infos' | translate }}"
                                   data-tooltip-placement="top">
                             </span>
                         </button>
                         <ul class="text-danger list-unstyled"
                             data-ng-if="showError.checkPassword">
                             <li data-ng-if="passwordPolicy.digitMandatory"
-                                data-i18n-static="dedicatedCloud_USER_change_password_digitMandatory">
+                                data-translate="dedicatedCloud_USER_change_password_digitMandatory">
                             </li>
                             <li data-ng-if="passwordPolicy.letterMandatory"
-                                data-i18n-static="dedicatedCloud_USER_change_password_letterMandatory">
+                                data-translate="dedicatedCloud_USER_change_password_letterMandatory">
                             </li>
                             <li data-ng-if="passwordPolicy.lowercaseLetterMandatory"
-                              data-i18n-static="dedicatedCloud_USER_change_password_lowercaseLetterMandatory">
+                              data-translate="dedicatedCloud_USER_change_password_lowercaseLetterMandatory">
                             </li>
                             <li data-ng-if="passwordPolicy.specialMandatory"
-                              data-i18n-static="dedicatedCloud_USER_change_password_specialMandatory">
+                              data-translate="dedicatedCloud_USER_change_password_specialMandatory">
                             </li>
                             <li data-ng-if="passwordPolicy.uppercaseLetterMandatory"
-                              data-i18n-static="dedicatedCloud_USER_change_password_uppercaseLetterMandatory">
+                              data-translate="dedicatedCloud_USER_change_password_uppercaseLetterMandatory">
                             </li>
                             <li data-ng-if="passwordPolicy.maxLength">
-                                <span data-i18n-static="dedicatedCloud_USER_change_password_maxLength"></span>
+                                <span data-translate="dedicatedCloud_USER_change_password_maxLength"></span>
                                 <span data-ng-bind="passwordPolicy.maxLength"></span>
                             </li>
                             <li data-ng-if="passwordPolicy.minLength">
-                                <span data-i18n-static="dedicatedCloud_USER_change_password_minLength"></span>
+                                <span data-translate="dedicatedCloud_USER_change_password_minLength"></span>
                                 <span data-ng-bind="passwordPolicy.minLength"></span>
                             </li>
                         </ul>
@@ -100,7 +100,7 @@
                      data-ng-class="getClassLabel(userForm.email)">
                     <label for="email"
                            class="control-label"
-                           data-i18n-static="dedicatedCloud_USER_add_user_mail">
+                           data-translate="dedicatedCloud_USER_add_user_mail">
                     </label>
                     <input type="email"
                            class="form-control"
@@ -111,14 +111,14 @@
                     <span class="help-block"
                           role="alert"
                           data-ng-show="hasError(userForm.email) && value == true"
-                          data-i18n-static="dedicatedCloud_USER_add_user_email">
+                          data-translate="dedicatedCloud_USER_add_user_email">
                     </span>
                 </div>
                 <p>
-                    <span>*</span><span data-i18n-static="dedicatedCloud_USER_add_user_required"></span>
+                    <span>*</span><span data-translate="dedicatedCloud_USER_add_user_required"></span>
                 </p>
                 <p data-ng-if="!canSetPassword"
-                   data-i18n-static="dedicatedCloud_USER_add_user_cant_set_password">
+                   data-translate="dedicatedCloud_USER_add_user_cant_set_password">
                 </p>
             </form>
 
@@ -127,7 +127,7 @@
         <div data-wizard-step
              data-wizard-step-valid="newUser.right">
 
-            <p data-ng-bind-html="tr('dedicatedCloud_USER_add_user_step2_question', [newUser.name])"></p>
+            <p data-translate="dedicatedCloud_USER_add_user_step2_question" data-translate-values="{ t0: newUser.name }"></p>
             <div class="radio">
                 <label>
                     <input type="radio"
@@ -135,7 +135,7 @@
                            name="pcc-user-rights"
                            value="readwrite"
                            data-ng-model="newUser.right" />
-                    <span data-ng-bind="i18n.dedicatedCloud_USER_add_user_which_rights_rw"></span>
+                    <span data-ng-bind=":: 'dedicatedCloud_USER_add_user_which_rights_rw' | translate"></span>
                 </label>
             </div>
             <div class="radio">
@@ -145,7 +145,7 @@
                            name="pcc-user-rights"
                            value="readonly"
                            data-ng-model="newUser.right" />
-                    <span data-ng-bind="i18n.dedicatedCloud_USER_add_user_which_rights_ro"></span>
+                    <span data-ng-bind=":: 'dedicatedCloud_USER_add_user_which_rights_ro' | translate"></span>
                 </label>
             </div>
             <div class="radio">
@@ -155,7 +155,7 @@
                            name="pcc-user-rights"
                            value="disabled"
                            data-ng-model="newUser.right" />
-                    <span data-ng-bind="i18n.dedicatedCloud_USER_add_user_which_rights_none"></span>
+                    <span data-ng-bind=":: 'dedicatedCloud_USER_add_user_which_rights_none' | translate"></span>
                 </label>
             </div>
 
@@ -169,11 +169,11 @@
             </div>
 
             <div data-ng-if="!loaders.add">
-                <p data-ng-bind-html="tr('dedicatedCloud_USER_add_user_step3_question1', [newUser.name])"></p>
+                <p data-translate="dedicatedCloud_USER_add_user_step3_question1" data-translate-values="{ t0: newUser.name }"></p>
                 <dl>
-                    <dt data-i18n-static="dedicatedCloud_USER_add_user_step3_rights"></dt>
-                    <dd data-ng-bind-html="tr('dedicatedCloud_USER_add_user_which_rights_' + {'readwrite': 'rw', 'readonly': 'ro', 'disabled': 'none'}[newUser.right]) + ' '"></dd>
-                    <dt data-i18n-static="dedicatedCloud_USER_add_user_step3_mail"></dt>
+                    <dt data-translate="dedicatedCloud_USER_add_user_step3_rights"></dt>
+                    <dd data-ng-bind-html="('dedicatedCloud_USER_add_user_which_rights_' + {'readwrite': 'rw', 'readonly': 'ro', 'disabled': 'none'}[newUser.right] | translate) + ' '"></dd>
+                    <dt data-translate="dedicatedCloud_USER_add_user_step3_mail"></dt>
                     <dd data-ng-bind="newUser.email || '-'"></dd>
                 </dl>
             </div>

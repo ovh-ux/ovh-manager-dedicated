@@ -1,10 +1,11 @@
 angular.module("directives").controller(
     "BillingPaymentMethodAddCreditCardCtrl",
     class BillingPaymentMethodAddCreditCardCtrl {
-        constructor ($rootScope, $scope, $q, Alerter, BillingVantivInstance, BillingPaymentMethodService, OvhHttp, constants) {
+        constructor ($rootScope, $scope, $q, $translate, Alerter, BillingVantivInstance, BillingPaymentMethodService, OvhHttp, constants) {
             this.$rootScope = $rootScope;
             this.$scope = $scope;
             this.$q = $q;
+            this.$translate = $translate;
             this.Alerter = Alerter;
             this.BillingVantivInstance = BillingVantivInstance;
             this.BillingPaymentMethod = BillingPaymentMethodService;
@@ -13,7 +14,6 @@ angular.module("directives").controller(
         }
 
         $onInit () {
-            this.tr = this.$rootScope.tr;
             this.$scope.i18n = this.$rootScope.i18n;
             this.isDefault = false;
 
@@ -86,7 +86,7 @@ angular.module("directives").controller(
             }).then((schema) => ({
                 country: _.map(schema.models["nichandle.CountryEnum"].enum, (countryCode) => ({
                     code: countryCode,
-                    label: this.tr(`payment_mean_contact_creation_country_${countryCode}`)
+                    label: this.$translate.instant(`payment_mean_contact_creation_country_${countryCode}`)
                 })).sort((countryA, countryB) => {
                     // check if we are in US (even if for the moment it's not available for other targets)
                     if (this.constants.target === "US") {
@@ -142,12 +142,12 @@ angular.module("directives").controller(
          */
         getTranslatedArea () {
             if (this.contactForm.address.country === "US" || this.contactForm.address.country === "WE") {
-                return this.tr("payment_mean_contact_creation_label_address_state");
+                return this.$translate.instant("payment_mean_contact_creation_label_address_state");
             }
             if (this.contactForm.address.country === "CA") {
-                return this.tr("payment_mean_contact_creation_label_address_province");
+                return this.$translate.instant("payment_mean_contact_creation_label_address_province");
             }
-            return this.tr("payment_mean_contact_creation_label_address_area");
+            return this.$translate.instant("payment_mean_contact_creation_label_address_area");
         }
 
         toggleChangeContact () {
@@ -197,21 +197,21 @@ angular.module("directives").controller(
                 billingContactId: _.get(this.contactSelected, "value.id")
             })
                 .then((newPaymentMethod) => {
-                    this.Alerter.success(this.tr("billing_payment_method_credit_card_valid"));
+                    this.Alerter.success(this.$translate.instant("billing_payment_method_credit_card_valid"));
                     this.onChange({
                         newPaymentMethod
                     });
                 })
                 .catch((error) => {
                     if (this.BillingPaymentMethod.isCreditCardVantivError(error)) {
-                        this.Alerter.error(this.tr("billing_payment_method_credit_card_recoverable_credit_card_error"));
+                        this.Alerter.error(this.$translate.instant("billing_payment_method_credit_card_recoverable_credit_card_error"));
                         return this.$q.reject(error);
                     } else if (this.BillingPaymentMethod.isCardValidationNumberVantivError(error)) {
-                        this.Alerter.error(this.tr("billing_payment_method_credit_card_recoverable_card_validation_number_error"));
+                        this.Alerter.error(this.$translate.instant("billing_payment_method_credit_card_recoverable_card_validation_number_error"));
                         return this.$q.reject(error);
                     }
 
-                    this.Alerter.error(this.tr("billing_payment_method_credit_card_generic_error"));
+                    this.Alerter.error(this.$translate.instant("billing_payment_method_credit_card_generic_error"));
                     return this.$q.reject(error);
                 })
                 .finally(() => {

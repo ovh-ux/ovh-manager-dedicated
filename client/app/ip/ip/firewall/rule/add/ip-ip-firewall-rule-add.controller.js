@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpFirewallAddRuleCtrl", ($scope, $rootScope, Ip, IpFirewall, Alerter, Validator) => {
+angular.module("Module.ip.controllers").controller("IpFirewallAddRuleCtrl", ($scope, $rootScope, $translate, Ip, IpFirewall, Alerter, Validator) => {
     $scope.data = $scope.currentActionData;
     $scope.constants = null;
     $scope.rule = {};
@@ -90,7 +90,7 @@ angular.module("Module.ip.controllers").controller("IpFirewallAddRuleCtrl", ($sc
             },
             (data) => {
                 $scope.loading = false;
-                Alerter.alertFromSWS($scope.tr("ip_firewall_add_rule_fail"), data.data, "addRuleAlert");
+                Alerter.alertFromSWS($translate.instant("ip_firewall_add_rule_fail"), data.data, "addRuleAlert");
             }
         );
     };

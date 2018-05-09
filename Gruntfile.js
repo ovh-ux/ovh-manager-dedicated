@@ -9,11 +9,9 @@ module.exports = function (grunt) {
     const assets = require("./Assets");
     const constants = require("./constants.config");
 
-    const Http = require("http");
-    const Https = require("https");
     const glob = require("glob");
 
-    let mode = grunt.option("mode") || "dev";
+    const mode = grunt.option("mode") || "dev";
     const basepath = grunt.option("base-path") || (isProd() ? "" : "../../");
     const target = grunt.option("target") || grunt.option("zone") || "EU";
     const targetsAvailable = ["EU", "CA", "US"];
@@ -546,30 +544,17 @@ module.exports = function (grunt) {
                 constants: {
                     constants: {
                         prodMode: mode === "prod",
-                        availableViewMode: {
-                            views: ["simple", "expert"],
-                            defaultViewMode: "simple"
-                        },
                         swsProxyRootPath: "<%= swsProxyPath %>",
                         aapiRootPath: "<%= aapiPath %>",
                         target,
                         renew: constants[target].RENEW_URL,
-                        loginUrl: constants[target].loginUrl,
                         urls: constants[target].URLS,
                         UNIVERS: constants[target].UNIVERS,
-                        UNIVERSE: constants[target].UNIVERSE,
-                        UNIVERSES: constants[target].UNIVERSES,
                         TOP_GUIDES: constants[target].TOP_GUIDES,
-                        weatherMapUrl: constants[target].weatherMapUrl,
                         vmsUrl: constants[target].vmsUrl,
                         travauxUrl: constants[target].travauxUrl,
                         aapiHeaderName: "X-Ovh-Session",
-                        changelog_url: constants[target].changelog_url,
-                        publicCloudUrl: constants[target].publicCloudUrl,
-                        vrackUrl: constants[target].vrackUrl,
-                        nashaUrl: constants[target].nashaUrl,
                         MANAGER_URLS: constants[target].MANAGER_URLS,
-                        NO_AUTORENEW_COUNTRIES: constants[target].NO_AUTORENEW_COUNTRIES,
                         REDIRECT_URLS: constants[target].REDIRECT_URLS
                     },
                     LANGUAGES: constants[target].LANGUAGES,
@@ -710,35 +695,21 @@ module.exports = function (grunt) {
                 constants: {
                     constants: {
                         prodMode: mode === "prod",
-                        availableViewMode: {
-                            views: ["simple", "expert"],
-                            defaultViewMode: "simple"
-                        },
                         aapiRootPath: "<%= aapiPath %>",
                         target,
                         renew: constants[target].RENEW_URL,
-                        loginUrl: constants[target].loginUrl,
                         urls: constants[target].URLS,
                         UNIVERS: constants[target].UNIVERS,
-                        UNIVERSE: constants[target].UNIVERSE,
-                        UNIVERSES: constants[target].UNIVERSES,
                         TOP_GUIDES: constants[target].TOP_GUIDES,
-                        weatherMapUrl: constants[target].weatherMapUrl,
                         vmsUrl: constants[target].vmsUrl,
                         travauxUrl: constants[target].travauxUrl,
-                        changelog_url: constants[target].changelog_url,
                         swsProxyRootPath: "<%= swsProxyPath %>",
                         aapiHeaderName: "X-Ovh-2api-Session",
-                        publicCloudUrl: constants[target].publicCloudUrl,
-                        vrackUrl: constants[target].vrackUrl,
-                        nashaUrl: constants[target].nashaUrl,
                         MANAGER_URLS: constants[target].MANAGER_URLS,
-                        NO_AUTORENEW_COUNTRIES: constants[target].NO_AUTORENEW_COUNTRIES,
                         REDIRECT_URLS: constants[target].REDIRECT_URLS
                     },
                     LANGUAGES: constants[target].LANGUAGES,
                     website_url: constants[target].website_url
-
                 }
             },
             distUa: {
@@ -970,37 +941,9 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask("test", (target, option) => {
-        if (target === "e2e") {
-
-            // Check if it's a remote test
-            if (process.env.E2E_BASE_URL && !/^https?:\/\/localhost/.test(process.env.E2E_BASE_URL)) {
-                option = "remote";
-            }
-
-            if (option === "remote") {
-                return grunt.task.run([
-                    "protractor"
-                ]);
-
-            }
-
-            return grunt.task.run([ // not implemented, plz use remote
-                "buildDev",
-                "protractor"
-            ]);
-
-
-        }
-        return grunt.task.run([
-            "eslint"
-        ]);
-
-    });
+    grunt.registerTask("test", ["eslint"]);
 
     grunt.registerTask("default", ["build"]);
-
-    grunt.registerTask("jshintBabel", ["eslint", "babel"]);
 
     grunt.registerTask("buildProd", [
         "clean",

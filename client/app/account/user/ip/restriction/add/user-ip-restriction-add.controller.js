@@ -1,10 +1,11 @@
 angular.module("UserAccount.controllers").controller("UserAccount.controllers.ipRestrictions.add", [
     "$rootScope",
     "$scope",
+    "$translate",
     "UserAccount.services.ipRestrictions",
     "Alerter",
     "UserValidator",
-    function ($rootScope, $scope, Service, Alerter, Validator) {
+    function ($rootScope, $scope, $translate, Service, Alerter, Validator) {
         "use strict";
 
         $scope.isValid = false;
@@ -30,7 +31,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.ip
                     $rootScope.$broadcast("ipRestriction.reload");
                 },
                 (data) => {
-                    Alerter.alertFromSWS($scope.tr("user_ipRestrictions_add_error", $scope.restriction.ip), data.data, "ipRestrictionAlert");
+                    Alerter.alertFromSWS($translate.instant("user_ipRestrictions_add_error", { t0: $scope.restriction.ip }), data.data, "ipRestrictionAlert");
                 }
             );
         };

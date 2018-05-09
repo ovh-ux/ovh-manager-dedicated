@@ -2,7 +2,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="changeOrganisation"
-         data-wizard-title="tr('ip_organisation_edit_title')">
+         data-wizard-title=":: 'ip_organisation_edit_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="organisationSelected && !loader && !load.request"
@@ -14,13 +14,13 @@
             </div>
 
             <div data-ng-if="!loader && organisationList">
-                <p class="text-center" data-ng-bind-html="tr('ip_organisation_change_title', [ipBlock])"></p>
+                <p class="text-center" data-translate="ip_organisation_change_title" data-translate-values="{ t0: ipBlock }"></p>
                 <form id="organisationForm"
                       name="organisationForm">
                     <div class="form-group">
                         <label for="organisation"
                                class="control-label"
-                               data-i18n-static="ip_organisation_change_organisations">
+                               data-translate="ip_organisation_change_organisations">
                         </label>
                         <select data-ng-model="organisationSelected.value"
                                 class="form-control"

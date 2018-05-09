@@ -7,7 +7,8 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
     "Alerter",
     "$state",
     "$stateParams",
-    function ($scope, $q, $window, DedicatedCloud, Orders, Alerter, $state, $stateParams) {
+    "$translate",
+    function ($scope, $q, $window, DedicatedCloud, Orders, Alerter, $state, $stateParams, $translate) {
         "use strict";
 
         const self = this;
@@ -36,7 +37,7 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
                     self.operationIds = operationIds.reverse();
                 })
                 .catch((err) => {
-                    Alerter.alertFromSWS($scope.tr("dedicatedCloud_OPERATIONS_error"), err, "dedicatedCloud_alert");
+                    Alerter.alertFromSWS($translate.instant("dedicatedCloud_OPERATIONS_error"), err, "dedicatedCloud_alert");
                 })
                 .finally(() => {
                     self.loaders.operations = false;
@@ -47,10 +48,10 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
             self.loaders.operations = true;
             return DedicatedCloud.getOperation($stateParams.productId, { taskId: item })
                 .then((op) => {
-                    const friendlyNameBy = $scope.tr(`dedicatedCloud_OPERATIONS_createdby_${op.createdBy.replace(/-/g, "_")}`);
-                    const friendlyNameFrom = $scope.tr(`dedicatedCloud_OPERATIONS_createdfrom_${op.createdFrom.replace(/-/g, "_")}`);
-                    op.createdBy = friendlyNameBy.indexOf("/!\\") === 0 ? op.createdBy : friendlyNameBy;
-                    op.createdFrom = friendlyNameFrom.indexOf("/!\\") === 0 ? op.createdFrom : friendlyNameFrom;
+                    const friendlyNameBy = $translate.instant(`dedicatedCloud_OPERATIONS_createdby_${op.createdBy.replace(/-/g, "_")}`);
+                    const friendlyNameFrom = $translate.instant(`dedicatedCloud_OPERATIONS_createdfrom_${op.createdFrom.replace(/-/g, "_")}`);
+                    op.createdBy = friendlyNameBy.startsWith("dedicatedCloud_OPERATIONS_createdby_") ? op.createdBy : friendlyNameBy;
+                    op.createdFrom = friendlyNameFrom.startsWith("dedicatedCloud_OPERATIONS_createdfrom_") ? op.createdFrom : friendlyNameFrom;
                     op.isDone = _.includes(self.doneStates, op.state);
                     return op;
                 })
@@ -67,7 +68,7 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
                         $window.open(order.url);
                     })
                     .catch((err) => {
-                        Alerter.alertFromSWS($scope.tr("dedicatedCloud_OPERATIONS_error"), err, "dedicatedCloud_alert");
+                        Alerter.alertFromSWS($translate.instant("dedicatedCloud_OPERATIONS_error"), err, "dedicatedCloud_alert");
                     });
             }
         };
@@ -89,7 +90,9 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
                 const value = operation[field];
                 if (!_.isNull(value)) {
                     operation.relatedServices.push({
-                        label: $scope.tr(baseTrad + field, [value]),
+                        label: $translate.instant(baseTrad + field, {
+                            t0: value
+                        }),
                         action: { type: "label" },
                         field
                     });
@@ -125,7 +128,9 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
                     }
 
                     operation.relatedServices.push({
-                        label: $scope.tr(baseTrad + field, [value]),
+                        label: $translate.instant(baseTrad + field, {
+                            t0: value
+                        }),
                         action: { type: "url", url },
                         field
                     });
@@ -141,7 +146,9 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
                     const params = _.pick(operation, ["datacenterId", "serviceName"]);
                     params[field] = value;
                     operation.relatedServices.push({
-                        label: $scope.tr(baseTrad + field, [value]),
+                        label: $translate.instant(baseTrad + field, {
+                            t0: value
+                        }),
                         action: { type: "callback", params },
                         field
                     });
@@ -180,10 +187,10 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
                 data: { executionDate: operation.executionDate }
             })
                 .then(() => {
-                    Alerter.success($scope.tr("dedicatedCloud_OPERATIONS_success"), "dedicatedCloud_alert");
+                    Alerter.success($translate.instant("dedicatedCloud_OPERATIONS_success"), "dedicatedCloud_alert");
                 })
                 .catch((err) => {
-                    Alerter.alertFromSWS($scope.tr("dedicatedCloud_OPERATIONS_error"), err, "dedicatedCloud_alert");
+                    Alerter.alertFromSWS($translate.instant("dedicatedCloud_OPERATIONS_error"), err, "dedicatedCloud_alert");
                 })
                 .finally(() => {
                     self.loaders.updating = false;
@@ -198,7 +205,7 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", [
                     self.stateEnum = data.models["dedicatedCloud.TaskStateEnum"].enum;
                 })
                 .catch((err) => {
-                    Alerter.alertFromSWS($scope.tr("dedicatedCloud_OPERATIONS_error"), err, "dedicatedCloud_alert");
+                    Alerter.alertFromSWS($translate.instant("dedicatedCloud_OPERATIONS_error"), err, "dedicatedCloud_alert");
                 })
                 .then(() => DedicatedCloud.getSelected($stateParams.productId))
                 .then((cloud) => {
