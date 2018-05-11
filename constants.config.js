@@ -352,9 +352,20 @@ var constants = {
         },
         TOP_GUIDES : {
             all: {
-                fr_FR: "https://www.ovh.com/fr/support/knowledge/",
-                en_GB: "https://www.ovh.co.uk/community/knowledge/",
-                en_US: "https://support.ovhcloud.com/hc/en-us"
+                fr_FR: "https://docs.ovh.com/fr/dedicated/",
+                de_DE: "https://docs.ovh.com/de/dedicated/",
+                en_AU: "https://docs.ovh.com/au/en/dedicated/",
+                en_CA: "https://docs.ovh.com/ca/en/dedicated/",
+                en_GB: "https://docs.ovh.com/gb/en/dedicated/",
+                en_US: "https://support.ovhcloud.com/hc/en-us",
+                es_ES: "https://docs.ovh.com/es/dedicated/",
+                it_IT: "https://docs.ovh.com/it/dedicated/",
+                lt_LT: "https://docs.ovh.com/lt/dedicated/",
+                nl_NL: "https://docs.ovh.com/nl/dedicated/",
+                pl_PL: "https://docs.ovh.com/pl/dedicated/",
+                pt_PT: "https://docs.ovh.com/pt/dedicated/",
+                fi_FI: "https://docs.ovh.com/fi/dedicated/",
+                cs_CZ: "https://docs.ovh.com/cz/cs/dedicated/"
             },
             sd: {
                 fr_FR: [
