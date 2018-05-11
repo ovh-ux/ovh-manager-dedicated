@@ -1,10 +1,15 @@
-angular.module("App").controller("DedicatedCloudSubDatacenterLicencesCtrl", ($scope, $stateParams, $translate, DedicatedCloud, $rootScope) => {
+angular.module("App").controller("DedicatedCloudLicencesCtrl", ($scope, $state, $stateParams, $translate, DedicatedCloud, $rootScope, constants) => {
     "use strict";
 
     $scope.licences = {
         model: null,
+        spla: false,
+        canActive: true
+
+        /*
         spla: null,
         canActive: false
+        */
     };
     $scope.loading = {
         licences: false,
@@ -19,8 +24,10 @@ angular.module("App").controller("DedicatedCloudSubDatacenterLicencesCtrl", ($sc
         $scope.loading.licences = true;
         DedicatedCloud.getDatacenterLicence($stateParams.productId).then(
             (datacenter) => {
-                $scope.licences.spla = datacenter.isSplaActive;
-                $scope.licences.canActive = datacenter.canOrderSpla;
+                console.log(datacenter);
+
+                // $scope.licences.spla = datacenter.isSplaActive;
+                // $scope.licences.canActive = datacenter.canOrderSpla;
                 $scope.loading.licences = false;
             },
             (data) => {
@@ -33,6 +40,14 @@ angular.module("App").controller("DedicatedCloudSubDatacenterLicencesCtrl", ($sc
 
     $scope.canBeActivatedSpla = function () {
         return $scope.licences.spla === false && $scope.licences.canActive;
+    };
+
+    $scope.enableLicense = function () {
+        if (constants.target === "US") {
+            $state.go("app.dedicatedClouds.license.enable");
+        } else {
+            $scope.setAction("license/enable/dedicatedCloud-license-enable");
+        }
     };
 
     $scope.loadLicences();

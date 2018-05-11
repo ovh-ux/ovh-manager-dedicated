@@ -411,8 +411,6 @@ angular
         /* ------- SUB DATACENTER LICENCES -------*/
 
         this.getDatacenterLicence = function (serviceName) {
-            // @TODO fix spla order
-            // temporary fix spla license display for US customers
             if (constants.target === "US") {
                 return OvhHttp.get("/dedicatedCloud/{serviceName}", {
                     rootPath: "apiv6",
@@ -420,7 +418,7 @@ angular
                         serviceName
                     }
                 }).then((pcc) => ({
-                    canOrderSpla: false,
+                    canOrderSpla: !pcc.spla,
                     isSplaActive: pcc.spla
                 }));
             }
