@@ -1,21 +1,21 @@
-<div data-ng-controller="DedicatedCloudTerminateCtrl">
+<div class="dedicatedCloud-terminate">
 
-    <div data-wizard
-         data-wizard-on-cancel="resetAction"
-         data-wizard-on-finish="terminate"
-         data-wizard-title=":: 'dedicatedCloud_close_service' | translate">
+    <oui-modal data-title="{{ :: 'dedicatedCloud_close_service' | translate }}"
+               data-primary-action="$ctrl.onTerminateBtnClick()"
+               data-primary-label="{{ :: 'wizard_confirm' | translate }}"
+               data-secondary-action="$ctrl.onCancelBtnClick()"
+               data-secondary-label="{{ :: 'wizard_cancel' | translate }}"
+               data-on-dismiss="$ctrl.onCancelBtnClick()"
+               data-loading="$ctrl.loading.terminate">
 
-        <div data-wizard-step>
+        <oui-message class="d-block my-4"
+                     data-type="error">
+            <span data-translate="dedicatedCloud_close_service_warning"></span>
+        </oui-message>
 
-            <div class="alert alert-danger"
-                 role="alert"
-                 data-translate="dedicatedCloud_close_service_warning">
-            </div>
-            <p data-translate="dedicatedCloud_close_service_desc"></p>
-            <p data-translate="dedicatedCloud_close_service_question"></p>
+        <p data-translate="dedicatedCloud_close_service_desc"></p>
+        <p data-translate="dedicatedCloud_close_service_question"></p>
 
-        </div>
-
-    </div>
+    </oui-modal>
 
 </div>
