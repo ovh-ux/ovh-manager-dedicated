@@ -107,6 +107,60 @@
                             </oui-action-menu>
                         </div>
                     </div>
+                    <div class="oui-tile__item">
+                        <dl class="oui-tile__definition"
+                            data-ng-if="!loading">
+                            <dt class="oui-tile__term"></dt>
+                            <dd class="oui-tile__description">
+                                <a class="d-block"
+                                   target="_blank"
+                                   rel="noopener"
+                                   title="{{ 'dedicatedCloud_datacenter_go_vscope' | translate }}"
+                                   data-ng-href="{{dedicatedCloud.vScopeUrl}}">
+                                    <span data-translate="dedicatedCloud_datacenter_go_vscope"></span>
+                                    <span class="fa fa-external-link"
+                                          aria-hidden="true">
+                                    </span>
+                                </a>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="oui-tile__item"
+                         data-ng-if="!loading && dedicatedCloud.webInterfaceUrl">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term"></dt>
+                            <dd class="oui-tile__description">
+                                <a class="d-block"
+                                   target="_blank"
+                                   rel="noopener"
+                                   title="{{ 'dedicatedCloud_datacenter_go_web_interface' | translate }}"
+                                   data-ng-href="{{dedicatedCloud.webInterfaceUrl}}">
+                                    <span data-translate="dedicatedCloud_datacenter_go_web_interface"></span>
+                                    <span class="fa fa-external-link"
+                                          aria-hidden="true">
+                                    </span>
+                                </a>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="oui-tile__item"
+                         data-ng-if="!loading && dedicatedCloud.certifiedInterfaceUrl && dedicatedCloud.advancedSecurity">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term"></dt>
+                            <dd class="oui-tile__description">
+                                <a class="d-block"
+                                   target="_blank"
+                                   rel="noopener"
+                                   title="{{ 'dedicatedCloud_datacenter_go_certified_web_interface' | translate }}"
+                                   data-ng-href="{{dedicatedCloud.certifiedInterfaceUrl}}">
+                                    <span data-translate="dedicatedCloud_datacenter_go_certified_web_interface"></span>
+                                    <span class="fa fa-external-link"
+                                          aria-hidden="true">
+                                    </span>
+                                </a>
+                            </dd>
+                        </dl>
+                    </div>
                 </div>
             </div>
         </div>

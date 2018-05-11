@@ -37,7 +37,7 @@
                                 <dt class="oui-tile__term"
                                     data-translate="dedicatedCloud_type"></dt>
                                 <dd class="oui-tile__description"
-                                    data-translate="{{ ('dedicatedCloud_type_' + dedicatedCloud.solution) + ' ' + (dedicatedCloud.solution === 'VSPHERE' && dedicatedCloud.version ? dedicatedCloud.version.major : '') }}"></dd>
+                                    data-ng-bind="('dedicatedCloud_type_' + dedicatedCloud.solution | translate) + ' ' + (dedicatedCloud.solution === 'VSPHERE' && dedicatedCloud.version ? dedicatedCloud.version.major : '')"></dd>
                             </dl>
                         </div>
                         <div class="oui-tile__item">
@@ -189,7 +189,7 @@
                             <div class="oui-tile__actions"
                                  data-ng-if="!options.nsx.loading && options.nsx.state !== null && options.nsx.toggable">
                                 <oui-action-menu
-                                    aria-label="{{:: 'menu_action_label' | translate:{t0: ('dedicatedCloud_options_nsx' | translate) }}"
+                                    aria-label="{{:: 'menu_action_label' | translate:{t0: ('dedicatedCloud_options_nsx' | translate)} }}"
                                     data-compact
                                     data-align="end">
                                     <oui-action-menu-item
@@ -395,10 +395,64 @@
                                     <oui-action-menu-item
                                         aria-label="{{:: 'dedicatedCloud_close_service' | translate }}"
                                         data-text="{{:: 'dedicatedCloud_close_service' | translate }}"
-                                        data-on-click="setAction('terminate/dedicatedCloud-terminate', dedicatedCloud)">
+                                        data-on-click="stateGo('app.dedicatedClouds.terminate')">
                                     </oui-action-menu-item>
                                 </oui-action-menu>
                             </div>
+                        </div>
+                        <div class="oui-tile__item">
+                            <dl class="oui-tile__definition"
+                                data-ng-if="!loading">
+                                <dt class="oui-tile__term"></dt>
+                                <dd class="oui-tile__description">
+                                    <a class="d-block"
+                                       target="_blank"
+                                       rel="noopener"
+                                       title="{{ 'dedicatedCloud_datacenter_go_vscope' | translate }}"
+                                       data-ng-href="{{dedicatedCloud.vScopeUrl}}">
+                                        <span data-translate="dedicatedCloud_datacenter_go_vscope"></span>
+                                        <span class="fa fa-external-link"
+                                              aria-hidden="true">
+                                        </span>
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="oui-tile__item"
+                             data-ng-if="!loading && dedicatedCloud.webInterfaceUrl">
+                            <dl class="oui-tile__definition">
+                                <dt class="oui-tile__term"></dt>
+                                <dd class="oui-tile__description">
+                                    <a class="d-block"
+                                       target="_blank"
+                                       rel="noopener"
+                                       title="{{ 'dedicatedCloud_datacenter_go_web_interface' | translate }}"
+                                       data-ng-href="{{dedicatedCloud.webInterfaceUrl}}">
+                                        <span data-translate="dedicatedCloud_datacenter_go_web_interface"></span>
+                                        <span class="fa fa-external-link"
+                                              aria-hidden="true">
+                                        </span>
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="oui-tile__item"
+                             data-ng-if="!loading && dedicatedCloud.certifiedInterfaceUrl && dedicatedCloud.advancedSecurity">
+                            <dl class="oui-tile__definition">
+                                <dt class="oui-tile__term"></dt>
+                                <dd class="oui-tile__description">
+                                    <a class="d-block"
+                                       target="_blank"
+                                       rel="noopener"
+                                       title="{{ 'dedicatedCloud_datacenter_go_certified_web_interface' | translate }}"
+                                       data-ng-href="{{dedicatedCloud.certifiedInterfaceUrl}}">
+                                        <span data-translate="dedicatedCloud_datacenter_go_certified_web_interface"></span>
+                                        <span class="fa fa-external-link"
+                                              aria-hidden="true">
+                                        </span>
+                                    </a>
+                                </dd>
+                            </dl>
                         </div>
                     </div>
                 </div>
