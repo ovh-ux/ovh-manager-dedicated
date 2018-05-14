@@ -10,8 +10,9 @@ angular.module("App").controller("DedicatedCloudCtrl", [
     "DedicatedCloud",
     "$translate",
     "Module.services.notification",
+    "OvhApiDedicatedCloud",
     "User",
-    function ($scope, $state, $timeout, $stateParams, $q, $log, featureAvailability, step, DedicatedCloud, $translate, Notification, User) {
+    function ($scope, $state, $timeout, $stateParams, $q, $log, featureAvailability, step, DedicatedCloud, $translate, Notification, OvhApiDedicatedCloud, User) {
         "use strict";
 
         $scope.HDS_READY_NOTIFICATION = "HDS_READY_NOTIFICATION";
@@ -49,12 +50,6 @@ angular.module("App").controller("DedicatedCloudCtrl", [
                 });
         }
 
-        function handleCancelConfirmation () {
-            if ($stateParams.action === "confirmcancel") {
-                $scope.setAction("terminate/confirm/dedicatedCloud-terminate-confirm");
-            }
-        }
-
         function loadNewPrices () {
             return DedicatedCloud.getNewPrices($stateParams.productId).then((newPrices) => {
                 $scope.newPriceInformation = newPrices.resources;
@@ -79,7 +74,6 @@ angular.module("App").controller("DedicatedCloudCtrl", [
                     }
                     $scope.dedicatedCloudDescription.model = angular.copy($scope.dedicatedCloud.description);
                     loadNewPrices();
-                    handleCancelConfirmation();
                     loadUserInfo();
                     $scope.showHdsReadyNotificationIfRequired($scope.HDS_READY_NOTIFICATION);
                 })
@@ -92,6 +86,12 @@ angular.module("App").controller("DedicatedCloudCtrl", [
                 });
             DedicatedCloud.getDescription($stateParams.productId).then((dedicatedCloudDescription) => {
                 Object.assign($scope.dedicatedCloud, dedicatedCloudDescription);
+            });
+
+            OvhApiDedicatedCloud.v6().getServiceInfos({
+                serviceName: $stateParams.productId
+            }).$promise.then((serviceInformations) => {
+                $scope.dedicatedCloud.serviceInfos = serviceInformations;
             });
         };
 

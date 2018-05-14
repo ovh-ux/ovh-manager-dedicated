@@ -196,7 +196,8 @@
 
 <div class="row d-md-flex">
     <div class="col-sm-4">
-        <div class="oui-tile mb-5 h-100">
+        <div class="oui-tile mb-5 h-100"
+             data-ng-if="!loadingHousingInformations">
             <h4 class="oui-tile__title oui-header_4"
                 data-translate="housing_tab_stats_legend_subscription">
             </h4>
@@ -206,19 +207,23 @@
                         <dt class="oui-tile__term"
                             data-translate="housing_subscription_owner">
                         </dt>
-                        <dd class="oui-tile__description">
-                            <a class="d-block"
-                               target="_blank"
-                               rel="noopener"
-                               title="{{ 'core_change_owner' | translate }}"
-                               data-ng-href="{{ changeOwnerUrl }}">
-                                <span data-translate="core_change_owner"></span>
-                                <span class="fa fa-external-link"
-                                      aria-hidden="true">
-                                </span>
-                            </a>
+                        <dd class="oui-tile__description"
+                            data-ng-bind="user.firstName + ' ' + user.lastName">
                         </dd>
                     </dl>
+                    <div class="oui-tile__actions">
+                        <oui-action-menu
+                            aria-label="{{:: 'menu_action_label' | translate:{t0: ('core_change_owner' | translate)} }}"
+                            data-compact
+                            data-align="end">
+                            <oui-action-menu-item
+                                aria-label="{{:: 'core_change_owner' | translate }}"
+                                data-text="{{:: 'core_change_owner' | translate }}"
+                                href="{{changeOwnerUrl}}"
+                                data-external>
+                            </oui-action-menu-item>
+                        </oui-action-menu>
+                    </div>
                 </div>
             </div>
         </div>
