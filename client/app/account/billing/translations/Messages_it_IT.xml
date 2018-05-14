@@ -251,12 +251,18 @@
    <translation id="common_time_period_in_months" qtlid="220148">{0} mese</translation>
    <translation id="common_time_period_one_month" qtlid="70241">1 mese</translation>
 
-   <translation id="pagination_page" qtlid="129123">Pagina {0}/{1}</translation>
+   <translation id="pagination_page">Page {{ current }} / {{ last }}</translation>
    <translation id="pagination_display" qtlid="69353">Mostra</translation>
    <translation id="pagination_display_all" qtlid="139884">Tutto</translation>
    <translation id="pagination_go" qtlid="224880">OK</translation>
    <translation id="history_title2" qtlid="159540">Le tue fatture</translation>
    <translation id="history_invoice_loading_errors" qtlid="402984">Si è verificato un errore durante il recupero di {0} fatture.</translation>
+   <translation id="history_invoices_postal_mail">Recevoir mes factures au format papier</translation>
+
+   <translation id="history_invoices_choice_modal_activation">Voulez-vous confirmer l'activation de cette option ?</translation>
+   <translation id="history_invoices_choice_modal_deactivation">Voulez-vous confirmer la désactivation de cette option ?</translation>
+   <translation id="history_invoices_choice_modal_update_success">Le paramètre a bien été mis à jour</translation>
+   <translation id="history_invoices_choice_modal_update_error">Une erreur est survenue lors de la mise à jour du paramètre</translation>
 
    <translation id="history_table_head_date" qtlid="374508">Data di emissione</translation>
    <translation id="history_table_head_id" qtlid="16445">Referenza</translation>
@@ -286,6 +292,7 @@
    <translation id="payments_table_actions_tooltip" qtlid="398820">Maggiori dettagli su questo pagamento</translation>
    <translation id="payments_table_type_not_available" qtlid="374560">Informazione non disponibile</translation>
    <translation id="payments_table_empty" qtlid="398833">Non sono presenti pagamenti per il periodo selezionato.</translation>
+   <translation id="payments_request_pending">Un règlement de solde est en cours. Cliquez <a href="{0}">sur ce lien</a> pour en savoir plus.</translation>
    <translation id="payments_details_link" qtlid="398846">Visualizza i dettagli del pagamento</translation>
    <translation id="payment_details_payment_id" qtlid="16445">Referenza</translation>
    <translation id="payment_details_payment_date" qtlid="24523">Data</translation>
@@ -341,7 +348,7 @@
    <translation id="refunds_table_head_account" qtlid="140079">Accreditato su</translation>
    <translation id="refunds_table_head_total" qtlid="45328">Importo</translation>
    <translation id="refunds_table_head_total_with_VAT" qtlid="20647">Importo IVA inclusa</translation>
-   <translation id="refunds_table_download" qtlid="39286">Scarica</translation>
+   <translation id="refunds_table_download" qtlid="39286">Esegui il download</translation>
    <translation id="refunds_table_empty" qtlid="184126">Non ci sono accrediti nel periodo selezionato</translation>
    <translation id="refunds_table_account_no_information" qtlid="472671">Informazioni indisponibili</translation>
    <translation id="ovhAccount_partial_error" qtlid="191902">A causa di un errore, alcuni movimenti non possono essere visualizzati. Il saldo resta comunque invariato.</translation>
@@ -357,7 +364,7 @@
    <translation id="ovhAccount_table_head_credit" qtlid="89761">Credito</translation>
    <translation id="ovhAccount_table_head_crediter" qtlid="177327">Accredita</translation>
    <translation id="ovhAccount_table_head_crediter_none" qtlid="227143">Non è possibile aggiungere credito a questo account</translation>
-   <translation id="ovhAccount_table_head_download" qtlid="39286">Scarica</translation>
+   <translation id="ovhAccount_table_head_download" qtlid="39286">Esegui il download</translation>
    <translation id="ovhAccount_table_empty" qtlid="383976">Non sono presenti movimenti sul tuo conto prepagato per il mese selezionato&#13;
  </translation>
    <translation id="ovhAccount_table_error" qtlid="177340">Si è verificato un errore, non è possibile caricare le informazioni</translation>
@@ -397,7 +404,7 @@
    <translation id="payment_mean_contact_presentation_reuse_contact" qtlid="381868">utilizzando un contatto già esistente</translation>
    <translation id="payment_mean_contact_presentation_create_contact" qtlid="381881">creando un nuovo contatto</translation>
    <translation id="payment_mean_contact_presentation_billingContactId_title" qtlid="451374">Credit card address</translation>
-   <translation id="payment_mean_contact_presentation_new_card_title" qtlid="480867">Entrez une nouvelle carte</translation>
+   <translation id="payment_mean_contact_presentation_new_card_title" qtlid="480867">Registra una nuova carta</translation>
    <translation id="payment_mean_contact_presentation_update_title_billingContactId" qtlid="451032">Modifica l'indirizzo della carta bancaria</translation>
    <translation id="payment_mean_contact_presentation_update_label" qtlid="37875">Modifica</translation>
    <translation id="payment_mean_contact_presentation_phone_label" qtlid="451387">Tel:</translation>
@@ -976,7 +983,7 @@
    <translation id="tel_lastconso_priceplan" qtlid="190459">Importo totale</translation>
    <translation id="tel_lastconso_outplan" qtlid="190160">Extra-forfait</translation>
    <translation id="tel_lastconso_sheet" qtlid="190472">Dettaglio consumi</translation>
-   <translation id="tel_lastconso_sheet_down" qtlid="39286">Scarica</translation>
+   <translation id="tel_lastconso_sheet_down" qtlid="39286">Esegui il download</translation>
    <translation id="tel_lastconso_sheet_progress" qtlid="26383">In corso</translation>
    <translation id="tel_lastconso_month_date_display" qtlid="190485">MMM yyyy</translation>
 

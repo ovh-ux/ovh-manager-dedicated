@@ -107,6 +107,14 @@ class FeatureAvailability {
         return this.deny("US");
     }
 
+    allowDedicatedServerUSBKeys () {
+        return this.deny("US");
+    }
+
+    allowDedicatedServerFirewallCiscoAsa () {
+        return this.deny("US");
+    }
+
     allowIPFailoverImport () {
         return this.deny("US");
     }

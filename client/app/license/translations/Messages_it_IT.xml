@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
 
-   <translation id="license_dashboard_title" qtlid="471990">Licenses</translation>
+   <translation id="license_dashboard_title" qtlid="471990">Licenze</translation>
    <translation id="license_dashboard_subtitle" qtlid="44524">Gestisci licenze</translation>
 
    <translation id="license_designation_ALL_TYPE" qtlid="171656">Tutte le licenze</translation>
@@ -406,14 +406,14 @@
    <translation id="day_1" qtlid="28807">1 giorno</translation>
    <translation id="day_other" qtlid="158578">{} giorni</translation>
    <translation id="month_1" qtlid="70241">1 mese</translation>
-   <translation id="month_other" qtlid="158591">{} mesi</translation>
+   <translation id="month_other">{0} mois</translation>
    <translation id="year_1" qtlid="70277">1 anno</translation>
    <translation id="year_other" qtlid="158604">{} anni</translation>
    <translation id="upto" qtlid="158617">Fino al {0}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Fino al primo giorno del prossimo mese</translation>
    <translation id="engage" qtlid="158643">Sottoscrivi {0}</translation>
-   <translation id="price_ht_label" qtlid="166183">{0}&#160;+IVA</translation>
-   <translation id="price_ttc_label" qtlid="166196">{0}&#160;IVA incl.</translation>
+   <translation id="price_ht_label">{{ price }}&#160;HT</translation>
+   <translation id="price_ttc_label">{{ price }}&#160;TTC</translation>
    <translation id="price_free" qtlid="130495">Gratuito</translation>
 
    <translation id="license_dashboard_table_title_type" qtlid="2642">Tipo</translation>
@@ -502,7 +502,7 @@
 
    <translation id="license_delete_title" qtlid="258437">Elimina una licenza</translation>
    <translation id="license_delete_fail" qtlid="258450">Si è verificato un errore durante la richiesta di eliminazione della tua licenza:</translation>
-   <translation id="license_delete_already_terminating" qtlid="480880">Une demande de suppression est déjà en cours</translation>
+   <translation id="license_delete_already_terminating" qtlid="480880">Una richiesta di eliminazione è già in corso</translation>
    <translation id="license_delete_success" qtlid="258463">Ti abbiamo inviato un'email per confermare l'eliminazione della tua licenza</translation>
    <translation id="license_delete_step1_question" qtlid="258476">Vuoi davvero eliminare questa licenza?</translation>
    <translation id="license_delete_type" qtlid="185868">Tipo di licenza:</translation>
@@ -596,7 +596,7 @@
    <translation id="license_migrate_title" qtlid="186310">Trasferisci licenza</translation>
    <translation id="license_migrate_title_button" qtlid="186323">Trasferisci licenza</translation>
    <translation id="license_migrate_common_choose" qtlid="186115">Scegli...</translation>
-   <translation id="license_migrate_step1_question" qtlid="472198">Veuillez choisir la nouvelle adresse IP à laquelle votre licence sera associée</translation>
+   <translation id="license_migrate_step1_question" qtlid="472198">Scegli il nuovo indirizzo IP al quale sarà associata la tua licenza</translation>
    <translation id="license_migrate_step1_no_ip_available" qtlid="186349">Non ci sono IP disponibili</translation>
    <translation id="license_migrate_step1_ip_block" qtlid="186362">Block di ricezione</translation>
    <translation id="license_migrate_step1_ip" qtlid="186375">Ip di ricezione</translation>

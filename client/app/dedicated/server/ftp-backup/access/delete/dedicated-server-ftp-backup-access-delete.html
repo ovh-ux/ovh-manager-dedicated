@@ -1,24 +1,13 @@
-<div data-ng-controller="DeleteAccessFtpBackupCtrl">
-
-    <div data-wizard
-         data-wizard-on-cancel="resetAction"
-         data-wizard-on-finish="deleteAccessFtpBackup"
-         data-wizard-title=":: 'server_configuration_ftpbackup_access_delete' | translate">
-
-        <div data-wizard-step
-             data-wizard-step-valid="!loading">
-
-            <div class="text-center"
-                 data-ng-if="loading">
-                <oui-spinner ></oui-spinner>
-            </div>
-
-            <p data-ng-if="!loading"
-               data-translate="server_configuration_ftpbackup_access_delete_question" data-translate-values="{ t0: access }">
-            </p>
-
-        </div>
-
-    </div>
-
+<div data-ng-controller="DedicatedServerFtpBackupAccessDeleteController as $ctrl">
+    <oui-modal data-title="{{:: 'server_configuration_ftpbackup_access_delete' | translate }}"
+               data-primary-action="$ctrl.deleteFtpBackupAccess()"
+               data-primary-label="{{:: 'wizard_confirm' | translate }}"
+               data-secondary-action="resetAction()"
+               data-secondary-label="{{:: 'wizard_cancel' | translate }}"
+               data-on-dismiss="resetAction()"
+               data-loading="$ctrl.isDeleting">
+        <p data-translate="server_configuration_ftpbackup_access_delete_question"
+           data-translate-values="{ t0: $ctrl.access }">
+        </p>
+    </oui-modal>
 </div>

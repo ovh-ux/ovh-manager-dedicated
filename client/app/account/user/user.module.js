@@ -26,14 +26,6 @@ angular
                 translations: ["account/user"]
             });
 
-            if (target === "EU") {
-                $stateProvider.state("app.account.useraccount.subscriptions", {
-                    url: "/subscriptions",
-                    templateUrl: `${baseUrl}subscriptions/user-subscriptions.html`,
-                    controller: "UserAccount.controllers.Subscriptions"
-                });
-            }
-
             $stateProvider.state("app.account.useraccount.ssh", {
                 url: "/ssh",
                 templateUrl: `${baseUrl}ssh/user-ssh.html`,

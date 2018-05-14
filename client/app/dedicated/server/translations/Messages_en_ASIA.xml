@@ -437,6 +437,8 @@
    <translation id="server_configuration_ftpbackup_access_order" qtlid="180564">Order disk space</translation>
    <translation id="server_configuration_ftpbackup_access_order_right" qtlid="180577">You don't have the required permissions to order</translation>
    <translation id="server_configuration_ftpbackup_access_add" qtlid="153857">Add an access</translation>
+   <translation id="server_configuration_ftpbackup_access_edit" qtlid="180694">Modify the access</translation>
+   <translation id="server_configuration_ftpbackup_access_edit_info">Modifier l'accès du block IP <strong>{0}</strong></translation>
    <translation id="server_configuration_ftpbackup_access_delete" qtlid="180590">Delete an access</translation>
    <translation id="server_configuration_ftpbackup_access_delete_question" qtlid="183814">Are you sure you want to delete the access for the IP block <b>{0}</b>?</translation>
    <translation id="server_configuration_ftpbackup_access_delete_success" qtlid="183827">The deletion of the access to the Backup Storage for IP block <b>{0}</b> has been registered but may take a few minutes</translation>
@@ -520,6 +522,7 @@
    <translation id="server_configuration_intervention_type" qtlid="2642">Type</translation>
    <translation id="server_configuration_intervention_date" qtlid="24523">Date</translation>
    <translation id="server_configuration_intervention_empty" qtlid="455620">No intervention</translation>
+   <translation id="server_configuration_intervention_error">Une erreur est survenue lors du chargement des informations</translation>
    <translation id="server_tab_firewall" qtlid="151542">Cisco ASA firewall</translation>
    <translation id="server_tab_FIREWALLASA_not_activated" qtlid="151555">You have not subscribed to the Cisco ASA firewall.</translation>
    <translation id="server_tab_FIREWALLASA_not_able_to_order" qtlid="151568">You cannot subscribe because you NIC handle is not authorised to place orders for this server.</translation>
@@ -932,21 +935,21 @@
    <translation id="day_1" qtlid="28807">1 day</translation>
    <translation id="day_other" qtlid="158578">{} days</translation>
    <translation id="month_1" qtlid="70241">1 month</translation>
-   <translation id="month_other" qtlid="158591">{} months</translation>
+   <translation id="month_other">{0} mois</translation>
    <translation id="year_1" qtlid="70277">1 year</translation>
    <translation id="year_other" qtlid="158604">{} years</translation>
-   <translation id="upto" qtlid="158617">Until {0}</translation>
+   <translation id="upto">Jusqu'au {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Until the 1st of next month</translation>
    <translation id="engage" qtlid="158643">Sign up {0}</translation>
-   <translation id="price_ht_label" qtlid="166183">{0}&#160;ex. GST</translation>
-   <translation id="price_ttc_label" qtlid="166196">{0} incl. GST</translation>
+   <translation id="price_ht_label">{{ price }}&#160;HT</translation>
+   <translation id="price_ttc_label">{{ price }}&#160;TTC</translation>
    <translation id="price_free" qtlid="130495">Free</translation>
    <translation id="price" qtlid="181084">Price:</translation>
    <translation id="contract_next" qtlid="17743">Next</translation>
    <translation id="contract_previous" qtlid="17431">Previous</translation>
-   <translation id="download_contract" qtlid="180369">Open the "{0}" contract in PDF</translation>
+   <translation id="download_contract">Ouvrir le contrat "{{ name }}" en PDF</translation>
    <translation id="contract_help" qtlid="180382">Scroll down to the contracts in order to confirm them.</translation>
-   <translation id="contracts_list_title" qtlid="180395">There are {0} contracts to read.</translation>
+   <translation id="contracts_list_title">Il y a {{ count }} contrats à consulter.</translation>
    <translation id="contract_list_title" qtlid="180408">There is 1 contract to read.</translation>
    <translation id="contracts_agree" qtlid="180421">Accept the contracts</translation>
    <translation id="contract_agree" qtlid="180434">Accept the contract</translation>

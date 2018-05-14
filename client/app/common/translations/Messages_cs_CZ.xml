@@ -115,7 +115,7 @@
    <translation id="wizard_renew" qtlid="118962">Obnovit</translation>
    <translation id="wizard_next" qtlid="17743">Další</translation>
    <translation id="wizard_previous" qtlid="17431">Předcházející</translation>
-   <translation id="wizard_breadcrumb" qtlid="158682">Krok {0} z {1}</translation>
+   <translation id="wizard_breadcrumb">Étape {{ currentStep }} sur {{ stepCount }}</translation>
    <translation id="pagination_page" qtlid="129123">Strana {0}/{1}</translation>
    <translation id="pagination_go" qtlid="31522">OK</translation>
    <translation id="pagination_display" qtlid="69353">Zobrazit</translation>
@@ -188,12 +188,14 @@
    <translation id="common_no" qtlid="34788">Ne</translation>
    <translation id="common_delete" qtlid="2414">Odstranit</translation>
    <translation id="required" qtlid="182514">Povinná pole</translation>
-
+   <translation id="required_fields" qtlid="433550">Pole označená hvězdičkou jsou povinná.</translation>
+   <translation id="select_placeholder" qtlid="447963">Vyberte...</translation>
+   <translation id="common_newtab" qtlid="402165">nová záložka</translation>
    <translation id="contract_next" qtlid="17743">Další</translation>
    <translation id="contract_previous" qtlid="17431">Předcházející</translation>
-   <translation id="download_contract" qtlid="180369">Otevřít smlouvu "{0}" v PDF</translation>
+   <translation id="download_contract">Ouvrir le contrat "{{ name }}" en PDF</translation>
    <translation id="contract_help" qtlid="180382">Pro potvrzení smlouvy sjeďte níže.</translation>
-   <translation id="contracts_list_title" qtlid="180395">Je zde {0} smluv k přečtení.</translation>
+   <translation id="contracts_list_title">Il y a {{ count }} contrats à consulter.</translation>
    <translation id="contract_list_title" qtlid="180408">Je zde 1 smlouva k přečtení.</translation>
    <translation id="contracts_agree" qtlid="180421">Souhlasím se smlouvami</translation>
    <translation id="contract_agree" qtlid="180434">Souhlasím se smlouvou</translation>
@@ -201,13 +203,13 @@
    <translation id="day_1" qtlid="28807">1 den</translation>
    <translation id="day_other" qtlid="158578">{} dní</translation>
    <translation id="month_1" qtlid="70241">1 měs.</translation>
-   <translation id="month_other" qtlid="158591">{} měs.</translation>
+   <translation id="month_other">{0} mois</translation>
    <translation id="year_1" qtlid="70277">1 rok</translation>
    <translation id="year_other" qtlid="158604">{} roky</translation>
-   <translation id="upto" qtlid="158617">Do {0}</translation>
+   <translation id="upto">Jusqu'au {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Do 1. následujícího měsíce</translation>
    <translation id="engage" qtlid="158643">Objednat {0}</translation>
-   <translation id="price_ht_label" qtlid="166183">{0}&#160;bez DPH</translation>
+   <translation id="price_ht_label">{{ price }}&#160;HT</translation>
    <translation id="price_ttc_label" qtlid="166196">{0}&#160;s DPH</translation>
    <translation id="price_free" qtlid="195776">Včetně</translation>
    <translation id="price_label_yearly" qtlid="288977">/rok</translation>
@@ -538,9 +540,9 @@
    <translation id="me_alerts_PAYMENTMEAN_CREDITCARD_TOOMANYFAILURES" qtlid="343954">Počet kreditních karet hlásících chybu: <strong>{0}</strong>. Běžte do <a href="#/billing/mean" class="alert-link">sekce fakturace</a> a proveďte potřebná ověření, případně zadejte novou platební metodu.</translation>
    <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="343967">Počet účtů PayPal hlásících chybu: <strong>{0}</strong>. Běžte do <a href="#/billing/mean" class="alert-link">sekce fakturace</a> a proveďte potřebná ověření, případně zadejte novou platební metodu.</translation>
 
-   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="374958">Záporný zůstatek na Vašem předplaceném účtu je <strong>{0}</strong> k datu {{ '{1}' | date:'medium'}}. Pro vyřešení této situace přejděte prosím do <a href="#/billing/ovhaccount" class="alert-link"> sekce "Fakturace"</a>.</translation>
+   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="374958">Záporný zůstatek na Vašem předplaceném účtu je <strong>{0}</strong> k datu {1}. Pro vyřešení této situace přejděte prosím do <a href="#/billing/ovhaccount" class="alert-link"> sekce "Fakturace"</a>.</translation>
    <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369545">Vaše aktuální dlužná částka činní <strong>{0}</strong> (včetně  doposud neuhrazených pohledávek {1}). Pro uhrazení prosím přejděte do <a href="{2}" class="alert-link">sekce "Fakturace"</a>.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="343993">Váš aktuální dluh: <strong>{0}</strong>. Běžte do <a href="{1}" class="alert-link">sekce fakturace</a> a zjednejte nápravu.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="343993">Váš aktuální dluh: <strong>{0}</strong>. Přejděte prosím do <a href="{1}" class="alert-link">sekce fakturace</a> a zjednejte nápravu.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="383919">Váš předplacený účet dosáhl Vámi stanovené hranice. Pro více informací přejděte prosím do <a href="#/billing/ovhaccount" class="alert-link"> sekce "Fakturace"</a>.</translation>
 
@@ -555,8 +557,8 @@
    <translation id="core_service_expiration_auto_renew" qtlid="414986">Obnovení je naplánováno na</translation>
    <translation id="core_service_renew_button" qtlid="118962">Obnovit</translation>
 
-   <translation id="core_user_enterprise_retail_prices" qtlid="480776">Note : Les prix indiqués sont des prix standards du catalogue et peuvent ne pas refléter les conditions négociées. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
-   <translation id="core_user_enterprise_retail_prices_hpc" qtlid="480789">Note : Les prix indiqués sont une estimation basée sur le calcul au prorata de ce module pour l'aligner sur la période de facturation de votre contrat actuel. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
+   <translation id="core_user_enterprise_retail_prices" qtlid="480776">Poznámka: uvedené ceny představují standardní katalogové ceny, které nemusí reflektovat zjednané podmínky. Detailní informace naleznete ve svém měsíčním vyúčtování.</translation>
+   <translation id="core_user_enterprise_retail_prices_hpc" qtlid="480789">Poznámka: uvedené ceny jsou odhadem založeným na základě výpočtu poměrné části tohoto modulu pro přidání k zúčtovacímu období Vaší aktuální smlouvy. Detailní informace naleznete ve svém měsíčním vyúčtování.</translation>
 
    <translation id="browser_alert_not_supported" qtlid="405357">Váš prohlížeč není podporován.</translation>
    <translation id="browser_alert_deprecated" qtlid="405370">Váš prohlížeč je zastaralý a může představovat riziko po stránce kompatibility a zabezpečení.</translation>

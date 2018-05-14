@@ -9,13 +9,22 @@ angular.module("App").controller("UserAlertCtrl", (User, $translate, $scope, $in
                     switch (alert.id) {
                     case "DEBTACCOUNT_DEBT":
                         if (_.get(alert, "data.debtAccount.unmaturedAmount.value", 0) > 0) {
-                            messages.push($translate.instant("me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT", [_.get(alert, "data.debtAccount.dueAmount.text"), _.get(alert, "data.debtAccount.unmaturedAmount.text"), "#/billing/history"]));
+                            messages.push($translate.instant("me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT", {
+                                t0: _.get(alert, "data.debtAccount.dueAmount.text"),
+                                t1: _.get(alert, "data.debtAccount.unmaturedAmount.text"),
+                                t2: "#/billing/history"
+                            }));
                         } else if (constants.target !== "US") {
-                            messages.push($translate.instant("me_alerts_DEBTACCOUNT_DEBT", [_.get(alert, "data.debtAccount.dueAmount.text"), "#/billing/history"]));
+                            messages.push($translate.instant("me_alerts_DEBTACCOUNT_DEBT", { t0: _.get(alert, "data.debtAccount.dueAmount.text"), t1: "#/billing/history" }));
                         }
                         break;
                     case "OVHACCOUNT_DEBT":
-                        messages.push($translate.instant("me_alerts_OVHACCOUNT_DEBT", [_.get(alert, "data.ovhAccount.balance.text"), _.get(alert, "data.ovhAccount.lastUpdate")]));
+                        messages.push(
+                            $translate.instant("me_alerts_OVHACCOUNT_DEBT", {
+                                t0: _.get(alert, "data.ovhAccount.balance.text"),
+                                t1: moment(_.get(alert, "data.ovhAccount.lastUpdate")).format("LLL")
+                            })
+                        );
                         break;
                     case "PAYMENTMEAN_DEFAULT_MISSING":
                     case "PAYMENTMEAN_DEFAULT_EXPIRED":
@@ -26,11 +35,12 @@ angular.module("App").controller("UserAlertCtrl", (User, $translate, $scope, $in
                         messages.push($translate.instant(`me_alerts_${alert.id}`));
                         break;
                     case "ORDERS_DOCUMENTSREQUESTED":
-                        messages.push($translate.instant("me_alerts_ORDERS_DOCUMENTSREQUESTED", [(_.get(alert, "data.ordersWithDocumentsRequested") || []).length]));
+                        messages.push($translate.instant("me_alerts_ORDERS_DOCUMENTSREQUESTED", { t0: _.size(_.get(alert, "data.ordersWithDocumentsRequested")) }));
                         break;
                     default:
-                        var translatedAlert = $translate.instant(`me_alerts_${alert.id}`);
-                        if (translatedAlert === `/!\\ me_alerts_${alert.id}`) {
+                        var key = `me_alerts_${alert.id}`;
+                        var translatedAlert = $translate.instant(key);
+                        if (translatedAlert === key) {
                             // No translation
                             messages.push(alert.description);
                         } else {
