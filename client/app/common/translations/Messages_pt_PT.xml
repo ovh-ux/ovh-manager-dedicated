@@ -115,7 +115,7 @@
    <translation id="wizard_renew" qtlid="118962">Renovar</translation>
    <translation id="wizard_next" qtlid="17743">Seguinte</translation>
    <translation id="wizard_previous" qtlid="17431">Anterior</translation>
-   <translation id="wizard_breadcrumb" qtlid="158682">Etapa {0} de {1}</translation>
+   <translation id="wizard_breadcrumb">Étape {{ currentStep }} sur {{ stepCount }}</translation>
    <translation id="pagination_page" qtlid="129123">Página {0} / {1}</translation>
    <translation id="pagination_go" qtlid="31522">OK</translation>
    <translation id="pagination_display" qtlid="69353">Mostrar</translation>
@@ -138,7 +138,7 @@
    <translation id="common_expired" qtlid="257941">O serviço não foi renovado. Possíveis motivos: decisão sua ou atraso no pagamento.</translation>
    <translation id="common_service_expired" qtlid="257954">O serviço {0} não foi renovado. Possíveis motivos: decisão sua ou atraso no pagamento.</translation>
    <translation id="common_available_soon" qtlid="126832">Disponível em breve</translation>
-   <translation id="common_reset_zoom" qtlid="142237">Reiniciar o zoom</translation>
+   <translation id="common_reset_zoom" qtlid="142237"></translation>
    <translation id="common_alerts_message_see_more" qtlid="140677">Ver detalhes dos erros</translation>
    <translation id="common_managerv5" qtlid="190784">Manager V5</translation>
    <translation id="common_managerv3" qtlid="34512">Manager V3</translation>
@@ -188,27 +188,29 @@
    <translation id="common_no" qtlid="34788">Não</translation>
    <translation id="common_delete" qtlid="2414">Eliminar</translation>
    <translation id="required" qtlid="182514">Campos obrigatórios</translation>
-
+   <translation id="required_fields" qtlid="433550">Os campos com asterisco são de preenchimento obrigatório</translation>
+   <translation id="select_placeholder" qtlid="447963">Selecionar...</translation>
+   <translation id="common_newtab" qtlid="402165">novo separador</translation>
    <translation id="contract_next" qtlid="17743">Seguinte</translation>
    <translation id="contract_previous" qtlid="17431">Anterior</translation>
-   <translation id="download_contract" qtlid="180369">Abrir o contrato "{0}" em PDF</translation>
+   <translation id="download_contract">Ouvrir le contrat "{{ name }}" en PDF</translation>
    <translation id="contract_help" qtlid="180382">Para poder validar, tem de ler os contratos até ao fim.</translation>
-   <translation id="contracts_list_title" qtlid="180395">Existem ainda {0} contratos para ler.</translation>
+   <translation id="contracts_list_title">Il y a {{ count }} contrats à consulter.</translation>
    <translation id="contract_list_title" qtlid="180408">Há 1 contrato para ler.</translation>
-   <translation id="contracts_agree" qtlid="180421">Aceito as condições contratatuais</translation>
-   <translation id="contract_agree" qtlid="180434">Aceito as condições contratatuais</translation>
+   <translation id="contracts_agree" qtlid="180421"></translation>
+   <translation id="contract_agree" qtlid="180434"></translation>
 
-   <translation id="day_1" qtlid="28807">1 dia</translation>
-   <translation id="day_other" qtlid="158578">{} dias</translation>
-   <translation id="month_1" qtlid="70241">1 mês</translation>
-   <translation id="month_other" qtlid="158591">{} meses</translation>
-   <translation id="year_1" qtlid="70277">1 ano</translation>
-   <translation id="year_other" qtlid="158604">{} anos</translation>
-   <translation id="upto" qtlid="158617">Até {0}</translation>
-   <translation id="uptofirstdaynextmonth" qtlid="158630">Até ao primeiro dia do próximo mês</translation>
-   <translation id="engage" qtlid="158643">Contratar {0}</translation>
-   <translation id="price_ht_label" qtlid="166183">{0} s/IVA</translation>
-   <translation id="price_ttc_label" qtlid="166196">{0} c/IVA</translation>
+   <translation id="day_1" qtlid="28807"></translation>
+   <translation id="day_other" qtlid="158578"></translation>
+   <translation id="month_1" qtlid="70241"></translation>
+   <translation id="month_other">{0} mois</translation>
+   <translation id="year_1" qtlid="70277"></translation>
+   <translation id="year_other" qtlid="158604"></translation>
+   <translation id="upto">Jusqu'au {{ date }}</translation>
+   <translation id="uptofirstdaynextmonth" qtlid="158630"></translation>
+   <translation id="engage" qtlid="158643"></translation>
+   <translation id="price_ht_label">{{ price }}&#160;HT</translation>
+   <translation id="price_ttc_label" qtlid="166196"></translation>
    <translation id="price_free" qtlid="195776">Incluído</translation>
    <translation id="price_label_yearly" qtlid="288977">/ano</translation>
 
@@ -479,7 +481,7 @@
    <translation id="core_works_description" qtlid="317555">Tem um problema com um dos seus produtos?</translation>
    <translation id="core_works_link" qtlid="286188">Consultar incidentes/intervenções técnicas</translation>
    <translation id="modal_working_status_title" qtlid="66884">Incidentes</translation>
-   <translation id="modal_working_status_type" qtlid="105875">Tipo:</translation>
+   <translation id="modal_working_status_type" qtlid="105875"></translation>
    <translation id="modal_working_status_category" qtlid="285707">Categoria:</translation>
    <translation id="modal_working_status_status" qtlid="317568">Estado:</translation>
 
@@ -523,7 +525,7 @@
    <translation id="sso_modal_user_title" qtlid="315969">Estava ligado como:</translation>
    <translation id="sso_modal_currentuser_title" qtlid="315982">Está ligado como:</translation>
    <translation id="sso_modal_disconnected" qtlid="315995">Sessão desligada.</translation>
-   <translation id="sso_modal_what" qtlid="62558">O que pretende fazer?</translation>
+   <translation id="sso_modal_what" qtlid="62558"></translation>
    <translation id="sso_modal_action_reload" qtlid="344084">Continuar como <strong>{{name}}</strong></translation>
    <translation id="sso_modal_action_logout" qtlid="316021">Aceder à página de autenticação</translation>
 
@@ -538,7 +540,7 @@
    <translation id="me_alerts_PAYMENTMEAN_CREDITCARD_TOOMANYFAILURES" qtlid="343954">Tem <strong>{0}</strong> cartão de crédito em erro. Aceda <a href="#/billing/mean" class="alert-link">à secção faturação</a> para verificar os dados ou registar um novo método de pagamento.</translation>
    <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="343967">Tem <strong>{0}</strong> conta(s) PayPal em erro. Aceda <a href="#/billing/mean" class="alert-link">à secção faturação</a> para verificar os dados ou registar um novo método de pagamento.</translation>
 
-   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="374958">A sua conta pré-paga tem um saldo negativo de <strong>{0}</strong> na data de {{ '{1}' | date:'medium'}}. Aceda à <a href="#/billing/ovhaccount" class="alert-link">secção de faturação</a> para regularizar a situação.</translation>
+   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="374958">A sua conta pré-paga tem um saldo negativo de <strong>{0}</strong> na data de {1}. Aceda à <a href="#/billing/ovhaccount" class="alert-link">secção de faturação</a> para regularizar a situação.</translation>
    <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369545">Tem um saldo negativo de <strong>{0}</strong> (incluindo um montante de {1} não vencido). Aceda à <a href="{2}" class="alert-link">secção de faturação</a> para regularizar a situação</translation>
    <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="343993">Tem uma dívida de <strong>{0}</strong>. Aceda <a href="{1}" class="alert-link">à secção faturação</a> para regularizar a situação.</translation>
 

@@ -115,7 +115,7 @@
    <translation id="wizard_renew" qtlid="118962">Pratęsti nuomą</translation>
    <translation id="wizard_next" qtlid="17743">Toliau</translation>
    <translation id="wizard_previous" qtlid="17431">Ankstesnis</translation>
-   <translation id="wizard_breadcrumb" qtlid="158682">Žingsnis {0} iš {1}</translation>
+   <translation id="wizard_breadcrumb">Étape {{ currentStep }} sur {{ stepCount }}</translation>
    <translation id="pagination_page" qtlid="129123">Psl. {0} / {1}</translation>
    <translation id="pagination_go" qtlid="31522">OK</translation>
    <translation id="pagination_display" qtlid="69353">Rodyti</translation>
@@ -188,12 +188,14 @@
    <translation id="common_no" qtlid="34788">Ne</translation>
    <translation id="common_delete" qtlid="2414">Trinti</translation>
    <translation id="required" qtlid="182514">Privalomas laukas</translation>
-
+   <translation id="required_fields" qtlid="433550">Žvaigždute pažymėti laukai yra privalomi.</translation>
+   <translation id="select_placeholder" qtlid="447963">Séléctionnez...</translation>
+   <translation id="common_newtab" qtlid="402165">naujas langas</translation>
    <translation id="contract_next" qtlid="17743">Toliau</translation>
    <translation id="contract_previous" qtlid="17431">Ankstesnis</translation>
-   <translation id="download_contract" qtlid="180369">Atverti sutartį "{0}" kaip PDF</translation>
+   <translation id="download_contract">Ouvrir le contrat "{{ name }}" en PDF</translation>
    <translation id="contract_help" qtlid="180382">Norėdami patvirtinti sutartis, pereikite prie jų pabaigos.</translation>
-   <translation id="contracts_list_title" qtlid="180395">Sutarčių, kurias reikia peržiūrėti, kiekis: {0}.</translation>
+   <translation id="contracts_list_title">Il y a {{ count }} contrats à consulter.</translation>
    <translation id="contract_list_title" qtlid="180408">Reikia peržiūrėti 1 sutartį</translation>
    <translation id="contracts_agree" qtlid="180421">Sutinku su sutartimis</translation>
    <translation id="contract_agree" qtlid="180434">Sutinku su sutartimi</translation>
@@ -201,13 +203,13 @@
    <translation id="day_1" qtlid="28807">1 diena</translation>
    <translation id="day_other" qtlid="158578">{} d.</translation>
    <translation id="month_1" qtlid="70241">1 mėn.</translation>
-   <translation id="month_other" qtlid="158591">{} mėn.</translation>
+   <translation id="month_other">{0} mois</translation>
    <translation id="year_1" qtlid="70277">1 metai</translation>
    <translation id="year_other" qtlid="158604">{} metai</translation>
-   <translation id="upto" qtlid="158617">Iki {0}</translation>
+   <translation id="upto">Jusqu'au {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Iki pirmos ateinančio mėnesio dienos</translation>
    <translation id="engage" qtlid="158643">Įsipareigoti {0}</translation>
-   <translation id="price_ht_label" qtlid="166183">{0}&#160;be PVM</translation>
+   <translation id="price_ht_label">{{ price }}&#160;HT</translation>
    <translation id="price_ttc_label" qtlid="166196">{0}&#160;su PVM</translation>
    <translation id="price_free" qtlid="195776">Įskaičiuota</translation>
    <translation id="price_label_yearly" qtlid="288977">/metams</translation>
@@ -538,7 +540,7 @@
    <translation id="me_alerts_PAYMENTMEAN_CREDITCARD_TOOMANYFAILURES" qtlid="343954">Jūs pridėjote <strong>{0}</strong> kredito kortelę(-es)/(-ių), kurioje(-iose) yra klaidų. Jūs galite atlikti patikrą ir/ar užregistruoti naują mokėjimo priemonę <a href="#/billing/mean" class="alert-link">sąskaitų ir mokėjimų skiltyje</a>.</translation>
    <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="343967">Jūs pridėjote <strong>{0}</strong> PayPal paskyrą(-as)/(-ų), kurioje(-iose) yra klaidų. Jūs galite atlikti patikrą ir/ar užregistruoti naują mokėjimo priemonę <a href="#/billing/mean" class="alert-link">sąskaitų ir mokėjimų skiltyje</a>.</translation>
 
-   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="374958">Jūsų išankstinio mokėjimo paskyroje skola: <strong>{0}</strong> dienai: {{ '{1}' | date:'medium'}}. Jūs galite apmokėti skolą <a href="#/billing/ovhaccount" class="alert-link">sąskaitų ir mokėjimų skiltyje</a>.</translation>
+   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="374958">Jūsų išankstinio mokėjimo paskyroje skola: <strong>{0}</strong> dienai: {1}. Jūs galite apmokėti skolą <a href="#/billing/ovhaccount" class="alert-link">sąskaitų ir mokėjimų skiltyje</a>.</translation>
    <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369545">Jūs turite skolą: <strong>{0}</strong> (laiku neapmokėta suma: {1}). Jūs galite apmokėti skolą <a href="{2}" class="alert-link">sąskaitų ir mokėjimų skiltyje</a>.</translation>
    <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="343993">Jūsų skola yra <strong>{0}</strong>. Jūs galite apmokėti likusią sumą <a href="{1}" class="alert-link">sąskaitų ir mokėjimų skiltyje</a>.</translation>
 

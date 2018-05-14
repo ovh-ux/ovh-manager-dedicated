@@ -27,13 +27,6 @@ angular.module("App").run(($q, $translatePartialLoader, $translate, SidebarMenu,
             }, myAccountMenu);
         }
 
-        if (constants.target === "EU") {
-            SidebarMenu.addMenuItem({
-                title: $translate.instant("menu_subscriptions"),
-                state: "app.account.useraccount.subscriptions"
-            }, myAccountMenu);
-        }
-
         SidebarMenu.addMenuItem({
             title: $translate.instant("menu_ssh"),
             state: "app.account.useraccount.ssh"

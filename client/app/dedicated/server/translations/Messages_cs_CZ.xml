@@ -437,6 +437,8 @@
    <translation id="server_configuration_ftpbackup_access_order" qtlid="180564">Objednat diskový prostor</translation>
    <translation id="server_configuration_ftpbackup_access_order_right" qtlid="180577">Nemáte požadovaná oprávnění pro objednání</translation>
    <translation id="server_configuration_ftpbackup_access_add" qtlid="153857">Přidat přístup</translation>
+   <translation id="server_configuration_ftpbackup_access_edit" qtlid="180694">Změnit přístup</translation>
+   <translation id="server_configuration_ftpbackup_access_edit_info">Modifier l'accès du block IP <strong>{0}</strong></translation>
    <translation id="server_configuration_ftpbackup_access_delete" qtlid="180590">Vymazat přístup</translation>
    <translation id="server_configuration_ftpbackup_access_delete_question" qtlid="183814">Opravdu chcete vymazat přístup pro IP blok <b>{0}</b>?</translation>
    <translation id="server_configuration_ftpbackup_access_delete_success" qtlid="183827">Vymazání přístupu k Backup Storage pro blok IP <b>{0}</b> byl úspěšně přijat. Tato operace však může trvat několik minut.</translation>
@@ -521,6 +523,7 @@
    <translation id="server_configuration_intervention_type" qtlid="2642">Typ</translation>
    <translation id="server_configuration_intervention_date" qtlid="24523">Datum</translation>
    <translation id="server_configuration_intervention_empty" qtlid="455620">Žádná intervence</translation>
+   <translation id="server_configuration_intervention_error">Une erreur est survenue lors du chargement des informations</translation>
    <translation id="server_tab_firewall" qtlid="151542">Firewall Cisco ASA</translation>
    <translation id="server_tab_FIREWALLASA_not_activated" qtlid="151555">Neobjednali jste firewall Cisco ASA.</translation>
    <translation id="server_tab_FIREWALLASA_not_able_to_order" qtlid="151568">Nemůžete možnost objednat, protože Váš NIC handle není autorizován provádět tyto operace na serveru.</translation>
@@ -936,21 +939,21 @@
    <translation id="day_1" qtlid="28807">1 den</translation>
    <translation id="day_other" qtlid="158578">{} dní</translation>
    <translation id="month_1" qtlid="70241">1 měs.</translation>
-   <translation id="month_other" qtlid="158591">{} měs.</translation>
+   <translation id="month_other">{0} mois</translation>
    <translation id="year_1" qtlid="70277">1 rok</translation>
    <translation id="year_other" qtlid="158604">{} roky</translation>
-   <translation id="upto" qtlid="158617">Do {0}</translation>
+   <translation id="upto">Jusqu'au {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Do 1. následujícího měsíce</translation>
    <translation id="engage" qtlid="158643">Objednat {0}</translation>
-   <translation id="price_ht_label" qtlid="166183">{0}&#160;bez DPH</translation>
-   <translation id="price_ttc_label" qtlid="166196">{0}&#160;s DPH</translation>
+   <translation id="price_ht_label">{{ price }}&#160;HT</translation>
+   <translation id="price_ttc_label">{{ price }}&#160;TTC</translation>
    <translation id="price_free" qtlid="130495">Zdarma</translation>
    <translation id="price" qtlid="181084">Cena:</translation>
    <translation id="contract_next" qtlid="17743">Další</translation>
    <translation id="contract_previous" qtlid="17431">Předcházející</translation>
-   <translation id="download_contract" qtlid="180369">Otevřít smlouvu "{0}" v PDF</translation>
+   <translation id="download_contract">Ouvrir le contrat "{{ name }}" en PDF</translation>
    <translation id="contract_help" qtlid="180382">Pro potvrzení smlouvy sjeďte níže.</translation>
-   <translation id="contracts_list_title" qtlid="180395">Je zde {0} smluv k přečtení.</translation>
+   <translation id="contracts_list_title">Il y a {{ count }} contrats à consulter.</translation>
    <translation id="contract_list_title" qtlid="180408">Je zde 1 smlouva k přečtení.</translation>
    <translation id="contracts_agree" qtlid="180421">Souhlasím se smlouvami</translation>
    <translation id="contract_agree" qtlid="180434">Souhlasím se smlouvou</translation>

@@ -115,8 +115,8 @@
    <translation id="wizard_renew" qtlid="118962">Renouveler</translation>
    <translation id="wizard_next" qtlid="17743">Suivant</translation>
    <translation id="wizard_previous" qtlid="17431">Précédent</translation>
-   <translation id="wizard_breadcrumb">Étape {{ currentStep }} sur {{ stepCount }}</translation>
-   <translation id="pagination_page" qtlid="129123">Page {{ current }} / {{ last }}</translation>
+   <translation id="wizard_breadcrumb" qtlid="486451">Étape {{ currentStep }} sur {{ stepCount }}</translation>
+   <translation id="pagination_page" qtlid="486464">Page {{ current }} / {{ last }}</translation>
    <translation id="pagination_go" qtlid="31522">OK</translation>
    <translation id="pagination_display" qtlid="69353">Afficher</translation>
    <translation id="common_loading" qtlid="361984">Chargement…</translation>
@@ -188,12 +188,14 @@
    <translation id="common_no" qtlid="34788">Non</translation>
    <translation id="common_delete" qtlid="2414">Supprimer</translation>
    <translation id="required" qtlid="182514">Champs requis</translation>
-
+   <translation id="required_fields" qtlid="433550">Les champs suivis d'un astérisque sont obligatoires.</translation>
+   <translation id="select_placeholder" qtlid="447963">Sélectionnez…</translation>
+   <translation id="common_newtab" qtlid="402165">nouvel onglet</translation>
    <translation id="contract_next" qtlid="17743">Suivant</translation>
    <translation id="contract_previous" qtlid="17431">Précédent</translation>
-   <translation id="download_contract">Ouvrir le contrat "{{ name }}" en PDF</translation>
+   <translation id="download_contract" qtlid="486477">Ouvrir le contrat "{{ name }}" en PDF</translation>
    <translation id="contract_help" qtlid="180382">Il faut faire défiler les contrats pour pouvoir les valider.</translation>
-   <translation id="contracts_list_title">Il y a {{ count }} contrats à consulter.</translation>
+   <translation id="contracts_list_title" qtlid="486490">Il y a {{ count }} contrats à consulter.</translation>
    <translation id="contract_list_title" qtlid="180408">Il y a 1 contrat à consulter.</translation>
    <translation id="contracts_agree" qtlid="180421">J'accepte les contrats</translation>
    <translation id="contract_agree" qtlid="180434">J'accepte le contrat</translation>
@@ -201,14 +203,14 @@
    <translation id="day_1" qtlid="28807">1 jour</translation>
    <translation id="day_other" qtlid="158578">{} jours</translation>
    <translation id="month_1" qtlid="70241">1 mois</translation>
-   <translation id="month_other">{0} mois</translation>
+   <translation id="month_other" qtlid="220148">{0} mois</translation>
    <translation id="year_1" qtlid="70277">1 an</translation>
    <translation id="year_other" qtlid="158604">{} ans</translation>
-   <translation id="upto">Jusqu'au {{ date }}</translation>
+   <translation id="upto" qtlid="486503">Jusqu'au {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Jusqu'au premier jour du prochain mois</translation>
    <translation id="engage" qtlid="158643">S'engager {0}</translation>
-   <translation id="price_ht_label">{{ price }}&#160;HT</translation>
-   <translation id="price_ttc_label" qtlid="166196">{{ price }}&#160;TTC</translation>
+   <translation id="price_ht_label" qtlid="486412">{{ price }}&#160;HT</translation>
+   <translation id="price_ttc_label" qtlid="486516">{{ price }}&#160;TTC</translation>
    <translation id="price_free" qtlid="195776">Inclus</translation>
    <translation id="price_label_yearly" qtlid="288977">/an</translation>
 
@@ -538,9 +540,9 @@
    <translation id="me_alerts_PAYMENTMEAN_CREDITCARD_TOOMANYFAILURES" qtlid="343954">Vous avez <strong>{0}</strong> carte(s) de crédit(s) en erreur. Rendez-vous dans <a href="#/billing/mean" class="alert-link">la section facturation</a> pour effectuer les vérifications et/ou enregistrer un nouveau moyen de paiement.</translation>
    <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="343967">Vous avez <strong>{0}</strong> compte(s) PayPal en erreur. Rendez-vous dans <a href="#/billing/mean" class="alert-link">la section facturation</a> pour effectuer les vérifications et/ou enregistrer un nouveau moyen de paiement.</translation>
 
-   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="374958">Votre compte prépayé est débiteur de <strong>{0}</strong> au {{ '{1}' | date:'medium'}}. Rendez-vous dans <a href="#/billing/ovhaccount" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369545">Vous avez une dette de <strong>{0}</strong> (dont un montant de {1} non échu). Rendez-vous dans <a href="{2}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="343993">Vous avez une dette de <strong>{0}</strong>. Rendez-vous dans <a href="{1}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
+   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="374958">Votre compte prépayé est débiteur de <strong>{0}</strong> au {1}. Rendez-vous dans <a href="#/billing/ovhaccount" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="486529">Vous avez une dette de <strong>{0}</strong> (dont un montant de {1} non échu). Rendez-vous dans <a href="{2}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="486542">Vous avez une dette de <strong>{0}</strong>. Rendez-vous dans <a href="{1}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="383919">Votre compte prépayé a atteint le seuil que vous avez défini. Rendez-vous dans <a href="#/billing/ovhaccount" class="alert-link">la section facturation</a> pour plus d'informations.</translation>
 
