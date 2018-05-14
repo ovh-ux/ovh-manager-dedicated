@@ -1,3 +1,18 @@
+<a name="9.3.2"></a>
+## [9.3.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.3.1...v9.3.2) (2018-05-11)
+
+
+
+<a name="9.3.1"></a>
+## [9.3.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.3.0...v9.3.1) (2018-05-11)
+
+
+### Bug Fixes
+
+* **guides:** update links for all languages ([093cd7e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/093cd7e))
+
+
+
 <a name="9.3.0"></a>
 # [9.3.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.16...v9.3.0) (2018-05-09)
 
