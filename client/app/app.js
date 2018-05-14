@@ -124,4 +124,7 @@ angular
     .config((OtrsPopupProvider, constants) => {
         OtrsPopupProvider.setBaseUrlTickets(_.get(constants, "REDIRECT_URLS.listTicket", null));
     })
+    .run(($translate) => {
+        moment.locale($translate.use().split("_")[0]);
+    })
     .constant("UNIVERSE", "DEDICATED");

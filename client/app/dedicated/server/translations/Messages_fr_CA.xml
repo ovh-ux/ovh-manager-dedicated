@@ -108,7 +108,7 @@
    <translation id="server_tab_stats_rtm_infos_cpu" qtlid="25555">CPU</translation>
    <translation id="server_tab_stats_rtm_infos_cpu_core" qtlid="204090">Coeurs</translation>
    <translation id="server_tab_stats_rtm_infos_cpu_cache" qtlid="30214">Cache</translation>
-   <translation id="server_tab_stats_rtm_infos_ram" qtlid="31354">RAM</translation>
+   <translation id="server_tab_stats_rtm_infos_ram" qtlid="31354">Mémoire vive</translation>
    <translation id="server_tab_stats_rtm_infos_rtmVersion" qtlid="193956">Version Surveillance en temps réel </translation>
    <translation id="server_tab_stats_rtm_infos_rtmVersion_update" qtlid="204103">Une mise à jour est disponible</translation>
    <translation id="server_tab_stats_rtm_infos_kernelVersion" qtlid="204116">Version Noyau</translation>
@@ -437,6 +437,8 @@
    <translation id="server_configuration_ftpbackup_access_order" qtlid="180564">Commander de l'espace disque</translation>
    <translation id="server_configuration_ftpbackup_access_order_right" qtlid="180577">Vous n'avez pas les droits suffisants pour commander</translation>
    <translation id="server_configuration_ftpbackup_access_add" qtlid="153857">Ajouter un accès</translation>
+   <translation id="server_configuration_ftpbackup_access_edit" qtlid="180694">Modifier l'accès</translation>
+   <translation id="server_configuration_ftpbackup_access_edit_info">Modifier l'accès du block IP <strong>{0}</strong></translation>
    <translation id="server_configuration_ftpbackup_access_delete" qtlid="180590">Suppression d'un accès</translation>
    <translation id="server_configuration_ftpbackup_access_delete_question" qtlid="183814">Etes-vous certain(e) de vouloir supprimer l'accès du block IP <b>{0}</b>?</translation>
    <translation id="server_configuration_ftpbackup_access_delete_success" qtlid="183827">La suppression de l'accès au stockage de sauvegarde par le block IP <b>{0}</b> a bien été prise en compte mais peut prendre quelques minutes</translation>
@@ -520,6 +522,7 @@
    <translation id="server_configuration_intervention_type" qtlid="2642">Type</translation>
    <translation id="server_configuration_intervention_date" qtlid="24523">Date</translation>
    <translation id="server_configuration_intervention_empty" qtlid="455620">Aucune intervention</translation>
+   <translation id="server_configuration_intervention_error">Une erreur est survenue lors du chargement des informations</translation>
    <translation id="server_tab_firewall" qtlid="151542">Firewall Cisco ASA</translation>
    <translation id="server_tab_FIREWALLASA_not_activated" qtlid="151555">Vous n'avez pas souscrit à l'option firewall Cisco ASA.</translation>
    <translation id="server_tab_FIREWALLASA_not_able_to_order" qtlid="151568">Vous ne pouvez pas y souscrire car votre nichandle n'est pas autorisé à passer de commandes pour ce serveur.</translation>
@@ -932,21 +935,21 @@
    <translation id="day_1" qtlid="28807">1 jour</translation>
    <translation id="day_other" qtlid="158578">{} jours</translation>
    <translation id="month_1" qtlid="70241">1 mois</translation>
-   <translation id="month_other" qtlid="158591">{} mois</translation>
+   <translation id="month_other">{0} mois</translation>
    <translation id="year_1" qtlid="70277">1 an</translation>
    <translation id="year_other" qtlid="158604">{} ans</translation>
-   <translation id="upto" qtlid="158617">Jusqu'au {0}</translation>
+   <translation id="upto">Jusqu'au {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Jusqu'au premier jour du prochain mois</translation>
    <translation id="engage" qtlid="158643">S'engager {0}</translation>
-   <translation id="price_ht_label" qtlid="166183">{0}&#160;avant taxes</translation>
-   <translation id="price_ttc_label" qtlid="166196">{0}&#160;incluant taxes</translation>
+   <translation id="price_ht_label">{{ price }}&#160;HT</translation>
+   <translation id="price_ttc_label">{{ price }}&#160;TTC</translation>
    <translation id="price_free" qtlid="130495">Gratuit</translation>
    <translation id="price" qtlid="181084">Prix:</translation>
    <translation id="contract_next" qtlid="17743">Suivant</translation>
    <translation id="contract_previous" qtlid="17431">Précédent</translation>
-   <translation id="download_contract" qtlid="180369">Ouvrir le contrat "{0}" en PDF</translation>
+   <translation id="download_contract">Ouvrir le contrat "{{ name }}" en PDF</translation>
    <translation id="contract_help" qtlid="180382">Il faut faire défiler les contrats pour pouvoir les valider.</translation>
-   <translation id="contracts_list_title" qtlid="180395">Il y a {0} contrats à consulter.</translation>
+   <translation id="contracts_list_title">Il y a {{ count }} contrats à consulter.</translation>
    <translation id="contract_list_title" qtlid="180408">Il y a 1 contrat à consulter.</translation>
    <translation id="contracts_agree" qtlid="180421">J'accepte les contrats</translation>
    <translation id="contract_agree" qtlid="180434">J'accepte le contrat</translation>
@@ -1098,7 +1101,7 @@
    <translation id="server_tab_MONITORING_table_notifications_action_edit" qtlid="244235">Modifier la notification</translation>
    <translation id="server_tab_MONITORING_table_notifications_action_delete" qtlid="244248">Supprimer la notification</translation>
    <translation id="server_tab_MONITORING_notifications_email_add_step1_title" qtlid="244261">Veuillez entrer les informations permettant d'être alerté par email.</translation>
-   <translation id="server_tab_MONITORING_notifications_email_add_email" qtlid="89028">Email :</translation>
+   <translation id="server_tab_MONITORING_notifications_email_add_email" qtlid="89028">Courriel :</translation>
    <translation id="server_tab_MONITORING_notifications_email_add_email_invalid" qtlid="244274">Vous devez saisir une adresse courriel valide</translation>
    <translation id="server_tab_MONITORING_notifications_email_add_lang" qtlid="168874">Langue :</translation>
    <translation id="server_tab_MONITORING_notifications_email_add_success" qtlid="244287">La notification a été ajoutée avec succès.</translation>
@@ -1123,7 +1126,7 @@
    <translation id="server_tab_MONITORING_table_notifications_sms_header_status" qtlid="8230">État</translation>
    <translation id="server_tab_MONITORING_notifications_sms_account_disable" qtlid="244430">Vous ne disposez d'aucun compte SMS actif.</translation>
 
-   <translation id="server_tab_MONITORING_notifications_sms_add_sms" qtlid="244443">Compte SMS :</translation>
+   <translation id="server_tab_MONITORING_notifications_sms_add_sms" qtlid="244443">Compte message texte :</translation>
    <translation id="server_tab_MONITORING_notifications_sms_add_phone" qtlid="244456">N° de téléphone :</translation>
    <translation id="server_tab_MONITORING_notifications_sms_add_from" qtlid="244469">Alerte de :</translation>
    <translation id="server_tab_MONITORING_notifications_sms_add_to" qtlid="8890">à</translation>
@@ -1131,11 +1134,11 @@
    <translation id="server_tab_MONITORING_notifications_sms_add_hour_invalid" qtlid="244482">Vous devez saisir un horaire entre 0 et 24</translation>
    <translation id="server_tab_MONITORING_notifications_sms_add_period_invalid" qtlid="244495">L'heure de début doit être inférieure à l'heure de fin</translation>
    <translation id="server_tab_MONITORING_notifications_sms_add_phone_invalid" qtlid="244508">Vous devez saisir un numéro de téléphone au format +1xxxxxxxxxx</translation>
-   <translation id="server_tab_MONITORING_notifications_sms_add_success" qtlid="244521">La notification par SMS a été ajouté avec succès.</translation>
-   <translation id="server_tab_MONITORING_notifications_sms_add_step2_title" qtlid="244534">Résumé et informations de la notification par SMS</translation>
+   <translation id="server_tab_MONITORING_notifications_sms_add_success" qtlid="244521">La notification par message texte a été ajouté avec succès.</translation>
+   <translation id="server_tab_MONITORING_notifications_sms_add_step2_title" qtlid="244534">Résumé et informations de la notification par message texte</translation>
    <translation id="server_tab_MONITORING_service" qtlid="31042">Service</translation>
 
-   <translation id="server_tab_MONITORING_notification_no_recipient_SMS" qtlid="244547">Aucun destinataire ne sera alerté par SMS</translation>
+   <translation id="server_tab_MONITORING_notification_no_recipient_SMS" qtlid="244547">Aucun destinataire ne sera alerté par message texte</translation>
    <translation id="server_tab_MONITORING_notification_no_recipient_EMAIL" qtlid="244560">Aucun destinataire ne sera alerté par courriel</translation>
    <translation id="server_tab_MONITORING_show_sms_no_valid_account_help" qtlid="244573">Vous devez disposer d'un compte SMS crédité pour utiliser les alertes SMS</translation>
 

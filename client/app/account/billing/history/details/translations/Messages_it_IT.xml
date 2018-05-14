@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="billing_history_details" qtlid="343382">Storico delle operazioni</translation>
+   <translation id="billing_history_details_load_error" qtlid="343408">Si è verificato un errore durante il caricamento dello storico delle operazioni.</translation>
+
+   <translation id="billing_history_details_table_header_date" qtlid="24523">Data</translation>
+   <translation id="billing_history_details_table_header_operation" qtlid="32482">Operazione</translation>
+   <translation id="billing_history_details_table_header_status" qtlid="33790">Stato</translation>
+   <translation id="billing_history_details_table_header_amount" qtlid="45328">Importo</translation>
+
+   <translation id="billing_history_details_table_order_link">Détails de la commande associée</translation>
+   <translation id="billing_history_details_table_order_link_title" qtlid="343460">Apri in una nuova finestra l'ordine associato a questa operazione.</translation>
+   <translation id="billing_history_details_table_bill_html_link">Facture en version html</translation>
+   <translation id="billing_history_details_table_bill_html_link_title" qtlid="349205">Visualizza la fattura in versione HTML ((nuova finestra).</translation>
+   <translation id="billing_history_details_table_bill_pdf_link">Facture en version pdf</translation>
+   <translation id="billing_history_details_table_bill_pdf_link_title" qtlid="349218">Visualizza la fattura in versione PDF (nuova finestra).</translation>
+
+<!-- STATEMENTS - OPERATION STATUS -->
+   <translation id="billing_history_details_status_done" qtlid="343486">Completato</translation>
+   <translation id="billing_history_details_status_cancelled" qtlid="164623">Annullata</translation>
+   <translation id="billing_history_details_status_failed" qtlid="343499">Fallito</translation>
+   <translation id="billing_history_details_status_todo" qtlid="349338">In attesa di pagamento</translation>
+   <translation id="billing_history_details_status_pending" qtlid="343525">Gestione in corso</translation>
+   <translation id="billing_history_details_status_paid" qtlid="34596">Pagato</translation>
+
+<!-- STATEMENTS - OPERATION DESCRIPTION -->
+   <translation id="billing_history_details_type_order" qtlid="312376">Crea l'ordine</translation>
+   <translation id="billing_history_details_type_cancel" qtlid="343538">Annulla un'operazione</translation>
+
+   <translation id="billing_history_details_type_creditcard_manual" qtlid="343551">Pagamento manuale su carta bancaria</translation>
+   <translation id="billing_history_details_type_creditcard_automatic" qtlid="343564">Addebito automatico su carta bancaria</translation>
+   <translation id="billing_history_details_type_refund_creditcard" qtlid="343577">Rimborso su carta bancaria</translation>
+   <translation id="billing_history_details_type_unpaid_creditcard" qtlid="343590">Addebito rifiutato su carta bancaria</translation>
+
+   <translation id="billing_history_details_type_paypal_manual" qtlid="343603">Pagamento manuale su PayPal</translation>
+   <translation id="billing_history_details_type_paypal_automatic" qtlid="343616">Addebito automatico su conto PayPal</translation>
+   <translation id="billing_history_details_type_refund_paypal" qtlid="343629">Rimborso su conto PayPal</translation>
+   <translation id="billing_history_details_type_unpaid_paypal" qtlid="343642">Addebito rifiutato su conto PayPal</translation>
+
+   <translation id="billing_history_details_type_sepa_automatic" qtlid="343655">Addebito automatico su conto bancario</translation>
+   <translation id="billing_history_details_type_refund_sepa" qtlid="343668">Rimborso su conto bancario</translation>
+   <translation id="billing_history_details_type_unpaid_sepa" qtlid="343681">Addebito rifiutato su conto bancario</translation>
+
+   <translation id="billing_history_details_type_credit_account_automatic" qtlid="343694">Addebito automatico sul conto prepagato OVH</translation>
+   <translation id="billing_history_details_type_refund_credit_account" qtlid="343707">Rimborso su conto prepagato OVH</translation>
+   <translation id="billing_history_details_type_unpaid_credit_account" qtlid="343720">Annulla un versamento tramite il conto prepagato OVH</translation>
+
+   <translation id="billing_history_details_type_check_manual" qtlid="343733">Pagamento tramite assegno</translation>
+   <translation id="billing_history_details_type_refund_check" qtlid="343746">Rimborso tramite assegno</translation>
+   <translation id="billing_history_details_type_unpaid_check" qtlid="343759">Assegno rifiutato</translation>
+
+   <translation id="billing_history_details_type_transfer_manual" qtlid="343772">Pagamento tramite bonifico bancario</translation>
+   <translation id="billing_history_details_type_refund_check" qtlid="343785">Rimborso di un bonifico bancario</translation>
+   <translation id="billing_history_details_type_unpaid_transfer" qtlid="343798">Bonifico bancario rifiutato</translation>
+
+   <translation id="billing_history_details_type_warrant_manual" qtlid="343811">Pagamento tramite mandato</translation>
+   <translation id="billing_history_details_type_refund_warrant" qtlid="343824">Rimborso di un mandato</translation>
+   <translation id="billing_history_details_type_unpaid_warrant" qtlid="343837">Mandato rifiutato</translation>
+
+   <translation id="billing_history_details_type_refund" qtlid="89797">Rimborso</translation>
+   <translation id="billing_history_details_type_refund_unknown" qtlid="89797">Rimborso</translation>
+</translations>

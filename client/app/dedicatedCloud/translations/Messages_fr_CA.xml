@@ -82,7 +82,7 @@
    <translation id="dedicatedCloud_configuration_order_hosts_step2_contracts" qtlid="145371">Je reconnais avoir bien pris connaissance des conditions suivantes:</translation>
    <translation id="dedicatedCloud_configuration_order_hosts" qtlid="135229">Hôte</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_processor_speed" qtlid="146203">Vitesse du processeur</translation>
-   <translation id="dedicatedCloud_configuration_order_hosts_memory" qtlid="31354">RAM</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_memory" qtlid="31354">Mémoire vive</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_memory_ecc" qtlid="147772">(ECC)</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_nb_cores" qtlid="33070">Nombre de coeurs</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_billing_quantity" qtlid="146229">Quantité d'hôte(s) à commander:</translation>
@@ -117,7 +117,7 @@
    <translation id="dedicatedCloud_host_order_host" qtlid="135229">Hôte</translation>
    <translation id="dedicatedCloud_host_order_price" qtlid="83913">Prix</translation>
    <translation id="dedicatedCloud_host_order_speed" qtlid="146203">Vitesse du processeur</translation>
-   <translation id="dedicatedCloud_host_order_memory" qtlid="31354">RAM</translation>
+   <translation id="dedicatedCloud_host_order_memory" qtlid="31354">Mémoire vive</translation>
    <translation id="dedicatedCloud_host_order_cores" qtlid="33070">Nombre de coeurs</translation>
    <translation id="dedicatedCloud_host_order_quantity" qtlid="472120">Quantité :</translation>
    <translation id="dedicatedCloud_host_order_confirm" qtlid="333828">Confirmer la commande</translation>
@@ -190,7 +190,7 @@
    <translation id="dedicatedCloud_datacenter_go_web_interface" qtlid="433099">Interface web</translation>
    <translation id="dedicatedCloud_datacenter_go_certified_web_interface" qtlid="433112">Interface web certifiée</translation>
    <translation id="dedicatedCloud_datacenter_go_vscope" qtlid="147785">Aller sur vScope</translation>
-   <translation id="dedicatedCloud_datacenter_delete" qtlid="49430">Supprimer le datacenter</translation>
+   <translation id="dedicatedCloud_datacenter_delete" qtlid="49430">Supprimer le xentre de données</translation>
    <translation id="dedicatedCloud_datacenter_delete_confirmation" qtlid="433125">Voulez-vous vraiment supprimer le centre de données {0}?</translation>
    <translation id="dedicatedCloud_datacenter_delete_success" qtlid="433138">Le centre de données {0} va être supprimé dans quelques instants.</translation>
    <translation id="dedicatedCloud_datacenter_delete_error" qtlid="433151">Une erreur s'est produite lors de la suppression du centre de données {0}.</translation>
@@ -257,9 +257,9 @@
    <translation id="dedicatedCloud_USER_lastname" qtlid="374373">Nom</translation>
    <translation id="dedicatedCloud_USER_mail" qtlid="21679">Messagerie</translation>
    <translation id="dedicatedCloud_USER_phone" qtlid="152505">Numéro de téléphone</translation>
-   <translation id="dedicatedCloud_USER_phone_hint" qtlid="382667">Veuillez utiliser le format international, exemple : {0}. Ce numéro doit pouvoir recevoir des SMS.</translation>
+   <translation id="dedicatedCloud_USER_phone_hint" qtlid="382667">Veuillez utiliser le format international, exemple : {0}. Ce numéro doit pouvoir recevoir des messages textes.</translation>
    <translation id="dedicatedCloud_USER_phone_example" qtlid="382680">Exemple : {0}</translation>
-   <translation id="dedicatedCloud_USER_token_validator" qtlid="374035">Token validator</translation>
+   <translation id="dedicatedCloud_USER_token_validator" qtlid="374035">Validateur de jeton</translation>
    <translation id="dedicatedCloud_USER_VSPHERE" qtlid="146437">vSphere</translation>
    <translation id="dedicatedCloud_USER_ACE" qtlid="146450">ACE</translation>
    <translation id="dedicatedCloud_USER_modified" qtlid="32566">Modification</translation>
@@ -329,7 +329,7 @@
    <translation id="dedicatedCloud_USER_right_vmNetwork_READONLY" qtlid="433216">Accès en lecture seule</translation>
    <translation id="dedicatedCloud_USER_right_vmNetwork_readonly" qtlid="433216">Accès en lecture seule</translation>
    <translation id="dedicatedCloud_USER_right_vlan" qtlid="200768">Accès au V(x)Lans</translation>
-   <translation id="dedicatedCloud_USER_right_vlan_help" qtlid="433268">Droits d'administration sur la partie réseau privé (VxLan pour les Dedicated Cloud et VLAN pour les SDDC)</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_help" qtlid="433268">Droits d'administration sur la partie réseau privé (VxLan pour les Cloud Dédiés et VLAN pour les SDDC)</translation>
    <translation id="dedicatedCloud_USER_right_vlan_ADMIN" qtlid="433281">Permet de configurer des VMs sur le réseau privé</translation>
    <translation id="dedicatedCloud_USER_right_vlan_admin" qtlid="433281">Permet de configurer des VMs sur le réseau privé</translation>
    <translation id="dedicatedCloud_USER_right_vlan_NO_ACCESS" qtlid="308541">Aucun accès</translation>
@@ -510,7 +510,7 @@
    <translation id="dedicatedCloud_USER_connection_type" qtlid="95059">Diagnostic</translation>
 
    <translation id="dedicatedCloud_subscribe_mailing" qtlid="190498">Abonner à la liste de diffusion</translation>
-   <translation id="dedicatedCloud_subscribe_mailing_disabled" qtlid="480893">L'abonnement à la mailing list Private Cloud ({0}) ne vous est pas disponible.</translation>
+   <translation id="dedicatedCloud_subscribe_mailing_disabled" qtlid="480893">L'abonnement à la liste de diffusion Cloud Privé ({0}) ne vous est pas disponible.</translation>
    <translation id="dedicatedCloud_subscribe_mailing_step1" qtlid="371752">Entrez l'adresse courriel à utiliser pour la liste de diffusion Cloud Privé  ({0}) :</translation>
    <translation id="dedicatedCloud_subscribe_mailing_step2" qtlid="371765">Vous allez vous abonner {0} à la liste de diffusion  Cloud Privé ({1})</translation>
    <translation id="dedicatedCloud_subscribe_mailing_step2_success" qtlid="190524">Votre demande d'abonnement pour <b>{0}</b> a bien été traitée</translation>
@@ -650,12 +650,13 @@
    <translation id="dedicatedCloud_OPERATIONS_createdfrom_ovh_orchestrator" qtlid="299553">Orchestrateur OVH</translation>
    <translation id="dedicatedCloud_OPERATIONS_createdfrom_plugins" qtlid="299566">Plugins</translation>
    <translation id="dedicatedCloud_OPERATIONS_createdfrom_soapi" qtlid="299579">SoAPI</translation>
-   <translation id="dedicatedCloud_OPERATIONS_createdfrom_ovh_webservices" qtlid="299592">Web services OVH</translation>
+   <translation id="dedicatedCloud_OPERATIONS_createdfrom_ovh_webservices" qtlid="299592">Services web OVH</translation>
    <translation id="dedicatedCloud_OPERATIONS_createdfrom_apiv6_manager" qtlid="299605">Manager APIV6</translation>
    <translation id="dedicatedCloud_OPERATIONS_createdfrom_ovh" qtlid="97568">OVH</translation>
 
    <translation id="dedicatedCloud_OPERATIONS_createdby_ovh_support" qtlid="228735">Assistance OVH</translation>
    <translation id="dedicatedCloud_OPERATIONS_createdby_customer" qtlid="92389">Client</translation>
+   <translation id="dedicatedCloud_OPERATIONS_createdby_robot">Robot</translation>
    <translation id="dedicatedCloud_options_security_modal_title_enabling_pcidss" qtlid="374048">Activation de l'option PCI DSS</translation>
    <translation id="dedicatedCloud_options_security_modal_title_enabling_hipaa" qtlid="374061">Activation de l'option HIPAA</translation>
    <translation id="dedicatedCloud_options_security_modal_title_enabling_hds" qtlid="374074">Activation de l'option HDS</translation>
@@ -664,11 +665,11 @@
    <translation id="dedicatedCloud_options_hds" qtlid="374347">Hébergement de données santé (HDS)</translation>
    <translation id="dedicatedCloud_options_hipaa" qtlid="374360">Health Insurance Portability and Accountability Act (HIPAA)</translation>
    <translation id="dedicatedCloud_options_security_info" qtlid="382732">Une seule option peut être activée.</translation>
-   <translation id="dedicatedCloud_options_security_title_tooltip" qtlid="454280">Les règles suivantes s'appliquent sur les options de sécurité (PCI DSS, HDS et HIPAA) : <ul><li>Une seule option peut être activée</li><li>Les options NSX et vROps doivent être activées.</li><li>Le PCC doit avoir au moins une adresse IP autorisée et doit être en accès restreint.</li><li>L'administrateur doit avoir un numéro de téléphone mobile, une adresse email et il doit être "token validator".</li></ul></translation>
+   <translation id="dedicatedCloud_options_security_title_tooltip" qtlid="454280">Les règles suivantes s'appliquent sur les options de sécurité (PCI DSS, HDS et HIPAA) : <ul><li>Une seule option peut être activée</li><li>Les options NSX et vROps doivent être activées.</li><li>Le PCC doit avoir au moins une adresse IP autorisée et doit être en accès restreint.</li><li>L'administrateur doit avoir un numéro de téléphone mobile, une adresse courriel et il doit être "token validator".</li></ul></translation>
    <translation id="dedicatedCloud_options_security_step1_info" qtlid="374126">Les options NSX et vROps doivent être activées sur votre infrastructure :</translation>
    <translation id="dedicatedCloud_options_security_step2_info" qtlid="374139">Votre infrastructure doit être en accès restreint et avoir au moins une adresse IP autorisée.</translation>
-   <translation id="dedicatedCloud_options_security_step3_info" qtlid="374152">Au moins votre utilisateur "admin" doit avoir un numéro de mobile, une adresse email et être "token validator".</translation>
-   <translation id="dedicatedCloud_options_security_step3_list_title" qtlid="374165">Utilisateurs qui pourront valider des tokens par SMS :</translation>
+   <translation id="dedicatedCloud_options_security_step3_info" qtlid="374152">Au moins votre utilisateur "admin" doit avoir un numéro de mobile, une adresse courriel et être "token validator".</translation>
+   <translation id="dedicatedCloud_options_security_step3_list_title" qtlid="374165">Utilisateurs qui pourront valider des jetons ("tokens") par message texte :</translation>
    <translation id="dedicatedCloud_options_security_enabled" qtlid="30250">Activé</translation>
    <translation id="dedicatedCloud_options_security_disabled" qtlid="24967">Désactivé</translation>
    <translation id="dedicatedCloud_options_security_user_compliant" qtlid="374178">Conforme</translation>
@@ -687,7 +688,7 @@
    <translation id="dedicatedCloud_options_user_phonenumber" qtlid="59195">Mobile</translation>
    <translation id="dedicatedCloud_options_check_error" qtlid="374282">Oups, une erreur est survenue lors de la vérification des prérequis...</translation>
    <translation id="dedicatedCloud_options_load_prices_error" qtlid="374295">Une erreur est survenue lors du chargement des prix de l'option</translation>
-   <translation id="dedicatedCloud_options_info" qtlid="374308">Le prix de vos hosts sera majoré lors du prochain renouvellement :</translation>
+   <translation id="dedicatedCloud_options_info" qtlid="374308">Le prix de vos hôtes sera majoré lors du prochain renouvellement :</translation>
    <translation id="dedicatedCloud_options_order_host_name" qtlid="3818">Nom</translation>
    <translation id="dedicatedCloud_options_order_datacenter_name" qtlid="30802">Centre de données</translation>
    <translation id="dedicatedCloud_options_order_current_price" qtlid="342901">Facturation de ce mois</translation>
@@ -698,5 +699,5 @@
    <translation id="dedicatedCloud_options_order_warning" qtlid="343057">Attention, cette action est définitive et ne peut être annulée.</translation>
    <translation id="dedicatedCloud_options_order_activate_success" qtlid="342966">Activation de l'option en cours</translation>
    <translation id="dedicatedCloud_options_order_activate_error" qtlid="342992">Une erreur est survenue lors de l'activation de l'option:</translation>
-   <translation id="dedicatedCloud_options_order_sms_confirmation" qtlid="382745">Vous allez recevoir un SMS pour confirmer votre commande.</translation>
+   <translation id="dedicatedCloud_options_order_sms_confirmation" qtlid="382745">Vous allez recevoir un message texte pour confirmer votre commande.</translation>
 </translations>

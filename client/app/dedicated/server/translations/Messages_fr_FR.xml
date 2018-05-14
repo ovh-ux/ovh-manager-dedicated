@@ -437,6 +437,8 @@
    <translation id="server_configuration_ftpbackup_access_order" qtlid="180564">Commander de l'espace disque</translation>
    <translation id="server_configuration_ftpbackup_access_order_right" qtlid="180577">Vous n'avez pas les droits suffisants pour commander</translation>
    <translation id="server_configuration_ftpbackup_access_add" qtlid="153857">Ajouter un accès</translation>
+   <translation id="server_configuration_ftpbackup_access_edit" qtlid="180694">Modifier l'accès</translation>
+   <translation id="server_configuration_ftpbackup_access_edit_info" qtlid="486594">Modifier l'accès du block IP <strong>{0}</strong></translation>
    <translation id="server_configuration_ftpbackup_access_delete" qtlid="180590">Suppression d'un accès</translation>
    <translation id="server_configuration_ftpbackup_access_delete_question" qtlid="183814">Etes-vous certain(e) de vouloir supprimer l'accès du block IP <b>{0}</b> ?</translation>
    <translation id="server_configuration_ftpbackup_access_delete_success" qtlid="183827">La suppression de l'accès au backup storage par le block IP <b>{0}</b> a bien été prise en compte mais peut prendre quelques minutes</translation>
@@ -520,6 +522,7 @@
    <translation id="server_configuration_intervention_type" qtlid="2642">Type</translation>
    <translation id="server_configuration_intervention_date" qtlid="24523">Date</translation>
    <translation id="server_configuration_intervention_empty" qtlid="455620">Aucune intervention</translation>
+   <translation id="server_configuration_intervention_error" qtlid="170031">Une erreur est survenue lors du chargement des informations</translation>
    <translation id="server_tab_firewall" qtlid="151542">Firewall Cisco ASA</translation>
    <translation id="server_tab_FIREWALLASA_not_activated" qtlid="151555">Vous n'avez pas souscrit à l'option firewall Cisco ASA.</translation>
    <translation id="server_tab_FIREWALLASA_not_able_to_order" qtlid="151568">Vous ne pouvez pas y souscrire car votre nichandle n'est pas autorisé à passer de commandes pour ce serveur.</translation>
@@ -932,21 +935,21 @@
    <translation id="day_1" qtlid="28807">1 jour</translation>
    <translation id="day_other" qtlid="158578">{} jours</translation>
    <translation id="month_1" qtlid="70241">1 mois</translation>
-   <translation id="month_other">{0} mois</translation>
+   <translation id="month_other" qtlid="220148">{0} mois</translation>
    <translation id="year_1" qtlid="70277">1 an</translation>
    <translation id="year_other" qtlid="158604">{} ans</translation>
-   <translation id="upto">Jusqu'au {{ date }}</translation>
+   <translation id="upto" qtlid="486503">Jusqu'au {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Jusqu'au premier jour du prochain mois</translation>
    <translation id="engage" qtlid="158643">S'engager {0}</translation>
-   <translation id="price_ht_label">{{ price }}&#160;HT</translation>
-   <translation id="price_ttc_label">{{ price }}&#160;TTC</translation>
+   <translation id="price_ht_label" qtlid="486412">{{ price }}&#160;HT</translation>
+   <translation id="price_ttc_label" qtlid="486516">{{ price }}&#160;TTC</translation>
    <translation id="price_free" qtlid="130495">Gratuit</translation>
    <translation id="price" qtlid="181084">Prix :</translation>
    <translation id="contract_next" qtlid="17743">Suivant</translation>
    <translation id="contract_previous" qtlid="17431">Précédent</translation>
-   <translation id="download_contract">Ouvrir le contrat "{{ name }}" en PDF</translation>
+   <translation id="download_contract" qtlid="486477">Ouvrir le contrat "{{ name }}" en PDF</translation>
    <translation id="contract_help" qtlid="180382">Il faut faire défiler les contrats pour pouvoir les valider.</translation>
-   <translation id="contracts_list_title">Il y a {{ count }} contrats à consulter.</translation>
+   <translation id="contracts_list_title" qtlid="486490">Il y a {{ count }} contrats à consulter.</translation>
    <translation id="contract_list_title" qtlid="180408">Il y a 1 contrat à consulter.</translation>
    <translation id="contracts_agree" qtlid="180421">J'accepte les contrats</translation>
    <translation id="contract_agree" qtlid="180434">J'accepte le contrat</translation>

@@ -1,9 +1,22 @@
-angular.module("App").controller("ServerTabsCtrl", ($scope, $stateParams, $location) => {
+angular.module("App").controller("ServerTabsCtrl", ($scope, $stateParams, $location, featureAvailability) => {
     "use strict";
 
     const defaultTab = "dashboard";
     $scope.toKebabCase = _.kebabCase;
-    $scope.tabs = ["dashboard", "dns", "ftp_backup", "intervention", "firewall", "ipmi", "usb_storage", "task"];
+    const originalTabs = _.chain([
+        "dashboard",
+        "dns",
+        "ftp_backup",
+        "intervention",
+        "firewall",
+        "ipmi",
+        "usb_storage",
+        "task"
+    ]).pull(featureAvailability.allowDedicatedServerFirewallCiscoAsa() ? null : "firewall")
+        .pull(featureAvailability.allowDedicatedServerUSBKeys() ? null : "usb_storage")
+        .value();
+
+    $scope.tabs = originalTabs;
 
     $scope.setSelectedTab = function (tab) {
         if (tab !== undefined && tab !== null && tab !== "") {
@@ -21,7 +34,7 @@ angular.module("App").controller("ServerTabsCtrl", ($scope, $stateParams, $locat
     }
 
     $scope.$on("dedicated.server.refreshTabs", () => {
-        $scope.tabs = ["dashboard", "dns", "ftp_backup", "intervention", "firewall", "ipmi", "usb_storage", "task"];
+        $scope.tabs = originalTabs;
 
         if ($scope.server.commercialRange === "housing") {
             $scope.tabs = ["dashboard", "dns", "ftp_backup", "intervention", "task"];

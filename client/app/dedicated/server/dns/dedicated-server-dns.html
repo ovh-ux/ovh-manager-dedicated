@@ -5,59 +5,35 @@
         <oui-spinner></oui-spinner>
     </div>
 
-    <div data-ng-if="!loading">
-        <button type="button"
-                class="btn btn-default mb-4"
-                data-ng-click="setAction('dns/add/dedicated-server-dns-add', secondaryDns)">
-            <span data-translate="server_configuration_add_secondary_dns_title"></span>
-        </button>
-        <p data-ng-if="!secondaryDnsList"
-           data-translate="server_configuration_no_secondary_dns">
-        </p>
-        <table class="table table-hover"
-               data-ng-if="secondaryDnsList">
-            <thead>
-                <tr>
-                    <th scope="col"
-                        data-translate="server_configuration_secondarydns_domain_header">
-                    </th>
-                    <th scope="col"
-                        data-translate="server_configuration_secondarydns_dns">
-                    </th>
-                    <th scope="col"
-                        data-translate="server_configuration_secondarydns_ip">
-                    </th>
-                    <th scope="col"
-                        colspan="2"
-                        data-translate="server_configuration_secondarydns_creationdate">
-                    </th>
-                </tr>
-            </thead>
-            <tbody data-ng-if="secondaryDnsList.length <= 0">
-                <tr>
-                    <td colspan="5"
-                        class="text-center"
-                        data-translate="server_configuration_secondary_dns_empty">
-                    </td>
-                </tr>
-            </tbody>
-            <tbody data-ng-if="secondaryDnsList.length > 0">
-                <tr data-ng-repeat="secondaryDns in secondaryDnsList | orderBy:'domain' track by $index">
-                    <th scope="row"
-                        data-ng-bind="secondaryDns.domain">
-                    </th>
-                    <td data-ng-bind="secondaryDns.dns"></td>
-                    <td data-ng-bind="secondaryDns.ip"></td>
-                    <td data-ng-bind="secondaryDns.creationDate | date:'longDate'"></td>
-                    <td class="text-center">
-                        <button type="button"
-                                class="btn btn-default"
-                                data-ng-click="setAction('dns/delete/dedicated-server-dns-delete', secondaryDns)">
-                            <span class="oui-icon oui-icon-trash_line" aria-hidden="true"></span>
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <button type="button"
+            class="btn btn-default mb-4"
+            data-ng-click="setAction('dns/add/dedicated-server-dns-add', secondaryDns)">
+        <span data-translate="server_configuration_add_secondary_dns_title"></span>
+    </button>
+
+    <oui-datagrid data-ng-if="!reload"
+                  rows-loader="loadSecondaryDns($config)">
+        <oui-column title=":: 'server_configuration_secondarydns_domain_header' | translate"
+                    property="domain"
+                    type="text">
+        </oui-column>
+        <oui-column title=":: 'server_configuration_secondarydns_dns' | translate"
+                    property="dns"
+                    type="text">
+        </oui-column>
+        <oui-column title=":: 'server_configuration_secondarydns_ip' | translate"
+                    property="ip"
+                    type="text">
+        </oui-column>
+        <oui-column title=":: 'server_configuration_secondarydns_creationdate' | translate">
+            <span data-ng-bind="$row.creationDate | date:'longDate'"><span>
+        </oui-column>
+        <oui-action-menu align="end" compact>
+            <oui-action-menu-item
+                text="{{:: 'common_delete' | translate }}"
+                on-click="setAction('dns/delete/dedicated-server-dns-delete', $row)">
+            </oui-action-menu-item>
+        </oui-action-menu>
+    </oui-datagrid>
+
 </div>

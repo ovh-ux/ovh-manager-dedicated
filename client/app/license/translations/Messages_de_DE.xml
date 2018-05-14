@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
 
-   <translation id="license_dashboard_title" qtlid="471990">Licenses</translation>
+   <translation id="license_dashboard_title" qtlid="471990">Lizenzen</translation>
    <translation id="license_dashboard_subtitle" qtlid="44524">Meine Lizenzen verwalten</translation>
 
    <translation id="license_designation_ALL_TYPE" qtlid="171656">Alle Lizenzen</translation>
@@ -406,14 +406,14 @@
    <translation id="day_1" qtlid="28807">1 Tag</translation>
    <translation id="day_other" qtlid="158578">{} Tag(e)</translation>
    <translation id="month_1" qtlid="70241">1 Monat</translation>
-   <translation id="month_other" qtlid="158591">{} Monat(e)</translation>
+   <translation id="month_other">{0} mois</translation>
    <translation id="year_1" qtlid="70277">1 Jahr</translation>
    <translation id="year_other" qtlid="158604">{} Jahr(e)</translation>
    <translation id="upto" qtlid="158617">Bis zum {0}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Bis zum ersten Tag des nächsten Monats</translation>
    <translation id="engage" qtlid="158643">Laufzeit {0}</translation>
-   <translation id="price_ht_label" qtlid="166183">{0}&#160;inkl. MwSt.</translation>
-   <translation id="price_ttc_label" qtlid="166196">{0}&#160;inkl. MwSt.</translation>
+   <translation id="price_ht_label">{{ price }}&#160;HT</translation>
+   <translation id="price_ttc_label">{{ price }}&#160;TTC</translation>
    <translation id="price_free" qtlid="130495">Kostenlos</translation>
 
    <translation id="license_dashboard_table_title_type" qtlid="2642">Typ</translation>
@@ -502,7 +502,7 @@
 
    <translation id="license_delete_title" qtlid="258437">Lizenz entfernen</translation>
    <translation id="license_delete_fail" qtlid="258450">Während der Löschanforderung Ihre Lizenz ist ein Fehler aufgetreten:</translation>
-   <translation id="license_delete_already_terminating" qtlid="480880">Une demande de suppression est déjà en cours</translation>
+   <translation id="license_delete_already_terminating" qtlid="480880">Eine Anfrage zur Löschung wird bereits ausgeführt</translation>
    <translation id="license_delete_success" qtlid="258463">Zur Bestätigung der Löschung der Lizenz erhalten Sie in Kürze eine E-Mail.</translation>
    <translation id="license_delete_step1_question" qtlid="258476">Möchten Sie wirklich die folgenden Lizenz löschen?</translation>
    <translation id="license_delete_type" qtlid="185868">Lizenztyp:</translation>
@@ -510,8 +510,8 @@
    <translation id="license_delete_serial" qtlid="185894">Lizenznummer:</translation>
    <translation id="license_delete_step1_deleting" qtlid="258489">Löschen der aktuellen Lizenz ...</translation>
 
-   <translation id="license_upgrade_redirection_popup_title" qtlid="369454">Eine {0} Lizenz ist bereits installiert. </translation>
-   <translation id="license_upgrade_redirection_popup_text" qtlid="369467">Eine {0} Lizenz ist für diese IP bereits installiert. Sie können ein Update durchführen. </translation>
+   <translation id="license_upgrade_redirection_popup_title" qtlid="369454">Eine {{ type }} Lizenz ist bereits installiert. </translation>
+   <translation id="license_upgrade_redirection_popup_text" qtlid="369467">Eine {{ type }} Lizenz ist für diese IP bereits installiert. Sie können ein Update durchführen. </translation>
    <translation id="license_upgrade_redirection_popup_upgrade" qtlid="369480">Meine Lizenz aktualisieren </translation>
 
    <translation id="license_upgrade_title" qtlid="186024">Lizenz-Upgrade</translation>
@@ -541,7 +541,7 @@
    <translation id="license_order_step1_ip_block" qtlid="186141">IP-Block</translation>
    <translation id="license_order_step1_ip_block_none" qtlid="30646">Keiner</translation>
    <translation id="license_order_step1_ip" qtlid="167899">IP</translation>
-   <translation id="license_order_step1_no_license_available" qtlid="186154">Für die IP {0} ist keine Lizenz verfügbar</translation>
+   <translation id="license_order_step1_no_license_available" qtlid="186154">Für die IP {{ ip }} ist keine Lizenz verfügbar</translation>
 
    <translation id="license_order_step2_title" qtlid="186167">2. Wählen Sie Ihre Optionen aus</translation>
    <translation id="license_order_step2_version" qtlid="34210">Version</translation>
@@ -596,7 +596,7 @@
    <translation id="license_migrate_title" qtlid="186310">Eine Lizenz migrieren</translation>
    <translation id="license_migrate_title_button" qtlid="186323">Die Lizenz migrieren</translation>
    <translation id="license_migrate_common_choose" qtlid="186115">Auswählen...</translation>
-   <translation id="license_migrate_step1_question" qtlid="472198">Veuillez choisir la nouvelle adresse IP à laquelle votre licence sera associée</translation>
+   <translation id="license_migrate_step1_question" qtlid="472198">Bitte wählen Sie die zur Lizenz zugeordnete IP-Adresse</translation>
    <translation id="license_migrate_step1_no_ip_available" qtlid="186349">Es ist keine IP-Adresse verfügbar</translation>
    <translation id="license_migrate_step1_ip_block" qtlid="186362">Ziel-Block</translation>
    <translation id="license_migrate_step1_ip" qtlid="186375">Ziel-IP</translation>
