@@ -155,7 +155,7 @@
                                 data-ng-if="!loading">
                                 <dt class="oui-tile__term"
                                     data-translate="dedicatedCloud_subscription_links"></dt>
-                                <dd class="oui-tile__description">
+                                <dd class="oui-link">
                                     <a class="d-block"
                                        target="_blank"
                                        rel="noopener"
@@ -221,16 +221,16 @@
                                     data-translate="dedicatedCloud_options_nsx"></dt>
                                 <dd class="oui-tile__description">
                                     <span data-ng-bind="options.nsx.toggable ? ('dedicatedCloud_options_state_' + options.nsx.state | translate) : options.nsx.toggableMessage"></span>
-                                    <a class="d-block"
-                                       target="_blank"
-                                       rel="noopener"
-                                       data-ng-href="{{ options.nsx.guide }}">
-                                        <span data-translate="dedicatedCloud_options_discover"></span>
-                                        <span class="fa fa-external-link"
-                                              aria-hidden="true">
-                                        </span>
-                                    </a>
                                 </dd>
+                                <a class="oui-link d-block"
+                                   target="_blank"
+                                   rel="noopener"
+                                   data-ng-href="{{ options.nsx.guide }}">
+                                    <span data-translate="dedicatedCloud_options_discover"></span>
+                                    <span class="fa fa-external-link"
+                                          aria-hidden="true">
+                                    </span>
+                                </a>
                             </dl>
                             <div class="oui-tile__actions"
                                  data-ng-if="!options.nsx.loading && options.nsx.state !== null && options.nsx.toggable">
@@ -260,17 +260,17 @@
                                     data-translate="dedicatedCloud_options_vrops"></dt>
                                 <dd class="oui-tile__description">
                                     <span data-ng-bind="options.vrops.toggable ? ('dedicatedCloud_options_state_' + options.vrops.state | translate) : options.vrops.toggableMessage"></span>
-                                    <a class="d-block"
-                                       target="_blank"
-                                       rel="noopener"
-                                       title="{{ 'dedicatedCloud_options_discover' | translate }} ({{ 'core_new_window' | translate }})"
-                                       data-ng-href="{{ options.vrops.guide }}">
-                                        <span data-translate="dedicatedCloud_options_discover"></span>
-                                        <span class="fa fa-external-link"
-                                              aria-hidden="true">
-                                        </span>
-                                    </a>
                                 </dd>
+                                <a class="oui-link d-block"
+                                   target="_blank"
+                                   rel="noopener"
+                                   title="{{ 'dedicatedCloud_options_discover' | translate }} ({{ 'core_new_window' | translate }})"
+                                   data-ng-href="{{ options.vrops.guide }}">
+                                    <span data-translate="dedicatedCloud_options_discover"></span>
+                                    <span class="fa fa-external-link"
+                                          aria-hidden="true">
+                                    </span>
+                                </a>
                             </dl>
                             <div class="oui-tile__actions"
                                  data-ng-if="!options.vrops.loading && options.vrops.state !== null && options.vrops.toggable">
@@ -320,17 +320,17 @@
                                     data-translate="{{ 'dedicatedCloud_options_' + optionName }}"></dt>
                                 <dd class="oui-tile__description">
                                     <span data-ng-bind="'dedicatedCloud_options_state_' + options[optionName].state | translate"></span>
-                                    <a class="d-block"
-                                       target="_blank"
-                                       rel="noopener"
-                                       title="{{ 'dedicatedCloud_options_discover' | translate }} ({{ 'core_new_window' | translate }})"
-                                       data-ng-href="{{ guides[optionName] }}">
-                                        <span data-translate="dedicatedCloud_options_discover"></span>
-                                        <span class="fa fa-external-link"
-                                              aria-hidden="true">
-                                        </span>
-                                    </a>
                                 </dd>
+                                <a class="oui-link d-block"
+                                   target="_blank"
+                                   rel="noopener"
+                                   title="{{ 'dedicatedCloud_options_discover' | translate }} ({{ 'core_new_window' | translate }})"
+                                   data-ng-href="{{ guides[optionName] }}">
+                                    <span data-translate="dedicatedCloud_options_discover"></span>
+                                    <span class="fa fa-external-link"
+                                          aria-hidden="true">
+                                    </span>
+                                </a>
                             </dl>
                             <div class="oui-tile__actions"
                                  data-ng-if="!loading && options[optionName].state === 'disabled' && allDisabled() && !anyEnabling() && nsxAndVropsCompliantPcc()">
@@ -413,7 +413,7 @@
                                     <service-expiration-label data-service-infos="dedicatedCloud.serviceInfos">
                                     </service-expiration-label>
                                 </dt>
-                                <dd class="oui-tile__description">
+                                <dd class="oui-link">
                                     <service-expiration-date
                                         data-service-name="dedicatedCloud.name"
                                         data-service-type="'DEDICATED_CLOUD'"
