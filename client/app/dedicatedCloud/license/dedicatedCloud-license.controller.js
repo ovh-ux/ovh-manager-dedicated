@@ -3,13 +3,8 @@ angular.module("App").controller("DedicatedCloudLicencesCtrl", ($scope, $state, 
 
     $scope.licences = {
         model: null,
-        spla: false,
-        canActive: true
-
-        /*
         spla: null,
         canActive: false
-        */
     };
     $scope.loading = {
         licences: false,
@@ -24,10 +19,8 @@ angular.module("App").controller("DedicatedCloudLicencesCtrl", ($scope, $state, 
         $scope.loading.licences = true;
         DedicatedCloud.getDatacenterLicence($stateParams.productId).then(
             (datacenter) => {
-                console.log(datacenter);
-
-                // $scope.licences.spla = datacenter.isSplaActive;
-                // $scope.licences.canActive = datacenter.canOrderSpla;
+                $scope.licences.spla = datacenter.isSplaActive;
+                $scope.licences.canActive = datacenter.canOrderSpla;
                 $scope.loading.licences = false;
             },
             (data) => {

@@ -1,8 +1,10 @@
 angular.module("App").controller("DedicatedCloudLicencesSplaEnableUSCtrl", class DedicatedCloudLicencesSplaEnableUSCtrl {
 
-    constructor ($stateParams, $scope, $state, $q, OvhHttp, User) {
+    constructor ($stateParams, $scope, $state, OvhHttp, User, constants) {
+        if (constants.target !== "US") {
+            $state.go("^");
+        }
         this.$state = $state;
-        this.$q = $q;
         this.OvhHttp = OvhHttp;
         this.User = User;
         this.serviceName = $stateParams.productId;
@@ -11,15 +13,10 @@ angular.module("App").controller("DedicatedCloudLicencesSplaEnableUSCtrl", class
 
     $onInit () {
         this.loading = true;
-        return this.$q.all({
-            url: this.User.getUrlOf("express_order"),
-            offers: this.fetchOffers()
-        }).then((results) => {
-            this.expressOrderUrl = results.url;
-            this.offers = results.offers;
-            this.selectedOffer = _.first(this.offers);
+        return this.User.getUrlOf("express_order").then((url) => {
+            this.expressOrderUrl = url;
         }).catch((err) => {
-            this.$scope.setMessage(this.$translate.instant(""), {
+            this.$scope.setMessage(this.$translate.instant("dedicatedCloud_tab_licences_active_spla_load_fail"), {
                 message: err.message || err,
                 type: "ERROR"
             });
@@ -35,6 +32,18 @@ angular.module("App").controller("DedicatedCloudLicencesSplaEnableUSCtrl", class
                 serviceName: this.serviceName
             }
         }).then((offers) => _.filter(offers, { planCode: "pcc-option-windows" }));
+    }
+
+    fetchDatagridOffers () {
+        return this.fetchOffers().then((offers) => {
+            this.selectedOffer = _.first(offers);
+            return {
+                data: offers,
+                meta: {
+                    totalCount: _.size(offers)
+                }
+            };
+        });
     }
 
     getOrderUrl () {

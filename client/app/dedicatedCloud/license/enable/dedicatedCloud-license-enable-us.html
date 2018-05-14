@@ -1,4 +1,4 @@
-<div class="oui-modal oui-modal_shadow">
+<div class="oui-modal">
 
     <div class="oui-modal__header">
         <button type="button"
@@ -9,14 +9,9 @@
         </button>
     </div>
 
-    <div class="oui-modal__body">
-
-        <i class="oui-icon oui-icon-help_circle oui-icon_bicolor"
-           aria-hidden="true">
-        </i>
-
+    <div class="oui-modal__body oui-modal__body_no-icon">
         <div class="oui-modal__body-text">
-            <h2 class="oui-modal__title"
+            <h2 class="oui-modal__title mb-4"
                 data-translate="dedicatedCloud_tab_licences_active_spla_title">
             </h2>
 
@@ -24,6 +19,24 @@
                  data-ng-if="$ctrl.loading">
                 <oui-spinner></oui-spinner>
             </div>
+
+            <oui-datagrid data-ng-if="!$trl.loading"
+                          data-rows-loader="$ctrl.fetchDatagridOffers()">
+                <oui-column data-title=":: 'dedicatedCloud_tab_license_type' | translate">
+                    <oui-radio class="text-capitalize"
+                               data-text="{{ $row.productName }}"
+                               data-name="selectedOffer"
+                               data-model="$ctrl.selectedOffer"
+                               data-value="$row">
+                    </oui-radio>
+                </oui-column>
+                <oui-column data-title=":: 'dedicatedCloud_tab_license_price' | translate">
+                    <span data-ng-bind="$row.prices[0].price.text"></span>
+                    <br />
+                    <small data-ng-bind="$row.prices[0].description"></small>
+                </oui-column>
+            </oui-datagrid>
+
         </div>
     </div>
 
@@ -34,14 +47,18 @@
                 data-ng-click="$ctrl.onCancelBtnClick()"
                 data-ng-disabled="$ctrl.loading.disable">
         </button>
+        <button type="button"
+                class="oui-button oui-button_primary"
+                data-translate="wizard_order"
+               data-ng-if="!$ctrl.selectedOffer"
+                data-ng-disabled="true">
+        </button>
         <a class="oui-button oui-button_primary"
-           data-translate="wizard_confirm"
+           data-translate="wizard_order"
            target="_blank"
            rel="noopener"
-           data-ng-if="!$ctrl.loading"
+           data-ng-if="$ctrl.selectedOffer"
            href="{{ $ctrl.getOrderUrl() }}">
         </a>
     </div>
-
 </div>
-
