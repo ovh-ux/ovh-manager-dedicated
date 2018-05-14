@@ -8,6 +8,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew.
     "$scope",
     "$filter",
     "$q",
+    "$translate",
     "BillingAutoRenew",
     "Alerter",
     "AUTORENEW_EVENT",
