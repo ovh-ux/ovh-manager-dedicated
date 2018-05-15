@@ -1,11 +1,10 @@
 angular.module("App").controller("DedicatedCloudLicencesSplaEnableUSCtrl", class DedicatedCloudLicencesSplaEnableUSCtrl {
 
-    constructor ($stateParams, $scope, $state, OvhHttp, User, constants) {
-        if (constants.target !== "US") {
-            $state.go("^");
-        }
+    constructor ($stateParams, $translate, Alerter, $state, OvhHttp, User) {
         this.$state = $state;
+        this.$translate = $translate;
         this.OvhHttp = OvhHttp;
+        this.Alerter = Alerter;
         this.User = User;
         this.serviceName = $stateParams.productId;
         this.selectedOffer = null;
@@ -15,11 +14,9 @@ angular.module("App").controller("DedicatedCloudLicencesSplaEnableUSCtrl", class
         this.loading = true;
         return this.User.getUrlOf("express_order").then((url) => {
             this.expressOrderUrl = url;
-        }).catch((err) => {
-            this.$scope.setMessage(this.$translate.instant("dedicatedCloud_tab_licences_active_spla_load_fail"), {
-                message: err.message || err,
-                type: "ERROR"
-            });
+        }).catch(() => {
+            this.Alerter.error(this.$translate.instant("dedicatedCloud_tab_licences_active_spla_load_fail"));
+            this.$state.go("^");
         }).finally(() => {
             this.loading = false;
         });
