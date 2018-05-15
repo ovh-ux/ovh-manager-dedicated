@@ -421,7 +421,7 @@ angular
                     }
                 }).then((pcc) => ({
                     canOrderSpla: false,
-                    isSplaActive: !pcc.spla
+                    isSplaActive: pcc.spla
                 }));
             }
             return $q

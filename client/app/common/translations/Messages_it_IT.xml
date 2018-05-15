@@ -115,8 +115,8 @@
    <translation id="wizard_renew" qtlid="118962">Rinnova</translation>
    <translation id="wizard_next" qtlid="17743">Seguente</translation>
    <translation id="wizard_previous" qtlid="17431">Precedente</translation>
-   <translation id="wizard_breadcrumb">Étape {{ currentStep }} sur {{ stepCount }}</translation>
-   <translation id="pagination_page" qtlid="129123">Pagina {0}/{1}</translation>
+   <translation id="wizard_breadcrumb" qtlid="486451">Étape {{ currentStep }} sur {{ stepCount }}</translation>
+   <translation id="pagination_page" qtlid="486464">Page {{ current }} / {{ last }}</translation>
    <translation id="pagination_go" qtlid="31522">OK</translation>
    <translation id="pagination_display" qtlid="69353">Mostra</translation>
    <translation id="common_loading" qtlid="361984">Caricamento in corso...</translation>
@@ -196,9 +196,9 @@
    <translation id="common_newtab" qtlid="402165">nuova scheda</translation>
    <translation id="contract_next" qtlid="17743">Seguente</translation>
    <translation id="contract_previous" qtlid="17431">Precedente</translation>
-   <translation id="download_contract">Ouvrir le contrat "{{ name }}" en PDF</translation>
+   <translation id="download_contract" qtlid="486477">Ouvrir le contrat "{{ name }}" en PDF</translation>
    <translation id="contract_help" qtlid="180382">È necessario visualizzare il contratto per validarlo.</translation>
-   <translation id="contracts_list_title">Il y a {{ count }} contrats à consulter.</translation>
+   <translation id="contracts_list_title" qtlid="486490">Il y a {{ count }} contrats à consulter.</translation>
    <translation id="contract_list_title" qtlid="180408">C'è 1 contratto da consultare.</translation>
    <translation id="contracts_agree" qtlid="180421">Accetto i contratti</translation>
    <translation id="contract_agree" qtlid="180434">Accetto il contratto</translation>
@@ -206,14 +206,14 @@
    <translation id="day_1" qtlid="28807">1 giorno</translation>
    <translation id="day_other" qtlid="158578">{} giorni</translation>
    <translation id="month_1" qtlid="70241">1 mese</translation>
-   <translation id="month_other">{0} mois</translation>
+   <translation id="month_other" qtlid="220148">{0} mese</translation>
    <translation id="year_1" qtlid="70277">1 anno</translation>
    <translation id="year_other" qtlid="158604">{} anni</translation>
-   <translation id="upto">Jusqu'au {{ date }}</translation>
+   <translation id="upto" qtlid="486503">Jusqu'au {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Fino al primo giorno del prossimo mese</translation>
    <translation id="engage" qtlid="158643">Sottoscrivi {0}</translation>
-   <translation id="price_ht_label">{{ price }}&#160;HT</translation>
-   <translation id="price_ttc_label" qtlid="166196">{0}&#160;IVA incl.</translation>
+   <translation id="price_ht_label" qtlid="486412">{{ price }}&#160;HT</translation>
+   <translation id="price_ttc_label" qtlid="486516">{{ price }}&#160;TTC</translation>
    <translation id="price_free" qtlid="195776">Incluso</translation>
    <translation id="price_label_yearly" qtlid="288977">/anno</translation>
 
@@ -543,11 +543,9 @@
    <translation id="me_alerts_PAYMENTMEAN_CREDITCARD_TOOMANYFAILURES" qtlid="343954"><strong>{0}</strong> carte bancarie risultano in errore. Accedi alla <a href="#/billing/mean" class="alert-link">sezione fatturazione</a> per effettuare una verifica o aggiungere un nuovo metodo di pagamento.</translation>
    <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="343967"><strong>{0}</strong> account PayPal risultano in errore. Accedi alla <a href="#/billing/mean" class="alert-link">sezione fatturazione</a> per effettuare una verifica o registrare un nuovo metodo di pagamento.</translation>
 
-   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="374958">Il tuo conto prepagato ha un saldo negativo di <strong>{0}</strong> al {1}. Accedi alla <a href="#/billing/ovhaccount" class="alert-link">sezione fatturazione</a> per regolarizzare la situazione.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369545">Il tuo conto ha un saldo negativo di <strong>{0}</strong> (di cui un importo di {1} non scaduto). Accedi alla <a href="{2}" class="alert-link">sezione fatturazione</a> per regolarizzare la tua situazione.&#13;
-&#13;
-   </translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="343993">Il tuo conto ha un saldo negativo di <strong>{0}</strong>. Accedi alla <a href="{1}" class="alert-link">sezione fatturazione</a> per regolarizzare la situazione.</translation>
+   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="487730">Votre compte prépayé est débiteur de <strong>{0}</strong> au {1}. Rendez-vous dans <a href="#/billing/ovhaccount" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="486529">Vous avez une dette de <strong>{0}</strong> (dont un montant de {1} non échu). Rendez-vous dans <a href="{2}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="486542">Vous avez une dette de <strong>{0}</strong>. Rendez-vous dans <a href="{1}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="383919">Il tuo conto prepagato ha raggiunto la soglia massima definita. Per maggiori informazioni, accedi alla <a href="#/billing/ovhaccount" class="alert-link">sezione fatturazione</a>.&#13;
 &#13;
@@ -587,4 +585,13 @@
    <translation id="otrs_menu_email_history" qtlid="260091">Storico delle tue email</translation>
    <translation id="otrs_menu_telephony_contact" qtlid="260827">Supporto telefonico</translation>
    <translation id="otrs_menu_changelog" qtlid="124964">Cronologia aggiornamenti</translation>
+
+   <translation id="common_field_error_required" qtlid="472294">Completa questo campo.</translation>
+   <translation id="common_field_error_number" qtlid="472307">Inserisci un valore numerico valido.</translation>
+   <translation id="common_field_error_email" qtlid="472320">Inserisci un indirizzo email valido.</translation>
+   <translation id="common_field_error_min" qtlid="472333">Inserisci un valore superiore o pari a {{min}}.</translation>
+   <translation id="common_field_error_max" qtlid="472346">Inserisci un valore inferiore o pari a {{max}}.</translation>
+   <translation id="common_field_error_minlength" qtlid="472359">Inserisci almeno {{minlength}} caratteri.</translation>
+   <translation id="common_field_error_maxlength" qtlid="472372">Inserisci un massimo di {{maxlength}} caratteri.</translation>
+   <translation id="common_field_error_pattern" qtlid="472385">Inserisci un formato valido.</translation>
 </translations>
