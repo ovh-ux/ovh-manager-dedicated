@@ -104,11 +104,10 @@
                                 </button>
                             </li>
                             <li>
-                                <button type="button"
-                                        class="btn btn-link"
-                                        data-ng-click="setAction('terminate/dedicatedCloud-terminate',dedicatedCloud)"
-                                        data-translate="dedicatedCloud_close_service">
-                                </button>
+                                <a class="btn btn-link"
+                                   data-ui-sref=".terminate"
+                                   data-translate="dedicatedCloud_close_service">
+                                </a>
                             </li>
                             <li data-ng-if="dedicatedCloud.vScopeUrl">
                                 <a class="btn btn-link"
