@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="billing_history_balance_title">Règlement de mon solde</translation>
-   <translation id="billing_history_balance_cancel">Annuler</translation>
-   <translation id="billing_history_balance_explain">Votre solde est actuellement de {{ balance }}.</translation>
-   <translation id="billing_history_balance_no_balance">Aucune balance n'a été trouvée sur votre compte. <a data-ui-sref="{{ backState }}">Cliquez ici</a> pour retourner à la liste des factures.</translation>
-   <translation id="billing_history_balance_choose_payment_method">Choisissez une méthode de paiement</translation>
-   <translation id="billing_history_balance_add_payment_method">Ajoutez une méthode de paiement</translation>
-   <translation id="billing_history_balance_no_payment_method">Vous n'avez aucune méthode de paiement valide. <a data-ui-sref="{{ addPaymentMethodState }}">Ajoutez une méthode de paiement valide</a> avant de régler votre solde.</translation>
-   <translation id="billing_history_balance_payment_doing">Un règlement de solde est déjà en cours. Attendez que ce paiement soit effectué avant de règler un nouveau solde.</translation>
-   <translation id="billing_history_balance_payment_go_tracking">Rendez-vous <a data-ui-sref="{{ trackState }}">sur la page des suivis de paiement</a> pour plus d'informations.</translation>
+   <translation id="billing_history_balance_title">Pay my balance</translation>
+   <translation id="billing_history_balance_cancel">Cancel</translation>
+   <translation id="billing_history_balance_explain">Your balance is currently {{ balance }}.</translation>
+   <translation id="billing_history_balance_no_balance">No balance was found on your account. <a data-ui-sref="{{ backState }}">Click here</a> to return to the list of incoices.</translation>
+   <translation id="billing_history_balance_choose_payment_method">Choose the payment method</translation>
+   <translation id="billing_history_balance_add_payment_method">Add a payment method</translation>
+   <translation id="billing_history_balance_no_payment_method">You have no valid payment method. <a data-ui-sref="{{ addPaymentMethodState }}">Add a valid payment method</a> before paying your balance.</translation>
+   <translation id="billing_history_balance_payment_doing">A balance payment is already in progress. Wait for this payment to be made before paying a new balance.</translation>
+   <translation id="billing_history_balance_payment_go_tracking">Go to the <a data-ui-sref="{{ trackState }}">payment tracking page</a> for more informations.</translation>
 
-   <translation id="billing_history_balance_load_error">Une erreur est survenue lors du chargement de votre solde.</translation>
-   <translation id="billing_history_balance_pay_success">Le règlement de votre solde a bien été pris en compte. Le paiement sera effectif dans quelques instants. Rendez-vous <a data-ui-sref="{{ trackHref }}">sur la page des suivis de paiement</a> pour plus d'informations.</translation>
-   <translation id="billing_history_balance_pay_error">Une erreur est survenue lors du règlement de votre solde.</translation>
+   <translation id="billing_history_balance_load_error">An error occurred while loading your balance.</translation>
+   <translation id="billing_history_balance_pay_success">Your balance payment gas been taken in account. The payment will be effective in a few moments. Go to the <a data-ui-sref="{{ trackHref }}">payment tracking page</a> for more informations.</translation>
+   <translation id="billing_history_balance_pay_error">An error occurred while paying your balance.</translation>
 
 <!-- PAYMENT METHOD SUBTYPES -->
    <translation id="billing_history_balance_payment_method_subtype_american_express">American Express</translation>
