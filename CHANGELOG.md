@@ -1,3 +1,13 @@
+<a name="9.3.5"></a>
+## [9.3.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.3.4...v9.3.5) (2018-05-15)
+
+
+### Bug Fixes
+
+* display message for enterprise customer ([4d20e99](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4d20e99))
+
+
+
 <a name="9.3.4"></a>
 ## [9.3.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.3.3...v9.3.4) (2018-05-15)
 
