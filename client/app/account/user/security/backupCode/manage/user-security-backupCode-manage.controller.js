@@ -1,9 +1,10 @@
 angular.module("UserAccount.controllers").controller("UserAccount.controllers.doubleAuth.backupCode.manage", [
     "$rootScope",
     "$scope",
+    "$translate",
     "UserAccount.services.doubleAuth.backupCode",
     "Alerter",
-    function ($rootScope, $scope, DoubleAuthBackupCodeService, Alerter) {
+    function ($rootScope, $scope, $translate, DoubleAuthBackupCodeService, Alerter) {
         "use strict";
 
         $scope.backupCode = {
@@ -26,8 +27,8 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
         $scope.validateBackupCode = () => {
             $scope.backupCode.isValidating = true;
             return DoubleAuthBackupCodeService.validate(_.first($scope.backupCode.codes))
-                .then(() => Alerter.success($scope.tr("user_account_security_double_auth_type_backup_code_validate_success"), "doubleAuthAlertBackupCode"))
-                .catch((err) => Alerter.alertFromSWS($scope.tr("user_account_security_double_auth_type_backup_code_validate_error"), err.data, "doubleAuthAlertBackupCode"))
+                .then(() => Alerter.success($translate.instant("user_account_security_double_auth_type_backup_code_validate_success"), "doubleAuthAlertBackupCode"))
+                .catch((err) => Alerter.alertFromSWS($translate.instant("user_account_security_double_auth_type_backup_code_validate_error"), err.data, "doubleAuthAlertBackupCode"))
                 .finally(() => {
                     $scope.backupCode.isValidating = false;
                     $rootScope.$broadcast("doubleAuthBackupCode.reload");
@@ -58,7 +59,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
                     $scope.backupCode.isGenerated = true;
                     return sotpAccount;
                 })
-                .catch((err) => Alerter.alertFromSWS($scope.tr("user_account_security_double_auth_type_backup_code_generate_error"), err.data, "doubleAuthAlertBackupCode"))
+                .catch((err) => Alerter.alertFromSWS($translate.instant("user_account_security_double_auth_type_backup_code_generate_error"), err.data, "doubleAuthAlertBackupCode"))
                 .finally(() => {
                     $scope.backupCode.isGenerating = false;
                 });

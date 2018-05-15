@@ -1,5 +1,4 @@
-angular.module("Billing.controllers").controller("Billing.controllers.FidelityCreditOrder", ($scope, $rootScope, BillingFidelity, translator, FIDELITY_EVENT) => {
-    const tr = translator.tr;
+angular.module("Billing.controllers").controller("Billing.controllers.FidelityCreditOrder", ($scope, $rootScope, $translate, BillingFidelity, FIDELITY_EVENT) => {
 
     $scope.creditOrder = {
         amount: 1000,
@@ -22,7 +21,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.FidelityCr
                     $scope.creditOrder.account = fidelityAccount;
                 },
                 (data) => {
-                    $scope.setMessage(tr("fidelity_get_accounts_error"), data.data);
+                    $scope.setMessage($translate.instant("fidelity_get_accounts_error"), data.data);
                 }
             )
             .finally(() => {
@@ -56,7 +55,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.FidelityCr
                 (data) => {
                     $scope.creditOrder.loading = false;
                     $scope.resetAction();
-                    $scope.setMessage(tr("fidelity_creditOrder_step2_error"), data.data);
+                    $scope.setMessage($translate.instant("fidelity_creditOrder_step2_error"), data.data);
                 }
             );
         }
@@ -64,7 +63,10 @@ angular.module("Billing.controllers").controller("Billing.controllers.FidelityCr
 
     $scope.displayBC = function () {
         $scope.resetAction();
-        $scope.setMessage(tr("fidelity_creditOrder_step2_success", [$scope.creditOrder.BC.url, $scope.creditOrder.BC.orderId]));
+        $scope.setMessage($translate.instant("fidelity_creditOrder_step2_success", {
+            t0: $scope.creditOrder.BC.url,
+            t1: $scope.creditOrder.BC.orderId
+        }));
         window.open($scope.creditOrder.BC.url, "_blank");
     };
 

@@ -1,8 +1,8 @@
 class ServerOrderBandwidthVrackCtrl {
-    constructor ($scope, $stateParams, translator, User, BandwidthVrackOrderService) {
+    constructor ($scope, $stateParams, $translate, User, BandwidthVrackOrderService) {
         this.$scope = $scope;
         this.$stateParams = $stateParams;
-        this.translator = translator;
+        this.$translate = $translate;
         this.BandwidthVrackOrderService = BandwidthVrackOrderService;
         this.User = User;
 
@@ -65,7 +65,9 @@ class ServerOrderBandwidthVrackCtrl {
 
     openBC () {
         this.$scope.resetAction();
-        this.$scope.setMessage(this.translator.tr("server_order_bandwidth_vrack_success", [this.bc.data.url]), true);
+        this.$scope.setMessage(this.$translate.instant("server_order_bandwidth_vrack_success", {
+            t0: this.bc.data.url
+        }), true);
         window.open(this.bc.data.url);
     }
 

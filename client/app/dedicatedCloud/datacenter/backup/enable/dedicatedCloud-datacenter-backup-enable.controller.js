@@ -1,11 +1,11 @@
 angular.module("App").controller("DedicatedCloudSubDatacenterVeeamBackupEnableCtrl", class {
 
-    constructor ($q, $stateParams, $state, translator, Alerter, DedicatedCloud) {
+    constructor ($q, $stateParams, $state, $translate, Alerter, DedicatedCloud) {
         // dependencies injections
         this.$q = $q;
         this.$stateParams = $stateParams;
         this.$state = $state;
-        this.translator = translator;
+        this.$translate = $translate;
         this.Alerter = Alerter;
         this.DedicatedCloud = DedicatedCloud;
 
@@ -31,9 +31,13 @@ angular.module("App").controller("DedicatedCloudSubDatacenterVeeamBackupEnableCt
         this.loading.enable = true;
 
         return this.DedicatedCloud.enableVeeam(this.$stateParams.productId, this.$stateParams.datacenterId).then(() => {
-            this.Alerter.success(this.translator.tr("dedicatedCloud_tab_veeam_enable_success", this.datacenter.name), "dedicatedCloudDatacenterAlert");
+            this.Alerter.success(this.$translate.instant("dedicatedCloud_tab_veeam_enable_success", {
+                t0: this.datacenter.name
+            }), "dedicatedCloudDatacenterAlert");
         }).catch((error) => {
-            this.Alerter.error(this.translator.tr("dedicatedCloud_tab_veeam_enable_fail", this.datacenter.name), error, "dedicatedCloudDatacenterAlert");
+            this.Alerter.error(this.$translate.instant("dedicatedCloud_tab_veeam_enable_fail", {
+                t0: this.datacenter.name
+            }), error, "dedicatedCloudDatacenterAlert");
         }).finally(() => {
             this.loading.enable = false;
             this.onCancelBtnClick();

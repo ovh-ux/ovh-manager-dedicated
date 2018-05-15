@@ -1,12 +1,12 @@
 <header class="page-header"
         role="header">
     <h1>
-        <span data-ng-bind="tr('otrs_detail_title')"></span>
+        <span data-ng-bind="'otrs_detail_title' | translate"></span>
         <span data-ng-show="ticket.ticketNumber"
-              data-ng-bind="tr('otrs_detail_title2', [ticket.ticketNumber])">
+              data-ng-bind="'otrs_detail_title2' | translate:{ t0: ticket.ticketNumber }">
         </span>
         <span data-ng-show="ticket.state && !loaders.close"
-              data-ng-bind="tr('otrs_detail_title3_' + ticket.state)">
+              data-translate="{{ 'otrs_detail_title3_' + ticket.state }}">
         </span>
         <oui-spinner data-ng-show="loaders.close"
                      data-size="s">
@@ -16,9 +16,9 @@
 <div class="tab-content pb-5">
     <a class="d-inline-block mb-5"
        data-ng-href="#/ticket?currentPage={{ previousPage }}"
-       title="{{ i18n.otrs_back }}">
+       title="{{ 'otrs_back' | translate }}">
         <span class="fa fa-chevron-left mr-2" aria-hidden="true"></span>
-        <span data-i18n-static="otrs_back"></span>
+        <span data-translate="otrs_back"></span>
     </a>
     <div data-ovh-alert="otrs_detail"></div>
     <div data-ovh-alert="otrs_message"></div>
@@ -32,23 +32,23 @@
             <div class="row"
                  data-ng-hide="loaders.ticket === true">
                 <dl class="col-sm-6">
-                    <dt data-i18n-static="otrs_detail_subject"></dt>
+                    <dt data-translate="otrs_detail_subject"></dt>
                     <dd data-ng-bind="ticket.subject"></dd>
-                    <dt data-i18n-static="otrs_detail_serviceName"></dt>
-                    <dd data-ng-bind="ticket.serviceDescription || ticket.serviceName || i18n.otrs_service_other_services"></dd>
+                    <dt data-translate="otrs_detail_serviceName"></dt>
+                    <dd data-ng-bind="ticket.serviceDescription || ticket.serviceName || (('otrs_service_other_services') | translate)"></dd>
                     <dt data-ng-if="ticket.product"
-                        data-i18n-static="otrs_popup_category">
+                        data-translate="otrs_popup_category">
                     </dt>
                     <dd data-ng-if="ticket.product"
-                        data-ng-bind="( i18n['otrs_service_category_' + ticket.product] || ticket.product)">
+                        data-ng-bind="(('otrs_service_category_' + ticket.product) | translateAlt:ticket.product)">
                     </dd>
-                    <dt data-i18n-static="otrs_popup_type"></dt>
-                    <dd data-ng-bind="( i18n['otrs_types_' + ticket.type] || ticket.type)"></dd>
+                    <dt data-translate="otrs_popup_type"></dt>
+                    <dd data-ng-bind="(('otrs_types_' + ticket.type) | translateAlt:ticket.type)"></dd>
                 </dl>
                 <dl class="col-sm-6">
-                    <dt data-i18n-static="otrs_detail_creationDate"></dt>
+                    <dt data-translate="otrs_detail_creationDate"></dt>
                     <dd data-ng-bind="ticket.creationDate | date : 'short'"></dd>
-                    <dt data-i18n-static="otrs_detail_updateDate"></dt>
+                    <dt data-translate="otrs_detail_updateDate"></dt>
                     <dd data-ng-bind="ticket.updateDate | date : 'short'"></dd>
                 </dl>
             </div>
@@ -60,7 +60,7 @@
                     data-ng-if="ticket.state != 'closed'"
                     data-ng-click="closeTicket()"
                     data-ng-disabled="loaders.close || loaders.reply || !ticket.canBeClosed"
-                    data-i18n-static="otrs_detail_close">
+                    data-translate="otrs_detail_close">
             </button>
         </div>
     </div>
@@ -73,14 +73,14 @@
                       data-ng-model="answer.body"
                       data-ng-disabled="loaders.reply">
             </textarea>
-            <em data-i18n-static="otrs_detail_info"></em>
+            <em data-translate="otrs_detail_info"></em>
         </div>
         <div class="col-sm-3">
             <button class="btn btn-block btn-default"
                     type="button"
                     data-ng-click="reply()"
                     data-ng-disabled="loaders.reply || !answer.body || loaders.close"
-                    data-i18n-static="otrs_detail_reply">
+                    data-translate="otrs_detail_reply">
             </button>
         </div>
     </div>
@@ -94,7 +94,7 @@
                          data-ng-class="{
                             'oui-box_light col-sm-offset2 customer-message': message.from === 'customer'
                         }">
-                        <strong data-ng-bind="tr('otrs_detail_from_' + message.from)"></strong>
+                        <strong data-translate="{{ 'otrs_detail_from_' + message.from }}"></strong>
                         <pre data-ng-bind-html="message.body | htmlStringLinky:'_blank'"
                              style="background-color: transparent; border: none; word-break: normal;">
                         </pre>

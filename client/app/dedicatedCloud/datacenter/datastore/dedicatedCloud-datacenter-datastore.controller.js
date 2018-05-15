@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudSubDatacentersDatastoreCtrl", ($scope, $state, $stateParams, DedicatedCloud, constants) => {
+angular.module("App").controller("DedicatedCloudSubDatacentersDatastoreCtrl", ($scope, $state, $stateParams, $translate, DedicatedCloud, constants) => {
     "use strict";
 
     $scope.datastores = null;
@@ -17,7 +17,7 @@ angular.module("App").controller("DedicatedCloudSubDatacentersDatastoreCtrl", ($
             },
             (data) => {
                 $scope.loading = false;
-                $scope.setMessage($scope.tr("dedicatedCloud_tab_datastores_loading_error"), angular.extend(data, { type: "ERROR" }));
+                $scope.setMessage($translate.instant("dedicatedCloud_tab_datastores_loading_error"), angular.extend(data, { type: "ERROR" }));
             }
         );
     };

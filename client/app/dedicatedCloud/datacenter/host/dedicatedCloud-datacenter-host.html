@@ -1,6 +1,6 @@
 <div class="dedicatedCloud-datacenter-hosts">
 
-    <h2 data-i18n-static="dedicatedCloud_tab_host"></h2>
+    <h2 data-translate="dedicatedCloud_tab_host"></h2>
 
     <div class="text-center"
          data-ng-if="loaders.datacenter">
@@ -12,32 +12,32 @@
                     class="btn btn-default"
                     data-ng-disabled="!datacenter.model.canOrderHosts && constants.target !== 'US'"
                     data-ng-click="orderHost(datacenter)"
-                    data-i18n-static="dedicatedCloud_order_Host">
+                    data-translate="dedicatedCloud_order_Host">
             </button>
             <div class="label"
                  data-ng-if="datacenter.model.hasDiscountAMD"
-                 data-uib-tooltip="{{ tr('dedicatedCloud_discount_AMD') }}"
+                 data-uib-tooltip="{{ 'dedicatedCloud_discount_AMD' | translate }}"
                  data-tooltip-placement="top"
-                 data-i18n-static="dedicatedCloud_discount">
+                 data-translate="dedicatedCloud_discount">
             </div>
         </div>
         <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
                     <th scope="col"
-                        data-i18n-static="dedicatedCloud_tab_host_name">
+                        data-translate="dedicatedCloud_tab_host_name">
                     </th>
                     <th scope="col"
-                        data-i18n-static="dedicatedCloud_tab_host_profile">
+                        data-translate="dedicatedCloud_tab_host_profile">
                     </th>
                     <th scope="col"
-                        data-i18n-static="dedicatedCloud_tab_host_billing">
+                        data-translate="dedicatedCloud_tab_host_billing">
                     </th>
                     <th scope="col"
-                        data-i18n-static="dedicatedCloud_tab_host_status">
+                        data-translate="dedicatedCloud_tab_host_status">
                     </th>
                     <th scope="col"
-                        data-i18n-static="dedicatedCloud_tab_host_consumption">
+                        data-translate="dedicatedCloud_tab_host_consumption">
                     </th>
                 </thead>
                 <tbody data-ng-show="loaders.hosts">
@@ -52,7 +52,7 @@
                     <tr>
                         <td colspan="5"
                             class="text-center"
-                            data-i18n-static="dedicatedCloud_tab_host_empty">
+                            data-translate="dedicatedCloud_tab_host_empty">
                         </td>
                     </tr>
                 </tbody>
@@ -64,7 +64,7 @@
                         <td data-ng-bind="host.profile"></td>
                         <td>
                             <span class="d-block"
-                                  data-ng-bind="tr('dedicatedCloud_tab_host_billing_'+host.billingType)">
+                                  data-translate="{{ 'dedicatedCloud_tab_host_billing_'+host.billingType }}">
                             </span>
                             <button type="button"
                                     class="btn btn-link p-0"
@@ -74,18 +74,24 @@
                                         type: 'host',
                                         id: host.hostId
                                     })"
-                                    data-i18n-static="dedicatedCloud_updateResource_toMonthly">
+                                    data-translate="dedicatedCloud_updateResource_toMonthly">
                             </button>
                         </td>
-                        <td data-ng-bind="tr('dedicatedCloud_tab_host_status_'+host.status)"></td>
+                        <td data-translate="{{ 'dedicatedCloud_tab_host_status_'+host.status }}"></td>
                         <td>
                             <span data-ng-show="host.billingType === 'HOURLY' && host.consumption"
-                                  data-ng-bind="trpl('dedicatedCloud_tab_host_hourly_usage', host.consumption.value, [host.consumption.value])"
-                                  data-uib-tooltip="{{ tr('dedicatedCloud_tab_host_hourly_usage_update', [(host.lastUpdate|date:'short')]) }}"
+                                  data-ng-pluralize
+                                  data-count="host.consumption.value"
+                                  data-when="{
+                                      '0': ('dedicatedCloud_tab_host_hourly_usage_na' | translate),
+                                      'one': ('dedicatedCloud_tab_host_hourly_usage_1' | translate),
+                                      'other': ('dedicatedCloud_tab_host_hourly_usage_other' | translate: { count: {} })
+                                  }"
+                                  data-uib-tooltip="{{ 'dedicatedCloud_tab_host_hourly_usage_update' | translate:{ t0: (host.lastUpdate|date:'short') } }}"
                                   data-tooltip-placement="top">
                             </span>
                             <span data-ng-show="host.billingType === 'HOURLY' && !host.consumption"
-                                  data-i18n-static="dedicatedCloud_tab_host_hourly_usage_na">
+                                  data-translate="dedicatedCloud_tab_host_hourly_usage_na">
                             </span>
                         </td>
                     </tr>

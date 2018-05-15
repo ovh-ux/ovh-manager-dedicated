@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="dedicatedCloud_dashboard_loading_error" qtlid="132083">Tapahtui virhe ladattaessa palvelun tietoja.</translation>
+   <translation id="dedicatedCloud_coming_soon" qtlid="4106">Tulossa</translation>
+   <translation id="dedicatedCloud_banner_hdc_ready_label" qtlid="366293">OVH tarjoaa nyt myös terveystietojen ylläpitoa Private Cloud Healthcare -palvelullaan. Infrastruktuurisi on jo yhteensopiva!</translation>
+   <translation id="dedicatedCloud_banner_hdc_ready_contact_me" qtlid="366306">Olen kiinnostunut asiasta, olkaa hyvä ja ottakaa minuun yhteyttä.</translation>
+   <translation id="dedicatedCloud_contact_me_fail" qtlid="366319">Yhteydenottopyynnön lähetyksessä tapahtui virhe.</translation>
+   <translation id="dedicatedCloud_contact_me_success" qtlid="366332">Yhteydenottopyyntösi on rekistetöity. Otamme sinuun pian yhteyttä.</translation>
+   <translation id="dedicatedCloud_discount" qtlid="285154">Alennus</translation>
+   <translation id="dedicatedCloud_discount_explanation" qtlid="288886">Lopullinen tilausvahvistuksen luomisen yhteydessä laskettu hinta, saatavilla niin kauan kuin varastoa riittää. Voimassa vain kuluvan kuukauden ajan.  </translation>
+   <translation id="dedicatedCloud_discount_AMD" qtlid="285180">Hyödynnä -35% alennus 2014v Enterprise malliston XL ja XL+ hosteille, niin kauan tuotteita riittää varastossa.</translation>
+   <translation id="dedicatedCloud_information_title" qtlid="27115">Yleiset tiedot</translation>
+   <translation id="dedicatedCloud_type" qtlid="145800">Ratkaisu</translation>
+   <translation id="dedicatedCloud_type_VSPHERE" qtlid="146437">vSphere</translation>
+   <translation id="dedicatedCloud_type_VCLOUD" qtlid="154624">vCloud</translation>
+   <translation id="dedicatedCloud_type_SYSTEMCENTER" qtlid="156576">VMM</translation>
+   <translation id="dedicatedCloud_type_AZURE" qtlid="179446">Azure</translation>
+   <translation id="dedicatedCloud_type_VCSA" qtlid="434832">vCSA</translation>
+   <translation id="dedicatedCloud_commercialRange" qtlid="208560">Kaupallinen mallisto</translation>
+   <translation id="dedicatedCloud_pcc_zone" qtlid="268341">PCC-alue</translation>
+   <translation id="dedicatedCloud_connection_policy" qtlid="49274">Yhteyssäännöt</translation>
+   <translation id="dedicatedCloud_access" qtlid="82449">Pääsy</translation>
+   <translation id="dedicatedCloud_billing" qtlid="32950">Laskutus</translation>
+   <translation id="dedicatedCloud_connection_policy_LAST" qtlid="145813">Katkaise tuorein</translation>
+   <translation id="dedicatedCloud_connection_policy_FIRST" qtlid="145826">Katkaise vanhin</translation>
+   <translation id="dedicatedCloud_user_access_policy" qtlid="145839">Kirjautumissäännöt</translation>
+   <translation id="dedicatedCloud_user_access_policy_FILTERED" qtlid="145852">Rajoitettu</translation>
+   <translation id="dedicatedCloud_user_access_policy_OPEN" qtlid="75654">Avoin</translation>
+   <translation id="dedicatedCloud_bandwidth" qtlid="38565">Kaistanleveys</translation>
+   <translation id="dedicatedCloud_datacenter_count" qtlid="30802">Palvelinkeskus</translation>
+   <translation id="dedicatedCloud_order_license" qtlid="145865">Tilaa lisenssi</translation>
+   <translation id="dedicatedCloud_order_block" qtlid="147681">Tilaa IP-lohko</translation>
+   <translation id="dedicatedCloud_order_Host" qtlid="145891">Tilaa isäntäkone</translation>
+   <translation id="dedicatedCloud_order_Datastore" qtlid="145904">Tilaa tiedostosäilö</translation>
+   <translation id="dedicatedCloud_security_policy_update" qtlid="145917">Muuta kirjautumissääntöä</translation>
+   <translation id="dedicatedCloud_nb_bloc_IP" qtlid="154637">IP-osoiteavaruuksien lukumäärä</translation>
+   <translation id="dedicatedCloud_nb_bloc_IP_no_data" qtlid="154650">Tietoa ei saatavilla</translation>
+   <translation id="dedicatedCloud_nb_bloc_IP_ripe" qtlid="145930">IP RIPE -lohkojen lukumäärä</translation>
+   <translation id="dedicatedCloud_nb_bloc_IP_arin" qtlid="154663">ARIN-IP-osoiteavaruuksien lukumäärä</translation>
+   <translation id="dedicatedCloud_edit_description_change" qtlid="154676">Vaihda kuvausta</translation>
+   <translation id="dedicatedCloud_edit_description_valid" qtlid="147850">vahvista muutokset</translation>
+   <translation id="dedicatedCloud_edit_description_cancel" qtlid="147863">peruuta muutokset</translation>
+   <translation id="dedicatedCloud_edit_description_success" qtlid="154689">Kuvauksen vaihtopyyntö on rekisteröity onnistuneesti</translation>
+   <translation id="dedicatedCloud_edit_description_fail" qtlid="154702">Tapahtui virhe vaihdettaessa palvelimen {0} kuvausta</translation>
+   <translation id="dedicatedCloud_no_description" qtlid="149345">Lisää kuvaus</translation>
+   <translation id="dedicatedCloud_datacenters_loading_error" qtlid="147694">Tapahtui virhe ladattaessa palvelinkeskustietoja</translation>
+   <translation id="dedicatedCloud_tab_dashboard" qtlid="27115">Yleiset tiedot</translation>
+   <translation id="dedicatedCloud_tab_datacenter" qtlid="41602">Palvelinkeskukset</translation>
+   <translation id="dedicatedCloud_DATACENTERS_CPU" qtlid="147707">CPU yhteensä</translation>
+   <translation id="dedicatedCloud_DATACENTERS_RAM" qtlid="147720">RAM yhteensä</translation>
+   <translation id="dedicatedCloud_DATACENTERS_DISK" qtlid="147733">Levytila yhteensä</translation>
+   <translation id="dedicatedCloud_datastore" qtlid="145969">TIEDOSTOSÄILÖT</translation>
+   <translation id="dedicatedCloud_configuration_add_datacenter_title" qtlid="47757">Lisää palvelinkeskus</translation>
+   <translation id="dedicatedCloud_configuration_add_datacenter_confirmation" qtlid="209034">Valitse palvelinkeskuksen tyyppi, jonka haluat lisätä:</translation>
+   <translation id="dedicatedCloud_datacenters_adding_success" qtlid="145995">Uusi palvelinkeskus luodaan hetken kuluttua.</translation>
+   <translation id="dedicatedCloud_datacenters_adding_error" qtlid="146008">Tapahtui virhe lisättäessä palvelinkeskusta</translation>
+   <translation id="dedicatedCloud_datacenters_adding_load_error" qtlid="209047">Tapahtui virhe ladattaessa palvelinkeskuksen lisäämistä varten vaadittavaa tietoa.</translation>
+   <translation id="dedicatedCloud_datacenters_adding_select" qtlid="209060">Valinta...</translation>
+   <translation id="dedicatedCloud_configuration_order_datastores_step1_question" qtlid="147746">Valitse tallennustila:</translation>
+   <translation id="dedicatedCloud_configuration_order_datastores_step1_profile" qtlid="23035">Profiili</translation>
+   <translation id="dedicatedCloud_configuration_order_datastores_step1_type" qtlid="2642">Tyyppi</translation>
+   <translation id="dedicatedCloud_configuration_order_datastores_step2_details" qtlid="146034">Yhteenveto tiedostosäilötilauksesta:</translation>
+   <translation id="dedicatedCloud_configuration_order_datastores_step2_profile" qtlid="146047">Profiili:</translation>
+   <translation id="dedicatedCloud_configuration_order_datastores_step2_monthly_price_HT" qtlid="146060">Hinta/kk (ALV 0 %):</translation>
+   <translation id="dedicatedCloud_configuration_order_datastores_step2_monthly_price_TTC" qtlid="146073">Hinta/kk (sis. ALV):</translation>
+   <translation id="dedicatedCloud_configuration_order_datastores_step2_confirm" qtlid="167873">Vahvistaaksesi pyyntösi, klikkaa alla olevaa ”Tilaus”-nappia.</translation>
+   <translation id="dedicatedCloud_configuration_order_datastores_step2_explication" qtlid="167886">Uusi välilehti avataan ja sinut ohjataan OVH:n maksusivulle.</translation>
+   <translation id="dedicatedCloud_configuration_order_datastores_step2_contracts" qtlid="145371">Vahvistan, että olen lukenut ja ymmärtänyt seuraavat ehdot:</translation>
+   <translation id="dedicatedCloud_configuration_order_datastores_rate" qtlid="96860">Hinta</translation>
+   <translation id="dedicatedCloud_configuration_order_datastores_monthly_rate" qtlid="146086">(kk)</translation>
+   <translation id="dedicatedCloud_configuration_order_datastores_billing_quantity" qtlid="146099">Tilattavien tallennustilojen määrä:</translation>
+   <translation id="dedicatedCloud_configuration_order_datastores_finish_success" qtlid="183359">Tiedostosäilön tilaus <a href='{0}' target='_blank'>{1}</a> on rekisteröity.</translation>
+   <translation id="dedicatedCloud_configuration_order_datastores_finish_fail" qtlid="147759">Tapahtui virhe tilattaessa tiedostosäilöä palvelinkeskukseen {0}</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_step1_question" qtlid="146138">Valitse isäntäkoneen profiili:</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_step1_rate" qtlid="146151">Hinta (ALV 0 %)</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_step1_monthly_rate" qtlid="146086">(kk)</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_step2_details" qtlid="146164">Isäntäkonetilauksen yhteenveto:</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_step2_monthly_price_HT" qtlid="146177">Kokonaishinta (ALV 0 %):</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_step2_monthly_price_TTC" qtlid="146190">Kokonaishinta (sis. ALV):</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_step2_confirm" qtlid="167873">Vahvistaaksesi pyyntösi, klikkaa alla olevaa ”Tilaus”-nappia.</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_step2_explication" qtlid="167886">Uusi välilehti avataan ja sinut ohjataan OVH:n maksusivulle.</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_step2_contracts" qtlid="145371">Vahvistan, että olen lukenut ja ymmärtänyt seuraavat ehdot:</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts" qtlid="135229">Isäntäkone</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_processor_speed" qtlid="146203">Prosessorinopeus</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_memory" qtlid="31354">RAM</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_memory_ecc" qtlid="147772">(ECC)</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_nb_cores" qtlid="33070">Ydinten määrä</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_billing_quantity" qtlid="146229">Tilattavien isäntäkoneiden lukumäärä:</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_finish_success" qtlid="183372">Isäntäkoneen tilaus <a href='{0}' target='_blank'>{1}</a> on rekisteröity.</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_finish_fail" qtlid="146255">Tapahtui virhe tilattaessa isäntäkonetta palvelinkeskukseen {0}</translation>
+   <translation id="dedicatedCloud_tab_no_data" qtlid="146372">Ei tietoja</translation>
+   <translation id="dedicatedCloud_tab_host" qtlid="51763">Isäntäkoneet</translation>
+   <translation id="dedicatedCloud_tab_host_name" qtlid="3818">Nimi</translation>
+   <translation id="dedicatedCloud_tab_host_profile" qtlid="23035">Profiili</translation>
+   <translation id="dedicatedCloud_tab_host_billing" qtlid="32950">Laskutus</translation>
+   <translation id="dedicatedCloud_tab_host_billing_HOURLY" qtlid="149358">Tunneittain</translation>
+   <translation id="dedicatedCloud_tab_host_billing_MONTHLY" qtlid="154715">Kuukausittain</translation>
+   <translation id="dedicatedCloud_tab_host_billing_FREE_SPARE" qtlid="154728">Ilmainen varaisäntä</translation>
+   <translation id="dedicatedCloud_tab_host_billing_UNDEFINED" qtlid="126284">Määrittelemätön</translation>
+   <translation id="dedicatedCloud_tab_host_status" qtlid="8230">Tila</translation>
+   <translation id="dedicatedCloud_tab_host_status_ADDING" qtlid="154741">Lisätään...</translation>
+   <translation id="dedicatedCloud_tab_host_status_DELIVERED" qtlid="55133">Aktiivinen</translation>
+   <translation id="dedicatedCloud_tab_host_status_ERROR" qtlid="26407">Virhe</translation>
+   <translation id="dedicatedCloud_tab_host_status_REMOVING" qtlid="146645">Poistetaan…</translation>
+   <translation id="dedicatedCloud_tab_host_status_UNKNOWN" qtlid="77142">Tuntematon</translation>
+   <translation id="dedicatedCloud_tab_host_consumption" qtlid="25639">Käyttö</translation>
+   <translation id="dedicatedCloud_tab_host_empty" qtlid="154754">Ei isäntäkonetta</translation>
+   <translation id="dedicatedCloud_tab_hosts_loading_error" qtlid="154767">Tapahtui virhe ladattaessa isäntäkonetietoja.</translation>
+   <translation id="dedicatedCloud_tab_host_hourly_usage_1" qtlid="34114">1 tunti</translation>
+   <translation id="dedicatedCloud_tab_host_hourly_usage_other" qtlid="296895">{0} tuntia</translation>
+   <translation id="dedicatedCloud_tab_host_hourly_usage_na" qtlid="94783">Ei käytettävissä</translation>
+   <translation id="dedicatedCloud_tab_host_hourly_usage_update" qtlid="296908">Päivänä {0}</translation>
+
+   <translation id="dedicatedCloud_host_order_title" qtlid="472081">Tilaa isäntäpalvelin</translation>
+   <translation id="dedicatedCloud_host_order_info" qtlid="472094">Voit räätälöidä yksityistä pilveäsi lisäämällä isäntäpalvelimia. Seuraavaksi sinut uudelleenohjataan välilehdelle, jossa voit viimeistellä tilauksesi.</translation>
+   <translation id="dedicatedCloud_host_order_select" qtlid="472107">Valitse isäntäpalvelimen tyyppi:</translation>
+   <translation id="dedicatedCloud_host_order_host" qtlid="135229">Isäntäkone</translation>
+   <translation id="dedicatedCloud_host_order_price" qtlid="83913">Hinta</translation>
+   <translation id="dedicatedCloud_host_order_speed" qtlid="146203">Prosessorinopeus</translation>
+   <translation id="dedicatedCloud_host_order_memory" qtlid="31354">RAM</translation>
+   <translation id="dedicatedCloud_host_order_cores" qtlid="33070">Ydinten määrä</translation>
+   <translation id="dedicatedCloud_host_order_quantity" qtlid="472120">Määrä:</translation>
+   <translation id="dedicatedCloud_host_order_confirm" qtlid="333828">Vahvista tilaus</translation>
+
+   <translation id="dedicatedCloud_datastore_order_title" qtlid="472133">Tilaa datastore</translation>
+   <translation id="dedicatedCloud_datastore_order_info" qtlid="472146">Voit räätälöidä yksityistä pilveäsi lisäämällä datastoreja. Seuraavaksi sinut uudelleenohjataan välilehdelle, jossa voit viimeistellä tilauksesi.</translation>
+   <translation id="dedicatedCloud_datastore_order_select" qtlid="472159">Valitse datastoren tyyppi:</translation>
+   <translation id="dedicatedCloud_datastore_order_type" qtlid="2642">Tyyppi</translation>
+   <translation id="dedicatedCloud_datastore_order_price" qtlid="83913">Hinta</translation>
+   <translation id="dedicatedCloud_datastore_order_quantity" qtlid="472120">Määrä:</translation>
+   <translation id="dedicatedCloud_datastore_order_confirm" qtlid="333828">Vahvista tilaus</translation>
+
+   <translation id="dedicatedCloud_tab_datastore" qtlid="154780">Tiedostosäilöt</translation>
+   <translation id="dedicatedCloud_tab_datastores_name" qtlid="3818">Nimi</translation>
+   <translation id="dedicatedCloud_tab_datastores_profile" qtlid="23035">Profiili</translation>
+   <translation id="dedicatedCloud_tab_datastores_type" qtlid="2642">Tyyppi</translation>
+   <translation id="dedicatedCloud_tab_datastores_size" qtlid="7726">Koko</translation>
+   <translation id="dedicatedCloud_tab_datastores_billing" qtlid="37359">Maksu</translation>
+   <translation id="dedicatedCloud_tab_datastores_billing_HOURLY" qtlid="149358">Tunneittain</translation>
+   <translation id="dedicatedCloud_tab_datastores_billing_MONTHLY" qtlid="154715">Kuukausittain</translation>
+   <translation id="dedicatedCloud_tab_datastores_billing_FREE_SPARE" qtlid="154728">Ilmainen varaisäntä</translation>
+   <translation id="dedicatedCloud_tab_datastores_billing_UNDEFINED" qtlid="126284">Määrittelemätön</translation>
+   <translation id="dedicatedCloud_tab_datastores_consumption" qtlid="25639">Käyttö</translation>
+   <translation id="dedicatedCloud_tab_datastores_hourly_consumption_na" qtlid="94783">Ei käytettävissä</translation>
+   <translation id="dedicatedCloud_tab_datastores_hourly_consumption_1" qtlid="34114">1 tunti</translation>
+   <translation id="dedicatedCloud_tab_datastores_hourly_consumption_other" qtlid="296895">{0} tuntia</translation>
+   <translation id="dedicatedCloud_tab_datastores_status" qtlid="8230">Tila</translation>
+   <translation id="dedicatedCloud_tab_datastores_status_ADDING" qtlid="154741">Lisätään...</translation>
+   <translation id="dedicatedCloud_tab_datastores_status_DELIVERED" qtlid="55133">Aktiivinen</translation>
+   <translation id="dedicatedCloud_tab_datastores_status_ERROR" qtlid="26407">Virhe</translation>
+   <translation id="dedicatedCloud_tab_datastores_status_REMOVING" qtlid="146645">Poistetaan…</translation>
+   <translation id="dedicatedCloud_tab_datastores_status_UNKNOWN" qtlid="77142">Tuntematon</translation>
+   <translation id="dedicatedCloud_tab_datastores_empty" qtlid="154793">Ei tiedostosäilöä</translation>
+   <translation id="dedicatedCloud_tab_datastores_loading_error" qtlid="154806">Tapahtui virhe ladattaessa tiedostosäilötietoja.</translation>
+   <translation id="dedicatedCloud_tab_license" qtlid="62666">Windows-lisenssi</translation>
+   <translation id="dedicatedCloud_tab_licences_spla_state" qtlid="101997">Tila:</translation>
+   <translation id="dedicatedCloud_tab_licences_spla_state_true" qtlid="154819">SPLA-lisenssi on aktivoitu</translation>
+   <translation id="dedicatedCloud_tab_licences_spla_state_false" qtlid="154832">SPLA-lisenssi on deaktivoitu</translation>
+   <translation id="dedicatedCloud_tab_licences_spla_on" qtlid="154845">Aktivoi SPLA</translation>
+   <translation id="dedicatedCloud_tab_licences_active_spla_title" qtlid="154858">SPLA-lisenssin aktivointi</translation>
+   <translation id="dedicatedCloud_tab_licences_active_spla_step1" qtlid="154871">Ole hyvä ja vahvista lisenssisopimus:</translation>
+   <translation id="dedicatedCloud_tab_licences_active_spla_contacts" qtlid="145371">Vahvistan, että olen lukenut ja ymmärtänyt seuraavat ehdot:</translation>
+   <translation id="dedicatedCloud_tab_licences_active_spla_load_fail" qtlid="154884">Tapahtui virhe haettaessa tietoa SPLA-lisenssin aktivoimiseksi</translation>
+   <translation id="dedicatedCloud_tab_licences_active_spla_success" qtlid="183385">SPLA-lisenssin tilaus <a href='{0}' target='_blank'>{1}</a> on rekisteröity.</translation>
+   <translation id="dedicatedCloud_tab_licences_active_spla_fail" qtlid="154910">Tapahtui virhe pyydettäessä SPLA-lisenssin aktivointia</translation>
+   <translation id="dedicatedCloud_tab_backup" qtlid="28147">Varmuuskopiot</translation>
+   <translation id="dedicatedCloud_tab_veeam_on" qtlid="75030">Aktivoi varmuuskopio</translation>
+   <translation id="dedicatedCloud_tab_veeam_on_disabled" qtlid="471925">Konesalissasi on oltava vähintään yksi isäntäpalvelin varmuuskopioinnin käynnistämiseksi.</translation>
+   <translation id="dedicatedCloud_tab_veeam_off" qtlid="154923">Deaktivoi varmuuskopio</translation>
+   <translation id="dedicatedCloud_tab_veeam_state" qtlid="101997">Tila:</translation>
+   <translation id="dedicatedCloud_tab_veeam_loading_error" qtlid="149488">Tapahtui virhe ladattaessa varmuuskopiotietoja</translation>
+   <translation id="dedicatedCloud_tab_veeam_ENABLED" qtlid="149501">Varmuuskopio on aktivoitu</translation>
+   <translation id="dedicatedCloud_tab_veeam_DISABLED" qtlid="154936">Varmuuskopio on deaktivoitu</translation>
+   <translation id="dedicatedCloud_tab_veeam_ENABLING" qtlid="154949">Aktivoidaan...</translation>
+   <translation id="dedicatedCloud_tab_veeam_DISABLING" qtlid="154962">Deaktivoidaan...</translation>
+   <translation id="dedicatedCloud_tab_veeam_ERROR" qtlid="154975">Tapahtui virhe</translation>
+   <translation id="dedicatedCloud_tab_veeam_REMOVING" qtlid="154988">Varmuuskopioita poistetaan...</translation>
+   <translation id="dedicatedCloud_tab_veeam_enable_title" qtlid="155001">Varmuuskopion aktivointi</translation>
+   <translation id="dedicatedCloud_tab_veeam_enable_message" qtlid="183398">Oletko varma, että haluat aktivoida varmuuskopion palvelinkeskukselle <b>{0}</b>?</translation>
+   <translation id="dedicatedCloud_tab_veeam_enable_message2" qtlid="183411">Sinulta laskutetaan varmuuskopioitujen virtuaalikoneiden lukumäärän mukaisesti ja <a href='http://www.ovh-hosting.fi/dedicated-cloud/veeam' target='_blank'>tällä sivulla</a>kuvattujen ehtojen mukaisesti</translation>
+   <translation id="dedicatedCloud_tab_veeam_enable_success" qtlid="183424">Varmuuskopion aktivointipyyntö palvelinkeskuksessa <b>{0}</b> on rekisteröity</translation>
+   <translation id="dedicatedCloud_tab_veeam_enable_fail" qtlid="183437">Virhe esiintyi aktivoitaessa varmuuskopiota palvelinkeskukseen <b>{0}</b></translation>
+   <translation id="dedicatedCloud_tab_veeam_disable_title" qtlid="149631">Varmuuskopion deaktivointi</translation>
+   <translation id="dedicatedCloud_tab_veeam_disable_message" qtlid="183450">Oletko varma, että haluat poistaa varmuuskopion käytöstä palvelinkeskuksessa <b>{0}</b>?</translation>
+   <translation id="dedicatedCloud_tab_veeam_disable_message2" qtlid="155079">Varmista jokaisen virtuaalikoneen varmuuskopion deaktivointi vSpheren kautta</translation>
+   <translation id="dedicatedCloud_tab_veeam_disable_message_alert" qtlid="155092">Huomio: tämä toimenpide tuhoaa kaikki varmuuskopiosi</translation>
+   <translation id="dedicatedCloud_tab_veeam_disable_success" qtlid="183463">Varmuuskopion käytöstäpoistamispyyntö palvelinkeskuksessa <b>{0}</b> on rekisteröity</translation>
+   <translation id="dedicatedCloud_tab_veeam_disable_fail" qtlid="183476">Tapahtui virhe poistettaessa a varmuuskopiota käytöstä palvelinkeskuksesta <b>{0}</b></translation>
+   <translation id="dedicatedCloud_datacenter_go_vscope" qtlid="433086">vScope</translation>
+   <translation id="dedicatedCloud_datacenter_go_web_interface" qtlid="433099">Verkkokäyttöliittymä</translation>
+   <translation id="dedicatedCloud_datacenter_go_certified_web_interface" qtlid="433112">Sertifioitu verkkokäyttöliittymä</translation>
+   <translation id="dedicatedCloud_datacenter_go_vscope" qtlid="147785">Pääsy vScopeen</translation>
+   <translation id="dedicatedCloud_datacenter_delete" qtlid="49430">Poista palvelinkeskus</translation>
+   <translation id="dedicatedCloud_datacenter_delete_confirmation" qtlid="433125">Haluatko varmasti poistaa tämän konesalin {0}?</translation>
+   <translation id="dedicatedCloud_datacenter_delete_success" qtlid="433138">Konesali {0} poistetaan hetken kuluttua.</translation>
+   <translation id="dedicatedCloud_datacenter_delete_error" qtlid="433151">Tapahtui virhe konesalin {0} poiston yhteydessä.</translation>
+   <translation id="dedicatedCloud_datacenter_VM_Backup" qtlid="146281">Varmuuskopioidut virtuaalikoneet</translation>
+   <translation id="dedicatedCloud_datacenter_datastore" qtlid="154780">Tiedostosäilöt</translation>
+   <translation id="dedicatedCloud_datacenter_host" qtlid="51763">Isäntäkoneet</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name" qtlid="371815">Sarja</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_DC" qtlid="162205">Dedicated Cloud</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_DC-HDS" qtlid="371828">Dedicated Cloud HDS</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_DC-HIPAA" qtlid="371841">Dedicated Cloud HIPAA</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_DC-NSX" qtlid="371854">Dedicated Cloud ja NSX</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_DC-NSX-VROPS" qtlid="371867">Dedicated Cloud ja NSX & vROps</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_DC-PCIDSS" qtlid="371880">Dedicated Cloud PCI DSS</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_DC-VROPS" qtlid="371893">Dedicated Cloud ja vROps</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_DC-LEGACY" qtlid="371906">Dedicated Cloud Legacy</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_DC-LEGACY-HDS" qtlid="371919">Dedicated Cloud Legacy HDS</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_DC-LEGACY-HIPAA" qtlid="371932">Dedicated Cloud Legacy HIPAA</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_DC-LEGACY-NSX" qtlid="371945">Dedicated Cloud Legacy ja NSX</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_DC-LEGACY-NSX-VROPS" qtlid="371958">Dedicated Cloud Legacy ja NSX & vROps</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_DC-LEGACY-PCIDSS" qtlid="371971">Dedicated Cloud Legacy PCI DSS</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_DC-LEGACY-VROPS" qtlid="371984">Dedicated Cloud Legacy ja vROps</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_DC-ANCIENT" qtlid="448725">Dedicated Cloud Ancestral</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_DC-ANCIENT-HDS" qtlid="448738">Dedicated Cloud Ancestral HDS</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_DC-ANCIENT-HIPAA" qtlid="448751">Dedicated Cloud Ancestral HIPAA</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_DC-ANCIENT-NSX" qtlid="448764">Dedicated Cloud Ancestral ja NSX</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_DC-ANCIENT-NSX-VROPS" qtlid="448777">Dedicated Cloud Ancestral + NSX ja vROps</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_DC-ANCIENT-PCIDSS" qtlid="448790">Dedicated Cloud Ancestral PCI DSS</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_DC-ANCIENT-VROPS" qtlid="448803">Dedicated Cloud Ancestral ja vROps</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_SDDC" qtlid="371997">SDDC</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_SDDC-HDS" qtlid="372010">SDDC HDS</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_SDDC-HIPAA" qtlid="372023">SDDC HIPAA</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_SDDC-PCIDSS" qtlid="372036">SDDC PCI DSS</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_SDDC-VROPS" qtlid="372049">SDDC ja vROps</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_SDDC-VROPS-WITHOUT-NSX" qtlid="372062">SDDC ja vROps & ilman NSX-palvelua</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_SDDC-WITHOUT-NSX" qtlid="372075">SDDC ilman NSX-palvelua</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_SDDC-LEGACY" qtlid="448816">SDDC Legacy</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_SDDC-LEGACY-HDS" qtlid="448829">SDDC Legacy HDS</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_SDDC-LEGACY-HIPAA" qtlid="448842">SDDC Legacy HIPAA</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_SDDC-LEGACY-PCIDSS" qtlid="448855">SDDC Legacy PCI DSS</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_SDDC-LEGACY-VROPS" qtlid="448868">SDDC Legacy ja vROps</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_SDDC-LEGACY-VROPS-WITHOUT-NSX" qtlid="448881">SDDC Legacy ja vROps & ilman NSX-palvelua</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_SDDC-LEGACY-WITHOUT-NSX" qtlid="448894">SDDC Legacy ilman NSX-palvelua</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_UNKNOWN-UNKNOWN" qtlid="77142">Tuntematon</translation>
+   <translation id="dedicatedCloud_datacenter_loading_error" qtlid="155131">Tapahtui virhe ladattaessa palvelinkeskustietoja.</translation>
+   <translation id="dedicatedCloud_datacenter_edit_description_change" qtlid="154676">Vaihda kuvausta</translation>
+   <translation id="dedicatedCloud_datacenter_edit_description_valid" qtlid="147850">vahvista muutokset</translation>
+   <translation id="dedicatedCloud_datacenter_edit_description_cancel" qtlid="147863">peruuta muutokset</translation>
+   <translation id="dedicatedCloud_datacenter_edit_description_success" qtlid="154689">Kuvauksen vaihtopyyntö on rekisteröity onnistuneesti</translation>
+   <translation id="dedicatedCloud_datacenter_edit_description_fail" qtlid="155144">Tapahtui virhe vaihdettaessa palvelinkeskuksen {0} kuvausta</translation>
+   <translation id="dedicatedCloud_datacenter_no_description" qtlid="149345">Lisää kuvaus</translation>
+   <translation id="dedicatedCloud_datacenter_edit_name_change" qtlid="155157">Nimen muuttaminen</translation>
+   <translation id="dedicatedCloud_datacenter_edit_name_valid" qtlid="147850">vahvista muutokset</translation>
+   <translation id="dedicatedCloud_datacenter_edit_name_cancel" qtlid="147863">peruuta muutokset</translation>
+   <translation id="dedicatedCloud_datacenter_edit_name_success" qtlid="155170">Nimenvaihdos on rekisteröity</translation>
+   <translation id="dedicatedCloud_datacenter_edit_name_fail" qtlid="155183">Tapahtui virhe vaihdettaessa palvelinkeskuksen {0} nimeä</translation>
+   <translation id="dedicatedCloud_datacenter_no_name" qtlid="155196">Palvelinkeskus {0}</translation>
+   <translation id="dedicatedCloud_datacenter_wrong_name" qtlid="149774">Virheellinen muoto</translation>
+   <translation id="dedicatedCloud_tab_user" qtlid="7738">Käyttäjät</translation>
+   <translation id="dedicatedCloud_user_management_authorization_vsphere" qtlid="146411">Käyttäjäoikeuksien hallinta vSphere-asiakasohjelmassa:</translation>
+   <translation id="dedicatedCloud_search_user" qtlid="146424">Etsi käyttäjä</translation>
+   <translation id="dedicatedCloud_USER_warning_line" qtlid="147798">Vahvista tai peruuta käyttäjäoikeuksiin tekemäsi muutos</translation>
+   <translation id="dedicatedCloud_USER_name" qtlid="46792">Käyttäjätunnus</translation>
+   <translation id="dedicatedCloud_USER_firstname" qtlid="23323">Etunimi</translation>
+   <translation id="dedicatedCloud_USER_lastname" qtlid="374373">Sukunimi</translation>
+   <translation id="dedicatedCloud_USER_mail" qtlid="21679">Sähköposti</translation>
+   <translation id="dedicatedCloud_USER_phone" qtlid="152505">Puhelinnumero</translation>
+   <translation id="dedicatedCloud_USER_phone_hint" qtlid="382667">Käytä kansainvälistä formaattia kuten {0}. Numeron on voitava vastaanottaa tekstiviestejä.</translation>
+   <translation id="dedicatedCloud_USER_phone_example" qtlid="382680">Esimerkki numerosta: {0}</translation>
+   <translation id="dedicatedCloud_USER_token_validator" qtlid="374035">Token validator</translation>
+   <translation id="dedicatedCloud_USER_VSPHERE" qtlid="146437">vSphere</translation>
+   <translation id="dedicatedCloud_USER_ACE" qtlid="146450">ACE</translation>
+   <translation id="dedicatedCloud_USER_modified" qtlid="32566">Muutos</translation>
+   <translation id="dedicatedCloud_USER_IP" qtlid="25615">IP</translation>
+   <translation id="dedicatedCloud_USER_VPN" qtlid="50362">VPN</translation>
+   <translation id="dedicatedCloud_USER_IPNASHA" qtlid="146463">HA-NAS IP</translation>
+   <translation id="dedicatedCloud_USER_modify" qtlid="37875">Muokkaa</translation>
+   <translation id="dedicatedCloud_USER_view_modify_rights_by_DC" qtlid="146489">Katso/muokkaa oikeuksia per palvelinkeskus</translation>
+   <translation id="dedicatedCloud_USER_delete" qtlid="7882">Poista tämä käyttäjä</translation>
+   <translation id="dedicatedCloud_USER_delete_title" qtlid="7666">Poista käyttäjä</translation>
+   <translation id="dedicatedCloud_USER_delete_message" qtlid="183489">Oletko varma, että haluat poistaa käyttäjän <b>{0}</b>?</translation>
+   <translation id="dedicatedCloud_USER_delete_success" qtlid="183502">Käyttäjän <b>{0}</b> poistopyyntö on rekisteröity</translation>
+   <translation id="dedicatedCloud_USER_delete_fail" qtlid="183515">Tapahtui virhe poistettaessa käyttäjä <b>{0}</b></translation>
+   <translation id="dedicatedCloud_USER_authorized_configuration_ACE" qtlid="146528">Oikeuta ACE-konfigurointi</translation>
+   <translation id="dedicatedCloud_USER_refused_configuration_ACE" qtlid="146541">Hylkää ACE-konfigurointi</translation>
+   <translation id="dedicatedCloud_USER_rights_management_by_datacenter" qtlid="183528">Oikeuksien <b>{0}</b> hallinta palvelinkeskuksittain</translation>
+   <translation id="dedicatedCloud_USER_access_vsphere" qtlid="146567">vSphere-kirjautuminen</translation>
+   <translation id="dedicatedCloud_USER_resource" qtlid="146580">Resurssien lisäys</translation>
+   <translation id="dedicatedCloud_USER_VM_NETWORK_ROLE" qtlid="200755">Pääsy vmNetworkiin</translation>
+   <translation id="dedicatedCloud_USER_NETWORK_ROLE" qtlid="200768">Pääsy V(x)LANeihin</translation>
+   <translation id="dedicatedCloud_USER_backup" qtlid="28147">Varmuuskopiot</translation>
+   <translation id="dedicatedCloud_USER_ip" qtlid="167899">IP</translation>
+   <translation id="dedicatedCloud_USER_ipfo" qtlid="157694">IP FailOver</translation>
+   <translation id="dedicatedCloud_USER_nsx" qtlid="471938">NSX-käyttöliittymä</translation>
+   <translation id="dedicatedCloud_USER_allow_reading" qtlid="146593">anna luku-oikeus</translation>
+   <translation id="dedicatedCloud_USER_allow_reading_and_writing" qtlid="146606">anna luku- ja kirjoitus-oikeus</translation>
+   <translation id="dedicatedCloud_USER_all_refused" qtlid="146619">hylkää kaikki</translation>
+   <translation id="dedicatedCloud_USER_state" qtlid="167912">Tila</translation>
+   <translation id="dedicatedCloud_USER_state_CREATING" qtlid="146632">Luodaan…</translation>
+   <translation id="dedicatedCloud_USER_state_DELETING" qtlid="146645">Poistetaan…</translation>
+   <translation id="dedicatedCloud_USER_state_DELIVERED" qtlid="30250">Aktivoitu</translation>
+   <translation id="dedicatedCloud_USER_state_DISABLED" qtlid="24967">Deaktivoitu</translation>
+   <translation id="dedicatedCloud_USER_state_ERROR" qtlid="45508">Virhe</translation>
+   <translation id="dedicatedCloud_USER_right_modify" qtlid="147837">muuta oikeuksia</translation>
+   <translation id="dedicatedCloud_USER_right_valid" qtlid="147850">vahvista muutokset</translation>
+   <translation id="dedicatedCloud_USER_right_cancel" qtlid="147863">peruuta muutokset</translation>
+   <translation id="dedicatedCloud_USER_right_DISABLED" qtlid="30646">Ei ole</translation>
+   <translation id="dedicatedCloud_USER_right_disabled" qtlid="30646">Ei ole</translation>
+   <translation id="dedicatedCloud_USER_right_NO_ACCESS" qtlid="30646">Ei ole</translation>
+   <translation id="dedicatedCloud_USER_right_noAccess" qtlid="30646">Ei ole</translation>
+   <translation id="dedicatedCloud_USER_right_READONLY" qtlid="17333">Vain luku</translation>
+   <translation id="dedicatedCloud_USER_right_readonly" qtlid="17333">Vain luku</translation>
+   <translation id="dedicatedCloud_USER_right_READWRITE" qtlid="146671">Luku/kirjoitus</translation>
+   <translation id="dedicatedCloud_USER_right_readwrite" qtlid="146671">Luku/kirjoitus</translation>
+   <translation id="dedicatedCloud_USER_right_ADMIN" qtlid="210176">Operaattori</translation>
+   <translation id="dedicatedCloud_USER_right_admin" qtlid="210176">Operaattori</translation>
+   <translation id="dedicatedCloud_USER_right_MANAGER" qtlid="210189">Administraattori</translation>
+   <translation id="dedicatedCloud_USER_right_manager" qtlid="210189">Administraattori</translation>
+   <translation id="dedicatedCloud_USER_right_title" qtlid="433164">Käyttöoikeuksien muokkaus</translation>
+   <translation id="dedicatedCloud_USER_right_datacenter_title" qtlid="433177">Konesali: <b>{0}</b></translation>
+   <translation id="dedicatedCloud_USER_right_vsphere" qtlid="146567">vSphere-kirjautuminen</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_help" qtlid="433190">Yleiset vSphere-käyttöoikeudet</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_ADMIN" qtlid="433203">Varattu OVH:lle, ainoastaan administraattoreille</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_admin" qtlid="433203">Varattu OVH:lle, ainoastaan administraattoreille</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_DISABLED" qtlid="308541">Ei pääsyoikeutta</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_disabled" qtlid="308541">Ei pääsyoikeutta</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_READONLY" qtlid="433216">Vain lukuoikeus</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_readonly" qtlid="433216">Vain lukuoikeus</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_READWRITE" qtlid="433229">Kirjoitusoikeus</translation>
+   <translation id="dedicatedCloud_USER_right_vsphere_readwrite" qtlid="433229">Kirjoitusoikeus</translation>
+   <translation id="dedicatedCloud_USER_right_vmNetwork" qtlid="200755">Pääsy vmNetworkiin</translation>
+   <translation id="dedicatedCloud_USER_right_vmNetwork_help" qtlid="433242">Julkista verkkoa koskevat hallintaoikeudet (vSphere-käyttöliittymässä nimellä VM Network).</translation>
+   <translation id="dedicatedCloud_USER_right_vmNetwork_ADMIN" qtlid="433255">Mahdollistaa virtuaalikoneiden konfiguroinnin julkisessa verkossa</translation>
+   <translation id="dedicatedCloud_USER_right_vmNetwork_admin" qtlid="433255">Mahdollistaa virtuaalikoneiden konfiguroinnin julkisessa verkossa</translation>
+   <translation id="dedicatedCloud_USER_right_vmNetwork_NO_ACCESS" qtlid="308541">Ei pääsyoikeutta</translation>
+   <translation id="dedicatedCloud_USER_right_vmNetwork_noAccess" qtlid="308541">Ei pääsyoikeutta</translation>
+   <translation id="dedicatedCloud_USER_right_vmNetwork_READONLY" qtlid="433216">Vain lukuoikeus</translation>
+   <translation id="dedicatedCloud_USER_right_vmNetwork_readonly" qtlid="433216">Vain lukuoikeus</translation>
+   <translation id="dedicatedCloud_USER_right_vlan" qtlid="200768">Pääsy V(x)LANeihin</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_help" qtlid="433268">Yksityistä verkkoa koskevat hallintaoikeudet (Dedicated Cloud -palveluilla VXlan ja SDDC-palveluilla VLAN)</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_ADMIN" qtlid="433281">Mahdollistaa virtuaalikoneiden konfiguroinnin yksityisessä verkossa</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_admin" qtlid="433281">Mahdollistaa virtuaalikoneiden konfiguroinnin yksityisessä verkossa</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_NO_ACCESS" qtlid="308541">Ei pääsyoikeutta</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_noAccess" qtlid="308541">Ei pääsyoikeutta</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_READONLY" qtlid="433216">Vain lukuoikeus</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_readonly" qtlid="433216">Vain lukuoikeus</translation>
+   <translation id="dedicatedCloud_USER_right_vlan_MANAGER" qtlid="433294">Mahdollistaa virtuaalikytkimen porttiryhmien hallinnoinnin (luominen, muokkaus, poisto). Ainoastaan SDDC-palveluille. </translation>
+   <translation id="dedicatedCloud_USER_right_vlan_manager" qtlid="433294">Mahdollistaa virtuaalikytkimen porttiryhmien hallinnoinnin (luominen, muokkaus, poisto). Ainoastaan SDDC-palveluille. </translation>
+   <translation id="dedicatedCloud_USER_right_resources" qtlid="146580">Resurssien lisäys</translation>
+   <translation id="dedicatedCloud_USER_right_resources_help" qtlid="433307">Oikeus ylimääräisten resurssien lisäämiseen vSphere-asiakasohjelmassa OVH:n liitännäistä käyttämällä.</translation>
+   <translation id="dedicatedCloud_USER_add_user" qtlid="7810">Luo käyttäjä</translation>
+   <translation id="dedicatedCloud_USER_add_user_password_error" qtlid="277338">Salasana on virheellinen.</translation>
+   <translation id="dedicatedCloud_USER_change_password_repeat_fail" qtlid="277351">Salasanojen täytyy olla identtisiä keskenään.</translation>
+   <translation id="dedicatedCloud_users_password_loading_start" qtlid="277364">Salsanasi muokataan hetken kuluttua.</translation>
+   <translation id="dedicatedCloud_users_password_loading_doing" qtlid="277364">Salsanasi muokataan hetken kuluttua.</translation>
+   <translation id="dedicatedCloud_users_password_loading_error" qtlid="277377">Salasanan vaihto epäonnistui</translation>
+   <translation id="dedicatedCloud_users_password_reset_check_error" qtlid="175205">Virhe esiintyi tietoja ladattaessa.</translation>
+   <translation id="dedicatedCloud_users_password_reset_not_allowed" qtlid="382693">Ole hyvä ja käytä salasanasi vaihtamiseksi varmennettua käyttöliittymääsi menemällä osoitteeseen:</translation>
+   <translation id="dedicatedCloud_users_password_loading_done" qtlid="277390">Salasanan vaihto onnistui.</translation>
+
+   <translation id="dedicatedCloud_users_add_start" qtlid="277403">Uusi käyttäjä lisätään hetken kuluttua.</translation>
+   <translation id="dedicatedCloud_users_add_doing" qtlid="277416">Lisätään uutta käyttäjää.</translation>
+   <translation id="dedicatedCloud_users_add_error" qtlid="277429">Uutta käyttäjää ei voitu luoda.</translation>
+   <translation id="dedicatedCloud_users_add_done" qtlid="277442">Uuden käyttäjän luonti onnistui.</translation>
+
+   <translation id="dedicatedCloud_USER_add_user_step1_question" qtlid="202538">Täytä lomake uuden käyttäjän luomiseksi:</translation>
+   <translation id="dedicatedCloud_USER_add_user_name" qtlid="3818">Nimi</translation>
+   <translation id="dedicatedCloud_USER_add_user_password" qtlid="2270">Salasana</translation>
+   <translation id="dedicatedCloud_USER_add_user_mail" qtlid="21679">Sähköposti</translation>
+   <translation id="dedicatedCloud_USER_add_user_step2_question" qtlid="200781">Mitkä oikeudet haluat antaa käyttäjälle <b>{0}</b>?</translation>
+   <translation id="dedicatedCloud_USER_add_user_fail" qtlid="146710">Tapahtui virhe luotaessa käyttäjää {0}</translation>
+   <translation id="dedicatedCloud_USER_add_user_success" qtlid="147876">Käyttäjää {0} luodaan</translation>
+   <translation id="dedicatedCloud_USER_add_user_fail_case" qtlid="147889">Isot kirjaimet eivät ole sallittuja käyttäjän nimessä.</translation>
+   <translation id="dedicatedCloud_USER_add_user_pattern" qtlid="149774">Virheellinen muoto</translation>
+   <translation id="dedicatedCloud_USER_add_user_email" qtlid="149774">Virheellinen muoto</translation>
+   <translation id="dedicatedCloud_USER_add_user_required" qtlid="286578">Pakollinen kenttä</translation>
+   <translation id="dedicatedCloud_USER_add_user_cant_set_password" qtlid="382706">Seuraavaksi voit valita salasanan käyttämällä varmennettua käyttöliittymääsi.</translation>
+   <translation id="dedicatedCloud_USER_add_user_password_length" qtlid="277455">Salasanan täytyy sisältää merkkejä {0} ja {1} välillä.</translation>
+
+   <translation id="dedicatedCloud_USER_reset_password" qtlid="48057">Nollaa salasana</translation>
+   <translation id="dedicatedCloud_USER_change_password" qtlid="80394">Salasanamuutos</translation>
+   <translation id="dedicatedCloud_USER_reset_password_confirmation" qtlid="183554">Oletko varma, että haluat nollata salasanan <b>{0}</b>?</translation>
+   <translation id="dedicatedCloud_USER_change_password_confirmation" qtlid="277468">Anna uusi salasana käyttäjälle <b>{0}</b> :</translation>
+   <translation id="dedicatedCloud_USER_change_password_informations" qtlid="277481">Mikäli et anna salasanaa, saat sähköpostiisi sattumanvaraisesti luodun salasanan.</translation>
+   <translation id="dedicatedCloud_USER_change_password_infos" qtlid="277494">Klikkaa saadaksesi lisätietoja</translation>
+   <translation id="dedicatedCloud_USER_change_password_incorrect" qtlid="277507">Salasana ei ole alustussääntöjen mukainen. </translation>
+   <translation id="dedicatedCloud_USER_change_password_incorrect" qtlid="277507">Salasana ei ole alustussääntöjen mukainen. </translation>
+   <translation id="dedicatedCloud_USER_change_password_new" qtlid="17177">Uusi salasana</translation>
+   <translation id="dedicatedCloud_USER_change_password_repeat" qtlid="9382">Salasanan vahvistus</translation>
+   <translation id="dedicatedCloud_USER_change_password_digitMandatory" qtlid="277520">Vähintään yksi numero</translation>
+   <translation id="dedicatedCloud_USER_change_password_letterMandatory" qtlid="277533">Vähintään yksi kirjain</translation>
+   <translation id="dedicatedCloud_USER_change_password_lowercaseLetterMandatory" qtlid="277546">Kirjainten tulee olla pieniä</translation>
+   <translation id="dedicatedCloud_USER_change_password_maxLength" qtlid="277559">Enimmäispituus:</translation>
+   <translation id="dedicatedCloud_USER_change_password_minLength" qtlid="277572">Vähimmäispituus:</translation>
+   <translation id="dedicatedCloud_USER_change_password_specialMandatory" qtlid="277585">Vähintään yksi erikoismerkki</translation>
+   <translation id="dedicatedCloud_USER_change_password_uppercaseLetterMandatory" qtlid="277598">Kirjainten täytyy olla isoja</translation>
+   <translation id="dedicatedCloud_USER_reset_password_success" qtlid="202551">Uusi salasana käyttäjälle <b>{0}</b> lähetetään pian palvelun admin-yhteyshenkilölle.</translation>
+   <translation id="dedicatedCloud_USER_reset_password_mail_success" qtlid="229789">Uusi salasana käyttäjälle <b>{0}</b> lähetetään määriteltyyn sähköpostiosoitteeseen muutamassa minuutissa.</translation>
+   <translation id="dedicatedCloud_USER_reset_password_fail" qtlid="146762">Tapahtui virhe nollattaessa käyttäjän {0} salasanaa</translation>
+   <translation id="dedicatedCloud_USER_change_password_fail" qtlid="277611">Tapahtui virhe käyttäjän{0} salasanan vaihdossa.</translation>
+   <translation id="dedicatedCloud_USER_right_set_success" qtlid="147902">Oikeuksien {0} muutos palvelinkeskuksessa {1} on otettu huomioon</translation>
+   <translation id="dedicatedCloud_USER_right_set_fail" qtlid="147915">Tapahtui virhe muutettaessa oikeuksia {0} palvelinkeskuksessa {1}</translation>
+   <translation id="dedicatedCloud_USER_set_success" qtlid="157707">Tietojen vaihto kohteelle {0} on rekisteröity</translation>
+   <translation id="dedicatedCloud_USER_set_fail" qtlid="157720">Tapahtui virhe vaihdettaessa kohteen {0} tietoja</translation>
+   <translation id="dedicatedCloud_USER_enable" qtlid="229802">Aktivoi käyttäjä</translation>
+   <translation id="dedicatedCloud_USER_disable" qtlid="199078">Käyttäjän deaktivointi</translation>
+   <translation id="dedicatedCloud_tab_security" qtlid="125420">Tietoturva</translation>
+   <translation id="dedicatedCloud_SECURITY_title" qtlid="371739">IP-osoitteet ja lohkot, joilla on lupa yhdistää  Private yhdistää Cloud -tuotteeseen:</translation>
+   <translation id="dedicatedCloud_SECURITY_modify" qtlid="147941">Muuta IP-aluetta</translation>
+   <translation id="dedicatedCloud_SECURITY_delete" qtlid="147954">Poista IP-alue</translation>
+   <translation id="dedicatedCloud_SECURITY_expiration_session" qtlid="146801">Istunnon vanheneminen:</translation>
+   <translation id="dedicatedCloud_SECURITY_expiration_session_value" qtlid="146814">{0} minuuttia</translation>
+   <translation id="dedicatedCloud_SECURITY_expiration_session_never" qtlid="8770">Ei koskaan</translation>
+   <translation id="dedicatedCloud_SECURITY_nb_simultaneous_connection" qtlid="146827">Yhtäaikaiset yhteydet:</translation>
+   <translation id="dedicatedCloud_SECURITY_nb_simultaneous_connection_none" qtlid="8674">Ei mitään</translation>
+   <translation id="dedicatedCloud_SECURITY_nb_simultaneous_connection_value" qtlid="147967">{0} yhteyttä</translation>
+   <translation id="dedicatedCloud_SECURITY_access_policy" qtlid="147980">Pääsysäännöt vCenteriin</translation>
+   <translation id="dedicatedCloud_SECURITY_access_policy_FILTERED" qtlid="145852">Rajoitettu</translation>
+   <translation id="dedicatedCloud_SECURITY_access_policy_OPEN" qtlid="56189">Avoin</translation>
+   <translation id="dedicatedCloud_SECURITY_logout_policy" qtlid="146866">Uloskirjautumisen sääntö:</translation>
+   <translation id="dedicatedCloud_SECURITY_logout_policy_FIRST" qtlid="146879">Ensimmäisenä kirjautuneen käyttäjän yhteyden katkaisu</translation>
+   <translation id="dedicatedCloud_SECURITY_logout_policy_LAST" qtlid="146892">Viimeisenä kirjautuneen käyttäjän yhteyden katkaisu</translation>
+   <translation id="dedicatedCloud_SECURITY_IP_name" qtlid="146905">IP:n nimi</translation>
+   <translation id="dedicatedCloud_SECURITY_allow" qtlid="146918">Oikeus</translation>
+   <translation id="dedicatedCloud_SECURITY_description" qtlid="9238">Kuvaus</translation>
+   <translation id="dedicatedCloud_SECURITY_change_timeout" qtlid="146931">Vanhentumisajan muuttaminen</translation>
+   <translation id="dedicatedCloud_SECURITY_change_nb_simultaneous_connection" qtlid="41530">Samanaikaiset yhteydet</translation>
+   <translation id="dedicatedCloud_SECURITY_change_nb_simultaneous_connection_success" qtlid="146944">Yhtäaikaisten yhteyksien enimmäismäärää on muutettu onnistuneesti.</translation>
+   <translation id="dedicatedCloud_SECURITY_change_nb_simultaneous_connection_failure" qtlid="146957">Tapahtui virhe muutettaessa yhtäaikaisten yhteyksien enimmäismäärää.</translation>
+   <translation id="dedicatedCloud_SECURITY_add_IP" qtlid="146970">IP-osoitteiden lisäys</translation>
+   <translation id="dedicatedCloud_SECURITY_delete_IP" qtlid="146983">IP-osoitteiden poisto</translation>
+   <translation id="dedicatedCloud_configuration_SECURITY_policy_access_success" qtlid="146996">Kirjautumissääntöjä on muutettu onnistuneesti.</translation>
+   <translation id="dedicatedCloud_configuration_SECURITY_policy_access_fail" qtlid="147009">Tapahtui virhe muutettaessa kirjautumissääntöjä.</translation>
+   <translation id="dedicatedCloud_SECURITY_userAccess_policy" qtlid="146840">Kirjautumissääntö:</translation>
+   <translation id="dedicatedCloud_SECURITY_userAccess_policy_FILTERED" qtlid="250732">Rajattu</translation>
+   <translation id="dedicatedCloud_SECURITY_userAccess_policy_OPEN" qtlid="56189">Avoin</translation>
+   <translation id="dedicatedCloud_configuration_SECURITY_policy_logout_success" qtlid="147022">Uloskirjautumissääntöä on muutettu onnistuneesti.</translation>
+   <translation id="dedicatedCloud_configuration_SECURITY_policy_logout_fail" qtlid="147035">Tapahtui virhe muutettaessa uloskirjautumissääntöä.</translation>
+   <translation id="dedicatedCloud_configuration_SECURITY_status_TO_DELETE" qtlid="147048">Poistettava</translation>
+   <translation id="dedicatedCloud_configuration_SECURITY_status_ALLOWED" qtlid="147061">Hyväksytty ja käyttöönotettu</translation>
+   <translation id="dedicatedCloud_configuration_SECURITY_status_TO_UPDATE" qtlid="147993">Päivitetään</translation>
+   <translation id="dedicatedCloud_configuration_SECURITY_policy_delete_success_one" qtlid="147087">Turvasääntö poistetaan hetken kuluttua.</translation>
+   <translation id="dedicatedCloud_configuration_SECURITY_policy_delete_success_other" qtlid="148305">Turvasääntö poistetaan hetken kuluttua</translation>
+   <translation id="dedicatedCloud_configuration_SECURITY_policy_delete_fail_one" qtlid="148318">Tapahtui virhe poistettaessa turvasääntöä</translation>
+   <translation id="dedicatedCloud_configuration_SECURITY_policy_delete_fail_other" qtlid="147100">Tapahtui virhe poistettaessa turvasääntöä.</translation>
+   <translation id="dedicatedCloud_configuration_SECURITY_policy_modify_success" qtlid="147113">Turvasääntöä muutetaan hetken kuluttua.</translation>
+   <translation id="dedicatedCloud_configuration_SECURITY_policy_modify_fail" qtlid="148006">Tapahtui virhe turvasääntöä {0} muokattaessa.</translation>
+   <translation id="dedicatedCloud_configuration_SECURITY_policy_add_success" qtlid="148019">Turvasääntö lisätään hetken kuluttua.</translation>
+   <translation id="dedicatedCloud_configuration_SECURITY_policy_add_fail" qtlid="148032">Virhe esiintyi lisättäessä turvasääntöä {0}.</translation>
+   <translation id="dedicatedCloud_configuration_SECURITY_update_session_timeout_success" qtlid="147139">Vanhentumisviive muutetaan hetken kuluttua.</translation>
+   <translation id="dedicatedCloud_configuration_SECURITY_update_session_timeout_fail" qtlid="147152">Virhe esiintyi muutettaessa vanhentumisviivettä.</translation>
+   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_title" qtlid="147165">Yhtäaikaisten istuntojen määrä</translation>
+   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_step1_question" qtlid="148045">Syötä yhtäaikaisten käyttäjien enimmäisyhteysmäärä:</translation>
+   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections" qtlid="148058">käyttäjäyhteyttä</translation>
+   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_step2_question" qtlid="183567">Olet muuttamassa yhtäaikaisten käyttäjäyhteyksien lukumäärän rajasta <br/><b>{0}</b> rajaan <b>{1}</b></translation>
+   <translation id="dedicatedCloud_configuration_security_policy_access_title" qtlid="147191">Muuta kirjautumissääntöä</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_access_step1_question" qtlid="147204">Valitse käytettävä kirjautumissäntö:</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_access_step1_value" qtlid="147217">Valitse</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_logout_title" qtlid="147230">Muuta uloskirjautumissääntöä</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_logout_step1_question" qtlid="148084">Valitse uloskirjaamissääntö jos kaksi samanaikaista yhteyttä:</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_logout_step1_value" qtlid="147217">Valitse</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_delete_title" qtlid="147256">Poista IP-osoitteita</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_delete_step1_question" qtlid="434906">Haluatko varmasti poistaa pääsyoikeudet IP-osoitteelta {0}?</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_delete_step1_question_plural" qtlid="434919">Haluatko varmasti poistaa pääsyoikeudet {0} IP-osoitteelta?</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_delete_step1_no_selected_entries" qtlid="147282">Et ole valinnut IP-osoitteita.</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_modify_title" qtlid="382719">IP-alueen muokkaus</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_modify_step1_question" qtlid="120667">IP:</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_add_title" qtlid="148110">Lisää turvasääntö</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_add_step1_question" qtlid="148123">Syötä uuden turvasäännön IP:</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_add_step1_description" qtlid="103702">Kuvaus:</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_add_step2_question" qtlid="183580">Olet lisäämässä IP:n <b>{0}</b> uutena turvasääntönä</translation>
+   <translation id="dedicatedCloud_configuration_security_update_session_timeout_title" qtlid="147321">Muokkaa vanhenemispäivämäärää</translation>
+   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step1_question" qtlid="147334">Syötä istunnon vanhenemiseen kuluva minuuttimäärä:</translation>
+   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step1_unit" qtlid="44224">minuuttia</translation>
+   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step1_never" qtlid="148149">istunto ei vanhene koskaan</translation>
+   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step2_question" qtlid="183593">Olet muuttamassa istunnon vanhenemisen minuuttimäärärajaa arvosta <br/><b>{0}</b> arvoon <b>{1}</b></translation>
+   <translation id="dedicatedCloud_network" qtlid="25591">Verkko</translation>
+   <translation id="dedicatedCloud_network_information_ACE" qtlid="147347">ACE:</translation>
+   <translation id="dedicatedCloud_network_information_blocIPRipe" qtlid="147360">RIPE IP -verkkoavaruus</translation>
+   <translation id="dedicatedCloud_network_information_blocIPArine" qtlid="155209">ARIN-IP-verkkoavaruus</translation>
+   <translation id="dedicatedCloud_network_information_VPN" qtlid="147373">VPN:</translation>
+   <translation id="dedicatedCloud_network_information_bandwidth" qtlid="38565">Kaistanleveys</translation>
+   <translation id="dedicatedCloud_tab_VPN" qtlid="50362">VPN</translation>
+   <translation id="dedicatedCloud_tab_ACE" qtlid="146450">ACE</translation>
+   <translation id="dedicatedCloud_tab_NASHA" qtlid="147386">HA-NAS</translation>
+   <translation id="dedicatedCloud_tab_BLOCIP" qtlid="147399">IP-osoiteavaruus</translation>
+   <translation id="dedicatedCloud_network_account" qtlid="33862">Tili</translation>
+   <translation id="dedicatedCloud_network_details" qtlid="9238">Kuvaus</translation>
+   <translation id="dedicatedCloud_network_server" qtlid="8290">Palvelin</translation>
+   <translation id="dedicatedCloud_network_password" qtlid="2270">Salasana</translation>
+   <translation id="dedicatedCloud_network_view_modify_account" qtlid="147412">Tarkastele/muokkaa tätä tiliä</translation>
+   <translation id="dedicatedCloud_network_delete_account" qtlid="143473">Poista tämä tili</translation>
+   <translation id="dedicatedCloud_network_search" qtlid="37659">Haku</translation>
+   <translation id="dedicatedCloud_network_order_block" qtlid="145878">Tilaa lohko</translation>
+   <translation id="dedicatedCloud_network_order_NASHA" qtlid="147425">Tilaa HA-NAS</translation>
+   <translation id="dedicatedCloud_network_create_account_VPN" qtlid="147438">Luo VPN-tili</translation>
+   <translation id="dedicatedCloud_network_disable_VPN" qtlid="147451">Deaktivoi VPN</translation>
+   <translation id="dedicatedCloud_network_vpn_account_name" qtlid="147464">Tilin nimi:</translation>
+   <translation id="dedicatedCloud_network_vpn_group_name" qtlid="103426">Ryhmän nimi:</translation>
+   <translation id="dedicatedCloud_network_vpn_secret" qtlid="147477">Secret:</translation>
+   <translation id="dedicatedCloud_network_vpn_create_account_text" qtlid="147490">Sinua laskutetaan luodusta tilistä {0} € kuun lopussa</translation>
+   <translation id="dedicatedCloud_network_vpn_confirm_create_account" qtlid="183606">Haluatko vahvistaa tilin {0} luonnin? <br /> Siitä laskutetaan {0} € kuun lopussa</translation>
+   <translation id="dedicatedCloud_USER_add_user_which_rights" qtlid="176768">Mitkä oikeudet haluat myöntää käyttäjälle ”{0}”?</translation>
+   <translation id="dedicatedCloud_USER_add_user_which_rights_rw" qtlid="176781">Admin (luku-/kirjoitusoikeus kaikkiin palvelinkeskuksiin)</translation>
+   <translation id="dedicatedCloud_USER_add_user_which_rights_ro" qtlid="176794">Read only (vSphere-pääsy lukuoikeudella)</translation>
+   <translation id="dedicatedCloud_USER_add_user_which_rights_none" qtlid="176807">Ei mitään (kustomoitavissa käyttäjän luonnin jälkeen)</translation>
+   <translation id="dedicatedCloud_USER_add_user_step3_question1" qtlid="202577">Haluatko lisätä <b>« {0} »</b> seuraavin tiedoin:</translation>
+   <translation id="dedicatedCloud_USER_add_user_step3_rights" qtlid="202590">Oikeus</translation>
+   <translation id="dedicatedCloud_USER_add_user_step3_mail" qtlid="21679">Sähköposti</translation>
+   <translation id="dedicatedCloud_updateResource_toMonthly" qtlid="269162">Vaihda kuukausilaskutukseen</translation>
+   <translation id="dedicatedCloud_order_price_HT" qtlid="146177">Kokonaishinta (ALV 0 %):</translation>
+   <translation id="dedicatedCloud_order_price_TTC" qtlid="146190">Kokonaishinta (sis. ALV):</translation>
+   <translation id="dedicatedCloud_order_final_txt" qtlid="181240">Klikkaa ”Vahvista”-painiketta vahvistaaksesi tilauksesi.</translation>
+   <translation id="dedicatedCloud_order_final_txt2" qtlid="181253">Selaimeesi avautuu uusi välilehti ja ohjaudut automaattisesti maksusivulle.</translation>
+   <translation id="dedicatedCloud_order_finish_success" qtlid="184048">Tilaus <a href='{0}' target='_blank'>{1}</a> on rekisteröity.</translation>
+   <translation id="dedicatedCloud_order_finish_error" qtlid="181227">Tapahtui virhe luotaessa tilaustasi.</translation>
+   <translation id="dedicatedCloud_order_loading_error" qtlid="135294">Tapahtui virhe tietoja ladattaessa.</translation>
+   <translation id="dedicatedCloud_USER_connection_type" qtlid="95059">Ongelmankartoitus</translation>
+
+   <translation id="dedicatedCloud_subscribe_mailing" qtlid="190498">Tilaa postituslista</translation>
+   <translation id="dedicatedCloud_subscribe_mailing_disabled" qtlid="480893">Private Cloud ({0}) -postituslistalle liittyminen ei ole mahdollista.</translation>
+   <translation id="dedicatedCloud_subscribe_mailing_step1" qtlid="371752">Syötä Private Cloud -postituslistalle ({0}) liitettävä sähköpostiosoite:</translation>
+   <translation id="dedicatedCloud_subscribe_mailing_step2" qtlid="371765">Olet liittymässä {0} Private Cloud -tuotteen postituslistalle ({1})</translation>
+   <translation id="dedicatedCloud_subscribe_mailing_step2_success" qtlid="190524">Pyyntösi listan <b>{0}</b> tilaukselle on rekisteröity</translation>
+   <translation id="dedicatedCloud_subscribe_mailing_step2_error" qtlid="190537">Tapahtui virhe tilattaessa listaa <b>{0}</b></translation>
+
+   <translation id="dedicatedCloud_upgrade_button" qtlid="204519">Siirry maksulliseen palveluun</translation>
+
+   <translation id="dedicatedCloud_USER_enable_title" qtlid="229815">Aktivoi käyttäjä</translation>
+   <translation id="dedicatedCloud_USER_enable_activation" qtlid="229828">Käyttäjää aktivoidaan …</translation>
+   <translation id="dedicatedCloud_USER_enable_success" qtlid="229841">Käyttäjä on aktivoitu onnistuneesti.</translation>
+   <translation id="dedicatedCloud_USER_enable_fail" qtlid="229854">Tapahtui virhe aktivoitaessa käyttäjää:</translation>
+   <translation id="dedicatedCloud_USER_enable_message" qtlid="229867">Haluatko varmasti aktivoida käyttäjän <strong>{0}</strong>?</translation>
+   <translation id="dedicatedCloud_USER_enable_infos" qtlid="229880">Tämä käyttäjä on infran väliaikainen käyttäjä. Se poistetaan käytöstä kahdessa tunnissa.</translation>
+
+   <translation id="dedicatedCloud_USER_disable_title" qtlid="229893">Deaktivoi käyttäjä</translation>
+   <translation id="dedicatedCloud_USER_disable_deactivation" qtlid="229906">Käyttäjä poistetaan käytöstä …</translation>
+   <translation id="dedicatedCloud_USER_disable_success" qtlid="229919">Käyttäjä on poistettu käytöstä onnistuneesti.</translation>
+   <translation id="dedicatedCloud_USER_disable_fail" qtlid="229932">Tapahtui virhe poistettaessa käyttäjää käytöstä:</translation>
+   <translation id="dedicatedCloud_USER_disable_message" qtlid="229945">Haluatko varmasti poistaa käytöstä käyttäjän <strong>{0}</strong>?</translation>
+
+   <translation id="dedicatedCloud_close_service" qtlid="257967">Palvelun poisto</translation>
+   <translation id="dedicatedCloud_close_service_warning" qtlid="273371">Kun tämä kohde poistetaan, kaikki data sekä niihin liittyvät IP-lohkot poistuvat peruuttamattomasti. Poistamisesta ei anneta mitään hyvitystä. </translation>
+   <translation id="dedicatedCloud_close_service_desc" qtlid="257993">Saat sähköpostilla viestin, jossa annetaan tarkemmat tiedot infrastruktuurin poistamiseksi.</translation>
+   <translation id="dedicatedCloud_close_service_question" qtlid="352009">Haluatko jatkaa?</translation>
+   <translation id="dedicatedCloud_close_service_success" qtlid="258006">Palvelun poistopyyntö on rekisteröity. Saat sähköpostilla viestin, jossa annetaan tarkemmat tiedot infrastruktuurin poistamiseksi.</translation>
+   <translation id="dedicatedCloud_close_service_error" qtlid="258019">Tapahtui virhe pyydettäessä infrastruktuurin poistoa:</translation>
+
+   <translation id="dedicatedCloud_confirm_close_service" qtlid="299923">Vahvistus palvelun sulkemisesta</translation>
+   <translation id="dedicatedCloud_confirm_close_question" qtlid="299936">Kerro meille, mistä syystä päädyit sulkemaan palvelun?</translation>
+   <translation id="dedicatedCloud_confirm_close_reason_not_needed_anymore" qtlid="299949">En käytä enää kyseistä palvelua</translation>
+   <translation id="dedicatedCloud_confirm_close_reason_too_hard_to_use" qtlid="299962">Työkalut ovat liian monimutkaisia</translation>
+   <translation id="dedicatedCloud_confirm_close_reason_lack_of_performances" qtlid="299975">Järjestelmien suorituskyky ei ole riittävä</translation>
+   <translation id="dedicatedCloud_confirm_close_reason_not_reliable" qtlid="299988">Palvelu ei ole tarpeeksi luotettava</translation>
+   <translation id="dedicatedCloud_confirm_close_reason_too_expensive" qtlid="300001">Palvelu on liian kallis</translation>
+   <translation id="dedicatedCloud_confirm_close_reason_migrated_to_another_ovh_product" qtlid="300014">Käytän toista OVH:n palvelua</translation>
+   <translation id="dedicatedCloud_confirm_close_reason_migrated_to_competitor" qtlid="300027">Käytän kilpailijan palvelua</translation>
+   <translation id="dedicatedCloud_confirm_close_reason_other" qtlid="300040">Muuta...</translation>
+   <translation id="dedicatedCloud_confirm_close_feedback" qtlid="300053">Haluatko antaa lisätietoja tai tehdä parannusehdotuksen?</translation>
+   <translation id="dedicatedCloud_confirm_close_confirm" qtlid="300066">Vahvistan, että haluan sulkea palvelun</translation>
+   <translation id="dedicatedCloud_confirm_close_cancel" qtlid="300079">Muutin mieleni</translation>
+   <translation id="dedicatedCloud_confirm_close_success" qtlid="300092">Infrastruktuurin poistopyyntö on nyt vahvistettu.</translation>
+   <translation id="dedicatedCloud_confirm_close_error" qtlid="300105">Tapahtui virhe poistopyynnön vahvistamisessa:</translation>
+
+   <translation id="dedicatedCloud_dashboard_change_prices" qtlid="264732">Infrastruktuurin hinta muuttuu,</translation>
+   <translation id="dedicatedCloud_dashboard_change_price_click_here" qtlid="131745">klikkaa tästä</translation>
+   <translation id="dedicatedCloud_dashboard_change_price_more" qtlid="256138">saadaksesi lisätietoa.</translation>
+   <translation id="dedicatedCloud_dashboard_change_price_title" qtlid="264745">Uusi hinta tuotteelle {0}</translation>
+   <translation id="dedicatedCloud_dashboard_change_price_info" qtlid="264758">Hintoja sovelletaan uusintatilauksiin 30.11. alkaen</translation>
+   <translation id="dedicatedCloud_dashboard_change_price_name" qtlid="3818">Nimi</translation>
+   <translation id="dedicatedCloud_dashboard_change_price_dedicatedCloud_type" qtlid="2642">Tyyppi</translation>
+   <translation id="dedicatedCloud_dashboard_change_price_old_price" qtlid="256062">Vanha hinta</translation>
+   <translation id="dedicatedCloud_dashboard_change_price_new_price" qtlid="256075">Uusi hinta</translation>
+
+   <translation id="dedicatedCloud_options_title" qtlid="371778">Private Cloud -lisäpalvelut</translation>
+   <translation id="dedicatedCloud_options_state_enabled" qtlid="30250">Aktivoitu</translation>
+   <translation id="dedicatedCloud_options_state_enabling" qtlid="154949">Aktivoidaan...</translation>
+   <translation id="dedicatedCloud_options_state_disabled" qtlid="24967">Deaktivoitu</translation>
+   <translation id="dedicatedCloud_options_state_disabling" qtlid="154962">Deaktivoidaan...</translation>
+   <translation id="dedicatedCloud_options_activate" qtlid="76734">Aktivoi</translation>
+   <translation id="dedicatedCloud_options_unactivate" qtlid="90973">Poista käytöstä</translation>
+   <translation id="dedicatedCloud_options_discover" qtlid="342823">Tutustu lisäpalveluun</translation>
+   <translation id="dedicatedCloud_options_vrops" qtlid="342836">VMware vRealize Operations (vRops)</translation>
+   <translation id="dedicatedCloud_options_nsx" qtlid="342849">VMware Network Virtualization (NSX)</translation>
+
+   <translation id="dedicatedCloud_vmware_orderopt_title_vrops" qtlid="342862">Aktivoi VMware vROps -lisäpalvelu</translation>
+   <translation id="dedicatedCloud_vmware_orderopt_title_nsx" qtlid="342875">Aktivoi VMware NSX -lisäpalvelu</translation>
+   <translation id="dedicatedCloud_vmware_orderopt_info" qtlid="342888">Hostiesi hintaa tullaan korottamaan seuravaan uusinnan yhteydessä:</translation>
+   <translation id="dedicatedCloud_vmware_orderopt_host_name" qtlid="3818">Nimi</translation>
+   <translation id="dedicatedCloud_vmware_orderopt_datacenter_name" qtlid="30802">Palvelinkeskus</translation>
+   <translation id="dedicatedCloud_vmware_orderopt_current_price" qtlid="342901">Kuluvan kuukauden laskutus</translation>
+   <translation id="dedicatedCloud_vmware_orderopt_next_price" qtlid="342914">Tulevan kuukauden laskutus&#42;</translation>
+   <translation id="dedicatedCloud_vmware_orderopt_price_hourly" qtlid="342927">{0}/h</translation>
+   <translation id="dedicatedCloud_vmware_orderopt_price_info" qtlid="342940">&#42;poislukien muu ennen tätä päivämäärä aktivoitu lisäpalvelu</translation>
+   <translation id="dedicatedCloud_vmware_orderopt_activate" qtlid="342953">Aktivoi lisäpalvelu</translation>
+   <translation id="dedicatedCloud_vmware_orderopt_activate_success" qtlid="342966">Lisäpalvelua aktivoidaan</translation>
+   <translation id="dedicatedCloud_vmware_orderopt_load_prices_error" qtlid="342979">Tapahtui virhe lisäpalvelun hintojen lataamisessa:</translation>
+   <translation id="dedicatedCloud_vmware_orderopt_activate_error" qtlid="342992">Tapahtui virhe lisäpalvelun aktivoimisessa:</translation>
+   <translation id="dedicatedCloud_vmware_cancelopt_title_vrops" qtlid="343005">Poista VMware vROps -lisäpalvelun  aktivointi</translation>
+   <translation id="dedicatedCloud_vmware_cancelopt_title_nsx" qtlid="343018">Poista VMware NSX -lisäpalvelun aktivointi</translation>
+   <translation id="dedicatedCloud_vmware_cancelopt_message_nsx" qtlid="343031">Haluatko varmasti poistaa aktivoinnin lisäpalvelulta NSX? </translation>
+   <translation id="dedicatedCloud_vmware_cancelopt_message_vrops" qtlid="343044">Haluatko varmasti poistaa aktivoinnin lisäpalvelulta vROps? </translation>
+   <translation id="dedicatedCloud_vmware_cancelopt_warning" qtlid="343057">Huom, tämä toiminto on peruuttamaton ja lopullinen. </translation>
+   <translation id="dedicatedCloud_vmware_cancelopt_desactivate" qtlid="343070">Poista lisäpalvelun aktivointi</translation>
+   <translation id="dedicatedCloud_vmware_cancelopt_unactivate_succes" qtlid="343083">Lisäpalvelun aktivointia poistetaan</translation>
+   <translation id="dedicatedCloud_vmware_cancelopt_unactivate_error" qtlid="343096">Tapahtui virhe lisäpalvelun aktivoinnin poistamisessa:</translation>
+   <translation id="dedicatedCloud_vmware_price_free_spare" qtlid="154728">Ilmainen varaisäntä</translation>
+   <translation id="dedicatedCloud_vmware_option_not_compatible" qtlid="343109">Lisäpalvelu ei ole yhteensopiva tämän konesalin kanssa.</translation>
+   <translation id="dedicatedCloud_vmware_option_not_enabled" qtlid="343122">Lisäpalvelun aktivointia ei voida tällä hetkellä poistaa, koska se ei ole aktiivinen. </translation>
+   <translation id="dedicatedCloud_vmware_option_not_disabled" qtlid="343135">Lisäpalvelua ei tällä hetkellä voida aktivoida, sillä sen aktivointia ei ole poistettu. </translation>
+
+   <translation id="dedicatedCloud_tab_operation" qtlid="31078">Operaatiot</translation>
+   <translation id="dedicatedCloud_OPERATIONS_taskId" qtlid="16445">Viite</translation>
+   <translation id="dedicatedCloud_OPERATIONS_name" qtlid="3818">Nimi</translation>
+   <translation id="dedicatedCloud_OPERATIONS_type" qtlid="2642">Tyyppi</translation>
+   <translation id="dedicatedCloud_OPERATIONS_progression" qtlid="61608">Edistyminen</translation>
+   <translation id="dedicatedCloud_OPERATIONS_comment" qtlid="25975">Kommentti</translation>
+   <translation id="dedicatedCloud_OPERATIONS_related_services" qtlid="367164">Palvelut, joihin operaatio vaikuttaa</translation>
+   <translation id="dedicatedCloud_OPERATIONS_created_from" qtlid="299501">Luotu</translation>
+   <translation id="dedicatedCloud_OPERATIONS_created_by" qtlid="299514">Luonut</translation>
+   <translation id="dedicatedCloud_OPERATIONS_date_treatment" qtlid="266872">Käsittelyajankohta</translation>
+   <translation id="dedicatedCloud_OPERATIONS_date_treatment_edit" qtlid="367177">Muokkaa käsittelyn päivämäärää</translation>
+   <translation id="dedicatedCloud_OPERATIONS_date_treatment_save" qtlid="367190">Tallenna käsittelyn päivämäärä</translation>
+   <translation id="dedicatedCloud_OPERATIONS_date_treatment_cancel" qtlid="367203">Peru päivämäärän muokkaus</translation>
+   <translation id="dedicatedCloud_OPERATIONS_date_end" qtlid="73745">Päättymisajankohta</translation>
+   <translation id="dedicatedCloud_OPERATIONS_date_update" qtlid="270787">Päivityspäivä</translation>
+   <translation id="dedicatedCloud_OPERATIONS_state" qtlid="33790">Tila</translation>
+   <translation id="dedicatedCloud_OPERATIONS_state_doing" qtlid="26383">Käynnissä</translation>
+   <translation id="dedicatedCloud_OPERATIONS_state_error" qtlid="26407">Virhe</translation>
+   <translation id="dedicatedCloud_OPERATIONS_state_problem" qtlid="270800">Ongelma</translation>
+   <translation id="dedicatedCloud_OPERATIONS_state_todo" qtlid="270813">Tehtävä</translation>
+   <translation id="dedicatedCloud_OPERATIONS_state_done" qtlid="8662">Valmis</translation>
+   <translation id="dedicatedCloud_OPERATIONS_state_canceled" qtlid="27631">Peruttu</translation>
+   <translation id="dedicatedCloud_OPERATIONS_state_fixing" qtlid="270826">Toimenpide kesken</translation>
+   <translation id="dedicatedCloud_OPERATIONS_state_toCancel" qtlid="270839">Peruttava</translation>
+   <translation id="dedicatedCloud_OPERATIONS_state_toCreate" qtlid="270852">Luotava</translation>
+   <translation id="dedicatedCloud_OPERATIONS_state_unknown" qtlid="77142">Tuntematon</translation>
+   <translation id="dedicatedCloud_OPERATIONS_state_waitingForChilds" qtlid="29467">Odottaa</translation>
+   <translation id="dedicatedCloud_OPERATIONS_state_waitingTodo" qtlid="270865">Suunniteltava</translation>
+
+   <translation id="dedicatedCloud_OPERATIONS_type_generic" qtlid="270878">Yleinen</translation>
+   <translation id="dedicatedCloud_OPERATIONS_type_maintenance" qtlid="114222">Huolto</translation>
+   <translation id="dedicatedCloud_OPERATIONS_error" qtlid="226423">Tapahtui virhe:</translation>
+   <translation id="dedicatedCloud_OPERATIONS_empty" qtlid="254960">Ei toimenpiteitä</translation>
+   <translation id="dedicatedCloud_OPERATIONS_update" qtlid="270891">Operaation päivitys</translation>
+   <translation id="dedicatedCloud_OPERATIONS_success" qtlid="270904">Operaatio on päivitetty.</translation>
+
+   <translation id="dedicatedCloud_OPERATIONS_related_userId" qtlid="367216">Käyttäjä: {0}</translation>
+   <translation id="dedicatedCloud_OPERATIONS_related_orderId" qtlid="367229">Tilaus: {0}</translation>
+   <translation id="dedicatedCloud_OPERATIONS_related_datacenterId" qtlid="367242">Konesali: {0}</translation>
+   <translation id="dedicatedCloud_OPERATIONS_related_hostId" qtlid="367255">Isäntäpalvelin: {0}</translation>
+   <translation id="dedicatedCloud_OPERATIONS_related_filerId" qtlid="367268">Datastore: {0}</translation>
+   <translation id="dedicatedCloud_OPERATIONS_related_networkAccessId" qtlid="367281">Verkko: {0}</translation>
+   <translation id="dedicatedCloud_OPERATIONS_related_parentTaskId" qtlid="367294">Tehtävä: {0}</translation>
+
+   <translation id="dedicatedCloud_OPERATIONS_createdfrom_support_tools" qtlid="299527">Tukityökalut</translation>
+   <translation id="dedicatedCloud_OPERATIONS_createdfrom_dedicated_cloud_orchestrator" qtlid="371791">Private Cloud -ohjain</translation>
+   <translation id="dedicatedCloud_OPERATIONS_createdfrom_ovh_orchestrator" qtlid="299553">OVH</translation>
+   <translation id="dedicatedCloud_OPERATIONS_createdfrom_plugins" qtlid="299566">Liitännäiset</translation>
+   <translation id="dedicatedCloud_OPERATIONS_createdfrom_soapi" qtlid="299579">SoAPI</translation>
+   <translation id="dedicatedCloud_OPERATIONS_createdfrom_ovh_webservices" qtlid="299592">OVH web-palvelut</translation>
+   <translation id="dedicatedCloud_OPERATIONS_createdfrom_apiv6_manager" qtlid="299605">Manager APIV6</translation>
+   <translation id="dedicatedCloud_OPERATIONS_createdfrom_ovh" qtlid="97568">OVH</translation>
+
+   <translation id="dedicatedCloud_OPERATIONS_createdby_ovh_support" qtlid="228735">OVH tuki</translation>
+   <translation id="dedicatedCloud_OPERATIONS_createdby_customer" qtlid="92389">Asiakas</translation>
+   <translation id="dedicatedCloud_OPERATIONS_createdby_robot">Robot</translation>
+   <translation id="dedicatedCloud_options_security_modal_title_enabling_pcidss" qtlid="374048">PCI DSS -lisäpalvelun aktivointi</translation>
+   <translation id="dedicatedCloud_options_security_modal_title_enabling_hipaa" qtlid="374061">HIPAA-lisäpalvelun aktivointi</translation>
+   <translation id="dedicatedCloud_options_security_modal_title_enabling_hds" qtlid="374074">HDS-lisäpalvelun aktivointi</translation>
+   <translation id="dedicatedCloud_options_security_title" qtlid="136750">Tietoturvaoptiot</translation>
+   <translation id="dedicatedCloud_options_pcidss" qtlid="374334">Payment Card Industry Data Security Standard (PCI DSS)</translation>
+   <translation id="dedicatedCloud_options_hds" qtlid="374347">Terveystietojen ylläpito (HDS)</translation>
+   <translation id="dedicatedCloud_options_hipaa" qtlid="374360">Health Insurance Portability and Accountability Act (HIPAA)</translation>
+   <translation id="dedicatedCloud_options_security_info" qtlid="382732">Vain yksi vaihtoehto voi olla valittuna</translation>
+   <translation id="dedicatedCloud_options_security_title_tooltip" qtlid="454280">Seuraavat säännöt koskevat tietoturvaoptioita (PCI, DSS, HDS ja HIPAA): <ul><li>Vain yksi vaihtoehto voi olla aktivoituna</li><li>NSX- ja vROps-lisäpalveluiden tulee olla aktivoituna.</li><li>PCC:llä tulee olla vähintään yksi hyväksytty IP-osoite ja sillä täytyy olla rajoitetut pääsyoikeudet.</li><li>Administraattorilla on oltava matkapuhelinnumero, sähköpostiosoite sekä hänen täytyy olla "token validator".</li></ul></translation>
+   <translation id="dedicatedCloud_options_security_step1_info" qtlid="374126">NSX ja vROps-lisäpalveluiden on oltava aktivoituna infrastruktuurissasi:</translation>
+   <translation id="dedicatedCloud_options_security_step2_info" qtlid="374139">Infrastruktuuriisi on oltava rajoitettu pääsy sekä sillä on oltava vähintään yksi hyväksytty IP-osoite.</translation>
+   <translation id="dedicatedCloud_options_security_step3_info" qtlid="374152">Vähintään "admin"-käyttäjälläsi on oltava matkapuhelinnumero, sähköpostiosoite ja hänen on oltava "token validator".</translation>
+   <translation id="dedicatedCloud_options_security_step3_list_title" qtlid="374165">Käyttäjät, jotka voivat vahvistaa tunnisteita tekstiviestillä:</translation>
+   <translation id="dedicatedCloud_options_security_enabled" qtlid="30250">Aktivoitu</translation>
+   <translation id="dedicatedCloud_options_security_disabled" qtlid="24967">Deaktivoitu</translation>
+   <translation id="dedicatedCloud_options_security_user_compliant" qtlid="374178">Hyväksytty</translation>
+   <translation id="dedicatedCloud_options_security_user_non_compliant" qtlid="374191">Ei hyväksytty</translation>
+   <translation id="dedicatedCloud_options_security_useraccesspolicy_FILTERED" qtlid="55985">Rajoitettu</translation>
+   <translation id="dedicatedCloud_options_security_useraccesspolicy_OPEN" qtlid="56189">Avoin</translation>
+   <translation id="dedicatedCloud_options_nsx_checklist" qtlid="374204">Lisäpalvelu - VMware Network Virtualization (NSX):</translation>
+   <translation id="dedicatedCloud_options_vrops_checklist" qtlid="374217">Lisäplvelu - VMware vRealize Operations (vROps):</translation>
+   <translation id="dedicatedCloud_options_trusted_ip_checklist" qtlid="374230">IP ja lohkot, joilla on lupa ottaa yhteys:</translation>
+   <translation id="dedicatedCloud_options_restricted_access_checklist" qtlid="284163">Pääsykäytäntö:</translation>
+   <translation id="dedicatedCloud_options_trusted_ip_list_title" qtlid="374243">Lista hyväksytyistä IP-osoitteesta:</translation>
+   <translation id="dedicatedCloud_options_user_admin" qtlid="374256">Admin-käyttäjä:</translation>
+   <translation id="dedicatedCloud_options_user_name" qtlid="46792">Käyttäjätunnus</translation>
+   <translation id="dedicatedCloud_options_user_name_lastname" qtlid="374269">Etunimi</translation>
+   <translation id="dedicatedCloud_options_user_email" qtlid="33598">Sähköposti</translation>
+   <translation id="dedicatedCloud_options_user_phonenumber" qtlid="59195">Mobiili</translation>
+   <translation id="dedicatedCloud_options_check_error" qtlid="374282">Hups, tapahtui virhe esivaatimusten tarkistamisessa... </translation>
+   <translation id="dedicatedCloud_options_load_prices_error" qtlid="374295">Tapahtui virhe lisäpalvelun hintojen lataamisessa</translation>
+   <translation id="dedicatedCloud_options_info" qtlid="374308">Isäntäpalvelimiesi hinta nousee seuraavan uusinnan yhteydessä:</translation>
+   <translation id="dedicatedCloud_options_order_host_name" qtlid="3818">Nimi</translation>
+   <translation id="dedicatedCloud_options_order_datacenter_name" qtlid="30802">Palvelinkeskus</translation>
+   <translation id="dedicatedCloud_options_order_current_price" qtlid="342901">Kuluvan kuukauden laskutus</translation>
+   <translation id="dedicatedCloud_options_order_next_price" qtlid="374321">Seuraavan kuukauden laskutus</translation>
+   <translation id="dedicatedCloud_options_order_price_hourly" qtlid="342927">{0}/h</translation>
+   <translation id="dedicatedCloud_options_order_price_free_spare" qtlid="154728">Ilmainen varaisäntä</translation>
+   <translation id="dedicatedCloud_options_order_price_info" qtlid="342940">&#42;poislukien muu ennen tätä päivämäärä aktivoitu lisäpalvelu</translation>
+   <translation id="dedicatedCloud_options_order_warning" qtlid="343057">Huom, tämä toiminto on peruuttamaton ja lopullinen. </translation>
+   <translation id="dedicatedCloud_options_order_activate_success" qtlid="342966">Lisäpalvelua aktivoidaan</translation>
+   <translation id="dedicatedCloud_options_order_activate_error" qtlid="342992">Tapahtui virhe lisäpalvelun aktivoimisessa:</translation>
+   <translation id="dedicatedCloud_options_order_sms_confirmation" qtlid="382745">Saat tekstiviestin vahvistuksena tilauksestasi. </translation>
+</translations>

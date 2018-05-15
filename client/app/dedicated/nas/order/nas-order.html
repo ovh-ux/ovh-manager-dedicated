@@ -1,6 +1,6 @@
 <div data-ui-view>
     <div class="page-header">
-        <h1 data-i18n-static="nas_order_title"></h1>
+        <h1 data-translate="nas_order_title"></h1>
     </div>
     <div class="tab-content mb-5">
 
@@ -12,7 +12,7 @@
         </div>
 
         <p data-ng-hide="nasOrder.loading || nasOrder.model.nasOrderModel.length != 0 || nasOrder.model.nashaOrderModel.length != 0"
-           data-i18n-static="nas_can_order_warning">
+           data-translate="nas_can_order_warning">
         </p>
 
         <div class="row">
@@ -21,12 +21,12 @@
                 <div class="form-group">
                     <label for="datacenterSelected"
                            class="control-label"
-                           data-i18n-static="nas_order_datacenter">
+                           data-translate="nas_order_datacenter">
                     </label>
                     <select class="form-control"
                             id="datacenterSelected"
                             name="datacenterSelected"
-                            data-ng-options="datacenter as tr('nas_order_datacenter_' + datacenter) for datacenter in nasOrder.model.nasHAZoneEnumList"
+                            data-ng-options="datacenter as ('nas_order_datacenter_' + datacenter | translate) for datacenter in nasOrder.model.nasHAZoneEnumList"
                             data-ng-model="nasOrder.datacenterSelected"
                             data-ng-change="selectNas() && selectNasha()">
                     </select>
@@ -35,11 +35,11 @@
                     <thead>
                         <tr>
                             <th scope="col"
-                                data-i18n-static="nas_order_name">
+                                data-translate="nas_order_name">
                             </th>
                             <th scope="col"
                                 class="text-right"
-                                data-i18n-static="nas_order_price">
+                                data-translate="nas_order_price">
                             </th>
                         </tr>
                     </thead>
@@ -54,7 +54,7 @@
                                                data-ng-value="$index"
                                                data-ng-model="nasOrder.nashaSelectedIndex"
                                                data-ng-click="selectNasha(nas)" />
-                                        <span data-ng-bind="tr('nas_order_nasha' + nas.model)"></span>
+                                        <span data-translate="{{ 'nas_order_nasha' + nas.model }}"></span>
                                     </label>
                                 </div>
                             </th>
@@ -72,7 +72,7 @@
                                                value="{{ $index }}"
                                                data-ng-model="nasOrder.nasSelectedIndex"
                                                data-ng-click="selectNas(nas)" />
-                                        <span data-ng-bind="tr('nas_order_nas'+ (nas.protocol && '_' + nas.protocol || '') + nas.model)"></span>
+                                        <span data-ng-bind="('nas_order_nas'+ ((nas.protocol && '_' + nas.protocol || '') | translate) + nas.model)"></span>
                                     </label>
                                 </div>
                             </th>
@@ -85,12 +85,12 @@
                 <div class="form-group">
                     <label for="durationSelected"
                            class="control-label"
-                           data-i18n-static="nas_order_duration">
+                           data-translate="nas_order_duration">
                     </label>
                     <select class="form-control"
                             id="durationSelected"
                             name="durationSelected"
-                            data-ng-options="duration as duration + ' ' + tr('nas_order_month') for duration in nasOrder.duration"
+                            data-ng-options="duration as duration + ' ' + ('nas_order_month' | translate) for duration in nasOrder.duration"
                             data-ng-disabled="!nasOrder.nasSelected && !nasOrder.nashaSelected"
                             data-ng-model="nasOrder.durationSelected">
                     </select>
@@ -99,7 +99,7 @@
                         class="btn btn-primary"
                         data-ng-disabled="!nasOrder.durationSelected"
                         data-ng-click="setAction('dedicated/nas/order/validation/nas-order-validation.html', getInfoOrder())"
-                        data-i18n-static="nas_order_button">
+                        data-translate="nas_order_button">
                 </button>
             </form>
         </div>

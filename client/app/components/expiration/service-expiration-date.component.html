@@ -8,10 +8,10 @@
 
         <a target="_blank"
            class="btn btn-default"
-           title="{{:: tr('core_service_renew_button') }}"
+           title="{{ :: 'core_service_renew_button' | translate }}"
            data-ng-if="!$ctrl.forceHideRenewAction && ((!$ctrl.isAutoRenew() && $ctrl.getRenewUrl() && !$ctrl.hideRenewAction) || ($ctrl.serviceInfos.status === 'expired'))"
            data-ng-href="{{:: $ctrl.getRenewUrl() }}"
-           data-i18n-static="core_service_renew_button">
+           data-translate="core_service_renew_button">
         </a>
     </span>
 </span>

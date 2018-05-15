@@ -10,23 +10,7 @@ angular
                 templateUrl: "ip/ip.html",
                 controller: "IpMainCtrl",
                 reloadOnSearch: false,
-                resolve: {
-                    navigationInformations: [
-                        "Navigator",
-                        function (Navigator) {
-                            return Navigator.setNavigationInformation({
-                                ipSelected: true
-                            });
-                        }
-                    ]
-                }
+                translations: ["ip"]
             });
-        }
-    ])
-    .run([
-        "translator",
-        function (translator) {
-            "use strict";
-            translator.load(["ip"]);
         }
     ]);

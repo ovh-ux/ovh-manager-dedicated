@@ -11,13 +11,6 @@ angular.module("App").config(($stateProvider) => {
             }
         },
         reloadOnSearch: false,
-        resolve: {
-            translator: [
-                "translator",
-                function (translator) {
-                    return translator.load(["dedicatedcloud"]).then(() => translator);
-                }
-            ]
-        }
+        translations: ["dedicatedCloud"]
     });
 });

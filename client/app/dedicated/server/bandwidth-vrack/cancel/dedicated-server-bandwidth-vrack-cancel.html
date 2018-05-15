@@ -3,8 +3,8 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="cancelOption"
-         data-wizard-title="i18n.server_cancel_bandwidth_vrack_title"
-         data-wizard-confirm-button-text="i18n.common_confirm">
+         data-wizard-title=":: 'server_cancel_bandwidth_vrack_title' | translate"
+         data-wizard-confirm-button-text=":: 'common_confirm' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="ctrl.steps[0].isValid()"
@@ -19,9 +19,9 @@
 
             <div data-ng-if="!ctrl.steps[0].loading()">
                 <p class="font-weight-bold"
-                   data-i18n-static="server_cancel_bandwidth_vrack_question">
+                   data-translate="server_cancel_bandwidth_vrack_question">
                 </p>
-                <p data-ng-bind-html="tr('server_cancel_bandwidth_vrack_information', [ctrl.user.data.email])"></p>
+                <p data-translate="server_cancel_bandwidth_vrack_information" data-translate-values="{ t0: ctrl.user.data.email }"></p>
             </div>
 
         </div>

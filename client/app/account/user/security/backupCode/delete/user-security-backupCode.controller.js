@@ -1,9 +1,10 @@
 angular.module("UserAccount.controllers").controller("UserAccount.controllers.doubleAuth.backupCode.delete", [
     "$rootScope",
     "$scope",
+    "$translate",
     "UserAccount.services.doubleAuth.backupCode",
     "Alerter",
-    function ($rootScope, $scope, DoubleAuthBackupCodeService, Alerter) {
+    function ($rootScope, $scope, $translate, DoubleAuthBackupCodeService, Alerter) {
         "use strict";
 
         $scope.backupCode = {
@@ -28,7 +29,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
                     $rootScope.$broadcast("doubleAuthBackupCode.reload");
                     $scope.resetAction();
                 })
-                .catch((err) => Alerter.alertFromSWS($scope.tr("user_account_security_double_auth_type_backup_code_delete_error"), err.data, "doubleAuthAlertBackupCodeDelete"))
+                .catch((err) => Alerter.alertFromSWS($translate.instant("user_account_security_double_auth_type_backup_code_delete_error"), err.data, "doubleAuthAlertBackupCodeDelete"))
                 .finally(() => {
                     $scope.backupCode.isDeleting = false;
                 });

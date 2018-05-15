@@ -10,11 +10,11 @@
         <div class="form-group"
              data-ng-if="!$ctrl.isEditing">
             <h2 class="oui-header_2 align-items-center d-flex justify-content-between">
-                <span data-i18n-static="payment_mean_contact_presentation_billingContactId_title"></span>
+                <span data-translate="payment_mean_contact_presentation_billingContactId_title"></span>
                 <button type="button"
                         class="oui-button oui-button_secondary mb-0"
                         data-ng-click="$ctrl.toggleChangeContact()"
-                        data-i18n-static="payment_mean_contact_presentation_update_label">
+                        data-translate="payment_mean_contact_presentation_update_label">
                 </button>
             </h2>
             <address class="oui-box oui-box_light clearfix">
@@ -32,8 +32,8 @@
                 <span class="d-block"
                       data-ng-bind="$ctrl.contactSelected.value.address.country">
                 </span>
-                <span class="d-block">
-                    <span data-i18n-static="payment_mean_contact_presentation_phone_email"></span> <span data-ng-bind="$ctrl.contactSelected.value.email"></span>
+                <span class="d-block"
+                      data-ng-bind="$ctrl.contactSelected.value.email">
                 </span>
             </address>
         </div>
@@ -41,7 +41,7 @@
         <div class="form-group"
              data-ng-if="$ctrl.isEditing">
             <h2 class="oui-header_2"
-                data-i18n-static="payment_mean_contact_presentation_update_title_billingContactId">
+                data-translate="payment_mean_contact_presentation_update_title_billingContactId">
             </h2>
             <form class="form-horizontal"
                   name="createContactForm"
@@ -56,7 +56,7 @@
                                    data-ng-value="'reuse'">
                             <label class="oui-radio__label-container" for="reuse">
                                 <span class="oui-radio__label"
-                                      data-i18n-static="payment_mean_contact_presentation_reuse_contact">
+                                      data-translate="payment_mean_contact_presentation_reuse_contact">
                                 </span>
                             </label>
                         </div>
@@ -68,7 +68,7 @@
                                    data-ng-value="'create'">
                             <label class="oui-radio__label-container" for="create">
                                 <span class="oui-radio__label"
-                                      data-i18n-static="payment_mean_contact_presentation_create_contact">
+                                      data-translate="payment_mean_contact_presentation_create_contact">
                                 </span>
                             </label>
                         </div>
@@ -102,44 +102,44 @@
                               data-ng-bind="$ctrl.contactSelected.value.address.country">
                         </span>
                         <span class="d-block">
-                            <span data-i18n-static="payment_mean_contact_presentation_email_label"></span> <span data-ng-bind="$ctrl.contactSelected.value.email"></span>
+                            <span data-translate="payment_mean_contact_presentation_email_label"></span> <span data-ng-bind="$ctrl.contactSelected.value.email"></span>
                         </span>
                     </address>
                 </div>
                 <div data-ng-if="$ctrl.selectionMode === 'create'">
                     <h3 class="oui-header_3"
-                        data-i18n-static="payment_mean_contact_creation_main_title">
+                        data-translate="payment_mean_contact_creation_main_title">
                     </h3>
                     <div class="form-group">
                         <div class="col-sm-8 col-sm-offset-2">
 
                             <!-- GENERAL_INFORMATIONS -->
                             <fieldset class="mb-5">
-                                <legend data-i18n-static="payment_mean_contact_creation_fieldset_GENERAL_INFORMATIONS"></legend>
+                                <legend data-translate="payment_mean_contact_creation_fieldset_GENERAL_INFORMATIONS"></legend>
 
                                 <!-- FIRSTNAME -->
                                 <div class="oui-input-formfield">
                                     <input type="text" id="default_select_firstName" name="firstName" class="oui-input" required
-                                           placeholder="{{ 'payment_mean_contact_creation_label_firstName' | UAi18n }}"
+                                           placeholder="{{ 'payment_mean_contact_creation_label_firstName' | translate }}"
                                            data-ng-model="$ctrl.contactForm.firstName"
                                            data-ng-class="{
                                                'oui-input_error': createContactForm.firstName.$touched && createContactForm.firstName.$invalid
                                            }">
                                     <label for="default_select_firstName" class="oui-label"
-                                           data-i18n-static="payment_mean_contact_creation_label_firstName">
+                                           data-translate="payment_mean_contact_creation_label_firstName">
                                     </label>
                                 </div> <!-- End of FIRSTNAME -->
 
                                 <!-- LASTNAME -->
                                 <div class="oui-input-formfield">
                                     <input type="text" id="default_select_lastName" name="lastName" class="oui-input" required
-                                           placeholder="{{ 'payment_mean_contact_creation_label_lastName' | UAi18n }}"
+                                           placeholder="{{ 'payment_mean_contact_creation_label_lastName' | translate }}"
                                            data-ng-model="$ctrl.contactForm.lastName"
                                            data-ng-class="{
                                                'oui-input_error': createContactForm.lastName.$touched && createContactForm.lastName.$invalid
                                            }">
                                     <label for="default_select_lastName" class="oui-label"
-                                           data-i18n-static="payment_mean_contact_creation_label_lastName">
+                                           data-translate="payment_mean_contact_creation_label_lastName">
                                     </label>
                                 </div> <!-- End of LASTNAME -->
 
@@ -152,7 +152,7 @@
                                         </select>
                                         <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                                         <label for="country" class="oui-label"
-                                               data-i18n-static="payment_mean_contact_creation_label_country">
+                                               data-translate="payment_mean_contact_creation_label_country">
                                         </label>
                                     </div>
                                 </div> <!-- End of COUNTRY -->
@@ -161,55 +161,55 @@
 
                             <!-- PROFILE -->
                             <fieldset class="mb-5">
-                                <legend data-i18n-static="payment_mean_contact_creation_fieldset_PROFILE"></legend>
+                                <legend data-translate="payment_mean_contact_creation_fieldset_PROFILE"></legend>
 
                                 <!-- ADDRESS.LINE1 -->
                                 <div class="oui-input-formfield">
                                     <input type="text" id="default_input_address_line1" name="address.line1" class="oui-input" required
-                                           placeholder="{{ 'payment_mean_contact_creation_label_address_line1' | UAi18n }}"
+                                           placeholder="{{ 'payment_mean_contact_creation_label_address_line1' | translate }}"
                                            data-ng-model="$ctrl.contactForm.address.line1"
                                            data-ng-class="{
                                                'oui-input_error': createContactForm['address.line1'].$touched && createContactForm['address.line1'].$invalid
                                            }">
                                     <label for="default_input_address_line1" class="oui-label"
-                                           data-i18n-static="payment_mean_contact_creation_label_address_line1">
+                                           data-translate="payment_mean_contact_creation_label_address_line1">
                                     </label>
                                 </div> <!-- Enf of ADDRESS.LINE1 -->
 
                                 <!-- ADDRESS.ZIP -->
                                 <div class="oui-input-formfield">
                                     <input type="text" id="default_input_address.zip" name="address.zip" class="oui-input" required
-                                           placeholder="{{ 'payment_mean_contact_creation_label_address_zip' | UAi18n }}"
+                                           placeholder="{{ 'payment_mean_contact_creation_label_address_zip' | translate }}"
                                            data-ng-model="$ctrl.contactForm.address.zip"
                                            data-ng-class="{
                                                'oui-input_error': createContactForm['address.zip'].$touched && createContactForm['address.zip'].$invalid
                                            }">
                                     <label for="default_input_address.zip" class="oui-label"
-                                           data-i18n-static="payment_mean_contact_creation_label_address_zip">
+                                           data-translate="payment_mean_contact_creation_label_address_zip">
                                     </label>
                                 </div> <!-- End of ADDRESS.ZIP -->
 
                                 <!-- ADDRESS.CITY -->
                                 <div class="oui-input-formfield">
                                     <input type="text" id="default_input_address.city" name="address.city" class="oui-input" required
-                                           placeholder="{{ 'payment_mean_contact_creation_label_address_city' | UAi18n }}"
+                                           placeholder="{{ 'payment_mean_contact_creation_label_address_city' | translate }}"
                                            data-ng-model="$ctrl.contactForm.address.city"
                                            data-ng-class="{
                                                'oui-input_error': createContactForm['address.city'].$touched && createContactForm['address.city'].$invalid
                                            }">
                                     <label for="default_input_address.city" class="oui-label"
-                                           data-i18n-static="payment_mean_contact_creation_label_address_city">
+                                           data-translate="payment_mean_contact_creation_label_address_city">
                                     </label>
                                 </div> <!-- End of ADDRESS.CITY -->
 
                                 <!-- ADDRESS.PROVINCE -->
                                 <div class="oui-input-formfield">
                                     <input type="text" id="default_input_address_province" name="address.province" class="oui-input"
-                                           placeholder="{{ 'payment_mean_contact_creation_label_address_area' | UAi18n }}"
+                                           placeholder="{{ 'payment_mean_contact_creation_label_address_area' | translate }}"
                                            data-ng-model="$ctrl.contactForm.address.province">
                                     <label for="default_input_address_province" class="oui-label">
                                         <span data-ng-bind="$ctrl.getTranslatedArea()"></span>
-                                        <span data-i18n-static="payment_mean_contact_creation_label_optional"></span>
+                                        <span data-translate="payment_mean_contact_creation_label_optional"></span>
                                     </label>
                                 </div> <!-- End of ADDRESS.PROVINCE -->
 
@@ -230,20 +230,20 @@
                         <button type="submit"
                                 class="oui-button oui-button_secondary"
                                 data-ng-disabled="createContactForm.$invalid || $ctrl.isCreating"
-                                data-i18n-static="payment_mean_contact_contact_creation_submit">
+                                data-translate="payment_mean_contact_contact_creation_submit">
                         </button>
                         <button type="button"
                                 class="oui-button oui-button_link"
                                 data-ng-click="$ctrl.cancelContactForm()"
                                 data-ng-disabled="$ctrl.isCreating"
-                                data-i18n-static="payment_mean_contact_contact_creation_cancel">
+                                data-translate="payment_mean_contact_contact_creation_cancel">
                         </button>
                     </div>
                 </div>
             </form>
         </div>
 
-        <h2 data-i18n-static="payment_mean_contact_presentation_new_card_title"></h2>
+        <h2 data-translate="payment_mean_contact_presentation_new_card_title"></h2>
         <!-- Keep this id otherwise vantiv could not replace it by its iframe -->
         <div id="eProtectIframe">
         </div>
@@ -253,7 +253,7 @@
                 <label>
                     <input type="checkbox"
                            data-ng-model="$ctrl.isDefault" />
-                    <span data-i18n-static="payment_mean_set_default_after_validation"></span>
+                    <span data-translate="payment_mean_set_default_after_validation"></span>
                 </label>
             </div>
         </div>
@@ -263,7 +263,7 @@
                 data-ng-click="$ctrl.onAddClick()"
                 data-ng-disabled="($ctrl.isEditing && $ctrl.selectionMode === 'create')
                                    || !$ctrl.contactSelected.value.id"
-                data-i18n-static="billing_payment_method_credit_card_add">
+                data-translate="billing_payment_method_credit_card_add">
         </button>
     </div>
 </div>

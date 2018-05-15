@@ -1,4 +1,4 @@
-angular.module("App").controller("ServerOrderBandwidthCtrl", ($scope, $stateParams, Server, User) => {
+angular.module("App").controller("ServerOrderBandwidthCtrl", ($scope, $stateParams, $translate, Server, User) => {
     "use strict";
 
     $scope.orderable = null;
@@ -152,7 +152,7 @@ angular.module("App").controller("ServerOrderBandwidthCtrl", ($scope, $statePara
             },
             (data) => {
                 $scope.resetAction();
-                $scope.setMessage($scope.tr("server_order_bandwidth_error"), data.data);
+                $scope.setMessage($translate.instant("server_order_bandwidth_error"), data.data);
             }
         );
     };

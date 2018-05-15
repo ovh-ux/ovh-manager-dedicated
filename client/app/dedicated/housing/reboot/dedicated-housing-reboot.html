@@ -3,7 +3,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="reboot"
-         data-wizard-title="i18n.housing_configuration_reboot_title">
+         data-wizard-title=":: 'housing_configuration_reboot_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="housing.apc.orderable && housing.apc.free">
@@ -14,7 +14,7 @@
             </div>
 
             <p data-ng-if="!loading"
-               data-ng-bind="tr('housing_configuration_reboot_step2_question', [housing.name])">
+               data-ng-bind="'housing_configuration_reboot_step2_question' | translate:{ t0: housing.name }">
             </p>
 
         </div>
@@ -30,43 +30,43 @@
             </div>
 
             <div data-ng-if="!loading">
-                <h3 data-i18n-static="housing_configuration_reboot_contract"></h3>
+                <h3 data-translate="housing_configuration_reboot_contract"></h3>
                 <div data-ng-repeat="contractInfo in contract.contracts track by $index">
                     <dl>
-                        <dt data-i18n-static="housing_configuration_reboot_contract_name"></dt>
+                        <dt data-translate="housing_configuration_reboot_contract_name"></dt>
                         <dd data-ng-bind=":: contractInfo.name"></dd>
-                        <dt data-i18n-static="housing_configuration_reboot_contract_content"></dt>
+                        <dt data-translate="housing_configuration_reboot_contract_content"></dt>
                         <dd>
                             <a target="_blank"
                                rel="noopener"
                                data-ng-href="{{:: contractInfo.url }}"
-                               data-i18n-static="housing_configuration_reboot_clic">
+                               data-translate="housing_configuration_reboot_clic">
                             </a>
                         </dd>
                     </dl>
                 </div>
-                <h3 data-i18n-static="housing_configuration_reboot_details"></h3>
+                <h3 data-translate="housing_configuration_reboot_details"></h3>
                 <dl>
-                    <dt data-i18n-static="housing_configuration_reboot_details_domain"></dt>
+                    <dt data-translate="housing_configuration_reboot_details_domain"></dt>
                     <dd data-ng-bind=":: contract.details[0].domain"></dd>
                 </dl>
                 <div data-ng-repeat="detail in contract.details track by $index">
                     <dl>
-                        <dt data-i18n-static="housing_configuration_reboot_description"></dt>
+                        <dt data-translate="housing_configuration_reboot_description"></dt>
                         <dd data-ng-bind="::detail.description"></dd>
-                        <dt data-i18n-static="housing_configuration_reboot_qty"></dt>
+                        <dt data-translate="housing_configuration_reboot_qty"></dt>
                         <dd data-ng-bind="::detail.quantity"></dd>
-                        <dt data-i18n-static="housing_configuration_reboot_price_unit"></dt>
+                        <dt data-translate="housing_configuration_reboot_price_unit"></dt>
                         <dd data-ng-bind="::detail.unitPrice.text"></dd>
                     </dl>
                 </div>
-                <h3 data-i18n-static="housing_configuration_reboot_price"></h3>
+                <h3 data-translate="housing_configuration_reboot_price"></h3>
                 <dl>
-                    <dt data-i18n-static="housing_configuration_reboot_price_ht"></dt>
+                    <dt data-translate="housing_configuration_reboot_price_ht"></dt>
                     <dd data-ng-bind="::contract.prices.withoutTax.text"></dd>
-                    <dt data-i18n-static="housing_configuration_reboot_price_tax"></dt>
+                    <dt data-translate="housing_configuration_reboot_price_tax"></dt>
                     <dd data-ng-bind="::contract.prices.tax.text"></dd>
-                    <dt data-i18n-static="housing_configuration_reboot_price_total"></dt>
+                    <dt data-translate="housing_configuration_reboot_price_total"></dt>
                     <dd data-ng-bind="::contract.prices.withTax.text"></dd>
                 </dl>
             </div>

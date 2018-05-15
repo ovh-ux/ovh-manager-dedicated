@@ -1,7 +1,8 @@
 angular.module("App").controller("NasDetailsCtrl", class NasDetailsCtrl {
 
-    constructor ($stateParams, $scope, Nas, Alerter, constants, nasData) {
+    constructor (NASHA_URL, $stateParams, $scope, Nas, Alerter, constants, nasData) {
         // injections
+        this.NASHA_URL = NASHA_URL;
         this.$stateParams = $stateParams;
         this.$scope = $scope;
         this.Nas = Nas;
@@ -58,7 +59,7 @@ angular.module("App").controller("NasDetailsCtrl", class NasDetailsCtrl {
      *  Load NAS
      */
     $onInit () {
-        this.redirectToCloud = `${this.constants.nashaUrl}/${this.nasData.nas.serviceName}/partitions`;
+        this.redirectToCloud = `${this.NASHA_URL}/${this.nasData.nas.serviceName}/partitions`;
         this.managePoll(); // who is poll ? :-P
 
         this.loaders.nas = true;
@@ -71,7 +72,7 @@ angular.module("App").controller("NasDetailsCtrl", class NasDetailsCtrl {
             },
             (data) => {
                 this.loaders.nas = false;
-                this.Alerter.alertFromSWS(this.$scope.tr("nas_dashboard_loading_error"), data, this.alerterId);
+                this.Alerter.alertFromSWS(this.$translate.instant("nas_dashboard_loading_error"), data, this.alerterId);
             }
         );
 
@@ -83,7 +84,7 @@ angular.module("App").controller("NasDetailsCtrl", class NasDetailsCtrl {
             },
             (data) => {
                 this.loaders.information = false;
-                this.Alerter.alertFromSWS(this.$scope.tr("nas_dashboard_loading_error"), data, this.alerterId);
+                this.Alerter.alertFromSWS(this.$translate.instant("nas_dashboard_loading_error"), data, this.alerterId);
             }
         );
 

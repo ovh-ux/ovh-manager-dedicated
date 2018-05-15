@@ -1,11 +1,11 @@
 class LicenseAgoraOrder {
-    constructor ($q, Alerter, constants, OvhHttp, User, translator) {
+    constructor ($q, $translate, Alerter, constants, OvhHttp, User) {
         this.$q = $q;
         this.Alerter = Alerter;
         this.constants = constants;
         this.OvhHttp = OvhHttp;
         this.User = User;
-        this.translator = translator;
+        this.$translate = $translate;
 
         this.licenseTypeToCatalog = {
             CLOUDLINUX: "licenseCloudLinux",
@@ -102,7 +102,7 @@ class LicenseAgoraOrder {
         return this.User.getUrlOf("express_order")
             .then((url) => `${url}review?products=${JSURL.stringify([productToOrder])}`)
             .catch((err) => {
-                this.Alerter.error(this.translator.tr("ip_order_finish_error"));
+                this.Alerter.error(this.$translate.instant("ip_order_finish_error"));
                 return this.$q.reject(err);
             });
     }
@@ -142,4 +142,4 @@ class LicenseAgoraOrder {
     }
 }
 
-angular.module("Module.license.services").service("LicenseAgoraOrder", LicenseAgoraOrder);
+angular.module("Module.license").service("LicenseAgoraOrder", LicenseAgoraOrder);

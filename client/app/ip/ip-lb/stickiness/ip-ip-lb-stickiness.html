@@ -3,13 +3,13 @@
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="setStickiness"
          data-wizard-hide-cancel-button="loading"
-         data-wizard-title="i18n.iplb_infos_stickiness">
+         data-wizard-title=":: 'iplb_infos_stickiness' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="!loading && model.choice && model.choice !== data.infos.stickiness">
 
             <div data-ng-hide="loading">
-                <p data-i18n-static="iplb_stickiness_set_question"></p>
+                <p data-translate="iplb_stickiness_set_question"></p>
 
                 <form>
                     <div class="form-group">
@@ -20,7 +20,7 @@
                                        value="none"
                                        data-ng-disabled="data.infos.stickiness === 'none'"
                                        data-ng-model="model.choice">
-                                <span data-ng-bind="i18n.iplb_infos_stickiness_none"></span>
+                                <span data-ng-bind=":: 'iplb_infos_stickiness_none' | translate"></span>
                             </label>
                         </div>
                         <div class="radio">
@@ -30,7 +30,7 @@
                                        value="cookie"
                                        data-ng-disabled="data.infos.stickiness === 'cookie'"
                                        data-ng-model="model.choice">
-                                <span data-ng-bind=" i18n.iplb_infos_stickiness_cookie "></span>
+                                <span data-ng-bind=":: 'iplb_infos_stickiness_cookie' | translate"></span>
                             </label>
                         </div>
                         <div class="radio">
@@ -40,7 +40,7 @@
                                        value="sourceIp"
                                        data-ng-disabled="data.infos.stickiness === 'sourceIp'"
                                        data-ng-model="model.choice">
-                                <span data-ng-bind=" i18n.iplb_infos_stickiness_sourceIp "></span>
+                                <span data-ng-bind=":: 'iplb_infos_stickiness_sourceIp' | translate"></span>
                             </label>
                         </div>
                     </div>

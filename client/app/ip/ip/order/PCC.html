@@ -3,7 +3,7 @@
     <div class="form-group">
         <label class="control-label"
                for="sizeSelect"
-               data-i18n-static="ip_order_ipblocksize">
+               data-translate="ip_order_ipblocksize">
         </label>
         <select id="sizeSelect"
                 name="sizeSelect"
@@ -11,7 +11,7 @@
                 data-ng-options="r as ('/'+r) for r in orderableIp.size">
             <option value=""
                     data-ng-disabled="true"
-                    data-i18n-static="global_select">
+                    data-translate="global_select">
             </option>
         </select>
     </div>
@@ -19,16 +19,16 @@
     <div class="form-group">
         <label class="control-label"
                for="countrySelect"
-               data-i18n-static="ip_order_country">
+               data-translate="ip_order_country">
         </label>
         <select id="countrySelect"
                 name="countrySelect"
                 data-ng-model="model.params.country"
-                data-ng-options="c as tr('country_'+c.toUpperCase()) for c in orderableIp.countries"
+                data-ng-options="c as ('country_' + c.toUpperCase() | translate) for c in orderableIp.countries"
                 data-ng-required="true">
             <option value=""
                     data-ng-disabled="true"
-                    data-i18n-static="global_select">
+                    data-translate="global_select">
             </option>
         </select>
     </div>
@@ -39,7 +39,7 @@
          }">
         <label class="control-label"
                for="networkName"
-               data-i18n-static="ip_order_networkname">
+               data-translate="ip_order_networkname">
         </label>
         <input type="text"
                class="form-control"
@@ -50,7 +50,7 @@
                data-ng-pattern="/^[a-zA-Z]+\w+$/" />
         <span class="fa fa-info-circle"
            data-tooltip-placement="left"
-           data-uib-tooltip="{{i18n.ip_order_networkname_help}}">
+           data-uib-tooltip="{{ 'ip_order_networkname_help' | translate }}">
         </span>
     </div>
 
@@ -60,7 +60,7 @@
          }">
         <label class="control-label"
                for="estimatedClientsNumber"
-               data-i18n-static="ip_order_estimatedclientsnumber">
+               data-translate="ip_order_estimatedclientsnumber">
         </label>
         <input type="number"
                id="estimatedClientsNumber"
@@ -70,7 +70,7 @@
                min="1" />
         <i class="fa fa-info-circle"
            data-tooltip-placement="right"
-           data-uib-tooltip="{{i18n.ip_order_estimatedclientsnumber_help}}">
+           data-uib-tooltip="{{ 'ip_order_estimatedclientsnumber_help' | translate }}">
         </i>
     </div>
 
@@ -80,7 +80,7 @@
          }">
         <label class="control-label"
                for="description"
-               data-i18n-static="ip_order_description">
+               data-translate="ip_order_description">
         </label>
         <textarea rows="3"
                   id="description"
@@ -95,7 +95,7 @@
         </textarea>
         <i class="fa fa-info-circle"
            data-tooltip-placement="left"
-           data-uib-tooltip="{{i18n.ip_order_description_help}}">
+           data-uib-tooltip="{{ 'ip_order_description_help' | translate }}">
         </i>
     </div>
 
@@ -105,7 +105,7 @@
          }">
         <label class="control-label"
                for="usage"
-               data-i18n-static="ip_order_usage">
+               data-translate="ip_order_usage">
         </label>
         <input type="text"
                id="usage"
@@ -114,7 +114,7 @@
                data-ng-required="true" />
         <i class="fa fa-info-circle"
            data-tooltip-placement="left"
-           data-tooltip="{{i18n.ip_order_usage_help}}">
+           data-tooltip="{{ 'ip_order_usage_help' | translate }}">
         </i>
     </div>
 

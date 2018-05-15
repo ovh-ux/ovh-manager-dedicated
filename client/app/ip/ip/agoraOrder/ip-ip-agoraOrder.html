@@ -4,7 +4,7 @@
          data-wizard-bread-crumb="true"
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="redirectToPaymentPage"
-         data-wizard-title="i18n.ip_additional_order">
+         data-wizard-title=":: 'ip_additional_order' | translate">
 
         <div data-wizard-step
              data-wizard-step-on-load="loadServices"
@@ -12,17 +12,17 @@
 
             <oui-message class="d-block mb-4"
                          data-type="info"
-                         data-ng-if="ctrl.user.isEnterprise"
-                         data-i18n-static="core_user_enterprise_retail_prices">
+                         data-ng-if="ctrl.user.isEnterprise">
+                <span data-translate="core_user_enterprise_retail_prices"></span>
             </oui-message>
 
             <div data-ng-show="!ctrl.loading.services && ctrl.services.length">
-                <p data-i18n-static="ip_order_step1_question"></p>
+                <p data-translate="ip_order_step1_question"></p>
                 <form>
                     <div class="form-group">
                         <label for="service"
                                class="control-label"
-                               data-i18n-static="ip_table_header_service">
+                               data-translate="ip_table_header_service">
                         </label>
                         <select id="service"
                                 class="form-control"
@@ -30,7 +30,7 @@
                                 data-ng-options="service as service.displayName group by ctrl.getServiceTypeLabel(service.type) for service in ctrl.services | orderBy:'displayName' track by service.serviceName">
                             <option value=""
                                     data-ng-disabled="true"
-                                    data-i18n-static="global_select">
+                                    data-translate="global_select">
                             </option>
                         </select>
                     </div>
@@ -38,7 +38,7 @@
             </div>
 
             <div data-ng-show="!ctrl.loading.services && !ctrl.services.length"
-                 data-i18n-static="ip_order_noservices">
+                 data-translate="ip_order_noservices">
             </div>
 
             <div data-ng-show="ctrl.loading.services"
@@ -56,7 +56,7 @@
                 <div class="form-group">
                     <label for="offer"
                            class="control-label"
-                           data-i18n-static="ip_agora_table_header_offer">
+                           data-translate="ip_agora_table_header_offer">
                     </label>
                     <select id="offer"
                             class="form-control"
@@ -66,11 +66,11 @@
                             data-ng-options="offer as (offer.productShortName + ' - ' + offer.price.text) group by offer.productRegion for offer in ctrl.ipOffers | orderBy:'price.value' track by offer.planCode+offer.maximumQuantity">
                         <option value=""
                                 data-ng-disabled="true"
-                                data-i18n-static="global_select">
+                                data-translate="global_select">
                         </option>
                     </select>
                     <p data-ng-if="!ctrl.ipOffers.length"
-                       data-i18n-static="ip_order_quota_full">
+                       data-translate="ip_order_quota_full">
                     </p>
                 </div>
 
@@ -80,7 +80,7 @@
                          data-ng-show="!ctrl.model.params.selectedOffer.isIpBlockOffer">
                         <label for="quantity"
                                class="control-label"
-                               data-i18n-static="ip_agora_table_header_quantity">
+                               data-translate="ip_agora_table_header_quantity">
                         </label>
                         <select id="quantity"
                                 class="form-control"
@@ -88,7 +88,7 @@
                                 data-ng-options="quantity for quantity in ctrl.model.params.selectedOffer.quantities track by quantity">
                             <option value=""
                                     data-ng-disabled="true"
-                                    data-i18n-static="global_select">
+                                    data-translate="global_select">
                             </option>
                         </select>
                     </div>
@@ -96,7 +96,7 @@
                     <div class="form-group">
                         <label for="country"
                                class="control-label"
-                               data-i18n-static="ip_agora_table_header_country">
+                               data-translate="ip_agora_table_header_country">
                         </label>
                         <select id="country"
                                 class="form-control"
@@ -104,7 +104,7 @@
                                 data-ng-options="country as country.description for country in ctrl.model.params.selectedOffer.countries | orderBy:'description':false:stringLocaleSensitiveComparator track by country.code">
                             <option value=""
                                     data-ng-disabled="true"
-                                    data-i18n-static="global_select">
+                                    data-translate="global_select">
                             </option>
                         </select>
                     </div>
@@ -113,7 +113,7 @@
                          data-ng-show="ctrl.model.params.selectedOffer.isIpBlockOffer">
                         <label for="organisation"
                                class="control-label"
-                               data-i18n-static="ip_agora_table_header_organisation">
+                               data-translate="ip_agora_table_header_organisation">
                         </label>
                         <select id="organisation"
                                 class="form-control"
@@ -121,12 +121,12 @@
                                 data-ng-options="organisation.organisationId for organisation in ctrl.organisations | orderBy:'organisationId' track by organisation.organisationId">
                             <option value=""
                                     data-ng-disabled="true"
-                                    data-i18n-static="global_select">
+                                    data-translate="global_select">
                             </option>
                         </select>
                         <button type="button"
                                 class="oui-link"
-                                data-i18n-static="ip_order_no_organisation_2"
+                                data-translate="ip_order_no_organisation_2"
                                 data-ng-click="ctrl.redirectToOrganisationPage()">
                         </button>
                     </div>
@@ -142,10 +142,10 @@
 
         <div data-wizard-step>
             <p class="alert alert-info"
-               data-i18n-static="ip_order_final_txt"
+               data-translate="ip_order_final_txt"
                role="alert">
             </p>
-            <p data-i18n-static="ip_order_final_txt2"></p>
+            <p data-translate="ip_order_final_txt2"></p>
         </div>
     </div>
 </div>

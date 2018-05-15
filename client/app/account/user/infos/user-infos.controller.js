@@ -2,12 +2,13 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.In
     "$scope",
     "$q",
     "$location",
+    "$translate",
     "UserAccount.services.Infos",
     "CountryConstants",
     "Alerter",
     "constants",
 
-    function ($scope, $q, $location, UseraccountInfos, countryConstants, Alerter, constants) {
+    function ($scope, $q, $location, $translate, UseraccountInfos, countryConstants, Alerter, constants) {
         "use strict";
 
         /* Be carefull, a part of this controller is url driven.
@@ -66,7 +67,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.In
                     })
                 )
                 .catch((err) => {
-                    Alerter.alertFromSWS($scope.tr("user_account_info_error"), err.data, "InfoAlert");
+                    Alerter.alertFromSWS($translate.instant("user_account_info_error"), err.data, "InfoAlert");
                 })
                 .finally(() => {
                     $scope.loading = false;
@@ -84,13 +85,13 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.In
                                 }
                             },
                             (err) => {
-                                Alerter.alertFromSWS($scope.tr("user_account_info_error"), err.data, "InfoAlert");
+                                Alerter.alertFromSWS($translate.instant("user_account_info_error"), err.data, "InfoAlert");
                             }
                         );
                     }
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("user_account_info_error"), err.data, "InfoAlert");
+                    Alerter.alertFromSWS($translate.instant("user_account_info_error"), err.data, "InfoAlert");
                 }
             );
         }
@@ -119,7 +120,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.In
             UseraccountInfos.taskEmailChange(taskId).then(
                 (task) => {
                     if (!task) {
-                        return Alerter.alertFromSWS($scope.tr("user_account_info_error"), new Error("task not found."), "InfoAlert");
+                        return Alerter.alertFromSWS($translate.instant("user_account_info_error"), new Error("task not found."), "InfoAlert");
                     }
 
                     $scope.controls.validateEmailChange.data = task;
@@ -128,20 +129,20 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.In
                         $scope.controls.validateEmailChange.error = true;
                         switch (task.state) {
                         case "done":
-                            Alerter.alertFromSWS($scope.tr("user_account_email_token_already_accepted"), null, "InfoAlert");
+                            Alerter.alertFromSWS($translate.instant("user_account_email_token_already_accepted"), null, "InfoAlert");
                             break;
                         case "refused":
-                            Alerter.alertFromSWS($scope.tr("user_account_email_token_already_refused"), null, "InfoAlert");
+                            Alerter.alertFromSWS($translate.instant("user_account_email_token_already_refused"), null, "InfoAlert");
                             break;
                         default:
-                            Alerter.alertFromSWS($scope.tr("user_account_email_token_expired"), null, "InfoAlert");
+                            Alerter.alertFromSWS($translate.instant("user_account_email_token_expired"), null, "InfoAlert");
                             break;
                         }
                     }
                     return task;
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("user_account_info_error"), err.data, "InfoAlert");
+                    Alerter.alertFromSWS($translate.instant("user_account_info_error"), err.data, "InfoAlert");
                 }
             );
         }
@@ -151,7 +152,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.In
         }
 
         function acceptOrRefuseEmailError (err) {
-            Alerter.alertFromSWS($scope.tr("user_account_info_error"), err.data, "InfoAlert");
+            Alerter.alertFromSWS($translate.instant("user_account_info_error"), err.data, "InfoAlert");
             $scope.controls.validateEmailChange.loading = false;
         }
 

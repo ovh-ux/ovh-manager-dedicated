@@ -3,7 +3,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addEntry"
-         data-wizard-title="i18n.dedicatedCloud_configuration_security_policy_add_title"
+         data-wizard-title=":: 'dedicatedCloud_configuration_security_policy_add_title' | translate"
          data-wizard-bread-crumb>
 
         <div data-wizard-step
@@ -13,7 +13,7 @@
                 <div class="form-group">
                     <label for="network"
                            class="control-label"
-                           data-i18n-static="dedicatedCloud_configuration_security_policy_add_step1_question">
+                           data-translate="dedicatedCloud_configuration_security_policy_add_step1_question">
                     </label>
                     <input type="text"
                            class="form-control"
@@ -25,7 +25,7 @@
                 <div class="form-group">
                     <label for="description"
                            class="control-label"
-                           data-i18n-static="dedicatedCloud_configuration_security_policy_add_step1_description">
+                           data-translate="dedicatedCloud_configuration_security_policy_add_step1_description">
                     </label>
                     <input type="text"
                            class="form-control"
@@ -39,7 +39,7 @@
 
         <div data-wizard-step>
 
-            <p data-ng-bind-html="tr('dedicatedCloud_configuration_security_policy_add_step2_question', [newNetwork.value])"></p>
+            <p data-translate="dedicatedCloud_configuration_security_policy_add_step2_question" data-translate-values="{ t0: newNetwork.value }"></p>
 
         </div>
 

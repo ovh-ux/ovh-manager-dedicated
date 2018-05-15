@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="license_dashboard_title" qtlid="471990">Licenses</translation>
+   <translation id="license_dashboard_subtitle" qtlid="44524">Manage my licences</translation>
+
+   <translation id="license_designation_ALL_TYPE" qtlid="171656">All licenses</translation>
+
+   <translation id="license_designation_CLOUDLINUX" qtlid="210202">Cloud linux</translation>
+   <translation id="license_designation_CLOUDLINUX_version_SINGLE" qtlid="210215">Cloud linux only</translation>
+   <translation id="license_designation_CLOUDLINUX_version_cloudlinux-license" qtlid="210215">Cloud linux only</translation>
+   <translation id="license_designation_CLOUDLINUX_version_WITH_CPANEL" qtlid="210228">Cloud linux with Cpanel</translation>
+   <translation id="license_designation_CLOUDLINUX_version_WITH_PLESK12" qtlid="210241">Cloud linux with Plesk 12</translation>
+
+   <translation id="license_designation_CPANEL" qtlid="113550">Cpanel</translation>
+   <translation id="license_designation_CPANEL_version_VERSION_11_FOR_LINUX" qtlid="162218">cPanel 11 for Linux</translation>
+   <translation id="license_designation_CPANEL_version_cpanel-license-version-11" qtlid="162218">cPanel 11 for Linux</translation>
+   <translation id="license_designation_CPANEL_version_VERSION_11_FOR_VIRTUOZZO" qtlid="162231">cPanel 11 for Virtuozzo</translation>
+   <translation id="license_designation_CPANEL_version_cpanel-license-version-11-for-virtuozzo" qtlid="162231">cPanel 11 for Virtuozzo</translation>
+   <translation id="license_designation_CPANEL_version_VERSION_11_FOR_VPS" qtlid="162244">cPanel 11 for VPS</translation>
+   <translation id="license_designation_CPANEL_version_cpanel-license-version-11-for-vps" qtlid="162244">cPanel 11 for VPS</translation>
+
+   <translation id="license_designation_DIRECTADMIN" qtlid="171643">DirectAdmin</translation>
+   <translation id="license_designation_DIRECTADMIN_version_DIRECTADMIN_1" qtlid="185478">DirectAdmin v1.xx</translation>
+   <translation id="license_designation_DIRECTADMIN_version_directadmin-license" qtlid="185478">DirectAdmin v1.xx</translation>
+
+   <translation id="license_designation_PLESK" qtlid="44584">Plesk</translation>
+   <translation id="license_designation_PLESK_version_PLESK_10_AND_LATER" qtlid="162270">Plesk 10 and later</translation>
+   <translation id="license_designation_PLESK_version_PLESK_10_AND_LATER_FOR_VMWARE" qtlid="162283">Plesk 10 and later for VMware</translation>
+   <translation id="license_designation_PLESK_version_PLESK_10_AND_LATER_FOR_KVM" qtlid="273778">Plesk 10 and higher for KVM</translation>
+   <translation id="license_designation_PLESK_version_PLESK_10_AND_LATER_FOR_VZ" qtlid="162296">Plesk 10 and later for VZ</translation>
+   <translation id="license_designation_PLESK_version_PLESK_10_AND_LATER_FOR_WIN" qtlid="162309">Plesk 10 and later for Windows server</translation>
+   <translation id="license_designation_PLESK_version_PLESK_10_AND_LATER_FOR_WIN_FOR_VMWARE" qtlid="162322">Plesk 10 and later for Windows server VM on VMware</translation>
+   <translation id="license_designation_PLESK_version_PLESK_10_AND_LATER_FOR_WIN_FOR_VZ" qtlid="162335">Plesk 10 and later for Windows server VM on VZ</translation>
+   <translation id="license_designation_PLESK_version_PLESK_10_AND_LATER_FOR_WIN_FOR_XEN" qtlid="162348">Plesk 10 and later for Windows server VM on Xen</translation>
+   <translation id="license_designation_PLESK_version_PLESK_10_AND_LATER_FOR_XEN" qtlid="162361">Plesk 10 and later for Xen</translation>
+   <translation id="license_designation_PLESK_version_PLESK_75_RELOADED" qtlid="186845">Plesk 7.5 RELOADED</translation>
+   <translation id="license_designation_PLESK_version_PLESK_80" qtlid="186858">Plesk 8.0</translation>
+   <translation id="license_designation_PLESK_version_PLESK_80_FOR_VZ" qtlid="186871">Plesk 8.0 for VZ</translation>
+   <translation id="license_designation_PLESK_version_PLESK_81_FOR_WIN" qtlid="186884">Plesk 8.1 for Windows</translation>
+   <translation id="license_designation_PLESK_version_PLESK_9" qtlid="186897">Plesk 9.0</translation>
+   <translation id="license_designation_PLESK_version_PLESK_95" qtlid="186910">Plesk 9.5</translation>
+   <translation id="license_designation_PLESK_version_PLESK_95_FOR_VZ" qtlid="186923">Plesk 9.5 for VZ</translation>
+   <translation id="license_designation_PLESK_version_PLESK_95_FOR_WIN" qtlid="186936">Plesk 9.5 for Windows</translation>
+   <translation id="license_designation_PLESK_version_PLESK_9_FOR_VZ" qtlid="186949">Plesk 9.0 for VZ</translation>
+   <translation id="license_designation_PLESK_version_PLESK_9_FOR_WIN" qtlid="186962">Plesk 9.0 for Windows</translation>
+   <translation id="license_designation_PLESK_version_PLESK_12_WEB_ADMIN" qtlid="200963">Plesk 12 - Web Admin Edition </translation>
+   <translation id="license_designation_PLESK_version_PLESK_12_WEB_APP" qtlid="200976">Plesk 12 - Web App Edition </translation>
+   <translation id="license_designation_PLESK_version_PLESK_12_WEB_HOST" qtlid="200989">Plesk 12 - Web Host Edition</translation>
+   <translation id="license_designation_PLESK_version_plesk-12-webhost" qtlid="200989">Plesk 12 - Web Host Edition</translation>
+   <translation id="license_designation_PLESK_version_PLESK_12_WEB_PRO" qtlid="201015">Plesk 12 - Web Pro Edition</translation>
+   <translation id="license_designation_PLESK_version_plesk-12-webpro" qtlid="201015">Plesk 12 - Web Pro Edition</translation>
+   <translation id="license_designation_PLESK_version_PLESK_12_WEB_HOST_CLNX" qtlid="228969">Plesk 12 - Web Host Edition with CloudLinux</translation>
+   <translation id="license_designation_PLESK_version_PLESK_12_WEB_PRO_CLNX" qtlid="228982">Plesk 12 - Web Pro Edition with CloudLinux</translation>
+   <translation id="license_designation_PLESK_version_PLESK_12_VPS_WEB_ADMIN" qtlid="201041">Plesk 12 - Web Admin Edition for VPS</translation>
+   <translation id="license_designation_PLESK_version_plesk-12-webadmin-for-vps" qtlid="201041">Plesk 12 - Web Admin Edition for VPS</translation>
+   <translation id="license_designation_PLESK_version_PLESK_12_VPS_WEB_APP" qtlid="201054">Plesk 12 - Web App Edition for VPS</translation>
+   <translation id="license_designation_PLESK_version_PLESK_12_VPS_WEB_HOST" qtlid="201067">Plesk 12 - Web Host Edition for VPS</translation>
+   <translation id="license_designation_PLESK_version_plesk-12-webhost-for-vps" qtlid="201067">Plesk 12 - Web Host Edition for VPS</translation>
+   <translation id="license_designation_PLESK_version_PLESK_12_VPS_WEB_PRO" qtlid="201093">Plesk 12 - Web Pro Edition for VPS</translation>
+   <translation id="license_designation_PLESK_version_plesk-12-webpro-for-vps" qtlid="201093">Plesk 12 - Web Pro Edition for VPS</translation>
+   <translation id="license_designation_PLESK_version_PLESK_12_VPS_WEB_HOST_CLNX" qtlid="228995">Plesk 12 - Web Host Edition for VPS with CloudLinux</translation>
+   <translation id="license_designation_PLESK_version_PLESK_12_VPS_WEB_PRO_CLNX" qtlid="229008">Plesk 12 - Web Pro Edition for VPS with CloudLinux</translation>
+
+   <translation id="license_designation_PLESK_version_PLESK_ONYX_WEB_ADMIN" qtlid="372386">Plesk Onyx - Web Admin edition </translation>
+   <translation id="license_designation_PLESK_version_PLESK_ONYX_WEB_APP" qtlid="372399">Plesk Onyx - Web App edition </translation>
+   <translation id="license_designation_PLESK_version_PLESK_ONYX_WEB_HOST" qtlid="372412">Plesk Onyx - Web Host edition </translation>
+   <translation id="license_designation_PLESK_version_PLESK_ONYX_WEB_PRO" qtlid="372425">Plesk Onyx - Web Pro edition </translation>
+   <translation id="license_designation_PLESK_version_PLESK_ONYX_WEB_HOST_CLNX" qtlid="372438">Plesk Onyx - Web Host edition with CloudLinux</translation>
+   <translation id="license_designation_PLESK_version_PLESK_ONYX_WEB_PRO_CLNX" qtlid="372451">Plesk Onyx - Web Pro edition with CloudLinux</translation>
+   <translation id="license_designation_PLESK_version_PLESK_ONYX_VPS_WEB_ADMIN" qtlid="372464">Plesk Onyx - Web Admin edition for VPS</translation>
+   <translation id="license_designation_PLESK_version_PLESK_ONYX_VPS_WEB_APP" qtlid="372477">Plesk Onyx - Web App edition for VPS</translation>
+   <translation id="license_designation_PLESK_version_PLESK_ONYX_VPS_WEB_HOST" qtlid="372490">Plesk Onyx - Web Host edition for VPS</translation>
+   <translation id="license_designation_PLESK_version_PLESK_ONYX_VPS_WEB_PRO" qtlid="372503">Plesk Onyx - Web Pro edition for VPS</translation>
+   <translation id="license_designation_PLESK_version_PLESK_ONYX_VPS_WEB_HOST_CLNX" qtlid="372516">Plesk Onyx - Web Host edition for VPS with CloudLinux</translation>
+   <translation id="license_designation_PLESK_version_PLESK_ONYX_VPS_WEB_PRO_CLNX" qtlid="372529">Plesk Onyx - Web Pro edition for VPS with CloudLinux</translation>
+
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2008_STANDARD_EDITION" qtlid="162478">Microsoft SQL Server 2008 Standard Edition</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2008_STANDARD_EDITION_2_CPU" qtlid="162491">Microsoft SQL Server 2008 Standard Edition (2 CPU)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2008-license-standard-edition-2-cpu" qtlid="162491">Microsoft SQL Server 2008 Standard Edition (2 CPU)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2008_STANDARD_EDITION_4_CPU" qtlid="225941">Microsoft SQL Server 2008 Standard Edition (4 CPU)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2008-license-standard-edition-4-cpu" qtlid="225941">Microsoft SQL Server 2008 Standard Edition (4 CPU)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2008_WEB_EDITION" qtlid="162504">Microsoft SQL Server 2008 Web Edition</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2008-license-web-edition-2-cpu" qtlid="162517">Microsoft SQL Server 2008 Web Edition (2 CPU)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2008_WEB_EDITION_2_CPU" qtlid="162517">Microsoft SQL Server 2008 Web Edition (2 CPU)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2008_WEB_EDITION_4_CPU" qtlid="226839">Microsoft SQL Server 2008 Web Edition (4 CPU)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2008-license-web-edition-4-cpu" qtlid="226839">Microsoft SQL Server 2008 Web Edition (4 CPU)</translation>
+
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2012_STANDARD_EDITION" qtlid="162530">Microsoft SQL Server 2012 Standard Edition</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2012_STANDARD_EDITION_10_CORES" qtlid="226852">Microsoft SQL Server 2012 Standard Edition (10 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2012-license-standard-edition-10-cores" qtlid="226852">Microsoft SQL Server 2012 Standard Edition (10 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2012_STANDARD_EDITION_12_CORES" qtlid="162543">Microsoft SQL Server 2012 Standard Edition (12 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2012-license-standard-edition-12-cores" qtlid="162543">Microsoft SQL Server 2012 Standard Edition (12 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2012_STANDARD_EDITION_16_CORES" qtlid="162556">Microsoft SQL Server 2012 Standard Edition (16 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2012-license-standard-edition-16-cores" qtlid="162556">Microsoft SQL Server 2012 Standard Edition (16 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2012_STANDARD_EDITION_18_CORES" qtlid="185023">Microsoft SQL Server 2012 Standard Edition (18 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2012_STANDARD_EDITION_20_CORES" qtlid="185036">Microsoft SQL Server 2012 Standard Edition (20 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2012_STANDARD_EDITION_24_CORES" qtlid="185049">Microsoft SQL Server 2012 Standard Edition (24 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2012_STANDARD_EDITION_2_CPU" qtlid="162569">Microsoft SQL Server 2012 Standard Edition (2 CPU)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2012_STANDARD_EDITION_32_CORES" qtlid="185062">Microsoft SQL Server 2012 Standard Edition (32 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2012_STANDARD_EDITION_4_CORES" qtlid="162582">Microsoft SQL Server 2012 Standard Edition (4 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2012-license-standard-edition-4-cores" qtlid="162582">Microsoft SQL Server 2012 Standard Edition (4 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2012_STANDARD_EDITION_6_CORES" qtlid="162595">Microsoft SQL Server 2012 Standard Edition (6 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2012-license-standard-edition-6-cores" qtlid="162595">Microsoft SQL Server 2012 Standard Edition (6 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2012_STANDARD_EDITION_8_CORES" qtlid="162608">Microsoft SQL Server 2012 Standard Edition (8 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2012-license-standard-edition-8-cores" qtlid="162608">Microsoft SQL Server 2012 Standard Edition (8 cores)</translation>
+
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2014_STANDARD_EDITION" qtlid="298027">Microsoft SQL Server 2014 Standard Edition</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2014_STANDARD_EDITION_10_CORES" qtlid="298040">Microsoft SQL Server 2014 Standard Edition (10 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2014-license-standard-edition-10-cores" qtlid="298040">Microsoft SQL Server 2014 Standard Edition (10 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2014_STANDARD_EDITION_12_CORES" qtlid="298053">Microsoft SQL Server 2014 Standard Edition (12 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2014-license-standard-edition-12-cores" qtlid="298053">Microsoft SQL Server 2014 Standard Edition (12 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2014_STANDARD_EDITION_16_CORES" qtlid="298066">Microsoft SQL Server 2014 Standard Edition (16 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2014-license-standard-edition-16-cores" qtlid="298066">Microsoft SQL Server 2014 Standard Edition (16 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2014_STANDARD_EDITION_18_CORES" qtlid="298079">Microsoft SQL Server 2014 Standard Edition (18 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2014_STANDARD_EDITION_20_CORES" qtlid="298092">Microsoft SQL Server 2014 Standard Edition (20 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2014_STANDARD_EDITION_24_CORES" qtlid="298105">Microsoft SQL Server 2014 Standard Edition (24 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2014_STANDARD_EDITION_2_CPU" qtlid="298118">Microsoft SQL Server 2014 Standard Edition (2 CPU)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2014_STANDARD_EDITION_32_CORES" qtlid="298131">Microsoft SQL Server 2014 Standard Edition (32 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2014_STANDARD_EDITION_4_CORES" qtlid="298144">Microsoft SQL Server 2014 Standard Edition (4 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2014-license-standard-edition-4-cores" qtlid="298144">Microsoft SQL Server 2014 Standard Edition (4 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2014_STANDARD_EDITION_6_CORES" qtlid="298157">Microsoft SQL Server 2014 Standard Edition (6 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2014-license-standard-edition-6-cores" qtlid="298157">Microsoft SQL Server 2014 Standard Edition (6 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2014_STANDARD_EDITION_8_CORES" qtlid="298170">Microsoft SQL Server 2014 Standard Edition (8 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2014-license-standard-edition-8-cores" qtlid="298170">Microsoft SQL Server 2014 Standard Edition (8 cores)</translation>
+
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2016_STANDARD_EDITION" qtlid="299085">Microsoft SQL Server 2016 Standard Edition</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2016_STANDARD_EDITION_10_CORES" qtlid="299098">Microsoft SQL Server 2016 Standard Edition (10 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2016-license-standard-edition-10-cores" qtlid="299098">Microsoft SQL Server 2016 Standard Edition (10 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2016_STANDARD_EDITION_12_CORES" qtlid="299111">Microsoft SQL Server 2016 Standard Edition (12 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2016-license-standard-edition-12-cores" qtlid="299111">Microsoft SQL Server 2016 Standard Edition (12 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2016_STANDARD_EDITION_16_CORES" qtlid="299124">Microsoft SQL Server 2016 Standard Edition (16 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2016-license-standard-edition-16-cores" qtlid="299124">Microsoft SQL Server 2016 Standard Edition (16 cores)</translation>
+
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2016_STANDARD_EDITION_18_CORES" qtlid="299137">Microsoft SQL Server 2016 Standard Edition (18 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2016_STANDARD_EDITION_20_CORES" qtlid="299150">Microsoft SQL Server 2016 Standard Edition (20 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2016_STANDARD_EDITION_22_CORES" qtlid="376232">Microsoft SQL Server 2016 Standard Edition (22 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2016_STANDARD_EDITION_24_CORES" qtlid="299163">Microsoft SQL Server 2016 Standard Edition (24 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2016_STANDARD_EDITION_2_CPU" qtlid="299176">Microsoft SQL Server 2016 Standard Edition (2 CPU)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2016_STANDARD_EDITION_32_CORES" qtlid="299189">Microsoft SQL Server 2016 Standard Edition (32 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2016_STANDARD_EDITION_4_CORES" qtlid="299202">Microsoft SQL Server 2016 Standard Edition (4 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2016-license-standard-edition-4-cores" qtlid="299202">Microsoft SQL Server 2016 Standard Edition (4 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2016_STANDARD_EDITION_6_CORES" qtlid="299215">Microsoft SQL Server 2016 Standard Edition (6 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2016-license-standard-edition-6-cores" qtlid="299215">Microsoft SQL Server 2016 Standard Edition (6 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2016_STANDARD_EDITION_8_CORES" qtlid="299228">Microsoft SQL Server 2016 Standard Edition (8 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2016-license-standard-edition-8-cores" qtlid="299228">Microsoft SQL Server 2016 Standard Edition (8 cores)</translation>
+
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2012_WEB_EDITION_10_CORES" qtlid="226865">Microsoft SQL Server 2012 Web Edition (10 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2012-license-web-edition-10-cores" qtlid="226865">Microsoft SQL Server 2012 Web Edition (10 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2012_WEB_EDITION_12_CORES" qtlid="162621">Microsoft SQL Server 2012 Web Edition (12 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2012-license-web-edition-12-cores" qtlid="162621">Microsoft SQL Server 2012 Web Edition (12 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2012_WEB_EDITION_16_CORES" qtlid="162634">Microsoft SQL Server 2012 Web Edition (16 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2012-license-web-edition-16-cores" qtlid="162634">Microsoft SQL Server 2012 Web Edition (16 cores)</translation>
+
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2012_WEB_EDITION_18_CORES" qtlid="185075">Microsoft SQL Server 2012 Web Edition (18 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2012_WEB_EDITION_20_CORES" qtlid="185088">Microsoft SQL Server 2012 Web Edition (20 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2012_WEB_EDITION_24_CORES" qtlid="185101">Microsoft SQL Server 2012 Web Edition (24 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2012_WEB_EDITION_32_CORES" qtlid="185114">Microsoft SQL Server 2012 Web Edition (32 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2012_WEB_EDITION_4_CORES" qtlid="162647">Microsoft SQL Server 2012 Web Edition (4 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2012-license-web-edition-4-cores" qtlid="162647">Microsoft SQL Server 2012 Web Edition (4 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2012_WEB_EDITION_6_CORES" qtlid="162660">Microsoft SQL Server 2012 Web Edition (6 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2012-license-web-edition-6-cores" qtlid="162660">Microsoft SQL Server 2012 Web Edition (6 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2012_WEB_EDITION_8_CORES" qtlid="162673">Microsoft SQL Server 2012 Web Edition (8 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2012-license-web-edition-8-cores" qtlid="162673">Microsoft SQL Server 2012 Web Edition (8 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2014_WEB_EDITION_10_CORES" qtlid="298183">Microsoft SQL Server 2014 Web Edition (10 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2014-license-web-edition-10-cores" qtlid="298183">Microsoft SQL Server 2014 Web Edition (10 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2014_WEB_EDITION_12_CORES" qtlid="298196">Microsoft SQL Server 2014 Web Edition (12 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2014-license-web-edition-12-cores" qtlid="298196">Microsoft SQL Server 2014 Web Edition (12 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2014_WEB_EDITION_16_CORES" qtlid="298209">Microsoft SQL Server 2014 Web Edition (16 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2014-license-web-edition-16-cores" qtlid="298209">Microsoft SQL Server 2014 Web Edition (16 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2014_WEB_EDITION_18_CORES" qtlid="298222">Microsoft SQL Server 2014 Web Edition (18 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2014_WEB_EDITION_20_CORES" qtlid="298235">Microsoft SQL Server 2014 Web Edition (20 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2014_WEB_EDITION_24_CORES" qtlid="298248">Microsoft SQL Server 2014 Web Edition (24 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2014_WEB_EDITION_32_CORES" qtlid="298261">Microsoft SQL Server 2014 Web Edition (32 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2014_WEB_EDITION_4_CORES" qtlid="298274">Microsoft SQL Server 2014 Web Edition (4 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2014-license-web-edition-4-cores" qtlid="298274">Microsoft SQL Server 2014 Web Edition (4 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2014_WEB_EDITION_6_CORES" qtlid="298287">Microsoft SQL Server 2014 Web Edition (6 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2014-license-web-edition-6-cores" qtlid="298287">Microsoft SQL Server 2014 Web Edition (6 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2014_WEB_EDITION_8_CORES" qtlid="298300">Microsoft SQL Server 2014 Web Edition (8 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2014-license-web-edition-8-cores" qtlid="298300">Microsoft SQL Server 2014 Web Edition (8 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2016_WEB_EDITION_10_CORES" qtlid="299241">Microsoft SQL Server 2016 Web Edition (10 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2016-license-web-edition-10-cores" qtlid="299241">Microsoft SQL Server 2016 Web Edition (10 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2016_WEB_EDITION_12_CORES" qtlid="299254">Microsoft SQL Server 2016 Web Edition (12 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2016-license-web-edition-12-cores" qtlid="299254">Microsoft SQL Server 2016 Web Edition (12 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2016_WEB_EDITION_16_CORES" qtlid="299267">Microsoft SQL Server 2016 Web Edition (16 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2016-license-web-edition-16-cores" qtlid="299267">Microsoft SQL Server 2016 Web Edition (16 cores)</translation>
+
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2016_WEB_EDITION_18_CORES" qtlid="299280">Microsoft SQL Server 2016 Web Edition (18 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2016_WEB_EDITION_20_CORES" qtlid="299293">Microsoft SQL Server 2016 Web Edition (20 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2016_WEB_EDITION_24_CORES" qtlid="299306">Microsoft SQL Server 2016 Web Edition (24 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2016_WEB_EDITION_32_CORES" qtlid="299319">Microsoft SQL Server 2016 Web Edition (32 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2016_WEB_EDITION_4_CORES" qtlid="299332">Microsoft SQL Server 2016 Web Edition (4 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2016-license-web-edition-4-cores" qtlid="299332">Microsoft SQL Server 2016 Web Edition (4 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2016_WEB_EDITION_6_CORES" qtlid="299345">Microsoft SQL Server 2016 Web Edition (6 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2016-license-web-edition-6-cores" qtlid="299345">Microsoft SQL Server 2016 Web Edition (6 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_SQL_SERVER_2016_WEB_EDITION_8_CORES" qtlid="299358">Microsoft SQL Server 2016 Web Edition (8 cores)</translation>
+   <translation id="license_designation_SQLSERVER_version_sql-server-2016-license-web-edition-8-cores" qtlid="299358">Microsoft SQL Server 2016 Web Edition (8 cores)</translation>
+
+   <translation id="license_designation_PLESK_domain_number__10" qtlid="229021">10</translation>
+   <translation id="license_designation_PLESK_domain_number__100" qtlid="229034">100</translation>
+   <translation id="license_designation_PLESK_domain_number__30" qtlid="229047">30</translation>
+   <translation id="license_designation_PLESK_domain_number__300" qtlid="229060">300</translation>
+   <translation id="license_designation_PLESK_domain_number_HOSTINGSUITE" qtlid="185491">Hosting Suite</translation>
+   <translation id="license_designation_PLESK_domain_number_UNLIMITED" qtlid="185504">Unlimited</translation>
+   <translation id="license_designation_PLESK_options_antivirus_DR_WEB" qtlid="162088">Dr.Web</translation>
+   <translation id="license_designation_PLESK_options_antivirus_KASPERSKY_UNLIMITED_MAILBOXES" qtlid="162101">Kaspersky (Unlimited Mailboxes)</translation>
+   <translation id="license_designation_PLESK_options_antivirus_kaspersky" qtlid="162101">Kaspersky (Unlimited Mailboxes)</translation>
+   <translation id="license_designation_PLESK_options_antivirus_kaspersky-for-vps" qtlid="162101">Kaspersky (Unlimited Mailboxes)</translation>
+   <translation id="license_designation_PLESK_options_antispam_SPAM_ASSASSIN" qtlid="162075">SpamAssassin</translation>
+
+   <translation id="license_designation_VIRTUOZZO" qtlid="162179">Virtuozzo</translation>
+   <translation id="license_designation_VIRTUOZZO_version_VIRTUOZZO_CONTAINERS_4_FOR_LINUX" qtlid="162374">Virtuozzo Containers 4 for Linux</translation>
+   <translation id="license_designation_VIRTUOZZO_version_virtuozzo-4" qtlid="162374">Virtuozzo Containers 4 for Linux</translation>
+   <translation id="license_designation_VIRTUOZZO_version_VIRTUOZZO_CONTAINERS_4_FOR_WINDOWS" qtlid="162387">Virtuozzo Containers 4 for Windows</translation>
+   <translation id="license_designation_VIRTUOZZO_version_virtuozzo-4-for-windows" qtlid="162387">Virtuozzo Containers 4 for Windows</translation>
+
+   <translation id="license_designation_VIRTUOZZO_container_number_2_CPU_001_CONTAINER" qtlid="185517">2 CPU server with 1 container</translation>
+   <translation id="license_designation_VIRTUOZZO_container_number_1-container-for-2-cpu" qtlid="185517">2 CPU server with 1 container</translation>
+   <translation id="license_designation_VIRTUOZZO_container_number_2_CPU_003_CONTAINER" qtlid="185530">2 CPU server with 3 containers</translation>
+   <translation id="license_designation_VIRTUOZZO_container_number_3-containers-for-2-cpu" qtlid="185530">2 CPU server with 3 containers</translation>
+   <translation id="license_designation_VIRTUOZZO_container_number_2_CPU_010_CONTAINER" qtlid="185543">2 CPU server with 10 containers</translation>
+   <translation id="license_designation_VIRTUOZZO_container_number_10-containers-for-2-cpu" qtlid="185543">2 CPU server with 10 containers</translation>
+   <translation id="license_designation_VIRTUOZZO_container_number_2_CPU_030_CONTAINER" qtlid="185556">2 CPU server with 30 containers</translation>
+   <translation id="license_designation_VIRTUOZZO_container_number_30-containers-for-2-cpu" qtlid="185556">2 CPU server with 30 containers</translation>
+   <translation id="license_designation_VIRTUOZZO_container_number_2_CPU_060_CONTAINER" qtlid="185569">2 CPU server with 60 containers</translation>
+   <translation id="license_designation_VIRTUOZZO_container_number_60-containers-for-2-cpu" qtlid="185569">2 CPU server with 60 containers</translation>
+   <translation id="license_designation_VIRTUOZZO_container_number_2_CPU_100_CONTAINER" qtlid="185582">2 CPU server with 100 containers</translation>
+   <translation id="license_designation_VIRTUOZZO_container_number_100-containers-for-2-cpu" qtlid="185582">2 CPU server with 100 containers</translation>
+
+   <translation id="license_designation_WINDOWS" qtlid="102237">Windows</translation>
+   <translation id="license_designation_WINDOWS_version_unavailable" qtlid="162777">Windows licenses are not available for this server.</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2003_ENTERPRISE_EDITION" qtlid="185595">Microsoft Windows Server 2003 Enterprise Edition</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2003_ENTERPRISE_EDITION_2_CPU" qtlid="185608">Microsoft Windows Server 2003 Enterprise Edition (2 CPU)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2003_STANDARD_EDITION" qtlid="195763">Microsoft Windows Server 2003 Standard Edition</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2003_WEB_EDITION" qtlid="185621">Microsoft Windows Server 2003 Web Edition</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2003_WEB_EDITION_2_CPU" qtlid="185634">Microsoft Windows Server 2003 Web Edition (2 CPU)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2003_WEB_ENHANCED_EDITION" qtlid="185647">Microsoft Windows Server 2003 Web Enhanced Edition</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2003_WEB_STANDARD_EDITION" qtlid="185660">Microsoft Windows Server 2003 Web Standard Edition</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2003_WEB_STANDARD_EDITION_2_CPU" qtlid="185673">Microsoft Windows Server 2003 Web Standard Edition (2 CPU)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2008_DATACENTER_EDITION" qtlid="162686">Microsoft Windows Server 2008 Datacenter Edition</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2008-license-datacenter-edition-1-cpu" qtlid="162686">Microsoft Windows Server 2008 Datacenter Edition</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2008_DATACENTER_EDITION_2_CPU" qtlid="162699">Microsoft Windows Server 2008 Datacenter Edition (2 CPU)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2008-license-datacenter-edition-2-cpu" qtlid="162699">Microsoft Windows Server 2008 Datacenter Edition (2 CPU)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2008_DATACENTER_EDITION_4_CPU" qtlid="185127">Microsoft Windows Server 2008 Datacenter Edition (4 CPU)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2008-license-datacenter-edition-4-cpu" qtlid="185127">Microsoft Windows Server 2008 Datacenter Edition (4 CPU)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2008_ENTERPRISE_EDITION" qtlid="162712">Microsoft Windows Server 2008 Enterprise Edition</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2008-license-enterprise-edition-1-cpu" qtlid="162712">Microsoft Windows Server 2008 Enterprise Edition</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2008_ENTERPRISE_EDITION_2_CPU" qtlid="162725">Microsoft Windows Server 2008 Enterprise Edition (2 CPU)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2008-license-enterprise-edition-2-cpu" qtlid="162725">Microsoft Windows Server 2008 Enterprise Edition (2 CPU)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2008_ENTERPRISE_EDITION_4_CPU" qtlid="185140">Microsoft Windows Server 2008 Enterprise Edition (4 CPU)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2008-license-enterprise-edition-4-cpu" qtlid="185140">Microsoft Windows Server 2008 Enterprise Edition (4 CPU)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2008_STANDARD_EDITION" qtlid="162738">Microsoft Windows Server 2008 Standard Edition</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2008-license-standard-edition-1-cpu" qtlid="162738">Microsoft Windows Server 2008 Standard Edition</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2008_STANDARD_EDITION_2_CPU" qtlid="185153">Microsoft Windows Server 2008 Standard Edition (2 CPU)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2008-license-standard-edition-2-cpu" qtlid="185153">Microsoft Windows Server 2008 Standard Edition (2 CPU)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2008_STANDARD_EDITION_4_CPU" qtlid="185166">Microsoft Windows Server 2008 Standard Edition (4 CPU)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2008-license-standard-edition-4-cpu" qtlid="185166">Microsoft Windows Server 2008 Standard Edition (4 CPU)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2008_WEB_EDITION" qtlid="185179">Microsoft Windows Server 2008 Web Edition</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2008-license-web-edition-1-cpu" qtlid="185179">Microsoft Windows Server 2008 Web Edition</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2008_WEB_EDITION_2_CPU" qtlid="185192">Microsoft Windows Server 2008 Web Edition (2 CPU)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2008-license-web-edition-2-cpu" qtlid="185192">Microsoft Windows Server 2008 Web Edition (2 CPU)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2008-license-web-edition-4-cpu" qtlid="185205">Microsoft Windows Server 2008 Web Edition (4 CPU)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2008_WEB_STANDARD_EDITION" qtlid="162790">Microsoft Windows Server 2008 Web Standard Edition</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2012_DATACENTER_EDITION" qtlid="162751">Microsoft Windows Server 2012 Datacenter Edition</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2012-license-datacenter-edition-1-cpu" qtlid="162751">Microsoft Windows Server 2012 Datacenter Edition</translation>
+
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2012_DATACENTER_EDITION_2_CPU" qtlid="185218">Microsoft Windows Server 2012 Datacenter Edition (2 CPU)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2012-license-datacenter-edition-2-cpu" qtlid="185218">Microsoft Windows Server 2012 Datacenter Edition (2 CPU)</translation>
+
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2012_DATACENTER_EDITION_4_CPU" qtlid="185231">Microsoft Windows Server 2012 Datacenter Edition (4 CPU)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2012-license-datacenter-edition-4-cpu" qtlid="185231">Microsoft Windows Server 2012 Datacenter Edition (4 CPU)</translation>
+
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2012_ENTERPRISE_EDITION" qtlid="185270">Microsoft Windows Server 2012 Enterprise Edition</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2012_ENTERPRISE_EDITION_2_CPU" qtlid="162803">Microsoft Windows Server 2012 Enterprise Edition (2 CPU)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2012_STANDARD_EDITION" qtlid="162764">Microsoft Windows Server 2012 Standard Edition</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2012-license-standard-edition-1-cpu" qtlid="162764">Microsoft Windows Server 2012 Standard Edition</translation>
+
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2012_STANDARD_EDITION_2_CPU" qtlid="185244">Microsoft Windows Server 2012 Standard Edition (2 CPU)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2012-license-standard-edition-2-cpu" qtlid="185244">Microsoft Windows Server 2012 Standard Edition (2 CPU)</translation>
+
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2012_STANDARD_EDITION_4_CPU" qtlid="185257">Microsoft Windows Server 2012 Standard Edition (4 CPU)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2012-license-standard-edition-4-cpu" qtlid="185257">Microsoft Windows Server 2012 Standard Edition (4 CPU)</translation>
+
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2012_WEB_EDITION" qtlid="186819">Microsoft Windows Server 2012 Web Edition</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_DATACENTER_EDITION_2_CPU_8_CORES" qtlid="372713">Microsoft Windows Server 2016 Datacenter edition (2 CPU 8 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-datacenter-edition-2-cpu-8-cores" qtlid="372713">Microsoft Windows Server 2016 Datacenter edition (2 CPU 8 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_DATACENTER_EDITION_1_CPU_8_CORES" qtlid="372726">Microsoft Windows Server 2016 Datacenter edition (1 CPU 8 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-datacenter-edition-1-cpu-8-cores" qtlid="372726">Microsoft Windows Server 2016 Datacenter edition (1 CPU 8 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_DATACENTER_EDITION_2_CPU_10_CORES" qtlid="372739">Microsoft Windows Server 2016 Datacenter edition (2 CPU 10 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-datacenter-edition-2-cpu-10-cores" qtlid="372739">Microsoft Windows Server 2016 Datacenter edition (2 CPU 10 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_DATACENTER_EDITION_2_CPU_12_CORES" qtlid="372752">Microsoft Windows Server 2016 Datacenter edition (2 CPU 12 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-datacenter-edition-2-cpu-12-cores" qtlid="372752">Microsoft Windows Server 2016 Datacenter edition (2 CPU 12 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_DATACENTER_EDITION_2_CPU_14_CORES" qtlid="372765">Microsoft Windows Server 2016 Datacenter edition (2 CPU 14 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-datacenter-edition-2-cpu-14-cores" qtlid="372765">Microsoft Windows Server 2016 Datacenter edition (2 CPU 14 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_DATACENTER_EDITION_2_CPU_16_CORES" qtlid="372778">Microsoft Windows Server 2016 Datacenter edition (2 CPU 16 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-datacenter-edition-2-cpu-16-cores" qtlid="372778">Microsoft Windows Server 2016 Datacenter edition (2 CPU 16 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_DATACENTER_EDITION_2_CPU_18_CORES" qtlid="372791">Microsoft Windows Server 2016 Datacenter edition (2 CPU 18 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-datacenter-edition-2-cpu-18-cores" qtlid="372791">Microsoft Windows Server 2016 Datacenter edition (2 CPU 18 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_DATACENTER_EDITION_2_CPU_20_CORES" qtlid="372804">Microsoft Windows Server 2016 Datacenter edition (2 CPU 20 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-datacenter-edition-2-cpu-20-cores" qtlid="372804">Microsoft Windows Server 2016 Datacenter edition (2 CPU 20 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_DATACENTER_EDITION_2_CPU_22_CORES" qtlid="372817">Microsoft Windows Server 2016 Datacenter edition (2 CPU 22 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-datacenter-edition-2-cpu-22-cores" qtlid="372817">Microsoft Windows Server 2016 Datacenter edition (2 CPU 22 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_DATACENTER_EDITION_4_CPU_8_CORES" qtlid="372830">Microsoft Windows Server 2016 Datacenter edition (4 CPU 8 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-datacenter-edition-4-cpu-8-cores" qtlid="372830">Microsoft Windows Server 2016 Datacenter edition (4 CPU 8 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_DATACENTER_EDITION_4_CPU_10_CORES" qtlid="372843">Microsoft Windows Server 2016 Datacenter edition (4 CPU 10 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-datacenter-edition-4-cpu-10-cores" qtlid="372843">Microsoft Windows Server 2016 Datacenter edition (4 CPU 10 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_DATACENTER_EDITION_4_CPU_12_CORES" qtlid="372856">Microsoft Windows Server 2016 Datacenter edition (4 CPU 12 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-datacenter-edition-4-cpu-12-cores" qtlid="372856">Microsoft Windows Server 2016 Datacenter edition (4 CPU 12 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_DATACENTER_EDITION_4_CPU_14_CORES" qtlid="372869">Microsoft Windows Server 2016 Datacenter edition (4 CPU 14 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-datacenter-edition-4-cpu-14-cores" qtlid="372869">Microsoft Windows Server 2016 Datacenter edition (4 CPU 14 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_DATACENTER_EDITION_4_CPU_16_CORES" qtlid="372882">Microsoft Windows Server 2016 Datacenter edition (4 CPU 16 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-datacenter-edition-4-cpu-16-cores" qtlid="372882">Microsoft Windows Server 2016 Datacenter edition (4 CPU 16 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_DATACENTER_EDITION_4_CPU_18_CORES" qtlid="372895">Microsoft Windows Server 2016 Datacenter edition (4 CPU 18 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-datacenter-edition-4-cpu-18-cores" qtlid="372895">Microsoft Windows Server 2016 Datacenter edition (4 CPU 18 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_DATACENTER_EDITION_4_CPU_20_CORES" qtlid="372908">Microsoft Windows Server 2016 Datacenter edition (4 CPU 20 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-datacenter-edition-4-cpu-20-cores" qtlid="372908">Microsoft Windows Server 2016 Datacenter edition (4 CPU 20 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_DATACENTER_EDITION_4_CPU_22_CORES" qtlid="372921">Microsoft Windows Server 2016 Datacenter edition (4 CPU 22 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-datacenter-edition-4-cpu-22-cores" qtlid="372921">Microsoft Windows Server 2016 Datacenter edition (4 CPU 22 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_DATACENTER_EDITION_4_CPU_24_CORES" qtlid="372934">Microsoft Windows Server 2016 Datacenter edition (4 CPU 24 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-datacenter-edition-4-cpu-24-cores" qtlid="372934">Microsoft Windows Server 2016 Datacenter edition (4 CPU 24 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_STANDARD_EDITION_1_CPU_8_CORES" qtlid="372947">Microsoft Windows Server 2016 Standard edition (1 CPU 8 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-standard-edition-1-cpu-8-cores" qtlid="372947">Microsoft Windows Server 2016 Standard edition (1 CPU 8 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_STANDARD_EDITION_2_CPU_8_CORES" qtlid="372960">Microsoft Windows Server 2016 Standard edition (2 CPU 8 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-standard-edition-2-cpu-8-cores" qtlid="372960">Microsoft Windows Server 2016 Standard edition (2 CPU 8 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_STANDARD_EDITION_2_CPU_10_CORES" qtlid="372973">Microsoft Windows Server 2016 Standard edition (2 CPU 10 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-standard-edition-2-cpu-10-cores" qtlid="372973">Microsoft Windows Server 2016 Standard edition (2 CPU 10 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_STANDARD_EDITION_2_CPU_12_CORES" qtlid="372986">Microsoft Windows Server 2016 Standard edition (2 CPU 12 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-standard-edition-2-cpu-12-cores" qtlid="372986">Microsoft Windows Server 2016 Standard edition (2 CPU 12 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_STANDARD_EDITION_2_CPU_14_CORES" qtlid="372999">Microsoft Windows Server 2016 Standard edition (2 CPU 14 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-standard-edition-2-cpu-14-cores" qtlid="372999">Microsoft Windows Server 2016 Standard edition (2 CPU 14 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_STANDARD_EDITION_2_CPU_16_CORES" qtlid="373012">Microsoft Windows Server 2016 Standard edition (2 CPU 16 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-standard-edition-2-cpu-16-cores" qtlid="373012">Microsoft Windows Server 2016 Standard edition (2 CPU 16 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_STANDARD_EDITION_2_CPU_18_CORES" qtlid="373025">Microsoft Windows Server 2016 Standard edition (2 CPU 18 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-standard-edition-2-cpu-18-cores" qtlid="373025">Microsoft Windows Server 2016 Standard edition (2 CPU 18 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_STANDARD_EDITION_2_CPU_20_CORES" qtlid="373038">Microsoft Windows Server 2016 Standard edition (2 CPU 20 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-standard-edition-2-cpu-20-cores" qtlid="373038">Microsoft Windows Server 2016 Standard edition (2 CPU 20 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_STANDARD_EDITION_2_CPU_22_CORES" qtlid="373051">Microsoft Windows Server 2016 Standard edition (2 CPU 22 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-standard-edition-2-cpu-22-cores" qtlid="373051">Microsoft Windows Server 2016 Standard edition (2 CPU 22 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_STANDARD_EDITION_4_CPU_8_CORES" qtlid="373064">Microsoft Windows Server 2016 Standard edition (4 CPU 8 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-standard-edition-4-cpu-8-cores" qtlid="373064">Microsoft Windows Server 2016 Standard edition (4 CPU 8 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_STANDARD_EDITION_4_CPU_10_CORES" qtlid="373077">Microsoft Windows Server 2016 Standard edition (4 CPU 10 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-standard-edition-4-cpu-10-cores" qtlid="373077">Microsoft Windows Server 2016 Standard edition (4 CPU 10 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_STANDARD_EDITION_4_CPU_12_CORES" qtlid="373090">Microsoft Windows Server 2016 Standard edition (4 CPU 12 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-standard-edition-4-cpu-12-cores" qtlid="373090">Microsoft Windows Server 2016 Standard edition (4 CPU 12 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_STANDARD_EDITION_4_CPU_14_CORES" qtlid="373103">Microsoft Windows Server 2016 Standard edition (4 CPU 14 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-standard-edition-4-cpu-14-cores" qtlid="373103">Microsoft Windows Server 2016 Standard edition (4 CPU 14 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_STANDARD_EDITION_4_CPU_16_CORES" qtlid="373116">Microsoft Windows Server 2016 Standard edition (4 CPU 16 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-standard-edition-4-cpu-16-cores" qtlid="373116">Microsoft Windows Server 2016 Standard edition (4 CPU 16 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_STANDARD_EDITION_4_CPU_18_CORES" qtlid="373129">Microsoft Windows Server 2016 Standard edition (4 CPU 18 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-standard-edition-4-cpu-18-cores" qtlid="373129">Microsoft Windows Server 2016 Standard edition (4 CPU 18 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_STANDARD_EDITION_4_CPU_20_CORES" qtlid="373142">Microsoft Windows Server 2016 Standard edition (4 CPU 20 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-standard-edition-4-cpu-20-cores" qtlid="373142">Microsoft Windows Server 2016 Standard edition (4 CPU 20 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_STANDARD_EDITION_4_CPU_22_CORES" qtlid="373155">Microsoft Windows Server 2016 Standard edition (4 CPU 22 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-standard-edition-4-cpu-22-cores" qtlid="373155">Microsoft Windows Server 2016 Standard edition (4 CPU 22 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_WINDOWS_SERVER_2016_STANDARD_EDITION_4_CPU_24_CORES" qtlid="373168">Microsoft Windows Server 2016 Standard edition (4 CPU 24 CORES)</translation>
+   <translation id="license_designation_WINDOWS_version_windows-server-2016-license-standard-edition-4-cpu-24-cores" qtlid="373168">Microsoft Windows Server 2016 Standard edition (4 CPU 24 CORES)</translation>
+
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2008_STANDARD_EDITION" qtlid="162478">Microsoft SQL Server 2008 Standard Edition</translation>
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2008_STANDARD_EDITION_2_CPU" qtlid="162491">Microsoft SQL Server 2008 Standard Edition (2 CPU)</translation>
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2008_WEB_EDITION" qtlid="162504">Microsoft SQL Server 2008 Web Edition</translation>
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2008_WEB_EDITION_2_CPU" qtlid="162517">Microsoft SQL Server 2008 Web Edition (2 CPU)</translation>
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2012_STANDARD_EDITION" qtlid="162530">Microsoft SQL Server 2012 Standard Edition</translation>
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2012_STANDARD_EDITION_12_CORES" qtlid="162543">Microsoft SQL Server 2012 Standard Edition (12 cores)</translation>
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2012_STANDARD_EDITION_16_CORES" qtlid="162556">Microsoft SQL Server 2012 Standard Edition (16 cores)</translation>
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2012_STANDARD_EDITION_18_CORES" qtlid="185023">Microsoft SQL Server 2012 Standard Edition (18 cores)</translation>
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2012_STANDARD_EDITION_20_CORES" qtlid="185036">Microsoft SQL Server 2012 Standard Edition (20 cores)</translation>
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2012_STANDARD_EDITION_24_CORES" qtlid="185049">Microsoft SQL Server 2012 Standard Edition (24 cores)</translation>
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2012_STANDARD_EDITION_2_CPU" qtlid="162569">Microsoft SQL Server 2012 Standard Edition (2 CPU)</translation>
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2012_STANDARD_EDITION_32_CORES" qtlid="185062">Microsoft SQL Server 2012 Standard Edition (32 cores)</translation>
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2012_STANDARD_EDITION_4_CORES" qtlid="162582">Microsoft SQL Server 2012 Standard Edition (4 cores)</translation>
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2012_STANDARD_EDITION_6_CORES" qtlid="162595">Microsoft SQL Server 2012 Standard Edition (6 cores)</translation>
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2012_STANDARD_EDITION_8_CORES" qtlid="162608">Microsoft SQL Server 2012 Standard Edition (8 cores)</translation>
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2012_WEB_EDITION_12_CORES" qtlid="162621">Microsoft SQL Server 2012 Web Edition (12 cores)</translation>
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2012_WEB_EDITION_16_CORES" qtlid="162634">Microsoft SQL Server 2012 Web Edition (16 cores)</translation>
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2012_WEB_EDITION_18_CORES" qtlid="185075">Microsoft SQL Server 2012 Web Edition (18 cores)</translation>
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2012_WEB_EDITION_20_CORES" qtlid="185088">Microsoft SQL Server 2012 Web Edition (20 cores)</translation>
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2012_WEB_EDITION_24_CORES" qtlid="185101">Microsoft SQL Server 2012 Web Edition (24 cores)</translation>
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2012_WEB_EDITION_32_CORES" qtlid="185114">Microsoft SQL Server 2012 Web Edition (32 cores)</translation>
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2012_WEB_EDITION_4_CORES" qtlid="162647">Microsoft SQL Server 2012 Web Edition (4 cores)</translation>
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2012_WEB_EDITION_6_CORES" qtlid="162660">Microsoft SQL Server 2012 Web Edition (6 cores)</translation>
+   <translation id="license_designation_WINDOWS_sql_version_SQL_SERVER_2012_WEB_EDITION_8_CORES" qtlid="162673">Microsoft SQL Server 2012 Web Edition (8 cores)</translation>
+
+   <translation id="license_designation_SPLA" qtlid="185686">SPLA License </translation>
+   <translation id="license_designation_SPLA_type_OS" qtlid="185699">Windows SPLA License</translation>
+   <translation id="license_designation_SPLA_type_SQLSTD" qtlid="185712">SPLA License SQL Server Standard Edition</translation>
+   <translation id="license_designation_SPLA_type_SQLWEB" qtlid="185725">SPLA License SQL Server Web Edition</translation>
+
+   <translation id="license_designation_WORKLIGHT" qtlid="192747">Worklight</translation>
+<translation id="license_designation_WORKLIGHT_version_VERSION-6.1U.1CPU" qtlid="192760">Worklight 6 1U 1CPU</translation>
+<translation id="license_designation_WORKLIGHT_version_VERSION-6.1U.2CPU" qtlid="192773">Worklight 6 1U 2CPU</translation>
+<translation id="license_designation_WORKLIGHT_version_VERSION-6.2U.1CPU" qtlid="192786">Worklight 6 2U 1CPU</translation>
+<translation id="license_designation_WORKLIGHT_version_VERSION-6.2U.2CPU" qtlid="192799">Worklight 6 2U 2CPU</translation>
+<translation id="license_designation_WORKLIGHT_version_VERSION-6.EVALUATION" qtlid="192812">Worklight 6: trial version</translation>
+
+   <translation id="license_designation_WORKLIGHT_version_worklight-license-version-6-1cpu-1u" qtlid="192760">Worklight 6 1U 1CPU</translation>
+   <translation id="license_designation_WORKLIGHT_version_worklight-license-version-6-2cpu-1u" qtlid="192773">Worklight 6 1U 2CPU</translation>
+   <translation id="license_designation_WORKLIGHT_version_worklight-license-version-6-1cpu-2u" qtlid="192786">Worklight 6 2U 1CPU</translation>
+   <translation id="license_designation_WORKLIGHT_version_worklight-license-version-6-2cpu-2u" qtlid="192799">Worklight 6 2U 2CPU</translation>
+
+   <translation id="license_designation_WORKLIGHT_version_VERSION_6_1_U_1_CPU" qtlid="192760">Worklight 6 1U 1CPU</translation>
+   <translation id="license_designation_WORKLIGHT_version_VERSION_6_1_U_2_CPU" qtlid="192773">Worklight 6 1U 2CPU</translation>
+   <translation id="license_designation_WORKLIGHT_version_VERSION_6_2_U_1_CPU" qtlid="192786">Worklight 6 2U 1CPU</translation>
+   <translation id="license_designation_WORKLIGHT_version_VERSION_6_2_U_2_CPU" qtlid="192799">Worklight 6 2U 2CPU</translation>
+   <translation id="license_designation_WORKLIGHT_version_VERSION_6_EVALUATION" qtlid="192812">Worklight 6: trial version</translation>
+
+   <translation id="day_1" qtlid="28807">1 day</translation>
+   <translation id="day_other" qtlid="158578">{} days</translation>
+   <translation id="month_1" qtlid="70241">1 month</translation>
+   <translation id="month_other">{0} mois</translation>
+   <translation id="year_1" qtlid="70277">1 year</translation>
+   <translation id="year_other" qtlid="158604">{} years</translation>
+   <translation id="upto" qtlid="158617">Until {0}</translation>
+   <translation id="uptofirstdaynextmonth" qtlid="158630">Until the 1st of next month</translation>
+   <translation id="engage" qtlid="158643">Sign up {0}</translation>
+   <translation id="price_ht_label">{{ price }}&#160;HT</translation>
+   <translation id="price_ttc_label">{{ price }}&#160;TTC</translation>
+   <translation id="price_free" qtlid="130495">Free</translation>
+
+   <translation id="license_dashboard_table_title_type" qtlid="2642">Type</translation>
+   <translation id="license_dashboard_table_title_id" qtlid="161529">License ID</translation>
+   <translation id="license_dashboard_table_title_ip" qtlid="167899">IP</translation>
+   <translation id="license_dashboard_table_title_service" qtlid="31042">Service</translation>
+   <translation id="license_dashboard_table_title_expiration" qtlid="168172">Renewal</translation>
+   <translation id="license_dashboard_table_empty" qtlid="185738">You don't have any licenses</translation>
+   <translation id="license_dashboard_table_popover_renew" qtlid="118962">Renew</translation>
+   <translation id="license_dashboard_table_popover_details" qtlid="37527">Details</translation>
+   <translation id="license_dashboard_table_popover_move" qtlid="171695">Migrate</translation>
+   <translation id="license_dashboard_table_popover_revoke" qtlid="185751">Revoke</translation>
+   <translation id="license_dashboard_table_popover_upgrade" qtlid="90661">Upgrade</translation>
+   <translation id="license_dashboard_table_popover_delete" qtlid="2414">Delete</translation>
+
+   <translation id="license_details_back" qtlid="454293">Go back to licence management</translation>
+   <translation id="license_details_title_ip" qtlid="167899">IP</translation>
+   <translation id="license_details_title_service" qtlid="31042">Service</translation>
+   <translation id="license_details_title_version" qtlid="34210">Version</translation>
+   <translation id="license_details_title_id" qtlid="161529">License ID</translation>
+   <translation id="license_details_title_key" qtlid="104326">Key</translation>
+   <translation id="license_details_title_containernumber" qtlid="185764">Number of containers</translation>
+   <translation id="license_details_title_domainNumber" qtlid="44668">Number of domains</translation>
+   <translation id="license_details_title_productkey" qtlid="104326">Key</translation>
+   <translation id="license_details_title_informationkey" qtlid="171682">Information key</translation>
+   <translation id="license_details_title_creation_date" qtlid="26419">Creation date</translation>
+   <translation id="license_details_title_splaStatus" qtlid="39250">Status</translation>
+   <translation id="license_details_title_delete_at_expiration" qtlid="161594">Delete on expiry</translation>
+   <translation id="license_details_title_delete_at_expiration_activated" qtlid="34776">Yes</translation>
+   <translation id="license_details_title_delete_at_expiration_desactivated" qtlid="34788">No</translation>
+   <translation id="license_details_title_delete_at_expiration_toggle" qtlid="37875">Modify</translation>
+   <translation id="license_details_title_delete_at_expiration_confirm_activation" qtlid="226878">Are you sure you want to enable this option?</translation>
+   <translation id="license_details_title_delete_at_expiration_confirm_desactivation" qtlid="226891">Are you sure you want to disable this option?</translation>
+   <translation id="license_details_update_success" qtlid="161724">Your license has been updated.</translation>
+   <translation id="license_details_update_fail" qtlid="226904">An error occurred when updating your license.</translation>
+   <translation id="license_details_key_select_all" qtlid="159059">Select all</translation>
+   <translation id="license_details_splaStatus_USED" qtlid="131680">Used</translation>
+   <translation id="license_details_splaStatus_TERMINATED" qtlid="185777">Revoked</translation>
+   <translation id="license_details_splaStatus_WAITING_TO_CHECK" qtlid="185790">Verification pending</translation>
+   <translation id="license_details_loading_error" qtlid="170031">An error occurred while loading the information.</translation>
+
+   <translation id="license_spla_add_title_button" qtlid="159995">Add an SPLA license </translation>
+   <translation id="license_spla_add_title" qtlid="159995">Add an SPLA license </translation>
+   <translation id="license_spla_add_common_type_os" qtlid="185699">Windows SPLA License</translation>
+   <translation id="license_spla_add_common_type_sqlstd" qtlid="185712">SPLA License SQL Server Standard Edition</translation>
+   <translation id="license_spla_add_common_type_sqlweb" qtlid="185725">SPLA License SQL Server Web Edition</translation>
+   <translation id="license_spla_add_step1_question" qtlid="185803">You are going to add an SPLA license to a server</translation>
+   <translation id="license_spla_add_step1_loading_error" qtlid="170031">An error occurred while loading the information.</translation>
+   <translation id="license_spla_add_step1_server" qtlid="185816">Server to add the license to:</translation>
+   <translation id="license_spla_add_step1_server_placeholder" qtlid="185829">Select a server...</translation>
+   <translation id="license_spla_add_step1_server_unavailable" qtlid="225088">None of your servers are compatible with the SPLA.</translation>
+   <translation id="license_spla_add_step2_question" qtlid="185842">Select the license to be added:</translation>
+   <translation id="license_spla_add_step2_no_space_left" qtlid="185855">You cannot add any more SPLA licenses on this server, you must first revoke one</translation>
+   <translation id="license_spla_add_step2_type" qtlid="185868">Type of license:</translation>
+   <translation id="license_spla_add_step2_type_placeholder" qtlid="185881">Select a type...</translation>
+   <translation id="license_spla_add_step2_serial" qtlid="185894">License number:</translation>
+   <translation id="license_spla_add_step3_question" qtlid="185907">Do you really want to add the following SPLA license?</translation>
+   <translation id="license_spla_add_step3_server" qtlid="174191">Server:</translation>
+   <translation id="license_spla_add_step3_type" qtlid="185868">Type of license:</translation>
+   <translation id="license_spla_add_step3_serial" qtlid="185894">License number:</translation>
+   <translation id="license_spla_add_success" qtlid="185920">Your SPLA license was successfully added.</translation>
+   <translation id="license_spla_add_fail" qtlid="185933">An error occurred on adding your SPLA license.</translation>
+
+   <translation id="license_spla_revoke_title_button" qtlid="185946">Revoke the SPLA license</translation>
+   <translation id="license_spla_revoke_title" qtlid="185959">Revoke an SPLA license</translation>
+   <translation id="license_spla_revoke_common_type_OS" qtlid="185699">Windows SPLA License</translation>
+   <translation id="license_spla_revoke_common_type_SQLSTD" qtlid="185712">SPLA License SQL Server Standard Edition</translation>
+   <translation id="license_spla_revoke_common_type_SQLWEB" qtlid="185725">SPLA License SQL Server Web Edition</translation>
+   <translation id="license_spla_revoke_step1_question" qtlid="185972">Do you really want to revoke the following SPLA license?</translation>
+   <translation id="license_spla_revoke_step1_type" qtlid="185868">Type of license:</translation>
+   <translation id="license_spla_revoke_step1_server" qtlid="174191">Server:</translation>
+   <translation id="license_spla_revoke_step1_serial" qtlid="185894">License number:</translation>
+   <translation id="license_spla_revoke_step1_deleting" qtlid="185985">Revoking SPLA license...</translation>
+   <translation id="license_spla_revoke_success" qtlid="185998">Your SPLA license was revoked successfully.</translation>
+   <translation id="license_spla_revoke_fail" qtlid="186011">An error occurred on revoking your SPLA license.</translation>
+
+   <translation id="license_directadmin_changeOs_label" qtlid="304004">Operating system assigned </translation>
+   <translation id="license_directadmin_changeOs_taskExists" qtlid="304017">There is an ongoing operation for this service.</translation>
+   <translation id="license_directadmin_changeOs_toggle" qtlid="37875">Modify</translation>
+   <translation id="license_directadmin_changeOs_title" qtlid="304030">Changed the assigned operating system.</translation>
+   <translation id="license_directadmin_changingOs" qtlid="304043">Changing operating system ...</translation>
+   <translation id="license_directadmin_changeOs_success" qtlid="304056">The change will take a few moments.</translation>
+   <translation id="license_directadmin_changeOs_loading_error" qtlid="170031">An error occurred while loading the information.</translation>
+   <translation id="license_directadmin_changeOs_chooseOs" qtlid="304069">Please choose an operating system to assign to your license. </translation>
+   <translation id="license_directadmin_changeOs_fail" qtlid="304082">There was an error when the request to modify the associated operating system was sent:</translation>
+
+   <translation id="license_delete_title" qtlid="258437">Delete a license</translation>
+   <translation id="license_delete_fail" qtlid="258450">An error has occured while requesting the cancellation of your license:</translation>
+   <translation id="license_delete_already_terminating" qtlid="480880">A removal request is already in progress</translation>
+   <translation id="license_delete_success" qtlid="258463">An email was sent to you to confirm the cancellation of your license.</translation>
+   <translation id="license_delete_step1_question" qtlid="258476">Do you really want to cancel the following license?</translation>
+   <translation id="license_delete_type" qtlid="185868">Type of license:</translation>
+   <translation id="license_delete_server" qtlid="174191">Server:</translation>
+   <translation id="license_delete_serial" qtlid="185894">License number:</translation>
+   <translation id="license_delete_step1_deleting" qtlid="258489">Cancellation of license in progress...</translation>
+
+   <translation id="license_upgrade_redirection_popup_title" qtlid="369454">One {0} license is already installed </translation>
+   <translation id="license_upgrade_redirection_popup_text" qtlid="369467">A {0} license is already installed for this IP.   You can update it. </translation>
+   <translation id="license_upgrade_redirection_popup_upgrade" qtlid="369480">Update my license </translation>
+
+   <translation id="license_upgrade_title" qtlid="186024">Upgrade my license</translation>
+   <translation id="license_upgrade_title_button" qtlid="186024">Upgrade my license</translation>
+   <translation id="license_upgrade_common_no_upgrade" qtlid="200898">No upgrades are available for your version of Plesk. Please contact customer service for more information.</translation>
+   <translation id="license_upgrade_common_no_change" qtlid="72461">No changes</translation>
+   <translation id="license_upgrade_summary_title" qtlid="186037">Recap of your current license</translation>
+   <translation id="license_upgrade_summary_version" qtlid="34210">Version</translation>
+   <translation id="license_upgrade_summary_containerNumber" qtlid="185764">Number of containers</translation>
+   <translation id="license_upgrade_summary_domainNumber" qtlid="161464">Number of domains</translation>
+   <translation id="license_upgrade_summary_language_pack" qtlid="186050">Number of language packs</translation>
+   <translation id="license_upgrade_summary_antivirus" qtlid="80526">Anti-virus</translation>
+   <translation id="license_upgrade_summary_powerpack" qtlid="161490">Powerpack</translation>
+   <translation id="license_upgrade_summary_sqlversion" qtlid="161516">SQL version</translation>
+   <translation id="license_upgrade_step1_title" qtlid="186063">1. Select your options</translation>
+   <translation id="license_upgrade_step2_title" qtlid="186076">2. Select a duration</translation>
+   <translation id="license_upgrade_step3_title" qtlid="186089">3. Validation</translation>
+   <translation id="license_upgrade_step3_question" qtlid="186102">Click on "Generate purchase order" to upgrade your license.</translation>
+
+   <translation id="license_order_title_button" qtlid="43558">Order</translation>
+   <translation id="license_order_title" qtlid="145865">Order a license</translation>
+   <translation id="license_order_common_choose" qtlid="186115">Select...</translation>
+   <translation id="license_order_common_none" qtlid="30646">None</translation>
+   <translation id="license_order_loading_error" qtlid="135294">An error has occurred while loading the data</translation>
+   <translation id="license_order_no_license_available" qtlid="251083">You do not have any products to which you can attach a license.</translation>
+   <translation id="license_order_step1_title" qtlid="186128">1. Select an IP and type of license</translation>
+   <translation id="license_order_step1_ip_block" qtlid="186141">IP Block</translation>
+   <translation id="license_order_step1_ip_block_none" qtlid="30646">None</translation>
+   <translation id="license_order_step1_ip" qtlid="167899">IP</translation>
+   <translation id="license_order_step1_no_license_available" qtlid="186154">No license available for the IP {0}</translation>
+
+   <translation id="license_order_step2_title" qtlid="186167">2. Select your options</translation>
+   <translation id="license_order_step2_version" qtlid="34210">Version</translation>
+   <translation id="license_order_step2_option_VIRTUOZZO_containerNumber" qtlid="185764">Number of containers</translation>
+   <translation id="license_order_step2_option_PLESK_version" qtlid="34210">Version</translation>
+   <translation id="license_order_step2_option_PLESK_domainNumber" qtlid="161464">Number of domains</translation>
+   <translation id="license_order_step2_option_PLESK_language_pack" qtlid="186050">Number of language packs</translation>
+   <translation id="license_order_step2_option_PLESK_language_pack_unlimited" qtlid="185504">Unlimited</translation>
+   <translation id="license_order_step2_option_PLESK_language_pack_5-extra-languages-for-plesk12" qtlid="451610">5</translation>
+   <translation id="license_order_step2_option_PLESK_language_pack_4-extra-languages-for-plesk12" qtlid="451623">4</translation>
+   <translation id="license_order_step2_option_PLESK_language_pack_3-extra-languages-for-plesk12" qtlid="451636">3</translation>
+   <translation id="license_order_step2_option_PLESK_language_pack_2-extra-languages-for-plesk12" qtlid="367902">2</translation>
+   <translation id="license_order_step2_option_PLESK_language_pack_1-extra-language-for-plesk12" qtlid="172891">1</translation>
+
+   <translation id="license_order_step2_option_PLESK_language_pack_5-extra-languages-for-plesk12-for-vps" qtlid="451610">5</translation>
+   <translation id="license_order_step2_option_PLESK_language_pack_4-extra-languages-for-plesk12-for-vps" qtlid="451623">4</translation>
+   <translation id="license_order_step2_option_PLESK_language_pack_3-extra-languages-for-plesk12-for-vps" qtlid="451636">3</translation>
+   <translation id="license_order_step2_option_PLESK_language_pack_2-extra-languages-for-plesk12-for-vps" qtlid="367902">2</translation>
+   <translation id="license_order_step2_option_PLESK_language_pack_1-extra-language-for-plesk12-for-vps" qtlid="172891">1</translation>
+
+   <translation id="license_order_step2_option_PLESK_antivirus" qtlid="80526">Anti-virus</translation>
+   <translation id="license_order_step2_option_PLESK_powerpack" qtlid="161490">Powerpack</translation>
+   <translation id="license_order_step2_option_WINDOWS_sqlversion" qtlid="161516">SQL version</translation>
+   <translation id="license_order_step2_option_WORKLIGHT_lessThan1000Users" qtlid="192838">Company of less than 1000 employees</translation>
+
+   <translation id="license_order_step3_title" qtlid="186180">3. Select a duration</translation>
+
+   <translation id="license_order_step4_title" qtlid="186193">4. Validation</translation>
+   <translation id="license_order_step4_question" qtlid="186206">Click on "Generate purchase order" to upgrade your license.</translation>
+   <translation id="license_order_step4_contracts_ask" qtlid="225928">Please read and accept the below contracts, then click on "Generate the purchase order":</translation>
+   <translation id="license_order_step4_contracts_agora_ask" qtlid="451649">Please read and accept the terms and conditions below, then click "Pay bill":</translation>
+   <translation id="license_order_step4_contracts_check" qtlid="161659">I have read and fully understood the terms and conditions.</translation>
+   <translation id="license_order_step4_generate" qtlid="186219">Generate purchase order</translation>
+   <translation id="license_order_step4_generating" qtlid="169511">Generating the order...</translation>
+   <translation id="license_order_step4_generated" qtlid="169524">The order was successfully generated.</translation>
+   <translation id="license_order_step4_clic_here" qtlid="169537">To confirm your order please click on the "Pay" button below.</translation>
+   <translation id="license_order_step4_pay_button" qtlid="130183">Pay</translation>
+   <translation id="license_order_step4_bc_information" qtlid="167886">A new tab will open and you will automatically be redirected to the OVH payment interface.</translation>
+
+   <translation id="license_order_filter_block_title" qtlid="186232">Filter the IP blocks:</translation>
+   <translation id="license_order_filter_block_type" qtlid="186245">Display the IPs by type only:</translation>
+   <translation id="license_order_filter_block_type_all" qtlid="69173">All</translation>
+   <translation id="license_order_filter_block_type_DEDICATED" qtlid="31714">Dedicated</translation>
+   <translation id="license_order_filter_block_type_FAILOVER" qtlid="186258">Failover</translation>
+   <translation id="license_order_filter_block_type_PCC" qtlid="186271">Dedicated Cloud</translation>
+   <translation id="license_order_filter_block_type_VPS" qtlid="23083">VPS</translation>
+   <translation id="license_order_filter_block_type_VRACK" qtlid="186284">vRack</translation>
+   <translation id="license_order_filter_block_search" qtlid="186297">Search:</translation>
+   <translation id="license_order_filter_block_search_placeholder" qtlid="140612">Searching...</translation>
+   <translation id="license_order_filter_block_validate" qtlid="31522">OK</translation>
+
+   <translation id="license_migrate_title" qtlid="186310">Migrate a license</translation>
+   <translation id="license_migrate_title_button" qtlid="186323">Migrate the license</translation>
+   <translation id="license_migrate_common_choose" qtlid="186115">Select...</translation>
+   <translation id="license_migrate_step1_question" qtlid="472198">Veuillez choisir la nouvelle adresse IP à laquelle votre licence sera associée</translation>
+   <translation id="license_migrate_step1_no_ip_available" qtlid="186349">No IPs are available</translation>
+   <translation id="license_migrate_step1_ip_block" qtlid="186362">Receiving block</translation>
+   <translation id="license_migrate_step1_ip" qtlid="186375">Receiving IP</translation>
+   <translation id="license_migrate_step1_compatibility_loading" qtlid="186388">Verification of license compatibility with the chosen IP</translation>
+   <translation id="license_migrate_step1_compatibility_ok" qtlid="186401">The license is compatible with the chosen IP</translation>
+   <translation id="license_migrate_step1_compatibility_nok" qtlid="186414">The license is not compatible with the chosen IP</translation>
+   <translation id="license_migrate_step2_question" qtlid="186427">Do you really want to migrate the license selected with the following settings?</translation>
+   <translation id="license_migrate_step2_ip_actual" qtlid="186440">Current IP address</translation>
+   <translation id="license_migrate_step2_ip_new" qtlid="186453">New IP address</translation>
+   <translation id="license_migrate_success" qtlid="186466">The migration request has been registered.</translation>
+   <translation id="license_migrate_fail" qtlid="186479">An error occurred on requesting to migrate the license.</translation>
+
+   <translation id="license_potential_problem" qtlid="373506">Depending on the type of license and the options chosen for this server, this licence may not function properly for these reasons:</translation>
+   <translation id="license_potential_problem_isHostOsHyperVLike" qtlid="373519">The hypervisor does not seem to run Hyper-V</translation>
+   <translation id="license_potential_problem_isHostOsVMwareLike" qtlid="373532">The hypervisor does not seem to run VMware</translation>
+   <translation id="license_potential_problem_isOsVirtuozzo4Like" qtlid="373545">The hypervisor does not seem to run Virtuozzo</translation>
+   <translation id="license_potential_problem_isHostOsXenLike" qtlid="373558">The hypervisor does not seem to run Xen</translation>
+   <translation id="license_potential_problem_isLinuxOs" qtlid="373571">The server does not seem to run a Linux distribution</translation>
+   <translation id="license_potential_problem_isOsCloudLinux" qtlid="373584">The server does not seem to run a CloudLinux distribution </translation>
+   <translation id="license_potential_problem_isOsPlesk10andLater" qtlid="373597">The server does not seem to run a Plesk 10 distribution </translation>
+   <translation id="license_potential_problem_isOsPlesk12" qtlid="373610">The server does not seem to run a Plesk 12 distribution </translation>
+   <translation id="license_potential_problem_isWindowsOs" qtlid="373623">The server does not seem to run a version of Windows </translation>
+   <translation id="license_potential_problem_isOsPleskOnyx" qtlid="373636">The server does not seem to run a Plesk Onyx distribution </translation>
+
+</translations>

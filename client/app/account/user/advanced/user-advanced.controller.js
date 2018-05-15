@@ -1,8 +1,8 @@
 angular.module("UserAccount.controllers").controller("UserAccount.controllers.advanced", [
     "UserAccount.services.Infos",
     "Alerter",
-    "translator",
-    function (userAccountServiceInfos, Alerter, translator) {
+    "$translate",
+    function (userAccountServiceInfos, Alerter, $translate) {
         "use strict";
 
         this.isLoadingDeveloperMode = false;
@@ -24,7 +24,13 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.ad
             const successKey = this.developmentMode.enabled ? "user_account_advanced_section_developer_alert_success_enabled" : "user_account_advanced_section_developer_alert_success_disabled";
             userAccountServiceInfos
                 .updateDeveloperMode(this.developmentMode)
-                .then(() => Alerter.success(translator.tr(successKey), "useraccount.alerts.dashboardAdvanced"), () => Alerter.error(translator.tr("user_account_advanced_section_developer_alert_error"), "useraccount.alerts.dashboardAdvanced"))
+                .then(() => {
+                    const zone = "useraccount.alerts.dashboardAdvanced";
+                    return Alerter.success($translate.instant(successKey), zone);
+                }, () => {
+                    const zone = "useraccount.alerts.dashboardAdvanced";
+                    return Alerter.error($translate.instant("user_account_advanced_section_developer_alert_error"), zone);
+                })
                 .finally(() => {
                     this.isLoadingDeveloperMode = false;
                 });

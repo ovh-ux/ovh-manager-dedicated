@@ -11,13 +11,13 @@ class DedicatedCloudSubDatacentersDeleteCtrl {
             this.$scope.loading = true;
             this.DedicatedCloud.deleteDatacenter($stateParams.productId, this.datacenterId)
                 .then(() => {
-                    this.$scope.setMessage(this.$scope.tr("dedicatedCloud_datacenter_delete_success", this.datacenterId), true);
+                    this.$scope.setMessage(this.$translate.instant("dedicatedCloud_datacenter_delete_success", { t0: this.datacenterId }), true);
                 })
                 .catch((err) => {
                     const data = Object.assign({}, err, {
                         type: "ERROR"
                     });
-                    this.$scope.setMessage(this.$scope.tr("dedicatedCloud_datacenter_delete_error", this.datacenterId), data);
+                    this.$scope.setMessage(this.$translate.instant("dedicatedCloud_datacenter_delete_error", { t0: this.datacenterId }), data);
                 })
                 .finally(() => {
                     this.$scope.resetAction();

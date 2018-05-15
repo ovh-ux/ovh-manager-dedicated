@@ -5,7 +5,8 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.co
     "User",
     "$q",
     "$stateParams",
-    function ($scope, Contacts, Alerter, User, $q, $stateParams) {
+    "$translate",
+    function ($scope, Contacts, Alerter, User, $q, $stateParams, $translate) {
         "use strict";
 
         const self = this;
@@ -23,7 +24,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.co
                     self.user = user;
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("user_account_contacts_error"), err, "useraccount.alerts.dashboardContacts");
+                    Alerter.alertFromSWS($translate.instant("user_account_contacts_error"), err, "useraccount.alerts.dashboardContacts");
                 }
             );
         }
@@ -34,7 +35,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.co
                     self.taskStateEnum = states;
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("user_account_contacts_error"), err, "useraccount.alerts.dashboardContacts");
+                    Alerter.alertFromSWS($translate.instant("user_account_contacts_error"), err, "useraccount.alerts.dashboardContacts");
                 }
             );
         }
@@ -73,7 +74,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.co
                         self.contactTasksIds = tasks.sort().reverse();
                     },
                     (err) => {
-                        Alerter.alertFromSWS($scope.tr("user_account_contacts_error"), err, "useraccount.alerts.dashboardContacts");
+                        Alerter.alertFromSWS($translate.instant("user_account_contacts_error"), err, "useraccount.alerts.dashboardContacts");
                     }
                 )
                 .finally(() => {

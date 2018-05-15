@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudDatacentersAddCtrl", ($scope, $stateParams, DedicatedCloud, COMMERCIAL_RANGE_ENUM) => {
+angular.module("App").controller("DedicatedCloudDatacentersAddCtrl", ($scope, $stateParams, $translate, DedicatedCloud, COMMERCIAL_RANGE_ENUM) => {
     "use strict";
 
     $scope.loader = false;
@@ -19,7 +19,7 @@ angular.module("App").controller("DedicatedCloudDatacentersAddCtrl", ($scope, $s
                 },
                 (data) => {
                     $scope.resetAction();
-                    $scope.setMessage($scope.tr("dedicatedCloud_datacenters_adding_load_error"), angular.extend(data, { type: "ERROR" }));
+                    $scope.setMessage($translate.instant("dedicatedCloud_datacenters_adding_load_error"), angular.extend(data, { type: "ERROR" }));
                 }
             )
             .finally(() => {
@@ -31,10 +31,10 @@ angular.module("App").controller("DedicatedCloudDatacentersAddCtrl", ($scope, $s
         $scope.resetAction();
         DedicatedCloud.addDatacenter($stateParams.productId, $scope.commercialRange.model).then(
             () => {
-                $scope.setMessage($scope.tr("dedicatedCloud_datacenters_adding_success"), true);
+                $scope.setMessage($translate.instant("dedicatedCloud_datacenters_adding_success"), true);
             },
             (data) => {
-                $scope.setMessage($scope.tr("dedicatedCloud_datacenters_adding_error"), angular.extend(data, { type: "ERROR" }));
+                $scope.setMessage($translate.instant("dedicatedCloud_datacenters_adding_error"), angular.extend(data, { type: "ERROR" }));
             }
         );
     };

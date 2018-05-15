@@ -1,4 +1,4 @@
-angular.module("App").controller("CdnGenerateSslCtrl", ($scope, $stateParams, Cdn, Alerter) => {
+angular.module("App").controller("CdnGenerateSslCtrl", ($scope, $stateParams, $translate, Cdn, Alerter) => {
     "use strict";
 
     $scope.ssl = null;
@@ -11,7 +11,7 @@ angular.module("App").controller("CdnGenerateSslCtrl", ($scope, $stateParams, Cd
             })
             .catch((error) => {
                 error.message = error.message.replace(" : null", "");
-                $scope.setMessage($scope.tr("cdn_configuration_add_ssl_get_error"), { type: "ERROR", message: error.message });
+                $scope.setMessage($translate.instant("cdn_configuration_add_ssl_get_error"), { type: "ERROR", message: error.message });
             })
             .finally(() => {
                 $scope.loading = false;
@@ -23,8 +23,8 @@ angular.module("App").controller("CdnGenerateSslCtrl", ($scope, $stateParams, Cd
     $scope.addSsl = function () {
         $scope.resetAction();
         Cdn.addSsl($stateParams.productId, $scope.entry)
-            .then(() => Alerter.success($scope.tr("cdn_configuration_generate_ssl_success"), "cdn_dedicated"))
-            .catch((err) => Alerter.alertFromSWS($scope.tr("cdn_configuration_generate_ssl_fail"), err, "cdn_dedicated"));
+            .then(() => Alerter.success($translate.instant("cdn_configuration_generate_ssl_success"), "cdn_dedicated"))
+            .catch((err) => Alerter.alertFromSWS($translate.instant("cdn_configuration_generate_ssl_fail"), err, "cdn_dedicated"));
     };
 
     $scope.loadSsl();

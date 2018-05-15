@@ -1,96 +1,92 @@
-angular.module("Billing.directives").controller("Billing.directives.billingDateRangeCtrl", [
-    "$scope",
-    "$timeout",
-    "translator",
-    "BillingdateRangeSelection",
-    function ($scope, $timeout, translator, dateRangeSelection) {
-        "use strict";
+angular.module("Billing.directives").controller("Billing.directives.billingDateRangeCtrl", function ($scope, $timeout, $translate, BillingdateRangeSelection) {
+    "use strict";
 
-        $scope.tr = translator.tr;
+    this.today = moment();
+    this.CUSTOM_RANGE_MODE = "custom";
+    this.model = {};
+    this.dateRangeSelection = BillingdateRangeSelection;
 
-        this.today = moment();
-        this.CUSTOM_RANGE_MODE = "custom";
-        this.model = {};
-        this.dateRangeSelection = dateRangeSelection;
+    this.presets = [
+        {
+            id: "3M",
+            label: $translate.instant("common_time_period_in_months", {
+                t0: 3
+            }),
+            args: [3, "months"],
+            startOf: "month"
+        },
+        {
+            id: "6M",
+            label: $translate.instant("common_time_period_in_months", {
+                t0: 6
+            }),
+            args: [6, "months"],
+            startOf: "month"
+        },
+        {
+            id: "1Y",
+            label: $translate.instant("common_time_period_one_year"),
+            args: [1, "years"],
+            startOf: "month"
+        }
+    ];
 
-        this.presets = [
-            {
-                id: "3M",
-                label: translator.tr("common_time_period_in_months", [3]),
-                args: [3, "months"],
-                startOf: "month"
-            },
-            {
-                id: "6M",
-                label: translator.tr("common_time_period_in_months", [6]),
-                args: [6, "months"],
-                startOf: "month"
-            },
-            {
-                id: "1Y",
-                label: translator.tr("common_time_period_one_year"),
-                args: [1, "years"],
-                startOf: "month"
-            }
-        ];
+    this.dateFromChanged = ({ dateFrom }) => {
+        BillingdateRangeSelection.dateFrom = moment(dateFrom).startOf("day");
+        if (moment(BillingdateRangeSelection.dateFrom).isAfter(BillingdateRangeSelection.dateTo)) {
+            BillingdateRangeSelection.dateTo = BillingdateRangeSelection.dateFrom.endOf("day");
+        }
+        this.triggerChangeHandler();
+    };
 
-        this.dateFromChanged = ({ dateFrom }) => {
-            dateRangeSelection.dateFrom = moment(dateFrom).startOf("day");
-            if (moment(dateRangeSelection.dateFrom).isAfter(dateRangeSelection.dateTo)) {
-                dateRangeSelection.dateTo = dateRangeSelection.dateFrom.endOf("day");
-            }
-            this.triggerChangeHandler();
-        };
+    this.dateToChanged = ({ dateTo }) => {
+        BillingdateRangeSelection.dateTo = moment(dateTo).endOf("day");
+        if (moment(BillingdateRangeSelection.dateTo).isBefore(BillingdateRangeSelection.dateFrom)) {
+            BillingdateRangeSelection.dateFrom = BillingdateRangeSelection.dateTo.startOf("day");
+        }
+        this.triggerChangeHandler();
+    };
 
-        this.dateToChanged = ({ dateTo }) => {
-            dateRangeSelection.dateTo = moment(dateTo).endOf("day");
-            if (moment(dateRangeSelection.dateTo).isBefore(dateRangeSelection.dateFrom)) {
-                dateRangeSelection.dateFrom = dateRangeSelection.dateTo.startOf("day");
-            }
-            this.triggerChangeHandler();
-        };
+    this.onPresetBtn = (preset) => {
+        BillingdateRangeSelection.mode = preset.id;
+        this.applyPreset(preset);
+        this.triggerChangeHandler();
+    };
 
-        this.onPresetBtn = (preset) => {
-            dateRangeSelection.mode = preset.id;
-            this.applyPreset(preset);
-            this.triggerChangeHandler();
-        };
+    this.applyPreset = (preset) => {
+        BillingdateRangeSelection.dateFrom = moment()
+            .subtract(...preset.args)
+            .startOf(preset.startOf);
 
-        this.applyPreset = (preset) => {
-            dateRangeSelection.dateFrom = moment()
-                .subtract(...preset.args)
-                .startOf(preset.startOf);
+        BillingdateRangeSelection.dateTo = moment().endOf("day");
+    };
 
-            dateRangeSelection.dateTo = moment().endOf("day");
-        };
+    this.onCustomRangeBtn = () => {
+        BillingdateRangeSelection.mode = this.CUSTOM_RANGE_MODE;
+    };
 
-        this.onCustomRangeBtn = () => {
-            dateRangeSelection.mode = this.CUSTOM_RANGE_MODE;
-        };
+    this.triggerChangeHandler = () => {
+        if (angular.isFunction(this.onChange)) {
+            $timeout(() => {
+                this.onChange(BillingdateRangeSelection);
+            });
+        }
+    };
 
-        this.triggerChangeHandler = () => {
-            if (angular.isFunction(this.onChange)) {
-                $timeout(() => {
-                    this.onChange(dateRangeSelection);
-                });
-            }
-        };
+    /**
+     * Initialisation
+     */
+    (function init (_self) {
+        if (BillingdateRangeSelection.mode === _self.CUSTOM_RANGE_MODE) {
+            return;
+        }
 
-        /**
-         * Initialisation
-         */
-        (function init (_self) {
-            if (dateRangeSelection.mode === _self.CUSTOM_RANGE_MODE) {
-                return;
-            }
+        let preset = _self.presets.find((_preset) => _preset.id === BillingdateRangeSelection.mode);
+        if (!preset) {
+            preset = _self.presets[0];
+            BillingdateRangeSelection.mode = preset.id;
+        }
 
-            let preset = _self.presets.find((_preset) => _preset.id === dateRangeSelection.mode);
-            if (!preset) {
-                preset = _self.presets[0];
-                dateRangeSelection.mode = preset.id;
-            }
-
-            _self.applyPreset(preset);
-        })(this);
-    }
-]);
+        _self.applyPreset(preset);
+    })(this);
+});

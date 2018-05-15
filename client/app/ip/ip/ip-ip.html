@@ -22,10 +22,22 @@
                                     class="btn btn-link"
                                     data-ng-click="viewServicesInAlert()">
                                 <span data-ng-if="filters.service.serviceName === '_ALL'"
-                                      data-ng-bind="trpl('ip_alerts', alertsCount()) + ' :'">
+                                      data-ng-pluralize
+                                      data-count="alertsCount()"
+                                      data-when="{
+                                          '0': ('ip_alerts_none' | translate) + ' :',
+                                          'one': ('ip_alerts_1' | translate) + ' :',
+                                          'other': ('ip_alerts_other' | translate: { count: {} }) + ' :'
+                                      }">
                                 </span>
                                 <span data-ng-if="filters.service.serviceName !== '_ALL'"
-                                      data-ng-bind="trpl('ip_alerts_service', alertsCount()) + ' :'">
+                                      data-ng-pluralize
+                                      data-count="alertsCount()"
+                                      data-when="{
+                                          '0': ('ip_alerts_service_none' | translate) + ' :',
+                                          'one': ('ip_alerts_service_1' | translate) + ' :',
+                                          'other': ('ip_alerts_service_other' | translate: { count: {} }) + ' :'
+                                      }">
                                 </span>
                             </button>
                         </p>
@@ -34,7 +46,14 @@
                             <button type="button"
                                     class="btn btn-link"
                                     data-ng-click="viewServicesInAlert()">
-                                <span>{{ trpl('ip_alerts_spam', (alerts.spam.length)) }}</span>
+                                <span data-ng-pluralize
+                                      data-count="alerts.spam.length"
+                                      data-when="{
+                                          '0': ('ip_alerts_spam' | translate),
+                                          'one': ('ip_alerts_spam_1' | translate),
+                                          'other': ('ip_alerts_spam_other' | translate: { count: {} })
+                                      }">
+                                </span>
                             </button>
                         </p>
 
@@ -42,7 +61,14 @@
                             <button type="button"
                                     class="btn btn-link"
                                     data-ng-click="viewServicesInAlert()">
-                                <span>{{ trpl('ip_alerts_antihack', (alerts.antihack.length)) }}</span>
+                                <span data-ng-pluralize
+                                      data-count="alerts.antihack.length"
+                                      data-when="{
+                                          '0': ('ip_alerts_antihack' | translate),
+                                          'one': ('ip_alerts_antihack_1' | translate),
+                                          'other': ('ip_alerts_antihack_other' | translate: { count: {} })
+                                      }">
+                                </span>
                             </button>
                         </p>
 
@@ -50,7 +76,14 @@
                             <button type="button"
                                     class="btn btn-link"
                                     data-ng-click="viewServicesInAlert()">
-                                <span>{{ trpl('ip_alerts_arp', (alerts.arp.length)) }}</span>
+                                <span data-ng-pluralize
+                                      data-count="alerts.arp.length"
+                                      data-when="{
+                                          '0': ('ip_alerts_arp' | translate),
+                                          'one': ('ip_alerts_arp_1' | translate),
+                                          'other': ('ip_alerts_arp_other' | translate: { count: {} })
+                                      }">
+                                </span>
                             </button>
                         </p>
 
@@ -58,7 +91,14 @@
                             <button type="button"
                                     class="btn btn-link"
                                     data-ng-click="viewServicesInAlert()">
-                                <span>{{ trpl('ip_alerts_mitigation', (alerts.mitigation.length)) }}</span>
+                                <span data-ng-pluralize
+                                      data-count="alerts.mitigation.length"
+                                      data-when="{
+                                          '0': ('ip_alerts_mitigation' | translate),
+                                          'one': ('ip_alerts_mitigation_1' | translate),
+                                          'other': ('ip_alerts_mitigation_other' | translate: { count: {} })
+                                      }">
+                                </span>
                             </button>
                         </p>
                     </div>
@@ -67,10 +107,10 @@
                          data-ng-if="!alertsCount()"
                          role="alert">
                         <span data-ng-if="filters.service.serviceName === '_ALL'"
-                              data-i18n-static="ip_alerts_none">
+                              data-translate="ip_alerts_none">
                         </span>
                         <span data-ng-if="filters.service.serviceName !== '_ALL'"
-                              data-i18n-static="ip_alerts_service_none">
+                              data-translate="ip_alerts_service_none">
                         </span>
                     </div>
 
@@ -79,20 +119,20 @@
                 <!-- Loader -->
                 <div data-ng-if="loading.table && state.loaded < state.total">
                     <div data-ng-if="state.total > 1">
-                        <strong data-ng-bind="tr('ip_loader_loading_state', [state.loaded + 1, state.total])"></strong>
+                        <strong data-ng-translate="ip_loader_loading_state" data-translate-values="{ t0: state.loaded + 1, t1: state.total }"></strong>
                         <div class="progress">
                             <div class="progress-bar progress-bar-info progress-bar-striped"
                                  role="progressbar"
                                  data-ng-attr-style="{{ 'width:' + getStatePercent() + '%' }}">
                                  <span class="sr-only"
-                                       data-ng-bind="('common_loading' | UAi18n) + ' ' + getStatePercent() + '%'">
+                                       data-ng-bind="('common_loading' | translate) + ' ' + getStatePercent() + '%'">
                                 </span>
                             </div>
                         </div>
-                        <p data-i18n-static="ip_loader_tips"></p>
+                        <p data-translate="ip_loader_tips"></p>
                     </div>
                     <div data-ng-if="state.total === 1">
-                        <strong data-i18n-static="ip_loader_loading_uniq"></strong>
+                        <strong data-translate="ip_loader_loading_uniq"></strong>
                     </div>
                 </div>
             </div>
@@ -103,30 +143,30 @@
                         type="button"
                         data-ng-disabled="(state.loaded)!=state.total"
                         data-ng-click="setAction('ip/export-csv/ip-ip-export-csv', {'ipsList':ipsList})"
-                        data-i18n-static="ip_export">
+                        data-translate="ip_export">
                 </button>
                 <button class="btn btn-block btn-default"
                         type="button"
                         data-ng-if="canImportIPFO()"
                         data-ng-click="setAction('ip/order/migrate/ip-ip-order-migrate')"
-                        data-i18n-static="ip_migration">
+                        data-translate="ip_migration">
                 </button>
                 <button type="button"
                         data-ng-if="canOrderAgoraIPFO()"
                         class="btn btn-block btn-default"
                         data-ng-click="setAction('ip/agoraOrder/ip-ip-agoraOrder')"
-                        data-i18n-static="ip_additional_order">
+                        data-translate="ip_additional_order">
                 </button>
                 <button type="button"
                         data-ng-if="canOrderIPFO()"
                         class="btn btn-block btn-default"
                         data-ng-click="setAction('ip/order/ip-ip-order')"
-                        data-i18n-static="ip_additional_order">
+                        data-translate="ip_additional_order">
                 </button>
                 <button class="btn btn-block btn-default"
                         type="button"
                         data-ng-click="displayOrganisation()"
-                        data-i18n-static="ip_organisation_button">
+                        data-translate="ip_organisation_button">
                 </button>
             </div>
 
@@ -136,22 +176,22 @@
              data-ng-if="services.length">
             <label class="control-label"
                    for="serviceSelector"
-                   data-i18n-static="ip_table_header_service">
+                   data-translate="ip_table_header_service">
             </label>
             <select class="form-control"
                     id="serviceSelector"
                     name="serviceSelector"
                     data-ng-model="filters.service"
                     data-ng-change="selectService()"
-                    data-ng-options="service as (i18n['ip_filter_services_' + service.serviceName] || service.serviceName) group by (i18n['ip_filter_services_title_' + service.category] || service.category) for service in services">
+                    data-ng-options="service as (('ip_filter_services_' + service.serviceName) | translateAlt: service.serviceName) group by (('ip_filter_services_title_' + service.category) | translateAlt: service.category) for service in services">
             </select>
         </div>
 
         <div data-ng-if="filters.service.serviceName === '_PARK' && parkPrice">
             <p>
-                <span data-i18n-static="ip_filter_services__PARK"></span>
+                <span data-translate="ip_filter_services__PARK"></span>
                 <strong class="text-danger"
-                        data-ng-bind="('price_ht_label' | UAi18n:[parkPrice]) + ' / ' + i18n.ip_month + ' / ' + i18n.ip_ip">
+                        data-ng-bind-html="('price_ht_label' | translate:{t0: parkPrice}) + ' / ' + ('ip_month' | translate) + ' / ' + ('ip_ip' | translate)">
                 </strong>
             </p>
         </div>
@@ -163,32 +203,32 @@
                     <tr>
                         <th></th>
                         <th scope="col"
-                            data-i18n-static="ip_table_header_ip_address">
+                            data-translate="ip_table_header_ip_address">
                         </th>
                         <th scope="col"
-                            data-i18n-static="ip_table_header_country">
+                            data-translate="ip_table_header_country">
                         </th>
                         <th scope="col"
                             data-ng-if="filters.service.serviceName === '_ALL'"
-                            data-i18n-static="ip_table_header_service">
+                            data-translate="ip_table_header_service">
                         </th>
                         <th scope="col"
-                            data-i18n-static="ip_table_header_reverse">
+                            data-translate="ip_table_header_reverse">
                         </th>
                         <th scope="col"
-                            data-i18n-static="ip_table_header_virtual_mac">
+                            data-translate="ip_table_header_virtual_mac">
                         </th>
                         <th scope="col"
-                            data-i18n-static="ip_table_header_mitigation">
+                            data-translate="ip_table_header_mitigation">
                         </th>
                         <th scope="col"
-                            data-i18n-static="ip_table_header_security">
+                            data-translate="ip_table_header_security">
                         </th>
                         <th scope="col"
-                            data-i18n-static="ip_table_header_game_mitigation">
+                            data-translate="ip_table_header_game_mitigation">
                         </th>
                         <th scope="col"
-                            data-i18n-static="ip_table_header_alerts">
+                            data-translate="ip_table_header_alerts">
                         </th>
                         <th></th>
                     </tr>
@@ -202,7 +242,7 @@
                             <oui-spinner size="s"></oui-spinner>
                         </td>
                         <td colspan="42">
-                            <span data-ng-bind="tr('ip_table_ipblock_refresh', [ipBlock.ipBlock])"></span>
+                            <span data-ng-bind="'ip_table_ipblock_refresh' | translate:{ t0: ipBlock.ipBlock }"></span>
                         </td>
                     </tr>
 
@@ -233,8 +273,8 @@
                             <span data-ng-bind="ipBlock.ipBlock"></span>
                             <span class="label label-info ml-2"
                                   data-ng-if="ipBlock.type == 'FAILOVER'"
-                                  title="{{:: 'ip_failover' | UAi18n }}"
-                                  data-i18n-static="ip_failover_short">
+                                  title="{{:: 'ip_failover' | translate }}"
+                                  data-translate="ip_failover_short">
                             </span>
                             <small class="ip-description d-block text-truncate"
                                    data-ng-if="ipBlock.description"
@@ -250,13 +290,13 @@
 
                         <!-- Server -->
                         <td data-ng-if="filters.service.serviceName === '_ALL'"
-                            data-ng-bind="ipBlock.routedTo ? ipBlock.routedTo === '_PARK' ? tr('ip_service_PARK') : ipBlock.routedTo : '-'">
+                            data-ng-bind="ipBlock.routedTo ? ipBlock.routedTo === '_PARK' ? ('ip_service_PARK' | translate) : ipBlock.routedTo : '-'">
                         </td>
 
                         <!-- Reverse -->
                         <td>
                             <span class="label label-info"
-                                  title="{{::i18n.ip_table_manage_delegation_ipv6block_delegation_reverse_dns}}"
+                                  title="{{ 'ip_table_manage_delegation_ipv6block_delegation_reverse_dns' | translate }}"
                                   data-ng-if="ipBlock.reverseDelegations && ipBlock.reverseDelegations.length > 0">NS</span>
                             <ul class="list-unstyled"
                                 data-ng-show="ipBlock.reverseDelegations">
@@ -265,9 +305,9 @@
                                     <button class="btn btn-link"
                                             type="button"
                                             data-ng-click="setAction('ip/reverse/delete/ip-ip-reverse-delete', {ipBlock: ipBlock, reverse:reverse})"
-                                            title="{{:: 'common_delete' | UAi18n }}">
+                                            title="{{:: 'common_delete' | translate }}">
                                         <span class="fa fa-trash"
-                                           aria-label="{{:: 'common_delete' | UAi18n }}"
+                                           aria-label="{{:: 'common_delete' | translate }}"
                                            aria-hidden="true">
                                         </span>
                                     </button>
@@ -278,9 +318,9 @@
                             <button class="btn btn-link"
                                     data-ng-if="ipBlock.reverseDelegationsErr"
                                     data-ng-click="getReverseDelegations(ipBlock)"
-                                    title="{{:: 'common_refresh' | UAi18n }}">
+                                    title="{{:: 'common_refresh' | translate }}">
                                 <span class="fa fa-refresh"
-                                   aria-label="{{:: 'common_refresh' | UAi18n }}"
+                                   aria-label="{{:: 'common_refresh' | translate }}"
                                    aria-hidden="true">
                                 </span>
                             </button>
@@ -303,7 +343,7 @@
                         <td>
                             <div class="text-warning"
                                  data-ng-if="alertsCount(ipBlock)"
-                                 data-uib-tooltip="{{ trpl('ip_alerts_spam', (ipBlock.alerts.spam.length)) + ', ' + trpl('ip_alerts_antihack', (ipBlock.alerts.antihack.length)) + ', ' + trpl('ip_alerts_arp', (ipBlock.alerts.arp.length)) + ', ' + trpl('ip_alerts_mitigation', (ipBlock.alerts.mitigation.length)) }}"
+                                 data-uib-tooltip="{{ alertsTooltip(ipBlock) }}"
                                  data-tooltip-placement="left">
                                 <span class="fa fa-warning"
                                       aria-hidden="true">
@@ -335,8 +375,8 @@
                                   data-ng-bind="ip.ip"></span>
                             <span class="label label-info ml-2"
                                   data-ng-if="ipBlock.isUniq && ipBlock.type == 'FAILOVER'"
-                                  title="{{:: 'ip_failover' | UAi18n }}"
-                                  data-i18n-static="ip_failover_short">
+                                  title="{{:: 'ip_failover' | translate }}"
+                                  data-translate="ip_failover_short">
                             </span>
                             <small class="ip-description d-block text-truncate"
                                    data-ng-if="ipBlock.description"
@@ -352,7 +392,7 @@
 
                         <!-- Server -->
                         <td data-ng-if="filters.service.serviceName === '_ALL'"
-                            data-ng-bind="ipBlock.routedTo ? ipBlock.routedTo === '_PARK' ? tr('ip_service_PARK') : ipBlock.routedTo : '-'">
+                            data-ng-bind="ipBlock.routedTo ? ipBlock.routedTo === '_PARK' ? ('ip_service_PARK' | translate) : ipBlock.routedTo : '-'">
                         </td>
 
                         <!-- Reverse -->
@@ -362,12 +402,12 @@
                             </span>
                             <button type="button"
                                     class="btn btn-link"
-                                    title="{{:: 'common_change' | UAi18n }}"
+                                    title="{{:: 'common_change' | translate }}"
                                     data-ng-if="!ip.reverseEdit"
                                     data-ng-click="editReverseInline(ipBlock, ip)">
                                 <span class="fa fa-edit"
                                       aria-hidden="true"
-                                      aria-label="{{:: 'common_change' | UAi18n }}">
+                                      aria-label="{{:: 'common_change' | translate }}">
                                 </span>
                             </button>
                             <div class="input-group"
@@ -379,17 +419,17 @@
                                     <button class="btn btn-primary"
                                             data-ng-click="editReverseInlineApply(ipBlock, ip, $event)"
                                             data-ng-disabled="!reverseIsValid(ip.reverseEditValue)"
-                                            title="{{:: 'common_confirm' | UAi18n }}">
+                                            title="{{:: 'common_confirm' | translate }}">
                                         <span class="fa fa-check"
-                                              aria-label="{{:: 'common_confirm' | UAi18n }}"
+                                              aria-label="{{:: 'common_confirm' | translate }}"
                                               aria-hidden="true">
                                         </span>
                                     </button>
                                     <button class="btn btn-default"
                                             data-ng-click="editReverseInlineCancel(ipBlock, ip, $event)"
-                                            title="{{:: 'common_cancel' | UAi18n }}">
+                                            title="{{:: 'common_cancel' | translate }}">
                                         <span class="fa fa-times"
-                                              aria-label="{{:: 'common_confirm' | UAi18n }}"
+                                              aria-label="{{:: 'common_confirm' | translate }}"
                                               aria-hidden="true">
                                         </span>
                                     </button>
@@ -405,8 +445,8 @@
                                 </span>
                                 <span class="badge"
                                       data-ng-if="ipBlock.service.virtualmac.status === 'PENDING'"
-                                      data-i18n-static="ip_taskpending_label"
-                                      data-uib-tooltip="{{i18n.ip_manage_task_pending}}"
+                                      data-translate="ip_taskpending_label"
+                                      data-uib-tooltip="{{ 'ip_manage_task_pending' | translate }}"
                                       data-tooltip-placement="top">
                                 </span>
                             </div>
@@ -423,7 +463,7 @@
                                       'badge': ip.mitigation === 'CREATION_PENDING' || ip.mitigation === 'REMOVAL_PENDING',
                                       'font-weight-bold': ip.mitigation === 'FORCED'
                                   }"
-                                  data-ng-bind="tr('ip_mitigation_' + (ip.mitigation || 'DEFAULT'))">
+                                  data-ng-bind="'ip_mitigation_' + (ip.mitigation || 'DEFAULT') | translate">
                             </span>
                         </td>
 
@@ -434,14 +474,14 @@
                                       'badge': ip.firewall === 'ENABLE_PENDING' || ip.firewall === 'DISABLE_PENDING',
                                       'font-weight-bold': ip.firewall === 'ACTIVATED'
                                   }"
-                                  data-ng-bind="tr('ip_firewall_' + (ip.firewall || 'NOT_CONFIGURED'))">
+                                  data-ng-bind="'ip_firewall_' + (ip.firewall || 'NOT_CONFIGURED') | translate">
                             </span>
                         </td>
 
                         <!-- Game mitigation -->
                         <td>
                             <span data-ng-if="ip.gameMitigation && ipBlock.type!='CLOUD'"
-                                  data-i18n-static="ip_game_mitigation_ACTIVATED">
+                                  data-translate="ip_game_mitigation_ACTIVATED">
                             </span>
                         </td>
 
@@ -449,22 +489,22 @@
                         <td class="text-warning">
                             <span class="fa fa-minus-circle"
                                   data-ng-if="ip.spam === 'BLOCKED_FOR_SPAM'"
-                                  data-uib-tooltip="{{ trpl('ip_alerts_spam', 1) }}"
+                                  data-uib-tooltip="{{ 'ip_alerts_spam_1' | translate }}"
                                   data-tooltip-placement="left">
                             </span>
                             <span class="fa fa-bug"
                                   data-ng-if="ip.antihack === 'BLOCKED'"
-                                  data-uib-tooltip="{{ trpl('ip_alerts_antihack', 1) }}"
+                                  data-uib-tooltip="{{ 'ip_alerts_antihack_1' | translate }}"
                                   data-tooltip-placement="left">
                             </span>
                             <span class="fa fa-minus-circle"
                                   data-ng-if="ip.arp === 'BLOCKED'"
-                                  data-uib-tooltip="{{ trpl('ip_alerts_arp', 1) }}"
+                                  data-uib-tooltip="{{ 'ip_alerts_arp_1' | translate }}"
                                   data-tooltip-placement="left">
                             </span>
                             <span class="fa fa-bolt"
                                   data-ng-if="ip.mitigation === 'FORCED'"
-                                  data-uib-tooltip="{{ trpl('ip_alerts_mitigation', 1) }}"
+                                  data-uib-tooltip="{{ 'ip_alerts_mitigation_1' | translate }}"
                                   data-tooltip-placement="left">
                             </span>
                         </td>
@@ -482,7 +522,7 @@
                             <button type="button"
                                     class="btn btn-default"
                                     data-ng-click="setAction('ip/reverse/add/ip-ip-reverse-add', { ipBlock: ipBlock })"
-                                    data-i18n-static="ip_table_manage_select_ipv6block">
+                                    data-translate="ip_table_manage_select_ipv6block">
                             </button>
                         </td>
                     </tr>
@@ -490,7 +530,7 @@
                     <tr data-ng-if="!loading && ipsListEmpty">
                         <td class="text-center"
                             colspan="42"
-                            data-i18n-static="ip_table_empty">
+                            data-translate="ip_table_empty">
                         </td>
                     </tr>
                 </tbody>
@@ -498,7 +538,7 @@
                 <tbody data-ng-if="!loading.table && !ipsList.length">
                     <tr>
                         <td colspan="42"
-                            data-i18n-static="ip_table_empty">
+                            data-translate="ip_table_empty">
                         </td>
                     </tr>
                 </tbody>

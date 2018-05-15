@@ -1,4 +1,4 @@
-angular.module("App").controller("KvmOrderCtrl", ($scope, $rootScope, $stateParams, Server, Alerter) => {
+angular.module("App").controller("KvmOrderCtrl", ($scope, $rootScope, $stateParams, $translate, Server, Alerter) => {
     "use strict";
 
     $scope.user = $scope.currentActionData;
@@ -25,13 +25,13 @@ angular.module("App").controller("KvmOrderCtrl", ($scope, $rootScope, $statePara
                             });
                         },
                         (err) => {
-                            Alerter.alertFromSWS($scope.tr("server_configuration_kvm_order_error"), err.data);
+                            Alerter.alertFromSWS($translate.instant("server_configuration_kvm_order_error"), err.data);
                             $scope.resetAction();
                         }
                     );
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("server_configuration_kvm_order_error"), err.data);
+                    Alerter.alertFromSWS($translate.instant("server_configuration_kvm_order_error"), err.data);
                     $scope.resetAction();
                 }
             )
@@ -52,11 +52,14 @@ angular.module("App").controller("KvmOrderCtrl", ($scope, $rootScope, $statePara
         Server.postKvmOrderInfos($stateParams.productId, $scope.order.durationSelected)
             .then(
                 (data) => {
-                    Alerter.alertFromSWS($scope.tr("server_configuration_kvm_order_finish_success", [data.url, data.orderId]), { idTask: data.orderId, state: "OK" }, "server_tab_ipmi_alert");
+                    Alerter.alertFromSWS($translate.instant("server_configuration_kvm_order_finish_success", {
+                        t0: data.url,
+                        t1: data.orderId
+                    }), { idTask: data.orderId, state: "OK" }, "server_tab_ipmi_alert");
                     window.open(data.url, "_blank");
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("server_configuration_kvm_order_error"), err.data);
+                    Alerter.alertFromSWS($translate.instant("server_configuration_kvm_order_error"), err.data);
                 }
             )
             .finally(() => {
