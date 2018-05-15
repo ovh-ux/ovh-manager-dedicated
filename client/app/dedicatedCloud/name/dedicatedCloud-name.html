@@ -2,7 +2,7 @@
     <div data-wizard
          data-wizard-on-cancel="$ctrl.closeModal.bind($ctrl)"
          data-wizard-on-finish="$ctrl.updateDescription.bind($ctrl)"
-         data-wizard-title="'dedicatedCloud_' + $ctrl.translateWord + '_modify_title' | translate"
+         data-wizard-title="'dedicatedCloud_' + $ctrl.modalContextTitle + '_modify_title' | translate"
          data-wizard-confirm-button-text="'common_change' | translate">
 
          <div class="text-center"
@@ -17,7 +17,7 @@
                  data-ng-if="!$ctrl.updating">
                 <label for="description"
                        class="control-label"
-                       data-translate="{{ 'dedicatedCloud_' + $ctrl.translateWord }}">
+                       data-translate="{{ 'dedicatedCloud_' + $ctrl.modalContextTitle }}">
                 </label>
                 <input type="text"
                        id="description"

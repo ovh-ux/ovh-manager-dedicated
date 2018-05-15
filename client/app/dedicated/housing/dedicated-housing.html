@@ -43,7 +43,7 @@
                         data-dismiss="alert"
                         data-ng-click="createStopBotherUserPref()">&times;
                 </button>
-                <span data-ng-bind-html="'housing_support_phone' | translate:{t0: housingPhoneNumber}"></span>
+                <span data-ng-bind-html="'housing_support_phone' | translate:{ t0: housingPhoneNumber }"></span>
             </div>
             <div class="tab-pane active"
                  data-ng-include="!server.isExpired && 'dedicated/housing/' + toKebabCase(selectedTab) + '/dedicated-housing-' + toKebabCase(selectedTab) + '.html' || ''">

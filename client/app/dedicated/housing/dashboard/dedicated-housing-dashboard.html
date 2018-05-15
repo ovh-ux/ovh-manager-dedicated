@@ -3,9 +3,9 @@
 <div class="row d-md-flex mb-5">
     <div class="col-sm-4">
         <div class="oui-tile mb-5 h-100">
-            <h4 class="oui-tile__title oui-header_4"
+            <h2 class="oui-tile__title oui-header_4"
                 data-translate="housing_tab_stats_legend_general">
-            </h4>
+            </h2>
             <div class="oui-tile__body text-center"
                  data-ng-if="loadingHousingInformations">
                 <oui-spinner></oui-spinner>
@@ -29,7 +29,7 @@
                     </dl>
                     <div class="oui-tile__actions">
                         <oui-action-menu
-                            aria-label="{{:: 'menu_action_label' | translate:{t0: ('housing_configuration_reboot_title_button' | translate)} }}"
+                            aria-label="{{:: 'menu_action_label' | translate:{ t0: ('housing_configuration_reboot_title_button' | translate) } }}"
                             data-compact
                             data-align="end">
                             <oui-action-menu-item
@@ -105,9 +105,9 @@
     <div class="col-sm-4">
         <div class="oui-tile mb-5 h-100">
 
-            <h4 class="oui-tile__title oui-header_4"
+            <h2 class="oui-tile__title oui-header_4"
                 data-translate="housing_tab_stats_legend_network">
-            </h4>
+            </h2>
             <div class="oui-tile__body"
                  data-ng-repeat="network in housing.network track by $index">
                 <div class="oui-tile__item">
@@ -125,7 +125,7 @@
                             <oui-action-menu-item
                                 data-text="{{:: 'housing_configuration_ipv4_manage' | translate }}"
                                 data-aria-label="{{:: 'housing_configuration_ipv4_manage' | translate }}"
-                                data-ng-href="{{ '#/configuration/ip?tab=IP&serviceName=' + housing.name }}"></oui-action-menu-item>
+                                data-href="{{ '#/configuration/ip?tab=IP&serviceName=' + housing.name }}"></oui-action-menu-item>
                         </oui-action-menu>
                     </div>
                 </div>
@@ -159,9 +159,9 @@
 
     <div class="col-sm-4">
         <div class="oui-tile mb-5 h-100">
-            <h4 class="oui-tile__title oui-header_4"
+            <h2 class="oui-tile__title oui-header_4"
                 data-translate="housing_tab_stats_legend_route">
-            </h4>
+            </h2>
             <div class="oui-tile__body"
                  data-ng-repeat="network in housing.network track by $index">
                 <div class="oui-tile__item">
@@ -189,9 +189,9 @@
     <div class="col-sm-4">
         <div class="oui-tile mb-5 h-100"
              data-ng-if="!loadingHousingInformations">
-            <h4 class="oui-tile__title oui-header_4"
+            <h2 class="oui-tile__title oui-header_4"
                 data-translate="housing_tab_stats_legend_subscription">
-            </h4>
+            </h2>
             <div class="oui-tile__body">
                 <div class="oui-tile__item">
                     <dl class="oui-tile__definition">
@@ -204,13 +204,13 @@
                     </dl>
                     <div class="oui-tile__actions">
                         <oui-action-menu
-                            aria-label="{{:: 'menu_action_label' | translate:{t0: ('core_change_owner' | translate)} }}"
+                            aria-label="{{:: 'menu_action_label' | translate:{ t0: ('core_change_owner' | translate)} }}"
                             data-compact
                             data-align="end">
                             <oui-action-menu-item
                                 aria-label="{{:: 'core_change_owner' | translate }}"
                                 data-text="{{:: 'core_change_owner' | translate }}"
-                                href="{{changeOwnerUrl}}"
+                                data-href="{{changeOwnerUrl}}"
                                 data-external>
                             </oui-action-menu-item>
                         </oui-action-menu>

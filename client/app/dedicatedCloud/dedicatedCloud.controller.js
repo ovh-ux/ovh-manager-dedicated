@@ -39,7 +39,7 @@ angular.module("App").controller("DedicatedCloudCtrl", [
 
         $scope.dedicatedCloud = {};
 
-        function showNotificationIfRequired (notification) {
+        $scope.showNotificationIfRequired = function (notification) {
             Notification.checkIfStopNotification(notification, $stateParams.productId)
                 .then((stopNotification) => {
                     $scope.notifications[notification] = !stopNotification;
@@ -48,20 +48,20 @@ angular.module("App").controller("DedicatedCloudCtrl", [
                     $scope.notifications[notification] = true;
                     $log.error(error);
                 });
-        }
+        };
 
-        function loadNewPrices () {
+        $scope.loadNewPrices = function () {
             return DedicatedCloud.getNewPrices($stateParams.productId).then((newPrices) => {
                 $scope.newPriceInformation = newPrices.resources;
                 $scope.hasChangePrices = newPrices.resources.filter((resource) => resource.changed === true).length > 0;
             });
-        }
+        };
 
-        function loadUserInfo () {
+        $scope.loadUserInfo = function () {
             return User.getUser().then((user) => {
                 $scope.dedicatedCloud.email = user.email;
             });
-        }
+        };
 
         $scope.loadDedicatedCloud = function () {
             $scope.message = null;
@@ -73,8 +73,8 @@ angular.module("App").controller("DedicatedCloudCtrl", [
                         $scope.setMessage($translate.instant("common_expired"), { type: "cancelled" });
                     }
                     $scope.dedicatedCloudDescription.model = angular.copy($scope.dedicatedCloud.description);
-                    loadNewPrices();
-                    loadUserInfo();
+                    $scope.loadNewPrices();
+                    $scope.loadUserInfo();
                     $scope.showHdsReadyNotificationIfRequired($scope.HDS_READY_NOTIFICATION);
                 })
                 .catch((data) => {
@@ -135,10 +135,6 @@ angular.module("App").controller("DedicatedCloudCtrl", [
 
         $scope.getRight = function (order) {
             return $scope.dedicatedCloud ? $.inArray(order, $scope.dedicatedCloud.orderRight) === -1 : false;
-        };
-
-        $scope.stateGo = function (stateName) {
-            $state.go(stateName);
         };
 
         // Action + message
@@ -253,7 +249,7 @@ angular.module("App").controller("DedicatedCloudCtrl", [
 
         $scope.showHdsReadyNotificationIfRequired = function (notification) {
             if (_.startsWith($scope.dedicatedCloud.commercialRange.startsWith, "2014") || _.startsWith($scope.dedicatedCloud.commercialRange, "2016")) {
-                showNotificationIfRequired(notification);
+                $scope.showNotificationIfRequired(notification);
             }
         };
 

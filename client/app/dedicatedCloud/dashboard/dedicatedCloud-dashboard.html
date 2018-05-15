@@ -8,9 +8,9 @@
                     'col-md-6': !featureAvailability.allowDedicatedServerComplianceOptions()
                  }">
                 <div class="oui-tile mb-5 h-100">
-                    <h4 class="oui-header_4 oui-tile__title"
+                    <h2 class="oui-header_4 oui-tile__title"
                         data-translate="dedicatedCloud_information_title">
-                    </h4>
+                    </h2>
                     <div class="oui-tile__body">
                         <div class="oui-tile__item">
                             <dl class="oui-tile__definition">
@@ -21,18 +21,18 @@
                             </dl>
                             <div class="oui-tile__actions">
                                 <oui-action-menu
-                                    aria-label="{{:: 'menu_action_label' | translate:{t0: ('dedicatedCloud_description' | translate)} }}"
+                                    aria-label="{{:: 'menu_action_label' | translate:{ t0: ('dedicatedCloud_description' | translate) } }}"
                                     data-compact
                                     data-align="end">
                                     <oui-action-menu-item
                                         aria-label="{{:: 'common_change' | translate }}"
                                         data-text="{{:: 'common_change' | translate }}"
-                                        on-click="setAction('name/dedicatedCloud-name',  { value: dedicatedCloud.description, path: 'dedicatedCloud.description'})">
+                                        data-on-click="setAction('name/dedicatedCloud-name',  { value: dedicatedCloud.description, path: 'dedicatedCloud.description'})">
                                     </oui-action-menu-item>
                                     <oui-action-menu-item
                                         aria-label="{{:: 'dedicatedCloud_close_service' | translate }}"
                                         data-text="{{:: 'dedicatedCloud_close_service' | translate }}"
-                                        data-on-click="stateGo('app.dedicatedClouds.terminate')">
+                                        data-ui-sref="app.dedicatedClouds.terminate">
                                     </oui-action-menu-item>
                                 </oui-action-menu>
                             </div>
@@ -97,7 +97,7 @@
                             </dl>
                             <div class="oui-tile__actions">
                                 <oui-action-menu
-                                    aria-label="{{:: 'menu_action_label' | translate:{t0: ('dedicatedCloud_order_block' | translate)} }}"
+                                    aria-label="{{:: 'menu_action_label' | translate:{ t0: ('dedicatedCloud_order_block' | translate) } }}"
                                     data-compact
                                     data-align="end">
                                     <oui-action-menu-item
@@ -118,7 +118,7 @@
                             </dl>
                             <div class="oui-tile__actions">
                                 <oui-action-menu
-                                    aria-label="{{:: 'menu_action_label' | translate:{t0: ('dedicatedCloud_order_block' | translate)} }}"
+                                    aria-label="{{:: 'menu_action_label' | translate:{ t0: ('dedicatedCloud_order_block' | translate) } }}"
                                     data-compact
                                     data-align="end">
                                     <oui-action-menu-item
@@ -139,7 +139,7 @@
                             </dl>
                             <div class="oui-tile__actions">
                                 <oui-action-menu
-                                    aria-label="{{:: 'menu_action_label' | translate:{t0: ('dedicatedCloud_order_block' | translate)} }}"
+                                    aria-label="{{:: 'menu_action_label' | translate:{ t0: ('dedicatedCloud_order_block' | translate) } }}"
                                     data-compact
                                     data-align="end">
                                     <oui-action-menu-item
@@ -202,9 +202,9 @@
                  }"
                  data-ng-if="!dedicatedCloud.isExpired">
                 <div class="oui-tile mb-5 h-100">
-                    <h4 class="oui-header_4 oui-tile__title"
+                    <h2 class="oui-header_4 oui-tile__title"
                         data-translate="dedicatedCloud_options_title">
-                    </h4>
+                    </h2>
                     <div class="oui-tile__body"
                          data-ng-controller="DedicatedCloudVMwareOptionCtrl as vmWareCrtrl">
                          <!-- NSX OPTION -->
@@ -235,13 +235,13 @@
                             <div class="oui-tile__actions"
                                  data-ng-if="!options.nsx.loading && options.nsx.state !== null && options.nsx.toggable">
                                 <oui-action-menu
-                                    aria-label="{{:: 'menu_action_label' | translate:{t0: ('dedicatedCloud_options_nsx' | translate)} }}"
+                                    aria-label="{{:: 'menu_action_label' | translate:{ t0: ('dedicatedCloud_options_nsx' | translate) } }}"
                                     data-compact
                                     data-align="end">
                                     <oui-action-menu-item
                                         aria-label="{{:: (options.nsx.state === 'enabled' ? 'dedicatedCloud_options_unactivate' : 'dedicatedCloud_options_activate') | translate}}"
                                         data-text="{{:: (options.nsx.state === 'enabled' ? 'dedicatedCloud_options_unactivate' : 'dedicatedCloud_options_activate') | translate}}"
-                                        on-click="setAction('vmware-option/' + (options.nsx.state === 'enabled' ? 'disable' : 'order') + '/dedicatedCloud-vmware-option-' + (options.nsx.state === 'enabled' ? 'disable' : 'order'), 'nsx')">
+                                        data-on-click="setAction('vmware-option/' + (options.nsx.state === 'enabled' ? 'disable' : 'order') + '/dedicatedCloud-vmware-option-' + (options.nsx.state === 'enabled' ? 'disable' : 'order'), 'nsx')">
                                     </oui-action-menu-item>
                                 </oui-action-menu>
                             </div>
@@ -275,13 +275,13 @@
                             <div class="oui-tile__actions"
                                  data-ng-if="!options.vrops.loading && options.vrops.state !== null && options.vrops.toggable">
                                 <oui-action-menu
-                                    aria-label="{{:: 'menu_action_label' | translate:{t0: ('dedicatedCloud_options_vrops' | translate)} }}"
+                                    aria-label="{{:: 'menu_action_label' | translate:{ t0: ('dedicatedCloud_options_vrops' | translate) } }}"
                                     data-compact
                                     data-align="end">
                                     <oui-action-menu-item
                                         aria-label="{{:: (options.vrops.state === 'enabled' ? 'dedicatedCloud_options_unactivate' : 'dedicatedCloud_options_activate') | translate }}"
                                         data-text="{{:: (options.vrops.state === 'enabled' ? 'dedicatedCloud_options_unactivate' : 'dedicatedCloud_options_activate') | translate }}"
-                                        on-click="setAction('vmware-option/' + (options.vrops.state === 'enabled' ? 'disable' : 'order') + '/dedicatedCloud-vmware-option-' + (options.vrops.state === 'enabled' ? 'disable' : 'order'), 'vrops')">
+                                        data-on-click="setAction('vmware-option/' + (options.vrops.state === 'enabled' ? 'disable' : 'order') + '/dedicatedCloud-vmware-option-' + (options.vrops.state === 'enabled' ? 'disable' : 'order'), 'vrops')">
                                     </oui-action-menu-item>
                                 </oui-action-menu>
                             </div>
@@ -294,17 +294,17 @@
             <div class="col-md-4"
                  data-ng-if="featureAvailability.allowDedicatedServerComplianceOptions() && !dedicatedCloud.isExpired">
                 <div class="oui-tile mb-5 h-100">
-                    <h4 class="oui-header_4 oui-tile__title">
+                    <h2 class="oui-header_4 oui-tile__title">
                         <span data-translate="dedicatedCloud_options_security_title"></span>
                         <span class="fa fa-question-circle small"
                               data-uib-tooltip-html="'dedicatedCloud_options_security_title_tooltip' | translate"
                               data-tooltip-placement="bottom"
                               data-tooltip-append-to-body="true">
                         </span>
-                    </h4>
+                    </h2>
                     <div class="oui-tile__body"
                          data-ng-controller="DedicatedCloudSecurityOptionsCtrl as optionsCtrl">
-                        <div ¢lass="oui-tile__item">
+                        <div class="oui-tile__item">
                             <dl class="oui-tile__definition"
                                 data-ng-if="loading">
                                 <div class="text-center">
@@ -335,13 +335,13 @@
                             <div class="oui-tile__actions"
                                  data-ng-if="!loading && options[optionName].state === 'disabled' && allDisabled() && !anyEnabling() && nsxAndVropsCompliantPcc()">
                                 <oui-action-menu
-                                    aria-label="{{:: 'menu_action_label' | translate:{t0: ('dedicatedCloud_options_vrops' | translate)} }}"
+                                    aria-label="{{:: 'menu_action_label' | translate:{ t0: ('dedicatedCloud_options_vrops' | translate) } }}"
                                     data-compact
                                     data-align="end">
                                     <oui-action-menu-item
                                         aria-label="{{:: 'dedicatedCloud_options_activate' | translate }}"
                                         data-text="{{:: 'dedicatedCloud_options_activate' | translate }}"
-                                        on-click="setAction('security-options/dedicatedCloud-security-option-order', optionName)">
+                                        data-on-click="setAction('security-options/dedicatedCloud-security-option-order', optionName)">
                                     </oui-action-menu-item>
                                 </oui-action-menu>
                             </div>
@@ -371,13 +371,13 @@
                             </dl>
                             <div class="oui-tile__actions">
                                 <oui-action-menu
-                                    aria-label="{{:: 'menu_action_label' | translate:{t0: ('dedicatedCloud_updateResource_toMonthly' | translate)} }}"
+                                    aria-label="{{:: 'menu_action_label' | translate:{ t0: ('dedicatedCloud_updateResource_toMonthly' | translate) } }}"
                                     data-compact
                                     data-align="end">
                                     <oui-action-menu-item
                                         aria-label="{{:: 'dedicatedCloud_updateResource_toMonthly' | translate }}"
                                         data-text="{{:: 'dedicatedCloud_updateResource_toMonthly' | translate }}"
-                                        on-click="setAction('resource/upgrade/dedicatedCloud-resource-upgrade', {
+                                        data-on-click="setAction('resource/upgrade/dedicatedCloud-resource-upgrade', {
                                             upgradeType: 'hourlyToMonthly',
                                             type: 'all'
                                         })">
@@ -395,13 +395,13 @@
                             </dl>
                             <div class="oui-tile__actions">
                                 <oui-action-menu
-                                    aria-label="{{:: 'menu_action_label' | translate:{t0: ('dedicatedCloud_subscribe_mailing' | translate)} }}"
+                                    aria-label="{{:: 'menu_action_label' | translate:{ t0: ('dedicatedCloud_subscribe_mailing' | translate) } }}"
                                     data-compact
                                     data-align="end">
                                     <oui-action-menu-item
                                         aria-label="{{:: 'dedicatedCloud_subscribe_mailing' | translate }}"
                                         data-text="{{:: 'dedicatedCloud_subscribe_mailing' | translate }}"
-                                        data-on-click="stateGo('.ml-subscribe')">
+                                        data-ui-sref=".ml-subscribe">
                                     </oui-action-menu-item>
                                 </oui-action-menu>
                             </div>
@@ -431,7 +431,7 @@
                                     <oui-action-menu-item
                                         aria-label="{{:: 'dedicatedCloud_order_license' | translate }}"
                                         data-text="{{:: 'dedicatedCloud_order_license' | translate }}"
-                                        data-on-click="stateGo('app.license.order')">
+                                        data-ui-sref="app.license.order">
                                     </oui-action-menu-item>
                                 </oui-action-menu>
                             </div>

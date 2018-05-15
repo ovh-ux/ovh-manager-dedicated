@@ -26,7 +26,7 @@
                              data-ng-if="server.state == 'HACKED' || server.state == 'HACKED_BLOCKED'">
                             <oui-action-menu
                                 data-compact
-                                aria-label="{{:: 'menu_action_label' | translate:{ t0: ('server_configuration_state_title' | translate)} }}"
+                                aria-label="{{:: 'menu_action_label' | translate:{ t0: ('server_configuration_state_title' | translate) } }}"
                                 data-align="end">
                                 <oui-action-menu-item
                                     data-text="{{'server_remove_hack_button' | translate}}"
@@ -52,7 +52,7 @@
                         <div class="oui-tile__actions"
                              data-ng-if="!server.isExpired && server.commercialRange !== 'housing'">
                             <oui-action-menu
-                                aria-label="{{:: 'menu_action_label' | translate:{ t0: ('server_configuration_distribution' | translate)} }}"
+                                aria-label="{{:: 'menu_action_label' | translate:{ t0: ('server_configuration_distribution' | translate) } }}"
                                 data-align="end"
                                 data-compact>
                                 <oui-action-menu-item
@@ -97,7 +97,7 @@
                         <div class="oui-tile__actions"
                              data-ng-if="!server.isExpired">
                             <oui-action-menu
-                                aria-label="{{:: 'menu_action_label' | translate:{ t0: ('server_configuration_boot' | translate)} }}"
+                                aria-label="{{:: 'menu_action_label' | translate:{ t0: ('server_configuration_boot' | translate) } }}"
                                 data-align="end"
                                 data-compact>
                                 <oui-action-menu-item
@@ -180,7 +180,7 @@
                         <div class="oui-tile__actions"
                              data-ng-if="!server.isExpired && server.availableProfessionalUse && !server.hasProfessionalUse">
                             <oui-action-menu
-                                aria-label="{{:: 'menu_action_label' | translate:{t0: ('server_configuration_profesionnal_use' | translate )} }}"
+                                aria-label="{{:: 'menu_action_label' | translate:{ t0: ('server_configuration_profesionnal_use' | translate) } }}"
                                 data-align="end"
                                 data-compact>
                                 <oui-action-menu-item
@@ -225,7 +225,7 @@
                         <div class="oui-tile__actions"
                              data-ng-if="!server.isExpired && ((bandwidthOption === 'subscribed' && featureAvailability.allowDedicatedServerBandwidthOption()) || (bandwidthOption === 'notSubscribed' && server.canOrderBandwith && featureAvailability.allowDedicatedServerOrderBandwidthOption()))">
                             <oui-action-menu
-                                aria-label="{{:: 'menu_action_label' | translate:{t0: ('server_bandwidth_type' | translate)} }}"
+                                aria-label="{{:: 'menu_action_label' | translate:{ t0: ('server_bandwidth_type' | translate) } }}"
                                 data-align="end"
                                 data-compact>
                                 <oui-action-menu-item
@@ -281,7 +281,7 @@
                         <div class="oui-tile__actions"
                              data-ng-if="server.canOrderQuota && !traffic.hasQuota && canOrderTraffic() && canOrderMoreTraffic() && trafficOption !== 'released'">
                             <oui-action-menu
-                                aria-label="{{:: 'menu_action_label' | translate:{t0: ('server_bandwidth_ovh_to_internet' | translate)} }}"
+                                aria-label="{{:: 'menu_action_label' | translate:{ t0: ('server_bandwidth_ovh_to_internet' | translate) } }}"
                                 data-align="end"
                                 data-compact>
                                 <oui-action-menu-item
@@ -304,14 +304,14 @@
                                 </span>
                                 <span data-ng-if="!traffic.usage.outputQuotaSize.text"
                                       data-translate="server_traffic_unlimited_text"
-                                      data-translate-values="{ t0: bandwidth.bandwidth.OvhToInternet | bandwidth}">
+                                      data-translate-values="{ t0: bandwidth.bandwidth.OvhToInternet | bandwidth }">
                                 </span>
                             </dd>
                         </dl>
                         <div class="oui-tile__actions"
                              data-ng-if="traffic.hasQuota && canOrderTraffic() && canOrderMoreTraffic()">
                             <oui-action-menu
-                                aria-label="{{:: 'menu_action_label' | translate:{t0: ('server_traffic' | translate)} }}"
+                                aria-label="{{:: 'menu_action_label' | translate:{ t0: ('server_traffic' | translate) } }}"
                                 data-align="end"
                                 data-compact>
                                 <oui-action-menu-item
@@ -331,11 +331,11 @@
                             <dd class="oui-tile__description">
                                 <span data-ng-if="traffic.usage.outputQuotaSize.text"
                                       data-translate="server_traffic_text"
-                                      data-translate-values="{ t0: traffic.usage.outputQuotaSize.text}">
+                                      data-translate-values="{ t0: traffic.usage.outputQuotaSize.text }">
                                 </span>
                                 <span data-ng-if="!traffic.usage.outputQuotaSize.text"
                                       data-translate="server_traffic_unlimited_text"
-                                      data-translate-values="{ t0: (bandwidth.bandwidth.OvhToInternet | bandwidth)}">
+                                      data-translate-values="{ t0: (bandwidth.bandwidth.OvhToInternet | bandwidth) }">
                                 </span>
                                 <small class="oui-tile__extra"
                                        data-ng-if="trafficOption === 'released'"
@@ -345,7 +345,7 @@
                         <div class="oui-tile__actions"
                              data-ng-if="(traffic.hasQuota && canOrderTraffic() && canOrderMoreTraffic()) || (!server.isExpired && trafficOption === 'subscribed')">
                              <oui-action-menu
-                                aria-label="{{:: 'menu_action_label' | translate:{t0: ('server_traffic' | translate)} }}"
+                                aria-label="{{:: 'menu_action_label' | translate:{ t0: ('server_traffic' | translate) } }}"
                                 data-align="end"
                                 data-compact>
                                 <oui-action-menu-item
@@ -393,7 +393,7 @@
                         <div class="oui-tile__actions"
                              data-ng-if="(canOrderVrackBandwidth() && canOrderMoreVrackBandwidth()) || (!server.isExpired && bandwidthVrackOption === 'subscribed')">
                             <oui-action-menu
-                                aria-label="{{:: 'menu_action_label' | translate:{t0: ('server_bandwidth_vrack' | translate)} }}"
+                                aria-label="{{:: 'menu_action_label' | translate:{ t0: ('server_bandwidth_vrack' | translate) } }}"
                                 data-align="end"
                                 data-compact>
                                 <oui-action-menu-item
@@ -441,7 +441,7 @@
                         <div class="oui-tile__actions"
                              data-ng-if="!server.isExpired">
                             <oui-action-menu
-                                aria-label="{{:: 'menu_action_label' | translate:{t0: ('server_configuration_monitoring' | translate)} }}"
+                                aria-label="{{:: 'menu_action_label' | translate:{ t0: ('server_configuration_monitoring' | translate) } }}"
                                 data-align="end"
                                 data-compact>
                                 <oui-action-menu-item
@@ -465,7 +465,7 @@
                         <div class="oui-tile__actions"
                              data-ng-if="!server.isExpired">
                             <oui-action-menu
-                                aria-label="'menu_action_label' | translate:{t0: ('server_configuration_monitoring_services' | translate)}"
+                                aria-label="'menu_action_label' | translate:{ t0: ('server_configuration_monitoring_services' | translate) }"
                                 data-align="end"
                                 data-compact>
                                 <oui-action-menu-item
