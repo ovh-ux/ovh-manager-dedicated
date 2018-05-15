@@ -1,3 +1,14 @@
+<a name="9.3.4"></a>
+## [9.3.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.3.3...v9.3.4) (2018-05-15)
+
+
+### Bug Fixes
+
+* add EN translations for US debt payment ([71556cf](https://github.com/ovh-ux/ovh-manager-dedicated/commit/71556cf))
+* remove unecessary span with non existing translation key ([005e98d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/005e98d))
+
+
+
 <a name="9.3.3"></a>
 ## [9.3.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.3.2...v9.3.3) (2018-05-14)
 
