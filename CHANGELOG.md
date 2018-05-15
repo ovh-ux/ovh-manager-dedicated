@@ -1,3 +1,27 @@
+<a name="9.3.4"></a>
+## [9.3.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.3.3...v9.3.4) (2018-05-15)
+
+
+### Bug Fixes
+
+* add EN translations for US debt payment ([71556cf](https://github.com/ovh-ux/ovh-manager-dedicated/commit/71556cf))
+* remove unecessary span with non existing translation key ([005e98d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/005e98d))
+
+
+
+<a name="9.3.3"></a>
+## [9.3.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.3.2...v9.3.3) (2018-05-14)
+
+
+### Bug Fixes
+
+* **autorenew:** fix missing dependency injection ([6fe6d59](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6fe6d59))
+* **license:** fix spla active state ([2dd4df4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2dd4df4))
+* re-enable us debt message ([5956257](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5956257))
+* use ngTranslate in US debt pay link ([b018254](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b018254))
+
+
+
 <a name="9.3.2"></a>
 ## [9.3.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.3.1...v9.3.2) (2018-05-11)
 
