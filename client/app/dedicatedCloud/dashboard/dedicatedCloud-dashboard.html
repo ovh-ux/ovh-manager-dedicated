@@ -103,7 +103,7 @@
                                     <oui-action-menu-item
                                         aria-label="{{:: 'dedicatedCloud_order_block' | translate }}"
                                         data-text="{{:: 'dedicatedCloud_order_block' | translate }}"
-                                        data-href="#/configuration/ip?serviceName={{dedicatedCloud.name}}">
+                                        data-ui-sref="app.ip.serviceName({ serviceName: dedicatedCloud.name })">
                                     </oui-action-menu-item>
                                 </oui-action-menu>
                             </div>
@@ -124,7 +124,7 @@
                                     <oui-action-menu-item
                                         aria-label="{{:: 'dedicatedCloud_order_block' | translate }}"
                                         data-text="{{:: 'dedicatedCloud_order_block' | translate }}"
-                                        data-href="#/configuration/ip?serviceName={{dedicatedCloud.name}}">
+                                        data-ui-sref="app.ip.serviceName({ serviceName: dedicatedCloud.name })">
                                     </oui-action-menu-item>
                                 </oui-action-menu>
                             </div>
@@ -145,7 +145,7 @@
                                     <oui-action-menu-item
                                         aria-label="{{:: 'dedicatedCloud_order_block' | translate }}"
                                         data-text="{{:: 'dedicatedCloud_order_block' | translate }}"
-                                        data-href="#/configuration/ip?serviceName={{dedicatedCloud.name}}">
+                                        data-ui-sref="app.ip.serviceName({ serviceName: dedicatedCloud.name })">
                                     </oui-action-menu-item>
                                 </oui-action-menu>
                             </div>
@@ -304,9 +304,9 @@
                     </h2>
                     <div class="oui-tile__body"
                          data-ng-controller="DedicatedCloudSecurityOptionsCtrl as optionsCtrl">
-                        <div class="oui-tile__item">
-                            <dl class="oui-tile__definition"
-                                data-ng-if="loading">
+                        <div class="oui-tile__item"
+                             data-ng-if="loading">
+                            <dl class="oui-tile__definition">
                                 <div class="text-center">
                                     <oui-spinner></oui-spinner>
                                 </div>

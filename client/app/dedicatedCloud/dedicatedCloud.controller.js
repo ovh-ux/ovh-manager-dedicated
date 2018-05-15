@@ -39,7 +39,7 @@ angular.module("App").controller("DedicatedCloudCtrl", [
 
         $scope.dedicatedCloud = {};
 
-        $scope.showNotificationIfRequired = function (notification) {
+        function showNotificationIfRequired (notification) {
             Notification.checkIfStopNotification(notification, $stateParams.productId)
                 .then((stopNotification) => {
                     $scope.notifications[notification] = !stopNotification;
@@ -48,20 +48,20 @@ angular.module("App").controller("DedicatedCloudCtrl", [
                     $scope.notifications[notification] = true;
                     $log.error(error);
                 });
-        };
+        }
 
-        $scope.loadNewPrices = function () {
+        function loadNewPrices () {
             return DedicatedCloud.getNewPrices($stateParams.productId).then((newPrices) => {
                 $scope.newPriceInformation = newPrices.resources;
                 $scope.hasChangePrices = newPrices.resources.filter((resource) => resource.changed === true).length > 0;
             });
-        };
+        }
 
-        $scope.loadUserInfo = function () {
+        function loadUserInfo () {
             return User.getUser().then((user) => {
                 $scope.dedicatedCloud.email = user.email;
             });
-        };
+        }
 
         $scope.loadDedicatedCloud = function () {
             $scope.message = null;
@@ -73,8 +73,8 @@ angular.module("App").controller("DedicatedCloudCtrl", [
                         $scope.setMessage($translate.instant("common_expired"), { type: "cancelled" });
                     }
                     $scope.dedicatedCloudDescription.model = angular.copy($scope.dedicatedCloud.description);
-                    $scope.loadNewPrices();
-                    $scope.loadUserInfo();
+                    loadNewPrices();
+                    loadUserInfo();
                     $scope.showHdsReadyNotificationIfRequired($scope.HDS_READY_NOTIFICATION);
                 })
                 .catch((data) => {
@@ -249,7 +249,7 @@ angular.module("App").controller("DedicatedCloudCtrl", [
 
         $scope.showHdsReadyNotificationIfRequired = function (notification) {
             if (_.startsWith($scope.dedicatedCloud.commercialRange.startsWith, "2014") || _.startsWith($scope.dedicatedCloud.commercialRange, "2016")) {
-                $scope.showNotificationIfRequired(notification);
+                showNotificationIfRequired(notification);
             }
         };
 

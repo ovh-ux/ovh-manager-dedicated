@@ -11,6 +11,12 @@ angular
                 controller: "IpMainCtrl",
                 reloadOnSearch: false,
                 translations: ["ip"]
+            }).state("app.ip.serviceName", {
+                url: "/configuration/ip/:serviceName",
+                templateUrl: "ip/ip.html",
+                controller: "IpMainCtrl",
+                reloadOnSearch: false,
+                translations: ["ip"]
             });
         }
     ]);

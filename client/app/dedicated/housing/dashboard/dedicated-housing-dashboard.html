@@ -75,23 +75,6 @@
                 </div>
                 <div class="oui-tile__item">
                     <dl class="oui-tile__definition">
-                        <dt class="oui-tile__term">
-                            <service-expiration-label data-service-infos="housing.serviceInfos">
-                            </service-expiration-label>
-                        </dt>
-                        <dd class="oui-link">
-                            <service-expiration-date
-                                data-service-name="housing.name"
-                                data-service-type="'DEDICATED_HOUSING'"
-                                data-service-infos="housing.serviceInfos"
-                                data-force-hide-renew-action="true"
-                                data-use-ui-kit>
-                            </service-expiration-date>
-                        </dd>
-                    </dl>
-                </div>
-                <div class="oui-tile__item">
-                    <dl class="oui-tile__definition">
                         <dt class="oui-tile__term"
                             data-translate="housing_creation_date"></dt>
                         <dd class="oui-tile__description"
@@ -125,7 +108,7 @@
                             <oui-action-menu-item
                                 data-text="{{:: 'housing_configuration_ipv4_manage' | translate }}"
                                 data-aria-label="{{:: 'housing_configuration_ipv4_manage' | translate }}"
-                                data-href="{{ '#/configuration/ip?tab=IP&serviceName=' + housing.name }}"></oui-action-menu-item>
+                                data-ui-sref="app.ip.serviceName({ serviceName: housing.name })"></oui-action-menu-item>
                         </oui-action-menu>
                     </div>
                 </div>
@@ -215,6 +198,23 @@
                             </oui-action-menu-item>
                         </oui-action-menu>
                     </div>
+                </div>
+                <div class="oui-tile__item">
+                    <dl class="oui-tile__definition">
+                        <dt class="oui-tile__term">
+                            <service-expiration-label data-service-infos="housing.serviceInfos">
+                            </service-expiration-label>
+                        </dt>
+                        <dd class="oui-link">
+                            <service-expiration-date
+                                data-service-name="housing.name"
+                                data-service-type="'DEDICATED_HOUSING'"
+                                data-service-infos="housing.serviceInfos"
+                                data-force-hide-renew-action="true"
+                                data-use-ui-kit>
+                            </service-expiration-date>
+                        </dd>
+                    </dl>
                 </div>
             </div>
         </div>
