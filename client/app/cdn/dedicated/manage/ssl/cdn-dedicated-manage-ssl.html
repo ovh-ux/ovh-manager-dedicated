@@ -54,12 +54,11 @@
                data-ng-if="!disableDelCertificat()"
                data-translate="cdn_configuration_generate_ssl_title">
             </a>
-            <button type="button"
-                    class="btn btn-block btn-default"
-                    data-ng-if="!disableDelCertificat()"
-                    data-ng-click="setAction('manage/ssl/update/cdn-dedicated-ssl-update', ssl)"
-                    data-translate="cdn_configuration_update_ssl_title">
-            </button>
+            <a class="btn btn-block btn-default"
+               data-ui-sref=".update"
+               data-ng-if="!disableDelCertificat()"
+               data-translate="cdn_configuration_update_ssl_title">
+            </a>
             <button type="button"
                     class="btn btn-block btn-default"
                     data-ng-if="!disableDelCertificat()"

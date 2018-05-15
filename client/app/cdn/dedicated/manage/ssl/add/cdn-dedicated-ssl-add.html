@@ -59,36 +59,40 @@
                 <input class="oui-input"
                        type="text"
                        name="name"
+                       id="add-name"
                        data-ng-model="$ctrl.model.name"
                        data-required
                        data-ng-pattern="/^[\S]+$/" />
             </oui-field> <!-- End of SSL certificate name -->
 
             <!-- SSL certificate -->
-            <oui-field data-label="{{ :: 'cdn_dedicated_ssl_add_certificate' | translate }}"
+            <oui-field data-label="{{ :: 'cdn_dedicated_ssl_certificate' | translate }}"
                        data-help-text="{{ :: 'cdn_dedicated_ssl_add_lets_encrypt_explain' | translate }}">
                 <textarea class="oui-textarea"
                           name="certificate"
+                          id="add-certificate"
                           rows="5"
                           data-ng-model="$ctrl.model.certificate">
                 </textarea>
             </oui-field> <!-- End of SSL certificate -->
 
             <!-- SSL key -->
-            <oui-field data-label="{{ :: 'cdn_dedicated_ssl_add_key' | translate }}"
+            <oui-field data-label="{{ :: 'cdn_dedicated_ssl_key' | translate }}"
                        data-help-text="{{ :: 'cdn_dedicated_ssl_add_lets_encrypt_explain' | translate }}">
                 <textarea class="oui-textarea"
                           name="key"
+                          id="add-key"
                           rows="5"
                           data-ng-model="$ctrl.model.key">
                 </textarea>
             </oui-field> <!-- End of SSL key -->
 
             <!-- SSL chain -->
-            <oui-field data-label="{{ :: 'cdn_dedicated_ssl_add_chain' | translate }}"
+            <oui-field data-label="{{ :: 'cdn_dedicated_ssl_chain' | translate }}"
                        data-help-text="{{ :: 'cdn_dedicated_ssl_add_lets_encrypt_explain' | translate }}">
                 <textarea class="oui-textarea"
                           name="chain"
+                          id="add-chain"
                           rows="5"
                           data-ng-model="$ctrl.model.chain">
                 </textarea>

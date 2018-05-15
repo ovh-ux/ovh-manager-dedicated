@@ -8,7 +8,7 @@ angular.module("App").config(($stateProvider) => {
                 controller: "CdnTabSslCtrl"
             }
         },
-        reloadOnSearch: false
+        translations: ["cdn/dedicated/manage/ssl"]
     });
 
 });
