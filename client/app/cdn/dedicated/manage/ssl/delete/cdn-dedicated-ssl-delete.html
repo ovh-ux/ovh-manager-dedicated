@@ -1,56 +1,28 @@
 <div class="cdn-dedicated-ssl-delete">
 
-     <div class="oui-modal oui-modal_shadow"
-         data-ng-if="$ctrl.loading.init || ($ctrl.ssl && $ctrl.ssl.status !== 'on' && $ctrl.ssl.status !== 'off')">
-
-        <div class="oui-modal__header">
-            <a class="oui-icon oui-icon-close_thin oui-modal__close-button"
-               aria-label="{{ 'wizard_close' | translate }}"
-               data-ui-sref="^">
-            </a>
-        </div>
-
-        <div class="oui-modal__body text-center oui-modal__body_no-icon"
-             data-ng-if="$ctrl.loading.init">
-            <oui-spinner></oui-spinner>
-        </div>
-
-        <div class="oui-modal__body"
-             data-ng-if="!$ctrl.loading.init">
-            <i class="oui-icon oui-icon-warning_circle oui-icon_bicolor"
-               aria-hidden="true">
-            </i>
-
-            <div class="oui-modal__body-text">
-                <h2 class="oui-modal__title"
-                    data-translate="cdn_dedicated_ssl_delete_title">
-                </h2>
-
-                <p data-translate="cdn_dedicated_ssl_delete_warning"></p>
-            </div>
-        </div>
-
-        <div class="oui-modal__footer">
-            <a class="oui-button oui-button_primary"
-               data-translate="global_OK"
-               data-ui-sref="^">
-            </a>
-        </div>
-
-    </div>
-
-    <oui-modal data-ng-if="!$ctrl.loading.init && (!$ctrl.ssl || $ctrl.ssl && ($ctrl.ssl.status === 'on' || $ctrl.ssl.status === 'off'))"
-               data-title="{{ :: 'cdn_dedicated_ssl_delete_title' | translate }}"
-               data-primary-label="{{ :: 'wizard_yes' | translate }}"
+    <oui-modal data-title="{{ :: 'cdn_dedicated_ssl_delete_title' | translate }}"
+               data-primary-label="{{($ctrl.actionEnabled ? 'wizard_yes' : 'global_OK') | translate}}"
                data-primary-action="$ctrl.onPrimaryActionBtnClick()"
-               data-secondary-label="{{ :: 'wizard_no' | translate }}"
+               data-secondary-label="{{$ctrl.actionEnabled ? ('wizard_no' | translate) : ''}}"
                data-secondary-action="$ctrl.$state.go('^')"
                data-on-dismiss="$ctrl.$state.go('^')"
-               data-loading="$ctrl.loading.delete">
+               data-loading="$ctrl.loading.init || $ctrl.loading.delete"
+               data-type="{{ !$ctrl.actionEnabled ? 'warning' : '' }}">
+
+        <div data-ng-if="!$ctrl.actionEnabled">
+            <p data-ng-if="!$ctrl.ssl"
+               data-translate="cdn_dedicated_ssl_delete_no_ssl_warning">
+            </p>
+            <p data-ng-if="$ctrl.ssl"
+               data-translate="cdn_dedicated_ssl_delete_operation_warning">
+            </p>
+        </div>
 
         <p data-translate="cdn_dedicated_ssl_delete_confirm"
-           data-translate-values="{ t0: $ctlr.ssl.name }">
+           data-translate-values="{ t0: $ctlr.ssl.name }"
+           data-ng-if="$ctrl.actionEnabled">
         </p>
+
 
     </oui-modal>
 
