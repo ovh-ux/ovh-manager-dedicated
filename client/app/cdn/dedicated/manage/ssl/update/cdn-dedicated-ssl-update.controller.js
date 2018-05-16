@@ -41,11 +41,14 @@ angular.module("App").controller("CdnUpdateSslCtrl", class CdnUpdateSslCtrl {
             serviceName: this.$stateParams.productId
         }, this.model).$promise.then(() => {
             this.Alerter.success(this.$translate.instant("cdn_dedicated_ssl_update_success"), "cdnDedicatedManage");
+            this.$state.go("^", {}, {
+                reload: true
+            });
         }).catch((error) => {
             this.Alerter.error([this.$translate.instant("cdn_dedicated_ssl_update_error"), _.get(error, "data.message")].join(" "), "cdnDedicatedManage");
+            this.$state.go("^");
         }).finally(() => {
             this.loading.update = false;
-            this.$state.go("^");
         });
     }
 

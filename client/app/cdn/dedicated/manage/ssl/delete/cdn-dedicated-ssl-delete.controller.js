@@ -33,13 +33,16 @@ angular.module("App").controller("CdnDeleteSslCtrl", class CdnDeleteSslCtrl {
             serviceName: this.$stateParams.productId
         }, this.model).$promise.then(() => {
             this.Alerter.success(this.$translate.instant("cdn_dedicated_ssl_delete_success"), "cdnDedicatedManage");
+            this.$state.go("^", {}, {
+                reload: true
+            });
         }).catch((error) => {
             this.Alerter.error([this.$translate.instant("cdn_dedicated_ssl_delete_error", {
                 t0: _.get(this.ssl, "name", "")
             }), _.get(error, "data.message")].join(" "), "cdnDedicatedManage");
+            this.$state.go("^");
         }).finally(() => {
             this.loading.delete = false;
-            this.$state.go("^");
         });
     }
 
