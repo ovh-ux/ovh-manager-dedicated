@@ -31,6 +31,8 @@ angular.module("App").controller("CdnAddSslCtrl", class CdnAddSslCtrl {
     onCdnSslAddFormSubmit () {
         if (this.cdnSslAddForm.$invalid) {
             return false;
+        } else if (this.ssl) {
+            return this.$state.go("^");
         }
 
         this.loading.add = true;

@@ -1,55 +1,21 @@
-<div class="cdn-dedicated-ssl-add">
+<form class="cdn-dedicated-ssl-add"
+      name="$ctrl.cdnSslAddForm"
+      novalidate
+      data-ng-submit="$ctrl.onCdnSslAddFormSubmit()">
 
-    <div class="oui-modal oui-modal_shadow"
-         data-ng-if="$ctrl.loading.init || $ctrl.ssl">
+    <oui-modal data-title="{{ :: 'cdn_dedicated_ssl_add' | translate }}"
+               data-primary-label="{{ (!$ctrl.ssl ? 'wizard_confirm' : 'global_OK') | translate }}"
+               data-secondary-label="{{ !$ctrl.ssl ? ('wizard_close' | translate) : '' }}"
+               data-secondary-action="$ctrl.$state.go('^')"
+               data-on-dismiss="$ctrl.$state.go('^')"
+               data-loading="$ctrl.loading.init || $ctrl.loading.add"
+               data-type="{{ $ctrl.ssl ? 'warning' : '' }}">
 
-        <div class="oui-modal__header">
-            <a class="oui-icon oui-icon-close_thin oui-modal__close-button"
-               aria-label="{{ 'wizard_close' | translate }}"
-               data-ui-sref="^">
-            </a>
+        <div data-ng-if="$ctrl.ssl">
+            <p data-translate="cdn_dedicated_ssl_add_warning"></p>
         </div>
 
-        <div class="oui-modal__body text-center oui-modal__body_no-icon"
-             data-ng-if="$ctrl.loading.init">
-            <oui-spinner></oui-spinner>
-        </div>
-
-        <div class="oui-modal__body"
-             data-ng-if="!$ctrl.loading.init">
-            <i class="oui-icon oui-icon-warning_circle oui-icon_bicolor"
-               aria-hidden="true">
-            </i>
-
-            <div class="oui-modal__body-text">
-                <h2 class="oui-modal__title"
-                    data-translate="cdn_dedicated_ssl_add">
-                </h2>
-
-                <p data-translate="cdn_dedicated_ssl_add_warning"></p>
-            </div>
-        </div>
-
-        <div class="oui-modal__footer">
-            <a class="oui-button oui-button_primary"
-               data-translate="global_OK"
-               data-ui-sref="^">
-            </a>
-        </div>
-
-    </div>
-
-    <form name="$ctrl.cdnSslAddForm"
-          novalidate
-          data-ng-submit="$ctrl.onCdnSslAddFormSubmit()"
-          data-ng-if="!$ctrl.loading.init && !$ctrl.ssl">
-
-        <oui-modal data-title="{{ :: 'cdn_dedicated_ssl_add' | translate }}"
-                   data-primary-label="{{ :: 'wizard_confirm' | translate }}"
-                   data-secondary-label="{{ :: 'wizard_close' | translate }}"
-                   data-secondary-action="$ctrl.$state.go('^')"
-                   data-on-dismiss="$ctrl.$state.go('^')"
-                   data-loading="$ctrl.loading.add">
+        <div data-ng-if="!$ctrl.ssl">
 
             <p data-translate="cdn_dedicated_ssl_add_explain"></p>
 
@@ -98,8 +64,8 @@
                 </textarea>
             </oui-field> <!-- End of SSL chain -->
 
-        </oui-modal>
+        </div>
 
-    </form>
+    </oui-modal>
 
-</div>
+</form>
