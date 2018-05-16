@@ -1,3 +1,13 @@
+<a name="9.3.6"></a>
+## [9.3.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.3.5...v9.3.6) (2018-05-16)
+
+
+### Bug Fixes
+
+* **billing:sla:** Wrong template path ([c5cdbf5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c5cdbf5))
+
+
+
 <a name="9.3.5"></a>
 ## [9.3.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.3.4...v9.3.5) (2018-05-15)
 
