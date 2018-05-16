@@ -123,7 +123,7 @@ angular
              */
             $stateProvider.state("app.account.billing.sla", {
                 url: "/sla",
-                templateUrl: `${BILLING_BASE_URL}billing/sla/billing-sla.html`,
+                templateUrl: `${BILLING_BASE_URL}sla/billing-sla.html`,
                 controller: "Billing.controllers.Sla"
             });
 
