@@ -19,6 +19,7 @@ angular.module("App").controller("CdnGenerateSslCtrl", class CdnGenerateSslCtrl 
         };
 
         this.ssl = null;
+        this.actionEnabled = true;
     }
 
     /* =============================
@@ -28,6 +29,8 @@ angular.module("App").controller("CdnGenerateSslCtrl", class CdnGenerateSslCtrl 
     onCdnSslGenerateFormSubmit () {
         if (this.cdnSslGenerateForm.$invalid) {
             return false;
+        } else if (!this.actionEnabled) {
+            return this.$state.go("^");
         }
 
         this.loading.generate = true;
@@ -58,8 +61,10 @@ angular.module("App").controller("CdnGenerateSslCtrl", class CdnGenerateSslCtrl 
         }).$promise.then((ssl) => {
             this.ssl = ssl;
             this.model.name = this.ssl.name;
+            this.actionEnabled = this.ssl.status === "on" || this.ssl.status === "off";
         }).catch((error) => {
             if (_.get(error, "status") === 404) {
+                this.actionEnabled = true;
                 return null;
             }
 
