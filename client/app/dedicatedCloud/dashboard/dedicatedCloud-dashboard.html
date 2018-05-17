@@ -27,7 +27,7 @@
                                     <oui-action-menu-item
                                         aria-label="{{:: 'common_change' | translate }}"
                                         data-text="{{:: 'common_change' | translate }}"
-                                        data-on-click="setAction('name/dedicatedCloud-name',  { value: dedicatedCloud.description, path: 'dedicatedCloud.description'})">
+                                        data-ui-sref="app.dedicatedClouds.description-update({ value: dedicatedCloud.description, contextTitle: 'dedicatedCloud_description' })">
                                     </oui-action-menu-item>
                                     <oui-action-menu-item
                                         aria-label="{{:: 'dedicatedCloud_close_service' | translate }}"
@@ -103,7 +103,7 @@
                                     <oui-action-menu-item
                                         aria-label="{{:: 'dedicatedCloud_order_block' | translate }}"
                                         data-text="{{:: 'dedicatedCloud_order_block' | translate }}"
-                                        data-ui-sref="app.ip.serviceName({ serviceName: dedicatedCloud.name })">
+                                        data-ui-sref="app.ip({ serviceName: dedicatedCloud.name })">
                                     </oui-action-menu-item>
                                 </oui-action-menu>
                             </div>
@@ -124,7 +124,7 @@
                                     <oui-action-menu-item
                                         aria-label="{{:: 'dedicatedCloud_order_block' | translate }}"
                                         data-text="{{:: 'dedicatedCloud_order_block' | translate }}"
-                                        data-ui-sref="app.ip.serviceName({ serviceName: dedicatedCloud.name })">
+                                        data-ui-sref="app.ip({ serviceName: dedicatedCloud.name })">
                                     </oui-action-menu-item>
                                 </oui-action-menu>
                             </div>
@@ -145,7 +145,7 @@
                                     <oui-action-menu-item
                                         aria-label="{{:: 'dedicatedCloud_order_block' | translate }}"
                                         data-text="{{:: 'dedicatedCloud_order_block' | translate }}"
-                                        data-ui-sref="app.ip.serviceName({ serviceName: dedicatedCloud.name })">
+                                        data-ui-sref="app.ip({ serviceName: dedicatedCloud.name })">
                                     </oui-action-menu-item>
                                 </oui-action-menu>
                             </div>
@@ -313,9 +313,9 @@
                             </dl>
                         </div>
                         <div class="oui-tile__item"
-                             data-ng-repeat="optionName in optionNames track by $index">
-                            <dl class="oui-tile__definition"
-                                data-ng-if="!loading">
+                             data-ng-repeat="optionName in optionNames track by $index"
+                             data-ng-if="!loading">
+                            <dl class="oui-tile__definition">
                                 <dt class="oui-tile__term"
                                     data-translate="{{ 'dedicatedCloud_options_' + optionName }}"></dt>
                                 <dd class="oui-tile__description">

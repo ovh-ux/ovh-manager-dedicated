@@ -176,7 +176,7 @@ angular.module("App").controller("DedicatedCloudSubDatacenterCtrl", ($scope, $st
                 default:
                     break;
                 }
-            } else if (data === "true" || data === true || (data.type && data.type === "SUCCESS")) {
+            } else if (data === "true" || data === true) {
                 $scope.alertType = "alert-success";
             }
         }

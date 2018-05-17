@@ -1,18 +1,19 @@
 angular.module("App").controller("DedicatedCloudCtrl", [
+    "$log",
+    "$q",
     "$scope",
     "$state",
-    "$timeout",
     "$stateParams",
-    "$q",
-    "$log",
-    "featureAvailability",
-    "step",
-    "DedicatedCloud",
+    "$timeout",
     "$translate",
+    "$uibModal",
+    "DedicatedCloud",
+    "featureAvailability",
     "Module.services.notification",
     "OvhApiDedicatedCloud",
+    "step",
     "User",
-    function ($scope, $state, $timeout, $stateParams, $q, $log, featureAvailability, step, DedicatedCloud, $translate, Notification, OvhApiDedicatedCloud, User) {
+    function ($log, $q, $scope, $state, $stateParams, $timeout, $translate, $uibModal, DedicatedCloud, featureAvailability, Notification, OvhApiDedicatedCloud, step, User) {
         "use strict";
 
         $scope.HDS_READY_NOTIFICATION = "HDS_READY_NOTIFICATION";
