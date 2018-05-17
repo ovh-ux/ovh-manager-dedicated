@@ -23,91 +23,34 @@
              data-translate="dedicatedCloud_USER_warning_line">
         </div>
 
-        <div class="row">
-            <div class="col-sm-9">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col"
-                                data-translate="dedicatedCloud_datacenter_count">
-                            </th>
-                            <th scope="col"
-                                class="text-center"
-                                data-translate="dedicatedCloud_USER_access_vsphere">
-                            </th>
-                            <th scope="col"
-                                class="text-center"
-                                data-translate="dedicatedCloud_USER_resource">
-                            </th>
-                            <th scope="col"
-                                class="text-center"
-                                data-translate="dedicatedCloud_USER_VM_NETWORK_ROLE">
-                            </th>
-                            <th scope="col"
-                                class="text-center"
-                                data-translate="dedicatedCloud_USER_NETWORK_ROLE">
-                            </th>
-                            <th scope="col"
-                                class="text-center">
-                                <button type="button"
-                                        class="btn btn-link p-0"
-                                        title="{{ 'common_refresh' | translate }}"
-                                        data-ng-click="$ctrl.refreshTableRights()">
-                                    <span class="fa fa-refresh" aria-label="{{ 'common_refresh' | translate }}"></span>
-                                </button>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody data-ng-show="$ctrl.loading.rights">
-                        <tr>
-                            <td colspan="6"
-                                class="text-center">
-                                <oui-spinner data-size="s"></oui-spinner>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <tbody data-ng-hide="$ctrl.loading.rights">
-                        <tr data-ng-repeat="(rightIndex, right) in $ctrl.rights.list.results"
-                            data-ng-class="{ 'warningLine': (warningLine && rightsCurrentEdit.datacenterId == right.datacenterId) }">
-                            <th scope="row"
-                                data-ng-bind="right.datacenterName">
-                            </th>
-                            <td class="text-center"
-                                data-translate="{{ 'dedicatedCloud_USER_right_'+right.right }}">
-                            </td>
-                            <td class="text-center">
-                                <span class="fa"
-                                      aria-label="{{ 'dedicatedCloud_USER_resource' | translate }}"
-                                      data-ng-class="{
-                                          'fa-check': right.canAddResource === true,
-                                          'fa-ban': right.canAddResource === false
-                                      }">
-                                </span>
-                            </td>
-                            <td class="text-center"
-                                data-translate="{{ 'dedicatedCloud_USER_right_'+right.vmNetworkRole }}">
-                            </td>
-                            <td class="text-center"
-                                data-translate="{{ 'dedicatedCloud_USER_right_'+right.networkRole }}">
-                            </td>
-                            <td class="text-center">
-                                <button type="button"
-                                        class="btn btn-link"
-                                        title="{{ 'dedicatedCloud_USER_right_modify' | translate }}"
-                                        data-ng-click="setAction('user/rights/edit/dedicatedCloud-user-rights-edit', { rightId: right.rightId })">
-                                    <span class="oui-icon oui-icon-pen_line" aria-hidden="true"></span>
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div data-pagination-server-side="rightTable"
-                     data-pagination-server-side-function="$ctrl.loadUserRight"
-                     data-pagination-server-side-paginated-stuff="$ctrl.rights"
-                     data-pagination-server-side-table-loading="$ctrl.loading.rights">
-                </div>
-            </div>
-        </div>
-    </div>
+        <oui-datagrid rows-loader="$ctrl.loadUserRights($config)">
+            <oui-column data-title=":: 'dedicatedCloud_datacenter_count' | translate"
+                        data-property="datacenterName"
+                        data-type="text">
+            </oui-column>
+            <oui-column data-title=":: 'dedicatedCloud_USER_access_vsphere' | translate">
+                <span data-translate="{{ 'dedicatedCloud_USER_right_' + $row.right }}"></span>
+            </oui-column>
+            <oui-column data-title=":: 'dedicatedCloud_USER_resource' | translate">
+                <span data-translate="common_yes"
+                      data-ng-if="$row.canAddResource">
+                </span>
+                <span data-translate="common_no"
+                      data-ng-if="!$row.canAddResource">
+                </span>
+            </oui-column>
+            <oui-column data-title=":: 'dedicatedCloud_USER_VM_NETWORK_ROLE' | translate">
+                <span data-translate="{{ 'dedicatedCloud_USER_right_' + $row.vmNetworkRole }}"></span>
+            </oui-column>
+            <oui-column data-title=":: 'dedicatedCloud_USER_NETWORK_ROLE' | translate">
+                <span data-translate="{{ 'dedicatedCloud_USER_right_' + $row.networkRole }}"></span>
+            </oui-column>
+            <oui-action-menu align="end" compact>
+                <oui-action-menu-item text="{{:: 'dedicatedCloud_USER_right_modify' | translate }}"
+                                      on-click="setAction('user/rights/edit/dedicatedCloud-user-rights-edit', { rightId: $row.rightId })">
+                </oui-action-menu-item>
+            </oui-action-menu>
+        </oui-datagrid>
 
+    </div>
 </div>
