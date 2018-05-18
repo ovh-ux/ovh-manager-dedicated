@@ -706,6 +706,7 @@ module.exports = function (grunt) {
                         travauxUrl: constants[target].travauxUrl,
                         swsProxyRootPath: "<%= swsProxyPath %>",
                         aapiHeaderName: "X-Ovh-2api-Session",
+                        vrackUrl: constants[target].vrackUrl,         // needed for US - add into constants.config.js for other zone if needed
                         MANAGER_URLS: constants[target].MANAGER_URLS,
                         REDIRECT_URLS: constants[target].REDIRECT_URLS
                     },
