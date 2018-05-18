@@ -17,7 +17,7 @@
                           data-ng-bind="('ip_order_ipnbr' | translate) + ' ' + model.params.number ">
                     </span>
                     <span data-ng-if="isMonthlyVps()"
-                          data-ng-bind="duration | duration:'longDate'">
+                          data-ng-bind-html="duration | duration:'longDate'">
                     </span>
                     <span data-ng-if="model.service.serviceType === 'DEDICATED'"
                           data-ng-bind="(model.params.blockSize > 1 ? 'ip_order_ip_count_other' : 'ip_order_ip_count_1') | translate">
