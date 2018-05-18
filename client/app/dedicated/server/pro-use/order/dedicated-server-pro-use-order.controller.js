@@ -1,4 +1,4 @@
-angular.module("App").controller("ServerOrderProUseCtrl", ($scope, $stateParams, Server, Alerter, $q, $rootScope) => {
+angular.module("App").controller("ServerOrderProUseCtrl", ($scope, $stateParams, $translate, Server, Alerter, $q, $rootScope) => {
     "use strict";
 
     $scope.loading = {
@@ -48,7 +48,7 @@ angular.module("App").controller("ServerOrderProUseCtrl", ($scope, $stateParams,
                 }
             },
             (data) => {
-                Alerter.alertFromSWS($scope.tr("server_configuration_profesionnal_use_order_step2_error"), data.data);
+                Alerter.alertFromSWS($translate.instant("server_configuration_profesionnal_use_order_step2_error"), data.data);
                 $scope.resetAction();
                 $scope.loading.durations = false;
             }
@@ -73,7 +73,7 @@ angular.module("App").controller("ServerOrderProUseCtrl", ($scope, $stateParams,
     //= ==============STEP 4===============
 
     $scope.getResumePrice = function (price) {
-        return price.value === 0 ? $scope.tr("price_free") : $scope.tr("price_ht_label", [price.text]);
+        return price.value === 0 ? $translate.instant("price_free") : $translate.instant("price_ht_label", { t0: price.text });
     };
 
     $scope.orderProUse = function () {
@@ -81,13 +81,16 @@ angular.module("App").controller("ServerOrderProUseCtrl", ($scope, $stateParams,
         Server.orderProUse($stateParams.productId, $scope.model.duration).then(
             (order) => {
                 $scope.loading.validation = false;
-                Alerter.alertFromSWS($scope.tr("server_configuration_profesionnal_use_order_finish_success", [order.url, order.orderId]), { idTask: order.orderId, state: "OK" });
+                Alerter.alertFromSWS($translate.instant("server_configuration_profesionnal_use_order_finish_success", {
+                    t0: order.url,
+                    t1: order.orderId
+                }), { idTask: order.orderId, state: "OK" });
                 window.open(order.url, "_blank");
                 $scope.resetAction();
             },
             (data) => {
                 $scope.loading.validation = false;
-                Alerter.alertFromSWS($scope.tr("server_configuration_profesionnal_use_order_finish_error"), data.data);
+                Alerter.alertFromSWS($translate.instant("server_configuration_profesionnal_use_order_finish_error"), data.data);
             }
         );
     };

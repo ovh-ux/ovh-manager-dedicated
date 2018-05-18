@@ -1,4 +1,4 @@
-angular.module("Module.license.controllers").controller("LicenseOrderCtrl", ($scope, $timeout, License, $q, User, Alerter, $filter, featureAvailability, LicenseOrder) => {
+angular.module("Module.license").controller("LicenseOrderCtrl", ($scope, $timeout, $translate, License, $q, User, Alerter, $filter, featureAvailability, LicenseOrder) => {
     $scope.alerts = {
         order: "license.alerts.order"
     };
@@ -226,7 +226,7 @@ angular.module("Module.license.controllers").controller("LicenseOrderCtrl", ($sc
             $scope.user = results.user;
         }).catch((err) => {
             $scope.availableIpBlock = {};
-            Alerter.alertFromSWS($scope.tr("license_details_loading_error"), err, $scope.alerts.order);
+            Alerter.alertFromSWS($translate.instant("license_details_loading_error"), err, $scope.alerts.order);
         }).finally(() => {
             $scope.loaders.ips = false;
         });
@@ -380,7 +380,7 @@ angular.module("Module.license.controllers").controller("LicenseOrderCtrl", ($sc
                 },
                 (data) => {
                     $scope.loaders.durations = false;
-                    Alerter.alertFromSWS($scope.tr("license_order_loading_error"), data.data, $scope.alerts.order);
+                    Alerter.alertFromSWS($translate.instant("license_order_loading_error"), data.data, $scope.alerts.order);
                 }
             );
         }

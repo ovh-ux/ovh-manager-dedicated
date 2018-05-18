@@ -2,17 +2,17 @@
      class="module-useraccount-sections-agreements-container">
 
     <div class="page-header">
-        <h1 data-i18n-static="user_agreement_details_title"></h1>
+        <h1 data-translate="user_agreement_details_title"></h1>
     </div>
 
     <div class="tab-content">
         <a class="d-inline-block mb-5"
            href="#/useraccount/agreements"
-           title="{{ i18n.user_agreement_details_return }}">
+           title="{{ 'user_agreement_details_return' | translate }}">
             <span class="fa fa-chevron-left mr-2"
                   aria-hidden="true">
             </span>
-            <span data-i18n-static="user_agreement_details_return"></span>
+            <span data-translate="user_agreement_details_return"></span>
         </a>
 
         <div data-ovh-alert="agreements_details_alerter"></div>
@@ -23,26 +23,26 @@
         </div>
 
         <div data-ng-if="ctrl.isCGVContract">
-            <h2 data-i18n-static="user_agreement_details_title1"></h2>
-            <h3 data-i18n-static="user_agreement_details_subtitle1"></h3>
-            <p data-i18n-static="user_agreement_details_paragraph1"></p>
+            <h2 data-translate="user_agreement_details_title1"></h2>
+            <h3 data-translate="user_agreement_details_subtitle1"></h3>
+            <p data-translate="user_agreement_details_paragraph1"></p>
 
             <ol>
-                <li data-i18n-static="user_agreement_details_paragraph1_point1"></li>
-                <li data-i18n-static="user_agreement_details_paragraph1_point2"></li>
-                <li data-i18n-static="user_agreement_details_paragraph1_point3"></li>
-                <li data-i18n-static="user_agreement_details_paragraph1_point4"></li>
+                <li data-translate="user_agreement_details_paragraph1_point1"></li>
+                <li data-translate="user_agreement_details_paragraph1_point2"></li>
+                <li data-translate="user_agreement_details_paragraph1_point3"></li>
+                <li data-translate="user_agreement_details_paragraph1_point4"></li>
             </ol>
-            <h3 data-i18n-static="user_agreement_details_subtitle2"></h3>
+            <h3 data-translate="user_agreement_details_subtitle2"></h3>
             <ul>
-                <li data-i18n-static="user_agreement_details_paragraph2_point1"></li>
-                <li data-i18n-static="user_agreement_details_paragraph2_point2"></li>
-                <li data-i18n-static="user_agreement_details_paragraph2_point3"></li>
-                <li data-i18n-static="user_agreement_details_paragraph2_point4"></li>
-                <li data-i18n-static="user_agreement_details_paragraph2_point5"></li>
-                <li data-i18n-static="user_agreement_details_paragraph2_point6"></li>
-                <li data-i18n-static="user_agreement_details_paragraph2_point7"></li>
-                <li data-i18n-static="user_agreement_details_paragraph2_point8"></li>
+                <li data-translate="user_agreement_details_paragraph2_point1"></li>
+                <li data-translate="user_agreement_details_paragraph2_point2"></li>
+                <li data-translate="user_agreement_details_paragraph2_point3"></li>
+                <li data-translate="user_agreement_details_paragraph2_point4"></li>
+                <li data-translate="user_agreement_details_paragraph2_point5"></li>
+                <li data-translate="user_agreement_details_paragraph2_point6"></li>
+                <li data-translate="user_agreement_details_paragraph2_point7"></li>
+                <li data-translate="user_agreement_details_paragraph2_point8"></li>
             </ul>
         </div>
 
@@ -54,8 +54,8 @@
         </div>
 
         <div data-ng-if="ctrl.isCGVContract && ctrl.isIndividual">
-            <h2 data-i18n-static="user_agreement_details_subtitle3"></h2>
-            <p  data-ng-bind-html="tr('user_agreement_details_paragraph3', '#/ticket')"></p>
+            <h2 data-translate="user_agreement_details_subtitle3"></h2>
+            <p  data-ng-bind-html="'user_agreement_details_paragraph3' | translate:{ t0: '#/ticket' }"></p>
         </div>
 
         <div data-ng-if="!ctrl.loading">
@@ -66,7 +66,7 @@
                             <input type="checkbox"
                                    data-ng-model="ctrl.confirmed"
                                    data-ng-disabled="ctrl.alreadyAccepted">
-                            <span data-ng-bind="tr('user_agreement_details_confirmation_text', [ctrl.contract.name])"></span>
+                            <span data-ng-bind="'user_agreement_details_confirmation_text' | translate:{ t0: ctrl.contract.name }"></span>
                         </label>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                             class="oui-button oui-button_primary"
                             data-ng-disabled="!ctrl.confirmed || ctrl.accepted"
                             data-ng-click="ctrl.accept()"
-                            data-i18n-static="user_agreement_details_accept">
+                            data-translate="user_agreement_details_accept">
                     </button>
                 </div>
             </div>

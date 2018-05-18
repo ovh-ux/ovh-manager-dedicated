@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudSecurityCtrl", function ($rootScope, $stateParams, $scope, DedicatedCloud, translator) {
+angular.module("App").controller("DedicatedCloudSecurityCtrl", function ($rootScope, $stateParams, $scope, DedicatedCloud, $translate) {
     const self = this;
     let forceRefresh = false;
 
@@ -36,7 +36,7 @@ angular.module("App").controller("DedicatedCloudSecurityCtrl", function ($rootSc
             },
             (data) => {
                 $scope.loaders.policiesInfo = false;
-                $scope.setMessage($scope.tr("dedicatedCloud_dashboard_loading_error"), { type: "ERROR", message: data.message });
+                $scope.setMessage($translate.instant("dedicatedCloud_dashboard_loading_error"), { type: "ERROR", message: data.message });
             }
         );
     };
@@ -127,7 +127,7 @@ angular.module("App").controller("DedicatedCloudSecurityCtrl", function ($rootSc
     };
 
     self.onError = function (data) {
-        $scope.setMessage(translator.tr("dedicatedCloud_dashboard_loading_error"), data.data);
+        $scope.setMessage($translate.instant("dedicatedCloud_dashboard_loading_error"), data.data);
     };
 
     $scope.loadInfo();

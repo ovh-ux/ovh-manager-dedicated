@@ -4,7 +4,8 @@ angular
         $stateProvider.state("app.license", {
             "abstract": true,
             url: "/configuration/license",
-            template: "<ui-view/>"
+            template: "<ui-view/>",
+            translations: ["license"]
         });
         $stateProvider.state("app.license.dashboard", {
             url: "",

@@ -3,16 +3,16 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addSsl"
-         data-wizard-title="i18n.cdn_configuration_add_ssl_title">
+         data-wizard-title=":: 'cdn_configuration_add_ssl_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="entry.certificate && entry.key && entry.name">
 
-            <p data-i18n-static="cdn_configuration_ssl_add_step1"></p>
+            <p data-translate="cdn_configuration_ssl_add_step1"></p>
             <div class="form-group">
                 <label for="name"
                        class="control-label"
-                       data-i18n-static="cdn_configuration_ssl_name">
+                       data-translate="cdn_configuration_ssl_name">
                 </label>
                 <input type="text"
                        class="form-control"
@@ -24,7 +24,7 @@
             <div class="form-group">
                 <label for="certificate"
                        class="control-label"
-                       data-i18n-static="cdn_configuration_ssl_certificate">
+                       data-translate="cdn_configuration_ssl_certificate">
                 </label>
                 <textarea class="form-control"
                           id="certificate"
@@ -36,7 +36,7 @@
             <div class="form-group">
                 <label for="key"
                        class="control-label"
-                       data-i18n-static="cdn_configuration_ssl_key">
+                       data-translate="cdn_configuration_ssl_key">
                 </label>
                 <textarea class="form-control"
                           id="key"
@@ -48,7 +48,7 @@
             <div class="form-group">
                 <label for="chain"
                        class="control-label"
-                       data-i18n-static="cdn_configuration_ssl_chain">
+                       data-translate="cdn_configuration_ssl_chain">
                 </label>
                 <textarea class="form-control"
                           id="chain"
@@ -61,16 +61,16 @@
         </div>
 
         <div data-wizard-step>
-            <p data-i18n-static="cdn_configuration_ssl_add_step2"></p>
+            <p data-translate="cdn_configuration_ssl_add_step2"></p>
             <dl>
-                <dt data-i18n-static="cdn_configuration_ssl_name"></dt>
+                <dt data-translate="cdn_configuration_ssl_name"></dt>
                 <dd data-ng-bind="entry.name"></dd>
-                <dt data-i18n-static="cdn_configuration_ssl_certificate"></dt>
+                <dt data-translate="cdn_configuration_ssl_certificate"></dt>
                 <dd data-ng-bind-html="entry.certificate"></dd>
-                <dt data-i18n-static="cdn_configuration_ssl_key"></dt>
+                <dt data-translate="cdn_configuration_ssl_key"></dt>
                 <dd data-ng-bind-html="entry.key"></dd>
                 <dt data-ng-if="entry.chain"
-                    data-i18n-static="cdn_configuration_ssl_chain">
+                    data-translate="cdn_configuration_ssl_chain">
                 </dt>
                 <dd data-ng-if="entry.chain"
                     data-ng-bind-html="entry.chain">

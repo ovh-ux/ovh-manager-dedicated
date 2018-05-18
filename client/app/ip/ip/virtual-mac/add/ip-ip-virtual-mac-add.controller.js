@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpAddVirtualMacCtrl", ($scope, $rootScope, Ip, IpVirtualMac, Alerter) => {
+angular.module("Module.ip.controllers").controller("IpAddVirtualMacCtrl", ($scope, $rootScope, $translate, Ip, IpVirtualMac, Alerter) => {
     $scope.data = $scope.currentActionData; // service and sub
     $scope.model = {
         choice: "new"
@@ -30,10 +30,10 @@ angular.module("Module.ip.controllers").controller("IpAddVirtualMacCtrl", ($scop
                 .then(
                     () => {
                         $rootScope.$broadcast("ips.table.refreshVmac", $scope.data.ipBlock);
-                        Alerter.success($scope.tr("ip_virtualmac_add_new_success", $scope.data.ip.ip));
+                        Alerter.success($translate.instant("ip_virtualmac_add_new_success", { t0: $scope.data.ip.ip }));
                     },
                     (reason) => {
-                        Alerter.alertFromSWS($scope.tr("ip_virtualmac_add_new_failure", $scope.data.ip.ip), reason);
+                        Alerter.alertFromSWS($translate.instant("ip_virtualmac_add_new_failure", { t0: $scope.data.ip.ip }), reason);
                     }
                 )
                 .finally(() => {
@@ -44,10 +44,10 @@ angular.module("Module.ip.controllers").controller("IpAddVirtualMacCtrl", ($scop
                 .then(
                     () => {
                         $rootScope.$broadcast("ips.table.refreshVmac", $scope.data.ipBlock);
-                        Alerter.success($scope.tr("ip_virtualmac_add_existing_success", $scope.data.ip.ip));
+                        Alerter.success($translate.instant("ip_virtualmac_add_existing_success", { t0: $scope.data.ip.ip }));
                     },
                     (reason) => {
-                        Alerter.alertFromSWS($scope.tr("ip_virtualmac_add_existing_failure", $scope.data.ip.ip), reason);
+                        Alerter.alertFromSWS($translate.instant("ip_virtualmac_add_existing_failure", { t0: $scope.data.ip.ip }), reason);
                     }
                 )
                 .finally(() => {

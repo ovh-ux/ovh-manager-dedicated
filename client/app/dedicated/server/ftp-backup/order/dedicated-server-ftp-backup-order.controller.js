@@ -1,4 +1,4 @@
-angular.module("App").controller("FtpBackupOrdercontroller", ($scope, $stateParams, Server, Alerter) => {
+angular.module("App").controller("FtpBackupOrdercontroller", ($scope, $stateParams, $translate, Server, Alerter) => {
     $scope.alert = "server_tab_ftpbackup_alert";
     $scope.loading = false;
     $scope.order = {
@@ -17,7 +17,7 @@ angular.module("App").controller("FtpBackupOrdercontroller", ($scope, $statePara
             },
             (reason) => {
                 $scope.loading = false;
-                Alerter.alertFromSWS($scope.tr("server_configuration_ftpbackup_order_load_failure", $scope.access), reason, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("server_configuration_ftpbackup_order_load_failure", { t0: $scope.access }), reason, $scope.alert);
                 $scope.resetAction();
             }
         );
@@ -35,7 +35,7 @@ angular.module("App").controller("FtpBackupOrdercontroller", ($scope, $statePara
             },
             (reason) => {
                 $scope.loading = false;
-                Alerter.alertFromSWS($scope.tr("server_configuration_ftpbackup_order_load_detail_failure", $scope.access), reason, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("server_configuration_ftpbackup_order_load_detail_failure", { t0: $scope.access }), reason, $scope.alert);
                 $scope.resetAction();
             }
         );
@@ -46,13 +46,16 @@ angular.module("App").controller("FtpBackupOrdercontroller", ($scope, $statePara
         Server.postFtpBackupOrderDetail($stateParams.productId, $scope.order.bc.duration, $scope.order.model[$scope.order.choiceIndex].capacity).then(
             (data) => {
                 window.open(data.url, "_blank");
-                Alerter.alertFromSWS($scope.tr("server_configuration_ftpbackup_order_load_order_success", [data.url, data.orderId]), true, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("server_configuration_ftpbackup_order_load_order_success", {
+                    t0: data.url,
+                    t1: data.orderId
+                }), true, $scope.alert);
                 $scope.loading = false;
                 $scope.resetAction();
             },
             (reason) => {
                 $scope.loading = false;
-                Alerter.alertFromSWS($scope.tr("server_configuration_ftpbackup_order_load_order_failure", $scope.access), reason, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("server_configuration_ftpbackup_order_load_order_failure", { t0: $scope.access }), reason, $scope.alert);
                 $scope.resetAction();
             }
         );

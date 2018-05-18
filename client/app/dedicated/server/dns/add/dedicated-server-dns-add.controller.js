@@ -1,4 +1,4 @@
-angular.module("App").controller("AddSecondaryDnsCtrl", ($scope, Server, Alerter, IpRange, $stateParams) => {
+angular.module("App").controller("AddSecondaryDnsCtrl", ($scope, $translate, Server, Alerter, IpRange, $stateParams) => {
     $scope.entry = {
         domain: "",
         ip: ""
@@ -42,7 +42,7 @@ angular.module("App").controller("AddSecondaryDnsCtrl", ($scope, Server, Alerter
             (err) => {
                 $scope.loading = false;
                 $scope.resetAction();
-                $scope.setMessage($scope.tr("server_configuration_ips_cannotfetch"), err);
+                $scope.setMessage($translate.instant("server_configuration_ips_cannotfetch"), err);
             }
         );
     };
@@ -57,7 +57,7 @@ angular.module("App").controller("AddSecondaryDnsCtrl", ($scope, Server, Alerter
             },
             (data) => {
                 $scope.loadTokenLoading = false;
-                Alerter.alertFromSWS($scope.tr("server_configuration_secondarydns_add_step2_error"), data.data, "addTokenAlert");
+                Alerter.alertFromSWS($translate.instant("server_configuration_secondarydns_add_step2_error"), data.data, "addTokenAlert");
             }
         );
     };
@@ -68,12 +68,12 @@ angular.module("App").controller("AddSecondaryDnsCtrl", ($scope, Server, Alerter
             () => {
                 $scope.resetAction();
                 $scope.loading = false;
-                $scope.setMessage($scope.tr("server_configuration_secondarydns_add_success", [$scope.server.name]));
+                $scope.setMessage($translate.instant("server_configuration_secondarydns_add_success", { t0: $scope.server.name }));
             },
             (err) => {
                 $scope.resetAction();
                 $scope.loading = false;
-                $scope.setMessage($scope.tr("server_configuration_secondarydns_add_fail"), err);
+                $scope.setMessage($translate.instant("server_configuration_secondarydns_add_fail"), err);
             }
         );
     };

@@ -1,4 +1,4 @@
-angular.module("App").controller("CdnUpdateDomainCtrl", ($scope, $stateParams, CdnDomain) => {
+angular.module("App").controller("CdnUpdateDomainCtrl", ($scope, $stateParams, $translate, CdnDomain) => {
     $scope.domain = $scope.currentActionData;
 
     $scope.updateDomain = function () {
@@ -6,10 +6,10 @@ angular.module("App").controller("CdnUpdateDomainCtrl", ($scope, $stateParams, C
         const currentStatus = $scope.domain.mode === "ON";
         CdnDomain.updateDomain($stateParams.productId, $stateParams.domain, !currentStatus).then(
             () => {
-                $scope.setMessage($scope.tr("cdn_domain_configuration_update_success", $scope.domain.domain), true);
+                $scope.setMessage($translate.instant("cdn_domain_configuration_update_success", { t0: $scope.domain.domain }), true);
             },
             (data) => {
-                $scope.setMessage($scope.tr("cdn_domain_configuration_update_fail", $scope.domain.domain), angular.extend(data, { type: "ERROR" }));
+                $scope.setMessage($translate.instant("cdn_domain_configuration_update_fail", { t0: $scope.domain.domain }), angular.extend(data, { type: "ERROR" }));
             }
         );
     };

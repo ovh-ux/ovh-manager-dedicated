@@ -1,10 +1,10 @@
 class SessionService {
-    constructor ($q, $translate, $translatePartialLoader, constants, translator, CdnDomain, DedicatedCloud, Nas, Products, User, LANGUAGES, OtrsPopupService, ssoAuthentication, featureAvailability) {
+    constructor ($q, $translate, $translatePartialLoader, constants, CdnDomain, DedicatedCloud, Nas, Products, User, LANGUAGES, OtrsPopupService, ssoAuthentication, featureAvailability) {
         this.$q = $q;
         this.$translate = $translate;
         this.$translatePartialLoader = $translatePartialLoader;
         this.constants = constants;
-        this.translator = translator;
+        this.$translate = $translate;
         this.cdnDomain = CdnDomain;
         this.dedicatedCloud = DedicatedCloud;
         this.nas = Nas;
@@ -321,8 +321,8 @@ class SessionService {
             name: "languages",
             label: _(currentLanguage).get("name"),
             "class": "oui-navbar-menu_language",
-            title: _(currentLanguage).get("value").replace("_", "-"),
-            headerTitle: this.translator.tr("global_language"),
+            title: _(currentLanguage).get("value").split("_")[0].toUpperCase(),
+            headerTitle: this.$translate.instant("global_language"),
             subLinks: _(this.LANGUAGES)
                 .filter((language) => _(language).has("name", "value"))
                 .map((language) => ({
@@ -368,10 +368,6 @@ class SessionService {
                     (this.constants.target === "EU" || this.constants.target === "CA") && {
                         title: this.$translate.instant("menu_emails"),
                         state: "app.account.useraccount.emails"
-                    },
-                    (this.constants.target === "EU") && {
-                        title: this.$translate.instant("menu_subscriptions"),
-                        state: "app.account.useraccount.subscriptions"
                     }, {
                         title: this.$translate.instant("menu_ssh"),
                         state: "app.account.useraccount.ssh"
@@ -538,8 +534,8 @@ class SessionService {
             // Set Internal Links
             if (user) {
                 baseNavbar.internalLinks = [
-                    this.getAssistanceMenu(user), // Assistance
                     this.getLanguageMenu(), // Language
+                    this.getAssistanceMenu(user), // Assistance
                     this.getUserMenu(user) // User
                 ];
             }

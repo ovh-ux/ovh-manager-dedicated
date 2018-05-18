@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpMitigationUpdateCtrl", ($scope, $rootScope, Ip, IpMitigation, translator, Alerter, $location) => {
+angular.module("Module.ip.controllers").controller("IpMitigationUpdateCtrl", ($scope, $rootScope, Ip, IpMitigation, $translate, Alerter, $location) => {
     $scope.translations = {};
 
     function init (data) {
@@ -7,11 +7,15 @@ angular.module("Module.ip.controllers").controller("IpMitigationUpdateCtrl", ($s
 
         // Hack because the condition in the template wouldn't change depending on the mitigation status
         if ($scope.mitigationStatusAuto) {
-            $scope.translations.wizardTitle = translator.tr("ip_mitigation_permanent_title");
-            $scope.translations.wizardQuestion = translator.tr("ip_mitigation_permanent_question", [$scope.data.ip.ip]);
+            $scope.translations.wizardTitle = $translate.instant("ip_mitigation_permanent_title");
+            $scope.translations.wizardQuestion = $translate.instant("ip_mitigation_permanent_question", {
+                t0: $scope.data.ip.ip
+            });
         } else {
-            $scope.translations.wizardTitle = translator.tr("ip_mitigation_auto_title");
-            $scope.translations.wizardQuestion = translator.tr("ip_mitigation_auto_question", [$scope.data.ip.ip]);
+            $scope.translations.wizardTitle = $translate.instant("ip_mitigation_auto_title");
+            $scope.translations.wizardQuestion = $translate.instant("ip_mitigation_auto_question", {
+                t0: $scope.data.ip.ip
+            });
         }
     }
 
@@ -28,17 +32,25 @@ angular.module("Module.ip.controllers").controller("IpMitigationUpdateCtrl", ($s
             .then(
                 (data) => {
                     if (newMitigationStatus === "DEFAULT") {
-                        Alerter.alertFromSWS(translator.tr("ip_mitigation_auto_success", $scope.data.ip.ip), data);
+                        Alerter.alertFromSWS($translate.instant("ip_mitigation_auto_success", {
+                            t0: $scope.data.ip.ip
+                        }), data);
                     } else {
-                        Alerter.alertFromSWS(translator.tr("ip_mitigation_permanent_success", $scope.data.ip.ip), data);
+                        Alerter.alertFromSWS($translate.instant("ip_mitigation_permanent_success", {
+                            t0: $scope.data.ip.ip
+                        }), data);
                     }
                     $rootScope.$broadcast("ips.table.refreshBlock", $scope.data.ipBlock);
                 },
                 (data) => {
                     if (newMitigationStatus === "DEFAULT") {
-                        Alerter.alertFromSWS(translator.tr("ip_mitigation_auto_failed", $scope.data.ip.ip), data);
+                        Alerter.alertFromSWS($translate.instant("ip_mitigation_auto_failed", {
+                            t0: $scope.data.ip.ip
+                        }), data);
                     } else {
-                        Alerter.alertFromSWS(translator.tr("ip_mitigation_permanent_failed", $scope.data.ip.ip), data);
+                        Alerter.alertFromSWS($translate.instant("ip_mitigation_permanent_failed", {
+                            t0: $scope.data.ip.ip
+                        }), data);
                     }
                 }
             )

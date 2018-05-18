@@ -1,33 +1,24 @@
-angular.module("Module.ip.controllers").controller("IplbImportCustomSslCtrl", [
-    "$scope",
-    "$rootScope",
-    "Iplb",
-    "Alerter",
+angular.module("Module.ip.controllers").controller("IplbImportCustomSslCtrl", ($scope, $rootScope, $translate, Iplb, Alerter) => {
+    $scope.data = $scope.currentActionData; // service
+    $scope.model = {};
 
-    function ($scope, $rootScope, Iplb, Alerter) {
-        "use strict";
+    $scope.loading = false;
 
-        $scope.data = $scope.currentActionData; // service
-        $scope.model = {};
+    /* Action */
 
-        $scope.loading = false;
-
-        /* Action */
-
-        $scope.importCustomSsl = function () {
-            $scope.loading = true;
-            Iplb.importCustomSsl($scope.data.value, $scope.model)
-                .then(
-                    () => {
-                        Alerter.success($scope.tr("iplb_ssl_import_success"));
-                    },
-                    (reason) => {
-                        Alerter.alertFromSWS($scope.tr("iplb_ssl_import_failure"), reason);
-                    }
-                )
-                .finally(() => {
-                    $scope.resetAction();
-                });
-        };
-    }
-]);
+    $scope.importCustomSsl = function () {
+        $scope.loading = true;
+        Iplb.importCustomSsl($scope.data.value, $scope.model)
+            .then(
+                () => {
+                    Alerter.success($translate.instant("iplb_ssl_import_success"));
+                },
+                (reason) => {
+                    Alerter.alertFromSWS($translate.instant("iplb_ssl_import_failure"), reason);
+                }
+            )
+            .finally(() => {
+                $scope.resetAction();
+            });
+    };
+});

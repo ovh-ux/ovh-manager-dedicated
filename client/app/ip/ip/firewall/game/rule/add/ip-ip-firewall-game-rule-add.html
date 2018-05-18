@@ -2,7 +2,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addGameFirewallRule"
-         data-wizard-title="tr('ip_game_mitigation_rule_add_title')">
+         data-wizard-title=":: 'ip_game_mitigation_rule_add_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="!AddGameFirewallRuleCtrl.loading && AddGameFirewallRuleCtrl.forms.addRuleForm.$valid">
@@ -17,7 +17,7 @@
                          data-ng-class="getClassLabel(addRuleForm.protocol)">
                         <label for="protocol"
                                class="control-label"
-                               data-i18n-static="ip_game_mitigation_rule_add_protocol">
+                               data-translate="ip_game_mitigation_rule_add_protocol">
                         </label>
                         <select required
                                 id="protocol"
@@ -32,7 +32,7 @@
                          data-ng-class="getClassLabel(addRuleForm.portFrom)">
                         <label for="portFrom"
                                class="control-label"
-                               data-i18n-static="ip_game_mitigation_rule_add_port_from">
+                               data-translate="ip_game_mitigation_rule_add_port_from">
                         </label>
                         <input type="number"
                                data-ng-model="AddGameFirewallRuleCtrl.rule.ports.from"
@@ -46,7 +46,7 @@
                         <div class="text-danger"
                              data-ng-show="addRuleForm.portFrom.$invalid && addRuleForm.portFrom.$dirty && value == true && error !== 'required'"
                              data-ng-repeat="(error, value) in addRuleForm.portFrom.$error"
-                             data-ng-bind="i18n['ip_game_mitigation_rule_add_port_' + error] || error">
+                             data-ng-bind="('ip_game_mitigation_rule_add_port_' + error) | translateAlt: error">
                         </div>
                     </div>
 
@@ -54,7 +54,7 @@
                          data-ng-class="getClassLabel(addRuleForm.portTo)">
                         <label for="portTo"
                                class="control-label"
-                               data-i18n-static="ip_game_mitigation_rule_add_port_to">
+                               data-translate="ip_game_mitigation_rule_add_port_to">
                         </label>
                         <input type="number"
                                class="form-control"
@@ -67,7 +67,7 @@
                         <div class="error-label"
                              data-ng-show="addRuleForm.portTo.$invalid && addRuleForm.portTo.$dirty && value == true"
                              data-ng-repeat="(error, value) in addRuleForm.portTo.$error"
-                             data-ng-bind="i18n['ip_game_mitigation_rule_add_port_' + error] || error">
+                             data-ng-bind="('ip_game_mitigation_rule_add_port_' + error) | translateAlt: error">
                         </div>
                     </div>
                 </form>

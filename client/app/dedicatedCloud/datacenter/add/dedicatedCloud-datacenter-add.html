@@ -3,7 +3,7 @@
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addDatacenter"
          data-wizard-step-valid="wizard_yes"
-         data-wizard-title="i18n.dedicatedCloud_configuration_add_datacenter_title"
+         data-wizard-title=":: 'dedicatedCloud_configuration_add_datacenter_title' | translate"
          data-wizard-title-icon="'icon-add-datacenter'"
          class="network">
 
@@ -20,14 +20,14 @@
                 <div class="form-group">
                     <label for="commercialRange"
                            class="control-label"
-                           data-i18n-static="dedicatedCloud_configuration_add_datacenter_confirmation">
+                           data-translate="dedicatedCloud_configuration_add_datacenter_confirmation">
                     </label>
                     <select class="form-control"
                             id="commercialRange"
                             name="commercialRange"
                             data-ng-model="commercialRange.model"
                             data-ng-options="commercialRangeType as (commercialRange.constants[commercialRangeType] || commercialRangeType)  for commercialRangeType in commercialRange.list">
-                        <option value="" data-ng-disabled="true" data-i18n-static="dedicatedCloud_datacenters_adding_select"></option>
+                        <option value="" data-ng-disabled="true" data-translate="dedicatedCloud_datacenters_adding_select"></option>
                     </select>
                 </div>
             </form>

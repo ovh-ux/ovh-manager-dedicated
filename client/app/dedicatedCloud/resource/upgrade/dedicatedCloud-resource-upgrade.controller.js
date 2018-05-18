@@ -1,14 +1,14 @@
-angular.module("App").controller("DedicatedCloudUpgradeCtrl", ($scope, $stateParams, DedicatedCloud) => {
+angular.module("App").controller("DedicatedCloudUpgradeCtrl", ($scope, $stateParams, $translate, DedicatedCloud) => {
     "use strict";
 
     $scope.upgrade = function () {
         $scope.resetAction();
         DedicatedCloud.upgrade($stateParams.productId).then(
             () => {
-                $scope.setMessage($scope.tr("dedicatedCloud_upgrade_success"));
+                $scope.setMessage($translate.instant("dedicatedCloud_upgrade_success"));
             },
             (data) => {
-                $scope.setMessage($scope.tr("dedicatedCloud_upgrade_error"), data.data);
+                $scope.setMessage($translate.instant("dedicatedCloud_upgrade_error"), data.data);
             }
         );
     };

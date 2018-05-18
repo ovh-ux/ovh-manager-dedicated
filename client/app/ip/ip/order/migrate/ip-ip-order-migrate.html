@@ -3,12 +3,12 @@
          data-wizard-bread-crumb="true"
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="migrateIp"
-         data-wizard-title="tr('ip_migration')">
+         data-wizard-title=":: 'ip_migration' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="migrate.token && migrate.token.length == 20 && migrate.ip && isValidIp(migrate.ip)">
 
-            <p data-i18n-static="ip_migration_step1_question"></p>
+            <p data-translate="ip_migration_step1_question"></p>
 
             <form>
                 <div class="form-group"
@@ -17,7 +17,7 @@
                      }">
                     <label class="control-label"
                            for="ipMigrate"
-                           data-i18n-static="ip_migration_step1_ip">
+                           data-translate="ip_migration_step1_ip">
                     </label>
                     <input type="text"
                            id="ipMigrate"
@@ -27,7 +27,7 @@
                 <div class="form-group">
                     <label class="control-label"
                            for="tokenMigrate"
-                           data-i18n-static="ip_migration_step1_token">
+                           data-translate="ip_migration_step1_token">
                     </label>
                     <input type="text"
                            class="form-control"
@@ -51,24 +51,24 @@
             <div data-ng-hide="loading.step2">
                 <p class="alert alert-info"
                    role="alert"
-                   data-i18n-static="ip_migration_step2_question">
+                   data-translate="ip_migration_step2_question">
                 </p>
                 <form>
                     <div class="form-group">
                         <label class="control-label"
                                for="serviceSelect"
-                               data-i18n-static="ip_migration_step2_service">
+                               data-translate="ip_migration_step2_service">
                         </label>
                         <select id="serviceSelect"
                                 name="serviceSelect"
                                 class="form-control"
                                 data-ng-model="migrate.service"
-                                data-ng-options="service as service.serviceName group by tr('ip_servicetype_' + service.serviceType) for service in servicesList"
+                                data-ng-options="service as service.serviceName group by ('ip_servicetype_' + service.serviceType | translate) for service in servicesList"
                                 data-ng-disabled="migrate.service && loading.checkServiceMigrateable"
                                 data-ng-change="checkServiceMigrateable()">
                             <option value=""
                                     data-ng-disabled="true"
-                                    data-i18n-static="global_select">
+                                    data-translate="global_select">
                             </option>
                         </select>
                     </div>
@@ -76,22 +76,22 @@
 
                 <!-- Checking... -->
                 <div data-ng-show="loading.checkServiceMigrateable">
-                    <span data-i18n-static="ip_migration_step2_checkservice"></span>
+                    <span data-translate="ip_migration_step2_checkservice"></span>
                     <oui-spinner data-size="s"></oui-spinner>
                 </div>
 
                 <!-- ERROR -->
                 <div class="alert alert-danger"
                      role="alert"
-                     data-ng-show="migrateableIpError && !loading.checkServiceMigrateable && i18n['ip_migration_step2_error_' + migrateableIpError]">
-                    <p data-ng-bind="tr('ip_migration_step2_error_' + migrateableIpError, [migrate.ip, migrate.service.serviceName])"></p>
+                     data-ng-show="migrateableIpError && !loading.checkServiceMigrateable && ('ip_migration_step2_error_' + migrateableIpError | translateAlt: '')">
+                    <p data-ng-bind="'ip_migration_step2_error_' + migrateableIpError | translate:{ t0: migrate.ip, t1: migrate.service.serviceName }"></p>
                 </div>
 
                 <!-- SUCCESS -->
                 <div class="alert alert-success"
                      role="alert"
                      data-ng-hide="migrateableIpError || loading.checkServiceMigrateable || migrate.service == null">
-                    <p data-ng-bind="tr('ip_migration_step2_success', [migrate.ip, migrate.service.serviceName])"></p>
+                    <p data-ng-bind="'ip_migration_step2_success' | translate:{ t0: migrate.ip, t1: migrate.service.serviceName }"></p>
                 </div>
             </div>
         </div>
@@ -105,7 +105,7 @@
             <div class="form-group">
                 <p class="alert alert-info"
                    role="alert"
-                   data-i18n-static="ip_migration_step3_question">
+                   data-translate="ip_migration_step3_question">
                 </p>
                 <div class="radio"
                      data-ng-repeat="duration in durations.available">
@@ -142,7 +142,7 @@
             <div data-ng-show="!loading.validation">
                 <p class="alert alert-info"
                    role="alert"
-                   data-i18n-static="ip_migration_step5_question">
+                   data-translate="ip_migration_step5_question">
                 </p>
                 <div class="table-responsive">
                     <table class="table table-hover">
@@ -163,7 +163,7 @@
                             <tr>
                                 <td class="text-right">
                                     <span class="font-weight-bold"
-                                          data-i18n-static="dedicatedCloud_order_price_HT">
+                                          data-translate="dedicatedCloud_order_price_HT">
                                     </span>
                                     <span class="text-danger font-weight-bold"
                                           data-ng-bind="durations.details[migrate.duration].prices.withoutTax.text">
@@ -173,7 +173,7 @@
                             <tr>
                                 <td class="text-right">
                                     <span class="font-weight-bold"
-                                          data-i18n-static="dedicatedCloud_order_price_TTC">
+                                          data-translate="dedicatedCloud_order_price_TTC">
                                     </span>
                                     <span class="text-danger font-weight-bold"
                                           data-ng-bind="durations.details[migrate.duration].prices.withTax.text">
@@ -184,10 +184,10 @@
                     </table>
                 </div>
 
-                <p data-i18n-static="dedicatedCloud_order_final_txt">
+                <p data-translate="dedicatedCloud_order_final_txt">
                 </p>
                 <p class="text-muted"
-                   data-i18n-static="dedicatedCloud_order_final_txt2">
+                   data-translate="dedicatedCloud_order_final_txt2">
                 </p>
             </div>
 

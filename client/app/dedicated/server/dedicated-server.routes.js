@@ -4,13 +4,6 @@ angular.module("App").config(($stateProvider) => {
         templateUrl: "dedicated/server/dedicated-server.html",
         controller: "ServerCtrl",
         reloadOnSearch: false,
-        resolve: {
-            translator: [
-                "translator",
-                function (translator) {
-                    return translator.load(["server"]).then(() => translator);
-                }
-            ]
-        }
+        translations: ["dedicated/server"]
     });
 });

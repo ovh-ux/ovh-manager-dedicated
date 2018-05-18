@@ -18,9 +18,9 @@ angular.module("ovhSignupApp").component("newAccountForm", {
         "UserAccount.conf.BASE_URL",
         "UserAccount.constants",
         "UserAccount.services.Infos",
-        "translator",
+        "$translate",
 
-        function ($scope, $q, $location, $http, $httpParamSerializerJQLike, $timeout, NewAccountFormConfig, Alerter, BASE_URL, UserAccountConstants, UserAccountServiceInfos, translator) {
+        function ($scope, $q, $location, $http, $httpParamSerializerJQLike, $timeout, NewAccountFormConfig, Alerter, BASE_URL, UserAccountConstants, UserAccountServiceInfos, $translate) {
             "use strict";
 
             this.isLoading = false; // true when fetching data from api
@@ -30,12 +30,6 @@ angular.module("ovhSignupApp").component("newAccountForm", {
             this.readonly = this.readonly || [];
             this.rules = null;
             this.isSubmitting = false;
-
-            // because i'm cheap and lazy
-            const $translate = {
-                instant: translator.tr
-            };
-            this.tr = $translate.instant;
 
             $scope.getTemplateUrl = () => `${BASE_URL}components/newAccountForm/new-account-form-component.html`;
 

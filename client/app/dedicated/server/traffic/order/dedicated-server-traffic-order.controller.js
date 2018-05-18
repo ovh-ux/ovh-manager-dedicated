@@ -1,10 +1,10 @@
 (() => {
     "use strict";
     class ServerOrderTrafficCtrl {
-        constructor ($scope, $stateParams, translator, User, ServerOrderTrafficService) {
+        constructor ($scope, $stateParams, $translate, User, ServerOrderTrafficService) {
             this.$scope = $scope;
             this.$stateParams = $stateParams;
-            this.translator = translator;
+            this.$translate = $translate;
             this.ServerOrderTrafficService = ServerOrderTrafficService;
             this.User = User;
 
@@ -75,7 +75,9 @@
 
         openBC () {
             this.$scope.resetAction();
-            this.$scope.setMessage(this.translator.tr("server_order_traffic_success", [this.bc.data.url]), true);
+            this.$scope.setMessage(this.$translate.instant("server_order_traffic_success", {
+                t0: this.bc.data.url
+            }), true);
             window.open(this.bc.data.url);
         }
 

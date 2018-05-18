@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cdn_dashboard_loading_error" qtlid="132083">Įvyko klaida siunčiant jūsų paslaugos duomenis.</translation>
+   <translation id="cdn_configuration_add_domain_title_button" qtlid="132096">Pridėti domeną prie CDN</translation>
+   <translation id="cdn_configuration_add_domain_title" qtlid="8602">Pridėti domeną</translation>
+   <translation id="cdn_configuration_add_domain_step1_question" qtlid="127818">Įveskite domeną, kurį įtrauksite į CDN:</translation>
+   <translation id="cdn_configuration_add_domain_step2_question" qtlid="132109">Pasirinkite backend, kurį pageidaujate susieti su domenu {0}:</translation>
+   <translation id="cdn_configuration_add_domain_step2_default_backend" qtlid="132122">Backend</translation>
+   <translation id="cdn_configuration_add_domain_step2_no_backend" qtlid="133994">Dar neturite backend</translation>
+   <translation id="cdn_configuration_add_domain_step2_addBackend" qtlid="132135">Arba susiekite jį su nauju backend:</translation>
+   <translation id="cdn_configuration_add_domain_step2_full" qtlid="127084">Jūsų Backend bankas (pool) jau užpildytas. Norėdami pridėti šį IP adresą, turite užsisakyti papildomą Backend.</translation>
+   <translation id="cdn_configuration_add_domain_step2_full_buy" qtlid="178965">Užsakyti backend</translation>
+   <translation id="cdn_configuration_add_domain_step3_question" qtlid="183632">Norite įtraukti domeną į CDN <span class="italic normal">{0}</span>?</translation>
+   <translation id="cdn_configuration_add_domain_step3_domain" qtlid="111918">Domenas:</translation>
+   <translation id="cdn_configuration_add_domain_step3_backend" qtlid="132161">Backend:</translation>
+   <translation id="cdn_configuration_add_domain_success" qtlid="132174">Domenas {0}, susietas su backend {1}, sėkmingai įtrauktas į CDN.</translation>
+   <translation id="cdn_configuration_add_domain_fail" qtlid="132187">Įvyko klaida teikiant prašymą pridėti domeną prie CDN.</translation>
+   <translation id="cdn_configuration_delete_domain_title" qtlid="8470">Ištrinti domeną</translation>
+   <translation id="cdn_configuration_delete_domain_question" qtlid="145072">Ar pageidaujate ištrinti domeną {0}?</translation>
+   <translation id="cdn_configuration_delete_domain_fail" qtlid="133851">Neįmanoma ištrinti domeno.</translation>
+   <translation id="cdn_configuration_delete_domain_success" qtlid="144864">Domenas sėkmingai pašalintas.</translation>
+   <translation id="cdn_configuration_backend_upgrade_title" qtlid="132200">Backend užsakymas </translation>
+   <translation id="cdn_configuration_backend_upgrade_step1_explanation" qtlid="133812">Įveskite backend skaičių </translation>
+   <translation id="cdn_configuration_backend_upgrade_step1_tarif" qtlid="132213">Įkainiai:</translation>
+   <translation id="cdn_configuration_backend_upgrade_step1_tarif2" qtlid="132226">{0} be PVM /mėn./backend</translation>
+   <translation id="cdn_configuration_backend_upgrade_step1_number" qtlid="132239">Papildomai užsakomų backend skaičius:</translation>
+   <translation id="cdn_configuration_backend_upgrade_step2_durations" qtlid="132252">Užsakyti {0} papildomus(-ų) backend pasirinktam laikotarpiui:</translation>
+   <translation id="cdn_configuration_backend_upgrade_step2_duration_total" qtlid="132265">{0} mėn.: iš viso {1} be PVM</translation>
+   <translation id="cdn_configuration_backend_upgrade_step3_question" qtlid="183645">Papildomų {0} backend įtraukimas į CDN <span class="italic normal">{1}</span></translation>
+   <translation id="cdn_configuration_backend_upgrade_step3_id" qtlid="169472">Jūsų užsakymas bus patvirtintas, kai sutiksite su sutartimis ir spragtelėsite mygtuką "Toliau".</translation>
+   <translation id="cdn_configuration_backend_upgrade_step3_totalHT" qtlid="169238">Kaina be PVM:</translation>
+   <translation id="cdn_configuration_backend_upgrade_step3_totalTTC" qtlid="169251">Kaina su PVM:</translation>
+   <translation id="cdn_configuration_backend_upgrade_step3_contracts" qtlid="169485">Patvirtinu, kad susipažinau ir sutinku</translation>
+   <translation id="cdn_configuration_backend_upgrade_step3_contracts_of" qtlid="130243"></translation>
+   <translation id="cdn_configuration_backend_upgrade_step3_contracts_and" qtlid="169498">ir</translation>
+   <translation id="cdn_configuration_backend_upgrade_step4_generation_bc" qtlid="169511">Užsakymo generavimas...</translation>
+   <translation id="cdn_configuration_backend_upgrade_step4_bc" qtlid="169524">Užsakymas sėkmingai sugeneruotas.</translation>
+   <translation id="cdn_configuration_backend_upgrade_step4_continue" qtlid="169537">Užsakymą patvirtinsite spragtelėję "valdyti".</translation>
+   <translation id="cdn_configuration_backend_upgrade_step4_explication" qtlid="132291">Dėmesio: parinktis bus aktyvuoja jūsų valdymo sąsajoje per 2 valandas nuo jūsų apmokėjimo patvirtinimo momento. </translation>
+   <translation id="cdn_configuration_backend_upgrade_step4_explication2" qtlid="167886">Atsidarys naujas langas ir būsite automatiškai nukreipti į OVH apmokėjimų sąsają.</translation>
+   <translation id="cdn_configuration_backend_upgrade_fail" qtlid="132304">Įvyko klaida siunčiant duomenis </translation>
+   <translation id="cdn_configuration_terminate_title_button" qtlid="56337">Panaikinti paslaugą</translation>
+   <translation id="cdn_configuration_domain" qtlid="132317">0 domenų</translation>
+   <translation id="cdn_configuration_domain_1" qtlid="132330">1 domenas</translation>
+   <translation id="cdn_configuration_domain_other">{} domaines</translation>
+   <translation id="cdn_configuration_backend" qtlid="132356">{0} x Backend IP</translation>
+   <translation id="cdn_configuration_activity" qtlid="143160">Aktyvumas (per paskutinį mėnesį)</translation>
+   <translation id="cdn_configuration_activity_page_viewed_0" qtlid="128118">Nėra peržiūrėtų objektų</translation>
+   <translation id="cdn_configuration_activity_page_viewed_one" qtlid="132369">1 peržiūrėtas objektas </translation>
+   <translation id="cdn_configuration_activity_page_viewed_other">{} objets vus</translation>
+   <translation id="cdn_configuration_activity_page_viewed_default" qtlid="126832">Jau greitai </translation>
+   <translation id="cdn_configuration_savings" qtlid="143173">Sutaupyta (per paskutinį mėnesį)</translation>
+   <translation id="cdn_configuration_savings_bandwidth_percentage">{} % de bande passante</translation>
+   <translation id="cdn_configuration_savings_bandwidth_percentage_default" qtlid="125516">Duomenų sratas: jokių duomenų</translation>
+   <translation id="cdn_configuration_savings_request_percentage" qtlid="132408">{0} % užklausų </translation>
+   <translation id="cdn_configuration_savings_request_percentage_default" qtlid="121471">Užklausos: jokių duomenų</translation>
+   <translation id="cdn_configuration_quota" qtlid="143186">Likęs srautas</translation>
+   <translation id="cdn_configuration_order_more_trafic" qtlid="127746">Užsakyti papildomo duomenų srauto</translation>
+   <translation id="cdn_configuration_quota_remaining_0" qtlid="125540">Kvotos viršijimas</translation>
+   <translation id="cdn_configuration_quota_remaining_1" qtlid="183658;127794">[class=value]{0}[/class] [class=unit]{1}[/class] <br/>Likęs duomenų srautas</translation>
+   <translation id="cdn_configuration_quota_remaining_other" qtlid="183671;127794">[class=value]{0}[/class] [class=unit]{1}[/class] <br/>Likęs duomenų srautas</translation>
+   <translation id="cdn_configuration_quota_remaining_default" qtlid="121339">Jokių duomenų</translation>
+   <translation id="cdn_configuration_quota_estimation" qtlid="132421">Apskaičiuotas laikas iki visiško išnaudojimo</translation>
+   <translation id="cdn_configuration_more_than_three_month" qtlid="129507">+3 mėn. </translation>
+   <translation id="cdn_configuration_cacherules_upgrade_title_button" qtlid="132434">Užsakyti spartinančiosios atmintinės taisykles </translation>
+   <translation id="cdn_configuration_cacherules_upgrade_title" qtlid="132434">Užsakyti spartinančiosios atmintinės taisykles </translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step1_tarif" qtlid="132213">Įkainiai:</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step1_tarif2" qtlid="132447">{0} be PVM/mėn. užsakant {1} spartinančiosios atmintinės taisykles(-ių) </translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step2_durations" qtlid="132460">Užsakyti {0} papildomas(-ų) spartinančiosios atmintinės taisykles(-ių) pasirinktam laikotarpiui: </translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step2_duration_total" qtlid="132265">{0} mėn.: iš viso {1} be PVM</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step3_question" qtlid="183684">Papildomų {0} spartinančiosios atmintinės taisyklių įtraukimas į CDN <span class="italic normal">{1}</span></translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step3_id" qtlid="169472">Jūsų užsakymas bus patvirtintas, kai sutiksite su sutartimis ir spragtelėsite mygtuką "Toliau".</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step3_totalHT" qtlid="169238">Kaina be PVM:</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step3_totalTTC" qtlid="169251">Kaina su PVM:</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step3_contracts" qtlid="169485">Patvirtinu, kad susipažinau ir sutinku</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step3_contracts_of" qtlid="130243"></translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step3_contracts_and" qtlid="169498">ir</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step4_generation_bc" qtlid="169511">Užsakymo generavimas...</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step4_bc" qtlid="169524">Užsakymas sėkmingai sugeneruotas.</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step4_continue" qtlid="169537">Užsakymą patvirtinsite spragtelėję "valdyti".</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step4_explication" qtlid="132291">Dėmesio: parinktis bus aktyvuoja jūsų valdymo sąsajoje per 2 valandas nuo jūsų apmokėjimo patvirtinimo momento. </translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step4_explication2" qtlid="167886">Atsidarys naujas langas ir būsite automatiškai nukreipti į OVH apmokėjimų sąsają.</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_fail" qtlid="132304">Įvyko klaida siunčiant duomenis </translation>
+   <translation id="cdn_domain_configuration_purge_title_button" qtlid="125660">Išvalyti spartinančiąją atmintinę </translation>
+   <translation id="cdn_domain_configuration_bypass_title_button" qtlid="125672">CDN apėjimas (bypass)</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_title_button" qtlid="125696">Sukurti naują taisyklę</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_title" qtlid="125696">Sukurti naują taisyklę</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_step1_question" qtlid="132486">Pageidaujate sukurti spartinančiosios atmintinės taisyklę?</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_step1_information_FILE" qtlid="147529">Taisyklėje turi būti prefiksas '/' ir ji turi būti sudaryta iš mažiausiai 2 simbolių.</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_step1_information_EXTENSION" qtlid="147542">Taisyklėje turi būti prefiksas '.' ir ji turi būti sudaryta iš mažiausiai 2 ir daugiausiai 4 simbolių.</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_step1_information_FOLDER" qtlid="147555">Taisyklėje turi būti prefiksas '/'.</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_cachetype" qtlid="132499">Įkėlimas į spartinančiąją atmintinę:</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_cachetype_NO_CACHE" qtlid="8770">Niekada</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_cachetype_FORCE_CACHE" qtlid="126260">Visada</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_filematch" qtlid="132512">Taisyklė:</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_filetype_default" qtlid="132525">Pasirinkite taisyklės tipą </translation>
+   <translation id="cdn_domain_configuration_cacherule_create_filetype_FILE" qtlid="73601">Failas</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_filetype_EXTENSION" qtlid="94231">Plėtinys</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_filetype_FOLDER" qtlid="126248">Katalogas</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_filetype" qtlid="105875">Tipas:</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_ttl" qtlid="132538">Galiojimo trukmė (TTL):</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_ttl_unit" qtlid="133825">(sekundėmis)</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_step2_question" qtlid="132551">Jūs sukursite šią spartinančiosios atmintinės taisyklę:</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_success" qtlid="142926">Bus sukurta nauja kešavimo taisyklė</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_fail" qtlid="132577">Įvyko klaida teikiant prašymą sukurti spartinančiosios atmintinės taisyklę  </translation>
+   <translation id="cdn_domain_configuration_reactive_title_button" qtlid="125684">Išjungti CDN apėjimą (bypass)</translation>
+   <translation id="cdn_domain_configuration_change_backend_title_button" qtlid="132590">Pakeisti backend</translation>
+   <translation id="cdn_domain_configuration_change_backend_title" qtlid="132590">Pakeisti backend</translation>
+   <translation id="cdn_domain_configuration_change_backend_step1_question" qtlid="132603">Pageidaujate pakeisti domeno {0} backend?</translation>
+   <translation id="cdn_domain_configuration_change_backend_step1_current" qtlid="132616">Esamas backend:</translation>
+   <translation id="cdn_domain_configuration_change_backend_step1_existing" qtlid="133877">Naudoti esamą backend:</translation>
+   <translation id="cdn_domain_configuration_change_backend_step1_new" qtlid="132629">Naujas backend:</translation>
+   <translation id="cdn_domain_configuration_change_backend_step1_full" qtlid="133890">Jūsų backend telkinys (pool) užpildytas, jums reikia užsakyti 1 papildomą backend.</translation>
+   <translation id="cdn_domain_configuration_change_backend_step1_full_buy" qtlid="133981">Užsakyti backend</translation>
+   <translation id="cdn_domain_configuration_change_backend_step2_question" qtlid="132642">Jūsų domenui {0} galios šie nauji nustatymai:   </translation>
+   <translation id="cdn_domain_configuration_change_backend_step2_current" qtlid="132616">Esamas backend:</translation>
+   <translation id="cdn_domain_configuration_change_backend_step2_new" qtlid="132629">Naujas backend:</translation>
+   <translation id="cdn_domain_configuration_change_backend_success" qtlid="132655">Bus pakeistas domeno {0} backend.</translation>
+   <translation id="cdn_domain_configuration_change_backend_fail" qtlid="132668">Įvyko klaida keičiant backend</translation>
+   <translation id="cdn_domain_configuration_delete_title_button" qtlid="8470">Ištrinti domeną</translation>
+   <translation id="cdn_domain_configuration_cname" qtlid="129847">CNAME</translation>
+   <translation id="cdn_configuration_cacherule_flush_title_button" qtlid="135814">Išvalyti taisyklę</translation>
+   <translation id="cdn_configuration_flush_confirmation" qtlid="183697">Ar tikrai norite pašalinti spartinančiosios atmintinės taisyklę {0}? <br/> Dėl ši veiksmo statinis turinys nustos galioti visuose POP.</translation>
+   <translation id="cdn_configuration_flush_rule_success" qtlid="126964">Užduotis sukurta. Operacija bus įvykdyta po 10 minučių.</translation>
+   <translation id="cdn_configuration_add_rule_error" qtlid="135905">Įvyko klaida teikiant prašymą išvalyti spartinančiosios atmintinės taisyklę {0}.</translation>
+   <translation id="cdn_configuration_cacherule_update_title_button" qtlid="125888">Pakeisti taisyklę </translation>
+   <translation id="cdn_configuration_cacherule_update_title" qtlid="125888">Pakeisti taisyklę </translation>
+   <translation id="cdn_configuration_cacherule_update_step1_question" qtlid="132681">Jūs pageidaujate pakeisti spartinančiosios atmintinės taisyklę {0}?</translation>
+   <translation id="cdn_configuration_cacherule_update_step1_current" qtlid="132694">Esamas TTL:</translation>
+   <translation id="cdn_configuration_cacherule_update_step1_new" qtlid="178991">Naujas TTL:</translation>
+   <translation id="cdn_configuration_cacherule_update_step1_info" qtlid="178926">Pastaba: išjungimo taisyklės redagavimas ją vėl įjungs.</translation>
+   <translation id="cdn_configuration_cacherule_update_step2_summary" qtlid="132720">Santrauka:</translation>
+   <translation id="cdn_configuration_cacherule_update_step2_old_ttl" qtlid="132733">Buvęs ttl:</translation>
+   <translation id="cdn_configuration_cacherule_update_step2_new_ttl" qtlid="132746">Naujas TTL:</translation>
+   <translation id="cdn_configuration_cacherule_update_success" qtlid="132759">Spartinančiosios atmintinės taisyklė bus pakeista</translation>
+   <translation id="cdn_configuration_cacherule_update_fail" qtlid="132772">Įvyko klaida teikiant prašymą pakeisti spartinančiosios atmintinės taisyklę.</translation>
+   <translation id="cdn_configuration_cacherule_deactivate_title_button" qtlid="121891">Išjungti taisyklę </translation>
+   <translation id="cdn_configuration_cacherule_deactivate_title" qtlid="121891">Išjungti taisyklę </translation>
+   <translation id="cdn_configuration_cacherule_deactivate_question" qtlid="132785">Pageidaujate išjungti spartinančiosios atmintinės taisyklę {0}?</translation>
+   <translation id="cdn_configuration_cacherule_deactivate_success" qtlid="132798">Spartinančiosios atmintinės taisyklė bus išjungta </translation>
+   <translation id="cdn_configuration_cacherule_deactivate_fail" qtlid="132811">Įvyko klaidą teikiant prašymą išjungti spartinančiosios atmintinės taisyklę.</translation>
+   <translation id="cdn_configuration_cacherule_activate_title_button" qtlid="125900">Aktyvuoti taisyklę</translation>
+   <translation id="cdn_configuration_cacherule_activate_title" qtlid="125900">Aktyvuoti taisyklę</translation>
+   <translation id="cdn_configuration_cacherule_activate_question" qtlid="132824">Pageidaujate įjungti spartinančiosios atmintinės taisyklę {0}?</translation>
+   <translation id="cdn_configuration_cacherule_activate_success" qtlid="132837">Spartinančiosios atmintinės taisyklė bus įjungta </translation>
+   <translation id="cdn_configuration_cacherule_activate_fail" qtlid="132850">Įvyko klaida teikiant prašymą įjungti spartinančiosios atmintinės taisyklę.</translation>
+   <translation id="cdn_configuration_allcacherule_deactivate_title_button" qtlid="125732">Išjungti visas taisykles </translation>
+   <translation id="cdn_configuration_allcacherule_deactivate_title" qtlid="125732">Išjungti visas taisykles </translation>
+   <translation id="cdn_configuration_allcacherule_deactivate_question" qtlid="132863">Pageidaujate išjungti visas spartinančiosios atmintinės taisykles?</translation>
+   <translation id="cdn_configuration_allcacherule_deactivate_success" qtlid="132876">Spartinančiosios atmintinės taisyklės bus išjungtos</translation>
+   <translation id="cdn_configuration_allcacherule_deactivate_partial" qtlid="179485">Kešavimo taisyklės klaidos atveju bus išjungtos, bet kitos taisyklės liks aktyvios</translation>
+   <translation id="cdn_configuration_allcacherule_deactivate_fail" qtlid="132889">Įvyko klaida teikiant prašymą išjungti spartinančiosios atmintinės taisykles.</translation>
+   <translation id="cdn_configuration_allcacherule_activate_title_button" qtlid="125744">Aktyvuoti visas taisykles </translation>
+   <translation id="cdn_configuration_allcacherule_activate_title" qtlid="125720">Aktyvuoti visas spartinančiosios atmintinės taisykles </translation>
+   <translation id="cdn_configuration_allcacherule_activate_question" qtlid="132902">Pageidaujate įjungti visas spartinančiosios atmintinės taisykles?</translation>
+   <translation id="cdn_configuration_allcacherule_activate_partial" qtlid="179498">Kešavimo taisyklės klaidos atveju bus išjungtos, kitos taisyklės liks neaktyvios</translation>
+   <translation id="cdn_configuration_allcacherule_activate_success" qtlid="132915">Spartinančiosios atmintinės taisyklės bus įjungtos</translation>
+   <translation id="cdn_configuration_allcacherule_activate_fail" qtlid="132928">Įvyko klaida teikiant prašymą įjungti spartinančiosios atmintinės taisykles.</translation>
+   <translation id="cdn_configuration_delete_cacherule_title_button" qtlid="125912">Pašalinti taisyklę</translation>
+   <translation id="cdn_configuration_delete_cacherule_title" qtlid="125912">Pašalinti taisyklę</translation>
+   <translation id="cdn_configuration_delete_cacherule_question" qtlid="132941">Pageidaujate ištrinti spartinančiosios atmintinės taisyklę {0}?</translation>
+   <translation id="cdn_configuration_delete_cacherule_success" qtlid="132954">Spartinančiosios atmintinės taisyklė bus ištrinta</translation>
+   <translation id="cdn_configuration_delete_cacherule_fail" qtlid="132967">Įvyko klaida teikiant prašymą ištrinti spartinančiosios atmintinės taisyklę.</translation>
+   <translation id="cdn_domain_tab_rule" qtlid="125768">Spartinančiosios atmintinės taisyklės</translation>
+   <translation id="cdn_domain_tab_statistics" qtlid="26671">Statistika</translation>
+   <translation id="cdn_tab_statistics" qtlid="26671">Statistika</translation>
+   <translation id="cdn_tab_ssl" qtlid="84921">SSL</translation>
+   <translation id="cdn_cacherule_search_placeholder" qtlid="178939">Ieškoti taisyklės</translation>
+   <translation id="cdn_cacherule_table_empty" qtlid="132980">Neturite jokios spartinančiosios atmintinės taisyklės</translation>
+   <translation id="cdn_cacherule_table_search_empty" qtlid="178952">Nerasta jokia taisyklė</translation>
+   <translation id="cdn_cacherule_table_header_filetype" qtlid="2642">Tipas</translation>
+   <translation id="cdn_cacherule_table_header_rule" qtlid="54917">Taisyklė</translation>
+   <translation id="cdn_cacherule_table_header_ttl" qtlid="121747">TTL</translation>
+   <translation id="cdn_cacherule_table_header_cachetype" qtlid="125780">Įkėlimas į spartinančiąją atmintinę</translation>
+   <translation id="cdn_cacherule_table_header_state" qtlid="8230">Būsena</translation>
+   <translation id="cdn_cacherule_EXTENSION" qtlid="94231">Plėtinys</translation>
+   <translation id="cdn_cacherule_FOLDER" qtlid="126248">Katalogas</translation>
+   <translation id="cdn_cacherule_FILE" qtlid="73601">Failas</translation>
+   <translation id="cdn_cacherule_NO_CACHE" qtlid="8770">Niekada</translation>
+   <translation id="cdn_cacherule_FORCE_CACHE" qtlid="126260">Visada</translation>
+   <translation id="cdn_cacherule_status_CREATING" qtlid="26227">Kuriama</translation>
+   <translation id="cdn_cacherule_status_DELETING" qtlid="133929">Šalinama</translation>
+   <translation id="cdn_cacherule_status_ERROR" qtlid="26407">Klaida</translation>
+   <translation id="cdn_cacherule_status_OFF" qtlid="24967">Išjungta</translation>
+   <translation id="cdn_cacherule_status_ON" qtlid="30250">Įjungta</translation>
+   <translation id="cdn_cacherule_status_UPDATING" qtlid="133942">Atnaujinama</translation>
+   <translation id="cdn_configuration_flush_domain_title" qtlid="125660">Išvalyti spartinančiąją atmintinę </translation>
+   <translation id="cdn_configuration_flush_domain_confirmation" qtlid="183710">Norite išvalyti domeno {0} spartinančiąją atmintinę? <br/> Dėl šio veiksmo visi statiniai duomenys bus pašalinti iš visų POP.</translation>
+   <translation id="cdn_configuration_flush_domain_success" qtlid="126964">Užduotis sukurta. Operacija bus įvykdyta po 10 minučių.</translation>
+   <translation id="cdn_configuration_flush_domain_error" qtlid="133006">Įvyko klaida teikiant prašymą išvalyti domeną {0}.</translation>
+   <translation id="cdn_configuration_bypass_domain_title" qtlid="125804">Apeiti CDN</translation>
+   <translation id="cdn_configuration_bypass_domain_confirmation" qtlid="183723">Norite laikinai pašalinti domeną <b>{0}</b> iš CDN? <br/> Dėl to nebus taikomas CDN spartinimas ir apsauga.</translation>
+   <translation id="cdn_configuration_reactive_domain_title" qtlid="125684">Išjungti CDN apėjimą (bypass)</translation>
+   <translation id="cdn_configuration_reactive_domain_confirmation" qtlid="183736">Ar tikrai norite į CDN įtraukti domeną <b>{0}</b>?</translation>
+   <translation id="cdn_domain_configuration_update_success" qtlid="133045">Atnaujinta apėjimo (bypass) paslauga domenui {0} įsigalios po kelių akimirkų.</translation>
+   <translation id="cdn_domain_configuration_update_fail" qtlid="133058">Įvyko klaida keičiant domeno {0} bypass </translation>
+   <translation id="cdn_configuration_delete_ssl_title" qtlid="22759">Ištrinti sertifikatą</translation>
+
+   <translation id="cdn_configuration_update_ssl_title" qtlid="400951">Pakeisti mano sertifikatu</translation>
+   <translation id="cdn_configuration_update_ssl_step1" qtlid="133201">Įveskite sertifikato duomenis:</translation>
+   <translation id="cdn_configuration_update_ssl_step2" qtlid="133214">Jūs pridėsite šį sertifikatą:</translation>
+   <translation id="cdn_configuration_update_ssl_success" qtlid="244869">SSL sertifikatas tuojau bus pakeistas.</translation>
+   <translation id="cdn_configuration_update_ssl_fail" qtlid="244882">Klaida keičiant SSL sertifikatą</translation>
+
+   <translation id="cdn_configuration_generate_ssl_title" qtlid="400964">Generuoti Let's Encrypt sertifikatą</translation>
+   <translation id="cdn_configuration_generate_ssl_step1" qtlid="400977">Prašome pateikti sertifikato pavadinimą:</translation>
+   <translation id="cdn_configuration_generate_ssl_step2" qtlid="400990">Tuojau sugeneruosite Let's Encrypt sertifikatą, valdomą OVH.</translation>
+   <translation id="cdn_configuration_generate_ssl_step3" qtlid="401003">DĖMESIO: Sertifikatas, šiuo metu įdiegtas jūsų CDN paslaugoje, bus ištrintas ir pakeistas į naują.</translation>
+   <translation id="cdn_configuration_generate_ssl_success" qtlid="401016">SSL sertifikatas bus netrukus įdiegtas.</translation>
+   <translation id="cdn_configuration_generate_ssl_fail" qtlid="401029">Įvyko klaida generuojant SSL sertifikatą.</translation>
+
+   <translation id="cdn_configuration_add_ssl_get_error" qtlid="237724">Klaida įkeliant saugumo informaciją</translation>
+   <translation id="cdn_configuration_add_ssl_title" qtlid="401042">Pridėti mano sertifikatą</translation>
+   <translation id="cdn_configuration_ssl_state_ERROR" qtlid="26407">Klaida</translation>
+   <translation id="cdn_configuration_ssl_state_CANCELLED" qtlid="233404">Atšaukiama...</translation>
+   <translation id="cdn_configuration_ssl_state_CHECKING" qtlid="144292">Tikrinama</translation>
+   <translation id="cdn_configuration_ssl_state_OFF" qtlid="24967">Išjungta</translation>
+   <translation id="cdn_configuration_ssl_state_ON" qtlid="30250">Įjungta</translation>
+   <translation id="cdn_configuration_ssl_state_REMOVING" qtlid="133929">Šalinama</translation>
+   <translation id="cdn_configuration_ssl_state_UPLOADING" qtlid="144305">Įkeliama</translation>
+   <translation id="cdn_configuration_ssl_state_UPDATING" qtlid="26863">Naujinimas</translation>
+   <translation id="cdn_configuration_ssl_state_CREATING" qtlid="401055">Let's Encrypt sertifikatas kuriamas</translation>
+   <translation id="cdn_configuration_no_ssl" qtlid="144318">SSL sertifikatas dar nesusietas su jūsų CDN.</translation>
+   <translation id="cdn_configuration_ssl_name" qtlid="133097">Sertifikato pavadinimas </translation>
+   <translation id="cdn_configuration_ssl_cn" qtlid="133110">Susietas domenas </translation>
+   <translation id="cdn_configuration_ssl_status" qtlid="8230">Būsena</translation>
+   <translation id="cdn_configuration_ssl_certificateValidFrom" qtlid="133123">Sukurtas</translation>
+   <translation id="cdn_configuration_ssl_certificateValidTo" qtlid="133136">Galioja iki </translation>
+   <translation id="cdn_configuration_ssl_provider_custom" qtlid="50062">Personalizuoti</translation>
+   <translation id="cdn_configuration_ssl_provider_letsencrypt" qtlid="401068">Let's Encrypt, valdomas OVH</translation>
+   <translation id="cdn_configuration_ssl_certificateProvider" qtlid="2642">Tipas</translation>
+   <translation id="cdn_configuration_ssl_certificate" qtlid="19771">Sertifikatas</translation>
+   <translation id="cdn_configuration_ssl_key" qtlid="104326">Raktas</translation>
+   <translation id="cdn_configuration_ssl_chain" qtlid="133149">Grandis </translation>
+   <translation id="cdn_configuration_ssl_delete_confirmation" qtlid="183749">Ar tikrai norite ištrinti sertifikatą <b>{0}</b>?</translation>
+   <translation id="cdn_configuration_delete_ssl_success" qtlid="133175">Užduotis sukurta. Atlikta operacija įsigalios po 15 min.  </translation>
+   <translation id="cdn_configuration_delete_ssl_fail" qtlid="133188">Įvyko klaida trinant sertifikatą {0}.</translation>
+   <translation id="cdn_configuration_ssl_add_step1" qtlid="133201">Įveskite sertifikato duomenis:</translation>
+   <translation id="cdn_configuration_ssl_add_step2" qtlid="133214">Jūs pridėsite šį sertifikatą:</translation>
+   <translation id="cdn_configuration_add_ssl_success" qtlid="133955">Jau greitai bus aktyvuotas SSL sertifikatas.</translation>
+   <translation id="cdn_configuration_add_ssl_fail" qtlid="179602">Klaida pridedant SSL sertifikatą</translation>
+   <translation id="cdn_configuration_order_quota_title" qtlid="127120">Pirkti duomenų srautą</translation>
+   <translation id="cdn_configuration_order_quota_step1_pricing" qtlid="133253">Įkainiai</translation>
+   <translation id="cdn_configuration_order_quota_step1_price" qtlid="133266">{0} už {1} TB duomenų srauto </translation>
+   <translation id="cdn_configuration_order_quota_step1_fail" qtlid="132304">Įvyko klaida siunčiant duomenis </translation>
+   <translation id="cdn_configuration_order_quota_step2_question" qtlid="133279">Pirkti {0} TB papildomo duomenų srauto CDN {1}</translation>
+   <translation id="cdn_configuration_order_quota_step2_totalWithoutTax" qtlid="133292">Kaina be PVM</translation>
+   <translation id="cdn_configuration_order_quota_step2_totalWithTax" qtlid="133305">Kaina su PVM </translation>
+   <translation id="cdn_configuration_order_quota_step2_informations" qtlid="169472">Jūsų užsakymas bus patvirtintas, kai sutiksite su sutartimis ir spragtelėsite mygtuką "Toliau".</translation>
+   <translation id="cdn_configuration_order_quota_step2_contracts" qtlid="169485">Patvirtinu, kad susipažinau ir sutinku</translation>
+   <translation id="cdn_configuration_order_quota_step2_contracts_of" qtlid="130243"></translation>
+   <translation id="cdn_configuration_order_quota_step2_contracts_and" qtlid="169498">ir</translation>
+   <translation id="cdn_configuration_order_quota_step3_bc_loading" qtlid="169511">Užsakymo generavimas...</translation>
+   <translation id="cdn_configuration_order_quota_step3_confirmation" qtlid="169524">Užsakymas sėkmingai sugeneruotas.</translation>
+   <translation id="cdn_configuration_order_quota_step3_continue" qtlid="169537">Užsakymą patvirtinsite spragtelėję "valdyti".</translation>
+   <translation id="cdn_configuration_order_quota_step3_explanation" qtlid="167886">Atsidarys naujas langas ir būsite automatiškai nukreipti į OVH apmokėjimų sąsają.</translation>
+   <translation id="cdn_configuration_order_quota_step3_explanation2" qtlid="132291">Dėmesio: parinktis bus aktyvuoja jūsų valdymo sąsajoje per 2 valandas nuo jūsų apmokėjimo patvirtinimo momento. </translation>
+   <translation id="cdn_configuration_order_quota_step3_fail" qtlid="133318">Įvyko klaida koreguojant užsakymą</translation>
+   <translation id="cnd_stats_filters_visualize" qtlid="125648">Peržiūrėti </translation>
+   <translation id="cnd_stats_filters_from" qtlid="446949">nuo</translation>
+   <translation id="cnd_stats_filters_to" qtlid="121615"></translation>
+   <translation id="cdn_stats_period_day" qtlid="126844">24 paskutinės valandos</translation>
+   <translation id="cdn_stats_period_month" qtlid="99632">30 paskutinių dienų</translation>
+   <translation id="cdn_stats_period_week" qtlid="126856">7 paskutinės dienos</translation>
+   <translation id="cdn_stats_title_text_bandwidth" qtlid="38565">Perduodamų duomenų srautas</translation>
+   <translation id="cdn_stats_title_text_quota" qtlid="6874">Kvota</translation>
+   <translation id="cdn_stats_title_text_request" qtlid="126868">Užklausos</translation>
+   <translation id="cdn_stats_y_axis_text_bandwidth" qtlid="38565">Perduodamų duomenų srautas</translation>
+   <translation id="cdn_stats_y_axis_text_quota" qtlid="6874">Kvota</translation>
+   <translation id="cdn_stats_y_axis_text_request" qtlid="126916">Užklausų skaičius</translation>
+   <translation id="cdn_stats_no_graph_datas" qtlid="128631">Šiuo metu duomenys neprieinami.</translation>
+   <translation id="cdn_stats_legend_bandwidth_cdn" qtlid="127770">Iš CDN atmintinės</translation>
+   <translation id="cdn_stats_legend_bandwidth_backend" qtlid="127782">Iš prieglobos</translation>
+   <translation id="cdn_stats_legend_quota_cdn" qtlid="127794">Likęs duomenų srautas</translation>
+   <translation id="cdn_stats_legend_request_cdn" qtlid="127770">Iš CDN atmintinės</translation>
+   <translation id="cdn_stats_legend_request_backend" qtlid="127782">Iš prieglobos</translation>
+   <translation id="cdn_stats_make_choices" qtlid="128643">Pasirinkite CDN arba domeną</translation>
+   <translation id="cdn_stats_type_BANDWIDTH" qtlid="38565">Perduodamų duomenų srautas</translation>
+   <translation id="cdn_stats_type_QUOTA" qtlid="6874">Kvota</translation>
+   <translation id="cdn_stats_type_REQUEST" qtlid="126868">Užklausos</translation>
+   <translation id="cdn_statistics_visualize" qtlid="125648">Peržiūrėti </translation>
+   <translation id="cdn_statistics_from" qtlid="446962">nuo</translation>
+   <translation id="cdn_statistics_to" qtlid="121615"></translation>
+   <translation id="cdn_statistics_period_DAY" qtlid="126844">24 paskutinės valandos</translation>
+   <translation id="cdn_statistics_period_MONTH" qtlid="99632">30 paskutinių dienų</translation>
+   <translation id="cdn_statistics_period_WEEK" qtlid="126856">7 paskutinės dienos</translation>
+</translations>

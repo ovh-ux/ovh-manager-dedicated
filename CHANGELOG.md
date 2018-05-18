@@ -1,3 +1,236 @@
+<a name="9.3.6"></a>
+## [9.3.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.3.5...v9.3.6) (2018-05-16)
+
+
+### Bug Fixes
+
+* **billing:sla:** Wrong template path ([c5cdbf5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c5cdbf5))
+
+
+
+<a name="9.3.5"></a>
+## [9.3.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.3.4...v9.3.5) (2018-05-15)
+
+
+### Bug Fixes
+
+* display message for enterprise customer ([4d20e99](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4d20e99))
+
+
+
+<a name="9.3.4"></a>
+## [9.3.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.3.3...v9.3.4) (2018-05-15)
+
+
+### Bug Fixes
+
+* add EN translations for US debt payment ([71556cf](https://github.com/ovh-ux/ovh-manager-dedicated/commit/71556cf))
+* remove unecessary span with non existing translation key ([005e98d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/005e98d))
+
+
+
+<a name="9.3.3"></a>
+## [9.3.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.3.2...v9.3.3) (2018-05-14)
+
+
+### Bug Fixes
+
+* **autorenew:** fix missing dependency injection ([6fe6d59](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6fe6d59))
+* **license:** fix spla active state ([2dd4df4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2dd4df4))
+* re-enable us debt message ([5956257](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5956257))
+* use ngTranslate in US debt pay link ([b018254](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b018254))
+
+
+
+<a name="9.3.2"></a>
+## [9.3.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.3.1...v9.3.2) (2018-05-11)
+
+
+
+<a name="9.3.1"></a>
+## [9.3.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.3.0...v9.3.1) (2018-05-11)
+
+
+### Bug Fixes
+
+* **guides:** update links for all languages ([093cd7e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/093cd7e))
+
+
+
+<a name="9.3.0"></a>
+# [9.3.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.16...v9.3.0) (2018-05-09)
+
+
+### Bug Fixes
+
+* **account:** improve layout ([74d418f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/74d418f))
+* **account billing:** replace i18n with angular-translate ([c9ccca0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c9ccca0))
+* **account billing autorenew:** replace i18n with angular-translate ([c063e89](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c063e89))
+* **account billing credits:** wrong translation ([c5b485e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c5b485e))
+* **account billing mean:** replace i18n with angular-translate ([19b7302](https://github.com/ovh-ux/ovh-manager-dedicated/commit/19b7302))
+* **account user:** replace i18n with angular-translate ([6c2f323](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6c2f323))
+* **account user contacts:** replace i18n with angular-translate ([0c412ee](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0c412ee))
+* **account user contacts:** replace i18n with angular-translate ([3c8cec9](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3c8cec9))
+* **account user otrs:** replace i18n with angular-translate ([5092900](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5092900))
+* **account user password:** replace i18n with angular-translate ([79d7e51](https://github.com/ovh-ux/ovh-manager-dedicated/commit/79d7e51))
+* **account user security:** replace i18n with angular-translate ([be4aa8f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/be4aa8f))
+* **account user security:** replace i18n with angular-translate ([729751a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/729751a))
+* **chore:** fix translation parts loading ([58026c3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/58026c3))
+* **components:** fix duration filter translation ([4e1bbb9](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4e1bbb9))
+* **contact-services:** fix buttons translation ([a0bea11](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a0bea11))
+* **contracts:** fix translation ([3cead60](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3cead60))
+* **credits:** fix translation ([e54f001](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e54f001))
+* **datastore:** fix tooltip bindings ([87fb3a7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/87fb3a7))
+* **date range:** fix translation ([4d2ce79](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4d2ce79))
+* **dedicated cloud security options:** missing translation ([e63bceb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e63bceb))
+* **dedicated cloud user:** missing translation ([95874c8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/95874c8))
+* **dedicated housing dashboard:** remove unused trad ([8976094](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8976094))
+* **dedicated housing task:** remove unused trad ([765f0e7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/765f0e7))
+* **dedicated nas details:** missing  injection ([fe5e41c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/fe5e41c))
+* **dedicated nas details:** syntax error ([86a0641](https://github.com/ovh-ux/ovh-manager-dedicated/commit/86a0641))
+* **dedicated nas details partition:** translation ([e2bf59f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e2bf59f))
+* **dedicated server ftp backup:** add oui-action-menu ([8193de1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8193de1))
+* **dedicated server task:** remove unused trad ([f5f74c2](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f5f74c2))
+* **dedicated server usb-storage:** missing translation ([f4451ce](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f4451ce))
+* **dedicatedcloud dashboard:** fix tooltip placement ([27df441](https://github.com/ovh-ux/ovh-manager-dedicated/commit/27df441))
+* **dedicatedcloud security:** missing connection translation ([c389cd7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c389cd7))
+* **dedicatedcloud security:** missing session-timeout translation ([b1d28b8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b1d28b8))
+* **dns:** replace table with oui-datagrid ([b9cfe77](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b9cfe77))
+* **i18n:** batch fix invalid ng-bindings ([a6bf654](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a6bf654))
+* **i18n:** fix some translate bindings ([e2142c9](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e2142c9))
+* **i18n:** fix typo ([24acdbe](https://github.com/ovh-ux/ovh-manager-dedicated/commit/24acdbe))
+* **i18n:** fix wizard cancel button ([999dfa5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/999dfa5))
+* **i18n:** fix wizard confirm button ([8edf80d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8edf80d))
+* **i18n:** fix wizard title ([467a633](https://github.com/ovh-ux/ovh-manager-dedicated/commit/467a633))
+* **i18n:** remove angular filter in translations ([874201d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/874201d))
+* **i18n:** replace i18n with angular translate ([a000546](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a000546))
+* **i18n:** replace translator tr with angular translate ([aeee54d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/aeee54d))
+* **i18n:** replace translator tr with angular-translate ([c09a79e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c09a79e))
+* **i18n:** replace trpl with angular translate for bandwidth order ([acabba9](https://github.com/ovh-ux/ovh-manager-dedicated/commit/acabba9))
+* **i18n:** replace trpl with angular translate for ip section ([7204a95](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7204a95))
+* **i18n:** replace trpl with ng pluralize ([f0296ca](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f0296ca))
+* **i18n:** replace trpl with pluralize in cdn stats section ([48c3fa8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/48c3fa8))
+* **interventions:** replace table with oui-datagrid ([89cac60](https://github.com/ovh-ux/ovh-manager-dedicated/commit/89cac60))
+* **ip:** replace i18n with angular-translate ([cb8341e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/cb8341e))
+* **ip:** replace i18n with angular-translate ([716e35e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/716e35e))
+* **ip:** replace scope.tr with angular-translate ([44a97eb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/44a97eb))
+* **licence:** display public licence id instead of internal one ([817374a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/817374a))
+* **licence:** display public licence id instead of internal one in list ([a8f6a2c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a8f6a2c))
+* **monitoring:** fix monitoring enable modal ([cee31fd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/cee31fd))
+* **navbar:** language button position and format ([368fe1f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/368fe1f))
+* ovh-api-services version ([0844f15](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0844f15))
+* **orders:** fix missing translations ([5dccf57](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5dccf57))
+* **payment mean:** fix translation ([ca27827](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ca27827))
+* **pcc operations:** fix createdBy label ([6ac00fc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6ac00fc))
+* **ssh:** fix ssh key display ([8987469](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8987469))
+* replace i18n with angular-translate ([71d387c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/71d387c)), closes [ovh-ux/ovh-utils-angular#16](https://github.com/ovh-ux/ovh-utils-angular/issues/16)
+* **translate:** fix oui-column ([3180fb7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3180fb7))
+* merging error ([2ac0824](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2ac0824))
+* **translation:** fix missing license_loading trad ([22d4632](https://github.com/ovh-ux/ovh-manager-dedicated/commit/22d4632))
+* **translations:** user security section ([94921dc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/94921dc))
+* **translator:** remove some i18n references, fix translate bindings ([3163cea](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3163cea))
+* option only for FR accounts ([55fdf00](https://github.com/ovh-ux/ovh-manager-dedicated/commit/55fdf00))
+* pr feedback ([82dec10](https://github.com/ovh-ux/ovh-manager-dedicated/commit/82dec10))
+* remove old tr method ([f1d32f0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f1d32f0))
+* replace i18n with angular-translate ([d668a98](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d668a98))
+* SSH menu now available everywhere as before ([d5b4d51](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d5b4d51))
+
+
+### Features
+
+* deleted "User Subscriptions" section ([4d65fa8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4d65fa8))
+* **billing:** add option to set paper or paperless for bills ([12b766e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/12b766e))
+* **exchange:** bump exchange module to 8.0.0 ([252b6ef](https://github.com/ovh-ux/ovh-manager-dedicated/commit/252b6ef))
+* **i18n:** retrieve translations ([667e088](https://github.com/ovh-ux/ovh-manager-dedicated/commit/667e088))
+* **translations:** replace {\d} by {{t}} when xml -> json ([82e5027](https://github.com/ovh-ux/ovh-manager-dedicated/commit/82e5027))
+
+
+
+<a name="9.2.16"></a>
+## [9.2.16](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.15...v9.2.16) (2018-05-03)
+
+
+### Bug Fixes
+
+* **modal:** remove aria-hidden and tab-index ([e48e50c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e48e50c))
+
+
+
+<a name="9.2.15"></a>
+## [9.2.15](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.14...v9.2.15) (2018-05-03)
+
+
+### Bug Fixes
+
+* **interventions:** add missing serviceName param ([b32d0fb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b32d0fb))
+
+
+
+<a name="9.2.14"></a>
+## [9.2.14](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.13...v9.2.14) (2018-04-26)
+
+
+### Bug Fixes
+
+* display pay debt button only when dueAmount is more than 0 in US ([7ddaf4f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7ddaf4f))
+* display publicLabel when no description on payment method ([47c933c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/47c933c))
+* fix after review ([954e4e6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/954e4e6))
+* fix and refactor billing history details view ([eb5ca18](https://github.com/ovh-ux/ovh-manager-dedicated/commit/eb5ca18))
+* fix link to state for new payment method ([550da86](https://github.com/ovh-ux/ovh-manager-dedicated/commit/550da86))
+* fix payment method label in select ([d63a331](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d63a331))
+* fix some trads and remove EU link for US ([31a03bd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/31a03bd))
+* package.json and remove unnecessary comments ([cee68a3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/cee68a3))
+* pass payment method id in pay debt request ([52d8cdd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/52d8cdd))
+* update DEBTACCOUNT_DEBT translation for US test ([2c00d62](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2c00d62))
+* upgrade ovh-api-services version ([8c4b472](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8c4b472))
+
+
+### Features
+
+* **debtaccount:** manage debt for US customers ([431b3c8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/431b3c8))
+
+
+
+<a name="9.2.13"></a>
+## [9.2.13](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.12...v9.2.13) (2018-04-25)
+
+
+### Bug Fixes
+
+* display info to the enterprise customer concerning retail prices ([0290db9](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0290db9))
+* rename services to v6 and v7 ([f216afd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f216afd)), closes [ovh-ux/ovh-api-services#68](https://github.com/ovh-ux/ovh-api-services/issues/68)
+* use internal state definition instead of initial declaration ([e678a71](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e678a71))
+* **billing confirm terminate:** add missing translation key for cpanel ([5ccc6c9](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5ccc6c9))
+* **dedicated ml-subscribe:** fix _.some to indexOf ([2cd6665](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2cd6665))
+* **dedicatedcloud:** fix after review ([aaf976b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/aaf976b))
+* **dedicatedcloud:** fix ml subscribe modal display on user view ([b9a3e4c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b9a3e4c))
+* **dedicatedcloud:** remove unecessary translation for ml subscribe ([34fbc7d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/34fbc7d))
+* **dedicatedcloud ml subscribe:** fix after review ([43bf071](https://github.com/ovh-ux/ovh-manager-dedicated/commit/43bf071))
+* **dedicatedcloud ml subscribe:** remove mock in modal ([67d44f8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/67d44f8))
+* **housing tasks:** replace table with oui-datagrid ([c9cf573](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c9cf573))
+* **ip:** improve ip organisation table to match ovh oui-kit style ([b87f61c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b87f61c))
+* **layout modal:** fix toChilds detection ([deb092f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/deb092f))
+* **me-alerts:** fix bad links to billing statements ([539f6ef](https://github.com/ovh-ux/ovh-manager-dedicated/commit/539f6ef))
+* **modal layout:** fix unecessary child states applied to layout ([e675707](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e675707))
+* **pcc datacenters:** replace table with oui-datagrid ([adae0dc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/adae0dc))
+* **pcc datacenters:** tooltip if has discount ([e76c1f4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e76c1f4))
+* **server tasks:** replace table with oui-datagrid ([980a8bc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/980a8bc))
+* **sidebar:** users management section available in all targets ([c871e7a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c871e7a)), closes [#161](https://github.com/ovh-ux/ovh-manager-dedicated/issues/161)
+* **uibmodal stateful:** update stateful modal closing methods ([d0e4c21](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d0e4c21))
+* **yarn.lock:** fix ovh-utils-angular version ([64ee416](https://github.com/ovh-ux/ovh-manager-dedicated/commit/64ee416))
+* fix after review ([c363375](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c363375))
+* fix typo ([b3beaeb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b3beaeb))
+* set link instead of button for .go('^') onClick ([c7900c0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c7900c0))
+
+
+### Features
+
+* **dedicatedcloud:** subscribe to ML modal through ui-router ([4b788ce](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4b788ce))
+* **dedicatedcloud:** wip - migrate modal to states ([5201f3f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5201f3f))
+* handle roles in user tab ([eac1205](https://github.com/ovh-ux/ovh-manager-dedicated/commit/eac1205))
+
+
+
 <a name="9.2.12"></a>
 ## [9.2.12](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.2.11...v9.2.12) (2018-04-19)
 

@@ -2,14 +2,13 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="displayBC"
-         data-wizard-title="i18n.statements_account_debt_payment"
-         data-wizard-title-icon="'icon-renew'"
+         data-wizard-title="::'statements_account_debt_payment' | translate"
          data-wizard-bread-crumb
-         data-wizard-confirm-button-text="i18n.statements_accounts_debt_payment_confirm">
+         data-wizard-confirm-button-text="::'statements_accounts_debt_payment_confirm' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="!payDebt.order.url">
-            <p data-i18n-static="statements_account_debt_payment_explanation"></p>
+            <p data-translate="statements_account_debt_payment_explanation"></p>
         </div>
 
         <div data-wizard-step
@@ -18,15 +17,18 @@
 
             <!-- SHOW PAYMENT ORDER -->
             <p data-ng-if="payDebt.order.url"
-               data-ng-bind-html="tr('statements_account_debt_payment_bc_with_amount',
-               [payDebt.order.orderId, payDebt.order.url, payDebt.order.priceWithTax.text])">
+               data-ng-bind-html="'statements_account_debt_payment_bc_with_amount' | translate:{
+                   t0: payDebt.order.orderId,
+                   t1: payDebt.order.url,
+                   t2: payDebt.order.priceWithTax.text
+               }">
             </p>
 
             <!-- ERROR -->
             <div class="alert alert-danger"
                  role="alert"
-                 data-ng-if="payDebt.error">
-                <span data-i18n-static="statements_account_debt_payment_error"></span>
+                 data-ng-if="payDebt.error"
+                 data-translate="statements_account_debt_payment_error">
             </div>
 
             <!-- LOADING -->

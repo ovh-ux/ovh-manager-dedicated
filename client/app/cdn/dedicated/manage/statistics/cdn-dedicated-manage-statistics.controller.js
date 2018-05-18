@@ -1,4 +1,4 @@
-angular.module("App").controller("CdnStatisticsCtrl", ($scope, $stateParams, translator, Cdn) => {
+angular.module("App").controller("CdnStatisticsCtrl", ($scope, $stateParams, $translate, Cdn) => {
     $scope.model = null;
     $scope.consts = null;
     $scope.loadingStats = false;
@@ -14,8 +14,8 @@ angular.module("App").controller("CdnStatisticsCtrl", ($scope, $stateParams, tra
             const interval = _.get(source, "pointInterval.standardSeconds");
             return moment(start).add((index + 1) * interval, "seconds").calendar();
         });
-        $scope.series.push(translator.tr(`cdn_stats_legend_${$scope.model.dataType.toLowerCase()}_cdn`));
-        $scope.series.push(translator.tr(`cdn_stats_legend_${$scope.model.dataType.toLowerCase()}_backend`));
+        $scope.series.push($translate.instant(`cdn_stats_legend_${$scope.model.dataType.toLowerCase()}_cdn`));
+        $scope.series.push($translate.instant(`cdn_stats_legend_${$scope.model.dataType.toLowerCase()}_backend`));
         $scope.data.push(_.map(_.get(data, "cdn.value"), (value) => value.y));
         $scope.data.push(_.map(_.get(data, "backend.values"), (value) => value.y));
     }
@@ -27,7 +27,7 @@ angular.module("App").controller("CdnStatisticsCtrl", ($scope, $stateParams, tra
             .catch((err) => {
                 if (err.message) {
                     err.message = err.message.replace(" : null", "");
-                    $scope.setMessage($scope.tr("cdn_configuration_add_ssl_get_error"), { type: "ERROR", message: err.message });
+                    $scope.setMessage($translate.instant("cdn_configuration_add_ssl_get_error"), { type: "ERROR", message: err.message });
                 }
             }).finally(() => {
                 $scope.loadingStats = false;

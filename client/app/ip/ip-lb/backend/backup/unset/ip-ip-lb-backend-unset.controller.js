@@ -1,40 +1,31 @@
-angular.module("Module.ip.controllers").controller("IplbBackendUnsetBackupStateCtrl", [
-    "$scope",
-    "$rootScope",
-    "Iplb",
-    "Alerter",
+angular.module("Module.ip.controllers").controller("IplbBackendUnsetBackupStateCtrl", ($scope, $rootScope, $translate, Iplb, Alerter) => {
+    $scope.data = $scope.currentActionData; // service
 
-    function ($scope, $rootScope, Iplb, Alerter) {
-        "use strict";
+    $scope.model = {
+        backupStateSet: false
+    };
 
-        $scope.data = $scope.currentActionData; // service
+    $scope.loading = false;
 
-        $scope.model = {
-            backupStateSet: false
-        };
+    /* Action */
 
-        $scope.loading = false;
-
-        /* Action */
-
-        $scope.unsetBackupState = function () {
-            $scope.loading = true;
-            Iplb.setBackupState($scope.data.selectedIplb.value, $scope.data.backend.backend, $scope.model)
-                .then(
-                    (task) => {
-                        Iplb.polldelBackend({
-                            serviceName: $scope.data.selectedIplb.value,
-                            taskId: task.id,
-                            taskFunction: task.action
-                        });
-                    },
-                    (reason) => {
-                        Alerter.alertFromSWS($scope.tr("iplb_backend_backupStateUnset_failure"), reason);
-                    }
-                )
-                .finally(() => {
-                    $scope.resetAction();
-                });
-        };
-    }
-]);
+    $scope.unsetBackupState = function () {
+        $scope.loading = true;
+        Iplb.setBackupState($scope.data.selectedIplb.value, $scope.data.backend.backend, $scope.model)
+            .then(
+                (task) => {
+                    Iplb.polldelBackend({
+                        serviceName: $scope.data.selectedIplb.value,
+                        taskId: task.id,
+                        taskFunction: task.action
+                    });
+                },
+                (reason) => {
+                    Alerter.alertFromSWS($translate.instant("iplb_backend_backupStateUnset_failure"), reason);
+                }
+            )
+            .finally(() => {
+                $scope.resetAction();
+            });
+    };
+});

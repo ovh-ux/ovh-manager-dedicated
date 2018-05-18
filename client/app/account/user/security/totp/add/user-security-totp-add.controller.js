@@ -2,9 +2,10 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
     "$rootScope",
     "$scope",
     "$q",
+    "$translate",
     "UserAccount.services.doubleAuth.totp",
     "Alerter",
-    function ($rootScope, $scope, $q, DoubleAuthTotpService, Alerter) {
+    function ($rootScope, $scope, $q, $translate, DoubleAuthTotpService, Alerter) {
         "use strict";
 
         $scope.totp = {
@@ -49,7 +50,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
             if (_.has($scope.totp.qrCode, "id")) {
                 promise = DoubleAuthTotpService.delete($scope.totp.qrCode.id);
             }
-            return promise.catch((err) => Alerter.alertFromSWS($scope.tr("user_security_double_auth_totp_enable_error"), err.data, "doubleAuthAlertTotp"));
+            return promise.catch((err) => Alerter.alertFromSWS($translate.instant("user_security_double_auth_totp_enable_error"), err.data, "doubleAuthAlertTotp"));
         };
 
         /**
@@ -65,11 +66,11 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
                     }
                 })
                 .then(() => {
-                    Alerter.success($scope.tr("user_security_double_auth_totp_add_success"), "doubleAuthAlertTotp");
+                    Alerter.success($translate.instant("user_security_double_auth_totp_add_success"), "doubleAuthAlertTotp");
                     $rootScope.$broadcast("doubleAuthTOTP.reload");
                     $scope.resetAction();
                 })
-                .catch((err) => Alerter.alertFromSWS($scope.tr("user_account_security_double_auth_type_totp_error_validate"), err.data, "doubleAuthAlertTotpAdd"))
+                .catch((err) => Alerter.alertFromSWS($translate.instant("user_account_security_double_auth_type_totp_error_validate"), err.data, "doubleAuthAlertTotpAdd"))
                 .finally(() => {
                     $scope.totp.isAdding = false;
                 });
@@ -102,7 +103,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.do
                     return totpSecret;
                 })
                 .catch((err) => {
-                    Alerter.alertFromSWS($scope.tr("user_account_security_double_auth_type_totp_add_error"), err.data, "doubleAuthAlertTotp");
+                    Alerter.alertFromSWS($translate.instant("user_account_security_double_auth_type_totp_add_error"), err.data, "doubleAuthAlertTotp");
                     $scope.resetAction();
                 })
                 .finally(() => {

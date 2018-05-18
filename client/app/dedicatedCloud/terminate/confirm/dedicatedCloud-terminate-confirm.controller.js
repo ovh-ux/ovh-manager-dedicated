@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudConfirmTerminateCtrl", ($scope, $stateParams, $location, DedicatedCloud, Alerter) => {
+angular.module("App").controller("DedicatedCloudConfirmTerminateCtrl", ($scope, $stateParams, $location, $translate, DedicatedCloud, Alerter) => {
     "use strict";
 
     $scope.form = {};
@@ -12,10 +12,10 @@ angular.module("App").controller("DedicatedCloudConfirmTerminateCtrl", ($scope, 
         $scope.loaders.loading = true;
         DedicatedCloud.confirmTerminate($stateParams.productId, $scope.form.reason, $stateParams.token, $scope.form.commentary)
             .then(() => {
-                Alerter.success($scope.tr("dedicatedCloud_confirm_close_success"), $scope.alerts.dashboard);
+                Alerter.success($translate.instant("dedicatedCloud_confirm_close_success"), $scope.alerts.dashboard);
             })
             .catch((err) => {
-                Alerter.alertFromSWS($scope.tr("dedicatedCloud_confirm_close_error"), err.data, $scope.alerts.dashboard);
+                Alerter.alertFromSWS($translate.instant("dedicatedCloud_confirm_close_error"), err.data, $scope.alerts.dashboard);
             })
             .finally(() => {
                 $scope.loaders.loading = false;

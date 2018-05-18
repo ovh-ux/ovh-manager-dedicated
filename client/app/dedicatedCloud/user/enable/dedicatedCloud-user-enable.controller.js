@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudUserEnableCtrl", ($scope, $stateParams, DedicatedCloud) => {
+angular.module("App").controller("DedicatedCloudUserEnableCtrl", ($scope, $stateParams, $translate, DedicatedCloud) => {
     "use strict";
     $scope.user = $scope.currentActionData;
 
@@ -9,7 +9,7 @@ angular.module("App").controller("DedicatedCloudUserEnableCtrl", ($scope, $state
                     // Start Polling
                 },
                 (err) => {
-                    $scope.setMessage($scope.tr("dedicatedCloud_USER_enable_fail", $scope.user.name), { message: err.data, type: "ERROR" });
+                    $scope.setMessage($translate.instant("dedicatedCloud_USER_enable_fail", { t0: $scope.user.name }), { message: err.data, type: "ERROR" });
                 }
             )
             .finally(() => {

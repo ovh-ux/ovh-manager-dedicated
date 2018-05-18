@@ -1,4 +1,4 @@
-angular.module("App").controller("CdnDeleteSslCtrl", ($scope, $stateParams, Cdn) => {
+angular.module("App").controller("CdnDeleteSslCtrl", ($scope, $stateParams, $translate, Cdn) => {
     "use strict";
 
     $scope.ssl = $scope.currentActionData;
@@ -7,10 +7,10 @@ angular.module("App").controller("CdnDeleteSslCtrl", ($scope, $stateParams, Cdn)
         $scope.resetAction();
         Cdn.deleteSsl($stateParams.productId).then(
             () => {
-                $scope.setMessage($scope.tr("cdn_configuration_delete_ssl_success"), true);
+                $scope.setMessage($translate.instant("cdn_configuration_delete_ssl_success"), true);
             },
             (data) => {
-                $scope.setMessage($scope.tr("cdn_configuration_delete_ssl_fail", [$scope.ssl.name]), data);
+                $scope.setMessage($translate.instant("cdn_configuration_delete_ssl_fail", { t0: $scope.ssl.name }), data);
             }
         );
     };

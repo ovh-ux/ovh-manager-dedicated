@@ -1,4 +1,4 @@
-angular.module("App").controller("NasPartitionAccessCtrl", function ($scope, $stateParams, Nas, Alerter) {
+angular.module("App").controller("NasPartitionAccessCtrl", function ($scope, $stateParams, $translate, Nas, Alerter) {
     const alerterId = "NasAlert";
     const self = this;
 
@@ -29,7 +29,7 @@ angular.module("App").controller("NasPartitionAccessCtrl", function ($scope, $st
                 (data) => {
                     self.table.accessIds = null;
                     self.loaders.table = false;
-                    Alerter.alertFromSWS($scope.tr("nas_access_loading_error"), data, alerterId);
+                    Alerter.alertFromSWS($translate.instant("nas_access_loading_error"), data, alerterId);
                 }
             )
             .finally(() => {

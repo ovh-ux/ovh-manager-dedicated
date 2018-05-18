@@ -2,7 +2,7 @@
      data-ng-show="selected.version.options != null && selected.version.options.length > 0">
     <label for="domainNumber"
            class="control-label">
-        <span data-i18n-static="license_order_step2_option_PLESK_domainNumber"></span>
+        <span data-translate="license_order_step2_option_PLESK_domainNumber"></span>
         <span class="text-danger"> *</span>
     </label>
     <select class="form-control"
@@ -12,7 +12,7 @@
             data-ng-model="selected.options['PLESK'].domainNumber.value">
         <option value=""
                 data-ng-disabled="true"
-                data-i18n-static="license_order_common_choose">
+                data-translate="license_order_common_choose">
         </option>
     </select>
 </div>
@@ -21,15 +21,15 @@
      data-ng-show="selected.version.more.compliantLanguagePack && selected.version.more.compliantLanguagePack.length > 0">
     <label for="languagePackNumber"
            class="control-label"
-           data-i18n-static="license_order_step2_option_PLESK_language_pack">
+           data-translate="license_order_step2_option_PLESK_language_pack">
     </label>
     <select class="form-control"
             id="languagePackNumber"
             name="languagePackNumber"
-            data-ng-options="(i18n['license_order_step2_option_PLESK_language_pack_' + languagePack] || languagePack) for languagePack in selected.version.more.compliantLanguagePack | orderBy:'toString()'"
+            data-ng-options="((('license_order_step2_option_PLESK_language_pack_' + languagePack) | translate) || languagePack) for languagePack in selected.version.more.compliantLanguagePack | orderBy:'toString()'"
             data-ng-model="selected.options['PLESK'].languagePackNumber.value">
         <option value=""
-                data-i18n-static="license_order_common_none">
+                data-translate="license_order_common_none">
         </option>
     </select>
 </div>
@@ -38,15 +38,15 @@
      data-ng-show="selected.version.more.compliantAntivirus && selected.version.more.compliantAntivirus.length > 0">
     <label for="antivirus"
            class="control-label"
-           data-i18n-static="license_order_step2_option_PLESK_antivirus">
+           data-translate="license_order_step2_option_PLESK_antivirus">
     </label>
     <select class="form-control"
             id="antivirus"
             name="antivirus"
-            data-ng-options="antivirus as (tr('license_designation_PLESK_options_antivirus_' + antivirus)) for antivirus in selected.version.more.compliantAntivirus"
+            data-ng-options="antivirus as (('license_designation_PLESK_options_antivirus_' + antivirus) | translate) for antivirus in selected.version.more.compliantAntivirus"
             data-ng-model="selected.options['PLESK'].antivirus.value">
         <option value=""
-                data-i18n-static="license_order_common_none">
+                data-translate="license_order_common_none">
         </option>
     </select>
 </div>
@@ -54,7 +54,7 @@
 <div class="checkbox"
      data-ng-show="selected.version.more.canHavePowerPack">
     <label>
-        <span data-i18n-static="license_order_step2_option_PLESK_powerpack"></span>
+        <span data-translate="license_order_step2_option_PLESK_powerpack"></span>
         <input type="checkbox"
                name="powerpack"
                data-ng-model="selected.options['PLESK'].powerpack.value" />

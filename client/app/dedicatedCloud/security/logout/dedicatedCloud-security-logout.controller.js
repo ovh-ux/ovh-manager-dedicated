@@ -1,10 +1,9 @@
 class DedicatedCloudSecurityPolicyLogoutCtrl {
-    constructor ($scope, $stateParams, DedicatedCloud, translator) {
+    constructor ($scope, $stateParams, DedicatedCloud, $translate) {
         this.$scope = $scope;
         this.$stateParams = $stateParams;
         this.DedicatedCloud = DedicatedCloud;
-        this.translator = translator;
-        this.tr = translator.tr;
+        this.$translate = $translate;
 
         this.selectedLogoutPolicy = {
             value: null
@@ -18,7 +17,7 @@ class DedicatedCloudSecurityPolicyLogoutCtrl {
         this.DedicatedCloud.modifyPolicyLogout(this.$stateParams.productId, this.selectedLogoutPolicy.value)
             .then((data) => {
                 this.$scope.setMessage(
-                    this.tr("dedicatedCloud_configuration_SECURITY_policy_logout_success"),
+                    this.$translate.instant("dedicatedCloud_configuration_SECURITY_policy_logout_success"),
                     _.assign(
                         {
                             type: "success"
@@ -28,7 +27,7 @@ class DedicatedCloudSecurityPolicyLogoutCtrl {
                 );
             })
             .catch((err) => {
-                this.$scope.setMessage(this.tr("dedicatedCloud_configuration_SECURITY_policy_logout_fail"), err.data);
+                this.$scope.setMessage(this.$translate.instant("dedicatedCloud_configuration_SECURITY_policy_logout_fail"), err.data);
             });
     }
 }

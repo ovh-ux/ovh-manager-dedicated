@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpOrganisationDeleteCtrl", ($scope, Ip, IpOrganisation, Alerter) => {
+angular.module("Module.ip.controllers").controller("IpOrganisationDeleteCtrl", ($scope, $translate, Ip, IpOrganisation, Alerter) => {
     $scope.alert = "ip_organisation_alerter";
     $scope.load = false;
 
@@ -6,12 +6,12 @@ angular.module("Module.ip.controllers").controller("IpOrganisationDeleteCtrl", (
         $scope.load = true;
         IpOrganisation.deleteOrganisation($scope.currentActionData).then(
             () => {
-                Alerter.alertFromSWS($scope.i18n.ip_organisation_delete_success, true, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("ip_organisation_delete_success"), true, $scope.alert);
                 $scope.resetAction();
                 $scope.load = false;
             },
             (reason) => {
-                Alerter.alertFromSWS($scope.i18n.ip_organisation_delete_error, reason, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("ip_organisation_delete_error"), reason, $scope.alert);
                 $scope.resetAction();
                 $scope.load = false;
             }

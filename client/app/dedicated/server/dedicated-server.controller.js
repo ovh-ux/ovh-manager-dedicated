@@ -1,4 +1,4 @@
-angular.module("App").controller("ServerCtrl", ($scope, $timeout, $stateParams, Server, Polling, $q, constants, User, ovhUserPref, featureAvailability) => {
+angular.module("App").controller("ServerCtrl", (NO_AUTORENEW_COUNTRIES, WEATHERMAP_URL, $scope, $timeout, $stateParams, $translate, Server, Polling, $q, constants, User, ovhUserPref, featureAvailability) => {
     "use strict";
 
     const errorStatus = ["customer_error", "ovh_error", "error", "cancelled"];
@@ -203,13 +203,13 @@ angular.module("App").controller("ServerCtrl", ($scope, $timeout, $stateParams, 
                     $scope.server.reverse = angular.copy($scope.reverseModel.reverse);
                     $scope.reverseModel.loading = false;
                     reverseIsNull = true;
-                    $scope.setMessage($scope.tr("server_tab_IP_table_delete_reverse_success"), true);
+                    $scope.setMessage($translate.instant("server_tab_IP_table_delete_reverse_success"), true);
                 })
                 .catch((data) => {
                     _.set(data, "data.type", "ERROR");
                     $scope.reverseModel.reverse = angular.copy($scope.server.reverse);
                     $scope.reverseModel.loading = false;
-                    $scope.setMessage($scope.tr("server_tab_IP_table_delete_reverse_failure"), data.data);
+                    $scope.setMessage($translate.instant("server_tab_IP_table_delete_reverse_failure"), data.data);
                 });
         } else {
             Server.updateReverse($stateParams.productId, $scope.server.name, $scope.server.ip, reverse)
@@ -217,13 +217,13 @@ angular.module("App").controller("ServerCtrl", ($scope, $timeout, $stateParams, 
                     $scope.server.reverse = angular.copy($scope.reverseModel.reverse);
                     $scope.reverseModel.loading = false;
                     reverseIsNull = $scope.server.reverse === null;
-                    $scope.setMessage($scope.tr("server_tab_IP_table_manage_reverse_success"), true);
+                    $scope.setMessage($translate.instant("server_tab_IP_table_manage_reverse_success"), true);
                 })
                 .catch((data) => {
                     _.set(data, "data.type", "ERROR");
                     $scope.reverseModel.reverse = angular.copy($scope.server.reverse);
                     $scope.reverseModel.loading = false;
-                    $scope.setMessage($scope.tr("server_tab_IP_table_manage_reverse_failure"), data.data);
+                    $scope.setMessage($translate.instant("server_tab_IP_table_manage_reverse_failure"), data.data);
                 });
         }
     };
@@ -304,7 +304,7 @@ angular.module("App").controller("ServerCtrl", ($scope, $timeout, $stateParams, 
             .catch((data) => {
                 $scope.loadingServerInformations = false;
                 $scope.loadingServerError = true;
-                $scope.setMessage($scope.tr("server_dashboard_loading_error"), data);
+                $scope.setMessage($translate.instant("server_dashboard_loading_error"), data);
             });
     }
 
@@ -314,13 +314,13 @@ angular.module("App").controller("ServerCtrl", ($scope, $timeout, $stateParams, 
                 $scope.monitoringProtocolEnum = data[0].data.models["dedicated.server.MonitoringProtocolEnum"].enum;
                 $scope.serviceMonitoring = data[1];
                 $scope.servicesStateLinks = {
-                    weathermap: constants.weatherMapUrl,
+                    weathermap: WEATHERMAP_URL,
                     vms: constants.vmsUrl,
                     travaux: constants.travauxUrl
                 };
             },
             (err) => {
-                $scope.setMessage($scope.tr("server_dashboard_loading_error"), err.data);
+                $scope.setMessage($translate.instant("server_dashboard_loading_error"), err.data);
             }
         );
     }
@@ -371,7 +371,7 @@ angular.module("App").controller("ServerCtrl", ($scope, $timeout, $stateParams, 
                 if (Polling.isResolve(state)) {
                     $scope.disable.reboot = false;
                     $scope.$broadcast("dedicated.informations.reboot.done");
-                    $scope.setMessage($scope.tr("server_configuration_reboot_successfull", $scope.server.name), true);
+                    $scope.setMessage($translate.instant("server_configuration_reboot_successfull", { t0: $scope.server.name }), true);
                 } else {
                     startPollRestart(task);
                 }
@@ -379,7 +379,7 @@ angular.module("App").controller("ServerCtrl", ($scope, $timeout, $stateParams, 
             (data) => {
                 $scope.disable.reboot = false;
                 $scope.$broadcast("dedicated.informations.reboot.done");
-                $scope.setMessage($scope.tr("server_configuration_reboot_fail_task"), data);
+                $scope.setMessage($translate.instant("server_configuration_reboot_fail_task"), data);
             }
         );
     }
@@ -412,7 +412,7 @@ angular.module("App").controller("ServerCtrl", ($scope, $timeout, $stateParams, 
                 if (err.status === 404) {
                     if ($scope.disable.installationInProgress) {
                         $scope.disable.noDeleteMessage = true;
-                        $scope.setMessage($scope.tr("server_configuration_installation_progress_end"), true);
+                        $scope.setMessage($translate.instant("server_configuration_installation_progress_end"), true);
                         $scope.$broadcast("dedicated.informations.reload");
                     }
                     $scope.disable.install = false;
@@ -424,7 +424,7 @@ angular.module("App").controller("ServerCtrl", ($scope, $timeout, $stateParams, 
                 if (task) {
                     startPollReinstall(task);
                 } else {
-                    $scope.setMessage($scope.tr("server_configuration_installation_fail_task", $scope.server.name), false);
+                    $scope.setMessage($translate.instant("server_configuration_installation_fail_task", { t0: $scope.server.name }), false);
                 }
             }
         );
@@ -443,14 +443,14 @@ angular.module("App").controller("ServerCtrl", ($scope, $timeout, $stateParams, 
             })
             .catch((data) => {
                 $scope.disable.install = false;
-                $scope.setMessage($scope.tr("server_configuration_installation_fail_task", $scope.server.name), data);
+                $scope.setMessage($translate.instant("server_configuration_installation_fail_task", { t0: $scope.server.name }), data);
             });
     }
 
     // Auto renew
     $scope.hasAutoRenew = () => {
         $scope.autoRenew = false;
-        if (constants.NO_AUTORENEW_COUNTRIES.indexOf($scope.user.ovhSubsidiary) === -1) {
+        if (NO_AUTORENEW_COUNTRIES.indexOf($scope.user.ovhSubsidiary) === -1) {
             return $q
                 .all({
                     serverServiceInfo: Server.getServiceInfos($stateParams.productId),
@@ -480,7 +480,7 @@ angular.module("App").controller("ServerCtrl", ($scope, $timeout, $stateParams, 
                 serverArrayToStopBother.push(server.name);
                 return ovhUserPref.assign("SERVER_AUTORENEW_STOP_BOTHER", serverArrayToStopBother);
             })
-            .catch((error) => error.status === 404 ? $scope.createStopBotherAutoRenewUserPref() : $scope.setMessage($scope.tr("server_autorenew_stop_bother_error"), error.data));
+            .catch((error) => error.status === 404 ? $scope.createStopBotherAutoRenewUserPref() : $scope.setMessage($translate.instant("server_autorenew_stop_bother_error"), error.data));
     };
 
     $scope.createStopBotherAutoRenewUserPref = () => {

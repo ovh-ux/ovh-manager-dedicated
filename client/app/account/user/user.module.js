@@ -14,6 +14,7 @@ angular
                 url: "/useraccount",
                 controller: "UserAccount.controllers.main",
                 templateUrl: `${baseUrl}/user.html`,
+                translations: ["account/user"],
                 "abstract": true
             });
 
@@ -21,16 +22,9 @@ angular
                 url: "/useraccount",
                 controller: "UserAccount.controllers.main",
                 templateUrl: `${baseUrl}/user.html`,
-                "abstract": true
+                "abstract": true,
+                translations: ["account/user"]
             });
-
-            if (target === "EU") {
-                $stateProvider.state("app.account.useraccount.subscriptions", {
-                    url: "/subscriptions",
-                    templateUrl: `${baseUrl}subscriptions/user-subscriptions.html`,
-                    controller: "UserAccount.controllers.Subscriptions"
-                });
-            }
 
             $stateProvider.state("app.account.useraccount.ssh", {
                 url: "/ssh",
@@ -49,7 +43,8 @@ angular
             $stateProvider.state("app.account.useraccount.infos", {
                 url: "/infos",
                 templateUrl: `${baseUrl}infos/user-infos.html`,
-                controller: "UserAccount.controllers.Infos"
+                controller: "UserAccount.controllers.Infos",
+                translations: ["account/user/newAccountForm"]
             });
 
             if (target === "EU" || target === "CA") {
@@ -110,12 +105,10 @@ angular
     ])
     .run([
         "$controller",
-        "translator",
         "UserAccount.constants",
         "$rootScope",
-        function ($controller, translator, userAccountConstants, $rootScope) {
+        function ($controller, userAccountConstants, $rootScope) {
             "use strict";
-            translator.load(["useraccount", "countries", "newAccountForm"]);
             $rootScope.target = userAccountConstants.target;
             $rootScope.worldPart = userAccountConstants.target;
         }

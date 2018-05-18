@@ -1,10 +1,11 @@
 angular.module("UserAccount.controllers").controller("UserAccount.controllers.contacts.requestsSend", [
     "$scope",
+    "$translate",
     "UserAccount.services.Contacts",
     "Alerter",
     "User",
 
-    function ($scope, Contacts, Alerter, User) {
+    function ($scope, $translate, Contacts, Alerter, User) {
         "use strict";
 
         const self = this;
@@ -20,7 +21,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.co
                     self.user = user;
                 },
                 (err) => {
-                    Alerter.alertFromSWS($scope.tr("user_account_contacts_error"), err, "useraccount.alerts.dashboardContacts");
+                    Alerter.alertFromSWS($translate.instant("user_account_contacts_error"), err, "useraccount.alerts.dashboardContacts");
                 }
             );
         }
@@ -53,7 +54,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.co
                             .reverse();
                     },
                     (err) => {
-                        Alerter.alertFromSWS($scope.tr("user_account_contacts_error"), err, "useraccount.alerts.dashboardContacts");
+                        Alerter.alertFromSWS($translate.instant("user_account_contacts_error"), err, "useraccount.alerts.dashboardContacts");
                     }
                 )
                 .finally(() => {

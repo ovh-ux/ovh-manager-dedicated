@@ -21,13 +21,13 @@
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
                                 <strong class="d-block"
-                                        data-i18n-static="server_tab_stats_rtm_infos_cpu">
+                                        data-translate="server_tab_stats_rtm_infos_cpu">
                                 </strong>
                                 <span>
                                     <span data-ng-bind="infoRtm.cpu.name || '-'"></span><br />
-                                    <span data-i18n-static="server_tab_stats_rtm_infos_cpu_core"></span> :
+                                    <span data-translate="server_tab_stats_rtm_infos_cpu_core"></span> :
                                     <span data-ng-bind="infoRtm.cpu.core || '-'"></span><br />
-                                    <span data-i18n-static="server_tab_stats_rtm_infos_cpu_cache"></span> :
+                                    <span data-translate="server_tab_stats_rtm_infos_cpu_cache"></span> :
                                     <span data-ng-bind="infoRtm.cpu.cache.value + infoRtm.cpu.cache.unit"></span>
                                 </span>
                             </div>
@@ -35,11 +35,11 @@
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
                                 <strong class="d-block"
-                                        data-i18n-static="server_tab_stats_rtm_infos_ram">
+                                        data-translate="server_tab_stats_rtm_infos_ram">
                                 </strong>
                                 <span>
                                     <span data-ng-repeat="memory in infoRtm.memory.list track by $index"
-                                          data-ng-bind="memory.number + 'x ' + memory.value + i18n['unit_size_'+memory.unit]">
+                                          data-ng-bind="memory.number + 'x ' + memory.value + (('unit_size_' + memory.unit) | translate)">
                                     </span>
                                 </span>
                             </div>
@@ -47,18 +47,18 @@
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
                                 <strong class="d-block"
-                                        data-i18n-static="server_tab_stats_rtm_infos_disk">
+                                        data-translate="server_tab_stats_rtm_infos_disk">
                                 </strong>
                                 <span>
                                     <span data-ng-repeat="diskGroup in server.diskGroups track by $index"
-                                          data-ng-bind="diskGroup.numberOfDisks + '&nbsp;x&nbsp;' + diskGroup.diskSize.value + ' ' + i18n['unit_size_'+diskGroup.diskSize.unit]">
+                                          data-ng-bind="diskGroup.numberOfDisks + '&nbsp;x&nbsp;' + diskGroup.diskSize.value + ' ' + (('unit_size_' + diskGroup.diskSize.unit) | translate)">
                                     </span>
                                 </span>
                             </div>
                         </li>
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
-                                <strong class="d-block" data-i18n-static="server_tab_stats_rtm_infos_motherboard"></strong>
+                                <strong class="d-block" data-translate="server_tab_stats_rtm_infos_motherboard"></strong>
                                 <span data-ng-bind="infoRtm.motherboard.name || '-'"></span>
                             </div>
                         </li>
@@ -73,7 +73,7 @@
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
                                 <strong class="d-block"
-                                        data-i18n-static="server_tab_stats_rtm_infos_rtmVersion">
+                                        data-translate="server_tab_stats_rtm_infos_rtmVersion">
                                 </strong>
                                 <span>
                                     <span data-ng-bind="infoRtm.rtmVersion.installedVersion || '-'"></span>
@@ -82,8 +82,8 @@
                                         <a href="{{ updateRtmLinkForCurrentLang }}"
                                            target="_blank"
                                            rel="noopener"
-                                           title="{{ tr('server_tab_stats_rtm_infos_rtmVersion_update') }} ({{ tr('server_tab_stats_rtm_new_window') }})">
-                                            <span data-i18n-static="server_tab_stats_rtm_infos_rtmVersion_update"></span>
+                                           title="{{ 'server_tab_stats_rtm_infos_rtmVersion_update' | translate }} ({{ 'server_tab_stats_rtm_new_window' | translate }})">
+                                            <span data-translate="server_tab_stats_rtm_infos_rtmVersion_update"></span>
                                             <span class="icon-share-alt" aria-hidden="true"></span>
                                         </a>
                                     </p>
@@ -93,7 +93,7 @@
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
                                 <strong class="d-block"
-                                        data-i18n-static="server_tab_stats_rtm_infos_kernelVersion">
+                                        data-translate="server_tab_stats_rtm_infos_kernelVersion">
                                 </strong>
                                 <span data-ng-bind="infoRtm.osInfo.kernelRelease"></span>
                             </div>

@@ -1,4 +1,4 @@
-angular.module("App").controller("ServerCancelBandwidthCtrl", ($rootScope, $scope, $stateParams, Server, User, Alerter) => {
+angular.module("App").controller("ServerCancelBandwidthCtrl", ($rootScope, $scope, $stateParams, $translate, Server, User, Alerter) => {
     "use strict";
 
     $scope.loader = {
@@ -10,11 +10,11 @@ angular.module("App").controller("ServerCancelBandwidthCtrl", ($rootScope, $scop
 
         Server.cancelBandwidthOption($stateParams.productId)
             .then(() => {
-                $scope.setMessage($scope.tr("server_cancel_bandwidth_cancel_success"), true);
+                $scope.setMessage($translate.instant("server_cancel_bandwidth_cancel_success"), true);
                 $rootScope.$broadcast("dedicated.informations.bandwidth");
             })
             .catch((data) => {
-                $scope.setMessage($scope.tr("server_cancel_bandwidth_cancel_error"), data);
+                $scope.setMessage($translate.instant("server_cancel_bandwidth_cancel_error"), data);
             })
             .finally(() => {
                 $scope.resetAction();
@@ -29,7 +29,7 @@ angular.module("App").controller("ServerCancelBandwidthCtrl", ($rootScope, $scop
                 $scope.user = user;
             })
             .catch(() => {
-                Alerter.alertFromSWS($scope.tr("server_cancel_bandwidth_confirmation_error"), { type: "WARNING" }, "cancelBandwidthConfirmationError");
+                Alerter.alertFromSWS($translate.instant("server_cancel_bandwidth_confirmation_error"), { type: "WARNING" }, "cancelBandwidthConfirmationError");
             })
             .finally(() => {
                 $scope.loader.loading = false;

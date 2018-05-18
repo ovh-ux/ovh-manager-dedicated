@@ -1,14 +1,14 @@
 class ServerOrderTrafficService {
-    constructor ($q, translator, Server) {
+    constructor ($q, $translate, Server) {
         this.$q = $q;
-        this.translator = translator;
+        this.$translate = $translate;
         this.Server = Server;
     }
 
     getOrderables (productId) {
         return this.Server.getOrderables(productId, "traffic")
             .then((response) => this.acceptResponse(this.transformOrderables(response.traffic)))
-            .catch((response) => this.rejectResponse(response.data, this.translator.tr("server_order_traffic_loading_error")));
+            .catch((response) => this.rejectResponse(response.data, this.$translate.instant("server_order_traffic_loading_error")));
     }
 
     getOrderableDurations (productId, traffic) {
@@ -19,7 +19,7 @@ class ServerOrderTrafficService {
             }
         })
             .then((response) => this.acceptResponse(response))
-            .catch((response) => this.rejectResponse(response.data, this.translator.tr("server_order_traffic_loading_error")));
+            .catch((response) => this.rejectResponse(response.data, this.$translate.instant("server_order_traffic_loading_error")));
     }
 
     order (productId, traffic, duration) {
@@ -31,7 +31,7 @@ class ServerOrderTrafficService {
             }
         })
             .then((response) => this.acceptResponse(response))
-            .catch((response) => this.rejectResponse(response.data, this.translator.tr("server_order_traffic_error")));
+            .catch((response) => this.rejectResponse(response.data, this.$translate.instant("server_order_traffic_error")));
     }
 
     getOption (productId) {
@@ -42,14 +42,14 @@ class ServerOrderTrafficService {
 
     cancelOption (productId) {
         return this.Server.cancelOption(productId, "TRAFFIC")
-            .then((response) => this.acceptResponse(response, this.translator.tr("server_cancel_traffic_cancel_success")))
-            .catch((response) => this.rejectResponse(response.data, this.translator.tr("server_cancel_traffic_cancel_error")));
+            .then((response) => this.acceptResponse(response, this.$translate.instant("server_cancel_traffic_cancel_success")))
+            .catch((response) => this.rejectResponse(response.data, this.$translate.instant("server_cancel_traffic_cancel_error")));
     }
 
     transformOrderables (orderables) {
         return _.map(orderables, (orderable) => ({
             value: orderable,
-            text: this.translator.tr(`server_order_traffic_orderable_label_${orderable}`)
+            text: this.$translate.instant(`server_order_traffic_orderable_label_${orderable}`)
         }));
     }
 

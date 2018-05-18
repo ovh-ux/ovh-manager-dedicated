@@ -38,7 +38,7 @@ angular
         }
     })
     .constant("HARDWARE_RAID_RULE_DEFAULT_NAME", "managerHardRaid")
-    .service("Server", function (Products, $http, $q, constants, $cacheFactory, $rootScope, Api, Polling, OvhHttp, translator, SERVERSTATS_PERIOD_ENUM, HARDWARE_RAID_RULE_DEFAULT_NAME) {
+    .service("Server", function (Products, $http, $q, constants, $cacheFactory, $rootScope, $translate, Api, Polling, OvhHttp, SERVERSTATS_PERIOD_ENUM, HARDWARE_RAID_RULE_DEFAULT_NAME) {
         "use strict";
 
         const self = this;
@@ -319,11 +319,15 @@ angular
 
         /* ------- SECONDARY DNS -------*/
 
-        this.getSecondaryDnsList = function (serviceName) {
+        this.getSecondaryDnsList = function (serviceName, count, offset) {
             return OvhHttp.get("/sws/dedicated/server/{serviceName}/secondaryDNS", {
                 rootPath: "2api",
                 urlParams: {
                     serviceName
+                },
+                params: {
+                    count,
+                    offset
                 }
             });
         };
@@ -1833,9 +1837,9 @@ angular
             /* Arbitrary fallback to English */
             fallbackLang = "GB";
 
-            selectedLanguage = translator.getSelectedAvailableLanguage();
+            selectedLanguage = $translate.use();
             try {
-                lang = selectedLanguage.value.replace(/^\w{2}_/, "").toUpperCase();
+                lang = selectedLanguage.replace(/^\w{2}_/, "").toUpperCase();
             } catch (e) {
                 lang = fallbackLang;
                 throw e;

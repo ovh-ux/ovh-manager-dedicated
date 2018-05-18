@@ -36,11 +36,11 @@ angular.module("App")
             this.isRebooting = true;
             return this.Server.reboot(this.$stateParams.productId)
                 .then(() => {
-                    this.Alerter.success(this.$scope.tr("server_configuration_reboot_success", [this.server.name]), "server_dashboard_alert");
+                    this.Alerter.success(this.$translate.instant("server_configuration_reboot_success", { t0: this.server.name }), "server_dashboard_alert");
                     return this.close();
                 })
                 .catch((err) => {
-                    this.Alerter.error(this.$scope.tr("server_configuration_reboot_fail"), "server_dashboard_alert");
+                    this.Alerter.error(this.$translate.instant("server_configuration_reboot_fail"), "server_dashboard_alert");
                     this.$q.reject(err);
                     return this.cancel(err);
                 })

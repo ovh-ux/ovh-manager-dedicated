@@ -1,4 +1,4 @@
-angular.module("Module.ip.controllers").controller("IpOrganisationAddCtrl", ($scope, Ip, IpOrganisation, Alerter, $q, User, featureAvailability) => {
+angular.module("Module.ip.controllers").controller("IpOrganisationAddCtrl", ($scope, $translate, Ip, IpOrganisation, Alerter, $q, User, featureAvailability) => {
     "use strict";
 
     $scope.alert = "ip_organisation_addedit_alerter";
@@ -31,7 +31,8 @@ angular.module("Module.ip.controllers").controller("IpOrganisationAddCtrl", ($sc
     };
 
     $scope.orderByCountryAlias = function (a) {
-        return $scope.i18n[`country_${a}`] || a;
+        const result = $translate.instant(`country_${a}`);
+        return result === "country_" ? a : result;
     };
 
     $scope.load = function () {
@@ -66,7 +67,7 @@ angular.module("Module.ip.controllers").controller("IpOrganisationAddCtrl", ($sc
             },
             () => {
                 $scope.resetAction();
-                Alerter.alertFromSWS($scope.i18n.ip_organisation_add_load_error, false, $scope.alert);
+                Alerter.alertFromSWS($translate.instant("ip_organisation_add_load_error"), false, $scope.alert);
                 $scope.load.loading = false;
             }
         );
@@ -86,24 +87,24 @@ angular.module("Module.ip.controllers").controller("IpOrganisationAddCtrl", ($sc
         if ($scope.formOrganisation.edit) {
             IpOrganisation.putOrganisation($scope.newOrganisation).then(
                 () => {
-                    Alerter.alertFromSWS($scope.i18n.ip_organisation_edit_success, true, $scope.alert);
+                    Alerter.alertFromSWS($translate.instant("ip_organisation_edit_success"), true, $scope.alert);
                     $scope.load.loading = false;
                     $scope.resetAction();
                 },
                 (reason) => {
-                    Alerter.alertFromSWS($scope.i18n.ip_organisation_edit_error, reason, $scope.alert);
+                    Alerter.alertFromSWS($translate.instant("ip_organisation_edit_error"), reason, $scope.alert);
                     $scope.load.loading = false;
                 }
             );
         } else {
             IpOrganisation.postOrganisation($scope.newOrganisation).then(
                 () => {
-                    Alerter.alertFromSWS($scope.i18n.ip_organisation_add_success, true, $scope.alert);
+                    Alerter.alertFromSWS($translate.instant("ip_organisation_add_success"), true, $scope.alert);
                     $scope.load.loading = false;
                     $scope.resetAction();
                 },
                 (reason) => {
-                    Alerter.alertFromSWS($scope.i18n.ip_organisation_add_error, reason, $scope.alert);
+                    Alerter.alertFromSWS($translate.instant("ip_organisation_add_error"), reason, $scope.alert);
                     $scope.load.loading = false;
                 }
             );

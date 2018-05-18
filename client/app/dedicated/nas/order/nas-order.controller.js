@@ -2,10 +2,10 @@ angular.module("App").controller("NasOrderCtrl", [
     "$scope",
     "Nas",
     "$timeout",
+    "$translate",
     "$filter",
     "Alerter",
-    "constants",
-    function ($scope, Nas, $timeout, $filter, Alerter, constants) {
+    function (NASHA_URL, $scope, Nas, $timeout, $translate, $filter, Alerter) {
         "use strict";
 
         $scope.nasOrder = {
@@ -20,7 +20,7 @@ angular.module("App").controller("NasOrderCtrl", [
             datacenterSelected: null
         };
 
-        $scope.redirectToCloud = `${constants.nashaUrl}/new`;
+        $scope.redirectToCloud = `${NASHA_URL}/new`;
 
         $scope.load = function () {
             $scope.nasOrder.loading = true;
@@ -35,7 +35,7 @@ angular.module("App").controller("NasOrderCtrl", [
                 },
                 (data) => {
                     $scope.nasOrder.loading = false;
-                    Alerter.alertFromSWS($scope.tr("nas_order_loading_error"), data);
+                    Alerter.alertFromSWS($translate.instant("nas_order_loading_error"), data);
                 }
             );
         };

@@ -12,16 +12,16 @@
         </div>
         <div data-ng-if="!$ctrl.contracts.loading && !$ctrl.saving">
             <h3 class="modal-title"
-                data-ng-bind="tr('user_contracts_modal_title')">
+                data-ng-bind=":: 'user_contracts_modal_title' | translate">
             </h3>
             <oui-message class="d-block mb-4"
                          data-type="error"
                          data-ng-if="$ctrl.hasSubmitError">
-                <span data-i18n-static="user_contracts_modal_submit_error"></span>
+                <span data-translate="user_contracts_modal_submit_error"></span>
             </oui-message>
             <p>
-                <span data-i18n-static="user_contracts_modal_term_of_service_updated_text"></span>
-                <span data-i18n-static="user_contracts_modal_term_of_service_updated_explanation"></span>
+                <span data-translate="user_contracts_modal_term_of_service_updated_text"></span>
+                <span data-translate="user_contracts_modal_term_of_service_updated_explanation"></span>
             </p>
             <ul>
                 <li data-ng-repeat="contract in $ctrl.contracts.data track by $index">
@@ -29,7 +29,7 @@
                         target="_blank"
                         rel="noopener"
                         data-ng-href="{{ contract.pdf }}"
-                        data-i18n-static="{{ 'user_contracts_modal_display_text_' + contract.code }}">
+                        data-translate="{{ 'user_contracts_modal_display_text_' + contract.code }}">
                     </a>
                 </li>
             </ul>
@@ -48,7 +48,7 @@
         <button type="submit"
                 class="btn btn-primary"
                 data-ng-disabled="!$ctrl.model.accepted.value || $ctrl.saving"
-                data-i18n-static="wizard_confirm">
+                data-translate="wizard_confirm">
         </button>
     </div>
 

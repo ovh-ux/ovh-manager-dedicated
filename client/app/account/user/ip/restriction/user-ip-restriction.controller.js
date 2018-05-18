@@ -1,9 +1,10 @@
 angular.module("UserAccount.controllers").controller("UserAccount.controllers.ipRestrictions", [
     "$rootScope",
     "$scope",
+    "$translate",
     "UserAccount.services.ipRestrictions",
     "Alerter",
-    function ($rootScope, $scope, Service, Alerter) {
+    function ($rootScope, $scope, $translate, Service, Alerter) {
         "use strict";
 
         $scope.ipRestrictionCurrentEdit = null;
@@ -48,7 +49,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.ip
                         $scope.updateRestrictionButtonDisabled();
                     },
                     (err) => {
-                        Alerter.alertFromSWS($scope.tr("user_ipRestrictions_error"), err.data, "ipRestrictionAlert");
+                        Alerter.alertFromSWS($translate.instant("user_ipRestrictions_error"), err.data, "ipRestrictionAlert");
                     }
                 )
                 .finally(() => {
@@ -61,10 +62,10 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.ip
             Service.updateDefaultRule($scope.defaultRule)
                 .then(
                     () => {
-                        Alerter.success($scope.tr("user_ipRestrictions_defaultRule_success"), "ipRestrictionAlert");
+                        Alerter.success($translate.instant("user_ipRestrictions_defaultRule_success"), "ipRestrictionAlert");
                     },
                     (err) => {
-                        Alerter.alertFromSWS($scope.tr("user_ipRestrictions_defaultRule_error"), err.data, "ipRestrictionAlert");
+                        Alerter.alertFromSWS($translate.instant("user_ipRestrictions_defaultRule_error"), err.data, "ipRestrictionAlert");
                     }
                 )
                 .finally(() => {
@@ -85,7 +86,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.ip
                         $scope.updateRestrictionButtonDisabled();
                     },
                     (data) => {
-                        Alerter.alertFromSWS($scope.tr("user_ipRestrictions_error"), data.data, "ipRestrictionAlert");
+                        Alerter.alertFromSWS($translate.instant("user_ipRestrictions_error"), data.data, "ipRestrictionAlert");
                     }
                 )
                 .finally(() => {
@@ -106,7 +107,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.ip
                         $rootScope.$broadcast("ipRestriction.reload");
                     },
                     (data) => {
-                        Alerter.alertFromSWS($scope.tr("user_ipRestrictions_update_error", $scope.ipRestrictionCurrentEdit.ip), data.data, "ipRestrictionAlert");
+                        Alerter.alertFromSWS($translate.instant("user_ipRestrictions_update_error", { t0: $scope.ipRestrictionCurrentEdit.ip }), data.data, "ipRestrictionAlert");
                     }
                 )
                 .then(() => {

@@ -1,4 +1,4 @@
-angular.module("Module.license.controllers").controller("LicenseCtrl", [
+angular.module("Module.license").controller("LicenseCtrl", [
     "$scope",
     "$state",
     "License",
