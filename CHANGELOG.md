@@ -1,3 +1,13 @@
+<a name="9.4.1"></a>
+## [9.4.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.4.0...v9.4.1) (2018-05-18)
+
+
+### Bug Fixes
+
+* **ipfo order:** minor html fix ([458d233](https://github.com/ovh-ux/ovh-manager-dedicated/commit/458d233))
+
+
+
 <a name="9.4.0"></a>
 # [9.4.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.3.6...v9.4.0) (2018-05-18)
 
