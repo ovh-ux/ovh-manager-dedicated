@@ -5,6 +5,7 @@
                data-translate="ip_order_ipnbr">
         </label>
         <select id="numberSelect"
+                class="form-control"
                 name="numberSelect"
                 data-ng-model="model.params.number"
                 data-ng-options="r for r in orderableIp.ipRange">
@@ -20,6 +21,7 @@
                data-translate="ip_order_country">
         </label>
         <select id="country"
+                class="form-control"
                 name="country"
                 data-ng-model="model.params.country"
                 data-ng-options="c as (('country_'+c.toUpperCase()) | translate) for c in orderableIp.countries">
