@@ -1,3 +1,21 @@
+<a name="9.4.0"></a>
+# [9.4.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.3.6...v9.4.0) (2018-05-18)
+
+
+### Bug Fixes
+
+* **ipfo order:** fix broken selector ([1293cb8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1293cb8))
+* **sidebar:** add vrack order item ([6245b42](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6245b42))
+* **trads:** fix broken trads ([a7b2e39](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a7b2e39))
+* add vrackUrl const into grunt ngConstant prod task ([8969d27](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8969d27))
+
+
+### Features
+
+* **vrack:** add sidebar menu item ([278b5fd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/278b5fd))
+
+
+
 <a name="9.3.6"></a>
 ## [9.3.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.3.5...v9.3.6) (2018-05-16)
 
