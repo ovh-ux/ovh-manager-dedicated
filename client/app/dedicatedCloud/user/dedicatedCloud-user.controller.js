@@ -1,8 +1,11 @@
-angular.module("App").controller("DedicatedCloudUserCtrl", function ($scope, $stateParams, $timeout, $q, $translate, DedicatedCloud, Alerter, constants) {
+angular.module("App").controller("DedicatedCloudUserCtrl", function ($scope, $state, $stateParams, $timeout, $q, $translate, DedicatedCloud, Alerter, constants) {
     "use strict";
+
+    this.loading = false;
 
     $scope.firstStep = true;
 
+    $scope.$state = $state;
     $scope.users = null;
     $scope.rights = null;
     $scope.rightsCurrentEdit = null;
@@ -135,39 +138,61 @@ angular.module("App").controller("DedicatedCloudUserCtrl", function ($scope, $st
         true
     );
 
-    this.$onInit = function () {
-        $q.all({
+    this.$onInit = () => {
+        this.loading = true;
+        console.log(document.getElementById("foo"));
+        return $q.all({
             policy: DedicatedCloud.getPasswordPolicy($stateParams.productId),
             nsxOptions: DedicatedCloud.getOptionState("nsx", $stateParams.productId)
         }).then((response) => {
             $scope.passwordPolicy = response.policy;
             $scope.nsxOptions = response.nsxOptions;
+        }).finally(() => {
+            this.loading = false;
         });
-
-        return $scope.loadUsers();
     };
 
-    $scope.loadUsers = function () {
-        $scope.loading = true;
-        $scope.rights = null;
-        $scope.usersId = [];
+    this.loadUsers = ({ offset, pageSize }) => DedicatedCloud.getUsers(
+        $stateParams.productId,
+        $scope.usersEntrySearchSelected
+    ).then((users) => ({
+        data: users.slice(offset - 1, offset - 1 + pageSize).map((id) => ({ id })),
+        meta: {
+            totalCount: users.length
+        }
+    }));
 
-        DedicatedCloud.getUsers($stateParams.productId, $scope.usersEntrySearchSelected)
-            .then(
-                (users) => {
-                    $scope.usersId = users;
-                },
-                (err) => {
-                    $scope.error = false;
-                    $scope.setMessage($translate.instant("dedicatedCloud_users_loading_error"), {
-                        type: "ERROR",
-                        message: err.message
-                    });
-                }
-            )
-            .finally(() => {
-                $scope.loading = false;
+    this.loadUser = ({ id }) => $q.all({
+        user: DedicatedCloud.getUserDetail($stateParams.productId, id),
+        tasksTodo: DedicatedCloud.getFirstUserOperationDetail($stateParams.productId, { userId: id, params: { state: "todo" } }),
+        tasksDoing: DedicatedCloud.getFirstUserOperationDetail($stateParams.productId, { userId: id, params: { state: "doing" } })
+    }).then((infos) => {
+        const operations = infos.tasksTodo ? infos.tasksTodo : infos.tasksDoing;
+        infos.user.task = operations;
+        infos.user.state = infos.user.state.toUpperCase();
+        infos.user.activationState = infos.user.activationState.toUpperCase();
+
+        if (operations) {
+            infos.user.progress = operations.progress;
+            infos.user.isUpdating = true;
+            DedicatedCloud.pollUserTasks($stateParams.productId, {
+                namespace: "dedicatedCloud.user.update.poll",
+                task: operations,
+                user: infos.user,
+                successSates: ["canceled", "done"],
+                errorsSates: ["error"]
             });
+        }
+
+        return infos.user;
+    });
+
+    this.modifyUserRights = (user) => {
+        $state.go("app.dedicatedClouds.users.rights", { userId: user.userId });
+    };
+
+    this.editUser = (user) => {
+        $state.go("app.dedicatedClouds.users.edit", { userId: user.userId });
     };
 
     $scope.displayUsers = function () {
@@ -209,45 +234,6 @@ angular.module("App").controller("DedicatedCloudUserCtrl", function ($scope, $st
                 $scope.userCurrentEditBack = null;
             }
         );
-    };
-
-    $scope.cancelUserCurrentEdit = function () {
-        $scope.userCurrentEdit = null;
-        $scope.userCurrentEditBack = null;
-    };
-
-    $scope.transformItem = function (id) {
-        $scope.loading = true;
-        return $q
-            .all({
-                user: DedicatedCloud.getUserDetail($stateParams.productId, id),
-                tasksTodo: DedicatedCloud.getFirstUserOperationDetail($stateParams.productId, { userId: id, params: { state: "todo" } }),
-                tasksDoing: DedicatedCloud.getFirstUserOperationDetail($stateParams.productId, { userId: id, params: { state: "doing" } })
-            })
-            .then((infos) => {
-                const operations = infos.tasksTodo ? infos.tasksTodo : infos.tasksDoing;
-                infos.user.task = operations;
-                infos.user.state = infos.user.state.toUpperCase();
-                infos.user.activationState = infos.user.activationState.toUpperCase();
-
-                if (operations) {
-                    infos.user.progress = operations.progress;
-                    infos.user.isUpdating = true;
-                    DedicatedCloud.pollUserTasks($stateParams.productId, {
-                        namespace: "dedicatedCloud.user.update.poll",
-                        task: operations,
-                        user: infos.user,
-                        successSates: ["canceled", "done"],
-                        errorsSates: ["error"]
-                    });
-                }
-
-                return infos.user;
-            });
-    };
-
-    $scope.onTransformItemDone = function () {
-        $scope.loading = false;
     };
 
     function checkForm () {

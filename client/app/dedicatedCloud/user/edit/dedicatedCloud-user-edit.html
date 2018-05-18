@@ -1,0 +1,108 @@
+<form name="userEditForm"
+      data-ng-submit="$ctrl.editUser()"
+      novalidate>
+
+    <oui-modal data-title="{{:: 'dedicatedCloud_USER_modify' | translate }}"
+               data-primary-label="{{ 'wizard_confirm' | translate }}"
+               data-secondary-label="{{ 'wizard_close' | translate }}"
+               data-secondary-action="$ctrl.$state.go('^')"
+               data-on-dismiss="$ctrl.$state.go('^')"
+               data-loading="$ctrl.loading">
+
+        <label>
+            <span data-translate="dedicatedCloud_USER_name"></span>
+            <input type="text"
+                   class="form-control"
+                   data-ng-model="$ctrl.user.name">
+        </label>
+
+        <label>
+            <span data-translate="dedicatedCloud_USER_firstname"></span>
+            <input type="text"
+                   class="form-control"
+                   data-ng-model="$ctrl.user.firstName">
+        </label>
+
+        <label>
+            <span data-translate="dedicatedCloud_USER_lastname"></span>
+            <input type="text"
+                   class="form-control"
+                   data-ng-model="$ctrl.user.lastName">
+        </label>
+
+        <label>
+            <span data-translate="dedicatedCloud_USER_mail"></span>
+            <input type="text"
+                   class="form-control"
+                   data-ng-model="$ctrl.user.email">
+        </label>
+
+        <label>
+            <span data-translate="dedicatedCloud_USER_phone"></span>
+            <input type="text"
+                   class="form-control"
+                   data-ng-model="$ctrl.user.phoneNumber">
+        </label>
+
+        <label for="tokenValidator">
+            <span data-translate="dedicatedCloud_USER_token_validator">
+            </span>
+        </label>
+        <label class="oui-switch">
+            <input id="tokenValidator"
+                   name="tokenValidator"
+                   type="checkbox"
+                   class="oui-switch__checkbox"
+                   data-ng-model="$ctrl.user.tokenValidator">
+            <div class="oui-switch__slider"></div>
+            <i class="oui-icon oui-icon-success" aria-hidden="true"></i>
+            <i class="oui-icon oui-icon-error" aria-hidden="true"></i>
+        </label>
+
+        <label for="canManageNetwork">
+            <span data-translate="dedicatedCloud_USER_ip">
+            </span>
+        </label>
+        <label class="oui-switch">
+            <input id="canManageNetwork"
+                   name="canManageNetwork"
+                   type="checkbox"
+                   class="oui-switch__checkbox"
+                   data-ng-model="$ctrl.user.canManageNetwork">
+            <div class="oui-switch__slider"></div>
+            <i class="oui-icon oui-icon-success" aria-hidden="true"></i>
+            <i class="oui-icon oui-icon-error" aria-hidden="true"></i>
+        </label>
+
+        <label for="canManageIpFailOvers">
+            <span data-translate="dedicatedCloud_USER_ipfo">
+            </span>
+        </label>
+        <label class="oui-switch">
+            <input id="canManageIpFailOvers"
+                   name="canManageIpFailOvers"
+                   type="checkbox"
+                   class="oui-switch__checkbox"
+                   data-ng-model="$ctrl.user.canManageIpFailOvers">
+            <div class="oui-switch__slider"></div>
+            <i class="oui-icon oui-icon-success" aria-hidden="true"></i>
+            <i class="oui-icon oui-icon-error" aria-hidden="true"></i>
+        </label>
+
+        <label for="nsxRight">
+            <span data-translate="dedicatedCloud_USER_nsx">
+            </span>
+        </label>
+        <label class="oui-switch">
+            <input id="nsxRight"
+                   name="nsxRight"
+                   type="checkbox"
+                   class="oui-switch__checkbox"
+                   data-ng-model="$ctrl.user.nsxRight">
+            <div class="oui-switch__slider"></div>
+            <i class="oui-icon oui-icon-success" aria-hidden="true"></i>
+            <i class="oui-icon oui-icon-error" aria-hidden="true"></i>
+        </label>
+
+    </oui-modal>
+</form>
