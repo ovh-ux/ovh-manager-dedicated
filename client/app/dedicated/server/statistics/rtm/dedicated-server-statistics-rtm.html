@@ -27,16 +27,16 @@
                                           data-count="uptime.y"
                                           data-when="{
                                             '0': '',
-                                            '1': '1 {{ server_tab_stats_rtm_uptime_year_1 | translate }}',
-                                            'other': '{} {{ server_tab_stats_rtm_uptime_year_other | translate }}'
+                                            '1': ('server_tab_stats_rtm_uptime_year_1' | translate),
+                                            'other': ('server_tab_stats_rtm_uptime_year_other' | translate)
                                           }">
                                     </span>
                                     <span data-ng-pluralize
                                           data-count="uptime.mo"
                                           data-when="{
                                             '0': '',
-                                            '1': '1 {{ server_tab_stats_rtm_uptime_month_1 | translate }}',
-                                            'other': '{} {{ server_tab_stats_rtm_uptime_month_other | translate }}'
+                                            '1': ('server_tab_stats_rtm_uptime_month_1' | translate),
+                                            'other': ('server_tab_stats_rtm_uptime_month_other' | translate)
                                           }">
                                     </span>
                                     <span data-ng-pluralize
@@ -44,8 +44,8 @@
                                           data-ng-if="!uptime.y"
                                           data-when="{
                                             '0': '',
-                                            '1': '1 {{ server_tab_stats_rtm_uptime_day_1 | translate }}',
-                                            'other': '{} {{ server_tab_stats_rtm_uptime_day_other | translate }}'
+                                            '1': ('server_tab_stats_rtm_uptime_day_1' | translate),
+                                            'other': ('server_tab_stats_rtm_uptime_day_other' | translate)
                                           }">
                                     </span>
                                     <span data-ng-pluralize
@@ -53,8 +53,8 @@
                                           data-ng-if="!uptime.mo"
                                           data-when="{
                                             '0': '',
-                                            '1': '1 {{ server_tab_stats_rtm_uptime_hour_1 | translate }}',
-                                            'other': '{} {{ server_tab_stats_rtm_uptime_hour_other | translate }}'
+                                            '1': ('server_tab_stats_rtm_uptime_hour_1' | translate),
+                                            'other': ('server_tab_stats_rtm_uptime_hour_other' | translate)
                                           }">
                                     </span>
                                     <span data-ng-pluralize
@@ -62,8 +62,8 @@
                                           data-ng-if="!uptime.d"
                                           data-when="{
                                             '0': '',
-                                            '1': '1 {{ server_tab_stats_rtm_uptime_minute_1 | translate }}',
-                                            'other': '{} {{ server_tab_stats_rtm_uptime_minute_other | translate }}'
+                                            '1': ('server_tab_stats_rtm_uptime_minute_1' | translate),
+                                            'other': ('server_tab_stats_rtm_uptime_minute_other' | translate)
                                           }">
                                     </span>
                                     <span data-ng-pluralize
@@ -71,8 +71,8 @@
                                           data-ng-if="!uptime.h"
                                           data-when="{
                                             '0': '',
-                                            '1': '1 {{ server_tab_stats_rtm_uptime_seconde_1 | translate }}',
-                                            'other': '{} {{ server_tab_stats_rtm_uptime_seconde_other | translate }}'
+                                            '1': ('server_tab_stats_rtm_uptime_seconde_1' | translate),
+                                            'other': ('server_tab_stats_rtm_uptime_seconde_other' | translate)
                                           }">
                                     </span>
                                 </span>
