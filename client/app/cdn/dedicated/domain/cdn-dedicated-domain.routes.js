@@ -9,12 +9,12 @@ angular.module("App").config(($stateProvider) => {
                 controllerAs: "$ctrl"
             },
             "cdnDomainView@app.networks.cdn.dedicated.domain": {
-                templateUrl: "cdn/dedicated/domain/statistics/cdn-dedicated-domain-statistics.html",
-                controller: "CdnDomainStatisticsCtrl",
+                templateUrl: "cdn/dedicated/domain/general/cdn-dedicated-domain-general.html",
+                controller: "CdnDomainGeneralCtrl",
                 controllerAs: "$ctrl"
             }
         },
-        reloadOnSearch: false
+        translations: ["cdn/dedicated/domain/general"]
     });
 
 });

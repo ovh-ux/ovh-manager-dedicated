@@ -1,0 +1,116 @@
+<div class="cdn-dedicated-domain-general">
+
+    <div class="text-center mt-5"
+         data-ng-if="$ctrl.loading.init">
+        <oui-spinner></oui-spinner>
+    </div>
+
+    <div class="row d-md-flex mb-5"
+         data-ng-if="!$ctrl.loading.init">
+        <div class="col-md-4">
+            <div class="oui-tile">
+                <h4 class="oui-header_4 oui-tile__title"
+                    data-translate="cdn_domain_tab_general">
+                </h4>
+                <div class="oui-tile__body">
+                    <div class="oui-tile__item">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term"
+                                data-translate="cdn_dedicated_domain_general_domain_name">
+                            </dt>
+                            <dd class="oui-tile__description"
+                                data-ng-bind="$ctrl.domain.domain">
+                            </dd>
+                        </dl>
+                        <div class="oui-tile__actions">
+                            <oui-action-menu data-compact
+                                             data-aria-label="{{:: 'cdn_dedicated_domain_general_domain_action_title' | translate:{ t0: $ctrl.domain.domain } }}"
+                                             data-align="end">
+                                <oui-action-menu-item data-text="{{ :: 'cdn_dedicated_domain_general_domain_action_flush' | translate}}"
+                                                      data-aria-label="{{ :: 'cdn_dedicated_domain_general_domain_action_flush_title' | translate:{ domain: $ctrl.domain.domain } }}"
+                                                      data-href="{{ $ctrl.$state.href('.flush') }}">
+                                </oui-action-menu-item>
+                                <oui-action-menu-item data-ng-if="$ctrl.domain.status === 'on'"
+                                                      data-text="{{ :: 'cdn_dedicated_domain_general_domain_action_bypass' | translate }}"
+                                                      data-aria-label="{{ :: 'cdn_dedicated_domain_general_domain_action_bypass_title' | translate:{ domain: $ctrl.domain.domain } }}"
+                                                      data-on-click="setAction('domain/update/cdn-dedicated-domain-domain', $ctrl.domain)">
+                                </oui-action-menu-item>
+                                <oui-action-menu-item data-ng-if="$ctrl.domain.status === 'off'"
+                                                      data-text="{{ :: 'cdn_dedicated_domain_general_domain_action_reactive' | translate }}"
+                                                      data-aria-label="{{ :: 'cdn_dedicated_domain_general_domain_action_reactive_title' | translate:{ domain: $ctrl.domain.domain } }}"
+                                                      data-on-click="setAction('domain/update/cdn-dedicated-domain-domain', $ctrl.domain)">
+                                </oui-action-menu-item>
+                                <oui-action-menu-item data-text="{{ :: 'cdn_dedicated_domain_general_domain_action_delete' | translate}}"
+                                                      data-aria-label="{{ :: 'cdn_dedicated_domain_general_domain_action_delete_title' | translate:{ domain: $ctrl.domain.domain } }}"
+                                                      data-on-click="setAction('domain/delete/cdn-dedicated-domain-delete')">
+                                </oui-action-menu-item>
+                            </oui-action-menu>
+                        </div>
+                    </div>
+                    <div class="oui-tile__item">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term"
+                                data-translate="cdn_dedicated_domain_general_domain_cname">
+                            </dt>
+                            <dd class="oui-tile__description"
+                                data-ng-bind="$ctrl.domain.cname">
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="oui-tile__item">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term"
+                                data-translate="cdn_dedicated_domain_general_domain_status">
+                            </dt>
+                            <dd class="oui-tile__description">
+                                <span class="oui-status ng-scope"
+                                      data-ng-class="{
+                                        'oui-status_success': $ctrl.domain.status === 'on',
+                                        'oui-status_error': $ctrl.domain.status === 'off'
+                                      }"
+                                      data-ng-bind="$ctrl.domain.status.toUpperCase()">
+                                </span>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="oui-tile__item">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term"
+                                data-translate="cdn_dedicated_domain_general_domain_anycast">
+                            </dt>
+                            <dd class="oui-tile__description"
+                                data-ng-bind="$ctrl.cdn.anycast">
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="oui-tile__item">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term"
+                                data-translate="cdn_dedicated_domain_general_domain_backend_ip">
+                            </dt>
+                            <dd class="oui-tile__description"
+                                data-ng-if="!$ctrl.backend"
+                                data-translate="cdn_dedicated_domain_general_domain_backend_ip_none">
+                            </dd>
+                            <dd class="oui-tile__description"
+                                data-ng-if="$ctrl.backend"
+                                data-ng-bind="$ctrl.backend.ip">
+                            </dd>
+                        </dl>
+                        <div class="oui-tile__actions">
+                            <oui-action-menu data-compact
+                                             data-aria-label="{{:: 'cdn_dedicated_domain_general_domain_backend_action_title' | translate:{ t0: $ctrl.domain.domain } }}"
+                                             data-align="end">
+                                <oui-action-menu-item data-text="{{ :: 'cdn_dedicated_domain_general_domain_action_change_backend' | translate }}"
+                                                      data-aria-label="{{ :: 'cdn_dedicated_domain_general_domain_action_change_backend_title' | translate:{ domain: $ctrl.domain.domain } }}"
+                                                      data-on-click="setAction('domain/backend/update/cdn-dedicated-domain-backend-update')">
+                                </oui-action-menu-item>
+                            </oui-action-menu>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

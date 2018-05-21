@@ -1,8 +1,9 @@
 angular.module("App").controller("CdnDomainCtrl", class CdnDomainCtrl {
 
-    constructor ($scope, $stateParams, $translate, CdnDomain) {
+    constructor ($scope, $state, $stateParams, $translate, CdnDomain) {
         // injections
         this.$scope = $scope;
+        this.$state = $state;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.CdnDomain = CdnDomain;
