@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="billing_history_balance_title" qtlid="486724">Pay my balance</translation>
+   <translation id="billing_history_balance_title" qtlid="486724">Pay my account balance</translation>
    <translation id="billing_history_balance_cancel" qtlid="37863">Cancel</translation>
-   <translation id="billing_history_balance_explain" qtlid="486737">Your balance is currently {{ balance }}.</translation>
-   <translation id="billing_history_balance_no_balance" qtlid="486750">No balance was found on your account. <a data-ui-sref="{{ backState }}">Click here</a> to return to the list of incoices.</translation>
-   <translation id="billing_history_balance_choose_payment_method" qtlid="486763">Choose the payment method</translation>
+   <translation id="billing_history_balance_explain" qtlid="486737">Your current account balance is {{ balance }}.</translation>
+   <translation id="billing_history_balance_no_balance" qtlid="486750">No balance has been found for your account. <a data-ui-sref="{{ backState }}">Click here</a> to go back to your invoice list.</translation>
+   <translation id="billing_history_balance_choose_payment_method" qtlid="486763">Choose a payment method</translation>
    <translation id="billing_history_balance_add_payment_method" qtlid="486776">Add a payment method</translation>
-   <translation id="billing_history_balance_no_payment_method" qtlid="486789">You have no valid payment method. <a data-ui-sref="{{ addPaymentMethodState }}">Add a valid payment method</a> before paying your balance.</translation>
-   <translation id="billing_history_balance_payment_doing" qtlid="486802">A balance payment is already in progress. Wait for this payment to be made before paying a new balance.</translation>
-   <translation id="billing_history_balance_payment_go_tracking" qtlid="486815">Go to the <a data-ui-sref="{{ trackState }}">payment tracking page</a> for more informations.</translation>
+   <translation id="billing_history_balance_no_payment_method" qtlid="486789">You do not have any valid payment methods. <a data-ui-sref="{{ addPaymentMethodState }}">Add a valid payment method</a> before paying your balance.</translation>
+   <translation id="billing_history_balance_payment_doing" qtlid="486802">A balance payment is already in progress. Please wait for this payment to be processed before paying a new balance.</translation>
+   <translation id="billing_history_balance_payment_go_tracking" qtlid="486815">Go to the <a data-ui-sref="{{ trackState }}">payment tracking page</a> for further information.</translation>
 
-   <translation id="billing_history_balance_load_error" qtlid="486828">An error occurred while loading your balance.</translation>
-   <translation id="billing_history_balance_pay_success" qtlid="486841">Your balance payment gas been taken in account. The payment will be effective in a few moments. Go to the <a data-ui-sref="{{ trackHref }}">payment tracking page</a> for more informations.</translation>
-   <translation id="billing_history_balance_pay_error" qtlid="486854">An error occurred while paying your balance.</translation>
+   <translation id="billing_history_balance_load_error" qtlid="486828">Une erreur est survenue lors du chargement de votre solde.</translation>
+   <translation id="billing_history_balance_pay_success" qtlid="486841">Le règlement de votre solde a bien été pris en compte. Le paiement sera effectif dans quelques instants. Rendez-vous <a data-ui-sref="{{ trackHref }}">sur la page des suivis de paiement</a> pour plus d'informations.</translation>
+   <translation id="billing_history_balance_pay_error" qtlid="486854">Une erreur est survenue lors du règlement de votre solde.</translation>
 
 <!-- PAYMENT METHOD SUBTYPES -->
    <translation id="billing_history_balance_payment_method_subtype_american_express" qtlid="435959">American Express</translation>

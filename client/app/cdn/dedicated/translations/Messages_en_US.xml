@@ -197,10 +197,6 @@
    <translation id="cdn_configuration_delete_ssl_title" qtlid="22759">Delete the certificate</translation>
 
    <translation id="cdn_configuration_update_ssl_title" qtlid="400951">Replace with my certificate </translation>
-   <translation id="cdn_configuration_update_ssl_step1" qtlid="133201">Please enter the certificate information:</translation>
-   <translation id="cdn_configuration_update_ssl_step2" qtlid="133214">You are going to add the following certificate:</translation>
-   <translation id="cdn_configuration_update_ssl_success" qtlid="244869">The SSL certificate will be updated shortly.</translation>
-   <translation id="cdn_configuration_update_ssl_fail" qtlid="244882">An error occurred when sending the SSL certificate</translation>
 
    <translation id="cdn_configuration_generate_ssl_title" qtlid="400964">Generate a Let's Encrypt certificate </translation>
    <translation id="cdn_configuration_generate_ssl_step1" qtlid="400977">Please enter certificate name: </translation>
@@ -229,16 +225,13 @@
    <translation id="cdn_configuration_ssl_provider_custom" qtlid="50062">Personalised</translation>
    <translation id="cdn_configuration_ssl_provider_letsencrypt" qtlid="401068">Let's Encrypt managed by OVH</translation>
    <translation id="cdn_configuration_ssl_certificateProvider" qtlid="2642">Type</translation>
-   <translation id="cdn_configuration_ssl_certificate" qtlid="19771">Certificate</translation>
-   <translation id="cdn_configuration_ssl_key" qtlid="104326">Key</translation>
-   <translation id="cdn_configuration_ssl_chain" qtlid="133149">Chain</translation>
    <translation id="cdn_configuration_ssl_delete_confirmation" qtlid="183749">Are you sure you want to delete the certificate <b>{0}</b>?</translation>
    <translation id="cdn_configuration_delete_ssl_success" qtlid="133175">A task has been created. The operation will be effective in approximately 15 minutes.</translation>
-   <translation id="cdn_configuration_delete_ssl_fail" qtlid="133188">An error occurred on deleting the certificate {0}.</translation>
+   <translation id="cdn_configuration_delete_ssl_fail" qtlid="133188">An error occurred while deleting the certificate {0}.</translation>
    <translation id="cdn_configuration_ssl_add_step1" qtlid="133201">Please enter the certificate information:</translation>
    <translation id="cdn_configuration_ssl_add_step2" qtlid="133214">You are going to add the following certificate:</translation>
    <translation id="cdn_configuration_add_ssl_success" qtlid="133955">The SSL certificate will be activated shortly.</translation>
-   <translation id="cdn_configuration_add_ssl_fail" qtlid="179602">An error occurred on adding the SSL certificate</translation>
+   <translation id="cdn_configuration_add_ssl_fail" qtlid="179602">An error occurred while adding the SSL certificate</translation>
    <translation id="cdn_configuration_order_quota_title" qtlid="127120">Purchase bandwidth</translation>
    <translation id="cdn_configuration_order_quota_step1_pricing" qtlid="133253">Pricing</translation>
    <translation id="cdn_configuration_order_quota_step1_price" qtlid="133266">{0} for {1} TB bandwidth</translation>

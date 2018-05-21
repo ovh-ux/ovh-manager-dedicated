@@ -154,7 +154,7 @@
    <translation id="server_configuration_state_info_HACKED_BLOCKED" qtlid="225023">Your server has been hacked. Please contact our support team for instructions on what to do next.</translation>
    <translation id="server_remove_hack_button" qtlid="61824">Unblock</translation>
    <translation id="server_remove_hack_success" qtlid="225036">Your "unhack" request is being processed.</translation>
-   <translation id="server_remove_hack_fail" qtlid="225049">An error occurred when you requested your server to be unblocked.</translation>
+   <translation id="server_remove_hack_fail" qtlid="225049">An error has occurred requesting the server to be unblocked.</translation>
 
    <translation id="server_configuration_renew_service" qtlid="118962">Renew</translation>
    <translation id="server_configuration_firewall_fail" qtlid="164285">An error occurred while loading the firewall information</translation>
@@ -663,7 +663,7 @@
    <translation id="server_configuration_kvm_order_step2_details" qtlid="229229">Order details:</translation>
    <translation id="server_configuration_kvm_order_step2_price" qtlid="181084">Price:</translation>
    <translation id="server_configuration_kvm_order_finish_success" qtlid="181266">The order number <a href='{0}' target='_blank'>{1}</a> has been registered.</translation>
-   <translation id="server_configuration_kvm_order_error" qtlid="229242">An error occurred when ordering the KVM.</translation>
+   <translation id="server_configuration_kvm_order_error" qtlid="229242">An error has occurred ordering the KVM.</translation>
 
    <translation id="server_configuration_kvm_informations" qtlid="229255">Details of your KVM</translation>
    <translation id="server_configuration_kvm_informations_name" qtlid="100328">Name:</translation>
@@ -701,7 +701,7 @@
    <translation id="server_configuration_installation_LV" qtlid="173047">LV</translation>
    <translation id="server_configuration_installation_PRIMARY" qtlid="173060">primary</translation>
    <translation id="server_configuration_installation_error_save" qtlid="173073">An error occurred while loading template ({0}).</translation>
-   <translation id="server_configuration_installation_error_hardwareRaid" qtlid="286591">An error occurred when saving the RAID configuration.</translation>
+   <translation id="server_configuration_installation_error_hardwareRaid" qtlid="286591">An error has occurred saving the RAID configuration.</translation>
    <translation id="server_configuration_installation_resume" qtlid="132720">Summary:</translation>
    <translation id="server_configuration_installation_resume_hardwareRaid" qtlid="286604">RAID hardware:</translation>
 
@@ -769,7 +769,7 @@
    <translation id="server_configuration_installation_ovh_stephardraid_label_raid" qtlid="286682">RAID:</translation>
    <translation id="server_configuration_installation_ovh_stephardraid_label_space_total" qtlid="173671">Total space:</translation>
    <translation id="server_configuration_installation_ovh_stephardraid_label_space_available" qtlid="286695">Available space:</translation>
-   <translation id="server_configuration_installation_ovh_stephardraid_loading_error" qtlid="286708">There was an error loading your RAID setup. Please try again. </translation>
+   <translation id="server_configuration_installation_ovh_stephardraid_loading_error" qtlid="286708">An error has occurred loading your RAID setup. Please try again. </translation>
    <translation id="server_configuration_installation_ovh_step2_type" qtlid="2642">Type</translation>
    <translation id="server_configuration_installation_ovh_step2_type_disk" qtlid="173502">Disks used for this installation:</translation>
    <translation id="server_configuration_installation_ovh_step2_type_disk_disable" qtlid="173515">Disk not allocatable for this installation:</translation>
@@ -938,18 +938,18 @@
    <translation id="month_other" qtlid="220148">{0} months</translation>
    <translation id="year_1" qtlid="70277">1 year</translation>
    <translation id="year_other" qtlid="158604">{} years</translation>
-   <translation id="upto" qtlid="486503">Jusqu'au {{ date }}</translation>
+   <translation id="upto" qtlid="486503">Until {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Until the 1st of next month</translation>
    <translation id="engage" qtlid="158643">Sign up {0}</translation>
-   <translation id="price_ht_label" qtlid="486412">{{ price }}&#160;HT</translation>
-   <translation id="price_ttc_label" qtlid="486516">{{ price }}&#160;TTC</translation>
+   <translation id="price_ht_label" qtlid="486412">{{ price }}</translation>
+   <translation id="price_ttc_label" qtlid="486516">{{ price }}</translation>
    <translation id="price_free" qtlid="130495">Free</translation>
    <translation id="price" qtlid="181084">Price:</translation>
    <translation id="contract_next" qtlid="17743">Next</translation>
    <translation id="contract_previous" qtlid="17431">Previous</translation>
-   <translation id="download_contract" qtlid="486477">Ouvrir le contrat "{{ name }}" en PDF</translation>
+   <translation id="download_contract" qtlid="486477">Open the "{{ name }}" contract in PDF</translation>
    <translation id="contract_help" qtlid="180382">Scroll down to the contracts in order to validate  them.</translation>
-   <translation id="contracts_list_title" qtlid="486490">Il y a {{ count }} contrats à consulter.</translation>
+   <translation id="contracts_list_title" qtlid="486490">There are {{ count }} contracts to read.</translation>
    <translation id="contract_list_title" qtlid="180408">There is 1 contract to read.</translation>
    <translation id="contracts_agree" qtlid="180421">I accept the terms and conditions</translation>
    <translation id="contract_agree" qtlid="180434">I accept the terms and conditions</translation>

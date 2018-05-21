@@ -197,10 +197,6 @@
    <translation id="cdn_configuration_delete_ssl_title" qtlid="22759">Smazat certifikát</translation>
 
    <translation id="cdn_configuration_update_ssl_title" qtlid="400951">Nahradit mým certifikátem</translation>
-   <translation id="cdn_configuration_update_ssl_step1" qtlid="133201">Vložte prosím certifikační informace:</translation>
-   <translation id="cdn_configuration_update_ssl_step2" qtlid="133214">Chystáte se přidat následující certifikát:</translation>
-   <translation id="cdn_configuration_update_ssl_success" qtlid="244869">SSL certifikát bude brzy aktualizován.</translation>
-   <translation id="cdn_configuration_update_ssl_fail" qtlid="244882">Při zasílání SSL certifikátu došlo k chybě</translation>
 
    <translation id="cdn_configuration_generate_ssl_title" qtlid="400964">Vytvořit certifikát Let's Encrypt</translation>
    <translation id="cdn_configuration_generate_ssl_step1" qtlid="400977">Zadejte prosím název certifikátu:</translation>
@@ -229,16 +225,15 @@
    <translation id="cdn_configuration_ssl_provider_custom" qtlid="50062">Upravitelný</translation>
    <translation id="cdn_configuration_ssl_provider_letsencrypt" qtlid="401068">Let's Encrypt od OVH</translation>
    <translation id="cdn_configuration_ssl_certificateProvider" qtlid="2642">Typ</translation>
-   <translation id="cdn_configuration_ssl_certificate" qtlid="19771">Certifikát</translation>
-   <translation id="cdn_configuration_ssl_key" qtlid="104326">Klíč</translation>
-   <translation id="cdn_configuration_ssl_chain" qtlid="133149">Řetěz</translation>
    <translation id="cdn_configuration_ssl_delete_confirmation" qtlid="183749">Opravdu si přejete vymazat certifikát <b>{0}</b>?</translation>
    <translation id="cdn_configuration_delete_ssl_success" qtlid="133175">Úkol byl vytvořen. Operace bude aktivní za zhruba 15 minut.</translation>
    <translation id="cdn_configuration_delete_ssl_fail" qtlid="133188">Při mazání certifikátu {0} došlo k chybě.</translation>
    <translation id="cdn_configuration_ssl_add_step1" qtlid="133201">Vložte prosím certifikační informace:</translation>
    <translation id="cdn_configuration_ssl_add_step2" qtlid="133214">Chystáte se přidat následující certifikát:</translation>
    <translation id="cdn_configuration_add_ssl_success" qtlid="133955">SSL certifikát bude brzy aktivován.</translation>
-   <translation id="cdn_configuration_add_ssl_fail" qtlid="179602">Při přidávání SSL certifikátu došlo k chybě</translation>
+   <translation id="cdn_configuration_add_ssl_fail" qtlid="179602">Při přidávání SSL certifikátu došlo k chybě&#13;
+&#13;
+</translation>
    <translation id="cdn_configuration_order_quota_title" qtlid="127120">Zakoupit přenos dat</translation>
    <translation id="cdn_configuration_order_quota_step1_pricing" qtlid="133253">Cena</translation>
    <translation id="cdn_configuration_order_quota_step1_price" qtlid="133266">{0} pro {1} TB šířky pásma</translation>
