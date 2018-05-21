@@ -31,8 +31,9 @@
                     </oui-radio>
                 </oui-column>
                 <oui-column data-title=":: 'dedicatedCloud_tab_license_price' | translate">
-                    <span data-ng-bind="$row.prices[0].price.text"></span>
-                    <br />
+                    <span class="d-block"
+                          data-ng-bind="$row.prices[0].price.text">
+                    </span>
                     <small data-ng-bind="$row.prices[0].description"></small>
                 </oui-column>
             </oui-datagrid>

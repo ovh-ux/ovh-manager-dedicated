@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudLicencesCtrl", ($scope, $state, $stateParams, $translate, DedicatedCloud, $rootScope, constants) => {
+angular.module("App").controller("DedicatedCloudLicencesCtrl", ($rootScope, $scope, $state, $stateParams, $translate, constants, DedicatedCloud) => {
     "use strict";
 
     $scope.licences = {
