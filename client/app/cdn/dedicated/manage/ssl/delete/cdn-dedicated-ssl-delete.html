@@ -1,17 +1,29 @@
-<div data-ng-controller="CdnDeleteSslCtrl">
+<div class="cdn-dedicated-ssl-delete">
 
-    <div data-wizard
-         data-wizard-on-cancel="resetAction"
-         data-wizard-on-finish="deleteSsl"
-         data-wizard-step-valid="wizard_yes"
-         data-wizard-title=":: 'cdn_configuration_delete_ssl_title' | translate">
+    <oui-modal data-title="{{ :: 'cdn_dedicated_ssl_delete_title' | translate }}"
+               data-primary-label="{{($ctrl.actionEnabled ? 'wizard_yes' : 'global_OK') | translate}}"
+               data-primary-action="$ctrl.onPrimaryActionBtnClick()"
+               data-secondary-label="{{$ctrl.actionEnabled ? ('wizard_no' | translate) : ''}}"
+               data-secondary-action="$ctrl.$state.go('^')"
+               data-on-dismiss="$ctrl.$state.go('^')"
+               data-loading="$ctrl.loading.init || $ctrl.loading.delete"
+               data-type="{{ !$ctrl.actionEnabled ? 'warning' : '' }}">
 
-        <div data-wizard-step>
-
-            <p data-translate="cdn_configuration_ssl_delete_confirmation" data-translate-values="{ t0: ssl.name }"></p>
-
+        <div data-ng-if="!$ctrl.actionEnabled">
+            <p data-ng-if="!$ctrl.ssl"
+               data-translate="cdn_dedicated_ssl_delete_no_ssl_warning">
+            </p>
+            <p data-ng-if="$ctrl.ssl"
+               data-translate="cdn_dedicated_ssl_delete_operation_warning">
+            </p>
         </div>
 
-    </div>
+        <p data-translate="cdn_dedicated_ssl_delete_confirm"
+           data-translate-values="{ t0: $ctlr.ssl.name }"
+           data-ng-if="$ctrl.actionEnabled">
+        </p>
+
+
+    </oui-modal>
 
 </div>

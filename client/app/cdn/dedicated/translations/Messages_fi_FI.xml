@@ -42,15 +42,15 @@
    <translation id="cdn_configuration_terminate_title_button" qtlid="56337">Irtisano palvelu</translation>
    <translation id="cdn_configuration_domain" qtlid="132317">0 verkkotunnusta</translation>
    <translation id="cdn_configuration_domain_1" qtlid="132330">1 verkkotunnus</translation>
-   <translation id="cdn_configuration_domain_other">{} domaines</translation>
+   <translation id="cdn_configuration_domain_other" qtlid="486555">{} domaines</translation>
    <translation id="cdn_configuration_backend" qtlid="132356">{0} x IP-taustajärjestelmä</translation>
    <translation id="cdn_configuration_activity" qtlid="143160">Aktiviteetti (viime kuukausi)</translation>
    <translation id="cdn_configuration_activity_page_viewed_0" qtlid="128118">Ei yhtään katsottua kohdetta</translation>
    <translation id="cdn_configuration_activity_page_viewed_one" qtlid="132369">1 tarkasteltu objekti</translation>
-   <translation id="cdn_configuration_activity_page_viewed_other">{} objets vus</translation>
+   <translation id="cdn_configuration_activity_page_viewed_other" qtlid="486568">{} objets vus</translation>
    <translation id="cdn_configuration_activity_page_viewed_default" qtlid="126832">Tulossa</translation>
    <translation id="cdn_configuration_savings" qtlid="143173">Säästöt (viime kuukausi)</translation>
-   <translation id="cdn_configuration_savings_bandwidth_percentage">{} % de bande passante</translation>
+   <translation id="cdn_configuration_savings_bandwidth_percentage" qtlid="486581">{} % de bande passante</translation>
    <translation id="cdn_configuration_savings_bandwidth_percentage_default" qtlid="125516">Kaistankäyttö: ei dataa</translation>
    <translation id="cdn_configuration_savings_request_percentage" qtlid="132408">{0} % pyynnöistä</translation>
    <translation id="cdn_configuration_savings_request_percentage_default" qtlid="121471">Pyynnöt: ei dataa</translation>
@@ -197,10 +197,6 @@
    <translation id="cdn_configuration_delete_ssl_title" qtlid="22759">Poista varmenne</translation>
 
    <translation id="cdn_configuration_update_ssl_title" qtlid="400951">Korvaa omalla varmenteella</translation>
-   <translation id="cdn_configuration_update_ssl_step1" qtlid="133201">Syötä sertifikaattitiedot:</translation>
-   <translation id="cdn_configuration_update_ssl_step2" qtlid="133214">Olet lisäämässä seuraavaa sertifikaattia:</translation>
-   <translation id="cdn_configuration_update_ssl_success" qtlid="244869">SSL-varmennetta muokataan pian.</translation>
-   <translation id="cdn_configuration_update_ssl_fail" qtlid="244882">Tapahtui virhe muokattaessa SSL-varmennetta</translation>
 
    <translation id="cdn_configuration_generate_ssl_title" qtlid="400964">Generoi Let's Encrypt -varmenne</translation>
    <translation id="cdn_configuration_generate_ssl_step1" qtlid="400977">Ole hyvä ja syötä varmenteen nimi:</translation>
@@ -229,9 +225,6 @@
    <translation id="cdn_configuration_ssl_provider_custom" qtlid="50062">Personoitu</translation>
    <translation id="cdn_configuration_ssl_provider_letsencrypt" qtlid="401068">Let's Encrypt OVH:n hallinnoimana</translation>
    <translation id="cdn_configuration_ssl_certificateProvider" qtlid="2642">Tyyppi</translation>
-   <translation id="cdn_configuration_ssl_certificate" qtlid="19771">Varmenne</translation>
-   <translation id="cdn_configuration_ssl_key" qtlid="104326">Avain</translation>
-   <translation id="cdn_configuration_ssl_chain" qtlid="133149">Chain</translation>
    <translation id="cdn_configuration_ssl_delete_confirmation" qtlid="183749">Oletko varma, että haluat poistaa varmenteen <b>{0}</b>?</translation>
    <translation id="cdn_configuration_delete_ssl_success" qtlid="133175">Tehtävä on luotu. Operaatio suoritetaan noin 15 minuutissa.</translation>
    <translation id="cdn_configuration_delete_ssl_fail" qtlid="133188">Tapahtui virhe poistettaessa sertifikaattia {0}.</translation>

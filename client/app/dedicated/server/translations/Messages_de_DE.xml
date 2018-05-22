@@ -438,7 +438,7 @@
    <translation id="server_configuration_ftpbackup_access_order_right" qtlid="180577">Sie haben keine ausreichenden Rechte für die Durchführung einer Bestellung</translation>
    <translation id="server_configuration_ftpbackup_access_add" qtlid="153857">Einen Zugang hinzufügen</translation>
    <translation id="server_configuration_ftpbackup_access_edit" qtlid="180694">Den Zugang bearbeiten</translation>
-   <translation id="server_configuration_ftpbackup_access_edit_info">Modifier l'accès du block IP <strong>{0}</strong></translation>
+   <translation id="server_configuration_ftpbackup_access_edit_info" qtlid="486594">Modifier l'accès du block IP <strong>{0}</strong></translation>
    <translation id="server_configuration_ftpbackup_access_delete" qtlid="180590">Löschung eines Zugangs</translation>
    <translation id="server_configuration_ftpbackup_access_delete_question" qtlid="183814">Sind Sie sicher, dass Sie den Zugang des IP-Blocks <b>{0}</b> löschen möchten?</translation>
    <translation id="server_configuration_ftpbackup_access_delete_success" qtlid="183827">Die Löschung des Storage-Backup Zugangs des IP-Blocks <b>{0}</b> wurde erfolgreich angefordert und wird in einigen Minuten aktiv sein.</translation>
@@ -522,7 +522,7 @@
    <translation id="server_configuration_intervention_type" qtlid="2642">Typ</translation>
    <translation id="server_configuration_intervention_date" qtlid="24523">Datum</translation>
    <translation id="server_configuration_intervention_empty" qtlid="455620">Kein Eingriff</translation>
-   <translation id="server_configuration_intervention_error">Une erreur est survenue lors du chargement des informations</translation>
+   <translation id="server_configuration_intervention_error" qtlid="170031">Beim Laden der Informationen ist ein Fehler aufgetreten</translation>
    <translation id="server_tab_firewall" qtlid="151542">Cisco ASA Firewall</translation>
    <translation id="server_tab_FIREWALLASA_not_activated" qtlid="151555">Sie verfügen nicht über die Cisco ASA Firewall Option.</translation>
    <translation id="server_tab_FIREWALLASA_not_able_to_order" qtlid="151568">Sie können diese Option nicht bestellen, da Ihre Kundenkennung keine Berechtigung hat, Bestellungen für diesen Server durchzuführen.</translation>
@@ -935,21 +935,21 @@
    <translation id="day_1" qtlid="28807">1 Tag</translation>
    <translation id="day_other" qtlid="158578">{} Tag(e)</translation>
    <translation id="month_1" qtlid="70241">1 Monat</translation>
-   <translation id="month_other">{0} mois</translation>
+   <translation id="month_other" qtlid="220148">{0} Monat(e)</translation>
    <translation id="year_1" qtlid="70277">1 Jahr</translation>
    <translation id="year_other" qtlid="158604">{} Jahr(e)</translation>
-   <translation id="upto">Jusqu'au {{ date }}</translation>
+   <translation id="upto" qtlid="486503">Bis zum {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Bis zum ersten Tag des nächsten Monats</translation>
    <translation id="engage" qtlid="158643">Laufzeit {0}</translation>
-   <translation id="price_ht_label">{{ price }}&#160;HT</translation>
-   <translation id="price_ttc_label">{{ price }}&#160;TTC</translation>
+   <translation id="price_ht_label" qtlid="486412">{{ price }} zzgl. MwSt.</translation>
+   <translation id="price_ttc_label" qtlid="486516">{{ price }}&#160;inkl. MwSt.</translation>
    <translation id="price_free" qtlid="130495">Kostenlos</translation>
    <translation id="price" qtlid="181084">Preis:</translation>
    <translation id="contract_next" qtlid="17743">Weiter</translation>
    <translation id="contract_previous" qtlid="17431">Zurück</translation>
-   <translation id="download_contract">Ouvrir le contrat "{{ name }}" en PDF</translation>
+   <translation id="download_contract" qtlid="486477">Den Vertrag "{{ name }}" im PDF-Format öffnen</translation>
    <translation id="contract_help" qtlid="180382">Sie können die Verträge erst akzeptieren, wenn Sie sie vollständig gelesen haben.</translation>
-   <translation id="contracts_list_title">Il y a {{ count }} contrats à consulter.</translation>
+   <translation id="contracts_list_title" qtlid="486490">Es sind {{ count }} Verträge einzusehen.</translation>
    <translation id="contract_list_title" qtlid="180408">Es ist ein Vertrag zur Einsicht verfügbar.</translation>
    <translation id="contracts_agree" qtlid="180421">Ich akzeptiere die Verträge</translation>
    <translation id="contract_agree" qtlid="180434">Ich akzeptiere den Vertrag</translation>

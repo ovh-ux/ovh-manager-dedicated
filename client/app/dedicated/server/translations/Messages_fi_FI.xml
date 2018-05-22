@@ -438,7 +438,7 @@
    <translation id="server_configuration_ftpbackup_access_order_right" qtlid="180577">Sinulla ei ole riittäviä oikeuksia tilausta varten</translation>
    <translation id="server_configuration_ftpbackup_access_add" qtlid="153857">Lisää pääsyoikeus</translation>
    <translation id="server_configuration_ftpbackup_access_edit" qtlid="180694">Pääsyoikeuden muokkaus</translation>
-   <translation id="server_configuration_ftpbackup_access_edit_info">Modifier l'accès du block IP <strong>{0}</strong></translation>
+   <translation id="server_configuration_ftpbackup_access_edit_info" qtlid="486594">Modifier l'accès du block IP <strong>{0}</strong></translation>
    <translation id="server_configuration_ftpbackup_access_delete" qtlid="180590">Pääsyoikeuden poisto</translation>
    <translation id="server_configuration_ftpbackup_access_delete_question" qtlid="183814">Oletko varma, että haluat poistaa pääsyoikeuden IP-osoiteavaruudelta <b>{0}</b>?</translation>
    <translation id="server_configuration_ftpbackup_access_delete_success" qtlid="183827">Varmuuskopiotilan pääsyoikeuden poisto IP-osoiteavaruudelta <b>{0}</b> a on rekisteröity, mutta toimenpide voi kestää muutaman minuutin</translation>
@@ -523,7 +523,7 @@ sen nimen tai valitsemalla jo olemassa olevan Cloud-projektin. Tämä on ilmaist
    <translation id="server_configuration_intervention_type" qtlid="2642">Tyyppi</translation>
    <translation id="server_configuration_intervention_date" qtlid="24523">Päivämäärä</translation>
    <translation id="server_configuration_intervention_empty" qtlid="455620">Ei interventioita</translation>
-   <translation id="server_configuration_intervention_error">Une erreur est survenue lors du chargement des informations</translation>
+   <translation id="server_configuration_intervention_error" qtlid="170031">Tapahtui virhe tietojen latauksen aikana</translation>
    <translation id="server_tab_firewall" qtlid="151542">Cisco ASA -palomuuri</translation>
    <translation id="server_tab_FIREWALLASA_not_activated" qtlid="151555">Et ole tilannut Cisco ASA -palomuuria</translation>
    <translation id="server_tab_FIREWALLASA_not_able_to_order" qtlid="151568">Et voi tilata palvelua koska asiakastunnuksesi ei ole valtuutettu tekemään tilauksia palvelimen palveluita varten.</translation>
@@ -856,19 +856,19 @@ sen nimen tai valitsemalla jo olemassa olevan Cloud-projektin. Tämä on ilmaist
    <translation id="server_configuration_installation_gabarit_title" qtlid="174321">Asennus omasta asennusmallistasi</translation>
    <translation id="server_configuration_installation_gabarit_step1_info" qtlid="401719">Valitse mallipohja, jonka haluat asentaa palvelimelle: <b class="text-nowrap">{0}</b></translation>
    <translation id="server_configuration_installation_gabarit_step1_empty" qtlid="174347">Asennusmalleissasi ei ole palvelimelle yhteensopivaa distribuutiota</translation>
-   <translation id="server_configuration_installation_gabarit_step1_delete" qtlid="183996">Haluatko varmasti poistaa asennusmallin <b>{0}</b>?</translation>
+   <translation id="server_configuration_installation_gabarit_step1_delete" qtlid="183996">Haluatko varmasti poistaa mallipohjan <b>{0}</b>?</translation>
    <translation id="server_configuration_installation_gabarit_step1_delete_button_cancel" qtlid="173645">Peruuta poisto</translation>
    <translation id="server_configuration_installation_gabarit_step1_delete_button_valid" qtlid="174373">Asennusmallin poisto</translation>
-   <translation id="server_configuration_installation_gabarit_step1_delete_fail" qtlid="184009">Asennusmallin <b>{0}</b> poisto ei onnistu ({1})</translation>
+   <translation id="server_configuration_installation_gabarit_step1_delete_fail" qtlid="184009">Mallipohjan <b>{0}</b> poisto ei onnistu ({1})</translation>
    <translation id="server_configuration_installation_gabarit_step2_info" qtlid="174399">Olet aloittamassa asennuksen asennusmallista</translation>
    <translation id="server_configuration_installation_gabarit_step2_server" qtlid="174191">Palvelin:</translation>
-   <translation id="server_configuration_installation_gabarit_step2_os" qtlid="174412">Asennusmalli:</translation>
+   <translation id="server_configuration_installation_gabarit_step2_os" qtlid="174412">Mallipohja:</translation>
    <translation id="server_configuration_installation_gabarit_step2_lang" qtlid="168874">Kieli:</translation>
    <translation id="server_configuration_installation_gabarit_step2_hardwareRaid" qtlid="286721">{0} ({1} levyä)</translation>
    <translation id="server_configuration_installation_gabarit_step2_hardwareRaid_incompatible_disks" qtlid="288236">Tällä palvelimella on vain {0} levyä, vaikka asennusmalli vaatii vähintään {1} levyä.</translation>
    <translation id="server_configuration_installation_gabarit_step2_hardwareRaid_incompatible_noHardwareRaid" qtlid="288249">Tätä asennusmallia ei voida asentaa palvelimelle ilman RAID-laitteistoa.</translation>
    <translation id="server_configuration_installation_gabarit_step2_saveGabarit" qtlid="174425">Asennusmallin muokkaus ja tallennus</translation>
-   <translation id="server_configuration_installation_gabarit_step2_error" qtlid="184022">Tapahtui virhe pyydettäessä asennusmallin <b>{0}</b> asennusta palvelimelle <b>{1}</b> kielellä <b>{2}</b> ({3})</translation>
+   <translation id="server_configuration_installation_gabarit_step2_error" qtlid="184022">Tapahtui virhe pyydettäessä mallipohjan <b>{0}</b> asennusta palvelimelle <b>{1}</b> kielellä <b>{2}</b> ({3})</translation>
    <translation id="server_configuration_installation_gabarit_step2_invalid" qtlid="301916">Tämä RAID-konfguraatio ei kelpaa.</translation>
    <translation id="server_configuration_installation_progress_button" qtlid="174451">Asennuksen edistyminen</translation>
    <translation id="server_configuration_installation_progress_title" qtlid="174451">Asennuksen edistyminen</translation>
@@ -936,21 +936,21 @@ sen nimen tai valitsemalla jo olemassa olevan Cloud-projektin. Tämä on ilmaist
    <translation id="day_1" qtlid="28807">1 päivä</translation>
    <translation id="day_other" qtlid="158578">{} päivää</translation>
    <translation id="month_1" qtlid="70241">1 kuukausi</translation>
-   <translation id="month_other">{0} mois</translation>
+   <translation id="month_other" qtlid="220148">{0} kk</translation>
    <translation id="year_1" qtlid="70277">1 vuosi</translation>
    <translation id="year_other" qtlid="158604">{} vuotta</translation>
-   <translation id="upto">Jusqu'au {{ date }}</translation>
+   <translation id="upto" qtlid="486503">{{ date }} asti</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Seuraavan kuun 1. päivään asti</translation>
    <translation id="engage" qtlid="158643">Sitoutuminen {0}</translation>
-   <translation id="price_ht_label">{{ price }}&#160;HT</translation>
-   <translation id="price_ttc_label">{{ price }}&#160;TTC</translation>
+   <translation id="price_ht_label" qtlid="486412">{{ price }}&#160;ALV0</translation>
+   <translation id="price_ttc_label" qtlid="486516">{{ price }}&#160;sis.ALV</translation>
    <translation id="price_free" qtlid="130495">Ilmainen</translation>
    <translation id="price" qtlid="181084">Hinta:</translation>
    <translation id="contract_next" qtlid="17743">Seuraava</translation>
    <translation id="contract_previous" qtlid="17431">Edellinen</translation>
-   <translation id="download_contract">Ouvrir le contrat "{{ name }}" en PDF</translation>
+   <translation id="download_contract" qtlid="486477">Avaa sopimus "{{ name }}" PDF-muodossa</translation>
    <translation id="contract_help" qtlid="180382">Sinun täytyy katsoa sopimusehdot ennen vahvistusta.</translation>
-   <translation id="contracts_list_title">Il y a {{ count }} contrats à consulter.</translation>
+   <translation id="contracts_list_title" qtlid="486490">Sinulla on {{ count }} sopimusta katsottavana.</translation>
    <translation id="contract_list_title" qtlid="180408">Yksi luettava sopimusehto.</translation>
    <translation id="contracts_agree" qtlid="180421">Hyväksyn sopimusehdot</translation>
    <translation id="contract_agree" qtlid="180434">Hyväksyn sopimusehdot</translation>

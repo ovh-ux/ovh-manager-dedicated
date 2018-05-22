@@ -438,7 +438,7 @@
    <translation id="server_configuration_ftpbackup_access_order_right" qtlid="180577">No tiene suficientes permisos para contratar</translation>
    <translation id="server_configuration_ftpbackup_access_add" qtlid="153857">Añadir un acceso</translation>
    <translation id="server_configuration_ftpbackup_access_edit" qtlid="180694">Editar el acceso</translation>
-   <translation id="server_configuration_ftpbackup_access_edit_info">Modifier l'accès du block IP <strong>{0}</strong></translation>
+   <translation id="server_configuration_ftpbackup_access_edit_info" qtlid="486594">Modifier l'accès du block IP <strong>{0}</strong></translation>
    <translation id="server_configuration_ftpbackup_access_delete" qtlid="180590">Eliminación de un acceso</translation>
    <translation id="server_configuration_ftpbackup_access_delete_question" qtlid="183814">¿Seguro que quiere eliminar el acceso del bloque de IP <b>{0}</b>?</translation>
    <translation id="server_configuration_ftpbackup_access_delete_success" qtlid="183827">La solicitud de acceso al Backup Storage por el bloque de IP <b>{0}</b> se ha enviado, aunque puede tardar unos minutos en aplicarse</translation>
@@ -522,7 +522,7 @@
    <translation id="server_configuration_intervention_type" qtlid="2642">Tipo</translation>
    <translation id="server_configuration_intervention_date" qtlid="24523">Fecha</translation>
    <translation id="server_configuration_intervention_empty" qtlid="455620">No hay intervenciones</translation>
-   <translation id="server_configuration_intervention_error">Une erreur est survenue lors du chargement des informations</translation>
+   <translation id="server_configuration_intervention_error" qtlid="170031">Se ha producido un error al cargar la información</translation>
    <translation id="server_tab_firewall" qtlid="151542">Firewall Cisco ASA</translation>
    <translation id="server_tab_FIREWALLASA_not_activated" qtlid="151555">No ha contratado la opción firewall Cisco ASA.</translation>
    <translation id="server_tab_FIREWALLASA_not_able_to_order" qtlid="151568">No puede contratarla porque su NIC no está autorizado para enviar pedidos para ese servidor.</translation>
@@ -937,21 +937,21 @@
    <translation id="day_1" qtlid="28807">1 día</translation>
    <translation id="day_other" qtlid="158578">{} días</translation>
    <translation id="month_1" qtlid="70241">1 mes</translation>
-   <translation id="month_other">{0} mois</translation>
+   <translation id="month_other" qtlid="220148">{0} mes(es)</translation>
    <translation id="year_1" qtlid="70277">1 año</translation>
    <translation id="year_other" qtlid="158604">{} años</translation>
-   <translation id="upto">Jusqu'au {{ date }}</translation>
+   <translation id="upto" qtlid="486503">Hasta {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Hasta el día 1 del mes siguiente</translation>
    <translation id="engage" qtlid="158643">Contratar {0}</translation>
-   <translation id="price_ht_label">{{ price }}&#160;HT</translation>
-   <translation id="price_ttc_label">{{ price }}&#160;TTC</translation>
+   <translation id="price_ht_label" qtlid="486412">{{ price }}&#160;+ IVA</translation>
+   <translation id="price_ttc_label" qtlid="486516">{{ price }}&#160;IVA incl.</translation>
    <translation id="price_free" qtlid="130495">Gratuito</translation>
    <translation id="price" qtlid="181084">Precio:</translation>
    <translation id="contract_next" qtlid="17743">Siguiente</translation>
    <translation id="contract_previous" qtlid="17431">Anterior</translation>
-   <translation id="download_contract">Ouvrir le contrat "{{ name }}" en PDF</translation>
+   <translation id="download_contract" qtlid="486477">Abrir el contrato «{{ name }}» en PDF</translation>
    <translation id="contract_help" qtlid="180382">Hay que recorrer los contratos completos para poder aceptarlos.</translation>
-   <translation id="contracts_list_title">Il y a {{ count }} contrats à consulter.</translation>
+   <translation id="contracts_list_title" qtlid="486490">Tiene {{ count }} contratos pendientes de revisión.</translation>
    <translation id="contract_list_title" qtlid="180408">Hay un contrato pendiente de consultar.</translation>
    <translation id="contracts_agree" qtlid="180421">Acepto los contratos</translation>
    <translation id="contract_agree" qtlid="180434">Acepto el contrato</translation>

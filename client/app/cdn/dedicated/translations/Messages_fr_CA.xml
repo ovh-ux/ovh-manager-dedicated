@@ -42,15 +42,15 @@
    <translation id="cdn_configuration_terminate_title_button" qtlid="56337">Résilier le service</translation>
    <translation id="cdn_configuration_domain" qtlid="132317">0 domaine</translation>
    <translation id="cdn_configuration_domain_1" qtlid="132330">1 domaine</translation>
-   <translation id="cdn_configuration_domain_other">{} domaines</translation>
+   <translation id="cdn_configuration_domain_other" qtlid="486555">{} domaines</translation>
    <translation id="cdn_configuration_backend" qtlid="132356">{0} x IP Back-end</translation>
    <translation id="cdn_configuration_activity" qtlid="143160">Activité (dernier mois)</translation>
    <translation id="cdn_configuration_activity_page_viewed_0" qtlid="128118">Aucun objet vu</translation>
    <translation id="cdn_configuration_activity_page_viewed_one" qtlid="132369">1 objet vu</translation>
-   <translation id="cdn_configuration_activity_page_viewed_other">{} objets vus</translation>
+   <translation id="cdn_configuration_activity_page_viewed_other" qtlid="486568">{} objets vus</translation>
    <translation id="cdn_configuration_activity_page_viewed_default" qtlid="126832">Disponible prochainement</translation>
    <translation id="cdn_configuration_savings" qtlid="143173">Économies (dernier mois)</translation>
-   <translation id="cdn_configuration_savings_bandwidth_percentage">{} % de bande passante</translation>
+   <translation id="cdn_configuration_savings_bandwidth_percentage" qtlid="486581">{} % de bande passante</translation>
    <translation id="cdn_configuration_savings_bandwidth_percentage_default" qtlid="125516">Bande passante: aucune donnée</translation>
    <translation id="cdn_configuration_savings_request_percentage" qtlid="132408">{0} % de requêtes</translation>
    <translation id="cdn_configuration_savings_request_percentage_default" qtlid="121471">Requêtes: aucune donnée</translation>
@@ -197,10 +197,6 @@
    <translation id="cdn_configuration_delete_ssl_title" qtlid="22759">Supprimer le certificat</translation>
 
    <translation id="cdn_configuration_update_ssl_title" qtlid="400951">Remplacer par mon certificat</translation>
-   <translation id="cdn_configuration_update_ssl_step1" qtlid="133201">Veuillez saisir les informations relatives au certificat :</translation>
-   <translation id="cdn_configuration_update_ssl_step2" qtlid="133214">Vous allez ajouter le certificat suivant :</translation>
-   <translation id="cdn_configuration_update_ssl_success" qtlid="244869">Le certificat SSL sera modifié sous peu.</translation>
-   <translation id="cdn_configuration_update_ssl_fail" qtlid="244882">Une erreur est survenue lors de la modification du certificat SSL</translation>
 
    <translation id="cdn_configuration_generate_ssl_title" qtlid="400964">Générer un certificat Let's Encrypt</translation>
    <translation id="cdn_configuration_generate_ssl_step1" qtlid="400977">Veuillez saisir le nom du certificat :</translation>
@@ -229,11 +225,8 @@
    <translation id="cdn_configuration_ssl_provider_custom" qtlid="50062">Personnalisé</translation>
    <translation id="cdn_configuration_ssl_provider_letsencrypt" qtlid="401068">Let's Encrypt managé par OVH</translation>
    <translation id="cdn_configuration_ssl_certificateProvider" qtlid="2642">Type</translation>
-   <translation id="cdn_configuration_ssl_certificate" qtlid="19771">Certificat</translation>
-   <translation id="cdn_configuration_ssl_key" qtlid="104326">Clé</translation>
-   <translation id="cdn_configuration_ssl_chain" qtlid="133149">Chaine</translation>
    <translation id="cdn_configuration_ssl_delete_confirmation" qtlid="183749">Etes-vous certain(e) de vouloir supprimer le certificat <b>{0}</b>?</translation>
-   <translation id="cdn_configuration_delete_ssl_success" qtlid="133175">Une tâche a été créée. L'opération sera effective dans un délai de 15 minutes environ.</translation>
+   <translation id="cdn_configuration_delete_ssl_success" qtlid="133175">Une tâche a été créée. L'opération prendra effet dans un délai de 15 minutes environ.</translation>
    <translation id="cdn_configuration_delete_ssl_fail" qtlid="133188">Une erreur est survenue lors de la suppression du certificat {0}.</translation>
    <translation id="cdn_configuration_ssl_add_step1" qtlid="133201">Veuillez saisir les informations relatives au certificat :</translation>
    <translation id="cdn_configuration_ssl_add_step2" qtlid="133214">Vous allez ajouter le certificat suivant :</translation>

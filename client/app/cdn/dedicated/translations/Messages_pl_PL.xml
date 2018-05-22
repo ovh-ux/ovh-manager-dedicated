@@ -42,15 +42,15 @@
    <translation id="cdn_configuration_terminate_title_button" qtlid="56337">Rezygnacja z usługi</translation>
    <translation id="cdn_configuration_domain" qtlid="132317">0 domen</translation>
    <translation id="cdn_configuration_domain_1" qtlid="132330">1 domena</translation>
-   <translation id="cdn_configuration_domain_other">{} domaines</translation>
+   <translation id="cdn_configuration_domain_other" qtlid="486555">{} domaines</translation>
    <translation id="cdn_configuration_backend" qtlid="132356">{0} x IP Backend</translation>
    <translation id="cdn_configuration_activity" qtlid="143160">Aktywność (ostatni miesiąc)</translation>
    <translation id="cdn_configuration_activity_page_viewed_0" qtlid="128118">Brak widocznych usług</translation>
    <translation id="cdn_configuration_activity_page_viewed_one" qtlid="132369">1 widoczny obiekt</translation>
-   <translation id="cdn_configuration_activity_page_viewed_other">{} objets vus</translation>
+   <translation id="cdn_configuration_activity_page_viewed_other" qtlid="486568">{} objets vus</translation>
    <translation id="cdn_configuration_activity_page_viewed_default" qtlid="126832">Dostępne wkrótce</translation>
    <translation id="cdn_configuration_savings" qtlid="143173">Oszczędności (ostatni miesiąc)</translation>
-   <translation id="cdn_configuration_savings_bandwidth_percentage">{} % de bande passante</translation>
+   <translation id="cdn_configuration_savings_bandwidth_percentage" qtlid="486581">{} % de bande passante</translation>
    <translation id="cdn_configuration_savings_bandwidth_percentage_default" qtlid="125516">Przepustowość: brak danych</translation>
    <translation id="cdn_configuration_savings_request_percentage" qtlid="132408">{0} % zapytań</translation>
    <translation id="cdn_configuration_savings_request_percentage_default" qtlid="121471">Zapytania: brak danych</translation>
@@ -197,10 +197,6 @@
    <translation id="cdn_configuration_delete_ssl_title" qtlid="22759">Usuń certyfikat</translation>
 
    <translation id="cdn_configuration_update_ssl_title" qtlid="400951">Zastąp moim certyfikatem</translation>
-   <translation id="cdn_configuration_update_ssl_step1" qtlid="133201">Proszę podać dodatkowe informacje dla certyfikatu:</translation>
-   <translation id="cdn_configuration_update_ssl_step2" qtlid="133214">Zamierzasz dodać następujący certyfikat:</translation>
-   <translation id="cdn_configuration_update_ssl_success" qtlid="244869">Certyfikat SSL zostanie wkrótce zmodyfikowany.</translation>
-   <translation id="cdn_configuration_update_ssl_fail" qtlid="244882">Wystąpił problem podczas modyfikowania certyfikatu SSL</translation>
 
    <translation id="cdn_configuration_generate_ssl_title" qtlid="400964">Wygeneruj certyfikat Let's Encrypt</translation>
    <translation id="cdn_configuration_generate_ssl_step1" qtlid="400977">Wpisz nazwę certyfikatu:</translation>
@@ -229,9 +225,6 @@
    <translation id="cdn_configuration_ssl_provider_custom" qtlid="50062">Spersonalizowany</translation>
    <translation id="cdn_configuration_ssl_provider_letsencrypt" qtlid="401068">Let's Encrypt zarządzany przez OVH</translation>
    <translation id="cdn_configuration_ssl_certificateProvider" qtlid="2642">Typ</translation>
-   <translation id="cdn_configuration_ssl_certificate" qtlid="19771">Certyfikat</translation>
-   <translation id="cdn_configuration_ssl_key" qtlid="104326">Klucz</translation>
-   <translation id="cdn_configuration_ssl_chain" qtlid="133149">Łańcuch</translation>
    <translation id="cdn_configuration_ssl_delete_confirmation" qtlid="183749">Czy chcesz usunąć certyfikat <b>{0}</b>?</translation>
    <translation id="cdn_configuration_delete_ssl_success" qtlid="133175">Zadanie zostało utworzone i będzie wykonane w ciągu 15 minut.</translation>
    <translation id="cdn_configuration_delete_ssl_fail" qtlid="133188">Wystąpił błąd podczas usuwania certyfikatu {0}.</translation>
