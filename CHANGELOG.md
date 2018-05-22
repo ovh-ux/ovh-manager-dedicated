@@ -1,3 +1,36 @@
+<a name="9.5.0"></a>
+# [9.5.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.4.1...v9.5.0) (2018-05-22)
+
+
+### Bug Fixes
+
+* add EN translations for US debt payment ([89e9d95](https://github.com/ovh-ux/ovh-manager-dedicated/commit/89e9d95))
+* add link to delete modal ([7597689](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7597689))
+* fix ssl add template url ([5ad4433](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5ad4433))
+* fix typo ([63137f3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/63137f3))
+* fix typo after merge ([93e9b5d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/93e9b5d))
+* **cdn dedicated ssl:** reload parent state successful operations ([09fb3b3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/09fb3b3))
+* **cdn dedicated ssl:** use type on oui-modal to display warning ([a2e1708](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a2e1708))
+* **cdn dedicated ssl add:** use type on oui-modal to display warning ([c6d4a12](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c6d4a12))
+* upgrade ovh-api-services ([2e94748](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2e94748))
+* **cdn dedicated ssl generate:** use oui-modal type to display warning ([98ab92b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/98ab92b))
+* upgrade ovh-api-services version ([dc1d23b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/dc1d23b))
+* **cdn dedicated ssl update:** use oui-modal type to display warning ([1949d91](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1949d91))
+* **dedicated:server:** Remove useless tabs for US ([d01fe5b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d01fe5b))
+* **i18n:** set some english translations ([6f5abb4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6f5abb4))
+* **user rights:** code review ([c0e3409](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c0e3409))
+* **user rights:** replace table with oui-datagrid ([94fa160](https://github.com/ovh-ux/ovh-manager-dedicated/commit/94fa160))
+
+
+### Features
+
+* **dedicatedcloud:** use ui-state for confirm and terminate a pcc ([06390e3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/06390e3))
+* **dedicatedcloud terminate:** set termination into modal layout state ([472b785](https://github.com/ovh-ux/ovh-manager-dedicated/commit/472b785))
+* **dedicatedcloud terminate:** wip confirm modal ([88b66b8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/88b66b8))
+* **pcc terminate:** add route ([06bbd5c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/06bbd5c))
+
+
+
 <a name="9.4.1"></a>
 ## [9.4.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.4.0...v9.4.1) (2018-05-18)
 
