@@ -1,4 +1,4 @@
-angular.module("UserAccount.filters").filter("sshkeyMin", [
+angular.module("UserAccount").filter("sshkeyMin", [
     "sshkey-regex",
     function (SSHKEY_REGEX) {
         "use strict";

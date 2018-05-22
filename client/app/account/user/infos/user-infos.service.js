@@ -1,4 +1,4 @@
-angular.module("UserAccount.services").service("UserAccount.services.Infos", [
+angular.module("UserAccount").service("UserAccount.services.Infos", [
     "$http",
     "$q",
     "UserAccount.constants",

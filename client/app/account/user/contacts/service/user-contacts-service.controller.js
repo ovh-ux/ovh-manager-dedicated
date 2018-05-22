@@ -1,4 +1,4 @@
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.contactServices", [
+angular.module("UserAccount").controller("UserAccount.controllers.contactServices", [
     "$scope",
     "UserAccount.services.Contacts",
     "Alerter",

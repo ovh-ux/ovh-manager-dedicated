@@ -1,4 +1,4 @@
-angular.module("UserAccount.controllers")
+angular.module("UserAccount")
     .controller("UserAccount.controllers.contactCtrl", class AccountUserContactsController {
         constructor ($location, $q, $scope, AccountCreationURLS, Alerter, OvhApiMe) {
             this.$location = $location;

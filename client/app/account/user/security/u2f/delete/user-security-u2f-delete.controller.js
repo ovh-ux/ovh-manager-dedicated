@@ -1,4 +1,4 @@
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.doubleAuth.u2f.delete", [
+angular.module("UserAccount").controller("UserAccount.controllers.doubleAuth.u2f.delete", [
     "$rootScope",
     "$scope",
     "$q",
