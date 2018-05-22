@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="billing_history_balance_title" qtlid="486724">Règlement de mon solde</translation>
+   <translation id="billing_history_balance_title" qtlid="486724">Pago</translation>
    <translation id="billing_history_balance_cancel" qtlid="37863">Cancelar</translation>
-   <translation id="billing_history_balance_explain" qtlid="486737">Votre solde est actuellement de {{ balance }}.</translation>
-   <translation id="billing_history_balance_no_balance" qtlid="486750">Aucune balance n'a été trouvée sur votre compte. <a data-ui-sref="{{ backState }}">Cliquez ici</a> pour retourner à la liste des factures.</translation>
-   <translation id="billing_history_balance_choose_payment_method" qtlid="486763">Choisissez une méthode de paiement</translation>
-   <translation id="billing_history_balance_add_payment_method" qtlid="486776">Ajoutez une méthode de paiement</translation>
-   <translation id="billing_history_balance_no_payment_method" qtlid="486789">Vous n'avez aucune méthode de paiement valide. <a data-ui-sref="{{ addPaymentMethodState }}">Ajoutez une méthode de paiement valide</a> avant de régler votre solde.</translation>
-   <translation id="billing_history_balance_payment_doing" qtlid="486802">Un règlement de solde est déjà en cours. Attendez que ce paiement soit effectué avant de règler un nouveau solde.</translation>
-   <translation id="billing_history_balance_payment_go_tracking" qtlid="486815">Rendez-vous <a data-ui-sref="{{ trackState }}">sur la page des suivis de paiement</a> pour plus d'informations.</translation>
+   <translation id="billing_history_balance_explain" qtlid="486737">Su saldo actual es de {{ balance }}.</translation>
+   <translation id="billing_history_balance_no_balance" qtlid="486750">No se ha encontrado saldo en su cuenta. <a data-ui-sref="{{ backState }}">Haga clic aquí</a> para volver a la lista de facturas.</translation>
+   <translation id="billing_history_balance_choose_payment_method" qtlid="486763">Seleccione una forma de pago</translation>
+   <translation id="billing_history_balance_add_payment_method" qtlid="486776">Añada una forma de pago</translation>
+   <translation id="billing_history_balance_no_payment_method" qtlid="486789">Usted no dispone de ninguna forma de pago válida. <a data-ui-sref="{{ addPaymentMethodState }}">Debe añadir una forma de pago válida</a> antes de pagar el saldo.</translation>
+   <translation id="billing_history_balance_payment_doing" qtlid="486802">La operación de pago está en progreso. Debe esperar a que termine para realizar otro pago.</translation>
+   <translation id="billing_history_balance_payment_go_tracking" qtlid="486815">Para más información, acceda a <a data-ui-sref="{{ trackState }}">la página de seguimiento de pago</a>.</translation>
 
-   <translation id="billing_history_balance_load_error" qtlid="486828">Une erreur est survenue lors du chargement de votre solde.</translation>
-   <translation id="billing_history_balance_pay_success" qtlid="486841">Le règlement de votre solde a bien été pris en compte. Le paiement sera effectif dans quelques instants. Rendez-vous <a data-ui-sref="{{ trackHref }}">sur la page des suivis de paiement</a> pour plus d'informations.</translation>
-   <translation id="billing_history_balance_pay_error" qtlid="486854">Une erreur est survenue lors du règlement de votre solde.</translation>
+   <translation id="billing_history_balance_load_error" qtlid="486828">Se ha producido un error al cargar el saldo.</translation>
+   <translation id="billing_history_balance_pay_success" qtlid="486841">El pago del saldo se ha registrado correctamente. El mismo será efectivo en unos instantes. Para más información, acceda a <a data-ui-sref="{{ trackHref }}">la página de seguimiento de pago</a>.</translation>
+   <translation id="billing_history_balance_pay_error" qtlid="486854">Se ha producido un error durante el pago del saldo.</translation>
 
 <!-- PAYMENT METHOD SUBTYPES -->
    <translation id="billing_history_balance_payment_method_subtype_american_express" qtlid="435959">American Express</translation>

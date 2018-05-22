@@ -115,7 +115,7 @@
    <translation id="wizard_renew" qtlid="118962">Renew</translation>
    <translation id="wizard_next" qtlid="17743">Next</translation>
    <translation id="wizard_previous" qtlid="17431">Previous</translation>
-   <translation id="wizard_breadcrumb" qtlid="486451">Étape {{ currentStep }} sur {{ stepCount }}</translation>
+   <translation id="wizard_breadcrumb" qtlid="486451">Step {{ currentStep }} of {{ stepCount }}</translation>
    <translation id="pagination_page" qtlid="486464">Page {{ current }} / {{ last }}</translation>
    <translation id="pagination_go" qtlid="31522">OK</translation>
    <translation id="pagination_display" qtlid="69353">Display</translation>
@@ -193,9 +193,9 @@
    <translation id="common_newtab" qtlid="402165">new tab </translation>
    <translation id="contract_next" qtlid="17743">Next</translation>
    <translation id="contract_previous" qtlid="17431">Previous</translation>
-   <translation id="download_contract" qtlid="486477">Ouvrir le contrat "{{ name }}" en PDF</translation>
+   <translation id="download_contract" qtlid="486477">Open the "{{ name }}" contract in PDF</translation>
    <translation id="contract_help" qtlid="180382">Scroll down to the contracts in order to validate  them.</translation>
-   <translation id="contracts_list_title" qtlid="486490">Il y a {{ count }} contrats à consulter.</translation>
+   <translation id="contracts_list_title" qtlid="486490">There are {{ count }} contracts to read.</translation>
    <translation id="contract_list_title" qtlid="180408">There is 1 contract to read.</translation>
    <translation id="contracts_agree" qtlid="180421">I accept the terms and conditions</translation>
    <translation id="contract_agree" qtlid="180434">I accept the terms and conditions</translation>
@@ -206,11 +206,11 @@
    <translation id="month_other" qtlid="220148">{0} months</translation>
    <translation id="year_1" qtlid="70277">1 year</translation>
    <translation id="year_other" qtlid="158604">{} years</translation>
-   <translation id="upto" qtlid="486503">Jusqu'au {{ date }}</translation>
+   <translation id="upto" qtlid="486503">Until {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Until the 1st of next month</translation>
    <translation id="engage" qtlid="158643">Sign up {0}</translation>
-   <translation id="price_ht_label" qtlid="486412">{{ price }}&#160;HT</translation>
-   <translation id="price_ttc_label" qtlid="486516">{{ price }}&#160;TTC</translation>
+   <translation id="price_ht_label" qtlid="486412">{{ price }}</translation>
+   <translation id="price_ttc_label" qtlid="486516">{{ price }}</translation>
    <translation id="price_free" qtlid="195776">Included</translation>
    <translation id="price_label_yearly" qtlid="288977">/year</translation>
 
@@ -540,9 +540,9 @@
    <translation id="me_alerts_PAYMENTMEAN_CREDITCARD_TOOMANYFAILURES" qtlid="343954">You have <strong>{{count}}</strong> credit card(s) in default. Please go to the <a href="#/billing/mean" class="alert-link">billing section </a> to check the situation and/or enter a new payment method.</translation>
    <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="343967">You have <strong>{{count}}</strong> PayPal account(s) in default. Please go to the <a href="{{link}}" class="alert-link">billing section </a> to check the situation and/or enter a new payment method.</translation>
 
-   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="487730">Votre compte prépayé est débiteur de <strong>{0}</strong> au {1}. Rendez-vous dans <a href="#/billing/ovhaccount" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="486529">Vous avez une dette de <strong>{0}</strong> (dont un montant de {1} non échu). Rendez-vous dans <a href="{2}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="486542">Vous avez une dette de <strong>{0}</strong>. Rendez-vous dans <a href="{1}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
+   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="487730">Your prepaid account is outstanding <strong>{0}</strong> as of {1}. Please go to <a href="#/billing/ovhaccount" class="alert-link">the Billing section</a> to settle your account.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="486529">Your account balance is <strong>{0}</strong> (including an amount of {1} that is not due yet). Please go to <a href="{2}" class="alert-link">the Billing section</a> to settle your account.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="486542">Your account balance is <strong>{0}</strong>. Please go to <a href="{2}" class="alert-link">the Billing section</a> to settle your account.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="383919">Your prepaid account has reached the threshold you set for it. Please go to <a href="#/billing/ovhaccount" class="alert-link">the billing section</a> for more information.</translation>
 
