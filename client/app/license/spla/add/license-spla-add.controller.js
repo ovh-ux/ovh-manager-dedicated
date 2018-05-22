@@ -1,53 +1,66 @@
-angular.module("Module.license").controller("LicenseSplaAddCtrl", ($scope, $translate, License, Alerter) => {
-    "use strict";
+angular.module("Module.license").controller("LicenseSplaAddCtrl", class LicenseSplaAddCtrl {
 
-    $scope.model = {
-        options: {
+    constructor ($state, $translate, Alerter, License) {
+        this.$state = $state;
+        this.$translate = $translate;
+        this.Alerter = Alerter;
+        this.License = License;
+    }
+
+    $onInit () {
+        this.options = {
             availableServers: null,
             availableTypes: null
-        },
-        selected: {
+        };
+
+        this.selected = {
             serial: null,
             type: null,
             server: null
-        }
-    };
+        };
+    }
 
-    $scope.load = () => {
-        License.splaAddAvailableServers().then(
-            (data) => {
-                $scope.model.options = data;
-            },
-            (data) => {
-                $scope.resetAction();
-                Alerter.alertFromSWS($translate.instant("license_spla_add_step1_loading_error"), data.data);
-            }
-        );
-    };
-
-    $scope.addSpla = () => {
-        $scope.resetAction();
-        License.splaAdd($scope.model.selected.server, { serialNumber: $scope.model.selected.serial, type: $scope.model.selected.type }).then(
+    addSpla () {
+        this.License.splaAdd(this.selected.server, { serialNumber: this.selected.serial, type: this.selected.type }).then(
             () => {
-                Alerter.alertFromSWS($translate.instant("license_spla_add_success"), true);
+                this.Alerter.alertFromSWS(this.$translate.instant("license_spla_add_success"), true);
             },
-            (data) => {
-                Alerter.alertFromSWS($translate.instant("license_spla_add_fail"), data.data);
+            ({ data }) => {
+                this.Alerter.alertFromSWS(this.$translate.instant("license_spla_add_fail"), data);
             }
         );
-    };
+    }
 
-    $scope.loadTypes = () => {
-        $scope.model.options.availableTypes = null;
-        $scope.model.selected.type = null;
-        License.splaAddAvailableTypes($scope.model.selected.server).then(
+    close () {
+        this.$state.go("^");
+    }
+
+    load () {
+        this.License.splaAddAvailableServers().then(
             (data) => {
-                angular.extend($scope.model.options, data);
+                this.options = data;
             },
-            (data) => {
-                $scope.resetAction();
-                Alerter.alertFromSWS($translate.instant("license_spla_add_step1_loading_error"), data.data);
+            ({ data }) => {
+                this.$state.go("^").then(() => {
+                    this.Alerter.alertFromSWS(this.$translate.instant("license_spla_add_step1_loading_error"), data);
+                });
             }
         );
-    };
+    }
+
+    loadTypes () {
+        this.options.availableTypes = null;
+        this.selected.type = null;
+        this.License.splaAddAvailableTypes(this.selected.server).then(
+            (data) => {
+                angular.extend(this.options, data);
+            },
+            ({ data }) => {
+                this.$state.go("^").then(() => {
+                    this.Alerter.alertFromSWS(this.$translate.instant("license_spla_add_step1_loading_error"), data);
+                });
+            }
+        );
+    }
+
 });
