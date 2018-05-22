@@ -60,21 +60,9 @@
                         </div>
                         <!-- /Skip content target -->
 
-                        <div data-ng-controller="UserAlertCtrl">
-                            <oui-message dismissable="true"
-                                         data-ng-if="userAlerts.messages"
-                                         data-type="{{ userAlerts.type }}">
-                                <ul data-ng-class="{
-                                    'list-unstyled': userAlerts.messages.length === 1
-                                }">
-                                    <li data-ng-repeat="text in userAlerts.messages track by $index"
-                                        data-ng-bind-html="text">
-                                    </li>
-                                </ul>
-                            </oui-message>
-                            <ovh-browser-alert></ovh-browser-alert>
-                            <!-- <ovh-task-follow></ovh-task-follow> -->
-                        </div>
+                        <ovh-browser-alert></ovh-browser-alert>
+                        <!-- <ovh-task-follow></ovh-task-follow> Disable while api is updated-->
+
                         <div class="pb-5"
                              data-ui-view>
                         </div>

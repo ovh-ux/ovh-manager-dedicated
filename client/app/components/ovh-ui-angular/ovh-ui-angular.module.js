@@ -1,4 +1,12 @@
-angular.module("App").run(($q, $translate, $translatePartialLoader, ouiFieldConfiguration) => {
+angular.module("App").run(($q,
+                           $translate,
+                           $translatePartialLoader,
+                           ouiCriteriaAdderConfiguration,
+                           ouiDatagridConfiguration,
+                           ouiFieldConfiguration,
+                           ouiNavbarConfiguration,
+                           ouiPaginationConfiguration,
+                           ouiStepperConfiguration) => {
 
     // first be sure that common translation file is loaded...
     $translatePartialLoader.addPart("common");
