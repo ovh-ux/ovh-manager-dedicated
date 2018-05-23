@@ -1,3 +1,8 @@
+<a name="9.5.1"></a>
+## [9.5.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.0...v9.5.1) (2018-05-23)
+
+
+
 <a name="9.5.0"></a>
 # [9.5.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.4.1...v9.5.0) (2018-05-22)
 
