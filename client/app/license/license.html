@@ -13,46 +13,27 @@
 
     <div class="tab-content">
         <div class="row d-md-flex">
-            <div class="col-md-4">
-                <div class="oui-tile mb-5">
-                    <h2 class="oui-tile__title oui-header_3"
-                        data-translate="common_shortcuts">
-                    </h2>
-                    <div class="oui-tile__body">
-                        <div class="oui-tile__item">
-                            <dl class="oui-tile__definition">
-                                <dt class="oui-tile__term"
-                                    data-translate="common_links"></dt>
-                                <dd class="oui_link">
-                                    <a class="d-block"
-                                       target="_self"
-                                       rel="noopener"
-                                       title="{{ 'license_order_title_button' | translate }}"
-                                       data-ui-sref="app.license.order">
-                                        <span data-translate="license_order_title_button"></span>
-                                        <span class="fa fa-external-link"
-                                              aria-hidden="true"></span>
-                                    </a>
-                                    <a class="d-block"
-                                       target="_self"
-                                       rel="noopener"
-                                       title="{{ 'license_spla_add_title_button' | translate }}"
-                                       data-ui-sref="app.license.dashboard.spla-add">
-                                        <span data-translate="license_spla_add_title_button"></span>
-                                        <span class="fa fa-external-link"
-                                              aria-hidden="true"></span>
-                                    </a>
-                                </dd>
-                            </dl>
-                        </div>
-                    </div>
+            <div class="col-md-6">
+                <h2 class="oui-header_3"
+                    data-translate="license_dashboard_subtitle"></h2>
+                <div data-ovh-alert></div>
+                <div class="oui-action-menu-container">
+                    <oui-action-menu aria-label="{{ 'common_actions' | translate }}"
+                                     data-align="start"
+                                     data-text="{{ 'common_actions' | translate }}">
+                        <oui-action-menu-item aria-label="{{ 'license_order_title_button' | translate }}"
+                                              data-text="{{ 'license_order_title_button' | translate }}"
+                                              data-ui-sref="app.license.order">
+                        </oui-action-menu-item>
+                        <oui-action-menu-item aria-label="{{ 'license_spla_add_title_button' | translate }}"
+                                              data-text="{{ 'license_spla_add_title_button' | translate }}"
+                                              data-ui-sref="app.license.dashboard.spla-add">
+                        </oui-action-menu-item>
+                    </oui-action-menu>
                 </div>
             </div>
         </div>
 
-        <h2 class="oui-header_3"
-            data-translate="license_dashboard_subtitle"></h2>
-        <div data-ovh-alert></div>
         <oui-datagrid rows-loader="loadDatagridLicences($config)">
             <oui-column title=":: 'license_dashboard_table_title_type' | translate"
                         property="id">
