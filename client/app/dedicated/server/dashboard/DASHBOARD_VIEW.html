@@ -299,37 +299,6 @@
                                 data-translate="server_traffic"></dt>
                             <dd class="oui-tile__description">
                                 <span data-ng-if="traffic.usage.outputQuotaSize.text"
-                                      data-ng-translate="server_traffic_text"
-                                      data-translate-values="{ t0: traffic.usage.outputQuotaSize.text }">
-                                </span>
-                                <span data-ng-if="!traffic.usage.outputQuotaSize.text"
-                                      data-translate="server_traffic_unlimited_text"
-                                      data-translate-values="{ t0: bandwidth.bandwidth.OvhToInternet | bandwidth}">
-                                </span>
-                            </dd>
-                        </dl>
-                        <div class="oui-tile__actions"
-                             data-ng-if="traffic.hasQuota && canOrderTraffic() && canOrderMoreTraffic()">
-                            <oui-action-menu
-                                aria-label="{{:: 'menu_action_label' | translate:{t0: ('server_traffic' | translate)} }}"
-                                data-align="end"
-                                data-compact>
-                                <oui-action-menu-item
-                                    data-text="{{(trafficOption !== 'subscribed' ? 'server_traffic_order_button' : 'server_traffic_change_button') | translate }}"
-                                    aria-label="{{'server_traffic_order_button' | translate}}"
-                                    data-on-click="setAction('traffic/order/dedicated-server-traffic-order', server.name)"
-                                    data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'">
-                                </oui-action-menu-item>
-                            </oui-action-menu>
-                        </div>
-                    </div>
-                    <div class="oui-tile__item"
-                         data-ng-if="server.canOrderQuota">
-                        <dl class="oui-tile__definition">
-                            <dt class="oui-tile__term"
-                                data-translate="server_traffic"></dt>
-                            <dd class="oui-tile__description">
-                                <span data-ng-if="traffic.usage.outputQuotaSize.text"
                                       data-translate="server_traffic_text"
                                       data-translate-values="{ t0: traffic.usage.outputQuotaSize.text}">
                                 </span>
