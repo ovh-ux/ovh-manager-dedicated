@@ -245,6 +245,11 @@ module.exports = function (grunt) {
                         dest: "<%= publicdir %>/resources/angular/i18n/"
                     },
                     {
+                        cwd: ".",
+                        src: "node_modules/angular-i18n/angular-locale_en.js",
+                        dest: "<%= publicdir %>/resources/angular/i18n/angular-locale_en-asia.js"
+                    },
+                    {
                         expand: true,
                         cwd: "node_modules/@ovh-ux/ovh-utils-angular/bin/template/",
                         src: ["**/**.html", "**/**.css"],
@@ -364,6 +369,11 @@ module.exports = function (grunt) {
                         cwd: "node_modules/angular-i18n/",
                         src: "*.js",
                         dest: "<%= distdir %>/resources/angular/i18n/"
+                    },
+                    {
+                        cwd: ".",
+                        src: "node_modules/angular-i18n/angular-locale_en.js",
+                        dest: "<%= distdir %>/resources/angular/i18n/angular-locale_en-asia.js"
                     }, {
                         expand: true,
                         cwd: "node_modules/@ovh-ux/ovh-utils-angular/bin/template/",
