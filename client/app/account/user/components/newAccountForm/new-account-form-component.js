@@ -30,6 +30,7 @@ angular.module("ovhSignupApp").component("newAccountForm", {
             this.readonly = this.readonly || [];
             this.rules = null;
             this.isSubmitting = false;
+            const CONSENT_MARKETING_EMAIL_NAME = "consent-marketing-email";
 
             $scope.getTemplateUrl = () => `${BASE_URL}components/newAccountForm/new-account-form-component.html`;
 
@@ -66,6 +67,7 @@ angular.module("ovhSignupApp").component("newAccountForm", {
             this.fetchRules = (_params) => {
                 let params = _params;
                 const customerCode = params.customerCode;
+                let consentDecision = null;
 
                 // we don't want to send attributes outside of /rules
                 if (this.rules) {
@@ -74,11 +76,16 @@ angular.module("ovhSignupApp").component("newAccountForm", {
 
                 // customer code does not belong to /rules, only displayed in the form
                 params = _.omit(params, "customerCode");
+                params = _(params).omit("commercialCommunicationsApproval").value();
 
                 this.isLoading = true;
 
-                return $http
-                    .post(`${UserAccountConstants.swsProxyRootPath}newAccount/rules`, params)
+                return UserAccountServiceInfos
+                    .fetchConsentDecision(CONSENT_MARKETING_EMAIL_NAME)
+                    .then((fetchedConsentDecision) => {
+                        consentDecision = _(fetchedConsentDecision).get("value", false);
+                    })
+                    .then(() => $http.post(`${UserAccountConstants.swsProxyRootPath}newAccount/rules`, params))
                     .then((result) => {
                         if (result.status !== 200) {
                             return $q.reject(result);
@@ -109,6 +116,7 @@ angular.module("ovhSignupApp").component("newAccountForm", {
                             "in": null,
                             mandatory: false,
                             defaultValue: null,
+                            initialValue: consentDecision,
                             fieldName: "commercialCommunicationsApproval",
                             fieldType: "checkbox",
                             regularExpression: null,
@@ -164,8 +172,7 @@ angular.module("ovhSignupApp").component("newAccountForm", {
 
                 // put on /me does not handle email modification
                 model = _.omit(model, "email");
-
-                model = _(model).omit("commercialCommunicationsApproval");
+                model = _(model).omit("commercialCommunicationsApproval").value();
 
                 let promise = $http.put(`${UserAccountConstants.swsProxyRootPath}me`, model).then((result) => {
                     if (result.status !== 200) {
@@ -182,7 +189,7 @@ angular.module("ovhSignupApp").component("newAccountForm", {
 
                 if (this.originalModel.commercialCommunicationsApproval !== this.model.commercialCommunicationsApproval) {
                     promise = promise
-                        .then(() => UserAccountServiceInfos.updateConsent("consent-marketing-email", this.model.commercialCommunicationsApproval))
+                        .then(() => UserAccountServiceInfos.updateConsentDecision(CONSENT_MARKETING_EMAIL_NAME, this.model.commercialCommunicationsApproval || false))
                         .then(() => $timeout(angular.noop, 3000) /* add some delay for task creation */);
                 }
 
