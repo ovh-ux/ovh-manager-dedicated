@@ -52,6 +52,26 @@ angular.module("UserAccount.services").service("UserAccount.services.Infos", [
             });
         };
 
+        this.fetchConsentDecision = function (campaignName) {
+            return $http.get([swsUseraccountInfosPath, "consent", campaignName, "decision"].join("/")).then((response) => {
+                if (response.status < 300) {
+                    return response.data;
+                }
+
+                return $q.reject(response);
+            });
+        };
+
+        this.updateConsentDecision = function (campaignName, value) {
+            return $http.put([swsUseraccountInfosPath, "consent", campaignName, "decision"].join("/"), { value }).then((response) => {
+                if (response.status < 300) {
+                    return response.data;
+                }
+
+                return $q.reject(response);
+            });
+        };
+
         this.taskEmailChanges = function (state) {
             let options;
             if (state) {
