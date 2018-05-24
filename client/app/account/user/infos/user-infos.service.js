@@ -52,6 +52,16 @@ angular.module("UserAccount.services").service("UserAccount.services.Infos", [
             });
         };
 
+        this.updateConsent = function (campaignName, value) {
+            return $http.post([swsUseraccountInfosPath, "consent", campaignName].join("/"), { value }).then((response) => {
+                if (response.status < 300) {
+                    return response.data;
+                }
+
+                return $q.reject(response);
+            });
+        };
+
         this.taskEmailChanges = function (state) {
             let options;
             if (state) {
