@@ -1,3 +1,13 @@
+<a name="9.5.6"></a>
+## [9.5.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.5...v9.5.6) (2018-05-25)
+
+
+### Bug Fixes
+
+* **user:** Disable consent for US ([650fbdc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/650fbdc))
+
+
+
 <a name="9.5.5"></a>
 ## [9.5.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.4...v9.5.5) (2018-05-25)
 
