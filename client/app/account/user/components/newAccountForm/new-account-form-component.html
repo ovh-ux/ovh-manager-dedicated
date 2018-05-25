@@ -4,6 +4,12 @@
      data-ng-bind="$ctrl.initError">
 </div>
 
+<div
+    class="text-center"
+    data-ng-if="!$ctrl.loaded">
+    <oui-spinner data-size="l"></oui-spinner>
+</div>
+
 <form id="ovhSignupForm"
       name="ovhSignupForm"
       data-ng-if="$ctrl.rules"
@@ -31,9 +37,16 @@
     <!-- FOOTER BUTTONS -->
     <div class="mb-5">
         <button class="btn btn-primary float-right"
-                data-ng-disabled="ovhSignupForm.$invalid || $ctrl.isSubmitting || (!$ctrl.hasChanges() && !$ctrl.submitError)"
+                data-ng-disabled="ovhSignupForm.$invalid || (!$ctrl.hasChanges() && !$ctrl.submitError)"
                 type="submit"
-                data-translate="user_account_OK">
+                data-translate="user_account_OK"
+                data-ng-if="!$ctrl.isSubmitting">
+        </button>
+        <button class="btn btn-primary float-right"
+                data-ng-disabled="true"
+                type="button"
+                data-ng-if="$ctrl.isSubmitting"
+                data-translate="user_agreements_accepting">
         </button>
         <button class="btn btn-default"
                 data-ng-disabled="ovhSignupForm.$pristine || $ctrl.isSubmitting || (!$ctrl.hasChanges() && !ovhSignupForm.$invalid && !$ctrl.submitError)"

@@ -808,7 +808,7 @@ var constants = {
                     pcidssHdsHipaa: "https://ovhcloud.com/products/hosted-private-cloud"
                 },
                 vpsCloud           : "https://www.ovh.com/ca/en/vps/vps-cloud.xml",
-                dedicatedIpmi      : "http://help.ovh.co.uk/IpmiSol",
+                dedicatedIpmi      : "https://docs.ovh.com/gb/en/dedicated/use-ipmi-dedicated-servers/#testing-and-rebooting-the-ipmi",
                 changeOwner: "https://www.ovh.co.uk/cgi-bin/procedure/procedureChangeOwner.cgi",
                 domainOrderTrade   : "https://www.ovh.co.uk/order/domain/#/legacy/domain/trade/informations?options=~~(domain~~'{domain})",
                 RealTimeMonitoring : "https://support.ovhcloud.com/hc/en-us/articles/115001821044-Learning-About-OVH-US-Monitoring",
