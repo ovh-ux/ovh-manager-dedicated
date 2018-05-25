@@ -1,3 +1,15 @@
+<a name="9.5.4"></a>
+## [9.5.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.3...v9.5.4) (2018-05-25)
+
+
+### Bug Fixes
+
+* **useraccount:** fix account creation link ([57f6871](https://github.com/ovh-ux/ovh-manager-dedicated/commit/57f6871))
+* **useraccount:** minor code changes ([5bd5d99](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5bd5d99))
+* **useraccount:** remove redirectTo in account creation link ([fddc752](https://github.com/ovh-ux/ovh-manager-dedicated/commit/fddc752))
+
+
+
 <a name="9.5.3"></a>
 ## [9.5.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.2...v9.5.3) (2018-05-25)
 
