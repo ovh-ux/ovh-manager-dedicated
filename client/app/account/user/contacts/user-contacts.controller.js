@@ -33,6 +33,6 @@ angular.module("UserAccount.controllers")
             const languageSpecificSubs = "{$language}_{$subs}";
             const newNicUrl = this.AccountCreationURLS[languageSpecificSubs] ||
                               this.AccountCreationURLS[subs];
-            return `${newNicUrl}`;
+            return newNicUrl;
         }
     });
