@@ -1,3 +1,22 @@
+<a name="9.5.3"></a>
+## [9.5.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.2...v9.5.3) (2018-05-25)
+
+
+### Bug Fixes
+
+* **cdn domain:** fix stats chart labels ([274acd7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/274acd7))
+* **ipmi:** fix sol guide ([7fec97e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7fec97e))
+* **ipmi:** minor code review changes ([1fe4d92](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1fe4d92))
+* match updated API scheme ([80fa0c6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/80fa0c6))
+* removed mandatory text ([74ca18b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/74ca18b))
+
+
+### Features
+
+* added checkbox for commercial communications ([7508db3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7508db3))
+
+
+
 <a name="9.5.2"></a>
 ## [9.5.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.1...v9.5.2) (2018-05-24)
 
