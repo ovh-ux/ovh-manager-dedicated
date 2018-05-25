@@ -32,9 +32,7 @@ angular.module("UserAccount.controllers")
             const subs = _.get(this.user, "ovhSubsidiary", "default");
             const languageSpecificSubs = "{$language}_{$subs}";
             const newNicUrl = this.AccountCreationURLS[languageSpecificSubs] ||
-                              this.AccountCreationURLS[subs] ||
-                              this.AccountCreationURLS.default;
-            const returnUrl = this.$location.absUrl();
-            return `${newNicUrl}?redirectTo=${returnUrl}`;
+                              this.AccountCreationURLS[subs];
+            return `${newNicUrl}`;
         }
     });
