@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cdn_dashboard_loading_error" qtlid="132083">Une erreur est survenue lors du chargement des informations de votre service.</translation>
+   <translation id="cdn_configuration_add_domain_title_button" qtlid="132096">Ajouter un domaine au CDN</translation>
+   <translation id="cdn_configuration_add_domain_title" qtlid="8602">Ajouter un domaine</translation>
+   <translation id="cdn_configuration_add_domain_step1_question" qtlid="127818">Saisissez un nom de domaine à intégrer à votre CDN :</translation>
+   <translation id="cdn_configuration_add_domain_step2_question" qtlid="132109">Choisissez le backend à associer au domaine {0} :</translation>
+   <translation id="cdn_configuration_add_domain_step2_default_backend" qtlid="132122">Back-end</translation>
+   <translation id="cdn_configuration_add_domain_step2_no_backend" qtlid="133994">Vous n'avez pas encore de back-end</translation>
+   <translation id="cdn_configuration_add_domain_step2_addBackend" qtlid="132135">Ou associez le à un nouveau back-end :</translation>
+   <translation id="cdn_configuration_add_domain_step2_full" qtlid="127084">Votre pool de back-end est complet, l'ajout de cette IP requiert 1 back-end supplémentaire.</translation>
+   <translation id="cdn_configuration_add_domain_step2_full_buy" qtlid="178965">Commander du back-end</translation>
+   <translation id="cdn_configuration_add_domain_step3_question" qtlid="183632">Vous souhaitez ajouter un domaine sur votre CDN <span class="italic normal">{0}</span>?</translation>
+   <translation id="cdn_configuration_add_domain_step3_domain" qtlid="111918">Domaine :</translation>
+   <translation id="cdn_configuration_add_domain_step3_backend" qtlid="132161">Back-end :</translation>
+   <translation id="cdn_configuration_add_domain_success" qtlid="132174">Le domaine {0} lié au back-end {1} a été ajouté au CDN avec succès.</translation>
+   <translation id="cdn_configuration_add_domain_fail" qtlid="132187">Un erreur s'est produite lors de la demande d'ajout de domaine au CDN.</translation>
+   <translation id="cdn_configuration_delete_domain_title" qtlid="8470">Supprimer le domaine</translation>
+   <translation id="cdn_configuration_delete_domain_question" qtlid="145072">Voulez-vous supprimer le domaine {0}?</translation>
+   <translation id="cdn_configuration_delete_domain_fail" qtlid="133851">Impossible de supprimer le domaine.</translation>
+   <translation id="cdn_configuration_delete_domain_success" qtlid="144864">Le domaine a été supprimé avec succès.</translation>
+   <translation id="cdn_configuration_backend_upgrade_title" qtlid="132200">Commande de back-ends</translation>
+   <translation id="cdn_configuration_backend_upgrade_step1_explanation" qtlid="133812">Veuillez entrer le nombre de back-ends</translation>
+   <translation id="cdn_configuration_backend_upgrade_step1_tarif" qtlid="132213">Tarification :</translation>
+   <translation id="cdn_configuration_backend_upgrade_step1_tarif2" qtlid="132226">{0} HT / mois / back-end</translation>
+   <translation id="cdn_configuration_backend_upgrade_step1_number" qtlid="132239">Nombre de back-ends supplémentaires à commander :</translation>
+   <translation id="cdn_configuration_backend_upgrade_step2_durations" qtlid="132252">Commander {0} back-ends supplémentaires pendant :</translation>
+   <translation id="cdn_configuration_backend_upgrade_step2_duration_total" qtlid="132265">{0} mois : total {1} HT</translation>
+   <translation id="cdn_configuration_backend_upgrade_step3_question" qtlid="183645">Ajout de {0} back-ends supplémentaires sur le CDN <span class="italic normal">{1}</span></translation>
+   <translation id="cdn_configuration_backend_upgrade_step3_id" qtlid="169472">Afin de confirmer votre demande, veuillez accepter les conditions d'utilisation et cliquer sur le bouton "Suivant" ci-dessous.</translation>
+   <translation id="cdn_configuration_backend_upgrade_step3_totalHT" qtlid="169238">Prix:</translation>
+   <translation id="cdn_configuration_backend_upgrade_step3_totalTTC" qtlid="169251">Prix:</translation>
+   <translation id="cdn_configuration_backend_upgrade_step3_contracts" qtlid="169485">Je reconnais avoir bien pris connaissance</translation>
+   <translation id="cdn_configuration_backend_upgrade_step3_contracts_of" qtlid="130243">des</translation>
+   <translation id="cdn_configuration_backend_upgrade_step3_contracts_and" qtlid="169498">et</translation>
+   <translation id="cdn_configuration_backend_upgrade_step4_generation_bc" qtlid="169511">Génération du bon de commande ...</translation>
+   <translation id="cdn_configuration_backend_upgrade_step4_bc" qtlid="169524">Le bon de commande a été généré avec succès.</translation>
+   <translation id="cdn_configuration_backend_upgrade_step4_continue" qtlid="169537">Afin de confirmer votre commande, veuillez cliquer sur le bouton "Régler" ci-dessous.</translation>
+   <translation id="cdn_configuration_backend_upgrade_step4_explication" qtlid="132291">Veuillez noter qu'un délai d'environ 2 heures à compter de l'acceptation de votre paiement est nécessaire pour que l'activation de l'option soit prise en compte dans votre Espace Client Dédié.</translation>
+   <translation id="cdn_configuration_backend_upgrade_step4_explication2" qtlid="167886">Un nouvel onglet s'ouvrira et vous serez automatiquement redirigé(e) vers l'interface de paiement OVH.</translation>
+   <translation id="cdn_configuration_backend_upgrade_fail" qtlid="132304">Une erreur est survenue lors du chargement des données</translation>
+   <translation id="cdn_configuration_terminate_title_button" qtlid="56337">Résilier le service</translation>
+   <translation id="cdn_configuration_domain" qtlid="132317">0 domaine</translation>
+   <translation id="cdn_configuration_domain_1" qtlid="132330">1 domaine</translation>
+   <translation id="cdn_configuration_domain_other" qtlid="132343">{0} domaines</translation>
+   <translation id="cdn_configuration_backend" qtlid="132356">{0} x IP Back-end</translation>
+   <translation id="cdn_configuration_activity" qtlid="143160">Activité (dernier mois)</translation>
+   <translation id="cdn_configuration_activity_page_viewed_0" qtlid="128118">Aucun objet vu</translation>
+   <translation id="cdn_configuration_activity_page_viewed_one" qtlid="132369">1 objet vu</translation>
+   <translation id="cdn_configuration_activity_page_viewed_other" qtlid="132382">{0} objets vus</translation>
+   <translation id="cdn_configuration_activity_page_viewed_default" qtlid="126832">Disponible prochainement</translation>
+   <translation id="cdn_configuration_savings" qtlid="143173">Économies (dernier mois)</translation>
+   <translation id="cdn_configuration_savings_bandwidth_percentage" qtlid="132395">{0} % de bande passante</translation>
+   <translation id="cdn_configuration_savings_bandwidth_percentage_default" qtlid="125516">Bande passante: aucune donnée</translation>
+   <translation id="cdn_configuration_savings_request_percentage" qtlid="132408">{0} % de requêtes</translation>
+   <translation id="cdn_configuration_savings_request_percentage_default" qtlid="121471">Requêtes: aucune donnée</translation>
+   <translation id="cdn_configuration_quota" qtlid="143186">Trafic restant</translation>
+   <translation id="cdn_configuration_order_more_trafic" qtlid="127746">Commander de la bande passante supplémentaire</translation>
+   <translation id="cdn_configuration_quota_remaining_0" qtlid="125540">Quota dépassé</translation>
+   <translation id="cdn_configuration_quota_remaining_1" qtlid="183658;127794">[class=value]{0}[/class] [class=unit]{1}[/class] <br/>Bande passante restante</translation>
+   <translation id="cdn_configuration_quota_remaining_other" qtlid="183671;127794">[class=value]{0}[/class] [class=unit]{1}[/class] <br/>Bande passante restante</translation>
+   <translation id="cdn_configuration_quota_remaining_default" qtlid="121339">Aucune donnée</translation>
+   <translation id="cdn_configuration_quota_estimation" qtlid="132421">Estimation avant épuisement</translation>
+   <translation id="cdn_configuration_more_than_three_month" qtlid="129507">+3 mois</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_title_button" qtlid="132434">Commander des règles de cache</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_title" qtlid="132434">Commander des règles de cache</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step1_tarif" qtlid="132213">Tarification :</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step1_tarif2" qtlid="132447">{0} HT / mois pour {1} règles de cache</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step2_durations" qtlid="132460">Commander {0} règles de cache supplémentaires pendant :</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step2_duration_total" qtlid="132265">{0} mois : total {1} HT</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step3_question" qtlid="183684">Ajout de {0} règles de cache supplémentaires sur le CDN <span class="italic normal">{1}</span></translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step3_id" qtlid="169472">Afin de confirmer votre demande, veuillez accepter les conditions d'utilisation et cliquer sur le bouton "Suivant" ci-dessous.</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step3_totalHT" qtlid="169238">Prix:</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step3_totalTTC" qtlid="169251">Prix:</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step3_contracts" qtlid="169485">Je reconnais avoir bien pris connaissance</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step3_contracts_of" qtlid="130243">des</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step3_contracts_and" qtlid="169498">et</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step4_generation_bc" qtlid="169511">Génération du bon de commande ...</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step4_bc" qtlid="169524">Le bon de commande a été généré avec succès.</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step4_continue" qtlid="169537">Afin de confirmer votre commande, veuillez cliquer sur le bouton "Régler" ci-dessous.</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step4_explication" qtlid="132291">Veuillez noter qu'un délai d'environ 2 heures à compter de l'acceptation de votre paiement est nécessaire pour que l'activation de l'option soit prise en compte dans votre Espace Client Dédié.</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_step4_explication2" qtlid="167886">Un nouvel onglet s'ouvrira et vous serez automatiquement redirigé(e) vers l'interface de paiement OVH.</translation>
+   <translation id="cdn_configuration_cacherules_upgrade_fail" qtlid="132304">Une erreur est survenue lors du chargement des données</translation>
+   <translation id="cdn_domain_configuration_purge_title_button" qtlid="125660">Purger le cache</translation>
+   <translation id="cdn_domain_configuration_bypass_title_button" qtlid="125672">Bypass CDN</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_title_button" qtlid="125696">Créer une nouvelle règle</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_title" qtlid="125696">Créer une nouvelle règle</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_step1_question" qtlid="132486">Vous souhaitez créer une règle de cache?</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_step1_information_FILE" qtlid="147529">La règle doit être préfixée d'un '/' et contenir une extension d'au moins 2 caractères.</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_step1_information_EXTENSION" qtlid="147542">La règle doit être préfixée d'un '.' et être composée d'au moins 2 caractères et d'au plus 4.</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_step1_information_FOLDER" qtlid="147555">La règle doit au minimum être préfixée d'un '/'.</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_cachetype" qtlid="132499">Mise en cache :</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_cachetype_NO_CACHE" qtlid="8770">Jamais</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_cachetype_FORCE_CACHE" qtlid="126260">Toujours</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_filematch" qtlid="132512">Règle :</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_filetype_default" qtlid="132525">Choississez le type de règle</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_filetype_FILE" qtlid="73601">Fichier</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_filetype_EXTENSION" qtlid="94231">Extension</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_filetype_FOLDER" qtlid="126248">Dossier</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_filetype" qtlid="105875">Type :</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_ttl" qtlid="132538">Temps de vie (TTL) :</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_ttl_unit" qtlid="133825">(en secondes)</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_step2_question" qtlid="132551">Vous allez créer la règle de cache suivante :</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_success" qtlid="142926">La nouvelle règle de cache sera créée.</translation>
+   <translation id="cdn_domain_configuration_cacherule_create_fail" qtlid="132577">Une erreur est survenue lors de la demande de création d'une règle de cache</translation>
+   <translation id="cdn_domain_configuration_reactive_title_button" qtlid="125684">Couper le bypass CDN</translation>
+   <translation id="cdn_domain_configuration_change_backend_title_button" qtlid="132590">Changer de back-end</translation>
+   <translation id="cdn_domain_configuration_change_backend_title" qtlid="132590">Changer de back-end</translation>
+   <translation id="cdn_domain_configuration_change_backend_step1_question" qtlid="132603">Vous souhaitez modifier le back-end du domaine {0}?</translation>
+   <translation id="cdn_domain_configuration_change_backend_step1_current" qtlid="132616">Back-end actuel :</translation>
+   <translation id="cdn_domain_configuration_change_backend_step1_existing" qtlid="133877">Utiliser un back-end existant:</translation>
+   <translation id="cdn_domain_configuration_change_backend_step1_new" qtlid="132629">Nouveau back-end :</translation>
+   <translation id="cdn_domain_configuration_change_backend_step1_full" qtlid="133890">Votre pool de back-end est complet, cet ajout requiert 1 back-end supplémentaire.</translation>
+   <translation id="cdn_domain_configuration_change_backend_step1_full_buy" qtlid="133981">Commander des back-ends</translation>
+   <translation id="cdn_domain_configuration_change_backend_step2_question" qtlid="132642">Voici les nouveaux paramètres qui vont être appliqué à votre domaine {0} :</translation>
+   <translation id="cdn_domain_configuration_change_backend_step2_current" qtlid="132616">Back-end actuel :</translation>
+   <translation id="cdn_domain_configuration_change_backend_step2_new" qtlid="132629">Nouveau back-end :</translation>
+   <translation id="cdn_domain_configuration_change_backend_success" qtlid="132655">Le back-end du domaine {0} va être modifié.</translation>
+   <translation id="cdn_domain_configuration_change_backend_fail" qtlid="132668">Une erreur est survenue lors de la modification du back-end</translation>
+   <translation id="cdn_domain_configuration_delete_title_button" qtlid="8470">Supprimer le domaine</translation>
+   <translation id="cdn_domain_configuration_cname" qtlid="129847">CNAME</translation>
+   <translation id="cdn_configuration_cacherule_flush_title_button" qtlid="135814">Purger la règle</translation>
+   <translation id="cdn_configuration_flush_confirmation" qtlid="183697">Vous souhaitez purger la règle de cache {0}? <br/> Cette action force l'expiration des contenus statiques dans l'ensemble des POP.</translation>
+   <translation id="cdn_configuration_flush_rule_success" qtlid="126964">Une tâche a été créée. L'opération sera effective dans un délai de 10 minutes environ.</translation>
+   <translation id="cdn_configuration_add_rule_error" qtlid="135905">Un erreur est survenue lors de la demande de purge de la règle {0}.</translation>
+   <translation id="cdn_configuration_cacherule_update_title_button" qtlid="125888">Modifier la règle</translation>
+   <translation id="cdn_configuration_cacherule_update_title" qtlid="125888">Modifier la règle</translation>
+   <translation id="cdn_configuration_cacherule_update_step1_question" qtlid="132681">Vous souhaitez modifier la règle de cache {0}?</translation>
+   <translation id="cdn_configuration_cacherule_update_step1_current" qtlid="132694">TTL actuel :</translation>
+   <translation id="cdn_configuration_cacherule_update_step1_new" qtlid="178991">Nouveau TTL :</translation>
+   <translation id="cdn_configuration_cacherule_update_step1_info" qtlid="178926">Note : La modification d'une règle désactivée l'a réactive.</translation>
+   <translation id="cdn_configuration_cacherule_update_step2_summary" qtlid="132720">Résumé :</translation>
+   <translation id="cdn_configuration_cacherule_update_step2_old_ttl" qtlid="132733">Ancien ttl :</translation>
+   <translation id="cdn_configuration_cacherule_update_step2_new_ttl" qtlid="132746">Nouveau ttl :</translation>
+   <translation id="cdn_configuration_cacherule_update_success" qtlid="132759">La règle de cache va être modifiée</translation>
+   <translation id="cdn_configuration_cacherule_update_fail" qtlid="132772">Une erreur est survenue lors de la demande de modification de la règle de cache.</translation>
+   <translation id="cdn_configuration_cacherule_deactivate_title_button" qtlid="121891">Désactiver la règle</translation>
+   <translation id="cdn_configuration_cacherule_deactivate_title" qtlid="121891">Désactiver la règle</translation>
+   <translation id="cdn_configuration_cacherule_deactivate_question" qtlid="132785">Voulez vous désactiver la règle de cache {0} ?</translation>
+   <translation id="cdn_configuration_cacherule_deactivate_success" qtlid="132798">La règle de cache va être désactivée</translation>
+   <translation id="cdn_configuration_cacherule_deactivate_fail" qtlid="132811">Une erreur est survenue lors de la demande de désactivation de la règle de cache.</translation>
+   <translation id="cdn_configuration_cacherule_activate_title_button" qtlid="125900">Activer la règle</translation>
+   <translation id="cdn_configuration_cacherule_activate_title" qtlid="125900">Activer la règle</translation>
+   <translation id="cdn_configuration_cacherule_activate_question" qtlid="132824">Voulez vous activer la règle de cache {0}?</translation>
+   <translation id="cdn_configuration_cacherule_activate_success" qtlid="132837">La règle de cache va être activée</translation>
+   <translation id="cdn_configuration_cacherule_activate_fail" qtlid="132850">Une erreur est survenue lors de la demande d'activation de la règle de cache.</translation>
+   <translation id="cdn_configuration_allcacherule_deactivate_title_button" qtlid="125732">Désactiver toutes les règles</translation>
+   <translation id="cdn_configuration_allcacherule_deactivate_title" qtlid="125732">Désactiver toutes les règles</translation>
+   <translation id="cdn_configuration_allcacherule_deactivate_question" qtlid="132863">Voulez vous désactiver toutes les règles de cache?</translation>
+   <translation id="cdn_configuration_allcacherule_deactivate_success" qtlid="132876">Les règles de cache vont être désactivées</translation>
+   <translation id="cdn_configuration_allcacherule_deactivate_partial" qtlid="179485">Les règles de cache vont être désactivées mais suite à une erreur, d'autre sont toujours actives</translation>
+   <translation id="cdn_configuration_allcacherule_deactivate_fail" qtlid="132889">Une erreur est survenue lors de la demande de désactivation des règles de cache.</translation>
+   <translation id="cdn_configuration_allcacherule_activate_title_button" qtlid="125744">Activer toutes les règles</translation>
+   <translation id="cdn_configuration_allcacherule_activate_title" qtlid="125720">Activer toutes les règles de cache</translation>
+   <translation id="cdn_configuration_allcacherule_activate_question" qtlid="132902">Voulez vous activer toutes les règles de cache?</translation>
+   <translation id="cdn_configuration_allcacherule_activate_partial" qtlid="179498">Les règles de cache vont être activées mais suite à une erreur, d'autre sont toujours inactives</translation>
+   <translation id="cdn_configuration_allcacherule_activate_success" qtlid="132915">Les règles de cache vont être activées</translation>
+   <translation id="cdn_configuration_allcacherule_activate_fail" qtlid="132928">Une erreur est survenue lors de la demande d'activation des règles de cache.</translation>
+   <translation id="cdn_configuration_delete_cacherule_title_button" qtlid="125912">Supprimer la règle</translation>
+   <translation id="cdn_configuration_delete_cacherule_title" qtlid="125912">Supprimer la règle</translation>
+   <translation id="cdn_configuration_delete_cacherule_question" qtlid="132941">Voulez vous supprimer la règle de cache {0}?</translation>
+   <translation id="cdn_configuration_delete_cacherule_success" qtlid="132954">La règle de cache va être supprimée</translation>
+   <translation id="cdn_configuration_delete_cacherule_fail" qtlid="132967">Une erreur est survenue lors de la demande de suppression de la règle de cache.</translation>
+   <translation id="cdn_domain_tab_rule" qtlid="125768">Règles de cache</translation>
+   <translation id="cdn_domain_tab_statistics" qtlid="26671">Statistiques</translation>
+   <translation id="cdn_tab_statistics" qtlid="26671">Statistiques</translation>
+   <translation id="cdn_tab_ssl" qtlid="84921">SSL</translation>
+   <translation id="cdn_cacherule_search_placeholder" qtlid="178939">Rechercher une règle</translation>
+   <translation id="cdn_cacherule_table_empty" qtlid="132980">Vous n'avez aucune règle de cache</translation>
+   <translation id="cdn_cacherule_table_search_empty" qtlid="178952">Aucune règle trouvé</translation>
+   <translation id="cdn_cacherule_table_header_filetype" qtlid="2642">Type</translation>
+   <translation id="cdn_cacherule_table_header_rule" qtlid="54917">Règle</translation>
+   <translation id="cdn_cacherule_table_header_ttl" qtlid="121747">TTL</translation>
+   <translation id="cdn_cacherule_table_header_cachetype" qtlid="125780">Mise en cache</translation>
+   <translation id="cdn_cacherule_table_header_state" qtlid="8230">État</translation>
+   <translation id="cdn_cacherule_EXTENSION" qtlid="94231">Extension</translation>
+   <translation id="cdn_cacherule_FOLDER" qtlid="126248">Dossier</translation>
+   <translation id="cdn_cacherule_FILE" qtlid="73601">Fichier</translation>
+   <translation id="cdn_cacherule_NO_CACHE" qtlid="8770">Jamais</translation>
+   <translation id="cdn_cacherule_FORCE_CACHE" qtlid="126260">Toujours</translation>
+   <translation id="cdn_cacherule_status_CREATING" qtlid="26227">En création</translation>
+   <translation id="cdn_cacherule_status_DELETING" qtlid="133929">En suppression</translation>
+   <translation id="cdn_cacherule_status_ERROR" qtlid="26407">Erreur</translation>
+   <translation id="cdn_cacherule_status_OFF" qtlid="24967">Désactivé</translation>
+   <translation id="cdn_cacherule_status_ON" qtlid="30250">Activé</translation>
+   <translation id="cdn_cacherule_status_UPDATING" qtlid="133942">En mise à jour</translation>
+   <translation id="cdn_configuration_flush_domain_title" qtlid="125660">Purger le cache</translation>
+   <translation id="cdn_configuration_flush_domain_confirmation" qtlid="183710">Vous souhaitez purger l'ensemble du cache du domaine {0}? <br/> Cette action force l'expiration des contenus statiques dans l'ensemble des POP.</translation>
+   <translation id="cdn_configuration_flush_domain_success" qtlid="126964">Une tâche a été créée. L'opération sera effective dans un délai de 10 minutes environ.</translation>
+   <translation id="cdn_configuration_flush_domain_error" qtlid="133006">Un erreur est survenue lors de la demande de purge du domaine {0}.</translation>
+   <translation id="cdn_configuration_bypass_domain_title" qtlid="125804">Bypasser le CDN</translation>
+   <translation id="cdn_configuration_bypass_domain_confirmation" qtlid="183723">Vous souhaitez contourner temporairement le réseau CDN pour le domaine <b>{0}</b>? <br/> Cette action désactivera l'accélération et la sécurité du CDN.</translation>
+   <translation id="cdn_configuration_reactive_domain_title" qtlid="125684">Couper le bypass CDN</translation>
+   <translation id="cdn_configuration_reactive_domain_confirmation" qtlid="183736">Vous souhaitez réactiver le domaine <b>{0}</b> sur le réseau CDN?</translation>
+   <translation id="cdn_domain_configuration_update_success" qtlid="133045">La mise à jour du bypass pour le domaine {0} sera effectif dans quelques instants.</translation>
+   <translation id="cdn_domain_configuration_update_fail" qtlid="133058">Une erreur est survenue lors de la modification du bypass du domaine {0}</translation>
+   <translation id="cdn_configuration_delete_ssl_title" qtlid="22759">Supprimer le certificat</translation>
+
+   <translation id="cdn_configuration_update_ssl_title" qtlid="400951">Remplacer par mon certificat</translation>
+   <translation id="cdn_configuration_update_ssl_step1" qtlid="133201">Veuillez saisir les informations relatives au certificat :</translation>
+   <translation id="cdn_configuration_update_ssl_step2" qtlid="133214">Vous allez ajouter le certificat suivant :</translation>
+   <translation id="cdn_configuration_update_ssl_success" qtlid="244869">Le certificat SSL sera modifié sous peu.</translation>
+   <translation id="cdn_configuration_update_ssl_fail" qtlid="244882">Une erreur est survenue lors de la modification du certificat SSL</translation>
+
+   <translation id="cdn_configuration_generate_ssl_title" qtlid="400964">Générer un certificat Let's Encrypt</translation>
+   <translation id="cdn_configuration_generate_ssl_step1" qtlid="400977">Veuillez saisir le nom du certificat :</translation>
+   <translation id="cdn_configuration_generate_ssl_step2" qtlid="400990">Vous allez générer un certificat Let's Encrypt managé par OVH.</translation>
+   <translation id="cdn_configuration_generate_ssl_step3" qtlid="401003">ATTENTION: Le certificat actuellement installé sur votre CDN sera effacé et remplacé par celui-ci.</translation>
+   <translation id="cdn_configuration_generate_ssl_success" qtlid="401016">Le certificat SSL sera installé sous peu.</translation>
+   <translation id="cdn_configuration_generate_ssl_fail" qtlid="401029">Une erreur est survenue lors de la génération du certificat SSL.</translation>
+
+   <translation id="cdn_configuration_add_ssl_get_error" qtlid="237724">Une erreur est survenue lors du chargement des informations de sécurité</translation>
+   <translation id="cdn_configuration_add_ssl_title" qtlid="401042">Ajouter mon certificat</translation>
+   <translation id="cdn_configuration_ssl_state_ERROR" qtlid="26407">Erreur</translation>
+   <translation id="cdn_configuration_ssl_state_CANCELLED" qtlid="233404">Annulation en cours...</translation>
+   <translation id="cdn_configuration_ssl_state_CHECKING" qtlid="144292">En vérification</translation>
+   <translation id="cdn_configuration_ssl_state_OFF" qtlid="24967">Désactivé</translation>
+   <translation id="cdn_configuration_ssl_state_ON" qtlid="30250">Activé</translation>
+   <translation id="cdn_configuration_ssl_state_REMOVING" qtlid="133929">En suppression</translation>
+   <translation id="cdn_configuration_ssl_state_UPLOADING" qtlid="144305">Téléchargement en cours</translation>
+   <translation id="cdn_configuration_ssl_state_UPDATING" qtlid="26863">Mise à jour</translation>
+   <translation id="cdn_configuration_ssl_state_CREATING" qtlid="401055">Certificat Let's Encrypt en cours de création</translation>
+   <translation id="cdn_configuration_no_ssl" qtlid="144318">Un certificat SSL n'a pas encore été associé au CDN.</translation>
+   <translation id="cdn_configuration_ssl_name" qtlid="133097">Nom du certificat</translation>
+   <translation id="cdn_configuration_ssl_cn" qtlid="133110">Domaine associé</translation>
+   <translation id="cdn_configuration_ssl_status" qtlid="8230">État</translation>
+   <translation id="cdn_configuration_ssl_certificateValidFrom" qtlid="133123">Crée le</translation>
+   <translation id="cdn_configuration_ssl_certificateValidTo" qtlid="133136">Valable jusqu'au</translation>
+   <translation id="cdn_configuration_ssl_provider_custom" qtlid="50062">Personnalisé</translation>
+   <translation id="cdn_configuration_ssl_provider_letsencrypt" qtlid="401068">Let's Encrypt managé par OVH</translation>
+   <translation id="cdn_configuration_ssl_certificateProvider" qtlid="2642">Type</translation>
+   <translation id="cdn_configuration_ssl_certificate" qtlid="19771">Certificat</translation>
+   <translation id="cdn_configuration_ssl_key" qtlid="104326">Clé</translation>
+   <translation id="cdn_configuration_ssl_chain" qtlid="133149">Chaine</translation>
+   <translation id="cdn_configuration_ssl_delete_confirmation" qtlid="183749">Etes-vous certain(e) de vouloir supprimer le certificat <b>{0}</b>?</translation>
+   <translation id="cdn_configuration_delete_ssl_success" qtlid="133175">Une tâche a été créée. L'opération sera effective dans un délai de 15 minutes environ.</translation>
+   <translation id="cdn_configuration_delete_ssl_fail" qtlid="133188">Une erreur est survenue lors de la suppression du certificat {0}.</translation>
+   <translation id="cdn_configuration_ssl_add_step1" qtlid="133201">Veuillez saisir les informations relatives au certificat :</translation>
+   <translation id="cdn_configuration_ssl_add_step2" qtlid="133214">Vous allez ajouter le certificat suivant :</translation>
+   <translation id="cdn_configuration_add_ssl_success" qtlid="133955">Le certificat SSL sera activé sous peu.</translation>
+   <translation id="cdn_configuration_add_ssl_fail" qtlid="179602">Une erreur est survenue lors de l'ajout du certificat SSL</translation>
+   <translation id="cdn_configuration_order_quota_title" qtlid="127120">Acheter de la bande passante</translation>
+   <translation id="cdn_configuration_order_quota_step1_pricing" qtlid="133253">Tarification</translation>
+   <translation id="cdn_configuration_order_quota_step1_price" qtlid="133266">{0} pour {1} To de bande passante</translation>
+   <translation id="cdn_configuration_order_quota_step1_fail" qtlid="132304">Une erreur est survenue lors du chargement des données</translation>
+   <translation id="cdn_configuration_order_quota_step2_question" qtlid="133279">Acheter {0} To de bande passante supplémentaire sur le CDN {1}</translation>
+   <translation id="cdn_configuration_order_quota_step2_totalWithoutTax" qtlid="133292">Prix HT</translation>
+   <translation id="cdn_configuration_order_quota_step2_totalWithTax" qtlid="133305">Prix TTC</translation>
+   <translation id="cdn_configuration_order_quota_step2_informations" qtlid="169472">Afin de confirmer votre demande, veuillez accepter les conditions d'utilisation et cliquer sur le bouton "Suivant" ci-dessous.</translation>
+   <translation id="cdn_configuration_order_quota_step2_contracts" qtlid="169485">Je reconnais avoir bien pris connaissance</translation>
+   <translation id="cdn_configuration_order_quota_step2_contracts_of" qtlid="130243">des</translation>
+   <translation id="cdn_configuration_order_quota_step2_contracts_and" qtlid="169498">et</translation>
+   <translation id="cdn_configuration_order_quota_step3_bc_loading" qtlid="169511">Génération du bon de commande ...</translation>
+   <translation id="cdn_configuration_order_quota_step3_confirmation" qtlid="169524">Le bon de commande a été généré avec succès.</translation>
+   <translation id="cdn_configuration_order_quota_step3_continue" qtlid="169537">Afin de confirmer votre commande, veuillez cliquer sur le bouton "Régler" ci-dessous.</translation>
+   <translation id="cdn_configuration_order_quota_step3_explanation" qtlid="167886">Un nouvel onglet s'ouvrira et vous serez automatiquement redirigé(e) vers l'interface de paiement OVH.</translation>
+   <translation id="cdn_configuration_order_quota_step3_explanation2" qtlid="132291">Veuillez noter qu'un délai d'environ 2 heures à compter de l'acceptation de votre paiement est nécessaire pour que l'activation de l'option soit prise en compte dans votre Espace Client Dédié.</translation>
+   <translation id="cdn_configuration_order_quota_step3_fail" qtlid="133318">Une erreur est survenue lors de l'édition du bon de commande</translation>
+   <translation id="cnd_stats_filters_visualize" qtlid="125648">Visualiser</translation>
+   <translation id="cnd_stats_filters_from" qtlid="446949">de</translation>
+   <translation id="cnd_stats_filters_to" qtlid="121615">sur</translation>
+   <translation id="cdn_stats_period_day" qtlid="126844">24 dernières heures</translation>
+   <translation id="cdn_stats_period_month" qtlid="99632">30 derniers jours</translation>
+   <translation id="cdn_stats_period_week" qtlid="126856">7 derniers jours</translation>
+   <translation id="cdn_stats_title_text_bandwidth" qtlid="38565">Bande passante</translation>
+   <translation id="cdn_stats_title_text_quota" qtlid="6874">Quota</translation>
+   <translation id="cdn_stats_title_text_request" qtlid="126868">Requêtes</translation>
+   <translation id="cdn_stats_y_axis_text_bandwidth" qtlid="38565">Bande passante</translation>
+   <translation id="cdn_stats_y_axis_text_quota" qtlid="6874">Quota</translation>
+   <translation id="cdn_stats_y_axis_text_request" qtlid="126916">Nb. de requêtes</translation>
+   <translation id="cdn_stats_no_graph_datas" qtlid="128631">Aucune donnée n'est actuellement disponible.</translation>
+   <translation id="cdn_stats_legend_bandwidth_cdn" qtlid="127770">Depuis le cache CDN</translation>
+   <translation id="cdn_stats_legend_bandwidth_backend" qtlid="127782">Depuis l'hébergement</translation>
+   <translation id="cdn_stats_legend_quota_cdn" qtlid="127794">Bande passante restante</translation>
+   <translation id="cdn_stats_legend_request_cdn" qtlid="127770">Depuis le cache CDN</translation>
+   <translation id="cdn_stats_legend_request_backend" qtlid="127782">Depuis l'hébergement</translation>
+   <translation id="cdn_stats_make_choices" qtlid="128643">Veuillez sélectionner un CDN ou un domaine</translation>
+   <translation id="cdn_stats_type_BANDWIDTH" qtlid="38565">Bande passante</translation>
+   <translation id="cdn_stats_type_QUOTA" qtlid="6874">Quota</translation>
+   <translation id="cdn_stats_type_REQUEST" qtlid="126868">Requêtes</translation>
+   <translation id="cdn_statistics_visualize" qtlid="125648">Visualiser</translation>
+   <translation id="cdn_statistics_from" qtlid="446962">de</translation>
+   <translation id="cdn_statistics_to" qtlid="121615">sur</translation>
+   <translation id="cdn_statistics_period_DAY" qtlid="126844">24 dernières heures</translation>
+   <translation id="cdn_statistics_period_MONTH" qtlid="99632">30 derniers jours</translation>
+   <translation id="cdn_statistics_period_WEEK" qtlid="126856">7 derniers jours</translation>
+</translations>
