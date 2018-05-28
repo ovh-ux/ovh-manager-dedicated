@@ -1,4 +1,4 @@
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.doubleAuth.sms.delete", [
+angular.module("UserAccount").controller("UserAccount.controllers.doubleAuth.sms.delete", [
     "$rootScope",
     "$scope",
     "$q",

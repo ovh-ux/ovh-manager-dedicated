@@ -1,4 +1,4 @@
-angular.module("UserAccount.directives").directive("sshkeySwitch", [
+angular.module("UserAccount").directive("sshkeySwitch", [
     "sshkey-regex",
     function (SSHKEY_REGEX) {
         "use strict";

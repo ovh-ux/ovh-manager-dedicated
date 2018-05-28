@@ -1,4 +1,4 @@
-angular.module("UserAccount.services").service("UserAccount.services.doubleAuth.backupCode", function (OvhHttp) {
+angular.module("UserAccount").service("UserAccount.services.doubleAuth.backupCode", function (OvhHttp) {
     "use strict";
 
     /**

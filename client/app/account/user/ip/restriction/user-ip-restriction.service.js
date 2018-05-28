@@ -1,4 +1,4 @@
-angular.module("UserAccount.services").service("UserAccount.services.ipRestrictions", [
+angular.module("UserAccount").service("UserAccount.services.ipRestrictions", [
     "$http",
     "$q",
     function ($http, $q) {
