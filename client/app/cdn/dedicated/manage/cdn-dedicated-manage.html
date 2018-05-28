@@ -9,48 +9,8 @@
     <div data-ng-if="!$ctrl.loading">
         <!-- Header -->
         <div class="page-header">
-            <div class="row">
-                <div class="col-sm-9">
-                    <h1 class="word-break mb-0"
-                        data-ng-bind="$ctrl.cdn.serviceName">
-                    </h1>
-                </div>
-                <div class="col-sm-3 d-flex">
-                    <div class="btn-group ml-auto mt-4">
-                        <button type="button"
-                                class="oui-button oui-button_dropdown mb-0"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                                data-toggle="dropdown">
-                            <span data-translate="common_actions"></span>
-                            <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li>
-                                <button type="button"
-                                        class="btn btn-block btn-link"
-                                        data-ng-click="setAction('domain/add/cdn-dedicated-domain-add')"
-                                        data-translate="cdn_configuration_add_domain_title_button">
-                                </button>
-                            </li>
-                            <li>
-                                <button type="button"
-                                        class="btn btn-block btn-link"
-                                        data-ng-click="setAction('domain/rule/order/cdn-dedicated-domain-rule-order')"
-                                        data-translate="cdn_configuration_cacherules_upgrade_title_button">
-                                </button>
-                            </li>
-                            <li>
-                                <button type="button"
-                                        class="btn btn-block btn-link"
-                                        data-ng-click="setAction('quota/order/cdn-dedicated-quota-order')"
-                                        data-translate="cdn_configuration_order_quota_title">
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <h1 class="word-break mb-0 oui-header-2"
+                data-ng-bind="$ctrl.cdn.serviceName">
         </div> <!-- End of Header -->
 
         <!-- Tabs -->
