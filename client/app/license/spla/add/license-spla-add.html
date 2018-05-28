@@ -1,5 +1,5 @@
 <div data-wizard
-     data-wizard-on-cancel="$ctrl.close.bind($ctrl)"
+     data-wizard-on-cancel="$ctrl.endAction.bind($ctrl)"
      data-wizard-on-finish="$ctrl.addSpla.bind($ctrl)"
      data-wizard-title=":: 'license_spla_add_title' | translate"
      data-wizard-bread-crumb>
@@ -9,11 +9,11 @@
          data-wizard-step-on-load="$ctrl.load.bind($ctrl)">
 
         <div class="text-center"
-             data-ng-show="!$ctrl.options.availableServers">
+             data-ng-if="!$ctrl.options.availableServers">
             <oui-spinner></oui-spinner>
         </div>
 
-        <div data-ng-show="$ctrl.options.availableServers.length">
+        <div data-ng-if="$ctrl.options.availableServers.length">
             <p class="font-weight-bold"
                data-translate="license_spla_add_step1_question">
             </p>
@@ -25,7 +25,7 @@
                 <select class="form-control"
                         id="availableServers"
                         name="availableServers"
-                        data-ng-options="type for type in $ctrl.options.availableServers"
+                        data-ng-options="type for type in $ctrl.options.availableServers track by type"
                         data-ng-model="$ctrl.selected.server">
                     <option selected="selected"
                             value=""
@@ -37,7 +37,7 @@
         </div>
 
         <p class="text-danger"
-           data-ng-show="$ctrl.options.availableServers.length != null && !$ctrl.options.availableServers.length"
+           data-ng-if="model.options.availableServers != null && !model.options.availableServers.length"
            data-translate="license_spla_add_step1_server_unavailable">
         </p>
 
@@ -52,16 +52,16 @@
         </p>
 
         <div class="text-center"
-             data-ng-show="!$ctrl.options.availableTypes">
+             data-ng-if="!$ctrl.options.availableTypes">
             <oui-spinner></oui-spinner>
         </div>
 
         <p class="text-danger"
-           data-ng-show="$ctrl.options.availableTypes && $ctrl.options.availableTypes.length === 0"
+           data-ng-if="$ctrl.options.availableTypes && $ctrl.options.availableTypes.length === 0"
            data-translate="license_spla_add_step2_no_space_left">
         </p>
 
-        <div data-ng-show="$ctrl.options.availableTypes && $ctrl.options.availableTypes.length > 0">
+        <div data-ng-if="$ctrl.options.availableTypes && $ctrl.options.availableTypes.length > 0">
             <!-- availableTypes -->
             <div class="form-group">
                 <label for="availableTypes"
@@ -71,7 +71,7 @@
                 <select class="form-control"
                         id="availableTypes"
                         name="availableTypes"
-                        data-ng-options="type as (('license_spla_add_common_type_' + type) | translate) for type in $ctrl.options.availableTypes"
+                        data-ng-options="type as (('license_spla_add_common_type_' + type) | translate) for type in $ctrl.options.availableTypes track by type"
                         data-ng-model="$ctrl.selected.type">
                     <option selected="selected"
                             value=""

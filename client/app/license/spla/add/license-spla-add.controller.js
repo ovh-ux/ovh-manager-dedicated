@@ -20,19 +20,21 @@ angular.module("Module.license").controller("LicenseSplaAddCtrl", class LicenseS
         };
     }
 
+    endAction (alert, message) {
+        this.$state.go("^").then(() => {
+            this.Alerter.alertFromSWS(alert, message);
+        });
+    }
+
     addSpla () {
         this.License.splaAdd(this.selected.server, { serialNumber: this.selected.serial, type: this.selected.type }).then(
             () => {
-                this.Alerter.alertFromSWS(this.$translate.instant("license_spla_add_success"), true);
+                this.endAction(this.$translate.instant("license_spla_add_success"), true);
             },
             ({ data }) => {
-                this.Alerter.alertFromSWS(this.$translate.instant("license_spla_add_fail"), data);
+                this.endAction(this.$translate.instant("license_spla_add_fail"), data);
             }
         );
-    }
-
-    close () {
-        this.$state.go("^");
     }
 
     load () {
@@ -41,9 +43,7 @@ angular.module("Module.license").controller("LicenseSplaAddCtrl", class LicenseS
                 this.options = data;
             },
             ({ data }) => {
-                this.$state.go("^").then(() => {
-                    this.Alerter.alertFromSWS(this.$translate.instant("license_spla_add_step1_loading_error"), data);
-                });
+                this.endAction(this.$translate.instant("license_spla_add_step1_loading_error"), data);
             }
         );
     }
@@ -56,9 +56,7 @@ angular.module("Module.license").controller("LicenseSplaAddCtrl", class LicenseS
                 angular.extend(this.options, data);
             },
             ({ data }) => {
-                this.$state.go("^").then(() => {
-                    this.Alerter.alertFromSWS(this.$translate.instant("license_spla_add_step1_loading_error"), data);
-                });
+                this.endAction(this.$translate.instant("license_spla_add_step1_loading_error"), data);
             }
         );
     }
