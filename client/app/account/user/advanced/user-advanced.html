@@ -1,83 +1,86 @@
-<div class="module-useraccount-sections-advanced-container">
-
+<div class="useraccount-advanced">
     <div class="page-header">
         <h1 data-translate="user_account_advanced_section_title"></h1>
     </div>
-
+    <!-- /.page-header -->
     <div class="tab-content">
         <div class="row d-md-flex">
             <div class="col-md-10 col-lg-8 mx-md-auto">
                 <div data-ovh-alert="useraccount.alerts.dashboardAdvanced"></div>
-
                 <h2 data-translate="user_account_advanced_section_developer_title"></h2>
-
-                <form>
-                    <div class="row my-5">
-                        <div class="col-xs-12 col-md-4 text-center">
-                            <span class="fa fa-desktop fa-3x d-inline-block mb-3"
-                                  aria-hidden="true">
-                            </span>
-                            <div data-ng-bind-html="'user_account_advanced_section_developer_interface_opensource' | translate "></div>
-                        </div>
-                        <div class="col-xs-12 col-md-4 text-center">
-                            <span class="fa fa-puzzle-piece fa-3x d-inline-block mb-3"
-                                  aria-hidden="true">
-                            </span>
-                            <div data-ng-bind-html="'user_account_advanced_section_developer_component_library' | translate "></div>
-                        </div>
-                        <div class="col-xs-12 col-md-4 text-center">
-                            <span class="fa fa-code fa-3x d-inline-block mb-3"
-                                  aria-hidden="true">
-                            </span>
-                            <div data-ng-bind-html="'user_account_advanced_section_developer_api' | translate "></div>
-                        </div>
+                <div class="row my-5">
+                    <div class="col-md-4 text-center">
+                        <span class="fa fa-desktop fa-3x d-inline-block mb-3"
+                              aria-hidden="true">
+                        </span>
+                        <div data-ng-bind-html="'user_account_advanced_section_developer_interface_opensource' | translate "></div>
                     </div>
-
-                    <div class="oui-box oui-box_light">
-                        <label class="oui-switch oui-switch-toggle align-bottom mb-0 mr-4">
+                    <div class="col-md-4 text-center">
+                        <span class="fa fa-puzzle-piece fa-3x d-inline-block mb-3"
+                              aria-hidden="true">
+                        </span>
+                        <div data-ng-bind-html="'user_account_advanced_section_developer_component_library' | translate "></div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span class="fa fa-code fa-3x d-inline-block mb-3"
+                              aria-hidden="true">
+                        </span>
+                        <div data-ng-bind-html="'user_account_advanced_section_developer_api' | translate "></div>
+                    </div>
+                </div>
+                <div class="oui-box oui-box_light">
+                    <div class="text-center">
+                        <oui-spinner class="align-bottom"
+                                     data-ng-if="$ctrl.isLoading"
+                                     data-size="s">
+                        </oui-spinner>
+                    </div>
+                    <form>
+                        <label class="oui-switch oui-switch-toggle align-bottom mb-0 mr-4"
+                               data-ng-if="!$ctrl.isLoading">
                             <input type="checkbox"
                                    id="ovhMagSubscription"
                                    class="oui-switch oui-switch__checkbox"
-                                   data-ng-model="$ctrl.developmentMode.enabled"
-                                   data-ng-change="$ctrl.updateDevelopmentMode()"
-                                   data-ng-disabled="$ctrl.isLoadingDeveloperMode" />
+                                   data-ng-model="$ctrl.developerModeRestriction.enabled"
+                                   data-ng-change="$ctrl.updateDeveloperModeRestriction()"
+                                   data-ng-disabled="$ctrl.isUpdating" />
                             <div class="oui-switch__slider"></div>
                             <span class="oui-icon oui-icon-success" aria-hidden="true"></span>
                             <span class="oui-icon oui-icon-error" aria-hidden="true"></span>
                         </label>
-                        <span data-translate="user_account_advanced_section_developer_label"></span>
-                    </div>
-
-                    <h3 class="mt-5"
-                        data-translate="user_account_advanced_section_developer_join_us">
-                    </h3>
-
-                    <ul class="follow-link-list list-unstyled my-5">
-                        <li class="mb-2">
-                            <span class="fa fa-2x fa-github text-center mr-2"
-                                  aria-hidden="true">
-                            </span>
-                            <a target="_blank"
-                               href="https://github.com/ovh-ux"
-                               class="align-bottom">
-                                https://github.com/ovh-ux
-                            </a>
-                        </li>
-                        <li class="mb-2">
-                            <span class="fa fa-2x fa-comments text-center mr-2"
-                                  aria-hidden="true">
-                            </span>
-                            <a target="_blank"
-                               href="https://gitter.im/ovh/ux"
-                               class="align-bottom">
-                                https://gitter.im/ovh/ux
-                            </a>
-                        </li>
-                    </ul>
-                </form>
-
+                        <span data-ng-if="!$ctrl.isLoading"
+                              data-translate="user_account_advanced_section_developer_label">
+                        </span>
+                    </form>
+                </div>
+                <h3 class="mt-5"
+                    data-translate="user_account_advanced_section_developer_join_us">
+                </h3>
+                <ul class="list-unstyled my-5">
+                    <li class="mb-2">
+                        <span class="fa fa-2x fa-github text-center mr-2 align-middle"
+                              aria-hidden="true">
+                        </span>
+                        <a target="_blank"
+                           rel="noopener"
+                           data-ng-href="{{:: $ctrl.GITHUB_ORGANIZATION_URL }}"
+                           data-ng-bind=":: $ctrl.GITHUB_ORGANIZATION_URL">
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <span class="fa fa-2x fa-comments text-center mr-2 align-middle"
+                              aria-hidden="true">
+                        </span>
+                        <a target="_blank"
+                           rel="noopener"
+                           data-ng-href="{{:: $ctrl.GITTER_URL }}"
+                           data-ng-bind=":: $ctrl.GITTER_URL">
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
-
     </div>
+    <!-- /.tab-content -->
 </div>
+<!-- /.useraccount-advanced -->
