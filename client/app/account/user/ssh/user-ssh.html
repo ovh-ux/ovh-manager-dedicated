@@ -1,5 +1,4 @@
-<div class="module-useraccount-sections-ssh-container"
-     data-ng-controller="UserAccount.controllers.ssh as ctrlSsh">
+<div class="module-useraccount-sections-ssh-container">
 
     <div class="page-header">
         <h1 data-translate="user_ssh_title"></h1>
@@ -15,9 +14,9 @@
             <p>
                 <strong data-translate="user_ssh_key_explain_1"></strong>
             </p>
-            <p data-ng-bind-html="'user_ssh_key_explain_2' | translate:{ t0: ctrlSsh.guides.sshCreate }"></p>
-            <p data-ng-if="ctrlSsh.user.ovhSubsidiary !== 'US'"
-               data-ng-bind-html="'user_ssh_key_explain_3' | translate:{ t0: ctrlSsh.guides.sshAdd, t2: ctrlSsh.guides.sshChange }">
+            <p data-ng-bind-html="'user_ssh_key_explain_2' | translate:{ t0: $ctrl.guides.sshCreate }"></p>
+            <p data-ng-if="$ctrl.user.ovhSubsidiary !== 'US'"
+               data-ng-bind-html="'user_ssh_key_explain_3' | translate:{ t0: $ctrl.guides.sshAdd, t2: $ctrl.guides.sshChange }">
             </p>
         </div>
 
@@ -28,8 +27,8 @@
                     type="button"
                     class="btn btn-primary"
                     data-uib-dropdown-toggle
-                    data-ng-disabled="ctrlSsh.sshLoading"
-                    data-ng-class="{'disabled': ctrlSsh.sshLoading}">
+                    data-ng-disabled="$ctrl.sshLoading"
+                    data-ng-class="{'disabled': $ctrl.sshLoading}">
                 <span data-translate="user_ssh_add_title_button"></span>
                 <span class="fa fa-chevron-down"
                       aria-hidden="true">
@@ -43,7 +42,7 @@
                     <button type="button"
                             class="btn btn-link"
                             data-translate="user_ssh_category_dedicated"
-                            data-ng-click="setAction('ssh/add/dedicated/user-ssh-add-dedicated', ctrlSsh.sshKeyList)">
+                            data-ng-click="setAction('ssh/add/dedicated/user-ssh-add-dedicated', $ctrl.sshKeyList)">
                     </button>
                 </li>
                 <li>
@@ -68,9 +67,9 @@
                                     aria-label="{{ :: 'user_ssh_category_filter' | translate }}"
                                     id="category-filter"
                                     class="form-control input-sm"
-                                    data-ng-model="ctrlSsh.filters.categoryFilter"
-                                    data-ng-disabled="ctrlSsh.sshLoading"
-                                    data-ng-change="ctrlSsh.onCategoryFilterChanged(ctrlSsh.filters.categoryFilter)">
+                                    data-ng-model="$ctrl.filters.categoryFilter"
+                                    data-ng-disabled="$ctrl.sshLoading"
+                                    data-ng-change="$ctrl.onCategoryFilterChanged($ctrl.filters.categoryFilter)">
                                 <option value="" data-translate="user_ssh_category_all"></option>
                                 <option value="dedicated" data-translate="user_ssh_category_dedicated"></option>
                                 <option value="cloud" data-translate="user_ssh_category_cloud"></option>
@@ -80,7 +79,7 @@
                         <th></th>
                     </tr>
                 </thead>
-                <tbody data-ng-show="ctrlSsh.sshLoading">
+                <tbody data-ng-show="$ctrl.sshLoading">
                     <tr>
                         <td colspan="6"
                             class="text-center">
@@ -88,7 +87,7 @@
                         </td>
                     </tr>
                 </tbody>
-                <tbody data-ng-show="ctrlSsh.sshKeyList.length == 0 && !ctrlSsh.sshLoading">
+                <tbody data-ng-show="$ctrl.sshKeyList.length === 0 && !$ctrl.sshLoading">
                     <tr>
                         <td colspan="6"
                             class="text-center font-italic"
@@ -96,13 +95,13 @@
                         </td>
                     </tr>
                 </tbody>
-                <tbody data-ng-show="ctrlSsh.sshKeyList.length > 0 && !ctrlSsh.sshLoading">
-                    <tr data-ng-repeat="ssh in ctrlSsh.sshKeys track by $index">
+                <tbody data-ng-show="$ctrl.sshKeyList.length > 0 && !$ctrl.sshLoading">
+                    <tr data-ng-repeat="ssh in $ctrl.sshKeys track by $index">
                         <td class="text-center">
                             <button type="button"
                                     class="btn btn-link"
                                     data-ng-if="ssh.category === 'dedicated'"
-                                    data-ng-click="ctrlSsh.setDefaultDedicatedSshKey(ssh)"
+                                    data-ng-click="$ctrl.setDefaultDedicatedSshKey(ssh)"
                                     data-ng-class="{ 'text-primary': ssh.default }"
                                     data-uib-tooltip="{{ 'user_ssh_tooltip_default_'+ssh.default | translate }}"
                                     data-tooltip-placement="right"
@@ -157,12 +156,12 @@
             </table>
 
             <div data-pagination-front
-                 data-items="ctrlSsh.sshKeyList"
-                 data-paginated-items="ctrlSsh.sshKeys"
+                 data-items="$ctrl.sshKeyList"
+                 data-paginated-items="$ctrl.sshKeys"
                  data-current-page="currentPage"
                  data-items-per-page="itemsPerPage"
                  data-nb-pages="nbPages"
-                 data-on-transform-item-done="ctrlSsh.onTransformItemDone(items)"
+                 data-on-transform-item-done="$ctrl.onTransformItemDone(items)"
                  data-page-placeholder="{{ 'pagination_page' | translate:{ t0: currentPage, t1: nbPages } }}"
                  data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
             </div>

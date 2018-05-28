@@ -1,4 +1,4 @@
-angular.module("UserAccount").controller("UserAccount.controllers.emails.details", [
+angular.module("UserAccount").controller("UserAccountEmailsDetailsController", [
     "$scope",
     "$stateParams",
     "UserAccount.services.emails",

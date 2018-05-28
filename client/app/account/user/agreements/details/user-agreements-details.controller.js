@@ -1,4 +1,4 @@
-angular.module("UserAccount").controller("UserAccount.controllers.agreements.details", [
+angular.module("UserAccount").controller("UserAccountAgreementsDetailsController", [
     "$stateParams",
     "$q",
     "$log",

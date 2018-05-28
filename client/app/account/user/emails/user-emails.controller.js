@@ -1,4 +1,4 @@
-angular.module("UserAccount").controller("UserAccount.controllers.emails", [
+angular.module("UserAccount").controller("UserAccountEmailsController", [
     "$q",
     "$location",
     "$scope",

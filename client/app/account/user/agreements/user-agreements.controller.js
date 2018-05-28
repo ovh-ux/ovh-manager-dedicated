@@ -1,4 +1,4 @@
-angular.module("UserAccount").controller("UserAccount.controllers.agreements", [
+angular.module("UserAccount").controller("UserAccountAgreementsController", [
     "$scope",
     "$translate",
     "UserAccount.services.agreements",

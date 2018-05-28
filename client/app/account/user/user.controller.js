@@ -1,4 +1,4 @@
-angular.module("UserAccount").controller("UserAccount.controllers.main", [
+angular.module("UserAccount").controller("UserAccountController", [
     "$scope",
     "$window",
     "$location",

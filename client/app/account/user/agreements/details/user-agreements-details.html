@@ -1,5 +1,4 @@
-<div data-ng-controller="UserAccount.controllers.agreements.details as ctrl"
-     class="module-useraccount-sections-agreements-container">
+<div class="module-useraccount-sections-agreements-container">
 
     <div class="page-header">
         <h1 data-translate="user_agreement_details_title"></h1>
@@ -18,11 +17,11 @@
         <div data-ovh-alert="agreements_details_alerter"></div>
 
         <div class="text-center"
-             data-ng-if="ctrl.loading">
+             data-ng-if="$ctrl.loading">
             <oui-spinner></oui-spinner>
         </div>
 
-        <div data-ng-if="ctrl.isCGVContract">
+        <div data-ng-if="$ctrl.isCGVContract">
             <h2 data-translate="user_agreement_details_title1"></h2>
             <h3 data-translate="user_agreement_details_subtitle1"></h3>
             <p data-translate="user_agreement_details_paragraph1"></p>
@@ -46,35 +45,35 @@
             </ul>
         </div>
 
-        <div data-ng-if="!ctrl.loading">
-            <h2 data-ng-bind="ctrl.contract.name"></h2>
+        <div data-ng-if="!$ctrl.loading">
+            <h2 data-ng-bind="$ctrl.contract.name"></h2>
             <pre class="pre-scrollable contract"
-                 data-ng-bind="ctrl.contract.text">
+                 data-ng-bind="$ctrl.contract.text">
             </pre>
         </div>
 
-        <div data-ng-if="ctrl.isCGVContract && ctrl.isIndividual">
+        <div data-ng-if="$ctrl.isCGVContract && $ctrl.isIndividual">
             <h2 data-translate="user_agreement_details_subtitle3"></h2>
-            <p  data-ng-bind-html="'user_agreement_details_paragraph3' | translate:{ t0: '#/ticket' }"></p>
+            <p data-ng-bind-html="'user_agreement_details_paragraph3' | translate:{ t0: '#/ticket' }"></p>
         </div>
 
-        <div data-ng-if="!ctrl.loading">
+        <div data-ng-if="!$ctrl.loading">
             <div class="row">
                 <div class="col-xs-12 col-md-6">
                     <div class="checkbox">
                         <label>
                             <input type="checkbox"
-                                   data-ng-model="ctrl.confirmed"
-                                   data-ng-disabled="ctrl.alreadyAccepted">
-                            <span data-ng-bind="'user_agreement_details_confirmation_text' | translate:{ t0: ctrl.contract.name }"></span>
+                                   data-ng-model="$ctrl.confirmed"
+                                   data-ng-disabled="$ctrl.alreadyAccepted">
+                            <span data-ng-bind="'user_agreement_details_confirmation_text' | translate:{ t0: $ctrl.contract.name }"></span>
                         </label>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-6 text-right">
                     <button type="button"
                             class="oui-button oui-button_primary"
-                            data-ng-disabled="!ctrl.confirmed || ctrl.accepted"
-                            data-ng-click="ctrl.accept()"
+                            data-ng-disabled="!$ctrl.confirmed || $ctrl.accepted"
+                            data-ng-click="$ctrl.accept()"
                             data-translate="user_agreement_details_accept">
                     </button>
                 </div>
