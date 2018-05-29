@@ -1,45 +1,35 @@
-angular.module("UserAccount").service("UserAccount.services.agreements", [
-    "$http",
-    "$q",
-    "UserAccount.constants",
-    "$cacheFactory",
-    function ($http, $q, constants, cache) {
-        "use strict";
+angular
+    .module("UserAccount")
+    .service("UserAccountAgreements", class UserAccountAgreements {
+        constructor ($cacheFactory, $http, $q) {
+            this.$cacheFactory = $cacheFactory;
+            this.$http = $http;
+            this.$q = $q;
 
-        const userAgreementsCache = cache("USER_AGREEMENTS");
-
-        const proxyPath = `${constants.swsProxyRootPath}me`;
-
-        function getSuccessDataOrReject (response) {
-            return response.status < 300 ? response.data : $q.reject(response.data);
+            this.userAgreementsCache = this.$cacheFactory("USER_AGREEMENTS");
         }
 
-        /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-        this.getList = function (count, offset) {
-            return $http
+        getSuccessDataOrReject (response) {
+            return response.status < 300 ? response.data : this.$q.reject(response.data);
+        }
+
+        getList (count, offset) {
+            return this.$http
                 .get("/sws/agreements", {
-                    cache: userAgreementsCache,
+                    cache: this.userAgreementsCache,
                     params: {
                         count,
                         offset
                     },
                     serviceType: "aapi"
                 })
-                .then(getSuccessDataOrReject);
-        };
+                .then(this.getSuccessDataOrReject);
+        }
 
-        this.getAgreement = function (agreementId) {
-            return $http.get(`${proxyPath}/agreements/${agreementId}`).then(getSuccessDataOrReject);
-        };
-
-        this.getContract = function (contractId) {
-            return $http.get(`${proxyPath}/agreements/${contractId}/contract`).then(getSuccessDataOrReject);
-        };
-
-        this.getToValidate = function () {
-            return $http
+        getToValidate () {
+            return this.$http
                 .get("/sws/agreements", {
-                    cache: userAgreementsCache,
+                    cache: this.userAgreementsCache,
                     params: {
                         count: 0,
                         offset: 0,
@@ -47,17 +37,6 @@ angular.module("UserAccount").service("UserAccount.services.agreements", [
                     },
                     serviceType: "aapi"
                 })
-                .then(getSuccessDataOrReject);
-        };
-
-        this.accept = function (contractId) {
-            return $http
-                .post(`${proxyPath}/agreements/${contractId}/accept`)
-                .then(getSuccessDataOrReject)
-                .then((response) => {
-                    userAgreementsCache.removeAll();
-                    return response;
-                });
-        };
-    }
-]);
+                .then(this.getSuccessDataOrReject);
+        }
+    });
