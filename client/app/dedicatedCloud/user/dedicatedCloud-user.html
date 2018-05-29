@@ -2,7 +2,7 @@
      data-ui-view="pccUserView">
 
     <div data-ovh-alert="dedicatedCloud.user.edit"></div>
-    <div data-ovh-alert="{{ alerts.users }}"></div>
+    <div data-ovh-alert="dedicatedCloud.alerts.dashboardUsers"></div>
 
     <h2 data-translate="dedicatedCloud_user_management_authorization_vsphere"></h2>
 
@@ -30,7 +30,7 @@
                        name="searchusersEntry"
                        placeholder="{{ 'dedicatedCloud_search_user' | translate }}"
                        data-ng-disabled="searchLoading"
-                       data-ng-model="usersEntrySearchSelected"
+                       data-ng-model="$ctrl.usersEntrySearchSelected"
                        data-ng-model-options="{ debounce: 800 }" />
                 <div class="input-group-btn"
                      data-ng-if="usersEntrySearchSelected">
@@ -50,7 +50,7 @@
         </div>
     </form>
 
-    <oui-datagrid id="foo"
+    <oui-datagrid id="pcc-user-datagrid"
                   data-rows-loader="$ctrl.loadUsers($config)"
                   data-ng-if="!$ctrl.loading"
                   data-row-loader="$ctrl.loadUser($row)">
@@ -167,113 +167,4 @@
         </oui-action-menu>
     </oui-datagrid>
 
-    <div class="table-responsive">
-        <table class="table table-hover">
-            <tbody data-ng-show="!loading && users.length > 0">
-                <tr data-ng-repeat="user in users | orderBy:'progress'">
-                    <td>
-                        <span data-ng-hide="user === userCurrentEditBack"
-                              data-ng-bind="user.firstName || '-'">
-                        </span>
-                        <input type="text"
-                               class="form-control"
-                               data-ng-show="user === userCurrentEditBack"
-                               data-ng-model="userCurrentEdit.firstName" />
-                    </td>
-                    <td>
-                        <span data-ng-hide="user === userCurrentEditBack"
-                              data-ng-bind="user.lastName || '-'">
-                        </span>
-                        <input type="text"
-                               class="form-control"
-                               data-ng-show="user === userCurrentEditBack"
-                               data-ng-model="userCurrentEdit.lastName" />
-                    </td>
-                    <td data-ng-class="{ 'has-error': !userCurrentEdit.emailValid }">
-                        <span data-ng-hide="user === userCurrentEditBack"
-                              data-ng-bind="user.email || '-'">
-                        </span>
-                        <input type="text"
-                               class="form-control"
-                               data-ng-show="user === userCurrentEditBack"
-                               data-ng-model="userCurrentEdit.email" />
-                    </td>
-                    <td data-ng-class="{ 'has-error': !userCurrentEdit.phoneValid }">
-                        <span data-ng-hide="user === userCurrentEditBack"
-                              data-ng-bind="user.phoneNumber || '-'">
-                        </span>
-                        <input type="text"
-                               class="form-control"
-                               placeholder="{{ 'dedicatedCloud_USER_phone_example' | translate:{ t0: phoneExample } }}"
-                               data-ng-show="user === userCurrentEditBack"
-                               data-ng-model="userCurrentEdit.phoneNumber"
-                               data-uib-tooltip="{{ 'dedicatedCloud_USER_phone_hint' | translate:{ t0: phoneExample } }}"
-                               data-tooltip-placement="top" />
-                    </td>
-                    <td class="text-center">
-                        <span class="fa"
-                              data-ng-hide="user === userCurrentEditBack"
-                              data-ng-class="{
-                                  'fa-check': user.tokenValidator === true,
-                                  'fa-ban': user.tokenValidator === false
-                              }">
-                        </span>
-                        <input type="checkbox"
-                               data-ng-show="user === userCurrentEditBack"
-                               data-ng-model="userCurrentEdit.tokenValidator" />
-                    </td>
-                    <td class="text-center">
-                        <span class="fa"
-                              data-ng-hide="user === userCurrentEditBack"
-                              data-ng-class="{
-                                  'fa-check': user.canManageNetwork === true,
-                                  'fa-ban': user.canManageNetwork === false
-                              }">
-                        </span>
-                        <input type="checkbox"
-                               data-ng-show="user === userCurrentEditBack"
-                               data-ng-model="userCurrentEdit.canManageNetwork" />
-                    </td>
-                    <td class="text-center">
-                        <span class="fa"
-                              data-ng-hide="user === userCurrentEditBack"
-                              data-ng-class="{
-                                  'fa-check': user.canManageIpFailOvers === true,
-                                  'fa-ban': user.canManageIpFailOvers === false
-                              }">
-                        </span>
-                        <input type="checkbox"
-                               data-ng-show="user === userCurrentEditBack"
-                               data-ng-model="userCurrentEdit.canManageIpFailOvers" />
-                    </td>
-                    <td class="text-center"
-                        data-ng-if="nsxOptions === 'enabled'">
-                        <span class="fa"
-                              data-ng-hide="user === userCurrentEditBack"
-                              data-ng-class="{
-                                  'fa-check': user.nsxRight === true,
-                                  'fa-ban': user.nsxRight === false
-                              }">
-                        </span>
-                        <input type="checkbox"
-                               data-ng-show="user === userCurrentEditBack"
-                               data-ng-model="userCurrentEdit.nsxRight" />
-                    </td>
-                    <td class="text-center"
-                        data-ng-show="dedicatedCloud.solution === 'SYSTEMCENTER'">
-                        <span class="fa"
-                              data-ng-hide="user === userCurrentEditBack"
-                              data-ng-class="{
-                                  'fa-check': user.fullAdminRo === true,
-                                  'fa-ban': user.fullAdminRo === false
-                              }"></span>
-                        <input type="checkbox"
-                               data-ng-show="user === userCurrentEditBack"
-                               data-ng-model="userCurrentEdit.fullAdminRo" />
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
-    </div>
 </div>

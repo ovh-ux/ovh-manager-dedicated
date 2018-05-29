@@ -10,13 +10,6 @@
                data-loading="$ctrl.loading">
 
         <label>
-            <span data-translate="dedicatedCloud_USER_name"></span>
-            <input type="text"
-                   class="form-control"
-                   data-ng-model="$ctrl.user.name">
-        </label>
-
-        <label>
             <span data-translate="dedicatedCloud_USER_firstname"></span>
             <input type="text"
                    class="form-control"
@@ -30,18 +23,29 @@
                    data-ng-model="$ctrl.user.lastName">
         </label>
 
-        <label>
+        <label data-ng-class="{
+                   'has-error': userEditForm.userEmail.$touched && userEditForm.userEmail.$invalid
+               }">
             <span data-translate="dedicatedCloud_USER_mail"></span>
-            <input type="text"
+            <input type="email"
+                   id="userEmail"
+                   name="userEmail"
                    class="form-control"
-                   data-ng-model="$ctrl.user.email">
+                   data-ng-model="$ctrl.user.email"
+                   data-ng-pattern="$ctrl.emailRegExp">
         </label>
 
-        <label>
+        <label data-ng-class="{
+                   'has-error': userEditForm.phoneNumber.$touched && userEditForm.phoneNumber.$invalid
+               }">
             <span data-translate="dedicatedCloud_USER_phone"></span>
             <input type="text"
+                   id="phoneNumber"
+                   name="phoneNumber"
                    class="form-control"
-                   data-ng-model="$ctrl.user.phoneNumber">
+                   placeholder="{{ $ctrl.phoneExample }}"
+                   data-ng-model="$ctrl.user.phoneNumber"
+                   data-ng-pattern="$ctrl.phoneRegExp">
         </label>
 
         <label for="tokenValidator">
