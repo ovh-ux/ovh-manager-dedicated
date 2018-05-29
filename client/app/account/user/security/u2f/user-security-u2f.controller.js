@@ -1,4 +1,4 @@
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.doubleAuth.u2f", [
+angular.module("UserAccount").controller("UserAccount.controllers.doubleAuth.u2f", [
     "$scope",
     "$q",
     "$translate",

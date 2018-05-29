@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="billing_history_balance_title">Règlement de mon solde</translation>
-   <translation id="billing_history_balance_cancel">Annuler</translation>
-   <translation id="billing_history_balance_explain">Votre solde est actuellement de {{ balance }}.</translation>
-   <translation id="billing_history_balance_no_balance">Aucune balance n'a été trouvée sur votre compte. <a data-ui-sref="{{ backState }}">Cliquez ici</a> pour retourner à la liste des factures.</translation>
-   <translation id="billing_history_balance_choose_payment_method">Choisissez une méthode de paiement</translation>
-   <translation id="billing_history_balance_add_payment_method">Ajoutez une méthode de paiement</translation>
-   <translation id="billing_history_balance_no_payment_method">Vous n'avez aucune méthode de paiement valide. <a data-ui-sref="{{ addPaymentMethodState }}">Ajoutez une méthode de paiement valide</a> avant de régler votre solde.</translation>
-   <translation id="billing_history_balance_payment_doing">Un règlement de solde est déjà en cours. Attendez que ce paiement soit effectué avant de règler un nouveau solde.</translation>
-   <translation id="billing_history_balance_payment_go_tracking">Rendez-vous <a data-ui-sref="{{ trackState }}">sur la page des suivis de paiement</a> pour plus d'informations.</translation>
+   <translation id="billing_history_balance_title" qtlid="486724">Saldon maksu</translation>
+   <translation id="billing_history_balance_cancel" qtlid="37863">Peruuta</translation>
+   <translation id="billing_history_balance_explain" qtlid="486737">Tämänhetkinen saldosi on {{ balance }}.</translation>
+   <translation id="billing_history_balance_no_balance" qtlid="486750">Tililtäsi ei löytynyt yhtään saldoa. <a data-ui-sref="{{ backState }}">Cliquez ici</a> klikkaa tästä palataksesi laskulistaan.</translation>
+   <translation id="billing_history_balance_choose_payment_method" qtlid="486763">Valitse maksuväline</translation>
+   <translation id="billing_history_balance_add_payment_method" qtlid="486776">Lisää maksuväline</translation>
+   <translation id="billing_history_balance_no_payment_method" qtlid="486789">Sinulla ei ole yhtään voimassaolevaa maksuvälinettä. <a data-ui-sref="{{ addPaymentMethodState }}">Lisää kelvollinen maksuväline</a> ennen saldon maksamista.</translation>
+   <translation id="billing_history_balance_payment_doing" qtlid="486802">Saldo on jo maksettavana. Odota maksun suoritusta ennen uuden saldon maksamista.</translation>
+   <translation id="billing_history_balance_payment_go_tracking" qtlid="486815">Lisätietoa saat menemällä <a data-ui-sref="{{ trackState }}">maksujen seurantasivulle</a>.</translation>
 
-   <translation id="billing_history_balance_load_error">Une erreur est survenue lors du chargement de votre solde.</translation>
-   <translation id="billing_history_balance_pay_success">Le règlement de votre solde a bien été pris en compte. Le paiement sera effectif dans quelques instants. Rendez-vous <a data-ui-sref="{{ trackHref }}">sur la page des suivis de paiement</a> pour plus d'informations.</translation>
-   <translation id="billing_history_balance_pay_error">Une erreur est survenue lors du règlement de votre solde.</translation>
+   <translation id="billing_history_balance_load_error" qtlid="486828">Tapahtui virhe saldon lataamisessa.</translation>
+   <translation id="billing_history_balance_pay_success" qtlid="486841">Saldosi maksu on rekisteröity. Maksu astuu viomaan hetken kuluttua. Lisätietoja saat menemällä <a data-ui-sref="{{ trackHref }}">maksujen seurantasivulle</a> lue.</translation>
+   <translation id="billing_history_balance_pay_error" qtlid="486854">Tapahtui virhe saldon maksamisessa.</translation>
 
 <!-- PAYMENT METHOD SUBTYPES -->
-   <translation id="billing_history_balance_payment_method_subtype_american_express">American Express</translation>
-   <translation id="billing_history_balance_payment_method_subtype_mastercard">Mastercard</translation>
-   <translation id="billing_history_balance_payment_method_subtype_visa">Visa</translation>
+   <translation id="billing_history_balance_payment_method_subtype_american_express" qtlid="435959">American Express</translation>
+   <translation id="billing_history_balance_payment_method_subtype_mastercard" qtlid="435985">Mastercard</translation>
+   <translation id="billing_history_balance_payment_method_subtype_visa" qtlid="435972">Visa</translation>
 </translations>

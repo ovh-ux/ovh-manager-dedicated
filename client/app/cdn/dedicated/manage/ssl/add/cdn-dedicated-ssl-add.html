@@ -1,84 +1,71 @@
-<div data-ng-controller="CdnAddSslCtrl">
+<form class="cdn-dedicated-ssl-add"
+      name="$ctrl.cdnSslAddForm"
+      novalidate
+      data-ng-submit="$ctrl.onCdnSslAddFormSubmit()">
 
-    <div data-wizard
-         data-wizard-on-cancel="resetAction"
-         data-wizard-on-finish="addSsl"
-         data-wizard-title=":: 'cdn_configuration_add_ssl_title' | translate">
+    <oui-modal data-title="{{ :: 'cdn_dedicated_ssl_add' | translate }}"
+               data-primary-label="{{ (!$ctrl.ssl ? 'wizard_confirm' : 'global_OK') | translate }}"
+               data-secondary-label="{{ !$ctrl.ssl ? ('wizard_close' | translate) : '' }}"
+               data-secondary-action="$ctrl.$state.go('^')"
+               data-on-dismiss="$ctrl.$state.go('^')"
+               data-loading="$ctrl.loading.init || $ctrl.loading.add"
+               data-type="{{ $ctrl.ssl ? 'warning' : '' }}">
 
-        <div data-wizard-step
-             data-wizard-step-valid="entry.certificate && entry.key && entry.name">
+        <div data-ng-if="$ctrl.ssl">
+            <p data-translate="cdn_dedicated_ssl_add_warning"></p>
+        </div>
 
-            <p data-translate="cdn_configuration_ssl_add_step1"></p>
-            <div class="form-group">
-                <label for="name"
-                       class="control-label"
-                       data-translate="cdn_configuration_ssl_name">
-                </label>
-                <input type="text"
-                       class="form-control"
-                       id="name"
+        <div data-ng-if="!$ctrl.ssl">
+
+            <p data-translate="cdn_dedicated_ssl_add_explain"></p>
+
+            <!-- SSL certificate name -->
+            <oui-field data-label="{{ :: 'cdn_dedicated_ssl_add_name' | translate }}"
+                       data-error-messages="{ pattern: ('cdn_dedicated_ssl_add_name_pattern' | translate) }">
+                <input class="oui-input"
+                       type="text"
                        name="name"
-                       data-ng-model="entry.name"
+                       id="add-name"
+                       data-ng-model="$ctrl.model.name"
+                       data-required
                        data-ng-pattern="/^[\S]+$/" />
-            </div>
-            <div class="form-group">
-                <label for="certificate"
-                       class="control-label"
-                       data-translate="cdn_configuration_ssl_certificate">
-                </label>
-                <textarea class="form-control"
-                          id="certificate"
+            </oui-field> <!-- End of SSL certificate name -->
+
+            <!-- SSL certificate -->
+            <oui-field data-label="{{ :: 'cdn_dedicated_ssl_certificate' | translate }}"
+                       data-help-text="{{ :: 'cdn_dedicated_ssl_add_lets_encrypt_explain' | translate }}">
+                <textarea class="oui-textarea"
                           name="certificate"
+                          id="add-certificate"
                           rows="5"
-                          data-ng-model="entry.certificate">
+                          data-ng-model="$ctrl.model.certificate">
                 </textarea>
-            </div>
-            <div class="form-group">
-                <label for="key"
-                       class="control-label"
-                       data-translate="cdn_configuration_ssl_key">
-                </label>
-                <textarea class="form-control"
-                          id="key"
+            </oui-field> <!-- End of SSL certificate -->
+
+            <!-- SSL key -->
+            <oui-field data-label="{{ :: 'cdn_dedicated_ssl_key' | translate }}"
+                       data-help-text="{{ :: 'cdn_dedicated_ssl_add_lets_encrypt_explain' | translate }}">
+                <textarea class="oui-textarea"
                           name="key"
+                          id="add-key"
                           rows="5"
-                          data-ng-model="entry.key">
+                          data-ng-model="$ctrl.model.key">
                 </textarea>
-            </div>
-            <div class="form-group">
-                <label for="chain"
-                       class="control-label"
-                       data-translate="cdn_configuration_ssl_chain">
-                </label>
-                <textarea class="form-control"
-                          id="chain"
+            </oui-field> <!-- End of SSL key -->
+
+            <!-- SSL chain -->
+            <oui-field data-label="{{ :: 'cdn_dedicated_ssl_chain' | translate }}"
+                       data-help-text="{{ :: 'cdn_dedicated_ssl_add_lets_encrypt_explain' | translate }}">
+                <textarea class="oui-textarea"
                           name="chain"
+                          id="add-chain"
                           rows="5"
-                          data-ng-model="entry.chain">
+                          data-ng-model="$ctrl.model.chain">
                 </textarea>
-            </div>
+            </oui-field> <!-- End of SSL chain -->
 
         </div>
 
-        <div data-wizard-step>
-            <p data-translate="cdn_configuration_ssl_add_step2"></p>
-            <dl>
-                <dt data-translate="cdn_configuration_ssl_name"></dt>
-                <dd data-ng-bind="entry.name"></dd>
-                <dt data-translate="cdn_configuration_ssl_certificate"></dt>
-                <dd data-ng-bind-html="entry.certificate"></dd>
-                <dt data-translate="cdn_configuration_ssl_key"></dt>
-                <dd data-ng-bind-html="entry.key"></dd>
-                <dt data-ng-if="entry.chain"
-                    data-translate="cdn_configuration_ssl_chain">
-                </dt>
-                <dd data-ng-if="entry.chain"
-                    data-ng-bind-html="entry.chain">
-                </dd>
-            </dl>
+    </oui-modal>
 
-        </div>
-
-    </div>
-
-</div>
+</form>

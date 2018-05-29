@@ -36,7 +36,7 @@ angular.module("App").controller("DedicatedCloudMailingCtrl", class DedicatedClo
         ).catch((error) =>
             this.Alerter.error([this.$translate.instant("dedicatedCloud_subscribe_mailing_step2_error", {
                 t0: this.model.email
-            }), _.get(error, "message")].join(". "), "dedicatedCloud_alert")
+            }), _.get(error, "message")].join(". "), "dedicatedCloud")
         ).finally(() => {
             this.onWidzardCancel();
             this.loading.subscribe = false;

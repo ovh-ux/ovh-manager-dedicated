@@ -1,4 +1,4 @@
-angular.module("UserAccount.controllers")
+angular.module("UserAccount")
     .controller("UserAccount.controllers.contactCtrl", class AccountUserContactsController {
         constructor ($location, $q, $scope, AccountCreationURLS, Alerter, OvhApiMe) {
             this.$location = $location;
@@ -29,10 +29,10 @@ angular.module("UserAccount.controllers")
         }
 
         getAccountCreationUrl () {
-            const subs = _.get(this.user, "ovhSubsidiary", "FR");
+            const subs = _.get(this.user, "ovhSubsidiary", "default");
             const languageSpecificSubs = "{$language}_{$subs}";
-            const newNicUrl = this.AccountCreationURLS[languageSpecificSubs] || this.AccountCreationURLS[subs] || this.AccountCreationURLS.FR;
-            const returnUrl = this.$location.absUrl();
-            return `${newNicUrl}?redirectTo=${returnUrl}`;
+            const newNicUrl = this.AccountCreationURLS[languageSpecificSubs] ||
+                              this.AccountCreationURLS[subs];
+            return newNicUrl;
         }
     });

@@ -421,7 +421,7 @@ angular
                     }
                 }).then((pcc) => ({
                     canOrderSpla: false,
-                    isSplaActive: !pcc.spla
+                    isSplaActive: pcc.spla
                 }));
             }
             return $q
@@ -1051,6 +1051,9 @@ angular
 
         /* ------- Terminate -------*/
 
+        /**
+         *  DEPRECATED : use OvhApiDedicatedCloudV6.terminate from ovh-api-services instead.
+         */
         this.terminate = function (serviceName) {
             return OvhHttp.post("/dedicatedCloud/{serviceName}/terminate", {
                 rootPath: "apiv6",
@@ -1060,6 +1063,9 @@ angular
             });
         };
 
+        /**
+         *  DEPRECATED : use OvhApiDedicatedCloudV6.confirmTermination from ovh-api-services instead.
+         */
         this.confirmTerminate = function (serviceName, reason, token, commentary) {
             return OvhHttp.post("/dedicatedCloud/{serviceName}/confirmTermination", {
                 rootPath: "apiv6",

@@ -2,40 +2,22 @@ angular.module("App").controller("DedicatedCloudUserRightsCtrl", function ($scop
     "use strict";
 
     const self = this;
-
     self.selectedUser = null;
-    self.rights = null;
-
     self.loading = {
-        init: false,
-        rights: false
+        init: false
     };
 
-    /* =====================================
-    =            RIGHTS LOADING            =
-    ====================================== */
-
-    self.loadUserRight = function (elementsByPage, elementsToSkip) {
-        self.loading.rights = true;
-
-        DedicatedCloud.getUserRights($stateParams.productId, $stateParams.userId, elementsByPage, elementsToSkip).then((results) => {
-            self.rights = results;
-        }, (data) => {
-            $scope.setMessage($translate.instant("dedicatedCloud_users_rights_loading_error"), data);
-        }).finally(() => {
-            self.loading.rights = false;
-        });
-    };
-
-    self.refreshTableRights = function () {
-        $scope.$broadcast("paginationServerSide.reload", "rightTable");
-    };
-
-    /* -----  End of RIGHTS LOADING  ------ */
-
-    /* =====================================
-    =            INITIALIZATION            =
-    ====================================== */
+    self.loadUserRights = ({ offset, pageSize }) => DedicatedCloud.getUserRights(
+        $stateParams.productId,
+        $stateParams.userId,
+        pageSize,
+        offset - 1
+    ).then((results) => ({
+        data: _.get(results, "list.results"),
+        meta: {
+            totalCount: results.count
+        }
+    }));
 
     self.$onInit = function () {
         self.loading.init = true;
@@ -46,7 +28,4 @@ angular.module("App").controller("DedicatedCloudUserRightsCtrl", function ($scop
             self.loading.init = false;
         });
     };
-
-    /* -----  End of INITIALIZATION  ------ */
-
 });

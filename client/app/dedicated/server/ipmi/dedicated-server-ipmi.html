@@ -56,8 +56,16 @@
                         <li data-ng-bind-html="'server_configuration_impi_information2' | translate: {t0: ipmi.model.clientIp || ''}"></li>
                     </ul>
                     <p data-translate="server_configuration_impi_monitoring_warning"></p>
-                    <p data-ng-if="ipmiHelpUrl"
-                       data-translate="server_configuration_impi_SOL_help" data-translate-values="{ t0: ipmiHelpUrl }">
+                    <p data-ng-if="ipmiHelpUrl">
+                        <span data-translate="server_configuration_impi_SOL_help"></span>
+                        <a data-ng-href="{{ ipmiHelpUrl }}"
+                           target="_blank"
+                           rel="noopener">
+                            <span data-translate="server_configuration_impi_SOL_help_link"></span>
+                            <span class="fa fa-external-link"
+                                  aria-hidden="true">
+                            </span>
+                        </a>
                     </p>
                     <ul class="list-inline mt-4">
                         <li class="text-center">

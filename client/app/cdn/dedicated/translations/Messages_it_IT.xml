@@ -42,15 +42,15 @@
    <translation id="cdn_configuration_terminate_title_button" qtlid="56337">Disattiva il servizio</translation>
    <translation id="cdn_configuration_domain" qtlid="132317">0 domini</translation>
    <translation id="cdn_configuration_domain_1" qtlid="132330">1 dominio</translation>
-   <translation id="cdn_configuration_domain_other">{} domaines</translation>
+   <translation id="cdn_configuration_domain_other" qtlid="486555">{} domaines</translation>
    <translation id="cdn_configuration_backend" qtlid="132356">{0} x IP Backend</translation>
    <translation id="cdn_configuration_activity" qtlid="143160">Attività (ultimo mese)</translation>
    <translation id="cdn_configuration_activity_page_viewed_0" qtlid="128118">Nessun oggetto visto</translation>
    <translation id="cdn_configuration_activity_page_viewed_one" qtlid="132369">1 oggetto visualizzato</translation>
-   <translation id="cdn_configuration_activity_page_viewed_other">{} objets vus</translation>
+   <translation id="cdn_configuration_activity_page_viewed_other" qtlid="486568">{} objets vus</translation>
    <translation id="cdn_configuration_activity_page_viewed_default" qtlid="126832">Disponibile prossimamente</translation>
    <translation id="cdn_configuration_savings" qtlid="143173">Consumi (ultimo mese)</translation>
-   <translation id="cdn_configuration_savings_bandwidth_percentage">{} % de bande passante</translation>
+   <translation id="cdn_configuration_savings_bandwidth_percentage" qtlid="486581">{} % de bande passante</translation>
    <translation id="cdn_configuration_savings_bandwidth_percentage_default" qtlid="125516">Banda passante: nessun dato</translation>
    <translation id="cdn_configuration_savings_request_percentage" qtlid="132408">{0} % di richieste</translation>
    <translation id="cdn_configuration_savings_request_percentage_default" qtlid="121471">Richieste: nessun dato</translation>
@@ -197,10 +197,6 @@
    <translation id="cdn_configuration_delete_ssl_title" qtlid="22759">Eliminare il certificato</translation>
 
    <translation id="cdn_configuration_update_ssl_title" qtlid="400951">Sostituisci con il tuo certificato</translation>
-   <translation id="cdn_configuration_update_ssl_step1" qtlid="133201">Ti preghiamo di inserire le informazioni relative al certificato:</translation>
-   <translation id="cdn_configuration_update_ssl_step2" qtlid="133214">Ti preghiamo di aggiungere il certificato seguente:</translation>
-   <translation id="cdn_configuration_update_ssl_success" qtlid="244869">Modifica del certificato SSL in corso...</translation>
-   <translation id="cdn_configuration_update_ssl_fail" qtlid="244882">Si è verificato un errore nella modifica del certificato SSL</translation>
 
    <translation id="cdn_configuration_generate_ssl_title" qtlid="400964">Genera un certificato Let's Encrypt</translation>
    <translation id="cdn_configuration_generate_ssl_step1" qtlid="400977">Inserisci il nome del certificato:</translation>
@@ -229,16 +225,13 @@
    <translation id="cdn_configuration_ssl_provider_custom" qtlid="50062">Personalizzato</translation>
    <translation id="cdn_configuration_ssl_provider_letsencrypt" qtlid="401068">Let's Encrypt gestito da OVH</translation>
    <translation id="cdn_configuration_ssl_certificateProvider" qtlid="2642">Tipo</translation>
-   <translation id="cdn_configuration_ssl_certificate" qtlid="19771">Certificato</translation>
-   <translation id="cdn_configuration_ssl_key" qtlid="104326">Chiave</translation>
-   <translation id="cdn_configuration_ssl_chain" qtlid="133149">Catena</translation>
    <translation id="cdn_configuration_ssl_delete_confirmation" qtlid="183749">Vuoi davvero eliminare il certificato <b>{0}</b>?</translation>
    <translation id="cdn_configuration_delete_ssl_success" qtlid="133175">E' stata creata un'operazione. Questa sarà effettiva entro un periodo di 15 minuti.</translation>
    <translation id="cdn_configuration_delete_ssl_fail" qtlid="133188">Si è verificato un errore durante la cancellazione del certificato {0}.</translation>
    <translation id="cdn_configuration_ssl_add_step1" qtlid="133201">Ti preghiamo di inserire le informazioni relative al certificato:</translation>
    <translation id="cdn_configuration_ssl_add_step2" qtlid="133214">Ti preghiamo di aggiungere il certificato seguente:</translation>
    <translation id="cdn_configuration_add_ssl_success" qtlid="133955">Il certificato SSL sarà attivato a breve.</translation>
-   <translation id="cdn_configuration_add_ssl_fail" qtlid="179602">Si è verificato un errore nell'aggiunta del certificato SSL</translation>
+   <translation id="cdn_configuration_add_ssl_fail" qtlid="179602">Si è verificato un errore durante l'aggiunta del certificato SSL.</translation>
    <translation id="cdn_configuration_order_quota_title" qtlid="127120">Acquistare banda passante</translation>
    <translation id="cdn_configuration_order_quota_step1_pricing" qtlid="133253">Tariffazione</translation>
    <translation id="cdn_configuration_order_quota_step1_price" qtlid="133266">{0} per {1} TB di banda passante</translation>

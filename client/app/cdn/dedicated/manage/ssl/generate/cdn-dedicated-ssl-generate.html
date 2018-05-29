@@ -1,44 +1,41 @@
-<div data-ng-controller="CdnGenerateSslCtrl">
+<form class="cdn-dedicated-ssl-generate"
+      name="$ctrl.cdnSslGenerateForm"
+      novalidate
+      data-ng-submit="$ctrl.onCdnSslGenerateFormSubmit()">
 
-    <div data-wizard
-         data-wizard-on-cancel="resetAction"
-         data-wizard-on-finish="addSsl"
-         data-wizard-title=":: 'cdn_configuration_generate_ssl_title' | translate">
+    <oui-modal data-title="{{ :: 'cdn_dedicated_ssl_generate' | translate }}"
+               data-primary-label="{{ ($ctrl.actionEnabled ? 'wizard_confirm' : 'global_OK') | translate }}"
+               data-secondary-label="{{ $ctrl.actionEnabled ? ('wizard_cancel' | translate) : '' }}"
+               data-secondary-action="$ctrl.$state.go('^')"
+               data-on-dismiss="$ctrl.$state.go('^')"
+               data-loading="$ctrl.loading.generate"
+               data-type="{{ !$ctrl.actionEnabled ? 'warning' : '' }}">
 
-        <div data-wizard-step
-             data-wizard-step-valid="entry.name">
+        <p data-ng-if="!$ctrl.actionEnabled"
+           data-translate="cdn_dedicated_ssl_generate_warning">
+        </p>
 
-            <p data-translate="cdn_configuration_generate_ssl_step1"></p>
-            <div class="form-group">
-                <label for="name"
-                       class="control-label"
-                       data-translate="cdn_configuration_ssl_name">
-                </label>
-                <input type="text"
-                       class="form-control"
-                       id="name"
-                       name="name"
-                       required
-                       data-ng-model="entry.name"
-                       data-ng-pattern="/^[\S]+$/" />
+        <div data-ng-if="$ctrl.actionEnabled">
+            <div class="my-4"
+                 data-ng-if="$ctrl.ssl">
+                <oui-message data-type="warning">
+                    <span data-translate="cdn_dedicated_ssl_generate_replacement_warning"></span>
+                </oui-message>
             </div>
 
+            <!-- SSL certificate name -->
+            <oui-field data-label="{{ :: 'cdn_dedicated_ssl_generate_name' | translate }}"
+                       data-error-messages="{ pattern: ('cdn_dedicated_ssl_generate_name_pattern' | translate) }">
+                <input class="oui-input"
+                       type="text"
+                       name="name"
+                       id="generate-name"
+                       data-ng-model="$ctrl.model.name"
+                       data-required
+                       data-ng-pattern="/^[\S]+$/" />
+            </oui-field> <!-- End of SSL certificate name -->
         </div>
 
-        <div data-wizard-step>
+    </oui-modal>
 
-            <p data-translate="cdn_configuration_generate_ssl_step2"></p>
-            <p class="font-weight-bold text-danger"
-               data-ng-if="ssl !== null && !loading"
-               data-translate="cdn_configuration_generate_ssl_step3">
-            </p>
-            <dl>
-                <dt data-translate="cdn_configuration_ssl_name"></dt>
-                <dd data-ng-bind="entry.name"></dd>
-            </dl>
-
-        </div>
-
-    </div>
-
-</div>
+</form>

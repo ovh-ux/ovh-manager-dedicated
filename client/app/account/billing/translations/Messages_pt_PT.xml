@@ -4,7 +4,7 @@
    <translation id="autorenew_title" qtlid="287527">Gerir serviços</translation>
    <translation id="autorenew_myservices" qtlid="212881">Serviços</translation>
    <translation id="autorenew" qtlid="219758">Renovações</translation>
-   <translation id="autorenew_service" qtlid="34632"></translation>
+   <translation id="autorenew_service" qtlid="34632">Serviços</translation>
    <translation id="autorenew_service_name" qtlid="266952">Designação do serviço</translation>
    <translation id="autorenew_service_type" qtlid="2642">Tipo</translation>
    <translation id="autorenew_service_date" qtlid="401685">Data de renovação</translation>
@@ -85,7 +85,7 @@
    <translation id="autorenew_service_type_DEDICATED_SERVER" qtlid="66032">Servidor Dedicado</translation>
    <translation id="autorenew_service_type_DEDICATED_HOUSING" qtlid="371476">Servidor Housing</translation>
    <translation id="autorenew_service_type_DEDICATED_CLOUD" qtlid="20131">Private Cloud</translation>
-   <translation id="autorenew_service_type_DOMAIN" qtlid="8458"></translation>
+   <translation id="autorenew_service_type_DOMAIN" qtlid="8458">Domínios</translation>
    <translation id="autorenew_service_type_HOSTING_PRIVATE_DATABASE" qtlid="219966">Alojamento base SQL Privado</translation>
    <translation id="autorenew_service_type_HOSTING_WEB" qtlid="219979">Alojamento Web</translation>
    <translation id="autorenew_service_type_IP_LOADBALANCING" qtlid="407832">IP Load Balancing</translation>
@@ -246,22 +246,22 @@
    <translation id="common_payment_type_creditCard_expiration_date" qtlid="108769">Data de expiração:</translation>
 
    <translation id="common_time_period_in_years" qtlid="374495">{0} anos</translation>
-   <translation id="common_time_period_one_year" qtlid="70277"></translation>
+   <translation id="common_time_period_one_year" qtlid="70277">1 ano</translation>
    <translation id="common_time_period_in_months" qtlid="220148">{0} mês(es)</translation>
-   <translation id="common_time_period_one_month" qtlid="70241"></translation>
+   <translation id="common_time_period_one_month" qtlid="70241">1 mês</translation>
 
-   <translation id="pagination_page">Page {{ current }} / {{ last }}</translation>
+   <translation id="pagination_page" qtlid="486464">Page {{ current }} / {{ last }}</translation>
    <translation id="pagination_display" qtlid="69353">Mostrar</translation>
    <translation id="pagination_display_all" qtlid="139884">Tudo</translation>
    <translation id="pagination_go" qtlid="224880">OK</translation>
    <translation id="history_title2" qtlid="159540">Faturas</translation>
    <translation id="history_invoice_loading_errors" qtlid="402984">Ocorreu um erro aquando da recuperação da(s) {0} fatura(s).</translation>
-   <translation id="history_invoices_postal_mail">Recevoir mes factures au format papier</translation>
+   <translation id="history_invoices_postal_mail" qtlid="486867">Recevoir mes factures au format papier</translation>
 
-   <translation id="history_invoices_choice_modal_activation">Voulez-vous confirmer l'activation de cette option ?</translation>
-   <translation id="history_invoices_choice_modal_deactivation">Voulez-vous confirmer la désactivation de cette option ?</translation>
-   <translation id="history_invoices_choice_modal_update_success">Le paramètre a bien été mis à jour</translation>
-   <translation id="history_invoices_choice_modal_update_error">Une erreur est survenue lors de la mise à jour du paramètre</translation>
+   <translation id="history_invoices_choice_modal_activation" qtlid="486880">Voulez-vous confirmer l'activation de cette option ?</translation>
+   <translation id="history_invoices_choice_modal_deactivation" qtlid="486893">Voulez-vous confirmer la désactivation de cette option ?</translation>
+   <translation id="history_invoices_choice_modal_update_success" qtlid="486906">Le paramètre a bien été mis à jour</translation>
+   <translation id="history_invoices_choice_modal_update_error" qtlid="486919">Une erreur est survenue lors de la mise à jour du paramètre</translation>
 
    <translation id="history_table_head_date" qtlid="374508">Data de emissão</translation>
    <translation id="history_table_head_id" qtlid="16445">Referência</translation>
@@ -291,10 +291,10 @@
    <translation id="payments_table_actions_tooltip" qtlid="398820">Mais detalhes sobre o pagamento</translation>
    <translation id="payments_table_type_not_available" qtlid="374560">Informação não disponível</translation>
    <translation id="payments_table_empty" qtlid="398833">Não existem pagamentos no período selecionado.</translation>
-   <translation id="payments_request_pending">Un règlement de solde est en cours. Cliquez <a href="{0}">sur ce lien</a> pour en savoir plus.</translation>
+   <translation id="payments_request_pending" qtlid="486932">Un règlement de solde est en cours. Cliquez <a href="{0}">sur ce lien</a> pour en savoir plus.</translation>
    <translation id="payments_details_link" qtlid="398846">Ver os detalhes deste pagamento</translation>
    <translation id="payment_details_payment_id" qtlid="16445">Referência</translation>
-   <translation id="payment_details_payment_date" qtlid="24523"></translation>
+   <translation id="payment_details_payment_date" qtlid="24523">Data</translation>
    <translation id="payment_details_payment_amount" qtlid="190459">Montante total</translation>
    <translation id="payment_details_table_header_id" qtlid="398859">Referência da fatura</translation>
    <translation id="payment_details_table_header_date" qtlid="374508">Data de emissão</translation>
@@ -305,7 +305,7 @@
    <translation id="payment_details_return_to_payments" qtlid="343421">Voltar à página anterior</translation>
 
    <translation id="orders_page_title" qtlid="282809">Encomendas</translation>
-   <translation id="orders_table_head_date" qtlid="24523"></translation>
+   <translation id="orders_table_head_date" qtlid="24523">Data</translation>
    <translation id="orders_table_head_id" qtlid="289250">Número de encomenda</translation>
    <translation id="orders_table_head_status" qtlid="33790">Estado</translation>
    <translation id="orders_table_head_total_taxes_included" qtlid="282822">Montante com taxas</translation>
@@ -313,7 +313,7 @@
    <translation id="orders_table_empty" qtlid="282835">Não possui encomendas.</translation>
    <translation id="orders_table_empty_with_filter" qtlid="290459">Não possui encomendas para esses critérios:</translation>
    <translation id="orders_informations_error" qtlid="218302">Ocorreu um erro:</translation>
-   <translation id="orders_order_status_cancelled" qtlid="164623"></translation>
+   <translation id="orders_order_status_cancelled" qtlid="164623">Anulada</translation>
    <translation id="orders_order_status_cancelling" qtlid="282848">Cancelamento em curso</translation>
    <translation id="orders_order_status_checking" qtlid="33802">Validação</translation>
    <translation id="orders_order_status_delivered" qtlid="282861">Concluída</translation>
@@ -341,7 +341,7 @@
    <translation id="orders_retract_error" qtlid="410741">Ocorreu um erro aquando da anulação da sua encomenda</translation>
 
    <translation id="refunds_title2" qtlid="184113">As minhas notas de crédito</translation>
-   <translation id="refunds_table_head_date" qtlid="24523"></translation>
+   <translation id="refunds_table_head_date" qtlid="24523">Data</translation>
    <translation id="refunds_table_head_id" qtlid="16445">Referência</translation>
    <translation id="refunds_table_head_bill" qtlid="140066">Associado à fatura</translation>
    <translation id="refunds_table_head_account" qtlid="140079">Creditado em</translation>
@@ -354,7 +354,7 @@
    <translation id="ovhAccount_title2" qtlid="383950">Movimentos na minha conta pré-paga</translation>
    <translation id="ovhAccount_no_account" qtlid="383963">Não dispõe de conta pré-paga</translation>
    <translation id="ovhAccount_balance" qtlid="140144">Saldo:</translation>
-   <translation id="ovhAccount_table_head_date" qtlid="24523"></translation>
+   <translation id="ovhAccount_table_head_date" qtlid="24523">Data</translation>
    <translation id="ovhAccount_table_head_id" qtlid="16445">Referência</translation>
    <translation id="ovhAccount_table_head_product" qtlid="66752">Produto</translation>
    <translation id="ovhAccount_table_head_remaining" qtlid="89785">Saldo</translation>
@@ -409,7 +409,7 @@
    <translation id="payment_mean_contact_presentation_email_label" qtlid="116322">E-mail:</translation>
    <translation id="payment_mean_contact_creation_main_title" qtlid="381790">Criação de um contacto</translation>
    <translation id="payment_mean_contact_creation_mandatory_fields_rules_explained" qtlid="381842">A visualização padrão só mostra os campos obrigatórios (marcados com um asterisco). Utilize o botão localizado no início de cada secção para visualizar todos os campos disponíveis para preenchimento</translation>
-   <translation id="payment_mean_contact_creation_fieldset_GENERAL_INFORMATIONS" qtlid="27115"></translation>
+   <translation id="payment_mean_contact_creation_fieldset_GENERAL_INFORMATIONS" qtlid="27115">Informações gerais</translation>
    <translation id="payment_mean_contact_creation_fieldset_LEGAL" qtlid="321377">Dados jurídicos</translation>
    <translation id="payment_mean_contact_creation_fieldset_PROFILE" qtlid="23035">Perfil</translation>
    <translation id="payment_mean_contact_creation_fieldset_CONTACTS" qtlid="32206">Contactos</translation>
@@ -939,7 +939,7 @@
    <translation id="telconso_line_outplan" qtlid="190251">Consumos fora do tarifário</translation>
    <translation id="telconso_next_billing" qtlid="190264">Data da próxima fatura:</translation>
 
-   <translation id="tel_conso_conso_date" qtlid="24523"></translation>
+   <translation id="tel_conso_conso_date" qtlid="24523">Data</translation>
    <translation id="tel_conso_conso_num_emit" qtlid="58364">Número a chamar</translation>
    <translation id="tel_conso_conso_num_recv" qtlid="81234">Número contactado</translation>
    <translation id="tel_conso_conso_tranfert" qtlid="190277">Reencaminhado para</translation>
@@ -967,7 +967,7 @@
    <translation id="tel_conso_tabs_received" qtlid="190095">Recebidos</translation>
 
    <translation id="tel_conso_error" qtlid="190394">ocorreu um erro durante ao carregar as informações</translation>
-   <translation id="tel_conso_h" qtlid="190407"></translation>
+   <translation id="tel_conso_h" qtlid="190407">h</translation>
    <translation id="tel_conso_min" qtlid="190420">min</translation>
    <translation id="tel_conso_s" qtlid="190433">s</translation>
 
@@ -984,7 +984,7 @@
 <!-- Fidelity -->
    <translation id="fidelity_title" qtlid="260606">Espaço Fidelização (pontos)</translation>
    <translation id="fidelity_get_accounts_error" qtlid="260619">Ocorreu um erro durante o carregamento das informações</translation>
-   <translation id="fidelity_header_date" qtlid="24523"></translation>
+   <translation id="fidelity_header_date" qtlid="24523">Data</translation>
    <translation id="fidelity_header_order" qtlid="260632">Transação</translation>
    <translation id="fidelity_header_operation" qtlid="32482">Operação</translation>
    <translation id="fidelity_header_credit" qtlid="89761">Crédito</translation>
@@ -1007,7 +1007,7 @@
    <translation id="fidelity_balance_info" qtlid="260749">Situação em {0}: {1} ponto(s)</translation>
    <translation id="fidelity_no_account" qtlid="261543">Não dispõe de uma conta fidelidade</translation>
 
-   <translation id="sla_table_head_date" qtlid="24523"></translation>
+   <translation id="sla_table_head_date" qtlid="24523">Data</translation>
    <translation id="sla_table_head_description" qtlid="9238">Descrição </translation>
    <translation id="sla_table_head_refund" qtlid="266900">Compensação</translation>
    <translation id="sla_table_apply" qtlid="41326">Aplicar</translation>
@@ -1061,7 +1061,7 @@
    <translation id="vouchers_movements_title" qtlid="270956">Movimentos associados ao voucher <strong>{0}</strong></translation>
    <translation id="voucher_movements_table_head_id" qtlid="8194">ID</translation>
    <translation id="voucher_movements_table_head_description" qtlid="9238">Descrição </translation>
-   <translation id="voucher_movements_table_head_date" qtlid="24523"></translation>
+   <translation id="voucher_movements_table_head_date" qtlid="24523">Data</translation>
    <translation id="voucher_movements_table_head_amount" qtlid="45328">Montante</translation>
    <translation id="voucher_movements_table_head_previous_balance" qtlid="270969">Balanço anterior</translation>
    <translation id="voucher_movements_table_head_balance" qtlid="270930">Balanço</translation>
@@ -1093,7 +1093,7 @@
    <translation id="statements_account_debt_payment_error" qtlid="344279">Ocorreu um erro e pedimos desculpa pelo incomodo causado-</translation>
    <translation id="statements_table_caption" qtlid="343252">Encomendas da sua conta</translation>
    <translation id="statements_table_header_order" qtlid="8302">Comando</translation>
-   <translation id="statements_table_header_date" qtlid="24523"></translation>
+   <translation id="statements_table_header_date" qtlid="24523">Data</translation>
    <translation id="statements_table_header_due_date" qtlid="98348">Data de vencimento</translation>
    <translation id="statements_table_no_due_date" qtlid="343265">Imediato</translation>
    <translation id="statements_table_header_amount" qtlid="45328">Montante</translation>
@@ -1119,7 +1119,7 @@
    <translation id="statements_details_return_to_statements" qtlid="343421">Voltar à página anterior</translation>
 
    <translation id="statements_details_table_caption" qtlid="343434">Lista das operações na fatura</translation>
-   <translation id="statements_details_table_header_date" qtlid="24523"></translation>
+   <translation id="statements_details_table_header_date" qtlid="24523">Data</translation>
    <translation id="statements_details_table_header_operation" qtlid="32482">Operação</translation>
    <translation id="statements_details_table_header_status" qtlid="33790">Estado</translation>
    <translation id="statements_details_table_header_amount" qtlid="45328">Montante</translation>
@@ -1130,7 +1130,7 @@
 
 <!-- STATEMENTS - OPERATION STATUS -->
    <translation id="statements_operation_status_done" qtlid="343486">Completo</translation>
-   <translation id="statements_operation_status_cancelled" qtlid="164623"></translation>
+   <translation id="statements_operation_status_cancelled" qtlid="164623">Anulada</translation>
    <translation id="statements_operation_status_failed" qtlid="343499">Incompleto</translation>
    <translation id="statements_operation_status_todo" qtlid="349338">Aguardar pagamento</translation>
    <translation id="statements_operation_status_pending" qtlid="343525">Em curso</translation>
@@ -1260,7 +1260,7 @@
    <translation id="billing_credit_balance_movements_details" qtlid="448985">Detalhes dos movimentos</translation>
    <translation id="billing_credit_balance_movements_title" qtlid="448998">Detalhes dos movimentos da sua conta de crédito {0}</translation>
    <translation id="billing_credit_balance_movements_back" qtlid="454254">Voltar aos Meus Créditos</translation>
-   <translation id="billing_credit_balance_movements_header_date" qtlid="24523"></translation>
+   <translation id="billing_credit_balance_movements_header_date" qtlid="24523">Data</translation>
    <translation id="billing_credit_balance_movements_header_operation" qtlid="32482">Operação</translation>
    <translation id="billing_credit_balance_header_order" qtlid="8302">Comando</translation>
    <translation id="billing_credit_balance_movements_operation_credit" qtlid="89761">Crédito</translation>

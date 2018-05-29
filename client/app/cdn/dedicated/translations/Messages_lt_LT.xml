@@ -42,15 +42,15 @@
    <translation id="cdn_configuration_terminate_title_button" qtlid="56337">Panaikinti paslaugą</translation>
    <translation id="cdn_configuration_domain" qtlid="132317">0 domenų</translation>
    <translation id="cdn_configuration_domain_1" qtlid="132330">1 domenas</translation>
-   <translation id="cdn_configuration_domain_other">{} domaines</translation>
+   <translation id="cdn_configuration_domain_other" qtlid="486555">{} domaines</translation>
    <translation id="cdn_configuration_backend" qtlid="132356">{0} x Backend IP</translation>
    <translation id="cdn_configuration_activity" qtlid="143160">Aktyvumas (per paskutinį mėnesį)</translation>
    <translation id="cdn_configuration_activity_page_viewed_0" qtlid="128118">Nėra peržiūrėtų objektų</translation>
    <translation id="cdn_configuration_activity_page_viewed_one" qtlid="132369">1 peržiūrėtas objektas </translation>
-   <translation id="cdn_configuration_activity_page_viewed_other">{} objets vus</translation>
+   <translation id="cdn_configuration_activity_page_viewed_other" qtlid="486568">{} objets vus</translation>
    <translation id="cdn_configuration_activity_page_viewed_default" qtlid="126832">Jau greitai </translation>
    <translation id="cdn_configuration_savings" qtlid="143173">Sutaupyta (per paskutinį mėnesį)</translation>
-   <translation id="cdn_configuration_savings_bandwidth_percentage">{} % de bande passante</translation>
+   <translation id="cdn_configuration_savings_bandwidth_percentage" qtlid="486581">{} % de bande passante</translation>
    <translation id="cdn_configuration_savings_bandwidth_percentage_default" qtlid="125516">Duomenų sratas: jokių duomenų</translation>
    <translation id="cdn_configuration_savings_request_percentage" qtlid="132408">{0} % užklausų </translation>
    <translation id="cdn_configuration_savings_request_percentage_default" qtlid="121471">Užklausos: jokių duomenų</translation>
@@ -197,10 +197,6 @@
    <translation id="cdn_configuration_delete_ssl_title" qtlid="22759">Ištrinti sertifikatą</translation>
 
    <translation id="cdn_configuration_update_ssl_title" qtlid="400951">Pakeisti mano sertifikatu</translation>
-   <translation id="cdn_configuration_update_ssl_step1" qtlid="133201">Įveskite sertifikato duomenis:</translation>
-   <translation id="cdn_configuration_update_ssl_step2" qtlid="133214">Jūs pridėsite šį sertifikatą:</translation>
-   <translation id="cdn_configuration_update_ssl_success" qtlid="244869">SSL sertifikatas tuojau bus pakeistas.</translation>
-   <translation id="cdn_configuration_update_ssl_fail" qtlid="244882">Klaida keičiant SSL sertifikatą</translation>
 
    <translation id="cdn_configuration_generate_ssl_title" qtlid="400964">Generuoti Let's Encrypt sertifikatą</translation>
    <translation id="cdn_configuration_generate_ssl_step1" qtlid="400977">Prašome pateikti sertifikato pavadinimą:</translation>
@@ -229,9 +225,6 @@
    <translation id="cdn_configuration_ssl_provider_custom" qtlid="50062">Personalizuoti</translation>
    <translation id="cdn_configuration_ssl_provider_letsencrypt" qtlid="401068">Let's Encrypt, valdomas OVH</translation>
    <translation id="cdn_configuration_ssl_certificateProvider" qtlid="2642">Tipas</translation>
-   <translation id="cdn_configuration_ssl_certificate" qtlid="19771">Sertifikatas</translation>
-   <translation id="cdn_configuration_ssl_key" qtlid="104326">Raktas</translation>
-   <translation id="cdn_configuration_ssl_chain" qtlid="133149">Grandis </translation>
    <translation id="cdn_configuration_ssl_delete_confirmation" qtlid="183749">Ar tikrai norite ištrinti sertifikatą <b>{0}</b>?</translation>
    <translation id="cdn_configuration_delete_ssl_success" qtlid="133175">Užduotis sukurta. Atlikta operacija įsigalios po 15 min.  </translation>
    <translation id="cdn_configuration_delete_ssl_fail" qtlid="133188">Įvyko klaida trinant sertifikatą {0}.</translation>

@@ -7,6 +7,7 @@
         </label>
         <select id="sizeSelect"
                 name="sizeSelect"
+                class="form-control"
                 data-ng-model="model.params.size"
                 data-ng-options="r as ('/'+r) for r in orderableIp.size">
             <option value=""
@@ -23,6 +24,7 @@
         </label>
         <select id="countrySelect"
                 name="countrySelect"
+                class="form-control"
                 data-ng-model="model.params.country"
                 data-ng-options="c as ('country_' + c.toUpperCase() | translate) for c in orderableIp.countries"
                 data-ng-required="true">
@@ -65,6 +67,7 @@
         <input type="number"
                id="estimatedClientsNumber"
                name="estimatedClientsNumber"
+               class="form-control"
                data-ng-model="model.params.estimatedClientsNumber"
                data-ng-required="true"
                min="1" />
@@ -110,6 +113,7 @@
         <input type="text"
                id="usage"
                name="usage"
+               class="form-control"
                data-ng-model="model.params.usage"
                data-ng-required="true" />
         <i class="fa fa-info-circle"

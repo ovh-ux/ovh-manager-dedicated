@@ -1,14 +1,13 @@
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.main", [
+angular.module("UserAccount").controller("UserAccount.controllers.main", [
     "$scope",
     "$window",
     "$location",
     "$timeout",
     "$state",
-    "UserAccount.conf.BASE_URL",
-    function ($scope, $window, $location, $timeout, $state, USERACCOUNT_BASE_URL) {
+    function ($scope, $window, $location, $timeout, $state) {
         "use strict";
 
-        $scope.USERACCOUNT_BASE_URL = USERACCOUNT_BASE_URL;
+        $scope.USERACCOUNT_BASE_URL = "account/user/";
 
         $scope.originUrl = $location.search().redirectTo || $location.search().redirectto;
 
@@ -32,7 +31,7 @@ angular.module("UserAccount.controllers").controller("UserAccount.controllers.ma
             $scope.currentAction = action;
             $scope.currentActionData = data;
             if (action) {
-                $scope.stepPath = `${USERACCOUNT_BASE_URL}${$scope.currentAction}.html`;
+                $scope.stepPath = `${$scope.USERACCOUNT_BASE_URL}${$scope.currentAction}.html`;
                 $("#currentAction").modal({
                     keyboard: true,
                     backdrop: "static"

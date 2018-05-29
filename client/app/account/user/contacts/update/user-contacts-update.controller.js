@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.update", [
+angular.module("UserAccount").controller("UserAccount.controllers.update", [
     "UserAccount.services.Contacts",
     "$scope",
     "$stateParams",

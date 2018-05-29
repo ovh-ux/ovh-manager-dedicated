@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-angular.module("UserAccount.services").service("UserValidator", [
+angular.module("UserAccount").service("UserValidator", [
     function () {
         "use strict";
 

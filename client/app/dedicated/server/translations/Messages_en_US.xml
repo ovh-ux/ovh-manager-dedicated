@@ -154,7 +154,7 @@
    <translation id="server_configuration_state_info_HACKED_BLOCKED" qtlid="225023">Your server has been hacked. Please contact our support team for instructions on what to do next.</translation>
    <translation id="server_remove_hack_button" qtlid="61824">Unblock</translation>
    <translation id="server_remove_hack_success" qtlid="225036">Your "unhack" request is being processed.</translation>
-   <translation id="server_remove_hack_fail" qtlid="225049">An error occurred when you requested your server to be unblocked.</translation>
+   <translation id="server_remove_hack_fail" qtlid="225049">An error has occurred requesting the server to be unblocked.</translation>
 
    <translation id="server_configuration_renew_service" qtlid="118962">Renew</translation>
    <translation id="server_configuration_firewall_fail" qtlid="164285">An error occurred while loading the firewall information</translation>
@@ -438,7 +438,7 @@
    <translation id="server_configuration_ftpbackup_access_order_right" qtlid="180577">You don't have the required permission to order</translation>
    <translation id="server_configuration_ftpbackup_access_add" qtlid="153857">Add an access</translation>
    <translation id="server_configuration_ftpbackup_access_edit" qtlid="180694">Modify the access</translation>
-   <translation id="server_configuration_ftpbackup_access_edit_info">Modifier l'accès du block IP <strong>{0}</strong></translation>
+   <translation id="server_configuration_ftpbackup_access_edit_info" qtlid="486594">Modifier l'accès du block IP <strong>{0}</strong></translation>
    <translation id="server_configuration_ftpbackup_access_delete" qtlid="180590">Delete an access</translation>
    <translation id="server_configuration_ftpbackup_access_delete_question" qtlid="183814">Are you sure you want to delete the access for the IP block <b>{0}</b>?</translation>
    <translation id="server_configuration_ftpbackup_access_delete_success" qtlid="183827">The deletion of the access to the Backup Storage for IP block <b>{0}</b> has been registered but may take a few minutes.</translation>
@@ -522,7 +522,7 @@
    <translation id="server_configuration_intervention_type" qtlid="2642">Type</translation>
    <translation id="server_configuration_intervention_date" qtlid="24523">Date</translation>
    <translation id="server_configuration_intervention_empty" qtlid="455620">No intervention</translation>
-   <translation id="server_configuration_intervention_error">Une erreur est survenue lors du chargement des informations</translation>
+   <translation id="server_configuration_intervention_error" qtlid="170031">An error occurred while loading the information.</translation>
    <translation id="server_tab_firewall" qtlid="151542">Cisco ASA firewall</translation>
    <translation id="server_tab_FIREWALLASA_not_activated" qtlid="151555">You have not subscribed to the Cisco ASA firewall.</translation>
    <translation id="server_tab_FIREWALLASA_not_able_to_order" qtlid="151568">You cannot subscribe because you NIC handle is not authorized to place orders for this server.</translation>
@@ -655,15 +655,15 @@
    <translation id="server_configuration_impi_sessions_success" qtlid="165104">The IPMI module sessions have been deleted.</translation>
    <translation id="server_configuration_impi_disable" qtlid="165117">The IPMI module functions have been temporarily disabled due to a task in progress. They will be re-enabled once the task has been completed.</translation>
    <translation id="server_configuration_impi_monitoring_warning" qtlid="472658">Remember to activate the monitoring of your services before installing an operating system with IPMI.</translation>
-   <translation id="server_configuration_impi_SOL_help" qtlid="201158">You need to configure the SOL session. Click <a href="{0}">here</a> for more information.</translation>
-
+   <translation id="server_configuration_impi_SOL_help">La session SOL nécessite une configuration de votre part.</translation>
+   <translation id="server_configuration_impi_SOL_help_link">Accéder au guide de configuration.</translation>
    <translation id="server_configuration_kvm_order_step1_title" qtlid="229203">Choose the duration</translation>
    <translation id="server_configuration_kvm_order_step2_title" qtlid="229216">Order a KVM for the <em>{0}</em> server</translation>
    <translation id="server_configuration_kvm_order_step2_duration" qtlid="156875">Period:</translation>
    <translation id="server_configuration_kvm_order_step2_details" qtlid="229229">Order details:</translation>
    <translation id="server_configuration_kvm_order_step2_price" qtlid="181084">Price:</translation>
    <translation id="server_configuration_kvm_order_finish_success" qtlid="181266">The order number <a href='{0}' target='_blank'>{1}</a> has been registered.</translation>
-   <translation id="server_configuration_kvm_order_error" qtlid="229242">An error occurred when ordering the KVM.</translation>
+   <translation id="server_configuration_kvm_order_error" qtlid="229242">An error has occurred ordering the KVM.</translation>
 
    <translation id="server_configuration_kvm_informations" qtlid="229255">Details of your KVM</translation>
    <translation id="server_configuration_kvm_informations_name" qtlid="100328">Name:</translation>
@@ -701,7 +701,7 @@
    <translation id="server_configuration_installation_LV" qtlid="173047">LV</translation>
    <translation id="server_configuration_installation_PRIMARY" qtlid="173060">primary</translation>
    <translation id="server_configuration_installation_error_save" qtlid="173073">An error occurred while loading template ({0}).</translation>
-   <translation id="server_configuration_installation_error_hardwareRaid" qtlid="286591">An error occurred when saving the RAID configuration.</translation>
+   <translation id="server_configuration_installation_error_hardwareRaid" qtlid="286591">An error has occurred saving the RAID configuration.</translation>
    <translation id="server_configuration_installation_resume" qtlid="132720">Summary:</translation>
    <translation id="server_configuration_installation_resume_hardwareRaid" qtlid="286604">RAID hardware:</translation>
 
@@ -769,7 +769,7 @@
    <translation id="server_configuration_installation_ovh_stephardraid_label_raid" qtlid="286682">RAID:</translation>
    <translation id="server_configuration_installation_ovh_stephardraid_label_space_total" qtlid="173671">Total space:</translation>
    <translation id="server_configuration_installation_ovh_stephardraid_label_space_available" qtlid="286695">Available space:</translation>
-   <translation id="server_configuration_installation_ovh_stephardraid_loading_error" qtlid="286708">There was an error loading your RAID setup. Please try again. </translation>
+   <translation id="server_configuration_installation_ovh_stephardraid_loading_error" qtlid="286708">An error has occurred loading your RAID setup. Please try again. </translation>
    <translation id="server_configuration_installation_ovh_step2_type" qtlid="2642">Type</translation>
    <translation id="server_configuration_installation_ovh_step2_type_disk" qtlid="173502">Disks used for this installation:</translation>
    <translation id="server_configuration_installation_ovh_step2_type_disk_disable" qtlid="173515">Disk not allocatable for this installation:</translation>
@@ -935,21 +935,21 @@
    <translation id="day_1" qtlid="28807">1 day</translation>
    <translation id="day_other" qtlid="158578">{} days</translation>
    <translation id="month_1" qtlid="70241">1 month</translation>
-   <translation id="month_other">{0} mois</translation>
+   <translation id="month_other" qtlid="220148">{0} months</translation>
    <translation id="year_1" qtlid="70277">1 year</translation>
    <translation id="year_other" qtlid="158604">{} years</translation>
-   <translation id="upto">Jusqu'au {{ date }}</translation>
+   <translation id="upto" qtlid="486503">Until {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Until the 1st of next month</translation>
    <translation id="engage" qtlid="158643">Sign up {0}</translation>
-   <translation id="price_ht_label">{{ price }}&#160;HT</translation>
-   <translation id="price_ttc_label">{{ price }}&#160;TTC</translation>
+   <translation id="price_ht_label" qtlid="486412">{{ price }}</translation>
+   <translation id="price_ttc_label" qtlid="486516">{{ price }}</translation>
    <translation id="price_free" qtlid="130495">Free</translation>
    <translation id="price" qtlid="181084">Price:</translation>
    <translation id="contract_next" qtlid="17743">Next</translation>
    <translation id="contract_previous" qtlid="17431">Previous</translation>
-   <translation id="download_contract">Ouvrir le contrat "{{ name }}" en PDF</translation>
+   <translation id="download_contract" qtlid="486477">Open the "{{ name }}" contract in PDF</translation>
    <translation id="contract_help" qtlid="180382">Scroll down to the contracts in order to validate  them.</translation>
-   <translation id="contracts_list_title">Il y a {{ count }} contrats à consulter.</translation>
+   <translation id="contracts_list_title" qtlid="486490">There are {{ count }} contracts to read.</translation>
    <translation id="contract_list_title" qtlid="180408">There is 1 contract to read.</translation>
    <translation id="contracts_agree" qtlid="180421">I accept the terms and conditions</translation>
    <translation id="contract_agree" qtlid="180434">I accept the terms and conditions</translation>

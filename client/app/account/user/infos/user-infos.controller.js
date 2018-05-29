@@ -1,4 +1,4 @@
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.Infos", [
+angular.module("UserAccount").controller("UserAccount.controllers.Infos", [
     "$scope",
     "$q",
     "$location",
