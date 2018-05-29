@@ -2,18 +2,13 @@
      class="module-useraccount-sections-agreements-container">
 
     <div class="page-header">
-        <h1 data-translate="user_agreement_details_title"></h1>
+        <h1 data-translate="user_agreements_title"></h1>
     </div>
 
     <div class="tab-content">
-        <a class="d-inline-block mb-5"
-           href="#/useraccount/agreements"
-           title="{{ 'user_agreement_details_return' | translate }}">
-            <span class="fa fa-chevron-left mr-2"
-                  aria-hidden="true">
-            </span>
-            <span data-translate="user_agreement_details_return"></span>
-        </a>
+        <oui-back-button data-href="#/useraccount/agreements"
+                         data-title="{{:: 'user_agreement_details_title' | translate }}">
+        </oui-back-button>
 
         <div data-ovh-alert="agreements_details_alerter"></div>
 
@@ -47,7 +42,8 @@
         </div>
 
         <div data-ng-if="!ctrl.loading">
-            <h2 data-ng-bind="ctrl.contract.name"></h2>
+            <h2 data-ng-bind="ctrl.agreement.title || ctrl.contract.name"></h2>
+            <p  data-ng-bind-html="ctrl.agreement.helperText"></p>
             <pre class="pre-scrollable contract"
                  data-ng-bind="ctrl.contract.text">
             </pre>
@@ -60,17 +56,17 @@
 
         <div data-ng-if="!ctrl.loading">
             <div class="row">
-                <div class="col-xs-12 col-md-6">
+                <div class="col-xs-12 col-md-12">
                     <div class="checkbox">
                         <label>
                             <input type="checkbox"
                                    data-ng-model="ctrl.confirmed"
                                    data-ng-disabled="ctrl.alreadyAccepted">
-                            <span data-ng-bind="'user_agreement_details_confirmation_text' | translate:{ t0: ctrl.contract.name }"></span>
+                            <span data-ng-bind-html="'user_agreement_details_agreed' | translate:{ t0: ctrl.agreement.title || ctrl.contract.name }"></span>
                         </label>
                     </div>
                 </div>
-                <div class="col-xs-12 col-md-6 text-right">
+                <div class="col-xs-12 col-md-12">
                     <button type="button"
                             class="oui-button oui-button_primary"
                             data-ng-disabled="!ctrl.confirmed || ctrl.accepted"
