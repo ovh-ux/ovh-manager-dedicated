@@ -10,5 +10,14 @@ angular.module("App").config(($stateProvider) => {
                 templateUrl: "dedicatedCloud/datacenter/dashboard/dedicatedCloud-datacenter-dashboard.html"
             }
         }
+    }).state("app.dedicatedClouds.datacenter.name-update", {
+        url: "/name-update",
+        controller: "NameEditionCtrl",
+        templateUrl: "components/name-edition/name-edition.html",
+        layout: "modal",
+        params: {
+            value: null,
+            contextTitle: ""
+        }
     });
 });

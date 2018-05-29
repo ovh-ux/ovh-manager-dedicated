@@ -16,7 +16,7 @@
                         <div class="mb-3"
                              data-ng-if="!datacenterName.editMode && !datacenterDescription.editMode">
                             <div class="d-flex">
-                                <h1 class="d-inline-block mb-0 word-break"
+                                <h1 class="oui-header_2 d-inline-block mb-0 word-break"
                                     data-ng-bind="datacenterName.model || 'dedicatedCloud_datacenter_no_name' | translate:{ t0: datacenter.id }">
                                 </h1>
                                 <button type="button"
@@ -66,57 +66,6 @@
                             </div>
                         </div>
                     </form>
-                </div>
-                <div class="col-md-3 d-flex">
-                    <div class="btn-group ml-auto mt-4">
-                        <button class="oui-button oui-button_dropdown mb-0"
-                                type="button"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                                data-toggle="dropdown">
-                            <span data-translate="common_actions"></span>
-                            <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li data-ng-if="datacenter.model.isRemovable">
-                                <button type="button"
-                                        class="btn btn-link"
-                                        data-ng-click="setAction('datacenter/delete/dedicatedCloud-datacenter-delete', datacenter.model.id)"
-                                        data-translate="dedicatedCloud_datacenter_delete">
-                                </button>
-                            </li>
-                            <li data-ng-if="dedicatedCloud.vScopeUrl">
-                                <a class="btn btn-link"
-                                   target="_blank"
-                                   data-ng-href="{{dedicatedCloud.vScopeUrl}}"
-                                   title="{{ 'dedicatedCloud_datacenter_go_vscope' | translate }} ({{ 'core_new_window' | translate }})"
-                                   rel="noopener">
-                                    <span data-translate="dedicatedCloud_datacenter_go_vscope"></span>
-                                    <i class="fa fa-external-link ml-1"></i>
-                                </a>
-                            </li>
-                            <li data-ng-if="dedicatedCloud.webInterfaceUrl">
-                                <a class="btn btn-link"
-                                   target="_blank"
-                                   data-ng-href="{{dedicatedCloud.webInterfaceUrl}}"
-                                   title="{{ 'dedicatedCloud_datacenter_go_web_interface' | translate }} ({{ 'core_new_window' | translate }})"
-                                   rel="noopener">
-                                    <span data-translate="dedicatedCloud_datacenter_go_web_interface"></span>
-                                    <i class="fa fa-external-link ml-1"></i>
-                                </a>
-                            </li>
-                            <li data-ng-if="dedicatedCloud.certifiedInterfaceUrl && dedicatedCloud.advancedSecurity">
-                                <a class="btn btn-link"
-                                   target="_blank"
-                                   data-ng-href="{{dedicatedCloud.certifiedInterfaceUrl}}"
-                                   title="{{ 'dedicatedCloud_datacenter_go_certified_web_interface' | translate }} ({{ 'core_new_window' | translate }})"
-                                   rel="noopener">
-                                    <span data-translate="dedicatedCloud_datacenter_go_certified_web_interface"></span>
-                                    <i class="fa fa-external-link ml-1"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </header>

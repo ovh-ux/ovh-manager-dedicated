@@ -16,7 +16,7 @@
         <div class="mb-4"
              data-ng-if="ctrl.paymentRequests.length">
             <oui-message data-type="info">
-                <span data-ng-bind-html="tr('payments_request_pending', [ctrl.paymentRequestsHref])"></span>
+                <span data-ng-bind-html="'payments_request_pending' | translate:{ t0: ctrl.paymentRequestsHref }"></span>
             </oui-message>
         </div>
 

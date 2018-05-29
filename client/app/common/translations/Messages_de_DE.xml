@@ -115,8 +115,8 @@
    <translation id="wizard_renew" qtlid="118962">Verlängern</translation>
    <translation id="wizard_next" qtlid="17743">Weiter</translation>
    <translation id="wizard_previous" qtlid="17431">Zurück</translation>
-   <translation id="wizard_breadcrumb">Étape {{ currentStep }} sur {{ stepCount }}</translation>
-   <translation id="pagination_page" qtlid="129123">Seite {0} / {1}</translation>
+   <translation id="wizard_breadcrumb" qtlid="486451">Étape {{ currentStep }} sur {{ stepCount }}</translation>
+   <translation id="pagination_page" qtlid="486464">Page {{ current }} / {{ last }}</translation>
    <translation id="pagination_go" qtlid="31522">OK</translation>
    <translation id="pagination_display" qtlid="69353">Anzeigen</translation>
    <translation id="common_loading" qtlid="361984">Wird geladen...</translation>
@@ -193,9 +193,9 @@
    <translation id="common_newtab" qtlid="402165">neuer Tab</translation>
    <translation id="contract_next" qtlid="17743">Weiter</translation>
    <translation id="contract_previous" qtlid="17431">Zurück</translation>
-   <translation id="download_contract">Ouvrir le contrat "{{ name }}" en PDF</translation>
+   <translation id="download_contract" qtlid="486477">Ouvrir le contrat "{{ name }}" en PDF</translation>
    <translation id="contract_help" qtlid="180382">Sie können die Verträge erst akzeptieren, wenn Sie sie vollständig gelesen haben.</translation>
-   <translation id="contracts_list_title">Il y a {{ count }} contrats à consulter.</translation>
+   <translation id="contracts_list_title" qtlid="486490">Il y a {{ count }} contrats à consulter.</translation>
    <translation id="contract_list_title" qtlid="180408">Es ist ein Vertrag zur Einsicht verfügbar.</translation>
    <translation id="contracts_agree" qtlid="180421">Ich akzeptiere die Verträge</translation>
    <translation id="contract_agree" qtlid="180434">Ich akzeptiere den Vertrag</translation>
@@ -203,14 +203,14 @@
    <translation id="day_1" qtlid="28807">1 Tag</translation>
    <translation id="day_other" qtlid="158578">{} Tag(e)</translation>
    <translation id="month_1" qtlid="70241">1 Monat</translation>
-   <translation id="month_other">{0} mois</translation>
+   <translation id="month_other" qtlid="220148">{0} Monat(e)</translation>
    <translation id="year_1" qtlid="70277">1 Jahr</translation>
    <translation id="year_other" qtlid="158604">{} Jahr(e)</translation>
-   <translation id="upto">Jusqu'au {{ date }}</translation>
+   <translation id="upto" qtlid="486503">Jusqu'au {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Bis zum ersten Tag des nächsten Monats</translation>
    <translation id="engage" qtlid="158643">Laufzeit {0}</translation>
-   <translation id="price_ht_label">{{ price }}&#160;HT</translation>
-   <translation id="price_ttc_label" qtlid="166196">{0}&#160;inkl. MwSt.</translation>
+   <translation id="price_ht_label" qtlid="486412">{{ price }}&#160;HT</translation>
+   <translation id="price_ttc_label" qtlid="486516">{{ price }}&#160;TTC</translation>
    <translation id="price_free" qtlid="195776">Inklusive</translation>
    <translation id="price_label_yearly" qtlid="288977">/Jahr </translation>
 
@@ -540,9 +540,9 @@
    <translation id="me_alerts_PAYMENTMEAN_CREDITCARD_TOOMANYFAILURES" qtlid="343954">Derzeit führt/führen <strong>{0}</strong> Kreditkarte(n) zu einer Fehlermeldung. Bitte gehen Sie in den Bereich <a href="#/billing/mean" class="alert-link">Abrechnung</a>, um die Angaben zu überprüfen und/oder ein neues Zahlungsmittel Ihrer Wahl zu hinterlegen.</translation>
    <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="343967">Derzeit führt/führen <strong>{0}</strong> hinterlegte(r) PayPal-Account(s) zu einer Fehlermeldung. Bitte gehen Sie in den Bereich <a href="#/billing/mean" class="alert-link">Abrechnung</a>, um die Angaben zu überprüfen und/oder ein neues Zahlungsmittel Ihrer Wahl zu hinterlegen.</translation>
 
-   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="374958">Ihr Prepaid Account ist derzeit mit <strong>{{value}}</strong> im Minus (Stand {{date | date:'medium'}}). Bitte gehen Sie in den Bereich <a href="{{link}}" class="alert-link">Abrechnung</a>, um die ausstehenden Beträge zu begleichen.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369545">Die ausstehenden Beträge belaufen sich derzeit auf <strong>{0}</strong> (davon sind {1} nicht fällig). Bitte gehen Sie in den Bereich <a href="{2}" class="alert-link">Abrechnung</a>, um die Zahlung vorzunehmen. </translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="343993">Sie sind derzeit mit <strong>{0}</strong> im Minus. Bitte gehen Sie in den Bereich <a href="{1}" class="alert-link">Abrechnung</a>, um die ausstehenden Beträge zu begleichen.</translation>
+   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="487730">Votre compte prépayé est débiteur de <strong>{0}</strong> au {1}. Rendez-vous dans <a href="#/billing/ovhaccount" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="486529">Vous avez une dette de <strong>{0}</strong> (dont un montant de {1} non échu). Rendez-vous dans <a href="{2}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="486542">Vous avez une dette de <strong>{0}</strong>. Rendez-vous dans <a href="{1}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="383919">Ihr Prepaid Account hat das von Ihnen definierte Abbuchungslimit erreicht. Bitte gehen Sie in den Bereich <a href="#/billing/ovhaccount" class="alert-link">Abrechnung</a> für weitere Informationen.</translation>
 
@@ -579,4 +579,13 @@
    <translation id="otrs_menu_email_history" qtlid="260091">E-Mail-History</translation>
    <translation id="otrs_menu_telephony_contact" qtlid="260827">Telefonischer Support</translation>
    <translation id="otrs_menu_changelog" qtlid="124964">Changelog</translation>
+
+   <translation id="common_field_error_required" qtlid="472294">Bitte füllen Sie dieses Feld aus.</translation>
+   <translation id="common_field_error_number" qtlid="472307">Bitte geben Sie einen gültigen Zahlenwert ein.</translation>
+   <translation id="common_field_error_email" qtlid="472320">Bitte geben Sie eine gültige E-Mail-Adresse ein.</translation>
+   <translation id="common_field_error_min" qtlid="472333">Bitte geben Sie einen Wert größer oder gleich {{min}} ein.</translation>
+   <translation id="common_field_error_max" qtlid="472346">Bitte geben Sie einen Wert kleiner oder gleich {{max}} ein.</translation>
+   <translation id="common_field_error_minlength" qtlid="472359">Bitte geben Sie mindestens {{minlength}} Zeichen ein.</translation>
+   <translation id="common_field_error_maxlength" qtlid="472372">Bitte geben Sie höchstens {{maxlength}} Zeichen ein.</translation>
+   <translation id="common_field_error_pattern" qtlid="472385">Bitte geben Sie ein gültiges Format ein.</translation>
 </translations>

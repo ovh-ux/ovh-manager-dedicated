@@ -1,11 +1,11 @@
 <div data-ovh-alert="bandwithError"></div>
 
-<div class="row d-md-flex">
+<div class="row d-md-flex mb-5">
     <div class="col-sm-4">
         <div class="oui-tile mb-5 h-100">
-            <h4 class="oui-tile__title oui-header_4"
+            <h2 class="oui-tile__title oui-header_4"
                 data-translate="housing_tab_stats_legend_general">
-            </h4>
+            </h2>
             <div class="oui-tile__body text-center"
                  data-ng-if="loadingHousingInformations">
                 <oui-spinner></oui-spinner>
@@ -27,6 +27,19 @@
                             </span>
                         </dd>
                     </dl>
+                    <div class="oui-tile__actions">
+                        <oui-action-menu
+                            aria-label="{{:: 'menu_action_label' | translate:{ t0: ('housing_configuration_reboot_title_button' | translate) } }}"
+                            data-compact
+                            data-align="end">
+                            <oui-action-menu-item
+                                aria-label="{{:: 'housing_configuration_reboot_title_button' | translate }}"
+                                data-text="{{:: 'housing_configuration_reboot_title_button' | translate }}"
+                                data-on-click="!disable.reboot && !disable.byOtherTask && setAction('reboot/dedicated-housing-reboot')"
+                                data-disabled="disable.reboot || disable.byOtherTask">
+                            </oui-action-menu-item>
+                        </oui-action-menu>
+                    </div>
                 </div>
                 <div class="oui-tile__item">
                     <dl class="oui-tile__definition">
@@ -62,32 +75,6 @@
                 </div>
                 <div class="oui-tile__item">
                     <dl class="oui-tile__definition">
-                        <dt class="oui-tile__term">
-                            <service-expiration-label data-service-infos="housing.serviceInfos">
-                            </service-expiration-label>
-                        </dt>
-                        <dd class="oui-tile__description">
-                            <service-expiration-date
-                                data-service-name="housing.name"
-                                data-service-type="'DEDICATED_HOUSING'"
-                                data-service-infos="housing.serviceInfos"
-                                data-force-hide-renew-action="true"
-                                data-use-ui-kit>
-                            </service-expiration-date>
-                        </dd>
-                    </dl>
-                    <div class="oui-tile__actions">
-                        <service-expiration-date
-                            data-hide-renew-date="true"
-                            data-service-name="housing.name"
-                            data-service-type="'DEDICATED_HOUSING'"
-                            data-service-infos="housing.serviceInfos"
-                            data-use-ui-kit>
-                        </service-expiration-date>
-                    </div>
-                </div>
-                <div class="oui-tile__item">
-                    <dl class="oui-tile__definition">
                         <dt class="oui-tile__term"
                             data-translate="housing_creation_date"></dt>
                         <dd class="oui-tile__description"
@@ -101,9 +88,9 @@
     <div class="col-sm-4">
         <div class="oui-tile mb-5 h-100">
 
-            <h4 class="oui-tile__title oui-header_4"
+            <h2 class="oui-tile__title oui-header_4"
                 data-translate="housing_tab_stats_legend_network">
-            </h4>
+            </h2>
             <div class="oui-tile__body"
                  data-ng-repeat="network in housing.network track by $index">
                 <div class="oui-tile__item">
@@ -121,7 +108,7 @@
                             <oui-action-menu-item
                                 data-text="{{:: 'housing_configuration_ipv4_manage' | translate }}"
                                 data-aria-label="{{:: 'housing_configuration_ipv4_manage' | translate }}"
-                                data-ng-href="{{ '#/configuration/ip?tab=IP&serviceName=' + housing.name }}"></oui-action-menu-item>
+                                data-ui-sref="app.ip({ serviceName: housing.name })"></oui-action-menu-item>
                         </oui-action-menu>
                     </div>
                 </div>
@@ -155,9 +142,9 @@
 
     <div class="col-sm-4">
         <div class="oui-tile mb-5 h-100">
-            <h4 class="oui-tile__title oui-header_4"
+            <h2 class="oui-tile__title oui-header_4"
                 data-translate="housing_tab_stats_legend_route">
-            </h4>
+            </h2>
             <div class="oui-tile__body"
                  data-ng-repeat="network in housing.network track by $index">
                 <div class="oui-tile__item">
@@ -174,6 +161,59 @@
                             data-translate="housing_tab_stats_gateway"></dt>
                         <dd class="oui-tile__description"
                             data-ng-bind=":: network.link.port || '-'"></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row d-md-flex">
+    <div class="col-sm-4">
+        <div class="oui-tile mb-5 h-100"
+             data-ng-if="!loadingHousingInformations">
+            <h2 class="oui-tile__title oui-header_4"
+                data-translate="housing_tab_stats_legend_subscription">
+            </h2>
+            <div class="oui-tile__body">
+                <div class="oui-tile__item">
+                    <dl class="oui-tile__definition">
+                        <dt class="oui-tile__term"
+                            data-translate="housing_subscription_owner">
+                        </dt>
+                        <dd class="oui-tile__description"
+                            data-ng-bind="user.firstName + ' ' + user.lastName">
+                        </dd>
+                    </dl>
+                    <div class="oui-tile__actions">
+                        <oui-action-menu
+                            aria-label="{{:: 'menu_action_label' | translate:{ t0: ('core_change_owner' | translate)} }}"
+                            data-compact
+                            data-align="end">
+                            <oui-action-menu-item
+                                aria-label="{{:: 'core_change_owner' | translate }}"
+                                data-text="{{:: 'core_change_owner' | translate }}"
+                                data-href="{{changeOwnerUrl}}"
+                                data-external>
+                            </oui-action-menu-item>
+                        </oui-action-menu>
+                    </div>
+                </div>
+                <div class="oui-tile__item">
+                    <dl class="oui-tile__definition">
+                        <dt class="oui-tile__term">
+                            <service-expiration-label data-service-infos="housing.serviceInfos">
+                            </service-expiration-label>
+                        </dt>
+                        <dd class="oui-link">
+                            <service-expiration-date
+                                data-service-name="housing.name"
+                                data-service-type="'DEDICATED_HOUSING'"
+                                data-service-infos="housing.serviceInfos"
+                                data-force-hide-renew-action="true"
+                                data-use-ui-kit>
+                            </service-expiration-date>
+                        </dd>
                     </dl>
                 </div>
             </div>

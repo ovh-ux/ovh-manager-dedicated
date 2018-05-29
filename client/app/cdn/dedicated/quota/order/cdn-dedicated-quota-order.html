@@ -27,7 +27,7 @@
                                value="{{ price.quantity }}"
                                data-ng-model="choices.count" >
                         <span data-translate="cdn_configuration_order_quota_step1_price"
-                              data-translate-values="{t0: price.withoutTax, t1: price.quantity}"></span>
+                              data-translate-values="{ t0: price.withoutTax, t1: price.quantity }"></span>
                     </label>
                 </div>
             </div>
@@ -37,7 +37,7 @@
         <div data-wizard-step
              data-wizard-step-valid="contractsValidated.value">
 
-            <p data-ng-bind-html="'cdn_configuration_order_quota_step2_question' | translate:{t0: choices.count, t1: cdn.serviceName})"></p>
+            <p data-ng-bind-html="'cdn_configuration_order_quota_step2_question' | translate:{ t0: choices.count, t1: cdn.serviceName })"></p>
             <dl>
                 <dt data-translate="cdn_configuration_order_quota_step2_totalWithoutTax"></dt>
                 <dd class="text-danger"

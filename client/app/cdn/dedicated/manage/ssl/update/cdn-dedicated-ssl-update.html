@@ -1,71 +1,92 @@
-<div data-ng-controller="CdnUpdateSslCtrl">
+<div class="cdn-dedicated-ssl-update">
 
-    <div data-wizard
-         data-wizard-on-cancel="resetAction"
-         data-wizard-on-finish="updateSsl"
-         data-wizard-title=":: 'cdn_configuration_update_ssl_title' | translate">
+    <div class="oui-modal oui-modal_shadow"
+         data-ng-if="$ctrl.loading.init || ($ctrl.ssl && $ctrl.ssl.status !== 'on' && $ctrl.ssl.status !== 'off')">
 
-        <div data-wizard-step
-             data-wizard-step-valid="entry.certificate && entry.key">
-
-            <p data-translate="cdn_configuration_update_ssl_step1"></p>
-            <div class="form-group">
-                <label for="certificate"
-                       class="control-label"
-                       data-translate="cdn_configuration_ssl_certificate">
-                </label>
-                <textarea class="form-control"
-                          id="certificate"
-                          name="certificate"
-                          rows="5"
-                          data-ng-model="entry.certificate">
-                </textarea>
-            </div>
-            <div class="form-group">
-                <label for="key"
-                       class="control-label"
-                       data-translate="cdn_configuration_ssl_key">
-                </label>
-                <textarea class="form-control"
-                          id="key"
-                          name="key"
-                          rows="5"
-                          data-ng-model="entry.key">
-                </textarea>
-            </div>
-            <div class="form-group">
-                <label for="chain"
-                       class="control-label"
-                       data-translate="cdn_configuration_ssl_chain">
-                </label>
-                <textarea class="form-control"
-                          id="chain"
-                          name="chain"
-                          rows="5"
-                          data-ng-model="entry.chain">
-                </textarea>
-            </div>
-
+        <div class="oui-modal__header">
+            <a class="oui-icon oui-icon-close_thin oui-modal__close-button"
+               aria-label="{{ 'wizard_close' | translate }}"
+               data-ui-sref="^">
+            </a>
         </div>
 
-        <div data-wizard-step>
+        <div class="oui-modal__body text-center oui-modal__body_no-icon"
+             data-ng-if="$ctrl.loading.init">
+            <oui-spinner></oui-spinner>
+        </div>
 
-            <p data-translate="cdn_configuration_update_ssl_step2"></p>
-            <dl>
-                <dt data-translate="cdn_configuration_ssl_certificate"></dt>
-                <dd data-ng-bind-html="entry.certificate"></dd>
-                <dt data-translate="cdn_configuration_ssl_key"></dt>
-                <dd data-ng-bind-html="entry.key"></dd>
-                <dt data-ng-if="entry.chain"
-                    data-translate="cdn_configuration_ssl_chain">
-                </dt>
-                <dd data-ng-if="entry.chain"
-                    data-ng-bind-html="entry.chain">
-                </dd>
-            </dl>
+        <div class="oui-modal__body"
+             data-ng-if="!$ctrl.loading.init">
+            <i class="oui-icon oui-icon-warning_circle oui-icon_bicolor"
+               aria-hidden="true">
+            </i>
 
+            <div class="oui-modal__body-text">
+                <h2 class="oui-modal__title"
+                    data-translate="cdn_dedicated_ssl_update">
+                </h2>
+
+                <p data-translate="cdn_dedicated_ssl_update_warning"></p>
+            </div>
+        </div>
+
+        <div class="oui-modal__footer">
+            <a class="oui-button oui-button_primary"
+               data-translate="global_OK"
+               data-ui-sref="^">
+            </a>
         </div>
 
     </div>
+
+    <form name="$ctrl.cdnSslUpdateForm"
+          novalidate
+          data-ng-submit="$ctrl.onCdnSslUpdateFormSubmit()"
+          data-ng-if="!$ctrl.loading.init && (!$ctrl.ssl || $ctrl.ssl && ($ctrl.ssl.status === 'on' || $ctrl.ssl.status === 'off'))">
+
+        <oui-modal data-title="{{ :: 'cdn_dedicated_ssl_update' | translate }}"
+                   data-primary-label="{{ :: 'wizard_confirm' | translate }}"
+                   data-secondary-label="{{ :: 'wizard_cancel' | translate }}"
+                   data-secondary-action="$ctrl.$state.go('^')"
+                   data-on-dismiss="$ctrl.$state.go('^')"
+                   data-loading="$ctrl.loading.update">
+
+            <p data-translate="cdn_dedicated_ssl_update_explain"></p>
+
+            <!-- SSL certificate -->
+            <oui-field data-label="{{ :: 'cdn_dedicated_ssl_certificate' | translate }}">
+                <textarea class="oui-textarea"
+                          name="certificate"
+                          id="update-certificate"
+                          rows="5"
+                          data-required
+                          data-ng-model="$ctrl.model.certificate">
+                </textarea>
+            </oui-field> <!-- End of SSL certificate -->
+
+            <!-- SSL key -->
+            <oui-field data-label="{{ :: 'cdn_dedicated_ssl_key' | translate }}">
+                <textarea class="oui-textarea"
+                          name="key"
+                          id="update-key"
+                          rows="5"
+                          data-required
+                          data-ng-model="$ctrl.model.key">
+                </textarea>
+            </oui-field> <!-- End of SSL key -->
+
+            <!-- SSL chain -->
+            <oui-field data-label="{{ :: 'cdn_dedicated_ssl_chain' | translate }}">
+                <textarea class="oui-textarea"
+                          name="chain"
+                          id="update-chain"
+                          rows="5"
+                          data-ng-model="$ctrl.model.chain">
+                </textarea>
+            </oui-field> <!-- End of SSL chain -->
+
+        </oui-modal>
+
+    </form>
 
 </div>

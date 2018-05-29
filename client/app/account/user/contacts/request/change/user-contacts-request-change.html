@@ -16,7 +16,7 @@
                 <p data-translate="user_account_contacts_refuse_info" data-translate-values="{ t0: task.serviceDomain }"></p>
                 <p data-translate="user_account_contacts_received_info_roles" data-translate-values="{ t0: task.fromAccount }"
                    data-ng-if="method === 'RECEIVED'"></p>
-                <p data-ng-bind-html="'user_account_contacts_send_info_roles' | translate:{t0: task.toAccount, t1: task.fromAccount}"
+                <p data-ng-bind-html="'user_account_contacts_send_info_roles' | translate:{ t0: task.toAccount, t1: task.fromAccount }"
                    data-ng-if="method === 'SEND'"></p>
                 <ul>
                     <li data-ng-repeat="role in task.contactTypes track by $index"

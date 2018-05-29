@@ -13,7 +13,7 @@
         <div data-ng-if="!loader.loading && !loader.error">
             <p class="text-danger"
                data-ng-if="server.state == 'HACKED' || server.state == 'HACKED_BLOCKED'"
-               data-ng-bind-html="'server_configuration_impi_disabled' | translate:{t0: ('server_configuration_state_' + server.state | translate)}">
+               data-ng-bind-html="'server_configuration_impi_disabled' | translate:{ t0: ('server_configuration_state_' + server.state | translate) }">
             </p>
 
             <div data-ng-if="server.state != 'HACKED' && server.state != 'HACKED_BLOCKED'">
@@ -52,8 +52,8 @@
                 <div data-ng-if="ipmi.model.activated && !disable.otherTask && !disable.localTask">
                     <p data-ng-bind-html="'server_configuration_impi_information' | translate "></p>
                     <ul>
-                        <li data-ng-bind-html="'server_configuration_impi_information3' | translate: {t0: ipmi.model.clientIp || ''}"></li>
-                        <li data-ng-bind-html="'server_configuration_impi_information2' | translate: {t0: ipmi.model.clientIp || ''}"></li>
+                        <li data-ng-bind-html="'server_configuration_impi_information3' | translate:{ t0: ipmi.model.clientIp || '' }"></li>
+                        <li data-ng-bind-html="'server_configuration_impi_information2' | translate:{ t0: ipmi.model.clientIp || '' }"></li>
                     </ul>
                     <p data-translate="server_configuration_impi_monitoring_warning"></p>
                     <p data-ng-if="ipmiHelpUrl"
