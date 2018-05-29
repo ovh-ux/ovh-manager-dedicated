@@ -1,4 +1,4 @@
-angular.module("UserAccount").controller("UserAccount.controllers.doubleAuth", [
+angular.module("UserAccount").controller("UserAccountSecurityController", [
     "$scope",
     "$q",
     "$translate",
