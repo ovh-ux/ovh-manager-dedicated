@@ -1,37 +1,30 @@
-angular.module("UserAccount").controller("UserAccountAgreementsController", [
-    "$scope",
-    "$translate",
-    "UserAccount.services.agreements",
-    "Alerter",
-    function ($scope, $translate, Service, Alerter) {
-        "use strict";
+angular
+    .module("UserAccount")
+    .controller("UserAccountAgreementsController", ($scope, $translate, Alerter, OvhApiMe, UserAccountAgreements) => {
+        $scope.loaders = {
+            toActivate: true,
+            toActivateList: true
+        };
+        $scope.toActivate = [];
+        $scope.agreed = {};
 
         function init () {
             $scope.loading = true;
             $scope.list = [];
 
-            $scope.getToValidate();
+            return $scope.getToValidate();
         }
-
-        $scope.loaders = {
-            toActivate: true,
-            toActivateList: true
-        };
-
-        $scope.toActivate = [];
-
-        $scope.agreed = {};
 
         $scope.loadAgreementsList = function (count, offset) {
             init();
 
-            Service.getList(count, offset)
+            return UserAccountAgreements
+                .getList(count, offset)
                 .then((agreements) => {
                     $scope.list = agreements;
-                }, (err) => {
-                    Alerter.error(`${$translate.instant("user_agreements_error")} ${_.get(err, "message") || err}`, "agreements_alerter");
                 })
-                .then(() => {
+                .catch((err) => Alerter.error(`${$translate.instant("user_agreements_error")} ${_.get(err, "message") || err}`, "agreements_alerter"))
+                .finally(() => {
                     $scope.loading = false;
                 });
         };
@@ -40,35 +33,30 @@ angular.module("UserAccount").controller("UserAccountAgreementsController", [
             $scope.toActivate = [];
             $scope.loaders.toActivate = true;
 
-            Service.getToValidate().then(
-                (agreements) => {
+            return UserAccountAgreements
+                .getToValidate()
+                .then((agreements) => {
                     $scope.toActivate = agreements;
                     $scope.loaders.toActivate = false;
-                },
-                angular.noop,
-                (contract) => {
+                }, angular.noop, (contract) => {
                     $scope.toActivate.push(contract);
                     $scope.agreed[contract.id] = false;
-                }
-            );
+                });
         };
 
-        $scope.accept = function (contractId) {
-            $scope.loaders[`accept_${contractId}`] = true;
+        $scope.accept = function (id) {
+            $scope.loaders[`accept_${id}`] = true;
 
-            Service.accept(contractId).then(
-                () => {
+            return OvhApiMe.Agreements().v6()
+                .accept({ id }, {}).$promise
+                .then(() => {
                     $scope.getToValidate();
                     $scope.$broadcast("paginationServerSide.reload", "agreementsList");
-                },
-                (d) => {
-                    Alerter.set("alert alert-danger", d, d, "agreements_alerter");
-                }
-            );
+                })
+                .catch((d) => Alerter.set("alert alert-danger", d, d, "agreements_alerter"));
         };
 
         $scope.resetMessages = function () {
             Alerter.resetMessage("agreements_alerter");
         };
-    }
-]);
+    });

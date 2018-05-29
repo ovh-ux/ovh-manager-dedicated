@@ -1,12 +1,10 @@
-<div class="module-useraccount-sections-ssh-container">
-
+<div class="useraccount-agreements">
     <div class="page-header">
         <h1 data-translate="user_agreements_title"></h1>
     </div>
-
+    <!-- /.page-header -->
     <div class="tab-content">
         <div data-ovh-alert="agreements_alerter"></div>
-
         <div class="alert"
              data-ng-class="alertType"
              data-ng-if="message">
@@ -20,83 +18,53 @@
             </button>
             <span data-ng-bind="message"></span>
         </div>
-
         <div data-ng-if="toActivate.count || (loading && loaders.toActivate)">
-
             <h2 data-translate="user_agreements_to_validate"></h2>
-
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col"
+                        <th colspan="2"
+                            scope="col"
                             data-translate="user_agreements_name">
                         </th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr data-ng-repeat="agreement in toActivate.list.results track by $index">
                         <th scope="row">
-                            <a data-ng-href="{{ '#/useraccount/agreements/' + agreement.id + '/details' }}"
+                            <a data-ui-sref="app.account.service.useraccount.agreementsDetails({
+                                   id: agreement.id
+                               })"
                                data-ng-bind-html="'user_agreements_agreed' | translate:{ t0: agreement.name }">
                             </a>
                         </th>
                         <td class="text-right">
-                            <oui-spinner data-size="s"
-                                         data-ng-if="loaders['accept_' + agreement.id]">
-                            </oui-spinner>
-
-                            <div data-uib-dropdown
-                                 data-ng-if="!loaders['accept_' + agreement.id]">
-                                <button type="button"
-                                        class="btn btn-link py-0"
-                                        data-ng-disabled="loaders['accept_' + agreement.id]"
-                                        data-uib-dropdown-toggle>
-                                    <span class="ovh-font ovh-font-dots"
-                                          aria-hidden="true">
-                                    </span>
-                                </button>
-                                <ul data-uib-dropdown-menu
-                                    class="dropdown-menu dropdown-menu-right">
-                                    <li>
-                                        <button type="button"
-                                                class="btn btn-link"
-                                                data-ng-click="accept(agreement.id)"
-                                                data-translate="user_agreements_accept"
-                                                title="{{ 'user_agreements_accept_title' | translate:{ t0: agreement.name } }}">
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <a target="_blank"
-                                           class="btn btn-link"
-                                           rel="noopener"
-                                           data-ng-href="{{agreement.pdfUrl}}"
-                                           data-translate="user_agreements_download_pdf"
-                                           title="{{ 'user_agreements_download_pdf_title' | translate:{ t0: agreement.name } }}">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <oui-action-menu data-align="end"
+                                             data-compact>
+                                <oui-action-menu-item aria-label="{{ :: 'user_agreements_accept_title' | translate:{ t0: agreement.name } }}"
+                                                      data-text="{{ :: 'user_agreements_accept' | translate }}"
+                                                      data-on-click="accept(agreement.id)">
+                                </oui-action-menu-item>
+                                <oui-action-menu-item data-text="{{ :: 'user_agreements_download_pdf' | translate }}"
+                                                      href="{{ agreement.pdfUrl }}"
+                                                      data-external>
+                                </oui-action-menu-item>
+                            </oui-action-menu>
                         </td>
                     </tr>
                 </tbody>
                 <tbody data-ng-if="loaders.toActivate">
                     <tr>
                         <td class="text-center"
-                            colspan="4">
-                            <oui-spinner class="my-4"
-                                         data-size="s">
+                            colspan="2">
+                            <oui-spinner data-size="s">
                             </oui-spinner>
                         </td>
                     </tr>
                 </tbody>
             </table>
-
         </div>
-
-
         <h2 data-translate="user_agreements_list_title"></h2>
-
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -106,56 +74,48 @@
                     <th scope="col"
                         data-translate="user_agreements_status">
                     </th>
-                    <th scope="col"
-                        data-translate="user_agreements_date" colspan="2">
+                    <th colspan="2"
+                        scope="col"
+                        data-translate="user_agreements_date">
                     </th>
                 </tr>
             </thead>
             <tbody data-ng-if="loading">
                 <tr>
-                    <td colspan="3"
+                    <td colspan="4"
                         class="text-center">
-                        <oui-spinner class="my-4"
-                                     data-size="s">
+                        <oui-spinner data-size="s">
                         </oui-spinner>
                     </td>
                 </tr>
             </tbody>
-            <tbody data-ng-if="list.count == 0 && !loading">
+            <tbody data-ng-if="list.count === 0 && !loading">
                 <tr>
-                    <td colspan="3"
-                        class="text-center">
-                        <span class="font-italic"
-                              data-translate="user_agreements_table_empty">
-                        </span>
+                    <td colspan="4"
+                        class="text-center font-italic"
+                        data-translate="user_agreements_table_empty">
                     </td>
                 </tr>
             </tbody>
             <tbody data-ng-if="list.count > 0 && !loading">
                 <tr data-ng-repeat="agreement in list.list.results track by $index">
                     <th scope="row">
-                        <a data-ng-href="{{ '#/useraccount/agreements/' + agreement.id + '/details' }}" data-ng-bind="agreement.name"></a>
-                    </th>
-                    <td>
-                        <span class="label"
-                                data-ng-class="{
-                                    'label-danger': agreement.state == 'KO',
-                                    'label-info': agreement.state == 'OBSOLETE',
-                                    'label-success': agreement.state == 'OK',
-                                    'label-danger': agreement.state == 'TODO'
-                                }"
-                                data-translate="{{ 'user_agreements_status_'+agreement.state }}"></span>
-                    </td>
-                    <td data-ng-bind="agreement.date | date:'short'"></td>
-                    <td>
-                        <a target="_blank"
-                           rel="noopener"
-                           data-ng-href="{{agreement.pdfUrl}}"
-                           title="{{ 'user_agreements_download_pdf_title' | translate:{ t0: agreement.name } }}">
-                            <span class="fa fa-download"
-                                  aria-hidden="true">
-                            </span>
+                        <a data-ui-sref="app.account.service.useraccount.agreementsDetails({
+                               id: agreement.id
+                           })"
+                           data-ng-bind="agreement.name">
                         </a>
+                    </th>
+                    <td data-translate="{{ 'user_agreements_status_' + agreement.state }}"></td>
+                    <td data-ng-bind="agreement.date | date:'short'"></td>
+                    <td class="text-right">
+                        <oui-action-menu data-align="end"
+                                         data-compact>
+                            <oui-action-menu-item data-text="{{ :: 'common_download_format' | translate:{ t0: 'PDF' } }}"
+                                                  href="{{ agreement.pdfUrl }}"
+                                                  data-external>
+                            </oui-action-menu-item>
+                        </oui-action-menu>
                     </td>
                 </tr>
             </tbody>
@@ -166,5 +126,6 @@
              data-pagination-server-side-table-loading="loading">
         </div>
     </div>
-
+    <!-- /.tab-content -->
 </div>
+<!-- /.useraccount-agreements -->

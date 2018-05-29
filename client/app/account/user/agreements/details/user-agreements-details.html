@@ -1,31 +1,26 @@
-<div class="module-useraccount-sections-agreements-container">
-
+<div class="useraccount-agreements-details">
     <div class="page-header">
         <h1 data-translate="user_agreement_details_title"></h1>
     </div>
-
+    <!-- /.page-header -->
     <div class="tab-content">
         <a class="d-inline-block mb-5"
-           href="#/useraccount/agreements"
-           title="{{ 'user_agreement_details_return' | translate }}">
+           title="{{:: 'user_agreement_details_return' | translate }}"
+           data-ui-sref="app.account.service.useraccount.agreements">
             <span class="fa fa-chevron-left mr-2"
                   aria-hidden="true">
             </span>
             <span data-translate="user_agreement_details_return"></span>
         </a>
-
         <div data-ovh-alert="agreements_details_alerter"></div>
-
         <div class="text-center"
              data-ng-if="$ctrl.loading">
             <oui-spinner></oui-spinner>
         </div>
-
         <div data-ng-if="$ctrl.isCGVContract">
             <h2 data-translate="user_agreement_details_title1"></h2>
             <h3 data-translate="user_agreement_details_subtitle1"></h3>
             <p data-translate="user_agreement_details_paragraph1"></p>
-
             <ol>
                 <li data-translate="user_agreement_details_paragraph1_point1"></li>
                 <li data-translate="user_agreement_details_paragraph1_point2"></li>
@@ -44,41 +39,33 @@
                 <li data-translate="user_agreement_details_paragraph2_point8"></li>
             </ul>
         </div>
-
         <div data-ng-if="!$ctrl.loading">
             <h2 data-ng-bind="$ctrl.contract.name"></h2>
             <pre class="pre-scrollable contract"
                  data-ng-bind="$ctrl.contract.text">
             </pre>
         </div>
-
         <div data-ng-if="$ctrl.isCGVContract && $ctrl.isIndividual">
             <h2 data-translate="user_agreement_details_subtitle3"></h2>
             <p data-ng-bind-html="'user_agreement_details_paragraph3' | translate:{ t0: '#/ticket' }"></p>
         </div>
-
         <div data-ng-if="!$ctrl.loading">
-            <div class="row">
-                <div class="col-xs-12 col-md-6">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"
-                                   data-ng-model="$ctrl.confirmed"
-                                   data-ng-disabled="$ctrl.alreadyAccepted">
-                            <span data-ng-bind="'user_agreement_details_confirmation_text' | translate:{ t0: $ctrl.contract.name }"></span>
-                        </label>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-md-6 text-right">
-                    <button type="button"
-                            class="oui-button oui-button_primary"
-                            data-ng-disabled="!$ctrl.confirmed || $ctrl.accepted"
-                            data-ng-click="$ctrl.accept()"
-                            data-translate="user_agreement_details_accept">
-                    </button>
-                </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"
+                           data-ng-model="$ctrl.confirmed"
+                           data-ng-disabled="$ctrl.alreadyAccepted">
+                    <span data-ng-bind-html="'user_agreement_details_confirmation_text' | translate:{ t0: $ctrl.contract.name }"></span>
+                </label>
             </div>
+            <button type="button"
+                    class="oui-button oui-button_primary"
+                    data-ng-disabled="!$ctrl.confirmed || $ctrl.accepted"
+                    data-ng-click="$ctrl.accept()"
+                    data-translate="user_agreement_details_accept">
+            </button>
         </div>
-
     </div>
+    <!-- /.tab-content -->
 </div>
+<!-- /.useraccount-agreements-details -->
