@@ -1,15 +1,40 @@
-angular.module("App").controller("CdnFlushDomainsCtrl", ($scope, $stateParams, $translate, CdnDomain) => {
-    $scope.domain = $scope.currentActionData;
+angular.module("App").controller("CdnDomainFlushCtrl", class CdnDomainFlushCtrl {
 
-    $scope.flushDomain = function () {
-        $scope.resetAction();
-        CdnDomain.flushDomain($stateParams.productId, $stateParams.domain).then(
-            () => {
-                $scope.setMessage($translate.instant("cdn_configuration_flush_domain_success"), true);
-            },
-            (data) => {
-                $scope.setMessage($translate.instant("cdn_configuration_add_domain_fail", { t0: $stateParams.domain }), angular.extend(data, { type: "ERROR" }));
-            }
-        );
-    };
+    constructor ($state, $stateParams, $translate, OvhApiCdnDedicated, Alerter, cdnDomain) {
+        // dependencies injections
+        this.$state = $state;
+        this.$stateParams = $stateParams;
+        this.$translate = $translate;
+        this.OvhApiCdnDedicated = OvhApiCdnDedicated;
+        this.Alerter = Alerter;
+        this.cdnDomain = cdnDomain; // from state modal resolve
+
+        // attributes used in view
+        this.loading = {
+            flush: false
+        };
+    }
+
+    /* =============================
+    =            EVENTS            =
+    ============================== */
+
+    onCdnDomainFlushFormSubmit () {
+        this.loading.flush = true;
+
+        return this.OvhApiCdnDedicated.Domains().v6().flush({
+            serviceName: this.$stateParams.productId,
+            domain: this.$stateParams.domain
+        }, {}).$promise.then(() => {
+            this.Alerter.success(this.$translate.instant("cdn_dedicated_domain_flush_success"), "cdnDedicatedDomain");
+        }).catch((error) => {
+            this.Alerter.error([this.$translate.instant("cdn_dedicated_domain_flush_error"), _.get(error, "data.message")].join(" "), "cdnDedicatedDomain");
+        }).finally(() => {
+            this.loading.flush = false;
+            this.$state.go("^");
+        });
+    }
+
+    /* -----  End of EVENTS  ------ */
+
 });

@@ -9,12 +9,18 @@ angular.module("App").config(($stateProvider) => {
                 controllerAs: "$ctrl"
             },
             "cdnDomainView@app.networks.cdn.dedicated.domain": {
-                templateUrl: "cdn/dedicated/domain/general/cdn-dedicated-domain-general.html",
-                controller: "CdnDomainGeneralCtrl",
+                templateUrl: "cdn/dedicated/domain/dashboard/cdn-dedicated-domain-dashboard.html",
+                controller: "CdnDomainDashboardCtrl",
                 controllerAs: "$ctrl"
             }
         },
-        translations: ["cdn/dedicated/domain/general"]
+        resolve: {
+            cdnDomain: ($q, $stateParams, OvhApiCdnDedicated) => OvhApiCdnDedicated.Domains().v6().get({
+                serviceName: $stateParams.productId,
+                domain: $stateParams.domain
+            }).$promise
+        },
+        translations: ["cdn/dedicated/domain", "cdn/dedicated/domain/dashboard"]
     });
 
 });

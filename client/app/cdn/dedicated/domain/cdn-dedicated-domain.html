@@ -10,7 +10,7 @@
 
         <header class="page-header"
                 role="banner">
-            <h1 data-ng-bind="$ctrl.domain.domain"></h1>
+            <h1 data-ng-bind="$ctrl.cdnDomain.domain"></h1>
         </header> <!-- End of Header -->
 
         <!-- Tabs -->
@@ -38,6 +38,8 @@
                 </button>
                 <span data-ng-bind="message"></span>
             </div>
+
+            <div data-ovh-alert="cdnDedicatedDomain"></div>
 
             <div data-ui-view="cdnDomainView"></div>
         </div> <!-- End of Tab Content -->

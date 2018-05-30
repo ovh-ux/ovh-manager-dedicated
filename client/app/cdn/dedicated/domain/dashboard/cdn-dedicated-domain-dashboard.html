@@ -19,29 +19,29 @@
                                 data-translate="cdn_dedicated_domain_general_domain_name">
                             </dt>
                             <dd class="oui-tile__description"
-                                data-ng-bind="$ctrl.domain.domain">
+                                data-ng-bind="$ctrl.cdnDomain.domain">
                             </dd>
                         </dl>
                         <div class="oui-tile__actions">
                             <oui-action-menu data-compact
-                                             data-aria-label="{{:: 'cdn_dedicated_domain_general_domain_action_title' | translate:{ t0: $ctrl.domain.domain } }}"
+                                             data-aria-label="{{:: 'cdn_dedicated_domain_general_domain_action_title' | translate:{ t0: $ctrl.cdnDomain.domain } }}"
                                              data-align="end">
-                                <oui-action-menu-item data-text="{{ :: 'cdn_dedicated_domain_general_domain_action_flush' | translate}}"
-                                                      data-aria-label="{{ :: 'cdn_dedicated_domain_general_domain_action_flush_title' | translate:{ domain: $ctrl.domain.domain } }}"
+                                <oui-action-menu-item data-text="{{ :: 'cdn_dedicated_domain_flush' | translate}}"
+                                                      data-aria-label="{{ :: 'cdn_dedicated_domain_general_domain_action_flush_title' | translate:{ domain: $ctrl.cdnDomain.domain } }}"
                                                       data-href="{{ $ctrl.$state.href('.flush') }}">
                                 </oui-action-menu-item>
-                                <oui-action-menu-item data-ng-if="$ctrl.domain.status === 'on'"
+                                <oui-action-menu-item data-ng-if="$ctrl.cdnDomain.status === 'on'"
                                                       data-text="{{ :: 'cdn_dedicated_domain_general_domain_action_bypass' | translate }}"
-                                                      data-aria-label="{{ :: 'cdn_dedicated_domain_general_domain_action_bypass_title' | translate:{ domain: $ctrl.domain.domain } }}"
-                                                      data-on-click="setAction('domain/update/cdn-dedicated-domain-domain', $ctrl.domain)">
+                                                      data-aria-label="{{ :: 'cdn_dedicated_domain_general_domain_action_bypass_title' | translate:{ domain: $ctrl.cdnDomain.domain } }}"
+                                                      data-on-click="setAction('domain/update/cdn-dedicated-domain-domain', $ctrl.cdnDomain)">
                                 </oui-action-menu-item>
-                                <oui-action-menu-item data-ng-if="$ctrl.domain.status === 'off'"
+                                <oui-action-menu-item data-ng-if="$ctrl.cdnDomain.status === 'off'"
                                                       data-text="{{ :: 'cdn_dedicated_domain_general_domain_action_reactive' | translate }}"
-                                                      data-aria-label="{{ :: 'cdn_dedicated_domain_general_domain_action_reactive_title' | translate:{ domain: $ctrl.domain.domain } }}"
-                                                      data-on-click="setAction('domain/update/cdn-dedicated-domain-domain', $ctrl.domain)">
+                                                      data-aria-label="{{ :: 'cdn_dedicated_domain_general_domain_action_reactive_title' | translate:{ domain: $ctrl.cdnDomain.domain } }}"
+                                                      data-on-click="setAction('domain/update/cdn-dedicated-domain-domain', $ctrl.cdnDomain)">
                                 </oui-action-menu-item>
                                 <oui-action-menu-item data-text="{{ :: 'cdn_dedicated_domain_general_domain_action_delete' | translate}}"
-                                                      data-aria-label="{{ :: 'cdn_dedicated_domain_general_domain_action_delete_title' | translate:{ domain: $ctrl.domain.domain } }}"
+                                                      data-aria-label="{{ :: 'cdn_dedicated_domain_general_domain_action_delete_title' | translate:{ domain: $ctrl.cdnDomain.domain } }}"
                                                       data-on-click="setAction('domain/delete/cdn-dedicated-domain-delete')">
                                 </oui-action-menu-item>
                             </oui-action-menu>
@@ -53,7 +53,7 @@
                                 data-translate="cdn_dedicated_domain_general_domain_cname">
                             </dt>
                             <dd class="oui-tile__description"
-                                data-ng-bind="$ctrl.domain.cname">
+                                data-ng-bind="$ctrl.cdnDomain.cname">
                             </dd>
                         </dl>
                     </div>
@@ -65,10 +65,10 @@
                             <dd class="oui-tile__description">
                                 <span class="oui-status ng-scope"
                                       data-ng-class="{
-                                        'oui-status_success': $ctrl.domain.status === 'on',
-                                        'oui-status_error': $ctrl.domain.status === 'off'
+                                        'oui-status_success': $ctrl.cdnDomain.status === 'on',
+                                        'oui-status_error': $ctrl.cdnDomain.status === 'off'
                                       }"
-                                      data-ng-bind="$ctrl.domain.status.toUpperCase()">
+                                      data-ng-bind="$ctrl.cdnDomain.status.toUpperCase()">
                                 </span>
                             </dd>
                         </dl>
@@ -99,10 +99,10 @@
                         </dl>
                         <div class="oui-tile__actions">
                             <oui-action-menu data-compact
-                                             data-aria-label="{{:: 'cdn_dedicated_domain_general_domain_backend_action_title' | translate:{ t0: $ctrl.domain.domain } }}"
+                                             data-aria-label="{{:: 'cdn_dedicated_domain_general_domain_backend_action_title' | translate:{ t0: $ctrl.cdnDomain.domain } }}"
                                              data-align="end">
                                 <oui-action-menu-item data-text="{{ :: 'cdn_dedicated_domain_general_domain_action_change_backend' | translate }}"
-                                                      data-aria-label="{{ :: 'cdn_dedicated_domain_general_domain_action_change_backend_title' | translate:{ domain: $ctrl.domain.domain } }}"
+                                                      data-aria-label="{{ :: 'cdn_dedicated_domain_general_domain_action_change_backend_title' | translate:{ domain: $ctrl.cdnDomain.domain } }}"
                                                       data-on-click="setAction('domain/backend/update/cdn-dedicated-domain-backend-update')">
                                 </oui-action-menu-item>
                             </oui-action-menu>
