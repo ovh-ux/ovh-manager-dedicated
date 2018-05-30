@@ -1,12 +1,13 @@
 angular.module("App")
     .controller("DedicatedServerRebootCtrl", class DedicatedServerRebootCtrl {
-        constructor ($q, $scope, $stateParams, $state, Alerter, Server) {
+        constructor ($q, $scope, $stateParams, $state, Alerter, Server, $translate) {
             this.$q = $q;
             this.$scope = $scope;
             this.$stateParams = $stateParams;
             this.$state = $state;
             this.Alerter = Alerter;
             this.Server = Server;
+            this.$translate = $translate;
         }
 
         $onInit () {
