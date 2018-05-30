@@ -347,8 +347,7 @@ var constants = {
             "cloud"     : "https://www.ovh.com/manager/cloud/index.html#/",
             "telecom"   : "https://www.ovhtelecom.fr/manager/index.html#/",
             "sunrise"   : "https://www.ovh.com/manager/sunrise/index.html#/",
-            "partners"  : "https://www.ovh.com/manager/partners",
-            "labs"      : "https://www.ovh.com/manager/sunrise/uxlabs/"
+            "partners"  : "https://www.ovh.com/manager/partners"
         },
         TOP_GUIDES : {
             all: {
@@ -481,25 +480,21 @@ var constants = {
             }
         },
         accountCreation: {
-            DE : "http://www.ovh.de/support/new_nic.xml",
-            GB : "http://www.ovh.co.uk/support/new_nic.xml",
-            en_CA : "http://www.ovh.com/ca/en/support/new_nic.xml",
-            en_US : "http://www.ovh.com/us/support/new_nic.xml",
-            ES : "http://www.ovh.es/soporte/new_nic.xml",
-            es_US : "http://www.ovh.com/us/support/new_nic.xml",
-            fr_CA : "http://www.ovh.com/ca/fr/support/new_nic.xml",
-            FR : "https://www.ovh.com/fr/support/new_nic.xml",
-            MA : "http://www.ovh.ma/support/new_nic.xml",
-            SN : "http://www.ovh.sn/support/new_nic.xml",
-            TN : "http://www.ovh.com.tn/support/new_nic.xml",
-            IT : "https://www.ovh.it/cgi-bin/it/nic/newNic.cgi",
-            LT : "http://www.ovh.lt/pagalba/new_nic.xml",
-            NL : "http://www.ovh.nl/support/new_nic.xml",
-            PL : "http://www.ovh.pl/support/new_nic.xml",
-            PT : "http://www.ovh.pt/suporte/new_nic.xml",
-            SK : "http://www.ovh.cz/podpora/new_nic.xml",
-            FI : "http://www.ovh-hosting.fi/tuki/new_nic.xml",
-            CZ : "http://www.ovh.cz/podpora/new_nic.xml"
+            default: "https://www.ovh.com/auth/signup/#/?ovhCompany=ovh",
+            CZ: "https://www.ovh.com/auth/signup/#/?ovhCompany=ovh&ovhSubsidiary=cz",
+            DE: "https://www.ovh.com/auth/signup/#/?ovhCompany=ovh&ovhSubsidiary=de",
+            ES: "https://www.ovh.com/auth/signup/#/?ovhCompany=ovh&ovhSubsidiary=es",
+            FI: "https://www.ovh.com/auth/signup/#/?ovhCompany=ovh&ovhSubsidiary=fi",
+            FR: "https://www.ovh.com/auth/signup/#/?ovhCompany=ovh&ovhSubsidiary=fr",
+            GB: "https://www.ovh.com/auth/signup/#/?ovhCompany=ovh&ovhSubsidiary=gb",
+            IE: "https://www.ovh.com/auth/signup/#/?ovhCompany=ovh&ovhSubsidiary=ie",
+            IT: "https://www.ovh.com/auth/signup/#/?ovhCompany=ovh&ovhSubsidiary=it",
+            LT: "https://www.ovh.com/auth/signup/#/?ovhCompany=ovh&ovhSubsidiary=lt",
+            NL: "https://www.ovh.com/auth/signup/#/?ovhCompany=ovh&ovhSubsidiary=nl",
+            PL: "https://www.ovh.com/auth/signup/#/?ovhCompany=ovh&ovhSubsidiary=pl",
+            PT: "https://www.ovh.com/auth/signup/#/?ovhCompany=ovh&ovhSubsidiary=pt",
+            SN: "https://www.ovh.com/auth/signup/#/?ovhCompany=ovh&ovhSubsidiary=sn",
+            TN: "https://www.ovh.com/auth/signup/#/?ovhCompany=ovh&ovhSubsidiary=tn",
         },
         billingRenew: {
             CA : "https://ca.ovh.com/fr/cgi-bin/order/renew.cgi?domainChooser={serviceName}",
@@ -738,6 +733,7 @@ var constants = {
         },
         TOP_GUIDES: {},
         accountCreation: {
+            default: "http://www.ovh.com/ca/fr/support/new_nic.xml",
             DE : "http://www.ovh.de/support/new_nic.xml",
             GB : "http://www.ovh.co.uk/support/new_nic.xml",
             en_CA : "http://www.ovh.com/ca/en/support/new_nic.xml",
@@ -788,6 +784,7 @@ var constants = {
         RENEW_URL : "/cgi-bin/order/renew.cgi?domainChooser={serviceName}",
         vmsUrl : "http://status.ovh.net/vms/",
         travauxUrl : "http://status.ovh.net/",
+        vrackUrl : "https://ovhcloud.com/manager/cloud/index.html#/vrack",
         UNIVERS : "dedicated",
         URLS : {
             US: {
@@ -807,7 +804,7 @@ var constants = {
                     pcidssHdsHipaa: "https://ovhcloud.com/products/hosted-private-cloud"
                 },
                 vpsCloud           : "https://www.ovh.com/ca/en/vps/vps-cloud.xml",
-                dedicatedIpmi      : "http://help.ovh.co.uk/IpmiSol",
+                dedicatedIpmi      : "https://docs.ovh.com/gb/en/dedicated/use-ipmi-dedicated-servers/#testing-and-rebooting-the-ipmi",
                 changeOwner: "https://www.ovh.co.uk/cgi-bin/procedure/procedureChangeOwner.cgi",
                 domainOrderTrade   : "https://www.ovh.co.uk/order/domain/#/legacy/domain/trade/informations?options=~~(domain~~'{domain})",
                 RealTimeMonitoring : "https://support.ovhcloud.com/hc/en-us/articles/115001821044-Learning-About-OVH-US-Monitoring",
@@ -815,7 +812,8 @@ var constants = {
                 renewAlign : "https://www.ovh.co.uk/cgi-bin/order/renew.cgi?alignDate=1&csid=0",
                 faq: "https://www.ovh.com/ca/en/dedicated-servers/faq.xml",
                 faqVps: "https://www.ovh.com/ca/en/vps/faq-help.xml",
-                dedicatedOrder: "https://ovhcloud.com/products/servers/dedicated-servers"
+                dedicatedOrder: "https://ovhcloud.com/products/servers/dedicated-servers",
+                vrackOrder: "https://www.ovh.us/order/express/#/express/review?products=~(~(planCode~'vrack~quantity~1~productId~'vrack))"
             }
         },
         LANGUAGES : [
@@ -878,25 +876,7 @@ var constants = {
             },
         },
         accountCreation: {
-            DE : "http://www.ovh.de/support/new_nic.xml",
-            GB : "http://www.ovh.co.uk/support/new_nic.xml",
-            en_CA : "http://www.ovh.com/ca/en/support/new_nic.xml",
-            en_US : "http://www.ovh.com/us/support/new_nic.xml",
-            ES : "http://www.ovh.es/soporte/new_nic.xml",
-            es_US : "http://www.ovh.com/us/support/new_nic.xml",
-            fr_CA : "http://www.ovh.com/ca/fr/support/new_nic.xml",
-            FR : "https://www.ovh.com/fr/support/new_nic.xml",
-            MA : "http://www.ovh.ma/support/new_nic.xml",
-            SN : "http://www.ovh.sn/support/new_nic.xml",
-            TN : "http://www.ovh.com.tn/support/new_nic.xml",
-            IT : "https://www.ovh.it/cgi-bin/it/nic/newNic.cgi",
-            LT : "http://www.ovh.lt/pagalba/new_nic.xml",
-            NL : "http://www.ovh.nl/support/new_nic.xml",
-            PL : "http://www.ovh.pl/support/new_nic.xml",
-            PT : "http://www.ovh.pt/suporte/new_nic.xml",
-            SK : "http://www.ovh.cz/podpora/new_nic.xml",
-            FI : "http://www.ovh-hosting.fi/tuki/new_nic.xml",
-            CZ : "http://www.ovh.cz/podpora/new_nic.xml"
+            default: "https://ovhcloud.com/auth/signup/"
         },
         billingRenew: {
             CA : "https://ca.ovh.com/fr/cgi-bin/order/renew.cgi?domainChooser={serviceName}",

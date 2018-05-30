@@ -1,4 +1,4 @@
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.doubleAuth.backupCode.delete", [
+angular.module("UserAccount").controller("UserAccount.controllers.doubleAuth.backupCode.delete", [
     "$rootScope",
     "$scope",
     "$translate",

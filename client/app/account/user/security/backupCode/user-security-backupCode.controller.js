@@ -1,4 +1,4 @@
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.doubleAuth.backupCode", [
+angular.module("UserAccount").controller("UserAccount.controllers.doubleAuth.backupCode", [
     "$scope",
     "$translate",
     "UserAccount.services.doubleAuth.backupCode",

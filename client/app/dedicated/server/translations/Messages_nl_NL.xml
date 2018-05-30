@@ -655,8 +655,8 @@
    <translation id="server_configuration_impi_sessions_success" qtlid="165104">De sessies van de IPMI module zijn verwijderd.</translation>
    <translation id="server_configuration_impi_disable" qtlid="165117">De functies van de IPMI module zijn tijdelijk gedeactiveerd, omdat er een taak in uitvoering is. Zij worden opnieuw geactiveerd wanneer de taak is voltooid.</translation>
    <translation id="server_configuration_impi_monitoring_warning" qtlid="472658">Vergeet niet om uw servicemonitoring uit te schakelen voordat u het besturingssysteem met IPMI installeert.</translation>
-   <translation id="server_configuration_impi_SOL_help" qtlid="201158">De SOL sessie vereist een configuratie, klik <a href="{0}">hier</a> voor meer informatie.</translation>
-
+   <translation id="server_configuration_impi_SOL_help">La session SOL nécessite une configuration de votre part.</translation>
+   <translation id="server_configuration_impi_SOL_help_link">Accéder au guide de configuration.</translation>
    <translation id="server_configuration_kvm_order_step1_title" qtlid="229203">Kies de periode</translation>
    <translation id="server_configuration_kvm_order_step2_title" qtlid="229216">Het bestellen van een KVM op de server <em>{0}</em></translation>
    <translation id="server_configuration_kvm_order_step2_duration" qtlid="156875">Periode:</translation>
@@ -940,18 +940,18 @@ een andere server</translation>
    <translation id="month_other" qtlid="220148">{0} maanden</translation>
    <translation id="year_1" qtlid="70277">1 jaar</translation>
    <translation id="year_other" qtlid="158604">{} jaren</translation>
-   <translation id="upto" qtlid="486503">Jusqu'au {{ date }}</translation>
+   <translation id="upto" qtlid="486503">T/m {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Tot de 1e van de volgende maand</translation>
    <translation id="engage" qtlid="158643">Sign up {0}</translation>
-   <translation id="price_ht_label" qtlid="486412">{{ price }}&#160;HT</translation>
-   <translation id="price_ttc_label" qtlid="486516">{{ price }}&#160;TTC</translation>
+   <translation id="price_ht_label" qtlid="486412">{{ price }}&#160;excl. btw</translation>
+   <translation id="price_ttc_label" qtlid="486516">{{price }}&#160;incl. btw</translation>
    <translation id="price_free" qtlid="130495">Gratis</translation>
    <translation id="price" qtlid="181084">Prijs:</translation>
    <translation id="contract_next" qtlid="17743">Volgende</translation>
    <translation id="contract_previous" qtlid="17431">Vorige</translation>
-   <translation id="download_contract" qtlid="486477">Ouvrir le contrat "{{ name }}" en PDF</translation>
+   <translation id="download_contract" qtlid="486477">Open het "{{ name }}" contract in PDF</translation>
    <translation id="contract_help" qtlid="180382">Scroll naar beneden naar de contracten om deze te bevestigen.</translation>
-   <translation id="contracts_list_title" qtlid="486490">Il y a {{ count }} contrats à consulter.</translation>
+   <translation id="contracts_list_title" qtlid="486490">Er zijn {{count}} te bekijken contracten.</translation>
    <translation id="contract_list_title" qtlid="180408">Er is 1 contract, dat u kunt raadplegen.</translation>
    <translation id="contracts_agree" qtlid="180421">Ik accepteer de contracten</translation>
    <translation id="contract_agree" qtlid="180434">Ik accepteer het contract</translation>

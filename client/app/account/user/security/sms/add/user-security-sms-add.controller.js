@@ -1,4 +1,4 @@
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.doubleAuth.sms.add", [
+angular.module("UserAccount").controller("UserAccount.controllers.doubleAuth.sms.add", [
     "$rootScope",
     "$scope",
     "$translate",

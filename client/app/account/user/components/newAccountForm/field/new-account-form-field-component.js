@@ -8,18 +8,17 @@ angular.module("ovhSignupApp").component("newAccountFormField", {
     },
     template: '<div data-ng-include="getTemplateUrl()"></div>',
     controller: [
-        "$scope",
         "$filter",
-        "$translate",
         "$q",
+        "$scope",
         "$timeout",
+        "$translate",
         "NewAccountFormConfig",
-        "UserAccount.conf.BASE_URL",
 
-        function ($scope, $filter, $translate, $q, $timeout, NewAccountFormConfig, BASE_URL) {
+        function ($filter, $q, $scope, $timeout, $translate, NewAccountFormConfig) {
             "use strict";
 
-            $scope.getTemplateUrl = () => `${BASE_URL}components/newAccountForm/field/new-account-form-field-component.html`;
+            $scope.getTemplateUrl = () => "account/user/components/newAccountForm/field/new-account-form-field-component.html";
 
             this.$onInit = function () {
                 // unique field identifier

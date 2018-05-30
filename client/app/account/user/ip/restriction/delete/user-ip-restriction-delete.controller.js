@@ -1,4 +1,4 @@
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.ipRestrictions.delete", [
+angular.module("UserAccount").controller("UserAccount.controllers.ipRestrictions.delete", [
     "$rootScope",
     "$scope",
     "$translate",

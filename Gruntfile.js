@@ -245,6 +245,11 @@ module.exports = function (grunt) {
                         dest: "<%= publicdir %>/resources/angular/i18n/"
                     },
                     {
+                        cwd: ".",
+                        src: "node_modules/angular-i18n/angular-locale_en.js",
+                        dest: "<%= publicdir %>/resources/angular/i18n/angular-locale_en-asia.js"
+                    },
+                    {
                         expand: true,
                         cwd: "node_modules/@ovh-ux/ovh-utils-angular/bin/template/",
                         src: ["**/**.html", "**/**.css"],
@@ -364,6 +369,11 @@ module.exports = function (grunt) {
                         cwd: "node_modules/angular-i18n/",
                         src: "*.js",
                         dest: "<%= distdir %>/resources/angular/i18n/"
+                    },
+                    {
+                        cwd: ".",
+                        src: "node_modules/angular-i18n/angular-locale_en.js",
+                        dest: "<%= distdir %>/resources/angular/i18n/angular-locale_en-asia.js"
                     }, {
                         expand: true,
                         cwd: "node_modules/@ovh-ux/ovh-utils-angular/bin/template/",
@@ -554,6 +564,7 @@ module.exports = function (grunt) {
                         vmsUrl: constants[target].vmsUrl,
                         travauxUrl: constants[target].travauxUrl,
                         aapiHeaderName: "X-Ovh-Session",
+                        vrackUrl: constants[target].vrackUrl,         // needed for US - add into constants.config.js for other zone if needed
                         MANAGER_URLS: constants[target].MANAGER_URLS,
                         REDIRECT_URLS: constants[target].REDIRECT_URLS
                     },
@@ -608,15 +619,10 @@ module.exports = function (grunt) {
                     deps: [
                         "ja.qr",
                         "ovh-utils-angular",
-                        "UserAccount.services",
-                        "UserAccount.controllers",
-                        "UserAccount.directives",
-                        "UserAccount.filters",
                         "ovhSignupApp"
                     ]
                 },
                 constants: {
-                    "UserAccount.conf.BASE_URL": "account/user/",
                     "UserAccount.constants": {
                         aapiRootPath: "<%= aapiPath %>",
                         swsProxyRootPath: "<%= swsProxyPath %>",
@@ -705,6 +711,7 @@ module.exports = function (grunt) {
                         travauxUrl: constants[target].travauxUrl,
                         swsProxyRootPath: "<%= swsProxyPath %>",
                         aapiHeaderName: "X-Ovh-2api-Session",
+                        vrackUrl: constants[target].vrackUrl,         // needed for US - add into constants.config.js for other zone if needed
                         MANAGER_URLS: constants[target].MANAGER_URLS,
                         REDIRECT_URLS: constants[target].REDIRECT_URLS
                     },
@@ -758,15 +765,10 @@ module.exports = function (grunt) {
                     deps: [
                         "ja.qr",
                         "ovh-utils-angular",
-                        "UserAccount.services",
-                        "UserAccount.controllers",
-                        "UserAccount.directives",
-                        "UserAccount.filters",
                         "ovhSignupApp"
                     ]
                 },
                 constants: {
-                    "UserAccount.conf.BASE_URL": "account/user/",
                     "UserAccount.constants": {
                         aapiRootPath: "<%= aapiPath %>",
                         swsProxyRootPath: "<%= swsProxyPath %>",

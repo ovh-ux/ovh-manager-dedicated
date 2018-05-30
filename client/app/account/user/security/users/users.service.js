@@ -1,5 +1,5 @@
 "use strict";
-angular.module("UserAccount.services").service("UseraccountUsersService", class UseraccountUsersService {
+angular.module("UserAccount").service("UseraccountUsersService", class UseraccountUsersService {
 
     constructor (OvhHttp) {
         this.ovhHttp = OvhHttp;
