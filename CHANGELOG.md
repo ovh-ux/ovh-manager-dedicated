@@ -1,3 +1,14 @@
+<a name="9.5.7"></a>
+## [9.5.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.6...v9.5.7) (2018-05-30)
+
+
+### Bug Fixes
+
+* **dedicated:server:** close reboot modal ([788744e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/788744e))
+* **navbar:** remove labs URL ([0ac72dd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0ac72dd))
+
+
+
 <a name="9.5.6"></a>
 ## [9.5.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.5...v9.5.6) (2018-05-25)
 
