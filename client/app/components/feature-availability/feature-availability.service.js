@@ -71,6 +71,10 @@ class FeatureAvailability {
         return this.deny("CA", "US");
     }
 
+    hasSerialOverLan () {
+        return this.deny("US");
+    }
+
     allowDedicatedServerHardwareReplacement () {
         return this.deny("US");
     }
