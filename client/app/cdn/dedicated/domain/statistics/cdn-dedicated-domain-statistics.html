@@ -1,18 +1,14 @@
-<div>
+<div class="cdn-dedicated-domain-statistics">
 
     <h2 data-translate="cdn_domain_tab_statistics"></h2>
 
     <div class="text-center"
-         data-ng-show="loadingConsts">
+         data-ng-if="$ctrl.loading.stats">
         <oui-spinner></oui-spinner>
     </div>
-    <div data-ng-hide="loadingConsts">
-        <div class="text-center"
-             data-ng-show="loadingStats">
-            <oui-spinner></oui-spinner>
-        </div>
-        <div class="oui-box mb-5"
-             data-ng-hide="loadingStats">
+
+    <div data-ng-if="!$ctrl.loading.stats">
+        <div class="oui-box mb-5">
             <div class="row">
                 <div class="col-sm-6">
                     <label for="dataType"
@@ -23,9 +19,9 @@
                         <select name="datatype"
                                 class="oui-select__input"
                                 id="dataType"
-                                data-ng-options="(('cdn_stats_type_' + option) | translate) for option in consts.types"
-                                data-ng-model="model.dataType"
-                                data-ng-change="getStatistics()">
+                                data-ng-options="(('cdn_stats_type_' + option) | translate) for option in $ctrl.availableValues"
+                                data-ng-model="$ctrl.model.value"
+                                data-ng-change="$ctrl.getStatistics()">
                         </select>
                         <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                     </div>
@@ -39,21 +35,21 @@
                         <select name="period"
                                 class="oui-select__input"
                                 id="period"
-                                data-ng-options="(('cdn_statistics_period_' + option) | translate) for option in consts.periods"
-                                data-ng-model="model.period"
-                                data-ng-change="getStatistics()">
+                                data-ng-options="(('cdn_stats_period_' + option) | translate) for option in $ctrl.availablePeriods"
+                                data-ng-model="$ctrl.model.period"
+                                data-ng-change="$ctrl.getStatistics()">
                         </select>
                         <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                     </div>
                 </div>
             </div>
         </div>
+
         <canvas id="cdnDomainStatsChart"
                 class="chart chart-line"
-                data-ng-hide="loadingStats"
-                data-chart-labels="labels"
-                data-chart-series="series"
-                data-chart-data="data">
+                data-chart-labels="$ctrl.labels"
+                data-chart-series="$ctrl.series"
+                data-chart-data="$ctrl.data">
         </canvas>
     </div>
 </div>
