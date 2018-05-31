@@ -17,8 +17,8 @@ angular.module("App").controller("CdnDomainStatisticsCtrl", class CdnDomainStati
         };
 
         this.model = {
-            period: _.first(this.availablePeriods),
-            value: _.first(this.availableValues)
+            period: null,
+            value: null
         };
     }
 
@@ -60,6 +60,10 @@ angular.module("App").controller("CdnDomainStatisticsCtrl", class CdnDomainStati
     ====================================== */
 
     $onInit () {
+        // set default value
+        this.model.period = _.first(this.availablePeriods);
+        this.model.value = _.first(this.availableValues);
+
         this.getStatistics();
     }
 

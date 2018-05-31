@@ -15,9 +15,9 @@
 
         <!-- Tabs -->
         <responsive-tabs>
-            <responsive-tab data-state="app.networks.cdn.dedicated.domain">{{ 'cdn_domain_tab_general' | translate }}</responsive-tab>
-            <responsive-tab data-state="app.networks.cdn.dedicated.domain.statistics">{{ 'cdn_domain_tab_statistics' | translate }}</responsive-tab>
-            <responsive-tab data-state="app.networks.cdn.dedicated.domain.rule">{{ 'cdn_domain_tab_rule' | translate }}</responsive-tab>
+            <responsive-tab data-state="app.networks.cdn.dedicated.domain">{{ :: 'cdn_domain_tab_general' | translate }}</responsive-tab>
+            <responsive-tab data-state="app.networks.cdn.dedicated.domain.statistics">{{ :: 'cdn_domain_tab_statistics' | translate }}</responsive-tab>
+            <responsive-tab data-state="app.networks.cdn.dedicated.domain.rule">{{ :: 'cdn_domain_tab_rule' | translate }}</responsive-tab>
             <responsive-tab-more>
                 <i class="fa fa-plus"></i>
             </responsive-tab-more>
@@ -25,20 +25,6 @@
 
         <!-- Tab Content -->
         <div class="tab-content">
-            <div class="alert alert-dismissible"
-                 role="alert"
-                 data-ng-class="alertType"
-                 data-ng-if="message">
-                <button type="button"
-                        class="close"
-                        data-dismiss="alert"
-                        aria-label="Close"
-                        data-ng-click="message = null">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <span data-ng-bind="message"></span>
-            </div>
-
             <div data-ovh-alert="cdnDedicatedDomain"></div>
 
             <div data-ui-view="cdnDomainView"></div>

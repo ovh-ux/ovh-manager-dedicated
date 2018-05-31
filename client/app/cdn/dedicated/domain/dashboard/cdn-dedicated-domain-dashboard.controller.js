@@ -48,17 +48,14 @@ angular.module("App").controller("CdnDomainDashboardCtrl", class CdnDomainDashbo
                 serviceName: this.$stateParams.productId
             }).$promise,
             backends: this.getBackends()
-        }).then((results) => {
-            this.cdn = results.cdn;
-            this.backend = _.first(results.backends);
+        }).then(({ cdn, backends }) => {
+            this.cdn = cdn;
+            this.backend = _.first(backends);
         }).finally(() => {
             this.loading.init = false;
         });
-
-
     }
 
     /* -----  End of INITIALIZATION  ------ */
-
 
 });
