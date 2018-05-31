@@ -1,17 +1,39 @@
-angular.module("UserAccount").controller("UserAccountEmailsDetailsController", [
-    "$scope",
-    "$stateParams",
-    "UserAccount.services.emails",
-    "Alerter",
-    "$location",
-    "$translate",
+angular
+    .module("UserAccount")
+    .controller("UserAccountEmailsDetailsController", class UserAccountEmailsDetailsController {
+        constructor ($stateParams, $translate, Alerter, OvhApiMe) {
+            this.$stateParams = $stateParams;
+            this.$translate = $translate;
+            this.Alerter = Alerter;
+            this.OvhApiMe = OvhApiMe;
+        }
 
-    function ($scope, $stateParams, Emails, Alerter, $location, $translate) {
-        "use strict";
+        $onInit () {
+            this.emailNotification = null;
+            this.isLoading = false;
 
-        $scope.previousPage = $location.search() && $location.search().previousPage ? $location.search().previousPage : 1;
+            return this.getEmail();
+        }
 
-        function parseBodyIfThereIsSomethingToParse (body) {
+        getEmail () {
+            this.isLoading = true;
+            return this.OvhApiMe.Notification().Email().History().v6()
+                .get({ id: this.$stateParams.emailId }).$promise
+                .then((emailNotification) => {
+                    this.emailNotification = emailNotification;
+                    this.emailNotification.bodyCook = this.constructor.parseBody(this.emailNotification.body);
+
+                    // A toggle used to display raw or cooked body
+                    this.emailNotification.displayBodyCook = !!this.emailNotification.bodyCook;
+                    return this.emailNotification;
+                })
+                .catch((err) => this.Alerter.error(this.$translate.instant("otrs_email_detail_error", { t0: this.$stateParams.emailId }), err.data, "otrs_email_detail"))
+                .finally(() => {
+                    this.isLoading = false;
+                });
+        }
+
+        static parseBody (body) {
             let parsedBody = body;
 
             if (!angular.isString(body)) {
@@ -35,38 +57,4 @@ angular.module("UserAccount").controller("UserAccountEmailsDetailsController", [
 
             return parsedBody;
         }
-
-        function getEmail () {
-            Emails.getEmail($scope.email.emailId)
-                .then(
-                    (email) => {
-                        angular.extend($scope.email, email);
-                        $scope.email.bodyCook = parseBodyIfThereIsSomethingToParse($scope.email.body);
-
-                        // A toggle used to display raw or cooked body
-                        $scope.email.displayBodyCook = !!$scope.email.bodyCook;
-                    },
-                    (err) => {
-                        Alerter.error($translate.instant("otrs_email_detail_error", { t0: $scope.email.emailId }), err.data, "otrs_email_detail");
-                    }
-                )
-                .finally(() => {
-                    $scope.loaders.email = false;
-                });
-        }
-
-        function init () {
-            $scope.email = {
-                emailId: $stateParams.emailId
-            };
-
-            $scope.loaders = {
-                email: true
-            };
-
-            getEmail();
-        }
-
-        init();
-    }
-]);
+    });

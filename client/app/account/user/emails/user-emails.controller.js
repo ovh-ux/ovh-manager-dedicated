@@ -1,65 +1,36 @@
-angular.module("UserAccount").controller("UserAccountEmailsController", [
-    "$q",
-    "$location",
-    "$scope",
-    "$translate",
-    "UserAccount.services.emails",
-    "Alerter",
+angular
+    .module("UserAccount")
+    .controller("UserAccountEmailsController", class UserAccountEmailsController {
+        constructor ($state, $translate, Alerter, OvhApiMe) {
+            this.$state = $state;
+            this.$translate = $translate;
+            this.Alerter = Alerter;
+            this.OvhApiMe = OvhApiMe;
+        }
 
-    function ($q, $location, $scope, $translate, Emails, Alerter) {
-        "use strict";
-        const self = this;
-
-        $scope.itemsPerPage = 10;
-        $scope.currentPage = $location.search() && $location.search().currentPage != null ? $location.search().currentPage : 1;
-
-        $scope.init = () => {
-            $scope.loaders = {
-                emails: true
-            };
-
-            $scope.emails = {
-                ids: [],
-                detail: []
-            };
-
-            $scope.getEmailIds();
-        };
-
-        $scope.getEmailIds = (refresh) => {
-            self.mailsIdsInError = [];
-            $scope.loaders.emails = true;
-            Emails.getEmails({ forceRefresh: refresh })
-                .then((table) => {
-                    // We receive the email ids from oldest to newest, so reverse them to have the newest on top.
-                    $scope.emails.ids = table.reverse();
+        loadDatagridUserEmails ({ offset, pageSize }) {
+            return this.OvhApiMe.Notification().Email().History().v6()
+                .query().$promise
+                .then((ids) => {
+                    const part = ids.reverse().slice(offset - 1, offset - 1 + pageSize);
+                    return {
+                        data: part.map((id) => ({ id })),
+                        meta: {
+                            totalCount: ids.length
+                        }
+                    };
                 })
-                .catch((err) => {
-                    Alerter.alertFromSWS($translate.instant("user_account_table_email_error"), null, "user_account_email");
-                    return $q.reject(err);
-                })
-                .finally(() => {
-                    $scope.loaders.emails = false;
-                });
-        };
+                .catch((err) => this.Alerter.alertFromSWS(this.$translate.instant("user_account_table_email_error"), err, "user_account_email"));
+        }
 
-        $scope.transformItem = (emailId) => {
-            $scope.loaders.emails = true;
-            return Emails.getEmail(emailId).catch((err) => {
-                Alerter.alertFromSWS($translate.instant("user_account_table_email_error"), null, "user_account_email");
-                return $q.reject(err);
+        transformItem ({ id }) {
+            return this.OvhApiMe.Notification().Email().History().v6()
+                .get({ id }).$promise;
+        }
+
+        showEmailDetails (emailId) {
+            return this.$state.go("app.account.useraccount.emailsDetails", {
+                emailId
             });
-        };
-
-        $scope.onTransformItemDone = () => {
-            $scope.loaders.emails = false;
-        };
-
-        $scope.resetEmailIdsInError = () => {
-            self.mailsIdsInError = [];
-            return true;
-        };
-
-        $scope.init();
-    }
-]);
+        }
+    });
