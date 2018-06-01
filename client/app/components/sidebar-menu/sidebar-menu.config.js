@@ -167,7 +167,7 @@ angular.module("App")
                         .value();
 
                     _.chain(products.networks)
-                        .filter((network) => network.type === "CDN" || network.type === "NAS")
+                        .filter((network) => network.type === "CDN" || network.type === "NAS" || network.type === "NASHA")
                         .sortBy((elt) => angular.lowercase(elt.name))
                         .forEach((network) => {
                             if (network.type === "CDN" && featureAvailability.hasCdn()) {
@@ -191,6 +191,16 @@ angular.module("App")
                                             }, sidebarItem);
                                         });
                                     })
+                                }, networksMenuItem);
+                            } else if (featureAvailability.hasNas() && (network.type === "NAS" || network.type === "NASHA")) {
+                                SidebarMenu.addMenuItem({
+                                    title: network.displayName,
+                                    state: "app.networks.nas.details",
+                                    stateParams: {
+                                        nasType: network.type.toLowerCase(),
+                                        nasId: `${network.type.toLowerCase()}_${network.name}`
+                                    },
+                                    icon: "ovh-font ovh-font-cloudnas"
                                 }, networksMenuItem);
                             }
                         })
