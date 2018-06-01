@@ -192,20 +192,6 @@ angular.module("App")
                                         });
                                     })
                                 }, networksMenuItem);
-                            } else if (featureAvailability.hasNas()) {
-                                pending.push(Nas.getNas().then(({ results }) => {
-                                    _.forEach(results, (result) => {
-                                        SidebarMenu.addMenuItem({
-                                            title: result.displayName,
-                                            state: "app.networks.nas.details",
-                                            stateParams: {
-                                                nasType: "nas",
-                                                nasId: result.id
-                                            },
-                                            icon: "ovh-font ovh-font-cloudnas"
-                                        }, networksMenuItem);
-                                    });
-                                }));
                             }
                         })
                         .value();
