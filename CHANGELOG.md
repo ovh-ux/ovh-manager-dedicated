@@ -1,3 +1,13 @@
+<a name="9.5.10"></a>
+## [9.5.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.9...v9.5.10) (2018-06-01)
+
+
+### Bug Fixes
+
+* **app:** Disable ovh-tasks ([0beca6c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0beca6c))
+
+
+
 <a name="9.5.9"></a>
 ## [9.5.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.8...v9.5.9) (2018-06-01)
 
