@@ -1,3 +1,13 @@
+<a name="9.5.9"></a>
+## [9.5.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.8...v9.5.9) (2018-06-01)
+
+
+### Bug Fixes
+
+* **nas:** remove dupe in menu ([ad3f014](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ad3f014))
+
+
+
 <a name="9.5.8"></a>
 ## [9.5.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.7...v9.5.8) (2018-06-01)
 
