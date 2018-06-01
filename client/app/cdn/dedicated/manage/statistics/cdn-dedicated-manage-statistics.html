@@ -6,37 +6,26 @@
                 <h2 class="oui-header_4 oui-tile__title"
                     data-translate="cdn_configuration_shortcut_title"></h2>
                 <div class="oui-tile__body">
-                    <div class="oui-tile__item">
-                        <dl class="oui-tile__definition">
-                            <dt class="oui-tile__term" data-translate="cdn_configuration_shortcut_links"></dt>
-                            <dd class="oui-tile__description">
-                                <div class="oui-list">
-                                    <ul class="oui-list__items">
-                                        <li class="oui-list__item">
-                                            <button type="button"
-                                                class="oui-list__link oui-button_link"
-                                                data-ng-click="setAction('domain/add/cdn-dedicated-domain-add')"
-                                                data-translate="cdn_configuration_add_domain_title_button">
-                                            </button>
-                                        </li>
-                                        <li class="oui-list__item">
-                                            <button type="button"
-                                                class="oui-list__link oui-button_link"
-                                                data-ng-click="setAction('domain/rule/order/cdn-dedicated-domain-rule-order')"
-                                                data-translate="cdn_configuration_cacherules_upgrade_title_button">
-                                            </button>
-                                        </li>
-                                        <li class="oui-list__item">
-                                            <button type="button"
-                                                class="oui-list__link oui-button_link"
-                                                data-ng-click="setAction('quota/order/cdn-dedicated-quota-order')"
-                                                data-translate="cdn_configuration_order_quota_title">
-                                            </button>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </dd>
-                        </dl>
+                    <div class="oui-tile__item oui-tile__item_button">
+                        <button type="button"
+                                class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
+                                data-ng-click="setAction('domain/add/cdn-dedicated-domain-add')"
+                                data-translate="cdn_configuration_add_domain_title_button"></button>
+                        </button>
+                    </div>
+                    <div class="oui-tile__item oui-tile__item_button">
+                        <button type="button"
+                                class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
+                                data-ng-click="setAction('domain/rule/order/cdn-dedicated-domain-rule-order')"
+                                data-translate="cdn_configuration_cacherules_upgrade_title_button"></button>
+                        </button>
+                    </div>
+                    <div class="oui-tile__item oui-tile__item_button">
+                        <button type="button"
+                                class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
+                                data-ng-click="setAction('quota/order/cdn-dedicated-quota-order')"
+                                data-translate="cdn_configuration_order_quota_title"></button>
+                        </button>
                     </div>
                 </div>
             </div>
