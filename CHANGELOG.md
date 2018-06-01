@@ -1,3 +1,14 @@
+<a name="9.5.8"></a>
+## [9.5.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.7...v9.5.8) (2018-06-01)
+
+
+### Bug Fixes
+
+* remove unecessary translations files ([271f404](https://github.com/ovh-ux/ovh-manager-dedicated/commit/271f404))
+* **menu:** Remove nas calls ([b0aef92](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b0aef92))
+
+
+
 <a name="9.5.7"></a>
 ## [9.5.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.6...v9.5.7) (2018-05-30)
 
