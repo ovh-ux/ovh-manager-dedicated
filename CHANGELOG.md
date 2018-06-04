@@ -1,3 +1,19 @@
+<a name="9.5.12"></a>
+## [9.5.12](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.11...v9.5.12) (2018-06-04)
+
+
+### Bug Fixes
+
+* **ipmi:** hide sol for US ([0757e4b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0757e4b))
+* **navbar:** fix navbar title ([7867307](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7867307))
+
+
+### Features
+
+* **agreement:** add gdpr trads ([6f9faa6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6f9faa6))
+
+
+
 <a name="9.5.11"></a>
 ## [9.5.11](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.10...v9.5.11) (2018-06-04)
 
