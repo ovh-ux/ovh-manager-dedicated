@@ -1,4 +1,4 @@
-angular.module("UserAccount.services").service("UserAccount.services.doubleAuth.sms", function ($q, OvhHttp, featureAvailability) {
+angular.module("UserAccount").service("UserAccount.services.doubleAuth.sms", function ($q, OvhHttp, featureAvailability) {
     "use strict";
 
     /**

@@ -1,5 +1,5 @@
 /* eslint-disable no-shadow */
-angular.module("UserAccount.directives").directive("checkboxSwitch", [
+angular.module("UserAccount").directive("checkboxSwitch", [
     "$timeout",
     function ($timeout) {
         "use strict";

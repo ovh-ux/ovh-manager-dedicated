@@ -1,4 +1,4 @@
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.contacts.requestsReceived", [
+angular.module("UserAccount").controller("UserAccount.controllers.contacts.requestsReceived", [
     "$scope",
     "$translate",
     "UserAccount.services.Contacts",

@@ -115,8 +115,8 @@
    <translation id="wizard_renew" qtlid="118962">Odnów</translation>
    <translation id="wizard_next" qtlid="17743">Dalej</translation>
    <translation id="wizard_previous" qtlid="17431">Wstecz</translation>
-   <translation id="wizard_breadcrumb" qtlid="486451">Étape {{ currentStep }} sur {{ stepCount }}</translation>
-   <translation id="pagination_page" qtlid="486464">Page {{ current }} / {{ last }}</translation>
+   <translation id="wizard_breadcrumb" qtlid="486451">Krok {{ currentStep }} z {{ stepCount }}</translation>
+   <translation id="pagination_page" qtlid="486464">Strona {{ current }} / {{ last }}</translation>
    <translation id="pagination_go" qtlid="31522">OK</translation>
    <translation id="pagination_display" qtlid="69353">Wyświetl</translation>
    <translation id="common_loading" qtlid="361984">Ładowanie…</translation>
@@ -193,9 +193,9 @@
    <translation id="common_newtab" qtlid="402165">nowa zakładka</translation>
    <translation id="contract_next" qtlid="17743">Dalej</translation>
    <translation id="contract_previous" qtlid="17431">Wstecz</translation>
-   <translation id="download_contract" qtlid="486477">Ouvrir le contrat "{{ name }}" en PDF</translation>
+   <translation id="download_contract" qtlid="486477">Otwórz umowę "{{ name }}" w formacie PDF</translation>
    <translation id="contract_help" qtlid="180382">Przed zatwierdzeniem regulaminów należy je przeczytać.</translation>
-   <translation id="contracts_list_title" qtlid="486490">Il y a {{ count }} contrats à consulter.</translation>
+   <translation id="contracts_list_title" qtlid="486490">Liczba umów do przejrzenia: {{ count }}</translation>
    <translation id="contract_list_title" qtlid="180408">Masz 1 regulamin do przeczytania.</translation>
    <translation id="contracts_agree" qtlid="180421">Akceptuję regulaminy</translation>
    <translation id="contract_agree" qtlid="180434">Akceptuję regulamin</translation>
@@ -206,11 +206,11 @@
    <translation id="month_other" qtlid="220148">{0} m-c</translation>
    <translation id="year_1" qtlid="70277">1 rok</translation>
    <translation id="year_other" qtlid="158604">{} lat(a)</translation>
-   <translation id="upto" qtlid="486503">Jusqu'au {{ date }}</translation>
+   <translation id="upto" qtlid="486503">Do {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Do pierwszego dnia kolejnego miesiąca</translation>
    <translation id="engage" qtlid="158643">Zamów {0}</translation>
-   <translation id="price_ht_label" qtlid="486412">{{ price }}&#160;HT</translation>
-   <translation id="price_ttc_label" qtlid="486516">{{ price }}&#160;TTC</translation>
+   <translation id="price_ht_label" qtlid="486412">{{ price }}&#160;net</translation>
+   <translation id="price_ttc_label" qtlid="486516">{{ price }}&#160;brutto</translation>
    <translation id="price_free" qtlid="195776">W ofercie</translation>
    <translation id="price_label_yearly" qtlid="288977">/rok</translation>
 
@@ -540,9 +540,9 @@
    <translation id="me_alerts_PAYMENTMEAN_CREDITCARD_TOOMANYFAILURES" qtlid="343954">Liczba kart kredytowych z błędem: <strong>{0}</strong>. Przejdź do <a href="#/billing/mean" class="alert-link">sekcji Płatności</a>, aby dokonać weryfikacji i/lub zarejestrować nowy sposób płatności.</translation>
    <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="343967">Liczba kont PayPal z błędem: <strong>{0}</strong>.  Przejdź do <a href="#/billing/mean" class="alert-link">sekcji Płatności</a>, aby dokonać weryfikacji i/lub zarejestrować nowy sposób płatności.</translation>
 
-   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="487730">Votre compte prépayé est débiteur de <strong>{0}</strong> au {1}. Rendez-vous dans <a href="#/billing/ovhaccount" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="486529">Vous avez une dette de <strong>{0}</strong> (dont un montant de {1} non échu). Rendez-vous dans <a href="{2}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="486542">Vous avez une dette de <strong>{0}</strong>. Rendez-vous dans <a href="{1}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
+   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="487730">Zadłużenie na Twoim koncie przedpłaconym wynosi <strong>{0}</strong> na dzień {1}. Przejdź do <a href="#/billing/ovhaccount" class="alert-link">sekcji płatności</a>, aby uregulować fakturę.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="486529">Zadłużenie na Twoim koncie wynosi <strong>{0}</strong> (w tym kwota {1}, której termin płatności nie został przekroczony). Przejdź do <a href="{2}" class="alert-link">sekcji płatności</a>, aby uregulować fakturę.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="486542">Zadłużenie na Twoim koncie wynosi <strong>{0}</strong>. Przejdź do <a href="{1}" class="alert-link">sekcji płatności</a>, aby uregulować fakturę. </translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="383919">Twoje konto prepaid osiągnęło zdefiniowany próg. Przejdź do <a href="#/billing/ovhaccount" class="alert-link">sekcji płatności</a>, aby uzyskać więcej informacji.</translation>
 
@@ -557,8 +557,8 @@
    <translation id="core_service_expiration_auto_renew" qtlid="414986">Odnowienie przewidziane na</translation>
    <translation id="core_service_renew_button" qtlid="118962">Odnów</translation>
 
-   <translation id="core_user_enterprise_retail_prices" qtlid="480776">Note : Les prix indiqués sont des prix standards du catalogue et peuvent ne pas refléter les conditions négociées. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
-   <translation id="core_user_enterprise_retail_prices_hpc" qtlid="480789">Note : Les prix indiqués sont une estimation basée sur le calcul au prorata de ce module pour l'aligner sur la période de facturation de votre contrat actuel. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
+   <translation id="core_user_enterprise_retail_prices" qtlid="480776">Uwaga: podane ceny są standardowymi cenami katalogowymi, które mogą nie odzwierciedlać wynegocjowanych warunków. Aby uzyskać szczegółowe informacje, zapoznaj się z Twoją miesięczną fakturą.</translation>
+   <translation id="core_user_enterprise_retail_prices_hpc" qtlid="480789">Uwaga: podane ceny są cenami szacunkowymi opartymi o wyliczenie prorata dla tego modułu celem dostosowania do okresu rozliczeniowego wynikającego z aktualnej umowy. Aby uzyskać szczegółowe informacje, zapoznaj się z Twoją miesięczną fakturą.</translation>
 
    <translation id="browser_alert_not_supported" qtlid="405357">Twoja przeglądarka nie jest obsługiwana.</translation>
    <translation id="browser_alert_deprecated" qtlid="405370">Wersja Twojej przeglądarki jest nieaktualna i może zawierać luki związane z bezpieczeństwem lub kompatybilnością.</translation>

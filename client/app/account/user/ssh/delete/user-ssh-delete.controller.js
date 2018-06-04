@@ -1,4 +1,4 @@
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.ssh.delete", [
+angular.module("UserAccount").controller("UserAccount.controllers.ssh.delete", [
     "$scope",
     "$translate",
     "UserAccount.services.ssh",

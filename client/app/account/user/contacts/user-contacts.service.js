@@ -1,4 +1,4 @@
-angular.module("UserAccount.services").service("UserAccount.services.Contacts", function (OvhHttp, constants, Poller, $rootScope) {
+angular.module("UserAccount").service("UserAccount.services.Contacts", function (OvhHttp, constants, Poller, $rootScope) {
     "use strict";
 
     const self = this;
