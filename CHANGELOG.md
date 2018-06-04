@@ -1,3 +1,13 @@
+<a name="9.5.11"></a>
+## [9.5.11](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.10...v9.5.11) (2018-06-04)
+
+
+### Bug Fixes
+
+* **dedicated server:** hide vrack bandwidth cancel ([e67bc68](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e67bc68))
+
+
+
 <a name="9.5.10"></a>
 ## [9.5.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.9...v9.5.10) (2018-06-01)
 
