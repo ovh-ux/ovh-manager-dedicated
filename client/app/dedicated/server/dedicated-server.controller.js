@@ -179,11 +179,28 @@ angular.module("App").controller("ServerCtrl", (NO_AUTORENEW_COUNTRIES, WEATHERM
     $scope.editReverse = () => {
         if (!$scope.reverseModel.loading) {
             $scope.reverseModel.edit = true;
-            $scope.newDisplayName.value = $scope.reverseModel.reverse;
+            $scope.newDisplayName.value = $scope.server.displayName;
             $timeout(() => {
                 $("#reverseInput").focus();
             }, 200);
         }
+    };
+
+    $scope.updateDisplayName = () => {
+        $scope.reverseModel.edit = false;
+        $scope.reverseModel.loading = true;
+
+        Server.updateDisplayName({
+            serviceId: $scope.server.serviceId,
+            serviceName: $scope.server.name,
+            displayName: $scope.newDisplayName.value
+        }).then(() => {
+            $scope.server.displayName = $scope.newDisplayName.value;
+            $scope.reverseModel.loading = false;
+            $scope.setMessage($translate.instant("server_tab_IP_table_manage_reverse_success"), true);
+        }).catch((err) => {
+            $scope.setMessage($translate.instant("server_tab_IP_table_manage_reverse_failure"), err, false);
+        });
     };
 
     $scope.updateReverse = () => {

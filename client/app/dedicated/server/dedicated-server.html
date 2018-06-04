@@ -13,7 +13,7 @@
                              data-ng-show="!reverseModel.edit">
                             <div class="d-flex">
                                 <h1 class="d-inline-block mb-0 word-break"
-                                    data-ng-bind="reverseModel.reverse || ('server_configuration_reverse_not_configured' | translate)">
+                                    data-ng-bind="server.displayName">
                                 </h1>
                                 <button type="button"
                                         title="{{ 'wizard_modify' | translate }}"
@@ -39,7 +39,7 @@
                                 <button type="button"
                                         class="oui-button oui-button_small-width"
                                         aria-label="{{ 'common_confirm' | translate }}"
-                                        data-ng-click="updateReverse()"
+                                        data-ng-click="updateDisplayName()"
                                         data-ng-disabled="!formEditDisplayName.txtDisplayName.$dirty || formEditDisplayName.$invalid">
                                     <span class="oui-icon oui-icon-success oui-icon_small" aria-hidden="true"></span>
                                 </button>

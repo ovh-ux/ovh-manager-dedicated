@@ -6,8 +6,8 @@ angular.module("services").service("Products", function ($rootScope, $http, $q, 
     };
 
     $rootScope.$on("global_display_name_change", (evt, params) => {
-        const result = _.find(products, { name: params.serviceName });
-        result.displayName = angular.copy(params.displayName);
+        const result = _.find(products, { name: _.get(params, "serviceName") });
+        result.displayName = angular.copy(_.get(params, "displayName"));
     });
 
     function resetCache () {
