@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="billing_history_balance_title" qtlid="486724">Règlement de mon solde</translation>
+   <translation id="billing_history_balance_title" qtlid="486724">Betaal mijn openstaande accountsaldo</translation>
    <translation id="billing_history_balance_cancel" qtlid="37863">Annuleren</translation>
-   <translation id="billing_history_balance_explain" qtlid="486737">Votre solde est actuellement de {{ balance }}.</translation>
-   <translation id="billing_history_balance_no_balance" qtlid="486750">Aucune balance n'a été trouvée sur votre compte. <a data-ui-sref="{{ backState }}">Cliquez ici</a> pour retourner à la liste des factures.</translation>
-   <translation id="billing_history_balance_choose_payment_method" qtlid="486763">Choisissez une méthode de paiement</translation>
-   <translation id="billing_history_balance_add_payment_method" qtlid="486776">Ajoutez une méthode de paiement</translation>
-   <translation id="billing_history_balance_no_payment_method" qtlid="486789">Vous n'avez aucune méthode de paiement valide. <a data-ui-sref="{{ addPaymentMethodState }}">Ajoutez une méthode de paiement valide</a> avant de régler votre solde.</translation>
-   <translation id="billing_history_balance_payment_doing" qtlid="486802">Un règlement de solde est déjà en cours. Attendez que ce paiement soit effectué avant de règler un nouveau solde.</translation>
-   <translation id="billing_history_balance_payment_go_tracking" qtlid="486815">Rendez-vous <a data-ui-sref="{{ trackState }}">sur la page des suivis de paiement</a> pour plus d'informations.</translation>
+   <translation id="billing_history_balance_explain" qtlid="486737">Uw openstaande saldo bedraagt momenteel {{ balance }}.</translation>
+   <translation id="billing_history_balance_no_balance" qtlid="486750">Geen saldo gevonden voor uw account. <a data-ui-sref="{{ backState }}">Klik hier</a> om terug te keren naar de lijst met facturen.</translation>
+   <translation id="billing_history_balance_choose_payment_method" qtlid="486763">Kies een betaalmethode</translation>
+   <translation id="billing_history_balance_add_payment_method" qtlid="486776">Voeg een betaalmethode toe</translation>
+   <translation id="billing_history_balance_no_payment_method" qtlid="486789">U hebt geen geldige betaalmethoden. <a data-ui-sref="{{ addPaymentMethodState }}">Voeg een geldige betaalmethode toe</a> voordat u uw saldo betaalt.</translation>
+   <translation id="billing_history_balance_payment_doing" qtlid="486802">Er is al een saldo-betaling in uitvoering. Wacht totdat deze betaling is verwerkt voordat u een nieuw saldo betaalt.</translation>
+   <translation id="billing_history_balance_payment_go_tracking" qtlid="486815">Ga naar de <a data-ui-sref="{{ trackState }}">pagina voor het bijhouden van betalingen</a> voor meer informatie.</translation>
 
-   <translation id="billing_history_balance_load_error" qtlid="486828">Une erreur est survenue lors du chargement de votre solde.</translation>
-   <translation id="billing_history_balance_pay_success" qtlid="486841">Le règlement de votre solde a bien été pris en compte. Le paiement sera effectif dans quelques instants. Rendez-vous <a data-ui-sref="{{ trackHref }}">sur la page des suivis de paiement</a> pour plus d'informations.</translation>
-   <translation id="billing_history_balance_pay_error" qtlid="486854">Une erreur est survenue lors du règlement de votre solde.</translation>
+   <translation id="billing_history_balance_load_error" qtlid="486828">Er is een fout opgetreden bij het laden van uw saldo.</translation>
+   <translation id="billing_history_balance_pay_success" qtlid="486841">Uw saldo is verwerkt. De betaling wordt binnenkort van kracht. Ga naar de <a data-ui-sref="{{ trackHref }}">pagina voor het bijhouden van betalingen</a> voor meer informatie.</translation>
+   <translation id="billing_history_balance_pay_error" qtlid="486854">Er is een fout opgetreden bij het betalen van uw saldo.</translation>
 
 <!-- PAYMENT METHOD SUBTYPES -->
    <translation id="billing_history_balance_payment_method_subtype_american_express" qtlid="435959">American Express</translation>
