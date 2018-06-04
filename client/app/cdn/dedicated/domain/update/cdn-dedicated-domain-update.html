@@ -1,0 +1,20 @@
+<form class="cdn-dedicated-domain-update"
+      data-ng-submit="$ctrl.onCdnDomainUpdateFormSubmit()">
+
+    <oui-modal data-title="{{ :: $ctrl.cdnDomain.status === 'on' ? 'cdn_dedicated_domain_bypass' : 'cdn_dedicated_domain_reactive' | translate }}"
+               data-primary-label="{{ :: 'wizard_confirm' | translate }}"
+               data-secondary-label="{{ :: 'wizard_cancel' | translate }}"
+               data-secondary-action="$ctrl.$state.go('^')"
+               data-on-dismiss="$ctrl.$state.go('^')"
+               data-loading="$ctrl.loading.update">
+
+        <p data-translate="{{ $ctrl.cdnDomain.status === 'on' ? 'cdn_dedicated_domain_bypass_confirm' : 'cdn_dedicated_domain_reactive_confirm' }}"
+           data-translate-values="{ t0 : $ctrl.cdnDomain.domain }">
+        </p>
+        <p data-ng-if="$ctrl.cdnDomain.status === 'on'"
+           data-translate="cdn_dedicated_domain_bypass_confirm_warn">
+        </p>
+
+    </oui-modal>
+
+</form>

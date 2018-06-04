@@ -1,0 +1,10 @@
+<div data-ng-repeat="messageType in $ctrl.messageTypes track by $index"
+     class="oui-message-alerter-group mb-3">
+    <oui-message data-ng-repeat="message in $ctrl.getMessagesByType(messageType) track by $index"
+                 data-type="{{ messageType }}"
+                 data-on-dismissed="$ctrl.onMessageDismissed(message)">
+        <p class="m-0"
+           data-ng-bind-html="message.content">
+        </p>
+    </oui-message>
+</div>

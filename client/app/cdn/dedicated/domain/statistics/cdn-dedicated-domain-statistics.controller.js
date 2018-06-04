@@ -1,12 +1,12 @@
 angular.module("App").controller("CdnDomainStatisticsCtrl", class CdnDomainStatisticsCtrl {
 
-    constructor ($stateParams, $translate, OvhApiCdnDedicated, Alerter, cdnDomain) {
+    constructor ($stateParams, $translate, Alerter, cdnDomain, OvhApiCdnDedicated) {
         // injections
         this.$stateParams = $stateParams;
         this.$translate = $translate;
-        this.OvhApiCdnDedicated = OvhApiCdnDedicated;
         this.Alerter = Alerter;
         this.cdnDomain = cdnDomain;
+        this.OvhApiCdnDedicated = OvhApiCdnDedicated;
 
         // other attributes used in view
         this.availablePeriods = ["day", "week", "month"];

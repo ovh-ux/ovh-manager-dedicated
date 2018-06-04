@@ -8,7 +8,9 @@
                data-on-dismiss="$ctrl.$state.go('^')"
                data-loading="$ctrl.loading.init || $ctrl.loading.flush">
 
-        <p data-translate="cdn_dedicated_domain_flush_confirm"></p>
+        <p data-translate="cdn_dedicated_domain_flush_confirm"
+           data-translate-values="{ t0 : $ctrl.cdnDomain.domain }"
+        </p>
         <p data-translate="cdn_dedicated_domain_flush_confirm_warn"></p>
 
     </oui-modal>
