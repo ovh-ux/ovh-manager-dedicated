@@ -812,7 +812,7 @@ var constants = {
                 renewAlign : "https://www.ovh.co.uk/cgi-bin/order/renew.cgi?alignDate=1&csid=0",
                 faq: "https://www.ovh.com/ca/en/dedicated-servers/faq.xml",
                 faqVps: "https://www.ovh.com/ca/en/vps/faq-help.xml",
-                dedicatedOrder: "https://ovhcloud.com/products/servers/dedicated-servers",
+                dedicatedOrder: "https://ovhcloud.com/order/dedicated/#/dedicated/select",
                 vrackOrder: "https://www.ovh.us/order/express/#/express/review?products=~(~(planCode~'vrack~quantity~1~productId~'vrack))"
             }
         },
