@@ -34,7 +34,7 @@ angular.module("App")
 
                 if (featureAvailability.allowIPFailoverAgoraOrder()) {
                     actionsMenuOptions.push({
-                        title: $translate.instant("navigation_left_vrack"),
+                        title: $translate.instant("navigation_left_additional_ip"),
                         icon: "ovh-font ovh-font-ip",
                         state: "app.ip.agora-order"
                     });
