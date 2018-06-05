@@ -813,7 +813,7 @@ var constants = {
                 faq: "https://www.ovh.com/ca/en/dedicated-servers/faq.xml",
                 faqVps: "https://www.ovh.com/ca/en/vps/faq-help.xml",
                 dedicatedOrder: "https://ovhcloud.com/order/dedicated/#/dedicated/select",
-                vrackOrder: "https://www.ovh.us/order/express/#/express/review?products=~(~(planCode~'vrack~quantity~1~productId~'vrack))"
+                vrackOrder: "https://ovhcloud.com/order/express/#/express/review?products=~(~(planCode~'vrack~quantity~1~productId~'vrack))"
             }
         },
         LANGUAGES : [
