@@ -1,3 +1,13 @@
+<a name="9.5.13"></a>
+## [9.5.13](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.12...v9.5.13) (2018-06-05)
+
+
+### Bug Fixes
+
+* **order:** set good order funnel url ([15a9690](https://github.com/ovh-ux/ovh-manager-dedicated/commit/15a9690))
+
+
+
 <a name="9.5.12"></a>
 ## [9.5.12](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.11...v9.5.12) (2018-06-04)
 
