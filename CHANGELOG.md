@@ -1,3 +1,13 @@
+<a name="9.5.14"></a>
+## [9.5.14](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.13...v9.5.14) (2018-06-05)
+
+
+### Bug Fixes
+
+* **order link:** fix US order link for vrack ([64b3861](https://github.com/ovh-ux/ovh-manager-dedicated/commit/64b3861))
+
+
+
 <a name="9.5.13"></a>
 ## [9.5.13](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.12...v9.5.13) (2018-06-05)
 
