@@ -17,12 +17,6 @@ angular.module("App")
                 }
 
                 actionsMenuOptions.push({
-                    title: $translate.instant("navigation_left_licences"),
-                    icon: "ovh-font ovh-font-certificate",
-                    state: "app.license.order"
-                });
-
-                actionsMenuOptions.push({
                     title: $translate.instant("navigation_left_dedicatedServers"),
                     icon: "ovh-font ovh-font-server",
                     href: results.dedicatedOrder,
@@ -37,6 +31,20 @@ angular.module("App")
                         target: "_blank"
                     });
                 }
+
+                if (featureAvailability.allowIPFailoverAgoraOrder()) {
+                    actionsMenuOptions.push({
+                        title: $translate.instant("navigation_left_vrack"),
+                        icon: "ovh-font ovh-font-ip",
+                        state: "app.ip.agora-order"
+                    });
+                }
+
+                actionsMenuOptions.push({
+                    title: $translate.instant("navigation_left_licences"),
+                    icon: "ovh-font ovh-font-certificate",
+                    state: "app.license.order"
+                });
 
                 return SidebarMenu.addActionsMenuOptions(actionsMenuOptions);
             });
