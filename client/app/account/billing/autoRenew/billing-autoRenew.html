@@ -10,7 +10,7 @@
 
         <div class="alert alert-danger"
              role="alert"
-             data-ng-if="!automaticRenewV2Mean.loading && automaticRenewV2Mean.available && (!automaticRenewV2Mean.allowed || (automaticRenewV2Mean.allowed && !nicRenew.active))">
+             data-ng-if="!automaticRenewV2Mean.loading && automaticRenewV2Mean.available && (!automaticRenewV2Mean.allowed || (automaticRenewV2Mean.allowed && !nicRenew.active)) && services.data.userMustApproveAutoRenew">
             <button type="button"
                     class="close"
                     data-ng-click="automaticRenewV2Mean.noMeanMessageClose()"
@@ -77,7 +77,7 @@
         </form>
 
         <form class="row"
-              data-ng-if="automaticRenewV2Mean.available && automaticRenewV2Mean.allowed">
+              data-ng-if="automaticRenewV2Mean.available && automaticRenewV2Mean.allowed && services.data.userMustApproveAutoRenew">
             <div class="form-group col-md-4">
                 <label for="autorenewDaySelect"
                        class="control-label"

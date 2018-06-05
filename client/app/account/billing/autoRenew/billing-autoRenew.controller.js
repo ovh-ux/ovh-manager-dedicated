@@ -128,19 +128,24 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
             },
             error: null,
             getNicRenewParam () {
-                $scope.nicRenew.loading = true;
-                return AutoRenew.getAutorenew()
-                    .then(({ active, renewDay }) => {
-                        $scope.nicRenew.initialized = true;
-                        $scope.nicRenew.active = active;
-                        $scope.nicRenew.renewDay = renewDay;
-                    })
-                    .catch((error) => {
-                        $scope.nicRenew.error = error.statusText;
-                    })
-                    .finally(() => {
-                        $scope.nicRenew.loading = false;
-                    });
+                if (_($scope.services).get("data.userMustApproveAutoRenew", false)) {
+                    $scope.nicRenew.loading = true;
+
+                    return AutoRenew.getAutorenew()
+                        .then(({ active, renewDay }) => {
+                            $scope.nicRenew.initialized = true;
+                            $scope.nicRenew.active = active;
+                            $scope.nicRenew.renewDay = renewDay;
+                        })
+                        .catch((error) => {
+                            $scope.nicRenew.error = error.statusText;
+                        })
+                        .finally(() => {
+                            $scope.nicRenew.loading = false;
+                        });
+                }
+
+                return $q.when();
             },
             setNicRenewParam () {
                 $scope.nicRenew.updateLoading = true;
