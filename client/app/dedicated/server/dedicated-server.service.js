@@ -283,6 +283,25 @@ angular
             });
         };
 
+        this.updateDisplayName = function ({ serviceId, serviceName, displayName }) {
+            return OvhHttp.put("/service/{serviceId}", {
+                rootPath: "apiv6",
+                urlParams: {
+                    serviceId
+                },
+                data: {
+                    resource: {
+                        displayName
+                    }
+                },
+                broadcast: "global_display_name_change",
+                broadcastParam: {
+                    serviceName,
+                    displayName
+                }
+            });
+        };
+
         this.updateReverse = function (productId, serviceName, ip, reverse) {
             return this.post(productId, "{ip}/reverse", {
                 urlParams: {
