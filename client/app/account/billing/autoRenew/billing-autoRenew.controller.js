@@ -264,7 +264,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
 
             // TODO - clear up this mess
             if (initLoading) {
-                return;
+                return $q.when();
             }
 
             // end of mess
@@ -277,7 +277,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
             const selectedRenewal = $scope.renewalFilter.model === 0 || $scope.renewalFilter.model === "0" ? null : $scope.renewalFilter.model;
             const selectedOrder = $scope.orderByState;
 
-            AutoRenew.getServices(count, offset, $scope.searchText, selectedType, selectedRenew, selectedRenewal, JSON.stringify(selectedOrder), $scope.nicBillingFilter.model)
+            return AutoRenew.getServices(count, offset, $scope.searchText, selectedType, selectedRenew, selectedRenewal, JSON.stringify(selectedOrder), $scope.nicBillingFilter.model)
                 .then((result) => {
                     $scope.nbServices = result.count;
 
@@ -636,7 +636,6 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
 
             $scope.canDisableAllDomains = false;
 
-            const autorenewSettingsPromise = $scope.nicRenew.getNicRenewParam();
             initLoading = false;
 
             $scope.$watch(
@@ -690,7 +689,9 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
                 $scope.canDisableAllDomains = _.includes(results, "domains-batch-autorenew");
             });
 
-            $q.all([autorenewSettingsPromise, userPromise, paymentMeansPromise, renewAlignUrlPromise, userGuidePromise, serviceTypePromise, userCertificatesPromise]).finally(() => (initLoading = false));
+            $q.all([$scope.getServices($scope.count, $scope.offset), userPromise, paymentMeansPromise, renewAlignUrlPromise, userGuidePromise, serviceTypePromise, userCertificatesPromise])
+                .finally(() => $scope.nicRenew.getNicRenewParam())
+                .finally(() => (initLoading = false));
         }
 
         init();
