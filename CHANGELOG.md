@@ -1,3 +1,49 @@
+<a name="9.5.15"></a>
+## [9.5.15](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.14...v9.5.15) (2018-06-06)
+
+
+### Bug Fixes
+
+* **menu:** re-enable nas calls ([90ad703](https://github.com/ovh-ux/ovh-manager-dedicated/commit/90ad703))
+
+
+
+<a name="9.5.14"></a>
+## [9.5.14](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.13...v9.5.14) (2018-06-05)
+
+
+### Bug Fixes
+
+* **order link:** fix US order link for vrack ([64b3861](https://github.com/ovh-ux/ovh-manager-dedicated/commit/64b3861))
+
+
+
+<a name="9.5.13"></a>
+## [9.5.13](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.12...v9.5.13) (2018-06-05)
+
+
+### Bug Fixes
+
+* **order:** set good order funnel url ([15a9690](https://github.com/ovh-ux/ovh-manager-dedicated/commit/15a9690))
+
+
+
+<a name="9.5.12"></a>
+## [9.5.12](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.11...v9.5.12) (2018-06-04)
+
+
+### Bug Fixes
+
+* **ipmi:** hide sol for US ([0757e4b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0757e4b))
+* **navbar:** fix navbar title ([7867307](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7867307))
+
+
+### Features
+
+* **agreement:** add gdpr trads ([6f9faa6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6f9faa6))
+
+
+
 <a name="9.5.11"></a>
 ## [9.5.11](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.10...v9.5.11) (2018-06-04)
 
