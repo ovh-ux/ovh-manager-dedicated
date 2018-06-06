@@ -40,9 +40,9 @@
                                                       data-aria-label="{{ :: 'cdn_dedicated_domain_general_domain_action_reactive_title' | translate:{ domain: $ctrl.cdnDomain.domain } }}"
                                                       data-href="{{ $ctrl.$state.href('app.networks.cdn.dedicated.domain.update') }}">
                                 </oui-action-menu-item>
-                                <oui-action-menu-item data-text="{{ :: 'cdn_dedicated_domain_general_domain_action_delete' | translate}}"
+                                <oui-action-menu-item data-text="{{ :: 'cdn_dedicated_domain_delete' | translate}}"
                                                       data-aria-label="{{ :: 'cdn_dedicated_domain_general_domain_action_delete_title' | translate:{ domain: $ctrl.cdnDomain.domain } }}"
-                                                      data-on-click="setAction('domain/delete/cdn-dedicated-domain-delete')">
+                                                      data-href="{{ $ctrl.$state.href('app.networks.cdn.dedicated.domain.delete') }}">
                                 </oui-action-menu-item>
                             </oui-action-menu>
                         </div>
@@ -66,7 +66,7 @@
                                 <span class="oui-status ng-scope"
                                       data-ng-class="{
                                         'oui-status_success': $ctrl.cdnDomain.status === 'on',
-                                        'oui-status_error': $ctrl.cdnDomain.status === 'off'
+                                        'oui-status_error': $ctrl.cdnDomain.status !== 'on'
                                       }"
                                       data-ng-bind="$ctrl.cdnDomain.status.toUpperCase()">
                                 </span>
