@@ -43,6 +43,11 @@ angular.module("App").controller("DedicatedCloudLicencesSplaEnableUSCtrl", class
         });
     }
 
+    onOrderClick () {
+        this.$state.go("^");
+        return true;
+    }
+
     getOrderUrl () {
         if (!this.selectedOffer) {
             return null;
