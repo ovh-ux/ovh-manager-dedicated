@@ -1,3 +1,13 @@
+<a name="9.5.15"></a>
+## [9.5.15](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.14...v9.5.15) (2018-06-06)
+
+
+### Bug Fixes
+
+* **menu:** re-enable nas calls ([90ad703](https://github.com/ovh-ux/ovh-manager-dedicated/commit/90ad703))
+
+
+
 <a name="9.5.14"></a>
 ## [9.5.14](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.13...v9.5.14) (2018-06-05)
 
