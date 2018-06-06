@@ -619,15 +619,10 @@ module.exports = function (grunt) {
                     deps: [
                         "ja.qr",
                         "ovh-utils-angular",
-                        "UserAccount.services",
-                        "UserAccount.controllers",
-                        "UserAccount.directives",
-                        "UserAccount.filters",
                         "ovhSignupApp"
                     ]
                 },
                 constants: {
-                    "UserAccount.conf.BASE_URL": "account/user/",
                     "UserAccount.constants": {
                         aapiRootPath: "<%= aapiPath %>",
                         swsProxyRootPath: "<%= swsProxyPath %>",
@@ -770,15 +765,10 @@ module.exports = function (grunt) {
                     deps: [
                         "ja.qr",
                         "ovh-utils-angular",
-                        "UserAccount.services",
-                        "UserAccount.controllers",
-                        "UserAccount.directives",
-                        "UserAccount.filters",
                         "ovhSignupApp"
                     ]
                 },
                 constants: {
-                    "UserAccount.conf.BASE_URL": "account/user/",
                     "UserAccount.constants": {
                         aapiRootPath: "<%= aapiPath %>",
                         swsProxyRootPath: "<%= swsProxyPath %>",

@@ -1,4 +1,4 @@
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.doubleAuth.u2f.edit", [
+angular.module("UserAccount").controller("UserAccount.controllers.doubleAuth.u2f.edit", [
     "$rootScope",
     "$scope",
     "$q",

@@ -1,4 +1,4 @@
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.doubleAuth.totp", [
+angular.module("UserAccount").controller("UserAccount.controllers.doubleAuth.totp", [
     "$scope",
     "$q",
     "$translate",

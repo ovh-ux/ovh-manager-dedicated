@@ -1,4 +1,4 @@
-angular.module("UserAccount.services").service("UserAccount.services.doubleAuth.u2f", [
+angular.module("UserAccount").service("UserAccount.services.doubleAuth.u2f", [
     "$q",
     "$window",
     "OvhHttp",

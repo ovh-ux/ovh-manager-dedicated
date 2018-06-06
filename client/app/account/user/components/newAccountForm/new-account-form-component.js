@@ -19,8 +19,9 @@ angular.module("ovhSignupApp").component("newAccountForm", {
         "UserAccount.constants",
         "UserAccount.services.Infos",
         "$translate",
+        "constants",
 
-        function ($scope, $q, $location, $http, $httpParamSerializerJQLike, $timeout, NewAccountFormConfig, Alerter, BASE_URL, UserAccountConstants, UserAccountServiceInfos, $translate) {
+        function ($scope, $q, $location, $http, $httpParamSerializerJQLike, $timeout, NewAccountFormConfig, Alerter, BASE_URL, UserAccountConstants, UserAccountServiceInfos, $translate, constants) {
             "use strict";
 
             this.isLoading = false; // true when fetching data from api
@@ -112,18 +113,19 @@ angular.module("ovhSignupApp").component("newAccountForm", {
                             })
                             .value();
 
-                        rules.splice(emailFieldIndex + 1, 0, {
-                            "in": null,
-                            mandatory: false,
-                            defaultValue: null,
-                            initialValue: consentDecision,
-                            fieldName: "commercialCommunicationsApproval",
-                            fieldType: "checkbox",
-                            regularExpression: null,
-                            prefix: null,
-                            examples: null,
-                            hasBottomMargin: true
-                        });
+
+                            rules.splice(emailFieldIndex + 1, 0, {
+                                "in": null,
+                                mandatory: false,
+                                defaultValue: null,
+                                initialValue: consentDecision,
+                                fieldName: "commercialCommunicationsApproval",
+                                fieldType: "checkbox",
+                                regularExpression: null,
+                                prefix: null,
+                                examples: null,
+                                hasBottomMargin: true
+                            });
 
                         return rules;
                     })

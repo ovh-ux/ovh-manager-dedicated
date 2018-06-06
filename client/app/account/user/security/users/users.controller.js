@@ -1,5 +1,5 @@
 "use strict";
-angular.module("UserAccount.controllers").controller("UserAccountUsersCtrl", class UserAccountUsersCtrl {
+angular.module("UserAccount").controller("UserAccountUsersCtrl", class UserAccountUsersCtrl {
 
     constructor ($scope, User, UseraccountUsersService, UseraccountGroupsService, $q, Alerter, $translate) {
         this.$scope = $scope;

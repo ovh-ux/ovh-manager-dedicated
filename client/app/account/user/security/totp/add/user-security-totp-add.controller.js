@@ -1,4 +1,4 @@
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.doubleAuth.totp.add", [
+angular.module("UserAccount").controller("UserAccount.controllers.doubleAuth.totp.add", [
     "$rootScope",
     "$scope",
     "$q",

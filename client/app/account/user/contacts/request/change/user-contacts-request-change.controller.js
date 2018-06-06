@@ -1,4 +1,4 @@
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.contacts.request", [
+angular.module("UserAccount").controller("UserAccount.controllers.contacts.request", [
     "$scope",
     "$stateParams",
     "$translate",

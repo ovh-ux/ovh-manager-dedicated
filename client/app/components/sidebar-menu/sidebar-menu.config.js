@@ -167,7 +167,7 @@ angular.module("App")
                         .value();
 
                     _.chain(products.networks)
-                        .filter((network) => network.type === "CDN" || network.type === "NAS")
+                        .filter((network) => network.type === "CDN" || network.type === "NAS" || network.type === "NASHA")
                         .sortBy((elt) => angular.lowercase(elt.name))
                         .forEach((network) => {
                             if (network.type === "CDN" && featureAvailability.hasCdn()) {

@@ -1,4 +1,4 @@
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.ssh", [
+angular.module("UserAccount").controller("UserAccount.controllers.ssh", [
     "$scope",
     "$q",
     "$translate",
