@@ -117,7 +117,9 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
         };
         $scope.servicesDetails = [];
 
-        $scope.serviceTypeObject = ALL_SERVICE_TYPES;
+        $scope.serviceTypeObject = {
+            value: ALL_SERVICE_TYPES
+        };
 
         $scope.nicRenew = {
             renewDays: _.range(1, 30),
@@ -545,7 +547,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
         };
 
         $scope.onSelectedTypeChanged = function () {
-            const type = $scope.serviceTypeObject;
+            const type = $scope.serviceTypeObject.value;
             $scope.services.selectedType = type ? type.key : null;
 
             $scope.clearSelectedServices();
@@ -667,12 +669,12 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
                 $scope.servicesTypes.unshift(ALL_SERVICE_TYPES);
 
                 // sets the model of the type select input.
-                $scope.serviceTypeObject = _.find($scope.servicesTypes, {
+                $scope.serviceTypeObject.value = _.find($scope.servicesTypes, {
                     key: $scope.services.selectedType
                 });
 
-                if (!$scope.serviceTypeObject) {
-                    $scope.serviceTypeObject = ALL_SERVICE_TYPES;
+                if (!$scope.serviceTypeObject.value) {
+                    $scope.serviceTypeObject.value = ALL_SERVICE_TYPES;
                 }
             });
 
