@@ -15,11 +15,10 @@ angular.module("ovhSignupApp").component("newAccountForm", {
         "$timeout",
         "NewAccountFormConfig",
         "Alerter",
-        "UserAccount.conf.BASE_URL",
         "UserAccount.constants",
         "UserAccount.services.Infos",
         "$translate",
-        function ($scope, $q, $location, $http, $httpParamSerializerJQLike, $timeout, NewAccountFormConfig, Alerter, BASE_URL, UserAccountConstants, UserAccountServiceInfos, $translate) {
+        function ($scope, $q, $location, $http, $httpParamSerializerJQLike, $timeout, NewAccountFormConfig, Alerter, UserAccountConstants, UserAccountServiceInfos, $translate) {
             "use strict";
 
             this.isLoading = false; // true when fetching data from api
@@ -31,7 +30,7 @@ angular.module("ovhSignupApp").component("newAccountForm", {
             this.isSubmitting = false;
             const CONSENT_MARKETING_EMAIL_NAME = "consent-marketing-email";
 
-            $scope.getTemplateUrl = () => `${BASE_URL}components/newAccountForm/new-account-form-component.html`;
+            $scope.getTemplateUrl = () => "account/user/components/newAccountForm/new-account-form-component.html";
 
             this.$onInit = () => {
                 // backup of original model
