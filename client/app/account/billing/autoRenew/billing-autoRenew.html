@@ -4,7 +4,11 @@
         <h1 data-translate="autorenew_title"></h1>
     </div>
 
-    <div class="tab-content">
+    <div class="text-center" data-ng-if="initLoading">
+        <oui-spinner data-size="l"></oui-spinner>
+    </div>
+
+    <div class="tab-content" data-ng-if="!initLoading">
 
         <div data-ovh-alert></div>
 

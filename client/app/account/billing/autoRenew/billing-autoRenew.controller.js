@@ -41,8 +41,6 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
             text: $translate.instant("autorenew_service_type_ALL")
         };
 
-        let initLoading = true;
-
         $scope.loaded = false;
         $scope.user = null;
         $scope.expandHostingDomain = {};
@@ -261,13 +259,6 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
         $scope.getServices = function (count, offset) {
             $scope.count = count;
             $scope.offset = offset;
-
-            // TODO - clear up this mess
-            if (initLoading) {
-                return $q.when();
-            }
-
-            // end of mess
 
             $scope.services.loading = true;
             $scope.services.selected = [];
@@ -622,7 +613,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
          */
 
         function init () {
-            initLoading = true;
+            $scope.initLoading = true;
 
             const { selectedType, searchText, renewFilter, renewalFilter, order } = $location.search();
 
@@ -636,8 +627,6 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
 
             $scope.canDisableAllDomains = false;
 
-            initLoading = false;
-
             $scope.$watch(
                 "searchText",
                 _.debounce((old, current) => {
@@ -648,6 +637,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
                     }
                 }, 1000)
             );
+
             $scope.$broadcast("paginationServerSide.loadPage", "1", "serviceTable");
 
             const userPromise = User.getUser().then((user) => {
@@ -691,7 +681,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
 
             $q.all([$scope.getServices($scope.count, $scope.offset), userPromise, paymentMeansPromise, renewAlignUrlPromise, userGuidePromise, serviceTypePromise, userCertificatesPromise])
                 .finally(() => $scope.nicRenew.getNicRenewParam())
-                .finally(() => (initLoading = false));
+                .finally(() => ($scope.initLoading = false));
         }
 
         init();
