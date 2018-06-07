@@ -15,7 +15,7 @@ angular.module("App").config(($stateProvider) => {
             }
         },
         resolve: {
-            cdnDomain: ($q, $stateParams, OvhApiCdnDedicated) => OvhApiCdnDedicated.Domains().v6().get({
+            cdnDomain: ($stateParams, OvhApiCdnDedicated) => OvhApiCdnDedicated.Domains().v6().get({
                 serviceName: $stateParams.productId,
                 domain: $stateParams.domain
             }).$promise

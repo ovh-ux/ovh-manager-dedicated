@@ -35,7 +35,8 @@ angular
                 modalLayout = {
                     name: "modal",
                     toChilds: state.self.layout.toChilds || false,
-                    ignoreChilds: state.self.layout.ignoreChilds || []
+                    ignoreChilds: state.self.layout.ignoreChilds || [],
+                    redirectTo: state.self.layout.redirectTo || "^"
                 };
             }
 
@@ -77,7 +78,7 @@ angular
                         });
 
                         // if backdrop is clicked - be sure to close the modal
-                        modalInstance.result.catch(() => $state.go("^"));
+                        modalInstance.result.catch(() => $state.go(_.get(state, "layout.redirectTo")));
                     });
                 }
             });
