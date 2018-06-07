@@ -185,9 +185,15 @@
                                 data-align="end"
                                 data-compact>
                                 <oui-action-menu-item
-                                    data-text="{{ server.monitored ? ('server_configuration_monitoring_deactivate_title_button' | translate) : ('server_configuration_monitoring_activate_title_button' | translate) }}"
-                                    aria-label="{{ server.monitored ? ('server_configuration_monitoring_deactivate_title_button' | translate) : ('server_configuration_monitoring_activate_title_button' | translate) }}"
-                                    data-ui-sref="app.dedicated.server.monitoringUpdate"></oui-action-menu-item>
+                                    data-text="{{:: 'server_configuration_monitoring_deactivate_title_button' | translate}}"
+                                    aria-label="{{:: 'server_configuration_monitoring_deactivate_title_button' | translate}}"
+                                    data-ui-sref="app.dedicated.server.monitoringUpdate"
+                                    data-ng-if="server.monitored"></oui-action-menu-item>
+                                <oui-action-menu-item
+                                    data-text="{{:: 'server_configuration_monitoring_activate_title_button' | translate}}"
+                                    aria-label="{{:: 'server_configuration_monitoring_activate_title_button' | translate}}"
+                                    data-ui-sref="app.dedicated.server.monitoringUpdate"
+                                    data-ng-if="!server.monitored"></oui-action-menu-item>
                             </oui-action-menu>
                         </div>
                     </div>
