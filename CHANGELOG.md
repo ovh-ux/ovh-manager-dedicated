@@ -1,3 +1,24 @@
+<a name="9.6.0"></a>
+# [9.6.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.15...v9.6.0) (2018-06-07)
+
+
+### Bug Fixes
+
+* **ip spla order:** minor code review changes ([f544c60](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f544c60))
+* **order spla us:** fix indent ([280fdcd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/280fdcd))
+* **spla order:** close model on submit order ([3fc186d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3fc186d))
+* **spla order us:** code review ([7918e7b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7918e7b))
+* **user account:** base url ([c008234](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c008234))
+
+
+### Features
+
+* **agreement:** add more context to gdpr agreements ([6a4b133](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6a4b133))
+* **order spla:** add spla order for us region ([c3e377c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c3e377c))
+* **order spla:** wip ([0294ef8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0294ef8))
+
+
+
 <a name="9.5.15"></a>
 ## [9.5.15](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.14...v9.5.15) (2018-06-06)
 
