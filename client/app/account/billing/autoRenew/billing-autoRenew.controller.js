@@ -47,6 +47,9 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
         $scope.urls = {
             renewAlign: ""
         };
+        $scope.searchText = {
+            value: ""
+        };
         $scope.nbServices = 0;
 
         $scope.renewFilter = {
@@ -268,11 +271,17 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
             const selectedRenewal = $scope.renewalFilter.model === 0 || $scope.renewalFilter.model === "0" ? null : $scope.renewalFilter.model;
             const selectedOrder = $scope.orderByState;
 
-            return AutoRenew.getServices(count, offset, $scope.searchText, selectedType, selectedRenew, selectedRenewal, JSON.stringify(selectedOrder), $scope.nicBillingFilter.model)
+            return AutoRenew.getServices(count, offset, $scope.searchText.value, selectedType, selectedRenew, selectedRenewal, JSON.stringify(selectedOrder), $scope.nicBillingFilter.model)
                 .then((result) => {
                     $scope.nbServices = result.count;
 
+                    const userMustApproveAutoRenew = _($scope.services).get("data.userMustApproveAutoRenew", null);
                     $scope.services.data = result;
+
+                    if (_(userMustApproveAutoRenew).isBoolean()) {
+                        $scope.services.data.userMustApproveAutoRenew = userMustApproveAutoRenew;
+                    }
+
                     $scope.nicBillingFilter.values = result.nicBilling;
 
                     checkWarnings($scope.services.data.list.results);
@@ -545,7 +554,8 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
         };
 
         $scope.onSearchTextChanged = () => {
-            $location.search("searchText", $scope.searchText);
+            $location.search("searchText", $scope.searchText.value);
+            $scope.$broadcast("paginationServerSide.loadPage", "1", "serviceTable");
         };
 
         $scope.onSelectedrenewChange = () => {
@@ -615,10 +625,12 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
         function init () {
             $scope.initLoading = true;
 
-            const { selectedType, searchText, renewFilter, renewalFilter, order } = $location.search();
+            const { selectedType, searchTextValue, renewFilter, renewalFilter, order } = $location.search();
 
             $scope.services.selectedType = selectedType;
-            $scope.searchText = searchText;
+            $scope.searchText = {
+                value: searchTextValue
+            };
             $scope.renewFilter.model = renewFilter === "0" ? 0 : renewFilter || 0;
             $scope.renewalFilter.model = renewalFilter === "0" ? "0" : renewalFilter || "0";
 
@@ -626,17 +638,6 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
             $scope.orderByState.reverse = order ? order.split("::")[1] === "true" : false;
 
             $scope.canDisableAllDomains = false;
-
-            $scope.$watch(
-                "searchText",
-                _.debounce((old, current) => {
-                    if (old !== current) {
-                        $scope.$apply(() => {
-                            $scope.$broadcast("paginationServerSide.loadPage", 1, "serviceTable");
-                        });
-                    }
-                }, 1000)
-            );
 
             $scope.$broadcast("paginationServerSide.loadPage", "1", "serviceTable");
 
