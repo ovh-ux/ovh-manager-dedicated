@@ -21,17 +21,15 @@
                     title="{{ 'browser_alert_close' | translate }}"
                     data-dismiss="alert">
             </button>
-            <ul>
-                <li data-ng-if="!automaticRenewV2Mean.allowed" data-translate="autorenew_service_renew_requires_mean_and_date"></li>
-                <li data-ng-if="automaticRenewV2Mean.allowed && !nicRenew.active">
+                <p data-ng-if="!automaticRenewV2Mean.allowed" data-translate="autorenew_service_renew_requires_mean_and_date"></p>
+                <p data-ng-if="automaticRenewV2Mean.allowed && !nicRenew.active">
                     <span data-translate="autorenew_service_activate_alert"></span>
                     <button class="btn btn-default"
                             type="button"
                             data-ng-click="setAction('active', { nicRenew: nicRenew }, 'autoRenew')"
                             data-translate="autorenew_service_active_title">
                     </button>
-                </li>
-            </ul>
+                </p>
         </div>
 
         <form class="row"
