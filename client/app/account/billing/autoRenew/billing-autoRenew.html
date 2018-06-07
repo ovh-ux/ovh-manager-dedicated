@@ -34,31 +34,6 @@
             </ul>
         </div>
 
-        <div class="alert alert-info"
-             role="alert"
-             data-ng-if="automaticRenewV2Mean.available && !hideAutorenewMassMigrationAlert">
-            <button type="button"
-                    class="close"
-                    data-ng-click="hideAutorenewMassMigrationAlert = true"
-                    data-dismiss="alert">
-            </button>
-            <span data-translate="autorenew_service_renew_mass_migration_soon"></span>
-        </div>
-
-        <p class="alert alert-info"
-           data-ng-if="guide"
-           role="alert">
-            <span data-translate="autorenew_service_autorenew_guide_help"></span>
-            <a data-ng-href="{{guide}}"
-               target="_blank"
-               rel="noopener">
-                <span data-translate="autorenew_guide_help"></span>
-                <i class="fa fa-external-link"
-                   aria-hidden="true">
-                </i>
-            </a>
-        </p>
-
         <form class="row"
               data-ng-if="nicBillingFilter.values.length > 1">
             <div class="form-group col-md-4">
