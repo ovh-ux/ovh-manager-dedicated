@@ -304,19 +304,6 @@
                                 data-use-ui-kit>
                             </service-expiration-date>
                         </div>
-
-<li data-ng-if="featureAvailability.allowDedicatedServerRenewByCgi() && server.canOrder && urlRenew">
-        <a target="_blank"
-            data-ng-href="{{ urlRenew }}"
-            data-translate="wizard_renew">
-        </a>
-    </li>
-    <li data-ng-if="featureAvailability.allowDedicatedServerRenew()">
-        <a data-ng-href="{{ '#/billing/autoRenew?selectedType=DEDICATED_SERVER&searchText=' + server.name}}"
-            data-translate="wizard_renew">
-        </a>
-    </li>
-
                     </div>
                     <div class="oui-tile__item">
                         <dl class="oui-tile__definition">
