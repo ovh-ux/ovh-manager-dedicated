@@ -3,7 +3,7 @@
           novalidate
           data-ng-submit="$ctrl.onDeleteReverseDNSFormSubmit()">
         <oui-modal
-            data-title="{{ :: 'server_reversedns_delete_title' | translate }}"
+            data-title="{{:: 'server_reversedns_delete_title' | translate }}"
             data-primary-label="{{($ctrl.actionEnabled ? 'server_reversedns_delete_confirm' : 'global_OK') | translate }}"
             data-secondary-label="{{$ctrl.actionEnabled ? ('common_cancel' | translate) : '' }}"
             data-secondary-action="$ctrl.$state.go('^')"
@@ -11,13 +11,12 @@
             data-loading="$ctrl.loading.init || $ctrl.loading.delete"
             data-type="{{ !$ctrl.actionEnabled ? 'warning' : '' }}">
 
-            <div data-ng-if="!$ctrl.actionEnabled">
-                <p data-translate="server_reversedns_delete_loading_error"></p>
-            </div>
-            <div data-ng-if="$ctrl.actionEnabled && $ctrl.dedicatedServer">
-                <p data-translate="server_reversedns_delete_reversedns_confirmation"
-                   data-translate-values="{t0: $ctrl.dedicatedServer.reverse}"></p>
-            </div>
+            <p data-translate="server_reversedns_delete_loading_error"
+               data-ng-if="!$ctrl.actionEnabled"></p>
+
+            <p data-translate="server_reversedns_delete_reversedns_confirmation"
+               data-translate-values="{t0: $ctrl.dedicatedServer.reverse}"
+               data-ng-if="$ctrl.actionEnabled && $ctrl.dedicatedServer"></p>
 
         </oui-modal>
     </form>
