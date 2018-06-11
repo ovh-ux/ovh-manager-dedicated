@@ -9,7 +9,8 @@ angular.module("App").config(($stateProvider) => {
                 controller: "DedicatedCloudSubDatacentersDatastoreCtrl",
                 controllerAs: "$ctrl"
             }
-        }
+        },
+        translations: ["dedicated/server"]
     });
 
     $stateProvider.state("app.dedicatedClouds.datacenter.datastores.orderUS", {
