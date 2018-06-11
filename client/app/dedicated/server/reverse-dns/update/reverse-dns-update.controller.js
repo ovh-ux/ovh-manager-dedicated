@@ -8,12 +8,6 @@ angular.module("App").controller("ReverseDNSUpdateCtrl", class ReverseDNSUpdateC
         this.$translate = $translate;
         this.Alerter = Alerter;
         this.Server = Server;
-
-        this.loading = {
-            init: false,
-            update: false
-        };
-        this.actionEnabled = true;
     }
 
     onUpdateReverseDNSFormSubmit () {
@@ -43,6 +37,12 @@ angular.module("App").controller("ReverseDNSUpdateCtrl", class ReverseDNSUpdateC
     }
 
     $onInit () {
+        this.loading = {
+            init: false,
+            update: false
+        };
+        this.actionEnabled = true;
+
         this.productId = this.$stateParams.productId;
 
         this.loading.init = true;

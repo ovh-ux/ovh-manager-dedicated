@@ -102,7 +102,7 @@
                                     data-text="{{:: 'server_configuration_netboot_title_button' | translate}}"
                                     aria-label="{{:: 'server_configuration_netboot_title_button' | translate}}"
                                     data-on-click="setAction('netboot/dedicated-server-netboot')"
-                                    data-disabled="disable.reboot || disable.byOtherTask || server.state == 'HACKED' || server.state == 'HACKED_BLOCKED' || (disable.installationInProgress
+                                    data-disabled="disable.reboot || disable.byOtherTask || server.state === 'HACKED' || server.state === 'HACKED_BLOCKED' || (disable.installationInProgress
                                     && !disable.installationInProgressError)">
                                 </oui-action-menu-item>
                             </oui-action-menu>
@@ -125,11 +125,11 @@
                             <dd class="oui-tile__description">
                                 <span class="oui-status"
                                       data-ng-class="{
-                                          'oui-status_success': server.state == 'OK',
-                                          'oui-status_warning': server.state == 'ERROR',
-                                          'oui-status_error': server.state == 'HACKED' || server.state == 'HACKED_BLOCKED'
+                                          'oui-status_success': server.state === 'OK',
+                                          'oui-status_warning': server.state === 'ERROR',
+                                          'oui-status_error': server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'
                                       }"
-                                      data-translate="{{'server_configuration_state_' + server.state}}">
+                                      data-translate="{{:: 'server_configuration_state_' + server.state}}">
                                 </span>
                             </dd>
                         </dl>
@@ -149,15 +149,13 @@
                                     data-text="{{:: 'server_remove_hack_button' | translate}}"
                                     aria-label="{{:: 'server_remove_hack_button' | translate}}"
                                     data-on-click="removeHack()"
-                                    data-disabled="server.state == 'HACKED_BLOCKED'"
-                                    data-ng-if="server.state == 'HACKED' || server.state == 'HACKED_BLOCKED'">
+                                    data-disabled="server.state === 'HACKED_BLOCKED'"
+                                    data-ng-if="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'">
                                 </oui-action-menu-item>
                                 <oui-action-menu-item
                                     data-text="{{:: 'server_close_service' | translate}}"
                                     aria-label="{{:: 'server_close_service' | translate}}"
-                                    data-ng-click="setAction('terminate/dedicated-server-terminate', {
-                                        serviceInfos: serviceInfos
-                                    })"
+                                    data-ng-click="setAction('terminate/dedicated-server-terminate', { serviceInfos })"
                                     data-if="!server.isExpired">
                                 </oui-action-menu-item>
                             </oui-action-menu>
@@ -386,7 +384,7 @@
                                     data-text="{{:: 'server_configuration_profesionnal_use_order_button' | translate}}"
                                     aria-label="{{:: 'server_configuration_profesionnal_use_order_button' | translate}}"
                                     data-on-click="setAction('pro-use/order/dedicated-server-pro-use-order', server.name)"
-                                    data-disabled="server.order.indexOf('professionalUse') == -1">
+                                    data-disabled="server.order.indexOf('professionalUse') === -1">
                                 </oui-action-menu-item>
                             </oui-action-menu>
                         </div>

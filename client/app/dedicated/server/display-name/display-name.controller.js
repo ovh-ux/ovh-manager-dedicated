@@ -8,12 +8,6 @@ angular.module("App").controller("DisplayNameCtrl", class DisplayNameCtrl {
         this.$translate = $translate;
         this.Alerter = Alerter;
         this.Server = Server;
-
-        this.loading = {
-            init: false,
-            update: false
-        };
-        this.actionEnabled = true;
     }
 
     onUpdateDisplayNameFormSubmit () {
@@ -47,6 +41,13 @@ angular.module("App").controller("DisplayNameCtrl", class DisplayNameCtrl {
     }
 
     $onInit () {
+
+        this.loading = {
+            init: false,
+            update: false
+        };
+        this.actionEnabled = true;
+
         this.productId = this.$stateParams.productId;
 
         this.loading.init = true;

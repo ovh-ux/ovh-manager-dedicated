@@ -8,12 +8,6 @@ angular.module("App").controller("ReverseDNSDeleteCtrl", class ReverseDNSDeleteC
         this.$translate = $translate;
         this.Alerter = Alerter;
         this.Server = Server;
-
-        this.loading = {
-            init: false,
-            "delete": false
-        };
-        this.actionEnabled = true;
     }
 
     onDeleteReverseDNSFormSubmit () {
@@ -42,6 +36,12 @@ angular.module("App").controller("ReverseDNSDeleteCtrl", class ReverseDNSDeleteC
     }
 
     $onInit () {
+        this.loading = {
+            init: false,
+            "delete": false
+        };
+        this.actionEnabled = true;
+
         this.productId = this.$stateParams.productId;
 
         this.loading.init = true;
