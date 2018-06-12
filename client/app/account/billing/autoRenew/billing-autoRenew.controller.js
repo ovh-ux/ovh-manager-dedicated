@@ -683,7 +683,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
             });
 
             $q.all([$scope.getServices($scope.count, $scope.offset), userPromise, paymentMeansPromise, renewAlignUrlPromise, userGuidePromise, serviceTypePromise, userCertificatesPromise])
-                .finally(() => $scope.nicRenew.getNicRenewParam())
+                .then(() => $scope.nicRenew.getNicRenewParam())
                 .finally(() => ($scope.initLoading = false));
         }
 
