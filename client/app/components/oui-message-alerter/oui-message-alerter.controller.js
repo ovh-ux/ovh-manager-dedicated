@@ -1,7 +1,8 @@
 angular.module("App").controller("OuiMessageAlerterCtrl", class OuiMessageAlerterCtrl {
 
-    constructor ($state, ouiMessageAlerter) {
+    constructor ($window, $state, ouiMessageAlerter) {
         // Dependencies injection
+        this.$window = $window;
         this.$state = $state;
         this.ouiMessageAlerter = ouiMessageAlerter;
 
@@ -23,9 +24,15 @@ angular.module("App").controller("OuiMessageAlerterCtrl", class OuiMessageAlerte
     ====================================== */
 
     getMessagesByType (messageType) {
-        return this.ouiMessageAlerter.getMessagesFiltered({
+        const messagesOfType = this.ouiMessageAlerter.getMessagesFiltered({
             type: messageType
         }).reverse();
+
+        if (this.autoScroll && messagesOfType.length) {
+            this.applyAutoScroll();
+        }
+
+        return messagesOfType;
     }
 
     /* -----  End of DISPLAY HELPER  ------ */

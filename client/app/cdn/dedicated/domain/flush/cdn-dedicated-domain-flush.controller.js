@@ -26,7 +26,9 @@ angular.module("App").controller("CdnDomainFlushCtrl", class CdnDomainFlushCtrl 
             serviceName: this.$stateParams.productId,
             domain: this.$stateParams.domain
         }, {}).$promise.then(() => {
-            this.ouiMessageAlerter.success(this.$translate.instant("cdn_dedicated_domain_flush_success"), "app.networks.cdn.dedicated.domain");
+            this.ouiMessageAlerter.success(this.$translate.instant("cdn_dedicated_domain_flush_success", {
+                t0: this.cdnDomain.domain
+            }), "app.networks.cdn.dedicated.domain");
         }).catch((error) => {
             this.ouiMessageAlerter.error([this.$translate.instant("cdn_dedicated_domain_flush_error", {
                 t0: this.cdnDomain.domain

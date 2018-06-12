@@ -1,4 +1,4 @@
-angular.module("App").run(($q, $translate, $translatePartialLoader, ouiFieldConfiguration) => {
+angular.module("App").run(($q, $translate, $translatePartialLoader, ouiFieldConfiguration, ouiStepperConfiguration) => {
 
     // first be sure that common translation file is loaded...
     $translatePartialLoader.addPart("common");
@@ -15,6 +15,16 @@ angular.module("App").run(($q, $translate, $translatePartialLoader, ouiFieldConf
                 maxlength: $translate.instant("common_field_error_maxlength", { maxlength: "{{maxlength}}" }),
                 pattern: $translate.instant("common_field_error_pattern")
             }
+        };
+
+        // set ouiStepper default translations
+        ouiStepperConfiguration.translations = {
+            optionalLabel: $translate.instant("common_stepper_optional_label"),
+            modifyThisStep: $translate.instant("common_stepper_modify_this_step"),
+            skipThisStep: $translate.instant("common_stepper_skip_this_step"),
+            nextButtonLabel: $translate.instant("common_stepper_next_button_label"),
+            submitButtonLabel: $translate.instant("common_stepper_submit_button_label"),
+            cancelButtonLabel: $translate.instant("common_stepper_cancel_button_label")
         };
     });
 

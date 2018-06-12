@@ -32,6 +32,7 @@ angular.module("App").service("ouiMessageAlerter", class OuiMessageAlerter {
 
         const timeout = _.get(options, "hideAfter");
         const msg = {
+            id: _.uniqueId("message-"),
             content: message,
             type,
             context
