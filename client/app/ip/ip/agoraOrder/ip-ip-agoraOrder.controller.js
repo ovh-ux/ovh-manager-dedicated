@@ -1,5 +1,5 @@
-angular.module("Module.ip.controllers").controller("agoraIpOrderCtrl", ["$scope", "$rootScope", "$window", "$q", "$log", "IpAgoraOrder", "IpOrganisation", "User", "Alerter", "$translate",
-    function ($scope, $rootScope, $window, $q, $log, AgoraOrder, Organisation, User, Alerter, $translate) {
+angular.module("Module.ip.controllers").controller("agoraIpOrderCtrl", ["$scope", "$rootScope", "$state", "$window", "$q", "$log", "IpAgoraOrder", "IpOrganisation", "User", "Alerter", "$translate",
+    function ($scope, $rootScope, $state, $window, $q, $log, AgoraOrder, Organisation, User, Alerter, $translate) {
         "use strict";
 
         this.model = {
@@ -18,7 +18,7 @@ angular.module("Module.ip.controllers").controller("agoraIpOrderCtrl", ["$scope"
                 this.services = results.services;
             }).catch((err) => {
                 Alerter.error($translate.instant("ip_order_loading_error"));
-                $scope.resetAction();
+                $state.go("^");
                 return $q.reject(err);
             }).finally(() => {
                 this.loading.services = false;
@@ -48,7 +48,7 @@ angular.module("Module.ip.controllers").controller("agoraIpOrderCtrl", ["$scope"
             return $q.all([ipOffersPromise, ipOrganisationPromise])
                 .catch((err) => {
                     Alerter.error($translate.instant("ip_order_loading_error"));
-                    $scope.resetAction();
+                    $state.go("^");
                     return $q.reject(err);
                 })
                 .finally(() => {
@@ -107,7 +107,7 @@ angular.module("Module.ip.controllers").controller("agoraIpOrderCtrl", ["$scope"
 
         this.redirectToOrganisationPage = () => {
             $rootScope.$broadcast("ips.display", "organisation");
-            $scope.resetAction();
+            $state.go("^");
         };
 
         this.redirectToPaymentPage = () => {
@@ -119,14 +119,19 @@ angular.module("Module.ip.controllers").controller("agoraIpOrderCtrl", ["$scope"
                 })
                 .catch((err) => {
                     Alerter.error($translate.instant("ip_order_finish_error"));
-                    $scope.resetAction();
+                    $state.go("^");
                     return $q.reject(err);
                 })
-                .finally(() => $scope.resetAction());
+                .finally(() => $state.go("^"));
+        };
+
+        this.resumeOrder = () => {
+            $state.go("^");
         };
 
         // need to be scoped because of how wizard-step works
         $scope.redirectToPaymentPage = this.redirectToPaymentPage.bind(this);
+        $scope.resumeOrder = this.resumeOrder.bind(this);
 
         $scope.stringLocaleSensitiveComparator = function (v1, v2) {
             return v1.value.localeCompare(v2.value);
