@@ -151,12 +151,12 @@
                         data-ng-click="setAction('ip/order/migrate/ip-ip-order-migrate')"
                         data-translate="ip_migration">
                 </button>
-                <button type="button"
-                        data-ng-if="canOrderAgoraIPFO()"
-                        class="btn btn-block btn-default"
-                        data-ng-click="setAction('ip/agoraOrder/ip-ip-agoraOrder')"
-                        data-translate="ip_additional_order">
-                </button>
+                <a
+                   data-ng-if="canOrderAgoraIPFO()"
+                   class="btn btn-block btn-default"
+                   data-ui-sref="app.ip.agora-order"
+                   data-translate="ip_additional_order">
+                </a>
                 <button type="button"
                         data-ng-if="canOrderIPFO()"
                         class="btn btn-block btn-default"
