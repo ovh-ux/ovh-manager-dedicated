@@ -2,226 +2,67 @@
 
     <h2 data-translate="dedicatedCloud_tab_operation"></h2>
 
-    <div class="table-responsive">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th scope="col"
-                        data-translate="dedicatedCloud_OPERATIONS_taskId">
-                    </th>
-                    <th scope="col"
-                        data-translate="dedicatedCloud_OPERATIONS_name">
-                    </th>
-                    <th scope="col"
-                        data-translate="dedicatedCloud_OPERATIONS_type">
-                    </th>
-                    <th scope="col">
-                        <select class="form-control"
-                                id="state-filter"
-                                name="state-filter"
-                                data-ng-options="state as (('dedicatedCloud_OPERATIONS_state_' + state) | translate) for state in ctrlOperations.stateEnum | orderBy : ('dedicatedCloud_OPERATIONS_state_' + state) | translate"
-                                data-ng-model="ctrlOperations.stateFilter"
-                                data-ng-change="ctrlOperations.onStateChanged()"
-                                data-ng-disabled="ctrlOperations.loaders.models">
-                            <option value=""
-                                    data-translate="dedicatedCloud_OPERATIONS_progression">
-                            </option>
-                        </select>
-                    </th>
-                    <th scope="col"
-                        data-translate="dedicatedCloud_OPERATIONS_comment">
-                    </th>
-                    <th scope="col"
-                        data-translate="dedicatedCloud_OPERATIONS_related_services">
-                    </th>
-                    <th scope="col"
-                        data-translate="dedicatedCloud_OPERATIONS_created_from">
-                    </th>
-                    <th scope="col"
-                        data-translate="dedicatedCloud_OPERATIONS_created_by">
-                    </th>
-                    <th scope="col"
-                        data-translate="dedicatedCloud_OPERATIONS_date_treatment">
-                    </th>
-                    <th scope="col"
-                        data-translate="dedicatedCloud_OPERATIONS_date_end">
-                    </th>
-                    <th scope="col"
-                        data-translate="dedicatedCloud_OPERATIONS_date_update">
-                    </th>
-                    <th scope="col"
-                        class="text-center">
-                        <button type="button"
-                                class="btn btn-link"
-                                title="{{ 'common_refresh' | translate }}"
-                                data-ng-click="ctrlOperations.getOperations()">
-                            <span class="fa fa-refresh" aria-hidden="true"></span>
-                        </button>
-                    </th>
-                </tr>
-            </thead>
-            <tbody data-ng-if="ctrlOperations.loaders.operations">
-                <tr>
-                    <td colspan="12"
-                        class="text-center">
-                        <oui-spinner data-size="s"></oui-spinner>
-                    </td>
-                </tr>
-            </tbody>
-            <tbody data-ng-if="!ctrlOperations.loaders.operations && ctrlOperations.operations.length === 0">
-                <tr>
-                    <td colspan="12"
-                        class="text-center"
-                        data-translate="dedicatedCloud_OPERATIONS_empty">
-                    </td>
-                </tr>
-            </tbody>
-            <tbody data-ng-if="!ctrlOperations.loaders.operation && ctrlOperations.operations.length > 0">
-                <tr data-ng-repeat="operation in ctrlOperations.operations track by operation.taskId">
-                    <th scope="row"
-                        data-ng-bind="::operation.taskId">
-                    </th>
-                    <td data-ng-bind="::operation.name"></td>
-                    <td data-ng-bind="::('dedicatedCloud_OPERATIONS_type_' + operation.type) | translate"></td>
-                    <td data-ng-include="'dedicatedCloud/progressBar.html'">
-                    <td data-ng-bind="::operation.description"></td>
-                    <td>
-                        <ul class="list-unstyled m-0">
-                            <!-- 0 || 1 operation -->
-                            <li id="{{:: operation.taskId }}"
-                                data-ng-if="operation.relatedServices.length <= 1"
-                                data-ng-repeat="relatedService in operation.relatedServices track by $index"
-                                data-ng-switch="relatedService.action.type">
-                                <span data-ng-switch-when="label"
-                                      data-ng-bind="::relatedService.label">
-                                </span>
-                                <span data-ng-switch-when="callback">
-                                    <button type="button"
-                                            class="btn btn-link py-0"
-                                            data-ng-click="ctrlOperations.showRelatedService(relatedService.action.params)"
-                                            data-ng-bind="::relatedService.label">
-                                    </button>
-                                </span>
-                                <span data-ng-switch-when="url">
-                                    <a data-ng-href="{{:: relatedService.action.url }}"
-                                       data-ng-bind="::relatedService.label">
-                                    </a>
-                                </span>
-                            </li>
-                            <!-- more than 1 operation closed -->
-                            <li id="{{:: operation.taskId }}"
-                                data-ng-if="operation.relatedServices.length > 1 && operation.expanded === false">
-                                <span data-ng-if="operation.relatedServices[0].action.type === 'label'"
-                                      data-ng-bind="::operation.relatedServices[0].label">
-                                </span>
-                                <button type="button"
-                                        class="btn btn-link p-0"
-                                        data-ng-if="operation.relatedServices[0].action.type === 'callback'"
-                                        data-ng-click="ctrlOperations.showRelatedService(operation.relatedServices[0].action.params)"
-                                        data-ng-bind="::operation.relatedService[0].label">
-                                </button>
-                                <a data-ng-if="operation.relatedServices[0].action.type === 'url'"
-                                   data-ng-href="{{:: relatedService.action.url }}"
-                                   data-ng-bind="::operation.relatedServices[0].label">
-                                </a>
-                                <button type="button"
-                                        class="btn btn-link p-0"
-                                        data-ng-click="ctrlOperations.toggleExpandOperation($event, operation)">
-                                    <span class="fa fa-arrow-down" aria-hidden="true"></span>
-                                </button>
-                            </li>
-                            <!-- more than operation expanded -->
-                            <li id="{{:: operation.taskId }}"
-                                data-ng-if="operation.relatedServices.length > 1 && operation.expanded === true"
-                                data-ng-repeat="relatedService in operation.relatedServices track by $index"
-                                data-ng-switch="relatedService.action.type">
-                                <span data-ng-switch-when="label"
-                                      data-ng-bind="::relatedService.label">
-                                </span>
-                                <button type="button"
-                                        class="btn btn-link p-0"
-                                        data-ng-switch-when="callback"
-                                        data-ng-click="ctrlOperations.showRelatedService(relatedService.action.params)"
-                                        data-ng-bind="::relatedService.label">
-                                </button>
-                                <a data-ng-switch-when="url"
-                                   data-ng-href="{{:: relatedService.action.url }}"
-                                   data-ng-bind="::relatedService.label">
-                                </a>
-                                <button type="button"
-                                        class="btn btn-link p-0"
-                                        data-ng-click="ctrlOperations.toggleExpandOperation($event, operation)">
-                                    <span class="fa fa-arrow-up"
-                                          aria-hidden="true"
-                                          data-ng-if="$index === 0">
-                                    </span>
-                                </button>
-                            </li>
-                        </ul>
-                    </td>
-                    <td data-ng-bind="::operation.createdFrom"></td>
-                    <td data-ng-bind="::operation.createdBy"></td>
-                    <td>
-                        <div data-ng-show="!editMode">
-                            <span data-ng-bind="operation.executionDate | date:'medium'"></span>
-                            <button type="button"
-                                    class="btn btn-link"
-                                    title="{{ :: 'dedicatedCloud_OPERATIONS_date_treatment_edit' | translate }}"
-                                    data-ng-show="operation.progress === 0 && operation.type === 'maintenance' && maintenanceDateFrom !== null && maintenanceDateTo !== null"
-                                    data-ng-click="prevDate = operation.executionDate;editMode = true">
-                                <span class="oui-icon oui-icon-pen_line" aria-hidden="true"></span>
-                            </button>
-                        </div>
-                        <div data-ng-show="editMode">
-                            <div class="btn btn-link"
-                                 data-dtp-placement="bottom"
-                                 data-dtp-autoclose="true"
-                                 data-ng-model="operation.executionDate"
-                                 data-dtp-start-date="{{ operation.maintenanceDateFrom.toString() }}"
-                                 data-dtp-end-date="{{ operation.maintenanceDateTo.toString() }}"
-                                 data-dtp-model-timezone="local"
-                                 data-dtp-min-view-mode="days"
-                                 data-dtp-pick-time="true"
-                                 data-dtp-type="date"
-                                 data-date-time-picker>
-                                <span class="add-on">
-                                    <i data-time-icon="icon-time"
-                                       data-date-icon="icon-calendar">
-                                    </i>
-                                </span>
-                                <input type="text" class="form-control" />
-                            </div>
-                            <button type="button"
-                                    class="btn btn-link"
-                                    title="{{ :: 'dedicatedCloud_OPERATIONS_date_treatment_save' | translate }}"
-                                    data-ng-click="ctrlOperations.updateOperation(operation);editMode = false">
-                                <span class="fa fa-check" aria-hidden="true"></span>
-                            </button>
-                            <button type="button"
-                                    class="btn btn-link"
-                                    title="{{ :: 'dedicatedCloud_OPERATIONS_date_treatment_cancel' | translate }}"
-                                    data-ng-click="editMode = false; operation.executionDate = prevDate">
-                                <span class="fa fa-times" aria-hidden="true"></span>
-                            </button>
-                        </div>
-                    </td>
-                    <td data-ng-bind="::operation.endDate | date:'medium'"></td>
-                    <td colspan="2"
-                        data-ng-bind="::operation.lastModificationDate | date:'medium'">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="text-center"
+         data-ng-if="$ctrl.loading">
+        <oui-spinner></oui-spinner>
     </div>
-    <div data-pagination-front="data-pagination-front"
-         data-items="ctrlOperations.operationIds"
-         data-paginated-items="ctrlOperations.operations"
-         data-transform-item="ctrlOperations.getOperation(item)"
-         data-on-transform-item-done="ctrlOperations.onOperationsDone(items)"
-         data-current-page="currentPage"
-         data-nb-pages="nbPages"
-         data-items-per-page="itemsPerPage"
-         data-page-placeholder="{{ 'pagination_page' | translate:{ t0: currentPage, t1: nbPages } }}"
-         data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
-    </div>
+
+    <oui-datagrid data-ng-if="!$ctrl.loading"
+                  data-rows-loader="$ctrl.loadOperations($config)"
+                  data-row-loader="$ctrl.loadOperation($row)">
+        <oui-column data-title=":: 'dedicatedCloud_OPERATIONS_taskId' | translate"
+                    data-property="taskId">
+        </oui-column>
+        <oui-column data-title=":: 'dedicatedCloud_OPERATIONS_name' | translate"
+                    data-property="name">
+        </oui-column>
+        <oui-column data-title=":: 'dedicatedCloud_OPERATIONS_type' | translate">
+            <span data-ng-bind="::('dedicatedCloud_OPERATIONS_type_' + $row.type) | translate"></span>
+        </oui-column>
+        <oui-column data-title=":: 'dedicatedCloud_OPERATIONS_progression' | translate">
+            <span data-ng-switch="$row.state">
+                <span data-ng-switch-when="done"
+                      data-translate="dedicatedCloud_OPERATIONS_state_done">
+                </span>
+                <span data-ng-switch-when="canceled"
+                      data-translate="dedicatedCloud_OPERATIONS_state_canceled">
+                </span>
+                <span data-ng-switch-default
+                      data-ng-bind="('dedicatedCloud_OPERATIONS_state_' + $row.state | translate) + ' (' + $row.progress + '%)'">
+                </span>
+            </span>
+        </oui-column>
+        <oui-column data-title=":: 'dedicatedCloud_OPERATIONS_comment' | translate"
+                    data-property="description">
+        </oui-column>
+        <oui-column data-title=":: 'dedicatedCloud_OPERATIONS_related_services' | translate">
+            <span class="d-block"
+                  data-ng-repeat="service in $row.relatedServices track by $index">
+                <button type="button"
+                        class="btn btn-link p-0 text-nowrap"
+                        data-ng-if="service.action"
+                        data-ng-click="service.action()"
+                        data-ng-bind="service.label">
+                </button>
+                <span data-ng-if="!service.action"
+                      data-ng-bind="service.label">
+                </span>
+            </span>
+        </oui-column>
+        <oui-column data-title=":: 'dedicatedCloud_OPERATIONS_created_from' | translate"
+                    data-property="createdFrom">
+        </oui-column>
+        <oui-column data-title=":: 'dedicatedCloud_OPERATIONS_created_by' | translate"
+                    data-property="createdBy">
+        </oui-column>
+        <oui-column data-title=":: 'dedicatedCloud_OPERATIONS_date_treatment' | translate">
+            <span data-ng-bind="$row.executionDate | date:'medium'"></span>
+        </oui-column>
+        <oui-column data-title=":: 'dedicatedCloud_OPERATIONS_date_end' | translate">
+            <span data-ng-bind="$row.endDate | date:'medium'"></span>
+        </oui-column>
+        <oui-column data-title=":: 'dedicatedCloud_OPERATIONS_date_update' | translate">
+            <span data-ng-bind="$row.lastModificationDate | date:'medium'"></span>
+        </oui-column>
+    </oui-datagrid>
 </div>
