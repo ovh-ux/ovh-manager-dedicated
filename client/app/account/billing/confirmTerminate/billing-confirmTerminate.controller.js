@@ -1,69 +1,74 @@
 angular.module("Billing.controllers")
-    .controller("Billing.controllers.TerminateServiceCtrl", function ($q, $stateParams, BillingTerminate, User) {
-        "use strict";
+    .controller("Billing.controllers.TerminateServiceCtrl", class TerminateServiceCtrl {
+        constructor ($q, $stateParams, BillingTerminate, User) {
+            this.$q = $q;
+            this.$stateParams = $stateParams;
+            this.BillingTerminate = BillingTerminate;
+            this.User = User;
+        }
 
-        this.reasons = [
-            "LACK_OF_PERFORMANCES",
-            "TOO_EXPENSIVE",
-            "TOO_HARD_TO_USE",
-            "NOT_RELIABLE",
-            "NOT_NEEDED_ANYMORE",
-            "MIGRATED_TO_COMPETITOR",
-            "MIGRATED_TO_ANOTHER_OVH_PRODUCT",
-            "OTHER"
-        ];
+        $onInit () {
+            this.reasons = [
+                "LACK_OF_PERFORMANCES",
+                "TOO_EXPENSIVE",
+                "TOO_HARD_TO_USE",
+                "NOT_RELIABLE",
+                "NOT_NEEDED_ANYMORE",
+                "MIGRATED_TO_COMPETITOR",
+                "MIGRATED_TO_ANOTHER_OVH_PRODUCT",
+                "OTHER"
+            ];
 
-        this.serviceId = $stateParams.id;
-        this.serviceState = null;
-        this.token = $stateParams.token;
-        this.loading = true;
-        this.userLoading = true;
-        this.terminating = false;
-        this.error = false;
-        this.globalError = null;
+            this.serviceId = this.$stateParams.id;
+            this.serviceState = null;
+            this.token = this.$stateParams.token;
+            this.loading = true;
+            this.userLoading = true;
+            this.terminating = false;
+            this.error = false;
+            this.globalError = null;
 
-        this.init = function () {
             if (!this.token || !this.serviceId) {
                 this.globalError = true;
                 return;
             }
 
-            $q.all([
+            this.$q.all([
                 this.loadUser(),
                 this.loadService()
             ]).catch(() => {
                 this.globalError = true;
             });
-        };
+        }
 
-        this.loadUser = function () {
-            return User.getUser()
+        loadUser () {
+            return this.User.getUser()
                 .then((user) => {
                     this.USVersion = user && user.ovhSubsidiary === "US";
                 })
                 .finally(() => {
                     this.userLoading = false;
                 });
-        };
+        }
 
-        this.loadService = function () {
-            return BillingTerminate
+        loadService () {
+            return this.BillingTerminate
                 .getServiceInfo(this.serviceId)
                 .then((serviceInfos) => {
                     this.serviceInfos = serviceInfos;
-                    return serviceInfos.serviceId;
+                    return this.BillingTerminate.getServiceApi(serviceInfos.serviceId);
                 })
-                .then((serviceId) => BillingTerminate.getServiceApi(serviceId, true).then((service) => {
+                .then((service) => {
                     this.serviceState = _.get(service, "resource.state");
-                }))
+                })
                 .finally(() => {
                     this.loading = false;
                 });
-        };
+        }
 
-        this.confirmTermination = function () {
+        confirmTermination () {
             this.terminating = true;
-            BillingTerminate
+            this.BillingTerminate
                 .confirmTermination(this.serviceId, this.serviceInfos.domain, this.reason, this.commentary, this.token)
                 .then(() => {
                     this.error = false;
@@ -75,7 +80,5 @@ angular.module("Billing.controllers")
                 .finally(() => {
                     this.terminating = false;
                 });
-        };
-
-        this.init();
+        }
     });
