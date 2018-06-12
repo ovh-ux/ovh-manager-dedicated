@@ -27,38 +27,33 @@ angular.module("Module.license").controller("LicenseSplaAddCtrl", class LicenseS
     }
 
     addSpla () {
-        this.License.splaAdd(this.selected.server, { serialNumber: this.selected.serial, type: this.selected.type }).then(
-            () => {
+        return this.License.splaAdd(this.selected.server, { serialNumber: this.selected.serial, type: this.selected.type })
+            .then(() => {
                 this.endAction(this.$translate.instant("license_spla_add_success"), true);
-            },
-            ({ data }) => {
+            }).catch(({ data }) => {
                 this.endAction(this.$translate.instant("license_spla_add_fail"), data);
-            }
-        );
+            });
     }
 
     load () {
-        this.License.splaAddAvailableServers().then(
-            (data) => {
+        return this.License.splaAddAvailableServers()
+            .then((data) => {
                 this.options = data;
-            },
-            ({ data }) => {
+            }).catch(({ data }) => {
                 this.endAction(this.$translate.instant("license_spla_add_step1_loading_error"), data);
-            }
-        );
+            });
     }
 
     loadTypes () {
         this.options.availableTypes = null;
         this.selected.type = null;
-        this.License.splaAddAvailableTypes(this.selected.server).then(
-            (data) => {
+        return this.License.splaAddAvailableTypes(this.selected.server)
+            .then((data) => {
                 angular.extend(this.options, data);
-            },
-            ({ data }) => {
+            })
+            .catch(({ data }) => {
                 this.endAction(this.$translate.instant("license_spla_add_step1_loading_error"), data);
-            }
-        );
+            });
     }
 
 });
