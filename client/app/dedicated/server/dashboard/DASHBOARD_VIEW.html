@@ -369,7 +369,7 @@
                                     <button type="button"
                                             class="btn btn-default ml-auto my-auto text-wrap"
                                             title="{{ 'server_bandwidth_vrack_cancel_button' | translate }}"
-                                            data-ng-if="!server.isExpired && bandwidthVrackOption === 'subscribed'"
+                                            data-ng-if="!server.isExpired && bandwidthVrackOption === 'subscribed' && worldPart !== 'US'"
                                             data-ng-click="setAction('bandwidth-vrack/cancel/dedicated-server-bandwidth-vrack-cancel', server.name)"
                                             data-ng-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
                                             data-translate="server_bandwidth_vrack_cancel_button">

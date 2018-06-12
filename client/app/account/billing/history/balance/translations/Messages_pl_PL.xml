@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="billing_history_balance_title" qtlid="486724">Règlement de mon solde</translation>
+   <translation id="billing_history_balance_title" qtlid="486724">Rozliczenie mojego salda</translation>
    <translation id="billing_history_balance_cancel" qtlid="37863">Anuluj</translation>
-   <translation id="billing_history_balance_explain" qtlid="486737">Votre solde est actuellement de {{ balance }}.</translation>
-   <translation id="billing_history_balance_no_balance" qtlid="486750">Aucune balance n'a été trouvée sur votre compte. <a data-ui-sref="{{ backState }}">Cliquez ici</a> pour retourner à la liste des factures.</translation>
-   <translation id="billing_history_balance_choose_payment_method" qtlid="486763">Choisissez une méthode de paiement</translation>
-   <translation id="billing_history_balance_add_payment_method" qtlid="486776">Ajoutez une méthode de paiement</translation>
-   <translation id="billing_history_balance_no_payment_method" qtlid="486789">Vous n'avez aucune méthode de paiement valide. <a data-ui-sref="{{ addPaymentMethodState }}">Ajoutez une méthode de paiement valide</a> avant de régler votre solde.</translation>
-   <translation id="billing_history_balance_payment_doing" qtlid="486802">Un règlement de solde est déjà en cours. Attendez que ce paiement soit effectué avant de règler un nouveau solde.</translation>
-   <translation id="billing_history_balance_payment_go_tracking" qtlid="486815">Rendez-vous <a data-ui-sref="{{ trackState }}">sur la page des suivis de paiement</a> pour plus d'informations.</translation>
+   <translation id="billing_history_balance_explain" qtlid="486737">Twoje saldo wynosi obecnie {{ balance }}.</translation>
+   <translation id="billing_history_balance_no_balance" qtlid="486750">Nie znaleziono salda dla Twojego konta. <a data-ui-sref="{{ backState }}">Kliknij tutaj</a>, aby wrócić do listy faktur.</translation>
+   <translation id="billing_history_balance_choose_payment_method" qtlid="486763">Wybierz metodę płatności</translation>
+   <translation id="billing_history_balance_add_payment_method" qtlid="486776">Dodaj metodę płatności</translation>
+   <translation id="billing_history_balance_no_payment_method" qtlid="486789">Nie masz ważnych metod płatności. <a data-ui-sref="{{ addPaymentMethodState }}">Dodaj metodę płatności</a>, zanim uregulujesz Twoje saldo.</translation>
+   <translation id="billing_history_balance_payment_doing" qtlid="486802">Spłata salda jest już w toku. Zaczekaj na zakończenie tej płatności, zanim przystąpisz do kolejnej. </translation>
+   <translation id="billing_history_balance_payment_go_tracking" qtlid="486815">Aby uzyskać szczegółowe informacje, przejdź do <a data-ui-sref="{{ trackState }}">na stronie podsumowania płatności</a>.</translation>
 
-   <translation id="billing_history_balance_load_error" qtlid="486828">Une erreur est survenue lors du chargement de votre solde.</translation>
-   <translation id="billing_history_balance_pay_success" qtlid="486841">Le règlement de votre solde a bien été pris en compte. Le paiement sera effectif dans quelques instants. Rendez-vous <a data-ui-sref="{{ trackHref }}">sur la page des suivis de paiement</a> pour plus d'informations.</translation>
-   <translation id="billing_history_balance_pay_error" qtlid="486854">Une erreur est survenue lors du règlement de votre solde.</translation>
+   <translation id="billing_history_balance_load_error" qtlid="486828">Wystąpił błąd podczas ładowania Twojego salda. </translation>
+   <translation id="billing_history_balance_pay_success" qtlid="486841">Spłata Twojego salda jest przetwarzana. Płatność zostanie uznana w ciągu kilku minut. Aby uzyskać szczegółowe informacje, przejdź do <a data-ui-sref="{{ trackHref }}">na stronie podsumowania płatności</a>.</translation>
+   <translation id="billing_history_balance_pay_error" qtlid="486854">Wystąpił błąd podczas spłaty salda.</translation>
 
 <!-- PAYMENT METHOD SUBTYPES -->
    <translation id="billing_history_balance_payment_method_subtype_american_express" qtlid="435959">American Express</translation>

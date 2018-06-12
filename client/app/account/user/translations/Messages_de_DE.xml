@@ -126,11 +126,13 @@
    <translation id="user_agreements_download_pdf" qtlid="39286">Herunterladen</translation>
    <translation id="user_agreements_download_pdf_title" qtlid="454371">{0}: als PDF herunterladen</translation>
    <translation id="user_agreements_alert_close" qtlid="454384">Meldung schließen</translation>
+   <translation id="user_agreement_GDPR_title" qtlid="489871">Datenschutz-Grundverordung</translation>
+   <translation id="user_agreement_GDPR_helper_text" qtlid="489884">Weitere Informationen zur neuen Verordnung finden Sie in unserer <a href="{{agreementLink}}" target="_blank">Anlage zur Verarbeitung personenbezogener Daten</a>.</translation>
 
    <translation id="user_agreement_details_accept" qtlid="214883">Akzeptieren</translation>
    <translation id="user_agreement_details_return" qtlid="410325">Zurück zu meinen Verträgen</translation>
    <translation id="user_agreement_details_title" qtlid="410338">Vertragsdetails</translation>
-   <translation id="user_agreement_details_confirmation_text" qtlid="410351">ich habe "{0}" gelesen und akzeptiere den Vertrag.</translation>
+   <translation id="user_agreement_details_agreed" qtlid="214870">Ich habe "{0}" gelesen und akzeptiere den Vertrag</translation>
    <translation id="user_agreement_details_title1" qtlid="410364">Änderung der allgemeinen Geschäftsbedingungen</translation>
    <translation id="user_agreement_details_subtitle1" qtlid="410377">Die allgemeinen Geschäftsbedingungen von OVH werden aktualisiert!</translation>
    <translation id="user_agreement_details_paragraph1" qtlid="410390">Mit dieser Änderung verfolgen wir vor allem vier Ziele:</translation>
@@ -312,7 +314,7 @@
    <translation id="user_security_double_auth_backup_regenerate_codes" qtlid="230803">Die Notfall-Codes erneut erstellen</translation>
    <translation id="user_security_double_auth_backup_regenerate_codes_remaining" qtlid="230816">Sie haben keine Codes mehr zur Verfügung.</translation>
    <translation id="user_security_double_auth_backup_regenerate_codes_remaining_1" qtlid="230829">Sie haben nur noch einen Notfall-Code zur Verfügung.</translation>
-   <translation id="user_security_double_auth_backup_regenerate_codes_remaining_other" qtlid="486607">Vous disposez de {{ count }} codes de secours valides.</translation>
+   <translation id="user_security_double_auth_backup_regenerate_codes_remaining_other" qtlid="486607">Sie haben {{ count }} gültige Notfall-Codes.</translation>
    <translation id="user_security_double_auth_backup_regenerate_codes_infos" qtlid="230855">Sie können 10 neue Codes erstellen.</translation>
    <translation id="user_security_double_auth_backup_regenerate_success" qtlid="230868">Die Notfall-Codes wurden erfolgreich neu erstellt</translation>
    <translation id="user_security_double_auth_backup_regenerate_error" qtlid="230881">Bei der Neuerstellung der Notfall-Codes ist ein Fehler aufgetreten:</translation>
@@ -760,7 +762,7 @@
    <translation id="user_account_security_double_auth_type_backup_code_modal_validate_info1" qtlid="442191">Kopieren Sie diese Notfall-Codes an einen sicheren Ort, bevor Sie sie validieren: nach Abschluss der Validierung ist der Zugriff darauf nicht mehr möglich.</translation>
    <translation id="user_account_security_double_auth_type_backup_code_modal_validate_info2" qtlid="230764">Um diese Notfall-Codes zu validieren geben Sie einen der Codes ein und klicken Sie auf "Validieren".</translation>
    <translation id="user_account_security_double_auth_type_backup_code_modal_validate_label" qtlid="37647">Code</translation>
-   <translation id="user_account_security_double_auth_type_backup_code_modal_validate_placeholder" qtlid="231089">Ersatzcode</translation>
+   <translation id="user_account_security_double_auth_type_backup_code_modal_validate_placeholder" qtlid="231089">Notfall-Code</translation>
    <translation id="user_account_security_double_auth_type_backup_code_modal_disable" qtlid="230894">Die Notfall-Codes deaktivieren</translation>
    <translation id="user_account_security_double_auth_type_backup_code_modal_delete" qtlid="231037">Die Notfall-Codes löschen</translation>
    <translation id="user_account_security_double_auth_type_backup_code_error" qtlid="442204">Beim Abruf der Notfall-Codes ist ein Fehler aufgetreten.</translation>

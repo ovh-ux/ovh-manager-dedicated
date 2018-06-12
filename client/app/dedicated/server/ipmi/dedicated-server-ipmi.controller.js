@@ -1,4 +1,4 @@
-angular.module("App").controller("ImpiCtrl", ($scope, $translate, Server, Polling, Alerter, User, $sce, $stateParams) => {
+angular.module("App").controller("ImpiCtrl", ($scope, $translate, Server, Polling, Alerter, User, $sce, $stateParams, featureAvailability) => {
     $scope.ttl = "5";
     $scope.alert = "server_tab_ipmi_alert";
 
@@ -505,4 +505,6 @@ angular.module("App").controller("ImpiCtrl", ($scope, $translate, Server, Pollin
             }
         );
     }
+
+    $scope.hasSOL = () => featureAvailability.hasSerialOverLan();
 });
