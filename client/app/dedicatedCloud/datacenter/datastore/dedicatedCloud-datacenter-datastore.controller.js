@@ -25,7 +25,7 @@ angular.module("App").controller("DedicatedCloudSubDatacentersDatastoreCtrl", fu
                     if (noConsumptionResponse.test(err.message)) {
                         dc.consumption = 0;
                     } else {
-                        dc.consumption = NaN;
+                        dc.consumption = null;
                     }
                     return dc;
                 });

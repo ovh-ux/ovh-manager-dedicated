@@ -2,12 +2,6 @@
 
     <h2 data-translate="dedicatedCloud_tab_datastore"></h2>
 
-    <button type="button"
-            class="btn btn-default mb-2"
-            data-ng-disabled="!datacenter.model.canOrderFilers && constants.target !== 'US'"
-            data-ng-click="$ctrl.orderDatastore(datacenter)"
-            data-translate="dedicatedCloud_order_Datastore">
-    </button>
     <oui-datagrid data-rows-loader="$ctrl.loadDatastores($config)">
         <oui-column data-title=":: 'dedicatedCloud_tab_datastores_name' | translate"
                     data-property="name">
@@ -53,5 +47,11 @@
                                   })">
             </oui-action-menu-item>
         </oui-action-menu>
+        <extra-top>
+            <oui-button data-disabled="!datacenter.model.canOrderFilers && constants.target !== 'US'"
+                        data-on-click="$ctrl.orderDatastore(datacenter)"
+                        data-text="{{ 'dedicatedCloud_order_Datastore' | translate }}">
+            </oui-button>
+        </extra-top>
     </oui-datagrid>
 </div>
