@@ -1,3 +1,18 @@
+<a name="9.6.1"></a>
+## [9.6.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.0...v9.6.1) (2018-06-12)
+
+
+### Bug Fixes
+
+* set IP title in order action menu ([9fa00e0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9fa00e0))
+
+
+### Features
+
+* **ip order:** access ip agora order through a dedicated state ([45e512a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/45e512a))
+
+
+
 <a name="9.6.0"></a>
 # [9.6.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.15...v9.6.0) (2018-06-07)
 
