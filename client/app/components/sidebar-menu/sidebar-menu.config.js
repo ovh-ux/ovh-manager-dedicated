@@ -1,8 +1,11 @@
 angular.module("App")
-    .run(($q, SidebarMenu, Products, User, $translatePartialLoader, $translate, DedicatedCloud, Nas, CdnDomain, featureAvailability) => {
+    .run(($q, SidebarMenu, Products, User, $translatePartialLoader, $translate, DedicatedCloud, Nas, CdnDomain, featureAvailability, constants) => {
 
         function buildSidebarActions () {
-            return User.getUrlOf("dedicatedOrder").then((dedicatedOrderUrl) => {
+            return $q.all({
+                dedicatedOrder: User.getUrlOf("dedicatedOrder"),
+                vrackOrder: User.getUrlOf("vrackOrder")
+            }).then((results) => {
                 const actionsMenuOptions = [];
 
                 if (featureAvailability.hasNas()) {
@@ -14,16 +17,33 @@ angular.module("App")
                 }
 
                 actionsMenuOptions.push({
+                    title: $translate.instant("navigation_left_dedicatedServers"),
+                    icon: "ovh-font ovh-font-server",
+                    href: results.dedicatedOrder,
+                    target: "_blank"
+                });
+
+                if (featureAvailability.allowVrackOrder()) {
+                    actionsMenuOptions.push({
+                        title: $translate.instant("navigation_left_vrack"),
+                        icon: "ovh-font ovh-font-vRack",
+                        href: results.vrackOrder,
+                        target: "_blank"
+                    });
+                }
+
+                if (featureAvailability.allowIPFailoverAgoraOrder()) {
+                    actionsMenuOptions.push({
+                        title: $translate.instant("navigation_left_additional_ip"),
+                        icon: "ovh-font ovh-font-ip",
+                        state: "app.ip.agora-order"
+                    });
+                }
+
+                actionsMenuOptions.push({
                     title: $translate.instant("navigation_left_licences"),
                     icon: "ovh-font ovh-font-certificate",
                     state: "app.license.order"
-                });
-
-                actionsMenuOptions.push({
-                    title: $translate.instant("navigation_left_dedicatedServers"),
-                    icon: "ovh-font ovh-font-server",
-                    href: dedicatedOrderUrl,
-                    target: "_blank"
                 });
 
                 return SidebarMenu.addActionsMenuOptions(actionsMenuOptions);
@@ -99,6 +119,16 @@ angular.module("App")
                 icon: "ovh-font ovh-font-ip"
             });
 
+            if (featureAvailability.hasVrackAccessibleFromSidebar()) {
+                SidebarMenu.addMenuItem({
+                    name: "vrack",
+                    title: $translate.instant("navigation_left_vrack"),
+                    url: constants.vrackUrl,
+                    target: "_self",
+                    icon: "ovh-font ovh-font-vRack"
+                });
+            }
+
             const productsPromise = Products.getProductsByType().then((products) => {
                 const pending = [];
 
@@ -145,7 +175,7 @@ angular.module("App")
                         .value();
 
                     _.chain(products.networks)
-                        .filter((network) => network.type === "CDN" || network.type === "NAS")
+                        .filter((network) => network.type === "CDN" || network.type === "NAS" || network.type === "NASHA")
                         .sortBy((elt) => angular.lowercase(elt.name))
                         .forEach((network) => {
                             if (network.type === "CDN" && featureAvailability.hasCdn()) {

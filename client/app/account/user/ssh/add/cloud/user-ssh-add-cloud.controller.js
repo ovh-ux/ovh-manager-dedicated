@@ -1,4 +1,4 @@
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.ssh.cloud.add", [
+angular.module("UserAccount").controller("UserAccount.controllers.ssh.cloud.add", [
     "$scope",
     "UserAccount.services.ssh",
     "$window",

@@ -1,9 +1,11 @@
-angular.module("UserAccount.services").service("UserAccount.services.agreements", [
+angular.module("UserAccount").service("UserAccount.services.agreements", [
     "$http",
     "$q",
+    "$translate",
     "UserAccount.constants",
     "$cacheFactory",
-    function ($http, $q, constants, cache) {
+    "GDPR_AGREEMENTS_INFOS",
+    function ($http, $q, $translate, constants, cache, GDPR_AGREEMENTS_INFOS) {
         "use strict";
 
         const userAgreementsCache = cache("USER_AGREEMENTS");
@@ -12,6 +14,17 @@ angular.module("UserAccount.services").service("UserAccount.services.agreements"
 
         function getSuccessDataOrReject (response) {
             return response.status < 300 ? response.data : $q.reject(response.data);
+        }
+
+        function formatList (response) {
+            if (response.data.list && response.data.list.results && response.data.list.results.length) {
+                response.data.list.results.forEach((agreement) => {
+                    if (_.find(GDPR_AGREEMENTS_INFOS, { agreementId: agreement.contractId })) {
+                        agreement.name = $translate.instant("user_agreement_GDPR_title");
+                    }
+                });
+            }
+            return response;
         }
 
         /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -25,11 +38,23 @@ angular.module("UserAccount.services").service("UserAccount.services.agreements"
                     },
                     serviceType: "aapi"
                 })
+                .then(formatList)
                 .then(getSuccessDataOrReject);
         };
 
         this.getAgreement = function (agreementId) {
-            return $http.get(`${proxyPath}/agreements/${agreementId}`).then(getSuccessDataOrReject);
+            return $http.get(`${proxyPath}/agreements/${agreementId}`)
+                .then((response) => {
+                    if (response.data && response.data.contractId) {
+                        const gdprAgreement = _.find(GDPR_AGREEMENTS_INFOS, { agreementId: response.data.contractId });
+                        if (gdprAgreement) {
+                            response.data.title = $translate.instant("user_agreement_GDPR_title");
+                            response.data.helperText = $translate.instant("user_agreement_GDPR_helper_text", { agreementLink: gdprAgreement.url });
+                        }
+                    }
+                    return response;
+                })
+                .then(getSuccessDataOrReject);
         };
 
         this.getContract = function (contractId) {
@@ -47,12 +72,14 @@ angular.module("UserAccount.services").service("UserAccount.services.agreements"
                     },
                     serviceType: "aapi"
                 })
+                .then(formatList)
                 .then(getSuccessDataOrReject);
         };
 
         this.accept = function (contractId) {
             return $http
                 .post(`${proxyPath}/agreements/${contractId}/accept`)
+                .then(formatList)
                 .then(getSuccessDataOrReject)
                 .then((response) => {
                     userAgreementsCache.removeAll();

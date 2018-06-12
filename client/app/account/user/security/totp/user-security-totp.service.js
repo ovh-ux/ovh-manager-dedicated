@@ -1,4 +1,4 @@
-angular.module("UserAccount.services").service("UserAccount.services.doubleAuth.totp", [
+angular.module("UserAccount").service("UserAccount.services.doubleAuth.totp", [
     "OvhHttp",
     function (OvhHttp) {
         "use strict";

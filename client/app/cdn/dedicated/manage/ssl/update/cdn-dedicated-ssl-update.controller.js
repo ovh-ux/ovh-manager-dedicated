@@ -21,6 +21,7 @@ angular.module("App").controller("CdnUpdateSslCtrl", class CdnUpdateSslCtrl {
         };
 
         this.ssl = null;
+        this.actionEnabled = true;
     }
 
     /* =============================
@@ -30,6 +31,8 @@ angular.module("App").controller("CdnUpdateSslCtrl", class CdnUpdateSslCtrl {
     onCdnSslUpdateFormSubmit () {
         if (this.cdnSslUpdateForm.$invalid) {
             return false;
+        } else if (!this.actionEnabled) {
+            return this.$state.go("^");
         }
 
         this.loading.update = true;
@@ -38,11 +41,14 @@ angular.module("App").controller("CdnUpdateSslCtrl", class CdnUpdateSslCtrl {
             serviceName: this.$stateParams.productId
         }, this.model).$promise.then(() => {
             this.Alerter.success(this.$translate.instant("cdn_dedicated_ssl_update_success"), "cdnDedicatedManage");
+            this.$state.go("^", {}, {
+                reload: true
+            });
         }).catch((error) => {
             this.Alerter.error([this.$translate.instant("cdn_dedicated_ssl_update_error"), _.get(error, "data.message")].join(" "), "cdnDedicatedManage");
+            this.$state.go("^");
         }).finally(() => {
             this.loading.update = false;
-            this.$state.go("^");
         });
     }
 
@@ -60,8 +66,10 @@ angular.module("App").controller("CdnUpdateSslCtrl", class CdnUpdateSslCtrl {
             serviceName: this.$stateParams.productId
         }).$promise.then((ssl) => {
             this.ssl = ssl;
+            this.actionEnabled = this.ssl.status === "on" || this.ssl.status === "off";
         }).catch((error) => {
             if (_.get(error, "status") === 404) {
+                this.actionEnabled = false;
                 return null;
             }
 

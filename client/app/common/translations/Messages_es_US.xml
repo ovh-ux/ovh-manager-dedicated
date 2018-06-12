@@ -2,7 +2,7 @@
 <translations>
    <translation id="common_actions" qtlid="72809">Actions</translation>
    <translation id="common_pagination_display" qtlid="69353">Afficher</translation>
-   <translation id="common_pagination_page" qtlid="239246">Página {{currentPage}}/ {{nbPages}}</translation>
+   <translation id="common_pagination_page" qtlid="239246">Página {{currentPage}}/{{nbPages}}</translation>
 
    <translation id="select_option" qtlid="159046">Seleccione</translation>
    <translation id="welcome_to_your_manager_1" qtlid="282393">Bienvenido(a) al</translation>
@@ -115,8 +115,8 @@
    <translation id="wizard_renew" qtlid="118962">Renouveler</translation>
    <translation id="wizard_next" qtlid="17743">Suivant</translation>
    <translation id="wizard_previous" qtlid="17431">Précédent</translation>
-   <translation id="wizard_breadcrumb" qtlid="486451">Étape {{ currentStep }} sur {{ stepCount }}</translation>
-   <translation id="pagination_page" qtlid="486464">Page {{ current }} / {{ last }}</translation>
+   <translation id="wizard_breadcrumb" qtlid="486451">Paso {{ currentStep }} de {{ stepCount }}</translation>
+   <translation id="pagination_page" qtlid="486464">Página {{ current }}/{{ last }}</translation>
    <translation id="pagination_go" qtlid="31522">OK</translation>
    <translation id="pagination_display" qtlid="69353">Afficher</translation>
    <translation id="common_loading" qtlid="361984">Cargando…</translation>
@@ -193,9 +193,9 @@
    <translation id="common_newtab" qtlid="402165">nueva pestaña</translation>
    <translation id="contract_next" qtlid="17743">Suivant</translation>
    <translation id="contract_previous" qtlid="17431">Précédent</translation>
-   <translation id="download_contract" qtlid="486477">Ouvrir le contrat "{{ name }}" en PDF</translation>
+   <translation id="download_contract" qtlid="486477">Abrir el contrato "{{ name }}" en PDF</translation>
    <translation id="contract_help" qtlid="180382">Debe ver los contratos completos para poder validarlos.</translation>
-   <translation id="contracts_list_title" qtlid="486490">Il y a {{ count }} contrats à consulter.</translation>
+   <translation id="contracts_list_title" qtlid="486490">Hay {{ count }} contratos pendientes de consulta.</translation>
    <translation id="contract_list_title" qtlid="180408">Tiene un contrato por consultar.</translation>
    <translation id="contracts_agree" qtlid="180421">Acepto los contratos</translation>
    <translation id="contract_agree" qtlid="180434">Acepto el contrato</translation>
@@ -206,11 +206,11 @@
    <translation id="month_other" qtlid="220148">{0} mes(es)</translation>
    <translation id="year_1" qtlid="70277">1 an</translation>
    <translation id="year_other" qtlid="158604">{} años</translation>
-   <translation id="upto" qtlid="486503">Jusqu'au {{ date }}</translation>
+   <translation id="upto" qtlid="486503">Hasta el {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Hasta el día 1 del mes siguiente</translation>
    <translation id="engage" qtlid="158643">Contratar {0}</translation>
-   <translation id="price_ht_label" qtlid="486412">{{ price }}&#160;HT</translation>
-   <translation id="price_ttc_label" qtlid="486516">{{ price }}&#160;TTC</translation>
+   <translation id="price_ht_label" qtlid="486412">{{ price }}&#160;</translation>
+   <translation id="price_ttc_label" qtlid="486516">{{ price }}&#160;</translation>
    <translation id="price_free" qtlid="195776">Incluido</translation>
    <translation id="price_label_yearly" qtlid="288977">/año</translation>
 
@@ -540,9 +540,9 @@
    <translation id="me_alerts_PAYMENTMEAN_CREDITCARD_TOOMANYFAILURES" qtlid="343954">Se ha registrado un error en <strong>{0}</strong> tarjeta(s) bancaria(s). Acceda a <a href="#/billing/mean" class="alert-link">«Facturación»</a> para realizar las comprobaciones necesarias y/o registrar una nueva modalidad de pago.</translation>
    <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="343967">Se ha registrado un error en <strong>{0}</strong> cuenta(s) PayPal. Acceda a <a href="#/billing/mean" class="alert-link">«Facturación»</a> para realizar las comprobaciones necesarias y/o registrar una nueva modalidad de pago.</translation>
 
-   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="487730">Votre compte prépayé est débiteur de <strong>{0}</strong> au {1}. Rendez-vous dans <a href="#/billing/ovhaccount" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="486529">Vous avez une dette de <strong>{0}</strong> (dont un montant de {1} non échu). Rendez-vous dans <a href="{2}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="486542">Vous avez une dette de <strong>{0}</strong>. Rendez-vous dans <a href="{1}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
+   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="487730">Su cuenta tiene un saldo negativo de <strong>{0}</strong> au {1}. Acceda a <a href="#/billing/ovhaccount" class="alert-link">la sección de facturación</a> para regularizar su situación.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="486529">Usted tiene un saldo negativo de <strong>{0}</strong> (que incluye un importe de {1} no vencido). Acceda a <a href="{2}" class="alert-link">la sección de facturación</a> para regularizar su situación.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="486542">Usted tiene un saldo negativo de <strong>{0}</strong>. Acceda a <a href="{1}" class="alert-link">la sección de facturación</a> para regularizar su situación.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="383919">Su cuenta prepgada ha alcanzado el límite establecido. Para más información, acceda a <a href="#/billing/ovhaccount" class="alert-link">la sección de facturación</a>.</translation>
 

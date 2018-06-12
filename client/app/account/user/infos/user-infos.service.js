@@ -1,9 +1,8 @@
-angular.module("UserAccount.services").service("UserAccount.services.Infos", [
+angular.module("UserAccount").service("UserAccount.services.Infos", [
     "$http",
     "$q",
     "UserAccount.constants",
     "$window",
-
     function ($http, $q, constants, $window) {
         "use strict";
 
@@ -48,6 +47,26 @@ angular.module("UserAccount.services").service("UserAccount.services.Infos", [
                 if (response.status < 300) {
                     return response.data;
                 }
+                return $q.reject(response);
+            });
+        };
+
+        this.fetchConsentDecision = function (campaignName) {
+            return $http.get([swsUseraccountInfosPath, "consent", campaignName, "decision"].join("/")).then((response) => {
+                if (response.status < 300) {
+                    return response.data;
+                }
+
+                return $q.reject(response);
+            });
+        };
+
+        this.updateConsentDecision = function (campaignName, value) {
+            return $http.put([swsUseraccountInfosPath, "consent", campaignName, "decision"].join("/"), { value }).then((response) => {
+                if (response.status < 300) {
+                    return response.data;
+                }
+
                 return $q.reject(response);
             });
         };

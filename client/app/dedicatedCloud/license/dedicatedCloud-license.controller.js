@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudSubDatacenterLicencesCtrl", ($scope, $stateParams, $translate, DedicatedCloud, $rootScope) => {
+angular.module("App").controller("DedicatedCloudLicencesCtrl", ($rootScope, $scope, $state, $stateParams, $translate, constants, DedicatedCloud) => {
     "use strict";
 
     $scope.licences = {
@@ -33,6 +33,14 @@ angular.module("App").controller("DedicatedCloudSubDatacenterLicencesCtrl", ($sc
 
     $scope.canBeActivatedSpla = function () {
         return $scope.licences.spla === false && $scope.licences.canActive;
+    };
+
+    $scope.enableLicense = function () {
+        if (constants.target === "US") {
+            $state.go("app.dedicatedClouds.license.enable");
+        } else {
+            $scope.setAction("license/enable/dedicatedCloud-license-enable");
+        }
     };
 
     $scope.loadLicences();

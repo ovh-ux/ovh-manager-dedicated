@@ -71,6 +71,10 @@ class FeatureAvailability {
         return this.deny("CA", "US");
     }
 
+    hasSerialOverLan () {
+        return this.deny("US");
+    }
+
     allowDedicatedServerHardwareReplacement () {
         return this.deny("US");
     }
@@ -145,6 +149,14 @@ class FeatureAvailability {
 
     showPDFAndHTMLDepositLinks () {
         return this.deny("US");
+    }
+
+    hasVrackAccessibleFromSidebar () {
+        return this.allow("US");
+    }
+
+    allowVrackOrder () {
+        return this.allow("US");
     }
 
     allow (...args) {

@@ -1,4 +1,4 @@
-angular.module("UserAccount.services").service("UserAccount.services.emails", [
+angular.module("UserAccount").service("UserAccount.services.emails", [
     "constants",
     "OvhHttp",
     function (constants, OvhHttp) {

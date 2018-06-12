@@ -218,7 +218,6 @@ module.exports = {
     },
     resources: {
         i18n: [
-            "client/app/resources/i18n/**/*.xml",
             "client/app/**/translations/*.xml"
         ]
     }

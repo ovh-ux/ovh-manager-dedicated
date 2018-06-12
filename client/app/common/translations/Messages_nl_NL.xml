@@ -115,8 +115,8 @@
    <translation id="wizard_renew" qtlid="118962">Verlengen</translation>
    <translation id="wizard_next" qtlid="17743">Volgende</translation>
    <translation id="wizard_previous" qtlid="17431">Vorige</translation>
-   <translation id="wizard_breadcrumb" qtlid="486451">Étape {{ currentStep }} sur {{ stepCount }}</translation>
-   <translation id="pagination_page" qtlid="486464">Page {{ current }} / {{ last }}</translation>
+   <translation id="wizard_breadcrumb" qtlid="486451">Stap {{ currentStep }} van {{ stepCount }}</translation>
+   <translation id="pagination_page" qtlid="486464">Pagina {{ current }} / {{ last }}</translation>
    <translation id="pagination_go" qtlid="31522">OK</translation>
    <translation id="pagination_display" qtlid="69353">Weergeven</translation>
    <translation id="common_loading" qtlid="361984">Bezig met laden ...</translation>
@@ -189,13 +189,13 @@
    <translation id="common_delete" qtlid="2414">Verwijderen</translation>
    <translation id="required" qtlid="182514">Verplichte velden</translation>
    <translation id="required_fields" qtlid="433550">De velden met een sterretje zijn verplicht. </translation>
-   <translation id="select_placeholder" qtlid="447963">Séléctionnez...</translation>
+   <translation id="select_placeholder" qtlid="447963">Selecteer...</translation>
    <translation id="common_newtab" qtlid="402165">nieuwe tab</translation>
    <translation id="contract_next" qtlid="17743">Volgende</translation>
    <translation id="contract_previous" qtlid="17431">Vorige</translation>
-   <translation id="download_contract" qtlid="486477">Ouvrir le contrat "{{ name }}" en PDF</translation>
+   <translation id="download_contract" qtlid="486477">Open het "{{ name }}" contract in PDF</translation>
    <translation id="contract_help" qtlid="180382">Scroll naar beneden naar de contracten om deze te bevestigen.</translation>
-   <translation id="contracts_list_title" qtlid="486490">Il y a {{ count }} contrats à consulter.</translation>
+   <translation id="contracts_list_title" qtlid="486490">Er zijn {{count}} te bekijken contracten.</translation>
    <translation id="contract_list_title" qtlid="180408">Er is 1 contract, dat u kunt raadplegen.</translation>
    <translation id="contracts_agree" qtlid="180421">Ik accepteer de contracten</translation>
    <translation id="contract_agree" qtlid="180434">Ik accepteer het contract</translation>
@@ -206,11 +206,11 @@
    <translation id="month_other" qtlid="220148">{0} maanden</translation>
    <translation id="year_1" qtlid="70277">1 jaar</translation>
    <translation id="year_other" qtlid="158604">{} jaren</translation>
-   <translation id="upto" qtlid="486503">Jusqu'au {{ date }}</translation>
+   <translation id="upto" qtlid="486503">T/m {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Tot de 1e van de volgende maand</translation>
    <translation id="engage" qtlid="158643">Sign up {0}</translation>
-   <translation id="price_ht_label" qtlid="486412">{{ price }}&#160;HT</translation>
-   <translation id="price_ttc_label" qtlid="486516">{{ price }}&#160;TTC</translation>
+   <translation id="price_ht_label" qtlid="486412">{{ price }}&#160;excl. btw</translation>
+   <translation id="price_ttc_label" qtlid="486516">{{price }}&#160;incl. btw</translation>
    <translation id="price_free" qtlid="195776">Inbegrepen</translation>
    <translation id="price_label_yearly" qtlid="288977">/jaar</translation>
 
@@ -541,9 +541,9 @@
    <translation id="me_alerts_PAYMENTMEAN_CREDITCARD_TOOMANYFAILURES" qtlid="343954">Er is iets niet juist met uw <strong>{0}</strong> creditcard(s). Ga aub naar <a href="#/billing/mean" class="alert-link">Facturatie</a> voor controle en/of het invoeren van een nieuwe betaalmethode.</translation>
    <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="343967">Er is iets niet juist met uw <strong>{0}</strong> PayPal account(s). Ga aub naar <a href="#/billing/mean" class="alert-link">Facturatie</a> voor controle en/of het invoeren van een nieuwe betaalmethode.</translation>
 
-   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="487730">Votre compte prépayé est débiteur de <strong>{0}</strong> au {1}. Rendez-vous dans <a href="#/billing/ovhaccount" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="486529">Vous avez une dette de <strong>{0}</strong> (dont un montant de {1} non échu). Rendez-vous dans <a href="{2}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="486542">Vous avez une dette de <strong>{0}</strong>. Rendez-vous dans <a href="{1}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
+   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="487730">Uw prepaid account heeft een bedrag openstaan van  <strong>{0}</strong>  {1}. Ga naar het gedeelte <a href="#/billing/ovhaccount" class="alert-link">Facturatie</a> om het te vereffenen.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="486529">U hebt een bedrag openstaan van <strong>{0}</strong> (inclusief een niet-verschuldigd bedrag van {1}). Ga naar het gedeelte <a href="{2}" class="alert-link">Facturatie</a> om het te vereffenen.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="486542">U hebt een bedrag openstaan van strong>{0}</strong>. Ga naar het gedeelte <a href="{1}" class="alert-link">Facturatie</a> om het te vereffenen.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="383919">Uw prepaid account heeft de door u ingestelde limiet bereikt. Ga naar <a href="#/billing/ovhaccount" class="alert-link">Facturatie</a> voor meer informatie.</translation>
 
@@ -558,8 +558,8 @@
    <translation id="core_service_expiration_auto_renew" qtlid="414986">Verlenging op </translation>
    <translation id="core_service_renew_button" qtlid="118962">Verlengen</translation>
 
-   <translation id="core_user_enterprise_retail_prices" qtlid="480776">Note : Les prix indiqués sont des prix standards du catalogue et peuvent ne pas refléter les conditions négociées. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
-   <translation id="core_user_enterprise_retail_prices_hpc" qtlid="480789">Note : Les prix indiqués sont une estimation basée sur le calcul au prorata de ce module pour l'aligner sur la période de facturation de votre contrat actuel. Consultez votre facture mensuelle pour une tarification plus détaillée.</translation>
+   <translation id="core_user_enterprise_retail_prices" qtlid="480776">Opmerking: getoonde prijzen zijn standaard catalogusprijzen en komen mogelijk niet overeen met overeengekomen voorwaarden. Controleer uw maandelijkse factuur voor meer gedetailleerde prijzen.</translation>
+   <translation id="core_user_enterprise_retail_prices_hpc" qtlid="480789">Opmerking: de getoonde prijzen zijn een schatting op basis van de pro rata-berekening van deze module, zodat deze overeenkomt met de factureringsperiode van uw huidige contract. Controleer uw maandelijkse factuur voor meer gedetailleerde prijzen.</translation>
 
    <translation id="browser_alert_not_supported" qtlid="405357">Uw browser is niet ondersteund. </translation>
    <translation id="browser_alert_deprecated" qtlid="405370">Uw browser is niet up-to-date en kan beveiligingsproblemen of compatibiliteitsproblemen bevatten.</translation>

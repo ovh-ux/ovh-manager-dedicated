@@ -626,6 +626,7 @@
    <translation id="server_configuration_impi_password" qtlid="164753">Reimpostazione di una sessione IPMI (autentificazione)</translation>
    <translation id="server_configuration_impi_ping" qtlid="164766">Test di accesso al modulo IPMI (ping)</translation>
    <translation id="server_configuration_impi_information" qtlid="191837">IPMI permette di connetterti al tuo server con queste modalità:</translation>
+   <translation id="server_configuration_impi_information_java" qtlid="490506">IPMI permet de se connecter à votre serveur via l'applet JAVA suivant :</translation>
    <translation id="server_configuration_impi_information2" qtlid="191850">Inizializzando una sessione "Remote KVM" (con tastiera, mouse e visualizzazione del tuo server da remoto) dal tuo IP {0}<ul><li>Da un'applet Java Web Start</li></ul></translation>
    <translation id="server_configuration_impi_information3" qtlid="191863">Inizializzando una sessione "Serial Over LAN" (accesso alla console della tua macchina attraverso una connessione sicura) dal tuo IP {0}<ul><li>Dal tuo browser (https)</li></ul></translation>
    <translation id="server_configuration_impi_start" qtlid="25951">Avvia</translation>
@@ -655,8 +656,8 @@
    <translation id="server_configuration_impi_sessions_success" qtlid="165104">Le sessioni del modulo IPMI sono state eliminate correttamente</translation>
    <translation id="server_configuration_impi_disable" qtlid="165117">Le funzionalità del modulo IPMI sono temporaneamente disattivate a causa di un intervento in corso. Saranno riattivate al termine dell'intervento.</translation>
    <translation id="server_configuration_impi_monitoring_warning" qtlid="472658">Ricorda di disattivare il monitoraggio dei tuoi servizi prima di installare un sistema operativo da IPMI.</translation>
-   <translation id="server_configuration_impi_SOL_help" qtlid="201158">La sessione SOL richiede che effettui una configurazione, clicca <a href="{0}">qui</a> per maggiori informazioni.</translation>
-
+   <translation id="server_configuration_impi_SOL_help" qtlid="489127">La session SOL nécessite une configuration de votre part.</translation>
+   <translation id="server_configuration_impi_SOL_help_link" qtlid="489140">Accéder au guide de configuration.</translation>
    <translation id="server_configuration_kvm_order_step1_title" qtlid="229203">Seleziona la durata</translation>
    <translation id="server_configuration_kvm_order_step2_title" qtlid="229216">Ordina un KVM sul server <em>{0}</em></translation>
    <translation id="server_configuration_kvm_order_step2_duration" qtlid="156875">Periodo:</translation>
@@ -939,18 +940,18 @@ Attenzione: il tempo di esecuzione dello script è di un'ora al massimo.</transl
    <translation id="month_other" qtlid="220148">{0} mese</translation>
    <translation id="year_1" qtlid="70277">1 anno</translation>
    <translation id="year_other" qtlid="158604">{} anni</translation>
-   <translation id="upto" qtlid="486503">Jusqu'au {{ date }}</translation>
+   <translation id="upto" qtlid="486503">Fino al {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Fino al primo giorno del prossimo mese</translation>
    <translation id="engage" qtlid="158643">Sottoscrivi {0}</translation>
-   <translation id="price_ht_label" qtlid="486412">{{ price }}&#160;HT</translation>
-   <translation id="price_ttc_label" qtlid="486516">{{ price }}&#160;TTC</translation>
+   <translation id="price_ht_label" qtlid="486412">{{ price }}&#160;+IVA</translation>
+   <translation id="price_ttc_label" qtlid="486516">{{ price }}&#160;IVA incl.</translation>
    <translation id="price_free" qtlid="130495">Gratuito</translation>
    <translation id="price" qtlid="181084">Prezzo:</translation>
    <translation id="contract_next" qtlid="17743">Seguente</translation>
    <translation id="contract_previous" qtlid="17431">Precedente</translation>
-   <translation id="download_contract" qtlid="486477">Ouvrir le contrat "{{ name }}" en PDF</translation>
+   <translation id="download_contract" qtlid="486477">Visualizza il contratto "{{ name }}" in PDF</translation>
    <translation id="contract_help" qtlid="180382">È necessario visualizzare il contratto per validarlo.</translation>
-   <translation id="contracts_list_title" qtlid="486490">Il y a {{ count }} contrats à consulter.</translation>
+   <translation id="contracts_list_title" qtlid="486490">Ci sono {{ count }} contratti da consultare.</translation>
    <translation id="contract_list_title" qtlid="180408">C'è 1 contratto da consultare.</translation>
    <translation id="contracts_agree" qtlid="180421">Accetto i contratti</translation>
    <translation id="contract_agree" qtlid="180434">Accetto il contratto</translation>

@@ -1,12 +1,13 @@
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.agreements.details", [
+angular.module("UserAccount").controller("UserAccount.controllers.agreements.details", [
     "$stateParams",
     "$q",
+    "$state",
     "$log",
     "UserAccount.services.agreements",
     "Alerter",
     "$translate",
     "User",
-    function ($stateParams, $q, $log, Service, Alerter, $translate, User) {
+    function ($stateParams, $q, $state, $log, Service, Alerter, $translate, User) {
         "use strict";
 
         const CGV_AGREEMENT_ID = 1635;

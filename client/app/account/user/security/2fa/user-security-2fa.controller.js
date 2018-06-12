@@ -1,4 +1,4 @@
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.doubleAuth.2fa.enable", [
+angular.module("UserAccount").controller("UserAccount.controllers.doubleAuth.2fa.enable", [
     "$rootScope",
     "$scope",
     "$q",

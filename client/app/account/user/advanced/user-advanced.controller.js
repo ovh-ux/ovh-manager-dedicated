@@ -1,4 +1,4 @@
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.advanced", [
+angular.module("UserAccount").controller("UserAccount.controllers.advanced", [
     "UserAccount.services.Infos",
     "Alerter",
     "$translate",

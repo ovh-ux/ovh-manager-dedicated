@@ -1,3 +1,259 @@
+<a name="9.6.0"></a>
+# [9.6.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.15...v9.6.0) (2018-06-07)
+
+
+### Bug Fixes
+
+* **ip spla order:** minor code review changes ([f544c60](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f544c60))
+* **order spla us:** fix indent ([280fdcd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/280fdcd))
+* **spla order:** close model on submit order ([3fc186d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3fc186d))
+* **spla order us:** code review ([7918e7b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7918e7b))
+* **user account:** base url ([c008234](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c008234))
+
+
+### Features
+
+* **agreement:** add more context to gdpr agreements ([6a4b133](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6a4b133))
+* **order spla:** add spla order for us region ([c3e377c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c3e377c))
+* **order spla:** wip ([0294ef8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0294ef8))
+
+
+
+<a name="9.5.15"></a>
+## [9.5.15](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.14...v9.5.15) (2018-06-06)
+
+
+### Bug Fixes
+
+* **menu:** re-enable nas calls ([90ad703](https://github.com/ovh-ux/ovh-manager-dedicated/commit/90ad703))
+
+
+
+<a name="9.5.14"></a>
+## [9.5.14](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.13...v9.5.14) (2018-06-05)
+
+
+### Bug Fixes
+
+* **order link:** fix US order link for vrack ([64b3861](https://github.com/ovh-ux/ovh-manager-dedicated/commit/64b3861))
+
+
+
+<a name="9.5.13"></a>
+## [9.5.13](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.12...v9.5.13) (2018-06-05)
+
+
+### Bug Fixes
+
+* **order:** set good order funnel url ([15a9690](https://github.com/ovh-ux/ovh-manager-dedicated/commit/15a9690))
+
+
+
+<a name="9.5.12"></a>
+## [9.5.12](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.11...v9.5.12) (2018-06-04)
+
+
+### Bug Fixes
+
+* **ipmi:** hide sol for US ([0757e4b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0757e4b))
+* **navbar:** fix navbar title ([7867307](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7867307))
+
+
+### Features
+
+* **agreement:** add gdpr trads ([6f9faa6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6f9faa6))
+
+
+
+<a name="9.5.11"></a>
+## [9.5.11](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.10...v9.5.11) (2018-06-04)
+
+
+### Bug Fixes
+
+* **dedicated server:** hide vrack bandwidth cancel ([e67bc68](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e67bc68))
+
+
+
+<a name="9.5.10"></a>
+## [9.5.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.9...v9.5.10) (2018-06-01)
+
+
+### Bug Fixes
+
+* **app:** Disable ovh-tasks ([0beca6c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0beca6c))
+
+
+
+<a name="9.5.9"></a>
+## [9.5.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.8...v9.5.9) (2018-06-01)
+
+
+### Bug Fixes
+
+* **nas:** remove dupe in menu ([ad3f014](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ad3f014))
+
+
+
+<a name="9.5.8"></a>
+## [9.5.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.7...v9.5.8) (2018-06-01)
+
+
+### Bug Fixes
+
+* remove unecessary translations files ([271f404](https://github.com/ovh-ux/ovh-manager-dedicated/commit/271f404))
+* **menu:** Remove nas calls ([b0aef92](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b0aef92))
+
+
+
+<a name="9.5.7"></a>
+## [9.5.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.6...v9.5.7) (2018-05-30)
+
+
+### Bug Fixes
+
+* **dedicated:server:** close reboot modal ([788744e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/788744e))
+* **navbar:** remove labs URL ([0ac72dd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0ac72dd))
+
+
+
+<a name="9.5.6"></a>
+## [9.5.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.5...v9.5.6) (2018-05-25)
+
+
+### Bug Fixes
+
+* **user:** Disable consent for US ([650fbdc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/650fbdc))
+
+
+
+<a name="9.5.5"></a>
+## [9.5.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.4...v9.5.5) (2018-05-25)
+
+
+
+<a name="9.5.4"></a>
+## [9.5.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.3...v9.5.4) (2018-05-25)
+
+
+### Bug Fixes
+
+* **useraccount:** fix account creation link ([57f6871](https://github.com/ovh-ux/ovh-manager-dedicated/commit/57f6871))
+* **useraccount:** minor code changes ([5bd5d99](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5bd5d99))
+* **useraccount:** remove redirectTo in account creation link ([fddc752](https://github.com/ovh-ux/ovh-manager-dedicated/commit/fddc752))
+
+
+
+<a name="9.5.3"></a>
+## [9.5.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.2...v9.5.3) (2018-05-25)
+
+
+### Bug Fixes
+
+* **cdn domain:** fix stats chart labels ([274acd7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/274acd7))
+* **ipmi:** fix sol guide ([7fec97e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7fec97e))
+* **ipmi:** minor code review changes ([1fe4d92](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1fe4d92))
+* match updated API scheme ([80fa0c6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/80fa0c6))
+* removed mandatory text ([74ca18b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/74ca18b))
+
+
+### Features
+
+* added checkbox for commercial communications ([7508db3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7508db3))
+
+
+
+<a name="9.5.2"></a>
+## [9.5.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.1...v9.5.2) (2018-05-24)
+
+
+### Bug Fixes
+
+* **translations:** en_ASIA language now display the right language ([f457e74](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f457e74))
+
+
+### Features
+
+* update otrs module ([d5bff3e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d5bff3e))
+
+
+
+<a name="9.5.1"></a>
+## [9.5.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.5.0...v9.5.1) (2018-05-23)
+
+
+
+<a name="9.5.0"></a>
+# [9.5.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.4.1...v9.5.0) (2018-05-22)
+
+
+### Bug Fixes
+
+* add EN translations for US debt payment ([89e9d95](https://github.com/ovh-ux/ovh-manager-dedicated/commit/89e9d95))
+* add link to delete modal ([7597689](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7597689))
+* fix ssl add template url ([5ad4433](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5ad4433))
+* fix typo ([63137f3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/63137f3))
+* fix typo after merge ([93e9b5d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/93e9b5d))
+* **cdn dedicated ssl:** reload parent state successful operations ([09fb3b3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/09fb3b3))
+* **cdn dedicated ssl:** use type on oui-modal to display warning ([a2e1708](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a2e1708))
+* **cdn dedicated ssl add:** use type on oui-modal to display warning ([c6d4a12](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c6d4a12))
+* upgrade ovh-api-services ([2e94748](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2e94748))
+* **cdn dedicated ssl generate:** use oui-modal type to display warning ([98ab92b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/98ab92b))
+* upgrade ovh-api-services version ([dc1d23b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/dc1d23b))
+* **cdn dedicated ssl update:** use oui-modal type to display warning ([1949d91](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1949d91))
+* **dedicated:server:** Remove useless tabs for US ([d01fe5b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d01fe5b))
+* **i18n:** set some english translations ([6f5abb4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6f5abb4))
+* **user rights:** code review ([c0e3409](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c0e3409))
+* **user rights:** replace table with oui-datagrid ([94fa160](https://github.com/ovh-ux/ovh-manager-dedicated/commit/94fa160))
+
+
+### Features
+
+* **dedicatedcloud:** use ui-state for confirm and terminate a pcc ([06390e3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/06390e3))
+* **dedicatedcloud terminate:** set termination into modal layout state ([472b785](https://github.com/ovh-ux/ovh-manager-dedicated/commit/472b785))
+* **dedicatedcloud terminate:** wip confirm modal ([88b66b8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/88b66b8))
+* **pcc terminate:** add route ([06bbd5c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/06bbd5c))
+
+
+
+<a name="9.4.1"></a>
+## [9.4.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.4.0...v9.4.1) (2018-05-18)
+
+
+### Bug Fixes
+
+* **ipfo order:** minor html fix ([458d233](https://github.com/ovh-ux/ovh-manager-dedicated/commit/458d233))
+
+
+
+<a name="9.4.0"></a>
+# [9.4.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.3.6...v9.4.0) (2018-05-18)
+
+
+### Bug Fixes
+
+* **ipfo order:** fix broken selector ([1293cb8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1293cb8))
+* **sidebar:** add vrack order item ([6245b42](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6245b42))
+* **trads:** fix broken trads ([a7b2e39](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a7b2e39))
+* add vrackUrl const into grunt ngConstant prod task ([8969d27](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8969d27))
+
+
+### Features
+
+* **vrack:** add sidebar menu item ([278b5fd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/278b5fd))
+
+
+
+<a name="9.3.6"></a>
+## [9.3.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.3.5...v9.3.6) (2018-05-16)
+
+
+### Bug Fixes
+
+* **billing:sla:** Wrong template path ([c5cdbf5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c5cdbf5))
+
+
+
 <a name="9.3.5"></a>
 ## [9.3.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.3.4...v9.3.5) (2018-05-15)
 

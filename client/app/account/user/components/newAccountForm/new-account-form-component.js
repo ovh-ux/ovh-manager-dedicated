@@ -15,12 +15,10 @@ angular.module("ovhSignupApp").component("newAccountForm", {
         "$timeout",
         "NewAccountFormConfig",
         "Alerter",
-        "UserAccount.conf.BASE_URL",
         "UserAccount.constants",
         "UserAccount.services.Infos",
         "$translate",
-
-        function ($scope, $q, $location, $http, $httpParamSerializerJQLike, $timeout, NewAccountFormConfig, Alerter, BASE_URL, UserAccountConstants, UserAccountServiceInfos, $translate) {
+        function ($scope, $q, $location, $http, $httpParamSerializerJQLike, $timeout, NewAccountFormConfig, Alerter, UserAccountConstants, UserAccountServiceInfos, $translate) {
             "use strict";
 
             this.isLoading = false; // true when fetching data from api
@@ -30,8 +28,9 @@ angular.module("ovhSignupApp").component("newAccountForm", {
             this.readonly = this.readonly || [];
             this.rules = null;
             this.isSubmitting = false;
+            const CONSENT_MARKETING_EMAIL_NAME = "consent-marketing-email";
 
-            $scope.getTemplateUrl = () => `${BASE_URL}components/newAccountForm/new-account-form-component.html`;
+            $scope.getTemplateUrl = () => "account/user/components/newAccountForm/new-account-form-component.html";
 
             this.$onInit = () => {
                 // backup of original model
@@ -66,6 +65,7 @@ angular.module("ovhSignupApp").component("newAccountForm", {
             this.fetchRules = (_params) => {
                 let params = _params;
                 const customerCode = params.customerCode;
+                let consentDecision = null;
 
                 // we don't want to send attributes outside of /rules
                 if (this.rules) {
@@ -74,25 +74,57 @@ angular.module("ovhSignupApp").component("newAccountForm", {
 
                 // customer code does not belong to /rules, only displayed in the form
                 params = _.omit(params, "customerCode");
+                params = _(params).omit("commercialCommunicationsApproval").value();
 
                 this.isLoading = true;
-                return $http
-                    .post(`${UserAccountConstants.swsProxyRootPath}newAccount/rules`, params)
+
+                return UserAccountServiceInfos
+                    .fetchConsentDecision(CONSENT_MARKETING_EMAIL_NAME)
+                    .then((fetchedConsentDecision) => {
+                        consentDecision = _(fetchedConsentDecision).get("value", false);
+                    })
+                    .then(() => $http.post(`${UserAccountConstants.swsProxyRootPath}newAccount/rules`, params))
                     .then((result) => {
-                        if (result.status === 200) {
-                            // hide rules that are not editable
-                            _.each(result.data, (rule) => {
-                                // email is a special custom case, it is editable
-                                if (rule.fieldName === "email") {
-                                    rule.readonly = false;
-                                } else {
-                                    // rule is editable if not in the readonly list of fields
-                                    rule.readonly = this.readonly.indexOf(rule.fieldName) >= 0;
-                                }
-                            });
-                            return result.data;
+                        if (result.status !== 200) {
+                            return $q.reject(result);
                         }
-                        return $q.reject(result);
+
+                        let emailFieldIndex;
+
+                        // hide rules that are not editable
+                        const rules = _(result.data)
+                            .map((rule, index) => {
+                                const editedRule = _(rule).clone();
+
+                                // rule is editable if not in the "this.readonly" list of fields. The "email" field is a special case should. It should never be readonly.
+                                if (editedRule.fieldName === "email") {
+                                    emailFieldIndex = index;
+                                    editedRule.readonly = false;
+                                    editedRule.hasBottomMargin = false;
+                                } else {
+                                    editedRule.readonly = _(this.readonly).includes(editedRule.fieldName);
+                                    editedRule.hasBottomMargin = true;
+                                }
+
+                                return editedRule;
+                            })
+                            .value();
+
+
+                        rules.splice(emailFieldIndex + 1, 0, {
+                            "in": null,
+                            mandatory: false,
+                            defaultValue: null,
+                            initialValue: consentDecision,
+                            fieldName: "commercialCommunicationsApproval",
+                            fieldType: "checkbox",
+                            regularExpression: null,
+                            prefix: null,
+                            examples: null,
+                            hasBottomMargin: true
+                        });
+
+                        return rules;
                     })
                     .then(this.initializeRulesWithOriginalModel)
                     .then((rules) => {
@@ -100,8 +132,10 @@ angular.module("ovhSignupApp").component("newAccountForm", {
                         rules.unshift({
                             fieldName: "customerCode",
                             mandatory: true,
-                            initialValue: customerCode || "-"
+                            initialValue: customerCode || "-",
+                            hasBottomMargin: true
                         });
+
                         return rules;
                     })
                     .finally(() => {
@@ -137,6 +171,7 @@ angular.module("ovhSignupApp").component("newAccountForm", {
 
                 // put on /me does not handle email modification
                 model = _.omit(model, "email");
+                model = _(model).omit("commercialCommunicationsApproval").value();
 
                 let promise = $http.put(`${UserAccountConstants.swsProxyRootPath}me`, model).then((result) => {
                     if (result.status !== 200) {
@@ -146,11 +181,15 @@ angular.module("ovhSignupApp").component("newAccountForm", {
                 });
 
                 if (this.originalModel.email !== this.model.email) {
-                    promise = promise.then(() => UserAccountServiceInfos.changeEmail(this.model.email)).then(() =>
+                    promise = promise
+                        .then(() => UserAccountServiceInfos.changeEmail(this.model.email))
+                        .then(() => $timeout(angular.noop, 3000) /* add some delay for task creation */);
+                }
 
-                        // add some delay for task creation
-                        $timeout(angular.noop, 3000)
-                    );
+                if (this.originalModel.commercialCommunicationsApproval !== this.model.commercialCommunicationsApproval) {
+                    promise = promise
+                        .then(() => UserAccountServiceInfos.updateConsentDecision(CONSENT_MARKETING_EMAIL_NAME, this.model.commercialCommunicationsApproval || false))
+                        .then(() => $timeout(angular.noop, 3000) /* add some delay for task creation */);
                 }
 
                 return promise

@@ -115,8 +115,8 @@
    <translation id="wizard_renew" qtlid="118962">Uudista palvelu</translation>
    <translation id="wizard_next" qtlid="17743">Seuraava</translation>
    <translation id="wizard_previous" qtlid="17431">Edellinen</translation>
-   <translation id="wizard_breadcrumb" qtlid="486451">Étape {{ currentStep }} sur {{ stepCount }}</translation>
-   <translation id="pagination_page" qtlid="486464">Page {{ current }} / {{ last }}</translation>
+   <translation id="wizard_breadcrumb" qtlid="486451">Vaihe {{ currentStep }} / {{ stepCount }}</translation>
+   <translation id="pagination_page" qtlid="486464">Sivu {{ current }} / {{ last }}</translation>
    <translation id="pagination_go" qtlid="31522">OK</translation>
    <translation id="pagination_display" qtlid="69353">Näytä</translation>
    <translation id="common_loading" qtlid="361984">Ladataan…</translation>
@@ -193,9 +193,9 @@
    <translation id="common_newtab" qtlid="402165">uusi ikkuna</translation>
    <translation id="contract_next" qtlid="17743">Seuraava</translation>
    <translation id="contract_previous" qtlid="17431">Edellinen</translation>
-   <translation id="download_contract" qtlid="486477">Ouvrir le contrat "{{ name }}" en PDF</translation>
+   <translation id="download_contract" qtlid="486477">Avaa sopimus "{{ name }}" PDF-muodossa</translation>
    <translation id="contract_help" qtlid="180382">Sinun täytyy katsoa sopimusehdot ennen vahvistusta.</translation>
-   <translation id="contracts_list_title" qtlid="486490">Il y a {{ count }} contrats à consulter.</translation>
+   <translation id="contracts_list_title" qtlid="486490">Sinulla on {{ count }} sopimusta katsottavana.</translation>
    <translation id="contract_list_title" qtlid="180408">Yksi luettava sopimusehto.</translation>
    <translation id="contracts_agree" qtlid="180421">Hyväksyn sopimusehdot</translation>
    <translation id="contract_agree" qtlid="180434">Hyväksyn sopimusehdot</translation>
@@ -206,11 +206,11 @@
    <translation id="month_other" qtlid="220148">{0} kk</translation>
    <translation id="year_1" qtlid="70277">1 vuosi</translation>
    <translation id="year_other" qtlid="158604">{} vuotta</translation>
-   <translation id="upto" qtlid="486503">Jusqu'au {{ date }}</translation>
+   <translation id="upto" qtlid="486503">{{ date }} asti</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Seuraavan kuun 1. päivään asti</translation>
    <translation id="engage" qtlid="158643">Sitoutuminen {0}</translation>
-   <translation id="price_ht_label" qtlid="486412">{{ price }}&#160;HT</translation>
-   <translation id="price_ttc_label" qtlid="486516">{{ price }}&#160;TTC</translation>
+   <translation id="price_ht_label" qtlid="486412">{{ price }}&#160;ALV0</translation>
+   <translation id="price_ttc_label" qtlid="486516">{{ price }}&#160;sis.ALV</translation>
    <translation id="price_free" qtlid="195776">Sisältyy</translation>
    <translation id="price_label_yearly" qtlid="288977">/vuosi</translation>
 
@@ -336,7 +336,7 @@
    <translation id="country_KW" qtlid="188262">Kuwait</translation>
    <translation id="country_KY" qtlid="188275">Caymansaaret</translation>
    <translation id="country_KZ" qtlid="188288">Kazakstan</translation>
-   <translation id="country_LA" qtlid="188301">Laosin demokraattinen kansantasavalta</translation>
+   <translation id="country_LA" qtlid="188301">Laosin demokraattinen kansantasavalta -</translation>
    <translation id="country_LB" qtlid="188314">Libanon</translation>
    <translation id="country_LC" qtlid="188327">Saint Lucia</translation>
    <translation id="country_LI" qtlid="188340">Liechtenstein</translation>
@@ -540,9 +540,9 @@
    <translation id="me_alerts_PAYMENTMEAN_CREDITCARD_TOOMANYFAILURES" qtlid="343954">Sinulla on <strong>{0}</strong> carte(s) virheellistä pankkikorttia. Mene<a href="#/billing/mean" class="alert-link">laskutusosioon</a> ja tee tarkistukset ja/tai rekisteröi uusi maksutapa.</translation>
    <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="343967">Sinulla on<strong>{0}</strong> virheellistä PayPal-tiliä. Mene<a href="#/billing/mean" class="alert-link">laskutusosioon</a> ja tee tarkistukset ja/tai rekisteröi uusi maksutapa.</translation>
 
-   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="487730">Votre compte prépayé est débiteur de <strong>{0}</strong> au {1}. Rendez-vous dans <a href="#/billing/ovhaccount" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="486529">Vous avez une dette de <strong>{0}</strong> (dont un montant de {1} non échu). Rendez-vous dans <a href="{2}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="486542">Vous avez une dette de <strong>{0}</strong>. Rendez-vous dans <a href="{1}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
+   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="487730">Prepaid-tililläsi on maksettavaa <strong>{0}</strong>  {1}. Mene <a href="#/billing/ovhaccount" class="alert-link">laskustusosioon</a> korjaamaan tilanne.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="486529">Sinulla on velkaa <strong>{0}</strong> (josta on erääntymättä {1}). Mene <a href="{2}" class="alert-link">laskutusosioon</a> korjaamaan tilanne.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="486542">Sinulla on velkaa <strong>{0}</strong>. Mene <a href="{1}" class="alert-link">laskutusosioon</a> korjaamaan tilanne.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="383919">Prepaid-tilisi on saavuttanut määrittämäsi kynnysrajan. Katso lisätietoja <a href="#/billing/ovhaccount" class="alert-link">laskustusosiosta</a>.</translation>
 

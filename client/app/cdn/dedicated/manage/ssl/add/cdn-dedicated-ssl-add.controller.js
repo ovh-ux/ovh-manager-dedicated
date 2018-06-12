@@ -31,6 +31,8 @@ angular.module("App").controller("CdnAddSslCtrl", class CdnAddSslCtrl {
     onCdnSslAddFormSubmit () {
         if (this.cdnSslAddForm.$invalid) {
             return false;
+        } else if (this.ssl) {
+            return this.$state.go("^");
         }
 
         this.loading.add = true;
@@ -39,11 +41,14 @@ angular.module("App").controller("CdnAddSslCtrl", class CdnAddSslCtrl {
             serviceName: this.$stateParams.productId
         }, this.model).$promise.then(() => {
             this.Alerter.success(this.$translate.instant("cdn_dedicated_ssl_add_success"), "cdnDedicatedManage");
+            this.$state.go("^", {}, {
+                reload: true
+            });
         }).catch((error) => {
             this.Alerter.error([this.$translate.instant("cdn_dedicated_ssl_add_error"), _.get(error, "data.message")].join(" "), "cdnDedicatedManage");
+            this.$state.go("^");
         }).finally(() => {
             this.loading.add = false;
-            this.$state.go("^");
         });
     }
 

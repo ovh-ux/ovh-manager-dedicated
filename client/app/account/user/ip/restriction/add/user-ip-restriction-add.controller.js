@@ -1,4 +1,4 @@
-angular.module("UserAccount.controllers").controller("UserAccount.controllers.ipRestrictions.add", [
+angular.module("UserAccount").controller("UserAccount.controllers.ipRestrictions.add", [
     "$rootScope",
     "$scope",
     "$translate",

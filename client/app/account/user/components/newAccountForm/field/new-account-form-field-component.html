@@ -1,9 +1,14 @@
 <div class="form-group"
-     data-ng-class="{ 'has-error': $ctrl.isInvalid() || ($ctrl.getFieldType() === 'email' && $ctrl.fieldset['ovh_field_' + $ctrl.rule.fieldName].$error.emailAvailable), focused: $ctrl.focused }">
+     data-ng-class="{
+        'has-error': $ctrl.isInvalid() || ($ctrl.getFieldType() === 'email' && $ctrl.fieldset['ovh_field_' + $ctrl.rule.fieldName].$error.emailAvailable),
+        focused: $ctrl.focused,
+        'mb-0': !$ctrl.rule.hasBottomMargin
+    }">
 
     <!-- FIELD LABEL -->
     <label for="{{ 'ovh_field_' + $ctrl.rule.fieldName }}"
-           class="control-label">
+           class="control-label"
+           data-ng-if="$ctrl.getFieldType() !== 'checkbox'">
         <span data-ng-bind="$ctrl.getTranslatedArea()"
               data-ng-if="$ctrl.rule.fieldName === 'area'"></span>
         <span data-translate="{{ 'signup_field_' + $ctrl.rule.fieldName }}"></span>
@@ -115,6 +120,32 @@
         <p class="help-block" role="alert"
            data-ng-if="$ctrl.fieldset['ovh_field_' + $ctrl.rule.fieldName].$error.pattern"
            data-translate="signup_password_invalid">
+        </p>
+    </div>
+
+    <!-- CHECKBOX INPUT -->
+    <div data-ng-if="$ctrl.getFieldType() === 'checkbox'">
+        <div class="checkbox mt-0">
+            <label class="control-label">
+                <input
+                    type="checkbox"
+                    data-ng-attr-id="{{ 'ovh_field_' + $ctrl.rule.fieldName }}"
+                    data-ng-attr-name="{{ 'ovh_field_' + $ctrl.rule.fieldName }}"
+                    data-ng-model="$ctrl.value"
+                    data-ng-model-options="{ debounce: $ctrl.debounce }"
+                    data-ng-change="$ctrl.onChange()"
+                    data-ng-focus="$ctrl.focused = true"
+                    data-ng-blur="$ctrl.focused = false"
+                    data-ng-pattern="$ctrl.inputValidator"
+                    data-ng-required="$ctrl.rule.mandatory">
+                <span data-translate="{{ 'signup_field_' + $ctrl.rule.fieldName }}"></span>
+            </label>
+        </div>
+        <p
+            class="help-block"
+            role="alert"
+            data-ng-if="$ctrl.fieldset['ovh_field_' + $ctrl.rule.fieldName].$error.pattern"
+            data-translate="signup_password_invalid">
         </p>
     </div>
 
