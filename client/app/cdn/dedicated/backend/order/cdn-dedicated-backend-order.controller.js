@@ -1,62 +1,123 @@
-angular.module("App").controller("BackendsAddCtrl", ($scope, $stateParams, $translate, Cdn) => {
-    "use strict";
+angular.module("App").controller("CdnBackendOrderCtrl", class CdnBackendOrderCtrl {
 
-    $scope.price = null;
-    $scope.choices = {
-        count: null,
-        duration: null,
-        order: null
-    };
-    $scope.contractsValidated = {};
+    constructor ($q, $state, $stateParams, $translate, $window, cdnDedicated, ouiMessageAlerter, OvhApiOrderCdn) {
+        // Injections
+        this.$q = $q;
+        this.$state = $state;
+        this.$stateParams = $stateParams;
+        this.$translate = $translate;
+        this.$window = $window;
+        this.cdnDedicated = cdnDedicated;
+        this.ouiMessageAlerter = ouiMessageAlerter;
+        this.OvhApiOrderCdn = OvhApiOrderCdn;
 
-    $scope.loadBackendPrice = () => {
-        if (!$scope.price) {
-            Cdn.getSelected()
-                .then((cdn) => Cdn.getBackendPrice(cdn.serviceName))
-                .then((price) => {
-                    $scope.price = price;
-                });
-        }
-    };
+        // Other attributes used in view
+        this.loading = {
+            init: false,
+            durations: false,
+            order: false
+        };
 
-    $scope.loadBackendOrders = function () {
-        Cdn.getBackendOrders($stateParams.productId, $scope.choices.count).then(
-            (orders) => {
-                let i = 0;
-                for (i; i < orders.results.length; i++) {
-                    orders.results[i].duration.formattedDuration = parseInt(orders.results[i].duration.duration, 10);
-                }
-                $scope.orders = orders.results;
-            },
-            (data) => {
-                $scope.resetAction();
-                $scope.setMessage($translate.instant("cdn_configuration_backend_upgrade_fail"), data);
-            }
-        );
-    };
+        this.model = {
+            backendQuantity: 1,
+            duration: null,
+            contracts: false
+        };
 
-    $scope.updateOrder = function () {
-        const choosenOrder = $.grep($scope.orders, (e) => e.duration.duration === $scope.choices.duration);
-        if (choosenOrder.length > 0) {
-            $scope.choices.order = choosenOrder[0];
-        }
-    };
+        this.unitPrices = null;
+        this.prices = null;
+    }
 
-    $scope.orderBackends = function () {
-        $scope.url = null;
-        Cdn.orderBackends($stateParams.productId, $scope.choices.count, $scope.choices.order.duration.duration).then(
-            (order) => {
-                $scope.url = order.url;
-            },
-            (data) => {
-                $scope.resetAction();
-                $scope.setMessage($translate.instant("cdn_configuration_backend_upgrade_fail"), data);
-            }
-        );
-    };
+    /* ============================
+    =            STEPS            =
+    ============================= */
 
-    $scope.displayBC = function () {
-        $scope.resetAction();
-        window.open($scope.url, "_blank");
-    };
+    onStepperFinish () {
+        this.loading.order = true;
+
+        return this.OvhApiOrderCdn.Dedicated().Backend().v6().save({
+            serviceName: this.$stateParams.productId,
+            backend: this.model.backendQuantity,
+            duration: this.model.duration.duration.value
+        }, {
+            backend: this.model.backendQuantity
+        }).$promise.then(({ orderId, url }) => {
+            this.ouiMessageAlerter.success(this.$translate.instant("cdn_dedicated_backend_order_success", {
+                orderId,
+                url
+            }), "app.networks.cdn.dedicated.backend.order");
+
+            this.$window.open(url, "_blank");
+
+            // reset order process
+            this.$onInit();
+        }).catch((error) => {
+            this.ouiMessageAlerter.error([this.$translate.instant("cdn_dedicated_backend_order_fail"), _.get(error, "data.message")].join(" "), "app.networks.cdn.dedicated.backend.order");
+        }).finally(() => {
+            this.loading.order = false;
+        });
+    }
+
+    /* ----------  Step 1: Choose quantity  ---------- */
+
+    onStep1Submit () {
+        let responseDurations;
+
+        this.loading.durations = true;
+
+        return this.OvhApiOrderCdn.Dedicated().Backend().v6().query({
+            serviceName: this.$stateParams.productId,
+            backend: this.model.backendQuantity
+        }).$promise.then((durations) => {
+            responseDurations = durations;
+
+            return this.$q.all(_.map(durations, (duration) => this.OvhApiOrderCdn.Dedicated().Backend().v6().get({
+                serviceName: this.$stateParams.productId,
+                backend: this.model.backendQuantity,
+                duration
+            }).$promise));
+        }).then((responses) => {
+            this.prices = _.map(responses, (duration, index) => {
+                duration.duration = {
+                    value: responseDurations[index],
+                    text: _.capitalize(moment.duration(parseInt(responseDurations[index], 10), "months").humanize())
+                };
+                return duration;
+            });
+        }).catch((error) => {
+            this.ouiMessageAlerter.error([this.$translate.instant("cdn_dedicated_backend_order_load_fail"), _.get(error, "data.message")].join(" "), "app.networks.cdn.dedicated.backend.order");
+        }).finally(() => {
+            this.loading.durations = false;
+        });
+    }
+
+    /* -----  End of STEPS  ------ */
+
+    /* =====================================
+    =            INITIALIZATION            =
+    ====================================== */
+
+    $onInit () {
+        this.loading.init = true;
+
+        // reset models
+        this.model.backendQuantity = 1;
+        this.model.duration = null;
+        this.model.contracts = false;
+
+        return this.OvhApiOrderCdn.Dedicated().Backend().v6().get({
+            serviceName: this.$stateParams.productId,
+            backend: 1,
+            duration: "01"
+        }).$promise.then(({ prices }) => {
+            this.unitPrices = prices;
+        }).catch((error) => {
+            this.ouiMessageAlerter.error([this.$translate.instant("cdn_dedicated_backend_order_load_fail"), _.get(error, "data.message")].join(" "), "app.networks.cdn.dedicated.backend.order");
+        }).finally(() => {
+            this.loading.init = false;
+        });
+    }
+
+    /* -----  End of INITIALIZATION  ------ */
+
 });

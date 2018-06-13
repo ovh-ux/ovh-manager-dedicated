@@ -17,6 +17,11 @@ angular.module("App").config(($stateProvider) => {
                 controller: "CdnStatisticsCtrl"
             }
         },
+        resolve: {
+            cdnDedicated: ($stateParams, OvhApiCdnDedicated) => OvhApiCdnDedicated.v6().get({
+                serviceName: $stateParams.productId
+            }).$promise
+        },
         translations: ["cdn/dedicated"],
         reloadOnSearch: false
     });

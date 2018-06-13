@@ -35,7 +35,8 @@ angular
                 modalLayout = {
                     name: "modal",
                     toChilds: state.self.layout.toChilds || false,
-                    ignoreChilds: state.self.layout.ignoreChilds || []
+                    ignoreChilds: state.self.layout.ignoreChilds || [],
+                    redirectTo: state.self.layout.redirectTo || "^"
                 };
             }
 
@@ -58,14 +59,27 @@ angular
                     const $state = transition.injector().get("$state");
                     const $uibModal = transition.injector().get("$uibModal");
 
-                    modalInstance = $uibModal.open({
-                        templateUrl: state.templateUrl,
-                        controller: state.controller,
-                        controllerAs: state.controllerAs || "$ctrl"
+                    // Inject resolves from state and resolve them into modal.
+                    // As resolve are async, we need to wait them to be resolved before inject them as resolve of modal.
+                    // As it's hard to get all resolve of parents state, for modal states, parent resolve(s) need to be redeclared into modal state.
+                    const asyncInjections = {};
+                    const $q = transition.injector().get("$q");
+                    state.resolvables.forEach((resolve) => {
+                        // https://github.com/angular-ui/ui-router/issues/3544
+                        _.set(asyncInjections, resolve.token, transition.injector().getAsync(resolve.token));
                     });
 
-                    // if backdrop is clicked - be sure to close the modal
-                    modalInstance.result.catch(() => $state.go("^"));
+                    $q.all(asyncInjections).then((modalResolve) => {
+                        modalInstance = $uibModal.open({
+                            templateUrl: state.templateUrl,
+                            controller: state.controller,
+                            controllerAs: state.controllerAs || "$ctrl",
+                            resolve: modalResolve
+                        });
+
+                        // if backdrop is clicked - be sure to close the modal
+                        modalInstance.result.catch(() => $state.go(_.get(state, "layout.redirectTo")));
+                    });
                 }
             });
         });
@@ -126,11 +140,12 @@ angular
 
     })
     .run(($transitions, $state, $stateRegistry, $urlService) => {
-        // manage restriction on billing section for enterprise account
-        // see src/billing/billingApp.js for resolve restriction on billing states
+        // manage :
+        // - restriction on billing section for enterprise account (see src/billing/billingApp.js for resolve restriction on billing states)
+        // - rejection from resolve (for example load a service with 404 response - see https://ui-router.github.io/ng1/docs/latest/enums/transition.rejecttype.html for details)
         $transitions.onError({}, (transition) => {
             const error = transition.error();
-            if (_.get(error, "status") === 403 && _.get(error, "code") === "FORBIDDEN_BILLING_ACCESS") {
+            if ((_.get(error, "status") === 403 && _.get(error, "code") === "FORBIDDEN_BILLING_ACCESS") || _.get(error, "type") === 6) {
                 $state.go("app.error", { error });
             }
         });

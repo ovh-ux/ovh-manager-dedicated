@@ -7,7 +7,10 @@
     </h1>
     <p class="oui-message__body"
        data-translate="{{ 'page_load_error_' + ($ctrl.error && $ctrl.error.code ? $ctrl.error.code.toLowerCase() : 'common') }}">
-   </p>
+    </p>
+    <em data-ng-if="$ctrl.error.detail && $ctrl.error.detail.data.message"
+        data-ng-bind="$ctrl.error.detail.data.message">
+    </em>
 
     <div class="text-center mt-5">
         <a data-ui-sref="app.configuration"

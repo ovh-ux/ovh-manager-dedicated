@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="cdn_dedicated_backend_order_tile" qtlid="132200">Commande de backends</translation>
+    <translation id="cdn_dedicated_backend_order_subtile">Ajout de backend à votre CDN</translation>
+    <translation id="cdn_dedicated_backend_order_back_btn">Retour à la gestion de votre CDN</translation>
+    <translation id="cdn_dedicated_backend_order_load_fail">Une erreur est survenue lors du chargement des informations relatives à la commande de nouveaux backends. Veuillez réessayer en raffraîchissant cette page.</translation>
+
+    <translation id="cdn_dedicated_backend_order_step_1_title">Choix du nombre de backend(s)</translation>
+    <translation id="cdn_dedicated_backend_order_step_1_description">Choisissez le nombre de backend(s) que vous souhaitez ajouter à votre CDN {{ service }}.</translation>
+    <translation id="cdn_dedicated_backend_order_step_1_backend_quantity">Nombre de backend(s)</translation>
+    <translation id="cdn_dedicated_backend_order_step_1_backend_quantity_helper" qtlid="132226">{0} HT / mois / backend</translation>
+
+    <translation id="cdn_dedicated_backend_order_step_2_title">Choix de la durée</translation>
+    <translation id="cdn_dedicated_backend_order_step_2_description">Choisissez le nombre de mois pendant lesquels vous voulez souscrire à votre nouveau backend.</translation>
+    <translation id="cdn_dedicated_backend_order_step_2_description_plural">Choisissez le nombre de mois pendant lesquels vous voulez souscrire à vos {{ quantity }} backends.</translation>
+    <translation id="cdn_dedicated_backend_order_step_2_loading">Chargement des prix</translation>
+
+    <translation id="cdn_dedicated_backend_order_step_3_title">Acceptation des conditions d'utilisation</translation>
+
+    <translation id="cdn_dedicated_backend_order_step_4_title">Récapitulatif</translation>
+    <translation id="cdn_dedicated_backend_order_step_4_description">Ajout d'un backend supplémentaire sur le CDN {{ service }}.</translation>
+    <translation id="cdn_dedicated_backend_order_step_4_description_plural">Ajout de {{ quantity }} backends supplémentaires sur le CDN {{ service }}.</translation>
+    <translation id="cdn_dedicated_backend_order_step_4_totalWithoutTax">Prix HT</translation>
+    <translation id="cdn_dedicated_backend_order_step_4_totalWithTax">Prix TTC</translation>
+    <translation id="cdn_dedicated_backend_order_step_4_explain1">Veuillez noter qu'un délai d'environ 2 heures à compter de l'acceptation de votre paiement est nécessaire pour que l'activation de l'option soit prise en compte dans votre espace client.</translation>
+    <translation id="cdn_dedicated_backend_order_step_4_explain2">Après avoir cliquer sur "Générer le bon de commande", un nouvel onglet s'ouvrira et vous serez automatiquement redirigé(e) vers l'interface de paiement OVH.</translation>
+    <translation id="cdn_dedicated_backend_order_step_4_submit">Générer le bon de commande</translation>
+    <translation id="cdn_dedicated_backend_order_step_4_loading">Génération du bon de commande en cours</translation>
+
+    <translation id="cdn_dedicated_backend_order_success">Le bon de commande {{ orderId }} a été généré avec succès. Si le nouvel onglet ne s'est pas ouvert automatiquement, veuillez cliquer sur <a href="{{ url }}" target="_blank" rel="noopener">ce lien</a> afin de confirmer votre commande.</translation>
+    <translation id="cdn_dedicated_backend_order_fail">Une erreur est survenue lors de la génération du bon de commande, veuillez réessayer.</translation>
+</translations>

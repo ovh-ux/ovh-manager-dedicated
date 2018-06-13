@@ -1,16 +1,18 @@
-<div data-ng-controller="CdnFlushDomainsCtrl">
+<form class="cdn-dedicated-domain-flush"
+      data-ng-submit="$ctrl.onCdnDomainFlushFormSubmit()">
 
-    <div data-wizard
-         data-wizard-on-cancel="resetAction"
-         data-wizard-on-finish="flushDomain"
-         data-wizard-title=":: 'cdn_configuration_flush_domain_title' | translate">
+    <oui-modal data-title="{{ :: 'cdn_dedicated_domain_flush' | translate }}"
+               data-primary-label="{{ :: 'wizard_confirm' | translate }}"
+               data-secondary-label="{{ :: 'wizard_cancel' | translate }}"
+               data-secondary-action="$ctrl.$state.go('^')"
+               data-on-dismiss="$ctrl.$state.go('^')"
+               data-loading="$ctrl.loading.init || $ctrl.loading.flush">
 
-        <div data-wizard-step>
+        <p data-translate="cdn_dedicated_domain_flush_confirm"
+           data-translate-values="{ t0 : $ctrl.cdnDomain.domain }"
+        </p>
+        <p data-translate="cdn_dedicated_domain_flush_confirm_warn"></p>
 
-            <p data-translate="cdn_configuration_flush_domain_confirmation" data-translate-values="{ t0: domain.domain }"></p>
+    </oui-modal>
 
-        </div>
-
-    </div>
-
-</div>
+</form>

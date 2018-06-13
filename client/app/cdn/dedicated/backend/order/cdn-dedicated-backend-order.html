@@ -1,123 +1,117 @@
-<div data-ng-controller="BackendsAddCtrl">
+<div class="cdn-dedicated-backend-order">
 
-    <div data-wizard
-         data-wizard-on-cancel="resetAction"
-         data-wizard-on-finish="displayBC"
-         data-wizard-title=":: 'cdn_configuration_backend_upgrade_title' | translate"
-         data-wizard-bread-crumb
-         data-wizard-confirm-button-text=":: 'wizard_pay' | translate">
+    <header class="page-header"
+            role="banner">
+        <h1 data-translate="cdn_dedicated_backend_order_tile"></h1>
+    </header>
 
-        <div data-wizard-step
-             data-wizard-step-on-load="loadBackendPrice"
-             data-wizard-step-valid="choices.count">
+    <div class="tab-content">
 
-            <div class="text-center"
-                 data-ng-if="!price">
-                <oui-spinner></oui-spinner>
-            </div>
+        <oui-message-alerter data-context="'app.networks.cdn.dedicated.backend.order'"
+                             data-auto-scroll="true">
+        </oui-message-alerter>
 
-            <div data-ng-if="price">
-                <label for="count"
-                       class="control-label"
-                       data-translate="cdn_configuration_backend_upgrade_step1_explanation">
-                </label>
-                <input type="number"
-                       class="form-control"
-                       min="1"
-                       max="1000"
-                       data-ng-model="choices.count"
-                       data-ng-pattern="/^[0-9]{1,4}$/" />
-                <span data-translate="cdn_configuration_backend_upgrade_step1_tarif"></span>
-                <span class="text-danger"
-                      data-ng-bind="'cdn_configuration_backend_upgrade_step1_tarif2' | translate:{ t0: price.unitaryPrice }">
-                </span>
-            </div>
+        <div class="text-center m-5"
+             data-ng-if="$ctrl.loading.init">
+            <oui-spinner></oui-spinner>
+        </div>
 
-      </div>
+        <div data-ng-if="!$ctrl.loading.init">
 
-        <div data-wizard-step
-             data-wizard-step-on-load="loadBackendOrders"
-             data-wizard-step-valid="choices.duration">
+            <oui-back-button data-href="{{ :: $ctrl.$ctrl.$state.href($ctrl.$stateParams.fromState || '^') }}"
+                             data-title="{{ :: 'cdn_dedicated_backend_order_subtile' | translate }}"
+                             data-aria-label="{{ :: $ctrl.$stateParams.fromState ? 'common_back' : 'cdn_dedicated_backend_order_back_btn' | translate }}">
+            </oui-back-button>
 
-            <div class="text-center"
-                 data-ng-if="!orders">
-                <oui-spinner></oui-spinner>
-            </div>
+            <div class="row">
+                <div class="col-xs-9">
+                    <oui-stepper data-on-finish="$ctrl.onStepperFinish()">
+                        <!-- Step 1: Choose quantity -->
+                        <oui-step-form data-header="{{ :: 'cdn_dedicated_backend_order_step_1_title' | translate }}"
+                                       data-description="{{ :: 'cdn_dedicated_backend_order_step_1_description' | translate:{ service: $ctrl.cdnDedicated.service } }}"
+                                       data-on-submit="$ctrl.onStep1Submit()">
+                            <oui-field data-label="{{ :: 'cdn_dedicated_backend_order_step_1_backend_quantity' | translate }}">
+                                <oui-numeric id="backendQuantity"
+                                             name="backendQuantity"
+                                             data-model="$ctrl.model.backendQuantity"
+                                             data-min="1"
+                                             data-max="1000">
+                                </oui-numeric>
 
-            <div data-ng-if="orders">
-                <label for="duration"
-                       class="control-label"
-                       data-ng-bind="'cdn_configuration_backend_upgrade_step2_durations' | translate:{ t0: choices.count }">
-                </label>
-                <div class="radio"
-                     data-ng-repeat="order in orders track by $index">
-                    <label>
-                        <input type="radio"
-                               name="duration"
-                               value="{{ order.duration.duration }}"
-                               data-ng-model="choices.duration" />
-                        <span data-translate="cdn_configuration_backend_upgrade_step2_duration_total"
-                              data-translate-values="{ t0: order.duration.formattedDuration, t1: order.withoutTax }"></span>
-                    </label>
+                                <span class="oui-field__helper"
+                                      data-ng-bind-html=":: 'cdn_dedicated_backend_order_step_1_backend_quantity_helper' | translate:{ t0: $ctrl.unitPrices.withoutTax.text }">
+                                </span>
+                            </oui-field>
+                        </oui-step-form> <!-- End of Step 1: Choose quantity -->
+
+                        <!-- Step 2: Choose duration -->
+                        <oui-step-form data-header="{{ :: 'cdn_dedicated_backend_order_step_2_title' | translate }}"
+                                       data-description="{{ $ctrl.model.backendQuantity > 1 ? 'cdn_dedicated_backend_order_step_2_description_plural' : 'cdn_dedicated_backend_order_step_2_description' | translate:{ quantity: $ctrl.model.backendQuantity } }}"
+                                       data-loading="$ctrl.loading.durations"
+                                       data-loading-text="{{ :: 'cdn_dedicated_backend_order_step_2_loading' | translate }}"
+                                       data-valid="$ctrl.model.duration">
+
+                                <div class="row mb-4">
+                                    <div class="col-xs-3"
+                                         data-ng-repeat="price in $ctrl.prices track by $index">
+                                        <oui-radio data-text="{{:: price.duration.text }}"
+                                                   data-id="duration-{{ price.duration.value }}"
+                                                   data-value="price"
+                                                   data-thumbnail
+                                                   data-name="duration"
+                                                   data-model="$ctrl.model.duration">
+                                            <span class="oui-radio__section"
+                                                  data-translate="price_ht_label"
+                                                  data-translate-values="{ price: price.prices.withoutTax.text }">
+                                            </span>
+                                        </oui-radio>
+                                    </div>
+                                </div>
+
+                        </oui-step-form> <!-- End of Step 2: Choose duration -->
+
+                        <!-- Step 3: Contracts accept -->
+                        <oui-step-form data-header="{{ :: 'cdn_dedicated_backend_order_step_3_title' | translate }}"
+                                       data-valid="$ctrl.model.contracts">
+                            <div data-ng-repeat="contract in $ctrl.model.duration.contracts track by $index">
+                                <a target="_blank"
+                                   rel="noopener"
+                                   class="oui-link oui-link_icon"
+                                   data-ng-href="{{ contract.url }}">
+                                    <span data-ng-bind="contract.name"></span>
+                                    <span class="oui-icon oui-icon-external_link"
+                                          aria-hidden="true">
+                                    </span>
+                                </a>
+                            </div>
+
+                            <oui-checkbox data-text="{{ ::'common_contracts_accept' | translate }}"
+                                          id="contractsValidated"
+                                          name="contractsValidated"
+                                          data-model="$ctrl.model.contracts"
+                                          required>
+                                </oui-checkbox>
+                        </oui-step-form> <!-- End of Step 3: Contracts accept -->
+
+                        <!-- Step 4: Resume -->
+                        <oui-step-form data-header="{{ :: 'cdn_dedicated_backend_order_step_4_title' | translate }}"
+                                       data-description="{{ $ctrl.model.backendQuantity > 1 ? 'cdn_dedicated_backend_order_step_4_description_plural' : 'cdn_dedicated_backend_order_step_4_description' | translate:{ quantity: $ctrl.model.backendQuantity, service: $ctrl.cdnDedicated.service } }}"
+                                       data-submit-text="{{ :: 'cdn_dedicated_backend_order_step_4_submit' | translate }}"
+                                       data-loading="$ctrl.loading.order"
+                                       data-loading-text="{{ :: 'cdn_dedicated_backend_order_step_4_loading' | translate }}">
+                            <dl class="dl-horizontal">
+                                <dt data-translate="cdn_dedicated_backend_order_step_4_totalWithoutTax"></dt>
+                                <dd data-ng-bind="$ctrl.model.duration.prices.withoutTax.text"></dd>
+                                <dt data-translate="cdn_dedicated_backend_order_step_4_totalWithTax"></dt>
+                                <dd data-ng-bind="$ctrl.model.duration.prices.withTax.text"></dd>
+                            </dl>
+
+                            <p data-translate="cdn_dedicated_backend_order_step_4_explain1"></p>
+                            <p data-translate="cdn_dedicated_backend_order_step_4_explain2"></p>
+                        </oui-step-form> <!-- End of Step 4: Resume -->
+
+                    </oui-stepper>
                 </div>
-            </div>
-
-        </div>
-
-        <div data-wizard-step
-             data-wizard-step-valid="contractsValidated.value"
-             data-wizard-step-on-load="updateOrder">
-
-            <p data-ng-bind-html="'cdn_configuration_backend_upgrade_step3_question' | translate:{ t0: choices.count, t1: cdn.serviceName }"></p>
-            <dl>
-                <dt data-translate="cdn_configuration_backend_upgrade_step3_totalHT"></dt>
-                <dd class="text-danger"
-                    data-ng-bind="choices.order.withoutTax">
-                </dd>
-                <dt data-translate="cdn_configuration_backend_upgrade_step3_totalTTC"></dt>
-                <dd class="text-danger"
-                    data-ng-bind="choices.order.withTax">
-                </dd>
-            </dl>
-            <p data-translate="cdn_configuration_backend_upgrade_step3_id"></p>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox"
-                           data-ng-model="contractsValidated.value" />
-                    <span data-translate="cdn_configuration_backend_upgrade_step3_contracts"></span>
-                    <span data-ng-repeat="contract in choices.order.contracts">
-                        <span data-ng-show="($index+1) == choices.order.contracts.length"
-                              data-translate="cdn_configuration_backend_upgrade_step3_contracts_and">
-                        </span>
-                        <span data-translate="cdn_configuration_backend_upgrade_step3_contracts_of"></span>
-                        <a target="_blank"
-                           href="{{ contract.url }}"
-                           data-ng-bind="contract.name">
-                        </a>
-                        <span data-ng-hide="($index+1) == choices.order.contracts.length">, </span>
-                        <span data-ng-show="($index+1) == choices.order.contracts.length">.</span>
-                    </span>
-                </label>
-            </div>
-
-        </div>
-
-        <!-- Generation BC -->
-        <div data-wizard-step
-             data-wizard-step-on-load="orderBackends"
-             data-wizard-step-valid="url">
-
-            <div class="text-center"
-                 data-ng-if="!url">
-                <oui-spinner></oui-spinner>
-                <p data-translate="cdn_configuration_backend_upgrade_step4_generation_bc"></p>
-            </div>
-
-            <div data-ng-if="url">
-                <p data-translate="cdn_configuration_backend_upgrade_step4_bc"></p>
-                <p data-translate="cdn_configuration_backend_upgrade_step4_continue"></p>
-                <p data-translate="cdn_configuration_backend_upgrade_step4_explication2"></p>
-                <em data-translate="cdn_configuration_backend_upgrade_step4_explication"></em>
             </div>
 
         </div>
