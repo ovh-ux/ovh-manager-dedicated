@@ -17,7 +17,7 @@
                     data-property="name">
         </oui-column>
         <oui-column data-title=":: 'dedicatedCloud_OPERATIONS_type' | translate">
-            <span data-ng-bind="::('dedicatedCloud_OPERATIONS_type_' + $row.type) | translate"></span>
+            <span data-ng-bind="('dedicatedCloud_OPERATIONS_type_' + $row.type) | translate"></span>
         </oui-column>
         <oui-column data-title=":: 'dedicatedCloud_OPERATIONS_progression' | translate">
             <span data-ng-switch="$row.state">
