@@ -1,4 +1,67 @@
-<div data-ng-controller="CdnAddDomainsCtrl">
+<form class="cdn-dedicated-domain-add">
+
+    <oui-modal data-title="{{ :: 'cdn_dedicated_domain_add_title' | translate }}"
+               data-primary-label="{{ :: 'wizard_confirm' | translate }}"
+               data-secondary-label="{{ :: 'wizard_cancel' | translate }}"
+               data-secondary-action="$ctrl.closeModal()"
+               data-on-dismiss="$ctrl.closeModal()"
+               data-loading="$ctrl.loading.init">
+
+        <oui-field data-label="{{ :: 'cdn_dedicated_domain_add_name' | translate }}">
+            <input class="oui-input"
+                   type="text"
+                   id="domainName"
+                   name="domainName"
+                   data-ng-model="$ctrl.model.domainName"
+                   data-required
+                   data-ng-pattern="/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/" />
+        </oui-field>
+
+        <cdn-dedicated-backend-management></cdn-dedicated-backend-management>
+
+        <!-- <p data-translate="cdn_dedicated_domain_backend_update_question"
+           data-translate-values="{ t0: $ctrl.cdnDomain.domain }">
+        </p>
+
+        <oui-field data-label="{{ :: 'cdn_dedicated_domain_backend_update_choice' | translate }}">
+            <label class="oui-select">
+                <select class="oui-select__input"
+                        id="existingBackend"
+                        name="existingBackend"
+                        data-ng-model="$ctrl.model.existingBackend"
+                        data-ng-options="backend === 'new' ? ('cdn_dedicated_domain_backend_update_choice_new' | translate) : backend for backend in $ctrl.availableBackends">
+                </select>
+                <i class="oui-icon oui-icon-chevron-down"
+                   aria-hidden="true">
+                </i>
+            </label>
+        </oui-field>
+
+        <oui-field data-ng-if="$ctrl.model.existingBackend === 'new' && $ctrl.cdnDedicated.backendLimit > ($ctrl.availableBackends.length - 1)"
+                   data-label="{{ :: 'cdn_dedicated_domain_backend_update_new' | translate }}"
+                   data-error-messages="{ ipv4: ('cdn_dedicated_domain_backend_update_new_bad_format' | translate) }">
+            <input class="oui-input"
+                   type="text"
+                   id="newBackend"
+                   name="newBackend"
+                   data-ng-model="$ctrl.model.newBackend"
+                   data-ng-required="$ctrl.model.existingBackend === 'new'"
+                   data-ui-validate="{ ipv4: '$ctrl.Validator.isValidIpv4($value)' }" />
+        </oui-field>
+
+        <div data-ng-if="$ctrl.model.existingBackend === 'new' && $ctrl.cdnDedicated.backendLimit <= ($ctrl.availableBackends.length - 1)">
+            <p data-translate="cdn_dedicated_domain_backend_update_full"
+               data-translate-values="{ backendOrderSref: 'app.networks.cdn.dedicated.backend.order' }"
+               data-translate-compile>
+            </p>
+        </div> -->
+
+    </oui-modal>
+
+</form>
+
+
+<!-- <div data-ng-controller="CdnAddDomainsCtrl">
 
     <div data-wizard
          data-wizard-on-cancel="resetAction"
@@ -90,3 +153,4 @@
     </div>
 
 </div>
+ -->
