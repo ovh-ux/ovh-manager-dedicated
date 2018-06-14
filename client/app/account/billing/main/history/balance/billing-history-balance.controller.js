@@ -20,7 +20,7 @@ angular.module("Billing.controllers").controller("BillingHistoryBalanceCtrl", cl
         this.model = {
             paymentMethod: null
         };
-        this.paymentSref = "app.account.payment.meanAdd({from: 'app.account.billing.history.balance'})";
+        this.paymentSref = "app.account.billing.payment.meanAdd({from: 'app.account.billing.history.balance'})";
     }
 
     getBalance () {

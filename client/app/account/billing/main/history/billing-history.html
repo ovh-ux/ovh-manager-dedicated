@@ -1,14 +1,12 @@
-<div>
-    <div class="page-header">
-        <h1 data-translate="history_title2"></h1>
-    </div>
+<div class="billing-main-history">
+
+    <h2 data-translate="billing_main_history_title"></h2>
 
     <div class="text-center" data-ng-if="ctrl.isLoading">
         <oui-spinner></oui-spinner>
     </div>
 
-    <div class="tab-content"
-         data-ng-if="!ctrl.isLoading"
+    <div data-ng-if="!ctrl.isLoading"
          data-ui-view>
 
         <div class="alert"

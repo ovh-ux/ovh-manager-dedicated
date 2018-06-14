@@ -59,19 +59,6 @@ angular
                     templateUrl: `${baseUrl}emails/details/user-emails-details.html`,
                     controller: "UserAccount.controllers.emails.details"
                 });
-
-                $stateProvider.state("app.account.service.useraccount.agreements", {
-                    url: "/agreements",
-                    templateUrl: `${baseUrl}agreements/user-agreements.html`,
-                    controller: "UserAccount.controllers.agreements"
-                });
-
-                $stateProvider.state("app.account.service.useraccount.agreementsDetails", {
-                    url: "/agreements/:id/details",
-                    templateUrl: `${baseUrl}agreements/details/user-agreements-details.html`,
-                    controller: "UserAccount.controllers.agreements.details",
-                    controllerAs: "ctrl"
-                });
             }
 
             $stateProvider.state("app.account.useraccount.security", {
