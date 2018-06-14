@@ -83,19 +83,6 @@ angular.module("services").service("User", [
             });
         };
 
-        this.getUserAlerts = function () {
-            return $http
-                .get("/me/alerts", {
-                    serviceType: "aapi",
-                    params: {
-                        lang: $translate.use(),
-                        target: constants.target,
-                        universe: "DEDICATED"
-                    }
-                })
-                .then((response) => response.data);
-        };
-
         this.getCreditCards = function () {
             return $http.get("apiv6/me/paymentMean/creditCard").then((response) => {
                 const queries = response.data.map(self.getCreditCard);
