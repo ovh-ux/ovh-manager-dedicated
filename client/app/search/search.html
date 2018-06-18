@@ -1,0 +1,53 @@
+<div class="search">
+    <div class="page-header">
+        <h1>Recherche</h1>
+    </div>
+    <!-- /.page-header -->
+    <div class="tab-content">
+        <div data-ovh-alert></div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="oui-field">
+                    <label for="queryValue"
+                           class="oui-field__label oui-label">
+                        Recherche
+                    </label>
+                    <oui-search id="queryValue"
+                                data-model="$ctrl.queryValue"
+                                data-ng-model-options="{ debounce: 600 }"
+                                data-on-change="$ctrl.onSearchChange(modelValue)"
+                                data-on-reset="$ctrl.onSearchReset()">
+                    </oui-search>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="debug mb-3" style="display: block;">
+                    <small>$ctrl.queryValue</small>
+                    <pre>{{ $ctrl.queryValue | json }}</pre>
+                    <small>$ctrl.results ({{ $ctrl.results.length || '0' }})</small>
+                    <pre>{{ $ctrl.results | json }}</pre>
+                </div>
+                <div class="text-center"
+                     data-ng-if="$ctrl.isSearching">
+                    <oui-spinner data-size="m"></oui-spinner>
+                </div>
+                <ul class="list-unstyled"
+                    data-ng-if="!$ctrl.isSearching && $ctrl.results.length">
+                    <li class="mb-5"
+                        data-ng-repeat="result in $ctrl.results track by $index">
+                        <h3>
+                            <a class="d-block"
+                               data-ng-href="{{ $ctrl.buildTargetUrl(result) }}"
+                               data-ng-bind="$ctrl.constructor.buildTitle(result)">
+                            </a>
+                        </h3>
+                        <span class="text-muted">Product / Dedicated / Server</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.tab-content -->
+</div>
+<!-- /.search -->

@@ -21,6 +21,7 @@ module.exports = {
             "client/app/user-contracts/**/*.js",
             "client/app/license/**/*.js",
             "client/app/download/**/*.js",
+            "client/app/search/**/*.js",
             "client/app/ip/**/*.js",
             "client/app/error/**/*.js"
         ].concat(
@@ -46,6 +47,7 @@ module.exports = {
             "dist/client/app/user-contracts/**/*.js",
             "dist/client/app/license/**/*.js",
             "dist/client/app/download/**/*.js",
+            "dist/client/app/search/**/*.js",
             "dist/client/app/ip/**/*.js",
             "dist/client/app/error/**/*.js"
         ].concat(
