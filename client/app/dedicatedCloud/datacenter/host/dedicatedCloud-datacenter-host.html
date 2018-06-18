@@ -3,15 +3,15 @@
     <h2 data-translate="dedicatedCloud_tab_host"></h2>
 
     <div class="text-center"
-         data-ng-if="loaders.datacenter">
+         data-ng-if="$ctrl.loading">
         <oui-spinner></oui-spinner>
     </div>
-    <div data-ng-if="!loaders.datacenter">
+    <div data-ng-if="!$ctrl.loading">
         <div class="mb-2">
             <button type="button"
                     class="btn btn-default"
-                    data-ng-disabled="!datacenter.model.canOrderHosts && constants.target !== 'US'"
-                    data-ng-click="orderHost(datacenter)"
+                    data-ng-disabled="!datacenter.model.canOrderHosts && $ctrl.constants.target !== 'US'"
+                    data-ng-click="$ctrl.orderHost(datacenter)"
                     data-translate="dedicatedCloud_order_Host">
             </button>
             <div class="label"
@@ -21,87 +21,46 @@
                  data-translate="dedicatedCloud_discount">
             </div>
         </div>
-        <div class="table-responsive">
-            <table class="table table-hover">
-                <thead>
-                    <th scope="col"
-                        data-translate="dedicatedCloud_tab_host_name">
-                    </th>
-                    <th scope="col"
-                        data-translate="dedicatedCloud_tab_host_profile">
-                    </th>
-                    <th scope="col"
-                        data-translate="dedicatedCloud_tab_host_billing">
-                    </th>
-                    <th scope="col"
-                        data-translate="dedicatedCloud_tab_host_status">
-                    </th>
-                    <th scope="col"
-                        data-translate="dedicatedCloud_tab_host_consumption">
-                    </th>
-                </thead>
-                <tbody data-ng-show="loaders.hosts">
-                    <tr>
-                        <td colspan="5"
-                            class="text-center">
-                            <oui-spinner data-size="s"></oui-spinner>
-                        </td>
-                    </tr>
-                </tbody>
-                <tbody data-ng-show="!loaders.hosts && hosts.list.results.length == 0">
-                    <tr>
-                        <td colspan="5"
-                            class="text-center"
-                            data-translate="dedicatedCloud_tab_host_empty">
-                        </td>
-                    </tr>
-                </tbody>
-                <tbody data-ng-show="!loaders.hosts && hosts.list.results.length > 0">
-                    <tr data-ng-repeat="host in hosts.list.results track by $index">
-                        <th scope="row"
-                            data-ng-bind="host.name">
-                        </th>
-                        <td data-ng-bind="host.profile"></td>
-                        <td>
-                            <span class="d-block"
-                                  data-translate="{{ 'dedicatedCloud_tab_host_billing_'+host.billingType }}">
-                            </span>
-                            <button type="button"
-                                    class="btn btn-link p-0"
-                                    data-ng-show="datacenter.model.canOrderHosts && host.billingType === 'HOURLY'"
-                                    data-ng-click="setAction('resource/upgrade/dedicatedCloud-resource-upgrade', {
-                                        upgradeType: datacenter.model.isUpgradable && 'demoToMonthly' || 'hourlyToMonthly',
-                                        type: 'host',
-                                        id: host.hostId
-                                    })"
-                                    data-translate="dedicatedCloud_updateResource_toMonthly">
-                            </button>
-                        </td>
-                        <td data-translate="{{ 'dedicatedCloud_tab_host_status_'+host.status }}"></td>
-                        <td>
-                            <span data-ng-show="host.billingType === 'HOURLY' && host.consumption"
-                                  data-ng-pluralize
-                                  data-count="host.consumption.value"
-                                  data-when="{
-                                      '0': ('dedicatedCloud_tab_host_hourly_usage_na' | translate),
-                                      'one': ('dedicatedCloud_tab_host_hourly_usage_1' | translate),
-                                      'other': ('dedicatedCloud_tab_host_hourly_usage_other' | translate: { count: {} })
-                                  }"
-                                  data-uib-tooltip="{{ 'dedicatedCloud_tab_host_hourly_usage_update' | translate:{ t0: (host.lastUpdate|date:'short') } }}"
-                                  data-tooltip-placement="top">
-                            </span>
-                            <span data-ng-show="host.billingType === 'HOURLY' && !host.consumption"
-                                  data-translate="dedicatedCloud_tab_host_hourly_usage_na">
-                            </span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div data-pagination-server-side
-             data-pagination-server-side-function="loadHosts"
-             data-pagination-server-side-paginated-stuff="hosts"
-             data-pagination-server-side-table-loading="loaders.hosts">
-        </div>
+        <oui-datagrid data-rows-loader="$ctrl.loadHosts($config)">
+            <oui-column data-title=":: 'dedicatedCloud_tab_host_name' | translate"
+                        data-property="name">
+            </oui-column>
+            <oui-column data-title=":: 'dedicatedCloud_tab_host_profile' | translate"
+                        data-property="profile">
+            </oui-column>
+            <oui-column data-title=":: 'dedicatedCloud_tab_host_billing' | translate">
+                <span data-translate="{{ 'dedicatedCloud_tab_host_billing_' + $row.billingType }}"></span>
+            </oui-column>
+            <oui-column data-title=":: 'dedicatedCloud_tab_host_status' | translate">
+                <span data-translate="{{ 'dedicatedCloud_tab_host_status_' + $row.status }}"></span>
+            </oui-column>
+            <oui-column data-title=":: 'dedicatedCloud_tab_host_consumption' | translate">
+                <span data-ng-if="$row.billingType === 'HOURLY' && $row.consumption"
+                      data-ng-pluralize
+                      data-count="$row.consumption.value"
+                      data-when="{
+                          '0': ('dedicatedCloud_tab_host_hourly_usage_na' | translate),
+                          'one': ('dedicatedCloud_tab_host_hourly_usage_1' | translate),
+                          'other': ('dedicatedCloud_tab_host_hourly_usage_other' | translate: { count: {} })
+                      }"
+                      data-uib-tooltip="{{ 'dedicatedCloud_tab_host_hourly_usage_update' | translate:{ t0: ($row.lastUpdate|date:'short') } }}"
+                      data-tooltip-placement="top">
+                </span>
+                <span data-ng-if="$row.billingType === 'HOURLY' && !$row.consumption"
+                      data-translate="dedicatedCloud_tab_host_hourly_usage_na">
+                </span>
+            </oui-column>
+            <oui-action-menu data-align="end"
+                             data-compact>
+                <oui-action-menu-item data-text="{{:: 'dedicatedCloud_updateResource_toMonthly' | translate }}"
+                                      data-disabled="!(datacenter.model.canOrderHosts && $row.billingType === 'HOURLY')"
+                                      data-on-click="setAction('resource/upgrade/dedicatedCloud-resource-upgrade', {
+                                          upgradeType: datacenter.model.isUpgradable && 'demoToMonthly' || 'hourlyToMonthly',
+                                          type: 'host',
+                                          id: $row.hostId
+                                      })">
+                </oui-action-menu-item>
+            </oui-action-menu>
+        </oui-datagrid>
     </div>
 </div>
