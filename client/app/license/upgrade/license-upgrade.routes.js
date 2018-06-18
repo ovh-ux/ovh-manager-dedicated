@@ -1,7 +1,7 @@
 angular.module("Module.license")
     .config(($stateProvider) => {
         $stateProvider.state("app.license.upgrade", {
-            url: "/:licenceId/upgrade",
+            url: "/:licenseId/upgrade",
             templateUrl: "license/upgrade/license-upgrade.html",
             controller: "LicenseUpgradeCtrl",
             translations: ["license"]

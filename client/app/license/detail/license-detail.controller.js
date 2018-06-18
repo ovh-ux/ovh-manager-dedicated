@@ -29,7 +29,7 @@ angular.module("Module.license").controller("LicenseDetailsCtrl", [
         let changeOsPollingId;
 
         function fetchLicense () {
-            return License.get("/{licenceId}", {
+            return License.get("/{licenseId}", {
                 urlParams: $stateParams
             })
                 .then((license) => {
