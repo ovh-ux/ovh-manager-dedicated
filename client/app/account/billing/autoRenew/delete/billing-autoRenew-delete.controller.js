@@ -29,7 +29,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew.
         });
         return BillingAutoRenew.updateServices(result).then(() => {
             $scope.$emit(AUTORENEW_EVENT.TERMINATE_AT_EXPIRATION, result);
-            Alerter.set("alert-success", $translate.instant("autorenew_service_update_step2_success"));
+            Alerter.set("alert-success", $translate.instant("autorenew_service_update_step2_with_async_action_success"));
         }, errorFunction);
     }
 
