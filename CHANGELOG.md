@@ -1,3 +1,13 @@
+<a name="9.6.3"></a>
+## [9.6.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.2...v9.6.3) (2018-06-18)
+
+
+### Bug Fixes
+
+* won't display autorenew banner and input when not needed ([#414](https://github.com/ovh-ux/ovh-manager-dedicated/issues/414)) ([d80abc1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d80abc1))
+
+
+
 <a name="9.6.2"></a>
 ## [9.6.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.1...v9.6.2) (2018-06-13)
 
