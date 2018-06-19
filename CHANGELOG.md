@@ -1,3 +1,13 @@
+<a name="9.6.5"></a>
+## [9.6.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.4...v9.6.5) (2018-06-19)
+
+
+### Bug Fixes
+
+* **dedicated:server:** ipmi session for resellers ([e219d06](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e219d06))
+
+
+
 <a name="9.6.4"></a>
 ## [9.6.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.3...v9.6.4) (2018-06-19)
 
