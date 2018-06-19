@@ -1,3 +1,15 @@
+<a name="10.0.0"></a>
+# [10.0.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.3...v10.0.0) (2018-06-19)
+
+
+### Bug Fixes
+
+* **dedicated:server:** ipmi geolocation ip for resellers only ([5e7247c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5e7247c))
+* **dedicated:server:** ipmi IP check in US ([8b0b545](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8b0b545))
+* **dedicated:server:** ipmi IP check in US CR ([015e661](https://github.com/ovh-ux/ovh-manager-dedicated/commit/015e661))
+
+
+
 <a name="9.6.3"></a>
 ## [9.6.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.2...v9.6.3) (2018-06-18)
 
