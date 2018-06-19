@@ -249,7 +249,7 @@ angular.module("App").controller("ImpiCtrl", ($scope, $translate, Server, Pollin
         $scope.loader.javaReady = false;
         $scope.loader.javaLoading = true;
         $scope.loader.buttonStart = true;
-        const withGeolocation = _.contains(["HIL_1", "VIN_1"], $scope.server.datacenter) && constants.target === "US";
+        const withGeolocation = _.includes(["HIL_1", "VIN_1"], $scope.server.datacenter) && constants.target === "US";
         Server.ipmiStartConnection({
             serviceName: $stateParams.productId,
             type: "kvmipJnlp",

@@ -691,7 +691,7 @@ angular
             let promise = $q.when(ipToAllow);
 
             if (withGeolocation) {
-                promise = this.getIpGeolocation().then((data) => _.get(data, "ip"));
+                promise = this.getIpGeolocation().then(({ ip }) => ip);
             }
 
             return promise.then((ip) => OvhHttp.post("/dedicated/server/{serviceName}/features/ipmi/access", {
