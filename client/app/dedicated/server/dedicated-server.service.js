@@ -687,11 +687,11 @@ angular
             });
         };
 
-        this.ipmiStartConnection = function (serviceName, type, ttl, ipToAllow, sshKey) {
+        this.ipmiStartConnection = function ({ serviceName, type, ttl, ipToAllow, sshKey, withGeolocation }) {
             let promise = $q.when(ipToAllow);
 
-            if (constants.target === "US") {
-                promise = this.getIpGeolocation().then((data) => data.ip);
+            if (withGeolocation) {
+                promise = this.getIpGeolocation().then((data) => _.get(data, "ip"));
             }
 
             return promise.then((ip) => OvhHttp.post("/dedicated/server/{serviceName}/features/ipmi/access", {
