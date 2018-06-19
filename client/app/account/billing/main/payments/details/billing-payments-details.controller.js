@@ -1,43 +1,23 @@
-angular.module("Billing.controllers").controller("Billing.controllers.PaymentDetailsCtrl", function ($q, $log, $stateParams, $translate, Alerter, BillingPayments) {
-    this.loading = {
-        init: false
-    };
+angular.module("Billing.controllers").controller("Billing.controllers.PaymentDetailsCtrl", function ($q, $state, $stateParams, $translate, Alerter, BillingPayments) {
 
     this.paymentId = $stateParams.id;
-    this.billIds = [];
     this.payment = {};
 
-    this.pagination = {};
+    this.loadBills = ({ offset, pageSize }) => BillingPayments.getBillsIds($stateParams.id).then((ids) => ({
+        data: ids.slice(offset - 1, offset - 1 + pageSize).map((id) => ({ id })),
+        meta: {
+            totalCount: ids.length
+        }
+    }));
 
-    this.transformItem = (billId) => {
-        this.loading.init = true;
-        return BillingPayments.getBillDetails(this.paymentId, billId).catch((err) => {
-            Alerter.alertFromSWS($translate.instant("payments_error"), err.data);
-            $log.error(err);
-            return $q.reject(err);
-        });
-    };
+    this.loadDetails = ({ id }) => BillingPayments.getBillDetails($stateParams.id, id);
 
-    this.onTransformItemDone = () => {
-        this.loading.init = false;
-    };
+    this.paymentsHref = () => $state.href("app.account.billing.main.payments");
 
-    const init = () => {
-        this.loading.init = true;
-
-        return $q
-            .all([BillingPayments.getBillsIds(this.paymentId), BillingPayments.getPayment(this.paymentId)])
-            .then(([billIds, payment]) => {
-                this.billIds = billIds;
-                this.payment = payment;
-            })
-            .catch((err) => {
-                Alerter.alertFromSWS($translate.instant("payments_error"), err.data);
-                this.loading.init = false;
-                return $q.reject(err);
-            })
-            .finally(() => (this.loading.init = false));
-    };
-
-    init();
+    this.$onInit = () => BillingPayments.getPayment($stateParams.id).then((payment) => {
+        this.payment = payment;
+    }).catch((err) => {
+        Alerter.alertFromSWS($translate.instant("payments_error"), err.data);
+        return $q.reject(err);
+    });
 });
