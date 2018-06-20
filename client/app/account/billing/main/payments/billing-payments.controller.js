@@ -83,7 +83,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.PaymentsCt
         if (constants.target === "US") {
             return OvhApiMe.DepositRequest().v6().query().$promise.then((depositRequests) => {
                 this.paymentRequests = depositRequests;
-                this.paymentRequestsHref = $state.href("app.account.billing.payments.request");
+                this.paymentRequestsHref = $state.href("app.account.billing.main.payments.request");
             });
         }
         return $q.when();
