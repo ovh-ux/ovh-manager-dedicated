@@ -45,13 +45,13 @@ angular.module("Billing.controllers").controller("Billing.controllers.PaymentsCt
                 .execute().$promise
         }).then(({ count, deposit }) => {
             this.payments = _.map(deposit, "value");
-            return { count, deposit };
-        }).then(({ count, deposit }) => ({
-            data: _.map(deposit, "value"),
-            meta: {
-                totalCount: count.length
-            }
-        }));
+            return {
+                data: this.payments,
+                meta: {
+                    totalCount: count.length
+                }
+            };
+        });
     };
 
     this.getDatasToExport = () => {
@@ -70,9 +70,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.PaymentsCt
         ]));
     };
 
-    this.getTranslatedPaiementType = (payment) => {
-        return payment.paymentInfo ? $translate.instant(`common_payment_type_${payment.paymentInfo.paymentType}`) : $translate.instant("payments_table_type_not_available");
-    };
+    this.getTranslatedPaiementType = (payment) => payment.paymentInfo ? $translate.instant(`common_payment_type_${payment.paymentInfo.paymentType}`) : $translate.instant("payments_table_type_not_available");
 
     this.shouldDisplayDepositsLinks = () => featureAvailability.showPDFAndHTMLDepositLinks();
 
@@ -88,6 +86,6 @@ angular.module("Billing.controllers").controller("Billing.controllers.PaymentsCt
                 this.paymentRequestsHref = $state.href("app.account.billing.payments.request");
             });
         }
-        return $q.when(null);
+        return $q.when();
     };
 });

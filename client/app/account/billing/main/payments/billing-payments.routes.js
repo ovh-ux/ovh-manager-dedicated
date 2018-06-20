@@ -3,7 +3,7 @@ angular.module("Billing").config(($stateProvider) => {
         url: "/payments",
         templateUrl: "account/billing/main/payments/billing-payments.html",
         controller: "Billing.controllers.PaymentsCtrl",
-        controllerAs: "ctrl",
+        controllerAs: "$ctrl",
         translations: ["account/billing/main/payments"]
     });
 });

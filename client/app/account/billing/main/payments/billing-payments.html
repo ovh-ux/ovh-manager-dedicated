@@ -9,13 +9,15 @@
     </p>
 
     <div class="mb-4"
-         data-ng-if="ctrl.paymentRequests.length">
+         data-ng-if="$ctrl.paymentRequests.length">
         <oui-message data-type="info">
-            <span data-ng-bind-html="tr('payments_request_pending', [ctrl.paymentRequestsHref])"></span>
+            <span data-translate="payments_request_pending"
+                  data-translate-values="{ t0: $ctrl.paymentRequestsHref }">
+            </span>
         </oui-message>
     </div>
 
-    <oui-datagrid data-rows-loader="ctrl.loadPayments($config)">
+    <oui-datagrid data-rows-loader="$ctrl.loadPayments($config)">
         <oui-column data-title=":: 'payments_table_head_id' | translate"
                     data-property="depositId"
                     data-sortable>
@@ -46,14 +48,14 @@
                     data-sortable
                     data-filterable
                     data-title=":: 'payments_table_head_type' | translate">
-            <span data-ng-bind=":: ctrl.getTranslatedPaiementType($row)"></span>
+            <span data-ng-bind=":: $ctrl.getTranslatedPaiementType($row)"></span>
         </oui-column>
         <extra-top>
             <button type="button"
                     class="btn btn-default"
-                    data-export-csv="ctrl.getDatasToExport()"
+                    data-export-csv="$ctrl.getDatasToExport()"
                     data-export-csv-separator=";"
-                    data-ng-disabled="ctrl.payments.length === 0">
+                    data-ng-disabled="$ctrl.payments.length === 0">
                     <span data-translate="billing_export_csv"></span>
             </button>
         </extra-top>
@@ -61,16 +63,16 @@
                          data-compact>
             <oui-action-menu-item data-text="{{:: 'table_download_html' | translate }}"
                                   data-href="{{ $row.htmlUrl || $row.url }}"
-                                  data-ng-if="($row.url || $row.htmlUrl) && ctrl.shouldDisplayDepositsLinks()"
+                                  data-ng-if="($row.url || $row.htmlUrl) && $ctrl.shouldDisplayDepositsLinks()"
                                   data-external>
             </oui-action-menu-item>
             <oui-action-menu-item data-text="{{:: 'table_download_pdf' | translate }}"
                                   data-href="{{ :: $row.pdfUrl }}"
-                                  data-ng-if="$row.pdfUrl && ctrl.shouldDisplayDepositsLinks()"
+                                  data-ng-if="$row.pdfUrl && $ctrl.shouldDisplayDepositsLinks()"
                                   data-external>
             </oui-action-menu-item>
             <oui-action-menu-item data-text="{{:: 'payments_details_link' | translate }}"
-                                  data-href="{{ ctrl.depositDetailsHref($row) }}">
+                                  data-href="{{ $ctrl.depositDetailsHref($row) }}">
             </oui-action-menu-item>
         </oui-action-menu>
     </oui-datagrid>
