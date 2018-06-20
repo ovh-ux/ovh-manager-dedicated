@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <div class="debug mb-3" style="display: block;">
+                <div class="debug mb-3" style="display: none;">
                     <small>$ctrl.queryValue</small>
                     <pre>{{ $ctrl.queryValue | json }}</pre>
                     <small>$ctrl.results ({{ $ctrl.results.length || '0' }})</small>
@@ -41,7 +41,7 @@
                                data-ng-bind="$ctrl.constructor.buildTitle(result)">
                             </a>
                         </h3>
-                        <span class="text-muted">Product / Dedicated / Server</span>
+                        <span class="text-muted">{{ $ctrl.constructor.buildBreadcrumb(result) }}</span>
                     </li>
                 </ul>
             </div>

@@ -64,8 +64,8 @@ angular
 
             return this.$q
                 .all({
-                    name: this.$http.get(`apiv7/service/*?$aggreg=1&resource.name:like=${query}%25`),
-                    displayName: this.$http.get(`apiv7/service/*?$aggreg=1&resource.displayName:like=${query}%25`)
+                    name: this.$http.get(`apiv7/service/*?$aggreg=1&resource.name:like=%25${query}%25&$fields=route,resource`),
+                    displayName: this.$http.get(`apiv7/service/*?$aggreg=1&resource.displayName:like=%25${query}%25&$fields=route,resource`)
                 })
                 .then(({ name, displayName }) => {
                     const results = _.chain(name.data)
@@ -76,8 +76,8 @@ angular
                     return results;
                 })
                 .then((results) => {
-                    console.log("results", results);
-                    const promises = _.map(results, (result) => {
+                    // console.log("results", results);
+                    const promises = _.chain(results).map((result) => {
                         const path = _.get(result, "value.route.path");
                         const name = _.get(result, "value.resource.name");
                         const mappedApiEndpoint = _.get(this.SEARCH_MAPPING_API_ENDPOINTS, path);
@@ -90,14 +90,17 @@ angular
 
                             return this.$http.get(queryUrl)
                                 .then(({ data }) => {
-                                    if (_.isArray(data)) {
+
+                                    if (_.isArray(data) && !_.isEmpty(data)) {
                                         const dataFiltered = _.filter(data, (d) => !_.has(d, "value.message"));
                                         const dataPath = _.get(_.first(dataFiltered), "path");
 
                                         result.value.details[mappedApiEndpoint.tplRouteParams] = dataPath.match(_.get(mappedApiEndpoint, "tplRoute"))[1];
+
                                         result.value.details.url = mappedApiEndpoint.url
                                             .replace(`{${mappedApiEndpoint.tplRouteParams}}`, dataPath.match(_.get(mappedApiEndpoint, "tplRoute"))[1])
-                                            .replace("{serviceName}", name);
+                                            .replace("{serviceName}", name)
+                                            .replace(`{${mappedApiEndpoint.urlParams}}`, _.get(_.first(data), mappedApiEndpoint.urlParams));
                                     } else {
                                         result.value.details[mappedApiEndpoint.tplRouteParams] = _.get(_.get(data, mappedApiEndpoint.tplRouteParams), "name");
                                         result.value.details.url = mappedApiEndpoint.url
@@ -112,9 +115,9 @@ angular
                         }
 
                         return null;
-                    });
+                    }).compact().value();
 
-                    if (_(promises).compact().isEmpty()) {
+                    if (_.chain(promises).compact().isEmpty().value()) {
                         return results;
                     }
 
@@ -145,6 +148,11 @@ angular
             }
 
             return this.constants.MANAGER_URLS[details.univers] + details.url;
+        }
+
+        static buildBreadcrumb (result) {
+            const productType = _.get(result, "route.path", "").replace(/\/\{.+\}/g, "").replace(/\//g, " / ");
+            return `Product ${productType}`;
         }
 
         static buildTitle (result) {

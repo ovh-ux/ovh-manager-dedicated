@@ -1,6 +1,22 @@
 angular
     .module("Module.search")
     .constant("SEARCH_TARGET_URL", {
+        "/cdn/dedicated/{serviceName}": {
+            univers: "dedicated",
+            url: "configuration/cdn/{serviceName}"
+        },
+        "/cloud/project/{serviceName}": {
+            univers: "cloud",
+            url: "iaas/pci/project/{serviceName}/compute/infrastructure/diagram"
+        },
+        "/dedicated/nas/{serviceName}": {
+            univers: "dedicated",
+            url: "configuration/nas/nas/nas_{serviceName}"
+        },
+        "/dedicated/nasha/{serviceName}": {
+            univers: "dedicated",
+            url: "configuration/nas/nas/nasha_{serviceName}"
+        },
         "/domain/zone/{zoneName}": {
             univers: "web",
             url: "configuration/domain/{serviceName}"
@@ -21,6 +37,10 @@ angular
             univers: "web",
             url: "configuration/microsoft/office/license/{serviceName}"
         },
+        "/dbaas/logs/{serviceName}": {
+            univers: "cloud",
+            url: "dbaas/logs/{serviceName}/home"
+        },
         "/dedicated/housing/{serviceName}": {
             univers: "dedicated",
             url: "configuration/housing/{serviceName}"
@@ -33,7 +53,39 @@ angular
             univers: "dedicated",
             url: "configuration/dedicated_cloud/{serviceName}"
         },
+        "/ip/service/{serviceName}": {
+            univers: "dedicated",
+            url: "configuration/ip"
+        },
         "/license/plesk/{serviceName}": {
+            univers: "dedicated",
+            url: "configuration/license/{serviceName}/detail"
+        },
+        "/license/windows/{serviceName}": {
+            univers: "dedicated",
+            url: "configuration/license/{serviceName}/detail"
+        },
+        "/license/sqlserver/{serviceName}": {
+            univers: "dedicated",
+            url: "configuration/license/{serviceName}/detail"
+        },
+        "/license/virtuozzo/{serviceName}": {
+            univers: "dedicated",
+            url: "configuration/license/{serviceName}/detail"
+        },
+        "/license/worklight/{serviceName}": {
+            univers: "dedicated",
+            url: "configuration/license/{serviceName}/detail"
+        },
+        "/license/cpanel/{serviceName}": {
+            univers: "dedicated",
+            url: "configuration/license/{serviceName}/detail"
+        },
+        "/license/directadmin/{serviceName}": {
+            univers: "dedicated",
+            url: "configuration/license/{serviceName}/detail"
+        },
+        "/license/cloudlinux/{serviceName}": {
             univers: "dedicated",
             url: "configuration/license/{serviceName}/detail"
         },
@@ -59,14 +111,41 @@ angular
         "/overTheBox/{serviceName}": {
             univers: "telecom",
             url: "overTheBox/{serviceName}/details"
+        },
+        "/vps/{serviceName}": {
+            univers: "cloud",
+            url: "iaas/vps/{serviceName}/dashboard"
+        },
+        "/vrack/{serviceName}": {
+            univers: "cloud",
+            url: "vrack/{serviceName}"
+        },
+        "/deskaas/{serviceName}": {
+            univers: "cloud",
+            url: "deskaas/{serviceName}"
         }
     })
     .constant("SEARCH_MAPPING_API_ENDPOINTS", {
-        "/domain/{serviceName}": {
+        "/allDom/{serviceName}": {
             queryUrl: "apiv6/domain/{serviceName}",
             tplRouteParams: "parentService",
             univers: "web",
             url: "configuration/all_dom/{parentService}/{serviceName}?tab=GENERAL_INFORMATIONS"
+        },
+        "/email/exchange/{organizationName}/service/{exchangeService}": {
+            queryUrl: "apiv7/email/exchange/*/service/{serviceName}?$aggreg=1",
+            tplRoute: "email/exchange\/(.+)\/service",
+            tplRouteParams: "organizationName",
+            univers: "web",
+            url: "configuration/exchange_{value.offer}/{organizationName}/{serviceName}?tab=INFORMATION",
+            urlParams: "value.offer"
+        },
+        "/msServices/sharepoint/{domain}": {
+            queryUrl: "apiv7/msServices/*/sharepoint?$aggreg=1",
+            tplRoute: "msServices\/(.+)\/sharepoint",
+            tplRouteParams: "organizationName",
+            univers: "web",
+            url: "configuration/sharepoint/{organizationName}/{serviceName}"
         },
         "/telephony/lines/{serviceName}": {
             queryUrl: "apiv7/telephony/*/line/{serviceName}?$aggreg=1",
