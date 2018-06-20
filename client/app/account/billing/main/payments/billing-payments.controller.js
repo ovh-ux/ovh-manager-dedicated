@@ -1,4 +1,4 @@
-angular.module("Billing.controllers").controller("Billing.controllers.PaymentsCtrl", function ($filter, $q, $scope, $state, $translate, constants, featureAvailability, OvhApiMe) {
+angular.module("Billing").controller("Billing.PaymentsCtrl", function ($filter, $q, $scope, $state, $translate, constants, featureAvailability, OvhApiMe) {
     "use strict";
 
     this.loadPayments = ($config) => {
