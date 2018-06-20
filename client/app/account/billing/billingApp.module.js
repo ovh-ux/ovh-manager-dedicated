@@ -7,19 +7,6 @@ angular
         "Billing.constants",
         ($stateProvider, $urlServiceProvider, BILLING_BASE_URL, constants) => {
 
-            const denyBillingSectionForEnterpriseResolve = ($q, User) =>
-                User.getUser().then((curUser) => {
-                    if (curUser.isEnterprise) {
-                        return $q.reject({
-                            status: 403,
-                            message: "Access forbidden for enterprise accounts",
-                            code: "FORBIDDEN_BILLING_ACCESS"
-                        });
-                    }
-
-                    return true;
-                });
-
             $stateProvider.state("app.account.billing", {
                 url: "/billing",
                 controller: "BillingCtrl",
@@ -27,7 +14,17 @@ angular
                 "abstract": true,
                 translations: ["account/billing"],
                 resolve: {
-                    denyEnterprise: denyBillingSectionForEnterpriseResolve
+                    denyEnterprise: ($q, currentUser) => {
+                        if (currentUser.isEnterprise) {
+                            return $q.reject({
+                                status: 403,
+                                message: "Access forbidden for enterprise accounts",
+                                code: "FORBIDDEN_BILLING_ACCESS"
+                            });
+                        }
+
+                        return true;
+                    }
                 }
             });
 

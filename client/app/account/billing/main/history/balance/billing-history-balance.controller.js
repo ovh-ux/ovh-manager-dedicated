@@ -1,12 +1,12 @@
 angular.module("Billing.controllers").controller("BillingHistoryBalanceCtrl", class BillingHistoryBalanceCtrl {
 
-    constructor ($q, $state, $translate, OvhApiMe, BillingDebtAccount, BillingPaymentMethod, Alerter) {
+    constructor ($q, $state, $translate, OvhApiMe, BillingDebtAccount, paymentMethodHelper, Alerter) {
         this.$q = $q;
         this.$state = $state;
         this.$translate = $translate;
         this.OvhApiMe = OvhApiMe;
         this.BillingDebtAccount = BillingDebtAccount;
-        this.BillingPaymentMethod = BillingPaymentMethod;
+        this.paymentMethodHelper = paymentMethodHelper;
         this.Alerter = Alerter;
 
         this.balance = null;
@@ -20,7 +20,7 @@ angular.module("Billing.controllers").controller("BillingHistoryBalanceCtrl", cl
         this.model = {
             paymentMethod: null
         };
-        this.paymentSref = "app.account.billing.payment.meanAdd({from: 'app.account.billing.history.balance'})";
+        this.paymentSref = "app.account.billing.payment.meanAdd({from: 'app.account.billing.main.history.balance'})";
     }
 
     getBalance () {
@@ -72,10 +72,10 @@ angular.module("Billing.controllers").controller("BillingHistoryBalanceCtrl", cl
             if (!this.depositRequests.length) {
                 return this.$q.all({
                     balance: this.getBalance(),
-                    paymentMethods: this.BillingPaymentMethod.get()
+                    paymentMethods: this.paymentMethodHelper.getAvailablePaymentMethods()
                 }).then((response) => {
                     this.balance = response.balance;
-                    this.paymentMethods = _.filter(response.paymentMethods, ({ paymentType }) => paymentType !== "INTERNAL_TRUSTED_ACCOUNT" && paymentType !== "ENTERPRISE");
+                    this.paymentMethods = _.filter(response.paymentMethods, ({ paymentType, status }) => ["INTERNAL_TRUSTED_ACCOUNT", "ENTERPRISE"].indexOf(paymentType) === -1 && ["CANCELED_BY_CUSTOMER", "CANCELING"].indexOf(status) === -1);
 
                     this.model.paymentMethod = _.find(this.paymentMethods, {
                         "default": true

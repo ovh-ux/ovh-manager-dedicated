@@ -50,6 +50,7 @@ angular.module("App").run(($q, $translatePartialLoader, $translate, SidebarMenu,
             name: "billingMenu",
             title: $translate.instant("menu_billing"),
             state: "app.account.billing.main.pay-as-you-go",
+            loadOnState: "app.account.billing.main",
             namespace: "account"
         });
 

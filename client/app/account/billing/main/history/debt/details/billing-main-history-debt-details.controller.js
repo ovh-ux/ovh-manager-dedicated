@@ -14,6 +14,8 @@ angular.module("Billing.controllers").controller("BillingHistoryDebtDetailsCtrl"
         this.loading = {
             init: false
         };
+
+        this.operations = [];
     }
 
     getOperations () {
@@ -71,10 +73,7 @@ angular.module("Billing.controllers").controller("BillingHistoryDebtDetailsCtrl"
                 this.bill = details.bill;
             });
         }).catch((error) => {
-            this.Alerter.alertFromSWS(this.$translate.instant("billing_history_details_load_error"), {
-                message: _.get(error, "message"),
-                type: "ERROR"
-            }, "billing_debt_details");
+            this.Alerter.error([this.$translate.instant("billing_history_details_load_error"), _.get(error, "message")].join(" "), "billing_main_alert");
         }).finally(() => {
             this.loading.init = false;
         });
