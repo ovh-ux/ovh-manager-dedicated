@@ -75,7 +75,6 @@ angular.module("Billing.controllers").controller("BillingHistoryDebtDetailsCtrl"
         }).catch((error) => {
             this.Alerter.error([this.$translate.instant("billing_history_details_load_error"), _.get(error, "message")].join(" "), "billing_main_alert");
         }).finally(() => {
-            console.log("oui ?");
             this.loading.init = false;
         });
     }

@@ -1,10 +1,11 @@
 angular.module("Billing").controller("BillingMainHistoryCtrl", class BillingMainHistoryCtrl {
 
-    constructor ($q, $state, $translate, constants, currentUser, exportCsv, OvhApiMe, paymentMethodHelper) {
+    constructor ($q, $state, $translate, Alerter, constants, currentUser, exportCsv, OvhApiMe, paymentMethodHelper) {
         // Injections
         this.$q = $q;
         this.$state = $state;
         this.$translate = $translate;
+        this.Alerter = Alerter;
         this.constants = constants;
         this.currentUser = currentUser; // from app route resolve
         this.exportCsv = exportCsv;
@@ -13,7 +14,8 @@ angular.module("Billing").controller("BillingMainHistoryCtrl", class BillingMain
 
         // Other attributes used in view
         this.loading = {
-            init: true
+            init: false,
+            "export": false
         };
 
         this.postalMailOptions = {
@@ -102,6 +104,8 @@ angular.module("Billing").controller("BillingMainHistoryCtrl", class BillingMain
     ===================================== */
 
     exportToCsv () {
+        this.loading.export = true;
+
         const translations = {
             notAvailable: this.$translate.instant("billing_main_history_table_unavailable"),
             dueImmediatly: this.$translate.instant("billing_main_history_table_immediately"),
@@ -147,7 +151,13 @@ angular.module("Billing").controller("BillingMainHistoryCtrl", class BillingMain
             .then((csvData) => this.exportCsv.exportData({
                 separator: ";",
                 datas: csvData
-            }));
+            }))
+            .catch((error) => {
+                this.Alerter.error([this.$translate.instant("billing_main_history_export_error"), _.get(error, "data.message")].join(" "), "billing_main_alert");
+            })
+            .finally(() => {
+                this.loading.export = false;
+            });
     }
 
     /* -----  End of EXPORT TO CSV  ------ */
@@ -176,6 +186,8 @@ angular.module("Billing").controller("BillingMainHistoryCtrl", class BillingMain
             // set invoice by postal mail options
             this.postalMailOptions.enabled = invoicesByPostalMail !== null;
             this.postalMailOptions.activated = _.get(invoicesByPostalMail, "data", false);
+        }).catch((error) => {
+            this.Alerter.error([this.$translate.instant("billing_main_history_loading_errors"), _.get(error, "data.message")].join(" "), "billing_main_alert");
         }).finally(() => {
             this.loading.init = false;
         });
