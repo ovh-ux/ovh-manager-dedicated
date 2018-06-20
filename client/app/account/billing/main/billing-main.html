@@ -7,9 +7,15 @@
 
     <!-- Tabs -->
     <responsive-tabs>
-        <responsive-tab data-state="app.account.billing.main.pay-as-you-go">{{ :: 'billing_main_pay_as_you_go_tab' | translate }}</responsive-tab>
-        <responsive-tab data-state="app.account.billing.main.history">{{ :: 'billing_main_bills_tab' | translate }}</responsive-tab>
-        <responsive-tab data-state="app.account.billing.main.payments">{{ :: 'billing_main_payments_tab' | translate }}</responsive-tab>
+        <responsive-tab data-state="app.account.billing.main.pay-as-you-go">
+            <span data-translate="billing_main_pay_as_you_go_tab"></span>
+        </responsive-tab>
+        <responsive-tab data-state="app.account.billing.main.history">
+            <span data-translate="billing_main_bills_tab"></span>
+        </responsive-tab>
+        <responsive-tab data-state="app.account.billing.main.payments">
+            <span data-translate="billing_main_payments_tab"></span>
+        </responsive-tab>
         <responsive-tab-more>
             <i class="fa fa-plus"></i>
         </responsive-tab-more>
