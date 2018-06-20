@@ -35,7 +35,8 @@ angular
                 modalLayout = {
                     name: "modal",
                     toChilds: state.self.layout.toChilds || false,
-                    ignoreChilds: state.self.layout.ignoreChilds || []
+                    ignoreChilds: state.self.layout.ignoreChilds || [],
+                    redirectTo: state.self.layout.redirectTo || "^"
                 };
             }
 
@@ -59,13 +60,13 @@ angular
                     const $uibModal = transition.injector().get("$uibModal");
 
                     modalInstance = $uibModal.open({
-                        templateUrl: state.templateUrl,
-                        controller: state.controller,
-                        controllerAs: state.controllerAs || "$ctrl"
+                        templateUrl: _.get(state, state.views.modal ? "views.modal.templateUrl" : "templateUrl"),
+                        controller: _.get(state, state.views.modal ? "views.modal.controller" : "controller"),
+                        controllerAs: _.get(state, state.views.modal ? "views.modal.controllerAs" : "controllerAs", "$ctrl")
                     });
 
                     // if backdrop is clicked - be sure to close the modal
-                    modalInstance.result.catch(() => $state.go("^"));
+                    modalInstance.result.catch(() => $state.go(_.get(state, "layout.redirectTo")));
                 }
             });
         });

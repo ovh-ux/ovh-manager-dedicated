@@ -179,6 +179,7 @@ module.exports = {
             "node_modules/u2f-api-polyfill/u2f-api-polyfill.js",
             "node_modules/ovh-angular-otrs/dist/ovh-angular-otrs.min.js",
             "node_modules/ovh-api-services/dist/ovh-api-services.min.js",
+            "node_modules/ovh-angular-apiv7/dist/ovh-angular-apiv7.min.js",
             "node_modules/ovh-angular-toaster/dist/ovh-angular-toaster.min.js",
             "node_modules/ovh-jquery-ui-draggable-ng/dist/ovh-jquery-ui-draggable-ng.min.js",
             "node_modules/@bower_components/angular-ui-router/release/angular-ui-router.min.js",

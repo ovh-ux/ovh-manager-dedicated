@@ -1,0 +1,16 @@
+<div class="billing-main-history-postal-mail-options">
+
+    <oui-modal data-title="{{ :: 'billing_main_history_postal_mail_options_title' | translate }}"
+               data-primary-label="{{ :: 'common_yes' | translate }}"
+               data-primary-action="$ctrl.confirmChoice()"
+               data-secondary-label="{{ :: 'common_no' | translate }}"
+               data-secondary-action="$ctrl.$state.go('^', {}, { reload: true })"
+               data-on-dismiss="$ctrl.$state.go('^', {}, { reload: true })"
+               data-loading="$ctrl.loading.update"
+               data-type="help">
+
+        <p data-translate="{{ $ctrl.$stateParams.activate === 'true' ? 'billing_main_history_postal_mail_options_activation' : 'billing_main_history_postal_mail_options_desactivation' }}"></p>
+
+    </oui-modal>
+
+</div>
