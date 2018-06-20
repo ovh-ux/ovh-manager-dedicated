@@ -59,7 +59,8 @@
                     <span data-translate="billing_export_csv"></span>
             </button>
         </extra-top>
-        <oui-action-menu data-align="end"
+        <oui-action-menu data-ng-if="$ctrl.displayActionsCol()"
+                         data-align="end"
                          data-compact>
             <oui-action-menu-item data-text="{{:: 'table_download_html' | translate }}"
                                   data-href="{{ $row.htmlUrl || $row.url }}"
