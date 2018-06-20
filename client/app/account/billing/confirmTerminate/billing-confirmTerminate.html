@@ -37,7 +37,10 @@
                 data-translate="terminate_service_information_title">
             </h5>
 
-            <p data-translate="terminate_service_information_text"></p>
+            <div data-ng-if="!TerminateServiceCtrl.userLoading">
+                <p data-ng-if="TerminateServiceCtrl.USVersion" data-translate="terminate_service_information_text"></p>
+                <p data-ng-if="!TerminateServiceCtrl.USVersion" data-translate="terminate_service_information_text_non_US"></p>
+            </div>
 
             <h5 class="oui-header_5"
                 data-translate="terminate_service_services_title">
@@ -122,7 +125,9 @@
                             class="oui-button oui-button_primary"
                             data-translate="terminate_service_confirm"
                             data-ng-click="TerminateServiceCtrl.confirmTermination()"
-                            data-ng-disabled="!TerminateServiceCtrl.reason ||
+                            data-ng-disabled="TerminateServiceCtrl.loading ||
+                                              TerminateServiceCtrl.userLoading ||
+                                              !TerminateServiceCtrl.reason ||
                                               TerminateServiceCtrl.terminating">
                     </button>
                 </div>
