@@ -2,21 +2,21 @@
 
     <div data-ovh-alert></div>
 
-    <oui-back-button data-ng-href="{{ ctrl.paymentsHref() }}"
+    <oui-back-button data-ng-href="{{ $ctrl.paymentsHref() }}"
                      data-title="{{:: 'payment_details_return_to_payments' | translate }}">
     </oui-back-button>
 
     <dl class="dl-horizontal mt-4">
         <dt data-translate="payment_details_payment_id"></dt>
-        <dd data-ng-bind="::ctrl.paymentId"></dd>
+        <dd data-ng-bind="::$ctrl.paymentId"></dd>
         <dt data-translate="payment_details_payment_date"></dt>
-        <dd data-ng-bind="::ctrl.payment.date | date:'mediumDate'"></dd>
+        <dd data-ng-bind="::$ctrl.payment.date | date:'mediumDate'"></dd>
         <dt data-translate="payment_details_payment_amount"></dt>
-        <dd data-ng-bind="::ctrl.payment.amount.text"></dd>
+        <dd data-ng-bind="::$ctrl.payment.amount.text"></dd>
     </dl>
 
-    <oui-datagrid data-rows-loader="ctrl.loadBills($config)"
-                  data-row-loader="ctrl.loadDetails($row)">
+    <oui-datagrid data-rows-loader="$ctrl.loadBills($config)"
+                  data-row-loader="$ctrl.loadDetails($row)">
         <oui-column data-title=":: 'payment_details_table_header_id' | translate"
                     data-property="billId">
         </oui-column>
