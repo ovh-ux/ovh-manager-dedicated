@@ -1,132 +1,91 @@
-angular.module("Billing.controllers").controller("Billing.controllers.PaymentsCtrl", function ($filter, $log, $q, $scope, $timeout, $state, $translate, constants, Alerter, BillingPayments, BillingdateRangeSelection, featureAvailability, OvhApiMe) {
+angular.module("Billing").controller("Billing.PaymentsCtrl", function ($filter, $q, $scope, $state, $translate, constants, featureAvailability, OvhApiMe) {
     "use strict";
 
-    this.paginatedPayments = null;
-    this.paymentTypes = {
-        model: 0,
-        values: ["0", "creditCard", "debtAccount", "paypal"]
-    };
+    this.loadPayments = ($config) => {
 
-    this.loaders = {
-        payments: false
-    };
+        let request = OvhApiMe.Deposit().v7().query().sort($config.sort.property, $config.sort.dir > 0 ? "ASC" : "DESC");
 
-    this.orderByState = {
-        predicate: "date",
-        reverse: true
-    };
+        _.filter($config.criteria, "property", "date").forEach((crit) => {
+            switch (crit.operator) {
+            case "is":
+                request = request.addFilter("date", "ge", crit.value);
+                request = request.addFilter("date", "le", moment(crit.value).add(1, "day").format("YYYY-MM-DD"));
+                break;
+            case "isAfter":
+                request = request.addFilter("date", "ge", crit.value);
+                break;
+            case "isBefore":
+                request = request.addFilter("date", "ge", crit.value);
+                break;
+            default:
+                break;
+            }
+        });
 
-    this.onDateRangeChanged = () => {
-        $scope.$broadcast("paginationServerSide.loadPage", "1", "paymentsTable");
-    };
+        _.filter($config.criteria, "property", "amount.value").forEach((crit) => {
+            request = request.addFilter("amount.value", {
+                is: "eq",
+                smaller: "lt",
+                bigger: "gt"
+            }[crit.operator], crit.value);
+        });
 
-    this.onOrderStateChanged = (predicate, reverse) => {
-        this.orderByState = { predicate, reverse };
-        $scope.$broadcast("paginationServerSide.loadPage", "1", "paymentsTable");
-    };
+        _.filter($config.criteria, "property", "paymentInfo.paymentType").forEach((crit) => {
+            request = request.addFilter("paymentInfo.paymentType", {
+                is: "eq",
+                isNot: "ne"
+            }[crit.operator], crit.value);
+        });
 
-    this.paymentRequests = null;
-    this.paymentRequestsHref = $state.href("app.account.billing.payments.request");
-
-    function getPaymentsSortOrder ({ predicate, reverse }) {
-        return {
-            field: predicate,
-            order: reverse ? "DESC" : "ASC"
-        };
-    }
-
-    this.loadPayments = (limit, offset) => {
-        const sort = getPaymentsSortOrder(this.orderByState);
-
-        const dateFrom = BillingdateRangeSelection.dateFrom;
-        const dateTo = BillingdateRangeSelection.dateTo;
-
-        let paymentType = this.paymentTypes.model;
-        if (paymentType === "debtAccount") {
-            paymentType = ["debtAccount", "withdrawal"];
-        }
-
-        let paymentsTotalCount = 0;
-        this.loaders.payments = true;
-
-        return $timeout()
-            .then(() =>
-                BillingPayments.getPaymentIds({
-                    dateFrom,
-                    dateTo,
-                    sort,
-                    paymentType
-                })
-            )
-            .then((paymentsCounter) => {
-                paymentsTotalCount = paymentsCounter.length;
-                return BillingPayments.getPayments(paymentsCounter, limit, offset);
-            })
-            .then((paginatedPayments) => {
-                this.paginatedPayments = paginatedPayments;
-                this.paginatedPayments.count = paymentsTotalCount;
-
-                const paymentsErrors = this.paginatedPayments.filter((payment) => payment.error);
-                if (paymentsErrors.length > 0) {
-                    Alerter.alertFromSWS($translate.instant("payments_error", {
-                        t0: paymentsErrors.length
-                    }), { alertType: "ERROR" });
+        return $q.all({
+            count: request.clone().execute().$promise,
+            deposit: request.clone().expand()
+                .offset($config.offset - 1)
+                .limit($config.pageSize)
+                .execute().$promise
+        }).then(({ count, deposit }) => {
+            this.payments = _.map(deposit, "value");
+            return {
+                data: this.payments,
+                meta: {
+                    totalCount: count.length
                 }
-            })
-            .catch((err) => {
-                Alerter.alertFromSWS($translate.instant("payments_error"), err);
-                return $q.reject(err);
-            })
-            .finally(() => {
-                $timeout(() => {
-                    this.loaders.payments = false;
-                });
-            });
+            };
+        });
     };
 
     this.getDatasToExport = () => {
-        const datasToReturn = [[$translate.instant("payments_table_head_id"), $translate.instant("payments_table_head_date"), $translate.instant("payments_table_head_amount"), $translate.instant("payments_table_head_type")]];
-
-        return datasToReturn.concat(this.paginatedPayments.map((payment) => [payment.billId, $filter("date")(payment.date, "mediumDate"), payment.amount.text, this.getTranslatedPaiementType(payment)]));
+        const header = [
+            $translate.instant("payments_table_head_id"),
+            $translate.instant("payments_table_head_date"),
+            $translate.instant("payments_table_head_amount"),
+            $translate.instant("payments_table_head_type")
+        ];
+        const result = [header];
+        return result.concat(this.payments.map((payment) => [
+            payment.depositId,
+            $filter("date")(payment.date, "mediumDate"),
+            payment.amount.text,
+            this.getTranslatedPaiementType(payment)
+        ]));
     };
 
     this.getTranslatedPaiementType = (payment) => payment.paymentInfo ? $translate.instant(`common_payment_type_${payment.paymentInfo.paymentType}`) : $translate.instant("payments_table_type_not_available");
 
-    this.setAction = (action, data) => {
-        const actionModalSelector = $("#currentAction");
-        if (action) {
-            this.currentAction = action;
-            this.currentActionData = data;
-            this.stepPath = `${this.BILLING_BASE_URL}payments/${this.currentAction}.html`;
-
-            actionModalSelector.modal({
-                keyboard: true,
-                backdrop: "static"
-            });
-        } else {
-            actionModalSelector.modal("hide");
-            this.currentActionData = null;
-            $timeout(() => {
-                this.stepPath = "";
-            }, 300);
-        }
-    };
-
-    /**
-     * Should display deposits links.
-     * @return {Boolean}
-     */
     this.shouldDisplayDepositsLinks = () => featureAvailability.showPDFAndHTMLDepositLinks();
 
     this.displayActionsCol = () => constants.target !== "US";
 
+    this.depositDetailsHref = ({ depositId }) => $state.href("app.account.billing.main.paymentsDetails", { id: depositId });
+
     this.$onInit = () => {
+        this.payments = [];
         if (constants.target === "US") {
             return OvhApiMe.DepositRequest().v6().query().$promise.then((depositRequests) => {
                 this.paymentRequests = depositRequests;
+                this.paymentRequestsHref = $state.href("app.account.billing.main.payments.request");
             });
         }
-
-        return null;
+        return $q.when();
     };
 });

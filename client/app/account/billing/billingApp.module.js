@@ -39,23 +39,6 @@ angular
             });
 
             /**
-             * ROUTE: Payments
-             */
-            $stateProvider.state("app.account.billing.payments", {
-                url: "/payments",
-                templateUrl: `${BILLING_BASE_URL}payments/index.html`,
-                controller: "Billing.controllers.PaymentsCtrl",
-                controllerAs: "ctrl"
-            });
-
-            $stateProvider.state("app.account.billing.paymentsDetails", {
-                url: "/payments/:id/details",
-                templateUrl: `${BILLING_BASE_URL}payments/details/billing-payments-details.html`,
-                controller: "Billing.controllers.PaymentDetailsCtrl",
-                controllerAs: "ctrl"
-            });
-
-            /**
              * ROUTE: Orders
              */
             $stateProvider.state("app.account.billing.orders", {
