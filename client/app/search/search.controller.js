@@ -93,7 +93,10 @@ angular
 
                                     if (_.isArray(data) && !_.isEmpty(data)) {
                                         const dataFiltered = _.filter(data, (d) => !_.has(d, "value.message"));
-                                        const dataPath = _.get(_.first(dataFiltered), "path");
+                                        if (_.isEmpty(dataFiltered)) {
+                                            return null;
+                                        }
+                                        const dataPath = _.get(_.first(dataFiltered), "path", "");
 
                                         result.value.details[mappedApiEndpoint.tplRouteParams] = dataPath.match(_.get(mappedApiEndpoint, "tplRoute"))[1];
 
@@ -123,7 +126,7 @@ angular
 
                     return this.$q
                         .all(promises)
-                        .then((mappedApiEndpointResults) => mappedApiEndpointResults);
+                        .then(_.compact);
                 })
                 .then((results) => {
                     this.results = _.map(results, "value");
@@ -139,10 +142,9 @@ angular
 
         buildTargetUrl (result) {
             const details = _.get(result, "details");
-
             if (_.isEmpty(details)) {
                 const target = _.get(this.SEARCH_TARGET_URL, _.get(result, "route.path"));
-                const basePath = this.constants.MANAGER_URLS[target.univers];
+                const basePath = _.get(this.constants.MANAGER_URLS, target.univers);
 
                 return basePath + target.url.replace("{serviceName}", _.get(result, "resource.name"));
             }

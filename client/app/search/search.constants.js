@@ -29,6 +29,10 @@ angular
             univers: "web",
             url: "configuration/private_database/{serviceName}"
         },
+        "/email/domain/{domain}": {
+            univers: "web",
+            url: "configuration/email-domain/{serviceName}"
+        },
         "/email/pro/{service}": {
             univers: "web",
             url: "configuration/email_pro/{serviceName}"
@@ -52,6 +56,10 @@ angular
         "/dedicatedCloud/{serviceName}": {
             univers: "dedicated",
             url: "configuration/dedicated_cloud/{serviceName}"
+        },
+        "/domain/{serviceName}": {
+            univers: "web",
+            url: "configuration/domain/{serviceName}"
         },
         "/ip/service/{serviceName}": {
             univers: "dedicated",
@@ -126,12 +134,12 @@ angular
         }
     })
     .constant("SEARCH_MAPPING_API_ENDPOINTS", {
-        "/allDom/{serviceName}": {
+        /* "/domain/{serviceName}": {
             queryUrl: "apiv6/domain/{serviceName}",
             tplRouteParams: "parentService",
             univers: "web",
             url: "configuration/all_dom/{parentService}/{serviceName}?tab=GENERAL_INFORMATIONS"
-        },
+        },*/
         "/email/exchange/{organizationName}/service/{exchangeService}": {
             queryUrl: "apiv7/email/exchange/*/service/{serviceName}?$aggreg=1",
             tplRoute: "email/exchange\/(.+)\/service",
