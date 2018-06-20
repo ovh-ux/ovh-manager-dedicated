@@ -1,4 +1,4 @@
-angular.module("Billing.controllers").controller("BillingHistoryRequestCtrl", class BillingHistoryRequestCtrl {
+angular.module("Billing").controller("BillingHistoryRequestCtrl", class BillingHistoryRequestCtrl {
 
     constructor ($q, $state, OvhApiMe, BillingBill, Alerter) {
         this.$q = $q;
