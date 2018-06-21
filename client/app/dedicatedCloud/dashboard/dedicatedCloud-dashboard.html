@@ -27,7 +27,7 @@
                                     <oui-action-menu-item
                                         aria-label="{{:: 'common_change' | translate }}"
                                         data-text="{{:: 'common_change' | translate }}"
-                                        data-ui-sref="app.dedicatedClouds.description-update({ value: dedicatedCloud.description, contextTitle: 'dedicatedCloud_description' })">
+                                        data-ng-click="editDescription(dedicatedCloud.description)">
                                     </oui-action-menu-item>
                                     <oui-action-menu-item
                                         aria-label="{{:: 'dedicatedCloud_close_service' | translate }}"

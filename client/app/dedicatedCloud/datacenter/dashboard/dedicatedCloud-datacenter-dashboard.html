@@ -21,7 +21,7 @@
                                 <oui-action-menu-item
                                     aria-label="{{:: 'common_change' | translate }}"
                                     data-text="{{:: 'common_change' | translate }}"
-                                    data-ui-sref="app.dedicatedClouds.datacenter.name-update({ value: datacenterName.model, contextTitle: 'dedicatedCloud_datacenter_name' })">
+                                    data-ng-click="editDescription(datacenterName.model, 'dedicatedCloud_datacenter_name')">
                                 </oui-action-menu-item>
                                 <oui-action-menu-item
                                     aria-label="{{:: 'dedicatedCloud_datacenter_delete' | translate }}"
@@ -46,7 +46,7 @@
                                 <oui-action-menu-item
                                     aria-label="{{:: 'common_change' | translate }}"
                                     data-text="{{:: 'common_change' | translate }}"
-                                    data-ui-sref="app.dedicatedClouds.datacenter.name-update({ value: datacenterDescription.model, contextTitle: 'dedicatedCloud_datacenter_description' })">
+                                    data-ng-click="editDescription(datacenterDescription.model, 'dedicatedCloud_datacenter_description')">
                                 </oui-action-menu-item>
                             </oui-action-menu>
                         </div>

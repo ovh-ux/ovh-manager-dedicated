@@ -101,37 +101,26 @@ angular.module("App").controller("DedicatedCloudCtrl", [
             $scope.loadDedicatedCloud();
         });
 
-        $scope.editDescription = function () {
-            if (!$scope.dedicatedCloudDescription.loading) {
-                $scope.dedicatedCloudDescription.editMode = true;
-                setTimeout(() => {
-                    $("#textareaDedicatedDescription").focus();
-                }, 200);
-            }
-        };
-
-        $scope.setDescription = function () {
-            $scope.dedicatedCloudDescription.editMode = false;
-            $scope.dedicatedCloudDescription.loading = true;
-            DedicatedCloud.updateDescription($stateParams.productId, $scope.dedicatedCloudDescription.model)
-                .then(
-                    (data) => {
-                        $scope.setMessage($translate.instant("dedicatedCloud_edit_description_success"), data);
-                        $scope.dedicatedCloud.description = angular.copy($scope.dedicatedCloudDescription.model);
-                    },
-                    (data) => {
-                        $scope.dedicatedCloudDescription.model = angular.copy($scope.dedicatedCloud.description);
-                        $scope.setMessage($translate.instant("dedicatedCloud_edit_description_fail", [$scope.dedicatedCloud.name]), data.data);
+        $scope.editDescription = function (value) {
+            const modal = $uibModal.open({
+                animation: true,
+                templateUrl: "components/name-edition/name-edition.html",
+                controller: "NameEditionCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    data () {
+                        return {
+                            contextTitle: "dedicatedCloud_description",
+                            productId: $stateParams.productId,
+                            value
+                        };
                     }
-                )
-                .finally(() => {
-                    $scope.dedicatedCloudDescription.loading = false;
-                });
-        };
+                }
+            });
 
-        $scope.cancelDescription = function () {
-            $scope.dedicatedCloudDescription.editMode = false;
-            $scope.dedicatedCloudDescription.model = angular.copy($scope.dedicatedCloud.description);
+            modal.result.then((newDescription) => {
+                $scope.dedicatedCloud.description = newDescription;
+            });
         };
 
         $scope.getRight = function (order) {

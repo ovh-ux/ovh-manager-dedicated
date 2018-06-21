@@ -12,15 +12,6 @@ angular.module("App").config(($stateProvider, $urlServiceProvider) => {
         },
         reloadOnSearch: false,
         translations: ["dedicatedCloud"]
-    }).state("app.dedicatedClouds.description-update", {
-        url: "/description-update",
-        controller: "NameEditionCtrl",
-        templateUrl: "components/name-edition/name-edition.html",
-        layout: "modal",
-        params: {
-            value: null,
-            contextTitle: ""
-        }
     });
 
     // ensure compatibility with links sended by emails like #/configuration/dedicated_cloud/pcc-123456?action=confirmcancel&token=myToken

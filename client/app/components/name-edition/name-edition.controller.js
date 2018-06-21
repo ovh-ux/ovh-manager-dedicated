@@ -1,30 +1,18 @@
 angular.module("App").controller("NameEditionCtrl", class NameEditionCtrl {
 
-    constructor ($scope, $state, $stateParams, $timeout, $transitions, $translate, Alerter, DedicatedCloud) {
-        this.$scope = $scope;
-        this.$state = $state;
-        this.$stateParams = $stateParams;
-        this.$timeout = $timeout;
-        this.$transitions = $transitions;
+    constructor ($translate, $uibModalInstance, Alerter, DedicatedCloud, data) {
         this.$translate = $translate;
+        this.$uibModalInstance = $uibModalInstance;
         this.Alerter = Alerter;
         this.DedicatedCloud = DedicatedCloud;
-    }
-
-    closeModal () {
-        const successMessageDelay = 500;
-        this.$state.go("^", null, { reload: true }).then(() => {
-            this.$timeout(() => {
-                this.Alerter.success(this.$translate.instant(`${this.modalContextTitle}_edit_success`), "dedicatedCloud");
-            }, successMessageDelay);
-        });
+        this.data = data;
     }
 
     updateDescription () {
         this.updating = true;
         this.updateName()
             .then(() => {
-                this.closeModal();
+                this.$uibModalInstance.close(this.newValue);
             }).catch((err) =>
                 this.Alerter.error([this.$translate.instant(`${this.modalContextTitle}_edit_error`, {
                     t0: this.newValue
@@ -35,21 +23,21 @@ angular.module("App").controller("NameEditionCtrl", class NameEditionCtrl {
     }
 
     $onInit () {
-        this.newValue = this.$stateParams.value;
-        this.contextTitle = this.$stateParams.contextTitle;
+        this.newValue = this.data.value;
+        this.contextTitle = this.data.contextTitle;
 
-        switch (this.$stateParams.contextTitle) {
+        switch (this.data.contextTitle) {
         case "dedicatedCloud_description":
             this.modalContextTitle = "dedicatedCloud_description";
-            this.updateName = () => this.DedicatedCloud.updateDescription(this.$stateParams.productId, this.newValue);
+            this.updateName = () => this.DedicatedCloud.updateDescription(this.data.productId, this.newValue);
             break;
         case "dedicatedCloud_datacenter_name":
             this.modalContextTitle = "dedicatedCloud_datacenter_name";
-            this.updateName = () => this.DedicatedCloud.updateDatacenterName(this.$stateParams.productId, this.$stateParams.datacenterId, this.newValue);
+            this.updateName = () => this.DedicatedCloud.updateDatacenterName(this.data.productId, this.data.datacenterId, this.newValue);
             break;
         case "dedicatedCloud_datacenter_description":
             this.modalContextTitle = "dedicatedCloud_datacenter_description";
-            this.updateName = () => this.DedicatedCloud.updateDatacenterDescription(this.$stateParams.productId, this.$stateParams.datacenterId, this.newValue);
+            this.updateName = () => this.DedicatedCloud.updateDatacenterDescription(this.data.productId, this.data.datacenterId, this.newValue);
             break;
         default:
             this.modalContextTitle = "description";
