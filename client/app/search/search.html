@@ -34,7 +34,7 @@
                 <ul class="list-unstyled"
                     data-ng-if="!$ctrl.isSearching && $ctrl.results.length">
                     <li class="mb-5"
-                        data-ng-repeat="result in $ctrl.results track by $index">
+                        data-ng-repeat="result in $ctrl.getPaginatedResults() track by $index">
                         <h3>
                             <a class="d-block"
                                data-ng-href="{{ $ctrl.buildTargetUrl(result) }}"
@@ -44,6 +44,8 @@
                         <span class="text-muted">{{ $ctrl.constructor.buildBreadcrumb(result) }}</span>
                     </li>
                 </ul>
+                <oui-pagination current-offset="$ctrl.pagination.offset" page-size="$ctrl.pagination.size" total-items="$ctrl.results.length" on-change="$ctrl.onPaginationChange($event)">
+                </oui-pagination>
             </div>
         </div>
 

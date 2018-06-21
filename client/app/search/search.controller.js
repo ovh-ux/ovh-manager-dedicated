@@ -17,6 +17,10 @@ angular
             this.queryValue = this.getQueryParam();
             this.results = [];
             this.isSearching = false;
+            this.pagination = {
+                offset: 1,
+                size: 5
+            };
 
             if (_.isEmpty(this.queryValue)) {
                 return null;
@@ -150,6 +154,16 @@ angular
             }
 
             return this.constants.MANAGER_URLS[details.univers] + details.url;
+        }
+
+        getPaginatedResults () {
+            return _.slice(this.results, this.pagination.offset, this.pagination.offset + this.pagination.size);
+        }
+
+        onPaginationChange ($event) {
+            this.pagination.offset = $event.offset;
+            this.pagination.size = $event.pageSize;
+            this.getPaginatedResults();
         }
 
         static buildBreadcrumb (result) {
