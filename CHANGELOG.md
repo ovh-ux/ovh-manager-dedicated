@@ -1,3 +1,23 @@
+<a name="9.6.6"></a>
+## [9.6.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.5...v9.6.6) (2018-06-21)
+
+
+### Bug Fixes
+
+* **dedicated:server:** renewal date for autorenew ([d3c8ea3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d3c8ea3))
+* **dedicated.server:** Display renewal date for US ([3f652f1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3f652f1))
+* **pcc:** replace table with datagrid in datastore section ([#412](https://github.com/ovh-ux/ovh-manager-dedicated/issues/412)) ([41e4d50](https://github.com/ovh-ux/ovh-manager-dedicated/commit/41e4d50))
+* **pcc dc host:** replace table with datagrid ([#409](https://github.com/ovh-ux/ovh-manager-dedicated/issues/409)) ([c221d91](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c221d91))
+
+
+### Features
+
+* **billing:** add confirm terminate for all subsidiaries ([3153a61](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3153a61))
+* **navbar:** add new navbar notifications ([f9877f0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f9877f0))
+* **oui-angular:** add translations for oui components ([7dadfcf](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7dadfcf))
+
+
+
 <a name="9.6.5"></a>
 ## [9.6.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.4...v9.6.5) (2018-06-19)
 
