@@ -157,7 +157,7 @@ angular
         }
 
         getPaginatedResults () {
-            return _.slice(this.results, this.pagination.offset, this.pagination.offset + this.pagination.size);
+            return _.slice(this.results, this.pagination.offset - 1, (this.pagination.offset - 1) + this.pagination.size);
         }
 
         onPaginationChange ($event) {

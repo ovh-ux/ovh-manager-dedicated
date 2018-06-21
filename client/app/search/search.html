@@ -44,7 +44,7 @@
                         <span class="text-muted">{{ $ctrl.constructor.buildBreadcrumb(result) }}</span>
                     </li>
                 </ul>
-                <oui-pagination current-offset="$ctrl.pagination.offset" page-size="$ctrl.pagination.size" total-items="$ctrl.results.length" on-change="$ctrl.onPaginationChange($event)">
+                <oui-pagination current-offset="$ctrl.pagination.offset" page-size="$ctrl.pagination.size" total-items="$ctrl.results.length" on-change="$ctrl.onPaginationChange($event)" data-ng-show="$ctrl.results.length">
                 </oui-pagination>
             </div>
         </div>
