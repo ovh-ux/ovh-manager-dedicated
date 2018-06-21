@@ -34,6 +34,13 @@
             return url;
         }
 
+        getDate () {
+            if (this.isAutoRenew()) {
+                return moment(this.serviceInfos.expiration).add(1, "days").format();
+            }
+            return this.serviceInfos.expiration;
+        }
+
         isAutoRenew () {
             return this.serviceInfos.renew && (this.serviceInfos.renew.automatic || this.serviceInfos.renew.forced);
         }
