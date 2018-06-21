@@ -1,8 +1,8 @@
 <span data-ng-class="{ 'd-block': !$ctrl.inline }">
-    <span data-ng-if="$ctrl.constants.target !== 'US'">
+    <span>
         <a class="mr-2"
             data-ng-href="{{:: $ctrl.getRenewUrl() }}"
-            data-ng-bind=":: $ctrl.serviceInfos.expiration | date:'mediumDate'"
+            data-ng-bind=":: $ctrl.getDate() | date:'mediumDate'"
             data-ng-if="!$ctrl.hideRenewDate">
         </a>
 
