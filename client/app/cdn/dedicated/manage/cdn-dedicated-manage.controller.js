@@ -1,10 +1,11 @@
 angular.module("App").controller("CdnManageCtrl", class CdnManageCtrl {
 
-    constructor ($scope, $q, $stateParams, $filter, $translate, Cdn) {
+    constructor ($scope, $state, $stateParams, $q, $filter, $translate, Cdn) {
         // injections
         this.$scope = $scope;
-        this.$q = $q;
+        this.$state = $state;
         this.$stateParams = $stateParams;
+        this.$q = $q;
         this.$filter = $filter;
         this.$translate = $translate;
         this.Cdn = Cdn;

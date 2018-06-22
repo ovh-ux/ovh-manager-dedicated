@@ -174,6 +174,7 @@ angular.module("App")
                                 const sidebarItem = SidebarMenu.addMenuItem({
                                     title: network.name,
                                     state: "app.networks.cdn.dedicated",
+                                    id: network.name,
                                     stateParams: {
                                         productId: network.name
                                     },

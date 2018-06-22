@@ -3,6 +3,9 @@ angular.module("App").component("cdnDedicatedBackendManagement", {
     controller: "CdnDedicatedBackendManagementCtrl",
     bindings: {
         cdnService: "<",
-        loading: "<"
+        ngModel: "=",
+        loading: "=",
+        onInitSuccess: "&?",
+        onInitError: "&?"
     }
 });

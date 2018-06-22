@@ -14,38 +14,12 @@
            data-translate-values="{ t0: $ctrl.cdnDomain.domain }">
         </p>
 
-        <oui-field data-label="{{ :: 'cdn_dedicated_domain_backend_update_choice' | translate }}">
-            <label class="oui-select">
-                <select class="oui-select__input"
-                        id="existingBackend"
-                        name="existingBackend"
-                        data-ng-model="$ctrl.model.existingBackend"
-                        data-ng-options="backend === 'new' ? ('cdn_dedicated_domain_backend_update_choice_new' | translate) : backend for backend in $ctrl.availableBackends">
-                </select>
-                <i class="oui-icon oui-icon-chevron-down"
-                   aria-hidden="true">
-                </i>
-            </label>
-        </oui-field>
-
-        <oui-field data-ng-if="$ctrl.model.existingBackend === 'new' && $ctrl.cdnDedicated.backendLimit > ($ctrl.availableBackends.length - 1)"
-                   data-label="{{ :: 'cdn_dedicated_domain_backend_update_new' | translate }}"
-                   data-error-messages="{ ipv4: ('cdn_dedicated_domain_backend_update_new_bad_format' | translate) }">
-            <input class="oui-input"
-                   type="text"
-                   id="newBackend"
-                   name="newBackend"
-                   data-ng-model="$ctrl.model.newBackend"
-                   data-ng-required="$ctrl.model.existingBackend === 'new'"
-                   data-ui-validate="{ ipv4: '$ctrl.Validator.isValidIpv4($value)' }" />
-        </oui-field>
-
-        <div data-ng-if="$ctrl.model.existingBackend === 'new' && $ctrl.cdnDedicated.backendLimit <= ($ctrl.availableBackends.length - 1)">
-            <p data-translate="cdn_dedicated_domain_backend_update_full"
-               data-translate-values="{ backendOrderSref: 'app.networks.cdn.dedicated.backend.order' }"
-               data-translate-compile>
-            </p>
-        </div>
+        <cdn-dedicated-backend-management data-cdn-service="$ctrl.cdnDedicated"
+                                          data-loading="$ctrl.loading.backend"
+                                          data-on-init-success="$ctrl.onBackendManagementInitSuccess.bind($ctrl)"
+                                          data-on-init-error="$ctrl.onBackendManagementInitError.bind($ctrl)"
+                                          data-ng-model="$ctrl.model.backend">
+        </cdn-dedicated-backend-management>
 
     </oui-modal>
 

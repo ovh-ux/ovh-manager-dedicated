@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
     <translation id="cdn_dedicated_domain_backend_update_question" qtlid="132603">Vous souhaitez modifier le backend du domaine {0} ?</translation>
-    <translation id="cdn_dedicated_domain_backend_update_choice">Choix du backend</translation>
-    <translation id="cdn_dedicated_domain_backend_update_choice_new">Ajouter un nouveau backend</translation>
-    <translation id="cdn_dedicated_domain_backend_update_new">Nouveau backend</translation>
-    <translation id="cdn_dedicated_domain_backend_update_new_bad_format">Le nouveau backend doit être une IPv4 valide.</translation>
-    <translation id="cdn_dedicated_domain_backend_update_full">Votre pool de backend est complet, cet ajout requiert 1 backend supplémentaire. Cliquez sur ce lien pour <a data-ui-sref="{{ backendOrderSref }}">commander des backends</a>.</translation>
-    <translation id="cdn_dedicated_domain_backend_update_full_buy" qtlid="133981">Commander des backends</translation>
     <translation id="cdn_dedicated_domain_backend_update_success">Le backend du domaine {0} a été modifié avec succès.</translation>
     <translation id="cdn_dedicated_domain_backend_update_fail">Une erreur est survenue lors de la modification du backend du domaine {0}.</translation>
+    <translation id="cdn_dedicated_domain_backend_load_fail">Une erreur est survenue lors du chargement de vos backends existants.</translation>
 </translations>

@@ -1,78 +1,109 @@
 angular.module("App").controller("CdnDomainAddCtrl", class CdnDomainAddCtrl {
 
-    constructor (cdnDedicated) {
+    constructor ($state, $stateParams, $translate, cdnDedicated, ouiMessageAlerter, OvhApiCdnDedicated, SidebarMenu) {
         // Injections
-        this.cdnDedicated = cdnDedicated;
+        this.$state = $state;
+        this.$stateParams = $stateParams;
+        this.$translate = $translate;
+        this.cdnDedicated = cdnDedicated; // from app.networks.cdn.dedicated state resolve
+        this.ouiMessageAlerter = ouiMessageAlerter;
+        this.OvhApiCdnDedicated = OvhApiCdnDedicated;
+        this.SidebarMenu = SidebarMenu;
 
-        // Other attributes used in view
+        // Other attributes
         this.model = {
-            domainName: null
+            domainName: null,
+            backend: null
         };
+
+        this.loading = {
+            backend: false,
+            save: false
+        };
+
+        this.backends = null;
     }
 
+    /* =============================
+    =            EVENTS            =
+    ============================== */
+
+    /* ----------  Backend Management Component Callbacks  ---------- */
+
+    onBackendManagementInitSuccess (backendList) {
+        this.backends = backendList;
+    }
+
+    onBackendManagementInitError (error) {
+        this.$state.go("^");
+        this.ouiMessageAlerter.error([this.$translate.instant("cdn_dedicated_domain_add_load_error"), _.get(error, "data.message")].join(" "), "app.networks.cdn.dedicated");
+    }
+
+    /* ----------  Form submission  ---------- */
+
+    cdnDedicatedDomainAddFormSubmit () {
+        if (this.loading.backend || !this.cdnDedicatedDomainAddForm.$valid) {
+            return false;
+        } else if (this.cdnDedicated.backendLimit <= this.backends.length) {
+            return this.$state.go("^");
+        }
+
+        /*
+        if (this.backendUpdateForm.$invalid) {
+            return false;
+        } else if (this.cdnDedicated.backendLimit <= (this.availableBackends.length - 1)) {
+            return this.closeModal();
+        }
+         */
+
+        this.loading.save = true;
+
+        return this.OvhApiCdnDedicated.Domains().v6().add({
+            serviceName: this.$stateParams.productId
+        }, {
+            domain: this.model.domainName
+        }).$promise.then(({ domain }) => this.OvhApiCdnDedicated.Domains().Backends().v6().add({
+            serviceName: this.$stateParams.productId,
+            domain
+        }, {
+            ip: this.model.backend
+        }).$promise).then(() => {
+            this.ouiMessageAlerter.success(this.$translate.instant("cdn_dedicated_domain_add_success", {
+                t0: this.model.domainName,
+                t1: this.model.backend
+            }), "app.networks.cdn.dedicated");
+
+            // update sidebar menu
+            const cdnSideBarItem = this.SidebarMenu.getItemById(this.$stateParams.productId);
+            if (cdnSideBarItem) {
+                this.SidebarMenu.addMenuItem({
+                    title: this.model.domainName,
+                    state: "app.networks.cdn.dedicated.domain",
+                    stateParams: {
+                        productId: this.$stateParams.productId,
+                        domain: this.model.domainName
+                    }
+                }, cdnSideBarItem);
+            }
+        }).catch((error) => {
+            this.ouiMessageAlerter.error([this.$translate.instant("cdn_dedicated_domain_add_error"), _.get(error, "data.message")].join(" "), "app.networks.cdn.dedicated");
+        }).finally(() => {
+            this.loading.save = false;
+            this.$state.go("^");
+        });
+    }
+
+    /* -----  End of EVENTS  ------ */
+
+    /* =====================================
+    =            INITIALIZATION            =
+    ====================================== */
+
+    $onInit () {
+        this.model.domainName = null;
+        this.model.backend = null;
+    }
+
+    /* -----  End of INITIALIZATION  ------ */
+
 });
-
-// angular.module("App").controller("CdnAddDomainsCtrl", ($scope, $stateParams, $translate, Cdn) => {
-//     "use strict";
-
-//     $scope.backends = null;
-
-//     $scope.domain = {};
-//     $scope.newBackend = {};
-
-//     $scope.isSecondStepValid = function () {
-//         return $scope.domain.backend || ($scope.newBackend.value && !$scope.maxBackendsReached());
-//     };
-
-//     $scope.loadBackends = function () {
-//         if (!$scope.backends) {
-//             Cdn.getBackends($stateParams.productId).then((backends) => {
-//                 $scope.backends = backends;
-//             });
-//         }
-//     };
-
-//     $scope.maxBackendsReached = function () {
-//         return $scope.backends && $scope.backends.backendsMax && $scope.backends.backendsMax === $scope.backends.results.length;
-//     };
-
-//     // On newbackend change, reset select
-//     $scope.$watch(
-//         "newBackend.value",
-//         (backend) => {
-//             if (backend) {
-//                 $scope.domain.backend = null;
-//             }
-//         },
-//         true
-//     );
-
-//     // On select change, reset newBackend input
-//     $scope.$watch(
-//         "domain.backend",
-//         (backend) => {
-//             if (backend) {
-//                 $scope.newBackend.value = null;
-//             }
-//         },
-//         true
-//     );
-
-//     $scope.addDomain = function () {
-//         if ($scope.newBackend.value) {
-//             $scope.domain.backend = $scope.newBackend.value;
-//         }
-//         $scope.resetAction();
-//         Cdn.addDomain($stateParams.productId, $scope.domain).then(
-//             () => {
-//                 $scope.setMessage($translate.instant("cdn_configuration_add_domain_success", {
-//                     t0: $scope.domain.domain,
-//                     t1: $scope.domain.backend
-//                 }), true);
-//             },
-//             (data) => {
-//                 $scope.setMessage($translate.instant("cdn_configuration_add_domain_fail"), data);
-//             }
-//         );
-//     };
-// });

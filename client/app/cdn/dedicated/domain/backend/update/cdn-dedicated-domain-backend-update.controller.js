@@ -15,12 +15,12 @@ angular.module("App").controller("CdnDomainBackendUpdateCtrl", class CdnDomainBa
         // Other attributes used in view
         this.loading = {
             init: false,
-            update: false
+            update: false,
+            backend: false
         };
 
         this.model = {
-            existingBackend: null,
-            newBackend: null
+            backend: null
         };
 
         this.backend = null;
@@ -44,10 +44,23 @@ angular.module("App").controller("CdnDomainBackendUpdateCtrl", class CdnDomainBa
     =            EVENTS            =
     ============================== */
 
+    /* ----------  Backend management component callbacks  ---------- */
+
+    onBackendManagementInitSuccess (backendList) {
+        this.availableBackends = backendList;
+    }
+
+    onBackendManagementInitError (error) {
+        this.$state.go("^");
+        this.ouiMessageAlerter.error([this.$translate.instant("cdn_dedicated_domain_backend_load_fail"), _.get(error, "data.message")].join(" "), "app.networks.cdn.dedicated.domain");
+    }
+
+    /* ----------  Form submission  ---------- */
+
     onDomainBackendUpdateFormSubmit () {
         if (this.backendUpdateForm.$invalid) {
             return false;
-        } else if (this.cdnDedicated.backendLimit <= (this.availableBackends.length - 1)) {
+        } else if (this.cdnDedicated.backendLimit <= this.availableBackends.length) {
             return this.closeModal();
         }
 
@@ -67,7 +80,7 @@ angular.module("App").controller("CdnDomainBackendUpdateCtrl", class CdnDomainBa
             serviceName: this.$stateParams.productId,
             domain: this.$stateParams.domain
         }, {
-            ip: this.model.existingBackend === "new" ? this.model.newBackend : this.model.existingBackend
+            ip: this.model.backend
         }).$promise).then(() => {
             this.ouiMessageAlerter.success(this.$translate.instant("cdn_dedicated_domain_backend_update_success", {
                 t0: this.cdnDomain.domain
@@ -113,18 +126,9 @@ angular.module("App").controller("CdnDomainBackendUpdateCtrl", class CdnDomainBa
     $onInit () {
         this.loading.init = true;
 
-        return this.$q.all({
-            domainBackends: this._getDomainBackends(),
-            allBackends: this.OvhApiCdnDedicated.v6().swsGetAllBackends({
-                serviceName: this.$stateParams.productId
-            }).$promise
-        }).then((results) => {
-            this.backend = _.get(_.first(results.domainBackends), "ip");
-            this.availableBackends = _.map(results.allBackends.results, "ipv4").sort();
-            this.availableBackends.unshift("new");
-
-            // set models
-            this.model.existingBackend = this.backend || "new";
+        return this._getDomainBackends().then((domainBackends) => {
+            this.backend = _.get(_.first(domainBackends), "ip");
+            this.model.backend = this.backend;
         }).finally(() => {
             this.loading.init = false;
         });
