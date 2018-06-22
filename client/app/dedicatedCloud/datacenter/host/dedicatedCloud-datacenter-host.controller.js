@@ -1,64 +1,50 @@
-angular.module("App").controller("DedicatedCloudSubDatacentersHostCtrl", ($scope, $state, $stateParams, $q, $translate, constants, DedicatedCloud) => {
+angular.module("App").controller("DedicatedCloudSubDatacentersHostCtrl", function ($q, $scope, $state, $stateParams, $translate, constants, DedicatedCloud) {
     "use strict";
 
-    $scope.hosts = null;
-    $scope.loaders = {
-        hosts: false,
-        datacenter: true
-    };
-    $scope.constants = constants;
+    this.loadHosts = ({ offset, pageSize }) => DedicatedCloud.getHosts(
+        $stateParams.productId,
+        $stateParams.datacenterId,
+        pageSize,
+        offset - 1
+    ).then((result) => {
+        const hosts = _.get(result, "list.results");
+        return $q.all(hosts.map((host) => {
+            if (host.billingType === "HOURLY") {
+                return DedicatedCloud.getHostHourlyConsumption(
+                    $stateParams.productId,
+                    $stateParams.datacenterId,
+                    host.hostId
+                ).then((consumption) => _.merge({}, host, consumption));
+            }
+            return $q.when(host);
 
-    $scope.loadHosts = function (elementsByPage, elementsToSkip) {
-        $scope.loaders.hosts = true;
-        DedicatedCloud.getHosts($stateParams.productId, $stateParams.datacenterId, elementsByPage, elementsToSkip)
-            .then((hosts) => {
-                $scope.hosts = hosts;
-                return $scope.hosts.count > 0 ? loadHourlyHostsUsage($scope.hosts.list.results) : [];
-            })
-            .then((hostsWithUsage) => {
-                $scope.hosts.list.results = hostsWithUsage;
-            })
-            .catch((data) => {
-                $scope.setMessage($translate.instant("dedicatedCloud_tab_hosts_loading_error"), angular.extend(data, { type: "ERROR" }));
-            })
-            .finally(() => {
-                $scope.loaders.hosts = false;
-            });
-    };
+        })).then((hostsWithConsumption) => ({
+            data: hostsWithConsumption,
+            meta: {
+                totalCount: result.count
+            }
+        }));
+    });
 
-    function loadHourlyHostsUsage (hosts) {
-        return $q.all(hosts.map((host) => host.billingType === "HOURLY" ? fetchHourlyHostUsage(host) : $q.when(host)));
-    }
-
-    function fetchHourlyHostUsage (host) {
-        return DedicatedCloud.getHostHourlyConsumption($stateParams.productId, $stateParams.datacenterId, host.hostId)
-            .then((hostConsumption) => _.merge({}, host, hostConsumption))
-            .catch((err) => err && err.message === "No consumption for this host" ? host : $q.reject(err));
-    }
-
-    $scope.getDatacenterCommercialRange = function (datacenterId) {
-        $scope.loaders.datacenter = true;
-        DedicatedCloud.getDatacenterInfoProxy($stateParams.productId, datacenterId)
-            .then((datacenter) => {
-                $scope.datacenter.model.commercialRangeName = datacenter.commercialRangeName;
-                $scope.datacenter.model.hasDiscountAMD = DedicatedCloud.hasDiscount($scope.datacenter.model);
-            })
-            .finally(() => {
-                $scope.loaders.datacenter = false;
-            });
+    this.$onInit = () => {
+        this.loading = true;
+        this.constants = constants;
+        return DedicatedCloud.getDatacenterInfoProxy(
+            $stateParams.productId,
+            $stateParams.datacenterId
+        ).then((datacenter) => {
+            $scope.datacenter.model.commercialRangeName = datacenter.commercialRangeName;
+            $scope.datacenter.model.hasDiscountAMD = DedicatedCloud.hasDiscount($scope.datacenter.model);
+        }).finally(() => {
+            this.loading = false;
+        });
     };
 
-    $scope.init = function () {
-        $scope.getDatacenterCommercialRange($scope.datacenter.model.id);
-    };
-
-    $scope.orderHost = (datacenter) => {
+    this.orderHost = (datacenter) => {
         if (constants.target === "US") {
             $state.go("app.dedicatedClouds.datacenter.hosts.orderUS");
         } else {
             $scope.setAction("datacenter/host/order/dedicatedCloud-datacenter-host-order", datacenter.model, true);
         }
     };
-
-    $scope.init();
 });
