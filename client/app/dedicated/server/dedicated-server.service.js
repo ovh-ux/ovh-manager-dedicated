@@ -687,8 +687,14 @@ angular
             });
         };
 
-        this.ipmiStartConnection = function (serviceName, type, ttl, ipToAllow, sshKey) {
-            return OvhHttp.post("/dedicated/server/{serviceName}/features/ipmi/access", {
+        this.ipmiStartConnection = function ({ serviceName, type, ttl, ipToAllow, sshKey, withGeolocation }) {
+            let promise = $q.when(ipToAllow);
+
+            if (withGeolocation) {
+                promise = this.getIpGeolocation().then(({ ip }) => ip);
+            }
+
+            return promise.then((ip) => OvhHttp.post("/dedicated/server/{serviceName}/features/ipmi/access", {
                 rootPath: "apiv6",
                 urlParams: {
                     serviceName
@@ -696,9 +702,10 @@ angular
                 data: {
                     ttl,
                     type,
-                    sshKey
+                    sshKey,
+                    ipToAllow: ip
                 }
-            });
+            }));
         };
 
         this.ipmiGetConnection = function (serviceName, type) {
@@ -730,6 +737,12 @@ angular
                     serviceName
                 },
                 broadcast: "dedicated.ipmi.resetsessions"
+            });
+        };
+
+        this.getIpGeolocation = function () {
+            return OvhHttp.post("/me/geolocation", {
+                rootPath: "apiv6"
             });
         };
 
