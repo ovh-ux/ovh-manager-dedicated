@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudSubDatacenterLicencesSplaEnableCtrl", ($scope, $stateParams, $translate, DedicatedCloud, $rootScope) => {
+angular.module("App").controller("DedicatedCloudLicencesSplaEnableCtrl", ($scope, $stateParams, $translate, DedicatedCloud, $rootScope) => {
     "use strict";
 
     $scope.spla = {

@@ -1,4 +1,4 @@
-<div data-ng-controller="DedicatedCloudSubDatacenterLicencesCtrl">
+<div data-ng-controller="DedicatedCloudLicencesCtrl">
 
     <h2 data-translate="dedicatedCloud_tab_license"></h2>
 
@@ -6,6 +6,9 @@
          data-ng-if="loading.licences">
         <oui-spinner></oui-spinner>
     </div>
+
+    <div data-ovh-alert></div>
+
     <div class="row"
          data-ng-show="!loading.licences && licences.spla != null">
         <div class="col-sm-9">
@@ -18,8 +21,8 @@
             <button type="button"
                     class="btn btn-block btn-default"
                     data-ng-hide="licences.spla"
-                    data-ng-click="canBeActivatedSpla() && setAction('datacenter/license/enable/dedicatedCloud-datacenter-license-enable')"
-                    data-ng-disabled="!canBeActivatedSpla"
+                    data-ng-click="canBeActivatedSpla() && enableLicense()"
+                    data-ng-disabled="!canBeActivatedSpla()"
                     data-translate="dedicatedCloud_tab_licences_spla_on">
             </button>
         </div>

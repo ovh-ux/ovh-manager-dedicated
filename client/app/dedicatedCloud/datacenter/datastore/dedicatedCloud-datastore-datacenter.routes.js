@@ -6,9 +6,11 @@ angular.module("App").config(($stateProvider) => {
         views: {
             pccDatacenterView: {
                 templateUrl: "dedicatedCloud/datacenter/datastore/dedicatedCloud-datacenter-datastore.html",
-                controller: "DedicatedCloudSubDatacentersDatastoreCtrl"
+                controller: "DedicatedCloudSubDatacentersDatastoreCtrl",
+                controllerAs: "$ctrl"
             }
-        }
+        },
+        translations: ["dedicated/server"]
     });
 
     $stateProvider.state("app.dedicatedClouds.datacenter.datastores.orderUS", {

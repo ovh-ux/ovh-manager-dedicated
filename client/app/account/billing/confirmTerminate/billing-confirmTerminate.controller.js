@@ -1,57 +1,84 @@
-angular.module("Billing.controllers").controller("Billing.controllers.TerminateServiceCtrl", function ($stateParams, BillingTerminate) {
-    "use strict";
-
-    this.reasons = ["LACK_OF_PERFORMANCES", "TOO_EXPENSIVE", "TOO_HARD_TO_USE", "NOT_RELIABLE", "NOT_NEEDED_ANYMORE", "MIGRATED_TO_COMPETITOR", "MIGRATED_TO_ANOTHER_OVH_PRODUCT", "OTHER"];
-
-    this.serviceId = $stateParams.id;
-    this.serviceState = null;
-    this.token = $stateParams.token;
-    this.loading = true;
-    this.terminating = false;
-    this.error = false;
-    this.globalError = null;
-
-    this.init = function () {
-        if (!this.token || !this.serviceId) {
-            this.globalError = true;
-            return;
+angular.module("Billing.controllers")
+    .controller("Billing.controllers.TerminateServiceCtrl", class TerminateServiceCtrl {
+        constructor ($q, $stateParams, BillingTerminate, User) {
+            this.$q = $q;
+            this.$stateParams = $stateParams;
+            this.BillingTerminate = BillingTerminate;
+            this.User = User;
         }
 
-        this.loading = true;
-        BillingTerminate
-            .getServiceInfo(this.serviceId)
-            .then((serviceInfos) => {
-                this.serviceInfos = serviceInfos;
-                return serviceInfos.serviceId;
-            })
-            .then((serviceId) =>
-                BillingTerminate.getServiceApi(serviceId, true).then((service) => {
+        $onInit () {
+            this.reasons = [
+                "LACK_OF_PERFORMANCES",
+                "TOO_EXPENSIVE",
+                "TOO_HARD_TO_USE",
+                "NOT_RELIABLE",
+                "NOT_NEEDED_ANYMORE",
+                "MIGRATED_TO_COMPETITOR",
+                "MIGRATED_TO_ANOTHER_OVH_PRODUCT",
+                "OTHER"
+            ];
+
+            this.serviceId = this.$stateParams.id;
+            this.serviceState = null;
+            this.token = this.$stateParams.token;
+            this.loading = true;
+            this.userLoading = true;
+            this.terminating = false;
+            this.error = false;
+            this.globalError = null;
+
+            if (!this.token || !this.serviceId) {
+                this.globalError = true;
+                return;
+            }
+
+            this.$q.all([
+                this.loadUser(),
+                this.loadService()
+            ]).catch(() => {
+                this.globalError = true;
+            });
+        }
+
+        loadUser () {
+            return this.User.getUser()
+                .then((user) => {
+                    this.USVersion = user && user.ovhSubsidiary === "US";
+                })
+                .finally(() => {
+                    this.userLoading = false;
+                });
+        }
+
+        loadService () {
+            return this.BillingTerminate
+                .getServiceInfo(this.serviceId)
+                .then((serviceInfos) => {
+                    this.serviceInfos = serviceInfos;
+                    return this.BillingTerminate.getServiceApi(serviceInfos.serviceId);
+                })
+                .then((service) => {
                     this.serviceState = _.get(service, "resource.state");
                 })
-            )
-            .catch(() => {
-                this.globalError = true;
-            })
-            .finally(() => {
-                this.loading = false;
-            });
-    };
+                .finally(() => {
+                    this.loading = false;
+                });
+        }
 
-    this.confirmTermination = function () {
-        this.terminating = true;
-        BillingTerminate
-            .confirmTermination(this.serviceId, this.serviceInfos.domain, this.reason, this.commentary, this.token)
-            .then(() => {
-                this.error = false;
-                this.serviceState = "suspending";
-            })
-            .catch(() => {
-                this.error = true;
-            })
-            .finally(() => {
-                this.terminating = false;
-            });
-    };
-
-    this.init();
-});
+        confirmTermination () {
+            this.terminating = true;
+            this.BillingTerminate
+                .confirmTermination(this.serviceId, this.serviceInfos.domain, this.reason, this.commentary, this.token)
+                .then(() => {
+                    this.error = false;
+                    this.serviceState = "suspending";
+                })
+                .catch(() => {
+                    this.error = true;
+                })
+                .finally(() => {
+                    this.terminating = false;
+                });
+        }
+    });
