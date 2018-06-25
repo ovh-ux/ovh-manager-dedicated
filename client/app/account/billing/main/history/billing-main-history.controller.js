@@ -189,6 +189,18 @@ angular.module("Billing").controller("BillingMainHistoryCtrl", class BillingMain
     =            INITIALIZATION            =
     ====================================== */
 
+    _getDebtAccount () {
+        return this.OvhApiMe.DebtAccount().v6().get().$promise.catch((error) => {
+            if (error.status === 404) {
+                return {
+                    active: false
+                };
+            }
+
+            return this.$q.reject(error);
+        });
+    }
+
     $onInit () {
         let postalMailOptionPromise = this.$q.when(null);
 
@@ -199,7 +211,7 @@ angular.module("Billing").controller("BillingMainHistoryCtrl", class BillingMain
         }
 
         return this.$q.all({
-            debtAccount: this.OvhApiMe.DebtAccount().v6().get().$promise,
+            debtAccount: this._getDebtAccount(),
             hasDefaultPaymentMehtod: this.paymentMethodHelper.hasDefaultPaymentMethod(),
             invoicesByPostalMail: postalMailOptionPromise
         }).then(({ debtAccount, hasDefaultPaymentMehtod, invoicesByPostalMail }) => {
