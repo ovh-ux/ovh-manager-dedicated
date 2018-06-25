@@ -13,7 +13,7 @@
         <div data-ng-if="$ctrl.postalMailOptions.enabled">
             <oui-checkbox class="d-inline-block ml-3"
                           data-text="{{ :: 'billing_main_history_invoices_postal_mail' | translate }}"
-                          data-on-change="$ctrl.$state.go('app.account.billing.main.history.postal-mail-options', { activate: !$ctrl.postalMailOptions.activated })"
+                          data-on-change="$ctrl.onPostalMailOptionsChange()"
                           data-model="$ctrl.postalMailOptions.activated">
             </oui-checkbox>
         </div>

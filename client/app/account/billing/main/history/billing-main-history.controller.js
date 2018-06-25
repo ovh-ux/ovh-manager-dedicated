@@ -1,10 +1,11 @@
 angular.module("Billing").controller("BillingMainHistoryCtrl", class BillingMainHistoryCtrl {
 
-    constructor ($q, $state, $translate, Alerter, constants, currentUser, exportCsv, OvhApiMe, paymentMethodHelper) {
+    constructor ($q, $state, $translate, $uibModal, Alerter, constants, currentUser, exportCsv, OvhApiMe, paymentMethodHelper) {
         // Injections
         this.$q = $q;
         this.$state = $state;
         this.$translate = $translate;
+        this.$uibModal = $uibModal;
         this.Alerter = Alerter;
         this.constants = constants;
         this.currentUser = currentUser; // from app route resolve
@@ -161,6 +162,28 @@ angular.module("Billing").controller("BillingMainHistoryCtrl", class BillingMain
     }
 
     /* -----  End of EXPORT TO CSV  ------ */
+
+    /* =============================
+    =            EVENTS            =
+    ============================== */
+
+    onPostalMailOptionsChange () {
+        const postalOptionsModal = this.$uibModal.open({
+            templateUrl: "account/billing/main/history/postalMailOptions/billing-main-history-postal-mail-options.html",
+            controller: "BillingHistoryPostalMailOptionsCtrl",
+            controllerAs: "$ctrl",
+            resolve: {
+                postalMailOptionsActivated: () => !this.postalMailOptions.activated
+            }
+        });
+
+        return postalOptionsModal.result.catch(() => {
+            // reset the checkbox state in case modal is closed without confirm
+            this.postalMailOptions.activated = !this.postalMailOptions.activated;
+        });
+    }
+
+    /* -----  End of EVENTS  ------ */
 
     /* =====================================
     =            INITIALIZATION            =

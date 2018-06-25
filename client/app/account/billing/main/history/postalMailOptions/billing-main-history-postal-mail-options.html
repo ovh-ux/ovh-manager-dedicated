@@ -4,12 +4,12 @@
                data-primary-label="{{ :: 'common_yes' | translate }}"
                data-primary-action="$ctrl.confirmChoice()"
                data-secondary-label="{{ :: 'common_no' | translate }}"
-               data-secondary-action="$ctrl.$state.go('^', {}, { reload: true })"
-               data-on-dismiss="$ctrl.$state.go('^', {}, { reload: true })"
+               data-secondary-action="$ctrl.$uibModalInstance.dismiss()"
+               data-on-dismiss="$ctrl.$uibModalInstance.dismiss()"
                data-loading="$ctrl.loading.update"
                data-type="help">
 
-        <p data-translate="{{ $ctrl.$stateParams.activate === 'true' ? 'billing_main_history_postal_mail_options_activation' : 'billing_main_history_postal_mail_options_desactivation' }}"></p>
+        <p data-translate="{{ $ctrl.postalMailOptionsActivated ? 'billing_main_history_postal_mail_options_activation' : 'billing_main_history_postal_mail_options_desactivation' }}"></p>
 
     </oui-modal>
 
