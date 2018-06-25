@@ -76,7 +76,7 @@ angular.module("Billing").controller("Billing.PaymentsCtrl", function ($filter, 
 
     this.displayActionsCol = () => constants.target !== "US";
 
-    this.depositDetailsHref = ({ depositId }) => $state.href("app.account.billing.main.paymentsDetails", { id: depositId });
+    this.depositDetailsHref = ({ depositId }) => $state.href("app.account.billing.main.payments.details", { id: depositId });
 
     this.$onInit = () => {
         this.payments = [];
