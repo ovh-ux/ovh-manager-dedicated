@@ -1,12 +1,12 @@
-angular.module("App").config(($stateProvider, constants, BILLING_BASE_URL) => {
+angular.module("App").config(($stateProvider, constants) => {
 
     if (constants.target === "US") {
-        $stateProvider.state("app.account.billing.history.balance", {
+        $stateProvider.state("app.account.billing.main.history.balance", {
             url: "/balance",
-            templateUrl: `${BILLING_BASE_URL}history/balance/billing-history-balance.html`,
+            templateUrl: "account/billing/main/history/balance/billing-history-balance.html",
             controller: "BillingHistoryBalanceCtrl",
             controllerAs: "$ctrl",
-            translations: ["account/billing/history/balance"]
+            translations: ["account/billing/main/history/balance"]
         });
     }
 

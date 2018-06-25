@@ -1,3 +1,94 @@
+angular.module("Billing").service("paymentMethodHelper", ["$q", "Billing.constants", "OvhApiMe", class PaymentMethodHelper {
+
+    constructor ($q, constants, OvhApiMe) {
+        // Injections
+        this.$q = $q;
+        this.constants = constants;
+        this.OvhApiMe = OvhApiMe;
+    }
+
+    /* ===============================================
+    =            GET ALL PAYEMENT METHODS            =
+    ================================================ */
+
+    _getAvailablePaymentMethods (onlyValid) {
+        return this.$q.all(_.map(this.constants.paymentMeans, (type) => this.getPaymentMethodsOfType(type, onlyValid))).then((paymentsOfType) => _.flatten(paymentsOfType));
+    }
+
+    _getAvailableUSPaymentMethods (onlyValid) {
+        return this.OvhApiMe.PaymentMethod().v6().query(onlyValid ? {
+            status: "VALID"
+        } : {}).$promise.then((paymentMethodIds) => this.$q.all(_.map(paymentMethodIds, (paymentMethodId) => this.OvhApiMe.PaymentMethod().v6().get({
+            id: paymentMethodId
+        }).$promise)));
+    }
+
+    getAvailablePaymentMethods (onlyValid) {
+        if (this.constants.target !== "US") {
+            return this._getAvailablePaymentMethods(onlyValid);
+        }
+        return this._getAvailableUSPaymentMethods(onlyValid);
+    }
+
+    /**
+     *  Forbidden for US
+     */
+    getPaymentMethodsOfType (type, onlyValid) {
+        if (this.constants.target === "US") {
+            return this.$q.reject({
+                status: 403,
+                message: "getPaymentMethodOfType is not available for US world part"
+            });
+        }
+
+        const resource = this.OvhApiMe.PaymentMean()[_.capitalize(type)]().v6();
+
+        return resource.query(type === "bankAccount" && onlyValid ? {
+            state: "valid"
+        } : {}).$promise.then((paymentMethodIds) => this.$q.all(_.map(paymentMethodIds, (paymentMethodId) => resource.get({
+            id: paymentMethodId
+        }).$promise)));
+    }
+
+    /* -----  End of GET ALL PAYEMENT METHODS  ------ */
+
+    /* =============================================
+    =            DEFAULT PAYMENT METHOD            =
+    ============================================== */
+
+    _hasDefaultPaymentMethod () {
+        return this._getAvailablePaymentMethods(true).then((paymentMethods) => _.some(paymentMethods, {
+            defaultPaymentMean: true
+        }));
+    }
+
+    _hasUSDefaultPaymentMethod () {
+        return this._getAvailableUSPaymentMethods(true).then((paymentMethods) => _.some(paymentMethods, {
+            "default": true
+        }));
+    }
+
+    hasDefaultPaymentMethod () {
+        let promise;
+
+        if (this.constants.target !== "US") {
+            promise = this._hasDefaultPaymentMethod();
+        } else {
+            promise = this._hasUSDefaultPaymentMethod();
+        }
+
+        return promise;
+    }
+
+    /* -----  End of DEFAULT PAYMENT METHOD  ------ */
+
+}]);
+
+
+/**
+ *  @deprecated
+ *  Use PaymentMethodHelper service instead
+ */
 class PaymentMethodService {
     constructor ($q, OvhHttp) {
         this.$q = $q;
@@ -85,4 +176,8 @@ class PaymentMethodService {
     }
 }
 
+/**
+ *  @deprecated
+ *  Use PaymentMethodHelper service instead
+ */
 angular.module("Billing.services").service("BillingPaymentMethod", PaymentMethodService);
