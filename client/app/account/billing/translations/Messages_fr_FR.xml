@@ -22,21 +22,21 @@
    <translation id="autorenew_service_renew_auto" qtlid="134215">Automatique</translation>
    <translation id="autorenew_service_renew_manuel" qtlid="219797">Manuel</translation>
    <translation id="autorenew_service_renew_delete_at_expiration" qtlid="399736">Résiliation à l'expiration</translation>
-   <translation id="autorenew_service_renew_manual_payment" qtlid="416059">Auto : Désactivé</translation>
-   <translation id="autorenew_service_renew_year" qtlid="402880">Auto : Tous les ans</translation>
-   <translation id="autorenew_service_renew_month" qtlid="402893">Auto : Tous les mois</translation>
+   <translation id="autorenew_service_renew_manual_payment">Automatique : désactivé</translation>
+   <translation id="autorenew_service_renew_year">Automatique : tous les ans</translation>
+   <translation id="autorenew_service_renew_month">Automatique : tous les mois</translation>
    <translation id="autorenew_service_renew_3months" qtlid="402906">Trimestriel</translation>
    <translation id="autorenew_service_renew_6months" qtlid="402919">Semestriel</translation>
    <translation id="autorenew_service_renew_frequency_value" qtlid="402932">Tous les {0} mois</translation>
-   <translation id="autorenew_service_renew_years_frequency_value" qtlid="402945">Auto : Tous les {0} ans</translation>
+   <translation id="autorenew_service_renew_years_frequency_value">Automatique : tous les {0} ans</translation>
    <translation id="manualrenew_service_update_button_caption" qtlid="416111">Payer le service</translation>
    <translation id="manualrenew_onlyauto_alert" qtlid="264166">Vous n'avez séléctionné que des renouvellements automatiques.</translation>
    <translation id="autorenew_empty" qtlid="219810">Vous n'avez aucun service</translation>
    <translation id="autorenew_service_mass_actions_caption" qtlid="300227">Actions sur les éléments sélectionnés :</translation>
    <translation id="autorenew_service_update_button_caption" qtlid="416072">Modifier la fréquence de paiement</translation>
    <translation id="autorenew_service_update_date_button_caption" qtlid="300253">Aligner les dates de renouvellement.</translation>
-   <translation id="autorenew_service_resiliate_button" qtlid="56337">Résilier le service</translation>
-   <translation id="autorenew_service_resiliate_button_title" qtlid="243604">Résilier le service : {0}</translation>
+   <translation id="autorenew_service_resiliate_button">Résilier à date d'échéance</translation>
+   <translation id="autorenew_service_resiliate_button_title">Résilier à date d'échéance : {0}</translation>
    <translation id="autorenew_service_disable_button" qtlid="416085">Désactiver le paiement automatique</translation>
    <translation id="autorenew_service_enable_button" qtlid="416098">Activer le paiement automatique</translation>
    <translation id="autorenew_service_renew_button" qtlid="416111">Payer le service</translation>
@@ -44,7 +44,7 @@
    <translation id="autorenew_service_canceldelete_button" qtlid="285350">Annuler la résiliation</translation>
    <translation id="autorenew_service_canceldelete_button_title" qtlid="243695">Annuler ma demande de résiliation : {0}</translation>
    <translation id="autorenew_service_renew_frequency_title" qtlid="212998">Fréquence de paiement</translation>
-   <translation id="autorenew_service_renew_frequency_value" qtlid="402971">Auto : Tous les {0} mois</translation>
+   <translation id="autorenew_service_renew_frequency_value">Automatique : tous les {0} mois</translation>
    <translation id="autorenew_search_input_title" qtlid="300629">Rechercher mes services par identifiant.</translation>
    <translation id="autorenew_service_expand_sub_services" qtlid="300642">Afficher ou cacher les services associés.</translation>
    <translation id="autorenew_service_select_all_checkbox" qtlid="300655">Tout sélectionner les services.</translation>
@@ -62,7 +62,7 @@
    <translation id="autorenew_service_update_renewal_activation_notice" qtlid="369427">Le renouvellement automatique a été activé sur le(s) service(s) désigné(s) ainsi que votre compte.</translation>
    <translation id="autorenew_service_update_renewal_activation_error" qtlid="369440">Vous avez sélectionné le renouvellement automatique pour au moins un service mais nous n'avons pas pu activé le renouvellement automatique sur votre compte : {0}</translation>
    <translation id="autorenew_guide_help" qtlid="156732">Consultez nos guides en ligne.</translation>
-   <translation id="autorenew_service_delete_title" qtlid="56337">Résilier le service</translation>
+   <translation id="autorenew_service_delete_title">Résilier à date d'échéance</translation>
    <translation id="autorenew_service_canceldelete_title" qtlid="416137">Annuler la résiliation d’un service</translation>
    <translation id="autorenew_service_delete_confirm" qtlid="416150">Le service {0} <strong>sera automatiquement résilié</strong> le {1}.</translation>
    <translation id="autorenew_service_delete_warn" qtlid="416163">Les données liées à ce service seront automatiquement supprimées de manière irréversible.&#160;Vous pourrez revenir sur cette décision jusqu'à 24h avant la date d’expiration.</translation>
@@ -165,7 +165,7 @@
 
    <translation id="autorenew_service_type_HOSTING_RESELLER" qtlid="325276">Revendeur d'hébergement</translation>
 
-   <translation id="autorenew_service_EMAIL_DOMAIN_terminate" qtlid="370070">Supprimer le MX Plan</translation>
+   <translation id="autorenew_service_EMAIL_DOMAIN_terminate">Supprimer immédiatement le MX Plan</translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_info" qtlid="370083">La suppression d'un MX Plan entraîne l'effacement définitif de toutes les données correspondantes. L'action de supprimer un MX Plan n'octroie aucun remboursement.</translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_info_impossible" qtlid="370096">Vous ne pouvez pas supprimer votre e-mail car il est lié à un hébergement web.</translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_procedure" qtlid="370109">Un e-mail contenant la procédure de fermeture de votre MX Plan vous permettant de valider la suppression immédiate vous sera envoyé.</translation>
@@ -1037,11 +1037,11 @@
    <translation id="services_filter_duration_months" qtlid="267502">Expirant dans un mois</translation>
    <translation id="services_filter_duration_expired" qtlid="267515">Expirés</translation>
 
-   <translation id="hosting_dashboard_service_guide" qtlid="268577">Supprimer l'hébergement</translation>
+   <translation id="hosting_dashboard_service_guide">Supprimer immédiatement l'hébergement</translation>
    <translation id="hosting_dashboard_close_service_question" qtlid="215533">Souhaitez-vous recevoir cet e-mail ?</translation>
    <translation id="hosting_dashboard_close_service_success" qtlid="370148">Votre demande de fermeture d'hébergement a été prise en compte. Un e-mail contenant la procédure vous a été envoyé.</translation>
    <translation id="hosting_dashboard_close_service_error" qtlid="255469">Une erreur est survenue lors de la demande de fermeture de votre hébergement :</translation>
-   <translation id="hosting_dashboard_close_service" qtlid="255417">Supprimer mon hébergement</translation>
+   <translation id="hosting_dashboard_close_service">Supprimer immédiatement mon hébergement</translation>
    <translation id="hosting_dashboard_close_service_warning" qtlid="255430">La suppression d'un hébergement entraîne l'effacement définitif de toutes les données correspondantes. L'action de supprimer un hébergement n'octroie aucun remboursement.</translation>
    <translation id="hosting_dashboard_close_service_desc1" qtlid="370161">Un e-mail contenant la procédure de fermeture de votre hébergement vous permettant de valider la suppression immédiate vous sera envoyé.</translation>
 
