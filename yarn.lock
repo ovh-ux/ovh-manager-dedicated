@@ -1430,6 +1430,14 @@ cli@~1.0.0:
     exit "0.1.2"
     glob "^7.1.1"
 
+clipboard@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-2.0.1.tgz#a12481e1c13d8a50f5f036b0560fe5d16d74e46a"
+  dependencies:
+    good-listener "^1.2.2"
+    select "^1.1.2"
+    tiny-emitter "^2.0.0"
+
 cliui@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/cliui/-/cliui-2.1.0.tgz#4b475760ff80264c762c3a1719032e91c7fea0d1"
@@ -2015,6 +2023,10 @@ delayed-stream@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
 
+delegate@^3.1.2:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/delegate/-/delegate-3.2.0.tgz#b66b71c3158522e8ab5744f720d8ca0c2af59166"
+
 delegates@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
@@ -2577,6 +2589,10 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
+flatpickr@4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.5.0.tgz#f72c7164a1c24e3ad419e3b2209d1a2d3604724a"
+
 follow-redirects@^1.0.0:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.4.1.tgz#d8120f4518190f55aac65bb6fc7b85fcd666d6aa"
@@ -2938,6 +2954,12 @@ glogg@^1.0.0:
   resolved "https://registry.yarnpkg.com/glogg/-/glogg-1.0.1.tgz#dcf758e44789cc3f3d32c1f3562a3676e6a34810"
   dependencies:
     sparkles "^1.0.0"
+
+good-listener@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/good-listener/-/good-listener-1.2.2.tgz#d53b30cdf9313dffb7dc9a0d477096aa6d145c50"
+  dependencies:
+    delegate "^3.1.2"
 
 graceful-fs@^4.1.2, graceful-fs@^4.1.3, graceful-fs@^4.1.6, graceful-fs@^4.1.9:
   version "4.1.11"
@@ -4982,9 +5004,9 @@ ovh-angular-user-pref@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/ovh-angular-user-pref/-/ovh-angular-user-pref-0.3.1.tgz#07f5792513651f3262ae4879c174423649b08307"
 
-ovh-api-services@^3.0.0:
-  version "3.8.0"
-  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-3.8.0.tgz#c9aee10da2bcdfab215fc7d4305eee6619a7abc4"
+ovh-api-services@^3.5.0:
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-3.9.1.tgz#f35a559affe7248c7deb76326594b39cddc90a6f"
   dependencies:
     grunt-injector "^0.6.0"
 
@@ -5006,20 +5028,22 @@ ovh-protractor-jasmine2-logs-reporter@0.0.1:
   dependencies:
     q "^1.4.1"
 
-ovh-ui-angular@^2.5.0:
-  version "2.13.1"
-  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.13.1.tgz#80f1a0fac29f7e1befeb2b03fe5429922a3e73dc"
+ovh-ui-angular@^2.15.0:
+  version "2.16.1"
+  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.16.1.tgz#80fd97ab15b43daa47f4f18e2b104f30a6dccd65"
   dependencies:
+    clipboard "2.0.1"
     escape-string-regexp "^1.0.5"
+    flatpickr "4.5.0"
     popper.js "^1.12.9"
 
-ovh-ui-kit-bs@~1.1.x:
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/ovh-ui-kit-bs/-/ovh-ui-kit-bs-1.1.8.tgz#3136d8f39caa74a7e1cd6769344ea7d381a97a78"
+ovh-ui-kit-bs@~1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/ovh-ui-kit-bs/-/ovh-ui-kit-bs-1.2.0.tgz#5409519f5c7ef30a6059c432a288c99c84a71024"
 
-ovh-ui-kit@^2.7.1:
-  version "2.13.1"
-  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.13.1.tgz#f9dba134c8f8cefaaf5c60645b88462d743f3c82"
+ovh-ui-kit@^2.15.0:
+  version "2.16.1"
+  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.16.1.tgz#dc34b9ef4346980bda07db480798691b75d15f9f"
   dependencies:
     less-plugin-remcalc "^0.0.1"
 
@@ -5901,6 +5925,10 @@ select-hose@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/select-hose/-/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"
 
+select@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/select/-/select-1.1.2.tgz#0e7350acdec80b1108528786ec1d4418d11b396d"
+
 selenium-webdriver@2.52.0:
   version "2.52.0"
   resolved "https://registry.yarnpkg.com/selenium-webdriver/-/selenium-webdriver-2.52.0.tgz#d2dcb2f51b48733d6c42829e52767ecee2bf4b6b"
@@ -6371,6 +6399,10 @@ time-stamp@^1.0.0:
 time-zone@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/time-zone/-/time-zone-0.1.0.tgz#4a7728b6ac28db0e008f514043fd555bd5573b46"
+
+tiny-emitter@^2.0.0:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-2.0.2.tgz#82d27468aca5ade8e5fd1e6d22b57dd43ebdfb7c"
 
 tiny-lr@^0.2.1:
   version "0.2.1"
