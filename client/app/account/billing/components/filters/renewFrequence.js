@@ -6,16 +6,16 @@ angular.module("Billing.filters").filter("renewFrequence", ($translate) => funct
         break;
     case 3:
     case 6:
-        txtFrequence = $translate.instant("autorenew_service_renew_frequency_value", [period]);
+        txtFrequence = $translate.instant("autorenew_service_renew_frequency_value", { t0: period });
         break;
     case 12:
         txtFrequence = $translate.instant("autorenew_service_renew_year");
         break;
     default:
         if (period > 12) {
-            txtFrequence = $translate.instant("autorenew_service_renew_years_frequency_value", [period / 12]);
+            txtFrequence = $translate.instant("autorenew_service_renew_years_frequency_value", { t0: period / 12 });
         } else {
-            txtFrequence = $translate.instant("autorenew_service_renew_frequency_value", [period]);
+            txtFrequence = $translate.instant("autorenew_service_renew_frequency_value", { t0: period });
         }
         break;
     }
