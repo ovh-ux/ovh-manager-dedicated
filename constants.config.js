@@ -381,9 +381,9 @@ var constants = {
                         atInternetClickTag: "TopGuide-DedicatedServers-3",
                         url: "https://www.ovh.com/fr/g849.configurer_le_reverse"
                     }, {
-                        title: "core_sd_top_guide_4_title",
-                        atInternetClickTag: "TopGuide-DedicatedServers-4",
-                        url: "https://www.ovh.com/fr/g848.configurer_le_dns_secondaire"
+                        title: "core_sd_top_guide_firewall_title",
+                        atInternetClickTag: "TopGuide-DedicatedServers-Firewall",
+                        url: "https://docs.ovh.com/fr/dedicated/firewall-network/"
                     }, {
                         title: "core_sd_top_guide_5_title",
                         atInternetClickTag: "TopGuide-DedicatedServers-5",
