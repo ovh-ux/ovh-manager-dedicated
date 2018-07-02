@@ -371,7 +371,7 @@ var constants = {
                     {
                         title: "core_sd_top_guide_1_title",
                         atInternetClickTag: "TopGuide-DedicatedServers-1",
-                        url: "https://www.ovh.com/fr/g847.reinstallation"
+                        url: "https://docs.ovh.com/fr/dedicated/premiers-pas-serveur-dedie/"
                     }, {
                         title: "core_sd_top_guide_2_title",
                         atInternetClickTag: "TopGuide-DedicatedServers-2",
@@ -387,11 +387,11 @@ var constants = {
                     }, {
                         title: "core_sd_top_guide_5_title",
                         atInternetClickTag: "TopGuide-DedicatedServers-5",
-                        url: "https://www.ovh.com/fr/g851.assigner_une_adresse_mac_virtuelle_a_une_ip_failover"
+                        url: "https://docs.ovh.com/fr/dedicated/network-virtual-mac/"
                     }, {
                         title: "core_sd_top_guide_6_title",
                         atInternetClickTag: "TopGuide-DedicatedServers-6",
-                        url: "https://www.ovh.com/fr/g850.deplacer_une_adresse_ip_failover"
+                        url: "https://docs.ovh.com/fr/dedicated/network-ipaliasing/"
                     }, {
                         title: "core_sd_top_guide_7_title",
                         atInternetClickTag: "TopGuide-DedicatedServers-7",
@@ -399,7 +399,7 @@ var constants = {
                     }, {
                         title: "core_sd_top_guide_8_title",
                         atInternetClickTag: "TopGuide-DedicatedServers-8",
-                        url: "https://www.ovh.com/fr/g2168.creer_un_raid_hardware_avec_le_manager_ovh"
+                        url: "https://docs.ovh.com/fr/dedicated/find-disk-serial-number/#pour-un-raid-materiel_1"
                     }
                 ],
                 en_GB: [
