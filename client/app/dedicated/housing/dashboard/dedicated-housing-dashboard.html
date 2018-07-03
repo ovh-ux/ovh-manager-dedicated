@@ -73,21 +73,12 @@
                             data-ng-bind=":: housing.securityCode"></dd>
                     </dl>
                 </div>
-                <div class="oui-tile__item">
-                    <dl class="oui-tile__definition">
-                        <dt class="oui-tile__term"
-                            data-translate="housing_creation_date"></dt>
-                        <dd class="oui-tile__description"
-                            data-ng-bind="housing.creation | date:'mediumDate'"></dd>
-                    </dl>
-                </div>
             </div>
         </div>
     </div>
 
     <div class="col-sm-4">
         <div class="oui-tile mb-5 h-100">
-
             <h2 class="oui-tile__title oui-header_4"
                 data-translate="housing_tab_stats_legend_network">
             </h2>
@@ -178,11 +169,28 @@
             <div class="oui-tile__body">
                 <div class="oui-tile__item">
                     <dl class="oui-tile__definition">
-                        <dt class="oui-tile__term"
-                            data-translate="housing_subscription_owner">
+                        <dt class="oui-tile__term">
+                            <service-expiration-label data-service-infos="housing.serviceInfos">
+                            </service-expiration-label>
                         </dt>
-                        <dd class="oui-tile__description"
-                            data-ng-bind="user.firstName + ' ' + user.lastName">
+                        <dd class="oui-link">
+                            <service-expiration-date
+                                data-service-name="housing.name"
+                                data-service-type="'DEDICATED_HOUSING'"
+                                data-service-infos="housing.serviceInfos"
+                                data-force-hide-renew-action="true">
+                            </service-expiration-date>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="oui-tile__item">
+                    <dl class="oui-tile__definition">
+                        <dt class="oui-tile__term"
+                            data-translate="common_subscription_contacts"></dt>
+                        <dd class="oui-tile__description">
+                            <span data-ng-bind="housing.serviceInfos.contactAdmin"></span> <span class="oui-tile__extra" data-translate="common_subscription_contacts_admin"></span><br/>
+                            <span data-ng-bind="housing.serviceInfos.contactTech"></span> <span class="oui-tile__extra" data-translate="common_subscription_contacts_tech"></span><br/>
+                            <span data-ng-bind="housing.serviceInfos.contactBilling"></span> <span class="oui-tile__extra" data-translate="common_subscription_contacts_billing"></span>
                         </dd>
                     </dl>
                     <div class="oui-tile__actions">
@@ -201,18 +209,10 @@
                 </div>
                 <div class="oui-tile__item">
                     <dl class="oui-tile__definition">
-                        <dt class="oui-tile__term">
-                            <service-expiration-label data-service-infos="housing.serviceInfos">
-                            </service-expiration-label>
-                        </dt>
-                        <dd class="oui-link">
-                            <service-expiration-date
-                                data-service-name="housing.name"
-                                data-service-type="'DEDICATED_HOUSING'"
-                                data-service-infos="housing.serviceInfos"
-                                data-force-hide-renew-action="true">
-                            </service-expiration-date>
-                        </dd>
+                        <dt class="oui-tile__term"
+                            data-translate="common_configuration_creation"></dt>
+                        <dd class="oui-tile__description"
+                            data-ng-bind="housing.creation | date:'mediumDate'"></dd>
                     </dl>
                 </div>
             </div>
