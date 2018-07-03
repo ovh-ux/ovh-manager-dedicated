@@ -1,6 +1,6 @@
 <a class="oui-link"
    data-ng-href="{{:: $ctrl.getRenewUrl() }}"
-   data-ng-bind=":: $ctrl.serviceInfos.expiration | date:'mediumDate'"
+   data-ng-bind=":: $ctrl.getDate() | date:'mediumDate'"
    data-ng-if="$ctrl.constants.target !== 'US' && !$ctrl.hideRenewDate">
 </a>
 <oui-action-menu
