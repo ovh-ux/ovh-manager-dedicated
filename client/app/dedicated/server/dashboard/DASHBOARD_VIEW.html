@@ -112,10 +112,10 @@
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4"
+             data-ng-if="server.commercialRange !== 'housing'">
             <!-- STATE -->
-            <div class="oui-tile mb-5 h-100"
-                 data-ng-if="server.commercialRange !== 'housing'">
+            <div class="oui-tile mb-5 h-100">
                 <h4 class="oui-header_4 oui-tile__title"
                     data-translate="server_services_state"></h4>
                 <div class="oui-tile__body">
@@ -369,7 +369,7 @@
                                 <span class="oui-icon oui-icon-info_circle"
                                       data-aria-hidden="true"
                                       data-ng-if="!server.hasProfessionalUse"
-                                      data-oui-tooltip="{{:: server_configuration_profesionnal_use_info | translate}}"
+                                      data-oui-tooltip="{{:: 'server_configuration_profesionnal_use_info' | translate}}"
                                       data-oui-tooltip-placement="top-start"></span>
                             </dd>
                         </dl>
