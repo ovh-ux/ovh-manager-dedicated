@@ -14,7 +14,7 @@
 
         <div class="alert alert-danger"
              role="alert"
-             data-ng-if="!automaticRenewV2Mean.loading && automaticRenewV2Mean.available && (!automaticRenewV2Mean.allowed || (automaticRenewV2Mean.allowed && !nicRenew.active)) && services.data.userMustApproveAutoRenew">
+             data-ng-if="!automaticRenewV2Mean.loading && automaticRenewV2Mean.available && (!automaticRenewV2Mean.allowed || (automaticRenewV2Mean.allowed && !nicRenew.active)) && !services.data.userSubsidiaryHasRecentAutorenew">
             <button type="button"
                     class="close"
                     data-ng-click="automaticRenewV2Mean.noMeanMessageClose()"

@@ -22,8 +22,9 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
     "BillingrenewHelper",
     "User",
     "$translate",
+    "SUBSIDIARIES_WITH_RECENT_AUTORENEW",
 
-    function ($scope, $location, $filter, $q, $http, $window, $timeout, Alerter, AUTORENEW_EVENT, constants, billingUrls, BILLING_BASE_URL, AutoRenew, PaymentInformation, renewHelper, User, $translate) {
+    function ($scope, $location, $filter, $q, $http, $window, $timeout, Alerter, AUTORENEW_EVENT, constants, billingUrls, BILLING_BASE_URL, AutoRenew, PaymentInformation, renewHelper, User, $translate, SUBSIDIARIES_WITH_RECENT_AUTORENEW) {
         "use strict";
 
         /**
@@ -277,9 +278,10 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
                 .then((result) => {
                     $scope.nbServices = result.count;
 
-                    const userMustApproveAutoRenew = _($scope.services).get("data.userMustApproveAutoRenew", null);
                     $scope.services.data = result;
+                    $scope.services.data.userSubsidiaryHasRecentAutorenew = _(SUBSIDIARIES_WITH_RECENT_AUTORENEW).includes($scope.user.ovhSubsidiary);
 
+                    const userMustApproveAutoRenew = _($scope.services).get("data.userMustApproveAutoRenew", null);
                     if (_(userMustApproveAutoRenew).isBoolean()) {
                         $scope.services.data.userMustApproveAutoRenew = userMustApproveAutoRenew;
                     }
