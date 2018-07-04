@@ -1,3 +1,13 @@
+<a name="9.6.9"></a>
+## [9.6.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.8...v9.6.9) (2018-07-04)
+
+
+### Bug Fixes
+
+* **credit:** use new API attribute ([60e38cc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/60e38cc))
+
+
+
 <a name="9.6.8"></a>
 ## [9.6.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.7...v9.6.8) (2018-07-04)
 
