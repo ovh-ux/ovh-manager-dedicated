@@ -1,3 +1,13 @@
+<a name="9.6.7"></a>
+## [9.6.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.6...v9.6.7) (2018-07-04)
+
+
+### Bug Fixes
+
+* **otrs:** upgrade otrs version ([a39b8a3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a39b8a3))
+
+
+
 <a name="9.6.6"></a>
 ## [9.6.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.5...v9.6.6) (2018-06-21)
 
