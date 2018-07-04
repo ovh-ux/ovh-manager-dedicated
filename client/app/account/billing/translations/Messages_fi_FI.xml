@@ -143,6 +143,7 @@
    <translation id="autorenew_service_update_future" qtlid="221123">Uusi arvo</translation>
    <translation id="autorenew_service_update_step2_error" qtlid="177522">Pahoittelemme aiheutunutta haittaa, tapahtui virhe.</translation>
    <translation id="autorenew_service_update_step2_success" qtlid="220174">Toiminto suoritettu onnistuneesti.</translation>
+   <translation id="autorenew_service_update_step2_with_async_action_success">Opération effectuée avec succès, elle sera effective d'ici quelques instants.</translation>
    <translation id="billing_export_csv" qtlid="231773">CSV-vienti</translation>
    <translation id="billing_common_link_new_window" qtlid="300694">(uusi ikkuna)</translation>
    <translation id="billing_date_range_choose_custom_date" qtlid="374443">Määritä jakso</translation>
@@ -153,7 +154,7 @@
    <translation id="autorenew_service_disable_autorenew_desc1" qtlid="416189"><strong>{0}</strong>-palvelun automaattinen maksu poistetaan.</translation>
    <translation id="autorenew_service_disable_autorenew_desc2" qtlid="416202">Palvelun säilyttämiseksi suorita maksu hyvissä ajoin ennen nykyisen tilauskauden loppua. <br/> Muussa tapauksessa palvelu <strong>irtisanotaan automaattisesti tilauskauden päätyttyä</strong> {0} ja siihen liittyvä data poistetaan automaattisesti ja peruuttamattomasti.</translation>
    <translation id="autorenew_service_disable_autorenew_desc3" qtlid="416215">Automaattisen maksun voi ottaa uudelleen käyttöön siihen asti, että tilauskauden päättymiseen on 24 tuntia.</translation>
-   <translation id="autorenew_service_disable_autorenew_warn" qtlid="416228">Palvelun erääntymisestä ei lähetetä muistutusviestejä.</translation>
+   <translation id="autorenew_service_disable_autorenew_warn">Vous recevrez des relances par e-mail pour vous informer de la fin de votre service.</translation>
 
    <translation id="autorenew_service_enable_autorenew_title" qtlid="416098">Aktivoi automaattinen maksu</translation>
    <translation id="autorenew_service_enable_autorenew_desc1" qtlid="416241">Automaattinen maksu aktivoidaan palvelulle <strong>{0}</strong>.</translation>
@@ -1178,6 +1179,7 @@
    <translation id="terminate_service_title" qtlid="439957">Irtisanomislomake</translation>
    <translation id="terminate_service_information_title" qtlid="439970">Palvelun irtisanominen</translation>
    <translation id="terminate_service_information_text" qtlid="439983">Palvelu irtisanotaan heti vahvistamisesi jälkeen. Tämä johtaa välittömästi kaikkien palveluun liittyvien tietojen (varmuuskopiot mukaanluettuna) automaattiseen ja peruuttamattomaan poistamiseen. Tee kaikki tarvittavat toimenpiteen tietojen säilyttämiseksi ennen irtisanomisen vahvistamista. OVH ei vastaa tietojen menetyksistä.</translation>
+   <translation id="terminate_service_information_text_non_US">Le service sera résilié à la fin de la période de renouvellement. Une fois que vous confirmez la résiliation, veuillez noter que toutes les données liées à ce service et toutes les sauvegardes <strong>seront définitivement supprimées</strong>. Il vous appartient de prendre toutes les mesures nécessaires pour conserver vos données avant de donner votre confirmation de supprimer votre service. Une fois le processus initié, vous ne pourrez pas le stopper. OVH décline toute responsabilité de perte de données dans ce cas.</translation>
    <translation id="terminate_service_services_title" qtlid="439996">Palvelut joihin irtisanominen vaikuttaa</translation>
    <translation id="terminate_service_services_service" qtlid="31042">Palvelu</translation>
    <translation id="terminate_service_services_name" qtlid="3818">Nimi</translation>
