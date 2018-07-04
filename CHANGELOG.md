@@ -1,3 +1,13 @@
+<a name="9.6.8"></a>
+## [9.6.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.7...v9.6.8) (2018-07-04)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** display autorenew activation button again ([b32a3ff](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b32a3ff))
+
+
+
 <a name="9.6.7"></a>
 ## [9.6.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.6...v9.6.7) (2018-07-04)
 
