@@ -143,6 +143,7 @@
    <translation id="autorenew_service_update_future" qtlid="221123">Neuer Wert</translation>
    <translation id="autorenew_service_update_step2_error" qtlid="177522">Es ist ein Fehler aufgetreten. Bitte entschuldigen Sie die entstandenen Unannehmlichkeiten. </translation>
    <translation id="autorenew_service_update_step2_success" qtlid="220174">Operation erfolgreich durchgeführt.</translation>
+   <translation id="autorenew_service_update_step2_with_async_action_success">Opération effectuée avec succès, elle sera effective d'ici quelques instants.</translation>
    <translation id="billing_export_csv" qtlid="231773">Export als CSV Datei</translation>
    <translation id="billing_common_link_new_window" qtlid="300694">(neues Fenster)</translation>
    <translation id="billing_date_range_choose_custom_date" qtlid="374443">Zeitraum festlegen </translation>
@@ -153,7 +154,7 @@
    <translation id="autorenew_service_disable_autorenew_desc1" qtlid="416189">Die automatische Zahlung Ihrer Dienstleistung <strong>{0}</strong> wird deaktiviert.</translation>
    <translation id="autorenew_service_disable_autorenew_desc2" qtlid="416202">Um Ihre Dienstleistung weiterhin nutzen zu können, begleichen Sie die Zahlungen vor deren nächstem Ablaufdatum. <br/> Ihre Dienstleistung wird sonst <strong>automatisch an deren Ablaufdatum gekündigt</strong>, das heißt am {0}. Die Daten, die mit dieser Dienstleistung verbunden sind, werden automatisch unwiderruflich gelöscht.</translation>
    <translation id="autorenew_service_disable_autorenew_desc3" qtlid="416215">Sie können die automatische Zahlung bis zu 24 Stunden vor dem Ablaufdatum reaktivieren.</translation>
-   <translation id="autorenew_service_disable_autorenew_warn" qtlid="416228">Sie erhalten keine E-Mail, um Sie an das Ablaufdatum Ihrer Dienstleistung zu erinnern.</translation>
+   <translation id="autorenew_service_disable_autorenew_warn">Vous recevrez des relances par e-mail pour vous informer de la fin de votre service.</translation>
 
    <translation id="autorenew_service_enable_autorenew_title" qtlid="416098">Automatische Zahlung aktivieren</translation>
    <translation id="autorenew_service_enable_autorenew_desc1" qtlid="416241">Die automatische Zahlung Ihrer Dienstleistung <strong>{0}</strong> wird aktiviert.</translation>
@@ -1177,6 +1178,7 @@
    <translation id="terminate_service_title" qtlid="439957">Kündigungsformular</translation>
    <translation id="terminate_service_information_title" qtlid="439970">Kündigung Ihrer Dienstleistung</translation>
    <translation id="terminate_service_information_text" qtlid="439983">Sobald Sie Ihre Anfrage bestätigen, wird Ihre Dienstleistung gekündigt. Als Folge werden sämtliche Daten (inklusive deren Backups), die mit dieser Dienstleistung verbunden sind, automatisch, umgehend und unwiderruflich gelöscht. Bevor Sie fortfahren und die Kündigung bestätigen, obliegt es allein Ihnen, die notwendigen Maßnahmen zur Sicherung Ihrer Daten zu ergreifen. OVH übernimmt in dieser Hinsicht keinerlei Haftung.</translation>
+   <translation id="terminate_service_information_text_non_US">Le service sera résilié à la fin de la période de renouvellement. Une fois que vous confirmez la résiliation, veuillez noter que toutes les données liées à ce service et toutes les sauvegardes <strong>seront définitivement supprimées</strong>. Il vous appartient de prendre toutes les mesures nécessaires pour conserver vos données avant de donner votre confirmation de supprimer votre service. Une fois le processus initié, vous ne pourrez pas le stopper. OVH décline toute responsabilité de perte de données dans ce cas.</translation>
    <translation id="terminate_service_services_title" qtlid="439996">Von der Kündigung betroffene Dienstleistungen</translation>
    <translation id="terminate_service_services_service" qtlid="31042">Dienstleistung</translation>
    <translation id="terminate_service_services_name" qtlid="3818">Name</translation>
