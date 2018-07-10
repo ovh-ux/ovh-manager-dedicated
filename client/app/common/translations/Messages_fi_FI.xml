@@ -336,7 +336,7 @@
    <translation id="country_KW" qtlid="188262">Kuwait</translation>
    <translation id="country_KY" qtlid="188275">Caymansaaret</translation>
    <translation id="country_KZ" qtlid="188288">Kazakstan</translation>
-   <translation id="country_LA" qtlid="188301">Laosin demokraattinen kansantasavalta -</translation>
+   <translation id="country_LA" qtlid="188301">Laosin demokraattinen kansantasavalta</translation>
    <translation id="country_LB" qtlid="188314">Libanon</translation>
    <translation id="country_LC" qtlid="188327">Saint Lucia</translation>
    <translation id="country_LI" qtlid="188340">Liechtenstein</translation>
@@ -507,6 +507,7 @@
    <translation id="core_sd_top_guide_6_title" qtlid="303926">Siirrä failover IP -osoite</translation>
    <translation id="core_sd_top_guide_7_title" qtlid="141236">Rescue-tila</translation>
    <translation id="core_sd_top_guide_8_title" qtlid="303939">Luo raid-laitteisto OVH:n hallintapaneelilla</translation>
+   <translation id="core_sd_top_guide_firewall_title">Configurer le Firewall Network</translation>
 
    <translation id="core_type_of_guide_pcc" qtlid="20131">Private Cloud</translation>
    <translation id="core_pcc_top_guide_1_title" qtlid="371596">Kirjautuminen vSphere-käyttöliittymään</translation>
@@ -580,6 +581,31 @@
    <translation id="otrs_menu_telephony_contact" qtlid="260827">Puhelintuki</translation>
    <translation id="otrs_menu_changelog" qtlid="124964">Päivityshistoria</translation>
 
+   <translation id="common_criteria_adder_column_label" qtlid="479108">Sarake</translation>
+   <translation id="common_criteria_adder_operator_label" qtlid="425806">Ehto</translation>
+   <translation id="common_criteria_adder_operator_boolean_is" qtlid="479121">on</translation>
+   <translation id="common_criteria_adder_operator_boolean_isNot" qtlid="479134">ei ole</translation>
+   <translation id="common_criteria_adder_operator_string_contains" qtlid="218692">sisältää</translation>
+   <translation id="common_criteria_adder_operator_string_containsNot" qtlid="218705">ei sisällä</translation>
+   <translation id="common_criteria_adder_operator_string_startsWith" qtlid="479147">alkaa arvolla</translation>
+   <translation id="common_criteria_adder_operator_string_endsWith" qtlid="479160">päättyy arvoon</translation>
+   <translation id="common_criteria_adder_operator_string_is" qtlid="479173">on yhtä suuri kuin</translation>
+   <translation id="common_criteria_adder_operator_string_isNot" qtlid="479134">ei ole</translation>
+   <translation id="common_criteria_adder_operator_number_is" qtlid="479173">on yhtä suuri kuin</translation>
+   <translation id="common_criteria_adder_operator_number_smaller" qtlid="479186">on pienempi kuin</translation>
+   <translation id="common_criteria_adder_operator_number_bigger" qtlid="479199">on suurempi kuin</translation>
+   <translation id="common_criteria_adder_operator_date_is" qtlid="479121">on</translation>
+   <translation id="common_criteria_adder_operator_date_isBefore" qtlid="479212">on ennen </translation>
+   <translation id="common_criteria_adder_operator_date_isAfter" qtlid="479225">on jälkeen </translation>
+   <translation id="common_criteria_adder_operator_options_is" qtlid="479121">on</translation>
+   <translation id="common_criteria_adder_operator_options_isNot" qtlid="479134">ei ole</translation>
+   <translation id="common_criteria_adder_true_label" qtlid="34776">Kyllä</translation>
+   <translation id="common_criteria_adder_false_label" qtlid="34788">Ei</translation>
+   <translation id="common_criteria_adder_value_label" qtlid="47548">Arvo</translation>
+   <translation id="common_criteria_adder_submit_label" qtlid="37923">Lisää</translation>
+
+   <translation id="common_datagrid_nodata" qtlid="197635">Ei tuloksia</translation>
+
    <translation id="common_field_error_required" qtlid="472294">Ole hyvä ja täytä tämä kenttä.</translation>
    <translation id="common_field_error_number" qtlid="472307">Syötä hyväksytty numeerinen arvo.</translation>
    <translation id="common_field_error_email" qtlid="472320">Syötä voimassa oleva sähköpostiosoite.</translation>
@@ -588,4 +614,27 @@
    <translation id="common_field_error_minlength" qtlid="472359">Syötä vähintään {{minlength}} merkkiä.</translation>
    <translation id="common_field_error_maxlength" qtlid="472372">Syötä enintään {{maxlength}} merkkiä.</translation>
    <translation id="common_field_error_pattern" qtlid="472385">Syötä hyväksytty formaatti.</translation>
+
+   <translation id="common_navbar_notification_title" qtlid="33250">Ilmoitukset</translation>
+   <translation id="common_navbar_notification_error" qtlid="323434">Hups, valikkoa ei pystytä alustamaan!</translation>
+   <translation id="common_navbar_notification_error_subject" qtlid="26407">Virhe</translation>
+   <translation id="common_navbar_notification_see_all" qtlid="401914">Katso kaikki ilmoitukset</translation>
+   <translation id="common_navbar_notification_mark_as_read" qtlid="70865">Merkitse luetuksi</translation>
+   <translation id="common_navbar_notification_mark_as_unread" qtlid="70877">Merkitse lukemattomaksi</translation>
+
+   <translation id="common_pagination_resultsperpage" qtlid="433384">Tulosta per sivu</translation>
+   <translation id="common_pagination_page" qtlid="433397">sivu</translation>
+   <translation id="common_pagination_of" qtlid="121615">aikaväli</translation>
+   <translation id="common_pagination_ofnresults" qtlid="452982">/ TOTAL_ITEMS tulosta</translation>
+   <translation id="common_pagination_currentpageofpagecount" qtlid="452995">Sivu CURRENT_PAGE / PAGE_COUNT</translation>
+   <translation id="common_pagination_results" qtlid="433410">tulokset</translation>
+   <translation id="common_pagination_next" qtlid="433423">Seuraava sivu</translation>
+   <translation id="common_pagination_previous" qtlid="433436">Edellinen sivu</translation>
+
+   <translation id="common_stepper_optional_label" qtlid="356264">(valinnainen)</translation>
+   <translation id="common_stepper_modify_this_step" qtlid="480922">Muokkaa tätä vaihetta</translation>
+   <translation id="common_stepper_skip_this_step" qtlid="480935">Älä huomioi tätä vaihetta</translation>
+   <translation id="common_stepper_next_button_label" qtlid="17743">Seuraava</translation>
+   <translation id="common_stepper_submit_button_label" qtlid="52807">Lähetä</translation>
+   <translation id="common_stepper_cancel_button_label" qtlid="37863">Peruuta</translation>
 </translations>

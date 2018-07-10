@@ -1,5 +1,5 @@
 angular.module("App")
-    .run(($q, SidebarMenu, Products, User, $translatePartialLoader, $translate, DedicatedCloud, Nas, CdnDomain, featureAvailability, constants) => {
+    .run(($q, SidebarMenu, Products, User, $translatePartialLoader, $translate, atInternet, DedicatedCloud, Nas, CdnDomain, featureAvailability, constants) => {
 
         function buildSidebarActions () {
             return $q.all({
@@ -10,6 +10,7 @@ angular.module("App")
 
                 if (featureAvailability.hasNas()) {
                     actionsMenuOptions.push({
+                        id: "order-nas",
                         title: "Nas",
                         icon: "ovh-font ovh-font-cloudnas",
                         state: "app.networks.nas.order"
@@ -17,6 +18,7 @@ angular.module("App")
                 }
 
                 actionsMenuOptions.push({
+                    id: "order-dedicated-server",
                     title: $translate.instant("navigation_left_dedicatedServers"),
                     icon: "ovh-font ovh-font-server",
                     href: results.dedicatedOrder,
@@ -25,6 +27,7 @@ angular.module("App")
 
                 if (featureAvailability.allowVrackOrder()) {
                     actionsMenuOptions.push({
+                        id: "order-vrack",
                         title: $translate.instant("navigation_left_vrack"),
                         icon: "ovh-font ovh-font-vRack",
                         href: results.vrackOrder,
@@ -34,6 +37,7 @@ angular.module("App")
 
                 if (featureAvailability.allowIPFailoverAgoraOrder()) {
                     actionsMenuOptions.push({
+                        id: "order-additional-ip",
                         title: $translate.instant("navigation_left_additional_ip"),
                         icon: "ovh-font ovh-font-ip",
                         state: "app.ip.agora-order"
@@ -41,9 +45,17 @@ angular.module("App")
                 }
 
                 actionsMenuOptions.push({
+                    id: "order-license",
                     title: $translate.instant("navigation_left_licences"),
                     icon: "ovh-font ovh-font-certificate",
                     state: "app.license.order"
+                });
+
+                SidebarMenu.addActionsMenuItemClickHandler((id) => {
+                    atInternet.trackClick({
+                        name: id,
+                        type: "action"
+                    });
                 });
 
                 return SidebarMenu.addActionsMenuOptions(actionsMenuOptions);
