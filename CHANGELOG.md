@@ -1,3 +1,14 @@
+<a name="9.6.10"></a>
+## [9.6.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.9...v9.6.10) (2018-07-11)
+
+
+### Bug Fixes
+
+* **account:** remove marketing consent optin for US ([ea4bcf0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ea4bcf0))
+* **dedicated server intervention:** show empty datagrid if expired ([60cdbfc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/60cdbfc))
+
+
+
 <a name="9.6.9"></a>
 ## [9.6.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.8...v9.6.9) (2018-07-04)
 
