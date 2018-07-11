@@ -48,7 +48,7 @@ angular
 
         switchRenewalModeToManualIfNeeded () {
             const AUTO_RENEW_TYPES = ["automaticV2014", "automaticV2016", "automaticForcedProduct"];
-            const renewType = _(this.serviceToDisplay).get("service.renewalType") || this.serviceToDisplay.renewalType;
+            const renewType = _(this.serviceToDisplay).get("service.renewalType", this.serviceToDisplay.renewalType);
             const serviceIsAutomaticallyRenewed = AUTO_RENEW_TYPES.includes(renewType);
 
             return this.serviceToDisplay.renew.automatic && !serviceIsAutomaticallyRenewed ? this.switchRenewalModeToManual() : this.$q.when();
