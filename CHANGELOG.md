@@ -1,3 +1,90 @@
+<a name="9.6.9"></a>
+## [9.6.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.8...v9.6.9) (2018-07-04)
+
+
+### Bug Fixes
+
+* **credit:** use new API attribute ([60e38cc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/60e38cc))
+
+
+
+<a name="9.6.8"></a>
+## [9.6.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.7...v9.6.8) (2018-07-04)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** display autorenew activation button again ([b32a3ff](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b32a3ff))
+
+
+
+<a name="9.6.7"></a>
+## [9.6.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.6...v9.6.7) (2018-07-04)
+
+
+### Bug Fixes
+
+* **otrs:** upgrade otrs version ([a39b8a3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a39b8a3))
+
+
+
+<a name="9.6.6"></a>
+## [9.6.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.5...v9.6.6) (2018-06-21)
+
+
+### Bug Fixes
+
+* **dedicated:server:** renewal date for autorenew ([d3c8ea3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d3c8ea3))
+* **dedicated.server:** Display renewal date for US ([3f652f1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3f652f1))
+* **pcc:** replace table with datagrid in datastore section ([#412](https://github.com/ovh-ux/ovh-manager-dedicated/issues/412)) ([41e4d50](https://github.com/ovh-ux/ovh-manager-dedicated/commit/41e4d50))
+* **pcc dc host:** replace table with datagrid ([#409](https://github.com/ovh-ux/ovh-manager-dedicated/issues/409)) ([c221d91](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c221d91))
+
+
+### Features
+
+* **billing:** add confirm terminate for all subsidiaries ([3153a61](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3153a61))
+* **navbar:** add new navbar notifications ([f9877f0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f9877f0))
+* **oui-angular:** add translations for oui components ([7dadfcf](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7dadfcf))
+
+
+
+<a name="9.6.5"></a>
+## [9.6.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.4...v9.6.5) (2018-06-19)
+
+
+### Bug Fixes
+
+* **dedicated:server:** ipmi session for resellers ([e219d06](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e219d06))
+
+
+
+<a name="9.6.4"></a>
+## [9.6.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.3...v9.6.4) (2018-06-19)
+
+
+### Bug Fixes
+
+* **dedicated:server:** ipmi geolocation ip for resellers only ([5e7247c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5e7247c))
+* **dedicated:server:** ipmi IP check in US ([8b0b545](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8b0b545))
+* **dedicated:server:** ipmi IP check in US CR ([015e661](https://github.com/ovh-ux/ovh-manager-dedicated/commit/015e661))
+
+
+
+<a name="9.6.3"></a>
+## [9.6.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.2...v9.6.3) (2018-06-18)
+
+
+### Bug Fixes
+
+* won't display autorenew banner and input when not needed ([#414](https://github.com/ovh-ux/ovh-manager-dedicated/issues/414)) ([d80abc1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d80abc1))
+
+
+
+<a name="9.6.2"></a>
+## [9.6.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.1...v9.6.2) (2018-06-13)
+
+
+
 <a name="9.6.1"></a>
 ## [9.6.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.0...v9.6.1) (2018-06-12)
 

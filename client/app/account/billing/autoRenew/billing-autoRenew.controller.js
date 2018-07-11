@@ -22,8 +22,9 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
     "BillingrenewHelper",
     "User",
     "$translate",
+    "SUBSIDIARIES_WITH_RECENT_AUTORENEW",
 
-    function ($scope, $location, $filter, $q, $http, $window, $timeout, Alerter, AUTORENEW_EVENT, constants, billingUrls, BILLING_BASE_URL, AutoRenew, PaymentInformation, renewHelper, User, $translate) {
+    function ($scope, $location, $filter, $q, $http, $window, $timeout, Alerter, AUTORENEW_EVENT, constants, billingUrls, BILLING_BASE_URL, AutoRenew, PaymentInformation, renewHelper, User, $translate, SUBSIDIARIES_WITH_RECENT_AUTORENEW) {
         "use strict";
 
         /**
@@ -41,13 +42,14 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
             text: $translate.instant("autorenew_service_type_ALL")
         };
 
-        let initLoading = true;
-
         $scope.loaded = false;
         $scope.user = null;
         $scope.expandHostingDomain = {};
         $scope.urls = {
             renewAlign: ""
+        };
+        $scope.searchText = {
+            value: ""
         };
         $scope.nbServices = 0;
 
@@ -116,7 +118,9 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
         };
         $scope.servicesDetails = [];
 
-        $scope.serviceTypeObject = ALL_SERVICE_TYPES;
+        $scope.serviceTypeObject = {
+            value: ALL_SERVICE_TYPES
+        };
 
         $scope.nicRenew = {
             renewDays: _.range(1, 30),
@@ -128,19 +132,24 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
             },
             error: null,
             getNicRenewParam () {
-                $scope.nicRenew.loading = true;
-                return AutoRenew.getAutorenew()
-                    .then(({ active, renewDay }) => {
-                        $scope.nicRenew.initialized = true;
-                        $scope.nicRenew.active = active;
-                        $scope.nicRenew.renewDay = renewDay;
-                    })
-                    .catch((error) => {
-                        $scope.nicRenew.error = error.statusText;
-                    })
-                    .finally(() => {
-                        $scope.nicRenew.loading = false;
-                    });
+                if (_($scope.services).get("data.userMustApproveAutoRenew", false)) {
+                    $scope.nicRenew.loading = true;
+
+                    return AutoRenew.getAutorenew()
+                        .then(({ active, renewDay }) => {
+                            $scope.nicRenew.initialized = true;
+                            $scope.nicRenew.active = active;
+                            $scope.nicRenew.renewDay = renewDay;
+                        })
+                        .catch((error) => {
+                            $scope.nicRenew.error = error.statusText;
+                        })
+                        .finally(() => {
+                            $scope.nicRenew.loading = false;
+                        });
+                }
+
+                return $q.when();
             },
             setNicRenewParam () {
                 $scope.nicRenew.updateLoading = true;
@@ -257,13 +266,6 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
             $scope.count = count;
             $scope.offset = offset;
 
-            // TODO - clear up this mess
-            if (initLoading) {
-                return;
-            }
-
-            // end of mess
-
             $scope.services.loading = true;
             $scope.services.selected = [];
 
@@ -272,11 +274,18 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
             const selectedRenewal = $scope.renewalFilter.model === 0 || $scope.renewalFilter.model === "0" ? null : $scope.renewalFilter.model;
             const selectedOrder = $scope.orderByState;
 
-            AutoRenew.getServices(count, offset, $scope.searchText, selectedType, selectedRenew, selectedRenewal, JSON.stringify(selectedOrder), $scope.nicBillingFilter.model)
+            return AutoRenew.getServices(count, offset, $scope.searchText.value, selectedType, selectedRenew, selectedRenewal, JSON.stringify(selectedOrder), $scope.nicBillingFilter.model)
                 .then((result) => {
                     $scope.nbServices = result.count;
 
                     $scope.services.data = result;
+                    $scope.services.data.userSubsidiaryHasRecentAutorenew = _(SUBSIDIARIES_WITH_RECENT_AUTORENEW).includes($scope.user.ovhSubsidiary);
+
+                    const userMustApproveAutoRenew = _($scope.services).get("data.userMustApproveAutoRenew", null);
+                    if (_(userMustApproveAutoRenew).isBoolean()) {
+                        $scope.services.data.userMustApproveAutoRenew = userMustApproveAutoRenew;
+                    }
+
                     $scope.nicBillingFilter.values = result.nicBilling;
 
                     checkWarnings($scope.services.data.list.results);
@@ -540,7 +549,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
         };
 
         $scope.onSelectedTypeChanged = function () {
-            const type = $scope.serviceTypeObject;
+            const type = $scope.serviceTypeObject.value;
             $scope.services.selectedType = type ? type.key : null;
 
             $scope.clearSelectedServices();
@@ -549,7 +558,8 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
         };
 
         $scope.onSearchTextChanged = () => {
-            $location.search("searchText", $scope.searchText);
+            $location.search("searchText", $scope.searchText.value);
+            $scope.$broadcast("paginationServerSide.loadPage", "1", "serviceTable");
         };
 
         $scope.onSelectedrenewChange = () => {
@@ -617,12 +627,14 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
          */
 
         function init () {
-            initLoading = true;
+            $scope.initLoading = true;
 
-            const { selectedType, searchText, renewFilter, renewalFilter, order } = $location.search();
+            const { selectedType, searchTextValue, renewFilter, renewalFilter, order } = $location.search();
 
             $scope.services.selectedType = selectedType;
-            $scope.searchText = searchText;
+            $scope.searchText = {
+                value: searchTextValue
+            };
             $scope.renewFilter.model = renewFilter === "0" ? 0 : renewFilter || 0;
             $scope.renewalFilter.model = renewalFilter === "0" ? "0" : renewalFilter || "0";
 
@@ -631,19 +643,6 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
 
             $scope.canDisableAllDomains = false;
 
-            const autorenewSettingsPromise = $scope.nicRenew.getNicRenewParam();
-            initLoading = false;
-
-            $scope.$watch(
-                "searchText",
-                _.debounce((old, current) => {
-                    if (old !== current) {
-                        $scope.$apply(() => {
-                            $scope.$broadcast("paginationServerSide.loadPage", 1, "serviceTable");
-                        });
-                    }
-                }, 1000)
-            );
             $scope.$broadcast("paginationServerSide.loadPage", "1", "serviceTable");
 
             const userPromise = User.getUser().then((user) => {
@@ -672,12 +671,12 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
                 $scope.servicesTypes.unshift(ALL_SERVICE_TYPES);
 
                 // sets the model of the type select input.
-                $scope.serviceTypeObject = _.find($scope.servicesTypes, {
+                $scope.serviceTypeObject.value = _.find($scope.servicesTypes, {
                     key: $scope.services.selectedType
                 });
 
-                if (!$scope.serviceTypeObject) {
-                    $scope.serviceTypeObject = ALL_SERVICE_TYPES;
+                if (!$scope.serviceTypeObject.value) {
+                    $scope.serviceTypeObject.value = ALL_SERVICE_TYPES;
                 }
             });
 
@@ -685,7 +684,9 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
                 $scope.canDisableAllDomains = _.includes(results, "domains-batch-autorenew");
             });
 
-            $q.all([autorenewSettingsPromise, userPromise, paymentMeansPromise, renewAlignUrlPromise, userGuidePromise, serviceTypePromise, userCertificatesPromise]).finally(() => (initLoading = false));
+            $q.all([$scope.getServices($scope.count, $scope.offset), userPromise, paymentMeansPromise, renewAlignUrlPromise, userGuidePromise, serviceTypePromise, userCertificatesPromise])
+                .then(() => $scope.nicRenew.getNicRenewParam())
+                .finally(() => ($scope.initLoading = false));
         }
 
         init();
