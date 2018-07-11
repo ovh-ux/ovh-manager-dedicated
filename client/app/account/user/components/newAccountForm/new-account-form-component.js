@@ -13,12 +13,13 @@ angular.module("ovhSignupApp").component("newAccountForm", {
         "$http",
         "$httpParamSerializerJQLike",
         "$timeout",
+        "constants",
         "NewAccountFormConfig",
         "Alerter",
         "UserAccount.constants",
         "UserAccount.services.Infos",
         "$translate",
-        function ($scope, $q, $location, $http, $httpParamSerializerJQLike, $timeout, NewAccountFormConfig, Alerter, UserAccountConstants, UserAccountServiceInfos, $translate) {
+        function ($scope, $q, $location, $http, $httpParamSerializerJQLike, $timeout, constants, NewAccountFormConfig, Alerter, UserAccountConstants, UserAccountServiceInfos, $translate) {
             "use strict";
 
             this.isLoading = false; // true when fetching data from api
@@ -100,7 +101,7 @@ angular.module("ovhSignupApp").component("newAccountForm", {
                                 if (editedRule.fieldName === "email") {
                                     emailFieldIndex = index;
                                     editedRule.readonly = false;
-                                    editedRule.hasBottomMargin = false;
+                                    editedRule.hasBottomMargin = constants.target === "US";
                                 } else {
                                     editedRule.readonly = _(this.readonly).includes(editedRule.fieldName);
                                     editedRule.hasBottomMargin = true;
@@ -111,18 +112,20 @@ angular.module("ovhSignupApp").component("newAccountForm", {
                             .value();
 
 
-                        rules.splice(emailFieldIndex + 1, 0, {
-                            "in": null,
-                            mandatory: false,
-                            defaultValue: null,
-                            initialValue: consentDecision,
-                            fieldName: "commercialCommunicationsApproval",
-                            fieldType: "checkbox",
-                            regularExpression: null,
-                            prefix: null,
-                            examples: null,
-                            hasBottomMargin: true
-                        });
+                        if (constants.target !== "US") {
+                            rules.splice(emailFieldIndex + 1, 0, {
+                                "in": null,
+                                mandatory: false,
+                                defaultValue: null,
+                                initialValue: consentDecision,
+                                fieldName: "commercialCommunicationsApproval",
+                                fieldType: "checkbox",
+                                regularExpression: null,
+                                prefix: null,
+                                examples: null,
+                                hasBottomMargin: true
+                            });
+                        }
 
                         return rules;
                     })
@@ -186,7 +189,7 @@ angular.module("ovhSignupApp").component("newAccountForm", {
                         .then(() => $timeout(angular.noop, 3000) /* add some delay for task creation */);
                 }
 
-                if (this.originalModel.commercialCommunicationsApproval !== this.model.commercialCommunicationsApproval) {
+                if (this.originalModel.commercialCommunicationsApproval !== this.model.commercialCommunicationsApproval && constants.target !== "US") {
                     promise = promise
                         .then(() => UserAccountServiceInfos.updateConsentDecision(CONSENT_MARKETING_EMAIL_NAME, this.model.commercialCommunicationsApproval || false))
                         .then(() => $timeout(angular.noop, 3000) /* add some delay for task creation */);
