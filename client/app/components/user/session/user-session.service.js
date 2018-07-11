@@ -382,17 +382,18 @@ class SessionService {
                 },
 
                 // Billing
-                !currentUser.isEnterprise && {
+                // Pay As You Go for US
+                !currentUser.isEnterprise && this.constants.target === "US" && {
                     name: "user.billing",
                     title: this.$translate.instant("menu_billing"),
-                    state: "app.account.billing.main.pay-as-you-go"/* ,
-                    subLinks: [{
-                        title: this.$translate.instant("menu_bills"),
-                        state: "app.account.billing.history"
-                    }, {
-                        title: this.$translate.instant("menu_payments"),
-                        state: "app.account.billing.payments"
-                    }]*/
+                    state: "app.account.billing.main.pay-as-you-go"
+                },
+
+                // history for EU and CA...
+                !currentUser.isEnterprise && this.constants.target !== "US" && {
+                    name: "user.billing",
+                    title: this.$translate.instant("menu_billing"),
+                    state: "app.account.billing.main.history"
                 },
 
                 // Services

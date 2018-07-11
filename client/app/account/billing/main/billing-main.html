@@ -7,7 +7,8 @@
 
     <!-- Tabs -->
     <responsive-tabs>
-        <responsive-tab data-state="app.account.billing.main.pay-as-you-go">
+        <responsive-tab data-ng-if="$ctrl.constants.target === 'US'"
+                        data-state="app.account.billing.main.pay-as-you-go">
             <span data-translate="billing_main_pay_as_you_go_tab"></span>
         </responsive-tab>
         <responsive-tab data-state="app.account.billing.main.history">
