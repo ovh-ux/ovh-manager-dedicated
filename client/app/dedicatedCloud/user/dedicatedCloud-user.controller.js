@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudUserCtrl", function ($scope, $state, $stateParams, $timeout, $q, DedicatedCloud, ouiDatagridService) {
+angular.module("App").controller("DedicatedCloudUserCtrl", function ($scope, $state, $stateParams, $timeout, $translate, $q, DedicatedCloud, ouiDatagridService) {
     "use strict";
 
     this.loading = false;
@@ -34,6 +34,8 @@ angular.module("App").controller("DedicatedCloudUserCtrl", function ($scope, $st
         }).then((response) => {
             $scope.passwordPolicy = response.policy;
             $scope.nsxOptions = response.nsxOptions;
+        }).catch((err) => {
+            $scope.setMessage($translate.instant("dedicatedCloud_USER_edit_load_error"), angular.extend(err, { type: "ERROR" }));
         }).finally(() => {
             this.loading = false;
         });
