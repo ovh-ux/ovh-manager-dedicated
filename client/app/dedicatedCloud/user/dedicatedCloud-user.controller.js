@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudUserCtrl", function ($scope, $state, $stateParams, $timeout, $translate, $q, DedicatedCloud, ouiDatagridService) {
+angular.module("App").controller("DedicatedCloudUserCtrl", function ($q, $scope, $state, $stateParams, $timeout, $translate, DedicatedCloud, ouiDatagridService) {
     "use strict";
 
     this.loading = false;
@@ -53,17 +53,17 @@ angular.module("App").controller("DedicatedCloudUserCtrl", function ($scope, $st
 
     this.loadUser = ({ id }) => $q.all({
         user: DedicatedCloud.getUserDetail($stateParams.productId, id)
-    }).then((infos) => {
-        infos.user.state = infos.user.state.toUpperCase();
-        infos.user.activationState = infos.user.activationState.toUpperCase();
-        return infos.user;
+    }).then(({ user }) => {
+        user.state = user.state.toUpperCase();
+        user.activationState = user.activationState.toUpperCase();
+        return user;
     });
 
-    this.modifyUserRights = (user) => {
-        $state.go("app.dedicatedClouds.users.rights", { userId: user.userId });
+    this.modifyUserRights = ({ userId }) => {
+        $state.go("app.dedicatedClouds.users.rights", { userId });
     };
 
-    this.editUser = (user) => {
-        $state.go("app.dedicatedClouds.users.edit", { userId: user.userId });
+    this.editUser = ({ userId }) => {
+        $state.go("app.dedicatedClouds.users.edit", { userId });
     };
 });

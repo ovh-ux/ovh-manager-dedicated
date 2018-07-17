@@ -27,7 +27,7 @@ angular.module("App").controller("DedicatedCloudUserEditCtrl", class DedicatedCl
             this.user = user;
             this.user.tokenValidator = user.isTokenValidator;
         }).catch((err) => {
-            this.Alerter.error(`${this.$translate.instant("dedicatedCloud_USER_edit_load_error")} ${_.get(err, "message") || err}`, "dedicatedCloud.user.edit");
+            this.Alerter.error(`${this.$translate.instant("dedicatedCloud_USER_edit_load_error")} ${_.get(err, "message", err)}`, "dedicatedCloud.user.edit");
         }).finally(() => {
             this.loading = false;
         });
