@@ -19,7 +19,11 @@
         <oui-column data-title=":: 'dedicatedCloud_OPERATIONS_type' | translate">
             <span data-ng-bind="('dedicatedCloud_OPERATIONS_type_' + $row.type) | translate"></span>
         </oui-column>
-        <oui-column data-title=":: 'dedicatedCloud_OPERATIONS_progression' | translate">
+        <oui-column data-title=":: 'dedicatedCloud_OPERATIONS_progression' | translate"
+                    data-property="state"
+                    data-type="options"
+                    data-type-options="{ values: { foo: 'bar' } }"
+                    data-filterable>
             <span data-ng-switch="$row.state">
                 <span data-ng-switch-when="done"
                       data-translate="dedicatedCloud_OPERATIONS_state_done">

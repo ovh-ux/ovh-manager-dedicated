@@ -2,12 +2,15 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", function ($q, $
     "use strict";
 
     const self = this;
-    self.loading = false;
 
     function init () {
-        self.loading = false;
+        self.loading = true;
         return DedicatedCloud.getModels().then((data) => {
             self.stateEnum = data.models["dedicatedCloud.TaskStateEnum"].enum;
+            self.stateFilter = { values: {} };
+            _.each(self.stateEnum, (state) => {
+                self.stateFilter.values[state] = $translate.instant(`dedicatedCloud_OPERATIONS_state_${state}`);
+            });
         }).catch((err) => {
             Alerter.alertFromSWS($translate.instant("dedicatedCloud_OPERATIONS_error"), err, "dedicatedCloud_alert");
         }).finally(() => {
