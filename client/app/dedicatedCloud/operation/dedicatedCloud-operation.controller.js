@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudOperationsCtrl", function ($q, $state, $stateParams, $translate, $window, BillingOrders, Alerter, DedicatedCloud) {
+angular.module("App").controller("DedicatedCloudOperationsCtrl", function ($q, $scope, $state, $stateParams, $translate, $window, BillingOrders, Alerter, DedicatedCloud, ouiDatagridService) {
     "use strict";
 
     const self = this;
@@ -7,9 +7,15 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", function ($q, $
         self.loading = true;
         return DedicatedCloud.getModels().then((data) => {
             self.stateEnum = data.models["dedicatedCloud.TaskStateEnum"].enum;
-            self.stateFilter = { values: {} };
-            _.each(self.stateEnum, (state) => {
-                self.stateFilter.values[state] = $translate.instant(`dedicatedCloud_OPERATIONS_state_${state}`);
+            self.progressionFilter = null;
+            self.progressionFilterList = _.map(self.stateEnum, (state) => ({
+                value: state,
+                label: $translate.instant(`dedicatedCloud_OPERATIONS_state_${state}`)
+            }));
+            $scope.$watch("$ctrl.progressionFilter", (newValue, oldValue) => {
+                if (newValue !== oldValue) {
+                    ouiDatagridService.refresh("operationsDatagrid", true);
+                }
             });
         }).catch((err) => {
             Alerter.alertFromSWS($translate.instant("dedicatedCloud_OPERATIONS_error"), err, "dedicatedCloud_alert");
@@ -20,6 +26,11 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", function ($q, $
 
     self.loadOperations = ({ offset, pageSize }) => {
         const opts = {};
+        if (self.progressionFilter) {
+            opts.params = {
+                state: self.progressionFilter
+            };
+        }
         return DedicatedCloud.getOperations(
             $stateParams.productId,
             opts
