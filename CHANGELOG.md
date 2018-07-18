@@ -1,3 +1,44 @@
+<a name="9.6.10"></a>
+## [9.6.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.9...v9.6.10) (2018-07-11)
+
+
+### Bug Fixes
+
+* **account:** remove marketing consent optin for US ([ea4bcf0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ea4bcf0))
+* **dedicated server intervention:** show empty datagrid if expired ([60cdbfc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/60cdbfc))
+
+
+
+<a name="9.6.9"></a>
+## [9.6.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.8...v9.6.9) (2018-07-04)
+
+
+### Bug Fixes
+
+* **credit:** use new API attribute ([60e38cc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/60e38cc))
+
+
+
+<a name="9.6.8"></a>
+## [9.6.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.7...v9.6.8) (2018-07-04)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** display autorenew activation button again ([b32a3ff](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b32a3ff))
+
+
+
+<a name="9.6.7"></a>
+## [9.6.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.6...v9.6.7) (2018-07-04)
+
+
+### Bug Fixes
+
+* **otrs:** upgrade otrs version ([a39b8a3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a39b8a3))
+
+
+
 <a name="9.6.6"></a>
 ## [9.6.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.5...v9.6.6) (2018-06-21)
 
