@@ -28,8 +28,8 @@ angular.module("Billing.controllers").controller("Billing.controllers.Credits", 
     =            HELPERS            =
     =============================== */
 
-    static getExpiringDetails (expiringSummary) {
-        const copiedSummary = angular.copy(expiringSummary);
+    static getExpiringDetails (expiring) {
+        const copiedSummary = angular.copy(expiring);
 
         // sort by expiration date to get the less expiring item
         copiedSummary.sort((summaryItemA, summaryItemB) => {
@@ -89,7 +89,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.Credits", 
     }
 
     pushBalanceDetails (balanceDetails) {
-        balanceDetails.expiringDetails = balanceDetails.expiringSummary && balanceDetails.expiringSummary.length ? this.constructor.getExpiringDetails(balanceDetails.expiringSummary) : null;
+        balanceDetails.expiringDetails = balanceDetails.expiring && balanceDetails.expiring.length ? this.constructor.getExpiringDetails(balanceDetails.expiring) : null;
         this.paginatedBalances.push(balanceDetails);
     }
 

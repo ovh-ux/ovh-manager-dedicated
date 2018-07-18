@@ -111,7 +111,7 @@ angular.module("Module.license").controller("LicenseUpgradeCtrl", ($scope, $tran
 
     function init () {
         $scope.loaders.init = true;
-        return License.get("/{licenceId}", {
+        return License.get("/{licenseId}", {
             urlParams: $stateParams
         })
             .then((license) => {
