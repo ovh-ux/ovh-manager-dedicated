@@ -438,7 +438,7 @@
    <translation id="server_configuration_ftpbackup_access_order_right" qtlid="180577">Sinulla ei ole riittäviä oikeuksia tilausta varten</translation>
    <translation id="server_configuration_ftpbackup_access_add" qtlid="153857">Lisää pääsyoikeus</translation>
    <translation id="server_configuration_ftpbackup_access_edit" qtlid="180694">Pääsyoikeuden muokkaus</translation>
-   <translation id="server_configuration_ftpbackup_access_edit_info" qtlid="486594">Modifier l'accès du block IP <strong>{0}</strong></translation>
+   <translation id="server_configuration_ftpbackup_access_edit_info" qtlid="486594">Muokkaa IP-lohkon <strong>{0}</strong> pääsyoikeuksia</translation>
    <translation id="server_configuration_ftpbackup_access_delete" qtlid="180590">Pääsyoikeuden poisto</translation>
    <translation id="server_configuration_ftpbackup_access_delete_question" qtlid="183814">Oletko varma, että haluat poistaa pääsyoikeuden IP-osoiteavaruudelta <b>{0}</b>?</translation>
    <translation id="server_configuration_ftpbackup_access_delete_success" qtlid="183827">Varmuuskopiotilan pääsyoikeuden poisto IP-osoiteavaruudelta <b>{0}</b> a on rekisteröity, mutta toimenpide voi kestää muutaman minuutin</translation>
@@ -476,16 +476,16 @@
    <translation id="server_configuration_ftpbackup_add_ip" qtlid="180850">Osoite/osoitteet:</translation>
    <translation id="server_configuration_ftpbackup_add_authorization" qtlid="180863">Valtuutettu:</translation>
 
-   <translation id="server_configuration_cloudbackup_delete" qtlid="184282">Poista varmuuskopiotila</translation>
+   <translation id="server_configuration_cloudbackup_delete" qtlid="492502">Poista varmuuskopiotila</translation>
 
    <translation id="server_configuration_cloudbackup_delete_success" qtlid="184360">Varmuuskopiotila poistetaan hetken kuluttua.</translation>
-   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="184373">Varmuuskopiotila on poistettu.</translation>
-   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="184386">Tapahtui virhe poistettaessa varmuuskopiotilaa.</translation>
+   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="492515">Varmuuskopiotila poistettiin.</translation>
+   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="492528">Tapahtui virhe varmuuskopiotilaa poistettaessa.</translation>
    <translation id="server_configuration_cloudbackup_delete_question" qtlid="451872">Haluatko varmasti kytkeä Backup Storage -lisäpalvelun pois käytöstä?</translation>
 
    <translation id="server_configuration_cloudbackup_inactive" qtlid="451885">Varmuuskopiotilasi ei ole aktiivinen.</translation>
    <translation id="server_configuration_cloudbackup_new_project" qtlid="16493">Uusi projekti</translation>
-   <translation id="server_configuration_cloudbackup_load_fail" qtlid="184256">Tapahtui virhe ladattaessa varmuuskopiotilan tietoja</translation>
+   <translation id="server_configuration_cloudbackup_load_fail" qtlid="492541">Tapahtui virhe varmuuskopiotilan tietojen latauksessa.</translation>
    <translation id="server_configuration_cloudbackup_load_offers_fail" qtlid="451898">Tapahtui virhe Backup Storage cloud -tuotteiden lataamisessa</translation>
    <translation id="server_configuration_cloudbackup_load_projects_fail" qtlid="451911">Tapahtui virhe cloud-projektin lataamisessa</translation>
    <translation id="server_configuration_cloudbackup_load_agreements_fail" qtlid="451924">Tapahtui virhe sopimusten lataamisessa</translation>
@@ -510,7 +510,7 @@ sen nimen tai valitsemalla jo olemassa olevan Cloud-projektin. Tämä on ilmaist
    <translation id="server_configuration_cloudbackup_summary_documentation_label" qtlid="415740">Ohje</translation>
    <translation id="server_configuration_cloudbackup_summary_usage_label" qtlid="109974">Käyttö</translation>
    <translation id="server_configuration_cloudbackup_summary_title_label_storage" qtlid="452067">Varmuuskopiotilan säilösi</translation>
-   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="184282">Poista varmuuskopiotila</translation>
+   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="492554">Poista varmuuskopiotila</translation>
 
    <translation id="server_configuration_cloudbackup_container_storage_guide_description" qtlid="452080">Etsitkö työkalua tietojesi varmuuskopiointia varten? OVH suosittelee Rclone-työkalua</translation>
    <translation id="server_configuration_cloudbackup_container_storage_guide_product" qtlid="452093">Rclone</translation>
@@ -627,7 +627,7 @@ sen nimen tai valitsemalla jo olemassa olevan Cloud-projektin. Tämä on ilmaist
    <translation id="server_configuration_impi_password" qtlid="164753">IPMI-istunnon käynnistys (todennus)</translation>
    <translation id="server_configuration_impi_ping" qtlid="164766">IPMI-moduulin käytettävyystesti (ping)</translation>
    <translation id="server_configuration_impi_information" qtlid="191837">IPMI mahdollistaa sinun kirjautua palvelimelle seuraavilla menetelmillä:</translation>
-   <translation id="server_configuration_impi_information_java" qtlid="490506">IPMI permet de se connecter à votre serveur via l'applet JAVA suivant :</translation>
+   <translation id="server_configuration_impi_information_java" qtlid="490506">IPMI mahdollistaa kirjautumisen palvelimelle seuraavan JAVA-sovelman kautta:</translation>
    <translation id="server_configuration_impi_information2" qtlid="191850">Käynnistämällä ”Remote KVM”-istunnon (KVM-yhteys etäpalvelimelle) IP-osoitteestasi {0}<ul><li>Java Web Start -sovelman kautta</li></ul></translation>
    <translation id="server_configuration_impi_information3" qtlid="191863">Käynnistämällä ”Serial Over LAN”-istunnon (suojattu yhteys palvelimesi sarjaporttiin) IP-osoitteesi {0} kautta<ul><li>WWW-selaimesi kautta (https)</li></ul></translation>
    <translation id="server_configuration_impi_start" qtlid="25951">Käynnistä</translation>
@@ -657,8 +657,8 @@ sen nimen tai valitsemalla jo olemassa olevan Cloud-projektin. Tämä on ilmaist
    <translation id="server_configuration_impi_sessions_success" qtlid="165104">IPMI-moduuli-istunnot on poistettu.</translation>
    <translation id="server_configuration_impi_disable" qtlid="165117">IPMI-moduulitoiminnot on poistettu käytöstä väliaikaisesti huoltotöiden takia. Toiminnot ovat käytettävissä jälleen huoltotyön päätyttyä.</translation>
    <translation id="server_configuration_impi_monitoring_warning" qtlid="472658">Muistathan kytkeä palveluidesi monitoroinnin pois päältä ennen käyttöjärjestelmän asentamista IPMIllä.</translation>
-   <translation id="server_configuration_impi_SOL_help" qtlid="489127">La session SOL nécessite une configuration de votre part.</translation>
-   <translation id="server_configuration_impi_SOL_help_link" qtlid="489140">Accéder au guide de configuration.</translation>
+   <translation id="server_configuration_impi_SOL_help" qtlid="489127">SOL-istunto edellyttää konfigurointiasi.</translation>
+   <translation id="server_configuration_impi_SOL_help_link" qtlid="489140">Mene konfigurointiohjeeseen.</translation>
    <translation id="server_configuration_kvm_order_step1_title" qtlid="229203">Valitse kesto</translation>
    <translation id="server_configuration_kvm_order_step2_title" qtlid="229216">KVM-tilaus palvelimelle <em>{0}</em></translation>
    <translation id="server_configuration_kvm_order_step2_duration" qtlid="156875">Kesto:</translation>

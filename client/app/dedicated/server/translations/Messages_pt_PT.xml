@@ -439,7 +439,7 @@
    <translation id="server_configuration_ftpbackup_access_order_right" qtlid="180577">Não tem permissões para efetuar encomenda</translation>
    <translation id="server_configuration_ftpbackup_access_add" qtlid="153857">Adicionar acesso</translation>
    <translation id="server_configuration_ftpbackup_access_edit" qtlid="180694">Alterar acesso</translation>
-   <translation id="server_configuration_ftpbackup_access_edit_info" qtlid="486594">Modifier l'accès du block IP <strong>{0}</strong></translation>
+   <translation id="server_configuration_ftpbackup_access_edit_info" qtlid="486594">Modifique o acesso ao bloco de IP <strong>{0}</strong></translation>
    <translation id="server_configuration_ftpbackup_access_delete" qtlid="180590">Eliminar acesso</translation>
    <translation id="server_configuration_ftpbackup_access_delete_question" qtlid="183814">Quer mesmo eliminar o acesso associado ao bloco de IPs <b>{0}</b>?</translation>
    <translation id="server_configuration_ftpbackup_access_delete_success" qtlid="183827">A eliminação do acesso ao Backup Storage para o bloco de IPs <b>{0}</b> foi registado mas poderá demorar alguns minutos.</translation>
@@ -477,16 +477,16 @@
    <translation id="server_configuration_ftpbackup_add_ip" qtlid="180850">Bloco afetado:</translation>
    <translation id="server_configuration_ftpbackup_add_authorization" qtlid="180863">Autorizar em:</translation>
 
-   <translation id="server_configuration_cloudbackup_delete" qtlid="184282">Eliminar Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_delete" qtlid="492502">Supprimer le Backup Storage</translation>
 
    <translation id="server_configuration_cloudbackup_delete_success" qtlid="184360">O Backup Storage será eliminado dentro de alguns instantes.</translation>
-   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="184373">O Backup Storage foi eliminado.</translation>
-   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="184386">Erro ao processar a eliminação do Backup Storage.</translation>
+   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="492515">Le Backup Storage a bien été supprimé.</translation>
+   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="492528">Une erreur est survenue lors de la suppression du Backup Storage.</translation>
    <translation id="server_configuration_cloudbackup_delete_question" qtlid="451872">Quer mesmo desativar o Backup Storage</translation>
 
    <translation id="server_configuration_cloudbackup_inactive" qtlid="451885">O Backup Storage está desativado</translation>
    <translation id="server_configuration_cloudbackup_new_project" qtlid="16493">Novo projecto</translation>
-   <translation id="server_configuration_cloudbackup_load_fail" qtlid="184256">Erro ao carregar informação relativa ao Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_load_fail" qtlid="492541">Une erreur est survenue lors du chargement des informations du Backup Storage</translation>
    <translation id="server_configuration_cloudbackup_load_offers_fail" qtlid="451898">Ocorreu um erro no acesso às ofertas cloud Backup Storage</translation>
    <translation id="server_configuration_cloudbackup_load_projects_fail" qtlid="451911"></translation>
    <translation id="server_configuration_cloudbackup_load_agreements_fail" qtlid="451924">Ocorreu um erro no acesso aos contratos</translation>
@@ -510,7 +510,7 @@
    <translation id="server_configuration_cloudbackup_summary_documentation_label" qtlid="415740">Guia</translation>
    <translation id="server_configuration_cloudbackup_summary_usage_label" qtlid="109974"></translation>
    <translation id="server_configuration_cloudbackup_summary_title_label_storage" qtlid="452067">O seu container Backup Storage</translation>
-   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="184282">Eliminar Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="492554">Supprimer le Backup Storage</translation>
 
    <translation id="server_configuration_cloudbackup_container_storage_guide_description" qtlid="452080">Procura uma ferramenta para fazer o backup dos dados? Sugerimos o Rclone</translation>
    <translation id="server_configuration_cloudbackup_container_storage_guide_product" qtlid="452093">Rclone</translation>
@@ -627,7 +627,7 @@
    <translation id="server_configuration_impi_password" qtlid="164753">Inicialização de uma sessão IPMI (autenticação)</translation>
    <translation id="server_configuration_impi_ping" qtlid="164766">Teste de acesso ao módulo IPMI (ping)</translation>
    <translation id="server_configuration_impi_information" qtlid="191837">O IPMI permite que estabeleça a ligação ao seu servidor a partir dos seguintes métodos:</translation>
-   <translation id="server_configuration_impi_information_java" qtlid="490506">IPMI permet de se connecter à votre serveur via l'applet JAVA suivant :</translation>
+   <translation id="server_configuration_impi_information_java" qtlid="490506">O IPMI permite que você efetue login no seu servidor por meio do applet Java, da seguinte maneira:</translation>
    <translation id="server_configuration_impi_information2" qtlid="191850">A inicializar uma sessão 'Remote KVM' (acesso ao teclado, rato e ecrã do seu servidor à distância) a partir do seu IP {0}<ul><li>A partir de uma applet Java Web Start</li></ul></translation>
    <translation id="server_configuration_impi_information3" qtlid="191863">A inicializar uma sessão 'Serial Over LAN' (acesso à consola da sua máquina através de uma ligação segura) a partir do seu IP {0}<ul><li>A partir do seu browser (https)</li></ul></translation>
    <translation id="server_configuration_impi_start" qtlid="25951">Iniciar</translation>
@@ -657,8 +657,8 @@
    <translation id="server_configuration_impi_sessions_success" qtlid="165104">A sessões do módulo IPMI foram eliminadas com sucesso.</translation>
    <translation id="server_configuration_impi_disable" qtlid="165117">As funcionalidades do módulo IPMI estão temporariamente indisponíveis devido à existência de um trabalho em curso. Elas serão reativadas uma vez terminado o trabalho.</translation>
    <translation id="server_configuration_impi_monitoring_warning" qtlid="472658">Lembre-se de desativar o monitoramento dos seus serviços antes de instalar um sistema de exploração a partir do IPMI.</translation>
-   <translation id="server_configuration_impi_SOL_help" qtlid="489127">La session SOL nécessite une configuration de votre part.</translation>
-   <translation id="server_configuration_impi_SOL_help_link" qtlid="489140">Accéder au guide de configuration.</translation>
+   <translation id="server_configuration_impi_SOL_help" qtlid="489127">A sessão SOL requer configuração de sua parte.</translation>
+   <translation id="server_configuration_impi_SOL_help_link" qtlid="489140">Acesse o guia de configuração.</translation>
    <translation id="server_configuration_kvm_order_step1_title" qtlid="229203">Escolher a duração</translation>
    <translation id="server_configuration_kvm_order_step2_title" qtlid="229216">Encomendar um KVM para o servidor <em>{0}</em></translation>
    <translation id="server_configuration_kvm_order_step2_duration" qtlid="156875">Período:</translation>
@@ -940,7 +940,7 @@
    <translation id="month_other" qtlid="220148">{0} mês(es)</translation>
    <translation id="year_1" qtlid="70277">1 ano</translation>
    <translation id="year_other" qtlid="158604">{} anos</translation>
-   <translation id="upto" qtlid="486503">Jusqu'au {{ date }}</translation>
+   <translation id="upto" qtlid="486503">Até {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Até ao primeiro dia do próximo mês</translation>
    <translation id="engage" qtlid="158643">Contratar {0}</translation>
    <translation id="price_ht_label" qtlid="486412">{{ price }}&#160;HT</translation>
@@ -949,9 +949,9 @@
    <translation id="price" qtlid="181084">Preço:</translation>
    <translation id="contract_next" qtlid="17743">Seguinte</translation>
    <translation id="contract_previous" qtlid="17431">Anterior</translation>
-   <translation id="download_contract" qtlid="486477">Ouvrir le contrat "{{ name }}" en PDF</translation>
+   <translation id="download_contract" qtlid="486477">Abrir o contrato "{{ name }}" em PDF</translation>
    <translation id="contract_help" qtlid="180382">Para poder validar, tem de ler os contratos até ao fim.</translation>
-   <translation id="contracts_list_title" qtlid="486490">Il y a {{ count }} contrats à consulter.</translation>
+   <translation id="contracts_list_title" qtlid="486490">Há {{ count }} contratos a consultar.</translation>
    <translation id="contract_list_title" qtlid="180408">Há 1 contrato para ler.</translation>
    <translation id="contracts_agree" qtlid="180421">Aceito as condições contratatuais</translation>
    <translation id="contract_agree" qtlid="180434">Aceito as condições contratatuais</translation>

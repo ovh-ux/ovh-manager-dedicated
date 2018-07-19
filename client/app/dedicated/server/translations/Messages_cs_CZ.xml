@@ -438,7 +438,9 @@
    <translation id="server_configuration_ftpbackup_access_order_right" qtlid="180577">Nemáte požadovaná oprávnění pro objednání</translation>
    <translation id="server_configuration_ftpbackup_access_add" qtlid="153857">Přidat přístup</translation>
    <translation id="server_configuration_ftpbackup_access_edit" qtlid="180694">Změnit přístup</translation>
-   <translation id="server_configuration_ftpbackup_access_edit_info" qtlid="486594">Modifier l'accès du block IP <strong>{0}</strong></translation>
+   <translation id="server_configuration_ftpbackup_access_edit_info" qtlid="486594">Upravit přístup bloku IP adres <strong>{0}</strong>&#13;
+&#13;
+</translation>
    <translation id="server_configuration_ftpbackup_access_delete" qtlid="180590">Vymazat přístup</translation>
    <translation id="server_configuration_ftpbackup_access_delete_question" qtlid="183814">Opravdu chcete vymazat přístup pro IP blok <b>{0}</b>?</translation>
    <translation id="server_configuration_ftpbackup_access_delete_success" qtlid="183827">Vymazání přístupu k Backup Storage pro blok IP <b>{0}</b> byl úspěšně přijat. Tato operace však může trvat několik minut.</translation>
@@ -476,16 +478,16 @@
    <translation id="server_configuration_ftpbackup_add_ip" qtlid="180850">Zahrnutý blok:</translation>
    <translation id="server_configuration_ftpbackup_add_authorization" qtlid="180863">Autorizovat v:</translation>
 
-   <translation id="server_configuration_cloudbackup_delete" qtlid="184282">Odstranit Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_delete" qtlid="492502">Supprimer le Backup Storage</translation>
 
    <translation id="server_configuration_cloudbackup_delete_success" qtlid="184360">Služba Backup Storage bude brzy odstraněna.</translation>
-   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="184373">Služba Backup Storage byla odstraněna.</translation>
-   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="184386">Při odstraňování Backup Storage došlo k chybě.</translation>
+   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="492515">Le Backup Storage a bien été supprimé.</translation>
+   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="492528">Une erreur est survenue lors de la suppression du Backup Storage.</translation>
    <translation id="server_configuration_cloudbackup_delete_question" qtlid="451872">Opravdu si přejete deaktivovat řešení Backup Storage?</translation>
 
    <translation id="server_configuration_cloudbackup_inactive" qtlid="451885">Vaše řešení Backup Storage není aktivní.</translation>
    <translation id="server_configuration_cloudbackup_new_project" qtlid="16493">Nový projekt</translation>
-   <translation id="server_configuration_cloudbackup_load_fail" qtlid="184256">Při načítání informací o Backup Storage došlo k chybě</translation>
+   <translation id="server_configuration_cloudbackup_load_fail" qtlid="492541">Une erreur est survenue lors du chargement des informations du Backup Storage</translation>
    <translation id="server_configuration_cloudbackup_load_offers_fail" qtlid="451898">Při načítání nabídky řešení Backup Storage došlo k chybě</translation>
    <translation id="server_configuration_cloudbackup_load_projects_fail" qtlid="451911">Při načítání cloudových projektů došlo k chybě</translation>
    <translation id="server_configuration_cloudbackup_load_agreements_fail" qtlid="451924">Při načítání smluv došlo k chybě&#13;
@@ -510,7 +512,7 @@
    <translation id="server_configuration_cloudbackup_summary_documentation_label" qtlid="415740">Příručka</translation>
    <translation id="server_configuration_cloudbackup_summary_usage_label" qtlid="109974">Použití</translation>
    <translation id="server_configuration_cloudbackup_summary_title_label_storage" qtlid="452067">Váš kontejner Backup Storage</translation>
-   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="184282">Odstranit Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="492554">Supprimer le Backup Storage</translation>
 
    <translation id="server_configuration_cloudbackup_container_storage_guide_description" qtlid="452080">Hledáte nástroj pro zálohování svých dat? OVH doporučuje Rclone</translation>
    <translation id="server_configuration_cloudbackup_container_storage_guide_product" qtlid="452093">Rclone</translation>
@@ -627,7 +629,7 @@
    <translation id="server_configuration_impi_password" qtlid="164753">Inicializace relace IPMI (autentikace)</translation>
    <translation id="server_configuration_impi_ping" qtlid="164766">Test přístupu k modulu IPMI (ping)</translation>
    <translation id="server_configuration_impi_information" qtlid="191837">IPMI Vám umožňuje připojit se na Váš server následujícími metodami:</translation>
-   <translation id="server_configuration_impi_information_java" qtlid="490506">IPMI permet de se connecter à votre serveur via l'applet JAVA suivant :</translation>
+   <translation id="server_configuration_impi_information_java" qtlid="490506">IPMI umožňuje připojení k serveru pomocí následujícího JAVA appletu: </translation>
    <translation id="server_configuration_impi_information2" qtlid="191850">Spuštěním "Remote KVM" relace (přístup ke klávesnici, myši a monitoru vzdáleného serveru) z Vaší IP {0}<ul><li>Přes Java Web Start applet</li></ul></translation>
    <translation id="server_configuration_impi_information3" qtlid="191863">Spuštěním "Serial Over LAN" (přístup do konzole Vašeho stroje přes zabezpečené připojení)přes Vaši IP {0}<ul><li>. Přes Váš webový prohlížeč (https)</li></ul></translation>
    <translation id="server_configuration_impi_start" qtlid="25951">Restart</translation>
@@ -657,8 +659,8 @@
    <translation id="server_configuration_impi_sessions_success" qtlid="165104">Relace modulu IPMI byly úspěšně odstraněny.</translation>
    <translation id="server_configuration_impi_disable" qtlid="165117">Funkce modulu IPMI jsou dočasně vyřazeny z provozu kvůli probíhající úloze. Jakmile bude úloha dokončena, funkce budou opět aktivovány.</translation>
    <translation id="server_configuration_impi_monitoring_warning" qtlid="472658">Nezapomeňte deaktivovat monitoring svých služeb před instalací operačního systému prostřednictvím IPMI.</translation>
-   <translation id="server_configuration_impi_SOL_help" qtlid="489127">La session SOL nécessite une configuration de votre part.</translation>
-   <translation id="server_configuration_impi_SOL_help_link" qtlid="489140">Accéder au guide de configuration.</translation>
+   <translation id="server_configuration_impi_SOL_help" qtlid="489127">Relace SOL vyžaduje provedení konfigurace na Vaší straně.</translation>
+   <translation id="server_configuration_impi_SOL_help_link" qtlid="489140">Přečtěte si konfigurační příručku.</translation>
    <translation id="server_configuration_kvm_order_step1_title" qtlid="229203">Volba délky trvání</translation>
    <translation id="server_configuration_kvm_order_step2_title" qtlid="229216">Objednat KVM pro server <em>{0}</em></translation>
    <translation id="server_configuration_kvm_order_step2_duration" qtlid="156875">Období:</translation>
@@ -864,7 +866,7 @@
    <translation id="server_configuration_installation_gabarit_step1_delete_fail" qtlid="184009">Není možné vymazat šablonu <b>{0}</b> ({1})</translation>
    <translation id="server_configuration_installation_gabarit_step2_info" qtlid="174399">Chystáte se spustit instalaci z šablony</translation>
    <translation id="server_configuration_installation_gabarit_step2_server" qtlid="174191">Server:</translation>
-   <translation id="server_configuration_installation_gabarit_step2_os" qtlid="174412">Šablona:</translation>
+   <translation id="server_configuration_installation_gabarit_step2_os" qtlid="174412">Šablona</translation>
    <translation id="server_configuration_installation_gabarit_step2_lang" qtlid="168874">Jazyk:</translation>
    <translation id="server_configuration_installation_gabarit_step2_hardwareRaid" qtlid="286721">{0} ({1} disky)</translation>
    <translation id="server_configuration_installation_gabarit_step2_hardwareRaid_incompatible_disks" qtlid="288236">Tento server má {0} disků zatímco tato šablona vyžaduje nejméně {1} disků.</translation>
@@ -1100,7 +1102,7 @@
 
    <translation id="server_tab_MONITORING_notifications_email" qtlid="244209">Upozornění pomocí e-mailu</translation>
    <translation id="server_tab_MONITORING_table_notifications_empty" qtlid="244222">Žádná upozornění</translation>
-   <translation id="server_tab_MONITORING_table_notifications_email_header_email" qtlid="33598">E-mailová adresa</translation>
+   <translation id="server_tab_MONITORING_table_notifications_email_header_email" qtlid="33598">E-mail</translation>
    <translation id="server_tab_MONITORING_table_notifications_email_header_lang" qtlid="30598">Jazyk</translation>
    <translation id="server_tab_MONITORING_table_notifications_email_header_status" qtlid="8230">Stav</translation>
    <translation id="server_tab_MONITORING_table_notifications_action_edit" qtlid="244235">Změna upozornění</translation>

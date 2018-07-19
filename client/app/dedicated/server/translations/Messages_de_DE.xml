@@ -188,7 +188,7 @@
    <translation id="server_configuration_firewall_rule_protocol_TCP" qtlid="141821">TCP</translation>
    <translation id="server_configuration_firewall_rule_protocol_UDP" qtlid="141834">UDP</translation>
    <translation id="server_configuration_firewall_rule_ip_any" qtlid="141847">Alle</translation>
-   <translation id="server_configuration_firewall_enable_title" qtlid="141860">Die Firewall aktivieren</translation>
+   <translation id="server_configuration_firewall_enable_title" qtlid="141860">Firewall aktivieren</translation>
    <translation id="server_configuration_firewall_enable_question" qtlid="141873">Sind Sie sicher, dass Sie die Firewall für die IP {0} aktivieren möchten?</translation>
    <translation id="server_configuration_firewall_enable_success" qtlid="141886">Die Firewall für die IP {0} wird in wenigen Augenblicken aktiviert.</translation>
    <translation id="server_configuration_firewall_enable_failed" qtlid="138779">Beim Aktivieren der Firewall auf der IP {0} ist ein Fehler aufgetreten.</translation>
@@ -438,7 +438,7 @@
    <translation id="server_configuration_ftpbackup_access_order_right" qtlid="180577">Sie haben keine ausreichenden Rechte für die Durchführung einer Bestellung</translation>
    <translation id="server_configuration_ftpbackup_access_add" qtlid="153857">Einen Zugang hinzufügen</translation>
    <translation id="server_configuration_ftpbackup_access_edit" qtlid="180694">Den Zugang bearbeiten</translation>
-   <translation id="server_configuration_ftpbackup_access_edit_info" qtlid="486594">Modifier l'accès du block IP <strong>{0}</strong></translation>
+   <translation id="server_configuration_ftpbackup_access_edit_info" qtlid="486594">Zugriff des IP-Blocks <strong>{0}</strong> bearbeiten</translation>
    <translation id="server_configuration_ftpbackup_access_delete" qtlid="180590">Löschung eines Zugangs</translation>
    <translation id="server_configuration_ftpbackup_access_delete_question" qtlid="183814">Sind Sie sicher, dass Sie den Zugang des IP-Blocks <b>{0}</b> löschen möchten?</translation>
    <translation id="server_configuration_ftpbackup_access_delete_success" qtlid="183827">Die Löschung des Storage-Backup Zugangs des IP-Blocks <b>{0}</b> wurde erfolgreich angefordert und wird in einigen Minuten aktiv sein.</translation>
@@ -476,16 +476,16 @@
    <translation id="server_configuration_ftpbackup_add_ip" qtlid="180850">Betroffener Block:</translation>
    <translation id="server_configuration_ftpbackup_add_authorization" qtlid="180863">Erlauben für:</translation>
 
-   <translation id="server_configuration_cloudbackup_delete" qtlid="184282">Storage-Backup löschen</translation>
+   <translation id="server_configuration_cloudbackup_delete" qtlid="492502">Supprimer le Backup Storage</translation>
 
    <translation id="server_configuration_cloudbackup_delete_success" qtlid="184360">Das Storage-Backup wird in wenigen Augenblicken gelöscht.</translation>
-   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="184373">Das Storage-Backup wurde erfolgreich gelöscht.</translation>
-   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="184386">Beim Löschen des Storage-Backups ist ein Fehler aufgetreten.</translation>
+   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="492515">Le Backup Storage a bien été supprimé.</translation>
+   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="492528">Une erreur est survenue lors de la suppression du Backup Storage.</translation>
    <translation id="server_configuration_cloudbackup_delete_question" qtlid="451872">Sind Sie sicher, dass Sie die Storage-Backup Option deaktivieren möchten?</translation>
 
    <translation id="server_configuration_cloudbackup_inactive" qtlid="451885">Ihr Storage-Backup ist nicht aktiviert.</translation>
    <translation id="server_configuration_cloudbackup_new_project" qtlid="16493">Neues Projekt</translation>
-   <translation id="server_configuration_cloudbackup_load_fail" qtlid="184256">Beim Laden der Storage-Backup Informationen ist ein Fehler aufgetreten.</translation>
+   <translation id="server_configuration_cloudbackup_load_fail" qtlid="492541">Une erreur est survenue lors du chargement des informations du Backup Storage</translation>
    <translation id="server_configuration_cloudbackup_load_offers_fail" qtlid="451898">Beim Laden der Cloud Storage-Backup Angebote ist ein Fehler aufgetreten</translation>
    <translation id="server_configuration_cloudbackup_load_projects_fail" qtlid="451911">Beim Laden der Cloud Projekte ist ein Fehler aufgetreten</translation>
    <translation id="server_configuration_cloudbackup_load_agreements_fail" qtlid="451924">Beim Laden der Verträge ist ein Fehler aufgetreten</translation>
@@ -509,7 +509,7 @@
    <translation id="server_configuration_cloudbackup_summary_documentation_label" qtlid="415740">Anleitung</translation>
    <translation id="server_configuration_cloudbackup_summary_usage_label" qtlid="109974">Nutzung</translation>
    <translation id="server_configuration_cloudbackup_summary_title_label_storage" qtlid="452067">Ihr Storage-Backup Container</translation>
-   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="184282">Storage-Backup löschen</translation>
+   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="492554">Supprimer le Backup Storage</translation>
 
    <translation id="server_configuration_cloudbackup_container_storage_guide_description" qtlid="452080">Sie suchen nach dem geeigneten Tool, um Ihre Daten zu sichern? OVH empfiehlt Ihnen Rclone</translation>
    <translation id="server_configuration_cloudbackup_container_storage_guide_product" qtlid="452093">Rclone</translation>
@@ -626,7 +626,7 @@
    <translation id="server_configuration_impi_password" qtlid="164753">Initialisierung einer IPMI Session (Authentifizierung)</translation>
    <translation id="server_configuration_impi_ping" qtlid="164766">Zugangstest für das IPMI Modul (Ping)</translation>
    <translation id="server_configuration_impi_information" qtlid="191837">Mit IPMI können Sie sich auf folgende Arten mit Ihrem Server verbinden:</translation>
-   <translation id="server_configuration_impi_information_java" qtlid="490506">IPMI permet de se connecter à votre serveur via l'applet JAVA suivant :</translation>
+   <translation id="server_configuration_impi_information_java" qtlid="490506">Mit IPMI können Sie sich über das folgende Java Applet mit Ihrem Server verbinden:</translation>
    <translation id="server_configuration_impi_information2" qtlid="191850">Indem Sie eine 'Remote KVM' Session (Zugriff auf die Tastatur, die Maus und die Anzeige Ihres Servers) von Ihrer IP {0} aus herstellen<ul><li>Von einem Java Web Start Applet aus</li></ul></translation>
    <translation id="server_configuration_impi_information3" qtlid="191863">Indem Sie eine 'Serial Over LAN' Session (Zugriff auf die serielle Konsole Ihrer Maschine über eine gesicherte Verbindung) von Ihrer IP {0} aus herstellen<ul><li>Von Ihrem Browser (HTTPS) aus</li></ul></translation>
    <translation id="server_configuration_impi_start" qtlid="25951">Starten</translation>
@@ -656,8 +656,8 @@
    <translation id="server_configuration_impi_sessions_success" qtlid="165104">Die Sessions des IPMI Moduls wurden gelöscht.</translation>
    <translation id="server_configuration_impi_disable" qtlid="165117">Die Funktionen des IPMI Moduls wurden temporär deaktiviert, da derzeit ein Eingriff durchgeführt wird. Sie werden reaktiviert, sobald der Eingriff abgeschlossen wurde.</translation>
    <translation id="server_configuration_impi_monitoring_warning" qtlid="472658">Vergessen Sie nicht, das Monitoring Ihrer Dienstleistungen zu deaktivieren, bevor Sie ein Betriebssystem per IPMI installieren.</translation>
-   <translation id="server_configuration_impi_SOL_help" qtlid="489127">La session SOL nécessite une configuration de votre part.</translation>
-   <translation id="server_configuration_impi_SOL_help_link" qtlid="489140">Accéder au guide de configuration.</translation>
+   <translation id="server_configuration_impi_SOL_help" qtlid="489127">Die SOL Session muss von Ihnen konfiguriert werden.</translation>
+   <translation id="server_configuration_impi_SOL_help_link" qtlid="489140">Zur Konfigurationsanleitung</translation>
    <translation id="server_configuration_kvm_order_step1_title" qtlid="229203">Laufzeit auswählen</translation>
    <translation id="server_configuration_kvm_order_step2_title" qtlid="229216">Bestellung eines KVM für den Server <em>{0}</em></translation>
    <translation id="server_configuration_kvm_order_step2_duration" qtlid="156875">Laufzeit:</translation>
