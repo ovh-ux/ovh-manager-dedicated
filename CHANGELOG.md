@@ -1,3 +1,21 @@
+<a name="9.6.11"></a>
+## [9.6.11](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.10...v9.6.11) (2018-07-19)
+
+
+### Bug Fixes
+
+* use heading attribut on oui-back-button ([4f10f8b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4f10f8b)), closes [/github.com/ovh-ux/ovh-ui-angular/commit/5ddc0ef2edba5898b97fcca0a73124d369432778#diff-c9aba9326a8bbfe4300255981d64e080R12](https://github.com//github.com/ovh-ux/ovh-ui-angular/commit/5ddc0ef2edba5898b97fcca0a73124d369432778/issues/diff-c9aba9326a8bbfe4300255981d64e080R12)
+* **license:** fix upgrade button redirection ([#425](https://github.com/ovh-ux/ovh-manager-dedicated/issues/425)) ([9b1f311](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9b1f311))
+
+
+### Features
+
+* **billing:** add more information in terminate confirmation message ([0c68fa7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0c68fa7))
+* **navbar:** translations for navbar placeholder ([#437](https://github.com/ovh-ux/ovh-manager-dedicated/issues/437)) ([0153ff7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0153ff7))
+* **sidebar:** add sidebar order tracking ([#410](https://github.com/ovh-ux/ovh-manager-dedicated/issues/410)) ([307a7d5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/307a7d5))
+
+
+
 <a name="9.6.10"></a>
 ## [9.6.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.9...v9.6.10) (2018-07-11)
 
