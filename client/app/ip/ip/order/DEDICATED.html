@@ -10,7 +10,7 @@
                 class="form-control"
                 data-ng-model="model.params.blockSize"
                 data-ng-change="checkDedicatedBlockSize()"
-                data-ng-options="r as ((r > 1 ? 'ip_order_ip_count_other' : 'ip_order_ip_count_1') | translate:{t0: r}) for r in orderableIp.ipv4BlockSizesAll">
+                data-ng-options="r as ((r > 1 ? 'ip_order_ip_count_other' : 'ip_order_ip_count_1') | translate:{ t0: r }) for r in orderableIp.ipv4BlockSizesAll">
             <option value=""
                     data-ng-disabled="true"
                     data-translate="global_select">

@@ -9,7 +9,7 @@
         }
 
         $onInit () {
-            const hasValidServiceInfos = !this.serviceInfos || angular.isObject(this.serviceInfos);
+            const hasValidServiceInfos = angular.isObject(this.serviceInfos);
             const hasValidServiceName = _.isString(this.serviceName);
             if (!hasValidServiceInfos || !hasValidServiceName) {
                 throw new Error("serviceExpirationDate: Missing parameter(s)");
@@ -42,7 +42,7 @@
         }
 
         isAutoRenew () {
-            return this.serviceInfos.renew && (this.serviceInfos.renew.automatic || this.serviceInfos.renew.forced);
+            return _(this.serviceInfos).get("renew.automatic") || _(this.serviceInfos).get("renew.forced");
         }
     }
     angular.module("directives").controller("ServiceExpirationDateComponentCtrl", ServiceExpirationDateComponentCtrl);

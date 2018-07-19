@@ -1,161 +1,189 @@
 <div data-ng-controller="CdnStatisticsCtrl">
 
-    <h2 data-translate="cdn_tab_statistics"></h2>
-
     <div class="row d-md-flex mb-5">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="oui-tile mb-5 h-100">
+                <h2 class="oui-header_4 oui-tile__title"
+                    data-translate="cdn_configuration_shortcut_title"></h2>
                 <div class="oui-tile__body">
-                    <ul class="list-unstyled">
-
-                        <li class="oui-tile__item">
-                            <div class="oui-tile__definition">
-                                <div class="d-flex w-100">
-                                    <div>
-                                        <strong class="d-block"
-                                                data-translate="cdn_configuration_activity">
-                                        </strong>
-                                        <span data-ng-pluralize
-                                              data-count="$ctrl.cdn.activity"
-                                              data-when="{
-                                                  '0': ('cdn_configuration_activity_page_viewed_0' | translate),
-                                                  'one': ('cdn_configuration_activity_page_viewed_one' | translate),
-                                                  'other': ('cdn_configuration_activity_page_viewed_other' | translate: { count: {} })
-                                              }">
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="oui-tile__item">
-                            <div class="oui-tile__definition">
-                                <div class="d-flex w-100">
-                                    <div>
-                                        <strong class="d-block"
-                                                data-translate="cdn_configuration_savings">
-                                        </strong>
-                                        <span class="d-block"
-                                              data-ng-pluralize
-                                              data-count="$ctrl.cdn.bandwidthHitPercentage"
-                                              data-when="{
-                                                  '0': ('cdn_configuration_savings_bandwidth_percentage_default' | translate),
-                                                  'other': ('cdn_configuration_savings_bandwidth_percentage' | translate: { count: {} })
-                                              }">
-                                        </span>
-                                        <span class="d-block"
-                                              data-ng-pluralize
-                                              data-count="$ctrl.cdn.requestHitPercentage"
-                                              data-when="{
-                                                  '0': ('cdn_configuration_savings_request_percentage_default' | translate),
-                                                  'other': ('cdn_configuration_savings_request_percentage' | translate: { count: {} })
-                                              }">
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="oui-tile__item">
-                            <div class="oui-tile__definition">
-                                <div class="d-flex w-100">
-                                    <div>
-                                        <strong class="d-block"
-                                                data-translate="cdn_configuration_quota">
-                                        </strong>
-                                        <span data-ng-bind="$ctrl.cdn.quota.value + ' ' + ('unit_size_' + $ctrl.cdn.quota.unit | translate)">
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="oui-tile__item">
-                            <div class="oui-tile__definition">
-                                <div class="d-flex w-100">
-                                    <div>
-                                        <strong class="d-block"
-                                                data-translate="cdn_configuration_quota_estimation">
-                                        </strong>
-                                        <span data-ng-bind="$ctrl.cdn.endingEstimationDate">
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="oui-tile__item">
-                            <div class="oui-tile__definition">
-                                <div class="d-flex w-100">
-                                    <div>
-                                        <strong class="d-block">
-                                            <service-expiration-label
-                                                service-infos="$ctrl.serviceInfos">
-                                            </service-expiration-label>
-                                        </strong>
-                                        <service-expiration-date
-                                            service-name="$ctrl.cdn.serviceName"
-                                            service-type="'CDN_DEDICATED'"
-                                            service-infos="$ctrl.serviceInfos">
-                                        </service-expiration-date>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                    </ul>
+                    <div class="oui-tile__item oui-tile__item_button">
+                        <button type="button"
+                                class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
+                                data-ng-click="setAction('domain/add/cdn-dedicated-domain-add')"
+                                data-translate="cdn_configuration_add_domain_title_button"></button>
+                        </button>
+                    </div>
+                    <div class="oui-tile__item oui-tile__item_button">
+                        <button type="button"
+                                class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
+                                data-ng-click="setAction('domain/rule/order/cdn-dedicated-domain-rule-order')"
+                                data-translate="cdn_configuration_cacherules_upgrade_title_button"></button>
+                        </button>
+                    </div>
+                    <div class="oui-tile__item oui-tile__item_button">
+                        <button type="button"
+                                class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
+                                data-ng-click="setAction('quota/order/cdn-dedicated-quota-order')"
+                                data-translate="cdn_configuration_order_quota_title"></button>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="oui-tile mb-5 h-100">
+                <h2 class="oui-header_4 oui-tile__title"
+                    data-translate="cdn_tab_statistics"></h2>
                 <div class="oui-tile__body">
-                    <ul class="list-unstyled">
+                    <div class="oui-tile__item">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term" data-translate="cdn_configuration_activity"></dt>
+                            <dd class="oui-tile__description">
+                                <span data-ng-pluralize
+                                      data-count="$ctrl.cdn.activity"
+                                      data-when="{
+                                          '0': ('cdn_configuration_activity_page_viewed_0' | translate),
+                                          'one': ('cdn_configuration_activity_page_viewed_one' | translate),
+                                          'other': ('cdn_configuration_activity_page_viewed_other' | translate: { count: {} })
+                                      }">
+                                </span>
+                            </dd>
+                        </dl>
+                    </div>
 
-                        <li class="oui-tile__item">
-                            <div class="oui-tile__definition">
-                                <div class="d-flex w-100">
-                                    <div>
+                    <div class="oui-tile__item">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term" data-translate="cdn_configuration_savings"></dt>
+                            <dd class="oui-tile__description">
+                                <span class="d-block"
+                                      data-ng-pluralize
+                                      data-count="$ctrl.cdn.bandwidthHitPercentage"
+                                      data-when="{
+                                          '0': ('cdn_configuration_savings_bandwidth_percentage_default' | translate),
+                                          'other': ('cdn_configuration_savings_bandwidth_percentage' | translate: { count: {} })
+                                      }">
+                                </span>
+                                <span class="d-block"
+                                      data-ng-pluralize
+                                      data-count="$ctrl.cdn.requestHitPercentage"
+                                      data-when="{
+                                          '0': ('cdn_configuration_savings_request_percentage_default' | translate),
+                                          'other': ('cdn_configuration_savings_request_percentage' | translate: { count: {} })
+                                      }">
+                                </span>
+                            </dd>
+                        </dl>
+                    </div>
 
-                                        <img src="images/cdn/icn_domain.png" alt="" />
-                                        <span data-ng-pluralize
-                                              data-count="$ctrl.cdn.domains"
-                                              data-when="{
-                                                  '0': ('cdn_configuration_domain_0' | translate),
-                                                  'one': ('cdn_configuration_domain_one' | translate),
-                                                  'other': ('cdn_configuration_domain_other' | translate: { count: {} })
-                                              }">
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                    <div class="oui-tile__item">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term" data-translate="cdn_configuration_quota"></dt>
+                            <dd class="oui-tile__description">
+                                <span data-ng-bind="$ctrl.cdn.quota.value + ' ' + ('unit_size_' + $ctrl.cdn.quota.unit | translate)"></span>
+                            </dd>
+                        </dl>
+                        <div class="oui-tile__actions">
+                            <oui-action-menu
+                                aria-label="{{:: 'menu_action_label' | translate:{t0: ('cdn_configuration_domains' | translate)} }}"
+                                data-align="end"
+                                data-compact>
+                                <oui-action-menu-item
+                                    data-text="{{ :: 'cdn_configuration_order_quota_title' | translate }}"
+                                    aria-label="{{ :: 'cdn_configuration_order_quota_title' | translate }}"
+                                    data-on-click="setAction('quota/order/cdn-dedicated-quota-order')"></oui-action-menu-item>
+                            </oui-action-menu>
+                        </div>
+                    </div>
 
-                        <li class="oui-tile__item">
-                            <div class="oui-tile__definition">
-                                <div class="d-flex w-100">
-                                    <div>
-                                        <img src="images/cdn/icn_cdn.png" alt="" />
-                                        <span data-ng-bind="$ctrl.cdn.anycast.ipv4"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                    <div class="oui-tile__item">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term" data-translate="cdn_configuration_quota_estimation"></dt>
+                            <dd class="oui-tile__description">
+                                <span data-ng-bind="$ctrl.cdn.endingEstimationDate"></span>
+                            </dd>
+                        </dl>
+                    </div>
 
-                        <li class="oui-tile__item">
-                            <div class="oui-tile__definition">
-                                <div class="d-flex w-100">
-                                    <div>
-                                        <img src="images/cdn/icn_server.png" alt="" />
-                                        <span data-translate="cdn_configuration_backend"
-                                              data-translate-values="{ t0: $ctrl.cdn.backends }"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                    <div class="oui-tile__item">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term">
+                                <service-expiration-label
+                                    data-service-infos="$ctrl.serviceInfos">
+                                </service-expiration-label>
+                            </dt>
+                            <dd class="oui-tile__description">
+                                <service-expiration-date
+                                    data-service-name="$ctrl.cdn.serviceName"
+                                    data-service-type="'CDN_DEDICATED'"
+                                    data-service-infos="$ctrl.serviceInfos"
+                                    data-force-hide-renew-action="true">
+                                </service-expiration-date>
+                            </dd>
+                        </dl>
+                        <div class="oui-tile__actions">
+                            <service-expiration-date
+                                data-hide-renew-date="true"
+                                data-service-name="$ctrl.cdn.serviceName"
+                                data-service-type="'CDN_DEDICATED'"
+                                data-service-infos="$ctrl.serviceInfos">
+                            </service-expiration-date>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                    </ul>
+        <div class="col-md-4">
+            <div class="oui-tile mb-5 h-100">
+                <h2 class="oui-header_4 oui-tile__title"
+                    data-translate="cdn_configuration_info_title"></h2>
+                <div class="oui-tile__body">
+                    <div class="oui-tile__item">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term" data-translate="cdn_configuration_domains"></dt>
+                            <dd class="oui-tile__description">
+                                <span data-ng-pluralize
+                                      data-count="$ctrl.cdn.domains"
+                                      data-when="{
+                                          '0': ('cdn_configuration_domain_0' | translate),
+                                          'one': ('cdn_configuration_domain_one' | translate),
+                                          'other': ('cdn_configuration_domain_other' | translate: { count: {} })
+                                      }">
+                                </span>
+                            </dd>
+                        </dl>
+                        <div class="oui-tile__actions">
+                            <oui-action-menu
+                                aria-label="{{:: 'menu_action_label' | translate:{t0: ('cdn_configuration_domains' | translate)} }}"
+                                data-align="end"
+                                data-compact>
+                                <oui-action-menu-item
+                                    data-text="{{ :: 'cdn_configuration_add_domain_title_button' | translate }}"
+                                    aria-label="{{ :: 'cdn_configuration_add_domain_title_button' | translate }}"
+                                    data-on-click="setAction('domain/add/cdn-dedicated-domain-add')"></oui-action-menu-item>
+                            </oui-action-menu>
+                        </div>
+                    </div>
+
+                    <div class="oui-tile__item">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term" data-translate="cdn_configuration_ip"></dt>
+                            <dd class="oui-tile__description">
+                                <span data-ng-bind="$ctrl.cdn.anycast.ipv4"></span>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="oui-tile__item">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term" data-translate="cdn_configuration_backends"></dt>
+                            <dd class="oui-tile__description">
+                                <span data-translate="cdn_configuration_backend"
+                                  data-translate-values="{ t0: $ctrl.cdn.backends }"></span>
+                            </dd>
+                        </dl>
+                    </div>
                 </div>
             </div>
         </div>

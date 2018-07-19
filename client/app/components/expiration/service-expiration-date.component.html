@@ -1,17 +1,15 @@
-<span data-ng-class="{ 'd-block': !$ctrl.inline }">
-    <span>
-        <a class="mr-2"
-            data-ng-href="{{:: $ctrl.getRenewUrl() }}"
-            data-ng-bind=":: $ctrl.getDate() | date:'mediumDate'"
-            data-ng-if="!$ctrl.hideRenewDate">
-        </a>
-
-        <a target="_blank"
-           class="btn btn-default"
-           title="{{ :: 'core_service_renew_button' | translate }}"
-           data-ng-if="!$ctrl.forceHideRenewAction && ((!$ctrl.isAutoRenew() && $ctrl.getRenewUrl() && !$ctrl.hideRenewAction) || ($ctrl.serviceInfos.status === 'expired'))"
-           data-ng-href="{{:: $ctrl.getRenewUrl() }}"
-           data-translate="core_service_renew_button">
-        </a>
-    </span>
-</span>
+<a class="oui-link"
+   data-ng-href="{{:: $ctrl.getRenewUrl() }}"
+   data-ng-bind=":: $ctrl.getDate() | date:'mediumDate'"
+   data-ng-if="$ctrl.constants.target !== 'US' && !$ctrl.hideRenewDate">
+</a>
+<oui-action-menu
+    data-ng-if="$ctrl.constants.target !== 'US' && !$ctrl.forceHideRenewAction && ((!$ctrl.isAutoRenew() && $ctrl.getRenewUrl() && !$ctrl.hideRenewAction) || ($ctrl.serviceInfos.status === 'expired'))"
+    aria-label="'menu_action_label' | translate:{ t0: 'core_service_expiration_label' | translate }"
+    data-align="end"
+    data-compact>
+    <oui-action-menu-item
+        data-text="{{ 'core_service_renew_button' | translate }}"
+        data-aria-label="{{ 'core_service_renew_button' | translate }}"
+        data-href="{{:: $ctrl.getRenewUrl() }}"></oui-action-menu-item>
+</oui-action-menu>

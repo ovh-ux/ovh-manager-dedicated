@@ -1,13 +1,13 @@
 angular.module("App")
     .controller("DedicatedServerRebootCtrl", class DedicatedServerRebootCtrl {
-        constructor ($q, $scope, $stateParams, $state, Alerter, Server, $translate) {
+        constructor ($q, $scope, $stateParams, $state, $translate, Alerter, Server) {
             this.$q = $q;
             this.$scope = $scope;
             this.$stateParams = $stateParams;
             this.$state = $state;
+            this.$translate = $translate;
             this.Alerter = Alerter;
             this.Server = Server;
-            this.$translate = $translate;
         }
 
         $onInit () {
@@ -35,6 +35,7 @@ angular.module("App")
          */
         reboot () {
             this.isRebooting = true;
+
             return this.Server.reboot(this.$stateParams.productId)
                 .then(() => {
                     this.Alerter.success(this.$translate.instant("server_configuration_reboot_success", { t0: this.server.name }), "server_dashboard_alert");

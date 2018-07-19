@@ -1,14 +1,14 @@
 <div data-ng-controller="controllers.Server.Stats.Info">
-
     <div class="text-center"
          data-ng-if="loading">
         <oui-spinner></oui-spinner>
     </div>
-
     <div class="row d-md-flex"
          data-ng-if="!loading">
         <div class="col-md-4">
             <div class="oui-tile mb-5 h-100">
+                <h5 class="oui-header_5 oui-tile__title"
+                    data-translate="server_tab_stats_rtm_location"></h5>
                 <div class="oui-tile__body"
                      data-ng-include="'dedicated/server/location/dedicated-server-location.html'">
                 </div>
@@ -16,93 +16,91 @@
         </div>
         <div class="col-md-4">
             <div class="oui-tile mb-5 h-100">
+                <h5 class="oui-header_5 oui-tile__title"
+                    data-translate="server_tab_stats_rtm_profile"></h5>
                 <div class="oui-tile__body">
-                    <ul class="list-unstyled">
-                        <li class="oui-tile__item">
-                            <div class="oui-tile__definition">
-                                <strong class="d-block"
-                                        data-translate="server_tab_stats_rtm_infos_cpu">
-                                </strong>
-                                <span>
-                                    <span data-ng-bind="infoRtm.cpu.name || '-'"></span><br />
-                                    <span data-translate="server_tab_stats_rtm_infos_cpu_core"></span> :
-                                    <span data-ng-bind="infoRtm.cpu.core || '-'"></span><br />
-                                    <span data-translate="server_tab_stats_rtm_infos_cpu_cache"></span> :
-                                    <span data-ng-bind="infoRtm.cpu.cache.value + infoRtm.cpu.cache.unit"></span>
+                    <div class="oui-tile__item">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term"
+                                data-translate="server_tab_stats_rtm_infos_cpu"></dt>
+                            <dd class="oui-tile__description">
+                                <span data-ng-bind="infoRtm.cpu.name || '-'"></span>
+                                <br />
+                                <span data-translate="server_tab_stats_rtm_infos_cpu_core"></span> :
+                                <span data-ng-bind="infoRtm.cpu.core || '-'"></span>
+                                <br />
+                                <span data-translate="server_tab_stats_rtm_infos_cpu_cache"></span> :
+                                <span data-ng-bind="infoRtm.cpu.cache.value + infoRtm.cpu.cache.unit"></span>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="oui-tile__item">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term"
+                                data-translate="server_tab_stats_rtm_infos_ram"></dt>
+                            <dd class="oui-tile__description">
+                                <span data-ng-repeat="memory in infoRtm.memory.list track by $index"
+                                      data-ng-bind="memory.number + 'x ' + memory.value + (('unit_size_' + memory.unit) | translate)">
                                 </span>
-                            </div>
-                        </li>
-                        <li class="oui-tile__item">
-                            <div class="oui-tile__definition">
-                                <strong class="d-block"
-                                        data-translate="server_tab_stats_rtm_infos_ram">
-                                </strong>
-                                <span>
-                                    <span data-ng-repeat="memory in infoRtm.memory.list track by $index"
-                                          data-ng-bind="memory.number + 'x ' + memory.value + (('unit_size_' + memory.unit) | translate)">
-                                    </span>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="oui-tile__item">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term"
+                                data-translate="server_tab_stats_rtm_infos_disk"></dt>
+                            <dd class="oui-tile__description">
+                                <span data-ng-repeat="diskGroup in server.diskGroups track by $index"
+                                      data-ng-bind="diskGroup.numberOfDisks + '&nbsp;x&nbsp;' + diskGroup.diskSize.value + ' ' + (('unit_size_' + diskGroup.diskSize.unit) | translate)">
                                 </span>
-                            </div>
-                        </li>
-                        <li class="oui-tile__item">
-                            <div class="oui-tile__definition">
-                                <strong class="d-block"
-                                        data-translate="server_tab_stats_rtm_infos_disk">
-                                </strong>
-                                <span>
-                                    <span data-ng-repeat="diskGroup in server.diskGroups track by $index"
-                                          data-ng-bind="diskGroup.numberOfDisks + '&nbsp;x&nbsp;' + diskGroup.diskSize.value + ' ' + (('unit_size_' + diskGroup.diskSize.unit) | translate)">
-                                    </span>
-                                </span>
-                            </div>
-                        </li>
-                        <li class="oui-tile__item">
-                            <div class="oui-tile__definition">
-                                <strong class="d-block" data-translate="server_tab_stats_rtm_infos_motherboard"></strong>
-                                <span data-ng-bind="infoRtm.motherboard.name || '-'"></span>
-                            </div>
-                        </li>
-                    </ul>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="oui-tile__item">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term"
+                                data-translate="server_tab_stats_rtm_infos_motherboard"></dt>
+                            <dd class="oui-tile__description"
+                                data-ng-bind="infoRtm.motherboard.name || '-'"></dd>
+                        </dl>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="oui-tile mb-5 h-100">
+                <h5 class="oui-header_5 oui-tile__title"
+                    data-translate="server_tab_stats_rtm_infos_versions"></h5>
                 <div class="oui-tile__body">
-                    <ul class="list-unstyled">
-                        <li class="oui-tile__item">
-                            <div class="oui-tile__definition">
-                                <strong class="d-block"
-                                        data-translate="server_tab_stats_rtm_infos_rtmVersion">
-                                </strong>
-                                <span>
-                                    <span data-ng-bind="infoRtm.rtmVersion.installedVersion || '-'"></span>
-                                    <p class="text-info"
-                                       data-ng-if="infoRtm.rtmVersion.needsUpdate">
-                                        <a href="{{ updateRtmLinkForCurrentLang }}"
-                                           target="_blank"
-                                           rel="noopener"
-                                           title="{{ 'server_tab_stats_rtm_infos_rtmVersion_update' | translate }} ({{ 'server_tab_stats_rtm_new_window' | translate }})">
-                                            <span data-translate="server_tab_stats_rtm_infos_rtmVersion_update"></span>
-                                            <span class="icon-share-alt" aria-hidden="true"></span>
-                                        </a>
-                                    </p>
-                                </span>
-                            </div>
-                        </li>
-                        <li class="oui-tile__item">
-                            <div class="oui-tile__definition">
-                                <strong class="d-block"
-                                        data-translate="server_tab_stats_rtm_infos_kernelVersion">
-                                </strong>
-                                <span data-ng-bind="infoRtm.osInfo.kernelRelease"></span>
-                            </div>
-                        </li>
-                    </ul>
+                    <div class="oui-tile__item">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term"
+                                data-translate="server_tab_stats_rtm_infos_rtmVersion"></dt>
+                            <dd class="oui-tile__description">
+                                <span data-ng-bind="infoRtm.rtmVersion.installedVersion || '-'"></span>
+                                <p data-ng-if="infoRtm.rtmVersion.needsUpdate">
+                                    <a href="{{ updateRtmLinkForCurrentLang }}"
+                                       target="_blank"
+                                       rel="noopener"
+                                       title="{{ 'server_tab_stats_rtm_infos_rtmVersion_update' | translate }} ({{ 'server_tab_stats_rtm_new_window' | translate }})">
+                                        <span data-translate="server_tab_stats_rtm_infos_rtmVersion_update"></span>
+                                        <span class="icon-share-alt"
+                                              aria-hidden="true"></span>
+                                    </a>
+                                </p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="oui-tile__item">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term"
+                                data-translate="server_tab_stats_rtm_infos_kernelVersion"></dt>
+                            <dd class="oui-tile__description"
+                                data-ng-bind="infoRtm.osInfo.kernelRelease"></dd>
+                        </dl>
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
-
 </div>

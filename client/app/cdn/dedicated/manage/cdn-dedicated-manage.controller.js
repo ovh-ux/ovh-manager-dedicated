@@ -20,9 +20,9 @@ angular.module("App").controller("CdnManageCtrl", class CdnManageCtrl {
         return this.$q.allSettled([
             this.Cdn.getSelected(this.$stateParams.productId, true),
             this.Cdn.getServiceInfos(this.$stateParams.productId)
-        ]).then((data) => {
-            this.cdn = data[0];
-            this.serviceInfos = data[1];
+        ]).then(([selected, serviceInfos]) => {
+            this.cdn = selected;
+            this.serviceInfos = serviceInfos;
 
             const date = new Date();
             const endingDay = this.cdn.endingDay;
@@ -35,9 +35,7 @@ angular.module("App").controller("CdnManageCtrl", class CdnManageCtrl {
                 date.setDate(date.getDate() + endingDay);
                 this.cdn.endingEstimationDate = this.$filter("date")(date, "mediumDate");
             }
-        }).catch((errors) => {
-            const errCdn = errors[0];
-            const errServiceInfos = errors[1];
+        }).catch(([errCdn, errServiceInfos]) => {
             const errs = [];
 
             if (errCdn.data && errCdn.data.type === "ERROR") {

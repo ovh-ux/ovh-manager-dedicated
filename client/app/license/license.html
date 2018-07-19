@@ -5,47 +5,42 @@
     <div class="page-header">
         <div class="row">
             <div class="col-sm-9">
-                <h1 data-translate="license_dashboard_title"></h1>
-            </div>
-            <div class="col-sm-3 d-flex">
-                <div class="btn-group ml-auto mt-4">
-                    <button type="button"
-                            class="oui-button oui-button_dropdown mb-0"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                            data-toggle="dropdown">
-                        <span data-translate="common_actions"></span>
-                        <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-right m-0 p-0">
-                        <li>
-                            <a class="btn btn-link"
-                               data-ui-sref="app.license.order"
-                               data-translate="license_order_title_button">
-                            </a>
-                        </li>
-                        <li>
-                            <button type="button"
-                                    class="btn btn-link"
-                                    data-ng-click="setAction('spla/add/license-spla-add')"
-                                    data-translate="license_spla_add_title_button">
-                            </button>
-                        </li>
-                    </ul>
-                </div>
+                <h1 class="oui-header_2"
+                    data-translate="license_dashboard_title"></h1>
             </div>
         </div>
     </div>
+
     <div class="tab-content">
-        <h2 data-translate="license_dashboard_subtitle"></h2>
-        <div data-ovh-alert></div>
+        <div class="row d-md-flex mb-3">
+            <div class="col-md-6">
+                <h2 class="oui-header_3"
+                    data-translate="license_dashboard_subtitle"></h2>
+                <div data-ovh-alert></div>
+                <div class="oui-action-menu-container">
+                    <oui-action-menu aria-label="{{:: 'menu_action_label' | translate:{ t0: ('license_dashboard_subtitle' | translate) } }}"
+                                     data-align="start"
+                                     data-text="{{ :: 'common_actions' | translate }}">
+                        <oui-action-menu-item aria-label="{{:: 'license_order_title_button' | translate }}"
+                                              data-text="{{:: 'license_order_title_button' | translate }}"
+                                              data-ui-sref="app.license.order">
+                        </oui-action-menu-item>
+                        <oui-action-menu-item aria-label="{{:: 'license_spla_add_title_button' | translate }}"
+                                              data-text="{{:: 'license_spla_add_title_button' | translate }}"
+                                              data-ui-sref="app.license.dashboard.spla-add">
+                        </oui-action-menu-item>
+                    </oui-action-menu>
+                </div>
+            </div>
+        </div>
+
         <oui-datagrid rows-loader="loadDatagridLicences($config)">
             <oui-column title=":: 'license_dashboard_table_title_type' | translate"
                         property="id">
-                <span data-ng-show="$row.type != licenseTypes.SPLA"
+                <span data-ng-if="$row.type !== licenseTypes.SPLA"
                       data-ng-bind="('license_designation_' + $row.type + '_version_' + $row.version) | translate">
                 </span>
-                <span data-ng-show="$row.type == licenseTypes.SPLA"
+                <span data-ng-if="$row.type === licenseTypes.SPLA"
                       data-ng-bind="('license_designation_' + $row.type + '_type_' + $row.splaType) | translate">
                 </span>
             </oui-column>

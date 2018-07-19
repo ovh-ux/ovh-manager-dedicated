@@ -11,12 +11,12 @@ angular.module("App").controller("CdnTabSslCtrl", ($scope, $translate, Cdn, $sta
         case "REMOVING":
         case "CREATING":
         case "UPLOADING":
-            return "label-warning";
+            return "oui-status_warning";
         case "ERROR":
         case "OFF":
-            return "label-danger";
+            return "oui-status_error";
         case "ON":
-            return "label-success";
+            return "oui-status_success";
         default:
             return "";
         }

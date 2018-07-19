@@ -33,7 +33,10 @@ class ServerTrafficService {
                 _.set(traffic, "outputQuotaSize.text", this.getQuotaText(traffic.outputQuotaSize), traffic.remainingOutputQuotaSize.unit);
                 _.set(traffic, "outputQuotaUsed.text", this.getQuotaText(traffic.outputQuotaUsed));
 
-                traffic.resetQuotaTimeLeft = this.constructor.getTimeleft(traffic.resetQuotaDate);
+                traffic.resetQuotaTimeLeft = null;
+                if (traffic.resetQuotaDate) {
+                    traffic.resetQuotaTimeLeft = this.constructor.getTimeleft(traffic.resetQuotaDate);
+                }
 
                 return this.acceptResponse({
                     hasQuota,
