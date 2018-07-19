@@ -142,8 +142,8 @@
    <translation id="autorenew_service_update_now" qtlid="31270">Nykyinen</translation>
    <translation id="autorenew_service_update_future" qtlid="221123">Uusi arvo</translation>
    <translation id="autorenew_service_update_step2_error" qtlid="177522">Pahoittelemme aiheutunutta haittaa, tapahtui virhe.</translation>
-   <translation id="autorenew_service_update_step2_success" qtlid="220174">Toiminto suoritettu onnistuneesti.</translation>
-   <translation id="autorenew_service_update_step2_with_async_action_success">Opération effectuée avec succès, elle sera effective d'ici quelques instants.</translation>
+   <translation id="autorenew_service_update_step2_success" qtlid="492580">Toimenpiteen suorittaminen onnistui.</translation>
+   <translation id="autorenew_service_update_step2_with_async_action_success" qtlid="492593">Toimenpide suorittaminen onnistui, se astuu voimaan hetken kulutta.</translation>
    <translation id="billing_export_csv" qtlid="231773">CSV-vienti</translation>
    <translation id="billing_common_link_new_window" qtlid="300694">(uusi ikkuna)</translation>
    <translation id="billing_date_range_choose_custom_date" qtlid="374443">Määritä jakso</translation>
@@ -154,7 +154,7 @@
    <translation id="autorenew_service_disable_autorenew_desc1" qtlid="416189"><strong>{0}</strong>-palvelun automaattinen maksu poistetaan.</translation>
    <translation id="autorenew_service_disable_autorenew_desc2" qtlid="416202">Palvelun säilyttämiseksi suorita maksu hyvissä ajoin ennen nykyisen tilauskauden loppua. <br/> Muussa tapauksessa palvelu <strong>irtisanotaan automaattisesti tilauskauden päätyttyä</strong> {0} ja siihen liittyvä data poistetaan automaattisesti ja peruuttamattomasti.</translation>
    <translation id="autorenew_service_disable_autorenew_desc3" qtlid="416215">Automaattisen maksun voi ottaa uudelleen käyttöön siihen asti, että tilauskauden päättymiseen on 24 tuntia.</translation>
-   <translation id="autorenew_service_disable_autorenew_warn">Vous recevrez des relances par e-mail pour vous informer de la fin de votre service.</translation>
+   <translation id="autorenew_service_disable_autorenew_warn" qtlid="492606">Saat sähköpostitse palvelusi päättymisestä muistuttavia viestejä.</translation>
 
    <translation id="autorenew_service_enable_autorenew_title" qtlid="416098">Aktivoi automaattinen maksu</translation>
    <translation id="autorenew_service_enable_autorenew_desc1" qtlid="416241">Automaattinen maksu aktivoidaan palvelulle <strong>{0}</strong>.</translation>
@@ -254,7 +254,7 @@
    <translation id="pagination_page" qtlid="486464">Sivu {{ current }} / {{ last }}</translation>
    <translation id="pagination_display" qtlid="69353">Näytä</translation>
    <translation id="pagination_display_all" qtlid="139884">Kaikki</translation>
-   <translation id="pagination_go" qtlid="224880">Ok</translation>
+   <translation id="pagination_go" qtlid="492619">Ok</translation>
    <translation id="history_title2" qtlid="159540">Laskut</translation>
    <translation id="history_invoice_loading_errors" qtlid="402984">Tapahtui virhe {0} laskua haettaessa.</translation>
    <translation id="history_invoices_postal_mail" qtlid="486867">Laskujen vastaanottaminen paperisena</translation>
@@ -423,7 +423,7 @@
    <translation id="payment_mean_contact_creation_label_country" qtlid="25171">Laskutusmaa</translation>
    <translation id="payment_mean_contact_creation_label_address_country" qtlid="25171">Laskutusmaa</translation>
    <translation id="payment_mean_contact_creation_label_address_province" qtlid="38577">Lääni</translation>
-   <translation id="payment_mean_contact_creation_label_address_state" qtlid="8230">Tila</translation>
+   <translation id="payment_mean_contact_creation_label_address_state" qtlid="492632">Tila</translation>
    <translation id="payment_mean_contact_creation_label_address_area" qtlid="32434">Alue</translation>
    <translation id="payment_mean_contact_creation_label_legalform" qtlid="381855">Juridinen asema</translation>
    <translation id="payment_mean_contact_creation_label_email_confirmation" qtlid="321156">Sähköpostiosoitteen vahvistus</translation>
@@ -747,7 +747,7 @@
    <translation id="add_mean_select_title_choose" qtlid="244599">Tee valinta</translation>
    <translation id="add_mean_select_title_no_choice" qtlid="244612">Muita vaihtoehtoja ei ole</translation>
    <translation id="add_mean_unable_to_get_payment_means" qtlid="244625">Muiden maksuvälineiden näyttö ei ole mahdollista</translation>
-   <translation id="mean_table_head_state" qtlid="8230">Tila</translation>
+   <translation id="mean_table_head_state" qtlid="492645">Tila</translation>
    <translation id="mean_table_head_actions" qtlid="72809">Toiminnot</translation>
    <translation id="mean_table_head_3d_secure" qtlid="274876">3D Secure</translation>
    <translation id="mean_table_head_3d_secure_true" qtlid="34776">Kyllä</translation>
@@ -1179,7 +1179,7 @@
    <translation id="terminate_service_title" qtlid="439957">Irtisanomislomake</translation>
    <translation id="terminate_service_information_title" qtlid="439970">Palvelun irtisanominen</translation>
    <translation id="terminate_service_information_text" qtlid="439983">Palvelu irtisanotaan heti vahvistamisesi jälkeen. Tämä johtaa välittömästi kaikkien palveluun liittyvien tietojen (varmuuskopiot mukaanluettuna) automaattiseen ja peruuttamattomaan poistamiseen. Tee kaikki tarvittavat toimenpiteen tietojen säilyttämiseksi ennen irtisanomisen vahvistamista. OVH ei vastaa tietojen menetyksistä.</translation>
-   <translation id="terminate_service_information_text_non_US">Le service sera résilié à la fin de la période de renouvellement. Une fois que vous confirmez la résiliation, veuillez noter que toutes les données liées à ce service et toutes les sauvegardes <strong>seront définitivement supprimées</strong>. Il vous appartient de prendre toutes les mesures nécessaires pour conserver vos données avant de donner votre confirmation de supprimer votre service. Une fois le processus initié, vous ne pourrez pas le stopper. OVH décline toute responsabilité de perte de données dans ce cas.</translation>
+   <translation id="terminate_service_information_text_non_US" qtlid="492658">Palvelu irtisanotaan uusintajakson lopussa. Huomaa, että vahvistaessasi irtisanomisen kaikki kyseiseen palveluun liittyvät tiedot ja varmuuskopiot <strong>poistetaan pysyvästi</strong>. Tee tarvittavat toimenpiteet tietojen säilyttämiseksi ennen palvelun poistamisen vahvistamista. Kun prosessi on käynnistetty, sitä ei voi keskeyttää. OVH ei vastaa tietojen menetyksistä tällaisessa tapauksessa.</translation>
    <translation id="terminate_service_services_title" qtlid="439996">Palvelut joihin irtisanominen vaikuttaa</translation>
    <translation id="terminate_service_services_service" qtlid="31042">Palvelu</translation>
    <translation id="terminate_service_services_name" qtlid="3818">Nimi</translation>
@@ -1197,7 +1197,7 @@
    <translation id="terminate_service_reason_text" qtlid="440022">Haluatko kertoa meille lisätietoja tai antaa ehdotuksen?</translation>
    <translation id="terminate_service_error" qtlid="440035">Valitettavasti sivun lataamisessa tapahtui virhe. </translation>
    <translation id="terminate_service_confirmation_error" qtlid="440048">Tapahtui virhe palvelusi keskeyttämisen vahvistuksessa.</translation>
-   <translation id="terminate_service_confirmation_success" qtlid="440061">Palvelusi on irtisanottu. Saat sähköpostitse vahvistuksen seuraavien minuuttien kuluessa. Asiakaspalvelumme vastaa tarvittaessa lisäkysymyksiin.</translation>
+   <translation id="terminate_service_confirmation_success" qtlid="492671">Olet irtisanonut palvelusi. Saat vahvistuksen sähköpostitse seuraavien minuuttien kuluessa. Asiakaspalvelumme on edelleen käytettävissä, mikäli sinulle jäi jotain kysyttävää.</translation>
    <translation id="terminate_service_confirm" qtlid="440074">Vahvista irtisanominen</translation>
    <translation id="terminate_service_type_allDom" qtlid="270293">AllDom-paketti</translation>
    <translation id="terminate_service_type_caas_containers" qtlid="343148">CaaS Containers</translation>

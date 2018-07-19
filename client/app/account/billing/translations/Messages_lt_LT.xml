@@ -142,8 +142,8 @@
    <translation id="autorenew_service_update_now" qtlid="31270">Šiuo metu</translation>
    <translation id="autorenew_service_update_future" qtlid="221123">Nauja reikšmė</translation>
    <translation id="autorenew_service_update_step2_error" qtlid="177522">Klaida, atsiprašome už nepatogumus.</translation>
-   <translation id="autorenew_service_update_step2_success" qtlid="220174">Operacija sėkmingai atlikta.</translation>
-   <translation id="autorenew_service_update_step2_with_async_action_success">Opération effectuée avec succès, elle sera effective d'ici quelques instants.</translation>
+   <translation id="autorenew_service_update_step2_success" qtlid="492580">Operacija atlikta sėkmingai.</translation>
+   <translation id="autorenew_service_update_step2_with_async_action_success" qtlid="492593">Operacija sėkmingai atlikta ir netrukus įsigalios.</translation>
    <translation id="billing_export_csv" qtlid="231773">Eksportuoti CSV formatu</translation>
    <translation id="billing_common_link_new_window" qtlid="300694">(naujas langas)</translation>
    <translation id="billing_date_range_choose_custom_date" qtlid="374443">Apibrėžti laikotarpį</translation>
@@ -154,7 +154,7 @@
    <translation id="autorenew_service_disable_autorenew_desc1" qtlid="416189">Automatinis apmokėjimas už paslaugą <strong>{0}</strong> bus išjungtas.</translation>
    <translation id="autorenew_service_disable_autorenew_desc2" qtlid="416202">Norėdami išsaugoti paslaugas, turite atlikti apmokėjimą už paslaugų galiojimo pratęsimą iki paslaugų galiojimo pabaigos. <br/> Priešingu atveju jūsų paslaugų teikimas <strong>bus automatiškai nutrauktas paslaugų galiojimo pabaigos dieną</strong>, t.y. {0}. Duomenys, susiję su automatiniu paslaugų apmokėjimu, bus nedelsiant pašalinti be galimybės atkurti. </translation>
    <translation id="autorenew_service_disable_autorenew_desc3" qtlid="416215">Jūs galėsite įjungti automatinį apmokėjimą už paslaugas iš naujo likus mažiausiai 24 valandoms iki pratęsiamų paslaugų galiojimo pabaigos.</translation>
-   <translation id="autorenew_service_disable_autorenew_warn">Vous recevrez des relances par e-mail pour vous informer de la fin de votre service.</translation>
+   <translation id="autorenew_service_disable_autorenew_warn" qtlid="492606">Jums el. paštu bus siunčiami priminimai apie paslaugos galiojimo pabaigą.</translation>
 
    <translation id="autorenew_service_enable_autorenew_title" qtlid="416098">Įjungti automatinį apmokėjimą</translation>
    <translation id="autorenew_service_enable_autorenew_desc1" qtlid="416241">Automatinis apmokėjimas už jūsų paslaugą <strong>{0}</strong> bus įjungtas.</translation>
@@ -254,15 +254,15 @@
    <translation id="pagination_page" qtlid="486464">Psl. {{ current }} / {{ last }}</translation>
    <translation id="pagination_display" qtlid="69353">Rodyti</translation>
    <translation id="pagination_display_all" qtlid="139884">Visi</translation>
-   <translation id="pagination_go" qtlid="224880">OK</translation>
+   <translation id="pagination_go" qtlid="492619">OK</translation>
    <translation id="history_title2" qtlid="159540">Mano sąskaitos</translation>
    <translation id="history_invoice_loading_errors" qtlid="402984">Klaida atkuriant {0} sąskaitą(-as)/(-ų).</translation>
-   <translation id="history_invoices_postal_mail" qtlid="486867">Recevoir mes factures au format papier</translation>
+   <translation id="history_invoices_postal_mail" qtlid="486867">Gauti sąskaitas paštu</translation>
 
-   <translation id="history_invoices_choice_modal_activation" qtlid="486880">Voulez-vous confirmer l'activation de cette option ?</translation>
-   <translation id="history_invoices_choice_modal_deactivation" qtlid="486893">Voulez-vous confirmer la désactivation de cette option ?</translation>
-   <translation id="history_invoices_choice_modal_update_success" qtlid="486906">Le paramètre a bien été mis à jour</translation>
-   <translation id="history_invoices_choice_modal_update_error" qtlid="486919">Une erreur est survenue lors de la mise à jour du paramètre</translation>
+   <translation id="history_invoices_choice_modal_activation" qtlid="486880">Norite patvirtinti šios parinkties įjungimą?</translation>
+   <translation id="history_invoices_choice_modal_deactivation" qtlid="486893">Norite patvirtinti šios parinkties išjungimą?</translation>
+   <translation id="history_invoices_choice_modal_update_success" qtlid="486906">Nustatymas sėkmingai atnaujintas</translation>
+   <translation id="history_invoices_choice_modal_update_error" qtlid="486919">Klaida atnaujinant nustatymą</translation>
 
    <translation id="history_table_head_date" qtlid="374508">Išrašymo data</translation>
    <translation id="history_table_head_id" qtlid="16445">Aprašas</translation>
@@ -292,7 +292,7 @@
    <translation id="payments_table_actions_tooltip" qtlid="398820">Išsamiau apie šį mokėjimą</translation>
    <translation id="payments_table_type_not_available" qtlid="374560">Duomenys neprieinami</translation>
    <translation id="payments_table_empty" qtlid="398833">Pasirinktą laikotarpį nėra jokio mokėjimo.</translation>
-   <translation id="payments_request_pending" qtlid="486932">Un règlement de solde est en cours. Cliquez <a href="{0}">sur ce lien</a> pour en savoir plus.</translation>
+   <translation id="payments_request_pending" qtlid="486932">Vykdomas likusios sumos apmokėjimas. Spauskite <a href="{0}">šią nuorodą</a> norėdami sužinoti daugiau.</translation>
    <translation id="payments_details_link" qtlid="398846">Peržiūrėti mokėjimo išklotinę</translation>
    <translation id="payment_details_payment_id" qtlid="16445">Aprašas</translation>
    <translation id="payment_details_payment_date" qtlid="24523">Data</translation>
@@ -421,7 +421,7 @@
    <translation id="payment_mean_contact_creation_label_country" qtlid="25171">Šalis</translation>
    <translation id="payment_mean_contact_creation_label_address_country" qtlid="25171">Šalis</translation>
    <translation id="payment_mean_contact_creation_label_address_province" qtlid="38577">Rajonas</translation>
-   <translation id="payment_mean_contact_creation_label_address_state" qtlid="8230">Būsena</translation>
+   <translation id="payment_mean_contact_creation_label_address_state" qtlid="492632">Būklė</translation>
    <translation id="payment_mean_contact_creation_label_address_area" qtlid="32434">Regionas</translation>
    <translation id="payment_mean_contact_creation_label_legalform" qtlid="381855">Teisinis statusas</translation>
    <translation id="payment_mean_contact_creation_label_email_confirmation" qtlid="321156">El. pašto patvirtinimas</translation>
@@ -745,7 +745,7 @@
    <translation id="add_mean_select_title_choose" qtlid="244599">Pasirinkite</translation>
    <translation id="add_mean_select_title_no_choice" qtlid="244612">Nėra kito galimo pasirinkimo</translation>
    <translation id="add_mean_unable_to_get_payment_means" qtlid="244625">Nepavyksta gauti galimus mokėjimo būdus</translation>
-   <translation id="mean_table_head_state" qtlid="8230">Būsena</translation>
+   <translation id="mean_table_head_state" qtlid="492645">Būklė</translation>
    <translation id="mean_table_head_actions" qtlid="72809">Veiksmai</translation>
    <translation id="mean_table_head_3d_secure" qtlid="274876">3D Secure</translation>
    <translation id="mean_table_head_3d_secure_true" qtlid="34776">Taip</translation>
@@ -1177,7 +1177,7 @@
    <translation id="terminate_service_title" qtlid="439957">Atsisakymo užklausos forma</translation>
    <translation id="terminate_service_information_title" qtlid="439970">Paslaugos atsisakymas</translation>
    <translation id="terminate_service_information_text" qtlid="439983">Paslaugos atsisakymas įsigalios gavus jūsų patvirtinimą. Jums patvirtinus atsisakymą, visi paslaugoje saugomi duomenys bus automatiškai, nedelsiant ir neatkuriamai pašalinti (įskaitant atsargines kopijas). Norėdami tęsti ir patvirtinti atsisakymą, jūs turėtumėte imtis visų būtinų duomenų apsaugos priemonių. OVH neprisiima atsakomybės, jei nepasirūpinote savo duomenų atsarginėmis kopijomis.</translation>
-   <translation id="terminate_service_information_text_non_US">Le service sera résilié à la fin de la période de renouvellement. Une fois que vous confirmez la résiliation, veuillez noter que toutes les données liées à ce service et toutes les sauvegardes <strong>seront définitivement supprimées</strong>. Il vous appartient de prendre toutes les mesures nécessaires pour conserver vos données avant de donner votre confirmation de supprimer votre service. Une fois le processus initié, vous ne pourrez pas le stopper. OVH décline toute responsabilité de perte de données dans ce cas.</translation>
+   <translation id="terminate_service_information_text_non_US" qtlid="492658">Paslaugos atsisakymas įsigalios paslaugos atnaujinimo (galiojimo) laikotarpio pabaigoje. Jums patvirtinus atsisakymą, visi su šia paslauga susiję duomenys ir atsarginės kopijos <strong>bus galutinai pašalinti be galimybės atkurti</strong>. Jūs turėtumėte imtis visų būtinų priemonių, kad išsaugotumėte savo duomenis prieš patvirtindami paslaugos ištrynimą. Inicijavę šiuos veiksmus, jūs nebegalėsite sustabdyti pašalinimo proceso. Šiuo atveju, OVH neprisiima jokios atsakomybės dėl duomenų praradimo.</translation>
    <translation id="terminate_service_services_title" qtlid="439996">Susijusios paslaugos</translation>
    <translation id="terminate_service_services_service" qtlid="31042">Paslauga</translation>
    <translation id="terminate_service_services_name" qtlid="3818">Pavadinimas</translation>
@@ -1195,7 +1195,7 @@
    <translation id="terminate_service_reason_text" qtlid="440022">Ar norite pateikti daugiau duomenų ar pasiūlyti, ką galėtume patobulinti?</translation>
    <translation id="terminate_service_error" qtlid="440035">Atsiprašome, įvyko klaida kraunant puslapį.</translation>
    <translation id="terminate_service_confirmation_error" qtlid="440048">Įvyko klaida tvirtinant jūsų paslaugos atsisakymą.</translation>
-   <translation id="terminate_service_confirmation_success" qtlid="440061">Jūsų atsisakėte savo paslaugų. Po kelių minučių gausite patvirtinimą el. paštu. Mūsų pagalbos tarnyba pasiruošusi atsakyti į jūsų klausimus.</translation>
+   <translation id="terminate_service_confirmation_success" qtlid="492671">Jūs atsisakėte paslaugų. Po kelių minučių el. paštu gausite patvirtinimo pranešimą. Mūsų pagalbos specialistai pasiruošę atsakyti į jūsų klausimus.</translation>
    <translation id="terminate_service_confirm" qtlid="440074">Patvirtinu atsisakymą</translation>
    <translation id="terminate_service_type_allDom" qtlid="270293">Pack AllDom</translation>
    <translation id="terminate_service_type_caas_containers" qtlid="343148">CaaS Containers</translation>

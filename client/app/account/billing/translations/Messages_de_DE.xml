@@ -142,8 +142,8 @@
    <translation id="autorenew_service_update_now" qtlid="31270">Derzeit</translation>
    <translation id="autorenew_service_update_future" qtlid="221123">Neuer Wert</translation>
    <translation id="autorenew_service_update_step2_error" qtlid="177522">Es ist ein Fehler aufgetreten. Bitte entschuldigen Sie die entstandenen Unannehmlichkeiten. </translation>
-   <translation id="autorenew_service_update_step2_success" qtlid="220174">Operation erfolgreich durchgeführt.</translation>
-   <translation id="autorenew_service_update_step2_with_async_action_success">Opération effectuée avec succès, elle sera effective d'ici quelques instants.</translation>
+   <translation id="autorenew_service_update_step2_success" qtlid="492580">Vorgang erfolgreich durchgeführt.</translation>
+   <translation id="autorenew_service_update_step2_with_async_action_success" qtlid="492593">Der Vorgang wurde erfolgreich durchgeführt und ist in wenigen Minuten aktiv.</translation>
    <translation id="billing_export_csv" qtlid="231773">Export als CSV Datei</translation>
    <translation id="billing_common_link_new_window" qtlid="300694">(neues Fenster)</translation>
    <translation id="billing_date_range_choose_custom_date" qtlid="374443">Zeitraum festlegen </translation>
@@ -154,7 +154,7 @@
    <translation id="autorenew_service_disable_autorenew_desc1" qtlid="416189">Die automatische Zahlung Ihrer Dienstleistung <strong>{0}</strong> wird deaktiviert.</translation>
    <translation id="autorenew_service_disable_autorenew_desc2" qtlid="416202">Um Ihre Dienstleistung weiterhin nutzen zu können, begleichen Sie die Zahlungen vor deren nächstem Ablaufdatum. <br/> Ihre Dienstleistung wird sonst <strong>automatisch an deren Ablaufdatum gekündigt</strong>, das heißt am {0}. Die Daten, die mit dieser Dienstleistung verbunden sind, werden automatisch unwiderruflich gelöscht.</translation>
    <translation id="autorenew_service_disable_autorenew_desc3" qtlid="416215">Sie können die automatische Zahlung bis zu 24 Stunden vor dem Ablaufdatum reaktivieren.</translation>
-   <translation id="autorenew_service_disable_autorenew_warn">Vous recevrez des relances par e-mail pour vous informer de la fin de votre service.</translation>
+   <translation id="autorenew_service_disable_autorenew_warn" qtlid="492606">Sie erhalten Erinnerungsmails, um Sie über den Ablauf Ihres Dienstes zu informieren.</translation>
 
    <translation id="autorenew_service_enable_autorenew_title" qtlid="416098">Automatische Zahlung aktivieren</translation>
    <translation id="autorenew_service_enable_autorenew_desc1" qtlid="416241">Die automatische Zahlung Ihrer Dienstleistung <strong>{0}</strong> wird aktiviert.</translation>
@@ -254,15 +254,15 @@
    <translation id="pagination_page" qtlid="486464">Seite {{ current }} / {{ last }}</translation>
    <translation id="pagination_display" qtlid="69353">Anzeigen</translation>
    <translation id="pagination_display_all" qtlid="139884">Alles</translation>
-   <translation id="pagination_go" qtlid="224880">OK</translation>
+   <translation id="pagination_go" qtlid="492619">Ok</translation>
    <translation id="history_title2" qtlid="159540">Meine Rechnungen</translation>
    <translation id="history_invoice_loading_errors" qtlid="402984">Ein Fehler ist bei der Suche nach Rechnung/en {0} aufgetreten.</translation>
-   <translation id="history_invoices_postal_mail" qtlid="486867">Recevoir mes factures au format papier</translation>
+   <translation id="history_invoices_postal_mail" qtlid="486867">Rechnungen auf Papier erhalten</translation>
 
-   <translation id="history_invoices_choice_modal_activation" qtlid="486880">Voulez-vous confirmer l'activation de cette option ?</translation>
-   <translation id="history_invoices_choice_modal_deactivation" qtlid="486893">Voulez-vous confirmer la désactivation de cette option ?</translation>
-   <translation id="history_invoices_choice_modal_update_success" qtlid="486906">Le paramètre a bien été mis à jour</translation>
-   <translation id="history_invoices_choice_modal_update_error" qtlid="486919">Une erreur est survenue lors de la mise à jour du paramètre</translation>
+   <translation id="history_invoices_choice_modal_activation" qtlid="486880">Sind Sie sicher, dass Sie diese Option aktivieren möchten?</translation>
+   <translation id="history_invoices_choice_modal_deactivation" qtlid="486893">Sind Sie sicher, dass Sie diese Option deaktivieren möchten?</translation>
+   <translation id="history_invoices_choice_modal_update_success" qtlid="486906">Einstellung wurde aktualisiert</translation>
+   <translation id="history_invoices_choice_modal_update_error" qtlid="486919">Bei der Aktualisierung der Einstellung ist ein Fehler aufgetreten.</translation>
 
    <translation id="history_table_head_date" qtlid="374508">Ausstellungsdatum </translation>
    <translation id="history_table_head_id" qtlid="16445">Referenz</translation>
@@ -292,7 +292,7 @@
    <translation id="payments_table_actions_tooltip" qtlid="398820">Mehr Informationen zur Zahlung</translation>
    <translation id="payments_table_type_not_available" qtlid="374560">Information nicht verfügbar </translation>
    <translation id="payments_table_empty" qtlid="398833">Für den ausgewählten Zeitraum liegen keine Zahlungen vor.</translation>
-   <translation id="payments_request_pending" qtlid="486932">Un règlement de solde est en cours. Cliquez <a href="{0}">sur ce lien</a> pour en savoir plus.</translation>
+   <translation id="payments_request_pending" qtlid="486932">Es wird ein Bezahlvorgang durchgeführt. Für weitere Informationen klicken Sie <a href="{0}">hier</a>.</translation>
    <translation id="payments_details_link" qtlid="398846">Zahlungsdetails ansehen</translation>
    <translation id="payment_details_payment_id" qtlid="16445">Referenz</translation>
    <translation id="payment_details_payment_date" qtlid="24523">Datum</translation>
@@ -421,7 +421,7 @@
    <translation id="payment_mean_contact_creation_label_country" qtlid="25171">Land</translation>
    <translation id="payment_mean_contact_creation_label_address_country" qtlid="25171">Land</translation>
    <translation id="payment_mean_contact_creation_label_address_province" qtlid="38577">Provinz</translation>
-   <translation id="payment_mean_contact_creation_label_address_state" qtlid="8230">Status </translation>
+   <translation id="payment_mean_contact_creation_label_address_state" qtlid="492632">Status</translation>
    <translation id="payment_mean_contact_creation_label_address_area" qtlid="32434">Region</translation>
    <translation id="payment_mean_contact_creation_label_legalform" qtlid="381855">Rechtsstellung </translation>
    <translation id="payment_mean_contact_creation_label_email_confirmation" qtlid="321156">Bestätigung E-Mail</translation>
@@ -745,7 +745,7 @@
    <translation id="add_mean_select_title_choose" qtlid="244599">Treffen Sie Ihre Wahl</translation>
    <translation id="add_mean_select_title_no_choice" qtlid="244612">Keine Auswahl möglich</translation>
    <translation id="add_mean_unable_to_get_payment_means" qtlid="244625">Verfügbare Zahlungsarten können nicht abgerufen werden</translation>
-   <translation id="mean_table_head_state" qtlid="8230">Status </translation>
+   <translation id="mean_table_head_state" qtlid="492645">Status</translation>
    <translation id="mean_table_head_actions" qtlid="72809">Aktionen</translation>
    <translation id="mean_table_head_3d_secure" qtlid="274876">3D Secure</translation>
    <translation id="mean_table_head_3d_secure_true" qtlid="34776">Ja</translation>
@@ -1178,7 +1178,7 @@
    <translation id="terminate_service_title" qtlid="439957">Kündigungsformular</translation>
    <translation id="terminate_service_information_title" qtlid="439970">Kündigung Ihrer Dienstleistung</translation>
    <translation id="terminate_service_information_text" qtlid="439983">Sobald Sie Ihre Anfrage bestätigen, wird Ihre Dienstleistung gekündigt. Als Folge werden sämtliche Daten (inklusive deren Backups), die mit dieser Dienstleistung verbunden sind, automatisch, umgehend und unwiderruflich gelöscht. Bevor Sie fortfahren und die Kündigung bestätigen, obliegt es allein Ihnen, die notwendigen Maßnahmen zur Sicherung Ihrer Daten zu ergreifen. OVH übernimmt in dieser Hinsicht keinerlei Haftung.</translation>
-   <translation id="terminate_service_information_text_non_US">Le service sera résilié à la fin de la période de renouvellement. Une fois que vous confirmez la résiliation, veuillez noter que toutes les données liées à ce service et toutes les sauvegardes <strong>seront définitivement supprimées</strong>. Il vous appartient de prendre toutes les mesures nécessaires pour conserver vos données avant de donner votre confirmation de supprimer votre service. Une fois le processus initié, vous ne pourrez pas le stopper. OVH décline toute responsabilité de perte de données dans ce cas.</translation>
+   <translation id="terminate_service_information_text_non_US" qtlid="492658">Die Dienstleistung wird am Ende des Verlängerungszeitraums gekündigt. Bitte beachten Sie, dass alle zugehörigen Daten des Dienstes <strong>endgültig gelöscht werden</strong>, sobald Sie die Kündigung bestätigen. Sie sind dafür verantwortlich, alle notwendigen Maßnahmen zur Sicherung Ihrer Daten durchzuführen, bevor Sie die Löschung der Dienstleistung bestätigen. Wenn der Löschvorgang gestartet wurde, können Sie diesen nicht mehr abbrechen. OVH übernimmt in diesem Fall keine Haftung für etwaigen Datenverlust.</translation>
    <translation id="terminate_service_services_title" qtlid="439996">Von der Kündigung betroffene Dienstleistungen</translation>
    <translation id="terminate_service_services_service" qtlid="31042">Dienstleistung</translation>
    <translation id="terminate_service_services_name" qtlid="3818">Name</translation>
@@ -1196,7 +1196,7 @@
    <translation id="terminate_service_reason_text" qtlid="440022">Möchten Sie detailliertere Angaben machen oder haben Sie Anregungen oder Vorschläge für uns?</translation>
    <translation id="terminate_service_error" qtlid="440035">Beim Laden der Seite ist ein Fehler aufgetreten.</translation>
    <translation id="terminate_service_confirmation_error" qtlid="440048">Bei der Bestätigung der Kündigung Ihrer Dienstleistung ist ein Fehler aufgetreten.</translation>
-   <translation id="terminate_service_confirmation_success" qtlid="440061">Sie haben Ihre Dienstleistungen erfolgreich gekündigt und erhalten in Kürze eine Bestätigungs-E-Mail. Unser Support-Team steht Ihnen bei Fragen gerne weiterhin zur Verfügung.</translation>
+   <translation id="terminate_service_confirmation_success" qtlid="492671">Sie haben Ihre Dienstleistungen erfolgreich gekündigt. Sie erhalten in den nächsten Minuten eine Bestätigungs-E-Mail. Bei weiteren Fragen steht Ihnen unser Support-Team weiterhin gerne zur Verfügung.</translation>
    <translation id="terminate_service_confirm" qtlid="440074">Hiermit bestätige ich die Kündigung</translation>
    <translation id="terminate_service_type_allDom" qtlid="270293">AllDom Paket</translation>
    <translation id="terminate_service_type_caas_containers" qtlid="343148">CaaS Container </translation>

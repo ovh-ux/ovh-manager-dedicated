@@ -142,8 +142,8 @@
    <translation id="autorenew_service_update_now" qtlid="31270">Actuellement</translation>
    <translation id="autorenew_service_update_future" qtlid="221123">Nouvelle valeur</translation>
    <translation id="autorenew_service_update_step2_error" qtlid="177522">Une erreur est survenue, veuillez nous excuser pour la gêne occasionnée.</translation>
-   <translation id="autorenew_service_update_step2_success" qtlid="220174">Operation effectuée avec succès.</translation>
-   <translation id="autorenew_service_update_step2_with_async_action_success">Opération effectuée avec succès, elle sera effective d'ici quelques instants.</translation>
+   <translation id="autorenew_service_update_step2_success" qtlid="492580">Opération effectuée avec succès.</translation>
+   <translation id="autorenew_service_update_step2_with_async_action_success" qtlid="492593">Opération effectuée avec succès, elle sera effective d'ici quelques instants.</translation>
    <translation id="billing_export_csv" qtlid="231773">Exporter en CSV</translation>
    <translation id="billing_common_link_new_window" qtlid="300694">(nouvelle fenêtre)</translation>
    <translation id="billing_date_range_choose_custom_date" qtlid="374443">Définir une période</translation>
@@ -154,7 +154,7 @@
    <translation id="autorenew_service_disable_autorenew_desc1" qtlid="416189">Le paiement automatique de votre service <strong>{0}</strong> sera désactivé.</translation>
    <translation id="autorenew_service_disable_autorenew_desc2" qtlid="416202">Pour conserver votre service, vous devez effectuer votre prochain paiement avant la date d’expiration. <br/> A défaut, votre service sera <strong>automatiquement résilié à sa date d'expiration,</strong> le {0}. Les données liées à ce service seront automatiquement supprimées de manière irréversible.</translation>
    <translation id="autorenew_service_disable_autorenew_desc3" qtlid="416215">Vous pourrez réactiver le paiement automatique jusqu'à 24 heures avant la date d'expiration.</translation>
-   <translation id="autorenew_service_disable_autorenew_warn">Vous recevrez des relances par e-mail pour vous informer de la fin de votre service.</translation>
+   <translation id="autorenew_service_disable_autorenew_warn" qtlid="492606">Vous recevrez des relances par courriel pour vous informer de la fin de votre service.</translation>
 
    <translation id="autorenew_service_enable_autorenew_title" qtlid="416098">Activer le paiement automatique</translation>
    <translation id="autorenew_service_enable_autorenew_desc1" qtlid="416241">Le paiement automatique de votre service <strong>{0}</strong> sera activé.</translation>
@@ -254,7 +254,7 @@
    <translation id="pagination_page" qtlid="486464">Page {{ current }} / {{ last }}</translation>
    <translation id="pagination_display" qtlid="69353">Afficher</translation>
    <translation id="pagination_display_all" qtlid="139884">Tout</translation>
-   <translation id="pagination_go" qtlid="224880">OK</translation>
+   <translation id="pagination_go" qtlid="492619">Ok</translation>
    <translation id="history_title2" qtlid="159540">Mes factures</translation>
    <translation id="history_invoice_loading_errors" qtlid="402984">Une erreur est survenue lors de la récupération de {0} facture(s).</translation>
    <translation id="history_invoices_postal_mail" qtlid="486867">Recevoir mes factures au format papier</translation>
@@ -421,7 +421,7 @@
    <translation id="payment_mean_contact_creation_label_country" qtlid="25171">Pays</translation>
    <translation id="payment_mean_contact_creation_label_address_country" qtlid="25171">Pays</translation>
    <translation id="payment_mean_contact_creation_label_address_province" qtlid="38577">Province</translation>
-   <translation id="payment_mean_contact_creation_label_address_state" qtlid="8230">État</translation>
+   <translation id="payment_mean_contact_creation_label_address_state" qtlid="492632">État</translation>
    <translation id="payment_mean_contact_creation_label_address_area" qtlid="32434">Région</translation>
    <translation id="payment_mean_contact_creation_label_legalform" qtlid="381855">Statut juridique</translation>
    <translation id="payment_mean_contact_creation_label_email_confirmation" qtlid="321156">Confirmation email</translation>
@@ -745,7 +745,7 @@
    <translation id="add_mean_select_title_choose" qtlid="244599">Faites votre choix</translation>
    <translation id="add_mean_select_title_no_choice" qtlid="244612">Aucun autre choix possible</translation>
    <translation id="add_mean_unable_to_get_payment_means" qtlid="244625">Impossible d’obtenir les moyens de paiement disponibles</translation>
-   <translation id="mean_table_head_state" qtlid="8230">État</translation>
+   <translation id="mean_table_head_state" qtlid="492645">État</translation>
    <translation id="mean_table_head_actions" qtlid="72809">Actions</translation>
    <translation id="mean_table_head_3d_secure" qtlid="274876">3D Secure</translation>
    <translation id="mean_table_head_3d_secure_true" qtlid="34776">Oui</translation>
@@ -1177,7 +1177,7 @@
    <translation id="terminate_service_title" qtlid="439957">Formulaire de résiliation</translation>
    <translation id="terminate_service_information_title" qtlid="439970">Résiliation de votre service</translation>
    <translation id="terminate_service_information_text" qtlid="439983">Le service sera résilié dès votre confirmation. Ceci entraînera la suppression automatique, immédiate et irréversible de l’ensemble des données liées à ce service (y compris leurs sauvegardes). Avant de poursuivre et de confirmer votre résiliation, il vous appartient de prendre toutes les mesures nécessaires pour conserver vos données. OVH décline toute responsabilité à ce titre.</translation>
-   <translation id="terminate_service_information_text_non_US">Le service sera résilié à la fin de la période de renouvellement. Une fois que vous confirmez la résiliation, veuillez noter que toutes les données liées à ce service et toutes les sauvegardes <strong>seront définitivement supprimées</strong>. Il vous appartient de prendre toutes les mesures nécessaires pour conserver vos données avant de donner votre confirmation de supprimer votre service. Une fois le processus initié, vous ne pourrez pas le stopper. OVH décline toute responsabilité de perte de données dans ce cas.</translation>
+   <translation id="terminate_service_information_text_non_US" qtlid="492658">Le service sera résilié à la fin de la période de renouvellement. Une fois que vous confirmez la résiliation, veuillez noter que toutes les données liées à ce service et toutes les sauvegardes <strong>seront définitivement supprimées</strong>. Il vous appartient de prendre toutes les mesures nécessaires pour conserver vos données avant de donner votre confirmation de supprimer votre service. Une fois le processus initié, vous ne pourrez pas le stopper. OVH décline toute responsabilité de perte de données dans ce cas.</translation>
    <translation id="terminate_service_services_title" qtlid="439996">Services touchés par la résiliation</translation>
    <translation id="terminate_service_services_service" qtlid="31042">Service</translation>
    <translation id="terminate_service_services_name" qtlid="3818">Nom</translation>
@@ -1195,7 +1195,7 @@
    <translation id="terminate_service_reason_text" qtlid="440022">Souhaitez-vous nous donner plus de détails ou nous partager une suggestion ?</translation>
    <translation id="terminate_service_error" qtlid="440035">Nous sommes désolés, une erreur s'est produite lors du chargement de la page.</translation>
    <translation id="terminate_service_confirmation_error" qtlid="440048">Une erreur s'est produite lors de la confirmation de l'arrêt de votre service.</translation>
-   <translation id="terminate_service_confirmation_success" qtlid="440061">Vous avez bien résilié vos services. Une confirmation vous sera envoyée par courriel dans les prochaines minutes. Notre équipe de soutien reste à votre disposition pour toute question.</translation>
+   <translation id="terminate_service_confirmation_success" qtlid="492671">Vous avez bien résilié vos services. Une confirmation vous sera envoyée par email dans les prochaines minutes. Notre équipe support reste à votre disposition pour toute question.</translation>
    <translation id="terminate_service_confirm" qtlid="440074">Je confirme la résiliation</translation>
    <translation id="terminate_service_type_allDom" qtlid="270293">Pack AllDom</translation>
    <translation id="terminate_service_type_caas_containers" qtlid="343148">Conteneurs en service (CaaS)</translation>
