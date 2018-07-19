@@ -12,14 +12,11 @@
    <translation id="housing_creation_date" qtlid="371726">Palvelimen tilauspäivä</translation>
    <translation id="housing_support_phone" qtlid="290446">Tiesitkö? Housingpalveluusi sisältyy dedikoitu asiakaspalvelu, numerossa {0}, joka vastaa kaikkiin kysymyksiisi.</translation>
 
-
-
    <translation id="housing_tab_stats_legend_bay" qtlid="32050">Räkki</translation>
    <translation id="housing_tab_stats_legend_general" qtlid="69341">Yleistä</translation>
    <translation id="housing_tab_stats_legend_route" qtlid="259831">Reititys</translation>
    <translation id="housing_tab_stats_legend_network" qtlid="25591">Verkko</translation>
-
-
+   <translation id="housing_tab_stats_legend_subscription">Abonnement</translation>
 
    <translation id="housing_tab_stats_gateway" qtlid="259844">Yhdyskäytävä</translation>
    <translation id="housing_tab_stats_router" qtlid="259857">Reititin</translation>
@@ -30,13 +27,18 @@
    <translation id="housing_tab_stats_failure_load" qtlid="97460">Latausvirhe</translation>
    <translation id="housing_configuration_ipv4_manage" qtlid="16301">Hallinnoi</translation>
 
+   <translation id="housing_subscription_owner">Propriétaire</translation>
+   <translation id="housing_subscription_state">État</translation>
+
    <translation id="housing_status_ok" qtlid="96704">Normaali</translation>
    <translation id="housing_status_error" qtlid="45508">Virhe</translation>
    <translation id="housing_status_hacked" qtlid="101973">Tietomurto</translation>
    <translation id="housing_status_hacked_blocked" qtlid="224997">Murrettu ja lukittu</translation>
 
+   <translation id="housing_configuration_doing">(En cours)</translation>
+
    <translation id="housing_configuration_reboot_title_button" qtlid="33538">Uudelleenkäynnistä</translation>
-   <translation id="housing_configuration_renew_title_button" qtlid="118962">Uudista palvelu</translation>
+   <translation id="housing_configuration_renew_title">Renouvellement</translation>
 
    <translation id="housing_configuration_ftpbackup_fail" qtlid="184256">Tapahtui virhe ladattaessa varmuuskopiotilan tietoja</translation>
    <translation id="housing_configuration_ftpbackup_none" qtlid="184269">Varmuuskopiotilaa ei ole konfiguroitu.</translation>
@@ -145,7 +147,7 @@
    <translation id="housing_configuration_task_empty" qtlid="217093">Ei tehtävää</translation>
    <translation id="housing_configuration_task_status_cancelled" qtlid="164623">Peruutettu</translation>
    <translation id="housing_configuration_task_status_customer_error" qtlid="164636">Asiakasvirhe</translation>
-   <translation id="housing_configuration_task_status_doing" qtlid="26383">Käynnissä</translation>
+
    <translation id="housing_configuration_task_status_done" qtlid="26395">Päättynyt</translation>
    <translation id="housing_configuration_task_status_init" qtlid="164649">Käynnistys</translation>
    <translation id="housing_configuration_task_status_ovh_error" qtlid="45508">Virhe</translation>
