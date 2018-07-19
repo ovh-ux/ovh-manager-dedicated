@@ -142,8 +142,8 @@
    <translation id="autorenew_service_update_now" qtlid="31270">Actualmente</translation>
    <translation id="autorenew_service_update_future" qtlid="221123">Nuevo valor</translation>
    <translation id="autorenew_service_update_step2_error" qtlid="177522">Se ha producido un error, disculpe las molestias.</translation>
-   <translation id="autorenew_service_update_step2_success" qtlid="220174">Operación correctamente realizada.</translation>
-   <translation id="autorenew_service_update_step2_with_async_action_success">Opération effectuée avec succès, elle sera effective d'ici quelques instants.</translation>
+   <translation id="autorenew_service_update_step2_success" qtlid="492580">La operación se ha realizado correctamente.</translation>
+   <translation id="autorenew_service_update_step2_with_async_action_success" qtlid="492593">La operación se ha realizado correctamente y será efectiva en unos minutos.</translation>
    <translation id="billing_export_csv" qtlid="231773">Exportar en CSV</translation>
    <translation id="billing_common_link_new_window" qtlid="300694">(nueva ventana)</translation>
    <translation id="billing_date_range_choose_custom_date" qtlid="374443">Indicar un período</translation>
@@ -155,7 +155,7 @@
    <translation id="autorenew_service_disable_autorenew_desc2" qtlid="416202">Si desea conservar su servicio, deberá realizar el próximo pago antes de la fecha de expiración. <br/> De lo contrario, el servicio <strong>será dado de baja en la fecha de expiración</strong>: el {0}. Los datos vinculados a dicho servicio se eliminarán automáticamente de forma irreversible.&#13;
 </translation>
    <translation id="autorenew_service_disable_autorenew_desc3" qtlid="416215">Podrá reactivar el pago automático hasta 24 horas antes de la fecha de expiración del servicio.</translation>
-   <translation id="autorenew_service_disable_autorenew_warn">Vous recevrez des relances par e-mail pour vous informer de la fin de votre service.</translation>
+   <translation id="autorenew_service_disable_autorenew_warn" qtlid="492606">Recibirá un mensaje de correo electrónico notificándole la baja del servicio.</translation>
 
    <translation id="autorenew_service_enable_autorenew_title" qtlid="416098">Activar el pago automático</translation>
    <translation id="autorenew_service_enable_autorenew_desc1" qtlid="416241">Va a activar el pago automático de su servicio <strong>{0}</strong>.</translation>
@@ -255,15 +255,15 @@
    <translation id="pagination_page" qtlid="486464">Página {{ current }}/{{ last }}</translation>
    <translation id="pagination_display" qtlid="69353">Ver</translation>
    <translation id="pagination_display_all" qtlid="139884">Todo</translation>
-   <translation id="pagination_go" qtlid="224880">OK</translation>
+   <translation id="pagination_go" qtlid="492619">OK</translation>
    <translation id="history_title2" qtlid="159540">Mis facturas</translation>
    <translation id="history_invoice_loading_errors" qtlid="402984">Se ha producido un error al cargar {0} factura(s).</translation>
-   <translation id="history_invoices_postal_mail" qtlid="486867">Recevoir mes factures au format papier</translation>
+   <translation id="history_invoices_postal_mail" qtlid="486867">Recibir mis facturas en formato papel</translation>
 
-   <translation id="history_invoices_choice_modal_activation" qtlid="486880">Voulez-vous confirmer l'activation de cette option ?</translation>
-   <translation id="history_invoices_choice_modal_deactivation" qtlid="486893">Voulez-vous confirmer la désactivation de cette option ?</translation>
-   <translation id="history_invoices_choice_modal_update_success" qtlid="486906">Le paramètre a bien été mis à jour</translation>
-   <translation id="history_invoices_choice_modal_update_error" qtlid="486919">Une erreur est survenue lors de la mise à jour du paramètre</translation>
+   <translation id="history_invoices_choice_modal_activation" qtlid="486880">¿Seguro que quiere activar esta opción?</translation>
+   <translation id="history_invoices_choice_modal_deactivation" qtlid="486893">¿Seguro que quiere desactivar esta opción?</translation>
+   <translation id="history_invoices_choice_modal_update_success" qtlid="486906">El parámetro se ha actualizado correctamente.</translation>
+   <translation id="history_invoices_choice_modal_update_error" qtlid="486919">Se ha producido un error al actualizar el parámetro.</translation>
 
    <translation id="history_table_head_date" qtlid="374508">Fecha de emisión</translation>
    <translation id="history_table_head_id" qtlid="16445">Referencia</translation>
@@ -293,7 +293,7 @@
    <translation id="payments_table_actions_tooltip" qtlid="398820">Más detalles sobre el pago</translation>
    <translation id="payments_table_type_not_available" qtlid="374560">Información no disponible</translation>
    <translation id="payments_table_empty" qtlid="398833">No hay pagos en el período seleccionado.</translation>
-   <translation id="payments_request_pending" qtlid="486932">Un règlement de solde est en cours. Cliquez <a href="{0}">sur ce lien</a> pour en savoir plus.</translation>
+   <translation id="payments_request_pending" qtlid="486932">Ya hay un pago del saldo en curso. Para más información, haga clic <a href="{0}">aquí</a>.</translation>
    <translation id="payments_details_link" qtlid="398846">Ver los detalles de este pago</translation>
    <translation id="payment_details_payment_id" qtlid="16445">Referencia</translation>
    <translation id="payment_details_payment_date" qtlid="24523">Fecha</translation>
@@ -422,7 +422,7 @@
    <translation id="payment_mean_contact_creation_label_country" qtlid="25171">País</translation>
    <translation id="payment_mean_contact_creation_label_address_country" qtlid="25171">País</translation>
    <translation id="payment_mean_contact_creation_label_address_province" qtlid="38577">Provincia</translation>
-   <translation id="payment_mean_contact_creation_label_address_state" qtlid="8230">Estado</translation>
+   <translation id="payment_mean_contact_creation_label_address_state" qtlid="492632">Estado</translation>
    <translation id="payment_mean_contact_creation_label_address_area" qtlid="32434">Región</translation>
    <translation id="payment_mean_contact_creation_label_legalform" qtlid="381855">Forma jurídica</translation>
    <translation id="payment_mean_contact_creation_label_email_confirmation" qtlid="321156">Repetir correo electrónico</translation>
@@ -746,7 +746,7 @@
    <translation id="add_mean_select_title_choose" qtlid="244599">Elija</translation>
    <translation id="add_mean_select_title_no_choice" qtlid="244612">No hay más opciones para elegir</translation>
    <translation id="add_mean_unable_to_get_payment_means" qtlid="244625">No se han podido cargar las formas de pago disponibles</translation>
-   <translation id="mean_table_head_state" qtlid="8230">Estado</translation>
+   <translation id="mean_table_head_state" qtlid="492645">Estado</translation>
    <translation id="mean_table_head_actions" qtlid="72809">Acciones</translation>
    <translation id="mean_table_head_3d_secure" qtlid="274876">3D Secure</translation>
    <translation id="mean_table_head_3d_secure_true" qtlid="34776">Sí</translation>
@@ -1180,7 +1180,7 @@
    <translation id="terminate_service_title" qtlid="439957">Formulario de baja</translation>
    <translation id="terminate_service_information_title" qtlid="439970">Baja del servicio</translation>
    <translation id="terminate_service_information_text" qtlid="439983">El servicio se dará de baja tras su confirmación. La baja del servicio conlleva la eliminación automática, inmediata e irreversible de todos los datos asociados a dicho servicio (incluidas las copias de seguridad). Antes de confirmar la baja del servicio, deberá adoptar todas las medidas necesarias para conservar sus datos. OVH se exime de toda responsabilidad a este respecto.</translation>
-   <translation id="terminate_service_information_text_non_US">Le service sera résilié à la fin de la période de renouvellement. Une fois que vous confirmez la résiliation, veuillez noter que toutes les données liées à ce service et toutes les sauvegardes <strong>seront définitivement supprimées</strong>. Il vous appartient de prendre toutes les mesures nécessaires pour conserver vos données avant de donner votre confirmation de supprimer votre service. Une fois le processus initié, vous ne pourrez pas le stopper. OVH décline toute responsabilité de perte de données dans ce cas.</translation>
+   <translation id="terminate_service_information_text_non_US" qtlid="492658">El servicio se dará de baja al final del período de renovación. Tenga en cuenta que, una vez confirmada la supresión del servicio, todos los datos y backups asociados <strong>se eliminarán definitivamente</strong>. Antes de confirmar la baja del servicio, le corresponde adoptar todas las medidas necesarias para conservar sus datos. Una vez iniciado este proceso, no podrá detenerlo. OVH se exime de toda responsabilidad a este respecto.</translation>
    <translation id="terminate_service_services_title" qtlid="439996">Servicios afectados por la baja</translation>
    <translation id="terminate_service_services_service" qtlid="31042">Servicio</translation>
    <translation id="terminate_service_services_name" qtlid="3818">Nombre</translation>
@@ -1198,7 +1198,7 @@
    <translation id="terminate_service_reason_text" qtlid="440022">¿Quiere darnos más detalles o enviarnos alguna sugerencia?</translation>
    <translation id="terminate_service_error" qtlid="440035">¡Vaya! Se ha producido un error al cargar la página.</translation>
    <translation id="terminate_service_confirmation_error" qtlid="440048">Se ha producido un error al confirmar la baja del servicio. </translation>
-   <translation id="terminate_service_confirmation_success" qtlid="440061">La baja del servicio se ha tramitado correctamente. Recibirá la confirmación por correo electrónico en los próximos minutos. Quedamos a su entera disposición para cualquier aclaración adicional.</translation>
+   <translation id="terminate_service_confirmation_success" qtlid="492671">La baja del servicio se ha tramitado correctamente. Recibirá la confirmación por correo electrónico en los próximos minutos. Quedamos a su entera disposición para cualquier aclaración adicional.</translation>
    <translation id="terminate_service_confirm" qtlid="440074">Confirmo que deseo dar de baja el servicio</translation>
    <translation id="terminate_service_type_allDom" qtlid="270293">Pack AllDom</translation>
    <translation id="terminate_service_type_caas_containers" qtlid="343148">CaaS Containers</translation>

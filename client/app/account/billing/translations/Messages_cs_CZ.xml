@@ -142,8 +142,8 @@
    <translation id="autorenew_service_update_now" qtlid="31270">Existující</translation>
    <translation id="autorenew_service_update_future" qtlid="221123">Nová hodnota</translation>
    <translation id="autorenew_service_update_step2_error" qtlid="177522">Došlo k neočekávané chybě, omlouváme se za komplikace.</translation>
-   <translation id="autorenew_service_update_step2_success" qtlid="220174">Operace proběhla úspěšně.</translation>
-   <translation id="autorenew_service_update_step2_with_async_action_success">Opération effectuée avec succès, elle sera effective d'ici quelques instants.</translation>
+   <translation id="autorenew_service_update_step2_success" qtlid="492580">Operace byla úspěšně provedena.</translation>
+   <translation id="autorenew_service_update_step2_with_async_action_success" qtlid="492593">Operace byla úspěšně provedena. Výsledek bude k dispozici za okamžik.</translation>
    <translation id="billing_export_csv" qtlid="231773">Export do CSV</translation>
    <translation id="billing_common_link_new_window" qtlid="300694">(nové okno)</translation>
    <translation id="billing_date_range_choose_custom_date" qtlid="374443">Zvolte časové období</translation>
@@ -154,7 +154,7 @@
    <translation id="autorenew_service_disable_autorenew_desc1" qtlid="416189">Režim automatických plateb bude pro Vaši službu <strong>{0}</strong> deaktivován.</translation>
    <translation id="autorenew_service_disable_autorenew_desc2" qtlid="416202">Abyste mohli svou službu i nadále využívat, musíte příští platbu provést ještě před datem její expirace. <br/>Ve výchozím nastavení bude Vaše služba <strong>automaticky zrušena k datu</strong> {0}. Veškerá data vážící se k dané službě budou v takovém případě nenávratně smazána.</translation>
    <translation id="autorenew_service_disable_autorenew_desc3" qtlid="416215">Režim automatických plateb můžete reaktivovat do 24 hodin před datem expirace.</translation>
-   <translation id="autorenew_service_disable_autorenew_warn">Vous recevrez des relances par e-mail pour vous informer de la fin de votre service.</translation>
+   <translation id="autorenew_service_disable_autorenew_warn" qtlid="492606">O ukončení služby budete informováni prostřednictvím e-mailu.</translation>
 
    <translation id="autorenew_service_enable_autorenew_title" qtlid="416098">Aktivovat automatické platby</translation>
    <translation id="autorenew_service_enable_autorenew_desc1" qtlid="416241">Automatické obnovení Vaší služby <strong>{0}</strong> bude aktivováno.</translation>
@@ -254,15 +254,15 @@
    <translation id="pagination_page" qtlid="486464">Strana {{ current }} / {{ last }}</translation>
    <translation id="pagination_display" qtlid="69353">Zobrazit</translation>
    <translation id="pagination_display_all" qtlid="139884">Vše</translation>
-   <translation id="pagination_go" qtlid="224880">OK</translation>
+   <translation id="pagination_go" qtlid="492619">OK</translation>
    <translation id="history_title2" qtlid="159540">Mé faktury</translation>
    <translation id="history_invoice_loading_errors" qtlid="402984">Při načítání {0} faktur(y) došlo k chybě.</translation>
-   <translation id="history_invoices_postal_mail" qtlid="486867">Recevoir mes factures au format papier</translation>
+   <translation id="history_invoices_postal_mail" qtlid="486867">Přeji si dostávat faktury v papírové formě</translation>
 
-   <translation id="history_invoices_choice_modal_activation" qtlid="486880">Voulez-vous confirmer l'activation de cette option ?</translation>
-   <translation id="history_invoices_choice_modal_deactivation" qtlid="486893">Voulez-vous confirmer la désactivation de cette option ?</translation>
-   <translation id="history_invoices_choice_modal_update_success" qtlid="486906">Le paramètre a bien été mis à jour</translation>
-   <translation id="history_invoices_choice_modal_update_error" qtlid="486919">Une erreur est survenue lors de la mise à jour du paramètre</translation>
+   <translation id="history_invoices_choice_modal_activation" qtlid="486880">Přejete si potvrdit aktivaci této možnosti?</translation>
+   <translation id="history_invoices_choice_modal_deactivation" qtlid="486893">Přejete si potvrdit deaktivaci této možnosti?</translation>
+   <translation id="history_invoices_choice_modal_update_success" qtlid="486906">Parametr byl úspěšně aktualizován</translation>
+   <translation id="history_invoices_choice_modal_update_error" qtlid="486919">Při aktualizaci parametru došlo k chybě</translation>
 
    <translation id="history_table_head_date" qtlid="374508">Datum vydání</translation>
    <translation id="history_table_head_id" qtlid="16445">Odkaz</translation>
@@ -292,7 +292,7 @@
    <translation id="payments_table_actions_tooltip" qtlid="398820">Více informací o platbě</translation>
    <translation id="payments_table_type_not_available" qtlid="374560">Informace není k dispozici</translation>
    <translation id="payments_table_empty" qtlid="398833">V rámci zvoleného období nemáte žádné platby.</translation>
-   <translation id="payments_request_pending" qtlid="486932">Un règlement de solde est en cours. Cliquez <a href="{0}">sur ce lien</a> pour en savoir plus.</translation>
+   <translation id="payments_request_pending" qtlid="486932">Probíhá uhrazení salda. Pro více informací klikněte <a href="{0}">zde</a>.</translation>
    <translation id="payments_details_link" qtlid="398846">Zobrazit detailní informace o platbě</translation>
    <translation id="payment_details_payment_id" qtlid="16445">Odkaz</translation>
    <translation id="payment_details_payment_date" qtlid="24523">Datum</translation>
@@ -421,7 +421,7 @@
    <translation id="payment_mean_contact_creation_label_country" qtlid="25171">Země</translation>
    <translation id="payment_mean_contact_creation_label_address_country" qtlid="25171">Země</translation>
    <translation id="payment_mean_contact_creation_label_address_province" qtlid="38577">Oblast</translation>
-   <translation id="payment_mean_contact_creation_label_address_state" qtlid="8230">Stav</translation>
+   <translation id="payment_mean_contact_creation_label_address_state" qtlid="492632">Stav</translation>
    <translation id="payment_mean_contact_creation_label_address_area" qtlid="32434">Okres</translation>
    <translation id="payment_mean_contact_creation_label_legalform" qtlid="381855">Právní status</translation>
    <translation id="payment_mean_contact_creation_label_email_confirmation" qtlid="321156">Potvrzení e-mailu</translation>
@@ -745,7 +745,7 @@
    <translation id="add_mean_select_title_choose" qtlid="244599">Vyberte si</translation>
    <translation id="add_mean_select_title_no_choice" qtlid="244612">Žádná jiná možnost není dostupná</translation>
    <translation id="add_mean_unable_to_get_payment_means" qtlid="244625">Není možné získat dostupné platební metody</translation>
-   <translation id="mean_table_head_state" qtlid="8230">Stav</translation>
+   <translation id="mean_table_head_state" qtlid="492645">Stav</translation>
    <translation id="mean_table_head_actions" qtlid="72809">Akce</translation>
    <translation id="mean_table_head_3d_secure" qtlid="274876">3D Secure</translation>
    <translation id="mean_table_head_3d_secure_true" qtlid="34776">Ano</translation>
@@ -1180,7 +1180,7 @@
    <translation id="terminate_service_title" qtlid="439957">Formulář zrušení služby</translation>
    <translation id="terminate_service_information_title" qtlid="439970">Zrušení služby</translation>
    <translation id="terminate_service_information_text" qtlid="439983">Potvrzení bude mít za následek okamžité a nenávratné zrušení služby a odstranění veškerých asociovaných dat (včetně datových záloh). Před pokračováním se ujistěte, že jste podnikli veškeré kroky potřebné pro zálohování svých dat nad rámec této služby. Společnost OVH nenese za případnou ztrátu dat vzniklou v důsledku zrušení služby žádnou odpovědnost.</translation>
-   <translation id="terminate_service_information_text_non_US">Le service sera résilié à la fin de la période de renouvellement. Une fois que vous confirmez la résiliation, veuillez noter que toutes les données liées à ce service et toutes les sauvegardes <strong>seront définitivement supprimées</strong>. Il vous appartient de prendre toutes les mesures nécessaires pour conserver vos données avant de donner votre confirmation de supprimer votre service. Une fois le processus initié, vous ne pourrez pas le stopper. OVH décline toute responsabilité de perte de données dans ce cas.</translation>
+   <translation id="terminate_service_information_text_non_US" qtlid="492658">Služba bude ukončena na konci obnovovacího období. Mějte prosím na paměti, že jakmile potvrdíte ukončení služby, dojde k nenávratnému odstranění veškerých dat a záloh s ní asociovaných. Před potvrzením ukončení služby proto doporučujeme provést veškeré kroky nezbytné pro zachování Vašich dat. Po zahájení již proces nelze stornovat. Společnost OVH v tomto případě nenese odpovědnost za případnou ztrátu dat.</translation>
    <translation id="terminate_service_services_title" qtlid="439996">Další služby, které mohou být ovlivněné zrušením dané služby</translation>
    <translation id="terminate_service_services_service" qtlid="31042">Služba</translation>
    <translation id="terminate_service_services_name" qtlid="3818">Název</translation>
@@ -1198,7 +1198,7 @@
    <translation id="terminate_service_reason_text" qtlid="440022">Chcete nám poskytnout další podrobnosti?</translation>
    <translation id="terminate_service_error" qtlid="440035">Při načítání stránky došlo k chybě.</translation>
    <translation id="terminate_service_confirmation_error" qtlid="440048">Při pokusu o potvrzení požadavku na zrušení služby došlo k chybě.</translation>
-   <translation id="terminate_service_confirmation_success" qtlid="440061">Služba byla úspěšně zrušena. V následujících minutách od nás obdržíte potvrzovací e-mail. Naše technická podpora je Vám i nadále k dispozici.</translation>
+   <translation id="terminate_service_confirmation_success" qtlid="492671">Vaše služby byly úspěšně ukončeny. V následujících minutách obdržíte potvrzení do své e-mailové schránky. V případě jakýchkoli nejasností je Vám k dispozici naše zákaznická podpora.</translation>
    <translation id="terminate_service_confirm" qtlid="440074">Potvrzuji zrušení služby</translation>
    <translation id="terminate_service_type_allDom" qtlid="270293">Balíček AllDom</translation>
    <translation id="terminate_service_type_caas_containers" qtlid="343148">CaaS kontejnery </translation>

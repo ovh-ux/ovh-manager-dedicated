@@ -142,8 +142,8 @@
    <translation id="autorenew_service_update_now" qtlid="31270">Obecnie</translation>
    <translation id="autorenew_service_update_future" qtlid="221123">Nowa wartość</translation>
    <translation id="autorenew_service_update_step2_error" qtlid="177522">Wystąpił błąd. Przepraszamy za kłopot.</translation>
-   <translation id="autorenew_service_update_step2_success" qtlid="220174">Operacja została wykonana.</translation>
-   <translation id="autorenew_service_update_step2_with_async_action_success">Opération effectuée avec succès, elle sera effective d'ici quelques instants.</translation>
+   <translation id="autorenew_service_update_step2_success" qtlid="492580">Opération effectuée avec succès.</translation>
+   <translation id="autorenew_service_update_step2_with_async_action_success" qtlid="492593">Opération effectuée avec succès, elle sera effective d'ici quelques instants.</translation>
    <translation id="billing_export_csv" qtlid="231773">Eksportuj w formacie CSV</translation>
    <translation id="billing_common_link_new_window" qtlid="300694">(nowe okno)</translation>
    <translation id="billing_date_range_choose_custom_date" qtlid="374443">Zdefiniuj okres</translation>
@@ -154,7 +154,7 @@
    <translation id="autorenew_service_disable_autorenew_desc1" qtlid="416189">Wyłączymy automatyczną płatność dla Twojej usługi <strong>{0}</strong>.</translation>
    <translation id="autorenew_service_disable_autorenew_desc2" qtlid="416202">Aby zachować usługę, należy dokonać płatności przed datą jej wygaśnięcia. <br/> W przeciwnym razie Twoja usługa zostanie <strong>automatycznie zamknięta w dniu jej wygaśnięcia,</strong> dnia {0}. Dane związane z tą usługę zostaną automatycznie i nieodwracalnie usunięte. </translation>
    <translation id="autorenew_service_disable_autorenew_desc3" qtlid="416215">Będziesz mógł przywrócić płatność automatyczną aż do 24 godzin przed datą wygaśnięcia usługi.</translation>
-   <translation id="autorenew_service_disable_autorenew_warn">Vous recevrez des relances par e-mail pour vous informer de la fin de votre service.</translation>
+   <translation id="autorenew_service_disable_autorenew_warn" qtlid="492606">Zostaniesz powiadomiony e-mailem o zakończeniu świadczenia usługi. </translation>
 
    <translation id="autorenew_service_enable_autorenew_title" qtlid="416098">Włącz płatność automatyczną</translation>
    <translation id="autorenew_service_enable_autorenew_desc1" qtlid="416241">Włączymy automatyczną płatność dla Twojej usługi <strong>{0}</strong>.</translation>
@@ -254,7 +254,7 @@
    <translation id="pagination_page" qtlid="486464">Strona {{ current }} / {{ last }}</translation>
    <translation id="pagination_display" qtlid="69353">Wyświetl</translation>
    <translation id="pagination_display_all" qtlid="139884">Wszystko</translation>
-   <translation id="pagination_go" qtlid="224880">OK</translation>
+   <translation id="pagination_go" qtlid="492619">Ok</translation>
    <translation id="history_title2" qtlid="159540">Faktury</translation>
    <translation id="history_invoice_loading_errors" qtlid="402984">Wystąpił błąd podczas pobierania {0} faktur(y).</translation>
    <translation id="history_invoices_postal_mail" qtlid="486867">Recevoir mes factures au format papier</translation>
@@ -421,7 +421,7 @@
    <translation id="payment_mean_contact_creation_label_country" qtlid="25171">Kraj</translation>
    <translation id="payment_mean_contact_creation_label_address_country" qtlid="25171">Kraj</translation>
    <translation id="payment_mean_contact_creation_label_address_province" qtlid="38577">Region</translation>
-   <translation id="payment_mean_contact_creation_label_address_state" qtlid="8230">Status</translation>
+   <translation id="payment_mean_contact_creation_label_address_state" qtlid="492632">État</translation>
    <translation id="payment_mean_contact_creation_label_address_area" qtlid="32434">Województwo</translation>
    <translation id="payment_mean_contact_creation_label_legalform" qtlid="381855">Status prawny</translation>
    <translation id="payment_mean_contact_creation_label_email_confirmation" qtlid="321156">Potwierdzenie adresu e-mail</translation>
@@ -745,7 +745,7 @@
    <translation id="add_mean_select_title_choose" qtlid="244599">Dokonaj wyboru</translation>
    <translation id="add_mean_select_title_no_choice" qtlid="244612">Inny wybór nie jest możliwy.</translation>
    <translation id="add_mean_unable_to_get_payment_means" qtlid="244625">Nie można pobrać dostępnych sposobów płatności.</translation>
-   <translation id="mean_table_head_state" qtlid="8230">Status</translation>
+   <translation id="mean_table_head_state" qtlid="492645">État</translation>
    <translation id="mean_table_head_actions" qtlid="72809">Operacje</translation>
    <translation id="mean_table_head_3d_secure" qtlid="274876">3D Secure</translation>
    <translation id="mean_table_head_3d_secure_true" qtlid="34776">Tak</translation>
@@ -1177,7 +1177,7 @@
    <translation id="terminate_service_title" qtlid="439957">Formularz rezygnacji z usługi</translation>
    <translation id="terminate_service_information_title" qtlid="439970">Rezygnacja z usługi</translation>
    <translation id="terminate_service_information_text" qtlid="439983">Usługa zostanie usunięta zaraz po tym, jak potwierdzisz rezygnację. Zaskutkuje to automatycznym, natychmiastowym i nieodwracalnym usunięciem wszystkich danych powiązanych z tą usługą (również kopii zapasowych). Przed potwierdzeniem rezygnacji podejmij stosowne kroki w celu zachowania danych.  OVH nie ponosi w tym zakresie odpowiedzialności. </translation>
-   <translation id="terminate_service_information_text_non_US">Le service sera résilié à la fin de la période de renouvellement. Une fois que vous confirmez la résiliation, veuillez noter que toutes les données liées à ce service et toutes les sauvegardes <strong>seront définitivement supprimées</strong>. Il vous appartient de prendre toutes les mesures nécessaires pour conserver vos données avant de donner votre confirmation de supprimer votre service. Une fois le processus initié, vous ne pourrez pas le stopper. OVH décline toute responsabilité de perte de données dans ce cas.</translation>
+   <translation id="terminate_service_information_text_non_US" qtlid="492658">Świadczenie usługi zostanie zakończone z końcem opłaconego okresu dzierżawy. Po potwierdzeniu rezygnacji z usługi wszystkie dane i kopie zapasowe związane z usługą <strong>zostaną nieodwracalnie usunięte</strong>. Dlatego przed potwierdzeniem woli usunięcia usługi podejmij wszelkie niezbędne kroki mające na celu zachowanie danych. Po rozpoczęciu procesu niemożliwe jest jego anulowanie. W takim przypadku OVH nie ponosi odpowiedzialności za utratę danych.</translation>
    <translation id="terminate_service_services_title" qtlid="439996">Inne usługi, na które może wpłynąć rezygnacja</translation>
    <translation id="terminate_service_services_service" qtlid="31042">Usługa</translation>
    <translation id="terminate_service_services_name" qtlid="3818">Nazwa</translation>
@@ -1195,7 +1195,7 @@
    <translation id="terminate_service_reason_text" qtlid="440022">Czy chcesz nam podać więcej szczegółów lub przekazać jakieś sugestie?</translation>
    <translation id="terminate_service_error" qtlid="440035">Wystąpił błąd podczas ładowania strony.</translation>
    <translation id="terminate_service_confirmation_error" qtlid="440048">Wystąpił błąd podczas potwierdzania rezygnacji z usługi.</translation>
-   <translation id="terminate_service_confirmation_success" qtlid="440061">Złożyłeś rezygnację z usługi. Otrzymasz potwierdzenie e-mailem w ciągu kilku minut. Pozostajemy do Twojej dyspozycji w przypadku wszelkich pytań.</translation>
+   <translation id="terminate_service_confirmation_success" qtlid="492671">Vous avez bien résilié vos services. Une confirmation vous sera envoyée par email dans les prochaines minutes. Notre équipe support reste à votre disposition pour toute question.</translation>
    <translation id="terminate_service_confirm" qtlid="440074">Potwierdzam rezygnację z usługi</translation>
    <translation id="terminate_service_type_allDom" qtlid="270293">Pakiet AllDom</translation>
    <translation id="terminate_service_type_caas_containers" qtlid="343148">CaaS Containers</translation>

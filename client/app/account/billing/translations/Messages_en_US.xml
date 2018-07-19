@@ -142,8 +142,8 @@
    <translation id="autorenew_service_update_now" qtlid="31270">Existing</translation>
    <translation id="autorenew_service_update_future" qtlid="221123">New value</translation>
    <translation id="autorenew_service_update_step2_error" qtlid="177522">An error has occurred. We apologize for any inconvenience this may have caused.</translation>
-   <translation id="autorenew_service_update_step2_success" qtlid="220174">Operation successful.</translation>
-   <translation id="autorenew_service_update_step2_with_async_action_success">Opération effectuée avec succès, elle sera effective d'ici quelques instants.</translation>
+   <translation id="autorenew_service_update_step2_success" qtlid="492580">Operation complete.</translation>
+   <translation id="autorenew_service_update_step2_with_async_action_success" qtlid="492593">Operation complete. This will be effective in a few moments.</translation>
    <translation id="billing_export_csv" qtlid="231773">Export in CSV</translation>
    <translation id="billing_common_link_new_window" qtlid="300694">(new window)</translation>
    <translation id="billing_date_range_choose_custom_date" qtlid="374443">Define the period </translation>
@@ -154,7 +154,7 @@
    <translation id="autorenew_service_disable_autorenew_desc1" qtlid="416189">The automatic payment of your <strong>{0}</strong> service will be disabled.</translation>
    <translation id="autorenew_service_disable_autorenew_desc2" qtlid="416202">To keep using your service, you must make your next payment before the expiry date. <br/>Failing which, your service will be <strong>automatically cancelled on its expiry date,</strong> {0}. All data linked to the automatic payment of your services will be irreversibly deleted.</translation>
    <translation id="autorenew_service_disable_autorenew_desc3" qtlid="416215">You can reactivate automatic payment up to 24 jours before the expiry date.</translation>
-   <translation id="autorenew_service_disable_autorenew_warn">Vous recevrez des relances par e-mail pour vous informer de la fin de votre service.</translation>
+   <translation id="autorenew_service_disable_autorenew_warn" qtlid="492606">You will receive email reminders to notifiy you that your service is about to expire.</translation>
 
    <translation id="autorenew_service_enable_autorenew_title" qtlid="416098">Activate automatic payment</translation>
    <translation id="autorenew_service_enable_autorenew_desc1" qtlid="416241">Automatic renewal for your <strong>{0}</strong> service will be activated.</translation>
@@ -254,15 +254,15 @@
    <translation id="pagination_page" qtlid="486464">Page {{ current }} / {{ last }}</translation>
    <translation id="pagination_display" qtlid="69353">Display</translation>
    <translation id="pagination_display_all" qtlid="139884">All</translation>
-   <translation id="pagination_go" qtlid="224880">OK</translation>
+   <translation id="pagination_go" qtlid="492619">OK</translation>
    <translation id="history_title2" qtlid="159540">My bills</translation>
    <translation id="history_invoice_loading_errors" qtlid="402984">An error while retrieving {0} bill(s).</translation>
-   <translation id="history_invoices_postal_mail" qtlid="486867">Recevoir mes factures au format papier</translation>
+   <translation id="history_invoices_postal_mail" qtlid="486867">Receive bills in paper format</translation>
 
-   <translation id="history_invoices_choice_modal_activation" qtlid="486880">Voulez-vous confirmer l'activation de cette option ?</translation>
-   <translation id="history_invoices_choice_modal_deactivation" qtlid="486893">Voulez-vous confirmer la désactivation de cette option ?</translation>
-   <translation id="history_invoices_choice_modal_update_success" qtlid="486906">Le paramètre a bien été mis à jour</translation>
-   <translation id="history_invoices_choice_modal_update_error" qtlid="486919">Une erreur est survenue lors de la mise à jour du paramètre</translation>
+   <translation id="history_invoices_choice_modal_activation" qtlid="486880">Would you like to confirm that you want to enable this option?</translation>
+   <translation id="history_invoices_choice_modal_deactivation" qtlid="486893">Would you like to confirm that you want to disable this option?</translation>
+   <translation id="history_invoices_choice_modal_update_success" qtlid="486906">Setting updated</translation>
+   <translation id="history_invoices_choice_modal_update_error" qtlid="486919">An error has occurred updating this setting</translation>
 
    <translation id="history_table_head_date" qtlid="374508">Issue date </translation>
    <translation id="history_table_head_id" qtlid="16445">Reference</translation>
@@ -292,7 +292,7 @@
    <translation id="payments_table_actions_tooltip" qtlid="398820">More information on this payment</translation>
    <translation id="payments_table_type_not_available" qtlid="374560">Information is unavailable </translation>
    <translation id="payments_table_empty" qtlid="398833">You have no payment for the selected period.</translation>
-   <translation id="payments_request_pending" qtlid="486932">Un règlement de solde est en cours. Cliquez <a href="{0}">sur ce lien</a> pour en savoir plus.</translation>
+   <translation id="payments_request_pending" qtlid="486932">A bill payment is being processed. Click <a href="{0}">on this link</a> to find out more.</translation>
    <translation id="payments_details_link" qtlid="398846">See payment details</translation>
    <translation id="payment_details_payment_id" qtlid="16445">Reference</translation>
    <translation id="payment_details_payment_date" qtlid="24523">Date</translation>
@@ -421,7 +421,7 @@
    <translation id="payment_mean_contact_creation_label_country" qtlid="25171">Country</translation>
    <translation id="payment_mean_contact_creation_label_address_country" qtlid="25171">Country</translation>
    <translation id="payment_mean_contact_creation_label_address_province" qtlid="38577">Province</translation>
-   <translation id="payment_mean_contact_creation_label_address_state" qtlid="8230">Status</translation>
+   <translation id="payment_mean_contact_creation_label_address_state" qtlid="492632">Status</translation>
    <translation id="payment_mean_contact_creation_label_address_area" qtlid="32434">State</translation>
    <translation id="payment_mean_contact_creation_label_legalform" qtlid="381855">Legal status</translation>
    <translation id="payment_mean_contact_creation_label_email_confirmation" qtlid="321156">Confirmation email</translation>
@@ -745,7 +745,7 @@
    <translation id="add_mean_select_title_choose" qtlid="244599">Choose </translation>
    <translation id="add_mean_select_title_no_choice" qtlid="244612">No other choice possible</translation>
    <translation id="add_mean_unable_to_get_payment_means" qtlid="244625">Unable to retrieve the available payment methods</translation>
-   <translation id="mean_table_head_state" qtlid="8230">Status</translation>
+   <translation id="mean_table_head_state" qtlid="492645">Status</translation>
    <translation id="mean_table_head_actions" qtlid="72809">Actions</translation>
    <translation id="mean_table_head_3d_secure" qtlid="274876">3D Secure</translation>
    <translation id="mean_table_head_3d_secure_true" qtlid="34776">Yes</translation>
@@ -1177,7 +1177,7 @@
    <translation id="terminate_service_title" qtlid="439957">Cancellation form</translation>
    <translation id="terminate_service_information_title" qtlid="439970">Cancelling your service</translation>
    <translation id="terminate_service_information_text" qtlid="439983">The service will be cancelled when you give your confirmation. Once you do this, all data associated with this service (including any backups) will be permanently deleted, immediately and automatically. Before initiating the process and giving your confirmation, you are responsible for taking all of the necessary measures to store your personal data. OVH cannot accept any liability in this regard.</translation>
-   <translation id="terminate_service_information_text_non_US">Le service sera résilié à la fin de la période de renouvellement. Une fois que vous confirmez la résiliation, veuillez noter que toutes les données liées à ce service et toutes les sauvegardes <strong>seront définitivement supprimées</strong>. Il vous appartient de prendre toutes les mesures nécessaires pour conserver vos données avant de donner votre confirmation de supprimer votre service. Une fois le processus initié, vous ne pourrez pas le stopper. OVH décline toute responsabilité de perte de données dans ce cas.</translation>
+   <translation id="terminate_service_information_text_non_US" qtlid="492658">Le service sera résilié à la fin de la période de renouvellement. Une fois que vous confirmez la résiliation, veuillez noter que toutes les données liées à ce service et toutes les sauvegardes <strong>seront définitivement supprimées</strong>. Il vous appartient de prendre toutes les mesures nécessaires pour conserver vos données avant de donner votre confirmation de supprimer votre service. Une fois le processus initié, vous ne pourrez pas le stopper. OVH décline toute responsabilité de perte de données dans ce cas.</translation>
    <translation id="terminate_service_services_title" qtlid="439996">Services affected by the cancellation</translation>
    <translation id="terminate_service_services_service" qtlid="31042">Service</translation>
    <translation id="terminate_service_services_name" qtlid="3818">Name</translation>
@@ -1195,7 +1195,7 @@
    <translation id="terminate_service_reason_text" qtlid="440022">Would you like to provide more details, or give a suggestion?</translation>
    <translation id="terminate_service_error" qtlid="440035">Sorry, an error has occurred while loading the page.</translation>
    <translation id="terminate_service_confirmation_error" qtlid="440048">An error has occurred while confirming your service cancellation.</translation>
-   <translation id="terminate_service_confirmation_success" qtlid="440061">You have successfully cancelled your services. A confirmation email will be sent to you in the next few minutes. If you have any queries, please feel free to contact our support team.</translation>
+   <translation id="terminate_service_confirmation_success" qtlid="492671">You have cancelled your services. You will be sent a confirmation email in the next few minutes. Please contact our support team if you have any further queries.</translation>
    <translation id="terminate_service_confirm" qtlid="440074">Confirm cancellation</translation>
    <translation id="terminate_service_type_allDom" qtlid="270293">AllDom Pack</translation>
    <translation id="terminate_service_type_caas_containers" qtlid="343148">CaaS Containers</translation>
