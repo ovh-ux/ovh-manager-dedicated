@@ -1,23 +1,16 @@
-<div data-ng-controller="Billing.controllers.AutoRenew.delete">
-
-    <div data-wizard
-         data-wizard-on-cancel="resetAction"
-         data-wizard-on-finish="deleteRenew"
-         data-wizard-title="::'autorenew_service_delete_title' | translate"
-         data-wizard-confirm-button-text="::'autorenew_service_confirm' | translate">
-
-        <div data-wizard-step data-wizard-step-valid="true">
-            <div class="text-center"
-                 data-ng-if="loading">
-                <oui-spinner></oui-spinner>
-            </div>
-            <p data-ng-bind-html="'autorenew_service_delete_confirm' | translate:{
-                   t0: selectedServices[0].domain,
-                   t1: selectedServices[0].expirationText
-               }">
-            </p>
-            <p data-ng-bind-html="'autorenew_service_delete_warn' | translate "></p>
-        </div>
-
-    </div>
+<div data-ng-controller="billingAutoRenewDeleteCtrl as $ctrl">
+    <oui-modal
+        data-heading="{{:: 'autorenew_service_delete_title' | translate }}"
+        data-primary-action="$ctrl.deleteRenew()"
+        data-primary-label="{{:: 'autorenew_service_confirm' | translate }}"
+        data-on-dismiss="resetAction()"
+        data-loading="$ctrl.loading">
+        <p
+            data-translate="autorenew_service_delete_confirm"
+            data-translate-values="{
+                t0: $ctrl.serviceToDisplay.domain,
+                t1: $ctrl.serviceToDisplay.expirationText
+            }"></p>
+        <p data-translate="autorenew_service_delete_warn"></p>
+    </oui-modal>
 </div>

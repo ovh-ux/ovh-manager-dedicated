@@ -34,7 +34,7 @@
                 class="btn btn-link"
                 data-ng-class="{ 'disabled' : !canResiliate(service.subProducts.hosting_web, user) }"
                 data-ng-disabled="!canResiliate(service.subProducts.hosting_web, user)"
-                data-ng-click="canResiliate(service.subProducts.hosting_web, user) && resiliateService(service.subProducts.hosting_web)">
+                data-ng-click="resiliateService(service.subProducts.hosting_web)">
             <i class="fa fa-trash" aria-hidden="true"></i>
             <span data-translate="autorenew_service_resiliate_button"></span>
         </button>
