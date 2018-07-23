@@ -295,7 +295,7 @@
 
             <tbody data-ng-show="services.data && !services.loading">
                 <!-- COMMON SERVICES -->
-                <tr data-ng-repeat-start="service in services.data.list.results"
+                <tr data-ng-repeat-start="service in services.data.list.results track by (service.serviceId + service.serviceType)"
                     data-ng-class="{'pointer': !editionDisabled(service)}"
                     data-ng-include="BILLING_BASE_URL + 'autoRenew/common/billing-autoRenew-common.html'">
                 </tr>
@@ -303,7 +303,6 @@
                 <!-- DOMAIN SERVICES -->
                 <tr data-ng-if="service.serviceType === 'HOSTING_DOMAIN' && expandHostingDomain[service.domain]"
                     data-ng-include="BILLING_BASE_URL + 'autoRenew/domain/billing-autoRenew-domain.html'">
-
                 </tr>
 
                 <!-- HOSTING SERVICES -->
@@ -312,7 +311,6 @@
                     data-ng-repeat-end>
                 </tr>
             </tbody>
-
         </table>
         <div data-pagination-server-side="serviceTable"
              data-pagination-server-side-function="getServices"
