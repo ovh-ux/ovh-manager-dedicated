@@ -266,7 +266,6 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
                     serviceType: service.serviceType,
                     serviceId: service.serviceId
                 });
-                $window.location.assign($scope.getRenewUrl() + service.serviceId);
             }
         };
 
