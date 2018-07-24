@@ -83,7 +83,7 @@ angular.module("App").controller("BillingMainPayAsYouGoCtrl", class BillingMainP
                     resource: consumptionElement.planCode,
                     type: BillingMainPayAsYouGoCtrl.getConsumptionElementType(consumptionElement.planCode),
                     dueDate: consumption.service.billing.nextBillingDate,
-                    current: consumptionElement.price/*,
+                    current: consumptionElement.price/* ,
                     forecast: BillingMainPayAsYouGoCtrl.calculateElementForecast(consumptionElement, consumption.service.billing.nextBillingDate, this.time)*/
                 }));
             }));
