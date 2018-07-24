@@ -29,17 +29,17 @@ angular.module("App").controller("BillingMainPayAsYouGoCtrl", class BillingMainP
         return "instance";
     }
 
-    static calculateElementForecast (consumptionElement, expirationDate, time) {
-        const days = moment.unix(time).diff(moment(expirationDate).subtract(1, "month"), "days");
-        const daysToExpiration = moment(expirationDate).diff(moment.unix(time), "days");
-        const forecast = days > 0 ? ((consumptionElement.price.value / days) * daysToExpiration) + consumptionElement.price.value : Number.parseFloat(0) + consumptionElement.price.value;
+    // static calculateElementForecast (consumptionElement, expirationDate, time) {
+    //     const days = moment.unix(time).diff(moment(expirationDate).subtract(1, "month"), "days");
+    //     const daysToExpiration = moment(expirationDate).diff(moment.unix(time), "days");
+    //     const forecast = days > 0 ? ((consumptionElement.price.value / days) * daysToExpiration) + consumptionElement.price.value : Number.parseFloat(0) + consumptionElement.price.value;
 
-        return {
-            currencyCode: consumptionElement.price.currencyCode,
-            value: forecast,
-            text: consumptionElement.price.text.replace(/\d+(?:[.,]\d+)?/, forecast.toFixed(2))
-        };
-    }
+    //     return {
+    //         currencyCode: consumptionElement.price.currencyCode,
+    //         value: forecast,
+    //         text: consumptionElement.price.text.replace(/\d+(?:[.,]\d+)?/, forecast.toFixed(2))
+    //     };
+    // }
 
     /* =====================================
     =            INITIALIZATION            =
@@ -83,8 +83,8 @@ angular.module("App").controller("BillingMainPayAsYouGoCtrl", class BillingMainP
                     resource: consumptionElement.planCode,
                     type: BillingMainPayAsYouGoCtrl.getConsumptionElementType(consumptionElement.planCode),
                     dueDate: consumption.service.billing.nextBillingDate,
-                    current: consumptionElement.price,
-                    forecast: BillingMainPayAsYouGoCtrl.calculateElementForecast(consumptionElement, consumption.service.billing.nextBillingDate, this.time)
+                    current: consumptionElement.price/*,
+                    forecast: BillingMainPayAsYouGoCtrl.calculateElementForecast(consumptionElement, consumption.service.billing.nextBillingDate, this.time)*/
                 }));
             }));
         }).catch((error) => {
