@@ -40,21 +40,21 @@
    <translation id="cdn_configuration_backend_upgrade_step4_explication2" qtlid="167886">Se abrirá una nueva pestaña y el sistema le redirigirá automáticamente a la interfaz de pago de OVH.</translation>
    <translation id="cdn_configuration_backend_upgrade_fail" qtlid="132304">Se ha producido un error al cargar los datos</translation>
    <translation id="cdn_configuration_terminate_title_button" qtlid="56337">Résilier le service</translation>
-   <translation id="cdn_configuration_info_title">Informations</translation>
-   <translation id="cdn_configuration_domains">Domaines</translation>
+   <translation id="cdn_configuration_info_title" qtlid="26551">Información</translation>
+   <translation id="cdn_configuration_domains" qtlid="32590">Dominios</translation>
    <translation id="cdn_configuration_domain" qtlid="132317">0 dominios</translation>
    <translation id="cdn_configuration_domain_1" qtlid="132330">1 dominio</translation>
-   <translation id="cdn_configuration_domain_other" qtlid="486555">{} domaines</translation>
-   <translation id="cdn_configuration_ip">IP</translation>
-   <translation id="cdn_configuration_backends">IP Backends</translation>
+   <translation id="cdn_configuration_domain_other" qtlid="486555">{} dominios</translation>
+   <translation id="cdn_configuration_ip" qtlid="25615">IP</translation>
+   <translation id="cdn_configuration_backends" qtlid="497177">IP Backends</translation>
    <translation id="cdn_configuration_backend" qtlid="132356">{0} x IP Backend</translation>
    <translation id="cdn_configuration_activity" qtlid="143160">Actividad (último mes)</translation>
    <translation id="cdn_configuration_activity_page_viewed_0" qtlid="128118">Aucun objet vu</translation>
    <translation id="cdn_configuration_activity_page_viewed_one" qtlid="132369">1 objeto visto</translation>
-   <translation id="cdn_configuration_activity_page_viewed_other" qtlid="486568">{} objets vus</translation>
+   <translation id="cdn_configuration_activity_page_viewed_other" qtlid="486568">{} elementos vistos</translation>
    <translation id="cdn_configuration_activity_page_viewed_default" qtlid="126832">Disponible prochainement</translation>
    <translation id="cdn_configuration_savings" qtlid="143173">Ahorro (último mes)</translation>
-   <translation id="cdn_configuration_savings_bandwidth_percentage" qtlid="486581">{} % de bande passante</translation>
+   <translation id="cdn_configuration_savings_bandwidth_percentage" qtlid="486581">{} % de ancho de banda</translation>
    <translation id="cdn_configuration_savings_bandwidth_percentage_default" qtlid="125516">Bande passante: aucune donnée</translation>
    <translation id="cdn_configuration_savings_request_percentage" qtlid="132408">{0} % de peticiones</translation>
    <translation id="cdn_configuration_savings_request_percentage_default" qtlid="121471">Requêtes: aucune donnée</translation>
@@ -85,8 +85,8 @@
    <translation id="cdn_configuration_cacherules_upgrade_step4_explication" qtlid="132291">Tenga en cuenta que es necesario un plazo de 2 horas desde la aceptación del pago para que la activación de la opción se refleje en su área de cliente Dedicado.</translation>
    <translation id="cdn_configuration_cacherules_upgrade_step4_explication2" qtlid="167886">Se abrirá una nueva pestaña y el sistema le redirigirá automáticamente a la interfaz de pago de OVH.</translation>
    <translation id="cdn_configuration_cacherules_upgrade_fail" qtlid="132304">Se ha producido un error al cargar los datos</translation>
-   <translation id="cdn_domain_configuration_title_button">Configuration du domaine</translation>
-   <translation id="cdn_configuration_shortcut_title">Raccourcis</translation>
+   <translation id="cdn_domain_configuration_title_button" qtlid="449401">Configuración del dominio</translation>
+   <translation id="cdn_configuration_shortcut_title" qtlid="403658">Atajos</translation>
 
    <translation id="cdn_domain_configuration_purge_title_button" qtlid="125660">Purger le cache</translation>
    <translation id="cdn_domain_configuration_bypass_title_button" qtlid="125672">Bypass CDN</translation>
@@ -172,10 +172,10 @@
    <translation id="cdn_domain_tab_statistics" qtlid="26671">Statistiques</translation>
    <translation id="cdn_tab_statistics" qtlid="26671">Statistiques</translation>
    <translation id="cdn_tab_ssl" qtlid="84921">SSL</translation>
-   <translation id="cdn_network">Réseau</translation>
-   <translation id="cdn_network_domain">Domaine</translation>
-   <translation id="cdn_network_ipv4">IPv4</translation>
-   <translation id="cdn_network_servers">Serveur</translation>
+   <translation id="cdn_network" qtlid="25591">Red</translation>
+   <translation id="cdn_network_domain" qtlid="8458">Dominio</translation>
+   <translation id="cdn_network_ipv4" qtlid="101781">IPv4</translation>
+   <translation id="cdn_network_servers" qtlid="8290">Servidor</translation>
    <translation id="cdn_cacherule_search_placeholder" qtlid="178939">Buscar una regla</translation>
    <translation id="cdn_cacherule_table_empty" qtlid="132980">No hay reglas de caché</translation>
    <translation id="cdn_cacherule_table_search_empty" qtlid="178952">No se han encontrado reglas</translation>
@@ -183,7 +183,7 @@
    <translation id="cdn_cacherule_table_header_rule" qtlid="54917">Règle</translation>
    <translation id="cdn_cacherule_table_header_ttl" qtlid="121747">TTL</translation>
    <translation id="cdn_cacherule_table_header_cachetype" qtlid="125780">Mise en cache</translation>
-   <translation id="cdn_cacherule_table_header_state" qtlid="8230">État</translation>
+   <translation id="cdn_cacherule_table_header_state" qtlid="8230">Estado</translation>
    <translation id="cdn_cacherule_EXTENSION" qtlid="94231">Extension</translation>
    <translation id="cdn_cacherule_FOLDER" qtlid="126248">Dossier</translation>
    <translation id="cdn_cacherule_FILE" qtlid="73601">Fichier</translation>
@@ -230,7 +230,7 @@
    <translation id="cdn_configuration_no_ssl" qtlid="144318">Aún no se ha asociado a la CDN ningún certificado SSL.</translation>
    <translation id="cdn_configuration_ssl_name" qtlid="133097">Nombre del certificado</translation>
    <translation id="cdn_configuration_ssl_cn" qtlid="133110">Dominio asociado</translation>
-   <translation id="cdn_configuration_ssl_status" qtlid="8230">État</translation>
+   <translation id="cdn_configuration_ssl_status" qtlid="8230">Estado</translation>
    <translation id="cdn_configuration_ssl_certificateValidFrom" qtlid="133123">Creado el</translation>
    <translation id="cdn_configuration_ssl_certificateValidTo" qtlid="133136">Válido hasta el</translation>
    <translation id="cdn_configuration_ssl_provider_custom" qtlid="50062">Personnalisé</translation>

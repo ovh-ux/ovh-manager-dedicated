@@ -257,13 +257,6 @@
    <translation id="pagination_display_all" qtlid="139884">Tutto</translation>
    <translation id="pagination_go" qtlid="492619">Ok</translation>
    <translation id="history_title2" qtlid="159540">Le tue fatture</translation>
-   <translation id="history_invoice_loading_errors" qtlid="402984">Si è verificato un errore durante il recupero di {0} fatture.</translation>
-   <translation id="history_invoices_postal_mail" qtlid="486867">Recevoir mes factures au format papier</translation>
-
-   <translation id="history_invoices_choice_modal_activation" qtlid="486880">Voulez-vous confirmer l'activation de cette option ?</translation>
-   <translation id="history_invoices_choice_modal_deactivation" qtlid="486893">Voulez-vous confirmer la désactivation de cette option ?</translation>
-   <translation id="history_invoices_choice_modal_update_success" qtlid="486906">Le paramètre a bien été mis à jour</translation>
-   <translation id="history_invoices_choice_modal_update_error" qtlid="486919">Une erreur est survenue lors de la mise à jour du paramètre</translation>
 
    <translation id="history_table_head_date" qtlid="374508">Data di emissione</translation>
    <translation id="history_table_head_id" qtlid="16445">Referenza</translation>
@@ -1091,18 +1084,11 @@
 
 <!-- STATEMENTS -->
    <translation id="statements_account_automatic_payment_inactive" qtlid="374573">Non è possibile eseguire l'addebito automatico per il rinnovo dei tuoi servizi.</translation>
-   <translation id="statements_account_amount_automatically_collected" qtlid="349153">Un importo di <strong>{0}</strong> verrà addebitato sulla tua modalità di pagamento predefinita.</translation>
-   <translation id="statements_account_amount_to_pay" qtlid="349166">Per rinnovare i tuoi servizi, è necessario saldare un importo di <strong>{0}</strong>.</translation>
    <translation id="statements_account_no_default_payment_mean" qtlid="353309">Non hai impostato nessuna modalità di pagamento predefinita.</translation>
    <translation id="statements_account_invalid_default_payment_mean" qtlid="353322">La tua modalità di pagamento predefinita non è più valida.</translation>
    <translation id="statements_account_manage_my_payment_means" qtlid="287514">Gestisci i tuoi metodi di pagamento</translation>
    <translation id="statements_account_pay_debt_button" qtlid="349179">Salda subito l'importo dovuto</translation>
-   <translation id="statements_account_debt_payment" qtlid="344240">Saldo dell'importo dovuto</translation>
-   <translation id="statements_account_debt_payment_explanation" qtlid="353335">Con questa operazione viene generato un buono d'ordine valido per un'ora, con cui potrai effettuare direttamente il saldo del tuo conto.</translation>
-   <translation id="statements_account_debt_payment_bc_with_amount" qtlid="353348">Il <a href="{1}" target="_blank">buono d'ordine {0}</a> è stato generato per un importo di {2}.</translation>
-   <translation id="statements_accounts_debt_payment_confirm" qtlid="344227">Salda l'importo dovuto</translation>
-   <translation id="statements_account_debt_payment_order_generated" qtlid="344266">Il <a href="{1}" target="_blank">buono d'ordine {0}</a> è stato generato, adesso è possibile saldarne l'importo.</translation>
-   <translation id="statements_account_debt_payment_error" qtlid="344279">Si è verificato un errore, ci scusiamo per il disagio.</translation>
+
    <translation id="statements_table_caption" qtlid="343252">Ordini del tuo account</translation>
    <translation id="statements_table_header_order" qtlid="8302">Ordine</translation>
    <translation id="statements_table_header_date" qtlid="24523">Data</translation>
