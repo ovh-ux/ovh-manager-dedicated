@@ -109,6 +109,8 @@
    <translation id="server_tab_stats_rtm_infos_cpu_core" qtlid="204090">Rdzenie</translation>
    <translation id="server_tab_stats_rtm_infos_cpu_cache" qtlid="30214">Cache</translation>
    <translation id="server_tab_stats_rtm_infos_ram" qtlid="31354">RAM</translation>
+   <translation id="server_tab_stats_rtm_infos_swap">SWAP</translation>
+   <translation id="server_tab_stats_rtm_infos_versions">Versions</translation>
    <translation id="server_tab_stats_rtm_infos_rtmVersion" qtlid="193956">Wersja Real Time Monitoring</translation>
    <translation id="server_tab_stats_rtm_infos_rtmVersion_update" qtlid="204103">Dostępna jest aktualizacja</translation>
    <translation id="server_tab_stats_rtm_infos_kernelVersion" qtlid="204116">Kernel version</translation>
@@ -123,18 +125,18 @@
    <translation id="server_tab_stats_rtm_errorData" qtlid="204168">Informacje niedostępne</translation>
 
    <translation id="server_tab_stats_rtm_uptime" qtlid="31594">Uptime</translation>
-   <translation id="server_tab_stats_rtm_uptime_year_1" qtlid="204181">rok</translation>
-   <translation id="server_tab_stats_rtm_uptime_year_other" qtlid="94135">lat</translation>
-   <translation id="server_tab_stats_rtm_uptime_month_1" qtlid="40222">miesiąc</translation>
-   <translation id="server_tab_stats_rtm_uptime_month_other" qtlid="40222">miesiąc</translation>
-   <translation id="server_tab_stats_rtm_uptime_day_1" qtlid="44248">dzień</translation>
-   <translation id="server_tab_stats_rtm_uptime_day_other" qtlid="44260">dni</translation>
-   <translation id="server_tab_stats_rtm_uptime_hour_1" qtlid="40234">godzina</translation>
-   <translation id="server_tab_stats_rtm_uptime_hour_other" qtlid="44236">godzin(y)</translation>
-   <translation id="server_tab_stats_rtm_uptime_minute_1" qtlid="44212">minuta</translation>
-   <translation id="server_tab_stats_rtm_uptime_minute_other" qtlid="44224">minut(y)</translation>
-   <translation id="server_tab_stats_rtm_uptime_seconde_1" qtlid="94279">sekunda</translation>
-   <translation id="server_tab_stats_rtm_uptime_seconde_other" qtlid="94291">sekund(y)</translation>
+   <translation id="server_tab_stats_rtm_uptime_year_1">1 an</translation>
+   <translation id="server_tab_stats_rtm_uptime_year_other">{} ans</translation>
+   <translation id="server_tab_stats_rtm_uptime_month_1">1 mois</translation>
+   <translation id="server_tab_stats_rtm_uptime_month_other">{} mois</translation>
+   <translation id="server_tab_stats_rtm_uptime_day_1">1 jour</translation>
+   <translation id="server_tab_stats_rtm_uptime_day_other">{} jours</translation>
+   <translation id="server_tab_stats_rtm_uptime_hour_1">1 heure</translation>
+   <translation id="server_tab_stats_rtm_uptime_hour_other">{} heures</translation>
+   <translation id="server_tab_stats_rtm_uptime_minute_1">1 minute</translation>
+   <translation id="server_tab_stats_rtm_uptime_minute_other">{} minutes</translation>
+   <translation id="server_tab_stats_rtm_uptime_seconde_1">1 seconde</translation>
+   <translation id="server_tab_stats_rtm_uptime_seconde_other">{} secondes</translation>
 
    <translation id="server_tab_stats_rtm_profile" qtlid="204194">Profil maszyny</translation>
    <translation id="server_tab_stats_rtm_usage" qtlid="204207">Wykorzystanie zasobów serwera</translation>
@@ -144,6 +146,7 @@
    <translation id="server_tab_stats_rtm_partions_mountPoint" qtlid="110958">Punkt montowania</translation>
    <translation id="server_tab_stats_rtm_partions_usage" qtlid="76758">Przestrzeń wykorzystana</translation>
    <translation id="server_tab_stats_rtm_partions_inodeUsage" qtlid="194151">Wykorzystane węzły</translation>
+   <translation id="server_tab_stats_rtm_location">Emplacement</translation>
 
    <translation id="server_configuration_state_title" qtlid="26443">Status</translation>
    <translation id="server_configuration_state_OK" qtlid="96704">Normalny</translation>
@@ -334,9 +337,9 @@
    <translation id="server_configuration_monitoring_services_use" qtlid="243728">Monitorowanie usług</translation>
 
    <translation id="server_configuration_services_state_links" qtlid="245116">Linki</translation>
-   <translation id="server_configuration_services_state_links_weathermap" qtlid="245129"><a href="{0}" target="_blank">Weathermap</a></translation>
-   <translation id="server_configuration_services_state_links_vms" qtlid="245142"><a href="{0}" target="_blank">VMS</a></translation>
-   <translation id="server_configuration_services_state_links_travaux" qtlid="245155"><a href="{0}" target="_blank">Prace</a></translation>
+   <translation id="server_configuration_services_state_links_weathermap">Weathermap</translation>
+   <translation id="server_configuration_services_state_links_vms">VMS</translation>
+   <translation id="server_configuration_services_state_links_travaux">Travaux</translation>
 
    <translation id="server_configuration_profesionnal_use" qtlid="199962">Zastosowanie profesjonalne</translation>
    <translation id="server_configuration_profesionnal_use_info" qtlid="199975">Nie będziesz miał dostępu do usług NAS z poziomu tego serwera bez opcji Pro</translation>
@@ -360,15 +363,17 @@
    <translation id="server_configuration_distribution" qtlid="151971">System (OS)</translation>
    <translation id="server_configuration_distribution_none" qtlid="233034">Nie zainstalowane</translation>
    <translation id="server_configuration_boot" qtlid="151984">Boot</translation>
-   <translation id="server_configuration_creation" qtlid="371726">Dzierżawa rozpoczęta dnia</translation>
    <translation id="server_configuration_datacenter" qtlid="30802">Data center</translation>
    <translation id="server_configuration_rack" qtlid="32050">Szafa</translation>
    <translation id="server_configuration_server_id" qtlid="225915">ID serwera</translation>
    <translation id="server_configuration_name" qtlid="151997">Nazwa OVH</translation>
+   <translation id="server_configuration_displayname">Nom</translation>
+   <translation id="server_configuration_displayname_edit_button">Modifier</translation>
    <translation id="server_configuration_description" qtlid="191655">Nazwa handlowa</translation>
    <translation id="server_configuration_description_housing" qtlid="233583">Housing</translation>
    <translation id="server_configuration_reverse" qtlid="32338">Rewers</translation>
    <translation id="server_configuration_reverse_not_configured" qtlid="124952">Brak konfiguracji</translation>
+   <translation id="server_configuration_reverse_edit_button">Modifier</translation>
    <translation id="server_configuration_ipv4" qtlid="167899">Ip</translation>
    <translation id="server_configuration_ipv6" qtlid="191239">Ipv6</translation>
    <translation id="server_configuration_ipv4_manage" qtlid="16301">Zarządzanie</translation>
@@ -476,16 +481,16 @@
    <translation id="server_configuration_ftpbackup_add_ip" qtlid="180850">Blok:</translation>
    <translation id="server_configuration_ftpbackup_add_authorization" qtlid="180863">Zezwalaj na:</translation>
 
-   <translation id="server_configuration_cloudbackup_delete" qtlid="184282">Usuń Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_delete" qtlid="492502">Supprimer le Backup Storage</translation>
 
    <translation id="server_configuration_cloudbackup_delete_success" qtlid="184360">Backup Storage zostanie usunięty za kilka minut.</translation>
-   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="184373">Backup Storage został usunięty.</translation>
-   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="184386">Wystąpił błąd podczas usuwania Backup Storage.</translation>
+   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="492515">Le Backup Storage a bien été supprimé.</translation>
+   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="492528">Une erreur est survenue lors de la suppression du Backup Storage.</translation>
    <translation id="server_configuration_cloudbackup_delete_question" qtlid="451872">Czy na pewno chcesz dezaktywować opcję Backup Storage?</translation>
 
    <translation id="server_configuration_cloudbackup_inactive" qtlid="451885">Twój Backup Storage jest nieaktywny.</translation>
    <translation id="server_configuration_cloudbackup_new_project" qtlid="16493">Nowy projekt</translation>
-   <translation id="server_configuration_cloudbackup_load_fail" qtlid="184256">Wystąpił błąd podczas pobierania informacji o usłudze Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_load_fail" qtlid="492541">Une erreur est survenue lors du chargement des informations du Backup Storage</translation>
    <translation id="server_configuration_cloudbackup_load_offers_fail" qtlid="451898">Wystąpił błąd podczas ładowania ofert cloud Backup Storage</translation>
    <translation id="server_configuration_cloudbackup_load_projects_fail" qtlid="451911">Wystąpił błąd podczas ładowania projektów cloud</translation>
    <translation id="server_configuration_cloudbackup_load_agreements_fail" qtlid="451924">Wystapił błąd podczas ładowania umów</translation>
@@ -509,7 +514,7 @@
    <translation id="server_configuration_cloudbackup_summary_documentation_label" qtlid="415740">Przewodnik</translation>
    <translation id="server_configuration_cloudbackup_summary_usage_label" qtlid="109974">Wykorzystanie</translation>
    <translation id="server_configuration_cloudbackup_summary_title_label_storage" qtlid="452067">Twój kontener Backup Storage</translation>
-   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="184282">Usuń Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="492554">Supprimer le Backup Storage</translation>
 
    <translation id="server_configuration_cloudbackup_container_storage_guide_description" qtlid="452080">Szukasz narzędzia do tworzenia kopii zapasowych danych? OVH poleca Rclone</translation>
    <translation id="server_configuration_cloudbackup_container_storage_guide_product" qtlid="452093">Rclone</translation>
@@ -994,9 +999,10 @@
    <translation id="server_services" qtlid="34632">Usługi</translation>
    <translation id="server_informations_general" qtlid="27115">Informacje ogólne</translation>
 
+   <translation id="server_subscription">Abonnement</translation>
+   <translation id="server_network">Réseau</translation>
    <translation id="server_bandwidth" qtlid="38565">Przepustowość</translation>
    <translation id="server_bandwidth_connection" qtlid="32446">Połączenie sieciowe</translation>
-   <translation id="server_bandwidth_type" qtlid="2642">Typ</translation>
    <translation id="server_bandwidth_type_included" qtlid="204298">W ofercie</translation>
    <translation id="server_bandwidth_type_platinum" qtlid="204311">Platinium</translation>
    <translation id="server_bandwidth_type_premium" qtlid="180941">Premium</translation>

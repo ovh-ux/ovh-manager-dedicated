@@ -10,6 +10,8 @@
    <translation id="dedicatedCloud_discount_explanation" qtlid="288886">El precio final se calcula al generar la orden de pedido. Limitado a disponibilidad de stock. Aplicable solo al mes en curso.</translation>
    <translation id="dedicatedCloud_discount_AMD" qtlid="285180">Disfrute de un descuento del 35% en el precio de los Host XL y XL+ de la gama Enterprise 2014 v2, hasta agotar existencias.  </translation>
    <translation id="dedicatedCloud_information_title" qtlid="27115">Información general</translation>
+   <translation id="dedicatedCloud_description">Nom</translation>
+   <translation id="dedicatedCloud_description_modify_title">Modifier le nom</translation>
    <translation id="dedicatedCloud_type" qtlid="145800">Solución</translation>
    <translation id="dedicatedCloud_type_VSPHERE" qtlid="146437">vSphere</translation>
    <translation id="dedicatedCloud_type_VCLOUD" qtlid="154624">vCloud</translation>
@@ -33,18 +35,28 @@
    <translation id="dedicatedCloud_order_Host" qtlid="145891">Añadir un host</translation>
    <translation id="dedicatedCloud_order_Datastore" qtlid="145904">Añadir un datastore</translation>
    <translation id="dedicatedCloud_security_policy_update" qtlid="145917">Cambiar la política de acceso</translation>
-   <translation id="dedicatedCloud_nb_bloc_IP" qtlid="154637">Número de bloques IP</translation>
+   <translation id="dedicatedCloud_nb_bloc_IP">Nombre de blocs IP</translation>
    <translation id="dedicatedCloud_nb_bloc_IP_no_data" qtlid="154650">Información no disponible</translation>
-   <translation id="dedicatedCloud_nb_bloc_IP_ripe" qtlid="145930">Número de bloques RIPE</translation>
-   <translation id="dedicatedCloud_nb_bloc_IP_arin" qtlid="154663">Número de bloques IP ARIN</translation>
+   <translation id="dedicatedCloud_nb_bloc_IP_ripe">Nombre de blocs IP Ripe</translation>
+   <translation id="dedicatedCloud_nb_bloc_IP_arin">Nombre de blocs IP Arin</translation>
    <translation id="dedicatedCloud_edit_description_change" qtlid="154676">editar la descripción</translation>
    <translation id="dedicatedCloud_edit_description_valid" qtlid="147850">aceptar los cambios</translation>
    <translation id="dedicatedCloud_edit_description_cancel" qtlid="147863">cancelar los cambios</translation>
-   <translation id="dedicatedCloud_edit_description_success" qtlid="154689">La descripción se ha cambiado correctamente.</translation>
-   <translation id="dedicatedCloud_edit_description_fail" qtlid="154702">Se ha producido un error al editar la descripción del servidor {0}.</translation>
+   <translation id="dedicatedCloud_description_edit_success" qtlid="154689">La descripción se ha cambiado correctamente.</translation>
+   <translation id="dedicatedCloud_description_edit_error" qtlid="154702">Se ha producido un error al editar la descripción del servidor {0}.</translation>
+   <translation id="dedicatedCloud_datacenter_name_modify_title">Modifier le nom</translation>
+   <translation id="dedicatedCloud_datacenter_name_edit_success">La modification du nom a bien été prise en compte</translation>
+   <translation id="dedicatedCloud_datacenter_name_edit_error">Une erreur est survenue lors de la modification du nom du datacentre {0}</translation>
+   <translation id="dedicatedCloud_datacenter_description_modify_title">Modifier la description</translation>
+   <translation id="dedicatedCloud_datacenter_description_edit_success">La modification de la description a bien été prise en compte</translation>
+   <translation id="dedicatedCloud_datacenter_description_edit_error">Une erreur est survenue lors de la modification de la description du datacentre {0}</translation>
    <translation id="dedicatedCloud_no_description" qtlid="149345">Añadir una descripción</translation>
    <translation id="dedicatedCloud_datacenters_loading_error" qtlid="147694">Se ha producido un error al cargar la información de los datacenters.</translation>
    <translation id="dedicatedCloud_tab_dashboard" qtlid="27115">Información general</translation>
+
+   <translation id="dedicatedCloud_datacenter_name">Nom</translation>
+   <translation id="dedicatedCloud_datacenter_description">Description</translation>
+
    <translation id="dedicatedCloud_tab_datacenter" qtlid="41602">Datacenters</translation>
    <translation id="dedicatedCloud_DATACENTERS_CPU" qtlid="147707">CPU total</translation>
    <translation id="dedicatedCloud_DATACENTERS_RAM" qtlid="147720">RAM total</translation>
@@ -107,7 +119,7 @@
    <translation id="dedicatedCloud_tab_host_empty" qtlid="154754">No hay hosts.</translation>
    <translation id="dedicatedCloud_tab_hosts_loading_error" qtlid="154767">Se ha producido un error al cargar la información de los hosts.</translation>
    <translation id="dedicatedCloud_tab_host_hourly_usage_1" qtlid="34114">1 hora</translation>
-   <translation id="dedicatedCloud_tab_host_hourly_usage_other">{} heures</translation>
+   <translation id="dedicatedCloud_tab_host_hourly_usage_other" qtlid="222436">{} horas</translation>
    <translation id="dedicatedCloud_tab_host_hourly_usage_na" qtlid="94783">No disponible</translation>
    <translation id="dedicatedCloud_tab_host_hourly_usage_update" qtlid="296908">A día {0}</translation>
 
@@ -188,7 +200,7 @@
    <translation id="dedicatedCloud_tab_veeam_disable_message_alert" qtlid="155092">Atención: Esta acción eliminará definitivamente todos sus backups.</translation>
    <translation id="dedicatedCloud_tab_veeam_disable_success" qtlid="183463">La solicitud de desactivación del backup en el datacenter <b>{0}</b> se ha enviado.</translation>
    <translation id="dedicatedCloud_tab_veeam_disable_fail" qtlid="183476">Se ha producido un error al desactivar el backup en el datacenter <b>{0}</b>.</translation>
-   <translation id="dedicatedCloud_datacenter_go_vscope" qtlid="433086">vScope</translation>
+   <translation id="dedicatedCloud_datacenter_label">Datacentre</translation>
    <translation id="dedicatedCloud_datacenter_go_web_interface" qtlid="433099">Interfaz web</translation>
    <translation id="dedicatedCloud_datacenter_go_certified_web_interface" qtlid="433112">Interfaz web certificada</translation>
    <translation id="dedicatedCloud_datacenter_go_vscope" qtlid="147785">Ir a vScope</translation>
@@ -237,6 +249,9 @@
    <translation id="dedicatedCloud_datacenter_commercial_name_SDDC-LEGACY-WITHOUT-NSX" qtlid="448894">SDDC Legacy sin NSX</translation>
    <translation id="dedicatedCloud_datacenter_commercial_name_UNKNOWN-UNKNOWN" qtlid="77142">Desconocido</translation>
    <translation id="dedicatedCloud_datacenter_loading_error" qtlid="155131">Se ha producido un error al cargar la información del datacenter.</translation>
+   <translation id="dedicatedCloud_datacenter_state_title">Etat de mes services</translation>
+   <translation id="dedicatedCloud_datacenter_state">Statut</translation>
+
    <translation id="dedicatedCloud_datacenter_edit_description_change" qtlid="154676">editar la descripción</translation>
    <translation id="dedicatedCloud_datacenter_edit_description_valid" qtlid="147850">aceptar los cambios</translation>
    <translation id="dedicatedCloud_datacenter_edit_description_cancel" qtlid="147863">cancelar los cambios</translation>
@@ -398,6 +413,9 @@
    <translation id="dedicatedCloud_USER_set_fail" qtlid="157720">Se ha producido un error al modificar la información de {0}.</translation>
    <translation id="dedicatedCloud_USER_enable" qtlid="229802">Activar el usuario</translation>
    <translation id="dedicatedCloud_USER_disable" qtlid="199078">Desactivar el usuario</translation>
+   <translation id="dedicatedCloud_USER_edit_load_error">Une erreur est survenue lors du chargement de l'utilisateur.</translation>
+   <translation id="dedicatedCloud_USER_edit_error">Une erreur est survenue lors de la modification de l'utilisateur.</translation>
+   <translation id="dedicatedCloud_USER_edit_success">L'utilisateur a bien été modifié.</translation>
    <translation id="dedicatedCloud_tab_security" qtlid="125420">Seguridad</translation>
    <translation id="dedicatedCloud_SECURITY_title" qtlid="371739">IP y bloques autorizados a conectarse a Private Cloud:</translation>
    <translation id="dedicatedCloud_SECURITY_modify" qtlid="147941">Editar el rango de IP</translation>
@@ -577,6 +595,19 @@
    <translation id="dedicatedCloud_options_vrops" qtlid="342836">VMware vRealize Operations (vROps)</translation>
    <translation id="dedicatedCloud_options_nsx" qtlid="342849">VMware Network Virtualization (NSX)</translation>
 
+   <translation id="dedicatedCloud_subscription_title">Abonnement</translation>
+   <translation id="dedicatedCloud_subscription_resource">Forfait</translation>
+   <translation id="dedicatedCloud_subscription_resource_yearly">Annuel</translation>
+   <translation id="dedicatedCloud_subscription_resource_monthly">Mensuel</translation>
+   <translation id="dedicatedCloud_subscription_licence">Licence</translation>
+   <translation id="dedicatedCloud_subscription_ip_block">Bloc d'IPs</translation>
+   <translation id="dedicatedCloud_subscription_mailing_list">Mailing list</translation>
+   <translation id="dedicatedCloud_subscription_renew">Renouvellement</translation>
+   <translation id="dedicatedCloud_subscription_links">Liens</translation>
+   <translation id="dedicatedCloud_subscription_vscope">vScope</translation>
+   <translation id="dedicatedCloud_subscription_web_interface">Interface Web</translation>
+   <translation id="dedicatedCloud_subscription_certified_web_interface">Interface Web certifiée</translation>
+
    <translation id="dedicatedCloud_vmware_orderopt_title_vrops" qtlid="342862">Activar la opción VMware vROps</translation>
    <translation id="dedicatedCloud_vmware_orderopt_title_nsx" qtlid="342875">Activar la opción VMware NSX</translation>
    <translation id="dedicatedCloud_vmware_orderopt_info" qtlid="342888">Se realizará un ajuste del precio de sus hosts en la próxima renovación:</translation>
@@ -607,7 +638,7 @@
    <translation id="dedicatedCloud_OPERATIONS_taskId" qtlid="16445">Referencia</translation>
    <translation id="dedicatedCloud_OPERATIONS_name" qtlid="3818">Nombre</translation>
    <translation id="dedicatedCloud_OPERATIONS_type" qtlid="2642">Tipo</translation>
-   <translation id="dedicatedCloud_OPERATIONS_progression" qtlid="61608">Progreso (todos)</translation>
+   <translation id="dedicatedCloud_OPERATIONS_progression">Progression</translation>
    <translation id="dedicatedCloud_OPERATIONS_comment" qtlid="25975">Comentario</translation>
    <translation id="dedicatedCloud_OPERATIONS_related_services" qtlid="367164">Servicios afectados</translation>
    <translation id="dedicatedCloud_OPERATIONS_created_from" qtlid="299501">Creado desde</translation>

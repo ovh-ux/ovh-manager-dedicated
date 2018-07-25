@@ -147,6 +147,8 @@
    <translation id="common_change" qtlid="37875">Modifier</translation>
    <translation id="common_download_format" qtlid="454267">Télécharger au format {0}</translation>
    <translation id="common_skip_to_main_content" qtlid="454052">Aller au contenu principal</translation>
+   <translation id="common_shortcuts">Raccourcis</translation>
+   <translation id="common_links">Liens</translation>
    <translation id="global_app_title" qtlid="133357">Votre espace client Dédié OVH</translation>
    <translation id="global_language" qtlid="30598">Langue</translation>
    <translation id="global_logout" qtlid="33658">Déconnexion</translation>
@@ -507,7 +509,7 @@
    <translation id="core_sd_top_guide_6_title" qtlid="303926">Déplacer une adresse IP failover</translation>
    <translation id="core_sd_top_guide_7_title" qtlid="141236">Mode de secours</translation>
    <translation id="core_sd_top_guide_8_title" qtlid="303939">Créer un raid hardware avec le manager OVH</translation>
-   <translation id="core_sd_top_guide_firewall_title">Configurer le Firewall Network</translation>
+   <translation id="core_sd_top_guide_firewall_title" qtlid="492476">Configurer le pare-feu Network</translation>
 
    <translation id="core_type_of_guide_pcc" qtlid="20131">Cloud Privé</translation>
    <translation id="core_pcc_top_guide_1_title" qtlid="371596">Accéder à vSphere</translation>
@@ -553,6 +555,7 @@
 
    <translation id="me_alerts_AUTORENEW_INVITE" qtlid="446401">Optez vite pour le renouvellement automatique de <a href="{{ link }}">vos services</a>!</translation>
 
+   <translation id="core_service_expiration_label">Expiration</translation>
    <translation id="core_service_expiration" qtlid="229411">Expiré le</translation>
    <translation id="core_service_expiration_manual_renew" qtlid="377571">À renouveler le</translation>
    <translation id="core_service_expiration_auto_renew" qtlid="414986">Renouvellement prévu le</translation>
@@ -580,6 +583,8 @@
    <translation id="otrs_menu_email_history" qtlid="260091">Historique des courriels</translation>
    <translation id="otrs_menu_telephony_contact" qtlid="260827">Assistance téléphonique</translation>
    <translation id="otrs_menu_changelog" qtlid="124964">Historique des mises à jour</translation>
+
+   <translation id="common_configuration_creation">Date de création</translation>
 
    <translation id="common_criteria_adder_column_label" qtlid="479108">Colonne</translation>
    <translation id="common_criteria_adder_operator_label" qtlid="425806">Condition</translation>
@@ -614,13 +619,18 @@
    <translation id="common_field_error_minlength" qtlid="472359">Veuillez saisir un minimum de {{minlength}} caractères.</translation>
    <translation id="common_field_error_maxlength" qtlid="472372">Veuillez saisir un maximum de {{maxlength}} caractères.</translation>
    <translation id="common_field_error_pattern" qtlid="472385">Veuillez saisir un format valide.</translation>
+   <translation id="menu_action_label">{0} (Liste des actions)</translation>
+
+   <translation id="server_tab_USB_STORAGE_order_select_duration">Sélectionnez la durée :</translation>
 
    <translation id="common_navbar_notification_title" qtlid="33250">Notifications</translation>
-   <translation id="common_navbar_notification_error" qtlid="323434">Oups, nous n'arrivons pas à initialiser le menu !</translation>
-   <translation id="common_navbar_notification_error_subject" qtlid="26407">Erreur</translation>
    <translation id="common_navbar_notification_see_all" qtlid="401914">Voir toutes les notifications</translation>
+   <translation id="common_navbar_notification_error_in_notification" qtlid="492055">Oups, il y a un problème!</translation>
+   <translation id="common_navbar_notification_error_in_notification_description" qtlid="492068">Nous n'arrivons pas à initialiser le menu.</translation>
    <translation id="common_navbar_notification_mark_as_read" qtlid="70865">Marquer comme lu</translation>
    <translation id="common_navbar_notification_mark_as_unread" qtlid="70877">Marquer comme non lu</translation>
+   <translation id="common_navbar_notification_none" qtlid="492081">Vous êtes à jour!</translation>
+   <translation id="common_navbar_notification_none_description" qtlid="492094">Vous n'avez aucune notification.</translation>
 
    <translation id="common_pagination_resultsperpage" qtlid="433384">Résultats par page</translation>
    <translation id="common_pagination_page" qtlid="433397">page</translation>
@@ -637,4 +647,9 @@
    <translation id="common_stepper_next_button_label" qtlid="17743">Suivant</translation>
    <translation id="common_stepper_submit_button_label" qtlid="52807">Envoyer</translation>
    <translation id="common_stepper_cancel_button_label" qtlid="37863">Annuler</translation>
+
+   <translation id="common_subscription_contacts">Contacts</translation>
+   <translation id="common_subscription_contacts_admin">Administrateur</translation>
+   <translation id="common_subscription_contacts_billing">Facturation</translation>
+   <translation id="common_subscription_contacts_tech">Technique</translation>
 </translations>

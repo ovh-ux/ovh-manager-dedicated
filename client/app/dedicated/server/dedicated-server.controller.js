@@ -2,7 +2,6 @@ angular.module("App").controller("ServerCtrl", (NO_AUTORENEW_COUNTRIES, WEATHERM
     "use strict";
 
     const errorStatus = ["customer_error", "ovh_error", "error", "cancelled"];
-    let reverseIsNull = true;
 
     $scope.loadingServerInformations = true;
     $scope.loadingServerError = false;
@@ -27,12 +26,6 @@ angular.module("App").controller("ServerCtrl", (NO_AUTORENEW_COUNTRIES, WEATHERM
     $scope.worldPart = constants.target;
 
     $scope.bigModalDialog = false;
-
-    $scope.reverseModel = {
-        reverse: null,
-        edit: false,
-        loading: false
-    };
 
     $scope.newDisplayName = {
         value: ""
@@ -176,62 +169,6 @@ angular.module("App").controller("ServerCtrl", (NO_AUTORENEW_COUNTRIES, WEATHERM
         loadServer();
     });
 
-    $scope.editReverse = () => {
-        if (!$scope.reverseModel.loading) {
-            $scope.reverseModel.edit = true;
-            $scope.newDisplayName.value = $scope.reverseModel.reverse;
-            $timeout(() => {
-                $("#reverseInput").focus();
-            }, 200);
-        }
-    };
-
-    $scope.updateReverse = () => {
-        $scope.reverseModel.edit = false;
-        $scope.reverseModel.loading = true;
-
-        const reverse = $scope.newDisplayName.value || $scope.reverseModel.reverse;
-
-        if (reverseIsNull && !reverse) {
-            $scope.reverseModel.loading = false;
-            return;
-        }
-
-        if (reverse === null || reverse === "") {
-            Server.deleteReverse($stateParams.productId, $scope.server.name, $scope.server.ip)
-                .then(() => {
-                    $scope.server.reverse = angular.copy($scope.reverseModel.reverse);
-                    $scope.reverseModel.loading = false;
-                    reverseIsNull = true;
-                    $scope.setMessage($translate.instant("server_tab_IP_table_delete_reverse_success"), true);
-                })
-                .catch((data) => {
-                    _.set(data, "data.type", "ERROR");
-                    $scope.reverseModel.reverse = angular.copy($scope.server.reverse);
-                    $scope.reverseModel.loading = false;
-                    $scope.setMessage($translate.instant("server_tab_IP_table_delete_reverse_failure"), data.data);
-                });
-        } else {
-            Server.updateReverse($stateParams.productId, $scope.server.name, $scope.server.ip, reverse)
-                .then(() => {
-                    $scope.server.reverse = angular.copy($scope.reverseModel.reverse);
-                    $scope.reverseModel.loading = false;
-                    reverseIsNull = $scope.server.reverse === null;
-                    $scope.setMessage($translate.instant("server_tab_IP_table_manage_reverse_success"), true);
-                })
-                .catch((data) => {
-                    _.set(data, "data.type", "ERROR");
-                    $scope.reverseModel.reverse = angular.copy($scope.server.reverse);
-                    $scope.reverseModel.loading = false;
-                    $scope.setMessage($translate.instant("server_tab_IP_table_manage_reverse_failure"), data.data);
-                });
-        }
-    };
-
-    $scope.cancelReverseUpdate = () => {
-        $scope.reverseModel.edit = false;
-        $scope.reverseModel.reverse = angular.copy($scope.server.reverse);
-    };
 
     function load () {
         User.getUrlOf("changeOwner").then((link) => {
@@ -295,8 +232,7 @@ angular.module("App").controller("ServerCtrl", (NO_AUTORENEW_COUNTRIES, WEATHERM
                     rack: $scope.server.rack,
                     serverId: $scope.server.serverId
                 };
-                $scope.reverseModel.reverse = angular.copy($scope.server.reverse);
-                reverseIsNull = $scope.reverseModel.reverse === null;
+
                 $scope.loadingServerInformations = false;
                 $scope.isHousing = isHousing(server);
                 $scope.serviceInfos = serviceInfos;

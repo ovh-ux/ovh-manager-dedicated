@@ -147,6 +147,8 @@
    <translation id="common_change" qtlid="37875">Muokkaa</translation>
    <translation id="common_download_format" qtlid="454267">Lataa {0}-formaatissa</translation>
    <translation id="common_skip_to_main_content" qtlid="454052">Siirry pääsisältöön</translation>
+   <translation id="common_shortcuts">Raccourcis</translation>
+   <translation id="common_links">Liens</translation>
    <translation id="global_app_title" qtlid="133357">Oma hallintapaneelisi</translation>
    <translation id="global_language" qtlid="30598">Kieli</translation>
    <translation id="global_logout" qtlid="33658">Kirjaudu ulos</translation>
@@ -507,7 +509,7 @@
    <translation id="core_sd_top_guide_6_title" qtlid="303926">Siirrä failover IP -osoite</translation>
    <translation id="core_sd_top_guide_7_title" qtlid="141236">Rescue-tila</translation>
    <translation id="core_sd_top_guide_8_title" qtlid="303939">Luo raid-laitteisto OVH:n hallintapaneelilla</translation>
-   <translation id="core_sd_top_guide_firewall_title">Configurer le Firewall Network</translation>
+   <translation id="core_sd_top_guide_firewall_title" qtlid="492476">Konfiguroi Firewall Network</translation>
 
    <translation id="core_type_of_guide_pcc" qtlid="20131">Private Cloud</translation>
    <translation id="core_pcc_top_guide_1_title" qtlid="371596">Kirjautuminen vSphere-käyttöliittymään</translation>
@@ -553,6 +555,7 @@
 
    <translation id="me_alerts_AUTORENEW_INVITE" qtlid="446401">Valitse nyt automaattinen uusinta <a href="{{ link }}">palveluillesi</a>!</translation>
 
+   <translation id="core_service_expiration_label">Expiration</translation>
    <translation id="core_service_expiration" qtlid="229411">Vanhentuu</translation>
    <translation id="core_service_expiration_manual_renew" qtlid="377571">Uusittava</translation>
    <translation id="core_service_expiration_auto_renew" qtlid="414986">Seuraava uusintapäivä</translation>
@@ -580,6 +583,8 @@
    <translation id="otrs_menu_email_history" qtlid="260091">Sähköpostihistoria</translation>
    <translation id="otrs_menu_telephony_contact" qtlid="260827">Puhelintuki</translation>
    <translation id="otrs_menu_changelog" qtlid="124964">Päivityshistoria</translation>
+
+   <translation id="common_configuration_creation">Date de création</translation>
 
    <translation id="common_criteria_adder_column_label" qtlid="479108">Sarake</translation>
    <translation id="common_criteria_adder_operator_label" qtlid="425806">Ehto</translation>
@@ -614,13 +619,18 @@
    <translation id="common_field_error_minlength" qtlid="472359">Syötä vähintään {{minlength}} merkkiä.</translation>
    <translation id="common_field_error_maxlength" qtlid="472372">Syötä enintään {{maxlength}} merkkiä.</translation>
    <translation id="common_field_error_pattern" qtlid="472385">Syötä hyväksytty formaatti.</translation>
+   <translation id="menu_action_label">{0} (Liste des actions)</translation>
+
+   <translation id="server_tab_USB_STORAGE_order_select_duration">Sélectionnez la durée :</translation>
 
    <translation id="common_navbar_notification_title" qtlid="33250">Ilmoitukset</translation>
-   <translation id="common_navbar_notification_error" qtlid="323434">Hups, valikkoa ei pystytä alustamaan!</translation>
-   <translation id="common_navbar_notification_error_subject" qtlid="26407">Virhe</translation>
    <translation id="common_navbar_notification_see_all" qtlid="401914">Katso kaikki ilmoitukset</translation>
+   <translation id="common_navbar_notification_error_in_notification" qtlid="492055">Hups, jokin meni vikaan!</translation>
+   <translation id="common_navbar_notification_error_in_notification_description" qtlid="492068">Valikon käynnistäminen ei onnistu.</translation>
    <translation id="common_navbar_notification_mark_as_read" qtlid="70865">Merkitse luetuksi</translation>
    <translation id="common_navbar_notification_mark_as_unread" qtlid="70877">Merkitse lukemattomaksi</translation>
+   <translation id="common_navbar_notification_none" qtlid="492081">Kaikki on ajantasalla!</translation>
+   <translation id="common_navbar_notification_none_description" qtlid="492094">Sinulla ei ole yhtään ilmoitusta.</translation>
 
    <translation id="common_pagination_resultsperpage" qtlid="433384">Tulosta per sivu</translation>
    <translation id="common_pagination_page" qtlid="433397">sivu</translation>
@@ -637,4 +647,9 @@
    <translation id="common_stepper_next_button_label" qtlid="17743">Seuraava</translation>
    <translation id="common_stepper_submit_button_label" qtlid="52807">Lähetä</translation>
    <translation id="common_stepper_cancel_button_label" qtlid="37863">Peruuta</translation>
+
+   <translation id="common_subscription_contacts">Contacts</translation>
+   <translation id="common_subscription_contacts_admin">Administrateur</translation>
+   <translation id="common_subscription_contacts_billing">Facturation</translation>
+   <translation id="common_subscription_contacts_tech">Technique</translation>
 </translations>

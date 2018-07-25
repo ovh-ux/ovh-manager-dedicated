@@ -109,6 +109,8 @@
    <translation id="server_tab_stats_rtm_infos_cpu_core" qtlid="204090">Ytimet</translation>
    <translation id="server_tab_stats_rtm_infos_cpu_cache" qtlid="30214">Cache</translation>
    <translation id="server_tab_stats_rtm_infos_ram" qtlid="31354">RAM</translation>
+   <translation id="server_tab_stats_rtm_infos_swap">SWAP</translation>
+   <translation id="server_tab_stats_rtm_infos_versions">Versions</translation>
    <translation id="server_tab_stats_rtm_infos_rtmVersion" qtlid="193956">Real Time Monitoring -versio</translation>
    <translation id="server_tab_stats_rtm_infos_rtmVersion_update" qtlid="204103">Uusi päivitys on saatavilla</translation>
    <translation id="server_tab_stats_rtm_infos_kernelVersion" qtlid="204116">Kernelin versio</translation>
@@ -123,18 +125,18 @@
    <translation id="server_tab_stats_rtm_errorData" qtlid="204168">Ei tietoja</translation>
 
    <translation id="server_tab_stats_rtm_uptime" qtlid="31594">Uptime</translation>
-   <translation id="server_tab_stats_rtm_uptime_year_1" qtlid="204181">vuosi</translation>
-   <translation id="server_tab_stats_rtm_uptime_year_other" qtlid="94135">vuotta</translation>
-   <translation id="server_tab_stats_rtm_uptime_month_1" qtlid="40222">kuukausi</translation>
-   <translation id="server_tab_stats_rtm_uptime_month_other" qtlid="40222">kuukausi</translation>
-   <translation id="server_tab_stats_rtm_uptime_day_1" qtlid="44248">päivä</translation>
-   <translation id="server_tab_stats_rtm_uptime_day_other" qtlid="44260">päivää</translation>
-   <translation id="server_tab_stats_rtm_uptime_hour_1" qtlid="40234">tunti</translation>
-   <translation id="server_tab_stats_rtm_uptime_hour_other" qtlid="44236">tuntia</translation>
-   <translation id="server_tab_stats_rtm_uptime_minute_1" qtlid="44212">minuutti</translation>
-   <translation id="server_tab_stats_rtm_uptime_minute_other" qtlid="44224">minuuttia</translation>
-   <translation id="server_tab_stats_rtm_uptime_seconde_1" qtlid="94279">sekunti</translation>
-   <translation id="server_tab_stats_rtm_uptime_seconde_other" qtlid="94291">sekuntia</translation>
+   <translation id="server_tab_stats_rtm_uptime_year_1">1 an</translation>
+   <translation id="server_tab_stats_rtm_uptime_year_other">{} ans</translation>
+   <translation id="server_tab_stats_rtm_uptime_month_1">1 mois</translation>
+   <translation id="server_tab_stats_rtm_uptime_month_other">{} mois</translation>
+   <translation id="server_tab_stats_rtm_uptime_day_1">1 jour</translation>
+   <translation id="server_tab_stats_rtm_uptime_day_other">{} jours</translation>
+   <translation id="server_tab_stats_rtm_uptime_hour_1">1 heure</translation>
+   <translation id="server_tab_stats_rtm_uptime_hour_other">{} heures</translation>
+   <translation id="server_tab_stats_rtm_uptime_minute_1">1 minute</translation>
+   <translation id="server_tab_stats_rtm_uptime_minute_other">{} minutes</translation>
+   <translation id="server_tab_stats_rtm_uptime_seconde_1">1 seconde</translation>
+   <translation id="server_tab_stats_rtm_uptime_seconde_other">{} secondes</translation>
 
    <translation id="server_tab_stats_rtm_profile" qtlid="204194">Koneen profiili</translation>
    <translation id="server_tab_stats_rtm_usage" qtlid="204207">Palvelimen käyttö</translation>
@@ -144,6 +146,7 @@
    <translation id="server_tab_stats_rtm_partions_mountPoint" qtlid="110958">Liitäntäpiste</translation>
    <translation id="server_tab_stats_rtm_partions_usage" qtlid="76758">Käytetty tila</translation>
    <translation id="server_tab_stats_rtm_partions_inodeUsage" qtlid="194151">Käytetyt inodet</translation>
+   <translation id="server_tab_stats_rtm_location">Emplacement</translation>
 
    <translation id="server_configuration_state_title" qtlid="26443">Tila</translation>
    <translation id="server_configuration_state_OK" qtlid="96704">Normaali</translation>
@@ -334,9 +337,9 @@
    <translation id="server_configuration_monitoring_services_use" qtlid="243728">Palvelujen monitorointi</translation>
 
    <translation id="server_configuration_services_state_links" qtlid="245116">Linkit</translation>
-   <translation id="server_configuration_services_state_links_weathermap" qtlid="245129"><a href="{0}" target="_blank">Weathermap</a></translation>
-   <translation id="server_configuration_services_state_links_vms" qtlid="245142"><a href="{0}" target="_blank">VMS</a></translation>
-   <translation id="server_configuration_services_state_links_travaux" qtlid="245155"><a href="{0}" target="_blank">Tekniset tiedotteet</a></translation>
+   <translation id="server_configuration_services_state_links_weathermap">Weathermap</translation>
+   <translation id="server_configuration_services_state_links_vms">VMS</translation>
+   <translation id="server_configuration_services_state_links_travaux">Travaux</translation>
 
    <translation id="server_configuration_profesionnal_use" qtlid="199962">Ammattikäyttöoptio</translation>
    <translation id="server_configuration_profesionnal_use_info" qtlid="199975">Et voi käyttää NAS-palvelua tältä palvelimelta ilman Ammattikäyttö-optiota.</translation>
@@ -360,15 +363,17 @@
    <translation id="server_configuration_distribution" qtlid="151971">Järjestelmä (OS)</translation>
    <translation id="server_configuration_distribution_none" qtlid="233034">Ei asennettu</translation>
    <translation id="server_configuration_boot" qtlid="151984">Boot</translation>
-   <translation id="server_configuration_creation" qtlid="371726">Palvelimen tilauspäivä</translation>
    <translation id="server_configuration_datacenter" qtlid="30802">Palvelinkeskus</translation>
    <translation id="server_configuration_rack" qtlid="32050">Räkki</translation>
    <translation id="server_configuration_server_id" qtlid="225915">Palvelimen numerotunniste</translation>
    <translation id="server_configuration_name" qtlid="151997">OVH-nimi</translation>
+   <translation id="server_configuration_displayname">Nom</translation>
+   <translation id="server_configuration_displayname_edit_button">Modifier</translation>
    <translation id="server_configuration_description" qtlid="191655">Kaupallinen nimi</translation>
    <translation id="server_configuration_description_housing" qtlid="233583">Housing</translation>
    <translation id="server_configuration_reverse" qtlid="32338">Reverse</translation>
    <translation id="server_configuration_reverse_not_configured" qtlid="124952">Ei konfiguroitu</translation>
+   <translation id="server_configuration_reverse_edit_button">Modifier</translation>
    <translation id="server_configuration_ipv4" qtlid="167899">IP</translation>
    <translation id="server_configuration_ipv6" qtlid="191239">IPv6</translation>
    <translation id="server_configuration_ipv4_manage" qtlid="16301">Hallinnoi</translation>
@@ -476,16 +481,16 @@
    <translation id="server_configuration_ftpbackup_add_ip" qtlid="180850">Osoite/osoitteet:</translation>
    <translation id="server_configuration_ftpbackup_add_authorization" qtlid="180863">Valtuutettu:</translation>
 
-   <translation id="server_configuration_cloudbackup_delete" qtlid="184282">Poista varmuuskopiotila</translation>
+   <translation id="server_configuration_cloudbackup_delete" qtlid="492502">Poista varmuuskopiotila</translation>
 
    <translation id="server_configuration_cloudbackup_delete_success" qtlid="184360">Varmuuskopiotila poistetaan hetken kuluttua.</translation>
-   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="184373">Varmuuskopiotila on poistettu.</translation>
-   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="184386">Tapahtui virhe poistettaessa varmuuskopiotilaa.</translation>
+   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="492515">Varmuuskopiotila poistettiin.</translation>
+   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="492528">Tapahtui virhe varmuuskopiotilaa poistettaessa.</translation>
    <translation id="server_configuration_cloudbackup_delete_question" qtlid="451872">Haluatko varmasti kytkeä Backup Storage -lisäpalvelun pois käytöstä?</translation>
 
    <translation id="server_configuration_cloudbackup_inactive" qtlid="451885">Varmuuskopiotilasi ei ole aktiivinen.</translation>
    <translation id="server_configuration_cloudbackup_new_project" qtlid="16493">Uusi projekti</translation>
-   <translation id="server_configuration_cloudbackup_load_fail" qtlid="184256">Tapahtui virhe ladattaessa varmuuskopiotilan tietoja</translation>
+   <translation id="server_configuration_cloudbackup_load_fail" qtlid="492541">Tapahtui virhe varmuuskopiotilan tietojen latauksessa.</translation>
    <translation id="server_configuration_cloudbackup_load_offers_fail" qtlid="451898">Tapahtui virhe Backup Storage cloud -tuotteiden lataamisessa</translation>
    <translation id="server_configuration_cloudbackup_load_projects_fail" qtlid="451911">Tapahtui virhe cloud-projektin lataamisessa</translation>
    <translation id="server_configuration_cloudbackup_load_agreements_fail" qtlid="451924">Tapahtui virhe sopimusten lataamisessa</translation>
@@ -510,7 +515,7 @@ sen nimen tai valitsemalla jo olemassa olevan Cloud-projektin. Tämä on ilmaist
    <translation id="server_configuration_cloudbackup_summary_documentation_label" qtlid="415740">Ohje</translation>
    <translation id="server_configuration_cloudbackup_summary_usage_label" qtlid="109974">Käyttö</translation>
    <translation id="server_configuration_cloudbackup_summary_title_label_storage" qtlid="452067">Varmuuskopiotilan säilösi</translation>
-   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="184282">Poista varmuuskopiotila</translation>
+   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="492554">Poista varmuuskopiotila</translation>
 
    <translation id="server_configuration_cloudbackup_container_storage_guide_description" qtlid="452080">Etsitkö työkalua tietojesi varmuuskopiointia varten? OVH suosittelee Rclone-työkalua</translation>
    <translation id="server_configuration_cloudbackup_container_storage_guide_product" qtlid="452093">Rclone</translation>
@@ -995,9 +1000,10 @@ sen nimen tai valitsemalla jo olemassa olevan Cloud-projektin. Tämä on ilmaist
    <translation id="server_services" qtlid="34632">Palvelut</translation>
    <translation id="server_informations_general" qtlid="27115">Yleiset tiedot</translation>
 
+   <translation id="server_subscription">Abonnement</translation>
+   <translation id="server_network">Réseau</translation>
    <translation id="server_bandwidth" qtlid="38565">Kaistanleveys</translation>
    <translation id="server_bandwidth_connection" qtlid="32446">Verkkoyhteys</translation>
-   <translation id="server_bandwidth_type" qtlid="2642">Tyyppi</translation>
    <translation id="server_bandwidth_type_included" qtlid="204298">Sisältyy</translation>
    <translation id="server_bandwidth_type_platinum" qtlid="204311">Platinum</translation>
    <translation id="server_bandwidth_type_premium" qtlid="180941">Premium</translation>

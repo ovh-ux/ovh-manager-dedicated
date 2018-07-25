@@ -3,10 +3,6 @@ angular.module("App").config(($stateProvider) => {
         url: "/ml-subscribe",
         templateUrl: "dedicatedCloud/mailing-list/subscribe/dedicatedCloud-mailing-list-subscribe.html",
         controller: "DedicatedCloudMailingCtrl",
-        layout: {
-            name: "modal",
-            toChilds: true,
-            ignoreChilds: ["app.dedicatedClouds.datacenter"]
-        }
+        layout: "modal"
     });
 });

@@ -1,4 +1,5 @@
-angular.module("controllers").controller("controllers.Server.Stats", ($scope, $rootScope, $stateParams, $filter, $q, Server, $translate, Alerter, BandwidthVrackOrderService, ServerTrafficService, ServerOrderTrafficService, featureAvailability) => {
+angular.module("controllers").controller("controllers.Server.Stats", (
+    $scope, $rootScope, $state, $stateParams, $filter, $q, Server, $translate, Alerter, BandwidthVrackOrderService, ServerTrafficService, ServerOrderTrafficService, featureAvailability) => {
     $scope.currentView = {
         value: "DASHBOARD"
     };
@@ -119,6 +120,10 @@ angular.module("controllers").controller("controllers.Server.Stats", ($scope, $r
                 $scope.setMessage($translate.instant("server_remove_hack_fail"), data.data);
             }
         );
+    };
+
+    $scope.rebootServer = function () {
+        return $state.go("app.dedicated.server.reboot");
     };
 
     $scope.$on("reloadChart", () => {

@@ -10,6 +10,8 @@
    <translation id="dedicatedCloud_discount_explanation" qtlid="288886">Prix final calculé lors de la génération du bon de commande, dans la limite des stocks disponibles. Appliqué sur le mois en cours seulement.</translation>
    <translation id="dedicatedCloud_discount_AMD" qtlid="285180">Profitez d'une baisse de prix de 35% sur les Hosts XL et XL+ de la gamme 2014v2 Entreprise, dans la limite des stocks disponibles.</translation>
    <translation id="dedicatedCloud_information_title" qtlid="27115">Informations générales</translation>
+   <translation id="dedicatedCloud_description" qtlid="3818">Nom</translation>
+   <translation id="dedicatedCloud_description_modify_title" qtlid="71741">Modifier le nom</translation>
    <translation id="dedicatedCloud_type" qtlid="145800">Solution</translation>
    <translation id="dedicatedCloud_type_VSPHERE" qtlid="146437">vSphere</translation>
    <translation id="dedicatedCloud_type_VCLOUD" qtlid="154624">vCloud</translation>
@@ -33,18 +35,28 @@
    <translation id="dedicatedCloud_order_Host" qtlid="145891">Commander un Host</translation>
    <translation id="dedicatedCloud_order_Datastore" qtlid="145904">Commander un Datastore</translation>
    <translation id="dedicatedCloud_security_policy_update" qtlid="145917">Changer la politique d'accès</translation>
-   <translation id="dedicatedCloud_nb_bloc_IP" qtlid="154637">Nombre de block IP</translation>
+   <translation id="dedicatedCloud_nb_bloc_IP" qtlid="497021">Nombre de blocs IP</translation>
    <translation id="dedicatedCloud_nb_bloc_IP_no_data" qtlid="154650">Information indisponible</translation>
-   <translation id="dedicatedCloud_nb_bloc_IP_ripe" qtlid="145930">Nombre de bloc IP Ripe</translation>
-   <translation id="dedicatedCloud_nb_bloc_IP_arin" qtlid="154663">Nombre de bloc IP Arin</translation>
+   <translation id="dedicatedCloud_nb_bloc_IP_ripe" qtlid="497034">Nombre de blocs IP Ripe</translation>
+   <translation id="dedicatedCloud_nb_bloc_IP_arin" qtlid="497047">Nombre de blocs IP Arin</translation>
    <translation id="dedicatedCloud_edit_description_change" qtlid="154676">modifier la description</translation>
    <translation id="dedicatedCloud_edit_description_valid" qtlid="147850">valider les modifications</translation>
    <translation id="dedicatedCloud_edit_description_cancel" qtlid="147863">annuler les modifications</translation>
-   <translation id="dedicatedCloud_edit_description_success" qtlid="154689">La modification de la description a bien été prise en compte</translation>
-   <translation id="dedicatedCloud_edit_description_fail" qtlid="154702">Une erreur est survenue lors de la modification de la description du serveur {0}</translation>
+   <translation id="dedicatedCloud_description_edit_success" qtlid="154689">La modification de la description a bien été prise en compte</translation>
+   <translation id="dedicatedCloud_description_edit_error" qtlid="154702">Une erreur est survenue lors de la modification de la description du serveur {0}</translation>
+   <translation id="dedicatedCloud_datacenter_name_modify_title" qtlid="71741">Modifier le nom</translation>
+   <translation id="dedicatedCloud_datacenter_name_edit_success" qtlid="155170">La modification du nom a bien été prise en compte</translation>
+   <translation id="dedicatedCloud_datacenter_name_edit_error" qtlid="497060">Une erreur est survenue lors de la modification du nom du datacentre {0}</translation>
+   <translation id="dedicatedCloud_datacenter_description_modify_title" qtlid="77274">Modifier la description</translation>
+   <translation id="dedicatedCloud_datacenter_description_edit_success" qtlid="154689">La modification de la description a bien été prise en compte</translation>
+   <translation id="dedicatedCloud_datacenter_description_edit_error" qtlid="497073">Une erreur est survenue lors de la modification de la description du datacentre {0}</translation>
    <translation id="dedicatedCloud_no_description" qtlid="149345">Ajouter une description</translation>
    <translation id="dedicatedCloud_datacenters_loading_error" qtlid="147694">Une erreur est survenue lors du chargement des informations des datacentres.</translation>
    <translation id="dedicatedCloud_tab_dashboard" qtlid="27115">Informations générales</translation>
+
+   <translation id="dedicatedCloud_datacenter_name" qtlid="3818">Nom</translation>
+   <translation id="dedicatedCloud_datacenter_description" qtlid="9238">Description</translation>
+
    <translation id="dedicatedCloud_tab_datacenter" qtlid="41602">Datacentres</translation>
    <translation id="dedicatedCloud_DATACENTERS_CPU" qtlid="147707">Total CPU</translation>
    <translation id="dedicatedCloud_DATACENTERS_RAM" qtlid="147720">Total RAM</translation>
@@ -188,11 +200,11 @@
    <translation id="dedicatedCloud_tab_veeam_disable_message_alert" qtlid="155092">Attention, cette action supprimera définitivement tous vos backups.</translation>
    <translation id="dedicatedCloud_tab_veeam_disable_success" qtlid="183463">La demande de désactivation du backup sur le datacenter <b>{0}</b> a bien été pris en compte</translation>
    <translation id="dedicatedCloud_tab_veeam_disable_fail" qtlid="183476">Une erreur est survenue lors de la désactivation du backup sur le datacenter <b>{0}</b></translation>
-   <translation id="dedicatedCloud_datacenter_go_vscope" qtlid="433086">vScope</translation>
+   <translation id="dedicatedCloud_datacenter_label" qtlid="30802">Datacentre</translation>
    <translation id="dedicatedCloud_datacenter_go_web_interface" qtlid="433099">Interface web</translation>
    <translation id="dedicatedCloud_datacenter_go_certified_web_interface" qtlid="433112">Interface web certifiée</translation>
    <translation id="dedicatedCloud_datacenter_go_vscope" qtlid="147785">Aller sur vScope</translation>
-   <translation id="dedicatedCloud_datacenter_delete" qtlid="49430">Supprimer le datacenter</translation>
+   <translation id="dedicatedCloud_datacenter_delete" qtlid="49430">Supprimer le datacentre</translation>
    <translation id="dedicatedCloud_datacenter_delete_confirmation" qtlid="433125">Voulez-vous vraiment supprimer le datacentre {0} ?</translation>
    <translation id="dedicatedCloud_datacenter_delete_success" qtlid="433138">Le datacenter {0} va être supprimé dans quelques instants.</translation>
    <translation id="dedicatedCloud_datacenter_delete_error" qtlid="433151">Une erreur s'est produite lors de la suppression du datacenter {0}.</translation>
@@ -237,6 +249,9 @@
    <translation id="dedicatedCloud_datacenter_commercial_name_SDDC-LEGACY-WITHOUT-NSX" qtlid="448894">SDDC Legacy sans NSX</translation>
    <translation id="dedicatedCloud_datacenter_commercial_name_UNKNOWN-UNKNOWN" qtlid="77142">Inconnu</translation>
    <translation id="dedicatedCloud_datacenter_loading_error" qtlid="155131">Une erreur est survenue lors du chargement des informations de votre datacenter.</translation>
+   <translation id="dedicatedCloud_datacenter_state_title" qtlid="243741">Etat de mes services</translation>
+   <translation id="dedicatedCloud_datacenter_state" qtlid="26443">Statut</translation>
+
    <translation id="dedicatedCloud_datacenter_edit_description_change" qtlid="154676">modifier la description</translation>
    <translation id="dedicatedCloud_datacenter_edit_description_valid" qtlid="147850">valider les modifications</translation>
    <translation id="dedicatedCloud_datacenter_edit_description_cancel" qtlid="147863">annuler les modifications</translation>
@@ -398,6 +413,9 @@
    <translation id="dedicatedCloud_USER_set_fail" qtlid="157720">Une erreur est survenue lors de la modification des informations de {0}</translation>
    <translation id="dedicatedCloud_USER_enable" qtlid="229802">Activer l'utilisateur</translation>
    <translation id="dedicatedCloud_USER_disable" qtlid="199078">Désactiver l'utilisateur</translation>
+   <translation id="dedicatedCloud_USER_edit_load_error" qtlid="497086">Une erreur est survenue lors du chargement de l'utilisateur.</translation>
+   <translation id="dedicatedCloud_USER_edit_error" qtlid="228118">Une erreur est survenue lors de la modification de l'utilisateur.</translation>
+   <translation id="dedicatedCloud_USER_edit_success" qtlid="497099">L'utilisateur a bien été modifié.</translation>
    <translation id="dedicatedCloud_tab_security" qtlid="125420">Sécurité</translation>
    <translation id="dedicatedCloud_SECURITY_title" qtlid="371739">IP et blocs autorisés à se connecter au Private Cloud :</translation>
    <translation id="dedicatedCloud_SECURITY_modify" qtlid="147941">Modifier la plage d’IP</translation>
@@ -577,6 +595,19 @@
    <translation id="dedicatedCloud_options_vrops" qtlid="342836">VMware vRealize Operations (vROps)</translation>
    <translation id="dedicatedCloud_options_nsx" qtlid="342849">VMware Network Virtualization (NSX)</translation>
 
+   <translation id="dedicatedCloud_subscription_title" qtlid="28891">Abonnement</translation>
+   <translation id="dedicatedCloud_subscription_resource" qtlid="497112">Forfait</translation>
+   <translation id="dedicatedCloud_subscription_resource_yearly" qtlid="60390">Annuel</translation>
+   <translation id="dedicatedCloud_subscription_resource_monthly" qtlid="60378">Mensuel</translation>
+   <translation id="dedicatedCloud_subscription_licence" qtlid="21667">Licence</translation>
+   <translation id="dedicatedCloud_subscription_ip_block" qtlid="179095">Bloc d'IPs</translation>
+   <translation id="dedicatedCloud_subscription_mailing_list" qtlid="497125">Mailing list</translation>
+   <translation id="dedicatedCloud_subscription_renew" qtlid="168172">Renouvellement</translation>
+   <translation id="dedicatedCloud_subscription_links" qtlid="245116">Liens</translation>
+   <translation id="dedicatedCloud_subscription_vscope" qtlid="433086">vScope</translation>
+   <translation id="dedicatedCloud_subscription_web_interface" qtlid="497138">Interface Web</translation>
+   <translation id="dedicatedCloud_subscription_certified_web_interface" qtlid="497151">Interface Web certifiée</translation>
+
    <translation id="dedicatedCloud_vmware_orderopt_title_vrops" qtlid="342862">Activer l'option VMware vROps</translation>
    <translation id="dedicatedCloud_vmware_orderopt_title_nsx" qtlid="342875">Activer l'option VMware NSX</translation>
    <translation id="dedicatedCloud_vmware_orderopt_info" qtlid="342888">Le prix de vos hosts sera majoré lors du prochain renouvellement:</translation>
@@ -607,7 +638,7 @@
    <translation id="dedicatedCloud_OPERATIONS_taskId" qtlid="16445">Référence</translation>
    <translation id="dedicatedCloud_OPERATIONS_name" qtlid="3818">Nom</translation>
    <translation id="dedicatedCloud_OPERATIONS_type" qtlid="2642">Type</translation>
-   <translation id="dedicatedCloud_OPERATIONS_progression" qtlid="61608">Progression (Tous)</translation>
+   <translation id="dedicatedCloud_OPERATIONS_progression" qtlid="442639">Progression</translation>
    <translation id="dedicatedCloud_OPERATIONS_comment" qtlid="25975">Commentaire</translation>
    <translation id="dedicatedCloud_OPERATIONS_related_services" qtlid="367164">Services affectés</translation>
    <translation id="dedicatedCloud_OPERATIONS_created_from" qtlid="299501">Créé de</translation>

@@ -109,6 +109,8 @@
    <translation id="server_tab_stats_rtm_infos_cpu_core" qtlid="204090">Cores</translation>
    <translation id="server_tab_stats_rtm_infos_cpu_cache" qtlid="30214">Cache</translation>
    <translation id="server_tab_stats_rtm_infos_ram" qtlid="31354">RAM</translation>
+   <translation id="server_tab_stats_rtm_infos_swap">SWAP</translation>
+   <translation id="server_tab_stats_rtm_infos_versions">Versions</translation>
    <translation id="server_tab_stats_rtm_infos_rtmVersion" qtlid="193956">Real Time Monitoring versie</translation>
    <translation id="server_tab_stats_rtm_infos_rtmVersion_update" qtlid="204103">Een update is beschikbaar</translation>
    <translation id="server_tab_stats_rtm_infos_kernelVersion" qtlid="204116">Kernelversie</translation>
@@ -123,18 +125,18 @@
    <translation id="server_tab_stats_rtm_errorData" qtlid="204168">Gegevens niet beschikbaar</translation>
 
    <translation id="server_tab_stats_rtm_uptime" qtlid="31594">Uptime</translation>
-   <translation id="server_tab_stats_rtm_uptime_year_1" qtlid="204181">jaar</translation>
-   <translation id="server_tab_stats_rtm_uptime_year_other" qtlid="94135">jaren</translation>
-   <translation id="server_tab_stats_rtm_uptime_month_1" qtlid="40222">maand</translation>
-   <translation id="server_tab_stats_rtm_uptime_month_other" qtlid="40222">maand</translation>
-   <translation id="server_tab_stats_rtm_uptime_day_1" qtlid="44248">dag</translation>
-   <translation id="server_tab_stats_rtm_uptime_day_other" qtlid="44260">dagen</translation>
-   <translation id="server_tab_stats_rtm_uptime_hour_1" qtlid="40234">uur</translation>
-   <translation id="server_tab_stats_rtm_uptime_hour_other" qtlid="44236">uren</translation>
-   <translation id="server_tab_stats_rtm_uptime_minute_1" qtlid="44212">minuut</translation>
-   <translation id="server_tab_stats_rtm_uptime_minute_other" qtlid="44224">minuten</translation>
-   <translation id="server_tab_stats_rtm_uptime_seconde_1" qtlid="94279">seconde</translation>
-   <translation id="server_tab_stats_rtm_uptime_seconde_other" qtlid="94291">seconden</translation>
+   <translation id="server_tab_stats_rtm_uptime_year_1">1 an</translation>
+   <translation id="server_tab_stats_rtm_uptime_year_other">{} ans</translation>
+   <translation id="server_tab_stats_rtm_uptime_month_1">1 mois</translation>
+   <translation id="server_tab_stats_rtm_uptime_month_other">{} mois</translation>
+   <translation id="server_tab_stats_rtm_uptime_day_1">1 jour</translation>
+   <translation id="server_tab_stats_rtm_uptime_day_other">{} jours</translation>
+   <translation id="server_tab_stats_rtm_uptime_hour_1">1 heure</translation>
+   <translation id="server_tab_stats_rtm_uptime_hour_other">{} heures</translation>
+   <translation id="server_tab_stats_rtm_uptime_minute_1">1 minute</translation>
+   <translation id="server_tab_stats_rtm_uptime_minute_other">{} minutes</translation>
+   <translation id="server_tab_stats_rtm_uptime_seconde_1">1 seconde</translation>
+   <translation id="server_tab_stats_rtm_uptime_seconde_other">{} secondes</translation>
 
    <translation id="server_tab_stats_rtm_profile" qtlid="204194">Machine profiel</translation>
    <translation id="server_tab_stats_rtm_usage" qtlid="204207">Het gebruik van de server</translation>
@@ -144,6 +146,7 @@
    <translation id="server_tab_stats_rtm_partions_mountPoint" qtlid="110958">Mounting punt</translation>
    <translation id="server_tab_stats_rtm_partions_usage" qtlid="76758">Gebruikte geheugenruimte</translation>
    <translation id="server_tab_stats_rtm_partions_inodeUsage" qtlid="194151">Gebruikte inodes </translation>
+   <translation id="server_tab_stats_rtm_location">Emplacement</translation>
 
    <translation id="server_configuration_state_title" qtlid="26443">Status</translation>
    <translation id="server_configuration_state_OK" qtlid="96704">Normaal</translation>
@@ -334,9 +337,9 @@
    <translation id="server_configuration_monitoring_services_use" qtlid="243728">Mijn diensten monitoren</translation>
 
    <translation id="server_configuration_services_state_links" qtlid="245116">Links</translation>
-   <translation id="server_configuration_services_state_links_weathermap" qtlid="245129"><a href="{0}" target="_blank">Weathermap</a></translation>
-   <translation id="server_configuration_services_state_links_vms" qtlid="245142"><a href="{0}" target="_blank">VMS</a></translation>
-   <translation id="server_configuration_services_state_links_travaux" qtlid="245155"><a href="{0}" target="_blank">Status</a></translation>
+   <translation id="server_configuration_services_state_links_weathermap">Weathermap</translation>
+   <translation id="server_configuration_services_state_links_vms">VMS</translation>
+   <translation id="server_configuration_services_state_links_travaux">Travaux</translation>
 
    <translation id="server_configuration_profesionnal_use" qtlid="199962">Pro optie</translation>
    <translation id="server_configuration_profesionnal_use_info" qtlid="199975">U heeft alleen NAS toegang via deze server, indien u over de Pro optie beschikt</translation>
@@ -360,15 +363,17 @@
    <translation id="server_configuration_distribution" qtlid="151971">Systeem (OS)</translation>
    <translation id="server_configuration_distribution_none" qtlid="233034">Niet geïnstalleerd</translation>
    <translation id="server_configuration_boot" qtlid="151984">Boot</translation>
-   <translation id="server_configuration_creation" qtlid="371726">Huur gestart op</translation>
    <translation id="server_configuration_datacenter" qtlid="30802">Datacenter</translation>
    <translation id="server_configuration_rack" qtlid="32050">Rack</translation>
    <translation id="server_configuration_server_id" qtlid="225915">Server-ID</translation>
    <translation id="server_configuration_name" qtlid="151997">OVH naam</translation>
+   <translation id="server_configuration_displayname">Nom</translation>
+   <translation id="server_configuration_displayname_edit_button">Modifier</translation>
    <translation id="server_configuration_description" qtlid="191655">Handelsnaam</translation>
    <translation id="server_configuration_description_housing" qtlid="233583">Housing</translation>
    <translation id="server_configuration_reverse" qtlid="32338">Reverse</translation>
    <translation id="server_configuration_reverse_not_configured" qtlid="124952">Niet geconfigureerd</translation>
+   <translation id="server_configuration_reverse_edit_button">Modifier</translation>
    <translation id="server_configuration_ipv4" qtlid="167899">IP</translation>
    <translation id="server_configuration_ipv6" qtlid="191239">Ipv6</translation>
    <translation id="server_configuration_ipv4_manage" qtlid="16301">Beheren</translation>
@@ -476,16 +481,16 @@
    <translation id="server_configuration_ftpbackup_add_ip" qtlid="180850">Het betreffende blok:</translation>
    <translation id="server_configuration_ftpbackup_add_authorization" qtlid="180863">Toestaan voor:</translation>
 
-   <translation id="server_configuration_cloudbackup_delete" qtlid="184282">Backup Storage verwijderen</translation>
+   <translation id="server_configuration_cloudbackup_delete" qtlid="492502">Supprimer le Backup Storage</translation>
 
    <translation id="server_configuration_cloudbackup_delete_success" qtlid="184360">Backup Storage zal binnen enkele ogenblikken worden verwijderd.</translation>
-   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="184373">Backup Storage is verwijderd.</translation>
-   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="184386">Er is een fout opgetreden tijdens het verwijderen van Backup Storage.</translation>
+   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="492515">Le Backup Storage a bien été supprimé.</translation>
+   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="492528">Une erreur est survenue lors de la suppression du Backup Storage.</translation>
    <translation id="server_configuration_cloudbackup_delete_question" qtlid="451872">Weet u zeker dat u Backup Storage wilt uitschakelen? </translation>
 
    <translation id="server_configuration_cloudbackup_inactive" qtlid="451885">Uw Backup Storage is uitgeschakeld. </translation>
    <translation id="server_configuration_cloudbackup_new_project" qtlid="16493">Nieuw project</translation>
-   <translation id="server_configuration_cloudbackup_load_fail" qtlid="184256">Er is een fout opgetreden tijdens het laden van de Backup Storage-informatie</translation>
+   <translation id="server_configuration_cloudbackup_load_fail" qtlid="492541">Une erreur est survenue lors du chargement des informations du Backup Storage</translation>
    <translation id="server_configuration_cloudbackup_load_offers_fail" qtlid="451898">Er is een fout opgetreden tijdens het laden van Backup Storage cloudoplossingen</translation>
    <translation id="server_configuration_cloudbackup_load_projects_fail" qtlid="451911">Er is een fout opgetreden bij het laden van cloudprojecten</translation>
    <translation id="server_configuration_cloudbackup_load_agreements_fail" qtlid="451924">Er is een fout opgetreden tijdens het laden van de contracten</translation>
@@ -509,7 +514,7 @@
    <translation id="server_configuration_cloudbackup_summary_documentation_label" qtlid="415740">Handleiding</translation>
    <translation id="server_configuration_cloudbackup_summary_usage_label" qtlid="109974">Gebruik</translation>
    <translation id="server_configuration_cloudbackup_summary_title_label_storage" qtlid="452067">Uw Backup Storage container</translation>
-   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="184282">Backup Storage verwijderen</translation>
+   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="492554">Supprimer le Backup Storage</translation>
 
    <translation id="server_configuration_cloudbackup_container_storage_guide_description" qtlid="452080">Heeft u een tool nodig voor het maken van backups van uw data? OVH raadt Rclone aan</translation>
    <translation id="server_configuration_cloudbackup_container_storage_guide_product" qtlid="452093">Rclone</translation>
@@ -996,9 +1001,10 @@ een andere server</translation>
    <translation id="server_services" qtlid="34632">Diensten</translation>
    <translation id="server_informations_general" qtlid="27115">Algemene informatie</translation>
 
+   <translation id="server_subscription">Abonnement</translation>
+   <translation id="server_network">Réseau</translation>
    <translation id="server_bandwidth" qtlid="38565">Bandbreedte</translation>
    <translation id="server_bandwidth_connection" qtlid="32446">Netwerkverbinding</translation>
-   <translation id="server_bandwidth_type" qtlid="2642">Type</translation>
    <translation id="server_bandwidth_type_included" qtlid="204298">Inclusief</translation>
    <translation id="server_bandwidth_type_platinum" qtlid="204311">Platinum</translation>
    <translation id="server_bandwidth_type_premium" qtlid="180941">Premium</translation>

@@ -9,9 +9,16 @@ angular.module("App").controller("CacherulesAddCtrl", ($scope, $stateParams, $tr
     $scope.contractsValidated = {};
 
     $scope.loadCacherulesPrice = function () {
+        $scope.cacheRulesLoading = true;
+
         if (!$scope.prices) {
             cdnDedicatedOrderRule.getCacherulePrices($stateParams.productId).then((prices) => {
                 $scope.prices = prices.results;
+            }).catch((error) => {
+                $scope.resetAction();
+                Alerter.alertFromSWS($translate.instant("cdn_configuration_cacherules_upgrade_fail"), error, $scope.alert);
+            }).finally(() => {
+                $scope.cacheRulesLoading = false;
             });
         }
     };
