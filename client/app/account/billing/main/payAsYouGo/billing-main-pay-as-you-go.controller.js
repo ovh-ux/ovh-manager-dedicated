@@ -1,11 +1,10 @@
 angular.module("App").controller("BillingMainPayAsYouGoCtrl", class BillingMainPayAsYouGoCtrl {
 
-    constructor ($q, $translate, Alerter, OvhApiAuth, OvhApiMe, OvhApiServices, ServicesHelper) {
+    constructor ($q, $translate, Alerter, OvhApiMe, OvhApiServices, ServicesHelper) {
         // injections
         this.$q = $q;
         this.$translate = $translate;
         this.Alerter = Alerter;
-        this.OvhApiAuth = OvhApiAuth;
         this.OvhApiMe = OvhApiMe;
         this.OvhApiServices = OvhApiServices;
         this.ServicesHelper = ServicesHelper;
@@ -16,7 +15,6 @@ angular.module("App").controller("BillingMainPayAsYouGoCtrl", class BillingMainP
         };
 
         this.consumptions = null;
-        this.time = null;
     }
 
     static getConsumptionElementType (planCode) {
@@ -28,18 +26,6 @@ angular.module("App").controller("BillingMainPayAsYouGoCtrl", class BillingMainP
 
         return "instance";
     }
-
-    // static calculateElementForecast (consumptionElement, expirationDate, time) {
-    //     const days = moment.unix(time).diff(moment(expirationDate).subtract(1, "month"), "days");
-    //     const daysToExpiration = moment(expirationDate).diff(moment.unix(time), "days");
-    //     const forecast = days > 0 ? ((consumptionElement.price.value / days) * daysToExpiration) + consumptionElement.price.value : Number.parseFloat(0) + consumptionElement.price.value;
-
-    //     return {
-    //         currencyCode: consumptionElement.price.currencyCode,
-    //         value: forecast,
-    //         text: consumptionElement.price.text.replace(/\d+(?:[.,]\d+)?/, forecast.toFixed(2))
-    //     };
-    // }
 
     /* =====================================
     =            INITIALIZATION            =
@@ -54,10 +40,8 @@ angular.module("App").controller("BillingMainPayAsYouGoCtrl", class BillingMainP
 
         return this.$q.all({
             consumptions: this.OvhApiMe.v6().consumption().$promise,
-            services: this.OvhApiServices.v6().query().$promise,
-            time: this.OvhApiAuth.v6().time()
-        }).then(({ consumptions, services, time }) => {
-            this.time = time.value;
+            services: this.OvhApiServices.v6().query().$promise
+        }).then(({ consumptions, services }) => {
 
             const projectPromises = _.map(consumptions, (consumption) => {
                 const associatedService = _.find(services, {
@@ -83,8 +67,7 @@ angular.module("App").controller("BillingMainPayAsYouGoCtrl", class BillingMainP
                     resource: consumptionElement.planCode,
                     type: BillingMainPayAsYouGoCtrl.getConsumptionElementType(consumptionElement.planCode),
                     dueDate: consumption.service.billing.nextBillingDate,
-                    current: consumptionElement.price/* ,
-                    forecast: BillingMainPayAsYouGoCtrl.calculateElementForecast(consumptionElement, consumption.service.billing.nextBillingDate, this.time)*/
+                    current: consumptionElement.price
                 }));
             }));
         }).catch((error) => {
