@@ -384,7 +384,11 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
         $scope.resiliateService = function (service) {
             const serviceToResiliate = getServiceToResiliate(service);
 
-            $scope.setAction("delete", _.clone(serviceToResiliate, true), "autoRenew");
+            if (service.status === "PENDING_DEBT") {
+                $scope.setAction("warnPendingDebt", _.clone(service, true), "autoRenew");
+            } else {
+                $scope.setAction("delete", _.clone(serviceToResiliate, true), "autoRenew");
+            }
         };
 
         $scope.cancelDeleteService = function (service) {
