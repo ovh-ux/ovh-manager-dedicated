@@ -47,8 +47,11 @@
                   aria-hidden="true">
             </span>
         </button>
-        <ul data-uib-dropdown-menu
+        <ul data-ng-if="service.serviceType !== 'EMAIL_DOMAIN'" data-uib-dropdown-menu
             data-template-url="{{ BILLING_BASE_URL + 'autoRenew/common/actions-menu.html'}}">
+        </ul>
+        <ul data-ng-if="service.serviceType === 'EMAIL_DOMAIN'" data-uib-dropdown-menu
+            data-template-url="{{ BILLING_BASE_URL + 'autoRenew/common/actions-menu-email-domain.html'}}">
         </ul>
     </div>
 </td>
