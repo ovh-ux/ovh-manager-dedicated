@@ -106,7 +106,7 @@
    <translation id="wizard_cancel" qtlid="37863">Cancelar</translation>
    <translation id="wizard_close" qtlid="4670">Cerrar</translation>
    <translation id="wizard_confirm" qtlid="26047">Valider</translation>
-   <translation id="wizard_modify" qtlid="37875">Modifier</translation>
+   <translation id="wizard_modify" qtlid="37875">Modificar</translation>
    <translation id="wizard_delete" qtlid="2414">Eliminar</translation>
    <translation id="wizard_yes" qtlid="34776">Oui</translation>
    <translation id="wizard_no" qtlid="34788">Non</translation>
@@ -144,15 +144,17 @@
    <translation id="common_managerv3" qtlid="34512">Manager V3</translation>
    <translation id="common_loading" qtlid="361984">Cargando…</translation>
    <translation id="common_refresh" qtlid="250030">Actualizar</translation>
-   <translation id="common_change" qtlid="37875">Modifier</translation>
+   <translation id="common_change" qtlid="37875">Modificar</translation>
    <translation id="common_download_format" qtlid="454267">Descargar en formato {0}</translation>
    <translation id="common_skip_to_main_content" qtlid="454052">Ir al contenido principal</translation>
+   <translation id="common_shortcuts" qtlid="403658">Atajos</translation>
+   <translation id="common_links" qtlid="245116">Enlaces</translation>
    <translation id="global_app_title" qtlid="133357">Su Panel de Control Dedicado OVH</translation>
    <translation id="global_language" qtlid="30598">Langue</translation>
    <translation id="global_logout" qtlid="33658">Déconnexion</translation>
    <translation id="global_changelog" qtlid="124964">Historique des mises à jour</translation>
    <translation id="global_configuration" qtlid="4406">Configuración</translation>
-   <translation id="global_billing" qtlid="32950">Facturation</translation>
+   <translation id="global_billing" qtlid="32950">Facturación</translation>
    <translation id="global_renew" qtlid="229658">Mis servicios</translation>
    <translation id="global_orders" qtlid="282809">Mis pedidos</translation>
    <translation id="global_preference" qtlid="157642">Mi cuenta</translation>
@@ -182,7 +184,7 @@
    <translation id="global_processing" qtlid="122227">Traitement en cours ...</translation>
    <translation id="global_doing" qtlid="210163">En curso...</translation>
    <translation id="main_menu_products_and_config" qtlid="4406">Configuración</translation>
-   <translation id="main_menu_bill_and_renew" qtlid="32950">Facturation</translation>
+   <translation id="main_menu_bill_and_renew" qtlid="32950">Facturación</translation>
    <translation id="main_menu_help_and_support" qtlid="26035">Aide</translation>
    <translation id="common_yes" qtlid="34776">Oui</translation>
    <translation id="common_no" qtlid="34788">Non</translation>
@@ -200,11 +202,11 @@
    <translation id="contracts_agree" qtlid="180421">Acepto los contratos</translation>
    <translation id="contract_agree" qtlid="180434">Acepto el contrato</translation>
 
-   <translation id="day_1" qtlid="28807">1 jour</translation>
+   <translation id="day_1" qtlid="28807">1 día</translation>
    <translation id="day_other" qtlid="158578">{} días</translation>
-   <translation id="month_1" qtlid="70241">1 mois</translation>
+   <translation id="month_1" qtlid="70241">1 mes</translation>
    <translation id="month_other" qtlid="220148">{0} mes(es)</translation>
-   <translation id="year_1" qtlid="70277">1 an</translation>
+   <translation id="year_1" qtlid="70277">1 año</translation>
    <translation id="year_other" qtlid="158604">{} años</translation>
    <translation id="upto" qtlid="486503">Hasta el {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Hasta el día 1 del mes siguiente</translation>
@@ -553,6 +555,7 @@
 
    <translation id="me_alerts_AUTORENEW_INVITE" qtlid="446401">¡Ya puede activar la renovación automática de <a href="{{ link }}">sus servicios</a>!</translation>
 
+   <translation id="core_service_expiration_label" qtlid="30406">Expiración</translation>
    <translation id="core_service_expiration" qtlid="229411">Expirado desde:</translation>
    <translation id="core_service_expiration_manual_renew" qtlid="377571">Se renovará el</translation>
    <translation id="core_service_expiration_auto_renew" qtlid="414986">Renovación prevista el</translation>
@@ -580,6 +583,8 @@
    <translation id="otrs_menu_email_history" qtlid="260091">Historial de correos</translation>
    <translation id="otrs_menu_telephony_contact" qtlid="260827">Soporte </translation>
    <translation id="otrs_menu_changelog" qtlid="124964">Historique des mises à jour</translation>
+
+   <translation id="common_configuration_creation" qtlid="26419">Fecha de creación</translation>
 
    <translation id="common_criteria_adder_column_label" qtlid="479108">Columna</translation>
    <translation id="common_criteria_adder_operator_label" qtlid="425806">Condición</translation>
@@ -614,13 +619,18 @@
    <translation id="common_field_error_minlength" qtlid="472359">Debe introducir {{minlength}} caracteres como mínimo.</translation>
    <translation id="common_field_error_maxlength" qtlid="472372">Debe introducir {{maxlength}} caracteres como máximo.</translation>
    <translation id="common_field_error_pattern" qtlid="472385">Debe introducir un formato válido.</translation>
+   <translation id="menu_action_label" qtlid="497164">{0} (Lista de acciones)</translation>
+
+   <translation id="server_tab_USB_STORAGE_order_select_duration" qtlid="181214">Seleccione la duración:</translation>
 
    <translation id="common_navbar_notification_title" qtlid="33250">Notifications</translation>
-   <translation id="common_navbar_notification_error" qtlid="323434">Lo sentimos: no hemos podido inicializar el menú.</translation>
-   <translation id="common_navbar_notification_error_subject" qtlid="26407">Erreur</translation>
    <translation id="common_navbar_notification_see_all" qtlid="401914">Ver todas las notificaciones</translation>
+   <translation id="common_navbar_notification_error_in_notification" qtlid="492055">Lo sentimos: se ha producido un problema.</translation>
+   <translation id="common_navbar_notification_error_in_notification_description" qtlid="492068">Lo sentimos: no se ha podido iniciar el menú.</translation>
    <translation id="common_navbar_notification_mark_as_read" qtlid="70865">Marquer comme lu</translation>
    <translation id="common_navbar_notification_mark_as_unread" qtlid="70877">Marquer comme non lu</translation>
+   <translation id="common_navbar_notification_none" qtlid="492081">¡Usted está al día!</translation>
+   <translation id="common_navbar_notification_none_description" qtlid="492094">No tiene notificaciones.</translation>
 
    <translation id="common_pagination_resultsperpage" qtlid="433384">Resultados por página</translation>
    <translation id="common_pagination_page" qtlid="433397">página</translation>
@@ -637,4 +647,9 @@
    <translation id="common_stepper_next_button_label" qtlid="17743">Suivant</translation>
    <translation id="common_stepper_submit_button_label" qtlid="52807">Envoyer</translation>
    <translation id="common_stepper_cancel_button_label" qtlid="37863">Cancelar</translation>
+
+   <translation id="common_subscription_contacts" qtlid="32206">Contactos</translation>
+   <translation id="common_subscription_contacts_admin" qtlid="43948">Administrador</translation>
+   <translation id="common_subscription_contacts_billing" qtlid="32950">Facturación</translation>
+   <translation id="common_subscription_contacts_tech" qtlid="31750">Técnico</translation>
 </translations>

@@ -147,6 +147,8 @@
    <translation id="common_change" qtlid="37875">Ändern</translation>
    <translation id="common_download_format" qtlid="454267">Im {0} Format herunterladen</translation>
    <translation id="common_skip_to_main_content" qtlid="454052">Zum Hauptinhalt</translation>
+   <translation id="common_shortcuts" qtlid="403658">Shortcuts</translation>
+   <translation id="common_links" qtlid="245116">Links</translation>
    <translation id="global_app_title" qtlid="133357">Ihr OVH Dedicated Kundencenter</translation>
    <translation id="global_language" qtlid="30598">Sprache</translation>
    <translation id="global_logout" qtlid="33658">Abmelden</translation>
@@ -201,11 +203,11 @@
    <translation id="contract_agree" qtlid="180434">Ich akzeptiere den Vertrag</translation>
 
    <translation id="day_1" qtlid="28807">1 Tag</translation>
-   <translation id="day_other" qtlid="158578">{} Tag(e)</translation>
+   <translation id="day_other" qtlid="158578">{} Tage</translation>
    <translation id="month_1" qtlid="70241">1 Monat</translation>
    <translation id="month_other" qtlid="220148">{0} Monat(e)</translation>
    <translation id="year_1" qtlid="70277">1 Jahr</translation>
-   <translation id="year_other" qtlid="158604">{} Jahr(e)</translation>
+   <translation id="year_other" qtlid="158604">{} Jahre</translation>
    <translation id="upto" qtlid="486503">Bis zum {{ date }}</translation>
    <translation id="uptofirstdaynextmonth" qtlid="158630">Bis zum ersten Tag des nächsten Monats</translation>
    <translation id="engage" qtlid="158643">Laufzeit {0}</translation>
@@ -553,6 +555,7 @@
 
    <translation id="me_alerts_AUTORENEW_INVITE" qtlid="446401">Entscheiden Sie sich jetzt für die automatische Verlängerung <a href="{{ link }}">Ihrer Dienstleistungen</a>!</translation>
 
+   <translation id="core_service_expiration_label" qtlid="30406">Ablaufdatum</translation>
    <translation id="core_service_expiration" qtlid="229411">Abgelaufen am</translation>
    <translation id="core_service_expiration_manual_renew" qtlid="377571">Zu verlängern am </translation>
    <translation id="core_service_expiration_auto_renew" qtlid="414986">Verlängerung am</translation>
@@ -580,6 +583,8 @@
    <translation id="otrs_menu_email_history" qtlid="260091">E-Mail-History</translation>
    <translation id="otrs_menu_telephony_contact" qtlid="260827">Telefonischer Support</translation>
    <translation id="otrs_menu_changelog" qtlid="124964">Changelog</translation>
+
+   <translation id="common_configuration_creation" qtlid="26419">Erstellungsdatum</translation>
 
    <translation id="common_criteria_adder_column_label" qtlid="479108">Spalte</translation>
    <translation id="common_criteria_adder_operator_label" qtlid="425806">Bedingung</translation>
@@ -614,13 +619,18 @@
    <translation id="common_field_error_minlength" qtlid="472359">Bitte geben Sie mindestens {{minlength}} Zeichen ein.</translation>
    <translation id="common_field_error_maxlength" qtlid="472372">Bitte geben Sie höchstens {{maxlength}} Zeichen ein.</translation>
    <translation id="common_field_error_pattern" qtlid="472385">Bitte geben Sie ein gültiges Format ein.</translation>
+   <translation id="menu_action_label" qtlid="497164">{0} (Liste der Aktionen)</translation>
+
+   <translation id="server_tab_USB_STORAGE_order_select_duration" qtlid="181214">Wählen Sie die Laufzeit aus:</translation>
 
    <translation id="common_navbar_notification_title" qtlid="33250">Benachrichtigungen</translation>
-   <translation id="common_navbar_notification_error" qtlid="323434">Oops! Das Menü kann nicht gestartet werden.</translation>
-   <translation id="common_navbar_notification_error_subject" qtlid="26407">Fehler</translation>
    <translation id="common_navbar_notification_see_all" qtlid="401914">Alle Benachrichtigungen anzeigen</translation>
+   <translation id="common_navbar_notification_error_in_notification" qtlid="492055">Es ist ein Fehler aufgetreten.</translation>
+   <translation id="common_navbar_notification_error_in_notification_description" qtlid="492068">Das Menü kann nicht gestartet werden.</translation>
    <translation id="common_navbar_notification_mark_as_read" qtlid="70865">Als gelesen markieren</translation>
    <translation id="common_navbar_notification_mark_as_unread" qtlid="70877">Als nicht gelesen markieren</translation>
+   <translation id="common_navbar_notification_none" qtlid="492081">Sie sind auf dem neuesten Stand.</translation>
+   <translation id="common_navbar_notification_none_description" qtlid="492094">Sie haben keine Benachrichtigungen.</translation>
 
    <translation id="common_pagination_resultsperpage" qtlid="433384">Ergebnisse pro Seite</translation>
    <translation id="common_pagination_page" qtlid="433397">Seite</translation>
@@ -637,4 +647,9 @@
    <translation id="common_stepper_next_button_label" qtlid="17743">Weiter</translation>
    <translation id="common_stepper_submit_button_label" qtlid="52807">Absenden</translation>
    <translation id="common_stepper_cancel_button_label" qtlid="37863">Abbrechen</translation>
+
+   <translation id="common_subscription_contacts" qtlid="32206">Kontakte</translation>
+   <translation id="common_subscription_contacts_admin" qtlid="43948">Administrator</translation>
+   <translation id="common_subscription_contacts_billing" qtlid="32950">Abrechnung</translation>
+   <translation id="common_subscription_contacts_tech" qtlid="31750">Technisch</translation>
 </translations>

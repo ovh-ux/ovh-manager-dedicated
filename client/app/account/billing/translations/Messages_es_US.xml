@@ -15,7 +15,7 @@
    <translation id="autorenew_service_autorenew_go_to_autorenew" qtlid="351669">Para gestionar la renovación de servicios, haga clic <a href="#/billing/autoRenew">aquí</a>.</translation>
    <translation id="autorenew_service_after_expiration_date" qtlid="349312">Expiró el {0}</translation>
    <translation id="autorenew_service_renew" qtlid="168172">Renovación</translation>
-   <translation id="autorenew_service_renew_change" qtlid="37875">Modifier</translation>
+   <translation id="autorenew_service_renew_change" qtlid="37875">Modificar</translation>
    <translation id="autorenew_service_frequency" qtlid="405279">Tipo</translation>
    <translation id="autorenew_service_renew_mass_migration_soon" qtlid="398768">La migración de sus productos actuales hacia el dispositivo de renovación automática estará disponible próximamente.</translation>
    <translation id="autorenew_service_renew_requires_mean_and_date" qtlid="349325">Para completar la activación de la renovación automática, debe añadir una forma de pago y, a continuación, podrá seleccionar la fecha del cargo.</translation>
@@ -85,7 +85,7 @@
    <translation id="autorenew_service_type_DEDICATED_SERVER" qtlid="66032">Servidor dedicado</translation>
    <translation id="autorenew_service_type_DEDICATED_HOUSING" qtlid="371476">Servidor en housing</translation>
    <translation id="autorenew_service_type_DEDICATED_CLOUD" qtlid="20131">Private Cloud</translation>
-   <translation id="autorenew_service_type_DOMAIN" qtlid="8458">Domaine</translation>
+   <translation id="autorenew_service_type_DOMAIN" qtlid="8458">Dominio</translation>
    <translation id="autorenew_service_type_HOSTING_PRIVATE_DATABASE" qtlid="219966">Alojamiento BD SQL Privado</translation>
    <translation id="autorenew_service_type_HOSTING_WEB" qtlid="219979">Web hosting</translation>
    <translation id="autorenew_service_type_IP_LOADBALANCING" qtlid="407832">IP Load Balancing</translation>
@@ -247,22 +247,15 @@
    <translation id="common_payment_type_creditCard_expiration_date" qtlid="108769">Date d'expiration :</translation>
 
    <translation id="common_time_period_in_years" qtlid="374495">{0} años</translation>
-   <translation id="common_time_period_one_year" qtlid="70277">1 an</translation>
+   <translation id="common_time_period_one_year" qtlid="70277">1 año</translation>
    <translation id="common_time_period_in_months" qtlid="220148">{0} mes(es)</translation>
-   <translation id="common_time_period_one_month" qtlid="70241">1 mois</translation>
+   <translation id="common_time_period_one_month" qtlid="70241">1 mes</translation>
 
    <translation id="pagination_page" qtlid="486464">Página {{ current }}/{{ last }}</translation>
    <translation id="pagination_display" qtlid="69353">Afficher</translation>
    <translation id="pagination_display_all" qtlid="139884">Todo</translation>
    <translation id="pagination_go" qtlid="492619">Ok</translation>
    <translation id="history_title2" qtlid="159540">Mis facturas</translation>
-   <translation id="history_invoice_loading_errors" qtlid="402984">Se ha producido un error al cargar {0} factura(s).</translation>
-   <translation id="history_invoices_postal_mail" qtlid="486867">Recibir facturas en formato impreso</translation>
-
-   <translation id="history_invoices_choice_modal_activation" qtlid="486880">¿Desea confirmar la activación de esta opción?</translation>
-   <translation id="history_invoices_choice_modal_deactivation" qtlid="486893">¿Desea confirmar la desactivación de esta opción?</translation>
-   <translation id="history_invoices_choice_modal_update_success" qtlid="486906">La configuración se ha actualizado correctamente.</translation>
-   <translation id="history_invoices_choice_modal_update_error" qtlid="486919">Se ha producido un error al actualizar la configuración.</translation>
 
    <translation id="history_table_head_date" qtlid="374508">Fecha de emisión</translation>
    <translation id="history_table_head_id" qtlid="16445">Référence</translation>
@@ -405,7 +398,7 @@
    <translation id="payment_mean_contact_presentation_billingContactId_title" qtlid="451374">Dirección asociada a la tarjeta de crédito</translation>
    <translation id="payment_mean_contact_presentation_new_card_title" qtlid="480867">Introduzca una nueva tarjeta</translation>
    <translation id="payment_mean_contact_presentation_update_title_billingContactId" qtlid="451032">Cambiar la dirección asociada a la tarjeta de crédito</translation>
-   <translation id="payment_mean_contact_presentation_update_label" qtlid="37875">Modifier</translation>
+   <translation id="payment_mean_contact_presentation_update_label" qtlid="37875">Modificar</translation>
    <translation id="payment_mean_contact_presentation_phone_label" qtlid="451387">Teléfono:</translation>
    <translation id="payment_mean_contact_presentation_email_label" qtlid="116322">E-mail :</translation>
    <translation id="payment_mean_contact_creation_main_title" qtlid="381790">Creación de un contacto</translation>
@@ -413,7 +406,7 @@
    <translation id="payment_mean_contact_creation_fieldset_GENERAL_INFORMATIONS" qtlid="27115">Informations générales</translation>
    <translation id="payment_mean_contact_creation_fieldset_LEGAL" qtlid="321377">Información jurídica</translation>
    <translation id="payment_mean_contact_creation_fieldset_PROFILE" qtlid="23035">Profil</translation>
-   <translation id="payment_mean_contact_creation_fieldset_CONTACTS" qtlid="32206">Contacts</translation>
+   <translation id="payment_mean_contact_creation_fieldset_CONTACTS" qtlid="32206">Contactos</translation>
    <translation id="payment_mean_contact_creation_label_gender" qtlid="238739">Obligaciones</translation>
    <translation id="payment_mean_contact_creation_label_firstName" qtlid="23323">Nombre</translation>
    <translation id="payment_mean_contact_creation_label_lastName" qtlid="374373">Apellidos</translation>
@@ -735,8 +728,8 @@
    <translation id="payment_mean_contact_contact_creation_cancel" qtlid="37863">Cancelar</translation>
 
    <translation id="mean_manage_my_services" qtlid="287527">Gestionar mis servicios</translation>
-   <translation id="mean_table_head_creation_date" qtlid="26419">Date de création</translation>
-   <translation id="mean_table_head_description" qtlid="9238">Description</translation>
+   <translation id="mean_table_head_creation_date" qtlid="26419">Fecha de creación</translation>
+   <translation id="mean_table_head_description" qtlid="9238">Descripción</translation>
    <translation id="mean_table_head_type" qtlid="176950">Forma de pago</translation>
    <translation id="mean_table_head_options" qtlid="23395">Options</translation>
    <translation id="payment_mean_no_description" qtlid="17971">Aucune description</translation>
@@ -758,7 +751,7 @@
    <translation id="paymentMean_label_creditcard_owner_name" qtlid="436341">Nombre que aparece en la tarjeta bancaria</translation>
    <translation id="paymentMean_label_creditcard_number" qtlid="30778">Numéro</translation>
    <translation id="paymentMean_label_creditcard_validation" qtlid="33802">Validation</translation>
-   <translation id="paymentMean_label_creditcard_expiration" qtlid="30406">Expiration</translation>
+   <translation id="paymentMean_label_creditcard_expiration" qtlid="30406">Expiración</translation>
    <translation id="paymentMean_label_iban" qtlid="177015">IBAN</translation>
    <translation id="paymentMean_label_bic" qtlid="177028">BIC</translation>
    <translation id="paymentMean_label_ownerName" qtlid="177041">Nombre del titular de la cuenta</translation>
@@ -1009,7 +1002,7 @@
    <translation id="fidelity_no_account" qtlid="261543">Usted no tiene cuentas de fidelidad</translation>
 
    <translation id="sla_table_head_date" qtlid="24523">Date</translation>
-   <translation id="sla_table_head_description" qtlid="9238">Description</translation>
+   <translation id="sla_table_head_description" qtlid="9238">Descripción</translation>
    <translation id="sla_table_head_refund" qtlid="266900">Compensación</translation>
    <translation id="sla_table_apply" qtlid="41326">Appliquer</translation>
    <translation id="sla_informations_error" qtlid="444774">Se ha producido un error al cargar los datos. Por favor, inténtelo de nuevo más tarde.</translation>
@@ -1061,7 +1054,7 @@
    <translation id="vouchers_title" qtlid="270917">Mis códigos promocionales</translation>
    <translation id="vouchers_movements_title" qtlid="270956">Operaciones con el código promocional <strong>{0}</strong></translation>
    <translation id="voucher_movements_table_head_id" qtlid="8194">ID</translation>
-   <translation id="voucher_movements_table_head_description" qtlid="9238">Description</translation>
+   <translation id="voucher_movements_table_head_description" qtlid="9238">Descripción</translation>
    <translation id="voucher_movements_table_head_date" qtlid="24523">Date</translation>
    <translation id="voucher_movements_table_head_amount" qtlid="45328">Montant</translation>
    <translation id="voucher_movements_table_head_previous_balance" qtlid="270969">Balance anterior</translation>
@@ -1080,18 +1073,11 @@
 
 <!-- STATEMENTS -->
    <translation id="statements_account_automatic_payment_inactive" qtlid="374573">El débito directo no está disponible para la renovación de sus servicios.</translation>
-   <translation id="statements_account_amount_automatically_collected" qtlid="349153">Se realizará un cargo por el importe de <strong>{0}</strong> en su forma de pago por defecto.</translation>
-   <translation id="statements_account_amount_to_pay" qtlid="349166">Tiene pendiente un importe de <strong>{0}</strong> para poder renovar sus servicios.</translation>
    <translation id="statements_account_no_default_payment_mean" qtlid="353309">No ha registrado ninguna forma de pago por defecto.</translation>
    <translation id="statements_account_invalid_default_payment_mean" qtlid="353322">Su forma de pago por defecto ya no es válida.</translation>
    <translation id="statements_account_manage_my_payment_means" qtlid="287514">Gestionar mis modalidades de pago</translation>
    <translation id="statements_account_pay_debt_button" qtlid="349179">Abonar el importe pendiente inmediatamente</translation>
-   <translation id="statements_account_debt_payment" qtlid="344240">Liquidación</translation>
-   <translation id="statements_account_debt_payment_explanation" qtlid="353335">Esta acción generará una orden de pedido válida durante una hora, que permita abonar el saldo inmediatamente. </translation>
-   <translation id="statements_account_debt_payment_bc_with_amount" qtlid="353348">Se ha generado la <a href="{1}" target="_blank">orden de pedido {0}</a> por la cantidad de {2}.</translation>
-   <translation id="statements_accounts_debt_payment_confirm" qtlid="344227">Regular saldo</translation>
-   <translation id="statements_account_debt_payment_order_generated" qtlid="344266">Se ha generado una <a href="{1}" target="_blank">orden de pedido {0}</a> para liquidar el saldo.</translation>
-   <translation id="statements_account_debt_payment_error" qtlid="344279">Lo sentimos: se ha producido un error. </translation>
+
    <translation id="statements_table_caption" qtlid="343252">Pedidos de cuentas</translation>
    <translation id="statements_table_header_order" qtlid="8302">Commande</translation>
    <translation id="statements_table_header_date" qtlid="24523">Date</translation>
@@ -1253,7 +1239,7 @@
    <translation id="billing_credits_none" qtlid="448933">Usted no dispone de cuentas de crédito.</translation>
    <translation id="billing_credit_balance_load_error" qtlid="448946">Se ha producido un error al cargar las cuentas de crédito.</translation>
    <translation id="billing_credit_balance_header_name" qtlid="3818">Nombre</translation>
-   <translation id="billing_credit_balance_header_creation_date" qtlid="26419">Date de création</translation>
+   <translation id="billing_credit_balance_header_creation_date" qtlid="26419">Fecha de creación</translation>
    <translation id="billing_credit_balance_header_last_update_date" qtlid="191291">Última actualización</translation>
    <translation id="billing_credit_balance_header_expiration_date" qtlid="33010">Date d'expiration</translation>
    <translation id="billing_credit_balance_header_expiration_amount" qtlid="448959">Importe próximo a expirar</translation>

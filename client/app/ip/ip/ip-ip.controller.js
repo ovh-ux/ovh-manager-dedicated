@@ -1,4 +1,5 @@
-angular.module("Module.ip.controllers").controller("IpDashboardCtrl", ($scope, $rootScope, $location, $timeout, $q, $translate, featureAvailability, Ip, IpReverse, IpFirewall, IpMitigation, IpVirtualMac, IpOrganisation, Alerter, Validator) => {
+angular.module("Module.ip.controllers").controller("IpDashboardCtrl", (
+    $location, $q, $rootScope, $scope, $stateParams, $timeout, $translate, Alerter, featureAvailability, Ip, IpFirewall, IpMitigation, IpOrganisation, IpReverse, IpVirtualMac, Validator) => {
     "use strict";
 
     $scope.currentView = "table";
@@ -80,12 +81,10 @@ angular.module("Module.ip.controllers").controller("IpDashboardCtrl", ($scope, $
                 $scope.filters.service = $scope.services[0];
 
                 // If serviceName in URL param
-                if ($location.search().serviceName) {
-                    const selectedService = _.find($scope.services, { serviceName: $location.search().serviceName });
+                if ($stateParams.serviceName) {
+                    const selectedService = _.find($scope.services, { serviceName: $stateParams.serviceName });
                     if (selectedService) {
                         $scope.filters.service = selectedService;
-                    } else {
-                        $location.search("serviceName", null);
                     }
                 }
 
@@ -307,9 +306,7 @@ angular.module("Module.ip.controllers").controller("IpDashboardCtrl", ($scope, $
                 return mainQueue;
             })
             .finally(() => {
-                const serviceName = $scope.filters.service.serviceName;
                 $scope.loading.table = false;
-                $location.search("serviceName", serviceName !== "_ALL" ? serviceName : null);
                 refreshAlerts();
             });
     };

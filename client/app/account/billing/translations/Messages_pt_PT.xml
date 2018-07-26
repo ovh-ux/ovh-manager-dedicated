@@ -256,13 +256,6 @@
    <translation id="pagination_display_all" qtlid="139884">Tudo</translation>
    <translation id="pagination_go" qtlid="492619">Ok</translation>
    <translation id="history_title2" qtlid="159540">Faturas</translation>
-   <translation id="history_invoice_loading_errors" qtlid="402984">Ocorreu um erro aquando da recuperação da(s) {0} fatura(s).</translation>
-   <translation id="history_invoices_postal_mail" qtlid="486867">Recevoir mes factures au format papier</translation>
-
-   <translation id="history_invoices_choice_modal_activation" qtlid="486880">Voulez-vous confirmer l'activation de cette option ?</translation>
-   <translation id="history_invoices_choice_modal_deactivation" qtlid="486893">Voulez-vous confirmer la désactivation de cette option ?</translation>
-   <translation id="history_invoices_choice_modal_update_success" qtlid="486906">Le paramètre a bien été mis à jour</translation>
-   <translation id="history_invoices_choice_modal_update_error" qtlid="486919">Une erreur est survenue lors de la mise à jour du paramètre</translation>
 
    <translation id="history_table_head_date" qtlid="374508">Data de emissão</translation>
    <translation id="history_table_head_id" qtlid="16445">Referência</translation>
@@ -1080,18 +1073,11 @@
 
 <!-- STATEMENTS -->
    <translation id="statements_account_automatic_payment_inactive" qtlid="374573">Não é possível a utilização de débito direto para as renovações dos seus serviços.</translation>
-   <translation id="statements_account_amount_automatically_collected" qtlid="349153">Será debitada a importância de <strong>{0}</strong> usando o método de pagamento predefinido.</translation>
-   <translation id="statements_account_amount_to_pay" qtlid="349166">Para renovar os serviços, é necessário liquidar o seguinte montante: <strong>{0}</strong>.</translation>
    <translation id="statements_account_no_default_payment_mean" qtlid="353309">Não definiu um método de pagamento padrão.</translation>
    <translation id="statements_account_invalid_default_payment_mean" qtlid="353322">O seu método de pagamento padrão deixou de ser válido.</translation>
    <translation id="statements_account_manage_my_payment_means" qtlid="287514">Gerir métodos de pagamento</translation>
    <translation id="statements_account_pay_debt_button" qtlid="349179">Pagar a minha dívida imediatamente</translation>
-   <translation id="statements_account_debt_payment" qtlid="344240">Pagamento do saldo</translation>
-   <translation id="statements_account_debt_payment_explanation" qtlid="353335">Esta ação levará à criação de uma nota de encomenda que irá permitir pagar um saldo. Esta nota de encomenda terá a validade de uma hora.</translation>
-   <translation id="statements_account_debt_payment_bc_with_amount" qtlid="353348">A <a href="{1}" target="_blank">nota de encomenda {0}</a> foi criada para um montante de {2}.</translation>
-   <translation id="statements_accounts_debt_payment_confirm" qtlid="344227">Pagar o saldo pendente</translation>
-   <translation id="statements_account_debt_payment_order_generated" qtlid="344266">A <a href="{1}" target="_blank">nota de encomenda {0}</a> foi gerada para poder efetuar o pagamento.</translation>
-   <translation id="statements_account_debt_payment_error" qtlid="344279">Ocorreu um erro e pedimos desculpa pelo incomodo causado-</translation>
+
    <translation id="statements_table_caption" qtlid="343252">Encomendas da sua conta</translation>
    <translation id="statements_table_header_order" qtlid="8302">Comando</translation>
    <translation id="statements_table_header_date" qtlid="24523">Data</translation>

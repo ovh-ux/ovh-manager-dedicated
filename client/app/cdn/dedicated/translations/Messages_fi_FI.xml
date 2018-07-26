@@ -9,7 +9,7 @@
    <translation id="cdn_configuration_add_domain_step2_no_backend" qtlid="133994">Sinulla ei ole enää taustajärjestelmiä jäljellä</translation>
    <translation id="cdn_configuration_add_domain_step2_addBackend" qtlid="132135">Tai kiinnitä se uuteen taustajärjestelmään:</translation>
    <translation id="cdn_configuration_add_domain_step2_full" qtlid="127084">Taustajärjestelmäpooli on täynnä. Tämän IP-osoitteen lisääminen vaatii uuden taustajärjestelmän (backendin).</translation>
-   <translation id="cdn_configuration_add_domain_step2_full_buy" qtlid="178965">Tilaa backend</translation>
+   <translation id="cdn_configuration_add_domain_step2_full_buy" qtlid="178965">Tilaa taustajärjestelmä</translation>
    <translation id="cdn_configuration_add_domain_step3_question" qtlid="183632">Haluatko lisätä verkkotunnuksen CDN:ään<span class="italic normal">{0}</span> ?</translation>
    <translation id="cdn_configuration_add_domain_step3_domain" qtlid="111918">Verkkotunnus:</translation>
    <translation id="cdn_configuration_add_domain_step3_backend" qtlid="132161">Taustajärjestelmä:</translation>
@@ -40,9 +40,13 @@
    <translation id="cdn_configuration_backend_upgrade_step4_explication2" qtlid="167886">Uusi välilehti avataan ja sinut ohjataan OVH:n maksusivulle.</translation>
    <translation id="cdn_configuration_backend_upgrade_fail" qtlid="132304">Tapahtui virhe ladattaessa dataa</translation>
    <translation id="cdn_configuration_terminate_title_button" qtlid="56337">Irtisano palvelu</translation>
+   <translation id="cdn_configuration_info_title" qtlid="26551">Tiedot</translation>
+   <translation id="cdn_configuration_domains" qtlid="32590">Verkkotunnukset</translation>
    <translation id="cdn_configuration_domain" qtlid="132317">0 verkkotunnusta</translation>
    <translation id="cdn_configuration_domain_1" qtlid="132330">1 verkkotunnus</translation>
    <translation id="cdn_configuration_domain_other" qtlid="486555">{} verkkotunnusta</translation>
+   <translation id="cdn_configuration_ip" qtlid="25615">IP</translation>
+   <translation id="cdn_configuration_backends" qtlid="497177">IP-taustajärjestelmät</translation>
    <translation id="cdn_configuration_backend" qtlid="132356">{0} x IP-taustajärjestelmä</translation>
    <translation id="cdn_configuration_activity" qtlid="143160">Aktiviteetti (viime kuukausi)</translation>
    <translation id="cdn_configuration_activity_page_viewed_0" qtlid="128118">Ei yhtään katsottua kohdetta</translation>
@@ -81,6 +85,9 @@
    <translation id="cdn_configuration_cacherules_upgrade_step4_explication" qtlid="132291">Ota huomioon että maksun hyväksymisestä lisäpalvelun aktivointiin omaan hallintapaneeliisi menee keskimäärin noin kaksi (2) tuntia.</translation>
    <translation id="cdn_configuration_cacherules_upgrade_step4_explication2" qtlid="167886">Uusi välilehti avataan ja sinut ohjataan OVH:n maksusivulle.</translation>
    <translation id="cdn_configuration_cacherules_upgrade_fail" qtlid="132304">Tapahtui virhe ladattaessa dataa</translation>
+   <translation id="cdn_domain_configuration_title_button" qtlid="449401">Verkkotunnuksen konfigurointi</translation>
+   <translation id="cdn_configuration_shortcut_title" qtlid="403658">Pikalinkit</translation>
+
    <translation id="cdn_domain_configuration_purge_title_button" qtlid="125660">Tyhjennä välimuisti</translation>
    <translation id="cdn_domain_configuration_bypass_title_button" qtlid="125672">Ohita CDN</translation>
    <translation id="cdn_domain_configuration_cacherule_create_title_button" qtlid="125696">Luo uusi sääntö</translation>
@@ -165,6 +172,10 @@
    <translation id="cdn_domain_tab_statistics" qtlid="26671">Tilastot</translation>
    <translation id="cdn_tab_statistics" qtlid="26671">Tilastot</translation>
    <translation id="cdn_tab_ssl" qtlid="84921">SSL</translation>
+   <translation id="cdn_network" qtlid="25591">Verkko</translation>
+   <translation id="cdn_network_domain" qtlid="8458">Verkkotunnus</translation>
+   <translation id="cdn_network_ipv4" qtlid="101781">IPv4</translation>
+   <translation id="cdn_network_servers" qtlid="8290">Palvelin</translation>
    <translation id="cdn_cacherule_search_placeholder" qtlid="178939">Etsi sääntöä</translation>
    <translation id="cdn_cacherule_table_empty" qtlid="132980">Ei yhtään välimuistisääntöä</translation>
    <translation id="cdn_cacherule_table_search_empty" qtlid="178952">Ei sääntöjä</translation>

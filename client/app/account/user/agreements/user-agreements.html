@@ -4,7 +4,8 @@
         <h1 data-translate="user_agreements_title"></h1>
     </div>
 
-    <div class="tab-content">
+    <div class="tab-content"
+         data-ui-view>
         <div data-ovh-alert="agreements_alerter"></div>
 
         <div class="alert"
@@ -37,7 +38,7 @@
                 <tbody>
                     <tr data-ng-repeat="agreement in toActivate.list.results track by $index">
                         <th scope="row">
-                            <a data-ng-href="{{ '#/useraccount/agreements/' + agreement.id + '/details' }}"
+                            <a data-ui-sref="app.account.billing.service.agreements.details({ id: agreement.id })"
                                data-ng-bind-html="'user_agreements_agreed' | translate:{ t0: agreement.name }">
                             </a>
                         </th>
@@ -134,7 +135,9 @@
             <tbody data-ng-if="list.count > 0 && !loading">
                 <tr data-ng-repeat="agreement in list.list.results track by $index">
                     <th scope="row">
-                        <a data-ng-href="{{ '#/useraccount/agreements/' + agreement.id + '/details' }}" data-ng-bind="agreement.name"></a>
+                        <a data-ui-sref="app.account.billing.service.agreements.details({ id: agreement.id })"
+                           data-ng-bind="agreement.name">
+                        </a>
                     </th>
                     <td>
                         <span class="label"

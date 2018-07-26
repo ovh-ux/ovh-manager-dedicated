@@ -109,6 +109,8 @@
    <translation id="server_tab_stats_rtm_infos_cpu_core" qtlid="204090">Coeurs</translation>
    <translation id="server_tab_stats_rtm_infos_cpu_cache" qtlid="30214">Cache</translation>
    <translation id="server_tab_stats_rtm_infos_ram" qtlid="31354">RAM</translation>
+   <translation id="server_tab_stats_rtm_infos_swap" qtlid="32902">SWAP</translation>
+   <translation id="server_tab_stats_rtm_infos_versions" qtlid="448522">Versions</translation>
    <translation id="server_tab_stats_rtm_infos_rtmVersion" qtlid="193956">Version Real Time Monitoring</translation>
    <translation id="server_tab_stats_rtm_infos_rtmVersion_update" qtlid="204103">Une mise à jour est disponible</translation>
    <translation id="server_tab_stats_rtm_infos_kernelVersion" qtlid="204116">Kernel version</translation>
@@ -123,18 +125,18 @@
    <translation id="server_tab_stats_rtm_errorData" qtlid="204168">Informations indisponible</translation>
 
    <translation id="server_tab_stats_rtm_uptime" qtlid="31594">Uptime</translation>
-   <translation id="server_tab_stats_rtm_uptime_year_1" qtlid="204181">an</translation>
-   <translation id="server_tab_stats_rtm_uptime_year_other" qtlid="94135">ans</translation>
-   <translation id="server_tab_stats_rtm_uptime_month_1" qtlid="40222">mois</translation>
-   <translation id="server_tab_stats_rtm_uptime_month_other" qtlid="40222">mois</translation>
-   <translation id="server_tab_stats_rtm_uptime_day_1" qtlid="44248">jour</translation>
-   <translation id="server_tab_stats_rtm_uptime_day_other" qtlid="44260">jours</translation>
-   <translation id="server_tab_stats_rtm_uptime_hour_1" qtlid="40234">heure</translation>
-   <translation id="server_tab_stats_rtm_uptime_hour_other" qtlid="44236">heures</translation>
-   <translation id="server_tab_stats_rtm_uptime_minute_1" qtlid="44212">minute</translation>
-   <translation id="server_tab_stats_rtm_uptime_minute_other" qtlid="44224">minutes</translation>
-   <translation id="server_tab_stats_rtm_uptime_seconde_1" qtlid="94279">seconde</translation>
-   <translation id="server_tab_stats_rtm_uptime_seconde_other" qtlid="94291">secondes</translation>
+   <translation id="server_tab_stats_rtm_uptime_year_1" qtlid="70277">1 an</translation>
+   <translation id="server_tab_stats_rtm_uptime_year_other" qtlid="158604">{} ans</translation>
+   <translation id="server_tab_stats_rtm_uptime_month_1" qtlid="70241">1 mois</translation>
+   <translation id="server_tab_stats_rtm_uptime_month_other" qtlid="158591">{} mois</translation>
+   <translation id="server_tab_stats_rtm_uptime_day_1" qtlid="28807">1 jour</translation>
+   <translation id="server_tab_stats_rtm_uptime_day_other" qtlid="158578">{} jours</translation>
+   <translation id="server_tab_stats_rtm_uptime_hour_1" qtlid="34114">1 heure</translation>
+   <translation id="server_tab_stats_rtm_uptime_hour_other" qtlid="222436">{} heures</translation>
+   <translation id="server_tab_stats_rtm_uptime_minute_1" qtlid="32326">1 minute</translation>
+   <translation id="server_tab_stats_rtm_uptime_minute_other" qtlid="222462">{} minutes</translation>
+   <translation id="server_tab_stats_rtm_uptime_seconde_1" qtlid="193631">1 seconde</translation>
+   <translation id="server_tab_stats_rtm_uptime_seconde_other" qtlid="222475">{} secondes</translation>
 
    <translation id="server_tab_stats_rtm_profile" qtlid="204194">Profil machine</translation>
    <translation id="server_tab_stats_rtm_usage" qtlid="204207">Utilisation serveur</translation>
@@ -144,6 +146,7 @@
    <translation id="server_tab_stats_rtm_partions_mountPoint" qtlid="110958">Point de montage</translation>
    <translation id="server_tab_stats_rtm_partions_usage" qtlid="76758">Espace utilisé</translation>
    <translation id="server_tab_stats_rtm_partions_inodeUsage" qtlid="194151">Inodes utilisés</translation>
+   <translation id="server_tab_stats_rtm_location" qtlid="61074">Emplacement</translation>
 
    <translation id="server_configuration_state_title" qtlid="26443">Statut</translation>
    <translation id="server_configuration_state_OK" qtlid="96704">Normal</translation>
@@ -334,9 +337,9 @@
    <translation id="server_configuration_monitoring_services_use" qtlid="243728">Monitorer mes services</translation>
 
    <translation id="server_configuration_services_state_links" qtlid="245116">Liens</translation>
-   <translation id="server_configuration_services_state_links_weathermap" qtlid="245129"><a href="{0}" target="_blank">Weathermap</a></translation>
-   <translation id="server_configuration_services_state_links_vms" qtlid="245142"><a href="{0}" target="_blank">VMS</a></translation>
-   <translation id="server_configuration_services_state_links_travaux" qtlid="245155"><a href="{0}" target="_blank">Travaux</a></translation>
+   <translation id="server_configuration_services_state_links_weathermap" qtlid="497216">Weathermap</translation>
+   <translation id="server_configuration_services_state_links_vms" qtlid="497229">VMS</translation>
+   <translation id="server_configuration_services_state_links_travaux" qtlid="74909">Travaux</translation>
 
    <translation id="server_configuration_profesionnal_use" qtlid="199962">Option Pro</translation>
    <translation id="server_configuration_profesionnal_use_info" qtlid="199975">Vous ne pourrez pas accéder a vos NAS depuis ce serveur sans option Pro</translation>
@@ -360,15 +363,17 @@
    <translation id="server_configuration_distribution" qtlid="151971">Système (OS)</translation>
    <translation id="server_configuration_distribution_none" qtlid="233034">Non installé</translation>
    <translation id="server_configuration_boot" qtlid="151984">Boot</translation>
-   <translation id="server_configuration_creation" qtlid="371726">Location débutée le</translation>
    <translation id="server_configuration_datacenter" qtlid="30802">Datacentre</translation>
    <translation id="server_configuration_rack" qtlid="32050">Baie</translation>
    <translation id="server_configuration_server_id" qtlid="225915">Serveur ID</translation>
    <translation id="server_configuration_name" qtlid="151997">Nom OVH</translation>
+   <translation id="server_configuration_displayname" qtlid="3818">Nom</translation>
+   <translation id="server_configuration_displayname_edit_button" qtlid="37875">Modifier</translation>
    <translation id="server_configuration_description" qtlid="191655">Nom commercial</translation>
    <translation id="server_configuration_description_housing" qtlid="233583">Housing</translation>
    <translation id="server_configuration_reverse" qtlid="32338">Reverse</translation>
    <translation id="server_configuration_reverse_not_configured" qtlid="124952">Non configuré</translation>
+   <translation id="server_configuration_reverse_edit_button" qtlid="37875">Modifier</translation>
    <translation id="server_configuration_ipv4" qtlid="167899">Ip</translation>
    <translation id="server_configuration_ipv6" qtlid="191239">Ipv6</translation>
    <translation id="server_configuration_ipv4_manage" qtlid="16301">Gérer</translation>
@@ -994,9 +999,10 @@
    <translation id="server_services" qtlid="34632">Services</translation>
    <translation id="server_informations_general" qtlid="27115">Informations générales</translation>
 
+   <translation id="server_subscription" qtlid="28891">Abonnement</translation>
+   <translation id="server_network" qtlid="25591">Réseau</translation>
    <translation id="server_bandwidth" qtlid="38565">Bande passante</translation>
    <translation id="server_bandwidth_connection" qtlid="32446">Connexion réseau</translation>
-   <translation id="server_bandwidth_type" qtlid="2642">Type</translation>
    <translation id="server_bandwidth_type_included" qtlid="204298">Incluse</translation>
    <translation id="server_bandwidth_type_platinum" qtlid="204311">Platinium</translation>
    <translation id="server_bandwidth_type_premium" qtlid="180941">Premium</translation>

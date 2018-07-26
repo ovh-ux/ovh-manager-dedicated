@@ -1,30 +1,30 @@
-<img class="d-block mx-auto mb-3"
-     alt="{{ infoServer.dcImage }}"
-     data-ng-if="infoServer.dcImage"
-     data-ng-src="images/map/{{ infoServer.dcImage }}.png" />
-<ul class="list-unstyled">
-    <li class="oui-tile__item">
-        <div class="oui-tile__definition">
-            <strong class="d-block"
-                    data-translate="server_configuration_datacenter">
-            </strong>
-            <span data-ng-bind="infoServer.dc || '-'"></span>
-        </div>
-    </li>
-    <li class="oui-tile__item">
-        <div class="oui-tile__definition">
-            <strong class="d-block"
-                    data-translate="server_configuration_rack">
-            </strong>
-            <span data-ng-bind="infoServer.rack || '-'"></span>
-        </div>
-    </li>
-    <li class="oui-tile__item">
-        <div class="oui-tile__definition">
-            <strong class="d-block"
-                    data-translate="server_configuration_server_id">
-            </strong>
-            <span data-ng-bind="infoServer.serverId || '-'"></span>
-        </div>
-    </li>
-</ul>
+<div class="oui-tile__item">
+    <img class="d-block mx-auto mb-3"
+         alt="{{ infoServer.dcImage }}"
+         data-ng-if="infoServer.dcImage"
+         data-ng-src="images/map/{{ infoServer.dcImage }}.png" />
+</div>
+<div class="oui-tile__item">
+    <dl class="oui-tile__definition">
+        <dt class="oui-tile__term"
+            data-translate="server_configuration_datacenter"></dt>
+        <dd class="oui-tile__description"
+            data-ng-bind="infoServer.dc || '-'"></dd>
+    </dl>
+</div>
+<div class="oui-tile__item">
+    <dl class="oui-tile__definition">
+        <dt class="oui-tile__term"
+            data-translate="server_configuration_rack"></dt>
+        <dd class="oui-tile__description"
+            data-ng-bind="infoServer.rack || '-'"></dd>
+    </dl>
+</div>
+<div class="oui-tile__item">
+    <dl class="oui-tile__definition">
+        <dt class="oui-tile__term"
+            data-translate="server_configuration_server_id"></dt>
+        <dd class="oui-tile__description"
+            data-ng-bind="infoServer.serverId || '-'"></dd>
+    </dl>
+</div>

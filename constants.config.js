@@ -862,7 +862,7 @@ var constants = {
         },
         MANAGER_URLS : {
             "dedicated": "https://www.ovhcloud.com/manager/dedicated/",
-            //"cloud"     : "/manager/cloud/index.html#/"
+            "cloud"    : "https://www.ovhcloud.com/manager/cloud/",
         },
         TOP_GUIDES: {
             sd: {

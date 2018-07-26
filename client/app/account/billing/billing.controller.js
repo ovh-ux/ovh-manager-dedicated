@@ -1,4 +1,4 @@
-angular.module("Billing.controllers").controller("Billing.controllers.main", ($scope, $location, BILLING_BASE_URL, $filter, $timeout) => {
+angular.module("Billing").controller("BillingCtrl", ($scope, $location, BILLING_BASE_URL, $filter, $timeout) => {
     $scope.BILLING_BASE_URL = BILLING_BASE_URL;
     $scope.pageSizeAvailables = [10, 20, 50];
 

@@ -178,7 +178,9 @@ module.exports = {
             "node_modules/angular-qr/angular-qr.min.js",
             "node_modules/u2f-api-polyfill/u2f-api-polyfill.js",
             "node_modules/ovh-angular-otrs/dist/ovh-angular-otrs.min.js",
+            "node_modules/ovh-angular-apiv7/dist/ovh-angular-apiv7.min.js",
             "node_modules/ovh-api-services/dist/ovh-api-services.min.js",
+            "node_modules/ovh-angular-apiv7/dist/ovh-angular-apiv7.min.js",
             "node_modules/ovh-angular-toaster/dist/ovh-angular-toaster.min.js",
             "node_modules/ovh-jquery-ui-draggable-ng/dist/ovh-jquery-ui-draggable-ng.min.js",
             "node_modules/@bower_components/angular-ui-router/release/angular-ui-router.min.js",
@@ -196,7 +198,8 @@ module.exports = {
             "node_modules/ovh-angular-responsive-tabs/dist/ovh-angular-responsive-tabs.min.js",
             "node_modules/@bower_components/ckeditor/ckeditor.js",
             "node_modules/@bower_components/ng-ckeditor/ng-ckeditor.js",
-            "node_modules/@bower_components/messenger/build/js/messenger.min.js"
+            "node_modules/@bower_components/messenger/build/js/messenger.min.js",
+            "node_modules/flatpickr/dist/flatpickr.min.js"
         ],
         css: [
             "node_modules/@bower_components/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css",
@@ -213,7 +216,8 @@ module.exports = {
             "node_modules/ovh-angular-sso-auth-modal-plugin/dist/ovh-angular-sso-auth-modal-plugin.min.css",
             "node_modules/ui-select/dist/select.min.css",
             "node_modules/intl-tel-input/build/css/intlTelInput.css",
-            "node_modules/ovh-angular-toaster/dist/ovh-angular-toaster.min.css"
+            "node_modules/ovh-angular-toaster/dist/ovh-angular-toaster.min.css",
+            "node_modules/flatpickr/dist/flatpickr.min.css"
         ]
     },
     resources: {
