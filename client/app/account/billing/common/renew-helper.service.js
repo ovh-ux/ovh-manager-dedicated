@@ -31,6 +31,11 @@ angular.module("Billing.services").service("BillingrenewHelper", function ($filt
             if (!_.isEmpty(service.subProducts)) {
                 return "";
             }
+
+            if (service.serviceType === "EMAIL_DOMAIN") {
+                return $translate.instant("autorenew_service_renew_paid");
+            }
+
             return this.getRenewLabel(this.getRenewKey(service));
         }
 
