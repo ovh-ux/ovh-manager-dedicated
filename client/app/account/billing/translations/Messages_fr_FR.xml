@@ -28,7 +28,8 @@
    <translation id="autorenew_service_renew_3months" qtlid="402906">Trimestriel</translation>
    <translation id="autorenew_service_renew_6months" qtlid="402919">Semestriel</translation>
    <translation id="autorenew_service_renew_frequency_value" qtlid="402932">Tous les {0} mois</translation>
-   <translation id="autorenew_service_renew_years_frequency_value">Automatique : tous les {0} ans</translation>
+   <translation id="autorenew_service_renew_years_frequency_value" qtlid="402945">Automatique : tous les {0} ans</translation>
+   <translation id="autorenew_service_renew_paid">Payé</translation>
    <translation id="manualrenew_service_update_button_caption" qtlid="416111">Payer le service</translation>
    <translation id="manualrenew_onlyauto_alert" qtlid="264166">Vous n'avez séléctionné que des renouvellements automatiques.</translation>
    <translation id="autorenew_empty" qtlid="219810">Vous n'avez aucun service</translation>
@@ -63,9 +64,12 @@
    <translation id="autorenew_service_update_renewal_activation_error" qtlid="369440">Vous avez sélectionné le renouvellement automatique pour au moins un service mais nous n'avons pas pu activé le renouvellement automatique sur votre compte : {0}</translation>
    <translation id="autorenew_guide_help" qtlid="156732">Consultez nos guides en ligne.</translation>
    <translation id="autorenew_service_delete_title">Résilier à date d'échéance</translation>
+   <translation id="autorenew_service_debt_before_paying_1">Avant de vous engager sur une nouvelle période de temps, nous vous invitons à d'abord régler votre dette restante.</translation>
+   <translation id="autorenew_service_debt_before_paying_2">Rendez-vous dans l’espace facturation afin de régulariser la facturation pour le service <strong>{{service}}</strong>.</translation>
    <translation id="autorenew_service_canceldelete_title" qtlid="416137">Annuler la résiliation d’un service</translation>
    <translation id="autorenew_service_delete_confirm" qtlid="416150">Le service {0} <strong>sera automatiquement résilié</strong> le {1}.</translation>
    <translation id="autorenew_service_delete_warn" qtlid="416163">Les données liées à ce service seront automatiquement supprimées de manière irréversible.&#160;Vous pourrez revenir sur cette décision jusqu'à 24h avant la date d’expiration.</translation>
+   <translation id="autorenew_service_debt_warn_deletion">La résiliation de ce service ne peut s’effectuer avant le paiement de la dette restante.&#160;Rendez-vous dans l’espace facturation afin de régulariser la facturation pour le service <strong>{{service}}</strong></translation>
    <translation id="autorenew_service_canceldelete_confirm" qtlid="416176">Souhaitez-vous annuler la résiliation du service <strong>{0}</strong>?</translation>
    <translation id="autorenew_service_update_intro" qtlid="351708">Choisissez le type de renouvellement souhaité (automatique ou manuel).<br /> Pour le renouvellement automatique, vous pourrez également choisir la fréquence des prélèvements.</translation>
    <translation id="autorenew_service_select_intro" qtlid="221058">Sélectionner tous :</translation>
@@ -761,7 +765,11 @@
    <translation id="paymentMean_label_creditcard_expiration" qtlid="30406">Expiration</translation>
    <translation id="paymentMean_label_iban" qtlid="177015">IBAN</translation>
    <translation id="paymentMean_label_bic" qtlid="177028">BIC</translation>
-   <translation id="paymentMean_label_ownerName" qtlid="177041">Nom du propriétaire du compte</translation>
+   <translation id="paymentMean_label_addressNumber">Numéro</translation>
+   <translation id="paymentMean_label_addressStreetName">Nom de la voie</translation>
+   <translation id="paymentMean_label_addressPostalCode">Code postal</translation>
+   <translation id="paymentMean_label_addressTown">Ville</translation>
+   <translation id="paymentMean_label_ownerName">Nom et prénom du propriétaire ou nom de l'organisation propriétaire</translation>
    <translation id="paymentMean_label_ownerAddress" qtlid="177054">Adresse du propriétaire du compte</translation>
    <translation id="paymentMean_error_bic_bank" qtlid="177067">Le code de la banque est incorrect.</translation>
    <translation id="paymentMean_error_bic_valid" qtlid="177080">Le BIC est invalide.</translation>
@@ -771,6 +779,10 @@
    <translation id="paymentMean_error_iban_key" qtlid="177132">La clef de l'IBAN est invalide.</translation>
    <translation id="paymentMean_error_iban_valid" qtlid="177145">L'IBAN est invalide.</translation>
    <translation id="paymentMean_error_minlength" qtlid="179680">Il faut au moins 5 caractères.</translation>
+   <translation id="paymentMean_error_addressPostalCode_required" qtlid="177093">Ce champs est requis.</translation>
+   <translation id="paymentMean_error_addressPostalCode_min">Le code postal n'est pas valide.</translation>
+   <translation id="paymentMean_error_addressPostalCode_max">Le code postal n'est pas valide.</translation>
+   <translation id="paymentMean_error_addressPostalCode_pattern">Le code postal doit être composé de 5 chiffres.</translation>
    <translation id="paymentMean_error_maxlength" qtlid="177171">Le texte doit être plus petit que 255 caractères.</translation>
    <translation id="paymentType_delete_error" qtlid="177184">Erreur lors de la suppression du moyen de paiement</translation>
    <translation id="paymentType_modify_error" qtlid="436354">Erreur lors de la modification du moyen de paiement</translation>

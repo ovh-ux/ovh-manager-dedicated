@@ -246,11 +246,15 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
         };
 
         $scope.gotoRenew = function (service) {
-            $scope.$emit(AUTORENEW_EVENT.PAY, {
-                serviceType: service.serviceType,
-                serviceId: service.serviceId
-            });
-            $window.location.assign($scope.getRenewUrl() + service.serviceId);
+            if (service.status === "PENDING_DEBT") {
+                $scope.setAction("debtBeforePaying", _.clone(service, true), "autoRenew");
+            } else {
+                $scope.$emit(AUTORENEW_EVENT.PAY, {
+                    serviceType: service.serviceType,
+                    serviceId: service.serviceId
+                });
+                $window.location.assign($scope.getRenewUrl() + service.serviceId);
+            }
         };
 
         /**
@@ -384,7 +388,11 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
         $scope.resiliateService = function (service) {
             const serviceToResiliate = getServiceToResiliate(service);
 
-            $scope.setAction("delete", _.clone(serviceToResiliate, true), "autoRenew");
+            if (service.status === "PENDING_DEBT") {
+                $scope.setAction("warnPendingDebt", _.clone(service, true), "autoRenew");
+            } else {
+                $scope.setAction("delete", _.clone(serviceToResiliate, true), "autoRenew");
+            }
         };
 
         $scope.cancelDeleteService = function (service) {
