@@ -761,7 +761,11 @@
    <translation id="paymentMean_label_creditcard_expiration" qtlid="30406">Expiration</translation>
    <translation id="paymentMean_label_iban" qtlid="177015">IBAN</translation>
    <translation id="paymentMean_label_bic" qtlid="177028">BIC</translation>
-   <translation id="paymentMean_label_ownerName" qtlid="177041">Nom du propriétaire du compte</translation>
+   <translation id="paymentMean_label_addressNumber">Numéro</translation>
+   <translation id="paymentMean_label_addressStreetName">Nom de la voie</translation>
+   <translation id="paymentMean_label_addressPostalCode">Code postal</translation>
+   <translation id="paymentMean_label_addressTown">Ville</translation>
+   <translation id="paymentMean_label_ownerName">Nom et prénom du propriétaire ou nom de l'organisation propriétaire</translation>
    <translation id="paymentMean_label_ownerAddress" qtlid="177054">Adresse du propriétaire du compte</translation>
    <translation id="paymentMean_error_bic_bank" qtlid="177067">Le code de la banque est incorrect.</translation>
    <translation id="paymentMean_error_bic_valid" qtlid="177080">Le BIC est invalide.</translation>
@@ -771,6 +775,10 @@
    <translation id="paymentMean_error_iban_key" qtlid="177132">La clef de l'IBAN est invalide.</translation>
    <translation id="paymentMean_error_iban_valid" qtlid="177145">L'IBAN est invalide.</translation>
    <translation id="paymentMean_error_minlength" qtlid="179680">Il faut au moins 5 caractères.</translation>
+   <translation id="paymentMean_error_addressPostalCode_required" qtlid="177093">Ce champs est requis.</translation>
+   <translation id="paymentMean_error_addressPostalCode_min">Le code postal n'est pas valide.</translation>
+   <translation id="paymentMean_error_addressPostalCode_max">Le code postal n'est pas valide.</translation>
+   <translation id="paymentMean_error_addressPostalCode_pattern">Le code postal doit être composé de 5 chiffres.</translation>
    <translation id="paymentMean_error_maxlength" qtlid="177171">Le texte doit être plus petit que 255 caractères.</translation>
    <translation id="paymentType_delete_error" qtlid="177184">Erreur lors de la suppression du moyen de paiement</translation>
    <translation id="paymentType_modify_error" qtlid="436354">Erreur lors de la modification du moyen de paiement</translation>
