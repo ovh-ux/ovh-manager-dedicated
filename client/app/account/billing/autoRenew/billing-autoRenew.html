@@ -12,6 +12,19 @@
 
         <div data-ovh-alert></div>
 
+        <oui-message
+            data-type="success"
+            data-ng-if="mustDisplayDeleteAtExpirationCancellingBanner">
+            <span
+                data-translate="autorenew_service_deleteAtExpiration_banner"
+                data-translate-values="{ serviceName: serviceToKeep.serviceId }"></span>
+
+            <button
+                data-ng-click="cancelDeleteService(serviceToKeep)"
+                data-translate="autorenew_service_deleteAtExpiration_banner_cancel"
+                class="oui-button oui-button_link m-0 py-0 pl-3"></button>
+        </oui-message>
+
         <div class="alert alert-danger"
              role="alert"
              data-ng-if="!automaticRenewV2Mean.loading && automaticRenewV2Mean.available && (!automaticRenewV2Mean.allowed || (automaticRenewV2Mean.allowed && !nicRenew.active)) && !services.data.userSubsidiaryHasRecentAutorenew">
@@ -282,7 +295,7 @@
 
             <tbody data-ng-show="services.data && !services.loading">
                 <!-- COMMON SERVICES -->
-                <tr data-ng-repeat-start="service in services.data.list.results"
+                <tr data-ng-repeat-start="service in services.data.list.results track by (service.serviceId + service.serviceType)"
                     data-ng-class="{'pointer': !editionDisabled(service)}"
                     data-ng-include="BILLING_BASE_URL + 'autoRenew/common/billing-autoRenew-common.html'">
                 </tr>
@@ -290,7 +303,6 @@
                 <!-- DOMAIN SERVICES -->
                 <tr data-ng-if="service.serviceType === 'HOSTING_DOMAIN' && expandHostingDomain[service.domain]"
                     data-ng-include="BILLING_BASE_URL + 'autoRenew/domain/billing-autoRenew-domain.html'">
-
                 </tr>
 
                 <!-- HOSTING SERVICES -->
@@ -299,7 +311,6 @@
                     data-ng-repeat-end>
                 </tr>
             </tbody>
-
         </table>
         <div data-pagination-server-side="serviceTable"
              data-pagination-server-side-function="getServices"

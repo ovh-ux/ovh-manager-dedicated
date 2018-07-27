@@ -1,56 +1,68 @@
-/**
- * @ngdoc controller
- * @name Billing.controllers.AutoRenew.delete
- * @description
- */
-angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew.delete", ($rootScope, $scope, $q, $filter, $translate, BillingAutoRenew, Alerter, AUTORENEW_EVENT) => {
-    $scope.selectedServices = $scope.currentActionData;
-    $scope.selectedServices[0].expirationText = $filter("date")($scope.selectedServices[0].expiration, "mediumDate");
+angular
+    .module("Billing.controllers")
+    .controller("billingAutoRenewDeleteCtrl", class BillingAutoRenewDeleteCtrl {
+        constructor ($filter, $q, $rootScope, $scope, $translate, Alerter, BillingAutoRenew, AUTORENEW_EVENT) {
+            this.$filter = $filter;
+            this.$q = $q;
+            this.$rootScope = $rootScope;
+            this.$scope = $scope;
+            this.$translate = $translate;
 
-    function errorFunction (err) {
-        Alerter.alertFromSWS($translate.instant("autorenew_service_update_step2_error"), err);
-        return $q.reject(err);
-    }
+            this.Alerter = Alerter;
+            this.BillingAutoRenew = BillingAutoRenew;
 
-    function setManual () {
-        const result = [];
-        angular.forEach($scope.selectedServices, (service) => {
-            service.renew.automatic = false;
-            result.push(_.pick(service, ["serviceId", "serviceType", "renew"]));
-        });
-        return BillingAutoRenew.updateServices(result);
-    }
+            this.AUTORENEW_EVENT = AUTORENEW_EVENT;
+        }
 
-    function setDelete () {
-        const result = [];
-        angular.forEach($scope.selectedServices, (service) => {
-            service.renew.deleteAtExpiration = true;
-            result.push(_.pick(service, ["serviceId", "serviceType", "renew"]));
-        });
-        return BillingAutoRenew.updateServices(result).then(() => {
-            $scope.$emit(AUTORENEW_EVENT.TERMINATE_AT_EXPIRATION, result);
-            Alerter.set("alert-success", $translate.instant("autorenew_service_update_step2_with_async_action_success"));
-        }, errorFunction);
-    }
+        $onInit () {
+            this.selectedServices = this.$scope.currentActionData;
+            this.serviceToDisplay = this.selectedServices[0];
+            this.serviceToDisplay.expirationText = this.$filter("date")(this.serviceToDisplay.expiration, "mediumDate");
+        }
 
-    $scope.deleteRenew = function () {
-        const AUTO_RENEW_TYPES = ["automaticV2014", "automaticV2016", "automaticForcedProduct"];
-        const renewType = $scope.selectedServices[0].service ? $scope.selectedServices[0].service.renewalType : $scope.selectedServices[0].renewalType;
-        if ($scope.selectedServices[0].renew.automatic && !AUTO_RENEW_TYPES.includes(renewType)) {
-            setManual()
-                .then(setDelete)
-                .catch(errorFunction)
-                .finally(() => {
-                    $rootScope.$broadcast(BillingAutoRenew.events.AUTORENEW_CHANGED);
-                    $scope.resetAction();
-                });
-        } else {
-            setDelete()
-                .catch(errorFunction)
-                .finally(() => {
-                    $rootScope.$broadcast(BillingAutoRenew.events.AUTORENEW_CHANGED);
-                    $scope.resetAction();
+        switchRenewalModeToManual () {
+            const formattedServices = _(this.selectedServices).map((originalService) => {
+                const service = _(originalService).clone(true);
+                service.renew.automatic = false;
+
+                return _(service).pick(["serviceId", "serviceType", "renew"]).value();
+            }).value();
+
+            return this.BillingAutoRenew.updateServices(formattedServices);
+        }
+
+        switchRenewalModeToDeleteAtExpiration () {
+            const formattedServices = _(this.selectedServices).map((originalService) => {
+                const service = _(originalService).clone(true);
+                service.renew.deleteAtExpiration = true;
+
+                return _(service).pick(["serviceId", "serviceType", "renew"]).value();
+            }).value();
+
+            return this.BillingAutoRenew
+                .updateServices(formattedServices)
+                .then(() => {
+                    this.$scope.$emit(this.AUTORENEW_EVENT.TERMINATE_AT_EXPIRATION, formattedServices);
                 });
         }
-    };
-});
+
+        switchRenewalModeToManualIfNeeded () {
+            const AUTO_RENEW_TYPES = ["automaticV2014", "automaticV2016", "automaticForcedProduct"];
+            const renewType = _(this.serviceToDisplay).get("service.renewalType", this.serviceToDisplay.renewalType);
+            const serviceIsAutomaticallyRenewed = AUTO_RENEW_TYPES.includes(renewType);
+
+            return this.serviceToDisplay.renew.automatic && !serviceIsAutomaticallyRenewed ? this.switchRenewalModeToManual() : this.$q.when();
+        }
+
+        deleteRenew () {
+            return this.switchRenewalModeToManualIfNeeded()
+                .then(() => this.switchRenewalModeToDeleteAtExpiration())
+                .catch((err) => {
+                    this.Alerter.alertFromSWS(this.$translate.instant("autorenew_service_update_step2_error"), err);
+                })
+                .finally(() => {
+                    this.$rootScope.$broadcast(this.BillingAutoRenew.events.AUTORENEW_CHANGED);
+                    this.$scope.resetAction();
+                });
+        }
+    });
