@@ -35,10 +35,10 @@
    <translation id="dedicatedCloud_order_Host" qtlid="145891">Añadir un host</translation>
    <translation id="dedicatedCloud_order_Datastore" qtlid="145904">Añadir un datastore</translation>
    <translation id="dedicatedCloud_security_policy_update" qtlid="145917">Cambiar la política de acceso</translation>
-   <translation id="dedicatedCloud_nb_bloc_IP" qtlid="497021">Nombre de blocs IP</translation>
+   <translation id="dedicatedCloud_nb_bloc_IP" qtlid="497021">Número de bloques de IP</translation>
    <translation id="dedicatedCloud_nb_bloc_IP_no_data" qtlid="154650">Información no disponible</translation>
-   <translation id="dedicatedCloud_nb_bloc_IP_ripe" qtlid="497034">Nombre de blocs IP Ripe</translation>
-   <translation id="dedicatedCloud_nb_bloc_IP_arin" qtlid="497047">Nombre de blocs IP Arin</translation>
+   <translation id="dedicatedCloud_nb_bloc_IP_ripe" qtlid="497034">Número de bloques de IP RIPE</translation>
+   <translation id="dedicatedCloud_nb_bloc_IP_arin" qtlid="497047">Número de bloques de IP ARIN</translation>
    <translation id="dedicatedCloud_edit_description_change" qtlid="154676">editar la descripción</translation>
    <translation id="dedicatedCloud_edit_description_valid" qtlid="147850">aceptar los cambios</translation>
    <translation id="dedicatedCloud_edit_description_cancel" qtlid="147863">cancelar los cambios</translation>
@@ -46,7 +46,7 @@
    <translation id="dedicatedCloud_description_edit_error" qtlid="154702">Se ha producido un error al editar la descripción del servidor {0}.</translation>
    <translation id="dedicatedCloud_datacenter_name_modify_title" qtlid="71741">Modificar el nombre</translation>
    <translation id="dedicatedCloud_datacenter_name_edit_success" qtlid="155170">El nombre se ha cambiado correctamente.</translation>
-   <translation id="dedicatedCloud_datacenter_name_edit_error" qtlid="497060">Une erreur est survenue lors de la modification du nom du datacentre {0}</translation>
+   <translation id="dedicatedCloud_datacenter_name_edit_error" qtlid="497060">Se ha producido un error al modificar el nombre del datacenter {0}</translation>
    <translation id="dedicatedCloud_datacenter_description_modify_title" qtlid="77274">Modificar la descripción</translation>
    <translation id="dedicatedCloud_datacenter_description_edit_success" qtlid="154689">La descripción se ha cambiado correctamente.</translation>
    <translation id="dedicatedCloud_datacenter_description_edit_error" qtlid="497073">Se ha producido un error al modificar la descripción del centro de datos {0}</translation>
@@ -601,12 +601,12 @@
    <translation id="dedicatedCloud_subscription_resource_monthly" qtlid="60378">Mensual</translation>
    <translation id="dedicatedCloud_subscription_licence" qtlid="21667">Licencia</translation>
    <translation id="dedicatedCloud_subscription_ip_block" qtlid="179095">Bloque de IP</translation>
-   <translation id="dedicatedCloud_subscription_mailing_list" qtlid="497125">Mailing list</translation>
+   <translation id="dedicatedCloud_subscription_mailing_list" qtlid="497125">Lista de correo</translation>
    <translation id="dedicatedCloud_subscription_renew" qtlid="168172">Renovación</translation>
    <translation id="dedicatedCloud_subscription_links" qtlid="245116">Enlaces</translation>
    <translation id="dedicatedCloud_subscription_vscope" qtlid="433086">vScope</translation>
-   <translation id="dedicatedCloud_subscription_web_interface" qtlid="497138">Interface Web</translation>
-   <translation id="dedicatedCloud_subscription_certified_web_interface" qtlid="497151">Interface Web certifiée</translation>
+   <translation id="dedicatedCloud_subscription_web_interface" qtlid="497138">Interfaz web</translation>
+   <translation id="dedicatedCloud_subscription_certified_web_interface" qtlid="497151">Interfaz web certificada</translation>
 
    <translation id="dedicatedCloud_vmware_orderopt_title_vrops" qtlid="342862">Activar la opción VMware vROps</translation>
    <translation id="dedicatedCloud_vmware_orderopt_title_nsx" qtlid="342875">Activar la opción VMware NSX</translation>
@@ -614,9 +614,9 @@
    <translation id="dedicatedCloud_vmware_orderopt_host_name" qtlid="3818">Nombre</translation>
    <translation id="dedicatedCloud_vmware_orderopt_datacenter_name" qtlid="30802">Datacenter</translation>
    <translation id="dedicatedCloud_vmware_orderopt_current_price" qtlid="342901">Facturación de este mes</translation>
-   <translation id="dedicatedCloud_vmware_orderopt_next_price" qtlid="342914">Facturación del próximo mes&#42;</translation>
+   <translation id="dedicatedCloud_vmware_orderopt_next_price" qtlid="342914">Facturación del próximo mes*</translation>
    <translation id="dedicatedCloud_vmware_orderopt_price_hourly" qtlid="342927">{0} / h</translation>
-   <translation id="dedicatedCloud_vmware_orderopt_price_info" qtlid="342940">&#42;sin incluir cualquier otra opción que se active antes de esa fecha.</translation>
+   <translation id="dedicatedCloud_vmware_orderopt_price_info" qtlid="342940">*sin incluir cualquier otra opción que se active antes de esa fecha.</translation>
    <translation id="dedicatedCloud_vmware_orderopt_activate" qtlid="342953">Activar la opción</translation>
    <translation id="dedicatedCloud_vmware_orderopt_activate_success" qtlid="342966">Activando la opción...</translation>
    <translation id="dedicatedCloud_vmware_orderopt_load_prices_error" qtlid="342979">Se ha producido un error al mostrar los precios de la opción:</translation>
@@ -728,7 +728,7 @@
    <translation id="dedicatedCloud_options_order_next_price" qtlid="374321">Facturación del mes siguiente</translation>
    <translation id="dedicatedCloud_options_order_price_hourly" qtlid="342927">{0} / h</translation>
    <translation id="dedicatedCloud_options_order_price_free_spare" qtlid="154728">Spare gratuito</translation>
-   <translation id="dedicatedCloud_options_order_price_info" qtlid="342940">&#42;sin incluir cualquier otra opción que se active antes de esa fecha.</translation>
+   <translation id="dedicatedCloud_options_order_price_info" qtlid="342940">*sin incluir cualquier otra opción que se active antes de esa fecha.</translation>
    <translation id="dedicatedCloud_options_order_warning" qtlid="343057">Atención: Esta acción es definitiva y no se puede deshacer.</translation>
    <translation id="dedicatedCloud_options_order_activate_success" qtlid="342966">Activando la opción...</translation>
    <translation id="dedicatedCloud_options_order_activate_error" qtlid="342992">Se ha producido un error al activar la opción:</translation>

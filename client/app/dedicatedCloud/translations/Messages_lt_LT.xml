@@ -35,10 +35,10 @@
    <translation id="dedicatedCloud_order_Host" qtlid="145891">Užsisakyti mazgą (host)</translation>
    <translation id="dedicatedCloud_order_Datastore" qtlid="145904">Užsisakyti duomenų saugyklą</translation>
    <translation id="dedicatedCloud_security_policy_update" qtlid="145917">Keisti prieigos politiką</translation>
-   <translation id="dedicatedCloud_nb_bloc_IP" qtlid="497021">Nombre de blocs IP</translation>
+   <translation id="dedicatedCloud_nb_bloc_IP" qtlid="497021">IP adresų blokų skaičius</translation>
    <translation id="dedicatedCloud_nb_bloc_IP_no_data" qtlid="154650">Informacija negalima</translation>
-   <translation id="dedicatedCloud_nb_bloc_IP_ripe" qtlid="497034">Nombre de blocs IP Ripe</translation>
-   <translation id="dedicatedCloud_nb_bloc_IP_arin" qtlid="497047">Nombre de blocs IP Arin</translation>
+   <translation id="dedicatedCloud_nb_bloc_IP_ripe" qtlid="497034">RIPE IP adresų blokų skaičius</translation>
+   <translation id="dedicatedCloud_nb_bloc_IP_arin" qtlid="497047">ARIN IP adresų blokų skaičius</translation>
    <translation id="dedicatedCloud_edit_description_change" qtlid="154676">keisti aprašymą</translation>
    <translation id="dedicatedCloud_edit_description_valid" qtlid="147850">patvirtinti keitimus</translation>
    <translation id="dedicatedCloud_edit_description_cancel" qtlid="147863">atšaukti keitimus</translation>
@@ -46,10 +46,10 @@
    <translation id="dedicatedCloud_description_edit_error" qtlid="154702">Klaida keičiant serverio {0} aprašymą</translation>
    <translation id="dedicatedCloud_datacenter_name_modify_title" qtlid="71741">Keisti pavadinimą</translation>
    <translation id="dedicatedCloud_datacenter_name_edit_success" qtlid="155170">Pavadinimo keitimas užregistruotas</translation>
-   <translation id="dedicatedCloud_datacenter_name_edit_error" qtlid="497060">Une erreur est survenue lors de la modification du nom du datacentre {0}</translation>
+   <translation id="dedicatedCloud_datacenter_name_edit_error" qtlid="497060">Įvyko klaida keidčiant duomenų centro {0} pavadinimą</translation>
    <translation id="dedicatedCloud_datacenter_description_modify_title" qtlid="77274">Pakeisti aprašymą</translation>
    <translation id="dedicatedCloud_datacenter_description_edit_success" qtlid="154689">Aprašymo keitimas buvo užregistruotas</translation>
-   <translation id="dedicatedCloud_datacenter_description_edit_error" qtlid="497073">Une erreur est survenue lors de la modification de la description du datacentre {0}</translation>
+   <translation id="dedicatedCloud_datacenter_description_edit_error" qtlid="497073">Įvyko klaida keičiant duomenų centro {0} aprašymą</translation>
    <translation id="dedicatedCloud_no_description" qtlid="149345">Pridėti apibūdinimą</translation>
    <translation id="dedicatedCloud_datacenters_loading_error" qtlid="147694">Įvyko klaida įkeliant duomenų centrų informaciją.</translation>
    <translation id="dedicatedCloud_tab_dashboard" qtlid="27115">Pagrindinė informacija</translation>
@@ -413,9 +413,9 @@
    <translation id="dedicatedCloud_USER_set_fail" qtlid="157720">Įvyko klaida keičiant {0} duomenis</translation>
    <translation id="dedicatedCloud_USER_enable" qtlid="229802">Aktyvuoti vartotoją</translation>
    <translation id="dedicatedCloud_USER_disable" qtlid="199078">Išjungti naudotoją</translation>
-   <translation id="dedicatedCloud_USER_edit_load_error" qtlid="497086">Une erreur est survenue lors du chargement de l'utilisateur.</translation>
+   <translation id="dedicatedCloud_USER_edit_load_error" qtlid="497086">Įvyko klaida įkeliant naudotoją.</translation>
    <translation id="dedicatedCloud_USER_edit_error" qtlid="228118">Klaida redaguojant vartotoją.</translation>
-   <translation id="dedicatedCloud_USER_edit_success" qtlid="497099">L'utilisateur a bien été modifié.</translation>
+   <translation id="dedicatedCloud_USER_edit_success" qtlid="497099">Naudotojas pakeistas.</translation>
    <translation id="dedicatedCloud_tab_security" qtlid="125420">Saugumas</translation>
    <translation id="dedicatedCloud_SECURITY_title" qtlid="371739">IP ir blokai, autorizuoti prisijungimui prie Private Cloud:</translation>
    <translation id="dedicatedCloud_SECURITY_modify" qtlid="147941">Pakeisti IP adresų banką (pool)</translation>
@@ -596,8 +596,8 @@
    <translation id="dedicatedCloud_options_nsx" qtlid="342849">VMware Network Virtualization (NSX)</translation>
 
    <translation id="dedicatedCloud_subscription_title" qtlid="28891">Abonementas</translation>
-   <translation id="dedicatedCloud_subscription_resource" qtlid="497112">Forfait</translation>
-   <translation id="dedicatedCloud_subscription_resource_yearly" qtlid="60390">Metų</translation>
+   <translation id="dedicatedCloud_subscription_resource" qtlid="497112">Abonementas</translation>
+   <translation id="dedicatedCloud_subscription_resource_yearly" qtlid="60390">Metams</translation>
    <translation id="dedicatedCloud_subscription_resource_monthly" qtlid="60378">Mėnesio</translation>
    <translation id="dedicatedCloud_subscription_licence" qtlid="21667">Licencija</translation>
    <translation id="dedicatedCloud_subscription_ip_block" qtlid="179095">IP blokai</translation>
@@ -605,8 +605,8 @@
    <translation id="dedicatedCloud_subscription_renew" qtlid="168172">Atnaujinimas</translation>
    <translation id="dedicatedCloud_subscription_links" qtlid="245116">Nuorodos</translation>
    <translation id="dedicatedCloud_subscription_vscope" qtlid="433086">vScope</translation>
-   <translation id="dedicatedCloud_subscription_web_interface" qtlid="497138">Interface Web</translation>
-   <translation id="dedicatedCloud_subscription_certified_web_interface" qtlid="497151">Interface Web certifiée</translation>
+   <translation id="dedicatedCloud_subscription_web_interface" qtlid="497138">Žiniatinklio sąsaja</translation>
+   <translation id="dedicatedCloud_subscription_certified_web_interface" qtlid="497151">Sertifikuota žiniatinklio sąsaja</translation>
 
    <translation id="dedicatedCloud_vmware_orderopt_title_vrops" qtlid="342862">Įjungti VMware vROps</translation>
    <translation id="dedicatedCloud_vmware_orderopt_title_nsx" qtlid="342875">Įjungti VMware NSX</translation>
@@ -689,7 +689,7 @@
 
    <translation id="dedicatedCloud_OPERATIONS_createdby_ovh_support" qtlid="228735">OVH pagalba</translation>
    <translation id="dedicatedCloud_OPERATIONS_createdby_customer" qtlid="92389">Klientas</translation>
-   <translation id="dedicatedCloud_OPERATIONS_createdby_robot" qtlid="486438">Robot</translation>
+   <translation id="dedicatedCloud_OPERATIONS_createdby_robot" qtlid="486438">Robotas</translation>
    <translation id="dedicatedCloud_options_security_modal_title_enabling_pcidss" qtlid="374048">PCI DSS parinkties įjungimas</translation>
    <translation id="dedicatedCloud_options_security_modal_title_enabling_hipaa" qtlid="374061">HIPAA parinkties įjungimas</translation>
    <translation id="dedicatedCloud_options_security_modal_title_enabling_hds" qtlid="374074">HDS parinkties įjungimas</translation>
