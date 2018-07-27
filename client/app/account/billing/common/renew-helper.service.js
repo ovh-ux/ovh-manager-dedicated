@@ -32,7 +32,7 @@ angular
 
             if (angular.isObject(service)) {
                 if (service.serviceType === "EMAIL_DOMAIN") {
-                    return $translate.instant("autorenew_service_renew_paid");
+                    return this.$translate.instant("autorenew_service_renew_paid");
                 }
                 if (!_.isEmpty(service.subProducts)) {
                     return "";
