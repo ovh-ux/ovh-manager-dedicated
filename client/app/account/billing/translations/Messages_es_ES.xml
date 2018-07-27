@@ -2,6 +2,10 @@
 <translations>
 
    <translation id="autorenew_title" qtlid="287527">Administrar mis servicios</translation>
+
+   <translation id="autorenew_service_deleteAtExpiration_banner" qtlid="498105">The termination at expiration of the service "{{serviceName}}" has been taken into account. You can cancel this operation until 24 hours before the service expires.</translation>
+   <translation id="autorenew_service_deleteAtExpiration_banner_cancel" qtlid="498118">Cancel the termination</translation>
+
    <translation id="autorenew_myservices" qtlid="212881">Mis servicios</translation>
    <translation id="autorenew" qtlid="219758">Renovaciones</translation>
    <translation id="autorenew_service" qtlid="34632">Servicios</translation>
@@ -22,21 +26,22 @@
    <translation id="autorenew_service_renew_auto" qtlid="134215">Automática</translation>
    <translation id="autorenew_service_renew_manuel" qtlid="219797">Manual</translation>
    <translation id="autorenew_service_renew_delete_at_expiration" qtlid="399736">Baja en la fecha de expiración</translation>
-   <translation id="autorenew_service_renew_manual_payment" qtlid="416059">Auto: Desactivado</translation>
-   <translation id="autorenew_service_renew_year" qtlid="402880">Automático: Anual</translation>
-   <translation id="autorenew_service_renew_month" qtlid="402893">Automático: Mensual</translation>
+   <translation id="autorenew_service_renew_manual_payment" qtlid="498131">Automatique : désactivé</translation>
+   <translation id="autorenew_service_renew_year" qtlid="498144">Automatique : tous les ans</translation>
+   <translation id="autorenew_service_renew_month" qtlid="498157">Automatique : tous les mois</translation>
    <translation id="autorenew_service_renew_3months" qtlid="402906">Trimestral</translation>
    <translation id="autorenew_service_renew_6months" qtlid="402919">Semestral</translation>
    <translation id="autorenew_service_renew_frequency_value" qtlid="402932">Cada {0} mes(es)</translation>
    <translation id="autorenew_service_renew_years_frequency_value" qtlid="402945">Automático: Cada {0} año(s)</translation>
+   <translation id="autorenew_service_renew_paid" qtlid="37515">Pagado</translation>
    <translation id="manualrenew_service_update_button_caption" qtlid="416111">Pagar</translation>
    <translation id="manualrenew_onlyauto_alert" qtlid="264166">Tan solo ha seleccionado renovaciones automáticas. </translation>
    <translation id="autorenew_empty" qtlid="219810">No hay servicios</translation>
    <translation id="autorenew_service_mass_actions_caption" qtlid="300227">Acciones sobre los elementos seleccionados:</translation>
    <translation id="autorenew_service_update_button_caption" qtlid="416072">Modificar la frecuencia de pago</translation>
    <translation id="autorenew_service_update_date_button_caption" qtlid="300253">Unificar las fechas de renovación</translation>
-   <translation id="autorenew_service_resiliate_button" qtlid="56337">Dar de baja el servicio</translation>
-   <translation id="autorenew_service_resiliate_button_title" qtlid="243604">Dar de baja el servicio: {0}</translation>
+   <translation id="autorenew_service_resiliate_button" qtlid="498170">Résilier à date d'échéance</translation>
+   <translation id="autorenew_service_resiliate_button_title" qtlid="498183">Résilier à date d'échéance : {0}</translation>
    <translation id="autorenew_service_disable_button" qtlid="416085">Desactivar el pago automático</translation>
    <translation id="autorenew_service_enable_button" qtlid="416098">Activar el pago automático</translation>
    <translation id="autorenew_service_renew_button" qtlid="416111">Pagar</translation>
@@ -44,7 +49,7 @@
    <translation id="autorenew_service_canceldelete_button" qtlid="285350">Cancelar la baja del servicio </translation>
    <translation id="autorenew_service_canceldelete_button_title" qtlid="243695">Cancelar la solicitud de baja: {0}</translation>
    <translation id="autorenew_service_renew_frequency_title" qtlid="212998">Frecuencia de pago</translation>
-   <translation id="autorenew_service_renew_frequency_value" qtlid="402971">Automático: Cada {0} mes(es)</translation>
+   <translation id="autorenew_service_renew_frequency_value" qtlid="498196">Automatique : tous les {0} mois</translation>
    <translation id="autorenew_search_input_title" qtlid="300629">Buscar mis servicios por identificador.</translation>
    <translation id="autorenew_service_expand_sub_services" qtlid="300642">Mostrar u ocultar los servicios asociados.</translation>
    <translation id="autorenew_service_select_all_checkbox" qtlid="300655">Seleccionar todos los servicios.</translation>
@@ -62,10 +67,13 @@
    <translation id="autorenew_service_update_renewal_activation_notice" qtlid="369427">Se ha activado la renovación automática en el (los) servicio(s) indicado(s) y en su cuenta.</translation>
    <translation id="autorenew_service_update_renewal_activation_error" qtlid="369440">Ha seleccionado la renovación automática para al menos un servicio, pero no se ha podido activar la renovación automática en su cuenta: {0}</translation>
    <translation id="autorenew_guide_help" qtlid="156732">Consulte nuestras guías.</translation>
-   <translation id="autorenew_service_delete_title" qtlid="56337">Dar de baja el servicio</translation>
+   <translation id="autorenew_service_delete_title" qtlid="498170">Résilier à date d'échéance</translation>
+   <translation id="autorenew_service_debt_before_paying_1" qtlid="498209">Before you subscribe for a new period, please settle the outstanding amount on your account.</translation>
+   <translation id="autorenew_service_debt_before_paying_2" qtlid="498222">Please go to the Billing section to pay the invoice for the <strong>{{service}}</strong> service.</translation>
    <translation id="autorenew_service_canceldelete_title" qtlid="416137">Cancelar la baja de un servicio</translation>
    <translation id="autorenew_service_delete_confirm" qtlid="416150">El servicio {0} <strong>se dará de baja automáticamente</strong> el {1}.</translation>
    <translation id="autorenew_service_delete_warn" qtlid="416163">Los datos asociados a este servicio se eliminarán automáticamente de forma irreversible. Puede cancelar esta operación hasta 24 horas antes de la fecha de expiración.</translation>
+   <translation id="autorenew_service_debt_warn_deletion" qtlid="498235">You cannot cancel this service until you have paid the outstanding amount.&#160;Please go to the Billing section to settle your bill for the service <strong>{{service}}</strong></translation>
    <translation id="autorenew_service_canceldelete_confirm" qtlid="416176">¿Desea cancelar la baja del servicio <strong>{0}</strong>?</translation>
    <translation id="autorenew_service_update_intro" qtlid="351708">Seleccione el tipo de renovación que desea (automática o manual).<br /> Si selecciona la renovación automática, también podrá elegir la frecuencia de los cargos.</translation>
    <translation id="autorenew_service_select_intro" qtlid="221058">Seleccionar todas:</translation>
@@ -166,7 +174,7 @@
 
    <translation id="autorenew_service_type_HOSTING_RESELLER" qtlid="325276">Revendedor de hosting</translation>
 
-   <translation id="autorenew_service_EMAIL_DOMAIN_terminate" qtlid="370070">Eliminar el MX Plan</translation>
+   <translation id="autorenew_service_EMAIL_DOMAIN_terminate" qtlid="498248">Supprimer immédiatement le MX Plan</translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_info" qtlid="370083">La eliminación de un MX Plan implica el borrado definitivo de todos los datos correspondientes y no conlleva ningún reembolso.</translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_info_impossible" qtlid="370096">No puede eliminar el correo debido a que está asociado a un alojamiento web.</translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_procedure" qtlid="370109">Recibirá por correo electrónico un mensaje con el procedimiento de cierre del MX Plan desde el que podrá confirmar la eliminación inmediata.</translation>
@@ -762,7 +770,11 @@
    <translation id="paymentMean_label_creditcard_expiration" qtlid="30406">Expiración</translation>
    <translation id="paymentMean_label_iban" qtlid="177015">IBAN</translation>
    <translation id="paymentMean_label_bic" qtlid="177028">BIC</translation>
-   <translation id="paymentMean_label_ownerName" qtlid="177041">Nombre del titular de la cuenta</translation>
+   <translation id="paymentMean_label_addressNumber" qtlid="30778">Número</translation>
+   <translation id="paymentMean_label_addressStreetName" qtlid="459573">Nom de la voie</translation>
+   <translation id="paymentMean_label_addressPostalCode" qtlid="30346">Código postal</translation>
+   <translation id="paymentMean_label_addressTown" qtlid="33310">Localidad</translation>
+   <translation id="paymentMean_label_ownerName" qtlid="498261">Nom et prénom du propriétaire ou nom de l'organisation propriétaire</translation>
    <translation id="paymentMean_label_ownerAddress" qtlid="177054">Dirección del titular de la cuenta</translation>
    <translation id="paymentMean_error_bic_bank" qtlid="177067">El código de la entidad bancaria es incorrecto.</translation>
    <translation id="paymentMean_error_bic_valid" qtlid="177080">El BIC no es válido.</translation>
@@ -772,6 +784,10 @@
    <translation id="paymentMean_error_iban_key" qtlid="177132">La clave del IBAN no es válida.</translation>
    <translation id="paymentMean_error_iban_valid" qtlid="177145">El IBAN no es válido.</translation>
    <translation id="paymentMean_error_minlength" qtlid="179680">Mínimo 5 caracteres.</translation>
+   <translation id="paymentMean_error_addressPostalCode_required" qtlid="177093">Este campo es obligatorio.</translation>
+   <translation id="paymentMean_error_addressPostalCode_min" qtlid="498274">Le code postal n'est pas valide.</translation>
+   <translation id="paymentMean_error_addressPostalCode_max" qtlid="498274">Le code postal n'est pas valide.</translation>
+   <translation id="paymentMean_error_addressPostalCode_pattern" qtlid="498287">Le code postal doit être composé de 5 chiffres.</translation>
    <translation id="paymentMean_error_maxlength" qtlid="177171">El texto debe tener menos de 255 caracteres.</translation>
    <translation id="paymentType_delete_error" qtlid="177184">Se ha producido un error al eliminar la forma de pago</translation>
    <translation id="paymentType_modify_error" qtlid="436354">Se ha producido un error al modificar la forma de pago.</translation>
@@ -1040,11 +1056,11 @@
    <translation id="services_filter_duration_months" qtlid="267502">Expiración en un mes </translation>
    <translation id="services_filter_duration_expired" qtlid="267515">Expirados</translation>
 
-   <translation id="hosting_dashboard_service_guide" qtlid="268577">Eliminar el alojamiento </translation>
+   <translation id="hosting_dashboard_service_guide" qtlid="498300">Supprimer immédiatement l'hébergement</translation>
    <translation id="hosting_dashboard_close_service_question" qtlid="215533">¿Quiere continuar?</translation>
    <translation id="hosting_dashboard_close_service_success" qtlid="370148">Su solicitud de cierre del alojamiento se ha enviado. Le hemos enviado el procedimiento por correo electrónico.</translation>
    <translation id="hosting_dashboard_close_service_error" qtlid="255469">Se ha producido un error al solicitar el cierre del alojamiento:</translation>
-   <translation id="hosting_dashboard_close_service" qtlid="255417">Eliminar el alojamiento </translation>
+   <translation id="hosting_dashboard_close_service" qtlid="498313">Supprimer immédiatement mon hébergement</translation>
    <translation id="hosting_dashboard_close_service_warning" qtlid="255430">La eliminación de un alojamiento conlleva el borrado definitivo de todos los datos que contiene. Dicha eliminación no da derecho a ningún tipo de reembolso.</translation>
    <translation id="hosting_dashboard_close_service_desc1" qtlid="370161">Recibirá por correo electrónico un mensaje con el procedimiento de cierre del alojamiento desde el que podrá confirmar la eliminación inmediata.</translation>
 

@@ -2,6 +2,10 @@
 <translations>
 
    <translation id="autorenew_title" qtlid="287527">Valdyti mano paslaugas</translation>
+
+   <translation id="autorenew_service_deleteAtExpiration_banner" qtlid="498105">The termination at expiration of the service "{{serviceName}}" has been taken into account. You can cancel this operation until 24 hours before the service expires.</translation>
+   <translation id="autorenew_service_deleteAtExpiration_banner_cancel" qtlid="498118">Cancel the termination</translation>
+
    <translation id="autorenew_myservices" qtlid="212881">Mano paslaugos</translation>
    <translation id="autorenew" qtlid="219758">Atnaujinimai</translation>
    <translation id="autorenew_service" qtlid="34632">Paslaugos</translation>
@@ -22,21 +26,22 @@
    <translation id="autorenew_service_renew_auto" qtlid="134215">Automatinis</translation>
    <translation id="autorenew_service_renew_manuel" qtlid="219797">Rankinis</translation>
    <translation id="autorenew_service_renew_delete_at_expiration" qtlid="399736">Atsisakymas pasibaigus galiojimui</translation>
-   <translation id="autorenew_service_renew_manual_payment" qtlid="416059">Automatinis: išjungtas</translation>
-   <translation id="autorenew_service_renew_year" qtlid="402880">Automatinis: kasmet</translation>
-   <translation id="autorenew_service_renew_month" qtlid="402893">Automatinis: kas mėnesį</translation>
+   <translation id="autorenew_service_renew_manual_payment" qtlid="498131">Automatique : désactivé</translation>
+   <translation id="autorenew_service_renew_year" qtlid="498144">Automatique : tous les ans</translation>
+   <translation id="autorenew_service_renew_month" qtlid="498157">Automatique : tous les mois</translation>
    <translation id="autorenew_service_renew_3months" qtlid="402906">Kas ketvirtį</translation>
    <translation id="autorenew_service_renew_6months" qtlid="402919">Kas pusmetį</translation>
    <translation id="autorenew_service_renew_frequency_value" qtlid="402932">Kas {0} mėn.</translation>
    <translation id="autorenew_service_renew_years_frequency_value" qtlid="402945">Automatinis: kas {0} metus</translation>
+   <translation id="autorenew_service_renew_paid" qtlid="37515">Apmokėta</translation>
    <translation id="manualrenew_service_update_button_caption" qtlid="416111">Apmokėti paslaugą</translation>
    <translation id="manualrenew_onlyauto_alert" qtlid="264166">Jūs nesate pasirinkę automatinio atnaujinimo.</translation>
    <translation id="autorenew_empty" qtlid="219810">Neturite jokios paslaugos</translation>
    <translation id="autorenew_service_mass_actions_caption" qtlid="300227">Veiksmai pasirinktiems elementams:</translation>
    <translation id="autorenew_service_update_button_caption" qtlid="416072">Keisti mokėjimų dažnumą</translation>
    <translation id="autorenew_service_update_date_button_caption" qtlid="300253">Sulyginti galiojimo pratęsimo datas.</translation>
-   <translation id="autorenew_service_resiliate_button" qtlid="56337">Panaikinti paslaugą</translation>
-   <translation id="autorenew_service_resiliate_button_title" qtlid="243604">Atšaukti paslaugą: {0}</translation>
+   <translation id="autorenew_service_resiliate_button" qtlid="498170">Résilier à date d'échéance</translation>
+   <translation id="autorenew_service_resiliate_button_title" qtlid="498183">Résilier à date d'échéance : {0}</translation>
    <translation id="autorenew_service_disable_button" qtlid="416085">Išjungti automatinį apmokėjimą</translation>
    <translation id="autorenew_service_enable_button" qtlid="416098">Įjungti automatinį apmokėjimą</translation>
    <translation id="autorenew_service_renew_button" qtlid="416111">Apmokėti paslaugą</translation>
@@ -44,7 +49,7 @@
    <translation id="autorenew_service_canceldelete_button" qtlid="285350">Atšaukti atsisakymo prašymą</translation>
    <translation id="autorenew_service_canceldelete_button_title" qtlid="243695">Anuliuoti mano prašymą dėl paslaugos atšaukimo: {0}</translation>
    <translation id="autorenew_service_renew_frequency_title" qtlid="212998">Mokėjimo dažnumas</translation>
-   <translation id="autorenew_service_renew_frequency_value" qtlid="402971">Automatinis: kas {0} mėn.</translation>
+   <translation id="autorenew_service_renew_frequency_value" qtlid="498196">Automatique : tous les {0} mois</translation>
    <translation id="autorenew_search_input_title" qtlid="300629">Ieškoti paslaugas pagal identifikatorių.</translation>
    <translation id="autorenew_service_expand_sub_services" qtlid="300642">Rodyti ar slėpti susietas paslaugas.</translation>
    <translation id="autorenew_service_select_all_checkbox" qtlid="300655">Pasirinkti visas paslaugas.</translation>
@@ -62,10 +67,13 @@
    <translation id="autorenew_service_update_renewal_activation_notice" qtlid="369427">Automatinis galiojimo pratęsimas įjungtas jūsų pasirinktai(-oms) paslaugai(-oms) ir jūsų paskyrai.</translation>
    <translation id="autorenew_service_update_renewal_activation_error" qtlid="369440">Jūs pasirinkote automatinį galiojimo pratęsimą mažiausiai vienai paslaugai, tačiau mums nepavyko įjungti automatinį galiojimo pratęsimą jūsų paskyroje: {0}</translation>
    <translation id="autorenew_guide_help" qtlid="156732">Skaityti gidus internete.</translation>
-   <translation id="autorenew_service_delete_title" qtlid="56337">Panaikinti paslaugą</translation>
+   <translation id="autorenew_service_delete_title" qtlid="498170">Résilier à date d'échéance</translation>
+   <translation id="autorenew_service_debt_before_paying_1" qtlid="498209">Before you subscribe for a new period, please settle the outstanding amount on your account.</translation>
+   <translation id="autorenew_service_debt_before_paying_2" qtlid="498222">Please go to the Billing section to pay the invoice for the <strong>{{service}}</strong> service.</translation>
    <translation id="autorenew_service_canceldelete_title" qtlid="416137">Atšaukti paslaugos atsisakymą</translation>
    <translation id="autorenew_service_delete_confirm" qtlid="416150">Paslaugos teikimas {0} <strong>bus nutrauktas automatiškai</strong> le {1}.</translation>
    <translation id="autorenew_service_delete_warn" qtlid="416163">Duomenys, susiję su automatiniu paslaugų apmokėjimu, bus nedelsiant pašalinti be galimybės atkurti. Jūs galėsite įjungti automatinį apmokėjimą už paslaugas iš naujo likus mažiausiai 24 valandoms iki pratęsiamų paslaugų galiojimo pabaigos.</translation>
+   <translation id="autorenew_service_debt_warn_deletion" qtlid="498235">You cannot cancel this service until you have paid the outstanding amount.&#160;Please go to the Billing section to settle your bill for the service <strong>{{service}}</strong></translation>
    <translation id="autorenew_service_canceldelete_confirm" qtlid="416176">Ar norite atšaukti paslaugos <strong>{0}</strong> atsisakymą?</translation>
    <translation id="autorenew_service_update_intro" qtlid="351708">Pasirinkite pageidaujamą galiojimo pratęsimo tipą (automatinį ar rankiniu būdu).<br /> Jei renkatės automatinį atnaujinimą, taip pat galėsite pasirinkti mokėjimo nuskaitymo dažnumą.</translation>
    <translation id="autorenew_service_select_intro" qtlid="221058">Žymėti viską:</translation>
@@ -165,7 +173,7 @@
 
    <translation id="autorenew_service_type_HOSTING_RESELLER" qtlid="325276">Svetainių talpinimo perpardavėjas</translation>
 
-   <translation id="autorenew_service_EMAIL_DOMAIN_terminate" qtlid="370070">Pašalinti MX Plan</translation>
+   <translation id="autorenew_service_EMAIL_DOMAIN_terminate" qtlid="498248">Supprimer immédiatement le MX Plan</translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_info" qtlid="370083">Pašalinus MX Plan bus galutinai pašalinti visi šioje paslaugoje talpinami duomenys. MX Plan pašalinimas nesuteikia teisių į kompensavimą.</translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_info_impossible" qtlid="370096">Jūs negalite pašalinti savo el. pašto, kadangi jis susietas su svetainių talpinimo planu.</translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_procedure" qtlid="370109">Jūs el. paštu gausite informaciją apie MX Plan uždarymo procedūrą ir galėsite nedelsiant patvirtinti pašalinimą.</translation>
@@ -761,7 +769,11 @@
    <translation id="paymentMean_label_creditcard_expiration" qtlid="30406">Galioja iki</translation>
    <translation id="paymentMean_label_iban" qtlid="177015">IBAN</translation>
    <translation id="paymentMean_label_bic" qtlid="177028">BIC</translation>
-   <translation id="paymentMean_label_ownerName" qtlid="177041">Sąskaitos savininkas</translation>
+   <translation id="paymentMean_label_addressNumber" qtlid="30778">Numeris</translation>
+   <translation id="paymentMean_label_addressStreetName" qtlid="459573">Nom de la voie</translation>
+   <translation id="paymentMean_label_addressPostalCode" qtlid="30346">Pašto kodas</translation>
+   <translation id="paymentMean_label_addressTown" qtlid="33310">Miestas</translation>
+   <translation id="paymentMean_label_ownerName" qtlid="498261">Nom et prénom du propriétaire ou nom de l'organisation propriétaire</translation>
    <translation id="paymentMean_label_ownerAddress" qtlid="177054">Sąskaitos savininko adresas</translation>
    <translation id="paymentMean_error_bic_bank" qtlid="177067">Neteisingas banko kodas.</translation>
    <translation id="paymentMean_error_bic_valid" qtlid="177080">Neteisingas BIC.</translation>
@@ -771,6 +783,10 @@
    <translation id="paymentMean_error_iban_key" qtlid="177132">Neteisingas IBAN raktas.</translation>
    <translation id="paymentMean_error_iban_valid" qtlid="177145">Neteisingas IBAN.</translation>
    <translation id="paymentMean_error_minlength" qtlid="179680">Įveskite bent 5 simbolius.</translation>
+   <translation id="paymentMean_error_addressPostalCode_required" qtlid="177093">Šis laukas yra privalomas.</translation>
+   <translation id="paymentMean_error_addressPostalCode_min" qtlid="498274">Le code postal n'est pas valide.</translation>
+   <translation id="paymentMean_error_addressPostalCode_max" qtlid="498274">Le code postal n'est pas valide.</translation>
+   <translation id="paymentMean_error_addressPostalCode_pattern" qtlid="498287">Le code postal doit être composé de 5 chiffres.</translation>
    <translation id="paymentMean_error_maxlength" qtlid="177171">Tekstas turi būti trumpesnis nei 255 simboliai.</translation>
    <translation id="paymentType_delete_error" qtlid="177184">Klaida trinant mokėjimo priemonę</translation>
    <translation id="paymentType_modify_error" qtlid="436354">Klaida keičiant mokėjimo priemonę</translation>
@@ -1037,11 +1053,11 @@
    <translation id="services_filter_duration_months" qtlid="267502">Galiojimas baigsis po mėnesio</translation>
    <translation id="services_filter_duration_expired" qtlid="267515">Pasibaigęs galiojimas</translation>
 
-   <translation id="hosting_dashboard_service_guide" qtlid="268577">Ištrinti talpinimo planą</translation>
+   <translation id="hosting_dashboard_service_guide" qtlid="498300">Supprimer immédiatement l'hébergement</translation>
    <translation id="hosting_dashboard_close_service_question" qtlid="215533">Ar norite tęsti?</translation>
    <translation id="hosting_dashboard_close_service_success" qtlid="370148">Jūsų svetainių talpinimo plano uždarymo užklausa gauta. Informacija apie procedūrą išsiųsta el. paštu.</translation>
    <translation id="hosting_dashboard_close_service_error" qtlid="255469">Įvyko klaida teikiant prašymą uždaryti jūsų talpinimo planą:</translation>
-   <translation id="hosting_dashboard_close_service" qtlid="255417">Pašalinti mano talpinimo planą</translation>
+   <translation id="hosting_dashboard_close_service" qtlid="498313">Supprimer immédiatement mon hébergement</translation>
    <translation id="hosting_dashboard_close_service_warning" qtlid="255430">Pašalinus talpinimo planą bus taip pat neatkuriamai pašalinti visi jame esantys duomenys. Talpinimo plano pašalinimo veiksmai nesuteikia teisės į kompensavimą.</translation>
    <translation id="hosting_dashboard_close_service_desc1" qtlid="370161">Jūs el. paštu gausite informaciją apie MX Plan uždarymo procedūrą ir galėsite nedelsiant patvirtinti pašalinimą.</translation>
 
