@@ -20,7 +20,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
     "BILLING_BASE_URL",
     "BillingAutoRenew",
     "BillingPaymentInformation",
-    "BillingrenewHelper",
+    "billingRenewHelper",
     "User",
     "$translate",
     "SUBSIDIARIES_WITH_RECENT_AUTORENEW",
