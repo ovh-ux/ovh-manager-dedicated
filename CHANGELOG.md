@@ -1,3 +1,13 @@
+<a name="9.6.14"></a>
+## [9.6.14](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.13...v9.6.14) (2018-07-30)
+
+
+### Bug Fixes
+
+* **billing.mean.add:** fix adding credit card and paypal account ([6777038](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6777038))
+
+
+
 <a name="9.6.13"></a>
 ## [9.6.13](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.12...v9.6.13) (2018-07-30)
 
