@@ -120,7 +120,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.Mean.Add",
 
         const meanData = BillingMean.canPaymentTypeSetDefaultAtCreation($scope.mean.type) ? $scope.mean : _.omit($scope.mean, "setDefault");
 
-        if ($scope.isFrenchCustomer) {
+        if ($scope.isFrenchCustomer && $scope.mean.type === "bankAccount") {
             meanData.ownerAddress = `${meanData.addressNumber || ""} ${meanData.addressStreetName} ${meanData.addressPostalCode} ${meanData.addressTown}`.trim();
             delete meanData.addressNumber;
             delete meanData.addressStreetName;
