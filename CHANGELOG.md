@@ -1,3 +1,33 @@
+<a name="9.6.14"></a>
+## [9.6.14](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.13...v9.6.14) (2018-07-30)
+
+
+### Bug Fixes
+
+* **billing.mean.add:** fix adding credit card and paypal account ([6777038](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6777038))
+
+
+
+<a name="9.6.13"></a>
+## [9.6.13](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.12...v9.6.13) (2018-07-30)
+
+
+### Bug Fixes
+
+* **billing:** hide useless actions for MX plan and change label ([903a805](https://github.com/ovh-ux/ovh-manager-dedicated/commit/903a805))
+* **billing.renew:** have two buttons instead of one for service paying ([a3ffa6e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a3ffa6e))
+* **renew:** autorenew cancellation wording & character issues ([de9d82e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/de9d82e))
+
+
+### Features
+
+* **billing:** autorenew service in debt warning ([c571c27](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c571c27))
+* **billing.autorenew:** add dialog before paying service while having a debt ([4b8fc7a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4b8fc7a))
+* **billing.mean.add:** sepa fields separated for France only ([9b2521b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9b2521b))
+* **renew:** allow undoing cancellations ([977e6c0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/977e6c0))
+
+
+
 <a name="9.6.12"></a>
 ## [9.6.12](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.11...v9.6.12) (2018-07-25)
 
