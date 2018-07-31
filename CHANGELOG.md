@@ -1,3 +1,13 @@
+<a name="9.6.15"></a>
+## [9.6.15](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.14...v9.6.15) (2018-07-31)
+
+
+### Bug Fixes
+
+* **css:** action dropdown menu does not work in mobile ([cba63d6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/cba63d6)), closes [#MFRWW-753](https://github.com/ovh-ux/ovh-manager-dedicated/issues/MFRWW-753)
+
+
+
 <a name="9.6.14"></a>
 ## [9.6.14](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.13...v9.6.14) (2018-07-30)
 
