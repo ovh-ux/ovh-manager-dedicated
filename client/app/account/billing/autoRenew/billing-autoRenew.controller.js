@@ -73,7 +73,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
 
         $rootScope.$on(AUTORENEW_EVENT.CANCEL_TERMINATE, (event, service) => {
             const firstService = _(service).isArray() ? _(service).head() : service;
-            $scope.mustDisplayDeleteAtExpirationCancellingBanner = firstService.serviceId !== _($scope.serviceToKeep).get("serviceId");
+            $scope.mustDisplayDeleteAtExpirationCancellingBanner = $scope.mustDisplayDeleteAtExpirationCancellingBanner && firstService.serviceId !== _($scope.serviceToKeep).get("serviceId");
         });
 
         $scope.renewalFilter = {
