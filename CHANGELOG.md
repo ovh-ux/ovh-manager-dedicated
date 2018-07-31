@@ -1,3 +1,13 @@
+<a name="9.6.16"></a>
+## [9.6.16](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.15...v9.6.16) (2018-07-31)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** added back menu item ([5be9d6e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5be9d6e))
+
+
+
 <a name="9.6.15"></a>
 ## [9.6.15](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.14...v9.6.15) (2018-07-31)
 
