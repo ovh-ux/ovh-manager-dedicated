@@ -1,3 +1,13 @@
+<a name="9.6.18"></a>
+## [9.6.18](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.17...v9.6.18) (2018-08-01)
+
+
+### Bug Fixes
+
+* **dedicatedcloud.datacenter:** display host datagrid ([74c0710](https://github.com/ovh-ux/ovh-manager-dedicated/commit/74c0710))
+
+
+
 <a name="9.6.17"></a>
 ## [9.6.17](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.16...v9.6.17) (2018-08-01)
 
