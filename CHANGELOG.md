@@ -1,3 +1,14 @@
+<a name="9.6.17"></a>
+## [9.6.17](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.16...v9.6.17) (2018-08-01)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** display undo cancellation menu item correctly ([9ef244b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9ef244b))
+* **billing.autorenew:** undoing cancellation banner will now display correctly ([b40dfaf](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b40dfaf))
+
+
+
 <a name="9.6.16"></a>
 ## [9.6.16](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.15...v9.6.16) (2018-07-31)
 
