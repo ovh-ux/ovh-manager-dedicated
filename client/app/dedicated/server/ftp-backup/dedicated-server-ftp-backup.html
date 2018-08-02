@@ -38,7 +38,7 @@
                                         'progress-bar-danger' : ftpBackup.model.usage.value > 80
                                     }"
                                     data-ng-style="{ 'width': ftpBackup.model.usage.value + '%' }">
-                                    <span>
+                                    <span class="progress-bar-label">
                                         <span data-ng-bind="ftpBackup.use"></span>
                                         <span data-translate="{{ 'unit_size_'+ ftpBackup.model.quota.unit }}"></span> /
                                         <span data-ng-bind="ftpBackup.model.quota.value"></span>
