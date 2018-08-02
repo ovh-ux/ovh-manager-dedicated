@@ -89,13 +89,13 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew.
 
                     if (hasSubProducts) {
                         angular.forEach(service.subProducts, (pService) => {
-                            pService.renew.automatic = !isRenewManual;
                             pService.renew.period = renewPeriod;
+                            pService.renew.manualPayment = isRenewManual;
                             result.push(_.pick(pService, ["serviceId", "serviceType", "renew"]));
                         });
                     } else {
-                        service.renew.automatic = !isRenewManual;
                         service.renew.period = renewPeriod;
+                        service.renew.manualPayment = isRenewManual;
                         result.push(_.pick(service, ["serviceId", "serviceType", "renew"]));
                     }
                 }
