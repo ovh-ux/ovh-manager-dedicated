@@ -1,3 +1,13 @@
+<a name="9.6.19"></a>
+## [9.6.19](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.18...v9.6.19) (2018-08-02)
+
+
+### Bug Fixes
+
+* **billing.autorenew.update:** can deactivate AutoRenew using update dialog ([bc34e6c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bc34e6c))
+
+
+
 <a name="9.6.18"></a>
 ## [9.6.18](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.17...v9.6.18) (2018-08-01)
 
