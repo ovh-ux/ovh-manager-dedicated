@@ -970,17 +970,11 @@
                                   data-tooltip-placement="right">
                             </span>
                         </label>
-                        <label class="oui-switch oui-switch-toggle">
-                            <input type="checkbox"
-                                   id="saveGabarit"
-                                   name="saveGabarit"
-                                   class="oui-switch oui-switch__checkbox"
-                                   data-ng-model="installation.options.saveGabarit"
-                                   data-ng-change="nameGabaritValidator()" />
-                            <div class="oui-switch__slider"></div>
-                            <span class="oui-icon oui-icon-success" aria-hidden="true"></span>
-                            <span class="oui-icon oui-icon-error" aria-hidden="true"></span>
-                        </label>
+                        <oui-switch
+                            id="saveGabarit"
+                            name="saveGabarit"
+                            data-model="installation.options.saveGabarit"
+                            data-on-change="nameGabaritValidator()"></oui-switch>
 
                         <!-- gabaritNameSave -->
                         <div class="form-group"
