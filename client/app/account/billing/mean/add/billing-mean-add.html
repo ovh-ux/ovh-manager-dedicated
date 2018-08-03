@@ -98,7 +98,7 @@
 
                     <fieldset>
                         <legend class="mb-5" data-translate="paymentMean_label_ownerAddress"></legend>
-                        <div data-ng-if="isFrenchCustomer">
+                        <div data-ng-if="customerIsFromFrance">
                             <div class="form-group">
                                 <label for="addressNumber"
                                         class="control-label"
@@ -186,7 +186,7 @@
                         </div>
 
                         <div
-                            data-ng-if="!isFrenchCustomer"
+                            data-ng-if="!customerIsFromFrance"
                             class="form-group">
                             <label for="ownerAddress"
                                     class="control-label required"
