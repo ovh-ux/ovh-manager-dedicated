@@ -1,3 +1,13 @@
+<a name="9.6.20"></a>
+## [9.6.20](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.19...v9.6.20) (2018-08-03)
+
+
+### Bug Fixes
+
+* **billing.history:** sort billing by date asc ([b8dd4e9](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b8dd4e9))
+
+
+
 <a name="9.6.19"></a>
 ## [9.6.19](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.18...v9.6.19) (2018-08-02)
 
