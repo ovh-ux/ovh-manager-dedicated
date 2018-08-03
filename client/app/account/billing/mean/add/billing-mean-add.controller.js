@@ -120,7 +120,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.Mean.Add",
 
         const meanData = BillingMean.canPaymentTypeSetDefaultAtCreation($scope.mean.type) ? $scope.mean : _.omit($scope.mean, "setDefault");
 
-        if ($scope.isFrenchCustomer && $scope.mean.type === "bankAccount") {
+        if ($scope.customerIsFromFrance && $scope.mean.type === "bankAccount") {
             meanData.ownerAddress = `${meanData.addressNumber || ""} ${meanData.addressStreetName} ${meanData.addressPostalCode} ${meanData.addressTown}`.trim();
             delete meanData.addressNumber;
             delete meanData.addressStreetName;
@@ -223,7 +223,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.Mean.Add",
             })
             .then(() => User.getUser())
             .then((user) => {
-                $scope.isFrenchCustomer = user.ovhSubsidiary === "FR";
+                $scope.customerIsFromFrance = user.billingCountry === "FR";
             })
             .catch((error) => {
                 Alerter.set("alert-danger", $translate.instant("add_mean_unable_to_get_payment_means"), error);
