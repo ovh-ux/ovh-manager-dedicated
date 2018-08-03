@@ -1,3 +1,13 @@
+<a name="9.6.21"></a>
+## [9.6.21](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.20...v9.6.21) (2018-08-03)
+
+
+### Bug Fixes
+
+* **server.installation:** can add OVH template again ([ea00116](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ea00116))
+
+
+
 <a name="9.6.20"></a>
 ## [9.6.20](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.19...v9.6.20) (2018-08-03)
 
