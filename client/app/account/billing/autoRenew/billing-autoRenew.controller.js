@@ -91,7 +91,6 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
                 "frequency_value_24",
                 "frequency_value_36",
                 "frequency_value_48",
-                "manual_payment",
                 "delete_at_expiration"
             ]
         };
