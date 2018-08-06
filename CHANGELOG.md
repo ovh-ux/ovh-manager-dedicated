@@ -1,3 +1,13 @@
+<a name="9.6.22"></a>
+## [9.6.22](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.21...v9.6.22) (2018-08-06)
+
+
+### Bug Fixes
+
+* **account.user.advanced:** update switch template ([7f2e881](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7f2e881))
+
+
+
 <a name="9.6.21"></a>
 ## [9.6.21](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.20...v9.6.21) (2018-08-03)
 
