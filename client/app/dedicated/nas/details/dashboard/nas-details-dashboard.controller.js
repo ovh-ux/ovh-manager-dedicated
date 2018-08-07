@@ -19,7 +19,7 @@ angular.module("App").controller("NasDetailsDashboardCtrl", class NasDetailsDash
 
         return this.Nas.updateNasDetails(this.$stateParams.nasId, this.nasData.nas.customName, !this.nasData.monitoring.enabled).then(() => {
             this.nasData.monitoring.enabled = !this.nasData.monitoring.enabled;
-            this.Alerter.success(this.$translate.instant(`nas_dashboard_update_success_${this.nasData.monitoring.enabled ? "disabled" : "enabled"}`), "NasAlert");
+            this.Alerter.success(this.$translate.instant(`nas_dashboard_update_success_${this.nasData.monitoring.enabled ? "enabled" : "disabled"}`), "NasAlert");
         }).catch((error) => {
             this.Alerter.alertFromSWS(this.$translate.instant("nas_dashboard_update_error"), error, "NasAlert");
         }).finally(() => {

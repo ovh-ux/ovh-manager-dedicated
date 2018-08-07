@@ -264,13 +264,6 @@
    <translation id="pagination_display_all" qtlid="139884">Tout</translation>
    <translation id="pagination_go" qtlid="492619">Ok</translation>
    <translation id="history_title2" qtlid="159540">Mes factures</translation>
-   <translation id="history_invoice_loading_errors" qtlid="402984">Une erreur est survenue lors de la récupération de {0} facture(s).</translation>
-   <translation id="history_invoices_postal_mail" qtlid="486867">Recevoir mes factures au format papier</translation>
-
-   <translation id="history_invoices_choice_modal_activation" qtlid="486880">Voulez-vous confirmer l'activation de cette option ?</translation>
-   <translation id="history_invoices_choice_modal_deactivation" qtlid="486893">Voulez-vous confirmer la désactivation de cette option ?</translation>
-   <translation id="history_invoices_choice_modal_update_success" qtlid="486906">Le paramètre a bien été mis à jour</translation>
-   <translation id="history_invoices_choice_modal_update_error" qtlid="486919">Une erreur est survenue lors de la mise à jour du paramètre</translation>
 
    <translation id="history_table_head_date" qtlid="374508">Date d'émission</translation>
    <translation id="history_table_head_id" qtlid="16445">Référence</translation>
@@ -1096,18 +1089,11 @@
 
 <!-- STATEMENTS -->
    <translation id="statements_account_automatic_payment_inactive" qtlid="374573">Le prélèvement automatique n'est pas possible pour le renouvellement de vos services.</translation>
-   <translation id="statements_account_amount_automatically_collected" qtlid="349153">Un montant de <strong>{0}</strong> sera prélevé de votre moyen de paiement par défaut.</translation>
-   <translation id="statements_account_amount_to_pay" qtlid="349166">Un montant de <strong>{0}</strong> est dû pour le renouvellement de vos services.</translation>
    <translation id="statements_account_no_default_payment_mean" qtlid="353309">Vous n'avez pas désigné de moyen de paiement par défaut.</translation>
    <translation id="statements_account_invalid_default_payment_mean" qtlid="353322">Votre moyen de paiement par défaut n'est plus valide.</translation>
    <translation id="statements_account_manage_my_payment_means" qtlid="287514">Gérer mes moyens de paiement</translation>
    <translation id="statements_account_pay_debt_button" qtlid="349179">Régler mon solde immédiatement</translation>
-   <translation id="statements_account_debt_payment" qtlid="344240">Réglement du solde</translation>
-   <translation id="statements_account_debt_payment_explanation" qtlid="353335">Cette action créera un bon de commande permettant de payer immédiatement un solde. Ce bon de commande sera valide durant une heure.</translation>
-   <translation id="statements_account_debt_payment_bc_with_amount" qtlid="353348">Le <a href="{1}" target="_blank">bon de commande {0}</a> a été généré pour un montant de {2}.</translation>
-   <translation id="statements_accounts_debt_payment_confirm" qtlid="344227">Régler mon solde</translation>
-   <translation id="statements_account_debt_payment_order_generated" qtlid="344266">Le <a href="{1}" target="_blank">bon de commande {0}</a> a été généré pour vous permettre de régler votre solde.</translation>
-   <translation id="statements_account_debt_payment_error" qtlid="344279">Une erreur est survenue, veuillez nous excuser pour la gêne occasionnée.</translation>
+
    <translation id="statements_table_caption" qtlid="343252">Commandes à votre comptes</translation>
    <translation id="statements_table_header_order" qtlid="8302">Commande</translation>
    <translation id="statements_table_header_date" qtlid="24523">Date</translation>

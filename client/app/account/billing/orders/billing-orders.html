@@ -4,7 +4,8 @@
         <h1 data-translate="orders_page_title"></h1>
     </div>
 
-    <div class="tab-content">
+    <div class="tab-content"
+         data-ui-view>
         <div data-ovh-alert></div>
 
         <div class="row">
@@ -177,7 +178,7 @@
                                 <li data-ng-if="order.canRetract"
                                     role="menuitem">
                                     <span class="fa fa-times" aria-hidden="true"></span>
-                                    <a data-ng-href="#/billing/orders/{{ :: order.orderId }}/retract"
+                                    <a data-ui-sref="app.account.billing.orders.retract({ id: order.orderId })"
                                        data-ng-attr-title="{{ :: 'orders_order_action_retract' | translate }}"
                                        data-translate="orders_order_action_retract">
                                     </a>

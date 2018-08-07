@@ -5,133 +5,18 @@
     </div>
     <div data-ng-if="!loadingServerInformations && !loadingServerError">
         <header class="page-header" role="banner">
-            <div class="row">
-                <div class="col-md-9">
-                    <form name="formEditDisplayName"
-                          novalidate>
-                        <div class="mb-3"
-                             data-ng-show="!reverseModel.edit">
-                            <div class="d-flex">
-                                <h1 class="d-inline-block mb-0 word-break"
-                                    data-ng-bind="reverseModel.reverse || ('server_configuration_reverse_not_configured' | translate)">
-                                </h1>
-                                <button type="button"
-                                        title="{{ 'wizard_modify' | translate }}"
-                                        class="btn btn-icon my-auto ml-2"
-                                        data-ng-click="editReverse()">
-                                    <span class="oui-icon oui-icon-pen_line oui-icon_small" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                            <span class="font-italic"
-                                  data-ng-bind="server.name">
-                            </span>
-                        </div>
-                        <div class="form-group my-4"
-                             data-ng-class="{ 'has-error': formEditDisplayName.txtDisplayName.$dirty && formEditDisplayName.$invalid }"
-                             data-ng-show="reverseModel.edit">
-                            <div class="oui-input-group">
-                                <input type="text"
-                                       class="oui-input"
-                                       name="txtDisplayName"
-                                       data-event-blur="newDisplayName.value = ''"
-                                       data-ng-maxlength="250"
-                                       data-ng-model="newDisplayName.value">
-                                <button type="button"
-                                        class="oui-button oui-button_small-width"
-                                        aria-label="{{ 'common_confirm' | translate }}"
-                                        data-ng-click="updateReverse()"
-                                        data-ng-disabled="!formEditDisplayName.txtDisplayName.$dirty || formEditDisplayName.$invalid">
-                                    <span class="oui-icon oui-icon-success oui-icon_small" aria-hidden="true"></span>
-                                </button>
-                                <button type="button"
-                                        class="oui-button oui-button_small-width"
-                                        aria-label="{{ 'common_cancel' | translate }}"
-                                        data-ng-click="cancelReverseUpdate()">
-                                    <span class="oui-icon oui-icon-error oui-icon_small" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                            <div class="help-block"
-                                 data-ng-if="formEditDisplayName.txtDisplayName.$dirty"
-                                 data-ng-messages="formEditDisplayName.txtDisplayName.$error">
-                                <span data-translate="hosting_displayName_length"
-                                      data-ng-message="maxlength">
-                                </span>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-md-3 d-flex">
-                    <div class="btn-group ml-auto mt-4">
-                        <button class="oui-button oui-button_dropdown mb-0"
-                                type="button"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                                data-toggle="dropdown">
-                            <span data-translate="common_actions"></span>
-                            <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li data-ng-if="!server.isExpired">
-                                <button type="button"
-                                        class="btn btn-link"
-                                        data-ui-sref="app.dedicated.server.reboot"
-                                        data-ng-disabled="disable.reboot || disable.byOtherTask || disable.install">
-                                    <span>
-                                        <span data-translate="server_configuration_reboot_title_button"></span>
-                                        <span class="label label-default"
-                                              data-ng-show="disable.reboot"
-                                              data-translate="server_configuration_doing">
-                                        </span>
-                                    </span>
-                                </button>
-                            </li>
-                            <li data-ng-if="featureAvailability.allowDedicatedServerRenewByCgi() && server.canOrder && urlRenew">
-                                <a target="_blank"
-                                   data-ng-href="{{ urlRenew }}"
-                                   data-translate="wizard_renew">
-                                </a>
-                            </li>
-                            <li data-ng-if="featureAvailability.allowDedicatedServerRenew()">
-                                <a data-ng-href="{{ '#/billing/autoRenew?selectedType=DEDICATED_SERVER&searchText=' + server.name}}"
-                                   data-translate="wizard_renew">
-                                </a>
-                            </li>
-                            <li data-ng-if="featureAvailability.allowDedicatedServerChangeOwner() && server.commercialRange !== 'housing'">
-                                <a target="_blank"
-                                   title="{{ 'core_change_owner' | translate }} ({{ 'core_new_window' | translate }})"
-                                   data-ng-href="{{:: changeOwnerUrl }}"
-                                   data-translate="core_change_owner">
-                                </a>
-                            </li>
-                            <li data-ng-if="featureAvailability.hasContactChangement() && !server.isExpired">
-                                <a data-ui-sref="app.account.useraccount.contacts.services({ serviceName: server.name })"
-                                   data-translate="contacts_management">
-                                </a>
-                            </li>
-                            <li data-ng-hide="server.isExpired">
-                                <button type="button"
-                                        class="btn btn-link"
-                                        data-ng-click="setAction('terminate/dedicated-server-terminate', {
-                                            serviceInfos: serviceInfos
-                                        })"
-                                        data-translate="server_close_service">
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="d-flex">
+                <h1 class="word-break mb-0 oui-header-2"
+                    data-ng-bind="server.displayName">
+                </h1>
+                <button type="button"
+                        data-translate-attr="{ title: 'wizard_modify' }"
+                        class="btn btn-icon my-auto ml-2"
+                        data-ui-sref="app.dedicated.server.edit-display-name">
+                    <span class="oui-icon oui-icon-pen_line oui-icon_small" aria-hidden="true"></span>
+                </button>
             </div>
-            <div>
-                <div>
-                    <span data-ng-bind-template="{{ 'server_configuration_ipv4' | translate }} : {{ server.ip }}"></span>
-                    <a class="btn btn-transparent"
-                       data-ng-href="{{ '#/configuration/ip?tab=IP&serviceName=' + server.name }}">
-                        <span class="fa fa-gear" aria-hidden="true"></span>
-                        <span data-translate="server_configuration_ipv4_manage"></span>
-                    </a>
-                </div>
-                <div data-ng-bind-template="{{ 'server_configuration_ipv6' | translate }} : {{ server.ipv6 }}"></div>
-            </div>
+            <p data-ng-bind="server.reverse || ('server_configuration_reverse_not_configured' | translate)"></p>
         </header>
         <ovh-tabs data-tabs="tabs"
                   data-selected-tab="selectedTab"

@@ -6,7 +6,10 @@ angular.module("App").config(($stateProvider) => {
         controller: "AppCtrl",
         controllerAs: "AppCtrl",
         templateUrl: "app.html",
-        translations: ["common", "components", "double-authentication", "user-contracts"]
+        translations: ["common", "components", "double-authentication", "user-contracts"],
+        resolve: {
+            currentUser: (User) => User.getUser()
+        }
     });
 
     // CDN & NAS

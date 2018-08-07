@@ -6,7 +6,8 @@ angular.module("App").config(($stateProvider) => {
         views: {
             pccView: {
                 templateUrl: "dedicatedCloud/user/dedicatedCloud-user.html",
-                controller: "DedicatedCloudUserCtrl"
+                controller: "DedicatedCloudUserCtrl",
+                controllerAs: "$ctrl"
             }
         }
     });

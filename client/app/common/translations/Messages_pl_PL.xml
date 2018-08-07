@@ -136,7 +136,7 @@
    <translation id="common_ipv6" qtlid="34126">IPv6</translation>
    <translation id="common_bitFormat" qtlid="122107">bits</translation>
    <translation id="common_expired" qtlid="257941">Usługa nie została odnowiona. Może to być związane z Twoją decyzją lub z opóźnieniem płatności.</translation>
-   <translation id="common_settle_bill" qtlid="498092">Settle</translation>
+   <translation id="common_settle_bill" qtlid="498092">Zapłać</translation>
    <translation id="common_service_expired" qtlid="257954">Usługa {0} nie została odnowiona. Może to być związane z Twoją decyzją lub z opóźnieniem płatności.</translation>
    <translation id="common_available_soon" qtlid="126832">Dostępne wkrótce</translation>
    <translation id="common_reset_zoom" qtlid="142237">Resetuj zoom</translation>
@@ -148,6 +148,8 @@
    <translation id="common_change" qtlid="37875">Zmień</translation>
    <translation id="common_download_format" qtlid="454267">Pobierz w formacie {0}</translation>
    <translation id="common_skip_to_main_content" qtlid="454052">Przejdź do głównej sekcji</translation>
+   <translation id="common_shortcuts" qtlid="403658">Skróty</translation>
+   <translation id="common_links" qtlid="245116">Linki</translation>
    <translation id="global_app_title" qtlid="133357">Zarządzanie usługami dedykowanymi w OVH</translation>
    <translation id="global_language" qtlid="30598">Język</translation>
    <translation id="global_logout" qtlid="33658">Wyloguj</translation>
@@ -554,6 +556,7 @@
 
    <translation id="me_alerts_AUTORENEW_INVITE" qtlid="446401">Włącz automatyczne odnawianie <a href="{{ link }}">Twoich usług</a>!</translation>
 
+   <translation id="core_service_expiration_label" qtlid="30406">Data wygasania</translation>
    <translation id="core_service_expiration" qtlid="229411">Wygasa dnia</translation>
    <translation id="core_service_expiration_manual_renew" qtlid="377571">Do odnowienia dnia</translation>
    <translation id="core_service_expiration_auto_renew" qtlid="414986">Odnowienie przewidziane na</translation>
@@ -581,6 +584,8 @@
    <translation id="otrs_menu_email_history" qtlid="260091">Historia e-maili</translation>
    <translation id="otrs_menu_telephony_contact" qtlid="260827">Pomoc telefoniczna</translation>
    <translation id="otrs_menu_changelog" qtlid="124964">Historia aktualizacji</translation>
+
+   <translation id="common_configuration_creation" qtlid="26419">Data utworzenia</translation>
 
    <translation id="common_criteria_adder_column_label" qtlid="479108">Kolumna</translation>
    <translation id="common_criteria_adder_operator_label" qtlid="425806">Warunek</translation>
@@ -620,11 +625,13 @@
    <translation id="server_tab_USB_STORAGE_order_select_duration" qtlid="181214">Wybierz okres:</translation>
 
    <translation id="common_navbar_notification_title" qtlid="33250">Powiadomienia</translation>
-   <translation id="common_navbar_notification_error" qtlid="323434">Wystąpił problem z włączeniem menu.</translation>
-   <translation id="common_navbar_notification_error_subject" qtlid="26407">Błąd</translation>
    <translation id="common_navbar_notification_see_all" qtlid="401914">Wyświetl wszystkie powiadomienia</translation>
+   <translation id="common_navbar_notification_error_in_notification" qtlid="492055">Wystąpił nieoczekiwany błąd.</translation>
+   <translation id="common_navbar_notification_error_in_notification_description" qtlid="492068">Nie można uruchomić menu.</translation>
    <translation id="common_navbar_notification_mark_as_read" qtlid="70865">Oznacz jako przeczytaną</translation>
    <translation id="common_navbar_notification_mark_as_unread" qtlid="70877">Oznacz jako nieprzeczytaną</translation>
+   <translation id="common_navbar_notification_none" qtlid="492081">Używasz aktualnej wersji.</translation>
+   <translation id="common_navbar_notification_none_description" qtlid="492094">Nie masz powiadomień.</translation>
 
    <translation id="common_pagination_resultsperpage" qtlid="433384">Wyniki na stronie</translation>
    <translation id="common_pagination_page" qtlid="433397">strona</translation>
@@ -641,4 +648,9 @@
    <translation id="common_stepper_next_button_label" qtlid="17743">Dalej</translation>
    <translation id="common_stepper_submit_button_label" qtlid="52807">Wyślij</translation>
    <translation id="common_stepper_cancel_button_label" qtlid="37863">Anuluj</translation>
+
+   <translation id="common_subscription_contacts" qtlid="32206">Kontakt</translation>
+   <translation id="common_subscription_contacts_admin" qtlid="43948">Administrator</translation>
+   <translation id="common_subscription_contacts_billing" qtlid="32950">Płatności</translation>
+   <translation id="common_subscription_contacts_tech" qtlid="31750">Kontakt techniczny</translation>
 </translations>

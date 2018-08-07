@@ -1,72 +1,29 @@
 <div class="cdn-dedicated-domain">
     <!-- Header -->
     <div class="page-header">
-        <div class="row">
-            <div class="col-sm-9">
-                 <div class="mb-2">
-                    <h1>
-                        <span data-ng-bind="$ctrl.domain.domain"></span>
-                        <span class="label d-inline-block align-middle ml-3"
-                              data-ng-bind="$ctrl.domain.mode"
-                              data-ng-class="{
-                                  'label-success': $ctrl.domain.mode == 'ON',
-                                  'label-danger': $ctrl.domain.mode =='OFF'
-                              }">
-                        </span>
-                    </h1>
-                </div>
-            </div>
-            <div class="col-sm-3 d-flex">
-                <div class="btn-group ml-auto mt-4">
-                    <button type="button"
-                            class="oui-button oui-button_dropdown mb-0"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                            data-toggle="dropdown">
-                        <span data-translate="common_actions"></span>
-                        <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-right">
-                        <li>
-                            <button type="button"
-                                    class="btn btn-block btn-link"
-                                    data-ng-click="setAction('domain/flush/cdn-dedicated-domain-flush', $ctrl.domain)"
-                                    data-translate="cdn_domain_configuration_purge_title_button">
-                            </button>
-                        </li>
-                        <li>
-                            <button type="button"
-                                    class="btn btn-block btn-link"
-                                    data-ng-click="setAction('domain/update/cdn-dedicated-domain-domain', $ctrl.domain)"
-                                    data-ng-bind="$ctrl.domain.mode == 'ON' && ('cdn_domain_configuration_bypass_title_button' | translate) || ('cdn_domain_configuration_reactive_title_button' | translate)">
-                            </button>
-                        </li>
-                        <li>
-                            <button type="button"
-                                    class="btn btn-block btn-link"
-                                    data-ng-click="setAction('domain/backend/update/cdn-dedicated-domain-backend-update')"
-                                    data-translate="cdn_domain_configuration_change_backend_title_button">
-                            </button>
-                        </li>
-                        <li>
-                            <button type="button"
-                                    class="btn btn-block btn-link"
-                                    data-ng-click="setAction('domain/delete/cdn-dedicated-domain-delete')"
-                                    data-translate="cdn_domain_configuration_delete_title_button">
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <h1 class="oui-header_2">
+            <span data-ng-bind="$ctrl.domain.domain"></span>
+            <span class="label d-inline-block align-middle ml-3 oui-status"
+                  data-ng-bind="$ctrl.domain.mode"
+                  data-ng-class="{
+                      'oui-status_success': $ctrl.domain.mode === 'ON',
+                      'oui-status_error': $ctrl.domain.mode ==='OFF'
+                  }">
+            </span>
+        </h1>
     </div> <!-- End of Header -->
 
     <!-- Tabs -->
     <responsive-tabs>
-        <responsive-tab data-state="app.networks.cdn.dedicated.domain">{{ 'cdn_domain_tab_statistics' | translate }}</responsive-tab>
-        <responsive-tab data-state="app.networks.cdn.dedicated.domain.rule">{{ 'cdn_domain_tab_rule' | translate }}</responsive-tab>
+        <responsive-tab data-state="app.networks.cdn.dedicated.domain">
+            <span data-translate="cdn_domain_tab_statistics"></span>
+        </responsive-tab>
+        <responsive-tab data-state="app.networks.cdn.dedicated.domain.rule">
+            <span data-translate="cdn_domain_tab_rule"></span>
+        </responsive-tab>
         <responsive-tab-more>
-            <i class="fa fa-plus"></i>
+            <span aria-hidden="true"
+                  class="fa fa-plus"></span>
         </responsive-tab-more>
     </responsive-tabs> <!-- End of Tabs -->
 

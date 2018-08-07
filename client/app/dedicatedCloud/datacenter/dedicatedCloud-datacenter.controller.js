@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudSubDatacenterCtrl", ($scope, $stateParams, $timeout, $translate, $location, DedicatedCloud) => {
+angular.module("App").controller("DedicatedCloudSubDatacenterCtrl", ($location, $scope, $stateParams, $timeout, $translate, $uibModal, DedicatedCloud) => {
     "use strict";
 
     $scope.loadingInformations = true;
@@ -42,62 +42,33 @@ angular.module("App").controller("DedicatedCloudSubDatacenterCtrl", ($scope, $st
         });
     };
 
-    /* Update Field*/
+    /* Update description or name */
 
-    $scope.editField = function (field, textareaFocus) {
-        if (!field.loading) {
-            field.editMode = true;
-            setTimeout(() => {
-                $(textareaFocus).focus();
-            }, 200);
-        }
-    };
-
-    $scope.cancelField = function (field, saveValue) {
-        field.editMode = false;
-        field.model = angular.copy(saveValue);
-    };
-
-    /* Update Name*/
-
-    $scope.setName = function () {
-        $scope.datacenterName.editMode = false;
-        $scope.datacenterName.loading = true;
-        DedicatedCloud.updateDatacenterName($stateParams.productId, $stateParams.datacenterId, $scope.datacenterName.model).then(
-            () => {
-                $scope.setMessage($translate.instant("dedicatedCloud_datacenter_edit_name_success"), true);
-                $scope.datacenter.model.description = angular.copy($scope.datacenterName.model);
-                $scope.datacenterName.loading = false;
-            },
-            (data) => {
-                $scope.datacenterName.model = angular.copy($scope.datacenter.model.name);
-                $scope.setMessage($translate.instant("dedicatedCloud_datacenter_edit_name_fail", {
-                    t0: $scope.datacenter.model.name
-                }), angular.extend(data, { type: "ERROR" }));
-                $scope.datacenterName.loading = false;
+    $scope.editDescription = function (value, contextTitle) {
+        const modal = $uibModal.open({
+            animation: true,
+            templateUrl: "components/name-edition/name-edition.html",
+            controller: "NameEditionCtrl",
+            controllerAs: "$ctrl",
+            resolve: {
+                data () {
+                    return {
+                        contextTitle,
+                        datacenterId: $stateParams.datacenterId,
+                        productId: $stateParams.productId,
+                        value
+                    };
+                }
             }
-        );
-    };
+        });
 
-    /* Update description */
-
-    $scope.setDescription = function () {
-        $scope.datacenterDescription.editMode = false;
-        $scope.datacenterDescription.loading = true;
-        DedicatedCloud.updateDatacenterDescription($stateParams.productId, $stateParams.datacenterId, $scope.datacenterDescription.model).then(
-            () => {
-                $scope.setMessage($translate.instant("dedicatedCloud_datacenter_edit_description_success"), true);
-                $scope.datacenter.model.description = angular.copy($scope.datacenterDescription.model);
-                $scope.datacenterDescription.loading = false;
-            },
-            (data) => {
-                $scope.datacenterDescription.model = angular.copy($scope.datacenter.model.description);
-                $scope.setMessage($translate.instant("dedicatedCloud_datacenter_edit_description_fail", {
-                    t0: $scope.datacenter.model.name
-                }), angular.extend(data, { type: "ERROR" }));
-                $scope.datacenterDescription.loading = false;
+        modal.result.then((newValue) => {
+            if (contextTitle === "dedicatedCloud_datacenter_name") {
+                $scope.datacenterName.model = newValue;
+            } else {
+                $scope.datacenterDescription.model = newValue;
             }
-        );
+        });
     };
 
     $scope.loadDatacenter();

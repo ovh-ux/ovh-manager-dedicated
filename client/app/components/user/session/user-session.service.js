@@ -382,27 +382,28 @@ class SessionService {
                 },
 
                 // Billing
-                !currentUser.isEnterprise && {
+                // Pay As You Go for US
+                !currentUser.isEnterprise && this.constants.target === "US" && {
                     name: "user.billing",
                     title: this.$translate.instant("menu_billing"),
-                    state: "app.account.billing.history",
-                    subLinks: [{
-                        title: this.$translate.instant("menu_bills"),
-                        state: "app.account.billing.history"
-                    }, {
-                        title: this.$translate.instant("menu_payments"),
-                        state: "app.account.billing.payments"
-                    }]
+                    state: "app.account.billing.main.pay-as-you-go"
+                },
+
+                // history for EU and CA...
+                !currentUser.isEnterprise && this.constants.target !== "US" && {
+                    name: "user.billing",
+                    title: this.$translate.instant("menu_billing"),
+                    state: "app.account.billing.main.history"
                 },
 
                 // Services
                 (this.constants.target === "EU" || this.constants.target === "CA") && (!currentUser.isEnterprise ? {
                     name: "user.services",
                     title: this.$translate.instant("menu_services"),
-                    state: "app.account.service.billing.autoRenew",
+                    state: "app.account.billing.service.autoRenew",
                     subLinks: [{
                         title: this.$translate.instant("menu_services_management"),
-                        state: "app.account.service.billing.autoRenew"
+                        state: "app.account.billing.service.autoRenew"
                     }, {
                         title: this.$translate.instant("menu_agreements"),
                         state: "app.account.service.useraccount.agreements"
@@ -416,35 +417,35 @@ class SessionService {
                 !currentUser.isEnterprise && {
                     name: "user.payment",
                     title: this.$translate.instant("menu_means"),
-                    state: "app.account.payment.mean",
+                    state: "app.account.billing.payment.mean",
                     subLinks: [{
                         title: this.$translate.instant("menu_means"),
-                        state: "app.account.payment.mean"
+                        state: "app.account.billing.payment.mean"
                     },
                     (this.constants.target === "EU" || this.constants.target === "CA") && {
                         title: this.$translate.instant("menu_ovhaccount"),
-                        state: "app.account.payment.ovhaccount"
+                        state: "app.account.billing.payment.ovhaccount"
                     },
                     (this.constants.target === "EU" || this.constants.target === "CA") && {
                         title: this.$translate.instant("menu_vouchers"),
-                        state: "app.account.payment.vouchers"
+                        state: "app.account.billing.payment.vouchers"
                     }, {
                         title: this.$translate.instant("menu_refunds"),
-                        state: "app.account.payment.refunds"
+                        state: "app.account.billing.payment.refunds"
                     },
                     (this.constants.target === "EU") && {
                         title: this.$translate.instant("menu_fidelity"),
-                        state: "app.account.payment.fidelity"
+                        state: "app.account.billing.payment.fidelity"
                     }, {
                         title: this.$translate.instant("menu_credits"),
-                        state: "app.account.payment.credits"
+                        state: "app.account.billing.payment.credits"
                     }]
                 },
 
                 // Orders
                 (!currentUser.isEnterprise && this.constants.target === "EU" && currentUser.ovhSubsidiary === "FR") && {
                     title: this.$translate.instant("menu_orders"),
-                    state: "app.account.orders"
+                    state: "app.account.billing.orders"
                 },
 
                 // Contacts

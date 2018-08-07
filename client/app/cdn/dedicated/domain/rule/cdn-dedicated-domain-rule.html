@@ -1,6 +1,7 @@
 <div data-ng-controller="CdnDomainTabCacheRuleCtrl">
 
-    <h2 data-translate="cdn_domain_tab_rule"></h2>
+    <h2 class="oui-header_3"
+        data-translate="cdn_domain_tab_rule"></h2>
 
     <div data-ovh-alert='cdn_domain_tab_rules_alert'></div>
     <div class="text-center"
@@ -110,6 +111,11 @@
                     data-ng-if="cacheRules.count > 0 || cacheRulesEntrySearchSelected"
                     data-ng-click="setAction('domain/rule/activate/all/cdn-dedicated-domain-rule-activate-all')"
                     data-translate="cdn_configuration_allcacherule_activate_title_button">
+            </button>
+            <button type="button"
+                    class="btn btn-block btn-default"
+                    data-ng-click="setAction('domain/flush/cdn-dedicated-domain-flush', $ctrl.domain)"
+                    data-translate="cdn_domain_configuration_purge_title_button">
             </button>
         </div>
     </div>
