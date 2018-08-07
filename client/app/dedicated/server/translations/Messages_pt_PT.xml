@@ -6,7 +6,7 @@
    <translation id="server_tab_IP" qtlid="172696">IP e Segurança</translation>
    <translation id="server_tab_IP_block" qtlid="141366">Bloco:</translation>
    <translation id="server_tab_IP_block_all" qtlid="69173">Todos</translation>
-   <translation id="server_tab_IP_search" qtlid="122275">Buscando...</translation>
+   <translation id="server_tab_IP_search" qtlid="122275">A procurar...</translation>
    <translation id="server_tab_IP_table_empty" qtlid="141431">Não tem regras de firewall.</translation>
    <translation id="server_tab_IP_table_not_allowed" qtlid="141379">Não é possível gerir a mitigação e a firewall de rede para este IP. Para mais informações, contacte os nossos serviços.</translation>
    <translation id="server_tab_IP_table_search_empty" qtlid="141392">Os critérios de pesquisa não correspondem a nenhum IP</translation>
@@ -110,7 +110,7 @@
    <translation id="server_tab_stats_rtm_infos_cpu_cache" qtlid="30214">Cache</translation>
    <translation id="server_tab_stats_rtm_infos_ram" qtlid="31354">RAM</translation>
    <translation id="server_tab_stats_rtm_infos_swap" qtlid="32902">SWAP</translation>
-   <translation id="server_tab_stats_rtm_infos_versions" qtlid="448522">Versions</translation>
+   <translation id="server_tab_stats_rtm_infos_versions" qtlid="448522">Versões</translation>
    <translation id="server_tab_stats_rtm_infos_rtmVersion" qtlid="193956">Versão Real Time Monitoring</translation>
    <translation id="server_tab_stats_rtm_infos_rtmVersion_update" qtlid="204103">Atualização disponível</translation>
    <translation id="server_tab_stats_rtm_infos_kernelVersion" qtlid="204116">Versão Kernel</translation>
@@ -226,8 +226,7 @@
    <translation id="server_configuration_monitoring_activate_question" qtlid="133500">Têm a certeza de que deseja ativar o sistema de monitoring no servidor {0}?</translation>
    <translation id="server_configuration_monitoring_activate_success" qtlid="133513">O sistema de monitoring está ativo no servidor {0}</translation>
    <translation id="server_configuration_monitoring_activate_failed" qtlid="133526">Ocorreu um erro aquando da ativação do sistema de monitoring no servidor {0}</translation>
-   <translation id="server_configuration_monitoring_activate_information" qtlid="208573">
-</translation>
+   <translation id="server_configuration_monitoring_activate_information" qtlid="208573"></translation>
    <translation id="server_configuration_monitoring_deactivate_title_button" qtlid="90973">Desativar</translation>
    <translation id="server_configuration_monitoring_deactivate_title" qtlid="103293">Desactivar o monitoring</translation>
    <translation id="server_configuration_monitoring_deactivate_question" qtlid="134345">Têm a certeza de que deseja desativar o monitoring do servidor {0}?</translation>
@@ -413,7 +412,7 @@
    <translation id="server_configuration_ftpbackup_activate_success" qtlid="184308">O backup storage estará ativado daqui a pouco.</translation>
    <translation id="server_configuration_ftpbackup_activate_successfull" qtlid="184321">O backup storage foi ativado.</translation>
    <translation id="server_configuration_ftpbackup_activate_failure" qtlid="184334">Erro ao processar ativação do backup storage.</translation>
-   <translation id="server_configuration_ftpbackup_activate_question" qtlid="184347">Quer mesmo ativar o serviço Backup Storage para este servidor?</translation>
+   <translation id="server_configuration_ftpbackup_activate_question" qtlid="184347">Tem a certeza de que quer ativar o serviço Backup Storage para este servidor?</translation>
    <translation id="server_configuration_ftpbackup_delete_success" qtlid="184360">O Backup Storage será eliminado dentro de alguns instantes.</translation>
    <translation id="server_configuration_ftpbackup_delete_successfull" qtlid="184373">O Backup Storage foi eliminado.</translation>
    <translation id="server_configuration_ftpbackup_delete_failure" qtlid="184386">Erro ao processar a eliminação do Backup Storage.</translation>
@@ -482,16 +481,16 @@
    <translation id="server_configuration_ftpbackup_add_ip" qtlid="180850">Bloco afetado:</translation>
    <translation id="server_configuration_ftpbackup_add_authorization" qtlid="180863">Autorizar em:</translation>
 
-   <translation id="server_configuration_cloudbackup_delete" qtlid="492502">Supprimer le Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_delete" qtlid="492502">Eliminar o Backup Storage</translation>
 
    <translation id="server_configuration_cloudbackup_delete_success" qtlid="184360">O Backup Storage será eliminado dentro de alguns instantes.</translation>
-   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="492515">Le Backup Storage a bien été supprimé.</translation>
-   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="492528">Une erreur est survenue lors de la suppression du Backup Storage.</translation>
+   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="492515">O Backup Storage foi eliminado com êxito.</translation>
+   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="492528">Ocorreu um erro ao eliminar o Backup Storage.</translation>
    <translation id="server_configuration_cloudbackup_delete_question" qtlid="451872">Quer mesmo desativar o Backup Storage</translation>
 
    <translation id="server_configuration_cloudbackup_inactive" qtlid="451885">O Backup Storage está desativado</translation>
    <translation id="server_configuration_cloudbackup_new_project" qtlid="16493">Novo projecto</translation>
-   <translation id="server_configuration_cloudbackup_load_fail" qtlid="492541">Une erreur est survenue lors du chargement des informations du Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_load_fail" qtlid="492541">Ocorreu um erro ao carregar as informações do Backup Storage</translation>
    <translation id="server_configuration_cloudbackup_load_offers_fail" qtlid="451898">Ocorreu um erro no acesso às ofertas cloud Backup Storage</translation>
    <translation id="server_configuration_cloudbackup_load_projects_fail" qtlid="451911"></translation>
    <translation id="server_configuration_cloudbackup_load_agreements_fail" qtlid="451924">Ocorreu um erro no acesso aos contratos</translation>
@@ -515,7 +514,7 @@
    <translation id="server_configuration_cloudbackup_summary_documentation_label" qtlid="415740">Guia</translation>
    <translation id="server_configuration_cloudbackup_summary_usage_label" qtlid="109974"></translation>
    <translation id="server_configuration_cloudbackup_summary_title_label_storage" qtlid="452067">O seu container Backup Storage</translation>
-   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="492554">Supprimer le Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="492554">Eliminar o Backup Storage</translation>
 
    <translation id="server_configuration_cloudbackup_container_storage_guide_description" qtlid="452080">Procura uma ferramenta para fazer o backup dos dados? Sugerimos o Rclone</translation>
    <translation id="server_configuration_cloudbackup_container_storage_guide_product" qtlid="452093">Rclone</translation>
@@ -545,7 +544,7 @@
    <translation id="server_tab_FIREWALLASA_dashboard_model_asa5505" qtlid="151607">Cisco ASA 5505</translation>
    <translation id="server_tab_FIREWALLASA_dashboard_model_asa5510" qtlid="151620">Cisco ASA 5510</translation>
    <translation id="server_tab_FIREWALLASA_dashboard_model_asa5520" qtlid="151633">Cisco ASA 5520</translation>
-   <translation id="server_tab_FIREWALLASA_dashboard_state" qtlid="8230">Status</translation>
+   <translation id="server_tab_FIREWALLASA_dashboard_state" qtlid="8230">Estado</translation>
    <translation id="server_tab_FIREWALLASA_dashboard_state_true" qtlid="30250">Ativado</translation>
    <translation id="server_tab_FIREWALLASA_dashboard_state_false" qtlid="24967">Desativado</translation>
    <translation id="server_configuration_firewall_asa_order_title_button" qtlid="151646">Encomendar uma firewall Cisco ASA</translation>
@@ -956,7 +955,7 @@
    <translation id="contract_previous" qtlid="17431">Anterior</translation>
    <translation id="download_contract" qtlid="486477">Abrir o contrato "{{ name }}" em PDF</translation>
    <translation id="contract_help" qtlid="180382">Para poder validar, tem de ler os contratos até ao fim.</translation>
-   <translation id="contracts_list_title" qtlid="486490">Há {{ count }} contratos a consultar.</translation>
+   <translation id="contracts_list_title" qtlid="486490">Existem {{ count }} contratos por consultar.</translation>
    <translation id="contract_list_title" qtlid="180408">Há 1 contrato para ler.</translation>
    <translation id="contracts_agree" qtlid="180421">Aceito as condições contratatuais</translation>
    <translation id="contract_agree" qtlid="180434">Aceito as condições contratatuais</translation>
@@ -1057,7 +1056,7 @@
    <translation id="server_tab_MONITORING_table_header_port" qtlid="9034">Porta</translation>
    <translation id="server_tab_MONITORING_table_header_interval" qtlid="243780">Intervalo (em segundos)</translation>
    <translation id="server_tab_MONITORING_table_header_url" qtlid="31402">URL</translation>
-   <translation id="server_tab_MONITORING_table_header_status" qtlid="8230">Status</translation>
+   <translation id="server_tab_MONITORING_table_header_status" qtlid="8230">Estado</translation>
    <translation id="server_tab_MONITORING_table_header_notifications" qtlid="68981">Destinatários</translation>
    <translation id="server_tab_MONITORING_table_header_refresh" qtlid="218081">Atualizar tabela</translation>
    <translation id="server_tab_MONITORING_table_empty" qtlid="243793">Nenhum serviço monitorizado</translation>
@@ -1105,7 +1104,7 @@
    <translation id="server_tab_MONITORING_table_notifications_empty" qtlid="244222">Nenhuma notificação</translation>
    <translation id="server_tab_MONITORING_table_notifications_email_header_email" qtlid="33598">E-mail</translation>
    <translation id="server_tab_MONITORING_table_notifications_email_header_lang" qtlid="30598">Idioma</translation>
-   <translation id="server_tab_MONITORING_table_notifications_email_header_status" qtlid="8230">Status</translation>
+   <translation id="server_tab_MONITORING_table_notifications_email_header_status" qtlid="8230">Estado</translation>
    <translation id="server_tab_MONITORING_table_notifications_action_edit" qtlid="244235">Modificar a notificação</translation>
    <translation id="server_tab_MONITORING_table_notifications_action_delete" qtlid="244248">Eliminar a notificação</translation>
    <translation id="server_tab_MONITORING_notifications_email_add_step1_title" qtlid="244261">Queira introduzir as informações que permitam que o alertemos por e-mail.</translation>
@@ -1131,7 +1130,7 @@
    <translation id="server_tab_MONITORING_table_notifications_sms_header_lang" qtlid="30598">Idioma</translation>
    <translation id="server_tab_MONITORING_table_notifications_sms_header_from" qtlid="244417">Janela horária de envio:</translation>
    <translation id="server_tab_MONITORING_table_notifications_sms_header_to" qtlid="169498">e</translation>
-   <translation id="server_tab_MONITORING_table_notifications_sms_header_status" qtlid="8230">Status</translation>
+   <translation id="server_tab_MONITORING_table_notifications_sms_header_status" qtlid="8230">Estado</translation>
    <translation id="server_tab_MONITORING_notifications_sms_account_disable" qtlid="244430">Não dispõe de nenhuma conta SMS ativa.</translation>
 
    <translation id="server_tab_MONITORING_notifications_sms_add_sms" qtlid="244443">Conta SMS:</translation>
