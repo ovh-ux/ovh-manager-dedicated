@@ -16,10 +16,12 @@
                         data-searchable
                         data-filterable>
                 <a data-ng-bind="$row.project.name"
+                   data-ng-if="$row.project.name"
                    data-ng-href="{{ $row.project.url }}"
                    data-translate-attr="{ title: 'billing_main_pay_as_you_go_table_project_title' }"
                    data-translate-values="{ name: $row.project.name }">
                 </a>
+                <span data-ng-if="!$row.project.name">-</span>
             </oui-column>
             <oui-column data-title=":: 'billing_main_pay_as_you_go_table_resource' | translate"
                         data-property="resource"
