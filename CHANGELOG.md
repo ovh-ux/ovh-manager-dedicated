@@ -1,3 +1,13 @@
+<a name="9.7.2"></a>
+## [9.7.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.1...v9.7.2) (2018-08-07)
+
+
+### Bug Fixes
+
+* **dedicatedcloud.user.edit:** update switch template ([0cb7bd3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0cb7bd3))
+
+
+
 <a name="9.7.1"></a>
 ## [9.7.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.0...v9.7.1) (2018-08-07)
 
