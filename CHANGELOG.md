@@ -1,3 +1,13 @@
+<a name="9.7.3"></a>
+## [9.7.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.2...v9.7.3) (2018-08-07)
+
+
+### Bug Fixes
+
+* **deps:** bump ovh-api-services to v3.12.1 ([4f47966](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4f47966))
+
+
+
 <a name="9.7.2"></a>
 ## [9.7.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.1...v9.7.2) (2018-08-07)
 
