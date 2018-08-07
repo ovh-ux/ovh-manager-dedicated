@@ -1,3 +1,13 @@
+<a name="9.7.1"></a>
+## [9.7.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.0...v9.7.1) (2018-08-07)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** update payment.mean state ([68d521d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/68d521d))
+
+
+
 <a name="9.7.0"></a>
 # [9.7.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.22...v9.7.0) (2018-08-07)
 
