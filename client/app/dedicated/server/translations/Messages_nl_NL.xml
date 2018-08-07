@@ -6,7 +6,7 @@
    <translation id="server_tab_IP" qtlid="172696">IP en veiligheid</translation>
    <translation id="server_tab_IP_block" qtlid="141366">Blok:</translation>
    <translation id="server_tab_IP_block_all" qtlid="69173">Alle</translation>
-   <translation id="server_tab_IP_search" qtlid="122275">Zoeken...</translation>
+   <translation id="server_tab_IP_search" qtlid="122275">Aan het zoeken...</translation>
    <translation id="server_tab_IP_table_empty" qtlid="141431">U heeft geen firewall regel.</translation>
    <translation id="server_tab_IP_table_not_allowed" qtlid="141379">Het is niet mogelijk de mitigatie en het firewall-netwerk voor dit IP te beheren. Indien u meer informatie nodig heeft, neem dan svp contact op met ons support team.</translation>
    <translation id="server_tab_IP_table_search_empty" qtlid="141392">Geen enkel IP-adres komt overeen met uw zoekcriteria</translation>
@@ -110,7 +110,7 @@
    <translation id="server_tab_stats_rtm_infos_cpu_cache" qtlid="30214">Cache</translation>
    <translation id="server_tab_stats_rtm_infos_ram" qtlid="31354">RAM</translation>
    <translation id="server_tab_stats_rtm_infos_swap" qtlid="32902">SWAP</translation>
-   <translation id="server_tab_stats_rtm_infos_versions" qtlid="448522">Versions</translation>
+   <translation id="server_tab_stats_rtm_infos_versions" qtlid="448522">Versies</translation>
    <translation id="server_tab_stats_rtm_infos_rtmVersion" qtlid="193956">Real Time Monitoring versie</translation>
    <translation id="server_tab_stats_rtm_infos_rtmVersion_update" qtlid="204103">Een update is beschikbaar</translation>
    <translation id="server_tab_stats_rtm_infos_kernelVersion" qtlid="204116">Kernelversie</translation>
@@ -408,15 +408,15 @@
    <translation id="server_configuration_ftpbackup_usage" qtlid="30382">Gebruik</translation>
    <translation id="server_configuration_ftpbackup_delete" qtlid="184282">Backup Storage verwijderen</translation>
    <translation id="server_configuration_ftpbackup_forgot_password" qtlid="149150">Wachtwoord vergeten?</translation>
-   <translation id="server_configuration_ftpbackup_activate" qtlid="184295">De back-up storage activeren</translation>
-   <translation id="server_configuration_ftpbackup_activate_success" qtlid="184308">De back-up storage wordt geactiveerd in enkele ogenblikken.</translation>
-   <translation id="server_configuration_ftpbackup_activate_successfull" qtlid="184321">De back-up storage is geactiveerd.</translation>
-   <translation id="server_configuration_ftpbackup_activate_failure" qtlid="184334">Er is een fout opgetreden tijdens het activeren van de back-up storage.</translation>
-   <translation id="server_configuration_ftpbackup_activate_question" qtlid="184347">Weet u zeker dat u de Backup Storage-dienst van deze server wilt activeren?</translation>
+   <translation id="server_configuration_ftpbackup_activate" qtlid="184295">Backup Storage activeren</translation>
+   <translation id="server_configuration_ftpbackup_activate_success" qtlid="184308">Backup Storage wordt geactiveerd in enkele ogenblikken.</translation>
+   <translation id="server_configuration_ftpbackup_activate_successfull" qtlid="184321">Backup Storage is geactiveerd.</translation>
+   <translation id="server_configuration_ftpbackup_activate_failure" qtlid="184334">Er is een fout opgetreden tijdens het activeren van Backup Storage.</translation>
+   <translation id="server_configuration_ftpbackup_activate_question" qtlid="184347">Weet u zeker dat u de Backup Storage dienst van deze server wilt activeren?</translation>
    <translation id="server_configuration_ftpbackup_delete_success" qtlid="184360">Backup Storage zal binnen enkele ogenblikken worden verwijderd.</translation>
    <translation id="server_configuration_ftpbackup_delete_successfull" qtlid="184373">Backup Storage is verwijderd.</translation>
    <translation id="server_configuration_ftpbackup_delete_failure" qtlid="184386">Er is een fout opgetreden tijdens het verwijderen van Backup Storage.</translation>
-   <translation id="server_configuration_ftpbackup_delete_question" qtlid="184399">Weet u zeker dat u de back-up storage wilt verwijderen {0}?</translation>
+   <translation id="server_configuration_ftpbackup_delete_question" qtlid="184399">Weet u zeker dat u Backup Storage wilt verwijderen {0}?</translation>
    <translation id="server_configuration_ftpbackup_delete_question2" qtlid="164389">Let op: deze actie is onomkeerbaar</translation>
    <translation id="server_configuration_ftpbackup_lost_password" qtlid="149241">Een nieuw wachtwoord aanvragen</translation>
    <translation id="server_configuration_ftpbackup_lost_password_success" qtlid="149254">Een nieuw wachtwoord wordt verstuurd naar de admin NIC van de server.</translation>
@@ -424,7 +424,7 @@
    <translation id="server_configuration_ftpbackup_lost_password_failure" qtlid="149267">Er is een fout opgetreden bij het resetten van het wachtwoord.</translation>
    <translation id="server_configuration_ftpbackup_lost_password_question" qtlid="184412">Weet u zeker dat u het wachtwoord voor de back-up storage {0} wilt resetten?</translation>
 
-   <translation id="server_configuration_ftpbackup_order_title" qtlid="184425">Het bestellen van een back-up storage diskruimte</translation>
+   <translation id="server_configuration_ftpbackup_order_title" qtlid="184425">Het bestellen van Backup Storage diskruimte</translation>
    <translation id="server_configuration_ftpbackup_order_load_failure" qtlid="180486">Er is een fout opgetreden bij het ophalen van de lijst met beschikbare storage capaciteit.</translation>
    <translation id="server_configuration_ftpbackup_order_load_detail_failure" qtlid="180499">Er is een fout opgetreden bij het ophalen van de storage bestellingsgegevens</translation>
    <translation id="server_configuration_ftpbackup_order_load_order_success" qtlid="183801">Het bestelnummer <a href='{0}' target='_blank'>{1}</a> van de storage werd geregistreerd.</translation>
@@ -481,16 +481,16 @@
    <translation id="server_configuration_ftpbackup_add_ip" qtlid="180850">Het betreffende blok:</translation>
    <translation id="server_configuration_ftpbackup_add_authorization" qtlid="180863">Toestaan voor:</translation>
 
-   <translation id="server_configuration_cloudbackup_delete" qtlid="492502">Supprimer le Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_delete" qtlid="492502">Backup Storage verwijderen</translation>
 
    <translation id="server_configuration_cloudbackup_delete_success" qtlid="184360">Backup Storage zal binnen enkele ogenblikken worden verwijderd.</translation>
-   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="492515">Le Backup Storage a bien été supprimé.</translation>
-   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="492528">Une erreur est survenue lors de la suppression du Backup Storage.</translation>
+   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="492515">Backup Storage is verwijderd. </translation>
+   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="492528">Er is een fout opgetreden bij het verwijderen van Backup Storage.</translation>
    <translation id="server_configuration_cloudbackup_delete_question" qtlid="451872">Weet u zeker dat u Backup Storage wilt uitschakelen? </translation>
 
    <translation id="server_configuration_cloudbackup_inactive" qtlid="451885">Uw Backup Storage is uitgeschakeld. </translation>
    <translation id="server_configuration_cloudbackup_new_project" qtlid="16493">Nieuw project</translation>
-   <translation id="server_configuration_cloudbackup_load_fail" qtlid="492541">Une erreur est survenue lors du chargement des informations du Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_load_fail" qtlid="492541">Er is een fout opgetreden bij het laden van informatie over Backup Storage.</translation>
    <translation id="server_configuration_cloudbackup_load_offers_fail" qtlid="451898">Er is een fout opgetreden tijdens het laden van Backup Storage cloudoplossingen</translation>
    <translation id="server_configuration_cloudbackup_load_projects_fail" qtlid="451911">Er is een fout opgetreden bij het laden van cloudprojecten</translation>
    <translation id="server_configuration_cloudbackup_load_agreements_fail" qtlid="451924">Er is een fout opgetreden tijdens het laden van de contracten</translation>
@@ -514,7 +514,7 @@
    <translation id="server_configuration_cloudbackup_summary_documentation_label" qtlid="415740">Handleiding</translation>
    <translation id="server_configuration_cloudbackup_summary_usage_label" qtlid="109974">Gebruik</translation>
    <translation id="server_configuration_cloudbackup_summary_title_label_storage" qtlid="452067">Uw Backup Storage container</translation>
-   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="492554">Supprimer le Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="492554">Backup Storage verwijderen</translation>
 
    <translation id="server_configuration_cloudbackup_container_storage_guide_description" qtlid="452080">Heeft u een tool nodig voor het maken van backups van uw data? OVH raadt Rclone aan</translation>
    <translation id="server_configuration_cloudbackup_container_storage_guide_product" qtlid="452093">Rclone</translation>
@@ -1183,7 +1183,7 @@ een andere server</translation>
    <translation id="server_close_service_cancel_success" qtlid="451779">Het verwijderingsverzoek voor deze server is geannuleerd.</translation>
    <translation id="server_close_service_cancel_error" qtlid="451792">Er is een fout opgetreden bij het annuleren van het verwijderingsverzoek voor deze server:</translation>
 
-   <translation id="housing_support_phone" qtlid="290446">Wist u het al? Bij uw Housing-dienst is een toegewijde supportmedewerker inbegrepen waar u met al uw vragen terechtkunt {0}.   </translation>
+   <translation id="housing_support_phone" qtlid="290446">Wist u het al? Bij uw Housing dienst is een toegewijde supportmedewerker inbegrepen waar u met al uw vragen terechtkunt {0}.   </translation>
 
    <translation id="server_autorenew_stop_bother_error" qtlid="290589">Er is een fout opgetreden bij het verzenden van het verzoek om u niet langer te informeren over automatische verlenging. </translation>
    <translation id="server_autorenew_alert" qtlid="296882">Maak het uzelf gemakkelijker door automatische server verlenging te kiezen! Geen last meer van reminders en gemiste verlengingen. </translation>
