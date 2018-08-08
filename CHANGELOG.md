@@ -1,3 +1,13 @@
+<a name="9.7.4"></a>
+## [9.7.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.3...v9.7.4) (2018-08-08)
+
+
+### Bug Fixes
+
+* **datastores:** fix order datastore action ([b4123e3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b4123e3))
+
+
+
 <a name="9.7.3"></a>
 ## [9.7.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.2...v9.7.3) (2018-08-07)
 
