@@ -22,12 +22,14 @@
                 </label>
                 <div class="radio"
                      data-ng-repeat="price in prices track by $index">
-                    <label>
+                     <label>
                         <input type="radio"
                                value="{{ price.quantity }}"
-                               data-ng-model="choices.count" />
+                               data-ng-model="choices.count"
+                               data-ng-disabled="price.subscribed"/>
                         <span data-translate="cdn_configuration_cacherules_upgrade_step1_tarif2"
                               data-translate-values="{ t0: price.unitaryPrice, t1: price.quantity }"></span>
+                        <p data-ng-if="price.subscribed" data-translate="cdn_configuration_cacherules_upgrade_subscribed"></p>
                     </label>
                 </div>
             </div>
