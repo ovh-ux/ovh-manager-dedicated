@@ -103,12 +103,12 @@
                      data-ng-repeat="type in availableTypes"
                      data-ng-src="images/license/{{ type }}_medium.png"
                      data-ng-click="selectType(type)"
-                     data-ng-style="!isAvailable(type) || loaders.orderableVersion == true ? {
+                     data-ng-style="!isAvailable(type) || loaders.orderableVersion == true || (loaders.prices && selected.licenseType !== type) ? {
                         filter: 'grayscale(100%)',
                         cursor: 'not-allowed'
                      } : ''"
                      data-ng-class="{
-                         'disabled': !isAvailable(type) || loaders.orderableVersion == true,
+                         'disabled': !isAvailable(type) || loaders.orderableVersion == true || (loaders.prices && selected.licenseType !== type),
                          'selected': selected.licenseType == type,
                          'opa3': selected.licenseType && selected.licenseType != type
                      }" />
