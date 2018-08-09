@@ -10,6 +10,7 @@
                     data-ng-bind="server.displayName">
                 </h1>
                 <button type="button"
+                        data-ng-if="worldPart !== 'US'"
                         data-translate-attr="{ title: 'wizard_modify' }"
                         class="btn btn-icon my-auto ml-2"
                         data-ui-sref="app.dedicated.server.edit-display-name">
