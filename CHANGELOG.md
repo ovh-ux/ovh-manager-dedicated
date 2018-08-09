@@ -1,3 +1,15 @@
+<a name="9.7.7"></a>
+## [9.7.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.6...v9.7.7) (2018-08-09)
+
+
+### Bug Fixes
+
+* **datastores:** fix host order modal overflow ([5698fc6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5698fc6))
+* **license:** fix missing ip param in agora license order ([b221f20](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b221f20))
+* **users:** fix invalid token validator value in users table ([472b0ae](https://github.com/ovh-ux/ovh-manager-dedicated/commit/472b0ae))
+
+
+
 <a name="9.7.6"></a>
 ## [9.7.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.5...v9.7.6) (2018-08-09)
 
