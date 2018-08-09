@@ -1,3 +1,14 @@
+<a name="9.7.6"></a>
+## [9.7.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.5...v9.7.6) (2018-08-09)
+
+
+### Bug Fixes
+
+* **service-expiration:** hide link on service expiration for US ([04140d8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/04140d8))
+* **service.expiration.date:** add missing $ctrl ([d39ed3f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d39ed3f))
+
+
+
 <a name="9.7.5"></a>
 ## [9.7.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.4...v9.7.5) (2018-08-09)
 
