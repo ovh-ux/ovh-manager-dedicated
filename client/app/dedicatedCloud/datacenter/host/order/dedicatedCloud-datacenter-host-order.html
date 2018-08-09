@@ -18,73 +18,75 @@
 
             <div data-ng-hide="orderHosts.loading">
                 <p data-translate="dedicatedCloud_configuration_order_hosts_step1_question"></p>
-                <table class="table table-hover mb-5">
-                    <thead>
-                        <tr>
-                            <th scope="col"
-                                class="min-width">
-                            </th>
-                            <th scope="col"
-                                class="text-center"
-                                data-translate="dedicatedCloud_configuration_order_hosts">
-                            </th>
-                            <th scope="col"
-                                class="text-right"
-                                data-translate="dedicatedCloud_configuration_order_hosts_processor_speed">
-                            </th>
-                            <th scope="col"
-                                class="text-right">
-                                <span class="d-block"
-                                      data-translate="dedicatedCloud_configuration_order_hosts_memory">
-                                </span>
-                                <span data-translate="dedicatedCloud_configuration_order_hosts_memory_ecc"></span>
-                            </th>
-                            <th scope="col"
-                                class="text-right"
-                                data-translate="dedicatedCloud_configuration_order_hosts_nb_cores">
-                            </th>
-                            <th scope="col"
-                                class="text-right">
-                                <span class="d-block"
-                                      data-translate="dedicatedCloud_configuration_order_hosts_step1_rate">
-                                </span>
-                                <small data-translate="dedicatedCloud_configuration_order_hosts_step1_monthly_rate"></small>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr data-ng-repeat="profile in orderHosts.model track by $index">
-                            <td>
-                                <input type="radio"
-                                       name="selected_profile"
-                                       value="{{ $index }}"
-                                       data-ng-model="orderHosts.selected" />
-                            </td>
-                            <th scope="row"
-                                class="text-center"
-                                data-ng-bind="profile.name">
-                            </th>
-                            <td class="text-right"
-                                data-ng-bind="profile.cpu.value + ' ' + profile.cpu.unit">
-                            </td>
-                            <td class="text-right"
-                                data-ng-bind="profile.ram.value + ' ' + profile.ram.unit">
-                            </td>
-                            <td class="text-right"
-                                data-ng-bind="profile.core">
-                            </td>
-                            <td class="text-right">
-                                <strong class="text-danger"
-                                        data-ng-bind="profile.priceDisplay">
-                                </strong>
-                                <span class="ml-3"
-                                      data-ng-show="hasDiscount(profile)"
-                                      data-ng-bind="'(' + hasDiscount(profile) + ') *'">
-                                </span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="table table-hover mb-5">
+                        <thead>
+                            <tr>
+                                <th scope="col"
+                                    class="min-width">
+                                </th>
+                                <th scope="col"
+                                    class="text-center"
+                                    data-translate="dedicatedCloud_configuration_order_hosts">
+                                </th>
+                                <th scope="col"
+                                    class="text-right"
+                                    data-translate="dedicatedCloud_configuration_order_hosts_processor_speed">
+                                </th>
+                                <th scope="col"
+                                    class="text-right">
+                                    <span class="d-block"
+                                          data-translate="dedicatedCloud_configuration_order_hosts_memory">
+                                    </span>
+                                    <span data-translate="dedicatedCloud_configuration_order_hosts_memory_ecc"></span>
+                                </th>
+                                <th scope="col"
+                                    class="text-right"
+                                    data-translate="dedicatedCloud_configuration_order_hosts_nb_cores">
+                                </th>
+                                <th scope="col"
+                                    class="text-right">
+                                    <span class="d-block"
+                                          data-translate="dedicatedCloud_configuration_order_hosts_step1_rate">
+                                    </span>
+                                    <small data-translate="dedicatedCloud_configuration_order_hosts_step1_monthly_rate"></small>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-ng-repeat="profile in orderHosts.model track by $index">
+                                <td>
+                                    <input type="radio"
+                                           name="selected_profile"
+                                           value="{{ $index }}"
+                                           data-ng-model="orderHosts.selected" />
+                                </td>
+                                <th scope="row"
+                                    class="text-center"
+                                    data-ng-bind="profile.name">
+                                </th>
+                                <td class="text-right"
+                                    data-ng-bind="profile.cpu.value + ' ' + profile.cpu.unit">
+                                </td>
+                                <td class="text-right"
+                                    data-ng-bind="profile.ram.value + ' ' + profile.ram.unit">
+                                </td>
+                                <td class="text-right"
+                                    data-ng-bind="profile.core">
+                                </td>
+                                <td class="text-right">
+                                    <strong class="text-danger"
+                                            data-ng-bind="profile.priceDisplay">
+                                    </strong>
+                                    <span class="ml-3"
+                                          data-ng-show="hasDiscount(profile)"
+                                          data-ng-bind="'(' + hasDiscount(profile) + ') *'">
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <div class="form-group">
                     <label for="quantity"
                            class="control-label"
