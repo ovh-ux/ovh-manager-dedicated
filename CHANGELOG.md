@@ -1,3 +1,15 @@
+<a name="9.7.5"></a>
+## [9.7.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.4...v9.7.5) (2018-08-09)
+
+
+### Bug Fixes
+
+* **dedicated.server:** edit display name for non-us customer ([2bebcaa](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2bebcaa))
+* **server:** display subscription contacts for non US only ([2b7a6a5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2b7a6a5))
+* **service-expiration:** display date for US ([097fb0c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/097fb0c))
+
+
+
 <a name="9.7.4"></a>
 ## [9.7.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.3...v9.7.4) (2018-08-08)
 
