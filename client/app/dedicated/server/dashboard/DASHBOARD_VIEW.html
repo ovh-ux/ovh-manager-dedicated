@@ -14,7 +14,8 @@
                             <dd class="oui-tile__description"
                                 data-ng-bind="server.displayName"></dd>
                         </dl>
-                        <div class="oui-tile__actions">
+                        <div class="oui-tile__actions"
+                             data-ng-if="worldPart !== 'US'">
                             <oui-action-menu
                                 aria-label="{{:: 'menu_action_label' | translate:{ t0: ('server_configuration_displayname' | translate) } }}"
                                 data-align="end"
