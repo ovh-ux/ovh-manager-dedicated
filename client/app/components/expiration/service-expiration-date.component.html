@@ -1,10 +1,10 @@
 <a class="oui-link"
    data-ng-href="{{:: $ctrl.getRenewUrl() }}"
    data-ng-bind=":: $ctrl.getDate() | date:'mediumDate'"
-   data-ng-if="$ctrl.constants.target !== 'US' && !$ctrl.hideRenewDate">
+   data-ng-if="!$ctrl.hideRenewDate">
 </a>
 <oui-action-menu
-    data-ng-if="$ctrl.constants.target !== 'US' && !$ctrl.forceHideRenewAction && ((!$ctrl.isAutoRenew() && $ctrl.getRenewUrl() && !$ctrl.hideRenewAction) || ($ctrl.serviceInfos.status === 'expired'))"
+    data-ng-if="!$ctrl.forceHideRenewAction && ((!$ctrl.isAutoRenew() && $ctrl.getRenewUrl() && !$ctrl.hideRenewAction) || ($ctrl.serviceInfos.status === 'expired'))"
     aria-label="'menu_action_label' | translate:{ t0: 'core_service_expiration_label' | translate }"
     data-align="end"
     data-compact>
