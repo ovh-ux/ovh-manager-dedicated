@@ -154,7 +154,7 @@ angular.module("Module.license").controller("LicenseOrderCtrl", ($scope, $timeou
     };
 
     $scope.selectType = function (type) {
-        if (type && type !== $scope.selected.licenseType && $scope.isAvailable(type)) {
+        if (type && type !== $scope.selected.licenseType && $scope.isAvailable(type) && !$scope.loaders.prices) {
             // In case of license upgrade, show an information popup and redirect to upgrade screen.
             const existingServiceName = getExistingServiceName(type);
             if (existingServiceName) {
@@ -218,6 +218,13 @@ angular.module("Module.license").controller("LicenseOrderCtrl", ($scope, $timeou
     function init () {
         $scope.agoraEnabled = featureAvailability.allowLicenseAgoraOrder();
         $scope.loaders.ips = true;
+
+        if ($scope.agoraEnabled) {
+            $scope.$watch(() => $scope.selected, (value) => {
+                LicenseOrder.ip = value.ip;
+            }, true);
+        }
+
         return $q.all({
             ips: License.ips(),
             user: User.getUser()

@@ -31,7 +31,7 @@ class LicenseOrder {
 
             return this.$q.all(queue).then(() => prices);
         }
-        return this.LicenseAgoraOrder.getLicenseOfferPlan(licenseInfo.licenseType, licenseInfo.version).then((plan) => {
+        return this.LicenseAgoraOrder.getLicenseOfferPlan(licenseInfo.licenseType, licenseInfo.version, this.ip).then((plan) => {
             const activeOptions = [];
             _.forEach(_.keys(licenseInfo.options), (key) => {
                 if (_.get(licenseInfo.options[key], "value")) {
