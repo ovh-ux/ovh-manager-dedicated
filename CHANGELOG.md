@@ -1,3 +1,13 @@
+<a name="9.7.8"></a>
+## [9.7.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.7...v9.7.8) (2018-08-10)
+
+
+### Bug Fixes
+
+* **dedicatedcloud.user.passwword:** disable confirm button when reseting ([b1a3886](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b1a3886))
+
+
+
 <a name="9.7.7"></a>
 ## [9.7.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.6...v9.7.7) (2018-08-09)
 
