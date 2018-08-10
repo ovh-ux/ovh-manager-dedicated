@@ -1,3 +1,13 @@
+<a name="9.7.9"></a>
+## [9.7.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.8...v9.7.9) (2018-08-10)
+
+
+### Bug Fixes
+
+* **license order:** fix missing itemId ([c089699](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c089699))
+
+
+
 <a name="9.7.8"></a>
 ## [9.7.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.7...v9.7.8) (2018-08-10)
 
