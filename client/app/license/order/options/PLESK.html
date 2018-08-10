@@ -51,12 +51,7 @@
     </select>
 </div>
 
-<div class="checkbox"
-     data-ng-show="selected.version.more.canHavePowerPack">
-    <label>
-        <span data-translate="license_order_step2_option_PLESK_powerpack"></span>
-        <input type="checkbox"
-               name="powerpack"
-               data-ng-model="selected.options['PLESK'].powerpack.value" />
-    </label>
-</div>
+<oui-checkbox data-ng-if="selected.version.more.canHavePowerPack"
+              data-model="selected.options['PLESK'].powerpack.value"
+              data-text="{{:: 'license_order_step2_option_PLESK_powerpack' | translate }}">
+</oui-checkbox>
