@@ -57,13 +57,13 @@ class LicenseAgoraOrder {
                 return this.OvhHttp.post("/order/cart/{cartId}/assign", { rootPath: "apiv6", urlParams: { cartId } });
             })
             .then(() => this.pushAgoraPlan({ cartId, config }))
-            .then(({ itemId }) => this.configureIpField({ cartId, itemId, ip: config.ip }))
-            .then((response) =>
+            .then((plan) => this.configureIpField({ cartId, itemId: plan.itemId, ip: config.ip }).then(() => plan))
+            .then((plan) =>
                 this.$q.all(
                     _.map(config.options, (option) =>
                         this.pushAgoraPlan({
                             cartId,
-                            config: _.assign({}, config, { planCode: option, options: [], itemId: response.itemId }),
+                            config: _.assign({}, config, { planCode: option, options: [], itemId: plan.itemId }),
                             path: `/order/cart/{cartId}/${this.licenseTypeToCatalog[config.licenseType]}/options`,
                             urlParams: { cartId }
                         })
@@ -110,7 +110,7 @@ class LicenseAgoraOrder {
                 label: "ip",
                 value: ip
             }
-        }).finally(() => itemId);
+        });
     }
 
     getFinalizeOrderUrl (licenseInfo) {
