@@ -1,7 +1,7 @@
 angular
     .module("Module.search")
     .controller("SearchCtrl", class SearchCtrl {
-        constructor ($http, $location, $q, $scope, $translate, Alerter, constants, SEARCH_TARGET_URL, SEARCH_MAPPING_API_ENDPOINTS) {
+        constructor ($http, $location, $q, $scope, $translate, Alerter, constants, OvhApiServices, SEARCH_TARGET_URL, SEARCH_MAPPING_API_ENDPOINTS) {
             this.$http = $http;
             this.$location = $location;
             this.$scope = $scope;
@@ -9,6 +9,7 @@ angular
             this.$q = $q;
             this.Alerter = Alerter;
             this.constants = constants;
+            this.OvhApiServices = OvhApiServices;
             this.SEARCH_TARGET_URL = SEARCH_TARGET_URL;
             this.SEARCH_MAPPING_API_ENDPOINTS = SEARCH_MAPPING_API_ENDPOINTS;
         }
@@ -66,6 +67,76 @@ angular
         fetchData (query) {
             this.isSearching = true;
 
+            return this.OvhApiServices.v6().query().$promise.then((results) => {
+
+                const services = results.filter((result) => _.get(result, "resource.name").indexOf(query) !== -1 || _.get(result, "resource.displayName").indexOf(query) !== -1);
+
+                const promises = _.chain(services).map((result) => {
+                    const path = _.get(result, "route.path");
+                    const name = _.get(result, "resource.name");
+                    const mappedApiEndpoint = _.get(this.SEARCH_MAPPING_API_ENDPOINTS, path);
+
+                    let queryUrl = _.get(mappedApiEndpoint, "queryUrl");
+
+                    if (queryUrl) {
+                        queryUrl = queryUrl.replace("{serviceName}", name);
+                        result.value.details = {};
+
+                        return this.$http.get(queryUrl)
+                            .then(({ data }) => {
+
+                                if (_.isArray(data) && !_.isEmpty(data)) {
+                                    const dataFiltered = _.filter(data, (d) => !_.has(d, "message"));
+                                    if (_.isEmpty(dataFiltered)) {
+                                        return null;
+                                    }
+                                    const dataPath = _.get(_.first(dataFiltered), "path", "");
+
+                                    result.value.details[mappedApiEndpoint.tplRouteParams] = dataPath.match(_.get(mappedApiEndpoint, "tplRoute"))[1];
+
+                                    result.value.details.url = mappedApiEndpoint.url
+                                        .replace(`{${mappedApiEndpoint.tplRouteParams}}`, dataPath.match(_.get(mappedApiEndpoint, "tplRoute"))[1])
+                                        .replace("{serviceName}", name)
+                                        .replace(`{${mappedApiEndpoint.urlParams}}`, _.get(_.first(data), mappedApiEndpoint.urlParams));
+                                } else {
+                                    result.value.details[mappedApiEndpoint.tplRouteParams] = _.get(_.get(data, mappedApiEndpoint.tplRouteParams), "name");
+                                    result.value.details.url = mappedApiEndpoint.url
+                                        .replace(`{${mappedApiEndpoint.tplRouteParams}}`, _.get(_.get(data, mappedApiEndpoint.tplRouteParams), "name"))
+                                        .replace("{serviceName}", name);
+                                }
+
+                                result.value.details.univers = mappedApiEndpoint.univers;
+
+                                return result;
+                            });
+                    }
+
+                    return null;
+                }).compact().value();
+
+                if (_.chain(promises).compact().isEmpty().value()) {
+                    return services;
+                }
+
+                return this.$q
+                    .all(promises)
+                    .then(_.compact);
+            })
+                .then((results) => {
+                    this.results = _.uniq(results);
+                })
+                .catch((err) => {
+                    console.log("fetchData.catch err", err);
+                    return this.Alerter.error(this.$translate.instant("search_error"));
+                })
+                .finally(() => {
+                    this.isSearching = false;
+                });
+        }
+
+        fetchDataV7 (query) {
+            this.isSearching = true;
+
             return this.$q
                 .all({
                     name: this.$http.get(`apiv7/service/*?$aggreg=1&resource.name:like=%25${query}%25&$fields=route,resource`),
@@ -80,7 +151,6 @@ angular
                     return results;
                 })
                 .then((results) => {
-                    // console.log("results", results);
                     const promises = _.chain(results).map((result) => {
                         const path = _.get(result, "value.route.path");
                         const name = _.get(result, "value.resource.name");
@@ -148,12 +218,12 @@ angular
             const details = _.get(result, "details");
             if (_.isEmpty(details)) {
                 const target = _.get(this.SEARCH_TARGET_URL, _.get(result, "route.path"));
-                const basePath = _.get(this.constants.MANAGER_URLS, target.univers);
+                const basePath = _.get(this.constants.MANAGER_URLS, _.get(target, "univers"));
 
                 return basePath + target.url.replace("{serviceName}", _.get(result, "resource.name"));
             }
 
-            return this.constants.MANAGER_URLS[details.univers] + details.url;
+            return this.constants.MANAGER_URLS[_.get(details, "univers")] + _.get(details, "url");
         }
 
         getPaginatedResults () {
