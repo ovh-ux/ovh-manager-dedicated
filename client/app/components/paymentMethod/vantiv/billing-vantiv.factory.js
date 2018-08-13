@@ -31,7 +31,7 @@ angular.module("services").factory("BillingVantiv", ($q, BILLING_VANTIV) => {
                     11: "11",
                     12: "12"
                 },
-                numYears: 8,
+                numYears: 10,
 
                 // Helpers
                 tooltipText: "A CVV is the 3 digit code on the back of your Visa, MasterCard and Discover or a 4 digit code on the front of your American Express",

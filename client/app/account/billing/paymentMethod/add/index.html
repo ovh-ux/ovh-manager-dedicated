@@ -6,13 +6,13 @@
      id="billing-payment-method-add">
 
     <oui-back-button data-heading="{{:: ($ctrl.$stateParams.from ? 'common_back' : 'payment_mean_back') | translate }}"
-                     data-href="{{ $ctrl.$state.href($ctrl.$stateParams.from || 'app.account.payment.mean({})') }}">
+                     data-href="{{ $ctrl.$state.href($ctrl.$stateParams.from || 'app.account.billing.payment.mean({})') }}">
     </oui-back-button>
 
     <div data-ovh-alert></div>
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
             <billing-payment-method-add data-on-change="$ctrl.onBillingMehtodAddChange()"></billing-payment-method-add>
         </div>
     </div>

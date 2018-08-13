@@ -1,3 +1,134 @@
+<a name="9.7.9"></a>
+## [9.7.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.8...v9.7.9) (2018-08-10)
+
+
+### Bug Fixes
+
+* **license order:** fix missing itemId ([c089699](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c089699))
+
+
+
+<a name="9.7.8"></a>
+## [9.7.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.7...v9.7.8) (2018-08-10)
+
+
+### Bug Fixes
+
+* **dedicatedcloud.user.passwword:** disable confirm button when reseting ([b1a3886](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b1a3886))
+
+
+
+<a name="9.7.7"></a>
+## [9.7.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.6...v9.7.7) (2018-08-09)
+
+
+### Bug Fixes
+
+* **datastores:** fix host order modal overflow ([5698fc6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5698fc6))
+* **license:** fix missing ip param in agora license order ([b221f20](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b221f20))
+* **users:** fix invalid token validator value in users table ([472b0ae](https://github.com/ovh-ux/ovh-manager-dedicated/commit/472b0ae))
+
+
+
+<a name="9.7.6"></a>
+## [9.7.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.5...v9.7.6) (2018-08-09)
+
+
+### Bug Fixes
+
+* **service-expiration:** hide link on service expiration for US ([04140d8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/04140d8))
+* **service.expiration.date:** add missing $ctrl ([d39ed3f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d39ed3f))
+
+
+
+<a name="9.7.5"></a>
+## [9.7.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.4...v9.7.5) (2018-08-09)
+
+
+### Bug Fixes
+
+* **dedicated.server:** edit display name for non-us customer ([2bebcaa](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2bebcaa))
+* **server:** display subscription contacts for non US only ([2b7a6a5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2b7a6a5))
+* **service-expiration:** display date for US ([097fb0c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/097fb0c))
+
+
+
+<a name="9.7.4"></a>
+## [9.7.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.3...v9.7.4) (2018-08-08)
+
+
+### Bug Fixes
+
+* **datastores:** fix order datastore action ([b4123e3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b4123e3))
+
+
+
+<a name="9.7.3"></a>
+## [9.7.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.2...v9.7.3) (2018-08-07)
+
+
+### Bug Fixes
+
+* **deps:** bump ovh-api-services to v3.12.1 ([4f47966](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4f47966))
+
+
+
+<a name="9.7.2"></a>
+## [9.7.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.1...v9.7.2) (2018-08-07)
+
+
+### Bug Fixes
+
+* **dedicatedcloud.user.edit:** update switch template ([0cb7bd3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0cb7bd3))
+
+
+
+<a name="9.7.1"></a>
+## [9.7.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.0...v9.7.1) (2018-08-07)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** update payment.mean state ([68d521d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/68d521d))
+
+
+
+<a name="9.7.0"></a>
+# [9.7.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.22...v9.7.0) (2018-08-07)
+
+
+### Bug Fixes
+
+* text on edit dedicated service popup overflows out of modal ([#485](https://github.com/ovh-ux/ovh-manager-dedicated/issues/485)) ([84e3760](https://github.com/ovh-ux/ovh-manager-dedicated/commit/84e3760)), closes [#MFRWW-691](https://github.com/ovh-ux/ovh-manager-dedicated/issues/MFRWW-691)
+* **autorenew:** fix redirection to billing history ([9e8cc78](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9e8cc78))
+* **billing:** fix responsible tabs content ([638e8d9](https://github.com/ovh-ux/ovh-manager-dedicated/commit/638e8d9))
+* **billing:** use  instead of modal state for postal options ([67bcdd8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/67bcdd8))
+* **billing history:** fix after review and add error alert ([43fed9f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/43fed9f))
+* **billing history:** fix get debtAccount in case of 404 from API ([a3974aa](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a3974aa))
+* **billing payg:** fix ui-kit versions ([38fb327](https://github.com/ovh-ux/ovh-manager-dedicated/commit/38fb327))
+* **billing payg:** remove forecast calculation ([177beb1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/177beb1))
+* **billing.autorenew:** remove menu for SMS services ([de35462](https://github.com/ovh-ux/ovh-manager-dedicated/commit/de35462))
+* **billing.payasyougo:** handle empty route.url and route.path ([43b4142](https://github.com/ovh-ux/ovh-manager-dedicated/commit/43b4142))
+* code review ([5ff35bd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5ff35bd))
+* fix typo in package.json ([6881654](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6881654))
+* yarn.lock ([74b41c7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/74b41c7))
+* **billing.paymentmethod.add:** upgrade expiration date list ([d5430ec](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d5430ec))
+* **cache-rules-loading:** infinite loading ([#468](https://github.com/ovh-ux/ovh-manager-dedicated/issues/468)) ([e597a54](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e597a54))
+* **dedicated cloud user:** replace table with oui-datagrid ([#469](https://github.com/ovh-ux/ovh-manager-dedicated/issues/469)) ([55f64b3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/55f64b3))
+* **license:** add windows server license missing trads ([337c53b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/337c53b))
+* **pcc operation:** replace table with oui-datagrid ([#470](https://github.com/ovh-ux/ovh-manager-dedicated/issues/470)) ([4874d61](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4874d61))
+* **server:** update sd dashboard to use ui-kit ([#266](https://github.com/ovh-ux/ovh-manager-dedicated/issues/266)) ([9b0589f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9b0589f)), closes [#416](https://github.com/ovh-ux/ovh-manager-dedicated/issues/416) [#337](https://github.com/ovh-ux/ovh-manager-dedicated/issues/337)
+* **yarn:** update some package version ([e614b0b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e614b0b))
+
+
+### Features
+
+* **billing:** enable pay as you go section for US only ([9a8ccb6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9a8ccb6))
+* **billing payg:** add pay as you go section content ([b3c54e0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b3c54e0))
+* **chore:** yarn upgrade ovh-api-services ([9927a1c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9927a1c))
+
+
+
 <a name="9.6.22"></a>
 ## [9.6.22](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.21...v9.6.22) (2018-08-06)
 

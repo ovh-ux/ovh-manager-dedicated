@@ -2,7 +2,7 @@
 <translations>
 
    <translation id="housing_name" qtlid="3818">Nombre</translation>
-   <translation id="housing_status" qtlid="26443">Statut</translation>
+   <translation id="housing_status" qtlid="26443">Estado</translation>
    <translation id="housing_edit" qtlid="185452">Editar</translation>
    <translation id="housing_informations_general" qtlid="26551">Información</translation>
    <translation id="housing_tab_dashboard" qtlid="82725">Récapitulatif</translation>
@@ -12,14 +12,11 @@
    <translation id="housing_creation_date" qtlid="371726">Alquiler iniciado el</translation>
    <translation id="housing_support_phone" qtlid="290446">¿Sabía usted que su servicio de alojamiento incluye atención dedicada al cliente? Puede contactar con el {0} para todas sus preguntas.</translation>
 
-
-
    <translation id="housing_tab_stats_legend_bay" qtlid="32050">Baie</translation>
    <translation id="housing_tab_stats_legend_general" qtlid="69341">Général</translation>
    <translation id="housing_tab_stats_legend_route" qtlid="259831">Routing</translation>
-   <translation id="housing_tab_stats_legend_network" qtlid="25591">Réseau</translation>
-
-
+   <translation id="housing_tab_stats_legend_network" qtlid="25591">Red</translation>
+   <translation id="housing_tab_stats_legend_subscription" qtlid="28891">Pago</translation>
 
    <translation id="housing_tab_stats_gateway" qtlid="259844">Pasarela</translation>
    <translation id="housing_tab_stats_router" qtlid="259857">Router</translation>
@@ -28,15 +25,20 @@
    <translation id="housing_tab_stats_ipv6" qtlid="259883">Red IpV6</translation>
    <translation id="housing_tab_stats_securitycode" qtlid="259896">Código de seguridad</translation>
    <translation id="housing_tab_stats_failure_load" qtlid="97460">Erreur de chargement</translation>
-   <translation id="housing_configuration_ipv4_manage" qtlid="16301">Gérer</translation>
+   <translation id="housing_configuration_ipv4_manage" qtlid="16301">Gestionar</translation>
+
+   <translation id="housing_subscription_owner" qtlid="30634">Propietario</translation>
+   <translation id="housing_subscription_state" qtlid="8230">Estado</translation>
 
    <translation id="housing_status_ok" qtlid="96704">Normal</translation>
    <translation id="housing_status_error" qtlid="45508">En error</translation>
    <translation id="housing_status_hacked" qtlid="101973">Hacké</translation>
    <translation id="housing_status_hacked_blocked" qtlid="224997">Hackeado y bloqueado</translation>
 
+   <translation id="housing_configuration_doing" qtlid="497190">(En progreso)</translation>
+
    <translation id="housing_configuration_reboot_title_button" qtlid="33538">Redémarrer</translation>
-   <translation id="housing_configuration_renew_title_button" qtlid="118962">Renouveler</translation>
+   <translation id="housing_configuration_renew_title" qtlid="168172">Renovación</translation>
 
    <translation id="housing_configuration_ftpbackup_fail" qtlid="184256">Se ha producido un error al cargar la información del backup storage.</translation>
    <translation id="housing_configuration_ftpbackup_none" qtlid="184269">El backup storage no está configurado.</translation>
@@ -92,7 +94,7 @@
    <translation id="housing_configuration_ftpbackup_table_cifs" qtlid="176740">CIFS</translation>
    <translation id="housing_configuration_ftpbackup_table_ftp" qtlid="50410">FTP</translation>
    <translation id="housing_configuration_ftpbackup_table_nfs" qtlid="6778">NFS</translation>
-   <translation id="housing_configuration_ftpbackup_table_status" qtlid="26443">Statut</translation>
+   <translation id="housing_configuration_ftpbackup_table_status" qtlid="26443">Estado</translation>
    <translation id="housing_configuration_ftpbackup_table_ip_disable" qtlid="26383">En cours</translation>
    <translation id="housing_configuration_ftpbackup_table_ip_enable" qtlid="30250">Activé</translation>
    <translation id="housing_configuration_ftpbackup_table_ip_edit" qtlid="180694">Editar el acceso</translation>
@@ -120,7 +122,7 @@
    <translation id="housing_configuration_task_last_action" qtlid="52231">Dernière action</translation>
    <translation id="housing_configuration_task_function" qtlid="61872">Tâche</translation>
    <translation id="housing_configuration_task_comment" qtlid="233531">Detalles técnicos</translation>
-   <translation id="housing_configuration_task_status" qtlid="26443">Statut</translation>
+   <translation id="housing_configuration_task_status" qtlid="26443">Estado</translation>
    <translation id="housing_configuration_task_CHANGE_PASSWORD_BACKUP_FTP" qtlid="184490">Cambio de la contraseña del backup storage</translation>
    <translation id="housing_configuration_task_CREATE_BACKUP_FTP" qtlid="184503">Creación de un backup storage</translation>
    <translation id="housing_configuration_task_CREATE_PRIVATE_NETWORK" qtlid="164454">Creación de una red privada</translation>
@@ -145,7 +147,7 @@
    <translation id="housing_configuration_task_empty" qtlid="217093">Ninguna tarea</translation>
    <translation id="housing_configuration_task_status_cancelled" qtlid="164623">Cancelada</translation>
    <translation id="housing_configuration_task_status_customer_error" qtlid="164636">Error cliente</translation>
-   <translation id="housing_configuration_task_status_doing" qtlid="26383">En cours</translation>
+
    <translation id="housing_configuration_task_status_done" qtlid="26395">Terminée</translation>
    <translation id="housing_configuration_task_status_init" qtlid="164649">Inicio</translation>
    <translation id="housing_configuration_task_status_ovh_error" qtlid="45508">En error</translation>
@@ -166,8 +168,8 @@
    <translation id="housing_configuration_reboot_contract_content" qtlid="152271">Contenido</translation>
    <translation id="housing_configuration_reboot_clic" qtlid="127348">Cliquez ici</translation>
    <translation id="housing_configuration_reboot_details" qtlid="37527">Détails</translation>
-   <translation id="housing_configuration_reboot_domain" qtlid="8458">Domaine</translation>
-   <translation id="housing_configuration_reboot_description" qtlid="9238">Description</translation>
+   <translation id="housing_configuration_reboot_domain" qtlid="8458">Dominio</translation>
+   <translation id="housing_configuration_reboot_description" qtlid="9238">Descripción</translation>
    <translation id="housing_configuration_reboot_qty" qtlid="37107">Quantité</translation>
    <translation id="housing_configuration_reboot_price_unit" qtlid="259961">Precio unitario</translation>
    <translation id="housing_configuration_reboot_price" qtlid="83913">Prix</translation>

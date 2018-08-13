@@ -46,24 +46,23 @@ angular.module("App").run(($q, $translatePartialLoader, $translate, SidebarMenu,
     }
 
     function buildBillingMenu () {
-        const billingMenu = SidebarMenu.addMenuItem({
+        SidebarMenu.addMenuItem({
             name: "billingMenu",
             title: $translate.instant("menu_billing"),
-            allowSubItems: true,
-            allowSearch: true,
-            loadOnState: "app.account.billing",
+            state: "app.account.billing.main.pay-as-you-go",
+            loadOnState: "app.account.billing.main",
             namespace: "account"
         });
 
-        SidebarMenu.addMenuItem({
-            title: $translate.instant("menu_bills"),
-            state: "app.account.billing.history"
-        }, billingMenu);
+        // SidebarMenu.addMenuItem({
+        //     title: $translate.instant("menu_bills"),
+        //     state: "app.account.billing.history"
+        // }, billingMenu);
 
-        SidebarMenu.addMenuItem({
-            title: $translate.instant("menu_payments"),
-            state: "app.account.billing.payments"
-        }, billingMenu);
+        // SidebarMenu.addMenuItem({
+        //     title: $translate.instant("menu_payments"),
+        //     state: "app.account.billing.payments"
+        // }, billingMenu);
     }
 
     function buildServicesMenu (curUser) {
@@ -74,24 +73,24 @@ angular.module("App").run(($q, $translatePartialLoader, $translate, SidebarMenu,
                     title: $translate.instant("menu_services"),
                     allowSubItems: true,
                     allowSearch: true,
-                    loadOnState: "app.account.service",
+                    loadOnState: "app.account.billing.service",
                     namespace: "account"
                 });
 
                 SidebarMenu.addMenuItem({
                     title: $translate.instant("menu_services_management"),
-                    state: "app.account.service.billing.autoRenew"
+                    state: "app.account.billing.service.autoRenew"
                 }, servicesMenu);
 
                 SidebarMenu.addMenuItem({
                     title: $translate.instant("menu_agreements"),
-                    state: "app.account.service.useraccount.agreements"
+                    state: "app.account.billing.service.agreements"
                 }, servicesMenu);
             } else {
                 SidebarMenu.addMenuItem({
                     name: "servicesMenuAgreements",
                     title: $translate.instant("menu_agreements"),
-                    state: "app.account.service.useraccount.agreements",
+                    state: "app.account.billing.service.agreements",
                     namespace: "account"
                 });
             }
@@ -104,44 +103,44 @@ angular.module("App").run(($q, $translatePartialLoader, $translate, SidebarMenu,
             title: $translate.instant("menu_payment_methods"),
             allowSubItems: true,
             allowSearch: true,
-            loadOnState: "app.account.payment",
+            loadOnState: "app.account.billing.payment",
             namespace: "account"
         });
 
         SidebarMenu.addMenuItem({
             title: $translate.instant("menu_means"),
-            state: "app.account.payment.mean"
+            state: "app.account.billing.payment.mean"
         }, paymentMenu);
 
         if (constants.target === "EU" || constants.target === "CA") {
             SidebarMenu.addMenuItem({
                 title: $translate.instant("menu_ovhaccount"),
-                state: "app.account.payment.ovhaccount"
+                state: "app.account.billing.payment.ovhaccount"
             }, paymentMenu);
         }
 
         if (constants.target === "EU" || constants.target === "CA") {
             SidebarMenu.addMenuItem({
                 title: $translate.instant("menu_vouchers"),
-                state: "app.account.payment.vouchers"
+                state: "app.account.billing.payment.vouchers"
             }, paymentMenu);
         }
 
         SidebarMenu.addMenuItem({
             title: $translate.instant("menu_refunds"),
-            state: "app.account.payment.refunds"
+            state: "app.account.billing.payment.refunds"
         }, paymentMenu);
 
         if (constants.target === "EU") {
             SidebarMenu.addMenuItem({
                 title: $translate.instant("menu_fidelity"),
-                state: "app.account.payment.fidelity"
+                state: "app.account.billing.payment.fidelity"
             }, paymentMenu);
         }
 
         SidebarMenu.addMenuItem({
             title: $translate.instant("menu_credits"),
-            state: "app.account.payment.credits"
+            state: "app.account.billing.payment.credits"
         }, paymentMenu);
     }
 
@@ -175,7 +174,7 @@ angular.module("App").run(($q, $translatePartialLoader, $translate, SidebarMenu,
                 SidebarMenu.addMenuItem({
                     name: "billingOrders",
                     title: $translate.instant("menu_orders"),
-                    state: "app.account.orders",
+                    state: "app.account.billing.orders",
                     namespace: "account"
                 });
             }

@@ -3,8 +3,8 @@
 
    <translation id="autorenew_title" qtlid="287527">Manage my services </translation>
 
-   <translation id="autorenew_service_deleteAtExpiration_banner" qtlid="498105">The termination at expiration of the service "{{serviceName}}" has been taken into account. You can cancel this operation until 24 hours before the service expires.</translation>
-   <translation id="autorenew_service_deleteAtExpiration_banner_cancel" qtlid="498118">Cancel the termination</translation>
+   <translation id="autorenew_service_deleteAtExpiration_banner" qtlid="498105">Termination on expiry for the "{{ serviceName }}" service has been taken into account. You can cancel this operation up to 24 hours before the service expires.</translation>
+   <translation id="autorenew_service_deleteAtExpiration_banner_cancel" qtlid="498118">Cancel the termination on expiry</translation>
 
    <translation id="autorenew_myservices" qtlid="212881">My services</translation>
    <translation id="autorenew" qtlid="219758">Renewals</translation>
@@ -26,13 +26,13 @@
    <translation id="autorenew_service_renew_auto" qtlid="134215">Automatic</translation>
    <translation id="autorenew_service_renew_manuel" qtlid="219797">Manual</translation>
    <translation id="autorenew_service_renew_delete_at_expiration" qtlid="399736">Cancellation at expiry</translation>
-   <translation id="autorenew_service_renew_manual_payment" qtlid="498131">Automatique : désactivé</translation>
-   <translation id="autorenew_service_renew_year" qtlid="498144">Automatique : tous les ans</translation>
-   <translation id="autorenew_service_renew_month" qtlid="498157">Automatique : tous les mois</translation>
+   <translation id="autorenew_service_renew_manual_payment" qtlid="498131">Automatic: disabled</translation>
+   <translation id="autorenew_service_renew_year" qtlid="498144">Automatic: every year</translation>
+   <translation id="autorenew_service_renew_month" qtlid="498157">Automatic: every month</translation>
    <translation id="autorenew_service_renew_3months" qtlid="402906">Quarterly </translation>
    <translation id="autorenew_service_renew_6months" qtlid="402919">Six-monthly</translation>
    <translation id="autorenew_service_renew_frequency_value" qtlid="402932">All the {0} months</translation>
-   <translation id="autorenew_service_renew_years_frequency_value" qtlid="402945">Automatic: All the {0} years</translation>
+   <translation id="autorenew_service_renew_years_frequency_value" qtlid="402945">Automatic: every {0} years</translation>
    <translation id="autorenew_service_renew_paid" qtlid="37515">Paid</translation>
    <translation id="manualrenew_service_update_button_caption" qtlid="416111">Pay for the service</translation>
    <translation id="manualrenew_onlyauto_alert" qtlid="264166"></translation>
@@ -40,8 +40,8 @@
    <translation id="autorenew_service_mass_actions_caption" qtlid="300227">What do you want to do? </translation>
    <translation id="autorenew_service_update_button_caption" qtlid="416072">Modify payment frequency</translation>
    <translation id="autorenew_service_update_date_button_caption" qtlid="300253">Align renewal dates.</translation>
-   <translation id="autorenew_service_resiliate_button" qtlid="498170">Résilier à date d'échéance</translation>
-   <translation id="autorenew_service_resiliate_button_title" qtlid="498183">Résilier à date d'échéance : {0}</translation>
+   <translation id="autorenew_service_resiliate_button" qtlid="498170">Terminate on expiry date</translation>
+   <translation id="autorenew_service_resiliate_button_title" qtlid="498183">Terminate on expiry date: {0}</translation>
    <translation id="autorenew_service_disable_button" qtlid="416085">Deactivate automatic payment</translation>
    <translation id="autorenew_service_enable_button" qtlid="416098">Activate automatic payment</translation>
    <translation id="autorenew_service_renew_button" qtlid="416111">Pay for the service</translation>
@@ -49,7 +49,7 @@
    <translation id="autorenew_service_canceldelete_button" qtlid="285350">Cancel termination </translation>
    <translation id="autorenew_service_canceldelete_button_title" qtlid="243695">Cancel my request to terminate the service: {0}</translation>
    <translation id="autorenew_service_renew_frequency_title" qtlid="212998">Payment frequency</translation>
-   <translation id="autorenew_service_renew_frequency_value" qtlid="498196">Automatique : tous les {0} mois</translation>
+   <translation id="autorenew_service_renew_frequency_value" qtlid="498196">Automatic: every {0} months</translation>
    <translation id="autorenew_search_input_title" qtlid="300629">Search for services by ID. </translation>
    <translation id="autorenew_service_expand_sub_services" qtlid="300642">Display or hide associated services. </translation>
    <translation id="autorenew_service_select_all_checkbox" qtlid="300655">Select all services. </translation>
@@ -67,13 +67,13 @@
    <translation id="autorenew_service_update_renewal_activation_notice" qtlid="369427">Automatic renewal has been activated on the designated service (s) and on your account.</translation>
    <translation id="autorenew_service_update_renewal_activation_error" qtlid="369440">You have selected automatic renewal for at least one service but we were unable to enable automatic renewal on your account: {0}</translation>
    <translation id="autorenew_guide_help" qtlid="156732">Read our online guides.</translation>
-   <translation id="autorenew_service_delete_title" qtlid="498170">Résilier à date d'échéance</translation>
-   <translation id="autorenew_service_debt_before_paying_1" qtlid="498209">Before you subscribe for a new period, please settle the outstanding amount on your account.</translation>
+   <translation id="autorenew_service_delete_title" qtlid="498170">Terminate on expiry date</translation>
+   <translation id="autorenew_service_debt_before_paying_1" qtlid="498209">Before you subscribe for a new period, please pay the outstanding amount on your account.</translation>
    <translation id="autorenew_service_debt_before_paying_2" qtlid="498222">Please go to the Billing section to pay the invoice for the <strong>{{service}}</strong> service.</translation>
    <translation id="autorenew_service_canceldelete_title" qtlid="416137">Reversing the cancellation of a service</translation>
    <translation id="autorenew_service_delete_confirm" qtlid="416150">Service {0} <strong>will be automatically cancelled</strong> on {1}.</translation>
    <translation id="autorenew_service_delete_warn" qtlid="416163">Data linked to the automatic payment of your services will be irreversibly deleted.&#160;You will be able to reverse this decision up to 24 hours before the expiry date.</translation>
-   <translation id="autorenew_service_debt_warn_deletion" qtlid="498235">You cannot cancel this service until you have paid the outstanding amount.&#160;Please go to the Billing section to settle your bill for the service <strong>{{service}}</strong></translation>
+   <translation id="autorenew_service_debt_warn_deletion" qtlid="498235">You cannot cancel this service until you have paid the outstanding amount.&#160;Please go to the Billing section to settle your bill for the <strong>{{service}}</strong> service</translation>
    <translation id="autorenew_service_canceldelete_confirm" qtlid="416176">Do you wish to reverse the cancellation of service <strong>{0}</strong>?</translation>
    <translation id="autorenew_service_update_intro" qtlid="351708">Choose your preferred type of renewal(automatic or manual).<br /> For automatic renewal, you can also choose the withdrawal frequency.</translation>
    <translation id="autorenew_service_select_intro" qtlid="221058">Select all:</translation>
@@ -173,7 +173,7 @@
 
    <translation id="autorenew_service_type_HOSTING_RESELLER" qtlid="325276">Web hosting reseller</translation>
 
-   <translation id="autorenew_service_EMAIL_DOMAIN_terminate" qtlid="498248">Supprimer immédiatement le MX Plan</translation>
+   <translation id="autorenew_service_EMAIL_DOMAIN_terminate" qtlid="498248">Delete MX Plan immediately</translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_info" qtlid="370083">If you delete the MX Plan all the associated data will be permanently deleted. You will not get a refund if you delete the MX Plan. </translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_info_impossible" qtlid="370096">You cannot delete your email account because it is linked to a hosting package. </translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_procedure" qtlid="370109">You will get an email containing the procedure to close your MX Plan so you can confirm its immediate deletion. </translation>
@@ -264,13 +264,6 @@
    <translation id="pagination_display_all" qtlid="139884">All</translation>
    <translation id="pagination_go" qtlid="492619">OK</translation>
    <translation id="history_title2" qtlid="159540">My bills</translation>
-   <translation id="history_invoice_loading_errors" qtlid="402984">An error while retrieving {0} bill(s).</translation>
-   <translation id="history_invoices_postal_mail" qtlid="486867">Receive bills in paper format</translation>
-
-   <translation id="history_invoices_choice_modal_activation" qtlid="486880">Would you like to confirm that you want to enable this option?</translation>
-   <translation id="history_invoices_choice_modal_deactivation" qtlid="486893">Would you like to confirm that you want to disable this option?</translation>
-   <translation id="history_invoices_choice_modal_update_success" qtlid="486906">Setting updated</translation>
-   <translation id="history_invoices_choice_modal_update_error" qtlid="486919">An error has occurred updating this setting</translation>
 
    <translation id="history_table_head_date" qtlid="374508">Issue date </translation>
    <translation id="history_table_head_id" qtlid="16445">Reference</translation>
@@ -770,10 +763,10 @@
    <translation id="paymentMean_label_iban" qtlid="177015">IBAN</translation>
    <translation id="paymentMean_label_bic" qtlid="177028">BIC</translation>
    <translation id="paymentMean_label_addressNumber" qtlid="30778">Number</translation>
-   <translation id="paymentMean_label_addressStreetName" qtlid="459573">Nom de la voie</translation>
+   <translation id="paymentMean_label_addressStreetName" qtlid="459573">Pathname</translation>
    <translation id="paymentMean_label_addressPostalCode" qtlid="30346">Postal code</translation>
    <translation id="paymentMean_label_addressTown" qtlid="33310">City</translation>
-   <translation id="paymentMean_label_ownerName" qtlid="498261">Nom et prénom du propriétaire ou nom de l'organisation propriétaire</translation>
+   <translation id="paymentMean_label_ownerName" qtlid="498261">Last name and first name of owner or organization owner</translation>
    <translation id="paymentMean_label_ownerAddress" qtlid="177054">Address of account owner</translation>
    <translation id="paymentMean_error_bic_bank" qtlid="177067"></translation>
    <translation id="paymentMean_error_bic_valid" qtlid="177080"></translation>
@@ -784,9 +777,9 @@
    <translation id="paymentMean_error_iban_valid" qtlid="177145"></translation>
    <translation id="paymentMean_error_minlength" qtlid="179680">There must be at least 5 characters.</translation>
    <translation id="paymentMean_error_addressPostalCode_required" qtlid="177093">This field is required</translation>
-   <translation id="paymentMean_error_addressPostalCode_min" qtlid="498274">Le code postal n'est pas valide.</translation>
-   <translation id="paymentMean_error_addressPostalCode_max" qtlid="498274">Le code postal n'est pas valide.</translation>
-   <translation id="paymentMean_error_addressPostalCode_pattern" qtlid="498287">Le code postal doit être composé de 5 chiffres.</translation>
+   <translation id="paymentMean_error_addressPostalCode_min" qtlid="498274">Invalid postal code</translation>
+   <translation id="paymentMean_error_addressPostalCode_max" qtlid="498274">Invalid postal code</translation>
+   <translation id="paymentMean_error_addressPostalCode_pattern" qtlid="498287">Postal code must be composed of 6 characters</translation>
    <translation id="paymentMean_error_maxlength" qtlid="177171">The text must be fewer than 255 characters.</translation>
    <translation id="paymentType_delete_error" qtlid="177184">An error occured while deleting the payment method</translation>
    <translation id="paymentType_modify_error" qtlid="436354">An error occurred while modifying the payment method</translation>
@@ -1053,11 +1046,11 @@
    <translation id="services_filter_duration_months" qtlid="267502">Will expire in a month</translation>
    <translation id="services_filter_duration_expired" qtlid="267515">Expired</translation>
 
-   <translation id="hosting_dashboard_service_guide" qtlid="498300">Supprimer immédiatement l'hébergement</translation>
+   <translation id="hosting_dashboard_service_guide" qtlid="498300">Delete web hosting plan immediately</translation>
    <translation id="hosting_dashboard_close_service_question" qtlid="215533">Do you want to receive this email? </translation>
    <translation id="hosting_dashboard_close_service_success" qtlid="370148">We have processed your requested to delete your hosting package. We will send you an email containing the procedure to follow.</translation>
    <translation id="hosting_dashboard_close_service_error" qtlid="255469">Unable to close your web hosting package due to the following error:</translation>
-   <translation id="hosting_dashboard_close_service" qtlid="498313">Supprimer immédiatement mon hébergement</translation>
+   <translation id="hosting_dashboard_close_service" qtlid="498313">Delete my web hosting plan immediately</translation>
    <translation id="hosting_dashboard_close_service_warning" qtlid="255430">When a web hosting package is deleted, all the data linked to it is lost. No refund will be granted for any deleted web hosting packages.</translation>
    <translation id="hosting_dashboard_close_service_desc1" qtlid="370161">You will get an email containing the procedure for closing your hosting package so you can confirm that it is to be deleted immediately.</translation>
 
@@ -1096,18 +1089,11 @@
 
 <!-- STATEMENTS -->
    <translation id="statements_account_automatic_payment_inactive" qtlid="374573">You cannot use direct debit to renew your services. </translation>
-   <translation id="statements_account_amount_automatically_collected" qtlid="349153">An amount of <strong>{0}</strong> will be withdrawn from your default payment method.</translation>
-   <translation id="statements_account_amount_to_pay" qtlid="349166">An amount of <strong>{0}</strong> is due for the renewal of your services.</translation>
    <translation id="statements_account_no_default_payment_mean" qtlid="353309">You have not specified a default payment method. </translation>
    <translation id="statements_account_invalid_default_payment_mean" qtlid="353322">Your default payment method is no longer valid. </translation>
    <translation id="statements_account_manage_my_payment_means" qtlid="287514">Manage my payment methods </translation>
    <translation id="statements_account_pay_debt_button" qtlid="349179">Paying my balance immediately</translation>
-   <translation id="statements_account_debt_payment" qtlid="344240">Balance payment</translation>
-   <translation id="statements_account_debt_payment_explanation" qtlid="353335">This action will generate a purchase order so you can immediately settle an amount. This purchase order will be valid for one hour.</translation>
-   <translation id="statements_account_debt_payment_bc_with_amount" qtlid="353348">The <a href="{1}" target="_blank">purchase order{0}</a> has been generated for a total of {2}.</translation>
-   <translation id="statements_accounts_debt_payment_confirm" qtlid="344227">Paying my balance</translation>
-   <translation id="statements_account_debt_payment_order_generated" qtlid="344266">The <a href="{1}" target="_blank">purchase order{0}</a> has been generated so that you can pay your balance.</translation>
-   <translation id="statements_account_debt_payment_error" qtlid="344279">An error has occurred. We apologize for any inconvenience this may have caused.</translation>
+
    <translation id="statements_table_caption" qtlid="343252">Orders to your account</translation>
    <translation id="statements_table_header_order" qtlid="8302">Order</translation>
    <translation id="statements_table_header_date" qtlid="24523">Date</translation>

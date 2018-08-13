@@ -16,13 +16,13 @@
                         <div class="mb-3"
                              data-ng-if="!datacenterName.editMode && !datacenterDescription.editMode">
                             <div class="d-flex">
-                                <h1 class="d-inline-block mb-0 word-break"
+                                <h1 class="oui-header_2 d-inline-block mb-0 word-break"
                                     data-ng-bind="datacenterName.model || 'dedicatedCloud_datacenter_no_name' | translate:{ t0: datacenter.id }">
                                 </h1>
                                 <button type="button"
                                         title="{{ 'wizard_modify' | translate }}"
                                         class="btn btn-icon my-auto ml-2"
-                                        data-ng-click="editField(datacenterName)">
+                                        data-ng-click="editDescription(datacenterName.model, 'dedicatedCloud_datacenter_name')">
                                     <span class="oui-icon oui-icon-pen_line oui-icon_small" aria-hidden="true"></span>
                                 </button>
                             </div>
@@ -32,91 +32,11 @@
                             <button type="button"
                                     title="{{ 'wizard_modify' | translate }}"
                                     class="btn btn-icon my-auto ml-2 d-inline-block align-middle"
-                                    data-ng-click="editField(datacenterDescription)">
+                                    data-ng-click="editDescription(datacenterDescription.model, 'dedicatedCloud_datacenter_description')">
                                 <span class="oui-icon oui-icon-pen_line" aria-hidden="true"></span>
                             </button>
                         </div>
-                        <div class="form-group my-4"
-                             data-ng-if="datacenterName.editMode || datacenterDescription.editMode">
-                            <div class="oui-input-group">
-                                <input type="text"
-                                       class="oui-input"
-                                       name="newDisplayName"
-                                       data-ng-model="datacenterName.model"
-                                       required
-                                       data-ng-if="datacenterName.editMode">
-                                <input type="text"
-                                       class="oui-input"
-                                       name="newDisplayName"
-                                       data-ng-model="datacenterDescription.model"
-                                       data-ng-if="datacenterDescription.editMode">
-                                <button type="submit"
-                                        class="oui-button oui-button_small-width"
-                                        aria-label="{{ 'dedicatedCloud_edit_description_valid' | translate }}"
-                                        data-ng-click="datacenterName.editMode ? setName() : setDescription()"
-                                        data-ng-disabled="!formEditDisplayName.newDisplayName.$dirty || formEditDisplayName.$invalid">
-                                    <span class="oui-icon oui-icon-success oui-icon_small" aria-hidden="true"></span>
-                                </button>
-                                <button type="button"
-                                        class="oui-button oui-button_small-width"
-                                        aria-label="{{ 'dedicatedCloud_edit_description_cancel' | translate }}"
-                                        data-ng-click="cancelField(datacenterName.editMode ? datacenterName : datacenterDescription, datacenterName.editMode ? datacenter.model.name : datacenter.model.description)">
-                                    <span class="oui-icon oui-icon-error oui-icon_small" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                        </div>
                     </form>
-                </div>
-                <div class="col-md-3 d-flex">
-                    <div class="btn-group ml-auto mt-4">
-                        <button class="oui-button oui-button_dropdown mb-0"
-                                type="button"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                                data-toggle="dropdown">
-                            <span data-translate="common_actions"></span>
-                            <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li data-ng-if="datacenter.model.isRemovable">
-                                <button type="button"
-                                        class="btn btn-link"
-                                        data-ng-click="setAction('datacenter/delete/dedicatedCloud-datacenter-delete', datacenter.model.id)"
-                                        data-translate="dedicatedCloud_datacenter_delete">
-                                </button>
-                            </li>
-                            <li data-ng-if="dedicatedCloud.vScopeUrl">
-                                <a class="btn btn-link"
-                                   target="_blank"
-                                   data-ng-href="{{dedicatedCloud.vScopeUrl}}"
-                                   title="{{ 'dedicatedCloud_datacenter_go_vscope' | translate }} ({{ 'core_new_window' | translate }})"
-                                   rel="noopener">
-                                    <span data-translate="dedicatedCloud_datacenter_go_vscope"></span>
-                                    <i class="fa fa-external-link ml-1"></i>
-                                </a>
-                            </li>
-                            <li data-ng-if="dedicatedCloud.webInterfaceUrl">
-                                <a class="btn btn-link"
-                                   target="_blank"
-                                   data-ng-href="{{dedicatedCloud.webInterfaceUrl}}"
-                                   title="{{ 'dedicatedCloud_datacenter_go_web_interface' | translate }} ({{ 'core_new_window' | translate }})"
-                                   rel="noopener">
-                                    <span data-translate="dedicatedCloud_datacenter_go_web_interface"></span>
-                                    <i class="fa fa-external-link ml-1"></i>
-                                </a>
-                            </li>
-                            <li data-ng-if="dedicatedCloud.certifiedInterfaceUrl && dedicatedCloud.advancedSecurity">
-                                <a class="btn btn-link"
-                                   target="_blank"
-                                   data-ng-href="{{dedicatedCloud.certifiedInterfaceUrl}}"
-                                   title="{{ 'dedicatedCloud_datacenter_go_certified_web_interface' | translate }} ({{ 'core_new_window' | translate }})"
-                                   rel="noopener">
-                                    <span data-translate="dedicatedCloud_datacenter_go_certified_web_interface"></span>
-                                    <i class="fa fa-external-link ml-1"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </header>

@@ -6,7 +6,7 @@ angular
             "use strict";
 
             $stateProvider.state("app.ip", {
-                url: "/configuration/ip",
+                url: "/configuration/ip?serviceName",
                 templateUrl: "ip/ip.html",
                 controller: "IpMainCtrl",
                 reloadOnSearch: false,
