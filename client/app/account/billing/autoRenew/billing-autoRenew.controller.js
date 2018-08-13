@@ -5,6 +5,7 @@
  * Autorenew services configuration
  */
 angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew", [
+    "$rootScope",
     "$scope",
     "$location",
     "$filter",
@@ -19,11 +20,14 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
     "BILLING_BASE_URL",
     "BillingAutoRenew",
     "BillingPaymentInformation",
-    "BillingrenewHelper",
+    "billingRenewHelper",
     "User",
     "$translate",
+    "SUBSIDIARIES_WITH_RECENT_AUTORENEW",
 
-    function ($scope, $location, $filter, $q, $http, $window, $timeout, Alerter, AUTORENEW_EVENT, constants, billingUrls, BILLING_BASE_URL, AutoRenew, PaymentInformation, renewHelper, User, $translate) {
+    function ($rootScope, $scope, $location, $filter, $q, $http, $window, $timeout,
+              Alerter, AUTORENEW_EVENT, constants, billingUrls, BILLING_BASE_URL, AutoRenew,
+              PaymentInformation, renewHelper, User, $translate, SUBSIDIARIES_WITH_RECENT_AUTORENEW) {
         "use strict";
 
         /**
@@ -51,6 +55,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
             value: ""
         };
         $scope.nbServices = 0;
+        $scope.serviceToKeep = null;
 
         $scope.renewFilter = {
             model: "months",
@@ -61,6 +66,15 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
             model: null,
             values: []
         };
+
+        $rootScope.$on(AUTORENEW_EVENT.TERMINATE_AT_EXPIRATION, () => {
+            $scope.mustDisplayDeleteAtExpirationCancellingBanner = true;
+        });
+
+        $rootScope.$on(AUTORENEW_EVENT.CANCEL_TERMINATE, (event, service) => {
+            const firstService = _(service).isArray() ? _(service).head() : service;
+            $scope.mustDisplayDeleteAtExpirationCancellingBanner = $scope.mustDisplayDeleteAtExpirationCancellingBanner && firstService.serviceId !== _($scope.serviceToKeep).get("serviceId");
+        });
 
         $scope.renewalFilter = {
             model: "0",
@@ -245,11 +259,14 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
         };
 
         $scope.gotoRenew = function (service) {
-            $scope.$emit(AUTORENEW_EVENT.PAY, {
-                serviceType: service.serviceType,
-                serviceId: service.serviceId
-            });
-            $window.location.assign($scope.getRenewUrl() + service.serviceId);
+            if (service.status === "PENDING_DEBT") {
+                $scope.setAction("debtBeforePaying", _.clone(service, true), "autoRenew");
+            } else {
+                $scope.$emit(AUTORENEW_EVENT.PAY, {
+                    serviceType: service.serviceType,
+                    serviceId: service.serviceId
+                });
+            }
         };
 
         /**
@@ -277,9 +294,10 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
                 .then((result) => {
                     $scope.nbServices = result.count;
 
-                    const userMustApproveAutoRenew = _($scope.services).get("data.userMustApproveAutoRenew", null);
                     $scope.services.data = result;
+                    $scope.services.data.userSubsidiaryHasRecentAutorenew = _(SUBSIDIARIES_WITH_RECENT_AUTORENEW).includes($scope.user.ovhSubsidiary);
 
+                    const userMustApproveAutoRenew = _($scope.services).get("data.userMustApproveAutoRenew", null);
                     if (_(userMustApproveAutoRenew).isBoolean()) {
                         $scope.services.data.userMustApproveAutoRenew = userMustApproveAutoRenew;
                     }
@@ -380,9 +398,14 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
         }
 
         $scope.resiliateService = function (service) {
+            $scope.serviceToKeep = service;
             const serviceToResiliate = getServiceToResiliate(service);
 
-            $scope.setAction("delete", _.clone(serviceToResiliate, true), "autoRenew");
+            if (service.status === "PENDING_DEBT") {
+                $scope.setAction("warnPendingDebt", _.clone(service, true), "autoRenew");
+            } else {
+                $scope.setAction("delete", _.clone(serviceToResiliate, true), "autoRenew");
+            }
         };
 
         $scope.cancelDeleteService = function (service) {

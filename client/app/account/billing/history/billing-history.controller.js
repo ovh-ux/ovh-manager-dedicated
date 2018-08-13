@@ -14,8 +14,8 @@ angular.module("Billing.controllers").controller("Billing.controllers.History", 
     };
 
     self.orderByState = {
-        predicate: "billId",
-        reverse: "DESC"
+        predicate: "date",
+        reverse: "ASC"
     };
 
     self.debtAccount = { active: false };

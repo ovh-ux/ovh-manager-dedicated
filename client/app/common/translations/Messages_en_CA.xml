@@ -136,6 +136,7 @@
    <translation id="common_ipv6" qtlid="34126">IPv6</translation>
    <translation id="common_bitFormat" qtlid="122107">bits</translation>
    <translation id="common_expired" qtlid="257941">The service hasn't been renewed. This could be due to your own decision or a late payment on your part.</translation>
+   <translation id="common_settle_bill" qtlid="498092">Settle</translation>
    <translation id="common_service_expired" qtlid="257954">Service {0} hasn't been renewed. This could be due to your own decision or a late payment on your part.</translation>
    <translation id="common_available_soon" qtlid="126832">Available soon</translation>
    <translation id="common_reset_zoom" qtlid="142237">Restart the zoom</translation>
@@ -507,6 +508,7 @@
    <translation id="core_sd_top_guide_6_title" qtlid="303926">Move a failover IP address</translation>
    <translation id="core_sd_top_guide_7_title" qtlid="141236">Rescue mode</translation>
    <translation id="core_sd_top_guide_8_title" qtlid="303939">Create a Hard RAID in the OVH Control Panel </translation>
+   <translation id="core_sd_top_guide_firewall_title" qtlid="492476">Configure the Network Firewall</translation>
 
    <translation id="core_type_of_guide_pcc" qtlid="20131">Private Cloud</translation>
    <translation id="core_pcc_top_guide_1_title" qtlid="371596">Access vSphere</translation>
@@ -580,6 +582,31 @@
    <translation id="otrs_menu_telephony_contact" qtlid="260827">Phone support</translation>
    <translation id="otrs_menu_changelog" qtlid="124964">Changelog</translation>
 
+   <translation id="common_criteria_adder_column_label" qtlid="479108">Column</translation>
+   <translation id="common_criteria_adder_operator_label" qtlid="425806">Condition</translation>
+   <translation id="common_criteria_adder_operator_boolean_is" qtlid="479121">is</translation>
+   <translation id="common_criteria_adder_operator_boolean_isNot" qtlid="479134">is different from</translation>
+   <translation id="common_criteria_adder_operator_string_contains" qtlid="218692">includes</translation>
+   <translation id="common_criteria_adder_operator_string_containsNot" qtlid="218705">doesn't include</translation>
+   <translation id="common_criteria_adder_operator_string_startsWith" qtlid="479147">starts with</translation>
+   <translation id="common_criteria_adder_operator_string_endsWith" qtlid="479160">ends with</translation>
+   <translation id="common_criteria_adder_operator_string_is" qtlid="479173">is equal to</translation>
+   <translation id="common_criteria_adder_operator_string_isNot" qtlid="479134">is different from</translation>
+   <translation id="common_criteria_adder_operator_number_is" qtlid="479173">is equal to</translation>
+   <translation id="common_criteria_adder_operator_number_smaller" qtlid="479186">is lower than</translation>
+   <translation id="common_criteria_adder_operator_number_bigger" qtlid="479199">is higher than</translation>
+   <translation id="common_criteria_adder_operator_date_is" qtlid="479121">is</translation>
+   <translation id="common_criteria_adder_operator_date_isBefore" qtlid="479212">is before</translation>
+   <translation id="common_criteria_adder_operator_date_isAfter" qtlid="479225">is after</translation>
+   <translation id="common_criteria_adder_operator_options_is" qtlid="479121">is</translation>
+   <translation id="common_criteria_adder_operator_options_isNot" qtlid="479134">is different from</translation>
+   <translation id="common_criteria_adder_true_label" qtlid="34776">Yes</translation>
+   <translation id="common_criteria_adder_false_label" qtlid="34788">No</translation>
+   <translation id="common_criteria_adder_value_label" qtlid="47548">Value</translation>
+   <translation id="common_criteria_adder_submit_label" qtlid="37923">Add</translation>
+
+   <translation id="common_datagrid_nodata" qtlid="197635">No result</translation>
+
    <translation id="common_field_error_required" qtlid="472294">Please fill out this field.</translation>
    <translation id="common_field_error_number" qtlid="472307">Please enter a valid numerical value.</translation>
    <translation id="common_field_error_email" qtlid="472320">Please enter a valid email address.</translation>
@@ -588,4 +615,27 @@
    <translation id="common_field_error_minlength" qtlid="472359">Please enter a minimum of {{minlength}} characters.</translation>
    <translation id="common_field_error_maxlength" qtlid="472372">Please enter a maximum of {{maxlength}} characters.</translation>
    <translation id="common_field_error_pattern" qtlid="472385">Please enter a valid format.</translation>
+
+   <translation id="common_navbar_notification_title" qtlid="33250">Notifications</translation>
+   <translation id="common_navbar_notification_error" qtlid="323434">Oops, we can't initialize the menu!</translation>
+   <translation id="common_navbar_notification_error_subject" qtlid="26407">Error</translation>
+   <translation id="common_navbar_notification_see_all" qtlid="401914">See all notifications </translation>
+   <translation id="common_navbar_notification_mark_as_read" qtlid="70865">Mark as read</translation>
+   <translation id="common_navbar_notification_mark_as_unread" qtlid="70877">Mark as unread</translation>
+
+   <translation id="common_pagination_resultsperpage" qtlid="433384">Results per page</translation>
+   <translation id="common_pagination_page" qtlid="433397">page</translation>
+   <translation id="common_pagination_of" qtlid="121615">on</translation>
+   <translation id="common_pagination_ofnresults" qtlid="452982">out of TOTAL_ITEMS results</translation>
+   <translation id="common_pagination_currentpageofpagecount" qtlid="452995">Page CURRENT_PAGE out of PAGE_COUNT</translation>
+   <translation id="common_pagination_results" qtlid="433410">results</translation>
+   <translation id="common_pagination_next" qtlid="433423">Next page</translation>
+   <translation id="common_pagination_previous" qtlid="433436">Previous page</translation>
+
+   <translation id="common_stepper_optional_label" qtlid="356264">(optional)</translation>
+   <translation id="common_stepper_modify_this_step" qtlid="480922">Edit this step</translation>
+   <translation id="common_stepper_skip_this_step" qtlid="480935">Skip this step</translation>
+   <translation id="common_stepper_next_button_label" qtlid="17743">Next</translation>
+   <translation id="common_stepper_submit_button_label" qtlid="52807">Send</translation>
+   <translation id="common_stepper_cancel_button_label" qtlid="37863">Cancel</translation>
 </translations>

@@ -10,11 +10,14 @@ angular.module("App").controller("DedicatedCloudSubDatacentersHostCtrl", functio
         const hosts = _.get(result, "list.results");
         return $q.all(hosts.map((host) => {
             if (host.billingType === "HOURLY") {
-                return DedicatedCloud.getHostHourlyConsumption(
-                    $stateParams.productId,
-                    $stateParams.datacenterId,
-                    host.hostId
-                ).then((consumption) => _.merge({}, host, consumption));
+                return DedicatedCloud
+                    .getHostHourlyConsumption(
+                        $stateParams.productId,
+                        $stateParams.datacenterId,
+                        host.hostId
+                    )
+                    .then((consumption) => _.merge({}, host, consumption))
+                    .catch(() => host);
             }
             return $q.when(host);
 

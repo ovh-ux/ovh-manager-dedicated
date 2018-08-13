@@ -12,9 +12,22 @@
 
         <div data-ovh-alert></div>
 
+        <oui-message
+            data-type="success"
+            data-ng-if="mustDisplayDeleteAtExpirationCancellingBanner">
+            <span
+                data-translate="autorenew_service_deleteAtExpiration_banner"
+                data-translate-values="{ serviceName: serviceToKeep.serviceId }"></span>
+
+            <button
+                data-ng-click="cancelDeleteService(serviceToKeep)"
+                data-translate="autorenew_service_deleteAtExpiration_banner_cancel"
+                class="oui-button oui-button_link m-0 py-0 pl-3"></button>
+        </oui-message>
+
         <div class="alert alert-danger"
              role="alert"
-             data-ng-if="!automaticRenewV2Mean.loading && automaticRenewV2Mean.available && (!automaticRenewV2Mean.allowed || (automaticRenewV2Mean.allowed && !nicRenew.active)) && services.data.userMustApproveAutoRenew">
+             data-ng-if="!automaticRenewV2Mean.loading && automaticRenewV2Mean.available && (!automaticRenewV2Mean.allowed || (automaticRenewV2Mean.allowed && !nicRenew.active)) && !services.data.userSubsidiaryHasRecentAutorenew">
             <button type="button"
                     class="close"
                     data-ng-click="automaticRenewV2Mean.noMeanMessageClose()"
@@ -101,33 +114,32 @@
                         data-ng-disabled="load.exportCSV">
                         <span data-translate="billing_export_csv"></span>
                 </button>
-                <div class="btn-group">
+                <div class="dropdown d-inline-block">
                     <button type="button"
                             class="btn btn-default dropdown-toggle"
+                            id="accountBillingAutorenewActions"
                             data-toggle="dropdown"
                             aria-haspopup="true"
-                            aria-expanded="false">
+                            aria-expanded="true">
                         <span data-translate="autorenew_service_action_title"></span>
-                        <span class="fa fa-chevron-down"
-                              aria-hidden="true"></span>
+                        <span class="caret" aria-hidden="true"></span>
                     </button>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu"
+                        aria-labelledby="accountBillingAutorenewActions">
                         <li>
-                            <a href="#/billing/mean"
+                            <a data-ui-sref="app.account.payment.mean"
                                data-translate="autorenew_manage_my_payment_means">
                             </a>
                         </li>
-                        <li>
-                            <a data-ng-if="automaticRenewV2Mean.available"
+                        <li data-ng-if="automaticRenewV2Mean.available">
+                            <a target="_blank"
+                               rel="noopener"
                                data-ng-href="{{ urls.renewAlign }}"
-                               data-translate="autorenew_service_update_date_button_caption"
-                               target="_blank">
+                               data-translate="autorenew_service_update_date_button_caption">
                             </a>
                         </li>
-                        <li>
-                            <button class="btn btn-link"
-                                    type="button"
-                                    data-ng-if="canDisableAllDomains"
+                        <li data-ng-if="canDisableAllDomains">
+                            <button type="button"
                                     data-ng-click="disableAutorenewForDomains()"
                                     data-translate="autorenew_service_disable_all_domains">
                             </button>
@@ -283,7 +295,7 @@
 
             <tbody data-ng-show="services.data && !services.loading">
                 <!-- COMMON SERVICES -->
-                <tr data-ng-repeat-start="service in services.data.list.results"
+                <tr data-ng-repeat-start="service in services.data.list.results track by (service.serviceId + service.serviceType)"
                     data-ng-class="{'pointer': !editionDisabled(service)}"
                     data-ng-include="BILLING_BASE_URL + 'autoRenew/common/billing-autoRenew-common.html'">
                 </tr>
@@ -291,7 +303,6 @@
                 <!-- DOMAIN SERVICES -->
                 <tr data-ng-if="service.serviceType === 'HOSTING_DOMAIN' && expandHostingDomain[service.domain]"
                     data-ng-include="BILLING_BASE_URL + 'autoRenew/domain/billing-autoRenew-domain.html'">
-
                 </tr>
 
                 <!-- HOSTING SERVICES -->
@@ -300,7 +311,6 @@
                     data-ng-repeat-end>
                 </tr>
             </tbody>
-
         </table>
         <div data-pagination-server-side="serviceTable"
              data-pagination-server-side-function="getServices"

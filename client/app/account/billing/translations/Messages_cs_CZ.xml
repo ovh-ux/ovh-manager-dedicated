@@ -2,6 +2,10 @@
 <translations>
 
    <translation id="autorenew_title" qtlid="287527">Správa mých služeb</translation>
+
+   <translation id="autorenew_service_deleteAtExpiration_banner" qtlid="498105">The termination at expiration of the service "{{serviceName}}" has been taken into account. You can cancel this operation until 24 hours before the service expires.</translation>
+   <translation id="autorenew_service_deleteAtExpiration_banner_cancel" qtlid="498118">Cancel the termination</translation>
+
    <translation id="autorenew_myservices" qtlid="212881">Mé služby</translation>
    <translation id="autorenew" qtlid="219758">Obnovit</translation>
    <translation id="autorenew_service" qtlid="34632">Služby</translation>
@@ -22,21 +26,22 @@
    <translation id="autorenew_service_renew_auto" qtlid="134215">Automatické</translation>
    <translation id="autorenew_service_renew_manuel" qtlid="219797">Ručně</translation>
    <translation id="autorenew_service_renew_delete_at_expiration" qtlid="399736">Zrušení v den expirace</translation>
-   <translation id="autorenew_service_renew_manual_payment" qtlid="416059">Automatické platby: neaktivní</translation>
-   <translation id="autorenew_service_renew_year" qtlid="402880">Automaticky: každý rok</translation>
-   <translation id="autorenew_service_renew_month" qtlid="402893">Automaticky: každý měsíc</translation>
+   <translation id="autorenew_service_renew_manual_payment" qtlid="498131">Automatique : désactivé</translation>
+   <translation id="autorenew_service_renew_year" qtlid="498144">Automatique : tous les ans</translation>
+   <translation id="autorenew_service_renew_month" qtlid="498157">Automatique : tous les mois</translation>
    <translation id="autorenew_service_renew_3months" qtlid="402906">Čtvrtletně</translation>
    <translation id="autorenew_service_renew_6months" qtlid="402919">Půlročně</translation>
    <translation id="autorenew_service_renew_frequency_value" qtlid="402932">Každý {0} měsíc</translation>
    <translation id="autorenew_service_renew_years_frequency_value" qtlid="402945">Automaticky: každý {0} rok</translation>
+   <translation id="autorenew_service_renew_paid" qtlid="37515">Placeno</translation>
    <translation id="manualrenew_service_update_button_caption" qtlid="416111">Uhradit službu</translation>
    <translation id="manualrenew_onlyauto_alert" qtlid="264166">Vybrali jste pouze automatická obnovení.</translation>
    <translation id="autorenew_empty" qtlid="219810">Nemáte žádnou službu</translation>
    <translation id="autorenew_service_mass_actions_caption" qtlid="300227">Co si přejete udělat nyní?</translation>
    <translation id="autorenew_service_update_button_caption" qtlid="416072">Upravit frekvenci plateb</translation>
    <translation id="autorenew_service_update_date_button_caption" qtlid="300253">Sjednotit data expirace</translation>
-   <translation id="autorenew_service_resiliate_button" qtlid="56337">Ukončit službu</translation>
-   <translation id="autorenew_service_resiliate_button_title" qtlid="243604">Ukončení služby: {0}</translation>
+   <translation id="autorenew_service_resiliate_button" qtlid="498170">Résilier à date d'échéance</translation>
+   <translation id="autorenew_service_resiliate_button_title" qtlid="498183">Résilier à date d'échéance : {0}</translation>
    <translation id="autorenew_service_disable_button" qtlid="416085">Deaktivovat automatické platby</translation>
    <translation id="autorenew_service_enable_button" qtlid="416098">Aktivovat automatické platby</translation>
    <translation id="autorenew_service_renew_button" qtlid="416111">Uhradit službu</translation>
@@ -44,7 +49,7 @@
    <translation id="autorenew_service_canceldelete_button" qtlid="285350">Zrušit zrušení</translation>
    <translation id="autorenew_service_canceldelete_button_title" qtlid="243695">Zrušit můj požadavek na ukončení služby: {0}</translation>
    <translation id="autorenew_service_renew_frequency_title" qtlid="212998">Frekvence plateb</translation>
-   <translation id="autorenew_service_renew_frequency_value" qtlid="402971">Automaticky: každý {0} měsíc</translation>
+   <translation id="autorenew_service_renew_frequency_value" qtlid="498196">Automatique : tous les {0} mois</translation>
    <translation id="autorenew_search_input_title" qtlid="300629">Vyhledat služby podle ID. </translation>
    <translation id="autorenew_service_expand_sub_services" qtlid="300642">Zobrazit či skrýt související služby. </translation>
    <translation id="autorenew_service_select_all_checkbox" qtlid="300655">Zvolit všechny služby. </translation>
@@ -62,10 +67,13 @@
    <translation id="autorenew_service_update_renewal_activation_notice" qtlid="369427">Automatická obnova byla na Vámi určených službách a Vašem profilu úspěšně aktivována.  </translation>
    <translation id="autorenew_service_update_renewal_activation_error" qtlid="369440">Minimálně u jedné z Vašich služeb byla nastavena automatická obnova. Vyskytl se však problém s nastavením automatické obnovy na Vašem účtě: {0}</translation>
    <translation id="autorenew_guide_help" qtlid="156732">Podívejte se na naše příručky.</translation>
-   <translation id="autorenew_service_delete_title" qtlid="56337">Ukončit službu</translation>
+   <translation id="autorenew_service_delete_title" qtlid="498170">Résilier à date d'échéance</translation>
+   <translation id="autorenew_service_debt_before_paying_1" qtlid="498209">Before you subscribe for a new period, please settle the outstanding amount on your account.</translation>
+   <translation id="autorenew_service_debt_before_paying_2" qtlid="498222">Please go to the Billing section to pay the invoice for the <strong>{{service}}</strong> service.</translation>
    <translation id="autorenew_service_canceldelete_title" qtlid="416137">Anulovat požadavek na zrušení služby</translation>
    <translation id="autorenew_service_delete_confirm" qtlid="416150">Služba {0} <strong>bude automaticky zrušena</strong> dne {1}.</translation>
    <translation id="autorenew_service_delete_warn" qtlid="416163">Veškerá data vážící se k dané službě budou nenávratně smazána. Toto rozhodnutí budete moci vzít zpět do 24 hodin před datem expirace.</translation>
+   <translation id="autorenew_service_debt_warn_deletion" qtlid="498235">You cannot cancel this service until you have paid the outstanding amount.&#160;Please go to the Billing section to settle your bill for the service <strong>{{service}}</strong></translation>
    <translation id="autorenew_service_canceldelete_confirm" qtlid="416176">Přejete si anulovat požadavek na zrušení služby <strong>{0}</strong>?</translation>
    <translation id="autorenew_service_update_intro" qtlid="351708">Zvolte si takový způsob obnovení služeb, jaký Vám bude nejvíce vyhovovat (automatické či manuální).<br /> V případě automatického obnovení si můžete zvolit i frekvenci inkasních plateb. </translation>
    <translation id="autorenew_service_select_intro" qtlid="221058">Vybrat vše:</translation>
@@ -142,7 +150,8 @@
    <translation id="autorenew_service_update_now" qtlid="31270">Existující</translation>
    <translation id="autorenew_service_update_future" qtlid="221123">Nová hodnota</translation>
    <translation id="autorenew_service_update_step2_error" qtlid="177522">Došlo k neočekávané chybě, omlouváme se za komplikace.</translation>
-   <translation id="autorenew_service_update_step2_success" qtlid="220174">Operace proběhla úspěšně.</translation>
+   <translation id="autorenew_service_update_step2_success" qtlid="492580">Operace byla úspěšně provedena.</translation>
+   <translation id="autorenew_service_update_step2_with_async_action_success" qtlid="492593">Operace byla úspěšně provedena. Výsledek bude k dispozici za okamžik.</translation>
    <translation id="billing_export_csv" qtlid="231773">Export do CSV</translation>
    <translation id="billing_common_link_new_window" qtlid="300694">(nové okno)</translation>
    <translation id="billing_date_range_choose_custom_date" qtlid="374443">Zvolte časové období</translation>
@@ -153,7 +162,7 @@
    <translation id="autorenew_service_disable_autorenew_desc1" qtlid="416189">Režim automatických plateb bude pro Vaši službu <strong>{0}</strong> deaktivován.</translation>
    <translation id="autorenew_service_disable_autorenew_desc2" qtlid="416202">Abyste mohli svou službu i nadále využívat, musíte příští platbu provést ještě před datem její expirace. <br/>Ve výchozím nastavení bude Vaše služba <strong>automaticky zrušena k datu</strong> {0}. Veškerá data vážící se k dané službě budou v takovém případě nenávratně smazána.</translation>
    <translation id="autorenew_service_disable_autorenew_desc3" qtlid="416215">Režim automatických plateb můžete reaktivovat do 24 hodin před datem expirace.</translation>
-   <translation id="autorenew_service_disable_autorenew_warn" qtlid="416228">Na blížící se ukončení platnosti Vaší služby Vám nebude zasláno žádné e-mailové upozornění.</translation>
+   <translation id="autorenew_service_disable_autorenew_warn" qtlid="492606">O ukončení služby budete informováni prostřednictvím e-mailu.</translation>
 
    <translation id="autorenew_service_enable_autorenew_title" qtlid="416098">Aktivovat automatické platby</translation>
    <translation id="autorenew_service_enable_autorenew_desc1" qtlid="416241">Automatické obnovení Vaší služby <strong>{0}</strong> bude aktivováno.</translation>
@@ -164,7 +173,7 @@
 
    <translation id="autorenew_service_type_HOSTING_RESELLER" qtlid="325276">Webhosting přeprodejce</translation>
 
-   <translation id="autorenew_service_EMAIL_DOMAIN_terminate" qtlid="370070">Smazat MX Plán</translation>
+   <translation id="autorenew_service_EMAIL_DOMAIN_terminate" qtlid="498248">Supprimer immédiatement le MX Plan</translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_info" qtlid="370083">Pokud odstraníte MX Plán, veškerá související data budou nenávratně smazána. V případě odstranění MX Plánu neexistuje možnost navrácení finančních prostředků. </translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_info_impossible" qtlid="370096">Nemůžete odstranit svou emailovou adresu, protože je momentálně propojena s webovým hostingem. </translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_procedure" qtlid="370109">Obdržíte email obsahující přesný postup pro uzavření Vašeho MX Plánu. Budete tak moci potvrdit jeho okamžité vymazání. </translation>
@@ -253,15 +262,15 @@
    <translation id="pagination_page" qtlid="486464">Strana {{ current }} / {{ last }}</translation>
    <translation id="pagination_display" qtlid="69353">Zobrazit</translation>
    <translation id="pagination_display_all" qtlid="139884">Vše</translation>
-   <translation id="pagination_go" qtlid="224880">OK</translation>
+   <translation id="pagination_go" qtlid="492619">OK</translation>
    <translation id="history_title2" qtlid="159540">Mé faktury</translation>
    <translation id="history_invoice_loading_errors" qtlid="402984">Při načítání {0} faktur(y) došlo k chybě.</translation>
-   <translation id="history_invoices_postal_mail" qtlid="486867">Recevoir mes factures au format papier</translation>
+   <translation id="history_invoices_postal_mail" qtlid="486867">Přeji si dostávat faktury v papírové formě</translation>
 
-   <translation id="history_invoices_choice_modal_activation" qtlid="486880">Voulez-vous confirmer l'activation de cette option ?</translation>
-   <translation id="history_invoices_choice_modal_deactivation" qtlid="486893">Voulez-vous confirmer la désactivation de cette option ?</translation>
-   <translation id="history_invoices_choice_modal_update_success" qtlid="486906">Le paramètre a bien été mis à jour</translation>
-   <translation id="history_invoices_choice_modal_update_error" qtlid="486919">Une erreur est survenue lors de la mise à jour du paramètre</translation>
+   <translation id="history_invoices_choice_modal_activation" qtlid="486880">Přejete si potvrdit aktivaci této možnosti?</translation>
+   <translation id="history_invoices_choice_modal_deactivation" qtlid="486893">Přejete si potvrdit deaktivaci této možnosti?</translation>
+   <translation id="history_invoices_choice_modal_update_success" qtlid="486906">Parametr byl úspěšně aktualizován</translation>
+   <translation id="history_invoices_choice_modal_update_error" qtlid="486919">Při aktualizaci parametru došlo k chybě</translation>
 
    <translation id="history_table_head_date" qtlid="374508">Datum vydání</translation>
    <translation id="history_table_head_id" qtlid="16445">Odkaz</translation>
@@ -291,7 +300,7 @@
    <translation id="payments_table_actions_tooltip" qtlid="398820">Více informací o platbě</translation>
    <translation id="payments_table_type_not_available" qtlid="374560">Informace není k dispozici</translation>
    <translation id="payments_table_empty" qtlid="398833">V rámci zvoleného období nemáte žádné platby.</translation>
-   <translation id="payments_request_pending" qtlid="486932">Un règlement de solde est en cours. Cliquez <a href="{0}">sur ce lien</a> pour en savoir plus.</translation>
+   <translation id="payments_request_pending" qtlid="486932">Probíhá uhrazení salda. Pro více informací klikněte <a href="{0}">zde</a>.</translation>
    <translation id="payments_details_link" qtlid="398846">Zobrazit detailní informace o platbě</translation>
    <translation id="payment_details_payment_id" qtlid="16445">Odkaz</translation>
    <translation id="payment_details_payment_date" qtlid="24523">Datum</translation>
@@ -304,7 +313,7 @@
    <translation id="payments_details_table_empty" qtlid="398898">Detaily nejsou k dispozici</translation>
    <translation id="payment_details_return_to_payments" qtlid="343421">Zpět na předchozí stranu</translation>
 
-   <translation id="orders_page_title" qtlid="282809">Moje objednávky</translation>
+   <translation id="orders_page_title" qtlid="282809">Mé objednávky</translation>
    <translation id="orders_table_head_date" qtlid="24523">Datum</translation>
    <translation id="orders_table_head_id" qtlid="289250">Číslo objednávky</translation>
    <translation id="orders_table_head_status" qtlid="33790">Stav</translation>
@@ -420,12 +429,12 @@
    <translation id="payment_mean_contact_creation_label_country" qtlid="25171">Země</translation>
    <translation id="payment_mean_contact_creation_label_address_country" qtlid="25171">Země</translation>
    <translation id="payment_mean_contact_creation_label_address_province" qtlid="38577">Oblast</translation>
-   <translation id="payment_mean_contact_creation_label_address_state" qtlid="8230">Stav</translation>
+   <translation id="payment_mean_contact_creation_label_address_state" qtlid="492632">Stav</translation>
    <translation id="payment_mean_contact_creation_label_address_area" qtlid="32434">Okres</translation>
    <translation id="payment_mean_contact_creation_label_legalform" qtlid="381855">Právní status</translation>
    <translation id="payment_mean_contact_creation_label_email_confirmation" qtlid="321156">Potvrzení e-mailu</translation>
    <translation id="payment_mean_contact_creation_label_spareEmail" qtlid="92153">Záložní e-mail</translation>
-   <translation id="payment_mean_contact_creation_label_email" qtlid="33598">E-mailová adresa</translation>
+   <translation id="payment_mean_contact_creation_label_email" qtlid="33598">E-mail</translation>
    <translation id="payment_mean_contact_creation_label_address_line1" qtlid="30430">Adresa</translation>
    <translation id="payment_mean_contact_creation_label_address_line2" qtlid="321637">Adresa (řádek 1)</translation>
    <translation id="payment_mean_contact_creation_label_address_line3" qtlid="321650">Adresa (řádek 2)</translation>
@@ -744,7 +753,7 @@
    <translation id="add_mean_select_title_choose" qtlid="244599">Vyberte si</translation>
    <translation id="add_mean_select_title_no_choice" qtlid="244612">Žádná jiná možnost není dostupná</translation>
    <translation id="add_mean_unable_to_get_payment_means" qtlid="244625">Není možné získat dostupné platební metody</translation>
-   <translation id="mean_table_head_state" qtlid="8230">Stav</translation>
+   <translation id="mean_table_head_state" qtlid="492645">Stav</translation>
    <translation id="mean_table_head_actions" qtlid="72809">Akce</translation>
    <translation id="mean_table_head_3d_secure" qtlid="274876">3D Secure</translation>
    <translation id="mean_table_head_3d_secure_true" qtlid="34776">Ano</translation>
@@ -760,7 +769,11 @@
    <translation id="paymentMean_label_creditcard_expiration" qtlid="30406">Expirace</translation>
    <translation id="paymentMean_label_iban" qtlid="177015">IBAN</translation>
    <translation id="paymentMean_label_bic" qtlid="177028">BIC</translation>
-   <translation id="paymentMean_label_ownerName" qtlid="177041">Jméno vlastníka účtu</translation>
+   <translation id="paymentMean_label_addressNumber" qtlid="30778">Číslo</translation>
+   <translation id="paymentMean_label_addressStreetName" qtlid="459573">Nom de la voie</translation>
+   <translation id="paymentMean_label_addressPostalCode" qtlid="30346">PSČ</translation>
+   <translation id="paymentMean_label_addressTown" qtlid="33310">Město</translation>
+   <translation id="paymentMean_label_ownerName" qtlid="498261">Nom et prénom du propriétaire ou nom de l'organisation propriétaire</translation>
    <translation id="paymentMean_label_ownerAddress" qtlid="177054">Adresa majitele účtu</translation>
    <translation id="paymentMean_error_bic_bank" qtlid="177067">Kód banky není platný.</translation>
    <translation id="paymentMean_error_bic_valid" qtlid="177080">BIC není platné.</translation>
@@ -770,6 +783,10 @@
    <translation id="paymentMean_error_iban_key" qtlid="177132">Klíč IBAN není platný.</translation>
    <translation id="paymentMean_error_iban_valid" qtlid="177145">IBAN není platný.</translation>
    <translation id="paymentMean_error_minlength" qtlid="179680">Musí mít alespoň 5 znaků.</translation>
+   <translation id="paymentMean_error_addressPostalCode_required" qtlid="177093">Toto pole je povinné.</translation>
+   <translation id="paymentMean_error_addressPostalCode_min" qtlid="498274">Le code postal n'est pas valide.</translation>
+   <translation id="paymentMean_error_addressPostalCode_max" qtlid="498274">Le code postal n'est pas valide.</translation>
+   <translation id="paymentMean_error_addressPostalCode_pattern" qtlid="498287">Le code postal doit être composé de 5 chiffres.</translation>
    <translation id="paymentMean_error_maxlength" qtlid="177171">Text musí být kratší než 255 znaků.</translation>
    <translation id="paymentType_delete_error" qtlid="177184">Chyba při mazání platební metody.</translation>
    <translation id="paymentType_modify_error" qtlid="436354">Při modifikaci platební metody došlo k chybě</translation>
@@ -1039,11 +1056,11 @@
    <translation id="services_filter_duration_months" qtlid="267502">Expirující během měsíce</translation>
    <translation id="services_filter_duration_expired" qtlid="267515">Expirované služby</translation>
 
-   <translation id="hosting_dashboard_service_guide" qtlid="268577">Odstranit webhosting</translation>
+   <translation id="hosting_dashboard_service_guide" qtlid="498300">Supprimer immédiatement l'hébergement</translation>
    <translation id="hosting_dashboard_close_service_question" qtlid="215533">Přejete si dostávat tento email? </translation>
    <translation id="hosting_dashboard_close_service_success" qtlid="370148">Požadavek na vymazání Vašeho webhostingu byl zpracován. V následujících krocích obdržíte email s informace o dalším postupu. </translation>
    <translation id="hosting_dashboard_close_service_error" qtlid="255469">Váš webhostingový účet nebylo možné uzavřít, kvůli následující chybě:</translation>
-   <translation id="hosting_dashboard_close_service" qtlid="255417">Vymazat můj webhostingový účet</translation>
+   <translation id="hosting_dashboard_close_service" qtlid="498313">Supprimer immédiatement mon hébergement</translation>
    <translation id="hosting_dashboard_close_service_warning" qtlid="255430">Při vymazání webhostingového účtu dojde ke smazání i všech spjatých dat. Obnovení těchto dat v budoucnosti již nebude možné.</translation>
    <translation id="hosting_dashboard_close_service_desc1" qtlid="370161">Obdržíte email obsahující přesný postup pro uzavření Vašeho webhostingu. Budete tak moci potvrdit jeho okamžité vymazání. </translation>
 
@@ -1179,6 +1196,7 @@
    <translation id="terminate_service_title" qtlid="439957">Formulář zrušení služby</translation>
    <translation id="terminate_service_information_title" qtlid="439970">Zrušení služby</translation>
    <translation id="terminate_service_information_text" qtlid="439983">Potvrzení bude mít za následek okamžité a nenávratné zrušení služby a odstranění veškerých asociovaných dat (včetně datových záloh). Před pokračováním se ujistěte, že jste podnikli veškeré kroky potřebné pro zálohování svých dat nad rámec této služby. Společnost OVH nenese za případnou ztrátu dat vzniklou v důsledku zrušení služby žádnou odpovědnost.</translation>
+   <translation id="terminate_service_information_text_non_US" qtlid="492658">Služba bude ukončena na konci obnovovacího období. Mějte prosím na paměti, že jakmile potvrdíte ukončení služby, dojde k nenávratnému odstranění veškerých dat a záloh s ní asociovaných. Před potvrzením ukončení služby proto doporučujeme provést veškeré kroky nezbytné pro zachování Vašich dat. Po zahájení již proces nelze stornovat. Společnost OVH v tomto případě nenese odpovědnost za případnou ztrátu dat.</translation>
    <translation id="terminate_service_services_title" qtlid="439996">Další služby, které mohou být ovlivněné zrušením dané služby</translation>
    <translation id="terminate_service_services_service" qtlid="31042">Služba</translation>
    <translation id="terminate_service_services_name" qtlid="3818">Název</translation>
@@ -1196,7 +1214,7 @@
    <translation id="terminate_service_reason_text" qtlid="440022">Chcete nám poskytnout další podrobnosti?</translation>
    <translation id="terminate_service_error" qtlid="440035">Při načítání stránky došlo k chybě.</translation>
    <translation id="terminate_service_confirmation_error" qtlid="440048">Při pokusu o potvrzení požadavku na zrušení služby došlo k chybě.</translation>
-   <translation id="terminate_service_confirmation_success" qtlid="440061">Služba byla úspěšně zrušena. V následujících minutách od nás obdržíte potvrzovací e-mail. Naše technická podpora je Vám i nadále k dispozici.</translation>
+   <translation id="terminate_service_confirmation_success" qtlid="492671">Vaše služby byly úspěšně ukončeny. V následujících minutách obdržíte potvrzení do své e-mailové schránky. V případě jakýchkoli nejasností je Vám k dispozici naše zákaznická podpora.</translation>
    <translation id="terminate_service_confirm" qtlid="440074">Potvrzuji zrušení služby</translation>
    <translation id="terminate_service_type_allDom" qtlid="270293">Balíček AllDom</translation>
    <translation id="terminate_service_type_caas_containers" qtlid="343148">CaaS kontejnery </translation>

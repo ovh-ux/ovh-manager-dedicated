@@ -96,57 +96,147 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="ownerAddress"
-                               class="control-label required"
-                               data-translate="paymentMean_label_ownerAddress">
-                        </label>
-                        <input type="text"
-                               id="ownerAddress"
-                               name="ownerAddress"
-                               class="form-control"
-                               data-ng-model="mean.ownerAddress"
-                               data-ng-minlength="5"
-                               data-ng-maxlength="255"
-                               required/>
-                        <div data-ng-repeat="(error, hasError) in paymentMeanForm.ownerAddress.$error"
-                             role="alert">
-                            <span class="text-danger"
-                                  data-ng-bind="('paymentMean_error_' + error) | translate"
-                                  data-ng-if="hasError && paymentMeanForm.ownerAddress.$dirty" >
-                            </span>
-                        </div>
-                    </div>
+                    <fieldset>
+                        <legend class="mb-5" data-translate="paymentMean_label_ownerAddress"></legend>
+                        <div data-ng-if="customerIsFromFrance">
+                            <div class="form-group">
+                                <label for="addressNumber"
+                                        class="control-label"
+                                        data-translate="paymentMean_label_addressNumber">
+                                </label>
+                                <input type="text"
+                                        id="addressNumber"
+                                        name="addressNumber"
+                                        class="form-control"
+                                        data-ng-model="mean.addressNumber"
+                                        data-ng-maxlength="255">
+                                <div data-ng-repeat="(error, hasError) in paymentMeanForm.addressNumber.$error"
+                                    role="alert">
+                                    <span class="text-danger"
+                                        data-ng-bind="('paymentMean_error_' + error) | translate"
+                                        data-ng-if="hasError && paymentMeanForm.addressNumber.$dirty" >
+                                    </span>
+                                </div>
+                            </div>
 
-                    <div class="form-group">
-                        <label for="ownerName"
-                               class="control-label required"
-                               data-translate="paymentMean_label_ownerName">
-                        </label>
-                        <input type="text"
-                               id="ownerName"
-                               name="ownerName"
-                               class="form-control"
-                               data-ng-model="mean.ownerName"
-                               data-ng-minlength="5"
-                               data-ng-maxlength="255"
-                               required/>
-                        <div data-ng-repeat="(error, hasError) in paymentMeanForm.ownerName.$error"
-                             role="alert">
-                            <span class="text-danger"
-                                  data-ng-bind="('paymentMean_error_' + error) | translate"
-                                  data-ng-if="hasError && paymentMeanForm.ownerName.$dirty">
-                            </span>
-                        </div>
-                    </div>
+                            <div class="form-group">
+                                <label for="addressStreetName"
+                                        class="control-label required"
+                                        data-translate="paymentMean_label_addressStreetName">
+                                </label>
+                                <input type="text"
+                                        id="addressStreetName"
+                                        name="addressStreetName"
+                                        class="form-control"
+                                        data-ng-model="mean.addressStreetName"
+                                        data-ng-maxlength="255"
+                                        required>
+                                <div data-ng-repeat="(error, hasError) in paymentMeanForm.addressStreetName.$error"
+                                    role="alert">
+                                    <span class="text-danger"
+                                        data-ng-bind="('paymentMean_error_' + error) | translate"
+                                        data-ng-if="hasError && paymentMeanForm.addressStreetName.$dirty" >
+                                    </span>
+                                </div>
+                            </div>
 
+                            <div class="form-group">
+                                <label for="addressPostalCode"
+                                        class="control-label required"
+                                        data-translate="paymentMean_label_addressPostalCode">
+                                </label>
+                                <input type="number"
+                                        id="addressPostalCode"
+                                        name="addressPostalCode"
+                                        class="form-control"
+                                        data-ng-model="mean.addressPostalCode"
+                                        data-ng-pattern="/^\d{5}$/"
+                                        min="01000"
+                                        min="99999"
+                                        required>
+                                <div data-ng-repeat="(error, hasError) in paymentMeanForm.addressPostalCode.$error"
+                                    role="alert">
+                                    <span class="text-danger"
+                                        data-ng-bind="('paymentMean_error_addressPostalCode_' + error) | translate"
+                                        data-ng-if="hasError && paymentMeanForm.addressPostalCode.$dirty" >
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="addressTown"
+                                        class="control-label required"
+                                        data-translate="paymentMean_label_addressTown">
+                                </label>
+                                <input type="text"
+                                        id="addressTown"
+                                        name="addressTown"
+                                        class="form-control"
+                                        data-ng-model="mean.addressTown"
+                                        data-ng-maxlength="255"
+                                        required>
+                                <div data-ng-repeat="(error, hasError) in paymentMeanForm.addressTown.$error"
+                                    role="alert">
+                                    <span class="text-danger"
+                                        data-ng-bind="('paymentMean_error_' + error) | translate"
+                                        data-ng-if="hasError && paymentMeanForm.addressTown.$dirty" >
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            data-ng-if="!customerIsFromFrance"
+                            class="form-group">
+                            <label for="ownerAddress"
+                                    class="control-label required"
+                                    data-translate="paymentMean_label_ownerAddress">
+                            </label>
+                            <input type="text"
+                                    id="ownerAddress"
+                                    name="ownerAddress"
+                                    class="form-control"
+                                    data-ng-model="mean.ownerAddress"
+                                    data-ng-maxlength="255"
+                                    required>
+                            <div data-ng-repeat="(error, hasError) in paymentMeanForm.ownerAddress.$error"
+                                    role="alert">
+                                <span class="text-danger"
+                                        data-ng-bind="('paymentMean_error_' + error) | translate"
+                                        data-ng-if="hasError && paymentMeanForm.ownerAddress.$dirty" >
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ownerName"
+                                class="control-label required"
+                                data-translate="paymentMean_label_ownerName">
+                            </label>
+                            <input type="text"
+                                id="ownerName"
+                                name="ownerName"
+                                class="form-control"
+                                data-ng-model="mean.ownerName"
+                                data-ng-minlength="5"
+                                data-ng-maxlength="255"
+                                required/>
+                            <div data-ng-repeat="(error, hasError) in paymentMeanForm.ownerName.$error"
+                                role="alert">
+                                <span class="text-danger"
+                                    data-ng-bind="('paymentMean_error_' + error) | translate"
+                                    data-ng-if="hasError && paymentMeanForm.ownerName.$dirty">
+                                </span>
+                            </div>
+                        </div>
+                    </fieldset>
                 </div>
 
                 <div class="checkbox"
-                     data-ng-show="canPaymentTypeSetDefaultAtCreation(mean.type)">
+                        data-ng-show="canPaymentTypeSetDefaultAtCreation(mean.type)">
                     <label>
                         <input type="checkbox"
-                               data-ng-model="mean.setDefault" />
+                                data-ng-model="mean.setDefault" />
                         <span data-translate="payment_mean_set_default_after_validation"></span>
                     </label>
                 </div>

@@ -2,6 +2,10 @@
 <translations>
 
    <translation id="autorenew_title" qtlid="287527">Palvelujen hallinta</translation>
+
+   <translation id="autorenew_service_deleteAtExpiration_banner" qtlid="498105">The termination at expiration of the service "{{serviceName}}" has been taken into account. You can cancel this operation until 24 hours before the service expires.</translation>
+   <translation id="autorenew_service_deleteAtExpiration_banner_cancel" qtlid="498118">Cancel the termination</translation>
+
    <translation id="autorenew_myservices" qtlid="212881">Omat palvelut</translation>
    <translation id="autorenew" qtlid="219758">Uudistamiset</translation>
    <translation id="autorenew_service" qtlid="34632">Palvelut</translation>
@@ -22,21 +26,22 @@
    <translation id="autorenew_service_renew_auto" qtlid="134215">Automaattinen</translation>
    <translation id="autorenew_service_renew_manuel" qtlid="219797">Manuaalinen</translation>
    <translation id="autorenew_service_renew_delete_at_expiration" qtlid="399736">Irtisanominen vanhenemispäivänä</translation>
-   <translation id="autorenew_service_renew_manual_payment" qtlid="416059">Automaattinen maksu: Ei käytössä</translation>
-   <translation id="autorenew_service_renew_year" qtlid="402880">Automaattinen: Joka vuosi</translation>
-   <translation id="autorenew_service_renew_month" qtlid="402893">Automaattinen: Joka kuukausi</translation>
+   <translation id="autorenew_service_renew_manual_payment" qtlid="498131">Automatique : désactivé</translation>
+   <translation id="autorenew_service_renew_year" qtlid="498144">Automatique : tous les ans</translation>
+   <translation id="autorenew_service_renew_month" qtlid="498157">Automatique : tous les mois</translation>
    <translation id="autorenew_service_renew_3months" qtlid="402906">Neljännesvuosittain</translation>
    <translation id="autorenew_service_renew_6months" qtlid="402919">Puolivuosittain</translation>
    <translation id="autorenew_service_renew_frequency_value" qtlid="402932">Joka {0} kuukausi</translation>
    <translation id="autorenew_service_renew_years_frequency_value" qtlid="402945">Auto: Joka {0} vuosi</translation>
+   <translation id="autorenew_service_renew_paid" qtlid="37515">Maksettu</translation>
    <translation id="manualrenew_service_update_button_caption" qtlid="416111">Maksa palvelu</translation>
    <translation id="manualrenew_onlyauto_alert" qtlid="264166">Olet valinnut automaattisen uusinnan.</translation>
    <translation id="autorenew_empty" qtlid="219810">Sinulla ei ole palveluita</translation>
    <translation id="autorenew_service_mass_actions_caption" qtlid="300227">Toiminnot valituilla elementeillä:</translation>
    <translation id="autorenew_service_update_button_caption" qtlid="416072">Muuta maksuväliä</translation>
    <translation id="autorenew_service_update_date_button_caption" qtlid="300253">Tasaa uusimispäivät.</translation>
-   <translation id="autorenew_service_resiliate_button" qtlid="56337">Irtisano palvelu</translation>
-   <translation id="autorenew_service_resiliate_button_title" qtlid="243604">Palvelun irtisanominen: {0}</translation>
+   <translation id="autorenew_service_resiliate_button" qtlid="498170">Résilier à date d'échéance</translation>
+   <translation id="autorenew_service_resiliate_button_title" qtlid="498183">Résilier à date d'échéance : {0}</translation>
    <translation id="autorenew_service_disable_button" qtlid="416085">Poista automaattinen maksu käytöstä</translation>
    <translation id="autorenew_service_enable_button" qtlid="416098">Aktivoi automaattinen maksu</translation>
    <translation id="autorenew_service_renew_button" qtlid="416111">Maksa palvelu</translation>
@@ -44,7 +49,7 @@
    <translation id="autorenew_service_canceldelete_button" qtlid="285350">Peru irtisanominen</translation>
    <translation id="autorenew_service_canceldelete_button_title" qtlid="243695">Peruuta irtisanomispyyntöni: {0}</translation>
    <translation id="autorenew_service_renew_frequency_title" qtlid="212998">Maksujen lukumäärä</translation>
-   <translation id="autorenew_service_renew_frequency_value" qtlid="402971">Auto: Joka {0} kuukausi</translation>
+   <translation id="autorenew_service_renew_frequency_value" qtlid="498196">Automatique : tous les {0} mois</translation>
    <translation id="autorenew_search_input_title" qtlid="300629">Etsi palveluita tunnuksella.</translation>
    <translation id="autorenew_service_expand_sub_services" qtlid="300642">Näytä tai piilota hakuun liittyvät palvelut.</translation>
    <translation id="autorenew_service_select_all_checkbox" qtlid="300655">Valitse kaikki palvelut.</translation>
@@ -62,10 +67,13 @@
    <translation id="autorenew_service_update_renewal_activation_notice" qtlid="369427">Automaattinen uusinta on aktivoitu palveluille sekä tilillesi.</translation>
    <translation id="autorenew_service_update_renewal_activation_error" qtlid="369440">Olet valinnut automaattisen uusinnan vähintään yhdellä palvelulle, mutta automaattista uusintaa ei voitu aktivoida tililläsi: {0}</translation>
    <translation id="autorenew_guide_help" qtlid="156732">Katso ohjeemme</translation>
-   <translation id="autorenew_service_delete_title" qtlid="56337">Irtisano palvelu</translation>
+   <translation id="autorenew_service_delete_title" qtlid="498170">Résilier à date d'échéance</translation>
+   <translation id="autorenew_service_debt_before_paying_1" qtlid="498209">Before you subscribe for a new period, please settle the outstanding amount on your account.</translation>
+   <translation id="autorenew_service_debt_before_paying_2" qtlid="498222">Please go to the Billing section to pay the invoice for the <strong>{{service}}</strong> service.</translation>
    <translation id="autorenew_service_canceldelete_title" qtlid="416137">Peru palvelun irtisanominen</translation>
    <translation id="autorenew_service_delete_confirm" qtlid="416150">Palvelu {0} <strong>irtisanotaan automaattisesti</strong> {1}.</translation>
    <translation id="autorenew_service_delete_warn" qtlid="416163">Palveluun liittyvä data poistetaan automaattisesti ja peruuttamattomasti. Voit muuttaa mielesi siihen asti, että palvelun vanhenemiseen on 24 tuntia.</translation>
+   <translation id="autorenew_service_debt_warn_deletion" qtlid="498235">You cannot cancel this service until you have paid the outstanding amount.&#160;Please go to the Billing section to settle your bill for the service <strong>{{service}}</strong></translation>
    <translation id="autorenew_service_canceldelete_confirm" qtlid="416176">Oletko varma, että haluat perua <strong>{0}</strong>-palvelun irtisanomisen?</translation>
    <translation id="autorenew_service_update_intro" qtlid="351708">Valitse haluamasi uusintatyyppi (automaattinen tai manuaalinen).<br /> Automaattisessa uusinnassa voit valita myös laskutusvälin.</translation>
    <translation id="autorenew_service_select_intro" qtlid="221058">Valitse kaikki:</translation>
@@ -142,7 +150,8 @@
    <translation id="autorenew_service_update_now" qtlid="31270">Nykyinen</translation>
    <translation id="autorenew_service_update_future" qtlid="221123">Uusi arvo</translation>
    <translation id="autorenew_service_update_step2_error" qtlid="177522">Pahoittelemme aiheutunutta haittaa, tapahtui virhe.</translation>
-   <translation id="autorenew_service_update_step2_success" qtlid="220174">Toiminto suoritettu onnistuneesti.</translation>
+   <translation id="autorenew_service_update_step2_success" qtlid="492580">Toimenpiteen suorittaminen onnistui.</translation>
+   <translation id="autorenew_service_update_step2_with_async_action_success" qtlid="492593">Toimenpide suorittaminen onnistui, se astuu voimaan hetken kulutta.</translation>
    <translation id="billing_export_csv" qtlid="231773">CSV-vienti</translation>
    <translation id="billing_common_link_new_window" qtlid="300694">(uusi ikkuna)</translation>
    <translation id="billing_date_range_choose_custom_date" qtlid="374443">Määritä jakso</translation>
@@ -153,7 +162,7 @@
    <translation id="autorenew_service_disable_autorenew_desc1" qtlid="416189"><strong>{0}</strong>-palvelun automaattinen maksu poistetaan.</translation>
    <translation id="autorenew_service_disable_autorenew_desc2" qtlid="416202">Palvelun säilyttämiseksi suorita maksu hyvissä ajoin ennen nykyisen tilauskauden loppua. <br/> Muussa tapauksessa palvelu <strong>irtisanotaan automaattisesti tilauskauden päätyttyä</strong> {0} ja siihen liittyvä data poistetaan automaattisesti ja peruuttamattomasti.</translation>
    <translation id="autorenew_service_disable_autorenew_desc3" qtlid="416215">Automaattisen maksun voi ottaa uudelleen käyttöön siihen asti, että tilauskauden päättymiseen on 24 tuntia.</translation>
-   <translation id="autorenew_service_disable_autorenew_warn" qtlid="416228">Palvelun erääntymisestä ei lähetetä muistutusviestejä.</translation>
+   <translation id="autorenew_service_disable_autorenew_warn" qtlid="492606">Saat sähköpostitse palvelusi päättymisestä muistuttavia viestejä.</translation>
 
    <translation id="autorenew_service_enable_autorenew_title" qtlid="416098">Aktivoi automaattinen maksu</translation>
    <translation id="autorenew_service_enable_autorenew_desc1" qtlid="416241">Automaattinen maksu aktivoidaan palvelulle <strong>{0}</strong>.</translation>
@@ -164,7 +173,7 @@
 
    <translation id="autorenew_service_type_HOSTING_RESELLER" qtlid="325276">Hosting jälleenmyyjä</translation>
 
-   <translation id="autorenew_service_EMAIL_DOMAIN_terminate" qtlid="370070">Poista MX Plan</translation>
+   <translation id="autorenew_service_EMAIL_DOMAIN_terminate" qtlid="498248">Supprimer immédiatement le MX Plan</translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_info" qtlid="370083">MX Plan -tuotteen poistaminen johtaa kaikkien sitä vastaavien tiedostojen lopulliseen pyyhkimiseen. MX Plan -tuotteen poistaminen ei oikeuta minkäänlaiseen korvaukseen. </translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_info_impossible" qtlid="370096">Et voi poistaa sähköpostiosoitetta, koska se on liitetty webhotelliin.</translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_procedure" qtlid="370109">Saat sähköpostitse ohjeet MX Plan -tuotteen sulkemisprosessiin, jonka avulla voit vahvistaa tuotteen välittömän poistamisen. </translation>
@@ -253,15 +262,15 @@
    <translation id="pagination_page" qtlid="486464">Sivu {{ current }} / {{ last }}</translation>
    <translation id="pagination_display" qtlid="69353">Näytä</translation>
    <translation id="pagination_display_all" qtlid="139884">Kaikki</translation>
-   <translation id="pagination_go" qtlid="224880">Ok</translation>
+   <translation id="pagination_go" qtlid="492619">Ok</translation>
    <translation id="history_title2" qtlid="159540">Laskut</translation>
    <translation id="history_invoice_loading_errors" qtlid="402984">Tapahtui virhe {0} laskua haettaessa.</translation>
-   <translation id="history_invoices_postal_mail" qtlid="486867">Recevoir mes factures au format papier</translation>
+   <translation id="history_invoices_postal_mail" qtlid="486867">Laskujen vastaanottaminen paperisena</translation>
 
-   <translation id="history_invoices_choice_modal_activation" qtlid="486880">Voulez-vous confirmer l'activation de cette option ?</translation>
-   <translation id="history_invoices_choice_modal_deactivation" qtlid="486893">Voulez-vous confirmer la désactivation de cette option ?</translation>
-   <translation id="history_invoices_choice_modal_update_success" qtlid="486906">Le paramètre a bien été mis à jour</translation>
-   <translation id="history_invoices_choice_modal_update_error" qtlid="486919">Une erreur est survenue lors de la mise à jour du paramètre</translation>
+   <translation id="history_invoices_choice_modal_activation" qtlid="486880">Haluatko aktivoida tämän vaihtoehdon?</translation>
+   <translation id="history_invoices_choice_modal_deactivation" qtlid="486893">Haluatko vahvistaa tämän vaihtoehdon käytöstä poistamisen?</translation>
+   <translation id="history_invoices_choice_modal_update_success" qtlid="486906">Asetus päivitettiin</translation>
+   <translation id="history_invoices_choice_modal_update_error" qtlid="486919">Tapahtui virhe asetuksen päivityksessä</translation>
 
    <translation id="history_table_head_date" qtlid="374508">Laskun päivämäärä</translation>
    <translation id="history_table_head_id" qtlid="16445">Viite</translation>
@@ -292,7 +301,7 @@
    <translation id="payments_table_actions_tooltip" qtlid="398820">Maksun lisätiedot</translation>
    <translation id="payments_table_type_not_available" qtlid="374560">Tietoja ei saatavilla</translation>
    <translation id="payments_table_empty" qtlid="398833">Valitulla jaksolla ei ole maksuja.</translation>
-   <translation id="payments_request_pending" qtlid="486932">Un règlement de solde est en cours. Cliquez <a href="{0}">sur ce lien</a> pour en savoir plus.</translation>
+   <translation id="payments_request_pending" qtlid="486932">Saldon maksu on käynnissä. Klikkaa <a href="{0}">tästä</a> lukeaksesi lisää.</translation>
    <translation id="payments_details_link" qtlid="398846">Katso maksun tiedot</translation>
    <translation id="payment_details_payment_id" qtlid="16445">Viite</translation>
    <translation id="payment_details_payment_date" qtlid="24523">Päivämäärä</translation>
@@ -422,7 +431,7 @@
    <translation id="payment_mean_contact_creation_label_country" qtlid="25171">Laskutusmaa</translation>
    <translation id="payment_mean_contact_creation_label_address_country" qtlid="25171">Laskutusmaa</translation>
    <translation id="payment_mean_contact_creation_label_address_province" qtlid="38577">Lääni</translation>
-   <translation id="payment_mean_contact_creation_label_address_state" qtlid="8230">Tila</translation>
+   <translation id="payment_mean_contact_creation_label_address_state" qtlid="492632">Tila</translation>
    <translation id="payment_mean_contact_creation_label_address_area" qtlid="32434">Alue</translation>
    <translation id="payment_mean_contact_creation_label_legalform" qtlid="381855">Juridinen asema</translation>
    <translation id="payment_mean_contact_creation_label_email_confirmation" qtlid="321156">Sähköpostiosoitteen vahvistus</translation>
@@ -746,7 +755,7 @@
    <translation id="add_mean_select_title_choose" qtlid="244599">Tee valinta</translation>
    <translation id="add_mean_select_title_no_choice" qtlid="244612">Muita vaihtoehtoja ei ole</translation>
    <translation id="add_mean_unable_to_get_payment_means" qtlid="244625">Muiden maksuvälineiden näyttö ei ole mahdollista</translation>
-   <translation id="mean_table_head_state" qtlid="8230">Tila</translation>
+   <translation id="mean_table_head_state" qtlid="492645">Tila</translation>
    <translation id="mean_table_head_actions" qtlid="72809">Toiminnot</translation>
    <translation id="mean_table_head_3d_secure" qtlid="274876">3D Secure</translation>
    <translation id="mean_table_head_3d_secure_true" qtlid="34776">Kyllä</translation>
@@ -762,7 +771,11 @@
    <translation id="paymentMean_label_creditcard_expiration" qtlid="30406">Vanhenee</translation>
    <translation id="paymentMean_label_iban" qtlid="177015">IBAN</translation>
    <translation id="paymentMean_label_bic" qtlid="177028">BIC</translation>
-   <translation id="paymentMean_label_ownerName" qtlid="177041">Tilinomistajan nimi</translation>
+   <translation id="paymentMean_label_addressNumber" qtlid="30778">Numero</translation>
+   <translation id="paymentMean_label_addressStreetName" qtlid="459573">Nom de la voie</translation>
+   <translation id="paymentMean_label_addressPostalCode" qtlid="30346">Postinumero</translation>
+   <translation id="paymentMean_label_addressTown" qtlid="33310">Postitoimipaikka</translation>
+   <translation id="paymentMean_label_ownerName" qtlid="498261">Nom et prénom du propriétaire ou nom de l'organisation propriétaire</translation>
    <translation id="paymentMean_label_ownerAddress" qtlid="177054">Tilinomistajan osoite</translation>
    <translation id="paymentMean_error_bic_bank" qtlid="177067">Pankin numero on väärin.</translation>
    <translation id="paymentMean_error_bic_valid" qtlid="177080">BIC ei kelpaa.</translation>
@@ -772,6 +785,10 @@
    <translation id="paymentMean_error_iban_key" qtlid="177132">IBAN-numeron avain ei kelpaa.</translation>
    <translation id="paymentMean_error_iban_valid" qtlid="177145">IBAN ei kelpaa.</translation>
    <translation id="paymentMean_error_minlength" qtlid="179680">Vähintään 5 merkkiä.</translation>
+   <translation id="paymentMean_error_addressPostalCode_required" qtlid="177093">Tämä kenttä on pakollinen.</translation>
+   <translation id="paymentMean_error_addressPostalCode_min" qtlid="498274">Le code postal n'est pas valide.</translation>
+   <translation id="paymentMean_error_addressPostalCode_max" qtlid="498274">Le code postal n'est pas valide.</translation>
+   <translation id="paymentMean_error_addressPostalCode_pattern" qtlid="498287">Le code postal doit être composé de 5 chiffres.</translation>
    <translation id="paymentMean_error_maxlength" qtlid="177171">Tekstin on oltava lyhyempi kuin 255 merkkiä.</translation>
    <translation id="paymentType_delete_error" qtlid="177184">Tapahtui virhe poistettaessa maksuvälinettä</translation>
    <translation id="paymentType_modify_error" qtlid="436354">Virhe muokattaessa maksuvälinettä</translation>
@@ -1038,11 +1055,11 @@
    <translation id="services_filter_duration_months" qtlid="267502">Voimassaolo päättyy kuukauden kuluttua</translation>
    <translation id="services_filter_duration_expired" qtlid="267515">Voimassaolo päättynyt</translation>
 
-   <translation id="hosting_dashboard_service_guide" qtlid="268577">Sulje webhotelli</translation>
+   <translation id="hosting_dashboard_service_guide" qtlid="498300">Supprimer immédiatement l'hébergement</translation>
    <translation id="hosting_dashboard_close_service_question" qtlid="215533">Haluatko jatkaa?</translation>
    <translation id="hosting_dashboard_close_service_success" qtlid="370148">Webhotellin sulkemispyyntö on rekisteröity. Prosessin ohjeet on lähetetty sinulle sähköpostitse. </translation>
    <translation id="hosting_dashboard_close_service_error" qtlid="255469">Webhotellia ei voida sulkea seuraavan virheen takia:</translation>
-   <translation id="hosting_dashboard_close_service" qtlid="255417">Webhotellin sulkeminen</translation>
+   <translation id="hosting_dashboard_close_service" qtlid="498313">Supprimer immédiatement mon hébergement</translation>
    <translation id="hosting_dashboard_close_service_warning" qtlid="255430">Kun webhotelli suljetaan, kaikki siellä oleva data poistuu. Mitään hyvitystä webhotellitilin sulkemisesta ei anneta.</translation>
    <translation id="hosting_dashboard_close_service_desc1" qtlid="370161">Saat sähköpostitse ohjeet webhotellin sulkemisprosessiin, jonka avulla voit vahvistaa tuotteen välittömän poistamisen.</translation>
 
@@ -1178,6 +1195,7 @@
    <translation id="terminate_service_title" qtlid="439957">Irtisanomislomake</translation>
    <translation id="terminate_service_information_title" qtlid="439970">Palvelun irtisanominen</translation>
    <translation id="terminate_service_information_text" qtlid="439983">Palvelu irtisanotaan heti vahvistamisesi jälkeen. Tämä johtaa välittömästi kaikkien palveluun liittyvien tietojen (varmuuskopiot mukaanluettuna) automaattiseen ja peruuttamattomaan poistamiseen. Tee kaikki tarvittavat toimenpiteen tietojen säilyttämiseksi ennen irtisanomisen vahvistamista. OVH ei vastaa tietojen menetyksistä.</translation>
+   <translation id="terminate_service_information_text_non_US" qtlid="492658">Palvelu irtisanotaan uusintajakson lopussa. Huomaa, että vahvistaessasi irtisanomisen kaikki kyseiseen palveluun liittyvät tiedot ja varmuuskopiot <strong>poistetaan pysyvästi</strong>. Tee tarvittavat toimenpiteet tietojen säilyttämiseksi ennen palvelun poistamisen vahvistamista. Kun prosessi on käynnistetty, sitä ei voi keskeyttää. OVH ei vastaa tietojen menetyksistä tällaisessa tapauksessa.</translation>
    <translation id="terminate_service_services_title" qtlid="439996">Palvelut joihin irtisanominen vaikuttaa</translation>
    <translation id="terminate_service_services_service" qtlid="31042">Palvelu</translation>
    <translation id="terminate_service_services_name" qtlid="3818">Nimi</translation>
@@ -1195,7 +1213,7 @@
    <translation id="terminate_service_reason_text" qtlid="440022">Haluatko kertoa meille lisätietoja tai antaa ehdotuksen?</translation>
    <translation id="terminate_service_error" qtlid="440035">Valitettavasti sivun lataamisessa tapahtui virhe. </translation>
    <translation id="terminate_service_confirmation_error" qtlid="440048">Tapahtui virhe palvelusi keskeyttämisen vahvistuksessa.</translation>
-   <translation id="terminate_service_confirmation_success" qtlid="440061">Palvelusi on irtisanottu. Saat sähköpostitse vahvistuksen seuraavien minuuttien kuluessa. Asiakaspalvelumme vastaa tarvittaessa lisäkysymyksiin.</translation>
+   <translation id="terminate_service_confirmation_success" qtlid="492671">Olet irtisanonut palvelusi. Saat vahvistuksen sähköpostitse seuraavien minuuttien kuluessa. Asiakaspalvelumme on edelleen käytettävissä, mikäli sinulle jäi jotain kysyttävää.</translation>
    <translation id="terminate_service_confirm" qtlid="440074">Vahvista irtisanominen</translation>
    <translation id="terminate_service_type_allDom" qtlid="270293">AllDom-paketti</translation>
    <translation id="terminate_service_type_caas_containers" qtlid="343148">CaaS Containers</translation>

@@ -3,7 +3,8 @@
  * @name Billing.controllers.Method.Add'
  * @description
  */
-angular.module("Billing.controllers").controller("Billing.controllers.Mean.Add", ($scope, $location, $q, $translate, IBAN_BIC_RULES, BillingMean, BillingUser, Alerter) => {
+angular.module("Billing.controllers").controller("Billing.controllers.Mean.Add", ($scope, $location, $q, $translate, IBAN_BIC_RULES, BillingMean, BillingUser, Alerter, User) => {
+
     $scope.loader = {
         add: false,
         means: false
@@ -119,6 +120,14 @@ angular.module("Billing.controllers").controller("Billing.controllers.Mean.Add",
 
         const meanData = BillingMean.canPaymentTypeSetDefaultAtCreation($scope.mean.type) ? $scope.mean : _.omit($scope.mean, "setDefault");
 
+        if ($scope.customerIsFromFrance && $scope.mean.type === "bankAccount") {
+            meanData.ownerAddress = `${meanData.addressNumber || ""} ${meanData.addressStreetName} ${meanData.addressPostalCode} ${meanData.addressTown}`.trim();
+            delete meanData.addressNumber;
+            delete meanData.addressStreetName;
+            delete meanData.addressPostalCode;
+            delete meanData.addressTown;
+        }
+
         return BillingMean.post(meanData)
             .then((response) => {
                 $scope.mean = {};
@@ -205,11 +214,16 @@ angular.module("Billing.controllers").controller("Billing.controllers.Mean.Add",
         $scope.meanAdded = false;
         $scope.titleTypeOfSelect = "choose"; /* used to build a translation key */
 
+
         $scope.loader.means = true;
         BillingUser.getAvailableMeans()
             .then((availableMeans) => (BillingMean.isApiSchemaLoaded() ? $q.when() : BillingMean.getApiSchemaPromise()).then(() => availableMeans.filter((meanType) => !!BillingMean.canBeAddedByUser(meanType))))
             .then((meanTypes) => {
                 setPaymentMeansInScope(meanTypes);
+            })
+            .then(() => User.getUser())
+            .then((user) => {
+                $scope.customerIsFromFrance = user.billingCountry === "FR";
             })
             .catch((error) => {
                 Alerter.set("alert-danger", $translate.instant("add_mean_unable_to_get_payment_means"), error);

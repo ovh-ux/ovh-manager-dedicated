@@ -20,14 +20,9 @@ class NavbarNotificationService {
     }
 
     getSubLinks () {
-        return this.getMessages().then((messages) => messages.map((message) => this.convertSubLink(message))).catch(() => [{
-            id: "0",
-            date: moment(),
-            time: this._formatTime(moment()),
-            level: "error",
-            subject: this.$translate.instant("common_navbar_notification_error_subject"),
-            description: this.$translate.instant("common_navbar_notification_error")
-        }]);
+        return this.getMessages()
+            .then((messages) => messages.map((message) => this.convertSubLink(message)))
+            .catch(() => undefined);
     }
 
     /* eslint-disable class-methods-use-this */

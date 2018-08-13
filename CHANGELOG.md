@@ -1,3 +1,178 @@
+<a name="9.6.22"></a>
+## [9.6.22](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.21...v9.6.22) (2018-08-06)
+
+
+### Bug Fixes
+
+* **account.user.advanced:** update switch template ([7f2e881](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7f2e881))
+
+
+
+<a name="9.6.21"></a>
+## [9.6.21](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.20...v9.6.21) (2018-08-03)
+
+
+### Bug Fixes
+
+* **server.installation:** can add OVH template again ([ea00116](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ea00116))
+
+
+
+<a name="9.6.20"></a>
+## [9.6.20](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.19...v9.6.20) (2018-08-03)
+
+
+### Bug Fixes
+
+* **billing.history:** sort billing by date asc ([b8dd4e9](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b8dd4e9))
+
+
+
+<a name="9.6.19"></a>
+## [9.6.19](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.18...v9.6.19) (2018-08-02)
+
+
+### Bug Fixes
+
+* **billing.autorenew.update:** can deactivate AutoRenew using update dialog ([bc34e6c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bc34e6c))
+
+
+
+<a name="9.6.18"></a>
+## [9.6.18](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.17...v9.6.18) (2018-08-01)
+
+
+### Bug Fixes
+
+* **dedicatedcloud.datacenter:** display host datagrid ([74c0710](https://github.com/ovh-ux/ovh-manager-dedicated/commit/74c0710))
+
+
+
+<a name="9.6.17"></a>
+## [9.6.17](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.16...v9.6.17) (2018-08-01)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** display undo cancellation menu item correctly ([9ef244b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9ef244b))
+* **billing.autorenew:** undoing cancellation banner will now display correctly ([b40dfaf](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b40dfaf))
+
+
+
+<a name="9.6.16"></a>
+## [9.6.16](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.15...v9.6.16) (2018-07-31)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** added back menu item ([5be9d6e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5be9d6e))
+
+
+
+<a name="9.6.15"></a>
+## [9.6.15](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.14...v9.6.15) (2018-07-31)
+
+
+### Bug Fixes
+
+* **css:** action dropdown menu does not work in mobile ([cba63d6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/cba63d6)), closes [#MFRWW-753](https://github.com/ovh-ux/ovh-manager-dedicated/issues/MFRWW-753)
+
+
+
+<a name="9.6.14"></a>
+## [9.6.14](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.13...v9.6.14) (2018-07-30)
+
+
+### Bug Fixes
+
+* **billing.mean.add:** fix adding credit card and paypal account ([6777038](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6777038))
+
+
+
+<a name="9.6.13"></a>
+## [9.6.13](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.12...v9.6.13) (2018-07-30)
+
+
+### Bug Fixes
+
+* **billing:** hide useless actions for MX plan and change label ([903a805](https://github.com/ovh-ux/ovh-manager-dedicated/commit/903a805))
+* **billing.renew:** have two buttons instead of one for service paying ([a3ffa6e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a3ffa6e))
+* **renew:** autorenew cancellation wording & character issues ([de9d82e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/de9d82e))
+
+
+### Features
+
+* **billing:** autorenew service in debt warning ([c571c27](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c571c27))
+* **billing.autorenew:** add dialog before paying service while having a debt ([4b8fc7a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4b8fc7a))
+* **billing.mean.add:** sepa fields separated for France only ([9b2521b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9b2521b))
+* **renew:** allow undoing cancellations ([977e6c0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/977e6c0))
+
+
+
+<a name="9.6.12"></a>
+## [9.6.12](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.11...v9.6.12) (2018-07-25)
+
+
+
+<a name="9.6.11"></a>
+## [9.6.11](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.10...v9.6.11) (2018-07-19)
+
+
+### Bug Fixes
+
+* use heading attribut on oui-back-button ([4f10f8b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4f10f8b)), closes [/github.com/ovh-ux/ovh-ui-angular/commit/5ddc0ef2edba5898b97fcca0a73124d369432778#diff-c9aba9326a8bbfe4300255981d64e080R12](https://github.com//github.com/ovh-ux/ovh-ui-angular/commit/5ddc0ef2edba5898b97fcca0a73124d369432778/issues/diff-c9aba9326a8bbfe4300255981d64e080R12)
+* **license:** fix upgrade button redirection ([#425](https://github.com/ovh-ux/ovh-manager-dedicated/issues/425)) ([9b1f311](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9b1f311))
+
+
+### Features
+
+* **billing:** add more information in terminate confirmation message ([0c68fa7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0c68fa7))
+* **navbar:** translations for navbar placeholder ([#437](https://github.com/ovh-ux/ovh-manager-dedicated/issues/437)) ([0153ff7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0153ff7))
+* **sidebar:** add sidebar order tracking ([#410](https://github.com/ovh-ux/ovh-manager-dedicated/issues/410)) ([307a7d5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/307a7d5))
+
+
+
+<a name="9.6.10"></a>
+## [9.6.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.9...v9.6.10) (2018-07-11)
+
+
+### Bug Fixes
+
+* **account:** remove marketing consent optin for US ([ea4bcf0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ea4bcf0))
+* **dedicated server intervention:** show empty datagrid if expired ([60cdbfc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/60cdbfc))
+
+
+
+<a name="9.6.9"></a>
+## [9.6.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.8...v9.6.9) (2018-07-04)
+
+
+### Bug Fixes
+
+* **credit:** use new API attribute ([60e38cc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/60e38cc))
+
+
+
+<a name="9.6.8"></a>
+## [9.6.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.7...v9.6.8) (2018-07-04)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** display autorenew activation button again ([b32a3ff](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b32a3ff))
+
+
+
+<a name="9.6.7"></a>
+## [9.6.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.6...v9.6.7) (2018-07-04)
+
+
+### Bug Fixes
+
+* **otrs:** upgrade otrs version ([a39b8a3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a39b8a3))
+
+
+
 <a name="9.6.6"></a>
 ## [9.6.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.6.5...v9.6.6) (2018-06-21)
 

@@ -12,7 +12,8 @@
              'progress-bar-info': operation.state === 'todo'
          }"
          data-ng-style="{ 'width': operation.isDone ? '100%' : operation.progress + '%' }">
-        <span data-ng-switch="operation.state">
+        <span class="progress-bar-label"
+              data-ng-switch="operation.state">
             <span data-ng-switch-when="done"
                   data-translate="dedicatedCloud_OPERATIONS_state_done">
             </span>

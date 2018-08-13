@@ -438,7 +438,7 @@
    <translation id="server_configuration_ftpbackup_access_order_right" qtlid="180577">Nie masz wystarczających uprawnień, aby zamówić</translation>
    <translation id="server_configuration_ftpbackup_access_add" qtlid="153857">Dodaj dostęp</translation>
    <translation id="server_configuration_ftpbackup_access_edit" qtlid="180694">Zmodyfikuj dostęp</translation>
-   <translation id="server_configuration_ftpbackup_access_edit_info" qtlid="486594">Modifier l'accès du block IP <strong>{0}</strong></translation>
+   <translation id="server_configuration_ftpbackup_access_edit_info" qtlid="486594">Modyfikuj dostęp dla bloku IP <strong>{0}</strong></translation>
    <translation id="server_configuration_ftpbackup_access_delete" qtlid="180590">Usuwanie dostępu</translation>
    <translation id="server_configuration_ftpbackup_access_delete_question" qtlid="183814">Czy chcesz usunąć dostęp dla bloku ip <b>{0}</b> ?</translation>
    <translation id="server_configuration_ftpbackup_access_delete_success" qtlid="183827">Usunięcie dostępu do usługi backup storage dla bloku ip <b>{0}</b> zostało przyjęte i może zająć kilka minut.</translation>
@@ -476,16 +476,16 @@
    <translation id="server_configuration_ftpbackup_add_ip" qtlid="180850">Blok:</translation>
    <translation id="server_configuration_ftpbackup_add_authorization" qtlid="180863">Zezwalaj na:</translation>
 
-   <translation id="server_configuration_cloudbackup_delete" qtlid="184282">Usuń Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_delete" qtlid="492502">Usuń Backup Storage</translation>
 
    <translation id="server_configuration_cloudbackup_delete_success" qtlid="184360">Backup Storage zostanie usunięty za kilka minut.</translation>
-   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="184373">Backup Storage został usunięty.</translation>
-   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="184386">Wystąpił błąd podczas usuwania Backup Storage.</translation>
+   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="492515">Backup Storage został usunięty.</translation>
+   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="492528">Wystąpił błąd podczas usuwania Backup Storage.</translation>
    <translation id="server_configuration_cloudbackup_delete_question" qtlid="451872">Czy na pewno chcesz dezaktywować opcję Backup Storage?</translation>
 
    <translation id="server_configuration_cloudbackup_inactive" qtlid="451885">Twój Backup Storage jest nieaktywny.</translation>
    <translation id="server_configuration_cloudbackup_new_project" qtlid="16493">Nowy projekt</translation>
-   <translation id="server_configuration_cloudbackup_load_fail" qtlid="184256">Wystąpił błąd podczas pobierania informacji o usłudze Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_load_fail" qtlid="492541">Wystąpił błąd podczas ładowania danych Backup Storage.</translation>
    <translation id="server_configuration_cloudbackup_load_offers_fail" qtlid="451898">Wystąpił błąd podczas ładowania ofert cloud Backup Storage</translation>
    <translation id="server_configuration_cloudbackup_load_projects_fail" qtlid="451911">Wystąpił błąd podczas ładowania projektów cloud</translation>
    <translation id="server_configuration_cloudbackup_load_agreements_fail" qtlid="451924">Wystapił błąd podczas ładowania umów</translation>
@@ -509,7 +509,7 @@
    <translation id="server_configuration_cloudbackup_summary_documentation_label" qtlid="415740">Przewodnik</translation>
    <translation id="server_configuration_cloudbackup_summary_usage_label" qtlid="109974">Wykorzystanie</translation>
    <translation id="server_configuration_cloudbackup_summary_title_label_storage" qtlid="452067">Twój kontener Backup Storage</translation>
-   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="184282">Usuń Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="492554">Usuń Backup Storage</translation>
 
    <translation id="server_configuration_cloudbackup_container_storage_guide_description" qtlid="452080">Szukasz narzędzia do tworzenia kopii zapasowych danych? OVH poleca Rclone</translation>
    <translation id="server_configuration_cloudbackup_container_storage_guide_product" qtlid="452093">Rclone</translation>
@@ -626,7 +626,7 @@
    <translation id="server_configuration_impi_password" qtlid="164753">Inicjowanie sesji IPMI (uwierzytelnianie)</translation>
    <translation id="server_configuration_impi_ping" qtlid="164766">test dostępu do modułu IPMI (ping)</translation>
    <translation id="server_configuration_impi_information" qtlid="191837">IPMI pozwala na połączenie się z serwerem za pomocą następujących metod:</translation>
-   <translation id="server_configuration_impi_information_java" qtlid="490506">IPMI permet de se connecter à votre serveur via l'applet JAVA suivant :</translation>
+   <translation id="server_configuration_impi_information_java" qtlid="490506">IPMI umożliwia łączenie się z Twoim serwerem za pomocą następującego apletu JAVA:</translation>
    <translation id="server_configuration_impi_information2" qtlid="191850">Inicjując sesję 'Remote KVM' (dostęp do klawiatury, myszy i do zdalnego monitora) z Twojego IP {0}<ul><li>Z apletu Java Web Start</li></ul></translation>
    <translation id="server_configuration_impi_information3" qtlid="191863">Inicjując sesję 'Serial Over LAN' (dostęp do konsoli maszyny za pomocą bezpiecznego połączenia) z Twojego IP {0}<ul><li>Z przeglądarki (https)</li></ul></translation>
    <translation id="server_configuration_impi_start" qtlid="25951">Uruchom</translation>
@@ -656,8 +656,8 @@
    <translation id="server_configuration_impi_sessions_success" qtlid="165104">Sesje modułu IPMI zostały usunięte.</translation>
    <translation id="server_configuration_impi_disable" qtlid="165117">Funkcje modułu IPMI zostały tymczasowo wyłączone, ponieważ trwa wykonywanie zadania. Po wykonaniu zadania funkcje zostaną przywrócone.</translation>
    <translation id="server_configuration_impi_monitoring_warning" qtlid="472658">Pamiętaj, aby wyłączyć monitorowanie Twoich usług przed zainstalowaniem systemu operacyjnego przez IPMI.</translation>
-   <translation id="server_configuration_impi_SOL_help" qtlid="489127">La session SOL nécessite une configuration de votre part.</translation>
-   <translation id="server_configuration_impi_SOL_help_link" qtlid="489140">Accéder au guide de configuration.</translation>
+   <translation id="server_configuration_impi_SOL_help" qtlid="489127">Sesja SOL wymaga konfiguracji po twojej stronie.</translation>
+   <translation id="server_configuration_impi_SOL_help_link" qtlid="489140">Przejdź do przewodnika konfiguracji.</translation>
    <translation id="server_configuration_kvm_order_step1_title" qtlid="229203">Wybierz okres abonamentu</translation>
    <translation id="server_configuration_kvm_order_step2_title" qtlid="229216">Zamówienie usługi KVM dla serwera <em>{0}</em></translation>
    <translation id="server_configuration_kvm_order_step2_duration" qtlid="156875">Okres:</translation>
