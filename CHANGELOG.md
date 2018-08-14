@@ -1,3 +1,13 @@
+<a name="9.7.10"></a>
+## [9.7.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.9...v9.7.10) (2018-08-14)
+
+
+### Bug Fixes
+
+* **account.billing:** billing menu inactive in EU ([9c0ed6c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9c0ed6c))
+
+
+
 <a name="9.7.9"></a>
 ## [9.7.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.8...v9.7.9) (2018-08-10)
 
