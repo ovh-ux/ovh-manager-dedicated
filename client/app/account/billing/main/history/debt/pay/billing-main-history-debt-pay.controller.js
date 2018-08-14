@@ -32,7 +32,7 @@ angular.module("Billing").controller("BillingHistoryDebtPayCtrl", class BillingH
         if (this.$stateParams.debtId !== "all") {
             promise = this.OvhApiMe.DebtAccount().Debt().v6().pay({
                 debtId: this.$stateParams.debtId
-            }).$promise;
+            }, {}).$promise;
         } else {
             promise = this.OvhApiMe.DebtAccount().v6().pay().$promise;
         }
