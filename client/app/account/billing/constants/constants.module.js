@@ -1,1 +1,1 @@
-angular.module("Billing.constants", []);
+angular.module('Billing.constants', []);

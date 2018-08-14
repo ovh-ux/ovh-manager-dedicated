@@ -1,1 +1,1 @@
-angular.module("Module.otrs.controllers", []);
+angular.module('Module.otrs.controllers', []);
