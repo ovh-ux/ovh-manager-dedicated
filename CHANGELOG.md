@@ -1,3 +1,13 @@
+<a name="10.0.0"></a>
+# [10.0.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.10...v10.0.0) (2018-08-14)
+
+
+### Bug Fixes
+
+* **billing.debt:** remove body request for debt payment ([8e167de](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8e167de))
+
+
+
 <a name="9.7.10"></a>
 ## [9.7.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.9...v9.7.10) (2018-08-14)
 
