@@ -46,23 +46,22 @@ angular.module("App").run(($q, $translatePartialLoader, $translate, SidebarMenu,
     }
 
     function buildBillingMenu () {
-        SidebarMenu.addMenuItem({
-            name: "billingMenu",
-            title: $translate.instant("menu_billing"),
-            state: "app.account.billing.main.pay-as-you-go",
-            loadOnState: "app.account.billing.main",
-            namespace: "account"
-        });
-
-        // SidebarMenu.addMenuItem({
-        //     title: $translate.instant("menu_bills"),
-        //     state: "app.account.billing.history"
-        // }, billingMenu);
-
-        // SidebarMenu.addMenuItem({
-        //     title: $translate.instant("menu_payments"),
-        //     state: "app.account.billing.payments"
-        // }, billingMenu);
+        if (constants.target === "US") {
+            SidebarMenu.addMenuItem({
+                name: "billingMenu",
+                title: $translate.instant("menu_billing"),
+                state: "app.account.billing.main.pay-as-you-go",
+                loadOnState: "app.account.billing.main",
+                namespace: "account"
+            });
+        } else {
+            SidebarMenu.addMenuItem({
+                name: "billingMenu",
+                title: $translate.instant("menu_billing"),
+                state: "app.account.billing.main.history",
+                namespace: "account"
+            });
+        }
     }
 
     function buildServicesMenu (curUser) {
