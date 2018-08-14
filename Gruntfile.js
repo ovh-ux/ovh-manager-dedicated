@@ -140,9 +140,9 @@ module.exports = function (grunt) {
                 }),
                 dest: "."
             },
-            options: {
-                eslintConfig: require("./.eslintrc.js")
-            }
+            // options: {
+            //     eslintConfig: require("./.eslintrc")
+            // }
         },
 
         // Concatenation

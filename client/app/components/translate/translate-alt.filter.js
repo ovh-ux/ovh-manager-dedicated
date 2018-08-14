@@ -8,11 +8,7 @@
  *   'my_key' | translateAlt: ('my_other_key' | translate)
  *   you can use any valid angular expression as alternative value
  */
-angular.module("filters").filter("translateAlt", ($translate) => {
-    "use strict";
-
-    return function (toTranslate, alternative) {
-        const translated = $translate.instant(toTranslate);
-        return translated === toTranslate ? alternative : translated;
-    };
+angular.module('filters').filter('translateAlt', $translate => function (toTranslate, alternative) {
+  const translated = $translate.instant(toTranslate);
+  return translated === toTranslate ? alternative : translated;
 });
