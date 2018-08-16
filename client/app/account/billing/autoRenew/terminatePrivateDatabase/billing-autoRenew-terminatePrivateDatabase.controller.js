@@ -1,4 +1,4 @@
-angular.module("Billing.controllers").controller("PrivateDatabaseTerminateCtrl", ($scope, $log, $translate, constants, BillingAutoRenew, Alerter, AUTORENEW_EVENT) => {
+angular.module("Billing.controllers").controller("PrivateDatabaseTerminateCtrl", ($scope, $log, $translate, BillingAutoRenew, Alerter, AUTORENEW_EVENT) => {
     $scope.privateDatabase = $scope.currentActionData[0];
     $scope.loaders = {
         loading: false
