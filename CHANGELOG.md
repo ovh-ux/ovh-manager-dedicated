@@ -1,3 +1,33 @@
+<a name="10.0.1"></a>
+## [10.0.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.0...v10.0.1) (2018-08-16)
+
+
+### Bug Fixes
+
+* **billing.debt:** pay debt return ([0074f42](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0074f42))
+
+
+
+<a name="10.0.0"></a>
+# [10.0.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.10...v10.0.0) (2018-08-14)
+
+
+### Bug Fixes
+
+* **billing.debt:** remove body request for debt payment ([8e167de](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8e167de))
+
+
+
+<a name="9.7.10"></a>
+## [9.7.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.9...v9.7.10) (2018-08-14)
+
+
+### Bug Fixes
+
+* **account.billing:** billing menu inactive in EU ([9c0ed6c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9c0ed6c))
+
+
+
 <a name="9.7.9"></a>
 ## [9.7.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.8...v9.7.9) (2018-08-10)
 
