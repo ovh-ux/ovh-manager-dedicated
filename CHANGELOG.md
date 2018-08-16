@@ -1,3 +1,13 @@
+<a name="10.0.1"></a>
+## [10.0.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.0...v10.0.1) (2018-08-16)
+
+
+### Bug Fixes
+
+* **billing.debt:** pay debt return ([0074f42](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0074f42))
+
+
+
 <a name="10.0.0"></a>
 # [10.0.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v9.7.10...v10.0.0) (2018-08-14)
 
