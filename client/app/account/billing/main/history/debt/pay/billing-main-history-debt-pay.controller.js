@@ -37,13 +37,13 @@ angular.module("Billing").controller("BillingHistoryDebtPayCtrl", class BillingH
             promise = this.OvhApiMe.DebtAccount().v6().pay().$promise;
         }
 
-        return promise.then(({ orderId, url }) => {
+        return promise.then((order) => {
             this.Alerter.success(this.$translate.instant("billing_main_history_debt_pay_success", {
-                t0: orderId,
-                t1: url
+                t0: _.get(order, "data.orderId"),
+                t1: _.get(order, "data.url")
             }), "billing_main_alert");
 
-            this.$window.open(url, "_blank");
+            this.$window.open(_.get(order, "data.url"), "_blank");
         }).catch((error) => {
             this.Alerter.error([this.$translate.instant("billing_main_history_debt_pay_error"), _.get(error, "data.message")].join(" "), "billing_main_alert");
         }).finally(() => {
