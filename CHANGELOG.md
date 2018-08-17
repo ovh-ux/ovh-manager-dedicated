@@ -1,3 +1,16 @@
+<a name="10.0.3"></a>
+## [10.0.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.2...v10.0.3) (2018-08-17)
+
+
+### Bug Fixes
+
+* **cache-rules-loading:** infinite loading ([03bef3d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/03bef3d))
+* **cache-rules-loading:** infinite loading ([9a865ee](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9a865ee))
+* **cache-rules-loading:** infinite loading ([14def55](https://github.com/ovh-ux/ovh-manager-dedicated/commit/14def55))
+* **cache-rules-loading:** infinite loading ([e66e973](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e66e973))
+
+
+
 <a name="10.0.2"></a>
 ## [10.0.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.1...v10.0.2) (2018-08-17)
 
