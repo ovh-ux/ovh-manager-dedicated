@@ -125,7 +125,8 @@ var constants = {
                 faq: "https://www.ovh.com/fr/serveurs_dedies/faq.xml",
                 faqVps: "https://www.ovh.com/fr/vps/aide-faq.xml",
                 faqDedicatedCloud: "https://pccdocs.ovh.net/pages/viewpage.action?pageId=7766169",
-                dedicatedOrder: "https://www.ovh.com/fr/serveurs_dedies"
+                dedicatedOrder: "https://www.ovh.com/fr/serveurs_dedies",
+                cloudProjectOrder: "https://www.ovh.com/manager/cloud/#/iaas/pci/project/new"
             },
             GB : {
                 support: "http://www.ovh.co.uk/support/",
@@ -548,7 +549,8 @@ var constants = {
                 renewAlign : "https://www.ovh.co.uk/cgi-bin/order/renew.cgi?alignDate=1&csid=0",
                 faq: "https://www.ovh.com/ca/en/dedicated-servers/faq.xml",
                 faqVps: "https://www.ovh.com/us/vps/faq-help.xml",
-                dedicatedOrder: "https://www.ovh.com/asia/dedicated-servers"
+                dedicatedOrder: "https://www.ovh.com/asia/dedicated-servers",
+                cloudProjectOrder : "https://ca.ovh.com/manager/cloud/index.html#/iaas/pci/project/new"
             },
             AU: {
                 support: "http://www.ovh.co.uk/support/",
@@ -570,7 +572,8 @@ var constants = {
                 renewAlign : "https://www.ovh.co.uk/cgi-bin/order/renew.cgi?alignDate=1&csid=0",
                 faq: "https://www.ovh.com/ca/en/dedicated-servers/faq.xml",
                 faqVps: "https://www.ovh.com/us/vps/faq-help.xml",
-                dedicatedOrder: "https://www.ovh.com.au/dedicated-servers"
+                dedicatedOrder: "https://www.ovh.com.au/dedicated-servers",
+                cloudProjectOrder : "https://ca.ovh.com/manager/cloud/index.html#/iaas/pci/project/new"
             },
             CA       : { // eq to en_CA
                 support: "http://www.ovh.co.uk/support/",
@@ -592,7 +595,8 @@ var constants = {
                 renewAlign : "https://www.ovh.co.uk/cgi-bin/order/renew.cgi?alignDate=1&csid=0",
                 faq: "https://www.ovh.com/ca/en/dedicated-servers/faq.xml",
                 faqVps: "https://www.ovh.com/ca/en/vps/faq-help.xml",
-                dedicatedOrder: "https://www.ovh.com/ca/en/dedicated-servers"
+                dedicatedOrder: "https://www.ovh.com/ca/en/dedicated-servers",
+                cloudProjectOrder : "https://ca.ovh.com/manager/cloud/index.html#/iaas/pci/project/new"
             },
             QC       : { // eq to fr_CA
                 support: "https://www.ovh.com/fr/support/",
@@ -614,7 +618,8 @@ var constants = {
                 renewAlign : "https://eu.ovh.com/fr/cgi-bin/order/renew.cgi?alignDate=1",
                 faq: "https://www.ovh.com/ca/fr/serveurs-dedies/faq.xml",
                 faqVps: "https://www.ovh.com/ca/fr/vps/aide-faq.xml",
-                dedicatedOrder: "https://www.ovh.com/ca/fr/serveurs-dedies"
+                dedicatedOrder: "https://www.ovh.com/ca/fr/serveurs-dedies",
+                cloudProjectOrder : "https://ca.ovh.com/manager/cloud/index.html#/iaas/pci/project/new"
             },
             SG       : {
                 support: "http://www.ovh.co.uk/support/",
@@ -636,7 +641,8 @@ var constants = {
                 renewAlign : "https://www.ovh.co.uk/cgi-bin/order/renew.cgi?alignDate=1&csid=0",
                 faq: "https://www.ovh.es/servidores_dedicados/faq.xml",
                 faqVps: "https://www.ovh.com/us/vps/faq-help.xml",
-                dedicatedOrder: "https://www.ovh.com/sg/dedicated-servers"
+                dedicatedOrder: "https://www.ovh.com/sg/dedicated-servers",
+                cloudProjectOrder : "https://ca.ovh.com/manager/cloud/index.html#/iaas/pci/project/new"
             },
             WE       : {
                 support: "http://www.ovh.co.uk/support/",
@@ -658,7 +664,8 @@ var constants = {
                 renewAlign : "https://www.ovh.co.uk/cgi-bin/order/renew.cgi?alignDate=1&csid=0",
                 faq: "https://www.ovh.es/servidores_dedicados/faq.xml",
                 faqVps: "https://www.ovh.com/us/vps/faq-help.xml",
-                dedicatedOrder: "https://www.ovh.com/world/dedicated-servers"
+                dedicatedOrder: "https://www.ovh.com/world/dedicated-servers",
+                cloudProjectOrder : "https://ca.ovh.com/manager/cloud/index.html#/iaas/pci/project/new"
             },
             WS       : { // eq to es_US
                 support: "https://www.ovh.com/fr/support/",
@@ -679,7 +686,8 @@ var constants = {
                 renewAlign : "https://www.ovh.es/cgi-bin/order/renew.cgi?alignDate=1&csid=0",
                 faq: "https://www.ovh.com/us/es/servidores-dedicados/faq.xml",
                 faqVps: "https://www.ovh.com/us/es/vps/ayuda-faq.xml",
-                dedicatedOrder: "https://www.ovh.com/world/dedicated-servers"
+                dedicatedOrder: "https://www.ovh.com/world/dedicated-servers",
+                cloudProjectOrder : "https://ca.ovh.com/manager/cloud/index.html#/iaas/pci/project/new"
             }
         },
         LANGUAGES : [
@@ -813,7 +821,8 @@ var constants = {
                 faq: "https://www.ovh.com/ca/en/dedicated-servers/faq.xml",
                 faqVps: "https://www.ovh.com/ca/en/vps/faq-help.xml",
                 dedicatedOrder: "https://ovhcloud.com/order/dedicated/#/dedicated/select",
-                vrackOrder: "https://ovhcloud.com/order/express/#/express/review?products=~(~(planCode~'vrack~quantity~1~productId~'vrack))"
+                vrackOrder: "https://ovhcloud.com/order/express/#/express/review?products=~(~(planCode~'vrack~quantity~1~productId~'vrack))",
+                cloudProjectOrder : "https://ovhcloud.com/manager/cloud/#/iaas/pci/offer"
             }
         },
         LANGUAGES : [
