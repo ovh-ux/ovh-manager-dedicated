@@ -56,7 +56,7 @@ angular
             }
 
             if (service.renew.manualPayment) {
-                txt = "manual_payment";
+                txt = "manuel";
             } else if (service.renew.deleteAtExpiration) {
                 txt = "delete_at_expiration";
             } else if (service.status === "EXPIRED") {
