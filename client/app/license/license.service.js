@@ -268,7 +268,7 @@ angular.module("Module.license").service("License", [
             return OvhHttp.get("/license/{type}/{id}/canLicenseBeMovedTo", {
                 rootPath: "apiv6",
                 urlParams: {
-                    type,
+                    type: getLicenseType(type),
                     id
                 },
                 params: {
