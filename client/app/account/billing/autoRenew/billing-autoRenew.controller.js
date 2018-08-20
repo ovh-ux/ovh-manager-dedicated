@@ -535,6 +535,10 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
             $scope.setAction("terminateEmail", _.clone([service], true), "autoRenew");
         };
 
+        $scope.terminatePrivateDatabase = function (service) {
+            $scope.setAction("terminatePrivateDatabase", _.clone([service], true), "autoRenew");
+        };
+
         $scope.canResiliate = function (service, user) {
             const canDeleteAtExpiration = service.canDeleteAtExpiration || (service.service && service.service.canDeleteAtExpiration);
             return canDeleteAtExpiration && userIsBillingOrAdmin(service, user);
@@ -549,7 +553,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
         };
 
         $scope.canEnableAutorenew = function (service) {
-            return service.renew && (service.renew.manualPayment || !service.renew.automatic);
+            return service.renewalType !== "oneShot" && service.renew && (service.renew.manualPayment || !service.renew.automatic);
         };
 
         $scope.enableAutorenew = function (service) {
