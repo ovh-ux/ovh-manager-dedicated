@@ -151,6 +151,14 @@ angular.module("Billing.services").service("BillingAutoRenew", [
                 }
             });
 
+        this.terminateHostingPrivateDatabase = (serviceName) =>
+            OvhHttp.post("/hosting/privateDatabase/{serviceName}/terminate", {
+                rootPath: "apiv6",
+                urlParams: {
+                    serviceName
+                }
+            });
+
         this.getEmailInfos = (serviceName) =>
             OvhHttp.get("/email/domain/{domain}", {
                 rootPath: "apiv6",
