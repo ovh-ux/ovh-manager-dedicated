@@ -3,8 +3,8 @@
 
    <translation id="autorenew_title" qtlid="287527">Gestisci i tuoi servizi</translation>
 
-   <translation id="autorenew_service_deleteAtExpiration_banner" qtlid="498105">The termination at expiration of the service "{{serviceName}}" has been taken into account. You can cancel this operation until 24 hours before the service expires.</translation>
-   <translation id="autorenew_service_deleteAtExpiration_banner_cancel" qtlid="498118">Cancel the termination</translation>
+   <translation id="autorenew_service_deleteAtExpiration_banner" qtlid="498105">Il termine del servizio «{{ serviceName }}» alla data di scadenza è stato registrato correttamente. Puoi annullare questa operazione fino a 24 ore prima della scadenza del servizio.</translation>
+   <translation id="autorenew_service_deleteAtExpiration_banner_cancel" qtlid="498118">Annulla il termine del servizio alla data di scadenza</translation>
 
    <translation id="autorenew_myservices" qtlid="212881">I miei servizi </translation>
    <translation id="autorenew" qtlid="219758">Rinnovi</translation>
@@ -26,8 +26,8 @@
    <translation id="autorenew_service_renew_auto" qtlid="134215">Automatico</translation>
    <translation id="autorenew_service_renew_manuel" qtlid="219797">Manuale</translation>
    <translation id="autorenew_service_renew_delete_at_expiration" qtlid="399736">Disattiva alla scadenza</translation>
-   <translation id="autorenew_service_renew_year" qtlid="498144">Automatique : tous les ans</translation>
-   <translation id="autorenew_service_renew_month" qtlid="498157">Automatique : tous les mois</translation>
+   <translation id="autorenew_service_renew_year" qtlid="498144">Automatico: tutti gli anni</translation>
+   <translation id="autorenew_service_renew_month" qtlid="498157">Automatico: tutti i mesi</translation>
    <translation id="autorenew_service_renew_3months" qtlid="402906">Trimestrale</translation>
    <translation id="autorenew_service_renew_6months" qtlid="402919">Semestrale</translation>
    <translation id="autorenew_service_renew_frequency_value" qtlid="402932">Ogni {0} mesi</translation>
@@ -39,8 +39,8 @@
    <translation id="autorenew_service_mass_actions_caption" qtlid="300227">Azioni sugli elementi selezionati:</translation>
    <translation id="autorenew_service_update_button_caption" qtlid="416072">Modifica la frequenza di pagamento</translation>
    <translation id="autorenew_service_update_date_button_caption" qtlid="300253">Allinea le date di rinnovo.</translation>
-   <translation id="autorenew_service_resiliate_button" qtlid="498170">Résilier à date d'échéance</translation>
-   <translation id="autorenew_service_resiliate_button_title" qtlid="498183">Résilier à date d'échéance : {0}</translation>
+   <translation id="autorenew_service_resiliate_button" qtlid="498170">Termina il servizio alla data di scadenza</translation>
+   <translation id="autorenew_service_resiliate_button_title" qtlid="498183">Termina il servizio alla data di scadenza: {0}</translation>
    <translation id="autorenew_service_disable_button" qtlid="416085">Disattiva il pagamento automatico</translation>
    <translation id="autorenew_service_enable_button" qtlid="416098">Attiva il pagamento automatico</translation>
    <translation id="autorenew_service_renew_button" qtlid="416111">Paga il servizio</translation>
@@ -48,7 +48,7 @@
    <translation id="autorenew_service_canceldelete_button" qtlid="285350">Annulla chiusura </translation>
    <translation id="autorenew_service_canceldelete_button_title" qtlid="243695">Annulla la tua richiesta di disattivazione: {0}</translation>
    <translation id="autorenew_service_renew_frequency_title" qtlid="212998">Frequenza di pagamento </translation>
-   <translation id="autorenew_service_renew_frequency_value" qtlid="498196">Automatique : tous les {0} mois</translation>
+   <translation id="autorenew_service_renew_frequency_value" qtlid="498196">Automatico: ogni {0} mesi</translation>
    <translation id="autorenew_search_input_title" qtlid="300629">Ricerca i tuoi servizi per identificativo</translation>
    <translation id="autorenew_service_expand_sub_services" qtlid="300642">Visualizza e nascondi i servizi associati</translation>
    <translation id="autorenew_service_select_all_checkbox" qtlid="300655">Seleziona tutti i servizi</translation>
@@ -66,13 +66,13 @@
    <translation id="autorenew_service_update_renewal_activation_notice" qtlid="369427">Il rinnovo automatico è stato attivato sui servizi indicati e sul tuo account.</translation>
    <translation id="autorenew_service_update_renewal_activation_error" qtlid="369440">Hai selezionato il rinnovo automatico per almeno un servizio ma non è stato possibile attivarlo sul tuo account: {0}</translation>
    <translation id="autorenew_guide_help" qtlid="156732">Consulta le nostre guide online</translation>
-   <translation id="autorenew_service_delete_title" qtlid="498170">Résilier à date d'échéance</translation>
-   <translation id="autorenew_service_debt_before_paying_1" qtlid="498209">Before you subscribe for a new period, please settle the outstanding amount on your account.</translation>
-   <translation id="autorenew_service_debt_before_paying_2" qtlid="498222">Please go to the Billing section to pay the invoice for the <strong>{{service}}</strong> service.</translation>
+   <translation id="autorenew_service_delete_title" qtlid="498170">Termina il servizio alla data di scadenza</translation>
+   <translation id="autorenew_service_debt_before_paying_1" qtlid="498209">Prima di sottoscrivere un impegno per un nuovo periodo, è necessario saldare l'importo in sospeso.</translation>
+   <translation id="autorenew_service_debt_before_paying_2" qtlid="498222">Accedi alla sezione 'Fatturazione' per effettuare il pagamento del servizio <strong>{{service}}</strong>.</translation>
    <translation id="autorenew_service_canceldelete_title" qtlid="416137">Annulla la disattivazione di un servizio</translation>
    <translation id="autorenew_service_delete_confirm" qtlid="416150">Il servizio {0} <strong>verrà disattivato automaticamente</strong> il {1}.</translation>
    <translation id="autorenew_service_delete_warn" qtlid="416163">I dati associati a questo servizio verranno eliminati automaticamente e in modo irreversibile.&#160;È possibile annullare l'operazione entro 24 ore prima della data di scadenza.</translation>
-   <translation id="autorenew_service_debt_warn_deletion" qtlid="498235">You cannot cancel this service until you have paid the outstanding amount.&#160;Please go to the Billing section to settle your bill for the service <strong>{{service}}</strong></translation>
+   <translation id="autorenew_service_debt_warn_deletion" qtlid="498235">Non è possibile terminare questo servizio senza aver effettuato il pagamento dell'importo in sospeso. Accedi alla sezione 'Fatturazione' per effettuare il pagamento del servizio <strong>{{service}}</strong>.</translation>
    <translation id="autorenew_service_canceldelete_confirm" qtlid="416176">Vuoi annullare la disattivazione del servizio <strong>{0}</strong>?</translation>
    <translation id="autorenew_service_update_intro" qtlid="351708">Scegli il tipo di rinnovo (automatico o manuale).<br /> Per il rinnovo automatico è possibile scegliere anche la frequenza degli addebiti.</translation>
    <translation id="autorenew_service_select_intro" qtlid="221058">Seleziona tutto:</translation>
@@ -149,8 +149,8 @@
    <translation id="autorenew_service_update_now" qtlid="31270">Attualmente</translation>
    <translation id="autorenew_service_update_future" qtlid="221123">Nuovo valore </translation>
    <translation id="autorenew_service_update_step2_error" qtlid="177522">Si è verificato un errore, ci scusiamo per il disagio.</translation>
-   <translation id="autorenew_service_update_step2_success" qtlid="492580">Opération effectuée avec succès.</translation>
-   <translation id="autorenew_service_update_step2_with_async_action_success" qtlid="492593">Opération effectuée avec succès, elle sera effective d'ici quelques instants.</translation>
+   <translation id="autorenew_service_update_step2_success" qtlid="492580">L'operazione è andata a buon fine.</translation>
+   <translation id="autorenew_service_update_step2_with_async_action_success" qtlid="492593">L'operazione è andata a buon fine e sarà attiva tra pochi istanti.</translation>
    <translation id="billing_export_csv" qtlid="231773">Esporta in CSV</translation>
    <translation id="billing_common_link_new_window" qtlid="300694">(nuova finestra)</translation>
    <translation id="billing_date_range_choose_custom_date" qtlid="374443">Définisci un periodo</translation>
@@ -173,7 +173,7 @@
 
    <translation id="autorenew_service_type_HOSTING_RESELLER" qtlid="325276">Hosting Reseller</translation>
 
-   <translation id="autorenew_service_EMAIL_DOMAIN_terminate" qtlid="498248">Supprimer immédiatement le MX Plan</translation>
+   <translation id="autorenew_service_EMAIL_DOMAIN_terminate" qtlid="498248">Elimina subito MX Plan</translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_info" qtlid="370083">L'eliminazione di un MX Plan comporta la cancellazione definitiva di tutti i dati ad esso associati e non dà diritto ad alcun rimborso.</translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_info_impossible" qtlid="370096">Impossibile eliminare la tua email in quanto risulta associata a un hosting Web.</translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_procedure" qtlid="370109">Riceverai un'email con la procedura da seguire per confermare l'eliminazione immediata del tuo MX Plan.</translation>
@@ -262,7 +262,7 @@
    <translation id="pagination_page" qtlid="486464">Pagina {{ current }}/{{ last }}</translation>
    <translation id="pagination_display" qtlid="69353">Mostra</translation>
    <translation id="pagination_display_all" qtlid="139884">Tutto</translation>
-   <translation id="pagination_go" qtlid="492619">Ok</translation>
+   <translation id="pagination_go" qtlid="492619">OK</translation>
    <translation id="history_title2" qtlid="159540">Le tue fatture</translation>
 
    <translation id="history_table_head_date" qtlid="374508">Data di emissione</translation>
@@ -293,7 +293,7 @@
    <translation id="payments_table_actions_tooltip" qtlid="398820">Maggiori dettagli su questo pagamento</translation>
    <translation id="payments_table_type_not_available" qtlid="374560">Informazione non disponibile</translation>
    <translation id="payments_table_empty" qtlid="398833">Non sono presenti pagamenti per il periodo selezionato.</translation>
-   <translation id="payments_request_pending" qtlid="486932">Un règlement de solde est en cours. Cliquez <a href="{0}">sur ce lien</a> pour en savoir plus.</translation>
+   <translation id="payments_request_pending" qtlid="486932">Un pagamento è in fase di elaborazione. Clicca <a href="{0}">qui</a> per avere maggiori informazioni.</translation>
    <translation id="payments_details_link" qtlid="398846">Visualizza i dettagli del pagamento</translation>
    <translation id="payment_details_payment_id" qtlid="16445">Referenza</translation>
    <translation id="payment_details_payment_date" qtlid="24523">Data</translation>
@@ -423,7 +423,7 @@
    <translation id="payment_mean_contact_creation_label_country" qtlid="25171">Paese</translation>
    <translation id="payment_mean_contact_creation_label_address_country" qtlid="25171">Paese</translation>
    <translation id="payment_mean_contact_creation_label_address_province" qtlid="38577">Provincia</translation>
-   <translation id="payment_mean_contact_creation_label_address_state" qtlid="492632">État</translation>
+   <translation id="payment_mean_contact_creation_label_address_state" qtlid="492632">Stato</translation>
    <translation id="payment_mean_contact_creation_label_address_area" qtlid="32434">Provincia</translation>
    <translation id="payment_mean_contact_creation_label_legalform" qtlid="381855">Statuto giuridico</translation>
    <translation id="payment_mean_contact_creation_label_email_confirmation" qtlid="321156">Conferma email</translation>
@@ -747,7 +747,7 @@
    <translation id="add_mean_select_title_choose" qtlid="244599">Scegli</translation>
    <translation id="add_mean_select_title_no_choice" qtlid="244612">Nessuna scelta possibile</translation>
    <translation id="add_mean_unable_to_get_payment_means" qtlid="244625">Impossibile confermare le modalità di pagamento disponibili</translation>
-   <translation id="mean_table_head_state" qtlid="492645">État</translation>
+   <translation id="mean_table_head_state" qtlid="492645">Stato</translation>
    <translation id="mean_table_head_actions" qtlid="72809">Azioni</translation>
    <translation id="mean_table_head_3d_secure" qtlid="274876">3D Secure</translation>
    <translation id="mean_table_head_3d_secure_true" qtlid="34776">Sì</translation>
@@ -764,10 +764,10 @@
    <translation id="paymentMean_label_iban" qtlid="177015">IBAN</translation>
    <translation id="paymentMean_label_bic" qtlid="177028">BIC</translation>
    <translation id="paymentMean_label_addressNumber" qtlid="30778">Numero</translation>
-   <translation id="paymentMean_label_addressStreetName" qtlid="459573">Nom de la voie</translation>
+   <translation id="paymentMean_label_addressStreetName" qtlid="459573">Nome della via</translation>
    <translation id="paymentMean_label_addressPostalCode" qtlid="30346">Codice postale</translation>
    <translation id="paymentMean_label_addressTown" qtlid="33310">Città</translation>
-   <translation id="paymentMean_label_ownerName" qtlid="498261">Nom et prénom du propriétaire ou nom de l'organisation propriétaire</translation>
+   <translation id="paymentMean_label_ownerName" qtlid="498261">Nome e cognome del proprietario o nome della società proprietaria</translation>
    <translation id="paymentMean_label_ownerAddress" qtlid="177054">Indirizzo del proprietario dell'account</translation>
    <translation id="paymentMean_error_bic_bank" qtlid="177067">Il codice bancario non è corretto</translation>
    <translation id="paymentMean_error_bic_valid" qtlid="177080">Il BIC non è valido</translation>
@@ -778,9 +778,9 @@
    <translation id="paymentMean_error_iban_valid" qtlid="177145">L'IBAN non è valido.</translation>
    <translation id="paymentMean_error_minlength" qtlid="179680">Sono necessari almeno 5 caratteri.</translation>
    <translation id="paymentMean_error_addressPostalCode_required" qtlid="177093">Campo obbligatorio</translation>
-   <translation id="paymentMean_error_addressPostalCode_min" qtlid="498274">Le code postal n'est pas valide.</translation>
-   <translation id="paymentMean_error_addressPostalCode_max" qtlid="498274">Le code postal n'est pas valide.</translation>
-   <translation id="paymentMean_error_addressPostalCode_pattern" qtlid="498287">Le code postal doit être composé de 5 chiffres.</translation>
+   <translation id="paymentMean_error_addressPostalCode_min" qtlid="498274">Il codice postale non è valido.</translation>
+   <translation id="paymentMean_error_addressPostalCode_max" qtlid="498274">Il codice postale non è valido.</translation>
+   <translation id="paymentMean_error_addressPostalCode_pattern" qtlid="498287">Il codice postale deve contenere 5 cifre.</translation>
    <translation id="paymentMean_error_maxlength" qtlid="177171">Il testo deve essere minore di 255 caratteri</translation>
    <translation id="paymentType_delete_error" qtlid="177184">Errore nell'eliminazione del metodo di pagamento</translation>
    <translation id="paymentType_modify_error" qtlid="436354">Errore durante la modifica del metodo di pagamento</translation>
@@ -1056,18 +1056,18 @@
    <translation id="services_filter_duration_months" qtlid="267502">In scadenza tra un mese</translation>
    <translation id="services_filter_duration_expired" qtlid="267515">Scaduti</translation>
 
-   <translation id="hosting_dashboard_service_guide" qtlid="498300">Supprimer immédiatement l'hébergement</translation>
+   <translation id="hosting_dashboard_service_guide" qtlid="498300">Elimina subito l'hosting</translation>
    <translation id="hosting_dashboard_close_service_question" qtlid="215533">Vuoi ricevere questa email?</translation>
    <translation id="hosting_dashboard_close_service_success" qtlid="370148">La tua richiesta di disattivazione dell'hosting è stata presa in carico. Riceverai un'email con la procedura da seguire per effettuare l'operazione.</translation>
    <translation id="hosting_dashboard_close_service_error" qtlid="255469">Si è verificato un errore durante la richiesta di eliminazione del tuo hosting:</translation>
-   <translation id="hosting_dashboard_close_service" qtlid="498313">Supprimer immédiatement mon hébergement</translation>
+   <translation id="hosting_dashboard_close_service" qtlid="498313">Elimina subito il tuo hosting</translation>
    <translation id="hosting_dashboard_close_service_warning" qtlid="255430">L'eliminazione di un hosting comporta la cancellazione definitiva di tutti i dati ad esso associati e non dà diritto ad alcun rimborso.</translation>
    <translation id="hosting_dashboard_close_service_desc1" qtlid="370161">Riceverai un'email con la procedura da seguire per confermare l'eliminazione immediata del tuo hosting.</translation>
 
-   <translation id="privateDatabase_dashboard_close_service">Supprimer immédiatement mon hébergement SQL privé</translation>
-   <translation id="autorenew_service_HOSTING_PRIVATE_DATABASE_terminate">Supprimer mon hébergement SQL privé</translation>
-   <translation id="privateDatabase_dashboard_close_service_success">Votre demande de fermeture d'hébergement SQL privé a été prise en compte. Un e-mail contenant la procédure vous a été envoyé.</translation>
-   <translation id="privateDatabase_dashboard_close_service_error">Une erreur est survenue lors de la demande de fermeture de votre hébergement SQL privé :</translation>
+   <translation id="privateDatabase_dashboard_close_service" qtlid="499855">Elimina subito il tuo hosting SQL privato</translation>
+   <translation id="autorenew_service_HOSTING_PRIVATE_DATABASE_terminate" qtlid="499868">Elimina l'hosting SQL privato</translation>
+   <translation id="privateDatabase_dashboard_close_service_success" qtlid="499881">Abbiamo preso in carico la tua richiesta di chiusura dell'hosting SQL privato e ti abbiamo inviato un'email con la procedura da seguire.</translation>
+   <translation id="privateDatabase_dashboard_close_service_error" qtlid="499894">Si è verificato un errore durante la richiesta di chiusura del tuo hosting SQL privato:</translation>
 
    <translation id="voucher_table_head_id" qtlid="8194">ID</translation>
    <translation id="voucher_table_head_balance" qtlid="270930">Saldo</translation>
@@ -1215,7 +1215,7 @@ Prima di confermare l'eliminazione del servizio, è tua responsabilità adottare
    <translation id="terminate_service_reason_text" qtlid="440022">Vuoi fornirci maggiori dettagli o condividere qualche suggerimento?</translation>
    <translation id="terminate_service_error" qtlid="440035">Si è verificato un errore durante il caricamento della pagina.</translation>
    <translation id="terminate_service_confirmation_error" qtlid="440048">Si è verificato un errore durante la conferma della disattivazione del servizio.</translation>
-   <translation id="terminate_service_confirmation_success" qtlid="492671">Vous avez bien résilié vos services. Une confirmation vous sera envoyée par email dans les prochaines minutes. Notre équipe support reste à votre disposition pour toute question.</translation>
+   <translation id="terminate_service_confirmation_success" qtlid="492671">Il termine del servizio è andato a buon fine e tra qualche minuto riceverai una conferma via email. Il nostro supporto tecnico resta a tua disposizione per eventuali dubbi o chiarimenti.</translation>
    <translation id="terminate_service_confirm" qtlid="440074">Confermo di voler disattivare il servizio</translation>
    <translation id="terminate_service_type_allDom" qtlid="270293">Pack AllDom</translation>
    <translation id="terminate_service_type_caas_containers" qtlid="343148">CaaS Container</translation>

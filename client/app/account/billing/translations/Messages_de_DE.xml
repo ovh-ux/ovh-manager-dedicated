@@ -72,7 +72,7 @@
    <translation id="autorenew_service_canceldelete_title" qtlid="416137">Die Kündigung einer Dienstleistung stornieren</translation>
    <translation id="autorenew_service_delete_confirm" qtlid="416150">Die Dienstleistung {0} wird am {1} <strong>automatisch gekündigt</strong>.</translation>
    <translation id="autorenew_service_delete_warn" qtlid="416163">Die Daten, die mit dieser Dienstleistung verbunden sind, werden automatisch unwiderruflich gelöscht. Sie können diese Entscheidung bis zu 24 Stunden vor dem Ablaufdatum ändern.</translation>
-   <translation id="autorenew_service_debt_warn_deletion" qtlid="498235">Sie können die Dienstleistung erst kündigen, wenn der ausstehende Betrag beglichen wurde. Bitte gehen Sie in den Bereich „Abrechnung", um die Rechnung für die Dienstleistung <strong>{{service}}</strong> zu begleichen.</translation>
+   <translation id="autorenew_service_debt_warn_deletion" qtlid="498235">Sie können die Dienstleistung erst kündigen, wenn der ausstehende Betrag beglichen wurde. Bitte gehen Sie in den Bereich „Abrechnung", um die Rechnung für folgende Dienstleistung <strong>{{service}}</strong> zu begleichen:</translation>
    <translation id="autorenew_service_canceldelete_confirm" qtlid="416176">Möchten Sie die Kündigung Ihrer Dienstleistung <strong>{0}</strong> stornieren?</translation>
    <translation id="autorenew_service_update_intro" qtlid="351708">Wählen Sie den gewünschten Verlängerungsmodus (automatisch oder manuell).<br /> Bei der automatischen Verlängerung können Sie auch das Zahlungsintervall festlegen. </translation>
    <translation id="autorenew_service_select_intro" qtlid="221058">Alles auswählen:</translation>
@@ -243,8 +243,8 @@
    <translation id="common_payment_type_refund" qtlid="139845">Guthaben</translation>
    <translation id="common_payment_type_transfer" qtlid="89833">Überweisung</translation>
    <translation id="common_payment_type_withdrawal" qtlid="139858">Lastschrift</translation>
-   <translation id="common_payment_type_bankAccount" qtlid="176911">Bankkonto</translation>
-   <translation id="common_payment_type_BANK_ACCOUNT" qtlid="176911">Bankkonto</translation>
+   <translation id="common_payment_type_bankAccount" qtlid="176911">Lastschrift</translation>
+   <translation id="common_payment_type_BANK_ACCOUNT" qtlid="176911">Lastschrift</translation>
    <translation id="common_payment_type_digitalLaunchPad" qtlid="277728">Digital Launch Pad Dienstleistung</translation>
    <translation id="common_payment_type_DIGITAL_LAUNCH_PAD" qtlid="277728">Digital Launch Pad Dienstleistung</translation>
    <translation id="common_payment_type_unavailable" qtlid="373493">Keine Informationen zur Zahlung verfügbar </translation>
@@ -308,7 +308,7 @@
    <translation id="orders_page_title" qtlid="282809">Meine Bestellungen</translation>
    <translation id="orders_table_head_date" qtlid="24523">Datum</translation>
    <translation id="orders_table_head_id" qtlid="289250">Bestellnummer </translation>
-   <translation id="orders_table_head_status" qtlid="33790">Zustand</translation>
+   <translation id="orders_table_head_status" qtlid="33790">Status</translation>
    <translation id="orders_table_head_total_taxes_included" qtlid="282822">Betrag inklusive Steuern</translation>
    <translation id="orders_table_head_total" qtlid="45328">Betrag</translation>
    <translation id="orders_table_empty" qtlid="282835">Sie haben keine Bestellungen.</translation>
@@ -390,15 +390,16 @@
    <translation id="ovhAccount_create_alert_input_error" qtlid="369992">Nur ganze positive Zahlen zulässig. </translation>
 
    <translation id="payment_mean_title" qtlid="139949">Meine Zahlungsarten</translation>
-   <translation id="payment_mean_back" qtlid="440490">Zurück zu meinen Zahlungsmitteln</translation>
+   <translation id="payment_mean_back" qtlid="440490">Zurück zu Meine Zahlungsarten</translation>
    <translation id="payment_mean_loading_error" qtlid="436315">Beim Laden der Seite ist ein Fehler aufgetreten</translation>
    <translation id="payment_mean_no_register" qtlid="176937">Sie haben keine Zahlungsart gespeichert.</translation>
    <translation id="payment_mean_add" qtlid="37923">Hinzufügen</translation>
-   <translation id="payment_mean_add_title" qtlid="90253">Eine Zahlungsart hinzufügen</translation>
+   <translation id="payment_mean_add_title" qtlid="90253">Zahlungsart hinzufügen</translation>
    <translation id="payment_mean_action_unavailable_for_our_subsidiary" qtlid="244586">Diese Aktion wird für Ihr Land nicht unterstützt.</translation>
    <translation id="payment_mean_default" qtlid="101193">Standard</translation>
    <translation id="payment_mean_set_default" qtlid="224893">Standard-Zahlungsart</translation>
-   <translation id="payment_mean_set_default_after_validation" qtlid="349140">Ich möchte dieses Zahlungsmittel ab Validierung als Standard-Zahlungsmittel hinterlegen. </translation>
+   <translation id="payment_mean_set_default_after_validation" qtlid="349140">Zahlungsart ab Validierung als Standard&#13;
+verwenden.</translation>
 
    <translation id="payment_mean_contact_presentation_reuse_contact" qtlid="381868">und einen vorhandenen Kontakt verwenden </translation>
    <translation id="payment_mean_contact_presentation_create_contact" qtlid="381881">und einen neuen Kontakt erstellen </translation>
@@ -1054,10 +1055,10 @@
    <translation id="hosting_dashboard_close_service_warning" qtlid="255430">Die Löschung eines Hostings zieht die endgültige Löschung sämtlicher dazugehöriger Daten nach sich. Im Rahmen der Löschung eines Hostings kann keine Rückerstattung erfolgen.</translation>
    <translation id="hosting_dashboard_close_service_desc1" qtlid="370161">Sie erhalten in Kürze eine E-Mail mit Informationen zur Schließung Ihres Webhostings von uns und können die Löschung dann sofort bestätigen. </translation>
 
-   <translation id="privateDatabase_dashboard_close_service">Supprimer immédiatement mon hébergement SQL privé</translation>
-   <translation id="autorenew_service_HOSTING_PRIVATE_DATABASE_terminate">Supprimer mon hébergement SQL privé</translation>
-   <translation id="privateDatabase_dashboard_close_service_success">Votre demande de fermeture d'hébergement SQL privé a été prise en compte. Un e-mail contenant la procédure vous a été envoyé.</translation>
-   <translation id="privateDatabase_dashboard_close_service_error">Une erreur est survenue lors de la demande de fermeture de votre hébergement SQL privé :</translation>
+   <translation id="privateDatabase_dashboard_close_service" qtlid="499855">Mein SQL Private Hosting sofort kündigen</translation>
+   <translation id="autorenew_service_HOSTING_PRIVATE_DATABASE_terminate" qtlid="499868">Mein SQL Private Hosting kündigen</translation>
+   <translation id="privateDatabase_dashboard_close_service_success" qtlid="499881">Ihre Kündigungsanfrage für SQL Private Hosting wurde aufgenommen. Ihnen wurde eine E-Mail zum Kündigungsprozess zugesandt.</translation>
+   <translation id="privateDatabase_dashboard_close_service_error" qtlid="499894">Bei der Kündigungsanfrage für Ihr SQL Private Hosting ist ein Fehler aufgetreten:</translation>
 
    <translation id="voucher_table_head_id" qtlid="8194">ID</translation>
    <translation id="voucher_table_head_balance" qtlid="270930">Stand</translation>
@@ -1129,7 +1130,7 @@
    <translation id="statements_details_table_caption" qtlid="343434">Liste der Transaktionen auf der Rechnung </translation>
    <translation id="statements_details_table_header_date" qtlid="24523">Datum</translation>
    <translation id="statements_details_table_header_operation" qtlid="32482">Operation</translation>
-   <translation id="statements_details_table_header_status" qtlid="33790">Zustand</translation>
+   <translation id="statements_details_table_header_status" qtlid="33790">Status</translation>
    <translation id="statements_details_table_header_amount" qtlid="45328">Betrag</translation>
    <translation id="statements_details_table_header_document" qtlid="343447">Dokument </translation>
    <translation id="statements_details_table_order_link" qtlid="343460">Die zu dieser Transaktion gehörende Bestellung in einem neuen Fenster öffnen. </translation>
