@@ -39,6 +39,22 @@
     </button>
 
     <oui-action-menu
+        data-ng-if="service.serviceType === 'SMS'"
+        data-aria-label="{{:: 'autorenew_service_action_menu_tooltip' | translate }}"
+        data-compact
+        data-align="end">
+        <oui-action-menu-item
+            data-href="{{:: buildSMSCreditBuyingURL(service) }}"
+            data-external="true"
+            data-text="Ajouter des crédits"></oui-action-menu-item>
+
+        <oui-action-menu-item
+            data-href="{{:: buildSMSAutomatiqueRenewURL(service) }}"
+            data-external="true"
+            data-text="Configurer la recharge automatique"></oui-action-menu-item>
+    </oui-action-menu>
+
+    <oui-action-menu
         data-ng-if="!service.subProducts && service.serviceType !== 'SMS'"
         data-aria-label="{{:: 'autorenew_service_action_menu_tooltip' | translate }}"
         data-compact
