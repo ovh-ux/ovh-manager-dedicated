@@ -60,14 +60,12 @@ class LicenseAgoraOrder {
             .then((plan) => this.configureIpField({ cartId, itemId: plan.itemId, ip: config.ip }).then(() => plan))
             .then((plan) =>
                 this.$q.all(
-                    _.map(config.options, (option) =>
-                        this.pushAgoraPlan({
-                            cartId,
-                            config: _.assign({}, config, { planCode: option, options: [], itemId: plan.itemId }),
-                            path: `/order/cart/{cartId}/${this.licenseTypeToCatalog[config.licenseType]}/options`,
-                            urlParams: { cartId }
-                        })
-                    )
+                    _.map(config.options, (option) => this.pushAgoraPlan({
+                        cartId,
+                        config: _.assign({}, config, { planCode: option, options: [], itemId: plan.itemId }),
+                        path: `/order/cart/{cartId}/${this.licenseTypeToCatalog[config.licenseType]}/options`,
+                        urlParams: { cartId }
+                    }))
                 )
             )
             .then(() => this.OvhHttp.get("/order/cart/{cartId}/checkout", { rootPath: "apiv6", urlParams: { cartId } }))
