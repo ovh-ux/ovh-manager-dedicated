@@ -1,3 +1,15 @@
+<a name="10.0.4"></a>
+## [10.0.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.3...v10.0.4) (2018-08-21)
+
+
+### Bug Fixes
+
+* **autorenew:** allow only terminate option for oneShot private database ([6f35cdb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6f35cdb))
+* **autorenew:** clean private database termination ([4ce2f17](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4ce2f17))
+* **license agora order:** set plan code for plesk powerpack option ([b717631](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b717631))
+
+
+
 <a name="10.0.3"></a>
 ## [10.0.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.2...v10.0.3) (2018-08-17)
 
