@@ -268,6 +268,9 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
             }
         };
 
+        $scope.buildSMSCreditBuyingURL = (service) => `https://www.ovhtelecom.fr/manager/index.html#/sms/${service.serviceId}/order`;
+        $scope.buildSMSAutomatiqueRenewURL = (service) => `https://www.ovhtelecom.fr/manager/index.html#/sms/${service.serviceId}/options/recredit`;
+
         /**
          * @doc method
          * @methodOf Billing.controller:AutoRenewCtrl
