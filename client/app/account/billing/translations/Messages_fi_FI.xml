@@ -26,7 +26,6 @@
    <translation id="autorenew_service_renew_auto" qtlid="134215">Automaattinen</translation>
    <translation id="autorenew_service_renew_manuel" qtlid="219797">Manuaalinen</translation>
    <translation id="autorenew_service_renew_delete_at_expiration" qtlid="399736">Irtisanominen vanhenemispäivänä</translation>
-   <translation id="autorenew_service_renew_manual_payment" qtlid="498131">Automaattinen: pois käytöstä</translation>
    <translation id="autorenew_service_renew_year" qtlid="498144">Automaattinen: vuosittain</translation>
    <translation id="autorenew_service_renew_month" qtlid="498157">Automaattinen: kuukausittain</translation>
    <translation id="autorenew_service_renew_3months" qtlid="402906">Neljännesvuosittain</translation>
@@ -73,7 +72,7 @@
    <translation id="autorenew_service_canceldelete_title" qtlid="416137">Peru palvelun irtisanominen</translation>
    <translation id="autorenew_service_delete_confirm" qtlid="416150">Palvelu {0} <strong>irtisanotaan automaattisesti</strong> {1}.</translation>
    <translation id="autorenew_service_delete_warn" qtlid="416163">Palveluun liittyvä data poistetaan automaattisesti ja peruuttamattomasti. Voit muuttaa mielesi siihen asti, että palvelun vanhenemiseen on 24 tuntia.</translation>
-   <translation id="autorenew_service_debt_warn_deletion" qtlid="498235">Et voi irtisanoa palvelua ennen jäljellä olevan summan maksamista. Ole hyvä ja mene Laskutus-osioon maksamaan palvelua <strong>{{service}}</strong> koskeva lasku.</translation>
+   <translation id="autorenew_service_debt_warn_deletion" qtlid="498235">Et voi irtisanoa palvelua ennen jäljellä olevan summan maksamista. Ole hyvä ja mene Laskutusosioon maksamaan palvelua <strong>{{service}}</strong> koskeva lasku.</translation>
    <translation id="autorenew_service_canceldelete_confirm" qtlid="416176">Oletko varma, että haluat perua <strong>{0}</strong>-palvelun irtisanomisen?</translation>
    <translation id="autorenew_service_update_intro" qtlid="351708">Valitse haluamasi uusintatyyppi (automaattinen tai manuaalinen).<br /> Automaattisessa uusinnassa voit valita myös laskutusvälin.</translation>
    <translation id="autorenew_service_select_intro" qtlid="221058">Valitse kaikki:</translation>
@@ -1055,6 +1054,11 @@
    <translation id="hosting_dashboard_close_service" qtlid="498313">Poista webhotellini heti</translation>
    <translation id="hosting_dashboard_close_service_warning" qtlid="255430">Kun webhotelli suljetaan, kaikki siellä oleva data poistuu. Mitään hyvitystä webhotellitilin sulkemisesta ei anneta.</translation>
    <translation id="hosting_dashboard_close_service_desc1" qtlid="370161">Saat sähköpostitse ohjeet webhotellin sulkemisprosessiin, jonka avulla voit vahvistaa tuotteen välittömän poistamisen.</translation>
+
+   <translation id="privateDatabase_dashboard_close_service" qtlid="499855">Poista heti Private SQL -webhotelli</translation>
+   <translation id="autorenew_service_HOSTING_PRIVATE_DATABASE_terminate" qtlid="499868">Poista Private SQL -webhotelli</translation>
+   <translation id="privateDatabase_dashboard_close_service_success" qtlid="499881">Poistopyyntö koskien Private SQL -webhotelliasi on rekisteröity. Sinulle on lähetetty menettelyn sisältävä sähköpostiviesti.</translation>
+   <translation id="privateDatabase_dashboard_close_service_error" qtlid="499894">Tapahtui virhe Private SQL -webhotellisi poistoa pyydettäessä:</translation>
 
    <translation id="voucher_table_head_id" qtlid="8194">ID</translation>
    <translation id="voucher_table_head_balance" qtlid="270930">Saldo</translation>

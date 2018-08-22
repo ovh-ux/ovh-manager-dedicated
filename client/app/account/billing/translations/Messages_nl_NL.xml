@@ -3,17 +3,17 @@
 
    <translation id="autorenew_title" qtlid="287527">Beheer mijn diensten</translation>
 
-   <translation id="autorenew_service_deleteAtExpiration_banner" qtlid="498105">The termination at expiration of the service "{{serviceName}}" has been taken into account. You can cancel this operation until 24 hours before the service expires.</translation>
-   <translation id="autorenew_service_deleteAtExpiration_banner_cancel" qtlid="498118">Cancel the termination</translation>
+   <translation id="autorenew_service_deleteAtExpiration_banner" qtlid="498105">Het verzoek om de dienst '{{serviceName}}' op de vervaldatum te beëindigen, is geaccepteerd. Dit verzoek kan worden geannuleerd binnen 24 uur voordat de dienst verloopt.</translation>
+   <translation id="autorenew_service_deleteAtExpiration_banner_cancel" qtlid="498118">Beëindiging annuleren</translation>
 
    <translation id="autorenew_myservices" qtlid="212881">Mijn diensten</translation>
    <translation id="autorenew" qtlid="219758">Verlengingen</translation>
    <translation id="autorenew_service" qtlid="34632">Diensten</translation>
-   <translation id="autorenew_service_name" qtlid="266952">Naam van de service</translation>
+   <translation id="autorenew_service_name" qtlid="266952">Naam van de dienst</translation>
    <translation id="autorenew_service_type" qtlid="2642">Type</translation>
    <translation id="autorenew_service_date" qtlid="401685">Vervaldatum</translation>
    <translation id="autorenew_service_expiration_date" qtlid="212868">Vervalt op {0}</translation>
-   <translation id="autorenew_service_expiration_warning" qtlid="264361">Let op, uw service verloopt voor de incasseringsdatum. De service moet handmatig worden verlengd zodat u weer een automatische verlenging kunt activeren. </translation>
+   <translation id="autorenew_service_expiration_warning" qtlid="264361">Let op, uw dienst verloopt voor de incasseringsdatum. De dienst moet handmatig worden verlengd zodat u weer een automatische verlenging kunt activeren. </translation>
    <translation id="autorenew_service_autorenew_go_to_payment_mean" qtlid="351656">Voor het beheer van de betaalmethoden voor uw automatische verlenging klikt u <a href="#/billing/mean">hier</a>.</translation>
    <translation id="autorenew_manage_my_payment_means" qtlid="287514">Beheer mijn betaalmethoden</translation>
    <translation id="autorenew_service_autorenew_go_to_autorenew" qtlid="351669">Voor het beheer van de verlenging van uw diensten klikt u <a href="#/billing/autoRenew">hier</a>.</translation>
@@ -26,9 +26,8 @@
    <translation id="autorenew_service_renew_auto" qtlid="134215">Automatisch</translation>
    <translation id="autorenew_service_renew_manuel" qtlid="219797">Handmatig</translation>
    <translation id="autorenew_service_renew_delete_at_expiration" qtlid="399736">Annuleren op vervaldatum</translation>
-   <translation id="autorenew_service_renew_manual_payment" qtlid="498131">Automatique : désactivé</translation>
-   <translation id="autorenew_service_renew_year" qtlid="498144">Automatique : tous les ans</translation>
-   <translation id="autorenew_service_renew_month" qtlid="498157">Automatique : tous les mois</translation>
+   <translation id="autorenew_service_renew_year" qtlid="498144">Automatisch: elk jaar</translation>
+   <translation id="autorenew_service_renew_month" qtlid="498157">Automatisch: elke maand</translation>
    <translation id="autorenew_service_renew_3months" qtlid="402906">Per kwartaal</translation>
    <translation id="autorenew_service_renew_6months" qtlid="402919">Per zes maanden</translation>
    <translation id="autorenew_service_renew_frequency_value" qtlid="402932">Alle {0} maanden</translation>
@@ -40,8 +39,8 @@
    <translation id="autorenew_service_mass_actions_caption" qtlid="300227">Wat wilt u doen? </translation>
    <translation id="autorenew_service_update_button_caption" qtlid="416072">Betalingsfrequentie wijzigen</translation>
    <translation id="autorenew_service_update_date_button_caption" qtlid="300253">De vervaldata op elkaar afstemmen. </translation>
-   <translation id="autorenew_service_resiliate_button" qtlid="498170">Résilier à date d'échéance</translation>
-   <translation id="autorenew_service_resiliate_button_title" qtlid="498183">Résilier à date d'échéance : {0}</translation>
+   <translation id="autorenew_service_resiliate_button" qtlid="498170">Beëindig op de vervaldatum</translation>
+   <translation id="autorenew_service_resiliate_button_title" qtlid="498183">Beëindigen op vervaldatum: {0}</translation>
    <translation id="autorenew_service_disable_button" qtlid="416085">Automatische betaling deactiveren</translation>
    <translation id="autorenew_service_enable_button" qtlid="416098">Automatische betaling activeren</translation>
    <translation id="autorenew_service_renew_button" qtlid="416111">Dienst betalen</translation>
@@ -49,7 +48,7 @@
    <translation id="autorenew_service_canceldelete_button" qtlid="285350">Annuleer beëindiging</translation>
    <translation id="autorenew_service_canceldelete_button_title" qtlid="243695">Annuleer mijn annuleringsverzoek: {0}</translation>
    <translation id="autorenew_service_renew_frequency_title" qtlid="212998">Betalingsfrequentie</translation>
-   <translation id="autorenew_service_renew_frequency_value" qtlid="498196">Automatique : tous les {0} mois</translation>
+   <translation id="autorenew_service_renew_frequency_value" qtlid="498196">Automatisch: elke {0} maanden</translation>
    <translation id="autorenew_search_input_title" qtlid="300629">Zoek diensten op ID. </translation>
    <translation id="autorenew_service_expand_sub_services" qtlid="300642">Bijbehorende diensten weergeven of verbergen. </translation>
    <translation id="autorenew_service_select_all_checkbox" qtlid="300655">Selecteer alle diensten.</translation>
@@ -67,13 +66,13 @@
    <translation id="autorenew_service_update_renewal_activation_notice" qtlid="369427">Automatische verlenging is ingeschakeld op de toegewezen dienst(en) en op uw account. </translation>
    <translation id="autorenew_service_update_renewal_activation_error" qtlid="369440">U heeft automatische verlenging geselecteerd voor tenminste één dienst, maar het was niet mogelijk om automatische verlenging van uw account in te schakelen: {0}</translation>
    <translation id="autorenew_guide_help" qtlid="156732">Raadpleeg onze online handleidingen.</translation>
-   <translation id="autorenew_service_delete_title" qtlid="498170">Résilier à date d'échéance</translation>
-   <translation id="autorenew_service_debt_before_paying_1" qtlid="498209">Before you subscribe for a new period, please settle the outstanding amount on your account.</translation>
-   <translation id="autorenew_service_debt_before_paying_2" qtlid="498222">Please go to the Billing section to pay the invoice for the <strong>{{service}}</strong> service.</translation>
+   <translation id="autorenew_service_delete_title" qtlid="498170">Beëindig op de vervaldatum</translation>
+   <translation id="autorenew_service_debt_before_paying_1" qtlid="498209">Voordat u zich inschrijft voor een nieuwe periode, moet u het openstaande bedrag van uw account betalen.</translation>
+   <translation id="autorenew_service_debt_before_paying_2" qtlid="498222">Ga naar het gedeelte Facturering om de factuur voor de <strong>{{service}}</strong> dienst te betalen.</translation>
    <translation id="autorenew_service_canceldelete_title" qtlid="416137">Annulatie van een dienst terugzetten</translation>
    <translation id="autorenew_service_delete_confirm" qtlid="416150">De {0} dienst <strong>zal automatisch worden geannuleerd</strong> op {1}.</translation>
    <translation id="autorenew_service_delete_warn" qtlid="416163">Data gekoppeld aan de automatische betaling van uw diensten wordt onherroepelijk verwijderd. U kunt deze beslissing tot 24 uur voor de vervaldatum terugzetten.</translation>
-   <translation id="autorenew_service_debt_warn_deletion" qtlid="498235">You cannot cancel this service until you have paid the outstanding amount.&#160;Please go to the Billing section to settle your bill for the service <strong>{{service}}</strong></translation>
+   <translation id="autorenew_service_debt_warn_deletion" qtlid="498235">U kunt deze dienst pas annuleren nadat u het openstaande bedrag hebt betaald. Ga naar het gedeelte Facturering om uw factuur voor de <strong>{{service}}</strong> dienst te regelen</translation>
    <translation id="autorenew_service_canceldelete_confirm" qtlid="416176">Weet u zeker dat u de annulatie van de <strong>{0}</strong> dienst wilt terugtrekken?</translation>
    <translation id="autorenew_service_update_intro" qtlid="351708">Kies het type verlenging van uw voorkeur (automatisch of handmatig). <br/>Voor automatische verlenging kunt u ook de incassofrequentie instellen.</translation>
    <translation id="autorenew_service_select_intro" qtlid="221058">Alles selecteren:</translation>
@@ -150,7 +149,7 @@
    <translation id="autorenew_service_update_now" qtlid="31270">Bestaande</translation>
    <translation id="autorenew_service_update_future" qtlid="221123">Nieuwe waarde</translation>
    <translation id="autorenew_service_update_step2_error" qtlid="177522">Er is een fout opgetreden, excuses voor het ongemak.</translation>
-   <translation id="autorenew_service_update_step2_success" qtlid="492580">De actie was succesvol.</translation>
+   <translation id="autorenew_service_update_step2_success" qtlid="492580">De actie is voltooid.</translation>
    <translation id="autorenew_service_update_step2_with_async_action_success" qtlid="492593">De bewerking is met succes uitgevoerd en is binnen enkele ogenblikken effectief.</translation>
    <translation id="billing_export_csv" qtlid="231773">Exporteren in CSV</translation>
    <translation id="billing_common_link_new_window" qtlid="300694">(nieuw venster)</translation>
@@ -173,7 +172,7 @@
 
    <translation id="autorenew_service_type_HOSTING_RESELLER" qtlid="325276">Web hosting reseller</translation>
 
-   <translation id="autorenew_service_EMAIL_DOMAIN_terminate" qtlid="498248">Supprimer immédiatement le MX Plan</translation>
+   <translation id="autorenew_service_EMAIL_DOMAIN_terminate" qtlid="498248">MX Plan direct verwijderen</translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_info" qtlid="370083">Als u het MX Plan verwijdert dan zal alle bijbehorende data permanent gewist worden. U krijgt geen geld terug bij verwijdering van het MX Plan. </translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_info_impossible" qtlid="370096">U kunt uw e-mailaccount niet verwijderen omdat het gekoppeld is aan een hosting pack. </translation>
    <translation id="autorenew_service_EMAIL_DOMAIN_terminate_procedure" qtlid="370109">U zult een e-mail ontvangen met informatie over de beëindiging van uw MX Plan zodat u vervolgens de directe verwijdering kunt bevestigen. </translation>
@@ -763,10 +762,10 @@
    <translation id="paymentMean_label_iban" qtlid="177015">IBAN</translation>
    <translation id="paymentMean_label_bic" qtlid="177028">BIC</translation>
    <translation id="paymentMean_label_addressNumber" qtlid="30778">Nummer</translation>
-   <translation id="paymentMean_label_addressStreetName" qtlid="459573">Nom de la voie</translation>
+   <translation id="paymentMean_label_addressStreetName" qtlid="459573">Straat</translation>
    <translation id="paymentMean_label_addressPostalCode" qtlid="30346">Postcode</translation>
    <translation id="paymentMean_label_addressTown" qtlid="33310">Stad</translation>
-   <translation id="paymentMean_label_ownerName" qtlid="498261">Nom et prénom du propriétaire ou nom de l'organisation propriétaire</translation>
+   <translation id="paymentMean_label_ownerName" qtlid="498261">Naam en voornaam van eigenaar of bedrijfseigenaar</translation>
    <translation id="paymentMean_label_ownerAddress" qtlid="177054">Adres van de accounthouder</translation>
    <translation id="paymentMean_error_bic_bank" qtlid="177067">De bankcode is ongeldig.</translation>
    <translation id="paymentMean_error_bic_valid" qtlid="177080">De BIC is ongeldig.</translation>
@@ -777,9 +776,9 @@
    <translation id="paymentMean_error_iban_valid" qtlid="177145">De IBAN is ongeldig.</translation>
    <translation id="paymentMean_error_minlength" qtlid="179680">Het moet minstens 5 tekens bevatten.</translation>
    <translation id="paymentMean_error_addressPostalCode_required" qtlid="177093">Dit veld is verplicht.</translation>
-   <translation id="paymentMean_error_addressPostalCode_min" qtlid="498274">Le code postal n'est pas valide.</translation>
-   <translation id="paymentMean_error_addressPostalCode_max" qtlid="498274">Le code postal n'est pas valide.</translation>
-   <translation id="paymentMean_error_addressPostalCode_pattern" qtlid="498287">Le code postal doit être composé de 5 chiffres.</translation>
+   <translation id="paymentMean_error_addressPostalCode_min" qtlid="498274">De postcode is niet geldig. </translation>
+   <translation id="paymentMean_error_addressPostalCode_max" qtlid="498274">De postcode is niet geldig. </translation>
+   <translation id="paymentMean_error_addressPostalCode_pattern" qtlid="498287">De postcode moet 5 tekens bevatten. </translation>
    <translation id="paymentMean_error_maxlength" qtlid="177171">De tekst moet minder dan 255 tekens bevatten.</translation>
    <translation id="paymentType_delete_error" qtlid="177184">Fout bij het ​​verwijderen van de betaalmethode</translation>
    <translation id="paymentType_modify_error" qtlid="436354">Er is een fout opgetreden tijdens het wijzigen van de betaalmethode </translation>
@@ -1025,7 +1024,7 @@
    <translation id="sla_apply_error" qtlid="266913">er is een fout opgetreden tijdens de aanvraag voor compensatie :</translation>
    <translation id="sla_apply_success" qtlid="266926">De aanvraag voor compensatie is goed in behandeling genomen. Het zal over een paar uur effectief zijn.</translation>
    <translation id="sla_apply_no_data" qtlid="266939">U heeft geen recht tot compensatie.</translation>
-   <translation id="sla_table_head_service_name" qtlid="266952">Naam van de service</translation>
+   <translation id="sla_table_head_service_name" qtlid="266952">Naam van de dienst</translation>
    <translation id="sla_table_head_service_description" qtlid="266965">Omschrijving van de service</translation>
    <translation id="sla_table_head_service_sla_plan" qtlid="267292">Contractuele SLA </translation>
    <translation id="sla_table_head_service_sla_application" qtlid="266991">Gegarandeerd voordeel </translation>
@@ -1046,13 +1045,18 @@
    <translation id="services_filter_duration_months" qtlid="267502">Vervalt binnen een maand</translation>
    <translation id="services_filter_duration_expired" qtlid="267515">Vervallen</translation>
 
-   <translation id="hosting_dashboard_service_guide" qtlid="498300">Supprimer immédiatement l'hébergement</translation>
+   <translation id="hosting_dashboard_service_guide" qtlid="498300">Webhostingplan direct verwijderen. </translation>
    <translation id="hosting_dashboard_close_service_question" qtlid="215533">Wilt u deze e-mail ontvangen?</translation>
    <translation id="hosting_dashboard_close_service_success" qtlid="370148">Uw verzoek tot verwijdering van uw hosting pack is verwerkt. We zullen u een e-mail sturen met daarin de stappen die u moet volgen.</translation>
    <translation id="hosting_dashboard_close_service_error" qtlid="255469">Er is een error opgetreden tijdens de aanvraag om uw hosting te sluiten:</translation>
-   <translation id="hosting_dashboard_close_service" qtlid="498313">Supprimer immédiatement mon hébergement</translation>
+   <translation id="hosting_dashboard_close_service" qtlid="498313">Mijn webhostingplan direct verwijderen. </translation>
    <translation id="hosting_dashboard_close_service_warning" qtlid="255430">De verwijdering van een hosting verwijdert permanent ook alle bijbehorende gegevens. Bij verwijderen van een hosting volgt geen restitutie.</translation>
    <translation id="hosting_dashboard_close_service_desc1" qtlid="370161">U zult een e-mail ontvangen met informatie over het beëindigen van uw hosting pack, zodat u de directe verwijdering ervan kunt bevestigen. </translation>
+
+   <translation id="privateDatabase_dashboard_close_service" qtlid="499855">Private SQL meteen annuleren</translation>
+   <translation id="autorenew_service_HOSTING_PRIVATE_DATABASE_terminate" qtlid="499868">Private SQL annuleren</translation>
+   <translation id="privateDatabase_dashboard_close_service_success" qtlid="499881">Uw verzoek om Private SQL hosting te annuleren is ontvangen. Er is een e-mail met de procedure naar u verzonden.</translation>
+   <translation id="privateDatabase_dashboard_close_service_error" qtlid="499894">Er is een fout opgetreden tijdens het verzoek om uw Private SQL te sluiten:</translation>
 
    <translation id="voucher_table_head_id" qtlid="8194">ID</translation>
    <translation id="voucher_table_head_balance" qtlid="270930">Saldo</translation>
