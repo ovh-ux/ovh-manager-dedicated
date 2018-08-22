@@ -1,3 +1,13 @@
+<a name="10.0.5"></a>
+## [10.0.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.4...v10.0.5) (2018-08-22)
+
+
+### Bug Fixes
+
+* **build:** smarttage integration ([6bb1516](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6bb1516))
+
+
+
 <a name="10.0.4"></a>
 ## [10.0.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.3...v10.0.4) (2018-08-21)
 
