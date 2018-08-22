@@ -95,9 +95,10 @@ angular
         return $sanitize(translationId);
     })
     .config((LANGUAGES, $translateProvider, constants) => {
-        let defaultLanguage = "fr_FR";
+        let defaultLanguage = _.get(_.find(LANGUAGES, { "default": true }), "value", "fr_FR");
 
-        if (localStorage["univers-selected-language"]) {
+        // if there is a stored language value, be sure it's a valid one
+        if (localStorage["univers-selected-language"] && _.find(LANGUAGES, { value: localStorage["univers-selected-language"] })) {
             defaultLanguage = localStorage["univers-selected-language"];
         } else {
             localStorage["univers-selected-language"] = defaultLanguage;
@@ -113,7 +114,7 @@ angular
 
         $translateProvider.preferredLanguage(defaultLanguage);
         $translateProvider.use(defaultLanguage);
-        $translateProvider.fallbackLanguage("fr_FR");
+        $translateProvider.fallbackLanguage(_.get(_.find(LANGUAGES, { fallback: true }), "value", "fr_FR"));
     })
     .config(($transitionsProvider, $httpProvider) => {
         $httpProvider.interceptors.push("translateInterceptor");
@@ -125,6 +126,6 @@ angular
         OtrsPopupProvider.setBaseUrlTickets(_.get(constants, "REDIRECT_URLS.listTicket", null));
     })
     .run(($translate) => {
-        moment.locale($translate.use().split("_")[0]);
+        moment.locale(_.first($translate.use().split("_")));
     })
     .constant("UNIVERSE", "DEDICATED");
