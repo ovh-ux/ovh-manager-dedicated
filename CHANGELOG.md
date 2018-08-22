@@ -1,3 +1,19 @@
+<a name="10.0.6"></a>
+## [10.0.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.5...v10.0.6) (2018-08-22)
+
+
+### Bug Fixes
+
+* **license:** fix license type in api route ([b007e4f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b007e4f))
+* **translation:** transation parameters sanitization ([b066320](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b066320))
+
+
+### Features
+
+* **billing.autorenew:** autoDisabled is now the same as manual ([9e13afd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9e13afd))
+
+
+
 <a name="10.0.5"></a>
 ## [10.0.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.4...v10.0.5) (2018-08-22)
 
