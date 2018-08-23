@@ -1,4 +1,4 @@
-angular.module("App").controller("DedicatedCloudOperationsCtrl", function ($q, $scope, $state, $stateParams, $translate, $window, BillingOrders, Alerter, DedicatedCloud, ouiDatagridService) {
+angular.module("App").controller("DedicatedCloudOperationsCtrl", function ($q, $scope, $state, $stateParams, $translate, $window, BillingOrders, Alerter, DedicatedCloud, ouiDatagridService, $uibModal) {
     "use strict";
 
     const self = this;
@@ -48,13 +48,14 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", function ($q, $
     self.loadOperation = (item) => DedicatedCloud.getOperation($stateParams.productId, {
         taskId: item.id
     }).then((op) => {
-        const friendlyNameBy = $translate.instant(`dedicatedCloud_OPERATIONS_createdby_${op.createdBy.replace(/-/g, "_")}`);
-        const friendlyNameFrom = $translate.instant(`dedicatedCloud_OPERATIONS_createdfrom_${op.createdFrom.replace(/-/g, "_")}`);
+        const friendlyNameBy = op.createdBy ? $translate.instant(`dedicatedCloud_OPERATIONS_createdby_${op.createdBy.replace(/-/g, "_")}`) : $translate.instant("common_unavailable_information");
+        const friendlyNameFrom = op.createdFrom ? $translate.instant(`dedicatedCloud_OPERATIONS_createdfrom_${op.createdFrom.replace(/-/g, "_")}`) : $translate.instant("common_unavailable_information");
         op.createdBy = friendlyNameBy.startsWith("dedicatedCloud_OPERATIONS_createdby_") ? op.createdBy : friendlyNameBy;
         op.createdFrom = friendlyNameFrom.startsWith("dedicatedCloud_OPERATIONS_createdfrom_") ? op.createdFrom : friendlyNameFrom;
         op.isDone = _.includes(["canceled", "done"], op.state);
         return op;
-    }).then(setOperationDescription).then(setRelatedServices);
+    }).then(setOperationDescription).then(setRelatedServices)
+        .then((res) => res);
 
     function setRelatedServices (operation) {
         const baseTrad = "dedicatedCloud_OPERATIONS_related_";
@@ -158,6 +159,26 @@ angular.module("App").controller("DedicatedCloudOperationsCtrl", function ($q, $
         }
         return $q.when(operation);
     }
+
+    self.onExecutionDateActionClick = ($row) => {
+        const executionDateEditModal = $uibModal.open({
+            templateUrl: "dedicatedCloud/operation/executionDateEdit/dedicatedCloud-operation-executionDateEdit.html",
+            controller: "DedicatedCloudOperationExecutionDateEditCtrl",
+            controllerAs: "$ctrl",
+            resolve: {
+                operationToEdit: () => $row
+            }
+        });
+
+        return executionDateEditModal.result.then((error) => {
+            if (!error) {
+                Alerter.success($translate.instant("dedicatedCloud_OPERATIONS_success"), "dedicatedCloud_alert");
+                ouiDatagridService.refresh("operationsDatagrid", true);
+            } else {
+                Alerter.alertFromSWS($translate.instant("dedicatedCloud_OPERATIONS_error"), error, "dedicatedCloud_alert");
+            }
+        });
+    };
 
     init();
 });

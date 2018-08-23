@@ -80,5 +80,12 @@
                 <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
             </label>
         </extra-top>
+        <oui-action-menu data-align="end"
+                         data-compact>
+            <oui-action-menu-item data-text="{{ 'dedicated_cloud_operation_execution_date_edit_title' | translate }}"
+                                  data-on-click="$ctrl.onExecutionDateActionClick($row)"
+                                  data-disabled="$row.progress > 0 || $row.type !== 'maintenance' || $row.maintenanceDateFrom === null || $row.maintenanceDateTo === null">
+            </oui-action-menu-item>
+        </oui-action-menu>
     </oui-datagrid>
 </div>
