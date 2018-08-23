@@ -399,6 +399,10 @@ angular-aria@^1.6.9:
   version "1.6.10"
   resolved "https://registry.yarnpkg.com/angular-aria/-/angular-aria-1.6.10.tgz#472bfff8682c4cfe634d4bfda0524443e07e3501"
 
+angular-aria@^1.6.x:
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/angular-aria/-/angular-aria-1.7.3.tgz#a545112da0daed875061ff49d1ac8964cfa51a8a"
+
 angular-chart.js@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/angular-chart.js/-/angular-chart.js-1.1.1.tgz#49f0e18d081762b6d4c9791e487aff2fbb30f5ae"
@@ -446,6 +450,10 @@ angular-sanitize@^1.6.9:
   version "1.6.10"
   resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.6.10.tgz#635a362afb2dd040179f17d3a5455962b2c1918f"
 
+angular-sanitize@^1.6.x:
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.7.3.tgz#e1ddaa7337724f9554066fd9e9123486b8881c4a"
+
 angular-translate@^2.17.0:
   version "2.17.1"
   resolved "https://registry.yarnpkg.com/angular-translate/-/angular-translate-2.17.1.tgz#0fe526cabd6f6b39db34e344047f0e3c1978296e"
@@ -463,6 +471,10 @@ angular@1.3.x, angular@~1.3.0:
 angular@1.x, "angular@>=1.2.26 <=1.6", angular@^1.6.9:
   version "1.6.10"
   resolved "https://registry.yarnpkg.com/angular/-/angular-1.6.10.tgz#eed3080a34d29d0f681ff119b18ce294e3f74826"
+
+angular@^1.6.x:
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/angular/-/angular-1.7.3.tgz#0f25a661d079fc84d5ccc877a2ef9d7178575ddb"
 
 animate.css@^3.5.0:
   version "3.6.1"
@@ -1430,7 +1442,7 @@ cli@~1.0.0:
     exit "0.1.2"
     glob "^7.1.1"
 
-clipboard@2.0.1:
+clipboard@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-2.0.1.tgz#a12481e1c13d8a50f5f036b0560fe5d16d74e46a"
   dependencies:
@@ -2589,11 +2601,7 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
-flatpickr@4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.5.0.tgz#f72c7164a1c24e3ad419e3b2209d1a2d3604724a"
-
-flatpickr@^4.5.0:
+flatpickr@^4.5.0, flatpickr@^4.5.1:
   version "4.5.1"
   resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.5.1.tgz#f65eaf54c07538f87d6f68a67b03cf816d7fb82f"
 
@@ -5036,13 +5044,16 @@ ovh-protractor-jasmine2-logs-reporter@0.0.1:
   dependencies:
     q "^1.4.1"
 
-ovh-ui-angular@^2.17.0:
-  version "2.17.1"
-  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.17.1.tgz#ed86530038bcbc60bb9d0a03d00e33327439fe48"
+ovh-ui-angular@ovh-ux/ovh-ui-angular#feat/enableTime:
+  version "2.18.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-ui-angular/tar.gz/883288475fa43ca987b59eab29e2da711a091992"
   dependencies:
-    clipboard "2.0.1"
+    angular "^1.6.x"
+    angular-aria "^1.6.x"
+    angular-sanitize "^1.6.x"
+    clipboard "^2.0.1"
     escape-string-regexp "^1.0.5"
-    flatpickr "4.5.0"
+    flatpickr "^4.5.1"
     popper.js "^1.14.3"
 
 ovh-ui-kit-bs@~1.3.0:
@@ -5212,8 +5223,8 @@ pluralize@^7.0.0:
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-7.0.0.tgz#298b89df8b93b0221dbf421ad2b1b1ea23fc6777"
 
 popper.js@^1.14.3:
-  version "1.14.3"
-  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.3.tgz#1438f98d046acf7b4d78cd502bf418ac64d4f095"
+  version "1.14.4"
+  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.4.tgz#8eec1d8ff02a5a3a152dd43414a15c7b79fd69b6"
 
 portscanner@0.2.2:
   version "0.2.2"
