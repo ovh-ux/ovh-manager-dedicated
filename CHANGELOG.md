@@ -1,3 +1,13 @@
+<a name="10.0.9"></a>
+## [10.0.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.8...v10.0.9) (2018-08-23)
+
+
+### Bug Fixes
+
+* **billing.debt:** active debt with todoAmount ([bc8a2bc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bc8a2bc))
+
+
+
 <a name="10.0.8"></a>
 ## [10.0.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.7...v10.0.8) (2018-08-22)
 
