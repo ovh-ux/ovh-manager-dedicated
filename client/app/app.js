@@ -95,7 +95,7 @@ angular
         return $sanitize(translationId);
     })
     .config((LANGUAGES, $translateProvider, constants) => {
-        let defaultLanguage = _.get(_.find(LANGUAGES, { "default": true }), "value", "fr_FR");
+        let defaultLanguage = constants.DEFAULT_LANGUAGE;
 
         // if there is a stored language value, be sure it's a valid one
         if (localStorage["univers-selected-language"] && _.find(LANGUAGES, { value: localStorage["univers-selected-language"] })) {
@@ -114,7 +114,7 @@ angular
 
         $translateProvider.preferredLanguage(defaultLanguage);
         $translateProvider.use(defaultLanguage);
-        $translateProvider.fallbackLanguage(_.get(_.find(LANGUAGES, { fallback: true }), "value", "fr_FR"));
+        $translateProvider.fallbackLanguage(constants.FALLBACK_LANGUAGE);
     })
     .config(($transitionsProvider, $httpProvider) => {
         $httpProvider.interceptors.push("translateInterceptor");
