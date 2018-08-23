@@ -8,6 +8,7 @@ angular.module("App").controller("ServerFirewallAsaEnableCtrl", ($scope, $stateP
             },
             (data) => {
                 $scope.resetAction();
+                data.type = "ERROR";
                 $scope.setMessage($translate.instant("server_configuration_firewall_asa_enable_step1_loading_error"), data);
             }
         );
@@ -17,9 +18,11 @@ angular.module("App").controller("ServerFirewallAsaEnableCtrl", ($scope, $stateP
         $scope.resetAction();
         ServerFirewallAsa.changeFirewallState($stateParams.productId, true).then(
             (data) => {
+                data.type = "INFO";
                 $scope.setMessage($translate.instant("server_configuration_firewall_asa_enable_success"), data);
             },
             (data) => {
+                data.type = "ERROR";
                 $scope.setMessage($translate.instant("server_configuration_firewall_asa_enable_fail"), data);
             }
         );

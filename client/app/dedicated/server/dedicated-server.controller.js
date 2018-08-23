@@ -56,6 +56,7 @@ angular.module("App").controller("ServerCtrl", (NO_AUTORENEW_COUNTRIES, WEATHERM
     });
 
     $scope.setMessage = (message, data) => {
+
         let messageToSend = message;
         let i = 0;
         $scope.alertType = "";
@@ -240,6 +241,7 @@ angular.module("App").controller("ServerCtrl", (NO_AUTORENEW_COUNTRIES, WEATHERM
             .catch((data) => {
                 $scope.loadingServerInformations = false;
                 $scope.loadingServerError = true;
+                data.type = "ERROR";
                 $scope.setMessage($translate.instant("server_dashboard_loading_error"), data);
             });
     }
@@ -256,6 +258,7 @@ angular.module("App").controller("ServerCtrl", (NO_AUTORENEW_COUNTRIES, WEATHERM
                 };
             },
             (err) => {
+                err.data.type = "ERROR";
                 $scope.setMessage($translate.instant("server_dashboard_loading_error"), err.data);
             }
         );
@@ -315,6 +318,7 @@ angular.module("App").controller("ServerCtrl", (NO_AUTORENEW_COUNTRIES, WEATHERM
             (data) => {
                 $scope.disable.reboot = false;
                 $scope.$broadcast("dedicated.informations.reboot.done");
+                data.type = "ERROR";
                 $scope.setMessage($translate.instant("server_configuration_reboot_fail_task"), data);
             }
         );
@@ -379,6 +383,7 @@ angular.module("App").controller("ServerCtrl", (NO_AUTORENEW_COUNTRIES, WEATHERM
             })
             .catch((data) => {
                 $scope.disable.install = false;
+                data.type = "ERROR";
                 $scope.setMessage($translate.instant("server_configuration_installation_fail_task", { t0: $scope.server.name }), data);
             });
     }

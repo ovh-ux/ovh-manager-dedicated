@@ -103,6 +103,7 @@ angular.module("controllers").controller("controllers.Server.Stats", (
             .catch((data) => {
                 $scope.serverStatsLoad.error = true;
                 if (nameServer && data) {
+                    data.data.type = "ERROR";
                     $scope.setMessage($translate.instant("server_tab_STATS_loading_fail"), data.data);
                 }
             })
@@ -117,6 +118,7 @@ angular.module("controllers").controller("controllers.Server.Stats", (
                 $scope.setMessage($translate.instant("server_remove_hack_success"));
             },
             (data) => {
+                data.type = "ERROR";
                 $scope.setMessage($translate.instant("server_remove_hack_fail"), data.data);
             }
         );
@@ -140,6 +142,7 @@ angular.module("controllers").controller("controllers.Server.Stats", (
             .catch((data) => {
                 $scope.serverStatsLoad.error = true;
                 if (data) {
+                    data.type = "ERROR";
                     $scope.setMessage($translate.instant("server_tab_STATS_loading_fail"), data.data);
                 }
             })
