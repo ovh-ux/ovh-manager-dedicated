@@ -317,6 +317,8 @@ var constants = {
             { value : "fi_FI", name : "Suomi" },
             { value : "cs_CZ", name : "Česky" }
         ],
+        DEFAULT_LANGUAGE: "fr_FR",
+        FALLBACK_LANGUAGE: "fr_FR",
         website_url  : {
             new_nic : {
                 en_AU : "http://www.ovh.com/au/support/new_nic.xml",
@@ -710,6 +712,8 @@ var constants = {
             { value : "fi_FI", name : "Suomi" },
             { value : "cs_CZ", name : "Česky" }
         ],
+        DEFAULT_LANGUAGE: "fr_CA",
+        FALLBACK_LANGUAGE: "fr_FR",
         website_url  : {
             new_nic : {
                 en_AU : "http://www.ovh.com/ca/en/support/new_nic.xml",
@@ -845,6 +849,8 @@ var constants = {
             { value : "fi_FI", name : "Suomi" },
             { value : "cs_CZ", name : "Česky" }
         ],
+        DEFAULT_LANGUAGE: "en_US",
+        FALLBACK_LANGUAGE: "en_GB",
         website_url  : {
             new_nic : {
                 en_AU : "http://www.ovh.com/au/support/new_nic.xml",
