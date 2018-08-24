@@ -567,7 +567,9 @@ module.exports = function (grunt) {
                         aapiHeaderName: "X-Ovh-Session",
                         vrackUrl: constants[target].vrackUrl,         // needed for US - add into constants.config.js for other zone if needed
                         MANAGER_URLS: constants[target].MANAGER_URLS,
-                        REDIRECT_URLS: constants[target].REDIRECT_URLS
+                        REDIRECT_URLS: constants[target].REDIRECT_URLS,
+                        DEFAULT_LANGUAGE: constants[target].DEFAULT_LANGUAGE,
+                        FALLBACK_LANGUAGE: constants[target].FALLBACK_LANGUAGE
                     },
                     LANGUAGES: constants[target].LANGUAGES,
                     website_url: constants[target].website_url
@@ -715,7 +717,9 @@ module.exports = function (grunt) {
                         aapiHeaderName: "X-Ovh-2api-Session",
                         vrackUrl: constants[target].vrackUrl,         // needed for US - add into constants.config.js for other zone if needed
                         MANAGER_URLS: constants[target].MANAGER_URLS,
-                        REDIRECT_URLS: constants[target].REDIRECT_URLS
+                        REDIRECT_URLS: constants[target].REDIRECT_URLS,
+                        DEFAULT_LANGUAGE: constants[target].DEFAULT_LANGUAGE,
+                        FALLBACK_LANGUAGE: constants[target].FALLBACK_LANGUAGE
                     },
                     LANGUAGES: constants[target].LANGUAGES,
                     website_url: constants[target].website_url
