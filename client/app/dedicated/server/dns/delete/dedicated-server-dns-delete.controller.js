@@ -8,11 +8,12 @@ angular.module("App").controller("DeleteSecondaryDnsCtrl", ($scope, $stateParams
             () => {
                 $scope.loadingDelete = false;
                 $scope.resetAction();
-                $scope.setMessage($translate.instant("server_configuration_delete_secondary_dns_success", { t0: $scope.secdns.domain }));
+                $scope.setMessage($translate.instant("server_configuration_delete_secondary_dns_success", { t0: $scope.secdns.domain }), true);
             },
             (err) => {
                 $scope.loadingDelete = false;
                 $scope.resetAction();
+                err.type = "ERROR";
                 $scope.setMessage($translate.instant("server_configuration_delete_secondary_dns_fail", { t0: $scope.secdns.domain }), err);
             }
         );

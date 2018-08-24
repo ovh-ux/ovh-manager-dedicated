@@ -8,6 +8,7 @@ angular.module("App").controller("ServerFirewallAsaDisableCtrl", ($scope, $state
             },
             (data) => {
                 $scope.resetAction();
+                data.type = "ERROR";
                 $scope.setMessage($translate.instant("server_configuration_firewall_asa_disable_step1_loading_error"), data);
             }
         );
