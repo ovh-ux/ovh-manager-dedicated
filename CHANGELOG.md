@@ -1,3 +1,13 @@
+<a name="10.0.10"></a>
+## [10.0.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.9...v10.0.10) (2018-08-24)
+
+
+### Bug Fixes
+
+* **language:** default and fallback languages ([#602](https://github.com/ovh-ux/ovh-manager-dedicated/issues/602)) ([4f8c3d2](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4f8c3d2))
+
+
+
 <a name="10.0.9"></a>
 ## [10.0.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.8...v10.0.9) (2018-08-23)
 
