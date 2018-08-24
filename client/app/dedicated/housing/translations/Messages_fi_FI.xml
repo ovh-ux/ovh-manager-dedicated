@@ -40,32 +40,32 @@
    <translation id="housing_configuration_reboot_title_button" qtlid="33538">Uudelleenkäynnistä</translation>
    <translation id="housing_configuration_renew_title" qtlid="168172">Uusinta</translation>
 
-   <translation id="housing_configuration_ftpbackup_fail" qtlid="184256">Tapahtui virhe ladattaessa varmuuskopiotilan tietoja</translation>
-   <translation id="housing_configuration_ftpbackup_none" qtlid="184269">Varmuuskopiotilaa ei ole konfiguroitu.</translation>
+   <translation id="housing_configuration_ftpbackup_fail" qtlid="184256">Tapahtui virhe ladattaessa Backup Storagen tietoja</translation>
+   <translation id="housing_configuration_ftpbackup_none" qtlid="184269">Backup Storagea ei ole konfiguroitu.</translation>
    <translation id="housing_configuration_ftpbackup_login" qtlid="46792">Käyttäjätunnus</translation>
    <translation id="housing_configuration_ftpbackup_name" qtlid="3818">Nimi</translation>
    <translation id="housing_configuration_ftpbackup_usage" qtlid="30382">Käyttö</translation>
-   <translation id="housing_configuration_ftpbackup_delete" qtlid="184282">Poista varmuuskopiotila</translation>
+   <translation id="housing_configuration_ftpbackup_delete" qtlid="184282">Poista Backup Storage</translation>
    <translation id="housing_configuration_ftpbackup_forgot_password" qtlid="123355">Unohtuiko salasana?</translation>
-   <translation id="housing_configuration_ftpbackup_activate" qtlid="184295">Aktivoi varmuuskopiotila</translation>
-   <translation id="housing_configuration_ftpbackup_activate_success" qtlid="184308">Varmuuskopiotila on aktiivinen hetken kuluttua.</translation>
-   <translation id="housing_configuration_ftpbackup_activate_successfull" qtlid="184321">Varmuuskopiotila on aktivoitu.</translation>
-   <translation id="housing_configuration_ftpbackup_activate_failure" qtlid="184334">Tapahtui virhe varmuuskopiotilaa aktivoitaessa.</translation>
-   <translation id="housing_configuration_ftpbackup_activate_question" qtlid="184347">Oletko varma, että haluat aktivoida varmuuskopiotilan tälle palvelimelle?</translation>
-   <translation id="housing_configuration_ftpbackup_delete_success" qtlid="184360">Varmuuskopiotila poistetaan hetken kuluttua.</translation>
+   <translation id="housing_configuration_ftpbackup_activate" qtlid="184295">Aktivoi Backup Storage</translation>
+   <translation id="housing_configuration_ftpbackup_activate_success" qtlid="184308">Backup storage on aktiivinen hetken kuluttua.</translation>
+   <translation id="housing_configuration_ftpbackup_activate_successfull" qtlid="184321">Backup storage on aktivoitu.</translation>
+   <translation id="housing_configuration_ftpbackup_activate_failure" qtlid="184334">Tapahtui virhe  backup storage aktivoitaessa.</translation>
+   <translation id="housing_configuration_ftpbackup_activate_question" qtlid="184347">Oletko varma, että haluat aktivoida backup storage -palvelun tälle palvelimelle?</translation>
+   <translation id="housing_configuration_ftpbackup_delete_success" qtlid="184360">Backup Storage poistetaan hetken kuluttua.</translation>
    <translation id="housing_configuration_ftpbackup_delete_successfull" qtlid="184373">Varmuuskopiotila on poistettu.</translation>
-   <translation id="housing_configuration_ftpbackup_delete_failure" qtlid="184386">Tapahtui virhe poistettaessa varmuuskopiotilaa.</translation>
-   <translation id="housing_configuration_ftpbackup_delete_question" qtlid="184399">Oletko varma, että haluat poistaa varmuuskopiotilan {0}?</translation>
+   <translation id="housing_configuration_ftpbackup_delete_failure" qtlid="184386">Tapahtui virhe poistettaessa backup storage.</translation>
+   <translation id="housing_configuration_ftpbackup_delete_question" qtlid="184399">Oletko varma, että haluat poistaa backup storagen {0}?</translation>
    <translation id="housing_configuration_ftpbackup_delete_question2" qtlid="164389">Huomaa että tämä toiminto on peruuttamaton</translation>
    <translation id="housing_configuration_ftpbackup_lost_password" qtlid="149241">Uusi salasana</translation>
    <translation id="housing_configuration_ftpbackup_lost_password_success" qtlid="149254">Uusi salasana lähetetään palvelimen admin-yhteyshenkilölle</translation>
    <translation id="housing_configuration_ftpbackup_lost_password_successfull" qtlid="164402">Uusi salasana lähetetään palvelimen admin-asiakastunnukselle.</translation>
    <translation id="housing_configuration_ftpbackup_lost_password_failure" qtlid="149267">Tapahtui virhe nollattaessa salasanaa</translation>
-   <translation id="housing_configuration_ftpbackup_lost_password_question" qtlid="184412">Oletko varma, että haluat nollata varmuuskopiotilan {0} salasanan?</translation>
+   <translation id="housing_configuration_ftpbackup_lost_password_question" qtlid="184412">Oletko varma, että haluat nollata backup storagen {0} salasanan?</translation>
 
-   <translation id="housing_configuration_ftpbackup_order_title" qtlid="184425">Varmuuskopiotilan levytilan tilaus</translation>
+   <translation id="housing_configuration_ftpbackup_order_title" qtlid="184425">Tilaa backup storagen levytilaa</translation>
    <translation id="housing_configuration_ftpbackup_order_load_failure" qtlid="180486">Tapahtui virhe haettaessa tietoa saatavilla olevista tallennustilapalveluista</translation>
-   <translation id="housing_configuration_ftpbackup_order_load_detail_failure" qtlid="180499">Tapahtui virhe haettaessa tallennustilatietoa</translation>
+   <translation id="housing_configuration_ftpbackup_order_load_detail_failure" qtlid="180499">Tapahtui virhe haettaessa tallennustilatilauksen tietoja</translation>
    <translation id="housing_configuration_ftpbackup_order_load_order_success" qtlid="183801">Datasäilön tilaus <a href='{0}' target='_blank'>{1}</a> on rekisteröity.</translation>
    <translation id="housing_configuration_ftpbackup_order_load_order_failure" qtlid="180525">Tapahtui virhe tallennustilatilauksen aikana</translation>
    <translation id="housing_configuration_ftpbackup_order_type_name" qtlid="4334">Kapasiteetti</translation>
@@ -78,17 +78,17 @@
    <translation id="housing_configuration_ftpbackup_order_contracts" qtlid="145371">Vahvistan, että olen lukenut ja ymmärtänyt seuraavat ehdot:</translation>
    <translation id="housing_configuration_ftpbackup_order_info" qtlid="180551">Valitse palvelimellesi tilattavan tallennustilan kapasiteetti. Huomaa, että kapasiteetin vähennys ei ole mahdollista.</translation>
 
-   <translation id="housing_configuration_ftpbackup_access_order" qtlid="180564">Tallennustilan tilaus</translation>
+   <translation id="housing_configuration_ftpbackup_access_order" qtlid="180564">Tilaa levytilaa</translation>
    <translation id="housing_configuration_ftpbackup_access_order_right" qtlid="180577">Sinulla ei ole riittäviä oikeuksia tilausta varten</translation>
    <translation id="housing_configuration_ftpbackup_access_add" qtlid="153857">Lisää pääsyoikeus</translation>
    <translation id="housing_configuration_ftpbackup_access_delete" qtlid="180590">Pääsyoikeuden poisto</translation>
    <translation id="housing_configuration_ftpbackup_access_delete_question" qtlid="183814">Oletko varma, että haluat poistaa pääsyoikeuden IP-osoiteavaruudelta <b>{0}</b>?</translation>
-   <translation id="housing_configuration_ftpbackup_access_delete_success" qtlid="183827">Varmuuskopiotilan pääsyoikeuden poisto IP-osoiteavaruudelta <b>{0}</b> a on rekisteröity, mutta toimenpide voi kestää muutaman minuutin</translation>
+   <translation id="housing_configuration_ftpbackup_access_delete_success" qtlid="183827">Backup Storagea koskevan pääsyoikeuden poisto IP-osoiteavaruudelta <b>{0}</b> a on rekisteröity, mutta toimenpide voi kestää muutaman minuutin</translation>
    <translation id="housing_configuration_ftpbackup_access_delete_failure" qtlid="183840">Tapahtui virhe poistettaessa varmuuskopiotilan pääsyoikeutta IP-osoiteavaruudelta <b>{0}</b></translation>
    <translation id="housing_configuration_ftpbackup_access_add_ip_failure" qtlid="180642">Tapahtui virhe haettaessa sallittujen osoiteavaruuksien listaa</translation>
-   <translation id="housing_configuration_ftpbackup_access_add_success" qtlid="184438">Pääsyoikeuden lisäys on rekisteröity, mutta muutoksen voimaan astuminen kestää muutaman minuutin.</translation>
-   <translation id="housing_configuration_ftpbackup_access_add_partial" qtlid="184451">Pyyntö varmuuskopiotilan pääsyoikeuksien lisäykselle on rekisteröity, mutta muutoksen voimaan astuminen kestää muutaman minuutin. Joitakin oikeuksia lisättäessä tuli virhe.</translation>
-   <translation id="housing_configuration_ftpbackup_access_add_failure" qtlid="184464">Tapahtui virhe pyydettäessä varmuuskopiotilan pääsyoikeuden lisäystä</translation>
+   <translation id="housing_configuration_ftpbackup_access_add_success" qtlid="184438">Pääsyoikeuden säännön lisäys on rekisteröity, mutta muutoksen voimaan astuminen kestää muutaman minuutin.</translation>
+   <translation id="housing_configuration_ftpbackup_access_add_partial" qtlid="184451">Säännön lisäyspyyntö backup storagen pääsyoikeuksiin on rekisteröity, mutta muutoksen voimaan astuminen kestää muutaman minuutin. Joidenkin sääntöjen lisäyksessä tapahtui virhe.</translation>
+   <translation id="housing_configuration_ftpbackup_access_add_failure" qtlid="184464">Tapahtui virhe pyydettäessä säännön lisäämistä backup storagen pääsyoikeuteen</translation>
 
    <translation id="housing_configuration_ftpbackup_table_ip" qtlid="186492">IP</translation>
    <translation id="housing_configuration_ftpbackup_table_cifs" qtlid="176740">CIFS</translation>
@@ -97,7 +97,7 @@
    <translation id="housing_configuration_ftpbackup_table_status" qtlid="26443">Tila</translation>
    <translation id="housing_configuration_ftpbackup_table_ip_disable" qtlid="26383">Käynnissä</translation>
    <translation id="housing_configuration_ftpbackup_table_ip_enable" qtlid="30250">Aktivoitu</translation>
-   <translation id="housing_configuration_ftpbackup_table_ip_edit" qtlid="180694">Pääsyoikeuden muokkaus</translation>
+   <translation id="housing_configuration_ftpbackup_table_ip_edit" qtlid="180694">Muokkaa pääsyoikeutta</translation>
    <translation id="housing_configuration_ftpbackup_table_ip_delete" qtlid="180707">Poista pääsyoikeus</translation>
    <translation id="housing_configuration_ftpbackup_table_ip_modify" qtlid="180720">Vahvista muutos</translation>
    <translation id="housing_configuration_ftpbackup_table_ip_cancel" qtlid="180733">Peruuta muutos</translation>
@@ -110,7 +110,7 @@
    <translation id="housing_configuration_ftpbackup_add" qtlid="180772">Pääsyoikeuden lisäys</translation>
    <translation id="housing_configuration_ftpbackup_add_info" qtlid="180785">Valitse IP-osoiteavaruudet, joille haluat sallia pääsyoikeuden.</translation>
    <translation id="housing_configuration_ftpbackup_add_info1" qtlid="180798">Osoiteavaruuksien listaus:</translation>
-   <translation id="housing_configuration_ftpbackup_add_info2" qtlid="184477">Olet lisäämässä pääsyoikeutta varmuuskopiotilalle jokaiselle osoiteavaruudelle seuraavasta listasta:</translation>
+   <translation id="housing_configuration_ftpbackup_add_info2" qtlid="184477">Olet lisäämässä sääntöä backup storagesi pääsyoikeuteen seuraavan listan jokaiselle osoiteavaruudelle:</translation>
    <translation id="housing_configuration_ftpbackup_add_info3" qtlid="180824">Sinun täytyy sallia oletusprotokolla. Yhdistämistä ilman sääntöjä olevista IP-osoiteavaruuksista ei hyväksytä.</translation>
    <translation id="housing_configuration_ftpbackup_add_info4" qtlid="180837">Sovellettavat oikeudet:</translation>
    <translation id="housing_configuration_ftpbackup_add_allow" qtlid="141795">Valtuuta</translation>
@@ -123,23 +123,23 @@
    <translation id="housing_configuration_task_function" qtlid="61872">Tehtävä</translation>
    <translation id="housing_configuration_task_comment" qtlid="233531">Tekniset tiedot</translation>
    <translation id="housing_configuration_task_status" qtlid="26443">Tila</translation>
-   <translation id="housing_configuration_task_CHANGE_PASSWORD_BACKUP_FTP" qtlid="184490">Varmuuskopiotilan salasanan vaihto</translation>
-   <translation id="housing_configuration_task_CREATE_BACKUP_FTP" qtlid="184503">Varmuuskopiotilan luonti</translation>
+   <translation id="housing_configuration_task_CHANGE_PASSWORD_BACKUP_FTP" qtlid="184490">Backup storagen salasanan vaihto</translation>
+   <translation id="housing_configuration_task_CREATE_BACKUP_FTP" qtlid="184503">Backup storagen luonti</translation>
    <translation id="housing_configuration_task_CREATE_PRIVATE_NETWORK" qtlid="164454">Yksityisverkon luonti</translation>
    <translation id="housing_configuration_task_DISABLE_FIREWALL" qtlid="164467">Palomuurin deaktivointi</translation>
    <translation id="housing_configuration_task_ENABLE_FIREWALL" qtlid="164480">Palomuurin aktivointi</translation>
    <translation id="housing_configuration_task_HARD_REBOOT" qtlid="26287">Uudelleenkäynnistys</translation>
    <translation id="housing_configuration_task_MOVE_FLOATING_IP" qtlid="164493">FailOver-IP-osoitteen siirto</translation>
    <translation id="housing_configuration_task_REINSTALL_SERVER" qtlid="90637">Palvelimen uudelleenasennus</translation>
-   <translation id="housing_configuration_task_REMOVE_BACKUP_FTP" qtlid="184516">Varmuuskopiotilan poisto</translation>
+   <translation id="housing_configuration_task_REMOVE_BACKUP_FTP" qtlid="184516">Bakcup storagen poisto</translation>
    <translation id="housing_configuration_task_REQUEST_ACCESS_IPMI" qtlid="164519">IPMI-yhteyden aktivointi</translation>
    <translation id="housing_configuration_task_RESET_IPMI" qtlid="164532">IPMO-rajapinnan nollaus</translation>
    <translation id="housing_configuration_task_RESET_IPMI_SESSION" qtlid="164545">IPMI-istunnon nollaus</translation>
    <translation id="housing_configuration_task_TEST_IPM_IHTTP" qtlid="164558">HTTP-testi (IPMI)</translation>
    <translation id="housing_configuration_task_TEST_IPM_IPASSWORD" qtlid="164571">Salasanatesti (IPMI)</translation>
    <translation id="housing_configuration_task_TEST_IPM_IPING" qtlid="164584">Ping-testi (IPMI)</translation>
-   <translation id="housing_configuration_task_APPLY_BACKUP_FTP_ACLS" qtlid="181110">Varmuuskopiotilan muokkaus</translation>
-   <translation id="housing_configuration_task_MIGRATE_BACKUP_FTP" qtlid="181123">Varmuuskopiotilan migraatio</translation>
+   <translation id="housing_configuration_task_APPLY_BACKUP_FTP_ACLS" qtlid="181110">Backup Storagen muokkaus</translation>
+   <translation id="housing_configuration_task_MIGRATE_BACKUP_FTP" qtlid="181123">Backup Storagen migraatio</translation>
    <translation id="housing_configuration_task_VIRTUAL_MAC_ADD" qtlid="164597">Lisää vMAC</translation>
    <translation id="housing_configuration_task_ADD_VIRTUAL_MAC" qtlid="164597">Lisää vMAC</translation>
    <translation id="housing_configuration_task_VIRTUAL_MAC_DELETE" qtlid="164610">Poista vMAC</translation>

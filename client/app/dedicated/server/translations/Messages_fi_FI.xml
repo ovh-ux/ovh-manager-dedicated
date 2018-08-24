@@ -207,8 +207,8 @@
    <translation id="server_tab_dns" qtlid="168250">Toissijainen nimipalvelin</translation>
    <translation id="server_tab_SSH" qtlid="104830">SSH-avaimet</translation>
    <translation id="server_tab_LICENSE" qtlid="113658">Lisenssit</translation>
-   <translation id="server_tab_cloud_backup" qtlid="180460">Varmuuskopiotila</translation>
-   <translation id="server_tab_ftp_backup" qtlid="180460">Varmuuskopiotila</translation>
+   <translation id="server_tab_cloud_backup" qtlid="180460">Backup Storage</translation>
+   <translation id="server_tab_ftp_backup" qtlid="180460">Backup Storage</translation>
    <translation id="server_tab_task" qtlid="96716">Tehtävät</translation>
    <translation id="server_tab_ipmi" qtlid="164298">IPMI</translation>
    <translation id="server_tab_dashboard" qtlid="204246">Palvelimen tila</translation>
@@ -314,7 +314,7 @@
    <translation id="server_configuration_netboot_option_rescue" qtlid="102873">Uudelleenkäynnistä rescue-tilassa</translation>
    <translation id="server_configuration_netboot_option_network" qtlid="142731">Boottaa verkkotilassa</translation>
    <translation id="server_configuration_netboot_configuration" qtlid="142744">Konfiguraatio:</translation>
-   <translation id="server_configuration_netboot_rescue_choice" qtlid="141015">Pelastustila saatavilla:</translation>
+   <translation id="server_configuration_netboot_rescue_choice" qtlid="141015">Rescue-tila saatavilla:</translation>
    <translation id="server_configuration_netboot_rescue_mail" qtlid="262986">Tilan käyttäjätunnukset lähetetään osoitteeseen:</translation>
    <translation id="server_configuration_netboot_rescue_mail_invalid" qtlid="262999">Kelpaamaton</translation>
    <translation id="server_configuration_netboot_kernel_choice" qtlid="142757">Saatavilla oleva kernel:</translation>
@@ -400,33 +400,33 @@
    <translation id="server_configuration_add_secondary_dns_fail" qtlid="143056">Tapahtui virhe lisättäessä toissijaista nimipalvelinta '{0}'.</translation>
    <translation id="server_configuration_ips_cannotfetch" qtlid="143069">Palvelimen IP-osoiteluetteloa ei voi hakea</translation>
    <translation id="server_configuration_no_secondary_dns" qtlid="143082">Toissijaista nimipalvelinta ei ole konfiguroitu.</translation>
-   <translation id="server_configuration_ftpbackup_fail" qtlid="184256">Tapahtui virhe ladattaessa varmuuskopiotilan tietoja</translation>
-   <translation id="server_configuration_ftpbackup_none" qtlid="184269">Varmuuskopiotilaa ei ole konfiguroitu.</translation>
+   <translation id="server_configuration_ftpbackup_fail" qtlid="184256">Tapahtui virhe ladattaessa Backup Storagen tietoja</translation>
+   <translation id="server_configuration_ftpbackup_none" qtlid="184269">Backup Storagea ei ole konfiguroitu.</translation>
    <translation id="server_configuration_ftpbackup_not_available" qtlid="436481">Backup storage ei ole käytettävissä tällä hetkellä. </translation>
    <translation id="server_configuration_ftpbackup_login" qtlid="46792">Käyttäjätunnus</translation>
    <translation id="server_configuration_ftpbackup_name" qtlid="181708">Nimi</translation>
    <translation id="server_configuration_ftpbackup_usage" qtlid="30382">Käyttö</translation>
-   <translation id="server_configuration_ftpbackup_delete" qtlid="184282">Poista varmuuskopiotila</translation>
+   <translation id="server_configuration_ftpbackup_delete" qtlid="184282">Poista Backup Storage</translation>
    <translation id="server_configuration_ftpbackup_forgot_password" qtlid="149150">Unohditko salasanasi?</translation>
-   <translation id="server_configuration_ftpbackup_activate" qtlid="184295">Aktivoi varmuuskopiotila</translation>
-   <translation id="server_configuration_ftpbackup_activate_success" qtlid="184308">Varmuuskopiotila on aktiivinen hetken kuluttua.</translation>
-   <translation id="server_configuration_ftpbackup_activate_successfull" qtlid="184321">Varmuuskopiotila on aktivoitu.</translation>
-   <translation id="server_configuration_ftpbackup_activate_failure" qtlid="184334">Tapahtui virhe varmuuskopiotilaa aktivoitaessa.</translation>
-   <translation id="server_configuration_ftpbackup_activate_question" qtlid="184347">Oletko varma, että haluat aktivoida varmuuskopiotilan tälle palvelimelle?</translation>
-   <translation id="server_configuration_ftpbackup_delete_success" qtlid="184360">Varmuuskopiotila poistetaan hetken kuluttua.</translation>
+   <translation id="server_configuration_ftpbackup_activate" qtlid="184295">Aktivoi Backup Storage</translation>
+   <translation id="server_configuration_ftpbackup_activate_success" qtlid="184308">Backup storage on aktiivinen hetken kuluttua.</translation>
+   <translation id="server_configuration_ftpbackup_activate_successfull" qtlid="184321">Backup storage on aktivoitu.</translation>
+   <translation id="server_configuration_ftpbackup_activate_failure" qtlid="184334">Tapahtui virhe  backup storage aktivoitaessa.</translation>
+   <translation id="server_configuration_ftpbackup_activate_question" qtlid="184347">Oletko varma, että haluat aktivoida backup storage -palvelun tälle palvelimelle?</translation>
+   <translation id="server_configuration_ftpbackup_delete_success" qtlid="184360">Backup Storage poistetaan hetken kuluttua.</translation>
    <translation id="server_configuration_ftpbackup_delete_successfull" qtlid="184373">Varmuuskopiotila on poistettu.</translation>
-   <translation id="server_configuration_ftpbackup_delete_failure" qtlid="184386">Tapahtui virhe poistettaessa varmuuskopiotilaa.</translation>
-   <translation id="server_configuration_ftpbackup_delete_question" qtlid="184399">Oletko varma, että haluat poistaa varmuuskopiotilan {0}?</translation>
+   <translation id="server_configuration_ftpbackup_delete_failure" qtlid="184386">Tapahtui virhe poistettaessa backup storage.</translation>
+   <translation id="server_configuration_ftpbackup_delete_question" qtlid="184399">Oletko varma, että haluat poistaa backup storagen {0}?</translation>
    <translation id="server_configuration_ftpbackup_delete_question2" qtlid="164389">Huomaa että tämä toiminto on peruuttamaton</translation>
    <translation id="server_configuration_ftpbackup_lost_password" qtlid="149241">Uusi salasana</translation>
    <translation id="server_configuration_ftpbackup_lost_password_success" qtlid="149254">Uusi salasana lähetetään palvelimen admin-yhteyshenkilölle</translation>
    <translation id="server_configuration_ftpbackup_lost_password_successfull" qtlid="164402">Uusi salasana lähetetään palvelimen admin-asiakastunnukselle.</translation>
    <translation id="server_configuration_ftpbackup_lost_password_failure" qtlid="149267">Tapahtui virhe nollattaessa salasanaa</translation>
-   <translation id="server_configuration_ftpbackup_lost_password_question" qtlid="184412">Oletko varma, että haluat nollata varmuuskopiotilan {0} salasanan?</translation>
+   <translation id="server_configuration_ftpbackup_lost_password_question" qtlid="184412">Oletko varma, että haluat nollata backup storagen {0} salasanan?</translation>
 
-   <translation id="server_configuration_ftpbackup_order_title" qtlid="184425">Varmuuskopiotilan levytilan tilaus</translation>
+   <translation id="server_configuration_ftpbackup_order_title" qtlid="184425">Tilaa backup storagen levytilaa</translation>
    <translation id="server_configuration_ftpbackup_order_load_failure" qtlid="180486">Tapahtui virhe haettaessa tietoa saatavilla olevista tallennustilapalveluista</translation>
-   <translation id="server_configuration_ftpbackup_order_load_detail_failure" qtlid="180499">Tapahtui virhe haettaessa tallennustilatietoa</translation>
+   <translation id="server_configuration_ftpbackup_order_load_detail_failure" qtlid="180499">Tapahtui virhe haettaessa tallennustilatilauksen tietoja</translation>
    <translation id="server_configuration_ftpbackup_order_load_order_success" qtlid="183801">Datasäilön tilaus <a href='{0}' target='_blank'>{1}</a> on rekisteröity.</translation>
    <translation id="server_configuration_ftpbackup_order_load_order_failure" qtlid="180525">Tapahtui virhe tallennustilatilauksen aikana</translation>
    <translation id="server_configuration_ftpbackup_order_type_name" qtlid="4334">Kapasiteetti</translation>
@@ -439,19 +439,19 @@
    <translation id="server_configuration_ftpbackup_order_contracts" qtlid="145371">Vahvistan, että olen lukenut ja ymmärtänyt seuraavat ehdot:</translation>
    <translation id="server_configuration_ftpbackup_order_info" qtlid="180551">Valitse palvelimellesi tilattavan tallennustilan kapasiteetti. Huomaa, että kapasiteetin vähennys ei ole mahdollista.</translation>
 
-   <translation id="server_configuration_ftpbackup_access_order" qtlid="180564">Tallennustilan tilaus</translation>
+   <translation id="server_configuration_ftpbackup_access_order" qtlid="180564">Tilaa levytilaa</translation>
    <translation id="server_configuration_ftpbackup_access_order_right" qtlid="180577">Sinulla ei ole riittäviä oikeuksia tilausta varten</translation>
    <translation id="server_configuration_ftpbackup_access_add" qtlid="153857">Lisää pääsyoikeus</translation>
-   <translation id="server_configuration_ftpbackup_access_edit" qtlid="180694">Pääsyoikeuden muokkaus</translation>
+   <translation id="server_configuration_ftpbackup_access_edit" qtlid="180694">Muokkaa pääsyoikeutta</translation>
    <translation id="server_configuration_ftpbackup_access_edit_info" qtlid="486594">Muokkaa IP-lohkon <strong>{0}</strong> pääsyoikeuksia</translation>
    <translation id="server_configuration_ftpbackup_access_delete" qtlid="180590">Pääsyoikeuden poisto</translation>
    <translation id="server_configuration_ftpbackup_access_delete_question" qtlid="183814">Oletko varma, että haluat poistaa pääsyoikeuden IP-osoiteavaruudelta <b>{0}</b>?</translation>
-   <translation id="server_configuration_ftpbackup_access_delete_success" qtlid="183827">Varmuuskopiotilan pääsyoikeuden poisto IP-osoiteavaruudelta <b>{0}</b> a on rekisteröity, mutta toimenpide voi kestää muutaman minuutin</translation>
+   <translation id="server_configuration_ftpbackup_access_delete_success" qtlid="183827">Backup Storagea koskevan pääsyoikeuden poisto IP-osoiteavaruudelta <b>{0}</b> a on rekisteröity, mutta toimenpide voi kestää muutaman minuutin</translation>
    <translation id="server_configuration_ftpbackup_access_delete_failure" qtlid="183840">Tapahtui virhe poistettaessa varmuuskopiotilan pääsyoikeutta IP-osoiteavaruudelta <b>{0}</b></translation>
    <translation id="server_configuration_ftpbackup_access_add_ip_failure" qtlid="180642">Tapahtui virhe haettaessa sallittujen osoiteavaruuksien listaa</translation>
-   <translation id="server_configuration_ftpbackup_access_add_success" qtlid="184438">Pääsyoikeuden lisäys on rekisteröity, mutta muutoksen voimaan astuminen kestää muutaman minuutin.</translation>
-   <translation id="server_configuration_ftpbackup_access_add_partial" qtlid="184451">Pyyntö varmuuskopiotilan pääsyoikeuksien lisäykselle on rekisteröity, mutta muutoksen voimaan astuminen kestää muutaman minuutin. Joitakin oikeuksia lisättäessä tuli virhe.</translation>
-   <translation id="server_configuration_ftpbackup_access_add_failure" qtlid="184464">Tapahtui virhe pyydettäessä varmuuskopiotilan pääsyoikeuden lisäystä</translation>
+   <translation id="server_configuration_ftpbackup_access_add_success" qtlid="184438">Pääsyoikeuden säännön lisäys on rekisteröity, mutta muutoksen voimaan astuminen kestää muutaman minuutin.</translation>
+   <translation id="server_configuration_ftpbackup_access_add_partial" qtlid="184451">Säännön lisäyspyyntö backup storagen pääsyoikeuksiin on rekisteröity, mutta muutoksen voimaan astuminen kestää muutaman minuutin. Joidenkin sääntöjen lisäyksessä tapahtui virhe.</translation>
+   <translation id="server_configuration_ftpbackup_access_add_failure" qtlid="184464">Tapahtui virhe pyydettäessä säännön lisäämistä backup storagen pääsyoikeuteen</translation>
 
    <translation id="server_configuration_ftpbackup_table_ip" qtlid="167899">IP</translation>
    <translation id="server_configuration_ftpbackup_table_cifs" qtlid="176740">CIFS</translation>
@@ -460,7 +460,7 @@
    <translation id="server_configuration_ftpbackup_table_status" qtlid="26443">Tila</translation>
    <translation id="server_configuration_ftpbackup_table_ip_disable" qtlid="26383">Käynnissä</translation>
    <translation id="server_configuration_ftpbackup_table_ip_enable" qtlid="30250">Aktivoitu</translation>
-   <translation id="server_configuration_ftpbackup_table_ip_edit" qtlid="180694">Pääsyoikeuden muokkaus</translation>
+   <translation id="server_configuration_ftpbackup_table_ip_edit" qtlid="180694">Muokkaa pääsyoikeutta</translation>
    <translation id="server_configuration_ftpbackup_table_ip_delete" qtlid="180707">Poista pääsyoikeus</translation>
    <translation id="server_configuration_ftpbackup_table_ip_modify" qtlid="180720">Vahvista muutos</translation>
    <translation id="server_configuration_ftpbackup_table_ip_cancel" qtlid="180733">Peruuta muutos</translation>
@@ -473,7 +473,7 @@
    <translation id="server_configuration_ftpbackup_add" qtlid="180772">Pääsyoikeuden lisäys</translation>
    <translation id="server_configuration_ftpbackup_add_info" qtlid="180785">Valitse IP-osoiteavaruudet, joille haluat sallia pääsyoikeuden.</translation>
    <translation id="server_configuration_ftpbackup_add_info1" qtlid="180798">Osoiteavaruuksien listaus:</translation>
-   <translation id="server_configuration_ftpbackup_add_info2" qtlid="184477">Olet lisäämässä pääsyoikeutta varmuuskopiotilalle jokaiselle osoiteavaruudelle seuraavasta listasta:</translation>
+   <translation id="server_configuration_ftpbackup_add_info2" qtlid="184477">Olet lisäämässä sääntöä backup storagesi pääsyoikeuteen seuraavan listan jokaiselle osoiteavaruudelle:</translation>
    <translation id="server_configuration_ftpbackup_add_info3" qtlid="180824">Sinun täytyy sallia oletusprotokolla. Yhdistämistä ilman sääntöjä olevista IP-osoiteavaruuksista ei hyväksytä.</translation>
    <translation id="server_configuration_ftpbackup_add_info4" qtlid="180837">Sovellettavat oikeudet:</translation>
    <translation id="server_configuration_ftpbackup_add_allow" qtlid="141795">Valtuuta</translation>
@@ -483,7 +483,7 @@
 
    <translation id="server_configuration_cloudbackup_delete" qtlid="492502">Poista varmuuskopiotila</translation>
 
-   <translation id="server_configuration_cloudbackup_delete_success" qtlid="184360">Varmuuskopiotila poistetaan hetken kuluttua.</translation>
+   <translation id="server_configuration_cloudbackup_delete_success" qtlid="184360">Backup Storage poistetaan hetken kuluttua.</translation>
    <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="492515">Varmuuskopiotila poistettiin.</translation>
    <translation id="server_configuration_cloudbackup_delete_failure" qtlid="492528">Tapahtui virhe varmuuskopiotilaa poistettaessa.</translation>
    <translation id="server_configuration_cloudbackup_delete_question" qtlid="451872">Haluatko varmasti kytkeä Backup Storage -lisäpalvelun pois käytöstä?</translation>
@@ -499,15 +499,15 @@
    <translation id="server_configuration_cloudbackup_offer_storage_description" qtlid="451950">Hyödynnä maksutonta varmuuskopioillesi osoitettua Cloud-tallennustilaa, joka on ulkoistettu palvelimestasi. Ratkaisu on skaalautuva ja siihen voidaan yhdistää monilla viestintäprotokollilla (Rsync, SCP, sFTP).</translation>
    <translation id="server_configuration_cloudbackup_offer_storage_guide_description" qtlid="451963">Tutustu käyttöohjeeseemme</translation>
 
-   <translation id="server_configuration_cloudbackup_subscribe_title" qtlid="451976">Varmuuskopiotilan aktivointi</translation>
-   <translation id="server_configuration_cloudbackup_subscribe_description" qtlid="451989">Aktivoidaksesi Varmuuskopiotilan sinun on ensiksi liitettävä siihen uusi Cloud-projekti. Tämä tapahtuu syöttämällä &#13;
+   <translation id="server_configuration_cloudbackup_subscribe_title" qtlid="451976">Backup Storagen aktivointi</translation>
+   <translation id="server_configuration_cloudbackup_subscribe_description" qtlid="451989">Backup Storagen aktivoimiseksi sinun on ensiksi liitettävä siihen uusi Cloud-projekti. Tämä tapahtuu syöttämällä &#13;
 sen nimen tai valitsemalla jo olemassa olevan Cloud-projektin. Tämä on ilmaista ja tapahtuu välittömästi. Saat kirjautumiseen tarvittavat tunnuksesi sähköpostitse.</translation>
    <translation id="server_configuration_cloudbackup_subscribe_intput_placeholder" qtlid="255298">Projektin nimi</translation>
    <translation id="server_configuration_cloudbackup_subscribe_agreements_checkbox_text" qtlid="345221">Olen lukenut seuraavissa dokumenteissa kuvatut ehdot ja hyväksyn ne:</translation>
    <translation id="server_configuration_cloudbackup_subscribe_button_text" qtlid="452002">Aktivoi Backup Storage</translation>
    <translation id="server_configuration_cloudbackup_subscribe_success" qtlid="452015">Tallennustilasi luominen onnistui.</translation>
 
-   <translation id="server_configuration_cloudbackup_project_SUSPENDED" qtlid="452028">Varmuuskopiotilaasi liittyvä projektisi on keskeytetty.</translation>
+   <translation id="server_configuration_cloudbackup_project_SUSPENDED" qtlid="452028">Backup Storageesi liittyvä projektisi on keskeytetty.</translation>
    <translation id="server_configuration_cloudbackup_project_DELETING" qtlid="452041">Backup Storage -lisäpalvelua kytketään pois käytöstä.</translation>
    <translation id="server_configuration_cloudbackup_project_DELETED" qtlid="452054">Palvelimesi Backup Storage -lisäpalvelu on nyt kytketty pois käytöstä. PCS-säilösi on edelleen aktiivinen. Mikäli sitä ei poisteta, sinulta laskutetaan kuun lopussa sen kulutusta vastaava summa.</translation>
    <translation id="server_configuration_cloudbackup_summary_container_label" qtlid="274369">Cloud-projekti</translation>
@@ -592,23 +592,23 @@ sen nimen tai valitsemalla jo olemassa olevan Cloud-projektin. Tämä on ilmaist
    <translation id="server_configuration_task_comment" qtlid="233531">Tekniset tiedot</translation>
    <translation id="server_configuration_task_status" qtlid="26443">Tila</translation>
    <translation id="server_configuration_task_empty" qtlid="217093">Ei tehtävää</translation>
-   <translation id="server_configuration_task_CHANGE_PASSWORD_BACKUP_FTP" qtlid="184490">Varmuuskopiotilan salasanan vaihto</translation>
-   <translation id="server_configuration_task_CREATE_BACKUP_FTP" qtlid="184503">Varmuuskopiotilan luonti</translation>
+   <translation id="server_configuration_task_CHANGE_PASSWORD_BACKUP_FTP" qtlid="184490">Backup storagen salasanan vaihto</translation>
+   <translation id="server_configuration_task_CREATE_BACKUP_FTP" qtlid="184503">Backup storagen luonti</translation>
    <translation id="server_configuration_task_CREATE_PRIVATE_NETWORK" qtlid="164454">Yksityisverkon luonti</translation>
    <translation id="server_configuration_task_DISABLE_FIREWALL" qtlid="164467">Palomuurin deaktivointi</translation>
    <translation id="server_configuration_task_ENABLE_FIREWALL" qtlid="164480">Palomuurin aktivointi</translation>
    <translation id="server_configuration_task_HARD_REBOOT" qtlid="26287">Uudelleenkäynnistys</translation>
    <translation id="server_configuration_task_MOVE_FLOATING_IP" qtlid="164493">FailOver-IP-osoitteen siirto</translation>
    <translation id="server_configuration_task_REINSTALL_SERVER" qtlid="90637">Palvelimen uudelleenasennus</translation>
-   <translation id="server_configuration_task_REMOVE_BACKUP_FTP" qtlid="184516">Varmuuskopiotilan poisto</translation>
+   <translation id="server_configuration_task_REMOVE_BACKUP_FTP" qtlid="184516">Bakcup storagen poisto</translation>
    <translation id="server_configuration_task_REQUEST_ACCESS_IPMI" qtlid="164519">IPMI-yhteyden aktivointi</translation>
    <translation id="server_configuration_task_RESET_IPMI" qtlid="164532">IPMO-rajapinnan nollaus</translation>
    <translation id="server_configuration_task_RESET_IPMI_SESSION" qtlid="164545">IPMI-istunnon nollaus</translation>
    <translation id="server_configuration_task_TEST_IPM_IHTTP" qtlid="164558">HTTP-testi (IPMI)</translation>
    <translation id="server_configuration_task_TEST_IPM_IPASSWORD" qtlid="164571">Salasanatesti (IPMI)</translation>
    <translation id="server_configuration_task_TEST_IPM_IPING" qtlid="164584">Ping-testi (IPMI)</translation>
-   <translation id="server_configuration_task_APPLY_BACKUP_FTP_ACLS" qtlid="181110">Varmuuskopiotilan muokkaus</translation>
-   <translation id="server_configuration_task_MIGRATE_BACKUP_FTP" qtlid="181123">Varmuuskopiotilan migraatio</translation>
+   <translation id="server_configuration_task_APPLY_BACKUP_FTP_ACLS" qtlid="181110">Backup Storagen muokkaus</translation>
+   <translation id="server_configuration_task_MIGRATE_BACKUP_FTP" qtlid="181123">Backup Storagen migraatio</translation>
    <translation id="server_configuration_task_VIRTUAL_MAC_ADD" qtlid="164597">Lisää vMAC</translation>
    <translation id="server_configuration_task_ADD_VIRTUAL_MAC" qtlid="164597">Lisää vMAC</translation>
    <translation id="server_configuration_task_VIRTUAL_MAC_DELETE" qtlid="164610">Poista vMAC</translation>
@@ -890,8 +890,8 @@ sen nimen tai valitsemalla jo olemassa olevan Cloud-projektin. Tämä on ilmaist
    <translation id="server_configuration_installation_progress_cancel_button_cancel" qtlid="37863">Peruuta</translation>
    <translation id="server_configuration_installation_progress_installation_error" qtlid="174555">Asennuksen aikana tapahtui virhe. Asennus pysäytettiin. Sinun täytyy käynnistää palvelimen {0} asennus uudelleen: {1}</translation>
    <translation id="server_configuration_installation_progress_installation_error2" qtlid="174568">Asennuksen aikana tapahtui virhe. Asennus pysäytettiin. Voi olla, että sinun täytyy uudelleenasentaa palvelimesi {0} mikäli järjestelmä on aloittanut datan poistamisen: {1}</translation>
-   <translation id="server_order_bandwidth_title" qtlid="180876">Kaistanleveyden tilaus</translation>
-   <translation id="server_order_bandwidth_vrack_title" qtlid="180876">Kaistanleveyden tilaus</translation>
+   <translation id="server_order_bandwidth_title" qtlid="180876">Tilaa kaistanleveyttä</translation>
+   <translation id="server_order_bandwidth_vrack_title" qtlid="180876">Tilaa kaistanleveyttä</translation>
    <translation id="server_order_bandwidth_not_available" qtlid="180889">Yhtään kaistanleveyspakettia ei ole saatavilla palvelimelle {0}</translation>
    <translation id="server_order_bandwidth_help" qtlid="216859">Premium-, Platinum- ja Ultimate-tuotteet takaavat kaistanleveyden tietyllä suuremmalla tai pienemmällä maantieteellisellä alueella lähempänä loppuasiakkaita.</translation>
    <translation id="select_bandwidth_type_label" qtlid="180902">Tuotteen valinta</translation>
