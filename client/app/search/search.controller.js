@@ -69,7 +69,7 @@ angular
 
             return this.OvhApiServices.v6().query().$promise.then((results) => {
 
-                const services = results.filter((result) => _.get(result, "resource.name").indexOf(query) !== -1 || _.get(result, "resource.displayName").indexOf(query) !== -1);
+                const services = results.filter((result) => (_.get(result, "resource.name").indexOf(query) !== -1 || _.get(result, "resource.displayName").indexOf(query) !== -1) && !_.isNull(_.get(result, "route")));
 
                 const promises = _.chain(services).map((result) => {
                     const path = _.get(result, "route.path");
@@ -219,11 +219,10 @@ angular
             if (_.isEmpty(details)) {
                 const target = _.get(this.SEARCH_TARGET_URL, _.get(result, "route.path"));
                 const basePath = _.get(this.constants.MANAGER_URLS, _.get(target, "univers"));
-
-                return basePath + target.url.replace("{serviceName}", _.get(result, "resource.name"));
+                return `${basePath}${target.url.replace("{serviceName}", _.get(result, "resource.name"))}`;
             }
 
-            return this.constants.MANAGER_URLS[_.get(details, "univers")] + _.get(details, "url");
+            return `${_.get(this.constants.MANAGER_URLS, _.get(details, "univers"))}${_.get(details, "url")}`;
         }
 
         getPaginatedResults () {

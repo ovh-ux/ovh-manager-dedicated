@@ -51,11 +51,11 @@ angular
         },
         "/dedicated/server/{serviceName}": {
             univers: "dedicated",
-            url: "configuration/server/{serviceName}"
+            url: "#/configuration/server/{serviceName}"
         },
         "/dedicatedCloud/{serviceName}": {
             univers: "dedicated",
-            url: "configuration/dedicated_cloud/{serviceName}"
+            url: "#/configuration/dedicated_cloud/{serviceName}"
         },
         "/domain/{serviceName}": {
             univers: "web",
