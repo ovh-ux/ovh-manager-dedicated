@@ -1,3 +1,99 @@
+<a name="10.0.10"></a>
+## [10.0.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.9...v10.0.10) (2018-08-24)
+
+
+### Bug Fixes
+
+* **language:** default and fallback languages ([#602](https://github.com/ovh-ux/ovh-manager-dedicated/issues/602)) ([4f8c3d2](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4f8c3d2))
+
+
+
+<a name="10.0.9"></a>
+## [10.0.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.8...v10.0.9) (2018-08-23)
+
+
+### Bug Fixes
+
+* **billing.debt:** active debt with todoAmount ([bc8a2bc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bc8a2bc))
+
+
+
+<a name="10.0.8"></a>
+## [10.0.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.7...v10.0.8) (2018-08-22)
+
+
+### Bug Fixes
+
+* **billing.debt:** pay all debt response ([2f2b4e3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2f2b4e3))
+
+
+
+<a name="10.0.7"></a>
+## [10.0.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.6...v10.0.7) (2018-08-22)
+
+
+
+<a name="10.0.6"></a>
+## [10.0.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.5...v10.0.6) (2018-08-22)
+
+
+### Bug Fixes
+
+* **license:** fix license type in api route ([b007e4f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b007e4f))
+* **translation:** transation parameters sanitization ([b066320](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b066320))
+
+
+### Features
+
+* **billing.autorenew:** autoDisabled is now the same as manual ([9e13afd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9e13afd))
+
+
+
+<a name="10.0.5"></a>
+## [10.0.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.4...v10.0.5) (2018-08-22)
+
+
+### Bug Fixes
+
+* **build:** smarttage integration ([6bb1516](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6bb1516))
+
+
+
+<a name="10.0.4"></a>
+## [10.0.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.3...v10.0.4) (2018-08-21)
+
+
+### Bug Fixes
+
+* **autorenew:** allow only terminate option for oneShot private database ([6f35cdb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6f35cdb))
+* **autorenew:** clean private database termination ([4ce2f17](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4ce2f17))
+* **license agora order:** set plan code for plesk powerpack option ([b717631](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b717631))
+
+
+
+<a name="10.0.3"></a>
+## [10.0.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.2...v10.0.3) (2018-08-17)
+
+
+### Bug Fixes
+
+* **cache-rules-loading:** infinite loading ([03bef3d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/03bef3d))
+* **cache-rules-loading:** infinite loading ([9a865ee](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9a865ee))
+* **cache-rules-loading:** infinite loading ([14def55](https://github.com/ovh-ux/ovh-manager-dedicated/commit/14def55))
+* **cache-rules-loading:** infinite loading ([e66e973](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e66e973))
+
+
+
+<a name="10.0.2"></a>
+## [10.0.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.1...v10.0.2) (2018-08-17)
+
+
+### Bug Fixes
+
+* **sidebar-menu:** add cloud project url to actions menu popup ([64bba97](https://github.com/ovh-ux/ovh-manager-dedicated/commit/64bba97))
+
+
+
 <a name="10.0.1"></a>
 ## [10.0.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.0...v10.0.1) (2018-08-16)
 

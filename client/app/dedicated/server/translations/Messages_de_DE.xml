@@ -36,7 +36,7 @@
    <translation id="server_tab_IP_position" qtlid="45988">Priorität</translation>
    <translation id="server_tab_IP_position_tooltip" qtlid="140469">Das Einlesen der Regeln erfolgt sequenziell. Die Regel 0 hat die höchste Priorität.</translation>
    <translation id="server_tab_IP_rule" qtlid="54917">Regel</translation>
-   <translation id="server_tab_IP_status" qtlid="33790">Zustand</translation>
+   <translation id="server_tab_IP_status" qtlid="33790">Status</translation>
    <translation id="server_tab_IP_creation_date" qtlid="26419">Erstellungsdatum</translation>
    <translation id="server_tab_IP_action" qtlid="56105">Aktion</translation>
    <translation id="server_tab_IP_protocol" qtlid="19711">Protokoll</translation>
@@ -89,7 +89,7 @@
    <translation id="server_tab_stats_rtm_label_period" qtlid="45496">Zeitraum</translation>
 
    <translation id="server_tab_stats_rtm_raid" qtlid="110970">RAID</translation>
-   <translation id="server_tab_stats_rtm_title_raid_popover" qtlid="203999">Zustand des RAID</translation>
+   <translation id="server_tab_stats_rtm_title_raid_popover" qtlid="203999">RAID-Status</translation>
    <translation id="server_tab_stats_rtm_state_raid_details" qtlid="204012">Details anzeigen</translation>
 
    <translation id="server_tab_stats_rtm_options_label_info" qtlid="204025">Server-Informationen</translation>
@@ -97,7 +97,7 @@
    <translation id="server_tab_stats_rtm_options_label_memory" qtlid="204038">RAM Verwendung</translation>
    <translation id="server_tab_stats_rtm_options_label_swap" qtlid="204051">SWAP Verwendung</translation>
    <translation id="server_tab_stats_rtm_options_label_loadavg" qtlid="204064">Load Average</translation>
-   <translation id="server_tab_stats_rtm_options_label_disk" qtlid="204077">Zustand der Festplatten</translation>
+   <translation id="server_tab_stats_rtm_options_label_disk" qtlid="204077">Festplattenstatus</translation>
 
    <translation id="server_tab_stats_rtm_charts_period_daily" qtlid="126844">Die letzten 24 Stunden</translation>
    <translation id="server_tab_stats_rtm_charts_period_monthly" qtlid="99632">Die letzten 30 Tage</translation>
@@ -140,7 +140,7 @@
 
    <translation id="server_tab_stats_rtm_profile" qtlid="204194">Maschinenprofil</translation>
    <translation id="server_tab_stats_rtm_usage" qtlid="204207">Verwendung des Servers</translation>
-   <translation id="server_tab_stats_rtm_partions_status" qtlid="204220">Zustand der Partitionen</translation>
+   <translation id="server_tab_stats_rtm_partions_status" qtlid="204220">Partitionsstatus</translation>
    <translation id="server_tab_stats_rtm_partions_error" qtlid="204233">Beim Laden der Partitionen ist ein Fehler aufgetreten</translation>
    <translation id="server_tab_stats_rtm_partions_name" qtlid="194125">Partitionsname</translation>
    <translation id="server_tab_stats_rtm_partions_mountPoint" qtlid="110958">Mountpunkt</translation>
@@ -211,7 +211,7 @@
    <translation id="server_tab_ftp_backup" qtlid="180460">Storage Backup</translation>
    <translation id="server_tab_task" qtlid="96716">Tasks</translation>
    <translation id="server_tab_ipmi" qtlid="164298">IPMI</translation>
-   <translation id="server_tab_dashboard" qtlid="204246">Zustand des Servers</translation>
+   <translation id="server_tab_dashboard" qtlid="204246">Serverstatus</translation>
    <translation id="server_configuration_reboot_title_button" qtlid="33538">Neu starten</translation>
    <translation id="server_configuration_reboot_title" qtlid="134189">Server neu starten</translation>
    <translation id="server_configuration_reboot_step1_question" qtlid="133435">Grund für den Neustart (optional)?</translation>
@@ -547,8 +547,8 @@
    <translation id="server_tab_FIREWALLASA_dashboard_state" qtlid="8230">Status </translation>
    <translation id="server_tab_FIREWALLASA_dashboard_state_true" qtlid="30250">Aktiviert</translation>
    <translation id="server_tab_FIREWALLASA_dashboard_state_false" qtlid="24967">Deaktiviert</translation>
-   <translation id="server_configuration_firewall_asa_order_title_button" qtlid="151646">Eine Cisco ASA Firewall bestellen</translation>
-   <translation id="server_configuration_firewall_asa_order_title" qtlid="151646">Eine Cisco ASA Firewall bestellen</translation>
+   <translation id="server_configuration_firewall_asa_order_title_button" qtlid="151646">Cisco ASA Firewall bestellen</translation>
+   <translation id="server_configuration_firewall_asa_order_title" qtlid="151646">Cisco ASA Firewall bestellen</translation>
    <translation id="server_configuration_firewall_asa_ASA_5505" qtlid="151607">Cisco ASA 5505</translation>
    <translation id="server_configuration_firewall_asa_ASA_5510" qtlid="151620">Cisco ASA 5510</translation>
    <translation id="server_configuration_firewall_asa_ASA_5520" qtlid="151633">Cisco ASA 5520</translation>
@@ -573,14 +573,14 @@
    <translation id="server_configuration_firewall_asa_order_step3_explication" qtlid="167886">Es wird dann ein neuer Browser-Tab geöffnet und Sie werden automatisch auf das Verlängerungs-Interface von OVH weitergeleitet.</translation>
    <translation id="server_configuration_firewall_asa_order_step3_explication2" qtlid="132291">Bitte beachten Sie, dass es nach dem Eingang Ihrer Zahlung etwa 2 Stunden dauert, bis die Aktivierung der Option in Ihrem Dedicated Kundencenter übernommen wird.</translation>
    <translation id="server_configuration_firewall_asa_order_fail" qtlid="151737">Bei der Bestellung der Option ist ein Fehler aufgetreten.</translation>
-   <translation id="server_configuration_firewall_asa_enable_title_button" qtlid="151750">Die Cisco ASA Firewall aktivieren</translation>
-   <translation id="server_configuration_firewall_asa_enable_title" qtlid="151750">Die Cisco ASA Firewall aktivieren</translation>
+   <translation id="server_configuration_firewall_asa_enable_title_button" qtlid="151750">Cisco ASA Firewall aktivieren</translation>
+   <translation id="server_configuration_firewall_asa_enable_title" qtlid="151750">Cisco ASA Firewall aktivieren</translation>
    <translation id="server_configuration_firewall_asa_enable_step1_loading_error" qtlid="170031">Beim Laden der Informationen ist ein Fehler aufgetreten</translation>
    <translation id="server_configuration_firewall_asa_enable_step1_question" qtlid="183892">Möchten Sie wirklich die Cisco ASA Firewall für Ihren Server <span class="normal italic">{0}</span> aktivieren?</translation>
    <translation id="server_configuration_firewall_asa_enable_success" qtlid="151776">Die Aktivierung der Cisco ASA Firewall wird in wenigen Minuten ausgeführt.</translation>
    <translation id="server_configuration_firewall_asa_enable_fail" qtlid="151789">Bei der Aktivierung der Cisco ASA Firewall ist ein Fehler aufgetreten</translation>
-   <translation id="server_configuration_firewall_asa_disable_title_button" qtlid="151802">Die Cisco ASA Firewall deaktivieren</translation>
-   <translation id="server_configuration_firewall_asa_disable_title" qtlid="151802">Die Cisco ASA Firewall deaktivieren</translation>
+   <translation id="server_configuration_firewall_asa_disable_title_button" qtlid="151802">Cisco ASA Firewall deaktivieren</translation>
+   <translation id="server_configuration_firewall_asa_disable_title" qtlid="151802">Cisco ASA Firewall deaktivieren</translation>
    <translation id="server_configuration_firewall_asa_disable_step1_loading_error" qtlid="170031">Beim Laden der Informationen ist ein Fehler aufgetreten</translation>
    <translation id="server_configuration_firewall_asa_disable_step1_question" qtlid="183905">Möchten Sie wirklich die Cisco ASA Firewall für Ihren Server <span class="normal italic">{0}</span>&#160;deaktivieren?</translation>
    <translation id="server_configuration_firewall_asa_disable_success" qtlid="151828">Die Deaktivierung der Cisco ASA Firewall wird in wenigen Minuten ausgeführt.</translation>
@@ -994,8 +994,8 @@
    <translation id="server_tab_USB_STORAGE_order_finish_success" qtlid="184048">Die Bestellung Nummer <a href='{0}' target='_blank'>{1}</a> wurde erfolgreich aufgegeben.</translation>
 
    <translation id="server_test_ping" qtlid="204259">PING Test</translation>
-   <translation id="server_services_state" qtlid="204272">Zustand der Dienstleistungen</translation>
-   <translation id="server_status" qtlid="204285">Zustand</translation>
+   <translation id="server_services_state" qtlid="204272">Dienstleistungsstatus</translation>
+   <translation id="server_status" qtlid="204285">Status</translation>
    <translation id="server_services" qtlid="34632">Dienste</translation>
    <translation id="server_informations_general" qtlid="27115">Allgemeine Informationen</translation>
 

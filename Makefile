@@ -31,6 +31,7 @@ DIST_TAR=dist.tar.gz
 DIST_EU_TAR=dist-EU.tar.gz
 DIST_CA_TAR=dist-CA.tar.gz
 DIST_US_TAR=dist-US.tar.gz
+DEPENDENCIES_FILES_LIST=Assets.js
 
 #### MACRO ####
 NAME=`grep -Po '(?<="name": ")[^"]*' package.json`
@@ -86,23 +87,28 @@ build: build-eu build-ca build-us
 	$(TAR) $(DIST_TAR) $(DIST_EU_TAR) $(DIST_CA_TAR) $(DIST_US_TAR)
 
 build-eu: deps
+	if [ -n "$(SMARTTAG_REPO_EU)" ]; then $(YARN) add "$(SMARTTAG_REPO_EU)" --no-lockfile; fi
+	if [ -n "$(SMARTTAG_REPO_EU)" ]; then sed -i -r 's/at\-internet\-smarttag\-manager(-eu|-ca|-us)?\/dist/at-internet-smarttag-manager-eu\/dist/' $(DEPENDENCIES_FILES_LIST); fi
 	$(GRUNT) build --mode=prod --target=EU
 	$(MV) $(DIST_DIR) $(DIST_EU_DIR)
 	$(TAR) $(DIST_EU_TAR) $(DIST_EU_DIR)
 
 build-ca: deps
+	if [ -n "$(SMARTTAG_REPO_CA)" ]; then $(YARN) add "$(SMARTTAG_REPO_CA)" --no-lockfile; fi
+	if [ -n "$(SMARTTAG_REPO_CA)" ]; then sed -i -r 's/at\-internet\-smarttag\-manager(-eu|-ca|-us)?\/dist/at-internet-smarttag-manager\/dist/' $(DEPENDENCIES_FILES_LIST); fi
 	$(GRUNT) build --mode=prod --target=CA
 	$(MV) $(DIST_DIR) $(DIST_CA_DIR)
 	$(TAR) $(DIST_CA_TAR) $(DIST_CA_DIR)
 
 build-us: deps
+	if [ -n "$(SMARTTAG_REPO_US)" ]; then $(YARN) add "$(SMARTTAG_REPO_US)" --no-lockfile --no-save; fi
+	if [ -n "$(SMARTTAG_REPO_US)" ]; then sed -i -r 's/at\-internet\-smarttag\-manager(-eu|-ca|-us)?\/dist/at-internet-smarttag-manager-us\/dist/' $(DEPENDENCIES_FILES_LIST); fi
 	$(GRUNT) build --mode=prod --target=US
 	$(MV) $(DIST_DIR) $(DIST_US_DIR)
 	$(TAR) $(DIST_US_TAR) $(DIST_US_DIR)
 
 release: deps
 	$(YARN) version --new-version $(type) --message "chore: release v%s"
-
 
 ###############
 # Tests tasks #

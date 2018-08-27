@@ -217,6 +217,9 @@ angular.module("Module.license").controller("LicenseOrderCtrl", ($scope, $timeou
 
     function init () {
         $scope.agoraEnabled = featureAvailability.allowLicenseAgoraOrder();
+        $scope.powerpackModel = {
+            value: false
+        };
         $scope.loaders.ips = true;
 
         if ($scope.agoraEnabled) {
@@ -326,6 +329,13 @@ angular.module("Module.license").controller("LicenseOrderCtrl", ($scope, $timeou
         },
         true
     );
+
+    /**
+     *  For plesk powerpack option only (and only for agora order)
+     */
+    $scope.onPowerpackOptionChange = function () {
+        $scope.selected.options.PLESK.powerpack = $scope.powerpackModel.value ? { value: $scope.selected.version.more.powerPackPlanCode } : null;
+    };
 
     $scope.$watch(
         "selected.duration",

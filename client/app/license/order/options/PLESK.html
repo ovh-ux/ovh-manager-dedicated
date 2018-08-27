@@ -51,7 +51,28 @@
     </select>
 </div>
 
-<oui-checkbox data-ng-if="selected.version.more.canHavePowerPack"
+<oui-checkbox data-ng-if="selected.version.more.canHavePowerPack && !agoraEnabled"
               data-model="selected.options['PLESK'].powerpack.value"
               data-text="{{:: 'license_order_step2_option_PLESK_powerpack' | translate }}">
 </oui-checkbox>
+
+<div class="oui-checkbox"
+     data-ng-if="selected.version.more.canHavePowerPack && agoraEnabled">
+    <input class="oui-checkbox__input"
+           id="powerPackOption"
+           name="powerPackOption"
+           type="checkbox"
+           data-ng-model="powerpackModel.value"
+           data-ng-change="onPowerpackOptionChange()">
+    <label class="oui-checkbox__label-container" for="powerPackOption">
+        <span class="oui-checkbox__label">
+            <span data-translate="license_order_step2_option_PLESK_powerpack"></span>
+            <span class="oui-checkbox__icon">
+                <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
+                <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
+                <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
+                <span class="oui-icon oui-icon-checkbox-indeterminate" aria-hidden="true"></span>
+            </span>
+        </span>
+    </label>
+</div>

@@ -4,9 +4,18 @@ angular.module("App")
         function buildSidebarActions () {
             return $q.all({
                 dedicatedOrder: User.getUrlOf("dedicatedOrder"),
-                vrackOrder: User.getUrlOf("vrackOrder")
+                vrackOrder: User.getUrlOf("vrackOrder"),
+                cloudProjectOrder: User.getUrlOf("cloudProjectOrder")
             }).then((results) => {
+
                 const actionsMenuOptions = [];
+
+                actionsMenuOptions.push({
+                    id: "order-pci-project-new",
+                    title: $translate.instant("sidebar_actions_menu_cloud_project"),
+                    icon: "ovh-font ovh-font-public-cloud",
+                    href: results.cloudProjectOrder
+                });
 
                 if (featureAvailability.hasNas()) {
                     actionsMenuOptions.push({

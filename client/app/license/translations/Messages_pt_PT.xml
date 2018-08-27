@@ -421,7 +421,7 @@
    <translation id="uptofirstdaynextmonth" qtlid="158630">Até ao primeiro dia do próximo mês</translation>
    <translation id="engage" qtlid="158643">Contratar {0}</translation>
    <translation id="price_ht_label" qtlid="486412">{{ price }}&#160;HT</translation>
-   <translation id="price_ttc_label" qtlid="486425">{{ price }}&#160;TTC</translation>
+   <translation id="price_ttc_label" qtlid="486425">{{ price }}&#160;IVA incl.</translation>
    <translation id="price_free" qtlid="130495">Grátis</translation>
 
    <translation id="license_dashboard_table_title_type" qtlid="2642">Tipo</translation>
@@ -510,7 +510,7 @@
 
    <translation id="license_delete_title" qtlid="258437">Eliminar uma licença</translation>
    <translation id="license_delete_fail" qtlid="258450">Ocorreu um erro aquando da eliminação da sua licença:</translation>
-   <translation id="license_delete_already_terminating" qtlid="480880">Une demande de suppression est déjà en cours</translation>
+   <translation id="license_delete_already_terminating" qtlid="480880">Já foi solicitado um pedido de remoção</translation>
    <translation id="license_delete_success" qtlid="258463">Foi-lhe enviado um e-mail para que confirme a eliminação da sua licença.</translation>
    <translation id="license_delete_step1_question" qtlid="258476">Deseja realmente eliminar a sua licença?</translation>
    <translation id="license_delete_type" qtlid="185868">Tipo de licença:</translation>
@@ -518,8 +518,8 @@
    <translation id="license_delete_serial" qtlid="185894">Ńúmero de licença:</translation>
    <translation id="license_delete_step1_deleting" qtlid="258489">Eliminação da licença em curso ...</translation>
 
-   <translation id="license_upgrade_redirection_popup_title" qtlid="369454">Uma licença {0} já se encontra instalado</translation>
-   <translation id="license_upgrade_redirection_popup_text" qtlid="369467">Já se encontra instalada uma licença {0} neste endereço IP. É apenas possível que a atualize.</translation>
+   <translation id="license_upgrade_redirection_popup_title" qtlid="369454">Uma licença {{ type }} já se encontra instalada</translation>
+   <translation id="license_upgrade_redirection_popup_text" qtlid="369467">Já se encontra instalada uma licença {{ type }} neste endereço IP. É possível atualizá-la.</translation>
    <translation id="license_upgrade_redirection_popup_upgrade" qtlid="369480">Atualizar a minha licença</translation>
 
    <translation id="license_upgrade_title" qtlid="186024">Efetuar upgrade à minha licença</translation>
@@ -549,7 +549,7 @@
    <translation id="license_order_step1_ip_block" qtlid="186141">Bloco IP</translation>
    <translation id="license_order_step1_ip_block_none" qtlid="30646">Nenhum</translation>
    <translation id="license_order_step1_ip" qtlid="167899">IP</translation>
-   <translation id="license_order_step1_no_license_available" qtlid="186154">Nenhuma licença está disponível para o IP {0}</translation>
+   <translation id="license_order_step1_no_license_available" qtlid="186154">Nenhuma licença está disponível para o IP {{ ip }}</translation>
 
    <translation id="license_order_step2_title" qtlid="186167">2. Escolha as suas opções</translation>
    <translation id="license_order_step2_version" qtlid="34210">Versão</translation>
@@ -604,7 +604,7 @@
    <translation id="license_migrate_title" qtlid="186310">Migrar uma licença</translation>
    <translation id="license_migrate_title_button" qtlid="186323">Migrar a licença</translation>
    <translation id="license_migrate_common_choose" qtlid="186115">Escolher...</translation>
-   <translation id="license_migrate_step1_question" qtlid="472198">Veuillez choisir la nouvelle adresse IP à laquelle votre licence sera associée</translation>
+   <translation id="license_migrate_step1_question" qtlid="472198">Selecione um novo endereço de IP para associar a sua licença.</translation>
    <translation id="license_migrate_step1_no_ip_available" qtlid="186349">Nenhum IP está disponível</translation>
    <translation id="license_migrate_step1_ip_block" qtlid="186362">Bloco de receção</translation>
    <translation id="license_migrate_step1_ip" qtlid="186375">Ip de receção</translation>
