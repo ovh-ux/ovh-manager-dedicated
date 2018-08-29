@@ -104,6 +104,23 @@
                     </label>
                 </div>
 
+                <h5 class="oui-header_5"
+                    data-translate="terminate_service_next-steps_title"></h5>
+
+                <div class="oui-radio"
+                     data-ng-repeat="futureUse in TerminateServiceCtrl.futureUses">
+                    <input class="oui-radio__input"
+                           type="radio"
+                           name="futureUses"
+                           data-ng-click="TerminateServiceCtrl.futureUse = futureUse"
+                           data-ng-value="futureUse"
+                           id="futureUse-{{futureUse}}" />
+                    <label class="oui-radio__label-container" for="futureUse-{{futureUse}}">
+                        <span class="oui-radio__label"
+                              data-translate="{{ 'terminate_service_futureUses_' + futureUse }}"></span>
+                    </label>
+                </div>
+
                 <div class="oui-field">
                     <label for="reason_text"
                            class="oui-field__label oui-label"
