@@ -1,5 +1,5 @@
 angular
-    .module("Module.license", [
-        "ovh-utils-angular",
-        "ui.bootstrap"
-    ]);
+  .module('Module.license', [
+    'ovh-utils-angular',
+    'ui.bootstrap',
+  ]);

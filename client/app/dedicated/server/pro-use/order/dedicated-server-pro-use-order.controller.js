@@ -1,97 +1,102 @@
-angular.module("App").controller("ServerOrderProUseCtrl", ($scope, $stateParams, $translate, Server, Alerter, $q, $rootScope) => {
-    "use strict";
+angular.module('App').controller('ServerOrderProUseCtrl', ($scope, $stateParams, $translate, Server, Alerter, $q, $rootScope) => {
+  $scope.loading = {
+    durations: false,
+    prices: false,
+    validation: false,
+  };
+  $scope.model = {
+    nameServer: $scope.currentActionData,
+    duration: null,
+    agree: false,
+  };
+  $scope.durations = {
+    available: null,
+    details: {},
+  };
 
-    $scope.loading = {
-        durations: false,
-        prices: false,
-        validation: false
-    };
-    $scope.model = {
-        nameServer: $scope.currentActionData,
-        duration: null,
-        agree: false
-    };
-    $scope.durations = {
-        available: null,
-        details: {}
-    };
+  //= ==============STEP 2===============
 
-    //= ==============STEP 2===============
+  function loadPrices(durations) {
+    const queue = [];
+    $scope.loading.prices = true;
 
-    $scope.getDurations = function () {
-        $scope.loading.durations = true;
+    angular.forEach(durations, (duration) => {
+      queue.push(
+        Server.getOrderProUseOrder($stateParams.productId, duration).then((details) => {
+          $scope.durations.details[duration] = details;
+        }),
+      );
+    });
 
-        Server.getOrderProUseDuration($stateParams.productId).then((durations) => {
-            $scope.loading.durations = false;
-            $scope.durations.available = durations;
-            loadPrices(durations);
-        });
-    };
+    $q.all(queue).then(
+      () => {
+        $scope.loading.prices = false;
+        if (durations && durations.length === 1) {
+          $scope.model.duration = _.first(durations);
+        }
+      },
+      (data) => {
+        Alerter.alertFromSWS($translate.instant('server_configuration_profesionnal_use_order_step2_error'), data.data);
+        $scope.resetAction();
+        $scope.loading.durations = false;
+      },
+    );
+  }
 
-    function loadPrices (durations) {
-        const queue = [];
-        $scope.loading.prices = true;
+  $scope.getDurations = function () {
+    $scope.loading.durations = true;
 
-        angular.forEach(durations, (duration) => {
-            queue.push(
-                Server.getOrderProUseOrder($stateParams.productId, duration).then((details) => {
-                    $scope.durations.details[duration] = details;
-                })
-            );
-        });
+    Server
+      .getOrderProUseDuration($stateParams.productId)
+      .then((durations) => {
+        $scope.loading.durations = false;
+        $scope.durations.available = durations;
+        loadPrices(durations);
+      });
+  };
 
-        $q.all(queue).then(
-            () => {
-                $scope.loading.prices = false;
-                if (durations && durations.length === 1) {
-                    $scope.model.duration = durations[0];
-                }
-            },
-            (data) => {
-                Alerter.alertFromSWS($translate.instant("server_configuration_profesionnal_use_order_step2_error"), data.data);
-                $scope.resetAction();
-                $scope.loading.durations = false;
-            }
-        );
+
+  //= ==============STEP 3===============
+
+  $scope.loadContracts = function () {
+    $scope.model.agree = false;
+    if (!$scope.durations.details[$scope.model.duration].contracts
+      || !$scope.durations.details[$scope.model.duration].contracts.length) {
+      $rootScope.$broadcast('wizard-goToStep', 5);
     }
+  };
 
-    //= ==============STEP 3===============
+  $scope.backToContracts = function () {
+    if (!$scope.durations.details[$scope.model.duration].contracts
+      || !$scope.durations.details[$scope.model.duration].contracts.length) {
+      $rootScope.$broadcast('wizard-goToStep', 2);
+    }
+  };
 
-    $scope.loadContracts = function () {
-        $scope.model.agree = false;
-        if (!$scope.durations.details[$scope.model.duration].contracts || !$scope.durations.details[$scope.model.duration].contracts.length) {
-            $rootScope.$broadcast("wizard-goToStep", 5);
-        }
-    };
+  //= ==============STEP 4===============
 
-    $scope.backToContracts = function () {
-        if (!$scope.durations.details[$scope.model.duration].contracts || !$scope.durations.details[$scope.model.duration].contracts.length) {
-            $rootScope.$broadcast("wizard-goToStep", 2);
-        }
-    };
+  $scope.getResumePrice = function (price) {
+    return price.value === 0
+      ? $translate.instant('price_free')
+      : $translate.instant('price_ht_label', { t0: price.text });
+  };
 
-    //= ==============STEP 4===============
-
-    $scope.getResumePrice = function (price) {
-        return price.value === 0 ? $translate.instant("price_free") : $translate.instant("price_ht_label", { t0: price.text });
-    };
-
-    $scope.orderProUse = function () {
-        $scope.loading.validation = true;
-        Server.orderProUse($stateParams.productId, $scope.model.duration).then(
-            (order) => {
-                $scope.loading.validation = false;
-                Alerter.alertFromSWS($translate.instant("server_configuration_profesionnal_use_order_finish_success", {
-                    t0: order.url,
-                    t1: order.orderId
-                }), { idTask: order.orderId, state: "OK" });
-                window.open(order.url, "_blank");
-                $scope.resetAction();
-            },
-            (data) => {
-                $scope.loading.validation = false;
-                Alerter.alertFromSWS($translate.instant("server_configuration_profesionnal_use_order_finish_error"), data.data);
-            }
-        );
-    };
+  $scope.orderProUse = function () {
+    $scope.loading.validation = true;
+    Server.orderProUse($stateParams.productId, $scope.model.duration).then(
+      (order) => {
+        $scope.loading.validation = false;
+        Alerter.alertFromSWS($translate.instant('server_configuration_profesionnal_use_order_finish_success', {
+          t0: order.url,
+          t1: order.orderId,
+        }), { idTask: order.orderId, state: 'OK' });
+        window.open(order.url, '_blank');
+        $scope.resetAction();
+      },
+      (data) => {
+        $scope.loading.validation = false;
+        Alerter.alertFromSWS($translate.instant('server_configuration_profesionnal_use_order_finish_error'), data.data);
+      },
+    );
+  };
 });
