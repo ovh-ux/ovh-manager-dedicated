@@ -1,4 +1,4 @@
-<div class="container-fluid mb-5 px-0">
+<div ui-view class="container-fluid mb-5 px-0">
 
     <div class="row d-md-flex mb-5">
         <div class="col-md-4">
@@ -269,14 +269,12 @@
                     <div class="oui-tile__item"
                          data-ng-if="worldPart !== 'US'">
                         <div class="oui-tile__definition">
-                            <div data-working-status
-                                 data-modal-id="'worksDedicatedServers'"
-                                 data-product-type="'dedicated_server'"
-                                 data-works-details="works"
-                                 data-show-affiliated="true"
-                                 data-show-only-active="true"
-                                 data-tr="tr">
-                            </div>
+                            <p data-translate="core_works_description"></p>
+                                <button type="button"
+                                        class="btn btn-block btn-default"
+                                        data-ui-sref="app.dedicated.server.working-status"
+                                        data-translate="core_works_link">
+                                </button>
                         </div>
                     </div>
                 </div>
