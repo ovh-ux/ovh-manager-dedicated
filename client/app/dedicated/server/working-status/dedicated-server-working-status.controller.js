@@ -8,8 +8,9 @@ angular.module("App").controller(
         }
 
         $onInit () {
-            this.Products.getWorks("dedicated_server", true, true).then((works) => {
-                this.worksDetails = works.items;
-            });
+            this.Products.getWorks("dedicated_server", true, true)
+                .then(({ items }) => {
+                    this.worksDetails = items;
+                });
         }
     });
