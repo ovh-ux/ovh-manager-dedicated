@@ -17,7 +17,7 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew.
         const delay = 800;
         this.$scope.setAction();
         this.$timeout(() => {
-            this.$state.go("app.account.billing.history");
+            this.$state.go("app.account.billing.main.history");
         }, delay);
     }
 });
