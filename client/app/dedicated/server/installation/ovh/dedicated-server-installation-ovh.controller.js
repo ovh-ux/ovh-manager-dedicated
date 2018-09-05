@@ -481,6 +481,7 @@ angular
                 (data) => {
                     $scope.loader.loading = false;
                     $scope.resetAction();
+                    data.type = "ERROR";
                     $scope.setMessage($translate.instant("server_configuration_installation_ovh_fail_partition_schemes", { t0: $scope.constants.server.name }), data.data);
                 }
             );

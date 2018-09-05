@@ -1,3 +1,64 @@
+<a name="10.0.10"></a>
+## [10.0.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.9...v10.0.10) (2018-08-24)
+
+
+### Bug Fixes
+
+* **language:** default and fallback languages ([#602](https://github.com/ovh-ux/ovh-manager-dedicated/issues/602)) ([4f8c3d2](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4f8c3d2))
+
+
+
+<a name="10.0.9"></a>
+## [10.0.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.8...v10.0.9) (2018-08-23)
+
+
+### Bug Fixes
+
+* **billing.debt:** active debt with todoAmount ([bc8a2bc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bc8a2bc))
+
+
+
+<a name="10.0.8"></a>
+## [10.0.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.7...v10.0.8) (2018-08-22)
+
+
+### Bug Fixes
+
+* **billing.debt:** pay all debt response ([2f2b4e3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2f2b4e3))
+
+
+
+<a name="10.0.7"></a>
+## [10.0.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.6...v10.0.7) (2018-08-22)
+
+
+
+<a name="10.0.6"></a>
+## [10.0.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.5...v10.0.6) (2018-08-22)
+
+
+### Bug Fixes
+
+* **license:** fix license type in api route ([b007e4f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b007e4f))
+* **translation:** transation parameters sanitization ([b066320](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b066320))
+
+
+### Features
+
+* **billing.autorenew:** autoDisabled is now the same as manual ([9e13afd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9e13afd))
+
+
+
+<a name="10.0.5"></a>
+## [10.0.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.4...v10.0.5) (2018-08-22)
+
+
+### Bug Fixes
+
+* **build:** smarttage integration ([6bb1516](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6bb1516))
+
+
+
 <a name="10.0.4"></a>
 ## [10.0.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.3...v10.0.4) (2018-08-21)
 

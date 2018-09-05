@@ -8,6 +8,7 @@ angular.module("App").controller("SecondaryDnsCtrl", ($scope, $timeout, $statePa
             }
         }),
         (err) => {
+            err.type = "ERROR";
             $scope.setMessage($translate.instant("server_configuration_secondary_dns_fail"), err);
         }
     );

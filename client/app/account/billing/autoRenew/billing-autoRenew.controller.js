@@ -268,6 +268,9 @@ angular.module("Billing.controllers").controller("Billing.controllers.AutoRenew"
             }
         };
 
+        $scope.buildSMSCreditBuyingURL = (service) => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/order`;
+        $scope.buildSMSAutomaticRenewalURL = (service) => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/options/recredit`;
+
         /**
          * @doc method
          * @methodOf Billing.controller:AutoRenewCtrl

@@ -169,9 +169,11 @@ angular.module("App").controller("ServerFirewallAddRuleCtrl", [
 
             Server.addFirewallRule($scope.data.block.value.ip, $scope.data.ip.ip, $scope.rule).then(
                 (data) => {
+                    data.type = "INFO";
                     $scope.setMessage($translate.instant("server_configuration_firewall_add_rule_success", { t0: $scope.server.name }), data);
                 },
                 (data) => {
+                    data.type = "ERROR";
                     $scope.setMessage($translate.instant("server_configuration_firewall_add_rule_fail"), data.data);
                 }
             );
@@ -187,9 +189,11 @@ angular.module("App").controller("FirewallRemoveRuleCtrl", ($scope, $translate, 
 
         Server.removeFirewallRule($scope.data.block.value.ip, $scope.data.ip.ip, $scope.data.rule.sequence).then(
             (data) => {
+                data.type = "INFO";
                 $scope.setMessage($translate.instant("server_configuration_firewall_remove_rule_success"), data);
             },
             (data) => {
+                data.type = "ERROR";
                 $scope.setMessage($translate.instant("server_configuration_firewall_remove_rule_fail"), data);
             }
         );
@@ -236,15 +240,18 @@ angular.module("App").controller("ServerIpToggleFirewallCtrl", [
             if (newStatus === $scope.firewallStatuses.NOT_CONFIGURED) {
                 Server.createFirewall($scope.data.block.ip, $scope.data.ip.ip).then(
                     (data) => {
+                        data.type = "INFO";
                         $scope.setMessage($translate.instant("server_configuration_firewall_new_success", { t0: $scope.data.ip.ip }), data);
                     },
                     (data) => {
+                        data.type = "ERROR";
                         $scope.setMessage($translate.instant("server_configuration_firewall_new_failed", { t0: $scope.data.ip.ip }), data);
                     }
                 );
             } else {
                 Server.toggleFirewall($scope.data.block.ip, $scope.data.ip.ip, newStatus).then(
                     (data) => {
+                        data.type = "INFO";
                         if (newStatus === $scope.firewallStatuses.DEACTIVATED) {
                             $scope.setMessage($translate.instant("server_configuration_firewall_disable_success", { t0: $scope.data.ip.ip }), data);
                         } else if (newStatus === $scope.firewallStatuses.ACTIVATED) {
@@ -254,6 +261,7 @@ angular.module("App").controller("ServerIpToggleFirewallCtrl", [
                         }
                     },
                     (data) => {
+                        data.type = "ERROR";
                         if (newStatus === $scope.firewallStatuses.DEACTIVATED) {
                             $scope.setMessage($translate.instant("server_configuration_firewall_disable_failed", { t0: $scope.data.ip.ip }), data);
                         } else if (newStatus === $scope.firewallStatuses.ACTIVATED) {

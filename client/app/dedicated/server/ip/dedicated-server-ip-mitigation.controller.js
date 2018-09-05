@@ -25,6 +25,7 @@ angular.module("App").controller("ServerIpMitigationCtrl", ($scope, $translate, 
 
         Server.updateMitigation($scope.selectedIpAndBlock.block.ip, $scope.selectedIpAndBlock.ip.ip, newMitigationStatus).then(
             (data) => {
+                data.type = "INFO";
                 if (newMitigationStatus === "AUTO") {
                     $scope.setMessage($translate.instant("server_configuration_mitigation_auto_success", { t0: $scope.selectedIpAndBlock.ip.ip }), data);
                 } else {
@@ -32,6 +33,7 @@ angular.module("App").controller("ServerIpMitigationCtrl", ($scope, $translate, 
                 }
             },
             (data) => {
+                data.type = "ERROR";
                 if (newMitigationStatus === "AUTO") {
                     $scope.setMessage($translate.instant("server_configuration_mitigation_auto_failed", { t0: $scope.selectedIpAndBlock.ip.ip }), data);
                 } else {

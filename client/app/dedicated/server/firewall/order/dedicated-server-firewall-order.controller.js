@@ -16,6 +16,7 @@ angular.module("App").controller("ServerFirewallAsaOrderCtrl", ($scope, $statePa
                 },
                 (data) => {
                     $scope.resetAction();
+                    data.type = "ERROR";
                     $scope.setMessage($translate.instant("server_configuration_firewall_asa_order_step1_loading_error"), data);
                 }
             );
@@ -25,6 +26,7 @@ angular.module("App").controller("ServerFirewallAsaOrderCtrl", ($scope, $statePa
                 },
                 (err) => {
                     $scope.resetAction();
+                    err.type = "ERROR";
                     $scope.setMessage($translate.instant("server_configuration_firewall_asa_order_step1_loading_error"), err);
                 }
             );
@@ -44,6 +46,7 @@ angular.module("App").controller("ServerFirewallAsaOrderCtrl", ($scope, $statePa
             },
             (data) => {
                 $scope.resetAction();
+                data.type = "ERROR";
                 $scope.setMessage($translate.instant("server_configuration_firewall_asa_order_fail"), data);
             }
         );
