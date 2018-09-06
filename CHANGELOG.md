@@ -1,3 +1,24 @@
+<a name="10.1.0"></a>
+# [10.1.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.10...v10.1.0) (2018-09-06)
+
+
+### Bug Fixes
+
+* enable testing branch for ovh-ui-angular ([d32f654](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d32f654))
+* **billing.ovhAccount:** missing translation ([e836df0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e836df0))
+* **billing.ovhAccount:** translation typo ([5c764c6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5c764c6))
+* **dedicated server:** alert background color fix ([c96d9f3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c96d9f3))
+* **i18n:** missing translation ([6d35ad7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6d35ad7))
+* **pcc operation:** re-enable operation execution date change ([01b74e5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/01b74e5))
+* set new ui-angular version ([705880b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/705880b))
+
+
+### Features
+
+* **billing.autorenew:** SMS pack menu item redirects to renewal page ([c399b5f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c399b5f))
+
+
+
 <a name="10.0.10"></a>
 ## [10.0.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.9...v10.0.10) (2018-08-24)
 
