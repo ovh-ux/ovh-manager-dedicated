@@ -42,6 +42,7 @@ angular.module("App").controller("AddSecondaryDnsCtrl", ($scope, $translate, Ser
             (err) => {
                 $scope.loading = false;
                 $scope.resetAction();
+                err.type = "ERROR";
                 $scope.setMessage($translate.instant("server_configuration_ips_cannotfetch"), err);
             }
         );
@@ -68,11 +69,12 @@ angular.module("App").controller("AddSecondaryDnsCtrl", ($scope, $translate, Ser
             () => {
                 $scope.resetAction();
                 $scope.loading = false;
-                $scope.setMessage($translate.instant("server_configuration_secondarydns_add_success", { t0: $scope.server.name }));
+                $scope.setMessage($translate.instant("server_configuration_secondarydns_add_success", { t0: $scope.server.name }), true);
             },
             (err) => {
                 $scope.resetAction();
                 $scope.loading = false;
+                err.type = "ERROR";
                 $scope.setMessage($translate.instant("server_configuration_secondarydns_add_fail"), err);
             }
         );

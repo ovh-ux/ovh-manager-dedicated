@@ -14,6 +14,7 @@ angular.module("App").controller("ServerCancelBandwidthCtrl", ($rootScope, $scop
                 $rootScope.$broadcast("dedicated.informations.bandwidth");
             })
             .catch((data) => {
+                data.type = "ERROR";
                 $scope.setMessage($translate.instant("server_cancel_bandwidth_cancel_error"), data);
             })
             .finally(() => {

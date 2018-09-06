@@ -294,6 +294,7 @@ angular.module("App").controller("ServerIpAntispamCtrl", ($rootScope, $scope, $l
                     $scope.$broadcast("paginationServerSide.reload", "antispamPeriods");
                 },
                 (data) => {
+                    data.type = "ERROR";
                     $scope.setMessage($translate.instant("server_configuration_antispam_error", { t0: $scope.ipspam.ip }), data.data);
                 }
             );
@@ -360,6 +361,7 @@ angular.module("App").controller("ServerIpAntispamDetailsCtrl", ($scope, $transl
             (reason) => {
                 $scope.tableLoading = false;
                 $scope.resetAction();
+                reason.type = "INFO";
                 $scope.setMessage($translate.instant("server_configuration_mitigation_auto_success"), reason);
             }
         );

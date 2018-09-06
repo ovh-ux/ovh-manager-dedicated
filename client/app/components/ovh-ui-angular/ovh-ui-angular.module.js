@@ -6,7 +6,8 @@ angular.module("App").run(($q,
                            ouiFieldConfiguration,
                            ouiNavbarConfiguration,
                            ouiPaginationConfiguration,
-                           ouiStepperConfiguration) => {
+                           ouiStepperConfiguration,
+                           ouiCalendarConfiguration) => {
 
     // first be sure that common translation file is loaded...
     $translatePartialLoader.addPart("common");
@@ -92,5 +93,8 @@ angular.module("App").run(($q,
             cancelButtonLabel: $translate.instant("common_stepper_cancel_button_label")
         };
     });
+
+    // set ouiCalendar locale from the language setted to $translate - fallback to english if not setted
+    ouiCalendarConfiguration.locale = _.get($translate.use().split("_"), "[0]", "en");
 
 });

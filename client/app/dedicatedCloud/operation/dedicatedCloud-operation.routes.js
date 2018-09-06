@@ -9,7 +9,8 @@ angular.module("App").config(($stateProvider) => {
                 controller: "DedicatedCloudOperationsCtrl",
                 controllerAs: "$ctrl"
             }
-        }
+        },
+        translations: ["dedicatedCloud/operation/executionDateEdit"]
     });
 
 });

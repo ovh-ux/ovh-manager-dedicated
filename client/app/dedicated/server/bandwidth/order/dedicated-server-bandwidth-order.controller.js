@@ -152,6 +152,7 @@ angular.module("App").controller("ServerOrderBandwidthCtrl", ($scope, $statePara
             },
             (data) => {
                 $scope.resetAction();
+                data.data.type = "ERROR";
                 $scope.setMessage($translate.instant("server_order_bandwidth_error"), data.data);
             }
         );
