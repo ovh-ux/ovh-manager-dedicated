@@ -38,7 +38,7 @@ angular.module("Billing.services").service("BillingTerminate", function ($q, Ovh
             );
     };
 
-    this.confirmTermination = function (serviceId, serviceName, reason, commentary, token) {
+    this.confirmTermination = function (serviceId, serviceName, futureUse, reason, commentary, token) {
         return this.getServiceApi(serviceId)
             .then((serviceApi) => serviceApi.route.url)
             .then((url) =>
@@ -46,6 +46,7 @@ angular.module("Billing.services").service("BillingTerminate", function ($q, Ovh
                     rootPath: "apiv6",
                     data: {
                         serviceName,
+                        futureUse,
                         reason,
                         commentary,
                         token
