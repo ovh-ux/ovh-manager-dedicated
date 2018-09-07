@@ -62,7 +62,7 @@ angular
             maxSizeSwap: 30000, // = 30Go
             maxSizePartition: 2000000, // =  2To
             minSizePartition: 10, // = 10Mo
-            minSizeWindows: 20050, // = 20Go
+            minSizeWindows: 32768, // = 32Go
             minSizeReiserfs: 32, // = 32Mo
             minSizeBoot: 50 // = 50Mo
         };
