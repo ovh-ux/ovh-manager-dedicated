@@ -18,6 +18,13 @@ angular.module("Billing.controllers")
                 "MIGRATED_TO_ANOTHER_OVH_PRODUCT",
                 "OTHER"
             ];
+            this.futureUses = [
+                "SUBSCRIBE_AN_OTHER_SERVICE",
+                "SUBSCRIBE_SIMILAR_SERVICE_WITH_COMPETITOR",
+                "SUBSCRIBE_OTHER_KIND_OF_SERVICE_WITH_COMPETITOR",
+                "NOT_REPLACING_SERVICE",
+                "OTHER"
+            ];
 
             this.serviceId = this.$stateParams.id;
             this.serviceState = null;
@@ -69,7 +76,7 @@ angular.module("Billing.controllers")
         confirmTermination () {
             this.terminating = true;
             this.BillingTerminate
-                .confirmTermination(this.serviceId, this.serviceInfos.domain, this.reason, this.commentary, this.token)
+                .confirmTermination(this.serviceId, this.serviceInfos.domain, this.futureUse, this.reason, this.commentary, this.token)
                 .then(() => {
                     this.error = false;
                     this.serviceState = "suspending";
