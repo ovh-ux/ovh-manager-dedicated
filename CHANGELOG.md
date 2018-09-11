@@ -1,3 +1,20 @@
+<a name="10.1.1"></a>
+## [10.1.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.1.0...v10.1.1) (2018-09-11)
+
+
+### Bug Fixes
+
+* **billing.terminate:** add warning about termination ([222e2f4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/222e2f4))
+* **license.detail:** apply tag-pair rule on dd element ([e9d0cb1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e9d0cb1))
+* **package:** fix ui-kit versions ([8a435c8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8a435c8))
+
+
+### Features
+
+* **billing.terminate:** next steps confirm termination ([938911f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/938911f))
+
+
+
 <a name="10.1.0"></a>
 # [10.1.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.0.10...v10.1.0) (2018-09-06)
 
