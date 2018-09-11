@@ -109,8 +109,11 @@ angular.module("Billing").controller("BillingMainHistoryCtrl", class BillingMain
     ===================================== */
 
     exportToCsv () {
-        // fetch upto 1000 bills in single ajax call
-        const limit = 1000;
+        // fetch upto 150 bills in single ajax call
+        // we can not increase more than 150, if we do that API
+        // GET /apiv7/me/bill/{{bill-ids}}/debt?$batch=,
+        // url length goes behind safe limit 2083
+        const limit = 150;
         this.loading.export = true;
 
         const translations = {
@@ -137,13 +140,13 @@ angular.module("Billing").controller("BillingMainHistoryCtrl", class BillingMain
             const billsPromise = this._getApiv7Request().expand()
                 .offset(fetchedBills)
                 .limit(limit)
-                .execute().$promise;
+                .execute().$promise
+                .then((bills) => this._applyDebtToBills(bills));
             billsPromises.push(billsPromise);
             fetchedBills = fetchedBills + limit;
         }
         return this.$q.all(billsPromises)
             .then((response) => _.flatten(response))
-            .then((bills) => this._applyDebtToBills(bills))
             .then((billList) => {
                 const rows = _.map(billList, "value").map((bill) => {
                     let row = [bill.billId, bill.orderId, moment(bill.date).format("L"), bill.priceWithoutTax.text, bill.priceWithTax.text];
