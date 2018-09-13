@@ -15,7 +15,9 @@ angular
 
             const translationId = moment().isAfter(moment(service.expiration)) ? "autorenew_service_after_expiration_date" : "autorenew_service_expiration_date";
 
-            return this.$translate.instant(translationId, { t0: this.$filter("date")(service.expiration, "mediumDate") });
+            // Prevent accent sanitization issue with angular-translate
+            // https://github.com/angular-translate/angular-translate/issues/1101
+            return `${this.$translate.instant(translationId)} ${this.$filter("date")(service.expiration, "mediumDate")}`;
         }
 
         getRenewLabel (service) {
