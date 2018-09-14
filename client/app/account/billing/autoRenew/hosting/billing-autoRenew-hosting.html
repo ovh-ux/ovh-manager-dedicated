@@ -32,9 +32,16 @@
             data-text="{{:: 'autorenew_service_canceldelete_button' | translate }}"></oui-action-menu-item>
 
         <oui-action-menu-item
-            data-ng-if="service.subProducts.hosting_web.serviceType !== 'EXCHANGE'"
+            data-ng-if="service.subProducts.hosting_web.status !== 'PENDING_DEBT'"
             data-href="{{:: getRenewUrl() + service.subProducts.hosting_web.serviceId }}"
             data-external="true"
+            data-text="{{:: 'autorenew_service_renew_button' | translate }}"
+            data-aria-label="{{:: 'autorenew_service_renew_button_title' | translate: { t0: service.subProducts.hosting_web.serviceId } }}"></oui-action-menu-item>
+
+        <oui-action-menu-item
+            data-ng-if="service.subProducts.hosting_web.status === 'PENDING_DEBT'"
+            data-disabled="service.subProducts.hosting_web.renew.forced"
+            data-on-click="gotoRenew(service.subProducts.hosting_web)"
             data-text="{{:: 'autorenew_service_renew_button' | translate }}"
             data-aria-label="{{:: 'autorenew_service_renew_button_title' | translate: { t0: service.subProducts.hosting_web.serviceId } }}"></oui-action-menu-item>
 
