@@ -105,9 +105,9 @@ var constants = {
                     hds: "https://www.ovh.com/fr/private-cloud/healthcare/agrement.xml",
                     reinitPassword: "https://www.ovh.com/fr/g2366.changer_le_mot_de_passe_root_sur_un_vps",
                     ipv6Vps: "https://www.ovh.fr/g2365.vps-ipv6",
-                    sshCreate: "https://www.ovh.fr/g1769.creation_des_cles_ssh",
-                    sshAdd: "https://www.ovh.fr/g1924.configurer_des_cles_ssh_supplementaires",
-                    sshChange: "https://www.ovh.fr/g2069.changer_sa_cle_ssh_en_cas_de_perte",
+                    sshCreate: "https://docs.ovh.com/fr/public-cloud/creation-des-cles-ssh/",
+                    sshAdd: "https://docs.ovh.com/fr/public-cloud/configurer-des-cles-ssh-supplementaires/",
+                    sshChange: "https://docs.ovh.com/fr/public-cloud/changer-sa-cle-ssh-en-cas-de-perte/",
                     megaRaidLED: "https://docs.ovh.com/fr/fr/cloud/dedicated/hotswap-raid-hard/",
                     noMegaRaidLED: "https://docs.ovh.com/fr/fr/cloud/dedicated/hotswap-raid-soft/",
                     diskSerial: "http://docs.ovh.com/fr/fr/cloud/dedicated/find-disk-serial-number/"
@@ -142,9 +142,9 @@ var constants = {
                     hds: "https://www.ovh.co.uk/private-cloud/healthcare/agrement.xml",
                     reinitPassword: "https://www.ovh.co.uk/g2366.change_the_root_password_on_a_vps_linux",
                     ipv6Vps: "https://www.ovh.co.uk/g2365.vps-ipv6",
-                    sshCreate: "https://www.ovh.co.uk/g1769.creating_ssh_keys",
-                    sshAdd: "https://www.ovh.co.uk/g1924.configuring_additionnal_ssh_key",
-                    sshChange: "https://www.ovh.co.uk/g2069.replacing_your_lost_ssh_key_pair"
+                    sshCreate: "https://docs.ovh.com/gb/en/public-cloud/configuring_additional_ssh_keys/",
+                    sshAdd: "https://docs.ovh.com/gb/en/public-cloud/configuring_additional_ssh_keys/",
+                    sshChange: "https://docs.ovh.com/gb/en/public-cloud/replacing_your_lost_ssh_key_pair/"
                 },
                 vpsCloud           : "http://www.ovh.co.uk/vps/vps-cloud.xml",
                 dedicatedIpmi      : "http://help.ovh.co.uk/IpmiSol",
