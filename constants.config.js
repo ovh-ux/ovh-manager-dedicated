@@ -800,7 +800,7 @@ var constants = {
         UNIVERS : "dedicated",
         URLS : {
             US: {
-                express_order: "https://ovh.us/order/express/#/express/",
+                express_order: "https://us.ovhcloud.com/order/express/#/express/",
                 support: "http://www.ovh.co.uk/support/",
                 support_contact: "https://www.ovh.com/ca/en/support/",
                 guides: {
