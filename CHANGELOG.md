@@ -1,3 +1,13 @@
+<a name="10.1.2"></a>
+## [10.1.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.1.1...v10.1.2) (2018-09-17)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** prevent renewal&resiliation for all ([bf5c55c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bf5c55c))
+
+
+
 <a name="10.1.1"></a>
 ## [10.1.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.1.0...v10.1.1) (2018-09-11)
 
