@@ -359,7 +359,7 @@ var constants = {
                 en_AU: "https://docs.ovh.com/au/en/dedicated/",
                 en_CA: "https://docs.ovh.com/ca/en/dedicated/",
                 en_GB: "https://docs.ovh.com/gb/en/dedicated/",
-                en_US: "https://support.ovhcloud.com/hc/en-us",
+                en_US: "https://support.us.ovhcloud.com/hc/en-us",
                 es_ES: "https://docs.ovh.com/es/dedicated/",
                 it_IT: "https://docs.ovh.com/it/dedicated/",
                 lt_LT: "https://docs.ovh.com/lt/dedicated/",
@@ -796,7 +796,7 @@ var constants = {
         RENEW_URL : "/cgi-bin/order/renew.cgi?domainChooser={serviceName}",
         vmsUrl : "http://status.ovh.net/vms/",
         travauxUrl : "http://status.ovh.net/",
-        vrackUrl : "https://ovhcloud.com/manager/cloud/index.html#/vrack",
+        vrackUrl : "https://us.ovhcloud.com/manager/cloud/index.html#/vrack",
         UNIVERS : "dedicated",
         URLS : {
             US: {
@@ -804,29 +804,29 @@ var constants = {
                 support: "http://www.ovh.co.uk/support/",
                 support_contact: "https://www.ovh.com/ca/en/support/",
                 guides: {
-                    all: "https://support.ovhcloud.com/hc/en-us",
-                    home   : "https://support.ovhcloud.com/hc/en-us",
+                    all: "https://support.us.ovhcloud.com/hc/en-us",
+                    home   : "https://support.us.ovhcloud.com/hc/en-us",
                     reinitPassword: "http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten",
                     ipv6Vps: "https://www.ovh.com/ca/en/g2365.vps-ipv6",
-                    sshCreate: "http://support.ovhcloud.com/hc/en-us/articles/115001588250-SSH-Key-Management",
-                    sshAdd: "http://support.ovhcloud.com/hc/en-us/articles/115001588250-SSH-Key-Management",
-                    sshChange: "http://support.ovhcloud.com/hc/en-us/articles/115001588250-SSH-Key-Management",
-                    nsx: "https://ovhcloud.com/products/hosted-private-cloud/vmware-nsx",
-                    vrops: "https://ovhcloud.com/products/hosted-private-cloud/vmware-vrealize-operations",
-                    pcidssHdsHipaa: "https://ovhcloud.com/products/hosted-private-cloud"
+                    sshCreate: "http://support.us.ovhcloud.com/hc/en-us/articles/115001588250-SSH-Key-Management",
+                    sshAdd: "http://support.us.ovhcloud.com/hc/en-us/articles/115001588250-SSH-Key-Management",
+                    sshChange: "http://support.us.ovhcloud.com/hc/en-us/articles/115001588250-SSH-Key-Management",
+                    nsx: "https://us.ovhcloud.com/products/hosted-private-cloud/vmware-nsx",
+                    vrops: "https://us.ovhcloud.com/products/hosted-private-cloud/vmware-vrealize-operations",
+                    pcidssHdsHipaa: "https://us.ovhcloud.com/products/hosted-private-cloud"
                 },
                 vpsCloud           : "https://www.ovh.com/ca/en/vps/vps-cloud.xml",
                 dedicatedIpmi      : "https://docs.ovh.com/gb/en/dedicated/use-ipmi-dedicated-servers/#testing-and-rebooting-the-ipmi",
                 changeOwner: "https://www.ovh.co.uk/cgi-bin/procedure/procedureChangeOwner.cgi",
                 domainOrderTrade   : "https://www.ovh.co.uk/order/domain/#/legacy/domain/trade/informations?options=~~(domain~~'{domain})",
-                RealTimeMonitoring : "https://support.ovhcloud.com/hc/en-us/articles/115001821044-Learning-About-OVH-US-Monitoring",
+                RealTimeMonitoring : "https://support.us.ovhcloud.com/hc/en-us/articles/115001821044-Learning-About-OVH-US-Monitoring",
                 exchangeOrder: "https://www.ovh.com/ca/en/emails/hosted-exchange/",
                 renewAlign : "https://www.ovh.co.uk/cgi-bin/order/renew.cgi?alignDate=1&csid=0",
                 faq: "https://www.ovh.com/ca/en/dedicated-servers/faq.xml",
                 faqVps: "https://www.ovh.com/ca/en/vps/faq-help.xml",
-                dedicatedOrder: "https://ovhcloud.com/order/dedicated/#/dedicated/select",
-                vrackOrder: "https://ovhcloud.com/order/express/#/express/review?products=~(~(planCode~'vrack~quantity~1~productId~'vrack))",
-                cloudProjectOrder : "https://ovhcloud.com/manager/cloud/#/iaas/pci/offer"
+                dedicatedOrder: "https://us.ovhcloud.com/order/dedicated/#/dedicated/select",
+                vrackOrder: "https://us.ovhcloud.com/order/express/#/express/review?products=~(~(planCode~'vrack~quantity~1~productId~'vrack))",
+                cloudProjectOrder : "https://us.ovhcloud.com/manager/cloud/#/iaas/pci/offer"
             }
         },
         LANGUAGES : [
@@ -876,8 +876,8 @@ var constants = {
             }
         },
         MANAGER_URLS : {
-            "dedicated": "https://www.ovhcloud.com/manager/dedicated/",
-            "cloud"    : "https://www.ovhcloud.com/manager/cloud/",
+            "dedicated": "https://www.us.ovhcloud.com/manager/dedicated/",
+            "cloud"    : "https://www.us.ovhcloud.com/manager/cloud/",
         },
         TOP_GUIDES: {
             sd: {
@@ -885,13 +885,13 @@ var constants = {
                     {
                         title: "core_sd_top_guide_7_title",
                         atInternetClickTag: "TopGuide-DedicatedServers-7",
-                        url: "https://support.ovhcloud.com/hc/en-us/articles/115001754490-Rescue-Mode"
+                        url: "https://support.us.ovhcloud.com/hc/en-us/articles/115001754490-Rescue-Mode"
                     }
                 ]
             },
         },
         accountCreation: {
-            default: "https://ovhcloud.com/auth/signup/"
+            default: "https://us.ovhcloud.com/auth/signup/"
         },
         billingRenew: {
             CA : "https://ca.ovh.com/fr/cgi-bin/order/renew.cgi?domainChooser={serviceName}",
@@ -916,7 +916,7 @@ var constants = {
             WE : "https://ca.ovh.com/fr/cgi-bin/order/renew.cgi?domainChooser={serviceName}"
         },
         REDIRECT_URLS: {
-            listTicket: "https://ovhcloud.com/manager/dedicated/index.html#/ticket"
+            listTicket: "https://us.ovhcloud.com/manager/dedicated/index.html#/ticket"
         }
     }
 };

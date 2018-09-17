@@ -78,18 +78,18 @@ const zoneConfig = {
     },
     US: {
         ssoAuth: {
-            host: "ovhcloud.com",
-            baseUrl: "https://ovhcloud.com/cgi-bin/crosslogin.cgi",
-            devLoginUrl: "https://ovhcloud.com/auth/requestDevLogin/"
+            host: "us.ovhcloud.com",
+            baseUrl: "https://us.ovhcloud.com/cgi-bin/crosslogin.cgi",
+            devLoginUrl: "https://us.ovhcloud.com/auth/requestDevLogin/"
         },
         apiv6: {
-            url: "https://ovhcloud.com/engine/apiv6"
+            url: "https://us.ovhcloud.com/engine/apiv6"
         },
         apiv7: {
-            url: "https://ovhcloud.com/engine/apiv7"
+            url: "https://us.ovhcloud.com/engine/apiv7"
         },
         aapi: {
-            url: process.env.LOCAL_2API === "true" ? "http://localhost:8080" : "https://ovhcloud.com/engine/2api"
+            url: process.env.LOCAL_2API === "true" ? "http://localhost:8080" : "https://us.ovhcloud.com/engine/2api"
         }
     }
 };
