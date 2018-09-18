@@ -1,3 +1,14 @@
+<a name="10.1.3"></a>
+## [10.1.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.1.2...v10.1.3) (2018-09-18)
+
+
+### Bug Fixes
+
+* **us:** switch ovh.us to us.ovhcloud.com ([ac14a39](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ac14a39))
+* **us:** switch ovhcloud.com to us.ovhcloud.com ([821d640](https://github.com/ovh-ux/ovh-manager-dedicated/commit/821d640))
+
+
+
 <a name="10.1.2"></a>
 ## [10.1.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.1.1...v10.1.2) (2018-09-17)
 
