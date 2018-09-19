@@ -25,6 +25,7 @@ angular.module("Billing").controller("BillingMainHistoryCtrl", class BillingMain
         };
 
         this.datagridConfig = null;
+        this.totalBills = 0;
     }
 
     /**
@@ -90,12 +91,15 @@ angular.module("Billing").controller("BillingMainHistoryCtrl", class BillingMain
                 .offset($config.offset - 1)
                 .limit($config.pageSize)
                 .execute().$promise
-        }).then(({ count, bills }) => this._applyDebtToBills(bills).then((billList) => ({
-            data: _.map(billList, "value"),
-            meta: {
-                totalCount: count.length
-            }
-        })));
+        }).then(({ count, bills }) => {
+            this.totalBills = count.length;
+            return this._applyDebtToBills(bills).then((billList) => ({
+                data: _.map(billList, "value"),
+                meta: {
+                    totalCount: count.length
+                }
+            }));
+        });
     }
 
     /* -----  End of DATAGRID  ------ */
@@ -105,6 +109,11 @@ angular.module("Billing").controller("BillingMainHistoryCtrl", class BillingMain
     ===================================== */
 
     exportToCsv () {
+        // fetch upto 150 bills in single ajax call
+        // we can not increase more than 150, if we do that API
+        // GET /apiv7/me/bill/{{bill-ids}}/debt?$batch=,
+        // url length goes behind safe limit 2083
+        const limit = 150;
         this.loading.export = true;
 
         const translations = {
@@ -125,8 +134,19 @@ angular.module("Billing").controller("BillingMainHistoryCtrl", class BillingMain
             headers.push(this.$translate.instant("billing_main_history_table_balance_due_date"));
         }
 
-        return this._getApiv7Request().expand().execute().$promise
-            .then((bills) => this._applyDebtToBills(bills))
+        let fetchedBills = 0;
+        const billsPromises = [];
+        while (fetchedBills < this.totalBills) {
+            const billsPromise = this._getApiv7Request().expand()
+                .offset(fetchedBills)
+                .limit(limit)
+                .execute().$promise
+                .then((bills) => this._applyDebtToBills(bills));
+            billsPromises.push(billsPromise);
+            fetchedBills = fetchedBills + limit;
+        }
+        return this.$q.all(billsPromises)
+            .then((response) => _.flatten(response))
             .then((billList) => {
                 const rows = _.map(billList, "value").map((bill) => {
                     let row = [bill.billId, bill.orderId, moment(bill.date).format("L"), bill.priceWithoutTax.text, bill.priceWithTax.text];
@@ -150,7 +170,7 @@ angular.module("Billing").controller("BillingMainHistoryCtrl", class BillingMain
                 return [headers].concat(rows);
             })
             .then((csvData) => this.exportCsv.exportData({
-                separator: ";",
+                separator: ",",
                 datas: csvData
             }))
             .catch((error) => {
