@@ -21,18 +21,17 @@
                                for="serviceSelector"
                                data-translate="ip_table_header_service">
                         </label>
-                        <select id="serviceSelector"
-                                name="serviceSelector"
-                                class="form-control"
-                                data-ng-model="model.service"
-                                data-ng-options="service as service.serviceName group by ('ip_servicetype_' + service.serviceType | translate) for service in servicesList"
-                                data-ng-disabled="model.service && loading.serviceCanBeOrdered"
-                                data-ng-change="serviceCanBeOrdered()">
-                            <option value=""
-                                    data-ng-disabled="true"
-                                    data-translate="global_select">
-                            </option>
-                        </select>
+                        <oui-select id="serviceSelector"
+                                    name="serviceSelector"
+                                    required
+                                    placeholder="{{ 'global_select' | translate }}"
+                                    data-group-by="groupByType"
+                                    data-match="serviceName"
+                                    data-model="model.service"
+                                    data-on-change="serviceCanBeOrdered()"
+                                    data-items="servicesList">
+                            <span data-ng-bind="$item.serviceName"></span>
+                        </oui-select>
                         <span class="help-block"
                               role="alert"
                               data-ng-show="orderableIpError"
