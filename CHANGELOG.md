@@ -1,3 +1,19 @@
+<a name="10.2.0"></a>
+# [10.2.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.1.3...v10.2.0) (2018-09-20)
+
+
+### Bug Fixes
+
+* bills export to csv does not work ([c41aee3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c41aee3))
+* invalid guide links ([c99e29f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c99e29f))
+
+
+### Features
+
+* **dedicatedcloud.datacenter.host.order:** added help message ([f76adc4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f76adc4))
+
+
+
 <a name="10.1.3"></a>
 ## [10.1.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.1.2...v10.1.3) (2018-09-18)
 
