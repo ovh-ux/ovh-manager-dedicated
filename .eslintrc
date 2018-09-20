@@ -1,0 +1,24 @@
+{
+    "extends": "airbnb-base",
+    "env": {
+        "browser": true,
+        "jquery": true
+    },
+    "globals": {
+        "_": true,
+        "angular": true,
+        "Chart": true,
+        "EprotectIframeClient": true,
+        "ipaddr": true,
+        "JSURL": true,
+        "moment": true,
+        "punycode": true,
+        "RandExp": true,
+        "URI": true,
+        "validator": true,
+        "zE": true
+    },
+    "rules": {
+        "no-bitwise": ["error", { "allow": ["~"] }]
+    }
+}

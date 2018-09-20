@@ -1,172 +1,173 @@
-angular.module("Module.ip.controllers").controller("agoraIpOrderCtrl", ["$scope", "$rootScope", "$state", "$window", "$q", "$log", "IpAgoraOrder", "IpOrganisation", "User", "Alerter", "$translate",
-    function ($scope, $rootScope, $state, $window, $q, $log, AgoraOrder, Organisation, User, Alerter, $translate) {
-        "use strict";
+angular.module('Module.ip.controllers').controller('agoraIpOrderCtrl', ['$scope', '$rootScope', '$state', '$window', '$q', 'IpAgoraOrder', 'IpOrganisation', 'User', 'Alerter', '$translate',
+  function ($scope, $rootScope, $state, $window, $q, AgoraOrder, Organisation, User, Alerter,
+    $translate) {
+    this.model = {
+      params: {},
+      selectedService: null,
+    };
+    this.loading = {};
 
-        this.model = {
-            params: {},
-            selectedService: null
-        };
-        this.loading = {};
+    this.loadServices = () => {
+      this.loading.services = true;
+      return $q.all({
+        user: User.getUser(),
+        services: AgoraOrder.getServices(),
+      }).then((results) => {
+        this.user = results.user;
+        this.services = results.services;
+      }).catch((err) => {
+        Alerter.error($translate.instant('ip_order_loading_error'));
+        $state.go('^');
+        return $q.reject(err);
+      }).finally(() => {
+        this.loading.services = false;
+      });
+    };
 
-        this.loadServices = () => {
-            this.loading.services = true;
-            return $q.all({
-                user: User.getUser(),
-                services: AgoraOrder.getServices()
-            }).then((results) => {
-                this.user = results.user;
-                this.services = results.services;
-            }).catch((err) => {
-                Alerter.error($translate.instant("ip_order_loading_error"));
-                $state.go("^");
-                return $q.reject(err);
-            }).finally(() => {
-                this.loading.services = false;
-            });
-        };
+    // need to be scoped because of how wizard-step works
+    $scope.loadServices = this.loadServices.bind(this);
 
-        // need to be scoped because of how wizard-step works
-        $scope.loadServices = this.loadServices.bind(this);
+    this.getServiceTypeLabel = type => $translate.instant(`ip_filter_services_title_${type}`);
 
-        this.getServiceTypeLabel = (type) => $translate.instant(`ip_filter_services_title_${type}`);
+    function createOfferDto(ipOffer) {
+      const maximumQuantity = _.get(ipOffer.details.pricings.default
+        .find(price => _.first(price.capacities) === 'renew'), 'maximumQuantity');
+      const countryCodes = ipOffer.details.product.configurations
+        .find(config => config.name === 'country').values;
+      return {
+        productName: ipOffer.invoiceName,
+        productShortName: ipOffer.invoiceName.replace(/^.*\]\s*/, ''),
+        productRegion: _.get(ipOffer.invoiceName.match(/^\[([^\]]+)\]/), '1'),
+        planCode: ipOffer.planCode,
+        price: ipOffer.details.pricings.default.find(price => price.capacities[0] === 'installation').price,
+        maximumQuantity,
+        quantities: _.range(1, maximumQuantity + 1),
+        countries: countryCodes.map(countryCode => ({
+          code: countryCode,
+          description: $translate.instant(`country_${countryCode.toUpperCase()}`),
+        })),
 
-        this.loadIpOffers = () => {
-            this.loading.ipOffers = true;
+        // Only ip block offer has a maximum quantity of 1.
+        // This is a way to distinguish an ip block offer from a single ip address offer.
+        isIpBlockOffer: maximumQuantity === 1,
+      };
+    }
 
-            this.model.params = {};
+    this.loadIpOffers = () => {
+      this.loading.ipOffers = true;
 
-            const ipOffersPromise = AgoraOrder.getIpOffers()
-                .then((ipOffers) => {
-                    this.ipOffers = ipOffers.map(createOfferDto);
-                });
+      this.model.params = {};
 
-            const ipOrganisationPromise = Organisation.getIpOrganisation()
-                .then((organisations) => {
-                    this.organisations = organisations;
-                });
+      const ipOffersPromise = AgoraOrder.getIpOffers()
+        .then((ipOffers) => {
+          this.ipOffers = ipOffers.map(createOfferDto);
+        });
 
-            return $q.all([ipOffersPromise, ipOrganisationPromise])
-                .catch((err) => {
-                    Alerter.error($translate.instant("ip_order_loading_error"));
-                    $state.go("^");
-                    return $q.reject(err);
-                })
-                .finally(() => {
-                    this.loading.ipOffers = false;
-                });
-        };
+      const ipOrganisationPromise = Organisation.getIpOrganisation()
+        .then((organisations) => {
+          this.organisations = organisations;
+        });
 
-        // need to be scoped because of how wizard-step works
-        $scope.loadIpOffers = this.loadIpOffers.bind(this);
+      return $q.all([ipOffersPromise, ipOrganisationPromise])
+        .catch((err) => {
+          Alerter.error($translate.instant('ip_order_loading_error'));
+          $state.go('^');
+          return $q.reject(err);
+        })
+        .finally(() => {
+          this.loading.ipOffers = false;
+        });
+    };
 
-        function createOfferDto (ipOffer) {
-            const maximumQuantity = ipOffer.details.pricings.default.find((price) => price.capacities[0] === "renew").maximumQuantity;
-            const countryCodes = ipOffer.details.product.configurations.find((config) => config.name === "country").values;
-            return {
-                productName: ipOffer.invoiceName,
-                productShortName: ipOffer.invoiceName.replace(/^.*\]\s*/, ""),
-                productRegion: _.get(ipOffer.invoiceName.match(/^\[([^\]]+)\]/), "1"),
-                planCode: ipOffer.planCode,
-                price: ipOffer.details.pricings.default.find((price) => price.capacities[0] === "installation").price,
-                maximumQuantity,
-                quantities: _.range(1, maximumQuantity + 1),
-                countries: countryCodes.map((countryCode) => ({
-                    code: countryCode,
-                    description: $translate.instant(`country_${countryCode.toUpperCase()}`)
-                })),
+    // need to be scoped because of how wizard-step works
+    $scope.loadIpOffers = this.loadIpOffers.bind(this);
 
-                // Only ip block offer has a maximum quantity of 1. This is a way to distinguish an ip block offer from a single ip address offer.
-                isIpBlockOffer: maximumQuantity === 1
-            };
-        }
+    this.getIpOfferRegions = () => _.uniq(_.pluck(this.ipOffers, 'productRegion')).sort();
 
-        this.getIpOfferRegions = () => _.uniq(_.pluck(this.ipOffers, "productRegion")).sort();
+    this.onSelectedOfferChange = () => {
+      this.model.params.selectedQuantity = null;
+      this.model.params.selectedOrganisation = null;
+      this.model.params.selectedCountry = null;
 
-        this.onSelectedOfferChange = () => {
-            this.model.params.selectedQuantity = null;
-            this.model.params.selectedOrganisation = null;
-            this.model.params.selectedCountry = null;
+      if (_.get(this.model, 'params.selectedOffer.countries.length') === 1) {
+        this.model.params.selectedCountry = _.first(_.get(this.model, 'params.selectedOffer.countries'));
+      }
+    };
 
-            if (_.get(this.model, "params.selectedOffer.countries.length") === 1) {
-                this.model.params.selectedCountry = _.first(_.get(this.model, "params.selectedOffer.countries"));
-            }
-        };
+    this.isOfferFormValid = () => {
+      if (!this.model.params.selectedOffer || !this.model.params.selectedCountry) {
+        return false;
+      }
 
-        this.isOfferFormValid = () => {
+      if (!this.model.params.selectedOffer.isIpBlockOffer && !this.model.params.selectedQuantity) {
+        return false;
+      }
 
-            if (!this.model.params.selectedOffer || !this.model.params.selectedCountry) {
-                return false;
-            }
+      return true;
+    };
 
-            if (!this.model.params.selectedOffer.isIpBlockOffer && !this.model.params.selectedQuantity) {
-                return false;
-            }
+    this.redirectToOrganisationPage = () => {
+      $rootScope.$broadcast('ips.display', 'organisation');
+      $state.go('^');
+    };
 
-            return true;
-        };
+    function createProductToOrder(model) {
+      const productToOrder = {
+        planCode: model.params.selectedOffer.planCode,
+        productId: 'ip',
+        duration: 'P1M',
+        pricingMode: 'default',
+        quantity: model.params.selectedQuantity || 1,
+        configuration: [],
+      };
 
-        this.redirectToOrganisationPage = () => {
-            $rootScope.$broadcast("ips.display", "organisation");
-            $state.go("^");
-        };
+      if (model.selectedService) {
+        productToOrder.configuration.push({
+          label: 'destination',
+          value: model.selectedService.serviceName,
+        });
+      }
 
-        this.redirectToPaymentPage = () => {
-            const productToOrder = createProductToOrder(this.model);
+      if (model.params.selectedCountry) {
+        productToOrder.configuration.push({
+          label: 'country',
+          value: model.params.selectedCountry.code,
+        });
+      }
 
-            return User.getUrlOf("express_order")
-                .then((url) => {
-                    $window.open(`${url}review?products=${JSURL.stringify([productToOrder])}`, "_blank");
-                })
-                .catch((err) => {
-                    Alerter.error($translate.instant("ip_order_finish_error"));
-                    $state.go("^");
-                    return $q.reject(err);
-                })
-                .finally(() => $state.go("^"));
-        };
+      if (model.params.selectedOrganisation) {
+        productToOrder.configuration.push({
+          label: 'organisation',
+          value: model.params.selectedOrganisation.organisationId,
+        });
+      }
+      return productToOrder;
+    }
 
-        this.resumeOrder = () => {
-            $state.go("^");
-        };
+    this.redirectToPaymentPage = () => {
+      const productToOrder = createProductToOrder(this.model);
 
-        // need to be scoped because of how wizard-step works
-        $scope.redirectToPaymentPage = this.redirectToPaymentPage.bind(this);
-        $scope.resumeOrder = this.resumeOrder.bind(this);
+      return User.getUrlOf('express_order')
+        .then((url) => {
+          $window.open(`${url}review?products=${JSURL.stringify([productToOrder])}`, '_blank');
+        })
+        .catch((err) => {
+          Alerter.error($translate.instant('ip_order_finish_error'));
+          $state.go('^');
+          return $q.reject(err);
+        })
+        .finally(() => $state.go('^'));
+    };
 
-        $scope.stringLocaleSensitiveComparator = function (v1, v2) {
-            return v1.value.localeCompare(v2.value);
-        };
+    this.resumeOrder = () => {
+      $state.go('^');
+    };
 
-        function createProductToOrder (model) {
-            const productToOrder = {
-                planCode: model.params.selectedOffer.planCode,
-                productId: "ip",
-                duration: "P1M",
-                pricingMode: "default",
-                quantity: model.params.selectedQuantity || 1,
-                configuration: []
-            };
+    // need to be scoped because of how wizard-step works
+    $scope.redirectToPaymentPage = this.redirectToPaymentPage.bind(this);
+    $scope.resumeOrder = this.resumeOrder.bind(this);
 
-            if (model.selectedService) {
-                productToOrder.configuration.push({
-                    label: "destination",
-                    value: model.selectedService.serviceName
-                });
-            }
-
-            if (model.params.selectedCountry) {
-                productToOrder.configuration.push({
-                    label: "country",
-                    value: model.params.selectedCountry.code
-                });
-            }
-
-            if (model.params.selectedOrganisation) {
-                productToOrder.configuration.push({
-                    label: "organisation",
-                    value: model.params.selectedOrganisation.organisationId
-                });
-            }
-            return productToOrder;
-        }
-    }]);
+    $scope.stringLocaleSensitiveComparator = function (v1, v2) {
+      return v1.value.localeCompare(v2.value);
+    };
+  }]);

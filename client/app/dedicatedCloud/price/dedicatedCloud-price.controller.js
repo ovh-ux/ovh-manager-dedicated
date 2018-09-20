@@ -1,21 +1,24 @@
-angular.module("App").controller("DedicatedCloudNewPricesInformationCtrl", [
-    "$scope",
+angular.module('App').controller('DedicatedCloudNewPricesInformationCtrl', [
+  '$scope',
 
-    function ($scope) {
-        "use strict";
+  function ($scope) {
+    $scope.loader = true;
+    $scope.pricesInformationData = angular.copy($scope.currentActionData)
+      .filter(resource => resource.changed === true);
 
-        $scope.loader = true;
-        $scope.pricesInformationData = angular.copy($scope.currentActionData).filter((resource) => resource.changed === true);
+    $scope.pricesInformationIds = $scope.pricesInformationData
+      .map(pricesInformation => pricesInformation.name);
 
-        $scope.pricesInformationIds = $scope.pricesInformationData.map((pricesInformation) => pricesInformation.name);
+    $scope.transformItem = function (item) {
+      $scope.loader = true;
+      return _.find(
+        $scope.pricesInformationData,
+        pricesInformation => pricesInformation.name === item,
+      );
+    };
 
-        $scope.transformItem = function (item) {
-            $scope.loader = true;
-            return _.find($scope.pricesInformationData, (pricesInformation) => pricesInformation.name === item);
-        };
-
-        $scope.onTransformItemDone = function () {
-            $scope.loader = false;
-        };
-    }
+    $scope.onTransformItemDone = function () {
+      $scope.loader = false;
+    };
+  },
 ]);

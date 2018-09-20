@@ -1,1 +1,1 @@
-angular.module("ovhSignupApp", ["UserAccount"]);
+angular.module('ovhSignupApp', ['UserAccount']);
