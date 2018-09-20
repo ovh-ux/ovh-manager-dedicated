@@ -1,1 +1,1 @@
-angular.module("Billing.directives", []);
+angular.module('Billing.directives', []);

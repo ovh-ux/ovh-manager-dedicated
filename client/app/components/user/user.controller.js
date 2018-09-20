@@ -1,19 +1,17 @@
-angular.module("App").controller("UserCtrl", [
-    "$scope",
-    "$http",
-    "User",
-    "ssoAuthentication",
-    function ($scope, $http, User, authentication) {
-        "use strict";
+angular.module('App').controller('UserCtrl', [
+  '$scope',
+  '$http',
+  'User',
+  'ssoAuthentication',
+  function ($scope, $http, User, authentication) {
+    $scope.user = null;
 
-        $scope.user = null;
+    $scope.logout = function () {
+      authentication.logout();
+    };
 
-        $scope.logout = function () {
-            authentication.logout();
-        };
-
-        User.getUser().then((user) => {
-            $scope.user = user;
-        });
-    }
+    User.getUser().then((user) => {
+      $scope.user = user;
+    });
+  },
 ]);
