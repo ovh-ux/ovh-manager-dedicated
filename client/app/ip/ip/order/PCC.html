@@ -8,7 +8,7 @@
         <oui-select id="sizeSelect"
                     name="sizeSelect"
                     required
-                    placeholder="{{ 'global_select' | translate }}"
+                    data-placeholder="{{ 'global_select' | translate }}"
                     data-model="orderableIp.subMaskSize"
                     data-match="label"
                     data-on-change="onSizeChanged(modelValue)"
@@ -25,7 +25,7 @@
         <oui-select id="countrySelect"
                     name="countrySelect"
                     required
-                    placeholder="{{ 'global_select' | translate }}"
+                    data-placeholder="{{ 'global_select' | translate }}"
                     data-model="orderableIp.selectedCountry"
                     data-match="label"
                     data-on-change="onCountryChanged(modelValue)"
@@ -38,8 +38,8 @@
          data-ng-class="{
              'has-error': orderIpPCC.networkName.$dirty && orderIpPCC.networkName.$invalid
          }">
-         <oui-field label="{{ 'ip_order_networkname' | translate }}"
-                    label-popover="{{ 'ip_order_networkname_help' | translate }}">
+         <oui-field data-label="{{ 'ip_order_networkname' | translate }}"
+                    data-label-popover="{{ 'ip_order_networkname_help' | translate }}">
             <input class="oui-input"
                    type="text"
                    id="networkName"
@@ -55,8 +55,8 @@
          data-ng-class="{
              'has-error': orderIpPCC.estimatedClientsNumber.$dirty && orderIpPCC.estimatedClientsNumber.$invalid
          }">
-        <oui-field label="{{ 'ip_order_estimatedclientsnumber' | translate }}"
-                   label-popover="{{ 'ip_order_estimatedclientsnumber_help' | translate }}">
+        <oui-field data-label="{{ 'ip_order_estimatedclientsnumber' | translate }}"
+                   data-label-popover="{{ 'ip_order_estimatedclientsnumber_help' | translate }}">
             <input class="oui-input"
                    type="number"
                    id="estimatedClientsNumber"
@@ -71,8 +71,8 @@
          data-ng-class="{
              'has-error': orderIpPCC.description.$dirty && orderIpPCC.description.$invalid
          }">
-        <oui-field label="{{ 'ip_order_description' | translate }}"
-                   label-popover="{{ 'ip_order_description_help' | translate }}">
+        <oui-field data-label="{{ 'ip_order_description' | translate }}"
+                   data-label-popover="{{ 'ip_order_description_help' | translate }}">
             <oui-textarea rows="3"
                           id="description"
                           name="description"
@@ -88,8 +88,8 @@
          data-ng-class="{
              'has-error': orderIpPCC.usage.$dirty && orderIpPCC.usage.$invalid
          }">
-        <oui-field label="{{ 'ip_order_usage' | translate }}"
-                   label-popover="{{ 'ip_order_usage_help' | translate }}">
+        <oui-field data-label="{{ 'ip_order_usage' | translate }}"
+                   data-label-popover="{{ 'ip_order_usage_help' | translate }}">
             <input class="oui-input"
                    type="text"
                    id="usage"

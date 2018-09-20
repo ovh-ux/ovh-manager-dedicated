@@ -7,7 +7,7 @@
         <oui-select id="numberSelect"
                     name="numberSelect"
                     required
-                    placeholder="{{ 'global_select' | translate }}"
+                    data-placeholder="{{ 'global_select' | translate }}"
                     data-model="model.params.number"
                     data-items="orderableIp.ipRange">
             <span data-ng-bind="$item"></span>
@@ -21,7 +21,7 @@
         <oui-select id="countrySelect"
                     name="countrySelect"
                     required
-                    placeholder="{{ 'global_select' | translate }}"
+                    data-placeholder="{{ 'global_select' | translate }}"
                     data-model="orderableIp.selectedCountry"
                     data-match="label"
                     data-on-change="onCountryChanged(modelValue)"

@@ -1,1 +1,1 @@
-angular.module("Module.otrs.filters", []);
+angular.module('Module.otrs.filters', []);

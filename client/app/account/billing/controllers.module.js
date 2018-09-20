@@ -1,1 +1,1 @@
-angular.module("Billing.controllers", []);
+angular.module('Billing.controllers', []);

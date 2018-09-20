@@ -1,1 +1,1 @@
-angular.module("Module.ip.services", []);
+angular.module('Module.ip.services', []);

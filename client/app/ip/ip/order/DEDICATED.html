@@ -8,7 +8,7 @@
         <oui-select id="blockSizeSelect"
                     name="blockSizeSelect"
                     required
-                    placeholder="{{ 'global_select' | translate }}"
+                    data-placeholder="{{ 'global_select' | translate }}"
                     data-model="model.params.blockSize"
                     data-items="orderableIp.ipv4BlockSizesAll">
             <span data-ng-bind="$item"></span>
@@ -23,7 +23,7 @@
         <oui-select id="countrySelect"
                     name="countrySelect"
                     required
-                    placeholder="{{ 'global_select' | translate }}"
+                    data-placeholder="{{ 'global_select' | translate }}"
                     data-model="orderableIp.selectedCountry"
                     data-match="label"
                     data-on-change="onCountryChanged(modelValue)"
@@ -42,12 +42,14 @@
             <oui-select id="organisationSelect"
                         name="organisationSelect"
                         required
-                        placeholder="{{ 'global_select' | translate }}"
+                        data-placeholder="{{ 'global_select' | translate }}"
                         data-model="orderableIp.selectedOrganisationId"
                         data-match="organisationId"
                         data-on-change="onOrganisationChanged(modelValue)"
                         data-items="orderableIp.ipOrganisation">
-                <span data-ng-bind="$item.organisationId"></span>
+                <span data-ng-bind="$item.organisationId"></span><br>
+                    <span data-ng-bind="$item.lastname"></span>
+                    <span data-ng-bind="$item.firstname"></span>
             </oui-select>
         </div>
 

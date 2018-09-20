@@ -139,9 +139,6 @@ module.exports = function (grunt) {
                     return toRemove.indexOf(path) < 0;
                 }),
                 dest: "."
-            },
-            options: {
-                eslintConfig: require("./.eslintrc.js")
             }
         },
 

@@ -1,1 +1,1 @@
-angular.module("AngularExtensions", []);
+angular.module('AngularExtensions', []);
