@@ -1,84 +1,84 @@
-angular.module("Module.ip.controllers").controller("IpToCsvCtrl", ($scope, $q, $translate, Alerter) => {
-    let timeoutObject = null;
+angular.module('Module.ip.controllers').controller('IpToCsvCtrl', ($scope, $q, $translate, Alerter) => {
+  let timeoutObject = null;
 
-    $scope.data = $scope.currentActionData.ipsList;
+  $scope.data = $scope.currentActionData.ipsList;
 
-    $scope.loading = {
-        exportCsv: false
-    };
+  $scope.loading = {
+    exportCsv: false,
+  };
 
-    $scope.exportAccounts = function () {
-        $scope.loading.exportCsv = true;
+  function printCsv(datas) {
+    let csvContent = '';
+    let dataString;
+    let link;
+    let headers;
+    let fileName;
 
-        // check timeout
-        if (timeoutObject) {
-            timeoutObject.resolve();
-        }
-
-        // init timeout
-        timeoutObject = $q.defer();
-
-        // get data for csv
-        const preparedData = [];
-        angular.forEach($scope.data, (value) => {
-            preparedData.push({
-                ipBlock: value.ipBlock,
-                ipVersion: value.version,
-                type: value.type,
-                country: value.country ? value.country : "",
-                service: value.routedTo ? value.routedTo : "",
-                description: value.description ? value.description : ""
-            });
+    if (datas && timeoutObject) {
+      // get column name
+      headers = datas.headers; // eslint-disable-line
+      csvContent += `${headers.join(';')}\n`;
+      angular.forEach(datas.ips, (data, index) => {
+        dataString = '';
+        angular.forEach(headers, (header) => {
+          dataString += `${data[header]};`;
         });
-        printCsv({
-            ips: preparedData,
-            headers: _.keys(preparedData[0])
-        });
-    };
+        csvContent += index < datas.ips.length ? `${dataString}\n` : dataString;
+      });
 
-    function printCsv (datas) {
-        let csvContent = "";
-        let dataString;
-        let link;
-        let headers;
-        let fileName;
+      fileName = 'export_ips.csv';
+      link = document.createElement('a');
+      if (link.download !== undefined) {
+        link.setAttribute('href', `data:text/csv;charset=ISO-8859-1;base64,${btoa(csvContent)}`);
+        link.setAttribute('download', fileName);
+        link.style = 'visibility:hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } else {
+        window.open(`data:text/csv;charset=ISO-8859-1;base64,${btoa(csvContent)}`);
+      }
 
-        if (datas && timeoutObject) {
-            // get column name
-            headers = datas.headers;
-            csvContent += `${headers.join(";")}\n`;
-            angular.forEach(datas.ips, (data, index) => {
-                dataString = "";
-                angular.forEach(headers, (header) => {
-                    dataString += `${data[header]};`;
-                });
-                csvContent += index < datas.ips.length ? `${dataString}\n` : dataString;
-            });
+      Alerter.success($translate.instant('ip_export_csv_success'));
+    } else if (!datas) {
+      Alerter.error($translate.instant('ip_export_csv_error'));
+    }
+    timeoutObject = null;
+    $scope.loading.exportCsv = false;
+    $scope.resetAction();
+  }
 
-            fileName = "export_ips.csv";
-            link = document.createElement("a");
-            if (link.download !== undefined) {
-                link.setAttribute("href", `data:text/csv;charset=ISO-8859-1;base64,${btoa(csvContent)}`);
-                link.setAttribute("download", fileName);
-                link.style = "visibility:hidden";
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            } else {
-                window.open(`data:text/csv;charset=ISO-8859-1;base64,${btoa(csvContent)}`);
-            }
+  $scope.exportAccounts = function () {
+    $scope.loading.exportCsv = true;
 
-            Alerter.success($translate.instant("ip_export_csv_success"));
-        } else if (!datas) {
-            Alerter.error($translate.instant("ip_export_csv_error"));
-        }
-        timeoutObject = null;
-        $scope.loading.exportCsv = false;
-        $scope.resetAction();
+    // check timeout
+    if (timeoutObject) {
+      timeoutObject.resolve();
     }
 
-    $scope.cancelExport = function () {
-        timeoutObject = null;
-        $scope.resetAction();
-    };
+    // init timeout
+    timeoutObject = $q.defer();
+
+    // get data for csv
+    const preparedData = [];
+    angular.forEach($scope.data, (value) => {
+      preparedData.push({
+        ipBlock: value.ipBlock,
+        ipVersion: value.version,
+        type: value.type,
+        country: value.country ? value.country : '',
+        service: value.routedTo ? value.routedTo : '',
+        description: value.description ? value.description : '',
+      });
+    });
+    printCsv({
+      ips: preparedData,
+      headers: _.keys(preparedData[0]),
+    });
+  };
+
+  $scope.cancelExport = function () {
+    timeoutObject = null;
+    $scope.resetAction();
+  };
 });

@@ -1,1 +1,1 @@
-angular.module("Module.download", []);
+angular.module('Module.download', []);

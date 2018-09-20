@@ -1,20 +1,19 @@
-angular.module("Billing.directives").directive("billingSortingFieldButton", [
-    function () {
-        "use strict";
-        return {
-            restrict: "A",
-            scope: {
-                label: "@",
-                associatedField: "@",
-                activeField: "=",
-                reverseOrder: "=",
-                onChange: "=?"
-            },
-            bindToController: true,
-            controllerAs: "$ctrl",
-            controller: "Billing.directives.billingSortingFieldButtonCtrl",
-            replace: false,
-            template:
+angular.module('Billing.directives').directive('billingSortingFieldButton', [
+  function () {
+    return {
+      restrict: 'A',
+      scope: {
+        label: '@',
+        associatedField: '@',
+        activeField: '=',
+        reverseOrder: '=',
+        onChange: '=?',
+      },
+      bindToController: true,
+      controllerAs: '$ctrl',
+      controller: 'Billing.directives.billingSortingFieldButtonCtrl',
+      replace: false,
+      template:
             `<button type="button"
                      class="btn btn-link"
                      data-ng-click="$ctrl.onClick()">
@@ -29,7 +28,7 @@ angular.module("Billing.directives").directive("billingSortingFieldButton", [
                    aria-label="{{:: 'common_order_descending' | translate }}"
                    aria-hidden="true">
                 </i>
-            </button>`
-        };
-    }
+            </button>`,
+    };
+  },
 ]);
