@@ -37,7 +37,7 @@
    <translation id="manualrenew_onlyauto_alert" qtlid="264166">Vous n'avez séléctionné que des renouvellements automatiques.</translation>
    <translation id="autorenew_empty" qtlid="219810">Vous n'avez aucun service</translation>
    <translation id="autorenew_service_mass_actions_caption" qtlid="300227">Actions sur les éléments sélectionnés :</translation>
-   <translation id="autorenew_service_update_button_caption" qtlid="416072">Modifier la fréquence de paiement</translation>
+   <translation id="autorenew_service_update_button_caption">Modifier les renouvellements</translation>
    <translation id="autorenew_service_update_date_button_caption" qtlid="300253">Aligner les dates de renouvellement.</translation>
    <translation id="autorenew_service_resiliate_button" qtlid="498170">Résilier à date d'échéance</translation>
    <translation id="autorenew_service_resiliate_button_title" qtlid="498183">Résilier à date d'échéance : {0}</translation>
@@ -65,8 +65,6 @@
    <translation id="autorenew_service_autorenew_day_inactive_warning" qtlid="229541">Les renouvellements automatiques ne fonctionnent que si un jour de renouvellement est sélectionné.</translation>
    <translation id="autorenew_service_autorenew_guide_help" qtlid="275688">Besoin d'aide pour vos renouvellements ?</translation>
    <translation id="autorenew_service_autorenew_update" qtlid="369414">Mise à jour de vos paramètres de renouvellement automatique.</translation>
-   <translation id="autorenew_service_update_renewal_activation_notice" qtlid="369427">Le renouvellement automatique a été activé sur le(s) service(s) désigné(s) ainsi que votre compte.</translation>
-   <translation id="autorenew_service_update_renewal_activation_error" qtlid="369440">Vous avez sélectionné le renouvellement automatique pour au moins un service mais nous n'avons pas pu activé le renouvellement automatique sur votre compte : {0}</translation>
    <translation id="autorenew_guide_help" qtlid="156732">Consultez nos guides en ligne.</translation>
    <translation id="autorenew_service_delete_title" qtlid="498170">Résilier à date d'échéance</translation>
    <translation id="autorenew_service_debt_before_paying_1" qtlid="498209">Avant de vous engager sur une nouvelle période de temps, nous vous invitons à d'abord régler votre dette restante.</translation>
@@ -1285,4 +1283,28 @@
    <translation id="billing_credit_balance_movements_operation_debit" qtlid="89749">Débit</translation>
    <translation id="billing_credit_balance_movements_load_error" qtlid="449011">Une erreur est survenue lors du chargement des mouvements de votre votre compte de crédits.</translation>
    <translation id="billing_credit_back" qtlid="449024">Retourner à mes comptes de crédits</translation>
+
+   <translation id="billing_autoRenew_update_backButton_content">Modifier les renouvellements</translation>
+   <translation id="billing_autoRenew_update_header_explanation_1">Choisissez le mode et la fréquence de renouvellement pour chaque type de service.</translation>
+   <translation id="billing_autoRenew_update_header_explanation_2">Le choix du type de renouvellement et sa fréquence s’adaptent automatiquement à chaque liste de services.</translation>
+   <translation id="billing_autoRenew_update_table_header_serviceType">Type de service</translation>
+   <translation id="billing_autoRenew_update_table_header_services">Liste des services</translation>
+   <translation id="billing_autoRenew_update_table_header_renewalType">Type de renouvellement</translation>
+   <translation id="billing_autoRenew_update_table_removeService">Retirer {serviceName} de la liste</translation>
+   <translation id="billing_autoRenew_update_table_empty">Aucun service à modifier</translation>
+   <translation id="billing_autoRenew_update_table_renewalTypeSelection_placeholder">Choisir</translation>
+   <translation id="billing_autoRenew_update_cantChangeRenewalType">Vous ne pouvez pas renouveler ce type de service de façon groupée.</translation>
+   <translation id="billing_autoRenew_update_continueButton_text">Continuer</translation>
+   <translation id="billing_autoRenew_update_cancelButton_text">Annuler</translation>
+   <translation id="billing_autoRenew_update_error_emptyArguments">Veuillez sélectionner les services dont vous souhaitez mettre à jour le type de renouvellement.</translation>
+
+   <translation id="billing_autoRenew_update_confirmation_backButton_content">Confirmation des modifications</translation>
+   <translation id="billing_autoRenew_update_confirmation_header_explanation">Voici les services qui vont être mis à jour :</translation>
+   <translation id="billing_autoRenew_update_confirmation_contracts_explanation">Afin de valider le passage des services au renouvellement automatique, veuillez signer électroniquement les contrats suivants :</translation>
+   <translation id="billing_autoRenew_update_confirmation_confirmButton_text">Confirmer</translation>
+   <translation id="billing_autoRenew_update_confirmation_cancelButton_text">Annuler</translation>
+
+   <translation id="billing_autoRenew_update_success">Le renouvellement automatique a été activé sur le ou les services désignés, ainsi que votre compte. Ces modifications seront affichées sur la page dans quelques minutes.</translation>
+   <translation id="billing_autoRenew_update_error">Vous avez sélectionné le renouvellement automatique pour au moins un service, mais nous n'avons pas pu activer le renouvellement automatique sur votre compte : {0}.</translation>
+
 </translations>
