@@ -17,8 +17,9 @@
             <a class="btn btn-block btn-default"
                data-translate="dedicatedCloud_tab_veeam_on"
                data-ng-if="veeam.model.state === veeam.constants.DISABLED"
-               data-ui-sref="app.dedicatedClouds.datacenter.backup.enable">
+               data-ui-sref="{{ !isUS ? 'app.dedicatedClouds.datacenter.backup.enable' : 'app.dedicatedClouds.datacenter.backup.enableAgora' }}">
             </a>
+
             <a class="btn btn-block btn-default"
                data-translate="dedicatedCloud_tab_veeam_off"
                data-ng-if="veeam.model.state === veeam.constants.ENABLED"
