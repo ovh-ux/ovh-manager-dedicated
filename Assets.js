@@ -2,55 +2,6 @@ const glob = require("glob");
 const _ = require("lodash");
 module.exports = {
     src: {
-        js: [
-            "client/app/app.js",
-            "client/app/app.controller.js",
-            "client/app/**/*.app.js",
-            "client/app/**/*.module.js",
-            "client/app/**/*.routes.js",
-            "client/app/components/**/*.module.js",
-            "client/app/components/api/*.js",
-            "client/app/components/**/**.js",
-            "client/app/js/app/*.js",
-            "client/app/account/**/*.js",
-            "client/app/dedicated/**/*.js",
-            "client/app/cdn/**/*.js",
-            "client/app/dedicatedCloud/**/*.js",
-            "client/app/double-authentication/**/*.js",
-            "client/app/configuration/**/*.js",
-            "client/app/user-contracts/**/*.js",
-            "client/app/license/**/*.js",
-            "client/app/download/**/*.js",
-            "client/app/ip/**/*.js",
-            "client/app/error/**/*.js"
-        ].concat(
-            _.flatten(glob.sync("./node_modules/ovh-module-*/Assets.js").map((src) => require(src).src.js))
-        ),
-        jsES6: [
-            "dist/client/app/app.js",
-            "dist/client/app/app.controller.js",
-            "dist/client/app/**/*.app.js",
-            "dist/client/app/**/*.module.js",
-            "dist/client/app/**/*.routes.js",
-            "dist/client/app/**/*.js",
-            "dist/client/app/components/**/*.module.js",
-            "dist/client/app/components/api/*.js",
-            "dist/client/app/components/**/**.js",
-            "dist/client/app/js/app/*.js",
-            "dist/client/app/account/**/*.js",
-            "dist/client/app/dedicated/**/*.js",
-            "dist/client/app/cdn/**/*.js",
-            "dist/client/app/dedicatedCloud/**/*.js",
-            "dist/client/app/double-authentication/**/*.js",
-            "dist/client/app/configuration/**/*.js",
-            "dist/client/app/user-contracts/**/*.js",
-            "dist/client/app/license/**/*.js",
-            "dist/client/app/download/**/*.js",
-            "dist/client/app/ip/**/*.js",
-            "dist/client/app/error/**/*.js"
-        ].concat(
-            _.flatten(glob.sync("./node_modules/ovh-module-*/Assets.js").map((src) => require(src).src.js.map((src) => `dist/client/${src}`)))
-        ),
         css: [
             "client/app/css/main.css",
             "client/app/css/main-scss.css",

@@ -1,5 +1,23 @@
 angular
-  .module('Billing')
+  .module('Billing', [
+    "ovh-utils-angular",
+    "ngRoute",
+    "ngSanitize",
+    "ui.bootstrap",
+    "Billing.constants",
+    "Billing.services",
+    "Billing.controllers",
+    "Billing.directives",
+    "Billing.filters",
+    "ovh-angular-export-csv"
+  ])
+  .constant('BILLING_BASE_URL', 'account/billing/')
+  .constant('Billing.constants', {
+    aapiRootPath: '/engine/2api/',
+    swsProxyRootPath: 'apiv6/',
+    paymentMeans: ["bankAccount", "paypal", "creditCard", "deferredPaymentAccount"],
+    target: 'EU',
+  })
   .config([
     '$stateProvider',
     '$urlServiceProvider',

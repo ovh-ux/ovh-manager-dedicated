@@ -1,3 +1,90 @@
+/*
+import './components/filters.module.js';
+import './components/services.module.js';
+import './controllers.module.js';
+import './account/billing/services.module.js';
+import './account/billing/controllers.module.js';
+import './account/billing/billingApp.module.js';
+import './account/billing/components/directives/directives.module.js';
+import './account/otrs/otrs-controllers.module.js';
+import './account/otrs/otrs-filters.module.js';
+import './account/otrs/otrs-services.module.js';
+import './account/user/user.module.js';
+import './exchange/exchangeControllers.module.js';
+import './exchange/exchangeServices.module.js';
+import './exchange/exchangeComponents.module.js';
+import './ip/ip.filters.module.js';
+import './ip/ip-services.module.js';
+import './license/license.module.js';
+import './components/paymentMethod/vantiv/billing-vantiv-configurator.provider.js';
+*/
+
+import * as CONFIG from '../../constants.config.js';
+const target = 'EU';
+
+angular.module('App', [
+  "ovh-angular-proxy-request",
+  "ovh-angular-pagination-front",
+  "ovh-utils-angular",
+  "ui.bootstrap",
+  "ui.router",
+  "ngRoute",
+  "ngSanitize",
+  "ngMessages",
+  "controllers",
+  "services",
+  "filters",
+  "directives",
+  "Billing",
+  "UserAccount",
+  "ovh-angular-http",
+  "ui.utils",
+  "ovh-angular-q-allSettled",
+  "ovh-angular-swimming-poll",
+  "ovh-angular-export-csv",
+  "ng-at-internet",
+  "atInternetUiRouterPlugin",
+  "ovh-angular-user-pref",
+  "ovhBrowserAlert",
+  "ui.validate",
+  "ovh-angular-sso-auth",
+  "ovh-angular-sso-auth-modal-plugin",
+  "ovh-angular-apiv7",
+  "oui",
+  "ui.select",
+  "Module.ip",
+  "Module.license",
+  "Module.download",
+  "internationalPhoneNumber",
+  "ovh-angular-sidebar-menu",
+  "ovh-angular-otrs",
+  "pascalprecht.translate",
+  "chart.js",
+  "ovh-angular-responsive-tabs",
+  "ngCkeditor",
+  "Module.otrs",
+]);
+angular.module('App')
+.constant('constants', {
+  prodMode: false,
+  swsProxyRootPath: 'apiv6/',
+  aapiRootPath: '/engine/2api/',
+  target,
+  renew: CONFIG[target].RENEW_URL,
+  urls: CONFIG[target].URLS,
+  UNIVERS: CONFIG[target].UNIVERS,
+  TOP_GUIDES: CONFIG[target].TOP_GUIDES,
+  vmsUrl: CONFIG[target].vmsUrl,
+  travauxUrl: CONFIG[target].travauxUrl,
+  aapiHeaderName: "X-Ovh-Session",
+  vrackUrl: CONFIG[target].vrackUrl,
+  MANAGER_URLS: CONFIG[target].MANAGER_URLS,
+  REDIRECT_URLS: CONFIG[target].REDIRECT_URLS,
+  DEFAULT_LANGUAGE: CONFIG[target].DEFAULT_LANGUAGE,
+  FALLBACK_LANGUAGE: CONFIG[target].FALLBACK_LANGUAGE
+})
+.constant('LANGUAGES', CONFIG[target].LANGUAGES)
+.constant('website_url', CONFIG[target].website_url)
 angular
   .module('App')
   .config([
@@ -43,9 +130,11 @@ angular
     ROUTABLE_IP: /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/,
     ROUTABLE_BLOCK_OR_IP: /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\/(\d|[1-2]\d|3[0-2]))?$/,
   })
+  /* @TODO FIX
   .config((BillingVantivConfiguratorProvider, BILLING_VANTIV) => {
     BillingVantivConfiguratorProvider.setScriptUrl(BILLING_VANTIV.SCRIPTS.PROD);
   })
+  */
   .run((ssoAuthentication, User) => {
     ssoAuthentication.login().then(() => User.getUser());
   })

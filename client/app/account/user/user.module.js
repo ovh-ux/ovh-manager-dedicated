@@ -1,5 +1,14 @@
+import './newAccountForm/new-account-form.module.js';
+
 angular
-  .module('UserAccount')
+  .module('UserAccount', [
+    "ja.qr",
+    "ovh-utils-angular",
+    "ovhSignupApp"
+  ])
+  .constant('UserAccount.constants', {
+    target: 'EU',
+  })
   .config([
     '$stateProvider',
     'UserAccount.constants',
