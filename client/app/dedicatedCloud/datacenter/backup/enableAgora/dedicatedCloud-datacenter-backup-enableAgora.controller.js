@@ -51,7 +51,6 @@ angular.module('App').controller('DedicatedCloudSubDatacenterVeeamBackupEnableAg
       })
       .catch((error) => {
         this.Alerter.error([this.$translate.instant('dedicatedCloud_tab_veeam_enable_fail'), _.get(error, 'data.message')].join(' '));
-        this.closeModal();
       })
       .finally(() => this.closeModal());
   }

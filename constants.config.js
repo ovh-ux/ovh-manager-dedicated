@@ -826,7 +826,7 @@ var constants = {
                 faqVps: "https://www.ovh.com/ca/en/vps/faq-help.xml",
                 dedicatedOrder: "https://us.ovhcloud.com/order/dedicated/#/dedicated/select",
                 vrackOrder: "https://us.ovhcloud.com/order/express/#/express/review?products=~(~(planCode~'vrack~quantity~1~productId~'vrack))",
-                cloudProjectOrder : "https://us.ovhcloud.com/manager/cloud/#/iaas/pci/offer",
+                cloudProjectOrder: "https://us.ovhcloud.com/manager/cloud/#/iaas/pci/offer",
                 veeamBackup: "https://us.ovhcloud.com/products/hosted-private-cloud/managed-veeam-backup"
             }
         },
