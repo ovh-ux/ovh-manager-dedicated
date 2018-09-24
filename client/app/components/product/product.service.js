@@ -1,4 +1,3 @@
-console.log('Service Products');
 angular.module('services').service('Products', function ($rootScope, $http, $q, $stateParams, constants) {
   let products = null;
   let productsByType = null;

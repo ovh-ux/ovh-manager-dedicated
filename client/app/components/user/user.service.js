@@ -1,4 +1,3 @@
-console.log('User service');
 angular.module('services').service('User', [
   '$rootScope',
   '$http',
