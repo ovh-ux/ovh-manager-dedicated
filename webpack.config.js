@@ -13,7 +13,7 @@ fs.readdirSync(folder).forEach((file) => {
   const stats = fs.lstatSync(`${folder}/${file}`);
   if (file === 'components') return;
   if (stats.isDirectory()) {
-    const jsFiles = glob.sync(`${folder}/${file}/**/*.js`);
+    const jsFiles = glob.sync(`${folder}/${file}/**/!(*.module).js`);
     if (jsFiles.length > 0) {
       bundles[file] = jsFiles;
     }
@@ -56,5 +56,9 @@ module.exports = (env = {}) => {
         jquery: path.resolve(__dirname, 'node_modules/jquery'),
       },
     },
+    devServer: {
+      hot: false,
+      inline: false
+    }
   });
 };
