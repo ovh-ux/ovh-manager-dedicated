@@ -94,4 +94,4 @@ import 'script-loader!@bower_components/ng-ckeditor/ng-ckeditor.js';
 import 'script-loader!@bower_components/messenger/build/js/messenger.min.js';
 import 'script-loader!flatpickr/dist/flatpickr.min.js';
 
-//import './app.less';
+import './app.less';

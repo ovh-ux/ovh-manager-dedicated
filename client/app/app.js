@@ -1,26 +1,7 @@
-/*
-import './components/filters.module.js';
-import './components/services.module.js';
-import './controllers.module.js';
-import './account/billing/services.module.js';
-import './account/billing/controllers.module.js';
-import './account/billing/billingApp.module.js';
-import './account/billing/components/directives/directives.module.js';
-import './account/otrs/otrs-controllers.module.js';
-import './account/otrs/otrs-filters.module.js';
-import './account/otrs/otrs-services.module.js';
-import './account/user/user.module.js';
-import './exchange/exchangeControllers.module.js';
-import './exchange/exchangeServices.module.js';
-import './exchange/exchangeComponents.module.js';
-import './ip/ip.filters.module.js';
-import './ip/ip-services.module.js';
-import './license/license.module.js';
-import './components/paymentMethod/vantiv/billing-vantiv-configurator.provider.js';
-*/
-
 import * as CONFIG from '../../constants.config.js';
 const target = 'EU';
+
+import asyncLoaderFactory from './async-loader.factory';
 
 angular.module('App', [
   "ovh-angular-proxy-request",
@@ -65,6 +46,7 @@ angular.module('App', [
   "Module.otrs",
 ]);
 angular.module('App')
+.factory('asyncLoader', asyncLoaderFactory)
 .constant('constants', {
   prodMode: false,
   swsProxyRootPath: 'apiv6/',

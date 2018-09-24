@@ -33,7 +33,8 @@ module.exports = (env = {}) => {
       files: [
         //{ from: path.resolve(__dirname, './client/app/common/assets'), to: 'assets' },
         { from: path.resolve(__dirname, './node_modules/angular-i18n'), to: 'angular-i18n' },
-        { from: path.resolve(__dirname, './client/**/*.html'), context: 'client' },
+        { from: path.resolve(__dirname, './client/**/*.html'), context: 'client/app' },
+        { from: path.resolve(__dirname, './client/app/images/**/*.*'), context: 'client/app' },
       ],
     },
   }, env);
@@ -41,13 +42,10 @@ module.exports = (env = {}) => {
 
   return merge(config, {
     entry: _.assign({
-      deps: './client/app/index.js',
-      app: './client/app/app.js',
-      appCtrl: './client/app/app.controller.js',
+      index: './client/app/index.js',
+      app: ['./client/app/app.js', './client/app/app.controller.js', './client/app/app.routes.js'],
       modules: glob.sync('./client/app/**/*.module.js'),
-      account: glob.sync('./client/app/account/**/*.module.js'),
       components: glob.sync('./client/app/components/**/!(*.module).js'),
-      //config: ['./client/app/config/all.js', `./client/app/config/${env.production ? 'prod' : 'dev'}.js`],
     }, bundles),
     output: {
       path: path.resolve(__dirname, 'dist'),
