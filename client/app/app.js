@@ -176,10 +176,7 @@ angular
       localStorage['univers-selected-language'] = defaultLanguage;
     }
 
-    $translateProvider.useLoader('$translatePartialLoader', {
-      urlTemplate: constants.prodMode ? '{part}/translations/Messages_{lang}.json' : 'client/app/{part}/translations/Messages_{lang}.json',
-    });
-
+    $translateProvider.useLoader('asyncLoader');
     $translateProvider.useMissingTranslationHandler('translateMissingTranslationHandler');
     $translateProvider.useLoaderCache(true);
     $translateProvider.useSanitizeValueStrategy('sanitizeParameters');

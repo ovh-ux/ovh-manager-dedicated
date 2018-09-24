@@ -31,10 +31,10 @@ module.exports = (env = {}) => {
     root: path.resolve(__dirname, './client/app'),
     assets: {
       files: [
-        //{ from: path.resolve(__dirname, './client/app/common/assets'), to: 'assets' },
-        { from: path.resolve(__dirname, './node_modules/angular-i18n'), to: 'angular-i18n' },
+        { from: path.resolve(__dirname, './node_modules/angular-i18n'), to: 'resources/angular/i18n' },
         { from: path.resolve(__dirname, './client/**/*.html'), context: 'client/app' },
         { from: path.resolve(__dirname, './client/app/images/**/*.*'), context: 'client/app' },
+        { from: path.resolve(__dirname, './node_modules/@ovh-ux/ovh-utils-angular/src/**/*.html'), context: 'node_modules/@ovh-ux/ovh-utils-angular/src', to: 'components/ovh-utils-angular' },
       ],
     },
   }, env);

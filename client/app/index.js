@@ -95,3 +95,4 @@ import 'script-loader!@bower_components/messenger/build/js/messenger.min.js';
 import 'script-loader!flatpickr/dist/flatpickr.min.js';
 
 import './app.less';
+import './css/source.scss';
