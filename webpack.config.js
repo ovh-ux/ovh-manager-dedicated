@@ -56,9 +56,11 @@ module.exports = (env = {}) => {
         jquery: path.resolve(__dirname, 'node_modules/jquery'),
       },
     },
+    /*
     devServer: {
       hot: false,
       inline: false
     }
+    */
   });
 };
