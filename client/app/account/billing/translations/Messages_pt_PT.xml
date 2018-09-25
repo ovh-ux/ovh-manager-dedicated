@@ -12,12 +12,12 @@
    <translation id="autorenew_service_name" qtlid="266952">Designação do serviço</translation>
    <translation id="autorenew_service_type" qtlid="2642">Tipo</translation>
    <translation id="autorenew_service_date" qtlid="401685">Data de renovação</translation>
-   <translation id="autorenew_service_expiration_date" qtlid="212868">Expira a {0}</translation>
+   <translation id="autorenew_service_expiration_date" qtlid="73589">Expira a</translation>
    <translation id="autorenew_service_expiration_warning" qtlid="264361">Atenção, o seu serviço expira antes da data de renovação automática. Deverá renovar o serviço manualmente antes de poder ativar a renovação automática.</translation>
    <translation id="autorenew_service_autorenew_go_to_payment_mean" qtlid="351656">Para gerir os métodos de pagamento associados à renovação automática, clique <a href="#/billing/mean">aqui</a>.</translation>
    <translation id="autorenew_manage_my_payment_means" qtlid="287514">Gerir métodos de pagamento</translation>
    <translation id="autorenew_service_autorenew_go_to_autorenew" qtlid="351669">Para gerir a renovação dos serviços, clique <a href="#/billing/autoRenew">aqui</a>.</translation>
-   <translation id="autorenew_service_after_expiration_date" qtlid="349312">Expira a {0}</translation>
+   <translation id="autorenew_service_after_expiration_date" qtlid="229411">Expira a</translation>
    <translation id="autorenew_service_renew" qtlid="168172">Renovação</translation>
    <translation id="autorenew_service_renew_change" qtlid="37875">Alterar</translation>
    <translation id="autorenew_service_frequency" qtlid="405279">Tipo</translation>
@@ -753,7 +753,7 @@
    <translation id="mean_table_head_3d_secure_true" qtlid="34776">Sim</translation>
    <translation id="mean_table_head_3d_secure_false" qtlid="34788">Não</translation>
    <translation id="mean_table_tooltip_more_actions" qtlid="436328">Outras ações para este método de pagamento</translation>
-   <translation id="deleteMean_title" qtlid="176963">Eliminação de um modo de pagamento</translation>
+   <translation id="deleteMean_title" qtlid="176963">Eliminação de um método de pagamento</translation>
    <translation id="paymentMean_delete_message_paypal" qtlid="176976">Atenção, irá suprimir definitivamente o método de pagamento associado à seguinte conta Paypal:</translation>
    <translation id="paymentMean_delete_message_bankAccount" qtlid="176989">Atenção, irá suprimir definitivamente o método de pagamento associado à seguinte conta bancária:</translation>
    <translation id="paymentMean_delete_message_creditCard" qtlid="177002">Atenção, irá suprimir definitivamente o método de pagamento associado ao cartão com o número:</translation>
@@ -784,7 +784,7 @@
    <translation id="paymentMean_error_maxlength" qtlid="177171">O texto deve ter mais do que 255 caracteres.</translation>
    <translation id="paymentType_delete_error" qtlid="177184">Erro durante a eliminação de um método de pagamento</translation>
    <translation id="paymentType_modify_error" qtlid="436354">Erro durante a alteração do método de pagamento</translation>
-   <translation id="paymentType_delete_success" qtlid="177197">Modo de pagamento eliminado</translation>
+   <translation id="paymentType_delete_success" qtlid="177197">Método de pagamento eliminado</translation>
    <translation id="paymentMean_add_message_paypal" qtlid="229671">Ao clicar no botão "Adicionar", queira ligar-se à sua conta Paypal para poder autorizar a OVH a efetuar débitos na sua conta Paypal aquando da emissão das próximas faturas.</translation>
    <translation id="paymentMean_add_message_creditCard" qtlid="363865">Para validar o registo do seu cartão de crédito, vamos simular uma tentativa de pagamento. <br/> O montante de 1 Euro não será debitado da sua conta.<br/><b class="blue"> Após a confirmação do banco, o seu cartão de crédito será ativado de imediato.</b></translation>
    <translation id="paymentMean_add_message_creditCard_CA" qtlid="267422">A OVH efetuará um pedido de autorização de débito que que poderá aparecer na sua conta como movimento em curso, mas não pedirá a finalização dessa autorização. O montante não será debitado, ou será reembolsado pela sua entidade bancária.</translation>
@@ -897,7 +897,7 @@
    <translation id="ovhAccount_renew_step1_msg" qtlid="108384">Poderá creditar a sua conta para regularizar as suas faturas ou antecipar os pagamentos das faturas seguintes.</translation>
    <translation id="ovhAccount_renew_step1_erreurmin" qtlid="229763">O montante do crédito deve ser no mínimo de 10 {0} e o seu saldo de conta deve ser positivo.</translation>
    <translation id="ovhAccount_renew_step1_erreurformat" qtlid="243474">Se o montante introduzido está incorreto, utilize apenas números e como caractere de separação um 'ponto' ou uma 'vírgula'.</translation>
-   <translation id="ovhAccount_renew_step1_amount" qtlid="177483">Montante ({0}) :</translation>
+   <translation id="ovhAccount_renew_step1_amount" qtlid="177483">Montante ({0}):</translation>
    <translation id="ovhAccount_renew_step2_msg" qtlid="177496">Resumo da nota de encomenda</translation>
    <translation id="ovhAccount_renew_step2_credit" qtlid="177509">Montante a ser creditado:</translation>
    <translation id="ovhAccount_renew_step2_error" qtlid="177522">Ocorreu um erro. Pedimos desculpa pelo incómodo.</translation>
