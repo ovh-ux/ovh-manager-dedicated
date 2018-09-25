@@ -1,7 +1,7 @@
 import asyncLoaderFactory from './async-loader.factory';
 import config from './config/config.js';
 
-angular.module('App', [
+const appDeps = [
   "ovh-angular-proxy-request",
   "ovh-angular-pagination-front",
   "ovh-utils-angular",
@@ -41,14 +41,19 @@ angular.module('App', [
   "chart.js",
   "ovh-angular-responsive-tabs",
   "ngCkeditor",
-  "Module.otrs",
-])
-.constant('constants', {
+  "Module.otrs"
+];
+
+if (WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca') {
+  appDeps.push("Module.exchange");
+}
+
+angular.module('App', appDeps).constant('constants', {
   prodMode: config.prodMode,
   swsProxyRootPath: config.swsProxyRootPath,
   aapiRootPath: config.aapiRootPath,
   target: config.target,
-  renew: config.RENEW_URL,
+  renew: config.constants.RENEW_URL,
   urls: config.constants.URLS,
   UNIVERS: config.constants.UNIVERS,
   TOP_GUIDES: config.constants.TOP_GUIDES,
