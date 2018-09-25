@@ -59,8 +59,6 @@ import 'script-loader!@bower_components/ovh-angular-browser-alert/dist/ovh-angul
 import 'script-loader!@bower_components/randexp/build/randexp.min.js';
 import 'script-loader!ovh-angular-sso-auth/dist/ovh-angular-sso-auth.min.js';
 import 'script-loader!ovh-angular-sso-auth-modal-plugin/dist/ovh-angular-sso-auth-modal-plugin.min.js';
-import 'script-loader!raven-js/dist/raven.min.js';
-import 'script-loader!raven-js/dist/plugins/angular.min.js';
 import 'script-loader!ui-select/dist/select.min.js';
 import 'script-loader!angular-resource/angular-resource.min.js';
 import 'script-loader!jsurl/lib/jsurl.js';
