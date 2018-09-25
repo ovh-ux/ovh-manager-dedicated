@@ -1,9 +1,10 @@
-angular.module('App').controller('DedicatedCloudSubDatacenterVeeamCtrl', ($scope, $stateParams, $translate, DedicatedCloud, $rootScope, VEEAM_STATE_ENUM) => {
+angular.module('App').controller('DedicatedCloudSubDatacenterVeeamCtrl', ($scope, $stateParams, $translate, DedicatedCloud, $rootScope, VEEAM_STATE_ENUM, constants) => {
   $scope.veeam = {
     model: null,
     constants: VEEAM_STATE_ENUM,
   };
   $scope.loading = false;
+  $scope.isUS = constants.target === 'US';
 
   $rootScope.$on('datacenter.veeam.reload', () => {
     $scope.loadVeeam(true);
