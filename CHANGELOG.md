@@ -1,3 +1,21 @@
+<a name="10.2.1"></a>
+## [10.2.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.2.0...v10.2.1) (2018-09-25)
+
+
+### Bug Fixes
+
+* fix accent display ([f193a8e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f193a8e))
+* **billing:** fix expiration date display ([e0e37fe](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e0e37fe))
+* fix after review ([2bef5e6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2bef5e6))
+* **us:** disable veeam backup agora order for US temporarly ([be2caf8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/be2caf8))
+
+
+### Features
+
+* **us:** activate veeam backup ([2aec1d5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2aec1d5))
+
+
+
 <a name="10.2.0"></a>
 # [10.2.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.1.3...v10.2.0) (2018-09-20)
 
