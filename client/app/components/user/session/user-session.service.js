@@ -1,10 +1,9 @@
 class SessionService {
-  constructor($q, $translate, $translatePartialLoader, constants, CdnDomain, DedicatedCloud, Nas,
+  constructor($q, $translate, constants, CdnDomain, DedicatedCloud, Nas,
     NavbarNotificationService, Products, User, LANGUAGES, OtrsPopupService, ssoAuthentication,
     featureAvailability) {
     this.$q = $q;
     this.$translate = $translate;
-    this.$translatePartialLoader = $translatePartialLoader;
     this.constants = constants;
     this.$translate = $translate;
     this.cdnDomain = CdnDomain;
@@ -481,9 +480,6 @@ class SessionService {
   }
 
   loadTranslations() {
-    this.$translatePartialLoader.addPart('components/sidebar-menu');
-    this.$translatePartialLoader.addPart('components/sidebar-menu/account');
-    this.$translatePartialLoader.addPart('components/ovh-angular-otrs');
     return this.$translate.refresh();
   }
 

@@ -1,5 +1,5 @@
 angular.module('App')
-  .run(($q, SidebarMenu, Products, User, $translatePartialLoader, $translate, atInternet,
+  .run(($q, SidebarMenu, Products, User, $translate, atInternet,
     DedicatedCloud, Nas, CdnDomain, featureAvailability, constants) => {
     function buildSidebarActions() {
       return $q.all({
@@ -266,8 +266,6 @@ angular.module('App')
         SidebarMenu.manageStateChange();
       });
     }
-
-    $translatePartialLoader.addPart('components/sidebar-menu');
 
     const mainPromise = $translate
       .refresh()

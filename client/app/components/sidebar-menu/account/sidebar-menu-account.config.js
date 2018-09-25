@@ -1,4 +1,4 @@
-angular.module('App').run(($q, $translatePartialLoader, $translate, SidebarMenu, User, constants) => {
+angular.module('App').run(($q, $translate, SidebarMenu, User, constants) => {
   function buildMyAccountMenu() {
     const myAccountMenu = SidebarMenu.addMenuItem({
       name: 'userAccountMenu',
@@ -143,8 +143,6 @@ angular.module('App').run(($q, $translatePartialLoader, $translate, SidebarMenu,
   }
 
   function init() {
-    $translatePartialLoader.addPart('components/sidebar-menu/account');
-
     return $q.all({
       translate: $translate.refresh(),
       user: User.getUser(),
