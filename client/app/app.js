@@ -1,7 +1,5 @@
-import * as CONFIG from '../../constants.config.js';
-const target = 'EU';
-
 import asyncLoaderFactory from './async-loader.factory';
+import config from './config/config.js';
 
 angular.module('App', [
   "ovh-angular-proxy-request",
@@ -44,29 +42,28 @@ angular.module('App', [
   "ovh-angular-responsive-tabs",
   "ngCkeditor",
   "Module.otrs",
-]);
-angular.module('App')
-.factory('asyncLoader', asyncLoaderFactory)
+])
 .constant('constants', {
-  prodMode: false,
-  swsProxyRootPath: 'apiv6/',
-  aapiRootPath: '/engine/2api/',
-  target,
-  renew: CONFIG[target].RENEW_URL,
-  urls: CONFIG[target].URLS,
-  UNIVERS: CONFIG[target].UNIVERS,
-  TOP_GUIDES: CONFIG[target].TOP_GUIDES,
-  vmsUrl: CONFIG[target].vmsUrl,
-  travauxUrl: CONFIG[target].travauxUrl,
+  prodMode: config.prodMode,
+  swsProxyRootPath: config.swsProxyRootPath,
+  aapiRootPath: config.aapiRootPath,
+  target: config.target,
+  renew: config.RENEW_URL,
+  urls: config.constants.URLS,
+  UNIVERS: config.constants.UNIVERS,
+  TOP_GUIDES: config.constants.TOP_GUIDES,
+  vmsUrl: config.constants.vmsUrl,
+  travauxUrl: config.constants.travauxUrl,
   aapiHeaderName: "X-Ovh-Session",
-  vrackUrl: CONFIG[target].vrackUrl,
-  MANAGER_URLS: CONFIG[target].MANAGER_URLS,
-  REDIRECT_URLS: CONFIG[target].REDIRECT_URLS,
-  DEFAULT_LANGUAGE: CONFIG[target].DEFAULT_LANGUAGE,
-  FALLBACK_LANGUAGE: CONFIG[target].FALLBACK_LANGUAGE
+  vrackUrl: config.constants.vrackUrl,
+  MANAGER_URLS: config.constants.MANAGER_URLS,
+  REDIRECT_URLS: config.constants.REDIRECT_URLS,
+  DEFAULT_LANGUAGE: config.constants.DEFAULT_LANGUAGE,
+  FALLBACK_LANGUAGE: config.constants.FALLBACK_LANGUAGE
 })
-.constant('LANGUAGES', CONFIG[target].LANGUAGES)
-.constant('website_url', CONFIG[target].website_url)
+.constant('LANGUAGES', config.constants.LANGUAGES)
+.constant('website_url', config.constants.website_url)
+.factory('asyncLoader', asyncLoaderFactory)
 angular
   .module('App')
   .config([

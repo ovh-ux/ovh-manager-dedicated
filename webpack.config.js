@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const path = require('path');
 const fs = require('fs');
@@ -40,6 +41,13 @@ module.exports = (env = {}) => {
   }, env);
   /* eslint-enable */
 
+  config.plugins.push(new webpack.DefinePlugin({
+    WEBPACK_ENV: {
+      region: JSON.stringify(env.region),
+      production: JSON.stringify(env.production),
+    },
+  }));
+
   return merge(config, {
     entry: _.assign({
       index: './client/app/index.js',
@@ -56,11 +64,9 @@ module.exports = (env = {}) => {
         jquery: path.resolve(__dirname, 'node_modules/jquery'),
       },
     },
-    /*
     devServer: {
       hot: false,
       inline: false
     }
-    */
   });
 };

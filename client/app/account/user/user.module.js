@@ -1,4 +1,5 @@
 import './newAccountForm/new-account-form.module.js';
+import config from '../../config/config.js';
 
 angular
   .module('UserAccount', [
@@ -7,8 +8,15 @@ angular
     "ovhSignupApp"
   ])
   .constant('UserAccount.constants', {
-    target: 'EU',
+    aapiRootPath: config.aapiRootPath,
+    swsProxyRootPath: config.swsProxyRootPath,
+    target: config.target,
   })
+  .constant('LANGUAGES', config.constants.LANGUAGES)
+  .constant('CountryConstants', {
+    support: config.constants.URLS.support,
+  })
+  .constant('AccountCreationURLS', config.constants.accountCreation)
   .config([
     '$stateProvider',
     'UserAccount.constants',

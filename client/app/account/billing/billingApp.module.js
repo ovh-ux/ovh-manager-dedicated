@@ -1,3 +1,5 @@
+import config from '../../config/config.js';
+
 angular
   .module('Billing', [
     "ovh-utils-angular",
@@ -13,10 +15,14 @@ angular
   ])
   .constant('BILLING_BASE_URL', 'account/billing/')
   .constant('Billing.constants', {
-    aapiRootPath: '/engine/2api/',
-    swsProxyRootPath: 'apiv6/',
+    aapiRootPath: config.aapiRootPath,
+    swsProxyRootPath: config.swsProxyRootPath,
     paymentMeans: ["bankAccount", "paypal", "creditCard", "deferredPaymentAccount"],
-    target: 'EU',
+    target: config.target,
+  })
+  .constant('LANGUAGES', config.constants.LANGUAGES)
+  .constant('Billing.URLS', {
+    renew: config.constants.billingRenew,
   })
   .config([
     '$stateProvider',
