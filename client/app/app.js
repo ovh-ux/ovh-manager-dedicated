@@ -45,7 +45,7 @@ const appDeps = [
 ];
 
 if (WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca') {
-  appDeps.push("Module.exchange");
+  //appDeps.push("Module.exchange");
 }
 
 angular.module('App', appDeps).constant('constants', {
