@@ -1,0 +1,85 @@
+<oui-back-button data-ui-sref="^">
+    <span data-translate="billing_autoRenew_update_confirmation_backButton_content"></span>
+</oui-back-button>
+
+<div
+    class="text-center"
+    data-ng-if="$ctrl.userMayHaveToSignContracts && $ctrl.isFetchingContractsToSign">
+    <oui-spinner data-size="l"></oui-spinner>
+</div>
+
+<div data-ng-if="!$ctrl.userMayHaveToSignContracts || ($ctrl.userMayHaveToSignContracts && !$ctrl.isFetchingContractsToSign)">
+
+    <p
+        class="mt-4"
+        data-translate="billing_autoRenew_update_confirmation_header_explanation"></p>
+
+    <table class="oui-datagrid">
+        <thead class="oui-datagrid__headers">
+            <tr>
+                <th
+                    scope="col"
+                    class="oui-datagrid__header"
+                    data-translate="billing_autoRenew_update_table_header_serviceType"></th>
+                <th
+                    scope="col"
+                    class="oui-datagrid__header"
+                    data-translate="billing_autoRenew_update_table_header_services"></th>
+                <th
+                    scope="col"
+                    class="oui-datagrid__header w-25"
+                    data-translate="billing_autoRenew_update_table_header_renewalType"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr
+                data-ng-repeat="serviceType in $ctrl.serviceTypes track by serviceType.name"
+                data-ng-if="serviceType.allowsRenewalChange"
+                class="oui-datagrid__row">
+                <td
+                    scope="row"
+                    class="oui-datagrid__cell"
+                    data-translate="{{:: 'autorenew_service_type_' + serviceType.name }}"></td>
+                <td class="oui-datagrid__cell">
+                    <div data-ng-repeat="service in serviceType.services track by $index">
+                        <span class="oui-chip oui-chip_closable mx-2">
+                            <span data-ng-bind="service.serviceId"></span>
+                        </span>
+                    </div>
+                </td>
+                <td class="oui-datagrid__cell">
+                    <span data-ng-bind=":: serviceType.selectedRenewalType.displayValue"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div data-ng-if="$ctrl.userMustSignContracts">
+        <p data-translate="billing_autoRenew_update_confirmation_contracts_explanation"></p>
+
+        <div
+            data-ng-if="$ctrl.contractsToSign.length > 0"
+            data-contracts="$ctrl.contractsToSign"
+            data-full-text="true"
+            data-ng-model="$ctrl.contractsAreSigned"></div>
+    </div>
+
+    <div data-ng-if="!$ctrl.isSendingRenewalUpdates">
+        <oui-button
+            data-disabled="$ctrl.userMustSignContracts && !$ctrl.contractsAreSigned"
+            data-on-click="$ctrl.sendRenewalUpdates()"
+            data-variant="primary"
+            data-text="{{:: 'billing_autoRenew_update_confirmation_confirmButton_text' | translate }}"></oui-button>
+
+        <oui-button
+            data-on-click="$ctrl.$state.go('^')"
+            data-variant="link"
+            data-text="{{:: 'billing_autoRenew_update_confirmation_cancelButton_text' | translate }}"></oui-button>
+    </div>
+
+    <div
+        class="text-center"
+        data-ng-if="$ctrl.isSendingRenewalUpdates">
+        <oui-spinner data-size="m"></oui-spinner>
+    </div>
+</div>
