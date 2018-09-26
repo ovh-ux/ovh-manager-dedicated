@@ -1,51 +1,51 @@
 import asyncLoaderFactory from './async-loader.factory';
-import config from './config/config.js';
+import config from './config/config';
 
 const appDeps = [
-  "ovh-angular-proxy-request",
-  "ovh-angular-pagination-front",
-  "ovh-utils-angular",
-  "ui.bootstrap",
-  "ui.router",
-  "ngRoute",
-  "ngSanitize",
-  "ngMessages",
-  "controllers",
-  "services",
-  "filters",
-  "directives",
-  "Billing",
-  "UserAccount",
-  "ovh-angular-http",
-  "ui.utils",
-  "ovh-angular-q-allSettled",
-  "ovh-angular-swimming-poll",
-  "ovh-angular-export-csv",
-  "ng-at-internet",
-  "atInternetUiRouterPlugin",
-  "ovh-angular-user-pref",
-  "ovhBrowserAlert",
-  "ui.validate",
-  "ovh-angular-sso-auth",
-  "ovh-angular-sso-auth-modal-plugin",
-  "ovh-angular-apiv7",
-  "oui",
-  "ui.select",
-  "Module.ip",
-  "Module.license",
-  "Module.download",
-  "internationalPhoneNumber",
-  "ovh-angular-sidebar-menu",
-  "ovh-angular-otrs",
-  "pascalprecht.translate",
-  "chart.js",
-  "ovh-angular-responsive-tabs",
-  "ngCkeditor",
-  "Module.otrs"
+  'ovh-angular-proxy-request',
+  'ovh-angular-pagination-front',
+  'ovh-utils-angular',
+  'ui.bootstrap',
+  'ui.router',
+  'ngRoute',
+  'ngSanitize',
+  'ngMessages',
+  'controllers',
+  'services',
+  'filters',
+  'directives',
+  'Billing',
+  'UserAccount',
+  'ovh-angular-http',
+  'ui.utils',
+  'ovh-angular-q-allSettled',
+  'ovh-angular-swimming-poll',
+  'ovh-angular-export-csv',
+  'ng-at-internet',
+  'atInternetUiRouterPlugin',
+  'ovh-angular-user-pref',
+  'ovhBrowserAlert',
+  'ui.validate',
+  'ovh-angular-sso-auth',
+  'ovh-angular-sso-auth-modal-plugin',
+  'ovh-angular-apiv7',
+  'oui',
+  'ui.select',
+  'Module.ip',
+  'Module.license',
+  'Module.download',
+  'internationalPhoneNumber',
+  'ovh-angular-sidebar-menu',
+  'ovh-angular-otrs',
+  'pascalprecht.translate',
+  'chart.js',
+  'ovh-angular-responsive-tabs',
+  'ngCkeditor',
+  'Module.otrs',
 ];
 
 if (WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca') {
-  //appDeps.push("Module.exchange");
+  // appDeps.push("Module.exchange");
 }
 
 angular.module('App', appDeps).constant('constants', {
@@ -59,16 +59,16 @@ angular.module('App', appDeps).constant('constants', {
   TOP_GUIDES: config.constants.TOP_GUIDES,
   vmsUrl: config.constants.vmsUrl,
   travauxUrl: config.constants.travauxUrl,
-  aapiHeaderName: "X-Ovh-Session",
+  aapiHeaderName: 'X-Ovh-Session',
   vrackUrl: config.constants.vrackUrl,
   MANAGER_URLS: config.constants.MANAGER_URLS,
   REDIRECT_URLS: config.constants.REDIRECT_URLS,
   DEFAULT_LANGUAGE: config.constants.DEFAULT_LANGUAGE,
-  FALLBACK_LANGUAGE: config.constants.FALLBACK_LANGUAGE
+  FALLBACK_LANGUAGE: config.constants.FALLBACK_LANGUAGE,
 })
-.constant('LANGUAGES', config.constants.LANGUAGES)
-.constant('website_url', config.constants.website_url)
-.factory('asyncLoader', asyncLoaderFactory)
+  .constant('LANGUAGES', config.constants.LANGUAGES)
+  .constant('website_url', config.constants.website_url)
+  .factory('asyncLoader', asyncLoaderFactory);
 angular
   .module('App')
   .config([
