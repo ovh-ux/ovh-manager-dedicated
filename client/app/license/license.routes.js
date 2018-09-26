@@ -5,7 +5,7 @@ angular
       abstract: true,
       url: '/configuration/license',
       template: '<ui-view/>',
-      translations: ['./'],
+      translations: ['.'],
     });
     $stateProvider.state('app.license.dashboard', {
       url: '',

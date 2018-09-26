@@ -4,6 +4,6 @@ angular.module('App').config(($stateProvider) => {
     templateUrl: 'cdn/dedicated/manage/ssl/delete/cdn-dedicated-ssl-delete.html',
     controller: 'CdnDeleteSslCtrl',
     layout: 'modal',
-    translations: ['./'],
+    translations: ['.'],
   });
 });

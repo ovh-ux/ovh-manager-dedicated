@@ -3,6 +3,6 @@ angular.module('App').config(($stateProvider) => {
     url: '/configuration/housing/:productId',
     templateUrl: 'dedicated/housing/dedicated-housing.html',
     controller: 'HousingCtrl',
-    translations: ['./'],
+    translations: ['.'],
   });
 });

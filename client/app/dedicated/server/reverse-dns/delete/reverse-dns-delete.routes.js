@@ -5,6 +5,6 @@ angular.module('App')
       controller: 'ReverseDNSDeleteCtrl',
       templateUrl: 'dedicated/server/reverse-dns/delete/reverse-dns-delete.html',
       layout: 'modal',
-      translations: ['./'],
+      translations: ['.'],
     });
   });

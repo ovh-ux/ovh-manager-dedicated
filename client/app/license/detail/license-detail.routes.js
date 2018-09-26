@@ -5,6 +5,6 @@ angular
       url: '/:licenseId/detail',
       templateUrl: 'license/detail/license-detail.html',
       controller: 'LicenseDetailsCtrl',
-      translations: ['../'],
+      translations: ['..'],
     });
   });

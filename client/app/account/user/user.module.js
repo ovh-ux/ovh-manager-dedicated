@@ -28,7 +28,7 @@ angular
         url: '/useraccount',
         controller: 'UserAccount.controllers.main',
         templateUrl: `${baseUrl}/user.html`,
-        translations: ['./'],
+        translations: ['.'],
         abstract: true,
       });
 
@@ -37,7 +37,7 @@ angular
         controller: 'UserAccount.controllers.main',
         templateUrl: `${baseUrl}/user.html`,
         abstract: true,
-        translations: ['./'],
+        translations: ['.'],
       });
 
       $stateProvider.state('app.account.useraccount.ssh', {

@@ -12,6 +12,6 @@ angular.module('App').config(($stateProvider) => {
         controllerAs: '$ctrl',
       },
     },
-    translations: ['./'],
+    translations: ['.'],
   });
 });

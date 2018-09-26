@@ -5,6 +5,6 @@ angular.module('App')
       controller: 'ReverseDNSUpdateCtrl',
       templateUrl: 'dedicated/server/reverse-dns/update/reverse-dns-update.html',
       layout: 'modal',
-      translations: ['./'],
+      translations: ['.'],
     });
   });

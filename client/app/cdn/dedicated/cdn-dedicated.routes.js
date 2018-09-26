@@ -16,7 +16,7 @@ angular.module('App').config(($stateProvider) => {
         controller: 'CdnStatisticsCtrl',
       },
     },
-    translations: ['./'],
+    translations: ['.'],
     reloadOnSearch: false,
   });
 });

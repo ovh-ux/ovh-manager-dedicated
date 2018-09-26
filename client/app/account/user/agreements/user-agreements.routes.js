@@ -4,7 +4,7 @@ angular.module('UserAccount').config(['$stateProvider', '$urlServiceProvider', '
       url: '/agreements',
       templateUrl: 'account/user/agreements/user-agreements.html',
       controller: 'UserAccount.controllers.agreements',
-      translations: ['../'],
+      translations: ['..'],
     });
 
     $stateProvider.state('app.account.billing.service.agreements.details', {
