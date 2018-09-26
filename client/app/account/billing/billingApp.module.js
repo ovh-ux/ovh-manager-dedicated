@@ -35,7 +35,7 @@ angular
         controller: 'BillingCtrl',
         templateUrl: `${BILLING_BASE_URL}/billing.html`,
         abstract: true,
-        translations: ['account/billing'],
+        translations: ['../billing'],
         resolve: {
           denyEnterprise: ($q, currentUser) => {
             if (currentUser.isEnterprise) {

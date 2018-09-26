@@ -5,6 +5,6 @@ angular.module('App').config(($stateProvider) => {
     controller: 'NasCtrl',
     abstract: true,
     reloadOnSearch: false,
-    translations: ['dedicated/nas'],
+    translations: ['./'],
   });
 });

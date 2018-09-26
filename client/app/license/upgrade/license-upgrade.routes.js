@@ -4,6 +4,6 @@ angular.module('Module.license')
       url: '/:licenseId/upgrade',
       templateUrl: 'license/upgrade/license-upgrade.html',
       controller: 'LicenseUpgradeCtrl',
-      translations: ['license'],
+      translations: ['../'],
     });
   });

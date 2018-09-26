@@ -4,6 +4,6 @@ angular.module('App').config(($stateProvider) => {
     templateUrl: 'dedicated/server/dedicated-server.html',
     controller: 'ServerCtrl',
     reloadOnSearch: false,
-    translations: ['dedicated/server'],
+    translations: ['./'],
   });
 });

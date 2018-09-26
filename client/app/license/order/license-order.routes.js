@@ -5,6 +5,6 @@ angular
       url: '/order',
       templateUrl: 'license/order/license-order.html',
       controller: 'LicenseOrderCtrl',
-      translations: ['license'],
+      translations: ['../'],
     });
   });

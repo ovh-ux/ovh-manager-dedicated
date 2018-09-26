@@ -5,8 +5,8 @@ angular.module('Billing').config(($stateProvider) => {
     controller: 'BillingMainHistoryCtrl',
     controllerAs: '$ctrl',
     translations: [
-      'account/billing/main/history',
-      'account/billing/main/history/postalMailOptions',
+      '../history',
+      './postalMailOptions',
     ],
   });
 });

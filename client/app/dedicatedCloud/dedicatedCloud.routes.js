@@ -11,7 +11,7 @@ angular.module('App').config(($stateProvider, $urlServiceProvider) => {
       },
     },
     reloadOnSearch: false,
-    translations: ['dedicatedCloud'],
+    translations: ['./'],
   });
 
   // ensure compatibility with links sended by emails

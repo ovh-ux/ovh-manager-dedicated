@@ -5,6 +5,6 @@ angular.module('App')
       controller: 'DisplayNameCtrl',
       templateUrl: 'dedicated/server/display-name/display-name.html',
       layout: 'modal',
-      translations: ['dedicated/server/display-name'],
+      translations: ['./'],
     });
   });

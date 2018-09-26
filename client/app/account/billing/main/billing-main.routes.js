@@ -5,6 +5,6 @@ angular.module('Billing').config(($stateProvider) => {
     controller: 'BillingMainCtrl',
     controllerAs: '$ctrl',
     abstract: true,
-    translations: ['account/billing/main'],
+    translations: ['../main'],
   });
 });
