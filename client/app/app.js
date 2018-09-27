@@ -44,8 +44,8 @@ const appDeps = [
   'Module.otrs',
 ];
 
-if (WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca') {
-  // appDeps.push("Module.exchange");
+if (WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca') { // eslint-disable-line
+  appDeps.push('Module.exchange');
 }
 
 angular.module('App', appDeps).constant('constants', {
@@ -164,7 +164,7 @@ angular
       },
     };
   })
-  .factory('translateMissingTranslationHandler', $sanitize => function (translationId) {
+  .factory('translateMissingTranslationHandler', $sanitize => function missingTranslationHandler(translationId) {
     // Fix security issue: https://github.com/angular-translate/angular-translate/issues/1418
     return $sanitize(translationId);
   })
