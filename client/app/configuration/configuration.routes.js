@@ -4,6 +4,6 @@ angular.module('App').config(($stateProvider) => {
     templateUrl: 'configuration/configuration.html',
     controller: 'ConfigurationCtrl',
     controllerAs: '$ctrl',
-    translations: ['common'],
+    translations: ['../common'],
   });
 });
