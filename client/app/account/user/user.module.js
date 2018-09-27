@@ -1,11 +1,11 @@
-import './newAccountForm/new-account-form.module.js';
-import config from '../../config/config.js';
+import './newAccountForm/new-account-form.module';
+import config from '../../config/config';
 
 angular
   .module('UserAccount', [
-    "ja.qr",
-    "ovh-utils-angular",
-    "ovhSignupApp"
+    'ja.qr',
+    'ovh-utils-angular',
+    'ovhSignupApp',
   ])
   .constant('UserAccount.constants', {
     aapiRootPath: config.aapiRootPath,

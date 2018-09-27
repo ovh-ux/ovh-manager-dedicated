@@ -1,23 +1,23 @@
-import config from '../../config/config.js';
+import config from '../../config/config';
 
 angular
   .module('Billing', [
-    "ovh-utils-angular",
-    "ngRoute",
-    "ngSanitize",
-    "ui.bootstrap",
-    "Billing.constants",
-    "Billing.services",
-    "Billing.controllers",
-    "Billing.directives",
-    "Billing.filters",
-    "ovh-angular-export-csv"
+    'ovh-utils-angular',
+    'ngRoute',
+    'ngSanitize',
+    'ui.bootstrap',
+    'Billing.constants',
+    'Billing.services',
+    'Billing.controllers',
+    'Billing.directives',
+    'Billing.filters',
+    'ovh-angular-export-csv',
   ])
   .constant('BILLING_BASE_URL', 'account/billing/')
   .constant('Billing.constants', {
     aapiRootPath: config.aapiRootPath,
     swsProxyRootPath: config.swsProxyRootPath,
-    paymentMeans: ["bankAccount", "paypal", "creditCard", "deferredPaymentAccount"],
+    paymentMeans: ['bankAccount', 'paypal', 'creditCard', 'deferredPaymentAccount'],
     target: config.target,
   })
   .constant('LANGUAGES', config.constants.LANGUAGES)

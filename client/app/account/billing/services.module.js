@@ -1,4 +1,4 @@
-import './constants/constants.module.js';
+import './constants/constants.module';
 
 angular.module('Billing.services', []);
 
