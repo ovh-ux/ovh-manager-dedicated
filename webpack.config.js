@@ -52,7 +52,7 @@ module.exports = (env = {}) => {
   if (env.region === 'eu' || env.region === 'ca') {
     bundles.exchange = [].concat(
       glob.sync('./node_modules/ovh-module-exchange/src/exchange/**/*.module.js'),
-      glob.sync('./node_modules/ovh-module-exchange/src/exchange/**/!(*.module).js')
+      glob.sync('./node_modules/ovh-module-exchange/src/exchange/**/!(*.module).js'),
     );
   }
 
@@ -72,9 +72,5 @@ module.exports = (env = {}) => {
         jquery: path.resolve(__dirname, 'node_modules/jquery'),
       },
     },
-    devServer: {
-      hot: false,
-      inline: false
-    }
   });
 };

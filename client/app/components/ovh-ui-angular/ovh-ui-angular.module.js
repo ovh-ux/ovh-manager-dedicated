@@ -1,6 +1,5 @@
 angular.module('App').run(($q,
   $translate,
-  $translatePartialLoader,
   ouiCriteriaAdderConfiguration,
   ouiDatagridConfiguration,
   ouiFieldConfiguration,
