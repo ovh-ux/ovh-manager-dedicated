@@ -27,7 +27,7 @@ angular.module('filters').filter('duration', [
       } if (upto.test(duration)) {
         if (uptoDuration.test(duration)) {
           d = duration.match(uptoDuration)[2]; // eslint-disable-line
-          return $translate.instant('upto', { date: dateFormat ? $filter('date')(d, dateFormat) : d });
+          return `${$translate.instant('upto')} ${dateFormat ? $filter('date')(d, dateFormat) : d}`;
         }
         return $translate.instant('uptofirstdaynextmonth');
       } if (engage.test(duration)) {
