@@ -1,5 +1,3 @@
-
-
 const _ = require('lodash');
 
 const constants = {
@@ -923,7 +921,10 @@ const constants = {
 /* in urls, all keys represents the two first letter of the language list in uppercase, except GB */
 constants.EU.URLS.EN = constants.EU.URLS.GB;
 
-/* Since all languages are availables in both CA and UE worlPart, they must have access to all languages conf */
+// Since all languages are availables in both CA and UE worlPart,
+// they must have access to all languages conf
+/* eslint-disable no-restricted-syntax, vars-on-top, no-var, block-scoped-var,
+no-prototype-builtins, no-redeclare */
 for (var lang in constants.EU.URLS) {
   if (constants.EU.URLS.hasOwnProperty(lang)) {
     if (!constants.CA.URLS[lang]) {
@@ -944,6 +945,8 @@ for (var lang in constants.US.URLS) {
     constants.EU.URLS[lang] = constants.US.URLS[lang];
   }
 }
+/* eslint-enable no-restricted-syntax, vars-on-top, no-var, block-scoped-var,
+no-prototype-builtins, no-redeclare */
 
 constants.CA.TOP_GUIDES = _.defaults(constants.CA.TOP_GUIDES, constants.EU.TOP_GUIDES);
 constants.US.TOP_GUIDES = _.defaults(constants.US.TOP_GUIDES, constants.EU.TOP_GUIDES);

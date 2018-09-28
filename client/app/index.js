@@ -1,3 +1,4 @@
+/* eslint-disable import/no-webpack-loader-syntax, import/no-unresolved, import/extensions */
 import 'script-loader!../assets/randexp.min.js';
 import 'script-loader!moment/min/moment-with-locales.min.js';
 import 'script-loader!jquery/dist/jquery.min.js';
@@ -92,3 +93,4 @@ import 'script-loader!flatpickr/dist/flatpickr.min.js';
 
 import './app.less';
 import './css/source.scss';
+/* eslint-enable import/no-webpack-loader-syntax, import/no-unresolved, import/extensions */
