@@ -44,7 +44,7 @@ const appDeps = [
   'Module.otrs',
 ];
 
-if (WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca') { // eslint-disable-line
+if (WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca') {
   appDeps.push('Module.exchange');
 }
 
