@@ -8,7 +8,7 @@ angular
         templateUrl: 'ip/ip.html',
         controller: 'IpMainCtrl',
         reloadOnSearch: false,
-        translations: ['ip'],
+        translations: ['.'],
       });
     },
   ]);

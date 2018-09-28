@@ -9,7 +9,7 @@ angular.module('App').config(($stateProvider) => {
         controllerAs: '$ctrl',
       },
     },
-    translations: ['dedicated/server'],
+    translations: ['../../../dedicated/server'],
   });
 
   $stateProvider.state('app.dedicatedClouds.datacenter.hosts.orderUS', {

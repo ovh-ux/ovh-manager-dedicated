@@ -1,3 +1,5 @@
+import './constants/constants.module';
+
 angular.module('Billing.services', []);
 
 angular.module('Billing.constants').constant('IBAN_BIC_RULES', {

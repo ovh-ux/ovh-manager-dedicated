@@ -1,87 +1,104 @@
 @rem-base: rem-base(10px);
 
-@import (inline) "../node_modules/flatpickr/dist/flatpickr.css";
-@import "@{oui-path}/packages/oui/stylekit";
+@bs-path: "bootstrap";
+@oui-path: "ovh-ui-kit";
 
-// OVH-UI-KIT Bootstrap theme.
-@import "./ovh-ui-kit-bs/src/ovh-ui-kit-bs";
+//@import (less) "@bower_components/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css";
+//@import (less) "@ovh-ux/ovh-utils-angular/bin/template/contracts/contracts.css";
+@import (less) "@ovh-ux/ovh-utils-angular/bin/template/tooltipBox/tooltipBox.css";
+//@import (less) "@ovh-ux/ovh-utils-angular/bin/template/dateTimePicker/bootstrap-datetimepicker.min.css";
+@import (less) "@ovh-ux/ovh-utils-angular/bin/template/inputNumber/inputNumber.css";
+@import (less) "@ovh-ux/ovh-utils-angular/bin/template/wizard/wizardStep/wizardStep.css";
+@import (less) "ovh-angular-pagination-front/dist/ovh-angular-pagination-front.min.css";
+@import (less) "font-awesome/css/font-awesome.min.css";
+@import (less) "ovh-manager-webfont/dist/css/ovh-font.css";
+@import (less) "animate.css/animate.min.css";
+@import (less) "ovh-angular-sso-auth-modal-plugin/dist/ovh-angular-sso-auth-modal-plugin.min.css";
+@import (less) "ui-select/dist/select.min.css";
+@import (less) "intl-tel-input/build/css/intlTelInput.css";
+@import (less) "ovh-angular-toaster/dist/ovh-angular-toaster.min.css";
+@import (less) "flatpickr/dist/flatpickr.min.css";
+@import (less) "ovh-module-exchange/src/css/exchange/exchangeDiagnostic.css";
 
-// OTRS popup
-@import "./ovh-angular-otrs/dist/ovh-angular-otrs";
+@import "ovh-ui-kit/packages/oui/stylekit";
+@import "ovh-ui-kit-bs/src/ovh-ui-kit-bs";
 
-@import "./ovh-angular-sidebar-menu/less/ovh-angular-sidebar-menu";
-@import "./ovh-angular-sidebar-menu/less/ovh-angular-sidebar-menu.dependencies.less";
+@import (less) "flatpickr/dist/flatpickr.css";
+@import "ovh-angular-otrs/dist/ovh-angular-otrs";
 
-@import "utils/variables";
-@import "utils/function";
-@import "utils/elements";
-@import "utils/utilities";
+@import "ovh-angular-sidebar-menu/less/ovh-angular-sidebar-menu";
+@import "ovh-angular-sidebar-menu/less/ovh-angular-sidebar-menu.dependencies.less";
 
-@import "common/accordion";
-@import "common/autocomplete";
-@import "common/buttonIcons";
-@import "common/button";
-@import "common/countryIcon";
-@import "common/datetimepicker";
-@import "common/distributionIcon";
-@import "common/download";
-@import "common/global";
-@import "common/graphicalTools";
-@import "common/header";
-@import "common/icon";
-@import "common/informationBlock";
-@import "common/linkedPopover";
-@import "common/modal";
-@import "common/popover";
-@import "common/searchbar";
-@import "common/selectList";
-@import "common/serviceIcon";
-@import "common/table";
-@import "common/tooltip";
-@import "common/wizard";
-@import "common/progressBarWithText";
-@import "common/animation";
-@import "common/navbar";
+@import "less/utils/variables";
+@import "less/utils/function";
+@import "less/utils/elements";
+@import "less/utils/utilities";
+
+@import "less/common/accordion";
+@import "less/common/autocomplete";
+@import "less/common/buttonIcons";
+@import "less/common/button";
+@import "less/common/countryIcon";
+@import "less/common/datetimepicker";
+@import "less/common/distributionIcon";
+@import "less/common/download";
+@import "less/common/global";
+@import "less/common/graphicalTools";
+@import "less/common/header";
+@import "less/common/icon";
+@import "less/common/informationBlock";
+@import "less/common/linkedPopover";
+@import "less/common/modal";
+@import "less/common/popover";
+@import "less/common/searchbar";
+@import "less/common/selectList";
+@import "less/common/serviceIcon";
+@import "less/common/table";
+@import "less/common/tooltip";
+@import "less/common/wizard";
+@import "less/common/progressBarWithText";
+@import "less/common/animation";
+@import "less/common/navbar";
 
 @import "../components/manager-preload/manager-preload";
 @import "../components/sidebar-menu/sidebar-menu";
 @import "../components/paymentMethod/add/credit-card/billing-payment-method-add-credit-card";
 @import "../components/zendesk/zendesk";
 
-@import "module/ip/ip";
-@import "module/ip/ip-dashboard";
-@import "module/licence/licence";
-@import "module/user-account/security";
-@import "module/user-account/emails";
-@import "module/user-account/ssh";
-@import "module/user-account/advanced";
+@import "less/module/ip/ip";
+@import "less/module/ip/ip-dashboard";
+@import "less/module/licence/licence";
+@import "less/module/user-account/security";
+@import "less/module/user-account/emails";
+@import "less/module/user-account/ssh";
+@import "less/module/user-account/advanced";
 
-@import "dedicated/dedicatedcloud/common";
-@import "dedicated/dedicatedcloud/banners";
-@import "dedicated/dedicatedcloud/operations";
-@import "dedicated/dedicatedcloud/datastores";
-@import "dedicated/dedicatedcloud/security-options";
-@import "dedicated/dedicatedcloud/users";
+@import "less/dedicated/dedicatedcloud/common";
+@import "less/dedicated/dedicatedcloud/banners";
+@import "less/dedicated/dedicatedcloud/operations";
+@import "less/dedicated/dedicatedcloud/datastores";
+@import "less/dedicated/dedicatedcloud/security-options";
+@import "less/dedicated/dedicatedcloud/users";
 
-@import "dedicated/server/installation";
-@import "dedicated/server/usb";
-@import "dedicated/server/stats";
-@import "dedicated/server/monitoring";
-@import "dedicated/server/alert";
-@import "dedicated/server/consumption";
-@import "dedicated/vrack/vrack";
+@import "less/dedicated/server/installation";
+@import "less/dedicated/server/usb";
+@import "less/dedicated/server/stats";
+@import "less/dedicated/server/monitoring";
+@import "less/dedicated/server/alert";
+@import "less/dedicated/server/consumption";
+@import "less/dedicated/vrack/vrack";
 
-@import "dedicated/housing/stats";
-@import "user-contracts/user-contracts";
+@import "less/dedicated/housing/stats";
+@import "less/user-contracts/user-contracts";
 
-// Paths of the dependencies.
-@bs-path: "./bootstrap";
-@oui-path: "./ovh-ui-kit";
 @ovh-universe-color: @oui-color-turquoise;
 
-@icon-font-path: : "../node_modules/bootstrap/fonts";
-@oui-icon-dist-folder: "../node_modules/ovh-ui-kit/dist/icons";
-@oui-font-source-sans-pro-folder: "../node_modules/ovh-ui-kit/packages/oui-typography/fonts/source-sans-pro";
+@icon-font-path: "../fonts/";
+@oui-icon-dist-folder: "../../dist/icons";
+@oui-font-source-sans-pro-folder: "../../packages/oui-typography/fonts/source-sans-pro";
+@fa-font-path: "../fonts";
+@flag-icon-css-path: "../node_modules/flag-icon-css/flags";
+@ovh-font-path:"../fonts/";
 
 @actions-menu-item-link-icon-hover-bg-color: @ovh-universe-color;
 @SIDEBAR_MENU_ACTIVE_COLOR: @ovh-universe-color;
