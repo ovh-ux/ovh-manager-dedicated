@@ -1,22 +1,21 @@
+/* stylelint-disable */
 //
 // HEADER
 // --------------------------------------------------
 
 .navbar {
-
   &#header-top-navigation {
     position: relative;
-
     margin: 0;
     z-index: 3;
   }
 
   .navbar-inner {
-    border-color : @NAV_BORDER_CONST;
+    border-color: @NAV_BORDER_CONST;
 
     // Stargate
     &.stargate {
-      background : @NAVBAR_BG;
+      background: @NAVBAR_BG;
       border: 0;
       border-radius: 0;
 
@@ -25,19 +24,18 @@
         margin: 0 5px 0 0;
 
         &:nth-last-child(1) {
-            margin-right: 0;
+          margin-right: 0;
 
-            >li>a {
-                padding-right: 0;
-            }
+          > li > a {
+            padding-right: 0;
+          }
         }
 
         &.nav-stargate {
-
           li {
             a {
               font-size: 14px;
-              letter-spacing: .015em;
+              letter-spacing: 0.015em;
             }
           }
         }
@@ -45,17 +43,18 @@
         li {
           font-size: 12px;
 
-          a:hover, a:focus {
-            background : @NAVBAR_HOVER;
+          a:hover,
+          a:focus {
+            background: @NAVBAR_HOVER;
           }
 
           &.logo {
-
             a {
               line-height: 0;
               padding: 9px 9px 9px 0;
 
-              &:hover, &:focus {
+              &:hover,
+              &:focus {
                 background-color: transparent;
               }
 
@@ -65,12 +64,12 @@
                 overflow: hidden;
               }
             }
-
           }
+
           a {
-            color       : @WHITE_CONST;
-            text-shadow : none;
-            font-size   : @fontSizeDefault;
+            color: @WHITE_CONST;
+            text-shadow: none;
+            font-size: @fontSizeDefault;
             padding: 0 15px;
             background: 0 0;
             border: none;
@@ -78,52 +77,64 @@
           }
 
           &.selected {
-            font-weight : bold;
+            font-weight: bold;
           }
 
           &.univers-cloud {
-                &.selected a, a:hover, a:focus {
-                  color : @CLOUD;
-                }
+            &.selected a,
+            a:hover,
+            a:focus {
+              color: @CLOUD;
+            }
           }
 
           &.univers-dedicated {
-                &.selected a, a:hover, a:focus {
-                  color : @DEDICATED;
-                }
+            &.selected a,
+            a:hover,
+            a:focus {
+              color: @DEDICATED;
+            }
           }
 
           &.univers-telecom {
-                &.selected a, a:hover, a:focus {
-                  color : @TELECOM;
-                }
+            &.selected a,
+            a:hover,
+            a:focus {
+              color: @TELECOM;
+            }
           }
 
           &.univers-web {
-                &.selected a, a:hover, a:focus {
-                  color : @WEB;
-                }
+            &.selected a,
+            a:hover,
+            a:focus {
+              color: @WEB;
+            }
           }
 
           &.univers-sunrise {
-                &.selected a, a:hover, a:focus {
-                  color : @SUNRISE;
-                }
+            &.selected a,
+            a:hover,
+            a:focus {
+              color: @SUNRISE;
+            }
           }
 
           &.univers-partners {
-                &.selected a, a:hover, a:focus {
-                  color : @PARTNERS;
-                }
+            &.selected a,
+            a:hover,
+            a:focus {
+              color: @PARTNERS;
+            }
           }
 
           &.older {
             a {
-              color : @OLDER_UNIVERS;
+              color: @OLDER_UNIVERS;
               font-size: 10px;
 
               &:hover {
-                color : @WHITE_CONST;
+                color: @WHITE_CONST;
               }
             }
           }
@@ -134,82 +145,92 @@
             .dropdown-toggle {
               .caret {
                 display: none;
-                border-top-color    : @WHITE_CONST;
-                border-bottom-color : @WHITE_CONST;
-                margin              : 20px 0 0 1px;
+                border-top-color: @WHITE_CONST;
+                border-bottom-color: @WHITE_CONST;
+                margin: 20px 0 0 1px;
               }
             }
             //overload boostrap style
-            &.open, &.active, &.open.active {
+            &.open,
+            &.active,
+            &.open.active {
               .dropdown-toggle {
-                background-color : @NAV_ACTIVE_CONST;
-                color            : @WHITE_CONST;
+                background-color: @NAV_ACTIVE_CONST;
+                color: @WHITE_CONST;
               }
             }
 
             .dropdown-menu {
-
               border-radius: 0;
 
-              &:before, &:after {
-                border  : none !important;
-                content : none !important;
+              &::before,
+              &::after {
+                border: none !important;
+                content: none !important;
               }
 
               li {
                 &.divider {
-                  margin-top    : 0;
-                  margin-bottom : 0;
+                  margin-top: 0;
+                  margin-bottom: 0;
                 }
+
                 a {
-                  color  : @UNIVERS;
-                  cursor : pointer;
+                  color: @UNIVERS;
+                  cursor: pointer;
                   font-size: 12px;
 
                   i {
-                    width             : 18px;
-                    height            : 18px;
-                    float             : left;
-                    background-repeat : no-repeat;
-                    background-color  : transparent;
-                    margin            : 12px 7px 0 0;
-                    background-image  : url('../images/header/icn_header_profil.png');
+                    width: 18px;
+                    height: 18px;
+                    float: left;
+                    background-repeat: no-repeat;
+                    background-color: transparent;
+                    margin: 12px 7px 0 0;
+                    background-image: url('../images/header/icn_header_profil.png');
 
                     &.icon_feedback {
-                      background-position : 0 0;
+                      background-position: 0 0;
                     }
+
                     &.icon_changelog {
-                      background-position : -18px 0;
+                      background-position: -18px 0;
                     }
+
                     &.icon_disconnect {
-                      background-position : -36px 0;
+                      background-position: -36px 0;
                     }
+
                     &.icon_preference {
-                      background-position : -72px 0;
+                      background-position: -72px 0;
                     }
                   }
 
                   span {
-                    font-weight : normal;
+                    font-weight: normal;
                   }
 
-                  &:hover, &:focus {
-                    background-color : @UNIVERS;
-                    color            : @WHITE_CONST;
-                    background-image : none;
+                  &:hover,
+                  &:focus {
+                    background-color: @UNIVERS;
+                    color: @WHITE_CONST;
+                    background-image: none;
 
                     i {
                       &.icon_feedback {
-                        background-position : 0 100%;
+                        background-position: 0 100%;
                       }
+
                       &.icon_changelog {
-                        background-position : -18px 100%;
+                        background-position: -18px 100%;
                       }
+
                       &.icon_disconnect {
-                        background-position : -36px 100%;
+                        background-position: -36px 100%;
                       }
+
                       &.icon_preference {
-                        background-position : -72px 100%;
+                        background-position: -72px 100%;
                       }
                     }
                   }
@@ -223,30 +244,37 @@
 
     // Univers menu
     &.univers {
-      background : url('../images/login-bg.png') repeat-x;
+      background: url('../images/login-bg.png') repeat-x;
 
       .brand {
-        width : 210px;
+        width: 210px;
       }
+
       .nav {
-        padding-top : 37px;
+        padding-top: 37px;
+
         li {
           a {
-            color       : @WHITE_CONST;
-            font-weight : bold;
-            font-size   : @fontSizeLarge;
-            text-shadow : none;
+            color: @WHITE_CONST;
+            font-weight: bold;
+            font-size: @fontSizeLarge;
+            text-shadow: none;
           }
-          &.selected a, &:hover a, &.active a {
-            color : @WHITE_CONST;
-          }
+
+          &.selected a,
+          &:hover a,
           &.active a {
-            box-shadow       : none !important;
-            margin-left      : 2px;
-            background-color : inherit;
-            }
+            color: @WHITE_CONST;
+          }
+
+          &.active a {
+            box-shadow: none !important;
+            margin-left: 2px;
+            background-color: inherit;
+          }
         }
       }
     }
   }
 }
+/* stylelint-enable */
