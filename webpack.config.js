@@ -4,11 +4,10 @@ const path = require('path');
 const fs = require('fs');
 const glob = require('glob');
 const _ = require('lodash');
+const webpackConfig = require('@ovh-ux/manager-webpack-config');
 
 const folder = './client/app';
 const bundles = {};
-
-const webpackConfig = require('@ovh-ux/manager-webpack-config');
 
 fs.readdirSync(folder).forEach((file) => {
   const stats = fs.lstatSync(`${folder}/${file}`);
@@ -22,7 +21,6 @@ fs.readdirSync(folder).forEach((file) => {
 });
 
 module.exports = (env = {}) => {
-  /* eslint-disable import/no-unresolved, import/no-extraneous-dependencies */
   const { config } = webpackConfig({
     template: './client/app/index.html',
     basePath: './client/app',
@@ -40,7 +38,6 @@ module.exports = (env = {}) => {
       ],
     },
   }, env);
-  /* eslint-enable */
 
   config.plugins.push(new webpack.DefinePlugin({
     WEBPACK_ENV: {
@@ -56,13 +53,16 @@ module.exports = (env = {}) => {
     );
   }
 
+  // Extra config files
+  const extras = glob.sync('./.extras/**/*.js');
+
   return merge(config, {
     entry: _.assign({
       index: './client/app/index.js',
       app: ['./client/app/app.js', './client/app/app.controller.js', './client/app/app.routes.js'],
       modules: glob.sync('./client/app/**/*.module.js'),
       components: glob.sync('./client/app/components/**/!(*.module).js'),
-    }, bundles),
+    }, bundles, extras.length > 0 ? { extras } : {}),
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: '[name].bundle.js',
