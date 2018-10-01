@@ -19,6 +19,9 @@ angular.module('App').controller('ConfigurationCtrl', class ConfigurationCtrl {
     };
     this.hasError = false;
     this.fallbackLanguage = 'en_GB';
+
+    this.buildSummitData();
+
     return this.getSections().then((sections) => {
       const selectedLanguage = this.getSelectedLanguage();
       _.each(sections, (section) => {
@@ -63,6 +66,10 @@ angular.module('App').controller('ConfigurationCtrl', class ConfigurationCtrl {
       }
     }
     return deferred.promise;
+  }
+
+  buildSummitData() {
+    this.$scope.localeForSummitBanner = this.$translate.use().split('_')[0] === 'fr' ? 'fr' : 'en';
   }
 
   getSelectedLanguage() {
