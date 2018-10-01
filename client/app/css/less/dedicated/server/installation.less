@@ -1,11 +1,10 @@
-/* Installation modal*/
+/* Installation modal */
 // .mainContainer
 #main-container .installation-server {
-
   .pellet {
-    width  : 10px;
-    height : 10px;
-    cursor : pointer;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
   }
 
   .controls {
@@ -19,43 +18,42 @@
   }
 
   .accordion-list {
-
     .deprecated {
-      text-decoration : line-through;
+      text-decoration: line-through;
     }
 
     .accordion-list-container {
-
       .category {
         .background-color-fn(@defaultLineHeadBackground);
         .color-fn(@defaultLineHeadFont);
-        font-weight  : bold;
-        padding-left : 10px;
-        display      : block;
-        cursor       : pointer;
+
+        font-weight: bold;
+        padding-left: 10px;
+        display: block;
+        cursor: pointer;
       }
 
       .items {
-        margin-bottom : 1px;
-        max-height    : 230px;
-        overflow-y    : auto;
+        margin-bottom: 1px;
+        max-height: 230px;
+        overflow-y: auto;
 
         .item {
-          padding-left : 20px;
-          cursor       : pointer;
-          overflow     : hidden;
+          padding-left: 20px;
+          cursor: pointer;
+          overflow: hidden;
 
-          &:nth-child(odd){
+          &:nth-child(odd) {
             .background-color-fn(@defaultLineOddBackground);
             .color-fn(@defaultLineOddFont);
           }
 
-          &:nth-child(even){
+          &:nth-child(even) {
             .background-color-fn(@defaultLineEvenBackground);
             .color-fn(@defaultLineEvenFont);
           }
 
-          &:hover{
+          &:hover {
             .background-color-fn(@defaultLineHoverBackground);
             .color-fn(@defaultLineHoverFont);
           }
@@ -68,7 +66,7 @@
 
           &.selected-delete-item,
           &.selected-delete-item:hover {
-            opacity : 0.5;
+            opacity: 0.5;
           }
 
           .info-distrib {
@@ -84,7 +82,6 @@
     }
   }
 }
-
 
 .form-horizontal.install .control-group {
   margin-bottom: 5px;
@@ -102,9 +99,9 @@
     margin-left: 190px;
   }
 
-  .errorFormLabel{
+  .errorFormLabel {
     margin-left: 40px;
     font-size: 11px;
-    color:@RED_CONST;
+    color: @RED_CONST;
   }
 }
