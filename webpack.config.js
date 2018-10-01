@@ -65,7 +65,7 @@ module.exports = (env = {}) => {
     }, bundles),
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: '[name].bundle.js',
+      filename: '[name].[hash].bundle.js',
     },
     resolve: {
       alias: {
