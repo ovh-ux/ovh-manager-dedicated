@@ -14,7 +14,7 @@ angular
     '2013v1': '2013',
   })
   .service('DedicatedCloud', function (Products, $http, $q, constants, $cacheFactory, $rootScope,
-    Poll, Poller, OvhHttp, DEDICATED_CLOUD_CONSTANTS) {
+    OvhApiDedicatedCloud, OvhHttp, Poll, Poller, DEDICATED_CLOUD_CONSTANTS, VM_ENCRYPTION_KMS) {
     const self = this;
     const dedicatedCloudCache = {
       all: 'UNIVERS_DEDICATED_CLOUD',
@@ -830,6 +830,47 @@ angular
       const promises = DEDICATED_CLOUD_CONSTANTS.securityOptions
         .map(optionName => self.getOptionState(optionName, serviceName));
       return $q.all(promises).then(results => results.some(optionInfo => optionInfo !== 'disabled'));
+    };
+
+    /* --- Virtual Machine Encryption KMS --- */
+    this.getVMEncryptionKMSList = function (serviceName) {
+      return OvhApiDedicatedCloud.VMEncryption().kms().v6()
+        .query({
+          serviceName,
+        }).$promise.then(kmsIds => kmsIds);
+    };
+
+    this.getVMEncryptionKMSDetail = function (serviceName, kmsId) {
+      return OvhApiDedicatedCloud.VMEncryption().kms().v6().get({
+        serviceName,
+        kmsId,
+      }).$promise.then(kms => kms);
+    };
+
+    this.createVMEncryptionKMS = function (serviceName, { ip, description, sslThumbprint }) {
+      return OvhApiDedicatedCloud.VMEncryption().kms().v6().create({
+        serviceName,
+      }, {
+        ip,
+        description,
+        sslThumbprint,
+      }).$promise;
+    };
+
+    this.startVMEncryptionKMSPoller = function (serviceName, taskId) {
+      const url = `/dedicatedCloud/${serviceName}/task/${taskId}`;
+      const interval = VM_ENCRYPTION_KMS.pollingDelay;
+      return Poller.poll(url, null, {
+        method: 'get',
+        namespace: taskId,
+        interval,
+        successRule: taskResult => taskResult.state !== 'error',
+        errorRule: taskResult => taskResult.state === 'error',
+      });
+    };
+
+    this.stopVMEncryptionPoller = function (taskId) {
+      return Poller.kill({ namespace: taskId });
     };
 
     /* ------- Resource -------*/

@@ -23,7 +23,8 @@
                  data-ng-show="loaders.table">
                 <oui-spinner></oui-spinner>
             </div>
-            <div data-ng-hide="loaders.table">
+            <div class="mb-5"
+                 data-ng-hide="loaders.table">
                 <p data-translate="dedicatedCloud_SECURITY_title"></p>
                 <div class="table-responsive">
                     <table class="table table-hover">
@@ -122,6 +123,44 @@
                      data-pagination-server-side-paginated-stuff="policies.model"
                      data-pagination-server-side-table-loading="loaders.table">
                 </div>
+            </div>
+
+            <h3 class="oui-header_2"
+                data-translate="dedicatedCloud_vm_encryption_kms_title"></h3>
+            <div class="mb-5">
+                <oui-datagrid data-rows-loader="$ctrl.getVMEncryptionKMSList($config)"
+                              data-row-loader="$ctrl.getVMEncryptionKMSDetail($row.id)"
+                              data-page-size="5">
+                    <oui-column data-title="'dedicatedCloud_vm_encryption_kms_id' | translate"
+                                data-property="kmsId"
+                                data-type="string"></oui-column>
+                    <oui-column data-title="'dedicatedCloud_vm_encryption_kms_description' | translate"
+                                data-property="description"
+                                data-type="string"></oui-column>
+                    <oui-column data-title="'dedicatedCloud_vm_encryption_kms_ip' | translate"
+                                data-property="ip"
+                                data-type="string"></oui-column>
+                    <oui-column data-title="'dedicatedCloud_vm_encryption_kms_port' | translate"
+                                data-property="kmsTcpPort"
+                                data-type="string"></oui-column>
+                    <oui-column data-title="'dedicatedCloud_vm_encryption_kms_sslThumbprint' | translate"
+                                data-property="sslThumbprint"
+                                data-type="string"></oui-column>
+                    <oui-column data-title="'dedicatedCloud_vm_encryption_kms_status' | translate"
+                                data-property="kmsId">
+                        <span class="oui-status"
+                              data-ng-class=":: 'oui-status_' + $ctrl.formatKmsStatus($row.state)">
+                            <span data-translate="{{:: 'dedicatedCloud_vm_encryption_kms_status_' + $row.state }}"></span>
+                        </span>
+                    </oui-column>
+                    <extra-top>
+                        <oui-button class="mb-3"
+                                    aria-label="{{:: 'dedicatedCloud_vm_encryption_kms_add' | translate }}"
+                                    data-on-click="$ctrl.addKms()">
+                            <span data-translate="dedicatedCloud_vm_encryption_kms_add"></span>
+                        </oui-button>
+                    </extra-top>
+                </oui-datagrid>
             </div>
         </div>
         <div class="col-sm-3">
