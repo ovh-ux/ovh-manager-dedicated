@@ -1,5 +1,29 @@
+import config from '../../config/config';
+
 angular
-  .module('Billing')
+  .module('Billing', [
+    'ovh-utils-angular',
+    'ngRoute',
+    'ngSanitize',
+    'ui.bootstrap',
+    'Billing.constants',
+    'Billing.services',
+    'Billing.controllers',
+    'Billing.directives',
+    'Billing.filters',
+    'ovh-angular-export-csv',
+  ])
+  .constant('BILLING_BASE_URL', 'account/billing/')
+  .constant('Billing.constants', {
+    aapiRootPath: config.aapiRootPath,
+    swsProxyRootPath: config.swsProxyRootPath,
+    paymentMeans: ['bankAccount', 'paypal', 'creditCard', 'deferredPaymentAccount'],
+    target: config.target,
+  })
+  .constant('LANGUAGES', config.constants.LANGUAGES)
+  .constant('Billing.URLS', {
+    renew: config.constants.billingRenew,
+  })
   .config([
     '$stateProvider',
     '$urlServiceProvider',
@@ -11,7 +35,7 @@ angular
         controller: 'BillingCtrl',
         templateUrl: `${BILLING_BASE_URL}/billing.html`,
         abstract: true,
-        translations: ['account/billing'],
+        translations: ['../billing'],
         resolve: {
           denyEnterprise: ($q, currentUser) => {
             if (currentUser.isEnterprise) {

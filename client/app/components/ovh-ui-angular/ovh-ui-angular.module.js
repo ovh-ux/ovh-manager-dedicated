@@ -1,15 +1,16 @@
 angular.module('App').run(($q,
   $translate,
-  $translatePartialLoader,
   ouiCriteriaAdderConfiguration,
   ouiDatagridConfiguration,
   ouiFieldConfiguration,
   ouiNavbarConfiguration,
   ouiPaginationConfiguration,
   ouiStepperConfiguration,
-  ouiCalendarConfiguration) => {
+  ouiCalendarConfiguration,
+  asyncLoader) => {
   // first be sure that common translation file is loaded...
-  $translatePartialLoader.addPart('common');
+  asyncLoader.addTranslations(import(`../../common/translations/Messages_${$translate.use()}.xml`).then(x => x.default));
+
   $translate.refresh().then(() => {
     _.set(ouiCriteriaAdderConfiguration, 'translations', {
       column_label: $translate.instant('common_criteria_adder_column_label'),

@@ -1,5 +1,22 @@
+import './newAccountForm/new-account-form.module';
+import config from '../../config/config';
+
 angular
-  .module('UserAccount')
+  .module('UserAccount', [
+    'ja.qr',
+    'ovh-utils-angular',
+    'ovhSignupApp',
+  ])
+  .constant('UserAccount.constants', {
+    aapiRootPath: config.aapiRootPath,
+    swsProxyRootPath: config.swsProxyRootPath,
+    target: config.target,
+  })
+  .constant('LANGUAGES', config.constants.LANGUAGES)
+  .constant('CountryConstants', {
+    support: config.constants.URLS.support,
+  })
+  .constant('AccountCreationURLS', config.constants.accountCreation)
   .config([
     '$stateProvider',
     'UserAccount.constants',
@@ -11,7 +28,7 @@ angular
         url: '/useraccount',
         controller: 'UserAccount.controllers.main',
         templateUrl: `${baseUrl}/user.html`,
-        translations: ['account/user'],
+        translations: ['.'],
         abstract: true,
       });
 
@@ -20,7 +37,7 @@ angular
         controller: 'UserAccount.controllers.main',
         templateUrl: `${baseUrl}/user.html`,
         abstract: true,
-        translations: ['account/user'],
+        translations: ['.'],
       });
 
       $stateProvider.state('app.account.useraccount.ssh', {
@@ -41,7 +58,7 @@ angular
         url: '/infos',
         templateUrl: `${baseUrl}infos/user-infos.html`,
         controller: 'UserAccount.controllers.Infos',
-        translations: ['account/user/newAccountForm'],
+        translations: ['./newAccountForm'],
       });
 
       if (target === 'EU' || target === 'CA') {
@@ -68,7 +85,7 @@ angular
         url: '/security/users',
         templateUrl: `${baseUrl}security/users/users.html`,
         controller: 'UserAccountUsersCtrl',
-        translations: ['account/user/security/users'],
+        translations: ['./security/users'],
       });
     },
   ])

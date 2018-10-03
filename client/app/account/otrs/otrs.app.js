@@ -5,14 +5,14 @@ angular
       url: '/ticket',
       templateUrl: 'account/otrs/otrs.html',
       controller: 'otrsCtrl',
-      translations: ['account/otrs'],
+      translations: ['../otrs'],
     });
 
     $stateProvider.state('app.account.otrs-ticket-details', {
       url: '/ticket/:ticketId',
       templateUrl: 'account/otrs/detail/otrs-detail.html',
       controller: 'otrsDetailCtrl',
-      translations: ['account/otrs'],
+      translations: ['../otrs'],
     });
   })
   .run([
