@@ -16,6 +16,9 @@ angular.module('Billing.controllers')
         'NOT_NEEDED_ANYMORE',
         'MIGRATED_TO_COMPETITOR',
         'MIGRATED_TO_ANOTHER_OVH_PRODUCT',
+        'FEATURES_DONT_SUIT_ME',
+        'UNSATIFIED_BY_CUSTOMER_SUPPORT',
+        'NO_ANSWER',
         'OTHER',
       ];
       this.futureUses = [
@@ -23,6 +26,7 @@ angular.module('Billing.controllers')
         'SUBSCRIBE_SIMILAR_SERVICE_WITH_COMPETITOR',
         'SUBSCRIBE_OTHER_KIND_OF_SERVICE_WITH_COMPETITOR',
         'NOT_REPLACING_SERVICE',
+        'NO_ANSWER',
         'OTHER',
       ];
 
