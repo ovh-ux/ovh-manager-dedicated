@@ -173,12 +173,12 @@ angular.module('Module.ip.controllers').controller('IpOrderCtrl', ($scope, $root
       case 'PCC':
         return (
           $scope.model.params.size
-                    && $scope.model.params.country
-                    && $scope.model.params.networkName
-                    && /^[a-zA-Z]+\w+$/.test($scope.model.params.networkName)
-                    && $scope.model.params.estimatedClientsNumber
-                    && $scope.model.params.description
-                    && $scope.model.params.usage
+            && $scope.model.params.country
+            && $scope.model.params.networkName
+            && /^[a-zA-Z]+\w+$/.test($scope.model.params.networkName)
+            && $scope.model.params.estimatedClientsNumber
+            && $scope.model.params.description
+            && $scope.model.params.usage
         );
       case 'VPS':
         return $scope.model.params.country && $scope.model.params.number;
