@@ -1,3 +1,18 @@
+<a name="10.2.2"></a>
+## [10.2.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.2.1...v10.2.2) (2018-10-02)
+
+
+### Bug Fixes
+
+* **i18n:** submit / retrieve (summit) ([dec0e10](https://github.com/ovh-ux/ovh-manager-dedicated/commit/dec0e10))
+
+
+### Features
+
+* **configuration:** added banner for Summit ([be0ef05](https://github.com/ovh-ux/ovh-manager-dedicated/commit/be0ef05))
+
+
+
 <a name="10.2.1"></a>
 ## [10.2.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.2.0...v10.2.1) (2018-09-25)
 
