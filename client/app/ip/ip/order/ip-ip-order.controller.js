@@ -28,6 +28,8 @@ angular.module('Module.ip.controllers').controller('IpOrderCtrl', ($scope, $root
     });
   };
 
+  $scope.groupByType = servicesList => servicesList.serviceType;
+
   $scope.serviceCanBeOrdered = function () {
     $scope.loading.serviceCanBeOrdered = true;
     $scope.orderableIp = null;
@@ -85,19 +87,30 @@ angular.module('Module.ip.controllers').controller('IpOrderCtrl', ($scope, $root
     }
 
     queue.push(
-      IpOrder.getAvailableCountries($scope.model.service).then((countries) => {
-        $scope.orderableIp.countries = countries;
-        $scope.isCanadianService = _.findIndex(countries, 'CA') !== -1 || countries.indexOf('us') !== -1;
+      IpOrder.getAvailableCountries($scope.model.service).then((countryCodes) => {
+        $scope.isCanadianService = _.includes(countryCodes, 'CA') || _.includes(countryCodes, 'us');
+        $scope.orderableIp.countries = countryCodes.map(code => ({
+          label: $translate.instant(`country_${code.toUpperCase()}`),
+          value: code,
+        }));
         if (!$scope.isCanadianService) {
           $scope.ipShortageWarnUrl = $translate.use() === 'fr_FR' ? constants.urls.FR.ipShortageWarnUrl : constants.urls.GB.ipShortageWarnUrl;
         }
       }),
     );
 
+    $scope.onCountryChanged = (country) => {
+      $scope.model.params.country = country.value;
+    };
+
     if ($scope.model.service.serviceType === 'PCC') {
       queue.push(
         Ip.getOrderModels().then((models) => {
           $scope.orderableIp.size = models['dedicatedCloud.OrderableIpBlockRangeEnum'].enum;
+          $scope.orderableIp.size = $scope.orderableIp.size.map(ipRange => ({
+            label: `/${ipRange}`,
+            value: ipRange,
+          }));
         }),
       );
     } else if ($scope.model.service.serviceType === 'DEDICATED') {
@@ -114,6 +127,14 @@ angular.module('Module.ip.controllers').controller('IpOrderCtrl', ($scope, $root
         }),
       );
     }
+
+    $scope.onOrganisationChanged = (idOrganisation) => {
+      $scope.model.params.organisationId = idOrganisation.organisationId;
+    };
+
+    $scope.onSizeChanged = function (ipSlash) {
+      $scope.model.params.size = ipSlash.value;
+    };
 
     $q.all(queue).then(
       () => {
@@ -203,7 +224,6 @@ angular.module('Module.ip.controllers').controller('IpOrderCtrl', ($scope, $root
     });
   }
 
-
   $scope.getDurations = function () {
     const queue = [];
     let needProfessionalUse = false;
@@ -216,10 +236,6 @@ angular.module('Module.ip.controllers').controller('IpOrderCtrl', ($scope, $root
     $scope.model.duration = null;
     $scope.orderableIp.professionalUsePrice = null;
     $scope.loading.durations = true;
-
-    if ($scope.orderableIp.isCanadianServer && $scope.model.params.blockSize > 1) {
-      $scope.model.params.country = _.first($scope.orderableIp.countries) || 'ca'; // Forced :'( ...
-    }
 
     queue.push(
       IpOrder.getOrder($scope.model.service, $scope.model.params).then((durations) => {
@@ -281,9 +297,7 @@ angular.module('Module.ip.controllers').controller('IpOrderCtrl', ($scope, $root
 ============================== */
 
   $scope.getResumePrice = function (price) {
-    return price.value === 0
-      ? $translate.instant('price_free')
-      : $translate.instant('price_ht_label', { t0: price.text });
+    return price.value === 0 ? $translate.instant('price_free') : $translate.instant('price_ht_label', { t0: price.text });
   };
 
   $scope.confirmOrder = function () {

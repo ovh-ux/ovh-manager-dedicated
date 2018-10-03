@@ -4,31 +4,29 @@
                for="numberSelect"
                data-translate="ip_order_ipnbr">
         </label>
-        <select id="numberSelect"
-                class="form-control"
-                name="numberSelect"
-                data-ng-model="model.params.number"
-                data-ng-options="r for r in orderableIp.ipRange">
-            <option value=""
-                    data-ng-disabled="true"
-                    data-translate="global_select">
-            </option>
-        </select>
+        <oui-select id="numberSelect"
+                    name="numberSelect"
+                    required
+                    data-placeholder="{{ 'global_select' | translate }}"
+                    data-model="model.params.number"
+                    data-items="orderableIp.ipRange">
+            <span data-ng-bind="$item"></span>
+        </oui-select>
     </div>
     <div class="form-group">
         <label class="control-label"
-               for="country"
+               for="countrySelect"
                data-translate="ip_order_country">
         </label>
-        <select id="country"
-                class="form-control"
-                name="country"
-                data-ng-model="model.params.country"
-                data-ng-options="c as (('country_'+c.toUpperCase()) | translate) for c in orderableIp.countries">
-            <option value=""
-                    data-ng-disabled="true"
-                    data-translate="global_select">
-            </option>
-        </select>
+        <oui-select id="countrySelect"
+                    name="countrySelect"
+                    required
+                    data-placeholder="{{ 'global_select' | translate }}"
+                    data-model="orderableIp.selectedCountry"
+                    data-match="label"
+                    data-on-change="onCountryChanged(modelValue)"
+                    data-items="orderableIp.countries">
+            <span data-ng-bind="$item.label"></span>
+        </oui-select>
     </div>
 </form>
