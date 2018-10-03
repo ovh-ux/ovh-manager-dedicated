@@ -736,6 +736,27 @@
     drange "^1.0.0"
     ret "^0.2.0"
 
+"@ckeditor/ckeditor5-build-classic@^11.0.1":
+  version "11.0.1"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-build-classic/-/ckeditor5-build-classic-11.0.1.tgz#e73203424ca59f254e9ba1f6224d2d6f8793c4b7"
+  integrity sha512-iVP2yEFM/ALwKVOynkjGZqPxdK4ecKGI+1oZXYdPPzkd58/4x6gSMKvh54znhNYbNsO7UsLj7+HllP/+5u50uw==
+
+"@commitlint/cli@^6.1.0":
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-6.2.0.tgz#b2f8190eb08ccd78eea65114b864f3c65eca466a"
+  integrity sha1-svgZDrCMzXjuplEUuGTzxl7KRmo=
+  dependencies:
+    "@commitlint/format" "^6.1.3"
+    "@commitlint/lint" "^6.2.0"
+    "@commitlint/load" "^6.1.3"
+    "@commitlint/read" "^6.1.3"
+    babel-polyfill "6.26.0"
+    chalk "2.3.1"
+    get-stdin "5.0.1"
+    lodash.merge "4.6.1"
+    lodash.pick "4.4.0"
+    meow "4.0.0"
+
 "@commitlint/cli@^7.1.2":
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-7.1.2.tgz#9ad1b4703679e18e3b1972c4abf0441255219e78"
@@ -950,9 +971,9 @@
     webpackbar "^2.6.3"
 
 "@ovh-ux/ovh-utils-angular@^13.0.0":
-  version "13.0.0"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ovh-utils-angular/-/ovh-utils-angular-13.0.0.tgz#8e825b3d8f81d80db7f48e026c66de2056e893dc"
-  integrity sha512-XUw374AfpI/Vw3VXY8hVrVz8hyZxdLbHWsPdbYrOiRkY+VOj0/lG3Ot5hc29PMb9DGB8/jpH7Whxq6jGJLcO6g==
+  version "13.0.2"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ovh-utils-angular/-/ovh-utils-angular-13.0.2.tgz#02fa3eb989537a0aeee7888d12443cca0ff552d6"
+  integrity sha512-+dHN29j7xwU/xx2hfQeZYQad003JIe43FhyZfUjZ6mw/oRPt1Sg1Gi6YSmSKLI6UkmJ0Af9d6NEglP2GLK+Rdg==
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
@@ -6348,6 +6369,11 @@ lodash@~3.3.0:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.3.1.tgz#3b914d4a1bb27efcee076e0dfa58152018e2042e"
   integrity sha1-O5FNShuyfvzuB24N+lgVIBjiBC4=
 
+lodash@~3.9.3:
+  version "3.9.3"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.9.3.tgz#0159e86832feffc6d61d852b12a953b99496bd32"
+  integrity sha1-AVnoaDL+/8bWHYUrEqlTuZSWvTI=
+
 log-symbols@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/log-symbols/-/log-symbols-1.0.2.tgz#376ff7b58ea3086a0f09facc74617eca501e1a18"
@@ -7451,9 +7477,12 @@ ovh-manager-webfont@^1.0.2:
   resolved "https://registry.yarnpkg.com/ovh-manager-webfont/-/ovh-manager-webfont-1.0.2.tgz#8f9d358d138c2650a557bdac7a2d1908e962418d"
   integrity sha1-j501jROMJlClV72sei0ZCOliQY0=
 
-ovh-module-exchange@ovh-ux/ovh-module-exchange#develop:
-  version "8.0.8"
-  resolved "https://codeload.github.com/ovh-ux/ovh-module-exchange/tar.gz/c89d1a1a9432b62dea0f57a53f61563450d84192"
+ovh-module-exchange@ovh-ux/ovh-module-exchange#^9.0.0:
+  version "9.0.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-module-exchange/tar.gz/0a5b0c3560f498d52caa5ca5384cfa62af213e8c"
+  dependencies:
+    "@ckeditor/ckeditor5-build-classic" "^11.0.1"
+    lodash "~3.9.3"
 
 ovh-ui-angular@^2.19.x:
   version "2.20.2"
