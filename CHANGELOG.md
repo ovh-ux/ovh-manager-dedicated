@@ -1,3 +1,32 @@
+<a name="10.3.0"></a>
+# [10.3.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.2.2...v10.3.0) (2018-10-03)
+
+
+### Bug Fixes
+
+* apply eslint rules ([3acd4a5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3acd4a5))
+* remove unused makefile ([a865245](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a865245))
+* **eslint:** add WEBPACK_ENV eslint env var ([1cabc2a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1cabc2a))
+* update license file ([9c423eb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9c423eb))
+* **cdn:** fix quota order error ([a9c1cf2](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a9c1cf2))
+* **eslint:** update configuration ([f882883](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f882883))
+* **i18n:** submit / retrieve (summit) ([71367a8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/71367a8))
+* **license:** fix license spla add modal ([c5a54d4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c5a54d4))
+* **otrs:** add translations ([9ce0eb7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9ce0eb7))
+* **style:** fix lint ([2da2fdc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2da2fdc))
+* **webpack:** disable yarn test ([252b94a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/252b94a))
+* **webpack:** fix broken ui-angular import ([5aeaeb4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5aeaeb4))
+
+
+### Features
+
+* **billing.termination:** Add new reasons ([6a6207a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6a6207a))
+* **configuration:** added banner for Summit ([1e6b757](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1e6b757))
+* **us:** activate agora order for veeam backup ([e5fa081](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e5fa081))
+* **webpack:** add module exchange ([45d9986](https://github.com/ovh-ux/ovh-manager-dedicated/commit/45d9986))
+
+
+
 <a name="10.2.2"></a>
 ## [10.2.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.2.1...v10.2.2) (2018-10-02)
 
