@@ -1,6 +1,6 @@
 angular.module('App').controller('ConfigurationCtrl', class ConfigurationCtrl {
   constructor($q, $scope, $state, $stateParams, $translate, featureAvailability, constants,
-    DedicatedCloud) {
+    DedicatedCloud, User) {
     this.$q = $q;
     this.$scope = $scope;
     this.$state = $state;
@@ -9,6 +9,7 @@ angular.module('App').controller('ConfigurationCtrl', class ConfigurationCtrl {
     this.featureAvailability = featureAvailability;
     this.constants = constants;
     this.DedicatedCloud = DedicatedCloud;
+    this.User = User;
   }
 
   $onInit() {
@@ -69,7 +70,15 @@ angular.module('App').controller('ConfigurationCtrl', class ConfigurationCtrl {
   }
 
   buildSummitData() {
+    const subsidiariesWithSummitBanner = ['FR', 'GB', 'DE', 'ES'];
     this.$scope.localeForSummitBanner = this.$translate.use().split('_')[0] === 'fr' ? 'fr' : 'en';
+    this.$scope.shouldDisplayBanner = false;
+
+    return this.User
+      .getUser()
+      .then(({ ovhSubsidiary }) => {
+        this.$scope.shouldDisplayBanner = _(subsidiariesWithSummitBanner).includes(ovhSubsidiary);
+      });
   }
 
   getSelectedLanguage() {
