@@ -918,9 +918,9 @@
   integrity sha512-yprFYuno9FtNsSHVlSWd+nRlmGoAbqbeCwOryP6sC/zoCjhpArcRMYp19EvpSUSizJAlsXEwJv+wcWS9XaXdMw==
 
 "@ovh-ux/manager-webpack-config@^2.0.0":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-webpack-config/-/manager-webpack-config-2.1.1.tgz#b4f2cfa28cf821b2033514fb18c1dd19e0e636ca"
-  integrity sha512-0JlZhgQULPUVND5WWv3acJhTl1kliCcuypG6089jQdv25SX32UH2+Wx5bYIraYPPlzK4ukuQE59kGHqMTuIXSA==
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-webpack-config/-/manager-webpack-config-2.2.0.tgz#44718653558dd2ad8d6f224495a08fd7db0dc493"
+  integrity sha512-HUEba5mirlYiNGzlTTucZGroICXYu6k2hHh1Ieq0o3BFXt7LJ/WwlHTQPgkZ9pwJ851ZKL8lxhnIpdM5PVhxow==
   dependencies:
     "@babel/core" "^7.0.0"
     "@babel/generator" "^7.0.0"
@@ -1255,9 +1255,9 @@ angular-aria@1.6.x:
   integrity sha512-QO+jSbsnGxLhULD8syFvfH0sQVCKCwDPDCd130ou11HYw4D8vAaU/NG6ufcmnh9XJHTcngAaBe3VVfZefMkiBA==
 
 angular-aria@>=1.6.x:
-  version "1.7.4"
-  resolved "https://registry.yarnpkg.com/angular-aria/-/angular-aria-1.7.4.tgz#0774cefa3a3e1bf0bf7aba5253e3bb9ca209f216"
-  integrity sha512-nmZ7xjvVMm1PVEvJ360gJQqEF4FGRdTFWZtDOE4+uHGZZlVJeCEcsrnZCONX4qyK3rrRHUFSHZc1OV8+heGrhw==
+  version "1.7.5"
+  resolved "https://registry.yarnpkg.com/angular-aria/-/angular-aria-1.7.5.tgz#e66334d80ad6b4b01f005f590d7c7eef0064312f"
+  integrity sha512-X2dGRw+PK7hrV7/X1Ns4e5P3KC/OBFi1l7z//D/v7zbZObsAx48qBoX7unsck+s4+mnO+ikNNkHG5N49VfAyRw==
 
 angular-chart.js@^1.1.1:
   version "1.1.1"
@@ -1317,9 +1317,9 @@ angular-sanitize@1.6.x:
   integrity sha512-01i1Xoq9ykUrsoYQMSB6dWZmPp9Df5hfCqMAGGzJBWZ7L2WY0OtUphdI0YvR8ZF9lAsWtGNtsEFilObjq5nTgQ==
 
 angular-sanitize@>=1.6.x:
-  version "1.7.4"
-  resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.7.4.tgz#c7d80176ed31507fd0e08bbb3a6c25bf09db2a61"
-  integrity sha512-i5NoK6lo21N/CDRtkXpUuqaXeyncP7icLNCGzCUCD6CQvfVh3nY9Nsiw+tHtiIeD34ppcbl5Wb6ihY7RKDoDVw==
+  version "1.7.5"
+  resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.7.5.tgz#75d49e15071ca9c70581e76d20940f26372e24d2"
+  integrity sha512-wjKCJOIwrkEvfD0keTnKGi6We13gtoCAQIHcdoqyoo3gwvcgNfYymVQIS3+iCGVcjfWz0jHuS3KgB4ysRWsTTA==
 
 angular-template-url-loader@^1.0.2:
   version "1.0.2"
@@ -1351,9 +1351,9 @@ angular@1.6.x:
   integrity sha512-PCZ5/hVdvPQiYyH0VwsPjrErPHRcITnaXxhksceOXgtJeesKHLA7KDu4X/yvcAi+1zdGgGF+9pDxkJvghXI9Wg==
 
 angular@1.x, "angular@>=1.2.26 <=1.7", angular@>=1.6.x:
-  version "1.7.4"
-  resolved "https://registry.yarnpkg.com/angular/-/angular-1.7.4.tgz#c1bf4884c2d470c06907737a1bf0835a9f646f31"
-  integrity sha512-nYTWc9CpZjTY57l8EA1+DGpQNzI6HewQ34bfRYoGXBYysIoPYjfcgTGWC+Vl3AaeCnhAb3VTkysVESvCBpUIoA==
+  version "1.7.5"
+  resolved "https://registry.yarnpkg.com/angular/-/angular-1.7.5.tgz#d1c1c01c6f5dc835638f3f9aa51012857bdac49e"
+  integrity sha512-760183yxtGzni740IBTieNuWLtPNAoMqvmC0Z62UoU0I3nqk+VJuO3JbQAXOyvo3Oy/ZsdNQwrSTh/B0OQZjNw==
 
 animate.css@^3.5.0:
   version "3.7.0"
@@ -2626,6 +2626,11 @@ class-utils@^0.3.5:
   version "0.3.6"
   resolved "https://registry.yarnpkg.com/class-utils/-/class-utils-0.3.6.tgz#f93369ae8b9a7ce02fd41faad0ca83033190c463"
   integrity sha512-qOhPa/Fj7s6TY8H8esGu5QNpMMQxz79h+urzrNYN6mn+9BnxlDGf5QZ+XeCDsxSjPqsSR56XOZOJmpeurnLMeg==
+  dependencies:
+    arr-union "^3.1.0"
+    define-property "^0.2.5"
+    isobject "^3.0.0"
+    static-extend "^0.1.1"
 
 clean-css@4.2.x:
   version "4.2.1"
@@ -5004,6 +5009,10 @@ hmac-drbg@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
   integrity sha1-0nRXAQJabHdabFRXk+1QL8DGSaE=
+  dependencies:
+    hash.js "^1.0.3"
+    minimalistic-assert "^1.0.0"
+    minimalistic-crypto-utils "^1.0.1"
 
 hoek@2.x.x:
   version "2.16.3"
@@ -7461,9 +7470,9 @@ ovh-module-exchange@ovh-ux/ovh-module-exchange#^9.0.0:
     lodash "~3.9.3"
 
 ovh-ui-angular@^2.19.x:
-  version "2.21.0"
-  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.21.0.tgz#5f080a1f20d7ea91c94ed2b0d2bdec53c0b9419f"
-  integrity sha512-e2n+oG/TKyGOxld0/CKjGQduQaoDwwMW0MKyhaz5chE/5x/SCCKVi6ZB07jAA8N536sXsnGQr6DkaY6J58zUBw==
+  version "2.21.1"
+  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.21.1.tgz#e342434ae590602dc4a1af1f1e86fdb42768aeaa"
+  integrity sha512-t3qTvIYUD93YhWJhBVRc2ofUD6kw0wEwfEcuB2ISd+VwpQR8d+VUHa0Ev/RU++w5XgmwzXRniOTGKicR2Aq0Gw==
   dependencies:
     angular ">=1.6.x"
     angular-aria ">=1.6.x"
@@ -7475,9 +7484,9 @@ ovh-ui-angular@^2.19.x:
     popper.js "^1.14.4"
 
 ovh-ui-kit-bs@~1.3.x:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/ovh-ui-kit-bs/-/ovh-ui-kit-bs-1.3.2.tgz#376d4aa776b18ed3f291c4ff9e647b48b530fbfe"
-  integrity sha512-lWo0KSTHes1teTSESpkSEX/smJQkS5TaDtYDTI7iNvUnjWquKp03FmUGmBDJ4AwMeNru9cmFdTzU5zFHvG2wcw==
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/ovh-ui-kit-bs/-/ovh-ui-kit-bs-1.3.3.tgz#31ed881f463b49fc91d418f7a9316e06e648d5b2"
+  integrity sha512-H0r14QuDikarYlVqEpZIIM/9WroGqjzy9Z6l5hhchtATDl0kco3qa38ZpNK0hfUWr/s6LKHmREBd24AvxBljSw==
 
 ovh-ui-kit@^2.19.x, ovh-ui-kit@^2.20.0:
   version "2.21.0"
@@ -9156,9 +9165,9 @@ source-map@^0.6.1, source-map@~0.6.0, source-map@~0.6.1:
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
 
 spdx-correct@^3.0.0:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/spdx-correct/-/spdx-correct-3.0.1.tgz#434434ff9d1726b4d9f4219d1004813d80639e30"
-  integrity sha512-hxSPZbRZvSDuOvADntOElzJpenIR7wXJkuoUcUtS0erbgt2fgeaoPIYretfKpslMhfFDY4k0MZ2F5CUzhBsSvQ==
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/spdx-correct/-/spdx-correct-3.0.2.tgz#19bb409e91b47b1ad54159243f7312a858db3c2e"
+  integrity sha512-q9hedtzyXHr5S0A1vEPoK/7l8NpfkFYTq6iCY+Pno2ZbdZR6WexZFtqeVGkGxW3TEJMN914Z55EnAGMmenlIQQ==
   dependencies:
     spdx-expression-parse "^3.0.0"
     spdx-license-ids "^3.0.0"
@@ -9627,6 +9636,14 @@ tar@^4:
   version "4.4.6"
   resolved "https://registry.yarnpkg.com/tar/-/tar-4.4.6.tgz#63110f09c00b4e60ac8bcfe1bf3c8660235fbc9b"
   integrity sha512-tMkTnh9EdzxyfW+6GK6fCahagXsnYk6kE6S9Gr9pjVdys769+laCTbodXDhPAjzVtEBazRgP0gYqOjnk9dQzLg==
+  dependencies:
+    chownr "^1.0.1"
+    fs-minipass "^1.2.5"
+    minipass "^2.3.3"
+    minizlib "^1.1.0"
+    mkdirp "^0.5.0"
+    safe-buffer "^5.1.2"
+    yallist "^3.0.2"
 
 tempfile@^1.1.1:
   version "1.1.1"
