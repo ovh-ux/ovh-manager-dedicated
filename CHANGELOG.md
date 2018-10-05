@@ -1,3 +1,15 @@
+<a name="10.3.1"></a>
+## [10.3.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.3.0...v10.3.1) (2018-10-05)
+
+
+### Bug Fixes
+
+* **summitbanner:** display only for some subsidiaries ([5ca4ee0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5ca4ee0))
+* remove border top of the summit banner ([0ec9bbb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0ec9bbb))
+* update gitignore file ([161ea70](https://github.com/ovh-ux/ovh-manager-dedicated/commit/161ea70))
+
+
+
 <a name="10.3.0"></a>
 # [10.3.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.2.2...v10.3.0) (2018-10-03)
 
