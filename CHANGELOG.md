@@ -1,3 +1,13 @@
+<a name="10.3.3"></a>
+## [10.3.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.3.2...v10.3.3) (2018-10-08)
+
+
+### Bug Fixes
+
+* set correct relative path to background images ([faab143](https://github.com/ovh-ux/ovh-manager-dedicated/commit/faab143))
+
+
+
 <a name="10.3.2"></a>
 ## [10.3.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.3.1...v10.3.2) (2018-10-08)
 
