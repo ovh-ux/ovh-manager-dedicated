@@ -28,7 +28,7 @@
 
   .navbar-icon(@icon-selector) {
     .navbar-@{icon-selector} {
-      background: url('../images/navbar/@{icon-selector}.svg') no-repeat center center;
+      background: url('../../../images/navbar/@{icon-selector}.svg') no-repeat center center;
       background-size: contain;
     }
 
@@ -37,7 +37,7 @@
       &:focus,
       &_active,
       &[aria-expanded="true"] {
-        .navbar-@{icon-selector} { background: url('../images/navbar/@{icon-selector}_on.svg') no-repeat center center; }
+        .navbar-@{icon-selector} { background: url('../../../images/navbar/@{icon-selector}_on.svg') no-repeat center center; }
       }
     }
   }
