@@ -1,3 +1,13 @@
+<a name="10.3.2"></a>
+## [10.3.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.3.1...v10.3.2) (2018-10-08)
+
+
+### Bug Fixes
+
+* **components.manager-preload:** center hr element ([0d64020](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0d64020))
+
+
+
 <a name="10.3.1"></a>
 ## [10.3.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.3.0...v10.3.1) (2018-10-05)
 
