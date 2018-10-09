@@ -1,4 +1,5 @@
 /* eslint-disable import/no-webpack-loader-syntax, import/no-unresolved, import/extensions */
+import 'babel-polyfill';
 import 'script-loader!../assets/randexp.min.js';
 import 'script-loader!moment/min/moment-with-locales.min.js';
 import 'script-loader!jquery/dist/jquery.min.js';
