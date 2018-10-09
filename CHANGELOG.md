@@ -1,3 +1,13 @@
+<a name="10.3.4"></a>
+## [10.3.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.3.3...v10.3.4) (2018-10-09)
+
+
+### Bug Fixes
+
+* **ie11:** app will now display correctly ([2f2f2ba](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2f2f2ba))
+
+
+
 <a name="10.3.3"></a>
 ## [10.3.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.3.2...v10.3.3) (2018-10-08)
 
