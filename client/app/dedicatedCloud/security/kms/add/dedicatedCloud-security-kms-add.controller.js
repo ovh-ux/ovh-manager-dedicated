@@ -45,7 +45,7 @@ angular.module('App').controller('DedicatedCloudSecurityKMSAddCtrl', class Dedic
 
   createNewKms() {
     this.kmsCreationTask.name = this.$translate.instant('dedicatedCloud_vm_encryption_add_kms_creating');
-    this.kmsCreationTask.state = this.$translate.instant('dedicatedCloud_vm_encryption_add_kms_creating_state');
+    this.kmsCreationTask.state = this.$translate.instant('dedicatedCloud_vm_encryption_kms_pending_task_state');
     return this.DedicatedCloud.createVMEncryptionKMS(this.serviceName, this.kms)
       .then(({ taskId }) => {
         this.creationTaskId = taskId;
@@ -80,28 +80,14 @@ angular.module('App').controller('DedicatedCloudSecurityKMSAddCtrl', class Dedic
     return `${this.kmsCreationTask.progress} % ${(this.kmsCreationTask.description ? `(${this.kmsCreationTask.description})` : '')}`;
   }
 
-  isSecondStepValid() {
+  isCreationStepValid() {
     this.pollCreationTask();
 
-    if (this.kmsCreationTask.state) {
-      return this.isWaitingUserAction();
-    }
-
-    return false;
+    return this.isTaskFinishedOrCanceled();
   }
 
   isTaskFinishedOrCanceled() {
     return _.includes(this.VM_ENCRYPTION_KMS.endStatus, this.kmsCreationTask.state);
-  }
-
-  isThirdStepValid() {
-    this.pollCreationTask();
-    return !this.isWaitingUserAction();
-  }
-
-  isFinalStepValid() {
-    this.pollCreationTask();
-    return this.isTaskFinishedOrCanceled();
   }
 
   isWaitingUserAction() {

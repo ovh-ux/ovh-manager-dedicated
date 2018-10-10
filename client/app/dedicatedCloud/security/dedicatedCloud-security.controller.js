@@ -1,4 +1,4 @@
-angular.module('App').controller('DedicatedCloudSecurityCtrl', function ($rootScope, $stateParams, $scope, $uibModal, DedicatedCloud, $translate) {
+angular.module('App').controller('DedicatedCloudSecurityCtrl', function ($rootScope, $stateParams, $scope, $uibModal, DedicatedCloud, OvhApiDedicatedCloud, $translate) {
   const self = this;
   let forceRefresh = false;
 
@@ -163,6 +163,9 @@ angular.module('App').controller('DedicatedCloudSecurityCtrl', function ($rootSc
     });
 
     kmsCreationModal.result.then(() => {
+      OvhApiDedicatedCloud.VMEncryption().kms().v6().resetCache();
+      OvhApiDedicatedCloud.VMEncryption().kms().v6().resetQueryCache();
+
       $scope.loadInfo();
       $scope.setMessage($translate.instant('dedicatedCloud_vm_encryption_kms_added'), {});
     });
