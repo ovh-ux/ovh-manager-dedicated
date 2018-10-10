@@ -97,7 +97,7 @@
    <translation id="dedicatedCloud_configuration_order_hosts_memory" qtlid="31354">RAM</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_memory_ecc" qtlid="147772">(ECC)</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_nb_cores" qtlid="33070">Ydinten määrä</translation>
-   <translation id="dedicatedCloud_configuration_order_hosts_quantity_info" qtlid="502398">Infrastruktuurissasi on oltava vähintään kolme isäntäpalvelinta, jotta vSan voi toimia.</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_quantity_info">Il faut au moins trois hôtes vSAN dans votre infrastructure pour que le vSAN soit fonctionnel.</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_billing_quantity" qtlid="146229">Tilattavien isäntäkoneiden lukumäärä:</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_finish_success" qtlid="183372">Isäntäkoneen tilaus <a href='{0}' target='_blank'>{1}</a> on rekisteröity.</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_finish_fail" qtlid="146255">Tapahtui virhe tilattaessa isäntäkonetta palvelinkeskukseen {0}</translation>
@@ -735,10 +735,10 @@
    <translation id="dedicatedCloud_options_order_activate_error" qtlid="342992">Tapahtui virhe lisäpalvelun aktivoimisessa:</translation>
    <translation id="dedicatedCloud_options_order_sms_confirmation" qtlid="382745">Saat tekstiviestin vahvistuksena tilauksestasi. </translation>
 
-   <translation id="dedicatedCloud_datacenter_backup_enable_version" qtlid="503760">Version de Veeam Backup à activer</translation>
-   <translation id="dedicatedCloud_datacenter_backup_enable_version_choice" qtlid="503773">Choisissez la version de Veeam backup à installer sur le datacentre <strong>{{name}}</strong>. Une fois la version de Veeam Backup sélectionnée, cliquez sur "Activer". Un nouvel onglet s'ouvrira et vous serez automatiquement redirigé(e) vers l'interface de paiement.</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_version" qtlid="503760">Aktivoitava Veeam Backup -versio</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_version_choice" qtlid="503773">Valitse Veeam Backup -versio, joka asennetaan konesaliin <strong>{{name}}</strong>. Kun Veeam Backup -versio on valittu, klikkaa "Aktivoi". Uusi välilehti avautuu ja sinut uudelleenohjataan automaattisesti maksukäyttöliittymään.</translation>
    <translation id="dedicatedCloud_datacenter_backup_enable_version_classic" qtlid="503786">Veeam Standard Backup</translation>
    <translation id="dedicatedCloud_datacenter_backup_enable_version_advanced" qtlid="503799">Veeam Advanced Backup</translation>
-   <translation id="dedicatedCloud_datacenter_backup_enable_version_explain" qtlid="503812">Vous serez facturé en fonction du nombre de VM backupées, dans les conditions décrites sur <a href="{{url}}" target="_blank">cette page</a>.</translation>
-   <translation id="dedicatedCloud_datacenter_backup_enable_no_offer" qtlid="503825">Aucune offre de Veeam Backup n'est disponible pour votre datacentre <strong>{{name}}</strong>.</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_version_explain" qtlid="503812">Laskutus tapahtuu varmuuskopioitujen virtuaalikoneiden lukumäärän perusteella, <a href="{{url}}" target="_blank">tällä sivulla</a> olevien ehtojen mukaisesti.</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_no_offer" qtlid="503825">Yhtään Veeam Backup -tuotetta ei ole saatavilla konesalissa <strong>{{name}}</strong>.</translation>
 </translations>

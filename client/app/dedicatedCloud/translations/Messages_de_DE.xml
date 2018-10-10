@@ -29,7 +29,7 @@
    <translation id="dedicatedCloud_user_access_policy_FILTERED" qtlid="145852">Eingeschränkt</translation>
    <translation id="dedicatedCloud_user_access_policy_OPEN" qtlid="75654">Offen</translation>
    <translation id="dedicatedCloud_bandwidth" qtlid="38565">Bandbreite</translation>
-   <translation id="dedicatedCloud_datacenter_count" qtlid="30802">Rechenzentrum</translation>
+   <translation id="dedicatedCloud_datacenter_count" qtlid="30802">Datacenter</translation>
    <translation id="dedicatedCloud_order_license" qtlid="145865">Eine Lizenz bestellen</translation>
    <translation id="dedicatedCloud_order_block" qtlid="147681">Einen IP-Block bestellen</translation>
    <translation id="dedicatedCloud_order_Host" qtlid="145891">Einen Host bestellen</translation>
@@ -97,7 +97,7 @@
    <translation id="dedicatedCloud_configuration_order_hosts_memory" qtlid="31354">RAM</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_memory_ecc" qtlid="147772">(ECC)</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_nb_cores" qtlid="33070">Anzahl der Cores</translation>
-   <translation id="dedicatedCloud_configuration_order_hosts_quantity_info" qtlid="502398">Sie benötigen mindestens drei Hosts in Ihrer Infrastruktur, damit vSAN funktioniert.</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_quantity_info">Il faut au moins trois hôtes vSAN dans votre infrastructure pour que le vSAN soit fonctionnel.</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_billing_quantity" qtlid="146229">Anzahl zu bestellender Hosts:</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_finish_success" qtlid="183372">Die Bestellung Nummer <a href='{0}' target='_blank'>{1}</a> für einen Host wurde erfolgreich durchgeführt.</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_finish_fail" qtlid="146255">Bei der Bestellung von Hosts für das Datacenter {0} ist ein Fehler aufgetreten</translation>
@@ -180,7 +180,7 @@
    <translation id="dedicatedCloud_tab_licences_active_spla_fail" qtlid="154910">Bei der Anfrage zur Aktivierung der SPLA Lizenz ist ein Fehler aufgetreten.</translation>
    <translation id="dedicatedCloud_tab_backup" qtlid="28147">Backup</translation>
    <translation id="dedicatedCloud_tab_veeam_on" qtlid="75030">Das Backup aktivieren</translation>
-   <translation id="dedicatedCloud_tab_veeam_on_disabled" qtlid="471925">Ihr Rechenzentrum muss mindestens einen Host enthalten, um das Backup zu aktivieren.</translation>
+   <translation id="dedicatedCloud_tab_veeam_on_disabled" qtlid="471925">Ihr Datacenter muss mindestens einen Host enthalten, um das Backup zu aktivieren.</translation>
    <translation id="dedicatedCloud_tab_veeam_off" qtlid="154923">Das Backup deaktivieren</translation>
    <translation id="dedicatedCloud_tab_veeam_state" qtlid="101997">Zustand:</translation>
    <translation id="dedicatedCloud_tab_veeam_loading_error" qtlid="149488">Bei der Änderung der Backup-Informationen ist ein Fehler aufgetreten.</translation>
@@ -192,7 +192,7 @@
    <translation id="dedicatedCloud_tab_veeam_REMOVING" qtlid="154988">Die Backups werden gelöscht</translation>
    <translation id="dedicatedCloud_tab_veeam_enable_title" qtlid="155001">Aktivierung des Backups</translation>
    <translation id="dedicatedCloud_tab_veeam_enable_message" qtlid="183398">Sind Sie sicher, dass Sie das Backup für das Datacenter <b>{0}</b> aktivieren möchten?</translation>
-   <translation id="dedicatedCloud_tab_veeam_enable_message2" qtlid="183411">Die Abrechnung erfolgt abhängig von der Anzahl der gebackupten VM anhand der auf <a href='http://www.ovh.de:51080/dedicated-cloud/veeam.xml' target='_blank'>dieser Seite</a> aufgeführten Bedingungen.</translation>
+   <translation id="dedicatedCloud_tab_veeam_enable_message2" qtlid="183411">Die Abrechnung erfolgt abhängig von der Anzahl der gebackupten VMs anhand der auf <a href='http://www.ovh.de:51080/dedicated-cloud/veeam.xml' target='_blank'>dieser Seite</a> aufgeführten Bedingungen.</translation>
    <translation id="dedicatedCloud_tab_veeam_enable_success" qtlid="183424">Die Anfrage zur Aktivierung des Backups für das Datacenter <b>{0}</b> wurde erfolgreich durchgeführt.</translation>
    <translation id="dedicatedCloud_tab_veeam_enable_fail" qtlid="183437">Bei der Aktivierung des Backups für das Datacenter <b>{0}</b> ist ein Fehler aufgetreten.</translation>
    <translation id="dedicatedCloud_tab_veeam_disable_title" qtlid="149631">Deaktivierung des Backups</translation>
@@ -201,14 +201,14 @@
    <translation id="dedicatedCloud_tab_veeam_disable_message_alert" qtlid="155092">Achtung, diese Aktion zieht die endgültige Löschung aller Ihrer Backups nach sich.</translation>
    <translation id="dedicatedCloud_tab_veeam_disable_success" qtlid="183463">Die Anfrage zur Deaktivierung des Backups für das Datacenter <b>{0}</b> wurde erfolgreich durchgeführt.</translation>
    <translation id="dedicatedCloud_tab_veeam_disable_fail" qtlid="183476">Bei der Deaktivierung des Backups für das Datacenter <b>{0}</b> ist ein Fehler aufgetreten.</translation>
-   <translation id="dedicatedCloud_datacenter_label" qtlid="30802">Rechenzentrum</translation>
+   <translation id="dedicatedCloud_datacenter_label" qtlid="30802">Datacenter</translation>
    <translation id="dedicatedCloud_datacenter_go_web_interface" qtlid="433099">Webinterface</translation>
    <translation id="dedicatedCloud_datacenter_go_certified_web_interface" qtlid="433112">Zertifiziertes Webinterface</translation>
    <translation id="dedicatedCloud_datacenter_go_vscope" qtlid="147785">Zugang zu vScope</translation>
    <translation id="dedicatedCloud_datacenter_delete" qtlid="49430">Datacenter löschen</translation>
-   <translation id="dedicatedCloud_datacenter_delete_confirmation" qtlid="433125">Möchten Sie das Rechenzentrum {0} wirklich löschen?</translation>
-   <translation id="dedicatedCloud_datacenter_delete_success" qtlid="433138">Das Rechenzentrum {0} wird in wenigen Augenblicken gelöscht.</translation>
-   <translation id="dedicatedCloud_datacenter_delete_error" qtlid="433151">Beim Löschen des Rechenzentrums {0} ist ein Fehler aufgetreten.</translation>
+   <translation id="dedicatedCloud_datacenter_delete_confirmation" qtlid="433125">Möchten Sie das Datacenter {0} wirklich löschen?</translation>
+   <translation id="dedicatedCloud_datacenter_delete_success" qtlid="433138">Das Datacenter {0} wird in wenigen Augenblicken gelöscht.</translation>
+   <translation id="dedicatedCloud_datacenter_delete_error" qtlid="433151">Beim Löschen des Datacenters {0} ist ein Fehler aufgetreten.</translation>
    <translation id="dedicatedCloud_datacenter_VM_Backup" qtlid="146281">Gebackupte VM</translation>
    <translation id="dedicatedCloud_datacenter_datastore" qtlid="154780">Datastores</translation>
    <translation id="dedicatedCloud_datacenter_host" qtlid="51763">Hosts</translation>
@@ -327,7 +327,7 @@
    <translation id="dedicatedCloud_USER_right_MANAGER" qtlid="210189">Administrator</translation>
    <translation id="dedicatedCloud_USER_right_manager" qtlid="210189">Administrator</translation>
    <translation id="dedicatedCloud_USER_right_title" qtlid="433164">Verwaltung der Rechte</translation>
-   <translation id="dedicatedCloud_USER_right_datacenter_title" qtlid="433177">Rechenzentrum: <b>{0}</b></translation>
+   <translation id="dedicatedCloud_USER_right_datacenter_title" qtlid="433177">Datacenter: <b>{0}</b></translation>
    <translation id="dedicatedCloud_USER_right_vsphere" qtlid="146567">vSphere Zugang</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_help" qtlid="433190">Volle Benutzerrechte für vSphere</translation>
    <translation id="dedicatedCloud_USER_right_vsphere_ADMIN" qtlid="433203">OVH vorbehalten, nur für Administratoren</translation>
@@ -613,7 +613,7 @@
    <translation id="dedicatedCloud_vmware_orderopt_title_nsx" qtlid="342875">Die VMware NSX Option aktivieren</translation>
    <translation id="dedicatedCloud_vmware_orderopt_info" qtlid="342888">Der Preis Ihrer Hosts wird bei der nächsten Verlängerung angepasst:</translation>
    <translation id="dedicatedCloud_vmware_orderopt_host_name" qtlid="3818">Name</translation>
-   <translation id="dedicatedCloud_vmware_orderopt_datacenter_name" qtlid="30802">Rechenzentrum</translation>
+   <translation id="dedicatedCloud_vmware_orderopt_datacenter_name" qtlid="30802">Datacenter</translation>
    <translation id="dedicatedCloud_vmware_orderopt_current_price" qtlid="342901">Abrechnung für diesen Monat</translation>
    <translation id="dedicatedCloud_vmware_orderopt_next_price" qtlid="342914">Abrechnung für den nächsten Monat*</translation>
    <translation id="dedicatedCloud_vmware_orderopt_price_hourly" qtlid="342927">{0} / Stunde</translation>
@@ -673,7 +673,7 @@
 
    <translation id="dedicatedCloud_OPERATIONS_related_userId" qtlid="367216">Benutzer: {0} </translation>
    <translation id="dedicatedCloud_OPERATIONS_related_orderId" qtlid="367229">Bestellung: {0} </translation>
-   <translation id="dedicatedCloud_OPERATIONS_related_datacenterId" qtlid="367242">Rechenzentrum: {0} </translation>
+   <translation id="dedicatedCloud_OPERATIONS_related_datacenterId" qtlid="367242">Datacenter: {0} </translation>
    <translation id="dedicatedCloud_OPERATIONS_related_hostId" qtlid="367255">Host: {0} </translation>
    <translation id="dedicatedCloud_OPERATIONS_related_filerId" qtlid="367268">Datastore: {0} </translation>
    <translation id="dedicatedCloud_OPERATIONS_related_networkAccessId" qtlid="367281">Netzwerk: {0} </translation>
@@ -724,7 +724,7 @@
    <translation id="dedicatedCloud_options_load_prices_error" qtlid="374295">Beim Laden der Preise für diese Option ist ein Fehler aufgetreten. </translation>
    <translation id="dedicatedCloud_options_info" qtlid="374308">Der Preis Ihrer Hosts wird bei der nächsten Verlängerung steigen: </translation>
    <translation id="dedicatedCloud_options_order_host_name" qtlid="3818">Name</translation>
-   <translation id="dedicatedCloud_options_order_datacenter_name" qtlid="30802">Rechenzentrum</translation>
+   <translation id="dedicatedCloud_options_order_datacenter_name" qtlid="30802">Datacenter</translation>
    <translation id="dedicatedCloud_options_order_current_price" qtlid="342901">Abrechnung für diesen Monat</translation>
    <translation id="dedicatedCloud_options_order_next_price" qtlid="374321">Abrechnung für nächsten Monat </translation>
    <translation id="dedicatedCloud_options_order_price_hourly" qtlid="342927">{0} / Stunde</translation>
@@ -735,10 +735,10 @@
    <translation id="dedicatedCloud_options_order_activate_error" qtlid="342992">Bei der Aktivierung der Option ist ein Fehler aufgetreten:</translation>
    <translation id="dedicatedCloud_options_order_sms_confirmation" qtlid="382745">Sie erhalten eine SMS, um Ihre Bestellung zu bestätigen.</translation>
 
-   <translation id="dedicatedCloud_datacenter_backup_enable_version" qtlid="503760">Version de Veeam Backup à activer</translation>
-   <translation id="dedicatedCloud_datacenter_backup_enable_version_choice" qtlid="503773">Choisissez la version de Veeam backup à installer sur le datacentre <strong>{{name}}</strong>. Une fois la version de Veeam Backup sélectionnée, cliquez sur "Activer". Un nouvel onglet s'ouvrira et vous serez automatiquement redirigé(e) vers l'interface de paiement.</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_version" qtlid="503760">Zu aktivierende Veeam Backup Version</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_version_choice" qtlid="503773">Wählen Sie die Veeam-Backup-Version, die Sie für das Datacenter <strong>{{name}}</strong> installieren möchten. Wenn Sie die Veeam-Backup-Version ausgewählt haben, klicken Sie auf „Aktivieren". Es öffnet sich ein neuer Tab und Sie werden automatisch zum Zahlungsinterface weitergeleitet.</translation>
    <translation id="dedicatedCloud_datacenter_backup_enable_version_classic" qtlid="503786">Veeam Standard Backup</translation>
    <translation id="dedicatedCloud_datacenter_backup_enable_version_advanced" qtlid="503799">Veeam Advanced Backup</translation>
-   <translation id="dedicatedCloud_datacenter_backup_enable_version_explain" qtlid="503812">Vous serez facturé en fonction du nombre de VM backupées, dans les conditions décrites sur <a href="{{url}}" target="_blank">cette page</a>.</translation>
-   <translation id="dedicatedCloud_datacenter_backup_enable_no_offer" qtlid="503825">Aucune offre de Veeam Backup n'est disponible pour votre datacentre <strong>{{name}}</strong>.</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_version_explain" qtlid="503812">Die Abrechnung erfolgt abhängig von der Anzahl der gebackupten VMs anhand der auf <a href="{{url}}" target="_blank">dieser Seite</a> aufgeführten Bedingungen.</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_no_offer" qtlid="503825">Für Ihr Datacenter <strong>{{name}}</strong> ist kein Veeam-Backup-Angebot verfügbar.</translation>
 </translations>

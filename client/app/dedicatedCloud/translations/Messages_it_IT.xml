@@ -97,7 +97,7 @@
    <translation id="dedicatedCloud_configuration_order_hosts_memory" qtlid="31354">RAM</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_memory_ecc" qtlid="147772">(ECC)</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_nb_cores" qtlid="33070">Numero di core</translation>
-   <translation id="dedicatedCloud_configuration_order_hosts_quantity_info" qtlid="502398">È necessario che ci siano almeno 3 host nella tua infrastruttura affinché la vSan funzioni correttamente.</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_quantity_info">Il faut au moins trois hôtes vSAN dans votre infrastructure pour que le vSAN soit fonctionnel.</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_billing_quantity" qtlid="146229">Quantità di host da ordinare:</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_finish_success" qtlid="183372">L'ordine numero <a href='{0}' target='_blank'>{1}</a> di host è stato preso in carico.</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_finish_fail" qtlid="146255">Si è verificato un errore durante l'ordine dell'host nel datecenter {0}</translation>
@@ -738,10 +738,10 @@
    <translation id="dedicatedCloud_options_order_activate_error" qtlid="342992">Si è verificato un errore durante l'attivazione dell'opzione:</translation>
    <translation id="dedicatedCloud_options_order_sms_confirmation" qtlid="382745">Riceverai un SMS per confermare il tuo ordine.</translation>
 
-   <translation id="dedicatedCloud_datacenter_backup_enable_version" qtlid="503760">Version de Veeam Backup à activer</translation>
-   <translation id="dedicatedCloud_datacenter_backup_enable_version_choice" qtlid="503773">Choisissez la version de Veeam backup à installer sur le datacentre <strong>{{name}}</strong>. Une fois la version de Veeam Backup sélectionnée, cliquez sur "Activer". Un nouvel onglet s'ouvrira et vous serez automatiquement redirigé(e) vers l'interface de paiement.</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_version" qtlid="503760">Versione di Veeam Backup da attivare</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_version_choice" qtlid="503773">Scegli la versione di Veeam Backup che vuoi installare sul datacenter <strong>{{name}}</strong>. Una volta selezionata, clicca su "Attiva". Si aprirà una nuova pagina e verrai automaticamente reindirizzato all'interfaccia di pagamento.</translation>
    <translation id="dedicatedCloud_datacenter_backup_enable_version_classic" qtlid="503786">Veeam Standard Backup</translation>
    <translation id="dedicatedCloud_datacenter_backup_enable_version_advanced" qtlid="503799">Veeam Advanced Backup</translation>
-   <translation id="dedicatedCloud_datacenter_backup_enable_version_explain" qtlid="503812">Vous serez facturé en fonction du nombre de VM backupées, dans les conditions décrites sur <a href="{{url}}" target="_blank">cette page</a>.</translation>
-   <translation id="dedicatedCloud_datacenter_backup_enable_no_offer" qtlid="503825">Aucune offre de Veeam Backup n'est disponible pour votre datacentre <strong>{{name}}</strong>.</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_version_explain" qtlid="503812">Riceverai un fattura in base al numero di VM con copia di backup, secondo le condizioni descritte in <a href="{{url}}" target="_blank">questa paginae</a>.</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_no_offer" qtlid="503825">Non sono disponibili soluzioni Veeam Backup per il datacenter <strong>{{name}}</strong>.</translation>
 </translations>
