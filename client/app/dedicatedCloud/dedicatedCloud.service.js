@@ -857,6 +857,24 @@ angular
       }).$promise;
     };
 
+    this.deleteVMEncryptionKMS = function (serviceName, kmsId) {
+      return OvhApiDedicatedCloud.VMEncryption().kms().v6().delete({
+        serviceName,
+      }, {
+        kmsId,
+      }).$promise;
+    };
+
+    this.editVMEncryptionKMS = function (serviceName, { kmsId, description, sslThumbprint }) {
+      return OvhApiDedicatedCloud.VMEncryption().kms().v6().changeProperties({
+        serviceName,
+        kmsId,
+      }, {
+        description,
+        sslThumbprint,
+      }).$promise;
+    };
+
     this.startVMEncryptionKMSPoller = function (serviceName, taskId) {
       const url = `/dedicatedCloud/${serviceName}/task/${taskId}`;
       const interval = VM_ENCRYPTION_KMS.pollingDelay;

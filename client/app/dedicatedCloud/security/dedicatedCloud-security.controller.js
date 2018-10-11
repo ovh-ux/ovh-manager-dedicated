@@ -154,13 +154,18 @@ angular.module('App').controller('DedicatedCloudSecurityCtrl', function ($rootSc
     $scope.setMessage($translate.instant('dedicatedCloud_dashboard_loading_error'), data.data);
   };
 
-  self.addKms = function () {
-    const kmsCreationModal = $uibModal.open({
-      templateUrl: 'dedicatedCloud/security/kms/add/dedicatedCloud-security-kms-add.html',
-      controller: 'DedicatedCloudSecurityKMSAddCtrl',
+  function createModalObject(action, objectToResolve) {
+    return $uibModal.open({
+      templateUrl: `dedicatedCloud/security/kms/${action}/dedicatedCloud-security-kms-${action}.html`,
+      controller: `DedicatedCloudSecurityKMS${_.capitalize(action)}Ctrl`,
       controllerAs: '$ctrl',
       backdrop: 'static',
+      resolve: objectToResolve,
     });
+  }
+
+  self.addKms = function () {
+    const kmsCreationModal = createModalObject('add');
 
     kmsCreationModal.result.then(() => {
       OvhApiDedicatedCloud.VMEncryption().kms().v6().resetCache();
@@ -168,6 +173,36 @@ angular.module('App').controller('DedicatedCloudSecurityCtrl', function ($rootSc
 
       $scope.loadInfo();
       $scope.setMessage($translate.instant('dedicatedCloud_vm_encryption_kms_added'), {});
+    });
+  };
+
+  self.deleteKms = function (kmsToDelete) {
+    const resolveKms = {
+      kmsToDelete: () => kmsToDelete,
+    };
+    const kmsDeletionModal = createModalObject('delete', resolveKms);
+
+    kmsDeletionModal.result.then(() => {
+      OvhApiDedicatedCloud.VMEncryption().kms().v6().resetCache();
+      OvhApiDedicatedCloud.VMEncryption().kms().v6().resetQueryCache();
+
+      $scope.loadInfo();
+      $scope.setMessage($translate.instant('dedicatedCloud_vm_encryption_kms_deleted'), {});
+    });
+  };
+
+  self.editKms = function (kmsToEdit) {
+    const resolveKms = {
+      kmsToEdit: () => _.clone(kmsToEdit),
+    };
+    const kmsEditionModal = createModalObject('edit', resolveKms);
+
+    kmsEditionModal.result.then(() => {
+      OvhApiDedicatedCloud.VMEncryption().kms().v6().resetCache();
+      OvhApiDedicatedCloud.VMEncryption().kms().v6().resetQueryCache();
+
+      $scope.loadInfo();
+      $scope.setMessage($translate.instant('dedicatedCloud_vm_encryption_kms_edited'), {});
     });
   };
 

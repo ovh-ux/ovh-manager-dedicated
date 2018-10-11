@@ -1,7 +1,7 @@
 angular.module('App').controller('DedicatedCloudSecurityKMSAddCtrl', class DedicatedCloudSecurityKMSAddCtrl {
   constructor(
     $stateParams, $timeout, $translate, $uibModalInstance,
-    DedicatedCloud, VM_ENCRYPTION_KMS,
+    DedicatedCloud, OvhApiMe, constants, VM_ENCRYPTION_KMS,
   ) {
     this.$timeout = $timeout;
     this.$translate = $translate;
@@ -10,6 +10,12 @@ angular.module('App').controller('DedicatedCloudSecurityKMSAddCtrl', class Dedic
 
     this.serviceName = $stateParams.productId;
     this.VM_ENCRYPTION_KMS = VM_ENCRYPTION_KMS;
+
+    OvhApiMe.v6().get().$promise.then((user) => {
+      if (user) {
+        this.vmEncryptionGuide = _(user.country).isEqual('FR') ? constants.urls.FR.guides.vmEncryption : constants.urls.GB.guides.vmEncryption;
+      }
+    });
 
     this.regex = {
       ip: this.VM_ENCRYPTION_KMS.regex.ip,
@@ -87,20 +93,23 @@ angular.module('App').controller('DedicatedCloudSecurityKMSAddCtrl', class Dedic
   }
 
   isTaskFinishedOrCanceled() {
-    return _.includes(this.VM_ENCRYPTION_KMS.endStatus, this.kmsCreationTask.state);
+    return this.VM_ENCRYPTION_KMS.endStatus.includes(this.kmsCreationTask.state);
   }
 
   isWaitingUserAction() {
-    return _.includes(this.VM_ENCRYPTION_KMS.waitingStatus, this.kmsCreationTask.state)
-      && _.isEqual(
-        this.kmsCreationTask.description,
-        this.VM_ENCRYPTION_KMS.creationTaskWaitingConfiguration,
-      );
+    return this.VM_ENCRYPTION_KMS.waitingStatus.includes(this.kmsCreationTask.state)
+      && _(this.kmsCreationTask.description)
+        .isEqual(this.VM_ENCRYPTION_KMS.creationTaskWaitingConfiguration);
   }
 
   finishCreation() {
     this.stopCreationPoller();
-    this.$uibModalInstance.close();
+
+    if (_(this.kmsCreationTask.state).isEqual('done')) {
+      this.$uibModalInstance.close();
+    } else {
+      this.$uibModalInstance.dismiss();
+    }
   }
 
   stopCreationPoller() {
