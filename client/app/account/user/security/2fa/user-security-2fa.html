@@ -157,14 +157,16 @@
                                    placeholder="{{ 'user_account_security_double_auth_type_sms_modal_add_number_label' | translate }}"
                                    data-ng-model="step2.sms.phone"
                                    data-ng-pattern="/^\+(?:[0-9] ?){6,14}[0-9]$/"
-                                   data-ng-disabled="step2.sms.isSendingCode">
+                                   data-ng-disabled="step2.sms.isSendingCode || step2.sms.isLoading">
                             <div class="input-group-btn">
                                 <button type="button"
                                         class="btn btn-default"
                                         data-ng-click="fetchSmsCode()"
+                                        data-ng-if="!step2.sms.isLoading"
                                         data-ng-disabled="step2.sms.isSendingCode || !step2.sms.phone"
                                         data-translate="user_account_security_double_auth_wizard_sms_send">
                                 </button>
+                                <oui-spinner data-ng-if="step2.sms.isLoading" size="s"></oui-spinner>
                             </div>
                         </div>
                         <span class="help-block"

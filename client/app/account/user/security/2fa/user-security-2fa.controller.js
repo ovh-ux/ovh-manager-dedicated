@@ -3,12 +3,14 @@ angular.module('UserAccount').controller('UserAccount.controllers.doubleAuth.2fa
   '$scope',
   '$q',
   '$translate',
+  'UserAccount.services.Infos',
   'UserAccount.services.doubleAuth.backupCode',
   'UserAccount.services.doubleAuth.sms',
   'UserAccount.services.doubleAuth.totp',
   'UserAccount.services.doubleAuth.u2f',
   'Alerter',
-  function ($rootScope, $scope, $q, $translate, DoubleAuthBackupCodeService, DoubleAuthSmsService,
+  function ($rootScope, $scope, $q, $translate,
+    UserAccountServiceInfos, DoubleAuthBackupCodeService, DoubleAuthSmsService,
     DoubleAuthTotpService, DoubleAuthU2fService, Alerter) {
     $scope.step1 = {
       doubleAuthType: null,
@@ -240,6 +242,10 @@ angular.module('UserAccount').controller('UserAccount.controllers.doubleAuth.2fa
       switch ($scope.getDoubleAuthType()) {
         case 'sms':
           // Ask phone number and then send code with `fetchSmsCode` helper.
+          $scope.step2.sms.isLoading = true;
+          if (!$scope.step2.sms.phone) {
+            promises.sms = UserAccountServiceInfos.getUseraccountInfos();
+          }
           break;
         case 'totp':
           // Add a TOTP access restriction.
@@ -261,6 +267,9 @@ angular.module('UserAccount').controller('UserAccount.controllers.doubleAuth.2fa
       return $q
         .all(promises)
         .then((results) => {
+          if (results.sms) {
+            $scope.step2.sms.phone = results.sms.phone || '';
+          }
           if (results.totp) {
             $scope.step2.totp.qrCode = results.totp;
           }
@@ -269,6 +278,7 @@ angular.module('UserAccount').controller('UserAccount.controllers.doubleAuth.2fa
           }
         })
         .finally(() => {
+          $scope.step2.sms.isLoading = false;
           $scope.step2.totp.isLoading = false;
           $scope.step2.u2f.isLoading = false;
         });
