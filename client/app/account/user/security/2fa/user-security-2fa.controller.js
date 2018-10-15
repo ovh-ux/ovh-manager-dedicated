@@ -1,17 +1,17 @@
 angular.module('UserAccount').controller('UserAccount.controllers.doubleAuth.2fa.enable', [
+  '$q',
   '$rootScope',
   '$scope',
-  '$q',
   '$translate',
-  'UserAccount.services.Infos',
+  'Alerter',
   'UserAccount.services.doubleAuth.backupCode',
   'UserAccount.services.doubleAuth.sms',
   'UserAccount.services.doubleAuth.totp',
   'UserAccount.services.doubleAuth.u2f',
-  'Alerter',
-  function ($rootScope, $scope, $q, $translate,
-    UserAccountServiceInfos, DoubleAuthBackupCodeService, DoubleAuthSmsService,
-    DoubleAuthTotpService, DoubleAuthU2fService, Alerter) {
+  'UserAccount.services.Infos',
+  function ($q, $rootScope, $scope, $translate,
+    Alerter, DoubleAuthBackupCodeService, DoubleAuthSmsService,
+    DoubleAuthTotpService, DoubleAuthU2fService, UserAccountServiceInfos) {
     $scope.step1 = {
       doubleAuthType: null,
       isActive: false,
