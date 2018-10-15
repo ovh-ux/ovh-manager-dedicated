@@ -97,7 +97,7 @@
    <translation id="dedicatedCloud_configuration_order_hosts_memory" qtlid="31354">RAM</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_memory_ecc" qtlid="147772">(ECC)</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_nb_cores" qtlid="33070">Number of cores</translation>
-   <translation id="dedicatedCloud_configuration_order_hosts_quantity_info" qtlid="502398">Your infrastructure needs to have at least three hosts for vSAN to be functional.</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_quantity_info" qtlid="505738">Il faut au moins trois hôtes vSAN dans votre infrastructure pour que le vSAN soit fonctionnel.</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_billing_quantity" qtlid="146229">Number of hosts to order:</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_finish_success" qtlid="183372">The host order number <a href='{0}' target='_blank'>{1}</a> has been registered.</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_finish_fail" qtlid="146255">An error occurred on ordering a host on the datacentre {0}</translation>
@@ -635,6 +635,62 @@
    <translation id="dedicatedCloud_vmware_option_not_enabled" qtlid="343122">This option can not be deactivated at this moment, because it is not activated.</translation>
    <translation id="dedicatedCloud_vmware_option_not_disabled" qtlid="343135">This option can not be activated at this moment, because it is not deactivated.</translation>
 
+<!-- VM ENCRYPTION -->
+   <translation id="dedicatedCloud_vm_encryption_kms_title">Virtual Machine Encryption Key Management Servers</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_add">Ajouter un nouveau serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_edit">Éditer ce KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_delete">Supprimer ce KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_id">ID</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_description">Description</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_optional" qtlid="175244">Optional</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_ip">IP</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_port">Port</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_sslThumbprint">SSL Thumbprint</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status">Statut</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_documentation_link">Documentation VM Encryption</translation>
+
+   <translation id="dedicatedCloud_vm_encryption_kms_status_creating">En création</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_deleting">En suppression</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_updating">En cours de mise à jour</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_delivered">Livré</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_error">Erreur</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_toCreate">À créer</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_toDelete">À supprimer</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_toUpdate">À mettre à jour</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_unknown">Inconnu</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_pending_task_state">en cours</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_current_operation">Opération {{currentOperation}} : {{state}}</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_required_field">Ce champ est obligatoire</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_sslThumbprint_invalid_format">Format invalide (voir exemple dans la documentation)</translation>
+
+<!-- Add KMS -->
+   <translation id="dedicatedCloud_vm_encryption_add_kms_title">Ajouter un nouveau serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_confirm_read_documentation">J’ai lu et j’ai compris la documentation VM Encryption et les actions que je vais devoir effectuer de mon côté.</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_ip_invalid_format">Format invalide (ex: 192.168.0.1 et entre 0 et 255 pour chaque bloc).</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_creating">Création du nouveau serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_creation_canceled">Création du serveur KMS annulée</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_configuration_intro_1">Veuillez maintenant procéder à la configuration du serveur KMS via le client vSphere.</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_configuration_intro_2">Une fois la configuration effectuée, la mise en place continuera automatiquement et vous pourrez suivre sa progression depuis cette fenêtre. La détection peut prendre jusqu'à une minute.</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_configuration_intro_3">Si vous avez besoin d'aide, vous pouvez consulter la documentation.</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_added">Le serveur KMS a été ajouté.</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_add_error">Une erreur est survenue lors de l’ajout : {{error}}</translation>
+
+<!-- Delete KMS -->
+   <translation id="dedicatedCloud_vm_encryption_delete_kms">Supprimer ce serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_delete_kms_title">Supprimer le serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_delete_kms_deleting">Suppression duserveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_delete_kms_question">Êtes-vous sûr de vouloir supprimer le serveur KMS {{kmsToDelete}} ?</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_deleted">Le serveur KMS a été supprimé.</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_delete_error">Une erreur est survenue lors de la suppression : {{error}}</translation>
+
+<!-- Edit KMS -->
+   <translation id="dedicatedCloud_vm_encryption_edit_kms">Modifier ce serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_edit_kms_title">Modifier le serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_edit_kms_editing">Modification du serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_edited">Le serveur KMS a été modifié.</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_edit_error">Une erreur est survenue lors de l’édition : {{error}}</translation>
+<!-- END VM ENCRYPTION KMS -->
+
    <translation id="dedicatedCloud_tab_operation" qtlid="31078">Operations</translation>
    <translation id="dedicatedCloud_OPERATIONS_taskId" qtlid="16445">Reference</translation>
    <translation id="dedicatedCloud_OPERATIONS_name" qtlid="3818">Name</translation>
@@ -735,10 +791,10 @@
    <translation id="dedicatedCloud_options_order_activate_error" qtlid="342992">An error occurred when activating the option:</translation>
    <translation id="dedicatedCloud_options_order_sms_confirmation" qtlid="382745">You will receive an SMS so you can confirm your order. </translation>
 
-   <translation id="dedicatedCloud_datacenter_backup_enable_version" qtlid="503760">Version de Veeam Backup à activer</translation>
-   <translation id="dedicatedCloud_datacenter_backup_enable_version_choice" qtlid="503773">Choisissez la version de Veeam backup à installer sur le datacentre <strong>{{name}}</strong>. Une fois la version de Veeam Backup sélectionnée, cliquez sur "Activer". Un nouvel onglet s'ouvrira et vous serez automatiquement redirigé(e) vers l'interface de paiement.</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_version" qtlid="503760">Veeam backup version to enable</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_version_choice" qtlid="503773">Choose the Veeam backup version to set up in the <strong>{{name}}</strong> datacentre. Once you have selected a Veeam backup version, click "Enable". A new tab will open, and you will be automatically redirected to the payment interface.</translation>
    <translation id="dedicatedCloud_datacenter_backup_enable_version_classic" qtlid="503786">Veeam Standard Backup</translation>
    <translation id="dedicatedCloud_datacenter_backup_enable_version_advanced" qtlid="503799">Veeam Advanced Backup</translation>
-   <translation id="dedicatedCloud_datacenter_backup_enable_version_explain" qtlid="503812">Vous serez facturé en fonction du nombre de VM backupées, dans les conditions décrites sur <a href="{{url}}" target="_blank">cette page</a>.</translation>
-   <translation id="dedicatedCloud_datacenter_backup_enable_no_offer" qtlid="503825">Aucune offre de Veeam Backup n'est disponible pour votre datacentre <strong>{{name}}</strong>.</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_version_explain" qtlid="503812">You will be charged in accordance with the number of VMs backed up, under the conditions listed <a href="{{url}}" target="_blank">here</a>.</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_no_offer" qtlid="503825">No Veeam Backup solutions available for your <strong>{{name}}</strong> datacentre.</translation>
 </translations>

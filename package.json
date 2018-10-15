@@ -1,6 +1,6 @@
 {
   "name": "ovh-manager-dedicated",
-  "version": "10.3.3",
+  "version": "10.3.4",
   "private": true,
   "description": "OVH Control Panel Dedicated UI",
   "author": "OVH SAS",
@@ -84,6 +84,7 @@
     "angular-ui-validate": "angular-ui/ui-validate#~1.2.2",
     "animate.css": "^3.5.0",
     "at-internet-ui-router-plugin": "^1.0.0",
+    "babel-polyfill": "^6.26.0",
     "bootstrap": "~3.3.7",
     "bootstrap-datetimepicker": "tarruda/bootstrap-datetimepicker#~0.0.11",
     "chart.js": "^2.7.1",
@@ -148,7 +149,6 @@
     "@babel/preset-env": "^7.0.0",
     "@commitlint/cli": "^7.1.2",
     "@commitlint/config-angular": "^7.1.2",
-    "@commitlint/config-conventional": "^7.1.2",
     "@ovh-ux/manager-webpack-config": "^2.3.1",
     "angular-template-url-loader": "^1.0.2",
     "babel-eslint": "^8.2.6",

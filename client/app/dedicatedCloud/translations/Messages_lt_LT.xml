@@ -97,7 +97,7 @@
    <translation id="dedicatedCloud_configuration_order_hosts_memory" qtlid="31354">RAM</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_memory_ecc" qtlid="147772">(ECC)</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_nb_cores" qtlid="33070">Branduolių skaičius</translation>
-   <translation id="dedicatedCloud_configuration_order_hosts_quantity_info" qtlid="502398">Jūsų infrastruktūroje turi būti bent trys mazgai (host) siekiant užtikrinti vSan veikimą.</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_quantity_info" qtlid="505738">Il faut au moins trois hôtes vSAN dans votre infrastructure pour que le vSAN soit fonctionnel.</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_billing_quantity" qtlid="146229">Užsakomų mazgų (host) kiekis:</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_finish_success" qtlid="183372">Host užsakymas nr. <a href='{0}' target='_blank'>{1}</a> buvo užregistruotas.</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_finish_fail" qtlid="146255">Klaida užsakant mazgą duomenų centrui {0}</translation>
@@ -634,6 +634,62 @@
    <translation id="dedicatedCloud_vmware_option_not_compatible" qtlid="343109">Ši parinktis nesuderinama šiam duomenų centrui</translation>
    <translation id="dedicatedCloud_vmware_option_not_enabled" qtlid="343122">Ši parinktis negali būti išjungta, kadangi ji nebuvo įjungta</translation>
    <translation id="dedicatedCloud_vmware_option_not_disabled" qtlid="343135">Ši parinktis negali būti įjungta, kadangi ji nebuvo išjungta</translation>
+
+<!-- VM ENCRYPTION -->
+   <translation id="dedicatedCloud_vm_encryption_kms_title">Virtual Machine Encryption Key Management Servers</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_add">Ajouter un nouveau serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_edit">Éditer ce KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_delete">Supprimer ce KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_id">ID</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_description">Description</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_optional" qtlid="175244">Pasirinktinai</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_ip">IP</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_port">Port</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_sslThumbprint">SSL Thumbprint</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status">Statut</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_documentation_link">Documentation VM Encryption</translation>
+
+   <translation id="dedicatedCloud_vm_encryption_kms_status_creating">En création</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_deleting">En suppression</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_updating">En cours de mise à jour</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_delivered">Livré</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_error">Erreur</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_toCreate">À créer</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_toDelete">À supprimer</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_toUpdate">À mettre à jour</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_unknown">Inconnu</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_pending_task_state">en cours</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_current_operation">Opération {{currentOperation}} : {{state}}</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_required_field">Ce champ est obligatoire</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_sslThumbprint_invalid_format">Format invalide (voir exemple dans la documentation)</translation>
+
+<!-- Add KMS -->
+   <translation id="dedicatedCloud_vm_encryption_add_kms_title">Ajouter un nouveau serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_confirm_read_documentation">J’ai lu et j’ai compris la documentation VM Encryption et les actions que je vais devoir effectuer de mon côté.</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_ip_invalid_format">Format invalide (ex: 192.168.0.1 et entre 0 et 255 pour chaque bloc).</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_creating">Création du nouveau serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_creation_canceled">Création du serveur KMS annulée</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_configuration_intro_1">Veuillez maintenant procéder à la configuration du serveur KMS via le client vSphere.</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_configuration_intro_2">Une fois la configuration effectuée, la mise en place continuera automatiquement et vous pourrez suivre sa progression depuis cette fenêtre. La détection peut prendre jusqu'à une minute.</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_configuration_intro_3">Si vous avez besoin d'aide, vous pouvez consulter la documentation.</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_added">Le serveur KMS a été ajouté.</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_add_error">Une erreur est survenue lors de l’ajout : {{error}}</translation>
+
+<!-- Delete KMS -->
+   <translation id="dedicatedCloud_vm_encryption_delete_kms">Supprimer ce serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_delete_kms_title">Supprimer le serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_delete_kms_deleting">Suppression duserveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_delete_kms_question">Êtes-vous sûr de vouloir supprimer le serveur KMS {{kmsToDelete}} ?</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_deleted">Le serveur KMS a été supprimé.</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_delete_error">Une erreur est survenue lors de la suppression : {{error}}</translation>
+
+<!-- Edit KMS -->
+   <translation id="dedicatedCloud_vm_encryption_edit_kms">Modifier ce serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_edit_kms_title">Modifier le serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_edit_kms_editing">Modification du serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_edited">Le serveur KMS a été modifié.</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_edit_error">Une erreur est survenue lors de l’édition : {{error}}</translation>
+<!-- END VM ENCRYPTION KMS -->
 
    <translation id="dedicatedCloud_tab_operation" qtlid="31078">Operacijos</translation>
    <translation id="dedicatedCloud_OPERATIONS_taskId" qtlid="16445">Aprašas</translation>
