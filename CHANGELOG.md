@@ -1,3 +1,31 @@
+<a name="10.4.0"></a>
+# [10.4.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.3.4...v10.4.0) (2018-10-16)
+
+
+### Bug Fixes
+
+* **2fa:** phone number preload  ([278f4d4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/278f4d4))
+* **billing.autorenew:** changed title for dialogs ([1a1161b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1a1161b))
+* **dedicated cloud:** add optional label to description field ([734dc06](https://github.com/ovh-ux/ovh-manager-dedicated/commit/734dc06))
+* **dedicated cloud kms:** merge steps 2, 3 and 4 - fix text overflow ([f5045eb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f5045eb))
+* **i18n:** retrieve translations ([ab66cc9](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ab66cc9))
+* **i18n:** retrieve translations ([f70f78d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f70f78d))
+* **i18n:** retrieve translations ([8000d49](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8000d49))
+* **i18n:** retrieve translations ([f36cdf0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f36cdf0))
+* **i18n:** retrieve translations ([1345a08](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1345a08))
+* **i18n:** submit translations ([14e9c50](https://github.com/ovh-ux/ovh-manager-dedicated/commit/14e9c50))
+* **i18n:** submit translations ([5be8ef6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5be8ef6))
+* **pcc.datacenter.host:** changed message and removed cross ([9323099](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9323099))
+
+
+### Features
+
+* add veeam enterprise ([8ad2628](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8ad2628))
+* **dedicated cloud:** VM Encryption edit and delete kms - guides ([57e455a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/57e455a))
+* **dedicated.cloud:** add VM Encryption kms ([339454a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/339454a))
+
+
+
 <a name="10.3.4"></a>
 ## [10.3.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.3.3...v10.3.4) (2018-10-09)
 
