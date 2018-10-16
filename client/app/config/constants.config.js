@@ -109,7 +109,7 @@ const constants = {
           megaRaidLED: 'https://docs.ovh.com/fr/fr/cloud/dedicated/hotswap-raid-hard/',
           noMegaRaidLED: 'https://docs.ovh.com/fr/fr/cloud/dedicated/hotswap-raid-soft/',
           diskSerial: 'http://docs.ovh.com/fr/fr/cloud/dedicated/find-disk-serial-number/',
-          vmEncryption: 'https://docs.ovh.com/fr/private-cloud/',
+          vmEncryption: 'https://docs.ovh.com/fr/private-cloud/vm-encrypt/',
         },
         vpsCloud: 'https://www.ovh.com/fr/vps/vps-cloud.xml',
         dedicatedIpmi: 'http://guides.ovh.com/IpmiSol',
