@@ -97,7 +97,7 @@
    <translation id="dedicatedCloud_configuration_order_hosts_memory" qtlid="31354">RAM</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_memory_ecc" qtlid="147772">(ECC)</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_nb_cores" qtlid="33070">Nombre de cores</translation>
-   <translation id="dedicatedCloud_configuration_order_hosts_quantity_info" qtlid="502398">Para que el vSan sea funcional, la infraestructura debe disponer de al menos tres hosts.</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_quantity_info" qtlid="505738">Se requieren al menos tres hosts vSAN en la infraestructura para que el vSAN funcione.</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_billing_quantity" qtlid="146229">Cantidad de hosts:</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_finish_success" qtlid="183372">El pedido de hosts número <a href='{0}' target='_blank'>{1}</a> se ha enviado.</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_finish_fail" qtlid="146255">Se ha producido un error al enviar el pedido de hosts en el datacenter {0}</translation>
@@ -113,9 +113,9 @@
    <translation id="dedicatedCloud_tab_host_status" qtlid="8230">Estado</translation>
    <translation id="dedicatedCloud_tab_host_status_ADDING" qtlid="154741">Añadiendo</translation>
    <translation id="dedicatedCloud_tab_host_status_DELIVERED" qtlid="55133">Actif</translation>
-   <translation id="dedicatedCloud_tab_host_status_ERROR" qtlid="26407">Erreur</translation>
+   <translation id="dedicatedCloud_tab_host_status_ERROR" qtlid="26407">Error</translation>
    <translation id="dedicatedCloud_tab_host_status_REMOVING" qtlid="146645">Eliminando...</translation>
-   <translation id="dedicatedCloud_tab_host_status_UNKNOWN" qtlid="77142">Inconnu</translation>
+   <translation id="dedicatedCloud_tab_host_status_UNKNOWN" qtlid="77142">Desconocido</translation>
    <translation id="dedicatedCloud_tab_host_consumption" qtlid="25639">Consumo</translation>
    <translation id="dedicatedCloud_tab_host_empty" qtlid="154754">No hay hosts</translation>
    <translation id="dedicatedCloud_tab_hosts_loading_error" qtlid="154767">Se ha producido un error al cargar la información de los hosts.</translation>
@@ -160,9 +160,9 @@
    <translation id="dedicatedCloud_tab_datastores_status" qtlid="8230">Estado</translation>
    <translation id="dedicatedCloud_tab_datastores_status_ADDING" qtlid="154741">Añadiendo</translation>
    <translation id="dedicatedCloud_tab_datastores_status_DELIVERED" qtlid="55133">Actif</translation>
-   <translation id="dedicatedCloud_tab_datastores_status_ERROR" qtlid="26407">Erreur</translation>
+   <translation id="dedicatedCloud_tab_datastores_status_ERROR" qtlid="26407">Error</translation>
    <translation id="dedicatedCloud_tab_datastores_status_REMOVING" qtlid="146645">Eliminando...</translation>
-   <translation id="dedicatedCloud_tab_datastores_status_UNKNOWN" qtlid="77142">Inconnu</translation>
+   <translation id="dedicatedCloud_tab_datastores_status_UNKNOWN" qtlid="77142">Desconocido</translation>
    <translation id="dedicatedCloud_tab_datastores_empty" qtlid="154793">No hay datastores</translation>
    <translation id="dedicatedCloud_tab_datastores_loading_error" qtlid="154806">Se ha producido un error al cargar la información de los datastores.</translation>
    <translation id="dedicatedCloud_tab_license" qtlid="62666">Licence Windows</translation>
@@ -248,7 +248,7 @@
    <translation id="dedicatedCloud_datacenter_commercial_name_SDDC-LEGACY-VROPS" qtlid="448868">SDDC Legacy con vROps</translation>
    <translation id="dedicatedCloud_datacenter_commercial_name_SDDC-LEGACY-VROPS-WITHOUT-NSX" qtlid="448881">SDDC Legacy con vROps y sin NSX</translation>
    <translation id="dedicatedCloud_datacenter_commercial_name_SDDC-LEGACY-WITHOUT-NSX" qtlid="448894">SDDC Legacy sin NSX</translation>
-   <translation id="dedicatedCloud_datacenter_commercial_name_UNKNOWN-UNKNOWN" qtlid="77142">Inconnu</translation>
+   <translation id="dedicatedCloud_datacenter_commercial_name_UNKNOWN-UNKNOWN" qtlid="77142">Desconocido</translation>
    <translation id="dedicatedCloud_datacenter_loading_error" qtlid="155131">Se ha producido un error al cargar la información del datacenter.</translation>
    <translation id="dedicatedCloud_datacenter_state_title" qtlid="243741">Estado de mis servicios</translation>
    <translation id="dedicatedCloud_datacenter_state" qtlid="26443">Estado</translation>
@@ -375,7 +375,7 @@
 
    <translation id="dedicatedCloud_USER_add_user_step1_question" qtlid="202538">Llene este formulario para crear un nuevo usuario:</translation>
    <translation id="dedicatedCloud_USER_add_user_name" qtlid="3818">Nombre</translation>
-   <translation id="dedicatedCloud_USER_add_user_password" qtlid="2270">Mot de passe</translation>
+   <translation id="dedicatedCloud_USER_add_user_password" qtlid="2270">Contraseña</translation>
    <translation id="dedicatedCloud_USER_add_user_mail" qtlid="21679">Mail</translation>
    <translation id="dedicatedCloud_USER_add_user_step2_question" qtlid="200781">¿Qué permisos desea asignar a <b>{0}</b>?</translation>
    <translation id="dedicatedCloud_USER_add_user_fail" qtlid="146710">Se ha producido un error al crear el usuario {0}</translation>
@@ -500,7 +500,7 @@
    <translation id="dedicatedCloud_network_account" qtlid="33862">Compte</translation>
    <translation id="dedicatedCloud_network_details" qtlid="9238">Descripción</translation>
    <translation id="dedicatedCloud_network_server" qtlid="8290">Servidor</translation>
-   <translation id="dedicatedCloud_network_password" qtlid="2270">Mot de passe</translation>
+   <translation id="dedicatedCloud_network_password" qtlid="2270">Contraseña</translation>
    <translation id="dedicatedCloud_network_view_modify_account" qtlid="147412">Ver/Modificar la cuenta</translation>
    <translation id="dedicatedCloud_network_delete_account" qtlid="143473">Eliminar la cuenta</translation>
    <translation id="dedicatedCloud_network_search" qtlid="37659">Rechercher</translation>
@@ -562,8 +562,8 @@
    <translation id="dedicatedCloud_confirm_close_service" qtlid="299923">Confirmación del cierre del servicio</translation>
    <translation id="dedicatedCloud_confirm_close_question" qtlid="299936">¿Podría decirnos la razón por la cual ha decidido cerrar este servicio?</translation>
    <translation id="dedicatedCloud_confirm_close_reason_not_needed_anymore" qtlid="299949">Ya no utilizo el servicio</translation>
-   <translation id="dedicatedCloud_confirm_close_reason_too_hard_to_use" qtlid="299962">La herramientas son demasiado complejas</translation>
-   <translation id="dedicatedCloud_confirm_close_reason_lack_of_performances" qtlid="299975">El rendimiento del sistema es insuficiente</translation>
+   <translation id="dedicatedCloud_confirm_close_reason_too_hard_to_use" qtlid="299962">La herramientas son demasiado complejas.</translation>
+   <translation id="dedicatedCloud_confirm_close_reason_lack_of_performances" qtlid="299975">El rendimiento del sistema es insuficiente.</translation>
    <translation id="dedicatedCloud_confirm_close_reason_not_reliable" qtlid="299988">El servicio es poco fiable</translation>
    <translation id="dedicatedCloud_confirm_close_reason_too_expensive" qtlid="300001">El servicio es demasiado caro</translation>
    <translation id="dedicatedCloud_confirm_close_reason_migrated_to_another_ovh_product" qtlid="300014">Utilizo otro servicio de OVH</translation>
@@ -635,6 +635,62 @@
    <translation id="dedicatedCloud_vmware_option_not_enabled" qtlid="343122">No se puede desactivar la opción en este momento porque no está activada.</translation>
    <translation id="dedicatedCloud_vmware_option_not_disabled" qtlid="343135">No se puede activar la opción en este momento porque no está desactivada.</translation>
 
+<!-- VM ENCRYPTION -->
+   <translation id="dedicatedCloud_vm_encryption_kms_title" qtlid="506377">Virtual Machine Encryption Key Management Servers</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_add" qtlid="506390">Añadir un nuevo servidor KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_edit" qtlid="506403">Editar el servidor KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_delete" qtlid="506416">Eliminar el servidor KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_id" qtlid="8194">ID</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_description" qtlid="9238">Descripción</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_optional" qtlid="175244">Opcional</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_ip" qtlid="25615">IP</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_port" qtlid="9034">Puerto</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_sslThumbprint" qtlid="506429">SSL Thumbprint</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status" qtlid="26443">Estado</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_documentation_link" qtlid="506442">Documentación VM Encryption</translation>
+
+   <translation id="dedicatedCloud_vm_encryption_kms_status_creating" qtlid="26227">En proceso de creación</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_deleting" qtlid="133929">En proceso de eliminación</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_updating" qtlid="147993">Actualizando...</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_delivered" qtlid="409805">Entregado</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_error" qtlid="26407">Error</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_toCreate" qtlid="270852">Por crear</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_toDelete" qtlid="506455">A eliminar</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_toUpdate" qtlid="506468">A actualizar</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_unknown" qtlid="77142">Desconocido</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_pending_task_state" qtlid="24271">en progreso</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_current_operation" qtlid="506481">Operación {{currentOperation}}: {{state}}</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_required_field" qtlid="506494">Campo obligatorio</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_sslThumbprint_invalid_format" qtlid="506507">Formato no válido (ver ejemplo en la documentación)</translation>
+
+<!-- Add KMS -->
+   <translation id="dedicatedCloud_vm_encryption_add_kms_title" qtlid="506390">Añadir un nuevo servidor KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_confirm_read_documentation" qtlid="506520">He leído y comprendo la documentación de VM Encryption, así como las acciones que debo realizar.</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_ip_invalid_format" qtlid="506533">Formato no válido (ej.: 192.168.0.1 y entre 0 y 255 para cada bloque).</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_creating" qtlid="506546">Creación del nuevo servidor KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_creation_canceled" qtlid="506559">Creación del servidor KMS cancelada</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_configuration_intro_1" qtlid="506572">Debe configurar el servidor KMS a través del cliente vSphere.</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_configuration_intro_2" qtlid="506585">Una vez configurado el servidor, la puesta en marcha se realizará automáticamente y usted podrá seguir el progreso desde esta ventana. La detección puede tardar hasta un minuto.</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_configuration_intro_3" qtlid="506598">Si necesita ayuda puede consultar la documentación.</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_added" qtlid="506611">El servidor KMS ha sido añadido.</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_add_error" qtlid="506624">Se ha producido un error al añadir el servidor: {{error}}</translation>
+
+<!-- Delete KMS -->
+   <translation id="dedicatedCloud_vm_encryption_delete_kms" qtlid="506637">Eliminar el servidor KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_delete_kms_title" qtlid="506650">Eliminar el servidor KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_delete_kms_deleting" qtlid="507146">Suppression du serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_delete_kms_question" qtlid="506676">¿Está seguro(a) de que desea eliminar el servidor KMS {{kmsToDelete}}?</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_deleted" qtlid="506689">El servidor KMS ha sido eliminado.</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_delete_error" qtlid="506702">Se ha producido un error al eliminar el servidor: {{error}}</translation>
+
+<!-- Edit KMS -->
+   <translation id="dedicatedCloud_vm_encryption_edit_kms" qtlid="506715">Modificar el servidor KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_edit_kms_title" qtlid="506728">Modificar el servidor KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_edit_kms_editing" qtlid="506741">Modificación del servidor KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_edited" qtlid="506754">El servidor KMS ha sido modificado.</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_edit_error" qtlid="506767">Se ha producido un error durante la edición: {{error}}</translation>
+<!-- END VM ENCRYPTION KMS -->
+
    <translation id="dedicatedCloud_tab_operation" qtlid="31078">Opérations</translation>
    <translation id="dedicatedCloud_OPERATIONS_taskId" qtlid="16445">Référence</translation>
    <translation id="dedicatedCloud_OPERATIONS_name" qtlid="3818">Nombre</translation>
@@ -652,7 +708,7 @@
    <translation id="dedicatedCloud_OPERATIONS_date_update" qtlid="270787">Fecha de actualización</translation>
    <translation id="dedicatedCloud_OPERATIONS_state" qtlid="33790">État</translation>
    <translation id="dedicatedCloud_OPERATIONS_state_doing" qtlid="26383">En cours</translation>
-   <translation id="dedicatedCloud_OPERATIONS_state_error" qtlid="26407">Erreur</translation>
+   <translation id="dedicatedCloud_OPERATIONS_state_error" qtlid="26407">Error</translation>
    <translation id="dedicatedCloud_OPERATIONS_state_problem" qtlid="270800">Problema</translation>
    <translation id="dedicatedCloud_OPERATIONS_state_todo" qtlid="270813">Pendiente</translation>
    <translation id="dedicatedCloud_OPERATIONS_state_done" qtlid="8662">Terminé</translation>
@@ -660,7 +716,7 @@
    <translation id="dedicatedCloud_OPERATIONS_state_fixing" qtlid="270826">En curso...</translation>
    <translation id="dedicatedCloud_OPERATIONS_state_toCancel" qtlid="270839">Por cancelar</translation>
    <translation id="dedicatedCloud_OPERATIONS_state_toCreate" qtlid="270852">Por crear</translation>
-   <translation id="dedicatedCloud_OPERATIONS_state_unknown" qtlid="77142">Inconnu</translation>
+   <translation id="dedicatedCloud_OPERATIONS_state_unknown" qtlid="77142">Desconocido</translation>
    <translation id="dedicatedCloud_OPERATIONS_state_waitingForChilds" qtlid="29467">En attente</translation>
    <translation id="dedicatedCloud_OPERATIONS_state_waitingTodo" qtlid="270865">Por planificar</translation>
 
@@ -735,10 +791,10 @@
    <translation id="dedicatedCloud_options_order_activate_error" qtlid="342992">Se ha producido un error al activar la opción:</translation>
    <translation id="dedicatedCloud_options_order_sms_confirmation" qtlid="382745">Usted recibirá un SMS para confirmar el pedido.</translation>
 
-   <translation id="dedicatedCloud_datacenter_backup_enable_version" qtlid="503760">Version de Veeam Backup à activer</translation>
-   <translation id="dedicatedCloud_datacenter_backup_enable_version_choice" qtlid="503773">Choisissez la version de Veeam backup à installer sur le datacentre <strong>{{name}}</strong>. Une fois la version de Veeam Backup sélectionnée, cliquez sur "Activer". Un nouvel onglet s'ouvrira et vous serez automatiquement redirigé(e) vers l'interface de paiement.</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_version" qtlid="503760">Versión de Veeam Backup a activar</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_version_choice" qtlid="503773">Seleccione la versión de Veeam Backup que desea instalar en el centro de datos <strong>{{name}}</strong>. A continuación, haga clic en «Activar». Se abrirá una nueva pestaña y el sistema le redirigirá automáticamente a la interfaz de pago de OVH.</translation>
    <translation id="dedicatedCloud_datacenter_backup_enable_version_classic" qtlid="503786">Veeam Standard Backup</translation>
    <translation id="dedicatedCloud_datacenter_backup_enable_version_advanced" qtlid="503799">Veeam Advanced Backup</translation>
-   <translation id="dedicatedCloud_datacenter_backup_enable_version_explain" qtlid="503812">Vous serez facturé en fonction du nombre de VM backupées, dans les conditions décrites sur <a href="{{url}}" target="_blank">cette page</a>.</translation>
-   <translation id="dedicatedCloud_datacenter_backup_enable_no_offer" qtlid="503825">Aucune offre de Veeam Backup n'est disponible pour votre datacentre <strong>{{name}}</strong>.</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_version_explain" qtlid="503812">Su servicio será facturado en función del número de VM con backup, y de acuerdo con las condiciones descritas en <a href="{{url}}" target="_blank">esta página</a>.</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_no_offer" qtlid="503825">No hay ninguna solución de Veeam Backup disponible en su centro de datos <strong>{{name}}</strong>.</translation>
 </translations>

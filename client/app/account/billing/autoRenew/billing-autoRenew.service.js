@@ -90,6 +90,7 @@ angular.module('Billing.services').service('BillingAutoRenew', [
       'SSL_GATEWAY',
       'METRICS',
       'VEEAM_CLOUD_CONNECT',
+      'VEEAM_ENTERPRISE',
       'SHAREPOINT',
       'VIP',
     ]);

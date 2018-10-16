@@ -69,6 +69,7 @@
    <translation id="autorenew_service_update_renewal_activation_error" qtlid="369440">Wybrałeś automatyczne odnowienie dla co najmniej jednej usługi, ale nie mogliśmy włączyć automatycznego odnowienia na Twoim koncie: {0}</translation>
    <translation id="autorenew_guide_help" qtlid="156732">Sprawdź nasze przewodniki online</translation>
    <translation id="autorenew_service_delete_title" qtlid="498170">Zakończ w dniu wygaśnięcia.</translation>
+   <translation id="autorenew_service_debt_before_paying_title" qtlid="506780">Ważna informacja</translation>
    <translation id="autorenew_service_debt_before_paying_1" qtlid="498209">Przedłużenie usługi będzie możliwe po uregulowaniu zaległej kwoty na Twoim koncie.</translation>
    <translation id="autorenew_service_debt_before_paying_2" qtlid="498222">Aby opłacić fakturę za usługę <strong>{{service}}</strong>, przejdź do sekcji "Płatności".</translation>
    <translation id="autorenew_service_canceldelete_title" qtlid="416137">Anuluj rezygnację z usługi</translation>
@@ -137,6 +138,7 @@
    <translation id="autorenew_service_type_SSL_GATEWAY" qtlid="400105">SSL Gateway</translation>
    <translation id="autorenew_service_type_SHAREPOINT" qtlid="298352">Sharepoint</translation>
    <translation id="autorenew_service_type_VEEAM_CLOUD_CONNECT" qtlid="231370">Veeam Cloud Connect</translation>
+   <translation id="autorenew_service_type_VEEAM_ENTERPRISE" qtlid="506362">Veeam Enterprise</translation>
    <translation id="autorenew_service_type_METRICS" qtlid="383525">Metryki</translation>
 
    <translation id="autorenew_service_billing_warning" qtlid="229645">Nie masz uprawnień do modyfikowania tych danych</translation>
@@ -1201,6 +1203,10 @@
    <translation id="terminate_service_reason_OTHER" qtlid="300040">Inne...</translation>
    <translation id="terminate_service_reason_TOO_EXPENSIVE" qtlid="300001">Usługa jest zbyt droga.</translation>
    <translation id="terminate_service_reason_TOO_HARD_TO_USE" qtlid="299962">Narzędzia są zbyt skomplikowane.</translation>
+   <translation id="terminate_service_reason_FEATURES_DONT_SUIT_ME" qtlid="504241">Funkcje usługi nie są dla mnie odpowiednie.</translation>
+   <translation id="terminate_service_reason_UNSATIFIED_BY_CUSTOMER_SUPPORT" qtlid="504254">Nie jestem zadowolony z obsługi klienta.</translation>
+   <translation id="terminate_service_reason_NO_ANSWER" qtlid="504267">Wolę nie odpowiadać.</translation>
+   <translation id="terminate_service_futureUses_NO_ANSWER" qtlid="504267">Wolę nie odpowiadać.</translation>
    <translation id="terminate_service_reason_text" qtlid="440022">Czy chcesz nam podać więcej szczegółów lub przekazać jakieś sugestie?</translation>
    <translation id="terminate_service_error" qtlid="440035">Wystąpił błąd podczas ładowania strony.</translation>
    <translation id="terminate_service_confirmation_error" qtlid="440048">Wystąpił błąd podczas potwierdzania rezygnacji z usługi.</translation>
@@ -1209,8 +1215,8 @@
    <translation id="terminate_service_futureUses_NOT_REPLACING_SERVICE" qtlid="502346">Nie chcę zmieniać mojej usługi</translation>
    <translation id="terminate_service_futureUses_OTHER" qtlid="300040">Inne...</translation>
    <translation id="terminate_service_futureUses_SUBSCRIBE_AN_OTHER_SERVICE" qtlid="502359">Chcę zamówić inną usługę OVH</translation>
-   <translation id="terminate_service_futureUses_SUBSCRIBE_OTHER_KIND_OF_SERVICE_WITH_COMPETITOR" qtlid="502372">Chcę zamówić inny rodzaj usługi u innego dostawcy</translation>
-   <translation id="terminate_service_futureUses_SUBSCRIBE_SIMILAR_SERVICE_WITH_COMPETITOR" qtlid="502385">Chcę zamówić podobną usługę u innego dostawcy</translation>
+   <translation id="terminate_service_futureUses_SUBSCRIBE_OTHER_KIND_OF_SERVICE_WITH_COMPETITOR" qtlid="502372">Chcę zamówić inny rodzaj usługi u innego dostawcy.</translation>
+   <translation id="terminate_service_futureUses_SUBSCRIBE_SIMILAR_SERVICE_WITH_COMPETITOR" qtlid="502385">Chcę zamówić podobną usługę u innego dostawcy.</translation>
 
    <translation id="terminate_service_confirm" qtlid="440074">Potwierdzam rezygnację z usługi</translation>
    <translation id="terminate_service_type_allDom" qtlid="270293">Pakiet AllDom</translation>

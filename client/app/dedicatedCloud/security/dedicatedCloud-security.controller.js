@@ -1,4 +1,4 @@
-angular.module('App').controller('DedicatedCloudSecurityCtrl', function ($rootScope, $stateParams, $scope, DedicatedCloud, $translate) {
+angular.module('App').controller('DedicatedCloudSecurityCtrl', function ($rootScope, $stateParams, $scope, $uibModal, DedicatedCloud, OvhApiDedicatedCloud, $translate) {
   const self = this;
   let forceRefresh = false;
 
@@ -87,6 +87,24 @@ angular.module('App').controller('DedicatedCloudSecurityCtrl', function ($rootSc
     }
   };
 
+  self.formatKmsStatus = function (state) {
+    switch (state) {
+      case 'creating':
+      case 'updating':
+      case 'toCreate':
+      case 'toUpdate':
+        return 'info';
+      case 'deleting':
+      case 'toDelete':
+      case 'unknown':
+        return 'warning';
+      case 'delivered':
+        return 'success';
+      default:
+        return state;
+    }
+  };
+
   $scope.globalCheckboxPoliciesStateChange = function (state) {
     if ($scope.policies
       && $scope.policies.model
@@ -134,6 +152,73 @@ angular.module('App').controller('DedicatedCloudSecurityCtrl', function ($rootSc
 
   self.onError = function (data) {
     $scope.setMessage($translate.instant('dedicatedCloud_dashboard_loading_error'), data.data);
+  };
+
+  function createModalObject(action, objectToResolve) {
+    return $uibModal.open({
+      templateUrl: `dedicatedCloud/security/kms/${action}/dedicatedCloud-security-kms-${action}.html`,
+      controller: `DedicatedCloudSecurityKMS${_.capitalize(action)}Ctrl`,
+      controllerAs: '$ctrl',
+      backdrop: 'static',
+      resolve: objectToResolve,
+    });
+  }
+
+  self.addKms = function () {
+    const kmsCreationModal = createModalObject('add');
+
+    kmsCreationModal.result.then(() => {
+      OvhApiDedicatedCloud.VMEncryption().kms().v6().resetCache();
+      OvhApiDedicatedCloud.VMEncryption().kms().v6().resetQueryCache();
+
+      $scope.loadInfo();
+      $scope.setMessage($translate.instant('dedicatedCloud_vm_encryption_kms_added'), {});
+    });
+  };
+
+  self.deleteKms = function (kmsToDelete) {
+    const resolveKms = {
+      kmsToDelete: () => kmsToDelete,
+    };
+    const kmsDeletionModal = createModalObject('delete', resolveKms);
+
+    kmsDeletionModal.result.then(() => {
+      OvhApiDedicatedCloud.VMEncryption().kms().v6().resetCache();
+      OvhApiDedicatedCloud.VMEncryption().kms().v6().resetQueryCache();
+
+      $scope.loadInfo();
+      $scope.setMessage($translate.instant('dedicatedCloud_vm_encryption_kms_deleted'), {});
+    });
+  };
+
+  self.editKms = function (kmsToEdit) {
+    const resolveKms = {
+      kmsToEdit: () => _.clone(kmsToEdit),
+    };
+    const kmsEditionModal = createModalObject('edit', resolveKms);
+
+    kmsEditionModal.result.then(() => {
+      OvhApiDedicatedCloud.VMEncryption().kms().v6().resetCache();
+      OvhApiDedicatedCloud.VMEncryption().kms().v6().resetQueryCache();
+
+      $scope.loadInfo();
+      $scope.setMessage($translate.instant('dedicatedCloud_vm_encryption_kms_edited'), {});
+    });
+  };
+
+  self.getVMEncryptionKMSList = function ({ offset, pageSize }) {
+    return DedicatedCloud.getVMEncryptionKMSList($stateParams.productId).then(kmsIds => ({
+      data: kmsIds
+        .slice(offset - 1, offset - 1 + pageSize)
+        .map(id => ({ id })),
+      meta: {
+        totalCount: kmsIds.length,
+      },
+    }));
+  };
+
+  self.getVMEncryptionKMSDetail = function (id) {
+    return DedicatedCloud.getVMEncryptionKMSDetail($stateParams.productId, id);
   };
 
   $scope.loadInfo();

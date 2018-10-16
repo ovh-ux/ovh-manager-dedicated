@@ -69,6 +69,7 @@
    <translation id="autorenew_service_update_renewal_activation_error" qtlid="369440">Selecionou a renovação automática para pelo menos um serviço, mas não ativou a renovação automática na sua conta: {0}</translation>
    <translation id="autorenew_guide_help" qtlid="156732">Consulte os manuais OVH.</translation>
    <translation id="autorenew_service_delete_title" qtlid="498170">Rescindir na data de expiração</translation>
+   <translation id="autorenew_service_debt_before_paying_title" qtlid="506780">Informações importantes</translation>
    <translation id="autorenew_service_debt_before_paying_1" qtlid="498209">Antes de renovar para um novo período, recomendamos o pagamento da sua dívida.</translation>
    <translation id="autorenew_service_debt_before_paying_2" qtlid="498222">Consulte a secção Faturação para proceder ao pagamento da fatura relativa ao serviço <strong>{{service}}</strong>.</translation>
    <translation id="autorenew_service_canceldelete_title" qtlid="416137">Anular cancelamento de um serviço</translation>
@@ -137,6 +138,7 @@
    <translation id="autorenew_service_type_SSL_GATEWAY" qtlid="400105">SSL Gateway</translation>
    <translation id="autorenew_service_type_SHAREPOINT" qtlid="298352">Sharepoint</translation>
    <translation id="autorenew_service_type_VEEAM_CLOUD_CONNECT" qtlid="231370">Veeam Cloud Connect</translation>
+   <translation id="autorenew_service_type_VEEAM_ENTERPRISE" qtlid="506362">Veeam Enterprise</translation>
    <translation id="autorenew_service_type_METRICS" qtlid="383525">Estatísticas</translation>
 
    <translation id="autorenew_service_billing_warning" qtlid="229645">Não possui direitos para modificar esse dado</translation>
@@ -1193,14 +1195,18 @@
    <translation id="terminate_service_services_renew" qtlid="168172">Renovação</translation>
    <translation id="terminate_service_services_frequency" qtlid="30442">Frequência</translation>
    <translation id="terminate_service_reason_title" qtlid="440009">Razão do cancelamento</translation>
-   <translation id="terminate_service_reason_LACK_OF_PERFORMANCES" qtlid="299975">A performance do sistema é insuficiente</translation>
+   <translation id="terminate_service_reason_LACK_OF_PERFORMANCES" qtlid="299975">O desempenho do serviço é insuficiente</translation>
    <translation id="terminate_service_reason_NOT_NEEDED_ANYMORE" qtlid="299949">Já não utilizo este serviço</translation>
    <translation id="terminate_service_reason_MIGRATED_TO_ANOTHER_OVH_PRODUCT" qtlid="300014">Estou a usar outro serviço OVH</translation>
    <translation id="terminate_service_reason_MIGRATED_TO_COMPETITOR" qtlid="300027">Estou a usar o serviço de um concorrente</translation>
    <translation id="terminate_service_reason_NOT_RELIABLE" qtlid="299988">Faltam funcionalidades ao serviço</translation>
    <translation id="terminate_service_reason_OTHER" qtlid="300040">Outros...</translation>
    <translation id="terminate_service_reason_TOO_EXPENSIVE" qtlid="300001">O serviço é demasiado caro</translation>
-   <translation id="terminate_service_reason_TOO_HARD_TO_USE" qtlid="299962">As ferramentas são demasiado complexas</translation>
+   <translation id="terminate_service_reason_TOO_HARD_TO_USE" qtlid="299962">As ferramentas de gestão (área de cliente, faturação) são demasiado complexas</translation>
+   <translation id="terminate_service_reason_FEATURES_DONT_SUIT_ME" qtlid="504241">As funcionalidades do serviço não são adequadas às minhas necessidades</translation>
+   <translation id="terminate_service_reason_UNSATIFIED_BY_CUSTOMER_SUPPORT" qtlid="504254">Não estou satisfeito/a com o Apoio ao Cliente</translation>
+   <translation id="terminate_service_reason_NO_ANSWER" qtlid="504267">Não quero responder</translation>
+   <translation id="terminate_service_futureUses_NO_ANSWER" qtlid="504267">Não quero responder</translation>
    <translation id="terminate_service_reason_text" qtlid="440022">Deseja fornecer mais informação ou dar alguma sugestão?</translation>
    <translation id="terminate_service_error" qtlid="440035">Pedimos desculpa, ocorreu um erro durante o carregamento da página.</translation>
    <translation id="terminate_service_confirmation_error" qtlid="440048">Ocorreu um erro durante a confirmação do cancelamento do serviço.</translation>
@@ -1209,8 +1215,8 @@
    <translation id="terminate_service_futureUses_NOT_REPLACING_SERVICE" qtlid="502346">Não quero substituir o meu serviço</translation>
    <translation id="terminate_service_futureUses_OTHER" qtlid="300040">Outros...</translation>
    <translation id="terminate_service_futureUses_SUBSCRIBE_AN_OTHER_SERVICE" qtlid="502359">Quero subscrever outro serviço da OVH</translation>
-   <translation id="terminate_service_futureUses_SUBSCRIBE_OTHER_KIND_OF_SERVICE_WITH_COMPETITOR" qtlid="502372">Quero subscrever outro tipo de serviço numa empresa concorrente</translation>
-   <translation id="terminate_service_futureUses_SUBSCRIBE_SIMILAR_SERVICE_WITH_COMPETITOR" qtlid="502385">Quero subscrever um serviço semelhante numa empresa concorrente</translation>
+   <translation id="terminate_service_futureUses_SUBSCRIBE_OTHER_KIND_OF_SERVICE_WITH_COMPETITOR" qtlid="502372">Quero subscrever outro tipo de serviço com outro fornecedor</translation>
+   <translation id="terminate_service_futureUses_SUBSCRIBE_SIMILAR_SERVICE_WITH_COMPETITOR" qtlid="502385">Quero subscrever um serviço semelhante com outro fornecedor</translation>
 
    <translation id="terminate_service_confirm" qtlid="440074">Confirmo o cancelamento</translation>
    <translation id="terminate_service_type_allDom" qtlid="270293">Pack AllDom</translation>

@@ -97,7 +97,7 @@
    <translation id="dedicatedCloud_configuration_order_hosts_memory" qtlid="31354">RAM</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_memory_ecc" qtlid="147772">(ECC)</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_nb_cores" qtlid="33070">Ydinten määrä</translation>
-   <translation id="dedicatedCloud_configuration_order_hosts_quantity_info" qtlid="502398">Infrastruktuurissasi on oltava vähintään kolme isäntäpalvelinta, jotta vSan voi toimia.</translation>
+   <translation id="dedicatedCloud_configuration_order_hosts_quantity_info" qtlid="505738">Il faut au moins trois hôtes vSAN dans votre infrastructure pour que le vSAN soit fonctionnel.</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_billing_quantity" qtlid="146229">Tilattavien isäntäkoneiden lukumäärä:</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_finish_success" qtlid="183372">Isäntäkoneen tilaus <a href='{0}' target='_blank'>{1}</a> on rekisteröity.</translation>
    <translation id="dedicatedCloud_configuration_order_hosts_finish_fail" qtlid="146255">Tapahtui virhe tilattaessa isäntäkonetta palvelinkeskukseen {0}</translation>
@@ -635,6 +635,62 @@
    <translation id="dedicatedCloud_vmware_option_not_enabled" qtlid="343122">Lisäpalvelun aktivointia ei voida tällä hetkellä poistaa, koska se ei ole aktiivinen. </translation>
    <translation id="dedicatedCloud_vmware_option_not_disabled" qtlid="343135">Lisäpalvelua ei tällä hetkellä voida aktivoida, sillä sen aktivointia ei ole poistettu. </translation>
 
+<!-- VM ENCRYPTION -->
+   <translation id="dedicatedCloud_vm_encryption_kms_title" qtlid="506377">Virtual Machine Encryption Key Management Servers</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_add" qtlid="506390">Ajouter un nouveau serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_edit" qtlid="506403">Éditer ce KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_delete" qtlid="506416">Supprimer ce KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_id" qtlid="8194">ID</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_description" qtlid="9238">Kuvaus</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_optional" qtlid="175244">Vaihtoehtoinen</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_ip" qtlid="25615">IP</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_port" qtlid="9034">Portti</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_sslThumbprint" qtlid="506429">SSL Thumbprint</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status" qtlid="26443">Tila</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_documentation_link" qtlid="506442">Documentation VM Encryption</translation>
+
+   <translation id="dedicatedCloud_vm_encryption_kms_status_creating" qtlid="26227">Luodaan</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_deleting" qtlid="133929">Poistetaan</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_updating" qtlid="147993">Päivitetään</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_delivered" qtlid="409805">Toimitettu</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_error" qtlid="26407">Virhe</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_toCreate" qtlid="270852">Luotava</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_toDelete" qtlid="506455">À supprimer</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_toUpdate" qtlid="506468">À mettre à jour</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_status_unknown" qtlid="77142">Tuntematon</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_pending_task_state" qtlid="24271">käynnissä</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_current_operation" qtlid="506481">Opération {{currentOperation}} : {{state}}</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_required_field" qtlid="506494">Ce champ est obligatoire</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_sslThumbprint_invalid_format" qtlid="506507">Format invalide (voir exemple dans la documentation)</translation>
+
+<!-- Add KMS -->
+   <translation id="dedicatedCloud_vm_encryption_add_kms_title" qtlid="506390">Ajouter un nouveau serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_confirm_read_documentation" qtlid="506520">J’ai lu et j’ai compris la documentation VM Encryption et les actions que je vais devoir effectuer de mon côté.</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_ip_invalid_format" qtlid="506533">Format invalide (ex: 192.168.0.1 et entre 0 et 255 pour chaque bloc).</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_creating" qtlid="506546">Création du nouveau serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_creation_canceled" qtlid="506559">Création du serveur KMS annulée</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_configuration_intro_1" qtlid="506572">Veuillez maintenant procéder à la configuration du serveur KMS via le client vSphere.</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_configuration_intro_2" qtlid="506585">Une fois la configuration effectuée, la mise en place continuera automatiquement et vous pourrez suivre sa progression depuis cette fenêtre. La détection peut prendre jusqu'à une minute.</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_configuration_intro_3" qtlid="506598">Si vous avez besoin d'aide, vous pouvez consulter la documentation.</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_added" qtlid="506611">Le serveur KMS a été ajouté.</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_add_error" qtlid="506624">Une erreur est survenue lors de l’ajout : {{error}}</translation>
+
+<!-- Delete KMS -->
+   <translation id="dedicatedCloud_vm_encryption_delete_kms" qtlid="506637">Supprimer ce serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_delete_kms_title" qtlid="506650">Supprimer le serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_delete_kms_deleting" qtlid="507146">Suppression du serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_delete_kms_question" qtlid="506676">Êtes-vous sûr de vouloir supprimer le serveur KMS {{kmsToDelete}} ?</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_deleted" qtlid="506689">Le serveur KMS a été supprimé.</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_delete_error" qtlid="506702">Une erreur est survenue lors de la suppression : {{error}}</translation>
+
+<!-- Edit KMS -->
+   <translation id="dedicatedCloud_vm_encryption_edit_kms" qtlid="506715">Modifier ce serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_edit_kms_title" qtlid="506728">Modifier le serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_edit_kms_editing" qtlid="506741">Modification du serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_edited" qtlid="506754">Le serveur KMS a été modifié.</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_edit_error" qtlid="506767">Une erreur est survenue lors de l’édition : {{error}}</translation>
+<!-- END VM ENCRYPTION KMS -->
+
    <translation id="dedicatedCloud_tab_operation" qtlid="31078">Operaatiot</translation>
    <translation id="dedicatedCloud_OPERATIONS_taskId" qtlid="16445">Viite</translation>
    <translation id="dedicatedCloud_OPERATIONS_name" qtlid="3818">Nimi</translation>
@@ -735,10 +791,10 @@
    <translation id="dedicatedCloud_options_order_activate_error" qtlid="342992">Tapahtui virhe lisäpalvelun aktivoimisessa:</translation>
    <translation id="dedicatedCloud_options_order_sms_confirmation" qtlid="382745">Saat tekstiviestin vahvistuksena tilauksestasi. </translation>
 
-   <translation id="dedicatedCloud_datacenter_backup_enable_version" qtlid="503760">Version de Veeam Backup à activer</translation>
-   <translation id="dedicatedCloud_datacenter_backup_enable_version_choice" qtlid="503773">Choisissez la version de Veeam backup à installer sur le datacentre <strong>{{name}}</strong>. Une fois la version de Veeam Backup sélectionnée, cliquez sur "Activer". Un nouvel onglet s'ouvrira et vous serez automatiquement redirigé(e) vers l'interface de paiement.</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_version" qtlid="503760">Aktivoitava Veeam Backup -versio</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_version_choice" qtlid="503773">Valitse Veeam Backup -versio, joka asennetaan konesaliin <strong>{{name}}</strong>. Kun Veeam Backup -versio on valittu, klikkaa "Aktivoi". Uusi välilehti avautuu ja sinut uudelleenohjataan automaattisesti maksukäyttöliittymään.</translation>
    <translation id="dedicatedCloud_datacenter_backup_enable_version_classic" qtlid="503786">Veeam Standard Backup</translation>
    <translation id="dedicatedCloud_datacenter_backup_enable_version_advanced" qtlid="503799">Veeam Advanced Backup</translation>
-   <translation id="dedicatedCloud_datacenter_backup_enable_version_explain" qtlid="503812">Vous serez facturé en fonction du nombre de VM backupées, dans les conditions décrites sur <a href="{{url}}" target="_blank">cette page</a>.</translation>
-   <translation id="dedicatedCloud_datacenter_backup_enable_no_offer" qtlid="503825">Aucune offre de Veeam Backup n'est disponible pour votre datacentre <strong>{{name}}</strong>.</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_version_explain" qtlid="503812">Laskutus tapahtuu varmuuskopioitujen virtuaalikoneiden lukumäärän perusteella, <a href="{{url}}" target="_blank">tällä sivulla</a> olevien ehtojen mukaisesti.</translation>
+   <translation id="dedicatedCloud_datacenter_backup_enable_no_offer" qtlid="503825">Yhtään Veeam Backup -tuotetta ei ole saatavilla konesalissa <strong>{{name}}</strong>.</translation>
 </translations>
