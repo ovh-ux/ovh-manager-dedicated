@@ -1,7 +1,7 @@
 angular.module('App').controller('DedicatedCloudSecurityKMSAddCtrl', class DedicatedCloudSecurityKMSAddCtrl {
   constructor(
     $stateParams, $timeout, $translate, $uibModalInstance,
-    DedicatedCloud, OvhApiMe, constants, VM_ENCRYPTION_KMS,
+    DedicatedCloud, constants, VM_ENCRYPTION_KMS,
   ) {
     this.$timeout = $timeout;
     this.$translate = $translate;
@@ -10,12 +10,7 @@ angular.module('App').controller('DedicatedCloudSecurityKMSAddCtrl', class Dedic
 
     this.serviceName = $stateParams.productId;
     this.VM_ENCRYPTION_KMS = VM_ENCRYPTION_KMS;
-
-    OvhApiMe.v6().get().$promise.then((user) => {
-      if (user) {
-        this.vmEncryptionGuide = _(user.country).isEqual('FR') ? constants.urls.FR.guides.vmEncryption : constants.urls.GB.guides.vmEncryption;
-      }
-    });
+    this.constants = constants;
 
     this.regex = {
       ip: this.VM_ENCRYPTION_KMS.regex.ip,
@@ -39,6 +34,12 @@ angular.module('App').controller('DedicatedCloudSecurityKMSAddCtrl', class Dedic
     };
 
     this.pollRequestPending = false;
+    const usedLanguage = _(localStorage).get('univers-selected-language', '');
+    if (usedLanguage) {
+      const frenchLanguages = ['fr_FR', 'fr_CA'];
+      this.vmEncryptionGuide = frenchLanguages.includes(usedLanguage)
+        ? this.constants.urls.FR.guides.vmEncryption : this.constants.urls.GB.guides.vmEncryption;
+    }
   }
 
   closeModal() {
