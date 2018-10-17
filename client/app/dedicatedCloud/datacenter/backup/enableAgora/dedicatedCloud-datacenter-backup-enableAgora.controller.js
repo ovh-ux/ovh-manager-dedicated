@@ -25,7 +25,7 @@ angular.module('App').controller('DedicatedCloudSubDatacenterVeeamBackupEnableAg
   }
 
   onBackupEnableFormSubmit() {
-    if (!this.hosts.length || !this.offer) {
+    if (!this.hosts || !this.hosts.length || !this.offer) {
       return this.closeModal();
     }
 
