@@ -1,3 +1,13 @@
+<a name="10.4.4"></a>
+## [10.4.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.4.3...v10.4.4) (2018-10-18)
+
+
+### Features
+
+* **home:** change subscription banner to live banner ([3d71ebd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3d71ebd))
+
+
+
 <a name="10.4.3"></a>
 ## [10.4.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.4.2...v10.4.3) (2018-10-17)
 
