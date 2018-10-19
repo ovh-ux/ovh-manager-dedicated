@@ -20,9 +20,6 @@ angular.module('App').controller('ConfigurationCtrl', class ConfigurationCtrl {
     };
     this.hasError = false;
     this.fallbackLanguage = 'en_GB';
-
-    this.buildSummitData();
-
     return this.getSections().then((sections) => {
       const selectedLanguage = this.getSelectedLanguage();
       _.each(sections, (section) => {
@@ -39,9 +36,9 @@ angular.module('App').controller('ConfigurationCtrl', class ConfigurationCtrl {
   }
 
   /**
-     * Get sections where guides are available.
-     * @return {Promise}
-     */
+   * Get sections where guides are available.
+   * @return {Promise}
+   */
   getSections() {
     const deferred = this.$q.defer();
     this.hasError = false;
@@ -67,18 +64,6 @@ angular.module('App').controller('ConfigurationCtrl', class ConfigurationCtrl {
       }
     }
     return deferred.promise;
-  }
-
-  buildSummitData() {
-    const subsidiariesWithSummitBanner = ['FR', 'GB', 'DE', 'ES'];
-    this.$scope.localeForSummitBanner = this.$translate.use().split('_')[0] === 'fr' ? 'fr' : 'en';
-    this.$scope.shouldDisplayBanner = false;
-
-    return this.User
-      .getUser()
-      .then(({ ovhSubsidiary }) => {
-        this.$scope.shouldDisplayBanner = _(subsidiariesWithSummitBanner).includes(ovhSubsidiary);
-      });
   }
 
   getSelectedLanguage() {
