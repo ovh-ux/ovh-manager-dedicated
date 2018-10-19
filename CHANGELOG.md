@@ -1,3 +1,13 @@
+<a name="10.4.6"></a>
+## [10.4.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.4.5...v10.4.6) (2018-10-19)
+
+
+### Bug Fixes
+
+* **ckeditor:** rollback to ckeditor 4 ([c36408d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c36408d))
+
+
+
 <a name="10.4.5"></a>
 ## [10.4.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.4.4...v10.4.5) (2018-10-18)
 
