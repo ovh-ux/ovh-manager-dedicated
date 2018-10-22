@@ -72,7 +72,7 @@
                         </a>
                     </p>
                     <ul class="list-inline mt-4">
-                        <li class="text-center"
+                        <li class="text-center mb-4"
                             data-ng-if="hasSOL()">
                             <button type="button"
                                     class="btn btn-default btn-block"
@@ -109,6 +109,25 @@
                                     data-ng-click="downloadApplet()"
                                     data-translate="server_configuration_impi_java_download">
                             </button>
+                        </li>
+                        <li ng-if="ipmi.model.supportedFeatures.kvmipHtml5URL">
+                            <button type="button"
+                                    class="btn btn-default btn-block"
+                                    data-ng-click="getIpmiKvmUrl()"
+                                    data-ng-disabled="loader.buttonStart || disable.otherTask || disable.localTask">
+                                <span data-translate="server_configuration_impi_kvm_console"></span>
+                                <oui-spinner class="ml-2" 
+                                             data-ng-if="loader.kvmhtmlLoading"
+                                             data-size="s">
+                                </oui-spinner>
+                            </button>
+                            <a class="btn btn-default btn-block"
+                               href="{{ loader.kvmUrl }}"
+                               target="_blank"
+                               rel="noopener"
+                               data-ng-if="loader.kvmUrlReady && !disable.otherTask && !disable.localTask"
+                               data-translate="server_configuration_impi_kvm_url">
+                            </a>
                         </li>
                     </ul>
                 </div>

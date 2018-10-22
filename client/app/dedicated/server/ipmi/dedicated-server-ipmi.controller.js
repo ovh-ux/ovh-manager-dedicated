@@ -32,6 +32,7 @@ angular.module('App').controller('ImpiCtrl', ($scope, $translate, Server, Pollin
     javaLoading: false,
     javaReady: false,
     sshLoading: false,
+    kvmhtmlLoading: false,
     kvm: false,
   };
 
@@ -89,7 +90,6 @@ angular.module('App').controller('ImpiCtrl', ($scope, $translate, Server, Pollin
 
           if (!$scope.kvm.canOrderKvm) {
             $scope.loader.loading = true;
-
             Server.getKvmFeatures($stateParams.productId)
               .then(
                 (features) => {
@@ -127,7 +127,6 @@ angular.module('App').controller('ImpiCtrl', ($scope, $translate, Server, Pollin
   function isActivated() {
     $scope.loader.loading = true;
     $scope.loader.error = false;
-
     return Server.isIpmiActivated($stateParams.productId).then(
       (results) => {
         $scope.ipmi.model = results;
@@ -240,6 +239,60 @@ angular.module('App').controller('ImpiCtrl', ($scope, $translate, Server, Pollin
         $scope.loader.navigationLoading = false;
         $scope.loader.buttonStart = false;
         Alerter.alertFromSWS($translate.instant('server_configuration_impi_navigation_error'), data.data, $scope.alert);
+      },
+    );
+  }
+
+  $scope.getIpmiKvmUrl = function () {
+    $scope.loader.buttonStart = true;
+    $scope.loader.kvmhtmlLoading = true;
+    Server.ipmiStartConnection({
+      serviceName: $stateParams.productId,
+      type: 'kvmipHtml5URL',
+      ttl: $scope.ttl,
+      ipToAllow: $scope.ipmi.model.clientIp,
+    }).then(
+      (task) => {
+        startIpmiKvmUrlPoll({ id: task.taskId });
+      },
+      (err) => {
+        $scope.loader.kvmhtmlLoading = false;
+        $scope.loader.buttonStart = false;
+        Alerter.alertFromSWS($translate.instant('server_configuration_impi_navigation_error'), err.data, $scope.alert);
+      },
+    );
+  };
+
+  function startIpmiKvmUrlPoll(task) {
+    Server.addTaskFast($stateParams.productId, task, $scope.$id).then(
+      (state) => {
+        if (Polling.isResolve(state)) {
+          getKvmUrl();
+        } else {
+          startIpmiKvmUrlPoll(task);
+        }
+      },
+      (data) => {
+        $scope.loader.kvmhtmlLoading = false;
+        $scope.loader.buttonStart = false;
+        Alerter.alertFromSWS($translate.instant('server_configuration_impi_java_error'), data, $scope.alert);
+      },
+    );
+  }
+
+  function getKvmUrl() {
+    Server.ipmiGetConnection($stateParams.productId, 'kvmipHtml5URL').then(
+      (data) => {
+        $scope.loader.kvmUrlReady = true;
+        $scope.loader.kvmhtmlLoading = false;
+        $scope.loader.buttonStart = false;
+        $scope.loader.kvmUrl = data.value;
+        Alerter.alertFromSWS($translate.instant('server_configuration_impi_navigation_success'), true, $scope.alert);
+      },
+      (err) => {
+        $scope.loader.kvmhtmlLoading = false;
+        $scope.loader.buttonStart = false;
+        Alerter.alertFromSWS($translate.instant('server_configuration_impi_navigation_error'), err.data, $scope.alert);
       },
     );
   }
