@@ -36,22 +36,6 @@
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "postversion": "git push && git push --tags"
   },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.less": [
-      "stylelint 'client/**/*.less' --fix",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "dependencies": {
     "@bower_components/angular-ui-router": "angular-ui/angular-ui-router-bower#^1.0.0",
     "@bower_components/angular-ui-utils": "angular-ui/ui-utils#~0.2.3",
