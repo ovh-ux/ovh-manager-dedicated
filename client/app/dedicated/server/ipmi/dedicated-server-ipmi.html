@@ -75,7 +75,7 @@
                         <li class="text-center mb-4"
                             data-ng-if="hasSOL()">
                             <button type="button"
-                                    class="btn btn-default btn-block"
+                                    class="btn btn-default btn-block d-flex"
                                     data-ng-click="startIpmiNavigation()"
                                     data-ng-disabled="loader.buttonStart || disable.otherTask || disable.localTask">
                                 <span data-translate="server_configuration_impi_navigation"></span>
@@ -94,7 +94,7 @@
                         </li>
                         <li>
                             <button type="button"
-                                    class="btn btn-default btn-block"
+                                    class="btn btn-default btn-block d-flex"
                                     data-ng-click="startIpmiJava()"
                                     data-ng-disabled="loader.buttonStart || disable.otherTask || disable.localTask">
                                 <span data-translate="server_configuration_impi_java"></span>
@@ -112,7 +112,7 @@
                         </li>
                         <li ng-if="ipmi.model.supportedFeatures.kvmipHtml5URL">
                             <button type="button"
-                                    class="btn btn-default btn-block"
+                                    class="btn btn-default btn-block d-flex"
                                     data-ng-click="getIpmiKvmUrl()"
                                     data-ng-disabled="loader.buttonStart || disable.otherTask || disable.localTask">
                                 <span data-translate="server_configuration_impi_kvm_console"></span>
