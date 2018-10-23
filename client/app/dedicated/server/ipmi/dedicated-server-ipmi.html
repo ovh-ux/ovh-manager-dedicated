@@ -72,7 +72,7 @@
                         </a>
                     </p>
                     <ul class="list-inline mt-4">
-                        <li class="text-center mb-4"
+                        <li class="text-center mb-4 align-top"
                             data-ng-if="hasSOL()">
                             <button type="button"
                                     class="btn btn-default btn-block d-flex"
@@ -92,7 +92,7 @@
                                data-translate="server_configuration_impi_navigation_go">
                             </a>
                         </li>
-                        <li>
+                        <li class="align-top">
                             <button type="button"
                                     class="btn btn-default btn-block d-flex"
                                     data-ng-click="startIpmiJava()"
@@ -110,7 +110,7 @@
                                     data-translate="server_configuration_impi_java_download">
                             </button>
                         </li>
-                        <li ng-if="ipmi.model.supportedFeatures.kvmipHtml5URL">
+                        <li data-ng-if="ipmi.model.supportedFeatures.kvmipHtml5URL" class="align-top">
                             <button type="button"
                                     class="btn btn-default btn-block d-flex"
                                     data-ng-click="getIpmiKvmUrl()"
