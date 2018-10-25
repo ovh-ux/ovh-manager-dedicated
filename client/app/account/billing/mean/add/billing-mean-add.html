@@ -82,7 +82,6 @@
                         <input type="text"
                                id="bic"
                                name="bic"
-                               type="text"
                                class="form-control"
                                data-ng-model="mean.bic"
                                required
@@ -152,7 +151,7 @@
                                         data-ng-model="mean.addressPostalCode"
                                         data-ng-pattern="/^\d{5}$/"
                                         min="01000"
-                                        min="99999"
+                                        max="99999"
                                         required>
                                 <div data-ng-repeat="(error, hasError) in paymentMeanForm.addressPostalCode.$error"
                                     role="alert">

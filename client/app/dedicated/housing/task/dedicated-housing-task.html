@@ -1,6 +1,6 @@
 <div data-ng-controller="HousingTaskCtrl as $ctrl">
     <h2 data-translate="housing_tab_task"></h2>
-    <div data-ovh-alert='housing_tab_tasks_alert'></div>
+    <div data-ovh-alert="housing_tab_tasks_alert"></div>
     <oui-datagrid data-rows-loader="$ctrl.loadDatagridTasks($config)"
                   data-row-loader="$ctrl.transformItem($row)">
         <oui-column data-title=":: 'housing_configuration_task_last_action' | translate">
