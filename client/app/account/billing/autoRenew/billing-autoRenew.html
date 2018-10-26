@@ -55,7 +55,7 @@
                 <select id="billingAutoRenewNicBillingSelect"
                         class="form-control"
                         name="billingAutoRenew"
-                        data-ng-model-options='{ debounce: 500 }'
+                        data-ng-model-options="{ debounce: 500 }"
                         data-ng-model="nicBillingFilter.model"
                         data-ng-change="onNicBillingChange()"
                         data-ng-options="nicBilling for nicBilling in nicBillingFilter.values track by nicBilling"                        >
@@ -79,7 +79,7 @@
                         data-ng-disabled="!nicRenew.active"
                         data-ng-options="day for day in nicRenew.renewDays track by day"
                         data-ng-model="nicRenew.renewDay"
-                        data-ng-model-options='{ debounce: 1000 }'
+                        data-ng-model-options="{ debounce: 1000 }"
                         data-ng-change="onAutoRenewChange()"
                         data-uib-tooltip="{{ 'autorenew_service_autorenew_day_tooltip' | translate }}"
                         data-uib-tooltip-append-to-body="true">

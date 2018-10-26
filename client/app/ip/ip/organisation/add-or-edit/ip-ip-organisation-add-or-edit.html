@@ -211,7 +211,7 @@
                                name="phone"
                                data-ng-model="newOrganisation.phone">
                         <div class="text-danger"
-                             role"alert"
+                             role="alert"
                              data-ng-show="hasError(organisationForm.phone) && value == true"
                              data-ng-repeat="(error, value) in organisationForm.phone.$error">
                             <span data-ng-bind="('ip_organisation_add_' + error) | translateAlt: error"></span>
@@ -223,7 +223,7 @@
 
         <div data-wizard-step
              data-wizard-step-on-load="resetAlertOranisation">
-            <div data-ovh-alert='ip_organisation_addedit_alerter'></div>
+            <div data-ovh-alert="ip_organisation_addedit_alerter"></div>
             <div class="text-center"
                  data-ng-show="load.loading">
                 <oui-spinner></oui-spinner>

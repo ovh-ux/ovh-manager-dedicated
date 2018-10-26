@@ -36,7 +36,6 @@
                data-ng-pattern="$ctrl.inputValidator"
                data-ng-disabled="$ctrl.rule.fieldName === 'customerCode'"
                data-ng-required="$ctrl.rule.mandatory">
-        </input>
     </div>
 
     <!-- PHONE INPUT -->
@@ -75,7 +74,6 @@
                    data-ng-blur="$ctrl.focused = false"
                    data-ng-pattern="$ctrl.inputValidator"
                    data-ng-required="$ctrl.rule.mandatory">
-            </input>
         </div>
     </div>
 
@@ -97,7 +95,6 @@
                data-ng-blur="$ctrl.focused = false"
                data-ng-pattern="$ctrl.inputValidator"
                data-ng-required="$ctrl.rule.mandatory">
-        </input>
         <p class="help-block" role="alert"
            data-ng-if="$ctrl.fieldset['ovh_field_' + $ctrl.rule.fieldName].$error.emailAvailable && $ctrl.value"
            data-translate="signup_email_in_use"></p>
@@ -116,7 +113,6 @@
                data-ng-blur="$ctrl.focused = false"
                data-ng-pattern="$ctrl.inputValidator"
                data-ng-required="$ctrl.rule.mandatory">
-        </input>
         <p class="help-block" role="alert"
            data-ng-if="$ctrl.fieldset['ovh_field_' + $ctrl.rule.fieldName].$error.pattern"
            data-translate="signup_password_invalid">
@@ -192,7 +188,6 @@
                data-is-open="datePickerOpen"
                data-show-button-bar="false"
                >
-        </input>
         <span class="input-group-btn">
             <button type="button"
                     class="btn btn-default"
