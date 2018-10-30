@@ -1,4 +1,4 @@
-import asyncLoaderFactory from './async-loader.factory';
+import translateAsyncLoader from '@ovh-ux/translate-async-loader';
 import config from './config/config';
 
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
@@ -44,6 +44,7 @@ const appDeps = [
   'ovh-angular-responsive-tabs',
   'ngCkeditor',
   'Module.otrs',
+  translateAsyncLoader,
   dedicatedUniverseComponents,
 ];
 
@@ -70,8 +71,7 @@ angular.module('App', appDeps).constant('constants', {
   FALLBACK_LANGUAGE: config.constants.FALLBACK_LANGUAGE,
 })
   .constant('LANGUAGES', config.constants.LANGUAGES)
-  .constant('website_url', config.constants.website_url)
-  .factory('asyncLoader', asyncLoaderFactory);
+  .constant('website_url', config.constants.website_url);
 angular
   .module('App')
   .config([
