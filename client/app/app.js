@@ -1,6 +1,8 @@
 import asyncLoaderFactory from './async-loader.factory';
 import config from './config/config';
 
+import dedicatedUniverseComponents from './dedicatedUniverseComponents';
+
 const appDeps = [
   'ovh-angular-proxy-request',
   'ovh-angular-pagination-front',
@@ -42,6 +44,7 @@ const appDeps = [
   'ovh-angular-responsive-tabs',
   'ngCkeditor',
   'Module.otrs',
+  dedicatedUniverseComponents,
 ];
 
 if (WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca') {
