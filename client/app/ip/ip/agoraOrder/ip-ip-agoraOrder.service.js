@@ -44,7 +44,7 @@ angular.module('Module.ip.services').service('IpAgoraOrder', function ($q, OvhHt
     return OvhHttp.get('/order/catalog/formatted/{catalogName}', {
       rootPath: 'apiv6',
       urlParams: {
-        catalogName: 'ip',
+        catalogName: 'ipPreprod',
       },
       params: {
         ovhSubsidiary: 'US',
