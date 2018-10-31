@@ -33,6 +33,7 @@ angular.module('App').controller('ImpiCtrl', ($scope, $translate, Server, Pollin
     javaReady: false,
     sshLoading: false,
     kvmhtmlLoading: false,
+    solSshKeyLoading: false,
     kvm: false,
   };
 
@@ -49,6 +50,13 @@ angular.module('App').controller('ImpiCtrl', ($scope, $translate, Server, Pollin
     XSRFTOKEN: $.cookie('XSRF-TOKEN'),
     XCsid: $.getUrlParam('csid'),
   };
+
+  $scope.ssh = {
+    list: [],
+    error: false,
+    selectedKey: '',
+  };
+
 
   // Icons Status change
   function setHttpState(load, done, error) {
@@ -84,6 +92,9 @@ angular.module('App').controller('ImpiCtrl', ($scope, $translate, Server, Pollin
     });
 
     isActivated().then(() => {
+      if ($scope.ipmi.model.supportedFeatures.serialOverLanSshKey) {
+        loadSshKey();
+      }
       if (!$scope.ipmi.model.activated) {
         Server.canOrderKvm($stateParams.productId).then((orderable) => {
           $scope.kvm.canOrderKvm = orderable === 'true' || orderable === true;
@@ -106,7 +117,6 @@ angular.module('App').controller('ImpiCtrl', ($scope, $translate, Server, Pollin
         });
       }
     });
-
     getTaskInProgress();
   };
 
@@ -210,39 +220,34 @@ angular.module('App').controller('ImpiCtrl', ($scope, $translate, Server, Pollin
   };
 
   function startIpmiPollNavigation(task) {
-    Server.addTaskFast($stateParams.productId, task, $scope.$id).then(
-      (state) => {
-        if (Polling.isResolve(state)) {
-          getIpmiNavigation();
-        } else {
-          startIpmiPollNavigation(task);
-        }
-      },
-      (data) => {
-        $scope.loader.navigationLoading = false;
-        $scope.loader.buttonStart = false;
-        Alerter.alertFromSWS($translate.instant('server_configuration_impi_navigation_error'), data, $scope.alert);
-      },
-    );
+    Server.addTaskFast($stateParams.productId, task, $scope.$id).then((state) => {
+      if (Polling.isResolve(state)) {
+        getIpmiNavigation();
+      } else {
+        startIpmiPollNavigation(task);
+      }
+    }).catch((data) => {
+      $scope.loader.navigationLoading = false;
+      $scope.loader.buttonStart = false;
+      Alerter.alertFromSWS($translate.instant('server_configuration_impi_navigation_error'), data, $scope.alert);
+    });
   }
 
   function getIpmiNavigation() {
-    Server.ipmiGetConnection($stateParams.productId, 'serialOverLanURL').then(
-      (connect) => {
-        $scope.loader.navigationLoading = false;
-        $scope.loader.buttonStart = false;
-        $scope.loader.navigationReady = connect.value;
-        window.open(connect.value, '_blank');
-        Alerter.alertFromSWS($translate.instant('server_configuration_impi_navigation_success'), true, $scope.alert);
-      },
-      ({ data }) => {
-        $scope.loader.navigationLoading = false;
-        $scope.loader.buttonStart = false;
-        Alerter.alertFromSWS($translate.instant('server_configuration_impi_navigation_error'), data, $scope.alert);
-      },
-    );
+    Server.ipmiGetConnection($stateParams.productId, 'serialOverLanURL').then((connect) => {
+      $scope.loader.navigationLoading = false;
+      $scope.loader.buttonStart = false;
+      $scope.loader.navigationReady = connect.value;
+      window.open(connect.value, '_blank');
+      Alerter.alertFromSWS($translate.instant('server_configuration_impi_navigation_success'), true, $scope.alert);
+    }).catch((data) => {
+      $scope.loader.navigationLoading = false;
+      $scope.loader.buttonStart = false;
+      Alerter.alertFromSWS($translate.instant('server_configuration_impi_navigation_error'), data, $scope.alert);
+    });
   }
 
+  // ------------Start KVM URL------------
   $scope.getIpmiKvmUrl = function () {
     $scope.loader.buttonStart = true;
     $scope.loader.kvmhtmlLoading = true;
@@ -251,50 +256,45 @@ angular.module('App').controller('ImpiCtrl', ($scope, $translate, Server, Pollin
       type: 'kvmipHtml5URL',
       ttl: $scope.ttl,
       ipToAllow: $scope.ipmi.model.clientIp,
-    }).then(
-      ({ taskId }) => {
-        startIpmiKvmUrlPoll({ id: taskId });
-      },
-      ({ data }) => {
-        $scope.loader.kvmhtmlLoading = false;
-        $scope.loader.buttonStart = false;
-        Alerter.alertFromSWS($translate.instant('server_configuration_impi_navigation_error'), data, $scope.alert);
-      },
-    );
+    }).then(({ taskId }) => {
+      startIpmiKvmUrlPoll({ id: taskId });
+    }).catch((data) => {
+      $scope.loader.kvmhtmlLoading = false;
+      $scope.loader.buttonStart = false;
+      Alerter.alertFromSWS($translate.instant('server_configuration_impi_navigation_error'), data, $scope.alert);
+    });
   };
 
   function startIpmiKvmUrlPoll(task) {
-    Server.addTaskFast($stateParams.productId, task, $scope.$id).then(
-      (state) => {
+    Server.addTaskFast($stateParams.productId, task, $scope.$id)
+      .then((state) => {
         if (Polling.isResolve(state)) {
           getKvmUrl();
         } else {
           startIpmiKvmUrlPoll(task);
         }
-      },
-      (data) => {
+      })
+      .catch((data) => {
         $scope.loader.kvmhtmlLoading = false;
         $scope.loader.buttonStart = false;
-        Alerter.alertFromSWS($translate.instant('server_configuration_impi_java_error'), data, $scope.alert);
-      },
-    );
+        Alerter.alertFromSWS($translate.instant('server_configuration_impi_navigation_error'), data, $scope.alert);
+      });
   }
 
   function getKvmUrl() {
-    Server.ipmiGetConnection($stateParams.productId, 'kvmipHtml5URL').then(
-      (data) => {
+    Server.ipmiGetConnection($stateParams.productId, 'kvmipHtml5URL')
+      .then((data) => {
         $scope.loader.kvmUrlReady = true;
         $scope.loader.kvmhtmlLoading = false;
         $scope.loader.buttonStart = false;
         $scope.loader.kvmUrl = data.value;
         Alerter.alertFromSWS($translate.instant('server_configuration_impi_navigation_success'), true, $scope.alert);
-      },
-      ({ data }) => {
+      })
+      .catch((data) => {
         $scope.loader.kvmhtmlLoading = false;
         $scope.loader.buttonStart = false;
         Alerter.alertFromSWS($translate.instant('server_configuration_impi_navigation_error'), data, $scope.alert);
-      },
-    );
+      });
   }
 
   // JAVA
@@ -309,33 +309,29 @@ angular.module('App').controller('ImpiCtrl', ($scope, $translate, Server, Pollin
       ttl: $scope.ttl,
       ipToAllow: $scope.ipmi.model.clientIp,
       withGeolocation,
-    }).then(
-      ({ taskId }) => {
-        startIpmiPollJava({ id: taskId });
-      },
-      (data) => {
-        $scope.loader.javaLoading = false;
-        $scope.loader.buttonStart = false;
-        Alerter.alertFromSWS($translate.instant('server_configuration_impi_java_error'), data, $scope.alert);
-      },
-    );
+    }).then(({ taskId }) => {
+      startIpmiPollJava({ id: taskId });
+    }).catch((data) => {
+      $scope.loader.javaLoading = false;
+      $scope.loader.buttonStart = false;
+      Alerter.alertFromSWS($translate.instant('server_configuration_impi_java_error'), data, $scope.alert);
+    });
   };
 
   function startIpmiPollJava(task) {
-    Server.addTaskFast($stateParams.productId, task, $scope.$id).then(
-      (state) => {
+    Server.addTaskFast($stateParams.productId, task, $scope.$id)
+      .then((state) => {
         if (Polling.isResolve(state)) {
           getIpmiJava();
         } else {
           startIpmiPollJava(task);
         }
-      },
-      (data) => {
+      })
+      .catch((data) => {
         $scope.loader.javaLoading = false;
         $scope.loader.buttonStart = false;
         Alerter.alertFromSWS($translate.instant('server_configuration_impi_java_error'), data, $scope.alert);
-      },
-    );
+      });
   }
 
   function getIpmiJava() {
@@ -344,9 +340,9 @@ angular.module('App').controller('ImpiCtrl', ($scope, $translate, Server, Pollin
     $scope.loader.buttonStart = false;
     $scope.loader.javaReady = true;
 
-    Server.ipmiGetConnection($stateParams.productId, 'kvmipJnlp').then(
-      (data) => {
-        const fileName = 'kvm.jnlp';
+    Server.ipmiGetConnection($stateParams.productId, 'kvmipJnlp')
+      .then((data) => {
+        const fileName = `${$stateParams.productId.replace(/\./g, '-')}|.jnlp`;
         const blob = new Blob([data.value], { type: 'application/x-java-jnlp-file' });
 
         let link;
@@ -368,11 +364,10 @@ angular.module('App').controller('ImpiCtrl', ($scope, $translate, Server, Pollin
             $scope.appletToDownload = encodeURIComponent(data.value);
           }
         }
-      },
-      (err) => {
+      })
+      .catch((err) => {
         Alerter.alertFromSWS($translate.instant('server_configuration_impi_java_error'), err, $scope.alert);
-      },
-    );
+      });
   }
 
   $scope.downloadApplet = function () {
@@ -513,6 +508,55 @@ angular.module('App').controller('ImpiCtrl', ($scope, $translate, Server, Pollin
     );
   }
 
+  // ---------ACTION SSH SOL------------
+  $scope.onSelectSshKey = function () {
+    $scope.loader.buttonStart = true;
+    $scope.loader.solSshKeyLoading = true;
+    Server.ipmiStartConnection({
+      serviceName: $stateParams.productId,
+      type: 'serialOverLanSshKey',
+      ttl: $scope.ttl,
+      sshKey: $scope.ssh.selectedKey,
+      ipToAllow: $scope.ipmi.model.clientIp,
+    }).then(({ taskId }) => {
+      startSolSshPolling({ id: taskId });
+    }).catch((data) => {
+      $scope.loader.solSshKeyLoading = false;
+      $scope.loader.buttonStart = false;
+      Alerter.alertFromSWS($translate.instant('server_configuration_impi_navigation_error'), data, $scope.alert);
+    });
+  };
+
+  function startSolSshPolling(task) {
+    Server.addTaskFast($stateParams.productId, task, $scope.$id)
+      .then((state) => {
+        if (Polling.isResolve(state)) {
+          getSolSsh();
+        } else {
+          startSolSshPolling(task);
+        }
+      })
+      .catch((data) => {
+        $scope.loader.solSshKeyLoading = false;
+        $scope.loader.buttonStart = false;
+        Alerter.alertFromSWS($translate.instant('server_configuration_impi_navigation_error'), data, $scope.alert);
+      });
+  }
+
+  function getSolSsh() {
+    Server.ipmiGetConnection($stateParams.productId, 'serialOverLanSshKey')
+      .then((data) => {
+        $scope.loader.solSshKeyLoading = false;
+        $scope.loader.buttonStart = false;
+        $scope.ssh.solSshUrl = data.value;
+        Alerter.alertFromSWS($translate.instant('server_configuration_impi_navigation_success'), true, $scope.alert);
+      })
+      .catch((data) => {
+        $scope.loader.solSshKeyLoading = false;
+        $scope.loader.buttonStart = false;
+        Alerter.alertFromSWS($translate.instant('server_configuration_impi_navigation_error'), data, $scope.alert);
+      });
+  }
   // ------------ACTION IPMI------------
   // Interfaces Restart
   $scope.$on('dedicated.ipmi.resetinterfaces', (e, task) => {
@@ -566,6 +610,18 @@ angular.module('App').controller('ImpiCtrl', ($scope, $translate, Server, Pollin
         $scope.disable.restartSession = false;
         $scope.disable.localTask = false;
         Alerter.alertFromSWS($translate.instant('server_configuration_impi_restart_error_task_session'), data, $scope.alert);
+      },
+    );
+  }
+
+  function loadSshKey() {
+    Server.getSshKey($stateParams.productId).then(
+      (data) => {
+        $scope.ssh.error = false;
+        $scope.ssh.list = data;
+      },
+      () => {
+        $scope.ssh.error = true;
       },
     );
   }
