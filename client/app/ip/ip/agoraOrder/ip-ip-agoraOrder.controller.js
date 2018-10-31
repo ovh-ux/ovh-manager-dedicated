@@ -53,6 +53,17 @@ angular.module('Module.ip.controllers').controller('agoraIpOrderCtrl', ['$scope'
       };
     }
 
+    function getRegionFromServiceName(serviceName) {
+      const serviceExt = _.last(serviceName.split('.'));
+      if (serviceExt === 'eu') {
+        return 'EUROPE';
+      } if (serviceExt === 'net') {
+        return 'APAC/CANADA';
+      }
+
+      return 'USA';
+    }
+
     this.loadIpOffers = () => {
       this.loading.ipOffers = true;
 
@@ -60,7 +71,10 @@ angular.module('Module.ip.controllers').controller('agoraIpOrderCtrl', ['$scope'
 
       const ipOffersPromise = AgoraOrder.getIpOffers()
         .then((ipOffers) => {
-          this.ipOffers = ipOffers.map(createOfferDto);
+          const ipOfferDetails = ipOffers.map(createOfferDto);
+          this.ipOffers = _.filter(ipOfferDetails, {
+            productRegion: getRegionFromServiceName(this.model.selectedService.serviceName),
+          });
         });
 
       const ipOrganisationPromise = Organisation.getIpOrganisation()

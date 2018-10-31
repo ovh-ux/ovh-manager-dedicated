@@ -1,3 +1,22 @@
+<a name="10.4.8"></a>
+## [10.4.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.4.7...v10.4.8) (2018-10-30)
+
+
+### Bug Fixes
+
+* apply htmlhint rules ([9ad8360](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9ad8360))
+* **ipfo:** agora order on non us dedicated service ([23878ce](https://github.com/ovh-ux/ovh-manager-dedicated/commit/23878ce))
+* **ipfo:** display country only if more than one country ([6ed8d2d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6ed8d2d))
+* **ipfo:** set good catalog name param ([f3196d4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f3196d4))
+* **pcc:** us veeam link ([e26630e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e26630e))
+
+
+
+<a name="10.4.7"></a>
+## [10.4.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.4.6...v10.4.7) (2018-10-22)
+
+
+
 <a name="10.4.6"></a>
 ## [10.4.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.4.5...v10.4.6) (2018-10-19)
 

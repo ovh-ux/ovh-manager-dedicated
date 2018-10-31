@@ -75,7 +75,7 @@
                                                data-ng-click="setSelectDistribution(distribution)">
                                         <span class="d-block"
                                               data-ng-class="{ 'text-danger': distribution.isDeprecated }"
-                                              data-ng-bind='distribution.displayName'>
+                                              data-ng-bind="distribution.displayName">
                                         </span>
                                         <span>
                                             <span class="text-muted"
@@ -732,7 +732,7 @@
                                             data-ng-click="!buttonControl.addInProgress && cancelAddPartition()">
                                         <span class="oui-icon oui-icon-error" aria-hidden="true"></span>
                                     </button>
-                                    <oui-spinner data-ng-show="buttonControl.addInProgress"v
+                                    <oui-spinner data-ng-show="buttonControl.addInProgress"
                                                  data-size="s">
                                     </oui-spinner>
                                 </td>
@@ -1053,12 +1053,11 @@
                                    data-ng-model="installation.options.customHostname"
                                    data-ng-pattern="/^[a-zA-Z0-9._-]{1,50}$/"
                                    data-ng-trim="true" />
-                                <span class="help-block"
-                                      role="alert"
-                                      data-ng-if="optionForm.customHostname.$invalid && optionForm.$dirty"
-                                      data-translate="server_configuration_installation_form_customHostname_pattern">
-                                </span>
-                            </div>
+                            <span class="help-block"
+                                  role="alert"
+                                  data-ng-if="optionForm.customHostname.$invalid && optionForm.$dirty"
+                                  data-translate="server_configuration_installation_form_customHostname_pattern">
+                            </span>
                         </div>
 
                         <!-- postInstallationScriptLink -->
