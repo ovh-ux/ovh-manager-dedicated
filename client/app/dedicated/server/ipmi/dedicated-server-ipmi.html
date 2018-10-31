@@ -39,6 +39,10 @@
                     </dl>
                 </div>
             </div>
+            <div class="text-danger"
+                data-ng-if="ipmi.model.activated && (disable.otherTask || disable.localTask)"
+                data-translate="server_configuration_impi_disable">
+            </div>
             <div class="row d-md-flex mb-5" data-ng-if="ipmi.model.activated && !disable.otherTask && !disable.localTask">
                 <div class="col-xm-12 col-md-4">
                     <oui-tile
@@ -164,7 +168,7 @@
                     </button>
                 </div>
             </div>
-            <div class="row">
+            <div data-ng-if="ipmi.model.activated && !disable.otherTask && !disable.localTask">
                 <p data-translate="server_configuration_impi_monitoring_warning"></p>
                 <p data-ng-if="ipmiHelpUrl && hasSOL()">
                     <span data-translate="server_configuration_impi_SOL_help"></span>
