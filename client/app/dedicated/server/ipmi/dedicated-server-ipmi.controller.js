@@ -137,17 +137,14 @@ angular.module('App').controller('ImpiCtrl', ($scope, $translate, Server, Pollin
   function isActivated() {
     $scope.loader.loading = true;
     $scope.loader.error = false;
-    return Server.isIpmiActivated($stateParams.productId).then(
-      (results) => {
-        $scope.ipmi.model = results;
-        $scope.loader.loading = false;
-      },
-      (data) => {
-        $scope.loader.loading = false;
-        $scope.loader.error = true;
-        Alerter.alertFromSWS($translate.instant('server_configuration_impi_loading_error'), data, $scope.alert);
-      },
-    );
+    return Server.isIpmiActivated($stateParams.productId).then((results) => {
+      $scope.ipmi.model = results;
+      $scope.loader.loading = false;
+    }).catch((data) => {
+      $scope.loader.loading = false;
+      $scope.loader.error = true;
+      Alerter.alertFromSWS($translate.instant('server_configuration_impi_loading_error'), data, $scope.alert);
+    });
   }
 
   function getTaskInProgress() {
@@ -207,16 +204,13 @@ angular.module('App').controller('ImpiCtrl', ($scope, $translate, Server, Pollin
       type: 'serialOverLanURL',
       ttl: $scope.ttl,
       ipToAllow: $scope.ipmi.model.clientIp,
-    }).then(
-      ({ taskId }) => {
-        startIpmiPollNavigation({ id: taskId });
-      },
-      ({ data }) => {
-        $scope.loader.navigationLoading = false;
-        $scope.loader.buttonStart = false;
-        Alerter.alertFromSWS($translate.instant('server_configuration_impi_navigation_error'), data, $scope.alert);
-      },
-    );
+    }).then(({ taskId }) => {
+      return startIpmiPollNavigation({ id: taskId });
+    }).catch(({ data }) => {
+      $scope.loader.navigationLoading = false;
+      $scope.loader.buttonStart = false;
+      Alerter.alertFromSWS($translate.instant('server_configuration_impi_navigation_error'), data, $scope.alert);
+    });
   };
 
   function startIpmiPollNavigation(task) {
