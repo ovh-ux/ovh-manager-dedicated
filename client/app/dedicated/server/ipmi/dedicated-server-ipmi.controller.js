@@ -57,7 +57,6 @@ angular.module('App').controller('ImpiCtrl', ($scope, $translate, Server, Pollin
     selectedKey: '',
   };
 
-
   // Icons Status change
   function setHttpState(load, done, error) {
     $scope.loader.httpLoading = load;

@@ -1,5 +1,5 @@
 <div
-    class="container-fluid mb-5 px-0"
+    class="container-fluid mb-5"
     data-ng-controller="ImpiCtrl"
     data-ng-init="init()">
 
@@ -44,7 +44,7 @@
                  data-translate="server_configuration_impi_disable">
             </div>
             <div class="row d-md-flex mb-5" data-ng-if="ipmi.model.activated && !disable.otherTask && !disable.localTask">
-                <div class="col-xm-12 col-md-4">
+                <div class="col-md-4">
                     <oui-tile class="h-100"
                               data-heading="{{::'server_configuration_tile_kvm_heading' | translate}}"
                               data-description="{{::'server_configuration_tile_kvm_description' | translate}}">
@@ -91,7 +91,7 @@
                         </oui-tile-definition>
                     </oui-tile>
                 </div>
-                <div class="col-xm-12 col-md-4">
+                <div class="col-md-4">
                     <oui-tile class="h-100"
                               data-heading="{{::'server_configuration_tile_sol_heading' | translate}}"
                               data-description="{{::'server_configuration_tile_sol_description' | translate}}">
@@ -134,7 +134,7 @@
                         </oui-tile-definition>
                     </oui-tile>
                 </div>
-                <div class="col-xm-12 col-md-4">
+                <div class="col-md-4">
                     <button type="button"
                             class="btn btn-default btn-block"
                             data-ng-click="setAction('ipmi/restart/dedicated-server-ipmi-restart')"
@@ -178,50 +178,51 @@
     </div>
 
     <div data-ng-if="ipmi.model.activated && disable.testActive">
-        <div class="mt-2">
-            <oui-spinner data-ng-if="loader.httpLoading"
-                         data-size="s">
-            </oui-spinner>
-            <span class="oui-icon oui-icon-error text-danger"
-                  data-ng-if="loader.httpError">
-            </span>
-            <span class="oui-icon oui-icon-success text-success"
-                  data-ng-if="loader.httpDone">
-            </span>
-            <span class="ml-2"
-                  data-ng-class="{ 'font-weight-bold': loader.httpLoading }"
-                  data-translate="server_configuration_impi_http">
-            </span>
-        </div>
-        <div class="mt-2">
-            <oui-spinner data-ng-if="loader.passwordLoading"
-                         data-size="s">
-            </oui-spinner>
-            <span class="oui-icon oui-icon-error text-danger"
-                  data-ng-if="loader.passwordError">
-            </span>
-            <span class="oui-icon oui-icon-success text-success"
-                  data-ng-if="loader.passwordDone">
-            </span>
-            <span class="ml-2"
-                  data-ng-class="{ 'font-weight-bold': loader.passwordLoading }"
-                  data-translate="server_configuration_impi_password">
-            </span>
-        </div>
-        <div class="mt-2">
-            <oui-spinner data-ng-if="loader.pingLoading"
-                         data-size="s">
-            </oui-spinner>
-            <span class="oui-icon oui-icon-error text-danger"
-                  data-ng-if="loader.pingError">
-            </span>
-            <span class="oui-icon oui-icon-success text-success"
-                  data-ng-if="loader.pingDone">
-            </span>
-            <span class="ml-2"
-                  data-ng-class="{ 'font-weight-bold': loader.pingLoading }"
-                  data-translate="server_configuration_impi_ping">
-            </span>
-        </div>
+        <ul class="list-unstyled">
+            <li>
+                <oui-spinner data-ng-if="loader.httpLoading"
+                             data-size="s"></oui-spinner>
+                <span class="oui-icon oui-icon-error text-danger"
+                      data-ng-if="loader.httpError">
+                </span>
+                <span class="oui-icon oui-icon-success text-success"
+                      data-ng-if="loader.httpDone">
+                </span>
+                <span class="ml-2"
+                      data-ng-class="{ 'font-weight-bold': loader.httpLoading }"
+                      data-translate="server_configuration_impi_http">
+                </span>
+            </li>
+            <li>
+                <oui-spinner data-ng-if="loader.passwordLoading"
+                             data-size="s">
+                </oui-spinner>
+                <span class="oui-icon oui-icon-error text-danger"
+                      data-ng-if="loader.passwordError">
+                </span>
+                <span class="oui-icon oui-icon-success text-success"
+                      data-ng-if="loader.passwordDone">
+                </span>
+                <span class="ml-2"
+                      data-ng-class="{ 'font-weight-bold': loader.passwordLoading }"
+                      data-translate="server_configuration_impi_password">
+                </span>
+            </li>
+            <li>
+                <oui-spinner data-ng-if="loader.pingLoading"
+                             data-size="s">
+                </oui-spinner>
+                <span class="oui-icon oui-icon-error text-danger"
+                      data-ng-if="loader.pingError">
+                </span>
+                <span class="oui-icon oui-icon-success text-success"
+                      data-ng-if="loader.pingDone">
+                </span>
+                <span class="ml-2"
+                      data-ng-class="{ 'font-weight-bold': loader.pingLoading }"
+                      data-translate="server_configuration_impi_ping">
+                </span>
+            </li>
+        </ul>
     </div>
 </div>
