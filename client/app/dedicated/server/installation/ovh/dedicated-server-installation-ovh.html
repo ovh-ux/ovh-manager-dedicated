@@ -779,7 +779,7 @@
                 <div>
                     <ul>
                         <li data-ng-show="warning.raid0"><i style="margin-right: 5px;" class="icon-warning"></i><span class="red" data-translate="server_configuration_installation_ovh_step2_warning_partition_raid0"></span></li>
-                        <li data-ng-show="errorInst.raid0"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_raid0" data-translate-values="{ t0: newPartition.display && newPartition.mountPoint || installation.partitionSchemeModels[setPartition.indexSet].mountPoint }}"></span></li>
+                        <li data-ng-show="errorInst.raid0"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_raid0" data-translate-values="{ t0: newPartition.display && newPartition.mountPoint || installation.partitionSchemeModels[setPartition.indexSet].mountPoint }"></span></li>
                         <li data-ng-show="errorInst.partitionSizeToAdd"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_size_min_add"></span></li>
                         <li data-ng-show="errorInst.partitionSizeOver"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_size_exceed"></span></li>
                         <li data-ng-show="errorInst.order"><span class="red" data-translate="server_configuration_installation_ovh_step2_error_partition_order"></span></li>
@@ -1153,7 +1153,7 @@
                                     id="sshKeyName"
                                     name="sshKeyName"
                                     data-ng-if="!sshList.error"
-                                    data-ng-options="sskkey for sskkey in sshList"
+                                    data-ng-options="sskkey for sskkey in sshList.model"
                                     data-ng-model="installation.options.sshKeyName">
                                 <option value=""
                                         data-translate="server_configuration_installation_form_ssh_no">
