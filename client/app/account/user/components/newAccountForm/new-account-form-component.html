@@ -36,11 +36,14 @@
 
     <!-- FOOTER BUTTONS -->
     <div class="mb-5">
-        <button class="btn btn-primary float-right"
+        <button class="oui-button oui-button_primary float-right"
                 data-ng-disabled="ovhSignupForm.$invalid || (!$ctrl.hasChanges() && !$ctrl.submitError)"
                 type="submit"
-                data-translate="user_account_OK"
-                data-ng-if="!$ctrl.isSubmitting">
+                data-ng-if="!$ctrl.isSubmitting"
+                data-track-on="click"
+                data-track-name="account::myaccount::profile::validation_profile_edit"
+                data-track-type="action">
+            <span data-translate="user_account_OK"></span>
         </button>
         <button class="btn btn-primary float-right"
                 data-ng-disabled="true"

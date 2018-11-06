@@ -9,13 +9,13 @@ angular.module('ovhSignupApp').component('newAccountFormField', {
   template: '<div data-ng-include="getTemplateUrl()"></div>',
   controller: [
     '$filter',
-    '$q',
     '$scope',
     '$timeout',
     '$translate',
+    'atInternet',
     'NewAccountFormConfig',
 
-    function ($filter, $q, $scope, $timeout, $translate, NewAccountFormConfig) {
+    function ($filter, $scope, $timeout, $translate, atInternet, NewAccountFormConfig) {
       $scope.getTemplateUrl = () => 'account/user/components/newAccountForm/field/new-account-form-field-component.html';
 
       this.$onInit = function () {
@@ -300,6 +300,10 @@ angular.module('ovhSignupApp').component('newAccountFormField', {
         // if email or ovhCompany changes, we need to check for email availability
         if (this.rule.fieldName === 'email' || this.rule.fieldName === 'ovhCompany') {
           $scope.$emit('account.email.request.validity');
+        }
+
+        if (_.isObject(this.rule.tracking)) {
+          atInternet.trackClick(this.rule.tracking);
         }
       };
 

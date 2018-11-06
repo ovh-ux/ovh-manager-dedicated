@@ -8,9 +8,12 @@
     <div data-ovh-alert="otrs_popup_status"></div>
     <div class="clearfix mb-5">
         <button type="button"
-                class="btn btn-primary"
-                data-ng-click="openDialog()">
-            <span class="oui-icon oui-icon-add" aria-hidden="true"></span>
+                class="oui-button oui-button_primary"
+                data-ng-click="openDialog()"
+                data-track-on="click"
+                data-track-type="action"
+                data-track-name="assistance_requests::create_assistance_request">
+            <span class="oui-icon oui-icon-add mr-1" aria-hidden="true"></span>
             <span data-translate="otrs_newTicket_button"></span>
         </button>
         <button type="button"

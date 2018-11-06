@@ -1,4 +1,4 @@
-angular.module('Billing.controllers').controller('Billing.controllers.OvhAccountRetrieve', ($scope, $location, $timeout, $window, $q, $translate, Alerter, BillingOvhAccount, BillingPaymentInformation, User, OVH_ACCOUNT_EVENT) => {
+angular.module('Billing.controllers').controller('Billing.controllers.OvhAccountRetrieve', ($location, $q, $scope, $timeout, $translate, $window, Alerter, atInternet, BillingOvhAccount, BillingPaymentInformation, User, OVH_ACCOUNT_EVENT) => {
   $scope.accountModel = $scope.currentActionData;
   $scope.retrieve = {
     amount: 0,
@@ -59,5 +59,11 @@ angular.module('Billing.controllers').controller('Billing.controllers.OvhAccount
       t0: $scope.retrieveOrder.url,
     }));
     $scope.resetAction();
+    atInternet.trackClick({
+      name: 'validation_transfer_bank_account',
+      type: 'action',
+      chapter1: 'payment_types',
+      chapter2: 'prepaid_account',
+    });
   };
 });

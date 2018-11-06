@@ -118,6 +118,13 @@ angular.module('ovhSignupApp').component('newAccountForm', {
                 initialValue: consentDecision,
                 fieldName: 'commercialCommunicationsApproval',
                 fieldType: 'checkbox',
+                tracking: {
+                  name: 'ovh_products_consent',
+                  type: 'action',
+                  chapter1: 'account',
+                  chapter2: 'myaccount',
+                  chapter3: 'consent',
+                },
                 regularExpression: null,
                 prefix: null,
                 examples: null,

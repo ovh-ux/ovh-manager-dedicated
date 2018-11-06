@@ -241,11 +241,14 @@
                 </div>
 
                 <button type="button"
-                        class="btn btn-primary"
-                        data-ng-show="mean.type"
+                        class="oui-button oui-button_primary"
+                        data-ng-if="mean.type"
                         data-ng-click="add()"
-                        data-translate="payment_mean_add"
+                        data-track-on="click"
+                        data-track-type="action"
+                        data-track-name="payment_types::payment_types::add::validation_add_payment_types"
                         data-ng-disabled="(paymentMeanForm.$invalid && paymentMeanForm.$dirty) || !mean.type || loader.add">
+                    <span data-translate="payment_mean_add"></span>
                 </button>
             </div>
 

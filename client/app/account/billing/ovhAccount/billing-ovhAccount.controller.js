@@ -1,4 +1,4 @@
-angular.module('Billing.controllers').controller('Billing.controllers.OvhAccount', ($scope, $filter, $timeout, $translate, BILLING_BASE_URL, BillingOvhAccount, User, BillingmessageParser, BillingdateRangeSelection) => {
+angular.module('Billing.controllers').controller('Billing.controllers.OvhAccount', ($filter, $scope, $timeout, $translate, atInternet, BILLING_BASE_URL, BillingmessageParser, BillingOvhAccount, BillingdateRangeSelection, User) => {
   $scope.ovhAccountLoading = false;
   $scope.ovhAccountsLoading = false;
   $scope.ovhAccount = {
@@ -137,6 +137,15 @@ angular.module('Billing.controllers').controller('Billing.controllers.OvhAccount
       return datasToReturn;
     }, () => '').finally(() => {
       $scope.csvLoading = false;
+    });
+  };
+
+  $scope.trackCSVExport = function () {
+    atInternet.trackClick({
+      name: 'export_csv',
+      type: 'action',
+      chapter1: 'payment_types',
+      chapter2: 'prepaid_account',
     });
   };
 

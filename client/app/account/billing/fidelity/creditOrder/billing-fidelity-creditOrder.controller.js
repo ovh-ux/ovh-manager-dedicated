@@ -1,4 +1,4 @@
-angular.module('Billing.controllers').controller('Billing.controllers.FidelityCreditOrder', ($scope, $rootScope, $translate, BillingFidelity, FIDELITY_EVENT) => {
+angular.module('Billing.controllers').controller('Billing.controllers.FidelityCreditOrder', ($scope, $translate, atInternet, BillingFidelity, FIDELITY_EVENT) => {
   $scope.creditOrder = {
     amount: 1000,
     account: null,
@@ -67,6 +67,12 @@ angular.module('Billing.controllers').controller('Billing.controllers.FidelityCr
       t1: $scope.creditOrder.BC.orderId,
     }));
     window.open($scope.creditOrder.BC.url, '_blank');
+
+    atInternet.trackClick({
+      name: 'validation_credit_loyalty_account',
+      type: 'action',
+      chapter1: 'loyalty_account',
+    });
   };
 
   $scope.checkAmount = function () {

@@ -1,12 +1,16 @@
 angular.module('Billing').controller('BillingMainHistoryCtrl', class BillingMainHistoryCtrl {
-  constructor($q, $state, $translate, $uibModal, Alerter, constants, currentUser, exportCsv,
-    OvhApiMe, paymentMethodHelper) {
+  constructor(
+    $q, $state, $translate, $uibModal,
+    Alerter, atInternet, constants, currentUser, exportCsv,
+    OvhApiMe, paymentMethodHelper,
+  ) {
     // Injections
     this.$q = $q;
     this.$state = $state;
     this.$translate = $translate;
     this.$uibModal = $uibModal;
     this.Alerter = Alerter;
+    this.atInternet = atInternet;
     this.constants = constants;
     this.currentUser = currentUser; // from app route resolve
     this.exportCsv = exportCsv;
@@ -79,6 +83,15 @@ angular.module('Billing').controller('BillingMainHistoryCtrl', class BillingMain
 
       return _.set(bill, 'value.debt', _.get(debt, 'value', null));
     }));
+  }
+
+  trackInvoiceOpening() {
+    this.atInternet.trackClick({
+      name: 'open_invoices',
+      type: 'action',
+      chapter1: 'billing',
+      chapter2: 'invoices',
+    });
   }
 
   /* ===============================
@@ -182,6 +195,13 @@ angular.module('Billing').controller('BillingMainHistoryCtrl', class BillingMain
       })
       .finally(() => {
         this.loading.export = false;
+        this.atInternet.trackClick({
+          name: 'export_csv',
+          type: 'action',
+          chapter1: 'billing',
+          chapter2: 'invoices',
+          chapter3: 'export',
+        });
       });
   }
 
