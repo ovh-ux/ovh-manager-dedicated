@@ -1,3 +1,13 @@
+<a name="10.4.9"></a>
+## [10.4.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.4.8...v10.4.9) (2018-11-06)
+
+
+### Bug Fixes
+
+* **dedicated server:** fix ssh list display ([#760](https://github.com/ovh-ux/ovh-manager-dedicated/issues/760)) ([280df06](https://github.com/ovh-ux/ovh-manager-dedicated/commit/280df06))
+
+
+
 <a name="10.4.8"></a>
 ## [10.4.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.4.7...v10.4.8) (2018-10-30)
 
