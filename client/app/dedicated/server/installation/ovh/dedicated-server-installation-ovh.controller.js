@@ -1742,7 +1742,7 @@ angular
                 $scope.loader.loading = true;
                 setGabarit();
             } else if ($scope.installation.hardwareRaid.raid) {
-                $scope.installation.options.gabaritNameSave = `tmp-mgr-hardwareRaid-${moment()}`;
+                $scope.installation.options.gabaritNameSave = `tmp-mgr-hardwareRaid-${moment().unix()}`;
                 setGabarit();
             } else {
                 startInstall();
