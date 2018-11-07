@@ -1,3 +1,13 @@
+<a name="10.4.10"></a>
+## [10.4.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.4.9...v10.4.10) (2018-11-07)
+
+
+### Bug Fixes
+
+* **dedicated.server:** installation template error ([1f81819](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1f81819))
+
+
+
 <a name="10.4.9"></a>
 ## [10.4.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.4.8...v10.4.9) (2018-11-06)
 
