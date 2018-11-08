@@ -15,6 +15,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
   '$window',
   '$timeout',
   'Alerter',
+  'atInternet',
   'AUTORENEW_EVENT',
   'constants',
   'Billing.URLS',
@@ -27,7 +28,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
   'SUBSIDIARIES_WITH_RECENT_AUTORENEW',
 
   function ($rootScope, $scope, $location, $filter, $q, $http, $window, $timeout,
-    Alerter, AUTORENEW_EVENT, constants, billingUrls, BILLING_BASE_URL, AutoRenew,
+    Alerter, atInternet, AUTORENEW_EVENT, constants, billingUrls, BILLING_BASE_URL, AutoRenew,
     PaymentInformation, renewHelper, User, $translate, SUBSIDIARIES_WITH_RECENT_AUTORENEW) {
     /**
      * Parse exchange name and determine it's type based on name prefix. Defaults on hosted type.
@@ -630,6 +631,8 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
       $scope.$broadcast('paginationServerSide.loadPage', 1, 'serviceTable');
     };
 
+    $scope.trackCSVExport = () => trackCSVExport();
+
     /**
          * HELPER FUNCTIONS
          */
@@ -679,6 +682,15 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
         both: false,
         hasOnlyForcedRenew: false,
       };
+    }
+
+    function trackCSVExport() {
+      atInternet.trackClick({
+        name: 'export_csv',
+        type: 'action',
+        chapter1: 'services',
+        chapter2: 'export',
+      });
     }
 
     /**

@@ -65,15 +65,18 @@
             <oui-action-menu-item data-text="{{:: 'table_download_html' | translate }}"
                                   data-href="{{ $row.htmlUrl || $row.url }}"
                                   data-ng-if="($row.url || $row.htmlUrl) && $ctrl.shouldDisplayDepositsLinks()"
-                                  data-external>
+                                  data-external
+                                  data-ng-click="$ctrl.trackPaymentDetailOpening()">
             </oui-action-menu-item>
             <oui-action-menu-item data-text="{{:: 'table_download_pdf' | translate }}"
                                   data-href="{{ :: $row.pdfUrl }}"
                                   data-ng-if="$row.pdfUrl && $ctrl.shouldDisplayDepositsLinks()"
-                                  data-external>
+                                  data-external
+                                  data-ng-click="$ctrl.trackPaymentDetailOpening()">
             </oui-action-menu-item>
             <oui-action-menu-item data-text="{{:: 'payments_details_link' | translate }}"
-                                  data-href="{{ $ctrl.depositDetailsHref($row) }}">
+                                  data-href="{{ $ctrl.depositDetailsHref($row) }}"
+                                  data-ng-click="$ctrl.trackPaymentDetailOpening()">
             </oui-action-menu-item>
         </oui-action-menu>
     </oui-datagrid>

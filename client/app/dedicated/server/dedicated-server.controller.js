@@ -191,9 +191,9 @@ angular.module('App').controller('ServerCtrl', (NO_AUTORENEW_COUNTRIES, WEATHERM
         $scope.loaders.autoRenew = false;
       });
 
-    loadServer();
-    loadMonitoring();
-    getTaskInProgress();
+    loadServer()
+      .then(() => loadMonitoring())
+      .then(() => getTaskInProgress());
   }
 
   function loadServer() {
@@ -207,7 +207,7 @@ angular.module('App').controller('ServerCtrl', (NO_AUTORENEW_COUNTRIES, WEATHERM
       $scope.urlRenew = url;
     });
 
-    $q
+    return $q
       .allSettled([
         Server.getSelected($stateParams.productId),
         Server.getServiceInfos($stateParams.productId),
@@ -248,7 +248,7 @@ angular.module('App').controller('ServerCtrl', (NO_AUTORENEW_COUNTRIES, WEATHERM
   }
 
   function loadMonitoring() {
-    $q
+    return $q
       .all([
         Server.getModels(),
         Server.getAllServiceMonitoring($stateParams.productId),
@@ -279,24 +279,27 @@ angular.module('App').controller('ServerCtrl', (NO_AUTORENEW_COUNTRIES, WEATHERM
   });
 
   function getTaskInProgress() {
-    Server.getTaskInProgress($stateParams.productId, 'hardReboot').then((taskTab) => {
-      if (taskTab.length > 0) {
-        $scope.$broadcast('dedicated.informations.reboot', taskTab[0]);
-      }
-    });
-    Server.getTaskInProgress($stateParams.productId, 'resetIPMI').then((taskTab) => {
-      // Do not call broadcast dedicated.ipmi.resetinterfaces
-      if (taskTab.length > 0) {
-        initIpmiRestart(taskTab[0]);
-      }
-    });
-    Server.getTaskInProgress($stateParams.productId, 'reinstallServer').then((taskTab) => {
-      if (taskTab.length > 0) {
-        $scope.$broadcast('dedicated.informations.reinstall', taskTab[0]);
-      } else {
-        checkInstallationProgress();
-      }
-    });
+    return $q.all({
+      hardRebootTasks: Server.getTaskInProgress($stateParams.productId, 'hardReboot'),
+      resetIPMITasks: Server.getTaskInProgress($stateParams.productId, 'resetIPMI'),
+      reinstallServerTasks: Server.getTaskInProgress($stateParams.productId, 'reinstallServer'),
+    })
+      .then(({ hardRebootTasks, resetIPMITasks, reinstallServerTasks }) => {
+        if (_.isArray(hardRebootTasks) && !_.isEmpty(hardRebootTasks)) {
+          $scope.$broadcast('dedicated.informations.reboot', hardRebootTasks[0]);
+        }
+
+        // Do not call broadcast dedicated.ipmi.resetinterfaces
+        if (_.isArray(resetIPMITasks) && !_.isEmpty(resetIPMITasks)) {
+          initIpmiRestart(resetIPMITasks[0]);
+        }
+
+        if (_.isArray(reinstallServerTasks) && !_.isEmpty(reinstallServerTasks)) {
+          $scope.$broadcast('dedicated.informations.reinstall', reinstallServerTasks[0]);
+        } else if (!_.has(reinstallServerTasks, 'messages')) {
+          checkInstallationProgress();
+        }
+      });
   }
 
   // Server Restart

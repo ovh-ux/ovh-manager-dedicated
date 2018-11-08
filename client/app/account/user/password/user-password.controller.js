@@ -1,9 +1,10 @@
 angular.module('UserAccount').controller('UserAccount.controllers.doubleAuth.password', [
   '$scope',
   '$translate',
-  'UserAccount.services.Infos',
   'Alerter',
-  function ($scope, $translate, UseraccountInfos, Alerter) {
+  'atInternet',
+  'UserAccount.services.Infos',
+  function ($scope, $translate, Alerter, atInternet, UseraccountInfos) {
     $scope.loaders = {
       loading: false,
     };
@@ -40,6 +41,14 @@ angular.module('UserAccount').controller('UserAccount.controllers.doubleAuth.pas
         .finally(() => {
           $scope.loaders.loading = false;
           $scope.resetAction();
+
+          atInternet.trackClick({
+            name: 'validation_password_edit',
+            type: 'action',
+            chapter1: 'account',
+            chapter2: 'security',
+            chapter3: 'edit',
+          });
         });
     };
 

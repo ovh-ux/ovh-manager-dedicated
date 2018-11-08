@@ -1,11 +1,13 @@
 angular.module('UserAccount')
   .controller('UserAccount.controllers.contactCtrl', class AccountUserContactsController {
-    constructor($location, $q, $scope, AccountCreationURLS, Alerter, OvhApiMe) {
+    constructor($location, $q, $scope, $state, AccountCreationURLS, Alerter, atInternet, OvhApiMe) {
       this.$location = $location;
       this.$q = $q;
       this.$scope = $scope;
+      this.$state = $state;
       this.AccountCreationURLS = AccountCreationURLS;
       this.Alerter = Alerter;
+      this.atInternet = atInternet;
       this.OvhApiMe = OvhApiMe;
     }
 
@@ -34,5 +36,15 @@ angular.module('UserAccount')
       const newNicUrl = this.AccountCreationURLS[languageSpecificSubs]
                               || this.AccountCreationURLS[subs];
       return newNicUrl;
+    }
+
+    trackAccountCreation() {
+      const chapter2 = _.includes(this.$state.current.name, 'services') ? 'services' : 'requests';
+      this.atInternet.trackClick({
+        name: 'create_new_account',
+        type: 'action',
+        chapter1: 'contacts',
+        chapter2,
+      });
     }
   });

@@ -151,13 +151,15 @@
                     </td>
                     <td data-ng-bind="agreement.date | date:'short'"></td>
                     <td>
-                        <a target="_blank"
+                        <a class="oui-link"
+                           target="_blank"
                            rel="noopener"
                            data-ng-href="{{agreement.pdfUrl}}"
-                           title="{{ 'user_agreements_download_pdf_title' | translate:{ t0: agreement.name } }}">
-                            <span class="fa fa-download"
-                                  aria-hidden="true">
-                            </span>
+                           data-track-on="click"
+                           data-track-type="action"
+                           data-track-name="contracts::download::download_contracts">
+                            <span class="sr-only" data-translate="user_agreements_download_pdf_title" data-translate-values="{ t0: agreement.name }"></span>
+                            <span class="fa fa-download" aria-hidden="true"></span>
                         </a>
                     </td>
                 </tr>

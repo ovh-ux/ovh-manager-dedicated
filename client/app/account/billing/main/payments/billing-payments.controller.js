@@ -1,4 +1,4 @@
-angular.module('Billing').controller('Billing.PaymentsCtrl', function ($filter, $q, $scope, $state, $translate, constants, featureAvailability, OvhApiMe) {
+angular.module('Billing').controller('Billing.PaymentsCtrl', function ($filter, $q, $state, $translate, atInternet, constants, featureAvailability, OvhApiMe) {
   this.loadPayments = ($config) => {
     let request = OvhApiMe.Deposit().v7().query().sort($config.sort.property, $config.sort.dir > 0 ? 'ASC' : 'DESC');
 
@@ -74,6 +74,15 @@ angular.module('Billing').controller('Billing.PaymentsCtrl', function ($filter, 
   this.displayActionsCol = () => constants.target !== 'US';
 
   this.depositDetailsHref = ({ depositId }) => $state.href('app.account.billing.main.payments.details', { id: depositId });
+
+  this.trackPaymentDetailOpening = () => {
+    atInternet.trackClick({
+      name: 'open_invoices',
+      type: 'action',
+      chapter1: 'billing',
+      chapter2: 'monitored_payments',
+    });
+  };
 
   this.$onInit = () => {
     this.payments = [];

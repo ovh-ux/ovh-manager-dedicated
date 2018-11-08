@@ -40,7 +40,10 @@
                                        class="oui-switch__checkbox"
                                        data-ng-model="advancedCtrl.developmentMode.enabled"
                                        data-ng-change="advancedCtrl.updateDevelopmentMode()"
-                                       data-ng-disabled="advancedCtrl.isLoadingDeveloperMode">
+                                       data-ng-disabled="advancedCtrl.isLoadingDeveloperMode"
+                                       data-track-on="click"
+                                       data-track-type="action"
+                                       data-track-name="account::advanced_settings::edit::developer_mode">
                                 <span class="oui-switch__slider" aria-hidden="true"></span>
                             </label>
                         </div>

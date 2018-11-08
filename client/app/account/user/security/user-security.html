@@ -56,7 +56,10 @@
                                 <button type="button"
                                         class="oui-button oui-button_primary float-right no-margin"
                                         data-ng-click="setAction('password/user-password')"
-                                        data-translate="user_account_edit">
+                                        data-track-name="account::security::edit::password_edit"
+                                        data-track-on="click"
+                                        data-track-type="action">
+                                    <span data-translate="user_account_edit"></span>
                                 </button>
                             </div>
                         </div>
@@ -89,7 +92,10 @@
                                     <button type="button"
                                             class="oui-button oui-button_primary float-right"
                                             data-ng-click="setAction('security/2fa/user-security-2fa')"
-                                            data-translate="user_account_security_double_auth_action_activate">
+                                            data-track-on="click"
+                                            data-track-name="account::security::authentication::double_authentication"
+                                            data-track-type="action">
+                                        <span data-translate="user_account_security_double_auth_action_activate"></span>
                                     </button>
                                 </div>
 
@@ -565,8 +571,11 @@
                                         <div class="form-group">
                                             <div class="col-md-offset-2 col-md-4">
                                                 <button type="submit"
-                                                        class="btn btn-default"
-                                                        data-translate="user_account_OK">
+                                                        class="oui-button oui-button_secondary"
+                                                        data-track-name="account::security::edit::validation_IP_restriction_edit"
+                                                        data-track-on="click"
+                                                        data-track-type="action">
+                                                    <span data-translate="user_account_OK"></span>
                                                 </button>
                                             </div>
                                         </div>
@@ -710,7 +719,10 @@
                                     <button type="button"
                                             class="oui-button oui-button_secondary"
                                             data-ng-click="setAction('ip/restriction/add/user-ip-restriction-add')"
-                                            data-translate="user_ipRestrictions_add">
+                                            data-track-name="account::security::IP::add_IP_restriction"
+                                            data-track-on="click"
+                                            data-track-type="action">
+                                        <span data-translate="user_ipRestrictions_add"></span>
                                     </button>
                                 </div>
                             </div>
