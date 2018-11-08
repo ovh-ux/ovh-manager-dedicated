@@ -205,7 +205,7 @@
    <translation id="dedicatedCloud_datacenter_go_web_interface" qtlid="433099">Interfaz web</translation>
    <translation id="dedicatedCloud_datacenter_go_certified_web_interface" qtlid="433112">Interfaz web certificada</translation>
    <translation id="dedicatedCloud_datacenter_go_vscope" qtlid="147785">Ir a vScope</translation>
-   <translation id="dedicatedCloud_datacenter_delete" qtlid="49430">Suprimir el datacenter</translation>
+   <translation id="dedicatedCloud_datacenter_delete" qtlid="49430">Eliminar el datacenter</translation>
    <translation id="dedicatedCloud_datacenter_delete_confirmation" qtlid="433125">¿Seguro que quiere eliminar el datacenter {0}?</translation>
    <translation id="dedicatedCloud_datacenter_delete_success" qtlid="433138">El datacenter {0} va a eliminarse en unos momentos.</translation>
    <translation id="dedicatedCloud_datacenter_delete_error" qtlid="433151">Se ha producido un error al eliminar el datacenter {0}.</translation>
@@ -670,7 +670,7 @@
    <translation id="dedicatedCloud_vm_encryption_add_kms_creating" qtlid="506546">Creación del nuevo servidor KMS</translation>
    <translation id="dedicatedCloud_vm_encryption_add_kms_creation_canceled" qtlid="506559">Creación del servidor KMS anulada</translation>
    <translation id="dedicatedCloud_vm_encryption_add_kms_configuration_intro_1" qtlid="506572">Ya puede configurar el servidor KMS a través del cliente vSphere.</translation>
-   <translation id="dedicatedCloud_vm_encryption_add_kms_configuration_intro_2" qtlid="506585">Una vez configurado el servidor, la puesta en marcha se realizará automáticamente. Puede seguir el progreso desde esta ventana. La detección puede tardar hasta un minuto.</translation>
+   <translation id="dedicatedCloud_vm_encryption_add_kms_configuration_intro_2" qtlid="506585">Una vez configurado el servidor, la puesta en marcha se realizará automáticamente y podrá seguir el progreso desde esta ventana. La detección puede tardar hasta un minuto.</translation>
    <translation id="dedicatedCloud_vm_encryption_add_kms_configuration_intro_3" qtlid="506598">Para más información, consulte nuestra documentación.</translation>
    <translation id="dedicatedCloud_vm_encryption_kms_added" qtlid="506611">El servidor KMS se ha añadido.</translation>
    <translation id="dedicatedCloud_vm_encryption_kms_add_error" qtlid="506624">Se ha producido un error al añadir el servidor: {{error}}</translation>
@@ -678,10 +678,10 @@
 <!-- Delete KMS -->
    <translation id="dedicatedCloud_vm_encryption_delete_kms" qtlid="506637">Eliminar este servidor KMS</translation>
    <translation id="dedicatedCloud_vm_encryption_delete_kms_title" qtlid="506650">Eliminar el servidor KMS</translation>
-   <translation id="dedicatedCloud_vm_encryption_delete_kms_deleting" qtlid="507146">Suppression du serveur KMS</translation>
+   <translation id="dedicatedCloud_vm_encryption_delete_kms_deleting" qtlid="507146">Eliminación del servidor KMS</translation>
    <translation id="dedicatedCloud_vm_encryption_delete_kms_question" qtlid="506676">¿Seguro que quiere eliminar el servidor KMS {{kmsToDelete}}?</translation>
    <translation id="dedicatedCloud_vm_encryption_kms_deleted" qtlid="506689">El servidor KMS se ha eliminado.</translation>
-   <translation id="dedicatedCloud_vm_encryption_kms_delete_error" qtlid="506702">Se ha producido un error durante la supresión: {{error}}</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_delete_error" qtlid="506702">Se ha producido un error durante la eliminación: {{error}}</translation>
 
 <!-- Edit KMS -->
    <translation id="dedicatedCloud_vm_encryption_edit_kms" qtlid="506715">Modificar este servidor KMS</translation>
