@@ -1,3 +1,27 @@
+<a name="10.5.0"></a>
+# [10.5.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.4.10...v10.5.0) (2018-11-08)
+
+
+### Bug Fixes
+
+* **dedicated.installation:** fix progress for expired servers ([bd616ba](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bd616ba))
+* **dedicated.server:** delete service ([8ca7370](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8ca7370))
+* **deps:** update manager-webpack-config to v2.4.6 ([d7e714c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d7e714c))
+* **deps:** update translate-async-loader to v1.0.5 ([2d8ff63](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2d8ff63))
+* **deps:** upgrade ovh-angular-otrs to v6.3.0 ([c9e54d1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c9e54d1))
+* **deps:** upgrade ovh-module-exchange to v9.0.5 ([62fbb0f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/62fbb0f))
+* **deps:** upgrade ovh-ui-kit to v2.22.0 ([d94883e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d94883e))
+* **i18n:** retrieve translations ([16f51b0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/16f51b0))
+* **i18n:** submit translations ([c65c575](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c65c575))
+
+
+### Features
+
+* **account.tracking:** add tracking in account section ([94742ef](https://github.com/ovh-ux/ovh-manager-dedicated/commit/94742ef))
+* **navbar:** add tracking for assistance and notifications ([77a4134](https://github.com/ovh-ux/ovh-manager-dedicated/commit/77a4134))
+
+
+
 <a name="10.4.10"></a>
 ## [10.4.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.4.9...v10.4.10) (2018-11-07)
 
