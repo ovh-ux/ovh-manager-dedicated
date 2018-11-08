@@ -6,11 +6,12 @@
             </div>
             <div class="col-sm-3 text-right mt-4">
                 <a data-ng-if="!contactCtrl.loaders.init"
-                   class="btn btn-default"
+                   class="oui-button oui-button_secondary"
                    target="_blank"
                    rel="noopener"
                    data-ng-href="{{ ::contactCtrl.getAccountCreationUrl() }}"
-                   data-translate="useraccount_contacts_create_new_account">
+                   data-ng-click="contactCtrl.trackAccountCreation()">
+                    <span data-translate="useraccount_contacts_create_new_account"></span>
                 </a>
             </div>
         </div>

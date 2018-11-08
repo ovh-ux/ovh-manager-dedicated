@@ -4,13 +4,14 @@ angular.module('UserAccount').controller('UserAccount.controllers.doubleAuth.2fa
   '$scope',
   '$translate',
   'Alerter',
+  'atInternet',
   'UserAccount.services.doubleAuth.backupCode',
   'UserAccount.services.doubleAuth.sms',
   'UserAccount.services.doubleAuth.totp',
   'UserAccount.services.doubleAuth.u2f',
   'UserAccount.services.Infos',
   function ($q, $rootScope, $scope, $translate,
-    Alerter, DoubleAuthBackupCodeService, DoubleAuthSmsService,
+    Alerter, atInternet, DoubleAuthBackupCodeService, DoubleAuthSmsService,
     DoubleAuthTotpService, DoubleAuthU2fService, UserAccountServiceInfos) {
     $scope.step1 = {
       doubleAuthType: null,
@@ -337,6 +338,14 @@ angular.module('UserAccount').controller('UserAccount.controllers.doubleAuth.2fa
       $rootScope.$broadcast('doubleAuthU2F.reload');
       $rootScope.$broadcast('doubleAuthBackupCode.reload');
       $scope.resetAction();
+
+      atInternet.trackClick({
+        name: 'validation_double_authentication',
+        type: 'action',
+        chapter1: 'account',
+        chapter2: 'security',
+        chapter3: 'authentication',
+      });
     };
 
     /**

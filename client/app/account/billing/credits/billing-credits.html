@@ -23,9 +23,12 @@
                        data-ng-model="$ctrl.model.creditCode"
                        autofocus />
                 <button type="submit"
-                        class="btn btn-primary"
-                        data-translate="voucher_credit_code_add_submit"
+                        class="oui-button oui-button_primary"
+                        data-track-on="click"
+                        data-track-type="action"
+                        data-track-name="credit::add_credit"
                         data-ng-disabled="$ctrl.loading.creditCode || !$ctrl.model.creditCode">
+                    <span data-translate="voucher_credit_code_add_submit"></span>
                 </button>
             </div>
         </form>

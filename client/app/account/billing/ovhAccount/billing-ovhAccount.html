@@ -56,41 +56,47 @@
                   data-translate="ovhAccount_no_alert"></span>
         </p>
 
-        <div class="btn-group my-4"
+        <div class="oui-button-group my-4"
              data-ng-if="!ovhAccountsLoading">
-            <button class="btn btn-primary"
+            <button class="oui-button oui-button_primary"
                     type="button"
-                    data-translate="ovhAccount_table_head_crediter"
                     data-ng-disabled="!ovhAccount.choice.canBeCredited"
-                    data-ng-click="setAction('renew', ovhAccount.model, 'ovhaccount')">
+                    data-ng-click="setAction('renew', ovhAccount.model, 'ovhaccount')"
+                    data-track-on="click"
+                    data-track-type="action"
+                    data-track-name="payment_types::payment_types::credit_prepaid_account">
+                <span data-translate="ovhAccount_table_head_crediter"></span>
             </button>
-            <button class="btn btn-default"
+            <button class="oui-button oui-button_secondary"
                     type="button"
-                    data-translate="ovhAccount_retrieve_title"
-                    data-ng-if="user && user.ovhSubsidiary === 'FR'"
-                    data-ng-hide="ovhAccountLoading || !ovhAccount.model.hasOvhAccount"
+                    data-ng-if="user && user.ovhSubsidiary === 'FR' && !(ovhAccountLoading || !ovhAccount.model.hasOvhAccount)"
                     data-ng-click="setAction('retrieve', ovhAccount.model, 'ovhaccount')"
-                    data-ng-disabled="ovhAccount.model.balance.value <= 0">
+                    data-ng-disabled="ovhAccount.model.balance.value <= 0"
+                    data-track-on="click"
+                    data-track-type="action"
+                    data-track-name="payment_types::prepaid_account::transfer_bank_account">
+                <span data-translate="ovhAccount_retrieve_title"></span>
             </button>
-            <button class="btn btn-default"
+            <button class="oui-button oui-button_secondary"
                     type="button"
                     data-ng-if="!ovhAccountLoading && ovhAccount.model.hasOvhAccount"
-                    data-ng-click="setAction('createAlert', ovhAccount.model.alertThreshold, 'ovhaccount')">
-                <i class="fa fa-bell-o"
-                   aria-hidden="true">
-                </i>
+                    data-ng-click="setAction('createAlert', ovhAccount.model.alertThreshold, 'ovhaccount')"
+                    data-track-on="click"
+                    data-track-type="action"
+                    data-track-name="payment_types::prepaid_account::set_alert">
+                <span class="fa fa-bell-o" aria-hidden="true"></span>
                 <span data-translate="ovhAccount_create_alert"></span>
             </button>
         </div>
 
         <div class="mt-4"
              data-ng-if="ovhAccount.choice">
-            <button class="btn btn-default"
+            <button class="oui-button oui-button_secondary"
                     type="button"
                     data-export-csv="getDatasToExport()"
                     data-export-csv-separator=";"
                     data-ng-disabled="historyLoading || csvLoading"
-                    >
+                    data-ng-click="trackCSVExport()">
                     <span data-translate="billing_export_csv"></span>
             </button>
             <div class="float-right text-right"

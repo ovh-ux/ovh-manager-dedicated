@@ -2,10 +2,11 @@ angular.module('UserAccount').controller('UserAccount.controllers.ipRestrictions
   '$rootScope',
   '$scope',
   '$translate',
-  'UserAccount.services.ipRestrictions',
   'Alerter',
+  'atInternet',
+  'UserAccount.services.ipRestrictions',
   'UserValidator',
-  function ($rootScope, $scope, $translate, Service, Alerter, Validator) {
+  function ($rootScope, $scope, $translate, Alerter, atInternet, Service, Validator) {
     $scope.isValid = false;
     $scope.restriction = {
       ip: null,
@@ -32,10 +33,19 @@ angular.module('UserAccount').controller('UserAccount.controllers.ipRestrictions
         () => {
           $rootScope.$broadcast('ipRestriction.reload');
         },
-        (data) => {
+      )
+        .catch((data) => {
           Alerter.alertFromSWS($translate.instant('user_ipRestrictions_add_error', { t0: $scope.restriction.ip }), data.data, 'ipRestrictionAlert');
-        },
-      );
+        })
+        .finally(() => {
+          atInternet.trackClick({
+            name: 'validation_add_IP_restriction',
+            type: 'action',
+            chapter1: 'account',
+            chapter2: 'security',
+            chapter3: 'IP',
+          });
+        });
     };
   },
 ]);

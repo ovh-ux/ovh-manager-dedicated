@@ -1,10 +1,11 @@
 angular.module('UserAccount').controller('UserAccount.controllers.ssh.dedicated.add', [
   '$scope',
-  '$translate',
-  'UserAccount.services.ssh',
   '$timeout',
+  '$translate',
   'Alerter',
-  function ($scope, $translate, UseraccountSsh, $timeout, Alerter) {
+  'atInternet',
+  'UserAccount.services.ssh',
+  function ($scope, $timeout, $translate, Alerter, atInternet, UseraccountSsh) {
     const fullSshList = $scope.currentActionData || [];
 
     $scope.model = {};
@@ -15,10 +16,19 @@ angular.module('UserAccount').controller('UserAccount.controllers.ssh.dedicated.
         () => {
           Alerter.success($translate.instant('user_ssh_add_success_message'));
         },
-        (failure) => {
+      )
+        .catch((failure) => {
           Alerter.alertFromSWS($translate.instant('user_ssh_add_error_message'), failure.data);
-        },
-      );
+        })
+        .finally(() => {
+          atInternet.trackClick({
+            name: 'validation_add_ssh_key',
+            type: 'action',
+            chapter1: 'account',
+            chapter2: 'ssh',
+            chapter3: 'dedicated',
+          });
+        });
       $scope.resetAction();
     };
 

@@ -15,46 +15,45 @@
             <p>
                 <strong data-translate="user_ssh_key_explain_1"></strong>
             </p>
-            <p data-ng-bind-html="'user_ssh_key_explain_2' | translate:{ t0: ctrlSsh.guides.sshCreate }"></p>
+            <p>
+                <span data-translate="user_ssh_key_explain_2"></span>
+                <span data-translate="user_ssh_key_explain_2_guide"
+                      data-translate-values="{ t0: ctrlSsh.guides.sshCreate }"
+                      data-translate-compile></span>
+            </p>
             <p data-ng-if="ctrlSsh.user.ovhSubsidiary !== 'US'"
-               data-ng-bind-html="'user_ssh_key_explain_3' | translate:{ t0: ctrlSsh.guides.sshAdd, t1: ctrlSsh.guides.sshChange }">
+               data-translate="user_ssh_key_explain_3"
+               data-translate-values="{ t0: ctrlSsh.guides.sshAdd, t1: ctrlSsh.guides.sshChange }"
+               data-translate-compile>
             </p>
         </div>
 
         <!-- SSH ADD BTN MENU -->
-        <div class="mb-2"
-             data-uib-dropdown>
-            <button id="btnAddSshKey"
-                    type="button"
-                    class="btn btn-primary"
-                    data-uib-dropdown-toggle
+        <oui-dropdown class="mb-2">
+            <button class="oui-button oui-button_primary"
+                    data-oui-dropdown-trigger
                     data-ng-disabled="ctrlSsh.sshLoading"
-                    data-ng-class="{'disabled': ctrlSsh.sshLoading}">
+                    id="btnAddSshKey">
                 <span data-translate="user_ssh_add_title_button"></span>
-                <span class="fa fa-chevron-down"
-                      aria-hidden="true">
-                </span>
+                <span class="oui-icon oui-icon-chevron-down ml-2" aria-hidden="true"></span>
             </button>
-            <ul class="dropdown-menu"
-                role="menu"
-                aria-labelledby="btnAddSshKey"
-                data-uib-dropdown-menu>
-                <li>
-                    <button type="button"
-                            class="btn btn-link"
-                            data-translate="user_ssh_category_dedicated"
-                            data-ng-click="setAction('ssh/add/dedicated/user-ssh-add-dedicated', ctrlSsh.sshKeyList)">
-                    </button>
-                </li>
-                <li>
-                    <button type="button"
-                            class="btn btn-link"
-                            data-translate="user_ssh_category_cloud"
-                            data-ng-click="setAction('ssh/add/cloud/user-ssh-add-cloud')">
-                    </button>
-                </li>
-            </ul>
-        </div>
+            <oui-dropdown-content>
+                <button class="oui-dropdown-option"
+                        data-ng-click="setAction('ssh/add/dedicated/user-ssh-add-dedicated', ctrlSsh.sshKeyList)"
+                        data-track-name="account::ssh::add::dedicated::add_ssh_key"
+                        data-track-on="click"
+                        data-track-type="action">
+                    <span data-translate="user_ssh_category_dedicated"></span>
+                </button>
+                <button class="oui-dropdown-option"
+                        data-ng-click="setAction('ssh/add/cloud/user-ssh-add-cloud')"
+                        data-track-name="account::ssh::add::cloud::add_ssh_key"
+                        data-track-on="click"
+                        data-track-type="action">
+                    <span data-translate="user_ssh_category_cloud"></span>
+                </button>
+            </oui-dropdown-content>
+        </oui-dropdown>
 
         <!-- SSH LIST -->
         <div>
