@@ -39,7 +39,7 @@ angular.module('App').controller('ServerTerminateCtrl', class ServerTerminateCtr
           });
         break;
       case 'deleteAtExpiration':
-        _.set(serviceInfosRenew, 'renew.automatic', false);
+        _.set(serviceInfosRenew, 'renew.automatic', true);
         _.set(serviceInfosRenew, 'renew.deleteAtExpiration', true);
 
         promise = this.Server.updateServiceInfos(this.$stateParams.productId, serviceInfosRenew)
