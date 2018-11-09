@@ -1,3 +1,14 @@
+<a name="10.5.1"></a>
+## [10.5.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.5.0...v10.5.1) (2018-11-09)
+
+
+### Bug Fixes
+
+* **exchange:** upgrade ovh-module-exchange to v9.0.6 ([b6f3133](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b6f3133))
+* **exchange:** upgrade ovh-module-exchange to v9.0.7 ([061fbdb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/061fbdb))
+
+
+
 <a name="10.5.0"></a>
 # [10.5.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.4.10...v10.5.0) (2018-11-08)
 
