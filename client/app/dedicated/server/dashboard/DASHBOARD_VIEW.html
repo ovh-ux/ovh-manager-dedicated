@@ -1,4 +1,6 @@
-<div class="container-fluid mb-5 px-0">
+<div
+    data-ui-view
+    class="container-fluid mb-5 px-0">
 
     <div class="row d-md-flex mb-5">
         <div class="col-md-4">
@@ -236,7 +238,7 @@
                                                 <span data-translate="server_configuration_services_state_links_weathermap"></span>
                                                 <span
                                                     class="oui-icon oui-icon-external_link"
-                                                      aria-hidden="true"></span>
+                                                    aria-hidden="true"></span>
                                                 <span
                                                     class="sr-only"
                                                     data-translate="core_new_window"></span>
@@ -250,7 +252,7 @@
                                                 <span data-translate="server_configuration_services_state_links_vms"></span>
                                                 <span
                                                     class="oui-icon oui-icon-external_link"
-                                                      aria-hidden="true"></span>
+                                                    aria-hidden="true"></span>
                                                 <span
                                                     class="sr-only"
                                                     data-translate="core_new_window"></span>
@@ -264,7 +266,7 @@
                                                 <span data-translate="server_configuration_services_state_links_travaux"></span>
                                                 <span
                                                     class="oui-icon oui-icon-external_link"
-                                                      aria-hidden="true"></span>
+                                                    aria-hidden="true"></span>
                                                 <span
                                                     class="sr-only"
                                                     data-translate="core_new_window"></span>
@@ -275,18 +277,26 @@
                             </dd>
                         </dl>
                     </div>
-                    <div class="oui-tile__item"
-                         data-ng-if="worldPart !== 'US'">
-                        <div class="oui-tile__definition">
-                            <div data-working-status
-                                 data-modal-id="'worksDedicatedServers'"
-                                 data-product-type="'dedicated_server'"
-                                 data-works-details="works"
-                                 data-show-affiliated="true"
-                                 data-show-only-active="true"
-                                 data-tr="tr">
-                            </div>
-                        </div>
+                    <div
+                        class="oui-tile__item"
+                        data-ng-if="worldPart !== 'US'">
+                        <dl class="oui-tile__definition">
+                            <dt
+                                class="oui-tile__term"
+                                data-translate="dedicated_server_dashboard_ovhTasks_header"></dt>
+                            <dd class="oui-tile__description">
+                                <div class="oui-list">
+                                    <ul class="oui-list__items">
+                                        <li class="oui-list__item">
+                                            <a
+                                                class="oui-list__link oui-button_link"
+                                                data-ui-sref="app.dedicated.server.ovh-tasks"
+                                                data-translate="dedicated_server_dashboard_ovhTasks_description"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </dd>
+                        </dl>
                     </div>
                 </div>
             </div>
