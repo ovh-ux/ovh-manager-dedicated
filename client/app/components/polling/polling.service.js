@@ -276,6 +276,7 @@ angular.module('services').service('Polling', [
 
         case 'CUSTOMER_ERROR':
         case 'OVH_ERROR':
+        case 'OVHERROR':
         case 'ERROR':
         case 'BLOCKED':
           angular.forEach(watchedTasksPromise[idtask(taskId)], (value) => {
