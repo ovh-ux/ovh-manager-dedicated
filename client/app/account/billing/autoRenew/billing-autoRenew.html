@@ -100,8 +100,8 @@
             <button type="button"
                     class="oui-button oui-button_secondary"
                     data-ng-click="manualRenew()"
-                    data-ng-disabled="selected.hasOnlyForcedRenew"
-                    data-translate="manualrenew_service_update_button_caption">
+                    data-ng-disabled="!selected.hasManualRenew"
+                    data-translate="manualrenew_service_renew_button">
             </button>
         </div>
 

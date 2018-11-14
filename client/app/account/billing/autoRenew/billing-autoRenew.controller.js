@@ -195,7 +195,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
       checkClicked(service) {
         $scope.selected = {
           both: false,
-          hasOnlyForcedRenew: false,
+          hasManualRenew: false,
         };
 
         const isSelected = _.some($scope.services.selected, {

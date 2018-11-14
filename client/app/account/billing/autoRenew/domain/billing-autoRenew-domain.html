@@ -39,15 +39,15 @@
             data-disabled="service.subProducts.domain.renew.forced"
             data-href="{{:: getRenewUrl() + service.subProducts.domain.serviceId }}"
             data-external="true"
-            data-text="{{:: 'autorenew_service_renew_button' | translate }}"
-            data-aria-label="{{:: 'autorenew_service_renew_button_title' | translate: { t0: service.subProducts.domain.serviceId } }}"></oui-action-menu-item>
+            data-text="{{:: 'manualrenew_service_renew_button' | translate }}"
+            data-aria-label="{{:: 'manualrenew_service_renew_button_title' | translate: { t0: service.subProducts.domain.serviceId } }}"></oui-action-menu-item>
 
         <oui-action-menu-item
             data-ng-if="isInDebt(service.subProducts.domain)"
             data-disabled="service.subProducts.domain.renew.forced"
             data-on-click="gotoRenew(service.subProducts.domain)"
-            data-text="{{:: 'autorenew_service_renew_button' | translate }}"
-            data-aria-label="{{:: 'autorenew_service_renew_button_title' | translate: { t0: service.subProducts.domain.serviceId } }}"></oui-action-menu-item>
+            data-text="{{:: (hasAutoRenew(service.subProducts.domain) ? 'autorenew_service_renew_button' : 'manualrenew_service_renew_button') | translate }}"
+            data-aria-label="{{:: (hasAutoRenew(service.subProducts.domain) ? 'autorenew_service_renew_button_title' : 'manualrenew_service_renew_button_title') | translate: { t0: service.subProducts.domain.serviceId } }}"></oui-action-menu-item>
 
         <oui-action-menu-item
             data-ng-if="!service.subProducts.domain.renew.deleteAtExpiration"
