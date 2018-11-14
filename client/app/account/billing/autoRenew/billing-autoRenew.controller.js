@@ -694,7 +694,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
     }
 
     function isInDebt(service) {
-      return _.includes(DEBT_STATUS, service.status);
+      return DEBT_STATUS.includes(service.status);
     }
 
     /**
