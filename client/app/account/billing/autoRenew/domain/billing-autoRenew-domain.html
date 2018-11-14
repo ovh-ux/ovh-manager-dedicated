@@ -3,8 +3,8 @@
 <td data-translate="{{ 'autorenew_service_type_'+ service.subProducts.domain.serviceType }}"></td>
 
 <td>
-    <span data-ng-bind="::service.subProducts.domain.serviceId" data-ng-hide="service.subProducts.domain.serviceType === 'EXCHANGE'"></span>
-    <span data-ng-bind="::service.subProducts.domain.alternativeId" data-ng-show="service.subProducts.domain.serviceType === 'EXCHANGE'"></span>
+    <span data-ng-bind="::service.subProducts.domain.serviceId" data-ng-if="service.subProducts.domain.serviceType !== 'EXCHANGE'"></span>
+    <span data-ng-bind="::service.subProducts.domain.alternativeId" data-ng-if="service.subProducts.domain.serviceType === 'EXCHANGE'"></span>
 </td>
 
 <td>
