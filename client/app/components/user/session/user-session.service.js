@@ -260,7 +260,7 @@ class SessionService {
       title: this.$translate.instant('navigation_left_ip'),
       state: 'app.ip',
     },
-    this.featureAvailability.hasExchange() && {
+    (this.constants.target === 'CA') && {
       name: 'microsoft',
       title: this.$translate.instant('navigation_left_microsoft'),
       subLinks: this.getMicrosoftMenu(products.microsoft),

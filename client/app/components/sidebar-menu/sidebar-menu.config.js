@@ -104,7 +104,7 @@ angular.module('App')
 
       let microsoftItem;
       let exchangesItem;
-      if (featureAvailability.hasExchange()) {
+      if (constants.target === 'CA') {
         microsoftItem = SidebarMenu.addMenuItem({
           title: $translate.instant('navigation_left_microsoft'),
           category: 'microsoft',
@@ -238,7 +238,7 @@ angular.module('App')
             .value();
 
           /* eslint-disable no-nested-ternary */
-          if (featureAvailability.hasExchange()) {
+          if (constants.target === 'CA') {
             _.chain(products.exchanges)
               .sortBy(elt => angular.lowercase(elt.name))
               .forEach((exchange) => {

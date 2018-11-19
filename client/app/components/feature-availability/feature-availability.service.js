@@ -7,10 +7,6 @@ class FeatureAvailability {
     return this.deny('CA', 'US');
   }
 
-  hasExchange() {
-    return this.deny('EU', 'US');
-  }
-
   showState() {
     return this.allow('US');
   }
