@@ -1,4 +1,13 @@
-angular.module('Module.ip.controllers').controller('IpOrganisationAddCtrl', ($scope, $translate, Ip, IpOrganisation, Alerter, $q, User, featureAvailability) => {
+angular.module('Module.ip.controllers').controller('IpOrganisationAddCtrl', (
+  $q,
+  $scope,
+  $translate,
+  Alerter,
+  Ip,
+  ipFeatureAvailability,
+  IpOrganisation,
+  User,
+) => {
   $scope.alert = 'ip_organisation_addedit_alerter';
   $scope.load = {
     loading: false,
@@ -76,7 +85,7 @@ angular.module('Module.ip.controllers').controller('IpOrganisationAddCtrl', ($sc
   };
 
   $scope.showState = function () {
-    return featureAvailability.showState();
+    return ipFeatureAvailability.showState();
   };
 
   $scope.addOrganisation = function () {
@@ -110,7 +119,7 @@ angular.module('Module.ip.controllers').controller('IpOrganisationAddCtrl', ($sc
   };
 });
 
-angular.module('Module.ip.controllers').controller('IpOrganisationAddFormCtrl', ($scope, featureAvailability) => {
+angular.module('Module.ip.controllers').controller('IpOrganisationAddFormCtrl', ($scope, ipFeatureAvailability) => {
   $scope.organisationForm = null;
 
   $scope.$watch('organisationForm.$valid', () => {
@@ -118,7 +127,7 @@ angular.module('Module.ip.controllers').controller('IpOrganisationAddFormCtrl', 
   });
 
   $scope.showState = function () {
-    return featureAvailability.showState();
+    return ipFeatureAvailability.showState();
   };
 
   $scope.getClassLabel = function (label, noDirty) {

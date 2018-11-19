@@ -1,6 +1,17 @@
 angular.module('App')
-  .run(($q, SidebarMenu, Products, User, $translate, atInternet,
-    DedicatedCloud, Nas, CdnDomain, featureAvailability, constants) => {
+  .run((
+    $q,
+    $translate,
+    atInternet,
+    CdnDomain,
+    constants,
+    DedicatedCloud,
+    ipFeatureAvailability,
+    Nas,
+    Products,
+    SidebarMenu,
+    User,
+  ) => {
     function buildSidebarActions() {
       return $q.all({
         dedicatedOrder: User.getUrlOf('dedicatedOrder'),
@@ -43,7 +54,7 @@ angular.module('App')
           });
         }
 
-        if (featureAvailability.allowIPFailoverAgoraOrder()) {
+        if (ipFeatureAvailability.allowIPFailoverAgoraOrder()) {
           actionsMenuOptions.push({
             id: 'order-additional-ip',
             title: $translate.instant('navigation_left_additional_ip'),

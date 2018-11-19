@@ -7,15 +7,7 @@ class FeatureAvailability {
     return this.deny('CA', 'US');
   }
 
-  showState() {
-    return this.allow('US');
-  }
-
   hasDedicatedServerBackupStorage() {
-    return this.deny('US');
-  }
-
-  hasIpLoadBalancing() {
     return this.deny('US');
   }
 
@@ -53,18 +45,6 @@ class FeatureAvailability {
 
   allowDedicatedServerFirewallCiscoAsa() {
     return this.deny('US');
-  }
-
-  allowIPFailoverImport() {
-    return this.deny('US');
-  }
-
-  allowIPFailoverOrder() {
-    return this.deny('US');
-  }
-
-  allowIPFailoverAgoraOrder() {
-    return this.allow('US');
   }
 
   agreeTosAndPpOnManagerLoad() {
