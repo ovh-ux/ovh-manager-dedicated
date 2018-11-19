@@ -138,7 +138,7 @@ angular.module('App')
         icon: 'ovh-font ovh-font-ip',
       });
 
-      if (featureAvailability.hasVrackAccessibleFromSidebar()) {
+      if (constants.target === 'US') {
         SidebarMenu.addMenuItem({
           name: 'vrack',
           title: $translate.instant('navigation_left_vrack'),

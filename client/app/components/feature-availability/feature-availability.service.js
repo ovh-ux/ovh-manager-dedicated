@@ -7,10 +7,6 @@ class FeatureAvailability {
     return this.deny('CA', 'US');
   }
 
-  hasVrack() {
-    return this.allow('EU', 'CA');
-  }
-
   hasVps() {
     return this.deny('US');
   }
@@ -133,10 +129,6 @@ class FeatureAvailability {
 
   showPDFAndHTMLDepositLinks() {
     return this.deny('US');
-  }
-
-  hasVrackAccessibleFromSidebar() {
-    return this.allow('US');
   }
 
   allowVrackOrder() {
