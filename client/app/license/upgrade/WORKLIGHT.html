@@ -7,7 +7,7 @@
     <select class="form-control"
             id="optionVersion"
             name="optionVersion"
-            data-ng-options="optionVersion.value as (('license_designation_' + license.type + '_version_' + optionVersion.value) | translateAlt: optionVersion.value) for optionVersion in getOptionVersions()"
+            data-ng-options="optionVersion.value as (('license_designation_' + license.type + '_version_' + optionVersion.value) | ducTranslateAlt: optionVersion.value) for optionVersion in getOptionVersions()"
             data-ng-model="selected.options['WORKLIGHT'].version.value">
         <option value=""
                 data-ng-disabled="true"
