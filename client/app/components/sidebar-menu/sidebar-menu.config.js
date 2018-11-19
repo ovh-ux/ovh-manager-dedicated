@@ -33,7 +33,7 @@ angular.module('App')
           target: '_blank',
         });
 
-        if (featureAvailability.allowVrackOrder()) {
+        if (constants.target === 'US') {
           actionsMenuOptions.push({
             id: 'order-vrack',
             title: $translate.instant('navigation_left_vrack'),
