@@ -51,7 +51,7 @@
                                data-ng-model="ctrl.model.duration"
                                data-ng-value="duration" />
                         <span data-ng-bind="duration.durations | duration:'longDate'"></span>
-                        <span data-ng-bind-html="duration.details.prices | price:ctrl.user.value.ovhSubsidiary"></span>
+                        <span data-ng-bind-html="duration.details.prices | ducPrice:ctrl.user.value.ovhSubsidiary"></span>
                     </label>
                 </div>
             </form>

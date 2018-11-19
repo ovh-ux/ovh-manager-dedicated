@@ -1,4 +1,6 @@
-angular.module('filters').filter('price', ($translate) => {
+import angular from 'angular';
+
+export default /* @ngInject */ ($translate) => {
   const frenchTouch = {
     TTCOnly: false,
     HTOnly: false,
@@ -59,11 +61,11 @@ angular.module('filters').filter('price', ($translate) => {
     return `<b class="red">${$translate.instant('price_free')}</b>`;
   }
 
-  return function (price, ovhSubsidiary) {
+  return function priceFilter(price, ovhSubsidiary) {
     if (price !== undefined) {
       return format(price, ovhSubsidiary);
     }
 
     return '<span/>';
   };
-});
+};

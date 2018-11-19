@@ -176,7 +176,7 @@
                                data-ng-model="selected.duration"
                                data-ng-change="selectDuration()"
                                data-ng-disabled="loaders.prices || durations.available.length == 1" />
-                        {{ duration | duration:'longDate' }}&nbsp;:&nbsp;<span data-ng-bind-html="durations.details[duration].prices | price:user.ovhSubsidiary"></span>
+                        {{ duration | duration:'longDate' }}&nbsp;:&nbsp;<span data-ng-bind-html="durations.details[duration].prices | ducPrice:user.ovhSubsidiary"></span>
                         <oui-spinner data-ng-hide="durations.details[duration]"
                                     data-size="s"
                                     data-inline="true">
