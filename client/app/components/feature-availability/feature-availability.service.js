@@ -7,10 +7,6 @@ class FeatureAvailability {
     return this.deny('CA', 'US');
   }
 
-  hasPCI() {
-    return this.deny('US');
-  }
-
   hasVrack() {
     return this.allow('EU', 'CA');
   }
