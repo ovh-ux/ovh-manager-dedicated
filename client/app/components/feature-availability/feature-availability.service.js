@@ -51,14 +51,6 @@ class FeatureAvailability {
     return this.allow('US');
   }
 
-  allowLicenseAgoraOrder() {
-    return this.allow('US');
-  }
-
-  allowLicenseTypeAgoraOrder(licenseType) {
-    return this.allowLicenseAgoraOrder() && _.includes(['CLOUDLINUX', 'CPANEL', 'DIRECTADMIN', 'SQLSERVER', 'WINDOWS', 'WORKLIGHT', 'PLESK', 'VIRTUOZZO'], licenseType);
-  }
-
   showPDFAndHTMLDepositLinks() {
     return this.deny('US');
   }
