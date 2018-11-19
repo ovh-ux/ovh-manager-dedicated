@@ -564,14 +564,6 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
         && !service.renew.manualPayment && userIsBillingOrAdmin(service, user);
     };
 
-    $scope.canDisableAutorenew = function (service) {
-      return service.renew
-        && !service.renew.deleteAtExpiration
-        && !service.renew.manualPayment
-        && service.renew.automatic
-        && !service.renew.forced;
-    };
-
     $scope.canEnableAutorenew = function (service) {
       return service.renewalType !== 'oneShot' && service.renew && (service.renew.manualPayment || !service.renew.automatic);
     };
@@ -620,8 +612,8 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
     $scope.trackCSVExport = () => trackCSVExport();
     $scope.isInDebt = service => isInDebt(service);
     $scope.hasAutoRenew = service => renewHelper.serviceHasAutomaticRenew(service);
-
     $scope.resiliateExchangeService = service => resiliateExchangeService(service);
+    $scope.canDisableAutorenew = service => canDisableAutorenew(service);
 
     /**
          * HELPER FUNCTIONS
@@ -696,6 +688,16 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
       const [organization, exchangeName] = serviceId.split('/service/');
       return AutoRenew.getExchangeService(organization, exchangeName)
         .then(({ offer }) => $window.location.assign(getExchangeUrl(organization, exchangeName, offer, 'resiliate')));
+    }
+
+    function canDisableAutorenew(service) {
+      return service.renewalType !== 'automaticForcedProduct'
+            && service.renew
+            && !service.renew.deleteAtExpiration
+            && !service.renew.manualPayment
+            && service.renew.automatic
+            && !service.renew.forced
+            && !['EXCHANGE', 'EMAIL_DOMAIN'].includes(service.serviceType);
     }
 
     /**
