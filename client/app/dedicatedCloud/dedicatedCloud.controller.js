@@ -8,13 +8,27 @@ angular.module('App').controller('DedicatedCloudCtrl', [
   '$translate',
   '$uibModal',
   'DedicatedCloud',
+  'DucNotification',
   'featureAvailability',
-  'Module.services.notification',
   'OvhApiDedicatedCloud',
   'step',
   'User',
-  function ($log, $q, $scope, $state, $stateParams, $timeout, $translate, $uibModal,
-    DedicatedCloud, featureAvailability, Notification, OvhApiDedicatedCloud, step, User) {
+  function (
+    $log,
+    $q,
+    $scope,
+    $state,
+    $stateParams,
+    $timeout,
+    $translate,
+    $uibModal,
+    DedicatedCloud,
+    DucNotification,
+    featureAvailability,
+    OvhApiDedicatedCloud,
+    step,
+    User,
+  ) {
     $scope.HDS_READY_NOTIFICATION = 'HDS_READY_NOTIFICATION';
 
     $scope.alerts = { dashboard: 'dedicatedCloud_alert' };
@@ -40,7 +54,7 @@ angular.module('App').controller('DedicatedCloudCtrl', [
     $scope.dedicatedCloud = {};
 
     function showNotificationIfRequired(notification) {
-      Notification.checkIfStopNotification(notification, $stateParams.productId)
+      DucNotification.checkIfStopNotification(notification, $stateParams.productId)
         .then((stopNotification) => {
           $scope.notifications[notification] = !stopNotification;
         })
@@ -236,7 +250,7 @@ angular.module('App').controller('DedicatedCloudCtrl', [
 
     $scope.stopNotification = function (notificationType) {
       $scope.notifications[notificationType] = false;
-      Notification.stopNotification($scope.HDS_READY_NOTIFICATION, $stateParams.productId);
+      DucNotification.stopNotification($scope.HDS_READY_NOTIFICATION, $stateParams.productId);
     };
 
     $scope.showHdsReadyNotificationIfRequired = function (notification) {
