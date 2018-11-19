@@ -42,26 +42,24 @@ angular.module('App').controller('ConfigurationCtrl', class ConfigurationCtrl {
   getSections() {
     const deferred = this.$q.defer();
     this.hasError = false;
-    if (this.featureAvailability.hasPCC()) {
-      // special case: do not display private cloud guide tab
-      // for US customer if he has no dedicated cloud product
-      if (this.constants.target === 'US') {
-        this.DedicatedCloud.getDescription()
-          .then((ids) => {
-            if (ids && ids.length > 0) {
-              // TODO: uncomment when all guides are available on ovhcloud.com.
-              // this.$scope.guide.sections.push("pcc");
-              deferred.resolve(this.$scope.guide.sections);
-            }
-          })
-          .catch((err) => {
-            this.hasError = true;
-            deferred.reject(err);
-          });
-      } else {
-        this.$scope.guide.sections.push('pcc');
-        deferred.resolve(this.$scope.guide.sections);
-      }
+    // special case: do not display private cloud guide tab
+    // for US customer if he has no dedicated cloud product
+    if (this.constants.target === 'US') {
+      this.DedicatedCloud.getDescription()
+        .then((ids) => {
+          if (ids && ids.length > 0) {
+            // TODO: uncomment when all guides are available on ovhcloud.com.
+            // this.$scope.guide.sections.push("pcc");
+            deferred.resolve(this.$scope.guide.sections);
+          }
+        })
+        .catch((err) => {
+          this.hasError = true;
+          deferred.reject(err);
+        });
+    } else {
+      this.$scope.guide.sections.push('pcc');
+      deferred.resolve(this.$scope.guide.sections);
     }
     return deferred.promise;
   }
