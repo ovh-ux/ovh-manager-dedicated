@@ -16,7 +16,7 @@ angular.module('App')
           href: results.cloudProjectOrder,
         });
 
-        if (featureAvailability.hasNas()) {
+        if (constants.target === 'EU') {
           actionsMenuOptions.push({
             id: 'order-nas',
             title: 'Nas',
@@ -91,7 +91,7 @@ angular.module('App')
 
 
       let networksMenuItem;
-      if (featureAvailability.hasNas() || featureAvailability.hasCdn()) {
+      if (constants.target === 'EU' || featureAvailability.hasCdn()) {
         networksMenuItem = SidebarMenu.addMenuItem({
           name: 'networks',
           title: $translate.instant('navigation_left_nas_and_cdn'),
@@ -219,7 +219,7 @@ angular.module('App')
                     });
                   }),
                 }, networksMenuItem);
-              } else if (featureAvailability.hasNas()) {
+              } else if (constants.target === 'EU') {
                 pending.push(Nas.getNas().then(({ results }) => {
                   _.forEach(results, (result) => {
                     SidebarMenu.addMenuItem({
