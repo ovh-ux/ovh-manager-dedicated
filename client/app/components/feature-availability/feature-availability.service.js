@@ -7,24 +7,12 @@ class FeatureAvailability {
     return this.deny('CA', 'US');
   }
 
-  hasVps() {
-    return this.deny('US');
-  }
-
   hasExchange() {
     return this.deny('EU', 'US');
   }
 
-  showAutoRenew() {
-    return this.allow('EU');
-  }
-
   showState() {
     return this.allow('US');
-  }
-
-  showFeedback() {
-    return this.deny('US');
   }
 
   hasDedicatedServerBackupStorage() {
@@ -47,28 +35,8 @@ class FeatureAvailability {
     return this.deny('CA', 'US');
   }
 
-  hasCreditCode() {
-    return this.deny('CA', 'US');
-  }
-
   hasSerialOverLan() {
     return this.deny('US');
-  }
-
-  allowDedicatedServerHardwareReplacement() {
-    return this.deny('US');
-  }
-
-  allowDedicatedServerChangeOwner() {
-    return this.deny('CA', 'US');
-  }
-
-  allowDedicatedServerRenew() {
-    return this.deny('EU', 'US');
-  }
-
-  allowDedicatedServerRenewByCgi() {
-    return this.allow('CA');
   }
 
   allowDedicatedServerBandwidthOption() {
@@ -121,10 +89,6 @@ class FeatureAvailability {
 
   allowLicenseTypeAgoraOrder(licenseType) {
     return this.allowLicenseAgoraOrder() && _.includes(['CLOUDLINUX', 'CPANEL', 'DIRECTADMIN', 'SQLSERVER', 'WINDOWS', 'WORKLIGHT', 'PLESK', 'VIRTUOZZO'], licenseType);
-  }
-
-  hasDeveloperMode() {
-    return this.deny('US');
   }
 
   showPDFAndHTMLDepositLinks() {
