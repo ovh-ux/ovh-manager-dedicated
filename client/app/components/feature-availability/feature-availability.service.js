@@ -23,14 +23,6 @@ class FeatureAvailability {
     return this.allow('US');
   }
 
-  hasTwoFactorAuthentication() {
-    return this.deny('US');
-  }
-
-  hasTwoFactorAuthenticationBySms() {
-    return this.deny('CA', 'US');
-  }
-
   hasSerialOverLan() {
     return this.deny('US');
   }
