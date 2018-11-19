@@ -1,7 +1,11 @@
 class UserContractsAcceptModalCtrl {
-  constructor($scope, UserContractService, $translate) {
+  constructor(
+    $scope,
+    $translate,
+    DucUserContractService,
+  ) {
     this.$scope = $scope;
-    this.UserContractService = UserContractService;
+    this.DucUserContractService = DucUserContractService;
     this.$translate = $translate;
 
     this.model = {
@@ -14,7 +18,7 @@ class UserContractsAcceptModalCtrl {
       loading: false,
       load: () => {
         this.contracts.loading = true;
-        this.UserContractService.getAgreementsToValidate(contract => _.includes(['tos', 'pp'], contract.code))
+        this.DucUserContractService.getAgreementsToValidate(contract => _.includes(['tos', 'pp'], contract.code))
           .then((contracts) => {
             this.contracts.data = contracts;
           })
@@ -33,7 +37,7 @@ class UserContractsAcceptModalCtrl {
   agree() {
     this.saving = true;
     this.hasSubmitError = false;
-    this.UserContractService.acceptAgreements(this.contracts.data)
+    this.DucUserContractService.acceptAgreements(this.contracts.data)
       .then(() => $('#user-contracts-currentAction').modal('hide'))
       .catch(() => {
         this.model.accepted.value = false;
