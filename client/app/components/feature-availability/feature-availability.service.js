@@ -7,10 +7,6 @@ class FeatureAvailability {
     return this.deny('CA', 'US');
   }
 
-  hasCdn() {
-    return this.deny('CA', 'US');
-  }
-
   hasPCC() {
     return this.allow('CA', 'EU', 'US');
   }

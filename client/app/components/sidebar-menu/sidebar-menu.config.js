@@ -91,7 +91,7 @@ angular.module('App')
 
 
       let networksMenuItem;
-      if (constants.target === 'EU' || featureAvailability.hasCdn()) {
+      if (constants.target === 'EU') {
         networksMenuItem = SidebarMenu.addMenuItem({
           name: 'networks',
           title: $translate.instant('navigation_left_nas_and_cdn'),
@@ -197,7 +197,7 @@ angular.module('App')
             .filter(network => network.type === 'CDN' || network.type === 'NAS' || network.type === 'NASHA')
             .sortBy(elt => angular.lowercase(elt.name))
             .forEach((network) => {
-              if (network.type === 'CDN' && featureAvailability.hasCdn()) {
+              if (network.type === 'CDN' && constants.target === 'EU') {
                 const sidebarItem = SidebarMenu.addMenuItem({
                   title: network.name,
                   state: 'app.networks.cdn.dedicated',
