@@ -128,12 +128,14 @@
             data-text="{{:: 'autorenew_service_HOSTING_PRIVATE_DATABASE_terminate' | translate }}"></oui-action-menu-item>
 
         <oui-action-menu-item
-            data-ng-if="canDisableAutorenew(service) && service.serviceType !== 'EMAIL_DOMAIN'"
+            data-ng-if="canDisableAutorenew(service)"
             data-on-click="disableAutorenew(service)"
             data-text="{{:: 'autorenew_service_disable_button' | translate }}"></oui-action-menu-item>
 
         <oui-action-menu-item
-            data-ng-if="canEnableAutorenew(service) && service.serviceType !== 'EMAIL_DOMAIN'"
+            data-ng-if="canEnableAutorenew(service)
+                        && service.serviceType !== 'EMAIL_DOMAIN'
+                        && service.renewalType !== 'automaticForcedProduct'"
             data-on-click="enableAutorenew(service)"
             data-text="{{:: 'autorenew_service_enable_button' | translate }}"></oui-action-menu-item>
     </oui-action-menu>
