@@ -5,5 +5,8 @@ angular.module('App').config(($stateProvider) => {
     controller: 'ConfigurationCtrl',
     controllerAs: '$ctrl',
     translations: ['../common'],
+    atInternet: {
+      rename: 'Header-Dédié',
+    },
   });
 });
