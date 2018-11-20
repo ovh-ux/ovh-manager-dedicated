@@ -30,12 +30,12 @@
 
 <td>
     <button type="button"
-            class="btn btn-default"
+            class="oui-button oui-button_secondary oui-button_icon-only oui-button_small-width"
             data-ng-if="service.serviceType === 'HOSTING_DOMAIN'"
             data-ng-click="expandHostingDomain[service.domain] = !expandHostingDomain[service.domain]"
             data-ng-attr-title="{{ 'autorenew_service_expand_sub_services' | translate }}" >
-        <i class="fa fa-chevron-right" data-ng-if="!expandHostingDomain[service.domain]" aria-hidden="true"></i>
-        <i class="fa fa-chevron-down" data-ng-if="expandHostingDomain[service.domain]" aria-hidden="true"></i>
+        <span class="oui-icon oui-icon-chevron-right" data-ng-if="!expandHostingDomain[service.domain]" aria-hidden="true"></span>
+        <span class="oui-icon oui-icon-chevron-down" data-ng-if="expandHostingDomain[service.domain]" aria-hidden="true"></span>
     </button>
 
     <oui-action-menu
@@ -61,7 +61,9 @@
         data-align="end">
 
         <oui-action-menu-item
-            data-ng-if="service.serviceType !== 'EMAIL_DOMAIN' && service.renewalType !== 'oneShot'"
+            data-ng-if="service.serviceType !== 'EMAIL_DOMAIN'
+                        && service.serviceType !== 'EXCHANGE'
+                        && service.renewalType !== 'oneShot'"
             data-disabled="editionDisabled(service)"
             data-on-click="updateServices(service)"
             data-text="{{:: 'autorenew_service_update_button_caption' | translate }}"></oui-action-menu-item>
@@ -72,34 +74,46 @@
             data-text="{{:: 'autorenew_service_canceldelete_button' | translate }}"></oui-action-menu-item>
 
         <oui-action-menu-item
-            data-ng-if="service.serviceType !== 'EXCHANGE' && service.serviceType !== 'EMAIL_DOMAIN' && service.status !== 'PENDING_DEBT' && service.renewalType !== 'oneShot'"
+            data-ng-if="service.serviceType !== 'EXCHANGE'
+                        && service.serviceType !== 'EMAIL_DOMAIN'
+                        && !isInDebt(service)
+                        && service.renewalType !== 'oneShot'
+                        && !hasAutoRenew(service)"
             data-disabled="service.renew.forced"
             data-href="{{:: getRenewUrl() + service.serviceId }}"
             data-external="true"
             data-on-click="gotoRenew(service)"
-            data-text="{{:: 'autorenew_service_renew_button' | translate }}"
-            data-aria-label="{{:: 'autorenew_service_renew_button_title' | translate: { t0: service.serviceId } }}"></oui-action-menu-item>
+            data-text="{{:: 'manualrenew_service_renew_button' | translate }}"
+            data-aria-label="{{:: 'manualrenew_service_renew_button_title' | translate: { t0: service.serviceId } }}"></oui-action-menu-item>
 
         <oui-action-menu-item
-            data-ng-if="service.serviceType !== 'EXCHANGE' && service.serviceType !== 'EMAIL_DOMAIN' && service.status === 'PENDING_DEBT'"
+            data-ng-if="service.serviceType !== 'EXCHANGE' && service.serviceType !== 'EMAIL_DOMAIN' && isInDebt(service)"
             data-disabled="service.renew.forced"
             data-on-click="gotoRenew(service)"
-            data-text="{{:: 'autorenew_service_renew_button' | translate }}"
-            data-aria-label="{{:: 'autorenew_service_renew_button_title' | translate: { t0: service.serviceId } }}"></oui-action-menu-item>
+            data-text="{{:: (hasAutoRenew(service) ? 'autorenew_service_renew_button' : 'manualrenew_service_renew_button') | translate }}"
+            data-aria-label="{{:: (hasAutoRenew(service) ? 'autorenew_service_renew_button_title' : 'manualrenew_service_renew_button_title') | translate: { t0: service.serviceId } }}"></oui-action-menu-item>
 
         <oui-action-menu-item
-            data-ng-if="service.serviceType === 'EXCHANGE' && service.serviceType !== 'EMAIL_DOMAIN'"
+            data-ng-if="service.serviceType === 'EXCHANGE'"
             data-on-click="gotoExchangeRenew(service)"
-            data-text="{{:: 'autorenew_service_renew_button' | translate }}"></oui-action-menu-item>
+            data-text="{{:: 'autorenew_service_exchange_billing_button' | translate }}"></oui-action-menu-item>
 
         <oui-action-menu-item
-            data-ng-if="!service.renew.deleteAtExpiration && service.serviceType !== 'EMAIL_DOMAIN'"
+            data-ng-if="!service.renew.deleteAtExpiration
+                        && service.serviceType !== 'EMAIL_DOMAIN'
+                        && service.serviceType !== 'EXCHANGE'"
             data-disabled="!canResiliate(service, user)"
             data-on-click="resiliateService(service)"
             data-text="{{:: 'autorenew_service_resiliate_button' | translate }}"></oui-action-menu-item>
 
         <oui-action-menu-item
-            data-ng-if="service.serviceType === 'HOSTING_WEB' && service.serviceType !== 'EMAIL_DOMAIN'"
+            data-ng-if="!service.renew.deleteAtExpiration && service.serviceType === 'EXCHANGE'"
+            data-disabled="!canResiliate(service, user)"
+            data-on-click="resiliateExchangeService(service)"
+            data-text="{{:: 'autorenew_service_resiliate_button' | translate }}"></oui-action-menu-item>
+
+        <oui-action-menu-item
+            data-ng-if="service.serviceType === 'HOSTING_WEB'"
             data-on-click="terminateHostingWeb(service)"
             data-text="{{:: 'hosting_dashboard_service_guide' | translate }}"></oui-action-menu-item>
 
@@ -114,12 +128,14 @@
             data-text="{{:: 'autorenew_service_HOSTING_PRIVATE_DATABASE_terminate' | translate }}"></oui-action-menu-item>
 
         <oui-action-menu-item
-            data-ng-if="canDisableAutorenew(service) && service.serviceType !== 'EMAIL_DOMAIN'"
+            data-ng-if="canDisableAutorenew(service)"
             data-on-click="disableAutorenew(service)"
             data-text="{{:: 'autorenew_service_disable_button' | translate }}"></oui-action-menu-item>
 
         <oui-action-menu-item
-            data-ng-if="canEnableAutorenew(service) && service.serviceType !== 'EMAIL_DOMAIN'"
+            data-ng-if="canEnableAutorenew(service)
+                        && service.serviceType !== 'EMAIL_DOMAIN'
+                        && service.renewalType !== 'automaticForcedProduct'"
             data-on-click="enableAutorenew(service)"
             data-text="{{:: 'autorenew_service_enable_button' | translate }}"></oui-action-menu-item>
     </oui-action-menu>

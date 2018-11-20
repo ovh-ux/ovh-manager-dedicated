@@ -6,30 +6,31 @@
  * Autorenew services configuration
  */
 angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew', [
+  '$filter',
+  '$http',
+  '$location',
+  '$q',
   '$rootScope',
   '$scope',
-  '$location',
-  '$filter',
-  '$q',
-  '$http',
-  '$window',
   '$timeout',
+  '$translate',
+  '$window',
   'Alerter',
   'atInternet',
-  'AUTORENEW_EVENT',
-  'constants',
   'Billing.URLS',
-  'BILLING_BASE_URL',
   'BillingAutoRenew',
   'BillingPaymentInformation',
   'billingRenewHelper',
+  'constants',
   'User',
-  '$translate',
+  'AUTORENEW_EVENT',
+  'BILLING_BASE_URL',
+  'DEBT_STATUS',
   'SUBSIDIARIES_WITH_RECENT_AUTORENEW',
 
-  function ($rootScope, $scope, $location, $filter, $q, $http, $window, $timeout,
-    Alerter, atInternet, AUTORENEW_EVENT, constants, billingUrls, BILLING_BASE_URL, AutoRenew,
-    PaymentInformation, renewHelper, User, $translate, SUBSIDIARIES_WITH_RECENT_AUTORENEW) {
+  function ($filter, $http, $location, $q, $rootScope, $scope, $timeout, $translate, $window,
+    Alerter, atInternet, billingUrls, AutoRenew, PaymentInformation, renewHelper, constants, User,
+    AUTORENEW_EVENT, BILLING_BASE_URL, DEBT_STATUS, SUBSIDIARIES_WITH_RECENT_AUTORENEW) {
     /**
      * Parse exchange name and determine it's type based on name prefix. Defaults on hosted type.
      * exchange-xxx-xxx = type provider
@@ -194,7 +195,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
       checkClicked(service) {
         $scope.selected = {
           both: false,
-          hasOnlyForcedRenew: false,
+          hasManualRenew: false,
         };
 
         const isSelected = _.some($scope.services.selected, {
@@ -220,8 +221,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
           $scope.selected.both = true;
         }
 
-        $scope.selected.hasOnlyForcedRenew = $scope
-          .selectedServicesWithoutForcedRenew().length === 0;
+        $scope.selected.hasManualRenew = !_.isEmpty(manualServices);
 
         return true;
       },
@@ -244,31 +244,19 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
         return;
       }
 
-      let exchangeAbsoluteUrl;
-      if (constants.target === 'EU' && constants.UNIVERS !== 'web') {
-        // if other univers (cloud, dedicated, etc) redirect towards web univers
-        exchangeAbsoluteUrl = constants.MANAGER_URLS.web;
-      } else {
-        exchangeAbsoluteUrl = $window.location.href.replace($window.location.hash, '#/');
-      }
-
-      $http
-        .get(['/sws/exchange', organization, exchangeName].join('/'), {
-          serviceType: 'aapi',
-        })
-        .then((exchange) => {
-          const newUrl = [exchangeAbsoluteUrl, 'configuration/', getExchangeType(exchange.data.offer), '/', organization, '/', exchangeName, '?action=billing'].join('');
-
+      AutoRenew.getExchangeService(service)
+        .then(({ offer }) => {
           $scope.$emit(AUTORENEW_EVENT.PAY, {
             serviceType: service.serviceType,
             serviceId: `${organization}/${exchangeName}`,
           });
-          $window.location.assign(newUrl);
+
+          $window.location.assign(getExchangeUrl(organization, exchangeName, offer, 'billing'));
         });
     };
 
     $scope.gotoRenew = function (service) {
-      if (service.status === 'PENDING_DEBT') {
+      if (isInDebt(service)) {
         $scope.setAction('debtBeforePaying', _.clone(service, true), 'autoRenew');
       } else {
         $scope.$emit(AUTORENEW_EVENT.PAY, {
@@ -343,7 +331,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
             }
 
             if (!service.renew) {
-              _.set(service, 'renew', { automatic: false, force: false });
+              _.set(service, 'renew', { automatic: false, forced: false });
             }
 
             _.set(service, 'renewLabel', renewHelper.getRenewKey(service));
@@ -519,12 +507,10 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
       return renewUrl.replace('{serviceName}', '');
     };
 
-    $scope.selectedServicesWithoutForcedRenew = function () {
-      return _.filter($scope.services.selected, service => !service.renew.forced);
-    };
 
     $scope.manualRenew = function () {
-      const services = $scope.selectedServicesWithoutForcedRenew();
+      const services = $scope.services.selected
+        .filter(service => !renewHelper.serviceHasAutomaticRenew(service));
       $scope.$emit(AUTORENEW_EVENT.PAY, services);
 
       const parameters = _.map(services, 'serviceId');
@@ -578,14 +564,6 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
         && !service.renew.manualPayment && userIsBillingOrAdmin(service, user);
     };
 
-    $scope.canDisableAutorenew = function (service) {
-      return service.renew
-        && !service.renew.deleteAtExpiration
-        && !service.renew.manualPayment
-        && service.renew.automatic
-        && !service.renew.forced;
-    };
-
     $scope.canEnableAutorenew = function (service) {
       return service.renewalType !== 'oneShot' && service.renew && (service.renew.manualPayment || !service.renew.automatic);
     };
@@ -632,6 +610,10 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
     };
 
     $scope.trackCSVExport = () => trackCSVExport();
+    $scope.isInDebt = service => isInDebt(service);
+    $scope.hasAutoRenew = service => renewHelper.serviceHasAutomaticRenew(service);
+    $scope.resiliateExchangeService = service => resiliateExchangeService(service);
+    $scope.canDisableAutorenew = service => canDisableAutorenew(service);
 
     /**
          * HELPER FUNCTIONS
@@ -691,6 +673,31 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
         chapter1: 'services',
         chapter2: 'export',
       });
+    }
+
+    function isInDebt(service) {
+      return DEBT_STATUS.includes(service.status);
+    }
+
+    function getExchangeUrl(organization, service, offer, action) {
+      const exchangeAbsoluteUrl = constants.target === 'EU' && constants.UNIVERS !== 'web' ? constants.MANAGER_URLS.web : $window.location.href.replace($window.location.hash, '#/');
+      return `${exchangeAbsoluteUrl}configuration/${getExchangeType(offer)}/${organization}/${service}?action=${action}`;
+    }
+
+    function resiliateExchangeService({ serviceId }) {
+      const [organization, exchangeName] = serviceId.split('/service/');
+      return AutoRenew.getExchangeService(organization, exchangeName)
+        .then(({ offer }) => $window.location.assign(getExchangeUrl(organization, exchangeName, offer, 'resiliate')));
+    }
+
+    function canDisableAutorenew(service) {
+      return service.renewalType !== 'automaticForcedProduct'
+            && service.renew
+            && !service.renew.deleteAtExpiration
+            && !service.renew.manualPayment
+            && service.renew.automatic
+            && !service.renew.forced
+            && !['EXCHANGE', 'EMAIL_DOMAIN'].includes(service.serviceType);
     }
 
     /**

@@ -3,8 +3,8 @@
 <td data-translate="{{ 'autorenew_service_type_'+ service.subProducts.domain.serviceType }}"></td>
 
 <td>
-    <span data-ng-bind="::service.subProducts.domain.serviceId" data-ng-hide="service.subProducts.domain.serviceType === 'EXCHANGE'"></span>
-    <span data-ng-bind="::service.subProducts.domain.alternativeId" data-ng-show="service.subProducts.domain.serviceType === 'EXCHANGE'"></span>
+    <span data-ng-bind="::service.subProducts.domain.serviceId" data-ng-if="service.subProducts.domain.serviceType !== 'EXCHANGE'"></span>
+    <span data-ng-bind="::service.subProducts.domain.alternativeId" data-ng-if="service.subProducts.domain.serviceType === 'EXCHANGE'"></span>
 </td>
 
 <td>
@@ -35,19 +35,19 @@
             data-text="{{:: 'autorenew_service_canceldelete_button' | translate }}"></oui-action-menu-item>
 
         <oui-action-menu-item
-            data-ng-if="service.subProducts.domain.status !== 'PENDING_DEBT'"
+            data-ng-if="!isInDebt(service.subProducts.domain) && !hasAutoRenew(service.subProducts.domain)"
             data-disabled="service.subProducts.domain.renew.forced"
             data-href="{{:: getRenewUrl() + service.subProducts.domain.serviceId }}"
             data-external="true"
-            data-text="{{:: 'autorenew_service_renew_button' | translate }}"
-            data-aria-label="{{:: 'autorenew_service_renew_button_title' | translate: { t0: service.subProducts.domain.serviceId } }}"></oui-action-menu-item>
+            data-text="{{:: 'manualrenew_service_renew_button' | translate }}"
+            data-aria-label="{{:: 'manualrenew_service_renew_button_title' | translate: { t0: service.subProducts.domain.serviceId } }}"></oui-action-menu-item>
 
         <oui-action-menu-item
-            data-ng-if="service.subProducts.domain.status === 'PENDING_DEBT'"
+            data-ng-if="isInDebt(service.subProducts.domain)"
             data-disabled="service.subProducts.domain.renew.forced"
             data-on-click="gotoRenew(service.subProducts.domain)"
-            data-text="{{:: 'autorenew_service_renew_button' | translate }}"
-            data-aria-label="{{:: 'autorenew_service_renew_button_title' | translate: { t0: service.subProducts.domain.serviceId } }}"></oui-action-menu-item>
+            data-text="{{:: (hasAutoRenew(service.subProducts.domain) ? 'autorenew_service_renew_button' : 'manualrenew_service_renew_button') | translate }}"
+            data-aria-label="{{:: (hasAutoRenew(service.subProducts.domain) ? 'autorenew_service_renew_button_title' : 'manualrenew_service_renew_button_title') | translate: { t0: service.subProducts.domain.serviceId } }}"></oui-action-menu-item>
 
         <oui-action-menu-item
             data-ng-if="!service.subProducts.domain.renew.deleteAtExpiration"

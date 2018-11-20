@@ -481,16 +481,16 @@
    <translation id="server_configuration_ftpbackup_add_ip" qtlid="180850">Blocco:</translation>
    <translation id="server_configuration_ftpbackup_add_authorization" qtlid="180863">Autorizza in:</translation>
 
-   <translation id="server_configuration_cloudbackup_delete" qtlid="492502">Supprimer le Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_delete" qtlid="492502">Elimina il Backup Storage</translation>
 
    <translation id="server_configuration_cloudbackup_delete_success" qtlid="184360">Il Backup Storage sarà eliminato entro pochi minuti.</translation>
-   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="492515">Le Backup Storage a bien été supprimé.</translation>
-   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="492528">Une erreur est survenue lors de la suppression du Backup Storage.</translation>
+   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="492515">Le Backup Storage è stato eliminato correttamente.</translation>
+   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="492528">Si è verificato un errore durante l'eliminazione del Backup Storage.</translation>
    <translation id="server_configuration_cloudbackup_delete_question" qtlid="451872">Vuoi davvero disattivare l'opzione Backup Storage?</translation>
 
    <translation id="server_configuration_cloudbackup_inactive" qtlid="451885">Il tuo Backup Storage è disabilitato.</translation>
    <translation id="server_configuration_cloudbackup_new_project" qtlid="16493">Nuovo progetto</translation>
-   <translation id="server_configuration_cloudbackup_load_fail" qtlid="492541">Une erreur est survenue lors du chargement des informations du Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_load_fail" qtlid="492541">Si è verificato un errore durante il caricamento delle informazioni del Backup Storage</translation>
    <translation id="server_configuration_cloudbackup_load_offers_fail" qtlid="451898">Si è verificato un errore durante il caricamento delle offerte Cloud Backup Storage</translation>
    <translation id="server_configuration_cloudbackup_load_projects_fail" qtlid="451911">Si è verificato un errore durante il caricamento dei progetti Cloud</translation>
    <translation id="server_configuration_cloudbackup_load_agreements_fail" qtlid="451924">Si è verificato un errore durante il caricamento dei contratti</translation>
@@ -514,7 +514,7 @@
    <translation id="server_configuration_cloudbackup_summary_documentation_label" qtlid="415740">Guida</translation>
    <translation id="server_configuration_cloudbackup_summary_usage_label" qtlid="109974">Uso</translation>
    <translation id="server_configuration_cloudbackup_summary_title_label_storage" qtlid="452067">Il tuo container Backup Storage</translation>
-   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="492554">Supprimer le Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="492554">Elimina il Backup Storage</translation>
 
    <translation id="server_configuration_cloudbackup_container_storage_guide_description" qtlid="452080">Cerchi uno strumento per effettuare il backup dei tuoi dati? OVH ti consiglia Rclone</translation>
    <translation id="server_configuration_cloudbackup_container_storage_guide_product" qtlid="452093">Rclone</translation>
@@ -638,9 +638,11 @@
    <translation id="server_configuration_impi_navigation" qtlid="257296">Dal tuo browser (SoL)</translation>
    <translation id="server_configuration_impi_navigation_error" qtlid="164818">Si è verificato un errore durante il tentativo di connessione al modulo IPMI con il tuo browser</translation>
    <translation id="server_configuration_impi_navigation_success" qtlid="164831">La connessione al modulo IPMI con il tuo browser è pronta.</translation>
-   <translation id="server_configuration_impi_navigation_go" qtlid="164844">Accedi al pannello</translation>
+   <translation id="server_configuration_impi_navigation_go" qtlid="508936">Accedi alla console (SOL)</translation>
    <translation id="server_configuration_impi_java" qtlid="257309">Da una applet java (KVM)</translation>
    <translation id="server_configuration_impi_java_download" qtlid="164870">Scarica l'applet java</translation>
+   <translation id="server_configuration_impi_kvm_console" qtlid="508949">Dal tuo navigatore (KVM)</translation>
+   <translation id="server_configuration_impi_kvm_url" qtlid="508962">Accedi alla console (KVM)</translation>
    <translation id="server_configuration_impi_java_success" qtlid="164883">La connessione al modulo IPMI tramite l'applet Java è pronta.</translation>
    <translation id="server_configuration_impi_java_error" qtlid="164896">Si è verificato un errore durante il tentativo di connessione al modulo IPMI con un applet Java</translation>
    <translation id="server_configuration_impi_java_new" qtlid="164909">Nuova connessione</translation>
@@ -678,6 +680,13 @@
    <translation id="server_configuration_kvm_new_window" qtlid="222176">Nuova finestra</translation>
    <translation id="server_configuration_kvm_access" qtlid="229281">Accedi al tuo KVM</translation>
    <translation id="server_configuration_kvm_error" qtlid="229294">Si è verificato un errore durante il recupero delle informazioni del KVM.</translation>
+
+   <translation id="server_configuration_tile_kvm_heading" qtlid="508975">KVM a distanza</translation>
+   <translation id="server_configuration_tile_kvm_description" qtlid="508988">Accesso remoto alla tastiera, al mouse e al monitor del server a distanza</translation>
+   <translation id="server_configuration_tile_sol_heading" qtlid="509001">Serie LAN (SOL)</translation>
+   <translation id="server_configuration_tile_sol_description" qtlid="509014">Accesso alla console di serie della tua macchina attraverso una connessione sicura</translation>
+   <translation id="server_configuration_ssh_sol_definition" qtlid="509027">SSH SOL (tramite la tua chiave ssh)</translation>
+   <translation id="server_configuration_ssh_select" qtlid="509040">Seleziona una chiave SSH</translation>
 
    <translation id="server_configuration_installation_successfull" qtlid="172761">L'installazione del server {0} è terminata</translation>
    <translation id="server_configuration_installation_fail_task" qtlid="191252">Si è verificato un errore durante il recupero dello stato dell'installazione in corso del server {0}.</translation>

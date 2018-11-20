@@ -638,9 +638,11 @@
    <translation id="server_configuration_impi_navigation" qtlid="257296">Z poziomu przeglądarki (SoL)</translation>
    <translation id="server_configuration_impi_navigation_error" qtlid="164818">Wystąpił błąd podczas próby połączenia z modułem IPMI z poziomu przeglądarki.</translation>
    <translation id="server_configuration_impi_navigation_success" qtlid="164831">Połączenie z modułem IPMI z poziomu przeglądarki jest gotowe.</translation>
-   <translation id="server_configuration_impi_navigation_go" qtlid="164844">Dostęp do konsoli</translation>
+   <translation id="server_configuration_impi_navigation_go" qtlid="508936">Dostęp do konsoli (SOL)</translation>
    <translation id="server_configuration_impi_java" qtlid="257309">Z poziomu apletu java (KVM)</translation>
    <translation id="server_configuration_impi_java_download" qtlid="164870">Pobierz aplet java</translation>
+   <translation id="server_configuration_impi_kvm_console" qtlid="508949">Za pomocą przeglądarki (KVM)</translation>
+   <translation id="server_configuration_impi_kvm_url" qtlid="508962">Dostęp do konsoli (KVM)</translation>
    <translation id="server_configuration_impi_java_success" qtlid="164883">Połączenie z modułem IPMI z poziomu apletu java jest gotowe.</translation>
    <translation id="server_configuration_impi_java_error" qtlid="164896">Wystąpił błąd podczas próby połączenia z modułem IPMI z poziomu apletu java.</translation>
    <translation id="server_configuration_impi_java_new" qtlid="164909">Nowe połączenie</translation>
@@ -678,6 +680,13 @@
    <translation id="server_configuration_kvm_new_window" qtlid="222176">Nowe okno</translation>
    <translation id="server_configuration_kvm_access" qtlid="229281">Dostęp do usługi KVM</translation>
    <translation id="server_configuration_kvm_error" qtlid="229294">Wystąpił błąd podczas pobierania informacji o usłudze KVM.</translation>
+
+   <translation id="server_configuration_tile_kvm_heading" qtlid="508975">Zdalny KVM</translation>
+   <translation id="server_configuration_tile_kvm_description" qtlid="508988">Dostęp do klawiatury, myszki i monitora Twojego zdalnego serwera</translation>
+   <translation id="server_configuration_tile_sol_heading" qtlid="509001">Serial Over Lan (SOL)</translation>
+   <translation id="server_configuration_tile_sol_description" qtlid="509014">Dostęp do konsoli szeregowej Twojego serwera za pomocą bezpiecznego połączenia</translation>
+   <translation id="server_configuration_ssh_sol_definition" qtlid="509027">SSH SOL (za pomocą Twojego klucza SSH)</translation>
+   <translation id="server_configuration_ssh_select" qtlid="509040">Wybierz klucz SSH</translation>
 
    <translation id="server_configuration_installation_successfull" qtlid="172761">Instalacja serwera {0} została zakończona</translation>
    <translation id="server_configuration_installation_fail_task" qtlid="191252">Wystąpił błąd podczas pobierania statusu instalacji wykonywanej na serwerze {0}.</translation>

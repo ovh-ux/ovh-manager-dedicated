@@ -635,12 +635,14 @@
    <translation id="server_configuration_impi_information2" qtlid="191850">Abriendo una sesión de Remote KVM (acceso remoto al teclado, el ratón y el monitor del servidor) desde la IP {0}<ul><li>Desde un applet Java Web Start</li></ul></translation>
    <translation id="server_configuration_impi_information3" qtlid="191863">Abriendo una sesión de Serial Over LAN (acceso a la consola de serie de la máquina a través de una conexión segura) desde la IP {0}<ul><li>Desde su navegador (https)</li></ul></translation>
    <translation id="server_configuration_impi_start" qtlid="25951">Iniciar</translation>
-   <translation id="server_configuration_impi_navigation" qtlid="257296">Desde el navegador (SoL)</translation>
+   <translation id="server_configuration_impi_navigation" qtlid="257296">Desde el navegador (SOL)</translation>
    <translation id="server_configuration_impi_navigation_error" qtlid="164818">Se ha producido un error al intentar conectar al módulo IPMI con su navegador</translation>
    <translation id="server_configuration_impi_navigation_success" qtlid="164831">La conexión al módulo IPMI con su navegador está lista.</translation>
-   <translation id="server_configuration_impi_navigation_go" qtlid="164844">Acceder a la consola</translation>
+   <translation id="server_configuration_impi_navigation_go" qtlid="508936">Acceder a la consola (SOL)</translation>
    <translation id="server_configuration_impi_java" qtlid="257309">Desde un applet Java (KVM)</translation>
    <translation id="server_configuration_impi_java_download" qtlid="164870">Descargar el applet Java</translation>
+   <translation id="server_configuration_impi_kvm_console" qtlid="508949">Desde su navegador (KVM)</translation>
+   <translation id="server_configuration_impi_kvm_url" qtlid="508962">Acceder a la consola (KVM)</translation>
    <translation id="server_configuration_impi_java_success" qtlid="164883">La conexión al módulo IPMI con un applet Java está lista.</translation>
    <translation id="server_configuration_impi_java_error" qtlid="164896">Se ha producido un error al intentar conectar al módulo IPMI con un applet Java</translation>
    <translation id="server_configuration_impi_java_new" qtlid="164909">Volver a conectar</translation>
@@ -678,6 +680,13 @@
    <translation id="server_configuration_kvm_new_window" qtlid="222176">Nueva ventana</translation>
    <translation id="server_configuration_kvm_access" qtlid="229281">Acceder a mi KVM</translation>
    <translation id="server_configuration_kvm_error" qtlid="229294">Se ha producido un error al cargar la información del KVM.</translation>
+
+   <translation id="server_configuration_tile_kvm_heading" qtlid="508975">KVM a distancia</translation>
+   <translation id="server_configuration_tile_kvm_description" qtlid="508988">Acceso remoto al teclado, el ratón y el monitor del servidor a distancia</translation>
+   <translation id="server_configuration_tile_sol_heading" qtlid="509001">Serie en LAN (SOL)</translation>
+   <translation id="server_configuration_tile_sol_description" qtlid="509014">Acceso a la consola de serie de la máquina a través de una conexión segura</translation>
+   <translation id="server_configuration_ssh_sol_definition" qtlid="509027">SSH SOL (a través de su llave SSH)</translation>
+   <translation id="server_configuration_ssh_select" qtlid="509040">Seleccione una llave SSH</translation>
 
    <translation id="server_configuration_installation_successfull" qtlid="172761">La instalación del servidor {0} ha finalizado</translation>
    <translation id="server_configuration_installation_fail_task" qtlid="191252">Se ha producido un error al obtener el estado de la instalación del servidor {0}.</translation>

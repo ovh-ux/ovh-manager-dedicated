@@ -87,21 +87,21 @@
             </div>
         </form>
 
-        <div class="well well-sm"
+        <div class="oui-box"
              data-ng-if="services.selected.length > 0 || selected.both">
             <p class="text-info"
                data-translate="autorenew_service_mass_actions_caption">
             </p>
             <button type="button"
-                    class="btn btn-default"
+                    class="oui-button oui-button_secondary"
                     data-ng-click="updateServices()"
                     data-translate="autorenew_service_update_button_caption">
             </button>
             <button type="button"
-                    class="btn btn-default"
+                    class="oui-button oui-button_secondary"
                     data-ng-click="manualRenew()"
-                    data-ng-disabled="selected.hasOnlyForcedRenew"
-                    data-translate="manualrenew_service_update_button_caption">
+                    data-ng-disabled="!selected.hasManualRenew"
+                    data-translate="manualrenew_service_renew_button">
             </button>
         </div>
 
@@ -260,7 +260,7 @@
                 </tr>
             </thead>
 
-            <tbody data-ng-show="services.loading">
+            <tbody data-ng-if="services.loading">
                 <tr>
                     <td colspan="6"
                         class="text-center">
@@ -269,7 +269,7 @@
                 </tr>
             </tbody>
 
-            <tbody data-ng-show="services.data && services.data.list.results.length == 0 && !services.loading">
+            <tbody data-ng-if="services.data && services.data.list.results.length == 0 && !services.loading">
                 <tr>
                     <td class="text-center"
                         colspan="6">
@@ -278,7 +278,7 @@
                 </tr>
             </tbody>
 
-            <tbody data-ng-show="services.error">
+            <tbody data-ng-if="services.error">
                 <tr>
                     <td colspan="6">
                         <div class="alert" data-ng-class="alertType">
@@ -293,7 +293,7 @@
                 </tr>
             </tbody>
 
-            <tbody data-ng-show="services.data && !services.loading">
+            <tbody data-ng-if="services.data && !services.loading">
                 <!-- COMMON SERVICES -->
                 <tr data-ng-repeat-start="service in services.data.list.results track by (service.serviceId + service.serviceType)"
                     data-ng-class="{'pointer': !editionDisabled(service)}"

@@ -371,6 +371,15 @@ class SessionService {
     };
   }
 
+  trackUserMenuSection(name, chapter2) {
+    this.atInternet.trackClick({
+      name,
+      type: 'action',
+      chapter1: 'account',
+      chapter2,
+    });
+  }
+
   getUserMenu(currentUser) {
     return {
       name: 'user',
@@ -384,6 +393,7 @@ class SessionService {
           name: 'user.account',
           title: this.$translate.instant('menu_account_title'),
           state: 'app.account.useraccount.infos',
+          click: () => this.trackUserMenuSection('my_account', 'account'),
           subLinks: [{
             title: this.$translate.instant('menu_infos'),
             state: 'app.account.useraccount.infos',
@@ -412,6 +422,7 @@ class SessionService {
           name: 'user.billing',
           title: this.$translate.instant('menu_billing'),
           state: 'app.account.billing.main.pay-as-you-go',
+          click: () => this.trackUserMenuSection('my_facturation', 'billing'),
         },
 
         // history for EU and CA...
@@ -419,6 +430,7 @@ class SessionService {
           name: 'user.billing',
           title: this.$translate.instant('menu_billing'),
           state: 'app.account.billing.main.history',
+          click: () => this.trackUserMenuSection('my_facturation', 'billing'),
         },
 
         // Services
@@ -426,6 +438,7 @@ class SessionService {
           name: 'user.services',
           title: this.$translate.instant('menu_services'),
           state: 'app.account.billing.service.autoRenew',
+          click: () => this.trackUserMenuSection('my_services', 'services'),
           subLinks: [{
             title: this.$translate.instant('menu_services_management'),
             state: 'app.account.billing.service.autoRenew',
@@ -443,6 +456,7 @@ class SessionService {
           name: 'user.payment',
           title: this.$translate.instant('menu_means'),
           state: 'app.account.billing.payment.mean',
+          click: () => this.trackUserMenuSection('my_payment_types', 'payment_types'),
           subLinks: [{
             title: this.$translate.instant('menu_means'),
             state: 'app.account.billing.payment.mean',
@@ -471,18 +485,21 @@ class SessionService {
         (!currentUser.isEnterprise && this.constants.target === 'EU' && currentUser.ovhSubsidiary === 'FR') && {
           title: this.$translate.instant('menu_orders'),
           state: 'app.account.billing.orders',
+          click: () => this.trackUserMenuSection('my_orders', 'orders'),
         },
 
         // Contacts
         (this.constants.target === 'EU') && {
           title: this.$translate.instant('menu_contacts'),
           state: 'app.account.useraccount.contacts.services',
+          click: () => this.trackUserMenuSection('my_contacts', 'contacts'),
         },
 
         // Tickets
         {
           title: this.$translate.instant('menu_tickets'),
           state: 'app.account.otrs-ticket',
+          click: () => this.trackUserMenuSection('my_otrs_tickets', 'otrs'),
         },
 
         // Logout
