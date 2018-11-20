@@ -3,14 +3,12 @@ class UserContractsCtrl {
     $scope,
     $timeout,
     constants,
-    featureAvailability,
     User,
     UserContractService,
   ) {
     this.$scope = $scope;
     this.$timeout = $timeout;
     this.constants = constants;
-    this.featureAvailability = featureAvailability;
     this.User = User;
     this.UserContractService = UserContractService;
   }

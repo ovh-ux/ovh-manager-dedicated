@@ -1,7 +1,19 @@
 class SessionService {
-  constructor($q, $translate, atInternet, constants, CdnDomain, DedicatedCloud, Nas,
-    NavbarNotificationService, Products, User, LANGUAGES, OtrsPopupService, ssoAuthentication,
-    featureAvailability) {
+  constructor(
+    $q,
+    $translate,
+    atInternet,
+    constants,
+    CdnDomain,
+    DedicatedCloud,
+    Nas,
+    NavbarNotificationService,
+    Products,
+    User,
+    LANGUAGES,
+    OtrsPopupService,
+    ssoAuthentication,
+  ) {
     this.$q = $q;
     this.$translate = $translate;
     this.constants = constants;
@@ -16,7 +28,6 @@ class SessionService {
     this.LANGUAGES = LANGUAGES;
     this.otrsPopupService = OtrsPopupService;
     this.ssoAuthentication = ssoAuthentication;
-    this.featureAvailability = featureAvailability;
   }
 
   getProducts() {

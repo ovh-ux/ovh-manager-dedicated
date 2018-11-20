@@ -1,12 +1,19 @@
 angular.module('App').controller('ConfigurationCtrl', class ConfigurationCtrl {
-  constructor($q, $scope, $state, $stateParams, $translate, featureAvailability, constants,
-    DedicatedCloud, User) {
+  constructor(
+    $q,
+    $scope,
+    $state,
+    $stateParams,
+    $translate,
+    constants,
+    DedicatedCloud,
+    User,
+  ) {
     this.$q = $q;
     this.$scope = $scope;
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
-    this.featureAvailability = featureAvailability;
     this.constants = constants;
     this.DedicatedCloud = DedicatedCloud;
     this.User = User;

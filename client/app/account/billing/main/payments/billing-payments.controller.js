@@ -5,7 +5,6 @@ angular.module('Billing').controller('Billing.PaymentsCtrl', function (
   $translate,
   atInternet,
   constants,
-  featureAvailability,
   OvhApiMe,
 ) {
   this.loadPayments = ($config) => {
