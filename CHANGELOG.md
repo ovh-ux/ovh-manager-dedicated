@@ -1,3 +1,35 @@
+<a name="10.6.0"></a>
+# [10.6.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.5.1...v10.6.0) (2018-11-20)
+
+
+### Bug Fixes
+
+* **autorenew:** redirect to exchange on service termination ([ceab566](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ceab566))
+* **autorenew:** update automatic payment enable/disable conditions ([8472482](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8472482))
+* **dedicated.ipmi:** fix kvm order ([874c3a1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/874c3a1))
+* **deps:** update manager-webpack-config to v2.4.7 ([717cbe4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/717cbe4))
+* **deps:** upgrade manager-webpack-config to v3.0.0 ([caf72a1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/caf72a1))
+* **deps:** upgrade ovh-api-services to v3.24.0 ([1151415](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1151415))
+* **deps:** upgrade ovh-module-exchange to v9.1.0 ([a153619](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a153619))
+* **deps:** upgrade ovh-ui-angular to v2.22.1 ([968b2f9](https://github.com/ovh-ux/ovh-manager-dedicated/commit/968b2f9))
+* **i18n:** retrieve translations ([f380ab4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f380ab4))
+* **i18n:** retrieve translations ([6dbe2e7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6dbe2e7))
+* **i18n:** retrieve translations ([1131d3a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1131d3a))
+* **i18n:** submit translations ([bade8e0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bade8e0))
+* **i18n:** submit translations ([e725d43](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e725d43))
+* **working-status:** replace by new view OVH-tasks ([7b0694a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7b0694a))
+
+
+### Features
+
+* **autorenew:** disable service edition for exchange services ([b4d30a8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b4d30a8))
+* **billing.autorenew:** disable renew action for in debt services ([f2883ac](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f2883ac))
+* **billing.autorenew:** rename renew buttons ([6e5cbe2](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6e5cbe2))
+* **kvm-html:** kvm html in ipmi tab ([22b4e99](https://github.com/ovh-ux/ovh-manager-dedicated/commit/22b4e99))
+* **navbar.user:** add tracking on user menu ([7daaee1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7daaee1))
+
+
+
 <a name="10.5.1"></a>
 ## [10.5.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.5.0...v10.5.1) (2018-11-09)
 
