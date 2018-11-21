@@ -288,6 +288,7 @@
         <button type="button"
                 class="btn btn-primary"
                 data-ng-click="setAction('ip-lb/redirection/add/ip-ip-lb-redirection-add', selectedIplb)"
+                data-ng-disabled="!(iplbList.length > 0)"
                 data-translate="iplb_portsredirection_add_title">
         </button>
         <div class="table-responsive mt-2">
