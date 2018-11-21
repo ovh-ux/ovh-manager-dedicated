@@ -17,7 +17,6 @@ angular.module('App').controller('DedicatedCloudCtrl', [
     DedicatedCloud, featureAvailability, Notification, OvhApiDedicatedCloud, step, User) {
     $scope.HDS_READY_NOTIFICATION = 'HDS_READY_NOTIFICATION';
 
-    $scope.alerts = { dashboard: 'dedicatedCloud_alert' };
     $scope.loadingInformations = true;
     $scope.loadingError = false;
     $scope.dedicatedCloud = null;

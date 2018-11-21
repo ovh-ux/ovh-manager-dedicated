@@ -151,7 +151,7 @@ angular.module('App').controller('DedicatedCloudSecurityCtrl', function ($rootSc
   };
 
   self.onError = function (data) {
-    $scope.setMessage($translate.instant('dedicatedCloud_dashboard_loading_error'), data.data);
+    $scope.setMessage($translate.instant('dedicatedCloud_dashboard_loading_error'), _.get(data, 'data', data));
   };
 
   function createModalObject(action, objectToResolve) {
