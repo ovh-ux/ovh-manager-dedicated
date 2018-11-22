@@ -19,7 +19,12 @@
             </div>
             <p data-ng-bind="server.reverse || ('server_configuration_reverse_not_configured' | translate)"></p>
         </header>
+        <div class="text-center mt-5"
+            data-ng-if="!tabs">
+            <oui-spinner data-size="l"></oui-spinner>
+        </div>
         <ovh-tabs data-tabs="tabs"
+                  data-ng-if="tabs"
                   data-selected-tab="selectedTab"
                   data-product="server"
                   data-change-tab="setSelectedTab"
