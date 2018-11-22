@@ -190,8 +190,6 @@
                     <span data-translate="common_loading"></span>
                 </div>
             </div>
-
-            <!-- Step 4: Contracts and validation -->
             <div data-ng-show="selected.duration">
                 <h2 data-translate="license_order_step4_title"></h2>
 
@@ -217,12 +215,13 @@
                                     data-ng-if="agoraEnabled"
                                     data-translate="license_order_step4_contracts_agora_ask">
                             </strong>
-                            <span data-ng-repeat="contract in durations.details[selected.duration].contracts">
+                            <span data-ng-repeat="contract in durations.details[selected.duration].contracts track by $id">
                                 <a target="_blank"
                                    rel="noopener"
-                                   class="d-inline-block"
-                                   data-ng-href="{{ contract.url }}"
-                                   data-ng-bind="contract.url">
+                                   class="d-inline-block oui-link_icon"
+                                   aria-label="{{ ::'common_newtab' | translate }}">
+                                   <span data-ng-bind="contract.url"></span>
+                                   <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
                                  </a>
                             </span>
                             <div class="checkbox">
