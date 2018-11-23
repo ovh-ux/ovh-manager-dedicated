@@ -1,3 +1,13 @@
+<a name="10.6.2"></a>
+## [10.6.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.6.1...v10.6.2) (2018-11-23)
+
+
+### Bug Fixes
+
+* **constants:** fix FI order url ([ef55e66](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ef55e66))
+
+
+
 <a name="10.6.1"></a>
 ## [10.6.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.6.0...v10.6.1) (2018-11-21)
 
