@@ -7,7 +7,6 @@ angular.module('App').controller('ServerCtrl', (NO_AUTORENEW_COUNTRIES, WEATHERM
   $scope.featureAvailability = featureAvailability;
   $scope.server = {
     isExpired: true,
-    notLoaded: true,
   };
 
   $scope.loaders = {

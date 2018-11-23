@@ -30,7 +30,7 @@ angular.module('App').controller('ServerTabsCtrl', ($scope, $stateParams, $locat
   }
 
   $scope.$on('dedicated.server.refreshTabs', () => {
-    if (!$scope.server.notLoaded) {
+    if (!$scope.loadingServerInformations) {
       $scope.tabs = originalTabs;
 
       if ($scope.server.commercialRange === 'housing') {

@@ -1,9 +1,9 @@
 <div data-ng-controller="ServerTabsCtrl">
     <div class="text-center mt-5"
-         data-ng-if="loadingServerInformations">
+         data-ng-if="!tabs">
         <oui-spinner data-size="l"></oui-spinner>
     </div>
-    <div data-ng-if="!loadingServerInformations && !loadingServerError">
+    <div data-ng-if="tabs && !loadingServerError">
         <header class="page-header" role="banner">
             <div class="d-flex">
                 <h1 class="word-break mb-0 oui-header-2"
@@ -19,12 +19,7 @@
             </div>
             <p data-ng-bind="server.reverse || ('server_configuration_reverse_not_configured' | translate)"></p>
         </header>
-        <div class="text-center mt-5"
-            data-ng-if="!tabs">
-            <oui-spinner data-size="l"></oui-spinner>
-        </div>
         <ovh-tabs data-tabs="tabs"
-                  data-ng-if="tabs"
                   data-selected-tab="selectedTab"
                   data-product="server"
                   data-change-tab="setSelectedTab"
