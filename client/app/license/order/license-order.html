@@ -220,7 +220,8 @@
                             <span data-ng-repeat="contract in durations.details[selected.duration].contracts track by $id">
                                 <a target="_blank"
                                    rel="noopener"
-                                   class="d-inline-block oui-link_icon">
+                                   class="d-inline-block oui-link_icon"
+                                   data-ng-href="{{ ::contract.url }}">
                                    <span data-translate="common_newtab" class="sr-only"></span>
                                    <span data-ng-bind="contract.url"></span>
                                    <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
