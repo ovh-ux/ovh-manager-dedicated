@@ -150,8 +150,8 @@ angular.module('App').controller('DedicatedCloudSecurityCtrl', function ($rootSc
     $scope.loaders.search = false;
   };
 
-  self.onError = function (data) {
-    $scope.setMessage($translate.instant('dedicatedCloud_dashboard_loading_error'), _.get(data, 'data', data));
+  self.onError = function (error) {
+    $scope.setMessage($translate.instant('dedicatedCloud_dashboard_loading_error'), _.get(error, 'data', error));
   };
 
   function createModalObject(action, objectToResolve) {
