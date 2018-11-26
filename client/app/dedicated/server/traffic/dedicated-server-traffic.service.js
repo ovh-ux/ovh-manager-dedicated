@@ -62,7 +62,7 @@ class ServerTrafficService {
       return _.cloneDeep(quota);
     }
 
-    const quotaSize = this.$filter('bytes')(quota.value, {
+    const quotaSize = this.$filter('duc-bytes')(quota.value, {
       precision: 20,
       fromUnit: quota.unit,
       toUnit: quota.unit,
@@ -70,7 +70,7 @@ class ServerTrafficService {
       toKibi: true,
     });
 
-    const upsizedQuotaUsed = this.$filter('bytes')(quotaUsed.value, {
+    const upsizedQuotaUsed = this.$filter('duc-bytes')(quotaUsed.value, {
       precision: 20,
       fromUnit: quotaUsed.unit,
       toUnit: quotaSize.nonTranslatedUnit,
@@ -107,7 +107,7 @@ class ServerTrafficService {
       return '';
     }
 
-    return this.$filter('bytes')(quota.value, {
+    return this.$filter('duc-bytes')(quota.value, {
       precision: 2,
       fromUnit: forceUnit || quota.unit,
       toUnit: quota.unit,

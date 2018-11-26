@@ -124,7 +124,7 @@ angular.module('UserAccount').controller('UserAccount.controllers.update', [
             $scope.controls.legalforms = legalforms;
           }),
           Contacts.getCountryEnum().then((countries) => {
-            $scope.controls.countries = countries;
+            $scope.controls.countries = countries.filter(country => country !== 'UNKNOWN');
           }),
           Contacts.getGendersEnum().then((genders) => {
             $scope.controls.genders = genders;
