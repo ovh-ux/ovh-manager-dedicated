@@ -563,7 +563,10 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
     };
 
     $scope.enableAutorenew = function (service) {
-      $scope.setAction('enable', _.clone([service]), 'autoRenew');
+      if (!$scope.hasDefaultValidPaymentMean) {
+        return $scope.setAction('warnPaymentMean', _.clone([service]), 'autoRenew');
+      }
+      return $scope.setAction('enable', _.clone([service]), 'autoRenew');
     };
 
     $scope.disableAutorenew = function (service) {
@@ -712,13 +715,6 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
       }
     }
 
-    function getPaymentMeans() {
-      return PaymentInformation.hasDefaultPaymentMean()
-        .finally(() => {
-          $scope.automaticRenewV2Mean.loading = false;
-        });
-    }
-
     /**
      * INITIALIZATION
      */
@@ -747,21 +743,25 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
       return $q
         .all({
           user: User.getUser(),
-          hasPaymentMeans:
-            $scope.automaticRenewV2Mean.available
-              ? getPaymentMeans() : $q.when(),
+          hasDefaultValidPaymentMean: PaymentMethodHelper.hasDefaultPaymentMethod(),
           renewAlignUrl: User.getUrlOf('renewAlign'),
           userGuide: User.getUrlOf('guides'),
           serviceTypes: AutoRenew.getServicesTypes(),
           userCertificates: AutoRenew.getUserCertificates(),
         })
         .then(({
-          user, hasPaymentMeans, renewAlignUrl, userGuide, serviceTypes, userCertificates,
+          user,
+          hasDefaultValidPaymentMean,
+          renewAlignUrl,
+          userGuide,
+          serviceTypes,
+          userCertificates,
         }) => {
           $scope.user = user;
           $scope.urls.renewAlign = renewAlignUrl;
           $scope.canDisableAllDomains = userCertificates.includes('domains-batch-autorenew');
-          $scope.automaticRenewV2Mean.allowed = hasPaymentMeans;
+          $scope.hasDefaultValidPaymentMean = hasDefaultValidPaymentMean;
+          $scope.automaticRenewV2Mean.allowed = hasDefaultValidPaymentMean;
 
           if (userGuide && userGuide.autoRenew) {
             $scope.guide = userGuide.autoRenew;
