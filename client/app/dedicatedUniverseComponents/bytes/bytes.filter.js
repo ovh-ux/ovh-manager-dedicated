@@ -1,4 +1,6 @@
-angular.module('filters').filter('bytes', ($translate) => {
+import _ from 'lodash';
+
+export default /* @ngInject */ ($translate) => {
   // TODO: Add this filter in UX components
   const units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
   const unitsKibi = ['B', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB'];
@@ -109,7 +111,7 @@ angular.module('filters').filter('bytes', ($translate) => {
     return null;
   }
 
-  return function (_bytes, _options) {
+  return function bytesFilter(_bytes, _options) {
     let bytes = _bytes;
     let options = _options;
     options = setDefaults(options);
@@ -143,4 +145,4 @@ angular.module('filters').filter('bytes', ($translate) => {
 
     return setToFormat(options.toFormat, value, options.toKibi, number);
   };
-});
+};
