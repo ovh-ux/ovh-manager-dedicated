@@ -1,3 +1,21 @@
+<a name="10.6.3"></a>
+## [10.6.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.6.2...v10.6.3) (2018-11-27)
+
+
+### Bug Fixes
+
+* **account.billing:** confirmTerminate domain not working ([3a0a64c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3a0a64c))
+* **account.billing.autorenew:** search text capture from url ([fe603fe](https://github.com/ovh-ux/ovh-manager-dedicated/commit/fe603fe))
+* **account.user.contacts:** update country code ([2dad39c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2dad39c))
+* **dedicated-server:** tabs loading ([7b50024](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7b50024))
+* **deps:** upgrade npm-run-all to v4.1.5 ([552d549](https://github.com/ovh-ux/ovh-manager-dedicated/commit/552d549))
+* **i18n:** retrieve translations ([629ccdc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/629ccdc))
+* **i18n:** retrieve translations ([fe51e78](https://github.com/ovh-ux/ovh-manager-dedicated/commit/fe51e78))
+* **i18n:** submit translations ([3b636eb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3b636eb))
+* **license.order:** align and fix table ([c92d6ad](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c92d6ad))
+
+
+
 <a name="10.6.2"></a>
 ## [10.6.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.6.1...v10.6.2) (2018-11-23)
 
