@@ -176,7 +176,7 @@
                                data-ng-model="selected.duration"
                                data-ng-change="selectDuration()"
                                data-ng-disabled="loaders.prices || durations.available.length == 1" />
-                        {{ duration | duration:'longDate' }}&nbsp;:&nbsp;<span data-ng-bind-html="durations.details[duration].prices | price:user.ovhSubsidiary"></span>
+                        {{ duration | duration:'longDate' }}&nbsp;:&nbsp;<span data-ng-bind-html="durations.details[duration].prices | ducPrice:user.ovhSubsidiary"></span>
                         <oui-spinner data-ng-hide="durations.details[duration]"
                                     data-size="s"
                                     data-inline="true">
@@ -217,19 +217,16 @@
                                     data-ng-if="agoraEnabled"
                                     data-translate="license_order_step4_contracts_agora_ask">
                             </strong>
-                            <table class="table table-hover">
-                                <tbody>
-                                    <tr data-ng-repeat="contract in durations.details[selected.duration].contracts">
-                                        <td>
-                                            <a target="_blank"
-                                               rel="noopener"
-                                               data-ng-href="{{ contract.url }}"
-                                               data-ng-bind="contract.url">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <span data-ng-repeat="contract in durations.details[selected.duration].contracts track by $id">
+                                <a target="_blank"
+                                   rel="noopener"
+                                   class="d-inline-block oui-link_icon"
+                                   data-ng-href="{{ ::contract.url }}">
+                                   <span data-translate="common_newtab" class="sr-only"></span>
+                                   <span data-ng-bind="contract.url"></span>
+                                   <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
+                                 </a>
+                            </span>
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox"

@@ -19,8 +19,6 @@ angular.module('App').controller('ServerTabsCtrl', (
     .pull(dedicatedServerFeatureAvailability.allowDedicatedServerUSBKeys() ? null : 'usb_storage')
     .value();
 
-  $scope.tabs = originalTabs;
-
   $scope.setSelectedTab = function (tab) {
     if (tab !== undefined && tab !== null && tab !== '') {
       $scope.selectedTab = tab;
@@ -37,10 +35,12 @@ angular.module('App').controller('ServerTabsCtrl', (
   }
 
   $scope.$on('dedicated.server.refreshTabs', () => {
-    $scope.tabs = originalTabs;
+    if (!$scope.loadingServerInformations) {
+      $scope.tabs = originalTabs;
 
-    if ($scope.server.commercialRange === 'housing') {
-      $scope.tabs = ['dashboard', 'dns', 'ftp_backup', 'intervention', 'task'];
+      if ($scope.server.commercialRange === 'housing') {
+        $scope.tabs = ['dashboard', 'dns', 'ftp_backup', 'intervention', 'task'];
+      }
     }
   });
 });

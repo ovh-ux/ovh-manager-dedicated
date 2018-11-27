@@ -102,9 +102,10 @@ angular.module('App').controller('ImpiCtrl', (
     });
 
     isActivated().then(() => {
-      if ($scope.ipmi.model.supportedFeatures.serialOverLanSshKey) {
+      if (_.has($scope.ipmi.model, 'supportedFeatures.serialOverLanSshKey')) {
         loadSshKey();
       }
+
       if (!$scope.ipmi.model.activated) {
         Server.canOrderKvm($stateParams.productId).then((orderable) => {
           $scope.kvm.canOrderKvm = orderable === 'true' || orderable === true;

@@ -638,11 +638,11 @@
    <translation id="server_configuration_impi_navigation" qtlid="257296">From your browser</translation>
    <translation id="server_configuration_impi_navigation_error" qtlid="164818">An error occurred while attempting to connect to the IPMI module using your browser</translation>
    <translation id="server_configuration_impi_navigation_success" qtlid="164831">The connection to the IPMI module from your browser is ready.</translation>
-   <translation id="server_configuration_impi_navigation_go" qtlid="508936">Accéder à la console (SOL)</translation>
+   <translation id="server_configuration_impi_navigation_go" qtlid="508936">Access the console (SOL)</translation>
    <translation id="server_configuration_impi_java" qtlid="257309">From a java applet (KVM)</translation>
    <translation id="server_configuration_impi_java_download" qtlid="164870">Download the Java applet</translation>
-   <translation id="server_configuration_impi_kvm_console" qtlid="508949">Depuis votre navigateur (KVM)</translation>
-   <translation id="server_configuration_impi_kvm_url" qtlid="508962">Accéder à la console (KVM)</translation>
+   <translation id="server_configuration_impi_kvm_console" qtlid="508949">Via your web browser (KVM)</translation>
+   <translation id="server_configuration_impi_kvm_url" qtlid="508962">Access the console (KVM)</translation>
    <translation id="server_configuration_impi_java_success" qtlid="164883">The connection to the IPMI module using a Java applet is ready.</translation>
    <translation id="server_configuration_impi_java_error" qtlid="164896">An error occurred while attempting to connect to the IPMI module using a Java applet</translation>
    <translation id="server_configuration_impi_java_new" qtlid="164909">New connection</translation>
@@ -674,19 +674,19 @@
    <translation id="server_configuration_kvm_order_error" qtlid="229242">An error has occurred ordering the KVM.</translation>
 
    <translation id="server_configuration_kvm_informations" qtlid="229255">Details of your KVM</translation>
-   <translation id="server_configuration_kvm_informations_name" qtlid="100328">Name</translation>
+   <translation id="server_configuration_kvm_informations_name" qtlid="100328">Name:</translation>
    <translation id="server_configuration_kvm_informations_ip" qtlid="103870">IP address:</translation>
    <translation id="server_configuration_kvm_informations_expiration" qtlid="229268">Expiry:</translation>
    <translation id="server_configuration_kvm_new_window" qtlid="222176">New window</translation>
    <translation id="server_configuration_kvm_access" qtlid="229281">Go to my KVM</translation>
    <translation id="server_configuration_kvm_error" qtlid="229294">An error occurred while retrieving the details of your KVM.</translation>
 
-   <translation id="server_configuration_tile_kvm_heading" qtlid="508975">KVM à distance</translation>
-   <translation id="server_configuration_tile_kvm_description" qtlid="508988">Accès au clavier, à la souris et à l'affichage de votre serveur à distance</translation>
-   <translation id="server_configuration_tile_sol_heading" qtlid="509001">Série sur LAN (SOL)</translation>
-   <translation id="server_configuration_tile_sol_description" qtlid="509014">Accès à la console série de votre machine via une connexion sécurisée</translation>
-   <translation id="server_configuration_ssh_sol_definition" qtlid="509027">SSH SOL (via votre clé ssh)</translation>
-   <translation id="server_configuration_ssh_select" qtlid="509040">Sélectionnez une clé SSH</translation>
+   <translation id="server_configuration_tile_kvm_heading" qtlid="508975">Remote KVM</translation>
+   <translation id="server_configuration_tile_kvm_description" qtlid="508988">Remote access to your server's keyboard, mouse and screen display</translation>
+   <translation id="server_configuration_tile_sol_heading" qtlid="509001">Serial over LAN (SOL)</translation>
+   <translation id="server_configuration_tile_sol_description" qtlid="509014">Access to your server's serial console via a secure connection</translation>
+   <translation id="server_configuration_ssh_sol_definition" qtlid="509027">SOL SSH (via your SSH key)</translation>
+   <translation id="server_configuration_ssh_select" qtlid="509040">Select an SSH key</translation>
 
    <translation id="server_configuration_installation_successfull" qtlid="172761">Installation of server {0} is finished.</translation>
    <translation id="server_configuration_installation_fail_task" qtlid="191252">An error occurred while retrieving the current installation status of the server {0}.</translation>
@@ -770,7 +770,7 @@
    <translation id="server_configuration_installation_ovh_step1_hardwareRaid_wrong_location" qtlid="313819">The Hardware RAID configuration is only available for servers located on the same continent as your customer account.</translation>
    <translation id="server_configuration_installation_ovh_step1_hardwareRaid_os_not_supported_short" qtlid="298597">No Hard RAID</translation>
    <translation id="server_configuration_installation_ovh_step1_hardwareRaid_os_not_supported" qtlid="363893">This OS installer cannot reconfigure your  RAID. If you want to reconfigure your hardware RAID, please install another OS. The configuration will then be saved.</translation>
-   <translation id="server_configuration_installation_ovh_step1_virtual_desktop_not_supported" qtlid="406814">The ({0}) chosen OS does not have virtual machine functionality, choose another license if you need to. No other OS available? Go to the <a href='{1}' target='_blank'>Licenses</a> section in the customer account.</translation>
+   <translation id="server_configuration_installation_ovh_step1_virtual_desktop_not_supported" qtlid="406814">The ({0}) chosen OS does not offer virtual desktop functionality. Choose another licence if you need to. No other OS available? Go to the <a href='{1}' target='_blank'>Licences</a> section in the customer account.</translation>
    <translation id="server_configuration_installation_ovh_step1_warning_exist" qtlid="185374">Warning: you have started to configure an installation on a <b>{0}</b> distribution. Modifying the distribution will delete this configuration.</translation>
    <translation id="server_configuration_installation_ovh_step1_warning_exist_valid" qtlid="185387">Delete the previous configuration</translation>
    <translation id="server_configuration_installation_ovh_step1_warning_exist_cancel" qtlid="173463">Do not change the distribution</translation>

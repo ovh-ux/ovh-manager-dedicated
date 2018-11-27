@@ -4,20 +4,20 @@ class UserContractsCtrl {
     $timeout,
     constants,
     User,
-    UserContractService,
+    DucUserContractService,
   ) {
     this.$scope = $scope;
     this.$timeout = $timeout;
     this.constants = constants;
     this.User = User;
-    this.UserContractService = UserContractService;
+    this.DucUserContractService = DucUserContractService;
   }
 
   $onInit() {
     this.agreeTosAndPpOnManagerLoad = this.constants.target === 'US';
 
     if (this.agreeTosAndPpOnManagerLoad) {
-      this.UserContractService.getAgreementsToValidate(contract => _.includes(['tos', 'pp'], contract.code)).then((contracts) => {
+      this.DucUserContractService.getAgreementsToValidate(contract => _.includes(['tos', 'pp'], contract.code)).then((contracts) => {
         if (contracts.length) {
           this.$scope.currentAction = 'modal/user-contracts-accept';
           this.$scope.stepPath = 'user-contracts/modal/user-contracts-accept.html';
