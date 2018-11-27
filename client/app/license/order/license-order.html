@@ -217,19 +217,16 @@
                                     data-ng-if="agoraEnabled"
                                     data-translate="license_order_step4_contracts_agora_ask">
                             </strong>
-                            <table class="table table-hover">
-                                <tbody>
-                                    <tr data-ng-repeat="contract in durations.details[selected.duration].contracts">
-                                        <td>
-                                            <a target="_blank"
-                                               rel="noopener"
-                                               data-ng-href="{{ contract.url }}"
-                                               data-ng-bind="contract.url">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <span data-ng-repeat="contract in durations.details[selected.duration].contracts track by $id">
+                                <a target="_blank"
+                                   rel="noopener"
+                                   class="d-inline-block oui-link_icon"
+                                   data-ng-href="{{ ::contract.url }}">
+                                   <span data-translate="common_newtab" class="sr-only"></span>
+                                   <span data-ng-bind="contract.url"></span>
+                                   <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
+                                 </a>
+                            </span>
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox"
