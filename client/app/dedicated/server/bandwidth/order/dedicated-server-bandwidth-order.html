@@ -119,7 +119,7 @@
                                data-ng-model="durations.selected"
                                data-ng-disabled="loaders.durations">
                         <span data-ng-bind="duration.durations | duration:'longDate'"></span>&nbsp;:&nbsp;
-                        <span data-ng-bind-html="duration.details.prices | price:user.value.ovhSubsidiary"></span>
+                        <span data-ng-bind-html="duration.details.prices | ducPrice:user.value.ovhSubsidiary"></span>
                     </label>
                 </div>
             </form>

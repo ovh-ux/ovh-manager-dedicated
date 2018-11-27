@@ -77,7 +77,7 @@
                 <div data-ng-if="!loading">
                     <span data-translate="ovhAccount_retrieve_resume_1"></span>
                     <strong class="text-danger"
-                            data-ng-bind-html="retrieveOrder.prices | price:user.ovhSubsidiary">
+                            data-ng-bind-html="retrieveOrder.prices | ducPrice:user.ovhSubsidiary">
                     </strong>
                     <span data-translate="ovhAccount_retrieve_resume_2"></span>( <em data-ng-bind="retrieve.account.iban"></em> ) ?
                     <p data-translate="ovhAccount_retrieve_tips"></p>

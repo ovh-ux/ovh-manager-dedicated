@@ -244,26 +244,14 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
         return;
       }
 
-      let exchangeAbsoluteUrl;
-      if (constants.target === 'EU' && constants.UNIVERS !== 'web') {
-        // if other univers (cloud, dedicated, etc) redirect towards web univers
-        exchangeAbsoluteUrl = constants.MANAGER_URLS.web;
-      } else {
-        exchangeAbsoluteUrl = $window.location.href.replace($window.location.hash, '#/');
-      }
-
-      $http
-        .get(['/sws/exchange', organization, exchangeName].join('/'), {
-          serviceType: 'aapi',
-        })
-        .then((exchange) => {
-          const newUrl = [exchangeAbsoluteUrl, 'configuration/', getExchangeType(exchange.data.offer), '/', organization, '/', exchangeName, '?action=billing'].join('');
-
+      AutoRenew.getExchangeService(service)
+        .then(({ offer }) => {
           $scope.$emit(AUTORENEW_EVENT.PAY, {
             serviceType: service.serviceType,
             serviceId: `${organization}/${exchangeName}`,
           });
-          $window.location.assign(newUrl);
+
+          $window.location.assign(getExchangeUrl(organization, exchangeName, offer, 'billing'));
         });
     };
 
@@ -576,14 +564,6 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
         && !service.renew.manualPayment && userIsBillingOrAdmin(service, user);
     };
 
-    $scope.canDisableAutorenew = function (service) {
-      return service.renew
-        && !service.renew.deleteAtExpiration
-        && !service.renew.manualPayment
-        && service.renew.automatic
-        && !service.renew.forced;
-    };
-
     $scope.canEnableAutorenew = function (service) {
       return service.renewalType !== 'oneShot' && service.renew && (service.renew.manualPayment || !service.renew.automatic);
     };
@@ -632,6 +612,8 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
     $scope.trackCSVExport = () => trackCSVExport();
     $scope.isInDebt = service => isInDebt(service);
     $scope.hasAutoRenew = service => renewHelper.serviceHasAutomaticRenew(service);
+    $scope.resiliateExchangeService = service => resiliateExchangeService(service);
+    $scope.canDisableAutorenew = service => canDisableAutorenew(service);
 
     /**
          * HELPER FUNCTIONS
@@ -697,6 +679,27 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
       return DEBT_STATUS.includes(service.status);
     }
 
+    function getExchangeUrl(organization, service, offer, action) {
+      const exchangeAbsoluteUrl = constants.target === 'EU' && constants.UNIVERS !== 'web' ? constants.MANAGER_URLS.web : $window.location.href.replace($window.location.hash, '#/');
+      return `${exchangeAbsoluteUrl}configuration/${getExchangeType(offer)}/${organization}/${service}?action=${action}`;
+    }
+
+    function resiliateExchangeService({ serviceId }) {
+      const [organization, exchangeName] = serviceId.split('/service/');
+      return AutoRenew.getExchangeService(organization, exchangeName)
+        .then(({ offer }) => $window.location.assign(getExchangeUrl(organization, exchangeName, offer, 'resiliate')));
+    }
+
+    function canDisableAutorenew(service) {
+      return service.renewalType !== 'automaticForcedProduct'
+            && service.renew
+            && !service.renew.deleteAtExpiration
+            && !service.renew.manualPayment
+            && service.renew.automatic
+            && !service.renew.forced
+            && !['EXCHANGE', 'EMAIL_DOMAIN'].includes(service.serviceType);
+    }
+
     /**
      * INITIALIZATION
      */
@@ -705,12 +708,12 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
       $scope.initLoading = true;
 
       const {
-        selectedType, searchTextValue, renewFilter, renewalFilter, order,
+        selectedType, searchText, renewFilter, renewalFilter, order,
       } = $location.search();
 
       $scope.services.selectedType = selectedType;
       $scope.searchText = {
-        value: searchTextValue,
+        value: searchText,
       };
       $scope.renewFilter.model = renewFilter === '0' ? 0 : renewFilter || 0;
       $scope.renewalFilter.model = renewalFilter === '0' ? '0' : renewalFilter || '0';

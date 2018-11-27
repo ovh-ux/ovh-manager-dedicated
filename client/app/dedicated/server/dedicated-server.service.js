@@ -682,7 +682,7 @@ angular
       }).catch((err) => {
         if (err.status === 404) {
           return {
-            isActivated: false,
+            activated: false,
           };
         }
         return err;

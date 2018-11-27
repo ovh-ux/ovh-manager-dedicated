@@ -1,4 +1,8 @@
-angular.module('UserAccount').service('UserAccount.services.doubleAuth.sms', function ($q, OvhHttp, featureAvailability) {
+angular.module('UserAccount').service('UserAccount.services.doubleAuth.sms', (
+  $q,
+  OvhHttp,
+  constants,
+) => {
   /**
      *  Get SMS accounts ids.
      * @return {Promise}
@@ -123,5 +127,5 @@ angular.module('UserAccount').service('UserAccount.services.doubleAuth.sms', fun
      * Does double auth SMS is supported.
      * @return {Boolean}
      */
-  this.isSupported = () => featureAvailability.hasTwoFactorAuthenticationBySms();
+  this.isSupported = (constants.target === 'EU');
 });

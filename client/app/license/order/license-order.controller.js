@@ -1,11 +1,24 @@
-angular.module('Module.license').controller('LicenseOrderCtrl', ($scope, $timeout, $translate, License, $q, User, Alerter, $filter, featureAvailability, LicenseOrder) => {
+angular.module('Module.license').controller('LicenseOrderCtrl', (
+  $q,
+  $filter,
+  $scope,
+  $timeout,
+  $translate,
+  Alerter,
+  License,
+  licenseFeatureAvailability,
+  LicenseOrder,
+  User,
+) => {
   $scope.alerts = {
     order: 'license.alerts.order',
   };
 
   function getFilteredIps() {
-    const typesFiltered = $filter('filter')($scope.availableIpBlock.ips, $scope.filters.block.type);
-    const searchFiltered = $filter('filter')(typesFiltered, $scope.filters.block.search);
+    const typesFiltered = $filter('filter')($scope.availableIpBlock.ips,
+      $scope.filters.block.type);
+    const searchFiltered = $filter('filter')(typesFiltered,
+      $scope.filters.block.search);
 
     return searchFiltered;
   }
@@ -200,8 +213,8 @@ angular.module('Module.license').controller('LicenseOrderCtrl', ($scope, $timeou
       return !!$scope.types[type]
         && $scope.types[type].options
         && $scope.types[type].options.length > 0
-        && (!featureAvailability.allowLicenseAgoraOrder()
-          || featureAvailability.allowLicenseTypeAgoraOrder(type));
+        && (!licenseFeatureAvailability.allowLicenseAgoraOrder()
+          || licenseFeatureAvailability.allowLicenseTypeAgoraOrder(type));
     }
 
     return false;
@@ -230,7 +243,7 @@ angular.module('Module.license').controller('LicenseOrderCtrl', ($scope, $timeou
   };
 
   function init() {
-    $scope.agoraEnabled = featureAvailability.allowLicenseAgoraOrder();
+    $scope.agoraEnabled = licenseFeatureAvailability.allowLicenseAgoraOrder();
     $scope.powerpackModel = {
       value: false,
     };

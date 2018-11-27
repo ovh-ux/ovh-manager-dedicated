@@ -1,6 +1,15 @@
 angular.module('controllers').controller('controllers.Server.Stats', (
-  $scope, $rootScope, $state, $stateParams, $filter, $q, Server, $translate, Alerter,
-  BandwidthVrackOrderService, ServerTrafficService, ServerOrderTrafficService, featureAvailability,
+  $q,
+  $scope,
+  $state,
+  $stateParams,
+  $translate,
+  Alerter,
+  BandwidthVrackOrderService,
+  dedicatedServerFeatureAvailability,
+  Server,
+  ServerOrderTrafficService,
+  ServerTrafficService,
 ) => {
   $scope.currentView = {
     value: 'DASHBOARD',
@@ -50,10 +59,10 @@ angular.module('controllers').controller('controllers.Server.Stats', (
   };
   /* eslint-disable no-return-assign, max-len */
 
-  $scope.canOrderVrackBandwidth = () => featureAvailability.allowDedicatedServerOrderVrackBandwidthOption() && !$scope.server.isExpired && $scope.server.canOrderVrackBandwith;
+  $scope.canOrderVrackBandwidth = () => dedicatedServerFeatureAvailability.allowDedicatedServerOrderVrackBandwidthOption() && !$scope.server.isExpired && $scope.server.canOrderVrackBandwith;
   $scope.canOrderMoreVrackBandwidth = () => !$scope.server.isExpired && $scope.server.canOrderVrackBandwith && $scope.bandwidthVrackOrderOptions.data.length;
 
-  $scope.canOrderTraffic = () => featureAvailability.allowDedicatedServerOrderTrafficOption() && !$scope.server.isExpired && $scope.server.canOrderQuota;
+  $scope.canOrderTraffic = () => dedicatedServerFeatureAvailability.allowDedicatedServerOrderTrafficOption() && !$scope.server.isExpired && $scope.server.canOrderQuota;
   $scope.canOrderMoreTraffic = () => !$scope.server.isExpired && $scope.server.canOrderQuota && _.get($scope.trafficOrderables, 'length');
 
   $scope.$on('dedicated.informations.bandwidth', $scope.loadBandwidthInformations);

@@ -1,7 +1,8 @@
 angular.module('Billing.services').service('BillingAutoRenew', [
   '$q',
+  'OvhApiEmailExchange',
   'OvhHttp',
-  function ($q, OvhHttp) {
+  function ($q, OvhApiEmailExchange, OvhHttp) {
     const AUTORENEW_CONTRACT_CA = 1752;
     const AUTORENEW_CONTRACT_WE = 1754;
     const AUTORENEW_CONTRACT_WS = 1755;
@@ -163,5 +164,12 @@ angular.module('Billing.services').service('BillingAutoRenew', [
     this.getUserCertificates = () => OvhHttp.get('/me/certificates', {
       rootPath: 'apiv6',
     });
+
+    this.getExchangeService = (organizationName, exchangeService) => (
+      OvhApiEmailExchange.service().v6().get({
+        organizationName,
+        exchangeService,
+      }).$promise
+    );
   },
 ]);

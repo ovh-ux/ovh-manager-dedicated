@@ -1,7 +1,12 @@
 class LicenseOrder {
-  constructor($q, featureAvailability, License, LicenseAgoraOrder) {
+  constructor(
+    $q,
+    License,
+    LicenseAgoraOrder,
+    licenseFeatureAvailability,
+  ) {
     this.$q = $q;
-    this.featureAvailability = featureAvailability;
+    this.licenseFeatureAvailability = licenseFeatureAvailability;
     this.License = License;
     this.LicenseAgoraOrder = LicenseAgoraOrder;
   }
@@ -11,7 +16,7 @@ class LicenseOrder {
   }
 
   getLicenseDurations(licenseInfo) {
-    if (!this.featureAvailability.allowLicenseAgoraOrder()) {
+    if (!this.licenseFeatureAvailability.allowLicenseAgoraOrder()) {
       return this.License.orderDuration(licenseInfo);
     }
     return this.$q.when(['01']);
@@ -19,7 +24,7 @@ class LicenseOrder {
 
   getLicensePrices(licenseInfo, durations) {
     const prices = {};
-    if (!this.featureAvailability.allowLicenseAgoraOrder()) {
+    if (!this.licenseFeatureAvailability.allowLicenseAgoraOrder()) {
       const queue = [];
       _.forEach(durations, (duration) => {
         queue.push(
@@ -60,7 +65,7 @@ class LicenseOrder {
   }
 
   getFinalizeOrderUrl(licenseInfo) {
-    if (!this.featureAvailability.allowLicenseAgoraOrder()) {
+    if (!this.licenseFeatureAvailability.allowLicenseAgoraOrder()) {
       // this shouldn't be used.
       return this.$q.when('');
     }

@@ -7,21 +7,36 @@ angular.module('App').controller('DedicatedCloudCtrl', [
   '$timeout',
   '$translate',
   '$uibModal',
+  'constants',
   'DedicatedCloud',
-  'featureAvailability',
   'Module.services.notification',
   'OvhApiDedicatedCloud',
   'step',
   'User',
-  function ($log, $q, $scope, $state, $stateParams, $timeout, $translate, $uibModal,
-    DedicatedCloud, featureAvailability, Notification, OvhApiDedicatedCloud, step, User) {
+  function (
+    $log,
+    $q,
+    $scope,
+    $state,
+    $stateParams,
+    $timeout,
+    $translate,
+    $uibModal,
+    constants,
+    DedicatedCloud,
+    Notification,
+    OvhApiDedicatedCloud,
+    step,
+    User,
+  ) {
     $scope.HDS_READY_NOTIFICATION = 'HDS_READY_NOTIFICATION';
 
     $scope.alerts = { dashboard: 'dedicatedCloud_alert' };
     $scope.loadingInformations = true;
     $scope.loadingError = false;
     $scope.dedicatedCloud = null;
-    $scope.featureAvailability = featureAvailability;
+
+    $scope.allowDedicatedServerComplianceOptions = constants.target !== 'US';
 
     $scope.notifications = {
       HDS_READY_NOTIFICATION: false,
