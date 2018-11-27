@@ -26,13 +26,32 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
   'AUTORENEW_EVENT',
   'BILLING_BASE_URL',
   'DEBT_STATUS',
+  'DOMAINS_AUTORENEW_BATCH_CERTIFICATE',
   'SUBSIDIARIES_WITH_RECENT_AUTORENEW',
 
   function (
-    $filter, $location, $q, $rootScope, $scope, $timeout, $translate, $window,
-    Alerter, atInternet, billingUrls, AutoRenew, PaymentInformation, renewHelper, constants,
-    PaymentMethodHelper, User,
-    AUTORENEW_EVENT, BILLING_BASE_URL, DEBT_STATUS, SUBSIDIARIES_WITH_RECENT_AUTORENEW,
+    $filter,
+    $location,
+    $q,
+    $rootScope,
+    $scope,
+    $timeout,
+    $translate,
+    $window,
+    Alerter,
+    atInternet,
+    billingUrls,
+    AutoRenew,
+    PaymentInformation,
+    renewHelper,
+    constants,
+    PaymentMethodHelper,
+    User,
+    AUTORENEW_EVENT,
+    BILLING_BASE_URL,
+    DEBT_STATUS,
+    DOMAINS_AUTORENEW_BATCH_CERTIFICATE,
+    SUBSIDIARIES_WITH_RECENT_AUTORENEW,
   ) {
     /**
      * Parse exchange name and determine it's type based on name prefix. Defaults on hosted type.
@@ -759,11 +778,12 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
         }) => {
           $scope.user = user;
           $scope.urls.renewAlign = renewAlignUrl;
-          $scope.canDisableAllDomains = userCertificates.includes('domains-batch-autorenew');
+          $scope.canDisableAllDomains = userCertificates
+            .includes(DOMAINS_AUTORENEW_BATCH_CERTIFICATE);
           $scope.hasDefaultValidPaymentMean = hasDefaultValidPaymentMean;
           $scope.automaticRenewV2Mean.allowed = hasDefaultValidPaymentMean;
 
-          if (userGuide && userGuide.autoRenew) {
+          if (_.has(userGuide, 'autoRenew')) {
             $scope.guide = userGuide.autoRenew;
           }
 

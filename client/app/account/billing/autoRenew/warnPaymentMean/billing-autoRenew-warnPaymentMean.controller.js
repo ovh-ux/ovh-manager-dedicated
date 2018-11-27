@@ -1,4 +1,4 @@
-angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew.WarnPaymentMean', class {
+angular.module('Billing.controllers').controller('billingControllersAutoRenewWarnPaymentMeanCtrl', class {
   constructor($scope, $state) {
     this.$scope = $scope;
     this.$state = $state;
@@ -9,6 +9,6 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew.
   }
 
   goToAddPaymentMean() {
-    this.$state.go('app.account.billing.payment.meanAdd').then(() => this.$scope.setAction());
+    this.$state.go('app.account.billing.payment.mean').then(() => this.$scope.setAction());
   }
 });

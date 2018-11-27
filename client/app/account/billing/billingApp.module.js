@@ -113,20 +113,25 @@ angular
        */
       $stateProvider.state('app.account.billing.payment.mean', {
         url: '/mean',
+        redirectTo: 'app.account.billing.payment.mean.list',
+      });
+
+      $stateProvider.state('app.account.billing.payment.mean.list', {
+        url: '',
         templateUrl: `${BILLING_BASE_URL}mean/billing-mean.html`,
         controller: 'Billing.controllers.Mean',
       });
 
       if (constants.target === 'US') {
-        $stateProvider.state('app.account.billing.payment.meanAdd', {
+        $stateProvider.state('app.account.billing.payment.mean.add', {
           url: '/mean/add?from',
           templateUrl: `${BILLING_BASE_URL}paymentMethod/add/index.html`,
           controller: 'PaymentMethodAddCtrl',
           controllerAs: '$ctrl',
         });
       } else {
-        $stateProvider.state('app.account.billing.payment.meanAdd', {
-          url: '/mean/add',
+        $stateProvider.state('app.account.billing.payment.mean.add', {
+          url: '/add',
           templateUrl: `${BILLING_BASE_URL}mean/add/billing-mean-add.html`,
           controller: 'Billing.controllers.Mean.Add',
         });
