@@ -1,5 +1,20 @@
 angular.module('Module.ip.controllers').controller('IpDashboardCtrl', (
-  $location, $q, $rootScope, $scope, $stateParams, $timeout, $translate, Alerter, featureAvailability, Ip, IpFirewall, IpMitigation, IpOrganisation, IpReverse, IpVirtualMac, Validator,
+  $location,
+  $q,
+  $rootScope,
+  $scope,
+  $stateParams,
+  $timeout,
+  $translate,
+  Alerter,
+  Ip,
+  ipFeatureAvailability,
+  IpFirewall,
+  IpMitigation,
+  IpOrganisation,
+  IpReverse,
+  IpVirtualMac,
+  Validator,
 ) => {
   $scope.currentView = 'table';
   $scope.containsAllServices = false;
@@ -29,9 +44,9 @@ angular.module('Module.ip.controllers').controller('IpDashboardCtrl', (
     reverseDelegations: false,
   };
 
-  $scope.canImportIPFO = () => featureAvailability.allowIPFailoverImport();
-  $scope.canOrderIPFO = () => featureAvailability.allowIPFailoverOrder();
-  $scope.canOrderAgoraIPFO = () => featureAvailability.allowIPFailoverAgoraOrder();
+  $scope.canImportIPFO = () => ipFeatureAvailability.allowIPFailoverImport();
+  $scope.canOrderIPFO = () => ipFeatureAvailability.allowIPFailoverOrder();
+  $scope.canOrderAgoraIPFO = () => ipFeatureAvailability.allowIPFailoverAgoraOrder();
 
   $scope.canReverseDelegations = function (ipBlock) {
     return ipBlock.version === 'IPV6' && /(\/64|\/56)$/.test(ipBlock.ipBlock);

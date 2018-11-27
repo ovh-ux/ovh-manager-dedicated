@@ -346,12 +346,12 @@
                             </dd>
                         </dl>
                         <div class="oui-tile__actions"
-                             data-ng-if="featureAvailability.hasContactChangement() && !server.isExpired">
+                             data-ng-if="dedicatedServerFeatureAvailability.hasContactChangement() && !server.isExpired">
                             <oui-action-menu
                                 aria-label="{{:: 'menu_action_label' | translate:{t0: ('server_bandwidth_ovh_to_internet' | translate)} }}"
                                 data-align="end"
                                 data-compact
-                                data-ng-if="featureAvailability.hasContactChangement() && !server.isExpired">
+                                data-ng-if="dedicatedServerFeatureAvailability.hasContactChangement() && !server.isExpired">
                                 <oui-action-menu-item
                                     data-text="{{:: 'contacts_management' | translate }}"
                                     aria-label="{{:: 'contacts_management' | translate }}"
@@ -486,7 +486,7 @@
                                 </dd>
                             </dl>
                             <div class="oui-tile__actions"
-                                 data-ng-if="!server.isExpired && ((bandwidthOption === 'subscribed' && featureAvailability.allowDedicatedServerBandwidthOption()) || (bandwidthOption === 'notSubscribed' && server.canOrderBandwith && featureAvailability.allowDedicatedServerOrderBandwidthOption()))">
+                                 data-ng-if="!server.isExpired && ((bandwidthOption === 'subscribed' && dedicatedServerFeatureAvailability.allowDedicatedServerBandwidthOption()) || (bandwidthOption === 'notSubscribed' && server.canOrderBandwith && dedicatedServerFeatureAvailability.allowDedicatedServerOrderBandwidthOption()))">
                                 <oui-action-menu
                                     aria-label="{{:: 'menu_action_label' | translate:{ t0: ('server_bandwidth_type' | translate) } }}"
                                     data-align="end"
@@ -496,13 +496,13 @@
                                         aria-label="{{:: 'server_bandwidth_cancel_button' | translate }}"
                                         data-on-click="setAction('bandwidth/cancel/dedicated-server-bandwidth-cancel', server.name)"
                                         data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
-                                        data-ng-if="bandwidthOption === 'subscribed' && featureAvailability.allowDedicatedServerBandwidthOption()"></oui-action-menu-item>
+                                        data-ng-if="bandwidthOption === 'subscribed' && dedicatedServerFeatureAvailability.allowDedicatedServerBandwidthOption()"></oui-action-menu-item>
                                     <oui-action-menu-item
                                         data-text="{{:: 'server_bandwidth_order_button' | translate}}"
                                         aria-label="{{:: 'server_bandwidth_order_button' | translate}}"
                                         data-on-click="setAction('bandwidth/order/dedicated-server-bandwidth-order', server.name)"
                                         data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
-                                        data-ng-if="bandwidthOption === 'notSubscribed' && server.canOrderBandwith && featureAvailability.allowDedicatedServerOrderBandwidthOption()"></oui-action-menu-item>
+                                        data-ng-if="bandwidthOption === 'notSubscribed' && server.canOrderBandwith && dedicatedServerFeatureAvailability.allowDedicatedServerOrderBandwidthOption()"></oui-action-menu-item>
                                 </oui-action-menu>
                             </div>
                         </div>

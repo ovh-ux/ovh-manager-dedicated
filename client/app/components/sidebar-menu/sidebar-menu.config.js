@@ -1,6 +1,17 @@
 angular.module('App')
-  .run(($q, SidebarMenu, Products, User, $translate, atInternet,
-    DedicatedCloud, Nas, CdnDomain, featureAvailability, constants) => {
+  .run((
+    $q,
+    $translate,
+    atInternet,
+    CdnDomain,
+    constants,
+    DedicatedCloud,
+    ipFeatureAvailability,
+    Nas,
+    Products,
+    SidebarMenu,
+    User,
+  ) => {
     function buildSidebarActions() {
       return $q.all({
         dedicatedOrder: User.getUrlOf('dedicatedOrder'),
@@ -16,7 +27,7 @@ angular.module('App')
           href: results.cloudProjectOrder,
         });
 
-        if (featureAvailability.hasNas()) {
+        if (constants.target === 'EU') {
           actionsMenuOptions.push({
             id: 'order-nas',
             title: 'Nas',
@@ -33,7 +44,7 @@ angular.module('App')
           target: '_blank',
         });
 
-        if (featureAvailability.allowVrackOrder()) {
+        if (constants.target === 'US') {
           actionsMenuOptions.push({
             id: 'order-vrack',
             title: $translate.instant('navigation_left_vrack'),
@@ -43,7 +54,7 @@ angular.module('App')
           });
         }
 
-        if (featureAvailability.allowIPFailoverAgoraOrder()) {
+        if (ipFeatureAvailability.allowIPFailoverAgoraOrder()) {
           actionsMenuOptions.push({
             id: 'order-additional-ip',
             title: $translate.instant('navigation_left_additional_ip'),
@@ -91,7 +102,7 @@ angular.module('App')
 
 
       let networksMenuItem;
-      if (featureAvailability.hasNas() || featureAvailability.hasCdn()) {
+      if (constants.target === 'EU') {
         networksMenuItem = SidebarMenu.addMenuItem({
           name: 'networks',
           title: $translate.instant('navigation_left_nas_and_cdn'),
@@ -104,7 +115,7 @@ angular.module('App')
 
       let microsoftItem;
       let exchangesItem;
-      if (featureAvailability.hasExchange()) {
+      if (constants.target === 'CA') {
         microsoftItem = SidebarMenu.addMenuItem({
           title: $translate.instant('navigation_left_microsoft'),
           category: 'microsoft',
@@ -138,7 +149,7 @@ angular.module('App')
         icon: 'ovh-font ovh-font-ip',
       });
 
-      if (featureAvailability.hasVrackAccessibleFromSidebar()) {
+      if (constants.target === 'US') {
         SidebarMenu.addMenuItem({
           name: 'vrack',
           title: $translate.instant('navigation_left_vrack'),
@@ -197,7 +208,7 @@ angular.module('App')
             .filter(network => network.type === 'CDN' || network.type === 'NAS' || network.type === 'NASHA')
             .sortBy(elt => angular.lowercase(elt.name))
             .forEach((network) => {
-              if (network.type === 'CDN' && featureAvailability.hasCdn()) {
+              if (network.type === 'CDN' && constants.target === 'EU') {
                 const sidebarItem = SidebarMenu.addMenuItem({
                   title: network.name,
                   state: 'app.networks.cdn.dedicated',
@@ -219,7 +230,7 @@ angular.module('App')
                     });
                   }),
                 }, networksMenuItem);
-              } else if (featureAvailability.hasNas()) {
+              } else if (constants.target === 'EU') {
                 pending.push(Nas.getNas().then(({ results }) => {
                   _.forEach(results, (result) => {
                     SidebarMenu.addMenuItem({
@@ -238,7 +249,7 @@ angular.module('App')
             .value();
 
           /* eslint-disable no-nested-ternary */
-          if (featureAvailability.hasExchange()) {
+          if (constants.target === 'CA') {
             _.chain(products.exchanges)
               .sortBy(elt => angular.lowercase(elt.name))
               .forEach((exchange) => {

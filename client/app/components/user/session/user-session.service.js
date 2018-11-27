@@ -1,7 +1,19 @@
 class SessionService {
-  constructor($q, $translate, atInternet, constants, CdnDomain, DedicatedCloud, Nas,
-    NavbarNotificationService, Products, User, LANGUAGES, OtrsPopupService, ssoAuthentication,
-    featureAvailability) {
+  constructor(
+    $q,
+    $translate,
+    atInternet,
+    constants,
+    CdnDomain,
+    DedicatedCloud,
+    Nas,
+    NavbarNotificationService,
+    Products,
+    User,
+    LANGUAGES,
+    OtrsPopupService,
+    ssoAuthentication,
+  ) {
     this.$q = $q;
     this.$translate = $translate;
     this.constants = constants;
@@ -16,7 +28,6 @@ class SessionService {
     this.LANGUAGES = LANGUAGES;
     this.otrsPopupService = OtrsPopupService;
     this.ssoAuthentication = ssoAuthentication;
-    this.featureAvailability = featureAvailability;
   }
 
   getProducts() {
@@ -260,7 +271,7 @@ class SessionService {
       title: this.$translate.instant('navigation_left_ip'),
       state: 'app.ip',
     },
-    this.featureAvailability.hasExchange() && {
+    (this.constants.target === 'CA') && {
       name: 'microsoft',
       title: this.$translate.instant('navigation_left_microsoft'),
       subLinks: this.getMicrosoftMenu(products.microsoft),

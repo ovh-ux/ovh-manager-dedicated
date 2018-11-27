@@ -4,8 +4,8 @@
 
             <!-- GENERAL INFORMATIONS -->
             <div data-ng-class="{
-                    'col-md-4': featureAvailability.allowDedicatedServerComplianceOptions(),
-                    'col-md-6': !featureAvailability.allowDedicatedServerComplianceOptions()
+                    'col-md-4': allowDedicatedServerComplianceOptions,
+                    'col-md-6': !allowDedicatedServerComplianceOptions
                  }">
                 <div class="oui-tile mb-5 h-100">
                     <h2 class="oui-header_4 oui-tile__title"
@@ -197,8 +197,8 @@
 
             <!-- PCC OPTIONS -->
             <div data-ng-class="{
-                    'col-md-4': featureAvailability.allowDedicatedServerComplianceOptions(),
-                    'col-md-6': !featureAvailability.allowDedicatedServerComplianceOptions()
+                    'col-md-4': allowDedicatedServerComplianceOptions,
+                    'col-md-6': !allowDedicatedServerComplianceOptions
                  }"
                  data-ng-if="!dedicatedCloud.isExpired">
                 <div class="oui-tile mb-5 h-100">
@@ -292,7 +292,7 @@
 
             <!-- PCI DSS, HDS AND HIPAA -->
             <div class="col-md-4"
-                 data-ng-if="featureAvailability.allowDedicatedServerComplianceOptions() && !dedicatedCloud.isExpired">
+                 data-ng-if="allowDedicatedServerComplianceOptions && !dedicatedCloud.isExpired">
                 <div class="oui-tile mb-5 h-100">
                     <h2 class="oui-header_4 oui-tile__title">
                         <span data-translate="dedicatedCloud_options_security_title"></span>
