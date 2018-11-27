@@ -708,12 +708,12 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
       $scope.initLoading = true;
 
       const {
-        selectedType, searchTextValue, renewFilter, renewalFilter, order,
+        selectedType, searchText, renewFilter, renewalFilter, order,
       } = $location.search();
 
       $scope.services.selectedType = selectedType;
       $scope.searchText = {
-        value: searchTextValue,
+        value: searchText,
       };
       $scope.renewFilter.model = renewFilter === '0' ? 0 : renewFilter || 0;
       $scope.renewalFilter.model = renewalFilter === '0' ? '0' : renewalFilter || '0';

@@ -46,7 +46,7 @@
                         <div class="text-danger"
                              data-ng-show="addRuleForm.portFrom.$invalid && addRuleForm.portFrom.$dirty && value == true && error !== 'required'"
                              data-ng-repeat="(error, value) in addRuleForm.portFrom.$error"
-                             data-ng-bind="('ip_game_mitigation_rule_add_port_' + error) | translateAlt: error">
+                             data-ng-bind="('ip_game_mitigation_rule_add_port_' + error) | ducTranslateAlt: error">
                         </div>
                     </div>
 
@@ -67,7 +67,7 @@
                         <div class="error-label"
                              data-ng-show="addRuleForm.portTo.$invalid && addRuleForm.portTo.$dirty && value == true"
                              data-ng-repeat="(error, value) in addRuleForm.portTo.$error"
-                             data-ng-bind="('ip_game_mitigation_rule_add_port_' + error) | translateAlt: error">
+                             data-ng-bind="('ip_game_mitigation_rule_add_port_' + error) | ducTranslateAlt: error">
                         </div>
                     </div>
                 </form>

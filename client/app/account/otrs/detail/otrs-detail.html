@@ -40,10 +40,10 @@
                         data-translate="otrs_popup_category">
                     </dt>
                     <dd data-ng-if="ticket.product"
-                        data-ng-bind="(('otrs_service_category_' + ticket.product) | translateAlt:ticket.product)">
+                        data-ng-bind="(('otrs_service_category_' + ticket.product) | ducTranslateAlt:ticket.product)">
                     </dd>
                     <dt data-translate="otrs_popup_type"></dt>
-                    <dd data-ng-bind="(('otrs_types_' + ticket.type) | translateAlt:ticket.type)"></dd>
+                    <dd data-ng-bind="(('otrs_types_' + ticket.type) | ducTranslateAlt:ticket.type)"></dd>
                 </dl>
                 <dl class="col-sm-6">
                     <dt data-translate="otrs_detail_creationDate"></dt>

@@ -1,5 +1,7 @@
-class UserContractService {
+export default class {
   constructor($q, OvhHttp) {
+    'ngInject';
+
     this.$q = $q;
     this.OvhHttp = OvhHttp;
   }
@@ -58,5 +60,3 @@ class UserContractService {
     });
   }
 }
-
-angular.module('App').service('UserContractService', UserContractService);

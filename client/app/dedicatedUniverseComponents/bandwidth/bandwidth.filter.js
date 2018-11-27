@@ -1,9 +1,6 @@
-/**
- * @type filter
- * @name filters:bandwidth
- */
+import angular from 'angular';
 
-angular.module('filters').filter('bandwidth', ($translate) => {
+export default /* @ngInject */ ($translate) => {
   /* eslint-disable no-restricted-properties */
   const unitsValues = [
     {
@@ -45,11 +42,11 @@ angular.module('filters').filter('bandwidth', ($translate) => {
     let i;
     let ii;
     let value = bytes; // Bytes by default
-    const unit = $translate.instant('unit_size_bps'); // Bytes by default
+    const unit = $translate.instant('bandwidth_unit_size_bps'); // Bytes by default
 
-    if (toUnit !== $translate.instant('unit_size_bps')) {
+    if (toUnit !== $translate.instant('bandwidth_unit_size_bps')) {
       for (i = 0, ii = unitsValues.length; i < ii; i += 1) {
-        if (toUnit === $translate.instant(`unit_size_${unitsValues[i].unit}`)) {
+        if (toUnit === $translate.instant(`bandwidth_unit_size_${unitsValues[i].unit}`)) {
           value = (bytes / unitsValues[i].value).toFixed(precision);
           break;
         }
@@ -63,14 +60,14 @@ angular.module('filters').filter('bandwidth', ($translate) => {
     let i;
     let ii;
     let value = bytes; // Bytes by default
-    let unit = $translate.instant('unit_size_bps'); // Bytes by default
+    let unit = $translate.instant('bandwidth_unit_size_bps'); // Bytes by default
     const absBytes = Math.abs(bytes);
 
     for (i = 0, ii = unitsValues.length; i < ii; i += 1) {
       if (absBytes >= unitsValues[i].value
         && (angular.isDefined(unitsValues[i + 1]) ? absBytes < unitsValues[i + 1].value : true)) {
         value = (bytes / unitsValues[i].value).toFixed(precision);
-        unit = $translate.instant(`unit_size_${unitsValues[i].unit}`);
+        unit = $translate.instant(`bandwidth_unit_size_${unitsValues[i].unit}`);
         break;
       }
     }
@@ -122,4 +119,4 @@ angular.module('filters').filter('bandwidth', ($translate) => {
     }
     return result;
   };
-});
+};

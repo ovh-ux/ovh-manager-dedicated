@@ -6,13 +6,21 @@ angular.module('Module.ip.controllers').controller('IpMainCtrl', [
   '$translate',
   'Alerter',
   'constants',
-  'featureAvailability',
-  function ($scope, $timeout, $stateParams, $location, $translate, Alerter, constants,
-    featureAvailability) {
+  'ipFeatureAvailability',
+  function (
+    $scope,
+    $timeout,
+    $stateParams,
+    $location,
+    $translate,
+    Alerter,
+    constants,
+    ipFeatureAvailability,
+  ) {
     const defaultTab = 'ip';
     $scope.tabs = ['ip'];
 
-    if (featureAvailability.hasIpLoadBalancing()) {
+    if (ipFeatureAvailability.hasIpLoadBalancing()) {
       $scope.tabs.push('ip-lb');
     }
 
@@ -25,7 +33,8 @@ angular.module('Module.ip.controllers').controller('IpMainCtrl', [
       } else {
         $scope.selectedTab = defaultTab;
       }
-      $location.search('tab', $scope.selectedTab);
+      $location.search('tab',
+        $scope.selectedTab);
     };
 
     if ($stateParams.tab && ~$scope.tabs.indexOf(angular.uppercase($stateParams.tab))) {

@@ -5,14 +5,22 @@ angular.module('Module.license').service('License', [
   'Module.license.Type',
   '$rootScope',
   'OvhHttp',
-  'featureAvailability',
-  function (Api, constants, $q, types, $rootScope, OvhHttp, featureAvailability) {
+  'licenseFeatureAvailability',
+  function (
+    Api,
+    constants,
+    $q,
+    types,
+    $rootScope,
+    OvhHttp,
+    licenseFeatureAvailability,
+  ) {
     const self = this;
 
     this.types = _.filter(
       types,
-      type => !featureAvailability.allowLicenseAgoraOrder()
-        || featureAvailability.allowLicenseTypeAgoraOrder(type),
+      type => !licenseFeatureAvailability.allowLicenseAgoraOrder()
+        || licenseFeatureAvailability.allowLicenseTypeAgoraOrder(type),
     );
 
     function init() {

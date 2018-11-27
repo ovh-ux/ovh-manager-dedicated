@@ -14,7 +14,7 @@
                     <select class="form-control input-sm"
                             data-ng-model="ctrlContactRequests.selectedState"
                             data-ng-change="ctrlContactRequests.onTaskStateChanged()"
-                            data-ng-options="state as (('useraccount_contacts_task_state_requests_' + state) | translateAlt: state) for state in ctrlContactRequests.taskStateEnum">
+                            data-ng-options="state as (('useraccount_contacts_task_state_requests_' + state) | ducTranslateAlt: state) for state in ctrlContactRequests.taskStateEnum">
                         <option value="" data-translate="useraccount_contacts_task_state"></option>
                     </select>
                 </th>

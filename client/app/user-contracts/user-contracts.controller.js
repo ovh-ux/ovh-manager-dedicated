@@ -1,15 +1,23 @@
 class UserContractsCtrl {
-  constructor($scope, $timeout, featureAvailability, User, UserContractService) {
+  constructor(
+    $scope,
+    $timeout,
+    constants,
+    User,
+    DucUserContractService,
+  ) {
     this.$scope = $scope;
     this.$timeout = $timeout;
-    this.featureAvailability = featureAvailability;
+    this.constants = constants;
     this.User = User;
-    this.UserContractService = UserContractService;
+    this.DucUserContractService = DucUserContractService;
   }
 
   $onInit() {
-    if (this.featureAvailability.agreeTosAndPpOnManagerLoad()) {
-      this.UserContractService.getAgreementsToValidate(contract => _.includes(['tos', 'pp'], contract.code)).then((contracts) => {
+    this.agreeTosAndPpOnManagerLoad = this.constants.target === 'US';
+
+    if (this.agreeTosAndPpOnManagerLoad) {
+      this.DucUserContractService.getAgreementsToValidate(contract => _.includes(['tos', 'pp'], contract.code)).then((contracts) => {
         if (contracts.length) {
           this.$scope.currentAction = 'modal/user-contracts-accept';
           this.$scope.stepPath = 'user-contracts/modal/user-contracts-accept.html';
