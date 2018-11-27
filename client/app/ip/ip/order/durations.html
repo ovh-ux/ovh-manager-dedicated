@@ -22,7 +22,7 @@
                     <span data-ng-if="model.service.serviceType === 'DEDICATED'"
                           data-ng-bind="(model.params.blockSize > 1 ? 'ip_order_ip_count_other' : 'ip_order_ip_count_1') | translate">
                     </span> :
-                    <span data-ng-bind-html="durations.details[duration].prices | price:user.ovhSubsidiary"></span>
+                    <span data-ng-bind-html="durations.details[duration].prices | ducPrice:user.ovhSubsidiary"></span>
                     <oui-spinner data-ng-hide="durations.details[duration]"
                                  data-size="s">
                     </oui-spinner>

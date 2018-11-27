@@ -3,6 +3,7 @@ import angular from 'angular';
 import ducBandwidth from './bandwidth';
 import ducBytes from './bytes';
 import ducContract from './contract';
+import ducPrice from './price';
 
 const moduleName = 'dedicatedUniverseComponents';
 
@@ -11,6 +12,7 @@ angular
     ducBandwidth,
     ducBytes,
     ducContract,
+    ducPrice,
   ]);
 
 export default moduleName;
