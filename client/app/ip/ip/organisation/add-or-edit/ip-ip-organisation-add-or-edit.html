@@ -55,7 +55,7 @@
                              role="alert"
                              data-ng-show="hasError(organisationForm.firstname) && value == true"
                              data-ng-repeat="(error, value) in organisationForm.firstname.$error">
-                            <span data-ng-bind="('ip_organisation_add_' + error) | translateAlt: error"></span>
+                            <span data-ng-bind="('ip_organisation_add_' + error) | ducTranslateAlt: error"></span>
                         </div>
                     </div>
 
@@ -75,7 +75,7 @@
                              role="alert"
                              data-ng-show="hasError(organisationForm.lastname) && value == true"
                              data-ng-repeat="(error, value) in organisationForm.lastname.$error">
-                            <span data-ng-bind="('ip_organisation_add_' + error) | translateAlt: error"></span>
+                            <span data-ng-bind="('ip_organisation_add_' + error) | ducTranslateAlt: error"></span>
                         </div>
                     </div>
 
@@ -90,7 +90,7 @@
                                 name="country"
                                 class="form-control"
                                 data-ng-required="true"
-                                data-ng-options="country as ('country_' + country | translateAlt: country) for country in list.country | orderBy:orderByCountryAlias">
+                                data-ng-options="country as ('country_' + country | ducTranslateAlt: country) for country in list.country | orderBy:orderByCountryAlias">
                         </select>
                         <div data-ng-show="load.request"
                              class="text-center">
@@ -114,7 +114,7 @@
                              role="alert"
                              data-ng-show="hasError(organisationForm.email) && value == true"
                              data-ng-repeat="(error, value) in organisationForm.email.$error">
-                            <span data-ng-bind="('ip_organisation_add_' + error) | translateAlt: error"></span>
+                            <span data-ng-bind="('ip_organisation_add_' + error) | ducTranslateAlt: error"></span>
                         </div>
                     </div>
 
@@ -134,7 +134,7 @@
                              role="alert"
                              data-ng-show="hasError(organisationForm.address) && value == true"
                              data-ng-repeat="(error, value) in organisationForm.address.$error">
-                            <span data-ng-bind="('ip_organisation_add_' + error) | translateAlt: error"></span>
+                            <span data-ng-bind="('ip_organisation_add_' + error) | ducTranslateAlt: error"></span>
                         </div>
                     </div>
 
@@ -154,7 +154,7 @@
                              role="alert"
                              data-ng-show="hasError(organisationForm.city) && value == true"
                              data-ng-repeat="(error, value) in organisationForm.city.$error">
-                            <span data-ng-bind="('ip_organisation_add_' + error) | translateAlt: error"></span>
+                            <span data-ng-bind="('ip_organisation_add_' + error) | ducTranslateAlt: error"></span>
                         </div>
                     </div>
 
@@ -174,7 +174,7 @@
                              role="alert"
                              data-ng-show="hasError(organisationForm.state) && value == true"
                              data-ng-repeat="(error, value) in organisationForm.state.$error">
-                            <span data-ng-bind="('ip_organisation_add_' + error) | translateAlt: error"></span>
+                            <span data-ng-bind="('ip_organisation_add_' + error) | ducTranslateAlt: error"></span>
                         </div>
                     </div>
 
@@ -194,7 +194,7 @@
                              role="alert"
                              data-ng-show="hasError(organisationForm.zip) && value == true"
                              data-ng-repeat="(error, value) in organisationForm.zip.$error">
-                            <span data-ng-bind="('ip_organisation_add_' + error) | translateAlt: error"></span>
+                            <span data-ng-bind="('ip_organisation_add_' + error) | ducTranslateAlt: error"></span>
                         </div>
                     </div>
 
@@ -214,7 +214,7 @@
                              role="alert"
                              data-ng-show="hasError(organisationForm.phone) && value == true"
                              data-ng-repeat="(error, value) in organisationForm.phone.$error">
-                            <span data-ng-bind="('ip_organisation_add_' + error) | translateAlt: error"></span>
+                            <span data-ng-bind="('ip_organisation_add_' + error) | ducTranslateAlt: error"></span>
                         </div>
                     </div>
                 </form>
@@ -242,7 +242,7 @@
                     <dt data-translate="ip_organisation_table_firstname"></dt>
                     <dd data-ng-bind="newOrganisation.firstname"></dd>
                     <dt data-translate="ip_organisation_table_country"></dt>
-                    <dd data-ng-bind="('country_' + newOrganisation.country) | translateAlt: newOrganisation.country"></dd>
+                    <dd data-ng-bind="('country_' + newOrganisation.country) | ducTranslateAlt: newOrganisation.country"></dd>
                     <dt data-translate="ip_organisation_table_email"></dt>
                     <dd data-ng-bind="newOrganisation.abuse_mailbox"></dd>
                     <dt data-translate="ip_organisation_table_address"></dt>

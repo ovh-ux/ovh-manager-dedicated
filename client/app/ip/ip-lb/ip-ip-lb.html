@@ -58,7 +58,7 @@
                                       'label-success': selectedIplb.infos.state === 'ok',
                                       'label-warning': selectedIplb.infos.state !== 'ok'
                                   }"
-                                  data-ng-bind="('iplb_infos_state_' + selectedIplb.infos.state) | translateAlt: selectedIplb.infos.state">
+                                  data-ng-bind="('iplb_infos_state_' + selectedIplb.infos.state) | ducTranslateAlt: selectedIplb.infos.state">
                             </span>
                         </dd>
 
@@ -68,7 +68,7 @@
                         <!-- stickiness -->
                         <dt data-translate="iplb_infos_stickiness"></dt>
                         <dd data-ng-if="!selectedIplb.polling.stickiness">
-                            <span data-ng-bind="('iplb_infos_stickiness_' + selectedIplb.infos.stickiness) | translateAlt: selectedIplb.infos.stickiness"></span>
+                            <span data-ng-bind="('iplb_infos_stickiness_' + selectedIplb.infos.stickiness) | ducTranslateAlt: selectedIplb.infos.stickiness"></span>
                             <button type="button"
                                     class="btn btn-default"
                                     data-ng-click="setAction('ip-lb/stickiness/ip-ip-lb-stickiness', selectedIplb)"
@@ -85,7 +85,7 @@
                         <!-- ssl -->
                         <dt data-translate="iplb_infos_ssl"></dt>
                         <dd data-ng-if="!selectedIplb.polling.activateSsl && !selectedIplb.polling.desactivateSsl">
-                            <span data-ng-bind="('iplb_infos_ssl_' + selectedIplb.infos.ssl) | translateAlt: selectedIplb.infos.ssl"></span>
+                            <span data-ng-bind="('iplb_infos_ssl_' + selectedIplb.infos.ssl) | ducTranslateAlt: selectedIplb.infos.ssl"></span>
                             <button type="button"
                                     class="btn btn-default"
                                     data-ng-if="worldPart !== 'CA' && selectedIplb.infos.ssl === 'none'"
@@ -214,7 +214,7 @@
                             <td data-ng-bind="backend.zone.toUpperCase()"></td>
                             <td data-ng-bind="backend.backend"></td>
                             <td data-ng-bind="backend.mainBackendIp || '-'"></td>
-                            <td data-ng-bind="('iplb_backend_probe_' + backend.probe.toUpperCase()) | translateAlt: backend.probe.toUpperCase()"></td>
+                            <td data-ng-bind="('iplb_backend_probe_' + backend.probe.toUpperCase()) | ducTranslateAlt: backend.probe.toUpperCase()"></td>
                             <td>
                                 <div data-uib-dropdown>
                                     <button type="button"

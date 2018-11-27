@@ -56,7 +56,7 @@
                                 class="form-control"
                                 data-ng-model="model.probe"
                                 data-ng-required="true"
-                                data-ng-options="probe as (('iplb_backend_probe_' + probe.toUpperCase()) | translateAlt: probe.toUpperCase()) for probe in probes | orderBy:orderByProbeAlias">
+                                data-ng-options="probe as (('iplb_backend_probe_' + probe.toUpperCase()) | ducTranslateAlt: probe.toUpperCase()) for probe in probes | orderBy:orderByProbeAlias">
                         </select>
                         <p data-translate="iplb_backend_probe_help_NONE"></p>
                         <p data-translate="iplb_backend_probe_help_HTTPICMP"></p>

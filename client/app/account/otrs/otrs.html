@@ -105,7 +105,7 @@
                 <select class="form-control"
                         id="requestspopup"
                         name="requestspopup"
-                        data-ng-options="request as (('otrs_request_' + request ) | translateAlt:request) for request in requests"
+                        data-ng-options="request as (('otrs_request_' + request ) | ducTranslateAlt:request) for request in requests"
                         data-ng-model="search.category"
                         data-ng-disabled="loaders.models">
                      <option value=""
