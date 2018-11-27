@@ -511,7 +511,7 @@
                                 <dt class="oui-tile__term"
                                     data-translate="server_bandwidth_connection"></dt>
                                 <dd class="oui-tile__description"
-                                    data-ng-bind="bandwidth.connection | bandwidth">
+                                    data-ng-bind="bandwidth.connection | ducBandwidth">
                                 </dd>
                             </dl>
                         </div>
@@ -529,7 +529,7 @@
                                 <dt class="oui-tile__term"
                                     data-translate="server_bandwidth_ovh_to_ovh"></dt>
                                 <dd class="oui-tile__description"
-                                    data-ng-bind="bandwidth.bandwidth.OvhToOvh | bandwidth">
+                                    data-ng-bind="bandwidth.bandwidth.OvhToOvh | ducBandwidth">
                                 </dd>
                             </dl>
                         </div>
@@ -538,7 +538,7 @@
                                 <dt class="oui-tile__term"
                                     data-translate="server_bandwidth_ovh_to_internet"></dt>
                                 <dd class="oui-tile__description">
-                                    <span data-ng-bind="bandwidth.bandwidth.OvhToInternet | bandwidth"></span>
+                                    <span data-ng-bind="bandwidth.bandwidth.OvhToInternet | ducBandwidth"></span>
                                     <span class="text-danger"
                                           data-ng-if="traffic.usage.isThrottled">
                                         -
@@ -575,7 +575,7 @@
                                     </span>
                                     <span data-ng-if="!traffic.usage.outputQuotaSize.text"
                                           data-translate="server_traffic_unlimited_text"
-                                          data-translate-values="{ t0: (bandwidth.bandwidth.OvhToInternet | bandwidth) }">
+                                          data-translate-values="{ t0: (bandwidth.bandwidth.OvhToInternet | ducBandwidth) }">
                                     </span>
                                     <small class="oui-tile__extra"
                                            data-ng-if="trafficOption === 'released'"
@@ -610,7 +610,7 @@
                                 <dt class="oui-tile__term"
                                     data-translate="server_bandwidth_internet_to_ovh"></dt>
                                 <dd class="oui-tile__description"
-                                    data-ng-bind="bandwidth.bandwidth.InternetToOvh | bandwidth">
+                                    data-ng-bind="bandwidth.bandwidth.InternetToOvh | ducBandwidth">
                                 </dd>
                             </dl>
                         </div>
@@ -624,7 +624,7 @@
                                           data-oui-tooltip-placement="top"></span>
                                 </dt>
                                 <dd class="oui-tile__description">
-                                    <span data-ng-bind="bandwidth.vrack.bandwidth | bandwidth"></span>
+                                    <span data-ng-bind="bandwidth.vrack.bandwidth | ducBandwidth"></span>
                                     <small class="oui-tile__extra"
                                            data-ng-if="bandwidthVrackOption === 'released'"
                                            data-translate="server_bandwidth_vrack_option_released"></small>

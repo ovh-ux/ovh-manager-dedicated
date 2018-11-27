@@ -4,16 +4,24 @@
  * @description
  */
 angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew.update', [
+  '$q',
   '$rootScope',
   '$scope',
-  '$q',
   '$translate',
-  'BillingAutoRenew',
   'Alerter',
+  'BillingAutoRenew',
   'AUTORENEW_EVENT',
-  'UserContractService',
-  function ($rootScope, $scope, $q, $translate, AutoRenew, Alerter, AUTORENEW_EVENT,
-    UserContractService) {
+  'DucUserContractService',
+  function (
+    $q,
+    $rootScope,
+    $scope,
+    $translate,
+    Alerter,
+    AutoRenew,
+    AUTORENEW_EVENT,
+    DucUserContractService,
+  ) {
     $scope.selectedServices = $scope.currentActionData.services;
     $scope.nicRenew = $scope.currentActionData.nicRenew;
     $scope.urlRenew = $scope.currentActionData.urlRenew;
@@ -55,7 +63,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew.
       if (hasServiceChangedToAutorenew()) {
         $scope.loading.contracts = true;
 
-        return UserContractService
+        return DucUserContractService
           .getAgreementsToValidate(contract => AutoRenew.getAutorenewContractIds()
             .includes(contract.contractId))
           .then(
@@ -103,7 +111,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew.
         }
       });
 
-      let promise = UserContractService.acceptAgreements($scope.contracts)
+      let promise = DucUserContractService.acceptAgreements($scope.contracts)
         .then(() => AutoRenew.updateServices(result))
         .then(() => {
           $scope.$emit(AUTORENEW_EVENT.MODIFY, result);
