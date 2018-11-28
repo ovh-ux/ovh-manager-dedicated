@@ -33,6 +33,7 @@ const appDeps = [
   'ovh-angular-sso-auth',
   'ovh-angular-sso-auth-modal-plugin',
   'ovh-angular-apiv7',
+  'ovh-angular-tail-logs',
   'oui',
   'ui.select',
   uiRouter,

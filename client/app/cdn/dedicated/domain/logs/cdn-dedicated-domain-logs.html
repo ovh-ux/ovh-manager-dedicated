@@ -1,0 +1,32 @@
+<div data-ng-controller="CdnDomainTabLogsCtrl as listCtrl">
+
+    <ovh-tail-logs>
+        <div class="row ml-0"
+             data-ng-repeat="log in listCtrl.logger.logs track by $index"
+             data-ng-class="{
+                'text-primary' : log.message.status >= 200 && log.message.status < 300,
+                'text-warning' : log.message.status >= 300 && log.message.status < 499,
+                'text-danger'  : log.message.status > 499
+            }">
+
+            <div class="col-md-12">
+                <span data-ng-bind="log.message.source" title="ip_source" />
+                <span title="ident">-</span>
+                <span data-ng-bind="log.message.user" title="user" />
+                [<span data-ng-bind="log.message.timestamp | date:'short'" title="date" />]
+                "<span data-ng-bind="log.message.method" title="method"/>
+                <span data-ng-if="log.message.is_ssl === 'NO'" title="schema">http://</span><span data-ng-if="log.message.is_ssl === 'YES'" title="schema">https://</span><span data-ng-bind="log.message.vhost" title="vhost"/><span data-ng-bind="log.message.uri" title="uri"/>
+                <span data-ng-bind="log.message.client_protocol" title="protocol" />"
+                <span data-ng-bind="log.message.status" title="status"/>
+                <span data-ng-bind="log.message.content_size_int" title="size"/>
+                "<span data-ng-bind="log.message.referer" title="referer" />"
+                "<span data-ng-bind="log.message.ua" title="user_agent" />"
+                <span data-ng-bind="log.message.cache_varnishd" title="cache" />
+            </div>
+        </div>
+
+        <div data-translate="cdn_tabs_logs_list_no_logs"
+             data-ng-if="listCtrl.logger.logs.length === 0"></div>
+    </ovh-tail-logs>
+
+</div>
