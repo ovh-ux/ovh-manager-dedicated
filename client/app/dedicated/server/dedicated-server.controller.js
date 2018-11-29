@@ -376,9 +376,12 @@ angular.module('App').controller('ServerCtrl', (
             $scope.setMessage($translate.instant('server_configuration_installation_progress_end'), true);
             $scope.$broadcast('dedicated.informations.reload');
           }
+
           $scope.disable.install = false;
           $scope.disable.installationInProgress = false;
           $scope.disable.installationInProgressError = false;
+          $scope.loadingServerInformations = false;
+          $scope.$broadcast('dedicated.server.refreshTabs');
           return;
         }
 
