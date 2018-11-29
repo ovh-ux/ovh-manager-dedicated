@@ -1,3 +1,13 @@
+<a name="10.6.6"></a>
+## [10.6.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.6.5...v10.6.6) (2018-11-29)
+
+
+### Bug Fixes
+
+* **dedicated.server:** dashboard refresh on status error ([e6f9967](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e6f9967))
+
+
+
 <a name="10.6.5"></a>
 ## [10.6.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.6.4...v10.6.5) (2018-11-29)
 
