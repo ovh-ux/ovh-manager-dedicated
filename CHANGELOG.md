@@ -1,3 +1,13 @@
+<a name="10.6.4"></a>
+## [10.6.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.6.3...v10.6.4) (2018-11-29)
+
+
+### Bug Fixes
+
+* **account.user.security.sms:** re-enable sms ([7f72362](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7f72362))
+
+
+
 <a name="10.6.3"></a>
 ## [10.6.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.6.2...v10.6.3) (2018-11-27)
 
