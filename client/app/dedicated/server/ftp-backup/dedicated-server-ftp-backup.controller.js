@@ -1,13 +1,21 @@
 angular.module('App')
   .controller('DedicatedServerFtpBackupController', class DedicatedServerFtpBackupController {
-    constructor($q, $scope, $stateParams, $translate, Alerter, featureAvailability,
-      Polling, Server) {
+    constructor(
+      $q,
+      $scope,
+      $stateParams,
+      $translate,
+      Alerter,
+      dedicatedServerFeatureAvailability,
+      Polling,
+      Server,
+    ) {
       this.$q = $q;
       this.$scope = $scope;
       this.$stateParams = $stateParams;
       this.$translate = $translate;
       this.Alerter = Alerter;
-      this.featureAvailability = featureAvailability;
+      this.dedicatedServerFeatureAvailability = dedicatedServerFeatureAvailability;
       this.Polling = Polling;
       this.Server = Server;
     }
@@ -29,7 +37,8 @@ angular.module('App')
       };
       this.$scope.ftpBackup.model = null;
       this.$scope.loading = true;
-      this.$scope.featureAvailable = this.featureAvailability.hasDedicatedServerBackupStorage();
+      this.$scope.featureAvailable = this.dedicatedServerFeatureAvailability
+        .hasDedicatedServerBackupStorage();
       this.$scope.loadFtpBackupTable = this.loadFtpBackupTable.bind(this);
 
       this.$scope.$on('server.ftpbackup.reload', this.$onInit);

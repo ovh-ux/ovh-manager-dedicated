@@ -1,4 +1,12 @@
-angular.module('Billing').controller('Billing.PaymentsCtrl', function ($filter, $q, $state, $translate, atInternet, constants, featureAvailability, OvhApiMe) {
+angular.module('Billing').controller('Billing.PaymentsCtrl', function (
+  $filter,
+  $q,
+  $state,
+  $translate,
+  atInternet,
+  constants,
+  OvhApiMe,
+) {
   this.loadPayments = ($config) => {
     let request = OvhApiMe.Deposit().v7().query().sort($config.sort.property, $config.sort.dir > 0 ? 'ASC' : 'DESC');
 
@@ -69,7 +77,7 @@ angular.module('Billing').controller('Billing.PaymentsCtrl', function ($filter, 
 
   this.getTranslatedPaiementType = payment => (payment.paymentInfo ? $translate.instant(`common_payment_type_${payment.paymentInfo.paymentType}`) : $translate.instant('payments_table_type_not_available'));
 
-  this.shouldDisplayDepositsLinks = () => featureAvailability.showPDFAndHTMLDepositLinks();
+  this.shouldDisplayDepositsLinks = () => constants.target !== 'US';
 
   this.displayActionsCol = () => constants.target !== 'US';
 

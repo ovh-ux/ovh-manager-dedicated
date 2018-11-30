@@ -4,17 +4,26 @@
  * @description
  */
 angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew.activation', [
-  '$rootScope',
-  '$scope',
   '$filter',
   '$q',
+  '$rootScope',
+  '$scope',
   '$translate',
-  'BillingAutoRenew',
   'Alerter',
+  'BillingAutoRenew',
   'AUTORENEW_EVENT',
-  'UserContractService',
-  function ($rootScope, $scope, $filter, $q, $translate, AutoRenew, Alerter, AUTORENEW_EVENT,
-    UserContractService) {
+  'DucUserContractService',
+  function (
+    $filter,
+    $q,
+    $rootScope,
+    $scope,
+    $translate,
+    Alerter,
+    AutoRenew,
+    AUTORENEW_EVENT,
+    DucUserContractService,
+  ) {
     $scope.selectedServices = $scope.currentActionData;
     $scope.selectedServices[0].expirationText = $filter('date')($scope.selectedServices[0].expiration, 'mediumDate');
     $scope.agree = {};
@@ -49,7 +58,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew.
         _.set(service, 'renew.deleteAtExpiration', false);
         return _.pick(service, ['serviceId', 'serviceType', 'renew']);
       });
-      return UserContractService.acceptAgreements($scope.contracts)
+      return DucUserContractService.acceptAgreements($scope.contracts)
         .then(() => AutoRenew.updateServices(result))
         .then(() => {
           $scope.$emit(AUTORENEW_EVENT.ACTIVATE_AUTO_PAYMENT, result);
@@ -71,7 +80,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew.
 
       $scope.loading.contracts = true;
 
-      return UserContractService
+      return DucUserContractService
         .getAgreementsToValidate(contract => AutoRenew.getAutorenewContractIds()
           .includes(contract.contractId))
         .then(

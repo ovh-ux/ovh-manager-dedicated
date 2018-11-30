@@ -1,10 +1,24 @@
 /* eslint-disable no-use-before-define */
-angular.module('App').controller('ServerCtrl', (NO_AUTORENEW_COUNTRIES, WEATHERMAP_URL, $scope, $timeout, $stateParams, $translate, Server, Polling, $q, constants, User, ovhUserPref, featureAvailability) => {
+angular.module('App').controller('ServerCtrl', (
+  $q,
+  $scope,
+  $stateParams,
+  $timeout,
+  $translate,
+  constants,
+  dedicatedServerFeatureAvailability,
+  ovhUserPref,
+  Polling,
+  Server,
+  User,
+  NO_AUTORENEW_COUNTRIES,
+  WEATHERMAP_URL,
+) => {
   const errorStatus = ['customer_error', 'ovh_error', 'error', 'cancelled'];
 
   $scope.loadingServerInformations = true;
   $scope.loadingServerError = false;
-  $scope.featureAvailability = featureAvailability;
+  $scope.dedicatedServerFeatureAvailability = dedicatedServerFeatureAvailability;
   $scope.server = {
     isExpired: true,
   };
@@ -362,9 +376,12 @@ angular.module('App').controller('ServerCtrl', (NO_AUTORENEW_COUNTRIES, WEATHERM
             $scope.setMessage($translate.instant('server_configuration_installation_progress_end'), true);
             $scope.$broadcast('dedicated.informations.reload');
           }
+
           $scope.disable.install = false;
           $scope.disable.installationInProgress = false;
           $scope.disable.installationInProgressError = false;
+          $scope.loadingServerInformations = false;
+          $scope.$broadcast('dedicated.server.refreshTabs');
           return;
         }
 

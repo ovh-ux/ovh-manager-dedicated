@@ -10,7 +10,7 @@
     <div class="container-fluid p-5">
 
         <div data-ng-if="loaders.owner">
-            <div class="loader"></div>
+            <oui-spinner></oui-spinner>
         </div>
 
         <div class="row" data-ng-if="!loaders.owner">
@@ -30,7 +30,7 @@
 
                             <div class="controls">
                                 <div data-ng-if="!edit.value || isReadonly('legalForm')">
-                                    <span data-ng-bind="('useraccount_contacts_owner_legalform_' + ownerModel.legalForm) | translateAlt:'-'"></span>
+                                    <span data-ng-bind="('useraccount_contacts_owner_legalform_' + ownerModel.legalForm) | ducTranslateAlt:'-'"></span>
                                 </div>
 
                                 <select name="legalForm"
@@ -326,7 +326,7 @@
 
                             <div class="controls">
                                 <div data-ng-hide="edit.value">
-                                    <span data-ng-bind="('useraccount_contacts_owner_gender_' + ownerModel.gender) | translateAlt:'-'"></span>
+                                    <span data-ng-bind="('useraccount_contacts_owner_gender_' + ownerModel.gender) | ducTranslateAlt:'-'"></span>
                                 </div>
                                 <select class="form-control"
                                         data-ng-model="ownerModel.gender"
@@ -356,7 +356,7 @@
 
                             <div class="controls">
                                 <div data-ng-show="!edit.value">
-                                    <span data-ng-bind="('country_' + ownerModel.nationality) | translateAlt:'-'"></span>
+                                    <span data-ng-bind="('country_' + ownerModel.nationality) | ducTranslateAlt:'-'"></span>
                                 </div>
                                 <select class="form-control"
                                         data-ng-model="ownerModel.nationality"
@@ -403,7 +403,7 @@
 
                             <div class="controls">
                                 <div data-ng-show="!edit.value"
-                                     data-ng-bind="('country_' + ownerModel.birthCountry) | translateAlt:'-'">
+                                     data-ng-bind="('country_' + ownerModel.birthCountry) | ducTranslateAlt:'-'">
                                 </div>
                                 <select class="form-control"
                                         data-ng-show="edit.value" type="text"
@@ -670,7 +670,7 @@
 
                             <div class="controls">
                                 <div data-ng-hide="edit.value && !isReadonly('address.country')"
-                                     data-ng-bind="('country_' + ownerModel.address.country) | translateAlt:'-'">
+                                     data-ng-bind="('country_' + ownerModel.address.country) | ducTranslateAlt:'-'">
                                 </div>
                                 <select class="form-control"
                                         data-ng-show="edit.value && !isReadonly('address.country')" type="text"

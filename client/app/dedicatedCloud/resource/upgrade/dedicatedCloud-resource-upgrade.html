@@ -28,7 +28,7 @@
                         <span>
                             <span data-ng-bind="duration | duration:'longDate'"></span>
                             &nbsp;:&nbsp;
-                            <span data-ng-bind-html="durations.details[duration].prices | price:ovhSubsidiary"></span>
+                            <span data-ng-bind-html="durations.details[duration].prices | ducPrice:ovhSubsidiary"></span>
                             <oui-spinner data-ng-hide="durations.details[duration]"
                                          data-size="s">
                             </oui-spinner>

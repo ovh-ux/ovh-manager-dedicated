@@ -15,7 +15,7 @@
                 <p class="bold blue" data-ng-bind="'ip_mitigation_statistics_current_ip' | translate:{ t0: data.ip.ip }"></p>
                 <div>
                     <div data-ng-hide="statisticsScalesAvailable">
-                        <div class="loader"></div>
+                        <oui-spinner></oui-spinner>
                     </div>
                     <div data-ng-show="statisticsScalesAvailable">
 

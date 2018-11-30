@@ -7,9 +7,9 @@ angular.module('App').controller('DedicatedCloudCtrl', [
   '$timeout',
   '$translate',
   '$uibModal',
+  'constants',
   'DedicatedCloud',
   'DucNotification',
-  'featureAvailability',
   'OvhApiDedicatedCloud',
   'step',
   'User',
@@ -22,9 +22,9 @@ angular.module('App').controller('DedicatedCloudCtrl', [
     $timeout,
     $translate,
     $uibModal,
+    constants
     DedicatedCloud,
     DucNotification,
-    featureAvailability,
     OvhApiDedicatedCloud,
     step,
     User,
@@ -35,7 +35,8 @@ angular.module('App').controller('DedicatedCloudCtrl', [
     $scope.loadingInformations = true;
     $scope.loadingError = false;
     $scope.dedicatedCloud = null;
-    $scope.featureAvailability = featureAvailability;
+
+    $scope.allowDedicatedServerComplianceOptions = constants.target !== 'US';
 
     $scope.notifications = {
       HDS_READY_NOTIFICATION: false,

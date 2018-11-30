@@ -81,7 +81,7 @@ const constants = {
         dedicatedIpmi: 'http://ohjeet.ovh-hosting.fi/IpmiSol',
         RealTimeMonitoring: 'http://ohjeet.ovh-hosting.fi/RealTimeMonitoring',
         changeOwner: 'https://www.ovh.com/cgi-bin/fi/procedure/procedureChangeOwner.cgi',
-        domainOrderTrade: "https://www.ovh.fi/order/domain/#/legacy/domain/trade/informations?options=~~(domain~~'{domain})",
+        domainOrderTrade: "https://www.ovh-hosting.fi/order/domain/#/legacy/domain/trade/informations?options=~~(domain~~'{domain})",
         exchangeOrder: 'https://www.ovh-hosting.fi/sahkopostit/hosted-exchange/',
         renewAlign: 'https://www.ovh-hosting.fi/cgi-bin/order/renew.cgi?alignDate=1&csid=0',
         faq: 'https://www.ovh-hosting.fi/dedikoidut_palvelimet/ukk.xml',
