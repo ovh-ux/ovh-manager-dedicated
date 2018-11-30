@@ -22,7 +22,7 @@ angular.module('App').controller('DedicatedCloudCtrl', [
     $timeout,
     $translate,
     $uibModal,
-    constants
+    constants,
     DedicatedCloud,
     DucNotification,
     OvhApiDedicatedCloud,
