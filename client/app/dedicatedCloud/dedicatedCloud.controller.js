@@ -9,7 +9,7 @@ angular.module('App').controller('DedicatedCloudCtrl', [
   '$uibModal',
   'constants',
   'DedicatedCloud',
-  'Module.services.notification',
+  'DucNotification',
   'OvhApiDedicatedCloud',
   'step',
   'User',
@@ -22,9 +22,9 @@ angular.module('App').controller('DedicatedCloudCtrl', [
     $timeout,
     $translate,
     $uibModal,
-    constants,
+    constants
     DedicatedCloud,
-    Notification,
+    DucNotification,
     OvhApiDedicatedCloud,
     step,
     User,
@@ -55,7 +55,7 @@ angular.module('App').controller('DedicatedCloudCtrl', [
     $scope.dedicatedCloud = {};
 
     function showNotificationIfRequired(notification) {
-      Notification.checkIfStopNotification(notification, $stateParams.productId)
+      DucNotification.checkIfStopNotification(notification, $stateParams.productId)
         .then((stopNotification) => {
           $scope.notifications[notification] = !stopNotification;
         })
@@ -251,7 +251,7 @@ angular.module('App').controller('DedicatedCloudCtrl', [
 
     $scope.stopNotification = function (notificationType) {
       $scope.notifications[notificationType] = false;
-      Notification.stopNotification($scope.HDS_READY_NOTIFICATION, $stateParams.productId);
+      DucNotification.stopNotification($scope.HDS_READY_NOTIFICATION, $stateParams.productId);
     };
 
     $scope.showHdsReadyNotificationIfRequired = function (notification) {
