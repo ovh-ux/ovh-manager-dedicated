@@ -7,7 +7,6 @@
  */
 angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew', [
   '$filter',
-  '$http',
   '$location',
   '$q',
   '$rootScope',
@@ -22,15 +21,38 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
   'BillingPaymentInformation',
   'billingRenewHelper',
   'constants',
+  'paymentMethodHelper',
   'User',
   'AUTORENEW_EVENT',
   'BILLING_BASE_URL',
   'DEBT_STATUS',
+  'DOMAINS_AUTORENEW_BATCH_CERTIFICATE',
   'SUBSIDIARIES_WITH_RECENT_AUTORENEW',
 
-  function ($filter, $http, $location, $q, $rootScope, $scope, $timeout, $translate, $window,
-    Alerter, atInternet, billingUrls, AutoRenew, PaymentInformation, renewHelper, constants, User,
-    AUTORENEW_EVENT, BILLING_BASE_URL, DEBT_STATUS, SUBSIDIARIES_WITH_RECENT_AUTORENEW) {
+  function (
+    $filter,
+    $location,
+    $q,
+    $rootScope,
+    $scope,
+    $timeout,
+    $translate,
+    $window,
+    Alerter,
+    atInternet,
+    billingUrls,
+    AutoRenew,
+    PaymentInformation,
+    renewHelper,
+    constants,
+    PaymentMethodHelper,
+    User,
+    AUTORENEW_EVENT,
+    BILLING_BASE_URL,
+    DEBT_STATUS,
+    DOMAINS_AUTORENEW_BATCH_CERTIFICATE,
+    SUBSIDIARIES_WITH_RECENT_AUTORENEW,
+  ) {
     /**
      * Parse exchange name and determine it's type based on name prefix. Defaults on hosted type.
      * exchange-xxx-xxx = type provider
@@ -113,15 +135,6 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
       allowed: false,
       loading: true,
       closeMean: false,
-      getPaymentMeans() {
-        return PaymentInformation.hasDefaultPaymentMean()
-          .then((result) => {
-            $scope.automaticRenewV2Mean.allowed = result;
-          })
-          .finally(() => {
-            $scope.automaticRenewV2Mean.loading = false;
-          });
-      },
       noMeanMessageClose() {
         $scope.automaticRenewV2Mean.closeMean = true;
       },
@@ -569,7 +582,10 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
     };
 
     $scope.enableAutorenew = function (service) {
-      $scope.setAction('enable', _.clone([service]), 'autoRenew');
+      if (!$scope.hasDefaultValidPaymentMean) {
+        return $scope.setAction('warnPaymentMean', _.clone([service]), 'autoRenew');
+      }
+      return $scope.setAction('enable', _.clone([service]), 'autoRenew');
     };
 
     $scope.disableAutorenew = function (service) {
@@ -692,12 +708,30 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
 
     function canDisableAutorenew(service) {
       return service.renewalType !== 'automaticForcedProduct'
-            && service.renew
-            && !service.renew.deleteAtExpiration
-            && !service.renew.manualPayment
-            && service.renew.automatic
-            && !service.renew.forced
-            && !['EXCHANGE', 'EMAIL_DOMAIN'].includes(service.serviceType);
+        && service.renew
+        && !service.renew.deleteAtExpiration
+        && !service.renew.manualPayment
+        && service.renew.automatic
+        && !service.renew.forced
+        && !['EXCHANGE', 'EMAIL_DOMAIN'].includes(service.serviceType);
+    }
+
+    function setServiceTypes(serviceTypes) {
+      $scope.servicesTypes = serviceTypes.map(service => ({
+        key: service,
+        text: $translate.instant(`autorenew_service_type_${service}`),
+      }));
+      $scope.servicesTypes
+        .sort((a, b) => a.text.toLowerCase().localeCompare(b.text.toLowerCase()));
+      $scope.servicesTypes.unshift(ALL_SERVICE_TYPES);
+
+      // sets the model of the type select input.
+      $scope.serviceTypeObject.value = $scope.servicesTypes
+        .find(({ key }) => key === $scope.services.selectedType);
+
+      if (!$scope.serviceTypeObject.value) {
+        $scope.serviceTypeObject.value = ALL_SERVICE_TYPES;
+      }
     }
 
     /**
@@ -725,58 +759,38 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
 
       $scope.$broadcast('paginationServerSide.loadPage', '1', 'serviceTable');
 
-      const userPromise = User.getUser().then((user) => {
-        $scope.user = user;
-      });
+      return $q
+        .all({
+          user: User.getUser(),
+          hasDefaultValidPaymentMean: PaymentMethodHelper.hasDefaultPaymentMethod(),
+          renewAlignUrl: User.getUrlOf('renewAlign'),
+          userGuide: User.getUrlOf('guides'),
+          serviceTypes: AutoRenew.getServicesTypes(),
+          userCertificates: AutoRenew.getUserCertificates(),
+        })
+        .then(({
+          user,
+          hasDefaultValidPaymentMean,
+          renewAlignUrl,
+          userGuide,
+          serviceTypes,
+          userCertificates,
+        }) => {
+          $scope.user = user;
+          $scope.urls.renewAlign = renewAlignUrl;
+          $scope.canDisableAllDomains = userCertificates
+            .includes(DOMAINS_AUTORENEW_BATCH_CERTIFICATE);
+          $scope.hasDefaultValidPaymentMean = hasDefaultValidPaymentMean;
+          $scope.automaticRenewV2Mean.allowed = hasDefaultValidPaymentMean;
 
-      const paymentMeansPromise = $scope.automaticRenewV2Mean.available
-        ? $scope.automaticRenewV2Mean.getPaymentMeans()
-        : $q.when();
+          if (_.has(userGuide, 'autoRenew')) {
+            $scope.guide = userGuide.autoRenew;
+          }
 
-      const renewAlignUrlPromise = User.getUrlOf('renewAlign').then((urlRenew) => {
-        $scope.urls.renewAlign = urlRenew;
-      });
+          setServiceTypes(serviceTypes);
 
-      const userGuidePromise = User.getUrlOf('guides').then((guides) => {
-        if (guides && guides.autoRenew) {
-          $scope.guide = guides.autoRenew;
-        }
-      });
-
-      const serviceTypePromise = AutoRenew.getServicesTypes().then((result) => {
-        $scope.servicesTypes = _.map(result, value => ({
-          key: value,
-          text: $translate.instant(`autorenew_service_type_${value}`),
-        }));
-
-        $scope.servicesTypes = $scope.servicesTypes
-          .sort((a, b) => a.text.toLowerCase().localeCompare(b.text.toLowerCase()));
-        $scope.servicesTypes.unshift(ALL_SERVICE_TYPES);
-
-        // sets the model of the type select input.
-        $scope.serviceTypeObject.value = _.find($scope.servicesTypes, {
-          key: $scope.services.selectedType,
-        });
-
-        if (!$scope.serviceTypeObject.value) {
-          $scope.serviceTypeObject.value = ALL_SERVICE_TYPES;
-        }
-      });
-
-      const userCertificatesPromise = AutoRenew.getUserCertificates().then((results) => {
-        $scope.canDisableAllDomains = _.includes(results, 'domains-batch-autorenew');
-      });
-
-      $q
-        .all([
-          $scope.getServices($scope.count, $scope.offset),
-          userPromise,
-          paymentMeansPromise,
-          renewAlignUrlPromise,
-          userGuidePromise,
-          serviceTypePromise,
-          userCertificatesPromise,
-        ])
+          return $scope.getServices($scope.count, $scope.offset);
+        })
         .then(() => $scope.nicRenew.getNicRenewParam())
         .finally(() => {
           $scope.initLoading = false;
