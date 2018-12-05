@@ -1,3 +1,20 @@
+<a name="10.7.0"></a>
+# [10.7.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.6.6...v10.7.0) (2018-12-05)
+
+
+### Bug Fixes
+
+* **dedicatedcloud:** remove duplicate error messages ([8908736](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8908736))
+* **i18n:** retrieve translations ([3ff6992](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3ff6992))
+* **i18n:** submit translations ([bb70c90](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bb70c90))
+
+
+### Features
+
+* **billing:** disable autorenew if there is no valid payment mean ([e36da53](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e36da53))
+
+
+
 <a name="10.6.6"></a>
 ## [10.6.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.6.5...v10.6.6) (2018-11-29)
 
