@@ -130,20 +130,20 @@ angular.module('Billing.controllers').controller('Billing.controllers.Mean.Add',
 
     return BillingMean.post(meanData)
       .then((response) => {
-        $scope.mean = {};
+        const url = _.get(response, 'url');
         $scope.meanAdded = true;
 
-        if (response && $scope.mean.type === 'bankAccount') {
-          Alerter.set('alert-success', [$translate.instant('paymentType_bankAccount_add_success_with_download', {
-            t0: response.url,
+        if ($scope.mean.type === 'bankAccount') {
+          Alerter.set('alert-info', [$translate.instant('paymentType_bankAccount_add_success_with_download', {
+            t0: url,
           }), $translate.instant('paymentType_bankAccount_processing_delay')].join(' '));
 
           return response;
         }
 
-        Alerter.set('alert-success', $translate.instant('paymentType_add_success_url', {
-          t0: response.url,
-        }));
+        Alerter.set('alert-info',
+          `${$translate.instant('paymentType_add_validation_description')}
+          ${$translate.instant('paymentType_add_success_url', { t0: url })}`);
         return response;
       })
       .catch((reason) => {
