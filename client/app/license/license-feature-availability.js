@@ -6,7 +6,7 @@ angular.module('Module.license').service('licenseFeatureAvailability', class {
   }
 
   allowLicenseAgoraOrder() {
-    return this.allow('US');
+    return this.allow('US', 'EU', 'CA');
   }
 
   allowLicenseTypeAgoraOrder(licenseType) {

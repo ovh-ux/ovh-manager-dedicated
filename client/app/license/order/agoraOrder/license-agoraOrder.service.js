@@ -6,7 +6,6 @@ class LicenseAgoraOrder {
     this.OvhHttp = OvhHttp;
     this.User = User;
     this.$translate = $translate;
-
     this.licenseTypeToCatalog = {
       CLOUDLINUX: 'licenseCloudLinux',
       CPANEL: 'licensecPanel',
@@ -20,15 +19,15 @@ class LicenseAgoraOrder {
   }
 
   getLicenseOffers(licenseType) {
-    return this.OvhHttp.get('/order/catalog/formatted/{catalogName}', {
+    return this.User.getUser().then(user => this.OvhHttp.get('/order/catalog/formatted/{catalogName}', {
       rootPath: 'apiv6',
       urlParams: {
         catalogName: this.licenseTypeToCatalog[licenseType],
       },
       params: {
-        ovhSubsidiary: this.constants.target,
+        ovhSubsidiary: _.get(user, 'ovhSubsidiary', this.constants.target),
       },
-    }).then(data => data.plans);
+    }).then(data => data.plans));
   }
 
   getLicenseOfferPlan(licenseType, planCode, ip) {
@@ -50,8 +49,7 @@ class LicenseAgoraOrder {
 
   getPlanPrice(config) {
     let cartId = '';
-
-    return this.OvhHttp.post('/order/cart', { rootPath: 'apiv6', data: { ovhSubsidiary: this.constants.target } })
+    return this.User.getUser().then(user => this.OvhHttp.post('/order/cart', { rootPath: 'apiv6', data: { ovhSubsidiary: _.get(user, 'ovhSubsidiary', this.constants.target) } })
       .then((data) => {
         cartId = _.get(data, 'cartId');
         return this.OvhHttp.post('/order/cart/{cartId}/assign', { rootPath: 'apiv6', urlParams: { cartId } });
@@ -71,7 +69,7 @@ class LicenseAgoraOrder {
         })),
       ))
       .then(() => this.OvhHttp.get('/order/cart/{cartId}/checkout', { rootPath: 'apiv6', urlParams: { cartId } }))
-      .finally(() => this.OvhHttp.delete('/order/cart/{cartId}', { rootPath: 'apiv6', urlParams: { cartId } }));
+      .finally(() => this.OvhHttp.delete('/order/cart/{cartId}', { rootPath: 'apiv6', urlParams: { cartId } })));
   }
 
   pushAgoraPlan(params) {
