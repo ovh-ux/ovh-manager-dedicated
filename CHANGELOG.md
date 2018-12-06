@@ -1,3 +1,13 @@
+<a name="10.7.1"></a>
+## [10.7.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.7.0...v10.7.1) (2018-12-06)
+
+
+### Bug Fixes
+
+* **dedicatedcloud:** restore dashboard alert ([a490251](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a490251))
+
+
+
 <a name="10.7.0"></a>
 # [10.7.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.6.6...v10.7.0) (2018-12-05)
 
