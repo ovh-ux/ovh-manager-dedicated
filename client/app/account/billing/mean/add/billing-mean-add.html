@@ -232,13 +232,15 @@
                 </div>
 
                 <div class="checkbox"
-                        data-ng-show="canPaymentTypeSetDefaultAtCreation(mean.type)">
+                     data-ng-if="canPaymentTypeSetDefaultAtCreation(mean.type) && hasDefaultPaymentMean">
                     <label>
                         <input type="checkbox"
                                 data-ng-model="mean.setDefault" />
                         <span data-translate="payment_mean_set_default_after_validation"></span>
                     </label>
                 </div>
+
+                <strong class="d-block" data-ng-if="!hasDefaultPaymentMean" data-translate="payment_mean_set_as_default"></strong>
 
                 <button type="button"
                         class="oui-button oui-button_primary"
