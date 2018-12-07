@@ -111,16 +111,16 @@ angular
       /**
        * ROUTE: Billing Mean
        */
-      $stateProvider.state('app.account.billing.payment.mean', {
-        url: '/mean',
-        redirectTo: 'app.account.billing.payment.mean.list',
-      });
+      // $stateProvider.state('app.account.billing.payment.mean', {
+      //   url: '/mean',
+      //   redirectTo: 'app.account.billing.payment.mean.list',
+      // });
 
-      $stateProvider.state('app.account.billing.payment.mean.list', {
-        url: '',
-        templateUrl: `${BILLING_BASE_URL}mean/billing-mean.html`,
-        controller: 'Billing.controllers.Mean',
-      });
+      // $stateProvider.state('app.account.billing.payment.mean.list', {
+      //   url: '',
+      //   templateUrl: `${BILLING_BASE_URL}mean/billing-mean.html`,
+      //   controller: 'Billing.controllers.Mean',
+      // });
 
       if (constants.target === 'US') {
         $stateProvider.state('app.account.billing.payment.mean.add', {

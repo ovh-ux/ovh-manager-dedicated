@@ -1,0 +1,232 @@
+import angular from 'angular';
+
+import editModalTemplate from './edit/billing-payment-method-edit.html';
+import editModalController from './edit/billing-payment-method-edit.controller';
+
+import defaultModalTemplate from './default/billing-payment-method-default.html';
+import defaultModalController from './default/billing-payment-method-default.controller';
+
+import deleteModalTemplate from './delete/billing-payment-method-delete.html';
+import deleteModalController from './delete/billing-payment-method-delete.controller';
+
+export default class BillingPaymentMethodCtrl {
+  constructor($q, $translate, $uibModal, Alerter, ovhPaymentMethod, User) {
+    'ngInject';
+
+    // dependencies injections
+    this.$q = $q;
+    this.$translate = $translate;
+    this.$uibModal = $uibModal;
+    this.Alerter = Alerter;
+    this.ovhPaymentMethod = ovhPaymentMethod;
+    this.User = User;
+
+    // other attributes used in views
+    this.loading = {
+      init: false,
+    };
+
+    this.paymentMethods = null;
+    this.tableFilterOptions = null;
+    this.guide = null;
+    this.hasPendingValidationBankAccount = false;
+  }
+
+  /* =============================
+  =            EVENTS            =
+  ============================== */
+
+  /**
+   *  Open edit payment method modal
+   */
+  onPaymentMethodEditBtnClick(paymentMethodParam) {
+    const paymentMethod = paymentMethodParam;
+
+    const editModal = this.$uibModal.open({
+      template: editModalTemplate,
+      controller: editModalController,
+      controllerAs: '$ctrl',
+      resolve: {
+        payementMethodToEdit: paymentMethod,
+      },
+    });
+
+    return editModal.result.then((data) => {
+      if (!angular.isObject(data)) {
+        return null;
+      }
+
+      paymentMethod.description = data.description;
+
+      this.Alerter.success(
+        this.$translate.instant('billing_payment_method_edit_success'),
+        'billing_payment_method_alert',
+      );
+
+      return data;
+    }).catch((error) => {
+      if (angular.isString(error)) {
+        return null;
+      }
+
+      this.Alerter.error([
+        this.$translate.instant('billing_payment_method_edit_error'),
+        _.get(error, 'data.message', ''),
+      ].join(' '), 'billing_payment_method_alert');
+
+      return error;
+    });
+  }
+
+  /**
+   *  Open confirmation modal to set payment mean as default one
+   */
+  onSetDefaultPaymentMethodBtnClick(paymentMethod) {
+    const modal = this.$uibModal.open({
+      template: defaultModalTemplate,
+      controller: defaultModalController,
+      controllerAs: '$ctrl',
+      resolve: {
+        payementMethodToEdit: paymentMethod,
+      },
+    });
+
+    return modal.result.then((status) => {
+      if (status !== 'OK') {
+        return null;
+      }
+
+      this.paymentMethods.forEach((methodParam) => {
+        const method = methodParam;
+
+        if (method.paymentMethodId === paymentMethod.paymentMethodId) {
+          method.default = true;
+        } else {
+          method.default = false;
+        }
+      });
+
+      this.Alerter.success(
+        this.$translate.instant('billing_payment_method_default_success'),
+        'billing_payment_method_alert',
+      );
+
+      return paymentMethod;
+    }).catch((error) => {
+      if (angular.isString(error)) {
+        return null;
+      }
+
+      this.Alerter.error([
+        this.$translate.instant('billing_payment_method_default_error'),
+        _.get(error, 'data.message', ''),
+      ].join(' '), 'billing_payment_method_alert');
+
+      return error;
+    });
+  }
+
+  /**
+   *  Open delete confirmation modal
+   */
+  onPaymentMethodDeleteBtnClick(paymentMethod) {
+    const deleteModal = this.$uibModal.open({
+      template: deleteModalTemplate,
+      controller: deleteModalController,
+      controllerAs: '$ctrl',
+      resolve: {
+        payementMethodToDelete: paymentMethod,
+      },
+    });
+
+    return deleteModal.result.then((status) => {
+      if (status !== 'OK') {
+        return null;
+      }
+
+      _.remove(this.paymentMethods, paymentMethod);
+
+      this.Alerter.success(
+        this.$translate.instant('billing_payment_method_delete_success'),
+        'billing_payment_method_alert',
+      );
+
+      return paymentMethod;
+    }).catch((error) => {
+      if (angular.isString(error)) {
+        return null;
+      }
+
+      this.Alerter.error([
+        this.$translate.instant('billing_payment_method_delete_error'),
+        _.get(error, 'data.message', ''),
+      ].join(' '), 'billing_payment_method_alert');
+
+      return error;
+    });
+  }
+
+  /* -----  End of EVENTS  ------ */
+
+  /* =====================================
+  =            INITIALIZATION            =
+  ====================================== */
+
+  $onInit() {
+    this.loading.init = true;
+
+    return this.$q.all({
+      paymentMeans: this.ovhPaymentMethod.getAvailablePaymentMethods({
+        transform: true,
+      }),
+      guides: this.User.getUrlOf('guides'),
+    }).then(({ paymentMeans, guides }) => {
+      // Filter out bankAccounts blocked by incidents
+      this.paymentMethods = _.filter(paymentMeans, ({ paymentType, status }) => {
+        if (paymentType.value !== 'bankAccount') {
+          return true;
+        }
+        return status.value !== 'blockedForIncidents';
+      });
+
+      // set options for status filter
+      this.tableFilterOptions = {
+        status: {
+          values: {},
+        },
+        type: {
+          values: {},
+        },
+      };
+
+      _.chain(this.paymentMethods).uniq('status.value').map('status').value()
+        .forEach((status) => {
+          _.set(this.tableFilterOptions.status.values, status.value, status.text);
+        });
+
+      _.chain(this.paymentMethods).uniq('paymentType.value').map('paymentType').value()
+        .forEach((payementType) => {
+          _.set(this.tableFilterOptions.type.values, payementType.value, payementType.text);
+        });
+
+      // set guide url
+      this.guide = _.get(guides, 'autoRenew', null);
+
+      // set a awrn message if a bankAccount is in pendingValidation state
+      this.hasPendingValidationBankAccount = _.some(this.paymentMethods, method => method.paymentType.value === 'bankAccount' && method.status.value === 'pendingValidation');
+    }).catch((error) => {
+      this.Alerter.error([
+        this.$translate.instant('billing_payment_method_load_error'),
+        _.get(error, 'data.message', ''),
+      ].join(' '), 'billing_payment_method_alert');
+    }).finally(() => {
+      this.loading.init = false;
+    });
+  }
+
+  /* -----  End of INITIALIZATION  ------ */
+}
+
+angular
+  .module('Billing')
+  .controller('BillingPaymentMethodCtrl', BillingPaymentMethodCtrl);

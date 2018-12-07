@@ -466,11 +466,11 @@ class SessionService {
         !currentUser.isEnterprise && {
           name: 'user.payment',
           title: this.$translate.instant('menu_means'),
-          state: 'app.account.billing.payment.mean',
+          state: 'app.account.billing.payment.method',
           click: () => this.trackUserMenuSection('my_payment_types', 'payment_types'),
           subLinks: [{
             title: this.$translate.instant('menu_means'),
-            state: 'app.account.billing.payment.mean',
+            state: 'app.account.billing.payment.method',
           },
           (this.constants.target === 'EU' || this.constants.target === 'CA') && {
             title: this.$translate.instant('menu_ovhaccount'),

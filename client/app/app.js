@@ -1,4 +1,5 @@
 import translateAsyncLoader from '@ovh-ux/translate-async-loader';
+import ovhPaymentMehtod from 'ovh-angular-payment-method';
 import config from './config/config';
 
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
@@ -46,6 +47,7 @@ const appDeps = [
   'Module.otrs',
   translateAsyncLoader,
   dedicatedUniverseComponents,
+  ovhPaymentMehtod,
 ];
 
 if (WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca') {

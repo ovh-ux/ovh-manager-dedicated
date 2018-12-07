@@ -2,7 +2,7 @@ angular.module('Billing').controller('BillingMainHistoryCtrl', class BillingMain
   constructor(
     $q, $state, $translate, $uibModal,
     Alerter, atInternet, constants, currentUser, exportCsv,
-    OvhApiMe, paymentMethodHelper,
+    OvhApiMe, ovhPaymentMethod,
   ) {
     // Injections
     this.$q = $q;
@@ -15,7 +15,7 @@ angular.module('Billing').controller('BillingMainHistoryCtrl', class BillingMain
     this.currentUser = currentUser; // from app route resolve
     this.exportCsv = exportCsv;
     this.OvhApiMe = OvhApiMe;
-    this.paymentMethodHelper = paymentMethodHelper;
+    this.ovhPaymentMethod = ovhPaymentMethod;
 
     // Other attributes used in view
     this.loading = {
@@ -256,7 +256,7 @@ angular.module('Billing').controller('BillingMainHistoryCtrl', class BillingMain
 
     return this.$q.all({
       debtAccount: this.getDebtAccount(),
-      hasDefaultPaymentMehtod: this.paymentMethodHelper.hasDefaultPaymentMethod(),
+      hasDefaultPaymentMehtod: this.ovhPaymentMethod.hasDefaultPaymentMethod(),
       invoicesByPostalMail: postalMailOptionPromise,
     }).then(({ debtAccount, hasDefaultPaymentMehtod, invoicesByPostalMail }) => {
       this.debtAccount = debtAccount;
