@@ -4,7 +4,7 @@
  * @name Billing.controllers.Method.Add'
  * @description
  */
-angular.module('Billing.controllers').controller('billingMeanAddCtrl', ($location, $q, $scope, $translate, Alerter, BillingMean, BillingUser, paymentMethodHelper, User, IBAN_BIC_RULES) => {
+angular.module('Billing.controllers').controller('billingPaymentMeanAddCtrl', ($location, $q, $scope, $translate, Alerter, BillingMean, BillingUser, paymentMethodHelper, User, IBAN_BIC_RULES) => {
   $scope.loader = {
     add: false,
     means: false,
