@@ -107,7 +107,7 @@ angular.module('App').run(($q, $translate, SidebarMenu, User, constants) => {
 
     SidebarMenu.addMenuItem({
       title: $translate.instant('menu_means'),
-      state: 'app.account.billing.payment.mean',
+      state: 'app.account.billing.payment.method',
     }, paymentMenu);
 
     if (constants.target === 'EU' || constants.target === 'CA') {

@@ -21,7 +21,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
   'BillingPaymentInformation',
   'billingRenewHelper',
   'constants',
-  'paymentMethodHelper',
+  'ovhPaymentMethod',
   'User',
   'AUTORENEW_EVENT',
   'BILLING_BASE_URL',
@@ -45,7 +45,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
     PaymentInformation,
     renewHelper,
     constants,
-    PaymentMethodHelper,
+    ovhPaymentMethod,
     User,
     AUTORENEW_EVENT,
     BILLING_BASE_URL,
@@ -769,7 +769,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
       return $q
         .all({
           user: User.getUser(),
-          hasDefaultValidPaymentMean: PaymentMethodHelper.hasDefaultPaymentMethod(),
+          hasDefaultValidPaymentMean: ovhPaymentMethod.hasDefaultPaymentMethod(),
           renewAlignUrl: User.getUrlOf('renewAlign'),
           userGuide: User.getUrlOf('guides'),
           serviceTypes: AutoRenew.getServicesTypes(),

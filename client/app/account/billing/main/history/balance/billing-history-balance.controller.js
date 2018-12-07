@@ -1,11 +1,11 @@
 angular.module('Billing.controllers').controller('BillingHistoryBalanceCtrl', class BillingHistoryBalanceCtrl {
-  constructor($q, $state, $translate, OvhApiMe, BillingDebtAccount, paymentMethodHelper, Alerter) {
+  constructor($q, $state, $translate, OvhApiMe, BillingDebtAccount, ovhPaymentMehtod, Alerter) {
     this.$q = $q;
     this.$state = $state;
     this.$translate = $translate;
     this.OvhApiMe = OvhApiMe;
     this.BillingDebtAccount = BillingDebtAccount;
-    this.paymentMethodHelper = paymentMethodHelper;
+    this.ovhPaymentMehtod = ovhPaymentMehtod;
     this.Alerter = Alerter;
 
     this.balance = null;
@@ -75,7 +75,7 @@ angular.module('Billing.controllers').controller('BillingHistoryBalanceCtrl', cl
       if (!this.depositRequests.length) {
         return this.$q.all({
           balance: this.getBalance(),
-          paymentMethods: this.paymentMethodHelper.getAvailablePaymentMethods(),
+          paymentMethods: this.ovhPaymentMehtod.getAvailablePaymentMethods(),
         }).then((response) => {
           this.balance = response.balance;
           this.paymentMethods = _.filter(response.paymentMethods, ({ paymentType, status }) => ['INTERNAL_TRUSTED_ACCOUNT', 'ENTERPRISE'].indexOf(paymentType) === -1 && ['CANCELED_BY_CUSTOMER', 'CANCELING'].indexOf(status) === -1);
