@@ -1,6 +1,6 @@
 {
   "name": "ovh-manager-dedicated",
-  "version": "10.7.0",
+  "version": "10.7.2",
   "private": true,
   "description": "OVH Control Panel Dedicated UI",
   "keywords": [
@@ -26,7 +26,7 @@
     "lint:css": "stylelint 'client/**/*.less' --fix",
     "lint:html": "htmlhint 'client/**/*.html'",
     "lint:js": "eslint --quiet --fix ./client",
-    "start": "webpack-dev-server --env.region=eu",
+    "start": "yarn run start:eu",
     "start:ca": "webpack-dev-server --env.region=ca",
     "start:eu": "webpack-dev-server --env.region=eu",
     "start:us": "webpack-dev-server --env.region=us",
