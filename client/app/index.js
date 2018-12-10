@@ -15,6 +15,7 @@ import 'script-loader!components-jqueryui/ui/widgets/mouse.js';
 import 'script-loader!components-jqueryui/ui/widgets/sortable.js';
 import 'script-loader!components-jqueryui/ui/widgets/draggable.js';
 import 'angular';
+import 'angular-xeditable';
 import 'script-loader!ovh-ui-angular/dist/oui-angular.min.js';
 import 'angular-route';
 import 'angular-sanitize';

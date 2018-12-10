@@ -50,6 +50,7 @@ const appDeps = [
   translateAsyncLoader,
   dedicatedUniverseComponents,
   webUniverseComponents,
+  'xeditable',
 ];
 
 if (WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca') {
