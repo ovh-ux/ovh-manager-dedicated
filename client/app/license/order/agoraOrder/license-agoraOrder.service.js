@@ -1,11 +1,12 @@
 class LicenseAgoraOrder {
-  constructor($q, $translate, Alerter, constants, OvhHttp, User) {
+  constructor($q, $translate, $http, Alerter, constants, OvhHttp, User) {
     this.$q = $q;
     this.Alerter = Alerter;
     this.constants = constants;
     this.OvhHttp = OvhHttp;
     this.User = User;
     this.$translate = $translate;
+    this.$http = $http;
     this.licenseTypeToCatalog = {
       CLOUDLINUX: 'licenseCloudLinux',
       CPANEL: 'licensecPanel',
@@ -69,7 +70,7 @@ class LicenseAgoraOrder {
         })),
       ))
       .then(() => this.OvhHttp.get('/order/cart/{cartId}/checkout', { rootPath: 'apiv6', urlParams: { cartId } }))
-      .finally(() => this.OvhHttp.delete('/order/cart/{cartId}', { rootPath: 'apiv6', urlParams: { cartId } })));
+      .finally(() => this.$http.delete(`/order/cart/${cartId}`)));
   }
 
   pushAgoraPlan(params) {
