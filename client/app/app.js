@@ -1,4 +1,5 @@
 import translateAsyncLoader from '@ovh-ux/translate-async-loader';
+import uiRouter from '@uirouter/angularjs';
 import webUniverseComponents from '@ovh-ux/web-universe-components';
 
 import config from './config/config';
@@ -34,6 +35,7 @@ const appDeps = [
   'ovh-angular-apiv7',
   'oui',
   'ui.select',
+  uiRouter,
   'Module.ip',
   'Module.license',
   'Module.download',
