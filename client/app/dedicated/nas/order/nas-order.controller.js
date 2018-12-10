@@ -1,4 +1,5 @@
 angular.module('App').controller('NasOrderCtrl', [
+  'NASHA_URL',
   '$scope',
   'Nas',
   '$timeout',
