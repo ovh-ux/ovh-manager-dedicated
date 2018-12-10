@@ -27,7 +27,7 @@
                             name="durationSelected"
                             value="{{ option.duration }}"
                             data-ng-model="order.durationSelected" />
-                    <span>{{ option.duration | duration:'longDate' }}</span>
+                    <span>{{ option.duration | wucDuration:'longDate' }}</span>
                     <strong class="text-danger float-right"
                             data-ng-bind-html="option.prices | ducPrice:user.ovhSubsidiary">
                     </strong>
@@ -44,7 +44,7 @@
             <p data-translate="server_configuration_kvm_order_step2_title" data-translate-values="{ t0: server.name }"></p>
             <dl>
                 <dt data-translate="server_configuration_kvm_order_step2_duration"></dt>
-                <dd data-ng-bind="order.durationSelected | duration:'mediumDate'"></dd>
+                <dd data-ng-bind="order.durationSelected | wucDuration:'mediumDate'"></dd>
                 <dt data-translate="server_configuration_kvm_order_step2_details"></dt>
                 <dd>
                     <ul>

@@ -114,7 +114,7 @@
                                data-ng-model="migrate.duration"
                                data-ng-disabled="loading.prices || durations.available.length == 1"
                                value="{{duration}}">
-                        <span data-ng-bind="duration | duration:'longDate'"></span> :
+                        <span data-ng-bind="duration | wucDuration:'longDate'"></span> :
                         <span data-ng-bind-html="durations.details[duration].prices | ducPrice:ovhSubsidiary"></span>
                         <oui-spinner data-ng-hide="durations.details[duration]"
                                      data-size="s"></oui-spinner>

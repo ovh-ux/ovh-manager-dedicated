@@ -118,7 +118,7 @@
                                value="{{ duration.durations }}"
                                data-ng-model="durations.selected"
                                data-ng-disabled="loaders.durations">
-                        <span data-ng-bind="duration.durations | duration:'longDate'"></span>&nbsp;:&nbsp;
+                        <span data-ng-bind="duration.durations | wucDuration:'longDate'"></span>&nbsp;:&nbsp;
                         <span data-ng-bind-html="duration.details.prices | ducPrice:user.value.ovhSubsidiary"></span>
                     </label>
                 </div>
