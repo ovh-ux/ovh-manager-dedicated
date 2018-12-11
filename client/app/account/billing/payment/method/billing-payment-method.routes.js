@@ -7,6 +7,11 @@ angular
 
     $stateProvider.state(name, {
       url: '/method',
+      redirectTo: `${name}.list`,
+    });
+
+    $stateProvider.state(`${name}.list`, {
+      url: '',
       templateUrl: 'account/billing/payment/method/billing-payment-method.html',
       controller: 'BillingPaymentMethodCtrl',
       controllerAs: '$ctrl',
@@ -15,6 +20,6 @@ angular
 
     $urlRouterProvider.when(
       /^\/billing\/mean$/,
-      ($location, $state) => $state.go(name),
+      ($location, $state) => $state.go(`${name}.list`),
     );
   });

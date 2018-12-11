@@ -1,12 +1,12 @@
 export default class BillingPaymentMethodDefaultCtrl {
-  constructor($injector, $q, $uibModalInstance, payementMethodToEdit, ovhPaymentMethod) {
+  constructor($injector, $q, $uibModalInstance, paymentMethodToEdit, ovhPaymentMethod) {
     /* @ngInject */
 
     // dependencies injections
     this.$injector = $injector;
     this.$q = $q;
     this.$uibModalInstance = $uibModalInstance;
-    this.payementMethodToEdit = payementMethodToEdit;
+    this.paymentMethodToEdit = paymentMethodToEdit;
     this.ovhPaymentMethod = ovhPaymentMethod;
 
     // other attributes used in view
@@ -19,17 +19,11 @@ export default class BillingPaymentMethodDefaultCtrl {
   onPrimaryActionClick() {
     this.loading.save = true;
 
-    let promise = this.$q.when(true);
-
-    // is it an old payment mean
-    if (this.payementMethodToEdit.original) {
-      promise = this.ovhPaymentMethod
-        .setPayementMethodAsDefault(this.payementMethodToEdit.original);
-    }
-
-    return promise
+    return this.ovhPaymentMethod
+      .setPaymentMethodAsDefault(this.paymentMethodToEdit)
       .then(() => this.$uibModalInstance.close('OK'))
-      .catch(error => this.$uibModalInstance.dismiss(error)).finally(() => {
+      .catch(error => this.$uibModalInstance.dismiss(error))
+      .finally(() => {
         this.loading.save = false;
       });
   }

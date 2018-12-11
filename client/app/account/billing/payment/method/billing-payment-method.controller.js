@@ -47,7 +47,7 @@ export default class BillingPaymentMethodCtrl {
       controller: editModalController,
       controllerAs: '$ctrl',
       resolve: {
-        payementMethodToEdit: paymentMethod,
+        paymentMethodToEdit: paymentMethod,
       },
     });
 
@@ -87,7 +87,7 @@ export default class BillingPaymentMethodCtrl {
       controller: defaultModalController,
       controllerAs: '$ctrl',
       resolve: {
-        payementMethodToEdit: paymentMethod,
+        paymentMethodToEdit: paymentMethod,
       },
     });
 
@@ -135,7 +135,7 @@ export default class BillingPaymentMethodCtrl {
       controller: deleteModalController,
       controllerAs: '$ctrl',
       resolve: {
-        payementMethodToDelete: paymentMethod,
+        paymentMethodToDelete: paymentMethod,
       },
     });
 
@@ -176,13 +176,13 @@ export default class BillingPaymentMethodCtrl {
     this.loading.init = true;
 
     return this.$q.all({
-      paymentMeans: this.ovhPaymentMethod.getAvailablePaymentMethods({
+      paymentMethods: this.ovhPaymentMethod.getAllPaymentMethods({
         transform: true,
       }),
       guides: this.User.getUrlOf('guides'),
-    }).then(({ paymentMeans, guides }) => {
+    }).then(({ paymentMethods, guides }) => {
       // Filter out bankAccounts blocked by incidents
-      this.paymentMethods = _.filter(paymentMeans, ({ paymentType, status }) => {
+      this.paymentMethods = _.filter(paymentMethods, ({ paymentType, status }) => {
         if (paymentType.value !== 'bankAccount') {
           return true;
         }
@@ -205,8 +205,8 @@ export default class BillingPaymentMethodCtrl {
         });
 
       _.chain(this.paymentMethods).uniq('paymentType.value').map('paymentType').value()
-        .forEach((payementType) => {
-          _.set(this.tableFilterOptions.type.values, payementType.value, payementType.text);
+        .forEach((paymentType) => {
+          _.set(this.tableFilterOptions.type.values, paymentType.value, paymentType.text);
         });
 
       // set guide url
@@ -215,6 +215,7 @@ export default class BillingPaymentMethodCtrl {
       // set a awrn message if a bankAccount is in pendingValidation state
       this.hasPendingValidationBankAccount = _.some(this.paymentMethods, method => method.paymentType.value === 'bankAccount' && method.status.value === 'pendingValidation');
     }).catch((error) => {
+      console.log(error);
       this.Alerter.error([
         this.$translate.instant('billing_payment_method_load_error'),
         _.get(error, 'data.message', ''),

@@ -129,13 +129,13 @@ angular
           controller: 'PaymentMethodAddCtrl',
           controllerAs: '$ctrl',
         });
-      } else {
+      }/* else {
         $stateProvider.state('app.account.billing.payment.mean.add', {
           url: '/add',
           templateUrl: `${BILLING_BASE_URL}mean/add/billing-mean-add.html`,
           controller: 'billingPaymentMeanAddCtrl',
         });
-      }
+      } */
 
       /**
        * ROUTE: Auto renew
