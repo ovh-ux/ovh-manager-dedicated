@@ -995,6 +995,10 @@
     request "^2.88.0"
     webpack-dev-server "^3.1.9"
 
+"@ovh-ux/ng-payment-method@git+ssh://git@stash.ovh.net:7999/~jean-christophe.alleman/ovh-angular-payment-method.git#feat/module":
+  version "0.0.0"
+  resolved "git+ssh://git@stash.ovh.net:7999/~jean-christophe.alleman/ovh-angular-payment-method.git#6278c6afde54e96d28d0189b9f9998931487ad2f"
+
 "@ovh-ux/ovh-utils-angular@^13.0.0":
   version "13.0.2"
   resolved "https://registry.yarnpkg.com/@ovh-ux/ovh-utils-angular/-/ovh-utils-angular-13.0.2.tgz#02fa3eb989537a0aeee7888d12443cca0ff552d6"
@@ -7550,10 +7554,6 @@ ovh-angular-pagination-front@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/ovh-angular-pagination-front/-/ovh-angular-pagination-front-7.0.0.tgz#484d333f357cdb2ea0abd3f76ae35491d2b8aae0"
   integrity sha1-SE0zPzV82y6gq9P3auNUkdK4quA=
-
-"ovh-angular-payment-method@git+ssh://git@stash.ovh.net:7999/~jean-christophe.alleman/ovh-angular-payment-method.git#feat/module":
-  version "0.0.0"
-  resolved "git+ssh://git@stash.ovh.net:7999/~jean-christophe.alleman/ovh-angular-payment-method.git#a19b2b120f89997cb57d5191c90df4b505c8d866"
 
 ovh-angular-proxy-request@^0.1.0:
   version "0.1.0"

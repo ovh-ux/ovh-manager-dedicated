@@ -1,12 +1,12 @@
 export default class BillingPaymentMethodEditCtrl {
-  constructor($injector, $q, $uibModalInstance, payementMethodToEdit, ovhPaymentMethod) {
+  constructor($injector, $q, $uibModalInstance, paymentMethodToEdit, ovhPaymentMethod) {
     /* @ngInject */
 
     // dependencies injections
     this.$injector = $injector;
     this.$q = $q;
     this.$uibModalInstance = $uibModalInstance;
-    this.payementMehtodInEdition = payementMethodToEdit;
+    this.paymentMehtodInEdition = paymentMethodToEdit;
     this.ovhPaymentMethod = ovhPaymentMethod;
 
     // other attribute used in view
@@ -16,7 +16,7 @@ export default class BillingPaymentMethodEditCtrl {
     };
 
     this.model = {
-      description: this.payementMehtodInEdition.description,
+      description: this.paymentMehtodInEdition.description,
     };
   }
 
@@ -27,20 +27,15 @@ export default class BillingPaymentMethodEditCtrl {
   onPaymentMehtodEditFormSubmit() {
     this.loading.save = true;
 
-    let editPromise = this.$q.when(true);
-
-    // is it an old payment mean
-    if (this.payementMehtodInEdition.original) {
-      const editedPaymentMethod = angular.copy(this.payementMehtodInEdition.original);
-      _.set(editedPaymentMethod, 'description', this.model.description);
-      editPromise = this.ovhPaymentMethod.editPayementMethod(editedPaymentMethod);
-    }
-
-    return editPromise.then(() => this.$uibModalInstance.close({
+    return this.ovhPaymentMethod.editPaymentMethod(this.paymentMehtodInEdition, {
       description: this.model.description,
-    })).catch(error => this.$uibModalInstance.dismiss(error)).finally(() => {
-      this.loading.save = false;
-    });
+    }).then(() => this.$uibModalInstance.close({
+      description: this.model.description,
+    }))
+      .catch(error => this.$uibModalInstance.dismiss(error))
+      .finally(() => {
+        this.loading.save = false;
+      });
   }
 
   /* -----  End of EVENTS  ------ */
