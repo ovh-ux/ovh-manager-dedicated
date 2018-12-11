@@ -9,9 +9,17 @@
 
         <div class="row">
             <div class="col-md-9">
-                <p data-ng-if="!iplbList.length"
-                   data-translate="iplb_empty">
-                </p>
+                <div data-ng-if="!iplbList.length">
+                    <p data-translate="iplb_empty"></p>
+                    <oui-spinner size="s" data-ng-if="!iplbOrderUrl"></oui-spinner>
+                    <a class="btn btn-primary"
+                       data-ng-href="{{ iplbOrderUrl }}"
+                       target="_blank"
+                       title="{{ 'iplb_learn_more' | translate }}"
+                       data-ng-if="iplbOrderUrl"
+                       data-translate="iplb_learn_more">
+                    </a>
+                </div>
                 <form data-ng-if="iplbList.length">
                     <label for="iplb"
                            class="control-label"
@@ -282,74 +290,72 @@
                  data-items-per-page="itemsPerPage"
                  data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
             </div>
-        </div>
-
-        <h3 data-translate="iplb_section_title_portsredirection"></h3>
-        <button type="button"
-                class="btn btn-primary"
-                data-ng-click="setAction('ip-lb/redirection/add/ip-ip-lb-redirection-add', selectedIplb)"
-                data-ng-disabled="!iplbList.length"
-                data-translate="iplb_portsredirection_add_title">
-        </button>
-        <div class="table-responsive mt-2">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col"
-                            data-translate="iplb_table_portsredirection_header_srcport">
-                        </th>
-                        <th scope="col"
-                            data-translate="iplb_table_portsredirection_header_dstport">
-                        </th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!--loader-->
-                    <tr data-ng-if="loading.ports">
-                        <td colspan="3"
-                            class="text-center">
-                            <oui-spinner></oui-spinner>
-                        </td>
-                    </tr>
-                    <!-- no ports -->
-                    <tr data-ng-if="!selectedIplb.portsRedirectionDetails.length && !loading.ports">
-                        <td colspan="3"
-                            class="text-center"
-                            data-translate="iplb_table_portsredirection_no_ports">
-                        </td>
-                    </tr>
-                    <!--ports-->
-                    <tr data-ng-repeat="portsRedirection in selectedIplb.portsRedirectionDetails">
-                        <td scope="row"
-                            data-ng-bind="portsRedirection.srcPort">
-                        </td>
-                        <td data-ng-bind="portsRedirection.dstPort"></td>
-                        <td class="text-center">
-                            <button type="button"
-                                    class="btn btn-link"
-                                    data-ng-click="setAction('ip-lb/redirection/delete/ip-ip-lb-redirection-delete', { selectedIplb: selectedIplb, srcPort: portsRedirection.srcPort })"
-                                    data-ng-disabled="portsRedirection.srcPort === 80 || portsRedirection.srcPort === 443">
-                                <span class="fa fa-trash"
-                                      aria-hidden="true">
-                                </span>
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div data-pagination-front
-                 data-current-page="currentPage2"
-                 data-nb-pages="nbPages2"
-                 data-items="selectedIplb.portsRedirectionIds"
-                 data-paginated-items="selectedIplb.portsRedirectionDetails"
-                 data-transform-item="transformItemPortsRedirection(item)"
-                 data-on-transform-item-done="onTransformItemPortsRedirectionDone(items)"
-                 data-page-placeholder="{{ 'pagination_page' | translate: { t0: currentPage, t1: nbPages } }}"
-                 data-items-per-page="itemsPerPage2"
-                 data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
+            <h3 data-translate="iplb_section_title_portsredirection"></h3>
+            <button type="button"
+                    class="btn btn-primary"
+                    data-ng-click="setAction('ip-lb/redirection/add/ip-ip-lb-redirection-add', selectedIplb)"
+                    data-ng-disabled="!iplbList.length"
+                    data-translate="iplb_portsredirection_add_title">
+            </button>
+            <div class="table-responsive mt-2">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col"
+                                data-translate="iplb_table_portsredirection_header_srcport">
+                            </th>
+                            <th scope="col"
+                                data-translate="iplb_table_portsredirection_header_dstport">
+                            </th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--loader-->
+                        <tr data-ng-if="loading.ports">
+                            <td colspan="3"
+                                class="text-center">
+                                <oui-spinner></oui-spinner>
+                            </td>
+                        </tr>
+                        <!-- no ports -->
+                        <tr data-ng-if="!selectedIplb.portsRedirectionDetails.length && !loading.ports">
+                            <td colspan="3"
+                                class="text-center"
+                                data-translate="iplb_table_portsredirection_no_ports">
+                            </td>
+                        </tr>
+                        <!--ports-->
+                        <tr data-ng-repeat="portsRedirection in selectedIplb.portsRedirectionDetails">
+                            <td scope="row"
+                                data-ng-bind="portsRedirection.srcPort">
+                            </td>
+                            <td data-ng-bind="portsRedirection.dstPort"></td>
+                            <td class="text-center">
+                                <button type="button"
+                                        class="btn btn-link"
+                                        data-ng-click="setAction('ip-lb/redirection/delete/ip-ip-lb-redirection-delete', { selectedIplb: selectedIplb, srcPort: portsRedirection.srcPort })"
+                                        data-ng-disabled="portsRedirection.srcPort === 80 || portsRedirection.srcPort === 443">
+                                    <span class="fa fa-trash"
+                                        aria-hidden="true">
+                                    </span>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div data-pagination-front
+                    data-current-page="currentPage2"
+                    data-nb-pages="nbPages2"
+                    data-items="selectedIplb.portsRedirectionIds"
+                    data-paginated-items="selectedIplb.portsRedirectionDetails"
+                    data-transform-item="transformItemPortsRedirection(item)"
+                    data-on-transform-item-done="onTransformItemPortsRedirectionDone(items)"
+                    data-page-placeholder="{{ 'pagination_page' | translate: { t0: currentPage, t1: nbPages } }}"
+                    data-items-per-page="itemsPerPage2"
+                    data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
+                </div>
             </div>
         </div>
-
     </div>
 </div>

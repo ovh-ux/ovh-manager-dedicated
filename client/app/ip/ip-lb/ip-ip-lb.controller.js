@@ -1,4 +1,4 @@
-angular.module('Module.ip.controllers').controller('IplbDashboardCtrl', ($scope, $rootScope, $q, $location, $translate, Iplb, Alerter) => {
+angular.module('Module.ip.controllers').controller('IplbDashboardCtrl', ['$location', '$q', '$rootScope', '$scope', '$translate', 'Alerter', 'Iplb', 'UserAccount.services.Contacts', ($location, $q, $rootScope, $scope, $translate, Alerter, Iplb, Contacts) => {
   $scope.loading = {};
 
   // ---
@@ -6,6 +6,7 @@ angular.module('Module.ip.controllers').controller('IplbDashboardCtrl', ($scope,
   function init() {
     $scope.loading.init = true;
     $scope.ipsList = [];
+    $scope.iplbOrderUrl = '';
 
     return Iplb.getList().then((list) => {
       $scope.iplbList = list;
@@ -16,6 +17,11 @@ angular.module('Module.ip.controllers').controller('IplbDashboardCtrl', ($scope,
           $scope.selectIplb($rootScope.preselectedIplb ? $scope.preselectedIplb.value : list[0]);
         }
         _.set($rootScope, 'preselectedIplb', $scope.selectedIplb);
+      } else {
+        Contacts.getUrlOf('iplbOrder')
+          .then((orderUrl) => {
+            $scope.iplbOrderUrl = orderUrl;
+          });
       }
       $scope.loading.init = false;
     });
@@ -242,4 +248,4 @@ angular.module('Module.ip.controllers').controller('IplbDashboardCtrl', ($scope,
   /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
   init();
-});
+}]);
