@@ -11,11 +11,11 @@
             <div class="col-md-9">
                 <div data-ng-if="!iplbList.length">
                     <p data-translate="iplb_empty"></p>
-                    <oui-spinner size="s" data-ng-if="!iplbOrderUrl"></oui-spinner>
-                    <a class="btn btn-primary"
+                    <oui-spinner data-size="s" data-ng-if="!iplbOrderUrl"></oui-spinner>
+                    <a class="oui-button oui-button_primary"
                        data-ng-href="{{ iplbOrderUrl }}"
                        target="_blank"
-                       title="{{ 'iplb_learn_more' | translate }}"
+                       rel="noopener"
                        data-ng-if="iplbOrderUrl"
                        data-translate="iplb_learn_more">
                     </a>
