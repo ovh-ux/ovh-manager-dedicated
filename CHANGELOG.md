@@ -1,3 +1,17 @@
+<a name="10.7.3"></a>
+## [10.7.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.7.2...v10.7.3) (2018-12-11)
+
+
+### Bug Fixes
+
+* **billing.mean:** change message for payment mean addition ([1bd9989](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1bd9989))
+* **billing.mean:** prevent default mean choice if there is none ([b553403](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b553403))
+* **dedicated.server.dashboard:** prevent displaying modal as background ([1b1e342](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1b1e342))
+* **i18n:** retrieve translations ([3a9a995](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3a9a995))
+* **i18n:** submit translations ([9caad3f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9caad3f))
+
+
+
 <a name="10.7.2"></a>
 ## [10.7.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.7.1...v10.7.2) (2018-12-10)
 
