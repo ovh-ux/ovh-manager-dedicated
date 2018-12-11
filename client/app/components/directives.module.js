@@ -1,1 +1,1 @@
-angular.module('directives', ['digitalfondue.dftabmenu', 'ngResource']);
+angular.module('directives', ['ngResource']);

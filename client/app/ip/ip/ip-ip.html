@@ -183,7 +183,7 @@
                     name="serviceSelector"
                     data-ng-model="filters.service"
                     data-ng-change="selectService()"
-                    data-ng-options="service as (('ip_filter_services_' + service.serviceName) | translateAlt: service.serviceName) group by (('ip_filter_services_title_' + service.category) | translateAlt: service.category) for service in services">
+                    data-ng-options="service as (('ip_filter_services_' + service.serviceName) | ducTranslateAlt: service.serviceName) group by (('ip_filter_services_title_' + service.category) | ducTranslateAlt: service.category) for service in services">
             </select>
         </div>
 

@@ -3,19 +3,26 @@ angular.module('App').controller('HousingCtrl', [
   '$stateParams',
   '$timeout',
   '$translate',
-  'Housing',
-  'User',
   'Alerter',
-  'ovhUserPref',
   'constants',
-  'featureAvailability',
-  function ($scope, $stateParams, $timeout, $translate, Housing, User, Alerter, ovhUserPref,
-    constants, featureAvailability) {
+  'Housing',
+  'ovhUserPref',
+  'User',
+  function (
+    $scope,
+    $stateParams,
+    $timeout,
+    $translate,
+    Alerter,
+    constants,
+    Housing,
+    ovhUserPref,
+    User,
+  ) {
     $scope.loadingHousingInformations = true;
     $scope.loadingHousingError = false;
     $scope.housingPhoneStopBother = true;
     $scope.housingPhoneNumber = constants.urls.FR.housingPhoneSupport;
-    $scope.featureAvailability = featureAvailability;
     $scope.disable = {
       reboot: false,
     };

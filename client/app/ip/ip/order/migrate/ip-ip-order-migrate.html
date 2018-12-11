@@ -83,7 +83,7 @@
                 <!-- ERROR -->
                 <div class="alert alert-danger"
                      role="alert"
-                     data-ng-show="migrateableIpError && !loading.checkServiceMigrateable && ('ip_migration_step2_error_' + migrateableIpError | translateAlt: '')">
+                     data-ng-show="migrateableIpError && !loading.checkServiceMigrateable && ('ip_migration_step2_error_' + migrateableIpError | ducTranslateAlt: '')">
                     <p data-ng-bind="'ip_migration_step2_error_' + migrateableIpError | translate:{ t0: migrate.ip, t1: migrate.service.serviceName }"></p>
                 </div>
 
@@ -115,7 +115,7 @@
                                data-ng-disabled="loading.prices || durations.available.length == 1"
                                value="{{duration}}">
                         <span data-ng-bind="duration | duration:'longDate'"></span> :
-                        <span data-ng-bind-html="durations.details[duration].prices | price:ovhSubsidiary"></span>
+                        <span data-ng-bind-html="durations.details[duration].prices | ducPrice:ovhSubsidiary"></span>
                         <oui-spinner data-ng-hide="durations.details[duration]"
                                      data-size="s"></oui-spinner>
                     </label>

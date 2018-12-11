@@ -1,9 +1,14 @@
-angular.module('Module.ip.controllers').controller('IpOrganisationViewCtrl', ($scope, Ip, IpOrganisation, featureAvailability) => {
+angular.module('Module.ip.controllers').controller('IpOrganisationViewCtrl', (
+  $scope,
+  Ip,
+  ipFeatureAvailability,
+  IpOrganisation,
+) => {
   $scope.data = $scope.currentActionData;
   $scope.loading = true;
 
   $scope.showState = function () {
-    return featureAvailability.showState();
+    return ipFeatureAvailability.showState();
   };
 
   IpOrganisation.getIpOrganisationDetails($scope.data.ipBlock.organizationId).then(

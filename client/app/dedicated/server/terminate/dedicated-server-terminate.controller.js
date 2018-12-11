@@ -1,18 +1,26 @@
 angular.module('App').controller('ServerTerminateCtrl', class ServerTerminateCtrl {
-  constructor($scope, $stateParams, constants, $q, Server, featureAvailability, Alerter) {
+  constructor(
+    $q,
+    $scope,
+    $stateParams,
+    Alerter,
+    constants,
+    dedicatedServerFeatureAvailability,
+    Server,
+  ) {
     this.$scope = $scope;
     this.$stateParams = $stateParams;
     this.constants = constants;
     this.$q = $q;
     this.Server = Server;
-    this.featureAvailability = featureAvailability;
+    this.dedicatedServerFeatureAvailability = dedicatedServerFeatureAvailability;
     this.Alerter = Alerter;
   }
 
   $onInit() {
     this.$scope.loading = false;
     this.$scope.server = this.$scope.currentActionData;
-    this.manualRefund = this.featureAvailability.hasDedicatedServerManualRefund();
+    this.manualRefund = this.dedicatedServerFeatureAvailability.hasDedicatedServerManualRefund();
     this.serviceInfos = _.get(this.$scope, 'currentActionData.serviceInfos', null);
     this.cancelSubscriptionForm = {
       cancelMethod: null,

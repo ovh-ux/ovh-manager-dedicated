@@ -7,21 +7,36 @@ angular.module('App').controller('DedicatedCloudCtrl', [
   '$timeout',
   '$translate',
   '$uibModal',
+  'constants',
   'DedicatedCloud',
-  'featureAvailability',
-  'Module.services.notification',
+  'DucNotification',
   'OvhApiDedicatedCloud',
   'step',
   'User',
-  function ($log, $q, $scope, $state, $stateParams, $timeout, $translate, $uibModal,
-    DedicatedCloud, featureAvailability, Notification, OvhApiDedicatedCloud, step, User) {
+  function (
+    $log,
+    $q,
+    $scope,
+    $state,
+    $stateParams,
+    $timeout,
+    $translate,
+    $uibModal,
+    constants,
+    DedicatedCloud,
+    DucNotification,
+    OvhApiDedicatedCloud,
+    step,
+    User,
+  ) {
     $scope.HDS_READY_NOTIFICATION = 'HDS_READY_NOTIFICATION';
 
     $scope.alerts = { dashboard: 'dedicatedCloud_alert' };
     $scope.loadingInformations = true;
     $scope.loadingError = false;
     $scope.dedicatedCloud = null;
-    $scope.featureAvailability = featureAvailability;
+
+    $scope.allowDedicatedServerComplianceOptions = constants.target !== 'US';
 
     $scope.notifications = {
       HDS_READY_NOTIFICATION: false,
@@ -40,7 +55,7 @@ angular.module('App').controller('DedicatedCloudCtrl', [
     $scope.dedicatedCloud = {};
 
     function showNotificationIfRequired(notification) {
-      Notification.checkIfStopNotification(notification, $stateParams.productId)
+      DucNotification.checkIfStopNotification(notification, $stateParams.productId)
         .then((stopNotification) => {
           $scope.notifications[notification] = !stopNotification;
         })
@@ -236,7 +251,7 @@ angular.module('App').controller('DedicatedCloudCtrl', [
 
     $scope.stopNotification = function (notificationType) {
       $scope.notifications[notificationType] = false;
-      Notification.stopNotification($scope.HDS_READY_NOTIFICATION, $stateParams.productId);
+      DucNotification.stopNotification($scope.HDS_READY_NOTIFICATION, $stateParams.productId);
     };
 
     $scope.showHdsReadyNotificationIfRequired = function (notification) {
