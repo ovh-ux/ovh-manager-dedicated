@@ -17,7 +17,7 @@
         <div data-ovh-alert></div>
 
         <form name="paymentMeanForm"
-              data-ng-show="!meanAdded"
+              data-ng-if="!meanAdded"
               class="mt-4"
               novalidate>
 
@@ -232,7 +232,7 @@
                 </div>
 
                 <div class="checkbox"
-                        data-ng-show="canPaymentTypeSetDefaultAtCreation(mean.type)">
+                     data-ng-if="canPaymentTypeSetDefaultAtCreation(mean.type) && hasDefaultPaymentMean">
                     <label>
                         <input type="checkbox"
                                 data-ng-model="mean.setDefault" />
@@ -240,16 +240,19 @@
                     </label>
                 </div>
 
+                <strong class="d-block" data-ng-if="!hasDefaultPaymentMean" data-translate="payment_mean_set_as_default"></strong>
+
                 <button type="button"
                         class="oui-button oui-button_primary"
-                        data-ng-if="mean.type"
+                        data-ng-if="mean.type && !loader.add"
                         data-ng-click="add()"
                         data-track-on="click"
                         data-track-type="action"
                         data-track-name="payment_types::payment_types::add::validation_add_payment_types"
-                        data-ng-disabled="(paymentMeanForm.$invalid && paymentMeanForm.$dirty) || !mean.type || loader.add">
+                        data-ng-disabled="(paymentMeanForm.$invalid && paymentMeanForm.$dirty) || !mean.type">
                     <span data-translate="payment_mean_add"></span>
                 </button>
+                <oui-spinner data-ng-if="loader.add"></oui-spinner>
             </div>
 
         </form>

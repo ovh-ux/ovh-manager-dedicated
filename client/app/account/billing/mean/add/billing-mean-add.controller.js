@@ -4,7 +4,7 @@
  * @name Billing.controllers.Method.Add'
  * @description
  */
-angular.module('Billing.controllers').controller('Billing.controllers.Mean.Add', ($scope, $location, $q, $translate, IBAN_BIC_RULES, BillingMean, BillingUser, Alerter, User) => {
+angular.module('Billing.controllers').controller('billingPaymentMeanAddCtrl', ($location, $q, $scope, $translate, Alerter, BillingMean, BillingUser, paymentMethodHelper, User, IBAN_BIC_RULES) => {
   $scope.loader = {
     add: false,
     means: false,
@@ -130,20 +130,20 @@ angular.module('Billing.controllers').controller('Billing.controllers.Mean.Add',
 
     return BillingMean.post(meanData)
       .then((response) => {
-        $scope.mean = {};
+        const url = _.get(response, 'url');
         $scope.meanAdded = true;
 
-        if (response && $scope.mean.type === 'bankAccount') {
-          Alerter.set('alert-success', [$translate.instant('paymentType_bankAccount_add_success_with_download', {
-            t0: response.url,
+        if (url && $scope.mean.type === 'bankAccount') {
+          Alerter.set('alert-info', [$translate.instant('paymentType_bankAccount_add_success_with_download', {
+            t0: url,
           }), $translate.instant('paymentType_bankAccount_processing_delay')].join(' '));
 
           return response;
         }
 
-        Alerter.set('alert-success', $translate.instant('paymentType_add_success_url', {
-          t0: response.url,
-        }));
+        Alerter.set('alert-info',
+          `${$translate.instant('paymentType_add_validation_description')}
+          ${$translate.instant('paymentType_add_success_url', { t0: url })}`);
         return response;
       })
       .catch((reason) => {
@@ -216,17 +216,21 @@ angular.module('Billing.controllers').controller('Billing.controllers.Mean.Add',
 
 
     $scope.loader.means = true;
-    BillingUser.getAvailableMeans()
-      .then(availableMeans => (BillingMean.isApiSchemaLoaded()
-        ? $q.when()
-        : BillingMean.getApiSchemaPromise())
-        .then(() => availableMeans.filter(meanType => !!BillingMean.canBeAddedByUser(meanType))))
-      .then((meanTypes) => {
-        setPaymentMeansInScope(meanTypes);
-      })
-      .then(() => User.getUser())
-      .then((user) => {
+
+    return $q.all({
+      availableMeans: BillingUser.getAvailableMeans(),
+      apiSchema: (BillingMean.isApiSchemaLoaded() ? $q.when() : BillingMean.getApiSchemaPromise()),
+    })
+      .then(({ availableMeans }) => availableMeans
+        .filter(meanType => !!BillingMean.canBeAddedByUser(meanType)))
+      .then(meanTypes => setPaymentMeansInScope(meanTypes))
+      .then(() => $q.all({
+        user: User.getUser(),
+        hasDefaultPaymentMean: paymentMethodHelper.hasDefaultPaymentMethod(),
+      }))
+      .then(({ user, hasDefaultPaymentMean }) => {
         $scope.customerIsFromFrance = user.billingCountry === 'FR';
+        $scope.hasDefaultPaymentMean = hasDefaultPaymentMean;
       })
       .catch((error) => {
         Alerter.set('alert-danger', $translate.instant('add_mean_unable_to_get_payment_means'), error);

@@ -173,7 +173,7 @@
    <translation id="autorenew_service_enable_autorenew_desc1" qtlid="416241">Automatische verlenging voor uw <strong>{0}</strong> dienst zal worden geactiveerd.</translation>
    <translation id="autorenew_service_enable_autorenew_desc2" qtlid="416254">Uw dienst zal automatisch worden verlengd op {0}.</translation>
    <translation id="autorenew_service_enable_autorenew_desc3" qtlid="416267">U kunt de betalingsfrequentie instellen.</translation>
-   <translation id="autorenew_service_enable_autorenew_payment_mean">Pour bénéficier du paiement automatique sur ce service, vous devez enregistrer un moyen de paiement valide.</translation>
+   <translation id="autorenew_service_enable_autorenew_payment_mean" qtlid="509613">Pour bénéficier du paiement automatique sur ce service, vous devez enregistrer un moyen de paiement valide.</translation>
 
    <translation id="autorenew_service_renew_0" qtlid="69173">Alle</translation>
 
@@ -406,6 +406,7 @@
    <translation id="payment_mean_default" qtlid="101193">Standaard</translation>
    <translation id="payment_mean_set_default" qtlid="224893">Standaard betalingsmethode</translation>
    <translation id="payment_mean_set_default_after_validation" qtlid="349140">Ik stel deze als standaard betaalmethode in zodra het gevalideerd is. </translation>
+   <translation id="payment_mean_set_as_default">Ce moyen de paiement sera sélectionné par défaut après sa validation.</translation>
 
    <translation id="payment_mean_contact_presentation_reuse_contact" qtlid="381868">gebruik van een reeds bestaand contact</translation>
    <translation id="payment_mean_contact_presentation_create_contact" qtlid="381881">creëren van een nieuw contact</translation>
@@ -813,7 +814,8 @@
    <translation id="payement_mean_add_creditCard" qtlid="177288">Een bestelling genereren</translation>
    <translation id="payment_mean_get_validation" qtlid="177301">De validatieprocedure ophalen</translation>
    <translation id="payment_mean_return_by_mail_procedure" qtlid="325588">Terugzending via post</translation>
-   <translation id="paymentType_add_success_url" qtlid="363878"><a href="{0}" target="_blank">Klik hier</a> om registratie van uw betaalmethode te voltooien. </translation>
+   <translation id="paymentType_add_validation_description">Vous devez valider l'ajout de votre moyen de paiement.</translation>
+   <translation id="paymentType_add_success_url"><a href="{0}" target="_blank" rel="noopener">Cliquez ici</a> pour être redirigé vers une page sécurisée et finaliser l'opération.</translation>
    <translation id="paymentType_bankAccount_add_success_with_download" qtlid="325601">De bankrekening is toegevoegd en zal actief zijn zodra het is gevalideerd. Volg aub de stappen van de <a href="{0}" target="_blank">procedure in dit document</a> om de betaalmethode te valideren (moet per post verzonden worden). </translation>
    <translation id="paymentType_bankAccount_pending_validation" qtlid="325614">U heeft een bankrekening toegevoegd via uw klant control panel. Momenteel zijn we in afwachting van uw schriftelijke automatische incasso goeodkeuring voor deze rekening. </translation>
    <translation id="paymentType_bankAccount_processing_delay" qtlid="325627">Uw bankrekening wordt gevalideerd binnen 24 tot 48 uur nadat we uw automatische incasso goedkeuring ontvangen hebben. </translation>
