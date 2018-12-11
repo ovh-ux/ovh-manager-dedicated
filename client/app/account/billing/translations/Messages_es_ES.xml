@@ -174,7 +174,7 @@
    <translation id="autorenew_service_enable_autorenew_desc1" qtlid="416241">Va a activar el pago automático de su servicio <strong>{0}</strong>.</translation>
    <translation id="autorenew_service_enable_autorenew_desc2" qtlid="416254">Su servicio se renovará automáticamente el {0}.</translation>
    <translation id="autorenew_service_enable_autorenew_desc3" qtlid="416267">Asimismo, podrá elegir la frecuencia de pago.</translation>
-   <translation id="autorenew_service_enable_autorenew_payment_mean">Pour bénéficier du paiement automatique sur ce service, vous devez enregistrer un moyen de paiement valide.</translation>
+   <translation id="autorenew_service_enable_autorenew_payment_mean" qtlid="509613">Pour bénéficier du paiement automatique sur ce service, vous devez enregistrer un moyen de paiement valide.</translation>
 
    <translation id="autorenew_service_renew_0" qtlid="69173">Todos</translation>
 
@@ -407,6 +407,7 @@
    <translation id="payment_mean_default" qtlid="101193">Por defecto</translation>
    <translation id="payment_mean_set_default" qtlid="224893">Forma de pago por defecto</translation>
    <translation id="payment_mean_set_default_after_validation" qtlid="349140">Una vez validada, quiero seleccionar esta forma de pago por defecto.</translation>
+   <translation id="payment_mean_set_as_default">Ce moyen de paiement sera sélectionné par défaut après sa validation.</translation>
 
    <translation id="payment_mean_contact_presentation_reuse_contact" qtlid="381868">utilizando un contacto preexistente</translation>
    <translation id="payment_mean_contact_presentation_create_contact" qtlid="381881">creando un nuevo contacto</translation>
@@ -814,7 +815,8 @@
    <translation id="payement_mean_add_creditCard" qtlid="177288">Generar una orden de pedido</translation>
    <translation id="payment_mean_get_validation" qtlid="177301">Obtener el procedimiento de validación</translation>
    <translation id="payment_mean_return_by_mail_procedure" qtlid="325588">Enviar el procedimiento por correo postal</translation>
-   <translation id="paymentType_add_success_url" qtlid="363878"><a href="{0}" target="_blank">Haga clic aquí</a> para finalizar el registro de la forma de pago.</translation>
+   <translation id="paymentType_add_validation_description">Vous devez valider l'ajout de votre moyen de paiement.</translation>
+   <translation id="paymentType_add_success_url"><a href="{0}" target="_blank" rel="noopener">Cliquez ici</a> pour être redirigé vers une page sécurisée et finaliser l'opération.</translation>
    <translation id="paymentType_bankAccount_add_success_with_download" qtlid="325601">Se ha añadido la cuenta bancaria, pero es necesario validarla para que esté activa. Siga el procedimiento descrito en <a href="{0}" target="_blank">este documento</a> para validar la forma de pago y envíenoslo por correo postal.</translation>
    <translation id="paymentType_bankAccount_pending_validation" qtlid="325614">Ha añadido una cuenta bancaria en su área de cliente. Aún no hemos recibido la autorización de domiciliación a dicha cuenta que debe enviarnos por correo postal.</translation>
    <translation id="paymentType_bankAccount_processing_delay" qtlid="325627">Su cuenta bancaria se validará en las 24-48 horas posteriores a la recepción de su autorización de domiciliación.</translation>
