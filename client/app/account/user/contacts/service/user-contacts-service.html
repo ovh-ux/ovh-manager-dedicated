@@ -44,7 +44,7 @@
                 </tr>
             </thead>
 
-            <tbody data-ng-show="ctrlServices.loaders.services">
+            <tbody data-ng-if="ctrlServices.loaders.services">
                 <tr>
                     <td colspan="6" class="text-center my-4">
                         <oui-spinner></oui-spinner>
@@ -52,7 +52,7 @@
                 </tr>
             </tbody>
 
-            <tbody data-ng-show="!ctrlServices.loaders.services && ctrlServices.services.length === 0">
+            <tbody data-ng-if="!ctrlServices.loaders.services && ctrlServices.services.length === 0">
                 <tr>
                     <td colspan="6"
                         class="text-center"
@@ -61,7 +61,7 @@
                 </tr>
             </tbody>
 
-            <tbody data-ng-show="!ctrlServices.loaders.services && ctrlServices.services.length > 0">
+            <tbody data-ng-if="!ctrlServices.loaders.services && ctrlServices.services.length > 0">
                 <tr data-ng-repeat="service in ctrlServices.services | orderBy:('useraccount_contacts_service_category_'+services.category | translate) || servicescategory track by $index">
                     <td class="wordbreak"
                         data-ng-bind="('useraccount_contacts_service_category_'+service.category | translate) || value.category"></td>
