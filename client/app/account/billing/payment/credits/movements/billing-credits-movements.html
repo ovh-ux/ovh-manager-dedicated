@@ -1,15 +1,13 @@
-<header class="page-header" role="banner">
-    <h1 data-translate="billing_credit_balance_movements_title"
-        data-translate-values="{ t0: $ctrl.balance.balanceName }"></h1>
-</header>
-<div class="tab-content">
-    <a class="d-inline-block mb-5"
-       title="{{ 'billing_credit_back' | translate }}"
-       data-ui-sref="app.account.billing.payment.credits">
-        <span class="fa fa-chevron-left mr-2" aria-hidden="true"></span>
-        <span data-translate="billing_credit_balance_movements_back"></span>
-    </a>
+<div class="billing-payment-credits-movements">
+
     <div data-ovh-alert></div>
+
+    <oui-back-button data-state="^">
+        <span data-translate="billing_credit_balance_movements_title"
+              data-translate-values="{ t0: $ctrl.balance.balanceName }">
+        </span>
+    </oui-back-button>
+
     <div class="table-responsive">
         <table class="table table-hover">
             <thead>
@@ -86,4 +84,5 @@
              data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
         </div>
     </div>
+
 </div>

@@ -1,4 +1,4 @@
-angular.module('Billing.controllers').controller('Billing.controllers.Fidelity', ($scope, $filter, $translate, BillingFidelity, BillingUser, BillingmessageParser, BillingdateRangeSelection) => {
+angular.module('Billing.controllers').controller('Billing.controllers.Fidelity', ($scope, $filter, $timeout, $translate, BillingFidelity, BillingUser, BillingmessageParser, BillingdateRangeSelection) => {
   $scope.fidelityLoading = false;
   $scope.fidelityAccountLoading = false;
   $scope.fidelityAccount = null;
@@ -68,6 +68,30 @@ angular.module('Billing.controllers').controller('Billing.controllers.Fidelity',
       return $filter('date')($scope.fidelityAccount.lastUpdate, format);
     }
     return '';
+  };
+
+  $scope.setAction = function (action, data) {
+    if (action) {
+      $scope.currentAction = action;
+      $scope.currentActionData = data;
+
+      $scope.stepPath = `account/billing/payment/fidelity/${$scope.currentAction}/billing-fidelity-${$scope.currentAction}.html`;
+
+      $('#currentAction').modal({
+        keyboard: true,
+        backdrop: 'static',
+      });
+    } else {
+      $('#currentAction').modal('hide');
+      $scope.currentActionData = null;
+      $timeout(() => {
+        $scope.stepPath = '';
+      }, 300);
+    }
+  };
+
+  $scope.resetAction = function () {
+    $scope.setAction(false);
   };
 
   /**

@@ -96,50 +96,12 @@ angular.module('App').run(($q, $translate, SidebarMenu, User, constants) => {
   }
 
   function buildPaymentMenu() {
-    const paymentMenu = SidebarMenu.addMenuItem({
+    return SidebarMenu.addMenuItem({
       name: 'paymentMenu',
       title: $translate.instant('menu_payment_methods'),
-      allowSubItems: true,
-      allowSearch: true,
-      loadOnState: 'app.account.billing.payment',
+      state: 'app.account.billing.payment',
       namespace: 'account',
     });
-
-    SidebarMenu.addMenuItem({
-      title: $translate.instant('menu_means'),
-      state: 'app.account.billing.payment.method',
-    }, paymentMenu);
-
-    if (constants.target === 'EU' || constants.target === 'CA') {
-      SidebarMenu.addMenuItem({
-        title: $translate.instant('menu_ovhaccount'),
-        state: 'app.account.billing.payment.ovhaccount',
-      }, paymentMenu);
-    }
-
-    if (constants.target === 'EU' || constants.target === 'CA') {
-      SidebarMenu.addMenuItem({
-        title: $translate.instant('menu_vouchers'),
-        state: 'app.account.billing.payment.vouchers',
-      }, paymentMenu);
-    }
-
-    SidebarMenu.addMenuItem({
-      title: $translate.instant('menu_refunds'),
-      state: 'app.account.billing.payment.refunds',
-    }, paymentMenu);
-
-    if (constants.target === 'EU') {
-      SidebarMenu.addMenuItem({
-        title: $translate.instant('menu_fidelity'),
-        state: 'app.account.billing.payment.fidelity',
-      }, paymentMenu);
-    }
-
-    SidebarMenu.addMenuItem({
-      title: $translate.instant('menu_credits'),
-      state: 'app.account.billing.payment.credits',
-    }, paymentMenu);
   }
 
   function init() {

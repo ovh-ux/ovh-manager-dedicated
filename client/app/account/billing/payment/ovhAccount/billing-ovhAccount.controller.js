@@ -96,7 +96,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.OvhAccount
       $scope.currentAction = action;
       $scope.currentActionData = data;
 
-      $scope.stepPath = `${BILLING_BASE_URL}ovhAccount/${$scope.currentAction}/billing-ovhAccount-${$scope.currentAction}.html`;
+      $scope.stepPath = `${BILLING_BASE_URL}payment/ovhAccount/${$scope.currentAction}/billing-ovhAccount-${$scope.currentAction}.html`;
 
       $('#currentAction').modal({
         keyboard: true,
