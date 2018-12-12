@@ -5,7 +5,5 @@ export default class BillingPaymentCtrl {
     // dependencies injections
     this.$state = $state;
     this.constants = constants;
-
-    console.log(this.constants);
   }
 }

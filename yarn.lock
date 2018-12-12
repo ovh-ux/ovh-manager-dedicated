@@ -995,9 +995,9 @@
     request "^2.88.0"
     webpack-dev-server "^3.1.9"
 
-"@ovh-ux/ng-payment-method@git+ssh://git@stash.ovh.net:7999/~jean-christophe.alleman/ovh-angular-payment-method.git#feat/module":
+"@ovh-ux/ng-payment-method@git+https://github.com/ovh-ux/ng-payment-method.git#develop":
   version "0.0.0"
-  resolved "git+ssh://git@stash.ovh.net:7999/~jean-christophe.alleman/ovh-angular-payment-method.git#6278c6afde54e96d28d0189b9f9998931487ad2f"
+  resolved "git+https://github.com/ovh-ux/ng-payment-method.git#524742c01c7fe9986ad75a1f818c873cf26ffede"
 
 "@ovh-ux/ovh-utils-angular@^13.0.0":
   version "13.0.2"
@@ -6069,15 +6069,6 @@ less@^2.3.1, less@^2.7.1:
   version "2.7.3"
   resolved "https://registry.yarnpkg.com/less/-/less-2.7.3.tgz#cc1260f51c900a9ec0d91fb6998139e02507b63b"
   integrity sha512-KPdIJKWcEAb02TuJtaLrhue0krtRLoRoo7x6BNJIBelO00t/CCdJQUnHW5V34OnHMWzIktSalJxRO+FvytQlCQ==
-  optionalDependencies:
-    errno "^0.1.1"
-    graceful-fs "^4.1.2"
-    image-size "~0.5.0"
-    mime "^1.2.11"
-    mkdirp "^0.5.0"
-    promise "^7.1.1"
-    request "2.81.0"
-    source-map "^0.5.3"
 
 less@^3.8.1:
   version "3.8.1"
@@ -7606,9 +7597,9 @@ ovh-angular-user-pref@^0.3.1:
   integrity sha1-B/V5JRNlHzJirkh5wXRCNkmwgwc=
 
 ovh-api-services@^3.24.0:
-  version "3.24.0"
-  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-3.24.0.tgz#a0ed96b70f23dcdc26b1bfaa26890cc3939d4270"
-  integrity sha512-jo2Jb73Vpy0rKz6Z/qq5b1GAbfu3ayVRKg7yVJmdRnahVYx7QQ5ne7SJQq4xersQh9CAC5TQNr79w0I1p1VLBw==
+  version "3.27.0"
+  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-3.27.0.tgz#9e9006fbfab334a3afba1a0661557c5a0aee3ca1"
+  integrity sha512-D9U+t5mGwY2LiVVMsQS5lv5lmPEKxjbadoKAZ1gHFxSisjYZU6wsgqdp3FuyHMW7PUjxi6bdKHBPYZ8IqmD6bw==
   dependencies:
     lodash "^3.10.1"
 
