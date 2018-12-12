@@ -13,12 +13,12 @@
 
     <div data-ovh-alert></div>
 
+    <h2 data-translate="ovhAccount_title2"></h2>
+
     <div class="text-center"
          data-ng-if="ovhAccountsLoading">
         <oui-spinner></oui-spinner>
     </div>
-
-    <h2 data-translate="ovhAccount_title2"></h2>
 
     <p data-ng-if="!ovhAccountLoading && ovhAccount.model.hasOvhAccount">
         <span data-ng-if="!ovhAccountsLoading && !ovhAccount.list.length"
