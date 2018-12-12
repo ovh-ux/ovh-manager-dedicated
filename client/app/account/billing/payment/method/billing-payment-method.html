@@ -1,144 +1,139 @@
 <div class="billing-payment-method">
-    <oui-page-header data-heading="{{ :: 'billing_payment_method_title' | translate }}"></oui-page-header>
 
-    <div class="tab-content">
+    <div class="text-center m-5"
+         data-ng-if="$ctrl.loading.init">
+        <oui-spinner></oui-spinner>
+    </div>
 
-        <div class="text-center m-5"
-             data-ng-if="$ctrl.loading.init">
-            <oui-spinner></oui-spinner>
-        </div>
+    <div data-ovh-alert="billing_payment_method_alert"></div>
 
-        <div data-ovh-alert="billing_payment_method_alert"></div>
+    <div data-ng-if="!$ctrl.loading.init">
+        <oui-message class="mb-4"
+                     data-ng-if="$ctrl.hasPendingValidationBankAccount"
+                     data-type="warning"
+                     data-dismissable>
+            <span data-translate="billing_payment_method_bank_account_pending_validation"></span>
+            <span data-translate="billing_payment_method_bank_account_processing_delay"></span>
+        </oui-message>
 
-        <div data-ng-if="!$ctrl.loading.init">
+        <oui-message class="mb-5"
+                     data-type="info"
+                     data-ng-if="$ctrl.guide">
+            <span data-translate="billing_payment_method_autorenew_guide_help"></span>
+            <a class="oui-link_icon"
+               target="_blank" rel="noopener"
+               data-ng-href="{{ $ctrl.guide }}"
+               data-track-on="click"
+               data-track-type="action"
+               data-track-name="payment_types::autoRenew::link::guides_how_to_use_automatic_renewal">
+                <span data-translate="billing_payment_method_autorenew_guide_help_link"></span>
+                <span class="oui-icon oui-icon-external_link"
+                      aria-hidden="true">
+                </span>
+            </a>
+        </oui-message>
 
+        <h2 data-translate="billing_payment_method_title"></h2>
 
-            <oui-message class="mb-4"
-                         data-ng-if="$ctrl.hasPendingValidationBankAccount"
-                         data-type="warning"
-                         data-dismissable>
-                <span data-translate="billing_payment_method_bank_account_pending_validation"></span>
-                <span data-translate="billing_payment_method_bank_account_processing_delay"></span>
-            </oui-message>
+        <oui-datagrid data-rows="$ctrl.paymentMethods">
+            <oui-column data-title=":: 'billing_payment_method_table_type' | translate"
+                        data-property="paymentType.text"
+                        data-type="options"
+                        data-type-options="$ctrl.tableFilterOptions.type"
+                        data-sortable="asc"
+                        data-filterable>
+            </oui-column>
+            <oui-column data-title=":: 'billing_payment_method_table_label' | translate"
+                        data-property="label"
+                        data-type="string"
+                        data-sortable
+                        data-searchable
+                        data-filterable>
+                <span data-ng-bind="$row.label || '-'"></span>
+            </oui-column>
+            <!-- <oui-column data-title=":: 'billing_payment_method_table_expiration_date' | translate">
+                <span class="d-block">
+                </span>
+            </oui-column> -->
+            <oui-column data-title=":: 'billing_payment_method_table_description' | translate"
+                        data-property="description"
+                        data-type="string"
+                        data-sortable
+                        data-searchable
+                        data-filterable>
+                <span class="d-inline-block text-truncate w-25"
+                      data-ng-bind="'-'"
+                      data-ng-if="!$row.description">
+                </span>
+                <span data-ng-bind="$row.description"
+                      data-ng-if="$row.description">
+                </span>
+            </oui-column>
+            <oui-column data-title=":: 'billing_payment_method_table_default' | translate">
+                <span class="oui-status"
+                      data-ng-class="{
+                          'oui-status_success': $row.default,
+                          'oui-status_error': !$row.default
+                      }"
+                      data-translate="{{ $row.default ? 'common_yes' : 'common_no' }}">
+                </span>
+            </oui-column>
+            <oui-column data-title=":: 'billing_payment_method_table_state' | translate"
+                        data-property="status.text"
+                        data-type="options"
+                        data-type-options="$ctrl.tableFilterOptions.status"
+                        data-sortable
+                        data-filterable>
+            </oui-column>
+           <!--  <oui-column data-title=":: 'billing_payment_method_table_3d_secure' | translate">
+                <span data-ng-bind="'-'"
+                      data-ng-if="$row.paymentType.value !== 'creditCard'">
+                </span>
+                <span class="oui-status"
+                      data-ng-class="{
+                          'oui-status_success': $row.original.threeDsValidated,
+                          'oui-status_error': !$row.original.threeDsValidated
+                      }"
+                      data-ng-if="$row.paymentType.value === 'creditCard'"
+                      data-translate="common_yes">
+                </span>
+            </oui-column> -->
 
-            <oui-message class="mb-5"
-                         data-type="info"
-                         data-ng-if="$ctrl.guide">
-                <span data-translate="billing_payment_method_autorenew_guide_help"></span>
-                <a class="oui-link_icon"
-                   target="_blank" rel="noopener"
-                   data-ng-href="{{ $ctrl.guide }}"
-                   data-track-on="click"
-                   data-track-type="action"
-                   data-track-name="payment_types::autoRenew::link::guides_how_to_use_automatic_renewal">
-                    <span data-translate="billing_payment_method_autorenew_guide_help_link"></span>
-                    <span class="oui-icon oui-icon-external_link"
-                          aria-hidden="true">
-                    </span>
+            <oui-action-menu data-align="end"
+                             data-compact>
+                <oui-action-menu-item data-text="{{ :: 'billing_payment_method_table_action_download_procedure' | translate }}"
+                                      data-aria-label="{{ :: ('billing_payment_method_table_action_download_procedure' | translate) + ' ' + ('billing_common_link_new_window' | translate) }}"
+                                      data-href="{{ $row.original.validationDocumentLink }}"
+                                      data-external
+                                      data-ng-if="$row.paymentType.value === 'bankAccount' && $row.status.value === 'pendingValidation'">
+                </oui-action-menu-item>
+                <oui-action-menu-divider data-ng-if="$row.paymentType.value === 'bankAccount' && $row.status.value === 'pendingValidation'"></oui-action-menu-divider>
+                <oui-action-menu-item data-text="{{ :: 'billing_payment_method_table_action_description_edit' | translate }}"
+                                      data-aria-label="{{ :: 'billing_payment_method_table_action_description_edit' | translate }}"
+                                      data-on-click="$ctrl.onPaymentMethodEditBtnClick($row)">
+                </oui-action-menu-item>
+                <oui-action-menu-item data-text="{{ :: 'billing_payment_method_table_action_set_default' | translate }}"
+                                      data-aria-label="{{ :: 'billing_payment_method_table_action_set_default' | translate }}"
+                                      data-disabled="(
+                                          $row.paymentType.value === 'creditCard' && $row.status.value !== 'valid')
+                                          || (['bankAccount', 'deferredPaymentAccount'].indexOf($row.paymentType.value) > -1 && $row.status.value === 'pendingValidation')"
+                                      data-on-click="$ctrl.onSetDefaultPaymentMethodBtnClick($row)">
+                </oui-action-menu-item>
+                <oui-action-menu-divider></oui-action-menu-divider>
+                <oui-action-menu-item data-text="{{ :: 'billing_payment_method_table_action_delete' | translate }}"
+                                      data-aria-label="{{ :: 'billing_payment_method_table_action_delete' | translate }}"
+                                      data-disabled="$row.default || $row.paymentType.value === 'deferredPaymentAccount'"
+                                      data-on-click="$ctrl.onPaymentMethodDeleteBtnClick($row)">
+                </oui-action-menu-item>
+            </oui-action-menu>
+
+            <extra-top>
+                <a class="oui-button oui-button_secondary"
+                   data-ui-sref="app.account.billing.payment.method"
+                   data-translate="billing_payment_method_table_top_add_method">
                 </a>
-            </oui-message>
-
-            <oui-datagrid data-rows="$ctrl.paymentMethods">
-                <oui-column data-title=":: 'billing_payment_method_table_type' | translate"
-                            data-property="paymentType.text"
-                            data-type="options"
-                            data-type-options="$ctrl.tableFilterOptions.type"
-                            data-sortable="asc"
-                            data-filterable>
-                </oui-column>
-                <oui-column data-title=":: 'billing_payment_method_table_label' | translate"
-                            data-property="label"
-                            data-type="string"
-                            data-sortable
-                            data-searchable
-                            data-filterable>
-                    <span data-ng-bind="$row.label || '-'"></span>
-                </oui-column>
-                <!-- <oui-column data-title=":: 'billing_payment_method_table_expiration_date' | translate">
-                    <span class="d-block">
-                    </span>
-                </oui-column> -->
-                <oui-column data-title=":: 'billing_payment_method_table_description' | translate"
-                            data-property="description"
-                            data-type="string"
-                            data-sortable
-                            data-searchable
-                            data-filterable>
-                    <span class="d-inline-block text-truncate w-25"
-                          data-ng-bind="'-'"
-                          data-ng-if="!$row.description">
-                    </span>
-                    <span data-ng-bind="$row.description"
-                          data-ng-if="$row.description">
-                    </span>
-                </oui-column>
-                <oui-column data-title=":: 'billing_payment_method_table_default' | translate">
-                    <span class="oui-status"
-                          data-ng-class="{
-                              'oui-status_success': $row.default,
-                              'oui-status_error': !$row.default
-                          }"
-                          data-translate="{{ $row.default ? 'common_yes' : 'common_no' }}">
-                    </span>
-                </oui-column>
-                <oui-column data-title=":: 'billing_payment_method_table_state' | translate"
-                            data-property="status.text"
-                            data-type="options"
-                            data-type-options="$ctrl.tableFilterOptions.status"
-                            data-sortable
-                            data-filterable>
-                </oui-column>
-               <!--  <oui-column data-title=":: 'billing_payment_method_table_3d_secure' | translate">
-                    <span data-ng-bind="'-'"
-                          data-ng-if="$row.paymentType.value !== 'creditCard'">
-                    </span>
-                    <span class="oui-status"
-                          data-ng-class="{
-                              'oui-status_success': $row.original.threeDsValidated,
-                              'oui-status_error': !$row.original.threeDsValidated
-                          }"
-                          data-ng-if="$row.paymentType.value === 'creditCard'"
-                          data-translate="common_yes">
-                    </span>
-                </oui-column> -->
-
-                <oui-action-menu data-align="end"
-                                 data-compact>
-                    <oui-action-menu-item data-text="{{ :: 'billing_payment_method_table_action_download_procedure' | translate }}"
-                                          data-aria-label="{{ :: ('billing_payment_method_table_action_download_procedure' | translate) + ' ' + ('billing_common_link_new_window' | translate) }}"
-                                          data-href="{{ $row.original.validationDocumentLink }}"
-                                          data-external
-                                          data-ng-if="$row.paymentType.value === 'bankAccount' && $row.status.value === 'pendingValidation'">
-                    </oui-action-menu-item>
-                    <oui-action-menu-divider data-ng-if="$row.paymentType.value === 'bankAccount' && $row.status.value === 'pendingValidation'"></oui-action-menu-divider>
-                    <oui-action-menu-item data-text="{{ :: 'billing_payment_method_table_action_description_edit' | translate }}"
-                                          data-aria-label="{{ :: 'billing_payment_method_table_action_description_edit' | translate }}"
-                                          data-on-click="$ctrl.onPaymentMethodEditBtnClick($row)">
-                    </oui-action-menu-item>
-                    <oui-action-menu-item data-text="{{ :: 'billing_payment_method_table_action_set_default' | translate }}"
-                                          data-aria-label="{{ :: 'billing_payment_method_table_action_set_default' | translate }}"
-                                          data-disabled="(
-                                              $row.paymentType.value === 'creditCard' && $row.status.value !== 'valid')
-                                              || (['bankAccount', 'deferredPaymentAccount'].indexOf($row.paymentType.value) > -1 && $row.status.value === 'pendingValidation')"
-                                          data-on-click="$ctrl.onSetDefaultPaymentMethodBtnClick($row)">
-                    </oui-action-menu-item>
-                    <oui-action-menu-divider></oui-action-menu-divider>
-                    <oui-action-menu-item data-text="{{ :: 'billing_payment_method_table_action_delete' | translate }}"
-                                          data-aria-label="{{ :: 'billing_payment_method_table_action_delete' | translate }}"
-                                          data-disabled="$row.default || $row.paymentType.value === 'deferredPaymentAccount'"
-                                          data-on-click="$ctrl.onPaymentMethodDeleteBtnClick($row)">
-                    </oui-action-menu-item>
-                </oui-action-menu>
-
-                <extra-top>
-                    <a class="oui-button oui-button_secondary"
-                       data-ui-sref="app.account.billing.payment.method"
-                       data-translate="billing_payment_method_table_top_add_method">
-                    </a>
-                </extra-top>
-            </oui-datagrid>
-
-        </div>
+            </extra-top>
+        </oui-datagrid>
 
     </div>
 </div>

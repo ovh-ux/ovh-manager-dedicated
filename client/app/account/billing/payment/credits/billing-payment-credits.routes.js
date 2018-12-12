@@ -3,18 +3,17 @@ import angular from 'angular';
 angular
   .module('Billing')
   .config(($stateProvider, $urlRouterProvider) => {
-    const name = 'app.account.billing.payment.method';
+    const name = 'app.account.billing.payment.credits';
 
     $stateProvider.state(name, {
-      url: '/method',
-      templateUrl: 'account/billing/payment/method/billing-payment-method.html',
-      controller: 'BillingPaymentMethodCtrl',
+      url: '/credits',
+      templateUrl: 'account/billing/payment/credits/billing-credits.html',
+      controller: 'Billing.controllers.Credits',
       controllerAs: '$ctrl',
-      translations: ['./'],
     });
 
     $urlRouterProvider.when(
-      /^\/billing\/mean$/,
+      /^\/billing\/credits/,
       ($location, $state) => $state.go(name),
     );
   });

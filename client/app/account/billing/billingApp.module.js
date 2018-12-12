@@ -56,11 +56,6 @@ angular
         abstract: true,
       });
 
-      $stateProvider.state('app.account.billing.payment', {
-        url: '',
-        abstract: true,
-      });
-
       /**
        * ROUTE: Orders
        */
@@ -80,15 +75,6 @@ angular
       $urlServiceProvider.rules.when('/billing/orders/:id/retract', '/billing/orders/retract/:id');
 
       /**
-       * ROUTE: Refunds
-       */
-      $stateProvider.state('app.account.billing.payment.refunds', {
-        url: '/refunds',
-        templateUrl: `${BILLING_BASE_URL}refunds/billing-refunds.html`,
-        controller: 'Billing.controllers.Refunds',
-      });
-
-      /**
        * ROUTE: sla
        */
       $stateProvider.state('app.account.billing.sla', {
@@ -97,31 +83,6 @@ angular
         controller: 'Billing.controllers.Sla',
       });
 
-      /**
-       * ROUTE: Ovh Account
-       */
-      if (constants.target === 'EU' || constants.target === 'CA') {
-        $stateProvider.state('app.account.billing.payment.ovhaccount', {
-          url: '/ovhaccount',
-          templateUrl: `${BILLING_BASE_URL}ovhAccount/billing-ovhAccount.html`,
-          controller: 'Billing.controllers.OvhAccount',
-        });
-      }
-
-      /**
-       * ROUTE: Billing Mean
-       */
-      // $stateProvider.state('app.account.billing.payment.mean', {
-      //   url: '/mean',
-      //   redirectTo: 'app.account.billing.payment.mean.list',
-      // });
-
-      // $stateProvider.state('app.account.billing.payment.mean.list', {
-      //   url: '',
-      //   templateUrl: `${BILLING_BASE_URL}mean/billing-mean.html`,
-      //   controller: 'Billing.controllers.Mean',
-      // });
-
       if (constants.target === 'US') {
         $stateProvider.state('app.account.billing.payment.mean.add', {
           url: '/mean/add?from',
@@ -129,13 +90,7 @@ angular
           controller: 'PaymentMethodAddCtrl',
           controllerAs: '$ctrl',
         });
-      }/* else {
-        $stateProvider.state('app.account.billing.payment.mean.add', {
-          url: '/add',
-          templateUrl: `${BILLING_BASE_URL}mean/add/billing-mean-add.html`,
-          controller: 'billingPaymentMeanAddCtrl',
-        });
-      } */
+      }
 
       /**
        * ROUTE: Auto renew
@@ -144,52 +99,6 @@ angular
         url: '/autoRenew',
         templateUrl: `${BILLING_BASE_URL}autoRenew/billing-autoRenew.html`,
         controller: 'Billing.controllers.AutoRenew',
-      });
-
-      /**
-       * ROUTE: Ovh Fidelity
-       */
-      if (constants.target === 'EU') {
-        $stateProvider.state('app.account.billing.payment.fidelity', {
-          url: '/fidelity',
-          templateUrl: `${BILLING_BASE_URL}fidelity/billing-fidelity.html`,
-          controller: 'Billing.controllers.Fidelity',
-        });
-      }
-
-      /**
-       * ROUTE: Credits
-       */
-      $stateProvider.state('app.account.billing.payment.credits', {
-        url: '/credits',
-        templateUrl: `${BILLING_BASE_URL}credits/billing-credits.html`,
-        controller: 'Billing.controllers.Credits',
-        controllerAs: '$ctrl',
-      });
-
-      $stateProvider.state('app.account.billing.payment.creditsMovements', {
-        url: '/credits/:balanceName/movements',
-        templateUrl: `${BILLING_BASE_URL}credits/movements/billing-credits-movements.html`,
-        controller: 'Billing.controllers.CreditsMovements',
-        controllerAs: '$ctrl',
-      });
-
-      /**
-       * ROUTE: Ovh vouchers
-       */
-      $stateProvider.state('app.account.billing.payment.vouchers', {
-        url: '/vouchers',
-        templateUrl: `${BILLING_BASE_URL}vouchers/billing-vouchers.html`,
-        controller: 'Billing.controllers.Vouchers',
-      });
-
-      /**
-       * ROUTE: Ovh vouchers
-       */
-      $stateProvider.state('app.account.billing.payment.voucherMovements', {
-        url: '/vouchers/:voucherAccountId/movements',
-        templateUrl: `${BILLING_BASE_URL}vouchers/movements/billing-vouchers-movements.html`,
-        controller: 'Billing.controllers.Vouchers.Movements',
       });
 
       /**
