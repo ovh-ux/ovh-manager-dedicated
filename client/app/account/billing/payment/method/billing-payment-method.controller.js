@@ -10,15 +10,17 @@ import deleteModalTemplate from './delete/billing-payment-method-delete.html';
 import deleteModalController from './delete/billing-payment-method-delete.controller';
 
 export default class BillingPaymentMethodCtrl {
-  constructor($q, $translate, $uibModal, Alerter, ovhPaymentMethod, User) {
-    'ngInject';
+  /* @ngInject */
 
+  constructor($q, $translate, $uibModal, Alerter, ovhPaymentMethod,
+    paymentMethodListResolve, User) {
     // dependencies injections
     this.$q = $q;
     this.$translate = $translate;
     this.$uibModal = $uibModal;
     this.Alerter = Alerter;
     this.ovhPaymentMethod = ovhPaymentMethod;
+    this.paymentMethodListResolve = paymentMethodListResolve;
     this.User = User;
 
     // other attributes used in views
@@ -176,19 +178,10 @@ export default class BillingPaymentMethodCtrl {
     this.loading.init = true;
 
     return this.$q.all({
-      paymentMethods: this.ovhPaymentMethod.getAllPaymentMethods({
-        transform: true,
-      }),
+      paymentMethods: this.paymentMethodListResolve.promise,
       guides: this.User.getUrlOf('guides'),
     }).then(({ paymentMethods, guides }) => {
-      // Filter out bankAccounts blocked by incidents
-      this.paymentMethods = _.filter(paymentMethods, ({ paymentType, status }) => {
-        if (paymentType.value !== 'bankAccount') {
-          return true;
-        }
-        return status.value !== 'blockedForIncidents';
-      });
-
+      this.paymentMethods = paymentMethods;
       // set options for status filter
       this.tableFilterOptions = {
         status: {

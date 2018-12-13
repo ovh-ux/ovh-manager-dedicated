@@ -13,7 +13,60 @@
                 </legend>
 
                 <div class="my-3">
-                  kqjsflqjflqjs
+                    <div class="text-center"
+                         data-ng-if="$ctrl.loading.init">
+                        <oui-spinner></oui-spinner>
+                    </div>
+
+                    <div data-ng-if="$ctrl.loading.add">
+                        <oui-spinner class="d-inline-block align-middle"
+                                     data-size="s">
+                        </oui-spinner>
+                        <span class="d-inline-block align-middle" 
+                              data-translate="billing_payment_method_add_selected_redirect">
+                        </span>
+                    </div>
+
+                    <div data-ng-if="!$ctrl.loading.init && !$ctrl.loading.add">
+                        <div class="row">
+                            <div class="col-md-4"
+                                 data-ng-repeat="paymentMethodType in $ctrl.paymentMethodTypes | orderBy:'paymentType.text' track by $index">
+                                <oui-radio data-thumbnail
+                                           data-value="paymentMethodType"
+                                           data-model="$ctrl.model.selectedPaymentMethodType">
+                                    <span data-ng-bind="paymentMethodType.paymentType.text"></span>
+                                </oui-radio>
+                            </div>
+                        </div>
+
+                        <div class="mt-3"
+                             data-ng-if="$ctrl.model.selectedPaymentMethodType">
+                            <div data-ng-switch="$ctrl.model.selectedPaymentMethodType.paymentType.value">
+                                <p data-ng-switch-when="CREDIT_CARD">
+                                    <span class="d-block"
+                                          data-translate="billing_payment_method_add_selected_common_redirect">
+                                    </span>
+                                    <span data-translate="billing_payment_method_add_credit_card_selected"></span>
+                                </p>
+                                <p data-ng-switch-when="BANK_ACCOUNT">
+                                    <span class="d-block"
+                                          data-translate="billing_payment_method_add_selected_common_redirect">
+                                    </span>
+                                    <span data-translate="billing_payment_method_add_bank_account_selected"></span>
+                                </p>
+                                <p data-ng-switch-when="PAYPAL"
+                                   data-translate="billing_payment_method_add_selected_paypal_redirect">
+                                </p>
+                            </div>
+                            <p data-ng-if="!$ctrl.hasPaymentMethod"
+                               data-translate="billing_payment_method_add_default_payment">
+                            </p>
+                            <oui-button data-variant="primary"
+                                        data-on-click="$ctrl.onPayentMethodAddBtnClick()">
+                                <span data-translate="common_add"></span>
+                            </oui-button>
+                        </div>
+                    </div>
                 </div>
             </fieldset>
         </div>

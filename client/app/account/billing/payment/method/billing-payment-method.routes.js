@@ -11,6 +11,27 @@ angular
       controller: 'BillingPaymentMethodCtrl',
       controllerAs: '$ctrl',
       translations: ['./'],
+      resolve: {
+        paymentMethodListResolve: ($q, ovhPaymentMethod) => {
+          const paymentMethodListDeferred = $q.defer();
+
+          ovhPaymentMethod
+            .getAllPaymentMethods({
+              transform: true,
+            })
+            .then(paymentMethods => paymentMethodListDeferred.resolve(
+              _.filter(paymentMethods, ({ paymentType, status }) => {
+                if (paymentType.value !== 'BANK_ACCOUNT') {
+                  return true;
+                }
+                return status.value !== 'BLOCKED_FOR_INCIDENTS';
+              }),
+            ))
+            .catch(error => paymentMethodListDeferred.reject(error));
+
+          return paymentMethodListDeferred;
+        },
+      },
     });
 
     $urlRouterProvider.when(
