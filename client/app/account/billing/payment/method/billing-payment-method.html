@@ -106,9 +106,9 @@
                                       data-aria-label="{{ :: ('billing_payment_method_table_action_download_procedure' | translate) + ' ' + ('billing_common_link_new_window' | translate) }}"
                                       data-href="{{ $row.original.validationDocumentLink }}"
                                       data-external
-                                      data-ng-if="$row.paymentType.value === 'bankAccount' && $row.status.value === 'pendingValidation'">
+                                      data-ng-if="$row.paymentType.value === 'BANK_ACCOUNT' && $row.status.value === 'PENDING_VALIDATION'">
                 </oui-action-menu-item>
-                <oui-action-menu-divider data-ng-if="$row.paymentType.value === 'bankAccount' && $row.status.value === 'pendingValidation'"></oui-action-menu-divider>
+                <oui-action-menu-divider data-ng-if="$row.paymentType.value === 'BANK_ACCOUNT' && $row.status.value === 'PENDING_VALIDATION'"></oui-action-menu-divider>
                 <oui-action-menu-item data-text="{{ :: 'billing_payment_method_table_action_description_edit' | translate }}"
                                       data-aria-label="{{ :: 'billing_payment_method_table_action_description_edit' | translate }}"
                                       data-on-click="$ctrl.onPaymentMethodEditBtnClick($row)">
@@ -117,13 +117,13 @@
                                       data-aria-label="{{ :: 'billing_payment_method_table_action_set_default' | translate }}"
                                       data-disabled="(
                                           $row.paymentType.value === 'creditCard' && $row.status.value !== 'valid')
-                                          || (['bankAccount', 'deferredPaymentAccount'].indexOf($row.paymentType.value) > -1 && $row.status.value === 'pendingValidation')"
+                                          || (['BANK_ACCOUNT', 'DEFERRED_PAYMENT_ACCOUNT'].indexOf($row.paymentType.value) > -1 && $row.status.value === 'PENDING_VALIDATION')"
                                       data-on-click="$ctrl.onSetDefaultPaymentMethodBtnClick($row)">
                 </oui-action-menu-item>
                 <oui-action-menu-divider></oui-action-menu-divider>
                 <oui-action-menu-item data-text="{{ :: 'billing_payment_method_table_action_delete' | translate }}"
                                       data-aria-label="{{ :: 'billing_payment_method_table_action_delete' | translate }}"
-                                      data-disabled="$row.default || $row.paymentType.value === 'deferredPaymentAccount'"
+                                      data-disabled="$row.default || $row.paymentType.value === 'DEFERRED_PAYMENT_ACCOUNT'"
                                       data-on-click="$ctrl.onPaymentMethodDeleteBtnClick($row)">
                 </oui-action-menu-item>
             </oui-action-menu>
