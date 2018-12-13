@@ -65,16 +65,16 @@
                 <tr data-ng-repeat="service in ctrlServices.services | orderBy:('useraccount_contacts_service_category_'+services.category | translate) || servicescategory track by $index">
                     <td class="wordbreak"
                         data-ng-bind="('useraccount_contacts_service_category_'+service.category | translate) || value.category"></td>
-                    <td class="wordbreak" data-ng-bind="::service.serviceName"></td>
+                    <td class="wordbreak" data-ng-bind="service.serviceName"></td>
                     <td class="wordbreak" data-ng-if="ctrlServices.editLine !== $index"
-                        data-ng-bind="::service.contactAdmin"
+                        data-ng-bind="service.contactAdmin"
                         data-ng-class="{'disabled': service.contactAdmin === ctrlServices.user.nichandle}">
                     </td>
                     <td class="wordbreak" data-ng-if="ctrlServices.editLine !== $index"
-                        data-ng-bind="::service.contactTech"
+                        data-ng-bind="service.contactTech"
                         data-ng-class="{'disabled': service.contactTech === ctrlServices.user.nichandle}"></td>
                     <td class="wordbreak" data-ng-if="ctrlServices.editLine !== $index"
-                        data-ng-bind="::service.contactBilling"
+                        data-ng-bind="service.contactBilling"
                         data-ng-class="{'disabled': service.contactBilling === ctrlServices.user.nichandle}"></td>
                     <td class="text-center" colspan="2" data-ng-if="ctrlServices.editLine !== $index">
                         <button type="button"
