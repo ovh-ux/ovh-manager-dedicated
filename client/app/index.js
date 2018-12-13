@@ -91,6 +91,7 @@ import 'script-loader!@bower_components/ckeditor/ckeditor.js';
 import 'script-loader!@bower_components/ng-ckeditor/ng-ckeditor.js';
 import 'script-loader!@bower_components/messenger/build/js/messenger.min.js';
 import 'script-loader!flatpickr/dist/flatpickr.min.js';
+import 'script-loader!filesize/lib/filesize.js';
 
 // Ckeditor 4.x
 import 'script-loader!ng-ckeditor/dist/ng-ckeditor';
