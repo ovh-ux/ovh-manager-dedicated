@@ -1,6 +1,8 @@
 import translateAsyncLoader from '@ovh-ux/translate-async-loader';
-import config from './config/config';
+import uiRouter from '@uirouter/angularjs';
+import webUniverseComponents from '@ovh-ux/web-universe-components';
 
+import config from './config/config';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
 
 const appDeps = [
@@ -33,6 +35,7 @@ const appDeps = [
   'ovh-angular-apiv7',
   'oui',
   'ui.select',
+  uiRouter,
   'Module.ip',
   'Module.license',
   'Module.download',
@@ -46,6 +49,8 @@ const appDeps = [
   'Module.otrs',
   translateAsyncLoader,
   dedicatedUniverseComponents,
+  webUniverseComponents,
+  'xeditable',
 ];
 
 if (WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca') {
