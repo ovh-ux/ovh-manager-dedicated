@@ -9,25 +9,27 @@ angular
 
         constants,
         DedicatedCloud,
+        User,
       ) {
         this.$q = $q;
         this.$translate = $translate;
 
         this.constants = constants;
         this.DedicatedCloud = DedicatedCloud;
+        this.User = User;
       }
 
       $onInit() {
+        this.currentLanguage = this.$translate.use();
+        this.fallbackLanguage = this.$translate.fallbackLanguage();
         this.urlToAllGuides = this.getURLFromSection(this.constants.TOP_GUIDES.all);
 
-        return this.buildingGuideURLs();
+        return this.buildingGuideURLs()
+          .then(() => this.gettingHelpCenterURLs());
       }
 
       getURLFromSection(section) {
-        const currentLanguage = this.$translate.use();
-        const fallbackLanguage = this.$translate.fallbackLanguage();
-
-        return section[currentLanguage] || section[fallbackLanguage];
+        return section[this.currentLanguage] || section[this.fallbackLanguage];
       }
 
       buildingGuideURLs() {
@@ -41,6 +43,7 @@ angular
                   links: this.getURLFromSection(this.constants.TOP_GUIDES[sectionName]),
                 },
               }),
+              {},
             );
           });
       }
@@ -62,6 +65,22 @@ angular
 
         sectionNames.push('pcc');
         return this.$q.when(sectionNames);
+      }
+
+      gettingHelpCenterURLs() {
+        return this.User.getUser()
+          .then(({ ovhSubsidiary: subsidiary }) => {
+            this.subsidiary = subsidiary;
+
+            this.helpCenterURLs = Object.keys(this.constants.urls)
+              .reduce(
+                (helpCenterURLs, subsidiaryName) => ({
+                  ...helpCenterURLs,
+                  [subsidiaryName]: this.constants.urls[subsidiaryName].support,
+                }),
+                {},
+              );
+          });
       }
     },
   );
