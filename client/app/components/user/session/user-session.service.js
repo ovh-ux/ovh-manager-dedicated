@@ -280,7 +280,7 @@ class SessionService {
 
   getAssistanceMenu(currentUser) {
     const mustDisplayNewMenu = ['FR'].includes(currentUser.ovhSubsidiary);
-    const currentSubsidiaryURLs = this.constants.urls[currentUser.ovhSubsidiary];
+    const currentSubsidiaryURLs = _.get(this.constants.urls, currentUser.ovhSubsidiary, {});
 
     const assistanceMenuItems = [
       {
