@@ -1,3 +1,13 @@
+<a name="10.7.6"></a>
+## [10.7.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.7.5...v10.7.6) (2018-12-20)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations ([b0ed166](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b0ed166))
+
+
+
 <a name="10.7.5"></a>
 ## [10.7.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.7.4...v10.7.5) (2018-12-20)
 
