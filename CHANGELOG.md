@@ -1,3 +1,14 @@
+<a name="10.7.5"></a>
+## [10.7.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.7.4...v10.7.5) (2018-12-20)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** fix exchange renew redirection ([d4906cc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d4906cc))
+* **user.contacts:** replace ng-show with ng-if ([a73809f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a73809f))
+
+
+
 <a name="10.7.4"></a>
 ## [10.7.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.7.3...v10.7.4) (2018-12-13)
 
