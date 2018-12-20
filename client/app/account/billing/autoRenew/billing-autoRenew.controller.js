@@ -257,7 +257,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
         return;
       }
 
-      AutoRenew.getExchangeService(service)
+      AutoRenew.getExchangeService(organization, exchangeName)
         .then(({ offer }) => {
           $scope.$emit(AUTORENEW_EVENT.PAY, {
             serviceType: service.serviceType,
