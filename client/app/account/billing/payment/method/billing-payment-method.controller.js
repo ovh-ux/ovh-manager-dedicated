@@ -6,19 +6,17 @@ import editModalController from './edit/billing-payment-method-edit.controller';
 import defaultModalTemplate from './default/billing-payment-method-default.html';
 import defaultModalController from './default/billing-payment-method-default.controller';
 
-import deleteModalTemplate from './delete/billing-payment-method-delete.html';
-import deleteModalController from './delete/billing-payment-method-delete.controller';
-
 export default class BillingPaymentMethodCtrl {
   /* @ngInject */
 
-  constructor($q, $translate, $uibModal, Alerter, ovhPaymentMethod,
-    paymentMethodListResolve, User) {
+  constructor($q, $translate, $uibModal, Alerter, deletePaymentMethodResolve,
+    ovhPaymentMethod, paymentMethodListResolve, User) {
     // dependencies injections
     this.$q = $q;
     this.$translate = $translate;
     this.$uibModal = $uibModal;
     this.Alerter = Alerter;
+    this.deletePaymentMethodResolve = deletePaymentMethodResolve;
     this.ovhPaymentMethod = ovhPaymentMethod;
     this.paymentMethodListResolve = paymentMethodListResolve;
     this.User = User;
@@ -132,43 +130,55 @@ export default class BillingPaymentMethodCtrl {
    *  Open delete confirmation modal
    */
   onPaymentMethodDeleteBtnClick(paymentMethod) {
-    const deleteModal = this.$uibModal.open({
-      template: deleteModalTemplate,
-      controller: deleteModalController,
-      controllerAs: '$ctrl',
-      resolve: {
-        paymentMethodToDelete: paymentMethod,
-      },
-    });
+    return this.getDeleteModalTemplate()
+      .then(({ template, controller }) => {
+        const deleteModal = this.$uibModal.open({
+          template,
+          controller,
+          controllerAs: '$ctrl',
+          resolve: {
+            paymentMethodToDelete: paymentMethod,
+          },
+        });
 
-    return deleteModal.result.then((status) => {
-      if (status !== 'OK') {
-        return null;
-      }
+        return deleteModal.result;
+      })
+      .then((status) => {
+        if (status !== 'OK') {
+          return null;
+        }
 
-      _.remove(this.paymentMethods, paymentMethod);
+        _.remove(this.paymentMethods, paymentMethod);
 
-      this.Alerter.success(
-        this.$translate.instant('billing_payment_method_delete_success'),
-        'billing_payment_method_alert',
-      );
+        this.Alerter.success(
+          this.$translate.instant('billing_payment_method_delete_success'),
+          'billing_payment_method_alert',
+        );
 
-      return paymentMethod;
-    }).catch((error) => {
-      if (angular.isString(error)) {
-        return null;
-      }
+        return paymentMethod;
+      }).catch((error) => {
+        if (angular.isString(error)) {
+          return null;
+        }
 
-      this.Alerter.error([
-        this.$translate.instant('billing_payment_method_delete_error'),
-        _.get(error, 'data.message', ''),
-      ].join(' '), 'billing_payment_method_alert');
+        this.Alerter.error([
+          this.$translate.instant('billing_payment_method_delete_error'),
+          _.get(error, 'data.message', ''),
+        ].join(' '), 'billing_payment_method_alert');
 
-      return error;
-    });
+        return error;
+      });
   }
 
   /* -----  End of EVENTS  ------ */
+
+  getDeleteModalTemplate() {
+    return this.$q.all(this.deletePaymentMethodResolve)
+      .then(({ template, controller }) => ({
+        template: template.default,
+        controller: controller.default,
+      }));
+  }
 
   /* =====================================
   =            INITIALIZATION            =
@@ -207,6 +217,8 @@ export default class BillingPaymentMethodCtrl {
 
       // set a awrn message if a bankAccount is in pendingValidation state
       this.hasPendingValidationBankAccount = _.some(this.paymentMethods, method => method.paymentType.value === 'bankAccount' && method.status.value === 'pendingValidation');
+
+      return this.getDeleteModalTemplate();
     }).catch((error) => {
       console.log(error);
       this.Alerter.error([

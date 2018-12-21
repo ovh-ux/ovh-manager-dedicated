@@ -1,0 +1,15 @@
+<oui-modal data-type="info"
+           data-heading="{{:: 'billing_payment_method_delete_title' | translate }}"
+           data-on-dismiss="$ctrl.close()"
+           data-loading="$ctrl.loading">
+    <p data-translate="billing_payment_method_mandatory_autorenew"></p>
+    <p data-translate="billing_payment_method_mandatory_autorenew_stop"></p>
+    <a class="oui-link_icon"
+       target="_blank"
+       rel="noopener"
+       href="{{:: $ctrl.autorenewGuide }}">
+       <span data-translate="billing_payment_method_mandatory_autorenew_more"></span>
+       <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
+       <span class="sr-only" data-translate="common_newtab"></span>
+    </a>
+</oui-modal>

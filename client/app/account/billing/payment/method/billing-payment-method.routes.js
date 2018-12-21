@@ -31,6 +31,17 @@ angular
 
           return paymentMethodListDeferred;
         },
+        deletePaymentMethodResolve: OvhApiMe => OvhApiMe
+          .Billing().Capacities().v6().query().$promise
+          .then(({ requiredPaymentMethod }) => {
+            const isMandatory = !['notMandatory'].includes(requiredPaymentMethod);
+            const folderName = isMandatory ? requiredPaymentMethod : 'delete';
+
+            return {
+              template: import(`./${folderName}/billing-payment-method-${folderName}.html`),
+              controller: import(`./${folderName}/billing-payment-method-${folderName}.controller`),
+            };
+          }),
       },
     });
 
