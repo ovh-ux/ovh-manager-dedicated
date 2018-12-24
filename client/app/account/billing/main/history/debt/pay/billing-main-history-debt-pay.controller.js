@@ -44,7 +44,11 @@ angular.module('Billing').controller('BillingHistoryDebtPayCtrl', class BillingH
 
       this.$window.open(_.get(order, 'data.url') || _.get(order, 'url'), '_blank');
     }).catch((error) => {
-      this.Alerter.error([this.$translate.instant('billing_main_history_debt_pay_error'), _.get(error, 'data.message')].join(' '), 'billing_main_alert');
+      if (_.get(error, 'data.message') === 'Nothing to pay') {
+        return this.Alerter.set('alert-info', this.$translate.instant('billing_main_history_debt_pay_error_nothing_to_pay'), null, 'billing_main_alert');
+      }
+
+      return this.Alerter.error(`${this.$translate.instant('billing_main_history_debt_pay_error')} ${_.get(error, 'data.message', '')}`, 'billing_main_alert');
     }).finally(() => {
       this.loading.pay = false;
       this.closeModal();
