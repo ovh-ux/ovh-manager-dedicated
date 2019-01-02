@@ -1,3 +1,14 @@
+<a name="10.7.7"></a>
+## [10.7.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.7.6...v10.7.7) (2019-01-02)
+
+
+### Bug Fixes
+
+* **billing.orders:** fix bill download for delivered orders ([7697d69](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7697d69))
+* **billing.orders:** fix translation ([19f6473](https://github.com/ovh-ux/ovh-manager-dedicated/commit/19f6473))
+
+
+
 <a name="10.7.6"></a>
 ## [10.7.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.7.5...v10.7.6) (2018-12-20)
 
