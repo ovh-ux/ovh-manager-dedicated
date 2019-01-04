@@ -794,6 +794,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
         .then(() => $scope.nicRenew.getNicRenewParam())
         .finally(() => {
           $scope.initLoading = false;
+          $scope.automaticRenewV2Mean.loading = false;
         });
     }
 
