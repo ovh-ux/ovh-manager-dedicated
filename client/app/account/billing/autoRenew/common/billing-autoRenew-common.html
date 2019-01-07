@@ -89,7 +89,7 @@
         <oui-action-menu-item
             data-ng-if="service.serviceType !== 'EXCHANGE' && service.serviceType !== 'EMAIL_DOMAIN' && isInDebt(service)"
             data-disabled="service.renew.forced"
-            data-on-click="gotoRenew(service)"
+            data-on-click="warnAboutDebt(service)"
             data-text="{{:: (hasAutoRenew(service) ? 'autorenew_service_renew_button' : 'manualrenew_service_renew_button') | translate }}"
             data-aria-label="{{:: (hasAutoRenew(service) ? 'autorenew_service_renew_button_title' : 'manualrenew_service_renew_button_title') | translate: { t0: service.serviceId } }}"></oui-action-menu-item>
 
