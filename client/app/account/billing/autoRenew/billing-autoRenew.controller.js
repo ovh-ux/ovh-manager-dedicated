@@ -726,7 +726,8 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
     }
 
     function warnAboutDebt(service) {
-      $scope.setAction('debtBeforePaying', _.clone(service, true), 'autoRenew');
+      const warning = isNicBilling($scope.user, service) ? 'debtBeforePaying' : 'warnNicBilling';
+      $scope.setAction(warning, _.clone(service, true), 'autoRenew');
     }
 
     function goToRenew({ serviceType, serviceId }) {
@@ -734,6 +735,10 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
         serviceType,
         serviceId,
       });
+    }
+
+    function isNicBilling(user, service) {
+      return _.get(user, 'nichandle') === _.get(service, 'contactBilling');
     }
 
     /**
