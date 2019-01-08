@@ -2,12 +2,20 @@ import angular from 'angular';
 
 angular
   .module('Billing')
-  .config(($stateProvider) => {
-    $stateProvider.state('app.account.billing.payment.transactions', {
-      url: '/transactions',
-      templateUrl: 'account/billing/payment/transactions/billing-payment-transactions.html',
-      controller: 'BillingPaymentTransactionsCtrl',
-      controllerAs: '$ctrl',
-      translations: ['./'],
-    });
-  });
+  .config([
+    '$stateProvider',
+    '$urlRouterProvider',
+    'Billing.constants',
+    ($stateProvider, $urlRouterProvider, constants) => {
+      if (constants.target !== 'US') {
+        const name = 'app.account.billing.payment.transactions';
+
+        $stateProvider.state(name, {
+          url: '/transactions',
+          templateUrl: 'account/billing/payment/transactions/billing-payment-transactions.html',
+          controller: 'BillingPaymentTransactionsCtrl',
+          controllerAs: '$ctrl',
+          translations: ['./'],
+        });
+      }
+    }]);

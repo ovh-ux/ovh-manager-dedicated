@@ -1,0 +1,22 @@
+<div class="billing-payment-method-add-legacy-bank-account-owner">
+
+    <!-- Owner Name -->
+    <oui-field data-label="{{ :: 'billing_payment_method_add_bank_account_owner_name' | translate }}">
+        <input type="text" class="oui-input"
+               id="ownerName" name="ownerName"
+               data-ng-model="$ctrl.model.ownerName"
+               data-required
+               data-ng-minlength="5"
+               data-ng-maxlength="255" />
+    </oui-field> <!-- End of Owner Name -->
+
+    <!-- Owner Address -->
+    <oui-field data-label="{{ :: 'billing_payment_method_add_bank_account_owner_address' | translate }}">
+        <input type="text" class="oui-input"
+               id="ownerAddress" name="ownerAddress"
+               data-ng-model="$ctrl.model.ownerAddress"
+               data-required
+               data-ng-maxlength="255" />
+    </oui-field> <!-- End of Owner Address -->
+
+</div>

@@ -12,15 +12,14 @@ import deleteModalController from './delete/billing-payment-method-delete.contro
 export default class BillingPaymentMethodCtrl {
   /* @ngInject */
 
-  constructor($q, $translate, $uibModal, Alerter, ovhPaymentMethod,
-    paymentMethodListResolve, User) {
+  constructor($q, $translate, $uibModal, Alerter, billingPaymentMethodSection, ovhPaymentMethod, User) {
     // dependencies injections
     this.$q = $q;
     this.$translate = $translate;
     this.$uibModal = $uibModal;
     this.Alerter = Alerter;
+    this.billingPaymentMethodSection = billingPaymentMethodSection;
     this.ovhPaymentMethod = ovhPaymentMethod;
-    this.paymentMethodListResolve = paymentMethodListResolve;
     this.User = User;
 
     // other attributes used in views
@@ -29,9 +28,14 @@ export default class BillingPaymentMethodCtrl {
     };
 
     this.paymentMethods = null;
+    this.getPaymentDeferred = this.$q.defer();
     this.tableFilterOptions = null;
     this.guide = null;
     this.hasPendingValidationBankAccount = false;
+  }
+
+  isLoading() {
+    return this.loading.init || !this.billingPaymentMethodSection.loadDeferredResolved;
   }
 
   /* =============================
@@ -146,7 +150,7 @@ export default class BillingPaymentMethodCtrl {
         return null;
       }
 
-      _.remove(this.paymentMethods, paymentMethod);
+      this.billingPaymentMethodSection.removePaymentMehtod(paymentMethod);
 
       this.Alerter.success(
         this.$translate.instant('billing_payment_method_delete_success'),
@@ -178,10 +182,9 @@ export default class BillingPaymentMethodCtrl {
     this.loading.init = true;
 
     return this.$q.all({
-      paymentMethods: this.paymentMethodListResolve.promise,
+      paymentMethods: this.billingPaymentMethodSection.getPaymentMehtods(),
       guides: this.User.getUrlOf('guides'),
     }).then(({ paymentMethods, guides }) => {
-      this.paymentMethods = paymentMethods;
       // set options for status filter
       this.tableFilterOptions = {
         status: {
@@ -192,12 +195,12 @@ export default class BillingPaymentMethodCtrl {
         },
       };
 
-      _.chain(this.paymentMethods).uniq('status.value').map('status').value()
+      _.chain(paymentMethods).uniq('status.value').map('status').value()
         .forEach((status) => {
           _.set(this.tableFilterOptions.status.values, status.value, status.text);
         });
 
-      _.chain(this.paymentMethods).uniq('paymentType.value').map('paymentType').value()
+      _.chain(paymentMethods).uniq('paymentType.value').map('paymentType').value()
         .forEach((paymentType) => {
           _.set(this.tableFilterOptions.type.values, paymentType.value, paymentType.text);
         });
@@ -206,9 +209,8 @@ export default class BillingPaymentMethodCtrl {
       this.guide = _.get(guides, 'autoRenew', null);
 
       // set a awrn message if a bankAccount is in pendingValidation state
-      this.hasPendingValidationBankAccount = _.some(this.paymentMethods, method => method.paymentType.value === 'bankAccount' && method.status.value === 'pendingValidation');
+      this.hasPendingValidationBankAccount = _.some(paymentMethods, method => method.paymentType.value === 'bankAccount' && method.status.value === 'pendingValidation');
     }).catch((error) => {
-      console.log(error);
       this.Alerter.error([
         this.$translate.instant('billing_payment_method_load_error'),
         _.get(error, 'data.message', ''),
