@@ -83,15 +83,6 @@ angular
         controller: 'Billing.controllers.Sla',
       });
 
-      if (constants.target === 'US') {
-        $stateProvider.state('app.account.billing.payment.mean.add', {
-          url: '/mean/add?from',
-          templateUrl: `${BILLING_BASE_URL}paymentMethod/add/index.html`,
-          controller: 'PaymentMethodAddCtrl',
-          controllerAs: '$ctrl',
-        });
-      }
-
       /**
        * ROUTE: Auto renew
        */

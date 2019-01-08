@@ -40,7 +40,7 @@ angular.module('Billing.services').run(['$rootScope', 'atInternet', 'AUTORENEW_E
       (event, data) => trackServiceClickEvent(event, data),
     );
     $rootScope.$on(AUTORENEW_EVENT.MODIFY, (event, data) => trackServiceClickEvent(event, data));
-    $rootScope.$on(AUTORENEW_EVENT.PAY, (event, data) => trackServiceClickEvent(event, data));
+    $rootScope.$on(AUTORENEW_EVENT.PAY, (event, data) => trackServiceClickEvent(event, data))
 
     $rootScope.$on(PAYMENT_EVENT.PAYMENT_MEANS_DISPLAYED, (event, data) => {
       atInternet.trackEvent({

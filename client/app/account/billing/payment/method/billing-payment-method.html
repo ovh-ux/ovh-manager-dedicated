@@ -1,14 +1,14 @@
 <div class="billing-payment-method"
      data-ui-view>
 
+    <div data-ovh-alert="billing_payment_method_alert"></div>
+
     <div class="text-center m-5"
-         data-ng-if="$ctrl.loading.init">
+         data-ng-if="$ctrl.isLoading()">
         <oui-spinner></oui-spinner>
     </div>
 
-    <div data-ovh-alert="billing_payment_method_alert"></div>
-
-    <div data-ng-if="!$ctrl.loading.init">
+    <div data-ng-if="!$ctrl.isLoading()">
         <oui-message class="mb-4"
                      data-ng-if="$ctrl.hasPendingValidationBankAccount"
                      data-type="warning"
@@ -36,7 +36,7 @@
 
         <h2 data-translate="billing_payment_method_title"></h2>
 
-        <oui-datagrid data-rows="$ctrl.paymentMethods">
+        <oui-datagrid data-rows="$ctrl.billingPaymentMethodSection.sharedPaymentMethods">
             <oui-column data-title=":: 'billing_payment_method_table_type' | translate"
                         data-property="paymentType.text"
                         data-type="options"

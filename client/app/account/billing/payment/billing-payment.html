@@ -5,12 +5,12 @@
                                   data-href="{{ $ctrl.$state.href('app.account.billing.payment.method') }}"
                                   data-active="$ctrl.$state.includes('app.account.billing.payment.method')">
             </oui-header-tabs-item>
-            <oui-header-tabs-item data-ng-if="$ctrl.constants.target === 'EU' || $ctrl.constants.target === 'CA'"
+            <oui-header-tabs-item data-ng-if="$ctrl.constants.target !== 'US'"
                                   data-text="{{ 'billing_payment_ovhaccount_title' | translate }}"
                                   data-href="{{ $ctrl.$state.href('app.account.billing.payment.ovhaccount') }}"
                                   data-active="$ctrl.$state.includes('app.account.billing.payment.ovhaccount')">
             </oui-header-tabs-item>
-            <oui-header-tabs-item data-ng-if="$ctrl.constants.target === 'EU' || $ctrl.constants.target === 'CA'"
+            <oui-header-tabs-item data-ng-if="$ctrl.constants.target !== 'US'"
                                   data-text="{{ 'billing_payment_vouchers_title' | translate }}"
                                   data-href="{{ $ctrl.$state.href('app.account.billing.payment.vouchers') }}"
                                   data-active="$ctrl.$state.includes('app.account.billing.payment.vouchers')">
@@ -28,7 +28,8 @@
                                   data-href="{{ $ctrl.$state.href('app.account.billing.payment.credits') }}"
                                   data-active="$ctrl.$state.includes('app.account.billing.payment.credits')">
             </oui-header-tabs-item>
-            <oui-header-tabs-item data-text="{{ 'billing_payment_transations_title' | translate }}"
+            <oui-header-tabs-item data-ng-if="$ctrl.constants.target !== 'US'"
+                                  data-text="{{ 'billing_payment_transations_title' | translate }}"
                                   data-href="{{ $ctrl.$state.href('app.account.billing.payment.transactions') }}"
                                   data-active="$ctrl.$state.includes('app.account.billing.payment.transactions')">
             </oui-header-tabs-item>
