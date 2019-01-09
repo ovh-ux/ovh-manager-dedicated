@@ -44,7 +44,7 @@
                 </tr>
             </thead>
 
-            <tbody data-ng-show="ctrlServices.loaders.services">
+            <tbody data-ng-if="ctrlServices.loaders.services">
                 <tr>
                     <td colspan="6" class="text-center my-4">
                         <oui-spinner></oui-spinner>
@@ -52,7 +52,7 @@
                 </tr>
             </tbody>
 
-            <tbody data-ng-show="!ctrlServices.loaders.services && ctrlServices.services.length === 0">
+            <tbody data-ng-if="!ctrlServices.loaders.services && ctrlServices.services.length === 0">
                 <tr>
                     <td colspan="6"
                         class="text-center"
@@ -61,20 +61,20 @@
                 </tr>
             </tbody>
 
-            <tbody data-ng-show="!ctrlServices.loaders.services && ctrlServices.services.length > 0">
+            <tbody data-ng-if="!ctrlServices.loaders.services && ctrlServices.services.length > 0">
                 <tr data-ng-repeat="service in ctrlServices.services | orderBy:('useraccount_contacts_service_category_'+services.category | translate) || servicescategory track by $index">
                     <td class="wordbreak"
                         data-ng-bind="('useraccount_contacts_service_category_'+service.category | translate) || value.category"></td>
-                    <td class="wordbreak" data-ng-bind="::service.serviceName"></td>
+                    <td class="wordbreak" data-ng-bind="service.serviceName"></td>
                     <td class="wordbreak" data-ng-if="ctrlServices.editLine !== $index"
-                        data-ng-bind="::service.contactAdmin"
+                        data-ng-bind="service.contactAdmin"
                         data-ng-class="{'disabled': service.contactAdmin === ctrlServices.user.nichandle}">
                     </td>
                     <td class="wordbreak" data-ng-if="ctrlServices.editLine !== $index"
-                        data-ng-bind="::service.contactTech"
+                        data-ng-bind="service.contactTech"
                         data-ng-class="{'disabled': service.contactTech === ctrlServices.user.nichandle}"></td>
                     <td class="wordbreak" data-ng-if="ctrlServices.editLine !== $index"
-                        data-ng-bind="::service.contactBilling"
+                        data-ng-bind="service.contactBilling"
                         data-ng-class="{'disabled': service.contactBilling === ctrlServices.user.nichandle}"></td>
                     <td class="text-center" colspan="2" data-ng-if="ctrlServices.editLine !== $index">
                         <button type="button"
@@ -154,7 +154,7 @@
          data-nb-pages="nbPages"
          data-transform-item="ctrlServices.transformItem(item)"
          data-on-transform-item-done="ctrlServices.onTransformItemDone(items)"
-         data-page-placeholder="'pagination_page' | translate:{ t0: currentPage, t1: nbPages }"
-         data-item-per-page-placeholder="{{ 'pagination_display' | translate }}">
+         data-page-placeholder="{{:: 'pagination_page' | translate:{ current: currentPage, last: nbPages } }}"
+         data-item-per-page-placeholder="{{:: 'pagination_display' | translate }}">
     </div>
 </div>

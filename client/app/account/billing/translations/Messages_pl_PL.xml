@@ -49,7 +49,7 @@
    <translation id="autorenew_service_exchange_billing_button" qtlid="509326">Zmień płatności</translation>
    <translation id="autorenew_service_canceldelete_button" qtlid="285350">Anuluj rezygnację</translation>
    <translation id="autorenew_service_canceldelete_button_title" qtlid="243695">Anuluj zlecenie usunięcia usługi: {0}</translation>
-   <translation id="autorenew_service_renew_frequency_title" qtlid="212998">Okres abonamentowy</translation>
+   <translation id="autorenew_service_renew_frequency_title" qtlid="212998">Częstotliwość odnawiania</translation>
    <translation id="autorenew_service_renew_frequency_value" qtlid="498196">Automatycznie: co {0} miesiące/miesięcy</translation>
    <translation id="autorenew_search_input_title" qtlid="300629">Wyszukiwanie usług dla danego identyfikatora</translation>
    <translation id="autorenew_service_expand_sub_services" qtlid="300642">Wyświetlanie i ukrywanie przypisanych usług</translation>
@@ -74,6 +74,7 @@
    <translation id="autorenew_service_debt_before_paying_title" qtlid="506780">Ważna informacja</translation>
    <translation id="autorenew_service_debt_before_paying_1" qtlid="498209">Przedłużenie usługi będzie możliwe po uregulowaniu zaległej kwoty na Twoim koncie.</translation>
    <translation id="autorenew_service_debt_before_paying_2" qtlid="498222">Aby opłacić fakturę za usługę <strong>{{service}}</strong>, przejdź do sekcji "Płatności".</translation>
+   <translation id="autorenew_service_debt_nic_billing">Pour payer ce service, connectez-vous depuis votre compte client de facturation {{ nicBilling }}.</translation>
    <translation id="autorenew_service_canceldelete_title" qtlid="416137">Anuluj rezygnację z usługi</translation>
    <translation id="autorenew_service_delete_confirm" qtlid="416150">Usługa {0} <strong>zostanie automatycznie wyłączona</strong> dnia {1}.</translation>
    <translation id="autorenew_service_delete_warn" qtlid="416163">Dane związane z tą usługą zostaną automatycznie i nieodwracalnie usunięte. Będziesz mógł wrócić do tej decyzji aż do 24 godzin przed datą wygaśnięcia.</translation>
@@ -173,6 +174,7 @@
    <translation id="autorenew_service_enable_autorenew_desc1" qtlid="416241">Włączymy automatyczną płatność dla Twojej usługi <strong>{0}</strong>.</translation>
    <translation id="autorenew_service_enable_autorenew_desc2" qtlid="416254">Twoja usługa będzie odnawiana automatycznie w dniu {0}.</translation>
    <translation id="autorenew_service_enable_autorenew_desc3" qtlid="416267">Będziesz mógł ustawić częstotliwość płatności.</translation>
+   <translation id="autorenew_service_enable_autorenew_payment_mean" qtlid="509613">Aby móc korzystać z automatycznej płatności za tę usługę, zarejestruj ważną metodę płatności. </translation>
 
    <translation id="autorenew_service_renew_0" qtlid="69173">Wszystkie</translation>
 
@@ -396,7 +398,7 @@
    <translation id="ovhAccount_create_alert_input_error" qtlid="369992">Akceptujemy wyłącznie dodatnie liczby całkowite.</translation>
 
    <translation id="payment_mean_title" qtlid="139949">Moje sposoby płatności</translation>
-   <translation id="payment_mean_back" qtlid="440490">Powrót do metod płatności</translation>
+   <translation id="payment_mean_back" qtlid="440490">Powrót do sposobów płatności</translation>
    <translation id="payment_mean_loading_error" qtlid="436315">Wystąpił błąd podczas ładowania strony</translation>
    <translation id="payment_mean_no_register" qtlid="176937">Nie zarejestrowałeś żadnego sposobu płatności.</translation>
    <translation id="payment_mean_add" qtlid="37923">Dodaj</translation>
@@ -405,6 +407,7 @@
    <translation id="payment_mean_default" qtlid="101193">Domyślnie</translation>
    <translation id="payment_mean_set_default" qtlid="224893">Domyślny sposób płatności</translation>
    <translation id="payment_mean_set_default_after_validation" qtlid="349140">Chcę wybrać ten domyślny sposób płatności od chwili jego zatwierdzenia.</translation>
+   <translation id="payment_mean_set_as_default" qtlid="509994">Po zatwierdzeniu ta metoda płatności zostanie oznaczona jako domyślna.</translation>
 
    <translation id="payment_mean_contact_presentation_reuse_contact" qtlid="381868">korzystając z istniejącego kontaktu</translation>
    <translation id="payment_mean_contact_presentation_create_contact" qtlid="381881">tworząc nowy kontakt</translation>
@@ -812,7 +815,8 @@
    <translation id="payement_mean_add_creditCard" qtlid="177288">Złóż zamówienie</translation>
    <translation id="payment_mean_get_validation" qtlid="177301">Pobierz procedurę potwierdzania</translation>
    <translation id="payment_mean_return_by_mail_procedure" qtlid="325588">Procedura zwrotu drogą pocztową</translation>
-   <translation id="paymentType_add_success_url" qtlid="363878"><a href="{0}" target="_blank">Kliknij tutaj</a>, aby zarejestrować sposób płatności.</translation>
+   <translation id="paymentType_add_validation_description" qtlid="510007">Zatwierdź dodanie Twojej metody płatności.</translation>
+   <translation id="paymentType_add_success_url" qtlid="510020"><a href="{0}" target="_blank" rel="noopener">Kliknij tutaj</a> , zostaniesz przekierowany na bezpieczną stronę, na której będziesz mógł zakończyć operację.</translation>
    <translation id="paymentType_bankAccount_add_success_with_download" qtlid="325601">Konto bankowe zostało dodane. Będzie ono aktywne po zatwierdzeniu. Zapoznaj się z <a href="{0}" target="_blank">procedurą opisaną w tym dokumencie</a> w celu zatwierdzenia sposobu płatności. </translation>
    <translation id="paymentType_bankAccount_pending_validation" qtlid="325614">Dodałeś w panelu klienta konto bankowe. Czekamy na upoważnienie do obciążania rachunku. Należy przesłać je drogą pocztową.</translation>
    <translation id="paymentType_bankAccount_processing_delay" qtlid="325627">Twoje konto bankowe zostanie zatwierdzone w ciągu 24-48 godzin od uzyskania upoważnienia do obciążania rachunku.</translation>
@@ -1250,7 +1254,7 @@
    <translation id="terminate_service_type_license_cloudLinux" qtlid="220005">Licencja CloudLinux</translation>
    <translation id="terminate_service_type_license_office" qtlid="398956">Licencja Office 365</translation>
    <translation id="terminate_service_type_license_plesk" qtlid="220044">Licencja Plesk</translation>
-   <translation id="terminate_service_type_license_cpanel" qtlid="350157">Licencja CPanel</translation>
+   <translation id="terminate_service_type_license_cpanel" qtlid="350157">Licencja cPanel</translation>
    <translation id="terminate_service_type_license_windows" qtlid="62666">Licencja Windows</translation>
    <translation id="terminate_service_type_metrics" qtlid="383525">Metryki</translation>
    <translation id="terminate_service_type_msServices_sharepoint" qtlid="298352">Sharepoint</translation>

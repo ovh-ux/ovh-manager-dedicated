@@ -74,6 +74,7 @@
    <translation id="autorenew_service_debt_before_paying_title" qtlid="506780">Information importante</translation>
    <translation id="autorenew_service_debt_before_paying_1" qtlid="498209">Prolongace služby bude možná až po uhrazení aktuální dlužné částky.</translation>
    <translation id="autorenew_service_debt_before_paying_2" qtlid="498222">Pro uhrazení faktury za službu <strong>{{service}}</strong> přejděte prosím do fakturační sekce.</translation>
+   <translation id="autorenew_service_debt_nic_billing">Pour payer ce service, connectez-vous depuis votre compte client de facturation {{ nicBilling }}.</translation>
    <translation id="autorenew_service_canceldelete_title" qtlid="416137">Anulovat požadavek na zrušení služby</translation>
    <translation id="autorenew_service_delete_confirm" qtlid="416150">Služba {0} <strong>bude automaticky zrušena</strong> dne {1}.</translation>
    <translation id="autorenew_service_delete_warn" qtlid="416163">Veškerá data vážící se k dané službě budou nenávratně smazána. Toto rozhodnutí budete moci vzít zpět do 24 hodin před datem expirace.</translation>
@@ -174,6 +175,7 @@
    <translation id="autorenew_service_enable_autorenew_desc1" qtlid="416241">Automatické obnovení Vaší služby <strong>{0}</strong> bude aktivováno.</translation>
    <translation id="autorenew_service_enable_autorenew_desc2" qtlid="416254">Vaše služba bude automaticky obnovena k datu {0}.</translation>
    <translation id="autorenew_service_enable_autorenew_desc3" qtlid="416267">Budete moci nastavit frekvenci plateb.</translation>
+   <translation id="autorenew_service_enable_autorenew_payment_mean" qtlid="509613">Pour bénéficier du paiement automatique sur ce service, vous devez enregistrer un moyen de paiement valide.</translation>
 
    <translation id="autorenew_service_renew_0" qtlid="69173">Vše</translation>
 
@@ -406,6 +408,7 @@
    <translation id="payment_mean_default" qtlid="101193">Defaultně</translation>
    <translation id="payment_mean_set_default" qtlid="224893">Automatická platební metoda</translation>
    <translation id="payment_mean_set_default_after_validation" qtlid="349140">Jakmile bude tento způsob platby úspěšně ověřen, přeji si ho nastavit jako svou výchozí platební metodu. </translation>
+   <translation id="payment_mean_set_as_default" qtlid="509994">Ce moyen de paiement sera sélectionné par défaut après sa validation.</translation>
 
    <translation id="payment_mean_contact_presentation_reuse_contact" qtlid="381868">za použití již existujícího kontaktu</translation>
    <translation id="payment_mean_contact_presentation_create_contact" qtlid="381881">vytvořením nového kontaktu</translation>
@@ -813,7 +816,8 @@
    <translation id="payement_mean_add_creditCard" qtlid="177288">Vygenerovat objednávku</translation>
    <translation id="payment_mean_get_validation" qtlid="177301">Načíst postup schválení</translation>
    <translation id="payment_mean_return_by_mail_procedure" qtlid="325588">Postup pro navrácení poštou</translation>
-   <translation id="paymentType_add_success_url" qtlid="363878"><a href="{0}" target="_blank">Klikněte zde</a> pro dokončení registrace Vaší platební metody.</translation>
+   <translation id="paymentType_add_validation_description" qtlid="510007">Vous devez valider l'ajout de votre moyen de paiement.</translation>
+   <translation id="paymentType_add_success_url" qtlid="510020"><a href="{0}" target="_blank" rel="noopener">Cliquez ici</a> pour être redirigé vers une page sécurisée et finaliser l'opération.</translation>
    <translation id="paymentType_bankAccount_add_success_with_download" qtlid="325601">Bankovní účet byl úspěšně přidán a bude aktivován jakmile obdržíme jeho ověření. Pro ověření Vaší platební metody postupujte prosím <a href="{0}" target="_blank"> podle instrukcí uvedených v tomto dokumentu.</a>&#13;
 &#13;
 </translation>

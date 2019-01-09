@@ -33,7 +33,7 @@
    <translation id="autorenew_service_renew_frequency_value" qtlid="402932">Alle {0} maanden</translation>
    <translation id="autorenew_service_renew_years_frequency_value" qtlid="402945">Automatisch: Alle {0} jaren</translation>
    <translation id="autorenew_service_renew_paid" qtlid="37515">Betaald</translation>
-   <translation id="manualrenew_service_renew_button" qtlid="509313">Renouveler le service</translation>
+   <translation id="manualrenew_service_renew_button" qtlid="509313">Service verlenging</translation>
    <translation id="manualrenew_service_renew_button_title" qtlid="243617">Verleng de dienst: {0} (Nieuw venster)</translation>
    <translation id="manualrenew_onlyauto_alert" qtlid="264166">U heeft gekozen voor alleen automatische verlengingen.</translation>
    <translation id="autorenew_empty" qtlid="219810">U heeft geen dienst</translation>
@@ -46,7 +46,7 @@
    <translation id="autorenew_service_enable_button" qtlid="416098">Automatische betaling activeren</translation>
    <translation id="autorenew_service_renew_button" qtlid="416111">Dienst betalen</translation>
    <translation id="autorenew_service_renew_button_title" qtlid="416124">Betalen voor dienst: {0} (Nieuw venster)</translation>
-   <translation id="autorenew_service_exchange_billing_button" qtlid="509326">Modifier la facturation</translation>
+   <translation id="autorenew_service_exchange_billing_button" qtlid="509326">facturering wijzigen</translation>
    <translation id="autorenew_service_canceldelete_button" qtlid="285350">Annuleer beëindiging</translation>
    <translation id="autorenew_service_canceldelete_button_title" qtlid="243695">Annuleer mijn annuleringsverzoek: {0}</translation>
    <translation id="autorenew_service_renew_frequency_title" qtlid="212998">Betalingsfrequentie</translation>
@@ -74,6 +74,7 @@
    <translation id="autorenew_service_debt_before_paying_title" qtlid="506780">Belangrijke informatie</translation>
    <translation id="autorenew_service_debt_before_paying_1" qtlid="498209">Voordat u zich inschrijft voor een nieuwe periode, moet u het openstaande bedrag van uw account betalen.</translation>
    <translation id="autorenew_service_debt_before_paying_2" qtlid="498222">Ga naar het gedeelte Facturering om de factuur voor de <strong>{{service}}</strong> dienst te betalen.</translation>
+   <translation id="autorenew_service_debt_nic_billing">Pour payer ce service, connectez-vous depuis votre compte client de facturation {{ nicBilling }}.</translation>
    <translation id="autorenew_service_canceldelete_title" qtlid="416137">Annulatie van een dienst terugzetten</translation>
    <translation id="autorenew_service_delete_confirm" qtlid="416150">De {0} dienst <strong>zal automatisch worden geannuleerd</strong> op {1}.</translation>
    <translation id="autorenew_service_delete_warn" qtlid="416163">Data gekoppeld aan de automatische betaling van uw diensten wordt onherroepelijk verwijderd. U kunt deze beslissing tot 24 uur voor de vervaldatum terugzetten.</translation>
@@ -173,6 +174,7 @@
    <translation id="autorenew_service_enable_autorenew_desc1" qtlid="416241">Automatische verlenging voor uw <strong>{0}</strong> dienst zal worden geactiveerd.</translation>
    <translation id="autorenew_service_enable_autorenew_desc2" qtlid="416254">Uw dienst zal automatisch worden verlengd op {0}.</translation>
    <translation id="autorenew_service_enable_autorenew_desc3" qtlid="416267">U kunt de betalingsfrequentie instellen.</translation>
+   <translation id="autorenew_service_enable_autorenew_payment_mean" qtlid="509613">Als u automatische betaling voor deze service wilt instellen, moet u een geldige betaalmethode opslaan.</translation>
 
    <translation id="autorenew_service_renew_0" qtlid="69173">Alle</translation>
 
@@ -405,6 +407,7 @@
    <translation id="payment_mean_default" qtlid="101193">Standaard</translation>
    <translation id="payment_mean_set_default" qtlid="224893">Standaard betalingsmethode</translation>
    <translation id="payment_mean_set_default_after_validation" qtlid="349140">Ik stel deze als standaard betaalmethode in zodra het gevalideerd is. </translation>
+   <translation id="payment_mean_set_as_default" qtlid="509994">Deze betaalmethode wordt standaard geselecteerd zodra u bevestigt.</translation>
 
    <translation id="payment_mean_contact_presentation_reuse_contact" qtlid="381868">gebruik van een reeds bestaand contact</translation>
    <translation id="payment_mean_contact_presentation_create_contact" qtlid="381881">creëren van een nieuw contact</translation>
@@ -812,7 +815,8 @@
    <translation id="payement_mean_add_creditCard" qtlid="177288">Een bestelling genereren</translation>
    <translation id="payment_mean_get_validation" qtlid="177301">De validatieprocedure ophalen</translation>
    <translation id="payment_mean_return_by_mail_procedure" qtlid="325588">Terugzending via post</translation>
-   <translation id="paymentType_add_success_url" qtlid="363878"><a href="{0}" target="_blank">Klik hier</a> om registratie van uw betaalmethode te voltooien. </translation>
+   <translation id="paymentType_add_validation_description" qtlid="510007">Bevestig de betaalmethode die u hebt toegevoegd.</translation>
+   <translation id="paymentType_add_success_url" qtlid="510020"><a href="{0}" target="_blank" rel="noopener">Klik hier </a> om doorgestuurd te worden naar een beveiligde pagina en de bewerking af te ronden.</translation>
    <translation id="paymentType_bankAccount_add_success_with_download" qtlid="325601">De bankrekening is toegevoegd en zal actief zijn zodra het is gevalideerd. Volg aub de stappen van de <a href="{0}" target="_blank">procedure in dit document</a> om de betaalmethode te valideren (moet per post verzonden worden). </translation>
    <translation id="paymentType_bankAccount_pending_validation" qtlid="325614">U heeft een bankrekening toegevoegd via uw klant control panel. Momenteel zijn we in afwachting van uw schriftelijke automatische incasso goeodkeuring voor deze rekening. </translation>
    <translation id="paymentType_bankAccount_processing_delay" qtlid="325627">Uw bankrekening wordt gevalideerd binnen 24 tot 48 uur nadat we uw automatische incasso goedkeuring ontvangen hebben. </translation>

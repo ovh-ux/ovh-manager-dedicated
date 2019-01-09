@@ -62,6 +62,7 @@ angular.module('App').controller('DedicatedCloudVMwareOptionCtrl', ($scope, $sta
               type: 'ERROR',
             },
           }),
+          angular.extend(err, { type: 'ERROR' }),
         );
       });
   }

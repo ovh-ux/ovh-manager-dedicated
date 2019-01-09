@@ -74,6 +74,7 @@
    <translation id="autorenew_service_debt_before_paying_title" qtlid="506780">Information importante</translation>
    <translation id="autorenew_service_debt_before_paying_1" qtlid="498209">Ole hyvä ja maksa jäljellä oleva velka ennen sitoutumista uuteen tilausjaksoon.</translation>
    <translation id="autorenew_service_debt_before_paying_2" qtlid="498222">Mene Laskutus-osioon maksamaan palvelua <strong>{{service}}</strong> koskeva lasku.</translation>
+   <translation id="autorenew_service_debt_nic_billing">Pour payer ce service, connectez-vous depuis votre compte client de facturation {{ nicBilling }}.</translation>
    <translation id="autorenew_service_canceldelete_title" qtlid="416137">Peru palvelun irtisanominen</translation>
    <translation id="autorenew_service_delete_confirm" qtlid="416150">Palvelu {0} <strong>irtisanotaan automaattisesti</strong> {1}.</translation>
    <translation id="autorenew_service_delete_warn" qtlid="416163">Palveluun liittyvä data poistetaan automaattisesti ja peruuttamattomasti. Voit muuttaa mielesi siihen asti, että palvelun vanhenemiseen on 24 tuntia.</translation>
@@ -173,6 +174,7 @@
    <translation id="autorenew_service_enable_autorenew_desc1" qtlid="416241">Automaattinen maksu aktivoidaan palvelulle <strong>{0}</strong>.</translation>
    <translation id="autorenew_service_enable_autorenew_desc2" qtlid="416254">Palvelu uusitaan automaattisesti {0}.</translation>
    <translation id="autorenew_service_enable_autorenew_desc3" qtlid="416267">Voit muuttaa maksuväliä.</translation>
+   <translation id="autorenew_service_enable_autorenew_payment_mean" qtlid="509613">Pour bénéficier du paiement automatique sur ce service, vous devez enregistrer un moyen de paiement valide.</translation>
 
    <translation id="autorenew_service_renew_0" qtlid="69173">Kaikki</translation>
 
@@ -407,6 +409,7 @@
    <translation id="payment_mean_default" qtlid="101193">Oletuksena</translation>
    <translation id="payment_mean_set_default" qtlid="224893">Oletusmaksuväline</translation>
    <translation id="payment_mean_set_default_after_validation" qtlid="349140">Haluan valita tämän maksuvälineen oletusmaksuvälineeksi heti sen vahvistamisen jälkeen.</translation>
+   <translation id="payment_mean_set_as_default" qtlid="509994">Ce moyen de paiement sera sélectionné par défaut après sa validation.</translation>
 
    <translation id="payment_mean_contact_presentation_reuse_contact" qtlid="381868">olemassaolevaa yhteyshenkilöä käyttämällä</translation>
    <translation id="payment_mean_contact_presentation_create_contact" qtlid="381881">luomalla uusi yhteyshenkilö</translation>
@@ -814,7 +817,8 @@
    <translation id="payement_mean_add_creditCard" qtlid="177288">Luo tilaus</translation>
    <translation id="payment_mean_get_validation" qtlid="177301">Hae vahvistusprosessi</translation>
    <translation id="payment_mean_return_by_mail_procedure" qtlid="325588">Palauta liitteet postitse</translation>
-   <translation id="paymentType_add_success_url" qtlid="363878"><a href="{0}" target="_blank">Klikkaa tästä</a> viimeistelläksesi pankkikorttisi rekisteröitymisen. </translation>
+   <translation id="paymentType_add_validation_description" qtlid="510007">Vous devez valider l'ajout de votre moyen de paiement.</translation>
+   <translation id="paymentType_add_success_url" qtlid="510020"><a href="{0}" target="_blank" rel="noopener">Cliquez ici</a> pour être redirigé vers une page sécurisée et finaliser l'opération.</translation>
    <translation id="paymentType_bankAccount_add_success_with_download" qtlid="325601">Pankkitili on lisätty, se aktivoituu vahvistuksen jälkeen. Seuraa <a href="{0}" target="_blank"> liitteen ohjeita </a> vahvistaaksesi maksuvälineen postitse.</translation>
    <translation id="paymentType_bankAccount_pending_validation" qtlid="325614">Olet lisännyt pankkitilin hallintapaneeliisi, johon odotamme postitse palautettavaa suoraveloitusvaltuutusta. </translation>
    <translation id="paymentType_bankAccount_processing_delay" qtlid="325627">Pankkitilisi vahvistetaan 24 - 48 tunnin kuluessa suoraveloitusvaltuutuksen vastaanottamisesta alkaen.</translation>

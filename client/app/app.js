@@ -1,8 +1,10 @@
 import translateAsyncLoader from '@ovh-ux/translate-async-loader';
+import uiRouter from '@uirouter/angularjs';
+import webUniverseComponents from '@ovh-ux/web-universe-components';
 import ovhPaymentMehtod from '@ovh-ux/ng-ovh-payment-method';
 import ovhContacts from '@ovh-ux/ng-ovh-contacts';
-import config from './config/config';
 
+import config from './config/config';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
 
 const appDeps = [
@@ -35,6 +37,7 @@ const appDeps = [
   'ovh-angular-apiv7',
   'oui',
   'ui.select',
+  uiRouter,
   'Module.ip',
   'Module.license',
   'Module.download',
@@ -48,6 +51,8 @@ const appDeps = [
   'Module.otrs',
   translateAsyncLoader,
   dedicatedUniverseComponents,
+  webUniverseComponents,
+  'xeditable',
   ovhPaymentMehtod,
   ovhContacts,
 ];
@@ -186,7 +191,7 @@ angular
     $translateProvider.useLoader('asyncLoader');
     $translateProvider.useMissingTranslationHandler('translateMissingTranslationHandler');
     $translateProvider.useLoaderCache(true);
-    $translateProvider.useSanitizeValueStrategy('sanitizeParameters');
+    $translateProvider.useSanitizeValueStrategy('sceParameters');
 
     $translateProvider.preferredLanguage(defaultLanguage);
     $translateProvider.use(defaultLanguage);

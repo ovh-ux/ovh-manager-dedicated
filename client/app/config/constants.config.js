@@ -23,6 +23,7 @@ const constants = {
         faq: 'https://www.ovh.cz/dedikovane_servery/faq.xml',
         faqVps: 'https://www.ovh.cz/vps/pomoc-faq.xml',
         dedicatedOrder: 'https://www.ovh.cz/dedikovane_servery',
+        iplbOrder: 'https://www.ovh.cz/reseni/load-balancer/',
       },
       DE: {
         support: 'http://www.ovh.de/support/',
@@ -44,6 +45,7 @@ const constants = {
         faq: 'https://www.ovh.de/dedicated_server/faq.xml',
         faqVps: 'https://www.ovh.de/virtual_server/faq-hilfe.xml',
         dedicatedOrder: 'https://www.ovh.de/dedicated_server',
+        iplbOrder: 'https://www.ovh.de/loesungen/load-balancer/',
       },
       ES: {
         support: 'http://www.ovh.es/soporte/',
@@ -67,6 +69,7 @@ const constants = {
         faq: 'https://www.ovh.es/servidores_dedicados/faq.xml',
         faqVps: 'https://www.ovh.es/vps/ayuda-faq.xml',
         dedicatedOrder: 'https://www.ovh.es/servidores_dedicados',
+        iplbOrder: 'https://www.ovh.es/soluciones/load-balancer/',
       },
       FI: {
         support: 'http://www.ovh-hosting.fi/tuki/',
@@ -87,6 +90,7 @@ const constants = {
         faq: 'https://www.ovh-hosting.fi/dedikoidut_palvelimet/ukk.xml',
         faqVps: 'https://www.ovh-hosting.fi/vps/faq-help.xml',
         dedicatedOrder: 'https://www.ovh-hosting.fi/dedikoidut_palvelimet',
+        iplbOrder: 'https://www.ovh-hosting.fi/ratkaisut/load-balancer/',
       },
       FR: {
         support: 'https://www.ovh.com/fr/support/',
@@ -126,6 +130,7 @@ const constants = {
         faqDedicatedCloud: 'https://pccdocs.ovh.net/pages/viewpage.action?pageId=7766169',
         dedicatedOrder: 'https://www.ovh.com/fr/serveurs_dedies',
         cloudProjectOrder: 'https://www.ovh.com/manager/cloud/#/iaas/pci/project/new',
+        iplbOrder: 'https://www.ovh.com/fr/solutions/load-balancer/',
       },
       GB: {
         support: 'http://www.ovh.co.uk/support/',
@@ -157,6 +162,7 @@ const constants = {
         faq: 'https://www.ovh.co.uk/dedicated_servers/faq.xml',
         faqVps: 'https://www.ovh.co.uk/vps/faq-help.xml',
         dedicatedOrder: 'https://www.ovh.co.uk/dedicated_servers',
+        iplbOrder: 'https://www.ovh.co.uk/solutions/load-balancer/',
       },
       IT: {
         support: 'http://www.ovh.it/supporto/',
@@ -181,6 +187,7 @@ const constants = {
         faq: 'https://www.ovh.it/server_dedicati/faq.xml',
         faqVps: 'https://www.ovh.it/vps/aiuto-faq.xml',
         dedicatedOrder: 'https://www.ovh.it/server_dedicati',
+        iplbOrder: 'https://www.ovh.it/soluzioni/load-balancer/',
       },
       LT: {
         support: 'http://www.ovh.lt/pagalba/',
@@ -204,6 +211,7 @@ const constants = {
         faq: 'https://www.ovh.lt/dedikuoti_serveriai/duk.xml',
         faqVps: 'https://www.ovh.lt/vps/pagalba-duk.xml',
         dedicatedOrder: 'https://www.ovh.lt/dedikuoti_serveriai',
+        iplbOrder: 'https://www.ovh.lt/sprendimai/load-balancer/',
       },
       NL: {
         support: 'http://www.ovh.nl/support/',
@@ -224,6 +232,7 @@ const constants = {
         faq: 'https://www.ovh.nl/dedicated_servers/faq.xml',
         faqVps: 'https://www.ovh.nl/vps/hulp-faq.xml',
         dedicatedOrder: 'https://www.ovh.nl/dedicated_servers',
+        iplbOrder: 'https://www.ovh.nl/oplossing/load-balancer/',
       },
       PL: {
         support: 'https://www.ovh.pl/pomoc/',
@@ -248,6 +257,7 @@ const constants = {
         faq: 'https://www.ovh.pl/serwery_dedykowane/faq.xml',
         faqVps: 'https://www.ovh.pl/vps/pomoc-faq.xml',
         dedicatedOrder: 'https://www.ovh.pl/serwery_dedykowane',
+        iplbOrder: 'https://www.ovh.pl/rozwiazania/ip-load-balancing/',
       },
       PT: {
         support: 'https://www.ovh.pt/suporte/',
@@ -272,6 +282,7 @@ const constants = {
         faq: 'https://www.ovh.pt/servidores_dedicados/faq.xml ',
         faqVps: 'https://www.ovh.pt/vps/vps-ssd.xml',
         dedicatedOrder: 'https://www.ovh.pt/servidores_dedicados',
+        iplbOrder: 'https://www.ovh.pt/solucoes/load-balancer/',
       },
       IE: {
         support: 'https://www.ovh.ie/suport/',
@@ -295,6 +306,7 @@ const constants = {
         faq: 'https://www.ovh.ie/dedicated_servers/faq.xml',
         faqVps: 'https://www.ovh.ie/vps/vps-ssd.xml',
         dedicatedOrder: 'https://www.ovh.ie/dedicated_servers',
+        iplbOrder: 'https://www.ovh.ie/solutions/load-balancer/',
       },
     },
     LANGUAGES: [
@@ -535,7 +547,7 @@ const constants = {
         support: 'http://www.ovh.co.uk/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
-          home: 'http://docs.ovh.ca/en/',
+          home: 'https://docs.ovh.com/ca/en/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/us/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
@@ -553,12 +565,13 @@ const constants = {
         faqVps: 'https://www.ovh.com/us/vps/faq-help.xml',
         dedicatedOrder: 'https://www.ovh.com/asia/dedicated-servers',
         cloudProjectOrder: 'https://ca.ovh.com/manager/cloud/index.html#/iaas/pci/project/new',
+        iplbOrder: 'https://www.ovh.com/world/solutions/load-balancer/',
       },
       AU: {
         support: 'http://www.ovh.co.uk/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
-          home: 'http://docs.ovh.ca/en/',
+          home: 'https://docs.ovh.com/ca/en/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/us/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
@@ -576,12 +589,13 @@ const constants = {
         faqVps: 'https://www.ovh.com/us/vps/faq-help.xml',
         dedicatedOrder: 'https://www.ovh.com.au/dedicated-servers',
         cloudProjectOrder: 'https://ca.ovh.com/manager/cloud/index.html#/iaas/pci/project/new',
+        iplbOrder: 'https://www.ovh.com/world/solutions/load-balancer/',
       },
       CA: { // eq to en_CA
         support: 'http://www.ovh.co.uk/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
-          home: 'http://docs.ovh.ca/en/',
+          home: 'https://docs.ovh.com/ca/en/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/ca/en/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
@@ -599,12 +613,13 @@ const constants = {
         faqVps: 'https://www.ovh.com/ca/en/vps/faq-help.xml',
         dedicatedOrder: 'https://www.ovh.com/ca/en/dedicated-servers',
         cloudProjectOrder: 'https://ca.ovh.com/manager/cloud/index.html#/iaas/pci/project/new',
+        iplbOrder: 'https://www.ovh.com/ca/en/solutions/load-balancer/',
       },
       QC: { // eq to fr_CA
         support: 'https://www.ovh.com/fr/support/',
         support_contact: 'https://www.ovh.com/ca/fr/support/',
         guides: {
-          home: 'http://docs.ovh.ca/fr/',
+          home: 'https://docs.ovh.com/ca/fr/',
           reinitPassword: 'http://docs.ovh.ca/fr/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/ca/fr/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/fr/g1769.creation_des_cles_ssh',
@@ -622,12 +637,13 @@ const constants = {
         faqVps: 'https://www.ovh.com/ca/fr/vps/aide-faq.xml',
         dedicatedOrder: 'https://www.ovh.com/ca/fr/serveurs-dedies',
         cloudProjectOrder: 'https://ca.ovh.com/manager/cloud/index.html#/iaas/pci/project/new',
+        iplbOrder: 'https://www.ovh.com/ca/fr/solutions/load-balancer/',
       },
       SG: {
         support: 'http://www.ovh.co.uk/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
-          home: 'http://docs.ovh.ca/en/',
+          home: 'https://docs.ovh.com/ca/en/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/us/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
@@ -645,12 +661,13 @@ const constants = {
         faqVps: 'https://www.ovh.com/us/vps/faq-help.xml',
         dedicatedOrder: 'https://www.ovh.com/sg/dedicated-servers',
         cloudProjectOrder: 'https://ca.ovh.com/manager/cloud/index.html#/iaas/pci/project/new',
+        iplbOrder: 'https://www.ovh.com/world/solutions/load-balancer/',
       },
       WE: {
         support: 'http://www.ovh.co.uk/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
-          home: 'http://docs.ovh.ca/en/',
+          home: 'https://docs.ovh.com/ca/en/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/us/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
@@ -668,12 +685,13 @@ const constants = {
         faqVps: 'https://www.ovh.com/us/vps/faq-help.xml',
         dedicatedOrder: 'https://www.ovh.com/world/dedicated-servers',
         cloudProjectOrder: 'https://ca.ovh.com/manager/cloud/index.html#/iaas/pci/project/new',
+        iplbOrder: 'https://www.ovh.com/world/solutions/load-balancer/',
       },
       WS: { // eq to es_US
         support: 'https://www.ovh.com/fr/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
-          home: 'http://docs.ovh.ca/en/',
+          home: 'https://docs.ovh.com/ca/en/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
           sshAdd: 'https://www.ovh.com/ca/en/g1924.configuring_additionnal_ssh_key',
@@ -690,6 +708,7 @@ const constants = {
         faqVps: 'https://www.ovh.com/us/es/vps/ayuda-faq.xml',
         dedicatedOrder: 'https://www.ovh.com/world/dedicated-servers',
         cloudProjectOrder: 'https://ca.ovh.com/manager/cloud/index.html#/iaas/pci/project/new',
+        iplbOrder: 'https://www.ovh.com/world/es/soluciones/load-balancer/',
       },
     },
     LANGUAGES: [
@@ -828,6 +847,7 @@ const constants = {
         vrackOrder: "https://us.ovhcloud.com/order/express/#/express/review?products=~(~(planCode~'vrack~quantity~1~productId~'vrack))",
         cloudProjectOrder: 'https://us.ovhcloud.com/manager/cloud/#/iaas/pci/offer',
         veeamBackup: 'https://us.ovhcloud.com/products/hosted-private-cloud/managed-veeam-backup',
+        iplbOrder: 'https://www.ovh.com/ca/en/solutions/load-balancer/',
       },
     },
     LANGUAGES: [

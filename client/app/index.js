@@ -15,6 +15,7 @@ import 'script-loader!components-jqueryui/ui/widgets/mouse.js';
 import 'script-loader!components-jqueryui/ui/widgets/sortable.js';
 import 'script-loader!components-jqueryui/ui/widgets/draggable.js';
 import 'angular';
+import 'angular-xeditable';
 import 'script-loader!ovh-ui-angular/dist/oui-angular.min.js';
 import 'angular-route';
 import 'angular-sanitize';
@@ -75,7 +76,6 @@ import 'ovh-angular-apiv7';
 import 'ovh-api-services';
 import 'ovh-angular-toaster';
 import 'script-loader!ovh-jquery-ui-draggable-ng/dist/ovh-jquery-ui-draggable-ng.min.js';
-import 'script-loader!@bower_components/angular-ui-router/release/angular-ui-router.min.js';
 import 'script-loader!ovh-angular-sidebar-menu/dist/ovh-angular-sidebar-menu.min.js';
 import 'angular-translate';
 import 'script-loader!angular-translate/dist/angular-translate-loader-partial/angular-translate-loader-partial.min.js';
@@ -91,6 +91,7 @@ import 'script-loader!@bower_components/ckeditor/ckeditor.js';
 import 'script-loader!@bower_components/ng-ckeditor/ng-ckeditor.js';
 import 'script-loader!@bower_components/messenger/build/js/messenger.min.js';
 import 'script-loader!flatpickr/dist/flatpickr.min.js';
+import 'script-loader!filesize/lib/filesize.js';
 
 // Ckeditor 4.x
 import 'script-loader!ng-ckeditor/dist/ng-ckeditor';

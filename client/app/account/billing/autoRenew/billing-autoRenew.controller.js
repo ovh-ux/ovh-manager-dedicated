@@ -257,7 +257,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
         return;
       }
 
-      AutoRenew.getExchangeService(service)
+      AutoRenew.getExchangeService(organization, exchangeName)
         .then(({ offer }) => {
           $scope.$emit(AUTORENEW_EVENT.PAY, {
             serviceType: service.serviceType,
@@ -266,17 +266,6 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
 
           $window.location.assign(getExchangeUrl(organization, exchangeName, offer, 'billing'));
         });
-    };
-
-    $scope.gotoRenew = function (service) {
-      if (isInDebt(service)) {
-        $scope.setAction('debtBeforePaying', _.clone(service, true), 'autoRenew');
-      } else {
-        $scope.$emit(AUTORENEW_EVENT.PAY, {
-          serviceType: service.serviceType,
-          serviceId: service.serviceId,
-        });
-      }
     };
 
     $scope.buildSMSCreditBuyingURL = service => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/order`;
@@ -630,6 +619,8 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
     $scope.hasAutoRenew = service => renewHelper.serviceHasAutomaticRenew(service);
     $scope.resiliateExchangeService = service => resiliateExchangeService(service);
     $scope.canDisableAutorenew = service => canDisableAutorenew(service);
+    $scope.warnAboutDebt = service => warnAboutDebt(service);
+    $scope.gotoRenew = service => goToRenew(service);
 
     /**
          * HELPER FUNCTIONS
@@ -734,6 +725,22 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
       }
     }
 
+    function warnAboutDebt(service) {
+      const warning = isNicBilling($scope.user, service) ? 'debtBeforePaying' : 'warnNicBilling';
+      $scope.setAction(warning, _.clone(service, true), 'autoRenew');
+    }
+
+    function goToRenew({ serviceType, serviceId }) {
+      $scope.$emit(AUTORENEW_EVENT.PAY, {
+        serviceType,
+        serviceId,
+      });
+    }
+
+    function isNicBilling(user, service) {
+      return _.get(user, 'nichandle') === _.get(service, 'contactBilling');
+    }
+
     /**
      * INITIALIZATION
      */
@@ -794,6 +801,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
         .then(() => $scope.nicRenew.getNicRenewParam())
         .finally(() => {
           $scope.initLoading = false;
+          $scope.automaticRenewV2Mean.loading = false;
         });
     }
 
