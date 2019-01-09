@@ -1,6 +1,5 @@
 import _ from 'lodash';
 
-let _sharedPaymentMethods = null;
 
 export default class BillingPaymentMethodSection {
   /* @ngInject */
@@ -11,18 +10,15 @@ export default class BillingPaymentMethodSection {
 
     this.loadDeferred = null;
     this.loadDeferredResolved = false;
-  }
-
-  get sharedPaymentMethods() {
-    return _sharedPaymentMethods;
+    this.sharedPaymentMethods = null;
   }
 
   removePaymentMehtod({ paymentMethodId }) {
-    _.remove(_sharedPaymentMethods, {
+    _.remove(this.sharedPaymentMethods, {
       paymentMethodId,
     });
 
-    return _sharedPaymentMethods;
+    return this.sharedPaymentMethods;
   }
 
   getPaymentMehtods() {
@@ -37,29 +33,26 @@ export default class BillingPaymentMethodSection {
       .getAllPaymentMethods({
         transform: true,
       })
-      .then(paymentMethodsParams => {
-        _sharedPaymentMethods = _.filter(paymentMethodsParams, ({ paymentType, status }) => {
+      .then((paymentMethodsParams) => {
+        this.sharedPaymentMethods = _.filter(paymentMethodsParams, ({ paymentType, status }) => {
           if (paymentType.value !== 'BANK_ACCOUNT') {
             return true;
           }
           return status.value !== 'BLOCKED_FOR_INCIDENTS';
         });
 
-        this.loadDeferred.resolve(_sharedPaymentMethods);
+        this.loadDeferred.resolve(this.sharedPaymentMethods);
 
-        return _sharedPaymentMethods;
+        return this.sharedPaymentMethods;
       })
-      .catch((error) => {
-        return this.loadDeferred.reject(error);
-      })
+      .catch(error => this.loadDeferred.reject(error))
       .finally(() => {
         this.loadDeferredResolved = true;
       });
 
     return this.loadDeferred.promise;
   }
-
-};
+}
 
 angular
   .module('Billing')

@@ -18,5 +18,4 @@ export default class PaymentMethodAddLegacyBankAccountCtrl {
   $onInit() {
     _.set(this.$state.current, 'sharedModel.legacyBillingAddress', this.model);
   }
-
-};
+}

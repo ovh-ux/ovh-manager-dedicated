@@ -1,6 +1,6 @@
 import translateAsyncLoader from '@ovh-ux/translate-async-loader';
-import ovhPaymentMehtod from '@ovh-ux/ng-payment-method';
-import ovhContacts from '@ovh-ux/ng-contacts';
+import ovhPaymentMehtod from '@ovh-ux/ng-ovh-payment-method';
+import ovhContacts from '@ovh-ux/ng-ovh-contacts';
 import config from './config/config';
 
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';

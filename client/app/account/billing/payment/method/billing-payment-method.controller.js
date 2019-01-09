@@ -12,7 +12,8 @@ import deleteModalController from './delete/billing-payment-method-delete.contro
 export default class BillingPaymentMethodCtrl {
   /* @ngInject */
 
-  constructor($q, $translate, $uibModal, Alerter, billingPaymentMethodSection, ovhPaymentMethod, User) {
+  constructor($q, $translate, $uibModal, Alerter, billingPaymentMethodSection,
+    ovhPaymentMethod, User) {
     // dependencies injections
     this.$q = $q;
     this.$translate = $translate;
