@@ -22,7 +22,7 @@ angular
       url: '/add?status&from',
       translations: [
         './',
-        './views/billing-address'
+        './views/billing-address',
       ],
       views: {
         '': {
@@ -45,7 +45,7 @@ angular
           controller: billingAddressViewCtrl,
           controllerAs: '$ctrl',
         },
-      }
+      },
     });
 
     $urlRouterProvider.when(

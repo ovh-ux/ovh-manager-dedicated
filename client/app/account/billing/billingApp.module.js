@@ -28,8 +28,7 @@ angular
     '$stateProvider',
     '$urlServiceProvider',
     'BILLING_BASE_URL',
-    'Billing.constants',
-    ($stateProvider, $urlServiceProvider, BILLING_BASE_URL, constants) => {
+    ($stateProvider, $urlServiceProvider, BILLING_BASE_URL) => {
       $stateProvider.state('app.account.billing', {
         url: '/billing',
         controller: 'BillingCtrl',
