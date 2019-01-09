@@ -547,7 +547,7 @@ const constants = {
         support: 'http://www.ovh.co.uk/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
-          home: 'http://docs.ovh.ca/en/',
+          home: 'https://docs.ovh.com/ca/en/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/us/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
@@ -571,7 +571,7 @@ const constants = {
         support: 'http://www.ovh.co.uk/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
-          home: 'http://docs.ovh.ca/en/',
+          home: 'https://docs.ovh.com/ca/en/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/us/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
@@ -595,7 +595,7 @@ const constants = {
         support: 'http://www.ovh.co.uk/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
-          home: 'http://docs.ovh.ca/en/',
+          home: 'https://docs.ovh.com/ca/en/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/ca/en/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
@@ -619,7 +619,7 @@ const constants = {
         support: 'https://www.ovh.com/fr/support/',
         support_contact: 'https://www.ovh.com/ca/fr/support/',
         guides: {
-          home: 'http://docs.ovh.ca/fr/',
+          home: 'https://docs.ovh.com/ca/fr/',
           reinitPassword: 'http://docs.ovh.ca/fr/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/ca/fr/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/fr/g1769.creation_des_cles_ssh',
@@ -643,7 +643,7 @@ const constants = {
         support: 'http://www.ovh.co.uk/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
-          home: 'http://docs.ovh.ca/en/',
+          home: 'https://docs.ovh.com/ca/en/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/us/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
@@ -667,7 +667,7 @@ const constants = {
         support: 'http://www.ovh.co.uk/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
-          home: 'http://docs.ovh.ca/en/',
+          home: 'https://docs.ovh.com/ca/en/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/us/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
@@ -691,7 +691,7 @@ const constants = {
         support: 'https://www.ovh.com/fr/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
-          home: 'http://docs.ovh.ca/en/',
+          home: 'https://docs.ovh.com/ca/en/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
           sshAdd: 'https://www.ovh.com/ca/en/g1924.configuring_additionnal_ssh_key',
