@@ -16,7 +16,10 @@ export default class PaymentMethodAddBillingAddressViewCtrl {
 
     this.model = {
       activeTab: null,
-      contact: null,
+      existingContact: null,
+      newContact: {
+        address: {},
+      },
     };
 
     this.contactList = null;
@@ -33,8 +36,22 @@ export default class PaymentMethodAddBillingAddressViewCtrl {
     return this.contactList;
   }
 
+  onExistingContactTabActive() {
+    this.model.activeTab = 'exising';
+    _.set(this.$state.current, 'sharedModel.billingAddress', this.model.existingContact);
+  }
+
+  onNewContactTabActive() {
+    this.model.activeTab = 'new';
+    this.model.newContact = {
+      address: {},
+    };
+    _.set(this.$state.current, 'sharedModel.billingAddress', this.model.newContact);
+  }
+
   $onInit() {
     this.loading.init = true;
+    this.$state.current.sharedSteps.billingAddress.isLoading = true;
 
     this.ovhContacts.getContacts()
       .then((contacts) => {
@@ -42,21 +59,20 @@ export default class PaymentMethodAddBillingAddressViewCtrl {
         return this.ovhContacts.findMatchingContactFromNic(null, contacts);
       })
       .then((contact) => {
-        console.log(contact);
-        this.model.contact = contact;
+        this.model.existingContact = contact;
         if (!contact.id) {
           this.addContact(contact);
         }
 
         // set shared model
-        _.set(this.$state.current, 'sharedModel.billingAddress', this.model.contact);
+        _.set(this.$state.current, 'sharedModel.billingAddress', this.model.existingContact);
       })
       .catch((error) => {
         console.log(error);
       })
       .finally(() => {
         this.loading.init = false;
+        this.$state.current.sharedSteps.billingAddress.isLoading = false;
       });
   }
-
-};
+}

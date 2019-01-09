@@ -103,6 +103,7 @@
                 <oui-step-form data-header="{{ :: 'billing_payment_method_add_billing_address' | translate }}"
                                data-submit-text="{{ $ctrl.addSteps.billingAddress.isLastStep() ? 'common_add' : 'common_next' | translate }}"
                                data-position="{{ $ctrl.addSteps.billingAddress.position }}"
+                               data-navigation="!$ctrl.addSteps.billingAddress.isLoading"
                                data-ng-if="$ctrl.addSteps.billingAddress.isVisible()">
 
                     <div data-ui-view="billingAddress"></div>
