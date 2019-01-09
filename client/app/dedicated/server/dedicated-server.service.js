@@ -39,7 +39,8 @@ angular
   })
   .constant('HARDWARE_RAID_RULE_DEFAULT_NAME', 'managerHardRaid')
   .service('Server', function (Products, $http, $q, constants, $cacheFactory, $rootScope,
-    $translate, Api, Polling, OvhHttp, SERVERSTATS_PERIOD_ENUM, HARDWARE_RAID_RULE_DEFAULT_NAME) {
+    $translate, WucApi, Polling, OvhHttp, SERVERSTATS_PERIOD_ENUM,
+    HARDWARE_RAID_RULE_DEFAULT_NAME) {
     const self = this;
     const serverCaches = {
       ipmi: $cacheFactory('UNIVERS_DEDICATED_SERVER_IPMI'),
@@ -87,7 +88,7 @@ angular
     }
 
     /**
-     * Specific API wrapper (this.<get|put|post|delete>), @see 'Api' service.
+     * Specific API wrapper (this.<get|put|post|delete>), @see 'WucApi' service.
      * Extra params:
      *   broadcast, forceRefresh
      */
@@ -122,7 +123,7 @@ angular
             );
 
             // Because Play dislike URL finished by a slash...
-            return Api[operationType](
+            return WucApi[operationType](
               url ? fullUrl.concat(url).join('/') : fullUrl.join('/'),
               params,
             ).then(

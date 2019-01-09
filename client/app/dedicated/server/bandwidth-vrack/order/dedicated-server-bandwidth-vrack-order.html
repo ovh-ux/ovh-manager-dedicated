@@ -56,7 +56,7 @@
                         <input type="radio"
                                data-ng-model="ctrl.model.duration"
                                data-ng-value="duration" />
-                        <span data-ng-bind="duration.durations | duration:'longDate'"></span>
+                        <span data-ng-bind="duration.durations | wucDuration:'longDate'"></span>
                         <span data-ng-bind-html="duration.details.prices | ducPrice:ctrl.user.value.ovhSubsidiary"></span>
                     </label>
                 </div>

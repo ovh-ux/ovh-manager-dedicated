@@ -1,8 +1,8 @@
 angular.module('Module.otrs.services').service('Module.otrs.services.NewTicket', [
   '$http',
   'constants',
-  'Api',
-  function ($http, constants, Api) {
+  'WucApi',
+  function ($http, constants, WucApi) {
     this.getProduct = function (category) {
       return $http
         .get('apiv6/newTicket/product', {
@@ -13,7 +13,7 @@ angular.module('Module.otrs.services').service('Module.otrs.services.NewTicket',
     };
 
     this.getEnumType = function () {
-      return Api.models('/apiv6/newTicket', 'support.TicketTypeEnum').then(enumDetails => enumDetails.enum);
+      return WucApi.models('/apiv6/newTicket', 'support.TicketTypeEnum').then(enumDetails => enumDetails.enum);
     };
 
     this.post = function (data) {

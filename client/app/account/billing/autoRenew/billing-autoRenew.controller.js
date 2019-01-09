@@ -268,17 +268,6 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
         });
     };
 
-    $scope.gotoRenew = function (service) {
-      if (isInDebt(service)) {
-        $scope.setAction('debtBeforePaying', _.clone(service, true), 'autoRenew');
-      } else {
-        $scope.$emit(AUTORENEW_EVENT.PAY, {
-          serviceType: service.serviceType,
-          serviceId: service.serviceId,
-        });
-      }
-    };
-
     $scope.buildSMSCreditBuyingURL = service => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/order`;
     $scope.buildSMSAutomaticRenewalURL = service => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/options/recredit`;
 
@@ -630,6 +619,8 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
     $scope.hasAutoRenew = service => renewHelper.serviceHasAutomaticRenew(service);
     $scope.resiliateExchangeService = service => resiliateExchangeService(service);
     $scope.canDisableAutorenew = service => canDisableAutorenew(service);
+    $scope.warnAboutDebt = service => warnAboutDebt(service);
+    $scope.gotoRenew = service => goToRenew(service);
 
     /**
          * HELPER FUNCTIONS
@@ -732,6 +723,22 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
       if (!$scope.serviceTypeObject.value) {
         $scope.serviceTypeObject.value = ALL_SERVICE_TYPES;
       }
+    }
+
+    function warnAboutDebt(service) {
+      const warning = isNicBilling($scope.user, service) ? 'debtBeforePaying' : 'warnNicBilling';
+      $scope.setAction(warning, _.clone(service, true), 'autoRenew');
+    }
+
+    function goToRenew({ serviceType, serviceId }) {
+      $scope.$emit(AUTORENEW_EVENT.PAY, {
+        serviceType,
+        serviceId,
+      });
+    }
+
+    function isNicBilling(user, service) {
+      return _.get(user, 'nichandle') === _.get(service, 'contactBilling');
     }
 
     /**

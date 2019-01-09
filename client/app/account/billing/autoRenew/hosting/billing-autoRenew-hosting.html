@@ -41,7 +41,7 @@
         <oui-action-menu-item
             data-ng-if="isInDebt(service.subProducts.hosting_web)"
             data-disabled="service.subProducts.hosting_web.renew.forced"
-            data-on-click="gotoRenew(service.subProducts.hosting_web)"
+            data-on-click="warnAboutDebt(service.subProducts.hosting_web)"
             data-text="{{:: (hasAutoRenew(service.subProducts.hosting_web) ? 'autorenew_service_renew_button' : 'manualrenew_service_renew_button') | translate }}"
             data-aria-label="{{:: (hasAutoRenew(service.subProducts.hosting_web) ? 'autorenew_service_renew_button_title' : 'manualrenew_service_renew_button_title') | translate: { t0: service.subProducts.hosting_web.serviceId } }}"></oui-action-menu-item>
 
