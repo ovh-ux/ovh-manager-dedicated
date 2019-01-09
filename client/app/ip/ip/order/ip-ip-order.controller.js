@@ -1,4 +1,4 @@
-angular.module('Module.ip.controllers').controller('IpOrderCtrl', ($scope, $rootScope, $q, $translate, Ip, IpOrder, IpOrganisation, User, Alerter, constants) => {
+angular.module('Module.ip.controllers').controller('IpOrderCtrl', ($q, $rootScope, $scope, $timeout, $translate, $uibModalInstance, Alerter, Ip, IpOrder, IpOrganisation, User, constants) => {
   const alertId = 'ip_order_alert';
 
   $scope.model = {};
@@ -8,6 +8,10 @@ angular.module('Module.ip.controllers').controller('IpOrderCtrl', ($scope, $root
   };
 
   $scope.loading = {};
+
+  $scope.closeModal = () => {
+    $uibModalInstance.dismiss();
+  };
 
   /*= =============================
 =            STEP 1            =
@@ -302,7 +306,11 @@ angular.module('Module.ip.controllers').controller('IpOrderCtrl', ($scope, $root
         },
       )
       .finally(() => {
-        $scope.resetAction();
+        if ($uibModalInstance) {
+          $uibModalInstance.close();
+        } else {
+          $scope.resetAction();
+        }
       });
   };
 });

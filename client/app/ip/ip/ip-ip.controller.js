@@ -6,6 +6,7 @@ angular.module('Module.ip.controllers').controller('IpDashboardCtrl', (
   $stateParams,
   $timeout,
   $translate,
+  $uibModal,
   Alerter,
   Ip,
   ipFeatureAvailability,
@@ -38,6 +39,14 @@ angular.module('Module.ip.controllers').controller('IpDashboardCtrl', (
     $scope.filters = {
       service: {},
     };
+  }
+
+  $scope.openOrderModal = () => {
+    $uibModal.open({
+      templateUrl: 'ip/ip/order/ip-ip-order.html',
+      controller: 'IpOrderCtrl',
+      controllerAs: '$ctrl'
+    });
   }
 
   $scope.loaders = {
