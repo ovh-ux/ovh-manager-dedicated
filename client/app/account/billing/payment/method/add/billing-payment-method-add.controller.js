@@ -5,7 +5,6 @@ export default class BillingPaymentMethodAddCtrl {
 
   constructor($q, $state, $stateParams, $translate, $window, Alerter, billingPaymentMethodSection,
     BillingPaymentMethodService, BillingVantivInstance, constants, ovhContacts, ovhPaymentMethod) {
-
     // dependencies injections
     this.$q = $q;
     this.$state = $state;
@@ -34,7 +33,7 @@ export default class BillingPaymentMethodAddCtrl {
           const isLegacy = _.has(this.model.selectedPaymentMethodType, 'original');
           const isLegacyBankAccount = _.get(
             this.model.selectedPaymentMethodType,
-            'original.value'
+            'original.value',
           ) === 'bankAccount';
 
           return isLegacy && !isLegacyBankAccount && this.constants.target !== 'US';
@@ -45,7 +44,7 @@ export default class BillingPaymentMethodAddCtrl {
         position: 2,
         isVisible: () => _.get(
           this.model.selectedPaymentMethodType,
-          'original.value'
+          'original.value',
         ) === 'bankAccount',
         isLastStep: () => false,
       },
@@ -54,13 +53,14 @@ export default class BillingPaymentMethodAddCtrl {
         position: 3,
         isVisible: () => _.get(
           this.model.selectedPaymentMethodType,
-          'original.value'
+          'original.value',
         ) === 'bankAccount',
         isLastStep: () => true,
       },
       billingAddress: {
         name: 'billingAddress',
         position: 2,
+        isLoading: false,
         isVisible: () => !this.model.selectedPaymentMethodType.original || this.constants.target === 'US',
         isLastStep: () => this.constants.target !== 'US',
       },
@@ -73,7 +73,7 @@ export default class BillingPaymentMethodAddCtrl {
           this.BillingVantivInstance.instanciate({
             height: '75px',
           });
-        }
+        },
       },
     };
 
@@ -105,7 +105,7 @@ export default class BillingPaymentMethodAddCtrl {
     if (_.get(this.model.selectedPaymentMethodType, 'original.value') !== 'bankAccount') {
       // display a message to tell that a new tab have been opened
       this.addAlertMessage = this.$translate.instant('billing_payment_method_add_info', {
-        paymentUrl: result.url
+        paymentUrl: result.url,
       });
     } else {
       // refresh the payment method list so that when returning on parent state,
@@ -117,7 +117,7 @@ export default class BillingPaymentMethodAddCtrl {
         this.$translate.instant('billing_payment_method_add_bank_account_success', {
           t0: result.url,
         }),
-        'billing_payment_method_add_alert'
+        'billing_payment_method_add_alert',
       );
     }
   }
@@ -139,20 +139,18 @@ export default class BillingPaymentMethodAddCtrl {
       addParams = _.merge(addParams, this.getLegacyAddParams());
     }
     if (!this.model.selectedPaymentMethodType.original || this.constants.target === 'US') {
-      // const paymentMethodContact = _.get(this.$state.current, 'sharedModel.billingAddress');
+      const paymentMethodContact = _.get(this.$state.current, 'sharedModel.billingAddress');
 
-      // // if no id to contact, we need to create it first before adding payment method
-      // if (!_.get(paymentMethodContact, 'id')) {
-      //   contactPromise = this.ovhContacts.createContact(paymentMethodContact)
-      //     .then((contact) => {
-      //       _.set(addParams, 'billingContactId', contact.id);
-      //       return contact;
-      //     });
-      // } else {
-      //   _.set(addParams, 'billingContactId', paymentMethodContact.id);
-      // }
-
-      _.set(addParams, 'billingContactId', 129);
+      // if no id to contact, we need to create it first before adding payment method
+      if (!_.get(paymentMethodContact, 'id')) {
+        contactPromise = this.ovhContacts.createContact(paymentMethodContact)
+          .then((contact) => {
+            _.set(addParams, 'billingContactId', contact.id);
+            return contact;
+          });
+      } else {
+        _.set(addParams, 'billingContactId', paymentMethodContact.id);
+      }
 
       if (!this.model.selectedPaymentMethodType.original) {
         const isQueryParamsInHash = this.$window.location.hash.indexOf('?') > 0;
@@ -172,10 +170,8 @@ export default class BillingPaymentMethodAddCtrl {
     this.Alerter.resetMessage('billing_payment_method_add_alert');
 
     return contactPromise
-      .then(() => {
-        return this.ovhPaymentMethod
-          .addPaymentMethod(this.model.selectedPaymentMethodType, addParams)
-      })
+      .then(() => this.ovhPaymentMethod
+        .addPaymentMethod(this.model.selectedPaymentMethodType, addParams))
       .then((result) => {
         if (this.constants.target === 'US') {
           return this.BillingPaymentMethodService.submitVantiv(result);
@@ -193,17 +189,17 @@ export default class BillingPaymentMethodAddCtrl {
           console.log(error);
           this.Alerter.error(
             this.$translate.instant('billing_payment_method_add_vantiv_recoverable_credit_card_error'),
-            'billing_payment_method_add_alert'
+            'billing_payment_method_add_alert',
           );
         } else if (this.BillingPaymentMethodService.isCardValidationNumberVantivError(error)) {
           this.Alerter.error(
             this.$translate.instant('billing_payment_method_add_vantiv_recoverable_card_validation_number_error'),
-            'billing_payment_method_add_alert'
+            'billing_payment_method_add_alert',
           );
         } else {
           this.Alerter.error([
             this.$translate.instant('billing_payment_method_add_status_error'),
-            _.get(error, 'data.message', '')
+            _.get(error, 'data.message', ''),
           ].join(' '), 'billing_payment_method_add_alert');
         }
       })
@@ -250,21 +246,21 @@ export default class BillingPaymentMethodAddCtrl {
       paymentMethods: this.billingPaymentMethodSection.getPaymentMehtods(),
       paymentMethodTypes: this.ovhPaymentMethod.getAllAvailablePaymentMethodTypes(),
     })
-    .then(({ paymentMethodTypes }) => {
-      this.paymentMethodTypes = _.sortBy(paymentMethodTypes, 'paymentType.text');
-      this.chunkedPaymentMethodTypes = _.chunk(this.paymentMethodTypes, this.chunkSize);
-      this.resetModel();
-      this.$state.current.sharedModel = {};
-    })
-    .catch((error) => {
-      this.Alerter.error([
-        this.$translate.instant('billing_payment_method_add_load_error'),
-        _.get(error, 'data.message', '')
-      ].join(' '), 'billing_payment_method_add_alert');
-    })
-    .finally(() => {
-      this.loading.init = false;
-    });
+      .then(({ paymentMethodTypes }) => {
+        this.paymentMethodTypes = _.sortBy(paymentMethodTypes, 'paymentType.text');
+        this.chunkedPaymentMethodTypes = _.chunk(this.paymentMethodTypes, this.chunkSize);
+        this.resetModel();
+        this.$state.current.sharedModel = {};
+        this.$state.current.sharedSteps = this.addSteps;
+      })
+      .catch((error) => {
+        this.Alerter.error([
+          this.$translate.instant('billing_payment_method_add_load_error'),
+          _.get(error, 'data.message', ''),
+        ].join(' '), 'billing_payment_method_add_alert');
+      })
+      .finally(() => {
+        this.loading.init = false;
+      });
   }
-
 }
