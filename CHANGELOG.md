@@ -1,3 +1,27 @@
+<a name="10.8.0"></a>
+# [10.8.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.7.8...v10.8.0) (2019-01-09)
+
+
+### Bug Fixes
+
+* **config:** update some guide links ([#893](https://github.com/ovh-ux/ovh-manager-dedicated/issues/893)) ([ada8f72](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ada8f72))
+* **i18n:** add missing translations for payment method ([0483b7a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0483b7a))
+* **i18n:** retrieve ([7ad7fdd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7ad7fdd))
+* **i18n:** retrieve translations ([e822e45](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e822e45))
+* **i18n:** submit ([ede79f4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ede79f4))
+* **i18n:** submit translations ([8e7f81e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8e7f81e))
+* **ip.ip-lb:** add port redirection ([961a0f3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/961a0f3))
+* **vantiv:** increasing the value of numYears to be 10 at a time ([#882](https://github.com/ovh-ux/ovh-manager-dedicated/issues/882)) ([34f533a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/34f533a))
+
+
+### Features
+
+* **billing.autorenew:** allow only nic billing to pay debt ([#890](https://github.com/ovh-ux/ovh-manager-dedicated/issues/890)) ([b108932](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b108932))
+* **billing.history:** change message if there is no debt to pay ([06f276d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/06f276d))
+* **components.user.session:** remove some assistance menu items for FR ([838c047](https://github.com/ovh-ux/ovh-manager-dedicated/commit/838c047))
+
+
+
 <a name="10.7.8"></a>
 ## [10.7.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.7.7...v10.7.8) (2019-01-04)
 
