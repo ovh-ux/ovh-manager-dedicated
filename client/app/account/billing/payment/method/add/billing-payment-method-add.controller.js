@@ -186,7 +186,6 @@ export default class BillingPaymentMethodAddCtrl {
       })
       .catch((error) => {
         if (this.BillingPaymentMethodService.isCreditCardVantivError(error)) {
-          console.log(error);
           this.Alerter.error(
             this.$translate.instant('billing_payment_method_add_vantiv_recoverable_credit_card_error'),
             'billing_payment_method_add_alert',

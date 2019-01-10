@@ -8,7 +8,7 @@
         <span data-ng-bind-html="$ctrl.addAlertMessage.message"></span>
     </oui-message>
 
-    <oui-back-button data-state="{{ $ctrl.$stateParams.from || '^' }}"
+    <oui-back-button data-href="{{ $ctrl.$state.href($ctrl.$stateParams.from || '^') }}"
                      data-aria-label="{{ :: 'billing_payment_method_add_back_btn_title' | translate }}">
         <span data-translate="billing_payment_method_add_title"></span>
     </oui-back-button>
