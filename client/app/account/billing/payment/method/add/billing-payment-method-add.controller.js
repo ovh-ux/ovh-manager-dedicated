@@ -203,8 +203,10 @@ export default class BillingPaymentMethodAddCtrl {
         }
       })
       .finally(() => {
-        this.loading.add = false;
-        this.$onInit();
+        if (this.model.selectedPaymentMethodType.original) {
+          this.loading.add = false;
+          this.$onInit();
+        }
       });
   }
 
