@@ -1,7 +1,7 @@
 export default class BillingPaymentMethodDefaultCtrl {
-  constructor($injector, $q, $uibModalInstance, paymentMethodToEdit, ovhPaymentMethod) {
-    /* @ngInject */
+  /* @ngInject */
 
+  constructor($injector, $q, $uibModalInstance, paymentMethodToEdit, ovhPaymentMethod) {
     // dependencies injections
     this.$injector = $injector;
     this.$q = $q;
