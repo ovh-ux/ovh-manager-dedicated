@@ -4,7 +4,8 @@ export default class BillingPaymentMethodAddCtrl {
   /* @ngInject */
 
   constructor($q, $state, $stateParams, $translate, $window, Alerter, billingPaymentMethodSection,
-    BillingPaymentMethodService, BillingVantivInstance, constants, ovhContacts, ovhPaymentMethod) {
+    BillingPaymentMethodService, BillingVantivInstance, constants, currentUser,
+    ovhContacts, ovhPaymentMethod) {
     // dependencies injections
     this.$q = $q;
     this.$state = $state;
@@ -16,6 +17,7 @@ export default class BillingPaymentMethodAddCtrl {
     this.BillingPaymentMethodService = BillingPaymentMethodService;
     this.BillingVantivInstance = BillingVantivInstance;
     this.constants = constants;
+    this.currentUser = currentUser; // from app route resolve
     this.ovhContacts = ovhContacts;
     this.ovhPaymentMethod = ovhPaymentMethod;
 
@@ -143,6 +145,14 @@ export default class BillingPaymentMethodAddCtrl {
 
       // if no id to contact, we need to create it first before adding payment method
       if (!_.get(paymentMethodContact, 'id')) {
+        // force non needed value for contact creation
+        // this should be done in component
+        if (!paymentMethodContact.legalForm) {
+          paymentMethodContact.legalForm = 'individual';
+        }
+        if (!paymentMethodContact.language) {
+          paymentMethodContact.language = this.currentUser.language;
+        }
         contactPromise = this.ovhContacts.createContact(paymentMethodContact)
           .then((contact) => {
             _.set(addParams, 'billingContactId', contact.id);
@@ -203,10 +213,8 @@ export default class BillingPaymentMethodAddCtrl {
         }
       })
       .finally(() => {
-        if (this.model.selectedPaymentMethodType.original) {
-          this.loading.add = false;
-          this.$onInit();
-        }
+        this.loading.add = false;
+        this.$onInit();
       });
   }
 

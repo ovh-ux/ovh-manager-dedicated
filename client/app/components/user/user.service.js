@@ -36,6 +36,7 @@ angular.module('services').service('User', [
               spareEmail: result.me.spareEmail,
               legalform: result.me.legalform,
               customerCode: result.me.customerCode,
+              language: result.me.language,
               isEnterprise: _.indexOf(result.certificates, 'enterprise') > -1,
               isVATNeeded: ['CA', 'QC', 'WE', 'WS'].indexOf(result.me.ovhSubsidiary) === -1,
             };
