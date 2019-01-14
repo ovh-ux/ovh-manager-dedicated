@@ -1,3 +1,4 @@
+import ngOvhHttp from '@ovh-ux/ng-ovh-http';
 import translateAsyncLoader from '@ovh-ux/translate-async-loader';
 import uiRouter from '@uirouter/angularjs';
 import webUniverseComponents from '@ovh-ux/web-universe-components';
@@ -11,6 +12,7 @@ const appDeps = [
   'ovh-utils-angular',
   'ui.bootstrap',
   'ui.router',
+  ngOvhHttp,
   'ngRoute',
   'ngSanitize',
   'ngMessages',
@@ -20,7 +22,6 @@ const appDeps = [
   'directives',
   'Billing',
   'UserAccount',
-  'ovh-angular-http',
   'ui.utils',
   'ovh-angular-q-allSettled',
   'ovh-angular-swimming-poll',

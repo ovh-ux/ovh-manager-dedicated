@@ -48,7 +48,6 @@ import 'script-loader!ipaddr.js/ipaddr.min.js';
 import 'ovh-angular-pagination-front';
 import 'ovh-angular-proxy-request';
 import 'ovh-angular-q-allsettled';
-import 'ovh-angular-http';
 import 'script-loader!validator/validator.min.js';
 import 'script-loader!@bower_components/angular-ui-utils/ui-utils.min.js';
 import 'script-loader!df-tab-menu/build/df-tab-menu.min.js';
