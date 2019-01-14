@@ -1,5 +1,31 @@
 import _ from 'lodash';
 
+class LegacyBankAccountModel {
+  constructor(country) {
+    this.country = country;
+
+    this.ownerName = null;
+    this.addressNumber = null;
+    this.addressStreet = null;
+    this.addressZip = null;
+    this.addressCity = null;
+    this.fullAddress = null;
+  }
+
+  get ownerAddress() {
+    if (this.country !== 'FR') {
+      return this.fullAddress;
+    }
+
+    return [
+      this.addressNumber || '',
+      this.addressStreet || '',
+      this.addressZip || '',
+      this.addressCity || '',
+    ].join(' ').trim();
+  }
+}
+
 export default class PaymentMethodAddLegacyBankAccountCtrl {
   /* @ngInject */
 
@@ -9,10 +35,7 @@ export default class PaymentMethodAddLegacyBankAccountCtrl {
     this.currentUser = currentUser; // from app route resolve
 
     // other attribute used in views
-    this.model = {
-      ownerName: null,
-      ownerAddress: null,
-    };
+    this.model = new LegacyBankAccountModel(currentUser.billingCountry);
   }
 
   $onInit() {

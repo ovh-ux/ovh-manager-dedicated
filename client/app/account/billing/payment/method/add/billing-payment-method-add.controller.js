@@ -96,7 +96,7 @@ export default class BillingPaymentMethodAddCtrl {
         iban: _.get(this.$state.current, 'sharedModel.legacyBankAccount.iban'),
         bic: _.get(this.$state.current, 'sharedModel.legacyBankAccount.bic'),
         ownerName: _.get(this.$state.current, 'sharedModel.legacyBillingAddress.ownerName'),
-        ownerAddress: _.get(this.$state.current, 'sharedModel.legacyBillingAddress.ownerName'),
+        ownerAddress: _.get(this.$state.current, 'sharedModel.legacyBillingAddress.ownerAddress'),
       };
     }
 
@@ -106,7 +106,8 @@ export default class BillingPaymentMethodAddCtrl {
   manageLegacyResponse(result) {
     if (_.get(this.model.selectedPaymentMethodType, 'original.value') !== 'bankAccount') {
       // display a message to tell that a new tab have been opened
-      this.addAlertMessage = this.$translate.instant('billing_payment_method_add_info', {
+      this.addAlertMessage.type = 'info';
+      this.addAlertMessage.message = this.$translate.instant('billing_payment_method_add_info', {
         paymentUrl: result.url,
       });
     } else {
