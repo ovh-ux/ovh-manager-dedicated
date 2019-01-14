@@ -60,7 +60,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
      * private-xxx-xxx = type dedicated
      */
     function getExchangeType(offer) {
-      return `exchange_${offer.toLowerCase()}`;
+      return `exchange_${offer}`;
     }
 
     const ALL_SERVICE_TYPES = {
