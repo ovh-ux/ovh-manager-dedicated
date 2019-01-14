@@ -989,17 +989,17 @@
     request "^2.88.0"
     webpack-dev-server "^3.1.9"
 
-"@ovh-ux/ng-ovh-contacts@^1.0.0-alpha.1":
-  version "1.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-contacts/-/ng-ovh-contacts-1.0.0-alpha.1.tgz#00804782a65ee938518139f886db894d36c5b04a"
-  integrity sha512-rJDA3zdeVi6zrHxTs5h5WjiYkTFlEsmI/TMc/uCfGBsZU0BvbwElM7Pz5u4iMfv0afWpj/xTQR/qfpx3+zWYpw==
+"@ovh-ux/ng-ovh-contacts@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-contacts/-/ng-ovh-contacts-1.0.0-alpha.2.tgz#825ef3b82e1cc4c8d585eb084e3663b338c8e28a"
+  integrity sha512-JGLVJfLMrvkQ2i8vOOfB1fgvm8ma/mEH15VfrDLkY1QLmChRjFSChE+jsIn2JOJFVvt50hBTcWIKv4jelyeoUA==
   dependencies:
     lodash "^4.17.11"
 
-"@ovh-ux/ng-ovh-payment-method@^1.1.1-alpha.0":
-  version "1.1.1-alpha.0"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-payment-method/-/ng-ovh-payment-method-1.1.1-alpha.0.tgz#7344d79235d2fce81130fac6682de526506fb323"
-  integrity sha512-wYKHIdE8Tdq1PWQtUBT7Wbvhv/DKtKSQOSp2QmE3Ojzf3f6uSU5/OtFWXhaKAzpOCaD1mfF9+kwiq8q2wi1ysA==
+"@ovh-ux/ng-ovh-payment-method@^1.1.1-alpha.1":
+  version "1.1.1-alpha.1"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-payment-method/-/ng-ovh-payment-method-1.1.1-alpha.1.tgz#53e2abcfbf7d3873ddf7a72184d17f2d30ed7401"
+  integrity sha512-7ompk8kpv8xKAiiF7zwzwo0pE19e8I3Wt9ijePsp/bJTAdl+jKWMa+RWcW+ALh5YJiU5p6UrvDEOQ4P9bUt/AQ==
 
 "@ovh-ux/ovh-utils-angular@^13.0.0":
   version "13.0.2"
@@ -7725,9 +7725,10 @@ ovh-module-exchange@^9.2.1:
     filesize "^3.6.1"
     lodash "~3.9.3"
 
-"ovh-ui-angular@git+https://github.com/ovh-ux/ovh-ui-angular.git#develop-preview":
-  version "2.23.2"
-  resolved "git+https://github.com/ovh-ux/ovh-ui-angular.git#92d2ca5c74568d846120e20ab55bf9d574e6abf2"
+ovh-ui-angular@^2.24.x:
+  version "2.24.0"
+  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.24.0.tgz#459c0ee750cdc46c1c57d905f9bf2a34afc224bf"
+  integrity sha512-z9WNU4ibl1gfzjuhD41UCNghwE96Au9pm/4e4wFGf7XYEHKbzRYRPIuG4haaugFn/2Nl0UuhLVdin0CZVY61Jg==
   dependencies:
     bloodhound-js "^1.2.3"
     clipboard "^2.0.1"
@@ -7748,10 +7749,10 @@ ovh-ui-kit@^2.22.0:
   dependencies:
     less-plugin-remcalc "^0.1.0"
 
-ovh-ui-kit@^2.23.1:
-  version "2.23.1"
-  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.23.1.tgz#4c3a3980575d693b33a1d5d056c210be0ba67376"
-  integrity sha512-i2/S0A/agP27DxiMHf6Y+ueMQpQU8j5YJkVq0uW0+1gFV228VaesCZezSeOH6XFTChAzPSJS79nuAvIFvo48Fw==
+ovh-ui-kit@^2.24.x:
+  version "2.24.0"
+  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.24.0.tgz#f2a3546b476750a2c385ffb09d172e3b7f091002"
+  integrity sha512-GiLg75B7DK5bHUUZL0CBuTZCGBrcNj7UYdXVg0EvH3fLUA7m5hMfxLa/x+IcDnj2lZffxOhUv9OVx8bS3EsS6w==
   dependencies:
     less-plugin-remcalc "^0.1.0"
 
