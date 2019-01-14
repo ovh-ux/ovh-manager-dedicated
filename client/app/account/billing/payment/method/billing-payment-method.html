@@ -52,10 +52,11 @@
                         data-filterable>
                 <span data-ng-bind="$row.label || '-'"></span>
             </oui-column>
-            <!-- <oui-column data-title=":: 'billing_payment_method_table_expiration_date' | translate">
-                <span class="d-block">
+            <oui-column data-title=":: 'billing_payment_method_table_expiration_date' | translate">
+                <span class="d-block"
+                      data-ng-bind="$row.expirationDate ? ($row.expirationDate | date:'shortDate') : '-'">
                 </span>
-            </oui-column> -->
+            </oui-column>
             <oui-column data-title=":: 'billing_payment_method_table_description' | translate"
                         data-property="description"
                         data-type="string"
