@@ -28,7 +28,7 @@
                                   data-href="{{ $ctrl.$state.href('app.account.billing.payment.credits') }}"
                                   data-active="$ctrl.$state.includes('app.account.billing.payment.credits')">
             </oui-header-tabs-item>
-            <oui-header-tabs-item data-ng-if="$ctrl.constants.target !== 'US'"
+            <oui-header-tabs-item data-ng-if="$ctrl.constants.target === 'EU'"
                                   data-text="{{ 'billing_payment_transations_title' | translate }}"
                                   data-href="{{ $ctrl.$state.href('app.account.billing.payment.transactions') }}"
                                   data-active="$ctrl.$state.includes('app.account.billing.payment.transactions')">

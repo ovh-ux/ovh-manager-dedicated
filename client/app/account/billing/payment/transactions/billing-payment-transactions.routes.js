@@ -7,7 +7,7 @@ angular
     '$urlRouterProvider',
     'Billing.constants',
     ($stateProvider, $urlRouterProvider, constants) => {
-      if (constants.target !== 'US') {
+      if (constants.target === 'EU') {
         const name = 'app.account.billing.payment.transactions';
 
         $stateProvider.state(name, {
