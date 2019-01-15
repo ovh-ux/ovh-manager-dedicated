@@ -67,9 +67,6 @@ export default class PaymentMethodAddBillingAddressViewCtrl {
         // set shared model
         _.set(this.$state.current, 'sharedModel.billingAddress', this.model.existingContact);
       })
-      .catch((error) => {
-        console.log(error);
-      })
       .finally(() => {
         this.loading.init = false;
         this.$state.current.sharedSteps.billingAddress.isLoading = false;

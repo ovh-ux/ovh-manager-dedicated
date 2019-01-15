@@ -151,7 +151,7 @@ export default class BillingPaymentMethodCtrl {
         return null;
       }
 
-      this.billingPaymentMethodSection.removePaymentMehtod(paymentMethod);
+      this.billingPaymentMethodSection.removePaymentMethod(paymentMethod);
 
       this.Alerter.success(
         this.$translate.instant('billing_payment_method_delete_success'),
@@ -183,7 +183,7 @@ export default class BillingPaymentMethodCtrl {
     this.loading.init = true;
 
     return this.$q.all({
-      paymentMethods: this.billingPaymentMethodSection.getPaymentMehtods(),
+      paymentMethods: this.billingPaymentMethodSection.getPaymentMethods(),
       guides: this.User.getUrlOf('guides'),
     }).then(({ paymentMethods, guides }) => {
       // set options for status filter
@@ -209,7 +209,7 @@ export default class BillingPaymentMethodCtrl {
       // set guide url
       this.guide = _.get(guides, 'autoRenew', null);
 
-      // set a awrn message if a bankAccount is in pendingValidation state
+      // set a warn message if a bankAccount is in pendingValidation state
       this.hasPendingValidationBankAccount = _.some(paymentMethods, method => method.paymentType.value === 'bankAccount' && method.status.value === 'pendingValidation');
     }).catch((error) => {
       this.Alerter.error([

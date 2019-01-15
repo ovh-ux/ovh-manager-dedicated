@@ -5,7 +5,7 @@ export default class BillingPaymentMethodEditCtrl {
     this.$injector = $injector;
     this.$q = $q;
     this.$uibModalInstance = $uibModalInstance;
-    this.paymentMehtodInEdition = paymentMethodToEdit;
+    this.paymentMethodInEdition = paymentMethodToEdit;
     this.ovhPaymentMethod = ovhPaymentMethod;
 
     // other attribute used in view
@@ -15,7 +15,7 @@ export default class BillingPaymentMethodEditCtrl {
     };
 
     this.model = {
-      description: this.paymentMehtodInEdition.description,
+      description: this.paymentMethodInEdition.description,
     };
   }
 
@@ -23,10 +23,10 @@ export default class BillingPaymentMethodEditCtrl {
   =            EVENTS            =
   ============================== */
 
-  onPaymentMehtodEditFormSubmit() {
+  onPaymentMethodEditFormSubmit() {
     this.loading.save = true;
 
-    return this.ovhPaymentMethod.editPaymentMethod(this.paymentMehtodInEdition, {
+    return this.ovhPaymentMethod.editPaymentMethod(this.paymentMethodInEdition, {
       description: this.model.description,
     }).then(() => this.$uibModalInstance.close({
       description: this.model.description,

@@ -1,7 +1,7 @@
 import translateAsyncLoader from '@ovh-ux/translate-async-loader';
 import uiRouter from '@uirouter/angularjs';
 import webUniverseComponents from '@ovh-ux/web-universe-components';
-import ovhPaymentMehtod from '@ovh-ux/ng-ovh-payment-method';
+import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
 import ovhContacts from '@ovh-ux/ng-ovh-contacts';
 
 import config from './config/config';
@@ -53,7 +53,7 @@ const appDeps = [
   dedicatedUniverseComponents,
   webUniverseComponents,
   'xeditable',
-  ovhPaymentMehtod,
+  ovhPaymentMethod,
   ovhContacts,
 ];
 

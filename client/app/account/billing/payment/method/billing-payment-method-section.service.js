@@ -1,6 +1,5 @@
 import _ from 'lodash';
 
-
 export default class BillingPaymentMethodSection {
   /* @ngInject */
 
@@ -13,7 +12,7 @@ export default class BillingPaymentMethodSection {
     this.sharedPaymentMethods = null;
   }
 
-  removePaymentMehtod({ paymentMethodId }) {
+  removePaymentMethod({ paymentMethodId }) {
     _.remove(this.sharedPaymentMethods, {
       paymentMethodId,
     });
@@ -21,7 +20,7 @@ export default class BillingPaymentMethodSection {
     return this.sharedPaymentMethods;
   }
 
-  getPaymentMehtods() {
+  getPaymentMethods() {
     if (!this.loadDeferred || this.loadDeferredResolved) {
       this.loadDeferred = this.$q.defer();
       this.loadDeferredResolved = false;

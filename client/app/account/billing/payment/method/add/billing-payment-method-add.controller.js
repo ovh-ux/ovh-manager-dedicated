@@ -121,7 +121,7 @@ export default class BillingPaymentMethodAddCtrl {
     } else {
       // refresh the payment method list so that when returning on parent state,
       // the list is up to date
-      this.billingPaymentMethodSection.getPaymentMehtods();
+      this.billingPaymentMethodSection.getPaymentMethods();
 
       // display a success message
       this.Alerter.success(
@@ -264,7 +264,7 @@ export default class BillingPaymentMethodAddCtrl {
     this.manageHiPayStatus();
 
     return this.$q.all({
-      paymentMethods: this.billingPaymentMethodSection.getPaymentMehtods(),
+      paymentMethods: this.billingPaymentMethodSection.getPaymentMethods(),
       paymentMethodTypes: this.ovhPaymentMethod.getAllAvailablePaymentMethodTypes(),
     })
       .then(({ paymentMethodTypes }) => {
