@@ -105,11 +105,19 @@ export default class BillingPaymentMethodAddCtrl {
 
   manageLegacyResponse(result) {
     if (_.get(this.model.selectedPaymentMethodType, 'original.value') !== 'bankAccount') {
-      // display a message to tell that a new tab have been opened
-      this.addAlertMessage.type = 'info';
-      this.addAlertMessage.message = this.$translate.instant('billing_payment_method_add_info', {
-        paymentUrl: result.url,
-      });
+      if (this.constants.target !== 'US') {
+        // display a message to tell that a new tab have been opened
+        this.addAlertMessage.type = 'info';
+        this.addAlertMessage.message = this.$translate.instant('billing_payment_method_add_info', {
+          paymentUrl: result.url,
+        });
+      } else {
+        // display a success message
+        this.Alerter.success(
+          this.$translate.instant('billing_payment_method_add_status_success'),
+          'billing_payment_method_add_alert',
+        );
+      }
     } else {
       // refresh the payment method list so that when returning on parent state,
       // the list is up to date
@@ -215,6 +223,9 @@ export default class BillingPaymentMethodAddCtrl {
       })
       .finally(() => {
         this.loading.add = false;
+        if (this.constants.target === 'US') {
+          this.BillingVantivInstance.clear();
+        }
         this.$onInit();
       });
   }
