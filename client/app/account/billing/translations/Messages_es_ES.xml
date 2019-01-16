@@ -74,7 +74,7 @@
    <translation id="autorenew_service_debt_before_paying_title" qtlid="506780">Información importante</translation>
    <translation id="autorenew_service_debt_before_paying_1" qtlid="498209">Antes de contratar el servicio por un nuevo período de tiempo, debe abonar el importe pendiente.</translation>
    <translation id="autorenew_service_debt_before_paying_2" qtlid="498222">Acceda a la sección «Facturación» para regular la situación del servicio <strong>{{service}}</strong>.</translation>
-   <translation id="autorenew_service_debt_nic_billing">Pour payer ce service, connectez-vous depuis votre compte client de facturation {{ nicBilling }}.</translation>
+   <translation id="autorenew_service_debt_nic_billing" qtlid="516913">Para abonar este servicio, conéctese desde la cuenta de cliente del contacto de facturación ({{ nicBilling }}).</translation>
    <translation id="autorenew_service_canceldelete_title" qtlid="416137">Cancelar la baja de un servicio</translation>
    <translation id="autorenew_service_delete_confirm" qtlid="416150">El servicio {0} <strong>se dará de baja automáticamente</strong> el {1}.</translation>
    <translation id="autorenew_service_delete_warn" qtlid="416163">Los datos asociados a este servicio se eliminarán automáticamente de forma irreversible. Puede cancelar esta operación hasta 24 horas antes de la fecha de expiración.</translation>
@@ -800,15 +800,15 @@
    <translation id="paymentType_status_valid" qtlid="177249">Aceptado</translation>
    <translation id="paymentType_status_expired" qtlid="58676">Expirado</translation>
    <translation id="paymentType_status_proposedByCustomer" qtlid="90205">Pendiente de validación</translation>
-   <translation id="paymentType_status_tooManyFailures" qtlid="316034">No aceptado (demasiados intentos en error)</translation>
+   <translation id="paymentType_status_tooManyFailures" qtlid="316034">No válido (demasiados intentos en error)</translation>
    <translation id="paymentType_status_broken" qtlid="436367">Roto</translation>
    <translation id="paymentType_status_canceled" qtlid="27631">Cancelado</translation>
-   <translation id="paymentType_status_canceling" qtlid="409792">Cancelando...</translation>
-   <translation id="paymentType_status_canceledbycustomer" qtlid="436380">Cancelada por el usuario</translation>
-   <translation id="paymentType_status_canceled_by_customer" qtlid="436380">Cancelada por el usuario</translation>
+   <translation id="paymentType_status_canceling" qtlid="409792">Cancelando</translation>
+   <translation id="paymentType_status_canceledbycustomer" qtlid="436380">Cancelado por el usuario</translation>
+   <translation id="paymentType_status_canceled_by_customer" qtlid="436380">Cancelado por el usuario</translation>
    <translation id="paymentType_status_created" qtlid="90205">Pendiente de validación</translation>
    <translation id="paymentType_status_error" qtlid="45508">En error</translation>
-   <translation id="paymentType_status_validforcredit" qtlid="436393">Válida para abonar los pagos</translation>
+   <translation id="paymentType_status_validforcredit" qtlid="436393">Válido para abonar los pagos</translation>
    <translation id="paymentType_add_error" qtlid="177262">Se ha producido un error al añadir la forma de pago</translation>
    <translation id="paymentType_status_pendingValidation" qtlid="90133">En validación</translation>
    <translation id="paymentType_status_waiting_for_documents" qtlid="325575">Pendiente de recepción</translation>
@@ -1211,7 +1211,7 @@
    <translation id="terminate_service_reason_NOT_RELIABLE" qtlid="299988">El servicio es poco fiable</translation>
    <translation id="terminate_service_reason_OTHER" qtlid="300040">Otros...</translation>
    <translation id="terminate_service_reason_TOO_EXPENSIVE" qtlid="300001">El servicio es demasiado caro</translation>
-   <translation id="terminate_service_reason_TOO_HARD_TO_USE" qtlid="299962">Las herramientas de gestión (área de cliente, facturación) son demasiado complicadas.</translation>
+   <translation id="terminate_service_reason_TOO_HARD_TO_USE" qtlid="299962">Las herramientas son demasiado complicadas.</translation>
    <translation id="terminate_service_reason_FEATURES_DONT_SUIT_ME" qtlid="504241">Las funcionalidades del servicio no son adecuadas para mí</translation>
    <translation id="terminate_service_reason_UNSATIFIED_BY_CUSTOMER_SUPPORT" qtlid="504254">No estoy contento con el soporte al cliente</translation>
    <translation id="terminate_service_reason_NO_ANSWER" qtlid="504267">Prefiero no responder</translation>
