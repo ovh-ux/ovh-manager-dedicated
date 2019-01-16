@@ -1,3 +1,18 @@
+<a name="10.8.1"></a>
+## [10.8.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.8.0...v10.8.1) (2019-01-16)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** change redirection for exchange dedicated offers ([#903](https://github.com/ovh-ux/ovh-manager-dedicated/issues/903)) ([5e1c9f0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5e1c9f0))
+* **billing.autorenew:** fix resiliation for exchange services ([356c2fd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/356c2fd))
+* **billing.history:** display right due date value ([c72505a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c72505a))
+* **i18n:** retrieve translations ([24ada1f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/24ada1f))
+* **ie11:** bump [@ovh-ux](https://github.com/ovh-ux)/translate-async-loader ([5b9f941](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5b9f941))
+* **server.statistics:** add only milliseconds offset ([#901](https://github.com/ovh-ux/ovh-manager-dedicated/issues/901)) ([99347e1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/99347e1))
+
+
+
 <a name="10.8.0"></a>
 # [10.8.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.7.8...v10.8.0) (2019-01-09)
 
