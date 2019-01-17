@@ -1,5 +1,3 @@
-import angular from 'angular';
-
 import template from './billing-payment-method-add.html';
 import controller from './billing-payment-method-add.controller';
 
