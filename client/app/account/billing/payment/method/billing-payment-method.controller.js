@@ -1,5 +1,3 @@
-import angular from 'angular';
-
 import editModalTemplate from './edit/billing-payment-method-edit.html';
 import editModalController from './edit/billing-payment-method-edit.controller';
 
