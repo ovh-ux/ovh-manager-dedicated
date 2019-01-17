@@ -9,6 +9,6 @@ angular.module('Billing.controllers').controller('billingControllersAutoRenewWar
   }
 
   goToAddPaymentMean() {
-    this.$state.go('app.account.billing.payment.mean').then(() => this.$scope.setAction());
+    this.$state.go('app.account.billing.payment.method').then(() => this.$scope.setAction());
   }
 });
