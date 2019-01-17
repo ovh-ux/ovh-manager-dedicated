@@ -154,10 +154,10 @@
                 </span>
             </oui-column>
             <oui-column data-title=":: 'billing_main_history_table_balance_due_date' | translate">
-                <span data-ng-if="$row.debt.date"
-                      data-ng-bind=":: $row.debt.date | date:'mediumDate'">
+                <span data-ng-if="$row.debt.dueDate"
+                      data-ng-bind=":: $row.debt.dueDate | date:'mediumDate'">
                 </span>
-                <span data-ng-if="!$row.debt.date"
+                <span data-ng-if="!$row.debt.dueDate"
                       data-translate="billing_main_history_table_unavailable">
                 </span>
             </oui-column>

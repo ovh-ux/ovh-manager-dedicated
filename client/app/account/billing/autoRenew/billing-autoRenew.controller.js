@@ -60,7 +60,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
      * private-xxx-xxx = type dedicated
      */
     function getExchangeType(offer) {
-      return `exchange_${offer.toLowerCase()}`;
+      return `exchange_${offer}`;
     }
 
     const ALL_SERVICE_TYPES = {
@@ -250,7 +250,9 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
       error: '',
     };
 
-    $scope.gotoExchangeRenew = function (service) {
+    $scope.gotoExchangeRenew = service => gotoExchangeRenew(service);
+
+    function gotoExchangeRenew(service) {
       const [organization, exchangeName] = service.serviceId.split('/service/');
 
       if (!exchangeName) {
@@ -264,9 +266,13 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
             serviceId: `${organization}/${exchangeName}`,
           });
 
-          $window.location.assign(getExchangeUrl(organization, exchangeName, offer, 'billing'));
+          const renewUrl = offer.includes('dedicated')
+            ? `${getExchangeBaseUrl(organization, exchangeName, offer)}?tab=ACCOUNT`
+            : getExchangeUrl(organization, exchangeName, offer, 'billing');
+
+          $window.location.assign(renewUrl);
         });
-    };
+    }
 
     $scope.buildSMSCreditBuyingURL = service => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/order`;
     $scope.buildSMSAutomaticRenewalURL = service => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/options/recredit`;
@@ -686,9 +692,13 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
       return DEBT_STATUS.includes(service.status);
     }
 
-    function getExchangeUrl(organization, service, offer, action) {
+    function getExchangeBaseUrl(organization, service, offer) {
       const exchangeAbsoluteUrl = constants.target === 'EU' && constants.UNIVERS !== 'web' ? constants.MANAGER_URLS.web : $window.location.href.replace($window.location.hash, '#/');
-      return `${exchangeAbsoluteUrl}configuration/${getExchangeType(offer)}/${organization}/${service}?action=${action}`;
+      return `${exchangeAbsoluteUrl}configuration/${getExchangeType(offer)}/${organization}/${service}`;
+    }
+
+    function getExchangeUrl(organization, service, offer, action) {
+      return `${getExchangeBaseUrl(organization, service, offer)}?action=${action}`;
     }
 
     function resiliateExchangeService({ serviceId }) {
