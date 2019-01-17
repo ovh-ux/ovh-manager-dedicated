@@ -108,15 +108,16 @@ angular.module('Billing').controller('BillingMainHistoryCtrl', class BillingMain
         .offset($config.offset - 1)
         .limit($config.pageSize)
         .execute().$promise,
-    }).then(({ count, bills }) => {
+    }).then(({ count, bills }) => this.applyDebtToBills(bills).then((billList) => {
+      this.billList = billList.map(({ value }) => value);
       this.totalBills = count.length;
-      return this.applyDebtToBills(bills).then(billList => ({
+      return {
         data: _.map(billList, 'value'),
         meta: {
           totalCount: count.length,
         },
-      }));
-    });
+      };
+    }));
   }
 
   /* -----  End of DATAGRID  ------ */
@@ -206,6 +207,20 @@ angular.module('Billing').controller('BillingMainHistoryCtrl', class BillingMain
   }
 
   /* -----  End of EXPORT TO CSV  ------ */
+
+  /* =====================================
+  =            DOWNLOAD BILLS            =
+  ====================================== */
+
+  downloadBills() {
+    this.$uibModal.open({
+      templateUrl: 'account/billing/main/history/downloadBills/billing-main-history-downloadBills.html',
+      controller: 'BillingMainHistoryDonwloadBillsCtrl',
+      controllerAs: '$ctrl',
+    });
+  }
+
+  /* -----  End of DOWNLOAD BILLS  ----- */
 
   /* =============================
   =            EVENTS            =

@@ -1,0 +1,51 @@
+<oui-modal data-heading="{{:: 'billing_main_bill_download_title' | translate }}"
+           data-primary-action="$ctrl.getBills()"
+           data-primary-label="{{:: 'billing_main_bill_download_confirm' | translate }}"
+           data-primary-disabled="!$ctrl.searchFrom || !$ctrl.isDateRangeValid() || !$ctrl.isDateFromBeforeDateTo()"
+           data-secondary-action="$ctrl.$uibModalInstance.dismiss()"
+           data-secondary-label="{{:: 'common_cancel' | translate }}"
+           data-on-dismiss="$ctrl.$uibModalInstance.dismiss()"
+           data-loading="$ctrl.downloading">
+    <form name="searchDates"
+          novalidate
+          data-ng-class="{ 'has-error': $ctrl.hasError() }">
+
+        <oui-field data-label="{{:: 'billing_main_bill_archive_name' | translate }}">
+            <input name="archiveName"
+                   class="oui-input"
+                   type="text"
+                   data-ng-model="$ctrl.archiveName">
+        </oui-field>
+
+        <p id="dateRange"
+           data-translate="billing_main_bill_download_date_range"></p>
+        <div class="oui-input-group_inline"
+             aria-labelledby="dateRange">
+            <oui-field data-label="{{:: 'billing_main_bill_download_date_fromDate' | translate }}"
+                       data-size="m"
+                       data-ng-class="{ 'oui-field_error': !$ctrl.isDateRangeValid() || !$ctrl.isDateFromBeforeDateTo()}">
+                <oui-calendar name="searchFrom"
+                             class="d-inline-block"
+                             data-model="$ctrl.searchFrom"
+                             data-format="Y/m/d"></oui-calendar>
+            </oui-field>
+            <oui-field class="ml-5 pl-1"
+                       data-label="{{:: 'billing_main_bill_download_date_toDate' | translate }}"
+                       data-size="m"
+                       data-ng-class="{ 'oui-field_error': !$ctrl.isDateRangeValid() || !$ctrl.isDateFromBeforeDateTo()}">
+                <oui-calendar name="searchTo"
+                             class="d-inline-block"
+                             data-model="$ctrl.searchTo"
+                             data-format="Y/m/d"></oui-calendar>
+            </oui-field>
+        </div>
+        <p class="help-block"
+           role="alert"
+           data-ng-bind="$ctrl.errorMessage || $ctrl.apiErrorMessage"
+           data-ng-if="$ctrl.hasError()"></p>
+        <p class="help-block"
+           role="info"
+           data-translate="billing_main_bill_download_no_bills"
+           data-ng-if="$ctrl.billsCount && $ctrl.billsCount === 0"></p>
+    </form>
+</oui-modal>
