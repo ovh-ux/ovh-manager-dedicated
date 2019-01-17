@@ -480,30 +480,8 @@ class SessionService {
         !currentUser.isEnterprise && {
           name: 'user.payment',
           title: this.$translate.instant('menu_means'),
-          state: 'app.account.billing.payment.mean',
+          state: 'app.account.billing.payment',
           click: () => this.trackUserMenuSection('my_payment_types', 'payment_types'),
-          subLinks: [{
-            title: this.$translate.instant('menu_means'),
-            state: 'app.account.billing.payment.mean',
-          },
-          (this.constants.target === 'EU' || this.constants.target === 'CA') && {
-            title: this.$translate.instant('menu_ovhaccount'),
-            state: 'app.account.billing.payment.ovhaccount',
-          },
-          (this.constants.target === 'EU' || this.constants.target === 'CA') && {
-            title: this.$translate.instant('menu_vouchers'),
-            state: 'app.account.billing.payment.vouchers',
-          }, {
-            title: this.$translate.instant('menu_refunds'),
-            state: 'app.account.billing.payment.refunds',
-          },
-          (this.constants.target === 'EU') && {
-            title: this.$translate.instant('menu_fidelity'),
-            state: 'app.account.billing.payment.fidelity',
-          }, {
-            title: this.$translate.instant('menu_credits'),
-            state: 'app.account.billing.payment.credits',
-          }],
         },
 
         // Orders

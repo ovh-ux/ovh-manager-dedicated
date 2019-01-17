@@ -1,6 +1,8 @@
 import translateAsyncLoader from '@ovh-ux/translate-async-loader';
 import uiRouter from '@uirouter/angularjs';
 import webUniverseComponents from '@ovh-ux/web-universe-components';
+import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
+import ovhContacts from '@ovh-ux/ng-ovh-contacts';
 
 import config from './config/config';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
@@ -51,6 +53,8 @@ const appDeps = [
   dedicatedUniverseComponents,
   webUniverseComponents,
   'xeditable',
+  ovhPaymentMethod,
+  ovhContacts,
 ];
 
 if (WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca') {
