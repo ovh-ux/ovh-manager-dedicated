@@ -2,7 +2,7 @@ angular.module('Billing').controller('BillingMainHistoryCtrl', class BillingMain
   constructor(
     $q, $state, $translate, $uibModal,
     Alerter, atInternet, constants, currentUser, exportCsv,
-    OvhApiMe, paymentMethodHelper,
+    OvhApiMe, ovhPaymentMethod,
   ) {
     // Injections
     this.$q = $q;
@@ -15,7 +15,7 @@ angular.module('Billing').controller('BillingMainHistoryCtrl', class BillingMain
     this.currentUser = currentUser; // from app route resolve
     this.exportCsv = exportCsv;
     this.OvhApiMe = OvhApiMe;
-    this.paymentMethodHelper = paymentMethodHelper;
+    this.ovhPaymentMethod = ovhPaymentMethod;
 
     // Other attributes used in view
     this.loading = {
@@ -256,12 +256,12 @@ angular.module('Billing').controller('BillingMainHistoryCtrl', class BillingMain
 
     return this.$q.all({
       debtAccount: this.getDebtAccount(),
-      hasDefaultPaymentMehtod: this.paymentMethodHelper.hasDefaultPaymentMethod(),
+      hasDefaultPaymentMethod: this.ovhPaymentMethod.hasDefaultPaymentMethod(),
       invoicesByPostalMail: postalMailOptionPromise,
-    }).then(({ debtAccount, hasDefaultPaymentMehtod, invoicesByPostalMail }) => {
+    }).then(({ debtAccount, hasDefaultPaymentMethod, invoicesByPostalMail }) => {
       this.debtAccount = debtAccount;
       this.debtAccount.active = _.get(debtAccount, 'active') || _.get(debtAccount, 'todoAmount.value') > 0 || _.get(debtAccount, 'dueAmount.value') > 0;
-      this.hasDefaultPaymentMehtod = hasDefaultPaymentMehtod;
+      this.hasDefaultPaymentMethod = hasDefaultPaymentMethod;
 
       // set invoice by postal mail options
       this.postalMailOptions.enabled = invoicesByPostalMail !== null;
