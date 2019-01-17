@@ -1,3 +1,14 @@
+<a name="10.9.1"></a>
+## [10.9.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.9.0...v10.9.1) (2019-01-17)
+
+
+### Bug Fixes
+
+* billingMean injection in autorenew view ([f6c4c52](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f6c4c52))
+* BillingPaymentMethod injection in autorenew view ([6fd1962](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6fd1962))
+
+
+
 <a name="10.9.0"></a>
 # [10.9.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.8.2...v10.9.0) (2019-01-17)
 
