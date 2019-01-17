@@ -1,3 +1,18 @@
+<a name="10.9.0"></a>
+# [10.9.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.8.2...v10.9.0) (2019-01-17)
+
+
+### Bug Fixes
+
+* prevent loading angularjs more than once ([ef38fae](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ef38fae))
+
+
+### Features
+
+* **billing.payment:** add new payment methods ([dddf1a7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/dddf1a7))
+
+
+
 <a name="10.8.2"></a>
 ## [10.8.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.8.1...v10.8.2) (2019-01-17)
 
