@@ -1,3 +1,4 @@
+import ngOvhUtils from '@ovh-ux/ovh-utils-angular';
 import translateAsyncLoader from '@ovh-ux/translate-async-loader';
 import uiRouter from '@uirouter/angularjs';
 import webUniverseComponents from '@ovh-ux/web-universe-components';
@@ -10,9 +11,9 @@ import dedicatedUniverseComponents from './dedicatedUniverseComponents';
 const appDeps = [
   'ovh-angular-proxy-request',
   'ovh-angular-pagination-front',
-  'ovh-utils-angular',
   'ui.bootstrap',
   'ui.router',
+  ngOvhUtils,
   'ngRoute',
   'ngSanitize',
   'ngMessages',
@@ -92,9 +93,6 @@ angular
   ])
   .config(($locationProvider) => {
     $locationProvider.hashPrefix('');
-  })
-  .config((tmhDynamicLocaleProvider) => {
-    tmhDynamicLocaleProvider.localeLocationPattern('resources/angular/i18n/angular-locale_{{locale}}.js');
   })
   .config((OvhHttpProvider, constants) => {
     _.set(OvhHttpProvider, 'rootPath', constants.swsProxyPath);

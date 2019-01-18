@@ -1001,12 +1001,16 @@
   resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-payment-method/-/ng-ovh-payment-method-1.1.1.tgz#24fa58361e4837e7a5995aea5d2d085e0ccfd96e"
   integrity sha512-MpyWLk3RRgqzPFS/BL0nODycqdJdX2OmvSUS6y0CGsJGYxaE8F+C2hQE2+zKHtcqv66Bz6d008++UkR+k8m/TA==
 
-"@ovh-ux/ovh-utils-angular@^13.0.0":
-  version "13.0.2"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ovh-utils-angular/-/ovh-utils-angular-13.0.2.tgz#02fa3eb989537a0aeee7888d12443cca0ff552d6"
-  integrity sha512-+dHN29j7xwU/xx2hfQeZYQad003JIe43FhyZfUjZ6mw/oRPt1Sg1Gi6YSmSKLI6UkmJ0Af9d6NEglP2GLK+Rdg==
+"@ovh-ux/ovh-utils-angular@^14.0.2":
+  version "14.0.2"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ovh-utils-angular/-/ovh-utils-angular-14.0.2.tgz#837fbfcd093287971aa6d0733a1bbad0e008e8e7"
+  integrity sha512-mJPo16TErF948lbvS6JBeue9HjqN29C6ub5Hl++61CuSYTDeNTHIsXELC4TW1QiNP7otGZm93jf2Fb0ZMsjTbg==
+  dependencies:
+    "@ovh-ux/translate-async-loader" "^1.0.4"
+    filesize "^3.6.1"
+    lodash "^4.17.11"
 
-"@ovh-ux/translate-async-loader@^1.0.7":
+"@ovh-ux/translate-async-loader@^1.0.4", "@ovh-ux/translate-async-loader@^1.0.7":
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/@ovh-ux/translate-async-loader/-/translate-async-loader-1.0.8.tgz#7cbdc3dfed1042f511206ff6bb9f14c33b8406ba"
   integrity sha512-8yEhPeRTSxtEO9ODXRYZw6pzRQiV5ULCTi8mIzt39m/b9N2TcIF4ILTPsaa8xpE4npHKa/iYgL9z0HJUFi2LGQ==
@@ -1025,11 +1029,6 @@
   integrity sha512-MI4Xx6LHs4Webyvi6EbspgyAb4D2Q2VtnCQ1blOJcoLS6mVa8lNN2rkIy1CVxfTUpoyIbCTkXES1rLXztFD1lg==
   dependencies:
     any-observable "^0.3.0"
-
-"@types/angular@^1.6.25":
-  version "1.6.51"
-  resolved "https://registry.yarnpkg.com/@types/angular/-/angular-1.6.51.tgz#a67515b0ba6a2ff68894a39405c1343cbf9c36d4"
-  integrity sha512-wYU+/zlJWih7ZmonWVjGQ18tG7GboI9asMNjRBM5fpIFJWXSioQttCTw9qGL44cP82ghM8sCV9apEqm1zBDq2w==
 
 "@types/estree@0.0.39":
   version "0.0.39"
@@ -1368,13 +1367,6 @@ angular-cookies@1.6.x:
   version "1.6.10"
   resolved "https://registry.yarnpkg.com/angular-cookies/-/angular-cookies-1.6.10.tgz#20a014d501242e2edacd21397c0e5480e08dee00"
   integrity sha512-ADfbqXLhwcaecAiWIaxpl8XWFJgWsrDl/ksSEkYm5dSoXHYlj3HKlAhPbjBv/foYS7pdI0apmSGHWrBPqdjF/g==
-
-angular-dynamic-locale@~0.1.27:
-  version "0.1.37"
-  resolved "https://registry.yarnpkg.com/angular-dynamic-locale/-/angular-dynamic-locale-0.1.37.tgz#7e89fbd2ec45bdd6abc89f36cda8893838e49354"
-  integrity sha512-m5Kyk8W8/mOZSqRxuByOwHBjv8labLBAgvl0Z3iQx2xT/tWCqb94imKUPwumudszdPDjxeopwyucQvm8Sw7ogw==
-  dependencies:
-    "@types/angular" "^1.6.25"
 
 angular-i18n@1.6.x:
   version "1.6.10"
