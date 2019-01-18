@@ -1,124 +1,104 @@
 <form name="orderIpPCC">
-
-    <div class="form-group">
-        <label class="control-label"
-               for="sizeSelect"
-               data-translate="ip_order_ipblocksize">
-        </label>
-        <select id="sizeSelect"
+    <oui-field data-label="{{:: 'ip_order_ipblocksize' | translate }}" data-size="xl">
+        <label class="oui-select">
+            <select
+                id="sizeSelect"
                 name="sizeSelect"
-                class="form-control"
                 data-ng-model="model.params.size"
-                data-ng-options="r as ('/'+r) for r in orderableIp.size">
-            <option value=""
+                class="oui-select__input"
+                data-ng-options="r as ('/'+r) for r in orderableIp.size"
+                data-required>
+                <option
+                    data-value=""
                     data-ng-disabled="true"
                     data-translate="global_select">
-            </option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label class="control-label"
-               for="countrySelect"
-               data-translate="ip_order_country">
+                </option>
+            </select>
+            <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
         </label>
-        <select id="countrySelect"
+    </oui-field>
+
+    <oui-field data-label="{{:: 'ip_order_country' | translate }}" data-size="xl">
+        <label class="oui-select">
+            <select
+                id="countrySelect"
                 name="countrySelect"
-                class="form-control"
                 data-ng-model="model.params.country"
-                data-ng-options="c as ('country_' + c.toUpperCase() | translate) for c in orderableIp.countries"
-                data-ng-required="true">
-            <option value=""
+                class="oui-select__input"
+                data-ng-options="c as ('country_' + c.toUpperCase() | translate) for c in orderableIp.countries"                
+                data-required>
+                <option
+                    data-value=""
                     data-ng-disabled="true"
                     data-translate="global_select">
-            </option>
-        </select>
+                </option>
+            </select>
+            <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
+        </label>
+    </oui-field>
+
+    <div class="oui-field">
+        <label for="control-label" class="oui-label" data-translate="ip_order_networkname"></label>
+        <div class="oui-field__content">
+            <div class="oui-field-control oui-field-control_5 d-flex">
+                <input type="text" class="oui-input"
+                       data-ng-pattern="/^[a-zA-Z]+\w+$/"
+                       data-ng-model="model.params.networkName"
+                       name="networkName"
+                       id="networkName"
+                       data-maxlength="20">
+                <span class="fa fa-info-circle m-2" data-oui-tooltip="{{:: 'ip_order_networkname_help' | translate }}"></span>
+            </div>
+        </div>
     </div>
 
-    <div class="form-group"
-         data-ng-class="{
-             'has-error': orderIpPCC.networkName.$dirty && orderIpPCC.networkName.$invalid
-         }">
-        <label class="control-label"
-               for="networkName"
-               data-translate="ip_order_networkname">
-        </label>
-        <input type="text"
-               class="form-control"
-               id="networkName"
-               name="networkName"
-               data-ng-model="model.params.networkName"
-               maxlength="20"
-               data-ng-pattern="/^[a-zA-Z]+\w+$/" />
-        <span class="fa fa-info-circle"
-           data-tooltip-placement="left"
-           data-uib-tooltip="{{ 'ip_order_networkname_help' | translate }}">
-        </span>
+    <div class="oui-field">
+        <label for="control-label" class="oui-label" data-translate="ip_order_estimatedclientsnumber"></label>
+        <div class="oui-field__content">
+            <div class="oui-field-control oui-field-control_5 d-flex">
+                <input type="number" class="oui-input"
+                       data-ng-model="model.params.estimatedClientsNumber"
+                       name="estimatedClientsNumber"
+                       id="estimatedClientsNumber"
+                       min="1"
+                       data-required>
+                <span class="fa fa-info-circle m-2" data-oui-tooltip="{{:: 'ip_order_estimatedclientsnumber_help' | translate }}"></span>
+            </div>
+        </div>
     </div>
 
-    <div class="form-group"
-         data-ng-class="{
-             'has-error': orderIpPCC.estimatedClientsNumber.$dirty && orderIpPCC.estimatedClientsNumber.$invalid
-         }">
-        <label class="control-label"
-               for="estimatedClientsNumber"
-               data-translate="ip_order_estimatedclientsnumber">
-        </label>
-        <input type="number"
-               id="estimatedClientsNumber"
-               name="estimatedClientsNumber"
-               class="form-control"
-               data-ng-model="model.params.estimatedClientsNumber"
-               data-ng-required="true"
-               min="1" />
-        <i class="fa fa-info-circle"
-           data-tooltip-placement="right"
-           data-uib-tooltip="{{ 'ip_order_estimatedclientsnumber_help' | translate }}">
-        </i>
+    <div class="oui-field">
+        <label for="control-label" class="oui-label" data-translate="ip_order_description"></label>
+        <div class="oui-field__content">
+            <div class="oui-field-control oui-field-control_5 d-flex">
+                <oui-textarea
+                    class="w-100"
+                    data-rows="3"
+                    id="description"
+                    name="description"
+                    data-maxlength="250"
+                    data-minlength="3"
+                    data-ng-pattern="/^[a-zA-Z0-9\.,\-'!\?:;\(\)\+\/=\s]*$/"
+                    data-model="model.params.description"
+                    data-required>
+                </oui-textarea>
+                <span class="fa fa-info-circle m-2" data-oui-tooltip="{{:: 'ip_order_description_help' | translate }}"></span>
+            </div>
+        </div>
     </div>
 
-    <div class="form-group"
-         data-ng-class="{
-             'has-error': orderIpPCC.description.$dirty && orderIpPCC.description.$invalid
-         }">
-        <label class="control-label"
-               for="description"
-               data-translate="ip_order_description">
-        </label>
-        <textarea rows="3"
-                  id="description"
-                  name="description"
-                  maxlength="250"
-                  data-ng-minlength="3"
-                  data-ng-pattern="/^[a-zA-Z0-9\.,\-'!\?:;\(\)\+\/=\s]*$/"
-                  data-ng-required="true"
-                  style="resize: none;"
-                  data-ng-model="model.params.description">
-        </textarea>
-        <i class="fa fa-info-circle"
-           data-tooltip-placement="left"
-           data-uib-tooltip="{{ 'ip_order_description_help' | translate }}">
-        </i>
-    </div>
-
-    <div class="form-group"
-         data-ng-class="{
-             'has-error': orderIpPCC.usage.$dirty && orderIpPCC.usage.$invalid
-         }">
-        <label class="control-label"
-               for="usage"
-               data-translate="ip_order_usage">
-        </label>
-        <input type="text"
-               id="usage"
-               name="usage"
-               class="form-control"
-               data-ng-model="model.params.usage"
-               data-ng-required="true" />
-        <i class="fa fa-info-circle"
-           data-tooltip-placement="left"
-           data-tooltip="{{ 'ip_order_usage_help' | translate }}">
-        </i>
+    <div class="oui-field">
+        <label for="control-label" class="oui-label" data-translate="ip_order_usage"></label>
+        <div class="oui-field__content">
+            <div class="oui-field-control oui-field-control_5 d-flex">
+                <input type="text" class="oui-input"
+                       data-ng-model="model.params.usage"
+                       name="usage"
+                       id="usage"
+                       required>
+                <span class="fa fa-info-circle m-2" data-oui-tooltip="{{:: 'ip_order_usage_help' | translate }}"></span>
+            </div>
+        </div>
     </div>
 
 </form>
