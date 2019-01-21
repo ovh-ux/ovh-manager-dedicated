@@ -48,6 +48,8 @@ angular.module('App').controller('DedicatedCloudSubDatacenterVeeamBackupEnableAg
     return this.User.getUrlOf('express_order')
       .then((url) => {
         this.$window.open(`${url}review?products=${JSURL.stringify([productToOrder])}`, '_blank');
+
+        return this.$state.reload('app.dedicatedClouds.datacenter.backup');
       })
       .catch((error) => {
         this.Alerter.error([this.$translate.instant('dedicatedCloud_tab_veeam_enable_fail'), _.get(error, 'data.message')].join(' '));
