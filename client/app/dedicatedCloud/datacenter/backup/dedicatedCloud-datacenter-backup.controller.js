@@ -11,8 +11,8 @@ angular
         $stateParams,
         $translate,
 
-        constants,
         DedicatedCloud,
+        serviceUsesAgora,
         veeam,
 
         VEEAM_STATE_ENUM,
@@ -23,8 +23,8 @@ angular
         this.$stateParams = $stateParams;
         this.$translate = $translate;
 
-        this.constants = constants;
         this.DedicatedCloud = DedicatedCloud;
+        this.serviceUsesAgora = serviceUsesAgora;
         this.veeam = veeam;
 
         this.VEEAM_STATE_ENUM = VEEAM_STATE_ENUM;
@@ -35,8 +35,6 @@ angular
           model: this.veeam,
           constants: this.VEEAM_STATE_ENUM,
         };
-
-        this.$scope.isUS = this.constants.target === 'US';
 
         this.$scope.canBeActivated = () => this.canBeActivated();
         this.$scope.canBeDisabled = () => this.canBeDisabled();
