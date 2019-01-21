@@ -85,7 +85,15 @@
 
             <div data-ovh-alert="dedicatedCloudDatacenterAlert"></div>
 
-             <div data-ui-view="pccDatacenterView"></div>
+            <div class="text-center">
+                <oui-spinner
+                    data-ng-if="pccDatacenterStateBeingLoaded"
+                    data-size="l"></oui-spinner>
+            </div>
+
+            <div
+                data-ng-hide="pccDatacenterStateBeingLoaded"
+                data-ui-view="pccDatacenterView"></div>
         </div>
     </div>
 

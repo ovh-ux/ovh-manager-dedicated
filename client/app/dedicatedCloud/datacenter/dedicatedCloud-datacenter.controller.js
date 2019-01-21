@@ -1,4 +1,4 @@
-angular.module('App').controller('DedicatedCloudSubDatacenterCtrl', ($location, $scope, $stateParams, $timeout, $translate, $uibModal, DedicatedCloud) => {
+angular.module('App').controller('DedicatedCloudSubDatacenterCtrl', ($location, $scope, $stateParams, $timeout, $transitions, $translate, $uibModal, DedicatedCloud) => {
   $scope.loadingInformations = true;
   $scope.loadingError = false;
   $scope.datacenter = {
@@ -14,6 +14,20 @@ angular.module('App').controller('DedicatedCloudSubDatacenterCtrl', ($location, 
     editMode: false,
     loading: false,
   };
+
+  $transitions.onStart(
+    {},
+    () => {
+      $scope.pccDatacenterStateBeingLoaded = true;
+    },
+  );
+
+  $transitions.onSuccess(
+    {},
+    () => {
+      $scope.pccDatacenterStateBeingLoaded = false;
+    },
+  );
 
   $scope.$on('datacenter.informations.reload', () => {
     $scope.loadDatacenter();
