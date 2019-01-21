@@ -6,7 +6,18 @@ angular.module('App').config(($stateProvider) => {
       pccDatacenterView: {
         templateUrl: 'dedicatedCloud/datacenter/backup/dedicatedCloud-datacenter-backup.html',
         controller: 'DedicatedCloudSubDatacenterVeeamCtrl',
+        controllerAs: '$ctrl',
       },
+    },
+    resolve: {
+      veeam: /* @ngInject */ (
+        $stateParams,
+        DedicatedCloud,
+      ) => DedicatedCloud.getVeeam(
+        $stateParams.productId,
+        $stateParams.datacenterId,
+        true,
+      ),
     },
   });
 });
