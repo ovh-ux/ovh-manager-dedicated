@@ -29,6 +29,8 @@ angular.module('App').controller('DedicatedCloudSubDatacenterVeeamBackupDisableC
         this.Alerter.success(this.$translate.instant('dedicatedCloud_tab_veeam_disable_success', {
           t0: this.datacenter.name,
         }), 'dedicatedCloudDatacenterAlert');
+
+        return this.$state.reload('app.dedicatedClouds.datacenter.backup');
       })
       .catch((error) => {
         this.Alerter.error(this.$translate.instant('dedicatedCloud_tab_veeam_disable_fail', {

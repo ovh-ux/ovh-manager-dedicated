@@ -396,7 +396,6 @@ angular
           serviceName,
           datacenterId,
         },
-        broadcast: 'datacenter.veeam.reload',
       });
     };
 
@@ -407,7 +406,6 @@ angular
           serviceName,
           datacenterId,
         },
-        broadcast: 'datacenter.veeam.reload',
       });
     };
 

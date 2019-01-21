@@ -1,37 +1,55 @@
-angular.module('App').controller('DedicatedCloudSubDatacenterVeeamCtrl', ($scope, $stateParams, $translate, DedicatedCloud, $rootScope, VEEAM_STATE_ENUM, constants) => {
-  $scope.veeam = {
-    model: null,
-    constants: VEEAM_STATE_ENUM,
-  };
-  $scope.loading = false;
-  $scope.isUS = constants.target === 'US';
+angular
+  .module('App')
+  .controller(
+    'DedicatedCloudSubDatacenterVeeamCtrl',
+    class {
+      /* @ngInject */
+      constructor(
+        $rootScope,
+        $scope,
+        $state,
+        $stateParams,
+        $translate,
 
-  $rootScope.$on('datacenter.veeam.reload', () => {
-    $scope.loadVeeam(true);
-  });
+        constants,
+        DedicatedCloud,
+        veeam,
 
-  $scope.loadVeeam = function (forceRefresh) {
-    $scope.loading = true;
+        VEEAM_STATE_ENUM,
+      ) {
+        this.$rootScope = $rootScope;
+        this.$scope = $scope;
+        this.$state = $state;
+        this.$stateParams = $stateParams;
+        this.$translate = $translate;
 
-    return DedicatedCloud
-      .getVeeam($stateParams.productId, $stateParams.datacenterId, forceRefresh)
-      .then((veeam) => {
-        $scope.veeam.model = veeam;
-        $scope.loading = false;
-      })
-      .catch((data) => {
-        $scope.loading = false;
-        $scope.setMessage($translate.instant('dedicatedCloud_tab_veeam_loading_error'), angular.extend(data, { type: 'ERROR' }));
-      });
-  };
+        this.constants = constants;
+        this.DedicatedCloud = DedicatedCloud;
+        this.veeam = veeam;
 
-  $scope.canBeActivated = function () {
-    return $scope.veeam.model && $scope.veeam.model.state === $scope.veeam.constants.DISABLED;
-  };
+        this.VEEAM_STATE_ENUM = VEEAM_STATE_ENUM;
+      }
 
-  $scope.canBeDisabled = function () {
-    return $scope.veeam.model && $scope.veeam.model.state === $scope.veeam.constants.ENABLED;
-  };
+      $onInit() {
+        this.$scope.veeam = {
+          model: this.veeam,
+          constants: this.VEEAM_STATE_ENUM,
+        };
 
-  $scope.loadVeeam();
-});
+        this.$scope.isUS = this.constants.target === 'US';
+
+        this.$scope.canBeActivated = () => this.canBeActivated();
+        this.$scope.canBeDisabled = () => this.canBeDisabled();
+      }
+
+      canBeActivated() {
+        return this.$scope.veeam.model
+          && this.$scope.veeam.model.state === this.$scope.veeam.constants.DISABLED;
+      }
+
+      canBeDisabled() {
+        return this.$scope.veeam.model
+          && this.$scope.veeam.model.state === this.$scope.veeam.constants.ENABLED;
+      }
+    },
+  );
