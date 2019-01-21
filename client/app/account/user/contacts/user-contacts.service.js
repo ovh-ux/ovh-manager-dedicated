@@ -17,6 +17,7 @@ angular.module('UserAccount').service('UserAccount.services.Contacts', function 
     'PRIVATE_DATABASE',
     'EMAIL_DOMAIN',
     'DEDICATED',
+    'KUBE',
     'NAS',
     'NASHA',
     'OVER_THE_BOX',
@@ -43,7 +44,7 @@ angular.module('UserAccount').service('UserAccount.services.Contacts', function 
   };
 
   self.getContactChangeTaskDetail = function (id) {
-    return OvhHttp.get([apiChangeContact, '{id}'].join('/'), {
+    return OvhHttp.get(`${apiChangeContact}/${id}`, {
       rootPath: 'apiv6',
       urlParams: {
         id,
@@ -52,7 +53,7 @@ angular.module('UserAccount').service('UserAccount.services.Contacts', function 
   };
 
   self.acceptRequest = function (opts) {
-    return OvhHttp.post([apiChangeContact, '{id}', 'accept'].join('/'), {
+    return OvhHttp.post(`${apiChangeContact}/{id}/accept`, {
       rootPath: 'apiv6',
       urlParams: {
         id: opts.id,
@@ -65,7 +66,7 @@ angular.module('UserAccount').service('UserAccount.services.Contacts', function 
   };
 
   self.refuseRequest = function (opts) {
-    return OvhHttp.post([apiChangeContact, '{id}', 'refuse'].join('/'), {
+    return OvhHttp.post(`${apiChangeContact}/{id}/refuse`, {
       rootPath: 'apiv6',
       urlParams: {
         id: opts.id,
