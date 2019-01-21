@@ -12,6 +12,14 @@ angular.module('App').config(($stateProvider, $urlServiceProvider) => {
     },
     reloadOnSearch: false,
     translations: ['.'],
+    resolve: {
+      serviceUsesAgora: /* @ngInject */ (
+        $stateParams,
+        DedicatedCloud,
+      ) => DedicatedCloud
+        .getDescription($stateParams.productId)
+        .then(description => description.generation === '2.0'),
+    },
   });
 
   // ensure compatibility with links sended by emails
