@@ -11,6 +11,7 @@
                 data-property="fullProfile">
     </oui-column>
     <oui-column data-title=":: 'dedicatedCloud_tab_datastores_size' | translate">
+<<<<<<< HEAD
         <span data-ng-bind=":: $row.size.value + ' ' + ('unit_size_' + $row.size.unit | translate)"></span>
     </oui-column>
     <oui-column data-title=":: 'dedicatedCloud_tab_datastores_billing' | translate">
@@ -18,6 +19,15 @@
     </oui-column>
     <oui-column data-title=":: 'dedicatedCloud_tab_datastores_status' | translate">
         <span data-ng-bind=":: 'dedicatedCloud_tab_datastores_status_' + $row.status | translate"></span>
+=======
+        <span data-ng-bind="$row.size.value + ' ' + ('unit_size_' + $row.size.unit | translate)"></span>
+    </oui-column>
+    <oui-column data-title=":: 'dedicatedCloud_tab_datastores_billing' | translate">
+        <span data-ng-bind="'dedicatedCloud_tab_datastores_billing_' + $row.billing | translate"></span>
+    </oui-column>
+    <oui-column data-title=":: 'dedicatedCloud_tab_datastores_status' | translate">
+        <span data-ng-bind="'dedicatedCloud_tab_datastores_status_' + $row.status | translate"></span>
+>>>>>>> feat(dedicated-cloud-datacenter-datastore): replace constant use
     </oui-column>
     <oui-column data-title=":: 'dedicatedCloud_tab_datastores_consumption' | translate">
         <span
@@ -32,7 +42,11 @@
         </span>
         <span
             data-ng-if="$row.billing === 'HOURLY' && $row.consumption > 1"
+<<<<<<< HEAD
             data-ng-bind=":: 'dedicatedCloud_tab_datastores_hourly_consumption_other' | translate:{ t0: $row.consumption }"
+=======
+            data-ng-bind="'dedicatedCloud_tab_datastores_hourly_consumption_other' | translate:{ t0: $row.consumption }"
+>>>>>>> feat(dedicated-cloud-datacenter-datastore): replace constant use
             data-uib-tooltip="{{ 'dedicatedCloud_tab_host_hourly_usage_update' | translate:{ t0: ($row.consumptionLastUpdate|date:'short') } }}"
             data-tooltip-placement="top">
         </span>
