@@ -10,20 +10,16 @@ angular
         $state,
         $stateParams,
 
-        constants,
         DedicatedCloud,
+        serviceUsesAgora,
       ) {
         this.$q = $q;
         this.$scope = $scope;
         this.$state = $state;
         this.$stateParams = $stateParams;
 
-        this.constants = constants;
         this.DedicatedCloud = DedicatedCloud;
-      }
-
-      $onInit() {
-        this.$scope.constants = this.constants;
+        this.serviceUsesAgora = serviceUsesAgora;
       }
 
       loadDatastores({
@@ -85,7 +81,7 @@ angular
       }
 
       orderDatastore(datacenter) {
-        if (this.constants.target === 'US') {
+        if (this.serviceUsesAgora) {
           this.$state.go('app.dedicatedClouds.datacenter.datastores.orderUS');
         } else {
           this.$scope.setAction(
