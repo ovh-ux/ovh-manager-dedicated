@@ -33,7 +33,7 @@ angular.module('App').controller('DedicatedCloudSubDatacenterCtrl', ($location, 
     $scope.loadDatacenter();
   });
 
-  $scope.loadDatacenter = function () {
+  $scope.loadDatacenter = () => {
     $scope.message = null;
     DedicatedCloud
       .getDatacenterInformations($stateParams.productId, $stateParams.datacenterId, true)
@@ -61,7 +61,7 @@ angular.module('App').controller('DedicatedCloudSubDatacenterCtrl', ($location, 
 
   /* Update description or name */
 
-  $scope.editDescription = function (value, contextTitle) {
+  $scope.editDescription = (value, contextTitle) => {
     const modal = $uibModal.open({
       animation: true,
       templateUrl: 'components/name-edition/name-edition.html',
@@ -90,11 +90,11 @@ angular.module('App').controller('DedicatedCloudSubDatacenterCtrl', ($location, 
 
   $scope.loadDatacenter();
 
-  $scope.resetAction = function () {
+  $scope.resetAction = () => {
     $scope.setAction(false);
   };
 
-  $scope.setMessage = function (message, data) {
+  $scope.setMessage = (message, data) => {
     let messageToSend = message;
     let i = 0;
 
@@ -171,7 +171,7 @@ angular.module('App').controller('DedicatedCloudSubDatacenterCtrl', ($location, 
     $scope.message = messageToSend;
   };
 
-  $scope.setAction = function (action, data, parent) {
+  $scope.setAction = (action, data, parent) => {
     if (action) {
       $scope.currentAction = action;
       $scope.currentActionData = data;
