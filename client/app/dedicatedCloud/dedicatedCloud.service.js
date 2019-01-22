@@ -1,18 +1,5 @@
 angular
   .module('services')
-  .constant('VEEAM_STATE_ENUM', {
-    ENABLED: 'enabled',
-    DISABLED: 'disabled',
-    DISABLING: 'DISABLING',
-    ENABLING: 'ENABLING',
-    ERROR: 'ERROR',
-    REMOVING: 'REMOVING',
-  })
-  .constant('COMMERCIAL_RANGE_ENUM', {
-    '2014v1Infrastructure': '2014 Infrastructure',
-    '2014v1Enterprise': '2014 Enterprise',
-    '2013v1': '2013',
-  })
   .service('DedicatedCloud', function (Products, $http, $q, constants, $cacheFactory, $rootScope,
     OvhApiDedicatedCloud, OvhHttp, Poll, Poller, DEDICATED_CLOUD_CONSTANTS, VM_ENCRYPTION_KMS) {
     const self = this;
