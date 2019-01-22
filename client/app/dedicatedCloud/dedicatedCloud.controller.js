@@ -83,7 +83,6 @@ angular
         this.$scope.resetAction = () => this.resetAction();
         this.$scope.setMessage = (message, data) => this.setMessage(message, data);
         this.$scope.setAction = (action, data) => this.setAction(action, data);
-        this.$scope.contactMeForHds = () => this.contactMeForHds();
         this.$scope.stopNotification = notificationType => this.stopNotification(notificationType);
         this.$scope.showHdsReadyNotificationIfRequired = notification => this
           .showHdsReadyNotificationIfRequired(notification);
@@ -289,35 +288,6 @@ angular
             this.$scope.stepPath = '';
           }, 300);
         }
-      }
-
-      contactMeForHds() {
-        return this.User
-          .getUser()
-          .then((user) => {
-            /* eslint-disable */
-                        const message = `New HDS prospect ${user.nichandle}`;
-                        const ticket = {
-                            subject: message,
-                            type: "genericRequest",
-                            body: message,
-                            serviceName: $stateParams.productId
-                        };
-
-                        // return Otrs.postTicket(ticket);
-                        /* eslint-enable */
-          })
-          .then(() => {
-            this.$scope.stopNotification(this.$scope.HDS_READY_NOTIFICATION);
-            this.$scope.setMessage(this.$translate.instant('dedicatedCloud_contact_me_success'));
-          })
-          .catch((error) => {
-            this.$scope.setMessage(
-              this.$translate.instant('dedicatedCloud_contact_me_fail'),
-              { message: error.message, type: 'ERROR' },
-            );
-            this.$log.error(error);
-          });
       }
 
       stopNotification(notificationType) {
