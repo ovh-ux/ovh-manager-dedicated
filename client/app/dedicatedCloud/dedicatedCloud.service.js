@@ -611,8 +611,11 @@ angular
 
       /* ------- SUB DATACENTER LICENCES ------- */
 
-      getDatacenterLicence(serviceName) {
-        if (this.constants.target === 'US') {
+      getDatacenterLicence(
+        serviceName,
+        serviceUsesAgora,
+      ) {
+        if (serviceUsesAgora) {
           return this.OvhHttp
             .get(
               '/dedicatedCloud/{serviceName}',
