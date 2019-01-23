@@ -5,6 +5,7 @@ angular.module('App').config(($stateProvider) => {
       pccView: {
         templateUrl: 'dedicatedCloud/license/dedicatedCloud-license.html',
         controller: 'DedicatedCloudLicencesCtrl',
+        constrollerAs: '$ctrl',
       },
     },
   });
