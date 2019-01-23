@@ -1,45 +1,83 @@
-angular.module('App').controller('DedicatedCloudLicencesCtrl', ($rootScope, $scope, $state, $stateParams, $translate, constants, DedicatedCloud) => {
-  $scope.licences = {
-    model: null,
-    spla: null,
-    canActive: false,
-  };
-  $scope.loading = {
-    licences: false,
-    error: false,
-  };
+angular
+  .module('App')
+  .controller(
+    'DedicatedCloudLicencesCtrl',
+    class {
+      /* @ngInject */
+      constructor(
+        $rootScope,
+        $scope,
+        $state,
+        $stateParams,
+        $translate,
 
-  $rootScope.$on('datacenter.licences.reload', () => {
-    $scope.loadLicences(true);
-  });
+        constants,
+        DedicatedCloud,
+      ) {
+        this.$rootScope = $rootScope;
+        this.$scope = $scope;
+        this.$state = $state;
+        this.$stateParams = $stateParams;
+        this.$translate = $translate;
 
-  $scope.loadLicences = function () {
-    $scope.loading.licences = true;
-    DedicatedCloud.getDatacenterLicence($stateParams.productId).then(
-      (datacenter) => {
-        $scope.licences.spla = datacenter.isSplaActive;
-        $scope.licences.canActive = datacenter.canOrderSpla;
-        $scope.loading.licences = false;
-      },
-      (data) => {
-        $scope.loading.licences = false;
-        $scope.loading.error = true;
-        $scope.setMessage($translate.instant('dedicatedCloud_dashboard_loading_error'), angular.extend(data, { type: 'ERROR' }));
-      },
-    );
-  };
+        this.constants = constants;
+        this.DedicatedCloud = DedicatedCloud;
+      }
 
-  $scope.canBeActivatedSpla = function () {
-    return $scope.licences.spla === false && $scope.licences.canActive;
-  };
+      $onInit() {
+        this.$scope.licences = {
+          model: null,
+          spla: null,
+          canActive: false,
+        };
 
-  $scope.enableLicense = function () {
-    if (constants.target === 'US') {
-      $state.go('app.dedicatedClouds.license.enable');
-    } else {
-      $scope.setAction('license/enable/dedicatedCloud-license-enable');
-    }
-  };
+        this.$scope.loading = {
+          licences: false,
+          error: false,
+        };
 
-  $scope.loadLicences();
-});
+        this.$rootScope.$on(
+          'datacenter.licences.reload',
+          () => {
+            this.$scope.loadLicences(true);
+          },
+        );
+
+        this.$scope.loadLicences = () => this.loadLicences();
+        this.$scope.canBeActivatedSpla = () => this.canBeActivatedSpla();
+        this.$scope.enableLicense = () => this.enableLicense();
+
+        return this.loadLicences();
+      }
+
+      loadLicences() {
+        this.$scope.loading.licences = true;
+
+        return this.DedicatedCloud
+          .getDatacenterLicence(this.$stateParams.productId)
+          .then((datacenter) => {
+            this.$scope.licences.spla = datacenter.isSplaActive;
+            this.$scope.licences.canActive = datacenter.canOrderSpla;
+          })
+          .catch((data) => {
+            this.$scope.loading.error = true;
+            this.$scope.setMessage(this.$translate.instant('dedicatedCloud_dashboard_loading_error'), angular.extend(data, { type: 'ERROR' }));
+          })
+          .finally(() => {
+            this.$scope.loading.licences = false;
+          });
+      }
+
+      canBeActivatedSpla() {
+        return this.$scope.licences.spla === false && this.$scope.licences.canActive;
+      }
+
+      enableLicense() {
+        if (this.constants.target === 'US') {
+          this.$state.go('app.dedicatedClouds.license.enable');
+        } else {
+          this.$scope.setAction('license/enable/dedicatedCloud-license-enable');
+        }
+      }
+    },
+  );
