@@ -1,3 +1,13 @@
+<a name="10.9.2"></a>
+## [10.9.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.9.1...v10.9.2) (2019-01-23)
+
+
+### Bug Fixes
+
+* **dedicated.server:** infinite loading when installation error ([93c07f1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/93c07f1))
+
+
+
 <a name="10.9.1"></a>
 ## [10.9.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.9.0...v10.9.1) (2019-01-17)
 
