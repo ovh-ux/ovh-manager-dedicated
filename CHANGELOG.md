@@ -1,3 +1,19 @@
+<a name="10.9.4"></a>
+## [10.9.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.9.3...v10.9.4) (2019-01-23)
+
+
+### Bug Fixes
+
+* **account.billing.autorenew:**  rearrange payment frequency table ([#905](https://github.com/ovh-ux/ovh-manager-dedicated/issues/905)) ([4071d2b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4071d2b))
+* **account.user.ssh:** removed cache ([#923](https://github.com/ovh-ux/ovh-manager-dedicated/issues/923)) ([b795388](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b795388))
+* **config:** replace invalid guide link on IPMI ([#910](https://github.com/ovh-ux/ovh-manager-dedicated/issues/910)) ([c3f9e19](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c3f9e19))
+* **configuration:** change message for FR subsidiary ([#866](https://github.com/ovh-ux/ovh-manager-dedicated/issues/866)) ([3aacf20](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3aacf20))
+* **i18n:** retrieve translations ([47bc300](https://github.com/ovh-ux/ovh-manager-dedicated/commit/47bc300))
+* **i18n:** submit translations ([77bfeae](https://github.com/ovh-ux/ovh-manager-dedicated/commit/77bfeae))
+* **ip.order:** improve modal form ([#921](https://github.com/ovh-ux/ovh-manager-dedicated/issues/921)) ([a873f20](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a873f20))
+
+
+
 <a name="10.9.3"></a>
 ## [10.9.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.9.2...v10.9.3) (2019-01-23)
 
