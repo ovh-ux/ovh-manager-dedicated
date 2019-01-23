@@ -8,7 +8,7 @@ angular.module('App').controller('DedicatedCloudUserEnableCtrl', ($scope, $state
           // Start Polling
         },
         (err) => {
-          $scope.setMessage($translate.instant('dedicatedCloud_USER_enable_fail', { t0: $scope.user.name }), { message: err.data, type: 'ERROR' });
+          $scope.setMessage($translate.instant('dedicatedCloud_USER_enable_fail', { t0: $scope.user.name }), { message: err, type: 'ERROR' });
         },
       )
       .finally(() => {
