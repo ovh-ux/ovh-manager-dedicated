@@ -54,10 +54,7 @@ angular
         this.$scope.loading.licences = true;
 
         return this.DedicatedCloud
-          .getDatacenterLicence(
-            this.$stateParams.productId,
-            this.serviceUsesAgora,
-          )
+          .getDatacenterLicence(this.$stateParams.productId, this.serviceUsesAgora)
           .then((datacenter) => {
             this.$scope.licences.spla = datacenter.isSplaActive;
             this.$scope.licences.canActive = datacenter.canOrderSpla;
