@@ -221,6 +221,7 @@ angular
         let messageToSend = message;
 
         if (!data && !this.$scope.dedicatedCloud.isExpired) {
+          this.$scope.alertType = 'alert-success';
           this.$scope.message = messageToSend;
           return;
         }
