@@ -43,7 +43,13 @@ class DedicatedCloudSecurityPolicyAccessCtrl {
         );
       })
       .catch((err) => {
-        this.$scope.setMessage(this.$translate.instant('dedicatedCloud_configuration_SECURITY_policy_access_fail'), err.data);
+        this.$scope.setMessage(
+          this.$translate.instant('dedicatedCloud_configuration_SECURITY_policy_access_fail'),
+          {
+            ...err,
+            type: 'error',
+          },
+        );
       });
   }
 }

@@ -28,7 +28,13 @@ class DedicatedCloudSecurityPolicyLogoutCtrl {
         );
       })
       .catch((err) => {
-        this.$scope.setMessage(this.$translate.instant('dedicatedCloud_configuration_SECURITY_policy_logout_fail'), err.data);
+        this.$scope.setMessage(
+          this.$translate.instant('dedicatedCloud_configuration_SECURITY_policy_logout_fail'),
+          {
+            ...err,
+            type: 'error',
+          },
+        );
       });
   }
 }
