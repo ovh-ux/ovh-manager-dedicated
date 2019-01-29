@@ -56,7 +56,7 @@ angular
       updateDescription() {
         this.updating = true;
 
-        this.updateName()
+        return this.updateName()
           .then(() => {
             this.$uibModalInstance.close(this.newValue);
           })
