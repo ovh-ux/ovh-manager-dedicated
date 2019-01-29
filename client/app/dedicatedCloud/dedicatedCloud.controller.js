@@ -86,7 +86,6 @@ angular
         this.$scope.stopNotification = notificationType => this.stopNotification(notificationType);
         this.$scope.showHdsReadyNotificationIfRequired = notification => this
           .showHdsReadyNotificationIfRequired(notification);
-        this.$scope.getUserAccessPolicyLabel = () => this.getUserAccessPolicyLabel();
 
         return this.loadDedicatedCloud();
       }
@@ -304,19 +303,6 @@ angular
         if (_.startsWith(this.$scope.dedicatedCloud.commercialRange.startsWith, '2014') || _.startsWith(this.$scope.dedicatedCloud.commercialRange, '2016')) {
           this.showNotificationIfRequired(notification);
         }
-      }
-
-      getUserAccessPolicyLabel() {
-        const policy = _.get(
-          this.$scope,
-          'dedicatedCloud.userAccessPolicy',
-        );
-
-        if (policy) {
-          return this.$translate.instant(`dedicatedCloud_user_access_policy_${_.snakeCase(policy).toUpperCase()}`);
-        }
-
-        return '-';
       }
     },
   );

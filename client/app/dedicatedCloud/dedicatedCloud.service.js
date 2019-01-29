@@ -78,6 +78,26 @@ angular
           );
       }
 
+      async retrievingFullService(serviceName) {
+        return this.$q
+          .all({
+            currentProduct: this.getSelected(serviceName, true),
+            currentProductDescription: this.getDescription(serviceName),
+            currentProductServiceInfos: this.OvhApiDedicatedCloud.v6()
+              .getServiceInfos({ serviceName }).$promise,
+          })
+          .then(({
+            currentProduct,
+            currentProductDescription,
+            currentProductServiceInfos,
+          }) => ({
+            ...currentProduct,
+            ...currentProductDescription,
+            isExpired: currentProduct.status === 'expired',
+            serviceInfos: currentProductServiceInfos,
+          }));
+      }
+
       updateDescription(
         serviceName,
         description,

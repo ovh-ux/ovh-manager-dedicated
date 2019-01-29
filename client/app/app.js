@@ -9,6 +9,7 @@ import ovhContacts from '@ovh-ux/ng-ovh-contacts';
 
 import config from './config/config';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
+import dedicatedCloudDashboardModuleName from './dedicatedCloud/dashboard';
 
 const appDeps = [
   'ovh-angular-proxy-request',
@@ -58,6 +59,7 @@ const appDeps = [
   'xeditable',
   ovhPaymentMethod,
   ovhContacts,
+  dedicatedCloudDashboardModuleName,
 ];
 
 if (WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca') {
