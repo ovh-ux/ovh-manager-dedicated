@@ -57,14 +57,12 @@ angular
         this.updating = true;
 
         return this.updateName()
-          .then(() => {
-            this.$uibModalInstance.close(this.newValue);
-          })
           .catch(err => this.Alerter.error(
             `${this.$translate.instant(`${this.modalContextTitle}_edit_error`, { t0: this.newValue })}. ${_.get(err, 'message')}`,
             'dedicatedCloud',
           ))
           .finally(() => {
+            this.$uibModalInstance.close(this.newValue);
             this.updating = false;
           });
       }
