@@ -101,7 +101,7 @@ export default class BillingPaymentMethodCtrl {
         return null;
       }
 
-      this.paymentMethods.forEach((methodParam) => {
+      this.billingPaymentMethodSection.sharedPaymentMethods.forEach((methodParam) => {
         const method = methodParam;
 
         if (method.paymentMethodId === paymentMethod.paymentMethodId) {
