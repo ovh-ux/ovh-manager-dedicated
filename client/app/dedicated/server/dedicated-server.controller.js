@@ -251,6 +251,8 @@ angular.module('App').controller('ServerCtrl', (
         $scope.loadingServerInformations = false;
         $scope.isHousing = isHousing(server);
         $scope.serviceInfos = serviceInfos;
+
+        $scope.$broadcast('dedicated.server.refreshTabs');
       })
       .catch((data) => {
         $scope.loadingServerInformations = false;
