@@ -73,13 +73,12 @@
 
             <div data-ng-show="!loading.save">
                 <p class="text-center">
-                    <span data-ng-bind-html="'ip_table_manage_move_ipblock_resume' | translate:{ t0: data.ipBlock.ipBlock, t1: (('ip_service' + model.serviceName.service | translate) || model.serviceName.service) }">
+                    <span data-translate="ip_table_manage_move_ipblock_resume"
+                        data-translate-values="{ t0: data.ipBlock.ipBlock, t1: model.serviceName.service }">
                     </span>
                     <span data-ng-if="model.nexthop"
                           data-translate="ip_table_manage_move_ipblock_resume_on"
-                          data-translate-values="{
-                              t0: ('ip_service' + model.nexthop | translate) || model.nexthop
-                          }">
+                          data-translate-values="{t0: model.nexthop}">
                     </span> ?
                 </p>
                 <p class="alert alert-warning"
