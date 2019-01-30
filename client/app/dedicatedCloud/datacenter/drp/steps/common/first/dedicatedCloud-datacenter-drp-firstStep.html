@@ -1,0 +1,59 @@
+<div class="text-center"
+     data-ng-if="$ctrl.loading">
+    <oui-spinner></oui-spinner>
+</div>
+
+<div data-ng-if="!$ctrl.loading">
+    <p data-translate="dedicatedCloud_datacenter_pcc_name"
+       data-translate-values="{ 'pcc': $ctrl.drpInformations.primaryPcc.description }"></p>
+    <form name="$ctrl.primaryPcc"
+          novalidate>
+        <oui-field data-label="{{:: 'dedicatedCloud_datacenter_main_datacenter_name' | translate }}"
+                   data-size="l">
+            <oui-select name="datacenterId"
+                        data-match="formattedName"
+                        data-model="$ctrl.drpInformations.primaryDatacenter"
+                        data-items="$ctrl.availableDatacenters"
+                        data-placeholder="{{:: 'dedicatedCloud_datacenter_main_datacenter_name_placeholder' | translate }}"
+                        data-disabled="!$ctrl.drpInformations.hasDatacenterWithoutHosts">
+            </oui-select>
+        </oui-field>
+
+        <div data-ng-if="$ctrl.availableIpAddress.length === 0">
+            <p class="oui-label"
+               data-translate="dedicatedCloud_datacenter_main_ip_address_pool_available"></p>
+            <span data-translate="dedicatedCloud_datacenter_order_ip"></span>
+            <button class="oui-button oui-button_link px-0 py-0"
+                    type="button"
+                    data-ng-click="$ctrl.openModalOrderIpBlock()">
+                <span data-translate="global_feedback_contact_link"></span>
+            </button>
+        </div>
+        <oui-field data-label="{{:: 'dedicatedCloud_datacenter_main_ip_address_pool_available' | translate }}"
+                   data-size="l"
+                   data-ng-if="$ctrl.availableIpAddress.length > 0">
+            <oui-select name="primaryEndpointIp"
+                        data-match="ip"
+                        data-model="$ctrl.selectedIpAddress"
+                        data-on-change="$ctrl.drpInformations.primaryEndpointIp = modelValue.ip"
+                        data-items="$ctrl.availableIpAddress"
+                        data-disabled="!$ctrl.drpInformations.primaryDatacenter"
+                        data-placeholder="{{:: 'dedicatedCloud_datacenter_main_ip_address_pool_available_placeholder' | translate }}">
+            </oui-select>
+        </oui-field>
+    </form>
+
+    <div class="mt-5">
+        <oui-button data-variant="secondary"
+                    data-variant-nav="previous"
+                    data-on-click="$ctrl.goToPreviousStep()">
+            <span data-translate="common_previous"></span>
+        </oui-button>
+        <oui-button data-variant="primary"
+                    data-variant-nav="next"
+                    data-on-click="$ctrl.goToNextStep()"
+                    data-disabled="!$ctrl.selectedIpAddress || !$ctrl.drpInformations.primaryDatacenter || $ctrl.drpInformations.hasDatacenterWithoutHosts">
+            <span data-translate="common_next"></span>
+        </oui-button>
+    </div>
+</div>

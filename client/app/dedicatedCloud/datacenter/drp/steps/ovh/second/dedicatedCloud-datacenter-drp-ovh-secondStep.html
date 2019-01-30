@@ -1,0 +1,74 @@
+<div class="text-center"
+     data-ng-if="$ctrl.loading">
+    <oui-spinner></oui-spinner>
+</div>
+
+<div data-ng-if="!$ctrl.loading">
+    <form name="$ctrl.ovhForm"
+          novalidate>
+        <oui-field class="d-inline-block"
+                   data-label="{{:: 'dedicatedCloud_datacenter_secondary_pcc_name' | translate }}"
+                   data-size="l">
+            <oui-select name="secondaryServiceName"
+                        data-match="description"
+                        data-model="$ctrl.selectedSecondaryPcc"
+                        data-items="$ctrl.availablePccs"
+                        data-on-change="$ctrl.updateOptions(modelValue)"
+                        data-placeholder="{{:: 'dedicatedCloud_datacenter_secondary_pcc_name_placeholder' | translate }}"
+                        data-disabled="$ctrl.fetchingPccOptions">
+            </oui-select>
+        </oui-field>
+        <oui-spinner class="align-top"
+                     data-size="s"
+                     data-ng-if="$ctrl.fetchingPccOptions"></oui-spinner>
+
+        <oui-field data-label="{{:: 'dedicatedCloud_datacenter_secondary_datacenter_list' | translate }}"
+                   data-size="l">
+            <oui-select name="secondaryDatacenterId"
+                        data-match="formattedName"
+                        data-model="$ctrl.drpInformations.secondaryDatacenter"
+                        data-items="$ctrl.availableDatacenters"
+                        data-disabled="!$ctrl.selectedSecondaryPcc || $ctrl.fetchingPccOptions"
+                        data-placeholder="{{:: 'dedicatedCloud_datacenter_secondary_datacenter_name_placeholder' | translate }}">
+            </oui-select>
+        </oui-field>
+
+        <div data-ng-if="$ctrl.availableIpAddress.length === 0">
+            <p class="oui-label"
+               data-translate="dedicatedCloud_datacenter_secondary_ip_address_pool_available"></p>
+            <span data-translate="dedicatedCloud_datacenter_order_ip_secondary_pcc"></span>
+            <button class="oui-button oui-button_link px-0 py-0"
+                    type="button"
+                    data-ng-click="$ctrl.openModalOrderIpBlock()"
+                    data-ng-disabled="$ctrl.fetchingPccOptions">
+                <span data-translate="global_feedback_contact_link"></span>
+            </button>
+        </div>
+        <oui-field data-label="{{:: 'dedicatedCloud_datacenter_secondary_ip_address_pool_available' | translate }}"
+                   data-size="l"
+                   data-ng-if="$ctrl.availableIpAddress.length > 0">
+            <oui-select name="secondaryEndpointIp"
+                        data-match="ip"
+                        data-model="$ctrl.selectedSecondaryIpAddress"
+                        data-items="$ctrl.availableIpAddress"
+                        data-disabled="$ctrl.fetchingPccOptions"
+                        data-placeholder="{{:: 'dedicatedCloud_datacenter_secondary_ip_address_pool_available_placeholder' | translate }}"
+                        data-on-change="$ctrl.drpInformations.secondaryEndpointIp = modelValue.ip">
+            </oui-select>
+        </oui-field>
+    </form>
+
+    <div class="mt-5">
+        <oui-button data-variant="secondary"
+                    data-variant-nav="previous"
+                    data-on-click="$ctrl.goToPreviousStep()">
+            <span data-translate="common_previous"></span>
+        </oui-button>
+        <oui-button data-variant="primary"
+                    data-variant-nav="next"
+                    data-on-click="$ctrl.goToNextStep()"
+                    data-disabled="!$ctrl.isStepValid()">
+            <span data-translate="common_next"></span>
+        </oui-button>
+    </div>
+</div>
