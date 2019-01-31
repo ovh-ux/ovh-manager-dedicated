@@ -72,6 +72,10 @@ export default class BillingPaymentMethodAddCtrl {
         isVisible: () => this.constants.target === 'US',
         isLastStep: () => true,
         onFocus: () => {
+          if (this.BillingVantivInstance.instance) {
+            this.BillingVantivInstance.clear();
+          }
+
           this.BillingVantivInstance.instanciate({
             height: '75px',
           });
@@ -223,9 +227,6 @@ export default class BillingPaymentMethodAddCtrl {
       })
       .finally(() => {
         this.loading.add = false;
-        if (this.constants.target === 'US') {
-          this.BillingVantivInstance.clear();
-        }
         this.$onInit();
       });
   }
