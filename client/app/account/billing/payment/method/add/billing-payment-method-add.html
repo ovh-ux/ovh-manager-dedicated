@@ -45,6 +45,10 @@
                     <div data-ng-if="$ctrl.model.selectedPaymentMethodType">
                         <div data-ng-switch="$ctrl.model.selectedPaymentMethodType.paymentType.value">
                             <p data-ng-switch-when="CREDIT_CARD"
+                               data-ng-if="$ctrl.constants.target === 'EU'"
+                               data-translate="billing_payment_method_add_credit_card_selected_explain">
+                            </p>
+                            <p data-ng-switch-when="CREDIT_CARD"
                                data-translate="billing_payment_method_add_credit_card_selected">
                             </p>
                             <p data-ng-switch-when="CREDIT_CARD"
