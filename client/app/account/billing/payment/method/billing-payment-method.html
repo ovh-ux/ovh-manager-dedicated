@@ -105,7 +105,7 @@
                 <oui-action-menu-item data-text="{{ :: 'billing_payment_method_table_action_set_default' | translate }}"
                                       data-aria-label="{{ :: 'billing_payment_method_table_action_set_default' | translate }}"
                                       data-disabled="(
-                                          $row.paymentType.value === 'creditCard' && $row.status.value !== 'valid')
+                                          $row.paymentType.value === 'CREDIT_CARD' && $row.status.value !== 'VALID')
                                           || (['BANK_ACCOUNT', 'DEFERRED_PAYMENT_ACCOUNT'].indexOf($row.paymentType.value) > -1 && $row.status.value === 'PENDING_VALIDATION')"
                                       data-on-click="$ctrl.onSetDefaultPaymentMethodBtnClick($row)">
                 </oui-action-menu-item>

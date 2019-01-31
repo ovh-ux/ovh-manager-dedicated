@@ -1,3 +1,20 @@
+<a name="10.10.0"></a>
+# [10.10.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.9.4...v10.10.0) (2019-01-30)
+
+
+### Bug Fixes
+
+* **i18n:** retrieve translations ([e9408d8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e9408d8))
+* **i18n:** submit translations ([1fa1f19](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1fa1f19))
+* **translation:** incorrect translation while moving IP ([51d5377](https://github.com/ovh-ux/ovh-manager-dedicated/commit/51d5377)), closes [#MBE-238](https://github.com/ovh-ux/ovh-manager-dedicated/issues/MBE-238)
+
+
+### Features
+
+* **account.user.contacts:** support kubernetes ([#941](https://github.com/ovh-ux/ovh-manager-dedicated/issues/941)) ([e3d3992](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e3d3992))
+
+
+
 <a name="10.9.4"></a>
 ## [10.9.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.9.3...v10.9.4) (2019-01-23)
 
