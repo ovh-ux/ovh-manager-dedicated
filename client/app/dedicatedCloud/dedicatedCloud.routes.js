@@ -24,8 +24,8 @@ angular
             .then(description => description.generation === '2.0'),
           currentProduct: ($stateParams, DedicatedCloud) => DedicatedCloud
             .retrievingFullService($stateParams.productId),
-          servicePacks: (currentProduct, dedicatedCloudOptions) => dedicatedCloudOptions
-            .retrievingServicePacks(currentProduct),
+          availableServicePacks: (currentProduct, dedicatedCloudOptions) => dedicatedCloudOptions
+            .retrievingAvailableServicePacks(currentProduct),
           currentUser: User => User.getUser(),
         },
       },

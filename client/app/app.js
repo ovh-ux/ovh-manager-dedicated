@@ -10,6 +10,7 @@ import ovhContacts from '@ovh-ux/ng-ovh-contacts';
 import config from './config/config';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
 import dedicatedCloudDashboardModuleName from './dedicatedCloud/dashboard';
+import dedicatedCloudChangeOptionsModuleName from './dedicatedCloud/change-options';
 
 const appDeps = [
   'ovh-angular-proxy-request',
@@ -60,6 +61,7 @@ const appDeps = [
   ovhPaymentMethod,
   ovhContacts,
   dedicatedCloudDashboardModuleName,
+  dedicatedCloudChangeOptionsModuleName,
 ];
 
 if (WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca') {

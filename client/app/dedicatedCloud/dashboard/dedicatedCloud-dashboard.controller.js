@@ -17,7 +17,8 @@ export default class {
   }
 
   $onInit() {
-    this.options = this.servicePacks.find(sp => sp.isAssociatedToService).options;
+    this.options = Object.values(this.availableServicePacks)
+      .find(sp => sp.isAssociatedToService).options;
     this.setAction = (action, data) => this.$scope.$parent.setAction(action, data);
   }
 

@@ -10,7 +10,7 @@ angular
         this.OvhHttp = OvhHttp;
       }
 
-      async retrievingAvailableServicePackName(serviceName) {
+      async retrievingAvailableServicePackNames(serviceName) {
         return this.OvhHttp.get(
           `/dedicatedCloud/${serviceName}/servicePacks`,
           { rootPath: 'apiv6' },
@@ -26,23 +26,29 @@ angular
         return options;
       }
 
-      async retrievingServicePacks({ serviceName, servicePackAssociatedToService }) {
+      async retrievingAvailableServicePacks({ serviceName, servicePackAssociatedToService }) {
         const actualAssociatedServicePack = servicePackAssociatedToService
           || await this.DedicatedCloud
             .getDescription(serviceName)
             .then(({ servicePackName }) => servicePackName);
 
-        return this.$q.all((await this.retrievingAvailableServicePackName(serviceName))
+        const servicePacks = await this.$q.all((await this
+          .retrievingAvailableServicePackNames(serviceName))
           .map(servicePackName => this
-            .retrievingServicePackOptionNames(
-              serviceName,
-              servicePackName,
-            )
+            .retrievingServicePackOptionNames(serviceName, servicePackName)
             .then(servicePackOptions => ({
               isAssociatedToService: servicePackName === actualAssociatedServicePack,
               name: servicePackName,
               options: servicePackOptions,
             }))));
+
+        return servicePacks.reduce(
+          (previousValue, currentValue) => ({
+            ...previousValue,
+            [currentValue.name]: currentValue,
+          }),
+          {},
+        );
       }
     },
   );
