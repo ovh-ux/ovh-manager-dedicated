@@ -1,3 +1,16 @@
+<a name="10.10.1"></a>
+## [10.10.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.0...v10.10.1) (2019-01-31)
+
+
+### Bug Fixes
+
+* **account.billing.payment.add:** us payment add ([8690acb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8690acb))
+* **billing.payment:** clear vantiv iframe if already exist ([2a416aa](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2a416aa))
+* **billing.payment.method:** disbale default credit card with bad status ([eb0cb42](https://github.com/ovh-ux/ovh-manager-dedicated/commit/eb0cb42))
+* **dedicated.server:** display tabs on reinstall error ([cc3e161](https://github.com/ovh-ux/ovh-manager-dedicated/commit/cc3e161))
+
+
+
 <a name="10.10.0"></a>
 # [10.10.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.9.4...v10.10.0) (2019-01-30)
 
