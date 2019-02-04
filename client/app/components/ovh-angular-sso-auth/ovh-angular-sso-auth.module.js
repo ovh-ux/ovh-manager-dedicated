@@ -45,5 +45,5 @@ angular
     ]);
 
     $httpProvider.interceptors.push('serviceTypeInterceptor');
-    $httpProvider.interceptors.push('ssoAuthInterceptor');
+    $httpProvider.interceptors.push('OvhSsoAuthInterceptor');
   });

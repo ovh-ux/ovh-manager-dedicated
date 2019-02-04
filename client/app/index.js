@@ -60,8 +60,6 @@ import 'script-loader!@bower_components/angular-ui-validate/dist/validate.min.js
 import 'script-loader!ovh-angular-user-pref/dist/ovh-angular-user-pref.min.js';
 import 'script-loader!@bower_components/ovh-angular-browser-alert/dist/ovh-angular-browser-alert.js';
 import 'script-loader!@bower_components/randexp/build/randexp.min.js';
-import 'ovh-angular-sso-auth';
-import 'ovh-angular-sso-auth-modal-plugin';
 import 'script-loader!ui-select/dist/select.min.js';
 import 'angular-resource';
 import 'script-loader!jsurl/lib/jsurl.js';
