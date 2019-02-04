@@ -1,3 +1,15 @@
+<a name="10.10.2"></a>
+## [10.10.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.1...v10.10.2) (2019-02-04)
+
+
+### Bug Fixes
+
+* **i18n:** retrieve translations ([e7485c5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e7485c5))
+* **i18n:** submit translations ([addaf6d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/addaf6d))
+* **navbar:** revamp style and texts ([#877](https://github.com/ovh-ux/ovh-manager-dedicated/issues/877)) ([531a33e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/531a33e))
+
+
+
 <a name="10.10.1"></a>
 ## [10.10.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.0...v10.10.1) (2019-01-31)
 
