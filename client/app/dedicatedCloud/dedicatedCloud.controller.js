@@ -11,6 +11,7 @@ angular
         $state,
         $stateParams,
         $timeout,
+        $transitions,
         $translate,
         $uibModal,
 
@@ -27,6 +28,7 @@ angular
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.$timeout = $timeout;
+        this.$transitions = $transitions;
         this.$translate = $translate;
         this.$uibModal = $uibModal;
 
@@ -39,6 +41,20 @@ angular
       }
 
       $onInit() {
+        this.$transitions.onStart(
+          {},
+          () => {
+            this.stateIsChanging = true;
+          },
+        );
+
+        this.$transitions.onSuccess(
+          {},
+          () => {
+            this.stateIsChanging = false;
+          },
+        );
+
         this.$scope.HDS_READY_NOTIFICATION = 'HDS_READY_NOTIFICATION';
 
         this.$scope.alerts = { dashboard: 'dedicatedCloud_alert' };

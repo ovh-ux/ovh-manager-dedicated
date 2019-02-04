@@ -1,9 +1,12 @@
-import bindings from './dedicatedCloud-dashboard.bindings';
 import controller from './dedicatedCloud-dashboard.controller';
-import template from './dedicatedCloud-dashboard.html';
+import template from './dedicatedCloud-dashboard.template.html';
 
 export default {
-  bindings,
+  bindings: {
+    currentService: '<',
+    currentUser: '<',
+    availableServicePacks: '<',
+  },
   controller,
   template,
 };

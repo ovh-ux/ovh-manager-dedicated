@@ -1,4 +1,4 @@
-import dedicatedCloudDashboardModuleName from './dashboard';
+import dedicatedCloudDashboardModuleName from './dashboard/dedicatedCloud-dashboard.index';
 
 angular
   .module('App')
@@ -19,13 +19,20 @@ angular
         reloadOnSearch: false,
         translations: ['.'],
         resolve: {
-          serviceUsesAgora: ($stateParams, DedicatedCloud) => DedicatedCloud
+          serviceUsesAgora: (
+            $stateParams,
+            DedicatedCloud,
+          ) => DedicatedCloud
             .getDescription($stateParams.productId)
             .then(description => description.generation === '2.0'),
-          currentProduct: ($stateParams, DedicatedCloud) => DedicatedCloud
-            .retrievingFullService($stateParams.productId),
-          availableServicePacks: (currentProduct, dedicatedCloudOptions) => dedicatedCloudOptions
-            .retrievingAvailableServicePacks(currentProduct),
+          currentService: (
+            $stateParams,
+            DedicatedCloud,
+          ) => DedicatedCloud.retrievingFullService($stateParams.productId),
+          availableServicePacks: (
+            currentService,
+            dedicatedCloudOptions,
+          ) => dedicatedCloudOptions.retrievingAvailableServicePacks(currentService),
           currentUser: User => User.getUser(),
         },
       },

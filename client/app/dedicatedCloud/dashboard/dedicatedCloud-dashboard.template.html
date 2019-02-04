@@ -7,7 +7,7 @@
             data-heading="{{:: 'dedicatedCloud_information_title' | translate }}">
             <oui-tile-definition
                 data-term="{{:: 'dedicatedCloud_description' | translate }}"
-                data-description="{{ $ctrl.currentProduct.description }}">
+                data-description="{{ $ctrl.currentService.description }}">
                 <oui-action-menu
                     aria-label="{{:: 'menu_action_label' | translate: { t0: ('dedicatedCloud_description' | translate) } }}"
                     data-compact
@@ -22,10 +22,10 @@
                 data-description="{{:: $ctrl.buildDescription() }}"></oui-tile-definition>
             <oui-tile-definition
                 data-term="{{:: 'dedicatedCloud_commercialRange' | translate }}"
-                data-description="{{:: $ctrl.currentProduct.commercialRange }}"></oui-tile-definition>
+                data-description="{{:: $ctrl.currentService.commercialRange }}"></oui-tile-definition>
             <oui-tile-definition
                 data-term="{{:: 'dedicatedCloud_pcc_zone' | translate }}"
-                data-description="{{:: $ctrl.currentProduct.location }}"></oui-tile-definition>
+                data-description="{{:: $ctrl.currentService.location }}"></oui-tile-definition>
             <oui-tile-definition
                 data-term="{{:: 'dedicatedCloud_access' | translate }}"
                 data-description="{{:: $ctrl.getUserAccessPolicyLabel() }}"></oui-tile-definition>
@@ -36,36 +36,36 @@
             </oui-tile-definition>
             <oui-tile-definition
                 data-term="{{:: 'dedicatedCloud_datacenter_count' | translate }}"
-                data-description="{{:: $ctrl.currentProduct.datacenterCount }}"></oui-tile-definition>
+                data-description="{{:: $ctrl.currentService.datacenterCount }}"></oui-tile-definition>
             <oui-tile-definition
                 data-term="{{:: 'dedicatedCloud_nb_bloc_IP_ripe' | translate }}">
                 <oui-tile-description
-                    data-ng-if="$ctrl.currentProduct.ipRipeCount === 0"
+                    data-ng-if="$ctrl.currentService.ipRipeCount === 0"
                     data-translate="dedicatedCloud_nb_bloc_IP_no_data"></oui-tile-description>
                 <oui-tile-description
-                    data-ng-if="$ctrl.currentProduct.ipRipeCount > 0"
-                    data-ng-bind="$ctrl.currentProduct.ipRipeCount"></oui-tile-description>
+                    data-ng-if="$ctrl.currentService.ipRipeCount > 0"
+                    data-ng-bind="$ctrl.currentService.ipRipeCount"></oui-tile-description>
                 <oui-action-menu
                     aria-label="{{:: 'menu_action_label' | translate:{ t0: ('dedicatedCloud_order_block' | translate) } }}"
                     data-compact
                     data-align="end">
                     <oui-action-menu-item
                         data-text="{{:: 'dedicatedCloud_order_block' | translate }}"
-                        data-ui-sref="app.ip({ serviceName: $ctrl.currentProduct.name })">
+                        data-ui-sref="app.ip({ serviceName: $ctrl.currentService.name })">
                     </oui-action-menu-item>
                 </oui-action-menu>
             </oui-tile-definition>
             <oui-tile-definition
-                data-ng-if="$ctrl.currentProduct.ipArinCount > 0"
+                data-ng-if="$ctrl.currentService.ipArinCount > 0"
                 data-term="{{:: 'dedicatedCloud_nb_bloc_IP_arin' | translate }}"
-                data-definition="{{:: $ctrl.currentProduct.ipArinCount }}">
+                data-definition="{{:: $ctrl.currentService.ipArinCount }}">
                 <oui-action-menu
                     aria-label="{{:: 'menu_action_label' | translate:{ t0: ('dedicatedCloud_order_block' | translate) } }}"
                     data-compact
                     data-align="end">
                     <oui-action-menu-item
                         data-text="{{:: 'dedicatedCloud_order_block' | translate }}"
-                        data-ui-sref="app.ip({ serviceName: $ctrl.currentProduct.name })">
+                        data-ui-sref="app.ip({ serviceName: $ctrl.currentService.name })">
                     </oui-action-menu-item>
                 </oui-action-menu>
             </oui-tile-definition>
@@ -75,18 +75,18 @@
                         class="d-block"
                         target="_blank"
                         rel="noopener"
-                        data-ng-href="{{:: $ctrl.currentProduct.vScopeUrl }}">
+                        data-ng-href="{{:: $ctrl.currentService.vScopeUrl }}">
                         <span data-translate="dedicatedCloud_datacenter_go_vscope"></span>
                         <span
                             class="fa fa-external-link"
-                                    aria-hidden="true"></span>
+                            aria-hidden="true"></span>
                     </a>
                     <a
                         class="d-block"
                         target="_blank"
                         rel="noopener"
-                        data-ng-if=":: $ctrl.currentProduct.webInterfaceUrl"
-                        data-ng-href="{{:: $ctrl.currentProduct.webInterfaceUrl}}">
+                        data-ng-if=":: $ctrl.currentService.webInterfaceUrl"
+                        data-ng-href="{{:: $ctrl.currentService.webInterfaceUrl}}">
                         <span data-translate="dedicatedCloud_datacenter_go_web_interface"></span>
                         <span
                             class="fa fa-external-link"
@@ -95,8 +95,8 @@
                     <a class="d-block"
                         target="_blank"
                         rel="noopener"
-                        data-ng-if=":: $ctrl.currentProduct.certifiedInterfaceUrl && $ctrl.currentProduct.advancedSecurity"
-                        data-ng-href="{{:: $ctrl.currentProduct.certifiedInterfaceUrl }}">
+                        data-ng-if=":: $ctrl.currentService.certifiedInterfaceUrl && $ctrl.currentService.advancedSecurity"
+                        data-ng-href="{{:: $ctrl.currentService.certifiedInterfaceUrl }}">
                         <span data-translate="dedicatedCloud_datacenter_go_certified_web_interface"></span>
                         <span
                             class="fa fa-external-link"
@@ -112,24 +112,45 @@
         <oui-tile
             class="h-100"
             data-heading="{{:: 'dedicatedCloud_options_title' | translate }}">
-            <oui-tile-definition
-                data-term="Nom du Service Pack"
-                data-description="{{:: ('dedicatedCloud_options_name_' + $ctrl.currentProduct.servicePackName) | translate }}">
+            <oui-tile-definition data-term="Options activées">
+                <oui-tile-description>
+                    <span data-ng-if="!$ctrl.optionsTheServiceAlreadyHas">Aucune</span>
+                    <span
+                        data-ng-if="$ctrl.optionsTheServiceAlreadyHas.length === 1"
+                        data-ng-bind="'dedicatedCloud_options_name_' + $ctrl.optionsTheServiceAlreadyHas[0].name | translate"></span>
+                    <ul data-ng-if="$ctrl.optionsTheServiceAlreadyHas.length > 1">
+                        <li
+                            data-ng-repeat="option in $ctrl.optionsTheServiceAlreadyHas track by option.name"
+                            data-ng-bind="'dedicatedCloud_options_name_' + option.name | translate"></li>
+                    </ul>
+                </oui-tile-description>
                 <oui-action-menu
                     aria-label="{{:: 'menu_action_label' | translate: { t0: 'service pack' } }}"
                     data-compact
                     data-align="end">
                     <oui-action-menu-item
-                        data-text="Changer d'options"
-                        data-ui-sref=".changeOptions">
+                        data-text="Activer une option"
+                        data-disabled="$ctrl.availableOptionsToActivate.length === 0"
+                        data-ui-sref=".optionActivation({ allExistingOptions: $ctrl.allExistingOptions })">
                     </oui-action-menu-item>
                 </oui-action-menu>
             </oui-tile-definition>
             <oui-tile-definition
-                data-term="Options actuelles">
-                <oui-tile-description>
-                    {{ $ctrl.options }}
-                </oui-tile-description>
+                data-term="Certification activée">
+                <oui-tile-description
+                    data-ng-bind="$ctrl.currentSPIsACertification
+                        ? (('dedicatedCloud_options_name_' + currentServicePack.name) | translate)
+                        : 'Aucune certification'"></oui-tile-description>
+                <oui-action-menu
+                    aria-label="{{:: 'menu_action_label' | translate: { t0: 'service pack' } }}"
+                    data-compact
+                    data-align="end">
+                    <oui-action-menu-item
+                        data-disabled="$ctrl.currentSPIsACertification"
+                        data-text="Activer une certification"
+                        data-ui-sref=".certificationActivation">
+                    </oui-action-menu-item>
+                </oui-action-menu>
             </oui-tile-definition>
         </oui-tile>
     </div>
@@ -140,9 +161,9 @@
             class="h-100"
             data-heading="{{:: 'dedicatedCloud_subscription_title' | translate }}">
             <oui-tile-definition
-                data-ng-if="$ctrl.currentProduct.isEnableMonthly"
+                data-ng-if="$ctrl.currentService.isEnableMonthly"
                 data-term="{{:: 'dedicatedCloud_subscription_resource' | translate }}"
-                data-description="{{:: ($ctrl.currentProduct.isEnableMonthly ? 'dedicatedCloud_subscription_resource_yearly' : 'dedicatedCloud_subscription_resource_monthly') | translate }}">
+                data-description="{{:: ($ctrl.currentService.isEnableMonthly ? 'dedicatedCloud_subscription_resource_yearly' : 'dedicatedCloud_subscription_resource_monthly') | translate }}">
                 <oui-action-menu
                     data-aria-label="{{:: 'menu_action_label' | translate:{ t0: ('dedicatedCloud_updateResource_toMonthly' | translate) } }}"
                     data-compact
@@ -172,17 +193,17 @@
                 </oui-action-menu>
             </oui-tile-definition>
             <div
-                data-ng-if="$ctrl.currentProduct.serviceInfos"
+                data-ng-if="$ctrl.currentService.serviceInfos"
                 class="oui-tile__item">
                 <dl class="oui-tile__definition">
                     <dt class="oui-tile__term">
-                        <service-expiration-label data-service-infos="$ctrl.currentProduct.serviceInfos"></service-expiration-label>
+                        <service-expiration-label data-service-infos="$ctrl.currentService.serviceInfos"></service-expiration-label>
                     </dt>
                     <dd class="oui-link">
                         <service-expiration-date
-                            data-service-name="$ctrl.currentProduct.name"
+                            data-service-name="$ctrl.currentService.name"
                             data-service-type="'DEDICATED_CLOUD'"
-                            data-service-infos="$ctrl.currentProduct.serviceInfos"
+                            data-service-infos="$ctrl.currentService.serviceInfos"
                             data-force-hide-renew-action="true"></service-expiration-date>
                     </dd>
                 </dl>

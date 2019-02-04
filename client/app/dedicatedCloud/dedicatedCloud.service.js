@@ -78,22 +78,23 @@ angular
           );
       }
 
-      async retrievingFullService(serviceName) {
+      retrievingFullService(serviceName) {
         return this.$q
           .all({
-            currentProduct: this.getSelected(serviceName, true),
-            currentProductDescription: this.getDescription(serviceName),
+            currentService: this.getSelected(serviceName, true),
+            currentServiceDescription: this.getDescription(serviceName),
             currentProductServiceInfos: this.OvhApiDedicatedCloud.v6()
               .getServiceInfos({ serviceName }).$promise,
           })
           .then(({
-            currentProduct,
-            currentProductDescription,
+            currentService,
+            currentServiceDescription,
             currentProductServiceInfos,
           }) => ({
-            ...currentProduct,
-            ...currentProductDescription,
-            isExpired: currentProduct.status === 'expired',
+            ...currentService,
+            ...currentServiceDescription,
+            usesAgora: currentServiceDescription.generation === '2.0',
+            isExpired: currentService.status === 'expired',
             serviceInfos: currentProductServiceInfos,
           }));
       }

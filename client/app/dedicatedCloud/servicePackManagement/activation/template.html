@@ -1,0 +1,23 @@
+<h2>Activation d'une option</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Fusce finibus nisl vel dolor scelerisque, sit amet imperdiet neque aliquam.
+Sed sagittis, magna vitae hendrerit.</p>
+
+<oui-radio-group data-model="$ctrl.optionToOrder">
+    <oui-radio
+        data-ng-repeat="option in $ctrl.allOptions track by option.value"
+        data-value="option.value">
+        <span data-ng-bind="option.displayValue"></span>
+        <span data-ng-if="option.descriptionUrl">
+            <a
+                data-ng-if="option.descriptionUrl"
+                data-ng-href="{{:: option.descriptionUrl }}">
+                Découvrir cette option
+            </a>
+        </span>
+        <strong data-ng-bind="option.costDifferenceWithCurrentOffer"></strong><strong>€/mois</strong>
+    </oui-radio>
+</oui-radio-group>
+
+<oui-button class="mt-5" variant="primary" text="Confirmer"></oui-button>

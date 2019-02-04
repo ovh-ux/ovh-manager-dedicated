@@ -9,8 +9,10 @@ import ovhContacts from '@ovh-ux/ng-ovh-contacts';
 
 import config from './config/config';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
-import dedicatedCloudDashboardModuleName from './dedicatedCloud/dashboard';
-import dedicatedCloudChangeOptionsModuleName from './dedicatedCloud/change-options';
+import dedicatedCloudDashboardModuleName from './dedicatedCloud/dashboard/dedicatedCloud-dashboard.index';
+import dedicatedCloudCertificationActivationModuleName from './dedicatedCloud/certification-activation';
+import dedicatedCloudServicePackOptionModuleName from './dedicatedCloud/servicePackManagement/servicePackOption/dedicatedCloud-servicePackOption.index';
+import dedicatedCloudServicePackModuleName from './dedicatedCloud/servicePackManagement/servicePack/dedicatedCloud-servicePack.index';
 
 const appDeps = [
   'ovh-angular-proxy-request',
@@ -61,7 +63,9 @@ const appDeps = [
   ovhPaymentMethod,
   ovhContacts,
   dedicatedCloudDashboardModuleName,
-  dedicatedCloudChangeOptionsModuleName,
+  dedicatedCloudCertificationActivationModuleName,
+  dedicatedCloudServicePackOptionModuleName,
+  dedicatedCloudServicePackModuleName,
 ];
 
 if (WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca') {

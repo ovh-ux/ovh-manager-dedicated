@@ -1,5 +1,7 @@
+import { ALL_EXISTING_OPTIONS, OPTION_TYPES } from '../servicePackManagement/dedicatedCloud-option.constants';
+
+/* @ngInject */
 export default class {
-  /* @ngInject */
   constructor(
     $scope,
     $state,
@@ -17,8 +19,30 @@ export default class {
   }
 
   $onInit() {
-    this.options = Object.values(this.availableServicePacks)
-      .find(sp => sp.isAssociatedToService).options;
+    const currentServicePack = this.availableServicePacks[this.currentService.servicePackName];
+
+    this.optionsTheServiceAlreadyHas = currentServicePack.options
+      .map(optionName => ALL_EXISTING_OPTIONS[optionName]);
+
+    this.currentSPIsACertification = ALL_EXISTING_OPTIONS[
+      currentServicePack.name
+    ].type === OPTION_TYPES.certification
+      ? currentServicePack.name
+      : null;
+
+    this.availableOptionsToActivate = Array
+      .from(
+        new Set(
+          _.flatten(
+            Object.values(this.availableServicePacks)
+              .filter(servicePack => servicePack.name !== currentServicePack.name)
+              .map(servicePack => servicePack.options),
+          ),
+        ),
+      )
+      .filter(optionName => ALL_EXISTING_OPTIONS[optionName].type === OPTION_TYPES.option)
+      .filter(optionName => !currentServicePack.options.includes(optionName));
+
     this.setAction = (action, data) => this.$scope.$parent.setAction(action, data);
   }
 
@@ -33,7 +57,7 @@ export default class {
           data: () => ({
             contextTitle: 'dedicatedCloud_description',
             productId: this.$stateParams.productId,
-            value: this.currentProduct.description,
+            value: this.currentService.description,
           }),
         },
       }).result
@@ -44,14 +68,14 @@ export default class {
     return this.$translate.instant(
       'dedicatedCloud_type_template',
       {
-        productName: this.$translate.instant(`dedicatedCloud_type_${this.currentProduct.solution}`),
-        versionDisplayValue: this.currentProduct.solution === 'VSPHERE' && this.currentProduct.version ? ` ${this.currentProduct.version.major}` : '',
+        productName: this.$translate.instant(`dedicatedCloud_type_${this.currentService.solution}`),
+        versionDisplayValue: this.currentService.solution === 'VSPHERE' && this.currentService.version ? ` ${this.currentService.version.major}` : '',
       },
     );
   }
 
   getUserAccessPolicyLabel() {
-    const policy = this.currentProduct.userAccessPolicy;
+    const policy = this.currentService.userAccessPolicy;
     const formattedPolicy = _.snakeCase(policy).toUpperCase();
 
     return _.isString(formattedPolicy) && !_.isEmpty(formattedPolicy)
