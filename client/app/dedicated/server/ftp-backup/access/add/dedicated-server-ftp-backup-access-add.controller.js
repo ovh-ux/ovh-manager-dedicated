@@ -23,7 +23,7 @@ angular.module('App').controller('AddAccessFtpBackupCtrl', class AddAccessFtpBac
   load() {
     return () => {
       this.loading = true;
-      this.Server.getAuthorizableBlocks(this.$stateParams.productId)
+      return this.Server.getAuthorizableBlocks(this.$stateParams.productId)
         .then((list) => {
           this.access.listIp = list;
         })
@@ -47,7 +47,7 @@ angular.module('App').controller('AddAccessFtpBackupCtrl', class AddAccessFtpBac
 
       this.loading = true;
 
-      this.Server.postFtpBackupIp(
+      return this.Server.postFtpBackupIp(
         this.$stateParams.productId,
         this.access.ip,
         this.access.ftp,
@@ -73,7 +73,7 @@ angular.module('App').controller('AddAccessFtpBackupCtrl', class AddAccessFtpBac
 
   isIpBlocksLengthValid() {
     const IP_BLOCKS_MAX_LENGTH = 1024;
-    if (this.access && this.access.ip) {
+    if (this.access.ip) {
       return this.access.ip.join('').length <= IP_BLOCKS_MAX_LENGTH;
     }
     return true;
