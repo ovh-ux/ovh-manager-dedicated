@@ -74,6 +74,7 @@
    <translation id="autorenew_service_debt_before_paying_title" qtlid="506780">Information importante</translation>
    <translation id="autorenew_service_debt_before_paying_1" qtlid="498209">Prieš rinkdamiesi naują laikotarpį, apmokėkite likusią skolą kliento paskyroje.</translation>
    <translation id="autorenew_service_debt_before_paying_2" qtlid="498222">Prašome prisijungti prie Mokėjimų skilties ir apmokėti sąskaitą už <strong>{{service}}</strong> paslaugą.</translation>
+   <translation id="autorenew_service_debt_nic_billing" qtlid="516913">Pour payer ce service, connectez-vous depuis votre compte client de facturation {{ nicBilling }}.</translation>
    <translation id="autorenew_service_canceldelete_title" qtlid="416137">Atšaukti paslaugos atsisakymą</translation>
    <translation id="autorenew_service_delete_confirm" qtlid="416150">Paslaugos teikimas {0} <strong>bus nutrauktas automatiškai</strong> le {1}.</translation>
    <translation id="autorenew_service_delete_warn" qtlid="416163">Duomenys, susiję su automatiniu paslaugų apmokėjimu, bus nedelsiant pašalinti be galimybės atkurti. Jūs galėsite įjungti automatinį apmokėjimą už paslaugas iš naujo likus mažiausiai 24 valandoms iki pratęsiamų paslaugų galiojimo pabaigos.</translation>
@@ -173,7 +174,7 @@
    <translation id="autorenew_service_enable_autorenew_desc1" qtlid="416241">Automatinis apmokėjimas už jūsų paslaugą <strong>{0}</strong> bus įjungtas.</translation>
    <translation id="autorenew_service_enable_autorenew_desc2" qtlid="416254">Jūsų paslaugos galiojimas bus pratęstas automatiškai {0}.</translation>
    <translation id="autorenew_service_enable_autorenew_desc3" qtlid="416267">Jūs galite atlikti mokėjimų dažnumo nustatymus.</translation>
-   <translation id="autorenew_service_enable_autorenew_payment_mean">Pour bénéficier du paiement automatique sur ce service, vous devez enregistrer un moyen de paiement valide.</translation>
+   <translation id="autorenew_service_enable_autorenew_payment_mean" qtlid="509613">Pour bénéficier du paiement automatique sur ce service, vous devez enregistrer un moyen de paiement valide.</translation>
 
    <translation id="autorenew_service_renew_0" qtlid="69173">Visi</translation>
 
@@ -244,7 +245,7 @@
    <translation id="common_payment_type_OVH_ACCOUNT" qtlid="48926">Išankstinio apmokėjimo paskyra</translation>
    <translation id="common_payment_type_paymentMandate" qtlid="139819">Mokėjimas pagal įgaliojimą</translation>
    <translation id="common_payment_type_PAYMENT_MANDATE" qtlid="139819">Mokėjimas pagal įgaliojimą</translation>
-   <translation id="common_payment_type_paypal" qtlid="98228">Paypal</translation>
+   <translation id="common_payment_type_paypal" qtlid="98228">PayPal</translation>
    <translation id="common_payment_type_payu" qtlid="373480">PayU</translation>
    <translation id="common_payment_type_platnosci" qtlid="139832">Mokėjimai</translation>
    <translation id="common_payment_type_refund" qtlid="139845">Grąžinimas</translation>
@@ -406,6 +407,7 @@
    <translation id="payment_mean_default" qtlid="101193">Pagal nutylėjimą</translation>
    <translation id="payment_mean_set_default" qtlid="224893">Mokėjimo būdai pagal nutylėjimą</translation>
    <translation id="payment_mean_set_default_after_validation" qtlid="349140">Noriu, kad ši mokėjimo priemonė būtų naudojama pagal nutylėjimą, kai ji bus patvirtinta.</translation>
+   <translation id="payment_mean_set_as_default" qtlid="509994">Ce moyen de paiement sera sélectionné par défaut après sa validation.</translation>
 
    <translation id="payment_mean_contact_presentation_reuse_contact" qtlid="381868">naudojant jau sukurtą kontaktą</translation>
    <translation id="payment_mean_contact_presentation_create_contact" qtlid="381881">sukuriant naują kontaktą</translation>
@@ -813,7 +815,8 @@
    <translation id="payement_mean_add_creditCard" qtlid="177288">Generuoti užsakymą</translation>
    <translation id="payment_mean_get_validation" qtlid="177301">Atsisiųsti patvirtinimo procedūrą</translation>
    <translation id="payment_mean_return_by_mail_procedure" qtlid="325588">Procedūra siutimui paštu</translation>
-   <translation id="paymentType_add_success_url" qtlid="363878"><a href="{0}" target="_blank">Paspauskite čia</a>, kad būtų užbaigtas mokėjimo priemonės registravimas.</translation>
+   <translation id="paymentType_add_validation_description" qtlid="510007">Vous devez valider l'ajout de votre moyen de paiement.</translation>
+   <translation id="paymentType_add_success_url" qtlid="510020"><a href="{0}" target="_blank" rel="noopener">Cliquez ici</a> pour être redirigé vers une page sécurisée et finaliser l'opération.</translation>
    <translation id="paymentType_bankAccount_add_success_with_download" qtlid="325601">Banko sąskaita pridėta ir įsigalios po patvirtinimo. Prašome vadovautis <a href="{0}" target="_blank">šiame dokumente aprašyta procedūra</a> mokėjimo priemonei patvirtinti paštu. </translation>
    <translation id="paymentType_bankAccount_pending_validation" qtlid="325614">Jūs pridėjote banko sąskaitą savo kliento valdymo sąsajoje. Laukiame jūsų autorizacijos nuskaityti lėšas, šis leidimas turi būti išsiųstas paštu.</translation>
    <translation id="paymentType_bankAccount_processing_delay" qtlid="325627">Jūsų banko sąskaita bus patvirtinta po 24-48 val. nuo jūsų autorizacijos gavimo.</translation>
@@ -888,7 +891,7 @@
    <translation id="ovhAccount_table_type_payment_NONE" qtlid="30646">Nėra</translation>
    <translation id="ovhAccount_table_type_payment_OVH_ACCOUNT" qtlid="48926">Išankstinio apmokėjimo paskyra</translation>
    <translation id="ovhAccount_table_type_payment_PAYMENT_MANDATE" qtlid="177431">Įgaliojimas</translation>
-   <translation id="ovhAccount_table_type_payment_PAYPAL" qtlid="98228">Paypal</translation>
+   <translation id="ovhAccount_table_type_payment_PAYPAL" qtlid="98228">PayPal</translation>
    <translation id="ovhAccount_table_type_payment_PLATNOSCI" qtlid="139832">Mokėjimai</translation>
    <translation id="ovhAccount_table_type_payment_REFUND" qtlid="139845">Grąžinimas</translation>
    <translation id="ovhAccount_table_type_payment_TRANSFER" qtlid="89833">Pavedimas</translation>

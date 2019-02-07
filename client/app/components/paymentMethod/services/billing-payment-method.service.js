@@ -149,29 +149,31 @@ angular.module('services').service(
     }
 
     add(paymentMethod) {
-      return this.create(paymentMethod).then((data) => {
-        const id = _.get(data, 'id');
-        const submitUrl = _.get(data, 'submitUrl');
-        const paymentMethodId = this.extractPaymentMethodId(submitUrl);
+      return this.create(paymentMethod).then(this.submitVantiv.bind(this));
+    }
 
-        return this.BillingVantivInstance.submit(`payment_mean_${paymentMethodId}`)
-          .then(response => this.submit(submitUrl, response))
-          .then(() => {
-            const timeoutDate = moment().add(this.BILLING_PAYMENT_METHOD.UPDATE_POLL.TIMEOUT, 'ms');
-            return this.pollStatusChanged(id, timeoutDate);
-          })
-          .then((response) => {
-            if (response.status !== 'VALID') {
-              return this.$q.reject({ context: 'vantiv', message: 'Invalid card, please try with another one.' });
-            }
-            return response;
-          })
-          .then(() => ({
-            paymentType: paymentMethod.paymentType,
-            id,
-          }))
-          .catch(error => this.delete(id).finally(() => this.$q.reject(error)));
-      });
+    submitVantiv(paymentMethod) {
+      const id = _.get(paymentMethod, 'id');
+      const submitUrl = _.get(paymentMethod, 'submitUrl');
+      const paymentMethodId = this.extractPaymentMethodId(submitUrl);
+
+      return this.BillingVantivInstance.submit(`payment_mean_${paymentMethodId}`)
+        .then(response => this.submit(submitUrl, response))
+        .then(() => {
+          const timeoutDate = moment().add(this.BILLING_PAYMENT_METHOD.UPDATE_POLL.TIMEOUT, 'ms');
+          return this.pollStatusChanged(id, timeoutDate);
+        })
+        .then((response) => {
+          if (response.status !== 'VALID') {
+            return this.$q.reject({ context: 'vantiv', message: 'Invalid card, please try with another one.' });
+          }
+          return response;
+        })
+        .then(() => ({
+          paymentType: paymentMethod.paymentType,
+          id,
+        }))
+        .catch(error => this.delete(id).finally(() => this.$q.reject(error)));
     }
 
     // Those rules came from https://en.wikipedia.org/wiki/Payment_card_number

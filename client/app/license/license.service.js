@@ -1,5 +1,5 @@
 angular.module('Module.license').service('License', [
-  'Api',
+  'WucApi',
   'constants',
   '$q',
   'Module.license.Type',
@@ -7,7 +7,7 @@ angular.module('Module.license').service('License', [
   'OvhHttp',
   'licenseFeatureAvailability',
   function (
-    Api,
+    WucApi,
     constants,
     $q,
     types,
@@ -37,7 +37,7 @@ angular.module('Module.license').service('License', [
             opts = b;
           }
 
-          return Api[operationType](url, opts).then(data => data, reason => $q.reject(reason));
+          return WucApi[operationType](url, opts).then(data => data, reason => $q.reject(reason));
         };
       });
     }

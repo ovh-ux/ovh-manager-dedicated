@@ -57,7 +57,7 @@
    <translation id="ip_additional_order" qtlid="181877">Contratar IP adicionales</translation>
    <translation id="ip_search" qtlid="122275">Recherche...</translation>
    <translation id="ip_table_empty" qtlid="106715">Aucune donnée à afficher.</translation>
-   <translation id="ip_table_search" qtlid="98288">Rechercher...</translation>
+   <translation id="ip_table_search" qtlid="98288">Buscar...</translation>
    <translation id="ip_table_ipblock_refresh" qtlid="210514">Actualizando la IP {0}...</translation>
    <translation id="ip_manage_task_pending" qtlid="210527">Se está realizando una operación en una de las IP del servidor.</translation>
 
@@ -91,7 +91,7 @@
    <translation id="ip_filter_services__ALERTS" qtlid="181903">Servicios en alerta</translation>
    <translation id="ip_filter_services__PARK" qtlid="210540">Estacionamiento de IP</translation>
 
-   <translation id="ip_filter_services_title_OTHER" qtlid="28603">Autres</translation>
+   <translation id="ip_filter_services_title_OTHER" qtlid="28603">Otros</translation>
    <translation id="ip_filter_services_title_CDN" qtlid="99812">CDN</translation>
    <translation id="ip_filter_services_title_DEDICATED" qtlid="101901">Servidores dedicados</translation>
    <translation id="ip_filter_services_title_HOSTED_SSL" qtlid="210553">Hosted SSL</translation>
@@ -129,7 +129,7 @@
    <translation id="ip_table_header_visiblecols" qtlid="175387">Columnas visibles</translation>
 
    <translation id="ip_agora_table_header_offer" qtlid="38217">Offre</translation>
-   <translation id="ip_agora_table_header_quantity" qtlid="37107">Quantité</translation>
+   <translation id="ip_agora_table_header_quantity" qtlid="37107">Cantidad</translation>
    <translation id="ip_agora_table_header_country" qtlid="182215">Localizada(s) en</translation>
    <translation id="ip_agora_table_header_organisation" qtlid="32278">Organización</translation>
 
@@ -201,7 +201,7 @@
    <translation id="ip_destination_port" qtlid="141587">Puerto de destino</translation>
    <translation id="ip_destination_port_notice" qtlid="141600">desde el puerto de destino</translation>
    <translation id="ip_destination_port_range_max" qtlid="138454">hasta el puerto de destino (opcional)</translation>
-   <translation id="ip_options" qtlid="23395">Options</translation>
+   <translation id="ip_options" qtlid="23395">Opciones</translation>
    <translation id="ip_options_tcp" qtlid="141613">Opciones TCP</translation>
    <translation id="ip_options_udp" qtlid="141626">Opciones UDP</translation>
    <translation id="ip_port_range_max" qtlid="141639">hasta el puerto</translation>
@@ -283,7 +283,7 @@
    <translation id="ip_mitigation_auto_success" qtlid="140508">En unos instantes la mitigación pasará a modo automático en la IP {0}</translation>
    <translation id="ip_mitigation_auto_failed" qtlid="142055">Se ha producido un error al pasar la mitigación a modo automático en la IP {0}</translation>
    <translation id="ip_mitigation_statistics_title" qtlid="26671">Statistiques</translation>
-   <translation id="ip_mitigation_statistics_back_title_button" qtlid="4118">Retour</translation>
+   <translation id="ip_mitigation_statistics_back_title_button" qtlid="4118">Volver</translation>
    <translation id="ip_mitigation_statistics_current_ip" qtlid="142068">Ver las estadísticas de mitigación para la IP de destino: {0}</translation>
    <translation id="ip_mitigation_statistics_to" qtlid="88725">Du</translation>
    <translation id="ip_mitigation_statistics_mode_realtime" qtlid="142081">En tiempo real</translation>
@@ -422,7 +422,7 @@
    <translation id="ip_firewall_source_port_tooltip" qtlid="175829">El puerto de origen debe estar comprendido entre 0 y 65535</translation>
    <translation id="ip_firewall_destination_port" qtlid="175842">Puerto de destino</translation>
    <translation id="ip_firewall_destination_port_tooltip" qtlid="175855">El puerto de destino debe estar comprendido entre 0 y 65535</translation>
-   <translation id="ip_firewall_options" qtlid="23395">Options</translation>
+   <translation id="ip_firewall_options" qtlid="23395">Opciones</translation>
    <translation id="ip_firewall_status" qtlid="33790">État</translation>
    <translation id="ip_firewall_position" qtlid="45988">Priorité</translation>
    <translation id="ip_firewall_position_tooltip" qtlid="140469">La lectura de las reglas es secuencial. La regla 0 tiene la prioridad más alta.</translation>
@@ -440,8 +440,8 @@
    <translation id="ip_firewall_rule_flags_syn" qtlid="175907">SYN</translation>
    <translation id="ip_firewall_rule_flags_ESTABLISHED" qtlid="175920">ESTABLISHED</translation>
    <translation id="ip_firewall_rule_flags_established" qtlid="175920">ESTABLISHED</translation>
-   <translation id="ip_firewall_rule_flags_NONE" qtlid="30646">Aucun</translation>
-   <translation id="ip_firewall_rule_flags_none" qtlid="30646">Aucun</translation>
+   <translation id="ip_firewall_rule_flags_NONE" qtlid="30646">Ninguno</translation>
+   <translation id="ip_firewall_rule_flags_none" qtlid="30646">Ninguno</translation>
    <translation id="ip_firewall_add_summary" qtlid="175933">Compruebe que la información introducida es correcta antes de confirmar la creación de la regla.</translation>
    <translation id="ip_firewall_remove_rule_fail" qtlid="141756">Se ha producido un error al añadir la regla.</translation>
 
@@ -588,7 +588,8 @@
    <translation id="ip_organisation_edit" qtlid="37875">Modificar</translation>
    <translation id="ip_organisation_delete" qtlid="2414">Eliminar</translation>
 
-   <translation id="iplb_empty" qtlid="223606">No hay ninguna IP Load Balancing.</translation>
+   <translation id="iplb_empty" qtlid="516627">Vous ne possédez pas encore de Load Balancer. Découvrez notre offre de load balancing pour équilibrer la charge de vos serveurs ou ajouter de la redondance à votre infrastructure.</translation>
+   <translation id="iplb_learn_more" qtlid="44536">En savoir plus</translation>
    <translation id="iplb_expired" qtlid="223619">Esta IP Load Balancing expiró el {0}.</translation>
    <translation id="iplb_expiration" qtlid="30406">Expiración</translation>
    <translation id="iplb_infos_error" qtlid="223632">Se ha producido un error al cargar la IP Load Balancing.</translation>
@@ -600,17 +601,17 @@
 
    <translation id="iplb_infos_state" qtlid="26443">Estado</translation>
    <translation id="iplb_infos_stickiness" qtlid="223684">Gestión de las sesiones</translation>
-   <translation id="iplb_infos_ssl" qtlid="21451">Certificat SSL</translation>
+   <translation id="iplb_infos_ssl" qtlid="21451">Certificado SSL</translation>
 
    <translation id="iplb_infos_state_blacklisted" qtlid="223697">En blacklist</translation>
    <translation id="iplb_infos_state_deleted" qtlid="363531">Eliminada</translation>
    <translation id="iplb_infos_state_free" qtlid="6862">Libre</translation>
    <translation id="iplb_infos_state_quarantined" qtlid="223723">En cuarentena</translation>
    <translation id="iplb_infos_state_suspended" qtlid="125096">Suspendue</translation>
-   <translation id="iplb_infos_stickiness_none" qtlid="30646">Aucun</translation>
+   <translation id="iplb_infos_stickiness_none" qtlid="30646">Ninguno</translation>
    <translation id="iplb_infos_stickiness_cookie" qtlid="223736">Cookie</translation>
    <translation id="iplb_infos_stickiness_sourceIp" qtlid="138376">IP de origen</translation>
-   <translation id="iplb_infos_ssl_none" qtlid="30646">Aucun</translation>
+   <translation id="iplb_infos_ssl_none" qtlid="30646">Ninguno</translation>
    <translation id="iplb_infos_ssl_ovh" qtlid="223749">Proporcionado por OVH</translation>
    <translation id="iplb_infos_ssl_customer" qtlid="223762">Proporcionado por el cliente</translation>
 
@@ -667,7 +668,7 @@
    <translation id="iplb_table_backends_header_mainbackendip" qtlid="224178">Es el backend de repuesto de...</translation>
    <translation id="iplb_table_backends_no_backends" qtlid="200274">La lista está vacía.</translation>
 
-   <translation id="iplb_backend_probe_NONE" qtlid="30646">Aucun</translation>
+   <translation id="iplb_backend_probe_NONE" qtlid="30646">Ninguno</translation>
    <translation id="iplb_backend_probe_help_NONE" qtlid="224191">Ninguno: Sin verificación</translation>
    <translation id="iplb_backend_probe_help_HTTPICMP" qtlid="224204">HTTP/ICMP: Puebas en el puerto indicado</translation>
    <translation id="iplb_backend_probe_help_OCO" qtlid="224217">OCO (Ovh Check Out): Pruebas en el puerto 79</translation>

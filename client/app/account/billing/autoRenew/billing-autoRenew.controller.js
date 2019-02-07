@@ -21,7 +21,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
   'BillingPaymentInformation',
   'billingRenewHelper',
   'constants',
-  'paymentMethodHelper',
+  'ovhPaymentMethod',
   'User',
   'AUTORENEW_EVENT',
   'BILLING_BASE_URL',
@@ -45,7 +45,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
     PaymentInformation,
     renewHelper,
     constants,
-    PaymentMethodHelper,
+    ovhPaymentMethod,
     User,
     AUTORENEW_EVENT,
     BILLING_BASE_URL,
@@ -60,7 +60,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
      * private-xxx-xxx = type dedicated
      */
     function getExchangeType(offer) {
-      return `exchange_${offer.toLowerCase()}`;
+      return `exchange_${offer}`;
     }
 
     const ALL_SERVICE_TYPES = {
@@ -250,34 +250,29 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
       error: '',
     };
 
-    $scope.gotoExchangeRenew = function (service) {
+    $scope.gotoExchangeRenew = service => gotoExchangeRenew(service);
+
+    function gotoExchangeRenew(service) {
       const [organization, exchangeName] = service.serviceId.split('/service/');
 
       if (!exchangeName) {
         return;
       }
 
-      AutoRenew.getExchangeService(service)
+      AutoRenew.getExchangeService(organization, exchangeName)
         .then(({ offer }) => {
           $scope.$emit(AUTORENEW_EVENT.PAY, {
             serviceType: service.serviceType,
             serviceId: `${organization}/${exchangeName}`,
           });
 
-          $window.location.assign(getExchangeUrl(organization, exchangeName, offer, 'billing'));
-        });
-    };
+          const renewUrl = offer.includes('dedicated')
+            ? `${getExchangeBaseUrl(organization, exchangeName, offer)}?tab=ACCOUNT`
+            : getExchangeUrl(organization, exchangeName, offer, 'billing');
 
-    $scope.gotoRenew = function (service) {
-      if (isInDebt(service)) {
-        $scope.setAction('debtBeforePaying', _.clone(service, true), 'autoRenew');
-      } else {
-        $scope.$emit(AUTORENEW_EVENT.PAY, {
-          serviceType: service.serviceType,
-          serviceId: service.serviceId,
+          $window.location.assign(renewUrl);
         });
-      }
-    };
+    }
 
     $scope.buildSMSCreditBuyingURL = service => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/order`;
     $scope.buildSMSAutomaticRenewalURL = service => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/options/recredit`;
@@ -630,6 +625,8 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
     $scope.hasAutoRenew = service => renewHelper.serviceHasAutomaticRenew(service);
     $scope.resiliateExchangeService = service => resiliateExchangeService(service);
     $scope.canDisableAutorenew = service => canDisableAutorenew(service);
+    $scope.warnAboutDebt = service => warnAboutDebt(service);
+    $scope.gotoRenew = service => goToRenew(service);
 
     /**
          * HELPER FUNCTIONS
@@ -695,9 +692,13 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
       return DEBT_STATUS.includes(service.status);
     }
 
-    function getExchangeUrl(organization, service, offer, action) {
+    function getExchangeBaseUrl(organization, service, offer) {
       const exchangeAbsoluteUrl = constants.target === 'EU' && constants.UNIVERS !== 'web' ? constants.MANAGER_URLS.web : $window.location.href.replace($window.location.hash, '#/');
-      return `${exchangeAbsoluteUrl}configuration/${getExchangeType(offer)}/${organization}/${service}?action=${action}`;
+      return `${exchangeAbsoluteUrl}configuration/${getExchangeType(offer)}/${organization}/${service}`;
+    }
+
+    function getExchangeUrl(organization, service, offer, action) {
+      return `${getExchangeBaseUrl(organization, service, offer)}?action=${action}`;
     }
 
     function resiliateExchangeService({ serviceId }) {
@@ -734,6 +735,22 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
       }
     }
 
+    function warnAboutDebt(service) {
+      const warning = isNicBilling($scope.user, service) ? 'debtBeforePaying' : 'warnNicBilling';
+      $scope.setAction(warning, _.clone(service, true), 'autoRenew');
+    }
+
+    function goToRenew({ serviceType, serviceId }) {
+      $scope.$emit(AUTORENEW_EVENT.PAY, {
+        serviceType,
+        serviceId,
+      });
+    }
+
+    function isNicBilling(user, service) {
+      return _.get(user, 'nichandle') === _.get(service, 'contactBilling');
+    }
+
     /**
      * INITIALIZATION
      */
@@ -762,7 +779,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
       return $q
         .all({
           user: User.getUser(),
-          hasDefaultValidPaymentMean: PaymentMethodHelper.hasDefaultPaymentMethod(),
+          hasDefaultValidPaymentMean: ovhPaymentMethod.hasDefaultPaymentMethod(),
           renewAlignUrl: User.getUrlOf('renewAlign'),
           userGuide: User.getUrlOf('guides'),
           serviceTypes: AutoRenew.getServicesTypes(),
@@ -794,6 +811,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
         .then(() => $scope.nicRenew.getNicRenewParam())
         .finally(() => {
           $scope.initLoading = false;
+          $scope.automaticRenewV2Mean.loading = false;
         });
     }
 

@@ -74,6 +74,7 @@
    <translation id="autorenew_service_debt_before_paying_title" qtlid="506780">Informazione importante</translation>
    <translation id="autorenew_service_debt_before_paying_1" qtlid="498209">Prima di sottoscrivere un impegno per un nuovo periodo, è necessario saldare l'importo in sospeso.</translation>
    <translation id="autorenew_service_debt_before_paying_2" qtlid="498222">Accedi alla sezione 'Fatturazione' per effettuare il pagamento del servizio <strong>{{service}}</strong>.</translation>
+   <translation id="autorenew_service_debt_nic_billing" qtlid="516913">Per pagare questo servizio, accedi con l'account di fatturazione {{ nicBilling }}.</translation>
    <translation id="autorenew_service_canceldelete_title" qtlid="416137">Annulla la disattivazione di un servizio</translation>
    <translation id="autorenew_service_delete_confirm" qtlid="416150">Il servizio {0} <strong>verrà disattivato automaticamente</strong> il {1}.</translation>
    <translation id="autorenew_service_delete_warn" qtlid="416163">I dati associati a questo servizio verranno eliminati automaticamente e in modo irreversibile.&#160;È possibile annullare l'operazione entro 24 ore prima della data di scadenza.</translation>
@@ -174,7 +175,7 @@
    <translation id="autorenew_service_enable_autorenew_desc1" qtlid="416241">Il pagamento automatico per il servizio <strong>{0}</strong> verrà attivato.</translation>
    <translation id="autorenew_service_enable_autorenew_desc2" qtlid="416254">Il tuo servizio verrà rinnovato automaticamente il {0}.</translation>
    <translation id="autorenew_service_enable_autorenew_desc3" qtlid="416267">È possibile impostare la frequenza dei pagamenti.</translation>
-   <translation id="autorenew_service_enable_autorenew_payment_mean">Pour bénéficier du paiement automatique sur ce service, vous devez enregistrer un moyen de paiement valide.</translation>
+   <translation id="autorenew_service_enable_autorenew_payment_mean" qtlid="509613">Per usufruire del pagamento automatico su questo servizio, è necessario salvare un metodo di pagamento valido.</translation>
 
    <translation id="autorenew_service_renew_0" qtlid="69173">Tutti</translation>
 
@@ -245,7 +246,7 @@
    <translation id="common_payment_type_OVH_ACCOUNT" qtlid="48926">Conto prepagato</translation>
    <translation id="common_payment_type_paymentMandate" qtlid="139819">Vaglia</translation>
    <translation id="common_payment_type_PAYMENT_MANDATE" qtlid="139819">Vaglia</translation>
-   <translation id="common_payment_type_paypal" qtlid="98228">Paypal</translation>
+   <translation id="common_payment_type_paypal" qtlid="98228">PayPal</translation>
    <translation id="common_payment_type_payu" qtlid="373480">PayU</translation>
    <translation id="common_payment_type_platnosci" qtlid="139832">Transfer payment</translation>
    <translation id="common_payment_type_refund" qtlid="139845">Credito</translation>
@@ -408,6 +409,7 @@
    <translation id="payment_mean_default" qtlid="101193">Standard</translation>
    <translation id="payment_mean_set_default" qtlid="224893">Metodo di pagamento predefinito </translation>
    <translation id="payment_mean_set_default_after_validation" qtlid="349140">Una volta confermata, voglio impostare questa modalità di pagamento come predefinita.</translation>
+   <translation id="payment_mean_set_as_default" qtlid="509994">Una volta confermato, questo metodo di pagamento verrà impostato come predefinito.</translation>
 
    <translation id="payment_mean_contact_presentation_reuse_contact" qtlid="381868">utilizzando un contatto già esistente</translation>
    <translation id="payment_mean_contact_presentation_create_contact" qtlid="381881">creando un nuovo contatto</translation>
@@ -818,7 +820,8 @@
    <translation id="payement_mean_add_creditCard" qtlid="177288">Genera un ordine</translation>
    <translation id="payment_mean_get_validation" qtlid="177301">Recupera la procedura di validazione</translation>
    <translation id="payment_mean_return_by_mail_procedure" qtlid="325588">Procedura per la conferma della modalità di pagamento</translation>
-   <translation id="paymentType_add_success_url" qtlid="363878"><a href="{0}" target="_blank">Clicca qui</a> per completare la registrazione della tua modalità di pagamento.</translation>
+   <translation id="paymentType_add_validation_description" qtlid="510007">Conferma il metodo di pagamento.</translation>
+   <translation id="paymentType_add_success_url" qtlid="510020"><a href="{0}" target="_blank" rel="noopener">Clicca qui</a> per essere reindirizzato verso una pagina sicura e completare l'operazione.</translation>
    <translation id="paymentType_bankAccount_add_success_with_download" qtlid="325601">Il tuo conto bancario è stato aggiunto e, una volta confermato, sarà attivo. Ti preghiamo di seguire la <a href="{0}" target="_blank">procedura descritta in questo documento</a> per confermare la tua modalità di pagamento.</translation>
    <translation id="paymentType_bankAccount_pending_validation" qtlid="325614">Hai aggiunto un conto bancario nel tuo Spazio Cliente OVH, siamo in attesa di ricevere la tua autorizzazione al prelievo.</translation>
    <translation id="paymentType_bankAccount_processing_delay" qtlid="325627">Il tuo conto bancario sarà convalidato entro 24-48 ore a partire dalla ricezione della tua autorizzazione al prelievo.</translation>
@@ -893,7 +896,7 @@
    <translation id="ovhAccount_table_type_payment_NONE" qtlid="30646">Nessuno</translation>
    <translation id="ovhAccount_table_type_payment_OVH_ACCOUNT" qtlid="48926">Conto prepagato</translation>
    <translation id="ovhAccount_table_type_payment_PAYMENT_MANDATE" qtlid="177431">Mandato</translation>
-   <translation id="ovhAccount_table_type_payment_PAYPAL" qtlid="98228">Paypal</translation>
+   <translation id="ovhAccount_table_type_payment_PAYPAL" qtlid="98228">PayPal</translation>
    <translation id="ovhAccount_table_type_payment_PLATNOSCI" qtlid="139832">Transfer payment</translation>
    <translation id="ovhAccount_table_type_payment_REFUND" qtlid="139845">Credito</translation>
    <translation id="ovhAccount_table_type_payment_TRANSFER" qtlid="89833">Bonifico</translation>
@@ -1212,14 +1215,14 @@ Prima di confermare l'eliminazione del servizio, è tua responsabilità adottare
    <translation id="terminate_service_services_renew" qtlid="168172">Rinnovo</translation>
    <translation id="terminate_service_services_frequency" qtlid="30442">Frequenza</translation>
    <translation id="terminate_service_reason_title" qtlid="440009">Motivo della disattivazione</translation>
-   <translation id="terminate_service_reason_LACK_OF_PERFORMANCES" qtlid="299975">Le performance dei servizi non sono sufficienti</translation>
+   <translation id="terminate_service_reason_LACK_OF_PERFORMANCES" qtlid="299975">Le performance dei sistemi non sono sufficienti</translation>
    <translation id="terminate_service_reason_NOT_NEEDED_ANYMORE" qtlid="299949">Non utilizzo più il servizio</translation>
    <translation id="terminate_service_reason_MIGRATED_TO_ANOTHER_OVH_PRODUCT" qtlid="300014">Utilizzo un altro servizio OVH</translation>
    <translation id="terminate_service_reason_MIGRATED_TO_COMPETITOR" qtlid="300027">Utilizzo il servizio di un altro provider</translation>
    <translation id="terminate_service_reason_NOT_RELIABLE" qtlid="299988">Il servizio non è abbastanza affidabile</translation>
    <translation id="terminate_service_reason_OTHER" qtlid="300040">Altro...</translation>
    <translation id="terminate_service_reason_TOO_EXPENSIVE" qtlid="300001">Il servizio costa troppo</translation>
-   <translation id="terminate_service_reason_TOO_HARD_TO_USE" qtlid="299962">Gli strumenti di gestione (Spazio Cliente, fatturazione) sono troppi complessi</translation>
+   <translation id="terminate_service_reason_TOO_HARD_TO_USE" qtlid="299962">I tool sono troppi complessi</translation>
    <translation id="terminate_service_reason_FEATURES_DONT_SUIT_ME" qtlid="504241">Non sei convinto delle funzionalità del servizio</translation>
    <translation id="terminate_service_reason_UNSATIFIED_BY_CUSTOMER_SUPPORT" qtlid="504254">Non sei soddisfatto del Supporto Clienti</translation>
    <translation id="terminate_service_reason_NO_ANSWER" qtlid="504267">Preferisci non rispondere</translation>

@@ -77,7 +77,6 @@ angular.module('UserAccount').service('UserAccount.services.ssh', [
         .then((projects) => {
           const promises = _.map(projects, project => OvhHttp.get('/cloud/project/{serviceName}/sshkey', {
             rootPath: 'apiv6',
-            cache: CLOUD_CACHE_KEY,
             urlParams: {
               serviceName: project.id,
             },

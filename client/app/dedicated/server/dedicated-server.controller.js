@@ -182,7 +182,6 @@ angular.module('App').controller('ServerCtrl', (
     loadServer();
   });
 
-
   function load() {
     User.getUrlOf('changeOwner').then((link) => {
       $scope.changeOwnerUrl = link;
@@ -252,6 +251,8 @@ angular.module('App').controller('ServerCtrl', (
         $scope.loadingServerInformations = false;
         $scope.isHousing = isHousing(server);
         $scope.serviceInfos = serviceInfos;
+
+        $scope.$broadcast('dedicated.server.refreshTabs');
       })
       .catch((data) => {
         $scope.loadingServerInformations = false;
@@ -297,23 +298,24 @@ angular.module('App').controller('ServerCtrl', (
       hardRebootTasks: Server.getTaskInProgress($stateParams.productId, 'hardReboot'),
       resetIPMITasks: Server.getTaskInProgress($stateParams.productId, 'resetIPMI'),
       reinstallServerTasks: Server.getTaskInProgress($stateParams.productId, 'reinstallServer'),
-    })
-      .then(({ hardRebootTasks, resetIPMITasks, reinstallServerTasks }) => {
-        if (_.isArray(hardRebootTasks) && !_.isEmpty(hardRebootTasks)) {
-          $scope.$broadcast('dedicated.informations.reboot', hardRebootTasks[0]);
-        }
+    }).then(({ hardRebootTasks, resetIPMITasks, reinstallServerTasks }) => {
+      if (_.isArray(hardRebootTasks) && !_.isEmpty(hardRebootTasks)) {
+        $scope.$broadcast('dedicated.informations.reboot', hardRebootTasks[0]);
+      }
 
-        // Do not call broadcast dedicated.ipmi.resetinterfaces
-        if (_.isArray(resetIPMITasks) && !_.isEmpty(resetIPMITasks)) {
-          initIpmiRestart(resetIPMITasks[0]);
-        }
+      // Do not call broadcast dedicated.ipmi.resetinterfaces
+      if (_.isArray(resetIPMITasks) && !_.isEmpty(resetIPMITasks)) {
+        initIpmiRestart(resetIPMITasks[0]);
+      }
 
-        if (_.isArray(reinstallServerTasks) && !_.isEmpty(reinstallServerTasks)) {
-          $scope.$broadcast('dedicated.informations.reinstall', reinstallServerTasks[0]);
-        } else if (!_.has(reinstallServerTasks, 'messages')) {
-          checkInstallationProgress();
-        }
-      });
+      if (_.isArray(reinstallServerTasks) && !_.isEmpty(reinstallServerTasks)) {
+        $scope.$broadcast('dedicated.informations.reinstall', reinstallServerTasks[0]);
+      } else if (!_.has(reinstallServerTasks, 'messages')) {
+        checkInstallationProgress();
+      } else {
+        $scope.$broadcast('dedicated.server.refreshTabs');
+      }
+    });
   }
 
   // Server Restart
@@ -369,29 +371,28 @@ angular.module('App').controller('ServerCtrl', (
           startPollReinstall(task);
         }
       },
-      (err) => {
-        if (err.status === 404) {
-          if ($scope.disable.installationInProgress) {
-            $scope.disable.noDeleteMessage = true;
-            $scope.setMessage($translate.instant('server_configuration_installation_progress_end'), true);
-            $scope.$broadcast('dedicated.informations.reload');
-          }
-
-          $scope.disable.install = false;
-          $scope.disable.installationInProgress = false;
-          $scope.disable.installationInProgressError = false;
-          $scope.loadingServerInformations = false;
-          $scope.$broadcast('dedicated.server.refreshTabs');
-          return;
+    ).catch((err) => {
+      if (err.status === 404) {
+        if ($scope.disable.installationInProgress) {
+          $scope.disable.noDeleteMessage = true;
+          $scope.setMessage($translate.instant('server_configuration_installation_progress_end'), true);
+          $scope.$broadcast('dedicated.informations.reload');
         }
 
-        if (task) {
-          startPollReinstall(task);
-        } else {
-          $scope.setMessage($translate.instant('server_configuration_installation_fail_task', { t0: $scope.server.name }), false);
-        }
-      },
-    );
+        $scope.disable.install = false;
+        $scope.disable.installationInProgress = false;
+        $scope.disable.installationInProgressError = false;
+        $scope.loadingServerInformations = false;
+        $scope.$broadcast('dedicated.server.refreshTabs');
+        return;
+      }
+
+      if (task) {
+        startPollReinstall(task);
+      } else {
+        $scope.setMessage($translate.instant('server_configuration_installation_fail_task', { t0: $scope.server.name }), false);
+      }
+    });
   }
 
   function startPollReinstall(task) {

@@ -72,9 +72,7 @@ angular.module('controllers').controller('controllers.Server.Stats', (
     $scope.data = [];
 
     $scope.labels = _.map(_.get(data, 'download.values'), (value, index) => moment(data.download.pointStart)
-      .add(data.download.pointInterval.standardDays * index, 'days')
-      .add(data.download.pointInterval.standardHours * index, 'hours')
-      .add(data.download.pointInterval.standardMinutes * index, 'minutes')
+      .add(data.download.pointInterval.millis * index, 'milliseconds')
       .calendar());
 
     $scope.series.push($translate.instant('server_tab_STATS_legend_download'));

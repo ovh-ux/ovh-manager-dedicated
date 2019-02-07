@@ -74,6 +74,7 @@
    <translation id="autorenew_service_debt_before_paying_title" qtlid="506780">Information importante</translation>
    <translation id="autorenew_service_debt_before_paying_1" qtlid="498209">Avant de vous engager sur une nouvelle période de temps, nous vous invitons à d'abord régler votre dette restante.</translation>
    <translation id="autorenew_service_debt_before_paying_2" qtlid="498222">Rendez-vous dans l’espace facturation afin de régulariser la facturation pour le service <strong>{{service}}</strong>.</translation>
+   <translation id="autorenew_service_debt_nic_billing" qtlid="516913">Pour payer ce service, connectez-vous depuis votre compte client de facturation {{ nicBilling }}.</translation>
    <translation id="autorenew_service_canceldelete_title" qtlid="416137">Annuler la résiliation d’un service</translation>
    <translation id="autorenew_service_delete_confirm" qtlid="416150">Le service {0} <strong>sera automatiquement résilié</strong> le {1}.</translation>
    <translation id="autorenew_service_delete_warn" qtlid="416163">Les données liées à ce service seront automatiquement supprimées de manière irréversible.&#160;Vous pourrez revenir sur cette décision jusqu'à 24h avant la date d’expiration.</translation>
@@ -406,6 +407,7 @@
    <translation id="payment_mean_default" qtlid="101193">Par défaut</translation>
    <translation id="payment_mean_set_default" qtlid="224893">Moyen de paiement par défaut</translation>
    <translation id="payment_mean_set_default_after_validation" qtlid="349140">Je veux sélectionner ce moyen de paiement par défaut dès sa validation.</translation>
+   <translation id="payment_mean_set_as_default" qtlid="509994">Ce moyen de paiement sera sélectionné par défaut après sa validation.</translation>
 
    <translation id="payment_mean_contact_presentation_reuse_contact" qtlid="381868">en utilisant un contact déjà existant</translation>
    <translation id="payment_mean_contact_presentation_create_contact" qtlid="381881">en créant un nouveau contact</translation>
@@ -813,7 +815,8 @@
    <translation id="payement_mean_add_creditCard" qtlid="177288">Générer un bon de commande</translation>
    <translation id="payment_mean_get_validation" qtlid="177301">Récupérer la procédure de validation</translation>
    <translation id="payment_mean_return_by_mail_procedure" qtlid="325588">Procédure à retourner par voie postale</translation>
-   <translation id="paymentType_add_success_url" qtlid="363878"><a href="{0}" target="_blank">Cliquez ici</a> pour finaliser l'enregistrement de votre moyen de paiement.</translation>
+   <translation id="paymentType_add_validation_description" qtlid="510007">Vous devez valider l'ajout de votre moyen de paiement.</translation>
+   <translation id="paymentType_add_success_url" qtlid="510020"><a href="{0}" target="_blank" rel="noopener">Cliquez ici</a> pour être redirigé vers une page sécurisée et finaliser l'opération.</translation>
    <translation id="paymentType_bankAccount_add_success_with_download" qtlid="325601">Le compte bancaire a été ajouté, il sera actif une fois validé. Veuillez suivre la <a href="{0}" target="_blank">procédure décrite dans ce document</a> pour valider le moyen de paiement à retourner par voie postale.</translation>
    <translation id="paymentType_bankAccount_pending_validation" qtlid="325614">Vous avez ajouté un compte bancaire sur votre espace client pour lequel nous sommes dans l'attente de votre autorisation de prélèvement à nous retourner par voie postale.</translation>
    <translation id="paymentType_bankAccount_processing_delay" qtlid="325627">Votre compte bancaire sera validé dans les 24h à 48h à compter de la réception de votre autorisation de prélèvement.</translation>

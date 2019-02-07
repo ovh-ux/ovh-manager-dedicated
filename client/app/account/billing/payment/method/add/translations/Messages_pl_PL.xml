@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="billing_payment_method_add_title" qtlid="90253">Dodaj sposób płatności</translation>
+   <translation id="billing_payment_method_add_back_btn_title" qtlid="440490">Powrót do sposobów płatności</translation>
+
+   <translation id="billing_payment_method_add_choose_type" qtlid="516978">Wybór metody płatności</translation>
+
+   <translation id="billing_payment_method_add_selected_common_redirect" qtlid="516991">Po kliknięciu "Dodaj" zostaniesz przekierowany do systemu bezpiecznych płatności.</translation>
+   <translation id="billing_payment_method_add_selected_paypal_redirect" qtlid="517004">Po kliknięciu "Dodaj" zostaniesz przekierowany do systemu PAYPAL.</translation>
+   <translation id="billing_payment_method_add_selected_original_credit_card_redirect" qtlid="517017">Po kliknięciu "Dodaj" pobierzesz dokument. Postępuj zgodnie z opisaną w nim procedurą, aby zatwierdzić metodę płatności. </translation>
+   <translation id="billing_payment_method_add_credit_card_selected" qtlid="351461">Twoja karta bankowa zostanie natychmiast włączona.</translation>
+   <translation id="billing_payment_method_add_bank_account_selected" qtlid="517030">Twoje konto bankowe zostanie zatwierdzone w ciągu 24-48 godzin od momentu, w którym podpiszesz procedurę (dokument do pobrania na koniec procesu dodawania konta bankowego). </translation>
+   <translation id="billing_payment_method_add_default_payment" qtlid="517043">Ta metoda płatności będzie używana do automatycznych płatności za Twoją usługę. Możesz ją w każdym momencie zmienić w Panelu klienta. Przed każdym odnowieniem otrzymasz powiadomienie e-mailem.</translation>
+   <translation id="billing_payment_method_add_set_as_default_payment" qtlid="349140">Chcę wybrać ten domyślny sposób płatności od chwili jego zatwierdzenia.</translation>
+
+   <translation id="billing_payment_method_add_bank_account_informations" qtlid="350898">Informacje bankowe</translation>
+   <translation id="billing_payment_method_add_bank_account_address" qtlid="517056">Właściciel konta</translation>
+   <translation id="billing_payment_method_add_bank_account_informations_iban" qtlid="177015">IBAN</translation>
+   <translation id="billing_payment_method_add_bank_account_informations_bic" qtlid="177028">BIC</translation>
+   <translation id="billing_payment_method_add_bank_account_address_number" qtlid="30778">Numer</translation>
+   <translation id="billing_payment_method_add_bank_account_address_street" qtlid="459573">Ulica</translation>
+   <translation id="billing_payment_method_add_bank_account_address_zip" qtlid="30346">Kod pocztowy</translation>
+   <translation id="billing_payment_method_add_bank_account_address_city" qtlid="33310">Miasto</translation>
+   <translation id="billing_payment_method_add_bank_account_owner_name" qtlid="498261">Imię i nazwisko właściciela lub nazwa organizacji</translation>
+   <translation id="billing_payment_method_add_bank_account_owner_address" qtlid="177054">Adres siedziby/zamieszkania i pobytu właściciela konta</translation>
+
+   <translation id="billing_payment_method_add_bank_account_informations_iban_format" qtlid="517069">Format IBAN jest nieprawidłowy.</translation>
+   <translation id="billing_payment_method_add_bank_account_informations_bic_format" qtlid="517082">Fromat BIC jest nieprawidłowy.</translation>
+
+   <translation id="billing_payment_method_add_billing_address" qtlid="409857">Adres na fakturze</translation>
+   <translation id="billing_payment_method_add_billing_address_existing" qtlid="517095">Wybierz istniejący adres</translation>
+   <translation id="billing_payment_method_add_billing_address_create" qtlid="517108">Dodaj nowy adres</translation>
+
+   <translation id="billing_payment_method_add_payment_method" qtlid="517121">Informacja o metodzie płatności</translation>
+
+   <translation id="billing_payment_method_add_info" qtlid="517134">W nowej zakładce otworzyła się bezpieczna strona, na której możesz zakończyć proces dodawania Twojej metody płatności. Jeśli strona się nie otwiera, kliknij <a href="{{ paymentUrl }}" target="_blank" rel="noopener">ten link</a>.</translation>
+   <translation id="billing_payment_method_add_bank_account_success" qtlid="517147">Konto bankowe zostało dodane. Zanim zostanie aktywowane, konieczne jest jego zatwierdzenie. W celu jego zatwierdzenia, postępuj zgodnie z <a href="{0}" target="_blank">procedurą opisaną w tym dokumencie</a> , który należy przesłać do nas pocztą. Twoje konto bankowe zostanie zatwierdzone w ciągu 24-48 godzin od momentu otrzymania od Ciebie autoryzacji płatności.</translation>
+   <translation id="billing_payment_method_add_load_error" qtlid="454202">Wystąpił błąd podczas ładowania strony.</translation>
+
+   <translation id="billing_payment_method_add_status_cancel" qtlid="517160">Dyspozycja dodania metody płatności została anulowana. W związku z tym metoda płatności nie jest powiązana z Twoim kontem OVH.</translation>
+   <translation id="billing_payment_method_add_status_error" qtlid="517173">Wystąpił błąd podczas dodawania metody płatności. </translation>
+   <translation id="billing_payment_method_add_status_failure" qtlid="517173">Wystąpił błąd podczas dodawania metody płatności. </translation>
+   <translation id="billing_payment_method_add_status_pending" qtlid="517186">Twoja metoda płatności oczekuje na dodanie.</translation>
+   <translation id="billing_payment_method_add_status_success" qtlid="517199">Twoja metoda płatności została dodana.</translation>
+
+   <translation id="billing_payment_method_add_vantiv_recoverable_credit_card_error" qtlid="517212">Wystąpił błąd podczas dodawania Twojej metody płatności. Sprawdź numer Twojej karty płatniczej i wprowadź go ponownie.</translation>
+   <translation id="billing_payment_method_add_vantiv_recoverable_card_validation_number_error" qtlid="517225">Wystąpił błąd podczas dodawania Twojej metody płatności. Sprawdź numer zatwierdzenia Twojej karty płatniczej i wprowadź go ponownie.</translation>
+</translations>

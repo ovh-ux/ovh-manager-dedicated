@@ -74,6 +74,7 @@
    <translation id="autorenew_service_debt_before_paying_title" qtlid="506780">Wichtige Information</translation>
    <translation id="autorenew_service_debt_before_paying_1" qtlid="498209">Bevor Sie den Dienst für einen neuen Zeitraum abonnieren, begleichen Sie bitte den ausstehenden Betrag in Ihrem Kundencenter.</translation>
    <translation id="autorenew_service_debt_before_paying_2" qtlid="498222">Gehen Sie in den Bereich „Abrechnung", um die Rechnung für die Dienstleistung <strong>{{service}}</strong> zu begleichen.</translation>
+   <translation id="autorenew_service_debt_nic_billing" qtlid="516913">Um diesen Dienst zu bezahlen, loggen Sie sich über den Account des Abrechnungskontakts {{ nicBilling }} ein.</translation>
    <translation id="autorenew_service_canceldelete_title" qtlid="416137">Die Kündigung einer Dienstleistung stornieren</translation>
    <translation id="autorenew_service_delete_confirm" qtlid="416150">Die Dienstleistung {0} wird am {1} <strong>automatisch gekündigt</strong>.</translation>
    <translation id="autorenew_service_delete_warn" qtlid="416163">Die Daten, die mit dieser Dienstleistung verbunden sind, werden automatisch unwiderruflich gelöscht. Sie können diese Entscheidung bis zu 24 Stunden vor dem Ablaufdatum ändern.</translation>
@@ -173,7 +174,7 @@
    <translation id="autorenew_service_enable_autorenew_desc1" qtlid="416241">Die automatische Zahlung Ihrer Dienstleistung <strong>{0}</strong> wird aktiviert.</translation>
    <translation id="autorenew_service_enable_autorenew_desc2" qtlid="416254">Ihre Dienstleistung wird am {0} automatisch verlängert.</translation>
    <translation id="autorenew_service_enable_autorenew_desc3" qtlid="416267">Sie können den Zahlungsrhythmus ändern.</translation>
-   <translation id="autorenew_service_enable_autorenew_payment_mean">Pour bénéficier du paiement automatique sur ce service, vous devez enregistrer un moyen de paiement valide.</translation>
+   <translation id="autorenew_service_enable_autorenew_payment_mean" qtlid="509613">Um die automatische Zahlung zu nutzen, hinterlegen Sie bitte ein gültiges Zahlungsmittel.</translation>
 
    <translation id="autorenew_service_renew_0" qtlid="69173">Alle</translation>
 
@@ -244,7 +245,7 @@
    <translation id="common_payment_type_OVH_ACCOUNT" qtlid="48926">Prepaid-Account</translation>
    <translation id="common_payment_type_paymentMandate" qtlid="139819">Zahlungsanweisung</translation>
    <translation id="common_payment_type_PAYMENT_MANDATE" qtlid="139819">Zahlungsanweisung</translation>
-   <translation id="common_payment_type_paypal" qtlid="98228">Paypal</translation>
+   <translation id="common_payment_type_paypal" qtlid="98228">PayPal</translation>
    <translation id="common_payment_type_payu" qtlid="373480">PayU </translation>
    <translation id="common_payment_type_platnosci" qtlid="139832">Płatności</translation>
    <translation id="common_payment_type_refund" qtlid="139845">Guthaben</translation>
@@ -407,6 +408,7 @@
    <translation id="payment_mean_set_default" qtlid="224893">Standard-Zahlungsart</translation>
    <translation id="payment_mean_set_default_after_validation" qtlid="349140">Zahlungsart ab Validierung als Standard&#13;
 verwenden.</translation>
+   <translation id="payment_mean_set_as_default" qtlid="509994">Dieses Zahlungsmittel wird nach der Bestätigung als Standardzahlungsmittel ausgewählt.</translation>
 
    <translation id="payment_mean_contact_presentation_reuse_contact" qtlid="381868">und einen vorhandenen Kontakt verwenden </translation>
    <translation id="payment_mean_contact_presentation_create_contact" qtlid="381881">und einen neuen Kontakt erstellen </translation>
@@ -815,7 +817,8 @@ verwenden.</translation>
    <translation id="payement_mean_add_creditCard" qtlid="177288">Einen Bestellschein erstellen</translation>
    <translation id="payment_mean_get_validation" qtlid="177301">Jetzt SEPA-Einzugsermächtigung erteilen</translation>
    <translation id="payment_mean_return_by_mail_procedure" qtlid="325588">Auf dem Postweg zurücksenden</translation>
-   <translation id="paymentType_add_success_url" qtlid="363878"><a href="{0}" target="_blank">Klicken Sie hier</a>, um die Registrierung Ihres Zahlungsmittels abzuschließen. </translation>
+   <translation id="paymentType_add_validation_description" qtlid="510007">Bitte bestätigen Sie das Hinzufügen Ihres Zahlungsmittels.</translation>
+   <translation id="paymentType_add_success_url" qtlid="510020"><a href="{0}" target="_blank" rel="noopener">Klicken Sie hier</a>, um auf eine gesicherte Seite weitergeleitet zu werden und den Vorgang abzuschließen.</translation>
    <translation id="paymentType_bankAccount_add_success_with_download" qtlid="325601">Das Bankkonto wurde hinzugefügt. Es wird aktiviert, sobald die Validierung durchgeführt wurde. Bitte gehen Sie wie in <a href="{0}" target="_blank">diesem Dokument</a> beschrieben vor, um die Zahlungsart zu validieren. </translation>
    <translation id="paymentType_bankAccount_pending_validation" qtlid="325614">Sie haben ein Bankkonto in Ihrem Kundencenter hinzugefügt. Wir warten nun auf den Eingang Ihrer Einzugsermächtigung auf dem Postweg.</translation>
    <translation id="paymentType_bankAccount_processing_delay" qtlid="325627">Ihr Bankkonto wird 24 bis 48 Stunden nach Eingang Ihrer Einzugsermächtigung freigeschaltet.</translation>
@@ -890,7 +893,7 @@ verwenden.</translation>
    <translation id="ovhAccount_table_type_payment_NONE" qtlid="30646">Keiner</translation>
    <translation id="ovhAccount_table_type_payment_OVH_ACCOUNT" qtlid="48926">Prepaid-Account</translation>
    <translation id="ovhAccount_table_type_payment_PAYMENT_MANDATE" qtlid="177431">Postanweisung</translation>
-   <translation id="ovhAccount_table_type_payment_PAYPAL" qtlid="98228">Paypal</translation>
+   <translation id="ovhAccount_table_type_payment_PAYPAL" qtlid="98228">PayPal</translation>
    <translation id="ovhAccount_table_type_payment_PLATNOSCI" qtlid="139832">Płatności</translation>
    <translation id="ovhAccount_table_type_payment_REFUND" qtlid="139845">Guthaben</translation>
    <translation id="ovhAccount_table_type_payment_TRANSFER" qtlid="89833">Überweisung</translation>
@@ -1090,7 +1093,7 @@ verwenden.</translation>
    <translation id="voucher_movements_table_head_previous_balance" qtlid="270969">Vorheriger Stand</translation>
    <translation id="voucher_movements_table_head_balance" qtlid="270930">Stand</translation>
    <translation id="voucher_movements_table_head_operation" qtlid="32482">Operation</translation>
-   <translation id="voucher_movements_table_head_order" qtlid="8302">Befehl</translation>
+   <translation id="voucher_movements_table_head_order" qtlid="8302">Bestellung</translation>
    <translation id="voucher_movements_table_empty" qtlid="270982">Keine Bewegungen</translation>
 
    <translation id="voucher_movements_operation_type_cancel-credit" qtlid="270995">Aufladung abgebrochen</translation>
@@ -1109,7 +1112,7 @@ verwenden.</translation>
    <translation id="statements_account_pay_debt_button" qtlid="349179">Mein Konto sofort ausgleichen </translation>
 
    <translation id="statements_table_caption" qtlid="343252">Bestellungen auf Ihren Konten </translation>
-   <translation id="statements_table_header_order" qtlid="8302">Befehl</translation>
+   <translation id="statements_table_header_order" qtlid="8302">Bestellung</translation>
    <translation id="statements_table_header_date" qtlid="24523">Datum</translation>
    <translation id="statements_table_header_due_date" qtlid="98348">Fälligkeitsdatum</translation>
    <translation id="statements_table_no_due_date" qtlid="343265">Sofort </translation>
@@ -1291,7 +1294,7 @@ verwenden.</translation>
    <translation id="billing_credit_balance_movements_back" qtlid="454254">Zurück zu meinen Guthabenkonten</translation>
    <translation id="billing_credit_balance_movements_header_date" qtlid="24523">Datum</translation>
    <translation id="billing_credit_balance_movements_header_operation" qtlid="32482">Operation</translation>
-   <translation id="billing_credit_balance_header_order" qtlid="8302">Befehl</translation>
+   <translation id="billing_credit_balance_header_order" qtlid="8302">Bestellung</translation>
    <translation id="billing_credit_balance_movements_operation_credit" qtlid="89761">Aufladung</translation>
    <translation id="billing_credit_balance_movements_operation_debit" qtlid="89749">Soll</translation>
    <translation id="billing_credit_balance_movements_load_error" qtlid="449011">Beim Laden der Vorgänge Ihres Guthabenkontos ist ein Fehler aufgetreten.</translation>

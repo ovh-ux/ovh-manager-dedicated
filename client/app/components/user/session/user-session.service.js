@@ -7,6 +7,7 @@ class SessionService {
     CdnDomain,
     DedicatedCloud,
     Nas,
+    Navbar,
     NavbarNotificationService,
     Products,
     User,
@@ -22,6 +23,7 @@ class SessionService {
     this.cdnDomain = CdnDomain;
     this.dedicatedCloud = DedicatedCloud;
     this.nas = Nas;
+    this.Navbar = Navbar;
     this.navbarNotificationService = NavbarNotificationService;
     this.products = Products;
     this.user = User;
@@ -279,56 +281,69 @@ class SessionService {
   }
 
   getAssistanceMenu(currentUser) {
-    const currentSubsidiaryURLs = this.constants.urls[currentUser.ovhSubsidiary];
-    const assistanceMenu = [];
+    const mustDisplayNewMenu = ['FR'].includes(currentUser.ovhSubsidiary);
+    const currentSubsidiaryURLs = _.get(this.constants.urls, currentUser.ovhSubsidiary, {});
 
-    // Guides (External)
-    if (_(currentSubsidiaryURLs).has('guides.home')) {
-      assistanceMenu.push({
-        title: this.$translate.instant('otrs_menu_all_guides'),
-        url: currentSubsidiaryURLs.guides.home,
+    const assistanceMenuItems = [
+      {
+        title: this.$translate.instant('otrs_menu_help_center'),
+        url: currentSubsidiaryURLs.support,
         isExternal: true,
         click: () => this.atInternet.trackClick({
           name: 'assistance::all_guides',
           type: 'action',
         }),
-      });
-    }
-
-    // New ticket
-    assistanceMenu.push({
-      title: this.$translate.instant('otrs_menu_new_ticket'),
-      click: (callback) => {
-        if (!this.otrsPopupService.isLoaded()) {
-          this.otrsPopupService.init();
-        } else {
-          this.otrsPopupService.toggle();
-        }
-
-        this.atInternet.trackClick({
-          name: 'assistance::create_assistance_request',
-          type: 'action',
-        });
-
-        if (_.isFunction(callback)) {
-          callback();
-        }
+        mustBeKept: mustDisplayNewMenu && _(currentSubsidiaryURLs).has('support'),
       },
-    });
+      {
+        title: this.$translate.instant('otrs_menu_all_guides'),
+        url: _.get(currentSubsidiaryURLs, 'guides.home'),
+        isExternal: true,
+        click: () => this.atInternet.trackClick({
+          name: 'assistance::all_guides',
+          type: 'action',
+        }),
+        mustBeKept: !mustDisplayNewMenu && _(currentSubsidiaryURLs).has('guides.home'),
+      },
+      {
+        title: this.$translate.instant('otrs_menu_new_ticket'),
+        click: (callback) => {
+          if (!this.otrsPopupService.isLoaded()) {
+            this.otrsPopupService.init();
+          } else {
+            this.otrsPopupService.toggle();
+          }
 
-    // Tickets list
-    assistanceMenu.push({
-      title: this.$translate.instant('otrs_menu_list_ticket'),
-      state: 'app.account.otrs-ticket',
-      click: () => this.atInternet.trackClick({
-        name: 'assistance::assistance_requests_created',
-        type: 'action',
-      }),
-    });
+          this.atInternet.trackClick({
+            name: 'assistance::create_assistance_request',
+            type: 'action',
+          });
 
-    // Telephony (External)
-    if (_(currentSubsidiaryURLs).has('support_contact') && this.constants.target !== 'US') {
-      assistanceMenu.push({
+          if (_.isFunction(callback)) {
+            callback();
+          }
+        },
+        mustBeKept: !mustDisplayNewMenu,
+      },
+      {
+        title: this.$translate.instant('otrs_menu_list_ticket'),
+        state: 'app.account.otrs-ticket',
+        click: () => this.atInternet.trackClick({
+          name: 'assistance::assistance_requests_created',
+          type: 'action',
+        }),
+        mustBeKept: !mustDisplayNewMenu,
+      },
+      {
+        title: this.$translate.instant('otrs_menu_ask_for_assistance'),
+        state: 'app.account.otrs-ticket',
+        click: () => this.atInternet.trackClick({
+          name: 'assistance::assistance_requests_created',
+          type: 'action',
+        }),
+        mustBeKept: mustDisplayNewMenu,
+      },
+      {
         title: this.$translate.instant('otrs_menu_telephony_contact'),
         url: currentSubsidiaryURLs.support_contact,
         isExternal: true,
@@ -336,19 +351,27 @@ class SessionService {
           name: 'assistance::helpline',
           type: 'action',
         }),
-      });
-    }
+        mustBeKept: _.has(currentSubsidiaryURLs, 'support_contact') && this.constants.target !== 'US',
+      },
+    ];
 
-    return {
-      name: 'assistance',
-      title: this.$translate.instant('otrs_menu_assistance'),
-      iconClass: 'icon-assistance',
-      onClick: () => this.atInternet.trackClick({
+    const useExpandedText = ['FR'].includes(currentUser.ovhSubsidiary);
+
+    return (useExpandedText
+      ? this.Navbar.buildMenuHeader(this.$translate.instant('otrs_menu_assistance_expanded'))
+      : this.$q.when(this.$translate.instant('otrs_menu_assistance'))
+    )
+      .then(title => ({
         name: 'assistance',
-        type: 'action',
-      }),
-      subLinks: assistanceMenu,
-    };
+        title,
+        headerTitle: useExpandedText ? this.$translate.instant('otrs_menu_assistance_expanded') : title,
+        iconClass: 'icon-assistance',
+        onClick: () => this.atInternet.trackClick({
+          name: 'assistance',
+          type: 'action',
+        }),
+        subLinks: assistanceMenuItems.filter(menuItem => menuItem.mustBeKept),
+      }));
   }
 
   getLanguageMenu() {
@@ -392,141 +415,129 @@ class SessionService {
   }
 
   getUserMenu(currentUser) {
-    return {
-      name: 'user',
-      title: currentUser.firstName,
-      iconClass: 'icon-user',
-      nichandle: currentUser.nichandle,
-      fullName: `${currentUser.firstName} ${currentUser.lastName}`,
-      subLinks: [
+    const useExpandedText = ['FR'].includes(currentUser.ovhSubsidiary);
+
+    return (useExpandedText
+      ? this.Navbar.buildMenuHeader(`
+        ${this.$translate.instant('otrs_menu_userAccount_1', { username: currentUser.firstName })}
+        <br>
+        ${this.$translate.instant('otrs_menu_userAccount_2')}
+      `)
+      : this.$q.when(currentUser.firstName)
+    )
+      .then(title => ({
+        name: 'user',
+        title,
+        iconClass: 'icon-user',
+        nichandle: currentUser.nichandle,
+        fullName: `${currentUser.firstName} ${currentUser.lastName}`,
+        subLinks: [
         // My Account
-        {
-          name: 'user.account',
-          title: this.$translate.instant('menu_account_title'),
-          state: 'app.account.useraccount.infos',
-          click: () => this.trackUserMenuSection('my_account', 'account'),
-          subLinks: [{
-            title: this.$translate.instant('menu_infos'),
+          {
+            name: 'user.account',
+            title: this.$translate.instant('menu_account_title'),
             state: 'app.account.useraccount.infos',
-          }, {
-            title: this.$translate.instant('menu_security'),
-            state: 'app.account.useraccount.security',
+            click: () => this.trackUserMenuSection('my_account', 'account'),
+            subLinks: [{
+              title: this.$translate.instant('menu_infos'),
+              state: 'app.account.useraccount.infos',
+            }, {
+              title: this.$translate.instant('menu_security'),
+              state: 'app.account.useraccount.security',
+            },
+            (this.constants.target === 'EU' || this.constants.target === 'CA') && {
+              title: this.$translate.instant('menu_emails'),
+              state: 'app.account.useraccount.emails',
+            }, {
+              title: this.$translate.instant('menu_ssh'),
+              state: 'app.account.useraccount.ssh',
+            }, {
+              title: this.$translate.instant('menu_advanced'),
+              state: 'app.account.useraccount.advanced',
+            }, {
+              title: this.$translate.instant('menu_users_management'),
+              state: 'app.account.useraccount.users',
+            }],
           },
-          (this.constants.target === 'EU' || this.constants.target === 'CA') && {
-            title: this.$translate.instant('menu_emails'),
-            state: 'app.account.useraccount.emails',
-          }, {
-            title: this.$translate.instant('menu_ssh'),
-            state: 'app.account.useraccount.ssh',
-          }, {
-            title: this.$translate.instant('menu_advanced'),
-            state: 'app.account.useraccount.advanced',
-          }, {
-            title: this.$translate.instant('menu_users_management'),
-            state: 'app.account.useraccount.users',
-          }],
-        },
 
-        // Billing
-        // Pay As You Go for US
-        !currentUser.isEnterprise && this.constants.target === 'US' && {
-          name: 'user.billing',
-          title: this.$translate.instant('menu_billing'),
-          state: 'app.account.billing.main.pay-as-you-go',
-          click: () => this.trackUserMenuSection('my_facturation', 'billing'),
-        },
+          // Billing
+          // Pay As You Go for US
+          !currentUser.isEnterprise && this.constants.target === 'US' && {
+            name: 'user.billing',
+            title: this.$translate.instant('menu_billing'),
+            state: 'app.account.billing.main.pay-as-you-go',
+            click: () => this.trackUserMenuSection('my_facturation', 'billing'),
+          },
 
-        // history for EU and CA...
-        !currentUser.isEnterprise && this.constants.target !== 'US' && {
-          name: 'user.billing',
-          title: this.$translate.instant('menu_billing'),
-          state: 'app.account.billing.main.history',
-          click: () => this.trackUserMenuSection('my_facturation', 'billing'),
-        },
+          // history for EU and CA...
+          !currentUser.isEnterprise && this.constants.target !== 'US' && {
+            name: 'user.billing',
+            title: this.$translate.instant('menu_billing'),
+            state: 'app.account.billing.main.history',
+            click: () => this.trackUserMenuSection('my_facturation', 'billing'),
+          },
 
-        // Services
-        (this.constants.target === 'EU' || this.constants.target === 'CA') && (!currentUser.isEnterprise ? {
-          name: 'user.services',
-          title: this.$translate.instant('menu_services'),
-          state: 'app.account.billing.service.autoRenew',
-          click: () => this.trackUserMenuSection('my_services', 'services'),
-          subLinks: [{
-            title: this.$translate.instant('menu_services_management'),
+          // Services
+          (this.constants.target === 'EU' || this.constants.target === 'CA') && (!currentUser.isEnterprise ? {
+            name: 'user.services',
+            title: this.$translate.instant('menu_services'),
             state: 'app.account.billing.service.autoRenew',
-          }, {
+            click: () => this.trackUserMenuSection('my_services', 'services'),
+            subLinks: [{
+              title: this.$translate.instant('menu_services_management'),
+              state: 'app.account.billing.service.autoRenew',
+            }, {
+              title: this.$translate.instant('menu_agreements'),
+              state: 'app.account.service.useraccount.agreements',
+            }],
+          } : {
             title: this.$translate.instant('menu_agreements'),
             state: 'app.account.service.useraccount.agreements',
-          }],
-        } : {
-          title: this.$translate.instant('menu_agreements'),
-          state: 'app.account.service.useraccount.agreements',
-        }),
+          }),
 
-        // Payment
-        !currentUser.isEnterprise && {
-          name: 'user.payment',
-          title: this.$translate.instant('menu_means'),
-          state: 'app.account.billing.payment.mean',
-          click: () => this.trackUserMenuSection('my_payment_types', 'payment_types'),
-          subLinks: [{
+          // Payment
+          !currentUser.isEnterprise && {
+            name: 'user.payment',
             title: this.$translate.instant('menu_means'),
-            state: 'app.account.billing.payment.mean',
+            state: 'app.account.billing.payment',
+            click: () => this.trackUserMenuSection('my_payment_types', 'payment_types'),
           },
-          (this.constants.target === 'EU' || this.constants.target === 'CA') && {
-            title: this.$translate.instant('menu_ovhaccount'),
-            state: 'app.account.billing.payment.ovhaccount',
+
+          // Orders
+          (!currentUser.isEnterprise && this.constants.target === 'EU' && currentUser.ovhSubsidiary === 'FR') && {
+            title: this.$translate.instant('menu_orders'),
+            state: 'app.account.billing.orders',
+            click: () => this.trackUserMenuSection('my_orders', 'orders'),
           },
-          (this.constants.target === 'EU' || this.constants.target === 'CA') && {
-            title: this.$translate.instant('menu_vouchers'),
-            state: 'app.account.billing.payment.vouchers',
-          }, {
-            title: this.$translate.instant('menu_refunds'),
-            state: 'app.account.billing.payment.refunds',
-          },
+
+          // Contacts
           (this.constants.target === 'EU') && {
-            title: this.$translate.instant('menu_fidelity'),
-            state: 'app.account.billing.payment.fidelity',
-          }, {
-            title: this.$translate.instant('menu_credits'),
-            state: 'app.account.billing.payment.credits',
-          }],
-        },
-
-        // Orders
-        (!currentUser.isEnterprise && this.constants.target === 'EU' && currentUser.ovhSubsidiary === 'FR') && {
-          title: this.$translate.instant('menu_orders'),
-          state: 'app.account.billing.orders',
-          click: () => this.trackUserMenuSection('my_orders', 'orders'),
-        },
-
-        // Contacts
-        (this.constants.target === 'EU') && {
-          title: this.$translate.instant('menu_contacts'),
-          state: 'app.account.useraccount.contacts.services',
-          click: () => this.trackUserMenuSection('my_contacts', 'contacts'),
-        },
-
-        // Tickets
-        {
-          title: this.$translate.instant('menu_tickets'),
-          state: 'app.account.otrs-ticket',
-          click: () => this.trackUserMenuSection('my_otrs_tickets', 'otrs'),
-        },
-
-        // Logout
-        {
-          title: this.$translate.instant('global_logout'),
-          class: 'logout',
-          click: (callback) => {
-            this.ssoAuthentication.logout();
-
-            if (_.isFunction(callback)) {
-              callback();
-            }
+            title: this.$translate.instant('menu_contacts'),
+            state: 'app.account.useraccount.contacts.services',
+            click: () => this.trackUserMenuSection('my_contacts', 'contacts'),
           },
-        },
-      ],
-    };
+
+          // Tickets
+          {
+            title: this.$translate.instant('menu_tickets'),
+            state: 'app.account.otrs-ticket',
+            click: () => this.trackUserMenuSection('my_otrs_tickets', 'otrs'),
+          },
+
+          // Logout
+          {
+            title: this.$translate.instant('global_logout'),
+            class: 'logout',
+            click: (callback) => {
+              this.ssoAuthentication.logout();
+
+              if (_.isFunction(callback)) {
+                callback();
+              }
+            },
+          },
+        ],
+      }));
   }
 
   loadTranslations() {
@@ -583,28 +594,23 @@ class SessionService {
         managerLinks: this.getManagerLinks(),
       };
 
-      // Set Internal Links
-      if (user) {
-        baseNavbar.internalLinks = [
-          this.getLanguageMenu(), // Language
-          this.getAssistanceMenu(user), // Assistance
-          this.getUserMenu(user), // User
-        ];
-      }
+      return (user ? this.$q.all([
+        this.getLanguageMenu(),
+        this.getAssistanceMenu(user),
+        this.getUserMenu(user),
+      ]) : this.$q.when([]))
+        .then((internalLinks) => {
+          baseNavbar.internalLinks = internalLinks;
+          baseNavbar.internalLinks.splice(1, 0, notificationsMenu);
 
-      if (notificationsMenu.show) {
-        baseNavbar.internalLinks.splice(1, 0, notificationsMenu);
-      }
-
-      return baseNavbar;
+          return baseNavbar;
+        });
     };
 
-    return this.$q.all({
-      translate: this.loadTranslations(),
-      user: this.user.getUser(),
-      notifications: this.navbarNotificationService.getNavbarContent(),
-    })
-      .then(({ user, notifications }) => getBaseNavbar(user, notifications))
+    return this.loadTranslations()
+      .then(() => this.user.getUser())
+      .then(user => this.navbarNotificationService.getNavbarContent(user)
+        .then(notifications => getBaseNavbar(user, notifications)))
       .catch(() => getBaseNavbar());
   }
 }

@@ -1,6 +1,12 @@
+import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
+import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
 import translateAsyncLoader from '@ovh-ux/translate-async-loader';
-import config from './config/config';
+import uiRouter from '@uirouter/angularjs';
+import webUniverseComponents from '@ovh-ux/web-universe-components';
+import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
+import ovhContacts from '@ovh-ux/ng-ovh-contacts';
 
+import config from './config/config';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
 
 const appDeps = [
@@ -28,11 +34,12 @@ const appDeps = [
   'ovh-angular-user-pref',
   'ovhBrowserAlert',
   'ui.validate',
-  'ovh-angular-sso-auth',
-  'ovh-angular-sso-auth-modal-plugin',
+  ngOvhSsoAuth,
+  ngOvhSsoAuthModalPlugin,
   'ovh-angular-apiv7',
   'oui',
   'ui.select',
+  uiRouter,
   'Module.ip',
   'Module.license',
   'Module.download',
@@ -46,6 +53,10 @@ const appDeps = [
   'Module.otrs',
   translateAsyncLoader,
   dedicatedUniverseComponents,
+  webUniverseComponents,
+  'xeditable',
+  ovhPaymentMethod,
+  ovhContacts,
 ];
 
 if (WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca') {
@@ -182,7 +193,7 @@ angular
     $translateProvider.useLoader('asyncLoader');
     $translateProvider.useMissingTranslationHandler('translateMissingTranslationHandler');
     $translateProvider.useLoaderCache(true);
-    $translateProvider.useSanitizeValueStrategy('sanitizeParameters');
+    $translateProvider.useSanitizeValueStrategy('sceParameters');
 
     $translateProvider.preferredLanguage(defaultLanguage);
     $translateProvider.use(defaultLanguage);

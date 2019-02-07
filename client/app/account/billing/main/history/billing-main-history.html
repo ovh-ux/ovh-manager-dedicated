@@ -20,25 +20,25 @@
 
         <div data-ng-if="$ctrl.debtAccount.active && ($ctrl.debtAccount.dueAmount.value > 0 || $ctrl.debtAccount.todoAmount.value > 0)">
             <p class="text-warning"
-               data-ng-if="!$ctrl.hasDefaultPaymentMehtod && $ctrl.debtAccount.dueAmount.value > 0"
+               data-ng-if="!$ctrl.hasDefaultPaymentMethod && $ctrl.debtAccount.dueAmount.value > 0"
                data-translate="billing_main_history_debt_to_pay"
                data-translate-values="{ t0: $ctrl.debtAccount.dueAmount.text }">
             </p>
 
             <p class="text-info"
-               data-ng-if="$ctrl.hasDefaultPaymentMehtod && $ctrl.debtAccount.dueAmount.value > 0"
+               data-ng-if="$ctrl.hasDefaultPaymentMethod && $ctrl.debtAccount.dueAmount.value > 0"
                data-translate="billing_main_history_debt_automatically_collected"
                data-translate-values="{ t0: $ctrl.debtAccount.dueAmount.text }">
             </p>
 
             <p class="text-warning"
-               data-ng-if="!$ctrl.hasDefaultPaymentMehtod && $ctrl.debtAccount.todoAmount.value > 0"
+               data-ng-if="!$ctrl.hasDefaultPaymentMethod && $ctrl.debtAccount.todoAmount.value > 0"
                data-translate="billing_main_history_debt_to_pay"
                data-translate-values="{ t0: $ctrl.debtAccount.todoAmount.text }">
             </p>
 
             <p class="text-info"
-               data-ng-if="$ctrl.hasDefaultPaymentMehtod && $ctrl.debtAccount.todoAmount.value > 0"
+               data-ng-if="$ctrl.hasDefaultPaymentMethod && $ctrl.debtAccount.todoAmount.value > 0"
                data-translate="billing_main_history_debt_automatically_collected"
                data-translate-values="{ t0: $ctrl.debtAccount.todoAmount.text }">
             </p>
@@ -154,10 +154,10 @@
                 </span>
             </oui-column>
             <oui-column data-title=":: 'billing_main_history_table_balance_due_date' | translate">
-                <span data-ng-if="$row.debt.date"
-                      data-ng-bind=":: $row.debt.date | date:'mediumDate'">
+                <span data-ng-if="$row.debt.dueDate"
+                      data-ng-bind=":: $row.debt.dueDate | date:'mediumDate'">
                 </span>
-                <span data-ng-if="!$row.debt.date"
+                <span data-ng-if="!$row.debt.dueDate"
                       data-translate="billing_main_history_table_unavailable">
                 </span>
             </oui-column>

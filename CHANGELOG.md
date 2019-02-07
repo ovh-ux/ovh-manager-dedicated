@@ -1,3 +1,207 @@
+<a name="10.10.2"></a>
+## [10.10.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.1...v10.10.2) (2019-02-04)
+
+
+### Bug Fixes
+
+* **i18n:** retrieve translations ([e7485c5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e7485c5))
+* **i18n:** submit translations ([addaf6d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/addaf6d))
+* **navbar:** revamp style and texts ([#877](https://github.com/ovh-ux/ovh-manager-dedicated/issues/877)) ([531a33e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/531a33e))
+
+
+
+<a name="10.10.1"></a>
+## [10.10.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.0...v10.10.1) (2019-01-31)
+
+
+### Bug Fixes
+
+* **account.billing.payment.add:** us payment add ([8690acb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8690acb))
+* **billing.payment:** clear vantiv iframe if already exist ([2a416aa](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2a416aa))
+* **billing.payment.method:** disbale default credit card with bad status ([eb0cb42](https://github.com/ovh-ux/ovh-manager-dedicated/commit/eb0cb42))
+* **dedicated.server:** display tabs on reinstall error ([cc3e161](https://github.com/ovh-ux/ovh-manager-dedicated/commit/cc3e161))
+
+
+
+<a name="10.10.0"></a>
+# [10.10.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.9.4...v10.10.0) (2019-01-30)
+
+
+### Bug Fixes
+
+* **i18n:** retrieve translations ([e9408d8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e9408d8))
+* **i18n:** submit translations ([1fa1f19](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1fa1f19))
+* **translation:** incorrect translation while moving IP ([51d5377](https://github.com/ovh-ux/ovh-manager-dedicated/commit/51d5377)), closes [#MBE-238](https://github.com/ovh-ux/ovh-manager-dedicated/issues/MBE-238)
+
+
+### Features
+
+* **account.user.contacts:** support kubernetes ([#941](https://github.com/ovh-ux/ovh-manager-dedicated/issues/941)) ([e3d3992](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e3d3992))
+
+
+
+<a name="10.9.4"></a>
+## [10.9.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.9.3...v10.9.4) (2019-01-23)
+
+
+### Bug Fixes
+
+* **account.billing.autorenew:**  rearrange payment frequency table ([#905](https://github.com/ovh-ux/ovh-manager-dedicated/issues/905)) ([4071d2b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4071d2b))
+* **account.user.ssh:** removed cache ([#923](https://github.com/ovh-ux/ovh-manager-dedicated/issues/923)) ([b795388](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b795388))
+* **config:** replace invalid guide link on IPMI ([#910](https://github.com/ovh-ux/ovh-manager-dedicated/issues/910)) ([c3f9e19](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c3f9e19))
+* **configuration:** change message for FR subsidiary ([#866](https://github.com/ovh-ux/ovh-manager-dedicated/issues/866)) ([3aacf20](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3aacf20))
+* **i18n:** retrieve translations ([47bc300](https://github.com/ovh-ux/ovh-manager-dedicated/commit/47bc300))
+* **i18n:** submit translations ([77bfeae](https://github.com/ovh-ux/ovh-manager-dedicated/commit/77bfeae))
+* **ip.order:** improve modal form ([#921](https://github.com/ovh-ux/ovh-manager-dedicated/issues/921)) ([a873f20](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a873f20))
+
+
+
+<a name="10.9.3"></a>
+## [10.9.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.9.2...v10.9.3) (2019-01-23)
+
+
+
+<a name="10.9.2"></a>
+## [10.9.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.9.1...v10.9.2) (2019-01-23)
+
+
+### Bug Fixes
+
+* **dedicated.server:** infinite loading when installation error ([93c07f1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/93c07f1))
+
+
+
+<a name="10.9.1"></a>
+## [10.9.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.9.0...v10.9.1) (2019-01-17)
+
+
+### Bug Fixes
+
+* billingMean injection in autorenew view ([f6c4c52](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f6c4c52))
+* BillingPaymentMethod injection in autorenew view ([6fd1962](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6fd1962))
+
+
+
+<a name="10.9.0"></a>
+# [10.9.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.8.2...v10.9.0) (2019-01-17)
+
+
+### Bug Fixes
+
+* prevent loading angularjs more than once ([ef38fae](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ef38fae))
+
+
+### Features
+
+* **billing.payment:** add new payment methods ([dddf1a7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/dddf1a7))
+
+
+
+<a name="10.8.2"></a>
+## [10.8.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.8.1...v10.8.2) (2019-01-17)
+
+
+
+<a name="10.8.1"></a>
+## [10.8.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.8.0...v10.8.1) (2019-01-16)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** change redirection for exchange dedicated offers ([#903](https://github.com/ovh-ux/ovh-manager-dedicated/issues/903)) ([5e1c9f0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5e1c9f0))
+* **billing.autorenew:** fix resiliation for exchange services ([356c2fd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/356c2fd))
+* **billing.history:** display right due date value ([c72505a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c72505a))
+* **i18n:** retrieve translations ([24ada1f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/24ada1f))
+* **ie11:** bump [@ovh-ux](https://github.com/ovh-ux)/translate-async-loader ([5b9f941](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5b9f941))
+* **server.statistics:** add only milliseconds offset ([#901](https://github.com/ovh-ux/ovh-manager-dedicated/issues/901)) ([99347e1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/99347e1))
+
+
+
+<a name="10.8.0"></a>
+# [10.8.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.7.8...v10.8.0) (2019-01-09)
+
+
+### Bug Fixes
+
+* **config:** update some guide links ([#893](https://github.com/ovh-ux/ovh-manager-dedicated/issues/893)) ([ada8f72](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ada8f72))
+* **i18n:** add missing translations for payment method ([0483b7a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0483b7a))
+* **i18n:** retrieve ([7ad7fdd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7ad7fdd))
+* **i18n:** retrieve translations ([e822e45](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e822e45))
+* **i18n:** submit ([ede79f4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ede79f4))
+* **i18n:** submit translations ([8e7f81e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8e7f81e))
+* **ip.ip-lb:** add port redirection ([961a0f3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/961a0f3))
+* **vantiv:** increasing the value of numYears to be 10 at a time ([#882](https://github.com/ovh-ux/ovh-manager-dedicated/issues/882)) ([34f533a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/34f533a))
+
+
+### Features
+
+* **billing.autorenew:** allow only nic billing to pay debt ([#890](https://github.com/ovh-ux/ovh-manager-dedicated/issues/890)) ([b108932](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b108932))
+* **billing.history:** change message if there is no debt to pay ([06f276d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/06f276d))
+* **components.user.session:** remove some assistance menu items for FR ([838c047](https://github.com/ovh-ux/ovh-manager-dedicated/commit/838c047))
+
+
+
+<a name="10.7.8"></a>
+## [10.7.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.7.7...v10.7.8) (2019-01-04)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** fix autorenew activation  button  display ([#887](https://github.com/ovh-ux/ovh-manager-dedicated/issues/887)) ([eb55776](https://github.com/ovh-ux/ovh-manager-dedicated/commit/eb55776))
+
+
+
+<a name="10.7.7"></a>
+## [10.7.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.7.6...v10.7.7) (2019-01-02)
+
+
+### Bug Fixes
+
+* **billing.orders:** fix bill download for delivered orders ([7697d69](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7697d69))
+* **billing.orders:** fix translation ([19f6473](https://github.com/ovh-ux/ovh-manager-dedicated/commit/19f6473))
+
+
+
+<a name="10.7.6"></a>
+## [10.7.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.7.5...v10.7.6) (2018-12-20)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations ([b0ed166](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b0ed166))
+
+
+
+<a name="10.7.5"></a>
+## [10.7.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.7.4...v10.7.5) (2018-12-20)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** fix exchange renew redirection ([d4906cc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d4906cc))
+* **user.contacts:** replace ng-show with ng-if ([a73809f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a73809f))
+
+
+
+<a name="10.7.4"></a>
+## [10.7.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.7.3...v10.7.4) (2018-12-13)
+
+
+
+<a name="10.7.3"></a>
+## [10.7.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.7.2...v10.7.3) (2018-12-11)
+
+
+### Bug Fixes
+
+* **billing.mean:** change message for payment mean addition ([1bd9989](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1bd9989))
+* **billing.mean:** prevent default mean choice if there is none ([b553403](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b553403))
+* **dedicated.server.dashboard:** prevent displaying modal as background ([1b1e342](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1b1e342))
+* **i18n:** retrieve translations ([3a9a995](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3a9a995))
+* **i18n:** submit translations ([9caad3f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9caad3f))
+
+
+
 <a name="10.7.2"></a>
 ## [10.7.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.7.1...v10.7.2) (2018-12-10)
 
