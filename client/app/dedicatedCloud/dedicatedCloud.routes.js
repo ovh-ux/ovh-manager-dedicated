@@ -29,11 +29,13 @@ angular
             $stateParams,
             DedicatedCloud,
           ) => DedicatedCloud.retrievingFullService($stateParams.productId),
-          availableServicePacks: (
-            currentService,
-            dedicatedCloudOptions,
-          ) => dedicatedCloudOptions.retrievingAvailableServicePacks(currentService),
           currentUser: User => User.getUser(),
+          servicePacks: (
+            currentService,
+            currentUser,
+            dedicatedCloudServicePackService,
+          ) => dedicatedCloudServicePackService
+            .buildAllForService(currentService.serviceName, currentUser.ovhSubsidiary),
         },
       },
     );

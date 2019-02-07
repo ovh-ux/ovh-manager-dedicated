@@ -1,4 +1,5 @@
-import { ALL_EXISTING_OPTIONS, OPTION_TYPES } from '../servicePackManagement/dedicatedCloud-option.constants';
+import _ from 'lodash';
+import { OPTION_TYPES } from '../servicePack/option/dedicatedCloud-servicePack-option.constants';
 
 /* @ngInject */
 export default class {
@@ -19,29 +20,36 @@ export default class {
   }
 
   $onInit() {
-    const currentServicePack = this.availableServicePacks[this.currentService.servicePackName];
+    const currentServicePack = _.find(
+      this.servicePacks,
+      { name: this.currentService.servicePackName },
+    );
 
-    this.optionsTheServiceAlreadyHas = currentServicePack.options
-      .map(optionName => ALL_EXISTING_OPTIONS[optionName]);
+    this.optionsTheCurrentServicePackHas = _.filter(
+      currentServicePack.options,
+      { type: OPTION_TYPES.basicOption },
+    );
 
-    this.currentSPIsACertification = ALL_EXISTING_OPTIONS[
-      currentServicePack.name
-    ].type === OPTION_TYPES.certification
-      ? currentServicePack.name
-      : null;
+    this.currentCertification = _.find(
+      currentServicePack.options,
+      { type: OPTION_TYPES.certification },
+    );
 
-    this.availableOptionsToActivate = Array
-      .from(
-        new Set(
-          _.flatten(
-            Object.values(this.availableServicePacks)
-              .filter(servicePack => servicePack.name !== currentServicePack.name)
-              .map(servicePack => servicePack.options),
-          ),
-        ),
-      )
-      .filter(optionName => ALL_EXISTING_OPTIONS[optionName].type === OPTION_TYPES.option)
-      .filter(optionName => !currentServicePack.options.includes(optionName));
+    this.orderableServicePacksWithOnlyBasicOptions = _.filter(
+      _.reject(this.servicePacks, { name: currentServicePack.name }),
+      servicePack => _.every(
+        servicePack.options,
+        option => _.isEqual(option.type, OPTION_TYPES.basicOption),
+      ),
+    );
+
+    this.orderableServicePacksWithCertifications = _.filter(
+      _.reject(this.servicePacks, { name: currentServicePack.name }),
+      servicePack => _.some(
+        servicePack.options,
+        option => _.isEqual(option.type, OPTION_TYPES.certification),
+      ),
+    );
 
     this.setAction = (action, data) => this.$scope.$parent.setAction(action, data);
   }

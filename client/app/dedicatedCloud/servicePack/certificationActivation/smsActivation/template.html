@@ -1,0 +1,39 @@
+<p>
+Au moins l'un de vos utilisateurs administrateur doit avoir un numéro de mobile,
+
+une adresse email et être "token validator". Cela permet d'activer l'authentification à 2 facteurs pour les actions d'administrateur sur le vCenter.
+</p>
+
+<div data-ng-if="$ctrl.usersWhoCanReceiveTextMessages.length > 0">
+    <p>Utilisateurs qui pourront valider des tokens par SMS :</p>
+
+    <oui-datagrid
+        data-rows-loader="$ctrl.mapAllowedIPsAndBlocks()">
+        <oui-column
+            data-title="Identifiant"
+            data-property="userName"
+            data-type="string"></oui-column>
+        <oui-column
+            data-title="Prénom"
+            data-property="firstName"
+            data-type="string"></oui-column>
+        <oui-column
+            data-title="Nom"
+            data-property="lastName"
+            data-type="string"></oui-column>
+        <oui-column
+            data-title="Adresse e-mail"
+            data-property="emailAddress"
+            data-type="string"></oui-column>
+        <oui-column
+            data-title="Numéro de téléphone"
+            data-property="phoneNumber"
+            data-type="string"></oui-column>
+    </oui-datagrid>
+</div>
+
+<oui-message
+    data-ng-if="$ctrl.usersWhoCanReceiveTextMessages.length === 0"
+    data-type="warning">
+    Aucun utilisateur ne remplit ces conditions. Veuillez vous assurer qu'au moins un utilisateur administrateur dans vos utilisateurs possède un numéro de mobile et une adresse email et soit "token validator" avant de continuer.
+</oui-message>

@@ -1,0 +1,46 @@
+<h3 data-translate="dedicatedCloud_servicePack_certificationActivation_selection_header1"></h3>
+<p data-translate="dedicatedCloud_servicePack_certificationActivation_selection_header2"></p>
+
+<form
+    novalidate
+    name="$ctrl.form"
+    data-ng-submit="$ctrl.goToNextStep()">
+
+    <oui-field>
+        <div
+            data-ng-repeat="servicePack in ::$ctrl.orderableServicePacks track by servicePack.name"
+            class="oui-select-picker oui-select-picker_light mb-5">
+            <input
+                class="oui-select-picker__input oui-input"
+                type="radio"
+                name="servicePackSelection"
+                data-ng-model="$ctrl.selectedServicePackName"
+                data-ng-value="servicePack.name"
+                id="{{ 'servicePackSelection' + servicePack.name }}"
+                required>
+            <label
+                class="oui-select-picker__label-container"
+                for="{{ 'servicePackSelection' + servicePack.name }}">
+                <span
+                class="oui-select-picker__label"
+                data-ng-bind=":: servicePack.displayName"></span>
+                <span class="oui-select-picker__value-container oui-select-picker__section">
+                <span class="oui-select-picker__value">Value</span>
+                </span>
+            </label>
+        </div>
+    </oui-field>
+
+    <button
+        type="button"
+        class="oui-button oui-button_secondary"
+        data-ui-sref="app.dedicatedClouds">
+        Annuler
+    </button>
+
+    <button
+        type="submit"
+        class="oui-button oui-button_primary ml-3">
+        Suivant
+    </button>
+</form>

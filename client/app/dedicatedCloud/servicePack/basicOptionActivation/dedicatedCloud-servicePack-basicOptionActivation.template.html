@@ -1,0 +1,58 @@
+<h2 data-translate="dedicatedCloud_servicePack_basicOptionActivation_header"></h2>
+
+<form
+    novalidate
+    name="$ctrl.form"
+    data-ng-submit="$ctrl.placeOrder()"
+    data-ng-if="!$ctrl.orderIsSuccessful">
+
+    <p data-translate="dedicatedCloud_servicePack_basicOptionActivation_step1_description"></p>
+
+    <oui-message
+        data-type="error"
+        data-dismissable="false"
+        data-ng-if="!$ctrl.orderIsValid">
+        <span data-ng-bind="$ctrl.errorMessage"></span>
+    </oui-message>
+
+    <oui-field class="mt-3">
+        <oui-radio-group
+            data-model="$ctrl.servicePackToOrder"
+            data-on-change="$ctrl.orderIsValid = true">
+            <oui-radio
+                data-ng-repeat="servicePack in ::$ctrl.orderableServicePacks track by servicePack.name"
+                data-value="servicePack.name"
+                data-required>
+                <span data-ng-bind=":: servicePack.displayName"></span>
+            </oui-radio>
+        </oui-radio-group>
+    </oui-field>
+
+    <p
+        data-translate="dedicatedCloud_servicePack_basicOptionActivation_step2_description"
+        data-translate-values="{
+            confirmButtonLabel: '<strong>' + ('dedicatedCloud_servicePack_basicOptionActivation_step2_submitButtonText' | translate) + '</strong>'
+        }"></p>
+
+    <button
+        type="submit"
+        class="oui-button oui-button_primary"
+        data-translate="dedicatedCloud_servicePack_basicOptionActivation_step2_submitButtonText"
+        data-ng-if="!$ctrl.orderIsInProgress"></button>
+
+    <oui-spinner data-ng-if="$ctrl.orderIsInProgress"></oui-spinner>
+</form>
+
+<div data-ng-if="$ctrl.orderIsSuccessful">
+    <oui-message
+        data-type="success"
+        data-dismissable="false">
+        <span data-translate="dedicatedCloud_servicePack_basicOptionActivation_orderIsSuccessful_message"></span>
+    </oui-message>
+
+    <p
+        class="mt-3"
+        data-translate="dedicatedCloud_servicePack_basicOptionActivation_orderIsSuccessful_text_1"></p>
+    <p
+        data-translate="dedicatedCloud_servicePack_basicOptionActivation_orderIsSuccessful_text_2"></p>
+</div>

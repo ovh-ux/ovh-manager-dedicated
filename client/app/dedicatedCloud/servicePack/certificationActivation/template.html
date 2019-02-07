@@ -1,0 +1,29 @@
+<oui-back-button data-ui-sref="app.dedicatedClouds">Activation d'une certification</oui-back-button>
+
+<div class="oui-progress-tracker">
+    <ol class="oui-progress-tracker__steps">
+        <li
+            data-ng-repeat="step in $ctrl.steps track by step.stateName"
+            data-ng-class="{
+                'oui-progress-tracker__step_active' : step.isActive,
+                'oui-progress-tracker__step_complete' : step.isComplete
+            }"
+            class="oui-progress-tracker__step">
+            <span class="oui-progress-tracker__status">
+                <span
+                    class="oui-progress-tracker__label"
+                    data-ng-bind="step.displayName"></span>
+            </span>
+        </li>
+    </ol>
+</div>
+
+<div
+    data-ng-if="$ctrl.transitionIsInProgress"
+    class="text-center">
+    <oui-spinner data-size="l"></oui-spinner>
+</div>
+
+<div
+    data-ng-show="!$ctrl.transitionIsInProgress"
+    data-ui-view="dedicatedCloudServicePackCertificationActivationStep"></div>

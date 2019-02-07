@@ -5,7 +5,7 @@ export default {
   bindings: {
     currentService: '<',
     currentUser: '<',
-    availableServicePacks: '<',
+    servicePacks: '<',
   },
   controller,
   template,
