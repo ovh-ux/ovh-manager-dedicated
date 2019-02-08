@@ -1,14 +1,20 @@
 angular.module('App').controller('AddAccessFtpBackupCtrl', class AddAccessFtpBackupCtrl {
-  constructor($rootScope, $scope, $stateParams, $translate, Alerter, Server) {
+  constructor(
+    $rootScope, $scope, $stateParams, $translate,
+    Alerter, Server,
+    DEDICATED_SERVER_FTP_BACKUP_IP_BLOCKS_LIMIT,
+  ) {
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.Alerter = Alerter;
     this.Server = Server;
+    this.ipBlocksLimit = DEDICATED_SERVER_FTP_BACKUP_IP_BLOCKS_LIMIT;
   }
 
   $onInit() {
+    this.existingIpBlocks = this.$scope.currentActionData;
     this.access = {
       listIp: [],
       ip: null,
@@ -72,9 +78,8 @@ angular.module('App').controller('AddAccessFtpBackupCtrl', class AddAccessFtpBac
   }
 
   isIpBlocksLengthValid() {
-    const IP_BLOCKS_MAX_LENGTH = 1024;
     if (this.access.ip) {
-      return this.access.ip.join('').length <= IP_BLOCKS_MAX_LENGTH;
+      return (this.existingIpBlocks.length + this.access.ip.length) <= this.ipBlocksLimit;
     }
     return true;
   }
