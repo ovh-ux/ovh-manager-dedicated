@@ -113,16 +113,25 @@
         <oui-tile
             class="h-100"
             data-heading="{{:: 'dedicatedCloud_options_title' | translate }}">
-            <oui-tile-definition data-term="Options activées">
+            <oui-tile-definition data-term="Options existantes">
                 <oui-tile-description>
-                    <span data-ng-if="!$ctrl.optionsTheCurrentServicePackHas">Aucune</span>
-                    <span
-                        data-ng-if="$ctrl.optionsTheCurrentServicePackHas.length === 1"
-                        data-ng-bind="'dedicatedCloud_options_name_' + $ctrl.optionsTheCurrentServicePackHas[0].name | translate"></span>
-                    <ul data-ng-if="$ctrl.optionsTheCurrentServicePackHas.length > 1">
+                    <ul data-ng-if="$ctrl.allExistingOptions.length > 1">
                         <li
-                            data-ng-repeat="option in $ctrl.optionsTheCurrentServicePackHas track by option.name"
-                            data-ng-bind="'dedicatedCloud_options_name_' + option.name | translate"></li>
+                            class="mt-1"
+                            data-ng-repeat="option in $ctrl.allExistingOptions track by option.name">
+                            <span data-ng-bind="'dedicatedCloud_dashboard_options_basicOptions_names_' + option.name | translate"></span>
+                            <dedicated-cloud-activation-status data-status="option.status"></dedicated-cloud-activation-status>
+                            <a
+                                class="d-block oui-link_icon"
+                                target="_blank"
+                                rel="noopener"
+                                data-ng-if="option.status === $ctrl.DEDICATED_CLOUD_ACTIVATION_STATUS.disabled"
+                                data-ng-href="{{ option.descriptionURL }}">
+                                Plus d'informations
+                                <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
+                                <span class="sr-only" data-translate="common_new_tab"></span>
+                            </a>
+                        </li>
                     </ul>
                 </oui-tile-description>
                 <oui-action-menu

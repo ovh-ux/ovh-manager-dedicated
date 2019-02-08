@@ -4,12 +4,12 @@ export default class ServicePackOption {
     displayName,
     mensualCost,
     type,
-    descriptionUrl,
+    descriptionURL,
   }) {
     this.name = name;
     this.displayName = displayName;
     this.mensualCost = mensualCost;
     this.type = type;
-    this.descriptionUrl = descriptionUrl;
+    this.descriptionURL = descriptionURL;
   }
 }

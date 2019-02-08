@@ -3,18 +3,18 @@
 // import 'ovh-ui-angular';
 
 import component from './component';
-import activationStatusModuleName from '../../components/activationStatus';
+import { ALL_TYPES } from './constants';
 
-const moduleName = 'dedicatedCloudDashboard';
+const moduleName = 'dedicatedCloudActivationStatus';
 
 angular
   .module(moduleName, [
-    activationStatusModuleName,
     'oui',
     'pascalprecht.translate',
     'ui.router',
   ])
-  .component('dedicatedCloudDashboard', component)
+  .component('dedicatedCloudActivationStatus', component)
+  .constant('DEDICATED_CLOUD_ACTIVATION_STATUS', ALL_TYPES)
   .run(/* @ngTranslationsInject ./translations */);
 
 export default moduleName;

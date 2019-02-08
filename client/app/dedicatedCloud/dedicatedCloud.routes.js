@@ -1,4 +1,4 @@
-import dedicatedCloudDashboardModuleName from './dashboard/dedicatedCloud-dashboard.index';
+import dedicatedCloudDashboardModuleName from './dashboard';
 
 angular
   .module('App')

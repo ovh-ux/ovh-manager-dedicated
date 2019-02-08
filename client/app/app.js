@@ -9,6 +9,7 @@ import ovhContacts from '@ovh-ux/ng-ovh-contacts';
 
 import config from './config/config';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
+import dedicatedCloudActivationStatus from './components/activationStatus';
 import dedicatedCloudDashboardModuleName from './dedicatedCloud/dashboard';
 import dedicatedCloudServicePackBasicOptionActivationModuleName from './dedicatedCloud/servicePack/basicOptionActivation';
 import dedicatedCloudServicePackCertificationActivationModuleName from './dedicatedCloud/servicePack/certificationActivation';
@@ -64,6 +65,7 @@ const appDeps = [
   ovhPaymentMethod,
   ovhContacts,
   dedicatedCloudDashboardModuleName,
+  dedicatedCloudActivationStatus,
   dedicatedCloudServicePackBasicOptionActivationModuleName,
   dedicatedCloudServicePackCertificationActivationModuleName,
   dedicatedCloudServicePackOptionModuleName,

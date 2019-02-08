@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { OPTION_TYPES } from '../servicePack/option/constants';
+import { DATA_ON_ALL_OPTIONS, OPTION_TYPES } from '../servicePack/option/constants';
 
 /* @ngInject */
 export default class {
@@ -10,6 +10,7 @@ export default class {
     $timeout,
     $translate,
     $uibModal,
+    DEDICATED_CLOUD_ACTIVATION_STATUS,
   ) {
     this.$scope = $scope;
     this.$state = $state;
@@ -17,6 +18,7 @@ export default class {
     this.$timeout = $timeout;
     this.$translate = $translate;
     this.$uibModal = $uibModal;
+    this.DEDICATED_CLOUD_ACTIVATION_STATUS = DEDICATED_CLOUD_ACTIVATION_STATUS;
   }
 
   $onInit() {
@@ -26,8 +28,24 @@ export default class {
     );
 
     this.optionsTheCurrentServicePackHas = _.filter(
-      currentServicePack.options,
+      DATA_ON_ALL_OPTIONS,
       { type: OPTION_TYPES.basicOption },
+    );
+
+    this.allExistingOptions = _.sortBy(
+      this.servicePacks
+        .reduce((previousValue, currentValue) => [...previousValue, ...currentValue.options], [])
+        .reduce((previousValue, currentValue) => (_.some(previousValue, { name: currentValue.name })
+          ? previousValue
+          : [...previousValue, currentValue]), [])
+        .filter(option => option.type === OPTION_TYPES.basicOption)
+        .map(option => ({
+          ...option,
+          status: _.map(currentServicePack.options, 'name').includes(option.name)
+            ? this.DEDICATED_CLOUD_ACTIVATION_STATUS.enabled
+            : this.DEDICATED_CLOUD_ACTIVATION_STATUS.disabled,
+        })),
+      'name',
     );
 
     this.currentCertification = _.find(

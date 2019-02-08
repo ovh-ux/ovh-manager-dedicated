@@ -1,4 +1,5 @@
-import { ALL_EXISTING_OPTIONS } from './constants';
+import _ from 'lodash';
+import { DATA_ON_ALL_OPTIONS } from './constants';
 import ServicePackOption from './dedicatedCloud-servicePack-option';
 
 export default class DedicatedCloudServicePackOptionService {
@@ -24,7 +25,10 @@ export default class DedicatedCloudServicePackOptionService {
   }
 
   static getTypeFromName(name) {
-    return ALL_EXISTING_OPTIONS[name].type;
+    return _.find(
+      DATA_ON_ALL_OPTIONS,
+      { name },
+    ).type;
   }
 
   getDescriptionURL(name, subsidiary) {
