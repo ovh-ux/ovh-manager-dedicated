@@ -147,12 +147,11 @@
                     </oui-action-menu-item>
                 </oui-action-menu>
             </oui-tile-definition>
-            <oui-tile-definition
-                data-term="Certification activée">
+            <oui-tile-definition data-term="Certification activée">
                 <oui-tile-description
                     data-ng-bind="$ctrl.currentCertification
                         ? (('dedicatedCloud_options_name_' + currentServicePack.name) | translate)
-                        : 'Aucune certification'"></oui-tile-description>
+                        : 'Aucune'"></oui-tile-description>
                 <oui-action-menu
                     data-aria-label="{{:: 'menu_action_label' | translate: { t0: 'service pack' } }}"
                     data-compact

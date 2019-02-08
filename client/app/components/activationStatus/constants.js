@@ -7,6 +7,14 @@ export const ALL_TYPES = {
     name: 'disabled',
     type: 'error',
   },
+  waitingForActivation: {
+    name: 'waitingForActivation',
+    type: 'error',
+  },
+  beingActivated: {
+    name: 'beingActivated',
+    type: 'warning',
+  },
 };
 
 export const CLASS_NAME_TEMPLATE = 'oui-status_';
