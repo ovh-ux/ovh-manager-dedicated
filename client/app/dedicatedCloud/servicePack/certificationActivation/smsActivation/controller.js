@@ -1,5 +1,7 @@
+import _ from 'lodash';
+
 /* @ngInject */
-export default class DedicatedCloudServicePackCertificationActivationSMSActivation {
+export default class DedicatedCloudServicePackCertificationActivationSmsActivation {
   constructor(
     $q,
     $state,
@@ -9,19 +11,25 @@ export default class DedicatedCloudServicePackCertificationActivationSMSActivati
   }
 
   $onInit() {
-    this.userAccessPolicyIsCorrect = this.currentService.userAccessPolicy === 'filtered';
-    this.numberOfAllowedIPsAndBlocksIsAllowed = this.allowedIPsAndBlocks.count > 1;
-    this.configurationIsCorrect = this.userAccessPolicyIsCorrect
-      || this.numberOfAllowedIPsAndBlocksIsAllowed;
+    this.usersWhoCanReceiveSMS = _
+      .filter(
+        this.usersWhoCanReceiveSMS,
+        { isTokenValidator: true },
+      )
+      .map(user => ({
+        userName: user.name,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        emailAddress: user.email,
+        phoneNumber: user.phoneNumber,
+      }));
   }
 
-  mapAllowedIPsAndBlocks() {
-    const data = this.allowedIPsAndBlocks.list.results;
-
+  mapUsersWhoCanReceiveSMS() {
     return this.$q.when({
-      data,
+      data: this.usersWhoCanReceiveSMS,
       meta: {
-        totalCount: data.length,
+        totalCount: this.usersWhoCanReceiveSMS.length,
       },
     });
   }

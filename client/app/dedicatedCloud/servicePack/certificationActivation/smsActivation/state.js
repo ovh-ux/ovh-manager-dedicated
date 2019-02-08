@@ -1,8 +1,8 @@
-const resolveUsersWhoCanReceiveTextMessages = /* @ngInject */ (
+const resolveUsersWhoCanReceiveSMS = /* @ngInject */ (
   $q,
   $transition$,
   DedicatedCloud,
-) => $transition$.params().usersWhoCanReceiveTextMessages
+) => $transition$.params().usersWhoCanReceiveSMS
     || DedicatedCloud
       .getUsers($transition$.params().productId)
       .then(ids => $q
@@ -12,9 +12,9 @@ const resolveUsersWhoCanReceiveTextMessages = /* @ngInject */ (
 
 export default {
   params: {
-    usersWhoCanReceiveTextMessages: null,
+    usersWhoCanReceiveSMS: null,
   },
   resolve: {
-    usersWhoCanReceiveTextMessages: resolveUsersWhoCanReceiveTextMessages,
+    usersWhoCanReceiveSMS: resolveUsersWhoCanReceiveSMS,
   },
 };

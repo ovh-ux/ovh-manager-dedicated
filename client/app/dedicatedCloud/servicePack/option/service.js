@@ -1,4 +1,4 @@
-import { ALL_EXISTING_OPTIONS } from './dedicatedCloud-servicePack-option.constants';
+import { ALL_EXISTING_OPTIONS } from './constants';
 import ServicePackOption from './dedicatedCloud-servicePack-option';
 
 export default class DedicatedCloudServicePackOptionService {

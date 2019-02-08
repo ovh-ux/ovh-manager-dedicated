@@ -2,7 +2,9 @@ const resolveAllowedIPsAndBlocks = /* @ngInject */ (
   $transition$,
   DedicatedCloud,
 ) => $transition$.params().allowedIPsAndBlocks
-  || DedicatedCloud.getSecurityPolicies($transition$.params().productId, null, null, true);
+  || DedicatedCloud
+    .getSecurityPolicies($transition$.params().productId, null, null, true)
+    .then(allowedIPsAndBlocks => allowedIPsAndBlocks.list.results);
 
 const resolveCurrentService = /* @ngInject */ (
   $transition$,

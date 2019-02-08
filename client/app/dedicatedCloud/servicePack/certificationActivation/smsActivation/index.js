@@ -6,7 +6,7 @@
 import component from './component';
 import state from './state';
 
-const moduleName = 'dedicatedCloudServicePackCertificationActivationSMSActivation';
+const moduleName = 'dedicatedCloudServicePackCertificationActivationSmsActivation';
 
 angular
   .module(moduleName, [
@@ -14,7 +14,7 @@ angular
     'pascalprecht.translate',
     'ui.router',
   ])
-  .component('dedicatedCloudServicePackCertificationActivationSMSActivation', component)
+  .component('dedicatedCloudServicePackCertificationActivationSmsActivation', component)
   .run(/* @ngTranslationsInject ./translations */);
 
 export default moduleName;

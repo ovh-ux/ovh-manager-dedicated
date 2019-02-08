@@ -10,27 +10,17 @@ export default class DedicatedCloudServicePackCertificationActivationRequiredCon
 
   $onInit() {
     this.userAccessPolicyIsCorrect = this.currentService.userAccessPolicy === 'filtered';
-    this.numberOfAllowedIPsAndBlocksIsAllowed = this.allowedIPsAndBlocks.count > 1;
+    this.numberOfAllowedIPsAndBlocksIsAllowed = this.allowedIPsAndBlocks.length > 1;
     this.configurationIsCorrect = this.userAccessPolicyIsCorrect
       || this.numberOfAllowedIPsAndBlocksIsAllowed;
   }
 
   mapAllowedIPsAndBlocks() {
-    const data = this.allowedIPsAndBlocks.list.results;
-
     return this.$q.when({
-      data,
+      data: this.allowedIPsAndBlocks,
       meta: {
-        totalCount: data.length,
+        totalCount: this.allowedIPsAndBlocks.length,
       },
     });
-  }
-
-  goToNextStep() {
-    if (this.form.$invalid) {
-      return null;
-    }
-
-    return this.$state.go('app.dedicatedClouds.servicePackCertificationActivation.smsActivation');
   }
 }

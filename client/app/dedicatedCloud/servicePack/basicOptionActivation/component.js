@@ -3,7 +3,8 @@ import template from './template.html';
 
 export default {
   bindings: {
-    usersWhoCanReceiveSMS: '<',
+    currentService: '<',
+    orderableServicePacks: '<',
   },
   controller,
   template,

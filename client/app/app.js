@@ -9,11 +9,11 @@ import ovhContacts from '@ovh-ux/ng-ovh-contacts';
 
 import config from './config/config';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
-import dedicatedCloudDashboardModuleName from './dedicatedCloud/dashboard/dedicatedCloud-dashboard.index';
-import dedicatedCloudServicePackBasicOptionActivationModuleName from './dedicatedCloud/servicePack/basicOptionActivation/dedicatedCloud-servicePack-basicOptionActivation.index';
-import dedicatedCloudServicePackCertificationActivationModuleName from './dedicatedCloud/servicePack/certificationActivation/index';
-import dedicatedCloudServicePackOptionModuleName from './dedicatedCloud/servicePack/option/dedicatedCloud-servicePack-option.index';
-import dedicatedCloudServicePackModuleName from './dedicatedCloud/servicePack/dedicatedCloud-servicePack.index';
+import dedicatedCloudDashboardModuleName from './dedicatedCloud/dashboard';
+import dedicatedCloudServicePackBasicOptionActivationModuleName from './dedicatedCloud/servicePack/basicOptionActivation';
+import dedicatedCloudServicePackCertificationActivationModuleName from './dedicatedCloud/servicePack/certificationActivation';
+import dedicatedCloudServicePackOptionModuleName from './dedicatedCloud/servicePack/option';
+import dedicatedCloudServicePackModuleName from './dedicatedCloud/servicePack';
 
 const appDeps = [
   'ovh-angular-proxy-request',

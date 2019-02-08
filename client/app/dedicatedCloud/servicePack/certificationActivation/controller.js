@@ -23,6 +23,10 @@ export default class DedicatedCloudServicePackCertificationActivation {
         stateName: 'app.dedicatedClouds.servicePackCertificationActivation.smsActivation',
         displayName: 'Activation par SMS',
       },
+      {
+        stateName: 'app.dedicatedClouds.servicePackCertificationActivation.validation',
+        displayName: 'Validation de la certification',
+      },
     ];
 
     this.$transitions.onStart(

@@ -1,7 +1,7 @@
 // import angular from 'angular';
 // import 'angular-translate';
 
-import service from './dedicatedCloud-servicePack.service';
+import service from './service';
 
 const moduleName = 'dedicatedCloudServicePack';
 

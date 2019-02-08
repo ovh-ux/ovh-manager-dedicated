@@ -12,7 +12,7 @@
         <span
             data-translate="dedicatedCloud_servicePack_certificationActivation_requiredConfiguration_criterias_numberOfAllowedIPAndBlocks_definition"
             data-translate-values="{
-                numberOfAllowedIPsAndBlocks: $ctrl.allowedIPsAndBlocks.count
+                numberOfAllowedIPsAndBlocks: $ctrl.allowedIPsAndBlocks.length
             }"></span>
     </li>
 </ul>
@@ -35,13 +35,13 @@
     data-type="warning"
     class="mb-5">
     <span
-        data-ng-if="!$ctrl.userAccessPolicyIsCorrect && $ctrlnumberOfAllowedIPsAndBlocksIsAllowed"
+        data-ng-if="!$ctrl.userAccessPolicyIsCorrect && $ctrl.numberOfAllowedIPsAndBlocksIsAllowed"
         data-translate="dedicatedCloud_servicePack_certificationActivation_requiredConfiguration_warningMessage_accessPolicy_error"></span>
     <span
-        data-ng-if="$ctrl.userAccessPolicyIsCorrect && !$ctrlnumberOfAllowedIPsAndBlocksIsAllowed"
+        data-ng-if="$ctrl.userAccessPolicyIsCorrect && !$ctrl.numberOfAllowedIPsAndBlocksIsAllowed"
         data-translate="dedicatedCloud_servicePack_certificationActivation_requiredConfiguration_warningMessage_numberOfAllowedIPAndBlocks_error"></span>
     <span
-        data-ng-if="!$ctrl.userAccessPolicyIsCorrect && !$ctrlnumberOfAllowedIPsAndBlocksIsAllowed"
+        data-ng-if="!$ctrl.userAccessPolicyIsCorrect && !$ctrl.numberOfAllowedIPsAndBlocksIsAllowed"
         data-translate="dedicatedCloud_servicePack_certificationActivation_requiredConfiguration_warningMessage_both_error"></span>
     <span data-translate="dedicatedCloud_servicePack_certificationActivation_requiredConfiguration_warningMessage_whatToDoNow_1"></span>
     <a data-ui-sref="app.dedicatedClouds.security">
@@ -60,6 +60,7 @@
 <button
     data-ng-if="$ctrl.configurationIsCorrect"
     type="button"
-    class="oui-button oui-button_primary ml-3">
+    class="oui-button oui-button_primary ml-3"
+    data-ui-sref="app.dedicatedClouds.servicePackCertificationActivation.smsActivation">
     Suivant
 </button>

@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { OPTION_TYPES } from '../servicePack/option/dedicatedCloud-servicePack-option.constants';
+import { OPTION_TYPES } from '../servicePack/option/constants';
 
 /* @ngInject */
 export default class {

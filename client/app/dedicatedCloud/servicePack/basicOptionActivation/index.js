@@ -3,9 +3,9 @@
 // import 'ovh-ui-angular';
 // import '@uirouter/angularjs';
 
-import component from './dedicatedCloud-servicePack-basicOptionActivation.component';
-import service from './dedicatedCloud-servicePack-basicOptionActivation.service';
-import state from './dedicatedCloud-servicePack-basicOptionActivation.state';
+import component from './component';
+import service from './service';
+import state from './state';
 
 const moduleName = 'dedicatedCloudServicePackBasicOptionActivation';
 

@@ -1,18 +1,15 @@
 // import angular from 'angular';
 // import 'angular-translate';
-// import 'ovh-ui-angular';
 
-import component from './dedicatedCloud-dashboard.component';
+import service from './service';
 
-const moduleName = 'dedicatedCloudDashboard';
+const moduleName = 'dedicatedCloudServicePackOption';
 
 angular
   .module(moduleName, [
-    'oui',
     'pascalprecht.translate',
-    'ui.router',
   ])
-  .component('dedicatedCloudDashboard', component)
+  .service('dedicatedCloudServicePackOptionService', service)
   .run(/* @ngTranslationsInject ./translations */);
 
 export default moduleName;

@@ -1,5 +1,5 @@
-import controller from './dedicatedCloud-dashboard.controller';
-import template from './dedicatedCloud-dashboard.template.html';
+import controller from './controller';
+import template from './template.html';
 
 export default {
   bindings: {
