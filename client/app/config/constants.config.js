@@ -13,6 +13,7 @@ const constants = {
         support_contact: 'http://www.ovh.cz/podpora/',
         guides: {
           home: 'http://prirucky.ovh.cz/',
+          privateCloudHome: 'https://docs.ovh.com/cz/cs/private-cloud/',
         },
         vpsCloud: 'http://www.ovh.cz/vps/vps-cloud.xml',
         dedicatedIpmi: 'https://docs.ovh.com/cz/cs/dedicated/pouziti-ipmi-dedikovane-servery/',
@@ -32,6 +33,7 @@ const constants = {
         support_contact: 'http://www.ovh.de/support/',
         guides: {
           home: 'http://hilfe.ovh.de/',
+          privateCloudHome: 'https://docs.ovh.com/de/private-cloud/',
           autoRenew: 'https://www.ovh.de/g1271.anleitung_zur_nutzung_der_automatischen_verlangerung_bei_ovh',
           ipv6Vps: 'https://www.ovh.de/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.de/g1769.creating_ssh_keys',
@@ -55,6 +57,7 @@ const constants = {
         support_contact: 'http://www.ovh.es/soporte/',
         guides: {
           home: 'http://guias.ovh.es/',
+          privateCloudHome: 'https://docs.ovh.com/es/private-cloud/',
           autoRenew: 'https://www.ovh.es/g1271.renovacion_automatica_en_ovh',
           ipv6Vps: 'https://www.ovh.es/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.es/g1769.creating_ssh_keys',
@@ -80,6 +83,7 @@ const constants = {
         support_contact: 'http://www.ovh-hosting.fi/tuki/',
         guides: {
           home: 'http://ohjeet.ovh-hosting.fi/',
+          privateCloudHome: 'https://docs.ovh.com/fi/private-cloud/',
           autoRenew: 'https://www.ovh-hosting.fi/g1271.automaattinen-uusinta',
           reinitPassword: 'https://www.ovh-hosting.fi/g2366.virtuaalikoneen_root-salasanan_vaihto',
           ipv6Vps: 'https://www.ovh-hosting.fi/g2365.vps-ipv6',
@@ -102,6 +106,7 @@ const constants = {
         support_contact: 'https://www.ovh.com/fr/support/nous-contacter/',
         guides: {
           home: 'https://docs.ovh.com',
+          privateCloudHome: 'https://docs.ovh.com/fr/private-cloud/',
           autoRenew: 'https://www.ovh.com/fr/g1271.guide_dutilisation_du_renouvellement_automatique_ovh',
           additionalDisksGuide: 'https://www.ovh.com/fr/g2181.Commande_et_utilisation_d_un_disque_additionnel',
           all: 'https://www.ovh.com/fr/support/knowledge/',
@@ -143,6 +148,7 @@ const constants = {
         support_contact: 'http://www.ovh.co.uk/support/',
         guides: {
           home: 'http://help.ovh.co.uk/',
+          privateCloudHome: 'https://docs.ovh.com/gb/en/private-cloud/',
           autoRenew: 'https://www.ovh.co.uk/g1271.how_to_use_automatic_renewal_at_ovh',
           all: 'https://www.ovh.co.uk/community/knowledge/',
           nsx: 'https://www.ovh.co.uk/private-cloud/options/nsx.xml',
@@ -176,6 +182,7 @@ const constants = {
         support_contact: 'http://www.ovh.it/supporto/',
         guides: {
           home: 'http://guida.ovh.it/',
+          privateCloudHome: 'https://docs.ovh.com/it/private-cloud/',
           autoRenew: 'https://www.ovh.it/g1271.imposta_il_rinnovo_automatico_dei_tuoi_servizi_ovh',
           reinitPassword: 'https://www.ovh.it/g2366.modifica_la_password_di_root_su_un_vps_linux',
           ipv6Vps: 'https://www.ovh.it/g2365.vps-ipv6',
@@ -202,6 +209,7 @@ const constants = {
         support_contact: 'http://www.ovh.lt/pagalba/',
         guides: {
           home: 'http://gidai.ovh.lt/',
+          privateCloudHome: 'https://docs.ovh.com/lt/private-cloud/',
           autoRenew: 'https://www.ovh.lt/g1271.automatinis_ovh_paslaugu_galiojimo_pratesimas',
           reinitPassword: 'https://www.ovh.lt/g2366.root_slaptazodzio_keitimas_vps_linux',
           ipv6Vps: 'https://www.ovh.lt/g2365.vps-ipv6',
@@ -227,6 +235,7 @@ const constants = {
         support_contact: 'http://www.ovh.nl/support/',
         guides: {
           home: 'http://gids.ovh.nl/',
+          privateCloudHome: 'https://docs.ovh.com/nl/private-cloud/',
           autoRenew: 'https://www.ovh.nl/g1271.ovh_handleiding_voor_het_gebruik_van_de_automatische_verlenging',
           ipv6Vps: 'https://www.ovh.nl/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.nl/g1769.creating_ssh_keys',
@@ -250,6 +259,7 @@ const constants = {
         support_contact: 'https://www.ovh.pl/pomoc/',
         guides: {
           home: 'http://pomoc.ovh.pl/',
+          privateCloudHome: 'https://docs.ovh.com/pl/private-cloud/',
           autoRenew: 'https://www.ovh.pl/g1271.przewodnik_dotyczacy_opcji_automatycznego_odnawiania_uslug_w_ovh',
           reinitPassword: 'https://www.ovh.pl/g2366.Zmiana_hasla_root_na_serwerze_vps_linux',
           ipv6Vps: 'https://www.ovh.pl/g2365.vps-ipv6',
@@ -276,6 +286,7 @@ const constants = {
         support_contact: 'https://www.ovh.pt/suporte/',
         guides: {
           home: 'http://guias.ovh.pt/',
+          privateCloudHome: 'https://docs.ovh.com/pt/private-cloud/',
           autoRenew: 'https://www.ovh.pt/g1271.guia_de_utilizacao_da_renovacao_automatica_da_ovh',
           reinitPassword: 'https://www.ovh.pt/g2366.alterar_a_password_root_num_servidor_vps_linux',
           ipv6Vps: 'https://www.ovh.pt/g2365.vps-ipv6',
@@ -302,6 +313,7 @@ const constants = {
         support_contact: 'https://www.ovh.ie/suport/',
         guides: {
           home: 'http://help.ovh.ie/',
+          privateCloudHome: 'https://docs.ovh.com/ie/en/private-cloud/',
           autoRenew: 'https://www.ovh.ie/g1271.how_to_use_automatic_renewal_at_ovh',
           all: 'https://www.ovh.ie/community/knowledge/',
           nsx: 'https://www.ovh.ie/private-cloud/options/nsx.xml',
@@ -563,6 +575,7 @@ const constants = {
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
           home: 'https://docs.ovh.com/ca/en/',
+          privateCloudHome: 'https://docs.ovh.com/ca/en/private-cloud/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/us/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
@@ -588,6 +601,7 @@ const constants = {
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
           home: 'https://docs.ovh.com/ca/en/',
+          privateCloudHome: 'https://docs.ovh.com/au/en/private-cloud/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/us/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
@@ -613,6 +627,7 @@ const constants = {
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
           home: 'https://docs.ovh.com/ca/en/',
+          privateCloudHome: 'https://docs.ovh.com/ca/en/private-cloud/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/ca/en/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
@@ -638,6 +653,7 @@ const constants = {
         support_contact: 'https://www.ovh.com/ca/fr/support/',
         guides: {
           home: 'https://docs.ovh.com/ca/fr/',
+          privateCloudHome: 'https://docs.ovh.com/ca/fr/private-cloud/',
           reinitPassword: 'http://docs.ovh.ca/fr/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/ca/fr/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/fr/g1769.creation_des_cles_ssh',
@@ -663,6 +679,7 @@ const constants = {
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
           home: 'https://docs.ovh.com/ca/en/',
+          privateCloudHome: 'https://docs.ovh.com/sg/en/private-cloud/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/us/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
@@ -688,6 +705,7 @@ const constants = {
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
           home: 'https://docs.ovh.com/ca/en/',
+          privateCloudHome: 'https://docs.ovh.com/ca/en/private-cloud/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/us/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
@@ -713,6 +731,7 @@ const constants = {
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
           home: 'https://docs.ovh.com/ca/en/',
+          privateCloudHome: 'https://docs.ovh.com/ca/en/private-cloud/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
           sshAdd: 'https://www.ovh.com/ca/en/g1924.configuring_additionnal_ssh_key',
@@ -846,6 +865,7 @@ const constants = {
         guides: {
           all: 'https://support.us.ovhcloud.com/hc/en-us',
           home: 'https://support.us.ovhcloud.com/hc/en-us',
+          privateCloudHome: 'https://docs.ovh.com/us/en/private-cloud/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/ca/en/g2365.vps-ipv6',
           sshCreate: 'http://support.us.ovhcloud.com/hc/en-us/articles/115001588250-SSH-Key-Management',

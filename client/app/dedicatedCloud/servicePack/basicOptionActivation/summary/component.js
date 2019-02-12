@@ -3,7 +3,9 @@ import template from './template.html';
 
 export default {
   bindings: {
-    orderableServicePacks: '<',
+    orderedServicePackDisplayValue: '<',
+    orderURL: '<',
+    urlToGuides: '<',
   },
   controller,
   template,

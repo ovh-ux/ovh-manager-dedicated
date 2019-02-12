@@ -1,10 +1,8 @@
 /* @ngInject */
 export default class DedicatedCloudServicePackCertificationActivation {
   constructor(
-    $state,
     $transitions,
   ) {
-    this.$state = $state;
     this.$transitions = $transitions;
   }
 

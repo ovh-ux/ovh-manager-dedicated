@@ -1,5 +1,5 @@
-<h3 data-translate="dedicatedCloud_servicePack_certificationActivation_selection_header1"></h3>
-<p data-translate="dedicatedCloud_servicePack_certificationActivation_selection_header2"></p>
+<h3 data-translate="dedicatedCloud_servicePack_basicOptionActivation_selection_header"></h3>
+<p data-translate="dedicatedCloud_servicePack_basicOptionActivation_selection_subheader"></p>
 
 <form
     novalidate
@@ -16,17 +16,20 @@
                 name="servicePackSelection"
                 data-ng-model="$ctrl.selectedServicePackName"
                 data-ng-value="servicePack.name"
-                id="{{ 'servicePackSelection' + servicePack.name }}"
+                id="{{:: 'servicePackSelection' + servicePack.name }}"
                 required>
             <label
-                class="oui-select-picker__label-container"
+                class="oui-select-picker__label-container dedicatedCloud-servicePack-option-container"
                 for="{{ 'servicePackSelection' + servicePack.name }}">
                 <span
-                class="oui-select-picker__label"
-                data-ng-bind=":: servicePack.displayName"></span>
-                <span class="oui-select-picker__value-container oui-select-picker__section">
-                <span class="oui-select-picker__value">Value</span>
+                    class="oui-select-picker__label dedicatedCloud-servicePack-option-label"
+                    data-ng-bind=":: servicePack.displayName"></span>
+                <span class="oui-select-picker__value-container oui-select-picker__section dedicatedCloud-servicePack-option-section">
+                    <p
+                        class="dedicatedCloud-servicePack-option-description"
+                        data-translate="{{:: 'dedicatedCloud_servicePack_basicOptionActivation_selection_product_' + servicePack.name + '_description' }}"></p>
                 </span>
+                <p class="dedicatedCloud-servicePack-option-price">100 Euros</p>
             </label>
         </div>
     </oui-field>

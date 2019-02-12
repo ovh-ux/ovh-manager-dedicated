@@ -2,12 +2,11 @@
 // import 'angular-translate';
 // import 'ovh-ui-angular';
 // import '@uirouter/angularjs';
-import '../../style.less';
 
 import component from './component';
 import state from './state';
 
-const moduleName = 'dedicatedCloudServicePackBasicOptionActivationSelection';
+const moduleName = 'dedicatedCloudServicePackBasicOptionActivationConfirmation';
 
 angular
   .module(moduleName, [
@@ -15,7 +14,7 @@ angular
     'pascalprecht.translate',
     'ui.router',
   ])
-  .component('dedicatedCloudServicePackBasicOptionActivationSelection', component)
+  .component('dedicatedCloudServicePackBasicOptionActivationConfirmation', component)
   .run(/* @ngTranslationsInject ./translations */);
 
 export default moduleName;

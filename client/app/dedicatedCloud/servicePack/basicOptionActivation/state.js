@@ -12,14 +12,15 @@ const resolveOrderableServicePacks = /* @ngInject */ (
       });
 
 export default {
-  url: '/servicePackBasicOptionActivation',
-  views: {
-    pccView: 'dedicatedCloudServicePackBasicOptionActivation',
-  },
   params: {
     orderableServicePacks: null,
   },
+  redirectTo: 'app.dedicatedClouds.servicePackBasicOptionActivation.selection',
   resolve: {
     orderableServicePacks: resolveOrderableServicePacks,
+  },
+  url: '/servicePackBasicOptionActivation',
+  views: {
+    pccView: 'dedicatedCloudServicePackBasicOptionActivation',
   },
 };

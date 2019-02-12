@@ -3,7 +3,9 @@ import template from './template.html';
 
 export default {
   bindings: {
-    orderableServicePacks: '<',
+    currentService: '<',
+    hasDefaultMeansOfPayment: '<',
+    nameOfServicePackToOrder: '<',
   },
   controller,
   template,
