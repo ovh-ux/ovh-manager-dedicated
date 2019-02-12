@@ -1,8 +1,10 @@
 angular.module('services').service('DedicatedCloudDrp', class DedicatedCloudDrp {
   /* @ngInject */
-  constructor($q, OvhApiDedicatedCloud, DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS) {
+  constructor($q, $timeout, OvhApiDedicatedCloud, Poller, DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS) {
     this.$q = $q;
+    this.$timeout = $timeout;
     this.OvhApiDedicatedCloud = OvhApiDedicatedCloud;
+    this.Poller = Poller;
     this.DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS = DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS;
   }
 
@@ -41,6 +43,19 @@ angular.module('services').service('DedicatedCloudDrp', class DedicatedCloudDrp 
             network: ipAddress,
           }).$promise))
         .then(ipAddressesDetails => _.flatten(ipAddressesDetails)));
+  }
+
+  pollExistingIpAddresses(serviceName) {
+    this.OvhApiDedicatedCloud.Ip().v6().resetCache();
+    this.OvhApiDedicatedCloud.Ip().Details().v6().resetCache();
+    return this.$timeout(() => this.getPccIpAddresses(serviceName), 10000)
+      .then((ipAddressDetails) => {
+        if (_.isEmpty(ipAddressDetails)) {
+          return this.pollExistingIpAddresses(serviceName);
+        }
+
+        return ipAddressDetails;
+      });
   }
 
   getDrpState(serviceInformations) {

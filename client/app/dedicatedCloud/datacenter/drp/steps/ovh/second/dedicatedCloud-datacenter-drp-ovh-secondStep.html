@@ -51,7 +51,7 @@
                         data-match="ip"
                         data-model="$ctrl.selectedSecondaryIpAddress"
                         data-items="$ctrl.availableIpAddress"
-                        data-disabled="$ctrl.fetchingPccOptions"
+                        data-disabled="$ctrl.fetchingPccOptions || !$ctrl.drpInformations.secondaryDatacenter"
                         data-placeholder="{{:: 'dedicatedCloud_datacenter_secondary_ip_address_pool_available_placeholder' | translate }}"
                         data-on-change="$ctrl.drpInformations.secondaryEndpointIp = modelValue.ip">
             </oui-select>

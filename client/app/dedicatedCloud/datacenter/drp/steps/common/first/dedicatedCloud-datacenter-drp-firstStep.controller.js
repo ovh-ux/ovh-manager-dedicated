@@ -59,7 +59,8 @@ angular.module('App').controller('DedicatedCloudDatacenterDrpFirstStepCtrl', cla
       controller: 'IpOrderCtrl',
       controllerAs: '$ctrl',
     }).result
-      .then(() => this.DedicatedCloudDrp.getPccIpAddressesDetails(this.$stateParams.productId))
+      .then(() => this.DedicatedCloudDrp
+        .pollExistingIpAddresses(this.$stateParams.productId))
       .then((ipAddressDetails) => {
         this.availableIpAddress = ipAddressDetails
           .filter(({ usageDetails }) => _.isNull(usageDetails)
