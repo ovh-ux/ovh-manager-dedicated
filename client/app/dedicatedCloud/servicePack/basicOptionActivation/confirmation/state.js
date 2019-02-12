@@ -4,24 +4,32 @@ const resolveCurrentService = /* @ngInject */ (
 ) => $transition$.params().currentService
     || DedicatedCloud.retrievingFullService($transition$.params().productId);
 
+const resolveCurrentUser = /* @ngInject */ (
+  $transition$,
+  User,
+) => $transition$.params().currentUser
+  || User.getUser();
+
 const resolveHasDefaultMeansOfPayment = /* @ngInject */ (
   $transition$,
   ovhPaymentMethod,
 ) => $transition$.params().hasDefaultMeansOfPayment
     || ovhPaymentMethod.hasDefaultPaymentMethod();
 
-const resolveNameOfServicePackToOrder = /* @ngInject */ $transition$ => $transition$
-  .params().nameOfServicePackToOrder;
+const resolveServicePackToOrder = /* @ngInject */ $transition$ => $transition$
+  .params().servicePackToOrder;
 
 export default {
   params: {
     currentService: null,
+    currentUser: null,
     hasDefaultMeansOfPayment: null,
-    nameOfServicePackToOrder: null,
+    servicePackToOrder: null,
   },
   resolve: {
     currentService: resolveCurrentService,
+    currentUser: resolveCurrentUser,
     hasDefaultMeansOfPayment: resolveHasDefaultMeansOfPayment,
-    nameOfServicePackToOrder: resolveNameOfServicePackToOrder,
+    servicePackToOrder: resolveServicePackToOrder,
   },
 };

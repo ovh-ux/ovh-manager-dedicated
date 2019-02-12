@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 export default class DedicatedCloudServicePackBasicOptionActivationSelection {
   constructor(
@@ -11,6 +13,15 @@ export default class DedicatedCloudServicePackBasicOptionActivationSelection {
       return null;
     }
 
-    return this.$state.go('app.dedicatedClouds.servicePackBasicOptionActivation.confirmation');
+    return this.$state.go(
+      'app.dedicatedClouds.servicePackBasicOptionActivation.confirmation',
+      {
+        currentService: this.currentService,
+        servicePackToOrder: _.find(
+          this.orderableServicePacks,
+          { name: this.selectedServicePackName },
+        ),
+      },
+    );
   }
 }

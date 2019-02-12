@@ -3,7 +3,7 @@ import template from './template.html';
 
 export default {
   bindings: {
-    orderedServicePackDisplayValue: '<',
+    orderedServicePack: '<',
     orderURL: '<',
     urlToGuides: '<',
   },

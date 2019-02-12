@@ -142,6 +142,8 @@
                         data-text="Activer une option"
                         data-disabled="!$ctrl.orderableServicePacksWithOnlyBasicOptions.length"
                         data-ui-sref=".servicePackBasicOptionActivation({
+                            currentService: $ctrl.currentService,
+                            currentUser: $ctrl.currentUser,
                             orderableServicePacks: $ctrl.orderableServicePacksWithOnlyBasicOptions,
                         })">
                     </oui-action-menu-item>

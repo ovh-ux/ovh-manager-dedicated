@@ -93,6 +93,13 @@ angular
           },
         );
 
+        this.$scope.$on(
+          'ovhAlert.show',
+          (event, type, message, details, alertId) => {
+            this.setMessage(message, { type, details, alertId });
+          },
+        );
+
         this.$scope.loadDedicatedCloud = () => this.loadDedicatedCloud();
         this.$scope.editDescription = value => this.editDescription(value);
         this.$scope.getRight = order => this.getRight(order);
@@ -253,6 +260,7 @@ angular
           case 'cancelled':
           case 'paused':
           case 'error':
+          case 'alert-danger':
             this.$scope.alertType = 'alert-danger';
             break;
           case 'waiting_ack':
@@ -260,12 +268,14 @@ angular
           case 'doing':
           case 'warning':
           case 'partial':
+          case 'alert-warning':
             this.$scope.alertType = 'alert-warning';
             break;
           case 'todo':
           case 'done':
           case 'info':
           case 'ok':
+          case 'alert-success':
             this.$scope.alertType = 'alert-success';
             break;
           default:

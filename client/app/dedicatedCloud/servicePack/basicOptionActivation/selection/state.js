@@ -1,3 +1,15 @@
+const resolveCurrentService = /* @ngInject */ (
+  $transition$,
+  DedicatedCloud,
+) => $transition$.params().currentService
+    || DedicatedCloud.retrievingFullService($transition$.params().productId);
+
+const resolveCurrentUser = /* @ngInject */ (
+  $transition$,
+  User,
+) => $transition$.params().currentUser
+      || User.getUser();
+
 const resolveOrderableServicePacks = /* @ngInject */ (
   $transition$,
   currentService,
@@ -13,9 +25,13 @@ const resolveOrderableServicePacks = /* @ngInject */ (
 
 export default {
   params: {
+    currentService: null,
+    currentUser: null,
     orderableServicePacks: null,
   },
   resolve: {
+    currentService: resolveCurrentService,
+    currentUser: resolveCurrentUser,
     orderableServicePacks: resolveOrderableServicePacks,
   },
 };

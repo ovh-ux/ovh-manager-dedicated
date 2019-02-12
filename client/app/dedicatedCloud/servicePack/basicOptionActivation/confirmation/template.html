@@ -13,7 +13,7 @@
 </oui-message>
 
 <p>
-    Vous êtes sur le point d'activer le pack d'options NSX + vROps pour XXX€/mois supplémentaire êtes vous sûr(e) de vouloir faire cela ?
+    Vous êtes sur le point d'activer le pack <span data-ng-bind="$ctrl.servicePackToOrder.displayName"></span> pour XXX€/mois supplémentaire êtes vous sûr(e) de vouloir faire cela ?
 </p>
 
 <button
@@ -26,8 +26,11 @@
 <button
     type="submit"
     class="oui-button oui-button_primary ml-3"
-    data-ng-if="!$ctrl.orderIsInProgress">
+    data-ng-if="!$ctrl.orderIsInProgress"
+    data-ng-click="$ctrl.placeOrder()">
     Confirmer
 </button>
 
-<oui-spinner data-ng-if="$ctrl.orderIsInProgress"></oui-spinner>
+<oui-spinner
+    class="ml-3"
+    data-ng-if="$ctrl.orderIsInProgress"></oui-spinner>
