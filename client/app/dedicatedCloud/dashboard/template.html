@@ -72,36 +72,31 @@
             <oui-tile-definition data-term="{{:: 'dedicatedCloud_subscription_links' | translate }}">
                 <oui-tile-description>
                     <a
-                        class="d-block"
+                        class="d-block oui-link_icon"
                         target="_blank"
                         rel="noopener"
                         data-ng-href="{{:: $ctrl.currentService.vScopeUrl }}">
                         <span data-translate="dedicatedCloud_datacenter_go_vscope"></span>
                         <span
-                            class="fa fa-external-link"
+                            class="oui-icon oui-icon-external_link"
                             aria-hidden="true"></span>
+                        <span
+                            class="sr-only"
+                            data-translate="common_new_tab"></span>
                     </a>
                     <a
-                        class="d-block"
+                        class="d-block oui-link_icon"
                         target="_blank"
                         rel="noopener"
                         data-ng-if=":: $ctrl.currentService.webInterfaceUrl"
                         data-ng-href="{{:: $ctrl.currentService.webInterfaceUrl}}">
                         <span data-translate="dedicatedCloud_datacenter_go_web_interface"></span>
                         <span
-                            class="fa fa-external-link"
+                            class="oui-icon oui-icon-external_link"
                             aria-hidden="true"></span>
-                    </a>
-                    <a
-                        class="d-block"
-                        target="_blank"
-                        rel="noopener"
-                        data-ng-if=":: $ctrl.currentService.certifiedInterfaceUrl && $ctrl.currentService.advancedSecurity"
-                        data-ng-href="{{:: $ctrl.currentService.certifiedInterfaceUrl }}">
-                        <span data-translate="dedicatedCloud_datacenter_go_certified_web_interface"></span>
                         <span
-                            class="fa fa-external-link"
-                            aria-hidden="true"></span>
+                            class="sr-only"
+                            data-translate="common_new_tab"></span>
                     </a>
                 </oui-tile-description>
             </oui-tile-definition>
@@ -128,8 +123,12 @@
                                 data-ng-if="option.status === $ctrl.DEDICATED_CLOUD_ACTIVATION_STATUS.disabled"
                                 data-ng-href="{{ option.descriptionURL }}">
                                 <span data-translate="dedicatedCloud_dashboard_options_basicOptions_moreInformation"></span>
-                                <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
-                                <span class="sr-only" data-translate="common_new_tab"></span>
+                                <span
+                                    class="oui-icon oui-icon-external_link"
+                                    aria-hidden="true"></span>
+                                <span
+                                    class="sr-only"
+                                    data-translate="common_new_tab"></span>
                             </a>
                         </li>
                     </ul>
@@ -150,10 +149,26 @@
                 </oui-action-menu>
             </oui-tile-definition>
             <oui-tile-definition data-term="{{:: 'dedicatedCloud_dashboard_options_certifications_description' | translate }}">
-                <oui-tile-description
-                    data-ng-bind="$ctrl.currentCertification
+                <oui-tile-description>
+                    <p data-ng-bind="$ctrl.currentCertification
                         ? (('dedicatedCloud_dashboard_options_certifications_names_' + currentServicePack.name) | translate)
-                        : 'Aucune'"></oui-tile-description>
+                        : 'Aucune'"></p>
+
+                        <a
+                            class="oui-link_icon"
+                            target="_blank"
+                            rel="noopener"
+                            data-ng-if=":: $ctrl.currentService.certifiedInterfaceUrl && $ctrl.currentService.advancedSecurity"
+                            data-ng-href="{{:: $ctrl.currentService.certifiedInterfaceUrl }}">
+                            <span data-translate="dedicatedCloud_datacenter_go_certified_web_interface"></span>
+                            <span
+                                class="oui-icon oui-icon-external_link"
+                                aria-hidden="true"></span>
+                            <span
+                                class="sr-only"
+                                data-translate="common_new_tab"></span>
+                        </a>
+                    </oui-tile-description>
                 <oui-action-menu
                     data-aria-label="{{:: 'menu_action_label' | translate: { t0: ('dedicatedCloud_dashboard_options_certifications_menu_activateCertification' | translate) } }}"
                     data-compact
