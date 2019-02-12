@@ -127,7 +127,7 @@
                                 rel="noopener"
                                 data-ng-if="option.status === $ctrl.DEDICATED_CLOUD_ACTIVATION_STATUS.disabled"
                                 data-ng-href="{{ option.descriptionURL }}">
-                                Plus d'informations
+                                <span data-translate="dedicatedCloud_dashboard_options_basicOptions_moreInformation"></span>
                                 <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
                                 <span class="sr-only" data-translate="common_new_tab"></span>
                             </a>
@@ -135,11 +135,11 @@
                     </ul>
                 </oui-tile-description>
                 <oui-action-menu
-                    data-aria-label="{{:: 'menu_action_label' | translate: { t0: 'service pack' } }}"
+                    data-aria-label="{{:: 'menu_action_label' | translate: { t0: ('dedicatedCloud_dashboard_options_basicOptions_menu_changeOption' | translate) } }}"
                     data-compact
                     data-align="end">
                     <oui-action-menu-item
-                        data-text="Activer une option"
+                        data-text="{{:: 'dedicatedCloud_dashboard_options_basicOptions_menu_changeOption' | translate }}"
                         data-disabled="!$ctrl.orderableServicePacksWithOnlyBasicOptions.length"
                         data-ui-sref=".servicePackBasicOptionActivation({
                             currentService: $ctrl.currentService,
@@ -149,18 +149,18 @@
                     </oui-action-menu-item>
                 </oui-action-menu>
             </oui-tile-definition>
-            <oui-tile-definition data-term="Certification activée">
+            <oui-tile-definition data-term="{{:: 'dedicatedCloud_dashboard_options_certifications_description' | translate }}">
                 <oui-tile-description
                     data-ng-bind="$ctrl.currentCertification
-                        ? (('dedicatedCloud_options_name_' + currentServicePack.name) | translate)
+                        ? (('dedicatedCloud_dashboard_options_certifications_names_' + currentServicePack.name) | translate)
                         : 'Aucune'"></oui-tile-description>
                 <oui-action-menu
-                    data-aria-label="{{:: 'menu_action_label' | translate: { t0: 'service pack' } }}"
+                    data-aria-label="{{:: 'menu_action_label' | translate: { t0: ('dedicatedCloud_dashboard_options_certifications_menu_activateCertification' | translate) } }}"
                     data-compact
                     data-align="end">
                     <oui-action-menu-item
                         data-disabled="$ctrl.currentCertification || !$ctrl.orderableServicePacksWithCertifications.length"
-                        data-text="Activer une certification"
+                        data-text="{{:: 'dedicatedCloud_dashboard_options_certifications_menu_activateCertification' | translate }}"
                         data-ui-sref=".servicePackCertificationActivation">
                     </oui-action-menu-item>
                 </oui-action-menu>
