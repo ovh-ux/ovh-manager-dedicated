@@ -1,7 +1,9 @@
 <div data-ng-controller="TaskCtrl as $ctrl">
-    <h2 data-translate="server_tab_task"></h2>
     <div data-ovh-alert="taskAlert"></div>
-    <oui-datagrid data-rows-loader="$ctrl.loadDatagridTasks($config)">
+    <h2 data-translate="server_tab_task"></h2>
+
+    <oui-datagrid data-rows-loader="$ctrl.loadDatagridTasks($config)"
+                  data-ng-if="!$ctrl.isServiceExpired">
         <oui-column data-title=":: 'server_configuration_task_last_action' | translate">
             <span data-ng-bind="$row.lastUpdate | date: 'medium'"></span>
         </oui-column>
