@@ -157,7 +157,7 @@
             <button type="button"
                     class="btn btn-default btn-block"
                     data-ng-if="ftpBackup.model"
-                    data-ng-click="!disable.deleteFtp && setAction('ftp-backup/access/add/dedicated-server-ftp-backup-access-add')"
+                    data-ng-click="!disable.deleteFtp && setAction('ftp-backup/access/add/dedicated-server-ftp-backup-access-add', ftpBackupTable.list.results)"
                     data-ng-disabled="disable.deleteFtp"
                     data-translate="server_configuration_ftpbackup_access_add">
             </button>

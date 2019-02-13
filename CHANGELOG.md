@@ -1,3 +1,30 @@
+<a name="10.10.3"></a>
+## [10.10.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.2...v10.10.3) (2019-02-12)
+
+
+### Bug Fixes
+
+* **dedicated.ftp-backup:** add limit to ip blocks ([#959](https://github.com/ovh-ux/ovh-manager-dedicated/issues/959)) ([431669b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/431669b))
+* **deps:** upgrade exchange module ([1bfa975](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1bfa975))
+* **deps:** upgrade exchange module ([da672a6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/da672a6))
+* **i18n:** extract translations ([2429e17](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2429e17)), closes [#960](https://github.com/ovh-ux/ovh-manager-dedicated/issues/960)
+* **i18n:** retrieve translations ([7a16725](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7a16725))
+* **i18n:** submit translations ([ea6a5c0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ea6a5c0))
+
+
+
+<a name="10.10.2"></a>
+## [10.10.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.1...v10.10.2) (2019-02-04)
+
+
+### Bug Fixes
+
+* **i18n:** retrieve translations ([e7485c5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e7485c5))
+* **i18n:** submit translations ([addaf6d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/addaf6d))
+* **navbar:** revamp style and texts ([#877](https://github.com/ovh-ux/ovh-manager-dedicated/issues/877)) ([531a33e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/531a33e))
+
+
+
 <a name="10.10.1"></a>
 ## [10.10.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.0...v10.10.1) (2019-01-31)
 
