@@ -36,7 +36,7 @@ angular.module('Module.ip.controllers').controller('IpMitigationStatisticsCtrl',
     $scope.chartOptions = {
       tooltips: {
         callbacks: {
-          label: (tooltipItems, data) => `${data.datasets[tooltipItems.datasetIndex].label}: ${tooltipItems.yLabel} ${dataSets[tooltipItems.datasetIndex][tooltipItems.index].formatted.unit}`,
+          label: (tooltipItems, data) => `${data.datasets[tooltipItems.datasetIndex].label}: ${tooltipItems.yLabel} ${$translate.instant('ip_mitigation_statistics_unit_B')} (${dataSets[tooltipItems.datasetIndex][tooltipItems.index].formatted.value} ${dataSets[tooltipItems.datasetIndex][tooltipItems.index].formatted.unit})`,
         },
       },
       scales: {
