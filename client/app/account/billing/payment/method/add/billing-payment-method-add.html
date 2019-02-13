@@ -45,8 +45,13 @@
                     <div data-ng-if="$ctrl.model.selectedPaymentMethodType">
                         <div data-ng-switch="$ctrl.model.selectedPaymentMethodType.paymentType.value">
                             <p data-ng-switch-when="CREDIT_CARD"
-                               data-ng-if="$ctrl.constants.target === 'EU'"
-                               data-translate="billing_payment_method_add_credit_card_selected_explain">
+                               data-ng-if="$ctrl.currentUser.ovhSubsidiary === 'FR'"
+                               data-translate="billing_payment_method_add_credit_card_selected_explain"
+                               data-translate-values="{ amount: $ctrl.bankAccountFootprintAmount }">
+                            </p>
+                            <p data-ng-switch-when="CREDIT_CARD"
+                               data-ng-if="$ctrl.constants.target !== 'US' && $ctrl.currentUser.ovhSubsidiary !== 'FR'"
+                               data-translate="billing_payment_method_add_credit_card_selected_explain_generic">
                             </p>
                             <p data-ng-switch-when="CREDIT_CARD"
                                data-translate="billing_payment_method_add_credit_card_selected">
