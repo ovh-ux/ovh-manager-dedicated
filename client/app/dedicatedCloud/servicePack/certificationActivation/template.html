@@ -1,22 +1,30 @@
-<oui-back-button data-ui-sref="app.dedicatedClouds">Activation d'une certification</oui-back-button>
+<oui-back-button data-ui-sref="app.dedicatedClouds">
+    <span data-translate="dedicatedCloud_servicePack_certificationActivation_header"></span>
+</oui-back-button>
 
-<div class="oui-progress-tracker">
-    <ol class="oui-progress-tracker__steps">
-        <li
-            data-ng-repeat="step in $ctrl.steps track by step.stateName"
-            data-ng-class="{
-                'oui-progress-tracker__step_active' : step.isActive,
-                'oui-progress-tracker__step_complete' : step.isComplete
-            }"
-            class="oui-progress-tracker__step">
-            <span class="oui-progress-tracker__status">
-                <span
-                    class="oui-progress-tracker__label"
-                    data-ng-bind="step.displayName"></span>
-            </span>
-        </li>
-    </ol>
-</div>
+<section>
+    <h2
+        class="sr-only"
+        data-translate="dedicatedCloud_servicePack_progression_header"></h2>
+    <div class="oui-progress-tracker">
+        <ol class="oui-progress-tracker__steps">
+            <li
+                data-ng-repeat="step in $ctrl.steps track by step.stateName"
+                data-ng-class="{
+                    'oui-progress-tracker__step_active' : step.isActive,
+                    'oui-progress-tracker__step_complete' : step.isComplete
+                }"
+                class="oui-progress-tracker__step"
+                data-ng-attr-aria-current="{{ step.isActive ? 'step' : 'false' }}">
+                <span class="oui-progress-tracker__status">
+                    <span
+                        class="oui-progress-tracker__label"
+                        data-ng-bind="step.displayName"></span>
+                </span>
+            </li>
+        </ol>
+    </div>
+</section>
 
 <div
     data-ng-if="$ctrl.transitionIsInProgress"
@@ -24,6 +32,6 @@
     <oui-spinner data-size="l"></oui-spinner>
 </div>
 
-<div
+<section
     data-ng-show="!$ctrl.transitionIsInProgress"
-    data-ui-view="dedicatedCloudServicePackCertificationActivationStep"></div>
+    data-ui-view="dedicatedCloudServicePackCertificationActivationStep"></section>

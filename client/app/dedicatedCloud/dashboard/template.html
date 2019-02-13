@@ -108,11 +108,16 @@
         <oui-tile
             class="h-100"
             data-heading="{{:: 'dedicatedCloud_options_title' | translate }}">
-            <oui-tile-definition data-term="Options existantes">
-                <oui-tile-description>
-                    <ul data-ng-if="$ctrl.allExistingOptions.length > 1">
+            <oui-tile-definition data-term="{{:: 'dedicatedCloud_dashboard_options_basicOptions_description' | translate }}">
+                <oui-tile-description class="oui-list oui-list_separated m-0">
+                    <ul
+                        class="oui-list__items pl-3"
+                        data-ng-if="$ctrl.allExistingOptions.length > 1">
                         <li
-                            class="mt-1"
+                            class="oui-list__item oui-list__group pt-3"
+                            data-ng-class="{
+                                'pb-3': !$last,
+                            }"
                             data-ng-repeat="option in $ctrl.allExistingOptions track by option.name">
                             <span data-ng-bind="'dedicatedCloud_dashboard_options_basicOptions_names_' + option.name | translate"></span>
                             <dedicated-cloud-activation-status data-status="option.status"></dedicated-cloud-activation-status>

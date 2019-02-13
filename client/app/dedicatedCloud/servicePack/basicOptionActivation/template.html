@@ -2,23 +2,29 @@
     <span data-translate="dedicatedCloud_servicePack_basicOptionActivation_header"></span>
 </oui-back-button>
 
-<div class="oui-progress-tracker">
-    <ol class="oui-progress-tracker__steps">
-        <li
-            data-ng-repeat="step in $ctrl.steps track by step.stateName"
-            data-ng-class="{
-                'oui-progress-tracker__step_active' : step.isActive,
-                'oui-progress-tracker__step_complete' : step.isComplete
-            }"
-            class="oui-progress-tracker__step">
-            <span class="oui-progress-tracker__status">
-                <span
-                    class="oui-progress-tracker__label"
-                    data-ng-bind="step.displayName"></span>
-            </span>
-        </li>
-    </ol>
-</div>
+<section>
+    <h2
+        class="sr-only"
+        data-translate="dedicatedCloud_servicePack_progression_header"></h2>
+    <div class="oui-progress-tracker">
+        <ol class="oui-progress-tracker__steps">
+            <li
+                data-ng-repeat="step in $ctrl.steps track by step.stateName"
+                data-ng-class="{
+                    'oui-progress-tracker__step_active' : step.isActive,
+                    'oui-progress-tracker__step_complete' : step.isComplete
+                }"
+                class="oui-progress-tracker__step"
+                data-ng-attr-aria-current="{{ step.isActive ? 'step' : 'false' }}">
+                <span class="oui-progress-tracker__status">
+                    <span
+                        class="oui-progress-tracker__label"
+                        data-ng-bind="step.displayName"></span>
+                </span>
+            </li>
+        </ol>
+    </div>
+</section>
 
 <div
     data-ng-if="$ctrl.transitionIsInProgress"
@@ -26,65 +32,6 @@
     <oui-spinner data-size="l"></oui-spinner>
 </div>
 
-<div
+<section
     data-ng-show="!$ctrl.transitionIsInProgress"
-    data-ui-view="dedicatedCloudServicePackBasicOptionActivationStep"></div>
-
-<!--
-<form
-    novalidate
-    name="$ctrl.form"
-    data-ng-submit="$ctrl.placeOrder()"
-    data-ng-if="!$ctrl.orderIsSuccessful">
-
-    <p data-translate="dedicatedCloud_servicePack_basicOptionActivation_step1_description"></p>
-
-    <oui-message
-        data-type="error"
-        data-dismissable="false"
-        data-ng-if="!$ctrl.orderIsValid">
-        <span data-ng-bind="$ctrl.errorMessage"></span>
-    </oui-message>
-
-    <oui-field class="mt-3">
-        <oui-radio-group
-            data-model="$ctrl.servicePackToOrder"
-            data-on-change="$ctrl.orderIsValid = true">
-            <oui-radio
-                data-ng-repeat="servicePack in ::$ctrl.orderableServicePacks track by servicePack.name"
-                data-value="servicePack.name"
-                data-required>
-                <span data-ng-bind=":: servicePack.displayName"></span>
-            </oui-radio>
-        </oui-radio-group>
-    </oui-field>
-
-    <p
-        data-translate="dedicatedCloud_servicePack_basicOptionActivation_step2_description"
-        data-translate-values="{
-            confirmButtonLabel: '<strong>' + ('dedicatedCloud_servicePack_basicOptionActivation_step2_submitButtonText' | translate) + '</strong>'
-        }"></p>
-
-    <button
-        type="submit"
-        class="oui-button oui-button_primary"
-        data-translate="dedicatedCloud_servicePack_basicOptionActivation_step2_submitButtonText"
-        data-ng-if="!$ctrl.orderIsInProgress"></button>
-
-    <oui-spinner data-ng-if="$ctrl.orderIsInProgress"></oui-spinner>
-</form>
-
-<div data-ng-if="$ctrl.orderIsSuccessful">
-    <oui-message
-        data-type="success"
-        data-dismissable="false">
-        <span data-translate="dedicatedCloud_servicePack_basicOptionActivation_orderIsSuccessful_message"></span>
-    </oui-message>
-
-    <p
-        class="mt-3"
-        data-translate="dedicatedCloud_servicePack_basicOptionActivation_orderIsSuccessful_text_1"></p>
-    <p
-        data-translate="dedicatedCloud_servicePack_basicOptionActivation_orderIsSuccessful_text_2"></p>
-</div>
--->
+    data-ui-view="dedicatedCloudServicePackBasicOptionActivationStep"></section>
