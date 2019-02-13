@@ -1,3 +1,13 @@
+<a name="10.10.4"></a>
+## [10.10.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.3...v10.10.4) (2019-02-13)
+
+
+### Bug Fixes
+
+* **ip.mitigation.statistics:** display correct units and details ([#968](https://github.com/ovh-ux/ovh-manager-dedicated/issues/968)) ([3ef5e90](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3ef5e90))
+
+
+
 <a name="10.10.3"></a>
 ## [10.10.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.2...v10.10.3) (2019-02-12)
 
