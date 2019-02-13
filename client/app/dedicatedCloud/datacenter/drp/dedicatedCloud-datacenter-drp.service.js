@@ -1,4 +1,4 @@
-angular.module('services').service('DedicatedCloudDrp', class DedicatedCloudDrp {
+export default class {
   /* @ngInject */
   constructor($q, OvhApiDedicatedCloud, DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS) {
     this.$q = $q;
@@ -10,11 +10,12 @@ angular.module('services').service('DedicatedCloudDrp', class DedicatedCloudDrp 
     return this.OvhApiDedicatedCloud.Ip().v6().query({
       serviceName,
     }).$promise
-      .then(ipAddresses => ipAddresses.map(ipAddress => this.OvhApiDedicatedCloud.Ip().v6()
-        .get({
-          serviceName,
-          network: ipAddress,
-        }).$promise));
+      .then(ipAddresses => ipAddresses
+        .map(ipAddress => this.OvhApiDedicatedCloud.Ip().v6()
+          .get({
+            serviceName,
+            network: ipAddress,
+          }).$promise));
   }
 
   getPccDrpPlan(serviceName) {
@@ -25,8 +26,7 @@ angular.module('services').service('DedicatedCloudDrp', class DedicatedCloudDrp 
         .map(datacenterId => this.getDrpState({
           serviceName,
           datacenterId,
-        }))))
-      .then(drpStates => drpStates);
+        }))));
   }
 
   getPccIpAddressesDetails(serviceName) {
@@ -46,7 +46,7 @@ angular.module('services').service('DedicatedCloudDrp', class DedicatedCloudDrp 
   getDrpState(serviceInformations) {
     return this.OvhApiDedicatedCloud
       .Datacenter().Zerto().v6().state(serviceInformations, null).$promise
-      .then(state => angular.extend(state.data, serviceInformations));
+      .then(state => ({ ...state.data, ...serviceInformations }));
   }
 
   enableDrp(drpInformations) {
@@ -129,4 +129,4 @@ angular.module('services').service('DedicatedCloudDrp', class DedicatedCloudDrp 
         datacenterId: primaryDatacenter.id,
       }, null).$promise;
   }
-});
+}

@@ -1,9 +1,9 @@
 <div class="text-center"
-     data-ng-if="$ctrl.loading">
+     data-ng-if="$ctrl.isLoading">
     <oui-spinner></oui-spinner>
 </div>
 
-<div data-ng-if="!$ctrl.loading">
+<div data-ng-if="!$ctrl.isLoading">
     <p data-translate="dedicatedCloud_datacenter_pcc_name"
        data-translate-values="{ 'pcc': $ctrl.drpInformations.primaryPcc.description }"></p>
     <form name="$ctrl.primaryPcc"
@@ -25,8 +25,8 @@
             <span data-translate="dedicatedCloud_datacenter_order_ip"></span>
             <button class="oui-button oui-button_link px-0 py-0"
                     type="button"
-                    data-ng-click="$ctrl.openModalOrderIpBlock()">
-                <span data-translate="global_feedback_contact_link"></span>
+                    data-ng-click="$ctrl.openModalOrderIpBlock()"
+                    data-translate="global_feedback_contact_link">
             </button>
         </div>
         <oui-field data-label="{{:: 'dedicatedCloud_datacenter_main_ip_address_pool_available' | translate }}"

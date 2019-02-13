@@ -1,4 +1,6 @@
-angular.module('App').controller('DedicatedCloudDatacenterDrpFinalStepCtrl', class DedicatedCloudDatacenterDrpFinalStepCtrl {
+import template from './delete/dedicatedCloud-datacenter-drp-finalStep-delete.html';
+
+export default class {
   /* @ngInject */
   constructor(
     $q, $state, $stateParams, $translate, $uibModal,
@@ -17,7 +19,7 @@ angular.module('App').controller('DedicatedCloudDatacenterDrpFinalStepCtrl', cla
   }
 
   $onInit() {
-    this.loading = true;
+    this.isLoading = true;
     this.drpInformations = this.$stateParams.drpInformations;
     const { state } = this.drpInformations;
     const otherPccInformations = this.getOtherPccInformations();
@@ -27,12 +29,12 @@ angular.module('App').controller('DedicatedCloudDatacenterDrpFinalStepCtrl', cla
         ? this.$q.when({})
         : this.DedicatedCloudDrp.enableDrp(this.drpInformations),
       me: this.OvhApiMe.v6().get().$promise,
-      secondaryPccState: _.isNull(otherPccInformations.serviceName)
+      secondaryPccState: _.isUndefined(otherPccInformations.serviceName)
         ? this.$q.when({})
         : this.DedicatedCloudDrp.getDrpState(otherPccInformations),
     })
       .then(({ enableDrp, me, secondaryPccState }) => {
-        if (enableDrp.state === 'todo') {
+        if (enableDrp.state === this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toDo) {
           this.isEnabling = true;
         }
         this.email = me.email;
@@ -41,8 +43,7 @@ angular.module('App').controller('DedicatedCloudDatacenterDrpFinalStepCtrl', cla
           .state === this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered;
         if (state === this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered) {
           this.Alerter.success(`
-            <p>${this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_create_success_part_one')}</p>
-            <strong>${this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_create_success_part_two', { email: this.email })}</strong>
+            ${this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_create_success_part_one')} ${this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_create_success_part_two', { email: this.email })}
           `, 'dedicatedCloudDatacenterDrpAlert');
         }
       })
@@ -50,19 +51,19 @@ angular.module('App').controller('DedicatedCloudDatacenterDrpFinalStepCtrl', cla
         this.Alerter.error(`${this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_create_error')} ${_.get(error, 'message', '')}`, 'dedicatedCloudDatacenterDrpAlert');
       })
       .finally(() => {
-        this.loading = false;
+        this.isLoading = false;
       });
   }
 
   getOtherPccInformations() {
     const primaryOptions = {
-      serviceName: _.get(this.drpInformations, 'primaryPcc.serviceName', null),
-      datacenterId: _.get(this.drpInformations, 'primaryDatacenter.id', null),
+      serviceName: _.get(this.drpInformations, 'primaryPcc.serviceName'),
+      datacenterId: _.get(this.drpInformations, 'primaryDatacenter.id'),
     };
 
     const secondaryOptions = {
-      serviceName: _.get(this.drpInformations, 'secondaryPcc.serviceName', null),
-      datacenterId: _.get(this.drpInformations, 'secondaryDatacenter.id', null),
+      serviceName: _.get(this.drpInformations, 'secondaryPcc.serviceName'),
+      datacenterId: _.get(this.drpInformations, 'secondaryDatacenter.id'),
     };
 
     return [primaryOptions, secondaryOptions]
@@ -74,8 +75,7 @@ angular.module('App').controller('DedicatedCloudDatacenterDrpFinalStepCtrl', cla
     return this.DedicatedCloudDrp.regenerateZsspPassword(this.drpInformations)
       .then(() => {
         this.Alerter.success(`
-          <p>${this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_create_success_part_one')}</p>
-          <strong>${this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_create_success_part_two', { email: this.email })}</strong>
+          ${this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_create_success_part_two', { email: this.email })}
         `, 'dedicatedCloudDatacenterDrpAlert');
       })
       .catch((error) => {
@@ -88,17 +88,19 @@ angular.module('App').controller('DedicatedCloudDatacenterDrpFinalStepCtrl', cla
 
   deleteDrpModal() {
     this.$uibModal.open({
-      templateUrl: 'dedicatedCloud/datacenter/drp/steps/common/final/delete/dedicatedCloud-datacenter-drp-finalStep-delete.html',
+      template,
       controller: 'DedicatedCloudDatacenterDrpFinalStepDeleteCtrl',
       controllerAs: '$ctrl',
     }).result
       .then(() => this.DedicatedCloudDrp.disableDrp(this.drpInformations))
       .then(() => {
         this.Alerter.success(this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_delete_drp_success'), 'dedicatedCloudDatacenterDrpAlert');
-        this.$state.go('app.dedicatedClouds.datacenter');
+        return this.$state.go('app.dedicatedClouds.datacenter');
       })
       .catch((error) => {
-        this.Alerter.error(this.$translate.instant(`${this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_delete_drp_error')} ${_.get(error, 'message', '')}`), 'dedicatedCloudDatacenterDrpAlert');
+        if (error != null) {
+          this.Alerter.error(this.$translate.instant(`${this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_delete_drp_error')} ${_.get(error, 'message', '')}`), 'dedicatedCloudDatacenterDrpAlert');
+        }
       });
   }
 
@@ -106,4 +108,4 @@ angular.module('App').controller('DedicatedCloudDatacenterDrpFinalStepCtrl', cla
     return this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toProvisionOrProvisionning
       .includes(this.drpInformations.state);
   }
-});
+}

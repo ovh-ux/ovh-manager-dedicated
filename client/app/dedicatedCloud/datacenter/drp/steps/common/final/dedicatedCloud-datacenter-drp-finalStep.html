@@ -1,9 +1,9 @@
 <div class="text-center"
-     data-ng-if="$ctrl.loading">
+     data-ng-if="$ctrl.isLoading">
     <oui-spinner></oui-spinner>
 </div>
 
-<div data-ng-if="!$ctrl.loading">
+<div data-ng-if="!$ctrl.isLoading">
     <h3 class="oui-heading_4 mt-5"
         data-translate="dedicatedCloud_datacenter_drp_confirm_summary_title"></h3>
     <dl class="row">

@@ -1,11 +1,3 @@
-<div data-ovh-alert="dedicatedCloudDatacenterDrpAlert"></div>
-
-<oui-message data-ng-if="$ctrl.drpInformations.state === 'toProvision' || $ctrl.drpInformations.state === 'provisionning' || $ctrl.isEnabling"
-             data-type="info">
-    <p data-translate="dedicatedCloud_datacenter_drp_confirm_creation_pending"></p>
-    <p data-translate="dedicatedCloud_datacenter_drp_confirm_creation_pending_task"></p>
-</oui-message>
-
 <div class="oui-progress-tracker my-5">
     <ol class="oui-progress-tracker__steps">
         <li class="oui-progress-tracker__step"
@@ -33,8 +25,8 @@
         <li class="oui-progress-tracker__step"
             data-ng-class="{
                 'oui-progress-tracker__step_disabled': $ctrl.$stateParams.currentStep < 3,
-                'oui-progress-tracker__step_active': $ctrl.$stateParams.currentStep === 3 && $ctrl.drpInformations.state !== 'delivered',
-                'oui-progress-tracker__step_complete': $ctrl.$stateParams.currentStep === 3 && $ctrl.drpInformations.state === 'delivered'
+                'oui-progress-tracker__step_active': $ctrl.$stateParams.currentStep === 3 && $ctrl.drpInformations.state !== $ctrl.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered,
+                'oui-progress-tracker__step_complete': $ctrl.$stateParams.currentStep === 3 && $ctrl.drpInformations.state === $ctrl.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered
             }">
             <span class="oui-progress-tracker__status">
                 <span class="oui-progress-tracker__label"
@@ -43,3 +35,11 @@
         </li>
     </ol>
 </div>
+
+<div data-ovh-alert="dedicatedCloudDatacenterDrpAlert"></div>
+
+<oui-message data-ng-if="$ctrl.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toProvisionOrProvisionning.includes($ctrl.drpInformations.state) || $ctrl.isEnabling"
+             data-type="info">
+    <p data-translate="dedicatedCloud_datacenter_drp_confirm_creation_pending"></p>
+    <p data-translate="dedicatedCloud_datacenter_drp_confirm_creation_pending_task"></p>
+</oui-message>

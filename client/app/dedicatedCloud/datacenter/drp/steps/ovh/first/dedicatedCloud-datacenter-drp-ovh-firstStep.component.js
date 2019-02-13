@@ -1,4 +1,10 @@
-angular.module('App').component('dedicatedCloudDatacenterDrpOvhFirstStep', {
-  templateUrl: 'dedicatedCloud/datacenter/drp/steps/common/first/dedicatedCloud-datacenter-drp-firstStep.html',
-  controller: 'DedicatedCloudDatacenterDrpFirstStepCtrl',
-});
+import template from '../../common/first/dedicatedCloud-datacenter-drp-firstStep.html';
+import DedicatedCloudDatacenterDrpFirstStepCtrl from '../../common/first/dedicatedCloud-datacenter-drp-firstStep.controller';
+
+export default {
+  template,
+  controller: DedicatedCloudDatacenterDrpFirstStepCtrl,
+  bindings: {
+    datacenters: '<datacenterList',
+  },
+};

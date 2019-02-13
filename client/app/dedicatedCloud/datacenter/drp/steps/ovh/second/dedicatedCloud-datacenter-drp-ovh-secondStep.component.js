@@ -1,4 +1,10 @@
-angular.module('App').component('dedicatedCloudDatacenterDrpOvhSecondStep', {
-  templateUrl: 'dedicatedCloud/datacenter/drp/steps/ovh/second/dedicatedCloud-datacenter-drp-ovh-secondStep.html',
-  controller: 'DedicatedCloudDatacenterDrpOvhSecondStepCtrl',
-});
+import template from './dedicatedCloud-datacenter-drp-ovh-secondStep.html';
+import DedicatedCloudDatacenterDrpOvhSecondStepCtrl from './dedicatedCloud-datacenter-drp-ovh-secondStep.controller';
+
+export default {
+  template,
+  controller: DedicatedCloudDatacenterDrpOvhSecondStepCtrl,
+  bindings: {
+    pccList: '<',
+  },
+};

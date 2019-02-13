@@ -1,10 +1,12 @@
-angular.module('App').controller('DedicatedCloudDatacenterDrpFirstStepCtrl', class DedicatedCloudDatacenterDrpFirstStepCtrl {
+import template from '../../../../../../ip/ip/order/ip-ip-order.html';
+
+export default class {
   /* @ngInject */
   constructor(
     $q, $state, $stateParams, $translate, $uibModal,
-    Alerter, DedicatedCloud, DedicatedCloudDrp, OvhApiDedicatedCloud,
-    DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS,
+    Alerter, DedicatedCloudDrp, OvhApiDedicatedCloud,
     DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP,
+    DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS,
   ) {
     this.$q = $q;
     this.$state = $state;
@@ -12,33 +14,27 @@ angular.module('App').controller('DedicatedCloudDatacenterDrpFirstStepCtrl', cla
     this.$translate = $translate;
     this.$uibModal = $uibModal;
     this.Alerter = Alerter;
-    this.DedicatedCloud = DedicatedCloud;
     this.DedicatedCloudDrp = DedicatedCloudDrp;
     this.OvhApiDedicatedCloud = OvhApiDedicatedCloud;
-    this.unavailableIpStatuses = DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS;
-    this.macAddressRegExp = DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP;
+    this.MAC_ADDRESS_REG_EXP = DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP;
+    this.UNAVAILABLE_IP_STATUSES = DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS;
   }
 
   $onInit() {
-    this.loading = true;
+    this.isLoading = true;
     this.drpInformations = this.$stateParams.drpInformations;
 
     return this.$q.all({
-      datacenters:
-        this.DedicatedCloud.getDatacenters(this.$stateParams.productId),
       ipAddressDetails:
         this.DedicatedCloudDrp.getPccIpAddressesDetails(this.$stateParams.productId),
       pcc: this.OvhApiDedicatedCloud.v6().get({
         serviceName: this.$stateParams.productId,
       }),
     })
-      .then(({ datacenters, ipAddressDetails, pcc }) => {
+      .then(({ ipAddressDetails, pcc }) => {
         this.drpInformations.primaryPcc = pcc;
-        this.availableDatacenters = datacenters.results;
-        this.availableIpAddress = ipAddressDetails
-          .filter(({ usageDetails }) => _.isNull(usageDetails)
-            && !this.unavailableIpStatuses.includes(usageDetails)
-            && !this.macAddressRegExp.test(usageDetails));
+        this.availableDatacenters = this.datacenters;
+        this.availableIpAddress = this.getAvailableAddresses(ipAddressDetails);
 
         this.drpInformations.primaryDatacenter = this.availableDatacenters
           .find(({ id }) => parseInt(this.$stateParams.datacenterId, 10) === id);
@@ -49,30 +45,38 @@ angular.module('App').controller('DedicatedCloudDatacenterDrpFirstStepCtrl', cla
         this.Alerter.error(`${this.$translate.instant('dedicatedCloud_datacenter_drp_get_state_error')} ${_.get(error, 'data.message', error)}`, 'dedicatedCloudDatacenterDrpAlert');
       })
       .finally(() => {
-        this.loading = false;
+        this.isLoading = false;
       });
   }
 
   openModalOrderIpBlock() {
     this.$uibModal.open({
-      templateUrl: 'ip/ip/order/ip-ip-order.html',
+      template,
       controller: 'IpOrderCtrl',
       controllerAs: '$ctrl',
     }).result
       .then(() => this.DedicatedCloudDrp.getPccIpAddressesDetails(this.$stateParams.productId))
       .then((ipAddressDetails) => {
-        this.availableIpAddress = ipAddressDetails
-          .filter(({ usageDetails }) => _.isNull(usageDetails)
-            && !this.unavailableIpStatuses.includes(usageDetails)
-            && !this.macAddressRegExp.test(usageDetails));
+        this.availableIpAddress = this.getAvailableAddresses(ipAddressDetails);
       });
   }
 
+  getAvailableAddresses(ipAddressDetails) {
+    return ipAddressDetails
+      .filter(({ usageDetails }) => _.isNull(usageDetails)
+        && !this.UNAVAILABLE_IP_STATUSES.includes(usageDetails)
+        && !this.MAC_ADDRESS_REG_EXP.test(usageDetails));
+  }
+
   goToPreviousStep() {
-    this.$state.go('app.dedicatedClouds.datacenter.drp', { selectedDrpType: this.drpInformations.drpType });
+    return this.$state.go(
+      'app.dedicatedClouds.datacenter.drp',
+      { selectedDrpType: this.drpInformations.drpType },
+      { reload: true },
+    );
   }
 
   goToNextStep() {
-    this.$state.go(`app.dedicatedClouds.datacenter.drp.${this.drpInformations.drpType}.secondStep`, { drpInformations: this.drpInformations });
+    return this.$state.go(`app.dedicatedClouds.datacenter.drp.${this.drpInformations.drpType}.secondStep`, { drpInformations: this.drpInformations });
   }
-});
+}

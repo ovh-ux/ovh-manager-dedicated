@@ -10,21 +10,22 @@
         <h2 class="oui-heading_1"
             data-translate="dedicatedCloud_tab_drp"></h2>
         <oui-collapsible class="ml-0 mb-5"
-                         aria-label="{{:: 'dedicatedCloud_datacenter_drp_subtitle' | translate }}"
+                         data-aria-label="{{:: 'dedicatedCloud_datacenter_drp_subtitle' | translate }}"
                          data-heading="{{:: 'dedicatedCloud_datacenter_drp_subtitle' | translate }}">
-            <span data-translate="{{:: 'dedicatedCloud_datacenter_drp_details' | translate }}"></span>
+            <span data-translate="dedicatedCloud_datacenter_drp_details"></span>
         </oui-collapsible>
 
         <oui-message class="mb-5"
                      data-type="warning"
-                     data-ng-if="$ctrl.drpInformations.hasDatacenterWithoutHosts && $ctrl.drpInformations.state !== 'delivered'">
+                     data-ng-if="$ctrl.drpInformations.hasDatacenterWithoutHosts
+                         && $ctrl.drpInformations.state !== $ctrl.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered">
             <span data-translate="dedicatedCloud_datacenter_drp_warning"></span>
         </oui-message>
 
-        <div data-ng-if="!$ctrl.drpInformations.drpType">
+        <div data-ng-if="$ctrl.drpInformations.drpType == null">
             <span data-translate="dedicatedCloud_tab_drp_choice_plan_type"></span>
-            <div class="row w-100 d-md-flex mt-3">
-                <div class="col-lg-6 col-md-12 col-sm-12">
+            <div class="row d-md-flex mt-3">
+                <div class="col-lg-6">
                     <oui-select-picker class="h-100"
                                        data-name="ovh"
                                        data-model="$ctrl.selectedDrpType"
@@ -33,15 +34,15 @@
                                        data-variant="light"
                                        data-disabled="$ctrl.drpInformations.hasDatacenterWithoutHosts">
                         <oui-select-picker-section>
-                            <span class="transclude-image-container">
+                            <figure>
                                 <img class="h-100 w-100"
                                      src="images/drp/zerto-two-pcc.svg"
-                                     alt="zerto-two-pcc.svg">
-                            </span>
+                                     alt="">
+                            </figure>
                         </oui-select-picker-section>
                     </oui-select-picker>
                 </div>
-                <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="col-lg-6">
                     <oui-select-picker class="h-100"
                                        data-name="onPremise"
                                        data-model="$ctrl.selectedDrpType"
@@ -50,11 +51,11 @@
                                        data-variant="light"
                                        data-disabled="true">
                         <oui-select-picker-section>
-                            <span class="transclude-image-container">
+                            <figure>
                                 <img class="h-100 w-100"
                                      src="images/drp/zerto-one-and-one-pcc.svg"
-                                     alt="zerto-one-and-one-pcc.svg">
-                            </span>
+                                     alt="">
+                            </figure>
                         </oui-select-picker-section>
                     </oui-select-picker>
                 </div>

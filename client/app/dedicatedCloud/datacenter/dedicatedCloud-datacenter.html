@@ -77,8 +77,9 @@
 
             <div data-ovh-alert="{{ :: $ctrl.DEDICATED_CLOUD_DATACENTER.alertId }}"></div>
 
-            <div class="text-center">
-                <oui-spinner data-ng-if="loading"></oui-spinner>
+            <div class="text-center"
+                 data-ng-if="loading">
+                <oui-spinner></oui-spinner>
             </div>
 
             <div data-ui-view="pccDatacenterView"

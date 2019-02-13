@@ -1,10 +1,12 @@
-angular.module('App').controller('DedicatedCloudDatacenterDrpOvhSecondStepCtrl', class DedicatedCloudDatacenterDrpTwoOvhPccSecondStepCtrl {
+import template from '../../../../../../ip/ip/order/ip-ip-order.html';
+
+export default class {
   /* @ngInject */
   constructor(
     $q, $state, $stateParams, $translate, $uibModal,
     Alerter, DedicatedCloud, DedicatedCloudDrp,
-    DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS,
     DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP,
+    DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS,
   ) {
     this.$q = $q;
     this.$state = $state;
@@ -14,33 +16,23 @@ angular.module('App').controller('DedicatedCloudDatacenterDrpOvhSecondStepCtrl',
     this.Alerter = Alerter;
     this.DedicatedCloud = DedicatedCloud;
     this.DedicatedCloudDrp = DedicatedCloudDrp;
-    this.unavailableIpStatuses = DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS;
-    this.macAddressRegExp = DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP;
+    this.MAC_ADDRESS_REG_EXP = DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP;
+    this.UNAVAILABLE_IP_STATUSES = DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS;
   }
 
   $onInit() {
-    this.loading = true;
     this.drpInformations = this.$stateParams.drpInformations;
 
-    return this.DedicatedCloud.getAllPccs()
-      .then((availablePccs) => {
-        this.availablePccs = availablePccs
-          .filter(({ serviceName }) => serviceName !== this.$stateParams.productId)
-          .map(pcc => ({
-            description: pcc.description || pcc.serviceName,
-            serviceName: pcc.serviceName,
-          }));
-      })
-      .catch((error) => {
-        this.Alerter.error(`${this.$translate.instant('dedicatedCloud_datacenter_drp_get_state_error')} ${_.get(error, 'data.message', error.messsage)}`, 'dedicatedCloudDatacenterDrpAlert');
-      })
-      .finally(() => {
-        this.loading = false;
-      });
+    this.availablePccs = this.pccList
+      .filter(({ serviceName }) => serviceName !== this.$stateParams.productId)
+      .map(pcc => ({
+        description: pcc.description || pcc.serviceName,
+        serviceName: pcc.serviceName,
+      }));
   }
 
   updateOptions(secondaryPcc) {
-    this.fetchingPccOptions = true;
+    this.fetchingOptions = true;
     this.drpInformations.secondaryPcc = secondaryPcc;
     this.drpInformations.secondaryDatacenter = null;
     this.selectedSecondaryIpAddress = null;
@@ -52,28 +44,28 @@ angular.module('App').controller('DedicatedCloudDatacenterDrpOvhSecondStepCtrl',
         this.availableDatacenters = datacenters.results;
         this.availableIpAddress = ipAddressDetails
           .filter(({ usageDetails }) => _.isNull(usageDetails)
-            && !this.unavailableIpStatuses.includes(usageDetails)
-            && !this.macAddressRegExp.test(usageDetails));
+            && !this.UNAVAILABLE_IP_STATUSES.includes(usageDetails)
+            && !this.MAC_ADDRESS_REG_EXP.test(usageDetails));
       })
       .catch((error) => {
         this.Alerter.error(`${this.$translate.instant('dedicatedCloud_datacenter_drp_get_state_error')} ${_.get(error, 'data.message', error)}`, 'dedicatedCloudDatacenterDrpAlert');
       })
       .finally(() => {
-        this.fetchingPccOptions = false;
+        this.fetchingOptions = false;
       });
   }
 
   goToPreviousStep() {
-    this.$state.go('app.dedicatedClouds.datacenter.drp.ovh.firstStep', { drpInformations: this.drpInformations });
+    return this.$state.go('app.dedicatedClouds.datacenter.drp.ovh.firstStep', { drpInformations: this.drpInformations });
   }
 
   goToNextStep() {
-    this.$state.go('app.dedicatedClouds.datacenter.drp.ovh.finalStep', { drpInformations: this.drpInformations });
+    return this.$state.go('app.dedicatedClouds.datacenter.drp.ovh.finalStep', { drpInformations: this.drpInformations });
   }
 
   openModalOrderIpBlock() {
     this.$uibModal.open({
-      templateUrl: 'ip/ip/order/ip-ip-order.html',
+      template,
       controller: 'IpOrderCtrl',
       controllerAs: '$ctrl',
     }).result
@@ -92,4 +84,4 @@ angular.module('App').controller('DedicatedCloudDatacenterDrpOvhSecondStepCtrl',
       && this.drpInformations.secondaryDatacenter
       && this.selectedSecondaryIpAddress;
   }
-});
+}
