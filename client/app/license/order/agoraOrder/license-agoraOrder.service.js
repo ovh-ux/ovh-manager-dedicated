@@ -31,6 +31,39 @@ class LicenseAgoraOrder {
     }).then(data => data.plans));
   }
 
+  getDedicatedAddons() {
+    return this.OvhHttp.get('/order/cartServiceOption/dedicated', {
+      rootPath: 'apiv6',
+    });
+  }
+
+  getDedicatedAddonLicenses({ serviceName }) {
+    return this.OvhHttp.get('/order/cartServiceOption/dedicated/{serviceName}', {
+      rootPath: 'apiv6',
+      urlParams: {
+        serviceName,
+      },
+    });
+  }
+
+  addDedicatedAddonLicense({
+    serviceName, cartId, duration, planCode, pricingMode, quantity,
+  }) {
+    return this.OvhHttp.post('/order/cartServiceOption/dedicated/{serviceName}', {
+      rootPath: 'apiv6',
+      urlParams: {
+        serviceName,
+      },
+      data: {
+        cartId,
+        duration,
+        planCode,
+        pricingMode,
+        quantity,
+      },
+    });
+  }
+
   getLicenseOfferPlan(licenseType, planCode, ip) {
     return this.getLicenseOffers(licenseType).then((plans) => {
       const plan = _.assign({}, _.find(plans, planItem => planItem.planCode === planCode));
@@ -114,8 +147,8 @@ class LicenseAgoraOrder {
 
   getFinalizeOrderUrl(licenseInfo) {
     const productToOrder = this.getExpressOrderData(licenseInfo);
-    return this.User.getUrlOf('express_order')
-      .then(url => `${url}review?products=${JSURL.stringify([productToOrder])}`)
+    return this.User.getUrlOf('express_order_resume')
+      .then(url => `${url}?products=${JSURL.stringify([productToOrder])}`)
       .catch((err) => {
         this.Alerter.error(this.$translate.instant('ip_order_finish_error'));
         return this.$q.reject(err);
@@ -144,7 +177,7 @@ class LicenseAgoraOrder {
       configuration: [
         {
           label: 'ip',
-          value: licenseInfo.ip,
+          values: [licenseInfo.ip],
         },
       ],
     };
