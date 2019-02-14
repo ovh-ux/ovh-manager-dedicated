@@ -33,7 +33,7 @@ export default class DedicatedCloudServicePackBasicOptionActivationConfirmation 
         autoPayWithPreferredPaymentMethod: this.hasDefaultMeansOfPayment,
       }).$promise
       .then(({ order }) => this.$state.go(
-        'app.dedicatedClouds.servicePackBasicOptionActivation.confirmation',
+        'app.dedicatedClouds.servicePackBasicOptionActivation.summary',
         {
           orderURL: order.url,
           orderedServicePack: this.servicePackToOrder,

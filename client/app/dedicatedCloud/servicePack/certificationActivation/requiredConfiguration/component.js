@@ -5,6 +5,7 @@ export default {
   bindings: {
     allowedIPsAndBlocks: '<',
     currentService: '<',
+    hasDefaultMeansOfPayment: '<',
   },
   controller,
   template,

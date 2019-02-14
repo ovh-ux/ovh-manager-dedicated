@@ -1,11 +1,17 @@
-<p>
+<oui-message
+    data-type="warning"
+    data-ng-if="$ctrl.usersWhoCanReceiveSMS.length === 0">
 Au moins l'un de vos utilisateurs administrateur doit avoir un numéro de mobile,
 
 une adresse email et être "token validator". Cela permet d'activer l'authentification à 2 facteurs pour les actions d'administrateur sur le vCenter.
-</p>
+
+Vous pouvez configurer vos utilisateurs en cliquant sur <a data-ui-sref="app.dedicatedClouds.users">ce lien</a>.
+</oui-message>
+
+<p>Afin de valider l'activation de l'authentification à deux facteurs, certains de vos utilisateurs recevront un token par SMS.</p>
 
 <div data-ng-if="$ctrl.usersWhoCanReceiveSMS.length > 0">
-    <p>Utilisateurs qui pourront valider des tokens par SMS :</p>
+    <p>Utilisateurs qui peuvent valider des tokens par SMS :</p>
 
     <oui-datagrid
         data-rows-loader="$ctrl.mapUsersWhoCanReceiveSMS()">
@@ -32,8 +38,17 @@ une adresse email et être "token validator". Cela permet d'activer l'authentifi
     </oui-datagrid>
 </div>
 
-<oui-message
-    data-ng-if="$ctrl.usersWhoCanReceiveSMS.length === 0"
-    data-type="warning">
-    Aucun utilisateur ne remplit ces conditions. Veuillez vous assurer qu'au moins un utilisateur administrateur dans vos utilisateurs possède un numéro de mobile et une adresse email et soit "token validator" avant de continuer.
-</oui-message>
+<button
+    type="button"
+    class="oui-button oui-button_secondary"
+    data-ui-sref="app.dedicatedClouds.servicePackCertificationActivation.requiredConfiguration">
+    Précédent
+</button>
+
+<button
+    data-ng-if="$ctrl.usersWhoCanReceiveSMS.length > 0"
+    type="button"
+    class="oui-button oui-button_primary ml-3"
+    data-ui-sref="app.dedicatedClouds.servicePackCertificationActivation.confirmation">
+    Suivant
+</button>

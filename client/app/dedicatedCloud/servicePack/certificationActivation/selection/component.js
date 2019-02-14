@@ -6,5 +6,8 @@ export default {
     orderableServicePacks: '<',
   },
   controller,
+  require: {
+    stepper: '^dedicatedCloudServicePackCertificationActivation',
+  },
   template,
 };

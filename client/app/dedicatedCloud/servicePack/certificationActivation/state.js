@@ -15,7 +15,6 @@ export default {
   params: {
     orderableServicePacks: null,
   },
-  redirectTo: 'app.dedicatedClouds.servicePackCertificationActivation.selection',
   resolve: {
     orderableServicePacks: resolveOrderableServicePacks,
   },

@@ -39,6 +39,10 @@ export default class DedicatedCloudServicePackBasicOptionActivationCtrl {
     this.$transitions.onSuccess(
       {},
       (transition) => {
+        console.log(transition.$id);
+        console.log(transition.$to());
+        console.log(transition.entering());
+        console.log(transition.error());
         this.changeActiveStep(transition.to().name);
         this.transitionIsInProgress = false;
       },

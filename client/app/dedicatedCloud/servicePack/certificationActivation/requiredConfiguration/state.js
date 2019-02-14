@@ -12,13 +12,21 @@ const resolveCurrentService = /* @ngInject */ (
 ) => $transition$.params().currentService
     || DedicatedCloud.retrievingFullService($transition$.params().productId);
 
+const resolveHasDefaultMeansOfPayment = /* @ngInject */ (
+  $transition$,
+  ovhPaymentMethod,
+) => $transition$.params().hasDefaultMeansOfPayment
+      || ovhPaymentMethod.hasDefaultPaymentMethod();
+
 export default {
   params: {
     currentService: null,
     allowedIPsAndBlocks: null,
+    hasDefaultMeansOfPayment: null,
   },
   resolve: {
     currentService: resolveCurrentService,
     allowedIPsAndBlocks: resolveAllowedIPsAndBlocks,
+    hasDefaultMeansOfPayment: resolveHasDefaultMeansOfPayment,
   },
 };

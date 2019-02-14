@@ -24,8 +24,4 @@ export default class DedicatedCloudServicePackCertificationActivationService {
         ),
       ));
   }
-
-  static goToNextStep($scope) {
-    $scope.$emit('dedicatedCloud-servicePack-certificationActivation.goToNextStep');
-  }
 }

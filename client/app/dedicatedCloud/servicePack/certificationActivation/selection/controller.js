@@ -11,6 +11,6 @@ export default class DedicatedCloudServicePackCertificationActivationSelection {
       return null;
     }
 
-    return this.$state.go('app.dedicatedClouds.servicePackCertificationActivation.requiredConfiguration');
+    return this.stepper.goToNextStep();
   }
 }

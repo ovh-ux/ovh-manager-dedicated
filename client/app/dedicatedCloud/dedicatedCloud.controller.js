@@ -42,14 +42,18 @@ angular
 
       $onInit() {
         this.$transitions.onStart(
-          {},
+          {
+            from: state => state.name === 'app.dedicatedClouds',
+          },
           () => {
             this.stateIsChanging = true;
           },
         );
 
         this.$transitions.onSuccess(
-          {},
+          {
+            from: state => state.name === 'app.dedicatedClouds',
+          },
           () => {
             this.stateIsChanging = false;
           },

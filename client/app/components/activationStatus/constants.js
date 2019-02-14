@@ -7,8 +7,8 @@ export const ALL_TYPES = {
     name: 'disabled',
     type: 'error',
   },
-  waitingForActivation: {
-    name: 'waitingForActivation',
+  pendingActivation: {
+    name: 'pendingActivation',
     type: 'error',
   },
   beingActivated: {

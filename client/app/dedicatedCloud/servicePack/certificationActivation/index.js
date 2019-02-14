@@ -28,20 +28,20 @@ angular
   ])
   .component(component.name, component)
   .config(/* @ngInject */ ($stateProvider) => {
-    $stateProvider.state('app.dedicatedClouds.servicePackCertificationActivation', state);
+    const stepperStateName = 'app.dedicatedClouds.servicePackCertificationActivation';
+    $stateProvider.state(stepperStateName, state);
 
+    let currentStepName = stepperStateName;
     steps.forEach((step) => {
-      const stepName = _.camelCase(step.moduleName.replace(moduleName, ''));
+      const suffixForStepName = _.camelCase(step.moduleName.replace(moduleName, ''));
+      currentStepName = `${currentStepName}.${suffixForStepName}`;
 
       $stateProvider.state(
-        `app.dedicatedClouds.servicePackCertificationActivation.${stepName}`,
+        currentStepName,
         {
           ...step.state,
-          ...{
-            url: `/${stepName}`,
-            views: {
-              dedicatedCloudServicePackCertificationActivationStep: step.moduleName,
-            },
+          views: {
+            [`@${stepperStateName}`]: step.moduleName,
           },
         },
       );
