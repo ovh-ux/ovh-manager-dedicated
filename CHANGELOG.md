@@ -1,3 +1,13 @@
+<a name="10.10.5"></a>
+## [10.10.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.4...v10.10.5) (2019-02-15)
+
+
+### Bug Fixes
+
+* **dedicatedcloud:** update spla plancode ([2c1ff1a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2c1ff1a))
+
+
+
 <a name="10.10.4"></a>
 ## [10.10.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.3...v10.10.4) (2019-02-13)
 
