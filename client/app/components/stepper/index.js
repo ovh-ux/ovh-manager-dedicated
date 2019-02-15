@@ -5,19 +5,16 @@
 
 import component from './component';
 import { COMPONENT_NAME, MODULE_NAME } from './constants';
-import step from './step';
+
+import headerModuleName from './header';
 
 angular
   .module(MODULE_NAME, [
     'oui',
     'pascalprecht.translate',
     'ui.router',
+    headerModuleName,
   ])
-  .component(COMPONENT_NAME, component)
-  .run(/* @ngTranslationsInject ./translations */);
+  .component(COMPONENT_NAME, component);
 
 export default MODULE_NAME;
-
-export {
-  step,
-};

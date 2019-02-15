@@ -5,7 +5,6 @@
 
 import component from './component';
 import { COMPONENT_NAME, MODULE_NAME } from './constants';
-import step from './step';
 
 angular
   .module(MODULE_NAME, [
@@ -17,7 +16,3 @@ angular
   .run(/* @ngTranslationsInject ./translations */);
 
 export default MODULE_NAME;
-
-export {
-  step,
-};

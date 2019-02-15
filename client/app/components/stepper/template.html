@@ -1,0 +1,13 @@
+<dedicated-cloud-stepper-header
+    data-active-step="$ctrl.activeStep"
+    data-steps="$ctrl.steps"></dedicated-cloud-stepper-header>
+
+<div
+    data-ng-if="$ctrl.isLoading"
+    class="text-center">
+    <oui-spinner data-size="l"></oui-spinner>
+</div>
+
+<section
+    data-ng-show="!$ctrl.isLoading"
+    data-ui-view="content"></section>

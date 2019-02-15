@@ -3,43 +3,41 @@
 // import 'ovh-ui-angular';
 // import '@uirouter/angularjs';
 
-import * as selection from './selection/index';
-import * as requiredConfiguration from './requiredConfiguration/index';
-import * as smsActivation from './smsActivation/index';
-
 import component from './component';
+import { COMPONENT_NAME, MODULE_NAME, STEPS } from './constants';
 import service from './service';
-import state from './state';
-
-const moduleName = 'dedicatedCloudServicePackCertificationActivation';
-
-const steps = [
-  selection,
-  requiredConfiguration,
-  smsActivation,
-];
 
 angular
-  .module(moduleName, [
-    ...steps.map(step => step.moduleName),
+  .module(MODULE_NAME, [
+    ...STEPS.map(step => step.moduleName),
     'oui',
     'pascalprecht.translate',
     'ui.router',
   ])
-  .component(component.name, component)
+  .component(COMPONENT_NAME, component)
   .config(/* @ngInject */ ($stateProvider) => {
-    const stepperStateName = 'app.dedicatedClouds.servicePackCertificationActivation';
-    $stateProvider.state(stepperStateName, state);
+    const stepperStateName = 'app.dedicatedClouds.certificationActivation';
+    $stateProvider.state(
+      stepperStateName,
+      {
+        url: '/certificationActivation',
+        views: {
+          pccView: COMPONENT_NAME,
+        },
+      },
+    );
 
     let currentStepName = stepperStateName;
-    steps.forEach((step) => {
-      const suffixForStepName = _.camelCase(step.moduleName.replace(moduleName, ''));
+    STEPS.forEach((step) => {
+      const suffixForStepName = _.camelCase(step.moduleName.replace(MODULE_NAME, ''));
       currentStepName = `${currentStepName}.${suffixForStepName}`;
 
       $stateProvider.state(
         currentStepName,
         {
-          ...step.state,
+          data: {
+            stepperStateName,
+          },
           views: {
             [`@${stepperStateName}`]: step.moduleName,
           },
@@ -50,4 +48,4 @@ angular
   .service('dedicatedCloudServicePackCertificationActivationService', service)
   .run(/* @ngTranslationsInject ./translations */);
 
-export default moduleName;
+export default MODULE_NAME;

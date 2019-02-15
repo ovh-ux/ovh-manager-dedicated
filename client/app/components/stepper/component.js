@@ -3,8 +3,7 @@ import template from './template.html';
 
 export default {
   bindings: {
-    currentService: '<',
-    orderableServicePacks: '<',
+    steps: '<',
   },
   controller,
   template,

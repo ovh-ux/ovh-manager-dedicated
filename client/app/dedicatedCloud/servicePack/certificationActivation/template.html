@@ -1,37 +1,6 @@
-<oui-back-button data-ui-sref="app.dedicatedClouds">
+<oui-back-button data-on-click="$ctrl.exit()">
     <span data-translate="dedicatedCloud_servicePack_certificationActivation_header"></span>
 </oui-back-button>
 
-<section>
-    <h2
-        class="sr-only"
-        data-translate="dedicatedCloud_servicePack_progression_header"></h2>
-    <div class="oui-progress-tracker">
-        <ol class="oui-progress-tracker__steps">
-            <li
-                data-ng-repeat="step in $ctrl.steps track by step.stateName"
-                data-ng-class="{
-                    'oui-progress-tracker__step_active' : step.isActive,
-                    'oui-progress-tracker__step_complete' : step.isComplete
-                }"
-                class="oui-progress-tracker__step"
-                data-ng-attr-aria-current="{{ step.isActive ? 'step' : 'false' }}">
-                <span class="oui-progress-tracker__status">
-                    <span
-                        class="oui-progress-tracker__label"
-                        data-ng-bind="step.displayName"></span>
-                </span>
-            </li>
-        </ol>
-    </div>
-</section>
-
-<div
-    data-ng-if="$ctrl.transitionIsInProgress"
-    class="text-center">
-    <oui-spinner data-size="l"></oui-spinner>
-</div>
-
-<section
-    data-ng-show="!$ctrl.transitionIsInProgress"
-    data-ui-view></section>
+<dedicated-cloud-stepper
+    data-steps="$ctrl.steps"></dedicated-cloud-stepper>

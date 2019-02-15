@@ -1,4 +1,4 @@
-const resolveOrderableServicePacks = /* @ngInject */ (
+/* const resolveOrderableServicePacks = /* @ngInject *//* (
   $transition$,
   currentService,
   currentUser,
@@ -9,17 +9,11 @@ const resolveOrderableServicePacks = /* @ngInject */ (
         currentServicePackName: currentService.servicePackName,
         serviceName: currentService.serviceName,
         subsidiary: currentUser.ovhSubsidiary,
-      });
+      }); */
 
 export default {
-  params: {
-    orderableServicePacks: null,
-  },
-  resolve: {
-    orderableServicePacks: resolveOrderableServicePacks,
-  },
-  url: '/servicePackCertificationActivation',
+  url: '/certificationActivation',
   views: {
-    pccView: 'dedicatedCloudServicePackCertificationActivation',
+    pccView: 'dedicatedCloudCertificationActivation',
   },
 };

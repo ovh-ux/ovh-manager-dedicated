@@ -8,13 +8,14 @@ import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
 import ovhContacts from '@ovh-ux/ng-ovh-contacts';
 
 import config from './config/config';
-import dedicatedUniverseComponents from './dedicatedUniverseComponents';
 import dedicatedCloudActivationStatus from './components/activationStatus';
 import dedicatedCloudDashboardModuleName from './dedicatedCloud/dashboard';
 import dedicatedCloudServicePackBasicOptionActivationModuleName from './dedicatedCloud/servicePack/basicOptionActivation';
 import dedicatedCloudServicePackCertificationActivationModuleName from './dedicatedCloud/servicePack/certificationActivation';
-import dedicatedCloudServicePackOptionModuleName from './dedicatedCloud/servicePack/option';
 import dedicatedCloudServicePackModuleName from './dedicatedCloud/servicePack';
+import dedicatedCloudServicePackOptionModuleName from './dedicatedCloud/servicePack/option';
+import dedicatedCloudStepper from './components/stepper';
+import dedicatedUniverseComponents from './dedicatedUniverseComponents';
 
 const appDeps = [
   'ovh-angular-proxy-request',
@@ -64,12 +65,13 @@ const appDeps = [
   'xeditable',
   ovhPaymentMethod,
   ovhContacts,
-  dedicatedCloudDashboardModuleName,
   dedicatedCloudActivationStatus,
+  dedicatedCloudDashboardModuleName,
   dedicatedCloudServicePackBasicOptionActivationModuleName,
   dedicatedCloudServicePackCertificationActivationModuleName,
-  dedicatedCloudServicePackOptionModuleName,
   dedicatedCloudServicePackModuleName,
+  dedicatedCloudServicePackOptionModuleName,
+  dedicatedCloudStepper,
 ];
 
 if (WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca') {
