@@ -4,7 +4,12 @@
 // import '@uirouter/angularjs';
 
 import component from './component';
-import { COMPONENT_NAME, MODULE_NAME, STEPS } from './constants';
+import {
+  COMPONENT_NAME,
+  MODULE_NAME,
+  STATE_NAME,
+  STEPS,
+} from './constants';
 import service from './service';
 
 angular
@@ -16,9 +21,8 @@ angular
   ])
   .component(COMPONENT_NAME, component)
   .config(/* @ngInject */ ($stateProvider) => {
-    const stepperStateName = 'app.dedicatedClouds.certificationActivation';
     $stateProvider.state(
-      stepperStateName,
+      STATE_NAME,
       {
         url: '/certificationActivation',
         views: {
@@ -26,24 +30,6 @@ angular
         },
       },
     );
-
-    let currentStepName = stepperStateName;
-    STEPS.forEach((step) => {
-      const suffixForStepName = _.camelCase(step.moduleName.replace(MODULE_NAME, ''));
-      currentStepName = `${currentStepName}.${suffixForStepName}`;
-
-      $stateProvider.state(
-        currentStepName,
-        {
-          data: {
-            stepperStateName,
-          },
-          views: {
-            [`@${stepperStateName}`]: step.moduleName,
-          },
-        },
-      );
-    });
   })
   .service('dedicatedCloudServicePackCertificationActivationService', service)
   .run(/* @ngTranslationsInject ./translations */);

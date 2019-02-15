@@ -6,6 +6,7 @@ import { step as selection } from './selection';
 
 export const COMPONENT_NAME = 'dedicatedCloudCertificationActivation';
 export const MODULE_NAME = 'dedicatedCloudCertificationActivation';
+export const STATE_NAME = 'app.dedicatedClouds.certificationActivation';
 
 export const STEPS = [
   selection,
@@ -18,5 +19,6 @@ export const STEPS = [
 export default {
   COMPONENT_NAME,
   MODULE_NAME,
+  STATE_NAME,
   STEPS,
 };

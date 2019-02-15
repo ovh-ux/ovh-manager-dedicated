@@ -1,9 +1,11 @@
 export default class DedicatedCloudStepper {
   constructor(
     $state,
+    $stateRegistry,
     $transitions,
   ) {
     this.$state = $state;
+    this.$stateRegistry = $stateRegistry;
     this.$transitions = $transitions;
   }
 
@@ -11,12 +13,24 @@ export default class DedicatedCloudStepper {
     this.callerStateName = this.$state.current.name;
 
     const transitionCriteria = {
-      from: 'stepper.content.**',
-      to: 'stepper.content.**',
+      from: `${this.callerStateName}.**`,
+      to: `${this.callerStateName}.**`,
     };
 
-    this.$transitions.onStart(transitionCriteria, this.activateLoader(true));
-    this.$transitions.onSuccess(transitionCriteria, this.activateLoader(false));
+    this.$transitions.onStart(
+      transitionCriteria,
+      () => {
+        this.activateLoader(true);
+      },
+    );
+    this.$transitions.onSuccess(
+      transitionCriteria,
+      () => {
+        this.activateLoader(false);
+      },
+    );
+
+    this.registerStepStates();
 
     this.goToStep(this.steps[0]);
   }
@@ -71,5 +85,22 @@ export default class DedicatedCloudStepper {
 
     const stateName = [this.callerStateName, ...subStates].join('.');
     return this.$state.go(stateName);
+  }
+
+  registerStepStates() {
+    let currentStepName = this.callerStateName;
+
+    this.steps.forEach((step) => {
+      currentStepName = `${currentStepName}.${step.name}`;
+      const baseStep = _.get(step, 'state', {});
+
+      this.$stateRegistry.register({
+        ...baseStep,
+        name: currentStepName,
+        views: {
+          [`content@${this.callerStateName}`]: step.moduleName,
+        },
+      });
+    });
   }
 }

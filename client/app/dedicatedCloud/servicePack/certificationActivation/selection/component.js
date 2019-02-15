@@ -7,7 +7,7 @@ export default {
   },
   controller,
   require: {
-    stepper: '^dedicatedCloudServicePackCertificationActivation',
+    stepper: '^dedicatedCloudStepper',
   },
   template,
 };
