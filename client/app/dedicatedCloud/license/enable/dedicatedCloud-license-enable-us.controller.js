@@ -27,7 +27,7 @@ angular.module('App').controller('DedicatedCloudLicencesSplaEnableUSCtrl', class
       urlParams: {
         serviceName: this.serviceName,
       },
-    }).then(offers => _.filter(offers, { planCode: 'pcc-option-windows' }));
+    }).then(offers => _.filter(offers, offer => _.startsWith(offer.planCode, 'pcc-option-windows')));
   }
 
   fetchDatagridOffers() {
