@@ -5,5 +5,6 @@ angular.module('App').config(($stateProvider) => {
     controller: 'ServerCtrl',
     reloadOnSearch: false,
     translations: ['.'],
+    redirectTo: 'app.dedicated.server.dashboard',
   });
 });
