@@ -24,7 +24,6 @@ angular.module('App')
         .catch((error) => {
           if (error.code === serviceExpiredErrorCode) {
             this.isServiceExpired = true;
-            this.Alerter.error(this.$translate.instant('server_configuration_service_expired'), 'taskAlert');
           } else {
             this.Alerter.alertFromSWS(this.$translate.instant('server_configuration_task_loading_error'), error, 'dedicatedServerTaskAlert');
           }
