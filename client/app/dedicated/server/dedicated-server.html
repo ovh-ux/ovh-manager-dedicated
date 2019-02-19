@@ -23,19 +23,26 @@
                 <oui-header-tabs-item data-text="{{:: 'server_informations_general' | translate }}"
                                       data-state="app.dedicated.server.dashboard"></oui-header-tabs-item>
                 <oui-header-tabs-item data-text="{{:: 'server_tab_dns' | translate }}"
-                                      data-state="app.dedicated.server.dns"></oui-header-tabs-item>
+                                      data-state="app.dedicated.server.dns"
+                                      data-disabled="server.isExpired"></oui-header-tabs-item>
                 <oui-header-tabs-item data-text="{{:: 'server_tab_ftp_backup' | translate }}"
-                                      data-state="app.dedicated.server.ftpBackup"></oui-header-tabs-item>
+                                      data-state="app.dedicated.server.ftpBackup"
+                                      data-disabled="server.isExpired"></oui-header-tabs-item>
                 <oui-header-tabs-item data-text="{{:: 'server_tab_intervention' | translate }}"
-                                      data-state="app.dedicated.server.intervention"></oui-header-tabs-item>
+                                      data-state="app.dedicated.server.intervention"
+                                      data-disabled="server.isExpired"></oui-header-tabs-item>
                 <oui-header-tabs-item data-text="{{:: 'server_tab_firewall' | translate }}"
-                                      data-state="app.dedicated.server.firewall"></oui-header-tabs-item>
+                                      data-state="app.dedicated.server.firewall"
+                                      data-disabled="server.isExpired"></oui-header-tabs-item>
                 <oui-header-tabs-item data-text="{{:: 'server_tab_ipmi' | translate }}"
-                                      data-state="app.dedicated.server.ipmi"></oui-header-tabs-item>
+                                      data-state="app.dedicated.server.ipmi"
+                                      data-disabled="server.isExpired"></oui-header-tabs-item>
                 <oui-header-tabs-item data-text="{{:: 'server_tab_usb_storage' | translate }}"
-                                      data-state="app.dedicated.server.usbStorage"></oui-header-tabs-item>
+                                      data-state="app.dedicated.server.usbStorage"
+                                      data-disabled="server.isExpired"></oui-header-tabs-item>
                 <oui-header-tabs-item data-text="{{:: 'server_tab_task' | translate }}"
-                                      data-state="app.dedicated.server.task"></oui-header-tabs-item>
+                                      data-state="app.dedicated.server.task"
+                                      data-disabled="server.isExpired"></oui-header-tabs-item>
             </oui-header-tabs>
         </header>
 
