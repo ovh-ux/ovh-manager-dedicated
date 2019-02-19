@@ -2,35 +2,44 @@
     data-type="info"
     data-dismissable="false"
     data-ng-if="!$ctrl.hasDefaultMeansOfPayment">
-    Vous n'avez pas de moyen de paiement par défaut. Avoir un moyen de paiement par défaut vous permettrait d'activer votre certificat automatiquement,
-    sans passer par un bon de commande.
+    <p data-translate="dedicatedCloud_certificationActivation_confirmation_noDefaultMeansOfPayment"></p>
 
     <p data-ng-if="$ctrl.currentUser.ovhSubsidiary !== 'PL'">
-        Vous pouvez ajouter un moyen de payement par défaut en cliquant sur ce <a data-ui-sref="app.account.billing.payment.method">lien</a>.
+        <span data-translate="dedicatedCloud_certificationActivation_confirmation_howToAddMeansOfPayment"></span>
+        <a
+            data-ui-sref="app.account.billing.payment.method"
+            data-translate="dedicatedCloud_certificationActivation_confirmation_howToAddMeansOfPayment_thisLink"></a>
     </p>
-
-    Si vous continuez l'activation sans bon de commande, un bon de commande sera créé et il vous faudra le valider lors de l'étape suivante.
+    <p
+        data-ng-if="$ctrl.currentUser.ovhSubsidiary === 'PL'"
+        data-translate="dedicatedCloud_certificationActivation_confirmation_noDefaultMeansOfPayment_orderFormCreation"></p>
 </oui-message>
 
-<p>
-    Vous êtes sur le point d'activer le pack <span data-ng-bind="$ctrl.servicePackToOrder.displayName"></span> pour XXX€/mois supplémentaire êtes vous sûr(e) de vouloir faire cela ?
-</p>
+<p
+    data-ng-if="$ctrl.currentUser.ovhSubsidiary !== 'PL'"
+    data-translate="dedicatedCloud_certificationActivation_confirmation_noDefaultMeansOfPayment_orderFormCreation"
+    data-translate-values="{
+        'servicePackName': '<strong>' + $ctrl.servicePackToOrder.displayName + '</strong>',
+        'monthlyPrice': '<strong>' + 'xxx' + '</strong>'
+    }"></p>
 
-<button
-    type="button"
-    class="oui-button oui-button_secondary"
-    data-ui-sref="app.dedicatedClouds.servicePackCertificationActivation.smsActivation">
-    Précédent
-</button>
+<div data-ng-if="!$ctrl.orderIsInProgress">
+    <oui-button
+        data-on-click="$ctrl.stepper.goToPreviousStep()"
+        data-variant="secondary">
+        <span data-translate="dedicatedCloud_certificationActivation_confirmation_previousButton"></span>
+    </oui-button>
 
-<button
-    type="submit"
-    class="oui-button oui-button_primary ml-3"
-    data-ng-if="!$ctrl.orderIsInProgress"
-    data-ng-click="$ctrl.placeOrder()">
-    Confirmer l'activation
-</button>
+    <oui-button
+        data-on-click="$ctrl.placeOrder()"
+        data-variant="primary"
+        class="ml-3">
+        <span data-translate="dedicatedCloud_certificationActivation_confirmation_confirmActivationButton"></span>
+    </oui-button>
+</div>
 
-<oui-spinner
-    class="ml-3"
-    data-ng-if="$ctrl.orderIsInProgress"></oui-spinner>
+<div class="text-center">
+    <oui-spinner
+        class="ml-3"
+        data-ng-if="$ctrl.orderIsInProgress"></oui-spinner>
+</div>

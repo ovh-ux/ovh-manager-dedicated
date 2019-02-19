@@ -21,8 +21,6 @@ const resolveServicePackToOrder = /* @ngInject */ $transition$ => $transition$
 
 export default {
   params: {
-    currentService: null,
-    currentUser: null,
     hasDefaultMeansOfPayment: null,
     servicePackToOrder: null,
   },

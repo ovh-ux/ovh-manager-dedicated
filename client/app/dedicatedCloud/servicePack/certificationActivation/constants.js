@@ -1,24 +1,26 @@
-// import * as confirmation from './confirmation';
+import { step as confirmation } from './confirmation';
 import { step as requiredConfiguration } from './requiredConfiguration';
 import { step as selection } from './selection';
-// import * as smsActivation from './smsActivation';
-// import * as summary from './summary';
+import { step as smsActivation } from './smsActivation';
+import { step as summary } from './summary';
 
 export const COMPONENT_NAME = 'dedicatedCloudCertificationActivation';
 export const MODULE_NAME = 'dedicatedCloudCertificationActivation';
+export const SERVICE_NAME = 'dedicatedCloudCertificationActivationService';
 export const STATE_NAME = 'app.dedicatedClouds.certificationActivation';
 
 export const STEPS = [
   selection,
   requiredConfiguration,
-  /* smsActivation,
+  smsActivation,
   confirmation,
-  summary, */
+  summary,
 ];
 
 export default {
   COMPONENT_NAME,
   MODULE_NAME,
+  SERVICE_NAME,
   STATE_NAME,
   STEPS,
 };

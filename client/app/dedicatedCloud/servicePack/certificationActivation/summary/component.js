@@ -7,5 +7,8 @@ export default {
     usersWhoCanReceiveSMS: '<',
   },
   controller,
+  require: {
+    stepper: '^dedicatedCloudStepper',
+  },
   template,
 };

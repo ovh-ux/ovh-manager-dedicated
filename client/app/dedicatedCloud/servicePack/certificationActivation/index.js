@@ -4,10 +4,11 @@
 // import '@uirouter/angularjs';
 
 import component from './component';
+import config from './config';
 import {
   COMPONENT_NAME,
   MODULE_NAME,
-  STATE_NAME,
+  SERVICE_NAME,
   STEPS,
 } from './constants';
 import service from './service';
@@ -20,18 +21,8 @@ angular
     'ui.router',
   ])
   .component(COMPONENT_NAME, component)
-  .config(/* @ngInject */ ($stateProvider) => {
-    $stateProvider.state(
-      STATE_NAME,
-      {
-        url: '/certificationActivation',
-        views: {
-          pccView: COMPONENT_NAME,
-        },
-      },
-    );
-  })
-  .service('dedicatedCloudServicePackCertificationActivationService', service)
+  .config(config)
+  .service(SERVICE_NAME, service)
   .run(/* @ngTranslationsInject ./translations */);
 
 export default MODULE_NAME;

@@ -8,5 +8,8 @@ export default {
     hasDefaultMeansOfPayment: '<',
   },
   controller,
+  require: {
+    stepper: '^dedicatedCloudStepper',
+  },
   template,
 };

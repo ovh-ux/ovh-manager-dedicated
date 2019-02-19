@@ -33,8 +33,8 @@ angular
           servicePacks: (
             currentService,
             currentUser,
-            dedicatedCloudServicePackService,
-          ) => dedicatedCloudServicePackService
+            dedicatedCloudServicePack,
+          ) => dedicatedCloudServicePack
             .buildAllForService(currentService.serviceName, currentUser.ovhSubsidiary),
         },
       },

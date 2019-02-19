@@ -1,27 +1,25 @@
-import _ from 'lodash';
-
 /* @ngInject */
 export default class DedicatedCloudServicePackCertificationActivationSmsActivation {
   constructor(
     $q,
     $state,
+    DEDICATED_CLOUD_ACTIVATION_STATUS,
   ) {
     this.$q = $q;
     this.$state = $state;
+    this.DEDICATED_CLOUD_ACTIVATION_STATUS = DEDICATED_CLOUD_ACTIVATION_STATUS;
   }
 
   $onInit() {
     if (this.orderedServicePack == null) {
-      return this.$state.go('app.dedicatedClouds.servicePackCertificationActivation.confirmation');
+      return this.stepper.exit();
     }
 
-    if (_.isString(this.orderURL) && !_.isEmpty(this.orderURL)) {
-      return this.ovhUserPref.assign('DEDICATED_CLOUD_SERVICE_PACK_BASIC_OPTION_ACTIVATION', {
-        url: this.orderURL,
+    return this.ovhUserPref.assign('DEDICATED_CLOUD_SERVICE_PACK_ACTIVATION', {
+      certification: {
+        orderUrl: this.orderURL,
         status: this.DEDICATED_CLOUD_ACTIVATION_STATUS.pendingActivation,
-      });
-    }
-
-    return this.$q.when();
+      },
+    });
   }
 }

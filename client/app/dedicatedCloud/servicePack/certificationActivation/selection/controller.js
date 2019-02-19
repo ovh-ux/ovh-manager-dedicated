@@ -11,6 +11,6 @@ export default class {
       return null;
     }
 
-    return this.stepper.goToNextStep();
+    return this.stepper.goToNextStep({ servicePackToOrder: this.servicePackToOrder });
   }
 }

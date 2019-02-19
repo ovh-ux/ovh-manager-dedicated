@@ -9,5 +9,8 @@ export default {
     servicePackToOrder: '<',
   },
   controller,
+  require: {
+    stepper: '^dedicatedCloudStepper',
+  },
   template,
 };

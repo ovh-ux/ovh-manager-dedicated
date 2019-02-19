@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="dedicatedCloud_servicePack_certificationActivation_requiredConfiguration_header">La politique d'accès au vCenter doit être en accès restreint et avoir au moins une adresse IP autorisée.</translation>
+  <translation id="dedicatedCloud_certificationActivation_smsActivation_stepper_header">Activation par SMS</translation>
+
+  <translation id="dedicatedCloud_certificationActivation_smsActivation_noUser">
+    Au moins l'un de vos utilisateurs administrateur doit avoir un numéro de mobile, une adresse email et être "token validator".
+    Cela permet d'activer l'authentification à 2 facteurs pour les actions d'administrateur sur le vCenter.
+    Vous pouvez configurer vos utilisateurs en cliquant sur
+  </translation>
+
+  <translation id="dedicatedCloud_certificationActivation_smsActivation_noUser_linkToUserConfiguration">ce lien.</translation>
+
+  <translation id="dedicatedCloud_certificationActivation_smsActivation_hasUser">Afin de valider l'activation de l'authentification à deux facteurs, certains de vos utilisateurs recevront un token par SMS.</translation>
+  <translation id="dedicatedCloud_certificationActivation_smsActivation_hasUser_table_header">Utilisateurs qui peuvent valider des tokens par SMS :</translation>
+  <translation id="dedicatedCloud_certificationActivation_smsActivation_hasUser_table_column_userName">Identifiant</translation>
+  <translation id="dedicatedCloud_certificationActivation_smsActivation_hasUser_table_column_firstName">Prénom</translation>
+  <translation id="dedicatedCloud_certificationActivation_smsActivation_hasUser_table_column_lastName">Nom</translation>
+  <translation id="dedicatedCloud_certificationActivation_smsActivation_hasUser_table_column_emailAddress">Adresse e-mail</translation>
+  <translation id="dedicatedCloud_certificationActivation_smsActivation_hasUser_table_column_phoneNumber">Numéro de téléphone</translation>
+
+  <translation id="dedicatedCloud_certificationActivation_smsActivation_previousButton">Précédent</translation>
+  <translation id="dedicatedCloud_certificationActivation_smsActivation_nextButton">Suivant</translation>
+</translations>
 </translations>

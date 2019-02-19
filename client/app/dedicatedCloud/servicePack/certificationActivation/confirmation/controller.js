@@ -16,7 +16,7 @@ export default class DedicatedCloudServicePackCertificationActivationConfirmatio
 
   $onInit() {
     if (this.servicePackToOrder == null) {
-      return this.$state.go('app.dedicatedClouds.servicePackCertificationActivation.selection');
+      return this.stepper.goToPreviousStep();
     }
 
     return this.$q.when();
@@ -32,17 +32,11 @@ export default class DedicatedCloudServicePackCertificationActivationConfirmatio
         quantity: 1,
         autoPayWithPreferredPaymentMethod: this.hasDefaultMeansOfPayment,
       }).$promise
-      .then(({ order }) => this.$state.go(
-        'app.dedicatedClouds.servicePackCertificationActivation.summary',
-        {
-          orderURL: order.url,
-          orderedServicePack: this.servicePackToOrder,
-        },
-      ))
-      .catch(error => this.$state.go('app.dedicatedClouds')
+      .then(({ order }) => this.stepper.goToNextStep({ orderURL: order.url }))
+      .catch(error => this.stepper.exit()
         .then(() => {
           this.Alerter.alertFromSWS(
-            this.$translate.instant('dedicatedCloud_servicePack_certificationActivation_order_failure_message'),
+            this.$translate.instant('dedicatedCloud_certificationActivation_confirmation_order_failure'),
             {
               message: error.data.message,
               type: 'ERROR',

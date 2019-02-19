@@ -1,54 +1,53 @@
 <oui-message
     data-type="warning"
-    data-ng-if="$ctrl.usersWhoCanReceiveSMS.length === 0">
-Au moins l'un de vos utilisateurs administrateur doit avoir un numéro de mobile,
-
-une adresse email et être "token validator". Cela permet d'activer l'authentification à 2 facteurs pour les actions d'administrateur sur le vCenter.
-
-Vous pouvez configurer vos utilisateurs en cliquant sur <a data-ui-sref="app.dedicatedClouds.users">ce lien</a>.
+    data-ng-if="$ctrl.usersWhoCanReceiveSMS.length === 0"
+    class="mb-3">
+    <span
+        data-translate="dedicatedCloud_certificationActivation_smsActivation_noUser"></span>
+    <a data-ui-sref="app.dedicatedClouds.users">
+        <span data-translate="dedicatedCloud_certificationActivation_smsActivation_noUser_linkToUserConfiguration"></span>
+    </a>
 </oui-message>
 
-<p>Afin de valider l'activation de l'authentification à deux facteurs, certains de vos utilisateurs recevront un token par SMS.</p>
-
 <div data-ng-if="$ctrl.usersWhoCanReceiveSMS.length > 0">
-    <p>Utilisateurs qui peuvent valider des tokens par SMS :</p>
+    <p data-translate="dedicatedCloud_certificationActivation_smsActivation_hasUser"></p>
 
-    <oui-datagrid
-        data-rows-loader="$ctrl.mapUsersWhoCanReceiveSMS()">
+    <p data-translate="dedicatedCloud_certificationActivation_smsActivation_hasUser_table_header"></p>
+
+    <oui-datagrid data-rows-loader="$ctrl.mapUsersWhoCanReceiveSMS()">
         <oui-column
-            data-title="'Identifiant'"
+            data-title=":: 'dedicatedCloud_certificationActivation_smsActivation_hasUser_table_column_userName' | translate"
             data-property="userName"
             data-type="string"></oui-column>
         <oui-column
-            data-title="'Prénom'"
+            data-title=":: 'dedicatedCloud_certificationActivation_smsActivation_hasUser_table_column_firstName' | translate"
             data-property="firstName"
             data-type="string"></oui-column>
         <oui-column
-            data-title="'Nom'"
+            data-title=":: 'dedicatedCloud_certificationActivation_smsActivation_hasUser_table_column_lastName' | translate"
             data-property="lastName"
             data-type="string"></oui-column>
         <oui-column
-            data-title="'Adresse e-mail'"
+            data-title=":: 'dedicatedCloud_certificationActivation_smsActivation_hasUser_table_column_emailAddress' | translate"
             data-property="emailAddress"
             data-type="string"></oui-column>
         <oui-column
-            data-title="'Numéro de téléphone'"
+            data-title=":: 'dedicatedCloud_certificationActivation_smsActivation_hasUser_table_column_phoneNumber' | translate"
             data-property="phoneNumber"
             data-type="string"></oui-column>
     </oui-datagrid>
 </div>
 
-<button
-    type="button"
-    class="oui-button oui-button_secondary"
-    data-ui-sref="app.dedicatedClouds.servicePackCertificationActivation.requiredConfiguration">
-    Précédent
-</button>
+<oui-button
+    data-on-click="$ctrl.stepper.goToPreviousStep()"
+    data-variant="secondary">
+    <span data-translate="dedicatedCloud_certificationActivation_smsActivation_previousButton"></span>
+</oui-button>
 
-<button
+<oui-button
     data-ng-if="$ctrl.usersWhoCanReceiveSMS.length > 0"
-    type="button"
-    class="oui-button oui-button_primary ml-3"
-    data-ui-sref="app.dedicatedClouds.servicePackCertificationActivation.confirmation">
-    Suivant
-</button>
+    data-on-click="$ctrl.stepper.goToNextStep()"
+    data-variant="primary"
+    class="ml-3">
+    <span data-translate="dedicatedCloud_certificationActivation_smsActivation_nextButton"></span>
+</oui-button>

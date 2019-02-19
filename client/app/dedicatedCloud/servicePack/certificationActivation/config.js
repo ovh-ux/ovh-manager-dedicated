@@ -1,3 +1,8 @@
+import {
+  COMPONENT_NAME,
+  STATE_NAME,
+} from './constants';
+
 const resolveOrderableServicePacks = /* @ngInject */ (
   $transition$,
   currentService,
@@ -11,8 +16,20 @@ const resolveOrderableServicePacks = /* @ngInject */ (
         subsidiary: currentUser.ovhSubsidiary,
       });
 
-export default {
-  resolve: {
-    orderableServicePacks: resolveOrderableServicePacks,
-  },
+export default /* @ngInject */ ($stateProvider) => {
+  $stateProvider.state(
+    STATE_NAME,
+    {
+      params: {
+        orderableServicePacks: null,
+      },
+      resolve: {
+        orderableServicePacks: resolveOrderableServicePacks,
+      },
+      url: '/certificationActivation',
+      views: {
+        pccView: COMPONENT_NAME,
+      },
+    },
+  );
 };

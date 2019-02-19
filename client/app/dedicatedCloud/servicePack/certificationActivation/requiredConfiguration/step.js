@@ -1,7 +1,12 @@
-import { MODULE_NAME } from './constants';
+import {
+  MODULE_NAME,
+  STEP_NAME,
+} from './constants';
+import state from './state';
 
 export default {
-  displayValue: 'Configuration requise',
-  name: 'requiredConfiguration',
+  translationId: 'dedicatedCloud_certificationActivation_requiredConfiguration_stepper_header',
+  name: STEP_NAME,
   moduleName: MODULE_NAME,
+  state,
 };

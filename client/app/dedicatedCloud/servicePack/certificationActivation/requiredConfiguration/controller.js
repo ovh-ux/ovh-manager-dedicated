@@ -1,5 +1,5 @@
 /* @ngInject */
-export default class DedicatedCloudServicePackCertificationActivationRequiredConfiguration {
+export default class DedicatedCloudCertificationActivationRequiredConfiguration {
   constructor(
     $q,
     $state,

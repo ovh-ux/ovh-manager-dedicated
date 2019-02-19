@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-export default class DedicatedCloudServicePackCertificationActivationSmsActivation {
+export default class DedicatedCloudCertificationActivationSMSActivation {
   constructor(
     $q,
     $state,
@@ -32,33 +32,5 @@ export default class DedicatedCloudServicePackCertificationActivationSmsActivati
         totalCount: this.usersWhoCanReceiveSMS.length,
       },
     });
-  }
-
-  placeOrder() {
-    this.orderIsInProgress = true;
-
-    return this.OvhApiOrder.Upgrade().PrivateCloud().V6()
-      .upgrade({
-        serviceName: `${this.currentService.serviceName}/servicepack`,
-        planCode: `pcc-servicepack-${this.servicePackToOrder.name}`,
-        quantity: 1,
-        autoPayWithPreferredPaymentMethod: this.hasDefaultMeansOfPayment,
-      }).$promise
-      .then(({ order }) => this.$state.go(
-        'app.dedicatedClouds.servicePackCertificationActivation.summary',
-        {
-          orderURL: order.url,
-        },
-      ))
-      .catch(error => this.$state.go('app.dedicatedClouds')
-        .then(() => {
-          this.Alerter.alertFromSWS(
-            this.$translate.instant('dedicatedCloud_servicePack_certificationActivation_order_error_message'),
-            {
-              message: error.data.message,
-              type: 'ERROR',
-            },
-          );
-        }));
   }
 }

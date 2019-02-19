@@ -4,22 +4,23 @@
 // import '@uirouter/angularjs';
 
 import component from './component';
-import state from './state';
-
-const moduleName = 'dedicatedCloudServicePackCertificationActivationConfirmation';
+import {
+  COMPONENT_NAME,
+  MODULE_NAME,
+} from './constants';
+import step from './step';
 
 angular
-  .module(moduleName, [
+  .module(MODULE_NAME, [
     'oui',
     'pascalprecht.translate',
     'ui.router',
   ])
-  .component('dedicatedCloudServicePackCertificationActivationConfirmation', component)
+  .component(COMPONENT_NAME, component)
   .run(/* @ngTranslationsInject ./translations */);
 
-export default moduleName;
+export default MODULE_NAME;
 
 export {
-  moduleName,
-  state,
+  step,
 };

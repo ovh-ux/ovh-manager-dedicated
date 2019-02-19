@@ -1,15 +1,17 @@
 // import angular from 'angular';
 // import 'angular-translate';
 
+import {
+  MODULE_NAME,
+  SERVICE_NAME,
+} from './constants';
 import service from './service';
 
-const moduleName = 'dedicatedCloudServicePack';
-
 angular
-  .module(moduleName, [
+  .module(MODULE_NAME, [
     'pascalprecht.translate',
   ])
-  .service('dedicatedCloudServicePackService', service)
+  .service(SERVICE_NAME, service)
   .run(/* @ngTranslationsInject ./translations */);
 
-export default moduleName;
+export default MODULE_NAME;

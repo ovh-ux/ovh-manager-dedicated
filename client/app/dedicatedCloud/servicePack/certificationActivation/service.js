@@ -1,12 +1,11 @@
-import _ from 'lodash';
-import { OPTION_TYPES } from '../option/constants';
+import DedicatedCloudServicePack from '../service';
 
 /* @ngInject */
-export default class DedicatedCloudServicePackCertificationActivationService {
+export default class {
   constructor(
-    dedicatedCloudServicePackService,
+    dedicatedCloudServicePack,
   ) {
-    this.dedicatedCloudServicePackService = dedicatedCloudServicePackService;
+    this.dedicatedCloudServicePack = dedicatedCloudServicePack;
   }
 
   fetchOrderable({
@@ -14,14 +13,9 @@ export default class DedicatedCloudServicePackCertificationActivationService {
     serviceName,
     subsidiary,
   }) {
-    return this.dedicatedCloudServicePackService
+    return this.dedicatedCloudServicePack
       .buildAllForService(serviceName, subsidiary)
-      .then(servicePacks => _.filter(
-        _.reject(servicePacks, { name: currentServicePackName }),
-        servicePack => _.some(
-          servicePack.options,
-          option => _.isEqual(option.type, OPTION_TYPES.certification),
-        ),
-      ));
+      .then(servicePacks => DedicatedCloudServicePack
+        .keepOnlyOrderableCertificates(servicePacks, currentServicePackName));
   }
 }

@@ -4,9 +4,9 @@ import { OPTION_TYPES } from '../option/constants';
 /* @ngInject */
 export default class DedicatedCloudServicePackBasicOptionActivationService {
   constructor(
-    dedicatedCloudServicePackService,
+    dedicatedCloudServicePack,
   ) {
-    this.dedicatedCloudServicePackService = dedicatedCloudServicePackService;
+    this.dedicatedCloudServicePack = dedicatedCloudServicePack;
   }
 
   fetchOrderable({
@@ -14,7 +14,7 @@ export default class DedicatedCloudServicePackBasicOptionActivationService {
     serviceName,
     subsidiary,
   }) {
-    return this.dedicatedCloudServicePackService
+    return this.dedicatedCloudServicePack
       .buildAllForService(serviceName, subsidiary)
       .then(servicePacks => _.filter(
         _.reject(servicePacks, { name: currentServicePackName }),
