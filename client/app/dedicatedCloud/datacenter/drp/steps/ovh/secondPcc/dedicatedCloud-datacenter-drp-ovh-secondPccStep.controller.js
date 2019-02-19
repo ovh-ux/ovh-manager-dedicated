@@ -1,5 +1,3 @@
-import template from '../../../../../../ip/ip/order/ip-ip-order.html';
-
 export default class {
   /* @ngInject */
   constructor(
@@ -56,27 +54,11 @@ export default class {
   }
 
   goToPreviousStep() {
-    return this.$state.go('app.dedicatedClouds.datacenter.drp.ovh.firstStep', { drpInformations: this.drpInformations });
+    return this.$state.go('app.dedicatedClouds.datacenter.drp.ovh.mainPccStep', { drpInformations: this.drpInformations });
   }
 
   goToNextStep() {
-    return this.$state.go('app.dedicatedClouds.datacenter.drp.ovh.finalStep', { drpInformations: this.drpInformations });
-  }
-
-  openModalOrderIpBlock() {
-    this.$uibModal.open({
-      template,
-      controller: 'IpOrderCtrl',
-      controllerAs: '$ctrl',
-    }).result
-      .then(() => this.DedicatedCloudDrp
-        .getPccIpAddressesDetails(this.selectedSecondaryPcc.serviceName))
-      .then((ipAddressDetails) => {
-        this.availableIpAddress = ipAddressDetails
-          .filter(({ usageDetails }) => _.isNull(usageDetails)
-            && !this.unavailableIpStatuses.includes(usageDetails)
-            && !this.macAddressRegExp.test(usageDetails));
-      });
+    return this.$state.go('app.dedicatedClouds.datacenter.drp.ovh.confirmationStep', { drpInformations: this.drpInformations });
   }
 
   isStepValid() {

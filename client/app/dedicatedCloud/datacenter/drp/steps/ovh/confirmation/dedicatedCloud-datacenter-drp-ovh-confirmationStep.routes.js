@@ -1,12 +1,12 @@
 angular.module('App').config(($stateProvider) => {
-  $stateProvider.state('app.dedicatedClouds.datacenter.drp.ovh.firstStep', {
+  $stateProvider.state('app.dedicatedClouds.datacenter.drp.ovh.confirmationStep', {
     views: {
       'stepView@app.dedicatedClouds.datacenter.drp': {
-        component: 'dedicatedCloudDatacenterDrpOvhFirstStep',
+        component: 'dedicatedCloudDatacenterDrpOvhConfirmationStep',
       },
     },
     params: {
-      currentStep: 1,
+      currentStep: 3,
       drpInformations: { },
     },
   });

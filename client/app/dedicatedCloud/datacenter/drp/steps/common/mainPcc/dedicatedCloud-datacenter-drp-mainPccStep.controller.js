@@ -1,5 +1,3 @@
-import template from '../../../../../../ip/ip/order/ip-ip-order.html';
-
 export default class {
   /* @ngInject */
   constructor(
@@ -49,18 +47,6 @@ export default class {
       });
   }
 
-  openModalOrderIpBlock() {
-    this.$uibModal.open({
-      template,
-      controller: 'IpOrderCtrl',
-      controllerAs: '$ctrl',
-    }).result
-      .then(() => this.DedicatedCloudDrp.getPccIpAddressesDetails(this.$stateParams.productId))
-      .then((ipAddressDetails) => {
-        this.availableIpAddress = this.getAvailableAddresses(ipAddressDetails);
-      });
-  }
-
   getAvailableAddresses(ipAddressDetails) {
     return ipAddressDetails
       .filter(({ usageDetails }) => _.isNull(usageDetails)
@@ -77,6 +63,6 @@ export default class {
   }
 
   goToNextStep() {
-    return this.$state.go(`app.dedicatedClouds.datacenter.drp.${this.drpInformations.drpType}.secondStep`, { drpInformations: this.drpInformations });
+    return this.$state.go(`app.dedicatedClouds.datacenter.drp.${this.drpInformations.drpType}.secondPccStep`, { drpInformations: this.drpInformations });
   }
 }

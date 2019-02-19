@@ -4,7 +4,6 @@ angular.module('App').config(($stateProvider) => {
     views: {
       'pccDatacenterView@app.dedicatedClouds.datacenter': 'dedicatedCloudDatacenterDrp',
     },
-    translations: ['../../../ip'],
     params: {
       selectedDrpType: null,
     },

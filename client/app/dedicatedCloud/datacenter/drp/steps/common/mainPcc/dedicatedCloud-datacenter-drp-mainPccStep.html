@@ -23,11 +23,10 @@
             <p class="oui-label"
                data-translate="dedicatedCloud_datacenter_main_ip_address_pool_available"></p>
             <span data-translate="dedicatedCloud_datacenter_order_ip"></span>
-            <button class="oui-button oui-button_link px-0 py-0"
-                    type="button"
-                    data-ng-click="$ctrl.openModalOrderIpBlock()"
-                    data-translate="global_feedback_contact_link">
-            </button>
+            <a class="oui-link"
+               data-ui-sref="app.dedicatedClouds.datacenter.drp.ovh.mainPccStep.orderIp">
+                <span data-translate="global_feedback_contact_link"></span>
+            </a>
         </div>
         <oui-field data-label="{{:: 'dedicatedCloud_datacenter_main_ip_address_pool_available' | translate }}"
                    data-size="l"

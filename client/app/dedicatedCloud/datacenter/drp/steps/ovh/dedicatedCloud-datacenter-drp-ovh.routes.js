@@ -8,6 +8,6 @@ angular.module('App').config(($stateProvider) => {
         template,
       },
     },
-    redirectTo: 'app.dedicatedClouds.datacenter.drp.ovh.firstStep',
+    redirectTo: 'app.dedicatedClouds.datacenter.drp.ovh.mainPccStep',
   });
 });

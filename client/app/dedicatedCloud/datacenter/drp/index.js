@@ -1,13 +1,13 @@
 import dedicatedCloudDatacenterDrp from './dedicatedCloud-datacenter-drp.component';
-import dedicatedCloudDatacenterDrpOvhFirstStep from './steps/ovh/first/dedicatedCloud-datacenter-drp-ovh-firstStep.component';
-import dedicatedCloudDatacenterDrpOvhSecondStep from './steps/ovh/second/dedicatedCloud-datacenter-drp-ovh-secondStep.component';
-import dedicatedCloudDatacenterDrpOvhFinalStep from './steps/ovh/final/dedicatedCloud-datacenter-drp-ovh-finalStep.component';
+import dedicatedCloudDatacenterDrpOvhMainPccStep from './steps/ovh/mainPcc/dedicatedCloud-datacenter-drp-ovh-mainPccStep.component';
+import dedicatedCloudDatacenterDrpOvhSecondPccStep from './steps/ovh/secondPcc/dedicatedCloud-datacenter-drp-ovh-secondPccStep.component';
+import dedicatedCloudDatacenterDrpOvhConfirmationStep from './steps/ovh/confirmation/dedicatedCloud-datacenter-drp-ovh-confirmationStep.component';
 
 import DedicatedCloudDatacenterDrpCtrl from './dedicatedCloud-datacenter-drp.controller';
-import DedicatedCloudDatacenterDrpFirstStepCtrl from './steps/common/first/dedicatedCloud-datacenter-drp-firstStep.controller';
-import DedicatedCloudDatacenterDrpOvhSecondStepCtrl from './steps/ovh/second/dedicatedCloud-datacenter-drp-ovh-secondStep.controller';
-import DedicatedCloudDatacenterDrpFinalStepCtrl from './steps/common/final/dedicatedCloud-datacenter-drp-finalStep.controller';
-import DedicatedCloudDatacenterDrpFinalStepDeleteCtrl from './steps/common/final/delete/dedicatedCloud-datacenter-drp-finalStep-delete.controller';
+import DedicatedCloudDatacenterDrpMainPccStepCtrl from './steps/common/mainPcc/dedicatedCloud-datacenter-drp-mainPccStep.controller';
+import DedicatedCloudDatacenterDrpOvhSecondPccStepCtrl from './steps/ovh/secondPcc/dedicatedCloud-datacenter-drp-ovh-secondPccStep.controller';
+import DedicatedCloudDatacenterDrpConfirmationStepCtrl from './steps/common/confirmation/dedicatedCloud-datacenter-drp-confirmationStep.controller';
+import DedicatedCloudDatacenterDrpConfirmationStepDeleteCtrl from './steps/common/confirmation/delete/dedicatedCloud-datacenter-drp-confirmationStep-delete.controller';
 
 import DedicatedCloudDrp from './dedicatedCloud-datacenter-drp.service';
 
@@ -26,12 +26,12 @@ angular.module('App')
   .constant('DEDICATEDCLOUD_DATACENTER_DRP_STATUS', DEDICATEDCLOUD_DATACENTER_DRP_STATUS)
   .constant('DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS', DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS)
   .controller('DedicatedCloudDatacenterDrpCtrl', DedicatedCloudDatacenterDrpCtrl)
-  .controller('DedicatedCloudDatacenterDrpFirstStepCtrl', DedicatedCloudDatacenterDrpFirstStepCtrl)
-  .controller('DedicatedCloudDatacenterDrpOvhSecondStepCtrl', DedicatedCloudDatacenterDrpOvhSecondStepCtrl)
-  .controller('DedicatedCloudDatacenterDrpFinalStepCtrl', DedicatedCloudDatacenterDrpFinalStepCtrl)
-  .controller('DedicatedCloudDatacenterDrpFinalStepDeleteCtrl', DedicatedCloudDatacenterDrpFinalStepDeleteCtrl)
+  .controller('DedicatedCloudDatacenterDrpMainPccStepCtrl', DedicatedCloudDatacenterDrpMainPccStepCtrl)
+  .controller('DedicatedCloudDatacenterDrpOvhSecondPccStepCtrl', DedicatedCloudDatacenterDrpOvhSecondPccStepCtrl)
+  .controller('DedicatedCloudDatacenterDrpConfirmationStepCtrl', DedicatedCloudDatacenterDrpConfirmationStepCtrl)
+  .controller('DedicatedCloudDatacenterDrpConfirmationStepDeleteCtrl', DedicatedCloudDatacenterDrpConfirmationStepDeleteCtrl)
   .component('dedicatedCloudDatacenterDrp', dedicatedCloudDatacenterDrp)
-  .component('dedicatedCloudDatacenterDrpOvhFirstStep', dedicatedCloudDatacenterDrpOvhFirstStep)
-  .component('dedicatedCloudDatacenterDrpOvhSecondStep', dedicatedCloudDatacenterDrpOvhSecondStep)
-  .component('dedicatedCloudDatacenterDrpOvhFinalStep', dedicatedCloudDatacenterDrpOvhFinalStep)
+  .component('dedicatedCloudDatacenterDrpOvhMainPccStep', dedicatedCloudDatacenterDrpOvhMainPccStep)
+  .component('dedicatedCloudDatacenterDrpOvhSecondPccStep', dedicatedCloudDatacenterDrpOvhSecondPccStep)
+  .component('dedicatedCloudDatacenterDrpOvhConfirmationStep', dedicatedCloudDatacenterDrpOvhConfirmationStep)
   .service('DedicatedCloudDrp', DedicatedCloudDrp);

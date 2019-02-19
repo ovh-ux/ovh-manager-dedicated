@@ -31,12 +31,11 @@
         <p class="oui-label"
            data-translate="dedicatedCloud_datacenter_secondary_ip_address_pool_available"></p>
         <span data-translate="dedicatedCloud_datacenter_order_ip_secondary_pcc"></span>
-        <button class="oui-button oui-button_link px-0 py-0"
-                type="button"
-                data-ng-click="$ctrl.openModalOrderIpBlock()"
-                data-translate="global_feedback_contact_link"
-                data-ng-disabled="$ctrl.fetchingOptions">
-        </button>
+        <a class="oui-link"
+           data-ui-sref="app.dedicatedClouds.datacenter.drp.ovh.secondPccStep.orderIp"
+           data-ng-disabled="$ctrl.fetchingOptions">
+            <span data-translate="global_feedback_contact_link"></span>
+        </a>
     </div>
     <oui-field data-label="{{:: 'dedicatedCloud_datacenter_secondary_ip_address_pool_available' | translate }}"
                data-size="l"

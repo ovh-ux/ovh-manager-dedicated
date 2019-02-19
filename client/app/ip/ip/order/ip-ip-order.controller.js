@@ -1,4 +1,4 @@
-angular.module('Module.ip.controllers').controller('IpOrderCtrl', ($q, $rootScope, $scope, $timeout, $translate, $uibModalInstance, Alerter, Ip, IpOrder, IpOrganisation, User, constants) => {
+angular.module('Module.ip.controllers').controller('IpOrderCtrl', ($q, $rootScope, $scope, $state, $timeout, $translate, Alerter, Ip, IpOrder, IpOrganisation, User, constants) => {
   const alertId = 'ip_order_alert';
 
   $scope.model = {};
@@ -9,10 +9,9 @@ angular.module('Module.ip.controllers').controller('IpOrderCtrl', ($q, $rootScop
 
   $scope.loading = {};
 
-  $scope.closeModal = () => {
-    $uibModalInstance.dismiss();
-  };
-
+  if (_.startsWith($state.current.name, 'app.dedicatedClouds.datacenter.drp')) {
+    $scope.closeModal = () => $state.go('^');
+  }
   /*= =============================
 =            STEP 1            =
 ============================== */
@@ -306,11 +305,10 @@ angular.module('Module.ip.controllers').controller('IpOrderCtrl', ($q, $rootScop
         },
       )
       .finally(() => {
-        if ($uibModalInstance) {
-          $uibModalInstance.close();
-        } else {
-          $scope.resetAction();
+        if (_.startsWith($state.current.name, 'app.dedicatedClouds.datacenter.drp')) {
+          return $state.go('app.dedicatedClouds.datacenter.drp').then(() => $state.reload());
         }
+        return $scope.resetAction();
       });
   };
 });

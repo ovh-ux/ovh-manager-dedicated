@@ -6,6 +6,7 @@ angular
       $scope,
       $stateParams,
       $timeout,
+      $transitions,
       $translate,
       $uibModal,
       DedicatedCloud,
@@ -14,6 +15,7 @@ angular
       this.$scope = $scope;
       this.$stateParams = $stateParams;
       this.$timeout = $timeout;
+      this.$transitions = $transitions;
       this.$translate = $translate;
       this.$uibModal = $uibModal;
       this.DedicatedCloud = DedicatedCloud;
@@ -48,7 +50,33 @@ angular
       this.$scope.setMessage = (message, data) => this.setMessage(message, data);
       this.$scope.resetAction = () => this.resetAction();
 
+      this.initializeTransitions();
+
       return this.loadDatacenter();
+    }
+
+    initializeTransitions() {
+      this.$transitions.onStart({
+        to: 'app.dedicatedClouds.datacenter.drp',
+      }, () => {
+        this.$scope.loading = true;
+      });
+
+      this.$transitions.onError({
+        to: 'app.dedicatedClouds.datacenter.drp',
+      }, ($transition$) => {
+        this.$scope.loading = false;
+        this.Alerter.error(
+          `${this.$translate.instant('dedicatedCloud_datacenter_drp_get_state_error')} ${_.get($transition$, '_error.detail.data.message', null)}`,
+          'dedicatedCloudDatacenterAlert',
+        );
+      });
+
+      this.$transitions.onSuccess({
+        to: 'app.dedicatedClouds.datacenter.drp',
+      }, () => {
+        this.$scope.loading = false;
+      });
     }
 
     loadDatacenter() {

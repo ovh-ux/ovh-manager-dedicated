@@ -4,6 +4,12 @@
 </div>
 
 <div data-ng-if="!$ctrl.isLoading">
+    <oui-message data-ng-if="$ctrl.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toProvisionOrProvisionning.includes($ctrl.drpInformations.state) || $ctrl.isEnabling"
+                 data-type="info">
+        <p data-translate="dedicatedCloud_datacenter_drp_confirm_creation_pending"></p>
+        <p data-translate="dedicatedCloud_datacenter_drp_confirm_creation_pending_task"></p>
+    </oui-message>
+
     <h3 class="oui-heading_4 mt-5"
         data-translate="dedicatedCloud_datacenter_drp_confirm_summary_title"></h3>
     <dl class="row">

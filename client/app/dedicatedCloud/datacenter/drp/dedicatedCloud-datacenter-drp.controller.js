@@ -1,13 +1,14 @@
 export default class {
   /* @ngInject */
   constructor(
-    $q, $state, $stateParams, $translate,
+    $q, $state, $stateParams, $transitions, $translate,
     Alerter,
     DEDICATEDCLOUD_DATACENTER_DRP_ROLES, DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
   ) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
+    this.$transitions = $transitions;
     this.$translate = $translate;
     this.Alerter = Alerter;
     this.DEDICATEDCLOUD_DATACENTER_DRP_ROLES = DEDICATEDCLOUD_DATACENTER_DRP_ROLES;
@@ -18,6 +19,9 @@ export default class {
     this.selectedDrpType = { id: this.$stateParams.selectedDrpType };
     this.drpInformations = { };
     this.drpInformations.hasDatacenterWithoutHosts = this.datacenterHosts.count === 0;
+
+    this.initializeTransitions();
+
     const drp = this.pccPlan
       .find(({ state }) => this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.deliveredOrProvisionning
         .includes(state));
@@ -28,7 +32,7 @@ export default class {
         ...this.formatPlanInformations(drp),
       };
 
-      return this.$state.go(`app.dedicatedClouds.datacenter.drp.${this.drpInformations.drpType}.finalStep`, {
+      return this.$state.go(`app.dedicatedClouds.datacenter.drp.${this.drpInformations.drpType}.confirmationStep`, {
         drpInformations: this.drpInformations,
       });
     }
@@ -36,9 +40,17 @@ export default class {
     return this.$q.when();
   }
 
+  initializeTransitions() {
+    this.$transitions.onError({
+      from: 'app.dedicatedClouds.datacenter.drp.**.orderIp',
+    }, () => {
+      this.Alerter.error(this.$translate.instant('ip_order_finish_error'), 'dedicatedCloudDatacenterDrpAlert');
+    });
+  }
+
   selectDrpType() {
     this.drpInformations.drpType = this.selectedDrpType.id;
-    return this.$state.go(`app.dedicatedClouds.datacenter.drp.${this.selectedDrpType.id}.firstStep`, {
+    return this.$state.go(`app.dedicatedClouds.datacenter.drp.${this.selectedDrpType.id}.mainPccStep`, {
       drpInformations: this.drpInformations,
     });
   }

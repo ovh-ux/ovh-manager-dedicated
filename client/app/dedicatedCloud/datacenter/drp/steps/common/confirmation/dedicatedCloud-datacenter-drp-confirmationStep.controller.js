@@ -1,4 +1,4 @@
-import template from './delete/dedicatedCloud-datacenter-drp-finalStep-delete.html';
+import template from './delete/dedicatedCloud-datacenter-drp-confirmationStep-delete.html';
 
 export default class {
   /* @ngInject */
@@ -89,7 +89,7 @@ export default class {
   deleteDrpModal() {
     this.$uibModal.open({
       template,
-      controller: 'DedicatedCloudDatacenterDrpFinalStepDeleteCtrl',
+      controller: 'DedicatedCloudDatacenterDrpConfirmationStepDeleteCtrl',
       controllerAs: '$ctrl',
     }).result
       .then(() => this.DedicatedCloudDrp.disableDrp(this.drpInformations))
