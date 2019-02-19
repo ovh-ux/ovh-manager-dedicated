@@ -94,7 +94,7 @@ export default class {
     }).result
       .then(() => this.DedicatedCloudDrp.disableDrp(this.drpInformations))
       .then(() => {
-        this.Alerter.success(this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_delete_drp_success'), 'dedicatedCloudDatacenterDrpAlert');
+        this.Alerter.success(this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_delete_drp_success'), 'dedicatedCloudDatacenterAlert');
         return this.$state.go('app.dedicatedClouds.datacenter');
       })
       .catch((error) => {
