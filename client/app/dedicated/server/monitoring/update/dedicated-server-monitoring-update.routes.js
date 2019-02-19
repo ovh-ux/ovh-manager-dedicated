@@ -1,5 +1,5 @@
 angular.module('App')
-  .config(($stateProvider) => {
+  .config(/* @ngInject */($stateProvider) => {
     $stateProvider.state('app.dedicated.server.dashboard.monitoringUpdate', {
       url: '/monitoring/update',
       templateUrl: 'dedicated/server/monitoring/update/dedicated-server-monitoring-update.html',

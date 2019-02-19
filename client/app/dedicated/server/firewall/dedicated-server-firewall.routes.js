@@ -1,6 +1,6 @@
 import template from './dedicated-server-firewall.html';
 
-angular.module('App').config(($stateProvider) => {
+angular.module('App').config(/* @ngInject */($stateProvider) => {
   $stateProvider.state('app.dedicated.server.firewall', {
     url: '/firewall',
     views: {

@@ -1,6 +1,6 @@
 import template from './dedicated-server-ipmi.html';
 
-angular.module('App').config(($stateProvider) => {
+angular.module('App').config(/* @ngInject */($stateProvider) => {
   $stateProvider.state('app.dedicated.server.ipmi', {
     url: '/ipmi',
     views: {
