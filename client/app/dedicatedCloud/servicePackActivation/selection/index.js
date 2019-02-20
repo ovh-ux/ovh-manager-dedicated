@@ -4,7 +4,10 @@
 // import '@uirouter/angularjs';
 
 import component from './component';
-import { COMPONENT_NAME, MODULE_NAME } from './constants';
+import {
+  COMPONENT_NAME,
+  MODULE_NAME,
+} from './constants';
 import step from './step';
 
 angular

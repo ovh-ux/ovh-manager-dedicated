@@ -15,6 +15,7 @@ import state from './state';
 
 angular
   .module(MODULE_NAME, [
+    ...ACTIVATION_TYPES.all.map(step => step.moduleName),
     'oui',
     'pascalprecht.translate',
     'ui.router',

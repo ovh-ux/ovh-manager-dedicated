@@ -9,7 +9,7 @@ export default class DedicatedCloudCertificationActivationRequiredConfiguration 
   }
 
   $onInit() {
-    this.userAccessPolicyIsCorrect = this.currentService.userAccessPolicy === 'filtered';
+    this.userAccessPolicyIsCorrect = this.currentService.userAccessPolicy === 'FILTERED';
     this.numberOfAllowedIPsAndBlocksIsAllowed = this.allowedIPsAndBlocks.length > 1;
     this.configurationIsCorrect = this.userAccessPolicyIsCorrect
       || this.numberOfAllowedIPsAndBlocksIsAllowed;

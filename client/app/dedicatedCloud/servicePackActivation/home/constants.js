@@ -5,6 +5,13 @@ import { step as smsActivation } from '../smsActivation';
 import { step as summary } from '../summary';
 
 export const ACTIVATION_TYPES = {
+  all: [
+    confirmation,
+    requiredConfiguration,
+    selection,
+    smsActivation,
+    summary,
+  ],
   basicOptions: [
     selection,
     confirmation,

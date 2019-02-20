@@ -104,14 +104,13 @@
 
             <div data-ovh-alert="dedicatedCloud_alert"></div>
 
-            <div class="text-center">
-                <oui-spinner
-                    data-ng-if="$ctrl.stateIsChanging"
-                    data-size="l"></oui-spinner>
+            <div data-ng-if="$ctrl.stateIsChanging"
+                class="text-center">
+                <oui-spinner data-size="l"></oui-spinner>
             </div>
 
             <div
-                data-ng-hide="$ctrl.stateIsChanging"
+                data-ng-if="!$ctrl.stateIsChanging"
                 data-ui-view="pccView"></div>
 
         </div>

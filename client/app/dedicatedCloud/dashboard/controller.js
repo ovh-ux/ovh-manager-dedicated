@@ -71,14 +71,6 @@ export default class {
       ),
     );
 
-    this.orderableServicePacksWithCertifications = [
-      _.find(
-        this.orderableServicePacksWithOnlyBasicOptions,
-        servicePack => _.isEqual(servicePack.options, currentServicePack.options),
-      ),
-      ...this.orderableServicePacksWithCertifications,
-    ].filter(item => item);
-
     this.setAction = (action, data) => this.$scope.$parent.setAction(action, data);
   }
 

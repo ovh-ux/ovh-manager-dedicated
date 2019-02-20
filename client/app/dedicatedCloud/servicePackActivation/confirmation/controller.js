@@ -1,5 +1,5 @@
 /* @ngInject */
-export default class DedicatedCloudServicePackCertificationActivationConfirmation {
+export default class {
   constructor(
     $q,
     $state,
@@ -12,14 +12,6 @@ export default class DedicatedCloudServicePackCertificationActivationConfirmatio
     this.$translate = $translate;
     this.Alerter = Alerter;
     this.OvhApiOrder = OvhApiOrder;
-  }
-
-  $onInit() {
-    if (this.servicePackToOrder == null) {
-      return this.stepper.goToPreviousStep();
-    }
-
-    return this.$q.when();
   }
 
   placeOrder() {
@@ -36,7 +28,7 @@ export default class DedicatedCloudServicePackCertificationActivationConfirmatio
       .catch(error => this.stepper.exit()
         .then(() => {
           this.Alerter.alertFromSWS(
-            this.$translate.instant('dedicatedCloud_certificationActivation_confirmation_order_failure'),
+            this.$translate.instant('dedicatedCloud_servicePackActivation_confirmation_order_failure'),
             {
               message: error.data.message,
               type: 'ERROR',

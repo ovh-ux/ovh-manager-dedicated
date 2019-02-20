@@ -2,22 +2,22 @@
     data-type="info"
     data-dismissable="false"
     data-ng-if="!$ctrl.hasDefaultMeansOfPayment">
-    <p data-translate="dedicatedCloud_certificationActivation_confirmation_noDefaultMeansOfPayment"></p>
+    <p data-translate="dedicatedCloud_servicePackActivation_confirmation_noDefaultMeansOfPayment"></p>
 
     <p data-ng-if="$ctrl.currentUser.ovhSubsidiary !== 'PL'">
-        <span data-translate="dedicatedCloud_certificationActivation_confirmation_howToAddMeansOfPayment"></span>
+        <span data-translate="dedicatedCloud_servicePackActivation_confirmation_howToAddMeansOfPayment"></span>
         <a
             data-ui-sref="app.account.billing.payment.method"
-            data-translate="dedicatedCloud_certificationActivation_confirmation_howToAddMeansOfPayment_thisLink"></a>
+            data-translate="dedicatedCloud_servicePackActivation_confirmation_howToAddMeansOfPayment_thisLink"></a>
     </p>
     <p
         data-ng-if="$ctrl.currentUser.ovhSubsidiary === 'PL'"
-        data-translate="dedicatedCloud_certificationActivation_confirmation_noDefaultMeansOfPayment_orderFormCreation"></p>
+        data-translate="dedicatedCloud_servicePackActivation_confirmation_noDefaultMeansOfPayment_orderFormCreation"></p>
 </oui-message>
 
 <p
     data-ng-if="$ctrl.currentUser.ovhSubsidiary !== 'PL'"
-    data-translate="dedicatedCloud_certificationActivation_confirmation_noDefaultMeansOfPayment_orderFormCreation"
+    data-translate="dedicatedCloud_servicePackActivation_confirmation_noDefaultMeansOfPayment_orderFormCreation"
     data-translate-values="{
         'servicePackName': '<strong>' + $ctrl.servicePackToOrder.displayName + '</strong>',
         'monthlyPrice': '<strong>' + 'xxx' + '</strong>'
@@ -27,14 +27,14 @@
     <oui-button
         data-on-click="$ctrl.stepper.goToPreviousStep()"
         data-variant="secondary">
-        <span data-translate="dedicatedCloud_certificationActivation_confirmation_previousButton"></span>
+        <span data-translate="dedicatedCloud_servicePackActivation_confirmation_previousButton"></span>
     </oui-button>
 
     <oui-button
         data-on-click="$ctrl.placeOrder()"
         data-variant="primary"
         class="ml-3">
-        <span data-translate="dedicatedCloud_certificationActivation_confirmation_confirmActivationButton"></span>
+        <span data-translate="dedicatedCloud_servicePackActivation_confirmation_confirmActivationButton"></span>
     </oui-button>
 </div>
 

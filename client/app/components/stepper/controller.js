@@ -221,13 +221,13 @@ export default class DedicatedCloudStepper {
 
     this.steps.forEach((step) => {
       currentStepName = `${currentStepName}.${step.name}`;
-      const baseStep = _.get(step, 'state', {});
+      const stepBaseState = _.get(step, 'state', {});
 
       this.$stateRegistry.register({
-        ...baseStep,
+        ...stepBaseState,
         name: currentStepName,
         views: {
-          [`content@${this.callerStateName}`]: step.moduleName,
+          [`content@${this.callerStateName}`]: step.componentName,
         },
       });
     });

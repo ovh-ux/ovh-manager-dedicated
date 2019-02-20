@@ -1,18 +1,16 @@
-const resolveOrderableServicePacks = /* @ngInject */ (
+const header = /* @ngInject */ (
   $transition$,
-  currentService,
-  currentUser,
-  dedicatedCloudCertificationActivationService,
-) => $transition$.params().orderableServicePacks
-    || dedicatedCloudCertificationActivationService
-      .fetchOrderable({
-        currentServicePackName: currentService.servicePackName,
-        serviceName: currentService.serviceName,
-        subsidiary: currentUser.ovhSubsidiary,
-      });
+  $translate,
+) => $translate.instant(`dedicatedCloud_servicePackActivation_selection_${$transition$.params().activationType}_header`);
+
+const subheader = /* @ngInject */ (
+  $transition$,
+  $translate,
+) => $translate.instant(`dedicatedCloud_servicePackActivation_selection_${$transition$.params().activationType}_subheader`);
 
 export default {
   resolve: {
-    orderableServicePacks: resolveOrderableServicePacks,
+    header,
+    subheader,
   },
 };

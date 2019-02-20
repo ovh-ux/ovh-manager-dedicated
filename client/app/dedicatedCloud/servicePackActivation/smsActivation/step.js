@@ -1,12 +1,14 @@
 import {
+  COMPONENT_NAME,
   MODULE_NAME,
   STEP_NAME,
 } from './constants';
 import state from './state';
 
 export default {
-  translationId: 'dedicatedCloud_certificationActivation_smsActivation_stepper_header',
-  name: STEP_NAME,
+  componentName: COMPONENT_NAME,
   moduleName: MODULE_NAME,
+  name: STEP_NAME,
   state,
+  translationId: 'dedicatedCloud_certificationActivation_smsActivation_stepper_header',
 };
