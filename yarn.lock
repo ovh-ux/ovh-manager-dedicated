@@ -989,6 +989,13 @@
     request "^2.88.0"
     webpack-dev-server "^3.1.9"
 
+"@ovh-ux/ng-ovh-apiv7@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-apiv7/-/ng-ovh-apiv7-2.0.0.tgz#838e6c224bb37928de84b4a0eb8c0c8a6713f1d7"
+  integrity sha512-EnJEEmoNCTjnCv/501GDZjxYt17YgGbVBr6BfqF6kD4FSf+TQpsP2sOKEXDLIj0oJUYRhU4z5d97AjX9zFSrFg==
+  dependencies:
+    lodash "^4.17.11"
+
 "@ovh-ux/ng-ovh-contacts@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-contacts/-/ng-ovh-contacts-1.0.0.tgz#1bb61ac637492f3f5ca7393579ca18c37fb7f1fa"
@@ -7627,11 +7634,6 @@ ovh-angular-actions-menu@^3.2.0:
   resolved "https://registry.yarnpkg.com/ovh-angular-actions-menu/-/ovh-angular-actions-menu-3.2.0.tgz#5e997696750fc601a169067e03d3f03d6e392952"
   integrity sha1-Xpl2lnUPxgGhaQZ+A9PwPW45KVI=
 
-ovh-angular-apiv7@^1.2.8:
-  version "1.2.8"
-  resolved "https://registry.yarnpkg.com/ovh-angular-apiv7/-/ovh-angular-apiv7-1.2.8.tgz#5ae631d70029b3313a3aa47fb1901b168693d5e9"
-  integrity sha1-WuYx1wApszE6OqR/sZAbFoaT1ek=
-
 ovh-angular-export-csv@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/ovh-angular-export-csv/-/ovh-angular-export-csv-0.3.2.tgz#e88395d9f94a782c2ca80e3e61d872d58c784f5d"
@@ -7702,10 +7704,10 @@ ovh-angular-user-pref@^0.3.1:
   resolved "https://registry.yarnpkg.com/ovh-angular-user-pref/-/ovh-angular-user-pref-0.3.1.tgz#07f5792513651f3262ae4879c174423649b08307"
   integrity sha1-B/V5JRNlHzJirkh5wXRCNkmwgwc=
 
-ovh-api-services@^3.30.0:
-  version "3.31.0"
-  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-3.31.0.tgz#b4b50dd8816b36b9266c6362c922b6c3fdda8996"
-  integrity sha512-ngb65X6BEBvR+dFYKdu8wgEKqKwFY1WFQGiJQoavQ1H0xEilAiURwkVXCpTUVufTA17fqdM1Ob4IY8WraQ6eAQ==
+ovh-api-services@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-4.0.0.tgz#0337fd28ed29337b1e60e8eafa6bcb6a9fea426e"
+  integrity sha512-GE2Z40rOXqAwM2Zvaxr4a+jaldQDgNN3sWpY0aQBzbvuYeZIf6K10XESB9YytYk/51qHkV6CmTFZf52vqVfcQQ==
   dependencies:
     lodash "^3.10.1"
 
