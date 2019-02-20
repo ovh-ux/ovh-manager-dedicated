@@ -19,17 +19,10 @@ angular
         reloadOnSearch: false,
         translations: ['.'],
         resolve: {
-          serviceUsesAgora: (
-            $stateParams,
-            DedicatedCloud,
-          ) => DedicatedCloud
-            .getDescription($stateParams.productId)
-            .then(description => description.generation === '2.0'),
           currentService: (
-            $stateParams,
+            $transition$,
             DedicatedCloud,
-          ) => DedicatedCloud.retrievingFullService($stateParams.productId),
-          currentUser: User => User.getUser(),
+          ) => DedicatedCloud.getSelected($transition$.params().productId, true),
           servicePacks: (
             currentService,
             currentUser,

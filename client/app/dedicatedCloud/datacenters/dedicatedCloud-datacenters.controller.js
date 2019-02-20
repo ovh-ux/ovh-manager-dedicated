@@ -10,16 +10,16 @@ angular
         $state,
         $stateParams,
 
+        currentService,
         DedicatedCloud,
-        serviceUsesAgora,
       ) {
         this.$q = $q;
         this.$scope = $scope;
         this.$state = $state;
         this.$stateParams = $stateParams;
 
+        this.currentService = currentService;
         this.DedicatedCloud = DedicatedCloud;
-        this.serviceUsesAgora = serviceUsesAgora;
       }
 
       loadDatacenters({
@@ -64,7 +64,7 @@ angular
       }
 
       orderDatastore(datacenter) {
-        if (this.serviceUsesAgora) {
+        if (this.currentService.usesAgora) {
           this.$state.go(
             'app.dedicatedClouds.datacenter.datastores.orderUS',
             {
@@ -81,7 +81,7 @@ angular
       }
 
       orderHost(datacenter) {
-        if (this.serviceUsesAgora) {
+        if (this.currentService.usesAgora) {
           this.$state.go(
             'app.dedicatedClouds.datacenter.hosts.orderUS',
             {

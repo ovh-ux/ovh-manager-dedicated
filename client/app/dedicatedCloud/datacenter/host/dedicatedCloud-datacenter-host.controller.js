@@ -11,8 +11,8 @@ angular
         $stateParams,
         $translate,
 
+        currentService,
         DedicatedCloud,
-        serviceUsesAgora,
       ) {
         this.$q = $q;
         this.$scope = $scope;
@@ -20,8 +20,8 @@ angular
         this.$stateParams = $stateParams;
         this.$translate = $translate;
 
+        this.currentService = currentService;
         this.DedicatedCloud = DedicatedCloud;
-        this.serviceUsesAgora = serviceUsesAgora;
       }
 
       $onInit() {
@@ -83,7 +83,7 @@ angular
       }
 
       orderHost(datacenter) {
-        if (this.serviceUsesAgora) {
+        if (this.currentService.usesAgora) {
           this.$state.go('app.dedicatedClouds.datacenter.hosts.orderUS');
         } else {
           this.$scope.setAction('datacenter/host/order/dedicatedCloud-datacenter-host-order', datacenter.model, true);

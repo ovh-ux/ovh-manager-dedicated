@@ -66,39 +66,6 @@ angular
             });
       }
 
-
-      getDescription(serviceName) {
-        return this.OvhHttp
-          .get(
-            '/dedicatedCloud/{serviceName}',
-            {
-              rootPath: 'apiv6',
-              urlParams: { serviceName },
-            },
-          );
-      }
-
-      retrievingFullService(serviceName) {
-        return this.$q
-          .all({
-            currentService: this.getSelected(serviceName, true),
-            currentServiceDescription: this.getDescription(serviceName),
-            currentProductServiceInfos: this.OvhApiDedicatedCloud.v6()
-              .getServiceInfos({ serviceName }).$promise,
-          })
-          .then(({
-            currentService,
-            currentServiceDescription,
-            currentProductServiceInfos,
-          }) => ({
-            ...currentService,
-            ...currentServiceDescription,
-            usesAgora: currentServiceDescription.generation === '2.0',
-            isExpired: currentService.status === 'expired',
-            serviceInfos: currentProductServiceInfos,
-          }));
-      }
-
       updateDescription(
         serviceName,
         description,

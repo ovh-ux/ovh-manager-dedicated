@@ -21,7 +21,7 @@
             data-translate="dedicatedCloud_tab_veeam_on"
             data-ng-if="veeam.model.state === veeam.constants.DISABLED"
             data-ui-sref="{{::
-                $ctrl.serviceUsesAgora
+                $ctrl.currentService.usesAgora
                     ? 'app.dedicatedClouds.datacenter.backup.enableAgora'
                     : 'app.dedicatedClouds.datacenter.backup.enable'
             }}"></a>

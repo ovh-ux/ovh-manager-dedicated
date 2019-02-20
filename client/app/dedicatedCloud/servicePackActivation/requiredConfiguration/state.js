@@ -10,7 +10,7 @@ const resolveCurrentService = /* @ngInject */ (
   $transition$,
   DedicatedCloud,
 ) => $transition$.params().currentService
-    || DedicatedCloud.retrievingFullService($transition$.params().productId);
+    || DedicatedCloud.getSelected($transition$.params().productId, true);
 
 const resolveHasDefaultMeansOfPayment = /* @ngInject */ (
   $transition$,

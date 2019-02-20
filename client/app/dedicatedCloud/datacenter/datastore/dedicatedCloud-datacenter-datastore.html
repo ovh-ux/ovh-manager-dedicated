@@ -55,7 +55,7 @@
     <extra-top>
         <oui-button
             class="mb-2"
-            data-disabled="!datacenter.model.canOrderFilers && !$ctrl.serviceUsesAgora"
+            data-disabled="!datacenter.model.canOrderFilers && !$ctrl.currentService.usesAgora"
             data-on-click="$ctrl.orderDatastore(datacenter)"
             data-text="{{:: 'dedicatedCloud_order_Datastore' | translate }}"></oui-button>
     </extra-top>
