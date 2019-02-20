@@ -11,6 +11,7 @@ export default class {
     $translate,
     $uibModal,
     DEDICATED_CLOUD_ACTIVATION_STATUS,
+    DEDICATED_CLOUD_SERVICE_PACK_ACTIVATION,
   ) {
     this.$scope = $scope;
     this.$state = $state;
@@ -19,6 +20,7 @@ export default class {
     this.$translate = $translate;
     this.$uibModal = $uibModal;
     this.DEDICATED_CLOUD_ACTIVATION_STATUS = DEDICATED_CLOUD_ACTIVATION_STATUS;
+    this.DEDICATED_CLOUD_SERVICE_PACK_ACTIVATION = DEDICATED_CLOUD_SERVICE_PACK_ACTIVATION;
   }
 
   $onInit() {
@@ -68,6 +70,14 @@ export default class {
         option => _.isEqual(option.type, OPTION_TYPES.certification),
       ),
     );
+
+    this.orderableServicePacksWithCertifications = [
+      _.find(
+        this.orderableServicePacksWithOnlyBasicOptions,
+        servicePack => _.isEqual(servicePack.options, currentServicePack.options),
+      ),
+      ...this.orderableServicePacksWithCertifications,
+    ].filter(item => item);
 
     this.setAction = (action, data) => this.$scope.$parent.setAction(action, data);
   }

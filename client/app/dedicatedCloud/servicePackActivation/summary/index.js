@@ -1,15 +1,17 @@
 // import angular from 'angular';
 // import 'angular-translate';
 // import 'ovh-ui-angular';
+// import '@uirouter/angularjs';
 
 import component from './component';
-import { COMPONENT_NAME, MODULE_NAME } from './constants';
-import activationStatusModuleName from '../../components/activationStatus';
+import {
+  COMPONENT_NAME,
+  MODULE_NAME,
+} from './constants';
+import step from './step';
 
 angular
   .module(MODULE_NAME, [
-    activationStatusModuleName,
-    'dedicatedCloudServicePackActivation',
     'oui',
     'pascalprecht.translate',
     'ui.router',
@@ -18,3 +20,7 @@ angular
   .run(/* @ngTranslationsInject ./translations */);
 
 export default MODULE_NAME;
+
+export {
+  step,
+};
