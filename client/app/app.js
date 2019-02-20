@@ -1,3 +1,4 @@
+import ngOvhApiv7 from '@ovh-ux/ng-ovh-apiv7';
 import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
 import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
 import translateAsyncLoader from '@ovh-ux/translate-async-loader';
@@ -34,9 +35,9 @@ const appDeps = [
   'ovh-angular-user-pref',
   'ovhBrowserAlert',
   'ui.validate',
+  ngOvhApiv7,
   ngOvhSsoAuth,
   ngOvhSsoAuthModalPlugin,
-  'ovh-angular-apiv7',
   'oui',
   'ui.select',
   uiRouter,
