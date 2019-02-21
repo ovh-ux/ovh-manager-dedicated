@@ -4,36 +4,39 @@
 </div>
 
 <div data-ng-if="!$ctrl.isLoading">
-    <oui-message data-ng-if="$ctrl.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toProvisionOrProvisionning.includes($ctrl.drpInformations.state) || $ctrl.isEnabling"
+    <oui-message class="mb-5"
+                 data-ng-if="$ctrl.isProvisionning() || $ctrl.isEnabling"
                  data-type="info">
         <p data-translate="dedicatedCloud_datacenter_drp_confirm_creation_pending"></p>
         <p data-translate="dedicatedCloud_datacenter_drp_confirm_creation_pending_task"></p>
     </oui-message>
 
-    <h3 class="oui-heading_4 mt-5"
-        data-translate="dedicatedCloud_datacenter_drp_confirm_summary_title"></h3>
-    <dl class="row">
-        <dt class="col-md-5"
-            data-translate="dedicatedCloud_datacenter_drp_confirm_summary_drp_type"></dt>
-        <dd class="col-md-7"
-            data-ng-bind="::'dedicatedCloud_datacenter_' + $ctrl.drpInformations.drpType + '_choice' | translate"></dd>
-        <dt class="col-md-5"
-            data-translate="dedicatedCloud_datacenter_drp_confirm_summary_main_datacenter"></dt>
-        <dd class="col-md-7"
-            data-ng-bind="::$ctrl.drpInformations.primaryDatacenter.formattedName || '-'"></dd>
-        <dt class="col-md-5"
-            data-translate="dedicatedCloud_datacenter_drp_confirm_summary_main_pcc"></dt>
-        <dd class="col-md-7"
-            data-ng-bind="::$ctrl.drpInformations.primaryPcc.serviceName || '-'"></dd>
-        <dt class="col-md-5"
-            data-translate="dedicatedCloud_datacenter_drp_confirm_summary_secondary_datacenter"></dt>
-        <dd class="col-md-7"
-            data-ng-bind="::$ctrl.drpInformations.secondaryDatacenter.formattedName || '-'"></dd>
-        <dt class="col-md-5"
-            data-translate="dedicatedCloud_datacenter_drp_confirm_summary_secondary_pcc"></dt>
-        <dd class="col-md-7"
-            data-ng-bind="::$ctrl.drpInformations.secondaryPcc.serviceName || '-'"></dd>
-    </dl>
+    <div data-ng-if="!$ctrl.isProvisionning()">
+        <h3 class="oui-heading_4"
+            data-translate="dedicatedCloud_datacenter_drp_confirm_summary_title"></h3>
+        <dl class="row">
+            <dt class="col-md-5"
+                data-translate="dedicatedCloud_datacenter_drp_confirm_summary_drp_type"></dt>
+            <dd class="col-md-7"
+                data-ng-bind="::'dedicatedCloud_datacenter_' + $ctrl.drpInformations.drpType + '_choice' | translate"></dd>
+            <dt class="col-md-5"
+                data-translate="dedicatedCloud_datacenter_drp_confirm_summary_main_datacenter"></dt>
+            <dd class="col-md-7"
+                data-ng-bind="::$ctrl.drpInformations.primaryDatacenter.formattedName || '-'"></dd>
+            <dt class="col-md-5"
+                data-translate="dedicatedCloud_datacenter_drp_confirm_summary_main_pcc"></dt>
+            <dd class="col-md-7"
+                data-ng-bind="::$ctrl.drpInformations.primaryPcc.serviceName || '-'"></dd>
+            <dt class="col-md-5"
+                data-translate="dedicatedCloud_datacenter_drp_confirm_summary_secondary_datacenter"></dt>
+            <dd class="col-md-7"
+                data-ng-bind="::$ctrl.drpInformations.secondaryDatacenter.formattedName || '-'"></dd>
+            <dt class="col-md-5"
+                data-translate="dedicatedCloud_datacenter_drp_confirm_summary_secondary_pcc"></dt>
+            <dd class="col-md-7"
+                data-ng-bind="::$ctrl.drpInformations.secondaryPcc.serviceName || '-'"></dd>
+        </dl>
+    </div>
 
     <h3 class="oui-heading_4"
         data-translate="dedicatedCloud_datacenter_drp_confirm_zssp_password_title"></h3>

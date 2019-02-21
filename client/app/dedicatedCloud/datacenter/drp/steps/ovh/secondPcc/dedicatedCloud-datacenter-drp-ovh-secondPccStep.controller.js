@@ -22,7 +22,8 @@ export default class {
     this.drpInformations = this.$stateParams.drpInformations;
 
     this.availablePccs = this.pccList
-      .filter(({ serviceName }) => serviceName !== this.$stateParams.productId)
+      .filter(({ serviceName, location }) => serviceName !== this.$stateParams.productId
+        && location !== this.drpInformations.primaryPcc.location)
       .map(pcc => ({
         description: pcc.description || pcc.serviceName,
         serviceName: pcc.serviceName,
@@ -31,9 +32,11 @@ export default class {
 
   updateOptions(secondaryPcc) {
     this.fetchingOptions = true;
+
     this.drpInformations.secondaryPcc = secondaryPcc;
     this.drpInformations.secondaryDatacenter = null;
     this.selectedSecondaryIpAddress = null;
+
     return this.$q.all({
       datacenters: this.DedicatedCloud.getDatacenters(secondaryPcc.serviceName),
       ipAddressDetails: this.DedicatedCloudDrp.getPccIpAddressesDetails(secondaryPcc.serviceName),
