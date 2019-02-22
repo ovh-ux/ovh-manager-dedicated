@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import { DATA_ON_ALL_OPTIONS, OPTION_TYPES } from '../servicePack/option/constants';
 
 /* @ngInject */
 export default class {
@@ -12,6 +11,7 @@ export default class {
     $uibModal,
     DEDICATED_CLOUD_ACTIVATION_STATUS,
     DEDICATED_CLOUD_SERVICE_PACK_ACTIVATION,
+    DEDICATED_CLOUD_SERVICE_PACK_OPTION,
   ) {
     this.$scope = $scope;
     this.$state = $state;
@@ -21,6 +21,7 @@ export default class {
     this.$uibModal = $uibModal;
     this.DEDICATED_CLOUD_ACTIVATION_STATUS = DEDICATED_CLOUD_ACTIVATION_STATUS;
     this.DEDICATED_CLOUD_SERVICE_PACK_ACTIVATION = DEDICATED_CLOUD_SERVICE_PACK_ACTIVATION;
+    this.DEDICATED_CLOUD_SERVICE_PACK_OPTION = DEDICATED_CLOUD_SERVICE_PACK_OPTION;
   }
 
   $onInit() {
@@ -30,8 +31,8 @@ export default class {
     );
 
     this.optionsTheCurrentServicePackHas = _.filter(
-      DATA_ON_ALL_OPTIONS,
-      { type: OPTION_TYPES.basicOption },
+      this.DEDICATED_CLOUD_SERVICE_PACK_OPTION.OPTIONS,
+      { type: this.DEDICATED_CLOUD_SERVICE_PACK_OPTION.OPTION_TYPES.basicOption },
     );
 
     this.allExistingOptions = _.sortBy(
@@ -40,7 +41,8 @@ export default class {
         .reduce((previousValue, currentValue) => (_.some(previousValue, { name: currentValue.name })
           ? previousValue
           : [...previousValue, currentValue]), [])
-        .filter(option => option.type === OPTION_TYPES.basicOption)
+        .filter(option => option.type === this
+          .DEDICATED_CLOUD_SERVICE_PACK_OPTION.OPTION_TYPES.basicOption)
         .map(option => ({
           ...option,
           status: _.map(currentServicePack.options, 'name').includes(option.name)
@@ -52,14 +54,15 @@ export default class {
 
     this.currentCertification = _.find(
       currentServicePack.options,
-      { type: OPTION_TYPES.certification },
+      { type: this.DEDICATED_CLOUD_SERVICE_PACK_OPTION.OPTION_TYPES.certification },
     );
 
     this.orderableServicePacksWithOnlyBasicOptions = _.filter(
       _.reject(this.servicePacks, { name: currentServicePack.name }),
       servicePack => _.every(
         servicePack.options,
-        option => _.isEqual(option.type, OPTION_TYPES.basicOption),
+        option => _.isEqual(option.type, this
+          .DEDICATED_CLOUD_SERVICE_PACK_OPTION.OPTION_TYPES.basicOption),
       ),
     );
 
@@ -67,7 +70,8 @@ export default class {
       _.reject(this.servicePacks, { name: currentServicePack.name }),
       servicePack => _.some(
         servicePack.options,
-        option => _.isEqual(option.type, OPTION_TYPES.certification),
+        option => _.isEqual(option.type, this
+          .DEDICATED_CLOUD_SERVICE_PACK_OPTION.OPTION_TYPES.certification),
       ),
     );
 

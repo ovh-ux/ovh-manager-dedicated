@@ -10,5 +10,5 @@ export default {
   moduleName: MODULE_NAME,
   name: STEP_NAME,
   state,
-  translationId: 'dedicatedCloud_certificationActivation_summary_stepper_header',
+  translationId: 'dedicatedCloud_servicePackActivation_summary_stepper_header',
 };

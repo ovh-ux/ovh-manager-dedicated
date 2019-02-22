@@ -1,28 +1,21 @@
 // import angular from 'angular';
 // import 'angular-translate';
-// import 'ovh-ui-angular';
-// import '@uirouter/angularjs';
 
-import './style.less';
-
-import component from './component';
 import {
-  COMPONENT_NAME,
+  CONSTANT_NAME,
   MODULE_NAME,
+  OPTIONS,
+  OPTION_TYPES,
+  SERVICE_NAME,
 } from './constants';
-import step from './step';
+import service from './service';
 
 angular
   .module(MODULE_NAME, [
-    'oui',
     'pascalprecht.translate',
-    'ui.router',
   ])
-  .component(COMPONENT_NAME, component)
+  .constant(CONSTANT_NAME, { OPTIONS, OPTION_TYPES })
+  .service(SERVICE_NAME, service)
   .run(/* @ngTranslationsInject ./translations */);
 
 export default MODULE_NAME;
-
-export {
-  step,
-};

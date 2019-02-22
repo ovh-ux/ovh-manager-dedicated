@@ -2,14 +2,15 @@ import {
   COMPONENT_NAME,
 } from './constants';
 
-const resolveOrderableServicePacks = /* @ngInject */ (
+const orderableServicePacks = /* @ngInject */ (
   $transition$,
   currentService,
   currentUser,
-  dedicatedCloudCertificationActivationService,
+  dedicatedCloudServicePack,
 ) => $transition$.params().orderableServicePacks
-    || dedicatedCloudCertificationActivationService
+    || dedicatedCloudServicePack
       .fetchOrderable({
+        activationType: $transition$.params().activationType,
         currentServicePackName: currentService.servicePackName,
         serviceName: currentService.serviceName,
         subsidiary: currentUser.ovhSubsidiary,
@@ -20,7 +21,7 @@ export default {
     orderableServicePacks: null,
   },
   resolve: {
-    orderableServicePacks: resolveOrderableServicePacks,
+    orderableServicePacks,
   },
   url: '/servicePackActivation?activationType',
   views: {

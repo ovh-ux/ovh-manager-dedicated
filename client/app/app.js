@@ -10,10 +10,8 @@ import ovhContacts from '@ovh-ux/ng-ovh-contacts';
 import config from './config/config';
 import dedicatedCloudActivationStatus from './components/activationStatus';
 import dedicatedCloudDashboardModuleName from './dedicatedCloud/dashboard';
-import dedicatedCloudServicePackBasicOptionActivationModuleName from './dedicatedCloud/servicePack/basicOptionActivation';
-import dedicatedCloudServicePackCertificationActivationModuleName from './dedicatedCloud/servicePack/certificationActivation';
-import dedicatedCloudServicePackModuleName from './dedicatedCloud/servicePack';
-import dedicatedCloudServicePackOptionModuleName from './dedicatedCloud/servicePack/option';
+import dedicatedCloudServicePackModuleName from './dedicatedCloud/servicePackActivation';
+import dedicatedCloudServicePackOptionModuleName from './dedicatedCloud/servicePackActivation/option';
 import dedicatedCloudStepper from './components/stepper';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
 
@@ -67,8 +65,6 @@ const appDeps = [
   ovhContacts,
   dedicatedCloudActivationStatus,
   dedicatedCloudDashboardModuleName,
-  dedicatedCloudServicePackBasicOptionActivationModuleName,
-  dedicatedCloudServicePackCertificationActivationModuleName,
   dedicatedCloudServicePackModuleName,
   dedicatedCloudServicePackOptionModuleName,
   dedicatedCloudStepper,
