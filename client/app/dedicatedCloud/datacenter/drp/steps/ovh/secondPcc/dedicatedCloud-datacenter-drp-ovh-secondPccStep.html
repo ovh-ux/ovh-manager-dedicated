@@ -1,10 +1,10 @@
 <form name="$ctrl.ovhForm"
       novalidate>
-    <oui-field class="d-inline-block"
-               data-label="{{:: 'dedicatedCloud_datacenter_secondary_pcc_name' | translate }}"
+    <oui-field data-label="{{:: 'dedicatedCloud_datacenter_secondary_pcc_name' | translate }}"
                data-help-text="{{:: 'dedicatedCloud_datacenter_secondary_datacenter_pcc_on_same_location_warning' | translate }}"
-               data-size="l">
-        <oui-select name="secondaryServiceName"
+               data-size="xl">
+        <oui-select class="d-inline-block w-75"
+                    name="secondaryServiceName"
                     data-match="description"
                     data-model="$ctrl.selectedSecondaryPcc"
                     data-items="$ctrl.availablePccs"
@@ -12,40 +12,60 @@
                     data-placeholder="{{:: 'dedicatedCloud_datacenter_secondary_pcc_name_placeholder' | translate }}"
                     data-disabled="$ctrl.fetchingOptions">
         </oui-select>
+        <oui-spinner class="align-middle"
+                     data-size="s"
+                     data-ng-if="$ctrl.fetchingOptions"></oui-spinner>
     </oui-field>
-    <oui-spinner class="align-top"
-                 data-size="s"
-                 data-ng-if="$ctrl.fetchingOptions"></oui-spinner>
 
     <oui-field data-label="{{:: 'dedicatedCloud_datacenter_secondary_datacenter_list' | translate }}"
-               data-size="l">
-        <oui-select name="secondaryDatacenterId"
+               data-size="xl">
+        <oui-select class="d-inline-block w-75"
+                    name="secondaryDatacenterId"
                     data-match="formattedName"
                     data-model="$ctrl.drpInformations.secondaryDatacenter"
                     data-items="$ctrl.availableDatacenters"
-                    data-disabled="!$ctrl.selectedSecondaryPcc || $ctrl.fetchingOptions"
-                    data-placeholder="{{:: 'dedicatedCloud_datacenter_secondary_datacenter_name_placeholder' | translate }}">
+                    data-disabled="!$ctrl.selectedSecondaryPcc || $ctrl.fetchingOptions || $ctrl.isCheckingHosts"
+                    data-placeholder="{{:: 'dedicatedCloud_datacenter_secondary_datacenter_name_placeholder' | translate }}"
+                    data-on-change="$ctrl.checkIfDatacenterHasHosts(modelValue.id)">
         </oui-select>
+        <oui-spinner class="align-middle"
+                     data-size="s"
+                     data-ng-if="$ctrl.isCheckingHosts"></oui-spinner>
     </oui-field>
 
+    <div data-ng-if="$ctrl.isSecondaryDatacenterWithoutHosts">
+        <oui-message data-type="warning">
+            <span data-translate="dedicatedCloud_datacenter_secondary_datacenter_without_hosts_part_one"></span>
+            <a class="oui-link"
+               data-ui-sref="app.dedicatedClouds.datacenter.hosts({
+                   productId: $ctrl.drpInformations.secondaryPcc.serviceName,
+                   datacenterId: $ctrl.drpInformations.secondaryDatacenter.id,
+               })">
+                <span data-translate="dedicatedCloud_datacenter_order"></span>
+            </a>
+            <span data-translate="dedicatedCloud_datacenter_secondary_datacenter_without_hosts_part_two"></span>
+        </oui-message>
+    </div>
     <div data-ng-if="$ctrl.availableIpAddress.length === 0">
-        <p class="oui-label"
-           data-translate="dedicatedCloud_datacenter_secondary_ip_address_pool_available"></p>
-        <span data-translate="dedicatedCloud_datacenter_order_ip_secondary_pcc"></span>
-        <a class="oui-link"
-           data-ui-sref="app.dedicatedClouds.datacenter.drp.ovh.secondPccStep.orderIp"
-           data-ng-disabled="$ctrl.fetchingOptions">
-            <span data-translate="global_feedback_contact_link"></span>
-        </a>
+        <oui-message data-type="warning">
+            <span data-translate="dedicatedCloud_datacenter_order_ip_secondary_pcc_part_one"></span>
+            <a class="oui-link"
+               data-ui-sref="app.dedicatedClouds.datacenter.drp.ovh.secondPccStep.orderIp"
+               data-ng-disabled="$ctrl.fetchingOptions">
+                <span data-translate="dedicatedCloud_datacenter_order"></span>
+            </a>
+            <span data-translate="dedicatedCloud_datacenter_order_ip_secondary_pcc_part_two"></span>
+        </oui-message>
     </div>
     <oui-field data-label="{{:: 'dedicatedCloud_datacenter_secondary_ip_address_pool_available' | translate }}"
-               data-size="l"
-               data-ng-if="$ctrl.availableIpAddress.length > 0">
-        <oui-select name="secondaryEndpointIp"
+               data-size="xl"
+               data-ng-if="$ctrl.availableIpAddress.length > 0 && !$ctrl.isSecondaryDatacenterWithoutHosts">
+        <oui-select class="w-75"
+                    name="secondaryEndpointIp"
                     data-match="ip"
                     data-model="$ctrl.selectedSecondaryIpAddress"
                     data-items="$ctrl.availableIpAddress"
-                    data-disabled="$ctrl.fetchingOptions || !$ctrl.drpInformations.secondaryDatacenter"
+                    data-disabled="$ctrl.fetchingOptions || $ctrl.isCheckingHosts || !$ctrl.drpInformations.secondaryDatacenter"
                     data-placeholder="{{:: 'dedicatedCloud_datacenter_secondary_ip_address_pool_available_placeholder' | translate }}"
                     data-on-change="$ctrl.drpInformations.secondaryEndpointIp = modelValue.ip">
         </oui-select>

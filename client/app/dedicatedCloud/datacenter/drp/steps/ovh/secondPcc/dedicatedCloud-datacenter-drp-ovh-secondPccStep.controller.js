@@ -56,6 +56,25 @@ export default class {
       });
   }
 
+  checkIfDatacenterHasHosts(datacenterId) {
+    this.isCheckingHosts = true;
+    this.isSecondaryDatacenterWithoutHosts = false;
+
+    return this.DedicatedCloud.getHosts(
+      this.drpInformations.secondaryPcc.serviceName,
+      datacenterId,
+    )
+      .then(({ count }) => {
+        this.isSecondaryDatacenterWithoutHosts = count === 0;
+      })
+      .catch((error) => {
+        this.Alerter.error(`${this.$translate.instant('dedicatedCloud_datacenter_secondary_datacenter_get_hosts_error')} ${_.get(error, 'data.message', '')}`, 'dedicatedCloudDatacenterDrpAlert');
+      })
+      .finally(() => {
+        this.isCheckingHosts = false;
+      });
+  }
+
   goToPreviousStep() {
     return this.$state.go('app.dedicatedClouds.datacenter.drp.ovh.mainPccStep', { drpInformations: this.drpInformations });
   }
