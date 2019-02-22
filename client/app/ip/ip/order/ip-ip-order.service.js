@@ -1,10 +1,15 @@
-angular.module('Module.ip.services').service('IpOrder', [
-  '$http',
-  '$q',
-  function ($http, $q) {
-    const swsProxypassPath = 'apiv6';
+angular
+  .module('Module.ip.services')
+  .service('IpOrder', class DedicatedIPOrder {
+    constructor(
+      $http,
+      $q,
+    ) {
+      this.$http = $http;
+      this.$q = $q;
+    }
 
-    function getRouteFragmentForService(serviceType) {
+    static getRouteFragmentForService(serviceType) {
       switch (serviceType) {
         case 'DEDICATED':
           return 'dedicated/server';
@@ -17,75 +22,67 @@ angular.module('Module.ip.services').service('IpOrder', [
       }
     }
 
-    this.getServicesByType = function (type) {
+    getServicesByType(type) {
       const queue = [];
       let services = [];
 
       if (!type || type === 'DEDICATED') {
-        queue.push(
-          $http.get([swsProxypassPath, 'order/dedicated/server'].join('/')).then(
-            (data) => {
-              const items = [];
-              angular.forEach(data.data, (svc) => {
-                items.push({
-                  serviceType: 'DEDICATED',
-                  serviceName: svc,
-                });
-              });
-              services = services.concat(_.sortBy(items, 'serviceName'));
-            },
-            http => $q.reject(http.data),
-          ),
-        );
+        queue.push(this.$http
+          .get('apiv6/order/dedicated/server')
+          .then(({ data }) => {
+            const items = data.map(svc => ({
+              serviceType: 'DEDICATED',
+              serviceName: svc,
+            }));
+            services = services.concat(_.sortBy(items, 'serviceName'));
+          })
+          .catch(({ data }) => this.$q.reject(data)));
       }
 
       if (!type || type === 'PCC') {
-        queue.push(
-          $http.get([swsProxypassPath, 'order/dedicatedCloud'].join('/')).then(
-            (data) => {
-              const items = [];
-              angular.forEach(data.data, (svc) => {
-                items.push({
-                  serviceType: 'PCC',
-                  serviceName: svc,
-                });
-              });
-              services = services.concat(_.sortBy(items, 'serviceName'));
-            },
-            http => $q.reject(http.data),
-          ),
-        );
+        queue.push(this.$http
+          .get('apiv6/order/dedicatedCloud')
+          .then(({ data }) => {
+            const items = data.map(svc => ({
+              serviceType: 'PCC',
+              serviceName: svc,
+            }));
+            services = services.concat(_.sortBy(items, 'serviceName'));
+          })
+          .catch(({ data }) => this.$q.reject(data)));
       }
 
       if (!type || type === 'VPS') {
-        queue.push(
-          $http.get([swsProxypassPath, 'order/vps'].join('/')).then(
-            (data) => {
-              const items = [];
-              angular.forEach(data.data, (svc) => {
-                items.push({
-                  serviceType: 'VPS',
-                  serviceName: svc,
-                });
-              });
-              services = services.concat(_.sortBy(items, 'serviceName'));
-            },
-            http => $q.reject(http.data),
-          ),
-        );
+        queue.push(this.$http
+          .get('apiv6/order/vps')
+          .then(({ data }) => {
+            const items = data.map(svc => ({
+              serviceType: 'VPS',
+              serviceName: svc,
+            }));
+            services = services.concat(_.sortBy(items, 'serviceName'));
+          })
+          .catch(({ data }) => this.$q.reject(data)));
       }
 
-      return $q.all(queue).then(() => services, http => $q.reject(http.data));
-    };
+      return this.$q
+        .all(queue)
+        .then(() => services)
+        .catch(({ data }) => this.$q.reject(data));
+    }
 
-    this.checkIfAllowed = function (service, orderEnum) {
-      return $http.get([swsProxypassPath, 'order', getRouteFragmentForService(service.serviceType), service.serviceName].join('/')).then(data => data.data && data.data.length && ~data.data.indexOf(orderEnum), http => $q.reject(http.data));
-    };
+    checkIfAllowed(service, orderEnum) {
+      return this.$http
+        .get(`apiv6/order/${DedicatedIPOrder.getRouteFragmentForService(service.serviceType)}/${service.serviceName}`)
+        .then(({ data }) => _.isArray(data) && !_.isEmpty(data) && data.includes(orderEnum))
+        .catch(({ data }) => this.$q.reject(data));
+    }
 
-    this.getServiceOrderableIp = function (service) {
+    getServiceOrderableIp(service) {
       switch (service.serviceType) {
         case 'DEDICATED':
-          return $http.get([swsProxypassPath, 'dedicated/server', service.serviceName, 'orderable/ip'].join('/'))
+          return this.$http
+            .get(`apiv6/dedicated/server'/${service.serviceName}/orderable/ip`)
             .then((response) => {
               const { data } = response;
               data.ipv4 = _.filter(data.ipv4, { type: 'failover' });
@@ -107,31 +104,34 @@ angular.module('Module.ip.services').service('IpOrder', [
               return data;
             });
         case 'PCC':
-          return $q.when({});
+          return this.$q.when({});
         case 'VPS':
-          return $http.get([swsProxypassPath, 'vps', service.serviceName].join('/')).then(
-            (data) => {
+          return this.$http
+            .get(`apiv6/vps/${service.serviceName}`)
+            .then((data) => {
               if (data.data && data.data.model) {
-                return $http.get([swsProxypassPath, 'vps', service.serviceName, 'ips'].join('/')).then(
-                  (dataIps) => {
+                return this.$http
+                  .get(`apiv6/vps/${service.serviceName}/ips`)
+                  .then((dataIps) => {
                     let selfAdditionalIp = 0;
                     const queue = [];
 
                     angular.forEach(dataIps.data, (ip) => {
                       if (~ip.indexOf('.')) {
                         // only v4
-                        queue.push(
-                          $http.get([swsProxypassPath, 'vps', service.serviceName, 'ips', ip].join('/')).then((dataIp) => {
+                        queue.push(this.$http
+                          .get(`apiv6/vps/${service.serviceName}/ips/${ip}`)
+                          .then((dataIp) => {
                             if (dataIp.data && dataIp.data.type === 'additional') {
                               selfAdditionalIp += 1;
                             }
-                          }),
-                        );
+                          }));
                       }
                     });
 
-                    return $q.all(queue).then(
-                      () => ({
+                    return this.$q
+                      .all(queue)
+                      .then(() => ({
                         maximumAdditionnalIp: data.data.model.maximumAdditionnalIp
                           - selfAdditionalIp,
                         ipRange: _.range(
@@ -139,104 +139,124 @@ angular.module('Module.ip.services').service('IpOrder', [
                           data.data.model.maximumAdditionnalIp - selfAdditionalIp + 1,
                         ),
                         vpsInfos: data.data,
-                      }),
-                      http => $q.reject(http),
-                    );
-                  },
-                  http => $q.reject(http),
-                );
+                      }))
+                      .catch(http => this.$q.reject(http));
+                  })
+                  .catch(http => this.$q.reject(http));
               }
               return false;
-            },
-            http => $q.reject(http),
-          );
+            })
+            .catch(http => this.$q.reject(http));
         default:
           return null;
       }
-    };
+    }
 
-    this.getAvailableCountries = function (service) {
+    getAvailableCountries(service) {
       switch (service.serviceType) {
         case 'DEDICATED':
-          return $http.get([swsProxypassPath, 'dedicated/server', service.serviceName, 'ipCountryAvailable'].join('/')).then(data => (data.data || []).sort(), http => $q.reject(http.data));
+          return this.$http
+            .get(`apiv6/dedicated/server/${service.serviceName}/ipCountryAvailable`)
+            .then(data => (data.data || []).sort())
+            .catch(http => this.$q.reject(http.data));
         case 'PCC':
-          return $http.get([swsProxypassPath, 'dedicatedCloud', service.serviceName, 'orderableIpCountries'].join('/')).then(data => (data.data || []).sort(), http => $q.reject(http.data));
+          return this.$http
+            .get(`apiv6/dedicatedCloud/${service.serviceName}/orderableIpCountries`)
+            .then(data => (data.data || []).sort())
+            .catch(http => this.$q.reject(http.data));
         case 'VPS':
-          return $http.get([swsProxypassPath, 'vps', service.serviceName, 'ipCountryAvailable'].join('/')).then(data => (data.data || []).sort(), http => $q.reject(http.data));
+          return this.$http
+            .get(`apiv6/vps/${service.serviceName}/ipCountryAvailable`)
+            .then(data => (data.data || []).sort())
+            .catch(http => this.$q.reject(http.data));
         default:
           return null;
       }
-    };
+    }
 
-    this.getProfessionalUsePrice = function (serviceName) {
-      return $http.get([swsProxypassPath, 'dedicated/server', serviceName].join('/')).then(
-        (data) => {
+    getProfessionalUsePrice(serviceName) {
+      return this.$http
+        .get(`apiv6/dedicated/server/${serviceName}`)
+        .then((data) => {
           if (data.data.professionalUse === false) {
-            return $http.get([swsProxypassPath, 'price/dedicated/server/professionalUse', data.data.commercialRange].join('/')).then(data2 => data2.data.text, http => $q.reject(http.data));
+            return this.$http
+              .get(`apiv6/price/dedicated/server/professionalUse/${data.data.commercialRange}`)
+              .then(data2 => data2.data.text)
+              .catch(http => this.$q.reject(http.data));
           }
           return null;
-        },
-        http => $q.reject(http.data),
-      );
-    };
+        })
+        .catch(http => this.$q.reject(http.data));
+    }
 
-    this.checkIfCanadianServer = function (serviceName) {
-      return $http.get([swsProxypassPath, 'dedicated/server', serviceName].join('/')).then(
-        (data) => {
+    checkIfCanadianServer(serviceName) {
+      return this.$http
+        .get(`apiv6/dedicated/server/${serviceName}`)
+        .then((data) => {
           if (data.data && data.data.datacenter && (/^bhs/i.test(data.data.datacenter) || /^sgp/i.test(data.data.datacenter) || /^syd/i.test(data.data.datacenter))) {
             return true;
           }
           return false;
-        },
-        http => $q.reject(http.data),
-      );
-    };
+        })
+        .catch(http => this.$q.reject(http.data));
+    }
 
-    this.getOrder = function (service, params) {
-      return $http.get([swsProxypassPath, 'order', getRouteFragmentForService(service.serviceType), service.serviceName, 'ip'].join('/'), { params }).then(data => data.data, http => $q.reject(http.data));
-    };
+    getOrder(service, params) {
+      return this.$http
+        .get(`apiv6/order/${DedicatedIPOrder.getRouteFragmentForService(service.serviceType)}/${service.serviceName}/ip`, { params })
+        .then(data => data.data)
+        .catch(http => this.$q.reject(http.data));
+    }
 
-    this.getOrderForDuration = function (service, params, duration) {
-      return $http.get([swsProxypassPath, 'order', getRouteFragmentForService(service.serviceType), service.serviceName, 'ip', duration].join('/'), { params }).then(data => data.data, http => $q.reject(http.data));
-    };
+    getOrderForDuration(service, params, duration) {
+      return this.$http
+        .get(`apiv6/order/${DedicatedIPOrder.getRouteFragmentForService(service.serviceType)}/${service.serviceName}/ip/${duration}`, { params })
+        .then(data => data.data)
+        .catch(http => this.$q.reject(http.data));
+    }
 
-    this.postOrder = function (service, params, duration) {
-      return $http.post([swsProxypassPath, 'order', getRouteFragmentForService(service.serviceType), service.serviceName, 'ip', duration].join('/'), params).then(data => data.data, http => $q.reject(http.data));
-    };
+    postOrder(service, params, duration) {
+      return this.$http
+        .post(`apiv6/order/${DedicatedIPOrder.getRouteFragmentForService(service.serviceType)}/${service.serviceName}/ip/${duration}`, params)
+        .then(data => data.data)
+        .catch(http => this.$q.reject(http.data));
+    }
 
     /*= ================================
     =            MIGRATION            =
     ================================= */
 
-    this.getServiceMigrateableIp = function (params) {
-      return $http
-        .get([swsProxypassPath, 'order/dedicated/server', params.service.serviceName, 'ipMigration'].join('/'), {
+    getServiceMigrateableIp(params) {
+      return this.$http
+        .get(`apiv6/order/dedicated/server/${params.service.serviceName}/ipMigration`, {
           params: {
             ip: params.ip,
             token: params.token,
           },
         })
-        .then(data => data.data, http => $q.reject(http));
-    };
+        .then(data => data.data)
+        .catch(http => this.$q.reject(http));
+    }
 
-    this.getMigrateIpOrder = function (params, duration) {
-      return $http
-        .get([swsProxypassPath, 'order/dedicated/server', params.service.serviceName, 'ipMigration', duration].join('/'), {
+    getMigrateIpOrder(params, duration) {
+      return this.$http
+        .get(`apiv6/order/dedicated/server/${params.service.serviceName}/ipMigration/${duration}`, {
           params: {
             ip: params.ip,
             token: params.token,
           },
         })
-        .then(data => data.data, http => $q.reject(http.data));
-    };
+        .then(data => data.data)
+        .catch(http => this.$q.reject(http.data));
+    }
 
-    this.postMigrateIpOrder = function (params) {
-      return $http
-        .post([swsProxypassPath, 'order/dedicated/server', params.service.serviceName, 'ipMigration', params.duration].join('/'), {
+    postMigrateIpOrder(params) {
+      return this.$http
+        .post(`apiv6/order/dedicated/server/${params.service.serviceName}/ipMigration/${params.duration}`, {
           ip: params.ip,
           token: params.token,
         })
-        .then(data => data.data, http => $q.reject(http.data));
-    };
-  },
-]);
+        .then(data => data.data)
+        .catch(http => this.$q.reject(http.data));
+    }
+  });

@@ -1,16 +1,16 @@
-<p data-translate="dedicatedCloud_certificationActivation_requiredConfiguration_header"></p>
+<p data-translate="dedicatedCloud_servicePackActivation_requiredConfiguration_header"></p>
 
 <ul>
     <li>
         <span
-            data-translate="dedicatedCloud_certificationActivation_requiredConfiguration_criterias_accessPolicy_definition"
+            data-translate="dedicatedCloud_servicePackActivation_requiredConfiguration_criterias_accessPolicy_definition"
             data-translate-values="{
-                accessPolicyValue: ('dedicatedCloud_certificationActivation_requiredConfiguration_criterias_accessPolicy_value_' + $ctrl.currentService.userAccessPolicy | translate)
+                accessPolicyValue: ('dedicatedCloud_servicePackActivation_requiredConfiguration_criterias_accessPolicy_value_' + $ctrl.currentService.userAccessPolicy | translate)
             }"></span>
     </li>
     <li>
         <span
-            data-translate="dedicatedCloud_certificationActivation_requiredConfiguration_criterias_numberOfAllowedIPAndBlocks_definition"
+            data-translate="dedicatedCloud_servicePackActivation_requiredConfiguration_criterias_numberOfAllowedIPAndBlocks_definition"
             data-translate-values="{
                 numberOfAllowedIPsAndBlocks: $ctrl.allowedIPsAndBlocks.length
             }"></span>
@@ -21,11 +21,11 @@
     data-ng-if="$ctrl.configurationIsCorrect"
     data-rows-loader="$ctrl.mapAllowedIPsAndBlocks()">
     <oui-column
-        data-title=":: 'dedicatedCloud_certificationActivation_requiredConfiguration_ipTable_ipColumn' | translate"
+        data-title=":: 'dedicatedCloud_servicePackActivation_requiredConfiguration_ipTable_ipColumn' | translate"
         data-property="network"
         data-type="string"></oui-column>
     <oui-column
-        data-title=":: 'dedicatedCloud_certificationActivation_requiredConfiguration_descriptionTable_descriptionColumn' | translate"
+        data-title=":: 'dedicatedCloud_servicePackActivation_requiredConfiguration_descriptionTable_descriptionColumn' | translate"
         data-property="description"
         data-type="string"></oui-column>
 </oui-datagrid>
@@ -36,18 +36,18 @@
     class="mb-5">
     <span
         data-ng-if="!$ctrl.userAccessPolicyIsCorrect && $ctrl.numberOfAllowedIPsAndBlocksIsAllowed"
-        data-translate="dedicatedCloud_certificationActivation_requiredConfiguration_warningMessage_accessPolicy_error"></span>
+        data-translate="dedicatedCloud_servicePackActivation_requiredConfiguration_warningMessage_accessPolicy_error"></span>
     <span
         data-ng-if="$ctrl.userAccessPolicyIsCorrect && !$ctrl.numberOfAllowedIPsAndBlocksIsAllowed"
-        data-translate="dedicatedCloud_certificationActivation_requiredConfiguration_warningMessage_numberOfAllowedIPAndBlocks_error"></span>
+        data-translate="dedicatedCloud_servicePackActivation_requiredConfiguration_warningMessage_numberOfAllowedIPAndBlocks_error"></span>
     <span
         data-ng-if="!$ctrl.userAccessPolicyIsCorrect && !$ctrl.numberOfAllowedIPsAndBlocksIsAllowed"
-        data-translate="dedicatedCloud_certificationActivation_requiredConfiguration_warningMessage_both_error"></span>
-    <span data-translate="dedicatedCloud_certificationActivation_requiredConfiguration_warningMessage_whatToDoNow_1"></span>
+        data-translate="dedicatedCloud_servicePackActivation_requiredConfiguration_warningMessage_both_error"></span>
+    <span data-translate="dedicatedCloud_servicePackActivation_requiredConfiguration_warningMessage_whatToDoNow_1"></span>
     <a data-ui-sref="app.dedicatedClouds.security">
         <strong data-translate="dedicatedCloud_tab_security"></strong>
     </a>
-    <span data-translate="dedicatedCloud_certificationActivation_requiredConfiguration_warningMessage_whatToDoNow_2"></span>
+    <span data-translate="dedicatedCloud_servicePackActivation_requiredConfiguration_warningMessage_whatToDoNow_2"></span>
 </oui-message>
 
 <oui-button
