@@ -1,3 +1,13 @@
+<a name="10.10.6"></a>
+## [10.10.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.5...v10.10.6) (2019-02-25)
+
+
+### Bug Fixes
+
+* **billing.balance:** call to existing method ([c48fe4e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c48fe4e))
+
+
+
 <a name="10.10.5"></a>
 ## [10.10.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.4...v10.10.5) (2019-02-15)
 
