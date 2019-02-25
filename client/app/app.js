@@ -10,8 +10,8 @@ import ovhContacts from '@ovh-ux/ng-ovh-contacts';
 import config from './config/config';
 import dedicatedCloudActivationStatus from './components/activationStatus';
 import dedicatedCloudDashboardModuleName from './dedicatedCloud/dashboard';
-import dedicatedCloudServicePackModuleName from './dedicatedCloud/servicePackActivation';
-import dedicatedCloudServicePackOptionModuleName from './dedicatedCloud/servicePackActivation/option';
+import dedicatedCloudServicePackModuleName from './dedicatedCloud/servicePack';
+import dedicatedCloudServicePackOptionModuleName from './dedicatedCloud/servicePack/option';
 import dedicatedCloudStepper from './components/stepper';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
 

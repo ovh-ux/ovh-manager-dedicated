@@ -5,6 +5,7 @@ export default {
   bindings: {
     header: '@',
     orderableServicePacks: '<',
+    prices: '<',
     subheader: '@',
   },
   controller,

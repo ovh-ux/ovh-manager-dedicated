@@ -52,6 +52,20 @@ export default class {
       'name',
     );
 
+    this.numberOfActiveOptions = this.allExistingOptions
+      .filter(option => option.status === this.DEDICATED_CLOUD_ACTIVATION_STATUS.enabled).length;
+
+    this.options = {
+      basicOption: {
+        title: this.$translate.instant(this.numberOfActiveOptions === 0
+          ? 'dedicatedCloud_dashboard_options_basicOptions_menu_changeOption_noOption'
+          : 'dedicatedCloud_dashboard_options_basicOptions_menu_changeOption_atLeastOneOption'),
+      },
+      certification: {
+        title: this.$translate.instant('dedicatedCloud_dashboard_options_certifications_menu_changeCertification'),
+      },
+    };
+
     this.currentCertification = _.find(
       currentServicePack.options,
       { type: this.DEDICATED_CLOUD_SERVICE_PACK_OPTION.OPTION_TYPES.certification },

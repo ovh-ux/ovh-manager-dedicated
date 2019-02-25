@@ -6,6 +6,10 @@ export default class {
     this.$state = $state;
   }
 
+  $onInit() {
+    this.a = 'p';
+  }
+
   goToNextStep() {
     if (this.form.$invalid) {
       return null;

@@ -8,11 +8,13 @@ export default class DedicatedCloudServicePack {
   constructor(
     $q,
     $translate,
+    DedicatedCloud,
     dedicatedCloudServicePackOption,
     OvhHttp,
   ) {
     this.$q = $q;
     this.$translate = $translate;
+    this.DedicatedCloud = DedicatedCloud;
     this.dedicatedCloudServicePackOption = dedicatedCloudServicePackOption;
     this.OvhHttp = OvhHttp;
   }
@@ -117,5 +119,24 @@ export default class DedicatedCloudServicePack {
           option => _.isEqual(option.type, OPTION_TYPES.basicOption),
         ),
       ));
+  }
+
+  fetchPrices(ovhSubsidiary, numberOfHosts, orderableServicePacks) {
+    return this.OvhHttp
+      .get('/order/catalog/formatted/privateCloud', {
+        rootPath: 'apiv6',
+        params: { ovhSubsidiary },
+      })
+      .then(catalog => orderableServicePacks.map(product => ({
+        ...product,
+        price: numberOfHosts * catalog.plans[0].details.pricings[`pcc-servicepack-${product.name}`][0].price.value,
+      })));
+  }
+
+  fetchNumberOfHosts(serviceName) {
+    return this.DedicatedCloud
+      .getDatacentersInformations(serviceName)
+      .then(datacenters => datacenters.list.results
+        .reduce((accumulator, { numberOfHosts }) => accumulator + numberOfHosts, 0));
   }
 }
