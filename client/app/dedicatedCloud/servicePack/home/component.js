@@ -5,6 +5,7 @@ export default {
   bindings: {
     $transition$: '<',
     orderableServicePacks: '<',
+    servicePacks: '<',
   },
   controller,
   template,

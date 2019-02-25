@@ -121,22 +121,47 @@ export default class DedicatedCloudServicePack {
       ));
   }
 
-  fetchPrices(ovhSubsidiary, numberOfHosts, orderableServicePacks) {
+  fetchPrices(ovhSubsidiary, hostFamilies, servicePacks) {
     return this.OvhHttp
       .get('/order/catalog/formatted/privateCloud', {
         rootPath: 'apiv6',
         params: { ovhSubsidiary },
       })
-      .then(catalog => orderableServicePacks.map(product => ({
-        ...product,
-        price: numberOfHosts * catalog.plans[0].details.pricings[`pcc-servicepack-${product.name}`][0].price.value,
-      })));
+      .then((catalog) => {
+        const addonsFamily = _.find(catalog.plans[0].addonsFamily, { family: 'host' });
+
+        return servicePacks.map((product) => {
+          let price = null;
+          const sum = _.sum(
+            _.map(Object.entries(hostFamilies),
+              ([familyName, numberOfHosts]) => {
+                const familyData = _.find(
+                  addonsFamily.addons,
+                  addon => addon.plan.planCode === familyName,
+                );
+
+                const localPrice = familyData.plan.details.pricings[`pcc-servicepack-${product.name}`][0].price;
+                price = localPrice;
+
+                return numberOfHosts * localPrice.value;
+              }),
+          );
+
+          return {
+            ...product,
+            price: {
+              ...price,
+              value: sum,
+            },
+          };
+        });
+      });
   }
 
-  fetchNumberOfHosts(serviceName) {
+  fetchHostFamilies(serviceName) {
     return this.DedicatedCloud
       .getDatacentersInformations(serviceName)
       .then(datacenters => datacenters.list.results
-        .reduce((accumulator, { numberOfHosts }) => accumulator + numberOfHosts, 0));
+        .reduce((accumulator, { hostFamilies }) => ({ ...accumulator, ...hostFamilies }), {}));
   }
 }

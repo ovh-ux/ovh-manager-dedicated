@@ -3,10 +3,10 @@ const header = /* @ngInject */ (
   $translate,
 ) => $translate.instant(`dedicatedCloud_servicePackActivation_selection_${$transition$.params().activationType}_header`);
 
-const resolveNumberOfHosts = /* @ngInject */ (
+const resolveHostFamilies = /* @ngInject */ (
   currentService,
   dedicatedCloudServicePack,
-) => dedicatedCloudServicePack.fetchNumberOfHosts(currentService.name);
+) => dedicatedCloudServicePack.fetchHostFamilies(currentService.name);
 
 const resolveOrderableServicePacks = /* @ngInject */ (
   $transition$,
@@ -22,13 +22,13 @@ const resolveOrderableServicePacks = /* @ngInject */ (
         subsidiary: currentUser.ovhSubsidiary,
       });
 
-const prices = /* @ngInject */ (
+const servicePacks = /* @ngInject */ (
+  $transition$,
   currentUser,
   dedicatedCloudServicePack,
-  numberOfHosts,
-  orderableServicePacks,
+  hostFamilies,
 ) => dedicatedCloudServicePack
-  .fetchPrices(currentUser.ovhSubsidiary, numberOfHosts, orderableServicePacks);
+  .fetchPrices(currentUser.ovhSubsidiary, hostFamilies, $transition$.params().servicePacks);
 
 const subheader = /* @ngInject */ (
   $transition$,
@@ -41,9 +41,9 @@ export default {
   },
   resolve: {
     header,
-    numberOfHosts: resolveNumberOfHosts,
+    hostFamilies: resolveHostFamilies,
     orderableServicePacks: resolveOrderableServicePacks,
-    prices,
+    servicePacks,
     subheader,
   },
 };

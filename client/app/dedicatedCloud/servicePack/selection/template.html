@@ -8,13 +8,13 @@
 
     <oui-field>
         <div
-            data-ng-repeat="servicePack in ::$ctrl.prices track by servicePack.name"
+            data-ng-repeat="servicePack in ::$ctrl.orderableServicePacks track by servicePack.name"
             class="row"
             data-ng-if="$index % 2 === 0">
             <div
                 data-ng-repeat="i in [$index, $index + 1]"
                 class="col-xs-6 oui-select-picker oui-select-picker_light mb-5"
-                data-ng-if="$ctrl.prices[i]">
+                data-ng-if="$ctrl.orderableServicePacks[i]">
                 <input
                     class="oui-select-picker__input oui-input"
                     type="radio"
