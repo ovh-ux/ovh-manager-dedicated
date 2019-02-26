@@ -558,7 +558,7 @@ const constants = {
     UNIVERS: 'dedicated',
     URLS: {
       ASIA: {
-        express_order: 'https://www.ovh.co.uk/order/express/#/express/',
+        express_order: 'https://ca.ovh.com/en/order/express/#/express/',
         support: 'http://www.ovh.co.uk/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
@@ -583,6 +583,7 @@ const constants = {
         iplbOrder: 'https://www.ovh.com/world/solutions/load-balancer/',
       },
       AU: {
+        express_order: 'https://ca.ovh.com/en/order/express/#/express/',
         support: 'http://www.ovh.co.uk/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
@@ -607,7 +608,7 @@ const constants = {
         iplbOrder: 'https://www.ovh.com/world/solutions/load-balancer/',
       },
       CA: { // eq to en_CA
-        express_order: 'https://www.ovh.com/ca/en/order/express/#/express/',
+        express_order: 'https://ca.ovh.com/en/order/express/#/express/',
         support: 'http://www.ovh.co.uk/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
@@ -632,7 +633,7 @@ const constants = {
         iplbOrder: 'https://www.ovh.com/ca/en/solutions/load-balancer/',
       },
       QC: { // eq to fr_CA
-        express_order: 'https://www.ovh.com/ca/fr/order/express/#/express/',
+        express_order: 'https://ca.ovh.com/fr/order/express/#/express/',
         support: 'https://www.ovh.com/fr/support/',
         support_contact: 'https://www.ovh.com/ca/fr/support/',
         guides: {
@@ -657,7 +658,7 @@ const constants = {
         iplbOrder: 'https://www.ovh.com/ca/fr/solutions/load-balancer/',
       },
       SG: {
-        express_order: 'https://www.ovh.co.uk/order/express/#/express/',
+        express_order: 'https://ca.ovh.com/en/order/express/#/express/',
         support: 'http://www.ovh.co.uk/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
@@ -682,7 +683,7 @@ const constants = {
         iplbOrder: 'https://www.ovh.com/world/solutions/load-balancer/',
       },
       WE: {
-        express_order: 'https://www.ovh.com/us/order/express/#/express/',
+        express_order: 'https://ca.ovh.com/en/order/express/#/express/',
         support: 'http://www.ovh.co.uk/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
@@ -707,7 +708,7 @@ const constants = {
         iplbOrder: 'https://www.ovh.com/world/solutions/load-balancer/',
       },
       WS: { // eq to es_US
-        express_order: 'https://us.ovhcloud.com/order/express/#/express/',
+        express_order: 'https://ca.ovh.com/en/order/express/#/express/',
         support: 'https://www.ovh.com/fr/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
