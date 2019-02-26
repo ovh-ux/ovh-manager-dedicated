@@ -48,7 +48,7 @@
                                     name="account"
                                     class="form-control"
                                     data-ng-model="retrieve.account"
-                                    data-ng-options="account.ownerName for account in bankAccounts"
+                                    data-ng-options="account as (account.label + (account.description ? '(' + account.description + ')' : '')) for account in bankAccounts"
                                     required>
                             </select>
                         </div>
@@ -79,7 +79,7 @@
                     <strong class="text-danger"
                             data-ng-bind-html="retrieveOrder.prices | ducPrice:user.ovhSubsidiary">
                     </strong>
-                    <span data-translate="ovhAccount_retrieve_resume_2"></span>( <em data-ng-bind="retrieve.account.iban"></em> ) ?
+                    <span data-translate="ovhAccount_retrieve_resume_2"></span>( <em data-ng-bind="retrieve.account.label"></em> ) ?
                     <p data-translate="ovhAccount_retrieve_tips"></p>
                 </div>
             </div>
