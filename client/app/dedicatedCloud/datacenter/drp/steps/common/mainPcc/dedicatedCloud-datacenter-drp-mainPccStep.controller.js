@@ -22,6 +22,9 @@ export default class {
     this.isLoading = true;
     this.drpInformations = this.$stateParams.drpInformations;
 
+    this.OvhApiDedicatedCloud.Ip().v6().resetQueryCache();
+    this.OvhApiDedicatedCloud.Ip().v6().resetCache();
+
     return this.$q.all({
       ipAddressDetails:
         this.DedicatedCloudDrp.getPccIpAddressesDetails(this.$stateParams.productId),

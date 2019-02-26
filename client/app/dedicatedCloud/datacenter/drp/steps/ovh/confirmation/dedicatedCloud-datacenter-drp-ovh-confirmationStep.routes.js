@@ -1,4 +1,4 @@
-angular.module('App').config(($stateProvider) => {
+angular.module('App').config(/* @ngInject */ ($stateProvider) => {
   $stateProvider.state('app.dedicatedClouds.datacenter.drp.ovh.confirmationStep', {
     views: {
       'stepView@app.dedicatedClouds.datacenter.drp': {

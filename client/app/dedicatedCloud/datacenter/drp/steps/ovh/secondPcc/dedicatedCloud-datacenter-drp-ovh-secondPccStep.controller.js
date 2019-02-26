@@ -2,7 +2,7 @@ export default class {
   /* @ngInject */
   constructor(
     $q, $state, $stateParams, $translate, $uibModal,
-    Alerter, DedicatedCloud, DedicatedCloudDrp,
+    Alerter, DedicatedCloud, DedicatedCloudDrp, OvhApiDedicatedCloud,
     DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP,
     DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS,
   ) {
@@ -14,6 +14,7 @@ export default class {
     this.Alerter = Alerter;
     this.DedicatedCloud = DedicatedCloud;
     this.DedicatedCloudDrp = DedicatedCloudDrp;
+    this.OvhApiDedicatedCloud = OvhApiDedicatedCloud;
     this.MAC_ADDRESS_REG_EXP = DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP;
     this.UNAVAILABLE_IP_STATUSES = DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS;
   }
@@ -36,6 +37,9 @@ export default class {
     this.drpInformations.secondaryPcc = secondaryPcc;
     this.drpInformations.secondaryDatacenter = null;
     this.selectedSecondaryIpAddress = null;
+
+    this.OvhApiDedicatedCloud.Ip().v6().resetQueryCache();
+    this.OvhApiDedicatedCloud.Ip().v6().resetCache();
 
     return this.$q.all({
       datacenters: this.DedicatedCloud.getDatacenters(secondaryPcc.serviceName),
