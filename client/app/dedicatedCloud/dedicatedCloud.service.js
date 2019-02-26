@@ -66,6 +66,17 @@ angular
             });
       }
 
+      getDescription(serviceName) {
+        return this.OvhHttp
+          .get(
+            '/dedicatedCloud/{serviceName}',
+            {
+              rootPath: 'apiv6',
+              urlParams: { serviceName },
+            },
+          );
+      }
+
       updateDescription(
         serviceName,
         description,
