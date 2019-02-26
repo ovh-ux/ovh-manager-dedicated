@@ -75,7 +75,7 @@ angular.module('Billing.controllers').controller('BillingHistoryBalanceCtrl', cl
       if (!this.depositRequests.length) {
         return this.$q.all({
           balance: this.getBalance(),
-          paymentMethods: this.ovhPaymentMethod.getAvailablePaymentMethods(),
+          paymentMethods: this.ovhPaymentMethod.getAllPaymentMethods(),
         }).then((response) => {
           this.balance = response.balance;
           this.paymentMethods = _.filter(response.paymentMethods, ({ paymentType, status }) => ['INTERNAL_TRUSTED_ACCOUNT', 'ENTERPRISE'].indexOf(paymentType) === -1 && ['CANCELED_BY_CUSTOMER', 'CANCELING'].indexOf(status) === -1);

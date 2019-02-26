@@ -1,3 +1,48 @@
+<a name="10.10.6"></a>
+## [10.10.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.5...v10.10.6) (2019-02-25)
+
+
+### Bug Fixes
+
+* **billing.balance:** call to existing method ([c48fe4e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c48fe4e))
+
+
+
+<a name="10.10.5"></a>
+## [10.10.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.4...v10.10.5) (2019-02-15)
+
+
+### Bug Fixes
+
+* **dedicatedcloud:** update spla plancode ([2c1ff1a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2c1ff1a))
+
+
+
+<a name="10.10.4"></a>
+## [10.10.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.3...v10.10.4) (2019-02-13)
+
+
+### Bug Fixes
+
+* **ip.mitigation.statistics:** display correct units and details ([#968](https://github.com/ovh-ux/ovh-manager-dedicated/issues/968)) ([3ef5e90](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3ef5e90))
+
+
+
+<a name="10.10.3"></a>
+## [10.10.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.2...v10.10.3) (2019-02-12)
+
+
+### Bug Fixes
+
+* **dedicated.ftp-backup:** add limit to ip blocks ([#959](https://github.com/ovh-ux/ovh-manager-dedicated/issues/959)) ([431669b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/431669b))
+* **deps:** upgrade exchange module ([1bfa975](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1bfa975))
+* **deps:** upgrade exchange module ([da672a6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/da672a6))
+* **i18n:** extract translations ([2429e17](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2429e17)), closes [#960](https://github.com/ovh-ux/ovh-manager-dedicated/issues/960)
+* **i18n:** retrieve translations ([7a16725](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7a16725))
+* **i18n:** submit translations ([ea6a5c0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ea6a5c0))
+
+
+
 <a name="10.10.2"></a>
 ## [10.10.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.1...v10.10.2) (2019-02-04)
 
