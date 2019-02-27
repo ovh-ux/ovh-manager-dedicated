@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 import { PRODUCT_TYPES } from './ip-ip-agoraOrder.constant';
 
 angular
@@ -37,13 +39,13 @@ angular
           this.fetchProducts(PRODUCT_TYPES.dedicatedServer.apiTypeName)
             .then(this.handleErrorOrServices),
         ])
-        .then(([pccProducts, serverProducts]) => [
-          ...pccProducts.map(product => ({
-            ...product,
+        .then(([privateClouds, dedicatedServers]) => [
+          ...privateClouds.map(privateCloud => ({
+            ...privateCloud,
             type: PRODUCT_TYPES.privateCloud.typeName,
           })),
-          ...serverProducts.map(product => ({
-            ...product,
+          ...dedicatedServers.map(dedicatedServer => ({
+            ...dedicatedServer,
             type: PRODUCT_TYPES.dedicatedServer.typeName,
           })),
         ]);

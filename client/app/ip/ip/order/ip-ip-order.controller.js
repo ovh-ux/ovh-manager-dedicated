@@ -1,308 +1,376 @@
-angular.module('Module.ip.controllers').controller('IpOrderCtrl', ($scope, $rootScope, $q, $translate, Ip, IpOrder, IpOrganisation, User, Alerter, constants) => {
-  const alertId = 'ip_order_alert';
+angular
+  .module('Module.ip.controllers')
+  .controller('IpOrderCtrl', class {
+    constructor(
+      $q,
+      $rootScope,
+      $scope,
+      $translate,
+      $window,
+      Alerter,
+      constants,
+      Ip,
+      IpOrder,
+      IpOrganisation,
+      User,
+    ) {
+      this.$q = $q;
+      this.$rootScope = $rootScope;
+      this.$scope = $scope;
+      this.$translate = $translate;
+      this.$window = $window;
+      this.Alerter = Alerter;
+      this.constants = constants;
+      this.Ip = Ip;
+      this.IpOrder = IpOrder;
+      this.IpOrganisation = IpOrganisation;
+      this.User = User;
+    }
 
-  $scope.model = {};
-  $scope.user = {};
-  $scope.agree = {
-    value: false,
-  };
+    $onInit() {
+      this.alertId = 'ip_order_alert';
 
-  $scope.loading = {};
+      this.$scope.model = {};
+      this.$scope.user = {};
+      this.$scope.agree = {
+        value: false,
+      };
 
-  /*= =============================
-=            STEP 1            =
-============================== */
+      this.$scope.loading = {};
 
-  $scope.getServices = function () {
-    $scope.loading.services = true;
-    $q.all({
-      servicesList: IpOrder.getServicesByType(),
-      user: User.getUser(),
-    }).then((results) => {
-      $scope.servicesList = results.servicesList;
-      $scope.user = results.user;
-    }).catch((err) => {
-      Alerter.alertFromSWS($translate.instant('ip_order_loading_error'), err);
-    }).finally(() => {
-      $scope.loading.services = false;
-    });
-  };
+      this.$scope.getServices = () => this.getServices();
+      this.$scope.serviceCanBeOrdered = () => this.serviceCanBeOrdered();
+      this.$scope.loadOrderForm = () => this.loadOrderForm();
+      this.$scope.isMonthlyVps = () => this.isMonthlyVps();
+      this.$scope.orderFormValid = () => this.orderFormValid();
+      this.$scope.checkDedicatedBlockSize = () => this.checkDedicatedBlockSize();
+      this.$scope.orderOrganisation = () => this.orderOrganisation();
+      this.$scope.loadPrices = durations => this.loadPrices(durations);
+      this.$scope.getDurations = () => this.getDurations();
+      this.$scope.loadContracts = () => this.loadContracts();
+      this.$scope.backToContracts = () => this.backToContracts();
+      this.$scope.getResumePrice = price => this.getResumePrice(price);
+      this.$scope.confirmOrder = () => this.confirmOrder();
+    }
 
-  $scope.serviceCanBeOrdered = function () {
-    $scope.loading.serviceCanBeOrdered = true;
-    $scope.orderableIp = null;
-    $scope.orderableIpError = null;
+    /*= =============================
+    =            STEP 1            =
+    ============================== */
 
-    // First, check if option can be ordered
-    IpOrder.checkIfAllowed($scope.model.service, 'ip')
-      .then((serviceAllowed) => {
-        if (!serviceAllowed) {
-          $scope.orderableIpError = 'OPTION_NOT_ALLOWED';
-          $scope.loading.serviceCanBeOrdered = false;
-          return null;
-        }
-        return IpOrder.getServiceOrderableIp($scope.model.service);
-      })
-      .then((infos) => {
-        if (!infos) {
-          $scope.orderableIpError = 'OUT';
-          return;
-        }
+    getServices() {
+      this.$scope.loading.services = true;
 
-        if ($scope.model.service.serviceType === 'DEDICATED' && !((infos.ipv4 && infos.ipv4.length) || (infos.ipv6 && infos.ipv6.length))) {
-          $scope.orderableIpError = 'OPTION_NOT_ALLOWED';
-          return;
-        }
+      return this.$q
+        .all({
+          servicesList: this.IpOrder.getServicesByType(),
+          user: this.User.getUser(),
+        })
+        .then((results) => {
+          this.$scope.servicesList = results.servicesList;
+          this.$scope.user = results.user;
+        })
+        .catch((err) => {
+          this.Alerter.alertFromSWS(this.$translate.instant('ip_order_loading_error'), err);
+        })
+        .finally(() => {
+          this.$scope.loading.services = false;
+        });
+    }
 
-        $scope.orderableIp = infos;
-      })
-      .catch((data) => {
-        if (data.status === 460) {
-          $scope.orderableIpError = 'EXPIRED';
-        } else {
-          $scope.loading.serviceCanBeOrdered = false;
-          Alerter.alertFromSWS($translate.instant('ip_order_loading_error'), data.data);
-        }
-      })
-      .finally(() => {
-        $scope.loading.serviceCanBeOrdered = false;
-      });
-  };
+    serviceCanBeOrdered() {
+      this.$scope.loading.serviceCanBeOrdered = true;
+      this.$scope.orderableIp = null;
+      this.$scope.orderableIpError = null;
 
-  /* ==============================
+      // First, check if option can be ordered
+      return this.IpOrder
+        .checkIfAllowed(this.$scope.model.service, 'ip')
+        .then((serviceAllowed) => {
+          if (!serviceAllowed) {
+            this.$scope.orderableIpError = 'OPTION_NOT_ALLOWED';
+            this.$scope.loading.serviceCanBeOrdered = false;
+            return null;
+          }
+
+          return this.IpOrder.getServiceOrderableIp(this.$scope.model.service);
+        })
+        .then((infos) => {
+          if (!infos) {
+            this.$scope.orderableIpError = 'OUT';
+            return;
+          }
+
+          const hasIPv4 = _.isArray(infos.ipv4) && !_.isEmpty(infos.ipv4);
+          const hasIPv6 = _.isArray(infos.ipv6) && !_.isEmpty(infos.ipv6);
+
+          if (this.$scope.model.service.serviceType === 'DEDICATED' && !(hasIPv4 || hasIPv6)) {
+            this.$scope.orderableIpError = 'OPTION_NOT_ALLOWED';
+            return;
+          }
+
+          this.$scope.orderableIp = infos;
+        })
+        .catch((data) => {
+          if (data.status === 460) {
+            this.$scope.orderableIpError = 'EXPIRED';
+          } else {
+            this.$scope.loading.serviceCanBeOrdered = false;
+            this.Alerter.alertFromSWS(this.$translate.instant('ip_order_loading_error'), data.data);
+          }
+        })
+        .finally(() => {
+          this.$scope.loading.serviceCanBeOrdered = false;
+        });
+    }
+
+    /* ==============================
     =            STEP 2            =
     ============================== */
 
-  $scope.loadOrderForm = function () {
-    const queue = [];
-    $scope.loading.form = true;
+    loadOrderForm() {
+      const queue = [];
+      this.$scope.loading.form = true;
 
-    // Reset model params!
-    $scope.model.params = {};
+      // Reset model params!
+      this.$scope.model.params = {};
 
-    if ($scope.model.service.serviceType === 'DEDICATED') {
-      $scope.model.params.type = 'failover';
-    }
-
-    queue.push(
-      IpOrder.getAvailableCountries($scope.model.service).then((countries) => {
-        $scope.orderableIp.countries = countries;
-        $scope.isCanadianService = _.findIndex(countries, 'CA') !== -1 || countries.indexOf('us') !== -1;
-        if (!$scope.isCanadianService) {
-          $scope.ipShortageWarnUrl = $translate.use() === 'fr_FR' ? constants.urls.FR.ipShortageWarnUrl : constants.urls.GB.ipShortageWarnUrl;
-        }
-      }),
-    );
-
-    if ($scope.model.service.serviceType === 'PCC') {
-      queue.push(
-        Ip.getOrderModels().then((models) => {
-          $scope.orderableIp.size = models['dedicatedCloud.OrderableIpBlockRangeEnum'].enum;
-        }),
-      );
-    } else if ($scope.model.service.serviceType === 'DEDICATED') {
-      // Check if it is a BHS server
-      queue.push(
-        IpOrder.checkIfCanadianServer($scope.model.service.serviceName).then((isCanadianServer) => {
-          $scope.orderableIp.isCanadianServer = isCanadianServer;
-        }),
-      );
+      if (this.$scope.model.service.serviceType === 'DEDICATED') {
+        this.$scope.model.params.type = 'failover';
+      }
 
       queue.push(
-        IpOrganisation.getIpOrganisation().then((organisations) => {
-          $scope.orderableIp.ipOrganisation = organisations;
-        }),
-      );
-    }
-
-    $q.all(queue).then(
-      () => {
-        $scope.loading.form = false;
-      },
-      (data) => {
-        Alerter.alertFromSWS($translate.instant('ip_order_loading_error'), data.data ? data.data : data);
-        $scope.loading.form = false;
-      },
-    );
-  };
-
-  $scope.isMonthlyVps = function () {
-    return $scope.model.service.serviceType === 'VPS' ? $scope.orderableIp && $scope.orderableIp.vpsInfos.model && $scope.orderableIp.vpsInfos.model.version !== '2015v1' : false;
-  };
-
-  $scope.orderFormValid = function () {
-    if (!$scope.orderableIp
-      || !$scope.model.service
-      || !$scope.model.service.serviceType
-      || !$scope.model.params) {
-      return false;
-    }
-    switch ($scope.model.service.serviceType) {
-      case 'DEDICATED':
-        if (!$scope.model.params.blockSize
-          || ($scope.orderableIp.isCanadianServer
-            ? $scope.model.params.blockSize === 1 && !$scope.model.params.country
-            : !$scope.model.params.country)) {
-          return false;
-        } if ($scope.model.params.blockSize > 1 && !$scope.orderableIp.isCanadianServer) {
-          // No orga in CA
-          return !!$scope.model.params.organisationId;
-        }
-        return true;
-      case 'PCC':
-        return (
-          $scope.model.params.size
-            && $scope.model.params.country
-            && $scope.model.params.networkName
-            && /^[a-zA-Z]+\w+$/.test($scope.model.params.networkName)
-            && $scope.model.params.estimatedClientsNumber
-            && $scope.model.params.description
-            && $scope.model.params.usage
-        );
-      case 'VPS':
-        return $scope.model.params.country && $scope.model.params.number;
-      default:
-        return null;
-    }
-  };
-
-  $scope.checkDedicatedBlockSize = function () {
-    if ($scope.model.params && $scope.model.params.blockSize === 1) {
-      delete $scope.model.params.organisationId;
-    }
-  };
-
-  $scope.orderOrganisation = function () {
-    $rootScope.$broadcast('ips.display', 'organisation');
-    $scope.resetAction();
-  };
-
-  /*= =============================
-=            STEP 3            =
-============================== */
-
-  function loadPrices(durations) {
-    const queue = [];
-    $scope.loading.prices = true;
-
-    angular.forEach(durations, (duration) => {
-      queue.push(
-        IpOrder
-          .getOrderForDuration($scope.model.service, $scope.model.params, duration)
-          .then((details) => {
-            $scope.durations.details[duration] = details;
+        this.IpOrder
+          .getAvailableCountries(this.$scope.model.service)
+          .then((countries) => {
+            this.$scope.orderableIp.countries = countries;
           }),
       );
-    });
 
-    $q.all(queue).then(() => {
-      if (durations && durations.length === 1) {
-        $scope.model.duration = _.first(durations);
-      }
-      $scope.loading.prices = false;
-    });
-  }
-
-
-  $scope.getDurations = function () {
-    const queue = [];
-    let needProfessionalUse = false;
-    Alerter.resetMessage(alertId);
-
-    $scope.durations = {
-      available: null,
-      details: {},
-    };
-    $scope.model.duration = null;
-    $scope.orderableIp.professionalUsePrice = null;
-    $scope.loading.durations = true;
-
-    if ($scope.orderableIp.isCanadianServer && $scope.model.params.blockSize > 1) {
-      $scope.model.params.country = _.first($scope.orderableIp.countries) || 'ca'; // Forced :'( ...
-    }
-
-    queue.push(
-      IpOrder.getOrder($scope.model.service, $scope.model.params).then((durations) => {
-        $scope.durations.available = durations;
-        loadPrices(durations);
-      }),
-    );
-
-    if ($scope.model.service.serviceType === 'DEDICATED') {
-      angular.forEach($scope.orderableIp.ipv4, (ip) => {
-        if (ip.blockSizes && ip.blockSizes.length && ~ip.blockSizes.indexOf($scope.model.params.blockSize) && ip.optionRequired === 'professionalUse') {
-          needProfessionalUse = true;
-        }
-      });
-      if (needProfessionalUse) {
+      if (this.$scope.model.service.serviceType === 'PCC') {
         queue.push(
-          IpOrder.getProfessionalUsePrice($scope.model.service.serviceName).then((price) => {
-            $scope.orderableIp.professionalUsePrice = price;
-          }),
+          this.Ip
+            .getOrderModels()
+            .then((models) => {
+              this.$scope.orderableIp.size = models['dedicatedCloud.OrderableIpBlockRangeEnum'].enum;
+            }),
         );
+      } else if (this.$scope.model.service.serviceType === 'DEDICATED') {
+        // Check if it is a BHS server
+        queue.push(
+          this.IpOrder
+            .checkIfCanadianServer(this.$scope.model.service.serviceName)
+            .then((isCanadianServer) => {
+              this.$scope.orderableIp.isCanadianServer = isCanadianServer;
+            }),
+        );
+
+        queue.push(
+          this.IpOrganisation
+            .getIpOrganisation()
+            .then((organisations) => {
+              this.$scope.orderableIp.ipOrganisation = organisations;
+            }),
+        );
+      }
+
+      return this.$q
+        .all(queue)
+        .then(() => {
+          this.$scope.loading.form = false;
+        })
+        .catch((data) => {
+          this.Alerter.alertFromSWS(this.$translate.instant('ip_order_loading_error'), _.get(data, 'data', data));
+          this.$scope.loading.form = false;
+        });
+    }
+
+    isMonthlyVps() {
+      return this.$scope.model.service.serviceType === 'VPS'
+        ? this.$scope.orderableIp && this.$scope.orderableIp.vpsInfos.model && this.$scope.orderableIp.vpsInfos.model.version !== '2015v1'
+        : false;
+    }
+
+    orderFormValid() {
+      if (!this.$scope.orderableIp
+  || !this.$scope.model.service
+  || !this.$scope.model.service.serviceType
+  || !this.$scope.model.params) {
+        return false;
+      }
+
+      switch (this.$scope.model.service.serviceType) {
+        case 'DEDICATED':
+          if (!this.$scope.model.params.blockSize
+      || (this.$scope.orderableIp.isCanadianServer
+        ? this.$scope.model.params.blockSize === 1 && !this.$scope.model.params.country
+        : !this.$scope.model.params.country)) {
+            return false;
+          }
+
+          if (this.$scope.model.params.blockSize > 1 && !this.$scope.orderableIp.isCanadianServer) {
+            // No orga in CA
+            return !!this.$scope.model.params.organisationId;
+          }
+
+          return true;
+        case 'PCC':
+          return (
+            this.$scope.model.params.size
+        && this.$scope.model.params.country
+        && this.$scope.model.params.networkName
+        && /^[a-zA-Z]+\w+$/.test(this.$scope.model.params.networkName)
+        && this.$scope.model.params.estimatedClientsNumber
+        && this.$scope.model.params.description
+        && this.$scope.model.params.usage
+          );
+        case 'VPS':
+          return this.$scope.model.params.country && this.$scope.model.params.number;
+        default:
+          return null;
       }
     }
 
-    $q.all(queue).then(
-      () => {
-        $scope.loading.durations = false;
-      },
-      (err) => {
-        Alerter.error($translate.instant('ip_order_loading_error2', {
-          t0: err.data ? err.data.message : err.message,
-        }), alertId);
-
-        $scope.loading.durations = false;
-      },
-    );
-  };
-
-  /*= =============================
-=            STEP 4            =
-============================== */
-
-  $scope.loadContracts = function () {
-    $scope.agree.value = false;
-    if (!$scope.durations.details[$scope.model.duration].contracts
-      || !$scope.durations.details[$scope.model.duration].contracts.length) {
-      $rootScope.$broadcast('wizard-goToStep', 6);
+    checkDedicatedBlockSize() {
+      if (this.$scope.model.params && this.$scope.model.params.blockSize === 1) {
+        delete this.$scope.model.params.organisationId;
+      }
     }
-  };
 
-  $scope.backToContracts = function () {
-    if (!$scope.durations.details[$scope.model.duration].contracts
-      || !$scope.durations.details[$scope.model.duration].contracts.length) {
-      $rootScope.$broadcast('wizard-goToStep', 3);
+    orderOrganisation() {
+      this.$rootScope.$broadcast('ips.display', 'organisation');
+      this.$scope.resetAction();
     }
-  };
 
-  /*= =============================
-=            STEP 5            =
-============================== */
+    /*= =============================
+    =            STEP 3            =
+    ============================== */
 
-  $scope.getResumePrice = function (price) {
-    return price.value === 0
-      ? $translate.instant('price_free')
-      : $translate.instant('price_ht_label', { t0: price.text });
-  };
+    loadPrices(durations) {
+      this.$scope.loading.prices = true;
 
-  $scope.confirmOrder = function () {
-    $scope.loading.validation = true;
-    IpOrder.postOrder($scope.model.service, $scope.model.params, $scope.model.duration)
-      .then(
-        (order) => {
-          Alerter.alertFromSWS($translate.instant('ip_order_finish_success', {
+      const queue = durations.map(duration => this.IpOrder
+        .getOrderForDuration(this.$scope.model.service, this.$scope.model.params, duration)
+        .then((details) => {
+          this.$scope.durations.details[duration] = details;
+        }));
+
+      return this.$q
+        .all(queue)
+        .then(() => {
+          if (durations && durations.length === 1) {
+            this.$scope.model.duration = _.first(durations);
+          }
+
+          this.$scope.loading.prices = false;
+        });
+    }
+
+    getDurations() {
+      const queue = [];
+      let needProfessionalUse = false;
+      this.Alerter.resetMessage(this.alertId);
+
+      this.$scope.durations = {
+        available: null,
+        details: {},
+      };
+
+      this.$scope.model.duration = null;
+      this.$scope.orderableIp.professionalUsePrice = null;
+      this.$scope.loading.durations = true;
+
+      if (this.$scope.orderableIp.isCanadianServer && this.$scope.model.params.blockSize > 1) {
+        this.$scope.model.params.country = _.first(this.$scope.orderableIp.countries) || 'ca'; // Forced :'( ...
+      }
+
+      queue.push(
+        this.IpOrder
+          .getOrder(this.$scope.model.service, this.$scope.model.params)
+          .then((durations) => {
+            this.$scope.durations.available = durations;
+            this.loadPrices(durations);
+          }),
+      );
+
+      if (this.$scope.model.service.serviceType === 'DEDICATED') {
+        angular.forEach(this.$scope.orderableIp.ipv4, (ip) => {
+          if (ip.blockSizes && ip.blockSizes.length && ~ip.blockSizes.indexOf(this.$scope.model.params.blockSize) && ip.optionRequired === 'professionalUse') {
+            needProfessionalUse = true;
+          }
+        });
+
+        if (needProfessionalUse) {
+          queue.push(
+            this.IpOrder
+              .getProfessionalUsePrice(this.$scope.model.service.serviceName)
+              .then((price) => {
+                this.$scope.orderableIp.professionalUsePrice = price;
+              }),
+          );
+        }
+      }
+
+      return this.$q
+        .all(queue)
+        .then(() => {
+          this.$scope.loading.durations = false;
+        })
+        .catch((err) => {
+          this.Alerter.error(this.$translate.instant('ip_order_loading_error2', {
+            t0: err.data ? err.data.message : err.message,
+          }), this.alertId);
+
+          this.$scope.loading.durations = false;
+        });
+    }
+
+    /*= =============================
+    =            STEP 4            =
+    ============================== */
+
+    loadContracts() {
+      this.$scope.agree.value = false;
+      if (!this.$scope.durations.details[this.$scope.model.duration].contracts
+  || !this.$scope.durations.details[this.$scope.model.duration].contracts.length) {
+        this.$rootScope.$broadcast('wizard-goToStep', 6);
+      }
+    }
+
+    backToContracts() {
+      if (!this.$scope.durations.details[this.$scope.model.duration].contracts
+  || !this.$scope.durations.details[this.$scope.model.duration].contracts.length) {
+        this.s$rootScope.$broadcast('wizard-goToStep', 3);
+      }
+    }
+
+    /*= =============================
+    =            STEP 5            =
+    ============================== */
+
+    getResumePrice(price) {
+      return price.value === 0
+        ? this.$translate.instant('price_free')
+        : this.$translate.instant('price_ht_label', { t0: price.text });
+    }
+
+    confirmOrder() {
+      this.$scope.loading.validation = true;
+
+      return this.IpOrder
+        .postOrder(this.$scope.model.service, this.$scope.model.params, this.$scope.model.duration)
+        .then((order) => {
+          this.Alerter.alertFromSWS(this.$translate.instant('ip_order_finish_success', {
             t0: order.url,
             t1: order.orderId,
           }), { idTask: order.orderId, state: 'OK' });
-          window.open(order.url, '_blank');
-        },
-        (data) => {
-          Alerter.alertFromSWS($translate.instant('ip_order_finish_error'), data.data);
-        },
-      )
-      .finally(() => {
-        $scope.resetAction();
-      });
-  };
-});
+
+          this.$window.open(order.url, '_blank');
+        })
+        .catch((data) => {
+          this.Alerter.alertFromSWS(this.$translate.instant('ip_order_finish_error'), data.data);
+        })
+        .finally(() => {
+          this.$scope.resetAction();
+        });
+    }
+  });

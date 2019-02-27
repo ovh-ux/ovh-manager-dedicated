@@ -4,7 +4,7 @@ export const PRODUCT_TYPES = {
     typeName: 'DEDICATED',
   },
   privateCloud: {
-    apiTypeName: 'PRIVATE_CLOUD',
+    apiTypeName: 'DEDICATED_CLOUD',
     typeName: 'PRIVATE_CLOUD',
   },
 };

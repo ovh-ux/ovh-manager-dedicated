@@ -82,7 +82,7 @@ angular
       switch (service.serviceType) {
         case 'DEDICATED':
           return this.$http
-            .get(`apiv6/dedicated/server'/${service.serviceName}/orderable/ip`)
+            .get(`apiv6/dedicated/server/${service.serviceName}/orderable/ip`)
             .then((response) => {
               const { data } = response;
               data.ipv4 = _.filter(data.ipv4, { type: 'failover' });
