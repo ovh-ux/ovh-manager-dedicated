@@ -1,3 +1,23 @@
+<a name="10.11.0"></a>
+# [10.11.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.6...v10.11.0) (2019-02-27)
+
+
+### Bug Fixes
+
+* **billing.payment:** add explain text for credit card add ([#951](https://github.com/ovh-ux/ovh-manager-dedicated/issues/951)) ([c106b67](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c106b67))
+* **deps:** upgrade ng-ovh-apiv7 to v2.0.0 ([79bd5f4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/79bd5f4))
+* **i18n:** retrieve ([b556ad1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b556ad1))
+* **i18n:** retrieve translations ([69e9d1f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/69e9d1f))
+* **i18n:** retrive translations ([77ae1f1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/77ae1f1))
+* **i18n:** submit translations ([e796345](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e796345))
+
+
+### Features
+
+* **dedicated.server:** disable header tabs if service is expired ([#978](https://github.com/ovh-ux/ovh-manager-dedicated/issues/978)) ([ef13c11](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ef13c11))
+
+
+
 <a name="10.10.6"></a>
 ## [10.10.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.5...v10.10.6) (2019-02-25)
 
