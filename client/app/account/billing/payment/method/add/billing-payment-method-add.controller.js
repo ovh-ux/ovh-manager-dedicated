@@ -1,5 +1,7 @@
 import _ from 'lodash';
 
+import { CREDITCARD_FOOTPRINT_AMOUNT } from './billing-payment-method-add.constants';
+
 export default class BillingPaymentMethodAddCtrl {
   /* @ngInject */
 
@@ -90,6 +92,8 @@ export default class BillingPaymentMethodAddCtrl {
       message: null,
       type: null,
     };
+
+    this.bankAccountFootprintAmount = CREDITCARD_FOOTPRINT_AMOUNT;
   }
 
   /* ----------  Helpers  ---------- */

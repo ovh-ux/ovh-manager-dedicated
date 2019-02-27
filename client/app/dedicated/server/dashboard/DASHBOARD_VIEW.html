@@ -25,7 +25,7 @@
                                 <oui-action-menu-item
                                     data-text="{{:: 'server_configuration_displayname_edit_button' | translate }}"
                                     aria-label="{{:: 'server_configuration_displayname_edit_button' | translate }}"
-                                    data-ui-sref="app.dedicated.server.edit-display-name"></oui-action-menu-item>
+                                    data-ui-sref="app.dedicated.server.dashboard.edit-display-name"></oui-action-menu-item>
                             </oui-action-menu>
                         </div>
 
@@ -189,12 +189,12 @@
                                 <oui-action-menu-item
                                     data-text="{{:: 'server_configuration_monitoring_deactivate_title_button' | translate}}"
                                     aria-label="{{:: 'server_configuration_monitoring_deactivate_title_button' | translate}}"
-                                    data-ui-sref="app.dedicated.server.monitoringUpdate"
+                                    data-ui-sref="app.dedicated.server.dashboard.monitoringUpdate"
                                     data-ng-if="server.monitored"></oui-action-menu-item>
                                 <oui-action-menu-item
                                     data-text="{{:: 'server_configuration_monitoring_activate_title_button' | translate}}"
                                     aria-label="{{:: 'server_configuration_monitoring_activate_title_button' | translate}}"
-                                    data-ui-sref="app.dedicated.server.monitoringUpdate"
+                                    data-ui-sref="app.dedicated.server.dashboard.monitoringUpdate"
                                     data-ng-if="!server.monitored"></oui-action-menu-item>
                             </oui-action-menu>
                         </div>
@@ -290,7 +290,7 @@
                                         <li class="oui-list__item">
                                             <a
                                                 class="oui-list__link oui-button_link"
-                                                data-ui-sref="app.dedicated.server.ovh-tasks"
+                                                data-ui-sref="app.dedicated.server.dashboard.ovh-tasks"
                                                 data-translate="dedicated_server_dashboard_ovhTasks_description"></a>
                                         </li>
                                     </ul>
