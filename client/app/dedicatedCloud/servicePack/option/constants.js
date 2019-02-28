@@ -4,11 +4,11 @@ export const SERVICE_NAME = 'dedicatedCloudServicePackOption';
 
 export const OPTION_TYPES = {
   basicOption: {
-    id: 'basicOption',
+    name: 'basicOption',
     servicePackCanHaveMoreThanOne: true,
   },
   certification: {
-    id: 'certification',
+    name: 'certification',
     servicePackCanHaveMoreThanOne: false,
   },
 };

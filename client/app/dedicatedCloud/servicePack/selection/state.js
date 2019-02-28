@@ -1,3 +1,10 @@
+const activationType = /* @ngInject */ $transition$ => $transition$.params().servicePacks;
+
+const resolveCurrentService = /* @ngInject */ (
+  $transition$,
+  DedicatedCloud,
+) => DedicatedCloud.getSelected($transition$.params().productId, true);
+
 const hasDefaultMeansOfPayment = /* @ngInject */ ovhPaymentMethod => ovhPaymentMethod
   .hasDefaultPaymentMethod();
 
@@ -25,13 +32,22 @@ const resolveOrderableServicePacks = /* @ngInject */ (
         subsidiary: currentUser.ovhSubsidiary,
       });
 
-const servicePacks = /* @ngInject */ (
+const resolveServicePacks = /* @ngInject */ (
   $transition$,
+  currentService,
+  currentUser,
+  dedicatedCloudServicePack,
+) => $transition$.params().servicePacks
+    || dedicatedCloudServicePack
+      .buildAllForService(currentService.serviceName, currentUser.ovhSubsidiary);
+
+const servicePacksWithPrices = /* @ngInject */ (
   currentUser,
   dedicatedCloudServicePack,
   hostFamilies,
+  servicePacks,
 ) => dedicatedCloudServicePack
-  .fetchPrices(currentUser.ovhSubsidiary, hostFamilies, $transition$.params().servicePacks);
+  .fetchPrices(currentUser.ovhSubsidiary, hostFamilies, servicePacks);
 
 const subheader = /* @ngInject */ (
   $transition$,
@@ -43,11 +59,14 @@ export default {
     orderableServicePacks: null,
   },
   resolve: {
+    activationType,
+    currentService: resolveCurrentService,
     hasDefaultMeansOfPayment,
     header,
     hostFamilies: resolveHostFamilies,
     orderableServicePacks: resolveOrderableServicePacks,
-    servicePacks,
+    servicePacks: resolveServicePacks,
+    servicePacksWithPrices,
     subheader,
   },
 };

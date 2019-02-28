@@ -1,6 +1,5 @@
 import _ from 'lodash';
 
-import ServicePack from './model';
 import { OPTION_TYPES } from './option/constants';
 
 /* @ngInject */
@@ -11,31 +10,34 @@ export default class DedicatedCloudServicePack {
     DedicatedCloud,
     dedicatedCloudServicePackOption,
     OvhHttp,
+    ovhUserPref,
+    SERVICE_PACK_USER_PREFERENCES_KEY,
   ) {
     this.$q = $q;
     this.$translate = $translate;
     this.DedicatedCloud = DedicatedCloud;
     this.dedicatedCloudServicePackOption = dedicatedCloudServicePackOption;
     this.OvhHttp = OvhHttp;
+    this.ovhUserPref = ovhUserPref;
+    this.SERVICE_PACK_USER_PREFERENCES_KEY = SERVICE_PACK_USER_PREFERENCES_KEY;
   }
 
   fetchNamesForService(serviceName) {
-    return this.OvhHttp.get(
-      `/dedicatedCloud/${serviceName}/servicePacks`,
-      { rootPath: 'apiv6' },
-    );
+    return this.OvhHttp.get(`/dedicatedCloud/${serviceName}/servicePacks`, {
+      rootPath: 'apiv6',
+    });
   }
 
   buildAllForService(serviceName, subsidiary) {
     const buildChunkFromName = name => this.dedicatedCloudServicePackOption
-      .buildAllForServicePack({
+      .fetchOptions({
         serviceName,
         servicePackName: name,
         subsidiary,
       })
       .then(options => ({ name, options }));
 
-    const buildFromChunk = chunk => new ServicePack({
+    const buildFromChunk = chunk => ({
       ...chunk,
       displayName: this.$translate.instant(`dedicatedCloud_options_name_${chunk.name}`),
     });
@@ -82,11 +84,11 @@ export default class DedicatedCloudServicePack {
   }) {
     const servicePackTypeCamelCase = _.camelCase(activationType);
     const formattedServicePackType = `${servicePackTypeCamelCase[0].toUpperCase()}${servicePackTypeCamelCase.slice(1)}`;
-    const methodName = `fetchOrderable${formattedServicePackType}`;
-    const methodToCall = this[methodName].bind(this);
+    const methodToCallName = `fetchOrderable${formattedServicePackType}`;
+    const methodToCall = this[methodToCallName].bind(this);
 
     if (!_.isFunction(methodToCall)) {
-      throw new Error(`DedicatedCloudServicePack.fetchOrderable: method "${methodName}" does not exist`);
+      throw new Error(`DedicatedCloudServicePack.fetchOrderable: method "${methodToCallName}" does not exist`);
     }
 
     return methodToCall({
@@ -96,7 +98,7 @@ export default class DedicatedCloudServicePack {
     });
   }
 
-  fetchOrderableBasicOptions({
+  fetchOrderableCertification({
     currentServicePackName,
     serviceName,
     subsidiary,
@@ -106,7 +108,7 @@ export default class DedicatedCloudServicePack {
         .keepOnlyOrderableCertificates(servicePacks, currentServicePackName));
   }
 
-  fetchOrderableCertification({
+  fetchOrderableBasicOptions({
     currentServicePackName,
     serviceName,
     subsidiary,
@@ -133,7 +135,8 @@ export default class DedicatedCloudServicePack {
         return servicePacks.map((product) => {
           let price = null;
           const sum = _.sum(
-            _.map(Object.entries(hostFamilies),
+            _.map(
+              Object.entries(hostFamilies),
               ([familyName, numberOfHosts]) => {
                 const familyData = _.find(
                   addonsFamily.addons,
@@ -144,7 +147,8 @@ export default class DedicatedCloudServicePack {
                 price = localPrice;
 
                 return numberOfHosts * localPrice.value;
-              }),
+              },
+            ),
           );
 
           return {
@@ -163,5 +167,13 @@ export default class DedicatedCloudServicePack {
       .getDatacentersInformations(serviceName)
       .then(datacenters => datacenters.list.results
         .reduce((accumulator, { hostFamilies }) => ({ ...accumulator, ...hostFamilies }), {}));
+  }
+
+  savePendingOrder(orderId, activationType) {
+    return this.ovhUserPref
+      .assign(this.SERVICE_PACK_USER_PREFERENCES_KEY, {
+        orderId,
+        activationType,
+      });
   }
 }

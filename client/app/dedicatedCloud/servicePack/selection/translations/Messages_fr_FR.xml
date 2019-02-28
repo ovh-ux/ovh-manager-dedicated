@@ -3,26 +3,12 @@
    <translation id="dedicatedCloud_servicePack_selection_stepper_header">Sélection</translation>
 
   <translation id="dedicatedCloud_servicePack_selection_noDefaultMeansOfPayment">
-    Vous n'avez pas de moyen de paiement par défaut.
-    Avoir un moyen de paiement par défaut vous permettrait d'activer votre certificat automatiquement,
-    sans passer par un bon de commande.
-  </translation>
-  <translation id="dedicatedCloud_servicePack_selection_howToAddMeansOfPayment">
-    Vous pouvez ajouter un moyen de payement par défaut en cliquant sur
-  </translation>
-  <translation id="dedicatedCloud_servicePack_selection_howToAddMeansOfPayment_thisLink">
-    ce lien.
-  </translation>
-  <translation id="dedicatedCloud_servicePack_selection_noDefaultMeansOfPayment_orderFormCreation">
-    Un bon de commande de 0 euro sera créé et il vous faudra le valider lors de l'étape suivante.
+    Vous ne disposez pas de moyen de paiement enregistré. Avant de continuer et pour faciliter l'activation de cette certification
+    facturée mensuellement, nous vous recommandons d'enregistrer un moyen de paiement par défaut.
   </translation>
 
-  <translation id="dedicatedCloud_servicePack_selection_noDefaultMeansOfPayment_orderFormCreation">
-    Vous êtes sur le point d'activer le pack {{servicePackName}} pour {{monthlyPrice}}€/mois supplémentaire êtes vous sûr(e) de vouloir faire cela ?
-  </translation>
-
-  <translation id="dedicatedCloud_servicePack_selection_monthlyPrice">
-    {{ price }}/mois
+  <translation id="dedicatedCloud_servicePack_selection_priceDifferenceOnMonthlyBill">
+    {{ priceDifference }} sur votre facture mensuelle
   </translation>
 
   <translation id="dedicatedCloud_servicePack_selection_certification_header">Vous traitez des données sensibles ?</translation>
@@ -31,6 +17,17 @@
   <translation id="dedicatedCloud_servicePack_selection_basicOptions_header">Lorem ipsum</translation>
   <translation id="dedicatedCloud_servicePack_selection_basicOptions_subheader">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</translation>
 
+  <translation id="dedicatedCloud_servicePack_selection_howToConfigureMeansOfPayment">
+    En cliquant sur suivant vous allez être redirigé sur un bon de commande d'une valeur de 0 euro.
+  </translation>
+  <translation id="dedicatedCloud_servicePack_selection_howToConfigureMeansOfPayment_outsidePL">
+    Cette opération est nécessaire parce que vous n'avez pas de moyen de paiement intégré.
+  </translation>
+  <translation id="dedicatedCloud_servicePack_selection_howToConfigureMeansOfPayment_comeBackHereLater">
+    Il faudra ensuite vous rendre de nouveau ici pour finaliser l'activation de la certification.
+  </translation>
+
   <translation id="dedicatedCloud_servicePack_selection_cancelButton">Annuler</translation>
   <translation id="dedicatedCloud_servicePack_selection_nextButton">Suivant</translation>
+  <translation id="dedicatedCloud_servicePack_selection_checkoutButton">Régler la commande</translation>
 </translations>

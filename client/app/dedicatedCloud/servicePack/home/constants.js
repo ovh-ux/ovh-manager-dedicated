@@ -14,7 +14,6 @@ export const ACTIVATION_TYPES = {
   ],
   basicOptions: [
     selection,
-    confirmation,
     summary,
   ],
   certification: [

@@ -1,5 +1,20 @@
 import dedicatedCloudDashboardModuleName from './dashboard';
 
+const resolveCurrentService = /* @ngInject */ (
+  $transition$,
+  DedicatedCloud,
+) => DedicatedCloud.getSelected($transition$.params().productId, true);
+
+const order = /* @ngInject */ dedicatedCloudDashboardService => dedicatedCloudDashboardService
+  .fetchPendingServicePackOrder();
+
+const servicePacks = /* @ngInject */ (
+  currentService,
+  currentUser,
+  dedicatedCloudServicePack,
+) => dedicatedCloudServicePack
+  .buildAllForService(currentService.serviceName, currentUser.ovhSubsidiary);
+
 angular
   .module('App')
   .config(($stateProvider, $urlServiceProvider) => {
@@ -19,16 +34,9 @@ angular
         reloadOnSearch: false,
         translations: ['.'],
         resolve: {
-          currentService: (
-            $transition$,
-            DedicatedCloud,
-          ) => DedicatedCloud.getSelected($transition$.params().productId, true),
-          servicePacks: (
-            currentService,
-            currentUser,
-            dedicatedCloudServicePack,
-          ) => dedicatedCloudServicePack
-            .buildAllForService(currentService.serviceName, currentUser.ovhSubsidiary),
+          currentService: resolveCurrentService,
+          pendingServicePackOrder: order,
+          servicePacks,
         },
       },
     );

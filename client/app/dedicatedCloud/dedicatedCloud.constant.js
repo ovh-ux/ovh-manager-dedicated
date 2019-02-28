@@ -37,4 +37,5 @@ angular
       '2014v1Enterprise': '2014 Enterprise',
       '2013v1': '2013',
     },
-  );
+  )
+  .constant('SERVICE_PACK_USER_PREFERENCES_KEY', 'SERVICE_PACK_USER_PREFERENCES_KEY');

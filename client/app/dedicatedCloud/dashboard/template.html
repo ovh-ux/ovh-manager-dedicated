@@ -120,7 +120,12 @@
                             }"
                             data-ng-repeat="option in $ctrl.allExistingOptions track by option.name">
                             <span data-ng-bind="'dedicatedCloud_dashboard_options_basicOptions_names_' + option.name | translate"></span>
-                            <dedicated-cloud-activation-status data-status="option.status"></dedicated-cloud-activation-status>
+                            <dedicated-cloud-activation-status
+                                data-ng-if="$ctrl.pendingServicePackOrder.activationType === $ctrl.DEDICATED_CLOUD_SERVICE_PACK_OPTION.OPTION_TYPES.basicOption.name"
+                                data-status="$ctrl.DEDICATED_CLOUD_ACTIVATION_STATUS.pendingActivation"></dedicated-cloud-activation-status>
+                            <dedicated-cloud-activation-status
+                                data-ng-if="!$ctrl.pendingServicePackOrder.activationType === $ctrl.DEDICATED_CLOUD_SERVICE_PACK_OPTION.OPTION_TYPES.basicOption.name"
+                                data-status="option.status"></dedicated-cloud-activation-status>
                             <a
                                 class="d-block oui-link_icon"
                                 target="_blank"
@@ -139,6 +144,7 @@
                     </ul>
                 </oui-tile-description>
                 <oui-action-menu
+                    data-ng-if="!$ctrl.pendingServicePackOrder"
                     data-aria-label="{{:: 'menu_action_label' | translate: { t0: ('dedicatedCloud_dashboard_options_basicOptions_menu_changeOption' | translate) } }}"
                     data-compact
                     data-align="end">
@@ -146,7 +152,7 @@
                         data-text="{{ $ctrl.options.basicOption.title }}"
                         data-disabled="!$ctrl.orderableServicePacksWithOnlyBasicOptions.length"
                         data-ui-sref=".servicePack({
-                            activationType: 'basicOptions',
+                            activationType: $ctrl.DEDICATED_CLOUD_SERVICE_PACK_OPTION.OPTION_TYPES.basicOption.name,
                             orderableServicePacks: $ctrl.orderableServicePacksWithOnlyBasicOptions,
                             servicePacks: $ctrl.servicePacks,
                         })">
@@ -175,6 +181,7 @@
                         </a>
                     </oui-tile-description>
                 <oui-action-menu
+                    data-ng-if="!$ctrl.pendingServicePackOrder"
                     data-aria-label="{{:: 'menu_action_label' | translate: { t0: ('dedicatedCloud_dashboard_options_certifications_menu_changeCertification' | translate) } }}"
                     data-compact
                     data-align="end">
@@ -182,7 +189,7 @@
                         data-disabled="$ctrl.orderableServicePacksWithCertifications.length === 0"
                         data-text="{{:: 'dedicatedCloud_dashboard_options_certifications_menu_changeCertification' | translate }}"
                         data-ui-sref=".servicePack({
-                            activationType: 'certification',
+                            activationType: $ctrl.DEDICATED_CLOUD_SERVICE_PACK_OPTION.OPTION_TYPES.certification.name,
                             orderableServicePacks: $ctrl.orderableServicePacksWithCertifications,
                             servicePacks: $ctrl.servicePacks,
                         })">

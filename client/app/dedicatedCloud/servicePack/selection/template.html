@@ -2,26 +2,21 @@
 <p data-ng-bind="$ctrl.subheader"></p>
 
 <oui-message
-    data-type="info"
+    data-type="warning"
     data-dismissable="false"
-    data-ng-if="$ctrl.hasDefaultMeansOfPayment">
-    <p data-translate="dedicatedCloud_servicePack_selection_noDefaultMeansOfPayment"></p>
-
-    <p data-ng-if="$ctrl.currentUser.ovhSubsidiary !== 'PL'">
-        <span data-translate="dedicatedCloud_servicePack_selection_howToAddMeansOfPayment"></span>
+    data-ng-if="!$ctrl.hasDefaultMeansOfPayment && $ctrl.currentUser.ovhSubsidiary !== 'PL'"
+    class="mb-3">
+    <p>
+        <span data-translate="dedicatedCloud_servicePack_selection_noDefaultMeansOfPayment"></span>
         <a
             data-ui-sref="app.account.billing.payment.method"
-            data-translate="dedicatedCloud_servicePack_selection_howToAddMeansOfPayment_thisLink"></a>
+            data-translate="dedicatedCloud_servicePack_selection_howToConfigureMeansOfPayment"></a>
     </p>
-    <p
-        data-ng-if="$ctrl.currentUser.ovhSubsidiary === 'PL'"
-        data-translate="dedicatedCloud_servicePack_selection_noDefaultMeansOfPayment_orderFormCreation"></p>
 </oui-message>
 
 <form
     novalidate
-    name="$ctrl.form"
-    data-ng-submit="$ctrl.goToNextStep()">
+    name="$ctrl.form">
 
     <oui-field>
         <div
@@ -30,7 +25,7 @@
             data-ng-if="$index % 2 === 0">
             <div
                 data-ng-repeat="i in [$index, $index + 1]"
-                class="col-xs-6 oui-select-picker oui-select-picker_light mb-5"
+                class="col-xs-6 oui-select-picker oui-select-picker_light"
                 data-ng-if="$ctrl.orderableServicePacks[i]">
                 <input
                     class="oui-select-picker__input oui-input"
@@ -53,14 +48,28 @@
                     </p>
                     <p
                         class="dedicatedCloud-servicePack-option-price"
-                        data-translate="dedicatedCloud_servicePack_selection_monthlyPrice"
+                        data-translate="dedicatedCloud_servicePack_selection_priceDifferenceOnMonthlyBill"
                         data-translate-values="{
-                            price: servicePack.price
+                            priceDifference: servicePack.price
                         }"></p>
                 </label>
             </div>
         </div>
     </oui-field>
+
+    <oui-message
+        data-type="warning"
+        data-dismissable="false"
+        data-ng-if="!$ctrl.hasDefaultMeansOfPayment"
+        class="mb-5">
+        <p>
+            <span data-translate="dedicatedCloud_servicePack_selection_howToConfigureMeansOfPayment"></span>
+            <span
+                data-ng-if="$ctrl.currentUser.ovhSubsidiary !== 'PL'"
+                data-translate="dedicatedCloud_servicePack_selection_howToConfigureMeansOfPayment_outsidePL"></span>
+            <span data-translate="dedicatedCloud_servicePack_selection_howToConfigureMeansOfPayment_comeBackHereLater"></span>
+        </p>
+    </oui-message>
 
     <oui-button
         data-variant="secondary"
@@ -69,9 +78,20 @@
     </oui-button>
 
     <oui-button
+        data-ng-if="!$ctrl.hasDefaultMeansOfPayment"
+        data-on-click="$ctrl.goToNextStep()"
         data-type="submit"
         data-variant="primary"
         class="ml-3">
         <span data-translate="dedicatedCloud_servicePack_selection_nextButton"></span>
+    </oui-button>
+
+    <oui-button
+        data-ng-if="$ctrl.hasDefaultMeansOfPayment"
+        data-on-click="$ctrl.placeOrder()"
+        data-type="submit"
+        data-variant="primary"
+        class="ml-3">
+        <span data-translate="dedicatedCloud_servicePack_selection_checkoutButton"></span>
     </oui-button>
 </form>

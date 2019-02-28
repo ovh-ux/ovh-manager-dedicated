@@ -5,6 +5,7 @@ export default {
   bindings: {
     currentService: '<',
     currentUser: '<',
+    pendingServicePackOrder: '<',
     servicePacks: '<',
   },
   controller,
