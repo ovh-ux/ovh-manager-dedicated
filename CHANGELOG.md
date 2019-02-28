@@ -1,3 +1,13 @@
+<a name="10.11.1"></a>
+## [10.11.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.11.0...v10.11.1) (2019-02-28)
+
+
+### Bug Fixes
+
+* **i18n:** retrieve translations ([654166c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/654166c))
+
+
+
 <a name="10.11.0"></a>
 # [10.11.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.6...v10.11.0) (2019-02-27)
 
