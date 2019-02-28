@@ -5,6 +5,7 @@ export default {
   bindings: {
     currentService: '<',
     header: '@',
+    hasDefaultMeansOfPayment: '<',
     orderableServicePacks: '<',
     servicePacks: '<',
     subheader: '@',

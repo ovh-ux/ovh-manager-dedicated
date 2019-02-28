@@ -1,6 +1,23 @@
 <h3 data-ng-bind="$ctrl.header"></h3>
 <p data-ng-bind="$ctrl.subheader"></p>
 
+<oui-message
+    data-type="info"
+    data-dismissable="false"
+    data-ng-if="!$ctrl.hasDefaultMeansOfPayment">
+    <p data-translate="dedicatedCloud_servicePackActivation_selection_noDefaultMeansOfPayment"></p>
+
+    <p data-ng-if="$ctrl.currentUser.ovhSubsidiary !== 'PL'">
+        <span data-translate="dedicatedCloud_servicePackActivation_selection_howToAddMeansOfPayment"></span>
+        <a
+            data-ui-sref="app.account.billing.payment.method"
+            data-translate="dedicatedCloud_servicePackActivation_selection_howToAddMeansOfPayment_thisLink"></a>
+    </p>
+    <p
+        data-ng-if="$ctrl.currentUser.ovhSubsidiary === 'PL'"
+        data-translate="dedicatedCloud_servicePackActivation_selection_noDefaultMeansOfPayment_orderFormCreation"></p>
+</oui-message>
+
 <form
     novalidate
     name="$ctrl.form"

@@ -1,3 +1,6 @@
+const hasDefaultMeansOfPayment = /* @ngInject */ ovhPaymentMethod => ovhPaymentMethod
+  .hasDefaultPaymentMethod();
+
 const header = /* @ngInject */ (
   $transition$,
   $translate,
@@ -40,6 +43,7 @@ export default {
     orderableServicePacks: null,
   },
   resolve: {
+    hasDefaultMeansOfPayment,
     header,
     hostFamilies: resolveHostFamilies,
     orderableServicePacks: resolveOrderableServicePacks,

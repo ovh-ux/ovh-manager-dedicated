@@ -1,6 +1,3 @@
-const hasDefaultMeansOfPayment = /* @ngInject */ ovhPaymentMethod => ovhPaymentMethod
-  .hasDefaultPaymentMethod();
-
 const servicePackToOrder = /* @ngInject */ $transition$ => $transition$
   .params().servicePackToOrder;
 
@@ -9,7 +6,6 @@ export default {
     servicePackToOrder: null,
   },
   resolve: {
-    hasDefaultMeansOfPayment,
     servicePackToOrder,
   },
 };

@@ -5,7 +5,6 @@ export default {
   bindings: {
     currentService: '<',
     currentUser: '<',
-    hasDefaultMeansOfPayment: '<',
     servicePackToOrder: '<',
   },
   controller,
