@@ -10,5 +10,5 @@ export default {
   moduleName: MODULE_NAME,
   name: STEP_NAME,
   state,
-  translationId: 'dedicatedCloud_servicePackActivation_confirmation_stepper_header',
+  translationId: 'dedicatedCloud_servicePack_confirmation_stepper_header',
 };

@@ -1,5 +1,5 @@
-export const COMPONENT_NAME = 'dedicatedCloudServicePackActivationSelection';
-export const MODULE_NAME = 'dedicatedCloudServicePackActivationSelection';
+export const COMPONENT_NAME = 'dedicatedCloudservicePackSelection';
+export const MODULE_NAME = 'dedicatedCloudservicePackSelection';
 export const STEP_NAME = 'selection';
 
 export default {

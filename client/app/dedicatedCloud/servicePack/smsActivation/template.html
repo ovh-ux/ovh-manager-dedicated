@@ -3,36 +3,36 @@
     data-ng-if="$ctrl.usersWhoCanReceiveSMS.length === 0"
     class="mb-3">
     <span
-        data-translate="dedicatedCloud_servicePackActivation_smsActivation_noUser"></span>
+        data-translate="dedicatedCloud_servicePack_smsActivation_noUser"></span>
     <a data-ui-sref="app.dedicatedClouds.users">
-        <span data-translate="dedicatedCloud_servicePackActivation_smsActivation_noUser_linkToUserConfiguration"></span>
+        <span data-translate="dedicatedCloud_servicePack_smsActivation_noUser_linkToUserConfiguration"></span>
     </a>
 </oui-message>
 
 <div data-ng-if="$ctrl.usersWhoCanReceiveSMS.length > 0">
-    <p data-translate="dedicatedCloud_servicePackActivation_smsActivation_hasUser"></p>
+    <p data-translate="dedicatedCloud_servicePack_smsActivation_hasUser"></p>
 
-    <p data-translate="dedicatedCloud_servicePackActivation_smsActivation_hasUser_table_header"></p>
+    <p data-translate="dedicatedCloud_servicePack_smsActivation_hasUser_table_header"></p>
 
     <oui-datagrid data-rows-loader="$ctrl.mapUsersWhoCanReceiveSMS()">
         <oui-column
-            data-title=":: 'dedicatedCloud_servicePackActivation_smsActivation_hasUser_table_column_userName' | translate"
+            data-title=":: 'dedicatedCloud_servicePack_smsActivation_hasUser_table_column_userName' | translate"
             data-property="userName"
             data-type="string"></oui-column>
         <oui-column
-            data-title=":: 'dedicatedCloud_servicePackActivation_smsActivation_hasUser_table_column_firstName' | translate"
+            data-title=":: 'dedicatedCloud_servicePack_smsActivation_hasUser_table_column_firstName' | translate"
             data-property="firstName"
             data-type="string"></oui-column>
         <oui-column
-            data-title=":: 'dedicatedCloud_servicePackActivation_smsActivation_hasUser_table_column_lastName' | translate"
+            data-title=":: 'dedicatedCloud_servicePack_smsActivation_hasUser_table_column_lastName' | translate"
             data-property="lastName"
             data-type="string"></oui-column>
         <oui-column
-            data-title=":: 'dedicatedCloud_servicePackActivation_smsActivation_hasUser_table_column_emailAddress' | translate"
+            data-title=":: 'dedicatedCloud_servicePack_smsActivation_hasUser_table_column_emailAddress' | translate"
             data-property="emailAddress"
             data-type="string"></oui-column>
         <oui-column
-            data-title=":: 'dedicatedCloud_servicePackActivation_smsActivation_hasUser_table_column_phoneNumber' | translate"
+            data-title=":: 'dedicatedCloud_servicePack_smsActivation_hasUser_table_column_phoneNumber' | translate"
             data-property="phoneNumber"
             data-type="string"></oui-column>
     </oui-datagrid>
@@ -41,7 +41,7 @@
 <oui-button
     data-on-click="$ctrl.stepper.goToPreviousStep()"
     data-variant="secondary">
-    <span data-translate="dedicatedCloud_servicePackActivation_smsActivation_previousButton"></span>
+    <span data-translate="dedicatedCloud_servicePack_smsActivation_previousButton"></span>
 </oui-button>
 
 <oui-button
@@ -49,5 +49,5 @@
     data-on-click="$ctrl.stepper.goToNextStep()"
     data-variant="primary"
     class="ml-3">
-    <span data-translate="dedicatedCloud_servicePackActivation_smsActivation_nextButton"></span>
+    <span data-translate="dedicatedCloud_servicePack_smsActivation_nextButton"></span>
 </oui-button>

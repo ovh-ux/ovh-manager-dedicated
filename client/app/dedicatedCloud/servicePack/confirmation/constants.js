@@ -1,5 +1,5 @@
-export const COMPONENT_NAME = 'dedicatedCloudServicePackActivationConfirmation';
-export const MODULE_NAME = 'dedicatedCloudServicePackActivationConfirmation';
+export const COMPONENT_NAME = 'dedicatedCloudservicePackConfirmation';
+export const MODULE_NAME = 'dedicatedCloudservicePackConfirmation';
 export const STEP_NAME = 'confirmation';
 
 export default {

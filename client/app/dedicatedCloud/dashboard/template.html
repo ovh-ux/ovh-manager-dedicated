@@ -145,7 +145,7 @@
                     <oui-action-menu-item
                         data-text="{{ $ctrl.options.basicOption.title }}"
                         data-disabled="!$ctrl.orderableServicePacksWithOnlyBasicOptions.length"
-                        data-ui-sref=".servicePackActivation({
+                        data-ui-sref=".servicePack({
                             activationType: 'basicOptions',
                             orderableServicePacks: $ctrl.orderableServicePacksWithOnlyBasicOptions,
                             servicePacks: $ctrl.servicePacks,
@@ -181,7 +181,7 @@
                     <oui-action-menu-item
                         data-disabled="$ctrl.orderableServicePacksWithCertifications.length === 0"
                         data-text="{{:: 'dedicatedCloud_dashboard_options_certifications_menu_changeCertification' | translate }}"
-                        data-ui-sref=".servicePackActivation({
+                        data-ui-sref=".servicePack({
                             activationType: 'certification',
                             orderableServicePacks: $ctrl.orderableServicePacksWithCertifications,
                             servicePacks: $ctrl.servicePacks,

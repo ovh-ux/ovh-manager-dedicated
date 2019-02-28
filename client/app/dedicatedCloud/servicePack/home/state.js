@@ -34,7 +34,7 @@ export default {
     orderableServicePacks,
     servicePacks,
   },
-  url: '/servicePackActivation?activationType',
+  url: '/servicePack?activationType',
   views: {
     pccView: COMPONENT_NAME,
   },

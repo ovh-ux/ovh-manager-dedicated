@@ -5,17 +5,17 @@
     data-type="info"
     data-dismissable="false"
     data-ng-if="!$ctrl.hasDefaultMeansOfPayment">
-    <p data-translate="dedicatedCloud_servicePackActivation_selection_noDefaultMeansOfPayment"></p>
+    <p data-translate="dedicatedCloud_servicePack_selection_noDefaultMeansOfPayment"></p>
 
     <p data-ng-if="$ctrl.currentUser.ovhSubsidiary !== 'PL'">
-        <span data-translate="dedicatedCloud_servicePackActivation_selection_howToAddMeansOfPayment"></span>
+        <span data-translate="dedicatedCloud_servicePack_selection_howToAddMeansOfPayment"></span>
         <a
             data-ui-sref="app.account.billing.payment.method"
-            data-translate="dedicatedCloud_servicePackActivation_selection_howToAddMeansOfPayment_thisLink"></a>
+            data-translate="dedicatedCloud_servicePack_selection_howToAddMeansOfPayment_thisLink"></a>
     </p>
     <p
         data-ng-if="$ctrl.currentUser.ovhSubsidiary === 'PL'"
-        data-translate="dedicatedCloud_servicePackActivation_selection_noDefaultMeansOfPayment_orderFormCreation"></p>
+        data-translate="dedicatedCloud_servicePack_selection_noDefaultMeansOfPayment_orderFormCreation"></p>
 </oui-message>
 
 <form
@@ -53,7 +53,10 @@
                     </p>
                     <p
                         class="dedicatedCloud-servicePack-option-price"
-                        data-ng-bind=":: servicePack.price"></p>
+                        data-translate="dedicatedCloud_servicePack_selection_monthlyPrice"
+                        data-translate-values="{
+                            price: servicePack.price
+                        }"></p>
                 </label>
             </div>
         </div>
@@ -62,13 +65,13 @@
     <oui-button
         data-variant="secondary"
         data-on-click="$ctrl.stepper.exit()">
-        <span data-translate="dedicatedCloud_servicePackActivation_selection_cancelButton"></span>
+        <span data-translate="dedicatedCloud_servicePack_selection_cancelButton"></span>
     </oui-button>
 
     <oui-button
         data-type="submit"
         data-variant="primary"
         class="ml-3">
-        <span data-translate="dedicatedCloud_servicePackActivation_selection_nextButton"></span>
+        <span data-translate="dedicatedCloud_servicePack_selection_nextButton"></span>
     </oui-button>
 </form>

@@ -20,7 +20,7 @@ export default class {
 
   $onInit() {
     this.activationType = this.$transition$.params().activationType;
-    this.title = this.$translate.instant(`dedicatedCloud_servicePackActivation_${this.activationType}_header`);
+    this.title = this.$translate.instant(`dedicatedCloud_servicePack_${this.activationType}_header`);
     this.callerStateName = this.$state.$current.parent.name;
     this.steps = ACTIVATION_TYPES[this.activationType];
 
@@ -34,7 +34,7 @@ export default class {
           .exit()
           .then(() => {
             this.Alerter.alertFromSWS(
-              this.$translate.instant('dedicatedCloud_servicePackActivation_confirmation_order_failure'),
+              this.$translate.instant('dedicatedCloud_servicePack_confirmation_order_failure'),
               {
                 message: _.get(transition.error(), 'detail', transition.error()).message,
                 type: 'ERROR',

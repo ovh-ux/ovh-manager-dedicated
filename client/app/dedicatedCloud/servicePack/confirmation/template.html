@@ -1,6 +1,6 @@
 <p
     data-ng-if="$ctrl.currentUser.ovhSubsidiary !== 'PL'"
-    data-translate="dedicatedCloud_servicePackActivation_confirmation_noDefaultMeansOfPayment_orderFormCreation"
+    data-translate="dedicatedCloud_servicePack_confirmation_noDefaultMeansOfPayment_orderFormCreation"
     data-translate-values="{
         'servicePackName': '<strong>' + $ctrl.servicePackToOrder.displayName + '</strong>',
         'monthlyPrice': '<strong>' + 'xxx' + '</strong>'
@@ -10,14 +10,14 @@
     <oui-button
         data-on-click="$ctrl.stepper.goToPreviousStep()"
         data-variant="secondary">
-        <span data-translate="dedicatedCloud_servicePackActivation_confirmation_previousButton"></span>
+        <span data-translate="dedicatedCloud_servicePack_confirmation_previousButton"></span>
     </oui-button>
 
     <oui-button
         data-on-click="$ctrl.placeOrder()"
         data-variant="primary"
         class="ml-3">
-        <span data-translate="dedicatedCloud_servicePackActivation_confirmation_confirmActivationButton"></span>
+        <span data-translate="dedicatedCloud_servicePack_confirmation_confirmActivationButton"></span>
     </oui-button>
 </div>
 

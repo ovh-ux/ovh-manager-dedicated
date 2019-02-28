@@ -28,7 +28,7 @@ export default class {
       .catch(error => this.stepper.exit()
         .then(() => {
           this.Alerter.alertFromSWS(
-            this.$translate.instant('dedicatedCloud_servicePackActivation_confirmation_order_failure'),
+            this.$translate.instant('dedicatedCloud_servicePack_confirmation_order_failure'),
             {
               message: error.data.message,
               type: 'ERROR',

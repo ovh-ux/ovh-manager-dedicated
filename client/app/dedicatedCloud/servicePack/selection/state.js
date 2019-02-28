@@ -4,7 +4,7 @@ const hasDefaultMeansOfPayment = /* @ngInject */ ovhPaymentMethod => ovhPaymentM
 const header = /* @ngInject */ (
   $transition$,
   $translate,
-) => $translate.instant(`dedicatedCloud_servicePackActivation_selection_${$transition$.params().activationType}_header`);
+) => $translate.instant(`dedicatedCloud_servicePack_selection_${$transition$.params().activationType}_header`);
 
 const resolveHostFamilies = /* @ngInject */ (
   currentService,
@@ -36,7 +36,7 @@ const servicePacks = /* @ngInject */ (
 const subheader = /* @ngInject */ (
   $transition$,
   $translate,
-) => $translate.instant(`dedicatedCloud_servicePackActivation_selection_${$transition$.params().activationType}_subheader`);
+) => $translate.instant(`dedicatedCloud_servicePack_selection_${$transition$.params().activationType}_subheader`);
 
 export default {
   params: {

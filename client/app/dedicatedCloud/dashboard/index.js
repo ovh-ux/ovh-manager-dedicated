@@ -9,7 +9,7 @@ import activationStatusModuleName from '../../components/activationStatus';
 angular
   .module(MODULE_NAME, [
     activationStatusModuleName,
-    'dedicatedCloudServicePackActivation',
+    'dedicatedCloudservicePack',
     'oui',
     'pascalprecht.translate',
     'ui.router',
