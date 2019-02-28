@@ -1,73 +1,73 @@
 import ngOvhApiv7 from '@ovh-ux/ng-ovh-apiv7';
+import ovhContacts from '@ovh-ux/ng-ovh-contacts';
+import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
 import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
 import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
 import translateAsyncLoader from '@ovh-ux/translate-async-loader';
-import uiRouter from '@uirouter/angularjs';
 import webUniverseComponents from '@ovh-ux/web-universe-components';
-import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
-import ovhContacts from '@ovh-ux/ng-ovh-contacts';
+import uiRouter from '@uirouter/angularjs';
 
+import activationStatus from './components/activationStatus';
+import stepper from './components/stepper';
 import config from './config/config';
-import dedicatedCloudActivationStatus from './components/activationStatus';
-import dedicatedCloudDashboardModuleName from './dedicatedCloud/dashboard';
-import dedicatedCloudServicePackModuleName from './dedicatedCloud/servicePack';
-import dedicatedCloudServicePackOptionModuleName from './dedicatedCloud/servicePack/option';
-import dedicatedCloudStepper from './components/stepper';
+import dedicatedCloudDasboard from './dedicatedCloud/dashboard';
+import dedicatedCloudServicePack from './dedicatedCloud/servicePack';
+import dedicatedCloudServicePackOption from './dedicatedCloud/servicePack/option';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
 
 const appDeps = [
-  'ovh-angular-proxy-request',
-  'ovh-angular-pagination-front',
-  'ovh-utils-angular',
-  'ui.bootstrap',
-  'ui.router',
-  'ngRoute',
-  'ngSanitize',
-  'ngMessages',
-  'controllers',
-  'services',
-  'filters',
-  'directives',
-  'Billing',
-  'UserAccount',
-  'ovh-angular-http',
-  'ui.utils',
-  'ovh-angular-q-allSettled',
-  'ovh-angular-swimming-poll',
-  'ovh-angular-export-csv',
-  'ng-at-internet',
+  activationStatus,
   'atInternetUiRouterPlugin',
-  'ovh-angular-user-pref',
-  'ovhBrowserAlert',
-  'ui.validate',
+  'Billing',
+  'chart.js',
+  'controllers',
+  dedicatedCloudDasboard,
+  dedicatedCloudServicePack,
+  dedicatedCloudServicePackOption,
+  dedicatedUniverseComponents,
+  'directives',
+  'filters',
+  'internationalPhoneNumber',
+  'Module.download',
+  'Module.ip',
+  'Module.license',
+  'Module.otrs',
+  'ng-at-internet',
+  'ngCkeditor',
+  'ngMessages',
   ngOvhApiv7,
   ngOvhSsoAuth,
   ngOvhSsoAuthModalPlugin,
+  'ngRoute',
+  'ngSanitize',
   'oui',
+  'ovh-angular-export-csv',
+  'ovh-angular-http',
+  'ovh-angular-otrs',
+  'ovh-angular-pagination-front',
+  'ovh-angular-proxy-request',
+  'ovh-angular-q-allSettled',
+  'ovh-angular-responsive-tabs',
+  'ovh-angular-sidebar-menu',
+  'ovh-angular-swimming-poll',
+  'ovh-angular-user-pref',
+  'ovh-utils-angular',
+  'ovhBrowserAlert',
+  ovhContacts,
+  ovhPaymentMethod,
+  'pascalprecht.translate',
+  'services',
+  stepper,
+  translateAsyncLoader,
+  'ui.bootstrap',
+  'ui.router',
+  'ui.utils',
+  'ui.validate',
   'ui.select',
   uiRouter,
-  'Module.ip',
-  'Module.license',
-  'Module.download',
-  'internationalPhoneNumber',
-  'ovh-angular-sidebar-menu',
-  'ovh-angular-otrs',
-  'pascalprecht.translate',
-  'chart.js',
-  'ovh-angular-responsive-tabs',
-  'ngCkeditor',
-  'Module.otrs',
-  translateAsyncLoader,
-  dedicatedUniverseComponents,
+  'UserAccount',
   webUniverseComponents,
   'xeditable',
-  ovhPaymentMethod,
-  ovhContacts,
-  dedicatedCloudActivationStatus,
-  dedicatedCloudDashboardModuleName,
-  dedicatedCloudServicePackModuleName,
-  dedicatedCloudServicePackOptionModuleName,
-  dedicatedCloudStepper,
 ];
 
 if (WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca') {
