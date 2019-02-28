@@ -10,6 +10,7 @@ import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
 import uiRouter from '@uirouter/angularjs';
 import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
 import ovhContacts from '@ovh-ux/ng-ovh-contacts';
+import ngOvhOtrs from '@ovh-ux/ng-ovh-otrs';
 
 import config from './config/config';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
@@ -53,7 +54,7 @@ const appDeps = [
   'Module.download',
   'internationalPhoneNumber',
   'ovh-angular-sidebar-menu',
-  'ovh-angular-otrs',
+  ngOvhOtrs,
   'pascalprecht.translate',
   'chart.js',
   'ovh-angular-responsive-tabs',

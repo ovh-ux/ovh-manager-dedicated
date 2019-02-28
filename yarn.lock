@@ -1015,6 +1015,14 @@
     lodash "~4.17.11"
     urijs "^1.19.1"
 
+"@ovh-ux/ng-ovh-otrs@^7.0.0-beta.1":
+  version "7.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-otrs/-/ng-ovh-otrs-7.0.0-beta.1.tgz#b4942fc1aad806d42755b19f4ff91932e25cb929"
+  integrity sha512-BpBNbKjbQbevAhRL1TdApUV+uh8wqxkPXURUn88DPEtjoo0UxPyrR3CN4TlEZMtQJ+pXHIlSdAzJEkrOxPHL4w==
+  dependencies:
+    draggable "^4.2.0"
+    lodash "^4.17.11"
+
 "@ovh-ux/ng-ovh-payment-method@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-payment-method/-/ng-ovh-payment-method-2.0.0.tgz#32a5b53f2b3c4a45568a12e6c71350b68e294792"
@@ -3585,6 +3593,11 @@ dot-prop@^4.1.0, dot-prop@^4.1.1:
   integrity sha512-tUMXrxlExSW6U2EXiiKGSBVdYgtV8qlHL+C10TsW4PURY/ic+eaysnSkwB4kA/mBlCyy/IKDJ+Lc3wbWeaXtuQ==
   dependencies:
     is-obj "^1.0.0"
+
+draggable@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/draggable/-/draggable-4.2.0.tgz#149c0ca176df6d8b512048c8e451f499fc047b9a"
+  integrity sha1-FJwMoXbfbYtRIEjI5FH0mfwEe5o=
 
 drange@^1.0.0:
   version "1.1.1"
@@ -7674,11 +7687,6 @@ ovh-angular-export-csv@^0.3.2:
     angular-sanitize "~1.3.0"
     jquery "~2.1.4"
     lodash "~3.10.0"
-
-ovh-angular-otrs@^6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/ovh-angular-otrs/-/ovh-angular-otrs-6.3.0.tgz#3ad3c9626be1917b5f0f557375de3757ad9b08ba"
-  integrity sha512-sXxQUlsC0ucl9UVcnSB9ZQsqTnKmW/zQZM+VH0gNpnJo9v3Klk4lHN3n0Wnd62Ic8Ke3Vjgk74Jk2THjQOHfcg==
 
 ovh-angular-pagination-front@^7.0.0:
   version "7.0.0"
