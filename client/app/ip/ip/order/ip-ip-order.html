@@ -8,7 +8,7 @@
         <!-- Step 1: Select a service -->
         <div data-wizard-step
              data-wizard-step-on-load="getServices"
-             data-wizard-step-valid="model.service && orderableIp && !orderableIpError">
+             data-wizard-step-valid="model.service && orderableIp && !orderableIpError && !loading.serviceCanBeOrdered">
 
             <div data-ng-show="!loading.services && servicesList.length">
                 <p data-translate="ip_order_step1_question"></p>
@@ -27,7 +27,7 @@
                                 data-ng-model="model.service"
                                 data-ng-options="service as service.serviceName group by ('ip_servicetype_' + service.serviceType | translate) for service in servicesList"
                                 data-ng-disabled="model.service && loading.serviceCanBeOrdered"
-                                data-ng-change="serviceCanBeOrdered()">
+                                data-ng-change="canServiceBeOrdered()">
                             <option value=""
                                     data-ng-disabled="true"
                                     data-translate="global_select">
@@ -47,10 +47,10 @@
                     <oui-spinner data-size="s"></oui-spinner>
                 </div>
 
-                <!-- OKEY -->
-                <div data-ng-show="model.service && orderableIp && !orderableIpError">
+                <!-- If everything is valid -->
+                <div data-ng-show="model.service && orderableIp && !orderableIpError && !loading.serviceCanBeOrdered">
 
-                    <div data-ng-show="model.service.serviceType == 'DEDICATED'">
+                    <div data-ng-show="model.service.serviceType === 'DEDICATED'">
                         <p data-translate="ip_order_step1_info1"></p>
                         <ul>
                             <li data-ng-repeat="ip in orderableIp.ipv4"
@@ -59,8 +59,9 @@
                         </ul>
                     </div>
 
-                    <p data-ng-show="model.service.serviceType == 'VPS'"
-                       data-translate="ip_order_add_ipv4_step1_remaining" data-translate-values="{ t0: orderableIp.maximumAdditionnalIp }"></p>
+                    <p data-ng-show="model.service.serviceType === 'VPS'"
+                       data-translate="ip_order_add_ipv4_step1_remaining"
+                       data-translate-values="{ t0: orderableIp.maximumAdditionnalIp }"></p>
 
                     <p data-translate="ip_order_step1_ok"></p>
                 </div>

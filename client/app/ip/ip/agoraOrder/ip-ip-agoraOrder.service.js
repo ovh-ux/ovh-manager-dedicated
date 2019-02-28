@@ -51,12 +51,12 @@ angular
         ]);
     }
 
-    getIpOffers() {
+    getIpOffers(ovhSubsidiary = 'US') {
       return this.OvhHttp
         .get('/order/catalog/formatted/ip', {
           rootPath: 'apiv6',
           params: {
-            ovhSubsidiary: 'US',
+            ovhSubsidiary,
           },
         })
         .then(({ plans }) => plans);

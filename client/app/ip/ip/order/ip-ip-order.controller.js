@@ -9,7 +9,9 @@ angular
       $window,
       Alerter,
       constants,
+      DedicatedCloud,
       Ip,
+      IpAgoraOrder,
       IpOrder,
       IpOrganisation,
       User,
@@ -21,7 +23,9 @@ angular
       this.$window = $window;
       this.Alerter = Alerter;
       this.constants = constants;
+      this.DedicatedCloud = DedicatedCloud;
       this.Ip = Ip;
+      this.IpAgoraOrder = IpAgoraOrder;
       this.IpOrder = IpOrder;
       this.IpOrganisation = IpOrganisation;
       this.User = User;
@@ -39,7 +43,7 @@ angular
       this.$scope.loading = {};
 
       this.$scope.getServices = () => this.getServices();
-      this.$scope.serviceCanBeOrdered = () => this.serviceCanBeOrdered();
+      this.$scope.canServiceBeOrdered = () => this.canServiceBeOrdered();
       this.$scope.loadOrderForm = () => this.loadOrderForm();
       this.$scope.isMonthlyVps = () => this.isMonthlyVps();
       this.$scope.orderFormValid = () => this.orderFormValid();
@@ -77,7 +81,7 @@ angular
         });
     }
 
-    serviceCanBeOrdered() {
+    canServiceBeOrdered() {
       this.$scope.loading.serviceCanBeOrdered = true;
       this.$scope.orderableIp = null;
       this.$scope.orderableIpError = null;
@@ -88,8 +92,7 @@ angular
         .then((serviceAllowed) => {
           if (!serviceAllowed) {
             this.$scope.orderableIpError = 'OPTION_NOT_ALLOWED';
-            this.$scope.loading.serviceCanBeOrdered = false;
-            return null;
+            return { serviceIsAllowed: false };
           }
 
           return this.IpOrder.getServiceOrderableIp(this.$scope.model.service);
@@ -97,7 +100,11 @@ angular
         .then((infos) => {
           if (!infos) {
             this.$scope.orderableIpError = 'OUT';
-            return;
+            return null;
+          }
+
+          if (_.has(infos, 'serviceIsAllowed')) {
+            return null;
           }
 
           const hasIPv4 = _.isArray(infos.ipv4) && !_.isEmpty(infos.ipv4);
@@ -105,16 +112,25 @@ angular
 
           if (this.$scope.model.service.serviceType === 'DEDICATED' && !(hasIPv4 || hasIPv6)) {
             this.$scope.orderableIpError = 'OPTION_NOT_ALLOWED';
-            return;
+            return null;
           }
 
           this.$scope.orderableIp = infos;
+
+          if (this.$scope.model.service.serviceType === 'PCC') {
+            return this.DedicatedCloud
+              .getDescription(this.$scope.model.service.serviceName)
+              .then(({ generation }) => {
+                this.$scope.model.service.usesAgora = generation === '2.0';
+              });
+          }
+
+          return null;
         })
         .catch((data) => {
           if (data.status === 460) {
             this.$scope.orderableIpError = 'EXPIRED';
           } else {
-            this.$scope.loading.serviceCanBeOrdered = false;
             this.Alerter.alertFromSWS(this.$translate.instant('ip_order_loading_error'), data.data);
           }
         })
@@ -142,7 +158,17 @@ angular
         this.IpOrder
           .getAvailableCountries(this.$scope.model.service)
           .then((countries) => {
-            this.$scope.orderableIp.countries = countries;
+            this.$scope.orderableIp.countries = countries.map(countryCode => ({
+              code: countryCode,
+              displayValue: this.$translate.instant(`country_${countryCode.toUpperCase()}`),
+            }));
+          })
+          .catch((error) => {
+            if (this.$scope.model.service.serviceType === 'PCC' && this.$scope.model.service.usesAgora) {
+              return null;
+            }
+
+            return this.$q.reject(error);
           }),
       );
 
@@ -154,6 +180,30 @@ angular
               this.$scope.orderableIp.size = models['dedicatedCloud.OrderableIpBlockRangeEnum'].enum;
             }),
         );
+
+        if (this.$scope.model.service.usesAgora) {
+          queue.push(
+            this.IpAgoraOrder
+              .getIpOffers(this.$scope.user.ovhSubsidiary)
+              .then((offers) => {
+                this.$scope.orderableIp.countries = _.uniq(
+                  _.flatten(
+                    _.map(
+                      offers,
+                      offer => offer.details.product.configurations.find(config => config.name === 'country').values,
+                    ),
+                  ),
+                )
+                  .map(countryCode => ({
+                    code: countryCode,
+                    displayValue: this.$translate.instant(`country_${countryCode.toUpperCase()}`),
+                  }))
+                  .sort();
+
+                this.a = 'pouet';
+              }),
+          );
+        }
       } else if (this.$scope.model.service.serviceType === 'DEDICATED') {
         // Check if it is a BHS server
         queue.push(
