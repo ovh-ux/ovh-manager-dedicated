@@ -1,6 +1,6 @@
 angular
   .module('App')
-  .controller('AppCtrl', class AppCtrl {
+  .controller('AppCtrl', class {
     constructor(
       $rootScope,
       User,

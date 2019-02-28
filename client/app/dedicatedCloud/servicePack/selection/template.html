@@ -4,7 +4,7 @@
 <oui-message
     data-type="info"
     data-dismissable="false"
-    data-ng-if="!$ctrl.hasDefaultMeansOfPayment">
+    data-ng-if="$ctrl.hasDefaultMeansOfPayment">
     <p data-translate="dedicatedCloud_servicePack_selection_noDefaultMeansOfPayment"></p>
 
     <p data-ng-if="$ctrl.currentUser.ovhSubsidiary !== 'PL'">
