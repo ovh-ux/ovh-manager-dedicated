@@ -1,3 +1,13 @@
+<a name="10.11.2"></a>
+## [10.11.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.11.1...v10.11.2) (2019-03-01)
+
+
+### Bug Fixes
+
+* **dedicated.server:** translation issue order vrack ([89fc68e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/89fc68e))
+
+
+
 <a name="10.11.1"></a>
 ## [10.11.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.11.0...v10.11.1) (2019-02-28)
 
