@@ -61,4 +61,22 @@ angular
         })
         .then(({ plans }) => plans);
     }
+
+    fetchPrices(serviceName, blockSize) {
+      return this.OvhHttp
+        .get(`/order/cartServiceOption/privateCloud/${serviceName}`, {
+          rootPath: 'apiv6',
+        })
+        .then((offers) => {
+          const matchingOffers = offers
+            .filter(offer => offer.family === 'ip')
+            .filter(offer => offer.planCode.includes(blockSize));
+
+          return [].concat(...matchingOffers.map(offer => offer.prices.map(price => ({
+            planCode: offer.planCode,
+            duration: price.duration,
+            price: price.price.text,
+          }))));
+        });
+    }
   });

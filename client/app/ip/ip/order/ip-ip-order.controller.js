@@ -180,30 +180,6 @@ angular
               this.$scope.orderableIp.size = models['dedicatedCloud.OrderableIpBlockRangeEnum'].enum;
             }),
         );
-
-        if (this.$scope.model.service.usesAgora) {
-          queue.push(
-            this.IpAgoraOrder
-              .getIpOffers(this.$scope.user.ovhSubsidiary)
-              .then((offers) => {
-                this.$scope.orderableIp.countries = _.uniq(
-                  _.flatten(
-                    _.map(
-                      offers,
-                      offer => offer.details.product.configurations.find(config => config.name === 'country').values,
-                    ),
-                  ),
-                )
-                  .map(countryCode => ({
-                    code: countryCode,
-                    displayValue: this.$translate.instant(`country_${countryCode.toUpperCase()}`),
-                  }))
-                  .sort();
-
-                this.a = 'pouet';
-              }),
-          );
-        }
       } else if (this.$scope.model.service.serviceType === 'DEDICATED') {
         // Check if it is a BHS server
         queue.push(
@@ -330,17 +306,41 @@ angular
       this.$scope.loading.durations = true;
 
       if (this.$scope.orderableIp.isCanadianServer && this.$scope.model.params.blockSize > 1) {
-        this.$scope.model.params.country = _.first(this.$scope.orderableIp.countries) || 'ca'; // Forced :'( ...
+        this.$scope.model.params.country = _.first(this.$scope.orderableIp.countries).code || 'ca'; // Forced :'( ...
       }
 
-      queue.push(
-        this.IpOrder
-          .getOrder(this.$scope.model.service, this.$scope.model.params)
-          .then((durations) => {
-            this.$scope.durations.available = durations;
-            this.loadPrices(durations);
-          }),
-      );
+      if (this.$scope.model.service.usesAgora) {
+        queue.push(
+          this.IpAgoraOrder
+            .fetchPrices(this.$scope.model.service.serviceName, this.$scope.model.params.size)
+            .then((prices) => {
+              this.$scope.durations.available = _.map(prices, 'duration');
+              this.$scope.durations.details = prices.reduce((accumulator, currentValue) => ({
+                ...accumulator,
+                [currentValue.duration]: {
+                  ...currentValue,
+                  details: [
+                    {},
+                    {
+                      totalPrice: {
+                        value: 0,
+                      },
+                    },
+                  ],
+                },
+              }), {});
+            }),
+        );
+      } else {
+        queue.push(
+          this.IpOrder
+            .getOrder(this.$scope.model.service, this.$scope.model.params)
+            .then((durations) => {
+              this.$scope.durations.available = durations;
+              this.loadPrices(durations);
+            }),
+        );
+      }
 
       if (this.$scope.model.service.serviceType === 'DEDICATED') {
         angular.forEach(this.$scope.orderableIp.ipv4, (ip) => {

@@ -25,7 +25,7 @@
                 name="countrySelect"
                 data-ng-model="model.params.country"
                 class="oui-select__input"
-                data-ng-options="country as country.displayValue for country in orderableIp.countries | orderBy:'displayValue' track by country.code"
+                data-ng-options="country.code as country.displayValue for country in orderableIp.countries | orderBy:'displayValue' track by country.code"
                 required>
                 <option
                     data-value=""
