@@ -1,19 +1,9 @@
-import dedicatedCloudDashboardModuleName from './dashboard';
+import dedicatedCloudDashboardModuleName from './dashboard/main';
 
 const resolveCurrentService = /* @ngInject */ (
   $transition$,
   DedicatedCloud,
 ) => DedicatedCloud.getSelected($transition$.params().productId, true);
-
-const order = /* @ngInject */ dedicatedCloudDashboardService => dedicatedCloudDashboardService
-  .fetchPendingServicePackOrder();
-
-const servicePacks = /* @ngInject */ (
-  currentService,
-  currentUser,
-  dedicatedCloudServicePack,
-) => dedicatedCloudServicePack
-  .buildAllForService(currentService.serviceName, currentUser.ovhSubsidiary);
 
 angular
   .module('App')
@@ -35,8 +25,6 @@ angular
         translations: ['.'],
         resolve: {
           currentService: resolveCurrentService,
-          pendingServicePackOrder: order,
-          servicePacks,
         },
       },
     );

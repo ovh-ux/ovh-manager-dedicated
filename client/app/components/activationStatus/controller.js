@@ -1,9 +1,9 @@
-import _ from 'lodash';
 import { ALL_TYPES, CLASS_NAME_TEMPLATE } from './constants';
 
 /* @ngInject */
 export default class DedicatedCloudActivationStatus {
   $onInit() {
+    this.className = 'pouet';
     this.onStatusChange();
   }
 
@@ -12,12 +12,12 @@ export default class DedicatedCloudActivationStatus {
   }
 
   onStatusChange() {
-    const status = _.invert(ALL_TYPES)[this.status];
+    const status = ALL_TYPES[this.statusName];
 
     if (status == null) {
-      throw new Error(`dedicatedCloudActivationStatus: ${_.get(this.status, 'name')} is not a valid activation status`);
+      throw new Error(`dedicatedCloudActivationStatus: ${this.statusName} is not a valid activation status`);
     }
 
-    this.className = `${CLASS_NAME_TEMPLATE}${this.status.type}`;
+    this.className = `${CLASS_NAME_TEMPLATE}${status.type}`;
   }
 }

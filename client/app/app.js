@@ -10,7 +10,7 @@ import uiRouter from '@uirouter/angularjs';
 import activationStatus from './components/activationStatus';
 import stepper from './components/stepper';
 import config from './config/config';
-import dedicatedCloudDasboard from './dedicatedCloud/dashboard';
+import dedicatedCloudDasboard from './dedicatedCloud/dashboard/main';
 import dedicatedCloudServicePack from './dedicatedCloud/servicePack';
 import dedicatedCloudServicePackOption from './dedicatedCloud/servicePack/option';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';

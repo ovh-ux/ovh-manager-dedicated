@@ -1,20 +1,44 @@
 import _ from 'lodash';
-import { OPTIONS } from './constants';
 
 export default class DedicatedCloudServicePackOption {
+  /* @ngInject */
   constructor(
     $q,
     $translate,
     constants,
     OvhHttp,
+    DEDICATED_CLOUD_SERVICE_PACK_OPTION,
   ) {
     this.$q = $q;
     this.$translate = $translate;
     this.constants = constants;
     this.OvhHttp = OvhHttp;
+    this.DEDICATED_CLOUD_SERVICE_PACK_OPTION = DEDICATED_CLOUD_SERVICE_PACK_OPTION;
   }
 
-  fetchAvailableOptionNames({ serviceName, servicePackName }) {
+  fetchAllExistingOptionNames(serviceName) {
+    return this.OvhHttp
+      .get(`/dedicatedCloud/${serviceName}/servicePacks`, {
+        rootPath: 'apiv6',
+      })
+      .then(
+        servicePackNames => this.mapServicePackNamesToOptionNames(serviceName, servicePackNames),
+      )
+      .then(optionNames => _
+        .uniq(
+          _.flatten(optionNames),
+        )
+        .sort());
+  }
+
+  mapServicePackNamesToOptionNames(serviceName, servicePackNames) {
+    return this.$q.all(
+      servicePackNames
+        .map(servicePackName => this.fetchOptionNames(serviceName, servicePackName)),
+    );
+  }
+
+  fetchOptionNames(serviceName, servicePackName) {
     return this.OvhHttp
       .get(`/dedicatedCloud/${serviceName}/servicePacks/${servicePackName}`, {
         rootPath: 'apiv6',
@@ -22,19 +46,19 @@ export default class DedicatedCloudServicePackOption {
       .then(({ options: names }) => names);
   }
 
-  static getType(optionName) {
-    return _.find(OPTIONS, { name: optionName }).type;
+  getType(optionName) {
+    return _.find(this.DEDICATED_CLOUD_SERVICE_PACK_OPTION.OPTIONS, { name: optionName }).type;
   }
 
-  getDescriptionURL(name, subsidiary) {
+  getDiscoverURL(name, subsidiary) {
     return _.get(this.constants.urls, subsidiary, 'FR').guides[name];
   }
 
   fetchRawOptions({ serviceName, servicePackName, subsidiary }) {
-    return this.fetchAvailableOptionNames({ serviceName, servicePackName })
+    return this.fetchOptionNames(serviceName, servicePackName)
       .then(names => this.$q.all(names.map(name => ({
         name,
-        descriptionURL: this.getDescriptionURL(name, subsidiary),
+        descriptionURL: this.getDiscoverURL(name, subsidiary),
       }))));
   }
 
@@ -43,9 +67,7 @@ export default class DedicatedCloudServicePackOption {
       .fetchRawOptions({ serviceName, servicePackName, subsidiary })
       .then(options => options.map(option => ({
         ...option,
-        displayName: this.$translate.instant(`dedicatedCloud_options_name_${option.name}`),
-        mensualCost: 100,
-        type: DedicatedCloudServicePackOption.getType(option.name),
+        type: this.getType(option.name),
       })));
   }
 }

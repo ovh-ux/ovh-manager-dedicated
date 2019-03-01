@@ -105,98 +105,12 @@
 
     <!-- OPTIONS -->
     <div class="col-md-4 mb-5">
-        <oui-tile
-            class="h-100"
-            data-heading="{{:: 'dedicatedCloud_options_title' | translate }}">
-            <oui-tile-definition data-term="{{:: 'dedicatedCloud_dashboard_options_basicOptions_description' | translate }}">
-                <oui-tile-description class="oui-list oui-list_separated m-0">
-                    <ul
-                        class="oui-list__items pl-3"
-                        data-ng-if="$ctrl.allExistingOptions.length > 1">
-                        <li
-                            class="oui-list__item oui-list__group pt-3"
-                            data-ng-class="{
-                                'pb-3': !$last,
-                            }"
-                            data-ng-repeat="option in $ctrl.allExistingOptions track by option.name">
-                            <span data-ng-bind="'dedicatedCloud_dashboard_options_basicOptions_names_' + option.name | translate"></span>
-                            <dedicated-cloud-activation-status
-                                data-ng-if="$ctrl.pendingServicePackOrder.activationType === $ctrl.DEDICATED_CLOUD_SERVICE_PACK_OPTION.OPTION_TYPES.basicOption.name"
-                                data-status="$ctrl.DEDICATED_CLOUD_ACTIVATION_STATUS.pendingActivation"></dedicated-cloud-activation-status>
-                            <dedicated-cloud-activation-status
-                                data-ng-if="!$ctrl.pendingServicePackOrder.activationType === $ctrl.DEDICATED_CLOUD_SERVICE_PACK_OPTION.OPTION_TYPES.basicOption.name"
-                                data-status="option.status"></dedicated-cloud-activation-status>
-                            <a
-                                class="d-block oui-link_icon"
-                                target="_blank"
-                                rel="noopener"
-                                data-ng-if="option.status === $ctrl.DEDICATED_CLOUD_ACTIVATION_STATUS.disabled"
-                                data-ng-href="{{ option.descriptionURL }}">
-                                <span data-translate="dedicatedCloud_dashboard_options_basicOptions_moreInformation"></span>
-                                <span
-                                    class="oui-icon oui-icon-external_link"
-                                    aria-hidden="true"></span>
-                                <span
-                                    class="sr-only"
-                                    data-translate="common_new_tab"></span>
-                            </a>
-                        </li>
-                    </ul>
-                </oui-tile-description>
-                <oui-action-menu
-                    data-ng-if="!$ctrl.pendingServicePackOrder"
-                    data-aria-label="{{:: 'menu_action_label' | translate: { t0: ('dedicatedCloud_dashboard_options_basicOptions_menu_changeOption' | translate) } }}"
-                    data-compact
-                    data-align="end">
-                    <oui-action-menu-item
-                        data-text="{{ $ctrl.options.basicOption.title }}"
-                        data-disabled="!$ctrl.orderableServicePacksWithOnlyBasicOptions.length"
-                        data-ui-sref=".servicePack({
-                            activationType: $ctrl.DEDICATED_CLOUD_SERVICE_PACK_OPTION.OPTION_TYPES.basicOption.name,
-                            orderableServicePacks: $ctrl.orderableServicePacksWithOnlyBasicOptions,
-                            servicePacks: $ctrl.servicePacks,
-                        })">
-                    </oui-action-menu-item>
-                </oui-action-menu>
-            </oui-tile-definition>
-            <oui-tile-definition data-term="{{:: 'dedicatedCloud_dashboard_options_certifications_description' | translate }}">
-                <oui-tile-description>
-                    <p data-ng-bind="$ctrl.currentCertification
-                        ? (('dedicatedCloud_dashboard_options_certifications_names_' + currentServicePack.name) | translate)
-                        : 'Aucune'"></p>
-
-                        <a
-                            class="oui-link_icon"
-                            target="_blank"
-                            rel="noopener"
-                            data-ng-if=":: $ctrl.currentService.certifiedInterfaceUrl && $ctrl.currentService.advancedSecurity"
-                            data-ng-href="{{:: $ctrl.currentService.certifiedInterfaceUrl }}">
-                            <span data-translate="dedicatedCloud_datacenter_go_certified_web_interface"></span>
-                            <span
-                                class="oui-icon oui-icon-external_link"
-                                aria-hidden="true"></span>
-                            <span
-                                class="sr-only"
-                                data-translate="common_new_tab"></span>
-                        </a>
-                    </oui-tile-description>
-                <oui-action-menu
-                    data-ng-if="!$ctrl.pendingServicePackOrder"
-                    data-aria-label="{{:: 'menu_action_label' | translate: { t0: ('dedicatedCloud_dashboard_options_certifications_menu_changeCertification' | translate) } }}"
-                    data-compact
-                    data-align="end">
-                    <oui-action-menu-item
-                        data-disabled="$ctrl.orderableServicePacksWithCertifications.length === 0"
-                        data-text="{{:: 'dedicatedCloud_dashboard_options_certifications_menu_changeCertification' | translate }}"
-                        data-ui-sref=".servicePack({
-                            activationType: $ctrl.DEDICATED_CLOUD_SERVICE_PACK_OPTION.OPTION_TYPES.certification.name,
-                            orderableServicePacks: $ctrl.orderableServicePacksWithCertifications,
-                            servicePacks: $ctrl.servicePacks,
-                        })">
-                    </oui-action-menu-item>
-                </oui-action-menu>
-            </oui-tile-definition>
-        </oui-tile>
+        <option-tile
+            data-current-service="$ctrl.currentService"
+            data-current-user="$ctrl.currentUser"
+            data-pending-service-pack-order="$ctrl.pendingServicePackOrder"
+            data-service-packs="$ctrl.servicePacks"
+            class="h-100"></option-tile>
     </div>
 
     <!-- SUBSCRIPTIONS -->

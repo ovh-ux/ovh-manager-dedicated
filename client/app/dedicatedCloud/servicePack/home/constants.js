@@ -12,7 +12,7 @@ export const ACTIVATION_TYPES = {
     smsActivation,
     summary,
   ],
-  basicOptions: [
+  basic: [
     selection,
     summary,
   ],

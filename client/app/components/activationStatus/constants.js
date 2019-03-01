@@ -15,6 +15,10 @@ export const ALL_TYPES = {
     name: 'beingActivated',
     type: 'warning',
   },
+  unknown: {
+    name: 'unknown',
+    type: 'info',
+  },
 };
 
 export const CLASS_NAME_TEMPLATE = 'oui-status_';

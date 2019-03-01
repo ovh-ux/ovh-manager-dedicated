@@ -1,0 +1,91 @@
+<oui-tile data-heading="{{:: 'heading' | translate }}">
+    <div
+        data-ng-if="$ctrl.bindings.isLoading"
+        class="text-center">
+        <oui-spinner></oui-spinner>
+    </div>
+
+    <div data-ng-if="!$ctrl.bindings.isLoading">
+        <oui-tile-definition data-term="{{:: 'basic_definition' | translate }}">
+            <oui-tile-description class="oui-list oui-list_separated m-0">
+                <ul class="oui-list__items pl-3">
+                    <li
+                        data-ng-repeat="option in ::$ctrl.bindings.basic.options track by option.name"
+                        data-ng-class="{
+                            'pb-3': !$last,
+                        }"
+                        class="oui-list__item oui-list__group pt-3">
+                        <span data-translate="{{:: 'basic_name_' + option.name }}"></span>
+
+                        <dedicated-cloud-activation-status
+                            class="d-block"
+                            data-status-name=":: option.status.name"></dedicated-cloud-activation-status>
+                        <a
+                            data-ng-if=":: option.displayDiscoverLink"
+                            data-ng-href="{{:: option.discoverURL }}"
+                            class="d-block oui-link_icon"
+                            target="_blank"
+                            rel="noopener">
+                            <span data-translate="basic_discover"></span>
+                            <span
+                                class="oui-icon oui-icon-external_link"
+                                aria-hidden="true"></span>
+                            <span
+                                class="sr-only"
+                                data-translate="openNewTab"></span>
+                        </a>
+                    </li>
+                </ul>
+            </oui-tile-description>
+
+            <oui-action-menu
+                data-ng-if=":: $ctrl.bindings.basic.actionMenu.isDisplayed"
+                data-aria-label="{{:: 'actionMenu_aria' | translate: { t0: ('basic_definition' | translate) } }}"
+                data-compact
+                data-align="end">
+                <oui-action-menu-item
+                    data-ng-if=":: $ctrl.bindings.basic.actionMenu.modify.isDisplayed"
+                    data-ui-sref=":: .servicePack($ctrl.bindings.basic.actionMenu.modify.stateParams)"
+                    data-text="{{:: $ctrl.bindings.basic.actionMenu.modify.text }}">
+                </oui-action-menu-item>
+                <oui-action-menu-item
+                    data-ng-if=":: $ctrl.bindings.basic.actionMenu.validateActivation.isDisplayed"
+                    data-href="{{:: $ctrl.bindings.basic.actionMenu.validateActivation.url }}"
+                    data-text="{{:: 'basic_actionMenu_validateActication' | translate }}"
+                    data-external>
+                </oui-action-menu-item>
+            </oui-action-menu>
+        </oui-tile-definition>
+
+
+        <oui-tile-definition data-term="{{:: 'certification_definition' | translate }}">
+            <oui-tile-description>
+                <span data-ng-bind="$ctrl.bindings.certification.description"></span>
+                <a
+                    data-ng-if=":: $ctrl.bindings.certification.interface.isDisplayed"
+                    data-ng-href="{{:: $ctrl.bindings.certification.interface.url }}"
+                    class="oui-link_icon"
+                    target="_blank"
+                    rel="noopener">
+                    <span data-translate="certification_interface"></span>
+                    <span
+                        class="oui-icon oui-icon-external_link"
+                        aria-hidden="true"></span>
+                    <span
+                        class="sr-only"
+                        data-translate="openNewTab"></span>
+                </a>
+            </oui-tile-description>
+            <oui-action-menu
+                data-ng-if=":: $ctrl.bindings.certification.actionMenu.isDisplayed"
+                data-aria-label="{{:: 'actionMenu_aria' | translate: { t0: ('certification_definition' | translate) } }}"
+                data-compact
+                data-align="end">
+                <oui-action-menu-item
+                    data-text="{{:: 'certification_actionMenu_activate' | translate }}"
+                    data-ui-sref=":: .servicePack($ctrl.bindings.certification.actionMenu.activate.stateParams)">
+                </oui-action-menu-item>
+            </oui-action-menu>
+        </oui-tile-definition>
+    </div>
+</oui-tile>

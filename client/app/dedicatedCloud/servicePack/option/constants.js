@@ -1,10 +1,10 @@
 export const CONSTANT_NAME = 'DEDICATED_CLOUD_SERVICE_PACK_OPTION';
 export const MODULE_NAME = 'dedicatedCloudServicePackOption';
-export const SERVICE_NAME = 'dedicatedCloudServicePackOption';
+export const SERVICE_NAME = 'servicePackOptionService';
 
 export const OPTION_TYPES = {
-  basicOption: {
-    name: 'basicOption',
+  basic: {
+    name: 'basic',
     servicePackCanHaveMoreThanOne: true,
   },
   certification: {
@@ -16,11 +16,11 @@ export const OPTION_TYPES = {
 export const OPTIONS = [
   {
     name: 'nsx',
-    type: OPTION_TYPES.basicOption,
+    type: OPTION_TYPES.basic,
   },
   {
     name: 'vrops',
-    type: OPTION_TYPES.basicOption,
+    type: OPTION_TYPES.basic,
   },
   {
     name: 'pcidss',

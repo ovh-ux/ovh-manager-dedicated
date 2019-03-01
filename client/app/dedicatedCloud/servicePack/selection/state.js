@@ -1,4 +1,4 @@
-const activationType = /* @ngInject */ $transition$ => $transition$.params().servicePacks;
+const activationType = /* @ngInject */ $transition$ => $transition$.params().activationType;
 
 const resolveCurrentService = /* @ngInject */ (
   $transition$,

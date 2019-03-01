@@ -4,10 +4,14 @@ import _ from 'lodash';
 export default class {
   constructor(
     $state,
+    $translate,
+    Alerter,
     dedicatedCloudServicePack,
     OvhApiOrder,
   ) {
     this.$state = $state;
+    this.$translate = $translate;
+    this.Alerter = Alerter;
     this.dedicatedCloudServicePack = dedicatedCloudServicePack;
     this.OvhApiOrder = OvhApiOrder;
   }
@@ -64,17 +68,19 @@ export default class {
         quantity: 1,
         autoPayWithPreferredPaymentMethod: false,
       }).$promise
-      .then(({ order }) => this.dedicatedCloudServicePack
-        .savePendingOrder(order.orderId, this.activationType))
-      .catch((error) => {
-        this.Alerter.alertFromSWS(
+      .then(({ order }) => {
+        this.orderIsInProgress = false;
+        this.orderingURL = order.url;
+        return this.dedicatedCloudServicePack.savePendingOrder(order, this.activationType);
+      })
+      .catch(error => this.stepper
+        .exit()
+        .then(() => this.Alerter.alertFromSWS(
           this.$translate.instant('dedicatedCloud_servicePack_selection_order_failure'),
           {
             message: error.data.message,
             type: 'ERROR',
           },
-        );
-      })
-      .then(() => this.stepper.exit());
+        )));
   }
 }

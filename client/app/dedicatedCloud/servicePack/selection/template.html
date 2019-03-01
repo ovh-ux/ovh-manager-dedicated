@@ -15,6 +15,7 @@
 </oui-message>
 
 <form
+    data-ng-show="!$ctrl.orderingURL && !$ctrl.orderIsInProgress"
     novalidate
     name="$ctrl.form">
 
@@ -95,3 +96,31 @@
         <span data-translate="dedicatedCloud_servicePack_selection_checkoutButton"></span>
     </oui-button>
 </form>
+
+<div
+    data-ng-if="$ctrl.orderIsInProgress"
+    class="text-center">
+    <oui-spinner data-size="l"></oui-spinner>
+</div>
+
+<oui-message
+    data-ng-if="$ctrl.orderingURL && !$ctrl.orderIsInProgress"
+    data-dismissable="false"
+    data-type="info">
+    <p>
+        <span data-translate="dedicatedCloud_servicePack_selection_checkoutDescription"></span>
+        <a
+            data-ng-href="{{ $ctrl.orderingURL }}"
+            target="_blank"
+            rel="noopener"
+            class="oui-link_icon">
+            <span data-translate="dedicatedCloud_servicePack_selection_checkoutLink"></span>
+            <span
+                class="oui-icon oui-icon-external_link"
+                aria-hidden="true"></span>
+            <span
+                class="sr-only"
+                data-translate="common_new_tab"></span>
+        </a>
+    </p>
+</oui-message>

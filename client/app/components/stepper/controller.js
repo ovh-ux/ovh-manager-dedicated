@@ -56,7 +56,7 @@ export default class DedicatedCloudStepper {
   }
 
   exit() {
-    return this.$state.go(this.baseStateName);
+    return this.$state.go(this.baseStateName, {}, { reload: true });
   }
 
   doesStepExist({ name }) {

@@ -3,7 +3,10 @@ import template from './template.html';
 
 export default {
   bindings: {
-    statusName: '<',
+    currentService: '<',
+    currentUser: '<',
+    pendingServicePackOrder: '<',
+    servicePacks: '<',
   },
   controller,
   template,

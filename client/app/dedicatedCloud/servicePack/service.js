@@ -8,7 +8,7 @@ export default class DedicatedCloudServicePack {
     $q,
     $translate,
     DedicatedCloud,
-    dedicatedCloudServicePackOption,
+    servicePackOptionService,
     OvhHttp,
     ovhUserPref,
     SERVICE_PACK_USER_PREFERENCES_KEY,
@@ -16,7 +16,7 @@ export default class DedicatedCloudServicePack {
     this.$q = $q;
     this.$translate = $translate;
     this.DedicatedCloud = DedicatedCloud;
-    this.dedicatedCloudServicePackOption = dedicatedCloudServicePackOption;
+    this.servicePackOptionService = servicePackOptionService;
     this.OvhHttp = OvhHttp;
     this.ovhUserPref = ovhUserPref;
     this.SERVICE_PACK_USER_PREFERENCES_KEY = SERVICE_PACK_USER_PREFERENCES_KEY;
@@ -29,7 +29,7 @@ export default class DedicatedCloudServicePack {
   }
 
   buildAllForService(serviceName, subsidiary) {
-    const buildChunkFromName = name => this.dedicatedCloudServicePackOption
+    const buildChunkFromName = name => this.servicePackOptionService
       .fetchOptions({
         serviceName,
         servicePackName: name,
@@ -72,7 +72,7 @@ export default class DedicatedCloudServicePack {
   static keepOnlyOrderableBasicOptions(servicePacks, currentServicePackName) {
     return this.keepOnlyCertainOptionType(
       this.removeCurrentServicePack(servicePacks, currentServicePackName),
-      OPTION_TYPES.basicOption,
+      OPTION_TYPES.basic,
     );
   }
 
@@ -108,7 +108,7 @@ export default class DedicatedCloudServicePack {
         .keepOnlyOrderableCertificates(servicePacks, currentServicePackName));
   }
 
-  fetchOrderableBasicOptions({
+  fetchOrderableBasic({
     currentServicePackName,
     serviceName,
     subsidiary,
@@ -118,7 +118,7 @@ export default class DedicatedCloudServicePack {
         _.reject(servicePacks, { name: currentServicePackName }),
         servicePack => _.every(
           servicePack.options,
-          option => _.isEqual(option.type, OPTION_TYPES.basicOption),
+          option => _.isEqual(option.type, OPTION_TYPES.basic),
         ),
       ));
   }
@@ -169,11 +169,14 @@ export default class DedicatedCloudServicePack {
         .reduce((accumulator, { hostFamilies }) => ({ ...accumulator, ...hostFamilies }), {}));
   }
 
-  savePendingOrder(orderId, activationType) {
+  savePendingOrder(order, activationType) {
     return this.ovhUserPref
       .assign(this.SERVICE_PACK_USER_PREFERENCES_KEY, {
-        orderId,
         activationType,
+        order: {
+          id: order.orderId,
+          url: order.url,
+        },
       });
   }
 }
