@@ -1,5 +1,5 @@
 import angular from 'angular';
-import 'ovh-angular-http';
+import '@ovh-ux/ng-ovh-http';
 
 import DucUserContractService from './user-contract.service';
 
@@ -7,7 +7,7 @@ const moduleName = 'ducContract';
 
 angular
   .module(moduleName, [
-    'ovh-angular-http',
+    'ngOvhHttp',
   ])
   .service('DucUserContractService', DucUserContractService);
 
