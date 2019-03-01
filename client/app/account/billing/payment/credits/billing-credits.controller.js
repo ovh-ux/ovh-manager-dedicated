@@ -65,7 +65,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.Credits', 
     this.loading.creditCode = true;
     return this.User.addCreditCode(this.model.creditCode)
       .then((result) => {
-        this.Alerter.success(this.$translate.instant('voucher_credit_code_success', [result.amount.text]));
+        this.Alerter.success(this.$translate.instant('voucher_credit_code_success', { t0: result.amount.text }));
         this.model.creditCode = null;
         this.$onInit();
       })

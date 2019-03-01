@@ -18,7 +18,7 @@ angular.module('Billing.filters').filter('autorenewFrequenceText', [
           slug = `${BASE_I18N_SLUG}year`;
           break;
         default:
-          return $translate.instant(`${BASE_I18N_SLUG}frequency_value`, [period]);
+          return $translate.instant(`${BASE_I18N_SLUG}frequency_value`, { t0: period });
       }
       return $translate.instant(slug);
     };

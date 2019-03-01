@@ -66,7 +66,7 @@ class BandwidthVrackOrderService extends BaseDedicatedService {
     return _.map(bandwidths, bandwidth => ({
       value: bandwidth,
       unit: 'mbps',
-      text: this.$translate.instant('unit_gbps', [Math.floor(bandwidth / 1000)]),
+      text: this.$translate.instant('unit_gbps', { t0: Math.floor(bandwidth / 1000) }),
     }));
   }
 }
