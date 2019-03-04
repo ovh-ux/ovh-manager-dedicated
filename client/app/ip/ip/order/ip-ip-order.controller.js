@@ -120,8 +120,9 @@ angular
           if (this.$scope.model.service.serviceType === 'PCC') {
             return this.DedicatedCloud
               .getDescription(this.$scope.model.service.serviceName)
-              .then(({ generation }) => {
+              .then(({ generation, servicePackName }) => {
                 this.$scope.model.service.usesAgora = generation === '2.0';
+                this.$scope.model.service.servicePackName = servicePackName;
               });
           }
 
@@ -245,9 +246,7 @@ angular
         && this.$scope.model.params.country
         && this.$scope.model.params.networkName
         && /^[a-zA-Z]+\w+$/.test(this.$scope.model.params.networkName)
-        && this.$scope.model.params.estimatedClientsNumber
         && this.$scope.model.params.description
-        && this.$scope.model.params.usage
           );
         case 'VPS':
           return this.$scope.model.params.country && this.$scope.model.params.number;
@@ -322,6 +321,7 @@ angular
                   details: [
                     {},
                     {
+                      planCode: currentValue.planCode,
                       totalPrice: {
                         value: 0,
                       },
@@ -380,16 +380,17 @@ angular
 
     loadContracts() {
       this.$scope.agree.value = false;
+
       if (!this.$scope.durations.details[this.$scope.model.duration].contracts
-  || !this.$scope.durations.details[this.$scope.model.duration].contracts.length) {
+        || !this.$scope.durations.details[this.$scope.model.duration].contracts.length) {
         this.$rootScope.$broadcast('wizard-goToStep', 6);
       }
     }
 
     backToContracts() {
       if (!this.$scope.durations.details[this.$scope.model.duration].contracts
-  || !this.$scope.durations.details[this.$scope.model.duration].contracts.length) {
-        this.s$rootScope.$broadcast('wizard-goToStep', 3);
+        || !this.$scope.durations.details[this.$scope.model.duration].contracts.length) {
+        this.$rootScope.$broadcast('wizard-goToStep', 3);
       }
     }
 
@@ -403,7 +404,40 @@ angular
         : this.$translate.instant('price_ht_label', { t0: price.text });
     }
 
+    redirectToPaymentPage() {
+      const productToOrder = this.IpAgoraOrder.constructor.createProductToOrder({
+        country: this.$scope.model.params.country,
+        description: this.$scope.model.params.description,
+        destination: this.$scope.model.service.serviceName,
+        planCode: this.$scope.durations.details[this.$scope.model.duration].planCode,
+        pricingMode: `pcc-servicepack-${this.$scope.model.service.servicePackName}`,
+        productId: 'privateCloud',
+        netname: this.$scope.model.params.networkName,
+        serviceName: this.$scope.model.service.serviceName,
+      });
+
+      return this.User
+        .getUrlOf('express_order')
+        .then((url) => {
+          this.$window.open(`${url}review?products=${JSURL.stringify([productToOrder])}`, '_blank');
+        })
+        .catch((data) => {
+          this.Alerter.alertFromSWS(this.$translate.instant('ip_order_finish_error'), data.data);
+        })
+        .finally(() => {
+          this.$scope.resetAction();
+        });
+    }
+
     confirmOrder() {
+      if (!this.$scope.model.service.usesAgora) {
+        return this.confirmLegacyOrder();
+      }
+
+      return this.redirectToPaymentPage();
+    }
+
+    confirmLegacyOrder() {
       this.$scope.loading.validation = true;
 
       return this.IpOrder

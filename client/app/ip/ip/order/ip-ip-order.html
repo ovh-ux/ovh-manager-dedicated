@@ -126,20 +126,28 @@
 
             <div data-ng-show="!loading.validation">
                 <p data-translate="ip_order_resume"></p>
-                <div class="table-responsive">
+                <strong
+                    data-ng-if="model.service.usesAgora"
+                    data-translate="ip_order_resume_short"
+                    data-translate-values="{
+                        blockSize: model.params.size,
+                        price: durations.details[model.duration].price,
+                    }"
+                    class="d-block"></strong>
+                <div
+                    data-ng-if="!model.service.usesAgora"
+                    class="table-responsive">
                     <table class="table table-hover">
                         <tbody>
                             <tr data-ng-repeat="detail in durations.details[model.duration].details">
                                 <th scope="row"
                                     data-ng-bind="detail.description"></th>
                                 <td class="text-right font-weight-bold"
-                                    data-ng-bind="getResumePrice(detail.totalPrice)">
+                                    data-ng-bind="getResumePrice(detail.totalPrice || 0)">
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                </div>
-                <div class="table-responsive">
                     <table class="table table-hover">
                         <tbody>
                             <tr>

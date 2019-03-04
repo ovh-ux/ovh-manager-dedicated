@@ -175,44 +175,17 @@ angular
       this.$state.go('^');
     }
 
-    static createProductToOrder(model) {
-      const productToOrder = {
-        planCode: model.params.selectedOffer.planCode,
-        productId: 'ip',
-        duration: 'P1M',
-        pricingMode: 'default',
-        quantity: model.params.selectedQuantity || 1,
-        configuration: [],
-      };
-
-      if (model.selectedService) {
-        productToOrder.configuration.push({
-          label: 'destination',
-          value: model.selectedService.serviceName,
-        });
-      }
-
-      if (model.params.selectedCountry) {
-        productToOrder.configuration.push({
-          label: 'country',
-          value: model.params.selectedCountry.code,
-        });
-      }
-
-      if (model.params.selectedOrganisation) {
-        productToOrder.configuration.push({
-          label: 'organisation',
-          value: model.params.selectedthis.Organisation.organisationId,
-        });
-      }
-
-      return productToOrder;
-    }
-
     redirectToPaymentPage() {
-      const productToOrder = AgoraIpOrderCtrl.createProductToOrder(this.model);
+      const productToOrder = this.IpAgoraOrder.constructor.createProductToOrder({
+        country: _.get(this.model.params, 'selectedCountry.code'),
+        destination: this.model.selectedService.serviceName,
+        organisation: _.get(this.model.params, 'selectedOrganisation.organisationId'),
+        planCode: _.get(this.model.params, 'selectedOffer.planCode'),
+        quantity: _.get(this.model.params, 'selectedQuantity'),
+      });
 
-      return this.User.getUrlOf('express_order')
+      return this.User
+        .getUrlOf('express_order')
         .then((url) => {
           this.$window.open(`${url}review?products=${JSURL.stringify([productToOrder])}`, '_blank');
         })
@@ -228,7 +201,6 @@ angular
     resumeOrder() {
       return this.$state.go('^');
     }
-
 
     static stringLocaleSensitiveComparator(v1, v2) {
       return v1.value.localeCompare(v2.value);

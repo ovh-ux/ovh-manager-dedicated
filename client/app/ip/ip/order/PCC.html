@@ -46,15 +46,6 @@
                data-maxlength="20">
     </oui-field>
 
-    <oui-field data-label="{{:: 'ip_order_estimatedclientsnumber' | translate }}" label-popover="{{:: 'ip_order_estimatedclientsnumber_help' | translate }}">
-        <input type="number" class="oui-input"
-               data-ng-model="model.params.estimatedClientsNumber"
-               name="estimatedClientsNumber"
-               id="estimatedClientsNumber"
-               min="1"
-               data-required>
-    </oui-field>
-
     <oui-field data-label="{{:: 'ip_order_description' | translate }}" label-popover="{{:: 'ip_order_description_help' | translate }}">
         <oui-textarea
             class="w-100"
@@ -67,14 +58,6 @@
             data-model="model.params.description"
             data-required>
         </oui-textarea>
-    </oui-field>
-
-    <oui-field data-label="{{:: 'ip_order_usage' | translate }}" label-popover="{{:: 'ip_order_usage_help' | translate }}">
-        <input type="text" class="oui-input"
-               data-ng-model="model.params.usage"
-               name="usage"
-               id="usage"
-               required>
     </oui-field>
 
 </form>
