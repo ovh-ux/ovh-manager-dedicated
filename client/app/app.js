@@ -1,4 +1,4 @@
-import ngOvhApiv7 from '@ovh-ux/ng-ovh-apiv7';
+import ngOvhApiWrappers from '@ovh-ux/ng-ovh-api-wrappers';
 import ngOvhHttp from '@ovh-ux/ng-ovh-http';
 import ngOvhProxyRequest from '@ovh-ux/ng-ovh-proxy-request';
 import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
@@ -36,7 +36,7 @@ const appDeps = [
   'atInternetUiRouterPlugin',
   'ovhBrowserAlert',
   'ui.validate',
-  ngOvhApiv7,
+  ngOvhApiWrappers,
   ngOvhHttp,
   ngOvhProxyRequest,
   ngOvhSsoAuth,
