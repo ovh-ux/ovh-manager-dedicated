@@ -38,6 +38,7 @@ const appDeps = [
   ngOvhApiv7,
   ngOvhSsoAuth,
   ngOvhSsoAuthModalPlugin,
+  'ovh-angular-tail-logs',
   'oui',
   'ui.select',
   uiRouter,
