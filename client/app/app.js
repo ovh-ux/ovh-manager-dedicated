@@ -1,11 +1,11 @@
 import ngOvhApiv7 from '@ovh-ux/ng-ovh-apiv7';
+import ovhContacts from '@ovh-ux/ng-ovh-contacts';
+import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
 import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
 import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
 import translateAsyncLoader from '@ovh-ux/translate-async-loader';
-import uiRouter from '@uirouter/angularjs';
 import webUniverseComponents from '@ovh-ux/web-universe-components';
-import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
-import ovhContacts from '@ovh-ux/ng-ovh-contacts';
+import uiRouter from '@uirouter/angularjs';
 
 import config from './config/config';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
