@@ -57,7 +57,6 @@ angular
     'ovh-angular-responsive-tabs',
     'ovh-angular-sidebar-menu',
     'ovh-angular-tail-logs',
-    'ovh-angular-user-pref',
     'ovh-utils-angular',
     'ovhBrowserAlert',
     ovhContacts,
