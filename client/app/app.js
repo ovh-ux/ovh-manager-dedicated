@@ -27,6 +27,7 @@ const appDeps = [
   'filters',
   'internationalPhoneNumber',
   'Module.download',
+  WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca' ? 'Module.exchange' : undefined,
   'Module.ip',
   'Module.license',
   'Module.otrs',
@@ -69,10 +70,6 @@ const appDeps = [
   'UserAccount',
   'xeditable',
 ];
-
-if (WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca') {
-  appDeps.push('Module.exchange');
-}
 
 angular.module('App', appDeps).constant('constants', {
   prodMode: config.prodMode,
