@@ -14,7 +14,7 @@
                     data-align="end">
                     <oui-action-menu-item
                         data-text="{{:: 'common_change' | translate }}"
-                        data-ng-click=":: $ctrl.openingModaleToEditDescription()"></oui-action-menu-item>
+                        data-ng-click=":: $ctrl.openModalToEditDescription()"></oui-action-menu-item>
                 </oui-action-menu>
             </oui-tile-definition>
             <oui-tile-definition
@@ -107,9 +107,6 @@
     <div class="col-md-4 mb-5">
         <option-tile
             data-current-service="$ctrl.currentService"
-            data-current-user="$ctrl.currentUser"
-            data-pending-service-pack-order="$ctrl.pendingServicePackOrder"
-            data-service-packs="$ctrl.servicePacks"
             class="h-100"></option-tile>
     </div>
 

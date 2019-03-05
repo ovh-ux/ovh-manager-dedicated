@@ -37,6 +37,7 @@
         <!-- Tabs -->
         <responsive-tabs>
             <responsive-tab data-state="app.dedicatedClouds"
+                            data-state-options="{ reload: 'app.dedicatedClouds.dashboard' }"
                             data-dropdown-title="{{ 'dedicatedCloud_tab_dashboard' | translate }}">
                 <span data-translate="dedicatedCloud_tab_dashboard"></span>
             </responsive-tab>
@@ -104,7 +105,8 @@
 
             <div data-ovh-alert="dedicatedCloud_alert"></div>
 
-            <div data-ng-if="$ctrl.stateIsChanging"
+            <div
+                data-ng-if="$ctrl.stateIsChanging"
                 class="text-center">
                 <oui-spinner data-size="l"></oui-spinner>
             </div>

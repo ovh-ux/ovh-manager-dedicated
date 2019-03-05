@@ -1,0 +1,8 @@
+<dedicated-cloud-dashboard
+    data-ng-if="$ctrl.currentService.usesAgora"
+    data-current-service="$ctrl.currentService"
+    data-current-user="$ctrl.currentUser"></dedicated-cloud-dashboard>
+<legacy-dashboard
+    data-ng-if="!$ctrl.currentService.usesAgora"
+    data-current-service="$ctrl.currentService"
+    data-current-user="$ctrl.currentUser"></legacy-dashboard>

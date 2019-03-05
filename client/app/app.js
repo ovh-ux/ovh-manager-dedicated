@@ -29,6 +29,7 @@ angular
     'directives',
     'filters',
     'internationalPhoneNumber',
+    'legacyDashboard',
     'Module.download',
     WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca' ? 'Module.exchange' : undefined,
     'Module.ip',

@@ -9,6 +9,7 @@ export default class {
     $timeout,
     $translate,
     $uibModal,
+    constants,
   ) {
     this.$scope = $scope;
     this.$state = $state;
@@ -16,9 +17,12 @@ export default class {
     this.$timeout = $timeout;
     this.$translate = $translate;
     this.$uibModal = $uibModal;
+    this.constants = constants;
   }
 
   $onInit() {
+    this.allowDedicatedServerComplianceOptions = this.constants.target !== 'US';
+
     this.setAction = (action, data) => this.$scope.$parent.setAction(action, data);
   }
 

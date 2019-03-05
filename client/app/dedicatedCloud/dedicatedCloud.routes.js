@@ -1,5 +1,3 @@
-import dedicatedCloudDashboardModuleName from './dashboard/main';
-
 const resolveCurrentService = /* @ngInject */ (
   $transition$,
   DedicatedCloud,
@@ -9,25 +7,24 @@ angular
   .module('App')
   .config(($stateProvider, $urlServiceProvider) => {
     /* @ngInject */
-    $stateProvider.state(
-      'app.dedicatedClouds',
-      {
-        url: '/configuration/dedicated_cloud/:productId',
-        views: {
-          '': {
-            templateUrl: 'dedicatedCloud/dedicatedCloud.html',
-            controller: 'DedicatedCloudCtrl',
-            controllerAs: '$ctrl',
-          },
-          'pccView@app.dedicatedClouds': dedicatedCloudDashboardModuleName,
+    $stateProvider.state('app.dedicatedClouds', {
+      reloadOnSearch: false,
+      resolve: {
+        currentService: resolveCurrentService,
+      },
+      translations: ['.'],
+      url: '/configuration/dedicated_cloud/:productId',
+      views: {
+        '': {
+          templateUrl: 'dedicatedCloud/dedicatedCloud.html',
+          controller: 'DedicatedCloudCtrl',
+          controllerAs: '$ctrl',
         },
-        reloadOnSearch: false,
-        translations: ['.'],
-        resolve: {
-          currentService: resolveCurrentService,
+        'pccView@app.dedicatedClouds': {
+          templateUrl: 'dedicatedCloud/dashboard/dedicatedCloud-dashboard.html',
         },
       },
-    );
+    });
 
     // ensure compatibility with links sended by emails
     // like #/configuration/dedicated_cloud/pcc-123456?action=confirmcancel&token=myToken

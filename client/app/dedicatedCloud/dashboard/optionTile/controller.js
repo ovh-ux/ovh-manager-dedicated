@@ -8,6 +8,7 @@ export default class OptionTile {
     dedicatedCloudServicePack,
     servicePackOptionService,
     optionTile,
+    User,
     DEDICATED_CLOUD_ACTIVATION_STATUS,
     DEDICATED_CLOUD_SERVICE_PACK_OPTION,
   ) {
@@ -16,8 +17,14 @@ export default class OptionTile {
     this.dedicatedCloudServicePack = dedicatedCloudServicePack;
     this.servicePackOptionService = servicePackOptionService;
     this.optionTile = optionTile;
+    this.User = User;
     this.ACTIVATION_STATUS = DEDICATED_CLOUD_ACTIVATION_STATUS;
     this.OPTION_TYPES = DEDICATED_CLOUD_SERVICE_PACK_OPTION.OPTION_TYPES;
+  }
+
+  fetchCurrentUser() {
+    return this.User
+      .getUser();
   }
 
   fetchOptionNames() {
@@ -44,17 +51,22 @@ export default class OptionTile {
 
     return this.$q
       .all({
+        currentUser: this.fetchCurrentUser(),
         optionNames: this.fetchOptionNames(),
         pendingOrder: this.fetchPendingOrder(),
-        servicePacks: this.fetchServicePacks(),
       })
       .then(({
+        currentUser,
         optionNames,
         pendingOrder,
-        servicePacks,
       }) => {
+        this.currentUser = currentUser;
         this.optionNames = optionNames;
         this.pendingOrder = pendingOrder;
+
+        return this.fetchServicePacks();
+      })
+      .then((servicePacks) => {
         this.servicePacks = servicePacks;
 
         this.orderableServicePacksWithOnlyBasicOptions = _.filter(
