@@ -6,13 +6,13 @@ export default class {
     $q,
     OvhHttp,
     ovhUserPref,
-    DEDICATED_CLOUD_ACTIVATION_STATUS,
+    ACTIVATION_STATUS,
     SERVICE_PACK_USER_PREFERENCES_KEY,
   ) {
     this.$q = $q;
     this.OvhHttp = OvhHttp;
     this.ovhUserPref = ovhUserPref;
-    this.DEDICATED_CLOUD_ACTIVATION_STATUS = DEDICATED_CLOUD_ACTIVATION_STATUS;
+    this.ACTIVATION_STATUS = ACTIVATION_STATUS;
     this.SERVICE_PACK_USER_PREFERENCES_KEY = SERVICE_PACK_USER_PREFERENCES_KEY;
   }
 
@@ -23,16 +23,16 @@ export default class {
       ORDER_STATUSES.documentsRequested,
       ORDER_STATUSES.notPaid,
     ].includes(orderStatusName)) {
-      return this.DEDICATED_CLOUD_ACTIVATION_STATUS.pendingActivation;
+      return this.ACTIVATION_STATUS.pendingActivation;
     }
 
     if ([
       ORDER_STATUSES.delivering,
     ].includes(orderStatusName)) {
-      return this.DEDICATED_CLOUD_ACTIVATION_STATUS.beingActivated;
+      return this.ACTIVATION_STATUS.beingActivated;
     }
 
-    return this.DEDICATED_CLOUD_ACTIVATION_STATUS.unknown;
+    return this.ACTIVATION_STATUS.unknown;
   }
 
   fetchDoesPreferenceExist(preferenceName) {

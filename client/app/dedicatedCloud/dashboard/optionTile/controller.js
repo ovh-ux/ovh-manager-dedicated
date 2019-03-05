@@ -9,7 +9,7 @@ export default class OptionTile {
     servicePackOptionService,
     optionTile,
     User,
-    DEDICATED_CLOUD_ACTIVATION_STATUS,
+    ACTIVATION_STATUS,
     DEDICATED_CLOUD_SERVICE_PACK_OPTION,
   ) {
     this.$q = $q;
@@ -18,7 +18,7 @@ export default class OptionTile {
     this.servicePackOptionService = servicePackOptionService;
     this.optionTile = optionTile;
     this.User = User;
-    this.ACTIVATION_STATUS = DEDICATED_CLOUD_ACTIVATION_STATUS;
+    this.ACTIVATION_STATUS = ACTIVATION_STATUS;
     this.OPTION_TYPES = DEDICATED_CLOUD_SERVICE_PACK_OPTION.OPTION_TYPES;
   }
 

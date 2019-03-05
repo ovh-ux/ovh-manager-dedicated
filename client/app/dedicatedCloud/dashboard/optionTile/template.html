@@ -1,4 +1,6 @@
-<oui-tile data-heading="{{:: 'heading' | translate }}">
+<oui-tile
+    class="h-100"
+    data-heading="{{:: 'heading' | translate }}">
     <div
         data-ng-if="$ctrl.bindings.isLoading"
         class="text-center">
@@ -17,9 +19,9 @@
                         class="oui-list__item oui-list__group pt-3">
                         <span data-translate="{{:: 'basic_name_' + option.name }}"></span>
 
-                        <dedicated-cloud-activation-status
+                        <activation-status
                             class="d-block"
-                            data-status-name=":: option.status.name"></dedicated-cloud-activation-status>
+                            data-status-name=":: option.status.name"></activation-status>
                         <a
                             data-ng-if=":: option.displayDiscoverLink"
                             data-ng-href="{{:: option.discoverURL }}"
@@ -56,7 +58,6 @@
                 </oui-action-menu-item>
             </oui-action-menu>
         </oui-tile-definition>
-
 
         <oui-tile-definition data-term="{{:: 'certification_definition' | translate }}">
             <oui-tile-description>

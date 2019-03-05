@@ -12,7 +12,7 @@ import service from './service';
 
 angular
   .module(MODULE_NAME, [
-    'dedicatedCloudActivationStatus',
+    'activationStatus',
     'dedicatedCloudServicePack',
     'oui',
     'pascalprecht.translate',

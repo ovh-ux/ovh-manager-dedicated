@@ -7,7 +7,6 @@ import translateAsyncLoader from '@ovh-ux/translate-async-loader';
 import webUniverseComponents from '@ovh-ux/web-universe-components';
 import uiRouter from '@uirouter/angularjs';
 
-import activationStatus from './components/activationStatus';
 import stepper from './components/stepper';
 import config from './config/config';
 import dedicatedCloudDasboard from './dedicatedCloud/dashboard/main';
@@ -17,7 +16,7 @@ import dedicatedUniverseComponents from './dedicatedUniverseComponents';
 
 angular
   .module('App', [
-    activationStatus,
+    'activationStatus',
     'atInternetUiRouterPlugin',
     'Billing',
     'chart.js',

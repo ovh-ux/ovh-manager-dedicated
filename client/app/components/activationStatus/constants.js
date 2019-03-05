@@ -1,19 +1,22 @@
-export const ALL_TYPES = {
-  enabled: {
-    name: 'enabled',
-    type: 'success',
+export const COMPONENT_NAME = 'activationStatus';
+export const CONSTANT_NAME = 'ACTIVATION_STATUS';
+export const MODULE_NAME = 'activationStatus';
+export const STATUS = {
+  beingActivated: {
+    name: 'beingActivated',
+    type: 'warning',
   },
   disabled: {
     name: 'disabled',
     type: 'error',
   },
+  enabled: {
+    name: 'enabled',
+    type: 'success',
+  },
   pendingActivation: {
     name: 'pendingActivation',
     type: 'error',
-  },
-  beingActivated: {
-    name: 'beingActivated',
-    type: 'warning',
   },
   unknown: {
     name: 'unknown',
@@ -21,9 +24,9 @@ export const ALL_TYPES = {
   },
 };
 
-export const CLASS_NAME_TEMPLATE = 'oui-status_';
-
 export default {
-  ALL_TYPES,
-  CLASS_NAME_TEMPLATE,
+  COMPONENT_NAME,
+  CONSTANT_NAME,
+  MODULE_NAME,
+  STATUS,
 };

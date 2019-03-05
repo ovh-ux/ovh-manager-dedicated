@@ -1,4 +1,4 @@
 <span
     class="oui-status"
-    data-ng-class="$ctrl.className"
-    data-translate="{{ 'dedicatedCloud_activationStatus_' + $ctrl.statusName }}"></span>
+    data-ng-class="'oui-status_' + $ctrl.status.type"
+    data-translate="{{ 'activationStatus_' + $ctrl.statusName }}"></span>

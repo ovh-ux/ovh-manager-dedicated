@@ -3,11 +3,11 @@ export default class DedicatedCloudservicePackSmsActivation {
   constructor(
     $q,
     $state,
-    DEDICATED_CLOUD_ACTIVATION_STATUS,
+    ACTIVATION_STATUS,
   ) {
     this.$q = $q;
     this.$state = $state;
-    this.DEDICATED_CLOUD_ACTIVATION_STATUS = DEDICATED_CLOUD_ACTIVATION_STATUS;
+    this.ACTIVATION_STATUS = ACTIVATION_STATUS;
   }
 
   $onInit() {
@@ -18,7 +18,7 @@ export default class DedicatedCloudservicePackSmsActivation {
     return this.ovhUserPref.assign('DEDICATED_CLOUD_SERVICE_PACK_ACTIVATION', {
       certification: {
         orderUrl: this.orderURL,
-        status: this.DEDICATED_CLOUD_ACTIVATION_STATUS.pendingActivation,
+        status: this.ACTIVATION_STATUS.pendingActivation,
       },
     });
   }

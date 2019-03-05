@@ -1,9 +1,10 @@
-import { ALL_TYPES, CLASS_NAME_TEMPLATE } from './constants';
+import {
+  COMPONENT_NAME,
+  STATUS,
+} from './constants';
 
-/* @ngInject */
-export default class DedicatedCloudActivationStatus {
+export default class {
   $onInit() {
-    this.className = 'pouet';
     this.onStatusChange();
   }
 
@@ -12,12 +13,10 @@ export default class DedicatedCloudActivationStatus {
   }
 
   onStatusChange() {
-    const status = ALL_TYPES[this.statusName];
+    this.status = STATUS[this.statusName];
 
-    if (status == null) {
-      throw new Error(`dedicatedCloudActivationStatus: ${this.statusName} is not a valid activation status`);
+    if (this.status == null) {
+      throw new RangeError(`${COMPONENT_NAME}: ${this.statusName} is not a valid activation status`);
     }
-
-    this.className = `${CLASS_NAME_TEMPLATE}${status.type}`;
   }
 }

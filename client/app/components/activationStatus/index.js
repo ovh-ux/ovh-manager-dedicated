@@ -1,20 +1,18 @@
-// import angular from 'angular';
-// import 'angular-translate';
-// import 'ovh-ui-angular';
-
 import component from './component';
-import { ALL_TYPES } from './constants';
-
-const moduleName = 'dedicatedCloudActivationStatus';
+import {
+  COMPONENT_NAME,
+  CONSTANT_NAME,
+  MODULE_NAME,
+  STATUS,
+} from './constants';
 
 angular
-  .module(moduleName, [
+  .module(MODULE_NAME, [
     'oui',
     'pascalprecht.translate',
-    'ui.router',
   ])
-  .component('dedicatedCloudActivationStatus', component)
-  .constant('DEDICATED_CLOUD_ACTIVATION_STATUS', ALL_TYPES)
+  .component(COMPONENT_NAME, component)
+  .constant(CONSTANT_NAME, STATUS)
   .run(/* @ngTranslationsInject ./translations */);
 
-export default moduleName;
+export default MODULE_NAME;
