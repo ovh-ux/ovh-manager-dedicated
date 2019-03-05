@@ -1,5 +1,5 @@
 angular.module('Billing').controller('BillingHistoryDebtPayCtrl', class BillingHistoryDebtPayCtrl {
-  constructor($q, $state, $stateParams, $translate, $window, Alerter, OvhApiMe) {
+  constructor($q, $state, $stateParams, $translate, $window, Alerter, atInternet, OvhApiMe) {
     // Injections
     this.$q = $q;
     this.$state = $state;
@@ -7,6 +7,7 @@ angular.module('Billing').controller('BillingHistoryDebtPayCtrl', class BillingH
     this.$translate = $translate;
     this.$window = $window;
     this.Alerter = Alerter;
+    this.atInternet = atInternet;
     this.OvhApiMe = OvhApiMe;
 
     // Other attributes used in view
@@ -25,7 +26,10 @@ angular.module('Billing').controller('BillingHistoryDebtPayCtrl', class BillingH
 
   onDebtPayFormSubmit() {
     this.loading.pay = true;
-
+    this.atInternet.trackClick({
+      name: 'billing_pay_balance',
+      type: 'action',
+    });
     let promise;
 
     if (this.$stateParams.debtId !== 'all') {

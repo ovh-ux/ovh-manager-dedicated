@@ -682,6 +682,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
+"@bower_components/angular-scroll-glue@Luegg/angularjs-scroll-glue#^2.2.0":
+  version "2.2.0"
+  resolved "https://codeload.github.com/Luegg/angularjs-scroll-glue/tar.gz/5990d90cbf84efdf837edcbf26cefe9adb676f5b"
+
 "@bower_components/angular-ui-utils@angular-ui/ui-utils#~0.2.3", ui-utils@angular-ui/ui-utils#~0.2.3:
   version "0.0.0"
   resolved "https://codeload.github.com/angular-ui/ui-utils/tar.gz/125cb72d692f9f116454f338f6a5471f3088f9b9"
@@ -7694,6 +7698,11 @@ ovh-angular-swimming-poll@^3.0.0:
   resolved "https://registry.yarnpkg.com/ovh-angular-swimming-poll/-/ovh-angular-swimming-poll-3.0.0.tgz#496ccae4c8edbfd04719b05fe99fb98c00b1c78f"
   integrity sha1-SWzK5Mjtv9BHGbBf6Z+5jACxx48=
 
+ovh-angular-tail-logs@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/ovh-angular-tail-logs/-/ovh-angular-tail-logs-1.1.1.tgz#6287a577ca5214de0ad1cd9bfb39b34762076b66"
+  integrity sha1-Yoeld8pSFN4K0c2b+zmzR2IHa2Y=
+
 ovh-angular-toaster@^0.8.0:
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/ovh-angular-toaster/-/ovh-angular-toaster-0.8.0.tgz#7073201379ea196c721d583421c0cef1d04bdbdb"
@@ -7704,10 +7713,10 @@ ovh-angular-user-pref@^0.3.1:
   resolved "https://registry.yarnpkg.com/ovh-angular-user-pref/-/ovh-angular-user-pref-0.3.1.tgz#07f5792513651f3262ae4879c174423649b08307"
   integrity sha1-B/V5JRNlHzJirkh5wXRCNkmwgwc=
 
-ovh-api-services@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-4.0.0.tgz#0337fd28ed29337b1e60e8eafa6bcb6a9fea426e"
-  integrity sha512-GE2Z40rOXqAwM2Zvaxr4a+jaldQDgNN3sWpY0aQBzbvuYeZIf6K10XESB9YytYk/51qHkV6CmTFZf52vqVfcQQ==
+ovh-api-services@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-4.2.0.tgz#6b85f990aefae1fbf5233718f856aa051dab98c5"
+  integrity sha512-IippIziLZplEJe6kX8SCZaaR7lLYm+iFbleL/G8x7zMkQeHDIwmKAiHWgAubXXoMyj/GgigBGlrYHiK8eNRAqg==
   dependencies:
     lodash "^3.10.1"
 
@@ -7721,10 +7730,10 @@ ovh-manager-webfont@^1.0.2:
   resolved "https://registry.yarnpkg.com/ovh-manager-webfont/-/ovh-manager-webfont-1.0.2.tgz#8f9d358d138c2650a557bdac7a2d1908e962418d"
   integrity sha1-j501jROMJlClV72sei0ZCOliQY0=
 
-ovh-module-exchange@^9.3.2:
-  version "9.3.2"
-  resolved "https://registry.yarnpkg.com/ovh-module-exchange/-/ovh-module-exchange-9.3.2.tgz#3631f56c7f3ec2aa4fe1758ce567c9e84b48f866"
-  integrity sha512-OYV8A13lfUx7R65kWL0O8HxDpwyqEdmkfe2Vi+i3lmMPjGGA7TV2Mg3M0E2HxDH/CQ3PYsC+VbwB7Tl6GIB2xQ==
+ovh-module-exchange@^9.3.4:
+  version "9.3.4"
+  resolved "https://registry.yarnpkg.com/ovh-module-exchange/-/ovh-module-exchange-9.3.4.tgz#74901fb074e908ef4f33816ba14c719837ec3a0d"
+  integrity sha512-FtMjeYedSYqLU14YjhI9/N6LIhdAQn70Qt22UtI0nIUsMvx7FaOaT+EWsbKE9yS0Pz+Ss5SsP6h/ACdXFvTJCQ==
   dependencies:
     filesize "^3.6.1"
     lodash "~3.9.3"
