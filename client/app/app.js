@@ -28,7 +28,7 @@ const appDeps = [
   'filters',
   'internationalPhoneNumber',
   'Module.download',
-  WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca' ? 'Module.exchange' : undefined,
+  ['eu', 'ca'].includes(WEBPACK_ENV.region) ? 'Module.exchange' : undefined,
   'Module.ip',
   'Module.license',
   'Module.otrs',
