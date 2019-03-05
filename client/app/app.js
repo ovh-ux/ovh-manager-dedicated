@@ -18,83 +18,82 @@ import config from './config/config';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
 import resourceUpgrade from './dedicatedCloud/resource/upgrade';
 
-const appDeps = [
-  'ui.router',
-  'Billing',
-  'chart.js',
-  'controllers',
-  dedicatedUniverseComponents,
-  'directives',
-  'filters',
-  'internationalPhoneNumber',
-  'Module.download',
-  ['eu', 'ca'].includes(WEBPACK_ENV.region) ? 'Module.exchange' : undefined,
-  'Module.ip',
-  'Module.license',
-  'Module.otrs',
-  'ngCkeditor',
-  'ngMessages',
-  ngAtInternet,
-  ngAtInternetUiRouterPlugin,
-  ngOvhApiWrappers,
-  ngOvhHttp,
-  ngOvhOtrs,
-  ngOvhProxyRequest,
-  ngOvhSsoAuth,
-  ngOvhSsoAuthModalPlugin,
-  ngOvhSwimmingPoll,
-  ngOvhUserPref,
-  ngOvhWebUniverseComponents,
-  'ngRoute',
-  'ngSanitize',
-  ngTranslateAsyncLoader,
-  'oui',
-  'ovh-angular-export-csv',
-  'ovh-angular-pagination-front',
-  'ovh-angular-q-allSettled',
-  'ovh-angular-responsive-tabs',
-  'ovh-angular-sidebar-menu',
-  'ovh-angular-tail-logs',
-  'ovh-angular-user-pref',
-  'ovh-utils-angular',
-  'ovhBrowserAlert',
-  ovhContacts,
-  ovhPaymentMethod,
-  'pascalprecht.translate',
-  resourceUpgrade,
-  'services',
-  'ui.bootstrap',
-  'ui.select',
-  'ui.utils',
-  'ui.validate',
-  uiRouter,
-  'UserAccount',
-  'xeditable',
-];
-
-angular.module('App', appDeps).constant('constants', {
-  prodMode: config.prodMode,
-  swsProxyRootPath: config.swsProxyRootPath,
-  aapiRootPath: config.aapiRootPath,
-  target: config.target,
-  renew: config.constants.RENEW_URL,
-  urls: config.constants.URLS,
-  UNIVERS: config.constants.UNIVERS,
-  TOP_GUIDES: config.constants.TOP_GUIDES,
-  vmsUrl: config.constants.vmsUrl,
-  travauxUrl: config.constants.travauxUrl,
-  aapiHeaderName: 'X-Ovh-Session',
-  vrackUrl: config.constants.vrackUrl,
-  MANAGER_URLS: config.constants.MANAGER_URLS,
-  REDIRECT_URLS: config.constants.REDIRECT_URLS,
-  DEFAULT_LANGUAGE: config.constants.DEFAULT_LANGUAGE,
-  FALLBACK_LANGUAGE: config.constants.FALLBACK_LANGUAGE,
-})
-  .constant('LANGUAGES', config.constants.LANGUAGES)
-  .constant('website_url', config.constants.website_url);
 angular
-  .module('App')
-  .config(/* @ngInject */(ovhProxyRequestProvider) => {
+  .module('App', [
+    'ui.router',
+    'Billing',
+    'chart.js',
+    'controllers',
+    dedicatedUniverseComponents,
+    'directives',
+    'filters',
+    'internationalPhoneNumber',
+    'Module.download',
+    ['eu', 'ca'].includes(WEBPACK_ENV.region) ? 'Module.exchange' : undefined,
+    'Module.ip',
+    'Module.license',
+    'Module.otrs',
+    'ngCkeditor',
+    'ngMessages',
+    ngAtInternet,
+    ngAtInternetUiRouterPlugin,
+    ngOvhApiWrappers,
+    ngOvhHttp,
+    ngOvhOtrs,
+    ngOvhProxyRequest,
+    ngOvhSsoAuth,
+    ngOvhSsoAuthModalPlugin,
+    ngOvhSwimmingPoll,
+    ngOvhUserPref,
+    ngOvhWebUniverseComponents,
+    'ngRoute',
+    'ngSanitize',
+    ngTranslateAsyncLoader,
+    'oui',
+    'ovh-angular-export-csv',
+    'ovh-angular-otrs',
+    'ovh-angular-pagination-front',
+    'ovh-angular-q-allSettled',
+    'ovh-angular-responsive-tabs',
+    'ovh-angular-sidebar-menu',
+    'ovh-angular-tail-logs',
+    'ovh-angular-user-pref',
+    'ovh-utils-angular',
+    'ovhBrowserAlert',
+    ovhContacts,
+    ovhPaymentMethod,
+    'pascalprecht.translate',
+    resourceUpgrade,
+    'services',
+    'ui.bootstrap',
+    'ui.select',
+    'ui.utils',
+    'ui.validate',
+    uiRouter,
+    'UserAccount',
+    'xeditable',
+  ])
+  .constant('constants', {
+    prodMode: config.prodMode,
+    swsProxyRootPath: config.swsProxyRootPath,
+    aapiRootPath: config.aapiRootPath,
+    target: config.target,
+    renew: config.constants.RENEW_URL,
+    urls: config.constants.URLS,
+    UNIVERS: config.constants.UNIVERS,
+    TOP_GUIDES: config.constants.TOP_GUIDES,
+    vmsUrl: config.constants.vmsUrl,
+    travauxUrl: config.constants.travauxUrl,
+    aapiHeaderName: 'X-Ovh-Session',
+    vrackUrl: config.constants.vrackUrl,
+    MANAGER_URLS: config.constants.MANAGER_URLS,
+    REDIRECT_URLS: config.constants.REDIRECT_URLS,
+    DEFAULT_LANGUAGE: config.constants.DEFAULT_LANGUAGE,
+    FALLBACK_LANGUAGE: config.constants.FALLBACK_LANGUAGE,
+  })
+  .constant('LANGUAGES', config.constants.LANGUAGES)
+  .constant('website_url', config.constants.website_url)
+  .config(/* @ngInject */ (ovhProxyRequestProvider) => {
     ovhProxyRequestProvider.proxy('$http');
     ovhProxyRequestProvider.pathPrefix('apiv6');
   })
@@ -113,8 +112,7 @@ angular
   .config(($urlServiceProvider) => {
     $urlServiceProvider.rules.otherwise('/configuration');
   })
-
-/*= ========= AT-INTERNET ========== */
+  /* ========== AT-INTERNET ========== */
   .config((atInternetProvider, atInternetUiRouterPluginProvider, constants) => {
     const level2 = constants.target === 'US' ? '57' : '3';
 
