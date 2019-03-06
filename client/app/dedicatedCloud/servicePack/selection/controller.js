@@ -71,7 +71,11 @@ export default class {
       .then(({ order }) => {
         this.orderIsInProgress = false;
         this.orderingURL = order.url;
-        return this.dedicatedCloudServicePack.savePendingOrder(order, this.activationType);
+        return this.dedicatedCloudServicePack.savePendingOrder(
+          this.currentService.serviceName,
+          { id: order.orderId, url: order.url },
+          this.servicePackToOrder.name,
+        );
       })
       .catch(error => this.stepper
         .exit()

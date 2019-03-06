@@ -23,6 +23,7 @@ angular
     'controllers',
     dedicatedCloudDasboard,
     dedicatedCloudServicePack,
+    'dedicatedCloudServicePackHome',
     dedicatedCloudServicePackOption,
     dedicatedUniverseComponents,
     'directives',

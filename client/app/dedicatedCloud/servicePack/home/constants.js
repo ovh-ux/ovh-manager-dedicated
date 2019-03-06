@@ -25,9 +25,9 @@ export const ACTIVATION_TYPES = {
   ],
 };
 
-export const COMPONENT_NAME = 'dedicatedCloudservicePack';
+export const COMPONENT_NAME = 'dedicatedCloudServicePackHome';
 export const CONSTANT_NAME = 'DEDICATED_CLOUD_SERVICE_PACK_ACTIVATION';
-export const MODULE_NAME = 'dedicatedCloudservicePack';
+export const MODULE_NAME = 'dedicatedCloudServicePackHome';
 export const STATE_NAME = 'app.dedicatedClouds.servicePack';
 
 export default {

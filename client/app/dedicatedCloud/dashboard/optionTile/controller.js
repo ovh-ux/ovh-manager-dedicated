@@ -69,6 +69,11 @@ export default class OptionTile {
       .then((servicePacks) => {
         this.servicePacks = servicePacks;
 
+        this.currentServicePack = _.find(
+          this.servicePacks,
+          { name: this.currentService.servicePackName },
+        );
+
         this.orderableServicePacksWithOnlyBasicOptions = _.filter(
           _.reject(this.servicePacks, { name: this.currentService.servicePack }),
           servicePack => _.every(
@@ -92,19 +97,18 @@ export default class OptionTile {
 
   buildStatusForOption({ name, typeName }) {
     const orderIsInProgress = this.pendingOrder != null;
+    const optionIsPartOfCurrentServicePack = _.some(
+      this.currentServicePack.options,
+      { name },
+    );
 
     if (
       !orderIsInProgress
       || (orderIsInProgress && this.pendingOrder.activationType !== typeName)
     ) {
-      return this.currentServicePack.name === name
+      return optionIsPartOfCurrentServicePack
         ? this.ACTIVATION_STATUS.enabled
         : this.ACTIVATION_STATUS.disabled;
-    }
-
-    if (this.pendingOrder.order.status === ORDER_STATUSES.delivered
-        && this.currentServicePack.name !== name) {
-      throw new Error('optionTile.buildStatusForOption: the ordered service pack should be already delivered');
     }
 
     if (this.pendingOrder.order.status === ORDER_STATUSES.unknown) {
@@ -166,7 +170,7 @@ export default class OptionTile {
   }
 
   isBasicActionMenuValidateActivationDisplayed() {
-    return this.pendingOrder.order.status === ORDER_STATUSES.notPaid;
+    return _.get(this.pendingOrder, 'order.status') === ORDER_STATUSES.notPaid;
   }
 
   buildDataAfterFetching() {
@@ -181,7 +185,7 @@ export default class OptionTile {
             modify: {
               text: this.buildBasicTitle(),
               isDisplayed: this.isBasicActionMenuModifyDisplayed(),
-              stateOptions: {
+              stateParams: {
                 activationType: this.OPTION_TYPES.basic.name,
                 orderableServicePacks: this.orderableServicePacksWithOnlyBasicOptions,
                 servicePacks: this.servicePacks,
@@ -202,7 +206,7 @@ export default class OptionTile {
           actionMenu: {
             isDisplayed: this.isCertificationActionMenuDisplayed(),
             activate: {
-              stateOptions: {
+              stateParams: {
                 activationType: this.OPTION_TYPES.certification.name,
                 orderableServicePacks: this.orderableServicePacksWithCertifications,
                 servicePacks: this.servicePacks,
@@ -290,7 +294,7 @@ export default class OptionTile {
   }
 
   buildBasicTitle() {
-    return this.$translate.instant(this.numberOfActiveOptions === 0
+    return this.$translate.instant(this.buildBasicOptions().length === 0
       ? 'dedicatedCloud_dashboard_options_basicOptions_menu_changeOption_noOption'
       : 'dedicatedCloud_dashboard_options_basicOptions_menu_changeOption_atLeastOneOption');
   }

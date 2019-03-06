@@ -42,15 +42,15 @@ angular
 
     $onInit() {
       this.$transitions.onStart({
-        from: state => state.name === 'app.dedicatedClouds.dashboard',
-        to: state => state.name === 'app.dedicatedClouds.dashboard',
+        from: state => state.name === 'app.dedicatedClouds',
+        to: state => state.name === 'app.dedicatedClouds',
       }, () => {
         this.stateIsChanging = true;
       });
 
       this.$transitions.onSuccess({
-        from: state => state.name === 'app.dedicatedClouds.dashboard',
-        to: state => state.name === 'app.dedicatedClouds.dashboard',
+        from: state => state.name === 'app.dedicatedClouds',
+        to: state => state.name === 'app.dedicatedClouds',
       }, () => {
         this.stateIsChanging = false;
       });

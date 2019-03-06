@@ -169,13 +169,15 @@ export default class DedicatedCloudServicePack {
         .reduce((accumulator, { hostFamilies }) => ({ ...accumulator, ...hostFamilies }), {}));
   }
 
-  savePendingOrder(order, activationType) {
+  savePendingOrder(serviceName, { id, url }, orderedServicePackName) {
     return this.ovhUserPref
       .assign(this.SERVICE_PACK_USER_PREFERENCES_KEY, {
-        activationType,
-        order: {
-          id: order.orderId,
-          url: order.url,
+        [serviceName]: {
+          orderedServicePackName,
+          order: {
+            id,
+            url,
+          },
         },
       });
   }

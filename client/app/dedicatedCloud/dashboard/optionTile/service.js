@@ -4,13 +4,13 @@ export default class {
   /* @ngInject */
   constructor(
     $q,
-    OvhHttp,
+    OvhApiMe,
     ovhUserPref,
     ACTIVATION_STATUS,
     SERVICE_PACK_USER_PREFERENCES_KEY,
   ) {
     this.$q = $q;
-    this.OvhHttp = OvhHttp;
+    this.OvhApiMe = OvhApiMe;
     this.ovhUserPref = ovhUserPref;
     this.ACTIVATION_STATUS = ACTIVATION_STATUS;
     this.SERVICE_PACK_USER_PREFERENCES_KEY = SERVICE_PACK_USER_PREFERENCES_KEY;
@@ -47,10 +47,7 @@ export default class {
   }
 
   fetchOrderStatus(orderId) {
-    return this.OvhHttp
-      .get(`/me/order/${orderId}/status`, {
-        rootPath: 'apiv6',
-      });
+    return this.OvhApiMe.v6().getStatus(orderId);
   }
 
   fetchIsOrderStillPending(orderId) {
