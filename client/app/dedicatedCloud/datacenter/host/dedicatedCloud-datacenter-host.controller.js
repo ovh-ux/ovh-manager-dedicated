@@ -83,7 +83,7 @@ angular
       }
 
       orderHost(datacenter) {
-        if (this.currentService.usesLegacyOrder) {
+        if (!this.currentService.usesLegacyOrder) {
           this.$state.go('app.dedicatedClouds.datacenter.hosts.orderUS');
         } else {
           this.$scope.setAction('datacenter/host/order/dedicatedCloud-datacenter-host-order', datacenter.model, true);

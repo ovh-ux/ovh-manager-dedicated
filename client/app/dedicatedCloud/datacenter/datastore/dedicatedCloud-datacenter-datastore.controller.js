@@ -81,7 +81,7 @@ angular
       }
 
       orderDatastore(datacenter) {
-        if (this.currentService.usesLegacyOrder) {
+        if (!this.currentService.usesLegacyOrder) {
           this.$state.go('app.dedicatedClouds.datacenter.datastores.orderUS');
         } else {
           this.$scope.setAction(
