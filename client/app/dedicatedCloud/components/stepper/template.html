@@ -1,0 +1,11 @@
+<stepper-header data-steps="$ctrl.steps"></stepper-header>
+
+<div
+    data-ng-if="$ctrl.isLoadingBetweenSteps"
+    class="text-center">
+    <oui-spinner data-size="l"></oui-spinner>
+</div>
+
+<section
+    data-ng-if="!$ctrl.isLoadingBetweenSteps"
+    data-ui-view="content"></section>
