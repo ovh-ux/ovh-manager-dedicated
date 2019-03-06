@@ -13,6 +13,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
   '$scope',
   '$timeout',
   '$translate',
+  '$uibModal',
   '$window',
   'Alerter',
   'atInternet',
@@ -36,6 +37,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
     $scope,
     $timeout,
     $translate,
+    $uibModal,
     $window,
     Alerter,
     atInternet,
@@ -58,7 +60,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
      * private-xxx-xxx = type dedicated
      */
     function getExchangeType(offer) {
-      return `exchange_${offer}`;
+      return `exchange_${offer.toLowerCase()}`;
     }
 
     const ALL_SERVICE_TYPES = {
@@ -258,17 +260,34 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
       }
 
       AutoRenew.getExchangeService(organization, exchangeName)
-        .then(({ offer }) => {
+        .then(({ offer, renewOptionAvailable }) => {
           $scope.$emit(AUTORENEW_EVENT.PAY, {
             serviceType: service.serviceType,
             serviceId: `${organization}/${exchangeName}`,
           });
 
-          const renewUrl = offer.includes('dedicated')
-            ? `${getExchangeBaseUrl(organization, exchangeName, offer)}?tab=ACCOUNT`
-            : getExchangeUrl(organization, exchangeName, offer, 'billing');
+          if (renewOptionAvailable) {
+            // UI Boostrap 1.3.3 doesn't support component syntax
+            return $uibModal.open({
+              controller: 'ExchangeRenewCtrl',
+              controllerAs: '$ctrl',
+              backdrop: 'static',
+              templateUrl: 'account/billing/autoRenew/exchange/exchange-renew.html',
+              resolve: {
+                organization: () => organization,
+                exchangeName: () => exchangeName,
+              },
+            }).result
+              .then((message) => {
+                if (message) {
+                  Alerter.set('alert-success', message);
+                }
+              })
+              .catch(error => Alerter.set('alert-danger', error));
+          }
 
-          $window.location.assign(renewUrl);
+          const renewUrl = `${getExchangeBaseUrl(organization, exchangeName, offer)}?tab=ACCOUNT`;
+          return $window.location.assign(renewUrl);
         });
     }
 
