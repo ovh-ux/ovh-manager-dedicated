@@ -1,4 +1,4 @@
-angular.module('App').config(($stateProvider, $urlServiceProvider) => {
+angular.module('App').config(/* @ngInject */ ($stateProvider, $urlServiceProvider) => {
   $stateProvider.state('app.dedicatedClouds', {
     url: '/configuration/dedicated_cloud/:productId',
     views: {
@@ -8,12 +8,16 @@ angular.module('App').config(($stateProvider, $urlServiceProvider) => {
         controllerAs: '$ctrl',
       },
       'pccView@app.dedicatedClouds': {
-        templateUrl: 'dedicatedCloud/dashboard/legacy/template.html',
+        templateUrl: 'dedicatedCloud/dashboard/template.html',
       },
     },
     reloadOnSearch: false,
     translations: ['.'],
     resolve: {
+      currentService: /* @ngInject */ (
+        $transition$,
+        DedicatedCloud,
+      ) => DedicatedCloud.getSelected($transition$.params().productId, true),
       serviceUsesAgora: /* @ngInject */ (
         $stateParams,
         DedicatedCloud,

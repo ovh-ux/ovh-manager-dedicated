@@ -16,6 +16,7 @@ import uiRouter from '@uirouter/angularjs';
 
 import config from './config/config';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
+import legacyDashboard from './dedicatedCloud/dashboard/legacy';
 import resourceUpgrade from './dedicatedCloud/resource/upgrade';
 
 angular
@@ -28,6 +29,7 @@ angular
     'directives',
     'filters',
     'internationalPhoneNumber',
+    legacyDashboard,
     'Module.download',
     ['eu', 'ca'].includes(WEBPACK_ENV.region) ? 'Module.exchange' : undefined,
     'Module.ip',
