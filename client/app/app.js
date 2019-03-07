@@ -1,3 +1,5 @@
+import ngAtInternet from '@ovh-ux/ng-at-internet';
+import ngAtInternetUiRouterPlugin from '@ovh-ux/ng-at-internet-ui-router-plugin';
 import ngOvhApiWrappers from '@ovh-ux/ng-ovh-api-wrappers';
 import ngOvhHttp from '@ovh-ux/ng-ovh-http';
 import ngOvhProxyRequest from '@ovh-ux/ng-ovh-proxy-request';
@@ -32,10 +34,10 @@ const appDeps = [
   'ovh-angular-q-allSettled',
   'ovh-angular-export-csv',
   'ovh-angular-tail-logs',
-  'ng-at-internet',
-  'atInternetUiRouterPlugin',
   'ovhBrowserAlert',
   'ui.validate',
+  ngAtInternet,
+  ngAtInternetUiRouterPlugin,
   ngOvhApiWrappers,
   ngOvhHttp,
   ngOvhProxyRequest,

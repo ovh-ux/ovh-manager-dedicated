@@ -52,8 +52,6 @@ import 'ovh-angular-q-allsettled';
 import 'script-loader!validator/validator.min.js';
 import 'script-loader!@bower_components/angular-ui-utils/ui-utils.min.js';
 import 'script-loader!df-tab-menu/build/df-tab-menu.min.js';
-import 'ng-at-internet';
-import 'at-internet-ui-router-plugin';
 import 'script-loader!ovh-angular-export-csv/dist/ovh-angular-export-csv.min.js';
 import 'script-loader!@bower_components/angular-ui-validate/dist/validate.min.js';
 import 'script-loader!@bower_components/ovh-angular-browser-alert/dist/ovh-angular-browser-alert.js';
