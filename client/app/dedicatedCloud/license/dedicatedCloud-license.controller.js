@@ -12,7 +12,7 @@ angular
         $translate,
 
         DedicatedCloud,
-        serviceUsesAgora,
+        currentService,
       ) {
         this.$rootScope = $rootScope;
         this.$scope = $scope;
@@ -21,7 +21,7 @@ angular
         this.$translate = $translate;
 
         this.DedicatedCloud = DedicatedCloud;
-        this.serviceUsesAgora = serviceUsesAgora;
+        this.currentService = currentService;
       }
 
       $onInit() {
@@ -56,7 +56,7 @@ angular
         return this.DedicatedCloud
           .getDatacenterLicence(
             this.$stateParams.productId,
-            this.serviceUsesAgora,
+            this.currentService.usesLegacyOrder,
           )
           .then((datacenter) => {
             this.$scope.licences.spla = datacenter.isSplaActive;
@@ -76,7 +76,7 @@ angular
       }
 
       enableLicense() {
-        if (this.serviceUsesAgora) {
+        if (!this.currentService.usesLegacyOrder) {
           this.$state.go('app.dedicatedClouds.license.enable');
         } else {
           this.$scope.setAction('license/enable/dedicatedCloud-license-enable');

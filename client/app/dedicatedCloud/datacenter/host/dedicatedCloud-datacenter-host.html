@@ -10,7 +10,7 @@
         <div class="mb-2">
             <button type="button"
                     class="btn btn-default"
-                    data-ng-disabled="!datacenter.model.canOrderHosts && !$ctrl.serviceUsesAgora"
+                    data-ng-disabled="!datacenter.model.canOrderHosts && $ctrl.currentService.usesLegacyOrder"
                     data-ng-click="$ctrl.orderHost(datacenter)"
                     data-translate="dedicatedCloud_order_Host">
             </button>

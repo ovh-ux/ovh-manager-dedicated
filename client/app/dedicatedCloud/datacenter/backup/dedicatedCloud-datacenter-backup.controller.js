@@ -12,7 +12,7 @@ angular
         $translate,
 
         DedicatedCloud,
-        serviceUsesAgora,
+        currentService,
         veeam,
 
         VEEAM_STATE_ENUM,
@@ -24,7 +24,7 @@ angular
         this.$translate = $translate;
 
         this.DedicatedCloud = DedicatedCloud;
-        this.serviceUsesAgora = serviceUsesAgora;
+        this.currentService = currentService;
         this.veeam = veeam;
 
         this.VEEAM_STATE_ENUM = VEEAM_STATE_ENUM;

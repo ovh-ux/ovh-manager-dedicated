@@ -12,7 +12,7 @@ angular
         $translate,
 
         DedicatedCloud,
-        serviceUsesAgora,
+        currentService,
       ) {
         this.$q = $q;
         this.$scope = $scope;
@@ -21,7 +21,7 @@ angular
         this.$translate = $translate;
 
         this.DedicatedCloud = DedicatedCloud;
-        this.serviceUsesAgora = serviceUsesAgora;
+        this.currentService = currentService;
       }
 
       $onInit() {
@@ -83,7 +83,7 @@ angular
       }
 
       orderHost(datacenter) {
-        if (this.serviceUsesAgora) {
+        if (!this.currentService.usesLegacyOrder) {
           this.$state.go('app.dedicatedClouds.datacenter.hosts.orderUS');
         } else {
           this.$scope.setAction('datacenter/host/order/dedicatedCloud-datacenter-host-order', datacenter.model, true);
