@@ -6,9 +6,9 @@
          data-wizard-title=":: 'dedicatedCloud_updateResource_toMonthly' | translate"
          data-wizard-bread-crumb>
 
-        <!-- Step 2: Durations -->
+        <!-- Step 1: Durations -->
         <div data-wizard-step
-             data-wizard-step-on-load="getDurations"
+             data-wizard-step-on-load="fetchDurations"
              data-wizard-step-valid="model.duration">
 
              <div class="text-center"
@@ -39,7 +39,7 @@
 
         </div>
 
-        <!-- Step 3: Contracts -->
+        <!-- Step 2: Contracts -->
         <div data-wizard-step
              data-wizard-step-on-load="loadContracts"
              data-wizard-step-valid="agree.value">
@@ -51,7 +51,7 @@
 
         </div>
 
-        <!-- Step 4: Resume and validation -->
+        <!-- Step 3: Resume and validation -->
         <div data-wizard-step
              data-wizard-step-on-previous="backToContracts"
              data-wizard-step-valid="!loading.validation">
@@ -63,7 +63,9 @@
 
             <div data-ng-show="!loading.validation">
                 <p data-translate="server_tab_USB_STORAGE_order_resume"></p>
-                <div class="table-responsive">
+                <div
+                    data-ng-if="model.duration"
+                    class="table-responsive">
                     <table class="table">
                         <tbody>
                             <tr data-ng-repeat="detail in durations.details[model.duration].details track by $index">
