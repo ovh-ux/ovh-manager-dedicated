@@ -18,12 +18,6 @@ angular.module('App').config(/* @ngInject */ ($stateProvider, $urlServiceProvide
         $transition$,
         DedicatedCloud,
       ) => DedicatedCloud.getSelected($transition$.params().productId, true),
-      serviceUsesAgora: /* @ngInject */ (
-        $stateParams,
-        DedicatedCloud,
-      ) => DedicatedCloud
-        .getDescription($stateParams.productId)
-        .then(description => description.generation === '2.0'),
     },
   });
 

@@ -613,9 +613,9 @@ angular
 
       getDatacenterLicence(
         serviceName,
-        serviceUsesAgora,
+        serviceUseLegacyOrder,
       ) {
-        if (serviceUsesAgora) {
+        if (!serviceUseLegacyOrder) {
           return this.OvhHttp
             .get(
               '/dedicatedCloud/{serviceName}',
