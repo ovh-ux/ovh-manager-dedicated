@@ -8,7 +8,7 @@ angular.module('App').config(($stateProvider, $urlServiceProvider) => {
         controllerAs: '$ctrl',
       },
       'pccView@app.dedicatedClouds': {
-        templateUrl: 'dedicatedCloud/dashboard/dedicatedCloud-dashboard.html',
+        templateUrl: 'dedicatedCloud/dashboard/legacy/template.html',
       },
     },
     reloadOnSearch: false,
