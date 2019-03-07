@@ -1,4 +1,4 @@
-angular.module('App').config(($stateProvider) => {
+angular.module('App').config(/* @ngInject */ ($stateProvider) => {
   $stateProvider.state('app', {
     abstract: true,
     url: '',
@@ -7,7 +7,7 @@ angular.module('App').config(($stateProvider) => {
     templateUrl: 'app.html',
     translations: ['common', 'double-authentication', 'user-contracts'],
     resolve: {
-      currentUser: User => User.getUser(),
+      currentUser: /* @ngInject */ User => User.getUser(),
     },
   });
 
