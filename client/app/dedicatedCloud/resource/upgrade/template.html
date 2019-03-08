@@ -1,0 +1,25 @@
+<oui-modal
+    data-heading="{{:: 'heading' | translate }}"
+    data-primary-action=":: $ctrl.placeOrder()"
+    data-primary-label="{{:: 'validateButton' | translate }}"
+    data-secondary-action=":: $dismiss()"
+    data-secondary-label="{{:: 'cancelButton' | translate }}"
+    data-on-dismiss=":: $dismiss()"
+    data-loading="$ctrl.bindings.isLoading">
+    <h2 data-translate="onlyOneRenewalPeriod_heading"></h2>
+    <dl data-ng-if="!$ctrl.bindings.isLoading">
+        <dd data-translate="onlyOneRenewalPeriod_renewalPeriod"></dd>
+        <dt data-translate="{{:: 'onlyOneRenewalPeriod_renewalPeriod_' + $ctrl.bindings.renewalPeriod.intervalUnit }}"></dt>
+        <dd data-translate="onlyOneRenewalPeriod_price"></dd>
+        <dt data-ng-bind=":: $ctrl.bindings.renewalPeriod.price.text"></dt>
+    </dl>
+
+    <p
+        data-translate="clickOnValidateToPlaceYourOrder"
+        data-translate-values="{ validateButtonText: '<strong>' + ('validateButton' | translate) + '</strong>' }"></p>
+    <oui-message
+        data-type="info"
+        data-dismissable="false">
+        <p data-translate="willOpenNewTabAndRedirect"></p>
+    </oui-message>
+</oui-modal>
