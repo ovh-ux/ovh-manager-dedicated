@@ -1,3 +1,22 @@
+<a name="10.12.0"></a>
+# [10.12.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.11.2...v10.12.0) (2019-03-05)
+
+
+### Bug Fixes
+
+* **deps:** upgrade ovh-module-exchange to v9.3.3 ([367cb62](https://github.com/ovh-ux/ovh-manager-dedicated/commit/367cb62))
+* **deps:** upgrade ovh-module-exchange to v9.3.4 ([f0d7067](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f0d7067))
+* **i18n:** retrieve translations ([2c5d213](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2c5d213))
+* **i18n:** submit translations ([bf64be4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bf64be4))
+
+
+### Features
+
+* **account.billing.history.debt.pay:** add atinternet tracking ([#986](https://github.com/ovh-ux/ovh-manager-dedicated/issues/986)) ([b0b0a18](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b0b0a18))
+* **cdn.dedicated:** expose logs to customers ([#982](https://github.com/ovh-ux/ovh-manager-dedicated/issues/982)) ([d0d362d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d0d362d))
+
+
+
 <a name="10.11.2"></a>
 ## [10.11.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.11.1...v10.11.2) (2019-03-01)
 
