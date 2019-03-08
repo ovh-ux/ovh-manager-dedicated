@@ -16,8 +16,10 @@ import ngOvhOtrs from '@ovh-ux/ng-ovh-otrs';
 
 import config from './config/config';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
+import resourceUpgrade from './dedicatedCloud/resource/upgrade';
 
 const appDeps = [
+  resourceUpgrade,
   'ovh-angular-pagination-front',
   'ovh-utils-angular',
   'ui.bootstrap',
