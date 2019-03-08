@@ -822,7 +822,8 @@
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_list" qtlid="520143">Liste des datacenters secondaires</translation>
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_name_placeholder" qtlid="520156">Choisissez le datacenter secondaire</translation>
    <translation id="dedicatedCloud_datacenter_secondary_ip_address_pool_available" qtlid="520169">Pool d’adresses IP publiques disponible du Private Cloud secondaire</translation>
-   <translation id="dedicatedCloud_datacenter_order_ip_secondary_pcc" qtlid="520182">Vous n’avez aucun pool d’adresses IP disponible sur ce Private Cloud. Vous pouvez en commander</translation>
+   <translation id="dedicatedCloud_datacenter_order_ip_secondary_pcc_part_one">Vous n’avez aucun pool d’adresses IP disponible sur ce Private Cloud. Veuillez en </translation>
+   <translation id="dedicatedCloud_datacenter_order_ip_secondary_pcc_part_two"> ou choisissez un autre Private Cloud.</translation>
 
    <translation id="dedicatedCloud_datacenter_secondary_ip_address_pool_available_placeholder" qtlid="520104">Choisissez une IP publique libre</translation>
 
@@ -832,7 +833,11 @@
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_gateway_help" qtlid="520195">Aide à compléter</translation>
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_vra_network" qtlid="520208">Réseau vRA distant (optionnel)</translation>
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_subnetwork_mask" qtlid="520221">Masque de sous-réseau (optionnel)</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_ip_example_placeholder" qtlid="520234">21.134.170.235</translation>
+   <translation id="dedicatedCloud_datacenter_secondary_datacenter_pcc_on_same_location_warning">Ce Private Cloud doit être localisé dans un datacenter différent du Private Cloud primaire.</translation>
+   <translation id="dedicatedCloud_datacenter_secondary_datacenter_without_hosts_part_one">Le datacenter sélectionné ne dispose d'aucun host. Choisissez un datacenter avec au moins un host, ou veuillez en </translation>
+   <translation id="dedicatedCloud_datacenter_order" qtlid="43558">commander</translation>
+   <translation id="dedicatedCloud_datacenter_secondary_datacenter_without_hosts_part_two">pour ce dernier.</translation>
+   <translation id="dedicatedCloud_datacenter_secondary_datacenter_get_hosts_error">Une erreur est survenue lors de la récupération des hosts du datacenter secondaire</translation>
 
    <translation id="dedicatedCloud_datacenter_drp_confirm_create_success_part_one" qtlid="520247">Votre PRA Zerto a été créé avec succès !</translation>
    <translation id="dedicatedCloud_datacenter_drp_confirm_create_success_part_two" qtlid="520260">Vous avez reçu votre mot de passe ZSSP sur l’adresse email {{email}}.</translation>
