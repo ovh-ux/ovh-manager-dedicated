@@ -1,4 +1,4 @@
-angular.module('App').controller('CacherulesAddCtrl', ($scope, $stateParams, $translate, cdnDedicatedOrderRule, Alerter) => {
+angular.module('App').controller('CacherulesAddCtrl', ($scope, $stateParams, $translate, $uibModalInstance, cdnDedicatedOrderRule, Alerter) => {
   $scope.alert = 'cdn_domain_tab_rules_alert';
   $scope.prices = null;
   $scope.choices = {
@@ -7,6 +7,7 @@ angular.module('App').controller('CacherulesAddCtrl', ($scope, $stateParams, $tr
     order: null,
   };
   $scope.contractsValidated = {};
+  $scope.$uibModalInstance = $uibModalInstance;
 
   $scope.loadCacherulesPrice = function () {
     $scope.cacheRulesLoading = true;

@@ -1,53 +1,96 @@
-angular.module('App').controller('CdnStatisticsCtrl', ($scope, $stateParams, $translate, Cdn) => {
-  $scope.model = null;
-  $scope.consts = null;
-  $scope.loadingStats = false;
-  $scope.loadingConsts = false;
+import addDomainTemplate from '../../domain/add/cdn-dedicated-domain-add.html';
+import orderRuleTemplate from '../../domain/rule/order/cdn-dedicated-domain-rule-order.html';
+import orderQuotaTemplate from '../../quota/order/cdn-dedicated-quota-order.html';
 
-  function createChart(data) {
-    $scope.series = [];
-    $scope.data = [];
+class CdnStatisticsCtrl {
+  /* @ngInject */
+  constructor($q, $stateParams, $translate, $uibModal, Alerter, Cdn) {
+    this.$q = $q;
+    this.$stateParams = $stateParams;
+    this.$translate = $translate;
+    this.$uibModal = $uibModal;
+    this.Alerter = Alerter;
+    this.Cdn = Cdn;
+  }
 
-    $scope.labels = _.map(_.get(data, 'cdn.values'), (value, index) => {
-      const source = data.backend || data.cdn;
-      const start = _.get(source, 'pointStart');
-      const interval = _.get(source, 'pointInterval.standardSeconds');
+  $onInit() {
+    this.loadingConsts = true;
+
+    return this.$q.all({
+      cdn: this.Cdn.getSelected(this.$stateParams.productId, true),
+      serviceInfos: this.Cdn.getServiceInfos(this.$stateParams.productId),
+      statisticsConsts: this.Cdn.getStatisticsConsts(),
+    })
+      .then(({ cdn, serviceInfos, statisticsConsts }) => {
+        this.cdn = cdn;
+        this.serviceInfos = serviceInfos;
+        this.consts = statisticsConsts;
+        this.statisticsSearchCriteria = {
+          dataType: statisticsConsts.defaultType,
+          period: statisticsConsts.defaultPeriod,
+        };
+
+        return this.getStatistics();
+      })
+      .catch(({ message: errorMessage }) => {
+        if (errorMessage) {
+          this.Alerter.error(`${this.$translate.instant('cdn_configuration_add_ssl_get_error')} ${errorMessage}`, 'cdnDedicatedManage');
+        }
+      })
+      .finally(() => {
+        this.loadingConsts = false;
+      });
+  }
+
+  getStatistics() {
+    this.loadingStats = true;
+    return this.Cdn.getStatistics(this.$stateParams.productId, this.statisticsSearchCriteria)
+      .then((statistics) => { this.createChart(statistics); })
+      .catch(({ message: errorMessage }) => {
+        if (errorMessage) {
+          this.Alerter.error(`${this.$translate.instant('cdn_configuration_add_ssl_get_error')} ${errorMessage}`, 'cdnDedicatedManage');
+        }
+      })
+      .finally(() => {
+        this.loadingStats = false;
+      });
+  }
+
+  createChart(statistics) {
+    this.chartSeries = [];
+    this.chartData = [];
+    const statisticsValues = _.get(statistics, 'cdn.values', []);
+    const statisticsBackendValues = _.get(statistics, 'backend.values', []);
+
+    this.chartLabels = statisticsValues.map((value, index) => {
+      const source = statistics.backend || statistics.cdn;
+      const start = _.get(source, 'pointStart', {});
+      const interval = _.get(source, 'pointInterval.standardSeconds', 1);
       return moment(start).add((index + 1) * interval, 'seconds').calendar();
     });
-    $scope.series.push($translate.instant(`cdn_stats_legend_${$scope.model.dataType.toLowerCase()}_cdn`));
-    $scope.series.push($translate.instant(`cdn_stats_legend_${$scope.model.dataType.toLowerCase()}_backend`));
-    $scope.data.push(_.map(_.get(data, 'cdn.values'), value => value.y));
-    $scope.data.push(_.map(_.get(data, 'backend.values'), value => value.y));
+
+    this.chartSeries.push(this.$translate.instant(`cdn_stats_legend_${this.statisticsSearchCriteria.dataType.toLowerCase()}_cdn`));
+    this.chartSeries.push(this.$translate.instant(`cdn_stats_legend_${this.statisticsSearchCriteria.dataType.toLowerCase()}_backend`));
+
+    this.chartData.push(statisticsValues.map(({ y: yValue }) => yValue));
+    this.chartData.push(statisticsBackendValues.map(({ y: yValue }) => yValue));
   }
 
-  $scope.getStatistics = () => {
-    $scope.loadingStats = true;
-    return Cdn.getStatistics($stateParams.productId, $scope.model)
-      .then(data => createChart(data))
-      .catch((err) => {
-        if (err.message) {
-          _.set(err, 'message', err.message.replace(' : null', ''));
-          $scope.setMessage($translate.instant('cdn_configuration_add_ssl_get_error'), { type: 'ERROR', message: err.message });
-        }
-      }).finally(() => {
-        $scope.loadingStats = false;
-      });
-  };
-
-  function init() {
-    $scope.loadingConsts = true;
-    Cdn.getStatisticsConsts()
-      .then((data) => {
-        $scope.consts = data;
-        $scope.model = {
-          dataType: data.defaultType,
-          period: data.defaultPeriod,
-        };
-        $scope.getStatistics();
-      }).finally(() => {
-        $scope.loadingConsts = false;
-      });
+  openModal(template, controller) {
+    return this.$uibModal.open({ template, controller });
   }
 
-  init();
-});
+  addDomain() {
+    return this.openModal(addDomainTemplate, 'CdnAddDomainsCtrl');
+  }
+
+  orderDomainRules() {
+    return this.openModal(orderRuleTemplate, 'CacherulesAddCtrl');
+  }
+
+  orderQuota() {
+    return this.openModal(orderQuotaTemplate, 'OrderQuotaCtrl');
+  }
+}
+
+angular.module('App').controller('CdnStatisticsCtrl', CdnStatisticsCtrl);

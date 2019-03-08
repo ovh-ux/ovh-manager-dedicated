@@ -1,4 +1,4 @@
-angular.module('App').config(($stateProvider) => {
+angular.module('App').config(/* @ngInject */ ($stateProvider) => {
   $stateProvider.state('app.networks.cdn.dedicated', {
     url: '/cdn/:productId',
     views: {
@@ -12,8 +12,7 @@ angular.module('App').config(($stateProvider) => {
         controllerAs: '$ctrl',
       },
       'cdnView@app.networks.cdn.dedicated': {
-        templateUrl: 'cdn/dedicated/manage/statistics/cdn-dedicated-manage-statistics.html',
-        controller: 'CdnStatisticsCtrl',
+        component: 'cdnStatistics',
       },
     },
     translations: ['.'],

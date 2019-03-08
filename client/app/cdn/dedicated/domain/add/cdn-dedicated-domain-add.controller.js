@@ -1,8 +1,10 @@
-angular.module('App').controller('CdnAddDomainsCtrl', ($scope, $stateParams, $translate, Cdn) => {
+angular.module('App').controller('CdnAddDomainsCtrl', ($scope, $stateParams, $translate, $uibModalInstance, Cdn) => {
   $scope.backends = null;
 
   $scope.domain = {};
   $scope.newBackend = {};
+
+  $scope.$uibModalInstance = $uibModalInstance;
 
   $scope.isSecondStepValid = function () {
     return $scope.domain.backend || ($scope.newBackend.value && !$scope.maxBackendsReached());

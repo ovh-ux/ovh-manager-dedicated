@@ -1,4 +1,4 @@
-angular.module('App').controller('OrderQuotaCtrl', ($scope, $stateParams, $translate, cdnDedicatedOrderQuota) => {
+angular.module('App').controller('OrderQuotaCtrl', ($scope, $stateParams, $translate, $uibModalInstance, cdnDedicatedOrderQuota) => {
   $scope.orderInformations = null;
   $scope.choices = {
     count: null,
@@ -9,6 +9,8 @@ angular.module('App').controller('OrderQuotaCtrl', ($scope, $stateParams, $trans
   $scope.contractsValidated = {
     value: false,
   };
+
+  $scope.$uibModalInstance = $uibModalInstance;
 
   $scope.$watch('choices.count', () => {
     angular.forEach($scope.orderInformations, (value) => {
