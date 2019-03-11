@@ -12,7 +12,7 @@ export const DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP = new Re
 export const DEDICATEDCLOUD_DATACENTER_DRP_STATUS = {
   deliveredOrProvisionning: ['delivered', 'toProvision', 'provisionning'],
   toUnprovisionOrUnprovisionning: ['toUnprovision', 'unprovisionning'],
-  disabled: 'disabled',
+  disabling: 'disabling',
   delivered: 'delivered',
   toProvisionOrProvisionning: ['toProvision', 'provisionning'],
   toDo: 'todo',

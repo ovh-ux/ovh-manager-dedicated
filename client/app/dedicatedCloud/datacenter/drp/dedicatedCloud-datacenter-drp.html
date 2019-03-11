@@ -17,9 +17,12 @@
 
         <oui-message class="mb-5"
                      data-type="warning"
-                     data-ng-if="$ctrl.drpInformations.hasDatacenterWithoutHosts
+                     data-ng-if="($ctrl.drpInformations.hasDatacenterWithoutHosts || $ctrl.isDisablingDrp)
                          && $ctrl.drpInformations.state !== $ctrl.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered">
-            <span data-translate="dedicatedCloud_datacenter_drp_warning"></span>
+            <span data-translate="dedicatedCloud_datacenter_drp_warning"
+                  data-ng-if="$ctrl.drpInformations.hasDatacenterWithoutHosts"></span>
+            <span data-translate="dedicatedCloud_datacenter_drp_confirm_delete_drp_success"
+                  data-ng-if="$ctrl.isDisablingDrp"></span>
         </oui-message>
 
         <div data-ng-if="$ctrl.drpInformations.drpType == null">
@@ -32,7 +35,7 @@
                                        data-label="{{:: 'dedicatedCloud_datacenter_ovh_choice' | translate }}"
                                        data-values="[{ id: 'ovh', name: ('dedicatedCloud_datacenter_ovh_choice' | translate) }]"
                                        data-variant="light"
-                                       data-disabled="$ctrl.drpInformations.hasDatacenterWithoutHosts">
+                                       data-disabled="$ctrl.drpInformations.hasDatacenterWithoutHosts || $ctrl.isDisablingDrp">
                         <oui-select-picker-section>
                             <figure>
                                 <img class="h-100 w-100"
@@ -64,7 +67,7 @@
             <oui-button class="my-5"
                         data-on-click="$ctrl.selectDrpType()"
                         data-variant="primary"
-                        data-disabled="!$ctrl.selectedDrpType.id">
+                        data-disabled="!$ctrl.selectedDrpType.id || $ctrl.isDisablingDrp">
                 <span data-translate="dedicatedCloud_datacenter_activate_zerto_drp"></span>
             </oui-button>
         </div>

@@ -26,7 +26,10 @@ export default class {
       .find(({ state }) => this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.deliveredOrProvisionning
         .includes(state));
 
-    if (drp != null) {
+    this.isDisablingDrp = this.pccPlan
+      .some(({ state }) => this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabling === state);
+
+    if (drp != null && !this.isDisablingDrp) {
       this.drpInformations = {
         ...this.drpInformations,
         ...this.formatPlanInformations(drp),
