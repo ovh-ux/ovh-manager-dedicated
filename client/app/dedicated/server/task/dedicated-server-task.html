@@ -12,13 +12,13 @@
             <span data-ng-bind="$row.comment"></span>
         </oui-column>
         <oui-column data-title=":: 'server_configuration_task_status' | translate">
-            <span class="label"
+            <span class="oui-status"
                   data-translate="{{ 'server_configuration_task_status_' + $row.status }}"
                   data-ng-class="{
-                      'label-success': $row.status === $ctrl.TASK_STATUS.DONE,
-                      'label-info': $row.status === $ctrl.TASK_STATUS.DOING,
-                      'label-danger': $row.status === $ctrl.TASK_STATUS.OVH_ERROR || $row.status === $ctrl.TASK_STATUS.CUSTOMER_ERROR,
-                      'label-warning': $row.status === $ctrl.TASK_STATUS.INIT || $row.status === $ctrl.TASK_STATUS.TODO
+                      'oui-status_success': $row.status === $ctrl.TASK_STATUS.DONE,
+                      'oui-status_info': $row.status === $ctrl.TASK_STATUS.DOING,
+                      'oui-status_danger': $row.status === $ctrl.TASK_STATUS.OVH_ERROR || $row.status === $ctrl.TASK_STATUS.CUSTOMER_ERROR,
+                      'oui-status_warning': $row.status === $ctrl.TASK_STATUS.INIT || $row.status === $ctrl.TASK_STATUS.TODO
                   }">
             </span>
         </oui-column>

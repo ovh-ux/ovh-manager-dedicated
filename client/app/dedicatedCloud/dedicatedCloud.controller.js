@@ -292,11 +292,6 @@ angular
         this.$scope.currentActionData = data;
 
         this.$scope.stepPath = `dedicatedCloud/${this.$scope.currentAction}.html`;
-
-        $('#currentAction').modal({
-          keyboard: true,
-          backdrop: 'static',
-        });
       } else {
         $('#currentAction').modal('hide');
         this.$scope.currentActionData = null;

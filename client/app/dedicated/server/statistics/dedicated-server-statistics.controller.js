@@ -152,7 +152,7 @@ angular.module('controllers').controller('controllers.Server.Stats', (
   };
 
   $scope.rebootServer = function () {
-    return $state.go('app.dedicated.server.reboot');
+    return $state.go('app.dedicated.server.dashboard.reboot');
   };
 
   $scope.$on('reloadChart', () => {
