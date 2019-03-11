@@ -63,6 +63,7 @@ export default class {
   checkIfDatacenterHasHosts(datacenterId) {
     this.isCheckingHosts = true;
     this.isSecondaryDatacenterWithoutHosts = false;
+    this.hostsStateLink = '';
 
     return this.DedicatedCloud.getHosts(
       this.drpInformations.secondaryPcc.serviceName,
@@ -70,6 +71,9 @@ export default class {
     )
       .then(({ count }) => {
         this.isSecondaryDatacenterWithoutHosts = count === 0;
+        if (this.isSecondaryDatacenterWithoutHosts) {
+          this.hostsStateLink = `app.dedicatedClouds.datacenter.hosts({ productId: ${this.drpInformations.secondaryPcc.serviceName}}), datacenterId: ${datacenterId}`;
+        }
       })
       .catch((error) => {
         this.Alerter.error(`${this.$translate.instant('dedicatedCloud_datacenter_secondary_datacenter_get_hosts_error')} ${_.get(error, 'data.message', '')}`, 'dedicatedCloudDatacenterDrpAlert');
