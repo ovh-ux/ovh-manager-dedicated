@@ -15,10 +15,10 @@ import state from './state';
 
 angular
   .module(MODULE_NAME, [
-    ...ACTIVATION_TYPES.all.map(step => step.moduleName),
     'oui',
     'pascalprecht.translate',
     'ui.router',
+    ...ACTIVATION_TYPES.all.map(step => step.moduleName),
   ])
   .component(COMPONENT_NAME, component)
   .config(/* @ngInject */ ($stateProvider) => {
