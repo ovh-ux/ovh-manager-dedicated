@@ -7211,19 +7211,6 @@ node-gyp@^3.8.0:
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/node-gyp/-/node-gyp-3.8.0.tgz#540304261c330e80d0d5edce253a68cb3964218c"
   integrity sha512-3g8lYefrRRzvGeSowdJKAKyks8oUpLEd/DyPV4eMhVlhJ0aNaZqIrNUIPuEWWTAoPqyFkfGrM67MC69baqn6vA==
-  dependencies:
-    fstream "^1.0.0"
-    glob "^7.0.3"
-    graceful-fs "^4.1.2"
-    mkdirp "^0.5.0"
-    nopt "2 || 3"
-    npmlog "0 || 1 || 2 || 3 || 4"
-    osenv "0"
-    request "^2.87.0"
-    rimraf "2"
-    semver "~5.3.0"
-    tar "^2.0.0"
-    which "1"
 
 node-libs-browser@^2.0.0:
   version "2.1.0"
@@ -7719,10 +7706,10 @@ ovh-angular-toaster@^0.8.0:
   resolved "https://registry.yarnpkg.com/ovh-angular-toaster/-/ovh-angular-toaster-0.8.0.tgz#7073201379ea196c721d583421c0cef1d04bdbdb"
   integrity sha1-cHMgE3nqGWxyHVg0IcDO8dBL29s=
 
-ovh-api-services@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-6.0.0.tgz#ef7d3f5b74205415c8a82bba0b4ed2d275c17409"
-  integrity sha512-pe57Ip+jltje7m4wnIUKYR0zb+sYh6s5PychcYglq3fGkFUuK5X7pS3XjVA/6N45XwytzWyc5mses3zcIVmrVA==
+ovh-api-services@^6.1.2:
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-6.1.2.tgz#b442f306fc77e01aaa2a3b515e1f3c32e3e73c4b"
+  integrity sha512-v8XtPLwVVEnDX2C2t3tEWCAJo6pj3NE2pupir4z8ms4KW228prTWk68qPPvIAs0N9AJ/UR0ubXSn+2BiCKf1uQ==
   dependencies:
     lodash "^3.10.1"
 
