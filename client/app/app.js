@@ -14,6 +14,7 @@ import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
 import uiRouter from '@uirouter/angularjs';
 
 import config from './config/config';
+import dashboard from './dedicatedCloud/dashboard/main';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
 import legacyDashboard from './dedicatedCloud/dashboard/legacy';
 import resourceUpgrade from './dedicatedCloud/resource/upgrade';
@@ -24,6 +25,7 @@ angular
     'Billing',
     'chart.js',
     'controllers',
+    dashboard,
     dedicatedUniverseComponents,
     'directives',
     'filters',
