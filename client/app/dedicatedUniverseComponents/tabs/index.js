@@ -1,6 +1,6 @@
 import angular from 'angular';
+import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
 import translate from 'angular-translate';
-import translateAsyncLoader from '@ovh-ux/translate-async-loader';
 
 /* eslint-disable import/no-webpack-loader-syntax, import/no-unresolved, import/extensions */
 import 'script-loader!@ovh-ux/ovh-utils-angular/bin/ovh-utils-angular.min.js';
@@ -15,9 +15,9 @@ const moduleName = 'ducTabs';
 angular
   .module(moduleName, [
     'digitalfondue.dftabmenu',
+    ngTranslateAsyncLoader,
     'ovh-utils-angular',
     translate,
-    translateAsyncLoader,
   ])
   .directive('ducOvhTabs', ducOvhTabsDirective)
   .run(/* @ngTranslationsInject ./translations */);

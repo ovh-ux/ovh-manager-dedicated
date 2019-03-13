@@ -1,6 +1,6 @@
 import angular from 'angular';
+import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
 import translate from 'angular-translate';
-import translateAsyncLoader from '@ovh-ux/translate-async-loader';
 
 import ducBytesFilter from './bytes.filter';
 
@@ -8,8 +8,8 @@ const moduleName = 'ducBytes';
 
 angular
   .module(moduleName, [
+    ngTranslateAsyncLoader,
     translate,
-    translateAsyncLoader,
   ])
   .filter('ducBytes', ducBytesFilter)
   .run(/* @ngTranslationsInject ./translations */);
