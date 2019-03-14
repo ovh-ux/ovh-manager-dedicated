@@ -8,10 +8,12 @@ const constants = {
     UNIVERS: 'dedicated',
     URLS: {
       CZ: {
+        express_order: 'https://www.ovh.cz/order/express/#/express/',
         support: 'http://www.ovh.cz/podpora/',
         support_contact: 'http://www.ovh.cz/podpora/',
         guides: {
           home: 'http://prirucky.ovh.cz/',
+          privateCloudHome: 'https://docs.ovh.com/cz/cs/private-cloud/',
         },
         vpsCloud: 'http://www.ovh.cz/vps/vps-cloud.xml',
         dedicatedIpmi: 'https://docs.ovh.com/cz/cs/dedicated/pouziti-ipmi-dedikovane-servery/',
@@ -26,10 +28,12 @@ const constants = {
         iplbOrder: 'https://www.ovh.cz/reseni/load-balancer/',
       },
       DE: {
+        express_order: 'https://www.ovh.de/order/express/#/express/',
         support: 'http://www.ovh.de/support/',
         support_contact: 'http://www.ovh.de/support/',
         guides: {
           home: 'http://hilfe.ovh.de/',
+          privateCloudHome: 'https://docs.ovh.com/de/private-cloud/',
           autoRenew: 'https://www.ovh.de/g1271.anleitung_zur_nutzung_der_automatischen_verlangerung_bei_ovh',
           ipv6Vps: 'https://www.ovh.de/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.de/g1769.creating_ssh_keys',
@@ -48,10 +52,12 @@ const constants = {
         iplbOrder: 'https://www.ovh.de/loesungen/load-balancer/',
       },
       ES: {
+        express_order: 'https://www.ovh.es/order/express/#/express/',
         support: 'http://www.ovh.es/soporte/',
         support_contact: 'http://www.ovh.es/soporte/',
         guides: {
           home: 'http://guias.ovh.es/',
+          privateCloudHome: 'https://docs.ovh.com/es/private-cloud/',
           autoRenew: 'https://www.ovh.es/g1271.renovacion_automatica_en_ovh',
           ipv6Vps: 'https://www.ovh.es/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.es/g1769.creating_ssh_keys',
@@ -72,10 +78,12 @@ const constants = {
         iplbOrder: 'https://www.ovh.es/soluciones/load-balancer/',
       },
       FI: {
+        express_order: 'https://www.ovh-hosting.fi/order/express/#/express/',
         support: 'http://www.ovh-hosting.fi/tuki/',
         support_contact: 'http://www.ovh-hosting.fi/tuki/',
         guides: {
           home: 'http://ohjeet.ovh-hosting.fi/',
+          privateCloudHome: 'https://docs.ovh.com/fi/private-cloud/',
           autoRenew: 'https://www.ovh-hosting.fi/g1271.automaattinen-uusinta',
           reinitPassword: 'https://www.ovh-hosting.fi/g2366.virtuaalikoneen_root-salasanan_vaihto',
           ipv6Vps: 'https://www.ovh-hosting.fi/g2365.vps-ipv6',
@@ -93,10 +101,12 @@ const constants = {
         iplbOrder: 'https://www.ovh-hosting.fi/ratkaisut/load-balancer/',
       },
       FR: {
+        express_order: 'https://www.ovh.com/fr/order/express/#/express/',
         support: 'https://www.ovh.com/fr/support/',
         support_contact: 'https://www.ovh.com/fr/support/nous-contacter/',
         guides: {
           home: 'https://docs.ovh.com',
+          privateCloudHome: 'https://docs.ovh.com/fr/private-cloud/',
           autoRenew: 'https://www.ovh.com/fr/g1271.guide_dutilisation_du_renouvellement_automatique_ovh',
           additionalDisksGuide: 'https://www.ovh.com/fr/g2181.Commande_et_utilisation_d_un_disque_additionnel',
           all: 'https://www.ovh.com/fr/support/knowledge/',
@@ -124,7 +134,6 @@ const constants = {
         exchangeOrder: 'https://www.ovh.com/fr/emails/hosted-exchange/',
         renewAlign: 'https://eu.ovh.com/fr/cgi-bin/order/renew.cgi?alignDate=1',
         housingPhoneSupport: '09 72 10 00 70',
-        ipShortageWarnUrl: 'http://travaux.ovh.net/?do=details&id=18851',
         faq: 'https://www.ovh.com/fr/serveurs_dedies/faq.xml',
         faqVps: 'https://www.ovh.com/fr/vps/aide-faq.xml',
         faqDedicatedCloud: 'https://pccdocs.ovh.net/pages/viewpage.action?pageId=7766169',
@@ -133,10 +142,12 @@ const constants = {
         iplbOrder: 'https://www.ovh.com/fr/solutions/load-balancer/',
       },
       GB: {
+        express_order: 'https://www.ovh.co.uk/order/express/#/express/',
         support: 'http://www.ovh.co.uk/support/',
         support_contact: 'http://www.ovh.co.uk/support/',
         guides: {
           home: 'http://help.ovh.co.uk/',
+          privateCloudHome: 'https://docs.ovh.com/gb/en/private-cloud/',
           autoRenew: 'https://www.ovh.co.uk/g1271.how_to_use_automatic_renewal_at_ovh',
           all: 'https://www.ovh.co.uk/community/knowledge/',
           nsx: 'https://www.ovh.co.uk/private-cloud/options/nsx.xml',
@@ -158,17 +169,18 @@ const constants = {
         domainOrderTrade: "https://www.ovh.co.uk/order/domain/#/legacy/domain/trade/informations?options=~~(domain~~'{domain})",
         exchangeOrder: 'https://www.ovh.co.uk/emails/hosted-exchange/',
         renewAlign: 'https://www.ovh.co.uk/cgi-bin/order/renew.cgi?alignDate=1&csid=0',
-        ipShortageWarnUrl: 'http://status.ovh.com/?do=details&id=13687',
         faq: 'https://www.ovh.co.uk/dedicated_servers/faq.xml',
         faqVps: 'https://www.ovh.co.uk/vps/faq-help.xml',
         dedicatedOrder: 'https://www.ovh.co.uk/dedicated_servers',
         iplbOrder: 'https://www.ovh.co.uk/solutions/load-balancer/',
       },
       IT: {
+        express_order: 'https://www.ovh.it/order/express/#/express/',
         support: 'http://www.ovh.it/supporto/',
         support_contact: 'http://www.ovh.it/supporto/',
         guides: {
           home: 'http://guida.ovh.it/',
+          privateCloudHome: 'https://docs.ovh.com/it/private-cloud/',
           autoRenew: 'https://www.ovh.it/g1271.imposta_il_rinnovo_automatico_dei_tuoi_servizi_ovh',
           reinitPassword: 'https://www.ovh.it/g2366.modifica_la_password_di_root_su_un_vps_linux',
           ipv6Vps: 'https://www.ovh.it/g2365.vps-ipv6',
@@ -190,10 +202,12 @@ const constants = {
         iplbOrder: 'https://www.ovh.it/soluzioni/load-balancer/',
       },
       LT: {
+        express_order: 'https://www.ovh.lt/order/express/#/express/',
         support: 'http://www.ovh.lt/pagalba/',
         support_contact: 'http://www.ovh.lt/pagalba/',
         guides: {
           home: 'http://gidai.ovh.lt/',
+          privateCloudHome: 'https://docs.ovh.com/lt/private-cloud/',
           autoRenew: 'https://www.ovh.lt/g1271.automatinis_ovh_paslaugu_galiojimo_pratesimas',
           reinitPassword: 'https://www.ovh.lt/g2366.root_slaptazodzio_keitimas_vps_linux',
           ipv6Vps: 'https://www.ovh.lt/g2365.vps-ipv6',
@@ -214,10 +228,12 @@ const constants = {
         iplbOrder: 'https://www.ovh.lt/sprendimai/load-balancer/',
       },
       NL: {
+        express_order: 'https://www.ovh.nl/order/express/#/express/',
         support: 'http://www.ovh.nl/support/',
         support_contact: 'http://www.ovh.nl/support/',
         guides: {
           home: 'http://gids.ovh.nl/',
+          privateCloudHome: 'https://docs.ovh.com/nl/private-cloud/',
           autoRenew: 'https://www.ovh.nl/g1271.ovh_handleiding_voor_het_gebruik_van_de_automatische_verlenging',
           ipv6Vps: 'https://www.ovh.nl/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.nl/g1769.creating_ssh_keys',
@@ -236,10 +252,12 @@ const constants = {
         iplbOrder: 'https://www.ovh.nl/oplossing/load-balancer/',
       },
       PL: {
+        express_order: 'https://www.ovh.pl/order/express/#/express/',
         support: 'https://www.ovh.pl/pomoc/',
         support_contact: 'https://www.ovh.pl/pomoc/',
         guides: {
           home: 'http://pomoc.ovh.pl/',
+          privateCloudHome: 'https://docs.ovh.com/pl/private-cloud/',
           autoRenew: 'https://www.ovh.pl/g1271.przewodnik_dotyczacy_opcji_automatycznego_odnawiania_uslug_w_ovh',
           reinitPassword: 'https://www.ovh.pl/g2366.Zmiana_hasla_root_na_serwerze_vps_linux',
           ipv6Vps: 'https://www.ovh.pl/g2365.vps-ipv6',
@@ -261,10 +279,12 @@ const constants = {
         iplbOrder: 'https://www.ovh.pl/rozwiazania/ip-load-balancing/',
       },
       PT: {
+        express_order: 'https://www.ovh.pt/order/express/#/express/',
         support: 'https://www.ovh.pt/suporte/',
         support_contact: 'https://www.ovh.pt/suporte/',
         guides: {
           home: 'http://guias.ovh.pt/',
+          privateCloudHome: 'https://docs.ovh.com/pt/private-cloud/',
           autoRenew: 'https://www.ovh.pt/g1271.guia_de_utilizacao_da_renovacao_automatica_da_ovh',
           reinitPassword: 'https://www.ovh.pt/g2366.alterar_a_password_root_num_servidor_vps_linux',
           ipv6Vps: 'https://www.ovh.pt/g2365.vps-ipv6',
@@ -286,10 +306,12 @@ const constants = {
         iplbOrder: 'https://www.ovh.pt/solucoes/load-balancer/',
       },
       IE: {
+        express_order: 'https://www.ovh.ie/order/express/#/express/',
         support: 'https://www.ovh.ie/suport/',
         support_contact: 'https://www.ovh.ie/suport/',
         guides: {
           home: 'http://help.ovh.ie/',
+          privateCloudHome: 'https://docs.ovh.com/ie/en/private-cloud/',
           autoRenew: 'https://www.ovh.ie/g1271.how_to_use_automatic_renewal_at_ovh',
           all: 'https://www.ovh.ie/community/knowledge/',
           nsx: 'https://www.ovh.ie/private-cloud/options/nsx.xml',
@@ -546,10 +568,12 @@ const constants = {
     UNIVERS: 'dedicated',
     URLS: {
       ASIA: {
+        express_order: 'https://ca.ovh.com/en/order/express/#/express/',
         support: 'http://www.ovh.co.uk/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
           home: 'https://docs.ovh.com/ca/en/',
+          privateCloudHome: 'https://docs.ovh.com/ca/en/private-cloud/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/us/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
@@ -570,10 +594,12 @@ const constants = {
         iplbOrder: 'https://www.ovh.com/world/solutions/load-balancer/',
       },
       AU: {
+        express_order: 'https://ca.ovh.com/en/order/express/#/express/',
         support: 'http://www.ovh.co.uk/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
           home: 'https://docs.ovh.com/ca/en/',
+          privateCloudHome: 'https://docs.ovh.com/au/en/private-cloud/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/us/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
@@ -594,10 +620,12 @@ const constants = {
         iplbOrder: 'https://www.ovh.com/world/solutions/load-balancer/',
       },
       CA: { // eq to en_CA
+        express_order: 'https://ca.ovh.com/en/order/express/#/express/',
         support: 'http://www.ovh.co.uk/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
           home: 'https://docs.ovh.com/ca/en/',
+          privateCloudHome: 'https://docs.ovh.com/ca/en/private-cloud/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/ca/en/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
@@ -618,10 +646,12 @@ const constants = {
         iplbOrder: 'https://www.ovh.com/ca/en/solutions/load-balancer/',
       },
       QC: { // eq to fr_CA
+        express_order: 'https://ca.ovh.com/fr/order/express/#/express/',
         support: 'https://www.ovh.com/fr/support/',
         support_contact: 'https://www.ovh.com/ca/fr/support/',
         guides: {
           home: 'https://docs.ovh.com/ca/fr/',
+          privateCloudHome: 'https://docs.ovh.com/ca/fr/private-cloud/',
           reinitPassword: 'http://docs.ovh.ca/fr/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/ca/fr/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/fr/g1769.creation_des_cles_ssh',
@@ -642,10 +672,12 @@ const constants = {
         iplbOrder: 'https://www.ovh.com/ca/fr/solutions/load-balancer/',
       },
       SG: {
+        express_order: 'https://ca.ovh.com/en/order/express/#/express/',
         support: 'http://www.ovh.co.uk/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
           home: 'https://docs.ovh.com/ca/en/',
+          privateCloudHome: 'https://docs.ovh.com/sg/en/private-cloud/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/us/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
@@ -666,10 +698,12 @@ const constants = {
         iplbOrder: 'https://www.ovh.com/world/solutions/load-balancer/',
       },
       WE: {
+        express_order: 'https://ca.ovh.com/en/order/express/#/express/',
         support: 'http://www.ovh.co.uk/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
           home: 'https://docs.ovh.com/ca/en/',
+          privateCloudHome: 'https://docs.ovh.com/ca/en/private-cloud/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/us/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
@@ -690,10 +724,12 @@ const constants = {
         iplbOrder: 'https://www.ovh.com/world/solutions/load-balancer/',
       },
       WS: { // eq to es_US
+        express_order: 'https://ca.ovh.com/en/order/express/#/express/',
         support: 'https://www.ovh.com/fr/support/',
         support_contact: 'https://www.ovh.com/ca/en/support/',
         guides: {
           home: 'https://docs.ovh.com/ca/en/',
+          privateCloudHome: 'https://docs.ovh.com/ca/en/private-cloud/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
           sshAdd: 'https://www.ovh.com/ca/en/g1924.configuring_additionnal_ssh_key',
@@ -827,6 +863,7 @@ const constants = {
         guides: {
           all: 'https://support.us.ovhcloud.com/hc/en-us',
           home: 'https://support.us.ovhcloud.com/hc/en-us',
+          privateCloudHome: 'https://docs.ovh.com/us/en/private-cloud/',
           reinitPassword: 'http://docs.ovh.ca/en/faqs-server-issues.html#server-password-lost-forgotten',
           ipv6Vps: 'https://www.ovh.com/ca/en/g2365.vps-ipv6',
           sshCreate: 'http://support.us.ovhcloud.com/hc/en-us/articles/115001588250-SSH-Key-Management',

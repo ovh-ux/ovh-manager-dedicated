@@ -25,7 +25,7 @@
                 name="countrySelect"
                 data-ng-model="model.params.country"
                 class="oui-select__input"
-                data-ng-options="country as ('country_' + country.toUpperCase() | translate) for country in orderableIp.countries"
+                data-ng-options="country.code as country.displayValue for country in orderableIp.countries | orderBy:'displayValue' track by country.code"
                 data-required>
                 <option
                     data-value=""
@@ -46,7 +46,7 @@
                data-maxlength="20">
     </oui-field>
 
-    <oui-field data-label="{{:: 'ip_order_estimatedclientsnumber' | translate }}" label-popover="{{:: 'ip_order_estimatedclientsnumber_help' | translate }}">
+    <oui-field data-label="{{:: 'ip_order_estimatedclientsnumber' | translate }}" label-popover="{{:: 'ip_order_estimatedclientsnumber_help' | translate }}" data-ng-if="model.service.usesLegacyOrder">
         <input type="number" class="oui-input"
                data-ng-model="model.params.estimatedClientsNumber"
                name="estimatedClientsNumber"
@@ -69,7 +69,7 @@
         </oui-textarea>
     </oui-field>
 
-    <oui-field data-label="{{:: 'ip_order_usage' | translate }}" label-popover="{{:: 'ip_order_usage_help' | translate }}">
+    <oui-field data-label="{{:: 'ip_order_usage' | translate }}" label-popover="{{:: 'ip_order_usage_help' | translate }}" data-ng-if="model.service.usesLegacyOrder">
         <input type="text" class="oui-input"
                data-ng-model="model.params.usage"
                name="usage"
