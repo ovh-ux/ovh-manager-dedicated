@@ -81,6 +81,8 @@ angular
           },
         );
 
+        this.$scope.$on('dedicatedCloud.setMessage', (event, { message, type }) => this.setMessage(message, { type }));
+
         this.$scope.loadDedicatedCloud = () => this.loadDedicatedCloud();
         this.$scope.editDescription = value => this.editDescription(value);
         this.$scope.getRight = order => this.getRight(order);
