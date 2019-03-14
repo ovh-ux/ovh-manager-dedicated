@@ -11,7 +11,8 @@
                     <span data-ng-bind="('ip_order_bloc' | translate) + ' /' +  model.params.size"></span> :
                     <span
                         data-ng-if="!durations.details[duration].prices"
-                        data-ng-bind-html="durations.details[duration].price"></span>
+                        data-translate="price_ht_label"
+                        data-translate-values="{ 'price': durations.details[duration].price }"></span>
                     <span
                         data-ng-if="durations.details[duration].prices"
                         data-ng-bind-html="durations.details[duration].prices | ducPrice:user.ovhSubsidiary"></span>
