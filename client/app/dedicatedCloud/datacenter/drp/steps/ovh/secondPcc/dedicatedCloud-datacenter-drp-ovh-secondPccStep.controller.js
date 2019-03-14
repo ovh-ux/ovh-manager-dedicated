@@ -2,7 +2,7 @@ export default class {
   /* @ngInject */
   constructor(
     $q, $state, $stateParams, $translate, $uibModal,
-    Alerter, DedicatedCloud, DedicatedCloudDrp, OvhApiDedicatedCloud,
+    Alerter, DedicatedCloud, DedicatedCloudDrp, ipFeatureAvailability, OvhApiDedicatedCloud,
     DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP,
     DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS,
   ) {
@@ -14,6 +14,7 @@ export default class {
     this.Alerter = Alerter;
     this.DedicatedCloud = DedicatedCloud;
     this.DedicatedCloudDrp = DedicatedCloudDrp;
+    this.ipFeatureAvailability = ipFeatureAvailability;
     this.OvhApiDedicatedCloud = OvhApiDedicatedCloud;
     this.MAC_ADDRESS_REG_EXP = DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP;
     this.UNAVAILABLE_IP_STATUSES = DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS;
@@ -72,7 +73,7 @@ export default class {
       .then(({ count }) => {
         this.isSecondaryDatacenterWithoutHosts = count === 0;
         if (this.isSecondaryDatacenterWithoutHosts) {
-          this.hostsStateLink = `app.dedicatedClouds.datacenter.hosts({ productId: ${this.drpInformations.secondaryPcc.serviceName}}), datacenterId: ${datacenterId}`;
+          this.hostsStateLink = `app.dedicatedClouds.datacenter.hosts({ productId: '${this.drpInformations.secondaryPcc.serviceName}', datacenterId: ${datacenterId} })`;
         }
       })
       .catch((error) => {

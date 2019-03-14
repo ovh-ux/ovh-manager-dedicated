@@ -2,7 +2,7 @@ export default class {
   /* @ngInject */
   constructor(
     $q, $state, $stateParams, $translate, $uibModal,
-    Alerter, DedicatedCloudDrp, OvhApiDedicatedCloud,
+    Alerter, DedicatedCloudDrp, ipFeatureAvailability, OvhApiDedicatedCloud,
     DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP,
     DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS,
   ) {
@@ -13,6 +13,7 @@ export default class {
     this.$uibModal = $uibModal;
     this.Alerter = Alerter;
     this.DedicatedCloudDrp = DedicatedCloudDrp;
+    this.ipFeatureAvailability = ipFeatureAvailability;
     this.OvhApiDedicatedCloud = OvhApiDedicatedCloud;
     this.MAC_ADDRESS_REG_EXP = DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP;
     this.UNAVAILABLE_IP_STATUSES = DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS;

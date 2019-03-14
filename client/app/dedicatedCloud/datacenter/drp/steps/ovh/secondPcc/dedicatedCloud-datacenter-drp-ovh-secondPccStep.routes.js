@@ -16,5 +16,11 @@ angular.module('App').config(/* @ngInject */ ($stateProvider) => {
       templateUrl: 'ip/ip/order/ip-ip-order.html',
       layout: 'modal',
       translations: ['.'],
+    })
+    .state('app.dedicatedClouds.datacenter.drp.ovh.secondPccStep.agoraOrderIp', {
+      controller: 'agoraIpOrderCtrl',
+      templateUrl: 'ip/ip/agoraOrder/ip-ip-agoraOrder.html',
+      layout: 'modal',
+      translations: ['.'],
     });
 });

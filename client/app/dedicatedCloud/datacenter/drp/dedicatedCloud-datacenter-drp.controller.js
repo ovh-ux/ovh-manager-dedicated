@@ -2,7 +2,7 @@ export default class {
   /* @ngInject */
   constructor(
     $q, $state, $stateParams, $transitions, $translate,
-    Alerter,
+    Alerter, ipFeatureAvailability,
     DEDICATEDCLOUD_DATACENTER_DRP_ROLES, DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
   ) {
     this.$q = $q;

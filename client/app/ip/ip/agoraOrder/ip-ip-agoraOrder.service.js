@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { PRODUCT_TYPES } from './ip-ip-agoraOrder.constant';
+import { FETCH_PRICE_MAX_TRIES, PRODUCT_TYPES } from './ip-ip-agoraOrder.constant';
 
 angular
   .module('Module.ip.services')
@@ -11,6 +11,8 @@ angular
     ) {
       this.$q = $q;
       this.OvhHttp = OvhHttp;
+
+      this.fetchPricesTries = 0;
     }
 
     handleErrorOrServices({ errors, results }) {
@@ -63,11 +65,13 @@ angular
     }
 
     fetchPrices(serviceName, blockSize) {
+      this.fetchPricesTries = this.fetchPricesTries + 1;
       return this.OvhHttp
         .get(`/order/cartServiceOption/privateCloud/${serviceName}`, {
           rootPath: 'apiv6',
         })
         .then((offers) => {
+          this.fetchPricesTries = 0;
           const matchingOffers = offers
             .filter(offer => offer.family === 'ip')
             .filter(offer => offer.planCode.includes(blockSize));
@@ -77,7 +81,16 @@ angular
             duration: price.duration,
             price: price.price.text,
           }))));
-        });
+        })
+        .catch(error => this.retryFetchPrices(error, serviceName, blockSize));
+    }
+
+    retryFetchPrices(error, ...args) {
+      if (this.fetchPricesTries === FETCH_PRICE_MAX_TRIES) {
+        return this.$q.reject(error);
+      }
+
+      return this.fetchPrices(...args);
     }
 
     static createProductToOrder({
