@@ -22,7 +22,7 @@ class DedicatedCloudSecurityPolicyLogoutCtrl {
   modifyPolicyLogout() {
     this.$scope.resetAction();
 
-    this.DedicatedCloud
+    return this.DedicatedCloud
       .modifyPolicyLogout(this.$stateParams.productId, this.selectedLogoutPolicy.value)
       .then((data) => {
         this.$scope.setMessage(this.$translate.instant('dedicatedCloud_configuration_SECURITY_policy_logout_success'), {
