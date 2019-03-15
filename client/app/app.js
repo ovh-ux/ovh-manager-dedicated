@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import ngAtInternet from '@ovh-ux/ng-at-internet';
 import ngAtInternetUiRouterPlugin from '@ovh-ux/ng-at-internet-ui-router-plugin';
 import ngOvhApiWrappers from '@ovh-ux/ng-ovh-api-wrappers';
@@ -26,6 +27,7 @@ const appDeps = [
   'filters',
   'internationalPhoneNumber',
   'Module.download',
+  ['eu', 'ca'].includes(WEBPACK_ENV.region) ? 'Module.exchange' : undefined,
   'Module.ip',
   'Module.license',
   'Module.otrs',
@@ -66,11 +68,7 @@ const appDeps = [
   uiRouter,
   'UserAccount',
   'xeditable',
-];
-
-if (WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca') {
-  appDeps.push('Module.exchange');
-}
+].filter(_.isString);
 
 angular.module('App', appDeps).constant('constants', {
   prodMode: config.prodMode,
