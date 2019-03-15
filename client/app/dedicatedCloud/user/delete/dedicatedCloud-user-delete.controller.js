@@ -25,7 +25,9 @@ angular
       return this.DedicatedCloud
         .deleteUser(this.$stateParams.productId, this.$scope.user.userId)
         .then(() => {
-          this.$scope.setMessage(this.$translate.instant('dedicatedCloud_USER_delete_success', { t0: this.$scope.user.name }));
+          this.$scope.setMessage(this.$translate.instant('dedicatedCloud_USER_delete_success', { t0: this.$scope.user.name }), {
+            type: 'success',
+          });
         })
         .catch((err) => {
           this.$scope.setMessage(this.$translate.instant('dedicatedCloud_USER_delete_fail', { t0: this.$scope.user.name }), {
