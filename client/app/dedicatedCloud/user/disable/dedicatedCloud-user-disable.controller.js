@@ -28,7 +28,10 @@ angular
           this.$scope.setMessage(this.$translate.instant('dedicatedCloud_USER_disable_success', { t0: this.$scope.user.name }));
         })
         .catch((err) => {
-          this.$scope.setMessage(this.$translate.instant('dedicatedCloud_USER_disable_fail', { t0: this.$scope.user.name }), err.data);
+          this.$scope.setMessage(this.$translate.instant('dedicatedCloud_USER_disable_fail', { t0: this.$scope.user.name }), {
+            ...err,
+            type: 'error',
+          });
         });
     }
   });
