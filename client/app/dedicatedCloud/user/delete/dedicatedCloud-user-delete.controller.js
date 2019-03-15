@@ -27,10 +27,10 @@ angular
         .then(() => {
           this.$scope.setMessage(this.$translate.instant('dedicatedCloud_USER_delete_success', { t0: this.$scope.user.name }));
         })
-        .catch((data) => {
+        .catch((err) => {
           this.$scope.setMessage(this.$translate.instant('dedicatedCloud_USER_delete_fail', { t0: this.$scope.user.name }), {
-            type: 'ERROR',
-            message: data.message,
+            ...err,
+            type: 'error',
           });
         });
     }
