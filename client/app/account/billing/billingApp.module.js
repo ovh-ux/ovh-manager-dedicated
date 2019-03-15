@@ -2,16 +2,16 @@ import config from '../../config/config';
 
 angular
   .module('Billing', [
-    'ovh-utils-angular',
-    'ngRoute',
-    'ngSanitize',
-    'ui.bootstrap',
     'Billing.constants',
-    'Billing.services',
     'Billing.controllers',
     'Billing.directives',
     'Billing.filters',
+    'Billing.services',
+    'ngRoute',
+    'ngSanitize',
     'ovh-angular-export-csv',
+    'ovh-utils-angular',
+    'ui.bootstrap',
   ])
   .constant('BILLING_BASE_URL', 'account/billing/')
   .constant('Billing.constants', {
