@@ -20,17 +20,12 @@ angular
     }
 
     enableUser() {
-      this.DedicatedCloud.enableUser(this.$stateParams.productId, this.$scope.user.userId)
-        .then(
-          () => {
-          // Start Polling
-          },
-          (err) => {
-            this.$scope.setMessage(this.$translate.instant('dedicatedCloud_USER_enable_fail', { t0: this.$scope.user.name }), { message: err.data, type: 'ERROR' });
-          },
-        )
-        .finally(() => {
-          this.$scope.resetAction();
+      this.$scope.resetAction();
+
+      return this.DedicatedCloud
+        .enableUser(this.$stateParams.productId, this.$scope.user.userId)
+        .catch((err) => {
+          this.$scope.setMessage(this.$translate.instant('dedicatedCloud_USER_enable_fail', { t0: this.$scope.user.name }), { message: err.data, type: 'ERROR' });
         });
     }
   });
