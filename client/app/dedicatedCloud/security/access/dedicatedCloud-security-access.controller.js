@@ -36,7 +36,7 @@ class DedicatedCloudSecurityPolicyAccessCtrl {
   modifyPolicyAccess() {
     this.$scope.resetAction();
 
-    this.DedicatedCloud
+    return this.DedicatedCloud
       .modifyPolicyAccess(this.$stateParams.productId, this.selectedAccessPolicy.value)
       .then((data) => {
         this.$scope.setMessage(this.$translate.instant('dedicatedCloud_configuration_SECURITY_policy_access_success'), {
