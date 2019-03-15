@@ -24,7 +24,7 @@
     update() {
       this.$scope.resetAction();
 
-      this.DedicatedCloud
+      return this.DedicatedCloud
         .updateMaxConcurrentConnections(
           this.$stateParams.productId,
           this.maxSimultaneousConnections.value,
