@@ -32,7 +32,10 @@ class DedicatedCloudSecurityMaxSimultaneousConnectionsCtrl {
         );
       })
       .catch((err) => {
-        this.$scope.setMessage(this.$translate.instant('dedicatedCloud_SECURITY_change_nb_simultaneous_connection_failure'), err.data);
+        this.$scope.setMessage(this.$translate.instant('dedicatedCloud_SECURITY_change_nb_simultaneous_connection_failure'), {
+          ...err,
+          type: 'error',
+        });
       });
   }
 }
