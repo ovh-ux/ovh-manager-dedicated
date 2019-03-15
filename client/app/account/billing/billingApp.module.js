@@ -12,6 +12,7 @@ angular
     'ovh-angular-export-csv',
     'ovh-utils-angular',
     'ui.bootstrap',
+    'ui.router',
   ])
   .constant('BILLING_BASE_URL', 'account/billing/')
   .constant('Billing.constants', {
