@@ -420,7 +420,7 @@
    <translation id="dedicatedCloud_SECURITY_title" qtlid="371739">IP et blocs autorisés à se connecter au Private Cloud :</translation>
    <translation id="dedicatedCloud_SECURITY_modify" qtlid="147941">Modifier la plage d’IP</translation>
    <translation id="dedicatedCloud_SECURITY_delete" qtlid="147954">Supprimer la plage d’IP</translation>
-   <translation id="dedicatedCloud_SECURITY_expiration_session" qtlid="146801">Expiration de session:</translation>
+   <translation id="dedicatedCloud_SECURITY_expiration_session">Délai d'expiration d'une session</translation>
    <translation id="dedicatedCloud_SECURITY_expiration_session_value" qtlid="146814">{0} minutes</translation>
    <translation id="dedicatedCloud_SECURITY_expiration_session_never" qtlid="8770">Jamais</translation>
    <translation id="dedicatedCloud_SECURITY_nb_simultaneous_connection" qtlid="146827">Connexions simultanées:</translation>
@@ -435,8 +435,8 @@
    <translation id="dedicatedCloud_SECURITY_IP_name" qtlid="146905">Nom IP</translation>
    <translation id="dedicatedCloud_SECURITY_allow" qtlid="146918">Droit</translation>
    <translation id="dedicatedCloud_SECURITY_description" qtlid="9238">Description</translation>
-   <translation id="dedicatedCloud_SECURITY_change_timeout" qtlid="146931">Changer le délai d'expiration</translation>
-   <translation id="dedicatedCloud_SECURITY_change_nb_simultaneous_connection" qtlid="41530">Connexions simultanées</translation>
+   <translation id="dedicatedCloud_SECURITY_change_timeout">Modifier le délai d'expiration d'une session</translation>
+   <translation id="dedicatedCloud_SECURITY_change_nb_simultaneous_connection">Modifier le nombre de connexions simultanées</translation>
    <translation id="dedicatedCloud_SECURITY_change_nb_simultaneous_connection_success" qtlid="146944">Le nombre maximum de connexions simultanées a été modifié avec succès.</translation>
    <translation id="dedicatedCloud_SECURITY_change_nb_simultaneous_connection_failure" qtlid="146957">Une erreur est survenue lors de la modification du nombre maximum de connexions simultanées.</translation>
    <translation id="dedicatedCloud_SECURITY_add_IP" qtlid="146970">Ajout des IP</translation>
@@ -480,9 +480,8 @@
    <translation id="dedicatedCloud_configuration_security_policy_add_step1_question" qtlid="148123">Entrez l'ip de la nouvelle règle de sécurité :</translation>
    <translation id="dedicatedCloud_configuration_security_policy_add_step1_description" qtlid="103702">Description :</translation>
    <translation id="dedicatedCloud_configuration_security_policy_add_step2_question" qtlid="183580">Vous allez ajouté l'ip <b>{0}</b> comme nouvelle règle de sécurité</translation>
-   <translation id="dedicatedCloud_configuration_security_update_session_timeout_title" qtlid="147321">Modification du délai d'expiration</translation>
-   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step1_question" qtlid="147334">Veuillez saisir le nombre de minutes avant l'expiration d'une session :</translation>
-   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step1_unit" qtlid="44224">minutes</translation>
+   <translation id="dedicatedCloud_configuration_security_update_session_timeout_title">Modifier le délai d'expiration d'une session</translation>
+   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step1_question">Nombre de minutes avant l'expiration d'une session</translation>
    <translation id="dedicatedCloud_configuration_security_update_session_timeout_step1_never" qtlid="148149">la session n'expire jamais</translation>
    <translation id="dedicatedCloud_configuration_security_update_session_timeout_step2_question" qtlid="183593">Vous allez modifier le nombre de minutes avant l'expiration d'une session de <br/><b>{0}</b> à <b>{1}</b></translation>
    <translation id="dedicatedCloud_network" qtlid="25591">Réseau</translation>
