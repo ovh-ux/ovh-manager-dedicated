@@ -25,7 +25,10 @@ angular
       return this.DedicatedCloud
         .enableUser(this.$stateParams.productId, this.$scope.user.userId)
         .catch((err) => {
-          this.$scope.setMessage(this.$translate.instant('dedicatedCloud_USER_enable_fail', { t0: this.$scope.user.name }), { message: err.data, type: 'ERROR' });
+          this.$scope.setMessage(this.$translate.instant('dedicatedCloud_USER_enable_fail', { t0: this.$scope.user.name }), {
+            ...err,
+            type: 'error',
+          });
         });
     }
   });
