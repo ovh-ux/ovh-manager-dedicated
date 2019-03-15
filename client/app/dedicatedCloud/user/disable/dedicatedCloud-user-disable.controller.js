@@ -22,13 +22,13 @@ angular
     disableUser() {
       this.$scope.resetAction();
 
-      this.DedicatedCloud.disableUser(this.$stateParams.productId, this.$scope.user.userId).then(
-        () => {
+      return this.DedicatedCloud
+        .disableUser(this.$stateParams.productId, this.$scope.user.userId)
+        .then(() => {
           this.$scope.setMessage(this.$translate.instant('dedicatedCloud_USER_disable_success', { t0: this.$scope.user.name }));
-        },
-        (err) => {
+        })
+        .catch((err) => {
           this.$scope.setMessage(this.$translate.instant('dedicatedCloud_USER_disable_fail', { t0: this.$scope.user.name }), err.data);
-        },
-      );
+        });
     }
   });
