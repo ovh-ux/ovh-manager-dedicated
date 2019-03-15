@@ -22,16 +22,16 @@ angular
     deleteUser() {
       this.$scope.resetAction();
 
-      this.DedicatedCloud.deleteUser(this.$stateParams.productId, this.$scope.user.userId).then(
-        () => {
+      return this.DedicatedCloud
+        .deleteUser(this.$stateParams.productId, this.$scope.user.userId)
+        .then(() => {
           this.$scope.setMessage(this.$translate.instant('dedicatedCloud_USER_delete_success', { t0: this.$scope.user.name }));
-        },
-        (data) => {
+        })
+        .catch((data) => {
           this.$scope.setMessage(this.$translate.instant('dedicatedCloud_USER_delete_fail', { t0: this.$scope.user.name }), {
             type: 'ERROR',
             message: data.message,
           });
-        },
-      );
+        });
     }
   });
