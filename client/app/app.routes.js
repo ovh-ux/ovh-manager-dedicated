@@ -3,21 +3,21 @@ angular
   .config(/* @ngInject */ ($stateProvider) => {
     $stateProvider.state('app', {
       abstract: true,
-      url: '',
       controller: 'AppCtrl',
       controllerAs: 'AppCtrl',
-      templateUrl: 'app.html',
-      translations: ['common', 'double-authentication', 'user-contracts'],
       resolve: {
         currentUser: /* @ngInject */ User => User.getUser(),
       },
+      templateUrl: 'app.html',
+      translations: ['common', 'double-authentication', 'user-contracts'],
+      url: '',
     });
 
     // CDN & NAS
     $stateProvider.state('app.networks', {
-      url: '/configuration',
-      template: '<ui-view />',
       abstract: true,
+      template: '<ui-view />',
+      url: '/configuration',
     });
 
     // Microsoft
