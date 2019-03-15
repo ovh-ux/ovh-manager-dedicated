@@ -25,7 +25,7 @@
     updateSessionTimeout() {
       this.$scope.resetAction();
 
-      this.DedicatedCloud
+      return this.DedicatedCloud
         .updateSessionExpiration(this.$stateParams.productId, (this.sessionTimeout.never && '0') || this.sessionTimeout.value)
         .then((data) => {
           this.$scope.setMessage(this.$translate.instant('dedicatedCloud_configuration_SECURITY_update_session_timeout_success'), {
