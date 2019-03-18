@@ -22,6 +22,19 @@ angular
       this.datacenter = null;
     }
 
+    $onInit() {
+      this.loading.disable = true;
+
+      return this.DedicatedCloud
+        .getDatacenterInfoProxy(this.$stateParams.productId, this.$stateParams.datacenterId)
+        .then((datacenter) => {
+          this.datacenter = datacenter;
+        })
+        .finally(() => {
+          this.loading.disable = false;
+        });
+    }
+
     onConfirmBtnClick() {
       this.loading.disable = true;
 
@@ -45,18 +58,5 @@ angular
 
     onCancelBtnClick() {
       this.$state.go('^');
-    }
-
-    $onInit() {
-      this.loading.disable = true;
-
-      return this.DedicatedCloud
-        .getDatacenterInfoProxy(this.$stateParams.productId, this.$stateParams.datacenterId)
-        .then((datacenter) => {
-          this.datacenter = datacenter;
-        })
-        .finally(() => {
-          this.loading.disable = false;
-        });
     }
   });
