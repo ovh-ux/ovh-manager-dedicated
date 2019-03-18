@@ -8,6 +8,7 @@ angular
       $translate,
       $uibModal,
       DedicatedCloud,
+      DEDICATED_CLOUD_DATACENTER,
     ) {
       this.$scope = $scope;
       this.$stateParams = $stateParams;
@@ -15,6 +16,7 @@ angular
       this.$translate = $translate;
       this.$uibModal = $uibModal;
       this.DedicatedCloud = DedicatedCloud;
+      this.DEDICATED_CLOUD_DATACENTER = DEDICATED_CLOUD_DATACENTER;
     }
 
     $onInit() {
