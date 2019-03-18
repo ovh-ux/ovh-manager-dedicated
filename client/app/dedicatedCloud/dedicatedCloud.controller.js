@@ -1,24 +1,9 @@
 angular
   .module('App')
-  .controller('DedicatedCloudCtrl', [
-    '$log',
-    '$q',
-    '$scope',
-    '$state',
-    '$stateParams',
-    '$timeout',
-    '$translate',
-    '$uibModal',
-    'constants',
-    'DedicatedCloud',
-    'OvhApiDedicatedCloud',
-    'step',
-    'User',
-    function (
-      $log,
+  .controller('DedicatedCloudCtrl', class {
+    constructor(
       $q,
       $scope,
-      $state,
       $stateParams,
       $timeout,
       $translate,
@@ -26,195 +11,223 @@ angular
       constants,
       DedicatedCloud,
       OvhApiDedicatedCloud,
-      step,
       User,
     ) {
-      $scope.alerts = { dashboard: 'dedicatedCloud_alert' };
-      $scope.loadingInformations = true;
-      $scope.loadingError = false;
-      $scope.dedicatedCloud = null;
+      this.$q = $q;
+      this.$scope = $scope;
+      this.$stateParams = $stateParams;
+      this.$timeout = $timeout;
+      this.$translate = $translate;
+      this.$uibModal = $uibModal;
+      this.constants = constants;
+      this.DedicatedCloud = DedicatedCloud;
+      this.OvhApiDedicatedCloud = OvhApiDedicatedCloud;
+      this.User = User;
+    }
 
-      $scope.allowDedicatedServerComplianceOptions = constants.target !== 'US';
+    $onInit() {
+      this.$scope.alerts = { dashboard: 'dedicatedCloud_alert' };
+      this.$scope.loadingInformations = true;
+      this.$scope.loadingError = false;
+      this.$scope.dedicatedCloud = null;
 
-      $scope.dedicatedCloudDescription = {
+      this.$scope.allowDedicatedServerComplianceOptions = this.constants.target !== 'US';
+
+      this.$scope.dedicatedCloudDescription = {
         model: null,
         editMode: false,
         loading: false,
       };
 
-      $scope.discount = {
+      this.$scope.discount = {
         AMDPCC: false,
       };
 
-      $scope.dedicatedCloud = {};
+      this.$scope.dedicatedCloud = {};
 
-      function loadNewPrices() {
-        return DedicatedCloud.getNewPrices($stateParams.productId).then((newPrices) => {
-          $scope.newPriceInformation = newPrices.resources;
-          $scope.hasChangePrices = newPrices.resources
+      this.$scope.$on('dedicatedcloud.informations.reload', () => {
+        this.$scope.loadingInformations = true;
+        this.$scope.loadDedicatedCloud();
+      });
+
+      this.$scope.$on('$locationChangeStart', () => {
+        this.$scope.resetAction();
+      });
+
+      this.$scope.editDescription = value => this.editDescription(value);
+      this.$scope.getRight = order => this.getRight(order);
+      this.$scope.getUserAccessPolicyLabel = () => this.getUserAccessPolicyLabel();
+      this.$scope.loadDedicatedCloud = () => this.loadDedicatedCloud();
+      this.$scope.setAction = (action, data) => this.setAction(action, data);
+      this.$scope.setMessage = (message, data) => this.setMessage(message, data);
+      this.$scope.resetAction = () => this.resetAction();
+
+      return this.loadDedicatedCloud();
+    }
+
+    loadNewPrices() {
+      return this.DedicatedCloud
+        .getNewPrices(this.$stateParams.productId)
+        .then((newPrices) => {
+          this.$scope.newPriceInformation = newPrices.resources;
+          this.$scope.hasChangePrices = newPrices.resources
             .filter(resource => resource.changed === true).length > 0;
         });
-      }
+    }
 
-      function loadUserInfo() {
-        return User.getUser().then((user) => {
-          $scope.dedicatedCloud.email = user.email;
+    loadUserInfo() {
+      return this.User.getUser()
+        .then((user) => {
+          this.$scope.dedicatedCloud.email = user.email;
         });
-      }
+    }
 
-      $scope.loadDedicatedCloud = function () {
-        $scope.message = null;
-        DedicatedCloud.getSelected($stateParams.productId, true)
+    loadDedicatedCloud() {
+      this.$scope.message = null;
+
+      return this.$q.all([
+        this.DedicatedCloud.getSelected(this.$stateParams.productId, true)
           .then((dedicatedCloud) => {
-            Object.assign($scope.dedicatedCloud, dedicatedCloud);
-            $scope.dedicatedCloud.isExpired = dedicatedCloud.status === 'expired';
-            if ($scope.dedicatedCloud.isExpired) {
-              $scope.setMessage($translate.instant('common_expired'), { type: 'cancelled' });
+            Object.assign(this.$scope.dedicatedCloud, dedicatedCloud);
+            this.$scope.dedicatedCloud.isExpired = dedicatedCloud.status === 'expired';
+
+            if (this.$scope.dedicatedCloud.isExpired) {
+              this.$scope.setMessage(this.$translate.instant('common_expired'), { type: 'cancelled' });
             }
-            $scope.dedicatedCloudDescription.model = angular
-              .copy($scope.dedicatedCloud.description);
-            loadNewPrices();
-            loadUserInfo();
+
+            this.$scope.dedicatedCloudDescription.model = angular
+              .copy(this.$scope.dedicatedCloud.description);
+
+            this.loadNewPrices();
+            this.loadUserInfo();
           })
           .catch((data) => {
-            $scope.loadingError = true;
-            $scope.setMessage($translate.instant('dedicatedCloud_dashboard_loading_error'), { message: data.message, type: 'ERROR' });
+            this.$scope.loadingError = true;
+            this.$scope.setMessage(this.$translate.instant('dedicatedCloud_dashboard_loading_error'), { message: data.message, type: 'ERROR' });
           })
           .finally(() => {
-            $scope.loadingInformations = false;
-          });
-        DedicatedCloud.getDescription($stateParams.productId).then((dedicatedCloudDescription) => {
-          Object.assign($scope.dedicatedCloud, dedicatedCloudDescription);
-        });
+            this.$scope.loadingInformations = false;
+          }),
+        this.DedicatedCloud
+          .getDescription(this.$stateParams.productId)
+          .then((dedicatedCloudDescription) => {
+            Object.assign(this.$scope.dedicatedCloud, dedicatedCloudDescription);
+          }),
+        this.OvhApiDedicatedCloud.v6().getServiceInfos({
+          serviceName: this.$stateParams.productId,
+        }).$promise
+          .then((serviceInformations) => {
+            this.$scope.dedicatedCloud.serviceInfos = serviceInformations;
+          }),
+      ]);
+    }
 
-        OvhApiDedicatedCloud.v6().getServiceInfos({
-          serviceName: $stateParams.productId,
-        }).$promise.then((serviceInformations) => {
-          $scope.dedicatedCloud.serviceInfos = serviceInformations;
-        });
-      };
-
-      $scope.$on('dedicatedcloud.informations.reload', () => {
-        $scope.loadingInformations = true;
-        $scope.loadDedicatedCloud();
+    editDescription(value) {
+      return this.$uibModal.open({
+        animation: true,
+        templateUrl: 'components/name-edition/name-edition.html',
+        controller: 'NameEditionCtrl',
+        controllerAs: '$ctrl',
+        resolve: {
+          data: () => ({
+            contextTitle: 'dedicatedCloud_description',
+            productId: this.$stateParams.productId,
+            value,
+          }),
+        },
+      }).result.then((newDescription) => {
+        this.$scope.dedicatedCloud.description = newDescription;
       });
+    }
 
-      $scope.editDescription = function (value) {
-        const modal = $uibModal.open({
-          animation: true,
-          templateUrl: 'components/name-edition/name-edition.html',
-          controller: 'NameEditionCtrl',
-          controllerAs: '$ctrl',
-          resolve: {
-            data() {
-              return {
-                contextTitle: 'dedicatedCloud_description',
-                productId: $stateParams.productId,
-                value,
-              };
-            },
-          },
+    getRight(order) {
+      return this.$scope.dedicatedCloud
+        ? $.inArray(order, this.$scope.dedicatedCloud.orderRight) === -1
+        : false;
+    }
+
+    // Action + message
+    resetAction() {
+      this.$scope.setAction(false);
+    }
+
+    setMessage(message, data) {
+      let messageToSend = message;
+
+      if (!data && !this.$scope.dedicatedCloud.isExpired) {
+        this.$scope.message = messageToSend;
+        return;
+      }
+
+      let errorType = '';
+      if (data.type && !(data.idTask || data.taskId)) {
+        errorType = data.type;
+      } else if (data.state) {
+        errorType = data.state;
+      }
+
+      switch (errorType.toLowerCase()) {
+        case 'blocked':
+        case 'cancelled':
+        case 'paused':
+        case 'error':
+          this.$scope.alertType = 'alert-danger';
+          break;
+        case 'waiting_ack':
+        case 'waitingack':
+        case 'doing':
+        case 'warning':
+        case 'partial':
+          this.$scope.alertType = 'alert-warning';
+          break;
+        case 'todo':
+        case 'done':
+        case 'info':
+        case 'ok':
+          this.$scope.alertType = 'alert-success';
+          break;
+        default:
+          this.$scope.alertType = 'alert-success';
+          break;
+      }
+
+      if (data.message) {
+        messageToSend += ` (${data.message})`;
+      } else if (_.some(data.messages)) {
+        const messageParts = _.map(data.messages, _message => `${_message.id} : ${_message.message}`);
+        messageToSend = ` (${messageParts.join(', ')})`;
+      }
+
+      this.$scope.message = messageToSend;
+    }
+
+    setAction(action, data) {
+      if (action) {
+        this.$scope.currentAction = action;
+        this.$scope.currentActionData = data;
+
+        this.$scope.stepPath = `dedicatedCloud/${this.$scope.currentAction}.html`;
+
+        $('#currentAction').modal({
+          keyboard: true,
+          backdrop: 'static',
         });
+      } else {
+        $('#currentAction').modal('hide');
+        this.$scope.currentActionData = null;
+        this.$timeout(() => {
+          this.$scope.stepPath = '';
+        }, 300);
+      }
+    }
 
-        modal.result.then((newDescription) => {
-          $scope.dedicatedCloud.description = newDescription;
-        });
-      };
+    getUserAccessPolicyLabel() {
+      const policy = _.get(this.$scope, 'dedicatedCloud.userAccessPolicy');
 
-      $scope.getRight = function (order) {
-        return $scope.dedicatedCloud
-          ? $.inArray(order, $scope.dedicatedCloud.orderRight) === -1
-          : false;
-      };
+      if (policy) {
+        return this.$translate.instant(`dedicatedCloud_user_access_policy_${_.snakeCase(policy).toUpperCase()}`);
+      }
 
-      // Action + message
-
-      $scope.resetAction = function () {
-        $scope.setAction(false);
-      };
-
-      $scope.$on('$locationChangeStart', () => {
-        $scope.resetAction();
-      });
-
-      $scope.setMessage = function (message, data) {
-        let messageToSend = message;
-
-        if (!data && !$scope.dedicatedCloud.isExpired) {
-          $scope.message = messageToSend;
-          return;
-        }
-
-        let errorType = '';
-        if (data.type && !(data.idTask || data.taskId)) {
-          errorType = data.type;
-        } else if (data.state) {
-          errorType = data.state;
-        }
-
-        switch (errorType.toLowerCase()) {
-          case 'blocked':
-          case 'cancelled':
-          case 'paused':
-          case 'error':
-            $scope.alertType = 'alert-danger';
-            break;
-          case 'waiting_ack':
-          case 'waitingack':
-          case 'doing':
-          case 'warning':
-          case 'partial':
-            $scope.alertType = 'alert-warning';
-            break;
-          case 'todo':
-          case 'done':
-          case 'info':
-          case 'ok':
-            $scope.alertType = 'alert-success';
-            break;
-          default:
-            $scope.alertType = 'alert-success';
-            break;
-        }
-
-        if (data.message) {
-          messageToSend += ` (${data.message})`;
-        } else if (_.some(data.messages)) {
-          const messageParts = _.map(data.messages, _message => `${_message.id} : ${_message.message}`);
-          messageToSend = ` (${messageParts.join(', ')})`;
-        }
-
-        $scope.message = messageToSend;
-      };
-
-      $scope.setAction = function (action, data) {
-        if (action) {
-          $scope.currentAction = action;
-          $scope.currentActionData = data;
-
-          $scope.stepPath = `dedicatedCloud/${$scope.currentAction}.html`;
-
-          $('#currentAction').modal({
-            keyboard: true,
-            backdrop: 'static',
-          });
-        } else {
-          $('#currentAction').modal('hide');
-          $scope.currentActionData = null;
-          $timeout(() => {
-            $scope.stepPath = '';
-          }, 300);
-        }
-      };
-
-      $scope.getUserAccessPolicyLabel = function () {
-        const policy = _.get($scope, 'dedicatedCloud.userAccessPolicy');
-        if (policy) {
-          return $translate.instant(`dedicatedCloud_user_access_policy_${_.snakeCase(policy).toUpperCase()}`);
-        }
-        return '-';
-      };
-
-      $scope.loadDedicatedCloud();
-    },
-  ]);
+      return '-';
+    }
+  });
