@@ -1,6 +1,7 @@
 angular
   .module('App')
   .controller('DedicatedCloudSubDatacenterVeeamCtrl', class {
+    /* @ngInject */
     constructor(
       $rootScope,
       $scope,

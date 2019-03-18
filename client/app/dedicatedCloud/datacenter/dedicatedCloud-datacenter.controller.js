@@ -1,6 +1,7 @@
 angular
   .module('App')
   .controller('DedicatedCloudSubDatacenterCtrl', class {
+    /* @ngInject */
     constructor(
       $scope,
       $stateParams,

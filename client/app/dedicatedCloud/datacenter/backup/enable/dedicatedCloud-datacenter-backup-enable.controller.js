@@ -1,6 +1,7 @@
 angular
   .module('App')
   .controller('DedicatedCloudSubDatacenterVeeamBackupEnableCtrl', class {
+    /* @ngInject */
     constructor(
       $q,
       $stateParams,
