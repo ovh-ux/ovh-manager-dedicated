@@ -1,125 +1,153 @@
 angular
   .module('App')
-  .controller('DedicatedCloudSubDatacenterCtrl', ($scope, $stateParams, $timeout, $translate, $uibModal, DedicatedCloud) => {
-    $scope.loadingInformations = true;
-    $scope.loadingError = false;
-    $scope.datacenter = {
-      model: null,
-    };
-    $scope.datacenterDescription = {
-      model: null,
-      editMode: false,
-      loading: false,
-    };
-    $scope.datacenterName = {
-      model: null,
-      editMode: false,
-      loading: false,
-    };
+  .controller('DedicatedCloudSubDatacenterCtrl', class {
+    constructor(
+      $scope,
+      $stateParams,
+      $timeout,
+      $translate,
+      $uibModal,
+      DedicatedCloud,
+    ) {
+      this.$scope = $scope;
+      this.$stateParams = $stateParams;
+      this.$timeout = $timeout;
+      this.$translate = $translate;
+      this.$uibModal = $uibModal;
+      this.DedicatedCloud = DedicatedCloud;
+    }
 
-    $scope.$on('datacenter.informations.reload', () => {
-      $scope.loadDatacenter();
-    });
+    $onInit() {
+      this.$scope.loadingInformations = true;
+      this.$scope.loadingError = false;
+      this.$scope.datacenter = {
+        model: null,
+      };
+      this.$scope.datacenterDescription = {
+        model: null,
+        editMode: false,
+        loading: false,
+      };
+      this.$scope.datacenterName = {
+        model: null,
+        editMode: false,
+        loading: false,
+      };
 
-    $scope.loadDatacenter = function () {
-      $scope.message = null;
-      DedicatedCloud
-        .getDatacenterInformations($stateParams.productId, $stateParams.datacenterId, true)
+      this.$scope.$on('datacenter.informations.reload', () => {
+        this.$scope.loadDatacenter();
+      });
+
+      this.$scope.editDescription = (value, contextTitle) => this
+        .editDescription(value, contextTitle);
+      this.$scope.loadDatacenter = () => this.loadDatacenter();
+      this.$scope.setAction = (action, data, parent) => this.setAction(action, data, parent);
+      this.$scope.setMessage = (message, data) => this.setMessage(message, data);
+      this.$scope.resetAction = () => this.resetAction();
+
+      return this.loadDatacenter();
+    }
+
+    loadDatacenter() {
+      this.$scope.message = null;
+
+      return this.DedicatedCloud
+        .getDatacenterInformations(
+          this.$stateParams.productId,
+          this.$stateParams.datacenterId,
+          true,
+        )
         .then((datacenter) => {
-          $scope.datacenter.model = datacenter;
-          $scope.datacenter.model.id = $stateParams.datacenterId;
-          $scope.datacenterDescription.model = angular.copy($scope.datacenter.model.description);
-          $scope.datacenterName.model = angular.copy($scope.datacenter.model.name);
-          $scope.loadingInformations = false;
+          this.$scope.datacenter.model = datacenter;
+          this.$scope.datacenter.model.id = this.$stateParams.datacenterId;
+          this.$scope.datacenterDescription.model = angular
+            .copy(this.$scope.datacenter.model.description);
+          this.$scope.datacenterName.model = angular.copy(this.$scope.datacenter.model.name);
+          this.$scope.loadingInformations = false;
         })
         .catch((data) => {
-          $scope.loadingInformations = false;
-          $scope.loadingError = true;
-          $scope.setMessage($translate.instant('dedicatedCloud_dashboard_loading_error'), angular.extend(data, { type: 'ERROR' }));
-        });
-      DedicatedCloud
-        .getDescription($stateParams.productId)
-        .then((dedicatedCloudDescription) => {
-          $scope.dedicatedCloud = angular.extend(
-            $scope.dedicatedCloud || {},
-            dedicatedCloudDescription,
-          );
-        });
-    };
+          this.$scope.loadingInformations = false;
+          this.$scope.loadingError = true;
+          this.$scope.setMessage(this.$translate.instant('dedicatedCloud_dashboard_loading_error'), angular.extend(data, { type: 'ERROR' }));
+        })
+        .then(() => this.DedicatedCloud
+          .getDescription(this.$stateParams.productId)
+          .then((dedicatedCloudDescription) => {
+            this.$scope.dedicatedCloud = angular.extend(
+              this.$scope.dedicatedCloud || {},
+              dedicatedCloudDescription,
+            );
+          }));
+    }
 
     /* Update description or name */
-
-    $scope.editDescription = function (value, contextTitle) {
-      const modal = $uibModal.open({
+    editDescription(value, contextTitle) {
+      this.$uibModal.open({
         animation: true,
         templateUrl: 'components/name-edition/name-edition.html',
         controller: 'NameEditionCtrl',
         controllerAs: '$ctrl',
         resolve: {
-          data() {
-            return {
-              contextTitle,
-              datacenterId: $stateParams.datacenterId,
-              productId: $stateParams.productId,
-              value,
-            };
-          },
+          data: () => ({
+            contextTitle,
+            datacenterId: this.$stateParams.datacenterId,
+            productId: this.$stateParams.productId,
+            value,
+          }),
         },
-      });
+      }).result
+        .then((newValue) => {
+          if (contextTitle === 'dedicatedCloud_datacenter_name') {
+            this.$scope.datacenterName.model = newValue;
+          } else {
+            this.$scope.datacenterDescription.model = newValue;
+          }
+        });
+    }
 
-      modal.result.then((newValue) => {
-        if (contextTitle === 'dedicatedCloud_datacenter_name') {
-          $scope.datacenterName.model = newValue;
-        } else {
-          $scope.datacenterDescription.model = newValue;
-        }
-      });
-    };
+    resetAction() {
+      this.$scope.setAction(false);
+    }
 
-    $scope.loadDatacenter();
-
-    $scope.resetAction = function () {
-      $scope.setAction(false);
-    };
-
-    $scope.setMessage = function (message, data) {
+    setMessage(message, data) {
       let messageToSend = message;
       let i = 0;
 
-      $scope.alertType = '';
+      this.$scope.alertType = '';
       if (data) {
         if (data.message) {
           messageToSend += ` (${data.message})`;
           switch (data.type) {
             case 'ERROR':
-              $scope.alertType = 'alert-danger';
+              this.$scope.alertType = 'alert-danger';
               break;
             case 'WARNING':
-              $scope.alertType = 'alert-warning';
+              this.$scope.alertType = 'alert-warning';
               break;
             case 'INFO':
-              $scope.alertType = 'alert-success';
+              this.$scope.alertType = 'alert-success';
               break;
             default:
-              $scope.alertType = 'alert-warning';
+              this.$scope.alertType = 'alert-warning';
               break;
           }
         } else if (data.messages) {
           if (data.messages.length > 0) {
             switch (data.state) {
               case 'ERROR':
-                $scope.alertType = 'alert-danger';
+                this.$scope.alertType = 'alert-danger';
                 break;
               case 'PARTIAL':
-                $scope.alertType = 'alert-warning';
+                this.$scope.alertType = 'alert-warning';
                 break;
               case 'OK':
-                $scope.alertType = 'alert-success';
+                this.$scope.alertType = 'alert-success';
                 break;
               default:
-                $scope.alertType = 'alert-warning';
+                this.$scope.alertType = 'alert-warning';
                 break;
             }
+
             messageToSend += ' (';
             for (i; i < data.messages.length; i += 1) {
               messageToSend += `${data.messages[i].id} : ${data.messages[i].message}${data.messages.length === i + 1 ? ')' : ', '}`;
@@ -135,39 +163,40 @@ angular
             case 'paused':
             case 'ERROR':
             case 'error':
-              $scope.alertType = 'alert-danger';
+              this.$scope.alertType = 'alert-danger';
               break;
             case 'WAITING_ACK':
             case 'waitingAck':
             case 'DOING':
             case 'doing':
-              $scope.alertType = 'alert-warning';
+              this.$scope.alertType = 'alert-warning';
               break;
             case 'TODO':
             case 'todo':
             case 'DONE':
             case 'done':
-              $scope.alertType = 'alert-success';
+              this.$scope.alertType = 'alert-success';
               break;
             default:
               break;
           }
         } else if (data === 'true' || data === true) {
-          $scope.alertType = 'alert-success';
+          this.$scope.alertType = 'alert-success';
         }
       }
-      $scope.message = messageToSend;
-    };
 
-    $scope.setAction = function (action, data, parent) {
+      this.$scope.message = messageToSend;
+    }
+
+    setAction(action, data, parent) {
       if (action) {
-        $scope.currentAction = action;
-        $scope.currentActionData = data;
+        this.$scope.currentAction = action;
+        this.$scope.currentActionData = data;
 
         if (parent) {
-          $scope.stepPath = `dedicatedCloud/${$scope.currentAction}.html`;
+          this.$scope.stepPath = `dedicatedCloud/${this.$scope.currentAction}.html`;
         } else {
-          $scope.stepPath = `dedicatedCloud/${$scope.currentAction}.html`;
+          this.$scope.stepPath = `dedicatedCloud/${this.$scope.currentAction}.html`;
         }
 
         $('#currentAction').modal({
@@ -176,10 +205,10 @@ angular
         });
       } else {
         $('#currentAction').modal('hide');
-        $scope.currentActionData = null;
-        $timeout(() => {
-          $scope.stepPath = '';
+        this.$scope.currentActionData = null;
+        this.$timeout(() => {
+          this.$scope.stepPath = '';
         }, 300);
       }
-    };
+    }
   });
