@@ -13,16 +13,20 @@ angular
       this.$translate = $translate;
       this.Alerter = Alerter;
       this.DedicatedCloud = DedicatedCloud;
+    }
 
+    $onInit() {
       this.loading = {
         init: false,
         disable: false,
       };
 
       this.datacenter = null;
+
+      return this.fetchDatacenterInfoProxy();
     }
 
-    $onInit() {
+    fetchDatacenterInfoProxy() {
       this.loading.disable = true;
 
       return this.DedicatedCloud
