@@ -1,6 +1,6 @@
 angular
   .module('App')
-  .controller('DedicatedCloudSubDatacentersHostCtrl', function ($q, $scope, $state, $stateParams, $translate, constants, DedicatedCloud) {
+  .controller('DedicatedCloudSubDatacentersHostCtrl', function ($q, $scope, $state, $stateParams, constants, DedicatedCloud) {
     this.loadHosts = ({ offset, pageSize }) => DedicatedCloud
       .getHosts($stateParams.productId, $stateParams.datacenterId, pageSize, offset - 1)
       .then((result) => {
