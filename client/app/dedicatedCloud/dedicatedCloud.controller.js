@@ -9,7 +9,6 @@ angular.module('App').controller('DedicatedCloudCtrl', [
   '$uibModal',
   'constants',
   'DedicatedCloud',
-  'DucNotification',
   'OvhApiDedicatedCloud',
   'step',
   'User',
@@ -24,23 +23,16 @@ angular.module('App').controller('DedicatedCloudCtrl', [
     $uibModal,
     constants,
     DedicatedCloud,
-    DucNotification,
     OvhApiDedicatedCloud,
     step,
     User,
   ) {
-    $scope.HDS_READY_NOTIFICATION = 'HDS_READY_NOTIFICATION';
-
     $scope.alerts = { dashboard: 'dedicatedCloud_alert' };
     $scope.loadingInformations = true;
     $scope.loadingError = false;
     $scope.dedicatedCloud = null;
 
     $scope.allowDedicatedServerComplianceOptions = constants.target !== 'US';
-
-    $scope.notifications = {
-      HDS_READY_NOTIFICATION: false,
-    };
 
     $scope.dedicatedCloudDescription = {
       model: null,
@@ -53,17 +45,6 @@ angular.module('App').controller('DedicatedCloudCtrl', [
     };
 
     $scope.dedicatedCloud = {};
-
-    function showNotificationIfRequired(notification) {
-      DucNotification.checkIfStopNotification(notification, $stateParams.productId)
-        .then((stopNotification) => {
-          $scope.notifications[notification] = !stopNotification;
-        })
-        .catch((error) => {
-          $scope.notifications[notification] = true;
-          $log.error(error);
-        });
-    }
 
     function loadNewPrices() {
       return DedicatedCloud.getNewPrices($stateParams.productId).then((newPrices) => {
@@ -91,7 +72,6 @@ angular.module('App').controller('DedicatedCloudCtrl', [
           $scope.dedicatedCloudDescription.model = angular.copy($scope.dedicatedCloud.description);
           loadNewPrices();
           loadUserInfo();
-          $scope.showHdsReadyNotificationIfRequired($scope.HDS_READY_NOTIFICATION);
         })
         .catch((data) => {
           $scope.loadingError = true;
@@ -221,42 +201,6 @@ angular.module('App').controller('DedicatedCloudCtrl', [
         $timeout(() => {
           $scope.stepPath = '';
         }, 300);
-      }
-    };
-
-    $scope.contactMeForHds = function () {
-      User.getUser()
-        .then((user) => {
-          /* eslint-disable */
-                    const message = `New HDS prospect ${user.nichandle}`;
-                    const ticket = {
-                        subject: message,
-                        type: "genericRequest",
-                        body: message,
-                        serviceName: $stateParams.productId
-                    };
-
-                    // return Otrs.postTicket(ticket);
-                    /* eslint-enable */
-        })
-        .then(() => {
-          $scope.stopNotification($scope.HDS_READY_NOTIFICATION);
-          $scope.setMessage($translate.instant('dedicatedCloud_contact_me_success'));
-        })
-        .catch((error) => {
-          $scope.setMessage($translate.instant('dedicatedCloud_contact_me_fail'), { message: error.message, type: 'ERROR' });
-          $log.error(error);
-        });
-    };
-
-    $scope.stopNotification = function (notificationType) {
-      $scope.notifications[notificationType] = false;
-      DucNotification.stopNotification($scope.HDS_READY_NOTIFICATION, $stateParams.productId);
-    };
-
-    $scope.showHdsReadyNotificationIfRequired = function (notification) {
-      if (_.startsWith($scope.dedicatedCloud.commercialRange.startsWith, '2014') || _.startsWith($scope.dedicatedCloud.commercialRange, '2016')) {
-        showNotificationIfRequired(notification);
       }
     };
 
