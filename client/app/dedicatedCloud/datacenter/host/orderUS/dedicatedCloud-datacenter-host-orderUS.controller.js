@@ -53,6 +53,10 @@ angular
     }
 
     $onInit() {
+      return this.fetchInitialData();
+    }
+
+    fetchInitialData() {
       this.loading = true;
 
       return this.$q
