@@ -26,14 +26,13 @@ angular
     addEntry() {
       this.$scope.resetAction();
 
-      this.DedicatedCloud.addSecurityPolicy(this.$stateParams.productId, this.$scope.newNetwork)
-        .then(
-          (data) => {
-            this.$scope.setMessage(this.$translate.instant('dedicatedCloud_configuration_SECURITY_policy_add_success'), data);
-          },
-          (data) => {
-            this.$scope.setMessage(this.$translate.instant('dedicatedCloud_configuration_SECURITY_policy_add_fail', [this.$scope.newNetwork.value]), data.data);
-          },
-        );
+      return this.DedicatedCloud
+        .addSecurityPolicy(this.$stateParams.productId, this.$scope.newNetwork)
+        .then((data) => {
+          this.$scope.setMessage(this.$translate.instant('dedicatedCloud_configuration_SECURITY_policy_add_success'), data);
+        })
+        .catch((data) => {
+          this.$scope.setMessage(this.$translate.instant('dedicatedCloud_configuration_SECURITY_policy_add_fail', [this.$scope.newNetwork.value]), data.data);
+        });
     }
   });
