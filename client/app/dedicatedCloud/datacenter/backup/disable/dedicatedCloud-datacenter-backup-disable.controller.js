@@ -8,14 +8,12 @@ angular
       Alerter,
       DedicatedCloud,
     ) {
-    // dependencies injections
       this.$stateParams = $stateParams;
       this.$state = $state;
       this.$translate = $translate;
       this.Alerter = Alerter;
       this.DedicatedCloud = DedicatedCloud;
 
-      // controller attributes
       this.loading = {
         init: false,
         disable: false,
@@ -23,10 +21,6 @@ angular
 
       this.datacenter = null;
     }
-
-    /* =============================
-    =            EVENTS            =
-    ============================== */
 
     onConfirmBtnClick() {
       this.loading.disable = true;
@@ -53,12 +47,6 @@ angular
       this.$state.go('^');
     }
 
-    /* -----  End of EVENTS  ------ */
-
-    /* =====================================
-    =            INITIALIZATION            =
-    ====================================== */
-
     $onInit() {
       this.loading.disable = true;
 
@@ -71,6 +59,4 @@ angular
           this.loading.disable = false;
         });
     }
-
-  /* -----  End of INITIALIZATION  ------ */
   });
