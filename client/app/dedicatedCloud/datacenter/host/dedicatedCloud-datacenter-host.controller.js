@@ -1,59 +1,74 @@
 angular
   .module('App')
-  .controller('DedicatedCloudSubDatacentersHostCtrl', function ($q, $scope, $state, $stateParams, constants, DedicatedCloud) {
-    this.loadHosts = ({ offset, pageSize }) => DedicatedCloud
-      .getHosts($stateParams.productId, $stateParams.datacenterId, pageSize, offset - 1)
-      .then((result) => {
-        const hosts = _.get(result, 'list.results');
-
-        return $q
-          .all(hosts
-            .map((host) => {
-              if (host.billingType === 'HOURLY') {
-                return DedicatedCloud
-                  .getHostHourlyConsumption(
-                    $stateParams.productId,
-                    $stateParams.datacenterId,
-                    host.hostId,
-                  )
-                  .then(consumption => _.merge({}, host, consumption))
-                  .catch(() => host);
-              }
-
-              return $q.when(host);
-            }))
-          .then(hostsWithConsumption => ({
-            data: hostsWithConsumption,
-            meta: {
-              totalCount: result.count,
-            },
-          }));
-      });
-
-    this.$onInit = () => {
-      this.loading = true;
+  .controller('DedicatedCloudSubDatacentersHostCtrl', class {
+    /* @ngInject */
+    constructor(
+      $q,
+      $scope,
+      $state,
+      $stateParams,
+      constants,
+      DedicatedCloud,
+    ) {
+      this.$q = $q;
+      this.$scope = $scope;
+      this.$state = $state;
+      this.$stateParams = $stateParams;
       this.constants = constants;
+      this.DedicatedCloud = DedicatedCloud;
+    }
 
-      return DedicatedCloud
-        .getDatacenterInfoProxy(
-          $stateParams.productId,
-          $stateParams.datacenterId,
-        )
+    $onInit() {
+      this.loading = true;
+
+      return this.DedicatedCloud
+        .getDatacenterInfoProxy(this.$stateParams.productId, this.$stateParams.datacenterId)
         .then((datacenter) => {
-          $scope.datacenter.model.commercialRangeName = datacenter.commercialRangeName;
-          $scope.datacenter.model.hasDiscountAMD = DedicatedCloud
-            .hasDiscount($scope.datacenter.model);
+          this.$scope.datacenter.model.commercialRangeName = datacenter.commercialRangeName;
+          this.$scope.datacenter.model.hasDiscountAMD = this.DedicatedCloud
+            .hasDiscount(this.$scope.datacenter.model);
         })
         .finally(() => {
           this.loading = false;
         });
-    };
+    }
 
-    this.orderHost = (datacenter) => {
-      if (constants.target === 'US') {
-        $state.go('app.dedicatedClouds.datacenter.hosts.orderUS');
+    loadHosts({ offset, pageSize }) {
+      return this.DedicatedCloud
+        .getHosts(this.$stateParams.productId, this.$stateParams.datacenterId, pageSize, offset - 1)
+        .then((result) => {
+          const hosts = _.get(result, 'list.results');
+
+          return this.$q
+            .all(hosts
+              .map((host) => {
+                if (host.billingType === 'HOURLY') {
+                  return this.DedicatedCloud
+                    .getHostHourlyConsumption(
+                      this.$stateParams.productId,
+                      this.$stateParams.datacenterId,
+                      host.hostId,
+                    )
+                    .then(consumption => _.merge({}, host, consumption))
+                    .catch(() => host);
+                }
+
+                return this.$q.when(host);
+              }))
+            .then(hostsWithConsumption => ({
+              data: hostsWithConsumption,
+              meta: {
+                totalCount: result.count,
+              },
+            }));
+        });
+    }
+
+    orderHost(datacenter) {
+      if (this.constants.target === 'US') {
+        this.$state.go('app.dedicatedClouds.datacenter.hosts.orderUS');
       } else {
-        $scope.setAction('datacenter/host/order/dedicatedCloud-datacenter-host-order', datacenter.model, true);
+        this.$scope.setAction('datacenter/host/order/dedicatedCloud-datacenter-host-order', datacenter.model, true);
       }
-    };
+    }
   });
