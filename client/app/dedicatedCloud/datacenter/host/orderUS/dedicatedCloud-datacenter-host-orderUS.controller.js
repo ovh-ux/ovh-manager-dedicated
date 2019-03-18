@@ -5,18 +5,18 @@ angular
       $q,
       $scope,
       $state,
-      OvhHttp,
-      User,
-      serviceName,
       datacenterId,
+      OvhHttp,
+      serviceName,
+      User,
     ) {
       this.$q = $q;
       this.$scope = $scope;
       this.$state = $state;
-      this.OvhHttp = OvhHttp;
-      this.User = User;
-      this.serviceName = serviceName;
       this.datacenterId = datacenterId;
+      this.OvhHttp = OvhHttp;
+      this.serviceName = serviceName;
+      this.User = User;
 
       this.user = null;
       this.selectedOffer = null;
