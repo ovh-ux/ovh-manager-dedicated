@@ -86,6 +86,48 @@ angular
         .then(offers => _.find(offers, { family: 'backup' }));
     }
 
+    fetchInitialData() {
+      this.loading.init = true;
+
+      return this.$q
+        .all({
+          datacenter: this.DedicatedCloud
+            .getDatacenterInfoProxy(this.$stateParams.productId, this.$stateParams.datacenterId),
+          hosts: this.DedicatedCloud
+            .getHostsLexi(this.$stateParams.productId, this.$stateParams.datacenterId),
+          offer: this.getBackupOffer(),
+          veamBackupUrl: this.User.getUrlOf('veeamBackup'),
+        })
+        .then(({
+          datacenter,
+          hosts,
+          offer,
+          veamBackupUrl,
+        }) => {
+          this.datacenter = datacenter;
+          this.hosts = hosts;
+          this.offer = offer;
+          this.veamBackupUrl = veamBackupUrl;
+        })
+        .catch((error) => {
+          this.Alerter.error([this.$translate.instant('dedicatedCloud_tab_veeam_enable_fail'), _.get(error, 'data.message')].join(' '));
+        })
+        .finally(() => {
+          this.loading.init = false;
+        });
+    }
+
+    getBackupOffer() {
+      return this.OvhHttp
+        .get('/order/cartServiceOption/privateCloud/{serviceName}', {
+          rootPath: 'apiv6',
+          urlParams: {
+            serviceName: this.$stateParams.productId,
+          },
+        })
+        .then(offers => _.find(offers, { family: 'backup' }));
+    }
+
     onBackupEnableFormSubmit() {
       if (!this.hosts || !this.hosts.length || !this.offer) {
         return this.closeModal();
