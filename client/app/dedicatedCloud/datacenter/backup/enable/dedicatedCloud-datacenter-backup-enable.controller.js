@@ -15,7 +15,9 @@ angular
       this.$translate = $translate;
       this.Alerter = Alerter;
       this.DedicatedCloud = DedicatedCloud;
+    }
 
+    $onInit() {
       this.loading = {
         init: false,
         enable: false,
@@ -23,9 +25,7 @@ angular
 
       this.datacenter = null;
       this.hosts = null;
-    }
 
-    $onInit() {
       this.loading.init = true;
 
       return this.$q.all({
