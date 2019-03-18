@@ -17,14 +17,14 @@ angular
       this.OvhHttp = OvhHttp;
       this.serviceName = serviceName;
       this.User = User;
+    }
 
+    $onInit() {
       this.user = null;
       this.selectedOffer = null;
       this.quantity = 1;
       this.expressOrderUrl = null;
-    }
 
-    $onInit() {
       return this.fetchInitialData();
     }
 
