@@ -26,19 +26,26 @@ angular
       this.datacenter = null;
       this.hosts = null;
 
+      return this.fetchInitialData();
+    }
+
+    fetchInitialData() {
       this.loading.init = true;
 
-      return this.$q.all({
-        datacenter: this.DedicatedCloud
-          .getDatacenterInfoProxy(this.$stateParams.productId, this.$stateParams.datacenterId),
-        hosts: this.DedicatedCloud
-          .getHostsLexi(this.$stateParams.productId, this.$stateParams.datacenterId),
-      }).then((data) => {
-        this.datacenter = data.datacenter;
-        this.hosts = data.hosts;
-      }).finally(() => {
-        this.loading.init = false;
-      });
+      return this.$q
+        .all({
+          datacenter: this.DedicatedCloud
+            .getDatacenterInfoProxy(this.$stateParams.productId, this.$stateParams.datacenterId),
+          hosts: this.DedicatedCloud
+            .getHostsLexi(this.$stateParams.productId, this.$stateParams.datacenterId),
+        })
+        .then((data) => {
+          this.datacenter = data.datacenter;
+          this.hosts = data.hosts;
+        })
+        .finally(() => {
+          this.loading.init = false;
+        });
     }
 
     onConfirmBtnClick() {
