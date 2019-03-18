@@ -19,6 +19,10 @@ angular
     }
 
     $onInit() {
+      return this.fetchDatacenterInfoProxy();
+    }
+
+    fetchDatacenterInfoProxy() {
       this.loading = true;
 
       return this.DedicatedCloud
