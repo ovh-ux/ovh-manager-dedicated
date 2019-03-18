@@ -27,7 +27,8 @@ export default class {
         .includes(state));
 
     this.isDisablingDrp = this.pccPlan
-      .some(({ state }) => this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabling === state);
+      .some(({ state }) => this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toDisableOrDisabling
+        .includes(state));
 
     if (drp != null && !this.isDisablingDrp) {
       this.drpInformations = {
