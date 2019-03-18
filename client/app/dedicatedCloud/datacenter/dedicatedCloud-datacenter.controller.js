@@ -93,6 +93,7 @@ angular
           data: () => ({
             contextTitle,
             datacenterId: this.$stateParams.datacenterId,
+            destinationId: this.DEDICATED_CLOUD_DATACENTER.alertId,
             productId: this.$stateParams.productId,
             value,
           }),
