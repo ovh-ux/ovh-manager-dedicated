@@ -25,6 +25,22 @@ angular
       this.hosts = null;
     }
 
+    $onInit() {
+      this.loading.init = true;
+
+      return this.$q.all({
+        datacenter: this.DedicatedCloud
+          .getDatacenterInfoProxy(this.$stateParams.productId, this.$stateParams.datacenterId),
+        hosts: this.DedicatedCloud
+          .getHostsLexi(this.$stateParams.productId, this.$stateParams.datacenterId),
+      }).then((data) => {
+        this.datacenter = data.datacenter;
+        this.hosts = data.hosts;
+      }).finally(() => {
+        this.loading.init = false;
+      });
+    }
+
     onConfirmBtnClick() {
       if (!this.hosts.length) {
         return this.onCancelBtnClick();
@@ -52,21 +68,5 @@ angular
 
     onCancelBtnClick() {
       this.$state.go('^');
-    }
-
-    $onInit() {
-      this.loading.init = true;
-
-      return this.$q.all({
-        datacenter: this.DedicatedCloud
-          .getDatacenterInfoProxy(this.$stateParams.productId, this.$stateParams.datacenterId),
-        hosts: this.DedicatedCloud
-          .getHostsLexi(this.$stateParams.productId, this.$stateParams.datacenterId),
-      }).then((data) => {
-        this.datacenter = data.datacenter;
-        this.hosts = data.hosts;
-      }).finally(() => {
-        this.loading.init = false;
-      });
     }
   });
