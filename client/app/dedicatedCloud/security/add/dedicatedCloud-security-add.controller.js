@@ -4,14 +4,14 @@ angular
     constructor(
       $scope,
       $stateParams,
-      DedicatedCloud,
       $translate,
+      DedicatedCloud,
       REGEX,
     ) {
       this.$scope = $scope;
       this.$stateParams = $stateParams;
-      this.DedicatedCloud = DedicatedCloud;
       this.$translate = $translate;
+      this.DedicatedCloud = DedicatedCloud;
       this.REGEX = REGEX;
     }
 
