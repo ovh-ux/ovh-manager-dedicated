@@ -74,6 +74,6 @@ angular
     }
 
     onCancelBtnClick() {
-      this.$state.go('^');
+      return this.$state.go('^');
     }
   });
