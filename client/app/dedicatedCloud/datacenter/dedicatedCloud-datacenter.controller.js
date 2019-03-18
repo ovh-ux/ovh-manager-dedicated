@@ -1,6 +1,6 @@
 angular
   .module('App')
-  .controller('DedicatedCloudSubDatacenterCtrl', ($location, $scope, $stateParams, $timeout, $translate, $uibModal, DedicatedCloud) => {
+  .controller('DedicatedCloudSubDatacenterCtrl', ($scope, $stateParams, $timeout, $translate, $uibModal, DedicatedCloud) => {
     $scope.loadingInformations = true;
     $scope.loadingError = false;
     $scope.datacenter = {
