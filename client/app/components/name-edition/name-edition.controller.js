@@ -9,12 +9,17 @@ angular.module('App').controller('NameEditionCtrl', class NameEditionCtrl {
 
   updateDescription() {
     this.updating = true;
-    this.updateName()
+
+    return this.updateName()
       .then(() => {
         this.$uibModalInstance.close(this.newValue);
-      }).catch(err => this.Alerter.error([this.$translate.instant(`${this.modalContextTitle}_edit_error`, {
-        t0: this.newValue,
-      }), _.get(err, 'message')].join('. '), 'dedicatedCloud')).finally(() => {
+      })
+      .catch((err) => {
+        this.Alerter.error([this.$translate.instant(`${this.modalContextTitle}_edit_error`, {
+          t0: this.newValue,
+        }), _.get(err, 'message')].join('. '), 'dedicatedCloud');
+      })
+      .finally(() => {
         this.updating = false;
       });
   }
