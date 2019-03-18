@@ -73,8 +73,13 @@
 
             <div class="alert alert-dismissible"
                  data-ng-class="alertType"
-                 data-ng-show="message">
-                <i class="close icon-remove" data-ng-click="message=null"></i>
+                 data-ng-if="message != null">
+                <button
+                    type="button"
+                    class="close icon-remove"
+                    aria-label="{{:: 'dedicatedCloud_alert_close' | translate }}"
+                    data-ng-click="resetMessage()"></button>
+
                 <span data-ng-bind-html="message"></span>
             </div>
 

@@ -60,6 +60,7 @@ angular
       this.$scope.loadDedicatedCloud = () => this.loadDedicatedCloud();
       this.$scope.setAction = (action, data) => this.setAction(action, data);
       this.$scope.setMessage = (message, data) => this.setMessage(message, data);
+      this.$scope.resetMessage = () => this.resetMessage();
       this.$scope.resetAction = () => this.resetAction();
 
       return this.loadDedicatedCloud();
@@ -199,6 +200,10 @@ angular
       }
 
       this.$scope.message = messageToSend;
+    }
+
+    resetMessage() {
+      this.$scope.message = null;
     }
 
     setAction(action, data) {
