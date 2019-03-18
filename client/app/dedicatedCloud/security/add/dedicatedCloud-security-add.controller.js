@@ -13,8 +13,9 @@ angular
       this.DedicatedCloud = DedicatedCloud;
       this.$translate = $translate;
       this.REGEX = REGEX;
+    }
 
-
+    $onInit() {
       this.$scope.regex = this.REGEX;
       this.$scope.newNetwork = {
         value: null,
