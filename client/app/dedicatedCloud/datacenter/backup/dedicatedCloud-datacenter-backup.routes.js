@@ -1,6 +1,6 @@
 angular
   .module('App')
-  .config(($stateProvider) => {
+  .config(/* @ngInject */ ($stateProvider) => {
     $stateProvider.state('app.dedicatedClouds.datacenter.backup', {
       url: '/backup',
       reloadOnSearch: false,
