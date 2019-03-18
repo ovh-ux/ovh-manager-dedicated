@@ -1,6 +1,6 @@
 angular
   .module('App')
-  .controller('DedicatedCloudSubDatacenterVeeamCtrl', ($scope, $stateParams, $translate, DedicatedCloud, $rootScope, VEEAM_STATE_ENUM, constants) => {
+  .controller('DedicatedCloudSubDatacenterVeeamCtrl', ($rootScope, $scope, $stateParams, $translate, constants, DedicatedCloud, VEEAM_STATE_ENUM) => {
     $scope.veeam = {
       model: null,
       constants: VEEAM_STATE_ENUM,
