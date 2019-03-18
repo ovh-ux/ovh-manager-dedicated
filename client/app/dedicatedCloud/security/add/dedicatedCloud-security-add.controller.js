@@ -31,8 +31,11 @@ angular
         .then((data) => {
           this.$scope.setMessage(this.$translate.instant('dedicatedCloud_configuration_SECURITY_policy_add_success'), data);
         })
-        .catch((data) => {
-          this.$scope.setMessage(this.$translate.instant('dedicatedCloud_configuration_SECURITY_policy_add_fail', [this.$scope.newNetwork.value]), data.data);
+        .catch((err) => {
+          this.$scope.setMessage(this.$translate.instant('dedicatedCloud_configuration_SECURITY_policy_add_fail', [this.$scope.newNetwork.value]), {
+            ...err,
+            type: 'error',
+          });
         });
     }
   });
