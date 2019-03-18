@@ -17,7 +17,8 @@ angular.module('App').controller('NameEditionCtrl', class NameEditionCtrl {
       .catch((err) => {
         this.Alerter.error([this.$translate.instant(`${this.modalContextTitle}_edit_error`, {
           t0: this.newValue,
-        }), _.get(err, 'message')].join('. '), 'dedicatedCloud');
+        }), _.get(err, 'message')].join('. '), this.data.destinationId || 'dedicatedCloud');
+        this.$uibModalInstance.dismiss();
       })
       .finally(() => {
         this.updating = false;
