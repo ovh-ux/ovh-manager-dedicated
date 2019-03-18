@@ -36,7 +36,7 @@ angular
     }
 
     closeModal() {
-      this.$state.go('^');
+      return this.$state.go('^');
     }
 
     fetchInitialData() {
