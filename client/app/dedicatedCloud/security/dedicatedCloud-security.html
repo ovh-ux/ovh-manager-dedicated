@@ -81,9 +81,11 @@
                                 <td data-ng-bind="policy.description"></td>
                                 <td class="text-center">
 
-                                    <div class="btn-group"
-                                         data-uib-dropdown
-                                         data-dropdown-append-to-body>
+                                    <div
+                                        data-ng-if="policy.status === 'ALLOWED'"
+                                        class="btn-group"
+                                        data-uib-dropdown
+                                        data-dropdown-append-to-body>
                                         <button id="btn-dedicatedCloud-security-action-{{ index }}"
                                                 type="button"
                                                 class="btn btn-link"
