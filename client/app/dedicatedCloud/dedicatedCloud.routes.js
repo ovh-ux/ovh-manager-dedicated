@@ -2,6 +2,8 @@ angular
   .module('App')
   .config(/* @ngInject */ ($stateProvider, $urlServiceProvider) => {
     $stateProvider.state('app.dedicatedClouds', {
+      reloadOnSearch: false,
+      translations: ['.'],
       url: '/configuration/dedicated_cloud/:productId',
       views: {
         '': {
@@ -12,8 +14,6 @@ angular
           templateUrl: 'dedicatedCloud/dashboard/dedicatedCloud-dashboard.html',
         },
       },
-      reloadOnSearch: false,
-      translations: ['.'],
     });
 
     // ensure compatibility with links sended by emails
