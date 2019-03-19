@@ -1,4 +1,4 @@
-angular.module('App').controller('DedicatedCloudLicencesSplaEnableUSCtrl', class DedicatedCloudLicencesSplaEnableUSCtrl {
+angular.module('App').controller('DedicatedCloudLicencesSplaEnableCtrl', class {
   constructor($state, $stateParams, $translate, Alerter, OvhHttp, User) {
     this.$state = $state;
     this.$translate = $translate;
