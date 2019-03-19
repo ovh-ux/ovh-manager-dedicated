@@ -1,4 +1,4 @@
-angular.module('App').controller('DedicatedCloudDatacentersDatastoreOrderUSCtrl', class DedicatedCloudDatacentersDatastoreOrderUSCtrl {
+angular.module('App').controller('DedicatedCloudDatacentersDatastoreOrderCtrl', class {
   /* @ngInject */
   constructor($q, $scope, $state, OvhHttp, User, serviceName, datacenterId) {
     this.$q = $q;

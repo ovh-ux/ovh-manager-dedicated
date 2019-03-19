@@ -77,7 +77,7 @@ angular
 
     orderDatastore(datacenter) {
       if (this.coreConfig.getRegion() === 'US') {
-        this.$state.go('app.dedicatedClouds.datacenter.datastores.orderUS');
+        this.$state.go('app.dedicatedClouds.datacenter.datastores.order');
       } else {
         this.$scope.setAction('datacenter/datastore/orderLegacy/dedicatedCloud-datacenter-datastore-orderLegacy', datacenter.model, true);
       }
