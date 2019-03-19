@@ -29,7 +29,7 @@ angular
       };
 
       this.$scope.loading = false;
-      this.$scope.isUS = this.coreConfig.getRegion() === 'US';
+      this.$scope.currentService = this.currentService;
 
       this.$rootScope.$on('datacenter.veeam.reload', () => {
         this.$scope.loadVeeam(true);
