@@ -1,6 +1,6 @@
 angular
   .module('App')
-  .config(($stateProvider, $urlServiceProvider) => {
+  .config(/* @ngInject */ ($stateProvider, $urlServiceProvider) => {
     $stateProvider.state('app.dedicatedClouds', {
       url: '/configuration/dedicated_cloud/:productId',
       views: {
