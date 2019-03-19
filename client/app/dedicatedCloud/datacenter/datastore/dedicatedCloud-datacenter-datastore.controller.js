@@ -7,7 +7,6 @@ angular
       $scope,
       $state,
       $stateParams,
-      constants,
       currentService,
       DedicatedCloud,
     ) {
@@ -15,13 +14,11 @@ angular
       this.$scope = $scope;
       this.$state = $state;
       this.$stateParams = $stateParams;
-      this.constants = constants;
       this.currentService = currentService;
       this.DedicatedCloud = DedicatedCloud;
     }
 
     $onInit() {
-      this.$scope.constants = this.constants;
       this.noConsumptionResponse = new RegExp('no consumption', 'i');
 
       this.$scope.loadDatastores = ({ offset, pageSize }) => this
