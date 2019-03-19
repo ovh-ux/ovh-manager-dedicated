@@ -8,6 +8,7 @@ angular
       $stateParams,
       $translate,
       constants,
+      currentService,
       DedicatedCloud,
       VEEAM_STATE_ENUM,
     ) {
@@ -16,6 +17,7 @@ angular
       this.$stateParams = $stateParams;
       this.$translate = $translate;
       this.constants = constants;
+      this.currentService = currentService;
       this.DedicatedCloud = DedicatedCloud;
       this.VEEAM_STATE_ENUM = VEEAM_STATE_ENUM;
     }
