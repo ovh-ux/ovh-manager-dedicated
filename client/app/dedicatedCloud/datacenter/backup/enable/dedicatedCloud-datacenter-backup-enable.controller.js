@@ -38,7 +38,7 @@ angular
           datacenter: this.DedicatedCloud
             .getDatacenterInfoProxy(this.$stateParams.productId, this.$stateParams.datacenterId),
           hosts: this.DedicatedCloud
-            .getHostsLexi(this.$stateParams.productId, this.$stateParams.datacenterId),
+            .getHosts(this.$stateParams.productId, this.$stateParams.datacenterId),
         })
         .then((data) => {
           this.datacenter = data.datacenter;

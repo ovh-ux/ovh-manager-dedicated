@@ -39,7 +39,12 @@ angular
 
     loadHosts({ offset, pageSize }) {
       return this.DedicatedCloud
-        .getHosts(this.$stateParams.productId, this.$stateParams.datacenterId, pageSize, offset - 1)
+        .getPaginatedHosts(
+          this.$stateParams.productId,
+          this.$stateParams.datacenterId,
+          pageSize,
+          offset - 1,
+        )
         .then((result) => {
           const hosts = _.get(result, 'list.results');
 

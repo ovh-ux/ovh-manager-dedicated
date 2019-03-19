@@ -286,7 +286,7 @@ angular
 
     /* ------- SUB DATACENTER HOSTS -------*/
 
-    this.getHosts = function (serviceName, datacenterId, elementsByPage, elementsToSkip,
+    this.getPaginatedHosts = function (serviceName, datacenterId, elementsByPage, elementsToSkip,
       forceRefresh) {
       return OvhHttp.get('/sws/dedicatedCloud/{serviceName}/datacenters/{datacenterId}/hosts', {
         rootPath: '2api',
@@ -303,7 +303,7 @@ angular
       });
     };
 
-    this.getHostsLexi = function (serviceName, datacenterId) {
+    this.getHosts = function (serviceName, datacenterId) {
       return OvhHttp.get('/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/host', {
         rootPath: 'apiv6',
         urlParams: {
@@ -1065,7 +1065,7 @@ angular
           return $q
             .all(
               dataCenters.results.map(dataCenter => self
-                .getHostsLexi(serviceName, dataCenter.id)
+                .getHosts(serviceName, dataCenter.id)
                 .then(hostIds => $q.all(hostIds.map(hostId => self.getHost(
                   serviceName,
                   dataCenter.id,
