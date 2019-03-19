@@ -1,6 +1,6 @@
 angular
   .module('App')
-  .config(($stateProvider, constants) => {
+  .config(/* @ngInject */ ($stateProvider, constants) => {
     if (constants.target === 'US') {
       $stateProvider.state('app.dedicatedClouds.license.enable', {
         controller: 'DedicatedCloudLicencesSplaEnableUSCtrl',
