@@ -45,7 +45,7 @@ angular.module('App')
           datacenterId: datacenter.id,
         });
       } else {
-        this.$scope.setAction('datacenter/datastore/order/dedicatedCloud-datacenter-datastore-order', datacenter, true);
+        this.$scope.setAction('datacenter/datastore/orderLegacy/dedicatedCloud-datacenter-datastore-orderLegacy', datacenter, true);
       }
     }
 
@@ -55,7 +55,7 @@ angular.module('App')
           datacenterId: datacenter.id,
         });
       } else {
-        this.$scope.setAction('datacenter/host/order/dedicatedCloud-datacenter-host-order', datacenter, true);
+        this.$scope.setAction('datacenter/host/orderLegacy/dedicatedCloud-datacenter-host-orderLegacy', datacenter, true);
       }
     }
   });
