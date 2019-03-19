@@ -46,7 +46,7 @@
         </oui-action-menu-item>
     </oui-action-menu>
     <extra-top>
-        <oui-button data-disabled="!datacenter.model.canOrderFilers && constants.target !== 'US'"
+        <oui-button data-disabled="!datacenter.model.canOrderFilers"
                     data-on-click="$ctrl.orderDatastore(datacenter)"
                     data-text="{{ 'dedicatedCloud_order_Datastore' | translate }}"
                     class="mb-3">
