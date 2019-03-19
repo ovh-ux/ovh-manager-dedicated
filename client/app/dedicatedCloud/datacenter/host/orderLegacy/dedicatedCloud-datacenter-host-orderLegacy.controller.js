@@ -1,4 +1,4 @@
-angular.module('App').controller('DedicatedCloudDatacentersOrderHostsCtrl', ($scope, $stateParams, DedicatedCloud, $translate) => {
+angular.module('App').controller('DedicatedCloudDatacentersOrderHostsLegacyCtrl', ($scope, $stateParams, DedicatedCloud, $translate) => {
   $scope.orderHosts = {
     datacenter: null,
     model: null,
