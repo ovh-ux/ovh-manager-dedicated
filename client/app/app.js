@@ -1,17 +1,23 @@
-import ngOvhApiv7 from '@ovh-ux/ng-ovh-apiv7';
+import ngAtInternet from '@ovh-ux/ng-at-internet';
+import ngAtInternetUiRouterPlugin from '@ovh-ux/ng-at-internet-ui-router-plugin';
+import ngOvhApiWrappers from '@ovh-ux/ng-ovh-api-wrappers';
+import ngOvhHttp from '@ovh-ux/ng-ovh-http';
+import ngOvhProxyRequest from '@ovh-ux/ng-ovh-proxy-request';
 import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
 import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
-import translateAsyncLoader from '@ovh-ux/translate-async-loader';
+import ngOvhSwimmingPoll from '@ovh-ux/ng-ovh-swimming-poll';
+import ngOvhUserPref from '@ovh-ux/ng-ovh-user-pref';
+import ngOvhWebUniverseComponents from '@ovh-ux/ng-ovh-web-universe-components';
+import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
 import uiRouter from '@uirouter/angularjs';
-import webUniverseComponents from '@ovh-ux/web-universe-components';
 import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
 import ovhContacts from '@ovh-ux/ng-ovh-contacts';
+import ngOvhOtrs from '@ovh-ux/ng-ovh-otrs';
 
 import config from './config/config';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
 
 const appDeps = [
-  'ovh-angular-proxy-request',
   'ovh-angular-pagination-front',
   'ovh-utils-angular',
   'ui.bootstrap',
@@ -25,19 +31,23 @@ const appDeps = [
   'directives',
   'Billing',
   'UserAccount',
-  'ovh-angular-http',
   'ui.utils',
   'ovh-angular-q-allSettled',
-  'ovh-angular-swimming-poll',
   'ovh-angular-export-csv',
-  'ng-at-internet',
-  'atInternetUiRouterPlugin',
-  'ovh-angular-user-pref',
+  'ovh-angular-tail-logs',
   'ovhBrowserAlert',
   'ui.validate',
-  ngOvhApiv7,
+  ngAtInternet,
+  ngAtInternetUiRouterPlugin,
+  ngOvhApiWrappers,
+  ngOvhHttp,
+  ngOvhProxyRequest,
   ngOvhSsoAuth,
   ngOvhSsoAuthModalPlugin,
+  ngOvhSwimmingPoll,
+  ngOvhUserPref,
+  ngOvhWebUniverseComponents,
+  ngTranslateAsyncLoader,
   'oui',
   'ui.select',
   uiRouter,
@@ -46,15 +56,13 @@ const appDeps = [
   'Module.download',
   'internationalPhoneNumber',
   'ovh-angular-sidebar-menu',
-  'ovh-angular-otrs',
+  ngOvhOtrs,
   'pascalprecht.translate',
   'chart.js',
   'ovh-angular-responsive-tabs',
   'ngCkeditor',
   'Module.otrs',
-  translateAsyncLoader,
   dedicatedUniverseComponents,
-  webUniverseComponents,
   'xeditable',
   ovhPaymentMethod,
   ovhContacts,
@@ -86,13 +94,10 @@ angular.module('App', appDeps).constant('constants', {
   .constant('website_url', config.constants.website_url);
 angular
   .module('App')
-  .config([
-    'ovh-proxy-request.proxyProvider',
-    (proxy) => {
-      proxy.proxy('$http');
-      proxy.pathPrefix('apiv6');
-    },
-  ])
+  .config(/* @ngInject */(ovhProxyRequestProvider) => {
+    ovhProxyRequestProvider.proxy('$http');
+    ovhProxyRequestProvider.pathPrefix('apiv6');
+  })
   .config(($locationProvider) => {
     $locationProvider.hashPrefix('');
   })

@@ -252,6 +252,13 @@ angular.module('App').controller('ServerCtrl', (
         $scope.isHousing = isHousing(server);
         $scope.serviceInfos = serviceInfos;
 
+        $scope.tabOptions = {
+          isFirewallEnabled: dedicatedServerFeatureAvailability
+            .allowDedicatedServerFirewallCiscoAsa(),
+          isIPMIDisabled: $scope.isHousing,
+          isUSBStorageEnabled: dedicatedServerFeatureAvailability.allowDedicatedServerUSBKeys(),
+        };
+
         $scope.$broadcast('dedicated.server.refreshTabs');
       })
       .catch((data) => {

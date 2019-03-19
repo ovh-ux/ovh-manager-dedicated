@@ -16,7 +16,7 @@ angular.module('App').controller('CdnStatisticsCtrl', ($scope, $stateParams, $tr
     });
     $scope.series.push($translate.instant(`cdn_stats_legend_${$scope.model.dataType.toLowerCase()}_cdn`));
     $scope.series.push($translate.instant(`cdn_stats_legend_${$scope.model.dataType.toLowerCase()}_backend`));
-    $scope.data.push(_.map(_.get(data, 'cdn.value'), value => value.y));
+    $scope.data.push(_.map(_.get(data, 'cdn.values'), value => value.y));
     $scope.data.push(_.map(_.get(data, 'backend.values'), value => value.y));
   }
 

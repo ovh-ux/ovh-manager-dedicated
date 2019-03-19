@@ -562,8 +562,8 @@
    <translation id="dedicatedCloud_confirm_close_service" qtlid="299923">Confirmación del cierre del servicio</translation>
    <translation id="dedicatedCloud_confirm_close_question" qtlid="299936">¿Podría indicarnos cuál es la principal razón por la que desea cerrar este servicio?</translation>
    <translation id="dedicatedCloud_confirm_close_reason_not_needed_anymore" qtlid="299949">Ya no utilizo el servicio</translation>
-   <translation id="dedicatedCloud_confirm_close_reason_too_hard_to_use" qtlid="299962">Las herramientas de gestión (área de cliente, facturación) son demasiado complicadas.</translation>
-   <translation id="dedicatedCloud_confirm_close_reason_lack_of_performances" qtlid="299975">Las prestaciones del servicio son insuficientes.</translation>
+   <translation id="dedicatedCloud_confirm_close_reason_too_hard_to_use" qtlid="521431">Les outils sont trop complexes</translation>
+   <translation id="dedicatedCloud_confirm_close_reason_lack_of_performances" qtlid="521444">Les performances du systèmes sont insuffisantes</translation>
    <translation id="dedicatedCloud_confirm_close_reason_not_reliable" qtlid="299988">El servicio es poco fiable</translation>
    <translation id="dedicatedCloud_confirm_close_reason_too_expensive" qtlid="300001">El servicio es demasiado caro</translation>
    <translation id="dedicatedCloud_confirm_close_reason_migrated_to_another_ovh_product" qtlid="300014">Utilizo otro servicio de OVH</translation>
@@ -642,7 +642,7 @@
    <translation id="dedicatedCloud_vm_encryption_kms_delete" qtlid="506416">Eliminar este KMS</translation>
    <translation id="dedicatedCloud_vm_encryption_kms_id" qtlid="8194">ID</translation>
    <translation id="dedicatedCloud_vm_encryption_kms_description" qtlid="9238">Descripción</translation>
-   <translation id="dedicatedCloud_vm_encryption_kms_optional" qtlid="175244">Opcional</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_optional" qtlid="521457">optionnel</translation>
    <translation id="dedicatedCloud_vm_encryption_kms_ip" qtlid="25615">IP</translation>
    <translation id="dedicatedCloud_vm_encryption_kms_port" qtlid="9034">Puerto</translation>
    <translation id="dedicatedCloud_vm_encryption_kms_sslThumbprint" qtlid="506429">SSL Thumbprint</translation>
@@ -798,14 +798,15 @@
    <translation id="dedicatedCloud_datacenter_backup_enable_version_explain" qtlid="503812">Se le facturará en función del número de MV con backup, en las condiciones que se describen en <a href="{{url}}" target="_blank">esta página</a>.</translation>
    <translation id="dedicatedCloud_datacenter_backup_enable_no_offer" qtlid="503825">No hay ninguna solución de Veeam Backup disponible en su datacenter <strong>{{name}}</strong>.</translation>
 
+<!-- Disaster Recovery Plan -->
    <translation id="dedicatedCloud_tab_drp" qtlid="519896">Plan de recuperación ante desastres (DRP)</translation>
    <translation id="dedicatedCloud_datacenter_drp_subtitle" qtlid="519909">Cree su plan de recuperación ante desastres con Zerto</translation>
-   <translation id="dedicatedCloud_datacenter_drp_details" qtlid="519922">Garantice la protección de su sistema de información configurando un plan de recuperación ante desastres. Cambie de infraestructura en un clic y en cuestión de minutos en caso de fallo o interrupción del servicio. Atención: es necesario un Private Cloud secundario para activar esta opción.</translation>
-   <translation id="dedicatedCloud_datacenter_drp_warning" qtlid="519935">Su datacenter actual no dispone de ningún host. Puede contratar uno para utilizar este datacenter para su DRP, o seleccione otro datacenter que disponga como mínimo de un host.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_details" qtlid="519922">Garantice la protección de su sistema de información configurando un plan de recuperación ante desastres (DRP). Cambie de infraestructura en un clic y en cuestión de minutos en caso de fallo o interrupción del servicio. Atención: es necesario un Private Cloud secundario para activar esta opción.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_warning" qtlid="519935">Su datacenter actual no dispone de ningún host. Puede elegir entre contratar un host y utilizar este datacenter para su DRP, o seleccionar otro datacenter que disponga como mínimo de un host.</translation>
    <translation id="dedicatedCloud_tab_drp_choice_plan_type" qtlid="519948">Seleccione el tipo de DRP:</translation>
    <translation id="dedicatedCloud_datacenter_ovh_choice" qtlid="519961">Entre dos Private Cloud de OVH</translation>
    <translation id="dedicatedCloud_datacenter_onPremise_choice" qtlid="519974">Entre su infraestructura y un Private Cloud de OVH</translation>
-   <translation id="dedicatedCloud_datacenter_activate_zerto_drp" qtlid="519987">Activar Zerto DRP</translation>
+   <translation id="dedicatedCloud_datacenter_activate_zerto_drp" qtlid="519987">Activar el DRP Zerto</translation>
    <translation id="dedicatedCloud_datacenter_ovh_step_one" qtlid="520000">Datacenter principal</translation>
    <translation id="dedicatedCloud_datacenter_ovh_step_two" qtlid="520013">Datacenter secundario</translation>
    <translation id="dedicatedCloud_datacenter_ovh_step_three" qtlid="9983">Confirmar</translation>
@@ -814,7 +815,7 @@
    <translation id="dedicatedCloud_datacenter_pcc_name" qtlid="520039">Nombre del Private Cloud: {{pcc}}</translation>
    <translation id="dedicatedCloud_datacenter_main_datacenter_name" qtlid="520052">Identificador del datacenter Private Cloud correspondiente</translation>
    <translation id="dedicatedCloud_datacenter_main_datacenter_name_placeholder" qtlid="520065">Seleccione su datacenter principal</translation>
-   <translation id="dedicatedCloud_datacenter_order_ip" qtlid="520078">No tiene ningún pool de direcciones IP disponible. Puede contratar</translation>
+   <translation id="dedicatedCloud_datacenter_order_ip">Vous n’avez aucun pool d’adresses IP disponible. Veuillez en <a ui-sref="{{sref}}">commander</a></translation>
    <translation id="dedicatedCloud_datacenter_main_ip_address_pool_available" qtlid="520091">Pool de direcciones IP públicas disponible</translation>
    <translation id="dedicatedCloud_datacenter_main_ip_address_pool_available_placeholder" qtlid="520104">Seleccione una IP pública libre</translation>
    <translation id="dedicatedCloud_datacenter_secondary_pcc_name" qtlid="520117">Identificador y zona geográfica del Private Cloud secundario</translation>
@@ -822,22 +823,24 @@
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_list" qtlid="520143">Lista de datacenters secundarios</translation>
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_name_placeholder" qtlid="520156">Seleccione el datacenter secundario</translation>
    <translation id="dedicatedCloud_datacenter_secondary_ip_address_pool_available" qtlid="520169">Pool de direcciones IP públicas disponible en el Private Cloud secundario</translation>
-   <translation id="dedicatedCloud_datacenter_order_ip_secondary_pcc" qtlid="520182">No tiene ningún pool de direcciones IP disponible en este Private Cloud. Puede contratar</translation>
+   <translation id="dedicatedCloud_datacenter_order_ip_secondary_pcc">Vous n’avez aucun pool d’adresses IP disponible sur ce Private Cloud. Veuillez en <a ui-sref="{{sref}}">commander</a> ou choisissez un autre Private Cloud.</translation>
 
    <translation id="dedicatedCloud_datacenter_secondary_ip_address_pool_available_placeholder" qtlid="520104">Seleccione una IP pública libre</translation>
 
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_ip_public" qtlid="247092">IP pública</translation>
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_ip_public_placeholder" qtlid="467100">Dirección IP pública</translation>
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_gateway" qtlid="42682">Puerta de enlace</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_gateway_help" qtlid="520195">Aide à compléter</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_vra_network" qtlid="520208">Red vRA distante (opcional)</translation>
+   <translation id="dedicatedCloud_datacenter_secondary_datacenter_gateway_help" qtlid="520195">Autocompletar</translation>
+   <translation id="dedicatedCloud_datacenter_secondary_datacenter_vra_network" qtlid="520208">Red VRA remota (opcional)</translation>
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_subnetwork_mask" qtlid="520221">Máscara de subred (opcional)</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_ip_example_placeholder" qtlid="520234">21.134.170.235</translation>
+   <translation id="dedicatedCloud_datacenter_secondary_datacenter_pcc_on_same_location_warning">Ce Private Cloud doit être localisé dans un datacenter différent du Private Cloud primaire.</translation>
+   <translation id="dedicatedCloud_datacenter_secondary_datacenter_without_hosts">Le datacenter sélectionné ne dispose d’aucun host. Choisissez un datacenter avec au moins un host, ou veuillez en <a ui-sref="{{sref}}">commander</a> pour ce dernier</translation>
+   <translation id="dedicatedCloud_datacenter_secondary_datacenter_get_hosts_error">Une erreur est survenue lors de la récupération des hosts du datacenter secondaire</translation>
 
-   <translation id="dedicatedCloud_datacenter_drp_confirm_create_success_part_one" qtlid="520247">Su Zerto DRP se ha creado correctamente.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_create_success_part_one" qtlid="520247">Su DRP Zerto se ha creado correctamente.</translation>
    <translation id="dedicatedCloud_datacenter_drp_confirm_create_success_part_two" qtlid="520260">Le hemos enviado la contraseña ZSSP a la dirección de correo electrónico {{email}}.</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_creation_pending" qtlid="520273">Activando su Zerto DRP... La operación podría tardar hasta una hora.</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_creation_pending_task" qtlid="520286">Puede consultar la tarea enableDisasterRecovery del PCC principal para consultar el progreso.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_creation_pending" qtlid="520273">Activando su DRP Zerto... La operación podría tardar hasta una hora.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_creation_pending_task" qtlid="520286">Puede acceder a la tarea enableDisasterRecovery del Private Cloud principal para consultar el progreso.</translation>
    <translation id="dedicatedCloud_datacenter_drp_confirm_create_error" qtlid="520299">Se ha producido un error al activar su DRP.</translation>
    <translation id="dedicatedCloud_datacenter_drp_confirm_summary_title" qtlid="520312">Resumen de la configuración de su DRP</translation>
    <translation id="dedicatedCloud_datacenter_drp_confirm_summary_drp_type" qtlid="520325">Tipo de plan de recuperación ante desastres</translation>
@@ -851,9 +854,9 @@
    <translation id="dedicatedCloud_datacenter_drp_confirm_zssp_password_regenerate_error" qtlid="520390">Se ha producido un error al restaurar la contraseña ZSSP.</translation>
 
    <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_title" qtlid="520403">Eliminar el DRP de forma definitiva</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_action_text" qtlid="520416">Eliminar el Zerto DRP</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_action_text" qtlid="520416">Eliminar el DRP Zerto</translation>
    <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_modal_title" qtlid="520429">Eliminación del plan de recuperación ante desastres</translation>
    <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_modal_question" qtlid="520442">¿Seguro que quiere eliminar el DRP? Esta acción es irreversible.</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_success" qtlid="520455">Eliminando su Zerto DRP... La operación podría tardar algunos minutos.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_success" qtlid="520455">Eliminando su DRP Zerto... La operación podría tardar algunos minutos.</translation>
    <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_error" qtlid="520468">Se ha producido un error al eliminar el plan de recuperación ante desastres.</translation>
 </translations>

@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-import 'ovh-angular-user-pref';
+import '@ovh-ux/ng-ovh-user-pref';
 
 import DucNotification from './notification.service';
 
@@ -8,7 +8,7 @@ const moduleName = 'ducNotification';
 
 angular
   .module(moduleName, [
-    'ovh-angular-user-pref',
+    'ngOvhUserPref',
   ])
   .service('DucNotification', DucNotification);
 

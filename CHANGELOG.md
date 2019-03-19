@@ -1,3 +1,84 @@
+<a name="10.13.0"></a>
+# [10.13.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.12.0...v10.13.0) (2019-03-13)
+
+
+### Bug Fixes
+
+* **cdn.dedicated.manage.statistics:** fix chart data ([#1004](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1004)) ([5c1c9d2](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5c1c9d2))
+* **dedicated.server.statictics:** fix for mrtg graph plot error ([#984](https://github.com/ovh-ux/ovh-manager-dedicated/issues/984)) ([c2e4c33](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c2e4c33))
+* **deps:** upgrade ng-at-internet to v4.0.0 ([#1005](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1005)) ([17897f1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/17897f1))
+* **deps:** upgrade ng-ovh-api-wrappers to v3.0.0 ([#997](https://github.com/ovh-ux/ovh-manager-dedicated/issues/997)) ([cd3baac](https://github.com/ovh-ux/ovh-manager-dedicated/commit/cd3baac))
+* **deps:** upgrade ovh-api-services to v6.1.2 ([#1011](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1011)) ([37badb8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/37badb8))
+* **i18n:** retrieve translations ([#1010](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1010)) ([65e724d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/65e724d))
+
+
+### Features
+
+* **i18n:** dedicated server new translations ([cf76af5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/cf76af5))
+* **i18n:** dedicated server new translations ([483fc05](https://github.com/ovh-ux/ovh-manager-dedicated/commit/483fc05))
+* **i18n:** retrieve translations ([07afbf7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/07afbf7))
+
+
+
+<a name="10.12.0"></a>
+# [10.12.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.11.2...v10.12.0) (2019-03-05)
+
+
+### Bug Fixes
+
+* **deps:** upgrade ovh-module-exchange to v9.3.3 ([367cb62](https://github.com/ovh-ux/ovh-manager-dedicated/commit/367cb62))
+* **deps:** upgrade ovh-module-exchange to v9.3.4 ([f0d7067](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f0d7067))
+* **i18n:** retrieve translations ([2c5d213](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2c5d213))
+* **i18n:** submit translations ([bf64be4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bf64be4))
+
+
+### Features
+
+* **account.billing.history.debt.pay:** add atinternet tracking ([#986](https://github.com/ovh-ux/ovh-manager-dedicated/issues/986)) ([b0b0a18](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b0b0a18))
+* **cdn.dedicated:** expose logs to customers ([#982](https://github.com/ovh-ux/ovh-manager-dedicated/issues/982)) ([d0d362d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d0d362d))
+
+
+
+<a name="10.11.2"></a>
+## [10.11.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.11.1...v10.11.2) (2019-03-01)
+
+
+### Bug Fixes
+
+* **dedicated.server:** translation issue order vrack ([89fc68e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/89fc68e))
+
+
+
+<a name="10.11.1"></a>
+## [10.11.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.11.0...v10.11.1) (2019-02-28)
+
+
+### Bug Fixes
+
+* **i18n:** retrieve translations ([654166c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/654166c))
+
+
+
+<a name="10.11.0"></a>
+# [10.11.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.6...v10.11.0) (2019-02-27)
+
+
+### Bug Fixes
+
+* **billing.payment:** add explain text for credit card add ([#951](https://github.com/ovh-ux/ovh-manager-dedicated/issues/951)) ([c106b67](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c106b67))
+* **deps:** upgrade ng-ovh-apiv7 to v2.0.0 ([79bd5f4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/79bd5f4))
+* **i18n:** retrieve ([b556ad1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b556ad1))
+* **i18n:** retrieve translations ([69e9d1f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/69e9d1f))
+* **i18n:** retrive translations ([77ae1f1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/77ae1f1))
+* **i18n:** submit translations ([e796345](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e796345))
+
+
+### Features
+
+* **dedicated.server:** disable header tabs if service is expired ([#978](https://github.com/ovh-ux/ovh-manager-dedicated/issues/978)) ([ef13c11](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ef13c11))
+
+
+
 <a name="10.10.6"></a>
 ## [10.10.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.10.5...v10.10.6) (2019-02-25)
 
