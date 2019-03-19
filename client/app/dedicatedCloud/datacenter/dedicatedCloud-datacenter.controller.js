@@ -85,6 +85,8 @@ angular
 
     /* Update description or name */
     editDescription(value, contextTitle) {
+      const context = _.last(contextTitle.split('_'));
+
       this.$uibModal.open({
         animation: true,
         templateUrl: 'components/name-edition/name-edition.html',
@@ -96,6 +98,7 @@ angular
             datacenterId: this.$stateParams.datacenterId,
             destinationId: this.DEDICATED_CLOUD_DATACENTER.alertId,
             productId: this.$stateParams.productId,
+            successText: this.$translate.instant(`dedicatedCloud_datacenter_${context}Modifying_success`),
             value,
           }),
         },
