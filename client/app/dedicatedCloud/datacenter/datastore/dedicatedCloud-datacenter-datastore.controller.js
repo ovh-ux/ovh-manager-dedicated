@@ -77,7 +77,7 @@ angular
       if (this.constants.target === 'US') {
         this.$state.go('app.dedicatedClouds.datacenter.datastores.orderUS');
       } else {
-        this.$scope.setAction('datacenter/datastore/order/dedicatedCloud-datacenter-datastore-order', datacenter.model, true);
+        this.$scope.setAction('datacenter/datastore/orderLegacy/dedicatedCloud-datacenter-datastore-orderLegacy', datacenter.model, true);
       }
     }
   });
