@@ -7,16 +7,14 @@ angular
       $scope,
       $state,
       $stateParams,
-      constants,
-      coreConfig,
+      currentService,
       DedicatedCloud,
     ) {
       this.$q = $q;
       this.$scope = $scope;
       this.$state = $state;
       this.$stateParams = $stateParams;
-      this.constants = constants;
-      this.coreConfig = coreConfig;
+      this.currentService = currentService;
       this.DedicatedCloud = DedicatedCloud;
     }
 
@@ -76,7 +74,7 @@ angular
     }
 
     orderHost(datacenter) {
-      if (this.coreConfig.getRegion() === 'US') {
+      if (!this.currentService.usesLegacyOrder) {
         this.$state.go('app.dedicatedClouds.datacenter.hosts.order');
       } else {
         this.$scope.setAction('datacenter/host/orderLegacy/dedicatedCloud-datacenter-host-orderLegacy', datacenter.model, true);
