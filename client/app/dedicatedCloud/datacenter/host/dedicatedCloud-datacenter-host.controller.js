@@ -79,7 +79,7 @@ angular
       if (this.coreConfig.getRegion() === 'US') {
         this.$state.go('app.dedicatedClouds.datacenter.hosts.orderUS');
       } else {
-        this.$scope.setAction('datacenter/host/order/dedicatedCloud-datacenter-host-order', datacenter.model, true);
+        this.$scope.setAction('datacenter/host/orderLegacy/dedicatedCloud-datacenter-host-orderLegacy', datacenter.model, true);
       }
     }
   });
