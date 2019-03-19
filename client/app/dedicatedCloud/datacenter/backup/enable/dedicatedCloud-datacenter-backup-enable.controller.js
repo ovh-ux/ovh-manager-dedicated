@@ -1,6 +1,6 @@
 angular
   .module('App')
-  .controller('DedicatedCloudSubDatacenterVeeamBackupEnableAgoraCtrl', class {
+  .controller('DedicatedCloudSubDatacenterVeeamBackupEnableCtrl', class {
     /* @ngInject */
     constructor(
       $q,
