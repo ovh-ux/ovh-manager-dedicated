@@ -1,4 +1,4 @@
-angular.module('App').controller('DedicatedCloudLicencesCtrl', ($rootScope, $scope, $state, $stateParams, $translate, constants, DedicatedCloud) => {
+angular.module('App').controller('DedicatedCloudLicencesCtrl', ($rootScope, $scope, $state, $stateParams, $translate, currentService, DedicatedCloud) => {
   $scope.licences = {
     model: null,
     spla: null,
@@ -15,18 +15,20 @@ angular.module('App').controller('DedicatedCloudLicencesCtrl', ($rootScope, $sco
 
   $scope.loadLicences = function () {
     $scope.loading.licences = true;
-    DedicatedCloud.getDatacenterLicence($stateParams.productId).then(
-      (datacenter) => {
-        $scope.licences.spla = datacenter.isSplaActive;
-        $scope.licences.canActive = datacenter.canOrderSpla;
-        $scope.loading.licences = false;
-      },
-      (data) => {
-        $scope.loading.licences = false;
-        $scope.loading.error = true;
-        $scope.setMessage($translate.instant('dedicatedCloud_dashboard_loading_error'), angular.extend(data, { type: 'ERROR' }));
-      },
-    );
+    DedicatedCloud
+      .getDatacenterLicence($stateParams.productId, currentService.usesLegacyOrder)
+      .then(
+        (datacenter) => {
+          $scope.licences.spla = datacenter.isSplaActive;
+          $scope.licences.canActive = datacenter.canOrderSpla;
+          $scope.loading.licences = false;
+        },
+        (data) => {
+          $scope.loading.licences = false;
+          $scope.loading.error = true;
+          $scope.setMessage($translate.instant('dedicatedCloud_dashboard_loading_error'), angular.extend(data, { type: 'ERROR' }));
+        },
+      );
   };
 
   $scope.canBeActivatedSpla = function () {
@@ -34,7 +36,7 @@ angular.module('App').controller('DedicatedCloudLicencesCtrl', ($rootScope, $sco
   };
 
   $scope.enableLicense = function () {
-    if (constants.target === 'US') {
+    if (!currentService.usesLegacyOrder) {
       $state.go('app.dedicatedClouds.license.enable');
     } else {
       $scope.setAction('license/enable/dedicatedCloud-license-enable');
