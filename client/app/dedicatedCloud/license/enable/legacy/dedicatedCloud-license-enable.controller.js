@@ -1,4 +1,4 @@
-angular.module('App').controller('DedicatedCloudLicencesSplaEnableCtrl', ($scope, $stateParams, $translate, DedicatedCloud, $rootScope) => {
+angular.module('App').controller('DedicatedCloudLicencesSplaEnableLegacyCtrl', ($scope, $stateParams, $translate, DedicatedCloud, $rootScope) => {
   $scope.spla = {
     agreeContract: false,
     model: null,
