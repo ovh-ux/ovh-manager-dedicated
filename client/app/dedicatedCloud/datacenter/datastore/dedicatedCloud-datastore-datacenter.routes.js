@@ -14,7 +14,7 @@ angular
       },
     });
 
-    $stateProvider.state('app.dedicatedClouds.datacenter.datastores.orderUS', {
+    $stateProvider.state('app.dedicatedClouds.datacenter.datastores.order', {
       resolve: {
         datacenterId: /* @ngInject */ $stateParams => $stateParams.datacenterId,
         serviceName: /* @ngInject */ $stateParams => $stateParams.productId,
@@ -22,9 +22,9 @@ angular
       url: '/order',
       views: {
         'pccDatacenterView@app.dedicatedClouds.datacenter': {
-          controller: 'DedicatedCloudDatacentersDatastoreOrderUSCtrl',
+          controller: 'DedicatedCloudDatacentersDatastoreOrderCtrl',
           controllerAs: '$ctrl',
-          templateUrl: 'dedicatedCloud/datacenter/datastore/orderUS/dedicatedCloud-datacenter-datastore-orderUS.html',
+          templateUrl: 'dedicatedCloud/datacenter/datastore/order/dedicatedCloud-datacenter-datastore-order.html',
         },
       },
     });
