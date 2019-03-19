@@ -8,6 +8,7 @@ angular
       $state,
       $stateParams,
       constants,
+      currentService,
       DedicatedCloud,
     ) {
       this.$q = $q;
@@ -15,6 +16,7 @@ angular
       this.$state = $state;
       this.$stateParams = $stateParams;
       this.constants = constants;
+      this.currentService = currentService;
       this.DedicatedCloud = DedicatedCloud;
     }
 
@@ -74,7 +76,7 @@ angular
     }
 
     orderDatastore(datacenter) {
-      if (this.constants.target === 'US') {
+      if (!this.currentService.usesLegacyOrder) {
         this.$state.go('app.dedicatedClouds.datacenter.datastores.order');
       } else {
         this.$scope.setAction('datacenter/datastore/orderLegacy/dedicatedCloud-datacenter-datastore-orderLegacy', datacenter.model, true);
