@@ -3,6 +3,12 @@ angular
   .config(/* @ngInject */ ($stateProvider, $urlServiceProvider) => {
     $stateProvider.state('app.dedicatedClouds', {
       reloadOnSearch: false,
+      resolve: {
+        currentService: /* @ngInject */ (
+          $transition$,
+          DedicatedCloud,
+        ) => DedicatedCloud.getSelected($transition$.params().productId, true),
+      },
       translations: ['.'],
       url: '/configuration/dedicated_cloud/:productId',
       views: {
