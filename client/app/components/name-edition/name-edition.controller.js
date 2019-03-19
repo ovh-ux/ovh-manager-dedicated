@@ -12,6 +12,10 @@ angular.module('App').controller('NameEditionCtrl', class NameEditionCtrl {
 
     return this.updateName()
       .then(() => {
+        if (this.data.successText) {
+          this.Alerter.success(this.data.successText, this.data.destinationId || 'dedicatedCloud');
+        }
+
         this.$uibModalInstance.close(this.newValue);
       })
       .catch((err) => {
