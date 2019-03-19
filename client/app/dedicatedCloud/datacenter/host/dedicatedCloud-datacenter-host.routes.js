@@ -14,12 +14,12 @@ angular
       translations: ['../../../dedicated/server'],
     });
 
-    $stateProvider.state('app.dedicatedClouds.datacenter.hosts.orderUS', {
+    $stateProvider.state('app.dedicatedClouds.datacenter.hosts.order', {
       url: '/order',
       views: {
         'pccDatacenterView@app.dedicatedClouds.datacenter': {
-          templateUrl: 'dedicatedCloud/datacenter/host/orderUS/dedicatedCloud-datacenter-host-orderUS.html',
-          controller: 'DedicatedCloudDatacentersHostOrderUSCtrl',
+          templateUrl: 'dedicatedCloud/datacenter/host/order/dedicatedCloud-datacenter-host-order.html',
+          controller: 'DedicatedCloudDatacentersHostOrderCtrl',
           controllerAs: '$ctrl',
         },
       },
