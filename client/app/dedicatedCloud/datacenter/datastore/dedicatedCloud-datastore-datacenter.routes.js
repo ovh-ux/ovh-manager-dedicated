@@ -1,6 +1,6 @@
 angular
   .module('App')
-  .config(($stateProvider) => {
+  .config(/* @ngInject */ ($stateProvider) => {
     $stateProvider.state('app.dedicatedClouds.datacenter.datastores', {
       url: '/datastores',
       reloadOnSearch: false,
@@ -24,8 +24,8 @@ angular
         },
       },
       resolve: {
-        serviceName: $stateParams => $stateParams.productId,
-        datacenterId: $stateParams => $stateParams.datacenterId,
+        serviceName: /* @ngInject */ $stateParams => $stateParams.productId,
+        datacenterId: /* @ngInject */ $stateParams => $stateParams.datacenterId,
       },
     });
   });
