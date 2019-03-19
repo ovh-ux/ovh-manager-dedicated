@@ -1,6 +1,6 @@
 angular
   .module('App')
-  .controller('DedicatedCloudDatacentersHostOrderUSCtrl', class DedicatedCloudDatacentersHostOrderUSCtrl {
+  .controller('DedicatedCloudDatacentersHostOrderCtrl', class {
     /* @ngInject */
     constructor(
       $q,
