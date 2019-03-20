@@ -798,6 +798,7 @@
    <translation id="dedicatedCloud_datacenter_backup_enable_version_explain" qtlid="503812">Se le facturará en función del número de MV con backup, en las condiciones que se describen en <a href="{{url}}" target="_blank">esta página</a>.</translation>
    <translation id="dedicatedCloud_datacenter_backup_enable_no_offer" qtlid="503825">No hay ninguna solución de Veeam Backup disponible en su datacenter <strong>{{name}}</strong>.</translation>
 
+<!-- Disaster Recovery Plan -->
    <translation id="dedicatedCloud_tab_drp" qtlid="519896">Plan de recuperación ante desastres (DRP)</translation>
    <translation id="dedicatedCloud_datacenter_drp_subtitle" qtlid="519909">Cree su plan de recuperación ante desastres con Zerto</translation>
    <translation id="dedicatedCloud_datacenter_drp_details" qtlid="519922">Garantice la protección de su sistema de información configurando un plan de recuperación ante desastres (DRP). Cambie de infraestructura en un clic y en cuestión de minutos en caso de fallo o interrupción del servicio. Atención: es necesario un Private Cloud secundario para activar esta opción.</translation>
@@ -814,7 +815,7 @@
    <translation id="dedicatedCloud_datacenter_pcc_name" qtlid="520039">Nombre del Private Cloud: {{pcc}}</translation>
    <translation id="dedicatedCloud_datacenter_main_datacenter_name" qtlid="520052">Identificador del datacenter Private Cloud correspondiente</translation>
    <translation id="dedicatedCloud_datacenter_main_datacenter_name_placeholder" qtlid="520065">Seleccione su datacenter principal</translation>
-   <translation id="dedicatedCloud_datacenter_order_ip" qtlid="520078">No tiene ningún pool de direcciones IP disponible. Puede contratar</translation>
+   <translation id="dedicatedCloud_datacenter_order_ip">Vous n’avez aucun pool d’adresses IP disponible. Veuillez en <a ui-sref="{{sref}}">commander</a></translation>
    <translation id="dedicatedCloud_datacenter_main_ip_address_pool_available" qtlid="520091">Pool de direcciones IP públicas disponible</translation>
    <translation id="dedicatedCloud_datacenter_main_ip_address_pool_available_placeholder" qtlid="520104">Seleccione una IP pública libre</translation>
    <translation id="dedicatedCloud_datacenter_secondary_pcc_name" qtlid="520117">Identificador y zona geográfica del Private Cloud secundario</translation>
@@ -822,7 +823,7 @@
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_list" qtlid="520143">Lista de datacenters secundarios</translation>
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_name_placeholder" qtlid="520156">Seleccione el datacenter secundario</translation>
    <translation id="dedicatedCloud_datacenter_secondary_ip_address_pool_available" qtlid="520169">Pool de direcciones IP públicas disponible en el Private Cloud secundario</translation>
-   <translation id="dedicatedCloud_datacenter_order_ip_secondary_pcc" qtlid="520182">No tiene ningún pool de direcciones IP disponible en este Private Cloud. Puede contratar</translation>
+   <translation id="dedicatedCloud_datacenter_order_ip_secondary_pcc">Vous n’avez aucun pool d’adresses IP disponible sur ce Private Cloud. Veuillez en <a ui-sref="{{sref}}">commander</a> ou choisissez un autre Private Cloud.</translation>
 
    <translation id="dedicatedCloud_datacenter_secondary_ip_address_pool_available_placeholder" qtlid="520104">Seleccione una IP pública libre</translation>
 
@@ -832,7 +833,9 @@
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_gateway_help" qtlid="520195">Autocompletar</translation>
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_vra_network" qtlid="520208">Red VRA remota (opcional)</translation>
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_subnetwork_mask" qtlid="520221">Máscara de subred (opcional)</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_ip_example_placeholder" qtlid="520234">21.134.170.235</translation>
+   <translation id="dedicatedCloud_datacenter_secondary_datacenter_pcc_on_same_location_warning">Ce Private Cloud doit être localisé dans un datacenter différent du Private Cloud primaire.</translation>
+   <translation id="dedicatedCloud_datacenter_secondary_datacenter_without_hosts">Le datacenter sélectionné ne dispose d’aucun host. Choisissez un datacenter avec au moins un host, ou veuillez en <a ui-sref="{{sref}}">commander</a> pour ce dernier</translation>
+   <translation id="dedicatedCloud_datacenter_secondary_datacenter_get_hosts_error">Une erreur est survenue lors de la récupération des hosts du datacenter secondaire</translation>
 
    <translation id="dedicatedCloud_datacenter_drp_confirm_create_success_part_one" qtlid="520247">Su DRP Zerto se ha creado correctamente.</translation>
    <translation id="dedicatedCloud_datacenter_drp_confirm_create_success_part_two" qtlid="520260">Le hemos enviado la contraseña ZSSP a la dirección de correo electrónico {{email}}.</translation>

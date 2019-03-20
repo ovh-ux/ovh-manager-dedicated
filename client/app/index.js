@@ -65,7 +65,6 @@ import 'script-loader!@bower_components/international-phone-number/releases/inte
 import 'script-loader!@bower_components/qrcode/lib/qrcode.js';
 import 'angular-qr';
 import 'script-loader!u2f-api-polyfill/u2f-api-polyfill.js';
-import 'ovh-angular-otrs';
 import 'ovh-api-services';
 import 'ovh-angular-toaster';
 import 'script-loader!ovh-jquery-ui-draggable-ng/dist/ovh-jquery-ui-draggable-ng.min.js';
