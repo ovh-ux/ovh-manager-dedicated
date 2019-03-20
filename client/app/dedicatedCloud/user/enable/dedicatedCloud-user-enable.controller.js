@@ -17,7 +17,7 @@ angular
     $onInit() {
       this.$scope.user = this.$scope.currentActionData;
 
-      this.enableUser = () => this.enableUser();
+      this.$scope.enableUser = () => this.enableUser();
     }
 
     enableUser() {
