@@ -1,3 +1,13 @@
+<a name="10.13.2"></a>
+## [10.13.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.13.1...v10.13.2) (2019-03-20)
+
+
+### Bug Fixes
+
+* **dedicated.server:** edit display name ([449b530](https://github.com/ovh-ux/ovh-manager-dedicated/commit/449b530))
+
+
+
 <a name="10.13.1"></a>
 ## [10.13.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.13.0...v10.13.1) (2019-03-19)
 
