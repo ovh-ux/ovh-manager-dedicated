@@ -46,7 +46,7 @@
         </oui-action-menu-item>
     </oui-action-menu>
     <extra-top>
-        <oui-button data-disabled="!datacenter.model.canOrderFilers"
+        <oui-button data-disabled="!datacenter.model.canOrderFilers && $ctrl.currentService.usesLegacyOrder"
                     data-on-click="$ctrl.orderDatastore(datacenter)"
                     data-text="{{ 'dedicatedCloud_order_Datastore' | translate }}"
                     class="mb-3">
