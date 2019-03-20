@@ -2,7 +2,7 @@
 
 angular
   .module('App')
-  .controller('DedicatedCloudHostToMonthlyCtrl', class {
+  .controller('DedicatedCloudHostToMonthlyLegacyCtrl', class {
     /* @ngInject */
     constructor(
       $q,
