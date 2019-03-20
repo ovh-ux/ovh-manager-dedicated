@@ -18,6 +18,7 @@ import uiRouter from '@uirouter/angularjs';
 
 import config from './config/config';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
+import resourceUpgrade from './dedicatedCloud/resource/upgrade';
 
 import dedicatedCloudDatacenterDrp from './dedicatedCloud/datacenter/drp';
 
@@ -65,6 +66,7 @@ angular
     ovhContacts,
     ovhPaymentMethod,
     'pascalprecht.translate',
+    resourceUpgrade,
     'services',
     'ui.bootstrap',
     'ui.router',

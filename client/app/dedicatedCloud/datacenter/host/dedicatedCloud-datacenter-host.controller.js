@@ -1,3 +1,8 @@
+import {
+  RESOURCE_BILLING_TYPES,
+  RESOURCE_UPGRADE_TYPES,
+} from '../../resource/upgrade/constants';
+
 angular
   .module('App')
   .controller('DedicatedCloudSubDatacentersHostCtrl', class {
@@ -19,6 +24,9 @@ angular
     }
 
     $onInit() {
+      this.RESOURCE_BILLING_TYPES = RESOURCE_BILLING_TYPES;
+      this.RESOURCE_UPGRADE_TYPES = RESOURCE_UPGRADE_TYPES;
+
       return this.fetchDatacenterInfoProxy();
     }
 
@@ -51,7 +59,7 @@ angular
           return this.$q
             .all(hosts
               .map((host) => {
-                if (host.billingType === 'HOURLY') {
+                if (host.billingType === this.RESOURCE_BILLING_TYPES.hourly) {
                   return this.DedicatedCloud
                     .getHostHourlyConsumption(
                       this.$stateParams.productId,
