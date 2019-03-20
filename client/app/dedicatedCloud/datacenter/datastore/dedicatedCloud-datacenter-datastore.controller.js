@@ -1,3 +1,8 @@
+import {
+  RESOURCE_BILLING_TYPES,
+  RESOURCE_UPGRADE_TYPES,
+} from '../../resource/upgrade/constants';
+
 angular
   .module('App')
   .controller('DedicatedCloudSubDatacentersDatastoreCtrl', class {
@@ -19,6 +24,9 @@ angular
     }
 
     $onInit() {
+      this.RESOURCE_BILLING_TYPES = RESOURCE_BILLING_TYPES;
+      this.RESOURCE_UPGRADE_TYPES = RESOURCE_UPGRADE_TYPES;
+
       this.noConsumptionResponse = new RegExp('no consumption', 'i');
 
       this.$scope.loadDatastores = ({ offset, pageSize }) => this
@@ -39,7 +47,7 @@ angular
           return this.$q
             .all(datastores
               .map((dc) => {
-                if (dc.billing === 'HOURLY') {
+                if (dc.billing === this.RESOURCE_BILLING_TYPES.hourly) {
                   return this.DedicatedCloud
                     .getDatastoreHourlyConsumption(
                       this.$stateParams.productId,
