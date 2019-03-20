@@ -1,6 +1,7 @@
 angular
   .module('App')
   .controller('DedicatedCloudCtrl', class {
+    /* @ngInject */
     constructor(
       $q,
       $scope,

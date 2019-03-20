@@ -1,6 +1,7 @@
 angular
   .module('App')
   .controller('DedicatedCloudUserDisableCtrl', class {
+    /* @ngInject */
     constructor(
       $scope,
       $stateParams,

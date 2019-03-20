@@ -2,6 +2,7 @@ import _ from 'lodash';
 
 {
   class DedicatedCloudSecurityPolicyAccessCtrl {
+    /* @ngInject */
     constructor(
       $scope,
       $stateParams,

@@ -1,6 +1,7 @@
 angular
   .module('App')
   .controller('DedicatedCloudUserDeleteCtrl', class {
+    /* @ngInject */
     constructor(
       $scope,
       $stateParams,

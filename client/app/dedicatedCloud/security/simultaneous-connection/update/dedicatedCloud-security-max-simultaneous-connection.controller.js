@@ -1,5 +1,6 @@
 {
   class DedicatedCloudSecurityMaxSimultaneousConnectionsCtrl {
+    /* @ngInject */
     constructor(
       $scope,
       $stateParams,

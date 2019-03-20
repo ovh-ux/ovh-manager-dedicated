@@ -1,5 +1,6 @@
 {
   class DedicatedCloudSecurityPolicyLogoutCtrl {
+    /* @ngInject */
     constructor(
       $scope,
       $stateParams,

@@ -1,5 +1,6 @@
 {
   class DedicatedCloudSecurityUpdateSessionTimeoutCtrl {
+    /* @ngInject */
     constructor(
       $scope,
       $stateParams,

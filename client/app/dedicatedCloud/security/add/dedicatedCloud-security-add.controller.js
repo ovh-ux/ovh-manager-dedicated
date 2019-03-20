@@ -1,6 +1,7 @@
 angular
   .module('App')
   .controller('DedicatedCloudSecurityPolicyAddCtrl', class {
+    /* @ngInject */
     constructor(
       $scope,
       $stateParams,
