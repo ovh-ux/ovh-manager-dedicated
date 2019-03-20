@@ -17,10 +17,10 @@ import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
 import uiRouter from '@uirouter/angularjs';
 
 import config from './config/config';
+import dedicatedCloudDatacenterDrp from './dedicatedCloud/datacenter/drp';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
 import resourceUpgrade from './dedicatedCloud/resource/upgrade';
 
-import dedicatedCloudDatacenterDrp from './dedicatedCloud/datacenter/drp';
 
 angular
   .module('App', [
