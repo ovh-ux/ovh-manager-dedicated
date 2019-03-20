@@ -38,7 +38,7 @@
                         data-compact>
         <oui-action-menu-item data-text="{{:: 'dedicatedCloud_updateResource_toMonthly' | translate }}"
                                 data-disabled="$row.billing !== 'HOURLY'"
-                                data-on-click="setAction('resource/upgrade/dedicatedCloud-resource-upgrade', {
+                                data-on-click="setAction('resource/upgradeLegacy/dedicatedCloud-resource-upgradeLegacy', {
                                     upgradeType: $row.model.isUpgradable && 'demoToMonthly' || 'hourlyToMonthly',
                                     type: 'filer',
                                     id: $row.id
