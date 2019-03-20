@@ -30,7 +30,7 @@ angular
       this.$scope.currentService = this.currentService;
 
       this.$rootScope.$on('datacenter.veeam.reload', () => {
-        this.$scope.loadVeeam(true);
+        this.loadVeeam(true);
       });
 
       return this.loadVeeam();
