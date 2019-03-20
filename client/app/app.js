@@ -1,7 +1,9 @@
+import _ from 'lodash';
 import ngAtInternet from '@ovh-ux/ng-at-internet';
 import ngAtInternetUiRouterPlugin from '@ovh-ux/ng-at-internet-ui-router-plugin';
 import ngOvhApiWrappers from '@ovh-ux/ng-ovh-api-wrappers';
 import ngOvhHttp from '@ovh-ux/ng-ovh-http';
+import ngOvhOtrs from '@ovh-ux/ng-ovh-otrs';
 import ngOvhProxyRequest from '@ovh-ux/ng-ovh-proxy-request';
 import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
 import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
@@ -9,91 +11,85 @@ import ngOvhSwimmingPoll from '@ovh-ux/ng-ovh-swimming-poll';
 import ngOvhUserPref from '@ovh-ux/ng-ovh-user-pref';
 import ngOvhWebUniverseComponents from '@ovh-ux/ng-ovh-web-universe-components';
 import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
-import uiRouter from '@uirouter/angularjs';
-import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
 import ovhContacts from '@ovh-ux/ng-ovh-contacts';
-import ngOvhOtrs from '@ovh-ux/ng-ovh-otrs';
+import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
+import uiRouter from '@uirouter/angularjs';
 
 import config from './config/config';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
 
-const appDeps = [
-  'ovh-angular-pagination-front',
-  'ovh-utils-angular',
-  'ui.bootstrap',
-  'ui.router',
-  'ngRoute',
-  'ngSanitize',
-  'ngMessages',
-  'controllers',
-  'services',
-  'filters',
-  'directives',
-  'Billing',
-  'UserAccount',
-  'ui.utils',
-  'ovh-angular-q-allSettled',
-  'ovh-angular-export-csv',
-  'ovh-angular-tail-logs',
-  'ovhBrowserAlert',
-  'ui.validate',
-  ngAtInternet,
-  ngAtInternetUiRouterPlugin,
-  ngOvhApiWrappers,
-  ngOvhHttp,
-  ngOvhProxyRequest,
-  ngOvhSsoAuth,
-  ngOvhSsoAuthModalPlugin,
-  ngOvhSwimmingPoll,
-  ngOvhUserPref,
-  ngOvhWebUniverseComponents,
-  ngTranslateAsyncLoader,
-  'oui',
-  'ui.select',
-  uiRouter,
-  'Module.ip',
-  'Module.license',
-  'Module.download',
-  'internationalPhoneNumber',
-  'ovh-angular-sidebar-menu',
-  ngOvhOtrs,
-  'pascalprecht.translate',
-  'chart.js',
-  'ovh-angular-responsive-tabs',
-  'ngCkeditor',
-  'Module.otrs',
-  dedicatedUniverseComponents,
-  'xeditable',
-  ovhPaymentMethod,
-  ovhContacts,
-];
-
-if (WEBPACK_ENV.region === 'eu' || WEBPACK_ENV.region === 'ca') {
-  appDeps.push('Module.exchange');
-}
-
-angular.module('App', appDeps).constant('constants', {
-  prodMode: config.prodMode,
-  swsProxyRootPath: config.swsProxyRootPath,
-  aapiRootPath: config.aapiRootPath,
-  target: config.target,
-  renew: config.constants.RENEW_URL,
-  urls: config.constants.URLS,
-  UNIVERS: config.constants.UNIVERS,
-  TOP_GUIDES: config.constants.TOP_GUIDES,
-  vmsUrl: config.constants.vmsUrl,
-  travauxUrl: config.constants.travauxUrl,
-  aapiHeaderName: 'X-Ovh-Session',
-  vrackUrl: config.constants.vrackUrl,
-  MANAGER_URLS: config.constants.MANAGER_URLS,
-  REDIRECT_URLS: config.constants.REDIRECT_URLS,
-  DEFAULT_LANGUAGE: config.constants.DEFAULT_LANGUAGE,
-  FALLBACK_LANGUAGE: config.constants.FALLBACK_LANGUAGE,
-})
-  .constant('LANGUAGES', config.constants.LANGUAGES)
-  .constant('website_url', config.constants.website_url);
 angular
-  .module('App')
+  .module('App', [
+    'Billing',
+    'chart.js',
+    'controllers',
+    dedicatedUniverseComponents,
+    'directives',
+    'filters',
+    'internationalPhoneNumber',
+    'Module.download',
+    ['eu', 'ca'].includes(WEBPACK_ENV.region) ? 'Module.exchange' : undefined,
+    'Module.ip',
+    'Module.license',
+    'Module.otrs',
+    'ngCkeditor',
+    'ngMessages',
+    ngAtInternet,
+    ngAtInternetUiRouterPlugin,
+    ngOvhApiWrappers,
+    ngOvhHttp,
+    ngOvhOtrs,
+    ngOvhProxyRequest,
+    ngOvhSsoAuth,
+    ngOvhSsoAuthModalPlugin,
+    ngOvhSwimmingPoll,
+    ngOvhUserPref,
+    ngOvhWebUniverseComponents,
+    'ngRoute',
+    'ngSanitize',
+    ngTranslateAsyncLoader,
+    'oui',
+    'ovh-angular-export-csv',
+    'ovh-angular-pagination-front',
+    'ovh-angular-q-allSettled',
+    'ovh-angular-responsive-tabs',
+    'ovh-angular-sidebar-menu',
+    'ovh-angular-tail-logs',
+    'ovh-utils-angular',
+    'ovhBrowserAlert',
+    ovhContacts,
+    ovhPaymentMethod,
+    'pascalprecht.translate',
+    'services',
+    'ui.bootstrap',
+    'ui.router',
+    'ui.select',
+    'ui.utils',
+    'ui.validate',
+    uiRouter,
+    'UserAccount',
+    'xeditable',
+  ].filter(_.isString))
+  .constant('constants', {
+    prodMode: config.prodMode,
+    swsProxyRootPath: config.swsProxyRootPath,
+    aapiRootPath: config.aapiRootPath,
+    target: config.target,
+    renew: config.constants.RENEW_URL,
+    urls: config.constants.URLS,
+    UNIVERS: config.constants.UNIVERS,
+    TOP_GUIDES: config.constants.TOP_GUIDES,
+    vmsUrl: config.constants.vmsUrl,
+    travauxUrl: config.constants.travauxUrl,
+    aapiHeaderName: 'X-Ovh-Session',
+    vrackUrl: config.constants.vrackUrl,
+    MANAGER_URLS: config.constants.MANAGER_URLS,
+    REDIRECT_URLS: config.constants.REDIRECT_URLS,
+    DEFAULT_LANGUAGE: config.constants.DEFAULT_LANGUAGE,
+    FALLBACK_LANGUAGE: config.constants.FALLBACK_LANGUAGE,
+  })
+  .constant('LANGUAGES', config.constants.LANGUAGES)
+  .constant('website_url', config.constants.website_url)
   .config(/* @ngInject */(ovhProxyRequestProvider) => {
     ovhProxyRequestProvider.proxy('$http');
     ovhProxyRequestProvider.pathPrefix('apiv6');
@@ -113,8 +109,7 @@ angular
   .config(($urlServiceProvider) => {
     $urlServiceProvider.rules.otherwise('/configuration');
   })
-
-/*= ========= AT-INTERNET ========== */
+  /* ========== AT-INTERNET ========== */
   .config((atInternetProvider, atInternetUiRouterPluginProvider, constants) => {
     const level2 = constants.target === 'US' ? '57' : '3';
 
