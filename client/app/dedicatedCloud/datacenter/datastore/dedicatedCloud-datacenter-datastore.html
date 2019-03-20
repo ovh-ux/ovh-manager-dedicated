@@ -20,30 +20,39 @@
         <span data-ng-bind="'dedicatedCloud_tab_datastores_status_' + $row.status | translate"></span>
     </oui-column>
     <oui-column data-title=":: 'dedicatedCloud_tab_datastores_consumption' | translate">
-        <span data-ng-if="$row.billing === 'HOURLY' && isNan($row.consumption)"
+        <span data-ng-if="$row.billing === $ctrl.RESOURCE_BILLING_TYPES.hourly && isNan($row.consumption)"
                 data-translate="dedicatedCloud_tab_datastores_hourly_consumption_na">
         </span>
-        <span data-ng-if="$row.billing === 'HOURLY' && $row.consumption <= 1"
+        <span data-ng-if="$row.billing === $ctrl.RESOURCE_BILLING_TYPES.hourly && $row.consumption <= 1"
                 data-translate="dedicatedCloud_tab_datastores_hourly_consumption_1"
                 data-uib-tooltip="{{ 'dedicatedCloud_tab_host_hourly_usage_update' | translate:{ t0: ($row.consumptionLastUpdate|date:'short') } }}"
                 data-tooltip-placement="top">
         </span>
-        <span data-ng-if="$row.billing === 'HOURLY' && $row.consumption > 1"
+        <span data-ng-if="$row.billing === $ctrl.RESOURCE_BILLING_TYPES.hourly && $row.consumption > 1"
                 data-ng-bind="'dedicatedCloud_tab_datastores_hourly_consumption_other' | translate:{ t0: $row.consumption }"
                 data-uib-tooltip="{{ 'dedicatedCloud_tab_host_hourly_usage_update' | translate:{ t0: ($row.consumptionLastUpdate|date:'short') } }}"
                 data-tooltip-placement="top">
         </span>
     </oui-column>
     <oui-action-menu data-align="end"
-                        data-compact>
+                        data-compact
+        data-ng-if="$row.billing === $ctrl.RESOURCE_BILLING_TYPES.hourly">
         <oui-action-menu-item data-text="{{:: 'dedicatedCloud_updateResource_toMonthly' | translate }}"
-                                data-disabled="$row.billing !== 'HOURLY'"
+            data-ng-if="$ctrl.currentService.usesLegacyOrder"
                                 data-on-click="setAction('resource/upgradeLegacy/dedicatedCloud-resource-upgradeLegacy', {
                                     upgradeType: $row.model.isUpgradable && 'demoToMonthly' || 'hourlyToMonthly',
                                     type: 'filer',
                                     id: $row.id
                                 })">
         </oui-action-menu-item>
+
+        <oui-action-menu-item
+            data-text="{{:: 'dedicatedCloud_updateResource_toMonthly' | translate }}"
+            data-ng-if="!$ctrl.currentService.usesLegacyOrder"
+            data-ui-sref=".resourceUpgrade({
+                id: $row.id,
+                type: $ctrl.RESOURCE_UPGRADE_TYPES.datastore,
+            })"></oui-action-menu-item>
     </oui-action-menu>
     <extra-top>
         <oui-button data-disabled="!datacenter.model.canOrderFilers && $ctrl.currentService.usesLegacyOrder"
