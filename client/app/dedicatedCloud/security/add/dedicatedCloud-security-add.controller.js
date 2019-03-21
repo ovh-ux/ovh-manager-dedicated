@@ -1,18 +1,42 @@
-angular.module('App').controller('DedicatedCloudSecurityPolicyAddCtrl', ($scope, $stateParams, DedicatedCloud, $translate, REGEX) => {
-  $scope.regex = REGEX;
-  $scope.newNetwork = {
-    value: null,
-  };
+angular
+  .module('App')
+  .controller('DedicatedCloudSecurityPolicyAddCtrl', class {
+    /* @ngInject */
+    constructor(
+      $scope,
+      $stateParams,
+      $translate,
+      DedicatedCloud,
+      REGEX,
+    ) {
+      this.$scope = $scope;
+      this.$stateParams = $stateParams;
+      this.$translate = $translate;
+      this.DedicatedCloud = DedicatedCloud;
+      this.REGEX = REGEX;
+    }
 
-  $scope.addEntry = function () {
-    $scope.resetAction();
-    DedicatedCloud.addSecurityPolicy($stateParams.productId, $scope.newNetwork).then(
-      (data) => {
-        $scope.setMessage($translate.instant('dedicatedCloud_configuration_SECURITY_policy_add_success'), data);
-      },
-      (data) => {
-        $scope.setMessage($translate.instant('dedicatedCloud_configuration_SECURITY_policy_add_fail', [$scope.newNetwork.value]), data.data);
-      },
-    );
-  };
-});
+    $onInit() {
+      this.$scope.regex = this.REGEX;
+      this.$scope.newNetwork = {
+        value: null,
+      };
+      this.$scope.addEntry = () => this.addEntry();
+    }
+
+    addEntry() {
+      this.$scope.resetAction();
+
+      return this.DedicatedCloud
+        .addSecurityPolicy(this.$stateParams.productId, this.$scope.newNetwork)
+        .then((data) => {
+          this.$scope.setMessage(this.$translate.instant('dedicatedCloud_configuration_SECURITY_policy_add_success'), data);
+        })
+        .catch((err) => {
+          this.$scope.setMessage(this.$translate.instant('dedicatedCloud_configuration_SECURITY_policy_add_fail', [this.$scope.newNetwork.value]), {
+            ...err,
+            type: 'error',
+          });
+        });
+    }
+  });

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
+   <translation id="dedicatedCloud_alert_close">Fermer le message d'information</translation>
    <translation id="dedicatedCloud_dashboard_loading_error" qtlid="132083">Une erreur est survenue lors du chargement des informations de votre service.</translation>
    <translation id="dedicatedCloud_coming_soon" qtlid="4106">A venir</translation>
    <translation id="dedicatedCloud_banner_hdc_ready_label" qtlid="366293">OVH vous propose désormais de l'hébergement de données de Santé via son offre Private Cloud Healthcare. votre infrastructure est compatible !</translation>
@@ -26,8 +27,8 @@
    <translation id="dedicatedCloud_connection_policy_LAST" qtlid="145813">Déconnecter la plus récente</translation>
    <translation id="dedicatedCloud_connection_policy_FIRST" qtlid="145826">Déconnecter la plus ancienne</translation>
    <translation id="dedicatedCloud_user_access_policy" qtlid="145839">Politique d'accès</translation>
-   <translation id="dedicatedCloud_user_access_policy_FILTERED" qtlid="145852">Restreint</translation>
-   <translation id="dedicatedCloud_user_access_policy_OPEN" qtlid="75654">Ouvert</translation>
+   <translation id="dedicatedCloud_user_access_policy_FILTERED">Restreinte</translation>
+   <translation id="dedicatedCloud_user_access_policy_OPEN">Ouverte</translation>
    <translation id="dedicatedCloud_bandwidth" qtlid="38565">Bande passante</translation>
    <translation id="dedicatedCloud_datacenter_count" qtlid="30802">Datacentre</translation>
    <translation id="dedicatedCloud_order_license" qtlid="145865">Commander une licence</translation>
@@ -267,7 +268,7 @@
    <translation id="dedicatedCloud_datacenter_no_name" qtlid="155196">Datacenter {0}</translation>
    <translation id="dedicatedCloud_datacenter_wrong_name" qtlid="149774">Format invalide</translation>
    <translation id="dedicatedCloud_tab_user" qtlid="7738">Utilisateurs</translation>
-   <translation id="dedicatedCloud_user_management_authorization_vsphere" qtlid="146411">Gestion des autorisations utilisateur dans le vSphere client :</translation>
+   <translation id="dedicatedCloud_user_management_authorization_vsphere">Gestion des autorisations utilisateur dans le vSphere client</translation>
    <translation id="dedicatedCloud_search_user" qtlid="146424">Rechercher un utilisateur</translation>
    <translation id="dedicatedCloud_USER_warning_line" qtlid="147798">Valider ou annuler la modification que vous avez effectué sur les droits de l'utilisateur</translation>
    <translation id="dedicatedCloud_USER_name" qtlid="46792">Identifiant</translation>
@@ -373,7 +374,6 @@
    <translation id="dedicatedCloud_users_add_error" qtlid="277429">La création du nouvel utilisateur n'a pas pu être effectué.</translation>
    <translation id="dedicatedCloud_users_add_done" qtlid="277442">Le nouvel utilisateur a été créé avec succès.</translation>
 
-   <translation id="dedicatedCloud_USER_add_user_step1_question" qtlid="202538">Veuillez remplir ce formulaire afin de créer un nouvel utilisateur :</translation>
    <translation id="dedicatedCloud_USER_add_user_name" qtlid="3818">Nom</translation>
    <translation id="dedicatedCloud_USER_add_user_password" qtlid="2270">Mot de passe</translation>
    <translation id="dedicatedCloud_USER_add_user_mail" qtlid="21679">Mail</translation>
@@ -421,30 +421,31 @@
    <translation id="dedicatedCloud_SECURITY_title" qtlid="371739">IP et blocs autorisés à se connecter au Private Cloud :</translation>
    <translation id="dedicatedCloud_SECURITY_modify" qtlid="147941">Modifier la plage d’IP</translation>
    <translation id="dedicatedCloud_SECURITY_delete" qtlid="147954">Supprimer la plage d’IP</translation>
-   <translation id="dedicatedCloud_SECURITY_expiration_session" qtlid="146801">Expiration de session:</translation>
+   <translation id="dedicatedCloud_SECURITY_expiration_session">Délai d'expiration d'une session</translation>
    <translation id="dedicatedCloud_SECURITY_expiration_session_value" qtlid="146814">{0} minutes</translation>
    <translation id="dedicatedCloud_SECURITY_expiration_session_never" qtlid="8770">Jamais</translation>
-   <translation id="dedicatedCloud_SECURITY_nb_simultaneous_connection" qtlid="146827">Connexions simultanées:</translation>
+   <translation id="dedicatedCloud_SECURITY_nb_simultaneous_connection">Nombre de connexions simultanées</translation>
    <translation id="dedicatedCloud_SECURITY_nb_simultaneous_connection_none" qtlid="8674">Aucune</translation>
    <translation id="dedicatedCloud_SECURITY_nb_simultaneous_connection_value" qtlid="147967">{0} connexions</translation>
-   <translation id="dedicatedCloud_SECURITY_access_policy" qtlid="147980">Politique d'accès au vCenter</translation>
-   <translation id="dedicatedCloud_SECURITY_access_policy_FILTERED" qtlid="145852">Restreint</translation>
-   <translation id="dedicatedCloud_SECURITY_access_policy_OPEN" qtlid="56189">Ouverte</translation>
-   <translation id="dedicatedCloud_SECURITY_logout_policy" qtlid="146866">Politique de déconnexion:</translation>
+   <translation id="dedicatedCloud_SECURITY_access_policy">Modifier la politique d'accès au vCenter</translation>
+   <translation id="dedicatedCloud_SECURITY_access_policy_FILTERED">Restreinte</translation>
+   <translation id="dedicatedCloud_SECURITY_access_policy_OPEN">Ouverte</translation>
+   <translation id="dedicatedCloud_SECURITY_logout_policy">Politique de déconnexion</translation>
    <translation id="dedicatedCloud_SECURITY_logout_policy_FIRST" qtlid="146879">Déconnexion du premier utilisateur connecté</translation>
    <translation id="dedicatedCloud_SECURITY_logout_policy_LAST" qtlid="146892">Déconnexion du dernier utilisateur connecté</translation>
    <translation id="dedicatedCloud_SECURITY_IP_name" qtlid="146905">Nom IP</translation>
    <translation id="dedicatedCloud_SECURITY_allow" qtlid="146918">Droit</translation>
    <translation id="dedicatedCloud_SECURITY_description" qtlid="9238">Description</translation>
-   <translation id="dedicatedCloud_SECURITY_change_timeout" qtlid="146931">Changer le délai d'expiration</translation>
-   <translation id="dedicatedCloud_SECURITY_change_nb_simultaneous_connection" qtlid="41530">Connexions simultanées</translation>
+   <translation id="dedicatedCloud_SECURITY_change_timeout">Modifier le délai d'expiration d'une session</translation>
+   <translation id="dedicatedCloud_SECURITY_change_nb_simultaneous_connection">Modifier le nombre de connexions simultanées</translation>
    <translation id="dedicatedCloud_SECURITY_change_nb_simultaneous_connection_success" qtlid="146944">Le nombre maximum de connexions simultanées a été modifié avec succès.</translation>
    <translation id="dedicatedCloud_SECURITY_change_nb_simultaneous_connection_failure" qtlid="146957">Une erreur est survenue lors de la modification du nombre maximum de connexions simultanées.</translation>
-   <translation id="dedicatedCloud_SECURITY_add_IP" qtlid="146970">Ajout des IP</translation>
-   <translation id="dedicatedCloud_SECURITY_delete_IP" qtlid="146983">Supprimer des IP</translation>
+   <translation id="dedicatedCloud_SECURITY_change_logout_policy">Modifier la politique de déconnexion</translation>
+   <translation id="dedicatedCloud_SECURITY_add_IP">Ajouter une nouvelle plage d'adresses IP</translation>
+   <translation id="dedicatedCloud_SECURITY_delete_IP">Supprimer des plages d'adresses IP</translation>
    <translation id="dedicatedCloud_configuration_SECURITY_policy_access_success" qtlid="146996">La politique d'accès a été modifiée avec succès.</translation>
    <translation id="dedicatedCloud_configuration_SECURITY_policy_access_fail" qtlid="147009">Une erreur est survenue lors de la modification de la politique d'accès.</translation>
-   <translation id="dedicatedCloud_SECURITY_userAccess_policy" qtlid="146840">Politique d'accès:</translation>
+   <translation id="dedicatedCloud_SECURITY_userAccess_policy">Politique d'accès au vCenter</translation>
    <translation id="dedicatedCloud_SECURITY_userAccess_policy_FILTERED" qtlid="250732">Restreinte</translation>
    <translation id="dedicatedCloud_SECURITY_userAccess_policy_OPEN" qtlid="56189">Ouverte</translation>
    <translation id="dedicatedCloud_configuration_SECURITY_policy_logout_success" qtlid="147022">La politique de déconnexion a été modifiée avec succès.</translation>
@@ -462,15 +463,14 @@
    <translation id="dedicatedCloud_configuration_SECURITY_policy_add_fail" qtlid="148032">Une erreur est survenue lors de l'ajout de la règle de sécurité {0}.</translation>
    <translation id="dedicatedCloud_configuration_SECURITY_update_session_timeout_success" qtlid="147139">Le délai d'expiration sera modifié dans quelques instants.</translation>
    <translation id="dedicatedCloud_configuration_SECURITY_update_session_timeout_fail" qtlid="147152">Une erreur est survenue lors de la modification du délai d'expiration.</translation>
-   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_title" qtlid="147165">Nombre de connexions simultanées</translation>
-   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_step1_question" qtlid="148045">Veuillez saisir le nombre maximum de connexions d’utilisateurs simultanées :</translation>
-   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections" qtlid="148058">connexions utilisateurs</translation>
-   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_step2_question" qtlid="183567">Vous allez modifier le nombre de connexions d’utilisateurs simultanées de <br/><b>{0}</b> à <b>{1}</b></translation>
-   <translation id="dedicatedCloud_configuration_security_policy_access_title" qtlid="147191">Modifier la politique d'accès</translation>
-   <translation id="dedicatedCloud_configuration_security_policy_access_step1_question" qtlid="147204">Sélectionnez la politique d'accès que vous voulez appliquer :</translation>
+   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_title">Modifier le nombre de connexions simultanées</translation>
+   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_step1_question">Nombre maximum de connexions d’utilisateurs simultanées</translation>
+   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_step2_question">Vous allez modifier le nombre de connexions d’utilisateurs simultanées de « {0} » à « {1} ».</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_access_title">Modifier la politique d'accès au vCenter</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_access_step1_question">Politique d'accès à appliquer</translation>
    <translation id="dedicatedCloud_configuration_security_policy_access_step1_value" qtlid="147217">Sélectionnez</translation>
    <translation id="dedicatedCloud_configuration_security_policy_logout_title" qtlid="147230">Modifier la politique de déconnexion</translation>
-   <translation id="dedicatedCloud_configuration_security_policy_logout_step1_question" qtlid="148084">Sélectionnez la politique de déconnexion en cas de double connexion :</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_logout_step1_question">Politique de déconnexion en cas de double connexion</translation>
    <translation id="dedicatedCloud_configuration_security_policy_logout_step1_value" qtlid="147217">Sélectionnez</translation>
    <translation id="dedicatedCloud_configuration_security_policy_delete_title" qtlid="147256">Supprimer des IPs</translation>
    <translation id="dedicatedCloud_configuration_security_policy_delete_step1_question" qtlid="434906">Etes-vous sûr de vouloir supprimer l’accès pour l'IP {0} ?</translation>
@@ -482,11 +482,10 @@
    <translation id="dedicatedCloud_configuration_security_policy_add_step1_question" qtlid="148123">Entrez l'ip de la nouvelle règle de sécurité :</translation>
    <translation id="dedicatedCloud_configuration_security_policy_add_step1_description" qtlid="103702">Description :</translation>
    <translation id="dedicatedCloud_configuration_security_policy_add_step2_question" qtlid="183580">Vous allez ajouté l'ip <b>{0}</b> comme nouvelle règle de sécurité</translation>
-   <translation id="dedicatedCloud_configuration_security_update_session_timeout_title" qtlid="147321">Modification du délai d'expiration</translation>
-   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step1_question" qtlid="147334">Veuillez saisir le nombre de minutes avant l'expiration d'une session :</translation>
-   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step1_unit" qtlid="44224">minutes</translation>
+   <translation id="dedicatedCloud_configuration_security_update_session_timeout_title">Modifier le délai d'expiration d'une session</translation>
+   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step1_question">Nombre de minutes avant l'expiration d'une session</translation>
    <translation id="dedicatedCloud_configuration_security_update_session_timeout_step1_never" qtlid="148149">la session n'expire jamais</translation>
-   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step2_question" qtlid="183593">Vous allez modifier le nombre de minutes avant l'expiration d'une session de <br/><b>{0}</b> à <b>{1}</b></translation>
+   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step2_question">Vous allez modifier le nombre de minutes avant l'expiration d'une session de « {0} » à « {1} ».</translation>
    <translation id="dedicatedCloud_network" qtlid="25591">Réseau</translation>
    <translation id="dedicatedCloud_network_information_ACE" qtlid="147347">ACE:</translation>
    <translation id="dedicatedCloud_network_information_blocIPRipe" qtlid="147360">Bloc IP Ripe</translation>
