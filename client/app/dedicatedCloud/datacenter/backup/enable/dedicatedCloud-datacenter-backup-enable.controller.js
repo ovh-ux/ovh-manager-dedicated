@@ -64,7 +64,7 @@ angular
           this.veamBackupUrl = veamBackupUrl;
         })
         .catch((error) => {
-          this.Alerter.error([this.$translate.instant('dedicatedCloud_tab_veeam_enable_fail'), _.get(error, 'data.message')].join(' '));
+          this.Alerter.error(`${this.$translate.instant('dedicatedCloud_tab_veeam_enable_fail')}. ${_.get(error, 'message', '')}`.trim());
         })
         .finally(() => {
           this.loading.init = false;
