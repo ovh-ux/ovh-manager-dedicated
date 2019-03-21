@@ -40,9 +40,9 @@ angular
           hosts: this.DedicatedCloud
             .getHosts(this.$stateParams.productId, this.$stateParams.datacenterId),
         })
-        .then((data) => {
-          this.datacenter = data.datacenter;
-          this.hosts = data.hosts;
+        .then(({ datacenter, hosts }) => {
+          this.datacenter = datacenter;
+          this.hosts = hosts;
         })
         .finally(() => {
           this.loading.init = false;
