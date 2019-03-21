@@ -56,13 +56,10 @@ angular.module('App').controller('DedicatedCloudVMwareOptionCtrl', ($scope, $sta
       .catch((err) => {
         _.set(option, 'error', err);
         $scope.setMessage(
-          $translate.instant('dedicatedCloud_dashboard_loading_error', {
-            t0: {
-              message: err.data ? '' : err.message,
-              type: 'ERROR',
-            },
-          }),
-          angular.extend(err, { type: 'ERROR' }),
+          $translate.instant('dedicatedCloud_dashboard_loading_error'), {
+            ...err,
+            type: 'error',
+          },
         );
       });
   }

@@ -5,6 +5,7 @@ angular.module('App').config(($stateProvider) => {
       dedicatedCloudView: {
         templateUrl: 'dedicatedCloud/datacenter/dedicatedCloud-datacenter.html',
         controller: 'DedicatedCloudSubDatacenterCtrl',
+        controllerAs: '$ctrl',
       },
       'pccDatacenterView@app.dedicatedClouds.datacenter': {
         templateUrl: 'dedicatedCloud/datacenter/dashboard/dedicatedCloud-datacenter-dashboard.html',

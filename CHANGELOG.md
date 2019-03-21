@@ -1,3 +1,39 @@
+<a name="10.13.3"></a>
+## [10.13.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.13.2...v10.13.3) (2019-03-21)
+
+
+### Bug Fixes
+
+* **billing:** add missing dependency ([5183fe1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5183fe1))
+* **dedicatedCloud.translations:** change some zerto translations ([#1007](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1007)) ([016a4e3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/016a4e3))
+* **deps:** upgrade ng-ovh-otrs to v7.0.0 ([#1001](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1001)) ([2602ce5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2602ce5))
+* **i18n:** retrieve ([83406c6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/83406c6))
+* **i18n:** retrieve translations ([8bbab38](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8bbab38))
+* **i18n:** submit translations ([4ce3f52](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4ce3f52))
+
+
+
+<a name="10.13.2"></a>
+## [10.13.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.13.1...v10.13.2) (2019-03-20)
+
+
+### Bug Fixes
+
+* **dedicated.server:** edit display name ([449b530](https://github.com/ovh-ux/ovh-manager-dedicated/commit/449b530))
+
+
+
+<a name="10.13.1"></a>
+## [10.13.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.13.0...v10.13.1) (2019-03-19)
+
+
+### Features
+
+* **i18n:** retrieve translations ([2c4cae7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2c4cae7))
+* **i18n:** retrieve translations ([b050b5e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b050b5e))
+
+
+
 <a name="10.13.0"></a>
 # [10.13.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.12.0...v10.13.0) (2019-03-13)
 
