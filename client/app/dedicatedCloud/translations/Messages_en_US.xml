@@ -815,7 +815,7 @@
    <translation id="dedicatedCloud_datacenter_pcc_name" qtlid="520039">Private Cloud name: {{pcc}}</translation>
    <translation id="dedicatedCloud_datacenter_main_datacenter_name" qtlid="520052">Private Cloud datacentre ID</translation>
    <translation id="dedicatedCloud_datacenter_main_datacenter_name_placeholder" qtlid="520065">Select a primary datacentre</translation>
-   <translation id="dedicatedCloud_datacenter_order_ip">Vous n’avez aucun pool d’adresses IP disponible. Veuillez en <a ui-sref="{{sref}}">commander</a></translation>
+   <translation id="dedicatedCloud_datacenter_order_ip" qtlid="521594">You do not have any available IP address pools. Please <a ui-sref="{{sref}}">order one</a></translation>
    <translation id="dedicatedCloud_datacenter_main_ip_address_pool_available" qtlid="520091">Available public IP address pools</translation>
    <translation id="dedicatedCloud_datacenter_main_ip_address_pool_available_placeholder" qtlid="520104">Select an available public IP address</translation>
    <translation id="dedicatedCloud_datacenter_secondary_pcc_name" qtlid="520117">Secondary Private Cloud ID and geographical zone</translation>
@@ -823,7 +823,7 @@
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_list" qtlid="520143">List of secondary datacentres</translation>
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_name_placeholder" qtlid="520156">Select a secondary datacentre</translation>
    <translation id="dedicatedCloud_datacenter_secondary_ip_address_pool_available" qtlid="520169">Public IP address pool available on the secondary Private Cloud</translation>
-   <translation id="dedicatedCloud_datacenter_order_ip_secondary_pcc">Vous n’avez aucun pool d’adresses IP disponible sur ce Private Cloud. Veuillez en <a ui-sref="{{sref}}">commander</a> ou choisissez un autre Private Cloud.</translation>
+   <translation id="dedicatedCloud_datacenter_order_ip_secondary_pcc" qtlid="521607">You do not have any available IP address pools for this Private Cloud. Please <a ui-sref="{{sref}}">order one</a> or choose another Private Cloud.</translation>
 
    <translation id="dedicatedCloud_datacenter_secondary_ip_address_pool_available_placeholder" qtlid="520104">Select an available public IP address</translation>
 
@@ -833,9 +833,9 @@
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_gateway_help" qtlid="520195">Helps to complete</translation>
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_vra_network" qtlid="520208">Remote vRA network (optional)</translation>
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_subnetwork_mask" qtlid="520221">Subnet mask (optional)</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_pcc_on_same_location_warning">Ce Private Cloud doit être localisé dans un datacenter différent du Private Cloud primaire.</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_without_hosts">Le datacenter sélectionné ne dispose d’aucun host. Choisissez un datacenter avec au moins un host, ou veuillez en <a ui-sref="{{sref}}">commander</a> pour ce dernier</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_get_hosts_error">Une erreur est survenue lors de la récupération des hosts du datacenter secondaire</translation>
+   <translation id="dedicatedCloud_datacenter_secondary_datacenter_pcc_on_same_location_warning" qtlid="521620">This Private Cloud must be hosted in a different datacentre to the primary Private Cloud.</translation>
+   <translation id="dedicatedCloud_datacenter_secondary_datacenter_without_hosts" qtlid="521633">The datacentre you have selected does not have any hosts. Please select a datacentre with at least one host, or <a ui-sref="{{sref}}">order one</a> for this datacentre.</translation>
+   <translation id="dedicatedCloud_datacenter_secondary_datacenter_get_hosts_error" qtlid="521646">An error has occurred retrieving hosts for the secondary datacentre</translation>
 
    <translation id="dedicatedCloud_datacenter_drp_confirm_create_success_part_one" qtlid="520247">Your Zerto DRP has been created!</translation>
    <translation id="dedicatedCloud_datacenter_drp_confirm_create_success_part_two" qtlid="520260">Your ZSSP password has been sent to {{email}}.</translation>
