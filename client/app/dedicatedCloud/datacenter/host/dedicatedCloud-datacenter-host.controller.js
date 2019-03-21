@@ -27,8 +27,8 @@ angular
 
       return this.DedicatedCloud
         .getDatacenterInfoProxy(this.$stateParams.productId, this.$stateParams.datacenterId)
-        .then((datacenter) => {
-          this.$scope.datacenter.model.commercialRangeName = datacenter.commercialRangeName;
+        .then(({ commercialRangeName }) => {
+          this.$scope.datacenter.model.commercialRangeName = commercialRangeName;
           this.$scope.datacenter.model.hasDiscountAMD = this.DedicatedCloud
             .hasDiscount(this.$scope.datacenter.model);
         })
