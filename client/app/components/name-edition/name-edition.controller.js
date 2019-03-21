@@ -19,9 +19,11 @@ angular.module('App').controller('NameEditionCtrl', class NameEditionCtrl {
         this.$uibModalInstance.close(this.newValue);
       })
       .catch((err) => {
-        this.Alerter.error([this.$translate.instant(`${this.modalContextTitle}_edit_error`, {
+        const message = this.$translate.instant(`${this.modalContextTitle}_edit_error`, {
           t0: this.newValue,
-        }), _.get(err, 'message')].join('. '), this.data.destinationId || 'dedicatedCloud');
+        });
+        const errorMessage = _.get(err, 'message', '');
+        this.Alerter.error(`${message}. ${errorMessage}`.trim(), this.data.destinationId || 'dedicatedCloud');
         this.$uibModalInstance.dismiss();
       })
       .finally(() => {
