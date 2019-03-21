@@ -1,6 +1,6 @@
 {
   "name": "ovh-manager-dedicated",
-  "version": "10.12.0",
+  "version": "10.13.3",
   "private": true,
   "description": "OVH Control Panel Dedicated UI",
   "keywords": [
@@ -54,6 +54,7 @@
     "@ovh-ux/ng-ovh-api-wrappers": "^3.0.0",
     "@ovh-ux/ng-ovh-contacts": "^1.0.0",
     "@ovh-ux/ng-ovh-http": "^4.0.1-beta.0",
+    "@ovh-ux/ng-ovh-otrs": "^7.0.0",
     "@ovh-ux/ng-ovh-payment-method": "^2.0.0",
     "@ovh-ux/ng-ovh-proxy-request": "^1.0.0-beta.0",
     "@ovh-ux/ng-ovh-sso-auth": "^4.0.0",
@@ -112,7 +113,6 @@
     "ovh-angular-actions-menu": "^3.2.0",
     "ovh-angular-browser-alert": "ovh-ux/ovh-angular-browser-alert#^1.0.0",
     "ovh-angular-export-csv": "^0.3.2",
-    "ovh-angular-otrs": "^6.3.0",
     "ovh-angular-pagination-front": "^7.0.0",
     "ovh-angular-q-allsettled": "^0.3.1",
     "ovh-angular-responsive-popover": "^4.0.1",
@@ -120,7 +120,7 @@
     "ovh-angular-sidebar-menu": "^7.2.2",
     "ovh-angular-tail-logs": "^1.1.1",
     "ovh-angular-toaster": "^0.8.0",
-    "ovh-api-services": "^6.1.0",
+    "ovh-api-services": "^6.1.2",
     "ovh-jquery-ui-draggable-ng": "^0.0.5",
     "ovh-manager-webfont": "^1.0.2",
     "ovh-module-exchange": "git+https://github.com/ovh-ux/ovh-module-exchange.git#feat/account-renew",

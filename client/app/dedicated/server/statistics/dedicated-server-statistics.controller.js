@@ -87,6 +87,7 @@ angular.module('controllers').controller('controllers.Server.Stats', (
   $scope.loadStatistics = function () {
     const nameServer = null;
     $scope.serverStatsLoad.loading = true;
+    $scope.serverStatsLoad.error = false;
     const promises = {
       interfaces: Server.getNetworkInterfaces($stateParams.productId),
       statConst: Server.getStatisticsConst(),
@@ -161,6 +162,7 @@ angular.module('controllers').controller('controllers.Server.Stats', (
 
   $scope.getStatistics = function () {
     $scope.serverStatsLoad.loading = true;
+    $scope.serverStatsLoad.error = false;
     Server.getStatistics($stateParams.productId, $scope.serverStats.networkChoice, $scope.serverStats.typeChoice, $scope.serverStats.periodeChoice)
       .then((statistics) => {
         $scope.serverStats.model = statistics;

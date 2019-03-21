@@ -562,8 +562,8 @@
    <translation id="dedicatedCloud_confirm_close_service" qtlid="299923">Vahvistus palvelun sulkemisesta</translation>
    <translation id="dedicatedCloud_confirm_close_question" qtlid="299936">Kerro meille, mistä syystä päädyit sulkemaan palvelun?</translation>
    <translation id="dedicatedCloud_confirm_close_reason_not_needed_anymore" qtlid="299949">En käytä enää kyseistä palvelua</translation>
-   <translation id="dedicatedCloud_confirm_close_reason_too_hard_to_use" qtlid="299962">Työkalut ovat liian monimutkaisia</translation>
-   <translation id="dedicatedCloud_confirm_close_reason_lack_of_performances" qtlid="299975">Järjestelmien suorituskyky ei ole riittävä</translation>
+   <translation id="dedicatedCloud_confirm_close_reason_too_hard_to_use" qtlid="521431">Les outils sont trop complexes</translation>
+   <translation id="dedicatedCloud_confirm_close_reason_lack_of_performances" qtlid="521444">Les performances du systèmes sont insuffisantes</translation>
    <translation id="dedicatedCloud_confirm_close_reason_not_reliable" qtlid="299988">Palvelu ei ole tarpeeksi luotettava</translation>
    <translation id="dedicatedCloud_confirm_close_reason_too_expensive" qtlid="300001">Palvelu on liian kallis</translation>
    <translation id="dedicatedCloud_confirm_close_reason_migrated_to_another_ovh_product" qtlid="300014">Käytän toista OVH:n palvelua</translation>
@@ -642,7 +642,7 @@
    <translation id="dedicatedCloud_vm_encryption_kms_delete" qtlid="506416">Supprimer ce KMS</translation>
    <translation id="dedicatedCloud_vm_encryption_kms_id" qtlid="8194">ID</translation>
    <translation id="dedicatedCloud_vm_encryption_kms_description" qtlid="9238">Kuvaus</translation>
-   <translation id="dedicatedCloud_vm_encryption_kms_optional" qtlid="175244">Vaihtoehtoinen</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_optional" qtlid="521457">optionnel</translation>
    <translation id="dedicatedCloud_vm_encryption_kms_ip" qtlid="25615">IP</translation>
    <translation id="dedicatedCloud_vm_encryption_kms_port" qtlid="9034">Portti</translation>
    <translation id="dedicatedCloud_vm_encryption_kms_sslThumbprint" qtlid="506429">SSL Thumbprint</translation>
@@ -798,6 +798,7 @@
    <translation id="dedicatedCloud_datacenter_backup_enable_version_explain" qtlid="503812">Laskutus tapahtuu varmuuskopioitujen virtuaalikoneiden lukumäärän perusteella, <a href="{{url}}" target="_blank">tällä sivulla</a> olevien ehtojen mukaisesti.</translation>
    <translation id="dedicatedCloud_datacenter_backup_enable_no_offer" qtlid="503825">Yhtään Veeam Backup -tuotetta ei ole saatavilla konesalissa <strong>{{name}}</strong>.</translation>
 
+<!-- Disaster Recovery Plan -->
    <translation id="dedicatedCloud_tab_drp" qtlid="519896">Plan de reprise d’activité (PRA)</translation>
    <translation id="dedicatedCloud_datacenter_drp_subtitle" qtlid="519909">Créez votre plan de reprise d’activité avec Zerto</translation>
    <translation id="dedicatedCloud_datacenter_drp_details" qtlid="519922">Assurez la protection de votre système d’information en configurant votre plan de reprise d’activité. Basculez votre infrastructure en 1 clic et quelques minutes en cas de dysfonctionnement ou d’interruption de service. Attention, vous devez posséder un Private Cloud secondaire avant d’activer cette option.</translation>
@@ -814,7 +815,7 @@
    <translation id="dedicatedCloud_datacenter_pcc_name" qtlid="520039">Nom du Private Cloud : {{pcc}}</translation>
    <translation id="dedicatedCloud_datacenter_main_datacenter_name" qtlid="520052">Identifiant du datacenter Private Cloud correspondant</translation>
    <translation id="dedicatedCloud_datacenter_main_datacenter_name_placeholder" qtlid="520065">Choisissez votre datacenter principal</translation>
-   <translation id="dedicatedCloud_datacenter_order_ip" qtlid="520078">Vous n’avez aucun pool d’adresses IP disponible. Vous pouvez en commander</translation>
+   <translation id="dedicatedCloud_datacenter_order_ip" qtlid="521594">Vous n’avez aucun pool d’adresses IP disponible. Veuillez en <a ui-sref="{{sref}}">commander</a></translation>
    <translation id="dedicatedCloud_datacenter_main_ip_address_pool_available" qtlid="520091">Pool d’adresses IP publiques disponible</translation>
    <translation id="dedicatedCloud_datacenter_main_ip_address_pool_available_placeholder" qtlid="520104">Choisissez une IP publique libre</translation>
    <translation id="dedicatedCloud_datacenter_secondary_pcc_name" qtlid="520117">Identifiant et zone géographique du Private Cloud secondaire</translation>
@@ -822,7 +823,7 @@
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_list" qtlid="520143">Liste des datacenters secondaires</translation>
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_name_placeholder" qtlid="520156">Choisissez le datacenter secondaire</translation>
    <translation id="dedicatedCloud_datacenter_secondary_ip_address_pool_available" qtlid="520169">Pool d’adresses IP publiques disponible du Private Cloud secondaire</translation>
-   <translation id="dedicatedCloud_datacenter_order_ip_secondary_pcc" qtlid="520182">Vous n’avez aucun pool d’adresses IP disponible sur ce Private Cloud. Vous pouvez en commander</translation>
+   <translation id="dedicatedCloud_datacenter_order_ip_secondary_pcc" qtlid="521607">Vous n’avez aucun pool d’adresses IP disponible sur ce Private Cloud. Veuillez en <a ui-sref="{{sref}}">commander</a> ou choisissez un autre Private Cloud.</translation>
 
    <translation id="dedicatedCloud_datacenter_secondary_ip_address_pool_available_placeholder" qtlid="520104">Choisissez une IP publique libre</translation>
 
@@ -832,7 +833,9 @@
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_gateway_help" qtlid="520195">Aide à compléter</translation>
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_vra_network" qtlid="520208">Réseau vRA distant (optionnel)</translation>
    <translation id="dedicatedCloud_datacenter_secondary_datacenter_subnetwork_mask" qtlid="520221">Masque de sous-réseau (optionnel)</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_ip_example_placeholder" qtlid="520234">21.134.170.235</translation>
+   <translation id="dedicatedCloud_datacenter_secondary_datacenter_pcc_on_same_location_warning" qtlid="521620">Ce Private Cloud doit être localisé dans un datacenter différent du Private Cloud primaire.</translation>
+   <translation id="dedicatedCloud_datacenter_secondary_datacenter_without_hosts" qtlid="521633">Le datacenter sélectionné ne dispose d’aucun host. Choisissez un datacenter avec au moins un host, ou veuillez en <a ui-sref="{{sref}}">commander</a> pour ce dernier</translation>
+   <translation id="dedicatedCloud_datacenter_secondary_datacenter_get_hosts_error" qtlid="521646">Une erreur est survenue lors de la récupération des hosts du datacenter secondaire</translation>
 
    <translation id="dedicatedCloud_datacenter_drp_confirm_create_success_part_one" qtlid="520247">Votre PRA Zerto a été créé avec succès !</translation>
    <translation id="dedicatedCloud_datacenter_drp_confirm_create_success_part_two" qtlid="520260">Vous avez reçu votre mot de passe ZSSP sur l’adresse email {{email}}.</translation>
