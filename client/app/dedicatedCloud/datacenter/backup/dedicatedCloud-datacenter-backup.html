@@ -5,23 +5,34 @@
     <oui-spinner></oui-spinner>
 </div>
 
-<div class="row"
-        data-ng-if="!loading && veeam.model">
-    <dl class="col-sm-9">
-        <dt data-translate="dedicatedCloud_tab_veeam_state"></dt>
-        <dd data-translate="{{ 'dedicatedCloud_tab_veeam_' + veeam.model.state.toUpperCase() }}"></dd>
-    </dl>
-    <div class="col-sm-3">
-        <a class="btn btn-block btn-default"
-            data-translate="dedicatedCloud_tab_veeam_on"
-            data-ng-if="veeam.model.state === veeam.constants.DISABLED"
-            data-ui-sref="{{ currentService.usesLegacyOrder ? 'app.dedicatedClouds.datacenter.backup.enableLegacy' : 'app.dedicatedClouds.datacenter.backup.enable' }}">
-        </a>
+<div data-ng-if="!loading">
 
-        <a class="btn btn-block btn-default"
-            data-translate="dedicatedCloud_tab_veeam_off"
-            data-ng-if="veeam.model.state === veeam.constants.ENABLED"
-            data-ui-sref="app.dedicatedClouds.datacenter.backup.disable">
-        </a>
+    <div class="row"
+        data-ng-if="isSplaActive && veeam.model">
+        <dl class="col-sm-9">
+            <dt data-translate="dedicatedCloud_tab_veeam_state"></dt>
+            <dd data-translate="{{ 'dedicatedCloud_tab_veeam_' + veeam.model.state.toUpperCase() }}"></dd>
+        </dl>
+
+        <div class="col-sm-3">
+            <a class="btn btn-block btn-default"
+                data-translate="dedicatedCloud_tab_veeam_on"
+                data-ng-if="veeam.model.state === veeam.constants.DISABLED"
+                data-ui-sref="{{ currentService.usesLegacyOrder ? 'app.dedicatedClouds.datacenter.backup.enableLegacy' : 'app.dedicatedClouds.datacenter.backup.enable' }}">
+            </a>
+
+            <a class="btn btn-block btn-default"
+                data-translate="dedicatedCloud_tab_veeam_off"
+                data-ng-if="veeam.model.state === veeam.constants.ENABLED"
+                data-ui-sref="app.dedicatedClouds.datacenter.backup.disable">
+            </a>
+        </div>
     </div>
+
+    <p data-ng-if="!isSplaActive">
+        <span data-translate="dedicatedCloud_tab_veeam_noSPLA"></span>
+        <a
+            data-translate="dedicatedCloud_tab_veeam_splaActivationLink"
+            data-ui-sref="app.dedicatedClouds.license"></a>
+    </p>
 </div>

@@ -33,22 +33,35 @@ angular
         this.loadVeeam(true);
       });
 
-      return this.loadVeeam();
+      return this.fetchInitialData();
     }
 
-    loadVeeam(forceRefresh) {
+    fetchInitialData() {
       this.$scope.loading = true;
 
-      return this.DedicatedCloud
-        .getVeeam(this.$stateParams.productId, this.$stateParams.datacenterId, forceRefresh)
-        .then((veeam) => {
-          this.$scope.veeam.model = veeam;
-        })
+      return this.loadLicences()
+        .then(() => this.loadVeeam())
         .catch((data) => {
           this.$scope.setMessage(this.$translate.instant('dedicatedCloud_tab_veeam_loading_error'), angular.extend(data, { type: 'ERROR' }));
         })
         .finally(() => {
           this.$scope.loading = false;
+        });
+    }
+
+    loadLicences() {
+      return this.DedicatedCloud
+        .getDatacenterLicence(this.$stateParams.productId, this.currentService.usesLegacyOrder)
+        .then(({ isSplaActive }) => {
+          this.$scope.isSplaActive = isSplaActive;
+        });
+    }
+
+    loadVeeam(forceRefresh) {
+      return this.DedicatedCloud
+        .getVeeam(this.$stateParams.productId, this.$stateParams.datacenterId, forceRefresh)
+        .then((veeam) => {
+          this.$scope.veeam.model = veeam;
         });
     }
   });
