@@ -36,16 +36,6 @@ angular
       return this.loadVeeam();
     }
 
-    canBeDisabled() {
-      return this.$scope.veeam.model
-        && this.$scope.veeam.model.state === this.$scope.veeam.constants.ENABLED;
-    }
-
-    canBeActivated() {
-      return this.$scope.veeam.model
-        && this.$scope.veeam.model.state === this.$scope.veeam.constants.DISABLED;
-    }
-
     loadVeeam(forceRefresh) {
       this.$scope.loading = true;
 
