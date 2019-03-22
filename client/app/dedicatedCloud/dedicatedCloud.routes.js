@@ -13,9 +13,10 @@ angular
         '': {
           templateUrl: 'dedicatedCloud/dedicatedCloud.html',
           controller: 'DedicatedCloudCtrl',
+          controllerAs: '$ctrl',
         },
         'pccView@app.dedicatedClouds': {
-          templateUrl: 'dedicatedCloud/dashboard/legacy/dedicatedCloud-dashboardLegacy.html',
+          templateUrl: 'dedicatedCloud/dashboard/template.html',
         },
       },
       reloadOnSearch: false,
