@@ -39,13 +39,11 @@ export default class {
           data: () => ({
             contextTitle: 'dedicatedCloud_description',
             productId: this.$stateParams.productId,
+            successText: this.$translate.instant('dedicatedCloud_dashboard_nameModifying_success'),
             value: this.currentService.description,
           }),
         },
-      }).result
-      .then(() => {
-        this.Alerter.alertFromSWS(this.$translate.instant('dedicatedCloud_datacenter_name_edit_success'), 'OK', 'dedicatedCloud');
-      });
+      }).result;
   }
 
   buildDescription() {
