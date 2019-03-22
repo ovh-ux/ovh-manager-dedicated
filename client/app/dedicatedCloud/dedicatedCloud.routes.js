@@ -17,7 +17,7 @@ angular
           controller: 'DedicatedCloudCtrl',
         },
         'pccView@app.dedicatedClouds': {
-          templateUrl: 'dedicatedCloud/dashboard/dedicatedCloud-dashboard.html',
+          templateUrl: 'dedicatedCloud/dashboard/legacy/dedicatedCloud-dashboardLegacy.html',
         },
       },
     });
