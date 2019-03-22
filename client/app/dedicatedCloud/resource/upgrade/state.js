@@ -1,4 +1,4 @@
-import { controllerName } from './controller';
+import { controller } from './controller';
 
 export default {
   layout: {
@@ -9,7 +9,7 @@ export default {
   views: {
     modal: {
       templateUrl: 'dedicatedCloud/resource/upgrade/template.html',
-      controller: controllerName,
+      controller,
     },
   },
 };
