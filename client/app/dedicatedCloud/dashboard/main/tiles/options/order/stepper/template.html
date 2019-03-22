@@ -1,4 +1,6 @@
-<stepper-header data-steps="$ctrl.steps"></stepper-header>
+<stepper-header
+    data-steps="$ctrl.steps"
+    data-ng-if="$ctrl.steps.length > 1"></stepper-header>
 
 <div
     data-ng-if="$ctrl.isLoadingBetweenSteps"
