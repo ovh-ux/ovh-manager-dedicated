@@ -10,6 +10,8 @@ angular
       $translate,
       $uibModal,
       constants,
+      currentService,
+      currentUser,
       DedicatedCloud,
       OvhApiDedicatedCloud,
       User,
@@ -21,6 +23,8 @@ angular
       this.$translate = $translate;
       this.$uibModal = $uibModal;
       this.constants = constants;
+      this.currentService = currentService;
+      this.currentUser = currentUser;
       this.DedicatedCloud = DedicatedCloud;
       this.OvhApiDedicatedCloud = OvhApiDedicatedCloud;
       this.User = User;
