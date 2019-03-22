@@ -20,7 +20,7 @@ angular
     servicePack,
     stepper,
     'ui.router',
-    ...ACTIVATION_TYPES.all.map(step => step.moduleName),
+    ...ACTIVATION_TYPES.all,
   ])
   .component(COMPONENT_NAME, component)
   .config(/* @ngInject */ ($stateProvider) => {

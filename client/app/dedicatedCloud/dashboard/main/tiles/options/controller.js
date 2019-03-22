@@ -172,7 +172,8 @@ export default class OptionTile {
   }
 
   orderCanBeChangedOrPassed() {
-    return this.pendingOrder == null || this.pendingOrder.status === ORDER_STATUS.notPaid;
+    return this.pendingOrder == null
+      || (this.pendingOrder != null && this.pendingOrder.status === ORDER_STATUS.notPaid);
   }
 
   isBasicMenuDisplayed() {
@@ -183,10 +184,6 @@ export default class OptionTile {
   isBasicActionMenuModifyDisplayed() {
     return this.orderableServicePacksWithOnlyBasicOptions.length > 1
       && this.orderCanBeChangedOrPassed();
-  }
-
-  isBasicActionMenuValidateActivationDisplayed() {
-    return this.orderCanBeChangedOrPassed();
   }
 
   buildDataAfterFetching() {
@@ -208,7 +205,7 @@ export default class OptionTile {
               },
             },
             validateActivation: {
-              isDisplayed: this.isBasicActionMenuValidateActivationDisplayed(),
+              isDisplayed: _.get(this.pendingOrder, 'status') === ORDER_STATUS.notPaid,
               url: _.get(this.pendingOrder, 'url'),
             },
           },

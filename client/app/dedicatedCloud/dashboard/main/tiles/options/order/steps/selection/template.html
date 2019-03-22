@@ -79,16 +79,6 @@
     </oui-button>
 
     <oui-button
-        data-ng-if="!$ctrl.hasDefaultMeansOfPayment"
-        data-on-click="$ctrl.goToNextStep()"
-        data-type="submit"
-        data-variant="primary"
-        class="ml-3">
-        <span data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_nextButton"></span>
-    </oui-button>
-
-    <oui-button
-        data-ng-if="$ctrl.hasDefaultMeansOfPayment"
         data-on-click="$ctrl.placeOrder()"
         data-type="submit"
         data-variant="primary"

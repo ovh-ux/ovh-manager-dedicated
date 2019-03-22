@@ -1,29 +1,25 @@
-import { step as confirmation } from './steps/confirmation';
 import { step as requiredConfiguration } from './steps/requiredConfiguration';
 import { step as selection } from './steps/selection';
 import { step as smsActivation } from './steps/smsActivation';
 import { step as summary } from './steps/summary';
 
 export const ACTIVATION_TYPES = {
-  all: [
-    confirmation,
-    requiredConfiguration,
-    selection,
-    smsActivation,
-    summary,
-  ],
   basic: [
     selection,
-    summary,
   ],
   certification: [
     selection,
     requiredConfiguration,
     smsActivation,
-    confirmation,
     summary,
   ],
 };
+
+ACTIVATION_TYPES.all = _.uniq(
+  _.flatten(
+    _.values(ACTIVATION_TYPES),
+  ).map(step => step.moduleName),
+);
 
 export const COMPONENT_NAME = 'dedicatedCloudServicePack';
 export const CONSTANT_NAME = 'DEDICATED_CLOUD_SERVICE_PACK_ACTIVATION';
