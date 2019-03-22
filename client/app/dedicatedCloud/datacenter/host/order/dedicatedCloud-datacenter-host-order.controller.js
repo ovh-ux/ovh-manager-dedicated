@@ -52,29 +52,6 @@ angular
         });
     }
 
-    $onInit() {
-      this.loading = true;
-
-      return this.$q
-        .all({
-          url: this.User.getUrlOf('express_order'),
-          user: this.User.getUser(),
-        })
-        .then((results) => {
-          this.expressOrderUrl = results.url;
-          this.user = results.user;
-        })
-        .catch((err) => {
-          this.$scope.setMessage(this.$translate.instant('dedicatedCloud_tab_hosts_loading_error'), {
-            message: err.message || err,
-            type: 'ERROR',
-          });
-        })
-        .finally(() => {
-          this.loading = false;
-        });
-    }
-
     fetchOffers() {
       return this.OvhHttp
         .get('/order/cartServiceOption/privateCloud/{serviceName}', {
