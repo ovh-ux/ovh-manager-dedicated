@@ -1,0 +1,126 @@
+<h3 data-ng-bind="$ctrl.header"></h3>
+<p data-ng-bind="$ctrl.subheader"></p>
+
+<oui-message
+    data-type="warning"
+    data-dismissable="false"
+    data-ng-if="!$ctrl.hasDefaultMeansOfPayment && $ctrl.currentUser.ovhSubsidiary !== 'PL'"
+    class="mb-3">
+    <p>
+        <span data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_noDefaultMeansOfPayment"></span>
+        <a
+            data-ui-sref="app.account.billing.payment.method"
+            data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_howToConfigureMeansOfPayment"></a>
+    </p>
+</oui-message>
+
+<form
+    data-ng-show="!$ctrl.orderingURL && !$ctrl.orderIsInProgress"
+    novalidate
+    name="$ctrl.form">
+
+    <oui-field>
+        <div
+            data-ng-repeat="servicePack in ::$ctrl.orderableServicePacks track by servicePack.name"
+            class="row"
+            data-ng-if="$index % 2 === 0">
+            <div
+                data-ng-repeat="i in [$index, $index + 1]"
+                class="col-xs-6 oui-select-picker oui-select-picker_light"
+                data-ng-if="$ctrl.orderableServicePacks[i]">
+                <input
+                    class="oui-select-picker__input oui-input"
+                    type="radio"
+                    name="servicePackSelection"
+                    data-ng-model="$ctrl.servicePackToOrder"
+                    data-ng-value="servicePack"
+                    id="{{ 'servicePackSelection' + servicePack.name }}"
+                    required>
+                <label
+                    class="oui-select-picker__label-container dedicatedCloud-servicePack-option-container"
+                    for="{{ 'servicePackSelection' + servicePack.name }}">
+                    <span
+                        class="oui-select-picker__label dedicatedCloud-servicePack-option-label"
+                        data-ng-bind=":: servicePack.displayName"></span>
+                    <p class="oui-select-picker__value-container oui-select-picker__section dedicatedCloud-servicePack-option-section">
+                        <span
+                            class="dedicatedCloud-servicePack-option-description"
+                            data-translate="{{:: servicePack.description }}"></span>
+                    </p>
+                    <p
+                        class="dedicatedCloud-servicePack-option-price"
+                        data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_priceDifferenceOnMonthlyBill"
+                        data-translate-values="{
+                            priceDifference: servicePack.price
+                        }"></p>
+                </label>
+            </div>
+        </div>
+    </oui-field>
+
+    <oui-message
+        data-type="warning"
+        data-dismissable="false"
+        data-ng-if="!$ctrl.hasDefaultMeansOfPayment"
+        class="mb-5">
+        <p>
+            <span data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_howToConfigureMeansOfPayment"></span>
+            <span
+                data-ng-if="$ctrl.currentUser.ovhSubsidiary !== 'PL'"
+                data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_howToConfigureMeansOfPayment_outsidePL"></span>
+            <span data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_howToConfigureMeansOfPayment_comeBackHereLater"></span>
+        </p>
+    </oui-message>
+
+    <oui-button
+        data-variant="secondary"
+        data-on-click="$ctrl.stepper.exit()">
+        <span data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_cancelButton"></span>
+    </oui-button>
+
+    <oui-button
+        data-ng-if="!$ctrl.hasDefaultMeansOfPayment"
+        data-on-click="$ctrl.goToNextStep()"
+        data-type="submit"
+        data-variant="primary"
+        class="ml-3">
+        <span data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_nextButton"></span>
+    </oui-button>
+
+    <oui-button
+        data-ng-if="$ctrl.hasDefaultMeansOfPayment"
+        data-on-click="$ctrl.placeOrder()"
+        data-type="submit"
+        data-variant="primary"
+        class="ml-3">
+        <span data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_checkoutButton"></span>
+    </oui-button>
+</form>
+
+<div
+    data-ng-if="$ctrl.orderIsInProgress"
+    class="text-center">
+    <oui-spinner data-size="l"></oui-spinner>
+</div>
+
+<oui-message
+    data-ng-if="$ctrl.orderingURL && !$ctrl.orderIsInProgress"
+    data-dismissable="false"
+    data-type="info">
+    <p>
+        <span data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_checkoutDescription"></span>
+        <a
+            data-ng-href="{{ $ctrl.orderingURL }}"
+            target="_blank"
+            rel="noopener"
+            class="oui-link_icon">
+            <span data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_checkoutLink"></span>
+            <span
+                class="oui-icon oui-icon-external_link"
+                aria-hidden="true"></span>
+            <span
+                class="sr-only"
+                data-translate="common_new_tab"></span>
+        </a>
+    </p>
+</oui-message>

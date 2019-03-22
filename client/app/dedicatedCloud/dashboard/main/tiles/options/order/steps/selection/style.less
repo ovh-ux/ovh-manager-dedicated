@@ -1,0 +1,47 @@
+
+.oui-field {
+  margin-bottom: 3rem;
+}
+
+.oui-field__control {
+  margin-bottom: 0;
+}
+
+.dedicatedCloud-servicePack-option-price {
+  background: #c6eff9;
+  color: rgb(17, 63, 109);
+  font-weight: 600;
+  font-size: 2rem;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+}
+
+.oui-select-picker__input + .oui-select-picker__label-container,
+.oui-select-picker__input:checked + .oui-select-picker__label-container {
+  &.dedicatedCloud-servicePack-option-container {
+    padding: 0;
+  }
+}
+
+.oui-select-picker__label.dedicatedCloud-servicePack-option-label {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  padding-left: 4.5rem;
+
+  &::before {
+    top: 2.5rem;
+    left: 2rem;
+  }
+
+  .oui-select-picker__input:checked ~ .oui-select-picker__label-container &::after {
+    top: 3rem;
+    left: 2.5rem;
+  }
+}
+
+.dedicatedCloud-servicePack-option-section {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  width: initial;
+}
