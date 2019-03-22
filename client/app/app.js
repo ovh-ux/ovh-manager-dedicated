@@ -23,7 +23,8 @@ import uiRouter from '@uirouter/angularjs';
 import config from './config/config';
 import dedicatedCloudDatacenterDrp from './dedicatedCloud/datacenter/drp';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
-import legacyDashboard from './dedicatedCloud/dashboard/legacy';
+import dashboard from './dedicatedCloud/dashboard/main';
+import dashboardLegacy from './dedicatedCloud/dashboard/legacy';
 import resourceUpgrade from './dedicatedCloud/resource/upgrade';
 
 
@@ -36,12 +37,13 @@ angular
     'Billing',
     'chart.js',
     'controllers',
+    dashboard,
+    dashboardLegacy,
     dedicatedCloudDatacenterDrp,
     dedicatedUniverseComponents,
     'directives',
     'filters',
     'internationalPhoneNumber',
-    legacyDashboard,
     'Module.download',
     ['eu', 'ca'].includes(WEBPACK_ENV.region) ? 'Module.exchange' : undefined,
     'Module.ip',
