@@ -30,13 +30,10 @@ export default class {
         : this
           .exit()
           .then(() => {
-            this.Alerter.alertFromSWS(
-              this.$translate.instant('dedicatedCloud_servicePack_confirmation_order_failure'),
-              {
-                message: _.get(transition.error(), 'detail', transition.error()).message,
-                type: 'ERROR',
-              },
-            );
+            this.Alerter.alertFromSWS(this.$translate.instant('dedicatedCloud_servicePack_confirmation_order_failure'), {
+              message: _.get(transition.error(), 'detail', transition.error()).message,
+              type: 'ERROR',
+            }, 'dedicatedCloud_alert');
           })),
     );
 

@@ -108,7 +108,7 @@ export default class Stepper {
       .map(currentStep => currentStep.name);
 
     this.memoizedStateParams = { ...this.memoizedStateParams, ...stateParams };
-    const destinationStepName = `${this.stepperRootStateName}.${completedStepNames.join('.')}${this.activeStep.value.name}`;
+    const destinationStepName = `${this.stepperRootStateName}.${[...completedStepNames, ''].join('.')}${this.activeStep.value.name}`;
     return this.$state.go(destinationStepName, this.memoizedStateParams);
   }
 
