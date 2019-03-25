@@ -24,7 +24,8 @@
                                         data-model="$ctrl.model.existingContact"
                                         data-items="$ctrl.contactList"
                                         data-match="fullName"
-                                        data-searchable>
+                                        data-searchable
+                                        data-on-change="$ctrl.onContactSelectChange()">
                                 <span class="d-block text-truncate w-100"
                                       data-ng-bind="$item.fullName">
                                 </span>
@@ -33,7 +34,7 @@
                                           data-ng-bind="$item.address.line1">
                                     </span>
                                     <span class="d-block text-truncate w-100"
-                                          data-ng-bind="$item.address.zip + ' ' + ($item.address.city || '')  + ' (' + $item.address.country + ')'">
+                                          data-ng-bind="($item.address.zip || '') + ' ' + ($item.address.city || '')  + ' (' + $item.address.country + ')'">
                                     </span>
                                 </small>
                             </oui-select>
@@ -45,7 +46,7 @@
                                   data-ng-bind="$ctrl.model.existingContact.address.line1">
                             </span>
                             <span class="d-inline-block  text-truncate w-100"
-                                  data-ng-bind="$ctrl.model.existingContact.address.zip + ' ' + ($ctrl.model.existingContact.address.city || '')  + ' (' + $ctrl.model.existingContact.address.country + ')'">
+                                  data-ng-bind="($ctrl.model.existingContact.address.zip || '') + ' ' + ($ctrl.model.existingContact.address.city || '')  + ' (' + $ctrl.model.existingContact.address.country + ')'">
                             </span>
                         </dd>
 

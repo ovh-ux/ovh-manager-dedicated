@@ -36,6 +36,10 @@ export default class PaymentMethodAddBillingAddressViewCtrl {
     return this.contactList;
   }
 
+  onContactSelectChange() {
+    _.set(this.$state.current, 'sharedModel.billingAddress', this.model.existingContact);
+  }
+
   onExistingContactTabActive() {
     this.model.activeTab = 'exising';
     _.set(this.$state.current, 'sharedModel.billingAddress', this.model.existingContact);
