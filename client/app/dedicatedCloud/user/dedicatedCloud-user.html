@@ -133,8 +133,10 @@
                 </span>
             </span>
         </oui-column>
-        <oui-action-menu data-align="end"
-                         data-compact>
+        <oui-action-menu
+            data-align="end"
+            data-compact
+            data-ng-if="$row.state === 'DELIVERED'">
             <oui-action-menu-item data-text="{{:: 'dedicatedCloud_USER_modify' | translate }}"
                                   data-on-click="$ctrl.editUser($row)">
             </oui-action-menu-item>

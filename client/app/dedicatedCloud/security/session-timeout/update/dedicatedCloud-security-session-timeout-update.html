@@ -9,7 +9,6 @@
         <div data-wizard-step
              data-wizard-step-valid="(sessionTimeoutCtrl.sessionTimeout.value != null && sessionTimeoutCtrl.sessionTimeout.value >= 0) || sessionTimeoutCtrl.sessionTimeout.never">
 
-            <p data-ng-bind-html="'dedicatedCloud_configuration_security_update_session_timeout_step1_question' | translate "></p>
             <form>
                 <div class="checkbox">
                     <label>
@@ -23,7 +22,7 @@
                      data-ng-hide="sessionTimeoutCtrl.sessionTimeout.never">
                     <label for="sessionTimeout"
                            class="control-label"
-                           data-translate="dedicatedCloud_configuration_security_update_session_timeout_step1_unit">
+                           data-translate="dedicatedCloud_configuration_security_update_session_timeout_step1_question">
                     </label>
                     <input type="number"
                            class="form-control"

@@ -9,12 +9,22 @@ angular.module('App').controller('NameEditionCtrl', class NameEditionCtrl {
 
   updateDescription() {
     this.updating = true;
-    this.updateName()
+
+    return this.updateName()
       .then(() => {
+        if (this.data.successText) {
+          this.Alerter.success(this.data.successText, this.data.destinationId || 'dedicatedCloud');
+        }
+
         this.$uibModalInstance.close(this.newValue);
-      }).catch(err => this.Alerter.error([this.$translate.instant(`${this.modalContextTitle}_edit_error`, {
-        t0: this.newValue,
-      }), _.get(err, 'message')].join('. '), 'dedicatedCloud')).finally(() => {
+      })
+      .catch((err) => {
+        this.Alerter.error([this.$translate.instant(`${this.modalContextTitle}_edit_error`, {
+          t0: this.newValue,
+        }), _.get(err, 'message')].join('. '), this.data.destinationId || 'dedicatedCloud');
+        this.$uibModalInstance.dismiss();
+      })
+      .finally(() => {
         this.updating = false;
       });
   }

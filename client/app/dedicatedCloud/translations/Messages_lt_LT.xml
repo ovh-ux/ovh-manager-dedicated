@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
+   <translation id="dedicatedCloud_alert_close" qtlid="521698">Fermer le message d'information</translation>
+   <translation id="dedicatedCloud_dashboard_nameModifying_success" qtlid="521711">Le changement de nom de votre service sera effectif dans quelques instants.</translation>
    <translation id="dedicatedCloud_dashboard_loading_error" qtlid="132083">Įvyko klaida siunčiant jūsų paslaugos duomenis.</translation>
    <translation id="dedicatedCloud_coming_soon" qtlid="4106">Greitai</translation>
    <translation id="dedicatedCloud_banner_hdc_ready_label" qtlid="366293">OVH jums siūlo asmens sveikatos duomenų talpinimą Private Cloud Healthcare. Jūsų infrastruktūra atitinka reikalavimus!</translation>
@@ -26,8 +28,8 @@
    <translation id="dedicatedCloud_connection_policy_LAST" qtlid="145813">Atjungti naujausią</translation>
    <translation id="dedicatedCloud_connection_policy_FIRST" qtlid="145826">Atjungti seniausią</translation>
    <translation id="dedicatedCloud_user_access_policy" qtlid="145839">Prieigos politika</translation>
-   <translation id="dedicatedCloud_user_access_policy_FILTERED" qtlid="145852">Apriboti</translation>
-   <translation id="dedicatedCloud_user_access_policy_OPEN" qtlid="75654">Atidarytas</translation>
+   <translation id="dedicatedCloud_user_access_policy_FILTERED" qtlid="55985">Apribota prieiga</translation>
+   <translation id="dedicatedCloud_user_access_policy_OPEN" qtlid="56189">Uždaryta</translation>
    <translation id="dedicatedCloud_bandwidth" qtlid="38565">Perduodamų duomenų srautas</translation>
    <translation id="dedicatedCloud_datacenter_count" qtlid="30802">Duomenų centras</translation>
    <translation id="dedicatedCloud_order_license" qtlid="145865">Užsisakyti licenciją</translation>
@@ -56,6 +58,8 @@
 
    <translation id="dedicatedCloud_datacenter_name" qtlid="3818">Pavadinimas</translation>
    <translation id="dedicatedCloud_datacenter_description" qtlid="9238">Apibūdinimas</translation>
+   <translation id="dedicatedCloud_datacenter_descriptionModifying_success" qtlid="521724">Le changement de la description de votre datacenter sera effectif dans quelques instants.</translation>
+   <translation id="dedicatedCloud_datacenter_nameModifying_success" qtlid="521737">Le changement de nom de votre datacenter sera effectif dans quelques instants.</translation>
 
    <translation id="dedicatedCloud_tab_datacenter" qtlid="41602">Duomenų centrai</translation>
    <translation id="dedicatedCloud_DATACENTERS_CPU" qtlid="147707">Viso CPU</translation>
@@ -191,7 +195,7 @@
    <translation id="dedicatedCloud_tab_veeam_ERROR" qtlid="154975">Klaida</translation>
    <translation id="dedicatedCloud_tab_veeam_REMOVING" qtlid="154988">Atsarginės kopijos trinamos</translation>
    <translation id="dedicatedCloud_tab_veeam_enable_title" qtlid="155001">Atsarginių kopijų įjungimas</translation>
-   <translation id="dedicatedCloud_tab_veeam_enable_message" qtlid="183398">Ar tikrai norite duomenų centre <b>{0}</b> įjungti atsargines kopijas?</translation>
+   <translation id="dedicatedCloud_tab_veeam_enable_message" qtlid="521750">Confirmez-vous vouloir activer le backup pour le datacenter « {0} » ?</translation>
    <translation id="dedicatedCloud_tab_veeam_enable_message2" qtlid="183411">Būsite apmokestinami už VM, kurių kopijos atliekamos, apmokestinimas atliekamas pagal <a href='http://www.ovh.lt/dedicated-cloud/veeam.xml' target='_blank'>šiame puslapyje</a> nurodytas sąlygas.</translation>
    <translation id="dedicatedCloud_tab_veeam_enable_success" qtlid="183424">Duomenų centro <b>{0}</b> atsarginių kopijų įjungimas užregistruotas</translation>
    <translation id="dedicatedCloud_tab_veeam_enable_fail" qtlid="183437">Klaida įjungiant duomenų centro <b>{0}</b> atsargines kopijas</translation>
@@ -267,7 +271,7 @@
    <translation id="dedicatedCloud_datacenter_no_name" qtlid="155196">Duomenų centras {0}</translation>
    <translation id="dedicatedCloud_datacenter_wrong_name" qtlid="149774">Neteisingas formatas</translation>
    <translation id="dedicatedCloud_tab_user" qtlid="7738">Vartotojai</translation>
-   <translation id="dedicatedCloud_user_management_authorization_vsphere" qtlid="146411">vSphere kliento vartotojų teisių valdymas:</translation>
+   <translation id="dedicatedCloud_user_management_authorization_vsphere" qtlid="521763">Gestion des autorisations utilisateur dans le vSphere client</translation>
    <translation id="dedicatedCloud_search_user" qtlid="146424">Ieškoti vartotojo</translation>
    <translation id="dedicatedCloud_USER_warning_line" qtlid="147798">Patvirtinti ar atšaukti jūsų atliktus naudotojo teisių keitimus</translation>
    <translation id="dedicatedCloud_USER_name" qtlid="46792">Identifikatorius</translation>
@@ -373,7 +377,6 @@
    <translation id="dedicatedCloud_users_add_error" qtlid="277429">Nepavyko sukurti naujo naudotojo.</translation>
    <translation id="dedicatedCloud_users_add_done" qtlid="277442">Naujas naudotojas sėkmingai sukurtas.</translation>
 
-   <translation id="dedicatedCloud_USER_add_user_step1_question" qtlid="202538">Prašome užpildyti šią formą, kad sukurtumėte naują vartotoją:</translation>
    <translation id="dedicatedCloud_USER_add_user_name" qtlid="3818">Pavadinimas</translation>
    <translation id="dedicatedCloud_USER_add_user_password" qtlid="2270">Slaptažodis</translation>
    <translation id="dedicatedCloud_USER_add_user_mail" qtlid="21679">Paštas</translation>
@@ -421,30 +424,31 @@
    <translation id="dedicatedCloud_SECURITY_title" qtlid="371739">IP ir blokai, autorizuoti prisijungimui prie Private Cloud:</translation>
    <translation id="dedicatedCloud_SECURITY_modify" qtlid="147941">Pakeisti IP adresų banką (pool)</translation>
    <translation id="dedicatedCloud_SECURITY_delete" qtlid="147954">Pašalinti IP adresų banką (pool)</translation>
-   <translation id="dedicatedCloud_SECURITY_expiration_session" qtlid="146801">Sesijos pabaiga:</translation>
+   <translation id="dedicatedCloud_SECURITY_expiration_session" qtlid="521776">Délai d'expiration d'une session</translation>
    <translation id="dedicatedCloud_SECURITY_expiration_session_value" qtlid="146814">{0} min.</translation>
    <translation id="dedicatedCloud_SECURITY_expiration_session_never" qtlid="8770">Niekada</translation>
-   <translation id="dedicatedCloud_SECURITY_nb_simultaneous_connection" qtlid="146827">Vienalaikės jungtys:</translation>
+   <translation id="dedicatedCloud_SECURITY_nb_simultaneous_connection" qtlid="147165">Vienalaikių prisijungimų skaičius</translation>
    <translation id="dedicatedCloud_SECURITY_nb_simultaneous_connection_none" qtlid="8674">Tuščia</translation>
    <translation id="dedicatedCloud_SECURITY_nb_simultaneous_connection_value" qtlid="147967">{0} jungtys(-čių)</translation>
-   <translation id="dedicatedCloud_SECURITY_access_policy" qtlid="147980">Prieigos prie vCenter taisyklės</translation>
-   <translation id="dedicatedCloud_SECURITY_access_policy_FILTERED" qtlid="145852">Apriboti</translation>
+   <translation id="dedicatedCloud_SECURITY_access_policy" qtlid="521789">Modifier la politique d'accès au vCenter</translation>
+   <translation id="dedicatedCloud_SECURITY_access_policy_FILTERED" qtlid="55985">Apribota prieiga</translation>
    <translation id="dedicatedCloud_SECURITY_access_policy_OPEN" qtlid="56189">Uždaryta</translation>
-   <translation id="dedicatedCloud_SECURITY_logout_policy" qtlid="146866">Atsijungimo politika:</translation>
+   <translation id="dedicatedCloud_SECURITY_logout_policy" qtlid="521802">Politique de déconnexion</translation>
    <translation id="dedicatedCloud_SECURITY_logout_policy_FIRST" qtlid="146879">Pirmo prisijungusio vartotojo atjungimas</translation>
    <translation id="dedicatedCloud_SECURITY_logout_policy_LAST" qtlid="146892">Paskutinio prisijungusio vartotojo atjungimas</translation>
    <translation id="dedicatedCloud_SECURITY_IP_name" qtlid="146905">IP pavadinimas</translation>
    <translation id="dedicatedCloud_SECURITY_allow" qtlid="146918">Teisė</translation>
    <translation id="dedicatedCloud_SECURITY_description" qtlid="9238">Apibūdinimas</translation>
-   <translation id="dedicatedCloud_SECURITY_change_timeout" qtlid="146931">Keisti galiojimo laiką</translation>
-   <translation id="dedicatedCloud_SECURITY_change_nb_simultaneous_connection" qtlid="41530">Vienalaikiai prisijungimai</translation>
+   <translation id="dedicatedCloud_SECURITY_change_timeout" qtlid="521815">Modifier le délai d'expiration d'une session</translation>
+   <translation id="dedicatedCloud_SECURITY_change_nb_simultaneous_connection" qtlid="521828">Modifier le nombre de connexions simultanées</translation>
    <translation id="dedicatedCloud_SECURITY_change_nb_simultaneous_connection_success" qtlid="146944">Didžiausias vienalaikių prisijungimų skaičius sėkmingai pakeistas.</translation>
    <translation id="dedicatedCloud_SECURITY_change_nb_simultaneous_connection_failure" qtlid="146957">Klaida keičiant maksimalų vienalaikių prisijungimų skaičių.</translation>
-   <translation id="dedicatedCloud_SECURITY_add_IP" qtlid="146970">IP įtraukimas</translation>
-   <translation id="dedicatedCloud_SECURITY_delete_IP" qtlid="146983">Trinti IP</translation>
+   <translation id="dedicatedCloud_SECURITY_change_logout_policy" qtlid="147230">Keisti atjungimo politiką</translation>
+   <translation id="dedicatedCloud_SECURITY_add_IP" qtlid="521841">Ajouter une nouvelle plage d'adresses IP</translation>
+   <translation id="dedicatedCloud_SECURITY_delete_IP" qtlid="521854">Supprimer des plages d'adresses IP</translation>
    <translation id="dedicatedCloud_configuration_SECURITY_policy_access_success" qtlid="146996">Prieigos politika sėkmingai pakeista.</translation>
    <translation id="dedicatedCloud_configuration_SECURITY_policy_access_fail" qtlid="147009">Klaida keičiant prieigos politiką.</translation>
-   <translation id="dedicatedCloud_SECURITY_userAccess_policy" qtlid="146840">Prieigos politika:</translation>
+   <translation id="dedicatedCloud_SECURITY_userAccess_policy" qtlid="147980">Prieigos prie vCenter taisyklės</translation>
    <translation id="dedicatedCloud_SECURITY_userAccess_policy_FILTERED" qtlid="250732">Apribota</translation>
    <translation id="dedicatedCloud_SECURITY_userAccess_policy_OPEN" qtlid="56189">Uždaryta</translation>
    <translation id="dedicatedCloud_configuration_SECURITY_policy_logout_success" qtlid="147022">Atjungimo politika sėkmingai pakeista.</translation>
@@ -462,15 +466,14 @@
    <translation id="dedicatedCloud_configuration_SECURITY_policy_add_fail" qtlid="148032">Įvyko klaida pridedant saugumo taisyklę {0}.</translation>
    <translation id="dedicatedCloud_configuration_SECURITY_update_session_timeout_success" qtlid="147139">Galiojimo laikas bus pakeistas po kelių minučių.</translation>
    <translation id="dedicatedCloud_configuration_SECURITY_update_session_timeout_fail" qtlid="147152">Klaida keičiant galiojimo laiką.</translation>
-   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_title" qtlid="147165">Vienalaikių prisijungimų skaičius</translation>
-   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_step1_question" qtlid="148045">Įveskite didžiausią vienalaikių jungčių skaičių:</translation>
-   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections" qtlid="148058">naudotojų prisijungimai</translation>
-   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_step2_question" qtlid="183567">Pakeisite vienalaikių vartotojų prisijungimų skaičių <br/>iš <b>{0}</b> į <b>{1}</b></translation>
-   <translation id="dedicatedCloud_configuration_security_policy_access_title" qtlid="147191">Keisti prieigos politiką</translation>
-   <translation id="dedicatedCloud_configuration_security_policy_access_step1_question" qtlid="147204">Pasirinkite prieigos politiką, kurią norite taikyti:</translation>
+   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_title" qtlid="521828">Modifier le nombre de connexions simultanées</translation>
+   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_step1_question" qtlid="521867">Nombre maximum de connexions d’utilisateurs simultanées</translation>
+   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_step2_question" qtlid="521880">Vous allez modifier le nombre de connexions d’utilisateurs simultanées de « {0} » à « {1} ».</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_access_title" qtlid="521789">Modifier la politique d'accès au vCenter</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_access_step1_question" qtlid="521893">Politique d'accès à appliquer</translation>
    <translation id="dedicatedCloud_configuration_security_policy_access_step1_value" qtlid="147217">Pasirinkite</translation>
    <translation id="dedicatedCloud_configuration_security_policy_logout_title" qtlid="147230">Keisti atjungimo politiką</translation>
-   <translation id="dedicatedCloud_configuration_security_policy_logout_step1_question" qtlid="148084">Pasirinkite atsijungimo taisykles dviejų vienalaikių prisijungimų atveju:</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_logout_step1_question" qtlid="521906">Politique de déconnexion en cas de double connexion</translation>
    <translation id="dedicatedCloud_configuration_security_policy_logout_step1_value" qtlid="147217">Pasirinkite</translation>
    <translation id="dedicatedCloud_configuration_security_policy_delete_title" qtlid="147256">Trinti IP adresus</translation>
    <translation id="dedicatedCloud_configuration_security_policy_delete_step1_question" qtlid="434906">Ar tikrai norite pašalinti prieigą IP adresui {0}?</translation>
@@ -482,11 +485,10 @@
    <translation id="dedicatedCloud_configuration_security_policy_add_step1_question" qtlid="148123">Įveskite naujos saugumo taisyklės IP adresą:</translation>
    <translation id="dedicatedCloud_configuration_security_policy_add_step1_description" qtlid="103702">Apibūdinimas:</translation>
    <translation id="dedicatedCloud_configuration_security_policy_add_step2_question" qtlid="183580">Įtrauksite IP <b>{0}</b> kaip naują saugumo taisyklę</translation>
-   <translation id="dedicatedCloud_configuration_security_update_session_timeout_title" qtlid="147321">Galiojimo laiko keitimas</translation>
-   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step1_question" qtlid="147334">Įveskite sesijos galiojimo laiką minutėmis:</translation>
-   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step1_unit" qtlid="44224">minutės</translation>
+   <translation id="dedicatedCloud_configuration_security_update_session_timeout_title" qtlid="521815">Modifier le délai d'expiration d'une session</translation>
+   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step1_question" qtlid="521919">Nombre de minutes avant l'expiration d'une session</translation>
    <translation id="dedicatedCloud_configuration_security_update_session_timeout_step1_never" qtlid="148149">sesijos laikas niekada nesibaigia</translation>
-   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step2_question" qtlid="183593">Tuojau pakeisite sesijos galiojimo laiką minutėmis, iš <br/><b>{0}</b> į <b>{1}</b></translation>
+   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step2_question" qtlid="521932">Vous allez modifier le nombre de minutes avant l'expiration d'une session de « {0} » à « {1} ».</translation>
    <translation id="dedicatedCloud_network" qtlid="25591">Tinklas</translation>
    <translation id="dedicatedCloud_network_information_ACE" qtlid="147347">ACE:</translation>
    <translation id="dedicatedCloud_network_information_blocIPRipe" qtlid="147360">RIPE IP blokas</translation>
