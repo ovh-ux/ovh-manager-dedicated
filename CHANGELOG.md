@@ -1,3 +1,13 @@
+<a name="10.13.4"></a>
+## [10.13.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.13.3...v10.13.4) (2019-03-21)
+
+
+### Bug Fixes
+
+* **dedicated.server:** activate backup ftp title ([1b960ff](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1b960ff))
+
+
+
 <a name="10.13.3"></a>
 ## [10.13.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.13.2...v10.13.3) (2019-03-21)
 

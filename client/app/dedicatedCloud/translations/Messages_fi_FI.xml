@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
+   <translation id="dedicatedCloud_alert_close" qtlid="521698">Fermer le message d'information</translation>
+   <translation id="dedicatedCloud_dashboard_nameModifying_success" qtlid="521711">Le changement de nom de votre service sera effectif dans quelques instants.</translation>
    <translation id="dedicatedCloud_dashboard_loading_error" qtlid="132083">Tapahtui virhe ladattaessa palvelun tietoja.</translation>
    <translation id="dedicatedCloud_coming_soon" qtlid="4106">Tulossa</translation>
    <translation id="dedicatedCloud_banner_hdc_ready_label" qtlid="366293">OVH tarjoaa nyt myös terveystietojen ylläpitoa Private Cloud Healthcare -palvelullaan. Infrastruktuurisi on jo yhteensopiva!</translation>
@@ -26,8 +28,8 @@
    <translation id="dedicatedCloud_connection_policy_LAST" qtlid="145813">Katkaise tuorein</translation>
    <translation id="dedicatedCloud_connection_policy_FIRST" qtlid="145826">Katkaise vanhin</translation>
    <translation id="dedicatedCloud_user_access_policy" qtlid="145839">Kirjautumissäännöt</translation>
-   <translation id="dedicatedCloud_user_access_policy_FILTERED" qtlid="145852">Rajoitettu</translation>
-   <translation id="dedicatedCloud_user_access_policy_OPEN" qtlid="75654">Avoin</translation>
+   <translation id="dedicatedCloud_user_access_policy_FILTERED" qtlid="55985">Rajoitettu</translation>
+   <translation id="dedicatedCloud_user_access_policy_OPEN" qtlid="56189">Avoin</translation>
    <translation id="dedicatedCloud_bandwidth" qtlid="38565">Kaistanleveys</translation>
    <translation id="dedicatedCloud_datacenter_count" qtlid="30802">Palvelinkeskus</translation>
    <translation id="dedicatedCloud_order_license" qtlid="145865">Tilaa lisenssi</translation>
@@ -56,6 +58,8 @@
 
    <translation id="dedicatedCloud_datacenter_name" qtlid="3818">Nimi</translation>
    <translation id="dedicatedCloud_datacenter_description" qtlid="9238">Kuvaus</translation>
+   <translation id="dedicatedCloud_datacenter_descriptionModifying_success" qtlid="521724">Le changement de la description de votre datacenter sera effectif dans quelques instants.</translation>
+   <translation id="dedicatedCloud_datacenter_nameModifying_success" qtlid="521737">Le changement de nom de votre datacenter sera effectif dans quelques instants.</translation>
 
    <translation id="dedicatedCloud_tab_datacenter" qtlid="41602">Palvelinkeskukset</translation>
    <translation id="dedicatedCloud_DATACENTERS_CPU" qtlid="147707">CPU yhteensä</translation>
@@ -191,7 +195,7 @@
    <translation id="dedicatedCloud_tab_veeam_ERROR" qtlid="154975">Tapahtui virhe</translation>
    <translation id="dedicatedCloud_tab_veeam_REMOVING" qtlid="154988">Varmuuskopioita poistetaan...</translation>
    <translation id="dedicatedCloud_tab_veeam_enable_title" qtlid="155001">Varmuuskopion aktivointi</translation>
-   <translation id="dedicatedCloud_tab_veeam_enable_message" qtlid="183398">Oletko varma, että haluat aktivoida varmuuskopion palvelinkeskukselle <b>{0}</b>?</translation>
+   <translation id="dedicatedCloud_tab_veeam_enable_message" qtlid="521750">Confirmez-vous vouloir activer le backup pour le datacenter « {0} » ?</translation>
    <translation id="dedicatedCloud_tab_veeam_enable_message2" qtlid="183411">Sinulta laskutetaan varmuuskopioitujen virtuaalikoneiden lukumäärän mukaisesti ja <a href='http://www.ovh-hosting.fi/dedicated-cloud/veeam' target='_blank'>tällä sivulla</a>kuvattujen ehtojen mukaisesti</translation>
    <translation id="dedicatedCloud_tab_veeam_enable_success" qtlid="183424">Varmuuskopion aktivointipyyntö palvelinkeskuksessa <b>{0}</b> on rekisteröity</translation>
    <translation id="dedicatedCloud_tab_veeam_enable_fail" qtlid="183437">Virhe esiintyi aktivoitaessa varmuuskopiota palvelinkeskukseen <b>{0}</b></translation>
@@ -267,7 +271,7 @@
    <translation id="dedicatedCloud_datacenter_no_name" qtlid="155196">Palvelinkeskus {0}</translation>
    <translation id="dedicatedCloud_datacenter_wrong_name" qtlid="149774">Virheellinen muoto</translation>
    <translation id="dedicatedCloud_tab_user" qtlid="7738">Käyttäjät</translation>
-   <translation id="dedicatedCloud_user_management_authorization_vsphere" qtlid="146411">Käyttäjäoikeuksien hallinta vSphere-asiakasohjelmassa:</translation>
+   <translation id="dedicatedCloud_user_management_authorization_vsphere" qtlid="521763">Gestion des autorisations utilisateur dans le vSphere client</translation>
    <translation id="dedicatedCloud_search_user" qtlid="146424">Etsi käyttäjä</translation>
    <translation id="dedicatedCloud_USER_warning_line" qtlid="147798">Vahvista tai peruuta käyttäjäoikeuksiin tekemäsi muutos</translation>
    <translation id="dedicatedCloud_USER_name" qtlid="46792">Käyttäjätunnus</translation>
@@ -373,7 +377,6 @@
    <translation id="dedicatedCloud_users_add_error" qtlid="277429">Uutta käyttäjää ei voitu luoda.</translation>
    <translation id="dedicatedCloud_users_add_done" qtlid="277442">Uuden käyttäjän luonti onnistui.</translation>
 
-   <translation id="dedicatedCloud_USER_add_user_step1_question" qtlid="202538">Täytä lomake uuden käyttäjän luomiseksi:</translation>
    <translation id="dedicatedCloud_USER_add_user_name" qtlid="3818">Nimi</translation>
    <translation id="dedicatedCloud_USER_add_user_password" qtlid="2270">Salasana</translation>
    <translation id="dedicatedCloud_USER_add_user_mail" qtlid="21679">Sähköposti</translation>
@@ -421,30 +424,31 @@
    <translation id="dedicatedCloud_SECURITY_title" qtlid="371739">IP-osoitteet ja lohkot, joilla on lupa yhdistää  Private yhdistää Cloud -tuotteeseen:</translation>
    <translation id="dedicatedCloud_SECURITY_modify" qtlid="147941">Muuta IP-aluetta</translation>
    <translation id="dedicatedCloud_SECURITY_delete" qtlid="147954">Poista IP-alue</translation>
-   <translation id="dedicatedCloud_SECURITY_expiration_session" qtlid="146801">Istunnon vanheneminen:</translation>
+   <translation id="dedicatedCloud_SECURITY_expiration_session" qtlid="521776">Délai d'expiration d'une session</translation>
    <translation id="dedicatedCloud_SECURITY_expiration_session_value" qtlid="146814">{0} minuuttia</translation>
    <translation id="dedicatedCloud_SECURITY_expiration_session_never" qtlid="8770">Ei koskaan</translation>
-   <translation id="dedicatedCloud_SECURITY_nb_simultaneous_connection" qtlid="146827">Yhtäaikaiset yhteydet:</translation>
+   <translation id="dedicatedCloud_SECURITY_nb_simultaneous_connection" qtlid="147165">Yhtäaikaisten istuntojen määrä</translation>
    <translation id="dedicatedCloud_SECURITY_nb_simultaneous_connection_none" qtlid="8674">Ei mitään</translation>
    <translation id="dedicatedCloud_SECURITY_nb_simultaneous_connection_value" qtlid="147967">{0} yhteyttä</translation>
-   <translation id="dedicatedCloud_SECURITY_access_policy" qtlid="147980">Pääsysäännöt vCenteriin</translation>
-   <translation id="dedicatedCloud_SECURITY_access_policy_FILTERED" qtlid="145852">Rajoitettu</translation>
+   <translation id="dedicatedCloud_SECURITY_access_policy" qtlid="521789">Modifier la politique d'accès au vCenter</translation>
+   <translation id="dedicatedCloud_SECURITY_access_policy_FILTERED" qtlid="55985">Rajoitettu</translation>
    <translation id="dedicatedCloud_SECURITY_access_policy_OPEN" qtlid="56189">Avoin</translation>
-   <translation id="dedicatedCloud_SECURITY_logout_policy" qtlid="146866">Uloskirjautumisen sääntö:</translation>
+   <translation id="dedicatedCloud_SECURITY_logout_policy" qtlid="521802">Politique de déconnexion</translation>
    <translation id="dedicatedCloud_SECURITY_logout_policy_FIRST" qtlid="146879">Ensimmäisenä kirjautuneen käyttäjän yhteyden katkaisu</translation>
    <translation id="dedicatedCloud_SECURITY_logout_policy_LAST" qtlid="146892">Viimeisenä kirjautuneen käyttäjän yhteyden katkaisu</translation>
    <translation id="dedicatedCloud_SECURITY_IP_name" qtlid="146905">IP:n nimi</translation>
    <translation id="dedicatedCloud_SECURITY_allow" qtlid="146918">Oikeus</translation>
    <translation id="dedicatedCloud_SECURITY_description" qtlid="9238">Kuvaus</translation>
-   <translation id="dedicatedCloud_SECURITY_change_timeout" qtlid="146931">Vanhentumisajan muuttaminen</translation>
-   <translation id="dedicatedCloud_SECURITY_change_nb_simultaneous_connection" qtlid="41530">Samanaikaiset yhteydet</translation>
+   <translation id="dedicatedCloud_SECURITY_change_timeout" qtlid="521815">Modifier le délai d'expiration d'une session</translation>
+   <translation id="dedicatedCloud_SECURITY_change_nb_simultaneous_connection" qtlid="521828">Modifier le nombre de connexions simultanées</translation>
    <translation id="dedicatedCloud_SECURITY_change_nb_simultaneous_connection_success" qtlid="146944">Yhtäaikaisten yhteyksien enimmäismäärää on muutettu onnistuneesti.</translation>
    <translation id="dedicatedCloud_SECURITY_change_nb_simultaneous_connection_failure" qtlid="146957">Tapahtui virhe muutettaessa yhtäaikaisten yhteyksien enimmäismäärää.</translation>
-   <translation id="dedicatedCloud_SECURITY_add_IP" qtlid="146970">IP-osoitteiden lisäys</translation>
-   <translation id="dedicatedCloud_SECURITY_delete_IP" qtlid="146983">IP-osoitteiden poisto</translation>
+   <translation id="dedicatedCloud_SECURITY_change_logout_policy" qtlid="147230">Muuta uloskirjautumissääntöä</translation>
+   <translation id="dedicatedCloud_SECURITY_add_IP" qtlid="521841">Ajouter une nouvelle plage d'adresses IP</translation>
+   <translation id="dedicatedCloud_SECURITY_delete_IP" qtlid="521854">Supprimer des plages d'adresses IP</translation>
    <translation id="dedicatedCloud_configuration_SECURITY_policy_access_success" qtlid="146996">Kirjautumissääntöjä on muutettu onnistuneesti.</translation>
    <translation id="dedicatedCloud_configuration_SECURITY_policy_access_fail" qtlid="147009">Tapahtui virhe muutettaessa kirjautumissääntöjä.</translation>
-   <translation id="dedicatedCloud_SECURITY_userAccess_policy" qtlid="146840">Kirjautumissääntö:</translation>
+   <translation id="dedicatedCloud_SECURITY_userAccess_policy" qtlid="147980">Pääsysäännöt vCenteriin</translation>
    <translation id="dedicatedCloud_SECURITY_userAccess_policy_FILTERED" qtlid="250732">Rajattu</translation>
    <translation id="dedicatedCloud_SECURITY_userAccess_policy_OPEN" qtlid="56189">Avoin</translation>
    <translation id="dedicatedCloud_configuration_SECURITY_policy_logout_success" qtlid="147022">Uloskirjautumissääntöä on muutettu onnistuneesti.</translation>
@@ -462,15 +466,14 @@
    <translation id="dedicatedCloud_configuration_SECURITY_policy_add_fail" qtlid="148032">Virhe esiintyi lisättäessä turvasääntöä {0}.</translation>
    <translation id="dedicatedCloud_configuration_SECURITY_update_session_timeout_success" qtlid="147139">Vanhentumisviive muutetaan hetken kuluttua.</translation>
    <translation id="dedicatedCloud_configuration_SECURITY_update_session_timeout_fail" qtlid="147152">Virhe esiintyi muutettaessa vanhentumisviivettä.</translation>
-   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_title" qtlid="147165">Yhtäaikaisten istuntojen määrä</translation>
-   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_step1_question" qtlid="148045">Syötä yhtäaikaisten käyttäjien enimmäisyhteysmäärä:</translation>
-   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections" qtlid="148058">käyttäjäyhteyttä</translation>
-   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_step2_question" qtlid="183567">Olet muuttamassa yhtäaikaisten käyttäjäyhteyksien lukumäärän rajasta <br/><b>{0}</b> rajaan <b>{1}</b></translation>
-   <translation id="dedicatedCloud_configuration_security_policy_access_title" qtlid="147191">Muuta kirjautumissääntöä</translation>
-   <translation id="dedicatedCloud_configuration_security_policy_access_step1_question" qtlid="147204">Valitse käytettävä kirjautumissäntö:</translation>
+   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_title" qtlid="521828">Modifier le nombre de connexions simultanées</translation>
+   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_step1_question" qtlid="521867">Nombre maximum de connexions d’utilisateurs simultanées</translation>
+   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_step2_question" qtlid="521880">Vous allez modifier le nombre de connexions d’utilisateurs simultanées de « {0} » à « {1} ».</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_access_title" qtlid="521789">Modifier la politique d'accès au vCenter</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_access_step1_question" qtlid="521893">Politique d'accès à appliquer</translation>
    <translation id="dedicatedCloud_configuration_security_policy_access_step1_value" qtlid="147217">Valitse</translation>
    <translation id="dedicatedCloud_configuration_security_policy_logout_title" qtlid="147230">Muuta uloskirjautumissääntöä</translation>
-   <translation id="dedicatedCloud_configuration_security_policy_logout_step1_question" qtlid="148084">Valitse uloskirjaamissääntö jos kaksi samanaikaista yhteyttä:</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_logout_step1_question" qtlid="521906">Politique de déconnexion en cas de double connexion</translation>
    <translation id="dedicatedCloud_configuration_security_policy_logout_step1_value" qtlid="147217">Valitse</translation>
    <translation id="dedicatedCloud_configuration_security_policy_delete_title" qtlid="147256">Poista IP-osoitteita</translation>
    <translation id="dedicatedCloud_configuration_security_policy_delete_step1_question" qtlid="434906">Haluatko varmasti poistaa pääsyoikeudet IP-osoitteelta {0}?</translation>
@@ -482,11 +485,10 @@
    <translation id="dedicatedCloud_configuration_security_policy_add_step1_question" qtlid="148123">Syötä uuden turvasäännön IP:</translation>
    <translation id="dedicatedCloud_configuration_security_policy_add_step1_description" qtlid="103702">Kuvaus:</translation>
    <translation id="dedicatedCloud_configuration_security_policy_add_step2_question" qtlid="183580">Olet lisäämässä IP:n <b>{0}</b> uutena turvasääntönä</translation>
-   <translation id="dedicatedCloud_configuration_security_update_session_timeout_title" qtlid="147321">Muokkaa vanhenemisaikaa</translation>
-   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step1_question" qtlid="147334">Syötä istunnon vanhenemiseen kuluva minuuttimäärä:</translation>
-   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step1_unit" qtlid="44224">minuuttia</translation>
+   <translation id="dedicatedCloud_configuration_security_update_session_timeout_title" qtlid="521815">Modifier le délai d'expiration d'une session</translation>
+   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step1_question" qtlid="521919">Nombre de minutes avant l'expiration d'une session</translation>
    <translation id="dedicatedCloud_configuration_security_update_session_timeout_step1_never" qtlid="148149">istunto ei vanhene koskaan</translation>
-   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step2_question" qtlid="183593">Olet muuttamassa istunnon vanhenemisen minuuttimäärärajaa arvosta <br/><b>{0}</b> arvoon <b>{1}</b></translation>
+   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step2_question" qtlid="521932">Vous allez modifier le nombre de minutes avant l'expiration d'une session de « {0} » à « {1} ».</translation>
    <translation id="dedicatedCloud_network" qtlid="25591">Verkko</translation>
    <translation id="dedicatedCloud_network_information_ACE" qtlid="147347">ACE:</translation>
    <translation id="dedicatedCloud_network_information_blocIPRipe" qtlid="147360">RIPE IP -verkkoavaruus</translation>
