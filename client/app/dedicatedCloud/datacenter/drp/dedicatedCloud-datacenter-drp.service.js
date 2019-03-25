@@ -1,9 +1,23 @@
 export default class {
   /* @ngInject */
-  constructor($q, OvhApiDedicatedCloud, DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS) {
+  constructor(
+    $q,
+    OvhApiDedicatedCloud,
+    OvhApiMe,
+    OvhApiOrder,
+    ovhPaymentMethod,
+    DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
+    DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS,
+    DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
+  ) {
     this.$q = $q;
     this.OvhApiDedicatedCloud = OvhApiDedicatedCloud;
+    this.OvhApiMe = OvhApiMe;
+    this.OvhApiOrder = OvhApiOrder;
+    this.ovhPaymentMethod = ovhPaymentMethod;
     this.DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS = DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS;
+    this.DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS = DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS;
+    this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_STATUS;
   }
 
   getPccIpAddresses(serviceName) {
@@ -49,13 +63,25 @@ export default class {
       .then(state => ({ ...state.data, ...serviceInformations }));
   }
 
-  enableDrp(drpInformations) {
-    return drpInformations.drpType === this.DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS.ovh
-      ? this.enableDrpOvh(drpInformations)
-      : this.enableDrpOnPremise(drpInformations);
+  enableDrp(drpInformations, isLegacy) {
+    const isOvhToOvhPlan = drpInformations
+      .drpType === this.DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS.ovh;
+
+    if (!isLegacy) {
+      return isOvhToOvhPlan
+        ? this.enableDrpOvh(drpInformations)
+        : this.enableDrpOnPremise(drpInformations);
+    }
+
+    return isOvhToOvhPlan ? this.enableDrpOvhLegacy(drpInformations)
+      : this.enableDrpOnPremiseLegacy(drpInformations);
   }
 
-  enableDrpOvh({
+  /* ================================= */
+  /*          PCC Legacy Ovh           */
+  /* ================================= */
+
+  enableDrpOvhLegacy({
     primaryPcc,
     primaryDatacenter,
     primaryEndpointIp,
@@ -74,7 +100,7 @@ export default class {
     }).$promise;
   }
 
-  enableDrpOnPremise({
+  enableDrpOnPremiseLegacy({
     primaryPcc,
     primaryDatacenter,
     localVraNetwork,
@@ -91,6 +117,127 @@ export default class {
         remoteVraNetwork,
       }).$promise;
   }
+
+  /* ------ END PCC Legacy OVH ------- */
+
+  /* ================================= */
+  /*        Order ZERTO option         */
+  /* ================================= */
+
+  enableDrpOvh(drpInformations) {
+    return this.orderZertoOption(
+      drpInformations,
+      this.DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS.zertoOption.ovh,
+    );
+  }
+
+  createZertoOptionCart(drpInformations, zertoOption) {
+    let zertoCartId;
+    return this.OvhApiMe.v6().get().$promise
+      .then(({ ovhSubsidiary }) => this.OvhApiOrder.Cart().v6().post({}, { ovhSubsidiary })
+        .$promise)
+      .then(({ cartId }) => {
+        zertoCartId = cartId;
+        return this.OvhApiOrder.Cart().v6().assign({ cartId }).$promise;
+      })
+      .then(() => this.OvhApiOrder.Cart().ServiceOption().v6().get({
+        productName: this.DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS.productName,
+        serviceName: drpInformations.primaryPcc.serviceName,
+      }).$promise)
+      .then((offers) => {
+        const [firstOffer] = offers;
+        const [firstPrice] = firstOffer.prices;
+
+        return this.OvhApiOrder.Cart().ServiceOption().v6().post({
+          productName: this.DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS.productName,
+          serviceName: drpInformations.primaryPcc.serviceName,
+        }, {
+          cartId: zertoCartId,
+          duration: this.DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS.duration,
+          planCode: zertoOption,
+          pricingMode: firstPrice.pricingMode,
+          quantity: this.DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS.quantity,
+        }).$promise;
+      });
+  }
+
+  validateZertoOptionCart(cartId) {
+    let autoPayWithPreferredPaymentMethod;
+    return this.$q.all({
+      availableAutomaticPaymentsMean:
+        this.OvhApiMe.AvailableAutomaticPaymentMeans().v6().get().$promise,
+      allPaymentMethods:
+        this.ovhPaymentMethod.getAllPaymentMethods({ onlyValid: true, transform: true }),
+    })
+      .then(({ availableAutomaticPaymentsMean, allPaymentMethods }) => {
+        const availablePaymentType = _(allPaymentMethods).map('paymentType').flatten().value();
+        autoPayWithPreferredPaymentMethod = availablePaymentType
+          .some(({ value }) => _.get(availableAutomaticPaymentsMean, _.camelCase(value)));
+
+        return this.OvhApiOrder.Cart().v6().checkout({
+          cartId,
+        }, {
+          autoPayWithPreferredPaymentMethod,
+          waiveRetractationPeriod: false,
+        }).$promise;
+      })
+      .then(({ orderId, url }) => ({
+        hasAutoPay: autoPayWithPreferredPaymentMethod,
+        orderId,
+        url,
+        state: this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toDo,
+      }));
+  }
+
+  orderZertoOption(drpInformations, zertoOption) {
+    let zertoCartId;
+    return this.createZertoOptionCart(drpInformations, zertoOption)
+      .then(({ cartId, itemId }) => {
+        zertoCartId = cartId;
+        return this.addCartZertoOptionConfiguration(
+          cartId,
+          itemId,
+          this.getZertoConfiguration(drpInformations, zertoOption),
+        );
+      })
+      .then(() => this.validateZertoOptionCart(zertoCartId));
+  }
+
+  getZertoConfiguration(drpInformations, zertoOption) {
+    return zertoOption === this.DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS.zertoOption.ovh
+      ? {
+        datacenter_id: drpInformations.primaryDatacenter.id,
+        primaryEndpointIp: drpInformations.primaryEndpointIp,
+        secondaryEndpointIp: drpInformations.secondaryEndpointIp,
+        secondaryServiceName: drpInformations.secondaryPcc.serviceName,
+        secondaryDatacenterId: drpInformations.secondaryDatacenter.id,
+      }
+      : {
+        datacenter_id: drpInformations.primaryDatacenter.id,
+        ovhEndpointIp: drpInformations.ovhEndpointIp,
+        localVraNetwork: drpInformations.localVraNetwork,
+        remoteVraNetwork: drpInformations.remoteVraNetwork,
+      };
+  }
+
+  addCartZertoOptionConfiguration(cartId, itemId, drpInformations) {
+    const parametersToSet = _.keys(drpInformations);
+
+    return this.$q.all(parametersToSet
+      .map(parameter => this.OvhApiOrder.Cart().Item().Configuration().v6()
+        .post({
+          cartId,
+          itemId,
+          label: parameter,
+          value: _.get(drpInformations, parameter),
+        }).$promise));
+  }
+
+  getZertoOptionOrderStatus(orderId) {
+    return this.OvhApiMe.Order().v6().getStatus({ orderId }).$promise;
+  }
+
+  /* ------- Order ZERTO option ------ */
 
   disableDrp(drpInformations) {
     return drpInformations.drpType === this.DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS.ovh

@@ -3,19 +3,29 @@ import template from './delete/dedicatedCloud-datacenter-drp-confirmationStep-de
 export default class {
   /* @ngInject */
   constructor(
-    $q, $state, $stateParams, $translate, $uibModal,
-    Alerter, DedicatedCloudDrp, OvhApiMe,
+    $q, $state, $stateParams, $translate, $uibModal, $window,
+    Alerter, DedicatedCloudDrp, OvhApiMe, ovhUserPref,
+    DEDICATED_CLOUD_CONSTANTS,
+    DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS,
+    DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
     DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
+    DEDICATEDCLOUD_DATACENTER_ZERTO,
   ) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.$uibModal = $uibModal;
+    this.$window = $window;
     this.Alerter = Alerter;
     this.DedicatedCloudDrp = DedicatedCloudDrp;
     this.OvhApiMe = OvhApiMe;
+    this.ovhUserPref = ovhUserPref;
+    this.PCC_NEW_GENERATION = DEDICATED_CLOUD_CONSTANTS.pccNewGeneration;
+    this.DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS = DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS;
+    this.DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS = DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS;
     this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_STATUS;
+    this.DEDICATEDCLOUD_DATACENTER_ZERTO = DEDICATEDCLOUD_DATACENTER_ZERTO;
   }
 
   $onInit() {
@@ -27,7 +37,10 @@ export default class {
     return this.$q.all({
       enableDrp: this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.deliveredOrProvisionning.includes(state)
         ? this.$q.when({})
-        : this.DedicatedCloudDrp.enableDrp(this.drpInformations),
+        : this.DedicatedCloudDrp.enableDrp(
+          this.drpInformations,
+          this.drpInformations.primaryPcc.generation !== this.PCC_NEW_GENERATION,
+        ),
       me: this.OvhApiMe.v6().get().$promise,
       secondaryPccState: _.isUndefined(otherPccInformations.serviceName)
         ? this.$q.when({})
@@ -36,11 +49,19 @@ export default class {
       .then(({ enableDrp, me, secondaryPccState }) => {
         if (enableDrp.state === this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toDo) {
           this.isEnabling = true;
-        }
-        this.email = me.email;
 
+          if (enableDrp.url !== undefined) {
+            this.storeZertoOptionOrderInUserPref(this.drpInformations, enableDrp);
+            if (!enableDrp.hasAutoPay) {
+              this.$window.open(enableDrp.url, '_blank');
+            }
+          }
+        }
+
+        this.email = me.email;
         this.deleteActionAvailable = secondaryPccState
           .state === this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered;
+
         if (state === this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered) {
           this.Alerter.success(`
             ${this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_create_success_part_one')} ${this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_create_success_part_two', { email: this.email })}
@@ -48,11 +69,23 @@ export default class {
         }
       })
       .catch((error) => {
-        this.Alerter.error(`${this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_create_error')} ${_.get(error, 'message', '')}`, 'dedicatedCloudDatacenterDrpAlert');
+        this.Alerter.error(`${this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_create_error')} ${_.get(error, 'data.message', error.message)}`, 'dedicatedCloudDatacenterDrpAlert');
       })
       .finally(() => {
         this.isLoading = false;
       });
+  }
+
+  storeZertoOptionOrderInUserPref(drpInformations, enableDrp) {
+    const drpInformationsToStore = {
+      drpInformations,
+      zertoOptionOrderId: enableDrp.orderId,
+      zertoOption: drpInformations.drpType === this.DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS.ovh
+        ? this.DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS.zertoOption.ovh
+        : this.DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS.zertoOption.onPremise,
+    };
+
+    return this.ovhUserPref.create(this.DEDICATEDCLOUD_DATACENTER_ZERTO, drpInformationsToStore);
   }
 
   getOtherPccInformations() {
