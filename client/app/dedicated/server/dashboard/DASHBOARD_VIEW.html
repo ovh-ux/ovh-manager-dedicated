@@ -159,7 +159,7 @@
                                 <oui-action-menu-item
                                     data-text="{{:: 'server_close_service' | translate}}"
                                     aria-label="{{:: 'server_close_service' | translate}}"
-                                    data-ng-click="setAction('terminate/dedicated-server-terminate', { serviceInfos })"
+                                    data-ng-click="setAction('terminate/dedicated-server-terminate', server)"
                                     data-if="!server.isExpired">
                                 </oui-action-menu-item>
                             </oui-action-menu>

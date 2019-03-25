@@ -2,23 +2,36 @@ angular
   .module('Billing.controllers')
   .controller('billingAutoRenewDeleteCtrl', class BillingAutoRenewDeleteCtrl {
     constructor($filter, $q, $rootScope, $scope, $translate, Alerter, BillingAutoRenew,
-      AUTORENEW_EVENT) {
+      AUTORENEW_EVENT, Server) {
       this.$filter = $filter;
       this.$q = $q;
       this.$rootScope = $rootScope;
       this.$scope = $scope;
       this.$translate = $translate;
-
+      this.Server = Server;
       this.Alerter = Alerter;
       this.BillingAutoRenew = BillingAutoRenew;
-
+      this.loaders = {
+        init: false,
+      };
       this.AUTORENEW_EVENT = AUTORENEW_EVENT;
     }
 
     $onInit() {
+      this.loaders.init = true;
       this.selectedServices = this.$scope.currentActionData;
       this.serviceToDisplay = _.first(this.selectedServices);
       this.serviceToDisplay.expirationText = this.$filter('date')(this.serviceToDisplay.expiration, 'mediumDate');
+
+      if (this.serviceToDisplay.serviceType === 'DEDICATED_SERVER') {
+        this.Server.getSelected(this.serviceToDisplay.serviceId)
+          .then((server) => {
+            this.serviceToDisplay.engagement = server.engagement;
+          })
+          .finally(() => { this.loaders.init = false; });
+      } else {
+        this.loaders.init = false;
+      }
     }
 
     switchRenewalModeToManual() {
@@ -58,6 +71,10 @@ angular
     }
 
     deleteRenew() {
+      if (this.serviceToDisplay.engagement) {
+        return this.$scope.resetAction();
+      }
+
       return this.switchRenewalModeToManualIfNeeded()
         .then(() => this.switchRenewalModeToDeleteAtExpiration())
         .catch((err) => {
