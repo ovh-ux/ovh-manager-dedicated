@@ -1,3 +1,18 @@
+<a name="10.13.5"></a>
+## [10.13.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.13.4...v10.13.5) (2019-03-25)
+
+
+### Bug Fixes
+
+* **billing.payment.add:** contact choice for ES and IE ([#1030](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1030)) ([e5eb99d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e5eb99d))
+
+
+### Features
+
+* **i18n:** retrieve translations ([a6bfe32](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a6bfe32))
+
+
+
 <a name="10.13.4"></a>
 ## [10.13.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.13.3...v10.13.4) (2019-03-21)
 
