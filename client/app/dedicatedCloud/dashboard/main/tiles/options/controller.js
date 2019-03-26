@@ -14,6 +14,7 @@ export default class OptionTile {
     pendingOrderService,
     preferenceService,
     ACTIVATION_STATUS,
+    CERTIFICATIONS_OPTION_NAME,
   ) {
     this.$q = $q;
     this.$scope = $scope;
@@ -23,6 +24,7 @@ export default class OptionTile {
     this.pendingOrderService = pendingOrderService;
     this.preferenceService = preferenceService;
     this.ACTIVATION_STATUS = ACTIVATION_STATUS;
+    this.CERTIFICATIONS_OPTION_NAME = CERTIFICATIONS_OPTION_NAME;
   }
 
   $onInit() {
@@ -212,6 +214,11 @@ export default class OptionTile {
         },
         certification: {
           description: this.getCertificationDescription(),
+          options: {
+            displayDiscoverLink: this.certification == null,
+            discoverURL: this.servicePackOptionService
+              .getDiscoverURL(this.CERTIFICATIONS_OPTION_NAME, this.currentUser.ovhSubsidiary),
+          },
           interface: {
             isDisplayed: this.certification != null,
             url: this.currentService.certifiedInterfaceUrl,

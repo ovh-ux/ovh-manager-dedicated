@@ -1,4 +1,5 @@
 import {
+  CERTIFICATIONS_OPTION_NAME,
   COMPONENT_NAME,
   MODULE_NAME,
   PENDING_ORDER_SERVICE_NAME,
@@ -22,6 +23,7 @@ angular
     'ui.router',
   ])
   .component(COMPONENT_NAME, component)
+  .constant('CERTIFICATIONS_OPTION_NAME', CERTIFICATIONS_OPTION_NAME)
   .run(/* @ngTranslationsInject ./translations */)
   .service(PENDING_ORDER_SERVICE_NAME, pendingOrder);
 

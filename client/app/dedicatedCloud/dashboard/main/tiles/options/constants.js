@@ -1,3 +1,5 @@
+export const CERTIFICATIONS_OPTION_NAME = 'pcidssHdsHipaa';
+
 export const COMPONENT_NAME = 'optionTile';
 export const MODULE_NAME = 'dedicatedCloudDashboardTilesOptions';
 
@@ -15,6 +17,7 @@ export const ORDER_STATUS = {
 export const PENDING_ORDER_SERVICE_NAME = 'pendingOrderService';
 
 export default {
+  CERTIFICATIONS_OPTION_NAME,
   COMPONENT_NAME,
   MODULE_NAME,
   ORDER_STATUS,
