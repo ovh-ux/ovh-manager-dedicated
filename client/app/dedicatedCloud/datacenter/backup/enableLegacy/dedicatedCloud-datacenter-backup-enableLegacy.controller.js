@@ -68,32 +68,28 @@ angular
             .getUrlOf('express_order'),
           hosts: this.DedicatedCloud
             .getHosts(this.$stateParams.productId, this.$stateParams.datacenterId),
-          user: this.User
-            .getUser(),
-          veamBackupUrl: this.User
-            .getUrlOf('veeamBackup'),
+          license: this.DedicatedCloud
+            .getDatacenterLicence(this.$stateParams.productId, true),
         })
-        .then(({
-          currentService,
-          datacenter,
-          expressURL,
-          hosts,
-          user,
-          veamBackupUrl,
-        }) => {
-          this.currentService = currentService;
+        .then(({ datacenter, hosts, license }) => {
           this.datacenter = datacenter;
-          this.expressURL = expressURL;
-          this.updateAvailableHosts(hosts);
-          this.user = user;
-          this.veamBackupUrl = veamBackupUrl;
+          this.hosts = hosts;
+          this.isSplaActive = license.isSplaActive;
         })
-        .then(() => (this.user.ovhSubsidiary === 'US'
-          ? this.datacenterBackupEnableService.fetchBackupOffers(this.$stateParams.productId)
-          : null))
-        .then((offers) => {
-          this.updateAvailableOffers(_.get(offers, 'prices'));
-        })
+        .finally(() => {
+          this.loading.init = false;
+        });
+    }
+
+    onConfirmBtnClick() {
+      if (!this.hosts.length || !this.isSplaActive) {
+        return this.onCancelBtnClick();
+      }
+
+      this.loading.enable = true;
+
+      return this.DedicatedCloud
+        .enableVeeam(this.$stateParams.productId, this.$stateParams.datacenterId)
         .then(() => {
           this.updateType();
           this.updatePrimaryLabel();
