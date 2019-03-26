@@ -1,63 +1,65 @@
-<form
-    class="oui-modal oui-modal_shadow"
-    name="backupEnableForm"
-    novalidate
-    data-ng-submit=":: $ctrl.submit()">
-    <oui-modal
-        data-title="{{ :: 'dedicatedCloud_tab_veeam_enable_title' | translate }}"
-        data-primary-label="{{:: $ctrl.bindings.labels.primary }}"
-        data-secondary-label="{{:: $ctrl.bindings.labels.secondary }}"
-        data-secondary-action=":: $ctrl.closeModal()"
-        data-on-dismiss=":: $ctrl.closeModal()"
-        data-loading="$ctrl.bindings.isFetchingInitialData"
-        data-type="{{:: $ctrl.bindings.isWarning ? 'warning' : undefined }}">
+<div class="oui-modal oui-modal_shadow">
 
-        <div data-ng-if=":: $ctrl.bindings.isWarning">
-            <p
-                data-ng-if=":: $ctrl.bindings.availableHosts.warning.isDisplayed"
-                data-translate="{{:: $ctrl.bindings.availableHosts.warning.text }}"></p>
+    <div class="oui-modal__header">
+        <button type="button"
+                class="oui-icon oui-icon-close_thin oui-modal__close-button"
+                aria-label="{{ 'wizard_close' | translate }}"
+                data-ng-click="$ctrl.onCancelBtnClick()"
+                data-ng-disabled="$ctrl.loading.enable">
+        </button>
+    </div>
 
-            <p
-                data-ng-if=":: $ctrl.bindings.availableOffers.warning.isDisplayed"
-                data-translate="{{:: $ctrl.bindings.availableOffers.warning.text }}"></p>
+    <div class="oui-modal__body text-center oui-modal__body_no-icon"
+         data-ng-if="$ctrl.loading.init || $ctrl.loading.enable">
+        <oui-spinner></oui-spinner>
+    </div>
+
+    <div class="oui-modal__body oui-modal__body_no-icon"
+         data-ng-if="!$ctrl.loading.init && !$ctrl.loading.enable && $ctrl.hosts.length && $ctrl.isSplaActive">
+        <div class="oui-modal__body-text">
+            <h2 class="oui-modal__title"
+                data-translate="dedicatedCloud_tab_veeam_enable_title">
+            </h2>
+
+            <p data-ng-bind-html="'dedicatedCloud_tab_veeam_enable_message' | translate: { t0: $ctrl.datacenter.name }"></p>
+            <p data-ng-bind-html="'dedicatedCloud_tab_veeam_enable_message2' | translate "></p>
         </div>
 
-        <div data-ng-if=":: $ctrl.bindings.isWarning === false ? true : undefined">
-            <div data-ng-if=":: $ctrl.bindings.availableOffers.selection.isDisplayed">
-                <p
-                    data-translate="dedicatedCloud_datacenter_backup_enable_version_choice"
-                    data-translate-values="{ name: $ctrl.datacenter.name }"></p>
+    <div class="oui-modal__body"
+         data-ng-if="!$ctrl.loading.init && (!$ctrl.hosts.length || !$ctrl.isSplaActive)">
+        <i class="oui-icon oui-icon-warning_circle oui-icon_bicolor"
+           aria-hidden="true">
+        </i>
 
-                <oui-field data-label="{{:: 'dedicatedCloud_datacenter_backup_enable_version' | translate }}">
-                    <label class="oui-select">
-                        <select
-                            id="version"
-                            class="oui-select__input"
-                            name="version"
-                            data-ng-model="$ctrl.bindings.availableOffers.selection.value">
-                            <option
-                                value="classic"
-                                data-translate="dedicatedCloud_datacenter_backup_enable_version_classic"></option>
-                            <option
-                                value="advanced"
-                                data-translate="dedicatedCloud_datacenter_backup_enable_version_advanced"></option>
-                        </select>
-                        <span
-                            class="oui-icon oui-icon-chevron-down"
-                            aria-hidden="true"></span>
-                    </label>
-                    <div
-                        class="oui-field__helper mt-3"
-                        data-translate="dedicatedCloud_datacenter_backup_enable_version_explain"
-                        data-translate-values="{ url: $ctrl.bindings.availableOffers.explanation.url }"></div>
-                </oui-field>
-            </div>
+        <div class="oui-modal__body-text">
+            <h2 class="oui-modal__title"
+                data-translate="dedicatedCloud_tab_veeam_enable_title">
+            </h2>
 
-            <p
-                data-ng-if=":: $ctrl.bindings.availableOffers.selection.isDisplayed === false ? true : undefined"
-                data-translate="dedicatedCloud_tab_veeam_enable_message"
-                data-translate-values="{ t0: $ctrl.datacenter.name }"></p>
+            <p data-ng-if="!$ctrl.isSplaActive">
+                <span data-translate="dedicatedCloud_tab_veeam_noSPLA"></span>
+                <a
+                    data-translate="dedicatedCloud_tab_veeam_splaActivationLink"
+                    data-ui-sref="app.dedicatedClouds.license"></a>
+            </p>
+            <p data-ng-if="!$ctrl.hosts.length && $ctrl.isSplaActive" data-translate="dedicatedCloud_tab_veeam_on_disabled"></p>
         </div>
+    </div>
+
+    <div class="oui-modal__footer">
+        <button type="button"
+                class="oui-button oui-button_secondary"
+                data-translate="wizard_cancel"
+                data-ng-click="$ctrl.onCancelBtnClick()"
+                data-ng-disabled="$ctrl.loading.enable">
+        </button>
+        <button type="button"
+                class="oui-button oui-button_primary"
+                data-ng-bind="$ctrl.loading.init || !$ctrl.hosts.length || !$ctrl.isSplaActive ? ('global_OK' | translate) : ('wizard_confirm' | translate)"
+                data-ng-disabled="$ctrl.loading.init || $ctrl.loading.enable"
+                data-ng-click="$ctrl.onConfirmBtnClick()">
+        </button>
+    </div>
 
     </oui-modal>
 </form>

@@ -39,21 +39,12 @@ angular
     fetchInitialData() {
       this.$scope.loading = true;
 
-      return this.loadLicences()
-        .then(() => this.loadVeeam())
+      return this.loadVeeam()
         .catch((data) => {
           this.$scope.setMessage(this.$translate.instant('dedicatedCloud_tab_veeam_loading_error'), angular.extend(data, { type: 'ERROR' }));
         })
         .finally(() => {
           this.$scope.loading = false;
-        });
-    }
-
-    loadLicences() {
-      return this.DedicatedCloud
-        .getDatacenterLicence(this.$stateParams.productId, this.currentService.usesLegacyOrder)
-        .then(({ isSplaActive }) => {
-          this.$scope.isSplaActive = isSplaActive;
         });
     }
 
