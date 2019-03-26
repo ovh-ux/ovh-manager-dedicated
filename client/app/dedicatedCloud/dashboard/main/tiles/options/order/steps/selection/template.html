@@ -26,34 +26,36 @@
             data-ng-if="$index % 2 === 0">
             <div
                 data-ng-repeat="i in [$index, $index + 1]"
-                class="col-xs-6 oui-select-picker oui-select-picker_light"
+                class="col-xs-6"
                 data-ng-if="$ctrl.orderableServicePacks[i]">
-                <input
-                    class="oui-select-picker__input oui-input"
-                    type="radio"
-                    name="servicePackSelection"
-                    data-ng-model="$ctrl.servicePackToOrder"
-                    data-ng-value="servicePack"
-                    id="{{ 'servicePackSelection' + servicePack.name }}"
-                    required>
-                <label
-                    class="oui-select-picker__label-container dedicatedCloud-servicePack-option-container"
-                    for="{{ 'servicePackSelection' + servicePack.name }}">
-                    <span
-                        class="oui-select-picker__label dedicatedCloud-servicePack-option-label"
-                        data-ng-bind=":: servicePack.displayName"></span>
-                    <p class="oui-select-picker__value-container oui-select-picker__section dedicatedCloud-servicePack-option-section">
+                <div class="oui-select-picker oui-select-picker_light">
+                    <input
+                        class="oui-select-picker__input oui-input"
+                        type="radio"
+                        name="servicePackSelection"
+                        data-ng-model="$ctrl.servicePackToOrder"
+                        data-ng-value="$ctrl.orderableServicePacks[i]"
+                        id="{{:: 'servicePackSelection' + $ctrl.orderableServicePacks[i].name }}"
+                        required>
+                    <label
+                        class="oui-select-picker__label-container dedicatedCloud-servicePack-option-container"
+                        for="{{:: 'servicePackSelection' + $ctrl.orderableServicePacks[i].name }}">
                         <span
-                            class="dedicatedCloud-servicePack-option-description"
-                            data-translate="{{:: servicePack.description }}"></span>
-                    </p>
-                    <p
-                        class="dedicatedCloud-servicePack-option-price"
-                        data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_priceDifferenceOnMonthlyBill"
-                        data-translate-values="{
-                            priceDifference: servicePack.price
-                        }"></p>
-                </label>
+                            class="oui-select-picker__label dedicatedCloud-servicePack-option-label"
+                            data-ng-bind=":: $ctrl.orderableServicePacks[i].displayName"></span>
+                        <p class="oui-select-picker__value-container oui-select-picker__section dedicatedCloud-servicePack-option-section">
+                            <span
+                                class="dedicatedCloud-servicePack-option-description"
+                                data-translate="{{:: $ctrl.orderableServicePacks[i].description }}"></span>
+                        </p>
+                        <p
+                            class="dedicatedCloud-servicePack-option-price"
+                            data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_priceDifferenceOnMonthlyBill"
+                            data-translate-values="{
+                                priceDifference: $ctrl.orderableServicePacks[i].price
+                            }"></p>
+                    </label>
+                </div>
             </div>
         </div>
     </oui-field>

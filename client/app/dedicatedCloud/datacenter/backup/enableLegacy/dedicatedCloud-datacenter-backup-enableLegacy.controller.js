@@ -39,10 +39,13 @@ angular
             .getDatacenterInfoProxy(this.$stateParams.productId, this.$stateParams.datacenterId),
           hosts: this.DedicatedCloud
             .getHosts(this.$stateParams.productId, this.$stateParams.datacenterId),
+          license: this.DedicatedCloud
+            .getDatacenterLicence(this.$stateParams.productId, true),
         })
-        .then(({ datacenter, hosts }) => {
+        .then(({ datacenter, hosts, license }) => {
           this.datacenter = datacenter;
           this.hosts = hosts;
+          this.isSplaActive = license.isSplaActive;
         })
         .finally(() => {
           this.loading.init = false;
@@ -50,7 +53,7 @@ angular
     }
 
     onConfirmBtnClick() {
-      if (!this.hosts.length) {
+      if (!this.hosts.length || !this.isSplaActive) {
         return this.onCancelBtnClick();
       }
 

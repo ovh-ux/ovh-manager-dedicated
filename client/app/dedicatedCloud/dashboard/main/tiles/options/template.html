@@ -75,6 +75,20 @@
                         class="sr-only"
                         data-translate="dedicatedCloudDashboardTilesOptions_openNewTab"></span>
                 </a>
+                <a
+                    data-ng-if=":: $ctrl.bindings.certification.options.displayDiscoverLink"
+                    data-ng-href="{{:: $ctrl.bindings.certification.options.discoverURL }}"
+                    class="oui-link_icon d-block"
+                    target="_blank"
+                    rel="noopener">
+                    <span data-translate="dedicatedCloudDashboardTilesOptions_certification_discover"></span>
+                    <span
+                        class="oui-icon oui-icon-external_link"
+                        aria-hidden="true"></span>
+                    <span
+                        class="sr-only"
+                        data-translate="dedicatedCloudDashboardTilesOptions_openNewTab"></span>
+                </a>
             </oui-tile-description>
             <oui-action-menu
                 data-ng-if=":: $ctrl.bindings.certification.actionMenu.isDisplayed"

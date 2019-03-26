@@ -51,6 +51,8 @@ angular
             .getDatacenterInfoProxy(this.$stateParams.productId, this.$stateParams.datacenterId),
           hosts: this.DedicatedCloud
             .getHosts(this.$stateParams.productId, this.$stateParams.datacenterId),
+          license: this.DedicatedCloud
+            .getDatacenterLicence(this.$stateParams.productId, false),
           offer: this.getBackupOffer(),
           veamBackupUrl: this.User.getUrlOf('veeamBackup'),
         })
@@ -58,12 +60,14 @@ angular
           currentService,
           datacenter,
           hosts,
+          license,
           offer,
           veamBackupUrl,
         }) => {
           this.currentService = currentService;
           this.datacenter = datacenter;
           this.hosts = hosts;
+          this.isSplaActive = license.isSplaActive;
           this.offer = offer;
           this.veamBackupUrl = veamBackupUrl;
         })
@@ -87,7 +91,7 @@ angular
     }
 
     onBackupEnableFormSubmit() {
-      if (!this.hosts || !this.hosts.length || !this.offer) {
+      if (!this.hosts || !this.hosts.length || !this.offer || !this.isSplaActive) {
         return this.closeModal();
       }
 

@@ -8,7 +8,7 @@
 <div data-ng-if="!loading">
 
     <div class="row"
-        data-ng-if="isSplaActive && veeam.model">
+        data-ng-if="veeam.model">
         <dl class="col-sm-9">
             <dt data-translate="dedicatedCloud_tab_veeam_state"></dt>
             <dd data-translate="{{ 'dedicatedCloud_tab_veeam_' + veeam.model.state.toUpperCase() }}"></dd>
@@ -28,11 +28,4 @@
             </a>
         </div>
     </div>
-
-    <p data-ng-if="!isSplaActive">
-        <span data-translate="dedicatedCloud_tab_veeam_noSPLA"></span>
-        <a
-            data-translate="dedicatedCloud_tab_veeam_splaActivationLink"
-            data-ui-sref="app.dedicatedClouds.license"></a>
-    </p>
 </div>
