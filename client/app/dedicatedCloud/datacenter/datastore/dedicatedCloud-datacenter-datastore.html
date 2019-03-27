@@ -49,7 +49,7 @@
         </oui-action-menu>
         <extra-top>
             <oui-button data-disabled="!datacenter.model.canOrderFilers && constants.target !== 'US'"
-                        data-on-click="$ctrl.orderDatastore(datacenter)"
+                        data-ng-click="target !== 'US' ?  $ctrl.orderDatastore(datacenter) : $ctrl.$state.go('app.disable-order')"
                         data-text="{{ 'dedicatedCloud_order_Datastore' | translate }}"
                         class="mb-3">
             </oui-button>

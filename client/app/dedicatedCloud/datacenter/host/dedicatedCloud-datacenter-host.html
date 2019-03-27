@@ -11,7 +11,7 @@
             <button type="button"
                     class="btn btn-default"
                     data-ng-disabled="!datacenter.model.canOrderHosts && $ctrl.constants.target !== 'US'"
-                    data-ng-click="$ctrl.orderHost(datacenter)"
+                    data-ng-click="target !== 'US' ?  $ctrl.orderHost(datacenter) : $ctrl.$state.go('app.disable-order')"
                     data-translate="dedicatedCloud_order_Host">
             </button>
             <div class="label"

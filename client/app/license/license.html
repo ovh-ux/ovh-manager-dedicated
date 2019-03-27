@@ -23,7 +23,7 @@
                                      data-text="{{ :: 'common_actions' | translate }}">
                         <oui-action-menu-item aria-label="{{:: 'license_order_title_button' | translate }}"
                                               data-text="{{:: 'license_order_title_button' | translate }}"
-                                              data-ui-sref="app.license.order">
+                                              data-ui-sref="{{target !== 'US' ? 'app.license.order' : 'app.disable-order'}}">
                         </oui-action-menu-item>
                         <oui-action-menu-item aria-label="{{:: 'license_spla_add_title_button' | translate }}"
                                               data-text="{{:: 'license_spla_add_title_button' | translate }}"

@@ -49,7 +49,7 @@ angular.module('App')
             id: 'order-vrack',
             title: $translate.instant('navigation_left_vrack'),
             icon: 'ovh-font ovh-font-vRack',
-            href: results.vrackOrder,
+            state: 'app.disable-order',
             target: '_blank',
           });
         }
@@ -59,7 +59,7 @@ angular.module('App')
             id: 'order-additional-ip',
             title: $translate.instant('navigation_left_additional_ip'),
             icon: 'ovh-font ovh-font-ip',
-            state: 'app.ip.agora-order',
+            state: constants.target !== 'US' ? 'app.ip.agora-order' : 'app.disable-order',
           });
         }
 
@@ -67,7 +67,7 @@ angular.module('App')
           id: 'order-license',
           title: $translate.instant('navigation_left_licences'),
           icon: 'ovh-font ovh-font-certificate',
-          state: 'app.license.order',
+          state: constants.target !== 'US' ? 'app.license.order' : 'app.disable-order',
         });
 
         SidebarMenu.addActionsMenuItemClickHandler((id) => {
