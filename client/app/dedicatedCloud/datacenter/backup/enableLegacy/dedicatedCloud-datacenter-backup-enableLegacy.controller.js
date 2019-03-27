@@ -68,13 +68,10 @@ angular
             .getUrlOf('express_order'),
           hosts: this.DedicatedCloud
             .getHosts(this.$stateParams.productId, this.$stateParams.datacenterId),
-          license: this.DedicatedCloud
-            .getDatacenterLicence(this.$stateParams.productId, true),
         })
-        .then(({ datacenter, hosts, license }) => {
+        .then(({ datacenter, hosts }) => {
           this.datacenter = datacenter;
           this.hosts = hosts;
-          this.isSplaActive = license.isSplaActive;
         })
         .finally(() => {
           this.loading.init = false;
@@ -82,7 +79,7 @@ angular
     }
 
     onConfirmBtnClick() {
-      if (!this.hosts.length || !this.isSplaActive) {
+      if (!this.hosts.length) {
         return this.onCancelBtnClick();
       }
 

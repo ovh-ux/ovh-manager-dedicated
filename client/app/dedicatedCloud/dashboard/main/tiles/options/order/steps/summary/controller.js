@@ -1,5 +1,5 @@
-/* @ngInject */
 export default class DedicatedCloudservicePackSmsActivation {
+  /* @ngInject */
   constructor(
     $q,
     $state,

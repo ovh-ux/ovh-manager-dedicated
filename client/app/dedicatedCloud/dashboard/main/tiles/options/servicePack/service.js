@@ -3,8 +3,8 @@ import _ from 'lodash';
 import { OPTION_TYPES } from './option/constants';
 import { PREFERENCE_NAME } from '../preference/constants';
 
-/* @ngInject */
 export default class DedicatedCloudServicePack {
+  /* @ngInject */
   constructor(
     $q,
     $translate,
