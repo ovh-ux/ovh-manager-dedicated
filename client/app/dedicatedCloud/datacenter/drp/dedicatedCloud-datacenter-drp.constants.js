@@ -1,4 +1,7 @@
-export const DEDICATEDCLOUD_DATACENTER_ZERTO = 'ZERTO_OPTION';
+export const DEDICATEDCLOUD_DATACENTER_ZERTO = {
+  title: 'ZERTO_OPTION_PCC',
+  splitter: 'pcc-',
+};
 
 export const DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS = {
   ovh: 'ovh',

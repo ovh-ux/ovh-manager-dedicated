@@ -85,7 +85,11 @@ export default class {
         : this.DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS.zertoOption.onPremise,
     };
 
-    return this.ovhUserPref.create(this.DEDICATEDCLOUD_DATACENTER_ZERTO, drpInformationsToStore);
+    const { splitter } = this.DEDICATEDCLOUD_DATACENTER_ZERTO;
+    const [, ...[formattedServiceName]] = drpInformations.primaryPcc.serviceName.split(splitter);
+    const preferenceKey = `${this.DEDICATEDCLOUD_DATACENTER_ZERTO.title}_${formattedServiceName.replace(/-/g, '')}`;
+
+    return this.ovhUserPref.create(preferenceKey, drpInformationsToStore);
   }
 
   getOtherPccInformations() {

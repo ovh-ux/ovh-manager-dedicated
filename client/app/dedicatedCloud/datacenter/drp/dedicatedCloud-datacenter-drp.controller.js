@@ -78,7 +78,12 @@ export default class {
 
   checkForZertoOptionOrder() {
     let storedZertoOption;
-    return this.ovhUserPref.getValue(this.DEDICATEDCLOUD_DATACENTER_ZERTO)
+
+    const { splitter } = this.DEDICATEDCLOUD_DATACENTER_ZERTO;
+    const [, ...[formattedServiceName]] = this.$stateParams.productId.split(splitter);
+    const preferenceKey = `${this.DEDICATEDCLOUD_DATACENTER_ZERTO.title}_${formattedServiceName.replace(/-/g, '')}`;
+
+    return this.ovhUserPref.getValue(preferenceKey)
       .then(({ drpInformations, zertoOptionOrderId }) => {
         if (drpInformations != null
             && drpInformations.primaryPcc.serviceName === this.$stateParams.productId) {
