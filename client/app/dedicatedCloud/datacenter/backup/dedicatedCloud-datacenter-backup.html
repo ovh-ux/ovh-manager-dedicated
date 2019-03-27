@@ -20,7 +20,7 @@
     </div>
 
     <div class="row"
-        data-ng-if="veeam.model">
+        data-ng-if="isSplaActive && veeam.model">
         <dl class="col-sm-9">
             <dt data-translate="dedicatedCloud_tab_veeam_state"></dt>
             <dd data-translate="{{ 'dedicatedCloud_tab_veeam_' + veeam.model.state.toUpperCase() }}"></dd>
@@ -40,7 +40,6 @@
             </a>
         </div>
     </div>
-<<<<<<< HEAD
 
     <p data-ng-if="!isSplaActive">
         <span data-translate="dedicatedCloud_tab_veeam_noSPLA_1"></span>
@@ -49,6 +48,4 @@
             data-ui-sref="app.dedicatedClouds.license"></a>
         <span data-translate="dedicatedCloud_tab_veeam_noSPLA_2"></span>
     </p>
-=======
->>>>>>> fix(options.order): add content and fix duplicates options
 </div>

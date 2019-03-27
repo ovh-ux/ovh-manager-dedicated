@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
-/* @ngInject */
 export default class DedicatedCloudCertificationActivationSMSActivation {
+  /* @ngInject */
   constructor(
     $q,
     $state,
