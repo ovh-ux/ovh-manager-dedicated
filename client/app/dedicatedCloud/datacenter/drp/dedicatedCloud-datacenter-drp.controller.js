@@ -89,13 +89,13 @@ export default class {
         return this.$q.when({});
       })
       .then(({ status: zertoOrderStatus }) => {
-        const hasPendingOrderStatus = [
+        const pendingOrderStatus = [
           this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivering,
           this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered,
-        ].includes(zertoOrderStatus);
+        ].find(status => status === zertoOrderStatus);
 
-        return hasPendingOrderStatus
-          ? { ...storedZertoOption, state: hasPendingOrderStatus }
+        return pendingOrderStatus != null
+          ? { ...storedZertoOption, state: pendingOrderStatus }
           : this.$q.when(null);
       })
       .catch(error => (error.status === 404 ? this.$q.when(null) : this.$q.reject(error)));
