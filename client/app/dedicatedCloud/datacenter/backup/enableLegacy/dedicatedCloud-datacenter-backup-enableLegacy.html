@@ -15,7 +15,7 @@
     </div>
 
     <div class="oui-modal__body oui-modal__body_no-icon"
-         data-ng-if="!$ctrl.loading.init && !$ctrl.loading.enable && $ctrl.hosts.length && $ctrl.isSplaActive">
+         data-ng-if="!$ctrl.loading.init && !$ctrl.loading.enable && $ctrl.hosts.length">
         <div class="oui-modal__body-text">
             <h2 class="oui-modal__title"
                 data-translate="dedicatedCloud_tab_veeam_enable_title">
@@ -27,7 +27,7 @@
     </div>
 
     <div class="oui-modal__body"
-         data-ng-if="!$ctrl.loading.init && (!$ctrl.hosts.length || !$ctrl.isSplaActive)">
+         data-ng-if="!$ctrl.loading.init && !$ctrl.hosts.length">
         <i class="oui-icon oui-icon-warning_circle oui-icon_bicolor"
            aria-hidden="true">
         </i>
@@ -37,13 +37,7 @@
                 data-translate="dedicatedCloud_tab_veeam_enable_title">
             </h2>
 
-            <p data-ng-if="!$ctrl.isSplaActive">
-                <span data-translate="dedicatedCloud_tab_veeam_noSPLA"></span>
-                <a
-                    data-translate="dedicatedCloud_tab_veeam_splaActivationLink"
-                    data-ui-sref="app.dedicatedClouds.license"></a>
-            </p>
-            <p data-ng-if="!$ctrl.hosts.length && $ctrl.isSplaActive" data-translate="dedicatedCloud_tab_veeam_on_disabled"></p>
+            <p data-translate="dedicatedCloud_tab_veeam_on_disabled"></p>
         </div>
     </div>
 
@@ -56,7 +50,7 @@
         </button>
         <button type="button"
                 class="oui-button oui-button_primary"
-                data-ng-bind="$ctrl.loading.init || !$ctrl.hosts.length || !$ctrl.isSplaActive ? ('global_OK' | translate) : ('wizard_confirm' | translate)"
+                data-ng-bind="$ctrl.loading.init || !$ctrl.hosts.length ? ('global_OK' | translate) : ('wizard_confirm' | translate)"
                 data-ng-disabled="$ctrl.loading.init || $ctrl.loading.enable"
                 data-ng-click="$ctrl.onConfirmBtnClick()">
         </button>

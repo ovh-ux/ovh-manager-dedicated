@@ -1,6 +1,7 @@
 import { ACTIVATION_TYPES } from './constants';
 
 export default class {
+  /* @ngInject */
   constructor(
     $injector,
     $translate,
