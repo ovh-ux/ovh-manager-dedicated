@@ -25,7 +25,7 @@
                   data-ng-if="$ctrl.isDisablingDrp"></span>
         </oui-message>
 
-        <div data-ng-if="$ctrl.drpInformations.drpType == null">
+        <div data-ng-if="$ctrl.$stateParams.currentStep == null">
             <span data-translate="dedicatedCloud_tab_drp_choice_plan_type"></span>
             <div class="row d-md-flex mt-3">
                 <div class="col-lg-6">

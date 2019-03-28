@@ -9,6 +9,7 @@ angular
       $transitions,
       $translate,
       $uibModal,
+      Alerter,
       DedicatedCloud,
       DEDICATED_CLOUD_DATACENTER,
     ) {
@@ -18,6 +19,7 @@ angular
       this.$transitions = $transitions;
       this.$translate = $translate;
       this.$uibModal = $uibModal;
+      this.Alerter = Alerter;
       this.DedicatedCloud = DedicatedCloud;
       this.DEDICATED_CLOUD_DATACENTER = DEDICATED_CLOUD_DATACENTER;
     }
@@ -65,11 +67,15 @@ angular
       this.$transitions.onError({
         to: 'app.dedicatedClouds.datacenter.drp',
       }, ($transition$) => {
+        const loadServiceError = _.get($transition$, '_error.detail.data.message', null);
         this.$scope.loading = false;
-        this.Alerter.error(
-          `${this.$translate.instant('dedicatedCloud_datacenter_drp_get_state_error')} ${_.get($transition$, '_error.detail.data.message', null)}`,
-          'dedicatedCloudDatacenterAlert',
-        );
+
+        if (loadServiceError !== null) {
+          this.Alerter.error(
+            `${this.$translate.instant('dedicatedCloud_datacenter_drp_get_state_error')} ${loadServiceError}`,
+            'dedicatedCloudDatacenterAlert',
+          );
+        }
       });
 
       this.$transitions.onSuccess({
