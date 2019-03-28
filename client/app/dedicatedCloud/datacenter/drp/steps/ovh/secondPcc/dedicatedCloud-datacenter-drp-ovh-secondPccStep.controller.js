@@ -4,6 +4,7 @@ export default class {
     $q, $state, $stateParams, $translate, $uibModal,
     Alerter, DedicatedCloud, DedicatedCloudDrp, ipFeatureAvailability, OvhApiDedicatedCloud,
     DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP,
+    DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
     DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS,
   ) {
     this.$q = $q;
@@ -17,10 +18,12 @@ export default class {
     this.ipFeatureAvailability = ipFeatureAvailability;
     this.OvhApiDedicatedCloud = OvhApiDedicatedCloud;
     this.MAC_ADDRESS_REG_EXP = DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP;
+    this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_STATUS;
     this.UNAVAILABLE_IP_STATUSES = DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS;
   }
 
   $onInit() {
+    this.isLoading = true;
     this.drpInformations = this.$stateParams.drpInformations;
 
     this.availablePccs = this.pccList
@@ -30,6 +33,32 @@ export default class {
         description: pcc.description || pcc.serviceName,
         serviceName: pcc.serviceName,
       }));
+
+    return this.$q.all(this.availablePccs
+      .map(({ serviceName }) => this.DedicatedCloudDrp
+        .getPccDrpPlan(serviceName)))
+      .then((pccList) => {
+        const pccWithoutDtp = pccList
+          .filter(datacenters => !datacenters
+            .some(({ state }) => [
+              ...this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.deliveredOrProvisionning,
+              ...this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toDisableOrDisabling,
+            ].includes(state)))
+          .flat();
+
+        this.availablePccs = this.availablePccs
+          .filter(({ serviceName }) => pccWithoutDtp
+            .some(({ serviceName: pccServiceName }) => serviceName === pccServiceName));
+      })
+      .catch((error) => {
+        this.Alerter.error(
+          `${this.$translate.instant('dedicatedCloud_datacenter_drp_get_state_error')} ${_.get(error, 'data.message', error.message)}`,
+          'dedicatedCloudDatacenterAlert',
+        );
+      })
+      .finally(() => {
+        this.isLoading = false;
+      });
   }
 
   updateOptions(secondaryPcc) {

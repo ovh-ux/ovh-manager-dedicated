@@ -40,7 +40,8 @@ export default class {
         .map(datacenterId => this.getDrpState({
           serviceName,
           datacenterId,
-        }))));
+        }))))
+      .catch(error => (error.status === 460 ? this.$q.when([]) : this.$q.reject(error)));
   }
 
   getPccIpAddressesDetails(serviceName) {
