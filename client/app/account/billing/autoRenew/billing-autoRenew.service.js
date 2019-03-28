@@ -165,10 +165,10 @@ angular.module('Billing.services').service('BillingAutoRenew', [
       rootPath: 'apiv6',
     });
 
-    this.getExchangeService = (organizationName, exchangeService) => (
-      OvhApiEmailExchange.service().v6().get({
-        organizationName,
-        exchangeService,
+    this.getExchangeService = (organization, exchange) => (
+      OvhApiEmailExchange.service().Aapi().get({
+        organization,
+        exchange,
       }).$promise
     );
   },
