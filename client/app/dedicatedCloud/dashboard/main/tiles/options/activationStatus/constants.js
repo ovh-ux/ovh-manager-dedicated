@@ -1,7 +1,3 @@
-export const COMPONENT_NAME = 'activationStatus';
-export const CONSTANT_NAME = 'ACTIVATION_STATUS';
-export const MODULE_NAME = 'activationStatus';
-
 export const ACTIVATION_STATUS = {
   beingActivated: {
     name: 'beingActivated',
@@ -25,9 +21,9 @@ export const ACTIVATION_STATUS = {
   },
 };
 
+export const COMPONENT_NAME = 'activationStatus';
+
 export default {
-  COMPONENT_NAME,
-  CONSTANT_NAME,
-  MODULE_NAME,
   ACTIVATION_STATUS,
+  COMPONENT_NAME,
 };

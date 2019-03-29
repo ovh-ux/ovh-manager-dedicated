@@ -1,7 +1,3 @@
-export const CONSTANT_NAME = 'DEDICATED_CLOUD_SERVICE_PACK_OPTION';
-export const MODULE_NAME = 'dedicatedCloudServicePackOption';
-export const SERVICE_NAME = 'servicePackOptionService';
-
 export const OPTION_TYPES = {
   basic: 'basic',
   certification: 'certification',
@@ -35,9 +31,6 @@ export const OPTIONS = [
 ];
 
 export default {
-  CONSTANT_NAME,
-  MODULE_NAME,
   OPTIONS,
   OPTION_TYPES,
-  SERVICE_NAME,
 };
