@@ -1,10 +1,5 @@
 import {
   ACTIVATION_TYPES,
-  COMPONENT_NAME,
-  CONSTANT_NAME,
-  MODULE_NAME,
-  SERVICE_NAME,
-  STATE_NAME,
 } from './constants';
 
 import component from './component';
@@ -13,8 +8,14 @@ import servicePack from '../servicePack';
 import state from './state';
 import stepper from './stepper';
 
+const componentName = 'dedicatedCloudServicePack';
+const constantName = 'DEDICATED_CLOUD_SERVICE_PACK_ACTIVATION';
+const moduleName = 'dedicatedCloudDashboardTilesOptionsOrder';
+const serviceName = 'orderService';
+const stateName = 'app.dedicatedClouds.servicePack';
+
 angular
-  .module(MODULE_NAME, [
+  .module(moduleName, [
     'oui',
     'pascalprecht.translate',
     servicePack,
@@ -22,12 +23,12 @@ angular
     'ui.router',
     ...ACTIVATION_TYPES.all,
   ])
-  .component(COMPONENT_NAME, component)
+  .component(componentName, component)
   .config(/* @ngInject */ ($stateProvider) => {
-    $stateProvider.state(STATE_NAME, state);
+    $stateProvider.state(stateName, state);
   })
-  .constant(CONSTANT_NAME, { ACTIVATION_TYPES })
+  .constant(constantName, { ACTIVATION_TYPES })
   .run(/* @ngTranslationsInject ./translations */)
-  .service(SERVICE_NAME, service);
+  .service(serviceName, service);
 
-export default MODULE_NAME;
+export default moduleName;

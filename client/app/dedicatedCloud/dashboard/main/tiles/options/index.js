@@ -1,8 +1,5 @@
 import {
   CERTIFICATIONS_OPTION_NAME,
-  COMPONENT_NAME,
-  MODULE_NAME,
-  PENDING_ORDER_SERVICE_NAME,
 } from './constants';
 
 import activationStatus from './activationStatus';
@@ -12,8 +9,13 @@ import pendingOrder from './pendingOrderService';
 import preference from './preference';
 import servicePack from './servicePack';
 
+const componentName = 'optionTile';
+const constantName = 'CERTIFICATIONS_OPTION_NAME';
+const moduleName = 'dedicatedCloudDashboardTilesOptions';
+const serviceName = 'pendingOrderService';
+
 angular
-  .module(MODULE_NAME, [
+  .module(moduleName, [
     activationStatus,
     order,
     'oui',
@@ -22,9 +24,9 @@ angular
     servicePack,
     'ui.router',
   ])
-  .component(COMPONENT_NAME, component)
-  .constant('CERTIFICATIONS_OPTION_NAME', CERTIFICATIONS_OPTION_NAME)
+  .component(componentName, component)
+  .constant(constantName, CERTIFICATIONS_OPTION_NAME)
   .run(/* @ngTranslationsInject ./translations */)
-  .service(PENDING_ORDER_SERVICE_NAME, pendingOrder);
+  .service(serviceName, pendingOrder);
 
-export default MODULE_NAME;
+export default moduleName;

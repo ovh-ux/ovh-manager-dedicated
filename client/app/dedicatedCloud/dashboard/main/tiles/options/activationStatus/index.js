@@ -1,19 +1,20 @@
 import {
-  COMPONENT_NAME,
-  CONSTANT_NAME,
-  MODULE_NAME,
   ACTIVATION_STATUS,
 } from './constants';
 
 import component from './component';
 
+const componentName = 'activationStatus';
+const constantName = 'ACTIVATION_STATUS';
+const moduleName = 'activationStatus';
+
 angular
-  .module(MODULE_NAME, [
+  .module(moduleName, [
     'oui',
     'pascalprecht.translate',
   ])
-  .component(COMPONENT_NAME, component)
-  .constant(CONSTANT_NAME, ACTIVATION_STATUS)
+  .component(componentName, component)
+  .constant(constantName, ACTIVATION_STATUS)
   .run(/* @ngTranslationsInject ./translations */);
 
-export default MODULE_NAME;
+export default moduleName;

@@ -6,5 +6,6 @@ export const STEP_NAME = 'selection';
 export default {
   COMPONENT_NAME,
   MODULE_NAME,
+  SERVICE_NAME,
   STEP_NAME,
 };

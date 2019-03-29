@@ -1,17 +1,15 @@
 import component from './component';
 
-import {
-  COMPONENT_NAME,
-  MODULE_NAME,
-} from './constants';
+const componentName = 'serviceManagementTile';
+const moduleName = 'serviceManagementTile';
 
 angular
-  .module(MODULE_NAME, [
+  .module(moduleName, [
     'oui',
     'pascalprecht.translate',
     'ui.router',
   ])
-  .component(COMPONENT_NAME, component)
+  .component(componentName, component)
   .run(/* @ngTranslationsInject ./translations */);
 
-export default MODULE_NAME;
+export default moduleName;

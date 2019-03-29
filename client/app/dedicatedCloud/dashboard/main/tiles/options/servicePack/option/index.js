@@ -2,20 +2,21 @@
 // import 'angular-translate';
 
 import {
-  CONSTANT_NAME,
-  MODULE_NAME,
   OPTIONS,
   OPTION_TYPES,
-  SERVICE_NAME,
 } from './constants';
 import service from './service';
 
+const constantName = 'DEDICATED_CLOUD_SERVICE_PACK_OPTION';
+const moduleName = 'dedicatedCloudServicePackOption';
+const serviceName = 'servicePackOptionService';
+
 angular
-  .module(MODULE_NAME, [
+  .module(moduleName, [
     'pascalprecht.translate',
   ])
-  .constant(CONSTANT_NAME, { OPTIONS, OPTION_TYPES })
+  .constant(constantName, { OPTIONS, OPTION_TYPES })
   .run(/* @ngTranslationsInject ./translations */)
-  .service(SERVICE_NAME, service);
+  .service(serviceName, service);
 
-export default MODULE_NAME;
+export default moduleName;

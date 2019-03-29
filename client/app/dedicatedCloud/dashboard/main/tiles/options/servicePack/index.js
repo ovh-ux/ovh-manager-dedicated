@@ -1,19 +1,17 @@
-import {
-  MODULE_NAME,
-  SERVICE_NAME,
-} from './constants';
-
 import service from './service';
 import option from './option';
 
+const moduleName = 'dedicatedCloudDashboardTilesOptionsServicePack';
+const serviceName = 'servicePackService';
+
 angular
-  .module(MODULE_NAME, [
+  .module(moduleName, [
     option,
     'oui',
     'pascalprecht.translate',
     'ui.router',
   ])
   .run(/* @ngTranslationsInject ./translations */)
-  .service(SERVICE_NAME, service);
+  .service(serviceName, service);
 
-export default MODULE_NAME;
+export default moduleName;
