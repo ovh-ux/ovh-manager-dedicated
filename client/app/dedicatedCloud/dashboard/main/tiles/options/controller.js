@@ -15,6 +15,7 @@ export default class OptionTile {
     preferenceService,
     ACTIVATION_STATUS,
     CERTIFICATIONS_OPTION_NAME,
+    UNEXISTING_PREFERENCE_ORDER,
   ) {
     this.$q = $q;
     this.$scope = $scope;
@@ -25,6 +26,7 @@ export default class OptionTile {
     this.preferenceService = preferenceService;
     this.ACTIVATION_STATUS = ACTIVATION_STATUS;
     this.CERTIFICATIONS_OPTION_NAME = CERTIFICATIONS_OPTION_NAME;
+    this.UNEXISTING_PREFERENCE_ORDER = UNEXISTING_PREFERENCE_ORDER;
   }
 
   $onInit() {
@@ -45,7 +47,7 @@ export default class OptionTile {
       .doesPreferenceExists(this.currentService.serviceName)
       .then((exists) => {
         if (!exists) {
-          return this.$q.reject({ status: 'ODE' });
+          return this.$q.reject({ status: this.UNEXISTING_PREFERENCE_ORDER });
         }
 
         return this.preferenceService
@@ -65,7 +67,7 @@ export default class OptionTile {
         return null;
       })
       .catch((error) => {
-        if (error.status === 'ODE') {
+        if (error.status === this.UNEXISTING_PREFERENCE_ORDER) {
           this.pendingOrder = null;
         }
 

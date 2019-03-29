@@ -1,3 +1,5 @@
+import pccViewTemplate from './dashboard/template.html';
+
 angular
   .module('App')
   .config(/* @ngInject */ ($stateProvider, $urlServiceProvider) => {
@@ -18,7 +20,7 @@ angular
           controllerAs: '$ctrl',
         },
         'pccView@app.dedicatedClouds': {
-          templateUrl: 'dedicatedCloud/dashboard/template.html',
+          template: pccViewTemplate,
         },
       },
     });
