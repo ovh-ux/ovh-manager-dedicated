@@ -15,7 +15,7 @@
 </oui-message>
 
 <form
-    data-ng-show="!$ctrl.orderingURL && !$ctrl.orderIsInProgress"
+    data-ng-if="!$ctrl.orderingURL && !$ctrl.orderIsInProgress"
     novalidate
     name="$ctrl.form">
 
