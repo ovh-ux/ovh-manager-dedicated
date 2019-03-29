@@ -1,9 +1,9 @@
 import template from '../../common/mainPcc/dedicatedCloud-datacenter-drp-mainPccStep.html';
-import DedicatedCloudDatacenterDrpMainPccStepCtrl from '../../common/mainPcc/dedicatedCloud-datacenter-drp-mainPccStep.controller';
+import controller from '../../common/mainPcc/dedicatedCloud-datacenter-drp-mainPccStep.controller';
 
 export default {
   template,
-  controller: DedicatedCloudDatacenterDrpMainPccStepCtrl,
+  controller,
   bindings: {
     datacenters: '<datacenterList',
   },

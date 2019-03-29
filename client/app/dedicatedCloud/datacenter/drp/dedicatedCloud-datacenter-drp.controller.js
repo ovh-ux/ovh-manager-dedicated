@@ -1,3 +1,9 @@
+import {
+  DEDICATEDCLOUD_DATACENTER_DRP_ROLES,
+  DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
+  DEDICATEDCLOUD_DATACENTER_ZERTO,
+} from './dedicatedCloud-datacenter-drp.constants';
+
 export default class {
   /* @ngInject */
   constructor(
@@ -10,9 +16,6 @@ export default class {
     DedicatedCloudDrp,
     ovhPaymentMethod,
     ovhUserPref,
-    DEDICATEDCLOUD_DATACENTER_DRP_ROLES,
-    DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
-    DEDICATEDCLOUD_DATACENTER_ZERTO,
   ) {
     this.$q = $q;
     this.$state = $state;
