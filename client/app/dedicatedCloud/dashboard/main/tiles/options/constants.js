@@ -11,7 +11,10 @@ export const ORDER_STATUS = {
   unknown: 'unknown',
 };
 
+export const UNEXISTING_PREFERENCE_ORDER = 'ODE';
+
 export default {
   CERTIFICATIONS_OPTION_NAME,
   ORDER_STATUS,
+  UNEXISTING_PREFERENCE_ORDER,
 };
