@@ -23,9 +23,9 @@ import uiRouter from '@uirouter/angularjs';
 import config from './config/config';
 import dedicatedCloudDatacenterDrp from './dedicatedCloud/datacenter/drp';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
-import dashboard from './dedicatedCloud/dashboard/main';
-import dashboardLegacy from './dedicatedCloud/dashboard/legacy';
-import resourceUpgrade from './dedicatedCloud/resource/upgrade';
+import dedicatedCloudDashboard from './dedicatedCloud/dashboard/main';
+import dedicatedCloudDashboardLegacy from './dedicatedCloud/dashboard/legacy';
+import dedicatedCloudResourceUpgrade from './dedicatedCloud/resource/upgrade';
 
 
 
@@ -37,9 +37,10 @@ angular
     'Billing',
     'chart.js',
     'controllers',
-    dashboard,
-    dashboardLegacy,
+    dedicatedCloudDashboard,
+    dedicatedCloudDashboardLegacy,
     dedicatedCloudDatacenterDrp,
+    dedicatedCloudResourceUpgrade,
     dedicatedUniverseComponents,
     'directives',
     'filters',
@@ -79,7 +80,6 @@ angular
     ovhManagerNavbar,
     ovhPaymentMethod,
     'pascalprecht.translate',
-    resourceUpgrade,
     'services',
     'ui.bootstrap',
     'ui.router',
