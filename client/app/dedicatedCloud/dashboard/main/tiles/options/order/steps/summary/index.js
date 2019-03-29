@@ -1,24 +1,22 @@
-import {
-  COMPONENT_NAME,
-  MODULE_NAME,
-  SERVICE_NAME,
-} from './constants';
-
 import component from './component';
 import service from './service';
 import step from './step';
 
+const componentName = 'summary';
+const moduleName = 'dedicatedCloudDashboardTilesOptionsOrderSummary';
+const serviceName = 'summaryService';
+
 angular
-  .module(MODULE_NAME, [
+  .module(moduleName, [
     'oui',
     'pascalprecht.translate',
     'ui.router',
   ])
-  .component(COMPONENT_NAME, component)
+  .component(componentName, component)
   .run(/* @ngTranslationsInject ./translations */)
-  .service(SERVICE_NAME, service);
+  .service(serviceName, service);
 
-export default MODULE_NAME;
+export default moduleName;
 
 export {
   step,

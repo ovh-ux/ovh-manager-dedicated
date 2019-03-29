@@ -1,18 +1,16 @@
-import {
-  COMPONENT_NAME,
-  MODULE_NAME,
-} from './constant';
-
 import component from './component';
 import header from './header';
 
+const componentName = 'stepper';
+const moduleName = 'dedicatedCloudDashboardTilesOptionsOrderStepper';
+
 angular
-  .module(MODULE_NAME, [
+  .module(moduleName, [
     header,
     'oui',
     'pascalprecht.translate',
     'ui.router',
   ])
-  .component(COMPONENT_NAME, component);
+  .component(componentName, component);
 
-export default MODULE_NAME;
+export default moduleName;

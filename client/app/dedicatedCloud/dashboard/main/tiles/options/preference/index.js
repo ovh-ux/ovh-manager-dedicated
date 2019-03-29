@@ -1,12 +1,10 @@
-import {
-  MODULE_NAME,
-  SERVICE_NAME,
-} from './constants';
-
 import service from './service';
 
-angular
-  .module(MODULE_NAME, [])
-  .service(SERVICE_NAME, service);
+const moduleName = 'dedicatedCloudDashboardTilesOptionsPreference';
+const serviceName = 'preferenceService';
 
-export default MODULE_NAME;
+angular
+  .module(moduleName, [])
+  .service(serviceName, service);
+
+export default moduleName;

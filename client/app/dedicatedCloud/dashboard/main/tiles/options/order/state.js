@@ -1,7 +1,3 @@
-import {
-  COMPONENT_NAME,
-} from './constants';
-
 const orderableServicePacks = /* @ngInject */ (
   $transition$,
   currentService,
@@ -25,6 +21,8 @@ const servicePacks = /* @ngInject */ (
     || servicePackService
       .buildAllForService(currentService.serviceName, currentUser.ovhSubsidiary);
 
+const componentName = 'dedicatedCloudServicePack';
+
 export default {
   params: {
     orderableServicePacks: null,
@@ -36,6 +34,6 @@ export default {
   },
   url: '/servicePack?activationType',
   views: {
-    pccView: COMPONENT_NAME,
+    pccView: componentName,
   },
 };

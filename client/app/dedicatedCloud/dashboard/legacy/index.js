@@ -1,15 +1,13 @@
-import {
-  component,
-  componentName,
-} from './component';
+import component from './component';
 
-const MODULE_NAME = 'legacyDashboard';
+const componentName = 'legacyDashboard';
+const moduleName = 'legacyDashboard';
 
 angular
-  .module(MODULE_NAME, [
+  .module(moduleName, [
     'oui',
     'pascalprecht.translate',
   ])
   .component(componentName, component);
 
-export default MODULE_NAME;
+export default moduleName;
