@@ -17,7 +17,7 @@ export default class Stepper {
   }
 
   $onInit() {
-    this.memoizedStateParams = {};
+    this.memorizedStateParams = {};
     this.transitionUnregistrationHooks = [];
     // Each step is a child of the stepper
     // This is the name of the state of the stepper itself,
@@ -107,9 +107,9 @@ export default class Stepper {
       .filter(currentStep => currentStep.isComplete)
       .map(currentStep => currentStep.name);
 
-    this.memoizedStateParams = { ...this.memoizedStateParams, ...stateParams };
+    this.memorizedStateParams = { ...this.memorizedStateParams, ...stateParams };
     const destinationStepName = `${this.stepperRootStateName}.${[...completedStepNames, ''].join('.')}${this.activeStep.value.name}`;
-    return this.$state.go(destinationStepName, this.memoizedStateParams);
+    return this.$state.go(destinationStepName, this.memorizedStateParams);
   }
 
   exit(reload = false) {
