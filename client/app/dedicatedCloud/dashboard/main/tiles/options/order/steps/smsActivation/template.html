@@ -45,7 +45,7 @@
 </oui-button>
 
 <oui-button
-    data-ng-if="$ctrl.usersWhoCanReceiveSMS.length > 0"
+    data-disabled="$ctrl.usersWhoCanReceiveSMS.length === 0"
     data-on-click="$ctrl.stepper.goToNextStep()"
     data-variant="primary"
     class="ml-3">
