@@ -57,7 +57,7 @@
 </oui-button>
 
 <oui-button
-    data-ng-if="$ctrl.configurationIsCorrect"
+    data-disabled="!$ctrl.configurationIsCorrect"
     data-on-click="$ctrl.stepper.goToNextStep()"
     data-variant="primary"
     class="ml-3">
