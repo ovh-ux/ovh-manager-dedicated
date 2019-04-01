@@ -1,5 +1,7 @@
 import _ from 'lodash';
 
+import { BASIC_ACTIVATION_TYPE } from './constants';
+
 export default class {
   /* @ngInject */
   constructor(
@@ -47,12 +49,23 @@ export default class {
       });
   }
 
+  makeNextAction() {
+    if (this.activationType === BASIC_ACTIVATION_TYPE) {
+      return this.placeOrder();
+    }
+
+    return this.goToNextStep();
+  }
+
   goToNextStep() {
     if (this.form.$invalid) {
       return null;
     }
 
-    return this.stepper.goToNextStep({ servicePackToOrder: this.servicePackToOrder });
+    return this.stepper.goToNextStep({
+      currentService: this.currentService,
+      servicePackToOrder: this.servicePackToOrder,
+    });
   }
 
   placeOrder() {
@@ -81,11 +94,7 @@ export default class {
           })
           .then(() => {
             if (this.hasDefaultMeansOfPayment) {
-              if (this.activationType === 'basic') {
-                return this.stepper.exit();
-              }
-
-              return this.goToNextStep();
+              return this.stepper.exit();
             }
 
             return null;
