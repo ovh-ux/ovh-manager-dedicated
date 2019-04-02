@@ -38,17 +38,17 @@
    <translation id="manualrenew_onlyauto_alert" qtlid="264166">Sie haben ausschließlich automatische Verlängerungen ausgewählt.</translation>
    <translation id="autorenew_empty" qtlid="219810">Sie haben keine Dienstleistungen</translation>
    <translation id="autorenew_service_mass_actions_caption" qtlid="300227">Aktionen für die ausgewählten Elemente:</translation>
-   <translation id="autorenew_service_update_button_caption" qtlid="416072">Zahlungsrhythmus ändern</translation>
+   <translation id="autorenew_service_update_button_caption" qtlid="416072">Zahlungsintervall ändern</translation>
    <translation id="autorenew_service_update_date_button_caption" qtlid="300253">Die Ablaufdaten aneinander angleichen.</translation>
-   <translation id="autorenew_service_resiliate_button" qtlid="498170">Am Ablaufddatum löschen</translation>
-   <translation id="autorenew_service_resiliate_button_title" qtlid="498183">Am Ablaufdatum löschen: {0}</translation>
+   <translation id="autorenew_service_resiliate_button" qtlid="498170">Am Ablaufdatum kündigen</translation>
+   <translation id="autorenew_service_resiliate_button_title" qtlid="498183">Am Ablaufdatum kündigen: {0}</translation>
    <translation id="autorenew_service_disable_button" qtlid="416085">Automatische Zahlung deaktivieren</translation>
    <translation id="autorenew_service_enable_button" qtlid="416098">Automatische Zahlung aktivieren</translation>
    <translation id="autorenew_service_renew_button" qtlid="416111">Dienstleistung bezahlen</translation>
    <translation id="autorenew_service_renew_button_title" qtlid="416124">Dienstleistung bezahlen: {0} (Neues Fenster)</translation>
-   <translation id="autorenew_service_canceldelete_button" qtlid="285350">Die Kündigung zurücknehmen</translation>
+   <translation id="autorenew_service_canceldelete_button" qtlid="285350">Kündigung zurücknehmen</translation>
    <translation id="autorenew_service_canceldelete_button_title" qtlid="243695">Meine Kündigungsanfrage widerrufen: {0}</translation>
-   <translation id="autorenew_service_renew_frequency_title" qtlid="212998">Zahlungsfrequenz</translation>
+   <translation id="autorenew_service_renew_frequency_title" qtlid="212998">Zahlungsintervall</translation>
    <translation id="autorenew_service_renew_frequency_value" qtlid="498196">Automatisch: alle {0} Monate</translation>
    <translation id="autorenew_search_input_title" qtlid="300629">Suche nach Dienstleistungen anhand der Kennung.</translation>
    <translation id="autorenew_service_expand_sub_services" qtlid="300642">Dazugehörige Dienstleistungen ein- oder ausblenden.</translation>
@@ -69,7 +69,7 @@
    <translation id="autorenew_service_update_renewal_activation_notice" qtlid="369427">Die automatische Verlängerung wurde für den/die ausgewählten Service(s) sowie für Ihr Konto aktiviert. </translation>
    <translation id="autorenew_service_update_renewal_activation_error" qtlid="369440">Sie haben die automatische Verlängerung für mindestens einen Service ausgewählt, wir konnten die Aktivierung der automatischen Verlängerung aber nicht durchführen für Ihr Konto: {0} </translation>
    <translation id="autorenew_guide_help" qtlid="156732">Ziehen Sie unsere Online-Hilfen zu Rate.</translation>
-   <translation id="autorenew_service_delete_title" qtlid="498170">Am Ablaufddatum löschen</translation>
+   <translation id="autorenew_service_delete_title" qtlid="498170">Am Ablaufdatum kündigen</translation>
    <translation id="autorenew_service_debt_before_paying_title" qtlid="506780">Wichtige Information</translation>
    <translation id="autorenew_service_debt_before_paying_1" qtlid="498209">Bevor Sie den Dienst für einen neuen Zeitraum abonnieren, begleichen Sie bitte den ausstehenden Betrag in Ihrem Kundencenter.</translation>
    <translation id="autorenew_service_debt_before_paying_2" qtlid="498222">Gehen Sie in den Bereich „Abrechnung", um die Rechnung für die Dienstleistung <strong>{{service}}</strong> zu begleichen.</translation>
@@ -247,7 +247,7 @@
    <translation id="common_payment_type_OVH_ACCOUNT" qtlid="48926">Prepaid-Account</translation>
    <translation id="common_payment_type_paymentMandate" qtlid="139819">Zahlungsanweisung</translation>
    <translation id="common_payment_type_PAYMENT_MANDATE" qtlid="139819">Zahlungsanweisung</translation>
-   <translation id="common_payment_type_paypal" qtlid="521496">Paypal</translation>
+   <translation id="common_payment_type_paypal" qtlid="521496">PayPal</translation>
    <translation id="common_payment_type_payu" qtlid="373480">PayU </translation>
    <translation id="common_payment_type_platnosci" qtlid="139832">Płatności</translation>
    <translation id="common_payment_type_refund" qtlid="139845">Guthaben</translation>
@@ -895,7 +895,7 @@ verwenden.</translation>
    <translation id="ovhAccount_table_type_payment_NONE" qtlid="30646">Keiner</translation>
    <translation id="ovhAccount_table_type_payment_OVH_ACCOUNT" qtlid="48926">Prepaid-Account</translation>
    <translation id="ovhAccount_table_type_payment_PAYMENT_MANDATE" qtlid="177431">Postanweisung</translation>
-   <translation id="ovhAccount_table_type_payment_PAYPAL" qtlid="521509">Paypal</translation>
+   <translation id="ovhAccount_table_type_payment_PAYPAL" qtlid="521509">PayPal</translation>
    <translation id="ovhAccount_table_type_payment_PLATNOSCI" qtlid="139832">Płatności</translation>
    <translation id="ovhAccount_table_type_payment_REFUND" qtlid="139845">Guthaben</translation>
    <translation id="ovhAccount_table_type_payment_TRANSFER" qtlid="89833">Überweisung</translation>
@@ -1068,7 +1068,7 @@ verwenden.</translation>
    <translation id="hosting_dashboard_close_service_warning" qtlid="255430">Die Löschung eines Hostings zieht die endgültige Löschung sämtlicher dazugehöriger Daten nach sich. Im Rahmen der Löschung eines Hostings kann keine Rückerstattung erfolgen.</translation>
    <translation id="hosting_dashboard_close_service_desc1" qtlid="370161">Sie erhalten in Kürze eine E-Mail mit Informationen zur Schließung Ihres Webhostings von uns und können die Löschung dann sofort bestätigen. </translation>
 
-   <translation id="privateDatabase_dashboard_close_service" qtlid="499855">Mein SQL Private Hosting sofort kündigen</translation>
+   <translation id="privateDatabase_dashboard_close_service" qtlid="499855">Mein SQL Private Hosting sofort löschen</translation>
    <translation id="autorenew_service_HOSTING_PRIVATE_DATABASE_terminate" qtlid="499868">Mein SQL Private Hosting kündigen</translation>
    <translation id="privateDatabase_dashboard_close_service_success" qtlid="499881">Ihre Kündigungsanfrage für SQL Private Hosting wurde aufgenommen. Ihnen wurde eine E-Mail zum Kündigungsprozess zugesandt.</translation>
    <translation id="privateDatabase_dashboard_close_service_error" qtlid="499894">Bei der Kündigungsanfrage für Ihr SQL Private Hosting ist ein Fehler aufgetreten:</translation>
