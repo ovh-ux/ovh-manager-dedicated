@@ -51,6 +51,7 @@ export default class {
             .some(({ serviceName: pccServiceName }) => serviceName === pccServiceName));
       })
       .catch((error) => {
+        this.availablePccs = [];
         this.Alerter.error(
           `${this.$translate.instant('dedicatedCloud_datacenter_drp_get_state_error')} ${_.get(error, 'data.message', error.message)}`,
           'dedicatedCloudDatacenterAlert',
