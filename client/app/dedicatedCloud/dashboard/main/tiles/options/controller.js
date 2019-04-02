@@ -190,6 +190,10 @@ export default class OptionTile {
       && this.orderCanBeChangedOrPassed();
   }
 
+  isBasicActionMenuValidateActivationDisplayed() {
+    return _.get(this.pendingOrder, 'status') === ORDER_STATUS.notPaid;
+  }
+
   buildDataAfterFetching() {
     Object.assign(
       this.bindings,
@@ -209,7 +213,7 @@ export default class OptionTile {
               },
             },
             validateActivation: {
-              isDisplayed: _.get(this.pendingOrder, 'status') === ORDER_STATUS.notPaid,
+              isDisplayed: this.isBasicActionMenuValidateActivationDisplayed(),
               url: _.get(this.pendingOrder, 'url'),
             },
           },
