@@ -35,7 +35,7 @@ export default class {
     this.loading = true;
     this.selectedDrpType = { id: this.$stateParams.selectedDrpType };
     this.drpInformations = { };
-    this.drpInformations.hasDatacenterWithoutHosts = this.datacenterHosts.count === 0;
+    this.drpInformations.hasDatacenterWithoutHosts = this.datacenterHosts.length === 0;
 
     this.initializeTransitions();
 

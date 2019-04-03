@@ -100,8 +100,8 @@ export default class {
       this.drpInformations.secondaryPcc.serviceName,
       datacenterId,
     )
-      .then(({ count }) => {
-        this.isSecondaryDatacenterWithoutHosts = count === 0;
+      .then(({ length: hostsCount }) => {
+        this.isSecondaryDatacenterWithoutHosts = hostsCount === 0;
         if (this.isSecondaryDatacenterWithoutHosts) {
           this.hostsStateLink = `app.dedicatedClouds.datacenter.hosts({ productId: '${this.drpInformations.secondaryPcc.serviceName}', datacenterId: ${datacenterId} })`;
         }
