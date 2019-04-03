@@ -3,6 +3,7 @@ import {
 } from './constants';
 
 import component from './component';
+import confirm from './confirm';
 import service from './service';
 import servicePack from '../servicePack';
 import state from './state';
@@ -16,6 +17,7 @@ const stateName = 'app.dedicatedClouds.servicePack';
 
 angular
   .module(moduleName, [
+    confirm,
     'oui',
     'pascalprecht.translate',
     servicePack,

@@ -1,0 +1,14 @@
+<oui-modal data-title="{{:: 'confirm_order_option_title' | translate }}"
+           data-primary-action="$ctrl.$uibModalInstance.close()"
+           data-primary-label="{{:: 'confirm_order_option_confirm' | translate }}"
+           data-secondary-action="$ctrl.$uibModalInstance.dismiss()"
+           data-secondary-label="{{:: 'confirm_order_option_cancel' | translate }}"
+           data-on-dismiss="$ctrl.$uibModalInstance.dismiss()"
+           data-type="warning">
+    <p data-translate="confirm_order_option_question"
+       data-translate-values="{
+           'optionName': '<strong>' + $ctrl.optionName + '</strong>',
+           'price': '<strong>' + $ctrl.price + '</strong>'
+       }"
+    ></p>
+</oui-modal>
