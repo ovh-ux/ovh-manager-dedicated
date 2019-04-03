@@ -86,7 +86,7 @@
         data-variant="primary"
         data-disabled="!$ctrl.servicePackToOrder"
         class="ml-3">
-        <span data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_checkoutButton"></span>
+        <span data-translate="{{ :: $ctrl.stepper.steps.length > 1 ? 'dedicatedCloudDashboardTilesOptionsOrderSelection_nextButton' : 'dedicatedCloudDashboardTilesOptionsOrderSelection_checkoutButton' }}"></span>
     </oui-button>
 </form>
 
