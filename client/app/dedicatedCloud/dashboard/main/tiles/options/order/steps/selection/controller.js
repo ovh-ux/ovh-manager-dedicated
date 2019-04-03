@@ -1,18 +1,24 @@
 import _ from 'lodash';
 
-import { BASIC_ACTIVATION_TYPE } from './constants';
+import {
+  BASIC_ACTIVATION_TYPE,
+  MODAL_CONTROLLER_NAME,
+  MODAL_TEMPLATE_URL,
+} from './constants';
 
 export default class {
   /* @ngInject */
   constructor(
     $state,
     $translate,
+    $uibModal,
     Alerter,
     servicePackService,
     OvhApiOrder,
   ) {
     this.$state = $state;
     this.$translate = $translate;
+    this.$uibModal = $uibModal;
     this.Alerter = Alerter;
     this.servicePackService = servicePackService;
     this.OvhApiOrder = OvhApiOrder;
@@ -51,10 +57,22 @@ export default class {
 
   makeNextAction() {
     if (this.activationType === BASIC_ACTIVATION_TYPE) {
-      return this.placeOrder();
+      return this.confirmOrder();
     }
 
     return this.goToNextStep();
+  }
+
+  confirmOrder() {
+    return this.$uibModal.open({
+      templateUrl: MODAL_TEMPLATE_URL,
+      controller: MODAL_CONTROLLER_NAME,
+      controllerAs: '$ctrl',
+      resolve: {
+        optionName: () => this.servicePackToOrder.displayName,
+        price: () => this.servicePackToOrder.price.replace(/\+/g, ''),
+      },
+    }).result.then(() => this.placeOrder());
   }
 
   goToNextStep() {
