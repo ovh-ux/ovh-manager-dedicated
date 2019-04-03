@@ -35,8 +35,13 @@ export default class {
     const otherPccInformations = this.getOtherPccInformations();
 
     return this.$q.all({
-      enableDrp: this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.deliveredOrProvisionning.includes(state)
-        ? this.$q.when({})
+      enableDrp: [
+        this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered,
+        this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivering,
+        this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.provisionning,
+        this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toProvision,
+      ].includes(state)
+        ? this.$q.when({ state })
         : this.DedicatedCloudDrp.enableDrp(
           this.drpInformations,
           this.drpInformations.primaryPcc.generation !== this.PCC_NEW_GENERATION,
@@ -47,7 +52,10 @@ export default class {
         : this.DedicatedCloudDrp.getDrpState(otherPccInformations),
     })
       .then(({ enableDrp, me, secondaryPccState }) => {
-        if (enableDrp.state === this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toDo) {
+        if ([
+          this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toDo,
+          this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivering,
+        ].includes(enableDrp.state)) {
           this.isEnabling = true;
 
           if (enableDrp.url !== undefined) {
@@ -142,7 +150,9 @@ export default class {
   }
 
   isProvisionning() {
-    return this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toProvisionOrProvisionning
-      .includes(this.drpInformations.state);
+    return [
+      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toProvision,
+      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.provisionning,
+    ].includes(this.drpInformations.state);
   }
 }

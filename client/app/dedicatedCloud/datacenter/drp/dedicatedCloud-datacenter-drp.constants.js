@@ -15,13 +15,15 @@ export const DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS = [
 export const DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP = new RegExp('/^([0-9A-F]{2}[:-]){5}([0-9A-F]{2})$/');
 
 export const DEDICATEDCLOUD_DATACENTER_DRP_STATUS = {
-  deliveredOrProvisionning: ['delivered', 'toProvision', 'provisionning', 'delivering'],
-  toUnprovisionOrUnprovisionning: ['toUnprovision', 'unprovisionning'],
-  toDisableOrDisabling: ['toDisable', 'disabling'],
-  delivering: 'delivering',
   delivered: 'delivered',
-  toProvisionOrProvisionning: ['toProvision', 'provisionning'],
+  delivering: 'delivering',
+  disabling: 'disabling',
+  provisionning: 'provisionning',
+  toDisable: 'toDisable',
   toDo: 'todo',
+  toProvision: 'toProvision',
+  toUnprovision: 'toUnprovision',
+  unprovisionning: 'unprovisionning',
 };
 
 export const DEDICATEDCLOUD_DATACENTER_DRP_ROLES = {

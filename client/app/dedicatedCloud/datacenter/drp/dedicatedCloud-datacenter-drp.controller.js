@@ -40,12 +40,13 @@ export default class {
     this.initializeTransitions();
 
     const drp = this.pccPlan
-      .find(({ state }) => this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.deliveredOrProvisionning
-        .includes(state));
+      .find(({ state }) => this.isDeliveredOrDelivering(state));
 
     this.isDisablingDrp = this.pccPlan
-      .some(({ state }) => this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toDisableOrDisabling
-        .includes(state));
+      .some(({ state }) => [
+        this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toDisable,
+        this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabling,
+      ].includes(state));
 
     return this.checkForZertoOptionOrder()
       .then((storedDrpInformations) => {
@@ -122,6 +123,15 @@ export default class {
     return this.$state.go(`app.dedicatedClouds.datacenter.drp.${this.selectedDrpType.id}.mainPccStep`, {
       drpInformations: this.drpInformations,
     });
+  }
+
+  isDeliveredOrDelivering(state) {
+    return [
+      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivering,
+      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered,
+      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.provisionning,
+      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toProvision,
+    ].includes(state);
   }
 
   formatPlanInformations({

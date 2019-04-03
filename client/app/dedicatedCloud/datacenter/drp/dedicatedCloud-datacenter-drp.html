@@ -18,7 +18,7 @@
         <oui-message class="mb-5"
                      data-type="warning"
                      data-ng-if="($ctrl.drpInformations.hasDatacenterWithoutHosts || $ctrl.isDisablingDrp)
-                         && $ctrl.drpInformations.state !== $ctrl.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.deliveredOrProvisionning">
+                         && !$ctrl.isDeliveredOrDelivering($ctrl.drpInformations.state)">
             <span data-translate="dedicatedCloud_datacenter_drp_warning"
                   data-ng-if="$ctrl.drpInformations.hasDatacenterWithoutHosts"></span>
             <span data-translate="dedicatedCloud_datacenter_drp_confirm_delete_drp_success"
