@@ -7,10 +7,15 @@
     data-ng-if="!$ctrl.hasDefaultMeansOfPayment && $ctrl.currentUser.ovhSubsidiary !== 'PL'"
     class="mb-3">
     <p>
-        <span data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_noDefaultMeansOfPayment"></span>
+        <span data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_noDefaultMeansOfPayment_1"></span>
         <a
             data-ui-sref="app.account.billing.payment.method"
-            data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_howToConfigureMeansOfPayment"></a>
+            data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_noDefaultMeansOfPayment_2"></a>
+        <span
+            data-ng-if="$ctrl.stepper.steps.length === 1" data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_makeOrderAndConfirmOrderBill"></span>
+        <span
+            data-ng-if="$ctrl.stepper.steps.length > 1"
+            data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_finalOrderStepConfirmOrderBill"></span>
     </p>
 </oui-message>
 
@@ -59,20 +64,6 @@
             </div>
         </div>
     </oui-field>
-
-    <oui-message
-        data-type="warning"
-        data-dismissable="false"
-        data-ng-if="!$ctrl.hasDefaultMeansOfPayment"
-        class="mb-5">
-        <p>
-            <span data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_howToConfigureMeansOfPayment"></span>
-            <span
-                data-ng-if="$ctrl.currentUser.ovhSubsidiary !== 'PL'"
-                data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_howToConfigureMeansOfPayment_outsidePL"></span>
-            <span data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_howToConfigureMeansOfPayment_comeBackHereLater"></span>
-        </p>
-    </oui-message>
 
     <oui-button
         data-variant="secondary"
