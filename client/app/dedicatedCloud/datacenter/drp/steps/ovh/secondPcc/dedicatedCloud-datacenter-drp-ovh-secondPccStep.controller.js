@@ -38,17 +38,18 @@ export default class {
       .map(({ serviceName }) => this.DedicatedCloudDrp
         .getPccDrpPlan(serviceName)))
       .then((pccList) => {
-        const pccWithoutDrp = pccList
-          .filter(datacenters => !datacenters
-            .some(({ state }) => [
-              this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered,
-              this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivering,
-              this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.provisionning,
-              this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toProvision,
-              this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toDisable,
-              this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabling,
-            ].includes(state)))
-          .flat();
+        const pccWithoutDrp = _.flatten(
+          pccList
+            .filter(datacenters => !datacenters
+              .some(({ state }) => [
+                this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered,
+                this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivering,
+                this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.provisionning,
+                this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toProvision,
+                this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toDisable,
+                this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabling,
+              ].includes(state))),
+        );
 
         this.availablePccs = this.availablePccs
           .filter(({ serviceName }) => pccWithoutDrp
