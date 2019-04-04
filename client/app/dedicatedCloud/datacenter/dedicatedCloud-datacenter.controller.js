@@ -11,6 +11,7 @@ angular
       $uibModal,
       Alerter,
       DedicatedCloud,
+      constants,
       DEDICATED_CLOUD_DATACENTER,
     ) {
       this.$scope = $scope;
@@ -21,6 +22,7 @@ angular
       this.$uibModal = $uibModal;
       this.Alerter = Alerter;
       this.DedicatedCloud = DedicatedCloud;
+      this.constants = constants;
       this.DEDICATED_CLOUD_DATACENTER = DEDICATED_CLOUD_DATACENTER;
     }
 
