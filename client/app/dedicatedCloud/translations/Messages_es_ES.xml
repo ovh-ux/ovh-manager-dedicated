@@ -800,65 +800,80 @@
    <translation id="dedicatedCloud_datacenter_backup_enable_version_explain" qtlid="503812">Se le facturará en función del número de MV con backup, en las condiciones que se describen en <a href="{{url}}" target="_blank">esta página</a>.</translation>
    <translation id="dedicatedCloud_datacenter_backup_enable_no_offer" qtlid="503825">No hay ninguna solución de Veeam Backup disponible en su datacenter <strong>{{name}}</strong>.</translation>
 
-<!-- Disaster Recovery Plan -->
-   <translation id="dedicatedCloud_tab_drp" qtlid="519896">Plan de recuperación ante desastres (DRP)</translation>
-   <translation id="dedicatedCloud_datacenter_drp_subtitle" qtlid="519909">Cree su plan de recuperación ante desastres con Zerto</translation>
-   <translation id="dedicatedCloud_datacenter_drp_details" qtlid="519922">Garantice la protección de su sistema de información configurando un plan de recuperación ante desastres (DRP). Cambie de infraestructura en un clic y en cuestión de minutos en caso de fallo o interrupción del servicio. Atención: es necesario un Private Cloud secundario para activar esta opción.</translation>
-   <translation id="dedicatedCloud_datacenter_drp_warning" qtlid="519935">Su datacenter actual no dispone de ningún host. Puede elegir entre contratar un host y utilizar este datacenter para su DRP, o seleccionar otro datacenter que disponga como mínimo de un host.</translation>
-   <translation id="dedicatedCloud_tab_drp_choice_plan_type" qtlid="519948">Seleccione el tipo de DRP:</translation>
-   <translation id="dedicatedCloud_datacenter_ovh_choice" qtlid="519961">Entre dos Private Cloud de OVH</translation>
-   <translation id="dedicatedCloud_datacenter_onPremise_choice" qtlid="519974">Entre su infraestructura y un Private Cloud de OVH</translation>
-   <translation id="dedicatedCloud_datacenter_activate_zerto_drp" qtlid="519987">Activar el DRP Zerto</translation>
-   <translation id="dedicatedCloud_datacenter_ovh_step_one" qtlid="520000">Datacenter principal</translation>
-   <translation id="dedicatedCloud_datacenter_ovh_step_two" qtlid="520013">Datacenter secundario</translation>
-   <translation id="dedicatedCloud_datacenter_ovh_step_three" qtlid="9983">Confirmar</translation>
-   <translation id="dedicatedCloud_datacenter_drp_get_state_error" qtlid="520026">Se ha producido un error al cargar la información de su DRP.</translation>
+<!-- IP ORDER -->
+   <translation id="ip_additional_order" qtlid="181877">Contratar IP adicionales</translation>
 
-   <translation id="dedicatedCloud_datacenter_pcc_name" qtlid="520039">Nombre del Private Cloud: {{pcc}}</translation>
-   <translation id="dedicatedCloud_datacenter_main_datacenter_name" qtlid="520052">Identificador del datacenter Private Cloud correspondiente</translation>
-   <translation id="dedicatedCloud_datacenter_main_datacenter_name_placeholder" qtlid="520065">Seleccione su datacenter principal</translation>
-   <translation id="dedicatedCloud_datacenter_order_ip" qtlid="521594">No tiene ningún pool de direcciones IP disponible. Por favor, <a ui-sref="{{sref}}">contrate</a> uno.</translation>
-   <translation id="dedicatedCloud_datacenter_main_ip_address_pool_available" qtlid="520091">Pool de direcciones IP públicas disponible</translation>
-   <translation id="dedicatedCloud_datacenter_main_ip_address_pool_available_placeholder" qtlid="520104">Seleccione una IP pública libre</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_pcc_name" qtlid="520117">Identificador y zona geográfica del Private Cloud secundario</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_pcc_name_placeholder" qtlid="520130">Seleccione el Private Cloud secundario</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_list" qtlid="520143">Lista de datacenters secundarios</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_name_placeholder" qtlid="520156">Seleccione el datacenter secundario</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_ip_address_pool_available" qtlid="520169">Pool de direcciones IP públicas disponible en el Private Cloud secundario</translation>
-   <translation id="dedicatedCloud_datacenter_order_ip_secondary_pcc" qtlid="521607">No tiene ningún pool de direcciones IP disponible en este Private Cloud. Puede elegir entre <a ui-sref="{{sref}}">contratar</a> uno o seleccionar otro Private Cloud.</translation>
+   <translation id="ip_table_header_service" qtlid="31042">Servicio</translation>
 
-   <translation id="dedicatedCloud_datacenter_secondary_ip_address_pool_available_placeholder" qtlid="520104">Seleccione una IP pública libre</translation>
+   <translation id="global_select" qtlid="159046">Seleccione</translation>
 
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_ip_public" qtlid="247092">IP pública</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_ip_public_placeholder" qtlid="467100">Dirección IP pública</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_gateway" qtlid="42682">Puerta de enlace</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_gateway_help" qtlid="520195">Autocompletar</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_vra_network" qtlid="520208">Red VRA remota (opcional)</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_subnetwork_mask" qtlid="520221">Máscara de subred (opcional)</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_pcc_on_same_location_warning" qtlid="521620">Este Private Cloud debe estar ubicado en un datacenter diferente al del Private Cloud primario.</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_without_hosts" qtlid="521633">El datacenter seleccionado no dispone de ningún host. Puede elegir entre <a ui-sref="{{sref}}">contratar</a> un host para este datacenter, o seleccionar otro datacenter que disponga como mínimo de un host.</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_get_hosts_error" qtlid="521646">Se ha producido un error al cargar los hosts del datacenter secundario.</translation>
+   <translation id="ip_servicetype_DEDICATED" qtlid="101913">Servidor dedicado</translation>
+   <translation id="ip_servicetype_dedicatedServer" qtlid="101913">Servidor dedicado</translation>
+   <translation id="ip_servicetype_VPS" qtlid="23083">VPS</translation>
+   <translation id="ip_servicetype_vps" qtlid="23083">VPS</translation>
+   <translation id="ip_servicetype_PCC" qtlid="162205">Dedicated Cloud</translation>
+   <translation id="ip_servicetype_dedicatedCloud" qtlid="162205">Dedicated Cloud</translation>
+   <translation id="ip_servicetype_ipLoadbalancing" qtlid="223580">IP Load Balancing</translation>
+   <translation id="ip_servicetype_cloudProject" qtlid="274369">Proyecto cloud</translation>
+   <translation id="ip_servicetype_vRack" qtlid="210566">vRack</translation>
+   <translation id="ip_servicetype__PARK" qtlid="363518">Aparcamiento</translation>
 
-   <translation id="dedicatedCloud_datacenter_drp_confirm_create_success_part_one" qtlid="520247">Su DRP Zerto se ha creado correctamente.</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_create_success_part_two" qtlid="520260">Le hemos enviado la contraseña ZSSP a la dirección de correo electrónico {{email}}.</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_creation_pending" qtlid="520273">Activando su DRP Zerto... La operación podría tardar hasta una hora.</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_creation_pending_task" qtlid="520286">Puede acceder a la tarea enableDisasterRecovery del Private Cloud principal para consultar el progreso.</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_create_error" qtlid="520299">Se ha producido un error al activar su DRP.</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_title" qtlid="520312">Resumen de la configuración de su DRP</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_drp_type" qtlid="520325">Tipo de plan de recuperación ante desastres</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_main_datacenter" qtlid="520000">Datacenter principal</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_main_pcc" qtlid="520338">Private Cloud principal</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_secondary_datacenter" qtlid="520013">Datacenter secundario</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_secondary_pcc" qtlid="520351">Private Cloud secundario</translation>
+   <translation id="ip_order_quota_full" qtlid="451597">Ha alcanzado la cantidad máxima de direcciones IP en este servidor.</translation>
+   <translation id="ip_order_noservices" qtlid="182020">No hay ningún servicio disponible para contratar.</translation>
+   <translation id="ip_order_step1_question" qtlid="182033">Seleccione el servicio para el que quiere adquirir IP adicionales:</translation>
+   <translation id="ip_order_checkservice" qtlid="182046">Comprobando...</translation>
 
-   <translation id="dedicatedCloud_datacenter_drp_confirm_zssp_password_title" qtlid="520364">Contraseña ZSSP</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_zssp_password_action_text" qtlid="520377">Restaurar la contraseña ZSSP</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_zssp_password_regenerate_error" qtlid="520390">Se ha producido un error al restaurar la contraseña ZSSP.</translation>
+   <translation id="ip_order_loading_error" qtlid="182059">Se ha producido un error al cargar la información del pedido de IP.</translation>
+   <translation id="ip_order_loading_error2" qtlid="369563">Esta acción requiere una verificación o no puede validarse en este momento. ({0})</translation>
 
-   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_title" qtlid="520403">Eliminar el DRP de forma definitiva</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_action_text" qtlid="520416">Eliminar el DRP Zerto</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_modal_title" qtlid="520429">Eliminación del plan de recuperación ante desastres</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_modal_question" qtlid="520442">¿Seguro que quiere eliminar el DRP? Esta acción es irreversible.</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_success" qtlid="520455">Eliminando su DRP Zerto... La operación podría tardar algunos minutos.</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_error" qtlid="520468">Se ha producido un error al eliminar el plan de recuperación ante desastres.</translation>
+   <translation id="ip_order_error_OPTION_NOT_ALLOWED" qtlid="182072">No puede contratar una IP adicional para este servicio.</translation>
+   <translation id="ip_order_error_OUT" qtlid="182085">Ha llegado al límite de IP que se pueden contratar para este servicio.</translation>
+   <translation id="ip_order_error_EXPIRED" qtlid="191421">El servicio ha expirado.</translation>
+
+   <translation id="ip_order_step1_ok" qtlid="182098">Haga clic en «Siguiente» para acceder al pedido.</translation>
+   <translation id="ip_order_add_ipv4_step1_remaining" qtlid="182111">Aún puede añadir <span class="blue">{0}</span> IPv4 a este servicio.</translation>
+   <translation id="ip_order_step1_info1" qtlid="182124">El servidor admite hasta:</translation>
+   <translation id="ip_order_step1_DEDICATED_pre" qtlid="182137"><span class="blue">{0}</span> IP de bloques failover IPv4</translation>
+   <translation id="ip_order_step1_DEDICATED_v2_pre" qtlid="191382"><span class="blue">{0}</span> prefijos</translation>
+   <translation id="ip_order_step1_DEDICATED_individual_1" qtlid="182163"><span class="blue">1</span> IP Failover individual</translation>
+   <translation id="ip_order_step1_DEDICATED_v2_individual_1" qtlid="191395"><span class="blue">1</span> prefijo</translation>
+   <translation id="ip_order_step1_DEDICATED_individual_other" qtlid="182176"><span class="blue">{}</span> IP Failover individuales</translation>
+   <translation id="ip_order_step1_DEDICATED_v2_individual_other" qtlid="191408"><span class="blue">{}</span> prefijos</translation>
+   <translation id="ip_order_step1_DEDICATED_minmax" qtlid="182150">(bloques de <span class="blue">{0}</span> IP mín. y de <span class="blue">{1}</span> IP máx.)</translation>
+   <translation id="ip_order_step1_DEDICATED_individualblocksize" qtlid="182189">(bloques de <span class="blue">{0}</span> IP)</translation>
+   <translation id="ip_order_step2_large_block_unavailable" qtlid="304446">Estamos experimentando retrasos en la entrega de bloques de IP. En caso de urgencia, le recomendamos que contrate direcciones IP individuales (/32). <a href="{0}" target="_blank">Más información.</a></translation>
+
+   <translation id="ip_order_ipnbr" qtlid="182202">Número de IP</translation>
+   <translation id="ip_order_country" qtlid="182215">Localizada(s) en</translation>
+   <translation id="ip_order_ipblocksize" qtlid="182228">Tamaño del bloque IP</translation>
+   <translation id="ip_order_networkname" qtlid="182241">Nombre de red (netname)</translation>
+   <translation id="ip_order_networkname_help" qtlid="232388">Información visible en el Whois (entre 2 y 20 caracteres alfanuméricos, empezando por una letra)</translation>
+   <translation id="ip_order_estimatedclientsnumber" qtlid="182267">Número aproximado de clientes</translation>
+   <translation id="ip_order_estimatedclientsnumber_help" qtlid="182280">¿Cuántos clientes estarán alojados en estas IP?</translation>
+   <translation id="ip_order_description" qtlid="182293">Descripción de la red</translation>
+   <translation id="ip_order_description_help" qtlid="182306">Datos visibles en el Whois (entre 3 y 250 caracteres alfanuméricos)</translation>
+   <translation id="ip_order_usage" qtlid="109974">Uso</translation>
+   <translation id="ip_order_usage_help" qtlid="182319">Información básica sobre cómo va a utilizarse el bloque (ejemplos: «web», «SSL», «cloud»...)</translation>
+   <translation id="ip_order_organisation" qtlid="32278">Organización</translation>
+   <translation id="ip_order_no_organisation_1" qtlid="182332">Antes de reservar un bloque de IP, es necesario tener una organización.</translation>
+   <translation id="ip_order_no_organisation_2" qtlid="182345">Haga clic aquí para acceder a la gestión de organizaciones.</translation>
+   <translation id="ip_order_no_professionaluse_1" qtlid="182358">Este producto requiere contratar la opción «Uso profesional» (<b>{0}</b>/mes).</translation>
+   <translation id="ip_order_no_professionaluse_2" qtlid="182371">Esta se añadirá automáticamente al pedido.</translation>
+   <translation id="ip_order_ip_count_1" qtlid="182384">1 dirección</translation>
+   <translation id="ip_order_ip_count_other" qtlid="489153">{0} adresses</translation>
+   <translation id="ip_order_select_duration" qtlid="181214">Seleccione la duración:</translation>
+   <translation id="ip_order_select_activation" qtlid="268276">Coste de activación:</translation>
+   <translation id="ip_order_abonnement" qtlid="268289">Suscripción mensual:</translation>
+   <translation id="ip_order_free" qtlid="268302">GRATIS</translation>
+   <translation id="ip_order_bloc" qtlid="268315">Bloque</translation>
+   <translation id="ip_order_renew_PCC" qtlid="268328">Sus direcciones IP se renovarán automáticamente con su infraestructura Dedicated Cloud.</translation>
+   <translation id="ip_order_resume" qtlid="177496">Resumen del pedido</translation>
+   <translation id="ip_order_price_HT" qtlid="146177">Precio total (sin IVA):</translation>
+   <translation id="ip_order_price_TTC" qtlid="146190">Precio total (IVA incl.):</translation>
+   <translation id="ip_order_final_txt" qtlid="181240">Haga clic en «Aceptar» para confirmar el pedido.</translation>
+   <translation id="ip_order_final_txt2" qtlid="181253">Se abrirá una nueva pestaña y el sistema le redirigirá automáticamente a la interfaz de pago.</translation>
+   <translation id="ip_order_finish_success" qtlid="181266">El pedido número <a href='{0}' target='_blank'>{1}</a> se ha enviado.</translation>
+   <translation id="ip_order_finish_error" qtlid="182410">Se ha producido un error al contratar IP adicionales. </translation>
+   <translation id="ip_order_free_activation_fee" qtlid="250212">Para los servidores en los que la suscripción de IP adicionales está incluida, estos gastos de activación no se volverán a facturar al renovar el servidor.</translation>
+   <translation id="ip_order_resume_short">Bloc /{{ blockSize }} : {{ price }}</translation>
 </translations>

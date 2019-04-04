@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="dedicatedCloud_datacenter_pcc_name" qtlid="520039">Private Cloud name: {{pcc}}</translation>
+   <translation id="dedicatedCloud_datacenter_main_datacenter_name" qtlid="520052">Private Cloud datacentre ID</translation>
+   <translation id="dedicatedCloud_datacenter_main_datacenter_name_placeholder" qtlid="520065">Select a primary datacentre</translation>
+   <translation id="dedicatedCloud_datacenter_order_ip" qtlid="521594">You do not have any available IP address pools. Please <a ui-sref="{{sref}}">order one</a></translation>
+   <translation id="dedicatedCloud_datacenter_main_ip_address_pool_available" qtlid="520091">Available public IP address pools</translation>
+   <translation id="dedicatedCloud_datacenter_main_ip_address_pool_available_placeholder" qtlid="520104">Select an available public IP address</translation>
+
+   <translation id="dedicatedCloud_datacenter_drp_confirm_create_success_part_one" qtlid="520247">Your Zerto DRP has been created!</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_create_success_part_two" qtlid="520260">Your ZSSP password has been sent to {{email}}.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_creation_pending" qtlid="520273">Your Zerto DRP is being activated. This operation may take up to an hour.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_creation_pending_task" qtlid="520286">Please check the enableDisasterRecovery task on your primary Private Cloud to track its progress.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_create_error" qtlid="520299">An error has occurred activating your DRP.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_title" qtlid="520312">DRP configuration summary</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_drp_type" qtlid="520325">Disaster Recovery Plan type</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_main_datacenter" qtlid="520000">Primary datacentre</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_main_pcc" qtlid="520338">Primary Private Cloud</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_secondary_datacenter" qtlid="520013">Secondary datacentre</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_secondary_pcc" qtlid="520351">Secondary Private Cloud</translation>
+
+   <translation id="dedicatedCloud_datacenter_drp_confirm_zssp_password_title" qtlid="520364">ZSSP password</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_zssp_password_action_text" qtlid="520377">Reset ZSSP password</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_zssp_password_regenerate_error" qtlid="520390">An error has occurred regenerating the ZSSP password.</translation>
+
+   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_title" qtlid="520403">Permanently delete DRP</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_action_text" qtlid="520416">Delete Zerto DRP</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_modal_title" qtlid="520429">Deleting a Disaster Recovery Plan</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_modal_question" qtlid="520442">Are you sure you want to delete this DRP? This action cannot be reversed.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_success" qtlid="520455">Your Zerto DRP is being deleted. The operation will take a few minutes. </translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_error" qtlid="520468">Un error has occurred deleting the Disaster Recovery Plan.</translation>
+</translations>
