@@ -1,3 +1,13 @@
+<a name="10.14.1"></a>
+## [10.14.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.14.0...v10.14.1) (2019-04-04)
+
+
+### Bug Fixes
+
+* **config:** remove sk_SK from language constants ([#1045](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1045)) ([58f2c29](https://github.com/ovh-ux/ovh-manager-dedicated/commit/58f2c29))
+
+
+
 <a name="10.14.0"></a>
 # [10.14.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.13.5...v10.14.0) (2019-04-01)
 
