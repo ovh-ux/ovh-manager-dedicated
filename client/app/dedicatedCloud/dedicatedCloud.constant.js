@@ -1,6 +1,7 @@
 angular.module('App')
   .constant('DEDICATED_CLOUD_CONSTANTS', {
     securityOptions: ['pcidss', 'hds', 'hipaa'],
+    pccNewGeneration: '2.0',
   })
   .constant('VM_ENCRYPTION_KMS', {
     regex: {

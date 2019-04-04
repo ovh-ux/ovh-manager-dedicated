@@ -1,6 +1,6 @@
 angular
   .module('Module.ip.services')
-  .service('IpOrder', class DedicatedIPOrder {
+  .service('IpLegacyOrder', class DedicatedIPOrder {
     constructor(
       $http,
       $q,

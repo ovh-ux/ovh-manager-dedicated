@@ -31,6 +31,12 @@ angular
     const availableOptions = _.flatten(['nsx', 'vrops', DEDICATED_CLOUD_CONSTANTS.securityOptions]);
 
     /* ------- INFORMATIONS -------*/
+    this.getAllPccs = function () {
+      return OvhApiDedicatedCloud.v6().query().$promise
+        .then(pccIds => $q.all(pccIds.map(pccId => OvhApiDedicatedCloud.v6().get({
+          serviceName: pccId,
+        }).$promise)));
+    };
 
     this.getSelected = function (serviceName, forceRefresh) {
       return OvhHttp.get('/sws/dedicatedCloud/{serviceName}', {

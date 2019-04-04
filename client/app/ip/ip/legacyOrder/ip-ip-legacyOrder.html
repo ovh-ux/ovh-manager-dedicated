@@ -1,4 +1,4 @@
-<div data-ng-controller="IpOrderCtrl">
+<div data-ng-controller="IpLegacyOrderCtrl">
     <div data-wizard
          data-wizard-bread-crumb="true"
          data-wizard-on-cancel="resetAction"
@@ -83,7 +83,7 @@
              data-wizard-step-valid="orderFormValid()">
 
             <div data-ng-if="model.service.serviceType"
-                 data-ng-include="'ip/ip/order/' + model.service.serviceType + '.html'"
+                 data-ng-include="'ip/ip/legacyOrder/' + model.service.serviceType + '.html'"
                  data-ng-hide="loading.form">
             </div>
 
@@ -104,7 +104,7 @@
             </div>
 
             <div data-ng-if="model.service.serviceType"
-                 data-ng-include="'ip/ip/order/durations' + (model.service.serviceType === 'PCC' ? 'PCC' : '') + '.html'">
+                 data-ng-include="'ip/ip/legacyOrder/durations' + (model.service.serviceType === 'PCC' ? 'PCC' : '') + '.html'">
             </div>
         </div>
 

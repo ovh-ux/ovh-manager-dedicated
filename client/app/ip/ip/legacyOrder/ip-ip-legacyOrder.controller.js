@@ -1,11 +1,10 @@
 angular
   .module('Module.ip.controllers')
-  .controller('IpOrderCtrl', class {
+  .controller('IpLegacyOrderCtrl', class {
     constructor(
       $q,
       $rootScope,
       $scope,
-      $state,
       $translate,
       $window,
       Alerter,
@@ -13,14 +12,13 @@ angular
       DedicatedCloud,
       Ip,
       IpAgoraOrder,
-      IpOrder,
+      IpLegacyOrder,
       IpOrganisation,
       User,
     ) {
       this.$q = $q;
       this.$rootScope = $rootScope;
       this.$scope = $scope;
-      this.$state = $state;
       this.$translate = $translate;
       this.$window = $window;
       this.Alerter = Alerter;
@@ -28,17 +26,9 @@ angular
       this.DedicatedCloud = DedicatedCloud;
       this.Ip = Ip;
       this.IpAgoraOrder = IpAgoraOrder;
-      this.IpOrder = IpOrder;
+      this.IpLegacyOrder = IpLegacyOrder;
       this.IpOrganisation = IpOrganisation;
       this.User = User;
-
-      if (this.isModalOpenedFromDrp()) {
-        this.$scope.resetAction = () => this.$state.go('^');
-      }
-    }
-
-    isModalOpenedFromDrp() {
-      return _.startsWith(this.$state.current.name, 'app.dedicatedClouds.datacenter.drp');
     }
 
     $onInit() {
@@ -76,7 +66,7 @@ angular
 
       return this.$q
         .all({
-          servicesList: this.IpOrder.getServicesByType(),
+          servicesList: this.IpLegacyOrder.getServicesByType(),
           user: this.User.getUser(),
         })
         .then((results) => {
@@ -97,7 +87,7 @@ angular
       this.$scope.orderableIpError = null;
 
       // First, check if option can be ordered
-      return this.IpOrder
+      return this.IpLegacyOrder
         .checkIfAllowed(this.$scope.model.service, 'ip')
         .then((serviceAllowed) => {
           if (!serviceAllowed) {
@@ -105,7 +95,7 @@ angular
             return { serviceIsAllowed: false };
           }
 
-          return this.IpOrder.getServiceOrderableIp(this.$scope.model.service);
+          return this.IpLegacyOrder.getServiceOrderableIp(this.$scope.model.service);
         })
         .then((infos) => {
           if (!infos) {
@@ -166,7 +156,7 @@ angular
       }
 
       queue.push(
-        this.IpOrder
+        this.IpLegacyOrder
           .getAvailableCountries(this.$scope.model.service)
           .then((countries) => {
             this.$scope.orderableIp.countries = countries.map(countryCode => ({
@@ -194,7 +184,7 @@ angular
       } else if (this.$scope.model.service.serviceType === 'DEDICATED') {
         // Check if it is a BHS server
         queue.push(
-          this.IpOrder
+          this.IpLegacyOrder
             .checkIfCanadianServer(this.$scope.model.service.serviceName)
             .then((isCanadianServer) => {
               this.$scope.orderableIp.isCanadianServer = isCanadianServer;
@@ -293,7 +283,7 @@ angular
     loadPrices(durations) {
       this.$scope.loading.prices = true;
 
-      const queue = durations.map(duration => this.IpOrder
+      const queue = durations.map(duration => this.IpLegacyOrder
         .getOrderForDuration(this.$scope.model.service, this.$scope.model.params, duration)
         .then((details) => {
           this.$scope.durations.details[duration] = details;
@@ -353,7 +343,7 @@ angular
         );
       } else {
         queue.push(
-          this.IpOrder
+          this.IpLegacyOrder
             .getOrder(this.$scope.model.service, this.$scope.model.params)
             .then((durations) => {
               this.$scope.durations.available = durations;
@@ -371,7 +361,7 @@ angular
 
         if (needProfessionalUse) {
           queue.push(
-            this.IpOrder
+            this.IpLegacyOrder
               .getProfessionalUsePrice(this.$scope.model.service.serviceName)
               .then((price) => {
                 this.$scope.orderableIp.professionalUsePrice = price;
@@ -460,7 +450,7 @@ angular
     confirmLegacyOrder() {
       this.$scope.loading.validation = true;
 
-      return this.IpOrder
+      return this.IpLegacyOrder
         .postOrder(this.$scope.model.service, this.$scope.model.params, this.$scope.model.duration)
         .then((order) => {
           this.Alerter.alertFromSWS(this.$translate.instant('ip_order_finish_success', {
@@ -474,11 +464,7 @@ angular
           this.Alerter.alertFromSWS(this.$translate.instant('ip_order_finish_error'), data.data);
         })
         .finally(() => {
-          if (this.isModalOpenedFromDrp()) {
-            return this.$state.go('app.dedicatedClouds.datacenter.drp').then(() => this.$state.reload());
-          }
-
-          return this.$scope.resetAction();
+          this.$scope.resetAction();
         });
     }
   });
