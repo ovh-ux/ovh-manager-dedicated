@@ -55,6 +55,7 @@ angular
         selectedDrpType: null,
       },
       resolve: {
+        disableForUS: /* @ngInject */ ($q, constants) => (constants.target === 'US' ? $q.reject() : $q.when()),
         datacenterHosts: /* @ngInject */ ($stateParams, DedicatedCloud) => DedicatedCloud
           .getHosts($stateParams.productId, $stateParams.datacenterId),
         datacenterList: /* @ngInject */ ($stateParams, DedicatedCloud) => DedicatedCloud
