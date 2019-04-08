@@ -1,3 +1,44 @@
+<a name="10.15.0"></a>
+# [10.15.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.14.1...v10.15.0) (2019-04-08)
+
+
+### Bug Fixes
+
+* **datacenter.drp:** disable zerto for us ([f7367d5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f7367d5))
+* **datacenter.drp:** remove debug remains ([7286e08](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7286e08))
+* **dedicated-cloud:** add missing annotations ([7861681](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7861681))
+* **dedicated-cloud:** close alert message successfully ([df555e3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/df555e3))
+* **dedicated-cloud:** remove deprecated notification ([4a3a8ff](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4a3a8ff))
+* **dedicated-cloud-security:** menu is displayed only when actions ([1ef4f94](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1ef4f94))
+* **dedicated-cloud-security:** reword button texts ([bea057e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bea057e))
+* **dedicated-cloud-security-access:** rewrite text ([4b76b24](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4b76b24))
+* **dedicated-cloud-security-add:** display error message correctly ([8909a1e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8909a1e))
+* **dedicated-cloud-security-add:** use Promise better ([0804325](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0804325))
+* **dedicated-cloud-security-logout:** rewrite text ([5f88a73](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5f88a73))
+* **dedicated-cloud-security-max:** rewrite text ([bddf965](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bddf965))
+* **dedicated-cloud-security-timeout:** fix wording ([cc464d5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/cc464d5))
+* **dedicated-cloud-user:** display menu only if action is possible ([342adaf](https://github.com/ovh-ux/ovh-manager-dedicated/commit/342adaf))
+* **dedicated-cloud-user:** remove irrelevant semi-colon ([40f16a5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/40f16a5))
+* **dedicated-cloud-user-delete:** display success message correctly ([42c11a3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/42c11a3))
+* **dedicatedcloud:** add missing security translation ([#1048](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1048)) ([a8b251c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a8b251c))
+* **i18n:** retrieve ([2173503](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2173503))
+* **i18n:** retrieve ([6d79092](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6d79092))
+* **i18n:** retrieve translations ([d71abef](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d71abef))
+* **i18n:** retrieve translations ([#1042](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1042)) ([e628fd2](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e628fd2))
+* **i18n:** retrieve translations ([#1049](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1049)) ([2935a7b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2935a7b))
+* **i18n:** submit ([45e9466](https://github.com/ovh-ux/ovh-manager-dedicated/commit/45e9466))
+* **i18n:** submit ([a64f452](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a64f452))
+* **security:** fix typo ([c6fd7bb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c6fd7bb))
+* **user.enable:** add method to ([38c1c0f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/38c1c0f))
+* remove tags in text ([c8ca093](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c8ca093))
+
+
+### Features
+
+* **account.billing:** add exchange account renew in my services ([ba042df](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ba042df))
+
+
+
 <a name="10.14.1"></a>
 ## [10.14.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.14.0...v10.14.1) (2019-04-04)
 
