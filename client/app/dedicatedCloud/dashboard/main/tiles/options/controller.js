@@ -62,7 +62,9 @@ export default class OptionTile {
           return this.preferenceService.removePreference(this.currentService.serviceName);
         }
 
-        this.pendingOrder = mergeResult;
+        this.pendingOrder = moment().isAfter(this.pendingOrder.expirationDate)
+          ? null
+          : mergeResult;
 
         return null;
       })
