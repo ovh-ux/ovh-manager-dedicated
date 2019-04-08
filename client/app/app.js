@@ -18,11 +18,14 @@ import uiRouter from '@uirouter/angularjs';
 import config from './config/config';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
 
+import dedicatedCloudDatacenterDrp from './dedicatedCloud/datacenter/drp';
+
 angular
   .module('App', [
     'Billing',
     'chart.js',
     'controllers',
+    dedicatedCloudDatacenterDrp,
     dedicatedUniverseComponents,
     'directives',
     'filters',

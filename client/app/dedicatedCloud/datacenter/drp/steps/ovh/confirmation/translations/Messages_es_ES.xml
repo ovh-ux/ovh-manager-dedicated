@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="dedicatedCloud_datacenter_pcc_name" qtlid="520039">Nombre del Private Cloud: {{pcc}}</translation>
+   <translation id="dedicatedCloud_datacenter_main_datacenter_name" qtlid="520052">Identificador del datacenter Private Cloud correspondiente</translation>
+   <translation id="dedicatedCloud_datacenter_main_datacenter_name_placeholder" qtlid="520065">Seleccione su datacenter principal</translation>
+   <translation id="dedicatedCloud_datacenter_order_ip" qtlid="521594">No tiene ningún pool de direcciones IP disponible. Por favor, <a ui-sref="{{sref}}">contrate</a> uno.</translation>
+   <translation id="dedicatedCloud_datacenter_main_ip_address_pool_available" qtlid="520091">Pool de direcciones IP públicas disponible</translation>
+   <translation id="dedicatedCloud_datacenter_main_ip_address_pool_available_placeholder" qtlid="520104">Seleccione una IP pública libre</translation>
+
+   <translation id="dedicatedCloud_datacenter_drp_confirm_create_success_part_one" qtlid="520247">Su DRP Zerto se ha creado correctamente.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_create_success_part_two" qtlid="520260">Le hemos enviado la contraseña ZSSP a la dirección de correo electrónico {{email}}.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_creation_pending" qtlid="520273">Activando su DRP Zerto... La operación podría tardar hasta una hora.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_creation_pending_task" qtlid="520286">Puede acceder a la tarea enableDisasterRecovery del Private Cloud principal para consultar el progreso.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_create_error" qtlid="520299">Se ha producido un error al activar su DRP.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_title" qtlid="520312">Resumen de la configuración de su DRP</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_drp_type" qtlid="520325">Tipo de plan de recuperación ante desastres</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_main_datacenter" qtlid="520000">Datacenter principal</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_main_pcc" qtlid="520338">Private Cloud principal</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_secondary_datacenter" qtlid="520013">Datacenter secundario</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_secondary_pcc" qtlid="520351">Private Cloud secundario</translation>
+
+   <translation id="dedicatedCloud_datacenter_drp_confirm_zssp_password_title" qtlid="520364">Contraseña ZSSP</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_zssp_password_action_text" qtlid="520377">Restaurar la contraseña ZSSP</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_zssp_password_regenerate_error" qtlid="520390">Se ha producido un error al restaurar la contraseña ZSSP.</translation>
+
+   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_title" qtlid="520403">Eliminar el DRP de forma definitiva</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_action_text" qtlid="520416">Eliminar el DRP Zerto</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_modal_title" qtlid="520429">Eliminación del plan de recuperación ante desastres</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_modal_question" qtlid="520442">¿Seguro que quiere eliminar el DRP? Esta acción es irreversible.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_success" qtlid="520455">Eliminando su DRP Zerto... La operación podría tardar algunos minutos.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_error" qtlid="520468">Se ha producido un error al eliminar el plan de recuperación ante desastres.</translation>
+</translations>

@@ -42,29 +42,19 @@
         </header>
 
         <!-- Tabs -->
-        <responsive-tabs>
-            <responsive-tab data-state="app.dedicatedClouds.datacenter"
-                            data-dropdown-title="{{ 'dedicatedCloud_tab_dashboard' | translate }}">
-                <span data-translate="dedicatedCloud_tab_dashboard"></span>
-            </responsive-tab>
-            <responsive-tab data-state="app.dedicatedClouds.datacenter.hosts"
-                            data-dropdown-title="{{ 'dedicatedCloud_tab_host' | translate }}">
-                <span data-translate="dedicatedCloud_tab_host"></span>
-            </responsive-tab>
-            <responsive-tab data-state="app.dedicatedClouds.datacenter.datastores"
-                            data-dropdown-title="{{ 'dedicatedCloud_tab_datastore' | translate }}">
-                <span data-translate="dedicatedCloud_tab_datastore"></span>
-            </responsive-tab>
-            <responsive-tab data-state="app.dedicatedClouds.datacenter.backup"
-                            data-dropdown-title="{{ 'dedicatedCloud_tab_backup' | translate }}">
-                <span data-translate="dedicatedCloud_tab_backup"></span>
-            </responsive-tab>
-            <responsive-tab-more>
-                <i class="fa fa-plus"></i>
-            </responsive-tab-more>
-        </responsive-tabs>
-        <!-- End of Tabs -->
-
+        <oui-header-tabs class="oui-page-header">
+            <oui-header-tabs-item data-state="app.dedicatedClouds.datacenter.dashboard"
+                                  data-text="{{:: 'dedicatedCloud_tab_dashboard' | translate }}"></oui-header-tabs-item>
+            <oui-header-tabs-item data-state="app.dedicatedClouds.datacenter.hosts"
+                                  data-text="{{:: 'dedicatedCloud_tab_host' | translate }}"></oui-header-tabs-item>
+            <oui-header-tabs-item data-state="app.dedicatedClouds.datacenter.datastores"
+                                  data-text="{{:: 'dedicatedCloud_tab_datastore' | translate }}"></oui-header-tabs-item>
+            <oui-header-tabs-item data-state="app.dedicatedClouds.datacenter.backup"
+                                  data-text="{{:: 'dedicatedCloud_tab_backup' | translate }}"></oui-header-tabs-item>
+            <oui-header-tabs-item data-state="app.dedicatedClouds.datacenter.drp"
+                                  data-ng-if="$ctrl.constants.target !== 'US'"
+                                  data-text="{{:: 'dedicatedCloud_tab_drp' | translate }}"></oui-header-tabs-item>
+        </oui-header-tabs>
         <div class="tab-content">
 
             <div class="alert"
@@ -88,7 +78,13 @@
 
             <div data-ovh-alert="{{ :: $ctrl.DEDICATED_CLOUD_DATACENTER.alertId }}"></div>
 
-            <div data-ui-view="pccDatacenterView"></div>
+            <div class="text-center"
+                 data-ng-if="loading">
+                <oui-spinner></oui-spinner>
+            </div>
+
+            <div data-ui-view="pccDatacenterView"
+                 data-ng-if="!loading"></div>
         </div>
     </div>
 

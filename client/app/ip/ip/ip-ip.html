@@ -148,7 +148,7 @@
                 <button class="btn btn-block btn-default"
                         type="button"
                         data-ng-if="canImportIPFO()"
-                        data-ng-click="setAction('ip/order/migrate/ip-ip-order-migrate')"
+                        data-ng-click="setAction('ip/legacyOrder/migrate/ip-ip-legacyOrder-migrate')"
                         data-translate="ip_migration">
                 </button>
                 <a
@@ -160,7 +160,7 @@
                 <button type="button"
                         data-ng-if="canOrderIPFO()"
                         class="btn btn-block btn-default"
-                        data-ng-click="setAction('ip/order/ip-ip-order')"
+                        data-ng-click="setAction('ip/legacyOrder/ip-ip-legacyOrder')"
                         data-translate="ip_additional_order">
                 </button>
                 <button class="btn btn-block btn-default"
@@ -196,7 +196,7 @@
             </p>
         </div>
 
-        <div class="table-responsive">
+        <div class="table-responsive mt-3">
             <table class="table table-hover"
                    id="module-ip-table">
                 <thead>

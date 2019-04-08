@@ -7,9 +7,7 @@ angular.module('App').config(($stateProvider) => {
         controller: 'DedicatedCloudSubDatacenterCtrl',
         controllerAs: '$ctrl',
       },
-      'pccDatacenterView@app.dedicatedClouds.datacenter': {
-        templateUrl: 'dedicatedCloud/datacenter/dashboard/dedicatedCloud-datacenter-dashboard.html',
-      },
     },
+    redirectTo: 'app.dedicatedClouds.datacenter.dashboard',
   });
 });
