@@ -91,10 +91,18 @@ export default class OptionTile {
         );
 
         this.orderableServicePacksWithOnlyBasicOptions = _.filter(
-          _.reject(this.servicePacks, { name: this.currentService.servicePack }),
+          _.reject(this.servicePacks, { name: this.currentService.servicePackName }),
           servicePack => _.every(
             servicePack.options,
             option => _.isEqual(option.type, OPTION_TYPES.basic),
+          ),
+        );
+
+        this.orderableServicePacksWithCertifications = _.filter(
+          _.reject(this.servicePacks, { name: this.currentService.servicePackName }),
+          servicePack => _.some(
+            servicePack.options,
+            option => _.isEqual(option.type, OPTION_TYPES.certification),
           ),
         );
 
@@ -251,7 +259,8 @@ export default class OptionTile {
   }
 
   isCertificationActionMenuDisplayed() {
-    return this.orderCanBeChangedOrPassed();
+    return this.orderCanBeChangedOrPassed()
+      && this.orderableServicePacksWithCertifications.length > 0;
   }
 
   buildBasicMenuModifyText() {
