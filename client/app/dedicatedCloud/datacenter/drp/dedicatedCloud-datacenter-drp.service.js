@@ -2,6 +2,7 @@ import {
   DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
   DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS,
   DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
+  DEDICATEDCLOUD_DATACENTER_PCC_UNAVAILABLE_CODES,
 } from './dedicatedCloud-datacenter-drp.constants';
 
 export default class {
@@ -41,7 +42,8 @@ export default class {
           serviceName,
           datacenterId,
         }))))
-      .catch(error => (error.status === 460 ? this.$q.when([]) : this.$q.reject(error)));
+      .catch(error => (DEDICATEDCLOUD_DATACENTER_PCC_UNAVAILABLE_CODES.includes(error.status)
+        ? this.$q.when([]) : this.$q.reject(error)));
   }
 
   getPccIpAddressesDetails(serviceName) {
