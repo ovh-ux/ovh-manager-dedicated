@@ -1,3 +1,13 @@
+<a name="10.15.1"></a>
+## [10.15.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.15.0...v10.15.1) (2019-04-09)
+
+
+### Bug Fixes
+
+* **dedicatedcloud.datacenter.drp:** display success message ([#1057](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1057)) ([62c1fab](https://github.com/ovh-ux/ovh-manager-dedicated/commit/62c1fab))
+
+
+
 <a name="10.15.0"></a>
 # [10.15.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.14.1...v10.15.0) (2019-04-08)
 
