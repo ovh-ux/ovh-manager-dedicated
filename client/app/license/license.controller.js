@@ -4,17 +4,17 @@ angular
     constructor(
       $scope,
       $state,
-      License,
       $timeout,
       constants,
-      billingUrl,
+      License,
+      BILLING_URLS,
     ) {
       this.$scope = $scope;
       this.$state = $state;
-      this.License = License;
       this.$timeout = $timeout;
       this.constants = constants;
-      this.billingUrl = billingUrl;
+      this.License = License;
+      this.BILLING_URLS = BILLING_URLS;
     }
 
     $onInit() {
@@ -78,7 +78,8 @@ angular
     }
 
     loadDatagridLicences({ offset, pageSize }) {
-      return this.loadLicenses(pageSize, offset - 1)
+      return this
+        .loadLicenses(pageSize, offset - 1)
         .then(licenses => ({
           data: _.get(licenses, 'list.results'),
           meta: {
@@ -95,30 +96,35 @@ angular
      */
     loadLicenses(count, offset) {
       this.$scope.licencesTableLoading = true;
-      return this.License.get('', {
-        params: {
-          filterType: this.$scope.filterType === 'ALL_TYPE' ? undefined : this.$scope.filterType,
-          count,
-          offset,
-        },
-      }).then((licenses) => {
-        if (_.chain(licenses).get('availableTypes').isArray().value()) {
-          licenses.availableTypes.push('ALL_TYPE');
-        }
-        angular.forEach(licenses.list.results, (value, idx) => {
-          if (value.expiration !== null) {
-            licenses.list.results[idx].isExpired = moment() // eslint-disable-line
-              .isAfter(moment(value.expiration, 'YYYY-MM-DDTHH:mm:ss.SSSZZ'));
-            licenses.list.results[idx].expireSoon = moment() // eslint-disable-line
-              .add(1, 'months')
-              .isAfter(moment(value.expiration, 'YYYY-MM-DDTHH:mm:ss.SSSZZ'));
+
+      return this.License
+        .get('', {
+          params: {
+            filterType: this.$scope.filterType === 'ALL_TYPE' ? undefined : this.$scope.filterType,
+            count,
+            offset,
+          },
+        })
+        .then((licenses) => {
+          if (_.chain(licenses).get('availableTypes').isArray().value()) {
+            licenses.availableTypes.push('ALL_TYPE');
           }
+
+          angular.forEach(licenses.list.results, (value, idx) => {
+            if (value.expiration !== null) {
+            licenses.list.results[idx].isExpired = moment() // eslint-disable-line
+                .isAfter(moment(value.expiration, 'YYYY-MM-DDTHH:mm:ss.SSSZZ'));
+            licenses.list.results[idx].expireSoon = moment() // eslint-disable-line
+                .add(1, 'months')
+                .isAfter(moment(value.expiration, 'YYYY-MM-DDTHH:mm:ss.SSSZZ'));
+            }
+          });
+          this.$scope.licenses = licenses;
+
+          return licenses;
+        }).finally(() => {
+          this.$scope.licencesTableLoading = false;
         });
-        this.$scope.licenses = licenses;
-        return licenses;
-      }).finally(() => {
-        this.$scope.licencesTableLoading = false;
-      });
     }
 
     /**
@@ -130,6 +136,7 @@ angular
       if (license.type === this.$scope.licenseTypes.SPLA) {
         return `SPLA-${license.id}@${license.serverServiceName}`;
       }
+
       return license.id;
     }
 
@@ -141,10 +148,13 @@ angular
       if (!this.$scope.user) {
         return this.constants.renew.replace('{serviceName}', '');
       }
-      const renewUrl = this.billingUrls.renew[this.$scope.user.ovhSubsidiary];
+
+      const renewUrl = this.BILLING_URLS.renew[this.$scope.user.ovhSubsidiary];
+
       if (!renewUrl) {
         return this.constants.renew.replace('{serviceName}', '');
       }
+
       return renewUrl.replace('{serviceName}', '');
     }
   });
