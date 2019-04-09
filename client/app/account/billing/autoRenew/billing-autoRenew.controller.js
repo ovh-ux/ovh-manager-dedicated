@@ -17,7 +17,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
   '$window',
   'Alerter',
   'atInternet',
-  'Billing.URLS',
+  'BILLING_URLS',
   'BillingAutoRenew',
   'billingRenewHelper',
   'constants',

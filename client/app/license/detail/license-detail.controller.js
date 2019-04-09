@@ -6,7 +6,7 @@ angular.module('Module.license').controller('LicenseDetailsCtrl', [
   '$timeout',
   '$location',
   'constants',
-  'Billing.URLS',
+  'BILLING_URLS',
   '$window',
   'Alerter',
 

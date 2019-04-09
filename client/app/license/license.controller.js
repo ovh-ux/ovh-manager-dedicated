@@ -6,7 +6,7 @@ angular
     'License',
     '$timeout',
     'constants',
-    'Billing.URLS',
+    'BILLING_URLS',
     ($scope,
       $state,
       License,

@@ -22,7 +22,7 @@ angular
     target: config.target,
   })
   .constant('LANGUAGES', config.constants.LANGUAGES)
-  .constant('Billing.URLS', {
+  .constant('BILLING_URLS', {
     renew: config.constants.billingRenew,
   })
   .config([
