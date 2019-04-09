@@ -3,6 +3,7 @@ import _ from 'lodash';
 angular
   .module('Module.license')
   .controller('LicenseCtrl', class {
+    /* @ngInject */
     constructor(
       $scope,
       $state,
@@ -138,7 +139,6 @@ angular
       if (license.type === this.$scope.licenseTypes.SPLA) {
         return `SPLA-${license.id}@${license.serverServiceName}`;
       }
-
       return license.id;
     }
 
