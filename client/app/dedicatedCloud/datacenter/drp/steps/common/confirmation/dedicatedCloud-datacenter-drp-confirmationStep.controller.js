@@ -52,10 +52,11 @@ export default class {
         : this.DedicatedCloudDrp.getDrpState(otherPccInformations),
     })
       .then(({ enableDrp, me, secondaryPccState }) => {
+        const drpState = _.get(enableDrp, 'data.state', enableDrp.state);
         if ([
           this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toDo,
           this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivering,
-        ].includes(enableDrp.state)) {
+        ].includes(drpState)) {
           this.isEnabling = true;
 
           if (enableDrp.url !== undefined) {
