@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 angular
   .module('Module.license')
   .controller('LicenseCtrl', class {
