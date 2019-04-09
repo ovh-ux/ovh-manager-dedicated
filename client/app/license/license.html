@@ -34,9 +34,10 @@
             </div>
         </div>
 
-        <oui-datagrid rows-loader="loadDatagridLicences($config)">
-            <oui-column title=":: 'license_dashboard_table_title_type' | translate"
-                        property="id">
+        <oui-datagrid data-rows-loader="loadDatagridLicences($config)">
+            <oui-column
+                data-title=":: 'license_dashboard_table_title_type' | translate"
+                data-property="id">
                 <span data-ng-if="$row.type !== licenseTypes.SPLA"
                       data-ng-bind="('license_designation_' + $row.type + '_version_' + $row.version) | translate">
                 </span>
@@ -44,62 +45,71 @@
                       data-ng-bind="('license_designation_' + $row.type + '_type_' + $row.splaType) | translate">
                 </span>
             </oui-column>
-            <oui-column title=":: 'license_dashboard_table_title_id' | translate"
-                        property="id"
-                        type="text">
+            <oui-column
+                data-title=":: 'license_dashboard_table_title_id' | translate"
+                data-property="id"
+                data-type="text">
                 <span data-ng-bind="$row.licenseId || '-'"></span>
             </oui-column>
-            <oui-column title=":: 'license_dashboard_table_title_ip' | translate"
-                        property="ip"
-                        type="text">
+            <oui-column
+                data-title=":: 'license_dashboard_table_title_ip' | translate"
+                data-property="ip"
+                data-type="text">
             </oui-column>
-            <oui-column title=":: 'license_dashboard_table_title_service' | translate"
-                        property="serviceName"
-                        type="text">
+            <oui-column
+                data-title=":: 'license_dashboard_table_title_service' | translate"
+                data-property="serviceName"
+                data-type="text">
             </oui-column>
-            <oui-column title=":: 'license_dashboard_table_title_expiration' | translate"
-                        property="expiration">
-                <service-expiration-label
-                    service-infos="$row">
-                </service-expiration-label>
+            <oui-column
+                data-title=":: 'license_dashboard_table_title_serviceDisplayName' | translate"
+                data-property="serviceDisplayName"
+                data-type="text">
+            </oui-column>
+            <oui-column
+                data-title=":: 'license_dashboard_table_title_expiration' | translate"
+                data-property="expiration">
+                <service-expiration-label data-service-infos="$row"></service-expiration-label>
                 <service-expiration-date
-                    hide-renew-action="true"
-                    service-name="$row.serviceName"
-                    service-type=""
-                    service-infos="$row"
-                    inline="true">
+                    data-hide-renew-action="true"
+                    data-service-name="$row.serviceName"
+                    data-service-type=""
+                    data-service-infos="$row"
+                    data-inline="true">
                 </service-expiration-date>
             </oui-column>
 
-            <oui-action-menu align="end" compact>
+            <oui-action-menu
+                data-align="end"
+                data-compact>
                 <oui-action-menu-item
-                    text="{{:: 'license_dashboard_table_popover_details' | translate }}"
-                    href="{{ $state.href('app.license.detail', { licenseId: getLicenseId($row) }) }}">
+                    data-text="{{:: 'license_dashboard_table_popover_details' | translate }}"
+                    data-href="{{ $state.href('app.license.detail', { licenseId: getLicenseId($row) }) }}">
                 </oui-action-menu-item>
                 <oui-action-menu-item
                     data-ng-if="$row.canBeMoved === true && !$row.isExpired"
-                    text="{{:: 'license_dashboard_table_popover_move' | translate }}"
-                    on-click="setAction('migrate/license-migrate', { 'license': $row })">
+                    data-text="{{:: 'license_dashboard_table_popover_move' | translate }}"
+                    data-on-click="setAction('migrate/license-migrate', { 'license': $row })">
                 </oui-action-menu-item>
                 <oui-action-menu-item
                     data-ng-if="$row.type === licenseTypes.SPLA"
-                    text="{{:: 'license_dashboard_table_popover_revoke' | translate }}"
-                    on-click="setAction('spla/revoke/license-spla-revoke', { 'license': $row })">
+                    data-text="{{:: 'license_dashboard_table_popover_revoke' | translate }}"
+                    data-on-click="setAction('spla/revoke/license-spla-revoke', { 'license': $row })">
                 </oui-action-menu-item>
                 <oui-action-menu-item
                     data-ng-if="$row.canBeUpgraded === true && !$row.isExpired"
-                    text="{{:: 'license_dashboard_table_popover_upgrade' | translate }}"
-                    href="{{ $state.href('app.license.upgrade', { licenseId: getLicenseId($row) }) }}">
+                    data-text="{{:: 'license_dashboard_table_popover_upgrade' | translate }}"
+                    data-href="{{ $state.href('app.license.upgrade', { licenseId: getLicenseId($row) }) }}">
                 </oui-action-menu-item>
                 <oui-action-menu-item
                     data-ng-if="$row.isExpired"
-                    text="{{:: 'license_dashboard_table_popover_renew' | translate }}"
-                    href="{{ getRenewUrl() + $row.id }}">
+                    data-text="{{:: 'license_dashboard_table_popover_renew' | translate }}"
+                    data-href="{{ getRenewUrl() + $row.id }}">
                 </oui-action-menu-item>
                 <oui-action-menu-item
                     data-ng-if="$row.type !== licenseTypes.SPLA && !$row.isExpired"
-                    text="{{:: 'license_dashboard_table_popover_delete' | translate }}"
-                    on-click="setAction('delete/license-delete', { 'license': $row })">
+                    data-text="{{:: 'license_dashboard_table_popover_delete' | translate }}"
+                    data-on-click="setAction('delete/license-delete', { 'license': $row })">
                 </oui-action-menu-item>
             </oui-action-menu>
         </oui-datagrid>
