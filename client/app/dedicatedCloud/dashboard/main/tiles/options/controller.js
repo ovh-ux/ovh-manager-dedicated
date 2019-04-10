@@ -187,7 +187,7 @@ export default class OptionTile {
 
   orderCanBeChangedOrPassed() {
     return this.pendingOrder == null
-      || (this.pendingOrder != null && this.pendingOrder.status === ORDER_STATUS.notPaid);
+      || this.pendingOrder.status === ORDER_STATUS.notPaid;
   }
 
   isBasicMenuDisplayed() {
@@ -196,12 +196,12 @@ export default class OptionTile {
   }
 
   isBasicActionMenuModifyDisplayed() {
-    return this.orderableServicePacksWithOnlyBasicOptions.length > 1
+    return !_.isEmpty(this.orderableServicePacksWithOnlyBasicOptions)
       && this.orderCanBeChangedOrPassed();
   }
 
   isBasicActionMenuValidateActivationDisplayed() {
-    return _.get(this.pendingOrder, 'status') === ORDER_STATUS.notPaid;
+    return this.orderCanBeChangedOrPassed();
   }
 
   buildDataAfterFetching() {
