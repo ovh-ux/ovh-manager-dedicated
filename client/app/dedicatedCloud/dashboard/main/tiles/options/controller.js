@@ -92,21 +92,22 @@ export default class OptionTile {
           { name: this.currentService.servicePackName },
         );
 
-        this.orderableServicePacksWithOnlyBasicOptions = _.filter(
-          _.reject(this.servicePacks, { name: this.currentService.servicePackName }),
-          servicePack => _.every(
-            servicePack.options,
-            option => _.isEqual(option.type, OPTION_TYPES.basic),
+        this.orderables = {
+          [OPTION_TYPES.basic]: _.filter(
+            _.reject(this.servicePacks, { name: this.currentService.servicePackName }),
+            servicePack => _.every(
+              servicePack.options,
+              option => _.isEqual(option.type, OPTION_TYPES.basic),
+            ),
           ),
-        );
-
-        this.orderableServicePacksWithCertifications = _.filter(
-          _.reject(this.servicePacks, { name: this.currentService.servicePackName }),
-          servicePack => _.some(
-            servicePack.options,
-            option => _.isEqual(option.type, OPTION_TYPES.certification),
+          [OPTION_TYPES.certification]: _.filter(
+            _.reject(this.servicePacks, { name: this.currentService.servicePackName }),
+            servicePack => _.some(
+              servicePack.options,
+              option => _.isEqual(option.type, OPTION_TYPES.certification),
+            ),
           ),
-        );
+        };
 
         this.buildDataAfterFetching();
       })
@@ -185,84 +186,80 @@ export default class OptionTile {
       });
   }
 
-  orderCanBeChangedOrPassed() {
-    return this.pendingOrder == null
-      || this.pendingOrder.status === ORDER_STATUS.notPaid;
+  thereIsAtLeastOneOrderableItem(optionType) {
+    return !_.isEmpty(this.orderables[optionType]);
+  }
+
+  thereIsAPendingOrder() {
+    return this.pendingOrder != null;
+  }
+
+  pendingOrderIsNotPaid() {
+    return this.thereIsAPendingOrder() && this.pendingOrder.status === ORDER_STATUS.notPaid;
+  }
+
+  isOrderable(optionType) {
+    return this.thereIsAtLeastOneOrderableItem(optionType)
+     && (!this.thereIsAPendingOrder() || this.pendingOrderIsNotPaid());
   }
 
   isBasicMenuDisplayed() {
-    return this.isBasicActionMenuModifyDisplayed()
-      || this.isBasicActionMenuValidateActivationDisplayed();
-  }
-
-  isBasicActionMenuModifyDisplayed() {
-    return !_.isEmpty(this.orderableServicePacksWithOnlyBasicOptions)
-      && this.orderCanBeChangedOrPassed();
-  }
-
-  isBasicActionMenuValidateActivationDisplayed() {
-    return this.orderCanBeChangedOrPassed();
+    return this.isOrderable(OPTION_TYPES.basic)
+      || this.pendingOrderIsNotPaid();
   }
 
   buildDataAfterFetching() {
-    Object.assign(
-      this.bindings,
-      {
-        isLoading: false,
-        basic: {
-          options: this.buildBasicOptions(),
-          actionMenu: {
-            isDisplayed: this.isBasicMenuDisplayed(),
-            modify: {
-              text: this.buildBasicMenuModifyText(),
-              isDisplayed: this.isBasicActionMenuModifyDisplayed(),
-              stateParams: {
-                activationType: OPTION_TYPES.basic,
-                orderableServicePacks: this.orderableServicePacksWithOnlyBasicOptions,
-                servicePacks: this.servicePacks,
-              },
+    this.bindings = {
+      ...this.bindings,
+      isLoading: false,
+      basic: {
+        options: this.buildBasicOptions(),
+        actionMenu: {
+          isDisplayed: this.isBasicMenuDisplayed(),
+          modify: {
+            text: this.buildBasicMenuModifyText(),
+            isDisplayed: this.isOrderable(OPTION_TYPES.basic),
+            stateParams: {
+              activationType: OPTION_TYPES.basic,
+              orderableServicePacks: this.orderables[OPTION_TYPES.basic],
+              servicePacks: this.servicePacks,
             },
-            validateActivation: {
-              isDisplayed: this.isBasicActionMenuValidateActivationDisplayed(),
-              url: _.get(this.pendingOrder, 'url'),
-            },
+          },
+          validateActivation: {
+            isDisplayed: this.pendingOrderIsNotPaid(),
+            url: _.get(this.pendingOrder, 'url'),
           },
         },
-        certification: {
-          description: this.getCertificationDescription(),
-          options: {
-            displayDiscoverLink: this.certification == null,
-            discoverURL: this.servicePackOptionService
-              .getDiscoverURL(this.CERTIFICATIONS_OPTION_NAME, this.currentUser.ovhSubsidiary),
-          },
-          interface: {
-            isDisplayed: this.certification != null,
-            url: this.currentService.certifiedInterfaceUrl,
-          },
-          actionMenu: {
-            isDisplayed: this.isCertificationActionMenuDisplayed(),
-            activate: {
-              stateParams: {
-                activationType: OPTION_TYPES.certification,
-                orderableServicePacks: this.orderableServicePacksWithCertifications,
-                servicePacks: this.servicePacks,
-              },
+      },
+      certification: {
+        description: this.getCertificationDescription(),
+        options: {
+          displayDiscoverLink: this.certification == null,
+          discoverURL: this.servicePackOptionService
+            .getDiscoverURL(this.CERTIFICATIONS_OPTION_NAME, this.currentUser.ovhSubsidiary),
+        },
+        interface: {
+          isDisplayed: this.certification != null,
+          url: this.currentService.certifiedInterfaceUrl,
+        },
+        actionMenu: {
+          isDisplayed: this.isOrderable(OPTION_TYPES.certification),
+          activate: {
+            stateParams: {
+              activationType: OPTION_TYPES.certification,
+              orderableServicePacks: this.orderables[OPTION_TYPES.certification],
+              servicePacks: this.servicePacks,
             },
           },
         },
       },
-    );
+    };
   }
 
   getCertificationDescription() {
     return this.$translate.instant(this.certification != null
       ? `dedicatedCloudDashboardTilesOptions_certification_description_name_${this.currentService.servicePackName}`
       : this.$translate.instant('dedicatedCloudDashboardTilesOptions_certification_description_noCertification'));
-  }
-
-  isCertificationActionMenuDisplayed() {
-    return this.orderCanBeChangedOrPassed()
-      && this.orderableServicePacksWithCertifications.length > 0;
   }
 
   buildBasicMenuModifyText() {
