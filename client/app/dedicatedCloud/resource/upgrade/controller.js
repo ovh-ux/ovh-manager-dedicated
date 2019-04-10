@@ -36,8 +36,7 @@ export const controller = class {
       isLoading: false,
     };
 
-    return this.fetchOVHSubsidiary()
-      .then(() => this.fetchInitialData());
+    return this.fetchInitialData();
   }
 
   fetchOVHSubsidiary() {
@@ -48,9 +47,7 @@ export const controller = class {
       });
   }
 
-  fetchInitialData() {
-    this.bindings.isLoading = true;
-
+  fetchCatalog() {
     return this.$q
       .all({
         catalog: this.OvhApiOrder.CatalogFormatted().v6()
@@ -76,7 +73,14 @@ export const controller = class {
         this.plan = this.getPlanFromCatalog(target, catalog);
 
         [this.bindings.renewalPeriod] = this.plan.details.pricings[`${ORDER_PARAMETERS.pricingModePrefix}${service.servicePackName}`];
-      })
+      });
+  }
+
+  fetchInitialData() {
+    this.bindings.isLoading = true;
+
+    return this.fetchOVHSubsidiary()
+      .then(() => this.fetchCatalog())
       .catch(({ data }) => {
         this.Alerter.alertFromSWS(this.$translate.instant('dedicatedCloud_order_loading_error'), data, 'dedicatedCloud_alert');
         this.$scope.$dismiss();
