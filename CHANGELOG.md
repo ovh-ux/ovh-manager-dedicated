@@ -1,3 +1,13 @@
+<a name="10.15.2"></a>
+## [10.15.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.15.1...v10.15.2) (2019-04-10)
+
+
+### Bug Fixes
+
+* **ip.legacy-order:** display the right country label ([#1063](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1063)) ([8c8ac87](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8c8ac87))
+
+
+
 <a name="10.15.1"></a>
 ## [10.15.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.15.0...v10.15.1) (2019-04-09)
 
