@@ -112,9 +112,6 @@ angular.module('UserAccount').controller('UserAccount.controllers.contactService
     };
 
     self.updateFilters = function () {
-      $location.search('serviceName', _.get(self.serviceFilter, 'serviceName', null));
-      $location.search('category', _.get(self, 'categoryFilter', null));
-
       self.servicesIds = allServicesIds
         .filter(id => (self.categoryFilter ? id.indexOf(self.categoryFilter) === 0 : true))
         .filter(id => (self.serviceFilter
