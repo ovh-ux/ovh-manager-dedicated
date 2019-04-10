@@ -51,6 +51,7 @@ export default class {
         return {
           ...servicePack,
           price,
+          priceAsNumber,
         };
       });
   }
@@ -71,6 +72,7 @@ export default class {
       resolve: {
         optionName: () => this.servicePackToOrder.displayName,
         price: () => this.servicePackToOrder.price.replace(/\+/g, ''),
+        priceAsNumber: () => this.servicePackToOrder.priceAsNumber,
       },
     }).result.then(() => this.placeOrder());
   }
