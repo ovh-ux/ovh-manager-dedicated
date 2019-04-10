@@ -5,10 +5,6 @@
            data-secondary-label="{{:: 'confirm_order_option_cancel' | translate }}"
            data-on-dismiss="$ctrl.$uibModalInstance.dismiss()"
            data-type="warning">
-    <p data-translate="confirm_order_option_question"
-       data-translate-values="{
-           'optionName': '<strong>' + $ctrl.optionName + '</strong>',
-           'price': '<strong>' + $ctrl.price + '</strong>'
-       }"
-    ></p>
+
+    <p data-ng-bind-html="$ctrl.bindings.text"></p>
 </oui-modal>
