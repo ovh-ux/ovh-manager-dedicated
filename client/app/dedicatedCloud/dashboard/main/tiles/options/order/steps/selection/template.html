@@ -1,28 +1,28 @@
 <h3 data-ng-bind="$ctrl.header"></h3>
 <p data-ng-bind="$ctrl.subheader"></p>
 
-<oui-message
-    data-type="warning"
-    data-dismissable="false"
-    data-ng-if="!$ctrl.hasDefaultMeansOfPayment && $ctrl.currentUser.ovhSubsidiary !== 'PL'"
-    class="mb-3">
-    <p>
-        <span data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_noDefaultMeansOfPayment_1"></span>
-        <a
-            data-ui-sref="app.account.billing.payment.method"
-            data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_noDefaultMeansOfPayment_2"></a>
-        <span
-            data-ng-if="$ctrl.stepper.steps.length === 1" data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_makeOrderAndConfirmOrderBill"></span>
-        <span
-            data-ng-if="$ctrl.stepper.steps.length > 1"
-            data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_finalOrderStepConfirmOrderBill"></span>
-    </p>
-</oui-message>
-
 <form
     data-ng-if="!$ctrl.orderingURL && !$ctrl.orderIsInProgress"
     novalidate
     name="$ctrl.form">
+
+    <oui-message
+        data-type="warning"
+        data-dismissable="false"
+        data-ng-if="!$ctrl.hasDefaultMeansOfPayment && $ctrl.currentUser.ovhSubsidiary !== 'PL'"
+        class="mb-3">
+        <p>
+            <span data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_noDefaultMeansOfPayment_1"></span>
+            <a
+                data-ui-sref="app.account.billing.payment.method"
+                data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_noDefaultMeansOfPayment_2"></a>
+            <span
+                data-ng-if="$ctrl.stepper.steps.length === 1" data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_makeOrderAndConfirmOrderBill"></span>
+            <span
+                data-ng-if="$ctrl.stepper.steps.length > 1"
+                data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_finalOrderStepConfirmOrderBill"></span>
+        </p>
+    </oui-message>
 
     <oui-field>
         <div
