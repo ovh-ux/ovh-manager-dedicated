@@ -150,7 +150,7 @@ angular
     }
 
     onSelectedOfferChange() {
-      this.model.params.selectedQuantity = null;
+      this.model.params.selectedQuantity = undefined;
       this.model.params.selectedOrganisation = null;
       this.model.params.selectedCountry = null;
 
@@ -182,7 +182,7 @@ angular
         destination: this.model.selectedService.serviceName,
         organisation: _.get(this.model.params, 'selectedOrganisation.organisationId'),
         planCode: _.get(this.model.params, 'selectedOffer.planCode'),
-        quantity: _.get(this.model.params, 'selectedQuantity'),
+        quantity: _.get(this.model.params, 'selectedQuantity', 1),
       });
 
       return this.User
