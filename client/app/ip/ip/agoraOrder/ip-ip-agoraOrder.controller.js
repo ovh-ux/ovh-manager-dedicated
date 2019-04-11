@@ -35,6 +35,7 @@ angular
 
       // need to be scoped because of how wizard-step works
       this.$scope.loadServices = this.loadServices.bind(this);
+      this.$scope.loadIpOffers = this.loadIpOffers.bind(this);
       this.$scope.redirectToPaymentPage = this.redirectToPaymentPage.bind(this);
       this.$scope.resumeOrder = this.resumeOrder.bind(this);
       this.$scope.stringLocaleSensitiveComparator = AgoraIpOrderCtrl
@@ -118,7 +119,7 @@ angular
       const ipOffersPromise = this.IpAgoraOrder
         .getIpOffers()
         .then((ipOffers) => {
-          const ipOfferDetails = ipOffers.map(this.createOfferDto);
+          const ipOfferDetails = ipOffers.map(this.createOfferDto.bind(this));
           this.ipOffers = _.filter(
             ipOfferDetails,
             {
@@ -128,7 +129,7 @@ angular
           );
         });
 
-      const ipOrganisationPromise = this.Organisation.getIpOrganisation()
+      const ipOrganisationPromise = this.IpOrganisation.getIpOrganisation()
         .then((organisations) => {
           this.organisations = organisations;
         });
