@@ -45,6 +45,8 @@ angular
 
       return this.$q
         .all({
+          currentService: this.DedicatedCloud
+            .getSelected(this.$stateParams.productId, true),
           datacenter: this.DedicatedCloud
             .getDatacenterInfoProxy(this.$stateParams.productId, this.$stateParams.datacenterId),
           hosts: this.DedicatedCloud
@@ -53,11 +55,13 @@ angular
           veamBackupUrl: this.User.getUrlOf('veeamBackup'),
         })
         .then(({
+          currentService,
           datacenter,
           hosts,
           offer,
           veamBackupUrl,
         }) => {
+          this.currentService = currentService;
           this.datacenter = datacenter;
           this.hosts = hosts;
           this.offer = offer;
@@ -92,7 +96,7 @@ angular
         serviceName: this.$stateParams.productId,
         planCode: this.offer.planCode,
         duration: 'P1M',
-        pricingMode: 'pcc-servicepack-nsx',
+        pricingMode: `pcc-servicepack-${this.currentService.servicePackName}`,
         quantity: 1,
         configuration: [{
           label: 'datacenter_id',
