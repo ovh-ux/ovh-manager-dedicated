@@ -1,3 +1,19 @@
+<a name="10.15.3"></a>
+## [10.15.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.15.2...v10.15.3) (2019-04-11)
+
+
+### Bug Fixes
+
+* **i18n:** retrieve translations ([a54fc65](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a54fc65))
+* **i18n:** retrieve translations ([0ebb53e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0ebb53e))
+* **i18n:** submit translations ([c432c84](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c432c84))
+* **i18n:** submit translations ([448b223](https://github.com/ovh-ux/ovh-manager-dedicated/commit/448b223))
+* **ip:** fix broken linked services ip order agora ([#1014](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1014)) ([22c7b88](https://github.com/ovh-ux/ovh-manager-dedicated/commit/22c7b88))
+* **user.contacts.service:** fix update filters ([ef737fd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ef737fd))
+* **user.contacts.service:** prevent flash of empty services in table ([2ceb1ef](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2ceb1ef))
+
+
+
 <a name="10.15.2"></a>
 ## [10.15.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.15.1...v10.15.2) (2019-04-10)
 
