@@ -1,3 +1,13 @@
+<a name="10.15.4"></a>
+## [10.15.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.15.3...v10.15.4) (2019-04-11)
+
+
+### Bug Fixes
+
+* **ip.order:** set a default quantity for express order ([aec1832](https://github.com/ovh-ux/ovh-manager-dedicated/commit/aec1832))
+
+
+
 <a name="10.15.3"></a>
 ## [10.15.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.15.2...v10.15.3) (2019-04-11)
 
