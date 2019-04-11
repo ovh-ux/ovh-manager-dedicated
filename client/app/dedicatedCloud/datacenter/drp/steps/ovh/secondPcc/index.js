@@ -19,15 +19,15 @@ angular
           drpInformations: { },
         },
       })
-      .state('app.dedicatedClouds.datacenter.drp.ovh.secondPccStep.legacyOrderIp', {
-        controller: 'IpOrderCtrl',
-        templateUrl: 'ip/ip/order/ip-ip-order.html',
-        layout: 'modal',
-        translations: ['.'],
-      })
       .state('app.dedicatedClouds.datacenter.drp.ovh.secondPccStep.orderIp', {
         controller: 'agoraIpOrderCtrl',
         templateUrl: 'ip/ip/agoraOrder/ip-ip-agoraOrder.html',
+        layout: 'modal',
+        translations: ['.'],
+      })
+      .state('app.dedicatedClouds.datacenter.drp.ovh.secondPccStep.legacyOrderIp', {
+        controller: 'IpLegacyOrderCtrl',
+        templateUrl: 'ip/ip/legacyOrder/ip-ip-legacyOrder.html',
         layout: 'modal',
         translations: ['.'],
       });
