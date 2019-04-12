@@ -1,3 +1,13 @@
+<a name="10.15.5"></a>
+## [10.15.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.15.4...v10.15.5) (2019-04-12)
+
+
+### Bug Fixes
+
+* ip order ([7079768](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7079768))
+
+
+
 <a name="10.15.4"></a>
 ## [10.15.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.15.3...v10.15.4) (2019-04-11)
 
