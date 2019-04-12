@@ -54,17 +54,17 @@ export default class OptionTile {
           .fetchPreference(this.currentService.serviceName);
       })
       .then(fetchOrderAndMergeWithPreference)
-      .then((mergeResult) => {
-        const orderHasBeenDelivered = mergeResult.orderedServicePackName
+      .then((pendingOrder) => {
+        const orderHasBeenDelivered = pendingOrder.orderedServicePackName
           === this.currentService.servicePackName;
 
         if (orderHasBeenDelivered) {
           return this.preferenceService.removePreference(this.currentService.serviceName);
         }
 
-        this.pendingOrder = moment().isAfter(this.pendingOrder.expirationDate)
+        this.pendingOrder = moment().isAfter(pendingOrder)
           ? null
-          : mergeResult;
+          : pendingOrder;
 
         return null;
       })
