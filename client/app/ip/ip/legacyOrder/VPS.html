@@ -24,7 +24,7 @@
                 class="form-control"
                 name="country"
                 data-ng-model="model.params.country"
-                data-ng-options="c as (('country_'+c.toUpperCase()) | translate) for c in orderableIp.countries">
+                data-ng-options="c.code as c.displayValue for c in orderableIp.countries">
             <option value=""
                     data-ng-disabled="true"
                     data-translate="global_select">
