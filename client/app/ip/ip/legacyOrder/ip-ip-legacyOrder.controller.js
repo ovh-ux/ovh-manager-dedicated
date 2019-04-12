@@ -318,7 +318,7 @@ angular
         this.$scope.model.params.country = _.first(this.$scope.orderableIp.countries).code || 'ca'; // Forced :'( ...
       }
 
-      if (!this.$scope.model.service.usesLegacyOrder) {
+      if (this.$scope.model.service.serviceType === 'PCC' && !this.$scope.model.service.usesLegacyOrder) {
         queue.push(
           this.IpAgoraOrder
             .fetchPrices(this.$scope.model.service.serviceName, this.$scope.model.params.size)
@@ -440,11 +440,11 @@ angular
     }
 
     confirmOrder() {
-      if (this.$scope.model.service.usesLegacyOrder) {
-        return this.confirmLegacyOrder();
+      if (this.$scope.model.service.serviceType === 'PCC' && !this.$scope.model.service.usesLegacyOrder) {
+        return this.redirectToPaymentPage();
       }
 
-      return this.redirectToPaymentPage();
+      return this.confirmLegacyOrder();
     }
 
     confirmLegacyOrder() {

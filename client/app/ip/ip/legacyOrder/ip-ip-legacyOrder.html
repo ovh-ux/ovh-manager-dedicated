@@ -127,7 +127,7 @@
             <div data-ng-show="!loading.validation">
                 <p data-translate="ip_order_resume"></p>
                 <strong
-                    data-ng-if="!model.service.usesLegacyOrder"
+                    data-ng-if="model.service.serviceType === 'PCC' && !model.service.usesLegacyOrder"
                     data-translate="ip_order_resume_short"
                     data-translate-values="{
                         blockSize: model.params.size,
@@ -135,7 +135,7 @@
                     }"
                     class="d-block"></strong>
                 <div
-                    data-ng-if="model.service.usesLegacyOrder"
+                    data-ng-if="model.service.serviceType !== 'PCC' || model.service.usesLegacyOrder"
                     class="table-responsive">
                     <table class="table table-hover">
                         <tbody>
