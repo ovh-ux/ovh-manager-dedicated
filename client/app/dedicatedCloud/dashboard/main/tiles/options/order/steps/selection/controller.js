@@ -1,7 +1,6 @@
 import _ from 'lodash';
 
 import {
-  BASIC_ACTIVATION_TYPE,
   MODAL_CONTROLLER_NAME,
   MODAL_TEMPLATE_URL,
 } from './constants';
@@ -56,15 +55,11 @@ export default class {
       });
   }
 
-  makeNextAction() {
-    if (this.activationType === BASIC_ACTIVATION_TYPE) {
-      return this.confirmOrder();
+  confirmOrder() {
+    if (this.form.$invalid) {
+      return null;
     }
 
-    return this.goToNextStep();
-  }
-
-  confirmOrder() {
     return this.$uibModal.open({
       templateUrl: MODAL_TEMPLATE_URL,
       controller: MODAL_CONTROLLER_NAME,
@@ -117,7 +112,7 @@ export default class {
               return this.stepper.exit();
             }
 
-            return null;
+            return this.goToNextStep();
           });
       })
       .catch(error => this.stepper
