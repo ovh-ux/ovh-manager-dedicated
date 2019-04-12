@@ -146,7 +146,13 @@ export default class Stepper {
   }
 
   goToNextStep(stateParams = {}) {
-    return this.goToStep(this.steps[this.activeStep.index + 1], stateParams);
+    const nextStep = this.steps[this.activeStep.index + 1];
+
+    if (nextStep == null) {
+      return this.exit(true);
+    }
+
+    return this.goToStep(nextStep, stateParams);
   }
 
   goToPreviousStep(stateParams = {}) {

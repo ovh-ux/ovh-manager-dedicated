@@ -1,4 +1,3 @@
-export const BASIC_ACTIVATION_TYPE = 'basic';
 export const COMPONENT_NAME = 'dedicatedCloudServicePackSelection';
 export const MODAL_CONTROLLER_NAME = 'dedicatedCloudOptionsConfirmCtrl';
 export const MODAL_TEMPLATE_URL = 'dedicatedCloudOptionsConfirmTemplate.html';
@@ -7,7 +6,6 @@ export const SERVICE_NAME = 'selectionService';
 export const STEP_NAME = 'selection';
 
 export default {
-  BASIC_ACTIVATION_TYPE,
   COMPONENT_NAME,
   MODAL_CONTROLLER_NAME,
   MODAL_TEMPLATE_URL,
