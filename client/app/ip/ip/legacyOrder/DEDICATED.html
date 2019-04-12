@@ -27,7 +27,7 @@
                 name="countrySelect"
                 class="form-control"
                 data-ng-model="model.params.country"
-                data-ng-options="c as ('country_'+c.code.toUpperCase() | translate) for c in orderableIp.countries"
+                data-ng-options="c.code as c.displayValue for c in orderableIp.countries"
                 data-ng-required="true">
             <option value=""
                     data-ng-disabled="true"
@@ -45,6 +45,7 @@
             </label>
             <select id="organisationSelect"
                     name="organisationSelect"
+                    class="form-control"
                     data-ng-model="model.params.organisationId"
                     data-ng-options="o.organisationId as (o.organisationId + ' (' + o.firstname + ' ' + o.lastname + ')') for o in orderableIp.ipOrganisation"
                     data-ng-required="true">
