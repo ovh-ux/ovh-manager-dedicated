@@ -58,13 +58,15 @@ export default class OptionTile {
         const orderHasBeenDelivered = pendingOrder.orderedServicePackName
           === this.currentService.servicePackName;
 
-        if (orderHasBeenDelivered) {
+        const checkoutHasExpired = moment().isAfter(pendingOrder.expirationDate);
+
+        if (orderHasBeenDelivered || checkoutHasExpired) {
+          this.pendingOrder = null;
+
           return this.preferenceService.removePreference(this.currentService.serviceName);
         }
 
-        this.pendingOrder = moment().isAfter(pendingOrder)
-          ? null
-          : pendingOrder;
+        this.pendingOrder = pendingOrder;
 
         return null;
       })
@@ -186,6 +188,20 @@ export default class OptionTile {
       });
   }
 
+  doesCurrentServicePackHoldACertification() {
+    return _.find(
+      this.currentServicePack.options,
+      { type: OPTION_TYPES.certification },
+    ) != null;
+  }
+
+  buildCertificationDescription() {
+    return this.doesCurrentServicePackHoldACertification() && this.buildStatusForOption({
+      name: this.currentServicePack.name,
+      typeName: OPTION_TYPES.basic,
+    });
+  }
+
   thereIsAtLeastOneOrderableItem(optionType) {
     return !_.isEmpty(this.orderables[optionType]);
   }
@@ -232,34 +248,47 @@ export default class OptionTile {
         },
       },
       certification: {
-        description: this.getCertificationDescription(),
-        options: {
-          displayDiscoverLink: this.certification == null,
-          discoverURL: this.servicePackOptionService
-            .getDiscoverURL(this.CERTIFICATIONS_OPTION_NAME, this.currentUser.ovhSubsidiary),
-        },
-        interface: {
-          isDisplayed: this.certification != null,
-          url: this.currentService.certifiedInterfaceUrl,
+        description: {
+          links: {
+            managementInterface: {
+              isDisplayed: this.doesCurrentServicePackHoldACertification()
+                && !this.thereIsAPendingOrder(),
+              url: this.currentService.certifiedInterfaceUrl,
+            },
+            website: {
+              isDisplayed: !this.doesCurrentServicePackHoldACertification(),
+              url: this.servicePackOptionService
+                .getDiscoverURL(this.CERTIFICATIONS_OPTION_NAME, this.currentUser.ovhSubsidiary),
+            },
+          },
+          name: this.getCertificationDescription(),
+          status: this.buildCertificationDescription(),
         },
         actionMenu: {
-          isDisplayed: this.isOrderable(OPTION_TYPES.certification),
+          isDisplayed: this.isOrderable(OPTION_TYPES.certification) || this.pendingOrderIsNotPaid(),
           activate: {
+            isDisplayed: this.isOrderable(OPTION_TYPES.certification),
             stateParams: {
               activationType: OPTION_TYPES.certification,
               orderableServicePacks: this.orderables[OPTION_TYPES.certification],
               servicePacks: this.servicePacks,
             },
           },
+          validateActivation: {
+            isDisplayed: this.pendingOrderIsNotPaid(),
+            url: _.get(this.pendingOrder, 'url'),
+          },
         },
       },
     };
+
+    this.a = 'pouet';
   }
 
   getCertificationDescription() {
-    return this.$translate.instant(this.certification != null
+    return this.doesCurrentServicePackHoldACertification()
       ? `dedicatedCloudDashboardTilesOptions_certification_description_name_${this.currentService.servicePackName}`
-      : this.$translate.instant('dedicatedCloudDashboardTilesOptions_certification_description_noCertification'));
+      : this.$translate.instant('dedicatedCloudDashboardTilesOptions_certification_description_noCertification');
   }
 
   buildBasicMenuModifyText() {
