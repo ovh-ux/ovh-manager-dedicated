@@ -23,8 +23,6 @@ angular
       security: 'UNIVERS_DEDICATED_CLOUD_SECURITY',
       price: $cacheFactory('UNIVERS_DEDICATED_CLOUD_PRICE'),
       subdatacenters: $cacheFactory('UNIVERS_DEDICATED_CLOUD_SUB_DATACENTERS'),
-      subdatacentershost: $cacheFactory('UNIVERS_DEDICATED_CLOUD_SUB_DATACENTERS_HOST'),
-      subdatacentersfiler: $cacheFactory('UNIVERS_DEDICATED_CLOUD_SUB_DATACENTERS_FILER'),
       subdatacentersveeam: $cacheFactory('UNIVERS_DEDICATED_CLOUD_SUB_DATACENTERS_VEEAM'),
       subdatacenterslicences: $cacheFactory('UNIVERS_DEDICATED_CLOUD_SUB_DATACENTERS_LICENCES'),
     };
@@ -292,8 +290,7 @@ angular
 
     /* ------- SUB DATACENTER HOSTS -------*/
 
-    this.getPaginatedHosts = function (serviceName, datacenterId, elementsByPage, elementsToSkip,
-      forceRefresh) {
+    this.getPaginatedHosts = function (serviceName, datacenterId, elementsByPage, elementsToSkip) {
       return OvhHttp.get('/sws/dedicatedCloud/{serviceName}/datacenters/{datacenterId}/hosts', {
         rootPath: '2api',
         urlParams: {
@@ -304,8 +301,6 @@ angular
           count: elementsByPage,
           offset: elementsToSkip,
         },
-        cache: 'SUB_DATACENTERS_HOST',
-        clearCache: forceRefresh,
       });
     };
 
@@ -354,8 +349,7 @@ angular
 
     /* ------- SUB DATACENTER DATASTORES -------*/
 
-    this.getDatastores = function (serviceName, datacenterId, elementsByPage, elementsToSkip,
-      forceRefresh) {
+    this.getDatastores = function (serviceName, datacenterId, elementsByPage, elementsToSkip) {
       return OvhHttp.get('/sws/dedicatedCloud/{serviceName}/datacenters/{datacenterId}/datastores', {
         rootPath: '2api',
         urlParams: {
@@ -366,8 +360,6 @@ angular
           count: elementsByPage,
           offset: elementsToSkip,
         },
-        cache: 'SUB_DATACENTERS_FILER',
-        clearCache: forceRefresh,
       });
     };
 
