@@ -292,8 +292,13 @@ export default class OptionTile {
   }
 
   buildBasicMenuModifyText() {
-    return this.$translate.instant(this.buildBasicOptions().length === 0
-      ? 'dedicatedCloudDashboardTilesOptions_basic_actionMenu_activateOptions'
-      : 'dedicatedCloudDashboardTilesOptions_basic_actionMenu_modifyOptions');
+    return this.$translate.instant(
+      _.filter(
+        this.buildBasicOptions(),
+        { status: this.ACTIVATION_STATUS.enabled },
+      ).length === 0
+        ? 'dedicatedCloudDashboardTilesOptions_basic_actionMenu_activateOptions'
+        : 'dedicatedCloudDashboardTilesOptions_basic_actionMenu_modifyOptions',
+    );
   }
 }
