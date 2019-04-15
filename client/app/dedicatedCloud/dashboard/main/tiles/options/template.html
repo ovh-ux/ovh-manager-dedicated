@@ -10,7 +10,7 @@
     <div data-ng-if="!$ctrl.bindings.isLoading">
         <oui-tile-definition data-term="{{:: 'dedicatedCloudDashboardTilesOptions_basic_definition' | translate }}">
             <oui-tile-description class="oui-list oui-list_separated m-0">
-                <ul class="oui-list__items pl-3">
+                <ul class="oui-list__items">
                     <li
                         data-ng-repeat="option in ::$ctrl.bindings.basic.options track by option.name"
                         data-ng-class="{
