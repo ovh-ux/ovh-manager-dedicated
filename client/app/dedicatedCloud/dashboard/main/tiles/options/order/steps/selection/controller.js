@@ -29,30 +29,35 @@ export default class {
       { name: this.currentService.servicePackName },
     );
 
-    this.orderableServicePacks = this.orderableServicePacks
-      .map((servicePack) => {
-        const matchingServicePack = _.find(this.servicePacksWithPrices, { name: servicePack.name });
-        const priceAsNumber = matchingServicePack.price.value - currentServicePack.price.value;
+    this.orderableServicePacks = _.sortBy(
+      this.orderableServicePacks
+        .map((servicePack) => {
+          const matchingServicePack = _.find(this.servicePacksWithPrices, {
+            name: servicePack.name,
+          });
+          const priceAsNumber = matchingServicePack.price.value - currentServicePack.price.value;
 
-        const priceAsString = new Intl
-          .NumberFormat(
-            'fr', // can't change as the API is not ISO compliant
-            {
-              style: 'currency',
-              currency: currentServicePack.price.currencyCode,
-              minimumFractionDigits: 2,
-            },
-          )
-          .format(priceAsNumber);
+          const priceAsString = new Intl
+            .NumberFormat(
+              'fr', // can't change as the API is not ISO compliant
+              {
+                style: 'currency',
+                currency: currentServicePack.price.currencyCode,
+                minimumFractionDigits: 2,
+              },
+            )
+            .format(priceAsNumber);
 
-        const price = priceAsNumber > 0 ? `+${priceAsString}` : priceAsString;
+          const price = priceAsNumber > 0 ? `+${priceAsString}` : priceAsString;
 
-        return {
-          ...servicePack,
-          price,
-          priceAsNumber,
-        };
-      });
+          return {
+            ...servicePack,
+            price,
+            priceAsNumber,
+          };
+        }),
+      'name',
+    );
   }
 
   confirmOrder() {
