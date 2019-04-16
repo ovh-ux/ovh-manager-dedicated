@@ -6,57 +6,88 @@ angular
       $stateParams,
       $translate,
       Alerter,
-      OvhHttp,
+      DedicatedCloudLicencesSplaEnableService,
       User,
     ) {
       this.$state = $state;
+      this.$stateParams = $stateParams;
       this.$translate = $translate;
-      this.OvhHttp = OvhHttp;
       this.Alerter = Alerter;
+      this.DedicatedCloudLicencesSplaEnableService = DedicatedCloudLicencesSplaEnableService;
       this.User = User;
-      this.serviceName = $stateParams.productId;
-      this.selectedOffer = null;
     }
 
     $onInit() {
+      this.bindings = {
+        contracts: {
+          areSigned: undefined,
+          value: undefined,
+        },
+        form: {
+          isValid: undefined,
+        },
+        offers: {
+          selected: undefined,
+          value: undefined,
+        },
+      };
+
+      this.serviceName = this.$stateParams.productId;
+      this.selectedOffer = null;
+
       this.loading = true;
 
+      return this.fetchInitialData();
+    }
+
+    fetchInitialData() {
+      this.bindings.isLoading = true;
+
+      return this.fetchExpressOrderURL()
+        .then(() => this.fetchOVHSubsidiary())
+        .then(() => this.fetchOffers())
+        .then(() => this.fetchContracts())
+        .catch((error) => {
+          this.Alerter.error(this.$translate.instant('dedicatedCloud_tab_licences_active_spla_load_fail'), error);
+
+          return this.$state.go('^');
+        })
+        .finally(() => {
+          this.bindings.isLoading = false;
+        });
+    }
+
+    fetchExpressOrderURL() {
       return this.User
         .getUrlOf('express_order')
         .then((url) => {
           this.expressOrderUrl = url;
-        })
-        .catch(() => {
-          this.Alerter.error(this.$translate.instant('dedicatedCloud_tab_licences_active_spla_load_fail'));
-          this.$state.go('^');
-        })
-        .finally(() => {
-          this.loading = false;
+        });
+    }
+
+    fetchOVHSubsidiary() {
+      return this.User
+        .getUser()
+        .then(({ ovhSubsidiary }) => {
+          this.ovhSubsidiary = ovhSubsidiary;
         });
     }
 
     fetchOffers() {
-      return this.OvhHttp
-        .get('/order/cartServiceOption/privateCloud/{serviceName}', {
-          rootPath: 'apiv6',
-          urlParams: {
-            serviceName: this.serviceName,
-          },
-        })
-        .then(offers => _.filter(offers, { offer: 'pcc-option-windows' }));
+      return this.DedicatedCloudLicencesSplaEnableService
+        .fetchOffers(this.serviceName)
+        .then((offers) => {
+          this.bindings.offers = {
+            value: offers,
+          };
+        });
     }
 
-    fetchDatagridOffers() {
-      return this
-        .fetchOffers()
-        .then((offers) => {
-          this.selectedOffer = _.first(offers);
-          return {
-            data: offers,
-            meta: {
-              totalCount: _.size(offers),
-            },
-          };
+    fetchContracts() {
+      return this.DedicatedCloudLicencesSplaEnableService
+        .fetchContracts(_.first(this.bindings.offers.value), this.serviceName, this.ovhSubsidiary)
+        .then((contracts) => {
+          this.bindings.contracts.value = contracts;
         });
     }
 
@@ -64,17 +95,21 @@ angular
       return this.$state.go('^');
     }
 
+    isOrderButtonAvailable() {
+      return this.bindings.offers.selected != null && this.bindings.contracts.areSigned;
+    }
+
     getOrderUrl() {
-      if (!this.selectedOffer) {
-        return null;
+      if (!this.isOrderButtonAvailable()) {
+        return undefined;
       }
 
-      const price = _.first(this.selectedOffer.prices);
+      const price = _.first(this.bindings.offers.selected.prices);
 
       return `${this.expressOrderUrl}review?products=${JSURL.stringify([{
         productId: 'privateCloud',
         serviceName: this.serviceName,
-        planCode: this.selectedOffer.planCode,
+        planCode: this.bindings.offers.selected.planCode,
         duration: price.duration,
         pricingMode: price.pricingMode,
         quantity: 1,
