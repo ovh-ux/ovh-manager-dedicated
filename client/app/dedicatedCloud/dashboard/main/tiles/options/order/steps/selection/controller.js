@@ -60,6 +60,13 @@ export default class {
     );
   }
 
+  selectServicePackToOrder() {
+    this.servicePackToOrder = _.find(
+      this.orderableServicePacks,
+      { name: this.nameOfServicePackToOrder },
+    );
+  }
+
   confirmOrder() {
     if (this.form.$invalid) {
       return null;
