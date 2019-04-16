@@ -446,7 +446,9 @@ angular
         .catch((data) => {
           this.Alerter.alertFromSWS(this.$translate.instant('ip_order_finish_error'), data.data);
         })
-        .finally(() => this.$scope.closeModal());
+        .finally(() => (this.isOrderingFromDrp()
+          ? this.$scope.closeModal().then(() => this.$state.go('app.dedicatedClouds.datacenter.drp', { reload: true }))
+          : this.$scope.closeModal()));
     }
 
     confirmOrder() {
@@ -473,6 +475,8 @@ angular
         .catch((data) => {
           this.Alerter.alertFromSWS(this.$translate.instant('ip_order_finish_error'), data.data);
         })
-        .finally(() => this.$scope.closeModal());
+        .finally(() => (this.isOrderingFromDrp()
+          ? this.$scope.closeModal().then(() => this.$state.go('app.dedicatedClouds.datacenter.drp', { reload: true }))
+          : this.$scope.closeModal()));
     }
   });
