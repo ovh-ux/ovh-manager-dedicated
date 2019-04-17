@@ -83,7 +83,7 @@
                 data-align="end"
                 data-compact>
                 <oui-action-menu-item
-                    data-href="{{ $state.href('app.license.detail', { licenseId: getLicenseId($row) }) }}">
+                    data-href="{{:: $state.href('app.license.detail', { licenseId: getLicenseId($row) }) }}">
                     <span data-translate="license_dashboard_table_popover_details"></span>
                 </oui-action-menu-item>
                 <oui-action-menu-item
@@ -98,12 +98,12 @@
                 </oui-action-menu-item>
                 <oui-action-menu-item
                     data-ng-if="$row.canBeUpgraded === true && !$row.isExpired"
-                    data-href="{{ $state.href('app.license.upgrade', { licenseId: getLicenseId($row) }) }}">
+                    data-href="{{:: $state.href('app.license.upgrade', { licenseId: getLicenseId($row) }) }}">
                     <span data-translate="license_dashboard_table_popover_upgrade"></span>
                 </oui-action-menu-item>
                 <oui-action-menu-item
                     data-ng-if="$row.isExpired"
-                    data-href="{{ getRenewUrl() + $row.id }}">
+                    data-href="{{:: getRenewUrl() + $row.id }}">
                     <span data-translate="license_dashboard_table_popover_renew"></span>
                 </oui-action-menu-item>
                 <oui-action-menu-item
