@@ -19,8 +19,8 @@ angular
         },
       })
       .state('app.dedicatedClouds.datacenter.drp.ovh.mainPccStep.legacyOrderIp', {
-        controller: 'IpOrderCtrl',
-        templateUrl: 'ip/ip/order/ip-ip-order.html',
+        controller: 'IpLegacyOrderCtrl',
+        templateUrl: 'ip/ip/legacyOrder/ip-ip-legacyOrder.html',
         layout: 'modal',
         translations: ['.'],
       })

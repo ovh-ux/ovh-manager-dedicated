@@ -4,6 +4,7 @@ angular
     constructor(
       $q,
       $rootScope,
+      $state,
       $scope,
       $translate,
       $window,
@@ -18,6 +19,7 @@ angular
     ) {
       this.$q = $q;
       this.$rootScope = $rootScope;
+      this.$state = $state;
       this.$scope = $scope;
       this.$translate = $translate;
       this.$window = $window;
@@ -55,6 +57,16 @@ angular
       this.$scope.backToContracts = () => this.backToContracts();
       this.$scope.getResumePrice = price => this.getResumePrice(price);
       this.$scope.confirmOrder = () => this.confirmOrder();
+
+      if (this.isOrderingFromDrp()) {
+        this.$scope.closeModal = () => this.$state.go('^');
+      } else {
+        this.$scope.closeModal = this.$scope.resetAction;
+      }
+    }
+
+    isOrderingFromDrp() {
+      return _.startsWith(this.$state.current.name, 'app.dedicatedClouds.datacenter.drp');
     }
 
     /*= =============================
@@ -434,9 +446,9 @@ angular
         .catch((data) => {
           this.Alerter.alertFromSWS(this.$translate.instant('ip_order_finish_error'), data.data);
         })
-        .finally(() => {
-          this.$scope.resetAction();
-        });
+        .finally(() => (this.isOrderingFromDrp()
+          ? this.$scope.closeModal().then(() => this.$state.go('app.dedicatedClouds.datacenter.drp', { reload: true }))
+          : this.$scope.closeModal()));
     }
 
     confirmOrder() {
@@ -463,8 +475,8 @@ angular
         .catch((data) => {
           this.Alerter.alertFromSWS(this.$translate.instant('ip_order_finish_error'), data.data);
         })
-        .finally(() => {
-          this.$scope.resetAction();
-        });
+        .finally(() => (this.isOrderingFromDrp()
+          ? this.$scope.closeModal().then(() => this.$state.go('app.dedicatedClouds.datacenter.drp', { reload: true }))
+          : this.$scope.closeModal()));
     }
   });
