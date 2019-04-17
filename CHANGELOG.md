@@ -1,3 +1,23 @@
+<a name="10.16.0"></a>
+# [10.16.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.15.5...v10.16.0) (2019-04-17)
+
+
+### Bug Fixes
+
+* use the correct order ip modal from zerto ([1921ca7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1921ca7))
+* **i18n:** retrieve translations ([83083a6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/83083a6))
+* **i18n:** retrieve translations ([#1082](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1082)) ([79ce007](https://github.com/ovh-ux/ovh-manager-dedicated/commit/79ce007))
+* **i18n:** submit translations ([0732821](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0732821))
+* **ip.legacyorder:** add state reload after ip order ([5909fc3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5909fc3))
+
+
+### Features
+
+* **datacenter.drp:** show service name if there is no description ([#1070](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1070)) ([4a3990b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4a3990b))
+* add chatbot accessible from the assistance menu ([#1075](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1075)) ([4871cd9](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4871cd9))
+
+
+
 <a name="10.15.5"></a>
 ## [10.15.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.15.4...v10.15.5) (2019-04-12)
 
