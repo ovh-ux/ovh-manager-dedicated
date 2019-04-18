@@ -6,6 +6,23 @@ const constants = {
     vmsUrl: 'http://travaux.ovh.net/vms/',
     travauxUrl: 'http://travaux.ovh.net/',
     UNIVERS: 'dedicated',
+    SUPPORT_PHONE: {
+      CZ: '+420 246 030 899',
+      DE: '+49 6 81 906 730',
+      ES: '+34 91 758 34 77',
+      FI: '+358 (0)9 315 858 14',
+      FR: '1007',
+      IE: '+353 16 91 72 83',
+      IT: '+39 2 55 600 423',
+      LT: '+370 5 207 82 48',
+      MA: '+212 522 260 086',
+      NL: '31 78 808 +0120',
+      PL: '+48 71 750 02 00',
+      PT: '+351 213 155 642',
+      SN: '+221 33 889 75 70',
+      TN: '+216 719 660 44',
+      UK: '0333 370 0425',
+    },
     URLS: {
       CZ: {
         express_order: 'https://www.ovh.cz/order/express/#/express/',
@@ -565,6 +582,10 @@ const constants = {
     vmsUrl: 'http://status.ovh.net/vms/',
     travauxUrl: 'http://status.ovh.net/',
     UNIVERS: 'dedicated',
+    SUPPORT_PHONE: {
+      CA: '1-855-684-5463',
+      AU: '+61 3 83 758 172',
+    },
     URLS: {
       ASIA: {
         express_order: 'https://ca.ovh.com/en/order/express/#/express/',
@@ -853,6 +874,9 @@ const constants = {
     travauxUrl: 'http://status.ovh.net/',
     vrackUrl: 'https://us.ovhcloud.com/manager/cloud/index.html#/vrack',
     UNIVERS: 'dedicated',
+    SUPPORT_PHONE: {
+
+    },
     URLS: {
       US: {
         express_order: 'https://us.ovhcloud.com/order/express/#/express/',

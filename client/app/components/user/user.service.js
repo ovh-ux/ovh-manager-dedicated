@@ -60,6 +60,17 @@ angular.module('services').service('User', [
       });
     };
 
+    /* eslint-disable no-unused-vars */
+    this.getSupportPhone = function () {
+      return this.getUser().then((data) => {
+        try {
+          return _.get(constants, `SUPPORT_PHONE.${data.ovhSubsidiary}`);
+        } catch (exception) {
+          return constants.SUPPORT_PHONE.FR;
+        }
+      });
+    };
+
     /**
      * The new structure in constants.config.js will be ...value.subsidiary and not subsidiary.value
      * It will be easier for maintainers when you see all the possible values for a constant at

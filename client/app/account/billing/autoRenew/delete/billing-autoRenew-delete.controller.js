@@ -2,7 +2,7 @@ angular
   .module('Billing.controllers')
   .controller('billingAutoRenewDeleteCtrl', class BillingAutoRenewDeleteCtrl {
     constructor($filter, $q, $rootScope, $scope, $translate, Alerter, BillingAutoRenew,
-      AUTORENEW_EVENT, Server) {
+      AUTORENEW_EVENT, Server, User) {
       this.$filter = $filter;
       this.$q = $q;
       this.$rootScope = $rootScope;
@@ -11,6 +11,7 @@ angular
       this.Server = Server;
       this.Alerter = Alerter;
       this.BillingAutoRenew = BillingAutoRenew;
+      this.User = User;
       this.loaders = {
         init: false,
       };
@@ -24,9 +25,13 @@ angular
       this.serviceToDisplay.expirationText = this.$filter('date')(this.serviceToDisplay.expiration, 'mediumDate');
 
       if (this.serviceToDisplay.serviceType === 'DEDICATED_SERVER') {
-        this.Server.getSelected(this.serviceToDisplay.serviceId)
-          .then((server) => {
+        this.$q.all({
+          server: this.Server.getSelected(this.serviceToDisplay.serviceId),
+          phoneNumber: this.User.getSupportPhone(),
+        })
+          .then(({ server, phoneNumber }) => {
             this.serviceToDisplay.engagement = server.engagement;
+            this.supportPhoneNumber = phoneNumber;
           })
           .finally(() => { this.loaders.init = false; });
       } else {

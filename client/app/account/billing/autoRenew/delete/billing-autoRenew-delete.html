@@ -7,7 +7,8 @@
         data-loading="$ctrl.loaders.init">
 
         <p data-ng-if="$ctrl.serviceToDisplay.engagement"
-           data-translate="common_resiliate_contact_support"></p>
+           data-translate="common_resiliate_contact_support"
+           data-translate-values="{ phoneNumber: $ctrl.supportPhoneNumber }"></p>
 
         <div data-ng-if="!$ctrl.serviceToDisplay.engagement">
             <p data-translate="autorenew_service_delete_confirm"

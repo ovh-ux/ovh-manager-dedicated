@@ -92,6 +92,7 @@ angular
     REDIRECT_URLS: config.constants.REDIRECT_URLS,
     DEFAULT_LANGUAGE: config.constants.DEFAULT_LANGUAGE,
     FALLBACK_LANGUAGE: config.constants.FALLBACK_LANGUAGE,
+    SUPPORT_PHONE: config.constants.SUPPORT_PHONE,
   })
   .constant('LANGUAGES', config.constants.LANGUAGES)
   .constant('website_url', config.constants.website_url)
