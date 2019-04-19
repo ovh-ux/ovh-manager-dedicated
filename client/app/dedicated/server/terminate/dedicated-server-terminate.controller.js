@@ -7,6 +7,7 @@ angular.module('App').controller('ServerTerminateCtrl', class ServerTerminateCtr
     constants,
     dedicatedServerFeatureAvailability,
     Server,
+    User,
   ) {
     this.$scope = $scope;
     this.$stateParams = $stateParams;
@@ -15,6 +16,7 @@ angular.module('App').controller('ServerTerminateCtrl', class ServerTerminateCtr
     this.Server = Server;
     this.dedicatedServerFeatureAvailability = dedicatedServerFeatureAvailability;
     this.Alerter = Alerter;
+    this.User = User;
   }
 
   $onInit() {
@@ -27,6 +29,9 @@ angular.module('App').controller('ServerTerminateCtrl', class ServerTerminateCtr
       isSubmiting: false,
     };
     this.$scope.submitCancelSubscription = this.submitCancelSubscription.bind(this);
+    this.User.getSupportPhone().then((phoneNumber) => {
+      this.supportPhoneNumber = phoneNumber;
+    });
   }
 
   /**
