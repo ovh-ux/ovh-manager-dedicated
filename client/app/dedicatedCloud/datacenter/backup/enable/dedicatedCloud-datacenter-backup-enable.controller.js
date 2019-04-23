@@ -9,8 +9,8 @@ angular
       $translate,
       $window,
       Alerter,
+      datacenterBackupEnableService,
       DedicatedCloud,
-      OvhHttp,
       User,
     ) {
       this.$q = $q;
@@ -19,29 +19,44 @@ angular
       this.$translate = $translate;
       this.$window = $window;
       this.Alerter = Alerter;
+      this.datacenterBackupEnableService = datacenterBackupEnableService;
       this.DedicatedCloud = DedicatedCloud;
-      this.OvhHttp = OvhHttp;
       this.User = User;
     }
 
     $onInit() {
-      this.loading = {
-        init: false,
-      };
-
-      this.model = {
-        version: 'classic',
+      this.bindings = {
+        availableHosts: {
+          value: undefined,
+          warning: {
+            isDisplayed: undefined,
+            text: undefined,
+          },
+        },
+        availableOffers: {
+          value: undefined,
+          selection: {
+            value: undefined,
+          },
+          warning: {
+            canExist: undefined,
+            isDisplayed: undefined,
+            text: undefined,
+          },
+        },
+        isFetchingInitialData: undefined,
+        labels: {
+          primary: undefined,
+          secondary: undefined,
+        },
+        isWarning: undefined,
       };
 
       return this.fetchInitialData();
     }
 
-    closeModal() {
-      return this.$state.go('^');
-    }
-
     fetchInitialData() {
-      this.loading.init = true;
+      this.bindings.isFetchingInitialData = true;
 
       return this.$q
         .all({
@@ -49,52 +64,119 @@ angular
             .getSelected(this.$stateParams.productId, true),
           datacenter: this.DedicatedCloud
             .getDatacenterInfoProxy(this.$stateParams.productId, this.$stateParams.datacenterId),
+          expressURL: this.User
+            .getUrlOf('express_order'),
           hosts: this.DedicatedCloud
             .getHosts(this.$stateParams.productId, this.$stateParams.datacenterId),
-          offer: this.getBackupOffer(),
-          veamBackupUrl: this.User.getUrlOf('veeamBackup'),
+          user: this.User
+            .getUser(),
+          veamBackupUrl: this.User
+            .getUrlOf('veeamBackup'),
         })
         .then(({
           currentService,
           datacenter,
+          expressURL,
           hosts,
-          offer,
+          user,
           veamBackupUrl,
         }) => {
           this.currentService = currentService;
           this.datacenter = datacenter;
-          this.hosts = hosts;
-          this.offer = offer;
+          this.expressURL = expressURL;
+          this.updateAvailableHosts(hosts);
+          this.user = user;
           this.veamBackupUrl = veamBackupUrl;
+        })
+        .then(() => (this.user.ovhSubsidiary === 'US'
+          ? this.datacenterBackupEnableService.fetchBackupOffers(this.$stateParams.productId)
+          : null))
+        .then((offers) => {
+          this.updateAvailableOffers(_.get(offers, 'prices'));
+        })
+        .then(() => {
+          this.updateType();
+          this.updatePrimaryLabel();
+          this.updateSecondaryLabel();
         })
         .catch((error) => {
           this.Alerter.error(`${this.$translate.instant('dedicatedCloud_tab_veeam_enable_fail')}. ${_.get(error, 'message', '')}`.trim());
         })
         .finally(() => {
-          this.loading.init = false;
+          this.bindings.isFetchingInitialData = false;
         });
     }
 
-    getBackupOffer() {
-      return this.OvhHttp
-        .get('/order/cartServiceOption/privateCloud/{serviceName}', {
-          rootPath: 'apiv6',
-          urlParams: {
-            serviceName: this.$stateParams.productId,
-          },
-        })
-        .then(offers => _.find(offers, { family: 'backup' }));
+    updatePrimaryLabel() {
+      this.bindings.labels.primary = this.bindings.isWarning
+        ? this.$translate.instant('global_OK')
+        : this.$translate.instant('dedicatedCloud_options_activate');
     }
 
-    onBackupEnableFormSubmit() {
-      if (!this.hosts || !this.hosts.length || !this.offer) {
+    updateSecondaryLabel() {
+      this.bindings.labels.secondary = this.bindings.isWarning
+        ? null
+        : this.$translate.instant('wizard_cancel');
+    }
+
+    updateType() {
+      this.bindings.isWarning = this.bindings.availableHosts.warning.isDisplayed
+          || this.bindings.availableOffers.warning.isDisplayed;
+    }
+
+    updateAvailableHosts(availableHosts) {
+      this.bindings.availableHosts.value = availableHosts;
+
+      this.bindings.availableHosts.warning.isDisplayed = !_.isArray(availableHosts)
+        || _.isEmpty(availableHosts);
+
+      this.bindings.availableHosts.warning.text = this.bindings.availableHosts.warning.isDisplayed
+        ? this.$translate.instant('dedicatedCloud_tab_veeam_on_disabled', { name: this.datacenter.name })
+        : '';
+    }
+
+    updateAvailableOffers(availableOffers) {
+      this.bindings.availableOffers.value = availableOffers;
+
+      this.bindings.availableOffers.warning.canExist = this.user.ovhSubsidiary === 'US';
+
+      const isDisplayed = this.bindings.availableOffers.warning.canExist
+        && (!_.isArray(availableOffers)
+          || _.isEmpty(availableOffers));
+      this.bindings.availableOffers.warning.isDisplayed = isDisplayed;
+
+      this.bindings.availableOffers.warning.text = this.bindings.availableOffers.warning.isDisplayed
+        ? this.$translate.instant('dedicatedCloud_datacenter_backup_enable_no_offer', { name: this.datacenter.name })
+        : null;
+
+      this.bindings.availableOffers.selection.isDisplayed = _.isArray(availableOffers)
+        && !_.isEmpty(availableOffers);
+
+      this.bindings.availableOffers.selection.value = 'classic';
+    }
+
+    closeModal() {
+      return this.$state.go('^');
+    }
+
+    submit() {
+      if (this.bindings.isWarning) {
         return this.closeModal();
       }
+
+      if (
+        this.bindings.availableOffers.selection.isDisplayed
+          && !this.bindings.availableOffers.selection.value
+      ) {
+        return null;
+      }
+
+      const offerType = this.bindings.availableOffers.selection.value || 'legacy';
 
       const productToOrder = {
         productId: 'privateCloud',
         serviceName: this.$stateParams.productId,
-        planCode: this.offer.planCode,
+        planCode: 'pcc-option-backup-managed',
         duration: 'P1M',
         pricingMode: `pcc-servicepack-${this.currentService.servicePackName}`,
         quantity: 1,
@@ -103,18 +185,14 @@ angular
           value: this.datacenter.datacenterId,
         }, {
           label: 'offer_type',
-          value: this.model.version,
+          value: offerType,
         }],
       };
 
-      return this.User
-        .getUrlOf('express_order')
-        .then((url) => {
-          this.$window.open(`${url}review?products=${JSURL.stringify([productToOrder])}`, '_blank');
-        })
-        .catch((error) => {
-          this.Alerter.error([this.$translate.instant('dedicatedCloud_tab_veeam_enable_fail'), _.get(error, 'data.message')].join(' '));
-        })
-        .finally(() => this.closeModal());
+      const orderURL = `${this.expressURL}review?products=${JSURL.stringify([productToOrder])}`;
+
+      this.$window.open(orderURL, '_blank');
+
+      return this.closeModal();
     }
   });
