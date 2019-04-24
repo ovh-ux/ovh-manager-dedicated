@@ -531,13 +531,6 @@ class SessionService {
             click: () => this.trackUserMenuSection('my_contacts', 'contacts'),
           },
 
-          // Tickets
-          {
-            title: this.$translate.instant('menu_tickets'),
-            state: 'app.account.otrs-ticket',
-            click: () => this.trackUserMenuSection('my_otrs_tickets', 'otrs'),
-          },
-
           // Logout
           {
             title: this.$translate.instant('global_logout'),
