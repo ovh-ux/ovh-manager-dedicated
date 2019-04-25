@@ -4,6 +4,34 @@ angular.module('App').controller('CdnDomainStatisticsCtrl', ($scope, $stateParam
   $scope.loadingStats = false;
   $scope.loadingConsts = false;
 
+  $scope.options = {
+    scales: {
+      yAxes: [{
+        ticks: {
+          min: 0,
+        },
+        scaleLabel: {
+          display: true,
+          labelString: $translate.instant('unit_size_GB'),
+        },
+      }],
+    },
+  };
+
+  $scope.requestOptions = {
+    scales: {
+      yAxes: [{
+        ticks: {
+          min: 0,
+        },
+        scaleLabel: {
+          display: true,
+          labelString: $translate.instant('cdn_statistics_requests_per_second'),
+        },
+      }],
+    },
+  };
+
   function createChart(data) {
     $scope.series = [];
     $scope.data = [];
@@ -16,8 +44,13 @@ angular.module('App').controller('CdnDomainStatisticsCtrl', ($scope, $stateParam
     });
     $scope.series.push($translate.instant(`cdn_stats_legend_${$scope.model.dataType.toLowerCase()}_cdn`));
     $scope.series.push($translate.instant(`cdn_stats_legend_${$scope.model.dataType.toLowerCase()}_backend`));
-    $scope.data.push(_.map(_.get(data, 'cdn.values'), value => value.y));
-    $scope.data.push(_.map(_.get(data, 'backend.values'), value => value.y));
+    if ($scope.model.dataType === 'REQUEST') {
+      $scope.data.push(_.map(_.get(data, 'cdn.values'), value => value.y));
+      $scope.data.push(_.map(_.get(data, 'backend.values'), value => value.y));
+    } else if ($scope.model.dataType === 'BANDWIDTH' || $scope.model.dataType === 'QUOTA') {
+      $scope.data.push(_.map(_.get(data, 'cdn.values'), value => value.y / 1000000000)); // convert B to GB
+      $scope.data.push(_.map(_.get(data, 'backend.values'), value => value.y / 1000000000));
+    }
   }
 
   $scope.getStatistics = () => {

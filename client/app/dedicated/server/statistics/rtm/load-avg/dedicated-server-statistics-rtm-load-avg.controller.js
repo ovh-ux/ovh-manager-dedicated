@@ -84,14 +84,11 @@ angular.module('controllers').controller('controllers.Server.Stats.Loadavg', ($s
     $scope.loading = true;
     Server.getStatisticsLoadavg($stateParams.productId, {
       period: $scope.selectedPeriod.value,
-    }).then(
-      (data) => {
-        $scope.chartData = buildChart(data);
-      },
-      () => {
-        $scope.loading = false;
-      },
-    );
+    }).then((data) => {
+      $scope.chartData = buildChart(data);
+    }).finally(() => {
+      $scope.loading = false;
+    });
   }
 
   init();
