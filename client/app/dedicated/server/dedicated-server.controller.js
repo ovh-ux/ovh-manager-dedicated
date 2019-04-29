@@ -2,6 +2,7 @@
 angular.module('App').controller('ServerCtrl', (
   $q,
   $scope,
+  $state,
   $stateParams,
   $timeout,
   $translate,
@@ -206,7 +207,12 @@ angular.module('App').controller('ServerCtrl', (
 
     loadServer()
       .then(() => loadMonitoring())
-      .then(() => getTaskInProgress());
+      .then(() => getTaskInProgress())
+      .finally(() => {
+        if ($scope.server.canTakeRendezVous) {
+          $state.go('app.dedicated.server.rendezvous');
+        }
+      });
   }
 
   function loadServer() {
