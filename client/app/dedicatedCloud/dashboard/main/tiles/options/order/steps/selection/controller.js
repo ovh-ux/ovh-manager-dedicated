@@ -68,25 +68,25 @@ export default class {
   }
 
   confirmOrder() {
-    if (this.form.$invalid) {
-      return null;
-    }
-
-    return this.$uibModal.open({
-      templateUrl: MODAL_TEMPLATE_URL,
-      controller: MODAL_CONTROLLER_NAME,
-      controllerAs: '$ctrl',
-      resolve: {
-        optionName: () => this.servicePackToOrder.displayName,
-        price: () => this.servicePackToOrder.price.replace(/\+/g, ''),
-        priceAsNumber: () => this.servicePackToOrder.priceAsNumber,
-      },
-    }).result.then(() => this.placeOrder());
+    return this.form.$valid
+      ? this.$uibModal
+        .open({
+          templateUrl: MODAL_TEMPLATE_URL,
+          controller: MODAL_CONTROLLER_NAME,
+          controllerAs: '$ctrl',
+          resolve: {
+            optionName: () => this.servicePackToOrder.displayName,
+            price: () => this.servicePackToOrder.price.replace(/\+/g, ''),
+            priceAsNumber: () => this.servicePackToOrder.priceAsNumber,
+          },
+        }).result
+        .then(() => this.placeOrder())
+      : this.$q.when();
   }
 
   goToNextStep() {
     if (this.form.$invalid) {
-      return null;
+      return this.$q.when();
     }
 
     return this.stepper.goToNextStep({
@@ -97,7 +97,7 @@ export default class {
 
   placeOrder() {
     if (this.form.$invalid) {
-      return null;
+      return this.$q.when();
     }
 
     this.orderIsInProgress = true;
@@ -119,13 +119,7 @@ export default class {
             url: order.url,
             orderedServicePackName: this.servicePackToOrder.name,
           })
-          .then(() => {
-            if (this.hasDefaultMeansOfPayment) {
-              return this.stepper.exit();
-            }
-
-            return this.goToNextStep();
-          });
+          .then(() => this.goToNextStep());
       })
       .catch(error => this.stepper
         .exit()
