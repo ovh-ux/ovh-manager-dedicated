@@ -1014,10 +1014,17 @@
   dependencies:
     lodash "^4.17.11"
 
-"@ovh-ux/ng-ovh-contacts@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-contacts/-/ng-ovh-contacts-1.0.0.tgz#1bb61ac637492f3f5ca7393579ca18c37fb7f1fa"
-  integrity sha512-MBJRTI9+t0pIBkpYer8trKiEM7uTD0Acf+ONSReeTv0yjuAJQGEv8w5Uvpx7fLrsGhutcnk59s9GJCL1g+xZtA==
+"@ovh-ux/ng-ovh-chatbot@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-chatbot/-/ng-ovh-chatbot-2.0.0.tgz#9894c2e6baab6f244ecc3722c1a9e469c3f26d28"
+  integrity sha512-UdV33Pg3DfpNv5BUQ8zIV32YvF6Atbk0U9QV91wkFz0OceRb3A9i3JB95PtnCKqRrqpbKlq8dYwWm4BwT16ZpQ==
+  dependencies:
+    lodash "^4.17.11"
+
+"@ovh-ux/ng-ovh-contacts@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-contacts/-/ng-ovh-contacts-1.0.1.tgz#c0262e57aecf47ae269615ecefbc5e72dea76297"
+  integrity sha512-tbmn2tBgBk6FC1cgB6WlTSw1Z4p3fN9Jvg7Mfx4krbDBshTqlWnzD3r+6Hb/quoukTvePqRfbLRmdRx6x/E7bg==
   dependencies:
     lodash "^4.17.11"
 
@@ -1028,6 +1035,14 @@
   dependencies:
     lodash "~4.17.11"
     urijs "^1.19.1"
+
+"@ovh-ux/ng-ovh-otrs@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-otrs/-/ng-ovh-otrs-7.0.0.tgz#9de1ed2efcf39618a9c17a4cf8b981c0aa42a3da"
+  integrity sha512-OqUvbVMgM1fSS2o0seL1wU3tokEBhbvYtakerMrFE3ncpKGw57GJ4eY0aO1dzvdr07EURAVJGKgpA7dBGI7RkA==
+  dependencies:
+    draggable "^4.2.0"
+    lodash "^4.17.11"
 
 "@ovh-ux/ng-ovh-payment-method@^2.0.0":
   version "2.0.0"
@@ -3594,6 +3609,11 @@ dot-prop@^4.1.0, dot-prop@^4.1.1:
   integrity sha512-tUMXrxlExSW6U2EXiiKGSBVdYgtV8qlHL+C10TsW4PURY/ic+eaysnSkwB4kA/mBlCyy/IKDJ+Lc3wbWeaXtuQ==
   dependencies:
     is-obj "^1.0.0"
+
+draggable@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/draggable/-/draggable-4.2.0.tgz#149c0ca176df6d8b512048c8e451f499fc047b9a"
+  integrity sha1-FJwMoXbfbYtRIEjI5FH0mfwEe5o=
 
 drange@^1.0.0:
   version "1.1.1"
@@ -7679,11 +7699,6 @@ ovh-angular-export-csv@^0.3.2:
     jquery "~2.1.4"
     lodash "~3.10.0"
 
-ovh-angular-otrs@^6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/ovh-angular-otrs/-/ovh-angular-otrs-6.3.0.tgz#3ad3c9626be1917b5f0f557375de3757ad9b08ba"
-  integrity sha512-sXxQUlsC0ucl9UVcnSB9ZQsqTnKmW/zQZM+VH0gNpnJo9v3Klk4lHN3n0Wnd62Ic8Ke3Vjgk74Jk2THjQOHfcg==
-
 ovh-angular-pagination-front@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/ovh-angular-pagination-front/-/ovh-angular-pagination-front-7.0.0.tgz#484d333f357cdb2ea0abd3f76ae35491d2b8aae0"
@@ -7719,10 +7734,10 @@ ovh-angular-toaster@^0.8.0:
   resolved "https://registry.yarnpkg.com/ovh-angular-toaster/-/ovh-angular-toaster-0.8.0.tgz#7073201379ea196c721d583421c0cef1d04bdbdb"
   integrity sha1-cHMgE3nqGWxyHVg0IcDO8dBL29s=
 
-ovh-api-services@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-6.0.0.tgz#ef7d3f5b74205415c8a82bba0b4ed2d275c17409"
-  integrity sha512-pe57Ip+jltje7m4wnIUKYR0zb+sYh6s5PychcYglq3fGkFUuK5X7pS3XjVA/6N45XwytzWyc5mses3zcIVmrVA==
+ovh-api-services@^6.1.2:
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-6.1.2.tgz#b442f306fc77e01aaa2a3b515e1f3c32e3e73c4b"
+  integrity sha512-v8XtPLwVVEnDX2C2t3tEWCAJo6pj3NE2pupir4z8ms4KW228prTWk68qPPvIAs0N9AJ/UR0ubXSn+2BiCKf1uQ==
   dependencies:
     lodash "^3.10.1"
 
@@ -7736,18 +7751,18 @@ ovh-manager-webfont@^1.0.2:
   resolved "https://registry.yarnpkg.com/ovh-manager-webfont/-/ovh-manager-webfont-1.0.2.tgz#8f9d358d138c2650a557bdac7a2d1908e962418d"
   integrity sha1-j501jROMJlClV72sei0ZCOliQY0=
 
-ovh-module-exchange@^9.3.4:
-  version "9.3.4"
-  resolved "https://registry.yarnpkg.com/ovh-module-exchange/-/ovh-module-exchange-9.3.4.tgz#74901fb074e908ef4f33816ba14c719837ec3a0d"
-  integrity sha512-FtMjeYedSYqLU14YjhI9/N6LIhdAQn70Qt22UtI0nIUsMvx7FaOaT+EWsbKE9yS0Pz+Ss5SsP6h/ACdXFvTJCQ==
+ovh-module-exchange@^9.4.0:
+  version "9.4.0"
+  resolved "https://registry.yarnpkg.com/ovh-module-exchange/-/ovh-module-exchange-9.4.0.tgz#45ca64d67fd3e1a350a95e0da7a36cd1a7aadebc"
+  integrity sha512-Er8iff84fRB2jgeHhC2M+MALy/G8HQJhj6SXPb7qOAImnir44NCzxAuJjORGOcf7Q/lpAbO9sQvIutAkHx4JcQ==
   dependencies:
     filesize "^3.6.1"
     lodash "~3.9.3"
 
-ovh-ui-angular@^2.24.0:
-  version "2.24.0"
-  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.24.0.tgz#459c0ee750cdc46c1c57d905f9bf2a34afc224bf"
-  integrity sha512-z9WNU4ibl1gfzjuhD41UCNghwE96Au9pm/4e4wFGf7XYEHKbzRYRPIuG4haaugFn/2Nl0UuhLVdin0CZVY61Jg==
+ovh-ui-angular@^2.29.1:
+  version "2.29.1"
+  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.29.1.tgz#a1413c1ef6f23ce2c4e0dc3068beccbad54d2d02"
+  integrity sha512-DaRj5B6+Ok15NH5J94SgzB7WtQe0d6Sr1DKyHv0/dD6QDR/aq3pmwDn+7/hE49MyhY4xy2gBfnwhFYy3ezQC7w==
   dependencies:
     bloodhound-js "^1.2.3"
     clipboard "^2.0.1"
@@ -7768,10 +7783,10 @@ ovh-ui-kit@^2.22.0:
   dependencies:
     less-plugin-remcalc "^0.1.0"
 
-ovh-ui-kit@^2.24.0:
-  version "2.24.0"
-  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.24.0.tgz#f2a3546b476750a2c385ffb09d172e3b7f091002"
-  integrity sha512-GiLg75B7DK5bHUUZL0CBuTZCGBrcNj7UYdXVg0EvH3fLUA7m5hMfxLa/x+IcDnj2lZffxOhUv9OVx8bS3EsS6w==
+ovh-ui-kit@^2.29.1:
+  version "2.29.1"
+  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.29.1.tgz#63e4fa2b769d98d9c20282a4f60d01eccc5282f2"
+  integrity sha512-hdC9cdKju6iNOLCbRMK9dsU9efm1VVUKcE1o3SqxK61WiGl0KfJW2pHYenAGTHZ2ohHY2XE3Nak8i2QOeGIgeA==
   dependencies:
     less-plugin-remcalc "^0.1.0"
 
@@ -9134,7 +9149,14 @@ rework@^1.0.1:
     convert-source-map "^0.3.3"
     css "^2.0.0"
 
-rimraf@2, rimraf@^2.2.8, rimraf@^2.5.2, rimraf@^2.5.4, rimraf@^2.6.1, rimraf@^2.6.2:
+rimraf@2:
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.3.tgz#b2d104fe0d8fb27cf9e0a1cda8262dd3833c6cab"
+  integrity sha512-mwqeW5XsA2qAejG46gYdENaxXjx9onRNCfn7L0duuP4hCuTIi/QO7PDK07KJfp1d+izWPrzEJDcSqBa0OZQriA==
+  dependencies:
+    glob "^7.1.3"
+
+rimraf@^2.2.8, rimraf@^2.5.2, rimraf@^2.5.4, rimraf@^2.6.1, rimraf@^2.6.2:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.2.tgz#2ed8150d24a16ea8651e6d6ef0f47c4158ce7a36"
   integrity sha512-lreewLK/BlghmxtfH36YYVg1i8IAce4TI7oao75I1g245+6BctqTVQiBP3YUJ9C6DQOXJmkYR9X9fCLtCOJc5w==

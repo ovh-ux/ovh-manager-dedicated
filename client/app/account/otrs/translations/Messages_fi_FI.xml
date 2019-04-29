@@ -1,136 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="otrs_popup_service" qtlid="228423">Liittyvä palvelu:</translation>
-   <translation id="otrs_popup_body" qtlid="75606">Viesti:</translation>
-   <translation id="otrs_popup_subject" qtlid="55289">Aihe:</translation>
-   <translation id="otrs_popup_add_ticket" qtlid="228436">Luo tiketti</translation>
-   <translation id="otrs_popup_continue" qtlid="4070">Jatka</translation>
-   <translation id="otrs_popup_back" qtlid="4118">Takaisin</translation>
-   <translation id="otrs_popup_title" qtlid="228449">Tukitiketin luonti</translation>
-   <translation id="otrs_popup_intervention" qtlid="361373">Luo interventiopyyntö </translation>
-   <translation id="otrs_popup_move" qtlid="228462">Voit siirtää tätä pop–up-ikkunaa siirtämällä sen otsikkoa.</translation>
-   <translation id="otrs_popup_sent_error" qtlid="228475">Tapahtui virhe tiketin luomisen aikana.</translation>
-   <translation id="otrs_popup_sent_error_not_available" qtlid="361386">Toiminto ei ole mahdollinen tässä konesalissa.</translation>
-   <translation id="otrs_popup_sent_error_already_exists" qtlid="361399">Tästä aiheesta on jo lähetetty tiketti. <a href="#/ticket/{0}">Klikkaamalla tästä pääset tikettiin.</a></translation>
-   <translation id="otrs_popup_sent_success" qtlid="267463">Tiketti nro {0} on rekisteröity. <a href="#/ticket/{1}">Klikkaa tästä avataksesi tiketin.</a></translation>
-   <translation id="otrs_popup_get_services_error" qtlid="228501">Tapahtui virhe ladattaessa palveluita.</translation>
-   <translation id="otrs_popup_get_types_error" qtlid="233047">Tapahtui virhe ladattaessa tietoja.</translation>
-   <translation id="otrs_popup_services_refresh" qtlid="228514">Päivitä lista</translation>
-
-   <translation id="otrs_popup_see_faq" qtlid="361412">Voit <a href="{0}" target="_blank">katsoa Usein kysytyt kysymykset (UKK)</a> löytääksesi vastauksen kysymykseesi. Jos et löydä vastausta, jata tiketin luomista.</translation>
-   <translation id="otrs_popup_response_in_faq" qtlid="288691">Vastaus kysymykseesi löytyy ehkä usein kysytyistä kysymyksistä, katso UKK:</translation>
-   <translation id="otrs_popup_response_not_found_in_faq" qtlid="288704">Päinvastaisessa tapauksessa jatka tiketin luomista:</translation>
-   <translation id="otrs_popup_service_faq_web" qtlid="288717">UKK Web</translation>
-   <translation id="otrs_popup_service_faq_office365" qtlid="288730">UKK Office 365</translation>
-   <translation id="otrs_popup_service_faq_exchange" qtlid="288743">UKK Exchange</translation>
-   <translation id="otrs_popup_service_faq_sd" qtlid="319843">UKK Dedikoitu palvelin</translation>
-   <translation id="otrs_popup_service_faq_vps" qtlid="319856">UKK VPS</translation>
-
-   <translation id="otrs_service_category_DEDICATED" qtlid="31738">Dedikoidut tuotteet</translation>
-   <translation id="otrs_service_category_EXCHANGE" qtlid="80430">Exchange</translation>
-   <translation id="otrs_service_category_EMAIL_PRO" qtlid="374893">E-mail Pro</translation>
-   <translation id="otrs_service_category_HOSTING" qtlid="167457">Webhotelli</translation>
-   <translation id="otrs_service_category_HUBIC" qtlid="111546">hubiC</translation>
-   <translation id="otrs_service_category_OTHER" qtlid="19963">Muu</translation>
-   <translation id="otrs_service_category_PRIVATE_CLOUD" qtlid="20131">Private Cloud</translation>
-   <translation id="otrs_service_category_PUBLIC_CLOUD" qtlid="251655">Public Cloud</translation>
-   <translation id="otrs_service_category_SITE_BUILDER" qtlid="98852">Site Builder</translation>
-   <translation id="otrs_service_category_TELEPHONY" qtlid="29299">Puhe</translation>
-   <translation id="otrs_service_category_SMS" qtlid="28243">SMS</translation>
-   <translation id="otrs_service_category_VPS" qtlid="23083">VPS</translation>
-   <translation id="otrs_service_category_XDSL" qtlid="104614">xDSL</translation>
-   <translation id="otrs_service_category_NAS" qtlid="76782">NAS</translation>
-   <translation id="otrs_service_category_NASHA" qtlid="211502">NAS-HA</translation>
-   <translation id="otrs_service_category_VRACK" qtlid="211515">vRack</translation>
-   <translation id="otrs_service_category_DOMAIN" qtlid="8458">Verkkotunnus</translation>
    <translation id="otrs_service_category_CDN" qtlid="93415">Content Delivery Network</translation>
-   <translation id="otrs_service_category_CDN_WEBSTORAGE" qtlid="211528">CDN WebStorage</translation>
-   <translation id="otrs_service_category_CDN_WEBSITE" qtlid="211541">CDN WebSite</translation>
-   <translation id="otrs_service_category_CDN_DEDICATED" qtlid="211554">CDN Dedicated</translation>
-   <translation id="otrs_service_category_PRIVATE_DATABASE" qtlid="215429">Yksityinen tietokanta</translation>
-   <translation id="otrs_service_category_ZONE" qtlid="26335">Alue</translation>
-   <translation id="otrs_service_category_LOAD_BALANCING" qtlid="233544">IP-kuormantasaus</translation>
-   <translation id="otrs_service_category_FAILOVER" qtlid="160502">FailOver IP</translation>
-   <translation id="otrs_service_other_services" qtlid="228540">Muu palvelu</translation>
-   <translation id="otrs_service_category_EMAIL_DOMAIN" qtlid="260078">Verkkotunnus sähköposti</translation>
-   <translation id="otrs_service_category_MIS" qtlid="285408">Hallinnoitu infrastruktuuri</translation>
-   <translation id="otrs_service_category_OFFICE_365" qtlid="288665">Office 365</translation>
-   <translation id="otrs_service_category_OVER_THE_BOX" qtlid="281977">OverTheBox</translation>
-   <translation id="otrs_service_category_CSP2" qtlid="325640">Office-jälleenmyyjä</translation>
-   <translation id="otrs_service_category_SHAREPOINT" qtlid="297072">SharePoint</translation>
-   <translation id="otrs_service_category_ALL_DOM" qtlid="270293">AllDom-paketti</translation>
-   <translation id="otrs_service_category_CLUSTER_HADOOP" qtlid="219901">Hadoop Cluster</translation>
-   <translation id="otrs_service_category_SERVER" qtlid="66032">Dedikoitu palvelin</translation>
-   <translation id="otrs_service_category_HOUSING" qtlid="371476">Housing-palvelin</translation>
-   <translation id="otrs_service_category_DEDICATED_SERVER" qtlid="66032">Dedikoitu palvelin</translation>
-   <translation id="otrs_service_category_DEDICATED_HOUSING" qtlid="371476">Housing-palvelin</translation>
-   <translation id="otrs_service_category_DEDICATED_CLOUD" qtlid="20131">Private Cloud</translation>
-   <translation id="otrs_service_category_HOSTING_WEB" qtlid="219979">Webhotelli</translation>
-   <translation id="otrs_service_category_LOAD_BALANCER" qtlid="219992">IP-kuormantasaaja</translation>
-   <translation id="otrs_service_category_LICENCE_CLOUD_LINUX" qtlid="220005">Cloud Linux -lisenssi</translation>
-   <translation id="otrs_service_category_LICENCE_CPANEL" qtlid="220018">cPanel-lisenssi</translation>
-   <translation id="otrs_service_category_LICENCE_DIRECT_ADMIN" qtlid="220031">DirectAdmin-lisenssi</translation>
-   <translation id="otrs_service_category_LICENCE_PLESK" qtlid="220044">Plesk-lisenssi</translation>
-   <translation id="otrs_service_category_LICENCE_SQL_SERVER" qtlid="398943">SQL Server -lisenssi</translation>
-   <translation id="otrs_service_category_LICENCE_OFFICE" qtlid="398956">Office 365 -lisenssi</translation>
-   <translation id="otrs_service_category_LICENSE_OFFICE" qtlid="398956">Office 365 -lisenssi</translation>
-   <translation id="otrs_service_category_LICENCE_VIRTUOZZO" qtlid="220070">Virtuozzo-lisenssi</translation>
-   <translation id="otrs_service_category_LICENCE_WINDOWS" qtlid="62666">Windows-lisenssi</translation>
-   <translation id="otrs_service_category_LICENCE_WORKLIGHT" qtlid="220083">Worklight-lisenssi</translation>
-   <translation id="otrs_service_category_PACK_XDSL" qtlid="229632">DSL-paketti</translation>
-   <translation id="otrs_service_category_ROUTER" qtlid="220096">Reititin</translation>
-   <translation id="otrs_service_category_HOSTING_DOMAIN" qtlid="285049">Webhotelli + verkkotunnus</translation>
-   <translation id="otrs_service_category_HOSTING_RESELLER" qtlid="325289">Multisite jälleenmyyjä</translation>
-   <translation id="otrs_service_category_DEDICATED_NAS" qtlid="219914">Dedikoitu NAS</translation>
-   <translation id="otrs_service_category_DEDICATED_NASHA" qtlid="219927">Dedikoitu NAS-HA</translation>
-   <translation id="otrs_service_category_EXCHANGE_HOSTED" qtlid="80430">Exchange</translation>
-   <translation id="otrs_service_category_EXCHANGE_PROVIDER" qtlid="401106">Exchange-jälleenmyyjä</translation>
-   <translation id="otrs_service_category_PROJECT" qtlid="251655">Public Cloud</translation>
-   <translation id="otrs_service_category_FAX" qtlid="32926">Faksi</translation>
-   <translation id="otrs_service_category_LINE" qtlid="401119">Telephony (Liittymä)</translation>
-   <translation id="otrs_service_category_NUMBER" qtlid="401132">Telephony (Numero)</translation>
-   <translation id="otrs_service_category_TIMESERIES" qtlid="383525">Tilastot</translation>
-   <translation id="otrs_service_category_CEPH" qtlid="406442">CDA</translation>
-   <translation id="otrs_service_category_other" qtlid="316047">Muu pyyntö</translation>
-
-   <translation id="otrs_popup_type" qtlid="233060">Tiketin tyyppi</translation>
-   <translation id="otrs_types_criticalIntervention" qtlid="233073">Kriittinen huoltotoimenpide</translation>
-   <translation id="otrs_types_genericRequest" qtlid="233086">Yleinen tukipyyntö</translation>
-
-   <translation id="otrs_popup_category" qtlid="233099">Tuoteryhmä:</translation>
 
    <translation id="otrs_request_choice" qtlid="251746">Valitse aihe:</translation>
-
-   <translation id="otrs_universe_choice" qtlid="406455">Tuotemaailma:</translation>
    <translation id="otrs_request_billing" qtlid="251759">Tilausten seuranta</translation>
    <translation id="otrs_request_assistance" qtlid="373181">Tekninen neuvonta</translation>
    <translation id="otrs_request_incident" qtlid="68252">Avaa häiriötiketti</translation>
    <translation id="otrs_request_intervention" qtlid="361425">Pyyntö interventioon konesalissa</translation>
-   <translation id="otrs_vip_phone" qtlid="251785">Ota yhteys numeroon <strong>{0}</strong></translation>
-   <translation id="otrs_universe_WEB" qtlid="135840">Web</translation>
-   <translation id="otrs_universe_SUNRISE" qtlid="232401">Sunrise</translation>
-   <translation id="otrs_universe_TELECOM" qtlid="135827">VoIP</translation>
-   <translation id="otrs_universe_CLOUD_DEDICATED" qtlid="406468">Cloud ja Dedikoitu</translation>
-
-   <translation id="otrs_subCategory_choice" qtlid="291175">Kategorian valinta:</translation>
-   <translation id="otrs_subCategory_assistance_usage" qtlid="291188">Palveluiden käyttö</translation>
-   <translation id="otrs_subCategory_assistance_start" qtlid="291201">Ensimmäinen käyttöönotto</translation>
-   <translation id="otrs_subCategory_assistance_new" qtlid="291214">Lisäpalvelun tiedot/tilaus</translation>
-   <translation id="otrs_subCategory_assistance_other" qtlid="19963">Muu</translation>
-
-   <translation id="otrs_subCategory_billing_inProgress" qtlid="291227">Tilaukseni ei ole valmis</translation>
-   <translation id="otrs_subCategory_billing_new" qtlid="291240">Haluan tehdä tilauksen</translation>
-   <translation id="otrs_subCategory_billing_bill" qtlid="291253">Pyyntöni koskee laskua</translation>
-   <translation id="otrs_subCategory_billing_other" qtlid="19963">Muu</translation>
-
-   <translation id="otrs_subCategory_incident_perfs" qtlid="291266">Palveluni ei tällä hetkellä toimi kunnolla</translation>
-   <translation id="otrs_subCategory_incident_alerts" qtlid="291279">Palveluni kärsii katkoksista</translation>
-   <translation id="otrs_subCategory_incident_down" qtlid="291292">Palveluni ei enää vastaa </translation>
-   <translation id="otrs_subCategory_incident_other" qtlid="19963">Muu</translation>
-
-   <translation id="otrs_subCategory_intervention_replacement-disk" qtlid="361438">Kovalevyn vaihto</translation>
-   <translation id="otrs_subCategory_intervention_other" qtlid="19963">Muu</translation>
-
    <translation id="otrs_search_ticket_subject" qtlid="228553">Etsi aiheella:</translation>
    <translation id="otrs_search_ticket_subject_error" qtlid="228566">Sinun täytyy syöttää vähintään kolme merkkiä aiheella etsimistä varten.</translation>
    <translation id="otrs_search_ticket_service" qtlid="228423">Liittyvä palvelu:</translation>
@@ -165,54 +41,9 @@
    <translation id="otrs_table_ticket_lastMessageFrom_support" qtlid="228735">OVH tuki</translation>
    <translation id="otrs_table_ticket_creationDate" qtlid="26419">Luontipäivä</translation>
    <translation id="otrs_table_ticket_updateDate" qtlid="228748">Päivitysajankohta</translation>
-   <translation id="otrs_table_ticket_state" qtlid="8230">Tila</translation>
+   <translation id="otrs_table_ticket_state" qtlid="521483">Etat</translation>
    <translation id="otrs_table_ticket_state_open" qtlid="75654">Avoin</translation>
    <translation id="otrs_table_ticket_state_closed" qtlid="66236">Suljettu</translation>
    <translation id="otrs_table_ticket_state_archived" qtlid="134553">Arkistoitu</translation>
    <translation id="otrs_table_ticket_state_unknown" qtlid="19963">Muu</translation>
-
-   <translation id="otrs_detail_title" qtlid="260866">Tuki –&#160;viestiketju</translation>
-   <translation id="otrs_detail_title2" qtlid="228774">– tiketti {0}</translation>
-   <translation id="otrs_detail_title3_open" qtlid="228787">– (Käsiteltävänä)</translation>
-   <translation id="otrs_detail_title3_closed" qtlid="228800">– (Suljettu)</translation>
-
-   <translation id="otrs_detail_error" qtlid="228813">Tapahtui virhe ladattaessa tiketin {0} tietoja.</translation>
-   <translation id="otrs_detail_message_error" qtlid="228826">Tapahtui virhe ladattaessa viestejä tiketissä {0}.</translation>
-
-   <translation id="otrs_detail_subject" qtlid="75594">Tiketin aihe:</translation>
-   <translation id="otrs_detail_serviceName" qtlid="228423">Liittyvä palvelu:</translation>
-   <translation id="otrs_detail_creationDate" qtlid="228839">Avoinna (alkaen):</translation>
-   <translation id="otrs_detail_updateDate" qtlid="228852">Päivitetty:</translation>
-   <translation id="otrs_detail_from_customer" qtlid="228865">Lähettäjä: sinä</translation>
-   <translation id="otrs_detail_from_support" qtlid="228878">Lähettäjä: OVH tuki</translation>
-   <translation id="otrs_detail_raw_version" qtlid="244664">Näytä viestin raakaversio</translation>
-   <translation id="otrs_detail_cook_version" qtlid="244677">Näytä viestin tulkittu versio</translation>
-   <translation id="otrs_detail_reply" qtlid="69233">Vastaa</translation>
-   <translation id="otrs_detail_close" qtlid="62774">Sulje tiketti</translation>
-   <translation id="otrs_detail_reopen" qtlid="227624">Avaa tiketti uudelleen</translation>
-   <translation id="otrs_detail_reply_error" qtlid="228891">Tapahtui virhe lähetettäessä vastausta.</translation>
-   <translation id="otrs_detail_reopen_error" qtlid="228904">Tapahtui virhe uudelleenavattaessa tikettiä.</translation>
-   <translation id="otrs_detail_close_error" qtlid="228917">Tapahtui virhe suljettaessa tikettiä.</translation>
-
-   <translation id="otrs_detail_info" qtlid="228930">Vastataksesi tikettiin täytä alla oleva laatikko ja klikkaa ”vastaa”.</translation>
-   <translation id="otrs_detail_old_messages" qtlid="233417">Voit tarkastella aiempia tukipyyntöjäsi <a href="{0}" class="red underline">wanhan hallintapaneelin</a> kautta.</translation>
-   <translation id="otrs_detail_old_messages" qtlid="233417">Voit tarkastella aiempia tukipyyntöjäsi <a href="{0}" class="red underline">wanhan hallintapaneelin</a> kautta.</translation>
-   <translation id="changelog_label" qtlid="124964">Päivityshistoria</translation>
-
-   <translation id="otrs_intervention_disk_error" qtlid="382346">Tapahtui virhe palvelimen tietoja haettaessa.</translation>
-   <translation id="otrs_intervention_disk_warning" qtlid="361451">Huomio: varmista, että tietosi on varmuuskopioitu ennen kovalevyn vaihtoa. </translation>
-   <translation id="otrs_intervention_disk_warning2" qtlid="382359">Palvelussa on katkos levyn vaihtamisen ajan ja <strong>kaikki kyseisen levyn tiedot tullaan menettämään</strong>, varmista, että varmuuskopiosi ovat ajan tasalla.</translation>
-   <translation id="otrs_intervention_disk_warning_hotswap" qtlid="382372"><strong>Kaikki levyn tiedot menetetään</strong>, varmista, että varmuuskopiosi ovat ajan tasalla.</translation>
-   <translation id="otrs_intervention_disk_canHotSwap" qtlid="382385">HG-palvelimellasi on mahdollista vaihtaa levyjä ilman palvelukatoksia.</translation>
-   <translation id="otrs_intervention_disk_guide" qtlid="382398">Katso kuinka se tapahtuu, <a href="{0}" target="_blank">tästä ohjeesta<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
-   <translation id="otrs_intervention_disk_serial_guide" qtlid="382411"><a href="{0}" target="_blank">(Katso ohje <i class="fa fa-external-link" aria-hidden="true"></i>)</a></translation>
-   <translation id="otrs_intervention_disk_id_label" qtlid="382424">Korvattavien kovalevyjen sarjanumerot</translation>
-   <translation id="otrs_intervention_disk_id_label_not" qtlid="382437">SÄILYTETTÄVIEN kovalevyjen sarjanumero</translation>
-   <translation id="otrs_intervention_disk_id_not_retrievable" qtlid="382450">En pysty hakemaan vaihdettavan kovalevyn sarjanumeroa.</translation>
-   <translation id="otrs_intervention_disk_slotID" qtlid="382463">SlotID</translation>
-   <translation id="otrs_intervention_disk_serial_placeholder" qtlid="382476">esim. 12345</translation>
-   <translation id="otrs_intervention_disk_comment" qtlid="382489">Erityisohjeita laitteistosi vaihtamiseen liittyen</translation>
-   <translation id="otrs_intervention_disk_comment_example" qtlid="361529">(Esimerkiksi: toimenpiteen toivottu kellonaika aikaero huomioituna)</translation>
-   <translation id="otrs_intervention_disk_comment_english_please" qtlid="361542">Käytä mieluiten englantia</translation>
-   <translation id="otrs_intervention_disk_confirm" qtlid="382502">Olen tehnyt varmuuskopiot vaihdettavan levyn sisällöstä. Levy voidaan nyt vaihtaa.</translation>
 </translations>

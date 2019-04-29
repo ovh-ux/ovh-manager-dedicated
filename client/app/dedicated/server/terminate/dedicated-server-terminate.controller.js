@@ -21,7 +21,7 @@ angular.module('App').controller('ServerTerminateCtrl', class ServerTerminateCtr
     this.$scope.loading = false;
     this.$scope.server = this.$scope.currentActionData;
     this.manualRefund = this.dedicatedServerFeatureAvailability.hasDedicatedServerManualRefund();
-    this.serviceInfos = _.get(this.$scope, 'currentActionData.serviceInfos', null);
+    this.serviceInfos = _.get(this.$scope, 'serviceInfos', null);
     this.cancelSubscriptionForm = {
       cancelMethod: null,
       isSubmiting: false,

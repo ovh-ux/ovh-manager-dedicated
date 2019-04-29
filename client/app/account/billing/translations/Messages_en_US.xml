@@ -46,7 +46,6 @@
    <translation id="autorenew_service_enable_button" qtlid="416098">Activate automatic payment</translation>
    <translation id="autorenew_service_renew_button" qtlid="416111">Pay for the service</translation>
    <translation id="autorenew_service_renew_button_title" qtlid="416124">Pay for service: {0} (new window)</translation>
-   <translation id="autorenew_service_exchange_billing_button" qtlid="509326">Modify billing</translation>
    <translation id="autorenew_service_canceldelete_button" qtlid="285350">Cancel termination </translation>
    <translation id="autorenew_service_canceldelete_button_title" qtlid="243695">Cancel my request to terminate the service: {0}</translation>
    <translation id="autorenew_service_renew_frequency_title" qtlid="212998">Payment frequency</translation>
@@ -96,6 +95,7 @@
    <translation id="autorenew_service_autorenew_contact_filter_all" qtlid="69173">All</translation>
    <translation id="autorenew_service_autorenew_filter" qtlid="2606">Filters</translation>
    <translation id="autorenew_service_type_DEDICATED_SERVER" qtlid="66032">Dedicated Server</translation>
+   <translation id="autorenew_service_type_dedicated_server" qtlid="66032">Dedicated Server</translation>
    <translation id="autorenew_service_type_DEDICATED_HOUSING" qtlid="371476">Housing server </translation>
    <translation id="autorenew_service_type_DEDICATED_CLOUD" qtlid="20131">Hosted Private Cloud</translation>
    <translation id="autorenew_service_type_DOMAIN" qtlid="8458">Domain</translation>
@@ -143,6 +143,8 @@
    <translation id="autorenew_service_type_VEEAM_CLOUD_CONNECT" qtlid="231370">Veeam Cloud Connect</translation>
    <translation id="autorenew_service_type_VEEAM_ENTERPRISE" qtlid="506362">Veeam Enterprise</translation>
    <translation id="autorenew_service_type_METRICS" qtlid="383525">Metrics</translation>
+   <translation id="autorenew_service_type_kube" qtlid="504826">Kubernetes</translation>
+
 
    <translation id="autorenew_service_billing_warning" qtlid="229645">You do not have the right to change this data</translation>
    <translation id="autorenew_service_readonly_warning" qtlid="220122">This service has already been renewed and cannot be undone.</translation>
@@ -245,7 +247,7 @@
    <translation id="common_payment_type_OVH_ACCOUNT" qtlid="48926">Prepaid account</translation>
    <translation id="common_payment_type_paymentMandate" qtlid="139819">Mandat administratif</translation>
    <translation id="common_payment_type_PAYMENT_MANDATE" qtlid="139819">Mandat administratif</translation>
-   <translation id="common_payment_type_paypal" qtlid="98228">PayPal</translation>
+   <translation id="common_payment_type_paypal" qtlid="521496">Paypal</translation>
    <translation id="common_payment_type_payu" qtlid="373480">PayU</translation>
    <translation id="common_payment_type_platnosci" qtlid="139832">Płatności</translation>
    <translation id="common_payment_type_refund" qtlid="139845">Credit note</translation>
@@ -891,7 +893,7 @@
    <translation id="ovhAccount_table_type_payment_NONE" qtlid="30646">None</translation>
    <translation id="ovhAccount_table_type_payment_OVH_ACCOUNT" qtlid="48926">Prepaid account</translation>
    <translation id="ovhAccount_table_type_payment_PAYMENT_MANDATE" qtlid="177431"></translation>
-   <translation id="ovhAccount_table_type_payment_PAYPAL" qtlid="98228">PayPal</translation>
+   <translation id="ovhAccount_table_type_payment_PAYPAL" qtlid="521509">Paypal</translation>
    <translation id="ovhAccount_table_type_payment_PLATNOSCI" qtlid="139832">Płatności</translation>
    <translation id="ovhAccount_table_type_payment_REFUND" qtlid="139845">Credit note</translation>
    <translation id="ovhAccount_table_type_payment_TRANSFER" qtlid="89833">Transfer</translation>
@@ -1275,7 +1277,7 @@
    <translation id="terminate_service_type_veeamCloudConnect" qtlid="231370">Veeam Cloud Connect</translation>
    <translation id="terminate_service_type_vps" qtlid="23083">VPS</translation>
    <translation id="terminate_service_type_xdsl" qtlid="229619">xDSL line</translation>
-
+   <translation id="terminate_service_type_kube" qtlid="504826">Kubernetes</translation>
 <!-- CREDITS -->
    <translation id="billing_credits_title" qtlid="448920">My credit accounts</translation>
    <translation id="billing_credits_none" qtlid="448933">You do not have a credit account</translation>

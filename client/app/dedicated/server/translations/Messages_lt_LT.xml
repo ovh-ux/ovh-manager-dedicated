@@ -479,7 +479,7 @@
    <translation id="server_configuration_ftpbackup_add_allow" qtlid="141795">Leisti</translation>
    <translation id="server_configuration_ftpbackup_add_deny" qtlid="141808">Atmesti</translation>
    <translation id="server_configuration_ftpbackup_add_ip" qtlid="180850">Blokas:</translation>
-   <translation id="server_configuration_ftpbackup_add_ip_length_error" qtlid="520481">Limite totale de blocs autorisés atteinte ({{limitCount}} maximum)</translation>
+   <translation id="server_configuration_ftpbackup_add_ip_length_error" qtlid="520481">Pasiekta bendra leistina blokų riba (maximum {{limitCount}})</translation>
    <translation id="server_configuration_ftpbackup_add_authorization" qtlid="180863">Autorizuoti:</translation>
 
    <translation id="server_configuration_cloudbackup_delete" qtlid="492502">Pašalinti atsarginio kopijavimo saugyklą</translation>
@@ -639,11 +639,11 @@
    <translation id="server_configuration_impi_navigation" qtlid="257296">Naršyklėje (SoL)</translation>
    <translation id="server_configuration_impi_navigation_error" qtlid="164818">Klaida bandant prisijungti prie IPMI modulio iš jūsų naršyklės</translation>
    <translation id="server_configuration_impi_navigation_success" qtlid="164831">Prisijungimas prie IPMI modulio per naršyklę yra paruoštas.</translation>
-   <translation id="server_configuration_impi_navigation_go" qtlid="508936">Accéder à la console (SOL)</translation>
+   <translation id="server_configuration_impi_navigation_go" qtlid="508936">Prisijunkite prie konsolės (SOL)</translation>
    <translation id="server_configuration_impi_java" qtlid="257309">Naudojant Java applet (KVM)</translation>
    <translation id="server_configuration_impi_java_download" qtlid="164870">Parsisiųsti java applet</translation>
-   <translation id="server_configuration_impi_kvm_console" qtlid="508949">Depuis votre navigateur (KVM)</translation>
-   <translation id="server_configuration_impi_kvm_url" qtlid="508962">Accéder à la console (KVM)</translation>
+   <translation id="server_configuration_impi_kvm_console" qtlid="508949">Iš naršyklės (KVM)</translation>
+   <translation id="server_configuration_impi_kvm_url" qtlid="508962">Prisijunkite prie konsolės (KVM)</translation>
    <translation id="server_configuration_impi_java_success" qtlid="164883">Prisijungimas prie IPMI modulio per java applet yra paruoštas.</translation>
    <translation id="server_configuration_impi_java_error" qtlid="164896">Klaida bandant prisijungti prie IPMI modulio per java applet.</translation>
    <translation id="server_configuration_impi_java_new" qtlid="164909">Nauja jungtis</translation>
@@ -682,12 +682,12 @@
    <translation id="server_configuration_kvm_access" qtlid="229281">Prisijungti prie KVM</translation>
    <translation id="server_configuration_kvm_error" qtlid="229294">Klaida gaunant KVM informaciją.</translation>
 
-   <translation id="server_configuration_tile_kvm_heading" qtlid="508975">KVM à distance</translation>
-   <translation id="server_configuration_tile_kvm_description" qtlid="508988">Accès au clavier, à la souris et à l'affichage de votre serveur à distance</translation>
-   <translation id="server_configuration_tile_sol_heading" qtlid="509001">Série sur LAN (SOL)</translation>
-   <translation id="server_configuration_tile_sol_description" qtlid="509014">Accès à la console série de votre machine via une connexion sécurisée</translation>
-   <translation id="server_configuration_ssh_sol_definition" qtlid="509027">SSH SOL (via votre clé ssh)</translation>
-   <translation id="server_configuration_ssh_select" qtlid="509040">Sélectionnez une clé SSH</translation>
+   <translation id="server_configuration_tile_kvm_heading" qtlid="508975">Nuotolinis KVM</translation>
+   <translation id="server_configuration_tile_kvm_description" qtlid="508988">Prieiga prie klaviatūros, pelės ir nuotolinio serverio rodymo</translation>
+   <translation id="server_configuration_tile_sol_heading" qtlid="509001">LAN serijos (SOL)</translation>
+   <translation id="server_configuration_tile_sol_description" qtlid="509014">Prieiga prie įrenginio nuosekliosios konsolės per saugų ryšį</translation>
+   <translation id="server_configuration_ssh_sol_definition" qtlid="509027">SSH SOL (per savo ssh raktą)</translation>
+   <translation id="server_configuration_ssh_select" qtlid="509040">Pasirinkite SSH raktą</translation>
 
    <translation id="server_configuration_installation_successfull" qtlid="172761">Serverio {0} diegimas baigtas</translation>
    <translation id="server_configuration_installation_fail_task" qtlid="191252">Įvyko klaida atkuriant serverio {0} diegimo būseną.</translation>
@@ -1197,5 +1197,9 @@
    <translation id="server_autorenew_alert" qtlid="296882">Rinkitės automatinį serverio galiojimo pratęsimą! Daugiau jokių priminimų ir netikėtų atjungimų.</translation>
    <translation id="server_autorenew_guide" qtlid="290615">Prieiga prie gido</translation>
    <translation id="server_autorenew_activate" qtlid="98576">Įjungti automatinį naujinimą</translation>
-
+   <translation id="server_rendezvous_need_help" qtlid="521353">Reikia pagalbos diegiant naują serverį?</translation>
+   <translation id="server_rendezvous_info" qtlid="521366">Dabar suplanuokite nemokamą 30 minučių susitikimą su specializuotu OVH techniku, kuris jus paskambins, kai tik norite!</translation>
+   <translation id="server_rendezvous_profit" qtlid="521379">Mėgaukitės!</translation>
+   <translation id="server_rendezvous_book" qtlid="521392">Suplanuokite paskyrimą</translation>
+   <translation id="server_rendezvous_stop_bother" qtlid="521405">Nustokite rodyti</translation>
 </translations>

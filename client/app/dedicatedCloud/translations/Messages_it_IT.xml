@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
+   <translation id="dedicatedCloud_alert_close" qtlid="521698">Chiudi il messaggio informativo</translation>
+   <translation id="dedicatedCloud_dashboard_nameModifying_success" qtlid="521711">La modifica del nome del tuo servizio diventerà effettiva in pochi minuti.</translation>
    <translation id="dedicatedCloud_dashboard_loading_error" qtlid="132083">Si è verificato un errore durante il caricamento delle informazioni del tuo servizio.</translation>
    <translation id="dedicatedCloud_coming_soon" qtlid="4106">Presto</translation>
    <translation id="dedicatedCloud_banner_hdc_ready_label" qtlid="366293">Con l'offerta Private Cloud Healthcare, OVH ti offre l'hosting di dati sanitari. La tua infrastruttura è compatibile!</translation>
@@ -26,8 +28,8 @@
    <translation id="dedicatedCloud_connection_policy_LAST" qtlid="145813">Disconnetti la più recente</translation>
    <translation id="dedicatedCloud_connection_policy_FIRST" qtlid="145826">Disconnetti la meno recente</translation>
    <translation id="dedicatedCloud_user_access_policy" qtlid="145839">Politica di accesso</translation>
-   <translation id="dedicatedCloud_user_access_policy_FILTERED" qtlid="145852">Limitata</translation>
-   <translation id="dedicatedCloud_user_access_policy_OPEN" qtlid="75654">Aperta</translation>
+   <translation id="dedicatedCloud_user_access_policy_FILTERED" qtlid="55985">Limitata</translation>
+   <translation id="dedicatedCloud_user_access_policy_OPEN" qtlid="56189">Aperto</translation>
    <translation id="dedicatedCloud_bandwidth" qtlid="38565">Banda passante</translation>
    <translation id="dedicatedCloud_datacenter_count" qtlid="30802">Datacenter</translation>
    <translation id="dedicatedCloud_order_license" qtlid="145865">Ordina una licenza</translation>
@@ -56,6 +58,8 @@
 
    <translation id="dedicatedCloud_datacenter_name" qtlid="3818">Nome</translation>
    <translation id="dedicatedCloud_datacenter_description" qtlid="9238">Descrizione</translation>
+   <translation id="dedicatedCloud_datacenter_descriptionModifying_success" qtlid="521724">La modifica della descrizione del datacenter sarà effettiva in pochi minuti.</translation>
+   <translation id="dedicatedCloud_datacenter_nameModifying_success" qtlid="521737">La modifica del nome del datacenter sarà effettiva in pochi minuti.</translation>
 
    <translation id="dedicatedCloud_tab_datacenter" qtlid="41602">Datacenter</translation>
    <translation id="dedicatedCloud_DATACENTERS_CPU" qtlid="147707">CPU totale</translation>
@@ -191,7 +195,7 @@
    <translation id="dedicatedCloud_tab_veeam_ERROR" qtlid="154975">Errore rilevato</translation>
    <translation id="dedicatedCloud_tab_veeam_REMOVING" qtlid="154988">I backup stanno per essere eliminati</translation>
    <translation id="dedicatedCloud_tab_veeam_enable_title" qtlid="155001">Attivazione del backup</translation>
-   <translation id="dedicatedCloud_tab_veeam_enable_message" qtlid="183398">Vuoi davvero attivare il backup del datacenter <b>{0}</b>?</translation>
+   <translation id="dedicatedCloud_tab_veeam_enable_message" qtlid="521750">Vuoi davvero attivare il backup per il datacenter {0}?</translation>
    <translation id="dedicatedCloud_tab_veeam_enable_message2" qtlid="183411">La fattura viene elaborata in base al numero di VM di cui esegui il backup, nelle rispetto delle condizioni descritte in <a href='http://www.ovh.com:51080/fr/dedicated-cloud/veeam.xml' target='_blank'>questa pagina</a></translation>
    <translation id="dedicatedCloud_tab_veeam_enable_success" qtlid="183424">La richiesta di attivazione del backup sul datacenter <b>{0}</b> è stata presa in carico</translation>
    <translation id="dedicatedCloud_tab_veeam_enable_fail" qtlid="183437">Si è verificato un errore durante l'attivazione del backup del datacenter <b>{0}</b></translation>
@@ -267,7 +271,7 @@
    <translation id="dedicatedCloud_datacenter_no_name" qtlid="155196">Datacenter {0}</translation>
    <translation id="dedicatedCloud_datacenter_wrong_name" qtlid="149774">Formato non valido</translation>
    <translation id="dedicatedCloud_tab_user" qtlid="7738">Utenti</translation>
-   <translation id="dedicatedCloud_user_management_authorization_vsphere" qtlid="146411">Gestione delle autorizzazioni utente nel client vSphere:</translation>
+   <translation id="dedicatedCloud_user_management_authorization_vsphere" qtlid="521763">Gestione delle autorizzazioni utente nel client vSphere</translation>
    <translation id="dedicatedCloud_search_user" qtlid="146424">Ricerca un utente</translation>
    <translation id="dedicatedCloud_USER_warning_line" qtlid="147798">Conferma o annulla la modifica che hai effettuato sui diritti dell'utente</translation>
    <translation id="dedicatedCloud_USER_name" qtlid="46792">Identificativo</translation>
@@ -373,7 +377,6 @@
    <translation id="dedicatedCloud_users_add_error" qtlid="277429">Impossibile creare il nuovo utente</translation>
    <translation id="dedicatedCloud_users_add_done" qtlid="277442">Il nuovo utente è stato creato correttamente.</translation>
 
-   <translation id="dedicatedCloud_USER_add_user_step1_question" qtlid="202538">Compila il form per creare un nuovo utente:</translation>
    <translation id="dedicatedCloud_USER_add_user_name" qtlid="3818">Nome</translation>
    <translation id="dedicatedCloud_USER_add_user_password" qtlid="2270">Password</translation>
    <translation id="dedicatedCloud_USER_add_user_mail" qtlid="21679">Email</translation>
@@ -422,30 +425,32 @@
    <translation id="dedicatedCloud_SECURITY_title" qtlid="371739">IP e blocchi autorizzati a connettersi al Private Cloud:</translation>
    <translation id="dedicatedCloud_SECURITY_modify" qtlid="147941">Modifica la classe di IP</translation>
    <translation id="dedicatedCloud_SECURITY_delete" qtlid="147954">Elimina la classe di IP</translation>
-   <translation id="dedicatedCloud_SECURITY_expiration_session" qtlid="146801">Scadenza della sessione:</translation>
+   <translation id="dedicatedCloud_SECURITY_empty_policies" qtlid="522292">Nessuna classe di indirizzi IP</translation>
+   <translation id="dedicatedCloud_SECURITY_expiration_session" qtlid="521776">Durata di una sessione</translation>
    <translation id="dedicatedCloud_SECURITY_expiration_session_value" qtlid="146814">{0} minuti</translation>
    <translation id="dedicatedCloud_SECURITY_expiration_session_never" qtlid="8770">Ignora</translation>
-   <translation id="dedicatedCloud_SECURITY_nb_simultaneous_connection" qtlid="146827">Connessioni simultanee:</translation>
+   <translation id="dedicatedCloud_SECURITY_nb_simultaneous_connection" qtlid="147165">Numero di connessioni simultanee</translation>
    <translation id="dedicatedCloud_SECURITY_nb_simultaneous_connection_none" qtlid="8674">Nessuno</translation>
    <translation id="dedicatedCloud_SECURITY_nb_simultaneous_connection_value" qtlid="147967">{0} connessioni</translation>
-   <translation id="dedicatedCloud_SECURITY_access_policy" qtlid="147980">Politica di accesso al vCenter</translation>
-   <translation id="dedicatedCloud_SECURITY_access_policy_FILTERED" qtlid="145852">Limitata</translation>
+   <translation id="dedicatedCloud_SECURITY_access_policy" qtlid="521789">Modifica la politica di accesso al vCenter</translation>
+   <translation id="dedicatedCloud_SECURITY_access_policy_FILTERED" qtlid="55985">Limitata</translation>
    <translation id="dedicatedCloud_SECURITY_access_policy_OPEN" qtlid="56189">Aperto</translation>
-   <translation id="dedicatedCloud_SECURITY_logout_policy" qtlid="146866">Politica di disconnessione:</translation>
+   <translation id="dedicatedCloud_SECURITY_logout_policy" qtlid="521802">Politica di disconnessione</translation>
    <translation id="dedicatedCloud_SECURITY_logout_policy_FIRST" qtlid="146879">Disconnessione del primo utente connesso</translation>
    <translation id="dedicatedCloud_SECURITY_logout_policy_LAST" qtlid="146892">Disconnessione dell'ultimo utente connesso</translation>
    <translation id="dedicatedCloud_SECURITY_IP_name" qtlid="146905">Nome IP</translation>
    <translation id="dedicatedCloud_SECURITY_allow" qtlid="146918">Diritto</translation>
    <translation id="dedicatedCloud_SECURITY_description" qtlid="9238">Descrizione</translation>
-   <translation id="dedicatedCloud_SECURITY_change_timeout" qtlid="146931">Modifica il timeout di sessione</translation>
-   <translation id="dedicatedCloud_SECURITY_change_nb_simultaneous_connection" qtlid="41530">Connessioni simultanee</translation>
+   <translation id="dedicatedCloud_SECURITY_change_timeout" qtlid="521815">Modifica la durata di una sessione</translation>
+   <translation id="dedicatedCloud_SECURITY_change_nb_simultaneous_connection" qtlid="521828">Modifica il numero di connessioni simultanee</translation>
    <translation id="dedicatedCloud_SECURITY_change_nb_simultaneous_connection_success" qtlid="146944">Il numero massimo di connessioni simultanee è stato modificato con successo.</translation>
    <translation id="dedicatedCloud_SECURITY_change_nb_simultaneous_connection_failure" qtlid="146957">Si è verificato un errore durante la modifica del numero massimo di connessioni simultanee.</translation>
-   <translation id="dedicatedCloud_SECURITY_add_IP" qtlid="146970">Aggiungi IP</translation>
-   <translation id="dedicatedCloud_SECURITY_delete_IP" qtlid="146983">Elimina IP</translation>
+   <translation id="dedicatedCloud_SECURITY_change_logout_policy" qtlid="147230">Modifica la politica di disconnessione</translation>
+   <translation id="dedicatedCloud_SECURITY_add_IP" qtlid="521841">Aggiungi una nuova classe di indirizzi IP</translation>
+   <translation id="dedicatedCloud_SECURITY_delete_IP" qtlid="521854">Rimuovi classi di indirizzi IP</translation>
    <translation id="dedicatedCloud_configuration_SECURITY_policy_access_success" qtlid="146996">La politica di accesso è stata modificata con successo.</translation>
    <translation id="dedicatedCloud_configuration_SECURITY_policy_access_fail" qtlid="147009">Si è verificato un errore durante la modifica della politica di accesso.</translation>
-   <translation id="dedicatedCloud_SECURITY_userAccess_policy" qtlid="146840">Politica di accesso:</translation>
+   <translation id="dedicatedCloud_SECURITY_userAccess_policy" qtlid="147980">Politica di accesso al vCenter</translation>
    <translation id="dedicatedCloud_SECURITY_userAccess_policy_FILTERED" qtlid="250732">Limitata</translation>
    <translation id="dedicatedCloud_SECURITY_userAccess_policy_OPEN" qtlid="56189">Aperto</translation>
    <translation id="dedicatedCloud_configuration_SECURITY_policy_logout_success" qtlid="147022">La politica di disconnessione è stata modificata correttamente.</translation>
@@ -463,15 +468,14 @@
    <translation id="dedicatedCloud_configuration_SECURITY_policy_add_fail" qtlid="148032">Si è verificato un errore durante l'aggiunta della regola di sicurezza {0}.</translation>
    <translation id="dedicatedCloud_configuration_SECURITY_update_session_timeout_success" qtlid="147139">La data di scadenza sta per essere modificata.</translation>
    <translation id="dedicatedCloud_configuration_SECURITY_update_session_timeout_fail" qtlid="147152">Si è verificato un errore durante la modifica della data di scadenza.</translation>
-   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_title" qtlid="147165">Numero di connessioni simultanee</translation>
-   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_step1_question" qtlid="148045">Indica il numero massimo delle connessioni simultanee:</translation>
-   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections" qtlid="148058">connessioni utente</translation>
-   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_step2_question" qtlid="183567">Stai modificando il numero di connessioni utente simultanee da <br/><b>{0}</b> a <b>{1}</b></translation>
-   <translation id="dedicatedCloud_configuration_security_policy_access_title" qtlid="147191">Modifica la politica di accesso</translation>
-   <translation id="dedicatedCloud_configuration_security_policy_access_step1_question" qtlid="147204">Seleziona la politica di accesso che vuoi applicare:</translation>
+   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_title" qtlid="521828">Modifica il numero di connessioni simultanee</translation>
+   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_step1_question" qtlid="521867">Numero massimo di connessioni simultanee</translation>
+   <translation id="dedicatedCloud_configuration_security_max_concurrent_connections_step2_question" qtlid="521880">Stai per modificare il numero di connessioni simultanee da {0} a {1}.</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_access_title" qtlid="521789">Modifica la politica di accesso al vCenter</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_access_step1_question" qtlid="521893">Politica di accesso da applicare</translation>
    <translation id="dedicatedCloud_configuration_security_policy_access_step1_value" qtlid="147217">Seleziona</translation>
    <translation id="dedicatedCloud_configuration_security_policy_logout_title" qtlid="147230">Modifica la politica di disconnessione</translation>
-   <translation id="dedicatedCloud_configuration_security_policy_logout_step1_question" qtlid="148084">Seleziona la regola di disconnessione in caso di doppia connessione:</translation>
+   <translation id="dedicatedCloud_configuration_security_policy_logout_step1_question" qtlid="521906">Politica di disconnessione in caso di connessione simultanea</translation>
    <translation id="dedicatedCloud_configuration_security_policy_logout_step1_value" qtlid="147217">Seleziona</translation>
    <translation id="dedicatedCloud_configuration_security_policy_delete_title" qtlid="147256">Elimina IP</translation>
    <translation id="dedicatedCloud_configuration_security_policy_delete_step1_question" qtlid="434906">Vuoi davvero eliminare l’accesso per l'IP {0}?</translation>
@@ -483,11 +487,10 @@
    <translation id="dedicatedCloud_configuration_security_policy_add_step1_question" qtlid="148123">Indica l'IP della nuova regola di sicurezza:</translation>
    <translation id="dedicatedCloud_configuration_security_policy_add_step1_description" qtlid="103702">Descrizione:</translation>
    <translation id="dedicatedCloud_configuration_security_policy_add_step2_question" qtlid="183580">Hai aggiunto l'IP <b>{0}</b> come nuova regola di sicurezza</translation>
-   <translation id="dedicatedCloud_configuration_security_update_session_timeout_title" qtlid="147321">Modifica della data di scadenza</translation>
-   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step1_question" qtlid="147334">Inserisci il numero di minuti prima della scadenza della sessione:</translation>
-   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step1_unit" qtlid="44224">minuti</translation>
+   <translation id="dedicatedCloud_configuration_security_update_session_timeout_title" qtlid="521815">Modifica la durata di una sessione</translation>
+   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step1_question" qtlid="521919">Numero di minuti prima della scadenza di una sessione</translation>
    <translation id="dedicatedCloud_configuration_security_update_session_timeout_step1_never" qtlid="148149">la sessione non scade</translation>
-   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step2_question" qtlid="183593">Stai per modificare il numero di minuti previsti prima della scadenza di una sessione, da <br/><b>{0}</b> a <b>{1}</b></translation>
+   <translation id="dedicatedCloud_configuration_security_update_session_timeout_step2_question" qtlid="521932">Stai per modificare il numero di minuti prima della scadenza di una sessione da {0} a {1}.</translation>
    <translation id="dedicatedCloud_network" qtlid="25591">Rete</translation>
    <translation id="dedicatedCloud_network_information_ACE" qtlid="147347">ACE:</translation>
    <translation id="dedicatedCloud_network_information_blocIPRipe" qtlid="147360">Blocco IP Ripe</translation>
@@ -564,8 +567,8 @@
    <translation id="dedicatedCloud_confirm_close_service" qtlid="299923">Conferma la disattivazione del servizio</translation>
    <translation id="dedicatedCloud_confirm_close_question" qtlid="299936">Qual è il motivo principale per cui vuoi disattivare questo servizio?</translation>
    <translation id="dedicatedCloud_confirm_close_reason_not_needed_anymore" qtlid="299949">Non utilizzo più il servizio</translation>
-   <translation id="dedicatedCloud_confirm_close_reason_too_hard_to_use" qtlid="299962">Gli strumenti di gestione (Spazio Cliente, fatturazione) sono troppi complessi</translation>
-   <translation id="dedicatedCloud_confirm_close_reason_lack_of_performances" qtlid="299975">Le performance del servizio non sono sufficienti</translation>
+   <translation id="dedicatedCloud_confirm_close_reason_too_hard_to_use" qtlid="521431">Gli strumenti sono troppo complessi</translation>
+   <translation id="dedicatedCloud_confirm_close_reason_lack_of_performances" qtlid="521444">Le performance del sistema non sono sufficienti</translation>
    <translation id="dedicatedCloud_confirm_close_reason_not_reliable" qtlid="299988">Il servizio non è abbastanza affidabile</translation>
    <translation id="dedicatedCloud_confirm_close_reason_too_expensive" qtlid="300001">Il servizio costa troppo</translation>
    <translation id="dedicatedCloud_confirm_close_reason_migrated_to_another_ovh_product" qtlid="300014">Utilizzo un altro servizio OVH</translation>
@@ -644,7 +647,7 @@
    <translation id="dedicatedCloud_vm_encryption_kms_delete" qtlid="506416">Elimina questo KMS</translation>
    <translation id="dedicatedCloud_vm_encryption_kms_id" qtlid="8194">ID</translation>
    <translation id="dedicatedCloud_vm_encryption_kms_description" qtlid="9238">Descrizione</translation>
-   <translation id="dedicatedCloud_vm_encryption_kms_optional" qtlid="175244">Opzionale</translation>
+   <translation id="dedicatedCloud_vm_encryption_kms_optional" qtlid="521457">opzionale</translation>
    <translation id="dedicatedCloud_vm_encryption_kms_ip" qtlid="25615">IP</translation>
    <translation id="dedicatedCloud_vm_encryption_kms_port" qtlid="9034">Porta</translation>
    <translation id="dedicatedCloud_vm_encryption_kms_sslThumbprint" qtlid="506429">SSL Thumbprint</translation>
@@ -801,62 +804,80 @@
    <translation id="dedicatedCloud_datacenter_backup_enable_version_explain" qtlid="503812">Riceverai un fattura in base al numero di VM con copia di backup, secondo le condizioni descritte in <a href="{{url}}" target="_blank">questa paginae</a>.</translation>
    <translation id="dedicatedCloud_datacenter_backup_enable_no_offer" qtlid="503825">Non sono disponibili soluzioni Veeam Backup per il datacenter <strong>{{name}}</strong>.</translation>
 
-   <translation id="dedicatedCloud_tab_drp" qtlid="519896">Disaster Recovery Plan (DRP)</translation>
-   <translation id="dedicatedCloud_datacenter_drp_subtitle" qtlid="519909">Crea il tuo Disaster Recovery Plan con Zerto</translation>
-   <translation id="dedicatedCloud_datacenter_drp_details" qtlid="519922">Garantisci la sicurezza dei tuoi sistemi IT configurando il tuo Disaster Recovery Plan: in caso di malfunzionamenti e interruzioni di servizio per cambiare infrastruttura bastano 1 click e pochi minuti! Attenzione: per attivare questa opzione è necessario disporre di un Private Cloud secondario.</translation>
-   <translation id="dedicatedCloud_datacenter_drp_warning" qtlid="519935">Sul tuo datacenter attuale non sono presenti host. Ordinane uno per utilizzare questo datacenter per il tuo DRP oppure scegline un altro con almeno un host disponibile.</translation>
-   <translation id="dedicatedCloud_tab_drp_choice_plan_type" qtlid="519948">Scegli il tipo di DRP:</translation>
-   <translation id="dedicatedCloud_datacenter_ovh_choice" qtlid="519961">Tra due Private Cloud OVH</translation>
-   <translation id="dedicatedCloud_datacenter_onPremise_choice" qtlid="519974">Tra la tua infrastruttura e un Private Cloud OVH</translation>
-   <translation id="dedicatedCloud_datacenter_activate_zerto_drp" qtlid="519987">Attiva Zerto DRP</translation>
-   <translation id="dedicatedCloud_datacenter_ovh_step_one" qtlid="520000">Datacenter principale</translation>
-   <translation id="dedicatedCloud_datacenter_ovh_step_two" qtlid="520013">Datacenter secondario</translation>
-   <translation id="dedicatedCloud_datacenter_ovh_step_three" qtlid="9983">Conferma</translation>
-   <translation id="dedicatedCloud_datacenter_drp_get_state_error" qtlid="520026">Si è verificato un errore durante il recupero delle informazioni relative al tuo DRP.</translation>
+<!-- IP ORDER -->
+   <translation id="ip_additional_order" qtlid="181877">Ordina IP aggiuntivi</translation>
 
-   <translation id="dedicatedCloud_datacenter_pcc_name" qtlid="520039">Nome del Private Cloud: {{pcc}}</translation>
-   <translation id="dedicatedCloud_datacenter_main_datacenter_name" qtlid="520052">Identificativo del datacenter Private Cloud corrispondente</translation>
-   <translation id="dedicatedCloud_datacenter_main_datacenter_name_placeholder" qtlid="520065">Scegli il datacenter principale</translation>
-   <translation id="dedicatedCloud_datacenter_order_ip" qtlid="520078">Non sono disponibili pool di indirizzi IP. È possibile ordinarli</translation>
-   <translation id="dedicatedCloud_datacenter_main_ip_address_pool_available" qtlid="520091">Pool di indirizzi IP pubblici disponibile</translation>
-   <translation id="dedicatedCloud_datacenter_main_ip_address_pool_available_placeholder" qtlid="520104">Scegli un IP pubblico libero</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_pcc_name" qtlid="520117">Identificativo e zona geografica del Private Cloud secondario</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_pcc_name_placeholder" qtlid="520130">Scegli il Private Cloud secondario</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_list" qtlid="520143">Lista dei datacenter secondari</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_name_placeholder" qtlid="520156">Scegli il datacenter secondario</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_ip_address_pool_available" qtlid="520169">Pool di indirizzi IP pubblici disponibile per il Private Cloud secondario</translation>
-   <translation id="dedicatedCloud_datacenter_order_ip_secondary_pcc" qtlid="520182">Su questo Private Cloud non sono disponibili pool di indirizzi IP. È possibile ordinarli</translation>
+   <translation id="ip_table_header_service" qtlid="31042">Servizio</translation>
 
-   <translation id="dedicatedCloud_datacenter_secondary_ip_address_pool_available_placeholder" qtlid="520104">Scegli un IP pubblico libero</translation>
+   <translation id="global_select" qtlid="159046">Seleziona...</translation>
 
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_ip_public" qtlid="247092">IP pubblico</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_ip_public_placeholder" qtlid="467100">Indirizzo IP pubblico</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_gateway" qtlid="42682">Gateway</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_gateway_help" qtlid="520195">Completamento automatico</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_vra_network" qtlid="520208">Rete vRA remota (opzionale)</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_subnetwork_mask" qtlid="520221">Maschera di sottorete (opzionale)</translation>
-   <translation id="dedicatedCloud_datacenter_secondary_datacenter_ip_example_placeholder" qtlid="520234">21.134.170.235</translation>
+   <translation id="ip_servicetype_DEDICATED" qtlid="101913">Server Dedicato</translation>
+   <translation id="ip_servicetype_dedicatedServer" qtlid="101913">Server Dedicato</translation>
+   <translation id="ip_servicetype_VPS" qtlid="23083">VPS</translation>
+   <translation id="ip_servicetype_vps" qtlid="23083">VPS</translation>
+   <translation id="ip_servicetype_PCC" qtlid="162205">Dedicated Cloud</translation>
+   <translation id="ip_servicetype_dedicatedCloud" qtlid="162205">Dedicated Cloud</translation>
+   <translation id="ip_servicetype_ipLoadbalancing" qtlid="223580">IP Load Balancing</translation>
+   <translation id="ip_servicetype_cloudProject" qtlid="274369">Progetto Cloud</translation>
+   <translation id="ip_servicetype_vRack" qtlid="210566">VRACK</translation>
+   <translation id="ip_servicetype__PARK" qtlid="363518">Parking</translation>
 
-   <translation id="dedicatedCloud_datacenter_drp_confirm_create_success_part_one" qtlid="520247">Il tuo DRP Zerto è stato creato correttamente!</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_create_success_part_two" qtlid="520260">La password ZSSP è stata inviata all'indirizzo email {{email}}.</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_creation_pending" qtlid="520273">L'attivazione del DRP Zerto è in corso. L’operazione potrebbe richiedere fino a un'ora.</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_creation_pending_task" qtlid="520286">Verifica il task enableDisasterRecovery del PCC principale per seguire l'avanzamento dell'operazione.</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_create_error" qtlid="520299">Si è verificato un errore durante l'attivazione del tuo DRP.</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_title" qtlid="520312">Riepilogo della configurazione del tuo DRP</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_drp_type" qtlid="520325">Tipo di Disaster Recovery Plan</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_main_datacenter" qtlid="520000">Datacenter principale</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_main_pcc" qtlid="520338">Private Cloud principale</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_secondary_datacenter" qtlid="520013">Datacenter secondario</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_secondary_pcc" qtlid="520351">Private Cloud secondario</translation>
+   <translation id="ip_order_quota_full" qtlid="451597">Hai raggiunto la quota massima di indirizzi IP per questo server.</translation>
+   <translation id="ip_order_noservices" qtlid="182020">Non ci sono servizi disponibili per l'ordine</translation>
+   <translation id="ip_order_step1_question" qtlid="182033">Seleziona il servizio per cui vuoi acquistare IP aggiuntivi:</translation>
+   <translation id="ip_order_checkservice" qtlid="182046">Verifica delle condizioni di realizzazione...</translation>
 
-   <translation id="dedicatedCloud_datacenter_drp_confirm_zssp_password_title" qtlid="520364">Password ZSSP</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_zssp_password_action_text" qtlid="520377">Ripristina la password ZSSP</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_zssp_password_regenerate_error" qtlid="520390">Si è verificato un errore durante la generazione della password ZSSP.</translation>
+   <translation id="ip_order_loading_error" qtlid="182059">Si è verificato un errore nel caricamento delle informazioni dell'ordine di IP.</translation>
+   <translation id="ip_order_loading_error2" qtlid="369563">Questa azione richiede una verifica o al momento non può essere confermata. ({0})</translation>
 
-   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_title" qtlid="520403">Elimina definitivamente il tuo DRP</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_action_text" qtlid="520416">Elimina Zerto DRP</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_modal_title" qtlid="520429">Eliminazione del Disaster Recovery Plan</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_modal_question" qtlid="520442">Vuoi davvero eliminare il DRP? Ti ricordiamo che questa azione è irreversibile.</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_success" qtlid="520455">L'eliminazione del tuo DRP Zerto è in corso. L'operazione potrebbe richiedere qualche minuto.</translation>
-   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_error" qtlid="520468">Si è verificato un errore durante l'eliminazione del Disaster Recovery Plan</translation>
+   <translation id="ip_order_error_OPTION_NOT_ALLOWED" qtlid="182072">Non è possibile ordinare IP aggiuntivi per questo servizio.</translation>
+   <translation id="ip_order_error_OUT" qtlid="182085">Hai raggiunto il limite di IP ordinabili con questo servizio.</translation>
+   <translation id="ip_order_error_EXPIRED" qtlid="191421">Il servizio è scaduto.</translation>
+
+   <translation id="ip_order_step1_ok" qtlid="182098">Clicca su "Avanti" per accedere all'ordine</translation>
+   <translation id="ip_order_add_ipv4_step1_remaining" qtlid="182111">Puoi aggiungere ancora <span class="blue">{0}</span> IPv4 su questo servizio.</translation>
+   <translation id="ip_order_step1_info1" qtlid="182124">Il tuo server può supportare fino a:</translation>
+   <translation id="ip_order_step1_DEDICATED_pre" qtlid="182137"><span class="blue">{0}</span> IP da blocchi di IPv4 Failover</translation>
+   <translation id="ip_order_step1_DEDICATED_v2_pre" qtlid="191382"><span class="blue">{0}</span> prefissi</translation>
+   <translation id="ip_order_step1_DEDICATED_individual_1" qtlid="182163"><span class="blue">1</span> IP Failover singolo</translation>
+   <translation id="ip_order_step1_DEDICATED_v2_individual_1" qtlid="191395"><span class="blue">1</span> prefisso</translation>
+   <translation id="ip_order_step1_DEDICATED_individual_other" qtlid="182176"><span class="blue">{}</span> IP Failover singoli</translation>
+   <translation id="ip_order_step1_DEDICATED_v2_individual_other" qtlid="191408"><span class="blue">{}</span> prefissi</translation>
+   <translation id="ip_order_step1_DEDICATED_minmax" qtlid="182150">(blocchi di <span class="blue">{0}</span> IP min. e di <span class="blue">{1}</span> IP max.)</translation>
+   <translation id="ip_order_step1_DEDICATED_individualblocksize" qtlid="182189">(blocchi di <span class="blue">{0}</span> IP)</translation>
+   <translation id="ip_order_step2_large_block_unavailable" qtlid="304446">Stiamo riscontrando rallentamenti nella consegna dei blocchi IP. In caso di necessità, ti consigliamo di attivare IP singoli (/32). <a href="{0}" target="_blank">Maggiori informazioni.</a></translation>
+
+   <translation id="ip_order_ipnbr" qtlid="182202">Numero di IP</translation>
+   <translation id="ip_order_country" qtlid="182215">Localizzati in</translation>
+   <translation id="ip_order_ipblocksize" qtlid="182228">Dimensione del blocco IP</translation>
+   <translation id="ip_order_networkname" qtlid="182241">Nome rete (netname)</translation>
+   <translation id="ip_order_networkname_help" qtlid="232388">Informazioni visibili nel "WHOIS" (da 2 a 20 caratteri alfanumerici che iniziano con una lettera)</translation>
+   <translation id="ip_order_estimatedclientsnumber" qtlid="182267">Numero di clienti stimato</translation>
+   <translation id="ip_order_estimatedclientsnumber_help" qtlid="182280">Quanti clienti utilizzano questi IP?</translation>
+   <translation id="ip_order_description" qtlid="182293">Descrizione della rete</translation>
+   <translation id="ip_order_description_help" qtlid="182306">Informazioni visibili nel "WHOIS" (fra 3 e 250 caratteri alfanumerici)</translation>
+   <translation id="ip_order_usage" qtlid="109974">Uso</translation>
+   <translation id="ip_order_usage_help" qtlid="182319">Informazioni di base su come il blocco verrà utilizzato (esempi: "web", "ssl", "cloud", ...)</translation>
+   <translation id="ip_order_organisation" qtlid="32278">Organizzazione</translation>
+   <translation id="ip_order_no_organisation_1" qtlid="182332">Per prenotare un blocco di IP, è necessario essere titolare di un'azienda/organizzazione.</translation>
+   <translation id="ip_order_no_organisation_2" qtlid="182345">Clicca qui per accedere alla gestione delle organizzazioni.</translation>
+   <translation id="ip_order_no_professionaluse_1" qtlid="182358">Per questa operazione è necessaria l'opzione "Utilizzo Professionale" (<b>{0}</b>/mese).</translation>
+   <translation id="ip_order_no_professionaluse_2" qtlid="182371">Viene aggiunto automaticamente al tuo ordine.</translation>
+   <translation id="ip_order_ip_count_1" qtlid="182384">1 indirizzo</translation>
+   <translation id="ip_order_ip_count_other" qtlid="489153">{0} indirizzi</translation>
+   <translation id="ip_order_select_duration" qtlid="181214">Seleziona la durata:</translation>
+   <translation id="ip_order_select_activation" qtlid="268276">Spese di attivazione:</translation>
+   <translation id="ip_order_abonnement" qtlid="268289">Abbonamento mensile:</translation>
+   <translation id="ip_order_free" qtlid="268302">GRATIS</translation>
+   <translation id="ip_order_bloc" qtlid="268315">Blocco</translation>
+   <translation id="ip_order_renew_PCC" qtlid="268328">I tuoi IP saranno rinnovati automaticamente con la tua infrastruttura Dedicated Cloud.</translation>
+   <translation id="ip_order_resume" qtlid="177496">Riepilogo del tuo ordine</translation>
+   <translation id="ip_order_price_HT" qtlid="146177">Prezzo totale IVA esclusa:</translation>
+   <translation id="ip_order_price_TTC" qtlid="146190">Prezzo totale IVA inclusa:</translation>
+   <translation id="ip_order_final_txt" qtlid="181240">Clicca su "Conferma" per confermare il tuo ordine</translation>
+   <translation id="ip_order_final_txt2" qtlid="181253">Verrai reindirizzato alla nuova interfaccia di pagamento.</translation>
+   <translation id="ip_order_finish_success" qtlid="181266">L'ordine numero <a href='{0}' target='_blank'>{1}</a> è stato preso in carico.</translation>
+   <translation id="ip_order_finish_error" qtlid="182410">Si è verificato un errore nell'ordine di IP aggiuntivi.</translation>
+   <translation id="ip_order_free_activation_fee" qtlid="250212">Attenzione: gli IP aggiuntivi dei server dedicati OVH comportano solo le spese di attivazione, non sono previsti costi di rinnovo mensile</translation>
+   <translation id="ip_order_resume_short" qtlid="522266">Blocco/{{ blockSize }}: {{ price }}</translation>
 </translations>

@@ -1,6 +1,7 @@
 class SessionService {
   constructor(
     $q,
+    $rootScope,
     $translate,
     atInternet,
     constants,
@@ -16,6 +17,7 @@ class SessionService {
     ssoAuthentication,
   ) {
     this.$q = $q;
+    this.$rootScope = $rootScope;
     this.$translate = $translate;
     this.constants = constants;
     this.$translate = $translate;
@@ -282,6 +284,7 @@ class SessionService {
 
   getAssistanceMenu(currentUser) {
     const mustDisplayNewMenu = ['FR'].includes(currentUser.ovhSubsidiary);
+    const mustDisplayChatbot = ['FR'].includes(currentUser.ovhSubsidiary);
     const currentSubsidiaryURLs = _.get(this.constants.urls, currentUser.ovhSubsidiary, {});
 
     const assistanceMenuItems = [
@@ -352,6 +355,17 @@ class SessionService {
           type: 'action',
         }),
         mustBeKept: _.has(currentSubsidiaryURLs, 'support_contact') && this.constants.target !== 'US',
+      },
+      {
+        title: `${this.$translate.instant('otrs_menu_chatbot')} <sup class="oui-color-california">OVH Chat</sup>`,
+        click: () => {
+          this.$rootScope.$broadcast('ovh-chatbot:open');
+          this.atInternet.trackClick({
+            name: 'assistance::chatbot',
+            type: 'action',
+          });
+        },
+        mustBeKept: mustDisplayChatbot,
       },
     ];
 
@@ -515,13 +529,6 @@ class SessionService {
             title: this.$translate.instant('menu_contacts'),
             state: 'app.account.useraccount.contacts.services',
             click: () => this.trackUserMenuSection('my_contacts', 'contacts'),
-          },
-
-          // Tickets
-          {
-            title: this.$translate.instant('menu_tickets'),
-            state: 'app.account.otrs-ticket',
-            click: () => this.trackUserMenuSection('my_otrs_tickets', 'otrs'),
           },
 
           // Logout

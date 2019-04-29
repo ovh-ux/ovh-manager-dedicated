@@ -1,39 +1,86 @@
-angular.module('Module.ip.controllers').controller('agoraIpOrderCtrl', ['$scope', '$rootScope', '$state', '$window', '$q', 'IpAgoraOrder', 'IpOrganisation', 'User', 'Alerter', '$translate',
-  function ($scope, $rootScope, $state, $window, $q, AgoraOrder, Organisation, User, Alerter,
-    $translate) {
-    this.model = {
-      params: {},
-      selectedService: null,
-    };
-    this.loading = {};
+angular
+  .module('Module.ip.controllers')
+  .controller('agoraIpOrderCtrl', class AgoraIpOrderCtrl {
+    constructor(
+      $q,
+      $rootScope,
+      $scope,
+      $state,
+      $translate,
+      $window,
+      Alerter,
+      IpAgoraOrder,
+      IpOrganisation,
+      User,
+    ) {
+      this.$q = $q;
+      this.$rootScope = $rootScope;
+      this.$scope = $scope;
+      this.$state = $state;
+      this.$translate = $translate;
+      this.$window = $window;
+      this.Alerter = Alerter;
+      this.IpAgoraOrder = IpAgoraOrder;
+      this.IpOrganisation = IpOrganisation;
+      this.User = User;
+    }
 
-    this.loadServices = () => {
+    $onInit() {
+      this.model = {
+        params: {},
+        selectedService: null,
+      };
+
+      this.loading = {};
+
+      // need to be scoped because of how wizard-step works
+      this.$scope.loadServices = this.loadServices.bind(this);
+      this.$scope.loadIpOffers = this.loadIpOffers.bind(this);
+      this.$scope.redirectToPaymentPage = this.redirectToPaymentPage.bind(this);
+      this.$scope.resumeOrder = this.resumeOrder.bind(this);
+      this.$scope.stringLocaleSensitiveComparator = AgoraIpOrderCtrl
+        .stringLocaleSensitiveComparator;
+    }
+
+    loadServices() {
       this.loading.services = true;
-      return $q.all({
-        user: User.getUser(),
-        services: AgoraOrder.getServices(),
-      }).then((results) => {
-        this.user = results.user;
-        this.services = results.services;
-      }).catch((err) => {
-        Alerter.error($translate.instant('ip_order_loading_error'));
-        $state.go('^');
-        return $q.reject(err);
-      }).finally(() => {
-        this.loading.services = false;
-      });
-    };
 
-    // need to be scoped because of how wizard-step works
-    $scope.loadServices = this.loadServices.bind(this);
+      return this.$q
+        .all({
+          user: this.User.getUser(),
+          services: this.IpAgoraOrder.getServices(),
+        })
+        .then((results) => {
+          this.user = results.user;
+          this.services = results.services;
+        })
+        .catch((err) => {
+          this.Alerter.error(this.$translate.instant('ip_order_loading_error'));
 
-    this.getServiceTypeLabel = type => $translate.instant(`ip_filter_services_title_${type}`);
+          return this.$state
+            .go('^')
+            .then(() => this.$q.reject(err));
+        })
+        .finally(() => {
+          this.loading.services = false;
+        });
+    }
 
-    function createOfferDto(ipOffer) {
-      const maximumQuantity = _.get(ipOffer.details.pricings.default
-        .find(price => _.first(price.capacities) === 'renew'), 'maximumQuantity');
+    getServiceTypeLabel(type) {
+      return this.$translate.instant(`ip_filter_services_title_${type}`);
+    }
+
+    createOfferDto(ipOffer) {
+      const maximumQuantity = _.get(
+        ipOffer.details.pricings.default.find(
+          price => _.first(price.capacities) === 'renew',
+        ),
+        'maximumQuantity',
+      );
+
       const countryCodes = ipOffer.details.product.configurations
         .find(config => config.name === 'country').values;
+
       return {
         productName: ipOffer.invoiceName,
         productShortName: ipOffer.invoiceName.replace(/^.*\]\s*/, ''),
@@ -44,7 +91,7 @@ angular.module('Module.ip.controllers').controller('agoraIpOrderCtrl', ['$scope'
         quantities: _.range(1, maximumQuantity + 1),
         countries: countryCodes.map(countryCode => ({
           code: countryCode,
-          description: $translate.instant(`country_${countryCode.toUpperCase()}`),
+          description: this.$translate.instant(`country_${countryCode.toUpperCase()}`),
         })),
 
         // Only ip block offer has a maximum quantity of 1.
@@ -53,7 +100,7 @@ angular.module('Module.ip.controllers').controller('agoraIpOrderCtrl', ['$scope'
       };
     }
 
-    function getRegionFromServiceName(serviceName) {
+    static getRegionFromServiceName(serviceName) {
       const serviceExt = _.last(serviceName.split('.'));
       if (serviceExt === 'eu') {
         return 'EUROPE';
@@ -64,51 +111,55 @@ angular.module('Module.ip.controllers').controller('agoraIpOrderCtrl', ['$scope'
       return 'USA';
     }
 
-    this.loadIpOffers = () => {
+    loadIpOffers() {
       this.loading.ipOffers = true;
 
       this.model.params = {};
 
-      const ipOffersPromise = AgoraOrder.getIpOffers()
+      const ipOffersPromise = this.IpAgoraOrder
+        .getIpOffers()
         .then((ipOffers) => {
-          const ipOfferDetails = ipOffers.map(createOfferDto);
-          this.ipOffers = _.filter(ipOfferDetails, {
-            productRegion: getRegionFromServiceName(this.model.selectedService.serviceName),
-          });
+          const ipOfferDetails = ipOffers.map(this.createOfferDto.bind(this));
+          this.ipOffers = _.filter(
+            ipOfferDetails,
+            {
+              productRegion: AgoraIpOrderCtrl
+                .getRegionFromServiceName(this.model.selectedService.serviceName),
+            },
+          );
         });
 
-      const ipOrganisationPromise = Organisation.getIpOrganisation()
+      const ipOrganisationPromise = this.IpOrganisation.getIpOrganisation()
         .then((organisations) => {
           this.organisations = organisations;
         });
 
-      return $q.all([ipOffersPromise, ipOrganisationPromise])
+      return this.$q.all([ipOffersPromise, ipOrganisationPromise])
         .catch((err) => {
-          Alerter.error($translate.instant('ip_order_loading_error'));
-          $state.go('^');
-          return $q.reject(err);
+          this.Alerter.error(this.$translate.instant('ip_order_loading_error'));
+          this.$state.go('^');
+          return this.$q.reject(err);
         })
         .finally(() => {
           this.loading.ipOffers = false;
         });
-    };
+    }
 
-    // need to be scoped because of how wizard-step works
-    $scope.loadIpOffers = this.loadIpOffers.bind(this);
+    getIpOfferRegions() {
+      return _.uniq(_.pluck(this.ipOffers, 'productRegion')).sort();
+    }
 
-    this.getIpOfferRegions = () => _.uniq(_.pluck(this.ipOffers, 'productRegion')).sort();
-
-    this.onSelectedOfferChange = () => {
-      this.model.params.selectedQuantity = null;
+    onSelectedOfferChange() {
+      this.model.params.selectedQuantity = undefined;
       this.model.params.selectedOrganisation = null;
       this.model.params.selectedCountry = null;
 
       if (_.get(this.model, 'params.selectedOffer.countries.length') === 1) {
         this.model.params.selectedCountry = _.first(_.get(this.model, 'params.selectedOffer.countries'));
       }
-    };
+    }
 
-    this.isOfferFormValid = () => {
+    isOfferFormValid() {
       if (!this.model.params.selectedOffer || !this.model.params.selectedCountry) {
         return false;
       }
@@ -118,70 +169,41 @@ angular.module('Module.ip.controllers').controller('agoraIpOrderCtrl', ['$scope'
       }
 
       return true;
-    };
-
-    this.redirectToOrganisationPage = () => {
-      $rootScope.$broadcast('ips.display', 'organisation');
-      $state.go('^');
-    };
-
-    function createProductToOrder(model) {
-      const productToOrder = {
-        planCode: model.params.selectedOffer.planCode,
-        productId: 'ip',
-        duration: 'P1M',
-        pricingMode: 'default',
-        quantity: model.params.selectedQuantity || 1,
-        configuration: [],
-      };
-
-      if (model.selectedService) {
-        productToOrder.configuration.push({
-          label: 'destination',
-          value: model.selectedService.serviceName,
-        });
-      }
-
-      if (model.params.selectedCountry) {
-        productToOrder.configuration.push({
-          label: 'country',
-          value: model.params.selectedCountry.code,
-        });
-      }
-
-      if (model.params.selectedOrganisation) {
-        productToOrder.configuration.push({
-          label: 'organisation',
-          value: model.params.selectedOrganisation.organisationId,
-        });
-      }
-      return productToOrder;
     }
 
-    this.redirectToPaymentPage = () => {
-      const productToOrder = createProductToOrder(this.model);
+    redirectToOrganisationPage() {
+      this.$rootScope.$broadcast('ips.display', 'organisation');
+      this.$state.go('^');
+    }
 
-      return User.getUrlOf('express_order')
+    redirectToPaymentPage() {
+      const productToOrder = this.IpAgoraOrder.constructor.createProductToOrder({
+        country: _.get(this.model.params, 'selectedCountry.code'),
+        destination: this.model.selectedService.serviceName,
+        organisation: _.get(this.model.params, 'selectedOrganisation.organisationId'),
+        planCode: _.get(this.model.params, 'selectedOffer.planCode'),
+        quantity: _.get(this.model.params, 'selectedQuantity', 1),
+      });
+
+      return this.User
+        .getUrlOf('express_order')
         .then((url) => {
-          $window.open(`${url}review?products=${JSURL.stringify([productToOrder])}`, '_blank');
+          this.$window.open(`${url}review?products=${JSURL.stringify([productToOrder])}`, '_blank');
         })
         .catch((err) => {
-          Alerter.error($translate.instant('ip_order_finish_error'));
-          $state.go('^');
-          return $q.reject(err);
+          this.Alerter.error(this.$translate.instant('ip_order_finish_error'));
+          return this.$state
+            .go('^')
+            .then(() => this.$q.reject(err));
         })
-        .finally(() => $state.go('^'));
-    };
+        .finally(() => this.$state.go('^'));
+    }
 
-    this.resumeOrder = () => {
-      $state.go('^');
-    };
+    resumeOrder() {
+      return this.$state.go('^');
+    }
 
-    // need to be scoped because of how wizard-step works
-    $scope.redirectToPaymentPage = this.redirectToPaymentPage.bind(this);
-    $scope.resumeOrder = this.resumeOrder.bind(this);
-
-    $scope.stringLocaleSensitiveComparator = function (v1, v2) {
+    static stringLocaleSensitiveComparator(v1, v2) {
       return v1.value.localeCompare(v2.value);
-    };
-  }]);
+    }
+  });

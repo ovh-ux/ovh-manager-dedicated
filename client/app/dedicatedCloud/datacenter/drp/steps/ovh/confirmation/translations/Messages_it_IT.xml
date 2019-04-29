@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="dedicatedCloud_datacenter_pcc_name" qtlid="520039">Nome del Private Cloud: {{pcc}}</translation>
+   <translation id="dedicatedCloud_datacenter_main_datacenter_name" qtlid="520052">Identificativo del datacenter Private Cloud corrispondente</translation>
+   <translation id="dedicatedCloud_datacenter_main_datacenter_name_placeholder" qtlid="520065">Scegli il datacenter principale</translation>
+   <translation id="dedicatedCloud_datacenter_order_ip" qtlid="521594">Non sono disponibili pool di indirizzi IP. È possibile <a ui-sref="{{sref}}">ordinarli</a></translation>
+   <translation id="dedicatedCloud_datacenter_main_ip_address_pool_available" qtlid="520091">Pool di indirizzi IP pubblici disponibile</translation>
+   <translation id="dedicatedCloud_datacenter_main_ip_address_pool_available_placeholder" qtlid="520104">Scegli un IP pubblico libero</translation>
+
+   <translation id="dedicatedCloud_datacenter_drp_confirm_create_success_part_one" qtlid="520247">Il tuo DRP Zerto è stato creato correttamente!</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_create_success_part_two" qtlid="520260">La password ZSSP è stata inviata all'indirizzo email {{email}}.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_creation_pending" qtlid="520273">L'attivazione del DRP Zerto è in corso. L’operazione potrebbe richiedere fino a un'ora.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_creation_pending_task" qtlid="520286">Verifica il task enableDisasterRecovery del PCC principale per seguire l'avanzamento dell'operazione.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_create_error" qtlid="520299">Si è verificato un errore durante l'attivazione del tuo DRP.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_title" qtlid="520312">Riepilogo della configurazione del tuo DRP</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_drp_type" qtlid="520325">Tipo di Disaster Recovery Plan</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_main_datacenter" qtlid="520000">Datacenter principale</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_main_pcc" qtlid="520338">Private Cloud principale</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_secondary_datacenter" qtlid="520013">Datacenter secondario</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_summary_secondary_pcc" qtlid="520351">Private Cloud secondario</translation>
+
+   <translation id="dedicatedCloud_datacenter_drp_confirm_zssp_password_title" qtlid="520364">Password ZSSP</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_zssp_password_action_text" qtlid="520377">Ripristina la password ZSSP</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_zssp_password_regenerate_error" qtlid="520390">Si è verificato un errore durante la generazione della password ZSSP.</translation>
+
+   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_title" qtlid="520403">Elimina definitivamente il tuo DRP</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_action_text" qtlid="520416">Elimina Zerto DRP</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_modal_title" qtlid="520429">Eliminazione del Disaster Recovery Plan</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_modal_question" qtlid="520442">Vuoi davvero eliminare il DRP? Ti ricordiamo che questa azione è irreversibile.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_success" qtlid="520455">L'eliminazione del tuo DRP Zerto è in corso. L'operazione potrebbe richiedere qualche minuto.</translation>
+   <translation id="dedicatedCloud_datacenter_drp_confirm_delete_drp_error" qtlid="520468">Si è verificato un errore durante l'eliminazione del Disaster Recovery Plan</translation>
+</translations>

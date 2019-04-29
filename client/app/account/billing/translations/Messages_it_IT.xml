@@ -46,7 +46,6 @@
    <translation id="autorenew_service_enable_button" qtlid="416098">Attiva il pagamento automatico</translation>
    <translation id="autorenew_service_renew_button" qtlid="416111">Paga il servizio</translation>
    <translation id="autorenew_service_renew_button_title" qtlid="416124">Paga il servizio: {0} (Nuova finestra)</translation>
-   <translation id="autorenew_service_exchange_billing_button" qtlid="509326">Modifica la fatturazione</translation>
    <translation id="autorenew_service_canceldelete_button" qtlid="285350">Annulla chiusura </translation>
    <translation id="autorenew_service_canceldelete_button_title" qtlid="243695">Annulla la tua richiesta di disattivazione: {0}</translation>
    <translation id="autorenew_service_renew_frequency_title" qtlid="212998">Frequenza di pagamento </translation>
@@ -96,6 +95,7 @@
    <translation id="autorenew_service_autorenew_contact_filter_all" qtlid="69173">Tutti</translation>
    <translation id="autorenew_service_autorenew_filter" qtlid="2606">Filtri</translation>
    <translation id="autorenew_service_type_DEDICATED_SERVER" qtlid="66032">Server Dedicato</translation>
+   <translation id="autorenew_service_type_dedicated_server" qtlid="66032">Server Dedicato</translation>
    <translation id="autorenew_service_type_DEDICATED_HOUSING" qtlid="371476">Server Housing</translation>
    <translation id="autorenew_service_type_DEDICATED_CLOUD" qtlid="20131">Dedicated Cloud</translation>
    <translation id="autorenew_service_type_DOMAIN" qtlid="8458">Dominio</translation>
@@ -143,6 +143,8 @@
    <translation id="autorenew_service_type_VEEAM_CLOUD_CONNECT" qtlid="231370">Veeam Cloud Connect</translation>
    <translation id="autorenew_service_type_VEEAM_ENTERPRISE" qtlid="506362">Veeam Enterprise</translation>
    <translation id="autorenew_service_type_METRICS" qtlid="383525">Metrics</translation>
+   <translation id="autorenew_service_type_kube" qtlid="504826">Kubernetes</translation>
+
 
    <translation id="autorenew_service_billing_warning" qtlid="229645">Non puoi modificare questo ordine</translation>
    <translation id="autorenew_service_readonly_warning" qtlid="220122">Il rinnovo di questo servizio è già attivo e non può essere disattivato </translation>
@@ -246,7 +248,7 @@
    <translation id="common_payment_type_OVH_ACCOUNT" qtlid="48926">Conto prepagato</translation>
    <translation id="common_payment_type_paymentMandate" qtlid="139819">Vaglia</translation>
    <translation id="common_payment_type_PAYMENT_MANDATE" qtlid="139819">Vaglia</translation>
-   <translation id="common_payment_type_paypal" qtlid="98228">PayPal</translation>
+   <translation id="common_payment_type_paypal" qtlid="521496">Paypal</translation>
    <translation id="common_payment_type_payu" qtlid="373480">PayU</translation>
    <translation id="common_payment_type_platnosci" qtlid="139832">Transfer payment</translation>
    <translation id="common_payment_type_refund" qtlid="139845">Credito</translation>
@@ -896,7 +898,7 @@
    <translation id="ovhAccount_table_type_payment_NONE" qtlid="30646">Nessuno</translation>
    <translation id="ovhAccount_table_type_payment_OVH_ACCOUNT" qtlid="48926">Conto prepagato</translation>
    <translation id="ovhAccount_table_type_payment_PAYMENT_MANDATE" qtlid="177431">Mandato</translation>
-   <translation id="ovhAccount_table_type_payment_PAYPAL" qtlid="98228">PayPal</translation>
+   <translation id="ovhAccount_table_type_payment_PAYPAL" qtlid="521509">Paypal</translation>
    <translation id="ovhAccount_table_type_payment_PLATNOSCI" qtlid="139832">Transfer payment</translation>
    <translation id="ovhAccount_table_type_payment_REFUND" qtlid="139845">Credito</translation>
    <translation id="ovhAccount_table_type_payment_TRANSFER" qtlid="89833">Bonifico</translation>
@@ -1289,7 +1291,7 @@ Prima di confermare l'eliminazione del servizio, è tua responsabilità adottare
    <translation id="terminate_service_type_veeamCloudConnect" qtlid="231370">Veeam Cloud Connect</translation>
    <translation id="terminate_service_type_vps" qtlid="23083">VPS</translation>
    <translation id="terminate_service_type_xdsl" qtlid="229619">Linea xDSL</translation>
-
+   <translation id="terminate_service_type_kube" qtlid="504826">Kubernetes</translation>
 <!-- CREDITS -->
    <translation id="billing_credits_title" qtlid="448920">I tuoi account di credito</translation>
    <translation id="billing_credits_none" qtlid="448933">Non sono presenti account di credito</translation>

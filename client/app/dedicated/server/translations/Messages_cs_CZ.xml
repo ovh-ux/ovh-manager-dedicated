@@ -481,19 +481,19 @@
    <translation id="server_configuration_ftpbackup_add_allow" qtlid="141795">Povolit</translation>
    <translation id="server_configuration_ftpbackup_add_deny" qtlid="141808">Odmítnout</translation>
    <translation id="server_configuration_ftpbackup_add_ip" qtlid="180850">Zahrnutý blok:</translation>
-   <translation id="server_configuration_ftpbackup_add_ip_length_error" qtlid="520481">Limite totale de blocs autorisés atteinte ({{limitCount}} maximum)</translation>
+   <translation id="server_configuration_ftpbackup_add_ip_length_error" qtlid="520481">Bylo dosaženo celkového povoleného limitu bloků ({{limitCount}} maximum)</translation>
    <translation id="server_configuration_ftpbackup_add_authorization" qtlid="180863">Autorizovat v:</translation>
 
-   <translation id="server_configuration_cloudbackup_delete" qtlid="492502">Supprimer le Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_delete" qtlid="492502">Odstraňte záložní úložiště</translation>
 
    <translation id="server_configuration_cloudbackup_delete_success" qtlid="184360">Služba Backup Storage bude brzy odstraněna.</translation>
-   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="492515">Le Backup Storage a bien été supprimé.</translation>
-   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="492528">Une erreur est survenue lors de la suppression du Backup Storage.</translation>
+   <translation id="server_configuration_cloudbackup_delete_successfull" qtlid="492515">Úložiště záloh bylo úspěšně smazáno.</translation>
+   <translation id="server_configuration_cloudbackup_delete_failure" qtlid="492528">Došlo k chybě při odstraňování záložního úložiště.</translation>
    <translation id="server_configuration_cloudbackup_delete_question" qtlid="451872">Opravdu si přejete deaktivovat řešení Backup Storage?</translation>
 
    <translation id="server_configuration_cloudbackup_inactive" qtlid="451885">Vaše řešení Backup Storage není aktivní.</translation>
    <translation id="server_configuration_cloudbackup_new_project" qtlid="16493">Nový projekt</translation>
-   <translation id="server_configuration_cloudbackup_load_fail" qtlid="492541">Une erreur est survenue lors du chargement des informations du Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_load_fail" qtlid="492541">Při načítání informací o úložišti zálohování došlo k chybě</translation>
    <translation id="server_configuration_cloudbackup_load_offers_fail" qtlid="451898">Při načítání nabídky řešení Backup Storage došlo k chybě</translation>
    <translation id="server_configuration_cloudbackup_load_projects_fail" qtlid="451911">Při načítání cloudových projektů došlo k chybě</translation>
    <translation id="server_configuration_cloudbackup_load_agreements_fail" qtlid="451924">Při načítání smluv došlo k chybě&#13;
@@ -518,7 +518,7 @@
    <translation id="server_configuration_cloudbackup_summary_documentation_label" qtlid="415740">Příručka</translation>
    <translation id="server_configuration_cloudbackup_summary_usage_label" qtlid="109974">Použití</translation>
    <translation id="server_configuration_cloudbackup_summary_title_label_storage" qtlid="452067">Váš kontejner Backup Storage</translation>
-   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="492554">Supprimer le Backup Storage</translation>
+   <translation id="server_configuration_cloudbackup_delete_button_label" qtlid="492554">Odstraňte záložní úložiště</translation>
 
    <translation id="server_configuration_cloudbackup_container_storage_guide_description" qtlid="452080">Hledáte nástroj pro zálohování svých dat? OVH doporučuje Rclone</translation>
    <translation id="server_configuration_cloudbackup_container_storage_guide_product" qtlid="452093">Rclone</translation>
@@ -642,11 +642,11 @@
    <translation id="server_configuration_impi_navigation" qtlid="257296">Z Vašeho prohlížeče (SoL)</translation>
    <translation id="server_configuration_impi_navigation_error" qtlid="164818">Během pokusu o připojení k modulu IPMI z Vašeho prohlížeče došlo k chybě</translation>
    <translation id="server_configuration_impi_navigation_success" qtlid="164831">Připojení k modulu IPMI z Vašeho prohlížeče je připraveno.</translation>
-   <translation id="server_configuration_impi_navigation_go" qtlid="508936">Accéder à la console (SOL)</translation>
+   <translation id="server_configuration_impi_navigation_go" qtlid="508936">Přístup ke konzole (SOL)</translation>
    <translation id="server_configuration_impi_java" qtlid="257309">Z Java appletu (KVM)</translation>
    <translation id="server_configuration_impi_java_download" qtlid="164870">Stáhnout JAVA applet</translation>
-   <translation id="server_configuration_impi_kvm_console" qtlid="508949">Depuis votre navigateur (KVM)</translation>
-   <translation id="server_configuration_impi_kvm_url" qtlid="508962">Accéder à la console (KVM)</translation>
+   <translation id="server_configuration_impi_kvm_console" qtlid="508949">Z prohlížeče (KVM)</translation>
+   <translation id="server_configuration_impi_kvm_url" qtlid="508962">Přístup ke konzole (KVM)</translation>
    <translation id="server_configuration_impi_java_success" qtlid="164883">Připojení k modulu IPMI pomocí JAVA appletu je připraveno.</translation>
    <translation id="server_configuration_impi_java_error" qtlid="164896">Během připojování k modulu IPMI pomocí JAVA appletu došlo k chybě.</translation>
    <translation id="server_configuration_impi_java_new" qtlid="164909">Nové spojení</translation>
@@ -685,12 +685,12 @@
    <translation id="server_configuration_kvm_access" qtlid="229281">Jít do mého KVM</translation>
    <translation id="server_configuration_kvm_error" qtlid="229294">Při získávání detailů o Vašem KVM došlo k chybě.</translation>
 
-   <translation id="server_configuration_tile_kvm_heading" qtlid="508975">KVM à distance</translation>
-   <translation id="server_configuration_tile_kvm_description" qtlid="508988">Accès au clavier, à la souris et à l'affichage de votre serveur à distance</translation>
-   <translation id="server_configuration_tile_sol_heading" qtlid="509001">Série sur LAN (SOL)</translation>
-   <translation id="server_configuration_tile_sol_description" qtlid="509014">Accès à la console série de votre machine via une connexion sécurisée</translation>
-   <translation id="server_configuration_ssh_sol_definition" qtlid="509027">SSH SOL (via votre clé ssh)</translation>
-   <translation id="server_configuration_ssh_select" qtlid="509040">Sélectionnez une clé SSH</translation>
+   <translation id="server_configuration_tile_kvm_heading" qtlid="508975">Vzdálená KVM</translation>
+   <translation id="server_configuration_tile_kvm_description" qtlid="508988">Přístup k klávesnici, myši a zobrazení vzdáleného serveru</translation>
+   <translation id="server_configuration_tile_sol_heading" qtlid="509001">Série na síti LAN (SOL)</translation>
+   <translation id="server_configuration_tile_sol_description" qtlid="509014">Přístup k sériové konzole zařízení prostřednictvím zabezpečeného připojení</translation>
+   <translation id="server_configuration_ssh_sol_definition" qtlid="509027">SSH SOL (prostřednictvím klíče ssh)</translation>
+   <translation id="server_configuration_ssh_select" qtlid="509040">Vyberte klíč SSH</translation>
 
    <translation id="server_configuration_installation_successfull" qtlid="172761">Instalace serveru {0} byla dokončena.</translation>
    <translation id="server_configuration_installation_fail_task" qtlid="191252">Při získávání instalačního stavu serveru {0} došlo k chybě.</translation>
@@ -1203,5 +1203,9 @@
    <translation id="server_autorenew_alert" qtlid="296882">Zjednodušte si život přechodem na automatické obnovování služeb. Už žádné upomínky, připomínky a neobnovené služby!</translation>
    <translation id="server_autorenew_guide" qtlid="290615">Přístup k příručce</translation>
    <translation id="server_autorenew_activate" qtlid="98576">Aktivace automatického obnovení</translation>
-
+   <translation id="server_rendezvous_need_help" qtlid="521353">Potřebujete pomoci s instalací nového dedikovaného serveru?</translation>
+   <translation id="server_rendezvous_info" qtlid="521366">Naplánujte si bezplatnou 30minutovou schůzku se specializovaným technikem OVH, který vám zavolá, kdykoliv budete chtít!</translation>
+   <translation id="server_rendezvous_profit" qtlid="521379">Užijte si to!</translation>
+   <translation id="server_rendezvous_book" qtlid="521392">Naplánujte si schůzku</translation>
+   <translation id="server_rendezvous_stop_bother" qtlid="521405">Zastavte se</translation>
 </translations>

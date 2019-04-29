@@ -14,6 +14,7 @@ angular.module('UserAccount').controller('UserAccount.controllers.contactService
     const servicesToDelete = [];
 
     self.loaders = {
+      init: true,
       services: false,
       serviceInfos: false,
       changeContact: false,
@@ -37,6 +38,7 @@ angular.module('UserAccount').controller('UserAccount.controllers.contactService
     }
 
     function init() {
+      self.loaders.init = true;
       $q.all([getUser(), self.getServices(true)]).then(() => {
         if ($stateParams.serviceName) {
           self.serviceFilter = _.find(
@@ -46,7 +48,10 @@ angular.module('UserAccount').controller('UserAccount.controllers.contactService
           self.categoryFilter = $stateParams.category;
           self.updateFilters();
         }
-      });
+      })
+        .finally(() => {
+          self.loaders.init = false;
+        });
     }
 
     self.getServices = function (forceRefresh) {
@@ -105,16 +110,15 @@ angular.module('UserAccount').controller('UserAccount.controllers.contactService
     };
 
     self.onTransformItemDone = function () {
-      self.loaders.services = false;
-      if (servicesToDelete.length > 0) {
-        self.servicesIds = self.servicesIds.filter(s => servicesToDelete.indexOf(s) === -1);
+      if (!self.loaders.init) {
+        self.loaders.services = false;
+        if (servicesToDelete.length > 0) {
+          self.servicesIds = self.servicesIds.filter(s => servicesToDelete.indexOf(s) === -1);
+        }
       }
     };
 
     self.updateFilters = function () {
-      $location.search('serviceName', _.get(self.serviceFilter, 'serviceName', null));
-      $location.search('category', _.get(self, 'categoryFilter', null));
-
       self.servicesIds = allServicesIds
         .filter(id => (self.categoryFilter ? id.indexOf(self.categoryFilter) === 0 : true))
         .filter(id => (self.serviceFilter

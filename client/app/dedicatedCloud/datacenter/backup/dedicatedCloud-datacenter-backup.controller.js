@@ -1,37 +1,64 @@
-angular.module('App').controller('DedicatedCloudSubDatacenterVeeamCtrl', ($scope, $stateParams, $translate, DedicatedCloud, $rootScope, VEEAM_STATE_ENUM, constants) => {
-  $scope.veeam = {
-    model: null,
-    constants: VEEAM_STATE_ENUM,
-  };
-  $scope.loading = false;
-  $scope.isUS = constants.target === 'US';
+angular
+  .module('App')
+  .controller('DedicatedCloudSubDatacenterVeeamCtrl', class {
+    /* @ngInject */
+    constructor(
+      $rootScope,
+      $scope,
+      $stateParams,
+      $translate,
+      constants,
+      DedicatedCloud,
+      VEEAM_STATE_ENUM,
+    ) {
+      this.$rootScope = $rootScope;
+      this.$scope = $scope;
+      this.$stateParams = $stateParams;
+      this.$translate = $translate;
+      this.constants = constants;
+      this.DedicatedCloud = DedicatedCloud;
+      this.VEEAM_STATE_ENUM = VEEAM_STATE_ENUM;
+    }
 
-  $rootScope.$on('datacenter.veeam.reload', () => {
-    $scope.loadVeeam(true);
-  });
+    $onInit() {
+      this.$scope.veeam = {
+        model: null,
+        constants: this.VEEAM_STATE_ENUM,
+      };
 
-  $scope.loadVeeam = function (forceRefresh) {
-    $scope.loading = true;
+      this.$scope.loading = false;
+      this.$scope.isUS = this.constants.target === 'US';
 
-    return DedicatedCloud
-      .getVeeam($stateParams.productId, $stateParams.datacenterId, forceRefresh)
-      .then((veeam) => {
-        $scope.veeam.model = veeam;
-        $scope.loading = false;
-      })
-      .catch((data) => {
-        $scope.loading = false;
-        $scope.setMessage($translate.instant('dedicatedCloud_tab_veeam_loading_error'), angular.extend(data, { type: 'ERROR' }));
+      this.$rootScope.$on('datacenter.veeam.reload', () => {
+        this.$scope.loadVeeam(true);
       });
-  };
 
-  $scope.canBeActivated = function () {
-    return $scope.veeam.model && $scope.veeam.model.state === $scope.veeam.constants.DISABLED;
-  };
+      return this.loadVeeam();
+    }
 
-  $scope.canBeDisabled = function () {
-    return $scope.veeam.model && $scope.veeam.model.state === $scope.veeam.constants.ENABLED;
-  };
+    canBeDisabled() {
+      return this.$scope.veeam.model
+        && this.$scope.veeam.model.state === this.$scope.veeam.constants.ENABLED;
+    }
 
-  $scope.loadVeeam();
-});
+    canBeActivated() {
+      return this.$scope.veeam.model
+        && this.$scope.veeam.model.state === this.$scope.veeam.constants.DISABLED;
+    }
+
+    loadVeeam(forceRefresh) {
+      this.$scope.loading = true;
+
+      return this.DedicatedCloud
+        .getVeeam(this.$stateParams.productId, this.$stateParams.datacenterId, forceRefresh)
+        .then((veeam) => {
+          this.$scope.veeam.model = veeam;
+        })
+        .catch((data) => {
+          this.$scope.setMessage(this.$translate.instant('dedicatedCloud_tab_veeam_loading_error'), angular.extend(data, { type: 'ERROR' }));
+        })
+        .finally(() => {
+          this.$scope.loading = false;
+        });
+    }
+  });

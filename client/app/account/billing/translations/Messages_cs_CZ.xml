@@ -46,7 +46,6 @@
    <translation id="autorenew_service_enable_button" qtlid="416098">Aktivovat automatické platby</translation>
    <translation id="autorenew_service_renew_button" qtlid="416111">Uhradit službu</translation>
    <translation id="autorenew_service_renew_button_title" qtlid="416124">Uhradit službu: {0} (nové okno)</translation>
-   <translation id="autorenew_service_exchange_billing_button" qtlid="509326">Modifier la facturation</translation>
    <translation id="autorenew_service_canceldelete_button" qtlid="285350">Zrušit zrušení</translation>
    <translation id="autorenew_service_canceldelete_button_title" qtlid="243695">Zrušit můj požadavek na ukončení služby: {0}</translation>
    <translation id="autorenew_service_renew_frequency_title" qtlid="212998">Frekvence plateb</translation>
@@ -97,6 +96,7 @@
    <translation id="autorenew_service_autorenew_contact_filter_all" qtlid="69173">Vše</translation>
    <translation id="autorenew_service_autorenew_filter" qtlid="2606">Filtry</translation>
    <translation id="autorenew_service_type_DEDICATED_SERVER" qtlid="66032">Dedikovaný server</translation>
+   <translation id="autorenew_service_type_dedicated_server" qtlid="66032">Dedikovaný server</translation>
    <translation id="autorenew_service_type_DEDICATED_HOUSING" qtlid="371476">Server-Housing </translation>
    <translation id="autorenew_service_type_DEDICATED_CLOUD" qtlid="20131">Private Cloud</translation>
    <translation id="autorenew_service_type_DOMAIN" qtlid="8458">Doména</translation>
@@ -144,6 +144,8 @@
    <translation id="autorenew_service_type_VEEAM_CLOUD_CONNECT" qtlid="231370">Veeam Cloud Connect</translation>
    <translation id="autorenew_service_type_VEEAM_ENTERPRISE" qtlid="506362">Veeam Enterprise</translation>
    <translation id="autorenew_service_type_METRICS" qtlid="383525">Metriky</translation>
+   <translation id="autorenew_service_type_kube" qtlid="504826">Kubernetes</translation>
+
 
    <translation id="autorenew_service_billing_warning" qtlid="229645">Nemáte oprávnění ke změně tohoto data</translation>
    <translation id="autorenew_service_readonly_warning" qtlid="220122">Tato služba již byla obnovena a tuto akci nelze vrátit.</translation>
@@ -246,7 +248,7 @@
    <translation id="common_payment_type_OVH_ACCOUNT" qtlid="48926">Předplacený účet</translation>
    <translation id="common_payment_type_paymentMandate" qtlid="139819">Platební příkaz</translation>
    <translation id="common_payment_type_PAYMENT_MANDATE" qtlid="139819">Platební příkaz</translation>
-   <translation id="common_payment_type_paypal" qtlid="98228">PayPal</translation>
+   <translation id="common_payment_type_paypal" qtlid="521496">Paypal</translation>
    <translation id="common_payment_type_payu" qtlid="373480">PayU</translation>
    <translation id="common_payment_type_platnosci" qtlid="139832">Platby</translation>
    <translation id="common_payment_type_refund" qtlid="139845">Dobropis</translation>
@@ -894,7 +896,7 @@
    <translation id="ovhAccount_table_type_payment_NONE" qtlid="30646">Ne</translation>
    <translation id="ovhAccount_table_type_payment_OVH_ACCOUNT" qtlid="48926">Předplacený účet</translation>
    <translation id="ovhAccount_table_type_payment_PAYMENT_MANDATE" qtlid="177431">Příkaz</translation>
-   <translation id="ovhAccount_table_type_payment_PAYPAL" qtlid="98228">PayPal</translation>
+   <translation id="ovhAccount_table_type_payment_PAYPAL" qtlid="521509">Paypal</translation>
    <translation id="ovhAccount_table_type_payment_PLATNOSCI" qtlid="139832">Platby</translation>
    <translation id="ovhAccount_table_type_payment_REFUND" qtlid="139845">Dobropis</translation>
    <translation id="ovhAccount_table_type_payment_TRANSFER" qtlid="89833">Převod</translation>
@@ -1279,7 +1281,7 @@
    <translation id="terminate_service_type_veeamCloudConnect" qtlid="231370">Veeam Cloud Connect</translation>
    <translation id="terminate_service_type_vps" qtlid="23083">VPS</translation>
    <translation id="terminate_service_type_xdsl" qtlid="229619">xDSL linka</translation>
-
+   <translation id="terminate_service_type_kube" qtlid="504826">Kubernetes</translation>
 <!-- CREDITS -->
    <translation id="billing_credits_title" qtlid="448920">Mé kreditní účty</translation>
    <translation id="billing_credits_none" qtlid="448933">Aktuálně nemáte žádný kreditní účet</translation>
