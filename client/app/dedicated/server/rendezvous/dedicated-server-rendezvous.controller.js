@@ -1,17 +1,15 @@
 angular.module('App').controller('DedicatedServerRendezVousCtrl', class DedicatedServerRendezVousCtrl {
-  constructor($q, $state, $stateParams, $translate, Alerter, ovhUserPref) {
+  constructor($q, $state, $stateParams, ovhUserPref) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
-    this.$translate = $translate;
     this.ovhUserPref = ovhUserPref;
-    this.Alerter = Alerter;
     this.stopBother = false;
     this.serversRendezVousToStopBother = [];
   }
 
   $onInit() {
-    this.ovhUserPref
+    return this.ovhUserPref
       .getValue('SERVER_RENDEZVOUS_STOP_BOTHER')
       .then((data) => {
         this.serversRendezVousToStopBother = data;

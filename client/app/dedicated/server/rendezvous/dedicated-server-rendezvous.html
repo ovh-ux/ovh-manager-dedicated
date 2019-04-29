@@ -1,9 +1,9 @@
 <div class="dedicated-server-rendezvous">
 
-    <oui-modal on-dismiss="$ctrl.onDismiss()">
+    <oui-modal data-on-dismiss="$ctrl.onDismiss()">
         <div class="mx-auto">
             <img src="images/rendezvous.svg"
-                 width="221" height="235px"
+                 width="221" height="235"
                  class="mx-auto d-block mb-2" />
             
             <p class="oui-heading_5 text-center text-justify" data-translate="server_rendezvous_need_help"></p>
@@ -15,8 +15,10 @@
                 <a href="https://rendezvous.ovh.com/manager"
                    class="oui-button oui-button_primary mx-auto"
                    target="_blank" rel="noopener"
-                   data-ng-click="$ctrl.onDismiss()"
-                   data-translate="server_rendezvous_book">
+                   data-ng-click="$ctrl.onDismiss()">
+                    <span data-translate="server_rendezvous_book"></span>
+                    <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
+                    <span class="sr-only" data-translate="common_new_tab"></span>
                 </a>
             </div>
             <div class="d-flex">
