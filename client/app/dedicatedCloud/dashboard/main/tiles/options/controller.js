@@ -216,12 +216,25 @@ export default class OptionTile {
 
   isOrderable(optionType) {
     return this.thereIsAtLeastOneOrderableItem(optionType)
-     && (!this.thereIsAPendingOrder() || this.pendingOrderIsNotPaid());
+     && (!this.thereIsAPendingOrder()
+      || (this.thereIsAPendingOrder()
+      && this.pendingOrderIsNotPaid()));
   }
 
   isBasicMenuDisplayed() {
     return this.isOrderable(OPTION_TYPES.basic)
       || this.pendingOrderIsNotPaid();
+  }
+
+  isBasicMenuActionMenuModifyDisplayed() {
+    const optionType = OPTION_TYPES.basic;
+    const thereIsAtLeastOneOrderableOption = this.thereIsAtLeastOneOrderableItem(optionType);
+    const thereIsAtLeastTwoOrderableOptions = this.orderables[optionType].length > 1;
+    const thereIsAPendingOrder = this.thereIsAPendingOrder();
+    const pendingOrderIsNotPaid = this.pendingOrderIsNotPaid();
+
+    return (!thereIsAPendingOrder && thereIsAtLeastOneOrderableOption)
+      || (thereIsAPendingOrder && pendingOrderIsNotPaid && thereIsAtLeastTwoOrderableOptions);
   }
 
   buildDataAfterFetching() {
@@ -234,7 +247,7 @@ export default class OptionTile {
           isDisplayed: this.isBasicMenuDisplayed(),
           modify: {
             text: this.buildBasicMenuModifyText(),
-            isDisplayed: this.isOrderable(OPTION_TYPES.basic),
+            isDisplayed: this.isBasicMenuActionMenuModifyDisplayed(),
             stateParams: {
               activationType: OPTION_TYPES.basic,
               orderableServicePacks: this.orderables[OPTION_TYPES.basic],
@@ -281,8 +294,6 @@ export default class OptionTile {
         },
       },
     };
-
-    this.a = 'pouet';
   }
 
   getCertificationDescription() {
