@@ -1,3 +1,21 @@
+<a name="10.17.1"></a>
+## [10.17.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.0...v10.17.1) (2019-05-02)
+
+
+### Bug Fixes
+
+* **deps:** upgrade ovh-module-exchange to v9.4.2 ([#1096](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1096)) ([e6eab64](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e6eab64))
+* **i18n:** retrieve translations ([#1098](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1098)) ([6c95985](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6c95985))
+
+
+### Features
+
+* **i18n:** new translation ([2b343e4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2b343e4))
+* **i18n:** retrieve translations ([0168370](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0168370))
+* **i18n:** submit translation ([585f6ff](https://github.com/ovh-ux/ovh-manager-dedicated/commit/585f6ff))
+
+
+
 <a name="10.17.0"></a>
 # [10.17.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.16.0...v10.17.0) (2019-04-29)
 
