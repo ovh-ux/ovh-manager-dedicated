@@ -190,17 +190,6 @@ angular
       });
     };
 
-    this.getHostHourlyConsumption = function (serviceName, datacenterId, hostId) {
-      return OvhHttp.get('/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/host/{hostId}/hourlyConsumption', {
-        rootPath: 'apiv6',
-        urlParams: {
-          serviceName,
-          datacenterId,
-          hostId,
-        },
-      });
-    };
-
     this.getCommercialRangeList = function (serviceName) {
       return OvhHttp.get('/dedicatedCloud/{serviceName}/commercialRange/orderable', {
         rootPath: 'apiv6',
