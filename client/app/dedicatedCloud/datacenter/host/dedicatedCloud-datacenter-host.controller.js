@@ -14,6 +14,9 @@ angular
       $stateParams,
       currentService,
       DedicatedCloud,
+      dedicatedCloudDatacenterService,
+      dedicatedCloudDataCenterHostService,
+      DEDICATED_CLOUD_DATACENTER,
     ) {
       this.$q = $q;
       this.$scope = $scope;
@@ -21,6 +24,9 @@ angular
       this.$stateParams = $stateParams;
       this.currentService = currentService;
       this.DedicatedCloud = DedicatedCloud;
+      this.dedicatedCloudDatacenterService = dedicatedCloudDatacenterService;
+      this.dedicatedCloudDataCenterHostService = dedicatedCloudDataCenterHostService;
+      this.DEDICATED_CLOUD_DATACENTER = DEDICATED_CLOUD_DATACENTER;
     }
 
     $onInit() {
@@ -45,6 +51,57 @@ angular
         });
     }
 
+    fetchLegacyHostConsumption(hosts) {
+      return this.$q.all(hosts
+        .map(host => (host.billingType === this.RESOURCE_BILLING_TYPES.hourly
+          ? this.dedicatedCloudDataCenterHostService
+            .getHostHourlyConsumption(
+              this.$stateParams.productId,
+              this.$stateParams.datacenterId,
+              host.hostId,
+            )
+            .then(consumption => ({ ...host, ...consumption }))
+            .catch(() => host)
+          : host)));
+    }
+
+    fetchConsumptionForHosts(hosts) {
+      return serviceConsumption => this.$q.all(
+        hosts.map(
+          this.fetchConsumptionForHost(serviceConsumption),
+        ),
+      );
+    }
+
+    fetchConsumptionForHost(serviceConsumption) {
+      return (host) => {
+        if (host.billingType === this.RESOURCE_BILLING_TYPES.hourly) {
+          const hostConsumption = this.dedicatedCloudDatacenterService.constructor
+            .extractElementConsumption(serviceConsumption, {
+              id: host.hostId,
+              type: this.DEDICATED_CLOUD_DATACENTER.elementTypes.host,
+            });
+
+          return {
+            ...host,
+            consumption: {
+              value: hostConsumption.quantity,
+            },
+          };
+        }
+
+        return host;
+      };
+    }
+
+    chooseConsumptionFetchingMethod(hosts) {
+      return !this.currentService.usesLegacyOrder
+        ? this.dedicatedCloudDatacenterService
+          .fetchConsumptionForService(this.currentService.serviceInfos.serviceId)
+          .then(this.fetchConsumptionForHosts(hosts))
+        : this.fetchLegacyHostConsumption(hosts);
+    }
+
     loadHosts({ offset, pageSize }) {
       return this.DedicatedCloud
         .getPaginatedHosts(
@@ -53,32 +110,13 @@ angular
           pageSize,
           offset - 1,
         )
-        .then((result) => {
-          const hosts = _.get(result, 'list.results');
-
-          return this.$q
-            .all(hosts
-              .map((host) => {
-                if (host.billingType === this.RESOURCE_BILLING_TYPES.hourly) {
-                  return this.DedicatedCloud
-                    .getHostHourlyConsumption(
-                      this.$stateParams.productId,
-                      this.$stateParams.datacenterId,
-                      host.hostId,
-                    )
-                    .then(consumption => _.merge({}, host, consumption))
-                    .catch(() => host);
-                }
-
-                return this.$q.when(host);
-              }))
-            .then(hostsWithConsumption => ({
-              data: hostsWithConsumption,
-              meta: {
-                totalCount: result.count,
-              },
-            }));
-        });
+        .then(result => this.chooseConsumptionFetchingMethod(result.list.results)
+          .then(hostsWithConsumption => ({
+            data: hostsWithConsumption,
+            meta: {
+              totalCount: result.count,
+            },
+          })));
     }
 
     orderHost(datacenter) {
