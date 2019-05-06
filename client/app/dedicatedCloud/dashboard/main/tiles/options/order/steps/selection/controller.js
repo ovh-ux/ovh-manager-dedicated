@@ -119,7 +119,9 @@ export default class {
             url: order.url,
             orderedServicePackName: this.servicePackToOrder.name,
           })
-          .then(() => this.goToNextStep());
+          .then(() => (this.hasDefaultMeansOfPayment
+            ? this.goToNextStep()
+            : null));
       })
       .catch(error => this.stepper
         .exit()
