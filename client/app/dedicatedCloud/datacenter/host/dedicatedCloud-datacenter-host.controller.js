@@ -67,9 +67,11 @@ angular
 
     fetchConsumptionForHosts(hosts) {
       return serviceConsumption => this.$q.all(
-        hosts.map(
-          this.fetchConsumptionForHost(serviceConsumption),
-        ),
+        serviceConsumption
+          ? hosts.map(
+            this.fetchConsumptionForHost(serviceConsumption),
+          )
+          : hosts,
       );
     }
 
