@@ -14,7 +14,9 @@ angular
       $stateParams,
       currentService,
       DedicatedCloud,
+      dedicatedCloudDatacenterService,
       dedicatedCloudDataCenterDatastoreService,
+      DEDICATED_CLOUD_DATACENTER,
     ) {
       this.$q = $q;
       this.$scope = $scope;
@@ -22,7 +24,9 @@ angular
       this.$stateParams = $stateParams;
       this.currentService = currentService;
       this.DedicatedCloud = DedicatedCloud;
+      this.dedicatedCloudDatacenterService = dedicatedCloudDatacenterService;
       this.dedicatedCloudDataCenterDatastoreService = dedicatedCloudDataCenterDatastoreService;
+      this.DEDICATED_CLOUD_DATACENTER = DEDICATED_CLOUD_DATACENTER;
     }
 
     $onInit() {
@@ -66,6 +70,42 @@ angular
           }));
     }
 
+    fetchConsumptionForDatastores(datastores) {
+      return serviceConsumption => this.$q.all(
+        datastores.map(
+          this.fetchConsumptionForDatastore(serviceConsumption),
+        ),
+      );
+    }
+
+    fetchConsumptionForDatastore(serviceConsumption) {
+      return (datastore) => {
+        if (datastore.billing === this.RESOURCE_BILLING_TYPES.hourly) {
+          const datastoreConsumption = this.dedicatedCloudDatacenterService.constructor
+            .extractElementConsumption(serviceConsumption, {
+              id: datastore.id,
+              type: this.DEDICATED_CLOUD_DATACENTER.elementTypes.datastore,
+            });
+
+          return {
+            ...datastore,
+            consumption: datastoreConsumption.quantity,
+            consumptionLastUpdate: serviceConsumption.lastUpdate,
+          };
+        }
+
+        return datastore;
+      };
+    }
+
+    chooseConsumptionFetchingMethod(datastores) {
+      return !this.currentService.usesLegacyOrder
+        ? this.dedicatedCloudDatacenterService
+          .fetchConsumptionForService(this.currentService.serviceInfos.serviceId)
+          .then(this.fetchConsumptionForDatastores(datastores))
+        : this.fetchLegacyConsumption(datastores);
+    }
+
     loadDatastores({ offset, pageSize }) {
       return this.DedicatedCloud
         .getDatastores(
@@ -74,7 +114,7 @@ angular
           pageSize, offset - 1,
         )
         .then(result => this
-          .fetchLegacyConsumption(result.list.results)
+          .chooseConsumptionFetchingMethod(result.list.results)
           .then(data => ({
             data,
             meta: {
