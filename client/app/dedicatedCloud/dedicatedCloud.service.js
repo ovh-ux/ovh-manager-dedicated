@@ -352,17 +352,6 @@ angular
       });
     };
 
-    this.getDatastoreHourlyConsumption = function (serviceName, datacenterId, filerId) {
-      return OvhHttp.get('/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/filer/{filerId}/hourlyConsumption', {
-        rootPath: 'apiv6',
-        urlParams: {
-          serviceName,
-          datacenterId,
-          filerId,
-        },
-      });
-    };
-
     /* ------- SUB DATACENTER BACKUP -------*/
 
     this.getVeeam = function (serviceName, datacenterId, forceRefresh) {

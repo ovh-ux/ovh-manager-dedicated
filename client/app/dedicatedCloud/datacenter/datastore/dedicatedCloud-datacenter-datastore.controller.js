@@ -14,6 +14,7 @@ angular
       $stateParams,
       currentService,
       DedicatedCloud,
+      dedicatedCloudDataCenterDatastoreService,
     ) {
       this.$q = $q;
       this.$scope = $scope;
@@ -21,6 +22,7 @@ angular
       this.$stateParams = $stateParams;
       this.currentService = currentService;
       this.DedicatedCloud = DedicatedCloud;
+      this.dedicatedCloudDataCenterDatastoreService = dedicatedCloudDataCenterDatastoreService;
     }
 
     $onInit() {
@@ -48,8 +50,8 @@ angular
             .all(datastores
               .map((dc) => {
                 if (dc.billing === this.RESOURCE_BILLING_TYPES.hourly) {
-                  return this.DedicatedCloud
-                    .getDatastoreHourlyConsumption(
+                  return this.dedicatedCloudDataCenterDatastoreService
+                    .fetchLegacyHourlyConsumption(
                       this.$stateParams.productId,
                       this.$stateParams.datacenterId,
                       dc.id,
