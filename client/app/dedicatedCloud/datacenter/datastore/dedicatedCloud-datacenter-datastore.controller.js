@@ -72,9 +72,11 @@ angular
 
     fetchConsumptionForDatastores(datastores) {
       return serviceConsumption => this.$q.all(
-        datastores.map(
-          this.fetchConsumptionForDatastore(serviceConsumption),
-        ),
+        serviceConsumption
+          ? datastores.map(
+            this.fetchConsumptionForDatastore(serviceConsumption),
+          )
+          : datastores,
       );
     }
 
