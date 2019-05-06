@@ -9,7 +9,7 @@
     <oui-message
         data-type="warning"
         data-dismissable="false"
-        data-ng-if="!$ctrl.hasDefaultMeansOfPayment && $ctrl.currentUser.ovhSubsidiary !== 'PL'"
+        data-ng-if="!$ctrl.hasDefaultMeansOfPayment"
         class="mb-3">
         <p>
             <span data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_noDefaultMeansOfPayment_1"></span>
@@ -100,7 +100,7 @@
     <p>
         <span data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_checkoutDescription"></span>
         <a
-            data-ng-href="{{ $ctrl.orderingURL }}"
+            data-ng-href="{{:: $ctrl.orderingURL }}"
             target="_blank"
             rel="noopener"
             class="oui-link_icon">
