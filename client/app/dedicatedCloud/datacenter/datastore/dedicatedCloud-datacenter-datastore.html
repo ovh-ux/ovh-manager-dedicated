@@ -20,18 +20,23 @@
         <span data-ng-bind="'dedicatedCloud_tab_datastores_status_' + $row.status | translate"></span>
     </oui-column>
     <oui-column data-title=":: 'dedicatedCloud_tab_datastores_consumption' | translate">
-        <span data-ng-if="$row.billing === $ctrl.RESOURCE_BILLING_TYPES.hourly && isNan($row.consumption)"
-                data-translate="dedicatedCloud_tab_datastores_hourly_consumption_na">
-        </span>
-        <span data-ng-if="$row.billing === $ctrl.RESOURCE_BILLING_TYPES.hourly && $row.consumption <= 1"
-                data-translate="dedicatedCloud_tab_datastores_hourly_consumption_1"
-                data-uib-tooltip="{{ 'dedicatedCloud_tab_host_hourly_usage_update' | translate:{ t0: ($row.consumptionLastUpdate|date:'short') } }}"
+        <span data-ng-if="$row.billing === $ctrl.RESOURCE_BILLING_TYPES.hourly">
+            <span
+                data-ng-if="$row.consumption == null || $row.consumption === 0"
+                data-translate="dedicatedCloud_tab_datastores_hourly_consumption_na"></span>
+
+            <span
+                data-ng-if="$row.consumption != null && $row.consumption > 0"
+                data-uib-tooltip="{{:: 'dedicatedCloud_tab_host_hourly_usage_update' | translate:{ t0: ($row.consumptionLastUpdate|date:'short') } }}"
                 data-tooltip-placement="top">
-        </span>
-        <span data-ng-if="$row.billing === $ctrl.RESOURCE_BILLING_TYPES.hourly && $row.consumption > 1"
-                data-ng-bind="'dedicatedCloud_tab_datastores_hourly_consumption_other' | translate:{ t0: $row.consumption }"
-                data-uib-tooltip="{{ 'dedicatedCloud_tab_host_hourly_usage_update' | translate:{ t0: ($row.consumptionLastUpdate|date:'short') } }}"
-                data-tooltip-placement="top">
+                <span
+                    data-ng-if="$row.consumption <= 1"
+                    data-translate="dedicatedCloud_tab_datastores_hourly_consumption_1"></span>
+                <span
+                    data-ng-if="$row.consumption > 1"
+                    data-translate="dedicatedCloud_tab_datastores_hourly_consumption_other"
+                    data-translate-value-t0="{{:: $row.consumption }}"></span>
+            </span>
         </span>
     </oui-column>
     <oui-action-menu data-align="end"
