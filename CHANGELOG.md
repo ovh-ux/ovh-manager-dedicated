@@ -1,3 +1,16 @@
+<a name="10.17.2"></a>
+## [10.17.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.1...v10.17.2) (2019-05-06)
+
+
+### Bug Fixes
+
+* **dedicated.server:** display correctly datacenter name ([#1086](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1086)) ([6f15b8b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6f15b8b))
+* **deps:** upgrade ovh-module-exchange to v9.4.3 ([#1103](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1103)) ([b4ed8eb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b4ed8eb))
+* **i18n:** retrieve translations ([2c2750a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2c2750a))
+* **i18n:** submit translations ([5ee521b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5ee521b))
+
+
+
 <a name="10.17.1"></a>
 ## [10.17.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.0...v10.17.1) (2019-05-02)
 
