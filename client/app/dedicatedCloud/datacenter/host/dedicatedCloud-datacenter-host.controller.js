@@ -87,6 +87,7 @@ angular
             consumption: {
               value: hostConsumption.quantity,
             },
+            lastUpdate: serviceConsumption.lastUpdate,
           };
         }
 
