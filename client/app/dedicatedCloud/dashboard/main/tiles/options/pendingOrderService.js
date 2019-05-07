@@ -43,8 +43,6 @@ export default class {
 
   static mapOrderStatusToActivationStatus(orderStatus) {
     if ([
-      ORDER_STATUS.cancelling,
-      ORDER_STATUS.checking,
       ORDER_STATUS.documentsRequested,
       ORDER_STATUS.notPaid,
     ].includes(orderStatus)) {
@@ -52,6 +50,13 @@ export default class {
     }
 
     if ([
+      ORDER_STATUS.cancelling,
+    ].includes(orderStatus)) {
+      return ACTIVATION_STATUS.cancelling;
+    }
+
+    if ([
+      ORDER_STATUS.checking,
       ORDER_STATUS.delivering,
     ].includes(orderStatus)) {
       return ACTIVATION_STATUS.beingActivated;
