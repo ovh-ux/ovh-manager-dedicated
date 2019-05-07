@@ -25,6 +25,7 @@ export default class BillingPaymentMethodAddCtrl {
     this.loading = {
       init: false,
       add: false,
+      paymentMethodTypes: false,
     };
 
     this.addSteps = {
@@ -77,8 +78,6 @@ export default class BillingPaymentMethodAddCtrl {
     };
 
     this.model = null;
-    this.chunkedPaymentMethodTypes = null;
-    this.chunkSize = 3;
     this.addAlertMessage = {
       message: null,
       type: null,
@@ -133,6 +132,18 @@ export default class BillingPaymentMethodAddCtrl {
   }
 
   /* ----------  Events  ---------- */
+
+  onSelectedPaymentTypeChange(paymentMethodType) {
+    this.model.selectedPaymentMethodType = paymentMethodType;
+    this.model.setAsDefault = false;
+  }
+
+  onAvailablePaymentMethodsLoadError(error) {
+    return this.Alerter.error([
+      this.$translate.instant('billing_payment_method_add_load_error'),
+      _.get(error, 'data.message', ''),
+    ].join(' '), 'billing_payment_method_add_alert');
+  }
 
   onPaymentMethodAddStepperFinish() {
     this.loading.add = true;
@@ -232,16 +243,13 @@ export default class BillingPaymentMethodAddCtrl {
 
   $onInit() {
     this.loading.init = true;
+    this.loading.paymentMethodTypes = true;
 
     this.manageHiPayStatus();
 
-    return this.$q.all({
-      paymentMethods: this.billingPaymentMethodSection.getPaymentMethods(),
-      paymentMethodTypes: this.ovhPaymentMethod.getAllAvailablePaymentMethodTypes(),
-    })
-      .then(({ paymentMethodTypes }) => {
-        this.paymentMethodTypes = _.sortBy(paymentMethodTypes, 'paymentType.text');
-        this.chunkedPaymentMethodTypes = _.chunk(this.paymentMethodTypes, this.chunkSize);
+    return this.billingPaymentMethodSection
+      .getPaymentMethods()
+      .then(() => {
         this.resetModel();
         this.$state.current.sharedModel = {};
         this.$state.current.sharedSteps = this.addSteps;
