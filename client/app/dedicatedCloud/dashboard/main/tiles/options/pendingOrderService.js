@@ -41,7 +41,7 @@ export default class {
       .then(mergeArray);
   }
 
-  static mapOrderStatusToActivationStatus(orderStatus) {
+  static mapOrderStatusToActivationStatus(orderStatus, isAdding) {
     if ([
       ORDER_STATUS.documentsRequested,
       ORDER_STATUS.notPaid,
@@ -59,7 +59,9 @@ export default class {
       ORDER_STATUS.checking,
       ORDER_STATUS.delivering,
     ].includes(orderStatus)) {
-      return ACTIVATION_STATUS.beingActivated;
+      return isAdding
+        ? ACTIVATION_STATUS.beingActivated
+        : ACTIVATION_STATUS.beingDeactivated;
     }
 
     if ([

@@ -3,6 +3,10 @@ export const ACTIVATION_STATUS = {
     name: 'beingActivated',
     type: 'warning',
   },
+  beingDeactivated: {
+    name: 'beingDeactivated',
+    type: 'warning',
+  },
   cancelling: {
     name: 'cancelling',
     type: 'warning',
