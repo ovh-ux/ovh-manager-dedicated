@@ -75,7 +75,8 @@ export default class {
           controller: MODAL_CONTROLLER_NAME,
           controllerAs: '$ctrl',
           resolve: {
-            optionName: () => this.servicePackToOrder.displayName,
+            itemName: () => this.servicePackToOrder.displayName,
+            itemType: () => this.activationType,
             price: () => this.servicePackToOrder.price.replace(/\+/g, ''),
             priceAsNumber: () => this.servicePackToOrder.priceAsNumber,
           },
