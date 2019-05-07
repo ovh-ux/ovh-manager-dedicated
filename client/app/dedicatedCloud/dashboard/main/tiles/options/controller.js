@@ -140,18 +140,15 @@ export default class OptionTile {
       });
   }
 
-  buildStatusForOption({ name, typeName }) {
+  buildStatusForOption(optionName) {
     const orderIsInProgress = this.pendingOrder != null;
-    const optionIsPartOfCurrentServicePack = _.some(
+    const currentServicePackHasOption = _.some(
       this.currentServicePack.options,
-      { name },
+      { name: optionName },
     );
 
-    if (
-      !orderIsInProgress
-      || (orderIsInProgress && this.pendingOrder.activationType !== typeName)
-    ) {
-      return optionIsPartOfCurrentServicePack
+    if (!orderIsInProgress) {
+      return currentServicePackHasOption
         ? this.ACTIVATION_STATUS.enabled
         : this.ACTIVATION_STATUS.disabled;
     }
@@ -160,8 +157,28 @@ export default class OptionTile {
       return this.ACTIVATION_STATUS.unknown;
     }
 
+    const orderedServicePackHasOption = _.some(
+      _.get(
+        _.find(
+          this.servicePacks,
+          { name: this.pendingOrder.orderedServicePackName },
+        ),
+        'options',
+      ),
+      { name: optionName },
+    );
+
+    if (currentServicePackHasOption && orderedServicePackHasOption) {
+      return this.ACTIVATION_STATUS.enabled;
+    }
+
+    if (!currentServicePackHasOption && !orderedServicePackHasOption) {
+      return this.ACTIVATION_STATUS.disabled;
+    }
+
+    const isAddingOption = !currentServicePackHasOption && orderedServicePackHasOption;
     return PendingOrderService
-      .mapOrderStatusToActivationStatus(this.pendingOrder.status);
+      .mapOrderStatusToActivationStatus(this.pendingOrder.status, isAddingOption);
   }
 
   isDiscoverLinkDisplayed(status) {
@@ -173,10 +190,7 @@ export default class OptionTile {
       .filter(optionName => this.servicePackOptionService.getType(optionName)
         === OPTION_TYPES.basic)
       .map((optionName) => {
-        const status = this.buildStatusForOption({
-          name: optionName,
-          typeName: OPTION_TYPES.basic,
-        });
+        const status = this.buildStatusForOption(optionName);
 
         return {
           discoverURL: this.servicePackOptionService
