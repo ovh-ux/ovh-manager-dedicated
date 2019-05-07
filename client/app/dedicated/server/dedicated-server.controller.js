@@ -35,6 +35,7 @@ angular.module('App').controller('ServerCtrl', (
     installationInProgress: false,
     installationInProgressError: false,
     noDeleteMessage: false,
+    usbStorageTab: false,
   };
   $scope.urlRenew = null;
   $scope.worldPart = constants.target;
@@ -225,6 +226,14 @@ angular.module('App').controller('ServerCtrl', (
     Server.getUrlRenew($stateParams.productId).then((url) => {
       $scope.urlRenew = url;
     });
+
+    Server.getUsbStorageInformations($stateParams.productId).then(
+      (result) => {
+        if (_.isArray(result)) {
+          $scope.disable.usbStorageTab = true;
+        }
+      },
+    );
 
     return $q
       .allSettled([
