@@ -12,7 +12,6 @@ import ngOvhSwimmingPoll from '@ovh-ux/ng-ovh-swimming-poll';
 import ngOvhUserPref from '@ovh-ux/ng-ovh-user-pref';
 import ngOvhWebUniverseComponents from '@ovh-ux/ng-ovh-web-universe-components';
 import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
-import ovhContacts from '@ovh-ux/ng-ovh-contacts';
 import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
 import uiRouter from '@uirouter/angularjs';
 
@@ -62,7 +61,6 @@ angular
     'ovh-angular-tail-logs',
     'ovh-utils-angular',
     'ovhBrowserAlert',
-    ovhContacts,
     ovhPaymentMethod,
     'pascalprecht.translate',
     'services',
