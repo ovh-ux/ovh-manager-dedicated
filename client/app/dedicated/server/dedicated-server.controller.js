@@ -229,7 +229,7 @@ angular.module('App').controller('ServerCtrl', (
 
     Server.getUsbStorageInformations($stateParams.productId).then(
       (result) => {
-        if (_.isArray(result)) {
+        if (_.isArray(result) && result[1].usbKeys) {
           $scope.disable.usbStorageTab = true;
         }
       },
