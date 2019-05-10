@@ -27,8 +27,10 @@ angular.module('Billing').controller('BillingHistoryDebtPayCtrl', class BillingH
   onDebtPayFormSubmit() {
     this.loading.pay = true;
     this.atInternet.trackClick({
-      name: 'billing_pay_balance',
+      name: 'debt_payment',
       type: 'action',
+      chapter1: 'billing',
+      chapter2: 'invoices',
     });
     let promise;
 

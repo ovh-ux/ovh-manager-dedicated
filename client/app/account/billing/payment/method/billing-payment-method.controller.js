@@ -10,12 +10,14 @@ import deleteModalController from './delete/billing-payment-method-delete.contro
 export default class BillingPaymentMethodCtrl {
   /* @ngInject */
 
-  constructor($q, $translate, $uibModal, Alerter, billingPaymentMethodSection,
+  constructor($q, $state, $translate, $uibModal, atInternet, Alerter, billingPaymentMethodSection,
     ovhPaymentMethod, User) {
     // dependencies injections
     this.$q = $q;
+    this.$state = $state;
     this.$translate = $translate;
     this.$uibModal = $uibModal;
+    this.atInternet = atInternet;
     this.Alerter = Alerter;
     this.billingPaymentMethodSection = billingPaymentMethodSection;
     this.ovhPaymentMethod = ovhPaymentMethod;
@@ -40,6 +42,20 @@ export default class BillingPaymentMethodCtrl {
   /* =============================
   =            EVENTS            =
   ============================== */
+
+  /**
+   *  Navigate to add payment method
+   */
+  goToAddPayment() {
+    this.atInternet.trackClick({
+      name: 'add_payment_types',
+      type: 'action',
+      chapter1: 'payment_types',
+      chapter2: 'payment_types',
+      chapter3: 'add',
+    });
+    return this.$state.go('app.account.billing.payment.method.add');
+  }
 
   /**
    *  Open edit payment method modal

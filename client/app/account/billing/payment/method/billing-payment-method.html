@@ -118,10 +118,10 @@
             </oui-action-menu>
 
             <extra-top>
-                <a class="oui-button oui-button_secondary"
-                   data-ui-sref="app.account.billing.payment.method.add"
-                   data-translate="billing_payment_method_table_top_add_method">
-                </a>
+                <oui-button data-variant="secondary"
+                   data-on-click="$ctrl.goToAddPayment()">
+                   <span data-translate="billing_payment_method_table_top_add_method"></span>
+                </oui-button>
             </extra-top>
         </oui-datagrid>
 
