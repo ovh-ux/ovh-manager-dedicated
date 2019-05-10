@@ -1,5 +1,5 @@
-angular.module('UserAccount').config(['$stateProvider', '$urlServiceProvider', 'UserAccount.constants', ($stateProvider, $urlServiceProvider, constants) => {
-  if (constants.target === 'EU' || constants.target === 'CA') {
+angular.module('UserAccount').config(['$stateProvider', '$urlServiceProvider', 'coreConfigProvider', ($stateProvider, $urlServiceProvider, coreConfigProvider) => {
+  if (coreConfigProvider.getRegion() === 'EU' || coreConfigProvider.getRegion() === 'CA') {
     $stateProvider.state('app.account.billing.service.agreements', {
       url: '/agreements',
       templateUrl: 'account/user/agreements/user-agreements.html',

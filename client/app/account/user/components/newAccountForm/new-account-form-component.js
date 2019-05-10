@@ -11,13 +11,13 @@ angular.module('ovhSignupApp').component('newAccountForm', {
     '$q',
     '$http',
     '$timeout',
-    'constants',
+    'coreConfig',
     'NewAccountFormConfig',
     'Alerter',
     'UserAccount.constants',
     'UserAccount.services.Infos',
     '$translate',
-    function ($scope, $q, $http, $timeout, constants, NewAccountFormConfig, Alerter,
+    function ($scope, $q, $http, $timeout, coreConfig, NewAccountFormConfig, Alerter,
       UserAccountConstants, UserAccountServiceInfos, $translate) {
       this.isLoading = false; // true when fetching data from api
       this.initError = null; // initialization error if any
@@ -99,7 +99,7 @@ angular.module('ovhSignupApp').component('newAccountForm', {
                 if (editedRule.fieldName === 'email') {
                   emailFieldIndex = index;
                   editedRule.readonly = false;
-                  editedRule.hasBottomMargin = constants.target === 'US';
+                  editedRule.hasBottomMargin = coreConfig.getRegion() === 'US';
                 } else {
                   editedRule.readonly = _(this.readonly).includes(editedRule.fieldName);
                   editedRule.hasBottomMargin = true;
@@ -110,7 +110,7 @@ angular.module('ovhSignupApp').component('newAccountForm', {
               .value();
 
 
-            if (constants.target !== 'US') {
+            if (coreConfig.getRegion() !== 'US') {
               rules.splice(emailFieldIndex + 1, 0, {
                 in: null,
                 mandatory: false,
@@ -194,7 +194,7 @@ angular.module('ovhSignupApp').component('newAccountForm', {
             .then(() => $timeout(angular.noop, 3000) /* add some delay for task creation */);
         }
 
-        if (this.originalModel.commercialCommunicationsApproval !== this.model.commercialCommunicationsApproval && constants.target !== 'US') {
+        if (this.originalModel.commercialCommunicationsApproval !== this.model.commercialCommunicationsApproval && coreConfig.getRegion() !== 'US') {
           promise = promise
             .then(() => UserAccountServiceInfos.updateConsentDecision(
               CONSENT_MARKETING_EMAIL_NAME,

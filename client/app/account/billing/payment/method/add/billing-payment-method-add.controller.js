@@ -6,7 +6,7 @@ export default class BillingPaymentMethodAddCtrl {
   /* @ngInject */
 
   constructor($q, $state, $stateParams, $translate, $window, Alerter, billingPaymentMethodSection,
-    BillingPaymentMethodService, BillingVantivInstance, constants, currentUser,
+    BillingPaymentMethodService, BillingVantivInstance, coreConfig, currentUser,
     ovhContacts, ovhPaymentMethod) {
     // dependencies injections
     this.$q = $q;
@@ -18,7 +18,7 @@ export default class BillingPaymentMethodAddCtrl {
     this.billingPaymentMethodSection = billingPaymentMethodSection;
     this.BillingPaymentMethodService = BillingPaymentMethodService;
     this.BillingVantivInstance = BillingVantivInstance;
-    this.constants = constants;
+    this.coreConfig = coreConfig;
     this.currentUser = currentUser; // from app route resolve
     this.ovhContacts = ovhContacts;
     this.ovhPaymentMethod = ovhPaymentMethod;
@@ -40,7 +40,7 @@ export default class BillingPaymentMethodAddCtrl {
             'original.value',
           ) === 'bankAccount';
 
-          return isLegacy && !isLegacyBankAccount && this.constants.target !== 'US';
+          return isLegacy && !isLegacyBankAccount && this.coreConfig.getRegion() !== 'US';
         },
       },
       legacyBankAccount: {
@@ -65,13 +65,13 @@ export default class BillingPaymentMethodAddCtrl {
         name: 'billingAddress',
         position: 2,
         isLoading: false,
-        isVisible: () => !this.model.selectedPaymentMethodType.original || this.constants.target === 'US',
-        isLastStep: () => this.constants.target !== 'US',
+        isVisible: () => !this.model.selectedPaymentMethodType.original || this.coreConfig.getRegion() === 'US',
+        isLastStep: () => this.coreConfig.getRegion() !== 'US',
       },
       paymentMethod: {
         name: 'paymentMethod',
         position: 3,
-        isVisible: () => this.constants.target === 'US',
+        isVisible: () => this.coreConfig.getRegion() === 'US',
         isLastStep: () => true,
         onFocus: () => {
           if (this.BillingVantivInstance.instance) {
@@ -113,7 +113,7 @@ export default class BillingPaymentMethodAddCtrl {
 
   manageLegacyResponse(result) {
     if (_.get(this.model.selectedPaymentMethodType, 'original.value') !== 'bankAccount') {
-      if (this.constants.target !== 'US') {
+      if (this.coreConfig.getRegion() !== 'US') {
         // display a message to tell that a new tab have been opened
         this.addAlertMessage.type = 'info';
         this.addAlertMessage.message = this.$translate.instant('billing_payment_method_add_info', {
@@ -157,7 +157,7 @@ export default class BillingPaymentMethodAddCtrl {
     if (this.model.selectedPaymentMethodType.original) {
       addParams = _.merge(addParams, this.getLegacyAddParams());
     }
-    if (!this.model.selectedPaymentMethodType.original || this.constants.target === 'US') {
+    if (!this.model.selectedPaymentMethodType.original || this.coreConfig.getRegion() === 'US') {
       const paymentMethodContact = _.get(this.$state.current, 'sharedModel.billingAddress');
 
       // if no id to contact, we need to create it first before adding payment method
@@ -200,7 +200,7 @@ export default class BillingPaymentMethodAddCtrl {
       .then(() => this.ovhPaymentMethod
         .addPaymentMethod(this.model.selectedPaymentMethodType, addParams))
       .then((result) => {
-        if (this.constants.target === 'US') {
+        if (this.coreConfig.getRegion() === 'US') {
           return this.BillingPaymentMethodService.submitVantiv(result);
         }
 

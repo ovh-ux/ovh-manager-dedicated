@@ -68,7 +68,6 @@ import 'script-loader!u2f-api-polyfill/u2f-api-polyfill.js';
 import 'ovh-api-services';
 import 'ovh-angular-toaster';
 import 'script-loader!ovh-jquery-ui-draggable-ng/dist/ovh-jquery-ui-draggable-ng.min.js';
-import 'script-loader!ovh-angular-sidebar-menu/dist/ovh-angular-sidebar-menu.min.js';
 import 'angular-translate';
 import 'script-loader!angular-translate/dist/angular-translate-loader-partial/angular-translate-loader-partial.min.js';
 import 'ng-slide-down';

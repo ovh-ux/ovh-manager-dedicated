@@ -10,6 +10,7 @@ angular
       $translate,
       $uibModal,
       constants,
+      coreConfig,
       DedicatedCloud,
       OvhApiDedicatedCloud,
       User,
@@ -21,6 +22,7 @@ angular
       this.$translate = $translate;
       this.$uibModal = $uibModal;
       this.constants = constants;
+      this.coreConfig = coreConfig;
       this.DedicatedCloud = DedicatedCloud;
       this.OvhApiDedicatedCloud = OvhApiDedicatedCloud;
       this.User = User;
@@ -32,7 +34,7 @@ angular
       this.$scope.loadingError = false;
       this.$scope.dedicatedCloud = null;
 
-      this.$scope.allowDedicatedServerComplianceOptions = this.constants.target !== 'US';
+      this.$scope.allowDedicatedServerComplianceOptions = this.coreConfig.getRegion() !== 'US';
 
       this.$scope.dedicatedCloudDescription = {
         model: null,

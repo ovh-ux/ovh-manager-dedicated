@@ -5,6 +5,7 @@ class SessionService {
     $translate,
     atInternet,
     constants,
+    coreConfig,
     CdnDomain,
     DedicatedCloud,
     Nas,
@@ -20,6 +21,7 @@ class SessionService {
     this.$rootScope = $rootScope;
     this.$translate = $translate;
     this.constants = constants;
+    this.coreConfig = coreConfig;
     this.$translate = $translate;
     this.atInternet = atInternet;
     this.cdnDomain = CdnDomain;
@@ -275,7 +277,7 @@ class SessionService {
       title: this.$translate.instant('navigation_left_ip'),
       state: 'app.ip',
     },
-    (this.constants.target === 'CA') && {
+    (this.coreConfig.getRegion() === 'CA') && {
       name: 'microsoft',
       title: this.$translate.instant('navigation_left_microsoft'),
       subLinks: this.getMicrosoftMenu(products.microsoft),
@@ -354,7 +356,7 @@ class SessionService {
           name: 'assistance::helpline',
           type: 'action',
         }),
-        mustBeKept: _.has(currentSubsidiaryURLs, 'support_contact') && this.constants.target !== 'US',
+        mustBeKept: _.has(currentSubsidiaryURLs, 'support_contact') && this.coreConfig.getRegion() !== 'US',
       },
       {
         title: `${this.$translate.instant('otrs_menu_chatbot')} <sup class="oui-color-california">OVH Chat</sup>`,
@@ -459,7 +461,7 @@ class SessionService {
               title: this.$translate.instant('menu_security'),
               state: 'app.account.useraccount.security',
             },
-            (this.constants.target === 'EU' || this.constants.target === 'CA') && {
+            (this.coreConfig.getRegion() === 'EU' || this.coreConfig.getRegion() === 'CA') && {
               title: this.$translate.instant('menu_emails'),
               state: 'app.account.useraccount.emails',
             }, {
@@ -476,7 +478,7 @@ class SessionService {
 
           // Billing
           // Pay As You Go for US
-          !currentUser.isEnterprise && this.constants.target === 'US' && {
+          !currentUser.isEnterprise && this.coreConfig.getRegion() === 'US' && {
             name: 'user.billing',
             title: this.$translate.instant('menu_billing'),
             state: 'app.account.billing.main.pay-as-you-go',
@@ -484,7 +486,7 @@ class SessionService {
           },
 
           // history for EU and CA...
-          !currentUser.isEnterprise && this.constants.target !== 'US' && {
+          !currentUser.isEnterprise && this.coreConfig.getRegion() !== 'US' && {
             name: 'user.billing',
             title: this.$translate.instant('menu_billing'),
             state: 'app.account.billing.main.history',
@@ -492,7 +494,7 @@ class SessionService {
           },
 
           // Services
-          (this.constants.target === 'EU' || this.constants.target === 'CA') && (!currentUser.isEnterprise ? {
+          (this.coreConfig.getRegion() === 'EU' || this.coreConfig.getRegion() === 'CA') && (!currentUser.isEnterprise ? {
             name: 'user.services',
             title: this.$translate.instant('menu_services'),
             state: 'app.account.billing.service.autoRenew',
@@ -518,14 +520,14 @@ class SessionService {
           },
 
           // Orders
-          (!currentUser.isEnterprise && this.constants.target === 'EU' && currentUser.ovhSubsidiary === 'FR') && {
+          (!currentUser.isEnterprise && this.coreConfig.getRegion() === 'EU' && currentUser.ovhSubsidiary === 'FR') && {
             title: this.$translate.instant('menu_orders'),
             state: 'app.account.billing.orders',
             click: () => this.trackUserMenuSection('my_orders', 'orders'),
           },
 
           // Contacts
-          (this.constants.target === 'EU') && {
+          (this.coreConfig.getRegion() === 'EU') && {
             title: this.$translate.instant('menu_contacts'),
             state: 'app.account.useraccount.contacts.services',
             click: () => this.trackUserMenuSection('my_contacts', 'contacts'),

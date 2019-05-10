@@ -78,5 +78,10 @@ module.exports = (env = {}) => {
         jquery: path.resolve(__dirname, 'node_modules/jquery'),
       },
     },
+    plugins: [
+      new webpack.DefinePlugin({
+        __WEBPACK_REGION__: `'${env.region.toUpperCase()}'`,
+      }),
+    ],
   });
 };

@@ -1,4 +1,4 @@
-angular.module('Module.ip.controllers').controller('IplbOrderPopCtrl', ($scope, $rootScope, $q, $translate, Ip, Iplb, Alerter) => {
+angular.module('Module.ip.controllers').controller('IplbOrderPopCtrl', ($scope, $rootScope, $q, $translate, Ip, Iplb, Alerter, coreConfig) => {
   $scope.data = $scope.currentActionData; // service
   $scope.availablePop = [];
   $scope.model = {};
@@ -20,7 +20,7 @@ angular.module('Module.ip.controllers').controller('IplbOrderPopCtrl', ($scope, 
       $scope.availablePop = _.difference(models['ip.LoadBalancingZoneEnum'].enum, $scope.data.infos.zone || []);
 
       // Remove trans-ocean pop... :'(
-      if ($scope.worldPart === 'EU') {
+      if (coreConfig.getRegion() === 'EU') {
         $scope.availablePop = _.without($scope.availablePop, 'bhs');
       } else {
         $scope.availablePop = _.without($scope.availablePop, 'gra', 'rbx', 'sbg');

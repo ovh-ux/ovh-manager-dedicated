@@ -4,7 +4,7 @@ angular.module('Billing').controller('Billing.PaymentsCtrl', function (
   $state,
   $translate,
   atInternet,
-  constants,
+  coreConfig,
   OvhApiMe,
 ) {
   this.loadPayments = ($config) => {
@@ -77,9 +77,9 @@ angular.module('Billing').controller('Billing.PaymentsCtrl', function (
 
   this.getTranslatedPaiementType = payment => (payment.paymentInfo ? $translate.instant(`common_payment_type_${payment.paymentInfo.paymentType}`) : $translate.instant('payments_table_type_not_available'));
 
-  this.shouldDisplayDepositsLinks = () => constants.target !== 'US';
+  this.shouldDisplayDepositsLinks = () => coreConfig.getRegion() !== 'US';
 
-  this.displayActionsCol = () => constants.target !== 'US';
+  this.displayActionsCol = () => coreConfig.getRegion() !== 'US';
 
   this.depositDetailsHref = ({ depositId }) => $state.href('app.account.billing.main.payments.details', { id: depositId });
 
@@ -94,7 +94,7 @@ angular.module('Billing').controller('Billing.PaymentsCtrl', function (
 
   this.$onInit = () => {
     this.payments = [];
-    if (constants.target === 'US') {
+    if (coreConfig.getRegion() === 'US') {
       return OvhApiMe.DepositRequest().v6().query().$promise.then((depositRequests) => {
         this.paymentRequests = depositRequests;
         this.paymentRequestsHref = $state.href('app.account.billing.main.payments.request');

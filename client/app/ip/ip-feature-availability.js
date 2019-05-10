@@ -1,8 +1,8 @@
 angular.module('Module.ip.services').service('ipFeatureAvailability', class {
-  constructor(constants) {
+  constructor(coreConfig) {
     'ngInject';
 
-    this.target = constants.target;
+    this.target = coreConfig.getRegion();
   }
 
   showState() {

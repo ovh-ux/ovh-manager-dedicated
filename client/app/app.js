@@ -1,3 +1,5 @@
+import { Environment } from '@ovh-ux/manager-config';
+import ovhManagerCore from '@ovh-ux/manager-core';
 import _ from 'lodash';
 import ngAtInternet from '@ovh-ux/ng-at-internet';
 import ngAtInternetUiRouterPlugin from '@ovh-ux/ng-at-internet-ui-router-plugin';
@@ -15,14 +17,16 @@ import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
 import ovhContacts from '@ovh-ux/ng-ovh-contacts';
 import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
 import uiRouter from '@uirouter/angularjs';
-
+import ngOvhSidebarMenu from '@ovh-ux/ng-ovh-sidebar-menu';
 import config from './config/config';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
-
 import dedicatedCloudDatacenterDrp from './dedicatedCloud/datacenter/drp';
+
+Environment.setRegion(__WEBPACK_REGION__);
 
 angular
   .module('App', [
+    ovhManagerCore,
     'Billing',
     'chart.js',
     'controllers',
@@ -59,6 +63,7 @@ angular
     'ovh-angular-q-allSettled',
     'ovh-angular-responsive-tabs',
     'ovh-angular-sidebar-menu',
+    ngOvhSidebarMenu,
     'ovh-angular-tail-logs',
     'ovh-utils-angular',
     'ovhBrowserAlert',
@@ -140,7 +145,7 @@ angular
   .run((ssoAuthentication, User) => {
     ssoAuthentication.login().then(() => User.getUser());
   })
-  .run(($transitions, $rootScope, $state, constants) => {
+  .run(($transitions, $rootScope, $state, coreConfig) => {
     $rootScope.$on('$locationChangeStart', () => {
       delete $rootScope.isLeftMenuVisible; // eslint-disable-line
     });
@@ -154,7 +159,7 @@ angular
       }
     });
 
-    _.set($rootScope, 'worldPart', constants.target);
+    _.set($rootScope, 'worldPart', coreConfig.getRegion());
   })
   .run(($location) => {
     const queryParams = $location.search();
@@ -170,43 +175,6 @@ angular
   })
   .run((zendesk) => {
     zendesk.init();
-  })
-  .factory('translateInterceptor', ($q) => {
-    const regexp = new RegExp(/Messages\w+\.json$/i);
-    return {
-      responseError(rejection) {
-        if (regexp.test(rejection.config.url)) {
-          return {};
-        }
-        return $q.reject(rejection);
-      },
-    };
-  })
-  .factory('translateMissingTranslationHandler', $sanitize => function missingTranslationHandler(translationId) {
-    // Fix security issue: https://github.com/angular-translate/angular-translate/issues/1418
-    return $sanitize(translationId);
-  })
-  .config((LANGUAGES, $translateProvider, constants) => {
-    let defaultLanguage = constants.DEFAULT_LANGUAGE;
-
-    // if there is a stored language value, be sure it's a valid one
-    if (localStorage['univers-selected-language'] && _.find(LANGUAGES, { value: localStorage['univers-selected-language'] })) {
-      defaultLanguage = localStorage['univers-selected-language'];
-    } else {
-      localStorage['univers-selected-language'] = defaultLanguage;
-    }
-
-    $translateProvider.useLoader('asyncLoader');
-    $translateProvider.useMissingTranslationHandler('translateMissingTranslationHandler');
-    $translateProvider.useLoaderCache(true);
-    $translateProvider.useSanitizeValueStrategy('sceParameters');
-
-    $translateProvider.preferredLanguage(defaultLanguage);
-    $translateProvider.use(defaultLanguage);
-    $translateProvider.fallbackLanguage(constants.FALLBACK_LANGUAGE);
-  })
-  .config(($transitionsProvider, $httpProvider) => {
-    $httpProvider.interceptors.push('translateInterceptor');
   })
   .config(($qProvider) => {
     $qProvider.errorOnUnhandledRejections(false);

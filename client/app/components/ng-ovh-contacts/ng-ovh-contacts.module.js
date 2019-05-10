@@ -1,3 +1,3 @@
-angular.module('App').config((ovhContactsProvider, constants) => {
-  ovhContactsProvider.setTarget(constants.target);
+angular.module('App').config((ovhContactsProvider, coreConfigProvider) => {
+  ovhContactsProvider.setTarget(coreConfigProvider.getRegion());
 });

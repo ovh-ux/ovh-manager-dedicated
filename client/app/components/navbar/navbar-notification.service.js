@@ -1,7 +1,7 @@
 class NavbarNotificationService {
   constructor(
     $interval, $q, $translate,
-    Alerter, atInternet, constants, Navbar, OvhApiNotificationAapi,
+    Alerter, atInternet, coreConfig, Navbar, OvhApiNotificationAapi,
     UNIVERSE,
   ) {
     this.$interval = $interval;
@@ -9,7 +9,7 @@ class NavbarNotificationService {
     this.$translate = $translate;
     this.alerter = Alerter;
     this.atInternet = atInternet;
-    this.constants = constants;
+    this.coreConfig = coreConfig;
     this.Navbar = Navbar;
     this.OvhApiNotificationAapi = OvhApiNotificationAapi;
     this.UNIVERSE = UNIVERSE;
@@ -20,7 +20,7 @@ class NavbarNotificationService {
   getMessages() {
     return this.$translate.refresh().then(() => this.OvhApiNotificationAapi.query({
       lang: this.$translate.preferredLanguage(),
-      target: this.constants.target,
+      target: this.coreConfig.getRegion(),
       universe: this.UNIVERSE,
     }).$promise);
   }

@@ -1,6 +1,6 @@
 angular.module('App').service('dedicatedServerFeatureAvailability', class {
-  constructor(constants) {
-    this.target = constants.target;
+  constructor(coreConfig) {
+    this.target = coreConfig.getRegion();
   }
 
   hasContactChangement() {
