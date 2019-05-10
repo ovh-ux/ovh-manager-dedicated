@@ -5,6 +5,7 @@ angular.module('App')
     atInternet,
     CdnDomain,
     constants,
+    coreConfig,
     DedicatedCloud,
     ipFeatureAvailability,
     Nas,
@@ -27,7 +28,7 @@ angular.module('App')
           href: results.cloudProjectOrder,
         });
 
-        if (constants.target === 'EU') {
+        if (coreConfig.getRegion() === 'EU') {
           actionsMenuOptions.push({
             id: 'order-nas',
             title: 'Nas',
@@ -44,7 +45,7 @@ angular.module('App')
           target: '_blank',
         });
 
-        if (constants.target === 'US') {
+        if (coreConfig.getRegion() === 'US') {
           actionsMenuOptions.push({
             id: 'order-vrack',
             title: $translate.instant('navigation_left_vrack'),
@@ -70,12 +71,12 @@ angular.module('App')
           state: 'app.license.order',
         });
 
-        SidebarMenu.addActionsMenuItemClickHandler((id) => {
+        /* SidebarMenu.addActionsMenuItemClickHandler((id) => {
           atInternet.trackClick({
             name: id,
             type: 'action',
           });
-        });
+        }); */
 
         return SidebarMenu.addActionsMenuOptions(actionsMenuOptions);
       });
@@ -102,7 +103,7 @@ angular.module('App')
 
 
       let networksMenuItem;
-      if (constants.target === 'EU') {
+      if (coreConfig.getRegion() === 'EU') {
         networksMenuItem = SidebarMenu.addMenuItem({
           name: 'networks',
           title: $translate.instant('navigation_left_nas_and_cdn'),
@@ -115,7 +116,7 @@ angular.module('App')
 
       let microsoftItem;
       let exchangesItem;
-      if (constants.target === 'CA') {
+      if (coreConfig.getRegion() === 'CA') {
         microsoftItem = SidebarMenu.addMenuItem({
           title: $translate.instant('navigation_left_microsoft'),
           category: 'microsoft',
@@ -149,7 +150,7 @@ angular.module('App')
         icon: 'ovh-font ovh-font-ip',
       });
 
-      if (constants.target === 'US') {
+      if (coreConfig.getRegion() === 'US') {
         SidebarMenu.addMenuItem({
           name: 'vrack',
           title: $translate.instant('navigation_left_vrack'),
@@ -161,7 +162,6 @@ angular.module('App')
 
       const productsPromise = Products.getProductsByType().then((products) => {
         const pending = [];
-
         if (products) {
           _.chain(products.dedicatedServers)
             .sortBy(elt => angular.lowercase(elt.displayName))
@@ -176,7 +176,7 @@ angular.module('App')
               }, dedicatedServersMenuItem);
             })
             .value();
-
+          console.log(SidebarMenu);
           _.chain(products.dedicatedClouds)
             .sortBy(elt => angular.lowercase(elt.name))
             .forEach((pcc) => {
@@ -208,7 +208,7 @@ angular.module('App')
             .filter(network => network.type === 'CDN' || network.type === 'NAS' || network.type === 'NASHA')
             .sortBy(elt => angular.lowercase(elt.name))
             .forEach((network) => {
-              if (network.type === 'CDN' && constants.target === 'EU') {
+              if (network.type === 'CDN' && coreConfig.getRegion() === 'EU') {
                 const sidebarItem = SidebarMenu.addMenuItem({
                   title: network.name,
                   state: 'app.networks.cdn.dedicated',
@@ -230,7 +230,7 @@ angular.module('App')
                     });
                   }),
                 }, networksMenuItem);
-              } else if (constants.target === 'EU') {
+              } else if (coreConfig.getRegion() === 'EU') {
                 pending.push(Nas.getNas().then(({ results }) => {
                   _.forEach(results, (result) => {
                     SidebarMenu.addMenuItem({
@@ -249,7 +249,7 @@ angular.module('App')
             .value();
 
           /* eslint-disable no-nested-ternary */
-          if (constants.target === 'CA') {
+          if (coreConfig.getRegion() === 'CA') {
             _.chain(products.exchanges)
               .sortBy(elt => angular.lowercase(elt.name))
               .forEach((exchange) => {
@@ -281,7 +281,7 @@ angular.module('App')
     const mainPromise = $translate
       .refresh()
       .then(() => buildSidebarActions())
-      .then(() => buildSidebar());
-
+      .then(() => buildSidebar())
+      .catch(err => console.log(err));
     SidebarMenu.setInitializationPromise(mainPromise);
   });

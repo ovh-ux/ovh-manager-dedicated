@@ -62,7 +62,6 @@ angular
     'ovh-angular-pagination-front',
     'ovh-angular-q-allSettled',
     'ovh-angular-responsive-tabs',
-    'ovh-angular-sidebar-menu',
     ngOvhSidebarMenu,
     'ovh-angular-tail-logs',
     'ovh-utils-angular',
