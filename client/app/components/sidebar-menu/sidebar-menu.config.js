@@ -22,61 +22,60 @@ angular.module('App')
         const actionsMenuOptions = [];
 
         actionsMenuOptions.push({
-          id: 'order-pci-project-new',
-          title: $translate.instant('sidebar_actions_menu_cloud_project'),
-          icon: 'ovh-font ovh-font-public-cloud',
-          href: results.cloudProjectOrder,
+	  id: 'order-pci-project-new',
+	  title: $translate.instant('sidebar_actions_menu_cloud_project'),
+	  icon: 'ovh-font ovh-font-public-cloud',
+	  href: results.cloudProjectOrder,
         });
 
         if (coreConfig.getRegion() === 'EU') {
-          actionsMenuOptions.push({
-            id: 'order-nas',
-            title: 'Nas',
-            icon: 'ovh-font ovh-font-cloudnas',
-            state: 'app.networks.nas.order',
-          });
+	    actionsMenuOptions.push({
+	    id: 'order-nas',
+	    title: 'Nas',
+	    icon: 'ovh-font ovh-font-cloudnas',
+	    state: 'app.networks.nas.order',
+	    });
         }
 
         actionsMenuOptions.push({
-          id: 'order-dedicated-server',
-          title: $translate.instant('navigation_left_dedicatedServers'),
-          icon: 'ovh-font ovh-font-server',
-          href: results.dedicatedOrder,
-          target: '_blank',
+	  id: 'order-dedicated-server',
+	  title: $translate.instant('navigation_left_dedicatedServers'),
+	  icon: 'ovh-font ovh-font-server',
+	  href: results.dedicatedOrder,
+	  target: '_blank',
         });
 
         if (coreConfig.getRegion() === 'US') {
-          actionsMenuOptions.push({
-            id: 'order-vrack',
-            title: $translate.instant('navigation_left_vrack'),
-            icon: 'ovh-font ovh-font-vRack',
-            href: results.vrackOrder,
-            target: '_blank',
-          });
+	    actionsMenuOptions.push({
+	    id: 'order-vrack',
+	    title: $translate.instant('navigation_left_vrack'),
+	    icon: 'ovh-font ovh-font-vRack',
+	    href: results.vrackOrder,
+	    target: '_blank',
+	  });
         }
 
         if (ipFeatureAvailability.allowIPFailoverAgoraOrder()) {
-          actionsMenuOptions.push({
-            id: 'order-additional-ip',
-            title: $translate.instant('navigation_left_additional_ip'),
-            icon: 'ovh-font ovh-font-ip',
-            state: 'app.ip.agora-order',
-          });
+	    actionsMenuOptions.push({
+	    id: 'order-additional-ip',
+	    title: $translate.instant('navigation_left_additional_ip'),
+	    icon: 'ovh-font ovh-font-ip',
+	    state: 'app.ip.agora-order',
+	   });
         }
 
         actionsMenuOptions.push({
-          id: 'order-license',
-          title: $translate.instant('navigation_left_licences'),
-          icon: 'ovh-font ovh-font-certificate',
-          state: 'app.license.order',
+	  id: 'order-license',
+	  title: $translate.instant('navigation_left_licences'),
+	  icon: 'ovh-font ovh-font-certificate',
+	  state: 'app.license.order',
         });
-
         /* SidebarMenu.addActionsMenuItemClickHandler((id) => {
-          atInternet.trackClick({
-            name: id,
-            type: 'action',
-          });
-        }); */
+	    atInternet.trackClick({
+	    name: id,
+	    type: 'action',
+	  });
+	}); */
 
         return SidebarMenu.addActionsMenuOptions(actionsMenuOptions);
       });
@@ -105,12 +104,12 @@ angular.module('App')
       let networksMenuItem;
       if (coreConfig.getRegion() === 'EU') {
         networksMenuItem = SidebarMenu.addMenuItem({
-          name: 'networks',
-          title: $translate.instant('navigation_left_nas_and_cdn'),
-          allowSubItems: true,
-          allowSearch: true,
-          loadOnState: 'app.networks',
-          icon: 'ovh-font ovh-font-network',
+	  name: 'networks',
+	  title: $translate.instant('navigation_left_nas_and_cdn'),
+	  allowSubItems: true,
+	  allowSearch: true,
+	  loadOnState: 'app.networks',
+	  icon: 'ovh-font ovh-font-network',
         });
       }
 
@@ -118,20 +117,20 @@ angular.module('App')
       let exchangesItem;
       if (coreConfig.getRegion() === 'CA') {
         microsoftItem = SidebarMenu.addMenuItem({
-          title: $translate.instant('navigation_left_microsoft'),
-          category: 'microsoft',
-          icon: 'ms-Icon ms-Icon--WindowsLogo',
-          allowSubItems: true,
-          loadOnState: 'app.microsoft',
-          allowSearch: true,
+	  title: $translate.instant('navigation_left_microsoft'),
+	  category: 'microsoft',
+	  icon: 'ms-Icon ms-Icon--WindowsLogo',
+	  allowSubItems: true,
+	  loadOnState: 'app.microsoft',
+	  allowSearch: true,
         });
 
         exchangesItem = SidebarMenu.addMenuItem({
-          title: $translate.instant('navigation_left_exchange'),
-          category: 'microsoft',
-          icon: 'ms-Icon ms-Icon--ExchangeLogo',
-          allowSubItems: true,
-          loadOnState: 'app.microsoft.exchange',
+	  title: $translate.instant('navigation_left_exchange'),
+	  category: 'microsoft',
+	  icon: 'ms-Icon ms-Icon--ExchangeLogo',
+	  allowSubItems: true,
+	  loadOnState: 'app.microsoft.exchange',
         }, microsoftItem);
       }
 
@@ -152,120 +151,120 @@ angular.module('App')
 
       if (coreConfig.getRegion() === 'US') {
         SidebarMenu.addMenuItem({
-          name: 'vrack',
-          title: $translate.instant('navigation_left_vrack'),
-          url: constants.vrackUrl,
-          target: '_self',
-          icon: 'ovh-font ovh-font-vRack',
+	  name: 'vrack',
+	  title: $translate.instant('navigation_left_vrack'),
+	  url: constants.vrackUrl,
+	  target: '_self',
+	  icon: 'ovh-font ovh-font-vRack',
         });
       }
 
       const productsPromise = Products.getProductsByType().then((products) => {
         const pending = [];
         if (products) {
-          _.chain(products.dedicatedServers)
-            .sortBy(elt => angular.lowercase(elt.displayName))
-            .forEach((server) => {
-              SidebarMenu.addMenuItem({
+	  _.chain(products.dedicatedServers)
+	    .sortBy(elt => angular.lowercase(elt.displayName))
+	    .forEach((server) => {
+	      SidebarMenu.addMenuItem({
                 title: server.displayName,
                 state: server.type.toLowerCase() === 'housing' ? 'app.dedicated.housing' : 'app.dedicated.server',
                 stateParams: {
-                  productId: server.name,
+		  productId: server.name,
                 },
                 icon: `ovh-font ovh-font-${server.type.toLowerCase()}`,
-              }, dedicatedServersMenuItem);
-            })
-            .value();
-          console.log(SidebarMenu);
-          _.chain(products.dedicatedClouds)
-            .sortBy(elt => angular.lowercase(elt.name))
-            .forEach((pcc) => {
-              const sidebarItem = SidebarMenu.addMenuItem({
+	       }, dedicatedServersMenuItem);
+	    })
+	    .value();
+
+	   _.chain(products.dedicatedClouds)
+	    .sortBy(elt => angular.lowercase(elt.name))
+	    .forEach((pcc) => {
+	      const sidebarItem = SidebarMenu.addMenuItem({
                 title: pcc.displayName,
                 state: 'app.dedicatedClouds',
                 stateParams: {
-                  productId: pcc.name,
+		  productId: pcc.name,
                 },
                 icon: `ovh-font ovh-font-${_.camelCase(pcc.type)}`,
                 allowSubItems: true,
                 onLoad: () => DedicatedCloud.getDatacenters(pcc.name).then(({ results }) => {
-                  _.forEach(results, (result) => {
-                    SidebarMenu.addMenuItem({
-                      title: result.displayName,
-                      state: 'app.dedicatedClouds.datacenter',
-                      stateParams: {
+		  _.forEach(results, (result) => {
+		    SidebarMenu.addMenuItem({
+		      title: result.displayName,
+		      state: 'app.dedicatedClouds.datacenter',
+		      stateParams: {
                         productId: pcc.name,
                         datacenterId: result.id,
-                      },
-                    }, sidebarItem);
-                  });
+		      },
+		    }, sidebarItem);
+		  });
                 }),
-              }, dedicatedCloudsMenuItem);
-            })
-            .value();
+	      }, dedicatedCloudsMenuItem);
+	    })
+	    .value();
 
-          _.chain(products.networks)
-            .filter(network => network.type === 'CDN' || network.type === 'NAS' || network.type === 'NASHA')
-            .sortBy(elt => angular.lowercase(elt.name))
-            .forEach((network) => {
-              if (network.type === 'CDN' && coreConfig.getRegion() === 'EU') {
+	  _.chain(products.networks)
+	    .filter(network => network.type === 'CDN' || network.type === 'NAS' || network.type === 'NASHA')
+	    .sortBy(elt => angular.lowercase(elt.name))
+	    .forEach((network) => {
+	      if (network.type === 'CDN' && coreConfig.getRegion() === 'EU') {
                 const sidebarItem = SidebarMenu.addMenuItem({
-                  title: network.name,
-                  state: 'app.networks.cdn.dedicated',
-                  stateParams: {
-                    productId: network.name,
-                  },
-                  icon: 'ovh-font ovh-font-cdn',
-                  allowSubItems: true,
-                  onLoad: () => CdnDomain.getDomains(network.name).then(({ results }) => {
-                    _.forEach(results, (result) => {
-                      SidebarMenu.addMenuItem({
+		  title: network.name,
+		  state: 'app.networks.cdn.dedicated',
+		  stateParams: {
+		    productId: network.name,
+		  },
+		  icon: 'ovh-font ovh-font-cdn',
+		  allowSubItems: true,
+		  onLoad: () => CdnDomain.getDomains(network.name).then(({ results }) => {
+		    _.forEach(results, (result) => {
+		      SidebarMenu.addMenuItem({
                         title: result.displayName,
                         state: 'app.networks.cdn.dedicated.domain',
                         stateParams: {
-                          productId: network.name,
-                          domain: result.id,
+			  productId: network.name,
+			  domain: result.id,
                         },
-                      }, sidebarItem);
-                    });
-                  }),
+		      }, sidebarItem);
+		    });
+		  }),
                 }, networksMenuItem);
-              } else if (coreConfig.getRegion() === 'EU') {
+	      } else if (coreConfig.getRegion() === 'EU') {
                 pending.push(Nas.getNas().then(({ results }) => {
-                  _.forEach(results, (result) => {
-                    SidebarMenu.addMenuItem({
-                      title: result.displayName,
-                      state: 'app.networks.nas.details',
-                      stateParams: {
+		  _.forEach(results, (result) => {
+		    SidebarMenu.addMenuItem({
+		      title: result.displayName,
+		      state: 'app.networks.nas.details',
+		      stateParams: {
                         nasType: 'nas',
                         nasId: result.id,
-                      },
-                      icon: 'ovh-font ovh-font-cloudnas',
-                    }, networksMenuItem);
-                  });
+		      },
+		      icon: 'ovh-font ovh-font-cloudnas',
+		    }, networksMenuItem);
+		  });
                 }));
-              }
-            })
-            .value();
+	      }
+	    })
+	    .value();
 
-          /* eslint-disable no-nested-ternary */
-          if (coreConfig.getRegion() === 'CA') {
-            _.chain(products.exchanges)
-              .sortBy(elt => angular.lowercase(elt.name))
-              .forEach((exchange) => {
+	  /* eslint-disable no-nested-ternary */
+	  if (coreConfig.getRegion() === 'CA') {
+	    _.chain(products.exchanges)
+	      .sortBy(elt => angular.lowercase(elt.name))
+	      .forEach((exchange) => {
                 SidebarMenu.addMenuItem({
-                  title: exchange.displayName || exchange.name,
-                  state: exchange.type === 'EXCHANGE_PROVIDER' ? 'app.microsoft.exchange.provider' : exchange.type === 'EXCHANGE_DEDICATED' ? 'app.microsoft.exchange.dedicated' : 'app.microsoft.exchange.hosted',
-                  stateParams: {
-                    organization: exchange.organization,
-                    productId: exchange.name,
-                  },
-                  icon: 'ms-Icon ms-Icon--ExchangeLogo',
+		  title: exchange.displayName || exchange.name,
+		  state: exchange.type === 'EXCHANGE_PROVIDER' ? 'app.microsoft.exchange.provider' : exchange.type === 'EXCHANGE_DEDICATED' ? 'app.microsoft.exchange.dedicated' : 'app.microsoft.exchange.hosted',
+		  stateParams: {
+		    organization: exchange.organization,
+		    productId: exchange.name,
+		  },
+		  icon: 'ms-Icon ms-Icon--ExchangeLogo',
                 }, exchangesItem);
-              })
-              .value();
-          }
-          /* eslint-enable no-nested-ternary */
+	      })
+	      .value();
+	  }
+	  /* eslint-enable no-nested-ternary */
         }
 
         return $q.all(pending);
@@ -280,8 +279,8 @@ angular.module('App')
 
     const mainPromise = $translate
       .refresh()
-      .then(() => buildSidebarActions())
       .then(() => buildSidebar())
+      .then(() => buildSidebarActions())
       .catch(err => console.log(err));
     SidebarMenu.setInitializationPromise(mainPromise);
   });
