@@ -1,3 +1,15 @@
+<a name="10.17.4"></a>
+## [10.17.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.3...v10.17.4) (2019-05-15)
+
+
+### Bug Fixes
+
+* **i18n:** retrieve translations ([1f27699](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1f27699))
+* **i18n:** submit translations ([fe2f6f7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/fe2f6f7))
+* **license:** add missing translations ([#1116](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1116)) ([dad003d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/dad003d))
+
+
+
 <a name="10.17.3"></a>
 ## [10.17.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.2...v10.17.3) (2019-05-15)
 
