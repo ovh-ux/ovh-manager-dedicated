@@ -1,3 +1,17 @@
+<a name="10.17.3"></a>
+## [10.17.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.2...v10.17.3) (2019-05-15)
+
+
+### Bug Fixes
+
+* **deps:** upgrade ovh-module-exchange to v9.4.4 ([#1110](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1110)) ([82570d1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/82570d1))
+* **i18n:** retrieve translations ([e615648](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e615648))
+* **i18n:** retrieve translations ([#1112](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1112)) ([425ebe3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/425ebe3))
+* **i18n:** submit translations ([bf39a4b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bf39a4b))
+* **license:** add both windows server 2019 standard and datacenter ([#1106](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1106)) ([6281350](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6281350))
+
+
+
 <a name="10.17.2"></a>
 ## [10.17.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.1...v10.17.2) (2019-05-06)
 
