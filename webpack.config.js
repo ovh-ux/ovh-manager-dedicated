@@ -65,9 +65,9 @@ module.exports = (env = {}) => {
         './client/app/app.js',
         './client/app/app.controller.js',
         './client/app/app.routes.js',
-      ],
-      modules: glob.sync('./client/app/**/*.module.js'),
-      components: glob.sync('./client/app/components/**/!(*.module).js'),
+      ]
+        .concat(glob.sync('./client/app/**/*.module.js'))
+        .concat(glob.sync('./client/app/components/**/!(*.module).js')),
     }, bundles, extras.length > 0 ? { extras } : {}),
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -77,6 +77,7 @@ module.exports = (env = {}) => {
       alias: {
         jquery: path.resolve(__dirname, 'node_modules/jquery'),
       },
+      mainFields: ['module', 'browser', 'main'],
     },
     plugins: [
       new webpack.DefinePlugin({
