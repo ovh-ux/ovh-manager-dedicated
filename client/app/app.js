@@ -15,12 +15,14 @@ import ngOvhUserPref from '@ovh-ux/ng-ovh-user-pref';
 import ngOvhWebUniverseComponents from '@ovh-ux/ng-ovh-web-universe-components';
 import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
 import ovhContacts from '@ovh-ux/ng-ovh-contacts';
+import ovhManagerServerSidebar from '@ovh-ux/manager-server-sidebar';
 import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
 import uiRouter from '@uirouter/angularjs';
-import ngOvhSidebarMenu from '@ovh-ux/ng-ovh-sidebar-menu';
+
 import config from './config/config';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
 import dedicatedCloudDatacenterDrp from './dedicatedCloud/datacenter/drp';
+
 
 Environment.setRegion(__WEBPACK_REGION__);
 
@@ -62,7 +64,7 @@ angular
     'ovh-angular-pagination-front',
     'ovh-angular-q-allSettled',
     'ovh-angular-responsive-tabs',
-    ngOvhSidebarMenu,
+    ovhManagerServerSidebar,
     'ovh-angular-tail-logs',
     'ovh-utils-angular',
     'ovhBrowserAlert',

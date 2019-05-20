@@ -1,4 +1,4 @@
-class SessionService {
+class UserSessionService {
   constructor(
     $q,
     $rootScope,
@@ -625,4 +625,4 @@ class SessionService {
 }
 
 angular.module('services')
-  .service('SessionService', SessionService);
+  .service('UserSessionService', UserSessionService);
