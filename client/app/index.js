@@ -71,7 +71,7 @@ import 'script-loader!ovh-jquery-ui-draggable-ng/dist/ovh-jquery-ui-draggable-ng
 import 'angular-translate';
 import 'script-loader!angular-translate/dist/angular-translate-loader-partial/angular-translate-loader-partial.min.js';
 import 'ng-slide-down';
-import 'ovh-angular-actions-menu';
+import '@ovh-ux/ng-ovh-actions-menu';
 import 'ovh-angular-responsive-popover';
 import 'script-loader!matchmedia-ng/matchmedia-ng.js';
 import 'angular-aria';

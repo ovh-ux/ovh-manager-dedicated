@@ -1,5 +1,5 @@
 angular.module('App')
-  .controller('SessionCtrl', ($scope, $document, $translate, SessionService) => {
+  .controller('SessionCtrl', ($scope, $document, $translate, UserSessionService) => {
     _.set($document, 'title', $translate.instant('global_app_title'));
 
     // Scroll to anchor id
@@ -11,12 +11,12 @@ angular.module('App')
     };
 
     // Get first base structure of the navbar, to avoid heavy loading
-    SessionService.getNavbar()
+    UserSessionService.getNavbar()
       .then((navbar) => {
         $scope.navbar = navbar;
 
         // Then get the products links, to build the reponsive menu
-        SessionService.getResponsiveLinks()
+        UserSessionService.getResponsiveLinks()
           .then((responsiveLinks) => {
             $scope.navbar.responsiveLinks = responsiveLinks;
           });
