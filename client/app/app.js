@@ -15,6 +15,7 @@ import ngOvhUserPref from '@ovh-ux/ng-ovh-user-pref';
 import ngOvhWebUniverseComponents from '@ovh-ux/ng-ovh-web-universe-components';
 import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
 import ovhContacts from '@ovh-ux/ng-ovh-contacts';
+import ovhManagerNavbar from '@ovh-ux/manager-navbar';
 import ovhManagerServerSidebar from '@ovh-ux/manager-server-sidebar';
 import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
 import uiRouter from '@uirouter/angularjs';
@@ -69,6 +70,7 @@ angular
     'ovh-utils-angular',
     'ovhBrowserAlert',
     ovhContacts,
+    ovhManagerNavbar,
     ovhPaymentMethod,
     'pascalprecht.translate',
     'services',
