@@ -13,7 +13,7 @@ angular
     '2014v1Enterprise': '2014 Enterprise',
     '2013v1': '2013',
   })
-  .service('DedicatedCloud', function (Products, $http, $q, constants, $cacheFactory, $rootScope,
+  .service('DedicatedCloud', function (Products, $http, $q, coreConfig, $cacheFactory, $rootScope,
     OvhApiDedicatedCloud, OvhHttp, Poll, Poller, DEDICATED_CLOUD_CONSTANTS, VM_ENCRYPTION_KMS) {
     const self = this;
     const dedicatedCloudCache = {
@@ -420,7 +420,7 @@ angular
     /* ------- SUB DATACENTER LICENCES -------*/
 
     this.getDatacenterLicence = function (serviceName) {
-      if (constants.target === 'US') {
+      if (coreConfig.getRegion() === 'US') {
         return OvhHttp.get('/dedicatedCloud/{serviceName}', {
           rootPath: 'apiv6',
           urlParams: {

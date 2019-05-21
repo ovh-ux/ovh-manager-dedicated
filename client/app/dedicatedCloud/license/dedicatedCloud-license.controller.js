@@ -1,4 +1,4 @@
-angular.module('App').controller('DedicatedCloudLicencesCtrl', ($rootScope, $scope, $state, $stateParams, $translate, constants, DedicatedCloud) => {
+angular.module('App').controller('DedicatedCloudLicencesCtrl', ($rootScope, $scope, $state, $stateParams, $translate, coreConfig, DedicatedCloud) => {
   $scope.licences = {
     model: null,
     spla: null,
@@ -34,7 +34,7 @@ angular.module('App').controller('DedicatedCloudLicencesCtrl', ($rootScope, $sco
   };
 
   $scope.enableLicense = function () {
-    if (constants.target === 'US') {
+    if (coreConfig.getRegion() === 'US') {
       $state.go('app.dedicatedClouds.license.enable');
     } else {
       $scope.setAction('license/enable/dedicatedCloud-license-enable');

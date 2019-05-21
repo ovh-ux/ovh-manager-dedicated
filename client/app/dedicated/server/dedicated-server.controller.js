@@ -7,6 +7,7 @@ angular.module('App').controller('ServerCtrl', (
   $timeout,
   $translate,
   constants,
+  coreConfig,
   dedicatedServerFeatureAvailability,
   ovhUserPref,
   Polling,
@@ -37,7 +38,7 @@ angular.module('App').controller('ServerCtrl', (
     noDeleteMessage: false,
   };
   $scope.urlRenew = null;
-  $scope.worldPart = constants.target;
+  $scope.worldPart = coreConfig.getRegion();
 
   $scope.bigModalDialog = false;
 

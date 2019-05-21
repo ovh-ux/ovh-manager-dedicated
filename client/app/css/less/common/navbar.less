@@ -1,9 +1,4 @@
 .oui-navbar {
-  // Logo
-  &__brand {
-    .navbar-logo { height: 3rem; }
-  }
-
   // Universes
   &-list_main {
     .navbar-universe(web, @oui-color-jungle);
@@ -21,31 +16,6 @@
     }
   }
 
-  // Icons
-  .navbar-icon(icon-assistance);
-  .navbar-icon(icon-notifications);
-  .navbar-icon(icon-user);
-
-  .navbar-icon(@icon-selector) {
-    .navbar-@{icon-selector} {
-      background: url('../../../images/navbar/@{icon-selector}.svg') no-repeat center center;
-      background-size: contain;
-
-      &.oui-icon_shake {
-        background: url('../../../images/navbar/@{icon-selector}_on.svg') no-repeat center center;
-      }
-    }
-
-    .oui-navbar-link {
-      &:hover,
-      &:focus,
-      &_active,
-      &[aria-expanded="true"] {
-        .navbar-@{icon-selector} { background: url('../../../images/navbar/@{icon-selector}_on.svg') no-repeat center center; }
-      }
-    }
-  }
-
   // Logout
   .logout > .oui-navbar-link {
     &,
@@ -56,6 +26,10 @@
       color: @oui-color-error-dark;
     }
   }
+}
+
+.left-0 {
+  left: 0;
 }
 
 .skipnav a {

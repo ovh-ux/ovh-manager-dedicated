@@ -8,6 +8,7 @@ angular
       $stateParams,
       $translate,
       constants,
+      coreConfig,
       DedicatedCloud,
       VEEAM_STATE_ENUM,
     ) {
@@ -16,6 +17,7 @@ angular
       this.$stateParams = $stateParams;
       this.$translate = $translate;
       this.constants = constants;
+      this.coreConfig = coreConfig;
       this.DedicatedCloud = DedicatedCloud;
       this.VEEAM_STATE_ENUM = VEEAM_STATE_ENUM;
     }
@@ -27,7 +29,7 @@ angular
       };
 
       this.$scope.loading = false;
-      this.$scope.isUS = this.constants.target === 'US';
+      this.$scope.isUS = this.coreConfig.getRegion() === 'US';
 
       this.$rootScope.$on('datacenter.veeam.reload', () => {
         this.$scope.loadVeeam(true);

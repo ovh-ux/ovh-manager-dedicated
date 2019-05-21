@@ -3,9 +3,9 @@ angular
   .config([
     '$stateProvider',
     '$urlRouterProvider',
-    'Billing.constants',
-    ($stateProvider, $urlRouterProvider, constants) => {
-      if (constants.target === 'EU') {
+    'coreConfigProvider',
+    ($stateProvider, $urlRouterProvider, coreConfigProvider) => {
+      if (coreConfigProvider.getRegion() === 'EU') {
         const name = 'app.account.billing.payment.fidelity';
 
         $stateProvider.state(name, {

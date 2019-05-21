@@ -1,11 +1,12 @@
 angular.module('App')
   .controller('DedicatedCloudDatacentersCtrl', class DedicatedCloudDatacentersController {
-    constructor($q, $scope, $state, $stateParams, constants, DedicatedCloud) {
+    constructor($q, $scope, $state, $stateParams, constants, coreConfig, DedicatedCloud) {
       this.$q = $q;
       this.$scope = $scope;
       this.$state = $state;
       this.$stateParams = $stateParams;
       this.constants = constants;
+      this.coreConfig = coreConfig;
       this.DedicatedCloud = DedicatedCloud;
     }
 
@@ -40,7 +41,7 @@ angular.module('App')
     }
 
     orderDatastore(datacenter) {
-      if (this.constants.target === 'US') {
+      if (this.coreConfig.getRegion() === 'US') {
         this.$state.go('app.dedicatedClouds.datacenter.datastores.orderUS', {
           datacenterId: datacenter.id,
         });
@@ -50,7 +51,7 @@ angular.module('App')
     }
 
     orderHost(datacenter) {
-      if (this.constants.target === 'US') {
+      if (this.coreConfig.getRegion() === 'US') {
         this.$state.go('app.dedicatedClouds.datacenter.hosts.orderUS', {
           datacenterId: datacenter.id,
         });

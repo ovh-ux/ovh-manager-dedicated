@@ -5,9 +5,9 @@ angular.module('UserAccount').controller('UserAccount.controllers.Infos', [
   '$translate',
   'UserAccount.services.Infos',
   'Alerter',
-  'constants',
+  'coreConfig',
 
-  function ($scope, $q, $location, $translate, UseraccountInfos, Alerter, constants) {
+  function ($scope, $q, $location, $translate, UseraccountInfos, Alerter, coreConfig) {
     /* Be carefull, a part of this controller is url driven.
          * See the bottom of this file for more detail */
     let searchParams;
@@ -27,7 +27,7 @@ angular.module('UserAccount').controller('UserAccount.controllers.Infos', [
       countries: null,
     };
 
-    $scope.worldPart = constants.target;
+    $scope.worldPart = coreConfig.getRegion();
     $scope.user = null;
 
     function loadUserInfos() {

@@ -8,6 +8,7 @@ angular
       $state,
       $stateParams,
       constants,
+      coreConfig,
       DedicatedCloud,
     ) {
       this.$q = $q;
@@ -15,6 +16,7 @@ angular
       this.$state = $state;
       this.$stateParams = $stateParams;
       this.constants = constants;
+      this.coreConfig = coreConfig;
       this.DedicatedCloud = DedicatedCloud;
     }
 
@@ -74,7 +76,7 @@ angular
     }
 
     orderDatastore(datacenter) {
-      if (this.constants.target === 'US') {
+      if (this.coreConfig.getRegion() === 'US') {
         this.$state.go('app.dedicatedClouds.datacenter.datastores.orderUS');
       } else {
         this.$scope.setAction('datacenter/datastore/order/dedicatedCloud-datacenter-datastore-order', datacenter.model, true);
