@@ -1,3 +1,60 @@
+<a name="10.17.4"></a>
+## [10.17.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.3...v10.17.4) (2019-05-15)
+
+
+### Bug Fixes
+
+* **i18n:** retrieve translations ([1f27699](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1f27699))
+* **i18n:** submit translations ([fe2f6f7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/fe2f6f7))
+* **license:** add missing translations ([#1116](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1116)) ([dad003d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/dad003d))
+
+
+
+<a name="10.17.3"></a>
+## [10.17.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.2...v10.17.3) (2019-05-15)
+
+
+### Bug Fixes
+
+* **deps:** upgrade ovh-module-exchange to v9.4.4 ([#1110](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1110)) ([82570d1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/82570d1))
+* **i18n:** retrieve translations ([e615648](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e615648))
+* **i18n:** retrieve translations ([#1112](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1112)) ([425ebe3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/425ebe3))
+* **i18n:** submit translations ([bf39a4b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bf39a4b))
+* **license:** add both windows server 2019 standard and datacenter ([#1106](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1106)) ([6281350](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6281350))
+
+
+
+<a name="10.17.2"></a>
+## [10.17.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.1...v10.17.2) (2019-05-06)
+
+
+### Bug Fixes
+
+* **dedicated.server:** display correctly datacenter name ([#1086](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1086)) ([6f15b8b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6f15b8b))
+* **deps:** upgrade ovh-module-exchange to v9.4.3 ([#1103](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1103)) ([b4ed8eb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b4ed8eb))
+* **i18n:** retrieve translations ([2c2750a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2c2750a))
+* **i18n:** submit translations ([5ee521b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5ee521b))
+
+
+
+<a name="10.17.1"></a>
+## [10.17.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.0...v10.17.1) (2019-05-02)
+
+
+### Bug Fixes
+
+* **deps:** upgrade ovh-module-exchange to v9.4.2 ([#1096](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1096)) ([e6eab64](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e6eab64))
+* **i18n:** retrieve translations ([#1098](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1098)) ([6c95985](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6c95985))
+
+
+### Features
+
+* **i18n:** new translation ([2b343e4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2b343e4))
+* **i18n:** retrieve translations ([0168370](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0168370))
+* **i18n:** submit translation ([585f6ff](https://github.com/ovh-ux/ovh-manager-dedicated/commit/585f6ff))
+
+
+
 <a name="10.17.0"></a>
 # [10.17.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.16.0...v10.17.0) (2019-04-29)
 

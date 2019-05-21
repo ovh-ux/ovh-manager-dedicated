@@ -106,10 +106,34 @@
                                     aria-label="{{:: 'server_configuration_netboot_title_button' | translate}}"
                                     data-on-click="setAction('netboot/dedicated-server-netboot')"
                                     data-disabled="disable.reboot || disable.byOtherTask || server.state === 'HACKED' || server.state === 'HACKED_BLOCKED' || (disable.installationInProgress
-                                    && !disable.installationInProgressError)">
+                                               && !disable.installationInProgressError)">
                                 </oui-action-menu-item>
                             </oui-action-menu>
                         </div>
+                    </div>
+                    <div class="oui-tile__item">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term"
+                                data-translate="server_configuration_datacenter"></dt>
+                            <dd class="oui-tile__description"
+                                data-translate="{{'server_datacenter_' + server.datacenter}}"></dd>
+                        </dl>
+                    </div>
+                    <div class="oui-tile__item">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term"
+                                data-translate="server_configuration_rack"></dt>
+                            <dd class="oui-tile__description"
+                                data-ng-bind="infoServer.rack || '-'"></dd>
+                        </dl>
+                    </div>
+                    <div class="oui-tile__item">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term"
+                                data-translate="server_configuration_server_id"></dt>
+                            <dd class="oui-tile__description"
+                                data-ng-bind="infoServer.serverId || '-'"></dd>
+                        </dl>
                     </div>
                 </div>
             </div>
