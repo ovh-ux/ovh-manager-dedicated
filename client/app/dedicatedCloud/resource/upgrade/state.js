@@ -2,7 +2,7 @@ import { controller } from './controller';
 
 export default {
   layout: {
-    name: 'modal', t,
+    name: 'modal',
   },
   translations: ['./translations'],
   url: '/upgradeResource?id&type',
