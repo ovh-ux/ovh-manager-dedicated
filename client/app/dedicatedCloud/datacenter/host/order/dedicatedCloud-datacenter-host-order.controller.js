@@ -37,9 +37,9 @@ angular
           url: this.User.getUrlOf('express_order'),
           user: this.User.getUser(),
         })
-        .then((results) => {
-          this.expressOrderUrl = results.url;
-          this.user = results.user;
+        .then(({ url, user }) => {
+          this.expressOrderUrl = url;
+          this.user = user;
         })
         .catch((err) => {
           this.$scope.setMessage(this.$translate.instant('dedicatedCloud_tab_hosts_loading_error'), {
