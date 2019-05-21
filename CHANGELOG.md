@@ -1,3 +1,13 @@
+<a name="10.17.6"></a>
+## [10.17.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.5...v10.17.6) (2019-05-21)
+
+
+### Bug Fixes
+
+* CA region use now right link ([f222ba3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f222ba3))
+
+
+
 <a name="10.17.5"></a>
 ## [10.17.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.4...v10.17.5) (2019-05-21)
 
