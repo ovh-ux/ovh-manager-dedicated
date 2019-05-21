@@ -3,7 +3,7 @@
     <div class="oui-modal__header">
         <button type="button"
                 class="oui-icon oui-icon-close_thin oui-modal__close-button"
-                aria-label="{{ 'wizard_close' | translate }}"
+                aria-label="{{ 'wizard_close' | translate }}"
                 data-ng-click="$ctrl.onCancelBtnClick()"
                 data-ng-disabled="$ctrl.loading.enable">
         </button>
@@ -21,9 +21,10 @@
                 data-translate="dedicatedCloud_tab_veeam_enable_title">
             </h2>
 
-            <p data-ng-bind-html="'dedicatedCloud_tab_veeam_enable_message' | translate: { t0: $ctrl.datacenter.name }"></p>
+            <p data-ng-bind-html="'dedicatedCloud_tab_veeam_enable_message' | translate: { t0: $ctrl.datacenter.name }"></p>
             <p data-ng-bind-html="'dedicatedCloud_tab_veeam_enable_message2' | translate "></p>
         </div>
+    </div>
 
     <div class="oui-modal__body"
          data-ng-if="!$ctrl.loading.init && !$ctrl.hosts.length">
@@ -55,5 +56,4 @@
         </button>
     </div>
 
-    </oui-modal>
-</form>
+</div>
