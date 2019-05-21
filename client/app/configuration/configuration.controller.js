@@ -6,15 +6,15 @@ angular
       constructor(
         $q,
         $translate,
-
         constants,
+        coreConfig,
         DedicatedCloud,
         User,
       ) {
         this.$q = $q;
         this.$translate = $translate;
-
         this.constants = constants;
+        this.coreConfig = coreConfig;
         this.DedicatedCloud = DedicatedCloud;
         this.User = User;
       }
@@ -51,7 +51,7 @@ angular
       fetchingGuideSectionNames() {
         const sectionNames = ['sd'];
 
-        if (this.constants.target === 'US') {
+        if (this.coreConfig.getRegion() === 'US') {
           return this.DedicatedCloud
             .getDescription()
             .then((ids) => {

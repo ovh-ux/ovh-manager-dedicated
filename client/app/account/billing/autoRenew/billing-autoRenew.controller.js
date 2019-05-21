@@ -21,6 +21,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
   'BillingAutoRenew',
   'billingRenewHelper',
   'constants',
+  'coreConfig',
   'ovhPaymentMethod',
   'User',
   'AUTORENEW_EVENT',
@@ -45,6 +46,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
     AutoRenew,
     renewHelper,
     constants,
+    coreConfig,
     ovhPaymentMethod,
     User,
     AUTORENEW_EVENT,
@@ -710,7 +712,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
     }
 
     function getExchangeBaseUrl(organization, service, offer) {
-      const exchangeAbsoluteUrl = constants.target === 'EU' && constants.UNIVERS !== 'web' ? constants.MANAGER_URLS.web : $window.location.href.replace($window.location.hash, '#/');
+      const exchangeAbsoluteUrl = coreConfig.getRegion() === 'EU' && constants.UNIVERS !== 'web' ? constants.MANAGER_URLS.web : $window.location.href.replace($window.location.hash, '#/');
       return `${exchangeAbsoluteUrl}configuration/${getExchangeType(offer)}/${organization}/${service}`;
     }
 

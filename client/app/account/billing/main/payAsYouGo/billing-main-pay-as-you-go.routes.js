@@ -1,5 +1,5 @@
-angular.module('App').config(($stateProvider, constants) => {
-  if (constants.target === 'US') {
+angular.module('App').config(($stateProvider, coreConfigProvider) => {
+  if (coreConfigProvider.getRegion() === 'US') {
     $stateProvider.state('app.account.billing.main.pay-as-you-go', {
       url: '/payAsYouGo',
       controller: 'BillingMainPayAsYouGoCtrl',

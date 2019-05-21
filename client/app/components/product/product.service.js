@@ -1,6 +1,6 @@
 angular
   .module('services')
-  .service('Products', function productService($rootScope, $http, $q, $stateParams, constants) {
+  .service('Products', function productService($rootScope, $http, $q, $stateParams, coreConfig) {
     let products = null;
     let productsByType = null;
     const requests = {
@@ -36,7 +36,7 @@ angular
                   serviceType: 'aapi',
                   params: {
                     universe: 'DEDICATED',
-                    worldPart: constants.target,
+                    worldPart: coreConfig.getRegion(),
                   },
                 })
                 .then((result) => {

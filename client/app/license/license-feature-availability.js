@@ -1,8 +1,8 @@
 angular.module('Module.license').service('licenseFeatureAvailability', class {
-  constructor(constants) {
+  constructor(coreConfig) {
     'ngInject';
 
-    this.target = constants.target;
+    this.target = coreConfig.getRegion();
   }
 
   allowLicenseAgoraOrder() {

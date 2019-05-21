@@ -4,7 +4,7 @@ angular.module('App').controller('ImpiCtrl', (
   $stateParams,
   $translate,
   Alerter,
-  constants,
+  coreConfig,
   dedicatedServerFeatureAvailability,
   Polling,
   Server,
@@ -303,7 +303,7 @@ angular.module('App').controller('ImpiCtrl', (
     $scope.loader.javaReady = false;
     $scope.loader.javaLoading = true;
     $scope.loader.buttonStart = true;
-    const withGeolocation = !_.includes(['HIL_1', 'VIN_1'], $scope.server.datacenter) && constants.target === 'US';
+    const withGeolocation = !_.includes(['HIL_1', 'VIN_1'], $scope.server.datacenter) && coreConfig.getRegion() === 'US';
     return Server.ipmiStartConnection({
       serviceName: $stateParams.productId,
       type: 'kvmipJnlp',

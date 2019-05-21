@@ -5,7 +5,7 @@ angular.module('Module.ip.controllers').controller('IpMainCtrl', [
   '$location',
   '$translate',
   'Alerter',
-  'constants',
+  'coreConfig',
   'ipFeatureAvailability',
   function (
     $scope,
@@ -14,7 +14,7 @@ angular.module('Module.ip.controllers').controller('IpMainCtrl', [
     $location,
     $translate,
     Alerter,
-    constants,
+    coreConfig,
     ipFeatureAvailability,
   ) {
     const defaultTab = 'ip';
@@ -24,7 +24,7 @@ angular.module('Module.ip.controllers').controller('IpMainCtrl', [
       $scope.tabs.push('ip-lb');
     }
 
-    $scope.worldPart = constants.target;
+    $scope.worldPart = coreConfig.getRegion();
     $scope.toKebabCase = _.kebabCase;
 
     $scope.setSelectedTab = function (tab) {

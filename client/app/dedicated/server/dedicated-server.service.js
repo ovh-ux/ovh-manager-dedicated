@@ -38,7 +38,7 @@ angular
     },
   })
   .constant('HARDWARE_RAID_RULE_DEFAULT_NAME', 'managerHardRaid')
-  .service('Server', function (Products, $http, $q, constants, $cacheFactory, $rootScope,
+  .service('Server', function (Products, $http, $q, constants, coreConfig, $cacheFactory, $rootScope,
     $translate, WucApi, Polling, OvhHttp, SERVERSTATS_PERIOD_ENUM,
     HARDWARE_RAID_RULE_DEFAULT_NAME) {
     const self = this;
@@ -1814,7 +1814,7 @@ angular
 
     this.getSms = function (productId) {
       let promises = [];
-      if (constants.target === 'CA') {
+      if (coreConfig.getRegion() === 'CA') {
         return $q.when([]);
       }
       return self

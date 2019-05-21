@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +7,8 @@
         <!--<link rel="shortcut icon" href="<%= basepath %>images/favicon-<%= target %>.ico">-->
         <title>OVH</title>
     </head>
-    <body data-ng-app="App" data-ng-controller="SessionCtrl" data-ng-cloak class="ng-cloak">
-        <div class="col-container">
-
+    <body data-ng-app="App" data-ng-controller="SessionCtrl as $ctrl" data-ng-cloak class="ng-cloak h-100"  style="overflow: hidden;">
+        <div class="h-100 d-flex flex-column overflow-hidden">
             <!-- Skip to main content -->
             <div class="skipnav">
                 <a class="oui-button oui-button_link" href=""
@@ -18,20 +17,32 @@
                 </a>
             </div>
             <!-- /Skip to main content -->
+            <ovh-manager-navbar
+                data-navbar-options="{
+                    toggle: {
+                        event: 'sidebar:loaded'
+                    },
+                    universe: 'server',
+                    version: 'beta'
+                }"
+                data-universe-click="$ctrl.openSidebar()">
+            </ovh-manager-navbar>
 
-            <oui-navbar fixed
-                data-active-link="dedicated"
-                data-brand="::navbar.brand"
-                data-main-links="::navbar.managerLinks"
-                data-aside-links="::navbar.internalLinks"
-                data-toggler-links="::navbar.responsiveLinks">
-            </oui-navbar>
+            <button
+                style="position: absolute; top: 0; left: 0; width: 48px; height: 44px; background-color: transparent; border: 0;"
+                data-ng-if="$ctrl.sidebarIsOpen"
+                data-ng-click="$ctrl.closeSidebar()">
+            </button>
+
 
             <div class="container-fluid h-100 w-100" style="overflow: auto" data-ui-view="app">
                 <div class="row">
-                    <div class="col-md-3 col-lg-2"
-                         data-sidebar-menu>
-                    </div>
+                    <ovh-manager-server-sidebar
+                        universe="'DEDICATED'"
+                        data-is-open="$ctrl.sidebarIsOpen"
+                        class="col-md-3 col-lg-2 px-0"
+                        data-on-click="$ctrl.closeSidebar()">
+                    </ovh-manager-server-sidebar>
                     <div class="col-md-9 col-md-offset-3 col-lg-10 col-lg-offset-2 px-0">
 
                         <!-- Skip content target -->
@@ -53,7 +64,7 @@
 
         <div id="managerPreload"
              class="d-flex text-center"
-             data-ng-class="!!navbar && managerPreloadHide">
+             data-ng-class="managerPreloadHide">
             <div class="m-auto">
                 <p class="lead mb-3"
                    data-translate="preload_welcome">

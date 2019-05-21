@@ -3,9 +3,9 @@ angular
   .config([
     '$stateProvider',
     '$urlRouterProvider',
-    'Billing.constants',
-    ($stateProvider, $urlRouterProvider, constants) => {
-      if (constants.target === 'EU' || constants.target === 'CA') {
+    'coreConfigProvider',
+    ($stateProvider, $urlRouterProvider, coreConfigProvider) => {
+      if (coreConfigProvider.getRegion() === 'EU' || coreConfigProvider.getRegion() === 'CA') {
         const name = 'app.account.billing.payment.ovhaccount';
 
         $stateProvider.state(name, {

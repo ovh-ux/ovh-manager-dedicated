@@ -1,9 +1,10 @@
 (() => {
   class ServiceExpirationDateComponentCtrl {
-    constructor($scope, $rootScope, constants) {
+    constructor($scope, $rootScope, constants, coreConfig) {
       $scope.tr = $rootScope.tr;
       $scope.i18n = $rootScope.i18n;
       this.constants = constants;
+      this.coreConfig = coreConfig;
       this.inline = false;
     }
 
@@ -16,7 +17,7 @@
     }
 
     getRenewUrl() {
-      return this.constants.target === 'CA' ? this.getOrderUrl() : this.getAutoRenewUrl();
+      return this.coreConfig.getRegion() === 'CA' ? this.getOrderUrl() : this.getAutoRenewUrl();
     }
 
     getOrderUrl() {
