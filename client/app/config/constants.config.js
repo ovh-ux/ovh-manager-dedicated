@@ -15,6 +15,9 @@ const constants = {
           home: 'http://prirucky.ovh.cz/',
           privateCloudHome: 'https://docs.ovh.com/cz/cs/private-cloud/',
         },
+        presentations: {
+          veeam: 'https://www.ovh.cz/private-cloud/moznosti/veeam.xml',
+        },
         vpsCloud: 'http://www.ovh.cz/vps/vps-cloud.xml',
         dedicatedIpmi: 'https://docs.ovh.com/cz/cs/dedicated/pouziti-ipmi-dedikovane-servery/',
         RealTimeMonitoring: 'http://prirucky.ovh.cz/RealTimeMonitoring',
@@ -38,6 +41,9 @@ const constants = {
           ipv6Vps: 'https://www.ovh.de/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.de/g1769.creating_ssh_keys',
           sshChange: 'https://www.ovh.de/g2069.replacing_your_lost_ssh_key_pair',
+        },
+        presentations: {
+          veeam: 'https://www.ovh.de/private-cloud/optionen/veeam.xml',
         },
         vpsCloud: 'http://www.ovh.de/virtual_server/vps-cloud.xml',
         dedicatedIpmi: 'https://docs.ovh.com/de/dedicated/verwendung-ipmi-dedicated-server/',
@@ -63,7 +69,9 @@ const constants = {
           sshCreate: 'https://www.ovh.es/g1769.creating_ssh_keys',
           sshAdd: 'https://www.ovh.es/g1924.configuring_additionnal_ssh_key',
           sshChange: 'https://www.ovh.es/g2069.replacing_your_lost_ssh_key_pair',
-
+        },
+        presentations: {
+          veeam: 'https://www.ovh.es/private-cloud/opciones/veeam.xml',
         },
         vpsCloud: 'http://www.ovh.es/vps/vps-cloud.xml',
         dedicatedIpmi: 'https://docs.ovh.com/es/dedicated/utilizar-ipmi-servidor-dedicado/',
@@ -87,6 +95,9 @@ const constants = {
           autoRenew: 'https://www.ovh-hosting.fi/g1271.automaattinen-uusinta',
           reinitPassword: 'https://www.ovh-hosting.fi/g2366.virtuaalikoneen_root-salasanan_vaihto',
           ipv6Vps: 'https://www.ovh-hosting.fi/g2365.vps-ipv6',
+        },
+        presentations: {
+          veeam: 'https://www.ovh-hosting.fi/private-cloud/lisapalvelut/veeam.xml',
         },
         vpsCloud: 'http://www.ovh-hosting.fi/vps/vps-cloud.xml',
         dedicatedIpmi: 'https://docs.ovh.com/fi/dedicated/ipmi-konsolin-kaytto-dedikoidut-palvelimet/',
@@ -125,6 +136,9 @@ const constants = {
           diskSerial: 'http://docs.ovh.com/fr/fr/cloud/dedicated/find-disk-serial-number/',
           vmEncryption: 'https://docs.ovh.com/fr/private-cloud/vm-encrypt/',
         },
+        presentations: {
+          veeam: 'http://www.ovh.com/fr/dedicated-cloud/veeam.xml',
+        },
         vpsCloud: 'https://www.ovh.com/fr/vps/vps-cloud.xml',
         dedicatedIpmi: 'https://docs.ovh.com/fr/dedicated/utilisation-ipmi-serveurs-dedies/',
         RealTimeMonitoring: 'http://guide.ovh.com/RealTimeMonitoring',
@@ -162,6 +176,9 @@ const constants = {
           sshChange: 'https://docs.ovh.com/gb/en/public-cloud/replacing_your_lost_ssh_key_pair/',
           vmEncryption: 'https://docs.ovh.com/gb/en/private-cloud/vm-encrypt/',
         },
+        presentations: {
+          veeam: 'https://www.ovh.co.uk/private-cloud/options/veeam.xml',
+        },
         vpsCloud: 'http://www.ovh.co.uk/vps/vps-cloud.xml',
         dedicatedIpmi: 'https://docs.ovh.com/gb/en/dedicated/use-ipmi-dedicated-servers/',
         RealTimeMonitoring: 'http://help.ovh.co.uk/RealTimeMonitoring',
@@ -187,6 +204,9 @@ const constants = {
           sshCreate: 'https://www.ovh.it/g1769.creating_ssh_keys',
           sshAdd: 'https://www.ovh.it/g1924.configuring_additionnal_ssh_key',
           sshChange: 'https://www.ovh.it/g2069.replacing_your_lost_ssh_key_pair',
+        },
+        presentations: {
+          veeam: 'https://www.ovh.it/private-cloud/opzioni/veeam.xml',
         },
         vpsCloud: 'http://www.ovh.it/vps/vps-cloud.xml',
         dedicatedIpmi: 'https://docs.ovh.com/it/dedicated/utilizzo-ipmi-server-dedicati/',
@@ -214,6 +234,9 @@ const constants = {
           sshCreate: 'https://www.ovh.lt/g1769.creating_ssh_keys',
           sshChange: 'https://www.ovh.lt/g2069.replacing_your_lost_ssh_key_pair',
         },
+        presentations: {
+          veeam: 'https://www.ovh.lt/private-cloud/parinktys/veeam.xml',
+        },
         vpsCloud: 'http://www.ovh.lt/vps/vps-cloud.xml',
         dedicatedIpmi: 'https://docs.ovh.com/lt/dedicated/use-ipmi-dedicated-servers/',
         RealTimeMonitoring: 'http://gidai.ovh.lt/StebejimasRealiuLaiku',
@@ -238,6 +261,9 @@ const constants = {
           ipv6Vps: 'https://www.ovh.nl/g2365.vps-ipv6',
           sshCreate: 'https://www.ovh.nl/g1769.creating_ssh_keys',
           sshChange: 'https://www.ovh.nl/g2069.replacing_your_lost_ssh_key_pair',
+        },
+        presentations: {
+          veeam: 'https://www.ovh.nl/private-cloud/opties/veeam.xml',
         },
         vpsCloud: 'http://www.ovh.nl/vps/vps-cloud.xml',
         dedicatedIpmi: 'https://docs.ovh.com/nl/dedicated/gebruik-ipmi-dedicated-servers/',
@@ -264,6 +290,9 @@ const constants = {
           sshCreate: 'https://www.ovh.pl/g1769.creating_ssh_keys',
           sshAdd: 'https://www.ovh.pl/g1924.configuring_additionnal_ssh_key',
           shhChange: 'https://www.ovh.pl/g2069.replacing_your_lost_ssh_key_pair',
+        },
+        presentations: {
+          veeam: 'https://www.ovh.pl/private-cloud/opcje/veeam.xml',
         },
         vpsCloud: 'https://www.ovh.pl/vps/vps-cloud.xml',
         dedicatedIpmi: 'https://docs.ovh.com/pl/dedicated/uzywanie-ipmi-serwery-dedykowane/',
@@ -292,6 +321,9 @@ const constants = {
           sshAdd: 'https://www.ovh.pt/g1924.configuring_additionnal_ssh_key',
           sshChange: 'https://www.ovh.pt/g2069.replacing_your_lost_ssh_key_pair',
         },
+        presentations: {
+          veeam: 'https://www.ovh.pt/private-cloud/opcoes/veeam.xml',
+        },
         vpsCloud: 'http://www.ovh.pt/vps/vps-cloud.xml',
         dedicatedIpmi: 'https://docs.ovh.com/pt/dedicated/usar-ipmi-servidores-dedicados/',
         RealTimeMonitoring: 'http://guias.ovh.pt/RealTimeMonitoring',
@@ -319,6 +351,9 @@ const constants = {
           pcidssHdsHipaa: 'https://www.ovh.ie/private-cloud/',
           sshAdd: 'https://www.ovh.ie/g1924.configuring_additionnal_ssh_key',
           sshChange: 'https://www.ovh.ie/g2069.replacing_your_lost_ssh_key_pair',
+        },
+        presentations: {
+          veeam: 'https://www.ovh.ie/private-cloud/options/veeam.xml',
         },
         vpsCloud: 'http://www.ovh.ie/vps/vps-cloud.xml',
         dedicatedIpmi: 'https://docs.ovh.com/ie/en/dedicated/use-ipmi-dedicated-servers/',
@@ -579,6 +614,9 @@ const constants = {
           sshAdd: 'https://www.ovh.com/ca/en/g1924.configuring_additionnal_ssh_key',
           sshChange: 'https://www.ovh.com/ca/en/g2069.replacing_your_lost_ssh_key_pair',
         },
+        presentations: {
+          veeam: 'https://www.ovh.com/asia/private-cloud/options/veeam.xml',
+        },
         vpsCloud: 'https://www.ovh.com/ca/en/vps/vps-cloud.xml',
         dedicatedIpmi: 'https://docs.ovh.com/gb/en/dedicated/use-ipmi-dedicated-servers/',
         changeOwner: 'https://www.ovh.co.uk/cgi-bin/procedure/procedureChangeOwner.cgi',
@@ -604,6 +642,9 @@ const constants = {
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
           sshAdd: 'https://www.ovh.com/ca/en/g1924.configuring_additionnal_ssh_key',
           sshChange: 'https://www.ovh.com/ca/en/g2069.replacing_your_lost_ssh_key_pair',
+        },
+        presentations: {
+          veeam: 'https://www.ovh.com.au/private-cloud/options/veeam.xml',
         },
         vpsCloud: 'https://www.ovh.com/ca/en/vps/vps-cloud.xml',
         dedicatedIpmi: 'https://docs.ovh.com/gb/en/dedicated/use-ipmi-dedicated-servers/',
@@ -631,6 +672,9 @@ const constants = {
           sshAdd: 'https://www.ovh.com/ca/en/g1924.configuring_additionnal_ssh_key',
           sshChange: 'https://www.ovh.com/ca/en/g2069.replacing_your_lost_ssh_key_pair',
         },
+        presentations: {
+          veeam: 'https://www.ovh.com/ca/en/private-cloud/options/veeam.xml',
+        },
         vpsCloud: 'https://www.ovh.com/ca/en/vps/vps-cloud.xml',
         dedicatedIpmi: 'https://docs.ovh.com/gb/en/dedicated/use-ipmi-dedicated-servers/',
         changeOwner: 'https://www.ovh.co.uk/cgi-bin/procedure/procedureChangeOwner.cgi',
@@ -656,6 +700,9 @@ const constants = {
           sshCreate: 'https://www.ovh.com/ca/fr/g1769.creation_des_cles_ssh',
           sshAdd: 'https://www.ovh.com/ca/fr/g1924.configurer_des_cles_ssh_supplementaires',
           sshChange: 'https://www.ovh.com/ca/fr/g2069.changer_sa_cle_ssh_en_cas_de_perte',
+        },
+        presentations: {
+          veeam: 'https://www.ovh.com/ca/fr/cloud-prive/options/veeam.xml',
         },
         vpsCloud: 'https://www.ovh.com/ca/fr/vps/vps-cloud.xml',
         dedicatedIpmi: 'https://docs.ovh.com/fr/dedicated/utilisation-ipmi-serveurs-dedies/',
@@ -683,6 +730,9 @@ const constants = {
           sshAdd: 'https://www.ovh.com/ca/en/g1924.configuring_additionnal_ssh_key',
           sshChange: 'https://www.ovh.com/ca/en/g2069.replacing_your_lost_ssh_key_pair',
         },
+        presentations: {
+          veeam: 'https://www.ovh.com/sg/private-cloud/options/veeam.xml',
+        },
         vpsCloud: 'https://www.ovh.com/ca/en/vps/vps-cloud.xml',
         dedicatedIpmi: 'https://docs.ovh.com/gb/en/dedicated/use-ipmi-dedicated-servers/',
         changeOwner: 'https://www.ovh.co.uk/cgi-bin/procedure/procedureChangeOwner.cgi',
@@ -709,6 +759,9 @@ const constants = {
           sshAdd: 'https://www.ovh.com/ca/en/g1924.configuring_additionnal_ssh_key',
           sshChange: 'https://www.ovh.com/ca/en/g2069.replacing_your_lost_ssh_key_pair',
         },
+        presentations: {
+          veeam: 'https://www.ovh.com/world/private-cloud/options/veeam.xml',
+        },
         vpsCloud: 'https://www.ovh.com/ca/en/vps/vps-cloud.xml',
         dedicatedIpmi: 'https://docs.ovh.com/gb/en/dedicated/use-ipmi-dedicated-servers/',
         changeOwner: 'https://www.ovh.co.uk/cgi-bin/procedure/procedureChangeOwner.cgi',
@@ -733,6 +786,9 @@ const constants = {
           sshCreate: 'https://www.ovh.com/ca/en/g1769.creating_ssh_keys',
           sshAdd: 'https://www.ovh.com/ca/en/g1924.configuring_additionnal_ssh_key',
           sshChange: 'https://www.ovh.com/ca/en/g2069.replacing_your_lost_ssh_key_pair',
+        },
+        presentations: {
+          veeam: 'https://www.ovh.com/world/es/private-cloud/options/veeam.xml',
         },
         vpsCloud: 'https://www.ovh.com/us/es/vps/vps-cloud.xml',
         dedicatedIpmi: 'https://docs.ovh.com/gb/en/dedicated/use-ipmi-dedicated-servers/',
@@ -870,6 +926,9 @@ const constants = {
           nsx: 'https://us.ovhcloud.com/products/hosted-private-cloud/vmware-nsx',
           vrops: 'https://us.ovhcloud.com/products/hosted-private-cloud/vmware-vrealize-operations',
           pcidssHdsHipaa: 'https://us.ovhcloud.com/products/hosted-private-cloud',
+        },
+        presentations: {
+          veeam: 'https://us.ovhcloud.com/products/hosted-private-cloud/managed-veeam-backup',
         },
         vpsCloud: 'https://www.ovh.com/ca/en/vps/vps-cloud.xml',
         dedicatedIpmi: 'https://docs.ovh.com/gb/en/dedicated/use-ipmi-dedicated-servers/#testing-and-rebooting-the-ipmi',
