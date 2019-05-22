@@ -64,49 +64,12 @@ angular
     };
 
     /*
-        * Get list of products orderBy Type
-        */
-    this.getProductsByType = function getProductsByType() {
-      return this.getProducts().then(() => productsByType);
-    };
-
-    /*
         * Get the selected product
         */
-    this.getSelectedProduct = function getSelectedProduct(productId, forceRefresh) {
-      if (!_.isString(productId)) {
-        if (_.isBoolean(productId)) {
-          return this.getSelectedProductFromWeb(productId);
-        }
-        return this.getSelectedProductFromWeb();
-      }
-
-      return this
-        .getProducts(forceRefresh)
-        .then(productsList => _.find(productsList, { name: productId }));
-    };
-
-    this.getSelectedProductFromWeb = function getSelectedProductFromWeb(forceRefresh) {
-      return this.getProducts(forceRefresh).then((productsList) => {
-        const name = $stateParams.productId ? $stateParams.productId : '';
-        const type = $rootScope.currentSectionInformation
-          ? $rootScope.currentSectionInformation.toUpperCase()
-          : null;
-
-        let p = null;
-
-        _.forEach(productsList, (product) => {
-          if (product.name === name && product.type === type) {
-            p = product;
-          }
-          if (product.hasSubComponent === true && !p) {
-            p = _.find(product.subProducts, { name, type });
-          }
-        });
-
-        return p;
+    this.getSelectedProduct = function getSelectedProduct(productId) {
+      return $q.when({
+        displayName: productId,
+        name: productId,
       });
     };
-
-    this.getProducts(true);
   });
