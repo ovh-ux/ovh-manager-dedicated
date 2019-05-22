@@ -1,3 +1,13 @@
+<a name="10.17.7"></a>
+## [10.17.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.6...v10.17.7) (2019-05-22)
+
+
+### Bug Fixes
+
+* **deps:** upgrade both core and navbar dependencies ([#1134](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1134)) ([31f925b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/31f925b)), closes [#1133](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1133)
+
+
+
 <a name="10.17.6"></a>
 ## [10.17.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.5...v10.17.6) (2019-05-21)
 
