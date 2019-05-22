@@ -9,6 +9,7 @@ angular
       $translate,
       $window,
       Alerter,
+      constants,
       datacenterBackupEnableService,
       DedicatedCloud,
       User,
@@ -19,6 +20,7 @@ angular
       this.$translate = $translate;
       this.$window = $window;
       this.Alerter = Alerter;
+      this.constants = constants;
       this.datacenterBackupEnableService = datacenterBackupEnableService;
       this.DedicatedCloud = DedicatedCloud;
       this.User = User;
@@ -70,8 +72,6 @@ angular
             .getHosts(this.$stateParams.productId, this.$stateParams.datacenterId),
           user: this.User
             .getUser(),
-          veamBackupUrl: this.User
-            .getUrlOf('veeamBackup'),
         })
         .then(({
           currentService,
@@ -79,14 +79,15 @@ angular
           expressURL,
           hosts,
           user,
-          veamBackupUrl,
         }) => {
           this.currentService = currentService;
           this.datacenter = datacenter;
           this.expressURL = expressURL;
           this.updateAvailableHosts(hosts);
           this.user = user;
-          this.veamBackupUrl = veamBackupUrl;
+          const urlBaseToUse = _.get(this.constants.urls, this.user.ovhSubsidiary)
+            || this.constants.urls.FR;
+          this.veeamPresentationURL = urlBaseToUse.presentations.veeam;
         })
         .then(() => (this.user.ovhSubsidiary === 'US'
           ? this.datacenterBackupEnableService.fetchBackupOffers(this.$stateParams.productId)
