@@ -8,14 +8,18 @@ angular
       $state,
       $translate,
       Alerter,
+      constants,
       DedicatedCloud,
+      User,
     ) {
       this.$q = $q;
       this.$stateParams = $stateParams;
       this.$state = $state;
       this.$translate = $translate;
       this.Alerter = Alerter;
+      this.constants = constants;
       this.DedicatedCloud = DedicatedCloud;
+      this.User = User;
     }
 
     $onInit() {
@@ -39,10 +43,16 @@ angular
             .getDatacenterInfoProxy(this.$stateParams.productId, this.$stateParams.datacenterId),
           hosts: this.DedicatedCloud
             .getHosts(this.$stateParams.productId, this.$stateParams.datacenterId),
+          user: this.User
+            .getUser(),
         })
-        .then(({ datacenter, hosts }) => {
+        .then(({ datacenter, hosts, user }) => {
           this.datacenter = datacenter;
           this.hosts = hosts;
+          this.user = user;
+          const urlBaseToUse = _.get(this.constants.urls, this.user.ovhSubsidiary)
+            || this.constants.urls.FR;
+          this.veeamPresentationURL = urlBaseToUse.presentations.veeam;
         })
         .finally(() => {
           this.loading.init = false;
