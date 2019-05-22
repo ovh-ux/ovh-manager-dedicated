@@ -1,3 +1,13 @@
+<a name="10.17.8"></a>
+## [10.17.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.7...v10.17.8) (2019-05-22)
+
+
+### Bug Fixes
+
+* **deps:** upgrade manager-server-sidebar to v0.1.3 ([#1137](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1137)) ([88e4283](https://github.com/ovh-ux/ovh-manager-dedicated/commit/88e4283))
+
+
+
 <a name="10.17.7"></a>
 ## [10.17.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.6...v10.17.7) (2019-05-22)
 
