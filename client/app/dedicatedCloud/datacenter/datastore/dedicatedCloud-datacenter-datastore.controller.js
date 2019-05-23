@@ -82,7 +82,7 @@ angular
 
     fetchConsumptionForDatastore(serviceConsumption) {
       return (datastore) => {
-        if (datastore.billing === this.RESOURCE_BILLING_TYPES.hourly) {
+        if (datastore.billing === this.RESOURCE_BILLING_TYPES.hourly && datastore.status === 'DELIVERED') {
           const datastoreConsumption = this.dedicatedCloudDatacenterService.constructor
             .extractElementConsumption(serviceConsumption, {
               id: datastore.id,
@@ -91,7 +91,7 @@ angular
 
           return {
             ...datastore,
-            consumption: datastoreConsumption.quantity,
+            consumption: _.get(datastoreConsumption, 'quantity', 0),
             consumptionLastUpdate: serviceConsumption.lastUpdate,
           };
         }

@@ -77,7 +77,7 @@ angular
 
     fetchConsumptionForHost(serviceConsumption) {
       return (host) => {
-        if (host.billingType === this.RESOURCE_BILLING_TYPES.hourly) {
+        if (host.billingType === this.RESOURCE_BILLING_TYPES.hourly && host.status === 'DELIVERED') {
           const hostConsumption = this.dedicatedCloudDatacenterService.constructor
             .extractElementConsumption(serviceConsumption, {
               id: host.hostId,
@@ -87,7 +87,7 @@ angular
           return {
             ...host,
             consumption: {
-              value: hostConsumption.quantity,
+              value: _.get(hostConsumption, 'quantity', 0),
             },
             lastUpdate: serviceConsumption.lastUpdate,
           };
