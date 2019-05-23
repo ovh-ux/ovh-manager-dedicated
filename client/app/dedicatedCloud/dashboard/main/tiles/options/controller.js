@@ -210,10 +210,8 @@ export default class OptionTile {
   }
 
   buildCertificationDescription() {
-    return this.doesCurrentServicePackHoldACertification() && this.buildStatusForOption({
-      name: this.currentServicePack.name,
-      typeName: OPTION_TYPES.basic,
-    });
+    return this.doesCurrentServicePackHoldACertification()
+      && this.buildStatusForOption(this.currentServicePack.name);
   }
 
   thereIsAtLeastOneOrderableItem(optionType) {
