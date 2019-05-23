@@ -39,17 +39,18 @@
             </span>
         </span>
     </oui-column>
-    <oui-action-menu data-align="end"
-                        data-compact
-        data-ng-if="$row.billing === $ctrl.RESOURCE_BILLING_TYPES.hourly">
-        <oui-action-menu-item data-text="{{:: 'dedicatedCloud_updateResource_toMonthly' | translate }}"
+    <oui-action-menu
+        data-align="end"
+        data-compact
+        data-ng-if="$row.billing === $ctrl.RESOURCE_BILLING_TYPES.hourly && $row.status === 'DELIVERED'">
+        <oui-action-menu-item
+            data-text="{{:: 'dedicatedCloud_updateResource_toMonthly' | translate }}"
             data-ng-if="$ctrl.currentService.usesLegacyOrder"
-                                data-on-click="setAction('resource/upgradeLegacy/dedicatedCloud-resource-upgradeLegacy', {
-                                    upgradeType: $row.model.isUpgradable && 'demoToMonthly' || 'hourlyToMonthly',
-                                    type: 'filer',
-                                    id: $row.id
-                                })">
-        </oui-action-menu-item>
+            data-on-click="setAction('resource/upgradeLegacy/dedicatedCloud-resource-upgradeLegacy', {
+                upgradeType: $row.model.isUpgradable && 'demoToMonthly' || 'hourlyToMonthly',
+                type: 'filer',
+                id: $row.id
+            })"></oui-action-menu-item>
 
         <oui-action-menu-item
             data-text="{{:: 'dedicatedCloud_updateResource_toMonthly' | translate }}"
