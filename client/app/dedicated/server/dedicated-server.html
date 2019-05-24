@@ -37,7 +37,7 @@
             <oui-header-tabs-item data-text="{{:: 'server_tab_ipmi' | translate }}"
                                   data-state="app.dedicated.server.ipmi"
                                   data-disabled="server.isExpired"></oui-header-tabs-item>
-            <oui-header-tabs-item data-text="{{:: 'server_tab_usb_storage' | translate }}"
+            <oui-header-tabs-item data-ng-if="disable.usbStorageTab" data-text="{{:: 'server_tab_usb_storage' | translate }}"
                                   data-state="app.dedicated.server.usbStorage"
                                   data-disabled="server.isExpired"></oui-header-tabs-item>
             <oui-header-tabs-item data-text="{{:: 'server_tab_task' | translate }}"
