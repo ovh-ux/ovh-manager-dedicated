@@ -1,3 +1,20 @@
+<a name="10.17.10"></a>
+## [10.17.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.9...v10.17.10) (2019-05-27)
+
+
+### Bug Fixes
+
+* **account.billing:** add missing translation on cancellation form ([#1132](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1132)) ([b0f155d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b0f155d)), closes [#1131](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1131)
+* **dedicated.server:** hide usb storage tab option ([#1108](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1108)) ([9260a55](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9260a55))
+* display labels in all server graph ([#1090](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1090)) ([072fb4b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/072fb4b))
+* **i18n:** retrieve translations ([ee64274](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ee64274))
+* **i18n:** retrieve translations ([9b4a53b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9b4a53b))
+* **i18n:** retrieve translations ([#1145](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1145)) ([76119a8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/76119a8))
+* **i18n:** submit translations ([6994264](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6994264))
+* **i18n:** submit translations ([fd73806](https://github.com/ovh-ux/ovh-manager-dedicated/commit/fd73806))
+
+
+
 <a name="10.17.9"></a>
 ## [10.17.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.8...v10.17.9) (2019-05-22)
 
