@@ -27,6 +27,7 @@ export default class BillingPaymentMethodAddCtrl {
     this.loading = {
       init: false,
       add: false,
+      paymentMethodTypes: false,
     };
 
     this.addSteps = {
@@ -65,7 +66,7 @@ export default class BillingPaymentMethodAddCtrl {
         name: 'billingAddress',
         position: 2,
         isLoading: false,
-        isVisible: () => !this.model.selectedPaymentMethodType.original || this.coreConfig.getRegion() === 'US',
+        isVisible: () => this.coreConfig.getRegion() === 'US',
         isLastStep: () => this.coreConfig.getRegion() !== 'US',
       },
       paymentMethod: {
@@ -143,6 +144,13 @@ export default class BillingPaymentMethodAddCtrl {
 
   /* ----------  Events  ---------- */
 
+  onAvailablePaymentMethodsLoadError(error) {
+    return this.Alerter.error([
+      this.$translate.instant('billing_payment_method_add_load_error'),
+      _.get(error, 'data.message', ''),
+    ].join(' '), 'billing_payment_method_add_alert');
+  }
+
   onPaymentMethodAddStepperFinish() {
     let contactPromise = this.$q.when(true);
 
@@ -157,7 +165,7 @@ export default class BillingPaymentMethodAddCtrl {
     if (this.model.selectedPaymentMethodType.original) {
       addParams = _.merge(addParams, this.getLegacyAddParams());
     }
-    if (!this.model.selectedPaymentMethodType.original || this.coreConfig.getRegion() === 'US') {
+    if (this.coreConfig.getRegion() === 'US') {
       const paymentMethodContact = _.get(this.$state.current, 'sharedModel.billingAddress');
 
       // if no id to contact, we need to create it first before adding payment method
@@ -178,20 +186,20 @@ export default class BillingPaymentMethodAddCtrl {
       } else {
         _.set(addParams, 'billingContactId', paymentMethodContact.id);
       }
+    }
 
-      if (!this.model.selectedPaymentMethodType.original) {
-        const isQueryParamsInHash = this.$window.location.hash.indexOf('?') > 0;
-        addParams = _.merge(addParams, {
-          register: true,
-          callbackUrl: {
-            cancel: [this.$window.location.href, 'status=cancel'].join(isQueryParamsInHash ? '&' : '?'),
-            error: [this.$window.location.href, 'status=error'].join(isQueryParamsInHash ? '&' : '?'),
-            failure: [this.$window.location.href, 'status=failure'].join(isQueryParamsInHash ? '&' : '?'),
-            pending: [this.$window.location.href, 'status=pending'].join(isQueryParamsInHash ? '&' : '?'),
-            success: [this.$window.location.href, 'status=success'].join(isQueryParamsInHash ? '&' : '?'),
-          },
-        });
-      }
+    if (!this.model.selectedPaymentMethodType.original) {
+      const isQueryParamsInHash = this.$window.location.hash.indexOf('?') > 0;
+      addParams = _.merge(addParams, {
+        register: true,
+        callbackUrl: {
+          cancel: [this.$window.location.href, 'status=cancel'].join(isQueryParamsInHash ? '&' : '?'),
+          error: [this.$window.location.href, 'status=error'].join(isQueryParamsInHash ? '&' : '?'),
+          failure: [this.$window.location.href, 'status=failure'].join(isQueryParamsInHash ? '&' : '?'),
+          pending: [this.$window.location.href, 'status=pending'].join(isQueryParamsInHash ? '&' : '?'),
+          success: [this.$window.location.href, 'status=success'].join(isQueryParamsInHash ? '&' : '?'),
+        },
+      });
     }
 
     this.Alerter.resetMessage('billing_payment_method_add_alert');
@@ -265,16 +273,13 @@ export default class BillingPaymentMethodAddCtrl {
 
   $onInit() {
     this.loading.init = true;
+    this.loading.paymentMethodTypes = true;
 
     this.manageHiPayStatus();
 
-    return this.$q.all({
-      paymentMethods: this.billingPaymentMethodSection.getPaymentMethods(),
-      paymentMethodTypes: this.ovhPaymentMethod.getAllAvailablePaymentMethodTypes(),
-    })
-      .then(({ paymentMethodTypes }) => {
-        this.paymentMethodTypes = _.sortBy(paymentMethodTypes, 'paymentType.text');
-        this.chunkedPaymentMethodTypes = _.chunk(this.paymentMethodTypes, this.chunkSize);
+    return this.billingPaymentMethodSection
+      .getPaymentMethods()
+      .then(() => {
         this.resetModel();
         this.$state.current.sharedModel = {};
         this.$state.current.sharedSteps = this.addSteps;
