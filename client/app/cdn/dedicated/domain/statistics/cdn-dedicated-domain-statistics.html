@@ -82,16 +82,11 @@
     </div>
 
     <div class="text-center"
-         data-ng-show="loadingConsts">
+         data-ng-if="loadingConsts">
         <oui-spinner></oui-spinner>
     </div>
-    <div data-ng-hide="loadingConsts">
-        <div class="text-center"
-             data-ng-show="loadingStats">
-            <oui-spinner></oui-spinner>
-        </div>
-        <div class="oui-box mb-5"
-             data-ng-hide="loadingStats">
+    <div data-ng-if="!loadingConsts">
+        <div class="oui-box mb-5">
             <div class="row">
                 <div class="col-sm-6">
                     <label for="dataType"
@@ -127,12 +122,27 @@
                 </div>
             </div>
         </div>
-        <canvas id="cdnDomainStatsChart"
-                class="chart chart-line"
-                data-ng-hide="loadingStats"
-                data-chart-labels="labels"
-                data-chart-series="series"
-                data-chart-data="data">
-        </canvas>
+        <div class="text-center"
+            data-ng-if="loadingConsts || loadingStats">
+            <oui-spinner></oui-spinner>
+        </div>
+        <div data-ng-if="!loadingConsts && !loadingStats">
+            <canvas id="cdnDomainStatsChart"
+                    class="chart chart-line"
+                    data-chart-labels="labels"
+                    data-chart-series="series"
+                    data-chart-data="data"
+                    data-chart-options="options"
+                    data-ng-if="model.dataType === 'BANDWIDTH' || model.dataType === 'QUOTA'">
+            </canvas>
+            <canvas id="cdnDomainStatsChartRequests"
+                    class="chart chart-line"
+                    data-chart-labels="labels"
+                    data-chart-series="series"
+                    data-chart-data="data"
+                    data-chart-options="requestOptions"
+                    data-ng-if="model.dataType === 'REQUEST'">
+            </canvas>
+        </div>
     </div>
 </div>
