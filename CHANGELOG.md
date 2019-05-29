@@ -1,3 +1,13 @@
+<a name="10.17.11"></a>
+## [10.17.11](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.10...v10.17.11) (2019-05-29)
+
+
+### Bug Fixes
+
+* **deps:** bump manager-navbar to v0.5.0 ([#1150](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1150)) ([39f8590](https://github.com/ovh-ux/ovh-manager-dedicated/commit/39f8590))
+
+
+
 <a name="10.17.10"></a>
 ## [10.17.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.9...v10.17.10) (2019-05-27)
 
