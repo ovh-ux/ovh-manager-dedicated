@@ -1,47 +1,14 @@
 angular.module('App').run(($q, $translate, SidebarMenu, User, constants) => {
   function buildMyAccountMenu() {
-    const myAccountMenu = SidebarMenu.addMenuItem({
+    SidebarMenu.addMenuItem({
       name: 'userAccountMenu',
       title: $translate.instant('menu_account_title'),
-      allowSubItems: true,
-      allowSearch: true,
-      loadOnState: 'app.account.useraccount',
+      allowSubItems: false,
+      allowSearch: false,
+      loadOnState: 'app.account.user',
+      state: 'app.account.user.infos',
       namespace: 'account',
     });
-
-    SidebarMenu.addMenuItem({
-      title: $translate.instant('menu_infos'),
-      state: 'app.account.useraccount.infos',
-    }, myAccountMenu);
-
-    SidebarMenu.addMenuItem({
-      title: $translate.instant('menu_security'),
-      state: 'app.account.useraccount.security',
-    }, myAccountMenu);
-
-    if (constants.target === 'EU' || constants.target === 'CA') {
-      SidebarMenu.addMenuItem({
-        title: $translate.instant('menu_emails'),
-        state: 'app.account.useraccount.emails',
-      }, myAccountMenu);
-    }
-
-    SidebarMenu.addMenuItem({
-      title: $translate.instant('menu_ssh'),
-      state: 'app.account.useraccount.ssh',
-    }, myAccountMenu);
-
-    if (constants.target === 'EU' || constants.target === 'CA') {
-      SidebarMenu.addMenuItem({
-        title: $translate.instant('menu_advanced'),
-        state: 'app.account.useraccount.advanced',
-      }, myAccountMenu);
-    }
-
-    SidebarMenu.addMenuItem({
-      title: $translate.instant('menu_users_management'),
-      state: 'app.account.useraccount.users',
-    }, myAccountMenu);
   }
 
   function buildBillingMenu() {

@@ -1,46 +1,43 @@
-angular.module('UserAccount').controller('UserAccount.controllers.main', [
-  '$scope',
-  '$window',
-  '$location',
-  '$timeout',
-  '$state',
-  function ($scope, $window, $location, $timeout, $state) {
-    $scope.USERACCOUNT_BASE_URL = 'account/user/';
+export default class UserAccountCtrl {
+  /* @ngInject */
 
-    $scope.originUrl = $location.search().redirectTo || $location.search().redirectto;
+  constructor($location, $scope, $state, $timeout, constants) {
+    // dependencies injections
+    this.$location = $location;
+    this.$scope = $scope;
+    this.$state = $state;
+    this.$timeout = $timeout;
+    this.constants = constants;
+    this.USERACCOUNT_BASE_URL = 'account/user/';
+    this.originUrl = this.$location.search().redirectTo || this.$location.search().redirectto;
+  }
 
-    $scope.redirectToOrigin = function () {
-      if ($scope.originUrl) {
-        _.set($window, 'location.href', $scope.originUrl);
-      } else {
-        $state.go('app.configuration');
-      }
-    };
+  $onInit() {
+    this.$scope.stepPath = '';
+    this.$scope.currentAction = null;
+    this.$scope.currentActionData = null;
 
-    $scope.stepPath = '';
-    $scope.currentAction = null;
-    $scope.currentActionData = null;
+    this.$scope.resetAction = function () {
+      this.$scope.setAction(false);
+    }.bind(this);
 
-    $scope.resetAction = function () {
-      $scope.setAction(false);
-    };
+    this.$scope.setAction = function (action, data) {
+      this.$scope.currentAction = action;
+      this.$scope.currentActionData = data;
 
-    $scope.setAction = function (action, data) {
-      $scope.currentAction = action;
-      $scope.currentActionData = data;
       if (action) {
-        $scope.stepPath = `${$scope.USERACCOUNT_BASE_URL}${$scope.currentAction}.html`;
+        this.$scope.stepPath = `${this.USERACCOUNT_BASE_URL}${this.$scope.currentAction}.html`;
         $('#currentAction').modal({
           keyboard: true,
           backdrop: 'static',
         });
       } else {
         $('#currentAction').modal('hide');
-        $scope.currentActionData = null;
-        $timeout(() => {
-          $scope.stepPath = '';
+        this.$scope.currentActionData = null;
+        this.$timeout(() => {
+          this.$scope.stepPath = '';
         }, 300);
       }
-    };
-  },
-]);
+    }.bind(this);
+  }
+}
