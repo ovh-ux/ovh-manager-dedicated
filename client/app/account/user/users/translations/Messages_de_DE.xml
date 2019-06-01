@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="user_users_title" qtlid="227793">Verwaltung der Benutzer</translation>
+   <translation id="user_users_info" qtlid="480750">Damit sich ein Benutzer in das Interface einloggen kann, muss er Ihre Kundenkennung <strong>{{customerCode}}</strong> und seinen Benutzernamen, getrennt durch ein „/" (Spalte „Kennung"), sowie das Passwort eingeben.</translation>
+   <translation id="user_users_info_example" qtlid="480763">Beispiel: <strong>{{customerCode}}/{{login}}</strong></translation>
+   <translation id="user_users_add_user" qtlid="7150">Einen Benutzer hinzufügen</translation>
+   <translation id="user_users_login" qtlid="56045">Benutzername</translation>
+   <translation id="user_users_email" qtlid="50686">E-Mail-Adresse</translation>
+   <translation id="user_users_creation_date" qtlid="26791">Erstellung</translation>
+   <translation id="user_users_last_update_date" qtlid="228748">Datum des Updates</translation>
+   <translation id="user_users_last_password_update_date" qtlid="106427">Passwort-Änderung</translation>
+   <translation id="user_users_status" qtlid="26443">Status</translation>
+   <translation id="user_users_description" qtlid="9238">Beschreibung</translation>
+   <translation id="user_users_table_empty" qtlid="215741">Keine Benutzer</translation>
+   <translation id="user_users_update" qtlid="7402">Den Benutzer ändern</translation>
+   <translation id="user_users_delete" qtlid="49550">Den Benutzer löschen</translation>
+   <translation id="user_users_enable" qtlid="229802">Den Benutzer aktivieren</translation>
+   <translation id="user_users_status_OK" qtlid="30250">Aktiviert</translation>
+   <translation id="user_users_status_DISABLED" qtlid="24967">Deaktiviert</translation>
+
+   <translation id="user_users_error" qtlid="299384">Es ist ein Fehler aufgetreten:</translation>
+
+   <translation id="user_users_role" qtlid="73697">Rechte</translation>
+   <translation id="user_roles_admin" qtlid="43948">Administrator</translation>
+   <translation id="user_roles_regular" qtlid="7450">Benutzer</translation>
+   <translation id="user_roles_unprivileged" qtlid="30646">Keiner</translation>
+
+   <translation id="user_users_disable" qtlid="199078">Den Benutzer deaktivieren</translation>
+   <translation id="user_users_delete_modal_step1_question" qtlid="455451">Sind Sie sicher, dass Sie den Benutzer <strong>{{login}}</strong> löschen möchten?</translation>
+   <translation id="user_users_disable_modal_step1_question" qtlid="455464">Sind Sie sicher, dass Sie den Benutzer <strong>{{login}}</strong> deaktivieren möchten?</translation>
+   <translation id="user_users_enable_modal_step1_question" qtlid="455477">Sind Sie sicher, dass Sie den Benutzer <strong>{{login}}</strong> aktivieren möchten?</translation>
+   <translation id="user_users_enable_success_message" qtlid="455490">Der Benutzer <strong>{{login}}</strong> wurde erfolgreich aktiviert.</translation>
+   <translation id="user_users_disable_success_message" qtlid="455503">Der Benutzer <strong>{{login}}</strong> wurde erfolgreich deaktiviert.</translation>
+   <translation id="user_users_disable_error_message" qtlid="455516">Bei der Deaktivierung des Benutzers <strong>{{login}}</strong> ist ein Fehler aufgetreten:</translation>
+   <translation id="user_users_enable_error_message" qtlid="455529">Bei der Aktivierung des Benutzers <strong>{{login}}</strong> ist ein Fehler aufgetreten:</translation>
+   <translation id="user_users_delete_error_message" qtlid="455542">Beim Löschen des Benutzers <strong>{{login}}</strong> ist ein Fehler aufgetreten:</translation>
+   <translation id="user_users_delete_success_message" qtlid="455555">Der Benutzer <strong>{{login}}</strong> wurde erfolgreich gelöscht.</translation>
+
+   <translation id="user_users_update_modal_title" qtlid="455152">Benutzer bearbeiten</translation>
+   <translation id="user_users_update_modal_step1_question" qtlid="455568">Aktualisierung des Benutzers <strong>{{login}}</strong>.</translation>
+
+   <translation id="user_users_update_modal_email" qtlid="33598">E-Mail</translation>
+   <translation id="user_users_update_modal_login" qtlid="46792">Kennung</translation>
+
+   <translation id="user_users_update_success_message" qtlid="455581">Der Benutzer <strong>{{login}}</strong> wurde erfolgreich aktualisiert.</translation>
+
+   <translation id="user_users_update_error_message" qtlid="455594">Bei der Aktualisierung des Benutzers <strong>{{login}}</strong> ist ein Fehler aufgetreten:</translation>
+
+   <translation id="user_users_add_modal_title" qtlid="7150">Einen Benutzer hinzufügen</translation>
+   <translation id="user_users_add_modal_step1_question" qtlid="455191">Bitte geben Sie die Daten zum neuen Benutzer ein</translation>
+   <translation id="user_users_add_modal_password" qtlid="2270">Passwort</translation>
+   <translation id="user_users_add_required" qtlid="455204">Dieses Feld ist ein Pflichtfeld</translation>
+   <translation id="user_users_add_email_error" qtlid="244274">Sie müssen eine gültige E-Mail-Adresse angeben</translation>
+   <translation id="user_users_add_password_length_error" qtlid="455217">Das Passwort muss mindestens {{passwordMinLength}} Zeichen enthalten.</translation>
+   <translation id="user_users_add_description_length_error" qtlid="455230">Die Beschreibung darf nicht mehr als {{descriptionMaxLength}} Zeichen enthalten.</translation>
+   <translation id="user_users_add_modal_description" qtlid="9238">Beschreibung</translation>
+   <translation id="user_users_add_login_pattern_error" qtlid="455243">Der Login darf nur folgende Zeichen enthalten: Buchstaben, Ziffern, ., - und _</translation>
+   <translation id="user_users_add_error_message" qtlid="264940">Beim Hinzufügen des Benutzers ist ein Fehler aufgetreten</translation>
+
+   <translation id="user_users_add_success_message" qtlid="455607">Der Benutzer <strong>{{login}}</strong> wurde erfolgreich hinzugefügt.</translation>
+</translations>

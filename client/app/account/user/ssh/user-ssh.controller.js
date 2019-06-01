@@ -20,30 +20,6 @@ export default class UserAccountSshCtrl {
     this.$scope.$on('useraccount.ssh.refresh', () => {
       this.getSshKeys();
     });
-
-    this.$scope.setAction = function (action, data) {
-      this.$scope.currentAction = action;
-      this.$scope.currentActionData = data;
-
-      if (this.$scope.currentAction) {
-        this.$scope.stepPath = `billing/autoRenew/${action}.html`;
-
-        $('#sshAction').modal({
-          keyboard: false,
-          backdrop: 'static',
-        });
-      } else {
-        $('#sshAction').modal('hide');
-
-        $timeout(() => {
-          delete this.$scope.stepPath;
-        }, 300);
-      }
-    };
-
-    this.$scope.resetAction = function () {
-      this.$scope.setAction();
-    };
   }
 
   getSshKeys() {
