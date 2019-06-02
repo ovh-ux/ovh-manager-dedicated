@@ -6,7 +6,7 @@ angular.module('App').run(($q, $translate, SidebarMenu, User, constants) => {
       allowSubItems: false,
       allowSearch: false,
       loadOnState: 'app.account.user',
-      state: 'app.account.user.infos',
+      state: 'app.account.user.dashboard',
       namespace: 'account',
     });
   }
@@ -107,7 +107,7 @@ angular.module('App').run(($q, $translate, SidebarMenu, User, constants) => {
         SidebarMenu.addMenuItem({
           name: 'billingContacts',
           title: $translate.instant('menu_contacts'),
-          state: 'app.account.useraccount.contacts.services',
+          state: 'app.account.user.contacts.services',
           namespace: 'account',
         });
       }

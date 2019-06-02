@@ -1,5 +1,5 @@
 angular.module('UserAccount').config(($stateProvider, $urlRouterProvider) => {
-  const name = 'app.account.useraccount.contacts';
+  const name = 'app.account.user.contacts';
 
   $stateProvider.state(name, {
     url: '/contacts',
