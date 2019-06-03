@@ -1,3 +1,15 @@
+<a name="10.17.12"></a>
+## [10.17.12](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.11...v10.17.12) (2019-06-03)
+
+
+### Bug Fixes
+
+* **deps:** upgrade manager-server-sidebar to 0.1.6 ([#1157](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1157)) ([51310e9](https://github.com/ovh-ux/ovh-manager-dedicated/commit/51310e9))
+* **deps:** upgrade ovh-module-exchange to v9.4.5 ([#1155](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1155)) ([79de050](https://github.com/ovh-ux/ovh-manager-dedicated/commit/79de050))
+* **i18n:** retrieve translations ([#1159](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1159)) ([afc9271](https://github.com/ovh-ux/ovh-manager-dedicated/commit/afc9271))
+
+
+
 <a name="10.17.11"></a>
 ## [10.17.11](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.10...v10.17.11) (2019-05-29)
 
