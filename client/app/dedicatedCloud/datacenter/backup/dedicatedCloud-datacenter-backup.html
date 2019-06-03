@@ -5,22 +5,10 @@
     <oui-spinner></oui-spinner>
 </div>
 
-<div class="row"
-        data-ng-if="!loading && veeam.model">
-    <dl class="col-sm-9">
-        <dt data-translate="dedicatedCloud_tab_veeam_state"></dt>
-        <dd data-translate="{{ 'dedicatedCloud_tab_veeam_' + veeam.model.state.toUpperCase() }}"></dd>
-    </dl>
-    <div class="col-sm-3">
-        <a class="btn btn-block btn-default"
-            data-translate="dedicatedCloud_tab_veeam_on"
-            data-ng-if="veeam.model.state === veeam.constants.DISABLED"
-            data-ui-sref="{{ currentService.usesLegacyOrder ? 'app.dedicatedClouds.datacenter.backup.enableLegacy' : 'app.dedicatedClouds.datacenter.backup.enableAgora' }}">
-        </a>
-    </div>
+<div data-ng-if="!loading && veeam.model.state">
 
     <div class="row"
-        data-ng-if="isSplaActive && veeam.model">
+        data-ng-if="isSplaActive">
         <dl class="col-sm-9">
             <dt data-translate="dedicatedCloud_tab_veeam_state"></dt>
             <dd data-translate="{{ 'dedicatedCloud_tab_veeam_' + veeam.model.state.toUpperCase() }}"></dd>
