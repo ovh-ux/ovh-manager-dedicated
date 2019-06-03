@@ -273,6 +273,7 @@ export default class OptionTile {
         },
       },
       certification: {
+        isDisplayed: this.thereIsAtLeastOneOrderableItem(OPTION_TYPES.certification),
         description: {
           links: {
             managementInterface: {

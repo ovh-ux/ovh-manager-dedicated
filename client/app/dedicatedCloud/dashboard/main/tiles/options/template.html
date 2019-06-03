@@ -57,9 +57,11 @@
             </oui-action-menu>
         </oui-tile-definition>
 
-        <oui-tile-definition data-term="{{:: 'dedicatedCloudDashboardTilesOptions_certification_definition' | translate }}">
+        <oui-tile-definition
+            data-ng-if=":: $ctrl.bindings.certification.isDisplayed"
+            data-term="{{:: 'dedicatedCloudDashboardTilesOptions_certification_definition' | translate }}">
             <oui-tile-description>
-                <div data-translate="{{:: $ctrl.bindings.certification.description.name}}"></div>
+                <div data-translate="{{:: $ctrl.bindings.certification.description.name }}"></div>
                 <activation-status
                     class="d-block"
                     data-ng-if=":: $ctrl.bindings.certification.description.status"
