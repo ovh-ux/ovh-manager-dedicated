@@ -66,10 +66,10 @@ angular.module('App').controller('DedicatedCloudVMwareOptionCtrl', ($scope, $sta
 
   function getGuides() {
     User.getUser().then((user) => {
-      $scope.options.nsx.guide = constants.urls[user.ovhSubsidiary].guides.nsx
-        || constants.urls.FR.guides.nsx;
-      $scope.options.vrops.guide = constants.urls[user.ovhSubsidiary].guides.vrops
-        || constants.urls.FR.guides.vrops;
+      $scope.options.nsx.guide = constants.urls[user.ovhSubsidiary].presentations.nsx
+        || constants.urls.FR.presentations.nsx;
+      $scope.options.vrops.guide = constants.urls[user.ovhSubsidiary].presentations.vrops
+        || constants.urls.FR.presentations.vrops;
     });
   }
 

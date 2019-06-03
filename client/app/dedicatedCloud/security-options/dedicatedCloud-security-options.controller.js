@@ -29,8 +29,8 @@ angular.module('App').controller('DedicatedCloudSecurityOptionsCtrl', ($q, $stat
       $scope.guides = {};
       $scope.optionNames.forEach((optionName) => {
         _.set($scope.guides, optionName, constants.urls[user.ovhSubsidiary].guides[optionName]
-          || constants.urls[user.ovhSubsidiary].guides.pcidssHdsHipaa
-          || constants.urls.FR.guides.pcidssHdsHipaa);
+          || constants.urls[user.ovhSubsidiary].presentations.home
+          || constants.urls.FR.presentations.home);
       });
     });
   }
