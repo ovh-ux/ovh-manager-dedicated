@@ -1,4 +1,4 @@
-export const CERTIFICATIONS_OPTION_NAME = 'pcidssHdsHipaa';
+export const CERTIFICATIONS_OPTION_NAME = 'home';
 
 export const ORDER_STATUS = {
   cancelled: 'cancelled',

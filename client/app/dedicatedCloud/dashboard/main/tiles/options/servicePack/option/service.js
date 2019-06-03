@@ -51,7 +51,7 @@ export default class DedicatedCloudServicePackOption {
   }
 
   getDiscoverURL(name, subsidiary) {
-    return _.get(this.constants.urls, subsidiary, 'FR').guides[name];
+    return _.get(this.constants.urls, subsidiary, 'FR').presentations[name];
   }
 
   fetchRawOptions({ serviceName, servicePackName, subsidiary }) {
