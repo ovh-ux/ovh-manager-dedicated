@@ -38,7 +38,7 @@ angular
     },
   })
   .constant('HARDWARE_RAID_RULE_DEFAULT_NAME', 'managerHardRaid')
-  .service('Server', function (Products, $http, $q, constants, coreConfig, $cacheFactory, $rootScope,
+  .service('Server', function ($http, $q, constants, coreConfig, $cacheFactory, $rootScope,
     $translate, WucApi, Polling, OvhHttp, SERVERSTATS_PERIOD_ENUM,
     HARDWARE_RAID_RULE_DEFAULT_NAME) {
     const self = this;
@@ -96,53 +96,44 @@ angular
       self[operationType] = function (productId, url, _opt) {
         const opt = _opt || {};
 
-        let fullUrl;
-        let params;
-        let urlPath;
-
         if (opt.forceRefresh) {
           resetCache(opt.cache);
         }
 
-        return Products.getSelectedProduct(productId).then(
-          (selectedProduct) => {
-            if (!selectedProduct) {
-              return $q.reject(selectedProduct);
+        if (!productId) {
+          return $q.reject(productId);
+        }
+
+        const urlPath = URI.expand((!opt.urlPath && path.product) || opt.urlPath, {
+          serviceName: productId,
+        }).toString();
+        const fullUrl = ['apiv6', urlPath];
+
+        const params = angular.extend(
+          {
+            cache: operationType === 'get' ? opt.cache : false, // [TRICK] Force no cache for POST|PUT|DELETE
+          },
+          opt,
+        );
+
+        // Because Play dislike URL finished by a slash...
+        return WucApi[operationType](
+          url ? fullUrl.concat(url).join('/') : fullUrl.join('/'),
+          params,
+        ).then(
+          (response) => {
+            if (opt.cache && operationType !== 'get') {
+              // [TRICK] Force refresh of datas when POST|PUT|DELETE
+              resetCache(opt.cache);
             }
-
-            urlPath = URI.expand((!opt.urlPath && path.product) || opt.urlPath, {
-              serviceName: selectedProduct.name,
-            }).toString();
-            fullUrl = ['apiv6', urlPath];
-
-            params = angular.extend(
-              {
-                cache: operationType === 'get' ? opt.cache : false, // [TRICK] Force no cache for POST|PUT|DELETE
-              },
-              opt,
-            );
-
-            // Because Play dislike URL finished by a slash...
-            return WucApi[operationType](
-              url ? fullUrl.concat(url).join('/') : fullUrl.join('/'),
-              params,
-            ).then(
-              (response) => {
-                if (opt.cache && operationType !== 'get') {
-                  // [TRICK] Force refresh of datas when POST|PUT|DELETE
-                  resetCache(opt.cache);
-                }
-                if (opt.broadcast) {
-                  if (opt.broadcastParam) {
-                    $rootScope.$broadcast(opt.broadcast, opt.broadcastParam);
-                  } else {
-                    $rootScope.$broadcast(opt.broadcast, response);
-                  }
-                }
-                return response;
-              },
-              response => $q.reject(response),
-            );
+            if (opt.broadcast) {
+              if (opt.broadcastParam) {
+                $rootScope.$broadcast(opt.broadcast, opt.broadcastParam);
+              } else {
+                $rootScope.$broadcast(opt.broadcast, response);
+              }
+            }
+            return response;
           },
           response => $q.reject(response),
         );
@@ -150,11 +141,9 @@ angular
     });
 
     this.getUrlRenew = function (productId) {
-      return Products
-        .getSelectedProduct(productId)
-        .then(selectedProduct => URI.expand(constants.renew, {
-          serviceName: selectedProduct.name,
-        }).toString());
+      return $q.when(URI.expand(constants.renew, {
+        serviceName: productId,
+      }).toString());
     };
 
     this.getTaskPath = function (productId, taskId) {

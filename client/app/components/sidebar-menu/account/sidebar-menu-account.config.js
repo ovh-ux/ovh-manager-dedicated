@@ -1,4 +1,4 @@
-angular.module('App').run(($q, $translate, SidebarMenu, User, constants) => {
+angular.module('App').run(($q, $rootScope, $translate, SidebarMenu, User, constants) => {
   function buildMyAccountMenu() {
     const myAccountMenu = SidebarMenu.addMenuItem({
       name: 'userAccountMenu',
@@ -105,6 +105,20 @@ angular.module('App').run(($q, $translate, SidebarMenu, User, constants) => {
   }
 
   function init() {
+    $rootScope.$on('global_display_name_change', (evt, { displayName, serviceName }) => {
+      SidebarMenu.updateItemDisplay(
+        {
+          title: displayName,
+        },
+        {
+          stateParams: {
+            productId: serviceName,
+          },
+        },
+        'telecom-sms-section',
+      );
+    });
+
     return $q.all({
       translate: $translate.refresh(),
       user: User.getUser(),

@@ -1,4 +1,4 @@
-angular.module('services').service('Nas', function (Products, $http, $q, constants, $rootScope, Polling, OvhHttp, Poll) {
+angular.module('services').service('Nas', function ($http, $q, constants, $rootScope, Polling, OvhHttp, Poll) {
   const self = this;
   const cacheNas = {
     all: 'UNIVERS_DEDICATED_NAS',
