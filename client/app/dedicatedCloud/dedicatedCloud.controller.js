@@ -9,7 +9,6 @@ angular
       $timeout,
       $translate,
       $uibModal,
-      constants,
       coreConfig,
       currentService,
       currentUser,
@@ -23,7 +22,6 @@ angular
       this.$timeout = $timeout;
       this.$translate = $translate;
       this.$uibModal = $uibModal;
-      this.constants = constants;
       this.coreConfig = coreConfig;
       this.currentService = currentService;
       this.currentUser = currentUser;

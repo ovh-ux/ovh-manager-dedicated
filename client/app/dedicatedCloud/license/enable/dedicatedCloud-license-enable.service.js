@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 angular
   .module('App')
-  .service('DedicatedCloudLicencesSplaEnableService', class {
+  .service('ovhManagerPccLicenseEnableService', class {
     constructor(
       OvhApiOrder,
     ) {

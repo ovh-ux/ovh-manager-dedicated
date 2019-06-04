@@ -1,4 +1,6 @@
-angular.module('App').controller('DedicatedCloudVMwareOptionCtrl', ($scope, $stateParams, $q, $translate, DedicatedCloud, User, constants, Poller) => {
+import config from '../../config/config';
+
+angular.module('App').controller('DedicatedCloudVMwareOptionCtrl', ($scope, $stateParams, $q, $translate, DedicatedCloud, User, Poller) => {
   $scope.options = {
     nsx: {
       name: 'nsx', loading: true, state: null, toggable: null,
@@ -66,10 +68,10 @@ angular.module('App').controller('DedicatedCloudVMwareOptionCtrl', ($scope, $sta
 
   function getGuides() {
     User.getUser().then((user) => {
-      $scope.options.nsx.guide = constants.urls[user.ovhSubsidiary].presentations.nsx
-        || constants.urls.FR.presentations.nsx;
-      $scope.options.vrops.guide = constants.urls[user.ovhSubsidiary].presentations.vrops
-        || constants.urls.FR.presentations.vrops;
+      $scope.options.nsx.guide = config.constants.URLS[user.ovhSubsidiary].presentations.nsx
+        || config.constants.URLS.FR.presentations.nsx;
+      $scope.options.vrops.guide = config.constants.URLS[user.ovhSubsidiary].presentations.vrops
+        || config.constants.URLS.FR.presentations.vrops;
     });
   }
 
@@ -174,7 +176,7 @@ angular.module('App').controller('DedicatedCloudVMwareOptionCtrl', ($scope, $sta
     initTasks();
   });
 
-  $scope.loadOptionsStatus = function () {
+  $scope.loadOptionsStatus = function loadOptionsStatus() {
     const loadOptionsTasks = _.map($scope.options, option => loadOptionStatus(option));
     return $q.all(loadOptionsTasks);
   };

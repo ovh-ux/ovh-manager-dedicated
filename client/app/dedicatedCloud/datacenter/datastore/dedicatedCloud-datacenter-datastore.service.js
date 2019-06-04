@@ -1,6 +1,6 @@
 angular
   .module('App')
-  .service('dedicatedCloudDataCenterDatastoreService', class {
+  .service('ovhManagerPccDatacenterDatastoreService', class {
     constructor(
       OvhHttp,
     ) {

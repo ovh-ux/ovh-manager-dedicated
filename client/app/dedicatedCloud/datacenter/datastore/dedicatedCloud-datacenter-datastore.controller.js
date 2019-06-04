@@ -1,11 +1,11 @@
 import {
   RESOURCE_BILLING_TYPES,
   RESOURCE_UPGRADE_TYPES,
-} from '../../resource/upgrade/constants';
+} from '../../resource/upgrade/upgrade.constants';
 
 angular
   .module('App')
-  .controller('DedicatedCloudSubDatacentersDatastoreCtrl', class {
+  .controller('ovhManagerPccDatacenterDatastore', class {
     /* @ngInject */
     constructor(
       $q,
@@ -14,8 +14,8 @@ angular
       $stateParams,
       currentService,
       DedicatedCloud,
-      dedicatedCloudDatacenterService,
-      dedicatedCloudDataCenterDatastoreService,
+      ovhManagerPccDatacenterService,
+      ovhManagerPccDatacenterDatastoreService,
       DEDICATED_CLOUD_DATACENTER,
     ) {
       this.$q = $q;
@@ -24,8 +24,8 @@ angular
       this.$stateParams = $stateParams;
       this.currentService = currentService;
       this.DedicatedCloud = DedicatedCloud;
-      this.dedicatedCloudDatacenterService = dedicatedCloudDatacenterService;
-      this.dedicatedCloudDataCenterDatastoreService = dedicatedCloudDataCenterDatastoreService;
+      this.ovhManagerPccDatacenterService = ovhManagerPccDatacenterService;
+      this.ovhManagerPccDatacenterDatastoreService = ovhManagerPccDatacenterDatastoreService;
       this.DEDICATED_CLOUD_DATACENTER = DEDICATED_CLOUD_DATACENTER;
     }
 
@@ -45,7 +45,7 @@ angular
         .all(datastores
           .map((dc) => {
             if (dc.billing === this.RESOURCE_BILLING_TYPES.hourly) {
-              return this.dedicatedCloudDataCenterDatastoreService
+              return this.ovhManagerPccDatacenterDatastoreService
                 .fetchLegacyHourlyConsumption(
                   this.$stateParams.productId,
                   this.$stateParams.datacenterId,
@@ -83,7 +83,7 @@ angular
     fetchConsumptionForDatastore(serviceConsumption) {
       return (datastore) => {
         if (datastore.billing === this.RESOURCE_BILLING_TYPES.hourly && datastore.status === 'DELIVERED') {
-          const datastoreConsumption = this.dedicatedCloudDatacenterService.constructor
+          const datastoreConsumption = this.ovhManagerPccDatacenterService.constructor
             .extractElementConsumption(serviceConsumption, {
               id: datastore.id,
               type: this.DEDICATED_CLOUD_DATACENTER.elementTypes.datastore,
@@ -102,7 +102,7 @@ angular
 
     chooseConsumptionFetchingMethod(datastores) {
       return !this.currentService.usesLegacyOrder
-        ? this.dedicatedCloudDatacenterService
+        ? this.ovhManagerPccDatacenterService
           .fetchConsumptionForService(this.currentService.serviceInfos.serviceId)
           .then(this.fetchConsumptionForDatastores(datastores))
         : this.fetchLegacyConsumption(datastores);

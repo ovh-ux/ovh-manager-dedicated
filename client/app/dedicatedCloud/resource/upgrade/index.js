@@ -1,11 +1,11 @@
 import {
   controller,
   controllerName,
-} from './controller';
+} from './upgrade.controller';
 
-import state from './state';
+import state from './upgrade.state';
 
-const MODULE_NAME = 'resourceUpgrade';
+const MODULE_NAME = 'ovhManagerPccResourceUpgrade';
 
 angular
   .module(MODULE_NAME, [

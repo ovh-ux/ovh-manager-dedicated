@@ -1,4 +1,4 @@
-import pccViewTemplate from './dashboard/template.html';
+import pccViewTemplate from './dashboard/dashboard.html';
 
 angular
   .module('App')

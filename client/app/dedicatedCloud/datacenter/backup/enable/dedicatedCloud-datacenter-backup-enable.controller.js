@@ -1,6 +1,8 @@
+import config from '../../../../config/config';
+
 angular
   .module('App')
-  .controller('DedicatedCloudSubDatacenterVeeamBackupEnableCtrl', class {
+  .controller('ovhManagerPccDatacenterBackupEnable', class {
     /* @ngInject */
     constructor(
       $q,
@@ -9,8 +11,7 @@ angular
       $translate,
       $window,
       Alerter,
-      constants,
-      datacenterBackupEnableService,
+      ovhManagerPccDatacenterBackupEnableService,
       DedicatedCloud,
       User,
     ) {
@@ -20,8 +21,7 @@ angular
       this.$translate = $translate;
       this.$window = $window;
       this.Alerter = Alerter;
-      this.constants = constants;
-      this.datacenterBackupEnableService = datacenterBackupEnableService;
+      this.ovhManagerPccDatacenterBackupEnableService = ovhManagerPccDatacenterBackupEnableService;
       this.DedicatedCloud = DedicatedCloud;
       this.User = User;
     }
@@ -85,12 +85,13 @@ angular
           this.expressURL = expressURL;
           this.updateAvailableHosts(hosts);
           this.user = user;
-          const urlBaseToUse = _.get(this.constants.urls, this.user.ovhSubsidiary)
-            || this.constants.urls.FR;
+          const urlBaseToUse = _.get(config.constants.URLS, this.user.ovhSubsidiary)
+            || config.constants.URLS.FR;
           this.veeamPresentationURL = urlBaseToUse.presentations.veeam;
         })
         .then(() => (this.user.ovhSubsidiary === 'US'
-          ? this.datacenterBackupEnableService.fetchBackupOffers(this.$stateParams.productId)
+          ? this.ovhManagerPccDatacenterBackupEnableService
+            .fetchBackupOffers(this.$stateParams.productId)
           : null))
         .then((offers) => {
           this.updateAvailableOffers(_.get(offers, 'prices'));

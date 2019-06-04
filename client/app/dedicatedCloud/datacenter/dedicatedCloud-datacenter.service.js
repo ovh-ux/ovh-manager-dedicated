@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 angular
   .module('App')
-  .service('dedicatedCloudDatacenterService', class DedicatedCloudDatacenterService {
+  .service('ovhManagerPccDatacenterService', class OvhManagerPccDatacenterService {
     constructor(
       OvhApiMe,
     ) {
@@ -16,20 +16,20 @@ angular
     fetchConsumptionForService(serviceId) {
       return this
         .fetchConsumptionForAllServices()
-        .then(DedicatedCloudDatacenterService.keepOnlyConsumptionForService(serviceId));
+        .then(OvhManagerPccDatacenterService.keepOnlyConsumptionForService(serviceId));
     }
 
     static extractElementConsumption({ elements }, { id, type }) {
       return _.find(
-        DedicatedCloudDatacenterService.keepOnlyElementDetailsWithType(elements, type),
-        DedicatedCloudDatacenterService.keepOnlyElement(id),
+        OvhManagerPccDatacenterService.keepOnlyElementDetailsWithType(elements, type),
+        OvhManagerPccDatacenterService.keepOnlyElement(id),
       );
     }
 
     static keepOnlyElementDetailsWithType(elements, type) {
       return _.flatten(
         _.map(
-          DedicatedCloudDatacenterService.keepOnlyElementsWithType(elements, type),
+          OvhManagerPccDatacenterService.keepOnlyElementsWithType(elements, type),
           'details',
         ),
       );

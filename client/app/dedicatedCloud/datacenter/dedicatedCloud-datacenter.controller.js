@@ -1,6 +1,6 @@
 angular
   .module('App')
-  .controller('DedicatedCloudSubDatacenterCtrl', class {
+  .controller('ovhManagerPccDatacenter', class {
     /* @ngInject */
     constructor(
       $scope,
@@ -10,8 +10,8 @@ angular
       $translate,
       $uibModal,
       Alerter,
+      coreConfig,
       DedicatedCloud,
-      constants,
       DEDICATED_CLOUD_DATACENTER,
     ) {
       this.$scope = $scope;
@@ -21,8 +21,8 @@ angular
       this.$translate = $translate;
       this.$uibModal = $uibModal;
       this.Alerter = Alerter;
+      this.coreConfig = coreConfig;
       this.DedicatedCloud = DedicatedCloud;
-      this.constants = constants;
       this.DEDICATED_CLOUD_DATACENTER = DEDICATED_CLOUD_DATACENTER;
     }
 

@@ -1,6 +1,6 @@
 angular
   .module('App')
-  .controller('DedicatedCloudSubDatacenterVeeamBackupEnableLegacyCtrl', class {
+  .controller('ovhManagerPccDatacenterBackupEnableLegacy', class {
     /* @ngInject */
     constructor(
       $q,

@@ -42,7 +42,10 @@ angular
       return this.loadLicences()
         .then(() => this.loadVeeam())
         .catch((data) => {
-          this.$scope.setMessage(this.$translate.instant('dedicatedCloud_tab_veeam_loading_error'), angular.extend(data, { type: 'ERROR' }));
+          this.$scope.setMessage(this.$translate.instant('dedicatedCloud_tab_veeam_loading_error'), {
+            ...data,
+            type: 'ERROR',
+          });
         })
         .finally(() => {
           this.$scope.loading = false;

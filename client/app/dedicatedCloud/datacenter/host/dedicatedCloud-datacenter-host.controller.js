@@ -1,7 +1,7 @@
 import {
   RESOURCE_BILLING_TYPES,
   RESOURCE_UPGRADE_TYPES,
-} from '../../resource/upgrade/constants';
+} from '../../resource/upgrade/upgrade.constants';
 
 angular
   .module('App')
@@ -14,8 +14,8 @@ angular
       $stateParams,
       currentService,
       DedicatedCloud,
-      dedicatedCloudDatacenterService,
       dedicatedCloudDataCenterHostService,
+      ovhManagerPccDatacenterService,
       DEDICATED_CLOUD_DATACENTER,
     ) {
       this.$q = $q;
@@ -24,8 +24,8 @@ angular
       this.$stateParams = $stateParams;
       this.currentService = currentService;
       this.DedicatedCloud = DedicatedCloud;
-      this.dedicatedCloudDatacenterService = dedicatedCloudDatacenterService;
       this.dedicatedCloudDataCenterHostService = dedicatedCloudDataCenterHostService;
+      this.ovhManagerPccDatacenterService = ovhManagerPccDatacenterService;
       this.DEDICATED_CLOUD_DATACENTER = DEDICATED_CLOUD_DATACENTER;
     }
 
@@ -76,7 +76,7 @@ angular
     fetchConsumptionForHost(serviceConsumption) {
       return (host) => {
         if (host.billingType === this.RESOURCE_BILLING_TYPES.hourly && host.status === 'DELIVERED') {
-          const hostConsumption = this.dedicatedCloudDatacenterService.constructor
+          const hostConsumption = this.ovhManagerPccDatacenterService.constructor
             .extractElementConsumption(serviceConsumption, {
               id: host.hostId,
               type: this.DEDICATED_CLOUD_DATACENTER.elementTypes.host,
@@ -97,7 +97,7 @@ angular
 
     chooseConsumptionFetchingMethod(hosts) {
       return !this.currentService.usesLegacyOrder
-        ? this.dedicatedCloudDatacenterService
+        ? this.ovhManagerPccDatacenterService
           .fetchConsumptionForService(this.currentService.serviceInfos.serviceId)
           .then(this.fetchConsumptionForHosts(hosts))
         : this.fetchLegacyHostConsumption(hosts);
