@@ -60,7 +60,9 @@ export default class OptionTile {
 
         const checkoutHasExpired = moment().isAfter(pendingOrder.expirationDate);
 
-        if (orderHasBeenDelivered || checkoutHasExpired) {
+        this.activationNeedsConfiguration = this.pendingOrder.needsConfiguration;
+
+        if ((orderHasBeenDelivered || checkoutHasExpired) && !this.needsConfiguration) {
           this.pendingOrder = null;
 
           return this.preferenceService.removePreference(this.currentService.serviceName);
@@ -86,8 +88,8 @@ export default class OptionTile {
       .all([
         this.handleOptionNames(),
         this.handleServicePacks(),
-        this.handleStatus(),
       ])
+      .then(() => this.handleStatus())
       .then(() => {
         this.currentServicePack = _.find(
           this.servicePacks,
@@ -291,12 +293,24 @@ export default class OptionTile {
           status: this.buildCertificationDescription(),
         },
         actionMenu: {
-          isDisplayed: this.isOrderable(OPTION_TYPES.certification) || this.pendingOrderIsNotPaid(),
+          isDisplayed: (
+            this.isOrderable(OPTION_TYPES.certification) || this.pendingOrderIsNotPaid()
+          ) && !this.activationNeedsConfiguration,
           activate: {
             isDisplayed: this.isOrderable(OPTION_TYPES.certification),
             stateParams: {
               activationType: OPTION_TYPES.certification,
               orderableServicePacks: this.orderables[OPTION_TYPES.certification],
+              goToConfiguration: true, // TODO delete
+              servicePacks: this.servicePacks,
+            },
+          },
+          configurate: {
+            isDisplayed: this.activationNeedsConfiguration,
+            stateParams: {
+              activationType: OPTION_TYPES.certification,
+              orderableServicePacks: this.orderables[OPTION_TYPES.certification],
+              goToConfiguration: true,
               servicePacks: this.servicePacks,
             },
           },

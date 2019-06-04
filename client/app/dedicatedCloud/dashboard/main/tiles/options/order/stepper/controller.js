@@ -29,7 +29,8 @@ export default class Stepper {
     this.registerStepStates();
     this.setUpTransitionsBetweenSteps();
     this.setUpExitTransition();
-    this.goToStep(_.first(this.steps));
+
+    return this.goToStep(_.find(this.steps, { name: this.currentStep }) || _.first(this.steps));
   }
 
   registerStepStates() {

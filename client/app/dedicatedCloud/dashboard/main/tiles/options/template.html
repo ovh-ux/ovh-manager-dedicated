@@ -105,6 +105,11 @@
                     data-ui-sref="app.dedicatedClouds.servicePack($ctrl.bindings.certification.actionMenu.activate.stateParams)">
                 </oui-action-menu-item>
                 <oui-action-menu-item
+                    data-ng-if=":: $ctrl.bindings.certification.actionMenu.configurate.isDisplayed"
+                    data-text="{{:: 'dedicatedCloudDashboardTilesOptions_certification_actionMenu_configurate' | translate }}"
+                    data-ui-sref="app.dedicatedClouds.servicePack($ctrl.bindings.certification.actionMenu.configurate.stateParams)">
+                </oui-action-menu-item>
+                <oui-action-menu-item
                     data-ng-if=":: $ctrl.bindings.basic.actionMenu.validateActivation.isDisplayed"
                     data-href="{{:: $ctrl.bindings.basic.actionMenu.validateActivation.url }}"
                     data-text="{{:: 'dedicatedCloudDashboardTilesOptions_basic_actionMenu_validateActication' | translate }}"

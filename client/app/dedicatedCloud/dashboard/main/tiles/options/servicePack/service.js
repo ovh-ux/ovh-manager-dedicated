@@ -170,13 +170,14 @@ export default class DedicatedCloudServicePack {
   }
 
   savePendingOrder(serviceName, {
-    activationType, id, orderedServicePackName, url,
+    activationType, id, needsConfiguration, orderedServicePackName, url,
   }) {
     return this.ovhUserPref
       .assign(PREFERENCE_NAME, {
         [serviceName]: {
           activationType,
           id,
+          needsConfiguration,
           orderedServicePackName,
           url,
         },
