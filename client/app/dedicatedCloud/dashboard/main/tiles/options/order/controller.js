@@ -18,6 +18,7 @@ export default class {
 
   $onInit() {
     this.activationType = this.$transition$.params().activationType;
+    this.currentStep = this.$transition$.params().goToConfiguration ? 'requiredConfiguration' : undefined;
     this.callerStateName = this.$state.$current.parent.name;
     this.steps = this.orderService.buildSteps(this.activationType);
 

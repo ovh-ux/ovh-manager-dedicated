@@ -2,4 +2,6 @@
     <span data-ng-bind=":: $ctrl.title"></span>
 </oui-back-button>
 
-<stepper data-steps="$ctrl.steps"></stepper>
+<stepper
+    data-current-step="$ctrl.currentStep"
+    data-steps="$ctrl.steps"></stepper>

@@ -19,6 +19,10 @@ export const ACTIVATION_STATUS = {
     name: 'enabled',
     type: 'success',
   },
+  needsConfiguration: {
+    name: 'needsConfiguration',
+    type: 'warning',
+  },
   pendingActivation: {
     name: 'pendingActivation',
     type: 'error',

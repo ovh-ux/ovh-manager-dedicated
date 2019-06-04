@@ -1,5 +1,7 @@
 import _ from 'lodash';
 
+import { OPTION_TYPES } from '../../../servicePack/option/constants';
+
 import {
   MODAL_CONTROLLER_NAME,
   MODAL_TEMPLATE_URL,
@@ -103,6 +105,8 @@ export default class {
 
     this.orderIsInProgress = true;
 
+    // return this.goToNextStep();
+
     return this.OvhApiOrder.Upgrade().PrivateCloud().v6()
       .post({
         serviceName: `${this.currentService.serviceName}/servicepack`,
@@ -117,8 +121,9 @@ export default class {
           .savePendingOrder(this.currentService.serviceName, {
             activationType: this.activationType,
             id: order.orderId,
-            url: order.url,
+            needsConfiguration: this.activationType === OPTION_TYPES.certification,
             orderedServicePackName: this.servicePackToOrder.name,
+            url: order.url,
           })
           .then(() => (this.hasDefaultMeansOfPayment
             ? this.goToNextStep()
@@ -126,10 +131,12 @@ export default class {
       })
       .catch(error => this.stepper
         .exit()
-        .then(() => this.Alerter.alertFromSWS(this.$translate.instant('dedicatedCloudDashboardTilesOptionsOrderSelection_order_failure'), {
-          message: error.data.message,
-          type: 'ERROR',
-        }, 'dedicatedCloud_alert')))
+        .then(() => this.Alerter
+          .alertFromSWS(this.$translate
+            .instant('dedicatedCloudDashboardTilesOptionsOrderSelection_order_failure'), {
+            message: error.data.message,
+            type: 'ERROR',
+          }, 'dedicatedCloud_alert')))
       .finally(() => {
         this.orderIsInProgress = false;
       });
