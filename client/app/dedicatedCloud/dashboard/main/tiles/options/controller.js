@@ -275,7 +275,8 @@ export default class OptionTile {
         },
       },
       certification: {
-        isDisplayed: this.thereIsAtLeastOneOrderableItem(OPTION_TYPES.certification),
+        isDisplayed: this.thereIsAtLeastOneOrderableItem(OPTION_TYPES.certification)
+          || this.doesCurrentServicePackHoldACertification(),
         description: {
           links: {
             managementInterface: {
@@ -301,7 +302,6 @@ export default class OptionTile {
             stateParams: {
               activationType: OPTION_TYPES.certification,
               orderableServicePacks: this.orderables[OPTION_TYPES.certification],
-              goToConfiguration: true, // TODO delete
               servicePacks: this.servicePacks,
             },
           },
