@@ -9,15 +9,6 @@
     <oui-datagrid data-rows-loader="$ctrl.loadDatacenters($config)">
         <oui-column data-title=":: 'dedicatedCloud_tab_datacenter' | translate">
             <span data-ng-bind="$row.name"></span>
-            <div class="label label-info"
-                 data-ng-if="hasDiscount($row)"
-                 data-uib-tooltip="{{ 'dedicatedCloud_discount_AMD' | translate }}"
-                 data-tooltip-placement="top">
-                <i class="fa fa-arrow-down"></i>
-                <span class="text-uppercase"
-                      data-translate="dedicatedCloud_discount">
-                </span>
-            </div>
         </oui-column>
         <oui-column data-title=":: 'dedicatedCloud_DATACENTERS_CPU' | translate">
             <span data-ng-if="$row.cpuSize === null || $row.cpuSize.value === null || $row.cpuSize.unit === null">-</span>

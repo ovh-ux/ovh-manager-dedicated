@@ -46,10 +46,6 @@ angular
         loading: false,
       };
 
-      this.$scope.discount = {
-        AMDPCC: false,
-      };
-
       this.$scope.dedicatedCloud = {};
 
       this.$scope.$on('dedicatedcloud.informations.reload', () => {

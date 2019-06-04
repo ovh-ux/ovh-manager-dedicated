@@ -65,17 +65,6 @@
                 <span data-ng-bind-html="message"></span>
             </div>
 
-            <div class="alert alert-info"
-                 role="alert"
-                 data-ng-if="datacenter.model.hasDiscountAMD">
-                <button type="button"
-                        class="close"
-                        data-dismiss="alert">
-                    &times;
-                </button>
-                <p data-translate="dedicatedCloud_discount_AMD"></p>
-            </div>
-
             <div data-ovh-alert="{{ :: $ctrl.DEDICATED_CLOUD_DATACENTER.alertId }}"></div>
 
             <div class="text-center"

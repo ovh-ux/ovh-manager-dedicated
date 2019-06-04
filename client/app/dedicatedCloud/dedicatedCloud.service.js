@@ -189,8 +189,6 @@ angular
       },
     });
 
-    this.hasDiscount = (/* datacenter */) => false; // Use this to remove the discount quickly.
-
     /* ------- SUB DATACENTER -------*/
 
     this.getDatacenterInfoProxy = (serviceName, datacenterId) => OvhHttp.get('/dedicatedCloud/{serviceName}/datacenter/{datacenterId}', {
