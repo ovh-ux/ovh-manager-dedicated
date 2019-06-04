@@ -9,6 +9,7 @@ angular
       $translate,
       $window,
       Alerter,
+      constants,
       datacenterBackupEnableService,
       DedicatedCloud,
       User,
@@ -19,6 +20,7 @@ angular
       this.$translate = $translate;
       this.$window = $window;
       this.Alerter = Alerter;
+      this.constants = constants;
       this.datacenterBackupEnableService = datacenterBackupEnableService;
       this.DedicatedCloud = DedicatedCloud;
       this.User = User;
