@@ -5,8 +5,8 @@ angular.module('App').controller('DedicatedCloudSecurityPolicyModifyCtrl', ($sco
   $scope.modifyEntry = function () {
     $scope.resetAction();
     DedicatedCloud.modifySecurityPolicy($stateParams.productId, $scope.entryToModify).then(
-      (data) => {
-        $scope.setMessage($translate.instant('dedicatedCloud_configuration_SECURITY_policy_modify_success'), data);
+      () => {
+        $scope.setMessage($translate.instant('dedicatedCloud_configuration_SECURITY_policy_modify_success'), true);
       },
       (data) => {
         $scope.setMessage($translate.instant('dedicatedCloud_configuration_SECURITY_policy_modify_fail', {
