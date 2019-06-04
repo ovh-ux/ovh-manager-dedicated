@@ -27,8 +27,6 @@ import dedicatedCloudDashboard from './dedicatedCloud/dashboard/main';
 import dedicatedCloudDashboardLegacy from './dedicatedCloud/dashboard/legacy';
 import dedicatedCloudResourceUpgrade from './dedicatedCloud/resource/upgrade';
 
-
-
 Environment.setRegion(__WEBPACK_REGION__);
 
 angular

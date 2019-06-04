@@ -1,4 +1,4 @@
-angular.module('services').service('Cdn', function ($cacheFactory, Products, $http, $q, constants, $rootScope, Poll, OvhHttp) {
+angular.module('services').service('Cdn', function ($cacheFactory, $http, $q, constants, $rootScope, Poll, OvhHttp) {
   const self = this;
   const swsCdnProxyPath = `${constants.swsProxyRootPath}cdn/dedicated`;
   const swsOrderProxyPath = `${constants.swsProxyRootPath}order/cdn/dedicated`;
@@ -31,27 +31,24 @@ angular.module('services').service('Cdn', function ($cacheFactory, Products, $ht
       resetCache();
     }
 
-    return Products.getSelectedProduct(productId)
-      .then((product) => {
-        if (product) {
-          const selectedCdn = cdnCache.get('cdn');
-          if (!selectedCdn) {
-            if (requests.cdnDetails === null) {
-              requests.cdnDetails = $http
-                .get([aapiRootPath, 'get-service', product.name].join('/'), {
-                  serviceType: 'aapi',
-                })
-                .then((result) => {
-                  cdnCache.put('cdn', result.data);
-                }); // .catch(() => {});
-            }
-            return requests.cdnDetails;
-          }
-          return selectedCdn;
+    if (productId) {
+      const selectedCdn = cdnCache.get('cdn');
+
+      if (!selectedCdn) {
+        if (requests.cdnDetails === null) {
+          requests.cdnDetails = $http
+            .get(`${aapiRootPath}/get-service/${productId}`, {
+              serviceType: 'aapi',
+            })
+            .then((result) => {
+              cdnCache.put('cdn', result.data);
+            });
         }
-        return $q.reject(product);
-      })
-      .then(() => cdnCache.get('cdn'), reason => $q.reject(reason));
+        return $q.when(requests.cdnDetails);
+      }
+      return $q.when(selectedCdn);
+    }
+    return $q.reject(productId);
   };
 
   this.poll = function (opts) {

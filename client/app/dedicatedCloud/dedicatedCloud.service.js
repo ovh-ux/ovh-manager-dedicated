@@ -13,7 +13,7 @@ angular
     '2014v1Enterprise': '2014 Enterprise',
     '2013v1': '2013',
   })
-  .service('DedicatedCloud', function DedicatedCloudService(Products, $http, $q, $cacheFactory, $rootScope,
+  .service('DedicatedCloud', function DedicatedCloudService($q, $cacheFactory, $rootScope,
     OvhApiDedicatedCloud, OvhHttp, Poll, Poller, DEDICATED_CLOUD_CONSTANTS, VM_ENCRYPTION_KMS) {
     const self = this;
     const dedicatedCloudCache = {
@@ -452,9 +452,7 @@ angular
       },
       broadcast: 'dedicatedCloud.users.refresh',
     }).then((task) => {
-      Products.getSelectedProduct(serviceName).then((selectedProduct) => {
-        self.pollRequestState({ serviceName: selectedProduct.name, task, namespace: 'enableUser' });
-      });
+      self.pollRequestState({ serviceName, task, namespace: 'enableUser' });
     });
 
     this.disableUser = (serviceName, userId) => OvhHttp.post('/dedicatedCloud/{serviceName}/user/{userId}/disable', {
@@ -465,9 +463,7 @@ angular
       },
       broadcast: 'dedicatedCloud.users.refresh',
     }).then((task) => {
-      Products.getSelectedProduct(serviceName).then((selectedProduct) => {
-        self.pollRequestState({ serviceName: selectedProduct.name, task, namespace: 'disableUser' });
-      });
+      self.pollRequestState({ serviceName, task, namespace: 'disableUser' });
     });
 
     this.getUserRights = (serviceName, userId, elementsByPage, elementsToSkip) => OvhHttp.get('/sws/dedicatedCloud/{serviceName}/users/{userId}/rights', {

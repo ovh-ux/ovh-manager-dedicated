@@ -4,10 +4,9 @@ angular.module('services').service('User', [
   '$q',
   'constants',
   'Billing.constants',
-  'Products',
   '$translate',
   'OvhHttp',
-  function ($rootScope, $http, $q, constants, billingConstants, Products, $translate, OvhHttp) {
+  function ($rootScope, $http, $q, constants, billingConstants, $translate, OvhHttp) {
     const self = this;
     let user = null;
     let userPromise;

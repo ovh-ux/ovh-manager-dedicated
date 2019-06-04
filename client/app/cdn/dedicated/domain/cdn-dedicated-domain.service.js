@@ -1,4 +1,4 @@
-angular.module('services').service('CdnDomain', function (Products, $http, $q, constants, $cacheFactory, $rootScope) {
+angular.module('services').service('CdnDomain', function ($http, $q, constants, $cacheFactory, $rootScope) {
   const aapiRootPath = '/sws/dedicated/cdn';
   const swsCdnProxyPath = `${constants.swsProxyRootPath}cdn/dedicated`;
   const cdnCache = $cacheFactory('UNIVERS_DEDICATED_CDN_DOMAIN');
@@ -125,24 +125,22 @@ angular.module('services').service('CdnDomain', function (Products, $http, $q, c
   };
 
   this.getDomains = function (productId) {
-    return Products.getSelectedProduct(productId).then(({ name }) => {
-      if (!requests.cdnDomains[name]) {
-        requests.cdnDomains[name] = $q.defer();
+    if (!requests.cdnDomains[productId]) {
+      requests.cdnDomains[productId] = $q.defer();
 
-        $http
-          .get([aapiRootPath, name, 'domains'].join('/'), {
-            serviceType: 'aapi',
-          })
-          .then((result) => {
-            requests.cdnDomains[name].resolve(result.data);
-          })
-          .catch((data) => {
-            requests.cdnDomains[name].reject(data);
-          });
-      }
+      $http
+        .get(`${aapiRootPath}/${productId}/domains/`, {
+          serviceType: 'aapi',
+        })
+        .then((result) => {
+          requests.cdnDomains[productId].resolve(result.data);
+        })
+        .catch((data) => {
+          requests.cdnDomains[productId].reject(data);
+        });
+    }
 
-      return requests.cdnDomains[name].promise;
-    });
+    return requests.cdnDomains[productId].promise;
   };
 
   this.modifyBackend = function (cdn, domain, newBackend) {
