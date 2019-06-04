@@ -146,7 +146,7 @@ const constants = {
         presentations: {
           home: 'https://www.ovh.com/fr/private-cloud/',
           nsx: 'https://www.ovh.com/fr/private-cloud/options/nsx.xml',
-          veeam: 'https://www.ovh.com/fr/private-cloud/veeam.xml',
+          veeam: 'https://www.ovh.com/fr/private-cloud/options/veeam.xml',
           vrops: 'https://www.ovh.com/fr/private-cloud/options/vrops.xml',
         },
         vpsCloud: 'https://www.ovh.com/fr/vps/vps-cloud.xml',
