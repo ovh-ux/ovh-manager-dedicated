@@ -51,6 +51,7 @@ angular
         .editDescription(value, contextTitle);
       this.$scope.loadDatacenter = () => this.loadDatacenter();
       this.$scope.setAction = (action, data, parent) => this.setAction(action, data, parent);
+      this.$scope.resetMessage = () => this.resetMessage();
       this.$scope.setMessage = (message, data) => this.setMessage(message, data);
       this.$scope.resetAction = () => this.resetAction();
 
@@ -229,6 +230,10 @@ angular
       }
 
       this.$scope.message = messageToSend;
+    }
+
+    resetMessage() {
+      this.$scope.message = null;
     }
 
     setAction(action, data, parent) {
