@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 angular
   .module('App')
-  .service('datacenterBackupEnableService', class {
+  .service('ovhManagerPccDatacenterBackupEnableService', class {
     /* @ngInject */
     constructor(
       OvhApiOrder,

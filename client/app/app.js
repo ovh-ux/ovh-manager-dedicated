@@ -1,5 +1,4 @@
 import { Environment } from '@ovh-ux/manager-config';
-import ovhManagerCore from '@ovh-ux/manager-core';
 import _ from 'lodash';
 import ngAtInternet from '@ovh-ux/ng-at-internet';
 import ngAtInternetUiRouterPlugin from '@ovh-ux/ng-at-internet-ui-router-plugin';
@@ -15,6 +14,7 @@ import ngOvhUserPref from '@ovh-ux/ng-ovh-user-pref';
 import ngOvhWebUniverseComponents from '@ovh-ux/ng-ovh-web-universe-components';
 import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
 import ovhContacts from '@ovh-ux/ng-ovh-contacts';
+import ovhManagerCore from '@ovh-ux/manager-core';
 import ovhManagerNavbar from '@ovh-ux/manager-navbar';
 import ovhManagerServerSidebar from '@ovh-ux/manager-server-sidebar';
 import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
@@ -23,9 +23,8 @@ import uiRouter from '@uirouter/angularjs';
 import config from './config/config';
 import dedicatedCloudDatacenterDrp from './dedicatedCloud/datacenter/drp';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
-import dedicatedCloudDashboard from './dedicatedCloud/dashboard/main';
-import dedicatedCloudDashboardLegacy from './dedicatedCloud/dashboard/legacy';
-import dedicatedCloudResourceUpgrade from './dedicatedCloud/resource/upgrade';
+import ovhManagerPccDashboard from './dedicatedCloud/dashboard';
+import ovhManagerPccResourceUpgrade from './dedicatedCloud/resource/upgrade';
 
 Environment.setRegion(__WEBPACK_REGION__);
 
@@ -35,10 +34,7 @@ angular
     'Billing',
     'chart.js',
     'controllers',
-    dedicatedCloudDashboard,
-    dedicatedCloudDashboardLegacy,
     dedicatedCloudDatacenterDrp,
-    dedicatedCloudResourceUpgrade,
     dedicatedUniverseComponents,
     'directives',
     'filters',
@@ -70,6 +66,8 @@ angular
     'ovh-angular-pagination-front',
     'ovh-angular-q-allSettled',
     'ovh-angular-responsive-tabs',
+    ovhManagerPccDashboard,
+    ovhManagerPccResourceUpgrade,
     ovhManagerServerSidebar,
     'ovh-angular-tail-logs',
     'ovh-utils-angular',

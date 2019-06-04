@@ -6,7 +6,7 @@ angular
       url: '/datastores',
       views: {
         pccDatacenterView: {
-          controller: 'DedicatedCloudSubDatacentersDatastoreCtrl',
+          controller: 'ovhManagerPccDatacenterDatastore',
           controllerAs: '$ctrl',
           templateUrl: 'dedicatedCloud/datacenter/datastore/dedicatedCloud-datacenter-datastore.html',
         },
@@ -22,7 +22,7 @@ angular
       url: '/order',
       views: {
         'pccDatacenterView@app.dedicatedClouds.datacenter': {
-          controller: 'DedicatedCloudDatacentersDatastoreOrderCtrl',
+          controller: 'ovhManagerPccDatacenterDatastoreOrder',
           controllerAs: '$ctrl',
           templateUrl: 'dedicatedCloud/datacenter/datastore/order/dedicatedCloud-datacenter-datastore-order.html',
         },

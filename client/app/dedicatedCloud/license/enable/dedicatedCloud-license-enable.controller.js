@@ -1,19 +1,19 @@
 angular
   .module('App')
-  .controller('DedicatedCloudLicencesSplaEnableCtrl', class {
+  .controller('ovhManagerPccLicenseEnable', class {
     constructor(
       $state,
       $stateParams,
       $translate,
       Alerter,
-      DedicatedCloudLicencesSplaEnableService,
+      ovhManagerPccLicenseEnableService,
       User,
     ) {
       this.$state = $state;
       this.$stateParams = $stateParams;
       this.$translate = $translate;
       this.Alerter = Alerter;
-      this.DedicatedCloudLicencesSplaEnableService = DedicatedCloudLicencesSplaEnableService;
+      this.ovhManagerPccLicenseEnableService = ovhManagerPccLicenseEnableService;
       this.User = User;
     }
 
@@ -74,7 +74,7 @@ angular
     }
 
     fetchOffers() {
-      return this.DedicatedCloudLicencesSplaEnableService
+      return this.ovhManagerPccLicenseEnableService
         .fetchOffers(this.serviceName)
         .then((offers) => {
           this.bindings.offers = {
@@ -84,7 +84,7 @@ angular
     }
 
     fetchContracts() {
-      return this.DedicatedCloudLicencesSplaEnableService
+      return this.ovhManagerPccLicenseEnableService
         .fetchContracts(_.first(this.bindings.offers.value), this.serviceName, this.ovhSubsidiary)
         .then((contracts) => {
           this.bindings.contracts.value = contracts;

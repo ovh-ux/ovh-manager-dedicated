@@ -1,13 +1,13 @@
-import component from './component';
+import component from './legacy.component';
 
-const componentName = 'legacyDashboard';
-const moduleName = 'legacyDashboard';
+const moduleName = 'ovhManagerPccDashboardLegacy';
 
 angular
   .module(moduleName, [
     'oui',
     'pascalprecht.translate',
+    'ui.router',
   ])
-  .component(componentName, component);
+  .component(component.name, component);
 
 export default moduleName;
