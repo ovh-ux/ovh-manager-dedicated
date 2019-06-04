@@ -46,10 +46,6 @@
                             class="oui-icon oui-icon-chevron-down"
                             aria-hidden="true"></span>
                     </label>
-                    <div
-                        class="oui-field__helper mt-3"
-                        data-translate="dedicatedCloud_datacenter_backup_enable_version_explain"
-                        data-translate-values="{ url: $ctrl.bindings.availableOffers.explanation.url }"></div>
                 </oui-field>
             </div>
 
@@ -57,23 +53,23 @@
                 <p
                     data-translate="dedicatedCloud_tab_veeam_enable_message"
                     data-translate-values="{ t0: $ctrl.datacenter.name }"></p>
-                <p>
-                    <span data-translate="dedicatedCloud_tab_veeam_enable_message2"></span>
-                    <a
-                        data-ng-href="{{:: $ctrl.veeamPresentationURL }}"
-                        target="_blank"
-                        rel="noopener"
-                        class="oui-link_icon">
-                        <span data-translate="dedicatedCloud_tab_veeam_enable_message_veeamPresentation"></span>
-                        <span
-                            class="sr-only"
-                            data-translate="common_newtab"></span>
-                        <span
-                            class="oui-icon oui-icon-external_link"
-                            aria-hidden="true"></span>
-                    </a>
-                </p>
             </div>
+            <p>
+                <span data-translate="dedicatedCloud_tab_veeam_enable_message2"></span>
+                <a
+                    data-ng-href="{{:: $ctrl.veeamPresentationURL }}"
+                    target="_blank"
+                    rel="noopener"
+                    class="oui-link_icon">
+                    <span data-translate="dedicatedCloud_tab_veeam_enable_message_veeamPresentation"></span>
+                    <span
+                        class="sr-only"
+                        data-translate="common_newtab"></span>
+                    <span
+                        class="oui-icon oui-icon-external_link"
+                        aria-hidden="true"></span>
+                </a>
+            </p>
         </div>
 
     </oui-modal>
