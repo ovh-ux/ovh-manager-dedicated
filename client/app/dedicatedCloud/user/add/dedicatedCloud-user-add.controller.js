@@ -89,13 +89,16 @@ angular.module('App').controller('DedicatedCloudUserAddFormCtrl', ($scope, Dedic
 
   $scope.checkPassword = function (password) {
     if (!password || password === '') {
+      $scope.showError.checkPassword = false;
       return true;
     }
 
-    $scope.showError.checkPassword = false;
     $scope.newUser.password = password;
 
-    return DedicatedCloud.checkPassword($scope.passwordPolicy, { password });
+    const passwordIsCorrect = DedicatedCloud.checkPassword($scope.passwordPolicy, { password });
+    $scope.showError.checkPassword = !passwordIsCorrect;
+
+    return passwordIsCorrect;
   };
 
   $scope.validEmail = function (value) {

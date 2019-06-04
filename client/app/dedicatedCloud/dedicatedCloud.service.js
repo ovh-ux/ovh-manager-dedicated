@@ -677,7 +677,7 @@ angular
         return false;
       }
 
-      if (policy.upercaseLetterMandatory && !/[A-Z]+/.test(user.password)) {
+      if (policy.uppercaseLetterMandatory && !/[A-Z]+/.test(user.password)) {
         return false;
       }
 
