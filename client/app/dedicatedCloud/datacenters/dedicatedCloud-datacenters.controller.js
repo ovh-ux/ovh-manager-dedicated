@@ -31,14 +31,6 @@ angular.module('App')
         });
     }
 
-    hasDiscount(datacenter) {
-      const hasDiscount = this.DedicatedCloud.hasDiscount(datacenter);
-      if (hasDiscount) {
-        this.$scope.discount.AMDPCC = true;
-      }
-      return hasDiscount;
-    }
-
     orderDatastore(datacenter) {
       if (!this.currentService.usesLegacyOrder) {
         this.$state.go('app.dedicatedClouds.datacenter.datastores.order', {

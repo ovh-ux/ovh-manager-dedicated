@@ -9,7 +9,6 @@ angular.module('App').controller('DedicatedCloudDatacentersOrderHostsLegacyCtrl'
     agreeContract: null,
     loading: false,
   };
-  $scope.showDiscount = false;
   $scope.dedicatedCloud = null;
 
   $scope.loadHostsProfiles = function () {
@@ -43,16 +42,6 @@ angular.module('App').controller('DedicatedCloudDatacentersOrderHostsLegacyCtrl'
       .finally(() => {
         $scope.orderHosts.loading = false;
       });
-  };
-
-  $scope.hasDiscount = function (/* profile */) {
-    /* if (profile &&
-                DedicatedCloud.hasDiscount($scope.orderHosts.datacenter) &&
-            //(profile.name === "XL" || profile.name === "XL+")) {
-            //$scope.showDiscount = true;
-            //return "-85%";
-        } */
-    return false;
   };
 
   $scope.$watch('orderHosts.quantityToOrder', () => {

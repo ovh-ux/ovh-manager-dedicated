@@ -43,8 +43,6 @@ angular
         .getDatacenterInfoProxy(this.$stateParams.productId, this.$stateParams.datacenterId)
         .then(({ commercialRangeName }) => {
           this.$scope.datacenter.model.commercialRangeName = commercialRangeName;
-          this.$scope.datacenter.model.hasDiscountAMD = this.DedicatedCloud
-            .hasDiscount(this.$scope.datacenter.model);
         })
         .finally(() => {
           this.loading = false;

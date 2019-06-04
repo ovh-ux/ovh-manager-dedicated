@@ -78,10 +78,6 @@
                                     <strong class="text-danger"
                                             data-ng-bind="profile.priceDisplay">
                                     </strong>
-                                    <span class="ml-3"
-                                          data-ng-show="hasDiscount(profile)"
-                                          data-ng-bind="'(' + hasDiscount(profile) + ') *'">
-                                    </span>
                                 </td>
                             </tr>
                         </tbody>
@@ -105,7 +101,6 @@
                                  model="orderHosts.quantityToOrder">
                     </oui-numeric>
                 </div>
-                <span data-ng-show="showDiscount">* {{ 'dedicatedCloud_discount_explanation' | translate }}</span>
             </div>
 
         </div>
@@ -170,10 +165,6 @@
                         <strong class="text-danger"
                                 data-ng-bind="orderHosts.orderResult.prices.withoutTax.text">
                         </strong>
-                        <span class="ml-3"
-                              data-ng-show="hasDiscount(orderHosts.selectedModel)"
-                              data-ng-bind="'(' + hasDiscount(orderHosts.selectedModel) + ') *'">
-                        </span>
                     </li>
                     <li>
                         <span data-translate="dedicatedCloud_configuration_order_hosts_step2_monthly_price_TTC"></span>
@@ -182,9 +173,6 @@
                         </strong>
                     </li>
                 </ul>
-                <p data-ng-show="hasDiscount(orderHosts.selectedModel)"
-                   data-ng-bind="'*' + ('dedicatedCloud_discount_explanation' | translate)">
-                </p>
                 <p data-translate="dedicatedCloud_configuration_order_hosts_step2_confirm"></p>
                 <p data-translate="dedicatedCloud_configuration_order_hosts_step2_explication"></p>
                 <div class="checkbox">
