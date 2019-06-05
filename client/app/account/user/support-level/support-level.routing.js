@@ -12,5 +12,15 @@ angular
       controller,
       controllerAs: '$ctrl',
       translations: ['./'],
+      resolve: {
+        supportLevel: /* @ngInject */ OvhApiMe => OvhApiMe
+          .v6()
+          .supportLevel()
+          .$promise,
+        schema: /* @ngInject */ OvhApiMe => OvhApiMe
+          .v6()
+          .schema()
+          .$promise,
+      },
     });
   });

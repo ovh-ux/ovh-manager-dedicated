@@ -6,8 +6,9 @@ import {
 export default class UserAccountDashoardCtrl {
   /* @ngInject */
 
-  constructor($translate, lastBill, user) {
+  constructor($translate, lastBill, supportLevel, user) {
     this.lastBill = _.first(lastBill);
+    this.supportLevel = supportLevel;
     this.user = user;
     this.$translate = $translate;
     this.shortcuts = USER_DASHBOARD_SHORTCUTS;
