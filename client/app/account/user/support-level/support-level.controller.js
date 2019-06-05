@@ -1,25 +1,18 @@
+import _ from 'lodash';
+
 export default class UserAccountSupportLevelCtrl {
   /* @ngInject */
 
-  constructor() {
-    this.supportLevels = [
-      {
-        name: 'standard',
-        url: '',
-      },
-      {
-        name: 'premium',
-        url: '',
-      },
-      {
-        name: 'business',
-        url: '',
-      },
-      {
-        name: 'enterprise',
-        url: '',
-      },
-    ];
+  constructor(schema, supportLevel) {
+    this.supportLevelsEnum = _.get(schema.models, 'me.SupportLevel.LevelTypeEnum').enum;
+    this.supportLevel = supportLevel;
+
+    this.supportLevels = this.supportLevelsEnum.map(level => ({
+      name: level,
+      url: '',
+      isRecommended: level === 'premium',
+      active: level !== 'premium-accredited',
+    }));
   }
 
   $onInit() {

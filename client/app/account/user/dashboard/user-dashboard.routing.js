@@ -11,11 +11,15 @@ angular
       template,
       controller,
       controllerAs: '$ctrl',
-      translations: ['./'],
+      translations: ['./', '../support-level'],
       resolve: {
         user: /* @ngInject */ OvhApiMe => OvhApiMe
           .v6()
           .get()
+          .$promise,
+        supportLevel: /* @ngInject */ OvhApiMe => OvhApiMe
+          .v6()
+          .supportLevel()
           .$promise,
         lastBill: /* @ngInject */ iceberg => iceberg('/me/bill')
           .query()
