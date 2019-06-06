@@ -42,6 +42,7 @@ export default class {
           data: () => ({
             contextTitle: 'dedicatedCloud_description',
             productId: this.$stateParams.productId,
+            successText: this.$translate.instant('dedicatedCloud_dashboard_nameModifying_success'),
             value: this.currentService.description,
           }),
         },
