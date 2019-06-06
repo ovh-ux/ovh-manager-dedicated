@@ -18,7 +18,7 @@ import service from './dedicatedCloud-datacenter-drp.service';
 const componentName = 'dedicatedCloudDatacenterDrp';
 const controllerName = 'DedicatedCloudDatacenterDrpCtrl';
 const moduleName = 'dedicatedCloudDatacenterDrp';
-const serviceName = 'DedicatedCloudDrp';
+const serviceName = 'dedicatedCloudDrp';
 
 const ipUsageMacAddressRegExpConstantName = 'DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP';
 const optionsConstantName = 'DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS';
@@ -61,8 +61,6 @@ angular
         datacenterList: /* @ngInject */ ($stateParams, DedicatedCloud) => DedicatedCloud
           .getDatacenters($stateParams.productId).then(({ results }) => results),
         pccList: /* @ngInject */ DedicatedCloud => DedicatedCloud.getAllPccs(),
-        pccPlan: /* @ngInject */ ($stateParams, DedicatedCloudDrp) => DedicatedCloudDrp
-          .getPccDrpPlan($stateParams.productId),
       },
     });
   })

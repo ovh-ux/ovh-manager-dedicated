@@ -4,7 +4,7 @@ export default class {
   /* @ngInject */
   constructor(
     $q, $state, $stateParams, $translate, $uibModal, $window,
-    Alerter, DedicatedCloudDrp, OvhApiMe, ovhUserPref,
+    Alerter, dedicatedCloudDrp, OvhApiMe, ovhUserPref,
     DEDICATED_CLOUD_CONSTANTS,
     DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS,
     DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
@@ -18,7 +18,7 @@ export default class {
     this.$uibModal = $uibModal;
     this.$window = $window;
     this.Alerter = Alerter;
-    this.DedicatedCloudDrp = DedicatedCloudDrp;
+    this.dedicatedCloudDrp = dedicatedCloudDrp;
     this.OvhApiMe = OvhApiMe;
     this.ovhUserPref = ovhUserPref;
     this.PCC_NEW_GENERATION = DEDICATED_CLOUD_CONSTANTS.pccNewGeneration;
@@ -42,14 +42,14 @@ export default class {
         this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toProvision,
       ].includes(state)
         ? this.$q.when({ state })
-        : this.DedicatedCloudDrp.enableDrp(
+        : this.dedicatedCloudDrp.enableDrp(
           this.drpInformations,
           this.drpInformations.primaryPcc.generation !== this.PCC_NEW_GENERATION,
         ),
       me: this.OvhApiMe.v6().get().$promise,
       secondaryPccState: _.isUndefined(otherPccInformations.serviceName)
         ? this.$q.when({})
-        : this.DedicatedCloudDrp.getDrpState(otherPccInformations),
+        : this.dedicatedCloudDrp.getDrpState(otherPccInformations),
     })
       .then(({ enableDrp, me, secondaryPccState }) => {
         const drpState = _.get(enableDrp, 'data.state', enableDrp.state);
@@ -118,7 +118,7 @@ export default class {
 
   regenerateZsspPassword() {
     this.generatingPassword = true;
-    return this.DedicatedCloudDrp.regenerateZsspPassword(this.drpInformations)
+    return this.dedicatedCloudDrp.regenerateZsspPassword(this.drpInformations)
       .then(() => {
         this.Alerter.success(`
           ${this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_create_success_part_two', { email: this.email })}
@@ -138,7 +138,7 @@ export default class {
       controller: 'DedicatedCloudDatacenterDrpConfirmationStepDeleteCtrl',
       controllerAs: '$ctrl',
     }).result
-      .then(() => this.DedicatedCloudDrp.disableDrp(this.drpInformations))
+      .then(() => this.dedicatedCloudDrp.disableDrp(this.drpInformations))
       .then(() => {
         this.Alerter.success(this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_delete_drp_success'), 'dedicatedCloudDatacenterAlert');
         return this.$state.go('app.dedicatedClouds.datacenter');
