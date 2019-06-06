@@ -3,6 +3,7 @@ import template from './legacy.html';
 
 export default {
   bindings: {
+    currentDrp: '<',
     currentService: '<',
     currentUser: '<',
   },

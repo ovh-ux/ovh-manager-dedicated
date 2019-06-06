@@ -5,9 +5,9 @@ export default {
   template,
   controller,
   bindings: {
+    currentDrp: '<',
     datacenterHosts: '<',
     datacenterList: '<',
     pccList: '<',
-    pccPlan: '<',
   },
 };

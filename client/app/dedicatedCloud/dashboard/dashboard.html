@@ -1,4 +1,5 @@
 <ovh-manager-pcc-dashboard-legacy
+    data-current-drp="$ctrl.currentDrp"
     data-current-service="$ctrl.currentService"
     data-current-user="$ctrl.currentUser"
     data-ng-if="$ctrl.currentService.usesLegacyOrder"></ovh-manager-pcc-dashboard-legacy>
@@ -14,6 +15,7 @@
 
     <div class="col-md-4">
         <ovh-manager-pcc-dashboard-options
+            data-current-drp="$ctrl.currentDrp"
             data-current-service="$ctrl.currentService"
             data-current-user="$ctrl.currentUser"></ovh-manager-pcc-dashboard-options>
     </div>

@@ -11,6 +11,7 @@ export default class {
     $uibModal,
     Alerter,
     coreConfig,
+    dedicatedCloudDrp,
   ) {
     this.$scope = $scope;
     this.$state = $state;
@@ -20,12 +21,18 @@ export default class {
     this.$uibModal = $uibModal;
     this.Alerter = Alerter;
     this.coreConfig = coreConfig;
+    this.dedicatedCloudDrp = dedicatedCloudDrp;
   }
 
   $onInit() {
     this.allowDedicatedServerComplianceOptions = this.coreConfig.getRegion() !== 'US';
 
     this.setAction = (action, data) => this.$scope.$parent.setAction(action, data);
+    this.getDrpStatus();
+  }
+
+  getDrpStatus() {
+    this.drpStatus = this.dedicatedCloudDrp.constructor.formatStatus(this.currentDrp.state);
   }
 
   openModalToEditDescription() {

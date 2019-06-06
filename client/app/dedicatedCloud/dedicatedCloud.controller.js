@@ -10,6 +10,7 @@ angular
       $translate,
       $uibModal,
       coreConfig,
+      currentDrp,
       currentService,
       currentUser,
       DedicatedCloud,
@@ -23,6 +24,7 @@ angular
       this.$translate = $translate;
       this.$uibModal = $uibModal;
       this.coreConfig = coreConfig;
+      this.currentDrp = currentDrp;
       this.currentService = currentService;
       this.currentUser = currentUser;
       this.DedicatedCloud = DedicatedCloud;
