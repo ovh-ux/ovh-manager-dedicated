@@ -1,3 +1,14 @@
+<a name="10.17.13"></a>
+## [10.17.13](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.12...v10.17.13) (2019-06-06)
+
+
+### Bug Fixes
+
+* **deps:** upgrade some dependencies ([#1163](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1163)) ([4b8acac](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4b8acac))
+* **i18n:** retrieve translations ([#1167](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1167)) ([2f820d8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2f820d8))
+
+
+
 <a name="10.17.12"></a>
 ## [10.17.12](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.11...v10.17.12) (2019-06-03)
 
