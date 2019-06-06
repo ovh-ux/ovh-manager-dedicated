@@ -17,6 +17,7 @@ export const DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP = new Re
 export const DEDICATEDCLOUD_DATACENTER_DRP_STATUS = {
   delivered: 'delivered',
   delivering: 'delivering',
+  disabled: 'disabled',
   disabling: 'disabling',
   provisionning: 'provisionning',
   toDisable: 'toDisable',
@@ -24,6 +25,7 @@ export const DEDICATEDCLOUD_DATACENTER_DRP_STATUS = {
   toProvision: 'toProvision',
   toUnprovision: 'toUnprovision',
   unprovisionning: 'unprovisionning',
+  waitingActivation: 'waitingActivation',
 };
 
 export const DEDICATEDCLOUD_DATACENTER_DRP_ROLES = {
