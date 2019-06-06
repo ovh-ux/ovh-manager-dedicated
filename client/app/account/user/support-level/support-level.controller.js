@@ -11,7 +11,7 @@ export default class UserAccountSupportLevelCtrl {
       name: level,
       url: '',
       isRecommended: level === 'premium',
-      active: level !== 'premium-accredited',
+      isActive: level !== 'premium-accredited',
     }));
   }
 
