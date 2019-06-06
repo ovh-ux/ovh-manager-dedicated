@@ -13,7 +13,7 @@
 
                     <oui-tile class="col mb-4 mx-2 py-0"
                               data-ng-repeat="supportLevel in $ctrl.supportLevels track by $index"
-                              data-ng-if="supportLevel.activt"
+                              data-ng-if="supportLevel.isActive"
                               loading="$ctrl.loading">
                                   <h4 class="mb-4 border-bottom"
                                       data-translate="{{ 'user_account_support_level_section_' + supportLevel.name | translate }}">
