@@ -13,7 +13,7 @@ export default class {
     $transitions,
     $translate,
     Alerter,
-    DedicatedCloudDrp,
+    dedicatedCloudDrp,
     ovhPaymentMethod,
     ovhUserPref,
   ) {
@@ -23,7 +23,7 @@ export default class {
     this.$transitions = $transitions;
     this.$translate = $translate;
     this.Alerter = Alerter;
-    this.DedicatedCloudDrp = DedicatedCloudDrp;
+    this.dedicatedCloudDrp = dedicatedCloudDrp;
     this.ovhPaymentMethod = ovhPaymentMethod;
     this.ovhUserPref = ovhUserPref;
     this.DEDICATEDCLOUD_DATACENTER_DRP_ROLES = DEDICATEDCLOUD_DATACENTER_DRP_ROLES;
@@ -39,19 +39,17 @@ export default class {
 
     this.initializeTransitions();
 
-    const drp = this.pccPlan
-      .find(({ state }) => this.isDeliveredOrDelivering(state));
+    const drp = this.isDeliveredOrDelivering(this.currentDrp.state) ? this.currentDrp : null;
 
-    this.isDisablingDrp = this.pccPlan
-      .some(({ state }) => [
-        this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toDisable,
-        this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabling,
-      ].includes(state));
+    this.isDisablingDrp = [
+      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toDisable,
+      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabling,
+    ].includes(this.currentDrp.state);
 
     return this.checkForZertoOptionOrder()
       .then((storedDrpInformations) => {
         if (!this.isDisablingDrp) {
-          const otherDrpInformations = drp != null
+          const otherDrpInformations = drp !== null
             ? this.formatPlanInformations(drp)
             : storedDrpInformations;
 
@@ -92,7 +90,7 @@ export default class {
         if (drpInformations != null
             && drpInformations.primaryPcc.serviceName === this.$stateParams.productId) {
           storedZertoOption = drpInformations;
-          return this.DedicatedCloudDrp.getZertoOptionOrderStatus(zertoOptionOrderId);
+          return this.dedicatedCloudDrp.getZertoOptionOrderStatus(zertoOptionOrderId);
         }
 
         return this.$q.when({});
