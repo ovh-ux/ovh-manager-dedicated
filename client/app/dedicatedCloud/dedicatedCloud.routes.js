@@ -18,7 +18,9 @@ angular
             const existingPlan = states
               .find(({ state }) => state !== DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabled);
 
-            return existingPlan || states[0];
+            // If no plan with state other than disabled, let's return the first datacenter plan
+            return existingPlan || states
+              .sort((stateA, stateB) => (stateA.datacenterId < stateB.datacenterId ? -1 : 1))[0];
           }),
       },
       url: '/configuration/dedicated_cloud/:productId',
