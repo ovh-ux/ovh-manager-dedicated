@@ -51,9 +51,12 @@ angular
           }), 'dedicatedCloudDatacenterAlert');
         })
         .catch((error) => {
-          this.Alerter.error(this.$translate.instant('dedicatedCloud_tab_veeam_disable_fail', {
-            t0: this.datacenter.name,
-          }), error, 'dedicatedCloudDatacenterAlert');
+          this.Alerter.error(
+            `${this.$translate.instant('dedicatedCloud_tab_veeam_disable_fail', {
+              t0: this.datacenter.name,
+            })}: ${_.get(error, 'message', '')}`,
+            'dedicatedCloudDatacenterAlert',
+          );
         })
         .finally(() => {
           this.loading.disable = false;
