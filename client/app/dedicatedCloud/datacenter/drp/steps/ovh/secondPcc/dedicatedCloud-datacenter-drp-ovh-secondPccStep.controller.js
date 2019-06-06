@@ -39,7 +39,7 @@ export default class {
       }));
 
     return this.$q.all(this.availablePccs
-      .map(({ serviceName }) => this.DedicatedCloudDrp
+      .map(({ serviceName }) => this.dedicatedCloudDrp
         .getPccDrpPlan(serviceName)))
       .then((pccList) => {
         const pccWithoutDrp = _.flatten(
@@ -83,7 +83,7 @@ export default class {
 
     return this.$q.all({
       datacenters: this.DedicatedCloud.getDatacenters(secondaryPcc.serviceName),
-      ipAddressDetails: this.DedicatedCloudDrp.getPccIpAddressesDetails(secondaryPcc.serviceName),
+      ipAddressDetails: this.dedicatedCloudDrp.getPccIpAddressesDetails(secondaryPcc.serviceName),
     })
       .then(({ datacenters, ipAddressDetails }) => {
         this.availableDatacenters = datacenters.results;
