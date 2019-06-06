@@ -2,7 +2,7 @@ export default class {
   /* @ngInject */
   constructor(
     $q, $state, $stateParams, $translate, $uibModal,
-    Alerter, DedicatedCloudDrp, ipFeatureAvailability, OvhApiDedicatedCloud,
+    Alerter, dedicatedCloudDrp, ipFeatureAvailability, OvhApiDedicatedCloud,
     DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP,
     DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS,
   ) {
@@ -12,7 +12,7 @@ export default class {
     this.$translate = $translate;
     this.$uibModal = $uibModal;
     this.Alerter = Alerter;
-    this.DedicatedCloudDrp = DedicatedCloudDrp;
+    this.dedicatedCloudDrp = dedicatedCloudDrp;
     this.ipFeatureAvailability = ipFeatureAvailability;
     this.OvhApiDedicatedCloud = OvhApiDedicatedCloud;
     this.MAC_ADDRESS_REG_EXP = DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP;
@@ -28,7 +28,7 @@ export default class {
 
     return this.$q.all({
       ipAddressDetails:
-        this.DedicatedCloudDrp.getPccIpAddressesDetails(this.$stateParams.productId),
+        this.dedicatedCloudDrp.getPccIpAddressesDetails(this.$stateParams.productId),
       pcc: this.OvhApiDedicatedCloud.v6().get({
         serviceName: this.$stateParams.productId,
       }),
