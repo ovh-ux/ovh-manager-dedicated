@@ -9,6 +9,17 @@ angular
           $transition$,
           DedicatedCloud,
         ) => DedicatedCloud.getSelected($transition$.params().productId, true),
+        currentDrp: /* @ngInject */ (
+          $transition$,
+          dedicatedCloudDrp,
+          DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
+        ) => dedicatedCloudDrp.getPccDrpPlan($transition$.params().productId)
+          .then((states) => {
+            const existingPlan = states
+              .find(({ state }) => state !== DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabled);
+
+            return existingPlan || states[0];
+          }),
       },
       url: '/configuration/dedicated_cloud/:productId',
       views: {
