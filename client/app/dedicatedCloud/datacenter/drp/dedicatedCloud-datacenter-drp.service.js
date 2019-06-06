@@ -3,6 +3,7 @@ import {
   DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS,
   DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
   DEDICATEDCLOUD_DATACENTER_PCC_UNAVAILABLE_CODES,
+  DEDICATEDCLOUD_DATACENTER_ZERTO,
 } from './dedicatedCloud-datacenter-drp.constants';
 
 export default class {
@@ -13,12 +14,14 @@ export default class {
     OvhApiMe,
     OvhApiOrder,
     ovhPaymentMethod,
+    ovhUserPref,
   ) {
     this.$q = $q;
     this.OvhApiDedicatedCloud = OvhApiDedicatedCloud;
     this.OvhApiMe = OvhApiMe;
     this.OvhApiOrder = OvhApiOrder;
     this.ovhPaymentMethod = ovhPaymentMethod;
+    this.ovhUserPref = ovhUserPref;
   }
 
   getPccIpAddresses(serviceName) {
@@ -219,11 +222,41 @@ export default class {
         }).$promise));
   }
 
+  /* ------- Order ZERTO option ------ */
+
+  checkForZertoOptionOrder(pccId) {
+    let storedZertoOption;
+
+    const { splitter } = DEDICATEDCLOUD_DATACENTER_ZERTO;
+    const [, ...[formattedServiceName]] = pccId.split(splitter);
+    const preferenceKey = `${DEDICATEDCLOUD_DATACENTER_ZERTO.title}_${formattedServiceName.replace(/-/g, '')}`;
+
+    return this.ovhUserPref.getValue(preferenceKey)
+      .then(({ drpInformations, zertoOptionOrderId }) => {
+        if (drpInformations != null
+            && drpInformations.primaryPcc.serviceName === pccId) {
+          storedZertoOption = drpInformations;
+          return this.getZertoOptionOrderStatus(zertoOptionOrderId);
+        }
+
+        return this.$q.when({});
+      })
+      .then(({ status: zertoOrderStatus }) => {
+        const pendingOrderStatus = [
+          DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivering,
+          DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered,
+        ].find(status => status === zertoOrderStatus);
+
+        return pendingOrderStatus != null
+          ? { ...storedZertoOption, state: pendingOrderStatus }
+          : this.$q.when(null);
+      })
+      .catch(error => (error.status === 404 ? this.$q.when(null) : this.$q.reject(error)));
+  }
+
   getZertoOptionOrderStatus(orderId) {
     return this.OvhApiMe.Order().v6().getStatus({ orderId }).$promise;
   }
-
-  /* ------- Order ZERTO option ------ */
 
   disableDrp(drpInformations) {
     return drpInformations.drpType === DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS.ovh
@@ -261,6 +294,82 @@ export default class {
         serviceName: primaryPcc.serviceName,
         datacenterId: primaryDatacenter.id,
       }, null).$promise;
+  }
+
+  static formatDrpInformations(
+    {
+      datacenterId, drpType, localSiteInformation, remoteSiteInformation, serviceName, state,
+    },
+    pccList, datacenterList,
+  ) {
+    const currentPccInformations = _.find(pccList, { serviceName });
+    const currentDatacenterInformations = datacenterList.find(({ id }) => id === datacenterId);
+
+    let primaryPcc;
+    let primaryDatacenter;
+    let secondaryPcc;
+    let secondaryDatacenter;
+
+    if (localSiteInformation && remoteSiteInformation) {
+      if (localSiteInformation.role === this.DEDICATEDCLOUD_DATACENTER_DRP_ROLES.primary) {
+        primaryPcc = {
+          serviceName: currentPccInformations.serviceName,
+        };
+        primaryDatacenter = {
+          id: currentDatacenterInformations.id,
+          formattedName: currentDatacenterInformations.formattedName,
+        };
+        secondaryPcc = {
+          serviceName: remoteSiteInformation.serviceName,
+        };
+        secondaryDatacenter = {
+          id: remoteSiteInformation.datacenterId,
+          formattedName: remoteSiteInformation.datacenterName,
+        };
+      } else {
+        primaryPcc = {
+          serviceName: remoteSiteInformation.serviceName,
+        };
+        primaryDatacenter = {
+          id: remoteSiteInformation.datacenterId,
+          formattedName: remoteSiteInformation.datacenterName,
+        };
+        secondaryPcc = {
+          serviceName: currentPccInformations.serviceName,
+        };
+        secondaryDatacenter = {
+          id: currentDatacenterInformations.id,
+          formattedName: currentDatacenterInformations.formattedName,
+        };
+      }
+    }
+
+    return {
+      drpType,
+      state,
+      primaryPcc,
+      primaryDatacenter,
+      secondaryPcc,
+      secondaryDatacenter,
+    };
+  }
+
+  static formatStatus(status) {
+    switch (status) {
+      case DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered:
+        return DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered;
+      case DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivering:
+      case DEDICATEDCLOUD_DATACENTER_DRP_STATUS.provisionning:
+      case DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toProvision:
+        return DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivering;
+      case DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabling:
+      case DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toDisable:
+      case DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toUnprovision:
+      case DEDICATEDCLOUD_DATACENTER_DRP_STATUS.unprovisionning:
+        return DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabling;
+      default:
+        return DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabled;
+    }
   }
 
   static getZertoConfiguration(drpInformations, zertoOption) {
