@@ -10,14 +10,14 @@
     <div data-ng-if="!$ctrl.bindings.isLoading">
         <oui-tile-definition data-term="{{:: 'ovhManagerPccDashboardOptions_security_definition' | translate }}">
             <oui-tile-description>
-                <div data-translate="dedicatedCloud_options_zerto"></div>
+                <div data-translate="ovhManagerPccDashboardOptions_security_zerto_name"></div>
                 <span class="oui-status"
                       data-ng-class="{
                           'oui-status_success': $ctrl.bindings.security.zerto.status === 'delivered',
                           'oui-status_warning': $ctrl.bindings.security.zerto.status !== 'delivered' && $ctrl.bindings.security.zerto.status !== 'disabled',
                           'oui-status_error': $ctrl.bindings.security.zerto.status === 'disabled',
                       }"
-                      data-translate="{{:: 'dedicatedCloud_options_zerto_status_' + $ctrl.bindings.security.zerto.status }}"></span>
+                      data-translate="{{:: 'ovhManagerPccDashboardOptions_security_zerto_status_' + $ctrl.bindings.security.zerto.status }}"></span>
             </oui-tile-description>
             <oui-action-menu data-align="end"
                              data-compact>

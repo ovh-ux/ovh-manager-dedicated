@@ -375,7 +375,7 @@ export default class OptionTile {
             install: {
               isDisplayed: this.isZertoInstallationAvailable(),
               text: this.$translate.instant('ovhManagerPccDashboardOptions_security_zerto_action_install'),
-              sref: 'app.dedicatedClouds.datacenter.drp',
+              sref: 'app.dedicatedClouds.datacenter.drp({ datacenterId: $ctrl.currentDrp.datacenterId })',
             },
             delete: {
               isDisplayed: this.isZertoDeletionAvailable(),
