@@ -12,6 +12,7 @@ export default class {
     Alerter,
     coreConfig,
     dedicatedCloudDrp,
+    DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
   ) {
     this.$scope = $scope;
     this.$state = $state;
@@ -22,6 +23,7 @@ export default class {
     this.Alerter = Alerter;
     this.coreConfig = coreConfig;
     this.dedicatedCloudDrp = dedicatedCloudDrp;
+    this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_STATUS;
   }
 
   $onInit() {
@@ -69,5 +71,13 @@ export default class {
     return _.isString(formattedPolicy) && !_.isEmpty(formattedPolicy)
       ? this.$translate.instant(`dedicatedCloud_user_access_policy_${formattedPolicy}`)
       : '-';
+  }
+
+  isDrpActionPossible() {
+    return [
+      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered,
+      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabled,
+      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.waitingConfiguration,
+    ].includes(this.drpStatus);
   }
 }

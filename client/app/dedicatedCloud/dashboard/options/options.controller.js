@@ -16,19 +16,23 @@ export default class OptionTile {
     $scope,
     $translate,
     coreConfig,
+    dedicatedCloudDrp,
     ovhManagerPccDashboardOptions,
     ovhManagerPccDashboardOptionsPreference,
     ovhManagerPccServicePackService,
     ovhManagerPccServicePackOptionService,
+    DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
   ) {
     this.$q = $q;
     this.$scope = $scope;
     this.$translate = $translate;
     this.coreConfig = coreConfig;
+    this.dedicatedCloudDrp = dedicatedCloudDrp;
     this.ovhManagerPccDashboardOptions = ovhManagerPccDashboardOptions;
     this.ovhManagerPccDashboardOptionsPreference = ovhManagerPccDashboardOptionsPreference;
     this.ovhManagerPccServicePackService = ovhManagerPccServicePackService;
     this.ovhManagerPccServicePackOptionService = ovhManagerPccServicePackOptionService;
+    this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_STATUS;
   }
 
   $onInit() {
@@ -90,6 +94,7 @@ export default class OptionTile {
     return this.$q
       .all([
         this.handleOptionNames(),
+        this.handleSecurityOptions(),
         this.handleServicePacks(),
       ])
       .then(() => this.handleStatus())
@@ -134,6 +139,30 @@ export default class OptionTile {
       .fetchAllExistingOptionNames(this.currentService.serviceName)
       .then((optionNames) => {
         this.optionNames = optionNames;
+      });
+  }
+
+  handleSecurityOptions() {
+    return this.dedicatedCloudDrp.checkForZertoOptionOrder(this.currentService.name)
+      .then((storedDrpInformations) => {
+        let storedDrpStatus = this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabled;
+        if (storedDrpInformations) {
+          storedDrpStatus = this.dedicatedCloudDrp.constructor
+            .formatStatus(storedDrpInformations.status);
+        }
+
+        const currentDrpState = this.dedicatedCloudDrp.constructor
+          .formatStatus(this.currentDrp.state);
+
+        this.drpStatus = [currentDrpState, storedDrpStatus]
+          .find(status => status !== this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabled)
+          || this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabled;
+      })
+      .catch((error) => {
+        this.Alerter.error(
+          `${this.$translate.instant('dedicatedCloud_datacenter_drp_get_state_error')} ${_.get(error, 'data.message', error.message)}`,
+          'dedicatedCloudDatacenterAlert',
+        );
       });
   }
 
@@ -332,7 +361,49 @@ export default class OptionTile {
           },
         },
       },
+      security: {
+        zerto: {
+          title: this.$translate.instant('dedicatedCloudDashboardTilesOptions_security_zerto_name'),
+          status: this.drpStatus,
+          actionMenu: {
+            isDisplayed: this.isZertoActionMenuDisplayed(),
+            addConfiguration: {
+              isDisplayed: this.isZertoVPNConfigurationAvailable(),
+              text: this.$translate.instant('ovhManagerPccDashboardOptions_security_zerto_action_add_configuration'),
+              sref: 'app.dedicatedClouds.datacenter.drp.onPremises.vpnConfiguration',
+            },
+            install: {
+              isDisplayed: this.isZertoInstallationAvailable(),
+              text: this.$translate.instant('ovhManagerPccDashboardOptions_security_zerto_action_install'),
+              sref: 'app.dedicatedClouds.datacenter.drp',
+            },
+            delete: {
+              isDisplayed: this.isZertoDeletionAvailable(),
+              text: this.$translate.instant('ovhManagerPccDashboardOptions_security_zerto_action_delete'),
+            },
+          },
+        },
+      },
     };
+  }
+
+  isZertoActionMenuDisplayed() {
+    return ![
+      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivering,
+      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabling,
+    ].includes(this.dprStatus);
+  }
+
+  isZertoVPNConfigurationAvailable() {
+    return this.drpStatus === this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.waitingConfiruration;
+  }
+
+  isZertoInstallationAvailable() {
+    return this.drpStatus === this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabled;
+  }
+
+  isZertoDeletionAvailable() {
+    return this.drpStatus === this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered;
   }
 
   getCertificationDescription() {
