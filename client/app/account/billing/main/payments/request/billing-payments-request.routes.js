@@ -5,7 +5,7 @@ angular.module('App').config(($stateProvider, coreConfigProvider) => {
       templateUrl: 'account/billing/main/payments/request/billing-payments-request.html',
       controller: 'BillingHistoryRequestCtrl',
       controllerAs: '$ctrl',
-      translations: ['../request'],
+      translations: { value: ['../request'], format: 'json' },
     });
   }
 });

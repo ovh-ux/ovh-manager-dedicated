@@ -8,7 +8,7 @@ angular
       templateUrl: 'account/billing/payment/method/billing-payment-method.html',
       controller: 'BillingPaymentMethodCtrl',
       controllerAs: '$ctrl',
-      translations: ['./'],
+      translations: { value: ['./'], format: 'json' },
     });
 
     $urlRouterProvider.when(

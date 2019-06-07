@@ -12,6 +12,6 @@ angular
     translate,
   ])
   .filter('ducPrice', ducPriceFilter)
-  .run(/* @ngTranslationsInject ./translations */);
+  .run(/* @ngTranslationsInject:json ./translations */);
 
 export default moduleName;

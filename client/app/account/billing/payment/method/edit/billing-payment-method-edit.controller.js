@@ -47,7 +47,7 @@ export default class BillingPaymentMethodEditCtrl {
     this.loading.translations = true;
 
     return this.$injector.invoke(
-      /* @ngTranslationsInject ./translations */
+      /* @ngTranslationsInject:json ./translations */
     ).finally(() => {
       this.loading.translations = false;
     });

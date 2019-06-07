@@ -11,7 +11,7 @@ angular
           controllerAs: '$ctrl',
         },
       },
-      translations: ['../../../dedicated/server'],
+      translations: { value: ['../../../dedicated/server'], format: 'json' },
     });
 
     $stateProvider.state('app.dedicatedClouds.datacenter.hosts.orderUS', {

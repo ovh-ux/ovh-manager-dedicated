@@ -9,7 +9,7 @@ angular
         currentUser: /* @ngInject */ User => User.getUser(),
       },
       templateUrl: 'app.html',
-      translations: ['common', 'double-authentication', 'user-contracts'],
+      translations: { value: ['common', 'double-authentication', 'user-contracts'], format: 'json' },
       url: '',
     });
 
