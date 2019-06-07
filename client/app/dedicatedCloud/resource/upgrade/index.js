@@ -18,6 +18,6 @@ angular
     $stateProvider.state('app.dedicatedClouds.datacenter.datastores.resourceUpgrade', _.clone(state));
     $stateProvider.state('app.dedicatedClouds.datacenter.hosts.resourceUpgrade', _.clone(state));
   })
-  .run(/* @ngTranslationsInject ./translations */);
+  .run(/* @ngTranslationsInject:json ./translations */);
 
 export default MODULE_NAME;

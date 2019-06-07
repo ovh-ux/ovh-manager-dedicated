@@ -9,6 +9,6 @@ angular
     'pascalprecht.translate',
   ])
   .component(componentName, component)
-  .run(/* @ngTranslationsInject ./translations */);
+  .run(/* @ngTranslationsInject:json ./translations */);
 
 export default moduleName;

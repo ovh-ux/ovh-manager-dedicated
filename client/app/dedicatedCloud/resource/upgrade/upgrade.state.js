@@ -4,7 +4,7 @@ export default {
   layout: {
     name: 'modal',
   },
-  translations: ['./translations'],
+  translations: { value: ['.'], format: 'json' },
   url: '/upgradeResource?id&type',
   views: {
     modal: {

@@ -69,4 +69,5 @@ export default {
     servicePacksWithPrices,
     subheader,
   },
+  translations: { value: ['.'], format: 'json' },
 };

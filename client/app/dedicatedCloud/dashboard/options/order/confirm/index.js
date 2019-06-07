@@ -8,7 +8,7 @@ const moduleName = 'confirm';
 angular
   .module(moduleName, [])
   .controller(controllerName, controller)
-  .run(/* @ngTranslationsInject ./translations */)
+  .run(/* @ngTranslationsInject:json ./translations */)
   .run(/* @ngInject */ ($templateCache) => {
     $templateCache.put(templateName, template);
   });

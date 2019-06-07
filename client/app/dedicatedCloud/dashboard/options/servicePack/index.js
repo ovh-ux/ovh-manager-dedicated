@@ -13,7 +13,7 @@ angular
     'pascalprecht.translate',
     'ui.router',
   ])
-  .run(/* @ngTranslationsInject ./translations */)
+  .run(/* @ngTranslationsInject:json ./translations */)
   .service(serviceName, OvhManagerPccServicePackService);
 
 export default moduleName;

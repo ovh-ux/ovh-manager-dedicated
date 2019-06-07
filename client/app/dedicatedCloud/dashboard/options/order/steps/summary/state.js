@@ -25,4 +25,5 @@ export default {
     hasDefaultMeansOfPayment: resolveHasDefaultMeansOfPayment,
     usersWhoCanReceiveSMS: resolveUsersWhoCanReceiveSMS,
   },
+  translations: { value: ['.'], format: 'json' },
 };
