@@ -9,7 +9,7 @@ angular.module('App').run(($q,
   ouiCalendarConfiguration,
   asyncLoader) => {
   // first be sure that common translation file is loaded...
-  asyncLoader.addTranslations(import(`../../common/translations/Messages_${$translate.use()}.xml`).then(x => x.default));
+  asyncLoader.addTranslations(import(`../../common/translations/Messages_${$translate.use()}.json`).then(x => x.default));
 
   $translate.refresh().then(() => {
     _.set(ouiCriteriaAdderConfiguration, 'translations', {
