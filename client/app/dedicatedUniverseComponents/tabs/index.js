@@ -20,6 +20,6 @@ angular
     translate,
   ])
   .directive('ducOvhTabs', ducOvhTabsDirective)
-  .run(/* @ngTranslationsInject ./translations */);
+  .run(/* @ngTranslationsInject:json ./translations */);
 
 export default moduleName;

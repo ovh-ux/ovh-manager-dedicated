@@ -5,6 +5,6 @@ angular.module('App').config(($stateProvider) => {
     controller: 'agoraIpOrderCtrl',
     controllerAs: 'ctrl',
     layout: 'modal',
-    translations: [],
+    translations: { value: [], format: 'json' },
   });
 });

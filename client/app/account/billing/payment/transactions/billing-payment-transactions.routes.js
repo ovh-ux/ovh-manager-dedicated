@@ -13,7 +13,7 @@ angular
           templateUrl: 'account/billing/payment/transactions/billing-payment-transactions.html',
           controller: 'BillingPaymentTransactionsCtrl',
           controllerAs: '$ctrl',
-          translations: ['./'],
+          translations: { value: ['./'], format: 'json' },
         });
       }
     }]);

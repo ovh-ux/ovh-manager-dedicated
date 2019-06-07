@@ -8,6 +8,6 @@ angular.module('App').config(/* @ngInject */($stateProvider) => {
         template,
       },
     },
-    translations: ['..'],
+    translations: { value: ['..'], format: 'json' },
   });
 });

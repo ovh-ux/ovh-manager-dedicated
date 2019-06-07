@@ -12,6 +12,6 @@ angular
     translate,
   ])
   .filter('ducBandwidth', ducBandwidthFilter)
-  .run(/* @ngTranslationsInject ./translations */);
+  .run(/* @ngTranslationsInject:json ./translations */);
 
 export default moduleName;

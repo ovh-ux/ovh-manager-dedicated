@@ -37,7 +37,7 @@ angular
         controller: 'BillingCtrl',
         templateUrl: `${BILLING_BASE_URL}/billing.html`,
         abstract: true,
-        translations: ['../billing'],
+        translations: { value: ['../billing'], format: 'json' },
         resolve: {
           denyEnterprise: ($q, currentUser) => {
             if (currentUser.isEnterprise) {
