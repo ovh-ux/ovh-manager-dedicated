@@ -173,7 +173,9 @@ angular
         return null;
       }
 
-      const offerType = this.bindings.availableOffers.selection.value || 'legacy';
+      const offerType = this.bindings.availableOffers.value
+        ? this.bindings.availableOffers.selection.value
+        : 'legacy';
 
       const productToOrder = {
         productId: 'privateCloud',
