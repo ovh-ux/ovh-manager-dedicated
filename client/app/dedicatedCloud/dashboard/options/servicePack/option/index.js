@@ -9,7 +9,7 @@ angular
   .module(moduleName, [
     'pascalprecht.translate',
   ])
-  .run(/* @ngTranslationsInject ./translations */)
+  .run(/* @ngTranslationsInject:json ./translations */)
   .service(serviceName, OvhManagerPccServicePackOptionService);
 
 export default moduleName;

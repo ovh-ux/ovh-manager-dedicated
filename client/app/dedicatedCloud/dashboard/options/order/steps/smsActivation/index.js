@@ -13,7 +13,7 @@ angular
     'ui.router',
   ])
   .component(componentName, component)
-  .run(/* @ngTranslationsInject ./translations */)
+  .run(/* @ngTranslationsInject:json ./translations */)
   .service(serviceName, service);
 
 export default moduleName;

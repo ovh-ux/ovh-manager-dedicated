@@ -30,7 +30,7 @@ angular
     $stateProvider.state(stateName, state);
   })
   .constant(constantName, { ACTIVATION_TYPES })
-  .run(/* @ngTranslationsInject ./translations */)
+  .run(/* @ngTranslationsInject:json ./translations */)
   .service(serviceName, service);
 
 export default moduleName;

@@ -32,6 +32,7 @@ export default {
     orderableServicePacks,
     servicePacks,
   },
+  translations: { value: ['.'], format: 'json' },
   url: '/servicePack?activationType&goToConfiguration',
   views: {
     pccView: componentName,
