@@ -1,9 +1,12 @@
 export default class BillingPaymentCtrl {
   /* @ngInject */
 
-  constructor($state, constants) {
+  constructor(
+    $state,
+    coreConfig,
+  ) {
     // dependencies injections
     this.$state = $state;
-    this.constants = constants;
+    this.coreConfig = coreConfig;
   }
 }
