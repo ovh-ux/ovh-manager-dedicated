@@ -2,19 +2,19 @@ class UserContractsCtrl {
   constructor(
     $scope,
     $timeout,
-    constants,
-    User,
+    coreConfig,
     DucUserContractService,
+    User,
   ) {
     this.$scope = $scope;
     this.$timeout = $timeout;
-    this.constants = constants;
-    this.User = User;
+    this.coreConfig = coreConfig;
     this.DucUserContractService = DucUserContractService;
+    this.User = User;
   }
 
   $onInit() {
-    this.agreeTosAndPpOnManagerLoad = this.constants.target === 'US';
+    this.agreeTosAndPpOnManagerLoad = this.coreConfig.getRegion() === 'US';
 
     if (this.agreeTosAndPpOnManagerLoad) {
       this.DucUserContractService.getAgreementsToValidate(contract => _.includes(['tos', 'pp'], contract.code)).then((contracts) => {

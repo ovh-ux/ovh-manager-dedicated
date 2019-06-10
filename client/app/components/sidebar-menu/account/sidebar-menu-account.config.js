@@ -1,6 +1,13 @@
 angular
   .module('App')
-  .run(($q, $rootScope, $translate, SidebarMenu, User, constants) => {
+  .run((
+    $q,
+    $rootScope,
+    $translate,
+    coreConfig,
+    SidebarMenu,
+    User,
+  ) => {
     function buildMyAccountMenu() {
       const myAccountMenu = SidebarMenu.addMenuItem({
         name: 'userAccountMenu',
@@ -21,7 +28,7 @@ angular
         state: 'app.account.useraccount.security',
       }, myAccountMenu);
 
-      if (constants.target === 'EU' || constants.target === 'CA') {
+      if (coreConfig.getRegion() === 'EU' || coreConfig.getRegion() === 'CA') {
         SidebarMenu.addMenuItem({
           title: $translate.instant('menu_emails'),
           state: 'app.account.useraccount.emails',
@@ -33,7 +40,7 @@ angular
         state: 'app.account.useraccount.ssh',
       }, myAccountMenu);
 
-      if (constants.target === 'EU' || constants.target === 'CA') {
+      if (coreConfig.getRegion() === 'EU' || coreConfig.getRegion() === 'CA') {
         SidebarMenu.addMenuItem({
           title: $translate.instant('menu_advanced'),
           state: 'app.account.useraccount.advanced',
@@ -47,7 +54,7 @@ angular
     }
 
     function buildBillingMenu() {
-      if (constants.target === 'US') {
+      if (coreConfig.getRegion() === 'US') {
         SidebarMenu.addMenuItem({
           name: 'billingMenu',
           title: $translate.instant('menu_billing'),
@@ -66,7 +73,7 @@ angular
     }
 
     function buildServicesMenu(curUser) {
-      if (constants.target === 'EU' || constants.target === 'CA') {
+      if (coreConfig.getRegion() === 'EU' || coreConfig.getRegion() === 'CA') {
         if (!curUser.isEnterprise) {
           const servicesMenu = SidebarMenu.addMenuItem({
             name: 'servicesMenu',
@@ -151,7 +158,7 @@ angular
           });
         }
 
-        if (constants.target === 'EU') {
+        if (coreConfig.getRegion() === 'EU') {
           SidebarMenu.addMenuItem({
             name: 'billingContacts',
             title: $translate.instant('menu_contacts'),

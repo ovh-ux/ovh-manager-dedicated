@@ -1,8 +1,16 @@
 angular.module('Billing').controller('BillingMainHistoryCtrl', class BillingMainHistoryCtrl {
   constructor(
-    $q, $state, $translate, $uibModal,
-    Alerter, atInternet, constants, currentUser, exportCsv,
-    OvhApiMe, ovhPaymentMethod,
+    $q,
+    $state,
+    $translate,
+    $uibModal,
+    Alerter,
+    atInternet,
+    coreConfig,
+    currentUser,
+    exportCsv,
+    OvhApiMe,
+    ovhPaymentMethod,
   ) {
     // Injections
     this.$q = $q;
@@ -11,7 +19,7 @@ angular.module('Billing').controller('BillingMainHistoryCtrl', class BillingMain
     this.$uibModal = $uibModal;
     this.Alerter = Alerter;
     this.atInternet = atInternet;
-    this.constants = constants;
+    this.coreConfig = coreConfig;
     this.currentUser = currentUser; // from app route resolve
     this.exportCsv = exportCsv;
     this.OvhApiMe = OvhApiMe;
