@@ -3,6 +3,7 @@ import _ from 'lodash';
 angular
   .module('App')
   .service('ovhManagerPccLicenseEnableService', class {
+    /* @ngInject */
     constructor(
       OvhApiOrder,
     ) {
