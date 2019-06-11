@@ -1,6 +1,7 @@
 angular
   .module('App')
   .controller('ovhManagerPccLicenseEnable', class {
+    /* @ngInject */
     constructor(
       $state,
       $stateParams,

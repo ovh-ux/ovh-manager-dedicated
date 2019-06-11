@@ -1,7 +1,15 @@
 angular
   .module('App')
   .controller('DedicatedCloudUserEditCtrl', class DedicatedCloudUserEditCtrl {
-    constructor($state, $stateParams, $translate, Alerter, coreConfig, DedicatedCloud) {
+    /* @ngInject */
+    constructor(
+      $state,
+      $stateParams,
+      $translate,
+      Alerter,
+      coreConfig,
+      DedicatedCloud,
+    ) {
       this.$state = $state;
       this.$translate = $translate;
       this.productId = $stateParams.productId;

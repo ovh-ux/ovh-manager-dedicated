@@ -1,7 +1,14 @@
 angular
   .module('App')
   .controller('NameEditionCtrl', class NameEditionCtrl {
-    constructor($translate, $uibModalInstance, Alerter, DedicatedCloud, data) {
+    /* @ngInject */
+    constructor(
+      $translate,
+      $uibModalInstance,
+      Alerter,
+      DedicatedCloud,
+      data,
+    ) {
       this.$translate = $translate;
       this.$uibModalInstance = $uibModalInstance;
       this.Alerter = Alerter;
