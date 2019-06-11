@@ -4,9 +4,12 @@ angular.module('Billing').config(($stateProvider) => {
     templateUrl: 'account/billing/main/history/billing-main-history.html',
     controller: 'BillingMainHistoryCtrl',
     controllerAs: '$ctrl',
-    translations: [
-      '../history',
-      './postalMailOptions',
-    ],
+    translations: {
+      value: [
+        '../history',
+        './postalMailOptions',
+      ],
+      format: 'json',
+    },
   });
 });
