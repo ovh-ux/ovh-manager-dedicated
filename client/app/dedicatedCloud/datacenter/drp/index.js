@@ -14,6 +14,7 @@ import confirmationStep from './steps/ovh/confirmation';
 import mainPccStep from './steps/ovh/mainPcc';
 import secondPccStep from './steps/ovh/secondPcc';
 import service from './dedicatedCloud-datacenter-drp.service';
+import deleteDrp from './delete';
 
 const componentName = 'dedicatedCloudDatacenterDrp';
 const controllerName = 'DedicatedCloudDatacenterDrpCtrl';
@@ -31,6 +32,7 @@ const zertoConstantName = 'DEDICATEDCLOUD_DATACENTER_ZERTO';
 angular
   .module(moduleName, [
     confirmationStep,
+    deleteDrp,
     mainPccStep,
     secondPccStep,
   ])

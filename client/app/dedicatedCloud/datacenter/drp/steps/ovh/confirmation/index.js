@@ -1,8 +1,6 @@
 import component from './dedicatedCloud-datacenter-drp-ovh-confirmationStep.component';
-import deleteController from '../../common/confirmation/delete/dedicatedCloud-datacenter-drp-confirmationStep-delete.controller';
 
 const componentName = 'dedicatedCloudDatacenterDrpOvhConfirmationStep';
-const deleteControllerName = 'DedicatedCloudDatacenterDrpConfirmationStepDeleteCtrl';
 const moduleName = 'dedicatedCloudDatacenterDrpOvhConfirmationStep';
 
 angular
@@ -21,7 +19,6 @@ angular
     });
   })
   .component(componentName, component)
-  .controller(deleteControllerName, deleteController)
   .run(/* @ngTranslationsInject:json ./translations */);
 
 export default moduleName;

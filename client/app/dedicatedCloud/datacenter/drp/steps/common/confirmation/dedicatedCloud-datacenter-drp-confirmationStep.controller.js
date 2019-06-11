@@ -1,5 +1,3 @@
-import template from './delete/dedicatedCloud-datacenter-drp-confirmationStep-delete.html';
-
 export default class {
   /* @ngInject */
   constructor(
@@ -134,11 +132,13 @@ export default class {
 
   deleteDrpModal() {
     this.$uibModal.open({
-      template,
-      controller: 'DedicatedCloudDatacenterDrpConfirmationStepDeleteCtrl',
+      templateUrl: '/client/app/dedicatedCloud/dedicatedCloud-datacenter-drp-delete.html',
+      controller: 'DedicatedCloudDatacenterDrpDeleteCtrl',
       controllerAs: '$ctrl',
+      resolve: {
+        drpInformations: () => this.drpInformations,
+      },
     }).result
-      .then(() => this.dedicatedCloudDrp.disableDrp(this.drpInformations))
       .then(() => {
         this.Alerter.success(this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_delete_drp_success'), 'dedicatedCloudDatacenterAlert');
         return this.$state.go('app.dedicatedClouds.datacenter');
