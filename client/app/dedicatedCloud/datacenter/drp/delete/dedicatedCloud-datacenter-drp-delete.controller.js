@@ -7,6 +7,9 @@ export default class {
   }
 
   confirm() {
-    return this.dedicatedCloudDrp.disableDrp(this.drpInformations);
+    this.isDeleting = true;
+    return this.dedicatedCloudDrp.disableDrp(this.drpInformations)
+      .then(this.$uibModalInstance.close)
+      .catch(this.$uibModalInstance.dismiss);
   }
 }

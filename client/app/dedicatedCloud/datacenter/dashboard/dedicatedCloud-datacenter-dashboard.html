@@ -49,14 +49,18 @@
                     <oui-action-menu data-ng-if="::$ctrl.isDrpActionPossible()"
                                      data-align="end"
                                      data-compact>
-                        <oui-action-menu-item data-text="{{:: 'dedicatedCloud_options_zerto_action_install' | translate }}"
-                                              data-ui-sref="app.dedicatedClouds.datacenter.drp"
-                                              data-ng-if="::$ctrl.drpStatus === 'disabled'"></oui-action-menu-item>
-                        <oui-action-menu-item data-text="{{:: 'dedicatedCloud_options_zerto_action_add_configuration' | translate }}"
-                                              data-ui-sref="app.dedicatedClouds.datacenter.drp.onPremises.vpnConfiguration"
-                                              data-ng-if="::$ctrl.drpStatus === 'waitingConfiruration'"></oui-action-menu-item>
-                        <oui-action-menu-item data-text="{{:: 'dedicatedCloud_options_zerto_action_delete' | translate }}"
-                                              data-ng-if="::$ctrl.drpStatus === 'delivered'"></oui-action-menu-item>
+                        <oui-action-menu-item data-ui-sref="app.dedicatedClouds.datacenter.drp"
+                                              data-ng-if="::$ctrl.drpStatus === 'disabled'">
+                            <span data-translate="dedicatedCloud_options_zerto_action_install"></span>
+                        </oui-action-menu-item>
+                        <oui-action-menu-item data-ui-sref="app.dedicatedClouds.datacenter.drp.summary({ 'drpInformations': $ctrl.currentDrp })"
+                                              data-ng-if="::$ctrl.currentDrp.isWaitingVpnConfiguration">
+                            <span data-translate="dedicatedCloud_options_zerto_action_add_configuration"></span>
+                        </oui-action-menu-item>
+                        <oui-action-menu-item data-ng-if="::$ctrl.drpStatus === 'delivered' && $ctrl.drpRemotePccStatus === 'delivered'"
+                                              data-ui-sref="app.dedicatedClouds.datacenter.dashboard.deleteDrp">
+                            <span data-translate="dedicatedCloud_options_zerto_action_delete"></span>
+                        </oui-action-menu-item>
                     </oui-action-menu>
                 </oui-tile-definition>
                 <oui-tile-definition data-term="{{:: 'dedicatedCloud_subscription_links' | translate }}">

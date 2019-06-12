@@ -52,6 +52,7 @@ angular
     dedicatedCloudDatacenterDrp,
     dedicatedServerBandwidth,
     dedicatedServerInterfaces,
+    dedicatedCloudDatacenterDashboardDeleteDrp,
     dedicatedServerServers,
     dedicatedUniverseComponents,
     'directives',

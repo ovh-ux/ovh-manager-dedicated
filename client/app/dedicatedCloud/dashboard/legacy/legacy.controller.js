@@ -12,6 +12,7 @@ export default class {
     Alerter,
     coreConfig,
     dedicatedCloudDrp,
+    DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
     DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
   ) {
     this.$scope = $scope;
@@ -23,7 +24,8 @@ export default class {
     this.Alerter = Alerter;
     this.coreConfig = coreConfig;
     this.dedicatedCloudDrp = dedicatedCloudDrp;
-    this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_STATUS;
+    this.DRP_OPTIONS = DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS;
+    this.DRP_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_STATUS;
   }
 
   $onInit() {
@@ -35,6 +37,9 @@ export default class {
 
   getDrpStatus() {
     this.drpStatus = this.dedicatedCloudDrp.constructor.formatStatus(this.currentDrp.state);
+    this.drpRemotePccStatus = this.currentDrp.drpType === this.DRP_OPTIONS.ovh
+      ? this.dedicatedCloudDrp.constructor.formatStatus(_.get(this.currentDrp, 'remoteSiteInformation.state'))
+      : this.DRP_STATUS.delivered;
   }
 
   openModalToEditDescription() {
@@ -75,9 +80,29 @@ export default class {
 
   isDrpActionPossible() {
     return [
-      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered,
-      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabled,
-      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.waitingConfiguration,
+      this.DRP_STATUS.delivered,
+      this.DRP_STATUS.disabled,
+      this.DRP_STATUS.waitingConfiguration,
     ].includes(this.drpStatus);
+  }
+
+  deleteDrp() {
+    return this.$uibModal.open({
+      templateUrl: '/client/app/dedicatedCloud/dedicatedCloud-datacenter-drp-delete.html',
+      controller: 'DedicatedCloudDatacenterDrpDeleteCtrl',
+      controllerAs: '$ctrl',
+      resolve: {
+        drpInformations: () => this.currentDrp,
+      },
+    }).result
+      .then(() => {
+        this.Alerter.success(this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_delete_drp_success'), 'dedicatedCloud_alert');
+        return this.$state.go('app.dedicatedClouds.datacenter');
+      })
+      .catch((error) => {
+        if (error != null) {
+          this.Alerter.error(this.$translate.instant(`${this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_delete_drp_error')} ${_.get(error, 'message', '')}`), 'dedicatedCloud_alert');
+        }
+      });
   }
 }
