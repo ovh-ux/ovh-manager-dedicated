@@ -45,6 +45,7 @@ angular
     'controllers',
     contactsService,
     dedicatedCloudDatacenterDrp,
+    dedicatedCloudDatacenterDashboardDeleteDrp,
     dedicatedServerServers,
     dedicatedUniverseComponents,
     'directives',

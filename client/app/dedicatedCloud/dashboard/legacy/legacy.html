@@ -142,15 +142,18 @@
                     <oui-action-menu data-ng-if="::$ctrl.isDrpActionPossible()"
                                      data-compact
                                      data-align="end">
-                        <oui-action-menu-item data-text="{{:: 'dedicatedCloud_options_zerto_action_install' | translate }}"
-                                              data-ng-if="::$ctrl.drpStatus === 'disabled'"
-                                              data-ui-sref="app.dedicatedClouds.datacenter.drp({ datacenterId: $ctrl.currentDrp.datacenterId })"></oui-action-menu-item>
-                        <oui-action-menu-item data-text="{{:: 'dedicatedCloud_options_zerto_action_add_configuration' | translate }}"
-                                              data-ui-sref="app.dedicatedClouds.datacenter.onPremises.vpnConfiguration"
-                                              data-ng-if="::$ctrl.drpStatus === 'waitingConfiruration'"></oui-action-menu-item>
-                        <oui-action-menu-item data-text="{{:: 'dedicatedCloud_options_zerto_action_delete' | translate }}"
-                                              data-ng-if="::$ctrl.drpStatus === 'delivered'"
-                                              data-on-click="$ctrl.deleteDrp()"></oui-action-menu-item>
+                        <oui-action-menu-item data-ng-if="::$ctrl.drpStatus === $ctrl.DRP_STATUS.disabled"
+                                              data-ui-sref="app.dedicatedClouds.drpDatacenterSelection">
+                            <span data-translate="dedicatedCloud_options_zerto_action_install"></span>
+                        </oui-action-menu-item>
+                        <oui-action-menu-item data-on-click="$ctrl.goToVpnConfigurationState()"
+                                              data-ng-if="::$ctrl.currentDrp.isWaitingVpnConfiguration">
+                            <span data-translate="dedicatedCloud_options_zerto_action_add_configuration"></span>
+                        </oui-action-menu-item>
+                        <oui-action-menu-item data-ng-if="::$ctrl.drpStatus === $ctrl.DRP_STATUS.delivered && $ctrl.drpRemotePccStatus === $ctrl.DRP_STATUS.delivered"
+                                              data-ui-sref="app.dedicatedClouds.deleteDrp">
+                            <span data-translate="dedicatedCloud_options_zerto_action_delete"></span>
+                        </oui-action-menu-item>
                     </oui-action-menu>
                 </div>
                 <!-- NSX OPTION -->
