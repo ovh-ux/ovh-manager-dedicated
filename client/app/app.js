@@ -42,6 +42,7 @@ angular
     'chart.js',
     'controllers',
     dedicatedCloudDatacenterDrp,
+    dedicatedCloudDatacenterDashboardDeleteDrp,
     dedicatedServerServers,
     dedicatedUniverseComponents,
     'directives',

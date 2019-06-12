@@ -16,6 +16,7 @@ angular
       DedicatedCloud,
       dedicatedCloudDrp,
       DEDICATED_CLOUD_DATACENTER,
+      DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
       DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
     ) {
       this.$scope = $scope;
@@ -31,7 +32,8 @@ angular
       this.DedicatedCloud = DedicatedCloud;
       this.dedicatedCloudDrp = dedicatedCloudDrp;
       this.DEDICATED_CLOUD_DATACENTER = DEDICATED_CLOUD_DATACENTER;
-      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_STATUS;
+      this.DRP_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_STATUS;
+      this.DRP_OPTIONS = DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS;
     }
 
     $onInit() {
@@ -160,9 +162,9 @@ angular
 
     isDrpActionPossible() {
       return [
-        this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered,
-        this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabled,
-        this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.waitingConfiruration,
+        this.DRP_STATUS.delivered,
+        this.DRP_STATUS.disabled,
+        this.DRP_STATUS.waitingConfiruration,
       ].includes(this.drpStatus);
     }
 
@@ -304,5 +306,25 @@ angular
           this.$scope.stepPath = '';
         }, 300);
       }
+    }
+
+    deleteDrp() {
+      return this.$uibModal.open({
+        templateUrl: '/client/app/dedicatedCloud/dedicatedCloud-datacenter-drp-delete.html',
+        controller: 'DedicatedCloudDatacenterDrpDeleteCtrl',
+        controllerAs: '$ctrl',
+        resolve: {
+          drpInformations: () => this.currentDrp,
+        },
+      }).result
+        .then(() => {
+          this.Alerter.success(this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_delete_drp_success'), 'dedicatedCloud_alert');
+          return this.$state.go('app.dedicatedClouds.datacenter');
+        })
+        .catch((error) => {
+          if (error != null) {
+            this.Alerter.error(this.$translate.instant(`${this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_delete_drp_error')} ${_.get(error, 'message', '')}`), 'dedicatedCloud_alert');
+          }
+        });
     }
   });
