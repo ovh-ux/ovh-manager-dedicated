@@ -1,7 +1,6 @@
 import {
   DEDICATEDCLOUD_DATACENTER_DRP_ROLES,
   DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
-  DEDICATEDCLOUD_DATACENTER_ZERTO,
 } from './dedicatedCloud-datacenter-drp.constants';
 
 export default class {
@@ -14,8 +13,6 @@ export default class {
     $translate,
     Alerter,
     dedicatedCloudDrp,
-    ovhPaymentMethod,
-    ovhUserPref,
   ) {
     this.$q = $q;
     this.$state = $state;
@@ -24,11 +21,8 @@ export default class {
     this.$translate = $translate;
     this.Alerter = Alerter;
     this.dedicatedCloudDrp = dedicatedCloudDrp;
-    this.ovhPaymentMethod = ovhPaymentMethod;
-    this.ovhUserPref = ovhUserPref;
     this.DEDICATEDCLOUD_DATACENTER_DRP_ROLES = DEDICATEDCLOUD_DATACENTER_DRP_ROLES;
     this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_STATUS;
-    this.DEDICATEDCLOUD_DATACENTER_ZERTO = DEDICATEDCLOUD_DATACENTER_ZERTO;
   }
 
   $onInit() {
@@ -39,16 +33,15 @@ export default class {
 
     this.initializeTransitions();
 
-    const drp = this.isDeliveredOrDelivering(this.currentDrp.state) ? this.currentDrp : null;
-
     this.isDisablingDrp = [
       this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toDisable,
       this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabling,
     ].includes(this.currentDrp.state);
 
-    return this.checkForZertoOptionOrder()
+    return this.dedicatedCloudDrp.checkForZertoOptionOrder(this.$stateParams.productId)
       .then((storedDrpInformations) => {
         if (!this.isDisablingDrp) {
+          const drp = this.isDeliveredOrDelivering(this.currentDrp.state) ? this.currentDrp : null;
           const otherDrpInformations = drp !== null
             ? this.formatPlanInformations(drp)
             : storedDrpInformations;
@@ -76,36 +69,6 @@ export default class {
       .finally(() => {
         this.loading = false;
       });
-  }
-
-  checkForZertoOptionOrder() {
-    let storedZertoOption;
-
-    const { splitter } = this.DEDICATEDCLOUD_DATACENTER_ZERTO;
-    const [, ...[formattedServiceName]] = this.$stateParams.productId.split(splitter);
-    const preferenceKey = `${this.DEDICATEDCLOUD_DATACENTER_ZERTO.title}_${formattedServiceName.replace(/-/g, '')}`;
-
-    return this.ovhUserPref.getValue(preferenceKey)
-      .then(({ drpInformations, zertoOptionOrderId }) => {
-        if (drpInformations != null
-            && drpInformations.primaryPcc.serviceName === this.$stateParams.productId) {
-          storedZertoOption = drpInformations;
-          return this.dedicatedCloudDrp.getZertoOptionOrderStatus(zertoOptionOrderId);
-        }
-
-        return this.$q.when({});
-      })
-      .then(({ status: zertoOrderStatus }) => {
-        const pendingOrderStatus = [
-          this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivering,
-          this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered,
-        ].find(status => status === zertoOrderStatus);
-
-        return pendingOrderStatus != null
-          ? { ...storedZertoOption, state: pendingOrderStatus }
-          : this.$q.when(null);
-      })
-      .catch(error => (error.status === 404 ? this.$q.when(null) : this.$q.reject(error)));
   }
 
   initializeTransitions() {
