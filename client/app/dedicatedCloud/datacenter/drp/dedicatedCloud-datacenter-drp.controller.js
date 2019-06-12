@@ -52,7 +52,7 @@ export default class {
               ...otherDrpInformations,
             };
 
-            return this.$state.go(`app.dedicatedClouds.datacenter.drp.${this.drpInformations.drpType}.confirmationStep`, {
+            return this.$state.go('app.dedicatedClouds.datacenter.drp.summary', {
               drpInformations: this.drpInformations,
             });
           }
