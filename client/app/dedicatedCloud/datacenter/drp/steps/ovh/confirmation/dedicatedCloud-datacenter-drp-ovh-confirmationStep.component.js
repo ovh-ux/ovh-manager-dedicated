@@ -4,4 +4,8 @@ import controller from '../../common/confirmation/dedicatedCloud-datacenter-drp-
 export default {
   template,
   controller,
+  bindings: {
+    currentDrp: '<',
+    currentUser: '<',
+  },
 };
