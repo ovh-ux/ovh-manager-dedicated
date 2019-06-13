@@ -8,10 +8,11 @@ import {
   DEDICATEDCLOUD_DATACENTER_ZERTO,
 } from './dedicatedCloud-datacenter-drp.constants';
 
+import choiceTemplate from './configuration/dedicatedCloud-datacenter-drp-choice.html';
 import component from './dedicatedCloud-datacenter-drp.component';
 import controller from './dedicatedCloud-datacenter-drp.controller';
-import mainPccStep from './steps/ovh/mainPcc';
-import secondPccStep from './steps/ovh/secondPcc';
+import mainPccStep from './configuration/steps/ovh/mainPcc';
+import secondPccStep from './configuration/steps/ovh/secondPcc';
 import service from './dedicatedCloud-datacenter-drp.service';
 import summary from './summary';
 import deleteDrp from './delete';
@@ -64,7 +65,14 @@ angular
           .getDatacenters($stateParams.productId).then(({ results }) => results),
         pccList: /* @ngInject */ DedicatedCloud => DedicatedCloud.getAllPccs(),
       },
-    });
+    })
+      .state('app.dedicatedClouds.datacenter.drp.choice', {
+        views: {
+          'choiceView@app.dedicatedClouds.datacenter.drp': {
+            template: choiceTemplate,
+          },
+        },
+      });
   })
   .run(/* @ngTranslationsInject:json ./translations */);
 

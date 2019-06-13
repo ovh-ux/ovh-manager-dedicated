@@ -58,7 +58,7 @@ export default class {
           }
         }
 
-        return this.$q.when();
+        return this.$state.go('app.dedicatedClouds.datacenter.drp.choice');
       })
       .catch((error) => {
         this.Alerter.error(
@@ -77,6 +77,11 @@ export default class {
     }, () => {
       this.Alerter.error(this.$translate.instant('ip_order_finish_error'), 'dedicatedCloudDatacenterDrpAlert');
     });
+
+    this.$transitions.onStart({
+      from: 'app.dedicatedClouds.datacenter.drp.**',
+      to: 'app.dedicatedClouds.datacenter.drp',
+    }, () => false);
   }
 
   selectDrpType() {
