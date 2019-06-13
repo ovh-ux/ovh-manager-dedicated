@@ -1,10 +1,11 @@
-import component from './dedicatedCloud-datacenter-drp-ovh-mainPccStep.component';
+import component from '../../common/mainPcc/dedicatedCloud-datacenter-drp-mainPccStep.component';
 
 const componentName = 'dedicatedCloudDatacenterDrpOvhMainPccStep';
 const moduleName = 'dedicatedCloudDatacenterDrpOvhMainPccStep';
 
 angular
   .module(moduleName, [])
+  .component(componentName, component)
   .config(/* @ngInject */ ($stateProvider) => {
     $stateProvider
       .state('app.dedicatedClouds.datacenter.drp.ovh.mainPccStep', {
@@ -31,7 +32,6 @@ angular
         translations: { value: ['.'], format: 'json' },
       });
   })
-  .component(componentName, component)
   .run(/* @ngTranslationsInject:json ./translations */);
 
 export default moduleName;
