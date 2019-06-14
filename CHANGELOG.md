@@ -1,3 +1,13 @@
+<a name="10.17.16"></a>
+## [10.17.16](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.15...v10.17.16) (2019-06-14)
+
+
+### Bug Fixes
+
+* **ip:** improve popover positioning ([656cc4a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/656cc4a))
+
+
+
 <a name="10.17.15"></a>
 ## [10.17.15](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.14...v10.17.15) (2019-06-11)
 
