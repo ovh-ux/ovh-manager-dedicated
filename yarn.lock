@@ -734,13 +734,6 @@
   version "1.0.2"
   resolved "https://codeload.github.com/janantala/qrcode.js/tar.gz/2c20b467901740e6e32308b100d2df1125d4f6ac"
 
-"@bower_components/randexp@fent/randexp.js#~0.4.0", randexp@fent/randexp.js#~0.4.0:
-  version "0.4.9"
-  resolved "https://codeload.github.com/fent/randexp.js/tar.gz/8d7f1f99da57c509419b0fc3164e7e8b4d77a58b"
-  dependencies:
-    drange "^1.0.0"
-    ret "^0.2.0"
-
 "@commitlint/cli@^7.1.2":
   version "7.2.1"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-7.2.1.tgz#dbb9eeb1f5015a129bb0801fbc1115eb1dcd513b"
@@ -8912,6 +8905,13 @@ quick-lru@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-1.1.0.tgz#4360b17c61136ad38078397ff11416e186dcfbb8"
   integrity sha1-Q2CxfGETatOAeDl/8RQW4Ybc+7g=
+
+randexp@fent/randexp.js#~0.4.0:
+  version "0.4.9"
+  resolved "https://codeload.github.com/fent/randexp.js/tar.gz/8d7f1f99da57c509419b0fc3164e7e8b4d77a58b"
+  dependencies:
+    drange "^1.0.0"
+    ret "^0.2.0"
 
 randomatic@^3.0.0:
   version "3.1.1"
