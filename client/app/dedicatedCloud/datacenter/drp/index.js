@@ -1,4 +1,5 @@
 import {
+  DEDICATEDCLOUD_DATACENTER_DRP_IP_BLOCK_REG_EXP,
   DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP,
   DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
   DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS,
@@ -11,6 +12,7 @@ import {
 import choiceTemplate from './configuration/dedicatedCloud-datacenter-drp-choice.html';
 import component from './dedicatedCloud-datacenter-drp.component';
 import controller from './dedicatedCloud-datacenter-drp.controller';
+import onPremisesTypeConfiguration from './configuration/steps/onPremises';
 import ovhTypeConfiguration from './configuration/steps/ovh';
 import service from './dedicatedCloud-datacenter-drp.service';
 import summary from './summary';
@@ -21,6 +23,7 @@ const controllerName = 'DedicatedCloudDatacenterDrpCtrl';
 const moduleName = 'dedicatedCloudDatacenterDrp';
 const serviceName = 'dedicatedCloudDrp';
 
+const ipBlockReqExpConstantName = 'DEDICATEDCLOUD_DATACENTER_DRP_IP_BLOCK_REG_EXP';
 const ipUsageMacAddressRegExpConstantName = 'DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP';
 const optionsConstantName = 'DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS';
 const orderOptionsConstantName = 'DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS';
@@ -32,10 +35,12 @@ const zertoConstantName = 'DEDICATEDCLOUD_DATACENTER_ZERTO';
 angular
   .module(moduleName, [
     deleteDrp,
+    onPremisesTypeConfiguration,
     ovhTypeConfiguration,
     summary,
   ])
   .component(componentName, component)
+  .constant(ipBlockReqExpConstantName, DEDICATEDCLOUD_DATACENTER_DRP_IP_BLOCK_REG_EXP)
   .constant(ipUsageMacAddressRegExpConstantName,
     DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP)
   .constant(optionsConstantName, DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS)

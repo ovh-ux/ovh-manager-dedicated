@@ -24,6 +24,11 @@ export default class {
     this.ovhUserPref = ovhUserPref;
   }
 
+  /* ================================= */
+  /*       Information Getters         */
+  /* ================================= */
+
+
   getPccIpAddresses(serviceName) {
     return this.OvhApiDedicatedCloud.Ip().v6().query({
       serviceName,
@@ -69,6 +74,18 @@ export default class {
       .then(state => ({ ...state, ...serviceInformations }));
   }
 
+  getDefaultLocalVraNetwork(serviceInformations) {
+    return this.OvhApiDedicatedCloud.Datacenter().Zerto().Single().v6()
+      .getDefaultLocalVraNetwork(serviceInformations).$promise
+      .then(({ value: defaultLocalVraNetwork }) => defaultLocalVraNetwork);
+  }
+
+  /* ---- END Information Getters ---- */
+
+  /* ================================= */
+  /*          PCC Legacy Ovh           */
+  /* ================================= */
+
   enableDrp(drpInformations, isLegacy) {
     const isOvhToOvhPlan = drpInformations
       .drpType === DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS.ovh;
@@ -82,10 +99,6 @@ export default class {
     return isOvhToOvhPlan ? this.enableDrpOvhLegacy(drpInformations)
       : this.enableDrpOnPremiseLegacy(drpInformations);
   }
-
-  /* ================================= */
-  /*          PCC Legacy Ovh           */
-  /* ================================= */
 
   enableDrpOvhLegacy({
     primaryPcc,
@@ -110,7 +123,7 @@ export default class {
     primaryPcc,
     primaryDatacenter,
     localVraNetwork,
-    ovhEndpointIp,
+    primaryEndpointIp: ovhEndpointIp,
     remoteVraNetwork,
   }) {
     return this.OvhApiDedicatedCloud.Datacenter().Zerto().Single().v6()
@@ -222,8 +235,6 @@ export default class {
         }).$promise));
   }
 
-  /* ------- Order ZERTO option ------ */
-
   checkForZertoOptionOrder(pccId) {
     let storedZertoOption;
 
@@ -257,6 +268,8 @@ export default class {
   getZertoOptionOrderStatus(orderId) {
     return this.OvhApiMe.Order().v6().getStatus({ orderId }).$promise;
   }
+
+  /* ------- Order ZERTO option ------ */
 
   disableDrp(drpInformations) {
     return drpInformations.drpType === DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS.ovh
@@ -294,6 +307,28 @@ export default class {
         serviceName: primaryPcc.serviceName,
         datacenterId: primaryDatacenter.id,
       }, null).$promise;
+  }
+
+  configureVpn({
+    primaryPcc,
+    primaryDatacenter,
+    preSharedKey,
+    remoteEndpointInternalIp,
+    remoteEndpointPublicIp,
+    remoteVraNetwork,
+    remoteZvmInternalIp,
+  }) {
+    return this.OvhApiDedicatedCloud.Datacenter().Zerto().Single().v6()
+      .configureVpn({
+        serviceName: primaryPcc.serviceName,
+        datacenterId: primaryDatacenter.id,
+      }, {
+        preSharedKey,
+        remoteEndpointInternalIp,
+        remoteEndpointPublicIp,
+        remoteVraNetwork,
+        remoteZvmInternalIp,
+      }).$promise;
   }
 
   static formatDrpInformations(

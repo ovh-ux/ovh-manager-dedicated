@@ -1,4 +1,5 @@
 import {
+  DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
   DEDICATEDCLOUD_DATACENTER_DRP_ROLES,
   DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
 } from './dedicatedCloud-datacenter-drp.constants';
@@ -86,7 +87,9 @@ export default class {
 
   selectDrpType() {
     this.drpInformations.drpType = this.selectedDrpType.id;
-    return this.$state.go(`app.dedicatedClouds.datacenter.drp.${this.selectedDrpType.id}.mainPccStep`, {
+    const stateToGo = this.drpInformations.drpType === DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS.ovh
+      ? 'ovh.mainPccStep' : 'onPremises.ovhPccStep';
+    return this.$state.go(`app.dedicatedClouds.datacenter.drp.${stateToGo}`, {
       drpInformations: this.drpInformations,
     });
   }
