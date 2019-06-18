@@ -24,7 +24,7 @@
                            data-label="{{:: 'dedicatedCloud_datacenter_onPremises_choice' | translate }}"
                            data-values="[{ id: 'onPremises', name: ('dedicatedCloud_datacenter_onPremises_choice' | translate) }]"
                            data-variant="light"
-                           data-disabled="true">
+                           data-disabled="$ctrl.drpInformations.hasDatacenterWithoutHosts || $ctrl.isDisablingDrp">
             <oui-select-picker-section>
                 <figure>
                     <img class="h-100 w-100"
