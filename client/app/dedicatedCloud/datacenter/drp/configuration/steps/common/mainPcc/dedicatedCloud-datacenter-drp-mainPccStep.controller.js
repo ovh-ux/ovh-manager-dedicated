@@ -3,7 +3,9 @@ export default class {
   constructor(
     $q, $state, $stateParams, $translate, $uibModal,
     Alerter, dedicatedCloudDrp, ipFeatureAvailability, OvhApiDedicatedCloud,
+    DEDICATEDCLOUD_DATACENTER_DRP_IP_BLOCK_REG_EXP,
     DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP,
+    DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
     DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS,
   ) {
     this.$q = $q;
@@ -15,6 +17,8 @@ export default class {
     this.dedicatedCloudDrp = dedicatedCloudDrp;
     this.ipFeatureAvailability = ipFeatureAvailability;
     this.OvhApiDedicatedCloud = OvhApiDedicatedCloud;
+    this.IP_BLOCK_REG_EXP = DEDICATEDCLOUD_DATACENTER_DRP_IP_BLOCK_REG_EXP;
+    this.DRP_OPTIONS = DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS;
     this.MAC_ADDRESS_REG_EXP = DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP;
     this.UNAVAILABLE_IP_STATUSES = DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS;
   }
@@ -27,6 +31,12 @@ export default class {
     this.OvhApiDedicatedCloud.Ip().v6().resetCache();
 
     return this.$q.all({
+      defaultLocalVraNetwork:
+        this.drpInformations.drpType === this.DRP_OPTIONS.onPremises
+          ? this.getDefaultLocalVraNetwork({
+            datacenterId: this.$stateParams.datacenterId,
+            serviceName: this.$stateParams.productId,
+          }) : this.$q.when(null),
       ipAddressDetails:
         this.dedicatedCloudDrp.getPccIpAddressesDetails(this.$stateParams.productId),
       pcc: this.OvhApiDedicatedCloud.v6().get({
@@ -67,6 +77,18 @@ export default class {
   }
 
   goToNextStep() {
-    return this.$state.go(`app.dedicatedClouds.datacenter.drp.${this.drpInformations.drpType}.secondPccStep`, { drpInformations: this.drpInformations });
+    const stateToGo = this.drpInformations.drpType === this.DRP_OPTIONS.ovh
+      ? 'ovh.secondPccStep' : 'onPremises.onPremisesPccStep';
+    return this.$state.go(`app.dedicatedClouds.datacenter.drp.${stateToGo}`, { drpInformations: this.drpInformations });
+  }
+
+  getDefaultLocalVraNetwork({ datacenterId, serviceName }) {
+    return this.dedicatedCloudDrp.getDefaultLocalVraNetwork({
+      datacenterId,
+      serviceName,
+    })
+      .then((defaultLocalVraNetwork) => {
+        this.drpInformations.localVraNetwork = defaultLocalVraNetwork;
+      });
   }
 }
