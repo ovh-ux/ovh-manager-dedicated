@@ -2,7 +2,7 @@ export default class {
   /* @ngInject */
   constructor(
     $state, $stateParams, $timeout, $translate, $uibModal,
-    Alerter, dedicatedCloudDrp, OvhApiMe, ovhUserPref,
+    Alerter, dedicatedCloudDrp, OvhApiMe,
     DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
   ) {
     this.$state = $state;
@@ -13,7 +13,6 @@ export default class {
     this.Alerter = Alerter;
     this.dedicatedCloudDrp = dedicatedCloudDrp;
     this.OvhApiMe = OvhApiMe;
-    this.ovhUserPref = ovhUserPref;
     this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_STATUS;
   }
 
