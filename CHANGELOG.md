@@ -1,3 +1,58 @@
+<a name="10.18.0"></a>
+# 10.18.0 (2019-06-19)
+
+
+### Bug Fixes
+
+* **backup:** correct link to Veeam presentation ([98597a3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/98597a3))
+* **backup:** remove duplicate message ([db0fefb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/db0fefb))
+* **backup:** restore functionality ([e7ea1dc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e7ea1dc))
+* **dashboard:** duplicate error messages will display ([5faf591](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5faf591))
+* **datacenter:** display error message ([7947cc3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7947cc3))
+* **datacenter:** display that data is soon available ([b60473d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b60473d))
+* **datacenter:** handle newly created filers & hosts ([22d7c12](https://github.com/ovh-ux/ovh-manager-dedicated/commit/22d7c12))
+* **datacenter.backup:** send legacy offer when outside the US ([6048f20](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6048f20))
+* **datacenter.datastore:** display hour of last update ([68f5863](https://github.com/ovh-ux/ovh-manager-dedicated/commit/68f5863))
+* **datacenter.disable:** display error message correctly ([8737708](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8737708))
+* **datastore:** handle case when no data is available yet ([6606d7e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6606d7e))
+* **dedicated-cloud:** can order ressources in US again ([0aa547b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0aa547b))
+* **dedicated-cloud:** fix eslint warnings ([a480abf](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a480abf))
+* **general-information.dashboard:** add message when name was updated ([5095e7c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5095e7c))
+* **options:** display Certification is service has one ([3b7bee7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3b7bee7))
+* **security:** display success message correctly ([804a3e3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/804a3e3))
+* **selection:** add margin between lines ([f60069c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f60069c))
+* **selection:** display message to pay checkout ([1325b67](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1325b67))
+* **selection:** remove code specific for PL ([758ce06](https://github.com/ovh-ux/ovh-manager-dedicated/commit/758ce06))
+* **selection.confirm:** change text according to item type ([fd95eb7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/fd95eb7))
+* **upgrade:** restore missing translations ([1197496](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1197496))
+* add missing injections ([2db2c90](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2db2c90))
+* fix rebase mistakes ([6da0dac](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6da0dac))
+* fix yarn.lock ([7965e34](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7965e34))
+* **user:** respect password rules ([6a19d6a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6a19d6a))
+
+
+### Features
+
+* **datacenter:** add constants about element types ([9db5946](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9db5946))
+* **datacenter:** handle hourly consumption for Agora hosts ([a0035b9](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a0035b9))
+* **datacenter.datastore:** fetch consumption for Agora ([56158b8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/56158b8))
+* **dedicated.server:** remove useless information network tile ([#1185](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1185)) ([8ca2fa6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8ca2fa6))
+* **options:** add guides for all subs ([3388845](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3388845))
+* **options:** add new status ([a850357](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a850357))
+* **options:** handle option status per option ([deffa6f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/deffa6f))
+* **options:** only display Certifications when one is orderable ([c0ea238](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c0ea238))
+* **order:** allow resuming order at the correct place ([debfae3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/debfae3))
+* **order:** hide modify menu item when needed ([ec8800d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ec8800d))
+* **selection:** add translations for vRops option ([61efe26](https://github.com/ovh-ux/ovh-manager-dedicated/commit/61efe26))
+* **user.password:** display confirmation message ([5cec279](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5cec279))
+
+
+### Performance Improvements
+
+* remove duplicate randexp dependency ([#1183](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1183)) ([f6c585d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f6c585d))
+
+
+
 <a name="10.17.16"></a>
 ## [10.17.16](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.15...v10.17.16) (2019-06-14)
 
