@@ -209,7 +209,7 @@ export default class {
   }
 
   computeOptionsBasicActionMenuExists() {
-    return _.some(
+    return false && _.some(
       _.map(
         _.values(this.options.basic.actionMenu.items),
         'exists',
@@ -236,7 +236,7 @@ export default class {
   }
 
   computeOptionsCertificationActionMenuExists() {
-    return _.some(
+    return false && _.some(
       _.map(
         _.values(this.options.certification.actionMenu.items),
         'exists',
