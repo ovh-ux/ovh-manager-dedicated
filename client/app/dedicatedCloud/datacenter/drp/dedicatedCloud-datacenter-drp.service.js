@@ -150,6 +150,13 @@ export default class {
     );
   }
 
+  enableDrpOnPremise(drpInformations) {
+    return this.orderZertoOption(
+      drpInformations,
+      DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS.zertoOption.onPremise,
+    );
+  }
+
   createZertoOptionCart(drpInformations, zertoOption) {
     let zertoCartId;
     return this.OvhApiMe.v6().get().$promise
