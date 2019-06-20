@@ -370,7 +370,7 @@ export default class OptionTile {
             addConfiguration: {
               isDisplayed: this.isZertoVPNConfigurationAvailable(),
               text: this.$translate.instant('ovhManagerPccDashboardOptions_security_zerto_action_add_configuration'),
-              sref: 'app.dedicatedClouds.datacenter.drp.onPremises.vpnConfiguration',
+              sref: 'app.dedicatedClouds.datacenter.drp.onPremise.vpnConfiguration',
             },
             install: {
               isDisplayed: this.isZertoInstallationAvailable(),

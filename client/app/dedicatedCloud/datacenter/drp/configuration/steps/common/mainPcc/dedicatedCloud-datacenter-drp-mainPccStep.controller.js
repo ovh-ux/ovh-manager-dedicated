@@ -32,7 +32,7 @@ export default class {
 
     return this.$q.all({
       defaultLocalVraNetwork:
-        this.drpInformations.drpType === this.DRP_OPTIONS.onPremises
+        this.drpInformations.drpType === this.DRP_OPTIONS.onPremise
           ? this.getDefaultLocalVraNetwork({
             datacenterId: this.$stateParams.datacenterId,
             serviceName: this.$stateParams.productId,
@@ -78,7 +78,7 @@ export default class {
 
   goToNextStep() {
     const stateToGo = this.drpInformations.drpType === this.DRP_OPTIONS.ovh
-      ? 'ovh.secondPccStep' : 'onPremises.onPremisesPccStep';
+      ? 'ovh.secondPccStep' : 'onPremise.onPremisePccStep';
     return this.$state.go(`app.dedicatedClouds.datacenter.drp.${stateToGo}`, { drpInformations: this.drpInformations });
   }
 
