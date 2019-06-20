@@ -44,6 +44,7 @@ angular
               })
               .then((result) => {
                 cdnCache.put('cdn', result.data);
+                return result.data;
               });
           }
           return $q.when(requests.cdnDetails);
