@@ -1,0 +1,25 @@
+<div data-ng-controller="ServerOrderAgoraBandwidthVrackCtrl as ctrl">
+    <oui-modal
+        data-heading="{{:: 'server_order_bandwidth_vrack_title' | translate }}"
+        data-primary-action="ctrl.order()"
+        data-primary-label="{{:: 'common_confirm' | translate }}"
+        data-secondary-label="{{:: 'common_cancel' | translate }}"
+        data-secondary-action="ctrl.close()"
+        data-on-dismiss="ctrl.close()"
+        data-loading="ctrl.isLoading">
+        <label class="control-label"
+               data-translate="select_bandwidth_vrack_type_label">
+        </label>
+        <div class="radio"
+             data-ng-if="!ctrl.isLoading"
+             data-ng-repeat="plan in ctrl.plans track by $index">
+            <oui-radio data-name="bandwidth-plan" data-model="ctrl.model.plan" data-value="plan.planCode">
+                <span data-ng-bind="ctrl.getDisplaySize(plan.bandwidth, 'GB')"></span>
+                <span data-translate="server_order_bandwidth_vrack_plan_text"></span>
+                <span data-ng-bind-html="plan.order.prices | ducPrice:ctrl.user.ovhSubsidiary"></span>
+            </oui-radio>
+        </div>
+        <oui-checkbox data-model="ctrl.model.autoPay"><span data-translate="server_order_bandwidth_auto_pay"></span></oui-checkbox>
+        <p data-translate="server_order_bandwidth_declaration"></p>
+    </oui-modal>
+</div>
