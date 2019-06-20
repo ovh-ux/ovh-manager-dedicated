@@ -70,7 +70,7 @@ export default class {
       zertoOptionOrderId: enableDrp.orderId,
       zertoOption: drpInformations.drpType === this.DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS.ovh
         ? this.DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS.zertoOption.ovh
-        : this.DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS.zertoOption.onPremises,
+        : this.DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS.zertoOption.onPremise,
     };
 
     const { splitter } = this.DEDICATEDCLOUD_DATACENTER_ZERTO;
@@ -81,7 +81,7 @@ export default class {
   }
 
   goToPreviousStep() {
-    return this.$state.go('app.dedicatedClouds.datacenter.drp.onPremises.ovhPccStep', {
+    return this.$state.go('app.dedicatedClouds.datacenter.drp.onPremise.ovhPccStep', {
       drpInformations: this.drpInformations,
     });
   }

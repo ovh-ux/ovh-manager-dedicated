@@ -88,7 +88,7 @@ export default class {
   selectDrpType() {
     this.drpInformations.drpType = this.selectedDrpType.id;
     const stateToGo = this.drpInformations.drpType === DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS.ovh
-      ? 'ovh.mainPccStep' : 'onPremises.ovhPccStep';
+      ? 'ovh.mainPccStep' : 'onPremise.ovhPccStep';
     return this.$state.go(`app.dedicatedClouds.datacenter.drp.${stateToGo}`, {
       drpInformations: this.drpInformations,
     });

@@ -12,7 +12,7 @@ import {
 import choiceTemplate from './configuration/dedicatedCloud-datacenter-drp-choice.html';
 import component from './dedicatedCloud-datacenter-drp.component';
 import controller from './dedicatedCloud-datacenter-drp.controller';
-import onPremisesTypeConfiguration from './configuration/steps/onPremises';
+import onPremiseTypeConfiguration from './configuration/steps/onPremise';
 import ovhTypeConfiguration from './configuration/steps/ovh';
 import service from './dedicatedCloud-datacenter-drp.service';
 import summary from './summary';
@@ -35,7 +35,7 @@ const zertoConstantName = 'DEDICATEDCLOUD_DATACENTER_ZERTO';
 angular
   .module(moduleName, [
     deleteDrp,
-    onPremisesTypeConfiguration,
+    onPremiseTypeConfiguration,
     ovhTypeConfiguration,
     summary,
   ])
