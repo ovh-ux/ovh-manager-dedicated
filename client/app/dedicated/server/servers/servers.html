@@ -4,23 +4,35 @@
         <div class="row d-md-flex">
             <div class="col-md-12 col-lg-12">
                 <oui-datagrid page-size="25" rows="$ctrl.dedicatedServers">
-                    <oui-column title="'Name'" property="reverse" searchable filterable sortable="asc" type="string"></oui-column>
-                    <oui-column title="'Appellation'" property="name" searchable filterable type="string" sortable="asc"></oui-column>
-                    <oui-column title="'Model'" property="commercialRange" searchable></oui-column>
-                    <oui-column title="'Localization'" property="datacenter" searchable></oui-column>
-                    <oui-column title="'Status'" property="state" filterable></oui-column>
+                    <oui-column title=":: 'dedicated_servers_name' | translate" property="reverse" searchable filterable sortable="asc" type="string"></oui-column>
+                    <oui-column title=":: 'dedicated_servers_called' | translate" property="name" searchable filterable type="string" sortable>
+                        <a data-ui-sref="app.dedicated.server({ productId: $value })">{{$value}}</a>
+                    </oui-column>
+                    <oui-column title=":: 'dedicated_servers_model' | translate" property="commercialRange" searchable sortable></oui-column>
+                    <oui-column title=":: 'dedicated_servers_localization' | translate" property="datacenter" searchable filterable
+                        type="options"
+                        type-options="$ctrl.getDatacenterEnumFilter()">
+                        <span data-translate="{{:: 'server_datacenter_' + $ctrl.constructor.toUpperSnakeCase($value) }}"></span>
+                    </oui-column>
+                    <oui-column title=":: 'dedicated_servers_status' | translate" property="state"
+                        filterable
+                        type="options"
+                        type-options="$ctrl.getStateEnumFilter()">
+                        <span class="oui-status" 
+                              data-ng-class="{
+                                'oui-status_success': $ctrl.constructor.toUpperSnakeCase($value) === 'OK',
+                                'oui-status_warning': $ctrl.constructor.toUpperSnakeCase($value) === 'ERROR',
+                                'oui-status_error': $ctrl.constructor.toUpperSnakeCase($value) === 'HACKED' || $ctrl.constructor.toUpperSnakeCase($value) === 'HACKED_BLOCKED'
+                                }"
+                                data-translate="{{:: 'server_configuration_state_' + $ctrl.constructor.toUpperSnakeCase($value) }}"></span>
+                    </oui-column>
                     <extra-top>
-                      <!--
-                        <oui-action-menu text="Actions" aria-label="Server: actions" align="start">
-                            <oui-action-menu-item text="Add person" aria-label="Persons: add item"></oui-action-menu-item>
-                        </oui-action-menu>
-                      -->
-                      <a class="oui-button oui-button_primary oui-button_secondary oui-button_icon-right" 
-                         target="_blank" rel="noopener"
-                         href="https://www.ovh.com/fr/serveurs_dedies">
-                        <span>Commander un serveur dédié</span>
-                        <span class="oui-icon oui-icon_circle oui-icon-external_link" aria-hidden="true"></span>
-                      </a>
+                        <a class="oui-button oui-button_primary oui-button_secondary oui-button_icon-right" 
+                           target="_blank" rel="noopener"
+                           data-ng-href="{{:: $ctrl.orderUrl }}">
+                            <span data-translate="dedicated_servers_order"></span>
+                            <span class="oui-icon oui-icon_circle oui-icon-external_link" aria-hidden="true"></span>
+                        </a>
                     </extra-top>
                 </oui-datagrid>
             </div>

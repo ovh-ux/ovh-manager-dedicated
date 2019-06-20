@@ -11,13 +11,17 @@ angular
       template,
       controller,
       controllerAs: '$ctrl',
-      translations: ['./'],
+      translations: { value: ['.', '../'], format: 'json' },
       resolve: {
         dedicatedServers: /* @ngInject */ iceberg => iceberg('/dedicated/server')
           .query()
           .expand('CachedObjectList-Pages')
           .sort('name', 'DESC')
           .execute(null, true)
+          .$promise,
+        schema: /* @ngInject */ OvhApiDedicatedServer => OvhApiDedicatedServer
+          .v6()
+          .schema()
           .$promise,
       },
     });
