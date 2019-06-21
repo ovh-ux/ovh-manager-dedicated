@@ -579,6 +579,8 @@ angular
       arrayIn.forEach((point, index, array) => {
         let value;
         let unit;
+        let timestamp;
+        timestamp = point.timestamp; // eslint-disable-line
         if (point.value === null) {
           const prevPoint = array[index - 1];
 
@@ -594,12 +596,14 @@ angular
           value = point.value.value; // eslint-disable-line
         }
         graph.push({
+          timestamp,
           unit,
           y: value,
         });
       });
       return graph;
     }
+
 
     function buildMRTGResponse(arrayIn, pointInterval) {
       const response = {

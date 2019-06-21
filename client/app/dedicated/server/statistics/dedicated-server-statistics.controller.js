@@ -70,15 +70,29 @@ angular.module('controllers').controller('controllers.Server.Stats', (
   function createChart(data) {
     $scope.series = [];
     $scope.data = [];
-
-    $scope.labels = _.map(_.get(data, 'download.values'), (value, index) => moment(data.download.pointStart)
-      .add(data.download.pointInterval.millis * index, 'milliseconds')
-      .calendar());
-
+    $scope.labels = _.map(_.get(data, 'download.values'), value => moment.unix(value.timestamp).calendar());
     $scope.series.push($translate.instant('server_tab_STATS_legend_download'));
     $scope.series.push($translate.instant('server_tab_STATS_legend_upload'));
-    $scope.data.push(_.map(_.get(data, 'download.values'), value => value.y));
-    $scope.data.push(_.map(_.get(data, 'upload.values'), value => value.y));
+    $scope.data.push(_.map(_.get(data, 'download.values'), value => (value.unit === 'bps' ? (value.y / 1024).toFixed(2) : value.y)));
+    $scope.data.push(_.map(_.get(data, 'upload.values'), value => (value.unit === 'bps' ? (value.y / 1024).toFixed(2) : value.y)));
+    const { unit } = _.head(_.get(data, 'download.values'));
+    const yLabel = unit === 'bps' ? $translate.instant('server_configuration_mitigation_statistics_unit_KB') : unit;
+    $scope.options = {
+      scales: {
+        yAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: yLabel,
+          },
+        }],
+        xAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: $translate.instant('server_usage_chart_xaxis_label'),
+          },
+        }],
+      },
+    };
   }
 
   /**
