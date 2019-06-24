@@ -579,8 +579,7 @@ angular
       arrayIn.forEach((point, index, array) => {
         let value;
         let unit;
-        let timestamp;
-        timestamp = point.timestamp; // eslint-disable-line
+        const { timestamp } = point;
         if (point.value === null) {
           const prevPoint = array[index - 1];
 

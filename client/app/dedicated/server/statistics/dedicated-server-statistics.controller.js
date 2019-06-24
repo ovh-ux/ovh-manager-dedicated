@@ -67,14 +67,18 @@ angular.module('controllers').controller('controllers.Server.Stats', (
 
   $scope.$on('dedicated.informations.bandwidth', $scope.loadBandwidthInformations);
 
+  function convertData(list) {
+    return _.map(list, value => (value.unit === 'bps' ? (value.y / 1024).toFixed(2) : value.y));
+  }
+
   function createChart(data) {
     $scope.series = [];
     $scope.data = [];
     $scope.labels = _.map(_.get(data, 'download.values'), value => moment.unix(value.timestamp).calendar());
     $scope.series.push($translate.instant('server_tab_STATS_legend_download'));
     $scope.series.push($translate.instant('server_tab_STATS_legend_upload'));
-    $scope.data.push(_.map(_.get(data, 'download.values'), value => (value.unit === 'bps' ? (value.y / 1024).toFixed(2) : value.y)));
-    $scope.data.push(_.map(_.get(data, 'upload.values'), value => (value.unit === 'bps' ? (value.y / 1024).toFixed(2) : value.y)));
+    $scope.data.push(convertData(_.get(data, 'download.values')));
+    $scope.data.push(convertData(_.get(data, 'upload.values')));
     const { unit } = _.head(_.get(data, 'download.values'));
     const yLabel = unit === 'bps' ? $translate.instant('server_configuration_mitigation_statistics_unit_KB') : unit;
     $scope.options = {
