@@ -61,12 +61,6 @@ angular
       /**
        * ROUTE: Orders
        */
-      $stateProvider.state('app.account.billing.orders', {
-        url: '/orders',
-        templateUrl: `${BILLING_BASE_URL}orders/billing-orders.html`,
-        controller: 'Billing.controllers.Orders',
-      });
-
       $stateProvider.state('app.account.billing.orders.retract', {
         url: '/orders/retract/:id',
         templateUrl: `${BILLING_BASE_URL}orders/retraction/billing-orders-retraction.html`,

@@ -1,4 +1,52 @@
-angular.module('Billing.controllers').controller('Billing.controllers.Orders', ($q, $log, $scope, $location, $translate, Alerter, BillingOrders, BillingOrdersApiv7, BillingOrderStatusEnum, BillingOrdersStatusFilters, BillingUser) => {
+import _ from 'lodash';
+
+export default class BillingOrdersCtrl {
+  /* @ngInject */
+
+  constructor($q, $translate, OvhApiMeOrder, orders, schema) {
+    this.$q = $q;
+    this.$translate = $translate;
+    this.OvhApiMeOrder = OvhApiMeOrder;
+    this.orders = orders;
+    this.schema = schema;
+  }
+
+  loadRow($row) {
+    return this.OvhApiMeOrder.v6()
+      .getStatus({ orderId: $row.orderId })
+      .$promise
+      .then(status => _.assign($row, status));
+  }
+
+  getStateEnumFilter() {
+    const states = _.get(this.schema.models, 'billing.order.OrderStatusEnum').enum;
+    const filter = {
+      values: {},
+    };
+
+    states.forEach((state) => {
+      _.set(filter.values, state, this.$translate.instant(`orders_order_status_${state}`));
+    });
+
+    return filter;
+  }
+}
+
+
+/*
+angular.module('Billing.controllers')
+.controller('Billing.controllers.Orders', (
+$q,
+$log,
+$scope,
+$location,
+$translate,
+Alerter,
+BillingOrders,
+BillingOrdersApiv7,
+BillingOrderStatusEnum,
+BillingOrdersStatusFilters,
+BillingUser) => {
   $scope.itemsPerPage = 10;
   $scope.orderIds = [];
   $scope.loaders = {
@@ -104,7 +152,9 @@ angular.module('Billing.controllers').controller('Billing.controllers.Orders', (
       .then((order) => {
         _.set(order, 'status', $scope.ordersStatus[order.orderId]);
         _.set(order, 'expired', moment().isAfter(order.expirationDate));
-        _.set(order, 'statusText', $translate.instant(`orders_order_status_${_.snakeCase(order.status)}`));
+        _.set(order, 'statusText',
+        $translate.instant(`orders_order_status_${_.snakeCase(order.status)}`)
+        );
         return order;
       })
       .then((order) => {
@@ -142,3 +192,4 @@ angular.module('Billing.controllers').controller('Billing.controllers.Orders', (
 
   init();
 });
+*/
