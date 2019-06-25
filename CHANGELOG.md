@@ -1,3 +1,21 @@
+<a name="10.18.1"></a>
+## [10.18.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.18.0...v10.18.1) (2019-06-25)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** display alert only if autoRenew is not activated ([#1198](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1198)) ([beab070](https://github.com/ovh-ux/ovh-manager-dedicated/commit/beab070))
+* **billing.payment.ovhaccount.retrieve:** add non valid bank accounts ([#1199](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1199)) ([4b811c2](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4b811c2))
+* **cdn.dedicated.service:** return data from getSelected method ([#1192](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1192)) ([83f5117](https://github.com/ovh-ux/ovh-manager-dedicated/commit/83f5117))
+* **dedicated.cloud.dashboard:** display Arin IP counter ([#1189](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1189)) ([4b93028](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4b93028))
+* **deps:** upgrade some dependencies ([#1196](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1196)) ([c681a4a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c681a4a))
+* **i18n:** add missing translations ([912bef5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/912bef5))
+* **i18n:** add missing translations ([1a51955](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1a51955))
+* **i18n:** add missing translations ([bfbd16f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bfbd16f))
+* **i18n:** add missing translations ([bc5b3b0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bc5b3b0))
+
+
+
 <a name="10.18.0"></a>
 # 10.18.0 (2019-06-19)
 
