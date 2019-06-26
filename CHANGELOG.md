@@ -1,3 +1,15 @@
+<a name="10.18.2"></a>
+## [10.18.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.18.1...v10.18.2) (2019-06-26)
+
+
+### Bug Fixes
+
+* **dedicated.server:** fix mrtg graphics ([#1195](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1195)) ([61651b4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/61651b4))
+* **deps:** upgrade some dependencies ([#1203](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1203)) ([b867051](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b867051))
+* **i18n:** add missing translations ([bc45c0a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bc45c0a))
+
+
+
 <a name="10.18.1"></a>
 ## [10.18.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.18.0...v10.18.1) (2019-06-25)
 
