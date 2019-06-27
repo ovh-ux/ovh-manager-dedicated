@@ -1,3 +1,14 @@
+<a name="10.18.3"></a>
+## [10.18.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.18.2...v10.18.3) (2019-06-27)
+
+
+### Bug Fixes
+
+* **deps:** upgrade ng-ovh-otrs to v7.1.5 ([#1207](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1207)) ([9a8e052](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9a8e052))
+* **license:** add missing translations ([#1208](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1208)) ([1880c0e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1880c0e))
+
+
+
 <a name="10.18.2"></a>
 ## [10.18.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.18.1...v10.18.2) (2019-06-26)
 
