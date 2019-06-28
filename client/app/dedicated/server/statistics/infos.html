@@ -29,9 +29,9 @@
                             <dt class="oui-tile__term"
                                 data-translate="server_tab_stats_rtm_infos_ram"></dt>
                             <dd class="oui-tile__description">
-                                <span data-ng-repeat="memory in infoRtm.memory.list track by $index"
-                                      data-ng-bind="memory.number + 'x ' + memory.value + (('unit_size_' + memory.unit) | translate)">
-                                </span>
+                                <p data-ng-repeat="memory in infoRtm.memory.list track by $index"
+                                   data-ng-bind="memory.number + 'x ' + memory.value + (('unit_size_' + memory.unit) | translate)">
+                                </p>
                             </dd>
                         </dl>
                     </div>
@@ -40,9 +40,9 @@
                             <dt class="oui-tile__term"
                                 data-translate="server_tab_stats_rtm_infos_disk"></dt>
                             <dd class="oui-tile__description">
-                                <span data-ng-repeat="diskGroup in server.diskGroups track by $index"
-                                      data-ng-bind="diskGroup.numberOfDisks + '&nbsp;x&nbsp;' + diskGroup.diskSize.value + ' ' + (('unit_size_' + diskGroup.diskSize.unit) | translate)">
-                                </span>
+                                <p data-ng-repeat="diskGroup in server.diskGroups track by $index"
+                                   data-ng-bind="diskGroup.numberOfDisks + '&nbsp;x&nbsp;' + diskGroup.diskSize.value + ' ' + (('unit_size_' + diskGroup.diskSize.unit) | translate)">
+                                </p>
                             </dd>
                         </dl>
                     </div>
