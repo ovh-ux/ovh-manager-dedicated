@@ -127,7 +127,7 @@ angular
   })
   /* ========== AT-INTERNET ========== */
   .config((atInternetProvider, atInternetUiRouterPluginProvider, constants) => {
-    const level2 = constants.target === 'US' ? '57' : '3';
+    const level2 = constants.target === 'US' ? '57' : '10';
 
     atInternetProvider.setEnabled(constants.prodMode && window.location.port.length <= 3);
     atInternetProvider.setDebug(!constants.prodMode);
