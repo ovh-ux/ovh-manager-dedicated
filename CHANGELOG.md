@@ -1,3 +1,13 @@
+<a name="10.19.0"></a>
+# [10.19.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.18.3...v10.19.0) (2019-06-28)
+
+
+### Features
+
+* update tracking id ([bdf262a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bdf262a))
+
+
+
 <a name="10.18.3"></a>
 ## [10.18.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.18.2...v10.18.3) (2019-06-27)
 
