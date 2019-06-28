@@ -1,3 +1,15 @@
+<a name="10.19.1"></a>
+## [10.19.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.0...v10.19.1) (2019-06-28)
+
+
+### Bug Fixes
+
+* **deps:** upgrade some dependencies ([#1213](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1213)) ([be62df3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/be62df3))
+* **i18n:** add missing translations ([30056d8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/30056d8))
+* **i18n:** add missing translations ([df79ab6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/df79ab6))
+
+
+
 <a name="10.19.0"></a>
 # [10.19.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.18.3...v10.19.0) (2019-06-28)
 
