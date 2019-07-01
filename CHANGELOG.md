@@ -1,3 +1,77 @@
+<a name="10.19.2"></a>
+## [10.19.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.1...v10.19.2) (2019-07-01)
+
+
+### Bug Fixes
+
+* **dedicated.server.statistics:** improve charts display ([#1212](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1212)) ([d89d636](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d89d636))
+* **deps:** upgrade ng-ovh-sidebar-menu to v8.3.3 ([#1219](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1219)) ([7c91453](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7c91453))
+
+
+
+<a name="10.19.1"></a>
+## [10.19.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.0...v10.19.1) (2019-06-28)
+
+
+### Bug Fixes
+
+* **deps:** upgrade some dependencies ([#1213](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1213)) ([be62df3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/be62df3))
+* **i18n:** add missing translations ([30056d8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/30056d8))
+* **i18n:** add missing translations ([df79ab6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/df79ab6))
+
+
+
+<a name="10.19.0"></a>
+# [10.19.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.18.3...v10.19.0) (2019-06-28)
+
+
+### Features
+
+* update tracking id ([bdf262a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bdf262a))
+
+
+
+<a name="10.18.3"></a>
+## [10.18.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.18.2...v10.18.3) (2019-06-27)
+
+
+### Bug Fixes
+
+* **deps:** upgrade ng-ovh-otrs to v7.1.5 ([#1207](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1207)) ([9a8e052](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9a8e052))
+* **license:** add missing translations ([#1208](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1208)) ([1880c0e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1880c0e))
+
+
+
+<a name="10.18.2"></a>
+## [10.18.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.18.1...v10.18.2) (2019-06-26)
+
+
+### Bug Fixes
+
+* **dedicated.server:** fix mrtg graphics ([#1195](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1195)) ([61651b4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/61651b4))
+* **deps:** upgrade some dependencies ([#1203](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1203)) ([b867051](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b867051))
+* **i18n:** add missing translations ([bc45c0a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bc45c0a))
+
+
+
+<a name="10.18.1"></a>
+## [10.18.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.18.0...v10.18.1) (2019-06-25)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** display alert only if autoRenew is not activated ([#1198](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1198)) ([beab070](https://github.com/ovh-ux/ovh-manager-dedicated/commit/beab070))
+* **billing.payment.ovhaccount.retrieve:** add non valid bank accounts ([#1199](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1199)) ([4b811c2](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4b811c2))
+* **cdn.dedicated.service:** return data from getSelected method ([#1192](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1192)) ([83f5117](https://github.com/ovh-ux/ovh-manager-dedicated/commit/83f5117))
+* **dedicated.cloud.dashboard:** display Arin IP counter ([#1189](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1189)) ([4b93028](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4b93028))
+* **deps:** upgrade some dependencies ([#1196](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1196)) ([c681a4a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c681a4a))
+* **i18n:** add missing translations ([912bef5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/912bef5))
+* **i18n:** add missing translations ([1a51955](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1a51955))
+* **i18n:** add missing translations ([bfbd16f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bfbd16f))
+* **i18n:** add missing translations ([bc5b3b0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bc5b3b0))
+
+
+
 <a name="10.18.0"></a>
 # 10.18.0 (2019-06-19)
 
