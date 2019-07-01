@@ -1,3 +1,14 @@
+<a name="10.19.2"></a>
+## [10.19.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.1...v10.19.2) (2019-07-01)
+
+
+### Bug Fixes
+
+* **dedicated.server.statistics:** improve charts display ([#1212](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1212)) ([d89d636](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d89d636))
+* **deps:** upgrade ng-ovh-sidebar-menu to v8.3.3 ([#1219](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1219)) ([7c91453](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7c91453))
+
+
+
 <a name="10.19.1"></a>
 ## [10.19.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.0...v10.19.1) (2019-06-28)
 
