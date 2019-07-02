@@ -11,6 +11,6 @@ angular.module('App').config(($stateProvider) => {
       name: 'modal',
       redirectTo: 'app.account.billing.main.history',
     },
-    translations: ['.'],
+    translations: { value: ['.'], format: 'json' },
   });
 });

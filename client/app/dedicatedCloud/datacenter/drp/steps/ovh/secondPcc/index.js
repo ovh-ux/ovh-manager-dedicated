@@ -23,15 +23,15 @@ angular
         controller: 'agoraIpOrderCtrl',
         templateUrl: 'ip/ip/agoraOrder/ip-ip-agoraOrder.html',
         layout: 'modal',
-        translations: ['.'],
+        translations: { value: ['.'], format: 'json' },
       })
       .state('app.dedicatedClouds.datacenter.drp.ovh.secondPccStep.legacyOrderIp', {
         controller: 'IpLegacyOrderCtrl',
         templateUrl: 'ip/ip/legacyOrder/ip-ip-legacyOrder.html',
         layout: 'modal',
-        translations: ['.'],
+        translations: { value: ['.'], format: 'json' },
       });
   })
-  .run(/* @ngTranslationsInject ./translations */);
+  .run(/* @ngTranslationsInject:json ./translations */);
 
 export default moduleName;

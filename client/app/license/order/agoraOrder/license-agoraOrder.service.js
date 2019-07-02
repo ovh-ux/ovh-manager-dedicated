@@ -1,11 +1,18 @@
 class LicenseAgoraOrder {
-  constructor($q, $translate, Alerter, constants, OvhHttp, User) {
+  constructor(
+    $q,
+    $translate,
+    Alerter,
+    coreConfig,
+    OvhHttp,
+    User,
+  ) {
     this.$q = $q;
+    this.$translate = $translate;
     this.Alerter = Alerter;
-    this.constants = constants;
+    this.coreConfig = coreConfig;
     this.OvhHttp = OvhHttp;
     this.User = User;
-    this.$translate = $translate;
 
     this.licenseTypeToCatalog = {
       CLOUDLINUX: 'licenseCloudLinux',
@@ -26,7 +33,7 @@ class LicenseAgoraOrder {
         catalogName: this.licenseTypeToCatalog[licenseType],
       },
       params: {
-        ovhSubsidiary: this.constants.target,
+        ovhSubsidiary: this.coreConfig.getRegion(),
       },
     }).then(data => data.plans);
   }
@@ -51,7 +58,7 @@ class LicenseAgoraOrder {
   getPlanPrice(config) {
     let cartId = '';
 
-    return this.OvhHttp.post('/order/cart', { rootPath: 'apiv6', data: { ovhSubsidiary: this.constants.target } })
+    return this.OvhHttp.post('/order/cart', { rootPath: 'apiv6', data: { ovhSubsidiary: this.coreConfig.getRegion() } })
       .then((data) => {
         cartId = _.get(data, 'cartId');
         return this.OvhHttp.post('/order/cart/{cartId}/assign', { rootPath: 'apiv6', urlParams: { cartId } });

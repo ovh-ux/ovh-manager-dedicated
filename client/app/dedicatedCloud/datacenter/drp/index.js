@@ -55,7 +55,7 @@ angular
         selectedDrpType: null,
       },
       resolve: {
-        disableForUS: /* @ngInject */ ($q, constants) => (constants.target === 'US' ? $q.reject() : $q.when()),
+        disableForUS: /* @ngInject */ ($q, coreConfig) => (coreConfig.getRegion() === 'US' ? $q.reject() : $q.when()),
         datacenterHosts: /* @ngInject */ ($stateParams, DedicatedCloud) => DedicatedCloud
           .getHosts($stateParams.productId, $stateParams.datacenterId),
         datacenterList: /* @ngInject */ ($stateParams, DedicatedCloud) => DedicatedCloud
@@ -66,6 +66,6 @@ angular
       },
     });
   })
-  .run(/* @ngTranslationsInject ./translations */);
+  .run(/* @ngTranslationsInject:json ./translations */);
 
 export default moduleName;

@@ -1,7 +1,9 @@
+import ovhManagerCore from '@ovh-ux/manager-core';
 import config from '../../config/config';
 
 angular
   .module('Billing', [
+    ovhManagerCore,
     'Billing.constants',
     'Billing.controllers',
     'Billing.directives',
@@ -35,7 +37,7 @@ angular
         controller: 'BillingCtrl',
         templateUrl: `${BILLING_BASE_URL}/billing.html`,
         abstract: true,
-        translations: ['../billing'],
+        translations: { value: ['../billing'], format: 'json' },
         resolve: {
           denyEnterprise: ($q, currentUser) => {
             if (currentUser.isEnterprise) {
@@ -103,6 +105,6 @@ angular
       });
     },
   ])
-  .run(($rootScope, constants) => {
-    _.set($rootScope, 'worldPart', constants.target);
+  .run(($rootScope, coreConfig) => {
+    _.set($rootScope, 'worldPart', coreConfig.getRegion());
   });

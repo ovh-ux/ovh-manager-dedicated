@@ -1,8 +1,8 @@
 angular.module('UserAccount').service('UserAccount.services.doubleAuth.sms', class UserAccountServicesDoubleAuthSms {
-  constructor($q, OvhHttp, constants) {
+  constructor($q, OvhHttp, coreConfig) {
     this.$q = $q;
     this.OvhHttp = OvhHttp;
-    this.constants = constants;
+    this.coreConfig = coreConfig;
   }
 
   /**
@@ -148,6 +148,6 @@ angular.module('UserAccount').service('UserAccount.services.doubleAuth.sms', cla
    * @return {Boolean}
    */
   isSupported() {
-    return this.constants.target === 'EU';
+    return this.coreConfig.getRegion() === 'EU';
   }
 });

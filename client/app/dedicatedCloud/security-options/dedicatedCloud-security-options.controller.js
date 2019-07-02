@@ -1,4 +1,6 @@
-angular.module('App').controller('DedicatedCloudSecurityOptionsCtrl', ($q, $stateParams, $scope, $translate, Alerter, constants, DedicatedCloud, User, Poller, DEDICATED_CLOUD_CONSTANTS) => {
+import config from '../../config/config';
+
+angular.module('App').controller('DedicatedCloudSecurityOptionsCtrl', ($q, $stateParams, $scope, $translate, Alerter, DedicatedCloud, User, Poller, DEDICATED_CLOUD_CONSTANTS) => {
   $scope.loading = true;
 
   $scope.requiredOptionNames = ['nsx', 'vrops'];
@@ -12,15 +14,15 @@ angular.module('App').controller('DedicatedCloudSecurityOptionsCtrl', ($q, $stat
     vrops: false,
   };
 
-  $scope.allDisabled = function () {
+  $scope.allDisabled = function allDisabled() {
     return !_.map($scope.options).some(item => item.state === 'enabled');
   };
 
-  $scope.anyEnabling = function () {
+  $scope.anyEnabling = function anyEnabling() {
     return _.map($scope.options).some(item => item.state === 'enabling');
   };
 
-  $scope.nsxAndVropsCompliantPcc = function () {
+  $scope.nsxAndVropsCompliantPcc = function nsxAndVropsCompliantPcc() {
     return !_.map($scope.pccCompliancies).some(compliant => !compliant);
   };
 
@@ -28,9 +30,13 @@ angular.module('App').controller('DedicatedCloudSecurityOptionsCtrl', ($q, $stat
     User.getUser().then((user) => {
       $scope.guides = {};
       $scope.optionNames.forEach((optionName) => {
-        _.set($scope.guides, optionName, constants.urls[user.ovhSubsidiary].guides[optionName]
-          || constants.urls[user.ovhSubsidiary].guides.pcidssHdsHipaa
-          || constants.urls.FR.guides.pcidssHdsHipaa);
+        _.set(
+          $scope.guides,
+          optionName,
+          config.constants.URLS[user.ovhSubsidiary].guides[optionName]
+            || config.constants.URLS[user.ovhSubsidiary].presentations.home
+            || config.constants.URLS.FR.presentations.home,
+        );
       });
     });
   }

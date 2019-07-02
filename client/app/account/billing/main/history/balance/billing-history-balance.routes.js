@@ -1,11 +1,11 @@
-angular.module('App').config(($stateProvider, constants) => {
-  if (constants.target === 'US') {
+angular.module('App').config(($stateProvider, coreConfigProvider) => {
+  if (coreConfigProvider.getRegion() === 'US') {
     $stateProvider.state('app.account.billing.main.history.balance', {
       url: '/balance',
       templateUrl: 'account/billing/main/history/balance/billing-history-balance.html',
       controller: 'BillingHistoryBalanceCtrl',
       controllerAs: '$ctrl',
-      translations: ['../balance'],
+      translations: { value: ['../balance'], format: 'json' },
     });
   }
 });

@@ -12,7 +12,7 @@ angular
       template,
       controller,
       controllerAs: '$ctrl',
-      translations: ['./'],
+      translations: { value: ['./'], format: 'json' },
       redirectTo: `${name}.method`,
     });
   });

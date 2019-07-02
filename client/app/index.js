@@ -1,6 +1,5 @@
 /* eslint-disable import/no-webpack-loader-syntax, import/no-unresolved, import/extensions */
 import 'babel-polyfill';
-import 'script-loader!../assets/randexp.min.js';
 import 'script-loader!moment/min/moment-with-locales.min.js';
 import 'script-loader!jquery/dist/jquery.min.js';
 import 'script-loader!es6-shim/es6-shim.min.js';
@@ -55,7 +54,7 @@ import 'script-loader!df-tab-menu/build/df-tab-menu.min.js';
 import 'script-loader!ovh-angular-export-csv/dist/ovh-angular-export-csv.min.js';
 import 'script-loader!@bower_components/angular-ui-validate/dist/validate.min.js';
 import 'script-loader!@bower_components/ovh-angular-browser-alert/dist/ovh-angular-browser-alert.js';
-import 'script-loader!@bower_components/randexp/build/randexp.min.js';
+import 'script-loader!randexp/build/randexp.min';
 import 'script-loader!ui-select/dist/select.min.js';
 import 'angular-resource';
 import 'script-loader!jsurl/lib/jsurl.js';
@@ -68,11 +67,10 @@ import 'script-loader!u2f-api-polyfill/u2f-api-polyfill.js';
 import 'ovh-api-services';
 import 'ovh-angular-toaster';
 import 'script-loader!ovh-jquery-ui-draggable-ng/dist/ovh-jquery-ui-draggable-ng.min.js';
-import 'script-loader!ovh-angular-sidebar-menu/dist/ovh-angular-sidebar-menu.min.js';
 import 'angular-translate';
 import 'script-loader!angular-translate/dist/angular-translate-loader-partial/angular-translate-loader-partial.min.js';
 import 'ng-slide-down';
-import 'ovh-angular-actions-menu';
+import '@ovh-ux/ng-ovh-actions-menu';
 import 'ovh-angular-responsive-popover';
 import 'script-loader!matchmedia-ng/matchmedia-ng.js';
 import 'angular-aria';

@@ -1,4 +1,4 @@
-angular.module('UserAccount').service('UserAccount.services.Contacts', function (OvhHttp, constants, Poller, $rootScope) {
+angular.module('UserAccount').service('UserAccount.services.Contacts', function (OvhHttp, constants, coreConfig, Poller, $rootScope) {
   const self = this;
   const apiChangeContact = '/me/task/contactChange';
   const cache = {
@@ -95,7 +95,7 @@ angular.module('UserAccount').service('UserAccount.services.Contacts', function 
       cache: cache.services,
       params: {
         universe: null,
-        worldpart: constants.target,
+        worldpart: coreConfig.getRegion(),
       },
     });
   };

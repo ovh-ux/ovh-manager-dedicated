@@ -53,45 +53,32 @@
                            name="password"
                            data-ng-model="newUser.password"
                            data-ui-validate="{ checkPassword: 'checkPassword($value)' }" />
-                    <div class="text-center">
-                        <button type="button"
-                                class="btn btn-default"
-                                data-ng-if="userForm.password.$dirty && userForm.$error.checkPassword"
-                                data-ng-click="showError.checkPassword = !showError.checkPassword">
-                            <span data-translate="dedicatedCloud_USER_change_password_incorrect"></span>
-                            <span class="fa fa-info-circle"
-                                  aria-label="{{ 'dedicatedCloud_USER_change_password_incorrect' | translate }}"
-                                  data-uib-tooltip="{{ 'dedicatedCloud_USER_change_password_infos' | translate }}"
-                                  data-tooltip-placement="top">
-                            </span>
-                        </button>
-                        <ul class="text-danger list-unstyled"
-                            data-ng-if="showError.checkPassword">
-                            <li data-ng-if="passwordPolicy.digitMandatory"
-                                data-translate="dedicatedCloud_USER_change_password_digitMandatory">
-                            </li>
-                            <li data-ng-if="passwordPolicy.letterMandatory"
-                                data-translate="dedicatedCloud_USER_change_password_letterMandatory">
-                            </li>
-                            <li data-ng-if="passwordPolicy.lowercaseLetterMandatory"
-                              data-translate="dedicatedCloud_USER_change_password_lowercaseLetterMandatory">
-                            </li>
-                            <li data-ng-if="passwordPolicy.specialMandatory"
-                              data-translate="dedicatedCloud_USER_change_password_specialMandatory">
-                            </li>
-                            <li data-ng-if="passwordPolicy.uppercaseLetterMandatory"
-                              data-translate="dedicatedCloud_USER_change_password_uppercaseLetterMandatory">
-                            </li>
-                            <li data-ng-if="passwordPolicy.maxLength">
-                                <span data-translate="dedicatedCloud_USER_change_password_maxLength"></span>
-                                <span data-ng-bind="passwordPolicy.maxLength"></span>
-                            </li>
-                            <li data-ng-if="passwordPolicy.minLength">
-                                <span data-translate="dedicatedCloud_USER_change_password_minLength"></span>
-                                <span data-ng-bind="passwordPolicy.minLength"></span>
-                            </li>
-                        </ul>
-                    </div>
+                    <ul class="text-danger list-unstyled"
+                        data-ng-if="showError.checkPassword">
+                        <li data-ng-if="passwordPolicy.digitMandatory"
+                            data-translate="dedicatedCloud_USER_change_password_digitMandatory">
+                        </li>
+                        <li data-ng-if="passwordPolicy.letterMandatory"
+                            data-translate="dedicatedCloud_USER_change_password_letterMandatory">
+                        </li>
+                        <li data-ng-if="passwordPolicy.lowercaseLetterMandatory"
+                            data-translate="dedicatedCloud_USER_change_password_lowercaseLetterMandatory">
+                        </li>
+                        <li data-ng-if="passwordPolicy.specialMandatory"
+                            data-translate="dedicatedCloud_USER_change_password_specialMandatory">
+                        </li>
+                        <li data-ng-if="passwordPolicy.uppercaseLetterMandatory"
+                            data-translate="dedicatedCloud_USER_change_password_uppercaseLetterMandatory">
+                        </li>
+                        <li data-ng-if="passwordPolicy.maxLength">
+                            <span data-translate="dedicatedCloud_USER_change_password_maxLength"></span>
+                            <span data-ng-bind="passwordPolicy.maxLength"></span>
+                        </li>
+                        <li data-ng-if="passwordPolicy.minLength">
+                            <span data-translate="dedicatedCloud_USER_change_password_minLength"></span>
+                            <span data-ng-bind="passwordPolicy.minLength"></span>
+                        </li>
+                    </ul>
                 </div>
                 <div class="form-group"
                      data-ng-class="getClassLabel(userForm.email)">

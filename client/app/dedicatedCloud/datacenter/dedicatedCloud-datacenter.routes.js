@@ -4,7 +4,7 @@ angular.module('App').config(($stateProvider) => {
     views: {
       dedicatedCloudView: {
         templateUrl: 'dedicatedCloud/datacenter/dedicatedCloud-datacenter.html',
-        controller: 'DedicatedCloudSubDatacenterCtrl',
+        controller: 'ovhManagerPccDatacenter',
         controllerAs: '$ctrl',
       },
     },

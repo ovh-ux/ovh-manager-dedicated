@@ -1,3 +1,283 @@
+<a name="10.19.2"></a>
+## [10.19.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.1...v10.19.2) (2019-07-01)
+
+
+### Bug Fixes
+
+* **dedicated.server.statistics:** improve charts display ([#1212](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1212)) ([d89d636](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d89d636))
+* **deps:** upgrade ng-ovh-sidebar-menu to v8.3.3 ([#1219](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1219)) ([7c91453](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7c91453))
+
+
+
+<a name="10.19.1"></a>
+## [10.19.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.0...v10.19.1) (2019-06-28)
+
+
+### Bug Fixes
+
+* **deps:** upgrade some dependencies ([#1213](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1213)) ([be62df3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/be62df3))
+* **i18n:** add missing translations ([30056d8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/30056d8))
+* **i18n:** add missing translations ([df79ab6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/df79ab6))
+
+
+
+<a name="10.19.0"></a>
+# [10.19.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.18.3...v10.19.0) (2019-06-28)
+
+
+### Features
+
+* update tracking id ([bdf262a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bdf262a))
+
+
+
+<a name="10.18.3"></a>
+## [10.18.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.18.2...v10.18.3) (2019-06-27)
+
+
+### Bug Fixes
+
+* **deps:** upgrade ng-ovh-otrs to v7.1.5 ([#1207](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1207)) ([9a8e052](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9a8e052))
+* **license:** add missing translations ([#1208](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1208)) ([1880c0e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1880c0e))
+
+
+
+<a name="10.18.2"></a>
+## [10.18.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.18.1...v10.18.2) (2019-06-26)
+
+
+### Bug Fixes
+
+* **dedicated.server:** fix mrtg graphics ([#1195](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1195)) ([61651b4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/61651b4))
+* **deps:** upgrade some dependencies ([#1203](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1203)) ([b867051](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b867051))
+* **i18n:** add missing translations ([bc45c0a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bc45c0a))
+
+
+
+<a name="10.18.1"></a>
+## [10.18.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.18.0...v10.18.1) (2019-06-25)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** display alert only if autoRenew is not activated ([#1198](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1198)) ([beab070](https://github.com/ovh-ux/ovh-manager-dedicated/commit/beab070))
+* **billing.payment.ovhaccount.retrieve:** add non valid bank accounts ([#1199](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1199)) ([4b811c2](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4b811c2))
+* **cdn.dedicated.service:** return data from getSelected method ([#1192](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1192)) ([83f5117](https://github.com/ovh-ux/ovh-manager-dedicated/commit/83f5117))
+* **dedicated.cloud.dashboard:** display Arin IP counter ([#1189](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1189)) ([4b93028](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4b93028))
+* **deps:** upgrade some dependencies ([#1196](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1196)) ([c681a4a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c681a4a))
+* **i18n:** add missing translations ([912bef5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/912bef5))
+* **i18n:** add missing translations ([1a51955](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1a51955))
+* **i18n:** add missing translations ([bfbd16f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bfbd16f))
+* **i18n:** add missing translations ([bc5b3b0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bc5b3b0))
+
+
+
+<a name="10.18.0"></a>
+# 10.18.0 (2019-06-19)
+
+
+### Bug Fixes
+
+* **backup:** correct link to Veeam presentation ([98597a3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/98597a3))
+* **backup:** remove duplicate message ([db0fefb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/db0fefb))
+* **backup:** restore functionality ([e7ea1dc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e7ea1dc))
+* **dashboard:** duplicate error messages will display ([5faf591](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5faf591))
+* **datacenter:** display error message ([7947cc3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7947cc3))
+* **datacenter:** display that data is soon available ([b60473d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b60473d))
+* **datacenter:** handle newly created filers & hosts ([22d7c12](https://github.com/ovh-ux/ovh-manager-dedicated/commit/22d7c12))
+* **datacenter.backup:** send legacy offer when outside the US ([6048f20](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6048f20))
+* **datacenter.datastore:** display hour of last update ([68f5863](https://github.com/ovh-ux/ovh-manager-dedicated/commit/68f5863))
+* **datacenter.disable:** display error message correctly ([8737708](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8737708))
+* **datastore:** handle case when no data is available yet ([6606d7e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6606d7e))
+* **dedicated-cloud:** can order ressources in US again ([0aa547b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0aa547b))
+* **dedicated-cloud:** fix eslint warnings ([a480abf](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a480abf))
+* **general-information.dashboard:** add message when name was updated ([5095e7c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5095e7c))
+* **options:** display Certification is service has one ([3b7bee7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3b7bee7))
+* **security:** display success message correctly ([804a3e3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/804a3e3))
+* **selection:** add margin between lines ([f60069c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f60069c))
+* **selection:** display message to pay checkout ([1325b67](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1325b67))
+* **selection:** remove code specific for PL ([758ce06](https://github.com/ovh-ux/ovh-manager-dedicated/commit/758ce06))
+* **selection.confirm:** change text according to item type ([fd95eb7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/fd95eb7))
+* **upgrade:** restore missing translations ([1197496](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1197496))
+* add missing injections ([2db2c90](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2db2c90))
+* fix rebase mistakes ([6da0dac](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6da0dac))
+* fix yarn.lock ([7965e34](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7965e34))
+* **user:** respect password rules ([6a19d6a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6a19d6a))
+
+
+### Features
+
+* **datacenter:** add constants about element types ([9db5946](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9db5946))
+* **datacenter:** handle hourly consumption for Agora hosts ([a0035b9](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a0035b9))
+* **datacenter.datastore:** fetch consumption for Agora ([56158b8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/56158b8))
+* **dedicated.server:** remove useless information network tile ([#1185](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1185)) ([8ca2fa6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8ca2fa6))
+* **options:** add guides for all subs ([3388845](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3388845))
+* **options:** add new status ([a850357](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a850357))
+* **options:** handle option status per option ([deffa6f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/deffa6f))
+* **options:** only display Certifications when one is orderable ([c0ea238](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c0ea238))
+* **order:** allow resuming order at the correct place ([debfae3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/debfae3))
+* **order:** hide modify menu item when needed ([ec8800d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ec8800d))
+* **selection:** add translations for vRops option ([61efe26](https://github.com/ovh-ux/ovh-manager-dedicated/commit/61efe26))
+* **user.password:** display confirmation message ([5cec279](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5cec279))
+
+
+### Performance Improvements
+
+* remove duplicate randexp dependency ([#1183](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1183)) ([f6c585d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f6c585d))
+
+
+
+<a name="10.17.16"></a>
+## [10.17.16](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.15...v10.17.16) (2019-06-14)
+
+
+### Bug Fixes
+
+* **ip:** improve popover positioning ([656cc4a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/656cc4a))
+
+
+
+<a name="10.17.15"></a>
+## [10.17.15](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.14...v10.17.15) (2019-06-11)
+
+
+### Bug Fixes
+
+* **deps:** upgrade ng-ovh-otrs to v7.1.2 ([#1176](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1176)) ([55bbb56](https://github.com/ovh-ux/ovh-manager-dedicated/commit/55bbb56))
+
+
+
+<a name="10.17.14"></a>
+## [10.17.14](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.13...v10.17.14) (2019-06-10)
+
+
+### Bug Fixes
+
+* **deps:** upgrade ng-ovh-otrs to v7.1.1 ([#1173](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1173)) ([8465bb0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8465bb0))
+
+
+
+<a name="10.17.13"></a>
+## [10.17.13](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.12...v10.17.13) (2019-06-06)
+
+
+### Bug Fixes
+
+* **deps:** upgrade some dependencies ([#1163](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1163)) ([4b8acac](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4b8acac))
+* **i18n:** retrieve translations ([#1167](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1167)) ([2f820d8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2f820d8))
+
+
+
+<a name="10.17.12"></a>
+## [10.17.12](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.11...v10.17.12) (2019-06-03)
+
+
+### Bug Fixes
+
+* **deps:** upgrade manager-server-sidebar to 0.1.6 ([#1157](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1157)) ([51310e9](https://github.com/ovh-ux/ovh-manager-dedicated/commit/51310e9))
+* **deps:** upgrade ovh-module-exchange to v9.4.5 ([#1155](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1155)) ([79de050](https://github.com/ovh-ux/ovh-manager-dedicated/commit/79de050))
+* **i18n:** retrieve translations ([#1159](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1159)) ([afc9271](https://github.com/ovh-ux/ovh-manager-dedicated/commit/afc9271))
+
+
+
+<a name="10.17.11"></a>
+## [10.17.11](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.10...v10.17.11) (2019-05-29)
+
+
+### Bug Fixes
+
+* **deps:** bump manager-navbar to v0.5.0 ([#1150](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1150)) ([39f8590](https://github.com/ovh-ux/ovh-manager-dedicated/commit/39f8590))
+
+
+
+<a name="10.17.10"></a>
+## [10.17.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.9...v10.17.10) (2019-05-27)
+
+
+### Bug Fixes
+
+* **account.billing:** add missing translation on cancellation form ([#1132](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1132)) ([b0f155d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b0f155d)), closes [#1131](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1131)
+* **dedicated.server:** hide usb storage tab option ([#1108](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1108)) ([9260a55](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9260a55))
+* display labels in all server graph ([#1090](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1090)) ([072fb4b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/072fb4b))
+* **i18n:** retrieve translations ([ee64274](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ee64274))
+* **i18n:** retrieve translations ([9b4a53b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9b4a53b))
+* **i18n:** retrieve translations ([#1145](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1145)) ([76119a8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/76119a8))
+* **i18n:** submit translations ([6994264](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6994264))
+* **i18n:** submit translations ([fd73806](https://github.com/ovh-ux/ovh-manager-dedicated/commit/fd73806))
+
+
+
+<a name="10.17.9"></a>
+## [10.17.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.8...v10.17.9) (2019-05-22)
+
+
+
+<a name="10.17.8"></a>
+## [10.17.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.7...v10.17.8) (2019-05-22)
+
+
+### Bug Fixes
+
+* **deps:** upgrade manager-server-sidebar to v0.1.3 ([#1137](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1137)) ([88e4283](https://github.com/ovh-ux/ovh-manager-dedicated/commit/88e4283))
+
+
+
+<a name="10.17.7"></a>
+## [10.17.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.6...v10.17.7) (2019-05-22)
+
+
+### Bug Fixes
+
+* **deps:** upgrade both core and navbar dependencies ([#1134](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1134)) ([31f925b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/31f925b)), closes [#1133](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1133)
+
+
+
+<a name="10.17.6"></a>
+## [10.17.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.5...v10.17.6) (2019-05-21)
+
+
+### Bug Fixes
+
+* CA region use now right link ([f222ba3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f222ba3))
+
+
+
+<a name="10.17.5"></a>
+## [10.17.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.4...v10.17.5) (2019-05-21)
+
+
+### Bug Fixes
+
+* **i18n:** retrieve translations ([#1121](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1121)) ([54ab1b4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/54ab1b4))
+
+
+
+<a name="10.17.4"></a>
+## [10.17.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.3...v10.17.4) (2019-05-15)
+
+
+### Bug Fixes
+
+* **i18n:** retrieve translations ([1f27699](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1f27699))
+* **i18n:** submit translations ([fe2f6f7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/fe2f6f7))
+* **license:** add missing translations ([#1116](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1116)) ([dad003d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/dad003d))
+
+
+
+<a name="10.17.3"></a>
+## [10.17.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.2...v10.17.3) (2019-05-15)
+
+
+### Bug Fixes
+
+* **deps:** upgrade ovh-module-exchange to v9.4.4 ([#1110](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1110)) ([82570d1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/82570d1))
+* **i18n:** retrieve translations ([e615648](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e615648))
+* **i18n:** retrieve translations ([#1112](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1112)) ([425ebe3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/425ebe3))
+* **i18n:** submit translations ([bf39a4b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bf39a4b))
+* **license:** add both windows server 2019 standard and datacenter ([#1106](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1106)) ([6281350](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6281350))
+
+
+
 <a name="10.17.2"></a>
 ## [10.17.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.17.1...v10.17.2) (2019-05-06)
 

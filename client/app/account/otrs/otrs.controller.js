@@ -6,9 +6,9 @@ angular.module('Module.otrs.controllers').controller('otrsCtrl', [
   'OtrsPopupService',
   'Module.otrs.services.otrs',
   'Alerter',
-  'constants',
+  'coreConfig',
   'OTRS_POPUP_UNIVERSES',
-  function ($rootScope, $scope, $location, $translate, OtrsPopupService, Otrs, Alerter, constants,
+  function ($rootScope, $scope, $location, $translate, OtrsPopupService, Otrs, Alerter, coreConfig,
     OTRS_POPUP_UNIVERSES) {
     let firstLoading = false;
 
@@ -20,7 +20,7 @@ angular.module('Module.otrs.controllers').controller('otrsCtrl', [
     $scope.maxCreationDateSearch = {
       opened: false,
     };
-    $scope.worldPart = constants.target;
+    $scope.worldPart = coreConfig.getRegion();
     $scope.showFilters = false;
     $scope.currentPage = $location.search()
       && $location.search().currentPage != null ? parseInt($location.search().currentPage, 10) : 1;
@@ -78,7 +78,7 @@ angular.module('Module.otrs.controllers').controller('otrsCtrl', [
           $scope.loaders.models = false;
         });
 
-      $scope.universes = OTRS_POPUP_UNIVERSES[constants.target];
+      $scope.universes = OTRS_POPUP_UNIVERSES[coreConfig.getRegion()];
 
       loadSearch();
     };

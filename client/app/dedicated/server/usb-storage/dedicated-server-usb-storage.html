@@ -31,7 +31,7 @@
             <button type="button"
                     class="btn btn-default btn-block"
                     data-ng-click="setAction('usb-storage/order/dedicated-server-usb-storage-order', usbInformations)"
-                    data-ng-disabled="!usbInformations.orderable || server.order.indexOf('usbKey') === -1"
+                    data-ng-if="usbInformations.orderable"
                     data-translate="server_tab_USB_STORAGE_add">
             </button>
         </div>

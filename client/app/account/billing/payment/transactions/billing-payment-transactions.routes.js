@@ -3,9 +3,9 @@ angular
   .config([
     '$stateProvider',
     '$urlRouterProvider',
-    'Billing.constants',
-    ($stateProvider, $urlRouterProvider, constants) => {
-      if (constants.target === 'EU') {
+    'coreConfigProvider',
+    ($stateProvider, $urlRouterProvider, coreConfigProvider) => {
+      if (coreConfigProvider.getRegion() === 'EU') {
         const name = 'app.account.billing.payment.transactions';
 
         $stateProvider.state(name, {
@@ -13,7 +13,7 @@ angular
           templateUrl: 'account/billing/payment/transactions/billing-payment-transactions.html',
           controller: 'BillingPaymentTransactionsCtrl',
           controllerAs: '$ctrl',
-          translations: ['./'],
+          translations: { value: ['./'], format: 'json' },
         });
       }
     }]);

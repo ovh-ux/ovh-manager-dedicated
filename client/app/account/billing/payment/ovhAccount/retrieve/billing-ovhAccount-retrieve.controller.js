@@ -20,9 +20,8 @@ angular
       account: '',
     };
 
-    function getValidBankAccounts() {
+    function getBankAccounts() {
       return ovhPaymentMethod.getAllPaymentMethods({
-        onlyValid: true,
         transform: true,
       }).then(paymentMethods => _.filter(paymentMethods, paymentMethod => paymentMethod.paymentType.value === 'BANK_ACCOUNT'));
     }
@@ -31,7 +30,7 @@ angular
       $scope.loading = true;
       $q
         .all([
-          getValidBankAccounts(),
+          getBankAccounts(),
           User.getUser(),
         ])
         .then(([bankAccounts, user]) => {

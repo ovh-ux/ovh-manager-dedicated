@@ -1,5 +1,8 @@
-angular.module('App').controller('BillingMainCtrl', class BillingMainCtrl {
-  constructor(constants) {
-    this.constants = constants;
-  }
-});
+angular
+  .module('App')
+  .controller('BillingMainCtrl', class BillingMainCtrl {
+    /* @ngInject */
+    constructor(coreConfig) {
+      this.coreConfig = coreConfig;
+    }
+  });

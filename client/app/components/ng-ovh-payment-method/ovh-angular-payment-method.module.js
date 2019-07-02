@@ -1,3 +1,3 @@
-angular.module('App').config((ovhPaymentMethodProvider, constants) => {
-  ovhPaymentMethodProvider.setTarget(constants.target);
+angular.module('App').config((ovhPaymentMethodProvider, coreConfigProvider) => {
+  ovhPaymentMethodProvider.setTarget(coreConfigProvider.getRegion());
 });

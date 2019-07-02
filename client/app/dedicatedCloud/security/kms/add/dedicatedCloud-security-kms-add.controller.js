@@ -1,7 +1,9 @@
+import config from '../../../../config/config';
+
 angular.module('App').controller('DedicatedCloudSecurityKMSAddCtrl', class DedicatedCloudSecurityKMSAddCtrl {
   constructor(
     $stateParams, $timeout, $translate, $uibModalInstance,
-    DedicatedCloud, constants, VM_ENCRYPTION_KMS,
+    DedicatedCloud, VM_ENCRYPTION_KMS,
   ) {
     this.$timeout = $timeout;
     this.$translate = $translate;
@@ -10,7 +12,6 @@ angular.module('App').controller('DedicatedCloudSecurityKMSAddCtrl', class Dedic
 
     this.serviceName = $stateParams.productId;
     this.VM_ENCRYPTION_KMS = VM_ENCRYPTION_KMS;
-    this.constants = constants;
 
     this.regex = {
       ip: this.VM_ENCRYPTION_KMS.regex.ip,
@@ -38,7 +39,8 @@ angular.module('App').controller('DedicatedCloudSecurityKMSAddCtrl', class Dedic
     if (usedLanguage) {
       const frenchLanguages = ['fr_FR', 'fr_CA'];
       this.vmEncryptionGuide = frenchLanguages.includes(usedLanguage)
-        ? this.constants.urls.FR.guides.vmEncryption : this.constants.urls.GB.guides.vmEncryption;
+        ? config.constants.URLS.FR.guides.vmEncryption
+        : config.constants.URLS.GB.guides.vmEncryption;
     }
   }
 

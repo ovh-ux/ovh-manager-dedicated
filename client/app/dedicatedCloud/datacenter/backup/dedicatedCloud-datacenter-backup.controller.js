@@ -7,7 +7,7 @@ angular
       $scope,
       $stateParams,
       $translate,
-      constants,
+      currentService,
       DedicatedCloud,
       VEEAM_STATE_ENUM,
     ) {
@@ -15,7 +15,7 @@ angular
       this.$scope = $scope;
       this.$stateParams = $stateParams;
       this.$translate = $translate;
-      this.constants = constants;
+      this.currentService = currentService;
       this.DedicatedCloud = DedicatedCloud;
       this.VEEAM_STATE_ENUM = VEEAM_STATE_ENUM;
     }
@@ -27,38 +27,44 @@ angular
       };
 
       this.$scope.loading = false;
-      this.$scope.isUS = this.constants.target === 'US';
+      this.$scope.currentService = this.currentService;
 
       this.$rootScope.$on('datacenter.veeam.reload', () => {
-        this.$scope.loadVeeam(true);
+        this.loadVeeam(true);
       });
 
-      return this.loadVeeam();
+      return this.fetchInitialData();
     }
 
-    canBeDisabled() {
-      return this.$scope.veeam.model
-        && this.$scope.veeam.model.state === this.$scope.veeam.constants.ENABLED;
+    fetchInitialData() {
+      this.$scope.loading = true;
+
+      return this.loadLicences()
+        .then(() => this.loadVeeam())
+        .catch((data) => {
+          this.$scope.setMessage(this.$translate.instant('dedicatedCloud_tab_veeam_loading_error'), {
+            ...data,
+            type: 'ERROR',
+          });
+        })
+        .finally(() => {
+          this.$scope.loading = false;
+        });
     }
 
-    canBeActivated() {
-      return this.$scope.veeam.model
-        && this.$scope.veeam.model.state === this.$scope.veeam.constants.DISABLED;
+    loadLicences() {
+      return this.DedicatedCloud
+        .getDatacenterLicence(this.$stateParams.productId, this.currentService.usesLegacyOrder)
+        .then(({ isSplaActive }) => {
+          this.$scope.isSplaActive = isSplaActive;
+        });
     }
 
     loadVeeam(forceRefresh) {
-      this.$scope.loading = true;
-
       return this.DedicatedCloud
         .getVeeam(this.$stateParams.productId, this.$stateParams.datacenterId, forceRefresh)
         .then((veeam) => {
           this.$scope.veeam.model = veeam;
-        })
-        .catch((data) => {
-          this.$scope.setMessage(this.$translate.instant('dedicatedCloud_tab_veeam_loading_error'), angular.extend(data, { type: 'ERROR' }));
-        })
-        .finally(() => {
-          this.$scope.loading = false;
         });
     }
   });
