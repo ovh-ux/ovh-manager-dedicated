@@ -1,3 +1,13 @@
+<a name="10.19.3"></a>
+## [10.19.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.2...v10.19.3) (2019-07-03)
+
+
+### Bug Fixes
+
+* **drp:** return correct object of plan state response ([1729ace](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1729ace))
+
+
+
 <a name="10.19.2"></a>
 ## [10.19.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.1...v10.19.2) (2019-07-01)
 
