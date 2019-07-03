@@ -1,12 +1,14 @@
 class ServerOrderAgoraBandwidthVrackCtrl {
-  constructor($scope, $stateParams, $translate, User, Server) {
+  constructor($scope, $stateParams, $translate, User, Server, BandwidthVrackOrderService) {
     this.$scope = $scope;
+    this.BandwidthVrackOrderService = BandwidthVrackOrderService;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.Server = Server;
     this.User = User;
     this.model = {};
     this.isLoading = false;
+    this.existingBandwidth = this.$scope.currentActionData.bandwidth.vrack.bandwidth;
     this.units = {
       model: [
         {
@@ -30,6 +32,7 @@ class ServerOrderAgoraBandwidthVrackCtrl {
     this.Server
       .getBareMetalPrivateBandwidthOptions(
         this.$stateParams.productId,
+        this.existingBandwidth,
       ).then((result) => {
         this.isLoading = false;
         if (result.length < 1) {

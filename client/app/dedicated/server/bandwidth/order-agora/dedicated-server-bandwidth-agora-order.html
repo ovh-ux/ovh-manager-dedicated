@@ -12,12 +12,12 @@
              data-ng-if="!ctrl.isLoading"
              data-ng-repeat="plan in ctrl.plans track by $index">
             <oui-radio data-name="bandwidth-plan" data-model="ctrl.model.plan" data-value="plan.planCode">
-                <span data-ng-bind="ctrl.getDisplaySize(plan.bandwidth, 'GB')"></span>
+                <span data-ng-bind="ctrl.getDisplaySize(plan.bandwidth, 1)"></span>
                 <span data-translate="server_order_bandwidth_plan_text"></span>
                 <span data-ng-bind-html="plan.order.prices | ducPrice:ctrl.user.ovhSubsidiary"></span>
             </oui-radio>
         </div>
         <oui-checkbox data-model="ctrl.model.autoPay"><span data-translate="server_order_bandwidth_auto_pay"></span></oui-checkbox>
-        <p data-translate="server_order_bandwidth_declaration"></p>
+        <small data-translate="server_order_bandwidth_declaration"></small>
     </oui-modal>
 </div>

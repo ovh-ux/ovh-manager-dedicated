@@ -8,6 +8,7 @@ class ServerOrderAgoraBandwidthCtrl {
     this.model = {};
     this.data = {};
     this.isLoading = false;
+    this.existingBandwidth = this.$scope.currentActionData.bandwidth.vrack.bandwidth;
     this.units = {
       model: [
         {
@@ -31,6 +32,7 @@ class ServerOrderAgoraBandwidthCtrl {
     this.Server
       .getBareMetalPublicBandwidthOptions(
         this.$stateParams.productId,
+        this.existingBandwidth,
       ).then((result) => {
         this.isLoading = false;
         if (result.length < 1) {
