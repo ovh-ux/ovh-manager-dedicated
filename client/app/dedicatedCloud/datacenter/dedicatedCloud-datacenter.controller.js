@@ -18,6 +18,7 @@ angular
       DEDICATED_CLOUD_DATACENTER,
       DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
       DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
+      DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS,
     ) {
       this.$scope = $scope;
       this.$stateParams = $stateParams;
@@ -34,6 +35,7 @@ angular
       this.DEDICATED_CLOUD_DATACENTER = DEDICATED_CLOUD_DATACENTER;
       this.DRP_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_STATUS;
       this.DRP_OPTIONS = DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS;
+      this.DRP_VPN_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS;
     }
 
     $onInit() {
@@ -72,13 +74,13 @@ angular
 
     initializeTransitions() {
       this.$transitions.onStart({
-        to: 'app.dedicatedClouds.datacenter.drp',
+        to: 'app.dedicatedClouds.datacenter.drp.**',
       }, () => {
         this.$scope.loading = true;
       });
 
       this.$transitions.onError({
-        to: 'app.dedicatedClouds.datacenter.drp',
+        to: 'app.dedicatedClouds.datacenter.drp.**',
       }, ($transition$) => {
         const loadServiceError = _.get($transition$, '_error.detail.data.message', null);
         this.$scope.loading = false;
@@ -92,7 +94,7 @@ angular
       });
 
       this.$transitions.onSuccess({
-        to: 'app.dedicatedClouds.datacenter.drp',
+        to: 'app.dedicatedClouds.datacenter.drp.**',
       }, () => {
         this.$scope.loading = false;
       });

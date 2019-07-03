@@ -113,38 +113,53 @@ export default class {
     let primaryDatacenter;
     let secondaryPcc;
     let secondaryDatacenter;
+    let vpnConfiguration;
 
     if (localSiteInformation && remoteSiteInformation) {
-      if (localSiteInformation.role === this.DEDICATEDCLOUD_DATACENTER_DRP_ROLES.primary) {
-        primaryPcc = {
-          serviceName: currentPccInformations.serviceName,
-        };
-        primaryDatacenter = {
-          id: currentDatacenterInformations.id,
-          formattedName: currentDatacenterInformations.formattedName,
-        };
-        secondaryPcc = {
-          serviceName: remoteSiteInformation.serviceName,
-        };
-        secondaryDatacenter = {
-          id: remoteSiteInformation.datacenterId,
-          formattedName: remoteSiteInformation.datacenterName,
-        };
-      } else {
-        primaryPcc = {
-          serviceName: remoteSiteInformation.serviceName,
-        };
-        primaryDatacenter = {
-          id: remoteSiteInformation.datacenterId,
-          formattedName: remoteSiteInformation.datacenterName,
-        };
-        secondaryPcc = {
-          serviceName: currentPccInformations.serviceName,
-        };
-        secondaryDatacenter = {
-          id: currentDatacenterInformations.id,
-          formattedName: currentDatacenterInformations.formattedName,
-        };
+      switch (localSiteInformation.role) {
+        case this.DEDICATEDCLOUD_DATACENTER_DRP_ROLES.primary:
+          primaryPcc = {
+            serviceName: currentPccInformations.serviceName,
+          };
+          primaryDatacenter = {
+            id: currentDatacenterInformations.id,
+            formattedName: currentDatacenterInformations.formattedName,
+          };
+          secondaryPcc = {
+            serviceName: remoteSiteInformation.serviceName,
+          };
+          secondaryDatacenter = {
+            id: remoteSiteInformation.datacenterId,
+            formattedName: remoteSiteInformation.datacenterName,
+          };
+          break;
+        case this.DEDICATEDCLOUD_DATACENTER_DRP_ROLES.single:
+          primaryPcc = {
+            serviceName: currentPccInformations.serviceName,
+          };
+          primaryDatacenter = {
+            id: currentDatacenterInformations.id,
+            formattedName: currentDatacenterInformations.formattedName,
+          };
+
+          vpnConfiguration = remoteSiteInformation;
+          break;
+        default:
+          primaryPcc = {
+            serviceName: remoteSiteInformation.serviceName,
+          };
+          primaryDatacenter = {
+            id: remoteSiteInformation.datacenterId,
+            formattedName: remoteSiteInformation.datacenterName,
+          };
+          secondaryPcc = {
+            serviceName: currentPccInformations.serviceName,
+          };
+          secondaryDatacenter = {
+            id: currentDatacenterInformations.id,
+            formattedName: currentDatacenterInformations.formattedName,
+          };
+          break;
       }
     }
 
@@ -155,6 +170,7 @@ export default class {
       primaryDatacenter,
       secondaryPcc,
       secondaryDatacenter,
+      vpnConfiguration,
     };
   }
 }

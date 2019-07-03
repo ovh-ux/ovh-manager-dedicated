@@ -6,6 +6,7 @@ import {
   DEDICATEDCLOUD_DATACENTER_DRP_ROLES,
   DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
   DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS,
+  DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS,
   DEDICATEDCLOUD_DATACENTER_ZERTO,
 } from './dedicatedCloud-datacenter-drp.constants';
 
@@ -30,6 +31,7 @@ const orderOptionsConstantName = 'DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS';
 const rolesConstantName = 'DEDICATEDCLOUD_DATACENTER_DRP_ROLES';
 const statusConstantName = 'DEDICATEDCLOUD_DATACENTER_DRP_STATUS';
 const unavailableIpStatusConstantName = 'DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS';
+const vpnConfigurationStatusConstantName = 'DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS';
 const zertoConstantName = 'DEDICATEDCLOUD_DATACENTER_ZERTO';
 
 angular
@@ -48,6 +50,8 @@ angular
   .constant(rolesConstantName, DEDICATEDCLOUD_DATACENTER_DRP_ROLES)
   .constant(statusConstantName, DEDICATEDCLOUD_DATACENTER_DRP_STATUS)
   .constant(unavailableIpStatusConstantName, DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS)
+  .constant(vpnConfigurationStatusConstantName,
+    DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS)
   .constant(zertoConstantName, DEDICATEDCLOUD_DATACENTER_ZERTO)
   .controller(controllerName, controller)
   .service(serviceName, service)

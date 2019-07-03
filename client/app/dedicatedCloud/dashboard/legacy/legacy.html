@@ -133,10 +133,12 @@
                             <span class="oui-status"
                                   data-ng-class="{
                                       'oui-status_error': $ctrl.drpStatus === 'disabled',
-                                      'oui-status_warning': $ctrl.drpStatus === 'delivering' || $ctrl.drpStatus === 'disabling',
+                                      'oui-status_warning': $ctrl.drpStatus === 'delivering' || $ctrl.drpStatus === 'disabling'
+                                       || $ctrl.drpIsWaitingVpnConfiguration,
                                       'oui-status_success': $ctrl.drpStatus === 'delivered'
-                                }"
-                                  data-translate="{{:: 'dedicatedCloud_options_zerto_status_' + $ctrl.drpStatus }}"></span>
+                                }">
+                                <span data-translate="{{:: $ctrl.drpIsWaitingVpnConfiguration ? 'dedicatedCloud_options_zerto_status_waiting_configuration' : 'dedicatedCloud_options_zerto_status_' + $ctrl.drpStatus }}"></span>
+                            </span>
                         </dd>
                     </dl>
                     <oui-action-menu data-ng-if="::$ctrl.isDrpActionPossible()"

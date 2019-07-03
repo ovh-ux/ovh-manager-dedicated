@@ -14,6 +14,7 @@ export default class {
     dedicatedCloudDrp,
     DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
     DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
+    DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS,
   ) {
     this.$scope = $scope;
     this.$state = $state;
@@ -26,6 +27,7 @@ export default class {
     this.dedicatedCloudDrp = dedicatedCloudDrp;
     this.DRP_OPTIONS = DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS;
     this.DRP_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_STATUS;
+    this.DRP_VPN_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS;
   }
 
   $onInit() {
@@ -40,6 +42,10 @@ export default class {
     this.drpRemotePccStatus = this.currentDrp.drpType === this.DRP_OPTIONS.ovh
       ? this.dedicatedCloudDrp.constructor.formatStatus(_.get(this.currentDrp, 'remoteSiteInformation.state'))
       : this.DRP_STATUS.delivered;
+
+    const drpVpnStatus = _.get(this.currentDrp, 'remoteSiteInformation.vpnConfigState');
+    this.drpIsWaitingVpnConfiguration = drpVpnStatus === this.DRP_VPN_STATUS
+      .notConfigured;
   }
 
   openModalToEditDescription() {
@@ -84,6 +90,14 @@ export default class {
       this.DRP_STATUS.disabled,
       this.DRP_STATUS.waitingConfiguration,
     ].includes(this.drpStatus);
+  }
+
+  goToVpnConfigurationState() {
+    return this.$state.go('app.dedicatedClouds.datacenter', {
+      datacenterId: this.currentDrp.datacenterId,
+    }).then(() => this.$state.go('app.dedicatedClouds.datacenter.drp.summary', {
+      drpInformations: this.currentDrp,
+    }));
   }
 
   deleteDrp() {
