@@ -319,22 +319,19 @@ export default class {
   configureVpn({
     primaryPcc,
     primaryDatacenter,
-    preSharedKey,
-    remoteEndpointInternalIp,
-    remoteEndpointPublicIp,
     remoteVraNetwork,
-    remoteZvmInternalIp,
+    vpnConfiguration,
   }) {
     return this.OvhApiDedicatedCloud.Datacenter().Zerto().Single().v6()
       .configureVpn({
         serviceName: primaryPcc.serviceName,
         datacenterId: primaryDatacenter.id,
       }, {
-        preSharedKey,
-        remoteEndpointInternalIp,
-        remoteEndpointPublicIp,
+        preSharedKey: vpnConfiguration.preSharedKey,
+        remoteEndpointInternalIp: vpnConfiguration.remoteEndpointInternalIp,
+        remoteEndpointPublicIp: vpnConfiguration.remoteEndpointPublicIp,
         remoteVraNetwork,
-        remoteZvmInternalIp,
+        remoteZvmInternalIp: vpnConfiguration.remoteZvmInternalIp,
       }).$promise;
   }
 

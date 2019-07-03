@@ -41,10 +41,15 @@
                         <span class="oui-status"
                               data-ng-class="{
                                   'oui-status_error': $ctrl.drpStatus === 'disabled',
-                                  'oui-status_warning': $ctrl.drpStatus !== 'delivered' && $ctrl.drpStatus !== 'disabled',
+                                  'oui-status_warning': $ctrl.drpStatus === 'delivering' || $ctrl.drpStatus === 'disabling'
+                                   || $ctrl.drpIsWaitingVpnConfiguration,
                                   'oui-status_success': $ctrl.drpStatus === 'delivered'
-                            }"
-                              data-translate="{{:: 'dedicatedCloud_options_zerto_status_' + $ctrl.drpStatus }}"></span>
+                            }">
+                            <span data-ng-if="::!$ctrl.drpIsWaitingVpnConfiguration"
+                                  data-translate="{{:: 'dedicatedCloud_options_zerto_status_' + $ctrl.drpStatus }}"></span>
+                            <span data-ng-if="::$ctrl.drpIsWaitingVpnConfiguration"
+                                  data-translate="dedicatedCloud_options_zerto_status_waiting_configuration"></span>
+                        </span>
                     </oui-tile-description>
                     <oui-action-menu data-ng-if="::$ctrl.isDrpActionPossible()"
                                      data-align="end"
