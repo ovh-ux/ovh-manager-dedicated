@@ -1,6 +1,4 @@
-import {
-  ACTIVATION_STATUS,
-} from './activationStatus.constants';
+import { ACTIVATION_STATUS } from './activation-status.constants';
 
 export default class {
   $onInit() {
@@ -15,7 +13,7 @@ export default class {
     this.status = ACTIVATION_STATUS[this.statusName];
 
     if (this.status == null) {
-      throw new RangeError(`ovhManagerComponentActivationStatus: ${this.statusName} is not a valid activation status`);
+      throw new RangeError(`ovhManagerPccDashboardComponentActivationStatus: ${this.statusName} is not a valid activation status`);
     }
   }
 }
