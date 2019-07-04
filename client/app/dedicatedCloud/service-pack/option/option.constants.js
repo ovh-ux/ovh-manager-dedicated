@@ -24,10 +24,6 @@ export const OPTIONS = [
     name: 'hds',
     type: OPTION_TYPES.certification,
   },
-  {
-    name: 'hcx',
-    type: OPTION_TYPES.certification,
-  },
 ];
 
 export default {
