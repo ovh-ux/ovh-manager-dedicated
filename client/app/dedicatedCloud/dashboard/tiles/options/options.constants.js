@@ -1,7 +1,4 @@
-export const CERTIFICATIONS_PRESENTATION_CONSTANTS_ID = 'home';
-
-export const NO_PENDING_ORDER_ERROR_STATUS = 'NO_PENDING_ORDER_ERROR_STATUS';
-
+// value returns by GET /me/order/{orderId}/status
 export const ORDER_STATUS = {
   cancelled: 'cancelled',
   cancelling: 'cancelling',
@@ -14,7 +11,5 @@ export const ORDER_STATUS = {
 };
 
 export default {
-  CERTIFICATIONS_PRESENTATION_CONSTANTS_ID,
-  NO_PENDING_ORDER_ERROR_STATUS,
   ORDER_STATUS,
 };

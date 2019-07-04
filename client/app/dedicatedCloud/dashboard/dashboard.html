@@ -5,7 +5,7 @@
 
 <div
     class="row d-md-flex mb-5"
-    data-ng-if="!$ctrl.currentService.usesLegacyOrder">
+    data-ng-if="!$ctrl.currentService.usesLegacyOrder && !$ctrl.currentService.isExpired">
 
     <div class="col-md-4">
         <ovh-manager-pcc-dashboard-general-information

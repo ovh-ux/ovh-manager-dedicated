@@ -1,31 +1,35 @@
 export const ACTIVATION_STATUS = {
+  awaitingValidation: {
+    name: 'awaitingValidation',
+    type: 'warning',
+  },
   beingActivated: {
     name: 'beingActivated',
-    type: 'warning',
+    type: 'info',
   },
   beingDeactivated: {
     name: 'beingDeactivated',
-    type: 'warning',
+    type: 'info',
   },
   cancelling: {
     name: 'cancelling',
-    type: 'warning',
+    type: 'info',
   },
   disabled: {
     name: 'disabled',
-    type: 'error',
+    type: 'info',
   },
   enabled: {
     name: 'enabled',
     type: 'success',
   },
+  inError: {
+    name: 'inError',
+    type: 'error',
+  },
   needsConfiguration: {
     name: 'needsConfiguration',
     type: 'warning',
-  },
-  pendingActivation: {
-    name: 'pendingActivation',
-    type: 'error',
   },
   unknown: {
     name: 'unknown',
