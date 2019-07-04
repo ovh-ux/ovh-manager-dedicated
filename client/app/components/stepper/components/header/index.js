@@ -1,6 +1,6 @@
-import component from './activationStatus.component';
+import component from './header.component';
 
-const moduleName = 'ovhManagerComponentActivationStatus';
+const moduleName = 'ovhManagerComponentStepperHeader';
 
 angular
   .module(moduleName, [

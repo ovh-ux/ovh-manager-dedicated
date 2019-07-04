@@ -1,6 +1,6 @@
-<stepper-header
-    data-steps="$ctrl.steps"
-    data-ng-if="$ctrl.steps.length > 1"></stepper-header>
+<ovh-manager-component-stepper-header
+    data-steps="$ctrl.bindings.header.steps"
+    data-ng-if="$ctrl.bindings.header.steps.length > 1"></ovh-manager-component-stepper-header>
 
 <div
     data-ng-if="$ctrl.isLoadingBetweenSteps"
