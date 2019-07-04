@@ -1,5 +1,7 @@
 import _ from 'lodash';
 
+import { RejectType } from '@uirouter/angularjs';
+
 export default class {
   /* @ngInject */
   constructor(
@@ -19,7 +21,7 @@ export default class {
   $onInit() {
     this.$transitions.onError(
       { to: `${this.$state.$current.parent.name}.**` },
-      transition => (transition.error().type !== 6
+      transition => (transition.error().type !== RejectType.ERROR
         ? this.$q.when()
         : this.goBack().then(() => this.displayErrorMessage(transition.error()))),
     );
