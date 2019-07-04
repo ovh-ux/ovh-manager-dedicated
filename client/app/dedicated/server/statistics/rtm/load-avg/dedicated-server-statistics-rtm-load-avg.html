@@ -1,17 +1,17 @@
 <div data-ng-controller="controllers.Server.Stats.Loadavg">
 
     <div class="text-center"
-         data-ng-if="loading">
+         data-ng-if="loadAvgLoading">
         <oui-spinner></oui-spinner>
     </div>
 
     <canvas id="rtmLoadavg"
         class="chart chart-line mt-5"
-        data-ng-if="!loading"
-        data-chart-data="data"
-        data-chart-series="series"
-        data-chart-labels="labels"
-        data-chart-options="options">
+        data-ng-if="!loadAvgLoading"
+        data-chart-data="loadAvgData"
+        data-chart-series="loadAvgSeries"
+        data-chart-labels="loadAvgLabels"
+        data-chart-options="loadAvgOptions">
     </canvas>
 
 </div>
