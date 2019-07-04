@@ -1,4 +1,4 @@
-import component from './generalInformation.component';
+import component from './general-information.component';
 
 const moduleName = 'ovhManagerPccDashboardGeneralInformation';
 

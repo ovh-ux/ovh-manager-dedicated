@@ -1,5 +1,5 @@
-import controller from './generalInformation.controller';
-import template from './generalInformation.html';
+import controller from './general-information.controller';
+import template from './general-information.html';
 
 export default {
   bindings: {
