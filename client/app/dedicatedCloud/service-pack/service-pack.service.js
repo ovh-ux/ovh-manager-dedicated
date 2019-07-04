@@ -1,11 +1,10 @@
 import _ from 'lodash';
 
 import { OPTION_TYPES } from './option/option.constants';
-import { PREFERENCE_NAME } from '../preference/preference.constants';
 
 export const name = 'ovhManagerPccServicePackService';
 
-export const OvhManagerPccServicePackService = class OvhManagerPccServicePackService {
+export const ServicePackService = class ServicePack {
   /* @ngInject */
   constructor(
     $q,
@@ -25,14 +24,61 @@ export const OvhManagerPccServicePackService = class OvhManagerPccServicePackSer
     this.ovhUserPref = ovhUserPref;
   }
 
-  fetchNamesForService(serviceName) {
-    return this.OvhApiDedicatedCloud.ServicePacks().v6()
+  getNamesForService(serviceName) {
+    return this
+      .OvhApiDedicatedCloud
+      .ServicePacks()
+      .v6()
       .query({ serviceName }).$promise;
   }
 
-  buildAllForService(serviceName, subsidiary) {
-    const buildChunkFromName = servicePackName => this.ovhManagerPccServicePackOptionService
-      .fetchOptions({
+  getServicePacksForDashboardOptions(serviceName, subsidiary) {
+    return this
+      .getServicePacks(serviceName, subsidiary)
+      .then(servicePacks => servicePacks
+        .map(servicePack => ServicePack.turnRawServicePackToServicePackForDashboard(servicePack)));
+  }
+
+  static turnRawServicePackToServicePackForDashboard(servicePack) {
+    return {
+      ...servicePack,
+      basicOptions: _.reduce(
+        ServicePack.keepOnlyBasicOptions(servicePack.options),
+        (prev, curr) => ({
+          ...prev,
+          [curr.name]: curr,
+        }),
+        {},
+      ),
+      certification: ServicePack.keepOnlyCertification(servicePack.options),
+    };
+  }
+
+  static keepOnlyBasicOptions(options) {
+    return _.filter(
+      options,
+      option => _.isEqual(option.type, OPTION_TYPES.basic),
+    );
+  }
+
+  static keepOnlyCertification(options) {
+    const matchingCertification = _.find(
+      options,
+      option => _.isEqual(option.type, OPTION_TYPES.certification),
+    );
+
+    return matchingCertification
+      ? {
+        ...matchingCertification,
+        exists: true,
+      }
+      : { exists: false };
+  }
+
+  getServicePacks(serviceName, subsidiary) {
+    const buildChunkFromName = servicePackName => this
+      .ovhManagerPccServicePackOptionService
+      .getOptions({
         serviceName,
         servicePackName,
         subsidiary,
@@ -49,7 +95,7 @@ export const OvhManagerPccServicePackService = class OvhManagerPccServicePackSer
     });
 
     return this
-      .fetchNamesForService(serviceName)
+      .getNamesForService(serviceName)
       .then(names => this.$q.all(names.map(buildChunkFromName)))
       .then(chunks => chunks.map(buildFromChunk));
   }
@@ -82,55 +128,11 @@ export const OvhManagerPccServicePackService = class OvhManagerPccServicePackSer
     );
   }
 
-  fetchOrderable({
-    activationType,
-    currentServicePackName,
-    serviceName,
-    subsidiary,
-  }) {
-    const servicePackTypeCamelCase = _.camelCase(activationType);
-    const formattedServicePackType = `${servicePackTypeCamelCase[0].toUpperCase()}${servicePackTypeCamelCase.slice(1)}`;
-    const methodToCallName = `fetchOrderable${formattedServicePackType}`;
-    const methodToCall = this[methodToCallName].bind(this);
-
-    if (!_.isFunction(methodToCall)) {
-      throw new Error(`DedicatedCloudServicePack.fetchOrderable: method "${methodToCallName}" does not exist`);
-    }
-
-    return methodToCall({
-      currentServicePackName,
-      serviceName,
-      subsidiary,
-    });
-  }
-
-  fetchOrderableCertification({
-    currentServicePackName,
-    serviceName,
-    subsidiary,
-  }) {
-    return this.buildAllForService(serviceName, subsidiary)
-      .then(servicePacks => OvhManagerPccServicePackService
-        .keepOnlyOrderableCertificates(servicePacks, currentServicePackName));
-  }
-
-  fetchOrderableBasic({
-    currentServicePackName,
-    serviceName,
-    subsidiary,
-  }) {
-    return this.buildAllForService(serviceName, subsidiary)
-      .then(servicePacks => _.filter(
-        _.reject(servicePacks, { name: currentServicePackName }),
-        servicePack => _.every(
-          servicePack.options,
-          option => _.isEqual(option.type, OPTION_TYPES.basic),
-        ),
-      ));
-  }
-
-  fetchPrices(ovhSubsidiary, hostFamilies, servicePacks) {
-    return this.OvhApiOrder.CatalogFormatted().v6()
+  getPrices(ovhSubsidiary, hostFamilies, servicePacks) {
+    return this
+      .OvhApiOrder
+      .CatalogFormatted()
+      .v6()
       .get({
         catalogName: 'privateCloud',
         ovhSubsidiary,
@@ -168,30 +170,15 @@ export const OvhManagerPccServicePackService = class OvhManagerPccServicePackSer
       });
   }
 
-  fetchHostFamilies(serviceName) {
+  getHostFamilies(serviceName) {
     return this.DedicatedCloud
       .getDatacentersInformations(serviceName)
       .then(datacenters => datacenters.list.results
         .reduce((accumulator, { hostFamilies }) => ({ ...accumulator, ...hostFamilies }), {}));
   }
-
-  savePendingOrder(serviceName, {
-    activationType, id, needsConfiguration, orderedServicePackName, url,
-  }) {
-    return this.ovhUserPref
-      .assign(PREFERENCE_NAME, {
-        [serviceName]: {
-          activationType,
-          id,
-          needsConfiguration,
-          orderedServicePackName,
-          url,
-        },
-      });
-  }
 };
 
 export default {
   name,
-  OvhManagerPccServicePackService,
+  ServicePackService,
 };
