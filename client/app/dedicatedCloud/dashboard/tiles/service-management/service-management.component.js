@@ -1,4 +1,4 @@
-import template from './serviceManagement.html';
+import template from './service-management.html';
 
 export default {
   bindings: {

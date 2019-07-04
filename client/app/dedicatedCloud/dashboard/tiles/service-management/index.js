@@ -1,4 +1,4 @@
-import component from './serviceManagement.component';
+import component from './service-management.component';
 
 const moduleName = 'ovhManagerPccDashboardServiceManagement';
 
