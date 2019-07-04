@@ -1,10 +1,13 @@
 export default class {
   /* @ngInject */
-  constructor(componentName, headerDisplayValue, name, state = {}) {
-    this.componentName = componentName;
-    this.headerDisplayValue = headerDisplayValue;
+  constructor(
+    name,
+    state,
+    header,
+  ) {
     this.name = name;
     this.state = state;
+    this.header = header;
 
     this.setAsToBeDone();
   }
