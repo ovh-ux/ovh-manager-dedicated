@@ -1,3 +1,23 @@
+<a name="10.19.4"></a>
+## [10.19.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.3...v10.19.4) (2019-07-05)
+
+
+### Bug Fixes
+
+* get access to the chatbot from both billing and account section ([#1228](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1228)) ([b6e5400](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b6e5400))
+
+
+
+<a name="10.19.3"></a>
+## [10.19.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.2...v10.19.3) (2019-07-03)
+
+
+### Bug Fixes
+
+* **drp:** return correct object of plan state response ([1729ace](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1729ace))
+
+
+
 <a name="10.19.2"></a>
 ## [10.19.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.1...v10.19.2) (2019-07-01)
 
