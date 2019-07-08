@@ -3,19 +3,19 @@
     <div class="container-fluid my-5">
         <div class="row d-md-flex">
             <div class="col-md-12 col-lg-12">
-                <oui-datagrid page-size="25" rows="$ctrl.dedicatedServers">
+                <oui-datagrid page-size="10" rows-loader="$ctrl.loadServers($config)" on-page-change="$ctrl.onPageChange($pagination)">
                     <oui-column title=":: 'dedicated_servers_name' | translate" property="reverse" searchable filterable sortable="asc" type="string"></oui-column>
                     <oui-column title=":: 'dedicated_servers_called' | translate" property="name" searchable filterable type="string" sortable>
                         <a data-ui-sref="app.dedicated.server({ productId: $value })">{{$value}}</a>
                     </oui-column>
                     <oui-column title=":: 'dedicated_servers_model' | translate" property="commercialRange" searchable sortable></oui-column>
-                    <oui-column title=":: 'dedicated_servers_localization' | translate" property="datacenter" searchable filterable
+                    <oui-column title=":: 'dedicated_servers_localization' | translate" property="datacenter" searchable filterable sortable
                         type="options"
                         type-options="$ctrl.getDatacenterEnumFilter()">
                         <span data-translate="{{:: 'server_datacenter_' + $ctrl.constructor.toUpperSnakeCase($value) }}"></span>
                     </oui-column>
                     <oui-column title=":: 'dedicated_servers_status' | translate" property="state"
-                        filterable
+                        filterable sortable
                         type="options"
                         type-options="$ctrl.getStateEnumFilter()">
                         <span class="oui-status" 

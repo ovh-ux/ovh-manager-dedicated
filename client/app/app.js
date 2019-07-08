@@ -20,6 +20,7 @@ import ovhManagerServerSidebar from '@ovh-ux/manager-server-sidebar';
 import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
 import uiRouter from '@uirouter/angularjs';
 
+import ngUirouterLineProgress from '@ovh-ux/ng-uirouter-line-progress';
 import config from './config/config';
 import dedicatedCloudDatacenterDrp from './dedicatedCloud/datacenter/drp';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
@@ -61,6 +62,7 @@ angular
     'ngRoute',
     'ngSanitize',
     ngTranslateAsyncLoader,
+    ngUirouterLineProgress,
     'oui',
     'ovh-angular-export-csv',
     'ovh-angular-pagination-front',

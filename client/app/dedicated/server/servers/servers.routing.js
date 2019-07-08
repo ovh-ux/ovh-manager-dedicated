@@ -16,7 +16,8 @@ angular
         dedicatedServers: /* @ngInject */ iceberg => iceberg('/dedicated/server')
           .query()
           .expand('CachedObjectList-Pages')
-          .sort('name', 'DESC')
+          .limit(10)
+          .sort('name', 'ASC')
           .execute(null, true)
           .$promise,
         schema: /* @ngInject */ OvhApiDedicatedServer => OvhApiDedicatedServer

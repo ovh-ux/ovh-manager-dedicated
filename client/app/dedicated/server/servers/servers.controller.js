@@ -3,9 +3,11 @@ import _ from 'lodash';
 export default class ServersCtrl {
   /* @ngInject */
 
-  constructor($translate, User, dedicatedServers, schema) {
+  constructor($q, $translate, User, dedicatedServers, iceberg, schema) {
+    this.$q = $q;
     this.$translate = $translate;
     this.dedicatedServers = dedicatedServers;
+    this.iceberg = iceberg;
     this.schema = schema;
     this.user = User;
 
@@ -42,5 +44,24 @@ export default class ServersCtrl {
     });
 
     return filter;
+  }
+
+  loadServers({
+    offset, pageSize,
+  }) {
+    return this.iceberg('/dedicated/server')
+      .query()
+      .expand('CachedObjectList-Pages')
+      .limit(pageSize)
+      .offset(parseInt(offset / pageSize, 10) + 1)
+      .sort('name', 'ASC')
+      .execute(null, true)
+      .$promise
+      .then(dedicatedServers => ({
+        data: JSON.parse(_.get(dedicatedServers.data)),
+        meta: {
+          totalCount: _.get(dedicatedServers.headers, 'x-pagination-elements'),
+        },
+      }));
   }
 }
