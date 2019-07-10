@@ -531,7 +531,7 @@ angular.module('Module.ip.controllers').controller('IpDashboardCtrl', (
   $scope.editReverseInlineApply = function (ipBlock, ip, e) {
     e.stopPropagation();
     ipBlock.refreshing = true;
-    IpReverse.updateReverse(ipBlock.service, ipBlock.ipBlock, ip.ip, ip.reverseEditValue).then(
+    IpReverse.updateReverse(ipBlock, ip.ip, ip.reverseEditValue).then(
       () => {
         $rootScope.$broadcast('ips.table.refreshBlock', ipBlock);
         Alerter.success($translate.instant('ip_table_manage_reverse_success'));
