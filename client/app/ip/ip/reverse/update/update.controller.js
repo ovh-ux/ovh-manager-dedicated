@@ -1,79 +1,92 @@
-angular.module('Module.ip.controllers').controller('IpReverseUpdateCtrl', ($scope, $rootScope, $translate, Ip, IpReverse, Alerter, Validator, $location, $q) => {
-  function init(data) {
-    $scope.data = data || $scope.currentActionData;
-    $scope.model = { reverse: angular.copy($scope.data.ip.reverse ? punycode.toUnicode($scope.data.ip.reverse) : '') };
+import _ from 'lodash';
+
+export default class IpReverseUpdateCtrl {
+  /* @ngInject */
+  constructor($location, $q, $scope, $rootScope, $translate, Alerter, Ip, IpReverse, Validator) {
+    this.$location = $location;
+    this.$q = $q;
+    this.$scope = $scope;
+    this.$rootScope = $rootScope;
+    this.$translate = $translate;
+    this.Alerter = Alerter;
+    this.Ip = Ip;
+    this.IpReverse = IpReverse;
+    this.Validator = Validator;
   }
 
-  $scope.updateReverse = function () {
-    $scope.loading = true;
+  $onInit() {
+    // Come from URL
+    if (this.$location.search().action === 'reverse' && this.$location.search().ip) {
+      this.loading = true;
+      return this.$q
+        .all({
+          ipDetails: this.Ip.getIpDetails(this.$location.search().ipBlock),
+          serviceList: this.Ip.getServicesList(),
+        })
+        .then(
+          ({ ipDetails, serviceList }) => {
+            const serviceForIp = _.find(
+              serviceList,
+              service => ipDetails.routedTo.serviceName === service.serviceName,
+            );
+            if (serviceForIp) {
+              this.ip = { ip: this.$location.search().ip };
+              this.ipBlock = {
+                ipBlock: this.$location.search().ipBlock,
+                service: serviceForIp,
+              };
+            }
+          },
+        )
+        .catch(error => this.Alerter.alertFromSWS(this.$translate.instant('ip_dashboard_error'), error))
+        .then(() => this.IpReverse
+          .getReverse(this.$location.search().ipBlock, this.$location.search().ip))
+        .then((reverseData) => {
+          this.model = { reverse: _.clone(reverseData.reverse) };
+        }) // if error > reverse is init to '' > nothing more to do
+        .finally(() => {
+          this.loading = false;
+        });
+    }
+    this.ip = this.$scope.currentActionData.ip;
+    this.ipBlock = this.$scope.currentActionData.ipBlock;
+    this.model = {
+      reverse: this.ip.reverse ? punycode.toUnicode(this.ip.reverse) : '',
+    };
+    return this.$q.when();
+  }
+
+  updateReverse() {
+    this.loading = true;
 
     // If not modified, return
-    if ($scope.model.reverse && punycode.toASCII($scope.model.reverse) === $scope.data.ip.reverse) {
-      return $scope.resetAction();
+    if (this.model.reverse && punycode.toASCII(this.model.reverse) === this.ip.reverse) {
+      return this.$scope.resetAction();
     }
 
-    return IpReverse
+    return this.IpReverse
       .updateReverse(
-        $scope.data.ipBlock.service,
-        $scope.data.ipBlock.ipBlock,
-        $scope.data.ip.ip,
-        $scope.model.reverse,
+        this.ipBlock.service,
+        this.ipBlock.ipBlock,
+        this.ip.ip,
+        this.model.reverse,
       )
       .then(() => {
-        $rootScope.$broadcast('ips.table.refreshBlock', $scope.data.ipBlock);
-        Alerter.success($translate.instant('ip_table_manage_reverse_success'));
+        this.$rootScope.$broadcast('ips.table.refreshBlock', this.ipBlock);
+        this.Alerter.success(this.$translate.instant('ip_table_manage_reverse_success'));
       })
-      .catch(data => Alerter.alertFromSWS($translate.instant('ip_table_manage_reverse_failure'), data))
-      .finally(() => $scope.cancelAction());
-  };
-
-  $scope.isValid = function () {
-    return $scope.model.reverse && Validator.isValidDomain($scope.model.reverse.replace(/\.$/, ''));
-  };
-
-  // Come from URL
-  if ($location.search().action === 'reverse' && $location.search().ip) {
-    $scope.loading = true;
-    $q
-      .all([Ip.getIpDetails($location.search().ipBlock), Ip.getServicesList()])
-      .then(
-        (result) => {
-          const ipDetails = result[0];
-          const serviceList = result[1];
-          const serviceForIp = _.find(
-            serviceList,
-            service => ipDetails.routedTo.serviceName === service.serviceName,
-          );
-          if (serviceForIp) {
-            init({
-              ip: { ip: $location.search().ip },
-              ipBlock: {
-                ipBlock: $location.search().ipBlock,
-                service: serviceForIp || null,
-              },
-            });
-          }
-        },
-        (data) => {
-          Alerter.alertFromSWS($translate.instant('ip_dashboard_error'), data);
-        },
-      )
-      .then(
-        () => IpReverse
-          .getReverse($location.search().ipBlock, $location.search().ip)
-          .then((reverseData) => {
-            $scope.model = { reverse: angular.copy(reverseData.reverse) };
-          }), // if error > reverse is init to '' > nothing more to do
-      )
-      .finally(() => {
-        $scope.loading = false;
-      });
-  } else {
-    init();
+      .catch(error => this.Alerter.alertFromSWS(this.$translate.instant('ip_table_manage_reverse_failure', { message: _.get(error, 'data.message') })))
+      .finally(() => this.cancelAction());
   }
 
-  $scope.cancelAction = function () {
-    Ip.cancelActionParam('reverse');
-    $scope.resetAction();
-  };
-});
+  isValid() {
+    return this.model.reverse && this.Validator.isValidDomain(this.model.reverse.replace(/\.$/, ''));
+  }
+
+  cancelAction() {
+    this.Ip.cancelActionParam('reverse');
+    this.$scope.resetAction();
+  }
+}
+
+angular.module('Module.ip.controllers').controller('IpReverseUpdateCtrl', IpReverseUpdateCtrl);
