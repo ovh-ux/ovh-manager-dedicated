@@ -1,74 +1,108 @@
-angular.module('Module.ip.services').service('IpReverse', [
-  '$http',
-  '$q',
-  'constants',
-  'IpExpandIpv6',
-  'OvhHttp',
-  function ($http, $q, constants, ExpandIpv6, OvhHttp) {
-    const swsProxypassPath = 'apiv6';
+export default class IpReverse {
+  /* @ngInject */
+  constructor($q, constants, IpExpandIpv6, OvhApiIp, OvhApiVpsIps) {
+    this.$q = $q;
+    this.constants = constants;
+    this.IpExpandIpv6 = IpExpandIpv6;
+    this.OvhApiIp = OvhApiIp;
+    this.OvhApiVpsIps = OvhApiVpsIps;
+  }
 
-    this.updateReverse = (service, ipBlock, _ip, _reverse) => {
-      const reverse = _reverse ? punycode.toASCII(_reverse.replace(/\s/g, '')) : '';
-      let ip = _ip;
+  updateReverse(service, ipBlock, _ip, _reverse) {
+    const reverse = _reverse ? punycode.toASCII(_reverse.replace(/\s/g, '')) : '';
+    let ip = _ip;
 
-      if (service.category === 'VPS') {
-        // Special rule for crappy VPS...
-        if (~_ip.indexOf(':')) {
-          // And another shitty trick for ipv6 for VPS youhouuuu
-          ip = ExpandIpv6.expandIPv6Address(_ip);
-        }
-        return $http.put([swsProxypassPath, 'vps', service.serviceName, 'ips', ip].join('/'), { reverse }, { serviceType: 'apiv6' }).then(data => data.data, http => $q.reject(http.data));
+    if (service.category === 'VPS') {
+      // Special rule for crappy VPS...
+      if (~_ip.indexOf(':')) {
+        // And another shitty trick for ipv6 for VPS youhouuuu
+        ip = this.IpExpandIpv6.expandIPv6Address(_ip);
       }
-      if (!reverse) {
-        return this.deleteReverse(ipBlock, ip);
-      }
-      return $http
-        .post(
-          [swsProxypassPath, 'ip', window.encodeURIComponent(ipBlock), 'reverse'].join('/'),
-          {
-            ipReverse: ip,
-            reverse,
-          },
-          { serviceType: 'apiv6' },
-        )
-        .then(data => data.data, http => $q.reject(http.data));
-    };
 
-    this.getReverse = (ipBlock, ip) => $http.get([swsProxypassPath, 'ip', `${window.encodeURIComponent(ipBlock)}/reverse/${ip}`].join('/'), { serviceType: 'apiv6' }).then(data => data.data, http => $q.reject(http.data));
+      return this.OvhApiVpsIps.v6()
+        .put({
+          serviceName: service.serviceName,
+        }, {
+          ipReverse: ip,
+          reverse,
+        }).$promise;
+    }
 
-    this.deleteReverse = (ipBlock, ip) => $http.delete([swsProxypassPath, 'ip', window.encodeURIComponent(ipBlock), 'reverse', ip].join('/'), { serviceType: 'apiv6' }).then(data => data.data, http => $q.reject(http.data));
 
-    this.getDelegations = ipBlock => OvhHttp.get('/ip/{ip}/delegation', {
-      rootPath: 'apiv6',
-      urlParams: {
+    if (!reverse) {
+      return this.deleteReverse(ipBlock, ip);
+    }
+
+    return this.OvhApiIp
+      .Reverse()
+      .v6()
+      .create({
         ip: ipBlock,
-      },
-    });
+      }, {
+        ipReverse: ip,
+        reverse,
+      }).$promise;
+  }
 
-    this.getDelegation = (ipBlock, target) => OvhHttp.get('/ip/{ip}/delegation/{target}', {
-      rootPath: 'apiv6',
-      urlParams: {
+  getReverse(ipBlock, ip) {
+    return this.OvhApiIp
+      .Reverse()
+      .v6()
+      .get({
+        ip: window.encodeURIComponent(ipBlock),
+        ipReverse: ip,
+      }).$promise;
+  }
+
+  deleteReverse(ipBlock, ip) {
+    return this.OvhApiIp
+      .Reverse()
+      .v6()
+      .delete({
+        ip: window.encodeURIComponent(ipBlock),
+        ipReverse: ip,
+      }).$promise;
+  }
+
+  getDelegations(ipBlock) {
+    return this.OvhApiIp
+      .Delegation()
+      .v6()
+      .query({
         ip: ipBlock,
-        target: window.encodeURIComponent(target),
-      },
-    });
+      }).$promise;
+  }
 
-    this.setDelegation = (ipBlock, target) => OvhHttp.post('/ip/{ip}/delegation', {
-      rootPath: 'apiv6',
-      urlParams: {
-        ip: ipBlock,
-      },
-      data: {
-        target: window.encodeURIComponent(target),
-      },
-    });
-
-    this.deleteDelegation = (ipBlock, target) => OvhHttp.delete('/ip/{ip}/delegation/{target}', {
-      rootPath: 'apiv6',
-      urlParams: {
+  getDelegation(ipBlock, target) {
+    return this.OvhApiIp
+      .Delegation()
+      .v6()
+      .get({
         ip: ipBlock,
         target,
-      },
-    });
-  },
-]);
+      }).$promise;
+  }
+
+  setDelegation(ipBlock, target) {
+    return this.OvhApiIp
+      .Delegation()
+      .v6()
+      .save({
+        ip: ipBlock,
+      }, {
+        target: window.encodeURIComponent(target),
+      }).$promise;
+  }
+
+  deleteDelegation(ipBlock, target) {
+    return this.OvhApiIp
+      .Delegation()
+      .v6()
+      .delete({
+        ip: ipBlock,
+        target,
+      }).$promise;
+  }
+}
+
+angular.module('Module.ip.services').service('IpReverse', IpReverse);
