@@ -1,3 +1,16 @@
+<a name="10.19.6"></a>
+## [10.19.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.5...v10.19.6) (2019-07-10)
+
+
+### Bug Fixes
+
+* **account.billing.payment.transactions:** add missing translations ([#1227](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1227)) ([bd81da6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bd81da6))
+* **i18n:** add missing translations ([d65f6aa](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d65f6aa))
+* **i18n:** add missing translations ([8a0e1df](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8a0e1df))
+* **i18n:** add missing translations ([038746f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/038746f))
+
+
+
 <a name="10.19.5"></a>
 ## [10.19.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.4...v10.19.5) (2019-07-09)
 
