@@ -1,3 +1,5 @@
+import { VPS_TYPE } from './constants';
+
 export default class IpReverse {
   /* @ngInject */
   constructor($q, constants, IpExpandIpv6, OvhApiIp, OvhApiVpsIps) {
@@ -8,36 +10,35 @@ export default class IpReverse {
     this.OvhApiVpsIps = OvhApiVpsIps;
   }
 
-  updateReverse(service, ipBlock, _ip, _reverse) {
+  updateReverse(ipBlock, _ip, _reverse) {
     const reverse = _reverse ? punycode.toASCII(_reverse.replace(/\s/g, '')) : '';
     let ip = _ip;
 
-    if (service.category === 'VPS') {
-      // Special rule for crappy VPS...
+    // For legacy VPS
+    if (ipBlock.type === VPS_TYPE) {
       if (~_ip.indexOf(':')) {
-        // And another shitty trick for ipv6 for VPS youhouuuu
         ip = this.IpExpandIpv6.expandIPv6Address(_ip);
       }
 
       return this.OvhApiVpsIps.v6()
         .put({
-          serviceName: service.serviceName,
+          serviceName: ipBlock.service.serviceName,
+          ipAddress: ip,
         }, {
-          ipReverse: ip,
           reverse,
         }).$promise;
     }
 
 
     if (!reverse) {
-      return this.deleteReverse(ipBlock, ip);
+      return this.deleteReverse(ipBlock.ipBlock, ip);
     }
 
     return this.OvhApiIp
       .Reverse()
       .v6()
       .create({
-        ip: ipBlock,
+        ip: ipBlock.ipBlock,
       }, {
         ipReverse: ip,
         reverse,

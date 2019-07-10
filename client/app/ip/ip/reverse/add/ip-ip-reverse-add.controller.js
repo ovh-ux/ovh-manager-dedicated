@@ -8,8 +8,7 @@ angular.module('Module.ip.controllers').controller('IpAddIpv6Ctrl', ($scope, $ro
     if ($scope.model.reverse) {
       IpReverse
         .updateReverse(
-          $scope.data.ipBlock.service,
-          $scope.data.ipBlock.ipBlock,
+          $scope.data.ipBlock,
           $scope.model.ipv6,
           $scope.model.reverse,
         )

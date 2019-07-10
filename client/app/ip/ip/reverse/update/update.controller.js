@@ -66,8 +66,7 @@ export default class IpReverseUpdateCtrl {
 
     return this.IpReverse
       .updateReverse(
-        this.ipBlock.service,
-        this.ipBlock.ipBlock,
+        this.ipBlock,
         this.ip.ip,
         this.model.reverse,
       )
