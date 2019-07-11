@@ -70,9 +70,8 @@ export default class {
 
   goToPreviousStep() {
     return this.$state.go(
-      'app.dedicatedClouds.datacenter.drp',
+      'app.dedicatedClouds.datacenter.drp.choice',
       { selectedDrpType: this.drpInformations.drpType },
-      { reload: true },
     );
   }
 
