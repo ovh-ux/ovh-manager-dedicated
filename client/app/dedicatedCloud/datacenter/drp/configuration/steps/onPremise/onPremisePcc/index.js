@@ -1,7 +1,7 @@
 import component from './dedicatedCloud-datacenter-drp-onPremise-onPremisePccStep.component';
 
-const componentName = 'dedicdedicatedCloudDatacenterDrpOnPremiseOnPremisePccStep';
-const moduleName = 'dedicdedicatedCloudDatacenterDrpOnPremiseOnPremisePccStep';
+const componentName = 'dedicatedCloudDatacenterDrpOnPremiseOnPremisePccStep';
+const moduleName = 'dedicatedCloudDatacenterDrpOnPremiseOnPremisePccStep';
 
 angular
   .module(moduleName, [])
