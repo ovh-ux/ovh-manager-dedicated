@@ -12,13 +12,13 @@ angular
       Alerter,
       coreConfig,
       currentDrp,
+      currentUser,
       currentService,
       DedicatedCloud,
       dedicatedCloudDrp,
       DEDICATED_CLOUD_DATACENTER,
       DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
       DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
-      DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS,
     ) {
       this.$scope = $scope;
       this.$stateParams = $stateParams;
@@ -29,13 +29,13 @@ angular
       this.Alerter = Alerter;
       this.coreConfig = coreConfig;
       this.currentDrp = currentDrp;
+      this.currentUser = currentUser;
       this.currentService = currentService;
       this.DedicatedCloud = DedicatedCloud;
       this.dedicatedCloudDrp = dedicatedCloudDrp;
       this.DEDICATED_CLOUD_DATACENTER = DEDICATED_CLOUD_DATACENTER;
       this.DRP_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_STATUS;
       this.DRP_OPTIONS = DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS;
-      this.DRP_VPN_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS;
     }
 
     $onInit() {

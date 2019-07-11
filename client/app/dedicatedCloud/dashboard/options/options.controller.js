@@ -151,10 +151,7 @@ export default class OptionTile {
             .formatStatus(storedDrpInformations.status);
         }
 
-        const currentDrpState = this.dedicatedCloudDrp.constructor
-          .formatStatus(this.currentDrp.state);
-
-        this.drpStatus = [currentDrpState, storedDrpStatus]
+        this.drpStatus = [this.currentDrp.state, storedDrpStatus]
           .find(status => status !== this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabled)
           || this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabled;
       })

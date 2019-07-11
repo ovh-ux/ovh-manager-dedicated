@@ -1,3 +1,7 @@
+<ovh-manager-dedicated-cloud-datacenter-drp-alerts
+    data-current-drp="$ctrl.currentDrp"
+    data-current-user="$ctrl.currentUser"></ovh-manager-dedicated-cloud-datacenter-drp-alerts>
+
 <div class="mb-5 px-0">
     <div class="row d-md-flex mb-5">
         <div class="col-md-4">
@@ -40,14 +44,13 @@
                     <oui-tile-description>
                         <span class="oui-status"
                               data-ng-class="{
-                                  'oui-status_error': $ctrl.drpStatus === 'disabled',
-                                  'oui-status_warning': $ctrl.drpStatus === 'delivering' || $ctrl.drpStatus === 'disabling'
-                                   || $ctrl.drpIsWaitingVpnConfiguration,
+                                  'oui-status_error': $ctrl.drpStatus === 'disabled' || $ctrl.currentDrp.isWaitingVpnConfiguration,
+                                  'oui-status_warning': $ctrl.drpStatus === 'delivering' || $ctrl.drpStatus === 'disabling',
                                   'oui-status_success': $ctrl.drpStatus === 'delivered'
                             }">
-                            <span data-ng-if="::!$ctrl.drpIsWaitingVpnConfiguration"
+                            <span data-ng-if="::!$ctrl.currentDrp.isWaitingVpnConfiguration"
                                   data-translate="{{:: 'dedicatedCloud_options_zerto_status_' + $ctrl.drpStatus }}"></span>
-                            <span data-ng-if="::$ctrl.drpIsWaitingVpnConfiguration"
+                            <span data-ng-if="::$ctrl.currentDrp.isWaitingVpnConfiguration"
                                   data-translate="dedicatedCloud_options_zerto_status_waiting_configuration"></span>
                         </span>
                     </oui-tile-description>
