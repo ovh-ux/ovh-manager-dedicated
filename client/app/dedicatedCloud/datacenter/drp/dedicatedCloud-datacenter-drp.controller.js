@@ -104,9 +104,9 @@ export default class {
   }
 
   formatPlanInformations({
-    datacenterId, drpType, localSiteInformation, remoteSiteInformation, serviceName, state,
+    datacenterId, drpType, localSiteInformation, remoteSiteInformation, state,
   }) {
-    const currentPccInformations = _.find(this.pccList, { serviceName });
+    const currentPccInformations = this.currentService;
     const currentDatacenterInformations = this.datacenterList.find(({ id }) => id === datacenterId);
 
     let primaryPcc;

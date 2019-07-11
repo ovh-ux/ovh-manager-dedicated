@@ -11,8 +11,8 @@ angular
       $uibModal,
       coreConfig,
       currentDrp,
-      currentService,
       currentUser,
+      currentService,
       DedicatedCloud,
       OvhApiDedicatedCloud,
       User,
@@ -27,8 +27,8 @@ angular
       this.$uibModal = $uibModal;
       this.coreConfig = coreConfig;
       this.currentDrp = currentDrp;
-      this.currentService = currentService;
       this.currentUser = currentUser;
+      this.currentService = currentService;
       this.DedicatedCloud = DedicatedCloud;
       this.OvhApiDedicatedCloud = OvhApiDedicatedCloud;
       this.User = User;

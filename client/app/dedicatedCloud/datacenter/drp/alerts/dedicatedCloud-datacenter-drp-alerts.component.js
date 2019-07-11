@@ -6,7 +6,7 @@ export default {
   controller,
   bindings: {
     currentDrp: '<',
-    currnetUser: '<',
+    currentUser: '<',
     currentState: '<?',
   },
   name: 'ovhManagerDedicatedCloudDatacenterDrpAlerts',
