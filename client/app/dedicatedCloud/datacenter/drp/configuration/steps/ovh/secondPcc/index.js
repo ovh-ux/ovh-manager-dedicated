@@ -18,6 +18,9 @@ angular
           currentStep: 2,
           drpInformations: { },
         },
+        resolve: {
+          pccList: /* @ngInject */ DedicatedCloud => DedicatedCloud.getAllPccs(),
+        },
       })
       .state('app.dedicatedClouds.datacenter.drp.ovh.secondPccStep.orderIp', {
         controller: 'agoraIpOrderCtrl',

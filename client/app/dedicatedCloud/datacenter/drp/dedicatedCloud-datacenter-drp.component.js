@@ -6,9 +6,9 @@ export default {
   controller,
   bindings: {
     currentDrp: '<',
+    currentService: '<',
     currentUser: '<',
     datacenterHosts: '<',
     datacenterList: '<',
-    pccList: '<',
   },
 };
