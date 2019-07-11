@@ -1,3 +1,13 @@
+<a name="10.19.7"></a>
+## [10.19.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.6...v10.19.7) (2019-07-11)
+
+
+### Bug Fixes
+
+* **user.contracts.modal:** remove non-breaking spaces ([#1241](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1241)) ([896a6de](https://github.com/ovh-ux/ovh-manager-dedicated/commit/896a6de))
+
+
+
 <a name="10.19.6"></a>
 ## [10.19.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.5...v10.19.6) (2019-07-10)
 
