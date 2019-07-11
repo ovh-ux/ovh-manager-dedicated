@@ -358,6 +358,29 @@ export default class {
     return this.ovhUserPref.remove(preferenceKey, true);
   }
 
+  static getPlanServiceInformations({
+    drpType,
+    datacenterId,
+    remoteSiteInformation,
+    serviceName,
+  }) {
+    return {
+      drpType,
+      primaryPcc: {
+        serviceName,
+      },
+      primaryDatacenter: {
+        id: datacenterId,
+      },
+      secondaryPcc: {
+        serviceName: remoteSiteInformation.serviceName,
+      },
+      secondaryDatacenter: {
+        id: remoteSiteInformation.datacenterId,
+      },
+    };
+  }
+
   static formatPreferenceKey(pccId, keyPreference) {
     const { splitter } = DEDICATEDCLOUD_DATACENTER_ZERTO;
     const [, ...[formattedServiceName]] = pccId.split(splitter);
