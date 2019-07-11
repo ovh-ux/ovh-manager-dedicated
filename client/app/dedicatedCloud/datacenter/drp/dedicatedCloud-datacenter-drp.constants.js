@@ -1,6 +1,7 @@
 export const DEDICATEDCLOUD_DATACENTER_ZERTO = {
   title: 'ZERTO_OPTION_PCC',
   splitter: 'pcc-',
+  alertPreference: 'ZERTO_ALERT_SUCCESS',
 };
 
 export const DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS = {

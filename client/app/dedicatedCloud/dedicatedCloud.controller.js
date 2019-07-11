@@ -16,6 +16,8 @@ angular
       DedicatedCloud,
       OvhApiDedicatedCloud,
       User,
+      DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
+      DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
     ) {
       this.$q = $q;
       this.$scope = $scope;
@@ -30,6 +32,8 @@ angular
       this.DedicatedCloud = DedicatedCloud;
       this.OvhApiDedicatedCloud = OvhApiDedicatedCloud;
       this.User = User;
+      this.DRP_OPTIONS = DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS;
+      this.DRP_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_STATUS;
     }
 
     $onInit() {

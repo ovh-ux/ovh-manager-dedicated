@@ -6,7 +6,6 @@ export default class {
     $scope,
     $state,
     $stateParams,
-    $timeout,
     $translate,
     $uibModal,
     Alerter,
@@ -19,7 +18,6 @@ export default class {
     this.$scope = $scope;
     this.$state = $state;
     this.$stateParams = $stateParams;
-    this.$timeout = $timeout;
     this.$translate = $translate;
     this.$uibModal = $uibModal;
     this.Alerter = Alerter;
@@ -38,14 +36,10 @@ export default class {
   }
 
   getDrpStatus() {
-    this.drpStatus = this.dedicatedCloudDrp.constructor.formatStatus(this.currentDrp.state);
+    this.drpStatus = this.currentDrp.state;
     this.drpRemotePccStatus = this.currentDrp.drpType === this.DRP_OPTIONS.ovh
       ? this.dedicatedCloudDrp.constructor.formatStatus(_.get(this.currentDrp, 'remoteSiteInformation.state'))
       : this.DRP_STATUS.delivered;
-
-    const drpVpnStatus = _.get(this.currentDrp, 'remoteSiteInformation.vpnConfigState');
-    this.drpIsWaitingVpnConfiguration = drpVpnStatus === this.DRP_VPN_STATUS
-      .notConfigured;
   }
 
   openModalToEditDescription() {

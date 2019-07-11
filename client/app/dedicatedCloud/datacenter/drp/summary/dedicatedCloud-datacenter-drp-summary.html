@@ -4,21 +4,6 @@
 </div>
 
 <div data-ng-if="!$ctrl.isLoading">
-    <oui-message class="mb-5"
-                 data-ng-if="$ctrl.drpStatus === 'delivering'"
-                 data-type="info">
-        <p data-translate="dedicatedCloud_datacenter_drp_confirm_creation_pending"></p>
-        <p data-translate="dedicatedCloud_datacenter_drp_confirm_creation_pending_task"></p>
-    </oui-message>
-
-    <oui-message class="mb-5"
-                 data-ng-if="$ctrl.drpStatus === 'delivered'"
-                 data-type="success">
-        <p data-translate="dedicatedCloud_datacenter_drp_confirm_create_success_part_one"></p>
-        <p data-translate="dedicatedCloud_datacenter_drp_confirm_create_success_part_two"
-           data-translate-values="{ 'email': $ctrl.email }"></p>
-    </oui-message>
-
     <div data-ng-if="$ctrl.drpStatus !== 'delivering'">
         <h3 class="oui-heading_4"
             data-translate="dedicatedCloud_datacenter_drp_confirm_summary_title"></h3>

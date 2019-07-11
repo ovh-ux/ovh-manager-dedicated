@@ -13,14 +13,31 @@ angular
           $transition$,
           dedicatedCloudDrp,
           DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
+          DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS,
         ) => dedicatedCloudDrp.getPccDrpPlan($transition$.params().productId)
           .then((states) => {
             const existingPlan = states
               .find(({ state }) => state !== DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabled);
 
             // If no plan with state other than disabled, let's return the first datacenter plan
-            return existingPlan || states
+            const currentDrp = existingPlan || states
               .sort((stateA, stateB) => (stateA.datacenterId < stateB.datacenterId ? -1 : 1))[0];
+
+            const drpVpnStatus = _.get(currentDrp, 'remoteSiteInformation.vpnConfigState');
+            currentDrp.isWaitingVpnConfiguration = drpVpnStatus
+              === DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS.notConfigured;
+
+            currentDrp.state = dedicatedCloudDrp.constructor.formatStatus(currentDrp.state);
+
+            return dedicatedCloudDrp
+              .getDisableSuccessAlertPreference($transition$.params().productId)
+              .then(() => {
+                currentDrp.isSuccessAlertDisable = true;
+              })
+              .catch(() => {
+                currentDrp.isSuccessAlertDisable = false;
+              })
+              .then(() => currentDrp);
           }),
       },
       url: '/configuration/dedicated_cloud/:productId',

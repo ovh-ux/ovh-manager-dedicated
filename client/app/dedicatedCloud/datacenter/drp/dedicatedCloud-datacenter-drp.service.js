@@ -245,9 +245,8 @@ export default class {
   checkForZertoOptionOrder(pccId) {
     let storedZertoOption;
 
-    const { splitter } = DEDICATEDCLOUD_DATACENTER_ZERTO;
-    const [, ...[formattedServiceName]] = pccId.split(splitter);
-    const preferenceKey = `${DEDICATEDCLOUD_DATACENTER_ZERTO.title}_${formattedServiceName.replace(/-/g, '')}`;
+    const preferenceKey = this.constructor
+      .formatPreferenceKey(pccId, DEDICATEDCLOUD_DATACENTER_ZERTO.title);
 
     return this.ovhUserPref.getValue(preferenceKey)
       .then(({ drpInformations, zertoOptionOrderId }) => {
@@ -279,9 +278,12 @@ export default class {
   /* ------- Order ZERTO option ------ */
 
   disableDrp(drpInformations) {
-    return drpInformations.drpType === DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS.ovh
+    const deleteDrpPromise = drpInformations.drpType === DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS.ovh
       ? this.disableDrpOvh(drpInformations)
       : this.disableDrpOnPremise(drpInformations);
+
+    return deleteDrpPromise.then(() => this
+      .deleteDisableSuccessAlertPreference(drpInformations.primaryPcc.serviceName));
   }
 
   disableDrpOvh({
@@ -335,62 +337,33 @@ export default class {
       }).$promise;
   }
 
-  static formatDrpInformations(
-    {
-      datacenterId, drpType, localSiteInformation, remoteSiteInformation, serviceName, state,
-    },
-    pccList, datacenterList,
-  ) {
-    const currentPccInformations = _.find(pccList, { serviceName });
-    const currentDatacenterInformations = datacenterList.find(({ id }) => id === datacenterId);
+  getDisableSuccessAlertPreference(pccId) {
+    const preferenceKey = this.constructor
+      .formatPreferenceKey(pccId, DEDICATEDCLOUD_DATACENTER_ZERTO.alertPreference);
 
-    let primaryPcc;
-    let primaryDatacenter;
-    let secondaryPcc;
-    let secondaryDatacenter;
+    return this.ovhUserPref.getValue(preferenceKey);
+  }
 
-    if (localSiteInformation && remoteSiteInformation) {
-      if (localSiteInformation.role === this.DEDICATEDCLOUD_DATACENTER_DRP_ROLES.primary) {
-        primaryPcc = {
-          serviceName: currentPccInformations.serviceName,
-        };
-        primaryDatacenter = {
-          id: currentDatacenterInformations.id,
-          formattedName: currentDatacenterInformations.formattedName,
-        };
-        secondaryPcc = {
-          serviceName: remoteSiteInformation.serviceName,
-        };
-        secondaryDatacenter = {
-          id: remoteSiteInformation.datacenterId,
-          formattedName: remoteSiteInformation.datacenterName,
-        };
-      } else {
-        primaryPcc = {
-          serviceName: remoteSiteInformation.serviceName,
-        };
-        primaryDatacenter = {
-          id: remoteSiteInformation.datacenterId,
-          formattedName: remoteSiteInformation.datacenterName,
-        };
-        secondaryPcc = {
-          serviceName: currentPccInformations.serviceName,
-        };
-        secondaryDatacenter = {
-          id: currentDatacenterInformations.id,
-          formattedName: currentDatacenterInformations.formattedName,
-        };
-      }
-    }
+  setDisableSuccessAlertPreference(pccId) {
+    const preferenceKey = this.constructor
+      .formatPreferenceKey(pccId, DEDICATEDCLOUD_DATACENTER_ZERTO.alertPreference);
 
-    return {
-      drpType,
-      state,
-      primaryPcc,
-      primaryDatacenter,
-      secondaryPcc,
-      secondaryDatacenter,
-    };
+    return this.ovhUserPref.create(preferenceKey, true);
+  }
+
+  deleteDisableSuccessAlertPreference(pccId) {
+    const preferenceKey = this.constructor
+      .formatPreferenceKey(pccId, DEDICATEDCLOUD_DATACENTER_ZERTO.alertPreference);
+
+    return this.ovhUserPref.remove(preferenceKey, true);
+  }
+
+  static formatPreferenceKey(pccId, keyPreference) {
+    const { splitter } = DEDICATEDCLOUD_DATACENTER_ZERTO;
+    const [, ...[formattedServiceName]] = pccId.split(splitter);
+    const preferenceKey = `${keyPreference}_${formattedServiceName.replace(/-/g, '')}`;
+
+    return preferenceKey;
   }
 
   static formatStatus(status) {
