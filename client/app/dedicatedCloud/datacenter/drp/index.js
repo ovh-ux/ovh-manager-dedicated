@@ -70,7 +70,6 @@ angular
           .getHosts($stateParams.productId, $stateParams.datacenterId),
         datacenterList: /* @ngInject */ ($stateParams, DedicatedCloud) => DedicatedCloud
           .getDatacenters($stateParams.productId).then(({ results }) => results),
-        pccList: /* @ngInject */ DedicatedCloud => DedicatedCloud.getAllPccs(),
       },
     })
       .state('app.dedicatedClouds.datacenter.drp.choice', {
