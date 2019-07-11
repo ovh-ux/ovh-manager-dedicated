@@ -100,7 +100,8 @@ export default class {
       controller: 'DedicatedCloudDatacenterDrpDeleteCtrl',
       controllerAs: '$ctrl',
       resolve: {
-        drpInformations: () => this.currentDrp,
+        drpInformations: () => this.dedicatedCloudDrp.constructor
+          .getPlanServiceInformations(this.currentDrp),
       },
     }).result
       .then(() => {
