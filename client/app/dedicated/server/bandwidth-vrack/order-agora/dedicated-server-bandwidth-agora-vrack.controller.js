@@ -9,60 +9,51 @@ class ServerOrderAgoraBandwidthVrackCtrl {
     this.model = {};
     this.isLoading = false;
     this.existingBandwidth = this.$scope.currentActionData.bandwidth.vrack.bandwidth;
-    this.units = {
-      model: [
-        {
-          label: 'Mbps',
-          value: 1,
-        },
-        {
-          label: 'Gbps',
-          value: 1000,
-        },
-        {
-          label: 'Tbps',
-          value: Math.pow(1000, 2), // eslint-disable-line no-restricted-properties
-        },
-      ],
-    };
-  }
 
-  $onInit() {
-    this.isLoading = true;
-    this.Server
-      .getBareMetalPrivateBandwidthOptions(
-        this.$stateParams.productId,
-        this.existingBandwidth,
-      ).then((result) => {
-        this.isLoading = false;
-        if (result.length < 1) {
-          this.$scope.resetAction();
-          _.set(this.data, 'type', 'ERROR');
-          this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_error'), this.data);
-        }
-        this.plans = result;
-      }).catch((err) => {
-        this.$scope.resetAction();
-        this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_vrack_loading_error'), err.data);
-      });
-    this.User.getUser().then((user) => {
-      this.user = user;
-    }).catch(err => this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_vrack_loading_error'), err.data));
-  }
-
-  // Display size with unit (recursive)
-  getDisplaySize(octetsSize, _unitIndex) {
-    let unitIndex = _unitIndex;
-    if (!_.isNumber(octetsSize)) {
-      if (!_.isNumber(unitIndex)) {
-        unitIndex = 0;
-      }
-      if (octetsSize >= 1000 && unitIndex < this.units.model.length - 1) {
-        return this.getDisplaySize(octetsSize / 1000, unitIndex + 1);
-      }
-      return `${parseFloat(octetsSize)} ${this.$translate.instant(`unit_size_${this.units.model[unitIndex].label}`)}`;
-    }
-    return '';
+    this.steps = [
+      {
+        isValid: () => this.model.plan,
+        isLoading: () => this.isLoading,
+        load: () => {
+          this.isLoading = true;
+          return this.Server
+            .getBareMetalPrivateBandwidthOptions(
+              this.$stateParams.productId,
+              this.existingBandwidth,
+            )
+            .then((res) => {
+              this.isLoading = false;
+              this.plans = res;
+            })
+            .catch((error) => {
+              this.$scope.resetAction();
+              return this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_vrack_loading_error'), error.data);
+            });
+        },
+      },
+      {
+        isValid: () => this.model.plan,
+        isLoading: () => this.isLoading,
+        load: () => {
+          this.isLoading = true;
+          return this.Server
+            .getBareMetalPrivateBandwidthOrder(this.$stateParams.productId, this.model.plan)
+            .then((res) => {
+              this.isLoading = false;
+              res.bandwidth = _.find(this.plans, 'planCode', this.model.plan).bandwidth;
+              res.planCode = this.model.plan;
+              this.provisionalPlan = res;
+            })
+            .catch((error) => {
+              this.$scope.resetAction();
+              return this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_vrack_loading_error'), error.data);
+            });
+        },
+      },
+    ];
+    this.$scope.initFirstStep = this.steps[0].load.bind(this);
+    this.$scope.initSecondStep = this.steps[1].load.bind(this);
+    this.$scope.order = this.order.bind(this);
   }
 
   order() {
