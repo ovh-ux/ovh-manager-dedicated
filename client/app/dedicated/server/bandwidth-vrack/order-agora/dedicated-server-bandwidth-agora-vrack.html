@@ -1,25 +1,58 @@
 <div data-ng-controller="ServerOrderAgoraBandwidthVrackCtrl as ctrl">
-    <oui-modal
-        data-heading="{{:: 'server_order_bandwidth_vrack_title' | translate }}"
-        data-primary-action="ctrl.order()"
-        data-primary-label="{{:: 'common_confirm' | translate }}"
-        data-secondary-label="{{:: 'common_cancel' | translate }}"
-        data-secondary-action="ctrl.close()"
-        data-on-dismiss="ctrl.close()"
-        data-loading="ctrl.isLoading">
-        <label class="control-label"
-               data-translate="select_bandwidth_vrack_type_label">
-        </label>
-        <div class="radio"
-             data-ng-if="!ctrl.isLoading"
-             data-ng-repeat="plan in ctrl.plans track by $index">
-            <oui-radio data-name="bandwidth-plan" data-model="ctrl.model.plan" data-value="plan.planCode">
-                <span data-ng-bind="ctrl.getDisplaySize(plan.bandwidth, 1)"></span>
-                <span data-translate="server_order_bandwidth_vrack_plan_text"></span>
-                <span data-ng-bind-html="plan.order.prices | ducPrice:ctrl.user.ovhSubsidiary"></span>
-            </oui-radio>
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="order"
+         data-wizard-title=":: 'server_order_bandwidth_vrack_title' | translate"
+         data-wizard-bread-crumb
+         data-wizard-confirm-button-text=":: 'wizard_pay' | translate">
+
+        <div data-wizard-step
+             data-wizard-step-valid="ctrl.steps[0].isValid()"
+             data-wizard-step-on-load="initFirstStep">
+            <div class="text-center" data-ng-if="ctrl.steps[0].isLoading()">
+                <oui-spinner></oui-spinner>
+                <span data-translate="server_order_bandwidth_vrack_load"></span>
+            </div>
+            <span data-ng-if="ctrl.plans.length === 0" data-translate="server_order_bandwidth_empty_plans"></span>
+            <form data-ng-if="!ctrl.steps[0].isLoading() && ctrl.plans.length > 0">
+                <label class="control-label" data-translate="select_bandwidth_vrack_type_label"></label>
+                <div data-ng-repeat="plan in ctrl.plans track by $index">
+                    <div class="row">
+                        <div class="col-md-9 pr-0">
+                            <oui-radio data-name="bandwidth-plan" data-model="ctrl.model.plan" data-value="plan.planCode">
+                                <span data-translate="{{ 'plan_' + plan.planCode }}"></span>
+                            </oui-radio>
+                        </div>
+                        <div class="col-md-3 pl-0">
+                            <b class="red"><span data-ng-bind-html="plan.prices[2].price.text"></span></b>
+                            <i class="small"><span data-translate="plan_price_per_month"></span></i>
+                        </div>
+                    </div>
+                </div>
+                <small data-translate="server_order_bandwidth_declaration"></small>
+            </form>
         </div>
-        <oui-checkbox data-model="ctrl.model.autoPay"><span data-translate="server_order_bandwidth_auto_pay"></span></oui-checkbox>
-        <small data-translate="server_order_bandwidth_declaration"></small>
-    </oui-modal>
+        <div data-wizard-step
+             data-wizard-step-valid="ctrl.steps[1].isValid()"
+             data-wizard-step-on-load="initSecondStep">
+            <div class="text-center" data-ng-if="ctrl.steps[1].isLoading()">
+                <oui-spinner></oui-spinner>
+                <span data-translate="server_order_bandwidth_vrack_load"></span>
+            </div>
+            <form data-ng-if="!ctrl.steps[1].isLoading()">
+                <label class="control-label" data-translate="select_bandwidth_plan_summary"></label>
+                <div class="row">
+                    <div class="col-md-8 pr-0">
+                        <oui-radio data-name="bandwidth-plan" data-model="ctrl.model.plan" data-value="ctrl.provisionalPlan.planCode">
+                            <span data-translate="{{ 'plan_' + ctrl.provisionalPlan.planCode }}"></span>
+                        </oui-radio>
+                    </div>
+                    <div class="col-md-4 pl-0">
+                        <span data-ng-bind-html="ctrl.provisionalPlan.order.prices | ducPrice:ctrl.user.ovhSubsidiary"></span>
+                    </div>
+                </div>
+                <oui-checkbox data-model="ctrl.model.autoPay" class="mt-3"><span data-translate="server_order_bandwidth_auto_pay"></span></oui-checkbox>
+            </form>
+        </div>
+    </div>
 </div>

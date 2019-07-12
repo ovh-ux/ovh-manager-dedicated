@@ -1337,22 +1337,15 @@ angular
       }).then((planList) => {
         const list = _.compact(_.map(planList, (plan) => {
           if (!plan.planCode.includes('included')) {
-            const bandwidth = _.first(_.filter(plan.productName.split('-'), ele => /^\d+$/.test(ele)));
-            if (bandwidth > existingBandwidth.value) {
+            const bandwidth = _.parseInt(_.first(_.filter(plan.productName.split('-'), ele => /^\d+$/.test(ele))));
+            _.assign(plan, { bandwidth });
+            if (bandwidth > existingBandwidth.value || plan.prices[2].price.value !== 0) {
               return plan;
             }
           }
           return null;
         }));
-        return $q.all(
-          _.map(list, plan => this.getBareMetalPrivateBandwidthOrder(productId, plan)
-            .then((res) => {
-              res.planCode = plan.planCode;
-              res.bandwidth = _.first(_.filter(plan.productName.split('-'), ele => /^\d+$/.test(ele)));
-              return res;
-            })
-            .catch(() => null)),
-        ).then(res => _.compact(res));
+        return list;
       });
     };
 
@@ -1365,31 +1358,24 @@ angular
       }).then((planList) => {
         const list = _.compact(_.map(planList, (plan) => {
           if (!plan.planCode.includes('included')) {
-            const bandwidth = _.first(_.filter(plan.productName.split('-'), ele => /^\d+$/.test(ele)));
-            if (bandwidth > existingBandwidth.value) {
+            const bandwidth = _.parseInt(_.first(_.filter(plan.productName.split('-'), ele => /^\d+$/.test(ele))));
+            _.assign(plan, { bandwidth });
+            if (bandwidth > existingBandwidth.value || plan.prices[2].price.value !== 0) {
               return plan;
             }
           }
           return null;
         }));
-        return $q.all(
-          _.map(list, plan => this.getBareMetalPublicBandwidthOrder(productId, plan)
-            .then((res) => {
-              res.planCode = plan.planCode;
-              res.bandwidth = _.first(_.filter(plan.productName.split('-'), ele => /^\d+$/.test(ele)));
-              return res;
-            })
-            .catch(() => null)),
-        ).then(res => _.compact(res));
+        return list;
       });
     };
 
-    this.getBareMetalPublicBandwidthOrder = function (productId, plan) {
+    this.getBareMetalPublicBandwidthOrder = function (productId, planCode) {
       return OvhHttp.get('/order/upgrade/baremetalPublicBandwidth/{productId}/{planCode}', {
         rootPath: 'apiv6',
         urlParams: {
           productId,
-          planCode: plan.planCode,
+          planCode,
         },
         params: {
           quantity: 1,
@@ -1397,12 +1383,12 @@ angular
       });
     };
 
-    this.getBareMetalPrivateBandwidthOrder = function (productId, plan) {
+    this.getBareMetalPrivateBandwidthOrder = function (productId, planCode) {
       return OvhHttp.get('/order/upgrade/baremetalPrivateBandwidth/{productId}/{planCode}', {
         rootPath: 'apiv6',
         urlParams: {
           productId,
-          planCode: plan.planCode,
+          planCode,
         },
         params: {
           quantity: 1,
