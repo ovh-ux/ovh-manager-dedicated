@@ -6,6 +6,7 @@ export default {
     currentDrp: '<',
     currentService: '<',
     currentUser: '<',
+    datacenterList: '<',
   },
   controller,
   name: 'ovhManagerPccDashboardLegacy',

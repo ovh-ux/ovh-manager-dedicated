@@ -5,6 +5,7 @@ export default {
     currentDrp: '<',
     currentService: '<',
     currentUser: '<',
+    datacenterList: '<',
   },
   name: 'ovhManagerPccDashboard',
   template,

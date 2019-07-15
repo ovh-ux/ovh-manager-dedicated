@@ -13,6 +13,7 @@ angular
       currentDrp,
       currentUser,
       currentService,
+      datacenterList,
       DedicatedCloud,
       OvhApiDedicatedCloud,
       User,
@@ -29,6 +30,7 @@ angular
       this.currentDrp = currentDrp;
       this.currentUser = currentUser;
       this.currentService = currentService;
+      this.datacenterList = datacenterList;
       this.DedicatedCloud = DedicatedCloud;
       this.OvhApiDedicatedCloud = OvhApiDedicatedCloud;
       this.User = User;
