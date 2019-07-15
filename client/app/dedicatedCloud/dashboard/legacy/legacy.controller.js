@@ -94,24 +94,17 @@ export default class {
     }));
   }
 
-  deleteDrp() {
-    return this.$uibModal.open({
-      templateUrl: '/client/app/dedicatedCloud/dedicatedCloud-datacenter-drp-delete.html',
-      controller: 'DedicatedCloudDatacenterDrpDeleteCtrl',
-      controllerAs: '$ctrl',
-      resolve: {
-        drpInformations: () => this.dedicatedCloudDrp.constructor
-          .getPlanServiceInformations(this.currentDrp),
-      },
-    }).result
-      .then(() => {
-        this.Alerter.success(this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_delete_drp_success'), 'dedicatedCloud_alert');
-        return this.$state.go('app.dedicatedClouds.datacenter');
-      })
-      .catch((error) => {
-        if (error != null) {
-          this.Alerter.error(this.$translate.instant(`${this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_delete_drp_error')} ${_.get(error, 'message', '')}`), 'dedicatedCloud_alert');
-        }
-      });
+  chooseDatacenterForDrp() {
+    if (this.datacenterList.length === 1) {
+      this.$scope.$parent.loadingInformations = true;
+      const [{ id: datacenterId }] = this.datacenterList;
+      return this.$state
+        .go(
+          'app.dedicatedClouds.datacenter.drp',
+          { datacenterId, drpInformations: this.currentDrp },
+        );
+    }
+
+    return this.$state.go('app.dedicatedClouds.drpDatacenterSelection');
   }
 }
