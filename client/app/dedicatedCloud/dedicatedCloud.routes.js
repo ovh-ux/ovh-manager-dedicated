@@ -39,6 +39,8 @@ angular
               })
               .then(() => currentDrp);
           }),
+        datacenterList: /* @ngInject */ ($stateParams, DedicatedCloud) => DedicatedCloud
+          .getDatacenters($stateParams.productId).then(({ results }) => results),
       },
       url: '/configuration/dedicated_cloud/:productId',
       views: {
