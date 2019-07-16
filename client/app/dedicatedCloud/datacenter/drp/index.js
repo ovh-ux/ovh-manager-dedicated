@@ -17,7 +17,6 @@ import onPremiseTypeConfiguration from './configuration/steps/onPremise';
 import ovhTypeConfiguration from './configuration/steps/ovh';
 import service from './dedicatedCloud-datacenter-drp.service';
 import summary from './summary';
-import deleteDrp from './delete';
 
 const componentName = 'dedicatedCloudDatacenterDrp';
 const controllerName = 'DedicatedCloudDatacenterDrpCtrl';
@@ -36,7 +35,6 @@ const zertoConstantName = 'DEDICATEDCLOUD_DATACENTER_ZERTO';
 
 angular
   .module(moduleName, [
-    deleteDrp,
     onPremiseTypeConfiguration,
     ovhTypeConfiguration,
     summary,

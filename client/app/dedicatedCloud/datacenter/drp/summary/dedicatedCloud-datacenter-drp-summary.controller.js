@@ -9,7 +9,6 @@ export default class {
     this.$state = $state;
     this.$timeout = $timeout;
     this.$translate = $translate;
-    this.$uibModal = $uibModal;
     this.Alerter = Alerter;
     this.dedicatedCloudDrp = dedicatedCloudDrp;
     this.OvhApiMe = OvhApiMe;
@@ -51,23 +50,7 @@ export default class {
   }
 
   deleteDrpModal() {
-    this.$uibModal.open({
-      templateUrl: '/client/app/dedicatedCloud/dedicatedCloud-datacenter-drp-delete.html',
-      controller: 'DedicatedCloudDatacenterDrpDeleteCtrl',
-      controllerAs: '$ctrl',
-      resolve: {
-        drpInformations: () => this.drpInformations,
-      },
-    }).result
-      .then(() => {
-        this.Alerter.success(this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_delete_drp_success'), 'dedicatedCloudDatacenterAlert');
-        return this.$state.go('app.dedicatedClouds.datacenter');
-      })
-      .catch((error) => {
-        if (error != null) {
-          this.Alerter.error(this.$translate.instant(`${this.$translate.instant('dedicatedCloud_datacenter_drp_confirm_delete_drp_error')} ${_.get(error, 'message', '')}`), 'dedicatedCloudDatacenterDrpAlert');
-        }
-      });
+    return this.$state.go('app.dedicatedClouds.datacenter.drp.summary.deleteDrp');
   }
 
   isProvisionning() {
