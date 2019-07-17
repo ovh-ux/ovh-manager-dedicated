@@ -1,8 +1,12 @@
+import template from './billing.html';
+
 export default /* @ngInject */ ($stateProvider) => {
   $stateProvider.state('app.account.billing', {
     url: '/billing',
     abstract: true,
     translations: { value: ['.'], format: 'json' },
+    template,
+    controller: 'BillingCtrl',
     resolve: {
       denyEnterprise: ($q, currentUser) => {
         if (currentUser.isEnterprise) {

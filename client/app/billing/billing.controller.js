@@ -19,12 +19,14 @@ angular.module('Billing').controller('BillingCtrl', ($scope, $location, BILLING_
     return $filter('date')(date, 'dd');
   };
 
-  $scope.setAction = function (action, data, viewName) {
+  $scope.setAction = function (action, data, viewName, strictPath = false) {
     $scope.currentAction = action;
     $scope.currentActionData = data;
 
     if ($scope.currentAction) {
-      $scope.stepPath = `${BILLING_BASE_URL}${viewName}/${action}/billing-${viewName}-${action}.html`;
+      $scope.stepPath = strictPath
+        ? `billing/autoRenew/${action}.html`
+        : `${BILLING_BASE_URL}${viewName}/${action}/billing-${viewName}-${action}.html`;
 
       $('#currentAction').modal({
         keyboard: false,
