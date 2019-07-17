@@ -1,3 +1,8 @@
+import {
+  DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
+  DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
+} from './drp/dedicatedCloud-datacenter-drp.constants';
+
 angular
   .module('App')
   .controller('ovhManagerPccDatacenter', class {
@@ -17,8 +22,6 @@ angular
       DedicatedCloud,
       dedicatedCloudDrp,
       DEDICATED_CLOUD_DATACENTER,
-      DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
-      DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
     ) {
       this.$scope = $scope;
       this.$stateParams = $stateParams;
@@ -34,8 +37,6 @@ angular
       this.DedicatedCloud = DedicatedCloud;
       this.dedicatedCloudDrp = dedicatedCloudDrp;
       this.DEDICATED_CLOUD_DATACENTER = DEDICATED_CLOUD_DATACENTER;
-      this.DRP_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_STATUS;
-      this.DRP_OPTIONS = DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS;
     }
 
     $onInit() {
@@ -142,19 +143,20 @@ angular
     checkForZertoOptionOrder() {
       return this.dedicatedCloudDrp.checkForZertoOptionOrder(this.currentService.name)
         .then((storedDrpInformations) => {
-          let storedDrpStatus = this.DRP_STATUS.disabled;
+          let storedDrpStatus = DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabled;
           if (storedDrpInformations) {
             storedDrpStatus = this.dedicatedCloudDrp.constructor
               .formatStatus(storedDrpInformations.status);
           }
 
           this.drpStatus = [this.currentDrp.state, storedDrpStatus]
-            .find(status => status !== this.DRP_STATUS.disabled)
-            || this.DRP_STATUS.disabled;
+            .find(status => status !== DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabled)
+            || DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabled;
 
-          this.drpRemotePccStatus = this.currentDrp.drpType === this.DRP_OPTIONS.ovh
+          this.drpRemotePccStatus = this.currentDrp
+            .drpType === DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS.ovh
             ? this.dedicatedCloudDrp.constructor.formatStatus(_.get(this.currentDrp, 'remoteSiteInformation.state'))
-            : this.DRP_STATUS.delivered;
+            : DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered;
         })
         .catch((error) => {
           this.loadingError = true;
@@ -164,9 +166,9 @@ angular
 
     isDrpActionPossible() {
       return [
-        this.DRP_STATUS.delivered,
-        this.DRP_STATUS.disabled,
-        this.DRP_STATUS.waitingConfiruration,
+        DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered,
+        DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabled,
+        DEDICATEDCLOUD_DATACENTER_DRP_STATUS.waitingConfiruration,
       ].includes(this.drpStatus);
     }
 

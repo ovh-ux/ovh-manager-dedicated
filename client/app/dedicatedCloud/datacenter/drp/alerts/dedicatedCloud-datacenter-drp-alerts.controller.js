@@ -1,11 +1,14 @@
+import {
+  DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
+  DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
+} from '../dedicatedCloud-datacenter-drp.constants';
+
 export default class {
   /* @ngInject */
   constructor(
     $q,
     $state,
     dedicatedCloudDrp,
-    DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
-    DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
   ) {
     this.$q = $q;
     this.$state = $state;

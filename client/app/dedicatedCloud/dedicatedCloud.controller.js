@@ -1,3 +1,8 @@
+import {
+  DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
+  DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
+} from './datacenter/drp/dedicatedCloud-datacenter-drp.constants';
+
 angular
   .module('App')
   .controller('DedicatedCloudCtrl', class {
@@ -17,8 +22,6 @@ angular
       DedicatedCloud,
       OvhApiDedicatedCloud,
       User,
-      DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
-      DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
     ) {
       this.$q = $q;
       this.$scope = $scope;

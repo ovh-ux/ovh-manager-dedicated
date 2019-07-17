@@ -22,8 +22,6 @@ export default class {
     this.$translate = $translate;
     this.Alerter = Alerter;
     this.dedicatedCloudDrp = dedicatedCloudDrp;
-    this.DEDICATEDCLOUD_DATACENTER_DRP_ROLES = DEDICATEDCLOUD_DATACENTER_DRP_ROLES;
-    this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_STATUS;
   }
 
   $onInit() {
@@ -35,14 +33,15 @@ export default class {
     this.initializeTransitions();
 
     this.isDisablingDrp = [
-      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toDisable,
-      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabling,
+      DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toDisable,
+      DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabling,
     ].includes(this.currentDrp.state);
 
     return this.dedicatedCloudDrp.checkForZertoOptionOrder(this.$stateParams.productId)
       .then((storedDrpInformations) => {
         if (!this.isDisablingDrp) {
-          const drp = this.isDeliveredOrDelivering(this.currentDrp.state) ? this.currentDrp : null;
+          const drp = this.constructor
+            .isDeliveredOrDelivering(this.currentDrp.state) ? this.currentDrp : null;
           const otherDrpInformations = drp !== null
             ? this.formatPlanInformations(drp)
             : storedDrpInformations;
@@ -94,15 +93,6 @@ export default class {
     });
   }
 
-  isDeliveredOrDelivering(state) {
-    return [
-      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivering,
-      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered,
-      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.provisionning,
-      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toProvision,
-    ].includes(state);
-  }
-
   formatPlanInformations({
     datacenterId, drpType, localSiteInformation, remoteSiteInformation, state,
   }) {
@@ -117,7 +107,7 @@ export default class {
 
     if (localSiteInformation && remoteSiteInformation) {
       switch (localSiteInformation.role) {
-        case this.DEDICATEDCLOUD_DATACENTER_DRP_ROLES.primary:
+        case DEDICATEDCLOUD_DATACENTER_DRP_ROLES.primary:
           primaryPcc = {
             serviceName: currentPccInformations.serviceName,
           };
@@ -133,7 +123,7 @@ export default class {
             formattedName: remoteSiteInformation.datacenterName,
           };
           break;
-        case this.DEDICATEDCLOUD_DATACENTER_DRP_ROLES.single:
+        case DEDICATEDCLOUD_DATACENTER_DRP_ROLES.single:
           primaryPcc = {
             serviceName: currentPccInformations.serviceName,
           };
@@ -172,5 +162,14 @@ export default class {
       secondaryDatacenter,
       vpnConfiguration,
     };
+  }
+
+  static isDeliveredOrDelivering(state) {
+    return [
+      DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivering,
+      DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered,
+      DEDICATEDCLOUD_DATACENTER_DRP_STATUS.provisionning,
+      DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toProvision,
+    ].includes(state);
   }
 }

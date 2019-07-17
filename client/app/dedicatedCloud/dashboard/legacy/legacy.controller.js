@@ -1,5 +1,11 @@
 import _ from 'lodash';
 
+import {
+  DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
+  DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
+  DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS,
+} from '../../datacenter/drp/dedicatedCloud-datacenter-drp.constants';
+
 export default class {
   /* @ngInject */
   constructor(
@@ -11,9 +17,6 @@ export default class {
     Alerter,
     coreConfig,
     dedicatedCloudDrp,
-    DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
-    DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
-    DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS,
   ) {
     this.$scope = $scope;
     this.$state = $state;

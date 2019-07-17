@@ -1,12 +1,15 @@
+import {
+  DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP,
+  DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
+  DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS,
+} from '../../../../dedicatedCloud-datacenter-drp.constants';
+
 export default class {
   /* @ngInject */
   constructor(
     $q, $state, $stateParams, $timeout, $translate, $uibModal, $window,
     Alerter, DedicatedCloud, dedicatedCloudDrp, ipFeatureAvailability, OvhApiDedicatedCloud,
     DEDICATED_CLOUD_CONSTANTS,
-    DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP,
-    DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
-    DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS,
   ) {
     this.$q = $q;
     this.$state = $state;

@@ -1,10 +1,14 @@
+import {
+  DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
+  DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
+  DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS,
+} from '../dedicatedCloud-datacenter-drp.constants';
+
 export default class {
   /* @ngInject */
   constructor(
     $state, $timeout, $translate,
     Alerter, dedicatedCloudDrp, OvhApiMe, Validator,
-    DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS, DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
-    DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS,
   ) {
     this.$state = $state;
     this.$timeout = $timeout;
@@ -13,9 +17,6 @@ export default class {
     this.dedicatedCloudDrp = dedicatedCloudDrp;
     this.OvhApiMe = OvhApiMe;
     this.Validator = Validator;
-    this.DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS = DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS;
-    this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_STATUS;
-    this.VPN_CONFIGURATION_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS;
   }
 
   $onInit() {
@@ -24,9 +25,9 @@ export default class {
 
     this.email = this.currentUser.email;
     this.deleteActionAvailable = this.drpInformations
-      .drpType === this.DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS.onPremise
+      .drpType === DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS.onPremise
       ? true
-      : this.dedicatedCloudDrp.constructor.formatStatus(_.get(this.currentDrp, 'remoteSiteInformation.state')) === this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered;
+      : this.dedicatedCloudDrp.constructor.formatStatus(_.get(this.currentDrp, 'remoteSiteInformation.state')) === DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered;
 
     this.ipValidator = (() => ({
       test: ip => this.Validator.isValidIpv4(ip),
@@ -55,25 +56,25 @@ export default class {
 
   isProvisionning() {
     return [
-      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toProvision,
-      this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.provisionning,
+      DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toProvision,
+      DEDICATEDCLOUD_DATACENTER_DRP_STATUS.provisionning,
     ].includes(this.currentDrp.state);
   }
 
   isDrpTypeOnPremise() {
-    return this.drpInformations.drpType === this.DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS.onPremise;
+    return this.drpInformations.drpType === DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS.onPremise;
   }
 
   canSetVpnConfiguration() {
     return this.isDrpTypeOnPremise()
-      && this.drpInformations.state === this.DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered
+      && this.drpInformations.state === DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered
       && this.drpInformations.vpnConfiguration.vpnConfigState
-        !== this.VPN_CONFIGURATION_STATUS.configuring;
+        !== DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS.configuring;
   }
 
   hasNoVpnConfiguration() {
     return this.drpInformations.vpnConfiguration
-      .vpnConfigState === this.VPN_CONFIGURATION_STATUS.notConfigured;
+      .vpnConfigState === DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS.notConfigured;
   }
 
   validateVpnConfiguration() {
