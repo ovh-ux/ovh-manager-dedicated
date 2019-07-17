@@ -15,6 +15,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
   '$translate',
   '$uibModal',
   '$window',
+  'agreementsLink',
   'Alerter',
   'atInternet',
   'Billing.URLS',
@@ -22,7 +23,11 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
   'billingRenewHelper',
   'constants',
   'coreConfig',
+  'currentActiveLink',
+  'homeLink',
+  'isEnterpriseCustomer',
   'ovhPaymentMethod',
+  'sshLink',
   'User',
   'AUTORENEW_EVENT',
   'BILLING_BASE_URL',
@@ -40,6 +45,7 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
     $translate,
     $uibModal,
     $window,
+    agreementsLink,
     Alerter,
     atInternet,
     billingUrls,
@@ -47,7 +53,11 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
     renewHelper,
     constants,
     coreConfig,
+    currentActiveLink,
+    homeLink,
+    isEnterpriseCustomer,
     ovhPaymentMethod,
+    sshLink,
     User,
     AUTORENEW_EVENT,
     BILLING_BASE_URL,
@@ -70,6 +80,11 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
       text: $translate.instant('autorenew_service_type_ALL'),
     };
 
+    $scope.agreementsLink = agreementsLink;
+    $scope.homeLink = homeLink;
+    $scope.sshLink = sshLink;
+    $scope.currentActiveLink = () => currentActiveLink();
+    $scope.isEnterpriseCustomer = isEnterpriseCustomer;
     $scope.loaded = false;
     $scope.user = null;
     $scope.expandHostingDomain = {};
