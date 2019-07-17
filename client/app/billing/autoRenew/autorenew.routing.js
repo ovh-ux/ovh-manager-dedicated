@@ -17,6 +17,7 @@ export default /* @ngInject */ ($stateProvider) => {
         $transition$,
       ) => () => $state.href($transition$.to().name),
       homeLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew'),
+      sshLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew.ssh'),
       isEnterpriseCustomer: /* @ngInject */ currentUser => currentUser.isEnterprise,
     },
     redirectTo: /* @ngInject */ isEnterpriseCustomer => (isEnterpriseCustomer ? 'app.account.billing.autorenew.agreements' : false),

@@ -7,7 +7,16 @@ angular.module('UserAccount').controller('UserAccount.controllers.ssh', [
   'constants',
   '$log',
   'Alerter',
-  function ($scope, $q, $translate, UseraccountSshService, User, constants, $log, Alerter) {
+  function (
+    $scope,
+    $q,
+    $translate,
+    UseraccountSshService,
+    User,
+    constants,
+    $log,
+    Alerter,
+  ) {
     const self = this;
 
     self.filters = {};
