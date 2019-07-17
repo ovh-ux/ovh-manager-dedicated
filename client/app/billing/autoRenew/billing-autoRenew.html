@@ -1,29 +1,43 @@
-<div id="billing-autorenew">
+<oui-page-header
+    data-heading="{{:: 'billing_title' | translate}}">
+    <oui-header-tabs>
+        <oui-header-tabs-item
+            data-text="{{:: 'billing_home_title' | translate}}"
+            href="{{:: homeLink }}"
+            data-active="currentActiveLink() === homeLink"
+            data-ng-if="!isEnterpriseCustomer">
+        </oui-header-tabs-item>
+        <oui-header-tabs-item
+            data-text="{{:: 'billing_agreements_title' | translate}}"
+            href="{{:: agreementsLink }}"
+            data-active="currentActiveLink() === agreementsLink">
+        </oui-header-tabs-item>
+    </oui-header-tabs>
+</oui-page-header>
 
-    <div class="page-header">
-        <h1 data-translate="autorenew_title"></h1>
-    </div>
+<div data-ui-view>
 
-    <div class="text-center" data-ng-if="initLoading">
-        <oui-spinner data-size="l"></oui-spinner>
-    </div>
+    <div id="billing-autorenew">
+        <div class="text-center" data-ng-if="initLoading">
+            <oui-spinner data-size="l"></oui-spinner>
+        </div>
 
-    <div class="tab-content" data-ng-if="!initLoading">
+        <div class="tab-content" data-ng-if="!initLoading">
 
-        <div data-ovh-alert></div>
+            <div data-ovh-alert></div>
 
-        <oui-message
-            data-type="success"
-            data-ng-if="mustDisplayDeleteAtExpirationCancellingBanner">
-            <span
-                data-translate="autorenew_service_deleteAtExpiration_banner"
-                data-translate-values="{ serviceName: serviceToKeep.serviceId }"></span>
+            <oui-message
+                data-type="success"
+                data-ng-if="mustDisplayDeleteAtExpirationCancellingBanner">
+                <span
+                    data-translate="autorenew_service_deleteAtExpiration_banner"
+                    data-translate-values="{ serviceName: serviceToKeep.serviceId }"></span>
 
-            <button
-                data-ng-click="cancelDeleteService(serviceToKeep)"
-                data-translate="autorenew_service_deleteAtExpiration_banner_cancel"
-                class="oui-button oui-button_link m-0 py-0 pl-3"></button>
-        </oui-message>
+                <button
+                    data-ng-click="cancelDeleteService(serviceToKeep)"
+                    data-translate="autorenew_service_deleteAtExpiration_banner_cancel"
+                    class="oui-button oui-button_link m-0 py-0 pl-3"></button>
+            </oui-message>
 
         <div data-ng-if="!automaticRenewV2Mean.loading && automaticRenewV2Mean.available && (!automaticRenewV2Mean.allowed || (automaticRenewV2Mean.allowed && !nicRenew.active && nicRenew.initialized)) && !services.data.userSubsidiaryHasRecentAutorenew">
             <oui-message
@@ -62,11 +76,32 @@
         </form>
 
         <form class="row"
-              data-ng-if="automaticRenewV2Mean.available && automaticRenewV2Mean.allowed && services.data.userMustApproveAutoRenew">
+                data-ng-if="nicBillingFilter.values.length > 1">
+            <div class="form-group col-md-4">
+                <label for="billingAutoRenewNicBillingSelect"
+                        class="control-label"
+                        data-translate="autorenew_service_autorenew_contact_filter">
+                </label>
+                <select id="billingAutoRenewNicBillingSelect"
+                        class="form-control"
+                        name="billingAutoRenew"
+                        data-ng-model-options="{ debounce: 500 }"
+                        data-ng-model="nicBillingFilter.model"
+                        data-ng-change="onNicBillingChange()"
+                        data-ng-options="nicBilling for nicBilling in nicBillingFilter.values track by nicBilling"                        >
+                    <option value=""
+                            data-translate="autorenew_service_autorenew_contact_filter_all">
+                    </option>
+                </select>
+            </div>
+        </form>
+
+        <form class="row"
+                data-ng-if="automaticRenewV2Mean.available && automaticRenewV2Mean.allowed && services.data.userMustApproveAutoRenew">
             <div class="form-group col-md-4">
                 <label for="autorenewDaySelect"
-                       class="control-label"
-                       data-translate="autorenew_service_autorenew_day">
+                        class="control-label"
+                        data-translate="autorenew_service_autorenew_day">
                 </label>
                 <select id="autorenewDaySelect"
                         name="renewDay"
@@ -83,9 +118,9 @@
         </form>
 
         <div class="oui-box"
-             data-ng-if="services.selected.length > 0 || selected.both">
+                data-ng-if="services.selected.length > 0 || selected.both">
             <p class="text-info"
-               data-translate="autorenew_service_mass_actions_caption">
+                data-translate="autorenew_service_mass_actions_caption">
             </p>
             <button type="button"
                     class="oui-button oui-button_secondary"
@@ -114,20 +149,20 @@
                     <oui-dropdown-trigger data-text="{{:: 'autorenew_service_action_title' | translate }}"></oui-dropdown-trigger>
                     <oui-dropdown-content>
                         <a class="oui-dropdown-option"
-                           data-ui-sref="app.account.billing.payment.method"
-                           data-track-on="click"
-                           data-track-type="action"
-                           data-track-name="services::payment_types::edit::payment_types_settings">
+                            data-ui-sref="app.account.billing.payment.method"
+                            data-track-on="click"
+                            data-track-type="action"
+                            data-track-name="services::payment_types::edit::payment_types_settings">
                             <span data-translate="autorenew_manage_my_payment_means"></span>
                         </a>
                         <a data-ng-if="automaticRenewV2Mean.available"
-                           class="oui-dropdown-option"
-                           target="_blank"
-                           rel="noopener"
-                           data-ng-href="{{ urls.renewAlign }}"
-                           data-track-on="click"
-                           data-track-type="action"
-                           data-track-name="services::autoRenew::edit::autoRenew_date_settings">
+                            class="oui-dropdown-option"
+                            target="_blank"
+                            rel="noopener"
+                            data-ng-href="{{ urls.renewAlign }}"
+                            data-track-on="click"
+                            data-track-type="action"
+                            data-track-name="services::autoRenew::edit::autoRenew_date_settings">
                             <span data-translate="autorenew_service_update_date_button_caption"></span>
                         </a>
                         <button data-ng-if="canDisableAllDomains"
@@ -145,14 +180,14 @@
             <div class="col-md-4">
                 <div class="input-group">
                     <input class="form-control"
-                           type="search"
-                           maxlength="50"
-                           placeholder="{{ 'autorenew_service_name' | translate }}"
-                           data-ng-model-options="{ debounce: 1000 }"
-                           data-ng-model="searchText.value"
-                           data-ng-change="onSearchTextChanged()"
-                           data-ng-attr-title="{{ 'autorenew_search_input_title' | translate }}"
-                           autofocus>
+                            type="search"
+                            maxlength="50"
+                            placeholder="{{ 'autorenew_service_name' | translate }}"
+                            data-ng-model-options="{ debounce: 1000 }"
+                            data-ng-model="searchText.value"
+                            data-ng-change="onSearchTextChanged()"
+                            data-ng-attr-title="{{ 'autorenew_search_input_title' | translate }}"
+                            autofocus>
                     <span class="input-group-addon">
                         <i class="fa fa-search"></i>
                     </span>
@@ -288,18 +323,18 @@
                 </tr>
             </tbody>
 
-            <tbody data-ng-if="services.data && !services.loading">
-                <!-- COMMON SERVICES -->
-                <tr data-ng-repeat="service in services.data.list.results track by (service.serviceId + service.serviceType)"
-                    data-ng-class="{'pointer': !editionDisabled(service)}"
-                    data-ng-include="BILLING_BASE_URL + 'autoRenew/common/billing-autoRenew-common.html'">
-                </tr>
-            </tbody>
+        <tbody data-ng-if="services.data && !services.loading">
+            <!-- COMMON SERVICES -->
+            <tr data-ng-repeat="service in services.data.list.results track by (service.serviceId + service.serviceType)"
+                data-ng-class="{'pointer': !editionDisabled(service)}"
+                data-ng-include="BILLING_BASE_URL + 'autoRenew/common/billing-autoRenew-common.html'">
+            </tr>
+        </tbody>
         </table>
         <div data-pagination-server-side="serviceTable"
-             data-pagination-server-side-function="getServices"
-             data-pagination-server-side-paginated-stuff="services.data"
-             data-pagination-server-side-table-loading="services.loading">
+            data-pagination-server-side-function="getServices"
+            data-pagination-server-side-paginated-stuff="services.data"
+            data-pagination-server-side-table-loading="services.loading">
         </div>
     </div>
 </div>
