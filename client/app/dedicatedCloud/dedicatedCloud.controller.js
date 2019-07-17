@@ -95,10 +95,11 @@ angular
         this.DedicatedCloud.getSelected(this.$stateParams.productId, true)
           .then((dedicatedCloud) => {
             Object.assign(this.$scope.dedicatedCloud, dedicatedCloud);
-            this.$scope.dedicatedCloud.isExpired = dedicatedCloud.status === 'expired';
+            this.$scope.dedicatedCloud.isExpired = dedicatedCloud.isExpired;
 
             if (this.$scope.dedicatedCloud.isExpired) {
               this.$scope.setMessage(this.$translate.instant('common_expired'), { type: 'cancelled' });
+              return;
             }
 
             this.$scope.dedicatedCloudDescription.model = angular
