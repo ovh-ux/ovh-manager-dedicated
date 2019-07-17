@@ -1,3 +1,6 @@
+import _ from 'lodash';
+import { ELIGIBLE_FOR_UPGRADE, URLS } from './dedicated-server.contants';
+
 /* eslint-disable no-use-before-define */
 angular.module('App').controller('ServerCtrl', (
   $q,
@@ -6,6 +9,7 @@ angular.module('App').controller('ServerCtrl', (
   $stateParams,
   $timeout,
   $translate,
+  atInternet,
   constants,
   coreConfig,
   dedicatedServerFeatureAvailability,
@@ -530,5 +534,22 @@ angular.module('App').controller('ServerCtrl', (
   }
 
   load();
+
+  // Upgrade to Advance
+  $scope.isEligibleForUpgrade = () => isEligibleForUpgrade();
+  $scope.trackUpgradeToAdvance = () => trackUpgradeToAdvance();
+  $scope.URLS = URLS;
+
+  function trackUpgradeToAdvance() {
+    atInternet.trackClick({
+      name: 'upgrade_rise_to_advance',
+      type: 'action',
+    });
+  }
+
+  function isEligibleForUpgrade() {
+    return _.includes(ELIGIBLE_FOR_UPGRADE.SUBSIDIARIES, $scope.user.ovhSubsidiary)
+      && _.includes(ELIGIBLE_FOR_UPGRADE.COMMERCIAL_RANGE, $scope.server.commercialRange);
+  }
 });
 /* eslint-enable no-use-before-define */

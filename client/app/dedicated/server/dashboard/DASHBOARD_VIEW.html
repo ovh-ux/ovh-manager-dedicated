@@ -135,6 +135,29 @@
                                 data-ng-bind="infoServer.serverId || '-'"></dd>
                         </dl>
                     </div>
+                    <div class="oui-tile__item"
+                        data-ng-if="isEligibleForUpgrade()">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term"
+                                data-translate="server_configuration_upgrade"></dt>
+                            <dd class="oui-tile__description"
+                                data-translate="server_configuration_upgrade_text"></dd>
+                        </dl>
+                        <div class="oui-tile__actions">
+                            <oui-action-menu
+                                data-aria-label="{{:: 'menu_action_label' | translate:{ t0: ('server_configuration_upgrade' | translate) } }}"
+                                data-placement="end"
+                                data-compact>
+                                <oui-action-menu-item
+                                    data-aria-label="{{:: 'server_configuration_upgrade_button' | translate}}"
+                                    data-href="{{::URLS.UK.UPGRADE_TO_ADVANCE}}"
+                                    data-on-click="trackUpgradeToAdvance()"
+                                    data-external>
+                                    <span data-translate="server_configuration_upgrade_button"></span>
+                                </oui-action-menu-item>
+                            </oui-action-menu>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
