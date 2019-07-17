@@ -1,13 +1,16 @@
+import {
+  DEDICATEDCLOUD_DATACENTER_DRP_IP_BLOCK_REG_EXP,
+  DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
+  DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS,
+  DEDICATEDCLOUD_DATACENTER_ZERTO,
+} from '../../../../dedicatedCloud-datacenter-drp.constants';
+
 export default class {
   /* @ngInject */
   constructor(
     $state, $timeout, $translate, $window,
     Alerter, dedicatedCloudDrp, ovhUserPref,
     DEDICATED_CLOUD_CONSTANTS,
-    DEDICATEDCLOUD_DATACENTER_DRP_IP_BLOCK_REG_EXP,
-    DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
-    DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS,
-    DEDICATEDCLOUD_DATACENTER_ZERTO,
   ) {
     this.$state = $state;
     this.$timeout = $timeout;
