@@ -1,10 +1,4 @@
-<div class="module-useraccount-sections-ssh-container"
-     data-ng-controller="UserAccount.controllers.ssh as ctrlSsh">
-
-    <div class="page-header">
-        <h1 data-translate="user_ssh_title"></h1>
-    </div>
-
+<div data-ui-view>
     <div class="tab-content">
 
         <div data-ovh-alert="userSsh"></div>
@@ -39,14 +33,14 @@
             </button>
             <oui-dropdown-content>
                 <button class="oui-dropdown-option"
-                        data-ng-click="setAction('ssh/add/dedicated/user-ssh-add-dedicated', ctrlSsh.sshKeyList)"
+                        data-ng-click="setAction('ssh/add/dedicated/user-ssh-add-dedicated', ctrlSsh.sshKeyList, '', true)"
                         data-track-name="account::ssh::add::dedicated::add_ssh_key"
                         data-track-on="click"
                         data-track-type="action">
                     <span data-translate="user_ssh_category_dedicated"></span>
                 </button>
                 <button class="oui-dropdown-option"
-                        data-ng-click="setAction('ssh/add/cloud/user-ssh-add-cloud')"
+                        data-ng-click="setAction('ssh/add/cloud/user-ssh-add-cloud', '', true)"
                         data-track-name="account::ssh::add::cloud::add_ssh_key"
                         data-track-on="click"
                         data-track-type="action">
@@ -137,14 +131,14 @@
                                     <li>
                                         <button type="button"
                                                 class="btn btn-link"
-                                                data-ng-click="setAction('ssh/view/user-ssh-view', ssh)"
+                                                data-ng-click="setAction('ssh/view/user-ssh-view', ssh, '', true)"
                                                 data-translate="user_ssh_key_show">
                                         </button>
                                     </li>
                                     <li>
                                         <button type="button"
                                                 class="btn btn-link"
-                                                data-ng-click="setAction('ssh/delete/user-ssh-delete', ssh)"
+                                                data-ng-click="setAction('ssh/delete/user-ssh-delete', ssh, '', true)"
                                                 data-translate="user_ssh_key_delete">
                                         </button>
                                     </li>
