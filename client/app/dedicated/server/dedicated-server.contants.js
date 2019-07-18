@@ -1,6 +1,6 @@
 export const ELIGIBLE_FOR_UPGRADE = {
   COMMERCIAL_RANGE: ['RISE-1'],
-  SUBSIDIARIES: ['FR', 'UK'],
+  SUBSIDIARIES: ['UK'],
 };
 
 export const URLS = {
