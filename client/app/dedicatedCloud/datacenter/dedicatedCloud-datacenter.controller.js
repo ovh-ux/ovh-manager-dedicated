@@ -1,6 +1,7 @@
 import {
   DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
   DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
+  DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS,
 } from './drp/dedicatedCloud-datacenter-drp.constants';
 
 angular
@@ -37,6 +38,8 @@ angular
       this.DedicatedCloud = DedicatedCloud;
       this.dedicatedCloudDrp = dedicatedCloudDrp;
       this.DEDICATED_CLOUD_DATACENTER = DEDICATED_CLOUD_DATACENTER;
+      this.DRP_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_STATUS;
+      this.DRP_VPN_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS;
     }
 
     $onInit() {
@@ -143,20 +146,20 @@ angular
     checkForZertoOptionOrder() {
       return this.dedicatedCloudDrp.checkForZertoOptionOrder(this.currentService.name)
         .then((storedDrpInformations) => {
-          let storedDrpStatus = DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabled;
+          let storedDrpStatus = this.DRP_STATUS.disabled;
           if (storedDrpInformations) {
             storedDrpStatus = this.dedicatedCloudDrp.constructor
               .formatStatus(storedDrpInformations.status);
           }
 
           this.drpStatus = [this.currentDrp.state, storedDrpStatus]
-            .find(status => status !== DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabled)
-            || DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabled;
+            .find(status => status !== this.DRP_STATUS.disabled)
+            || this.DRP_STATUS.disabled;
 
           this.drpRemotePccStatus = this.currentDrp
             .drpType === DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS.ovh
             ? this.dedicatedCloudDrp.constructor.formatStatus(_.get(this.currentDrp, 'remoteSiteInformation.state'))
-            : DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered;
+            : this.DRP_STATUS.delivered;
         })
         .catch((error) => {
           this.loadingError = true;
@@ -166,9 +169,9 @@ angular
 
     isDrpActionPossible() {
       return [
-        DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered,
-        DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabled,
-        DEDICATEDCLOUD_DATACENTER_DRP_STATUS.waitingConfiruration,
+        this.DRP_STATUS.delivered,
+        this.DRP_STATUS.disabled,
+        this.DRP_STATUS.waitingConfiruration,
       ].includes(this.drpStatus);
     }
 
