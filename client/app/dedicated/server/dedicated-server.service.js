@@ -39,8 +39,10 @@ angular
   })
   .constant('HARDWARE_RAID_RULE_DEFAULT_NAME', 'managerHardRaid')
   .service('Server', function serverF($http, $q, constants, coreConfig, $cacheFactory, $rootScope,
-    $translate, WucApi, Polling, OvhHttp, SERVERSTATS_PERIOD_ENUM,
+    $translate, WucApi, Polling, OvhApiOrder, OvhHttp, SERVERSTATS_PERIOD_ENUM,
     HARDWARE_RAID_RULE_DEFAULT_NAME) {
+    this.OvhApiOrderBaremetalPublicBW = OvhApiOrder.Upgrade().BaremetalPublicBandwidth().v6();
+    this.OvhApiOrderBaremetalPrivateBW = OvhApiOrder.Upgrade().BaremetalPrivateBandwidth().v6();
     const self = this;
     const serverCaches = {
       ipmi: $cacheFactory('UNIVERS_DEDICATED_SERVER_IPMI'),
@@ -1328,101 +1330,71 @@ angular
       }).then(details => details, () => null);
     };
 
-    this.getBareMetalPrivateBandwidthOptions = function (productId, existingBandwidth) {
-      return OvhHttp.get('/order/upgrade/baremetalPrivateBandwidth/{serviceName}', {
-        rootPath: 'apiv6',
-        urlParams: {
-          serviceName: productId,
-        },
-      }).then((planList) => {
-        const list = _.compact(_.map(planList, (plan) => {
-          if (!plan.planCode.includes('included')) {
-            const bandwidth = _.parseInt(_.first(_.filter(plan.productName.split('-'), ele => /^\d+$/.test(ele))));
-            _.assign(plan, { bandwidth });
-            if (bandwidth > existingBandwidth.value || plan.prices[2].price.value !== 0) {
-              return plan;
-            }
+    this.getValidBandwidthPlans = function (plans, existingBandwidth) {
+      const list = _.map(plans, (plan) => {
+        // Not to include already included plans (existing plan)
+        if (!plan.planCode.includes('included')) {
+          // Extract bandwidth value from product name
+          const bandwidth = _.parseInt(_.first(_.filter(plan.productName.split('-'), ele => /^\d+$/.test(ele))));
+          _.assign(plan, { bandwidth });
+          // check if existing bandwidth is not max bandwidth available
+          // Reject plans which are default plans i.e., 0 as price
+          if (bandwidth > existingBandwidth && plan.prices[2].price.value !== 0) {
+            return plan;
           }
-          return null;
-        }));
-        return list;
+        }
+        return null;
       });
+      return _.compact(list);
     };
 
-    this.getBareMetalPublicBandwidthOptions = function (productId, existingBandwidth) {
-      return OvhHttp.get('/order/upgrade/baremetalPublicBandwidth/{serviceName}', {
-        rootPath: 'apiv6',
-        urlParams: {
-          serviceName: productId,
-        },
-      }).then((planList) => {
-        const list = _.compact(_.map(planList, (plan) => {
-          if (!plan.planCode.includes('included')) {
-            const bandwidth = _.parseInt(_.first(_.filter(plan.productName.split('-'), ele => /^\d+$/.test(ele))));
-            _.assign(plan, { bandwidth });
-            if (bandwidth > existingBandwidth.value || plan.prices[2].price.value !== 0) {
-              return plan;
-            }
-          }
-          return null;
-        }));
-        return list;
-      });
+    this.getBareMetalPublicBandwidthOptions = function (serviceName) {
+      return this.OvhApiOrderBaremetalPublicBW.getPublicBandwidthOptions({ serviceName }).$promise;
     };
 
-    this.getBareMetalPublicBandwidthOrder = function (productId, planCode) {
-      return OvhHttp.get('/order/upgrade/baremetalPublicBandwidth/{productId}/{planCode}', {
-        rootPath: 'apiv6',
-        urlParams: {
-          productId,
-          planCode,
-        },
-        params: {
-          quantity: 1,
-        },
-      });
+    this.getBareMetalPublicBandwidthOrder = function (serviceName, planCode) {
+      return this.OvhApiOrderBaremetalPublicBW.getPublicBandwidthOrder({
+        serviceName,
+        planCode,
+      }, {
+        quantity: 1,
+      }).$promise;
     };
 
-    this.getBareMetalPrivateBandwidthOrder = function (productId, planCode) {
-      return OvhHttp.get('/order/upgrade/baremetalPrivateBandwidth/{productId}/{planCode}', {
-        rootPath: 'apiv6',
-        urlParams: {
-          productId,
-          planCode,
-        },
-        params: {
-          quantity: 1,
-        },
-      });
+    this.bareMetalPublicBandwidthPlaceOrder = function (serviceName, planCode, autoPay) {
+      return this.OvhApiOrderBaremetalPublicBW.postPublicBandwidthPlaceOrder({
+        serviceName,
+        planCode,
+      }, {
+        quantity: 1,
+        autoPayWithPreferredPaymentMethod: autoPay,
+      }).$promise;
     };
 
-    this.bareMetalPublicBandwidthPlaceOrder = function (productId, planCode, autoPay) {
-      return OvhHttp.post('/order/upgrade/baremetalPublicBandwidth/{serviceName}/{planCode}', {
-        rootPath: 'apiv6',
-        urlParams: {
-          serviceName: productId,
-          planCode,
-        },
-        params: {
-          autoPayWithPreferredPaymentMethod: autoPay,
-          quantity: 1,
-        },
-      });
+    this.getBareMetalPrivateBandwidthOptions = function (serviceName) {
+      return this.OvhApiOrderBaremetalPrivateBW.getPrivateBandwidthOptions({ serviceName })
+        .$promise;
     };
 
-    this.bareMetalPrivateBandwidthPlaceOrder = function (productId, planCode, autoPay) {
-      return OvhHttp.post('/order/upgrade/baremetalPrivateBandwidth/{serviceName}/{planCode}', {
-        rootPath: 'apiv6',
-        urlParams: {
-          serviceName: productId,
-          planCode,
-        },
-        params: {
-          autoPayWithPreferredPaymentMethod: autoPay,
-          quantity: 1,
-        },
-      });
+    this.getBareMetalPrivateBandwidthOrder = function (serviceName, planCode) {
+      return this.OvhApiOrderBaremetalPrivateBW.getPrivateBandwidthOrder({
+        serviceName,
+        planCode,
+      }, {
+        quantity: 1,
+      }).$promise;
     };
+
+    this.bareMetalPrivateBandwidthPlaceOrder = function (serviceName, planCode, autoPay) {
+      return this.OvhApiOrderBaremetalPrivateBW.postPrivateBandwidthPlaceOrder({
+        serviceName,
+        planCode,
+      }, {
+        quantity: 1,
+        autoPayWithPreferredPaymentMethod: autoPay,
+      }).$promise;
+    };
+
     /* ------- Order KVM -------*/
     this.canOrderKvm = function canOrderKvm(productId) {
       return this.get(productId, 'orderable/kvm', {

@@ -10,7 +10,9 @@ angular.module('controllers').controller('controllers.Server.Stats', (
   Server,
   ServerOrderTrafficService,
   ServerTrafficService,
+  NEW_RANGE,
 ) => {
+  $scope.pattern = NEW_RANGE.PATTERN;
   $scope.currentView = {
     value: 'DASHBOARD',
   };
@@ -65,7 +67,7 @@ angular.module('controllers').controller('controllers.Server.Stats', (
   $scope.canOrderTraffic = () => dedicatedServerFeatureAvailability.allowDedicatedServerOrderTrafficOption() && !$scope.server.isExpired && $scope.server.canOrderQuota;
   $scope.canOrderMoreTraffic = () => !$scope.server.isExpired && $scope.server.canOrderQuota && _.get($scope.trafficOrderables, 'length');
 
-  $scope.isFullAgora = commercialRange => /^(ADV|STOR|ADVANCE|RISE)-[1-9]$/.test(commercialRange);
+  $scope.isFullAgora = commercialRange => $scope.pattern.test(commercialRange);
 
   $scope.$on('dedicated.informations.bandwidth', $scope.loadBandwidthInformations);
 
