@@ -27,6 +27,8 @@ import dedicatedUniverseComponents from './dedicatedUniverseComponents';
 import ovhManagerPccDashboard from './dedicatedCloud/dashboard';
 import ovhManagerPccResourceUpgrade from './dedicatedCloud/resource/upgrade';
 
+import dedicatedServerServers from './dedicated/server/servers/servers.module';
+
 Environment.setRegion(__WEBPACK_REGION__);
 
 angular
@@ -36,6 +38,7 @@ angular
     'chart.js',
     'controllers',
     dedicatedCloudDatacenterDrp,
+    dedicatedServerServers,
     dedicatedUniverseComponents,
     'directives',
     'filters',

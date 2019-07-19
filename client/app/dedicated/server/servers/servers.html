@@ -12,18 +12,18 @@
                     on-sort-change="$ctrl.onSortChange($sort)">
                     <oui-column title=":: 'dedicated_servers_name' | translate" property="reverse" searchable filterable sortable="asc" type="string"></oui-column>
                     <oui-column title=":: 'dedicated_servers_called' | translate" property="name" searchable filterable type="string" sortable>
-                        <a data-ui-sref="app.dedicated.server({ productId: $value })">{{$value}}</a>
+                        <a data-ng-href="{{ $ctrl.getServerDashboardLink($row) }}">{{$value}}</a>
                     </oui-column>
                     <oui-column title=":: 'dedicated_servers_model' | translate" property="commercialRange" searchable sortable></oui-column>
                     <oui-column title=":: 'dedicated_servers_localization' | translate" property="datacenter" searchable filterable sortable
                         type="options"
-                        type-options="$ctrl.getDatacenterEnumFilter()">
+                        type-options="$ctrl.datacenterEnumFilter">
                         <span data-translate="{{:: 'server_datacenter_' + $ctrl.constructor.toUpperSnakeCase($value) }}"></span>
                     </oui-column>
                     <oui-column title=":: 'dedicated_servers_status' | translate" property="state"
                         filterable sortable
                         type="options"
-                        type-options="$ctrl.getStateEnumFilter()">
+                        type-options="$ctrl.stateEnumFilter">
                         <span class="oui-status"
                               data-ng-class="{
                                 'oui-status_success': $ctrl.constructor.toUpperSnakeCase($value) === 'OK',
