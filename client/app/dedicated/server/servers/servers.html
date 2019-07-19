@@ -3,7 +3,13 @@
     <div class="container-fluid my-5">
         <div class="row d-md-flex">
             <div class="col-md-12 col-lg-12">
-                <oui-datagrid page-size="10" rows-loader="$ctrl.loadServers($config)" on-page-change="$ctrl.onPageChange($pagination)">
+                <oui-datagrid id="dg-servers"
+                    page-size="10"
+                    rows-loader="$ctrl.loadServers($config)"
+                    criteria="$ctrl.criteria"
+                    on-page-change="$ctrl.onPageChange($pagination)"
+                    on-criteria-changed="$ctrl.onCriteriaChanged($criteria)"
+                    on-sort-change="$ctrl.onSortChange($sort)">
                     <oui-column title=":: 'dedicated_servers_name' | translate" property="reverse" searchable filterable sortable="asc" type="string"></oui-column>
                     <oui-column title=":: 'dedicated_servers_called' | translate" property="name" searchable filterable type="string" sortable>
                         <a data-ui-sref="app.dedicated.server({ productId: $value })">{{$value}}</a>
@@ -18,7 +24,7 @@
                         filterable sortable
                         type="options"
                         type-options="$ctrl.getStateEnumFilter()">
-                        <span class="oui-status" 
+                        <span class="oui-status"
                               data-ng-class="{
                                 'oui-status_success': $ctrl.constructor.toUpperSnakeCase($value) === 'OK',
                                 'oui-status_warning': $ctrl.constructor.toUpperSnakeCase($value) === 'ERROR',
@@ -27,7 +33,7 @@
                                 data-translate="{{:: 'server_configuration_state_' + $ctrl.constructor.toUpperSnakeCase($value) }}"></span>
                     </oui-column>
                     <extra-top>
-                        <a class="oui-button oui-button_primary oui-button_secondary oui-button_icon-right" 
+                        <a class="oui-button oui-button_primary oui-button_secondary oui-button_icon-right"
                            target="_blank" rel="noopener"
                            data-ng-href="{{:: $ctrl.orderUrl }}">
                             <span data-translate="dedicated_servers_order"></span>
