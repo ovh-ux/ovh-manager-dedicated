@@ -39,6 +39,6 @@ angular
     renew: config.constants.billingRenew,
   })
   .config(routing)
-  .run(($rootScope, coreConfig) => {
+  .run(/* @ngInject */ ($rootScope, coreConfig) => {
     _.set($rootScope, 'worldPart', coreConfig.getRegion());
   });
