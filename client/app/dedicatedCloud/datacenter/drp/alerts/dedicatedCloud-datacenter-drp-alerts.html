@@ -21,7 +21,7 @@
 
 <oui-message class="mb-3"
              data-type="error"
-             data-ng-if="$ctrl.currentDrp.isWaitingVpnConfiguration">
+             data-ng-if="$ctrl.currentDrp.vpnStatus === $ctrl.DRP_VPN_STATUS.notConfigured">
     <div data-ng-if="!$ctrl.isOnSummaryState()">
         <span data-translate="dedicatedCloud_options_zerto_waiting_vpn_message_part_one"></span>
         <button type="button"

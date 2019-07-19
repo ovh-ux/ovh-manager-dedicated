@@ -24,8 +24,9 @@ angular
               .sort((stateA, stateB) => (stateA.datacenterId < stateB.datacenterId ? -1 : 1))[0];
 
             const drpVpnStatus = _.get(currentDrp, 'remoteSiteInformation.vpnConfigState');
-            currentDrp.isWaitingVpnConfiguration = drpVpnStatus
-              === DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS.notConfigured;
+            currentDrp.vpnStatus = drpVpnStatus;
+            currentDrp.isWaitingVpnConfiguration = drpVpnStatus !== undefined
+              && drpVpnStatus !== DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS.configured;
 
             currentDrp.state = dedicatedCloudDrp.constructor.formatStatus(currentDrp.state);
 

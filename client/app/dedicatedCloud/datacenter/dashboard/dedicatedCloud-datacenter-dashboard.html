@@ -44,14 +44,14 @@
                     <oui-tile-description>
                         <span class="oui-status"
                               data-ng-class="{
-                                  'oui-status_error': $ctrl.drpStatus === 'disabled' || $ctrl.currentDrp.isWaitingVpnConfiguration,
-                                  'oui-status_warning': $ctrl.drpStatus === 'delivering' || $ctrl.drpStatus === 'disabling',
-                                  'oui-status_success': $ctrl.drpStatus === 'delivered'
+                                  'oui-status_error': $ctrl.drpStatus === $ctrl.DRP_STATUS.disabled || $ctrl.currentDrp.vpnStatus === $ctrl.DRP_VPN_STATUS.notConfigured,
+                                  'oui-status_warning': $ctrl.drpStatus === $ctrl.DRP_STATUS.delivering || $ctrl.drpStatus === $ctrl.DRP_STATUS.disabling || $ctrl.currentDrp.vpnStatus === $ctrl.DRP_VPN_STATUS.configuring,
+                                  'oui-status_success': $ctrl.drpStatus === $ctrl.DRP_STATUS.delivered
                             }">
                             <span data-ng-if="::!$ctrl.currentDrp.isWaitingVpnConfiguration"
                                   data-translate="{{:: 'dedicatedCloud_options_zerto_status_' + $ctrl.drpStatus }}"></span>
                             <span data-ng-if="::$ctrl.currentDrp.isWaitingVpnConfiguration"
-                                  data-translate="dedicatedCloud_options_zerto_status_waiting_configuration"></span>
+                                  data-translate="{{:: 'dedicatedCloud_options_zerto_status_vpn_' + $ctrl.currentDrp.vpnStatus }}"></span>
                         </span>
                     </oui-tile-description>
                     <oui-action-menu data-ng-if="::$ctrl.isDrpActionPossible()"
