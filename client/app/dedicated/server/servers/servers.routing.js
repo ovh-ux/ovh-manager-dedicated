@@ -43,8 +43,21 @@ export default /* @ngInject */ ($stateProvider) => {
           .offset($stateParams.page)
           .sort($stateParams.sort, $stateParams.sortOrder);
 
+        const FILTER_OPERATORS = {
+          contains: 'like',
+          is: 'eq',
+          isAfter: 'gt',
+          isBefore: 'lt',
+          isNot: 'ne',
+          smaller: 'lt',
+          bigger: 'gt',
+          startsWith: 'like',
+          endsWith: 'like',
+        };
+
+
         filters.forEach(({ field, comparator, reference }) => {
-          request = request.addFilter(field, comparator, reference);
+          request = request.addFilter(field, _.get(FILTER_OPERATORS, comparator), reference);
         });
 
         return request.execute(null, true).$promise;

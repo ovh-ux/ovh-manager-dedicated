@@ -10,24 +10,12 @@ export default class ServersCtrl {
     this.$q = $q;
     this.$translate = $translate;
     this.ouiDatagridService = ouiDatagridService;
-
-    this.FILTER_OPERATORS = {
-      contains: 'like',
-      is: 'eq',
-      isAfter: 'gt',
-      isBefore: 'lt',
-      isNot: 'ne',
-      smaller: 'lt',
-      bigger: 'gt',
-      startsWith: 'like',
-      endsWith: 'like',
-    };
   }
 
   $onInit() {
     this.criteria = JSON.parse(this.filter).map(criteria => ({
       property: _.get(criteria, 'field') || 'name',
-      operator: 'contains',
+      operator: _.get(criteria, 'comparator'),
       value: criteria.reference[0],
     }));
 
@@ -74,7 +62,7 @@ export default class ServersCtrl {
   onCriteriaChanged($criteria) {
     const filter = $criteria.map(criteria => ({
       field: _.get(criteria, 'property') || 'name',
-      comparator: _.get(this.FILTER_OPERATORS, criteria.operator),
+      comparator: criteria.operator,
       reference: [criteria.value],
     }));
 
