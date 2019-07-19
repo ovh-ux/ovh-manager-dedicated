@@ -1,4 +1,5 @@
-class ServerOrderAgoraBandwidthVrackCtrl {
+class ServerOrderBandwidthVrackCtrl {
+  /* @ngInject */
   constructor($scope, $stateParams, $translate, User, Server, BandwidthVrackOrderService) {
     this.$scope = $scope;
     this.BandwidthVrackOrderService = BandwidthVrackOrderService;
@@ -8,7 +9,8 @@ class ServerOrderAgoraBandwidthVrackCtrl {
     this.User = User;
     this.model = {};
     this.isLoading = false;
-    this.existingBandwidth = this.$scope.currentActionData.bandwidth.vrack.bandwidth;
+
+    this.existingBandwidth = this.$scope.currentActionData.bandwidth.vrack.bandwidth.value;
 
     this.steps = [
       {
@@ -21,14 +23,13 @@ class ServerOrderAgoraBandwidthVrackCtrl {
               this.$stateParams.productId,
               this.existingBandwidth,
             )
-            .then((res) => {
-              this.isLoading = false;
-              this.plans = res;
+            .then((plans) => {
+              this.plans = this.Server.getValidBandwidthPlans(plans, this.existingBandwidth);
             })
             .catch((error) => {
               this.$scope.resetAction();
               return this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_vrack_loading_error'), error.data);
-            });
+            }).finally(() => { this.isLoading = false; });
         },
       },
       {
@@ -39,7 +40,6 @@ class ServerOrderAgoraBandwidthVrackCtrl {
           return this.Server
             .getBareMetalPrivateBandwidthOrder(this.$stateParams.productId, this.model.plan)
             .then((res) => {
-              this.isLoading = false;
               res.bandwidth = _.find(this.plans, 'planCode', this.model.plan).bandwidth;
               res.planCode = this.model.plan;
               this.provisionalPlan = res;
@@ -47,10 +47,11 @@ class ServerOrderAgoraBandwidthVrackCtrl {
             .catch((error) => {
               this.$scope.resetAction();
               return this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_vrack_loading_error'), error.data);
-            });
+            }).finally(() => { this.isLoading = false; });
         },
       },
     ];
+
     this.$scope.initFirstStep = this.steps[0].load.bind(this);
     this.$scope.initSecondStep = this.steps[1].load.bind(this);
     this.$scope.order = this.order.bind(this);
@@ -65,7 +66,6 @@ class ServerOrderAgoraBandwidthVrackCtrl {
         this.model.autoPay,
       )
         .then((result) => {
-          this.isLoading = false;
           this.$scope.resetAction();
           this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_vrack_success', {
             t0: result.order.url,
@@ -74,7 +74,7 @@ class ServerOrderAgoraBandwidthVrackCtrl {
         }).catch((error) => {
           this.$scope.resetAction();
           this.$scope.setMessage(this.$translate.instant('server_cancel_bandwidth_cancel_vrack_error'), error.data);
-        });
+        }).finally(() => { this.isLoading = false; });
     }
     return null;
   }
@@ -83,4 +83,4 @@ class ServerOrderAgoraBandwidthVrackCtrl {
     this.$scope.resetAction();
   }
 }
-angular.module('App').controller('ServerOrderAgoraBandwidthVrackCtrl', ServerOrderAgoraBandwidthVrackCtrl);
+angular.module('App').controller('ServerOrderBandwidthVrackCtrl', ServerOrderBandwidthVrackCtrl);
