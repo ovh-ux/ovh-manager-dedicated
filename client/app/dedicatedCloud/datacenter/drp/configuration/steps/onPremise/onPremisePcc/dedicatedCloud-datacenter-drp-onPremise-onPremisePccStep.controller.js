@@ -45,7 +45,7 @@ export default class {
           }
         }
 
-        return this.$state.go('app.dedicatedClouds', { reload: true }).then(() => {
+        return this.$state.go('app.dedicatedClouds', {}, { reload: true }).then(() => {
           // $timeout necessary to display alerter message
           this.$timeout(() => {
             this.Alerter.set(
