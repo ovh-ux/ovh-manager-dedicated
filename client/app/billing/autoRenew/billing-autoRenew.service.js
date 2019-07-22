@@ -1,5 +1,5 @@
 import {
-  AUTORENEW_EVENT, NIC_URL, SERVICES_TYPE,
+  AUTORENEW_EVENT, CONTRACTS_IDS, NIC_URL, SERVICES_TYPE,
 } from './autorenew.constants';
 
 import BillingService from './BillingService.class';
