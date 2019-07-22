@@ -90,4 +90,8 @@ export default class BillingService {
   getExpirationDate() {
     return this.expirationDate.format('LL');
   }
+
+  cancelResiliation() {
+    this.renew.deleteAtExpiration = false;
+  }
 }

@@ -1,6 +1,3 @@
-import _ from 'lodash';
-import BillingService from '../../BillingService';
-
 export default /* @ngInject */ ($stateProvider) => {
   $stateProvider.state('app.account.billing.autorenew.update', {
     url: '/update?serviceId',
@@ -13,24 +10,11 @@ export default /* @ngInject */ ($stateProvider) => {
       defaultPaymentMean: /* @ngInject */
         ovhPaymentMethod => ovhPaymentMethod.getDefaultPaymentMethod(),
       goBack: /* @ngInject */ goToAutorenew => goToAutorenew,
-      services: /* @ngInject */ (OvhHttp, serviceId) => OvhHttp.get('/billing/autorenew/services', {
-        rootPath: '2api',
-        params: {
-          count: 10,
-          offset: 1,
-          search: serviceId,
-          type: null,
-          renew: null,
-          renewal: null,
-          order: null,
-          nicBilling: null,
-        },
-      }),
       serviceId: /* @ngInject */ $transition$ => $transition$.params().serviceId,
       service: /* @ngInject */ (
+        BillingAutoRenew,
         serviceId,
-        services,
-      ) => new BillingService(_.find(services.list.results, { serviceId })),
+      ) => BillingAutoRenew.getService(serviceId),
       updateRenew: /* @ngInject */
         BillingAutoRenew => (
           service,
