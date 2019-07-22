@@ -94,4 +94,20 @@ export default class BillingService {
   cancelResiliation() {
     this.renew.deleteAtExpiration = false;
   }
+
+  canHaveEngagement() {
+    return ['DEDICATED_SERVER'].includes(this.serviceType);
+  }
+
+  setForResiliation() {
+    if (this.hasAutomaticRenew() && !this.isAutomaticallyRenewed()) {
+      this.setManualRenew();
+    }
+
+    this.renew.deleteAtExpiration = true;
+  }
+
+  isAutomaticallyRenewed() {
+    return ['automaticV2014', 'automaticV2016', 'automaticForcedProduct'].includes(this.renewalType);
+  }
 }
