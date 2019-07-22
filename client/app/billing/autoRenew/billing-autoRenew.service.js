@@ -2,16 +2,20 @@ import {
   AUTORENEW_EVENT, NIC_URL, SERVICES_TYPE,
 } from './autorenew.constants';
 
+import BillingService from './BillingService';
+
 export default class {
   /* @ngInject */
   constructor(
     $q,
     DucUserContractService,
+    OvhApiBillingAutorenewServices,
     OvhApiEmailExchange,
     OvhHttp,
   ) {
     this.$q = $q;
     this.DucUserContractService = DucUserContractService;
+    this.OvhApiBillingAutorenewServices = OvhApiBillingAutorenewServices;
     this.OvhApiEmailExchange = OvhApiEmailExchange;
     this.OvhHttp = OvhHttp;
 
@@ -36,6 +40,14 @@ export default class {
     });
   }
 
+  getService(serviceId) {
+    return this.OvhApiBillingAutorenewServices.Aapi()
+      .query({
+        search: serviceId,
+      }).$promise
+      .then(services => new BillingService(_.head(services.list.results)));
+  }
+
   getServicesTypes() {
     return this.$q.when(SERVICES_TYPE);
   }
@@ -53,6 +65,18 @@ export default class {
       _.set(result, 'state', 'ERROR');
       return this.$q.reject(result);
     });
+  }
+
+  updateService(service) {
+    return this.OvhApiBillingAutorenewServices.Aapi().put({}, {
+      updateList: [service],
+    }).$promise
+      .then((result) => {
+        if (result.state === 'OK') {
+          return result;
+        }
+        return this.$q.reject(result);
+      });
   }
 
   getAutorenew() {
