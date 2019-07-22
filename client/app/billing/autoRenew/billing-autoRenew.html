@@ -22,14 +22,14 @@
 
 <div data-ui-view>
 
+    <div data-ovh-alert class="mx-3 mt-2"></div>
+
     <div id="billing-autorenew">
         <div class="text-center" data-ng-if="initLoading">
             <oui-spinner data-size="l"></oui-spinner>
         </div>
 
         <div class="tab-content" data-ng-if="!initLoading">
-
-            <div data-ovh-alert></div>
 
             <oui-message
                 data-type="success"

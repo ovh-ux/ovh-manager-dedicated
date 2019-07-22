@@ -19,6 +19,19 @@ export default /* @ngInject */ ($stateProvider) => {
       homeLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew'),
       sshLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew.ssh'),
       isEnterpriseCustomer: /* @ngInject */ currentUser => currentUser.isEnterprise,
+      goToAutorenew: /* @ngInject */ ($state, $timeout, Alerter) => (message = false, type = 'success') => {
+        const reload = message && type === 'success';
+
+        const promise = $state.go('app.account.billing.autorenew', {}, {
+          reload,
+        });
+
+        if (message) {
+          promise.then(() => $timeout(() => Alerter.set(`alert-${type}`, message)));
+        }
+
+        return promise;
+      },
     },
     redirectTo: /* @ngInject */ isEnterpriseCustomer => (isEnterpriseCustomer ? 'app.account.billing.autorenew.agreements' : false),
   });
