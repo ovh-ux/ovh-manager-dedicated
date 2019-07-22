@@ -133,4 +133,18 @@ export default class {
       exchange,
     }).$promise;
   }
+
+  getAutorenewAgreements() {
+    return this.DucUserContractService.getAgreementsToValidate(
+      ({ contractId }) => _.values(CONTRACTS_IDS).includes(contractId),
+    )
+      .then(contracts => _.map(contracts, ({ code: name, pdf: url, id }) => ({ name, url, id })));
+  }
+
+  updateRenew(service, agreements) {
+    const agreementsPromise = service.hasAutomaticRenew()
+      ? this.DucUserContractService.acceptAgreements(agreements) : Promise.resolve([]);
+    return agreementsPromise
+      .then(() => this.updateServices([_.pick(service, ['serviceId', 'serviceType', 'renew'])]));
+  }
 }
