@@ -7,9 +7,11 @@ class ServerOrderBandwidthVrackCtrl {
     this.$translate = $translate;
     this.Server = Server;
     this.User = User;
+  }
+
+  $onInit() {
     this.model = {};
     this.isLoading = false;
-
     this.existingBandwidth = this.$scope.currentActionData.bandwidth.vrack.bandwidth.value;
 
     this.steps = [
@@ -66,15 +68,16 @@ class ServerOrderBandwidthVrackCtrl {
         this.model.autoPay,
       )
         .then((result) => {
-          this.$scope.resetAction();
           this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_vrack_success', {
             t0: result.order.url,
           }), true);
           window.open(result.order.url);
         }).catch((error) => {
-          this.$scope.resetAction();
           this.$scope.setMessage(this.$translate.instant('server_cancel_bandwidth_cancel_vrack_error'), error.data);
-        }).finally(() => { this.isLoading = false; });
+        }).finally(() => {
+          this.isLoading = false;
+          this.$scope.resetAction();
+        });
     }
     return null;
   }
