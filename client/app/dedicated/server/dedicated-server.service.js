@@ -1353,6 +1353,8 @@ angular
     };
 
     this.getBareMetalPublicBandwidthOrder = function (serviceName, planCode) {
+      this.OvhApiOrderBaremetalPublicBW.resetCache();
+      this.OvhApiOrderBaremetalPublicBW.resetQueryCache();
       return this.OvhApiOrderBaremetalPublicBW.getPublicBandwidthOrder({
         serviceName,
         planCode,
@@ -1377,6 +1379,8 @@ angular
     };
 
     this.getBareMetalPrivateBandwidthOrder = function (serviceName, planCode) {
+      this.OvhApiOrderBaremetalPrivateBW.resetCache();
+      this.OvhApiOrderBaremetalPrivateBW.resetQueryCache();
       return this.OvhApiOrderBaremetalPrivateBW.getPrivateBandwidthOrder({
         serviceName,
         planCode,
