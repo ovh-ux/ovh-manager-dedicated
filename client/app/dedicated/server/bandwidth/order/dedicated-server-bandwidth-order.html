@@ -11,7 +11,7 @@
              data-wizard-step-on-load="initFirstStep">
             <div class="text-center" data-ng-if="ctrl.steps[0].isLoading()">
                 <oui-spinner></oui-spinner>
-                <span data-translate="server_order_bandwidth_load"></span>
+                <span data-translate="server_order_bandwidth_load" class="d-block"></span>
             </div>
             <span data-ng-if="ctrl.plans.length === 0" data-translate="server_order_bandwidth_empty_plans"></span>
             <form data-ng-if="!ctrl.steps[0].isLoading() && ctrl.plans.length > 0">
@@ -37,7 +37,7 @@
             data-wizard-step-on-load="initSecondStep">
             <div class="text-center" data-ng-if="ctrl.steps[1].isLoading()">
                 <oui-spinner></oui-spinner>
-                <span data-translate="server_order_bandwidth_vrack_load"></span>
+                <span data-translate="server_order_bandwidth_vrack_load" class="d-block"></span>
             </div>
             <form data-ng-if="!ctrl.steps[1].isLoading()">
                 <p data-translate="select_bandwidth_plan_summary"></p>

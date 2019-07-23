@@ -6,6 +6,9 @@ class ServerOrderBandwidthCtrl {
     this.$translate = $translate;
     this.Server = Server;
     this.User = User;
+  }
+
+  $onInit() {
     this.model = {};
     this.data = {};
     this.isLoading = false;
@@ -59,15 +62,16 @@ class ServerOrderBandwidthCtrl {
       this.Server.bareMetalPublicBandwidthPlaceOrder(
         this.$stateParams.productId, this.model.plan, this.model.autoPay,
       ).then((result) => {
-        this.$scope.resetAction();
         this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_vrack_success', {
           t0: result.order.url,
         }), true);
         window.open(result.order.url);
       }).catch((error) => {
-        this.$scope.resetAction();
         this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_error'), error.data);
-      }).finally(() => { this.isLoading = false; });
+      }).finally(() => {
+        this.isLoading = false;
+        this.$scope.resetAction();
+      });
     }
   }
 
