@@ -66,7 +66,6 @@ export default class ServersCtrl {
       reference: [criteria.value],
     }));
 
-
     this.onListParamsChange({
       filter: JSON.stringify(filter),
     });

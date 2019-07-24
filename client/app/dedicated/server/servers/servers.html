@@ -14,7 +14,7 @@
                     <oui-column title=":: 'dedicated_servers_called' | translate" property="name" searchable filterable type="string" sortable>
                         <a data-ng-href="{{ $ctrl.getServerDashboardLink($row) }}">{{$value}}</a>
                     </oui-column>
-                    <oui-column title=":: 'dedicated_servers_model' | translate" property="commercialRange" searchable sortable></oui-column>
+                    <oui-column title=":: 'dedicated_servers_model' | translate" property="commercialRange" searchable sortable filterable type="string"></oui-column>
                     <oui-column title=":: 'dedicated_servers_localization' | translate" property="datacenter" searchable filterable sortable
                         type="options"
                         type-options="$ctrl.datacenterEnumFilter">

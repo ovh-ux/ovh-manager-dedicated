@@ -26,7 +26,7 @@ export default /* @ngInject */ ($stateProvider) => {
       },
       filter: {
         value: '[]',
-        squash: false,
+        squash: true,
       },
     },
     resolve: {
@@ -55,9 +55,23 @@ export default /* @ngInject */ ($stateProvider) => {
           endsWith: 'like',
         };
 
-
         filters.forEach(({ field, comparator, reference }) => {
-          request = request.addFilter(field, _.get(FILTER_OPERATORS, comparator), reference);
+          request = request.addFilter(
+            field,
+            _.get(FILTER_OPERATORS, comparator),
+            reference.map((val) => {
+              switch (comparator.toUpperCase()) {
+                case 'CONTAINS':
+                  return `%25${val}%25`;
+                case 'STARTSWITH':
+                  return `${val}%25`;
+                case 'ENDSWITH':
+                  return `%25${val}`;
+                default:
+                  return val;
+              }
+            }),
+          );
         });
 
         return request.execute(null, true).$promise;
