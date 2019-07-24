@@ -1,24 +1,26 @@
-<td><!-- no checkbox on subproduct --></td>
+<td class="oui-datagrid__cell"><!-- no checkbox on subproduct --></td>
 
-<td data-translate="{{ 'autorenew_service_type_'+ service.subProducts.domain.serviceType }}"></td>
+<td class="oui-datagrid__cell"
+    data-translate="{{ 'autorenew_service_type_'+ service.subProducts.domain.serviceType }}">
+</td>
 
-<td>
+<td class="oui-datagrid__cell">
     <span data-ng-bind="::service.subProducts.domain.serviceId" data-ng-if="service.subProducts.domain.serviceType !== 'EXCHANGE'"></span>
     <span data-ng-bind="::service.subProducts.domain.alternativeId" data-ng-if="service.subProducts.domain.serviceType === 'EXCHANGE'"></span>
 </td>
 
-<td>
+<td class="oui-datagrid__cell">
     <span data-ng-if="service.subProducts.domain && service.subProducts.domain.expiration"
           data-ng-class="getExpirationClass(service.subProducts.domain)">
           <billing-renew-date data-service-infos="service.subProducts.domain"></billing-renew-date>
     </span>
 </td>
 
-<td>
+<td class="oui-datagrid__cell">
   <billing-renew-label data-service-infos="service.subProducts.domain"></billing-renew-label>
 </td>
 
-<td>
+<td class="oui-datagrid__cell">
     <oui-action-menu
         data-aria-label="{{:: 'autorenew_service_action_menu_tooltip' | translate }}"
         data-compact

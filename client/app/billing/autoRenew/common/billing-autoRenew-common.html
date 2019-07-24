@@ -1,4 +1,4 @@
-<td class="align-middle">
+<td class="oui-datagrid__cell">
     <label class="control-label"
            data-ng-attr-title="{{ 'autorenew_service_selection_checkbox' | translate }}">
         <input type="checkbox"
@@ -8,27 +8,27 @@
     </label>
 </td>
 
-<td>
+<td class="oui-datagrid__cell">
     <span data-ng-bind-html="('autorenew_service_type_' + service.serviceType) | translate"></span>
 </td>
 
-<td>
+<td class="oui-datagrid__cell">
     <span data-ng-bind="::service.serviceId" data-ng-hide="service.serviceType === 'EXCHANGE'"></span>
     <span data-ng-bind="::service.alternativeId" data-ng-show="service.serviceType === 'EXCHANGE'"></span>
 </td>
 
-<td>
+<td class="oui-datagrid__cell">
     <span data-ng-if="service && service.expiration"
           data-ng-class="getExpirationClass(service)">
           <billing-renew-date data-service-infos="service"></billing-renew-date>
     </span>
 </td>
 
-<td>
+<td class="oui-datagrid__cell">
   <billing-renew-label data-service-infos="service"></billing-renew-label>
 </td>
 
-<td>
+<td class="oui-datagrid__cell">
     <button type="button"
             class="oui-button oui-button_secondary oui-button_icon-only oui-button_small-width"
             data-ng-if="service.serviceType === 'HOSTING_DOMAIN'"
