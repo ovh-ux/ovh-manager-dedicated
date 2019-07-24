@@ -55,10 +55,7 @@ export default class {
   }
 
   isProvisionning() {
-    return [
-      DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toProvision,
-      DEDICATEDCLOUD_DATACENTER_DRP_STATUS.provisionning,
-    ].includes(this.currentDrp.state);
+    return DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivering === this.currentDrp.state;
   }
 
   isDrpTypeOnPremise() {
