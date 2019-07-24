@@ -1,79 +1,95 @@
-angular.module('Module.ip.controllers').controller('IpReverseUpdateCtrl', ($scope, $rootScope, $translate, Ip, IpReverse, Alerter, Validator, $location, $q) => {
-  function init(data) {
-    $scope.data = data || $scope.currentActionData;
-    $scope.model = { reverse: angular.copy($scope.data.ip.reverse ? punycode.toUnicode($scope.data.ip.reverse) : '') };
-  }
+angular.module('Module.ip.controllers').controller('IpIpv6ReverseDelegationCtrl', ($scope, $rootScope, $translate, Ip, IpReverse, Alerter, Validator, $q) => {
+  $scope.data = $scope.currentActionData;
 
-  $scope.updateReverse = function () {
-    $scope.loading = true;
+  $scope.model = {
+    reverses: angular.copy($scope.data.ipBlock.reverseDelegations) || [],
+    currentReverse: '',
+  };
 
-    // If not modified, return
-    if ($scope.model.reverse && punycode.toASCII($scope.model.reverse) === $scope.data.ip.reverse) {
-      return $scope.resetAction();
+  $scope.errors = {
+    INVALID_DNS: false,
+    ALREADY_EXISTS: false,
+  };
+
+  // -- Step1
+  $scope.addReverse = function () {
+    if ($scope.model.reverses.length < 2) {
+      if (~$scope.model.reverses.indexOf($scope.model.currentReverse)) {
+        $scope.errors.ALREADY_EXISTS = true;
+      } else {
+        $scope.errors.ALREADY_EXISTS = false;
+        if (Validator.isValidDomain($scope.model.currentReverse.replace(/\.$/, '')) && /\.$/.test($scope.model.currentReverse)) {
+          $scope.model.reverses.push($scope.model.currentReverse);
+          $scope.model.currentReverse = '';
+          $scope.errors.INVALID_DNS = false;
+        } else {
+          $scope.errors.INVALID_DNS = true;
+        }
+      }
     }
+  };
 
-    return IpReverse
-      .updateReverse(
-        $scope.data.ipBlock.service,
-        $scope.data.ipBlock.ipBlock,
-        $scope.data.ip.ip,
-        $scope.model.reverse,
-      )
-      .then(() => {
-        $rootScope.$broadcast('ips.table.refreshBlock', $scope.data.ipBlock);
-        Alerter.success($translate.instant('ip_table_manage_reverse_success'));
-      })
-      .catch(data => Alerter.alertFromSWS($translate.instant('ip_table_manage_reverse_failure'), data))
-      .finally(() => $scope.cancelAction());
+  $scope.deleteReverse = function (reverse) {
+    _.remove($scope.model.reverses, delegatedReverse => reverse === delegatedReverse);
+  };
+
+  // -- Step2
+  $scope.loadStep2 = function () {
+    $scope.reversesToAdd = _.difference(
+      $scope.model.reverses,
+      $scope.data.ipBlock.reverseDelegations,
+    );
+    $scope.reversesToDelete = _.difference(
+      $scope.data.ipBlock.reverseDelegations,
+      $scope.model.reverses,
+    );
   };
 
   $scope.isValid = function () {
-    return $scope.model.reverse && Validator.isValidDomain($scope.model.reverse.replace(/\.$/, ''));
+    $scope.reversesToAdd = _.difference(
+      $scope.model.reverses,
+      $scope.data.ipBlock.reverseDelegations,
+    );
+    $scope.reversesToDelete = _.difference(
+      $scope.data.ipBlock.reverseDelegations,
+      $scope.model.reverses,
+    );
+
+    return (
+      ($scope.reversesToAdd.length || $scope.reversesToDelete.length)
+        && ($scope.model.reverses.length || $scope.data.ipBlock.reverseDelegations.length)
+        && $scope.model.reverses.filter(reverse => !Validator.isValidDomain(reverse.replace(/\.$/, ''))).length === 0
+    );
   };
 
-  // Come from URL
-  if ($location.search().action === 'reverse' && $location.search().ip) {
-    $scope.loading = true;
-    $q
-      .all([Ip.getIpDetails($location.search().ipBlock), Ip.getServicesList()])
-      .then(
-        (result) => {
-          const ipDetails = result[0];
-          const serviceList = result[1];
-          const serviceForIp = _.find(
-            serviceList,
-            service => ipDetails.routedTo.serviceName === service.serviceName,
-          );
-          if (serviceForIp) {
-            init({
-              ip: { ip: $location.search().ip },
-              ipBlock: {
-                ipBlock: $location.search().ipBlock,
-                service: serviceForIp || null,
-              },
-            });
-          }
-        },
-        (data) => {
-          Alerter.alertFromSWS($translate.instant('ip_dashboard_error'), data);
-        },
-      )
-      .then(
-        () => IpReverse
-          .getReverse($location.search().ipBlock, $location.search().ip)
-          .then((reverseData) => {
-            $scope.model = { reverse: angular.copy(reverseData.reverse) };
-          }), // if error > reverse is init to '' > nothing more to do
-      )
-      .finally(() => {
-        $scope.loading = false;
-      });
-  } else {
-    init();
-  }
-
-  $scope.cancelAction = function () {
-    Ip.cancelActionParam('reverse');
+  $scope.addIpv6ReverseDelegation = function () {
     $scope.resetAction();
+
+    const queueToDelete = $scope.reversesToDelete
+      .map(reverse => IpReverse.deleteDelegation($scope.data.ipBlock.ipBlock, reverse));
+
+    $q.all(queueToDelete).then(
+      () => {
+        const queueToAdd = $scope.reversesToAdd
+          .map(reverse => IpReverse.setDelegation($scope.data.ipBlock.ipBlock, reverse));
+        if (queueToAdd.length) {
+          $q.all(queueToAdd).then(
+            () => {
+              $rootScope.$broadcast('ips.table.refreshBlock', $scope.data.ipBlock);
+              Alerter.success($translate.instant('ip_table_manage_delegation_ipv6block_success'));
+            },
+            (err) => {
+              Alerter.alertFromSWS($translate.instant('ip_table_manage_delegation_ipv6block_err'), err);
+            },
+          );
+        } else {
+          $rootScope.$broadcast('ips.table.refreshBlock', $scope.data.ipBlock);
+          Alerter.success($translate.instant('ip_table_manage_delegation_ipv6block_success'));
+        }
+      },
+      (err) => {
+        Alerter.alertFromSWS($translate.instant('ip_table_manage_delegation_ipv6block_err'), err);
+      },
+    );
   };
 });
