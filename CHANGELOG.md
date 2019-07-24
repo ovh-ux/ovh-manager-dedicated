@@ -1,3 +1,17 @@
+<a name="10.19.8"></a>
+## [10.19.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.7...v10.19.8) (2019-07-24)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations ([83d26e1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/83d26e1))
+* **i18n:** add missing translations ([25c29f7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/25c29f7))
+* **i18n:** add missing translations ([950c58b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/950c58b))
+* **i18n:** add missing translations ([a5f61f7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a5f61f7))
+* **ip.reverse:** use vps api only for legacy vps ([5497218](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5497218))
+
+
+
 <a name="10.19.7"></a>
 ## [10.19.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.6...v10.19.7) (2019-07-11)
 
