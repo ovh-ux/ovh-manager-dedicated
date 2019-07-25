@@ -1,8 +1,8 @@
-<div data-ng-controller="ServerOrderBandwidthCtrl as ctrl">
+<div data-ng-controller="ServerOrderBandwidthVrackCtrl as ctrl">
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="order"
-         data-wizard-title=":: 'server_order_bandwidth_title' | translate"
+         data-wizard-title=":: 'server_order_bandwidth_vrack_title' | translate"
          data-wizard-bread-crumb
          data-wizard-confirm-button-text=":: 'wizard_pay' | translate">
 
@@ -11,11 +11,11 @@
              data-wizard-step-on-load="initFirstStep">
             <div class="text-center" data-ng-if="ctrl.steps[0].isLoading()">
                 <oui-spinner></oui-spinner>
-                <span data-translate="server_order_bandwidth_load" class="d-block"></span>
+                <span data-translate="server_order_bandwidth_vrack_load" class="d-block"></span>
             </div>
             <span data-ng-if="ctrl.plans.length === 0" data-translate="server_order_bandwidth_empty_plans"></span>
             <form data-ng-if="!ctrl.steps[0].isLoading() && ctrl.plans.length > 0">
-                <p data-translate="select_bandwidth_type_label"></p>
+                <p data-translate="select_bandwidth_vrack_type_label"></p>
                 <div data-ng-repeat="plan in ctrl.plans track by $index">
                     <div class="row">
                         <div class="col-md-9 pr-0">
@@ -25,7 +25,7 @@
                         </div>
                         <div class="col-md-3 pl-0">
                             <span class="red bold" data-ng-bind-html="plan.prices[2].price.text"></span>
-                            <span class="small italic" data-translate="plan_price_per_month"></span>
+                            <span class="small" data-translate="plan_price_per_month"></span>
                         </div>
                     </div>
                 </div>
@@ -33,8 +33,8 @@
             </form>
         </div>
         <div data-wizard-step
-            data-wizard-step-valid="ctrl.steps[1].isValid()"
-            data-wizard-step-on-load="initSecondStep">
+             data-wizard-step-valid="ctrl.steps[1].isValid()"
+             data-wizard-step-on-load="initSecondStep">
             <div class="text-center" data-ng-if="ctrl.steps[1].isLoading()">
                 <oui-spinner></oui-spinner>
                 <span data-translate="server_order_bandwidth_vrack_load" class="d-block"></span>

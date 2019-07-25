@@ -1,4 +1,4 @@
-class ServerOrderBandwidthVrackCtrl {
+class ServerOrderLegacyBandwidthVrackCtrl {
   constructor($scope, $stateParams, $translate, User, BandwidthVrackOrderService) {
     this.$scope = $scope;
     this.$stateParams = $stateParams;
@@ -111,4 +111,4 @@ class ServerOrderBandwidthVrackCtrl {
   }
 }
 
-angular.module('App').controller('ServerOrderBandwidthVrackCtrl', ServerOrderBandwidthVrackCtrl);
+angular.module('App').controller('ServerOrderLegacyBandwidthVrackCtrl', ServerOrderLegacyBandwidthVrackCtrl);

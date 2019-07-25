@@ -1,4 +1,4 @@
-<div data-ng-controller="ServerOrderBandwidthVrackCtrl as ctrl">
+<div data-ng-controller="ServerOrderLegacyBandwidthVrackCtrl as ctrl">
 
     <div data-wizard
          data-wizard-on-cancel="resetAction"
@@ -14,7 +14,7 @@
             <div class="text-center"
                  data-ng-if="ctrl.steps[0].isLoading()">
                 <oui-spinner></oui-spinner>
-                <span data-translate="server_order_bandwidth_vrack_load"></span>
+                <span data-translate="server_order_bandwidth_vrack_load" class="d-block"></span>
             </div>
 
             <form data-ng-if="!ctrl.steps[0].isLoading()">
