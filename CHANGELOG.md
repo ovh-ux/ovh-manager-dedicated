@@ -1,3 +1,27 @@
+<a name="10.20.0"></a>
+# [10.20.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.9...v10.20.0) (2019-07-25)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations ([4386f0f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4386f0f))
+* **i18n:** add missing translations ([e824d0f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e824d0f))
+* **mrtg-graphic:** fix mrtg graphics ([caa7741](https://github.com/ovh-ux/ovh-manager-dedicated/commit/caa7741))
+
+
+### Features
+
+* **baremetal-agora:** move baremetal option to full agora ([04be0cc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/04be0cc))
+* **baremetal-bandwidth:** add new bandwidth options ([e270ec3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e270ec3))
+* **baremetal-bandwidth:** add new bandwidth options ([3502213](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3502213))
+* **baremetal-bandwidth:** date error fix ([80471f4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/80471f4))
+* **baremetal-bandwidth:** fix api query cache ([c466240](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c466240))
+* **baremetal-bandwidth:** restructure controller ([d0fe459](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d0fe459))
+* **baremetal-bandwidth:** restructure controller ([30978f4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/30978f4))
+* **baremetal-bandwidth:** upgrade ovh api services ([af673ea](https://github.com/ovh-ux/ovh-manager-dedicated/commit/af673ea))
+
+
+
 <a name="10.19.9"></a>
 ## [10.19.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.8...v10.19.9) (2019-07-25)
 
