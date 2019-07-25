@@ -402,6 +402,8 @@ export default class {
       case DEDICATEDCLOUD_DATACENTER_DRP_STATUS.toUnprovision:
       case DEDICATEDCLOUD_DATACENTER_DRP_STATUS.unprovisionning:
         return DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabling;
+      case DEDICATEDCLOUD_DATACENTER_DRP_STATUS.error:
+        return DEDICATEDCLOUD_DATACENTER_DRP_STATUS.error;
       default:
         return DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabled;
     }
