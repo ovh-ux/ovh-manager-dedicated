@@ -1,6 +1,8 @@
 // Should be moved to current folder
 import template from './billing-autoRenew.html';
 
+import BillingService from './BillingService.class';
+
 export default /* @ngInject */ ($stateProvider) => {
   $stateProvider.state('app.account.billing.autorenew', {
     url: '/autorenew',
@@ -16,6 +18,8 @@ export default /* @ngInject */ ($stateProvider) => {
         $state,
         $transition$,
       ) => () => $state.href($transition$.to().name),
+      defaultPaymentMean: /* @ngInject */
+        ovhPaymentMethod => ovhPaymentMethod.getDefaultPaymentMethod(),
       homeLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew'),
       sshLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew.ssh'),
       isEnterpriseCustomer: /* @ngInject */ currentUser => currentUser.isEnterprise,
@@ -32,6 +36,8 @@ export default /* @ngInject */ ($stateProvider) => {
 
         return promise;
       },
+      services: /* @ngInject */ BillingAutoRenew => BillingAutoRenew.getServices()
+        .then(services => _.map(services.list.results, service => new BillingService(service))),
     },
     redirectTo: /* @ngInject */ isEnterpriseCustomer => (isEnterpriseCustomer ? 'app.account.billing.autorenew.agreements' : false),
   });

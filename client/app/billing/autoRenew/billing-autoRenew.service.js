@@ -53,18 +53,17 @@ export default class {
   }
 
   updateServices(updateList) {
-    return this.OvhHttp.put('/sws/billing/autorenew/services/update', {
-      rootPath: '2api',
-      data: {
+    return this.OvhApiBillingAutorenewServices.Aapi()
+      .put({}, {
         updateList,
-      },
-    }).then((result) => {
-      if (result.state === 'OK') {
-        return result;
-      }
-      _.set(result, 'state', 'ERROR');
-      return this.$q.reject(result);
-    });
+      }).$promise
+      .then((result) => {
+        if (result.state === 'OK') {
+          return result;
+        }
+        _.set(result, 'state', 'ERROR');
+        return this.$q.reject(result);
+      });
   }
 
   updateService(service) {
