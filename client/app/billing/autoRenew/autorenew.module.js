@@ -11,9 +11,9 @@ import update from './actions/update/update.module';
 import warnNicBilling from './actions/warnNicBilling/warnNicBilling.module';
 import warnPendingDebt from './actions/warnPendingDebt/pending-debt.module';
 
-import service from './billing-autoRenew.service';
-
+import component from './autorenew.component';
 import routing from './autorenew.routing';
+import service from './autorenew.service';
 
 const moduleName = 'ovhManagerBillingAutorenew';
 
@@ -33,6 +33,7 @@ angular.module(moduleName, [
   warnPendingDebt,
 ])
   .config(routing)
+  .component('autoRenew', component)
   .service('BillingAutoRenew', service);
 
 export default moduleName;

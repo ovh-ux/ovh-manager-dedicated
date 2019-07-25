@@ -1,12 +1,9 @@
-// Should be moved to current folder
-import template from './billing-autoRenew.html';
+import _ from 'lodash';
 
 export default /* @ngInject */ ($stateProvider) => {
   $stateProvider.state('app.account.billing.autorenew', {
     url: '/autorenew',
-    // needs to be imported
-    controller: 'Billing.controllers.AutoRenew',
-    template,
+    component: 'autoRenew',
     translations: { value: ['.'], format: 'json' },
     resolve: {
       agreementsLink: /* @ngInject */ $state => $state.href(
@@ -31,6 +28,37 @@ export default /* @ngInject */ ($stateProvider) => {
         }
 
         return promise;
+      },
+
+      allServices: /* @ngInject */ BillingAutoRenew => BillingAutoRenew.getAllServices(),
+      services: /* @ngInject */ allServices => _.get(allServices, 'list.results', []),
+      nicBilling: /* @ngInject */ allServices => _.get(allServices, 'nicBilling', []),
+
+      getSMSAutomaticRenewalURL: /* @ngInject */ constants => service => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/options/recredit`,
+      getSMSCreditBuyingURL: /* @ngInject */ constants => service => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/order`,
+
+      filtersOptions: /* @ngInject */ ($translate, services) => {
+        const serviceTypesValues = _(services)
+          .map('serviceType')
+          .uniq()
+          .mapKeys()
+          .mapValues(serviceType => $translate.instant(`autorenew_service_type_${serviceType}`))
+          .value();
+
+        return {
+          serviceType: {
+            hideOperators: true,
+            values: serviceTypesValues,
+          },
+          renewStatus: {
+            hideOperators: true,
+            values: [],
+          },
+          renewExpiration: {
+            hideOperators: true,
+            values: [],
+          },
+        };
       },
     },
     redirectTo: /* @ngInject */ isEnterpriseCustomer => (isEnterpriseCustomer ? 'app.account.billing.autorenew.agreements' : false),
