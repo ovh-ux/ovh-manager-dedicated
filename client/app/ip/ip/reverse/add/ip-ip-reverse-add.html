@@ -1,56 +1,64 @@
-<div data-ng-controller="IpAddIpv6Ctrl">
-    <div data-wizard
-         data-wizard-on-cancel="resetAction"
-         data-wizard-on-finish="addIpv6"
-         data-wizard-title=":: 'ip_table_manage_add_ipv6block' | translate">
-
-        <div data-wizard-step
-             data-wizard-step-valid="isValid.all()">
-
-            <p class="alert alert-info"
-               data-translate="ip_table_manage_add_ipv6block_question">
-            </p>
-
-            <form>
-                <div class="form-group">
-                    <label class="control-label"
-                           for="ipv6"
-                           data-translate="ip_ipblock">
-                    </label>
-                    <p class="form-control-static"
-                       data-ng-bind="data.ipBlock.ipBlock">
-                    </p>
-                </div>
-
-                <div class="form-group"
-                     data-ng-class="{
-                         'has-error': model.ipv6 && !isValid.ipv6()
-                     }">
-                    <label class="control-label"
-                           for="ipv6"
-                           data-ng-bind="('ip_table_header_ip_address' | translate)  + ' ' + ('ip_ipv6' | translate)">
-                    </label>
-                    <input type="text"
-                           id="ipv6"
-                           class="form-control"
-                           data-ng-model="model.ipv6">
-                </div>
-
-                <div class="form-group"
-                     data-ng-class="{
-                         'has-error': !isValid.reverse()
-                     }">
-                    <label class="control-label"
-                           for="reverseV6"
-                           data-ng-bind="('ip_table_header_reverse' | translate) + ' ' + ('optional' | translate)">
-                    </label>
-                    <input type="text"
-                           id="reverseV6"
-                           class="form-control"
-                           data-ng-model="model.reverse">
-                </div>
-            </form>
-
-        </div>
-    </div>
-</div>
+<form
+    data-ng-controller="IpAddIpv6Ctrl"
+    name="addIpv6ReverseForm"
+    novalidate
+    data-ng-submit="isValid.all() && addIpv6()"
+>
+    <oui-modal
+        data-heading="{{:: 'ip_table_manage_add_ipv6block_reverse' | translate }}"
+        data-primary-label="{{:: 'ip_table_manage_add_ipv6block_validate' | translate }}"
+        data-secondary-action="resetAction()"
+        data-secondary-label="{{:: 'ip_table_manage_add_ipv6block_cancel' | translate }}"
+        data-loading="$ctrl.isLoading"
+        data-on-dismiss="resetAction()">
+        <oui-message
+            data-type="info">
+            <span data-translate="ip_table_manage_add_ipv6block_question"></span>
+        </oui-message>
+        <oui-field
+            data-label="{{:: 'ip_ipblock' | translate }}"
+            data-size="xl">
+            <input
+                class="oui-input"
+                type="text"
+                id="ipBlock"
+                name="ipBlock"
+                data-ng-model="data.ipBlock.ipBlock"
+                disabled>
+        </oui-field>
+        <oui-field
+            data-label="{{:: 'ip_table_header_ip_address' | translate }}"
+            data-size="xl">
+            <input
+                class="oui-input"
+                type="text"
+                id="ip"
+                name="ip"
+                data-ng-model="model.ipv6"
+                required>
+            <div class="oui-field__error" data-ng-if="model.ipv6 && !isValid.ipv6()">
+                <span role="alert">
+                    <span class="oui-icon oui-icon-error" aria-hidden="true"></span>
+                    <span data-translate="ip_table_header_ip_address_invalid"></span>
+                </span>
+            </div>
+        </oui-field>
+        <oui-field
+            data-label="{{:: 'ip_table_header_reverse' | translate }}"
+            data-size="xl">
+            <input
+                class="oui-input"
+                type="text"
+                id="reverse"
+                name="reverse"
+                data-ng-model="model.reverse"
+                required>
+            <div class="oui-field__error" data-ng-if="!isValid.reverse()">
+                <span role="alert">
+                    <span class="oui-icon oui-icon-error" aria-hidden="true"></span>
+                    <span data-translate="ip_table_header_reverse_invalid"></span>
+                </span>
+            </div>
+        </oui-field>
+    </oui-modal>
+</form>
