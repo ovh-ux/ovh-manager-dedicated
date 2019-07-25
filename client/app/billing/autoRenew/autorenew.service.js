@@ -24,6 +24,12 @@ export default class {
     };
   }
 
+  getAllServices() {
+    return this.OvhHttp.get('/billing/autorenew/services', {
+      rootPath: '2api',
+    });
+  }
+
   getServices(count, offset, search, type, renew, renewal, order, nicBilling) {
     return this.OvhHttp.get('/billing/autorenew/services', {
       rootPath: '2api',
