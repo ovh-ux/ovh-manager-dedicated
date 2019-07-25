@@ -136,7 +136,7 @@
                         <dd class="oui-tile__description">
                             <span class="oui-status"
                                   data-ng-class="{
-                                      'oui-status_error': $ctrl.drpStatus === $ctrl.DRP_STATUS.disabled || $ctrl.currentDrp.vpnStatus === $ctrl.DRP_VPN_STATUS.notConfigured,
+                                      'oui-status_error': $ctrl.drpStatus === $ctrl.DRP_STATUS.disabled || $ctrl.drpStatus === $ctrl.DRP_STATUS.error || $ctrl.currentDrp.vpnStatus === $ctrl.DRP_VPN_STATUS.notConfigured,
                                       'oui-status_warning': $ctrl.drpStatus === $ctrl.DRP_STATUS.delivering || $ctrl.drpStatus === $ctrl.DRP_STATUS.disabling || $ctrl.currentDrp.vpnStatus === $ctrl.DRP_VPN_STATUS.configuring,
                                       'oui-status_success': $ctrl.drpStatus === $ctrl.DRP_STATUS.delivered
                                 }">

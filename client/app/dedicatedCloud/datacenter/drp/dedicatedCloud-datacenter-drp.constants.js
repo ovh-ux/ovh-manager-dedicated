@@ -23,6 +23,7 @@ export const DEDICATEDCLOUD_DATACENTER_DRP_STATUS = {
   delivering: 'delivering',
   disabled: 'disabled',
   disabling: 'disabling',
+  error: 'error',
   provisionning: 'provisionning',
   toDisable: 'toDisable',
   toDo: 'todo',
