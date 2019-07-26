@@ -8,7 +8,7 @@
                     rows-loader="$ctrl.loadServers($config)"
                     criteria="$ctrl.criteria"
                     on-page-change="$ctrl.onPageChange($pagination)"
-                    on-criteria-changed="$ctrl.onCriteriaChanged($criteria)"
+                    on-criteria-change="$ctrl.onCriteriaChange($criteria)"
                     on-sort-change="$ctrl.onSortChange($sort)">
                     <oui-column title=":: 'dedicated_servers_name' | translate" property="reverse" searchable filterable sortable="asc" type="string"></oui-column>
                     <oui-column title=":: 'dedicated_servers_called' | translate" property="name" searchable filterable type="string" sortable>

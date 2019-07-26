@@ -59,7 +59,7 @@ export default class ServersCtrl {
     });
   }
 
-  onCriteriaChanged($criteria) {
+  onCriteriaChange($criteria) {
     const filter = $criteria.map(criteria => ({
       field: _.get(criteria, 'property') || 'name',
       comparator: criteria.operator,
