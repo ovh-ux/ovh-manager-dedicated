@@ -20,11 +20,9 @@ export default /* @ngInject */ ($stateProvider) => {
         BillingAutoRenew,
         serviceId,
       ) => BillingAutoRenew.getService(serviceId),
-      updateService: /* @ngInject */ BillingAutoRenew => (service) => {
-        BillingAutoRenew.updateService(
-          service,
-        );
-      },
+      updateService: /* @ngInject */ BillingAutoRenew => service => BillingAutoRenew.updateService(
+        service,
+      ),
     },
   });
 };
