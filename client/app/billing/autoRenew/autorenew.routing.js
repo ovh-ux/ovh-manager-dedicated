@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { MIN_DOMAIN_LENGTH } from './autorenew.constants';
 
 import BillingService from './BillingService.class';
 
@@ -37,6 +38,9 @@ export default /* @ngInject */ ($stateProvider) => {
       allServices: /* @ngInject */ BillingAutoRenew => BillingAutoRenew.getAllServices(),
       services: /* @ngInject */ allServices => _.get(allServices, 'list.results', []),
       nicBilling: /* @ngInject */ allServices => _.get(allServices, 'nicBilling', []),
+
+      canDisableAllDomains: /* @ngInject */ services => _.filter(services, 'serviceType', 'DOMAIN').length > MIN_DOMAIN_LENGTH,
+      disableAutorenewForDomains: /* @ngInject */ $state => () => $state.go('app.account.billing.autorenew.disableDomainsBulk'),
 
       getSMSAutomaticRenewalURL: /* @ngInject */ constants => service => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/options/recredit`,
       getSMSCreditBuyingURL: /* @ngInject */ constants => service => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/order`,
