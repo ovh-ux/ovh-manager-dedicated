@@ -32,7 +32,7 @@
                 <label class="oui-select">
                     <select name="billingAutoRenew"
                         class="oui-select__input"
-                        data-ng-change="onNicBillingChange()"
+                        data-ng-change="$ctrl.onNicBillingChange()"
                         data-ng-model-options="{ debounce: 500 }"
                         data-ng-model="$ctrl.nicBillingFilter"
                         data-ng-options="nicBilling for nicBilling in $ctrl.nicBilling track by nicBilling">
@@ -48,12 +48,14 @@
         <oui-datagrid
             data-empty-placeholder="{{:: 'autorenew_empty' | translate }}"
             data-rows="$ctrl.services"
+            data-on-row-select="$ctrl.onRowSelection($rows)"
             data-selectable-rows>
-            <!-- <extra-top>
+
+            <extra-top>
                 <oui-dropdown>
                     <oui-dropdown-trigger data-text="{{:: 'autorenew_service_action_title' | translate }}"></oui-dropdown-trigger>
                     <oui-dropdown-content>
-                        <a class="oui-dropdown-option"
+                        <!-- <a class="oui-dropdown-option"
                             data-ui-sref="app.account.billing.payment.method"
                             data-track-on="click"
                             data-track-type="action"
@@ -69,28 +71,28 @@
                             data-track-type="action"
                             data-track-name="services::autoRenew::edit::autoRenew_date_settings">
                             <span data-translate="autorenew_service_update_date_button_caption"></span>
-                        </a>
-                        <button data-ng-if="canDisableAllDomains"
+                        </a> -->
+                        <oui-dropdown-divider></oui-dropdown-divider>
+                        <button type="button"
+                            class="oui-dropdown-option"
+                            data-export-csv="$ctrl.getDatasToExport()"
+                            data-export-csv-separator=";"
+                            data-ng-click="$ctrl.trackCSVExport()">
+                            <span data-translate="billing_export_csv"></span>
+                        </button>
+                        <oui-dropdown-divider data-ng-if="$ctrl.canDisableAllDomains"></oui-dropdown-divider>
+                        <button data-ng-if="$ctrl.canDisableAllDomains"
                             class="oui-dropdown-option"
                             type="button"
-                            data-ng-click="disableAutorenewForDomains()"
+                            data-ng-click="$ctrl.disableAutorenewForDomains()"
                             data-track-on="click"
                             data-track-type="action"
                             data-track-name="services::autoRenew::edit::autoRenew_domains">
                             <span data-translate="autorenew_service_disable_all_domains"></span>
                         </button>
-                        <oui-dropdown-divider></oui-dropdown-divider>
-                        <button type="button"
-                            class="oui-dropdown-option"
-                            data-export-csv="getDatasToExport()"
-                            data-export-csv-separator=";"
-                            data-ng-disabled="load.exportCSV"
-                            data-ng-click="trackCSVExport()">
-                            <span data-translate="billing_export_csv"></span>
-                        </button>
                     </oui-dropdown-content>
                 </oui-dropdown>
-            </extra-top> -->
+            </extra-top>
 
             <!-- Columns -->
             <oui-column

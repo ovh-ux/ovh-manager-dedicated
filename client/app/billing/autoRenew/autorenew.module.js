@@ -2,6 +2,7 @@ import agreements from './agreements/user-agreements.module';
 import cancelResiliation from './actions/cancel-resiliation/cancel-resiliation.module';
 import debtBeforePaying from './actions/debtBeforePaying/debtBeforePaying.module';
 import deleteModule from './actions/delete/delete.module';
+import disableDomainsBulk from './disable-domains-bulk/disable-domains-bulk.module';
 import exchangeRenew from './actions/exchange/exchange-renew.module';
 import ssh from './ssh/ssh.module';
 import terminateEmail from './actions/terminateEmail/email.module';
@@ -23,6 +24,7 @@ angular.module(moduleName, [
   cancelResiliation,
   debtBeforePaying,
   deleteModule,
+  disableDomainsBulk,
   exchangeRenew,
   ssh,
   terminateEmail,

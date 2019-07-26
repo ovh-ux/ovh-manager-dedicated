@@ -4,7 +4,9 @@ import template from './autorenew.html';
 export default {
   bindings: {
     agreementsLink: '<',
+    canDisableAllDomains: '<',
     currentActiveLink: '<',
+    disableAutorenewForDomains: '<',
     filtersOptions: '<',
     getSMSAutomaticRenewalURL: '<',
     getSMSCreditBuyingURL: '<',
