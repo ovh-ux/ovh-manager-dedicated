@@ -7,6 +7,8 @@ export const CONTRACTS_IDS = {
   WS: 1755,
 };
 
+export const MIN_DOMAIN_LENGTH = 50;
+
 export const NIC_URL = '/me/autorenew';
 
 export const SERVICES_TYPE = [
@@ -66,6 +68,7 @@ export const SERVICES_TYPE = [
 export default {
   AUTORENEW_EVENT,
   CONTRACTS_IDS,
+  MIN_DOMAIN_LENGTH,
   NIC_URL,
   SERVICES_TYPE,
 };

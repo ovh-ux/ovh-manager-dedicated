@@ -3,6 +3,7 @@ import cancelResiliation from './actions/cancel-resiliation/cancel-resiliation.m
 import debtBeforePaying from './actions/debtBeforePaying/debtBeforePaying.module';
 import deleteModule from './actions/delete/delete.module';
 import disable from './disable/disable.module';
+import disableDomainsBulk from './disable-domains-bulk/disable-domains-bulk.module';
 import exchangeRenew from './actions/exchange/exchange-renew.module';
 import enable from './enable/enable.module';
 import ssh from './ssh/ssh.module';
@@ -26,6 +27,7 @@ angular.module(moduleName, [
   debtBeforePaying,
   deleteModule,
   disable,
+  disableDomainsBulk,
   exchangeRenew,
   enable,
   ssh,
