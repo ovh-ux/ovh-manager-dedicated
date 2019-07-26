@@ -39,6 +39,33 @@ export default /* @ngInject */ ($stateProvider) => {
       services: /* @ngInject */ allServices => _.get(allServices, 'list.results', []),
       nicBilling: /* @ngInject */ allServices => _.get(allServices, 'nicBilling', []),
 
+      user: /* @ngInject */ User => User.getUser(),
+      userIsBillingOrAdmin: /* @ngInject */ user => service => service
+        && Boolean(user
+          && (service.contactBilling === user.nichandle
+            || service.contactAdmin === user.nichandle)),
+
+      updateServices: /* @ngInject */ $state => ({ serviceId }) => $state.go('app.account.billing.autorenew.update', { serviceId }),
+
+      canResiliate: /* @ngInject */ userIsBillingOrAdmin => (service) => {
+        const canDeleteAtExpiration = service.canDeleteAtExpiration
+          || (service.service && service.service.canDeleteAtExpiration);
+        return canDeleteAtExpiration && userIsBillingOrAdmin(service);
+      },
+
+      resiliateService: /* @ngInject */ $state => ({
+        serviceId,
+      }) => $state.go('app.account.billing.autorenew.delete', { serviceId }),
+
+      canCancelResiliation: /* @ngInject */ userIsBillingOrAdmin => service => service.renew
+          && service.renew.deleteAtExpiration
+          && !service.renew.manualPayment
+          && userIsBillingOrAdmin(service),
+
+      cancelServiceResiliation: /* @ngInject */ $state => ({
+        serviceId,
+      }) => $state.go('app.account.billing.autorenew.cancelResiliation', { serviceId }),
+
       canDisableAllDomains: /* @ngInject */ services => _.filter(services, 'serviceType', 'DOMAIN').length > MIN_DOMAIN_LENGTH,
       disableAutorenewForDomains: /* @ngInject */ $state => () => $state.go('app.account.billing.autorenew.disableDomainsBulk'),
 

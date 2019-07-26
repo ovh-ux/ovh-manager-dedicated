@@ -4,7 +4,10 @@ import template from './autorenew.html';
 export default {
   bindings: {
     agreementsLink: '<',
+    canCancelResiliation: '<',
     canDisableAllDomains: '<',
+    canResiliate: '<',
+    cancelServiceResiliation: '<',
     currentActiveLink: '<',
     disableAutorenewForDomains: '<',
     filtersOptions: '<',
@@ -13,8 +16,10 @@ export default {
     homeLink: '<',
     isEnterpriseCustomer: '<',
     nicBilling: '<',
+    resiliateService: '<',
     services: '<',
     sshLink: '<',
+    updateServices: '<',
   },
   controller,
   template,
