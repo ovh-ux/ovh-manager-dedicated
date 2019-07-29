@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { MIN_DOMAIN_LENGTH } from './autorenew.constants';
+import { MIN_DOMAIN_LENGTH, RENEW_URL } from './autorenew.constants';
 
 import BillingService from './BillingService.class';
 
@@ -27,6 +27,7 @@ export default /* @ngInject */ ($stateProvider) => {
       homeLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew'),
       sshLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew.ssh'),
       isEnterpriseCustomer: /* @ngInject */ currentUser => currentUser.isEnterprise,
+      isInDebt: /* @ngInject */ DEBT_STATUS => service => _.includes(DEBT_STATUS, service.status),
       goToAutorenew: /* @ngInject */ ($state, $timeout, Alerter) => (message = false, type = 'success') => {
         const reload = message && type === 'success';
 
@@ -41,23 +42,20 @@ export default /* @ngInject */ ($stateProvider) => {
         return promise;
       },
 
+      hasAutoRenew: /* @ngInject */ billingRenewHelper => service => billingRenewHelper
+        .serviceHasAutomaticRenew(service),
+
       allServices: /* @ngInject */ BillingAutoRenew => BillingAutoRenew.getAllServices(),
       services: /* @ngInject */ allServices => _.get(allServices, 'list.results', []),
       nicBilling: /* @ngInject */ allServices => _.get(allServices, 'nicBilling', []),
 
-      userIsBillingOrAdmin: /* @ngInject */ currentUser => service => service
-        && Boolean(currentUser
-          && (service.contactBilling === currentUser.nichandle
-            || service.contactAdmin === currentUser.nichandle)),
-
       updateServices: /* @ngInject */ $state => ({ serviceId }) => $state.go('app.account.billing.autorenew.update', { serviceId }),
       updateExchangeBilling: /* @ngInject */ $state => ({ serviceId }) => $state.go('app.account.billing.autorenew.exchange', { serviceId }),
 
-      canResiliate: /* @ngInject */ userIsBillingOrAdmin => (service) => {
-        const canDeleteAtExpiration = service.canDeleteAtExpiration
-          || (service.service && service.service.canDeleteAtExpiration);
-        return canDeleteAtExpiration && userIsBillingOrAdmin(service);
-      },
+      canResiliate: /* @ngInject */ (
+        BillingAutoRenew,
+        currentUser,
+      ) => service => BillingAutoRenew.canResiliate(service, currentUser),
 
       resiliateService: /* @ngInject */ $state => ({
         serviceId,
@@ -72,10 +70,10 @@ export default /* @ngInject */ ($stateProvider) => {
           .then(({ offer }) => $window.location.assign(BillingAutoRenew.getExchangeUrl(organization, exchangeName, offer, 'resiliate')));
       },
 
-      canCancelResiliation: /* @ngInject */ userIsBillingOrAdmin => service => service.renew
-          && service.renew.deleteAtExpiration
-          && !service.renew.manualPayment
-          && userIsBillingOrAdmin(service),
+      canCancelResiliation: /* @ngInject */ (
+        BillingAutoRenew,
+        currentUser,
+      ) => service => BillingAutoRenew.canCancelResiliation(service, currentUser),
 
       cancelServiceResiliation: /* @ngInject */ $state => ({
         serviceId,
@@ -84,6 +82,14 @@ export default /* @ngInject */ ($stateProvider) => {
       canDisableAllDomains: /* @ngInject */ services => _.filter(services, 'serviceType', 'DOMAIN').length > MIN_DOMAIN_LENGTH,
       disableAutorenewForDomains: /* @ngInject */ $state => () => $state.go('app.account.billing.autorenew.disableDomainsBulk'),
 
+      getRenewUrl: /* @ngInject */ currentUser => ({ serviceId }) => {
+        const subsidiary = _.get(currentUser, 'ovhSubsidiary', false);
+        const renewUrl = (subsidiary || RENEW_URL[subsidiary])
+          ? RENEW_URL[subsidiary]
+          : RENEW_URL.default;
+
+        return renewUrl.replace('{serviceName}', serviceId);
+      },
       getSMSAutomaticRenewalURL: /* @ngInject */ constants => service => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/options/recredit`,
       getSMSCreditBuyingURL: /* @ngInject */ constants => service => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/order`,
 
