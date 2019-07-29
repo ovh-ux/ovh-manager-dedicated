@@ -9,8 +9,6 @@ export default class {
 
   $onInit() {
     this.selectedServices = [];
-
-    console.log(this);
   }
 
   getDatasToExport() {

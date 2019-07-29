@@ -52,46 +52,32 @@
             data-selectable-rows>
 
             <extra-top>
-                <oui-dropdown>
-                    <oui-dropdown-trigger data-text="{{:: 'autorenew_service_action_title' | translate }}"></oui-dropdown-trigger>
-                    <oui-dropdown-content>
-                        <!-- <a class="oui-dropdown-option"
-                            data-ui-sref="app.account.billing.payment.method"
-                            data-track-on="click"
-                            data-track-type="action"
-                            data-track-name="services::payment_types::edit::payment_types_settings">
-                            <span data-translate="autorenew_manage_my_payment_means"></span>
-                        </a>
-                        <a data-ng-if="automaticRenewV2Mean.available"
-                            class="oui-dropdown-option"
-                            target="_blank"
-                            rel="noopener"
-                            data-ng-href="{{ urls.renewAlign }}"
-                            data-track-on="click"
-                            data-track-type="action"
-                            data-track-name="services::autoRenew::edit::autoRenew_date_settings">
-                            <span data-translate="autorenew_service_update_date_button_caption"></span>
-                        </a> -->
-                        <oui-dropdown-divider></oui-dropdown-divider>
-                        <button type="button"
-                            class="oui-dropdown-option"
-                            data-export-csv="$ctrl.getDatasToExport()"
-                            data-export-csv-separator=";"
-                            data-ng-click="$ctrl.trackCSVExport()">
-                            <span data-translate="billing_export_csv"></span>
-                        </button>
-                        <oui-dropdown-divider data-ng-if="$ctrl.canDisableAllDomains"></oui-dropdown-divider>
-                        <button data-ng-if="$ctrl.canDisableAllDomains"
-                            class="oui-dropdown-option"
-                            type="button"
-                            data-ng-click="$ctrl.disableAutorenewForDomains()"
-                            data-track-on="click"
-                            data-track-type="action"
-                            data-track-name="services::autoRenew::edit::autoRenew_domains">
-                            <span data-translate="autorenew_service_disable_all_domains"></span>
-                        </button>
-                    </oui-dropdown-content>
-                </oui-dropdown>
+                <oui-action-menu data-text="{{:: 'autorenew_service_action_title' | translate }}">
+                    <div data-ng-if="$ctrl.selectedServices.length > 0">
+                        <oui-action-menu-item
+                            data-on-click="$ctrl.disableBulkAutorenew($ctrl.selectedServices)">
+                            <span data-translate="billing_autorenew_service_disable_autorenew"></span>
+                        </oui-action-menu-item>
+                        <oui-action-menu-item
+                            data-on-click="$ctrl.enableBulkAutorenew($ctrl.selectedServices)">
+                            <span data-translate="billing_autorenew_service_enable_autorenew"></span>
+                        </oui-action-menu-item>
+                        <oui-action-menu-divider ></oui-action-menu-divider>
+                    </div>
+                    <button type="button"
+                        class="oui-dropdown-option"
+                        data-export-csv="$ctrl.getDatasToExport()"
+                        data-export-csv-separator=";"
+                        data-ng-click="$ctrl.trackCSVExport()">
+                        <span data-translate="billing_export_csv"></span>
+                    </button>
+                    <oui-action-menu-divider></oui-action-menu-divider>
+                    <oui-action-menu-item
+                        data-ng-if="$ctrl.canDisableAllDomains"
+                        data-on-click="$ctrl.disableAutorenewForDomains()">
+                        <span data-translate="autorenew_service_disable_all_domains"></span>
+                    </oui-action-menu-item>
+                </oui-action-menu>
             </extra-top>
 
             <!-- Columns -->
