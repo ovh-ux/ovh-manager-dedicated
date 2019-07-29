@@ -192,4 +192,26 @@ export default class {
     return agreementsPromise
       .then(() => this.updateServices([_.pick(service, ['serviceId', 'serviceType', 'renew'])]));
   }
+
+  /* eslint-disable class-methods-use-this */
+  userIsBillingOrAdmin(service, user) {
+    return service
+      && Boolean(user
+        && (service.contactBilling === user.nichandle
+          || service.contactAdmin === user.nichandle));
+  }
+  /* eslint-enable class-methods-use-this */
+
+  canResiliate(service, user) {
+    const canDeleteAtExpiration = service.canDeleteAtExpiration
+      || (service.service && service.service.canDeleteAtExpiration);
+    return canDeleteAtExpiration && this.userIsBillingOrAdmin(service, user);
+  }
+
+  canCancelResiliation(service, user) {
+    return service.renew
+      && service.renew.deleteAtExpiration
+      && !service.renew.manualPayment
+      && this.userIsBillingOrAdmin(service, user);
+  }
 }

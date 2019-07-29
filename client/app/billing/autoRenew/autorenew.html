@@ -140,12 +140,13 @@
                 data-align="end"
                 data-compact>
 
-                <!-- Service in autorenew -->
                 <div data-ng-if="$row.serviceType !== 'EMAIL_DOMAIN'
                     && $row.serviceType !== 'EXCHANGE'
-                    && $row.serviceType !== 'SMS'
-                    && $row.renewalType !== 'oneShot'">
+                    && $row.serviceType !== 'SMS'">
+
+                    <!-- Service in autorenew -->
                     <oui-action-menu-item
+                        data-ng-if="$row.renewalType !== 'oneShot'"
                         data-on-click="$ctrl.updateServices($row)"
                         data-text="{{:: 'autorenew_service_update_button_caption' | translate }}">
                     </oui-action-menu-item>
@@ -155,8 +156,21 @@
                         data-on-click="$ctrl.resiliateService($row)"
                         data-text="{{:: 'autorenew_service_resiliate_button' | translate }}">
                     </oui-action-menu-item>
+                    <!-- /Service in autorenew -->
+
+                    <!-- Service in manual renew  -->
+                    <oui-action-menu-item
+                        data-ng-if="$row.renewalType !== 'oneShot'
+                            && !$ctrl.isInDebt($row)
+                            && !$ctrl.hasAutoRenew($row)"
+                        data-disabled="$row.renew.forced"
+                        data-aria-label="{{:: 'manualrenew_service_renew_button_title' | translate: { t0: $row.serviceId } }}"
+                        data-href="{{:: $ctrl.getRenewUrl($row) }}"
+                        data-text="{{:: 'manualrenew_service_renew_button' | translate }}"
+                        data-external>
+                    </oui-action-menu-item>
+                    <!-- /Service in manual renew  -->
                 </div>
-                <!-- /Service in autorenew -->
 
                 <!-- Exchange -->
                 <div data-ng-if="$row.serviceType === 'EXCHANGE'">
