@@ -71,12 +71,13 @@
                         data-ng-click="$ctrl.trackCSVExport()">
                         <span data-translate="billing_export_csv"></span>
                     </button>
-                    <oui-action-menu-divider></oui-action-menu-divider>
-                    <oui-action-menu-item
-                        data-ng-if="$ctrl.canDisableAllDomains"
-                        data-on-click="$ctrl.disableAutorenewForDomains()">
-                        <span data-translate="autorenew_service_disable_all_domains"></span>
-                    </oui-action-menu-item>
+                    <div data-ng-if="$ctrl.canDisableAllDomains">
+                        <oui-action-menu-divider></oui-action-menu-divider>
+                        <oui-action-menu-item
+                            data-on-click="$ctrl.disableAutorenewForDomains()">
+                            <span data-translate="autorenew_service_disable_all_domains"></span>
+                        </oui-action-menu-item>
+                    </div>
                 </oui-action-menu>
             </extra-top>
 
@@ -140,33 +141,37 @@
                 data-compact>
 
                 <!-- Service in autorenew -->
-                <oui-action-menu-item
-                    data-ng-if="$row.serviceType !== 'EMAIL_DOMAIN'
-                        && $row.serviceType !== 'EXCHANGE'
-                        && $row.serviceType !== 'SMS'
-                        && $row.renewalType !== 'oneShot'"
-                    data-on-click="$ctrl.updateServices($row)"
-                    data-text="{{:: 'autorenew_service_update_button_caption' | translate }}">
-                </oui-action-menu-item>
-                <oui-action-menu-item
-                    data-ng-if="$row.serviceType !== 'EMAIL_DOMAIN'
-                        && $row.serviceType !== 'EXCHANGE'
-                        && $row.serviceType !== 'SMS'
-                        && $row.renewalType !== 'oneShot'"
-                    data-disabled="!$ctrl.canResiliate($row)"
-                    data-on-click="$ctrl.resiliateService($row)"
-                    data-text="{{:: 'autorenew_service_resiliate_button' | translate }}">
-                </oui-action-menu-item>
+                <div data-ng-if="$row.serviceType !== 'EMAIL_DOMAIN'
+                    && $row.serviceType !== 'EXCHANGE'
+                    && $row.serviceType !== 'SMS'
+                    && $row.renewalType !== 'oneShot'">
+                    <oui-action-menu-item
+                        data-on-click="$ctrl.updateServices($row)"
+                        data-text="{{:: 'autorenew_service_update_button_caption' | translate }}">
+                    </oui-action-menu-item>
+                    <oui-action-menu-item
+                        data-ng-if="!$row.renew.deleteAtExpiration"
+                        data-disabled="!$ctrl.canResiliate($row)"
+                        data-on-click="$ctrl.resiliateService($row)"
+                        data-text="{{:: 'autorenew_service_resiliate_button' | translate }}">
+                    </oui-action-menu-item>
+                </div>
                 <!-- /Service in autorenew -->
 
-                <!-- Service with termination asked by the customer -->
-                <oui-action-menu-item
-                    data-ng-if="$ctrl.canCancelResiliation($row)
-                        && $row.serviceType !== 'EMAIL_DOMAIN'"
-                    data-on-click="$ctrl.cancelServiceResiliation($row)"
-                    data-text="{{:: 'autorenew_service_canceldelete_button' | translate }}">
-                </oui-action-menu-item>
-                <!-- /Service with termination asked by the customer -->
+                <!-- Exchange -->
+                <div data-ng-if="$row.serviceType === 'EXCHANGE'">
+                    <oui-action-menu-item
+                        data-on-click="$ctrl.updateExchangeBilling($row)"
+                        data-text="{{:: 'autorenew_service_update_exchange_button_caption' | translate }}">
+                    </oui-action-menu-item>
+                    <oui-action-menu-item
+                        data-ng-if="!$row.renew.deleteAtExpiration"
+                        data-disabled="!$ctrl.canResiliate($row)"
+                        data-on-click="$ctrl.resiliateExchangeService($row)"
+                        data-text="{{:: 'autorenew_service_resiliate_button' | translate }}">
+                    </oui-action-menu-item>
+                </div>
+                <!-- /Exchange -->
 
                 <!-- MX Plan -->
                 <oui-action-menu-item
@@ -177,20 +182,29 @@
                 <!-- /MX Plan -->
 
                 <!-- SMS -->
-                <oui-action-menu-item
-                    data-ng-if="$row.serviceType === 'SMS'"
-                    data-href="{{:: $ctrl.getSMSCreditBuyingURL($row) }}"
-                    data-text="{{:: 'autorenew_service_action_menu_smsPack_credit' | translate }}"
-                    data-external>
-                </oui-action-menu-item>
+                <div data-ng-if="$row.serviceType === 'SMS'">
+                    <oui-action-menu-item
+                        data-href="{{:: $ctrl.getSMSCreditBuyingURL($row) }}"
+                        data-text="{{:: 'autorenew_service_action_menu_smsPack_credit' | translate }}"
+                        data-external>
+                    </oui-action-menu-item>
 
-                <oui-action-menu-item
-                    data-ng-if="$row.serviceType === 'SMS'"
-                    data-href="{{:: $ctrl.getSMSAutomaticRenewalURL($row) }}"
-                    data-text="{{:: 'autorenew_service_action_menu_smsPack_automaticRenew' | translate }}"
-                    data-external>
-                </oui-action-menu-item>
+                    <oui-action-menu-item
+                        data-href="{{:: $ctrl.getSMSAutomaticRenewalURL($row) }}"
+                        data-text="{{:: 'autorenew_service_action_menu_smsPack_automaticRenew' | translate }}"
+                        data-external>
+                    </oui-action-menu-item>
+                </div>
                 <!-- /SMS -->
+
+                <!-- Service with termination asked by the customer -->
+                <oui-action-menu-item
+                    data-ng-if="$ctrl.canCancelResiliation($row)
+                        && $row.serviceType !== 'EMAIL_DOMAIN'"
+                    data-on-click="$ctrl.cancelServiceResiliation($row)"
+                    data-text="{{:: 'autorenew_service_canceldelete_button' | translate }}">
+                </oui-action-menu-item>
+                <!-- /Service with termination asked by the customer -->
 
             </oui-action-menu>
             <!-- /Actions -->

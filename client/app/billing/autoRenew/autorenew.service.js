@@ -8,12 +8,18 @@ export default class {
   /* @ngInject */
   constructor(
     $q,
+    $window,
+    constants,
+    coreConfig,
     DucUserContractService,
     OvhApiBillingAutorenewServices,
     OvhApiEmailExchange,
     OvhHttp,
   ) {
     this.$q = $q;
+    this.$window = $window;
+    this.constants = constants;
+    this.coreConfig = coreConfig;
     this.DucUserContractService = DucUserContractService;
     this.OvhApiBillingAutorenewServices = OvhApiBillingAutorenewServices;
     this.OvhApiEmailExchange = OvhApiEmailExchange;
@@ -162,6 +168,16 @@ export default class {
       organization,
       exchange,
     }).$promise;
+  }
+
+  getExchangeUrl(organization, service, offer, action) {
+    const exchangeAbsoluteUrl = this.coreConfig.getRegion() === 'EU' && this.constants.UNIVERS !== 'web'
+      ? this.constants.MANAGER_URLS.web
+      : this.$window.location.href.replace(this.$window.location.hash, '#/');
+
+    const exchangeBaseUrl = `${exchangeAbsoluteUrl}configuration/exchange_${offer.toLowerCase()}/${organization}/${service}`;
+
+    return `${exchangeBaseUrl}?action=${action}`;
   }
 
   getAutorenewAgreements() {
