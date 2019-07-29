@@ -14,6 +14,12 @@ export default /* @ngInject */ ($stateProvider) => {
         $state,
         $transition$,
       ) => () => $state.href($transition$.to().name),
+      disableBulkAutorenew: /* @ngInject */ $state => services => $state.go('app.account.billing.autorenew.disable', {
+        services: _.map(services, 'id'),
+      }),
+      enableBulkAutorenew: /* @ngInject */ $state => services => $state.go('app.account.billing.autorenew.enable', {
+        services: _.map(services, 'id'),
+      }),
       homeLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew'),
       sshLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew.ssh'),
       isEnterpriseCustomer: /* @ngInject */ currentUser => currentUser.isEnterprise,
