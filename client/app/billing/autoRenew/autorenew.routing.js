@@ -45,13 +45,13 @@ export default /* @ngInject */ ($stateProvider) => {
       services: /* @ngInject */ allServices => _.get(allServices, 'list.results', []),
       nicBilling: /* @ngInject */ allServices => _.get(allServices, 'nicBilling', []),
 
-      user: /* @ngInject */ User => User.getUser(),
-      userIsBillingOrAdmin: /* @ngInject */ user => service => service
-        && Boolean(user
-          && (service.contactBilling === user.nichandle
-            || service.contactAdmin === user.nichandle)),
+      userIsBillingOrAdmin: /* @ngInject */ currentUser => service => service
+        && Boolean(currentUser
+          && (service.contactBilling === currentUser.nichandle
+            || service.contactAdmin === currentUser.nichandle)),
 
       updateServices: /* @ngInject */ $state => ({ serviceId }) => $state.go('app.account.billing.autorenew.update', { serviceId }),
+      updateExchangeBilling: /* @ngInject */ $state => ({ serviceId }) => $state.go('app.account.billing.autorenew.exchange', { serviceId }),
 
       canResiliate: /* @ngInject */ userIsBillingOrAdmin => (service) => {
         const canDeleteAtExpiration = service.canDeleteAtExpiration
@@ -62,6 +62,15 @@ export default /* @ngInject */ ($stateProvider) => {
       resiliateService: /* @ngInject */ $state => ({
         serviceId,
       }) => $state.go('app.account.billing.autorenew.delete', { serviceId }),
+
+      resiliateExchangeService: /* @ngInject */ (
+        $window,
+        BillingAutoRenew,
+      ) => ({ serviceId }) => {
+        const [organization, exchangeName] = serviceId.split('/service/');
+        return BillingAutoRenew.getExchangeService(organization, exchangeName)
+          .then(({ offer }) => $window.location.assign(BillingAutoRenew.getExchangeUrl(organization, exchangeName, offer, 'resiliate')));
+      },
 
       canCancelResiliation: /* @ngInject */ userIsBillingOrAdmin => service => service.renew
           && service.renew.deleteAtExpiration
