@@ -67,6 +67,7 @@ export default /* @ngInject */ ($stateProvider) => {
       allServices: /* @ngInject */ BillingAutoRenew => BillingAutoRenew.getAllServices(),
       services: /* @ngInject */ allServices => _.get(allServices, 'list.results', []),
       nicBilling: /* @ngInject */ ($translate, allServices) => [$translate.instant(NIC_ALL), ..._.get(allServices, 'nicBilling', [])],
+      nicRenew: /* @ngInject */ BillingAutoRenew => BillingAutoRenew.getNicRenew(),
 
       updateServices: /* @ngInject */ $state => ({ serviceId }) => $state.go('app.account.billing.autorenew.update', { serviceId }),
       updateExchangeBilling: /* @ngInject */ $state => ({ serviceId }) => $state.go('app.account.billing.autorenew.exchange', { serviceId }),

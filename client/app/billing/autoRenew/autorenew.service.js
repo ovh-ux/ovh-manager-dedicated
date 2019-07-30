@@ -16,6 +16,7 @@ export default class {
     OvhApiBillingAutorenewServices,
     OvhApiEmailExchange,
     OvhHttp,
+    ovhPaymentMethod,
   ) {
     this.$q = $q;
     this.$translate = $translate;
@@ -26,6 +27,7 @@ export default class {
     this.OvhApiBillingAutorenewServices = OvhApiBillingAutorenewServices;
     this.OvhApiEmailExchange = OvhApiEmailExchange;
     this.OvhHttp = OvhHttp;
+    this.ovhPaymentMethod = ovhPaymentMethod;
 
     this.events = {
       AUTORENEW_CHANGES: AUTORENEW_EVENT,
@@ -231,5 +233,38 @@ export default class {
       && service.renew.deleteAtExpiration
       && !service.renew.manualPayment
       && this.userIsBillingOrAdmin(service, user);
+  }
+
+  hasRenewDay() {
+    return this.ovhPaymentMethod
+      .hasDefaultPaymentMethod()
+      .then(hasDefaultPaymentMethod => hasDefaultPaymentMethod && this.coreConfig.getRegion() === 'EU');
+  }
+
+  getNicRenew() {
+    return this.$q
+      .all({
+        getAutorenew: this.getAutorenew(),
+        getAllServices: this.getAllServices(),
+        hasRenewDay: this.hasRenewDay(),
+      })
+      .then(({
+        getAutorenew,
+        getAllServices,
+        hasRenewDay,
+      }) => ({
+        active: getAutorenew.active,
+        allowed: hasRenewDay && getAllServices.userMustApproveAutoRenew,
+        initialized: getAllServices.userMustApproveAutoRenew,
+        renewDay: getAutorenew.renewDay,
+        renewDays: _.range(1, 30),
+      }));
+  }
+
+  setNicRenew(nicRenew) {
+    const { active, renewDay } = nicRenew;
+    return !nicRenew.initialized
+      ? this.enableAutorenew(renewDay)
+      : this.putAutorenew({ active, renewDay });
   }
 }
