@@ -62,8 +62,7 @@ export default class BillingService {
   }
 
   hasDebt() {
-    const renew = _.get(this, 'serviceInfos.renew');
-    return _.includes(['PENDING_DEBT', 'UN_PAID'], renew.status);
+    return _.includes(['PENDING_DEBT', 'UN_PAID'], this.status);
   }
 
   setRenewPeriod(period) {
@@ -109,5 +108,107 @@ export default class BillingService {
 
   isAutomaticallyRenewed() {
     return ['automaticV2014', 'automaticV2016', 'automaticForcedProduct'].includes(this.renewalType);
+  }
+
+  hasBillingRights(nichandle) {
+    return nichandle === this.contactBilling;
+  }
+
+  getAutorenewCapability(nichandle) {
+    if (this.hasDebt()) {
+      return {
+        availabilty: false,
+        reason: 'pending_debt',
+      };
+    }
+
+    if (this.hasAutomaticRenewal()) {
+      return {
+        availabilty: false,
+        reason: 'already_automatic',
+      };
+    }
+
+    if (this.renewalType === 'oneShot' || this.isAutomaticallyRenewed()) {
+      return {
+        availabilty: false,
+        reason: 'one_shot_automatic',
+      };
+    }
+
+    if (this.hasBillingRights(nichandle)) {
+      return {
+        availabilty: false,
+        reason: 'nic_rights',
+      };
+    }
+
+    if (this.isResiliated()) {
+      return {
+        availabilty: false,
+        reason: 'resiliation_pending',
+      };
+    }
+
+    if (this.isExpired()) {
+      return {
+        availabilty: false,
+        reason: 'expired',
+      };
+    }
+
+    return {
+      availabilty: true,
+      reason: 'available',
+    };
+  }
+
+  getManualRenewCapability(nichandle) {
+    if (this.hasDebt()) {
+      return {
+        availabilty: false,
+        reason: 'pending_debt',
+      };
+    }
+
+    if (this.hasManualRenew()) {
+      return {
+        availabilty: false,
+        reason: 'already_manual',
+      };
+    }
+
+    if (this.renewalType === 'oneShot' || this.isAutomaticallyRenewed()) {
+      return {
+        availabilty: false,
+        reason: 'one_shot_manual',
+      };
+    }
+
+    if (this.hasBillingRights(nichandle)) {
+      return {
+        availabilty: false,
+        reason: 'nic_rights',
+      };
+    }
+
+    if (this.isResiliated()) {
+      return {
+        availabilty: false,
+        reason: 'resiliation_pending',
+      };
+    }
+
+    if (this.isExpired()) {
+      return {
+        availabilty: false,
+        reason: 'expired',
+      };
+    }
+
+    return {
+      availabilty: true,
+      reason: 'available',
+    };
   }
 }
