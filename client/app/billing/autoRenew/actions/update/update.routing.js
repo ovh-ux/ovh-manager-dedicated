@@ -7,8 +7,6 @@ export default /* @ngInject */ ($stateProvider) => {
       addPaymentMean: /* @ngInject */ $state => () => $state.go('app.account.billing.payment.method.add'),
       autorenewAgreements: /* @ngInject */
         BillingAutoRenew => BillingAutoRenew.getAutorenewAgreements(),
-      defaultPaymentMean: /* @ngInject */
-        ovhPaymentMethod => ovhPaymentMethod.getDefaultPaymentMethod(),
       goBack: /* @ngInject */ goToAutorenew => goToAutorenew,
       serviceId: /* @ngInject */ $transition$ => $transition$.params().serviceId,
       service: /* @ngInject */ (
