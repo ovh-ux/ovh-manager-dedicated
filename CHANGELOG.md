@@ -1,3 +1,17 @@
+<a name="10.20.1"></a>
+## [10.20.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.20.0...v10.20.1) (2019-07-30)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations ([5170fb3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5170fb3))
+* **i18n:** add missing translations ([0d5627a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0d5627a))
+* **i18n:** add missing translations ([eca38fc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/eca38fc))
+* **i18n:** add missing translations ([adc0df8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/adc0df8))
+* **ip:** allow only reverse update in ipv6 modal ([#1263](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1263)) ([116e242](https://github.com/ovh-ux/ovh-manager-dedicated/commit/116e242))
+
+
+
 <a name="10.20.0"></a>
 # [10.20.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.9...v10.20.0) (2019-07-25)
 
