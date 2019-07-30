@@ -4,6 +4,7 @@ export default class AutorenewCtrl {
   /* @ngInject */
   constructor(
     $filter,
+    $q,
     $translate,
     atInternet,
     BillingAutoRenew,
@@ -11,6 +12,7 @@ export default class AutorenewCtrl {
     ouiDatagridService,
   ) {
     this.$filter = $filter;
+    this.$q = $q;
     this.$translate = $translate;
     this.atInternet = atInternet;
     this.BillingAutoRenew = BillingAutoRenew;
@@ -21,33 +23,52 @@ export default class AutorenewCtrl {
   $onInit() {
     this.selectedServices = [];
 
-    this.nicBillingFilter = this.$translate.instant(NIC_ALL);
+    this.nicBillingFilter = this.nicBilling || this.$translate.instant(NIC_ALL);
 
     this.filtersOptions = {
       serviceType: {
         hideOperators: true,
         values: this.serviceTypes,
       },
-      renewStatus: {
+      status: {
         hideOperators: true,
         values: this.BillingAutoRenew.getStatusTypes(),
       },
-      renewExpiration: {
+      expiration: {
         hideOperators: true,
         values: this.BillingAutoRenew.getExpirationFilterTypes(),
       },
     };
 
-    this.criteria = this.selectedType ? [{
-      property: 'serviceType',
+    this.criteria = _.map(this.filters, (value, property) => ({
+      property,
+      value,
       operator: 'is',
-      value: this.selectedType,
-      title: this.getCriterionTitle(),
-    }] : [];
+      title: this.getCriterionTitle(property, _.get(this.filtersOptions, `${property}.values.${value}`)),
+    }));
+
+    this.parseExtraCriteria();
   }
 
-  getCriterionTitle() {
-    return `${this.$translate.instant('autorenew_service')} ${this.$translate.instant('common_criteria_adder_operator_options_is')} ${this.serviceTypes[this.selectedType]}`;
+  getCriterionTitle(type, value) {
+    return `${this.$translate.instant(`billing_autorenew_criterion_${type}`)} ${this.$translate.instant('common_criteria_adder_operator_options_is')} ${value}`;
+  }
+
+  parseExtraCriteria() {
+    if (this.selectedType) {
+      this.criteria.push({
+        property: 'serviceType',
+        operator: 'is',
+        value: this.selectedType,
+        title: this.getCriterionTitle('serviceType', this.serviceTypes[this.selectedType]),
+      });
+    }
+
+    if (this.searchTed) {
+      this.criteria.push({
+        value: this.searchText,
+      });
+    }
   }
 
   getDatasToExport() {
@@ -90,28 +111,55 @@ export default class AutorenewCtrl {
     return _.get(_.find(criteria, { property }), 'value');
   }
 
-  loadServices({
-    pageSize, offset, criteria, sort,
-  }) {
-    return this.getServices(
-      pageSize,
-      offset - 1,
-      AutorenewCtrl.getCriterion(criteria, null),
-      AutorenewCtrl.getCriterion(criteria, 'serviceType'),
-      AutorenewCtrl.getCriterion(criteria, 'expiration'),
-      AutorenewCtrl.getCriterion(criteria, 'status'),
-      { predicate: sort.property, reverse: sort.dir === -1 },
-      this.nicBillingFilter === this.$translate.instant(NIC_ALL) ? null : this.nicBillingFilter,
-    ).then(services => ({
+  loadServices() {
+    const currentOffset = this.pageNumber * this.pageSize;
+    _.set(this.ouiDatagridService, 'datagrids.services.paging.offset', currentOffset < this.services.count ? currentOffset : this.services.count);
+    return this.$q.resolve({
       meta: {
-        totalCount: services.count,
+        totalCount: this.services.count,
       },
-      data: services.list.results,
-    }));
+      data: this.billingServices,
+    });
   }
 
-  onNicBillingChange() {
-    this.ouiDatagridService.refresh('services', true);
+  onPageChange({ pageSize, offset }) {
+    return this.onListParamChanges({
+      pageNumber: parseInt(offset / pageSize, 10) + 1,
+      pageSize,
+    });
+  }
+
+  onCriteriaChange($criteria) {
+    const selectedType = _.find($criteria, { property: 'serviceType' });
+    const searchText = _.find($criteria, { property: null });
+    const filters = _.reduce($criteria, (criteria, { property, value }) => {
+      if (![null, 'serviceType'].includes(property)) {
+        return ({
+          ...criteria,
+          [property]: value,
+        });
+      }
+
+      return criteria;
+    }, {});
+
+    this.onListParamChanges({
+      filters: JSON.stringify(filters),
+      selectedType: _.get(selectedType, 'value'),
+      searchText: _.get(searchText, 'value'),
+    });
+  }
+
+  onSortChange({ name, order }) {
+    this.onListParamChanges({
+      sort: JSON.stringify({ predicate: name, reverse: order === 'DESC' }),
+    });
+  }
+
+  onNicBillingChange(nicBilling) {
+    this.onListParamChanges({
+      nicBilling: nicBilling === this.$translate.instant(NIC_ALL) ? null : nicBilling,
+    });
   }
 
   onAutoRenewChange(nicRenew) {
