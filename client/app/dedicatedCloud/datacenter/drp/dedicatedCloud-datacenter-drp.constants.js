@@ -30,7 +30,6 @@ export const DEDICATEDCLOUD_DATACENTER_DRP_STATUS = {
   toProvision: 'toProvision',
   toUnprovision: 'toUnprovision',
   unprovisionning: 'unprovisionning',
-  waitingActivation: 'waitingActivation',
 };
 
 export const DEDICATEDCLOUD_DATACENTER_DRP_ROLES = {
