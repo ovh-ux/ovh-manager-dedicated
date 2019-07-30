@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import { MIN_DOMAIN_LENGTH, NIC_ALL, RENEW_URL } from './autorenew.constants';
-
 import BillingService from './BillingService.class';
 
 export default /* @ngInject */ ($stateProvider) => {
@@ -25,10 +24,10 @@ export default /* @ngInject */ ($stateProvider) => {
       defaultPaymentMean: /* @ngInject */
         ovhPaymentMethod => ovhPaymentMethod.getDefaultPaymentMethod(),
       disableBulkAutorenew: /* @ngInject */ $state => services => $state.go('app.account.billing.autorenew.disable', {
-        services: _.map(services, 'id'),
+        services: _.map(services, 'id').join(','),
       }),
       enableBulkAutorenew: /* @ngInject */ $state => services => $state.go('app.account.billing.autorenew.enable', {
-        services: _.map(services, 'id'),
+        services: _.map(services, 'id').join(','),
       }),
       homeLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew'),
       sshLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew.ssh'),
@@ -65,7 +64,7 @@ export default /* @ngInject */ ($stateProvider) => {
       ) => BillingAutoRenew.getServicesTypes(services),
 
       allServices: /* @ngInject */ BillingAutoRenew => BillingAutoRenew.getAllServices(),
-      services: /* @ngInject */ allServices => _.get(allServices, 'list.results', []),
+      services: /* @ngInject */ allServices => _.map(_.get(allServices, 'list.results', []), service => new BillingService(service)),
       nicBilling: /* @ngInject */ ($translate, allServices) => [$translate.instant(NIC_ALL), ..._.get(allServices, 'nicBilling', [])],
       nicRenew: /* @ngInject */ BillingAutoRenew => BillingAutoRenew.getNicRenew(),
 
