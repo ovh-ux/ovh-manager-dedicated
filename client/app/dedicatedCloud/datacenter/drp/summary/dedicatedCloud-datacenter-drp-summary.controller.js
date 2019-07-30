@@ -17,6 +17,7 @@ export default class {
     this.dedicatedCloudDrp = dedicatedCloudDrp;
     this.OvhApiMe = OvhApiMe;
     this.Validator = Validator;
+    this.VPN_STATUS = DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS;
   }
 
   $onInit() {
@@ -66,12 +67,12 @@ export default class {
     return this.isDrpTypeOnPremise()
       && this.drpInformations.state === DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivered
       && this.drpInformations.vpnConfiguration.vpnConfigState
-        !== DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS.configuring;
+        !== this.VPN_STATUS.configuring;
   }
 
   hasNoVpnConfiguration() {
     return this.drpInformations.vpnConfiguration
-      .vpnConfigState === DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS.notConfigured;
+      .vpnConfigState === this.VPN_STATUS.notConfigured;
   }
 
   validateVpnConfiguration() {

@@ -56,7 +56,7 @@ export default class {
               null,
               'dedicatedCloud_alert',
             );
-          }, 0);
+          });
         });
       })
       .catch((error) => {
@@ -76,9 +76,10 @@ export default class {
         : this.DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS.zertoOption.onPremise,
     };
 
-    const { splitter } = this.DEDICATEDCLOUD_DATACENTER_ZERTO;
-    const [, ...[formattedServiceName]] = drpInformations.primaryPcc.serviceName.split(splitter);
-    const preferenceKey = `${this.DEDICATEDCLOUD_DATACENTER_ZERTO.title}_${formattedServiceName.replace(/-/g, '')}`;
+    const preferenceKey = this.constructor.formatPreferenceKey(
+      drpInformations.primaryPcc.serviceName,
+      DEDICATEDCLOUD_DATACENTER_ZERTO.title,
+    );
 
     return this.ovhUserPref.create(preferenceKey, drpInformationsToStore);
   }
