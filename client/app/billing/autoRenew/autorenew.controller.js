@@ -113,4 +113,17 @@ export default class AutorenewCtrl {
   onNicBillingChange() {
     this.ouiDatagridService.refresh('services', true);
   }
+
+  onAutoRenewChange(nicRenew) {
+    this.nicRenewLoading = true;
+
+    this.BillingAutoRenew
+      .setNicRenew(nicRenew)
+      .catch(({ message }) => {
+        this.goToAutorenew(message, 'danger');
+      })
+      .finally(() => {
+        this.nicRenewLoading = false;
+      });
+  }
 }

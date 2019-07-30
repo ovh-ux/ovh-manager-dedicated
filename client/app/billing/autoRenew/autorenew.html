@@ -36,6 +36,33 @@
             </oui-select>
         </div>
 
+        <form novalidate>
+            <oui-field
+                data-ng-if="$ctrl.nicRenew.allowed"
+                data-label="{{::'autorenew_service_autorenew_day' | translate}}"
+                data-label-popover="{{::'autorenew_service_autorenew_day_tooltip' | translate}}"
+                data-size="l">
+                <label class="oui-select"
+                    data-ng-hide="$ctrl.nicRenewLoading">
+                    <select name="renewDay"
+                        class="oui-select__input"
+                        data-ng-change="$ctrl.onAutoRenewChange($ctrl.nicRenew)"
+                        data-ng-disabled="!$ctrl.nicRenew.active"
+                        data-ng-model="$ctrl.nicRenew.renewDay"
+                        data-ng-model-options="{ debounce: 1000 }"
+                        data-ng-options="day for day in $ctrl.nicRenew.renewDays track by day">
+                        <option value=""
+                            data-translate="autorenew_service_autorenew_contact_filter_all">
+                        </option>
+                    </select>
+                    <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
+                </label>
+                <oui-spinner size="s"
+                    data-ng-show="$ctrl.nicRenewLoading">
+                </oui-spinner>
+            </oui-field>
+        </form>
+
         <oui-datagrid
             id="services"
             data-page-size="10"
