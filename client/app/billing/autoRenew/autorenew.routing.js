@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import BillingService from './BillingService.class';
-import { NIC_ALL, RENEW_URL } from './autorenew.constants';
+import { NIC_ALL } from './autorenew.constants';
 
 export default /* @ngInject */ ($stateProvider) => {
   $stateProvider.state('app.account.billing.autorenew', {
@@ -45,6 +45,9 @@ export default /* @ngInject */ ($stateProvider) => {
         services.list.results,
         service => new BillingService(service),
       ),
+      cancelServiceResiliation: /* @ngInject */ $state => ({
+        serviceId,
+      }) => $state.go('app.account.billing.autorenew.cancelResiliation', { serviceId }),
       canDisableAllDomains: /* @ngInject */ services => services.bulkDomains,
       currentActiveLink: /* @ngInject */ (
         $state,
@@ -52,9 +55,11 @@ export default /* @ngInject */ ($stateProvider) => {
       ) => () => $state.href($transition$.to().name),
       defaultPaymentMean: /* @ngInject */
         ovhPaymentMethod => ovhPaymentMethod.getDefaultPaymentMethod(),
+      disableAutorenewForDomains: /* @ngInject */ $state => () => $state.go('app.account.billing.autorenew.disableDomainsBulk'),
       disableBulkAutorenew: /* @ngInject */ $state => services => $state.go('app.account.billing.autorenew.disable', {
         services: _.map(services, 'id').join(','),
       }),
+
       enableBulkAutorenew: /* @ngInject */ $state => services => $state.go('app.account.billing.autorenew.enable', {
         services: _.map(services, 'id').join(','),
       }),
@@ -63,6 +68,9 @@ export default /* @ngInject */ ($stateProvider) => {
       sshLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew.ssh'),
       isEnterpriseCustomer: /* @ngInject */ currentUser => currentUser.isEnterprise,
       isInDebt: /* @ngInject */ DEBT_STATUS => service => _.includes(DEBT_STATUS, service.status),
+
+      getSMSAutomaticRenewalURL: /* @ngInject */ constants => service => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/options/recredit`,
+      getSMSCreditBuyingURL: /* @ngInject */ constants => service => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/order`,
 
       goToAutorenew: /* @ngInject */ ($state, $timeout, Alerter) => (message = false, type = 'success') => {
         const reload = message && type === 'success';
@@ -82,6 +90,7 @@ export default /* @ngInject */ ($stateProvider) => {
         .serviceHasAutomaticRenew(service),
 
       nicBilling: /* @ngInject */ $transition$ => $transition$.params().nicBilling,
+      nicRenew: /* @ngInject */ BillingAutoRenew => BillingAutoRenew.getNicRenew(),
 
       nics: /* @ngInject */ (
         $translate,
@@ -93,6 +102,11 @@ export default /* @ngInject */ ($stateProvider) => {
 
       pageNumber: /* @ngInject */ $transition$ => parseInt($transition$.params().pageNumber, 10),
       pageSize: /* @ngInject */ $transition$ => parseInt($transition$.params().pageSize, 10),
+
+      resiliateService: /* @ngInject */ $state => ({
+        serviceId,
+      }) => $state.go('app.account.billing.autorenew.delete', { serviceId }),
+
       searchText: /* @ngInject */ $transition$ => $transition$.params().searchText,
 
       selectedType: /* @ngInject */ $transition$ => $transition$.params().selectedType,
@@ -122,51 +136,15 @@ export default /* @ngInject */ ($stateProvider) => {
         services,
       ) => BillingAutoRenew.getServicesTypes(services),
 
-      nicRenew: /* @ngInject */ BillingAutoRenew => BillingAutoRenew.getNicRenew(),
       sort: /* @ngInject */ $transition$ => $transition$.params().sort,
+
+      terminateEmail: /* @ngInject */ $state => serviceId => $state.go('app.account.billing.autorenew.terminateEmail', { serviceId }),
 
       updateServices: /* @ngInject */ $state => ({ serviceId }) => $state.go('app.account.billing.autorenew.update', { serviceId }),
       updateExchangeBilling: /* @ngInject */ $state => ({ serviceId }) => $state.go('app.account.billing.autorenew.exchange', { serviceId }),
 
-      canResiliate: /* @ngInject */ (
-        BillingAutoRenew,
-        currentUser,
-      ) => service => BillingAutoRenew.canResiliate(service, currentUser),
-
-      resiliateService: /* @ngInject */ $state => ({
-        serviceId,
-      }) => $state.go('app.account.billing.autorenew.delete', { serviceId }),
-
-      resiliateExchangeService: /* @ngInject */ (
-        $window,
-        BillingAutoRenew,
-      ) => ({ serviceId }) => {
-        const [organization, exchangeName] = serviceId.split('/service/');
-        return BillingAutoRenew.getExchangeService(organization, exchangeName)
-          .then(({ offer }) => $window.location.assign(BillingAutoRenew.getExchangeUrl(organization, exchangeName, offer, 'resiliate')));
-      },
-
-      canCancelResiliation: /* @ngInject */ (
-        BillingAutoRenew,
-        currentUser,
-      ) => service => BillingAutoRenew.canCancelResiliation(service, currentUser),
-
-      cancelServiceResiliation: /* @ngInject */ $state => ({
-        serviceId,
-      }) => $state.go('app.account.billing.autorenew.cancelResiliation', { serviceId }),
-
-      disableAutorenewForDomains: /* @ngInject */ $state => () => $state.go('app.account.billing.autorenew.disableDomainsBulk'),
-
-      getRenewUrl: /* @ngInject */ currentUser => ({ serviceId }) => {
-        const subsidiary = _.get(currentUser, 'ovhSubsidiary', false);
-        const renewUrl = (subsidiary || RENEW_URL[subsidiary])
-          ? RENEW_URL[subsidiary]
-          : RENEW_URL.default;
-
-        return renewUrl.replace('{serviceName}', serviceId);
-      },
-      getSMSAutomaticRenewalURL: /* @ngInject */ constants => service => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/options/recredit`,
-      getSMSCreditBuyingURL: /* @ngInject */ constants => service => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/order`,
+      warnNicBilling: /* @ngInject */ $state => nic => $state.go('app.account.billing.autorenew.warnNic', { nic }),
+      warnNicPendingDebt: /* @ngInject */ $state => serviceName => $state.go('app.account.billing.autorenew.warnPendingDebt', { serviceName }),
     },
     redirectTo: /* @ngInject */ isEnterpriseCustomer => (isEnterpriseCustomer ? 'app.account.billing.autorenew.agreements' : false),
   });
