@@ -9,6 +9,8 @@ export const CONTRACTS_IDS = {
 
 export const MIN_DOMAIN_LENGTH = 50;
 
+export const NIC_ALL = 'billing_autorenew_nic_all';
+
 export const NIC_URL = '/me/autorenew';
 
 export const RENEW_URL = {
@@ -35,65 +37,27 @@ export const RENEW_URL = {
   WE: 'https://ca.ovh.com/fr/cgi-bin/order/renew.cgi?domainChooser={serviceName}',
 };
 
-export const SERVICES_TYPE = [
-  'ALL_DOM',
-  'CAAS_CONTAINERS',
-  'CDN_DEDICATED',
-  'CDN_WEBSITE',
-  'CDN_WEBSTORAGE',
-  'CLUSTER_HADOOP',
-  'DBAAS_QUEUE',
-  'DEDICATED_CEPH',
-  'DEDICATED_NAS',
-  'DEDICATED_NASHA',
-  'DEDICATED_SERVER',
-  'DEDICATED_HOUSING',
-  'DEDICATED_CLOUD',
-  'DESKAAS',
-  'DOMAIN',
-  'EMAIL_DOMAIN',
-  'EMAIL_PRO',
-  'HORIZONVIEW',
-  'HOSTING_PRIVATE_DATABASE',
-  'HOSTING_RESELLER',
-  'HOSTING_DOMAIN',
-  'HOSTING_WEB',
-  'IP_LOADBALANCING',
-  'IP_LOADBALANCER',
-  'LICENCE_CLOUD_LINUX',
-  'LICENCE_CPANEL',
-  'LICENCE_DIRECT_ADMIN',
-  'LICENCE_PLESK',
-  'LICENCE_VIRTUOZZO',
-  'LICENCE_WINDOWS',
-  'LICENCE_WORKLIGHT',
-  'LICENCE_OFFICE',
-  'LICENCE_SQL_SERVER',
-  'OVER_THE_BOX',
-  'PAAS_DATABASE',
-  'PAAS_MONITORING',
-  'DBAAS_TIMESERIES',
-  'DBAAS_LOGS',
-  'ROUTER',
-  'SAAS_CSP2',
-  'TELEPHONY',
-  'VPS',
-  'XDSL',
-  'EXCHANGE',
-  'MIS',
-  'SSL_GATEWAY',
-  'METRICS',
-  'VEEAM_CLOUD_CONNECT',
-  'VEEAM_ENTERPRISE',
-  'SHAREPOINT',
-  'VIP',
-];
+export const SERVICE_EXPIRATION = {
+  EXPIRES_IN_A_WEEK: 'weeks',
+  EXPIRES_IN_A_MONTH: 'months',
+  RENEWED_IN_AMONTH: 'renew_month',
+};
+
+export const SERVICE_STATUS = {
+  AUTOMATIC: 'auto',
+  MANUAL: 'manual',
+  PENDING_DEBT: 'pending_debt',
+  PENDING_RESILIATION: 'delete_at_expiration',
+  RESILIATED: 'expired',
+};
 
 export default {
   AUTORENEW_EVENT,
   CONTRACTS_IDS,
   MIN_DOMAIN_LENGTH,
+  NIC_ALL,
   NIC_URL,
   RENEW_URL,
-  SERVICES_TYPE,
+  SERVICE_EXPIRATION,
+  SERVICE_STATUS,
 };
