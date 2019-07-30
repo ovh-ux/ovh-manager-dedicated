@@ -690,49 +690,13 @@
   version "0.0.0"
   resolved "https://codeload.github.com/angular-ui/ui-utils/tar.gz/125cb72d692f9f116454f338f6a5471f3088f9b9"
 
-"@bower_components/angular-ui-validate@angular-ui/ui-validate#~1.2.2", angular-ui-validate@angular-ui/ui-validate#~1.2.2:
-  version "1.2.3"
-  resolved "https://codeload.github.com/angular-ui/ui-validate/tar.gz/0d982055360032be2421b969fa1c83bf053e735a"
-
-"@bower_components/bootstrap-datetimepicker@tarruda/bootstrap-datetimepicker#~0.0.11", bootstrap-datetimepicker@tarruda/bootstrap-datetimepicker#~0.0.11:
-  version "0.0.10"
-  resolved "https://codeload.github.com/tarruda/bootstrap-datetimepicker/tar.gz/c26217db8840e5aa8f56e343ce307581960543c9"
-
 "@bower_components/bootstrap4@twbs/bootstrap#v4.0.0":
   version "4.0.0"
   resolved "https://codeload.github.com/twbs/bootstrap/tar.gz/8a628b943cf31ca0a002c08af661a95772480225"
 
-"@bower_components/ckeditor@ckeditor/ckeditor-releases#^4.7.2", ckeditor@*, ckeditor@ckeditor/ckeditor-releases#^4.7.2:
-  version "4.10.1"
-  resolved "https://codeload.github.com/ckeditor/ckeditor-releases/tar.gz/e5999810955383eb4f72c03a5af7f2dfd59390a0"
-
-"@bower_components/international-phone-number@mareczek/international-phone-number#^0.0.16", international-phone-number@mareczek/international-phone-number#^0.0.16:
-  version "0.0.11"
-  resolved "https://codeload.github.com/mareczek/international-phone-number/tar.gz/28055517d453a2f11e9035f2761243b6878df258"
-
-"@bower_components/lodash@lodash/lodash#~3.10.1", lodash@^3.10.1, lodash@lodash/lodash#~3.10.1, lodash@~3.10.0:
-  version "3.10.1"
-  resolved "https://codeload.github.com/lodash/lodash/tar.gz/dfbd78f71de0550068fc82ce6e013d443e5037d7"
-
-"@bower_components/messenger@HubSpot/messenger#~1.4.1", messenger@HubSpot/messenger#~1.4.1:
-  version "1.4.2"
-  resolved "https://codeload.github.com/HubSpot/messenger/tar.gz/a3df9a62a1677af45fb130e226a6cbf98c0cecf0"
-
 "@bower_components/ng-ckeditor@esvit/ng-ckeditor#^0.2.1":
   version "0.2.0"
   resolved "https://codeload.github.com/esvit/ng-ckeditor/tar.gz/8b9ece340f7d90bb3167604cc9d317c8041058c3"
-
-"@bower_components/ng-slide-down@TheRusskiy/ng-slide-down#^1.0.0", ng-slide-down@TheRusskiy/ng-slide-down#^1.0.0:
-  version "1.2.0"
-  resolved "https://codeload.github.com/TheRusskiy/ng-slide-down/tar.gz/efdb323572486b7922ae46a638f153c8d5ee9a2e"
-
-"@bower_components/ovh-angular-browser-alert@ovh-ux/ovh-angular-browser-alert#^1.0.0", ovh-angular-browser-alert@ovh-ux/ovh-angular-browser-alert#^1.0.0:
-  version "1.0.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-browser-alert/tar.gz/8336865a63083e009ae66241b13fec92762c35d3"
-
-"@bower_components/qrcode@janantala/qrcode.js#~1.0.x", qrcode.js@janantala/qrcode.js#~1.0.x:
-  version "1.0.2"
-  resolved "https://codeload.github.com/janantala/qrcode.js/tar.gz/2c20b467901740e6e32308b100d2df1125d4f6ac"
 
 "@commitlint/cli@^7.1.2":
   version "7.2.1"
@@ -1068,12 +1032,12 @@
   dependencies:
     lodash "^4.17.11"
 
-"@ovh-ux/ng-ovh-http@^4.0.1-beta.0":
-  version "4.0.1-beta.0"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-http/-/ng-ovh-http-4.0.1-beta.0.tgz#ccf793c7d34252952d0bf92d8f3a9ff2ca35e52e"
-  integrity sha512-D+pQvfzVr01fXlE75U2U3RdcxSBciqIo7CV4gJM5jyAS3zCXP4/YzNF/tCNIihNs9nI/juSieAnI7ah5xwVn+g==
+"@ovh-ux/ng-ovh-http@^4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-http/-/ng-ovh-http-4.0.2.tgz#4f4c38a7c8cca56ab018773d61bd6d83200d6293"
+  integrity sha512-7QKgJDUBGjYf0Ldr1Nk28lMRZc6jY3e7q+g3pZMyAlIp3kkzG8SZIGT+jnAO0YTyb0sb6bJEbiAQJ8TqGlE0ow==
   dependencies:
-    lodash "~4.17.11"
+    lodash "~4.17.15"
     urijs "^1.19.1"
 
 "@ovh-ux/ng-ovh-otrs@^7.1.7":
@@ -1574,6 +1538,10 @@ angular-ui-bootstrap@1.3.3:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/angular-ui-bootstrap/-/angular-ui-bootstrap-1.3.3.tgz#4820f895d433c17abeb4ac7387f2f122cbf8c11c"
   integrity sha1-SCD4ldQzwXq+tKxzh/LxIsv4wRw=
+
+angular-ui-validate@angular-ui/ui-validate#~1.2.2:
+  version "1.2.3"
+  resolved "https://codeload.github.com/angular-ui/ui-validate/tar.gz/0d982055360032be2421b969fa1c83bf053e735a"
 
 angular-xeditable@^0.9.0:
   version "0.9.0"
@@ -2096,6 +2064,10 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
+bootstrap-datetimepicker@tarruda/bootstrap-datetimepicker#~0.0.11:
+  version "0.0.10"
+  resolved "https://codeload.github.com/tarruda/bootstrap-datetimepicker/tar.gz/c26217db8840e5aa8f56e343ce307581960543c9"
+
 bootstrap@~3.3.0, bootstrap@~3.3.7:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
@@ -2529,6 +2501,10 @@ circular-json@^0.3.1:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/circular-json/-/circular-json-0.3.3.tgz#815c99ea84f6809529d2f45791bdf82711352d66"
   integrity sha512-UZK3NBx2Mca+b5LsG7bY183pHWt5Y1xts4P3Pz7ENTwGVnJOUWbRb3ocjvX7hx9tq/yTAdclXm9sZ38gNuem4A==
+
+ckeditor@*, ckeditor@ckeditor/ckeditor-releases#^4.7.2:
+  version "4.10.1"
+  resolved "https://codeload.github.com/ckeditor/ckeditor-releases/tar.gz/e5999810955383eb4f72c03a5af7f2dfd59390a0"
 
 class-utils@^0.3.5:
   version "0.3.6"
@@ -5864,6 +5840,10 @@ internal-ip@^3.0.1:
     default-gateway "^2.6.0"
     ipaddr.js "^1.5.2"
 
+international-phone-number@mareczek/international-phone-number#^0.0.16:
+  version "0.0.11"
+  resolved "https://codeload.github.com/mareczek/international-phone-number/tar.gz/28055517d453a2f11e9035f2761243b6878df258"
+
 interpret@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.1.0.tgz#7ed1b1410c6a0e0f78cf95d3b8440c63f78b8614"
@@ -6991,7 +6971,7 @@ lodash@^4.0.0, lodash@^4.11.1, lodash@^4.17.10, lodash@^4.17.3, lodash@^4.17.4, 
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
 
-lodash@^4.17.11:
+lodash@^4.17.11, lodash@^4.17.15, lodash@~4.17.15:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
@@ -7000,6 +6980,10 @@ lodash@^4.17.14:
   version "4.17.14"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.14.tgz#9ce487ae66c96254fe20b599f21b6816028078ba"
   integrity sha512-mmKYbW3GLuJeX+iGP+Y7Gp1AiGHGbXHCOh/jZmrawMmsE7MS4znI3RL2FsjbqOyMayHInjOeykW7PEajUk1/xw==
+
+lodash@lodash/lodash#~3.10.1, lodash@~3.10.0:
+  version "3.10.1"
+  resolved "https://codeload.github.com/lodash/lodash/tar.gz/dfbd78f71de0550068fc82ce6e013d443e5037d7"
 
 lodash@~3.9.3:
   version "3.9.3"
@@ -7237,6 +7221,10 @@ merge2@^1.2.1:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/merge2/-/merge2-1.2.3.tgz#7ee99dbd69bb6481689253f018488a1b902b0ed5"
   integrity sha512-gdUU1Fwj5ep4kplwcmftruWofEFt6lfpkkr3h860CXbAB9c3hGb55EOL2ali0Td5oebvW0E1+3Sr+Ur7XfKpRA==
+
+messenger@HubSpot/messenger#~1.4.1:
+  version "1.4.2"
+  resolved "https://codeload.github.com/HubSpot/messenger/tar.gz/a3df9a62a1677af45fb130e226a6cbf98c0cecf0"
 
 methods@^1.1.1, methods@~1.1.2:
   version "1.1.2"
@@ -7574,6 +7562,10 @@ ng-ckeditor@^2.0.5:
   dependencies:
     ckeditor "*"
     jquery ">= 1.9.1"
+
+ng-slide-down@TheRusskiy/ng-slide-down#^1.0.0:
+  version "1.2.0"
+  resolved "https://codeload.github.com/TheRusskiy/ng-slide-down/tar.gz/efdb323572486b7922ae46a638f153c8d5ee9a2e"
 
 nice-try@^1.0.4:
   version "1.0.5"
@@ -8057,6 +8049,10 @@ osenv@0, osenv@^0.1.4:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.0"
 
+ovh-angular-browser-alert@ovh-ux/ovh-angular-browser-alert#^1.0.0:
+  version "1.0.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-browser-alert/tar.gz/8336865a63083e009ae66241b13fec92762c35d3"
+
 ovh-angular-export-csv@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/ovh-angular-export-csv/-/ovh-angular-export-csv-0.3.2.tgz#e88395d9f94a782c2ca80e3e61d872d58c784f5d"
@@ -8097,12 +8093,12 @@ ovh-angular-toaster@^0.8.0:
   resolved "https://registry.yarnpkg.com/ovh-angular-toaster/-/ovh-angular-toaster-0.8.0.tgz#7073201379ea196c721d583421c0cef1d04bdbdb"
   integrity sha1-cHMgE3nqGWxyHVg0IcDO8dBL29s=
 
-ovh-api-services@^7.4.0:
-  version "7.4.0"
-  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-7.4.0.tgz#a59affc5a5ebcff499f4d0a3cfb1f66e965c2ce6"
-  integrity sha512-Qmql4km9vqrAKobC0vpb05dPOYgmzH8BonhzX/KUfqmQBqrraVXwG+UdmMFZsgs38y4VmGWYoRWl7KrN5Shdyg==
+ovh-api-services@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-8.0.0.tgz#494d33d5896567e1d944f380931733f8ae4d18f5"
+  integrity sha512-1eO4z2+T4mWalDlSjwC/c4ZiG4YwFfky9jSbtVR4sRXWOowegJ5uhzlIR1tQocOjioNBsYpF17K2zxQRVVmwLw==
   dependencies:
-    lodash "^3.10.1"
+    lodash "^4.17.15"
 
 ovh-jquery-ui-draggable-ng@^0.0.5:
   version "0.0.5"
@@ -8876,6 +8872,10 @@ qrcode-genetator@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/qrcode-genetator/-/qrcode-genetator-1.0.2.tgz#fc532ec75bc405e1905239f97e1bc06fe303a2be"
   integrity sha1-/FMux1vEBeGQUjn5fhvAb+MDor4=
+
+qrcode.js@janantala/qrcode.js#~1.0.x:
+  version "1.0.2"
+  resolved "https://codeload.github.com/janantala/qrcode.js/tar.gz/2c20b467901740e6e32308b100d2df1125d4f6ac"
 
 qs@6.5.2, qs@~6.5.2:
   version "6.5.2"
