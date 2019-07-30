@@ -24,15 +24,15 @@
     <div class="tab-content">
         <div data-ovh-alert></div>
 
-        <div data-ng-if="$ctrl.nicBilling.length > 1">
+        <div data-ng-if="$ctrl.nics.length > 1">
             <label for="nicBilling" class="oui-label" data-translate="autorenew_service_autorenew_contact_filter"></label>
             <oui-select
                 class="oui-select_l"
                 id="nicBilling"
                 data-name="nicBilling"
                 data-model="$ctrl.nicBillingFilter"
-                data-items="$ctrl.nicBilling"
-                data-on-change="$ctrl.onNicBillingChange()">
+                data-items="$ctrl.nics"
+                data-on-change="$ctrl.onNicBillingChange(modelValue)">
             </oui-select>
         </div>
 
@@ -65,12 +65,15 @@
 
         <oui-datagrid
             id="services"
-            data-page-size="10"
+            data-page-size="{{:: $ctrl.pageSize }}"
             data-empty-placeholder="{{:: 'autorenew_empty' | translate }}"
             data-rows-loader="$ctrl.loadServices($config)"
             data-on-row-select="$ctrl.onRowSelection($rows)"
             data-selectable-rows
-            data-criteria="$ctrl.criteria">
+            data-criteria="$ctrl.criteria"
+            data-on-criteria-change="$ctrl.onCriteriaChange($criteria)"
+            data-on-page-change="$ctrl.onPageChange($pagination)"
+            data-on-sort-change="$ctrl.onSortChange($sort)">
 
             <extra-top>
                 <oui-action-menu data-text="{{:: 'autorenew_service_action_title' | translate }}">
@@ -137,7 +140,7 @@
                 data-title="::'autorenew_service_status' | translate"
                 data-property="status"
                 data-type="options"
-                data-type-options="$ctrl.filtersOptions.renewStatus"
+                data-type-options="$ctrl.filtersOptions.status"
                 data-filterable>
                 <billing-renew-label data-service-infos="$row"></billing-renew-label>
             </oui-column>
@@ -145,7 +148,7 @@
                 data-title="::'autorenew_service_date' | translate"
                 data-property="expiration"
                 data-type="options"
-                data-type-options="$ctrl.filtersOptions.renewExpiration"
+                data-type-options="$ctrl.filtersOptions.expiration"
                 data-filterable>
                 <span data-ng-if="$row && $row.expiration"
                     data-ng-class="getExpirationClass($row)">

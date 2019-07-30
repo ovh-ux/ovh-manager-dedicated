@@ -62,9 +62,7 @@ export default class {
   }
 
   getServicesTypes(services) {
-    const uniqServices = _.uniq(_.map(services, 'serviceType'));
-
-    return _.reduce(uniqServices, (serviceTypes, service) => ({
+    return _.reduce(services.servicesTypes, (serviceTypes, service) => ({
       ...serviceTypes,
       [service]: this.$translate.instant(`autorenew_service_type_${service}`),
     }), {});
