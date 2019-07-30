@@ -146,11 +146,9 @@ angular
     checkForZertoOptionOrder() {
       return this.dedicatedCloudDrp.checkForZertoOptionOrder(this.currentService.name)
         .then((storedDrpInformations) => {
-          let storedDrpStatus = this.DRP_STATUS.disabled;
-          if (storedDrpInformations) {
-            storedDrpStatus = this.dedicatedCloudDrp.constructor
-              .formatStatus(storedDrpInformations.status);
-          }
+          const storedDrpStatus = storedDrpInformations != null
+            ? this.dedicatedCloudDrp.constructor.formatStatus(storedDrpInformations.status)
+            : this.DRP_STATUS.disabled;
 
           this.drpStatus = [this.currentDrp.state, storedDrpStatus]
             .find(status => status !== this.DRP_STATUS.disabled)
@@ -172,7 +170,8 @@ angular
         this.DRP_STATUS.delivered,
         this.DRP_STATUS.disabled,
         this.DRP_STATUS.waitingConfiruration,
-      ].includes(this.drpStatus);
+      ].includes(this.drpStatus) && this.currentDrp
+        .vpnStatus !== DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS.configuring;
     }
 
     /* Update description or name */

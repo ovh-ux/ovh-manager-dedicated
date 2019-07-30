@@ -2,6 +2,7 @@ import {
   DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP,
   DEDICATEDCLOUD_DATACENTER_DRP_STATUS,
   DEDICATEDCLOUD_DATACENTER_DRP_UNAVAILABLE_IP_STATUS,
+  DEDICATEDCLOUD_DATACENTER_ZERTO,
 } from '../../../../dedicatedCloud-datacenter-drp.constants';
 
 export default class {
@@ -182,9 +183,10 @@ export default class {
         : this.DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS.zertoOption.onPremise,
     };
 
-    const { splitter } = this.DEDICATEDCLOUD_DATACENTER_ZERTO;
-    const [, ...[formattedServiceName]] = drpInformations.primaryPcc.serviceName.split(splitter);
-    const preferenceKey = `${this.DEDICATEDCLOUD_DATACENTER_ZERTO.title}_${formattedServiceName.replace(/-/g, '')}`;
+    const preferenceKey = this.constructor.formatPreferenceKey(
+      drpInformations.primaryPcc.serviceName,
+      DEDICATEDCLOUD_DATACENTER_ZERTO.title,
+    );
 
     return this.ovhUserPref.create(preferenceKey, drpInformationsToStore);
   }

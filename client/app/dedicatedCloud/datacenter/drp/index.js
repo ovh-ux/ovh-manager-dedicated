@@ -1,6 +1,4 @@
 import {
-  DEDICATEDCLOUD_DATACENTER_DRP_IP_BLOCK_REG_EXP,
-  DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP,
   DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS,
   DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS,
   DEDICATEDCLOUD_DATACENTER_DRP_ROLES,
@@ -23,8 +21,6 @@ const controllerName = 'DedicatedCloudDatacenterDrpCtrl';
 const moduleName = 'dedicatedCloudDatacenterDrp';
 const serviceName = 'dedicatedCloudDrp';
 
-const ipBlockReqExpConstantName = 'DEDICATEDCLOUD_DATACENTER_DRP_IP_BLOCK_REG_EXP';
-const ipUsageMacAddressRegExpConstantName = 'DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP';
 const optionsConstantName = 'DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS';
 const orderOptionsConstantName = 'DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS';
 const rolesConstantName = 'DEDICATEDCLOUD_DATACENTER_DRP_ROLES';
@@ -40,9 +36,6 @@ angular
     summary,
   ])
   .component(componentName, component)
-  .constant(ipBlockReqExpConstantName, DEDICATEDCLOUD_DATACENTER_DRP_IP_BLOCK_REG_EXP)
-  .constant(ipUsageMacAddressRegExpConstantName,
-    DEDICATEDCLOUD_DATACENTER_DRP_IP_USAGE_MAC_ADDRESS_REG_EXP)
   .constant(optionsConstantName, DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS)
   .constant(orderOptionsConstantName, DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS)
   .constant(rolesConstantName, DEDICATEDCLOUD_DATACENTER_DRP_ROLES)

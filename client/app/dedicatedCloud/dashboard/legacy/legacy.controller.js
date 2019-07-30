@@ -86,7 +86,8 @@ export default class {
       this.DRP_STATUS.delivered,
       this.DRP_STATUS.disabled,
       this.DRP_STATUS.waitingConfiguration,
-    ].includes(this.drpStatus);
+    ].includes(this.drpStatus) && this.currentDrp
+      .vpnStatus !== DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS.configuring;
   }
 
   goToVpnConfigurationState() {
@@ -99,7 +100,7 @@ export default class {
 
   chooseDatacenterForDrp() {
     if (this.datacenterList.length === 1) {
-      this.$scope.$parent.loadingInformations = true;
+      this.loading = true;
       const [{ id: datacenterId }] = this.datacenterList;
       return this.$state
         .go(
