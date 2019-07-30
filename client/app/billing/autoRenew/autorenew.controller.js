@@ -118,7 +118,7 @@ export default class AutorenewCtrl {
       meta: {
         totalCount: this.services.count,
       },
-      data: this.services.list.results,
+      data: this.billingServices,
     });
   }
 

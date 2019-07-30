@@ -9,6 +9,7 @@ export default {
     canResiliate: '<',
     cancelServiceResiliation: '<',
     currentActiveLink: '<',
+    billingServices: '<',
     disableAutorenewForDomains: '<',
     disableBulkAutorenew: '<',
     enableBulkAutorenew: '<',

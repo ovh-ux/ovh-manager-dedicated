@@ -41,6 +41,10 @@ export default /* @ngInject */ ($stateProvider) => {
       agreementsLink: /* @ngInject */ $state => $state.href(
         'app.account.billing.autorenew.agreements',
       ),
+      billingServices: /* @ngInject */ services => _.map(
+        services.list.results,
+        service => new BillingService(service),
+      ),
       canDisableAllDomains: /* @ngInject */ services => services.bulkDomains,
       currentActiveLink: /* @ngInject */ (
         $state,
@@ -59,11 +63,6 @@ export default /* @ngInject */ ($stateProvider) => {
       sshLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew.ssh'),
       isEnterpriseCustomer: /* @ngInject */ currentUser => currentUser.isEnterprise,
       isInDebt: /* @ngInject */ DEBT_STATUS => service => _.includes(DEBT_STATUS, service.status),
-
-      getServices: /* @ngInject */ BillingAutoRenew => (
-        count, offset, search, type, renewDateType, status, order, nicBilling,
-      ) => BillingAutoRenew
-        .getServices(count, offset, search, type, renewDateType, status, order, nicBilling),
 
       goToAutorenew: /* @ngInject */ ($state, $timeout, Alerter) => (message = false, type = 'success') => {
         const reload = message && type === 'success';
