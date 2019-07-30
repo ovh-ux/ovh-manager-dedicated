@@ -24,32 +24,26 @@
     <div class="tab-content">
         <div data-ovh-alert></div>
 
-        <form novalidate>
-            <oui-field
-                data-ng-if="$ctrl.nicBilling.length > 1"
-                data-label="{{::'autorenew_service_autorenew_contact_filter' | translate}}"
-                data-size="l">
-                <label class="oui-select">
-                    <select name="billingAutoRenew"
-                        class="oui-select__input"
-                        data-ng-change="$ctrl.onNicBillingChange()"
-                        data-ng-model-options="{ debounce: 500 }"
-                        data-ng-model="$ctrl.nicBillingFilter"
-                        data-ng-options="nicBilling for nicBilling in $ctrl.nicBilling track by nicBilling">
-                        <option value=""
-                            data-translate="autorenew_service_autorenew_contact_filter_all">
-                        </option>
-                    </select>
-                    <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
-                </label>
-            </oui-field>
-        </form>
+        <div data-ng-if="$ctrl.nicBilling.length > 1">
+            <label for="nicBilling" class="oui-label" data-translate="autorenew_service_autorenew_contact_filter"></label>
+            <oui-select
+                class="oui-select_l"
+                id="nicBilling"
+                data-name="nicBilling"
+                data-model="$ctrl.nicBillingFilter"
+                data-items="$ctrl.nicBilling"
+                data-on-change="$ctrl.onNicBillingChange()">
+            </oui-select>
+        </div>
 
         <oui-datagrid
+            id="services"
+            data-page-size="10"
             data-empty-placeholder="{{:: 'autorenew_empty' | translate }}"
-            data-rows="$ctrl.services"
+            data-rows-loader="$ctrl.loadServices($config)"
             data-on-row-select="$ctrl.onRowSelection($rows)"
-            data-selectable-rows>
+            data-selectable-rows
+            data-criteria="$ctrl.criteria">
 
             <extra-top>
                 <oui-action-menu data-text="{{:: 'autorenew_service_action_title' | translate }}">
@@ -101,9 +95,7 @@
                 <span data-ng-bind-html="('autorenew_service_type_' + $row.serviceType) | translate"></span>
             </oui-column>
             <oui-column
-                data-property="status"
-                data-title="::'autorenew_service_state' | translate"
-                data-sortable>
+                data-title="::'autorenew_service_state' | translate">
                 <span class="oui-icon oui-icon-success_circle oui-color-success-medium"
                     aria-label="{{:: 'autorenew_service_state_' + $row.status | translate }}"
                     title="{{:: 'autorenew_service_state_' + $row.status | translate }}"
@@ -116,6 +108,7 @@
             </oui-column>
             <oui-column
                 data-title="::'autorenew_service_status' | translate"
+                data-property="status"
                 data-type="options"
                 data-type-options="$ctrl.filtersOptions.renewStatus"
                 data-filterable>
@@ -123,10 +116,10 @@
             </oui-column>
             <oui-column
                 data-title="::'autorenew_service_date' | translate"
+                data-property="expiration"
                 data-type="options"
                 data-type-options="$ctrl.filtersOptions.renewExpiration"
-                data-filterable
-                data-sortable>
+                data-filterable>
                 <span data-ng-if="$row && $row.expiration"
                     data-ng-class="getExpirationClass($row)">
                     <billing-renew-date data-service-infos="$row"></billing-renew-date>

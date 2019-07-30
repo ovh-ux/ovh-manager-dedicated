@@ -1,11 +1,17 @@
 import _ from 'lodash';
-import { MIN_DOMAIN_LENGTH, RENEW_URL } from './autorenew.constants';
+import { MIN_DOMAIN_LENGTH, NIC_ALL, RENEW_URL } from './autorenew.constants';
 
 export default /* @ngInject */ ($stateProvider) => {
   $stateProvider.state('app.account.billing.autorenew', {
-    url: '/autorenew',
+    url: '/autorenew?selectedType',
     component: 'autoRenew',
     translations: { value: ['.'], format: 'json' },
+    params: {
+      selectedType: {
+        value: null,
+        squash: true,
+      },
+    },
     resolve: {
       agreementsLink: /* @ngInject */ $state => $state.href(
         'app.account.billing.autorenew.agreements',
@@ -24,6 +30,12 @@ export default /* @ngInject */ ($stateProvider) => {
       sshLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew.ssh'),
       isEnterpriseCustomer: /* @ngInject */ currentUser => currentUser.isEnterprise,
       isInDebt: /* @ngInject */ DEBT_STATUS => service => _.includes(DEBT_STATUS, service.status),
+
+      getServices: /* @ngInject */ BillingAutoRenew => (
+        count, offset, search, type, renewDateType, status, order, nicBilling,
+      ) => BillingAutoRenew
+        .getServices(count, offset, search, type, renewDateType, status, order, nicBilling),
+
       goToAutorenew: /* @ngInject */ ($state, $timeout, Alerter) => (message = false, type = 'success') => {
         const reload = message && type === 'success';
 
@@ -41,9 +53,16 @@ export default /* @ngInject */ ($stateProvider) => {
       hasAutoRenew: /* @ngInject */ billingRenewHelper => service => billingRenewHelper
         .serviceHasAutomaticRenew(service),
 
+      selectedType: /* @ngInject */ $transition$ => $transition$.params().selectedType,
+
+      serviceTypes: /* @ngInject */ (
+        BillingAutoRenew,
+        services,
+      ) => BillingAutoRenew.getServicesTypes(services),
+
       allServices: /* @ngInject */ BillingAutoRenew => BillingAutoRenew.getAllServices(),
       services: /* @ngInject */ allServices => _.get(allServices, 'list.results', []),
-      nicBilling: /* @ngInject */ allServices => _.get(allServices, 'nicBilling', []),
+      nicBilling: /* @ngInject */ ($translate, allServices) => [$translate.instant(NIC_ALL), ..._.get(allServices, 'nicBilling', [])],
 
       updateServices: /* @ngInject */ $state => ({ serviceId }) => $state.go('app.account.billing.autorenew.update', { serviceId }),
       updateExchangeBilling: /* @ngInject */ $state => ({ serviceId }) => $state.go('app.account.billing.autorenew.exchange', { serviceId }),
@@ -88,30 +107,6 @@ export default /* @ngInject */ ($stateProvider) => {
       },
       getSMSAutomaticRenewalURL: /* @ngInject */ constants => service => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/options/recredit`,
       getSMSCreditBuyingURL: /* @ngInject */ constants => service => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/order`,
-
-      filtersOptions: /* @ngInject */ ($translate, services) => {
-        const serviceTypesValues = _(services)
-          .map('serviceType')
-          .uniq()
-          .mapKeys()
-          .mapValues(serviceType => $translate.instant(`autorenew_service_type_${serviceType}`))
-          .value();
-
-        return {
-          serviceType: {
-            hideOperators: true,
-            values: serviceTypesValues,
-          },
-          renewStatus: {
-            hideOperators: true,
-            values: [],
-          },
-          renewExpiration: {
-            hideOperators: true,
-            values: [],
-          },
-        };
-      },
     },
     redirectTo: /* @ngInject */ isEnterpriseCustomer => (isEnterpriseCustomer ? 'app.account.billing.autorenew.agreements' : false),
   });

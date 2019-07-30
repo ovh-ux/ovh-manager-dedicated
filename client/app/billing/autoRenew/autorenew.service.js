@@ -1,5 +1,5 @@
 import {
-  AUTORENEW_EVENT, CONTRACTS_IDS, NIC_URL, SERVICES_TYPE,
+  AUTORENEW_EVENT, CONTRACTS_IDS, NIC_URL, SERVICE_EXPIRATION, SERVICE_STATUS,
 } from './autorenew.constants';
 
 import BillingService from './BillingService.class';
@@ -8,6 +8,7 @@ export default class {
   /* @ngInject */
   constructor(
     $q,
+    $translate,
     $window,
     constants,
     coreConfig,
@@ -17,6 +18,7 @@ export default class {
     OvhHttp,
   ) {
     this.$q = $q;
+    this.$translate = $translate;
     this.$window = $window;
     this.constants = constants;
     this.coreConfig = coreConfig;
@@ -31,25 +33,22 @@ export default class {
   }
 
   getAllServices() {
-    return this.OvhHttp.get('/billing/autorenew/services', {
-      rootPath: '2api',
-    });
+    return this.OvhApiBillingAutorenewServices.Aapi()
+      .query().$promise;
   }
 
-  getServices(count, offset, search, type, renew, renewal, order, nicBilling) {
-    return this.OvhHttp.get('/billing/autorenew/services', {
-      rootPath: '2api',
-      params: {
+  getServices(count, offset, search, type, renewDateType, status, order, nicBilling) {
+    return this.OvhApiBillingAutorenewServices.Aapi()
+      .query({
         count,
         offset,
         search,
         type,
-        renew,
-        renewal,
-        order,
+        renewDateType,
+        status,
+        order: JSON.stringify(order),
         nicBilling,
-      },
-    });
+      }).$promise;
   }
 
   getService(serviceId) {
@@ -60,8 +59,27 @@ export default class {
       .then(services => new BillingService(_.head(services.list.results)));
   }
 
-  getServicesTypes() {
-    return this.$q.when(SERVICES_TYPE);
+  getServicesTypes(services) {
+    const uniqServices = _.uniq(_.map(services, 'serviceType'));
+
+    return _.reduce(uniqServices, (serviceTypes, service) => ({
+      ...serviceTypes,
+      [service]: this.$translate.instant(`autorenew_service_type_${service}`),
+    }), {});
+  }
+
+  getStatusTypes() {
+    return _.reduce(SERVICE_STATUS, (translatedStatus, status) => ({
+      ...translatedStatus,
+      [status]: this.$translate.instant(`billing_autorenew_service_status_${status}`),
+    }), {});
+  }
+
+  getExpirationFilterTypes() {
+    return _.reduce(SERVICE_EXPIRATION, (expirations, expirationType) => ({
+      ...expirations,
+      [expirationType]: this.$translate.instant(`billing_autorenew_service_expiration_${expirationType}`),
+    }), {});
   }
 
   updateServices(updateList) {
