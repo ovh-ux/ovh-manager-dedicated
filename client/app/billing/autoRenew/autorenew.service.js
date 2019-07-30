@@ -1,5 +1,5 @@
 import {
-  AUTORENEW_EVENT, CONTRACTS_IDS, NIC_URL, SERVICE_EXPIRATION, SERVICE_STATUS,
+  AUTORENEW_EVENT, CONTRACTS_IDS, NIC_URL, SERVICE_EXPIRATION, SERVICE_STATUS, RENEW_URL,
 } from './autorenew.constants';
 
 import BillingService from './BillingService.class';
@@ -187,14 +187,8 @@ export default class {
     }).$promise;
   }
 
-  getExchangeUrl(organization, service, offer, action) {
-    const exchangeAbsoluteUrl = this.coreConfig.getRegion() === 'EU' && this.constants.UNIVERS !== 'web'
-      ? this.constants.MANAGER_URLS.web
-      : this.$window.location.href.replace(this.$window.location.hash, '#/');
-
-    const exchangeBaseUrl = `${exchangeAbsoluteUrl}configuration/exchange_${offer.toLowerCase()}/${organization}/${service}`;
-
-    return `${exchangeBaseUrl}?action=${action}`;
+  static getExchangeUrl(service, action) {
+    return `${service.url}?action=${action}`;
   }
 
   getAutorenewAgreements() {
@@ -220,18 +214,6 @@ export default class {
   }
   /* eslint-enable class-methods-use-this */
 
-  canResiliate(service, user) {
-    const canDeleteAtExpiration = service.canDeleteAtExpiration
-      || (service.service && service.service.canDeleteAtExpiration);
-    return canDeleteAtExpiration && this.userIsBillingOrAdmin(service, user);
-  }
-
-  canCancelResiliation(service, user) {
-    return service.renew
-      && service.renew.deleteAtExpiration
-      && !service.renew.manualPayment
-      && this.userIsBillingOrAdmin(service, user);
-  }
 
   hasRenewDay() {
     return this.ovhPaymentMethod
@@ -264,5 +246,9 @@ export default class {
     return !nicRenew.initialized
       ? this.enableAutorenew(renewDay)
       : this.putAutorenew({ active, renewDay });
+  }
+
+  static getRenewUrl(service, subsidiary) {
+    return `${_.get(RENEW_URL, subsidiary, RENEW_URL.default)}${service}`;
   }
 }
