@@ -9,6 +9,10 @@ export default /* @ngInject */ ($stateProvider) => {
     layout: 'modal',
     translations: { value: ['.'], format: 'json' },
     resolve: {
+      cancelResiliationUrl: /* @ngInject */ (
+        $state,
+        serviceId,
+      ) => $state.href('app.account.billing.autorenew.cancelResiliation', { serviceId }),
       engagement: /* @ngInject */ (
         Server,
         service,

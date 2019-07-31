@@ -24,6 +24,24 @@
     <div class="tab-content">
         <div data-ovh-alert></div>
 
+        <oui-message
+            data-ng-if="$ctrl.BillingAutoRenew.isAutomaticRenewV2Available() && (
+                !$ctrl.defaultPaymentMean
+                || ($ctrl.defaultPaymentMean && $ctrl.currentUser.hasAutorenew2016() && !$ctrl.nicRenew.active)
+            )"
+            data-type="error"
+            data-dismissable>
+            <p data-ng-if="!$ctrl.defaultPaymentMean" data-translate="billing_autorenew_service_renew_requires_mean_and_date"></p>
+            <p data-ng-if="$ctrl.defaultPaymentMean && !nicRenew.active && nicRenew.isMandatory">
+                <span data-translate="billing_autorenew_service_activate_alert"></span>
+                <a
+                    data-ng-href="{{:: $ctrl.activationLink }}"
+                    class="oui-link"
+                    data-translate="billing_autorenew_service_enable_autorenew">
+                </a>
+            </p>
+        </oui-message>
+
         <div data-ng-if="$ctrl.nics.length > 1">
             <label for="nicBilling" class="oui-label" data-translate="billing_autorenew_service_autorenew_contact_filter"></label>
             <oui-select
@@ -38,7 +56,7 @@
 
         <form novalidate>
             <oui-field
-                data-ng-if="$ctrl.nicRenew.allowed"
+                data-ng-if="$ctrl.nicRenew.isMandatory && $ctrl.defaultPaymentMean"
                 data-label="{{::'autorenew_service_autorenew_day' | translate}}"
                 data-label-popover="{{::'autorenew_service_autorenew_day_tooltip' | translate}}"
                 data-size="l">
@@ -214,7 +232,7 @@
                     </oui-action-menu-item>
                     <oui-action-menu-item
                         data-ng-if="!$row.shouldDeleteAtExpiration()"
-                        data-disabled="!$ctrl.canBeResiliated($ctrl.currentUser.nichandle)"
+                        data-disabled="!$row.canBeResiliated($ctrl.currentUser.nichandle)"
                         data-on-click="$ctrl.resiliateService($row)">
                         <span data-translate="billing_autorenew_service_resiliate_button"></span>
                     </oui-action-menu-item>
