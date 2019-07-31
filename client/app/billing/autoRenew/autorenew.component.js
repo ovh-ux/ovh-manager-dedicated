@@ -37,6 +37,8 @@ export default {
     sort: '<',
     sshLink: '<',
     terminateEmail: '<',
+    terminateHostingWeb: '<',
+    terminatePrivateDatabase: '<',
     updateExchangeBilling: '<',
     updateServices: '<',
     warnNicBilling: '<',
