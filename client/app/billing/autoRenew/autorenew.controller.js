@@ -76,18 +76,18 @@ export default class AutorenewCtrl {
       ? this.services
       : this.selectedServices;
     const datasToReturn = [[
-      this.$translate.instant('autorenew_service_type'),
-      this.$translate.instant('autorenew_service_name'),
-      this.$translate.instant('autorenew_service_date'),
-      this.$translate.instant('autorenew_service_renew_frequency_title'),
+      this.$translate.instant('billing_autorenew_service_name'),
+      this.$translate.instant('billing_autorenew_service'),
+      this.$translate.instant('billing_autorenew_service_status'),
+      this.$translate.instant('billing_autorenew_service_date'),
     ]];
 
     servicesToExport.forEach((service) => {
       datasToReturn.push([
-        this.$translate.instant(`autorenew_service_type_${service.serviceType}`),
         service.serviceId,
-        `${this.renewHelper.getRenewDateFormated(service)} ${this.$filter('date')(service.expiration, 'mediumDate')}`,
+        this.$translate.instant(`billing_autorenew_service_type_${service.serviceType}`),
         service.renewLabel,
+        `${this.renewHelper.getRenewDateFormated(service)} ${this.$filter('date')(service.expiration, 'mediumDate')}`,
       ]);
     });
 
