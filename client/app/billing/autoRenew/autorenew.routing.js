@@ -49,10 +49,7 @@ export default /* @ngInject */ ($stateProvider) => {
         serviceId,
       }) => $state.go('app.account.billing.autorenew.cancelResiliation', { serviceId }),
       canDisableAllDomains: /* @ngInject */ services => services.bulkDomains,
-      currentActiveLink: /* @ngInject */ (
-        $state,
-        $transition$,
-      ) => () => $state.href($transition$.to().name),
+      currentActiveLink: /* @ngInject */ $state => () => $state.href($state.current.name),
       defaultPaymentMean: /* @ngInject */
         ovhPaymentMethod => ovhPaymentMethod.getDefaultPaymentMethod(),
       disableAutorenewForDomains: /* @ngInject */ $state => () => $state.go('app.account.billing.autorenew.disableDomainsBulk'),
