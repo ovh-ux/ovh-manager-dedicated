@@ -1,3 +1,5 @@
+import UserModel from './user/User.class';
+
 angular
   .module('App')
   .config(/* @ngInject */ ($stateProvider) => {
@@ -6,7 +8,8 @@ angular
       controller: 'AppCtrl',
       controllerAs: 'AppCtrl',
       resolve: {
-        currentUser: /* @ngInject */ User => User.getUser(),
+        currentUser: /* @ngInject */ User => User.getUser()
+          .then(user => new UserModel(user)),
       },
       templateUrl: 'app.html',
       translations: { value: ['common', 'double-authentication', 'user-contracts'], format: 'json' },

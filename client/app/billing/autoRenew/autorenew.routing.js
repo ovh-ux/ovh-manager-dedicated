@@ -38,6 +38,9 @@ export default /* @ngInject */ ($stateProvider) => {
       },
     },
     resolve: {
+      activationLink: /* @ngInject */ $state => $state.href(
+        'app.account.billing.autorenew.activation',
+      ),
       agreementsLink: /* @ngInject */ $state => $state.href(
         'app.account.billing.autorenew.agreements',
       ),
@@ -87,7 +90,15 @@ export default /* @ngInject */ ($stateProvider) => {
         .serviceHasAutomaticRenew(service),
 
       nicBilling: /* @ngInject */ $transition$ => $transition$.params().nicBilling,
-      nicRenew: /* @ngInject */ BillingAutoRenew => BillingAutoRenew.getNicRenew(),
+      nicRenew: /* @ngInject */ (
+        BillingAutoRenew,
+        services,
+      ) => BillingAutoRenew.getAutorenew()
+        .then(nicRenew => ({
+          ...nicRenew,
+          isMandatory: services.userMustApproveAutoRenew,
+          renewDays: _.range(1, 30),
+        })),
 
       nics: /* @ngInject */ (
         $translate,

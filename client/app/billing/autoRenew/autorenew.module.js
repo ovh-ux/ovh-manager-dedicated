@@ -1,3 +1,4 @@
+import activation from './actions/activation/activation.module';
 import agreements from './agreements/user-agreements.module';
 import cancelResiliation from './actions/cancel-resiliation/cancel-resiliation.module';
 import debtBeforePaying from './actions/debtBeforePaying/debtBeforePaying.module';
@@ -22,6 +23,7 @@ const moduleName = 'ovhManagerBillingAutorenew';
 
 angular.module(moduleName, [
   'ui.router',
+  activation,
   agreements,
   cancelResiliation,
   debtBeforePaying,

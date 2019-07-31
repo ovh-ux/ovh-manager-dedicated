@@ -3,6 +3,7 @@ import template from './billing-autoRenew-delete.html';
 
 export default {
   bindings: {
+    cancelResiliationUrl: '<',
     engagement: '<',
     goBack: '<',
     service: '<',
