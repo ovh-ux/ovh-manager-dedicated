@@ -11,7 +11,6 @@ angular.module('App').controller('UsbStorageCtrl', ($scope, $stateParams, $trans
     Server.getUsbStorageInformations($stateParams.productId).then(
       (result) => {
         $scope.usbInformations.numberOfFreeSlot = new Array(result[0].number);
-        $scope.usbInformations.orderable = result[0].orderable;
         $scope.usbInformations.usbKeys = result[1].usbKeys;
         $scope.usbInformations.capacities = result[0].capacity;
 

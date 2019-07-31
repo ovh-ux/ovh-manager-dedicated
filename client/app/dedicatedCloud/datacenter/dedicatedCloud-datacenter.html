@@ -52,7 +52,7 @@
             <oui-header-tabs-item data-state="app.dedicatedClouds.datacenter.backup"
                                   data-text="{{:: 'dedicatedCloud_tab_backup' | translate }}"></oui-header-tabs-item>
             <oui-header-tabs-item data-state="app.dedicatedClouds.datacenter.drp"
-                                  data-ng-if="$ctrl.constants.target !== 'US'"
+                                  data-ng-if="$ctrl.coreConfig.getRegion() !== 'US'"
                                   data-text="{{:: 'dedicatedCloud_tab_drp' | translate }}"></oui-header-tabs-item>
         </oui-header-tabs>
         <div class="tab-content">
@@ -61,19 +61,8 @@
                  role="alert"
                  data-ng-class="alertType"
                  data-ng-show="message">
-                <i class="close icon-remove" data-ng-click="message=null" aria-hidden="true"></i>
+                <i class="close icon-remove" data-ng-click="resetMessage()" aria-hidden="true"></i>
                 <span data-ng-bind-html="message"></span>
-            </div>
-
-            <div class="alert alert-info"
-                 role="alert"
-                 data-ng-if="datacenter.model.hasDiscountAMD">
-                <button type="button"
-                        class="close"
-                        data-dismiss="alert">
-                    &times;
-                </button>
-                <p data-translate="dedicatedCloud_discount_AMD"></p>
             </div>
 
             <div data-ovh-alert="{{ :: $ctrl.DEDICATED_CLOUD_DATACENTER.alertId }}"></div>

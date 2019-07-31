@@ -4,6 +4,6 @@ angular.module('Billing').config(($stateProvider) => {
     templateUrl: 'account/billing/main/payments/billing-payments.html',
     controller: 'Billing.PaymentsCtrl',
     controllerAs: '$ctrl',
-    translations: ['../payments'],
+    translations: { value: ['../payments'], format: 'json' },
   });
 });

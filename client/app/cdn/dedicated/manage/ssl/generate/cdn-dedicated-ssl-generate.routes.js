@@ -4,6 +4,6 @@ angular.module('App').config(($stateProvider) => {
     templateUrl: 'cdn/dedicated/manage/ssl/generate/cdn-dedicated-ssl-generate.html',
     controller: 'CdnGenerateSslCtrl',
     layout: 'modal',
-    translations: ['.'],
+    translations: { value: ['.'], format: 'json' },
   });
 });

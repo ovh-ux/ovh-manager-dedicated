@@ -28,7 +28,7 @@ angular
         url: '/useraccount',
         controller: 'UserAccount.controllers.main',
         templateUrl: `${baseUrl}/user.html`,
-        translations: ['.'],
+        translations: { value: ['.'], format: 'json' },
         abstract: true,
       });
 
@@ -37,7 +37,7 @@ angular
         controller: 'UserAccount.controllers.main',
         templateUrl: `${baseUrl}/user.html`,
         abstract: true,
-        translations: ['.'],
+        translations: { value: ['.'], format: 'json' },
       });
 
       $stateProvider.state('app.account.useraccount.ssh', {
@@ -58,7 +58,7 @@ angular
         url: '/infos',
         templateUrl: `${baseUrl}infos/user-infos.html`,
         controller: 'UserAccount.controllers.Infos',
-        translations: ['./newAccountForm'],
+        translations: { value: ['./newAccountForm'], format: 'json' },
       });
 
       if (target === 'EU' || target === 'CA') {
@@ -85,7 +85,7 @@ angular
         url: '/security/users',
         templateUrl: `${baseUrl}security/users/users.html`,
         controller: 'UserAccountUsersCtrl',
-        translations: ['./security/users'],
+        translations: { value: ['./security/users'], format: 'json' },
       });
     },
   ])

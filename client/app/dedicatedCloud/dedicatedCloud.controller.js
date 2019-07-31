@@ -9,8 +9,9 @@ angular
       $timeout,
       $translate,
       $uibModal,
-      constants,
       coreConfig,
+      currentService,
+      currentUser,
       DedicatedCloud,
       OvhApiDedicatedCloud,
       User,
@@ -21,8 +22,9 @@ angular
       this.$timeout = $timeout;
       this.$translate = $translate;
       this.$uibModal = $uibModal;
-      this.constants = constants;
       this.coreConfig = coreConfig;
+      this.currentService = currentService;
+      this.currentUser = currentUser;
       this.DedicatedCloud = DedicatedCloud;
       this.OvhApiDedicatedCloud = OvhApiDedicatedCloud;
       this.User = User;
@@ -40,10 +42,6 @@ angular
         model: null,
         editMode: false,
         loading: false,
-      };
-
-      this.$scope.discount = {
-        AMDPCC: false,
       };
 
       this.$scope.dedicatedCloud = {};

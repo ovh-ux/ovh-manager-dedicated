@@ -9,6 +9,6 @@ angular.module('App').config(($stateProvider) => {
         controllerAs: '$ctrl',
       },
     },
-    translations: ['./executionDateEdit'],
+    translations: { value: ['./executionDateEdit'], format: 'json' },
   });
 });

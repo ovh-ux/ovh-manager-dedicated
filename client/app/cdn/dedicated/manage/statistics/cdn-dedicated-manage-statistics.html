@@ -236,12 +236,23 @@
              data-ng-if="loadingStats">
             <oui-spinner></oui-spinner>
         </div>
-        <canvas id="cdnStatsChart"
-                class="chart chart-line"
-                data-ng-hide="loadingStats"
-                data-chart-labels="labels"
-                data-chart-series="series"
-                data-chart-data="data">
-        </canvas>
+        <div data-ng-if="!loadingStats">
+            <canvas id="cdnStatsChart"
+                    class="chart chart-line"
+                    data-chart-labels="labels"
+                    data-chart-series="series"
+                    data-chart-data="data"
+                    data-chart-options="options"
+                    data-ng-if="model.dataType === 'BANDWIDTH' || model.dataType === 'QUOTA'">
+            </canvas>
+            <canvas id="cdnStatsChartRequests"
+                    class="chart chart-line"
+                    data-chart-labels="labels"
+                    data-chart-series="series"
+                    data-chart-data="data"
+                    data-chart-options="requestOptions"
+                    data-ng-if="model.dataType === 'REQUEST'">
+            </canvas>
+        </div>
     </div>
 </div>

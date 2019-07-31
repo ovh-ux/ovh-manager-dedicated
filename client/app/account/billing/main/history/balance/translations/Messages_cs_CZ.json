@@ -1,0 +1,17 @@
+{
+  "billing_history_balance_title": "Uhrazení mého salda",
+  "billing_history_balance_cancel": "Zrušit",
+  "billing_history_balance_explain": "Vaše aktuální saldo: {{ balance }}.",
+  "billing_history_balance_no_balance": "Na Vašem účtu nebyl nalezen žádný zůstatek. <a data-ui-sref=\"{{ backState }}\">Klikněte zde</a> pro návrat na seznam faktur. ",
+  "billing_history_balance_choose_payment_method": "Zvolte platební metodu",
+  "billing_history_balance_add_payment_method": "Přidejte platební metodu",
+  "billing_history_balance_no_payment_method": "Nemáte žádnou platnou platební metodu. Pro uhrazení svého salda <a data-ui-sref=\"{{ addPaymentMethodState }}\">přidejte platnou platební metodu</a>.",
+  "billing_history_balance_payment_doing": "Probíhá úhrada salda. Před uhrazením nového salda prosím vyčkejte na dokončení právě probíhajícího procesu.",
+  "billing_history_balance_payment_go_tracking": "Pro detailní informace přejděte na <a data-ui-sref=\"{{ trackState }}\">přehled plateb</a>.",
+  "billing_history_balance_load_error": "Při načítání Vašeho salda došlo k chybě.",
+  "billing_history_balance_pay_success": "Platba Vašeho salda byla přijata a bude zpracována během několika minut. Detailní informace naleznete v <a data-ui-sref=\"{{ trackHref }}\">přehledu svých plateb</a>.",
+  "billing_history_balance_pay_error": "Při platbě Vašeho salda došlo k chybě.",
+  "billing_history_balance_payment_method_subtype_american_express": "American Express",
+  "billing_history_balance_payment_method_subtype_mastercard": "Mastercard",
+  "billing_history_balance_payment_method_subtype_visa": "Visa"
+}

@@ -1,5 +1,4 @@
 import { Environment } from '@ovh-ux/manager-config';
-import ovhManagerCore from '@ovh-ux/manager-core';
 import _ from 'lodash';
 import ngAtInternet from '@ovh-ux/ng-at-internet';
 import ngAtInternetUiRouterPlugin from '@ovh-ux/ng-at-internet-ui-router-plugin';
@@ -11,24 +10,28 @@ import ngOvhProxyRequest from '@ovh-ux/ng-ovh-proxy-request';
 import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
 import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
 import ngOvhSwimmingPoll from '@ovh-ux/ng-ovh-swimming-poll';
+import ngOvhUiRouterLayout from '@ovh-ux/ng-uirouter-layout';
 import ngOvhUserPref from '@ovh-ux/ng-ovh-user-pref';
 import ngOvhWebUniverseComponents from '@ovh-ux/ng-ovh-web-universe-components';
 import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
 import ovhContacts from '@ovh-ux/ng-ovh-contacts';
+import ovhManagerCore from '@ovh-ux/manager-core';
 import ovhManagerNavbar from '@ovh-ux/manager-navbar';
 import ovhManagerServerSidebar from '@ovh-ux/manager-server-sidebar';
 import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
 import uiRouter from '@uirouter/angularjs';
 
 import config from './config/config';
-import dedicatedUniverseComponents from './dedicatedUniverseComponents';
 import dedicatedCloudDatacenterDrp from './dedicatedCloud/datacenter/drp';
-
+import dedicatedUniverseComponents from './dedicatedUniverseComponents';
+import ovhManagerPccDashboard from './dedicatedCloud/dashboard';
+import ovhManagerPccResourceUpgrade from './dedicatedCloud/resource/upgrade';
 
 Environment.setRegion(__WEBPACK_REGION__);
 
 angular
   .module('App', [
+    __NG_APP_INJECTIONS__,
     ovhManagerCore,
     'Billing',
     'chart.js',
@@ -55,6 +58,7 @@ angular
     ngOvhSsoAuth,
     ngOvhSsoAuthModalPlugin,
     ngOvhSwimmingPoll,
+    ngOvhUiRouterLayout,
     ngOvhUserPref,
     ngOvhWebUniverseComponents,
     'ngRoute',
@@ -65,6 +69,8 @@ angular
     'ovh-angular-pagination-front',
     'ovh-angular-q-allSettled',
     'ovh-angular-responsive-tabs',
+    ovhManagerPccDashboard,
+    ovhManagerPccResourceUpgrade,
     ovhManagerServerSidebar,
     'ovh-angular-tail-logs',
     'ovh-utils-angular',
@@ -124,7 +130,7 @@ angular
   })
   /* ========== AT-INTERNET ========== */
   .config((atInternetProvider, atInternetUiRouterPluginProvider, constants) => {
-    const level2 = constants.target === 'US' ? '57' : '3';
+    const level2 = constants.target === 'US' ? '57' : '10';
 
     atInternetProvider.setEnabled(constants.prodMode && window.location.port.length <= 3);
     atInternetProvider.setDebug(!constants.prodMode);

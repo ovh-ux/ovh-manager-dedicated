@@ -1,11 +1,11 @@
-angular.module('App').config(($stateProvider, coreConfigProvider) => {
-  if (coreConfigProvider.getRegion() === 'US') {
+angular
+  .module('App')
+  .config(/* @ngInject */ ($stateProvider) => {
     $stateProvider.state('app.dedicatedClouds.license.enable', {
-      url: '/enable',
-      templateUrl: 'dedicatedCloud/license/enable/dedicatedCloud-license-enable-us.html',
-      controller: 'DedicatedCloudLicencesSplaEnableUSCtrl',
+      controller: 'ovhManagerPccLicenseEnable',
       controllerAs: '$ctrl',
       layout: 'modal',
+      templateUrl: 'dedicatedCloud/license/enable/dedicatedCloud-license-enable.html',
+      url: '/enable',
     });
-  }
-});
+  });

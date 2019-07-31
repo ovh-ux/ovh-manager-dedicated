@@ -18,10 +18,13 @@ angular
 
     $stateProvider.state(name, {
       url: '/add?status&from',
-      translations: [
-        './',
-        './views/billing-address',
-      ],
+      translations: {
+        value: [
+          './',
+          './views/billing-address',
+        ],
+        format: 'json',
+      },
       views: {
         '': {
           template,
