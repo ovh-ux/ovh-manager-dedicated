@@ -64,7 +64,7 @@ export default class {
   getServicesTypes(services) {
     return _.reduce(services.servicesTypes, (serviceTypes, service) => ({
       ...serviceTypes,
-      [service]: this.$translate.instant(`autorenew_service_type_${service}`),
+      [service]: this.$translate.instant(`billing_autorenew_service_type_${service}`),
     }), {});
   }
 

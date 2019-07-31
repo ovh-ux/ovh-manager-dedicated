@@ -7,6 +7,10 @@ export default class BillingService {
     this.expirationDate = moment(this.expiration);
   }
 
+  get formattedExpiration() {
+    return this.expirationDate.format('LL');
+  }
+
   getRenew() {
     if (this.hasManualRenew()) {
       return 'manualPayment';
@@ -18,6 +22,10 @@ export default class BillingService {
 
     if (this.isResiliated()) {
       return 'expired';
+    }
+
+    if (this.hasForcedRenew()) {
+      return 'one_shot';
     }
 
     if (this.hasAutomaticRenew()) {
@@ -231,5 +239,9 @@ export default class BillingService {
     return this.shouldDeleteAtExpiration()
     && !this.hasManualRenew()
     && this.hasResiliationRights(nichandle);
+  }
+
+  isSuspended() {
+    return this.status === 'UN_PAID' || this.isResiliated();
   }
 }
