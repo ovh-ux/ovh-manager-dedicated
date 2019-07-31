@@ -1,16 +1,13 @@
 export default /* @ngInject */ ($stateProvider) => {
   $stateProvider.state('app.account.billing.autorenew.exchange', {
-    url: '/exchange?organization&serviceName',
-    views: {
-      modal: {
-        component: 'billingAutorenewExchangeRenew',
-      },
-    },
-    layout: 'modal',
+    url: '/exchange?organization&exchangeName',
+    component: 'exchangeAccountRenew',
     resolve: {
       goBack: /* @ngInject */ goToAutorenew => goToAutorenew,
       organization: /* @ngInject */ $transition$ => $transition$.params().organization,
-      serviceName: /* @ngInject */ $transition$ => $transition$.params().serviceName,
+      exchangeName: /* @ngInject */ $transition$ => $transition$.params().exchangeName,
+      onError: /* @ngInject */ goBack => result => goBack(result, 'danger'),
+      onSuccess: /* @ngInject */ goBack => result => goBack(result),
     },
   });
 };
