@@ -1,10 +1,10 @@
 export const ELIGIBLE_FOR_UPGRADE = {
   COMMERCIAL_RANGE: ['RISE-1'],
-  SUBSIDIARIES: ['UK'],
+  SUBSIDIARIES: ['GB'],
 };
 
 export const URLS = {
-  UK: {
+  GB: {
     UPGRADE_TO_ADVANCE: 'https://www.ovh.co.uk/dedicated_servers/rise/rise-2/',
   },
 };
