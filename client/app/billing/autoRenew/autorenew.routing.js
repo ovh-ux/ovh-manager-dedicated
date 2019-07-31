@@ -67,7 +67,6 @@ export default /* @ngInject */ ($stateProvider) => {
       homeLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew'),
       sshLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew.ssh'),
       isEnterpriseCustomer: /* @ngInject */ currentUser => currentUser.isEnterprise,
-      isInDebt: /* @ngInject */ DEBT_STATUS => service => _.includes(DEBT_STATUS, service.status),
 
       getSMSAutomaticRenewalURL: /* @ngInject */ constants => service => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/options/recredit`,
       getSMSCreditBuyingURL: /* @ngInject */ constants => service => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/order`,
