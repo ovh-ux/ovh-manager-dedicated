@@ -19,11 +19,12 @@ import ovhManagerCore from '@ovh-ux/manager-core';
 import ovhManagerNavbar from '@ovh-ux/manager-navbar';
 import ovhManagerServerSidebar from '@ovh-ux/manager-server-sidebar';
 import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
-import uiRouter from '@uirouter/angularjs';
+import uiRouter, { RejectType } from '@uirouter/angularjs';
 
 import config from './config/config';
 import dedicatedCloudDatacenterDrp from './dedicatedCloud/datacenter/drp';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
+import errorPage from './error/error.module';
 import ovhManagerPccDashboard from './dedicatedCloud/dashboard';
 import ovhManagerPccResourceUpgrade from './dedicatedCloud/resource/upgrade';
 
@@ -39,6 +40,7 @@ angular
     dedicatedCloudDatacenterDrp,
     dedicatedUniverseComponents,
     'directives',
+    errorPage,
     'filters',
     'internationalPhoneNumber',
     'Module.download',
@@ -154,7 +156,7 @@ angular
   .run((ssoAuthentication, User) => {
     ssoAuthentication.login().then(() => User.getUser());
   })
-  .run(($transitions, $rootScope, $state, coreConfig) => {
+  .run(/* @ngInject */ ($rootScope, $state, $transitions, coreConfig) => {
     $rootScope.$on('$locationChangeStart', () => {
       delete $rootScope.isLeftMenuVisible; // eslint-disable-line
     });
@@ -165,6 +167,17 @@ angular
       const error = transition.error();
       if (_.get(error, 'status') === 403 && _.get(error, 'code') === 'FORBIDDEN_BILLING_ACCESS') {
         $state.go('app.error', { error });
+      }
+    });
+
+    $state.defaultErrorHandler((error) => {
+      if (error.type === RejectType.ERROR) {
+        $state.go('app.error', {
+          detail: {
+            message: _.get(error.detail, 'data.message'),
+            code: _.has(error.detail, 'headers') ? error.detail.headers('x-ovh-queryId') : null,
+          },
+        }, { location: false });
       }
     });
 
