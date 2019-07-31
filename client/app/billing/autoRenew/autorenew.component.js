@@ -23,7 +23,6 @@ export default {
     hasAutoRenew: '<',
     homeLink: '<',
     isEnterpriseCustomer: '<',
-    isInDebt: '<',
     nicBilling: '<',
     nicRenew: '<',
     nics: '<',
