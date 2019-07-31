@@ -1,5 +1,5 @@
 import {
-  AUTORENEW_EVENT, CONTRACTS_IDS, NIC_URL, SERVICE_EXPIRATION, SERVICE_STATUS, RENEW_URL,
+  AUTORENEW_EVENT, CONTRACTS_IDS, NIC_URL, RENEW_URL, SERVICE_EXPIRATION, SERVICE_STATUS,
 } from './autorenew.constants';
 
 import BillingService from './BillingService.class';
@@ -221,34 +221,18 @@ export default class {
       .then(hasDefaultPaymentMethod => hasDefaultPaymentMethod && this.coreConfig.getRegion() === 'EU');
   }
 
-  getNicRenew() {
-    return this.$q
-      .all({
-        getAutorenew: this.getAutorenew(),
-        getAllServices: this.getAllServices(),
-        hasRenewDay: this.hasRenewDay(),
-      })
-      .then(({
-        getAutorenew,
-        getAllServices,
-        hasRenewDay,
-      }) => ({
-        active: getAutorenew.active,
-        allowed: hasRenewDay && getAllServices.userMustApproveAutoRenew,
-        initialized: getAllServices.userMustApproveAutoRenew,
-        renewDay: getAutorenew.renewDay,
-        renewDays: _.range(1, 30),
-      }));
-  }
-
   setNicRenew(nicRenew) {
-    const { active, renewDay } = nicRenew;
-    return !nicRenew.initialized
+    const { active, renewDay, isMandatory } = nicRenew;
+    return !isMandatory
       ? this.enableAutorenew(renewDay)
       : this.putAutorenew({ active, renewDay });
   }
 
   static getRenewUrl(service, subsidiary) {
     return `${_.get(RENEW_URL, subsidiary, RENEW_URL.default)}${service}`;
+  }
+
+  isAutomaticRenewV2Available() {
+    return this.coreConfig.isRegion('EU');
   }
 }

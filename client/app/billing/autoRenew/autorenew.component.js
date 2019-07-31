@@ -3,12 +3,14 @@ import template from './autorenew.html';
 
 export default {
   bindings: {
+    activationLink: '<',
     agreementsLink: '<',
     billingServices: '<',
     canDisableAllDomains: '<',
     cancelServiceResiliation: '<',
     currentActiveLink: '<',
     currentUser: '<',
+    defaultPaymentMean: '<',
     disableAutorenewForDomains: '<',
     disableBulkAutorenew: '<',
     enableBulkAutorenew: '<',
