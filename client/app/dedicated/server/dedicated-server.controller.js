@@ -540,8 +540,6 @@ angular.module('App').controller('ServerCtrl', (
   $scope.trackUpgradeToAdvance = () => trackUpgradeToAdvance();
   $scope.URLS = URLS;
 
-  console.log($scope);
-
   function trackUpgradeToAdvance() {
     atInternet.trackClick({
       name: 'upgrade_rise_to_advance',
