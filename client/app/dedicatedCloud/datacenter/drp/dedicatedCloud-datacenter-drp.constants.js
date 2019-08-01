@@ -55,6 +55,7 @@ export const DEDICATEDCLOUD_DATACENTER_PCC_UNAVAILABLE_CODES = [
 export const DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS = {
   configured: 'configured',
   configuring: 'configuring',
+  error: 'error',
   notConfigured: 'notConfigured',
 };
 

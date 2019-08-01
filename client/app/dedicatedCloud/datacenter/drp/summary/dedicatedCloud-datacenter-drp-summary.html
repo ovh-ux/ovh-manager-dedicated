@@ -77,7 +77,8 @@
                        data-ng-pattern="$ctrl.ipValidator"
                        required>
             </oui-field>
-            <oui-form-actions data-disabled="$ctrl.vpnConfiguration.$invalid || $ctrl.currentDrp.vpnStatus === $ctrl.VPN_STATUS.configuring"
+            <oui-form-actions data-disabled="$ctrl.vpnConfiguration.$invalid || $ctrl.currentDrp.vpnStatus === $ctrl.VPN_STATUS.configuring
+                 || $ctrl.currentDrp.vpnStatus === $ctrl.VPN_STATUS.error"
                               data-on-submit="$ctrl.validateVpnConfiguration()"
                               data-submit-text="{{:: ($ctrl.hasNoVpnConfiguration() ? 'dedicatedCloud_datacenter_drp_vpn_validate' : 'dedicatedCloud_datacenter_drp_vpn_change_parameters') | translate }}"></oui-form-actions>
         </form>
