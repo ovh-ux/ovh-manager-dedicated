@@ -10,8 +10,6 @@
 <div data-ng-if="!$ctrl.loading">
     <div class="row d-md-flex">
 
-        <button ng-click="$ctrl.chooseDatacenterForDrp()"></button>
-
         <!-- GENERAL INFORMATIONS -->
         <div
             class="mb-5"
@@ -144,7 +142,7 @@
                             <dd class="oui-tile__description">
                                 <span class="oui-status"
                                       data-ng-class="{
-                                          'oui-status_error': $ctrl.drpStatus === $ctrl.DRP_STATUS.disabled || $ctrl.drpStatus === $ctrl.DRP_STATUS.error || $ctrl.currentDrp.vpnStatus === $ctrl.DRP_VPN_STATUS.notConfigured,
+                                          'oui-status_error': $ctrl.drpStatus === $ctrl.DRP_STATUS.disabled || $ctrl.drpStatus === $ctrl.DRP_STATUS.error || $ctrl.currentDrp.vpnStatus === $ctrl.DRP_VPN_STATUS.notConfigured || $ctrl.currentDrp.vpnStatus === $ctrl.DRP_VPN_STATUS.error,
                                           'oui-status_warning': $ctrl.drpStatus === $ctrl.DRP_STATUS.delivering || $ctrl.drpStatus === $ctrl.DRP_STATUS.disabling || $ctrl.currentDrp.vpnStatus === $ctrl.DRP_VPN_STATUS.configuring,
                                           'oui-status_success': $ctrl.drpStatus === $ctrl.DRP_STATUS.delivered
                                     }">

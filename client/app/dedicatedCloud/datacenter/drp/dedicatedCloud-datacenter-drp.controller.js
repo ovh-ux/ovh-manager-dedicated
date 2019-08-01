@@ -37,6 +37,9 @@ export default class {
       DEDICATEDCLOUD_DATACENTER_DRP_STATUS.disabling,
     ].includes(this.currentDrp.state);
 
+    this.isInstallationInError = this.currentDrp
+      .state === DEDICATEDCLOUD_DATACENTER_DRP_STATUS.error;
+
     return this.dedicatedCloudDrp.checkForZertoOptionOrder(this.$stateParams.productId)
       .then((storedDrpInformations) => {
         if (!this.isDisablingDrp) {

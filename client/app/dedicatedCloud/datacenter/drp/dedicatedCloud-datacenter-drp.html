@@ -31,6 +31,12 @@
                   data-ng-if="$ctrl.isDisablingDrp"></span>
         </oui-message>
 
+        <oui-message class="mb-5"
+                     data-type="error"
+                     data-ng-if="$ctrl.isInstallationInError">
+            <span data-translate="dedicatedCloud_datacenter_install_in_error"></span>
+        </oui-message>
+
         <div data-ui-view="choiceView"></div>
 
         <div data-ui-view="progressTrackerView"></div>
