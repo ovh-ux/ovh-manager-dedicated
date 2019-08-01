@@ -1,3 +1,65 @@
+<a name="10.20.1"></a>
+## [10.20.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.20.0...v10.20.1) (2019-07-30)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations ([5170fb3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5170fb3))
+* **i18n:** add missing translations ([0d5627a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0d5627a))
+* **i18n:** add missing translations ([eca38fc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/eca38fc))
+* **i18n:** add missing translations ([adc0df8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/adc0df8))
+* **ip:** allow only reverse update in ipv6 modal ([#1263](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1263)) ([116e242](https://github.com/ovh-ux/ovh-manager-dedicated/commit/116e242))
+
+
+
+<a name="10.20.0"></a>
+# [10.20.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.9...v10.20.0) (2019-07-25)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations ([4386f0f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4386f0f))
+* **i18n:** add missing translations ([e824d0f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e824d0f))
+* **mrtg-graphic:** fix mrtg graphics ([caa7741](https://github.com/ovh-ux/ovh-manager-dedicated/commit/caa7741))
+
+
+### Features
+
+* **baremetal-agora:** move baremetal option to full agora ([04be0cc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/04be0cc))
+* **baremetal-bandwidth:** add new bandwidth options ([e270ec3](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e270ec3))
+* **baremetal-bandwidth:** add new bandwidth options ([3502213](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3502213))
+* **baremetal-bandwidth:** date error fix ([80471f4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/80471f4))
+* **baremetal-bandwidth:** fix api query cache ([c466240](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c466240))
+* **baremetal-bandwidth:** restructure controller ([d0fe459](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d0fe459))
+* **baremetal-bandwidth:** restructure controller ([30978f4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/30978f4))
+* **baremetal-bandwidth:** upgrade ovh api services ([af673ea](https://github.com/ovh-ux/ovh-manager-dedicated/commit/af673ea))
+
+
+
+<a name="10.19.9"></a>
+## [10.19.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.8...v10.19.9) (2019-07-25)
+
+
+### Bug Fixes
+
+* **deps:** upgrade ng-ovh-otrs v7.1.7 ([282d886](https://github.com/ovh-ux/ovh-manager-dedicated/commit/282d886))
+
+
+
+<a name="10.19.8"></a>
+## [10.19.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.7...v10.19.8) (2019-07-24)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations ([83d26e1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/83d26e1))
+* **i18n:** add missing translations ([25c29f7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/25c29f7))
+* **i18n:** add missing translations ([950c58b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/950c58b))
+* **i18n:** add missing translations ([a5f61f7](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a5f61f7))
+* **ip.reverse:** use vps api only for legacy vps ([5497218](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5497218))
+
+
+
 <a name="10.19.7"></a>
 ## [10.19.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.19.6...v10.19.7) (2019-07-11)
 

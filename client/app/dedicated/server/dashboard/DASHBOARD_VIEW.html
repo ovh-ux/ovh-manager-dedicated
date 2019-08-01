@@ -524,7 +524,8 @@
                                     <oui-action-menu-item
                                         data-text="{{:: 'server_bandwidth_order_button' | translate}}"
                                         aria-label="{{:: 'server_bandwidth_order_button' | translate}}"
-                                        data-on-click="setAction('bandwidth/order/dedicated-server-bandwidth-order', server.name)"
+                                        data-on-click="isFullAgora(server.commercialRange) ? setAction('bandwidth/order/dedicated-server-bandwidth-order', { bandwidth })
+                                            : setAction('bandwidth/order-legacy/dedicated-server-bandwidth-order', server.name)"
                                         data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
                                         data-ng-if="bandwidthOption === 'notSubscribed' && server.canOrderBandwith && dedicatedServerFeatureAvailability.allowDedicatedServerOrderBandwidthOption()"></oui-action-menu-item>
                                 </oui-action-menu>
@@ -654,7 +655,8 @@
                                     <oui-action-menu-item
                                         data-text="{{ (bandwidthVrackOption !== 'subscribed' ? 'server_bandwidth_vrack_order_button' : 'server_bandwidth_vrack_change_button') | translate }}"
                                         aria-label="{{ (bandwidthVrackOption !== 'subscribed' ? 'server_bandwidth_vrack_order_button' : 'server_bandwidth_vrack_change_button') | translate}}"
-                                        data-on-click="setAction('bandwidth-vrack/order/dedicated-server-bandwidth-vrack-order', server.name)"
+                                        data-on-click="isFullAgora(server.commercialRange) ? setAction('bandwidth-vrack/order/dedicated-server-bandwidth-vrack', { bandwidth })
+                                            : setAction('bandwidth-vrack/order-legacy/dedicated-server-bandwidth-vrack-order', server)"
                                         data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
                                         data-ng-if="canOrderVrackBandwidth() && canOrderMoreVrackBandwidth()">
                                     </oui-action-menu-item>

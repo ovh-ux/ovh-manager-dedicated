@@ -40,4 +40,7 @@ angular
     TENSECS: '_10_S',
     ONEMIN: '_1_M',
     FIVEMINS: '_5_M',
+  })
+  .constant('NEW_RANGE', {
+    PATTERN: /^(ADV|STOR|ADVANCE|RISE)-[1-9]$/,
   });

@@ -1,9 +1,7 @@
 import { controller } from './upgrade.controller';
 
 export default {
-  layout: {
-    name: 'modal',
-  },
+  layout: 'modal',
   translations: { value: ['.'], format: 'json' },
   url: '/upgradeResource?id&type',
   views: {

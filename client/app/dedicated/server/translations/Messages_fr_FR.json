@@ -860,6 +860,15 @@
   "server_order_bandwidth_help": "Les offres Premium, Platinum et Ultimate garantissent la qualité de la bande passante sur une zone géographique plus ou moins étendue jusqu'au plus près de vos clients.",
   "select_bandwidth_type_label": "Sélectionnez une offre",
   "select_bandwidth_vrack_type_label": "Sélectionnez une offre",
+  "select_bandwidth_plan_summary": "Récapitulatif de la commande",
+  "plan_vrack-bandwidth-1000-option": "1 Gbps de bande passante privée garantie - Trafic illimité - Option vRack",
+  "plan_vrack-bandwidth-3000-option": "3 Gbps de bande passante privée garantie - Trafic illimité - Option vRack",
+  "plan_bandwidth-1000-adv": "1 Gbps de bande passante publique - Trafic illimité",
+  "plan_bandwidth-guaranteed-1000-ultimate-2019v1": "1 Gbps de bande passante publique garantie - Trafic illimité - Option Ultimate",
+  "plan_bandwidth-guaranteed-2000-ultimate-2019v1": "2 Gbps de bande passante publique garantie - Trafic illimité - Option Ultimate",
+  "plan_bandwidth-guaranteed-3000-ultimate-2019v1": "3 Gbps de bande passante publique garantie - Trafic illimité - Option Ultimate",
+  "plan_price_per_month": "HT/mois",
+  "server_order_bandwidth_empty_plans": "Impossible de trouver des plans pour mettre à niveau",
   "select_traffic_type_label": "Sélectionnez une offre",
   "toggle_button_label_ultimate": "Ultimate",
   "toggle_button_label_premium": "Premium",
@@ -898,6 +907,9 @@
   "server_cancel_traffic_title_question_information": "Un email de confirmation va vous être envoyé à l'adresse {{t0}}. Vous pourrez également consulter cet email dans la rubrique \"Mon compte\".",
   "server_cancel_traffic_cancel_success": "Un email vous a été envoyé.",
   "server_cancel_traffic_cancel_error": "Une erreur est survenue lors de la résiliation de l'option.",
+  "server_order_bandwidth_vrack_plan_text": "de bande passante privée, trafic illimité (vRack)",
+  "server_order_bandwidth_declaration": "La date de renouvellement de votre option sera alignée avec celle de votre serveur. Le premier mois de facturation de votre option sera donc calculé au prorata temporis du mois en cours.",
+  "server_order_bandwidth_auto_pay": "Payer avec le moyen de paiement par défaut",
   "day_1": "1 jour",
   "day_other": "{} jours",
   "month_1": "1 mois",
@@ -1156,5 +1168,6 @@
   "server_datacenter_VIN_1": "Vint Hill (VIN1) - États-Unis",
   "server_datacenter_WAW_1": "Varsovie (WAW1) - Pologne",
   "server_usage_chart_yaxis_label": "Utilisation (en %)",
-  "server_usage_chart_xaxis_label": "Temps"
+  "server_usage_chart_xaxis_label": "Temps",
+  "server_duration_upto": "Jusqu'au {{t0}}"
 }
