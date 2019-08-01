@@ -30,9 +30,11 @@ angular
 
     /* ------- INFORMATIONS -------*/
     this.getAllPccs = () => OvhApiDedicatedCloud.v6().query().$promise
-      .then(pccIds => $q.all(pccIds.map(pccId => OvhApiDedicatedCloud.v6().get({
-        serviceName: pccId,
-      }).$promise)));
+      .then(pccIds => $q
+        .all(pccIds.map(pccId => OvhApiDedicatedCloud.v6().get({
+          serviceName: pccId,
+        }).$promise
+          .catch(error => (error.status === 400 ? null : $q.reject(error))))));
 
     this.getSelected = (serviceName, forceRefresh) => OvhHttp
       .get('/sws/dedicatedCloud/{serviceName}', {

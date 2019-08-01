@@ -35,6 +35,7 @@ export default class {
     this.drpInformations = this.$stateParams.drpInformations;
 
     this.availablePccs = this.pccList
+      .filter(pcc => pcc != null)
       .filter(({ serviceName, location }) => serviceName !== this.$stateParams.productId
         && location !== this.drpInformations.primaryPcc.location)
       .map(pcc => ({
