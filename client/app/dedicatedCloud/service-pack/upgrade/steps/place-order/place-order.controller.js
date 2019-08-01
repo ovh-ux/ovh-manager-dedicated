@@ -48,8 +48,7 @@ export default class {
             hasDefaultMeansOfPayment: () => this.hasDefaultMeansOfPayment,
             itemName: () => this.servicePackToOrder.displayName,
             itemType: () => this.activationType,
-            price: () => this.servicePackToOrder.price.replace(/\+/g, ''),
-            priceAsNumber: () => this.servicePackToOrder.priceAsNumber,
+            prices: () => this.servicePackToOrder.prices,
           },
         }).result;
     } catch (error) {

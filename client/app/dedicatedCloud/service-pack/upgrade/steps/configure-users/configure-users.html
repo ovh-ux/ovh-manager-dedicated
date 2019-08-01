@@ -36,6 +36,11 @@
             data-property="phoneNumber"
             data-type="string"></oui-column>
     </oui-datagrid>
+
+    <ovh-manager-service-pack-no-default-means-of-payment
+        class="mb-3 d-block"
+        data-ng-if="!$ctrl.hasDefaultMeansOfPayment">
+    </ovh-manager-service-pack-no-default-means-of-payment>
 </div>
 
 <oui-stepper-v-navigation-button

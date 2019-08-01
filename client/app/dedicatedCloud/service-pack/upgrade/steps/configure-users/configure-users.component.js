@@ -3,6 +3,7 @@ import template from './configure-users.html';
 
 export default {
   bindings: {
+    hasDefaultMeansOfPayment: '<',
     usersWhoCanReceiveSMS: '<',
   },
   controller,
