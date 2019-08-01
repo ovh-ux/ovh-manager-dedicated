@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-export default class {
+export default class Selection {
   /* @ngInject */
   constructor(
     $state,
@@ -25,32 +25,60 @@ export default class {
     this.orderableServicePacks = _.sortBy(
       this.orderableServicePacks
         .map((servicePack) => {
-          const matchingServicePack = _.find(this.servicePacksWithPrices, {
-            name: servicePack.name,
-          });
-          const priceAsNumber = matchingServicePack.price.value - currentServicePack.price.value;
-
-          const priceAsString = new Intl
-            .NumberFormat(
-              'fr', // can't change as the API is not ISO compliant
-              {
-                style: 'currency',
-                currency: currentServicePack.price.currencyCode,
-                minimumFractionDigits: 2,
-              },
-            )
-            .format(priceAsNumber);
-
-          const price = priceAsNumber > 0 ? `+${priceAsString}` : priceAsString;
+          const servicePackToDisplay = _.find(
+            this.servicePacksWithPrices,
+            {
+              name: servicePack.name,
+            },
+          );
 
           return {
             ...servicePack,
-            price,
-            priceAsNumber,
+            prices: {
+              hourly: Selection.computeRelativePrice('hourly', currentServicePack, servicePackToDisplay),
+              monthly: Selection.computeRelativePrice('monthly', currentServicePack, servicePackToDisplay),
+            },
           };
         }),
       'name',
     );
+  }
+
+  static computeRelativePrice(duration, currentServicePack, servicePackToDisplay) {
+    if (!currentServicePack.price[duration]
+        || !servicePackToDisplay.price[duration]) {
+      return {
+        exists: false,
+      };
+    }
+
+    const value = servicePackToDisplay.price[duration]
+            - currentServicePack.price[duration];
+    const display = Selection.convertPriceValueToDisplay(
+      value,
+      currentServicePack.price.currencyCode,
+    );
+
+    return {
+      exists: true,
+      display,
+      value,
+    };
+  }
+
+  static convertPriceValueToDisplay(value, currency) {
+    const priceAsString = new Intl
+      .NumberFormat(
+        'fr', // can't change as the API is not ISO compliant
+        {
+          style: 'currency',
+          currency,
+          minimumFractionDigits: 2,
+        },
+      )
+      .format(value);
+
+    return value > 0 ? `+${priceAsString}` : priceAsString;
   }
 
   onChangeServicePackPicker(selectedItem) {

@@ -128,7 +128,7 @@ export const ServicePackService = class ServicePack {
     );
   }
 
-  getPrices(ovhSubsidiary, hostFamilies, servicePacks) {
+  getCatalog(ovhSubsidiary) {
     return this
       .OvhApiOrder
       .CatalogFormatted()
@@ -136,45 +136,106 @@ export const ServicePackService = class ServicePack {
       .get({
         catalogName: 'privateCloud',
         ovhSubsidiary,
-      }).$promise
-      .then((catalog) => {
-        const addonsFamily = _.find(catalog.plans[0].addonsFamily, { family: 'host' });
+      }).$promise;
+  }
 
-        return servicePacks.map((product) => {
-          let price = null;
-          const sum = _.sum(
-            _.map(
-              Object.entries(hostFamilies),
-              ([familyName, numberOfHosts]) => {
-                const familyData = _.find(
-                  addonsFamily.addons,
-                  addon => addon.plan.planCode === familyName,
+  static getAddonsFromCatalogForFamilyName(catalog, family) {
+    return _.find(
+      catalog.plans[0].addonsFamily,
+      { family },
+    ).addons;
+  }
+
+  static getPricingsFromAddonsForPlanCode(addons, planCode) {
+    return _.find(
+      addons,
+      addon => _.head(
+        addon.plan.planCode.split('-consumption'),
+      ) === planCode,
+    ).plan.details.pricings;
+  }
+
+  static getPricingFromPricingsForServicePackName(pricings, servicePackName) {
+    return pricings[`pcc-servicepack-${servicePackName}`][0];
+  }
+
+  static getHostsOfBillingType(hosts, billingType) {
+    return _.filter(
+      hosts,
+      { billingType },
+    );
+  }
+
+  static computeNumberOfHostsPerProfileCode(hosts) {
+    return _.reduce(
+      hosts,
+      (acc, host) => {
+        acc[host.profileCode] = acc[host.profileCode]
+          ? acc[host.profileCode] + 1
+          : 1;
+
+        return acc;
+      },
+      {},
+    );
+  }
+
+  getPrices(ovhSubsidiary, hosts, servicePacks) {
+    return this
+      .getCatalog(ovhSubsidiary)
+      .then((catalog) => {
+        const addons = {
+          hourly: ServicePack.getAddonsFromCatalogForFamilyName(catalog, 'host-hourly'),
+          monthly: ServicePack.getAddonsFromCatalogForFamilyName(catalog, 'host'),
+        };
+
+        return _.map(
+          servicePacks,
+          (servicePack) => {
+            const price = _.reduce(
+              hosts,
+              (acc, host) => {
+                const pricing = ServicePack.getPricingFromPricingsForServicePackName(
+                  ServicePack.getPricingsFromAddonsForPlanCode(
+                    addons[host.billingType],
+                    host.profileCode,
+                  ),
+                  servicePack.name,
                 );
 
-                const localPrice = familyData.plan.details.pricings[`pcc-servicepack-${product.name}`][0].price;
-                price = localPrice;
+                acc[host.billingType] = (acc[host.billingType] || 0) + pricing.price.value;
+                acc.currencyCode = pricing.price.currencyCode;
 
-                return numberOfHosts * localPrice.value;
+                return acc;
               },
-            ),
-          );
+              {},
+            );
 
-          return {
-            ...product,
-            price: {
-              ...price,
-              value: sum,
-            },
-          };
-        });
+            return {
+              ...servicePack,
+              price,
+            };
+          },
+        );
       });
   }
 
-  getHostFamilies(serviceName) {
-    return this.DedicatedCloud
+  getHosts(serviceName) {
+    return this
+      .DedicatedCloud
       .getDatacentersInformations(serviceName)
-      .then(datacenters => datacenters.list.results
-        .reduce((accumulator, { hostFamilies }) => ({ ...accumulator, ...hostFamilies }), {}));
+      .then(datacenters => _.reduce(
+        _.map(
+          datacenters.list.results,
+          'hosts',
+        ),
+        (acc, host) => _.flatten(
+          [...acc, _.values(
+            host,
+          )],
+        ),
+        [],
+      ));
   }
 };
 

@@ -32,13 +32,25 @@
                         class="dedicatedCloud-servicePack-option-description"
                         data-translate="{{:: $ctrl.servicePacks[i].description }}"></span>
                 </p>
-                <p
-                    class="orderSelection__product-price"
-                    data-ng-if="$ctrl.servicePacks[i].price"
-                    data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_priceDifferenceOnMonthlyBill"
-                    data-translate-values=":: {
-                        priceDifference: $ctrl.servicePacks[i].price
-                    }"></p>
+
+                <p class="orderSelection__product-price">
+                    <span
+                        class="d-block"
+                        data-ng-if="$ctrl.servicePacks[i].prices.monthly.exists"
+                        data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_priceDifferenceOnMonthlyBill"
+                        data-translate-values=":: {
+                            priceDifference: $ctrl.servicePacks[i].prices.monthly.display
+                        }">
+                    </span>
+                    <span
+                        class="d-block"
+                        data-ng-if="$ctrl.servicePacks[i].prices.hourly.exists"
+                        data-translate="dedicatedCloudDashboardTilesOptionsOrderSelection_priceDifferenceOnHourlyBill"
+                        data-translate-values=":: {
+                            priceDifference: $ctrl.servicePacks[i].prices.hourly.display
+                        }">
+                    </span>
+                </p>
             </label>
         </div>
     </div>

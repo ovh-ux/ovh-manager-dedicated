@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 export default class {
   /* @ngInject */
   constructor(
@@ -8,48 +6,28 @@ export default class {
     hasDefaultMeansOfPayment,
     itemName,
     itemType,
-    price,
-    priceAsNumber,
+    prices,
   ) {
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
     this.hasDefaultMeansOfPayment = hasDefaultMeansOfPayment;
     this.itemName = itemName;
     this.itemType = itemType;
-    this.price = price;
-    this.priceAsNumber = priceAsNumber;
+    this.prices = prices;
   }
 
   $onInit() {
-    this.bindings = {
-      text: this.chooseText(),
-    };
-  }
-
-  chooseText() {
-    const priceWithoutSign = _.isFinite(
-      parseInt(this.price[0], 10),
+    this.addingOrDeducting = (
+      (this.prices.hourly.exists && this.prices.hourly.value > 0)
+      || (this.prices.monthly.exists && this.prices.monthly.value > 0)
     )
-      ? this.price
-      : this.price.substr(1);
+      ? 'adding'
+      : 'deducting';
 
-    const translationsValues = {
-      itemName: `<strong>${this.itemName}</strong>`,
-      price: `<strong>${priceWithoutSign}</strong>`,
-    };
+    this.prices.hourly.display = this.prices.hourly.exists
+      && this.prices.hourly.display.substr(1);
 
-    if (this.priceAsNumber === 0) {
-      return this.$translate.instant(`confirm_order_${this.itemType}_question_0`, translationsValues);
-    }
-
-    if (this.priceAsNumber < 0) {
-      return this.$translate.instant(`confirm_order_${this.itemType}_question_deducting`, translationsValues);
-    }
-
-    if (this.priceAsNumber <= 1) {
-      return this.$translate.instant(`confirm_order_${this.itemType}_question_adding_1`, translationsValues);
-    }
-
-    return this.$translate.instant(`confirm_order_${this.itemType}_question_adding_many`, translationsValues);
+    this.prices.monthly.display = this.prices.monthly.exists
+      && this.prices.monthly.display.substr(1);
   }
 }

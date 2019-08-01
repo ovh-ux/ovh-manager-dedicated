@@ -15,7 +15,7 @@
 
     <ovh-manager-service-pack-no-default-means-of-payment
         class="mb-3 d-block"
-        data-ng-if="!$ctrl.hasDefaultMeansOfPayment">
+        data-ng-if="!$ctrl.hasDefaultMeansOfPayment && $ctrl.stepper.getStep({ relativeIndex: 1 }).name === 'placeOrder'">
     </ovh-manager-service-pack-no-default-means-of-payment>
 
     <oui-stepper-v-navigation-button

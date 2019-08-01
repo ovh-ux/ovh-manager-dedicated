@@ -18,10 +18,10 @@ const resolveHeader = /* @ngInject */ (
   $translate,
 ) => $translate.instant(`dedicatedCloudDashboardTilesOptionsOrderSelection_${$transition$.params().activationType}_header`);
 
-const resolveHostFamilies = /* @ngInject */ (
+const resolveHosts = /* @ngInject */ (
   currentService,
   ovhManagerPccServicePackService,
-) => ovhManagerPccServicePackService.getHostFamilies(currentService.name);
+) => ovhManagerPccServicePackService.getHosts(currentService.name);
 
 const resolveServicePacks = /* @ngInject */ (
   $transition$,
@@ -35,10 +35,10 @@ const resolveServicePacks = /* @ngInject */ (
 const resolveServicePacksWithPrices = /* @ngInject */ (
   currentUser,
   ovhManagerPccServicePackService,
-  hostFamilies,
+  hosts,
   servicePacks,
 ) => ovhManagerPccServicePackService
-  .getPrices(currentUser.ovhSubsidiary, hostFamilies, servicePacks);
+  .getPrices(currentUser.ovhSubsidiary, hosts, servicePacks);
 
 const resolveServicePackToOrder = /* @ngInject */ $transition$ => $transition$
   .params().servicePackToOrder;
@@ -60,11 +60,10 @@ export default {
     currentService: resolveCurrentService,
     hasDefaultMeansOfPayment: resolveHasDefaultMeansOfPayment,
     header: resolveHeader,
-    hostFamilies: resolveHostFamilies,
+    hosts: resolveHosts,
     servicePacks: resolveServicePacks,
     servicePacksWithPrices: resolveServicePacksWithPrices,
     servicePackToOrder: resolveServicePackToOrder,
-    resolveServicePacksWithPrices,
     subHeader: resolveSubHeader,
   },
   translations: { value: ['.'], format: 'json' },
