@@ -5,7 +5,7 @@ export const ELIGIBLE_FOR_UPGRADE = {
 
 export const URLS = {
   GB: {
-    UPGRADE_TO_ADVANCE: 'https://www.ovh.co.uk/dedicated_servers/rise/rise-2/',
+    UPGRADE: 'https://www.ovh.co.uk/dedicated_servers/rise/rise-2/',
   },
 };
 

@@ -280,6 +280,13 @@ angular.module('App').controller('ServerCtrl', (
         };
 
         $scope.$broadcast('dedicated.server.refreshTabs');
+
+        if (isEligibleForUpgrade()) {
+          Server.getUpgradeProductName('RISE-2', $scope.user.ovhSubsidiary)
+            .then((upgradeName) => {
+              $scope.upgradeName = upgradeName;
+            });
+        }
       })
       .catch((data) => {
         $scope.loadingServerInformations = false;

@@ -38,6 +38,24 @@
                                 data-ng-bind="server.commercialRange !== 'housing' ? server.description || '-' : ('server_configuration_description_housing' | translate)"></dd>
                         </dl>
                     </div>
+                    <div class="oui-tile__item"
+                        data-ng-if="isEligibleForUpgrade() && upgradeName">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term">
+                                <span data-translate="server_configuration_upgrade_title"></span>
+                                <span class="badge" data-translate="server_configuration_upgrade_badge" aria-hidden="true"></span>
+                            </dt>
+                            <dd class="oui-tile__description">
+                                <a class="oui-link_icon"
+                                    target="_blank"
+                                    data-ng-href="{{::URLS[user.ovhSubsidiary].UPGRADE}}"
+                                    data-ng-click="trackUpgradeToAdvance()">
+                                    <span data-ng-bind="upgradeName"></span>
+                                    <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
+                                </a>
+                            </dd>
+                        </dl>
+                    </div>
                     <div class="oui-tile__item">
                         <dl class="oui-tile__definition">
                             <dt class="oui-tile__term"
@@ -134,29 +152,6 @@
                             <dd class="oui-tile__description"
                                 data-ng-bind="infoServer.serverId || '-'"></dd>
                         </dl>
-                    </div>
-                    <div class="oui-tile__item"
-                        data-ng-if="isEligibleForUpgrade()">
-                        <dl class="oui-tile__definition">
-                            <dt class="oui-tile__term"
-                                data-translate="server_configuration_upgrade"></dt>
-                            <dd class="oui-tile__description"
-                                data-translate="server_configuration_upgrade_text"></dd>
-                        </dl>
-                        <div class="oui-tile__actions">
-                            <oui-action-menu
-                                data-aria-label="{{:: 'menu_action_label' | translate:{ t0: ('server_configuration_upgrade' | translate) } }}"
-                                data-placement="end"
-                                data-compact>
-                                <oui-action-menu-item
-                                    data-aria-label="{{:: 'server_configuration_upgrade_button' | translate}}"
-                                    data-href="{{::URLS[user.ovhSubsidiary].UPGRADE_TO_ADVANCE}}"
-                                    data-on-click="trackUpgradeToAdvance()"
-                                    data-external>
-                                    <span data-translate="server_configuration_upgrade_button"></span>
-                                </oui-action-menu-item>
-                            </oui-action-menu>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 angular
   .module('services')
   .constant('SERVERSTATS_PERIOD_ENUM', {
@@ -2152,4 +2154,20 @@ angular
     this.isAutoRenewable = function isAutoRenewable(productId) {
       return this.getSelected(productId).then(server => moment(server.expiration).diff(moment().date(), 'days') > 0);
     };
+
+    this.getUpgradeProductName = (planName, ovhSubsidiary) => OvhHttp
+      .get('/order/catalog/public/baremetalServers', {
+        rootPath: 'apiv6',
+        params: {
+          ovhSubsidiary,
+        },
+      })
+      .then(({ addons, plans, products }) => {
+        const plan = _.find(plans, { invoiceName: planName });
+        const cpu = _.find(products, { name: plan.product });
+        const memoryPlan = _.find(plan.addonFamilies, { name: 'memory' });
+        const memory = _.find(addons, { planCode: memoryPlan.default });
+
+        return `${cpu.description}, ${memory.invoiceName}`;
+      });
   });
