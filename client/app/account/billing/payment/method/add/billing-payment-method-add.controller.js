@@ -6,8 +6,7 @@ export default class BillingPaymentMethodAddCtrl {
   /* @ngInject */
 
   constructor($q, $state, $stateParams, $translate, $window, Alerter, billingPaymentMethodSection,
-    BillingPaymentMethodService, BillingVantivInstance, coreConfig, currentUser,
-    ovhContacts, ovhPaymentMethod) {
+    coreConfig, currentUser, ovhContacts, ovhPaymentMethod) {
     // dependencies injections
     this.$q = $q;
     this.$state = $state;
@@ -16,8 +15,6 @@ export default class BillingPaymentMethodAddCtrl {
     this.$window = $window;
     this.Alerter = Alerter;
     this.billingPaymentMethodSection = billingPaymentMethodSection;
-    this.BillingPaymentMethodService = BillingPaymentMethodService;
-    this.BillingVantivInstance = BillingVantivInstance;
     this.coreConfig = coreConfig;
     this.currentUser = currentUser; // from app route resolve
     this.ovhContacts = ovhContacts;
@@ -40,8 +37,10 @@ export default class BillingPaymentMethodAddCtrl {
             this.model.selectedPaymentMethodType,
             'original.value',
           ) === 'bankAccount';
+          const isInContextRegister = this.ovhPaymentMethod
+            .isPaymentMethodTypeRegisterableInContext(this.model.selectedPaymentMethodType);
 
-          return isLegacy && !isLegacyBankAccount && this.coreConfig.getRegion() !== 'US';
+          return isLegacy && !isLegacyBankAccount && !isInContextRegister;
         },
       },
       legacyBankAccount: {
@@ -62,26 +61,18 @@ export default class BillingPaymentMethodAddCtrl {
         ) === 'bankAccount',
         isLastStep: () => true,
       },
-      billingAddress: {
-        name: 'billingAddress',
-        position: 2,
-        isLoading: false,
-        isVisible: () => this.coreConfig.getRegion() === 'US',
-        isLastStep: () => this.coreConfig.getRegion() !== 'US',
-      },
       paymentMethod: {
         name: 'paymentMethod',
         position: 3,
-        isVisible: () => this.coreConfig.getRegion() === 'US',
+        isVisible: () => this.ovhPaymentMethod
+          .isPaymentMethodTypeRegisterableInContext(this.model.selectedPaymentMethodType),
         isLastStep: () => true,
         onFocus: () => {
-          if (this.BillingVantivInstance.instance) {
-            this.BillingVantivInstance.clear();
+          if (!this.registerInstance.instanciated) {
+            this.registerInstance.instanciate({
+              height: '75px',
+            });
           }
-
-          this.BillingVantivInstance.instanciate({
-            height: '75px',
-          });
         },
       },
     };
@@ -95,6 +86,7 @@ export default class BillingPaymentMethodAddCtrl {
     };
 
     this.bankAccountFootprintAmount = CREDITCARD_FOOTPRINT_AMOUNT;
+    this.registerInstance = null;
   }
 
   /* ----------  Helpers  ---------- */
@@ -151,41 +143,23 @@ export default class BillingPaymentMethodAddCtrl {
     ].join(' '), 'billing_payment_method_add_alert');
   }
 
-  onPaymentMethodAddStepperFinish() {
-    let contactPromise = this.$q.when(true);
+  onPaymentMethodRegisterInitialized(registerInstance) {
+    this.registerInstance = registerInstance;
+  }
 
+  onPaymentMethodAddStepperFinish() {
     this.loading.add = true;
 
     // set default param
     const hasPaymentMethod = this.billingPaymentMethodSection.sharedPaymentMethods.length > 0;
+    const isRegisterable = this.ovhPaymentMethod
+      .isPaymentMethodTypeRegisterableInContext(this.model.selectedPaymentMethodType);
     let addParams = {
       default: !hasPaymentMethod || this.model.setAsDefault,
     };
 
     if (this.model.selectedPaymentMethodType.original) {
       addParams = _.merge(addParams, this.getLegacyAddParams());
-    }
-    if (this.coreConfig.getRegion() === 'US') {
-      const paymentMethodContact = _.get(this.$state.current, 'sharedModel.billingAddress');
-
-      // if no id to contact, we need to create it first before adding payment method
-      if (!_.get(paymentMethodContact, 'id')) {
-        // force non needed value for contact creation
-        // this should be done in component
-        if (!paymentMethodContact.legalForm) {
-          paymentMethodContact.legalForm = 'individual';
-        }
-        if (!paymentMethodContact.language) {
-          paymentMethodContact.language = this.currentUser.language;
-        }
-        contactPromise = this.ovhContacts.createContact(paymentMethodContact)
-          .then((contact) => {
-            _.set(addParams, 'billingContactId', contact.id);
-            return contact;
-          });
-      } else {
-        _.set(addParams, 'billingContactId', paymentMethodContact.id);
-      }
     }
 
     if (!this.model.selectedPaymentMethodType.original) {
@@ -204,12 +178,11 @@ export default class BillingPaymentMethodAddCtrl {
 
     this.Alerter.resetMessage('billing_payment_method_add_alert');
 
-    return contactPromise
-      .then(() => this.ovhPaymentMethod
-        .addPaymentMethod(this.model.selectedPaymentMethodType, addParams))
+    return this.ovhPaymentMethod
+      .addPaymentMethod(this.model.selectedPaymentMethodType, addParams)
       .then((result) => {
-        if (this.coreConfig.getRegion() === 'US') {
-          return this.BillingPaymentMethodService.submitVantiv(result);
+        if (isRegisterable && this.registerInstance) {
+          return this.registerInstance.submit(result);
         }
 
         return this.$q.when(result);
@@ -217,25 +190,18 @@ export default class BillingPaymentMethodAddCtrl {
       .then((result) => {
         if (this.model.selectedPaymentMethodType.original) {
           this.manageLegacyResponse(result);
+        } else if (isRegisterable) {
+          this.Alerter.success(
+            this.$translate.instant('billing_payment_method_add_status_success'),
+            'billing_payment_method_add_alert',
+          );
         }
       })
       .catch((error) => {
-        if (this.BillingPaymentMethodService.isCreditCardVantivError(error)) {
-          this.Alerter.error(
-            this.$translate.instant('billing_payment_method_add_vantiv_recoverable_credit_card_error'),
-            'billing_payment_method_add_alert',
-          );
-        } else if (this.BillingPaymentMethodService.isCardValidationNumberVantivError(error)) {
-          this.Alerter.error(
-            this.$translate.instant('billing_payment_method_add_vantiv_recoverable_card_validation_number_error'),
-            'billing_payment_method_add_alert',
-          );
-        } else {
-          this.Alerter.error([
-            this.$translate.instant('billing_payment_method_add_status_error'),
-            _.get(error, 'data.message', ''),
-          ].join(' '), 'billing_payment_method_add_alert');
-        }
+        this.Alerter.error([
+          this.$translate.instant('billing_payment_method_add_status_error'),
+          _.get(error, 'data.message', ''),
+        ].join(' '), 'billing_payment_method_add_alert');
       })
       .finally(() => {
         this.loading.add = false;
