@@ -8122,10 +8122,9 @@ ovh-manager-webfont@^1.2.0:
   resolved "https://registry.yarnpkg.com/ovh-manager-webfont/-/ovh-manager-webfont-1.2.0.tgz#e59e89e6248b7bf97b204bb18521b2f5bd347961"
   integrity sha512-J2ticTEGQEKbiE0NpI8yaiGmVFrbyllonUHcIsfgaEhY1gl9cug0ktiJGTc40sVFwlygsNYoM360xZvJkeX7lw==
 
-ovh-module-exchange@^9.4.5:
+"ovh-module-exchange@git+https://github.com/ovh-ux/ovh-module-exchange.git#refactor/exchange-modal":
   version "9.4.5"
-  resolved "https://registry.yarnpkg.com/ovh-module-exchange/-/ovh-module-exchange-9.4.5.tgz#c85481316e138a0e58245e9de40b41a262a4072a"
-  integrity sha512-dJOKEc1KbwRgMwfX/72JZe/SpcQGM8h6yVHvb3N8BWXqQMK+2r3ikJK32vouM0oqRuaK1XIwWCoW80EHvGorWg==
+  resolved "git+https://github.com/ovh-ux/ovh-module-exchange.git#0d46a0eacc2fa1188832613bd2b50f93a3f9c4af"
   dependencies:
     filesize "^3.6.1"
     lodash "~3.9.3"
