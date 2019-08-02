@@ -282,7 +282,7 @@ angular.module('App').controller('ServerCtrl', (
         $scope.$broadcast('dedicated.server.refreshTabs');
 
         if (isEligibleForUpgrade()) {
-          Server.getUpgradeProductName('RISE-2', $scope.user.ovhSubsidiary)
+          Server.getUpgradeProductName(ELIGIBLE_FOR_UPGRADE.PLAN_NAME, $scope.user.ovhSubsidiary)
             .then((upgradeName) => {
               $scope.upgradeName = upgradeName;
             });
@@ -544,15 +544,7 @@ angular.module('App').controller('ServerCtrl', (
 
   // Upgrade to Advance
   $scope.isEligibleForUpgrade = () => isEligibleForUpgrade();
-  $scope.trackUpgradeToAdvance = () => trackUpgradeToAdvance();
   $scope.URLS = URLS;
-
-  function trackUpgradeToAdvance() {
-    atInternet.trackClick({
-      name: 'upgrade_rise_to_advance',
-      type: 'action',
-    });
-  }
 
   function isEligibleForUpgrade() {
     return _.includes(ELIGIBLE_FOR_UPGRADE.SUBSIDIARIES, $scope.user.ovhSubsidiary)
