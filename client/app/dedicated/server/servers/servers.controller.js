@@ -40,6 +40,15 @@ export default class ServersCtrl {
     };
   }
 
+  getSorting(property) {
+    console.log(property, this.sort, this.sortOrder);
+    if (this.sort === property) {
+      return this.sortOrder;
+    }
+
+    return '';
+  }
+
   loadServers() {
     const currentOffset = this.paginationNumber * this.paginationSize;
     _.set(this.ouiDatagridService, 'datagrids.dg-servers.paging.offset', currentOffset < this.paginationTotalCount ? currentOffset : this.paginationTotalCount);

@@ -33,7 +33,6 @@ export default /* @ngInject */ ($stateProvider) => {
       filter: /* @ngInject */ $transition$ => $transition$.params().filter,
       orderUrl: /* @ngInject */ User => User.getUrlOf('dedicatedOrder'),
       getServerDashboardLink: /* @ngInject */ $state => server => $state.href('app.dedicated.server', { productId: server.name }),
-
       dedicatedServers: /* @ngInject */ (iceberg, $stateParams) => {
         const filters = JSON.parse($stateParams.filter);
         let request = iceberg('/dedicated/server')
@@ -76,10 +75,18 @@ export default /* @ngInject */ ($stateProvider) => {
 
         return request.execute(null, true).$promise;
       },
-      paginationNumber: /* @ngInject */ dedicatedServers => _.get(dedicatedServers.headers, 'x-pagination-number'),
-      paginationSize: /* @ngInject */ dedicatedServers => _.get(dedicatedServers.headers, 'x-pagination-size'),
-      paginationTotalCount: /* @ngInject */ dedicatedServers => _.get(dedicatedServers.headers, 'x-pagination-elements'),
-
+      paginationNumber: /* @ngInject */ dedicatedServers => parseInt(
+        _.get(dedicatedServers.headers, 'x-pagination-number'),
+        10,
+      ),
+      paginationSize: /* @ngInject */ dedicatedServers => parseInt(
+        _.get(dedicatedServers.headers, 'x-pagination-size'),
+        10,
+      ),
+      paginationTotalCount: /* @ngInject */ dedicatedServers => parseInt(
+        _.get(dedicatedServers.headers, 'x-pagination-elements'),
+        10,
+      ),
       schema: /* @ngInject */ OvhApiDedicatedServer => OvhApiDedicatedServer
         .v6()
         .schema()
@@ -94,6 +101,8 @@ export default /* @ngInject */ ($stateProvider) => {
           notify: false,
         },
       ),
+      sort: /* @ngInject */ dedicatedServers => _.get(dedicatedServers.headers, 'x-pagination-sort'),
+      sortOrder: /* @ngInject */ dedicatedServers => _.get(dedicatedServers.headers, 'x-pagination-sort-order'),
     },
   });
 };

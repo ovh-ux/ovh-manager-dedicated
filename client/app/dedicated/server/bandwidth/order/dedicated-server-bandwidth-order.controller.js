@@ -1,168 +1,82 @@
-angular.module('App').controller('ServerOrderBandwidthCtrl', ($scope, $stateParams, $translate, Server, User) => {
-  $scope.orderable = null;
+class ServerOrderBandwidthCtrl {
+  /* @ngInject */
+  constructor($scope, $stateParams, $translate, User, Server) {
+    this.$scope = $scope;
+    this.$stateParams = $stateParams;
+    this.$translate = $translate;
+    this.Server = Server;
+    this.User = User;
+  }
 
-  $scope.orderableBandwidth = {
-    value: [],
-  };
+  $onInit() {
+    this.model = {};
+    this.data = {};
+    this.isLoading = false;
+    this.existingBandwidth = this.$scope.currentActionData.bandwidth.bandwidth.OvhToInternet.value;
 
-  $scope.selectedBandwidthTypes = {
-    value: null,
-  };
+    this.steps = [
+      {
+        isValid: () => this.model.plan,
+        isLoading: () => this.isLoading,
+        load: () => {
+          this.isLoading = true;
+          return this.Server
+            .getBareMetalPublicBandwidthOptions(this.$stateParams.productId, this.existingBandwidth)
+            .then((plans) => {
+              this.plans = this.Server.getValidBandwidthPlans(plans, this.existingBandwidth);
+            })
+            .catch((error) => {
+              this.$scope.resetAction();
+              return this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_error'), error.data);
+            })
+            .finally(() => { this.isLoading = false; });
+        },
+      },
+      {
+        isValid: () => this.model.plan,
+        isLoading: () => this.isLoading,
+        load: () => {
+          this.isLoading = true;
+          return this.Server
+            .getBareMetalPublicBandwidthOrder(this.$stateParams.productId, this.model.plan)
+            .then((res) => {
+              res.bandwidth = _.find(this.plans, 'planCode', this.model.plan).bandwidth;
+              res.planCode = this.model.plan;
+              this.provisionalPlan = res;
+            })
+            .catch((error) => {
+              this.$scope.resetAction();
+              return this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_error'), error.data);
+            }).finally(() => { this.isLoading = false; });
+        },
+      },
+    ];
+    this.$scope.initFirstStep = this.steps[0].load.bind(this);
+    this.$scope.initSecondStep = this.steps[1].load.bind(this);
+    this.$scope.order = this.order.bind(this);
+  }
 
-  $scope.selectedBandwidth = {
-    value: null,
-  };
-
-  $scope.loaders = {
-    orderableVersion: true,
-    durations: false,
-    bc: false,
-  };
-
-  /*
-    *
-    *  ORDERABLE
-    *
-    */
-  $scope.getOrderableVersion = function () {
-    $scope.loaders.orderableVersion = true;
-    $scope.orderableBandwidth.value = [];
-    $scope.user = {
-      value: null,
-    };
-
-    User.getUser()
-      .then((data) => {
-        $scope.user.value = data;
-      })
-      .then(() => {
-        Server.get($stateParams.productId, 'orderable/bandwidth', {
-          proxypass: true,
-        }).then((orderableVersion) => {
-          $scope.orderable = orderableVersion;
-
-          angular.forEach(orderableVersion, (value, key) => {
-            if (key !== 'orderable' && $scope.orderable[key]) {
-              angular.forEach(value, (v, k) => {
-                $scope.orderable[key][k] = Math.floor(v / 1000);
-              });
-
-              if ($scope.orderable[key].length) {
-                $scope.orderableBandwidth.value.push(key);
-              }
-            }
-          });
-          $scope.orderableBandwidth.value = _.sortBy($scope.orderableBandwidth.value, (val) => {
-            let ret;
-            switch (val) {
-              case 'premium':
-                ret = 1;
-                break;
-              case 'platinum':
-                ret = 2;
-                break;
-              default:
-                ret = 3;
-                break;
-            }
-            return ret;
-          });
-
-          $scope.loaders.orderableVersion = false;
-        });
+  order() {
+    if (this.model.plan) {
+      this.isLoading = true;
+      this.Server.bareMetalPublicBandwidthPlaceOrder(
+        this.$stateParams.productId, this.model.plan, this.model.autoPay,
+      ).then((result) => {
+        this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_vrack_success', {
+          t0: result.order.url,
+        }), true);
+        window.open(result.order.url);
+      }).catch((error) => {
+        this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_error'), error.data);
+      }).finally(() => {
+        this.isLoading = false;
+        this.$scope.resetAction();
       });
-  };
-
-  $scope.selectBandwidthType = function (type) {
-    if ($scope.orderable[type].length === 1) {
-      $scope.selectedBandwidthTypes.value = type;
-      $scope.selectedBandwidth.value = _.first($scope.orderable[type]);
-    } else {
-      $scope.selectedBandwidth.value = null;
     }
-  };
+  }
 
-  /*
-    *
-    *  DURATIONS && PRICE
-    *
-    */
-  $scope.durations = {
-    value: {},
-    selected: null,
-  };
-
-  $scope.user = {
-    value: null,
-  };
-
-  $scope.getDuration = function () {
-    $scope.durations.value = {};
-    $scope.loaders.durations = true;
-
-    Server.orderBandwidth($stateParams.productId, {
-      serviceName: $scope.currentActionData,
-      bandwidth: $scope.selectedBandwidth.value * 1000,
-      type: $scope.selectedBandwidthTypes.value,
-    }).then((durations) => {
-      $scope.durations.value = durations;
-
-      if ($scope.durations.value.length === 1) {
-        $scope.durations.selected = $scope.durations.value[0].durations;
-      }
-
-      $scope.loaders.durations = false;
-    });
-  };
-
-  /*
-    *
-    *  CONTRACTS
-    *
-    */
-  $scope.contracts = {
-    value: [],
-  };
-
-  $scope.agree = {
-    value: false,
-  };
-
-  let bcUrl;
-  $scope.displayBc = function () {
-    $scope.loaders.bc = true;
-    bcUrl = null;
-
-    $scope.agree.value = false;
-    $scope.contracts.value = [];
-
-    return Server.postOrderBandwidth($stateParams.productId, {
-      serviceName: $scope.currentActionData,
-      bandwidth: $scope.selectedBandwidth.value * 1000,
-      type: $scope.selectedBandwidthTypes.value,
-      duration: $scope.durations.selected,
-    }).then(
-      (durations) => {
-        $scope.loaders.bc = false;
-        $scope.contracts.value = durations.contracts;
-
-        bcUrl = durations.url;
-      },
-      (data) => {
-        $scope.resetAction();
-        _.set(data, 'data.type', 'ERROR');
-        $scope.setMessage($translate.instant('server_order_bandwidth_error'), data.data);
-      },
-    );
-  };
-
-  /*
-    *
-    *  OPEN BC
-    *
-    */
-  $scope.openBC = function () {
-    $scope.resetAction();
-    window.open(bcUrl);
-  };
-});
+  close() {
+    this.$scope.resetAction();
+  }
+}
+angular.module('App').controller('ServerOrderBandwidthCtrl', ServerOrderBandwidthCtrl);

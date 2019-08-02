@@ -13,6 +13,8 @@ export default {
     paginationNumber: '<',
     paginationSize: '<',
     paginationTotalCount: '<',
+    sort: '<',
+    sortOrder: '<',
   },
   controller,
   template,
