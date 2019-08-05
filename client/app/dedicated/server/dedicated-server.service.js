@@ -40,11 +40,26 @@ angular
     },
   })
   .constant('HARDWARE_RAID_RULE_DEFAULT_NAME', 'managerHardRaid')
-  .service('Server', function serverF($http, $q, constants, coreConfig, $cacheFactory, $rootScope,
-    $translate, WucApi, Polling, OvhApiOrder, OvhHttp, SERVERSTATS_PERIOD_ENUM,
-    HARDWARE_RAID_RULE_DEFAULT_NAME) {
+  .service('Server', function serverF(
+    $http,
+    $q,
+    constants,
+    coreConfig,
+    $cacheFactory,
+    $rootScope,
+    $translate,
+    WucApi,
+    Polling,
+    OvhApiOrder,
+    OvhApiOrderCatalogPublic,
+    OvhHttp,
+    SERVERSTATS_PERIOD_ENUM,
+    HARDWARE_RAID_RULE_DEFAULT_NAME,
+  ) {
+    this.OvhApiOrderCatalogPublic = OvhApiOrderCatalogPublic;
     this.OvhApiOrderBaremetalPublicBW = OvhApiOrder.Upgrade().BaremetalPublicBandwidth().v6();
     this.OvhApiOrderBaremetalPrivateBW = OvhApiOrder.Upgrade().BaremetalPrivateBandwidth().v6();
+
     const self = this;
     const serverCaches = {
       ipmi: $cacheFactory('UNIVERS_DEDICATED_SERVER_IPMI'),
@@ -2155,13 +2170,13 @@ angular
       return this.getSelected(productId).then(server => moment(server.expiration).diff(moment().date(), 'days') > 0);
     };
 
-    this.getUpgradeProductName = (planName, ovhSubsidiary) => OvhHttp
-      .get('/order/catalog/public/baremetalServers', {
-        rootPath: 'apiv6',
-        params: {
-          ovhSubsidiary,
-        },
+    this.getUpgradeProductName = (planName, ovhSubsidiary) => this.OvhApiOrderCatalogPublic
+      .v6()
+      .get({
+        productName: 'baremetalServers',
+        ovhSubsidiary,
       })
+      .$promise
       .then(({ addons, plans, products }) => {
         const plan = _.find(plans, { invoiceName: planName });
         const cpu = _.find(products, { name: plan.product });
