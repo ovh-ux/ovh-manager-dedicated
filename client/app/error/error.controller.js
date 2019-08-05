@@ -1,11 +1,10 @@
-angular.module('App').controller('ErrorCtrl', class ErrorCtrl {
-  constructor($rootScope, $stateParams) {
+export default class {
+  /* @ngInject */
+  constructor($rootScope) {
     this.$rootScope = $rootScope;
-    this.$stateParams = $stateParams;
   }
 
   $onInit() {
     this.$rootScope.managerPreloadHide += ' manager-preload-hide';
-    this.error = this.$stateParams.error;
   }
-});
+}
