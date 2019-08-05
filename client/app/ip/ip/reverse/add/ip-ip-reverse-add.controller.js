@@ -5,18 +5,14 @@ angular.module('Module.ip.controllers').controller('IpAddIpv6Ctrl', ($scope, $ro
   /* Action */
 
   $scope.addIpv6 = function () {
-    if ($scope.model.reverse) {
-      IpReverse
-        .updateReverse(
-          $scope.data.ipBlock,
-          $scope.model.ipv6,
-          $scope.model.reverse,
-        )
-        .then(() => $rootScope.$broadcast('ips.table.refreshBlock', $scope.data.ipBlock))
-        .catch(reason => Alerter.alertFromSWS($translate.instant('ip_table_manage_add_ipv6block_failure'), reason));
-    } else {
-      $rootScope.$broadcast('ips.table.add', $scope.data.ipBlock, $scope.model.ipv6);
-    }
+    IpReverse
+      .updateReverse(
+        $scope.data.ipBlock,
+        $scope.model.ipv6,
+        $scope.model.reverse,
+      )
+      .then(() => $rootScope.$broadcast('ips.table.refreshBlock', $scope.data.ipBlock))
+      .catch(reason => Alerter.alertFromSWS($translate.instant('ip_table_manage_add_ipv6block_failure'), reason));
 
     $scope.resetAction();
   };
@@ -26,10 +22,7 @@ angular.module('Module.ip.controllers').controller('IpAddIpv6Ctrl', ($scope, $ro
       return Validator.isValidIpv6($scope.model.ipv6);
     },
     reverse() {
-      if ($scope.model.reverse) {
-        return Validator.isValidDomain($scope.model.reverse.replace(/\.$/, ''));
-      }
-      return true;
+      return Validator.isValidDomain($scope.model.reverse.replace(/\.$/, ''));
     },
     all() {
       return $scope.isValid.ipv6() && $scope.isValid.reverse();
