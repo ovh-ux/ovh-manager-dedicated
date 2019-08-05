@@ -63,6 +63,7 @@ angular.module('Billing.services').service('BillingAutoRenew', [
       'HORIZONVIEW',
       'HOSTING_PRIVATE_DATABASE',
       'HOSTING_RESELLER',
+      'HOSTING_DOMAIN',
       'HOSTING_WEB',
       'IP_LOADBALANCING',
       'IP_LOADBALANCER',
