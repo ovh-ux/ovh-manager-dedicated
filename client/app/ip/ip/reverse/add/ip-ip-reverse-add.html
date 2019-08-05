@@ -2,8 +2,7 @@
     data-ng-controller="IpAddIpv6Ctrl"
     name="addIpv6ReverseForm"
     novalidate
-    data-ng-submit="isValid.all() && addIpv6()"
->
+    data-ng-submit="isValid.all() && addIpv6()">
     <oui-modal
         data-heading="{{:: 'ip_table_manage_add_ipv6block_reverse' | translate }}"
         data-primary-label="{{:: 'ip_table_manage_add_ipv6block_validate' | translate }}"
@@ -35,8 +34,11 @@
                 id="ip"
                 name="ip"
                 data-ng-model="model.ipv6"
-                required>
-            <div class="oui-field__error" data-ng-if="model.ipv6 && !isValid.ipv6()">
+                required
+                data-ng-class="{
+                    'oui-input_error': model.ipv6 && !isValid.ipv6()
+                }">
+            <div class="oui-field__error d-block" data-ng-if="model.ipv6 && !isValid.ipv6()">
                 <span role="alert">
                     <span class="oui-icon oui-icon-error" aria-hidden="true"></span>
                     <span data-translate="ip_table_header_ip_address_invalid"></span>
@@ -52,8 +54,11 @@
                 id="reverse"
                 name="reverse"
                 data-ng-model="model.reverse"
-                required>
-            <div class="oui-field__error" data-ng-if="!isValid.reverse()">
+                required
+                data-ng-class="{
+                        'oui-input_error': model.reverse && !isValid.reverse()
+                }">
+            <div class="oui-field__error d-block" data-ng-if="model.reverse && !isValid.reverse()">
                 <span role="alert">
                     <span class="oui-icon oui-icon-error" aria-hidden="true"></span>
                     <span data-translate="ip_table_header_reverse_invalid"></span>

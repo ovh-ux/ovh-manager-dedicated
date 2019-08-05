@@ -3,8 +3,6 @@ angular
   .config(/* @ngInject */ ($stateProvider) => {
     $stateProvider.state('app', {
       abstract: true,
-      controller: 'AppCtrl',
-      controllerAs: 'AppCtrl',
       resolve: {
         currentUser: /* @ngInject */ User => User.getUser(),
       },

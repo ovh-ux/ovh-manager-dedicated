@@ -26,6 +26,7 @@ import dedicatedCloudDatacenterDrp from './dedicatedCloud/datacenter/drp';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
 import ovhManagerPccDashboard from './dedicatedCloud/dashboard';
 import ovhManagerPccResourceUpgrade from './dedicatedCloud/resource/upgrade';
+import preload from './components/manager-preload/manager-preload.module';
 
 Environment.setRegion(__WEBPACK_REGION__);
 
@@ -79,6 +80,7 @@ angular
     ovhManagerNavbar,
     ovhPaymentMethod,
     'pascalprecht.translate',
+    preload,
     'services',
     'ui.bootstrap',
     'ui.router',
