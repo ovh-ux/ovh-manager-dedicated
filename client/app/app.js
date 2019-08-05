@@ -11,6 +11,7 @@ import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
 import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
 import ngOvhSwimmingPoll from '@ovh-ux/ng-ovh-swimming-poll';
 import ngOvhUiRouterLayout from '@ovh-ux/ng-uirouter-layout';
+import ngOvhUiRouterLineProgress from '@ovh-ux/ng-ui-router-line-progress';
 import ngOvhUserPref from '@ovh-ux/ng-ovh-user-pref';
 import ngOvhWebUniverseComponents from '@ovh-ux/ng-ovh-web-universe-components';
 import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
@@ -62,6 +63,7 @@ angular
     ngOvhSsoAuthModalPlugin,
     ngOvhSwimmingPoll,
     ngOvhUiRouterLayout,
+    ngOvhUiRouterLineProgress,
     ngOvhUserPref,
     ngOvhWebUniverseComponents,
     'ngRoute',
