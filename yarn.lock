@@ -1040,10 +1040,9 @@
     lodash "~4.17.15"
     urijs "^1.19.1"
 
-"@ovh-ux/ng-ovh-otrs@^7.1.7":
+"@ovh-ux/ng-ovh-otrs@git+https://github.com/ovh-ux/ng-ovh-otrs.git#fix/otrs-us-agreement":
   version "7.1.7"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-otrs/-/ng-ovh-otrs-7.1.7.tgz#192181fe55ada01a129054b7b3b6d79c1622a669"
-  integrity sha512-wjpBs/WpqC7b876Zed5f4IGsAglm03TUUufeQ47Sc9gf5mLfh3HafbzEffOBcKO71vZEgobucsqCJSJuJqxd9w==
+  resolved "git+https://github.com/ovh-ux/ng-ovh-otrs.git#bd3d8df49431f9bb5c57394ca54769498435143e"
   dependencies:
     draggable "^4.2.0"
     lodash "^4.17.11"
