@@ -176,7 +176,7 @@ angular
 
     $state.defaultErrorHandler((error) => {
       if (error.type === RejectType.ERROR) {
-        $state.go('app.error', {
+        $state.go('error', {
           detail: {
             message: _.get(error.detail, 'data.message'),
             code: _.has(error.detail, 'headers') ? error.detail.headers('x-ovh-queryId') : null,
