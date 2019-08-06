@@ -1,5 +1,5 @@
 export default /* @ngInject */ ($stateProvider) => {
-  $stateProvider.state('app.error', {
+  $stateProvider.state('error', {
     url: '/error',
     params: {
       detail: null,

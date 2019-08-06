@@ -1,4 +1,3 @@
-import controller from './error.controller';
 import template from './error.html';
 
 export default {
@@ -7,6 +6,5 @@ export default {
     homeLink: '<',
     reload: '<',
   },
-  controller,
   template,
 };
