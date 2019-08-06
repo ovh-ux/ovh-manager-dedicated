@@ -25,24 +25,19 @@
                 class="oui-button oui-button_link m-0 py-0 pl-3"></button>
         </oui-message>
 
-        <div class="alert alert-danger"
-             role="alert"
-             data-ng-if="!automaticRenewV2Mean.loading && automaticRenewV2Mean.available && (!automaticRenewV2Mean.allowed || (automaticRenewV2Mean.allowed && !nicRenew.active && nicRenew.initialized)) && !services.data.userSubsidiaryHasRecentAutorenew">
-            <button type="button"
-                    class="close"
-                    data-ng-click="automaticRenewV2Mean.noMeanMessageClose()"
-                    title="{{ 'browser_alert_close' | translate }}"
-                    data-dismiss="alert">
+        <div data-ng-if="!automaticRenewV2Mean.loading && automaticRenewV2Mean.available && (!automaticRenewV2Mean.allowed || (automaticRenewV2Mean.allowed && !nicRenew.active && nicRenew.initialized)) && !services.data.userSubsidiaryHasRecentAutorenew">
+            <oui-message
+                data-ng-if="!automaticRenewV2Mean.allowed"
+                data-type="error"
+                data-dismissable>
+                <span data-translate="autorenew_service_renew_requires_mean_and_date"></span>
+            </oui-message>
+            <button class="btn btn-default"
+                    type="button"
+                    data-ng-click="setAction('active', { nicRenew: nicRenew }, 'autoRenew')"
+                    data-translate="autorenew_service_active_title"
+                    data-ng-if="automaticRenewV2Mean.allowed && !nicRenew.active && nicRenew.initialized">
             </button>
-            <p data-ng-if="!automaticRenewV2Mean.allowed" data-translate="autorenew_service_renew_requires_mean_and_date"></p>
-            <p data-ng-if="automaticRenewV2Mean.allowed && !nicRenew.active && nicRenew.initialized">
-                <span data-translate="autorenew_service_activate_alert"></span>
-                <button class="btn btn-default"
-                        type="button"
-                        data-ng-click="setAction('active', { nicRenew: nicRenew }, 'autoRenew')"
-                        data-translate="autorenew_service_active_title">
-                </button>
-            </p>
         </div>
 
         <form class="row"
@@ -58,7 +53,7 @@
                         data-ng-model-options="{ debounce: 500 }"
                         data-ng-model="nicBillingFilter.model"
                         data-ng-change="onNicBillingChange()"
-                        data-ng-options="nicBilling for nicBilling in nicBillingFilter.values track by nicBilling"                        >
+                        data-ng-options="nicBilling for nicBilling in nicBillingFilter.values track by nicBilling">
                     <option value=""
                             data-translate="autorenew_service_autorenew_contact_filter_all">
                     </option>
