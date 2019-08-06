@@ -9,7 +9,6 @@ angular.module('App').controller('ServerCtrl', (
   $stateParams,
   $timeout,
   $translate,
-  atInternet,
   constants,
   coreConfig,
   dedicatedServerFeatureAvailability,
@@ -542,13 +541,11 @@ angular.module('App').controller('ServerCtrl', (
 
   load();
 
-  // Upgrade to Advance
   $scope.isEligibleForUpgrade = () => isEligibleForUpgrade();
   $scope.URLS = URLS;
 
   function isEligibleForUpgrade() {
-    return _.includes(ELIGIBLE_FOR_UPGRADE.SUBSIDIARIES, $scope.user.ovhSubsidiary)
-      && _.includes(ELIGIBLE_FOR_UPGRADE.COMMERCIAL_RANGE, $scope.server.commercialRange);
+    return _.includes(ELIGIBLE_FOR_UPGRADE.SUBSIDIARIES, $scope.user.ovhSubsidiary);
   }
 });
 /* eslint-enable no-use-before-define */
