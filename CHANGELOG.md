@@ -1,3 +1,13 @@
+<a name="10.21.2"></a>
+## [10.21.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.21.1...v10.21.2) (2019-08-06)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations [CDS 6] ([fd5415f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/fd5415f))
+
+
+
 <a name="10.21.1"></a>
 ## [10.21.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.21.0...v10.21.1) (2019-08-06)
 
