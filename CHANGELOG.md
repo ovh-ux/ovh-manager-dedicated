@@ -1,3 +1,13 @@
+<a name="10.21.3"></a>
+## [10.21.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.21.2...v10.21.3) (2019-08-06)
+
+
+### Bug Fixes
+
+* **dedicatedcloud.dashboard.options:** disable some actions ([#1303](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1303)) ([22079a5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/22079a5))
+
+
+
 <a name="10.21.2"></a>
 ## [10.21.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.21.1...v10.21.2) (2019-08-06)
 
