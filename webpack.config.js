@@ -63,7 +63,6 @@ module.exports = (env = {}) => {
       app: [
         './client/app/index.js',
         './client/app/app.js',
-        './client/app/app.controller.js',
         './client/app/app.routes.js',
       ]
         .concat(glob.sync('./client/app/**/*.module.js'))

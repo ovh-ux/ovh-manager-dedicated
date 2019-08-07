@@ -38,6 +38,27 @@
                                 data-ng-bind="server.commercialRange !== 'housing' ? server.description || '-' : ('server_configuration_description_housing' | translate)"></dd>
                         </dl>
                     </div>
+                    <div class="oui-tile__item"
+                        data-ng-if="isEligibleForUpgrade() && upgradeName">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term">
+                                <span data-translate="server_configuration_upgrade_title"></span>
+                                <span class="badge" data-translate="server_configuration_upgrade_badge"></span>
+                            </dt>
+                            <dd class="oui-tile__description">
+                                <a class="oui-link_icon"
+                                    target="_blank"
+                                    data-ng-href="{{::URLS[user.ovhSubsidiary].UPGRADE}}"
+                                    data-track-on="click"
+                                    data-track-type="action"
+                                    data-track-name="upsell_to_rise2"
+                                    rel="noopener">
+                                    <span data-ng-bind="upgradeName"></span>
+                                    <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
+                                </a>
+                            </dd>
+                        </dl>
+                    </div>
                     <div class="oui-tile__item">
                         <dl class="oui-tile__definition">
                             <dt class="oui-tile__term"

@@ -4,7 +4,6 @@ angular.module('App').config(($stateProvider) => {
     views: {
       'app@': {
         templateUrl: 'account/index.html',
-        controller: 'AppCtrl',
       },
     },
     abstract: true,

@@ -11,6 +11,7 @@ import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
 import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
 import ngOvhSwimmingPoll from '@ovh-ux/ng-ovh-swimming-poll';
 import ngOvhUiRouterLayout from '@ovh-ux/ng-uirouter-layout';
+import ngOvhUiRouterLineProgress from '@ovh-ux/ng-ui-router-line-progress';
 import ngOvhUserPref from '@ovh-ux/ng-ovh-user-pref';
 import ngOvhWebUniverseComponents from '@ovh-ux/ng-ovh-web-universe-components';
 import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
@@ -19,14 +20,16 @@ import ovhManagerCore from '@ovh-ux/manager-core';
 import ovhManagerNavbar from '@ovh-ux/manager-navbar';
 import ovhManagerServerSidebar from '@ovh-ux/manager-server-sidebar';
 import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
-import uiRouter from '@uirouter/angularjs';
+import uiRouter, { RejectType } from '@uirouter/angularjs';
 
 import ngUirouterLineProgress from '@ovh-ux/ng-uirouter-line-progress';
 import config from './config/config';
 import dedicatedCloudDatacenterDrp from './dedicatedCloud/datacenter/drp';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
+import errorPage from './error/error.module';
 import ovhManagerPccDashboard from './dedicatedCloud/dashboard';
 import ovhManagerPccResourceUpgrade from './dedicatedCloud/resource/upgrade';
+import preload from './components/manager-preload/manager-preload.module';
 
 import dedicatedServerServers from './dedicated/server/servers/servers.module';
 
@@ -43,6 +46,7 @@ angular
     dedicatedServerServers,
     dedicatedUniverseComponents,
     'directives',
+    errorPage,
     'filters',
     'internationalPhoneNumber',
     'Module.download',
@@ -63,6 +67,7 @@ angular
     ngOvhSsoAuthModalPlugin,
     ngOvhSwimmingPoll,
     ngOvhUiRouterLayout,
+    ngOvhUiRouterLineProgress,
     ngOvhUserPref,
     ngOvhWebUniverseComponents,
     'ngRoute',
@@ -84,6 +89,7 @@ angular
     ovhManagerNavbar,
     ovhPaymentMethod,
     'pascalprecht.translate',
+    preload,
     'services',
     'ui.bootstrap',
     'ui.router',
@@ -159,7 +165,7 @@ angular
   .run((ssoAuthentication, User) => {
     ssoAuthentication.login().then(() => User.getUser());
   })
-  .run(($transitions, $rootScope, $state, coreConfig) => {
+  .run(/* @ngInject */ ($rootScope, $state, $transitions, coreConfig) => {
     $rootScope.$on('$locationChangeStart', () => {
       delete $rootScope.isLeftMenuVisible; // eslint-disable-line
     });
@@ -170,6 +176,17 @@ angular
       const error = transition.error();
       if (_.get(error, 'status') === 403 && _.get(error, 'code') === 'FORBIDDEN_BILLING_ACCESS') {
         $state.go('app.error', { error });
+      }
+    });
+
+    $state.defaultErrorHandler((error) => {
+      if (error.type === RejectType.ERROR) {
+        $state.go('error', {
+          detail: {
+            message: _.get(error.detail, 'data.message'),
+            code: _.has(error.detail, 'headers') ? error.detail.headers('x-ovh-queryId') : null,
+          },
+        }, { location: false });
       }
     });
 
