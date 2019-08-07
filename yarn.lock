@@ -8136,18 +8136,17 @@ ovh-manager-webfont@^1.2.0:
   resolved "https://registry.yarnpkg.com/ovh-manager-webfont/-/ovh-manager-webfont-1.2.0.tgz#e59e89e6248b7bf97b204bb18521b2f5bd347961"
   integrity sha512-J2ticTEGQEKbiE0NpI8yaiGmVFrbyllonUHcIsfgaEhY1gl9cug0ktiJGTc40sVFwlygsNYoM360xZvJkeX7lw==
 
-ovh-module-exchange@^9.4.6:
-  version "9.4.6"
-  resolved "https://registry.yarnpkg.com/ovh-module-exchange/-/ovh-module-exchange-9.4.6.tgz#f2adccb82ee94dbbf769535bee11c81daad2453d"
-  integrity sha512-gIyQj9l/N4rnLXNk227X+89N2F0scaI6sLR4uzJLEyWF7d8OEQG83CJOSJwZHbGHNY3GsB/Y3vgal22nZ61uZA==
+"ovh-module-exchange@git+https://github.com/ovh-ux/ovh-module-exchange.git#refactor/exchange-modal":
+  version "9.4.5"
+  resolved "git+https://github.com/ovh-ux/ovh-module-exchange.git#9ae22633dd06d1da95358984f7cafa461a732078"
   dependencies:
     filesize "^3.6.1"
     lodash "~3.9.3"
 
-ovh-ui-angular@^3.6.1:
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-3.6.1.tgz#4e817308d40bb6c9248dbc66ccfa658c97faf77c"
-  integrity sha512-1peLMoRi90HoJ0q2kNksez5xuxBonLOOo3AtgWu1DIEvG9DHPZXUCt6lHPgoTWWWP49OWMmURNK2KmVbWU07WQ==
+ovh-ui-angular@^3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-3.7.0.tgz#c048a682163c304b99510080b125ca98dfe787d0"
+  integrity sha512-SlDRwIeOsS1b+atS3fttvZ2FW4aYvCreQHqcP42437Nb5CZoNFyKVoAYrpxcoU1Qj4kJTV9Uo9HkeaC1JVChGA==
   dependencies:
     bloodhound-js "^1.2.3"
     clipboard "^2.0.1"

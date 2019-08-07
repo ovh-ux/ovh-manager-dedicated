@@ -7,6 +7,10 @@ export default class BillingService {
     this.expirationDate = moment(this.expiration);
   }
 
+  get formattedExpiration() {
+    return this.expirationDate.format('LL');
+  }
+
   getRenew() {
     if (this.hasManualRenew()) {
       return 'manualPayment';
@@ -18,6 +22,10 @@ export default class BillingService {
 
     if (this.isResiliated()) {
       return 'expired';
+    }
+
+    if (this.hasForcedRenew()) {
+      return 'one_shot';
     }
 
     if (this.hasAutomaticRenew()) {
@@ -44,12 +52,11 @@ export default class BillingService {
   }
 
   hasAutomaticRenewal() {
-    return (this.hasForcedRenew() || this.hasAutomaticRenew())
-            && (this.shouldDeleteAtExpiration() || this.isExpired());
+    return this.hasForcedRenew() || this.hasAutomaticRenew();
   }
 
   hasManualRenew() {
-    return this.renew.manualPayment;
+    return this.renew.manualPayment || this.renewalType === 'manual';
   }
 
   isResiliated() {
@@ -210,5 +217,31 @@ export default class BillingService {
       availabilty: true,
       reason: 'available',
     };
+  }
+
+  hasParticularRenew() {
+    return ['EXCHANGE', 'SMS', 'EMAIL_DOMAIN'].includes(this.serviceType);
+  }
+
+  isOneShot() {
+    return this.renewalType === 'oneShot';
+  }
+
+  canBeResiliated(nichandle) {
+    return this.canDeleteAtExpiration && this.hasResiliationRights(nichandle);
+  }
+
+  hasResiliationRights(nichandle) {
+    return this.hasBillingRights(nichandle) || nichandle === this.contactAdmin;
+  }
+
+  canBeUnresiliated(nichandle) {
+    return this.shouldDeleteAtExpiration()
+    && !this.hasManualRenew()
+    && this.hasResiliationRights(nichandle);
+  }
+
+  isSuspended() {
+    return this.status === 'UN_PAID' || this.isResiliated();
   }
 }

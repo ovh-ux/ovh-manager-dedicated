@@ -1,5 +1,5 @@
 import {
-  AUTORENEW_EVENT, CONTRACTS_IDS, NIC_URL, SERVICES_TYPE,
+  AUTORENEW_EVENT, CONTRACTS_IDS, NIC_URL, RENEW_URL, SERVICE_EXPIRATION, SERVICE_STATUS,
 } from './autorenew.constants';
 
 import BillingService from './BillingService.class';
@@ -8,36 +8,49 @@ export default class {
   /* @ngInject */
   constructor(
     $q,
+    $translate,
+    $window,
+    constants,
+    coreConfig,
     DucUserContractService,
     OvhApiBillingAutorenewServices,
     OvhApiEmailExchange,
     OvhHttp,
+    ovhPaymentMethod,
   ) {
     this.$q = $q;
+    this.$translate = $translate;
+    this.$window = $window;
+    this.constants = constants;
+    this.coreConfig = coreConfig;
     this.DucUserContractService = DucUserContractService;
     this.OvhApiBillingAutorenewServices = OvhApiBillingAutorenewServices;
     this.OvhApiEmailExchange = OvhApiEmailExchange;
     this.OvhHttp = OvhHttp;
+    this.ovhPaymentMethod = ovhPaymentMethod;
 
     this.events = {
       AUTORENEW_CHANGES: AUTORENEW_EVENT,
     };
   }
 
-  getServices(count, offset, search, type, renew, renewal, order, nicBilling) {
-    return this.OvhHttp.get('/billing/autorenew/services', {
-      rootPath: '2api',
-      params: {
+  getAllServices() {
+    return this.OvhApiBillingAutorenewServices.Aapi()
+      .query().$promise;
+  }
+
+  getServices(count, offset, search, type, renewDateType, status, order, nicBilling) {
+    return this.OvhApiBillingAutorenewServices.Aapi()
+      .query({
         count,
         offset,
         search,
         type,
-        renew,
-        renewal,
-        order,
+        renewDateType,
+        status,
+        order: JSON.stringify(order),
         nicBilling,
-      },
-    });
+      }).$promise;
   }
 
   getService(serviceId) {
@@ -48,8 +61,25 @@ export default class {
       .then(services => new BillingService(_.head(services.list.results)));
   }
 
-  getServicesTypes() {
-    return this.$q.when(SERVICES_TYPE);
+  getServicesTypes(services) {
+    return _.reduce(services.servicesTypes, (serviceTypes, service) => ({
+      ...serviceTypes,
+      [service]: this.$translate.instant(`billing_autorenew_service_type_${service}`),
+    }), {});
+  }
+
+  getStatusTypes() {
+    return _.reduce(SERVICE_STATUS, (translatedStatus, status) => ({
+      ...translatedStatus,
+      [status]: this.$translate.instant(`billing_autorenew_service_status_${status}`),
+    }), {});
+  }
+
+  getExpirationFilterTypes() {
+    return _.reduce(SERVICE_EXPIRATION, (expirations, expirationType) => ({
+      ...expirations,
+      [expirationType]: this.$translate.instant(`billing_autorenew_service_expiration_${expirationType}`),
+    }), {});
   }
 
   updateServices(updateList) {
@@ -157,6 +187,10 @@ export default class {
     }).$promise;
   }
 
+  static getExchangeUrl(service, action) {
+    return `${service.url}?action=${action}`;
+  }
+
   getAutorenewAgreements() {
     return this.DucUserContractService.getAgreementsToValidate(
       ({ contractId }) => _.values(CONTRACTS_IDS).includes(contractId),
@@ -169,5 +203,36 @@ export default class {
       ? this.DucUserContractService.acceptAgreements(agreements) : Promise.resolve([]);
     return agreementsPromise
       .then(() => this.updateServices([_.pick(service, ['serviceId', 'serviceType', 'renew'])]));
+  }
+
+  /* eslint-disable class-methods-use-this */
+  userIsBillingOrAdmin(service, user) {
+    return service
+      && Boolean(user
+        && (service.contactBilling === user.nichandle
+          || service.contactAdmin === user.nichandle));
+  }
+  /* eslint-enable class-methods-use-this */
+
+
+  hasRenewDay() {
+    return this.ovhPaymentMethod
+      .hasDefaultPaymentMethod()
+      .then(hasDefaultPaymentMethod => hasDefaultPaymentMethod && this.coreConfig.getRegion() === 'EU');
+  }
+
+  setNicRenew(nicRenew) {
+    const { active, renewDay, isMandatory } = nicRenew;
+    return !isMandatory
+      ? this.enableAutorenew(renewDay)
+      : this.putAutorenew({ active, renewDay });
+  }
+
+  static getRenewUrl(service, subsidiary) {
+    return `${_.get(RENEW_URL, subsidiary, RENEW_URL.default)}${service}`;
+  }
+
+  isAutomaticRenewV2Available() {
+    return this.coreConfig.isRegion('EU');
   }
 }

@@ -7,65 +7,57 @@ export const CONTRACTS_IDS = {
   WS: 1755,
 };
 
+export const MIN_DOMAIN_LENGTH = 50;
+
+export const NIC_ALL = 'billing_autorenew_nic_all';
+
 export const NIC_URL = '/me/autorenew';
 
-export const SERVICES_TYPE = [
-  'ALL_DOM',
-  'CAAS_CONTAINERS',
-  'CDN_DEDICATED',
-  'CDN_WEBSITE',
-  'CDN_WEBSTORAGE',
-  'CLUSTER_HADOOP',
-  'DBAAS_QUEUE',
-  'DEDICATED_CEPH',
-  'DEDICATED_NAS',
-  'DEDICATED_NASHA',
-  'DEDICATED_SERVER',
-  'DEDICATED_HOUSING',
-  'DEDICATED_CLOUD',
-  'DESKAAS',
-  'DOMAIN',
-  'EMAIL_DOMAIN',
-  'EMAIL_PRO',
-  'HORIZONVIEW',
-  'HOSTING_PRIVATE_DATABASE',
-  'HOSTING_RESELLER',
-  'HOSTING_DOMAIN',
-  'HOSTING_WEB',
-  'IP_LOADBALANCING',
-  'IP_LOADBALANCER',
-  'LICENCE_CLOUD_LINUX',
-  'LICENCE_CPANEL',
-  'LICENCE_DIRECT_ADMIN',
-  'LICENCE_PLESK',
-  'LICENCE_VIRTUOZZO',
-  'LICENCE_WINDOWS',
-  'LICENCE_WORKLIGHT',
-  'LICENCE_OFFICE',
-  'LICENCE_SQL_SERVER',
-  'OVER_THE_BOX',
-  'PAAS_DATABASE',
-  'PAAS_MONITORING',
-  'DBAAS_TIMESERIES',
-  'DBAAS_LOGS',
-  'ROUTER',
-  'SAAS_CSP2',
-  'TELEPHONY',
-  'VPS',
-  'XDSL',
-  'EXCHANGE',
-  'MIS',
-  'SSL_GATEWAY',
-  'METRICS',
-  'VEEAM_CLOUD_CONNECT',
-  'VEEAM_ENTERPRISE',
-  'SHAREPOINT',
-  'VIP',
-];
+export const RENEW_URL = {
+  default: '/cgi-bin/order/renew.cgi?domainChooser=',
+  CA: 'https://ca.ovh.com/fr/cgi-bin/order/renew.cgi?domainChooser=',
+  CZ: 'https://www.ovh.cz/cgi-bin/order/renew.cgi?domainChooser=',
+  DE: 'https://www.ovh.de/cgi-bin/order/renew.cgi?domainChooser=',
+  EN: 'https://www.ovh.co.uk/cgi-bin/order/renew.cgi?domainChooser=',
+  ES: 'https://www.ovh.es/cgi-bin/order/renew.cgi?domainChooser=',
+  FI: 'https://www.ovh-hosting.fi/cgi-bin/order/renew.cgi?domainChooser=',
+  FR: 'https://eu.ovh.com/fr/cgi-bin/order/renew.cgi?domainChooser=',
+  GB: 'https://www.ovh.co.uk/cgi-bin/order/renew.cgi?domainChooser=',
+  IE: 'https://www.ovh.ie/cgi-bin/order/renew.cgi?domainChooser=',
+  IT: 'https://www.ovh.it/cgi-bin/order/renew.cgi?domainChooser=',
+  LT: 'https://www.ovh.lt/cgi-bin/order/renew.cgi?domainChooser=',
+  MA: 'https://www.ovh.com/ma/cgi-bin/order/renew.cgi?domainChooser=',
+  NL: 'https://www.ovh.nl/cgi-bin/order/renew.cgi?domainChooser=',
+  PL: 'https://www.ovh.pl/cgi-bin/order/renew.cgi?domainChooser=',
+  PT: 'https://www.ovh.pt/cgi-bin/order/renew.cgi?domainChooser=',
+  QC: 'https://ca.ovh.com/fr/cgi-bin/order/renew.cgi?domainChooser=',
+  RU: 'https://www.ovh.co.uk/cgi-bin/order/renew.cgi?domainChooser=',
+  SN: 'https://www.ovh.sn/cgi-bin/order/renew.cgi?domainChooser=',
+  TN: 'https://www.ovh.com/tn/cgi-bin/order/renew.cgi?domainChooser=',
+  WE: 'https://ca.ovh.com/fr/cgi-bin/order/renew.cgi?domainChooser=',
+};
+
+export const SERVICE_EXPIRATION = {
+  EXPIRES_IN_A_WEEK: 'weeks',
+  EXPIRES_IN_A_MONTH: 'months',
+  RENEWED_IN_AMONTH: 'renew_month',
+};
+
+export const SERVICE_STATUS = {
+  AUTOMATIC: 'auto',
+  MANUAL: 'manual',
+  PENDING_DEBT: 'pending_debt',
+  PENDING_RESILIATION: 'delete_at_expiration',
+  RESILIATED: 'expired',
+};
 
 export default {
   AUTORENEW_EVENT,
   CONTRACTS_IDS,
+  MIN_DOMAIN_LENGTH,
+  NIC_ALL,
   NIC_URL,
-  SERVICES_TYPE,
+  RENEW_URL,
+  SERVICE_EXPIRATION,
+  SERVICE_STATUS,
 };

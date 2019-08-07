@@ -12,7 +12,7 @@ export default /* @ngInject */ ($stateProvider) => {
       goBack: /* @ngInject */ goToAutorenew => goToAutorenew,
       cancelResiliation: /* @ngInject */ BillingAutoRenew => (service) => {
         service.cancelResiliation();
-        BillingAutoRenew.updateService(
+        return BillingAutoRenew.updateService(
           service,
         );
       },
