@@ -150,7 +150,10 @@ export default /* @ngInject */ ($stateProvider) => {
       terminatePrivateDatabase: /* @ngInject */ $state => serviceId => $state.go('app.account.billing.autorenew.terminatePrivateDatabase', { serviceId }),
 
       updateServices: /* @ngInject */ $state => ({ serviceId }) => $state.go('app.account.billing.autorenew.update', { serviceId }),
-      updateExchangeBilling: /* @ngInject */ $state => ({ serviceId }) => $state.go('app.account.billing.autorenew.exchange', { serviceId }),
+      updateExchangeBilling: /* @ngInject */ $state => ({ serviceId }) => {
+        const [organization, exchangeName] = serviceId.split('/service/');
+        $state.go('app.account.billing.autorenew.exchange', { organization, exchangeName });
+      },
 
       warnNicBilling: /* @ngInject */ $state => nic => $state.go('app.account.billing.autorenew.warnNic', { nic }),
       warnNicPendingDebt: /* @ngInject */ $state => serviceName => $state.go('app.account.billing.autorenew.warnPendingDebt', { serviceName }),
