@@ -12,7 +12,8 @@ export default class BillingAutoRenewDeleteCtrl {
     this.service.setForResiliation();
     return this.updateService(this.service)
       .then(() => this.goBack(
-        this.$translate.instant('autorenew_service_delete_success'),
+        `${this.$translate.instant('autorenew_service_delete_success')}
+        <a data-href="${this.cancelResiliationUrl}" data-translate="autorenew_service_delete_cancel"></a>`,
       ))
       .catch(error => this.goBack(
         this.$translate.instant('autorenew_service_delete_error', { message: _.get(error, 'data.message') }),
