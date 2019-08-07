@@ -1,3 +1,18 @@
+<a name="10.22.0"></a>
+# [10.22.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.21.3...v10.22.0) (2019-08-07)
+
+
+### Bug Fixes
+
+* **dedicated.server.traffic:** use correct filter name ([#1307](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1307)) ([eeffb32](https://github.com/ovh-ux/ovh-manager-dedicated/commit/eeffb32))
+
+
+### Features
+
+* **billing.autorenew:** remove HOSTING_DOMAIN grouping ([#1308](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1308)) ([3123f3d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3123f3d))
+
+
+
 <a name="10.21.3"></a>
 ## [10.21.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.21.2...v10.21.3) (2019-08-06)
 
