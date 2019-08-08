@@ -16,7 +16,7 @@ export default class BillingService {
       return 'manualPayment';
     }
 
-    if (this.shouldDeleteAtExpiration()) {
+    if (this.shouldDeleteAtExpiration() && !this.isResiliated()) {
       return 'delete_at_expiration';
     }
 

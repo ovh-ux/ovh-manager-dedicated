@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export default class BillingAutoRenewDeleteCtrl {
   constructor($translate) {
     this.$translate = $translate;
