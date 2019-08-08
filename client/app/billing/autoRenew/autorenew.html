@@ -117,7 +117,7 @@
                         <oui-action-menu-divider></oui-action-menu-divider>
                         <oui-action-menu-item
                             data-on-click="$ctrl.disableAutorenewForDomains()">
-                            <span data-translate="autorenew_service_disable_all_domains"></span>
+                            <span data-translate="billing_autorenew_service_disable_all_dom"></span>
                         </oui-action-menu-item>
                     </div>
                 </oui-action-menu>
@@ -220,12 +220,12 @@
 
                     <!-- Service in autorenew -->
                     <oui-action-menu-item
-                        data-ng-if="!$row.isOneShot()"
+                        data-ng-if="!$row.isOneShot() && !$row.hasForcedRenew() && !$row.hasEngagement()"
                         data-on-click="$ctrl.updateServices($row)">
                         <span data-translate="billing_autorenew_service_update_button_caption"></span>
                     </oui-action-menu-item>
                     <oui-action-menu-item
-                        data-ng-if="!$row.isOneShot()"
+                        data-ng-if="!$row.isOneShot() && !$row.hasManualRenew()"
                         data-href="{{:: $ctrl.BillingAutoRenew.constructor.getRenewUrl($row.serviceId, $ctrl.currentUser.ovhSubsidiary) }}"
                         data-external="">
                         <span data-translate="billing_autorenew_service_anticipate_renew"></span>
@@ -237,6 +237,7 @@
                         <span data-translate="billing_autorenew_service_resiliate_button"></span>
                     </oui-action-menu-item>
                     <!-- /Service in autorenew -->
+
 
                     <!-- Service in manual renew  -->
                     <oui-action-menu-item

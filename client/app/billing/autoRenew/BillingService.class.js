@@ -72,6 +72,10 @@ export default class BillingService {
     return _.includes(['PENDING_DEBT', 'UN_PAID'], this.status);
   }
 
+  hasEngagement() {
+    return !_.isNull(this.engagedUpTo);
+  }
+
   setRenewPeriod(period) {
     this.renew.period = period;
   }
