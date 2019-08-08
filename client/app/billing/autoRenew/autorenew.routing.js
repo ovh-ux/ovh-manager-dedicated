@@ -49,8 +49,8 @@ export default /* @ngInject */ ($stateProvider) => {
         service => new BillingService(service),
       ),
       cancelServiceResiliation: /* @ngInject */ $state => ({
-        serviceId,
-      }) => $state.go('app.account.billing.autorenew.cancelResiliation', { serviceId }),
+        id,
+      }) => $state.go('app.account.billing.autorenew.cancelResiliation', { serviceId: id }),
       canDisableAllDomains: /* @ngInject */ services => services.bulkDomains,
       currentActiveLink: /* @ngInject */ $state => () => $state.href($state.current.name),
       defaultPaymentMean: /* @ngInject */
@@ -111,8 +111,8 @@ export default /* @ngInject */ ($stateProvider) => {
       pageSize: /* @ngInject */ $transition$ => parseInt($transition$.params().pageSize, 10),
 
       resiliateService: /* @ngInject */ $state => ({
-        serviceId,
-      }) => $state.go('app.account.billing.autorenew.delete', { serviceId }),
+        id,
+      }) => $state.go('app.account.billing.autorenew.delete', { serviceId: id }),
 
       searchText: /* @ngInject */ $transition$ => $transition$.params().searchText,
 
@@ -145,11 +145,11 @@ export default /* @ngInject */ ($stateProvider) => {
 
       sort: /* @ngInject */ $transition$ => $transition$.params().sort,
 
-      terminateEmail: /* @ngInject */ $state => serviceId => $state.go('app.account.billing.autorenew.terminateEmail', { serviceId }),
+      terminateEmail: /* @ngInject */ $state => service => $state.go('app.account.billing.autorenew.terminateEmail', { serviceId: service.id, name: service.domain }),
       terminateHostingWeb: /* @ngInject */ $state => serviceId => $state.go('app.account.billing.autorenew.terminateHostingWeb', { serviceId }),
       terminatePrivateDatabase: /* @ngInject */ $state => serviceId => $state.go('app.account.billing.autorenew.terminatePrivateDatabase', { serviceId }),
 
-      updateServices: /* @ngInject */ $state => ({ serviceId }) => $state.go('app.account.billing.autorenew.update', { serviceId }),
+      updateServices: /* @ngInject */ $state => ({ id }) => $state.go('app.account.billing.autorenew.update', { serviceId: id }),
       updateExchangeBilling: /* @ngInject */ $state => ({ serviceId }) => {
         const [organization, exchangeName] = serviceId.split('/service/');
         $state.go('app.account.billing.autorenew.exchange', { organization, exchangeName });

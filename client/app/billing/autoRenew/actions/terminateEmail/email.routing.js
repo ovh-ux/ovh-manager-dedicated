@@ -1,6 +1,6 @@
 export default /* @ngInject */ ($stateProvider) => {
   $stateProvider.state('app.account.billing.autorenew.terminateEmail', {
-    url: '/delete-email?serviceId',
+    url: '/delete-email?serviceId&name',
     views: {
       modal: {
         component: 'billingAutorenewTerminateEmail',
@@ -11,10 +11,11 @@ export default /* @ngInject */ ($stateProvider) => {
     resolve: {
       email: /* @ngInject */ (
         BillingAutoRenew,
-        serviceId,
-      ) => BillingAutoRenew.getEmailInfos(serviceId),
+        name,
+      ) => BillingAutoRenew.getEmailInfos(name),
       isHosting: /* @ngInject */ email => ['hosting'].includes(email.offer),
       goBack: /* @ngInject */ goToAutorenew => goToAutorenew,
+      name: /* @ngInject */ $transition$ => $transition$.params().name,
       serviceId: /* @ngInject */ $transition$ => $transition$.params().serviceId,
       terminateEmail: /* @ngInject */ (
         BillingAutoRenew,
