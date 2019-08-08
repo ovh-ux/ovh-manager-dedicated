@@ -1,6 +1,7 @@
 import _ from 'lodash';
 
 export default class BillingAutoRenewDeleteCtrl {
+  /* @ngInject */
   constructor($translate) {
     this.$translate = $translate;
   }
