@@ -7,11 +7,11 @@ export default /* @ngInject */ ($stateProvider) => {
       goBack: /* @ngInject */ goToAutorenew => goToAutorenew,
       servicesId: /* @ngInject */ $transition$ => $transition$.params().services.split(','),
       servicesList: /* @ngInject */ (
-        BillingAutorenewEnable,
+        BillingAutorenewDisable,
         billingServices,
         currentUser,
         servicesId,
-      ) => BillingAutorenewEnable.constructor.groupByAutorenewCapabilities(
+      ) => BillingAutorenewDisable.constructor.groupByManualRenewCapabilities(
         _.filter(billingServices, service => servicesId.includes((service.id).toString())),
         currentUser.nichandle,
       ),

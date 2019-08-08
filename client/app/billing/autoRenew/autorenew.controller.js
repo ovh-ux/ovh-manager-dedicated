@@ -64,7 +64,7 @@ export default class AutorenewCtrl {
       });
     }
 
-    if (this.searchTed) {
+    if (this.searchText) {
       this.criteria.push({
         value: this.searchText,
       });
