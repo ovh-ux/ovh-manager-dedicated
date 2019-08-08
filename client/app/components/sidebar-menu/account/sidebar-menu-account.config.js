@@ -70,14 +70,12 @@ angular
       }
 
       function buildServicesMenu(user) {
-        if (coreConfig.isRegion(['CA', 'EU'])) {
-          SidebarMenu.addMenuItem({
-            name: 'servicesMenu',
-            title: $translate.instant('menu_services'),
-            state: user.isEnterprise ? 'app.account.billing.autorenew.agreements' : 'app.account.billing.autorenew',
-            namespace: 'account',
-          });
-        }
+        SidebarMenu.addMenuItem({
+          name: 'servicesMenu',
+          title: $translate.instant('menu_services'),
+          state: user.isEnterprise ? 'app.account.billing.autorenew.ssh' : 'app.account.billing.autorenew',
+          namespace: 'account',
+        });
       }
 
       function buildPaymentMenu() {

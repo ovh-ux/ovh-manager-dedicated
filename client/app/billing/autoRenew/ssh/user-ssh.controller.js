@@ -7,6 +7,7 @@ angular.module('UserAccount').controller('UserAccount.controllers.ssh', [
   'constants',
   '$log',
   'Alerter',
+  '$timeout',
   function (
     $scope,
     $q,
@@ -16,6 +17,7 @@ angular.module('UserAccount').controller('UserAccount.controllers.ssh', [
     constants,
     $log,
     Alerter,
+    $timeout,
   ) {
     const self = this;
 
@@ -87,6 +89,30 @@ angular.module('UserAccount').controller('UserAccount.controllers.ssh', [
           self.guidesLoading = false;
         });
     }
+
+    $scope.setAction = function (action, data) {
+      $scope.currentAction = action;
+      $scope.currentActionData = data;
+
+      if ($scope.currentAction) {
+        $scope.stepPath = `billing/autoRenew/${action}.html`;
+
+        $('#sshAction').modal({
+          keyboard: false,
+          backdrop: 'static',
+        });
+      } else {
+        $('#sshAction').modal('hide');
+
+        $timeout(() => {
+          delete $scope.stepPath;
+        }, 300);
+      }
+    };
+
+    $scope.resetAction = function () {
+      $scope.setAction();
+    };
 
     self.init();
     initGuides();
