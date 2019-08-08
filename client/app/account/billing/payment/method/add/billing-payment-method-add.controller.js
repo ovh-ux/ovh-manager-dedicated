@@ -68,10 +68,12 @@ export default class BillingPaymentMethodAddCtrl {
           .isPaymentMethodTypeRegisterableInContext(this.model.selectedPaymentMethodType),
         isLastStep: () => true,
         onFocus: () => {
+          if (!this.registerInstance) {
+            throw new Error(`You must create a new register instance for '${this.model.selectedPaymentMethodType.integration}' payment method integration.`);
+          }
+
           if (!this.registerInstance.instanciated) {
-            this.registerInstance.instanciate({
-              height: '75px',
-            });
+            this.registerInstance.instanciate();
           }
         },
       },
