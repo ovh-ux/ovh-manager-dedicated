@@ -8,8 +8,8 @@ export default /* @ngInject */ ($stateProvider) => {
     template,
     controller: 'BillingCtrl',
     resolve: {
-      denyEnterprise: ($q, currentUser) => {
-        if (currentUser.isEnterprise) {
+      denyEnterprise: ($q, $state, currentUser) => {
+        if (currentUser.isEnterprise && $state.transition.to().name !== 'app.account.billing.autorenew.ssh') {
           return $q.reject({
             status: 403,
             message: 'Access forbidden for enterprise accounts',

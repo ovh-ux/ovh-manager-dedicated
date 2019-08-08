@@ -2,7 +2,7 @@ import _ from 'lodash';
 import BillingService from './BillingService.class';
 import { NIC_ALL } from './autorenew.constants';
 
-export default /* @ngInject */ ($stateProvider) => {
+export default /* @ngInject */ ($stateProvider, coreConfigProvider) => {
   $stateProvider.state('app.account.billing.autorenew', {
     url: '/autorenew?selectedType&pageSize&pageNumber&filters&searchText&nicBilling&sort',
     component: 'autoRenew',
@@ -37,7 +37,10 @@ export default /* @ngInject */ ($stateProvider) => {
         squash: true,
       },
     },
-    resolve: {
+    resolve: _.assign({
+      currentActiveLink: /* @ngInject */ $state => () => $state.href($state.current.name),
+      sshLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew.ssh'),
+    }, (coreConfigProvider.region !== 'US' ? {
       activationLink: /* @ngInject */ $state => $state.href(
         'app.account.billing.autorenew.activation',
       ),
@@ -52,7 +55,6 @@ export default /* @ngInject */ ($stateProvider) => {
         id,
       }) => $state.go('app.account.billing.autorenew.cancelResiliation', { serviceId: id }),
       canDisableAllDomains: /* @ngInject */ services => services.bulkDomains,
-      currentActiveLink: /* @ngInject */ $state => () => $state.href($state.current.name),
       defaultPaymentMean: /* @ngInject */
         ovhPaymentMethod => ovhPaymentMethod.getDefaultPaymentMethod(),
       disableAutorenewForDomains: /* @ngInject */ $state => () => $state.go('app.account.billing.autorenew.disableDomainsBulk'),
@@ -64,8 +66,6 @@ export default /* @ngInject */ ($stateProvider) => {
         services: _.map(services, 'id').join(','),
       }),
       filters: /* @ngInject */ $transition$ => JSON.parse($transition$.params().filters),
-      homeLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew'),
-      sshLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew.ssh'),
       isEnterpriseCustomer: /* @ngInject */ currentUser => currentUser.isEnterprise,
 
       getSMSAutomaticRenewalURL: /* @ngInject */ constants => service => `${constants.MANAGER_URLS.telecom}sms/${service.serviceId}/options/recredit`,
@@ -87,6 +87,8 @@ export default /* @ngInject */ ($stateProvider) => {
 
       hasAutoRenew: /* @ngInject */ billingRenewHelper => service => billingRenewHelper
         .serviceHasAutomaticRenew(service),
+
+      homeLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew'),
 
       nicBilling: /* @ngInject */ $transition$ => $transition$.params().nicBilling,
       nicRenew: /* @ngInject */ (
@@ -157,7 +159,7 @@ export default /* @ngInject */ ($stateProvider) => {
 
       warnNicBilling: /* @ngInject */ $state => nic => $state.go('app.account.billing.autorenew.warnNic', { nic }),
       warnNicPendingDebt: /* @ngInject */ $state => serviceName => $state.go('app.account.billing.autorenew.warnPendingDebt', { serviceName }),
-    },
-    redirectTo: /* @ngInject */ isEnterpriseCustomer => (isEnterpriseCustomer ? 'app.account.billing.autorenew.agreements' : false),
+    } : {})),
+    redirectTo: /* @ngInject */ () => (coreConfigProvider.region === 'US' ? 'app.account.billing.autorenew.ssh' : false),
   });
 };
