@@ -77,7 +77,6 @@ module.exports = (env = {}) => {
         jquery: path.resolve(__dirname, 'node_modules/jquery'),
       },
       mainFields: ['module', 'browser', 'main'],
-      symlinks: false,
     },
     plugins: [
       new webpack.DefinePlugin({
