@@ -42,6 +42,7 @@ angular.module(moduleName, [
 ])
   .config(routing)
   .component('autoRenew', component)
-  .service('BillingAutoRenew', service);
+  .service('BillingAutoRenew', service)
+  .run(/* @ngTranslationsInject:json ./translations */);
 
 export default moduleName;
