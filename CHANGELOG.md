@@ -1,3 +1,13 @@
+<a name="10.22.1"></a>
+## [10.22.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.22.0...v10.22.1) (2019-08-09)
+
+
+### Bug Fixes
+
+* **deps:** upgrade ng-ovh-otrs to v7.1.10 ([#1318](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1318)) ([0c6de32](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0c6de32))
+
+
+
 <a name="10.22.0"></a>
 # [10.22.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.21.3...v10.22.0) (2019-08-07)
 
