@@ -66,6 +66,9 @@ export default class AutorenewCtrl {
 
     if (this.searchText) {
       this.criteria.push({
+        title: this.searchText,
+        property: null,
+        operator: 'contains',
         value: this.searchText,
       });
     }
