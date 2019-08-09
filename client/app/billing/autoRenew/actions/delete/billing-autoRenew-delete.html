@@ -6,7 +6,10 @@
     data-loading="$ctrl.isDeleting">
 
     <p data-ng-if="$ctrl.engagement"
-        data-translate="autorenew_service_delete_support"></p>
+        data-translate="autorenew_service_delete_support"
+        data-translate-values="{
+            phoneNumber: $ctrl.supportPhoneNumber
+        }"></p>
 
     <div data-ng-if="!$ctrl.engagement">
         <p data-translate="autorenew_service_delete_confirm"

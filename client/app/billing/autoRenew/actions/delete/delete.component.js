@@ -7,6 +7,7 @@ export default {
     engagement: '<',
     goBack: '<',
     service: '<',
+    supportPhoneNumber: '<',
     updateService: '<',
   },
   controller,

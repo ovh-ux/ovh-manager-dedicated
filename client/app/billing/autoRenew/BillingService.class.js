@@ -24,11 +24,7 @@ export default class BillingService {
       return 'expired';
     }
 
-    if (this.hasForcedRenew()) {
-      return 'one_shot';
-    }
-
-    if (this.hasAutomaticRenew()) {
+    if (this.hasAutomaticRenew() || this.hasForcedRenew()) {
       return 'automatic';
     }
 
@@ -40,7 +36,7 @@ export default class BillingService {
   }
 
   hasForcedRenew() {
-    return this.renew.forced;
+    return this.renew.forced && !this.shouldDeleteAtExpiration() && !this.isExpired();
   }
 
   isExpired() {
@@ -240,12 +236,16 @@ export default class BillingService {
   }
 
   canBeUnresiliated(nichandle) {
-    return this.shouldDeleteAtExpiration()
-    && !this.hasManualRenew()
+    return this.hasPendingResiliation()
     && this.hasResiliationRights(nichandle);
   }
 
   isSuspended() {
     return this.status === 'UN_PAID' || this.isResiliated();
+  }
+
+  hasPendingResiliation() {
+    return this.shouldDeleteAtExpiration()
+    && !this.hasManualRenew();
   }
 }
