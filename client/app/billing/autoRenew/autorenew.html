@@ -169,9 +169,9 @@
                     data-ng-if="$row.hasDebt()"
                     data-translate="billing_autorenew_service_status_pending_debt">
                 </span>
-                <span data-ng-if="$row.hasForcedRenew()">-</span>
+                <span data-ng-if="$row.isOneShot()">-</span>
                 <span
-                    data-ng-if="!$row.hasDebt() && !$row.hasForcedRenew()"
+                    data-ng-if="!$row.hasDebt() && !$row.isOneShot()"
                     data-translate="{{:: 'billing_autorenew_service_status_' + $row.getRenew() | translate }}"></span>
             </oui-column>
             <oui-column
@@ -180,7 +180,7 @@
                 data-type="options"
                 data-type-options="$ctrl.filtersOptions.expiration"
                 data-filterable>
-                <span data-ng-if="$row.hasForcedRenew()">-</span>
+                <span data-ng-if="$row.isOneShot()">-</span>
                 <span
                     data-ng-if="$row.hasManualRenew()"
                     data-translate="billing_autorenew_service_date_before"
@@ -189,7 +189,7 @@
                     }">
                 </span>
                 <span
-                    data-ng-if="$row.hasAutomaticRenew() && !$row.hasForcedRenew()"
+                    data-ng-if="($row.hasAutomaticRenewal() && !$row.isOneShot()) || $row.isResiliated()"
                     data-translate="billing_autorenew_service_date_renew"
                     data-translate-values="{
                         date: $row.formattedExpiration
@@ -216,7 +216,7 @@
                     <span data-translate="billing_autorenew_service_pay_debt"></span>
                 </oui-action-menu-item>
 
-                <div data-ng-if="!$row.hasParticularRenew()">
+                <div data-ng-if="!$row.hasParticularRenew() && !$row.hasPendingResiliation() && !$row.hasDebt()">
 
                     <!-- Service in autorenew -->
                     <oui-action-menu-item
@@ -309,7 +309,7 @@
 
                 <!-- Service with termination asked by the customer -->
                 <oui-action-menu-item
-                    data-ng-if="$row.canBeUnresiliated()
+                    data-ng-if="$row.canBeUnresiliated($ctrl.currentUser.nichandle)
                         && $row.serviceType !== 'EMAIL_DOMAIN'"
                     data-on-click="$ctrl.cancelServiceResiliation($row)">
                     <span data-translate="billing_autorenew_service_canceldelete_button"></span>

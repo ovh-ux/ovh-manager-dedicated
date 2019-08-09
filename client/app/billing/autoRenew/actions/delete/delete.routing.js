@@ -24,6 +24,10 @@ export default /* @ngInject */ ($stateProvider) => {
         BillingAutoRenew,
         serviceId,
       ) => BillingAutoRenew.getService(serviceId),
+      supportPhoneNumber: /* @ngInject */ (
+        constants,
+        currentUser,
+      ) => constants.SUPPORT[currentUser.ovhSubsidiary],
       updateService: /* @ngInject */ BillingAutoRenew => service => BillingAutoRenew.updateService(
         service,
       ),

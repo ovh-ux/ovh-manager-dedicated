@@ -38,14 +38,17 @@ export default /* @ngInject */ ($stateProvider, coreConfigProvider) => {
       },
     },
     resolve: _.assign({
-      currentActiveLink: /* @ngInject */ $state => () => $state.href($state.current.name),
-      sshLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew.ssh'),
+      currentActiveLink: /* @ngInject */ $state => () => $state
+        .href($state.current.name, {}, { inherit: false }),
+      sshLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew.ssh', {}, { inherit: false }),
     }, (coreConfigProvider.region !== 'US' ? {
       activationLink: /* @ngInject */ $state => $state.href(
         'app.account.billing.autorenew.activation',
       ),
       agreementsLink: /* @ngInject */ $state => $state.href(
         'app.account.billing.autorenew.agreements',
+        {},
+        { inherit: false },
       ),
       billingServices: /* @ngInject */ services => _.map(
         services.list.results,
@@ -88,7 +91,7 @@ export default /* @ngInject */ ($stateProvider, coreConfigProvider) => {
       hasAutoRenew: /* @ngInject */ billingRenewHelper => service => billingRenewHelper
         .serviceHasAutomaticRenew(service),
 
-      homeLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew'),
+      homeLink: /* @ngInject */ $state => $state.href('app.account.billing.autorenew', {}, { inherit: false }),
 
       nicBilling: /* @ngInject */ $transition$ => $transition$.params().nicBilling,
       nicRenew: /* @ngInject */ (
