@@ -5,7 +5,7 @@ angular.module('App').config(($stateProvider, coreConfigProvider) => {
       controller: 'BillingMainPayAsYouGoCtrl',
       controllerAs: '$ctrl',
       templateUrl: 'account/billing/main/payAsYouGo/billing-main-pay-as-you-go.html',
-      translations: ['.'],
+      translations: { value: ['.'], format: 'json' },
     });
   }
 });

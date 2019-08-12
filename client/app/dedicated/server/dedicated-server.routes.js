@@ -4,7 +4,7 @@ angular.module('App').config(($stateProvider) => {
     templateUrl: 'dedicated/server/dedicated-server.html',
     controller: 'ServerCtrl',
     reloadOnSearch: false,
-    translations: ['.'],
+    translations: { value: ['.'], format: 'json' },
     redirectTo: 'app.dedicated.server.dashboard',
   });
 });

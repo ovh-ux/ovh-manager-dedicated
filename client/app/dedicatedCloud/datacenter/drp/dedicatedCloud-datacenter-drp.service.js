@@ -63,7 +63,7 @@ export default class {
   getDrpState(serviceInformations) {
     return this.OvhApiDedicatedCloud
       .Datacenter().Zerto().v6().state(serviceInformations, null).$promise
-      .then(state => ({ ...state.data, ...serviceInformations }));
+      .then(state => ({ ...state, ...serviceInformations }));
   }
 
   enableDrp(drpInformations, isLegacy) {

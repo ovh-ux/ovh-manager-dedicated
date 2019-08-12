@@ -5,23 +5,33 @@ export default /* @ngInject */ ($translate) => {
     TTCOnly: false,
     HTOnly: false,
     withTTC: true,
+    withGST: false,
   };
 
   const usTouch = {
     TTCOnly: false,
     HTOnly: true,
     withTTC: false,
+    withGST: false,
   };
 
   const deutchTouch = {
     TTCOnly: true,
     HTOnly: false,
     withTTC: true,
+    withGST: false,
+  };
+
+  const asiaTouch = {
+    TTCOnly: false,
+    HTOnly: false,
+    withTTC: false,
+    withGST: true,
   };
 
   const showTaxes = {
-    ASIA: frenchTouch,
-    AU: frenchTouch,
+    ASIA: asiaTouch,
+    AU: asiaTouch,
     CA: usTouch,
     WE: usTouch,
     WS: usTouch,
@@ -40,7 +50,7 @@ export default /* @ngInject */ ($translate) => {
     NL: frenchTouch,
     PL: frenchTouch,
     PT: frenchTouch,
-    SG: usTouch,
+    SG: asiaTouch,
     TN: frenchTouch,
     US: usTouch,
   };
@@ -48,8 +58,10 @@ export default /* @ngInject */ ($translate) => {
   function format(price, paramCountry) {
     const country = (angular.isString(paramCountry) && paramCountry) || 'FR';
     const taxes = showTaxes[country];
-
     if (price.withTax.value !== 0) {
+      if (taxes.withGST) {
+        return `<b class="red">${$translate.instant('price_price_gst_excl_label', { price: price.withoutTax.text })}</b><i class="small"> (${$translate.instant('price_price_gst_incl_label', { price: price.withTax.text })})</i>`;
+      }
       if (taxes.TTCOnly) {
         return `<b class="red">${price.withTax.text}</b>`;
       }

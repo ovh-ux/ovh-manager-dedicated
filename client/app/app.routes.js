@@ -3,13 +3,11 @@ angular
   .config(/* @ngInject */ ($stateProvider) => {
     $stateProvider.state('app', {
       abstract: true,
-      controller: 'AppCtrl',
-      controllerAs: 'AppCtrl',
       resolve: {
         currentUser: /* @ngInject */ User => User.getUser(),
       },
       templateUrl: 'app.html',
-      translations: ['common', 'double-authentication', 'user-contracts'],
+      translations: { value: ['common', 'double-authentication', 'user-contracts'], format: 'json' },
       url: '',
     });
 

@@ -29,8 +29,8 @@ angular
 
       return this.DedicatedCloud
         .addSecurityPolicy(this.$stateParams.productId, this.$scope.newNetwork)
-        .then((data) => {
-          this.$scope.setMessage(this.$translate.instant('dedicatedCloud_configuration_SECURITY_policy_add_success'), data);
+        .then(() => {
+          this.$scope.setMessage(this.$translate.instant('dedicatedCloud_configuration_SECURITY_policy_add_success'), true);
         })
         .catch((err) => {
           this.$scope.setMessage(this.$translate.instant('dedicatedCloud_configuration_SECURITY_policy_add_fail', [this.$scope.newNetwork.value]), {

@@ -3,6 +3,6 @@ angular.module('Module.download').config(($stateProvider) => {
     url: '/download?type&id&extension',
     templateUrl: 'download/download.html',
     controller: 'DownloadCtrl',
-    translations: ['.'],
+    translations: { value: ['.'], format: 'json' },
   });
 });

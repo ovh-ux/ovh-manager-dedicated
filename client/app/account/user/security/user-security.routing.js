@@ -7,6 +7,9 @@ angular
       url: '/security',
       templateUrl: 'account/user/security/user-security.html',
       controller: 'UserAccount.controllers.doubleAuth',
-      translations: ['../'],
+      translations: {
+        format: 'json',
+        value: ['../'],
+      },
     });
   });

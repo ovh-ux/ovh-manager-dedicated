@@ -182,11 +182,11 @@
                                       data-text="{{ :: 'billing_main_history_table_debt_detail' | translate }}"
                                       data-href="{{ :: $ctrl.$state.href('app.account.billing.main.history.debt.details', { debtId: $row.debt.debtId }) }}">
                 </oui-action-menu-item>
-                <oui-action-menu-item data-ng-if="$row.debt && $row.debt.dueAmount.value > 0 && !$row.debt.paymentOrder.url && $ctrl.constants.target !== 'US'"
+                <oui-action-menu-item data-ng-if="$row.debt && $row.debt.dueAmount.value > 0 && !$row.debt.paymentOrder.url && $ctrl.coreConfig.getRegion() !== 'US'"
                                       data-text="{{ :: 'billing_main_history_table_debt_pay' | translate }}"
                                       data-href="{{ :: $ctrl.$state.href('app.account.billing.main.history.pay-debt', { debtId: $row.debt.debtId }) }}">
                 </oui-action-menu-item>
-                <oui-action-menu-item data-ng-if="$row.debt && $row.debt.dueAmount.value > 0  && !$row.debt.paymentOrder.url && $ctrl.constants.target === 'US'"
+                <oui-action-menu-item data-ng-if="$row.debt && $row.debt.dueAmount.value > 0  && !$row.debt.paymentOrder.url && $ctrl.coreConfig.getRegion() === 'US'"
                                       data-text="{{ :: 'billing_main_history_table_debt_pay' | translate }}"
                                       data-href="{{ :: $ctrl.$state.href('app.account.billing.main.history.balance') }}">
                 </oui-action-menu-item>
@@ -202,12 +202,12 @@
                     <oui-action-menu-item data-text="{{ :: 'billing_main_history_table_action_pay_debt' | translate }}"
                                           data-aria-label="{{ :: 'billing_main_history_table_action_pay_debt_title' | translate }}"
                                           data-href="{{ :: $ctrl.$state.href('app.account.billing.main.history.pay-debt', { debtId: 'all' }) }}"
-                                          data-ng-if="$ctrl.debtAccount.active && ($ctrl.debtAccount.dueAmount.value > 0 || $ctrl.debtAccount.todoAmount.value > 0) && $ctrl.constants.target !== 'US'">
+                                          data-ng-if="$ctrl.debtAccount.active && ($ctrl.debtAccount.dueAmount.value > 0 || $ctrl.debtAccount.todoAmount.value > 0) && $ctrl.coreConfig.getRegion() !== 'US'">
                     </oui-action-menu-item>
                     <oui-action-menu-item data-text="{{ :: 'billing_main_history_table_action_pay_debt' | translate }}"
                                           data-aria-label="{{ :: 'billing_main_history_table_action_pay_debt_title' | translate }}"
                                           data-href="{{ :: $ctrl.$state.href('app.account.billing.main.history.balance') }}"
-                                          data-ng-if="$ctrl.debtAccount.active && ($ctrl.debtAccount.dueAmount.value > 0 || $ctrl.debtAccount.todoAmount.value > 0) && $ctrl.constants.target === 'US'">
+                                          data-ng-if="$ctrl.debtAccount.active && ($ctrl.debtAccount.dueAmount.value > 0 || $ctrl.debtAccount.todoAmount.value > 0) && $ctrl.coreConfig.getRegion() === 'US'">
                     </oui-action-menu-item>
                     <oui-action-menu-item data-text="{{ :: 'billing_main_history_table_action_export' | translate }}"
                                           data-aria-label="{{ :: 'billing_main_history_table_action_export_title' | translate }}"

@@ -12,6 +12,6 @@ angular
     translate,
   ])
   .filter('ducBytes', ducBytesFilter)
-  .run(/* @ngTranslationsInject ./translations */);
+  .run(/* @ngTranslationsInject:json ./translations */);
 
 export default moduleName;

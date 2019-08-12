@@ -4,6 +4,6 @@ angular.module('App').config(($stateProvider) => {
     templateUrl: 'cdn/dedicated/manage/ssl/update/cdn-dedicated-ssl-update.html',
     controller: 'CdnUpdateSslCtrl',
     layout: 'modal',
-    translations: ['.'],
+    translations: { value: ['.'], format: 'json' },
   });
 });

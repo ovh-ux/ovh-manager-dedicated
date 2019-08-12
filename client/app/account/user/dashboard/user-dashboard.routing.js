@@ -11,7 +11,10 @@ angular
       template,
       controller,
       controllerAs: '$ctrl',
-      translations: ['./', '../support-level'],
+      translations: {
+        format: 'json',
+        value: ['./', '../support-level'],
+      },
       resolve: {
         user: /* @ngInject */ OvhApiMe => OvhApiMe
           .v6()

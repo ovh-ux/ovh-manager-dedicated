@@ -11,7 +11,10 @@ angular
         url: '/emails',
         templateUrl: 'account/user/emails/user-emails.html',
         controller: 'UserAccount.controllers.emails',
-        translations: ['../'],
+        translations: {
+          format: 'json',
+          value: ['../'],
+        },
       });
 
       $stateProvider.state(nameDetails, {

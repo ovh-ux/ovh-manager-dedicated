@@ -38,6 +38,27 @@
                                 data-ng-bind="server.commercialRange !== 'housing' ? server.description || '-' : ('server_configuration_description_housing' | translate)"></dd>
                         </dl>
                     </div>
+                    <div class="oui-tile__item"
+                        data-ng-if="isEligibleForUpgrade() && upgradeName">
+                        <dl class="oui-tile__definition">
+                            <dt class="oui-tile__term">
+                                <span data-translate="server_configuration_upgrade_title"></span>
+                                <span class="badge" data-translate="server_configuration_upgrade_badge"></span>
+                            </dt>
+                            <dd class="oui-tile__description">
+                                <a class="oui-link_icon"
+                                    target="_blank"
+                                    data-ng-href="{{::URLS[user.ovhSubsidiary].UPGRADE}}"
+                                    data-track-on="click"
+                                    data-track-type="action"
+                                    data-track-name="upsell_to_rise2"
+                                    rel="noopener">
+                                    <span data-ng-bind="upgradeName"></span>
+                                    <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
+                                </a>
+                            </dd>
+                        </dl>
+                    </div>
                     <div class="oui-tile__item">
                         <dl class="oui-tile__definition">
                             <dt class="oui-tile__term"
@@ -524,7 +545,8 @@
                                     <oui-action-menu-item
                                         data-text="{{:: 'server_bandwidth_order_button' | translate}}"
                                         aria-label="{{:: 'server_bandwidth_order_button' | translate}}"
-                                        data-on-click="setAction('bandwidth/order/dedicated-server-bandwidth-order', server.name)"
+                                        data-on-click="isFullAgora(server.commercialRange) ? setAction('bandwidth/order/dedicated-server-bandwidth-order', { bandwidth })
+                                            : setAction('bandwidth/order-legacy/dedicated-server-bandwidth-order', server.name)"
                                         data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
                                         data-ng-if="bandwidthOption === 'notSubscribed' && server.canOrderBandwith && dedicatedServerFeatureAvailability.allowDedicatedServerOrderBandwidthOption()"></oui-action-menu-item>
                                 </oui-action-menu>
@@ -545,15 +567,6 @@
                                     data-translate="server_configuration_ipv6"></dt>
                                 <dd class="oui-tile__description"
                                     data-ng-bind="server.ipv6">
-                                </dd>
-                            </dl>
-                        </div>
-                        <div class="oui-tile__item">
-                            <dl class="oui-tile__definition">
-                                <dt class="oui-tile__term"
-                                    data-translate="server_bandwidth_ovh_to_ovh"></dt>
-                                <dd class="oui-tile__description"
-                                    data-ng-bind="bandwidth.bandwidth.OvhToOvh | ducBandwidth">
                                 </dd>
                             </dl>
                         </div>
@@ -663,7 +676,8 @@
                                     <oui-action-menu-item
                                         data-text="{{ (bandwidthVrackOption !== 'subscribed' ? 'server_bandwidth_vrack_order_button' : 'server_bandwidth_vrack_change_button') | translate }}"
                                         aria-label="{{ (bandwidthVrackOption !== 'subscribed' ? 'server_bandwidth_vrack_order_button' : 'server_bandwidth_vrack_change_button') | translate}}"
-                                        data-on-click="setAction('bandwidth-vrack/order/dedicated-server-bandwidth-vrack-order', server.name)"
+                                        data-on-click="isFullAgora(server.commercialRange) ? setAction('bandwidth-vrack/order/dedicated-server-bandwidth-vrack', { bandwidth })
+                                            : setAction('bandwidth-vrack/order-legacy/dedicated-server-bandwidth-vrack-order', server)"
                                         data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
                                         data-ng-if="canOrderVrackBandwidth() && canOrderMoreVrackBandwidth()">
                                     </oui-action-menu-item>
@@ -773,7 +787,8 @@
                             data-ng-if="!serverStatsLoad.error"
                             data-chart-labels="labels"
                             data-chart-series="series"
-                            data-chart-data="data">
+                            data-chart-data="data"
+                            data-chart-options="options">
                     </canvas>
                     <div class="alert alert-danger"
                          role="alert"

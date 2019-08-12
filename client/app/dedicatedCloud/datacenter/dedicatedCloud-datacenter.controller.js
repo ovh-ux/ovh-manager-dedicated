@@ -1,6 +1,6 @@
 angular
   .module('App')
-  .controller('DedicatedCloudSubDatacenterCtrl', class {
+  .controller('ovhManagerPccDatacenter', class {
     /* @ngInject */
     constructor(
       $scope,
@@ -10,8 +10,8 @@ angular
       $translate,
       $uibModal,
       Alerter,
+      coreConfig,
       DedicatedCloud,
-      constants,
       DEDICATED_CLOUD_DATACENTER,
     ) {
       this.$scope = $scope;
@@ -21,8 +21,8 @@ angular
       this.$translate = $translate;
       this.$uibModal = $uibModal;
       this.Alerter = Alerter;
+      this.coreConfig = coreConfig;
       this.DedicatedCloud = DedicatedCloud;
-      this.constants = constants;
       this.DEDICATED_CLOUD_DATACENTER = DEDICATED_CLOUD_DATACENTER;
     }
 
@@ -51,6 +51,7 @@ angular
         .editDescription(value, contextTitle);
       this.$scope.loadDatacenter = () => this.loadDatacenter();
       this.$scope.setAction = (action, data, parent) => this.setAction(action, data, parent);
+      this.$scope.resetMessage = () => this.resetMessage();
       this.$scope.setMessage = (message, data) => this.setMessage(message, data);
       this.$scope.resetAction = () => this.resetAction();
 
@@ -229,6 +230,10 @@ angular
       }
 
       this.$scope.message = messageToSend;
+    }
+
+    resetMessage() {
+      this.$scope.message = null;
     }
 
     setAction(action, data, parent) {

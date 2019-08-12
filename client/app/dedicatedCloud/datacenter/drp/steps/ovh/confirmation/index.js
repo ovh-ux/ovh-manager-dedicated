@@ -22,6 +22,6 @@ angular
   })
   .component(componentName, component)
   .controller(deleteControllerName, deleteController)
-  .run(/* @ngTranslationsInject ./translations */);
+  .run(/* @ngTranslationsInject:json ./translations */);
 
 export default moduleName;

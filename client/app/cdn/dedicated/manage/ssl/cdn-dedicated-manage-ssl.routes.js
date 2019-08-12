@@ -7,6 +7,6 @@ angular.module('App').config(($stateProvider) => {
         controller: 'CdnTabSslCtrl',
       },
     },
-    translations: ['.'],
+    translations: { value: ['.'], format: 'json' },
   });
 });

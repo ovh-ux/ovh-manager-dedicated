@@ -1,83 +1,32 @@
 angular.module('controllers').controller('controllers.Server.Stats.Loadavg', ($scope, $location, $timeout, $stateParams, Server) => {
-  $scope.chartData = {};
+  function timestampToDate(timestamp) {
+    return moment.unix(timestamp / 1000).calendar();
+  }
+
+  function convertData(list) {
+    return _.map(list, value => ({ x: timestampToDate(value[0]), y: value[1] }));
+  }
 
   function buildChart(data) {
-    const charObj = {
-      chart: {
-        renderTo: 'rtmLoadavg',
-        type: 'spline',
-        animation: false,
-        height: 300,
-        events: {
-          load() {
-            $timeout(() => {
-              $scope.loading = false;
-              $location.hash('rtmLoadavg');
-            }, 0);
-            jQuery.scrollTo('.rtm-loadavg');
-          },
-        },
-        backgroundColor: '#F7F5F6',
-      },
-      credits: {
-        enabled: false,
-      },
-      plotOptions: {
-        series: {
-          animation: true,
-          dataLabel: {
-            enabled: false,
-            allowPointSelect: true,
-          },
-          marker: {
-            enabled: false,
-            states: {
-              hover: {
-                enabled: true,
-              },
-            },
-          },
-        },
-      },
-      xAxis: {
-        type: 'datetime',
-        label: {
-          overflow: 'justify',
-        },
-        linewidth: 1,
-        title: null,
-      },
-      yAxis: {
-        type: 'linear',
-        min: 0,
-        title: {
-          text: '',
-        },
-        lineWidth: 1,
-      },
+    $scope.series = [];
+    $scope.data = [];
+    $scope.labels = [];
+    angular.forEach(data, (avgData, avgName) => {
+      _.each(_.get(avgData, 'points'), (point) => {
+        if ($scope.labels.indexOf(point[0]) === -1) {
+          $scope.labels.push(point[0]);
+        }
+      });
+      $scope.series.push(avgName);
+      $scope.data.push(convertData(_.get(avgData, 'points')));
+    });
+    $scope.labels = _.map(_.sortBy($scope.labels), value => timestampToDate(value));
+    $scope.options = {
       legend: {
-        layout: 'vertical',
-        align: 'right',
-        verticalAlign: 'top',
-        x: -10,
-        borderWidth: 0,
-        itemMarginBottom: 4,
-      },
-      series: [],
-      title: {
-        text: '',
+        display: true,
+        position: 'top',
       },
     };
-
-    angular.forEach(data, (avgData, avgName) => {
-      charObj.series.push({
-        showInLegend: true,
-        name: avgName,
-        data: avgData.points,
-      });
-    });
-
-    return charObj;
   }
 
   function init() {
@@ -85,7 +34,7 @@ angular.module('controllers').controller('controllers.Server.Stats.Loadavg', ($s
     Server.getStatisticsLoadavg($stateParams.productId, {
       period: $scope.selectedPeriod.value,
     }).then((data) => {
-      $scope.chartData = buildChart(data);
+      buildChart(data);
     }).finally(() => {
       $scope.loading = false;
     });

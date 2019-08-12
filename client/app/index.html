@@ -7,7 +7,7 @@
         <!--<link rel="shortcut icon" href="<%= basepath %>images/favicon-<%= target %>.ico">-->
         <title>OVH</title>
     </head>
-    <body data-ng-app="App" data-ng-controller="SessionCtrl as $ctrl" data-ng-cloak class="ng-cloak h-100"  style="overflow: hidden;">
+    <body data-ng-app="App" data-ng-controller="SessionCtrl as $ctrl" data-ng-cloak class="ng-cloak h-100 ovh-manager-dedicated-app"  style="overflow: hidden;">
         <div class="h-100 d-flex flex-column overflow-hidden">
             <!-- Skip to main content -->
             <div class="skipnav">
@@ -52,7 +52,6 @@
                         <!-- /Skip content target -->
 
                         <ovh-browser-alert></ovh-browser-alert>
-                        <ovh-chatbot></ovh-chatbot>
 
                         <div class="pb-5"
                              data-ui-view>
@@ -102,6 +101,7 @@
             </div>
         </div>
 
+        <ovh-chatbot></ovh-chatbot>
         <div data-otrs-popup></div>
         <script>
             var CKEDITOR_BASEPATH = (window.location.pathname !== "/" ? window.location.pathname.split("/").splice(0, window.location.pathname.split("/").length - 1).join("/") : "") + '/ckeditor/';

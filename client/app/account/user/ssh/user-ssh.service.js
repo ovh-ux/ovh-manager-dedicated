@@ -140,7 +140,7 @@ angular.module('UserAccount').service('UseraccountSshService', [
     };
 
     self.getSshCloudUrl = function (serviceName) {
-      return `${constants.MANAGER_URLS.cloud}iaas/pci/project/${serviceName}/compute/ssh`;
+      return `${constants.MANAGER_URLS.publicCloud}pci/projects/${serviceName}/ssh/add`;
     };
   },
 ]);
