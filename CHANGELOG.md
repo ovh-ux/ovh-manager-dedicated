@@ -1,3 +1,13 @@
+<a name="10.24.1"></a>
+## [10.24.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.24.0...v10.24.1) (2019-08-12)
+
+
+### Bug Fixes
+
+* **dedicated.server:** prevent api calls ([8c32e8d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8c32e8d))
+
+
+
 <a name="10.24.0"></a>
 # [10.24.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.23.0...v10.24.0) (2019-08-12)
 
