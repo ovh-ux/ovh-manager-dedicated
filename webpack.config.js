@@ -48,6 +48,23 @@ module.exports = (env = {}) => {
     },
   }));
 
+  config.devServer.proxy.unshift({
+    context: ['/engine/apiv6/me/payment/availableMethods', '/engine/apiv6/me/payment/method'],
+    target: 'https://api.ovh.com:17643/1.0',
+    changeOrigin: true,
+    pathRewrite: {
+      '^/api/': '/',
+      '^/apiv6/': '/',
+      '^/engine/api/': '/',
+      '^/engine/apiv6/': '/',
+    },
+    headers: {
+      'X-Ovh-Nic': 'ls148374-ovh',
+    },
+    secure: false,
+    logLevel: 'debug',
+  });
+
   if (env.region === 'eu' || env.region === 'ca') {
     bundles.exchange = [].concat(
       glob.sync('./node_modules/ovh-module-exchange/src/exchange/**/*.module.js'),

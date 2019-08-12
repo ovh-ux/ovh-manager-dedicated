@@ -136,26 +136,9 @@ export default class BillingPaymentMethodAddCtrl {
     }
   }
 
-  /* ----------  Events  ---------- */
-
-  onAvailablePaymentMethodsLoadError(error) {
-    return this.Alerter.error([
-      this.$translate.instant('billing_payment_method_add_load_error'),
-      _.get(error, 'data.message', ''),
-    ].join(' '), 'billing_payment_method_add_alert');
-  }
-
-  onPaymentMethodRegisterInitialized(registerInstance) {
-    this.registerInstance = registerInstance;
-  }
-
-  onPaymentMethodAddStepperFinish() {
-    this.loading.add = true;
-
-    // set default param
+  getAddParams() {
+    console.log('oui ?');
     const hasPaymentMethod = this.billingPaymentMethodSection.sharedPaymentMethods.length > 0;
-    const isRegisterable = this.ovhPaymentMethod
-      .isPaymentMethodTypeRegisterableInContext(this.model.selectedPaymentMethodType);
     let addParams = {
       default: !hasPaymentMethod || this.model.setAsDefault,
     };
@@ -177,6 +160,29 @@ export default class BillingPaymentMethodAddCtrl {
         },
       });
     }
+
+    return addParams;
+  }
+
+  /* ----------  Events  ---------- */
+
+  onAvailablePaymentMethodsLoadError(error) {
+    return this.Alerter.error([
+      this.$translate.instant('billing_payment_method_add_load_error'),
+      _.get(error, 'data.message', ''),
+    ].join(' '), 'billing_payment_method_add_alert');
+  }
+
+  onPaymentMethodRegisterInitialized(registerInstance) {
+    this.registerInstance = registerInstance;
+  }
+
+  onPaymentMethodAddStepperFinish() {
+    this.loading.add = true;
+
+    const isRegisterable = this.ovhPaymentMethod
+      .isPaymentMethodTypeRegisterableInContext(this.model.selectedPaymentMethodType);
+    const addParams = this.getAddParams()
 
     this.Alerter.resetMessage('billing_payment_method_add_alert');
 

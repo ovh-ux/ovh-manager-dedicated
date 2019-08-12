@@ -114,7 +114,8 @@
 
                     <ovh-payment-method-register
                         data-payment-method-type="$ctrl.model.selectedPaymentMethodType"
-                        data-on-init="$ctrl.onPaymentMethodRegisterInitialized.bind($ctrl)">
+                        data-on-init="$ctrl.onPaymentMethodRegisterInitialized(componentInstance)"
+                        data-get-add-params="$ctrl.getAddParams.bind($ctrl)">
                     </ovh-payment-method-register>
 
                 </oui-step-form> <!-- End of Payment method -->
