@@ -1,3 +1,13 @@
+<a name="10.22.2"></a>
+## [10.22.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.22.1...v10.22.2) (2019-08-12)
+
+
+### Bug Fixes
+
+* **sidebar:** use nasha from cloud manager ([#1315](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1315)) ([bccc56f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bccc56f))
+
+
+
 <a name="10.22.1"></a>
 ## [10.22.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.22.0...v10.22.1) (2019-08-09)
 
