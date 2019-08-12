@@ -1,3 +1,6 @@
+import _ from 'lodash';
+import { ELIGIBLE_FOR_UPGRADE, URLS } from './dedicated-server.contants';
+
 /* eslint-disable no-use-before-define */
 angular.module('App').controller('ServerCtrl', (
   $q,
@@ -276,6 +279,13 @@ angular.module('App').controller('ServerCtrl', (
         };
 
         $scope.$broadcast('dedicated.server.refreshTabs');
+
+        if (isEligibleForUpgrade()) {
+          Server.getUpgradeProductName(ELIGIBLE_FOR_UPGRADE.PLAN_NAME, $scope.user.ovhSubsidiary)
+            .then((upgradeName) => {
+              $scope.upgradeName = upgradeName;
+            });
+        }
       })
       .catch((data) => {
         $scope.loadingServerInformations = false;
@@ -530,5 +540,12 @@ angular.module('App').controller('ServerCtrl', (
   }
 
   load();
+
+  $scope.isEligibleForUpgrade = () => isEligibleForUpgrade();
+  $scope.URLS = URLS;
+
+  function isEligibleForUpgrade() {
+    return _.includes(ELIGIBLE_FOR_UPGRADE.SUBSIDIARIES, $scope.user.ovhSubsidiary);
+  }
 });
 /* eslint-enable no-use-before-define */

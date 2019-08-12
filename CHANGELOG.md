@@ -1,3 +1,83 @@
+<a name="10.22.2"></a>
+## [10.22.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.22.1...v10.22.2) (2019-08-12)
+
+
+### Bug Fixes
+
+* **sidebar:** use nasha from cloud manager ([#1315](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1315)) ([bccc56f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bccc56f))
+
+
+
+<a name="10.22.1"></a>
+## [10.22.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.22.0...v10.22.1) (2019-08-09)
+
+
+### Bug Fixes
+
+* **deps:** upgrade ng-ovh-otrs to v7.1.10 ([#1318](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1318)) ([0c6de32](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0c6de32))
+
+
+
+<a name="10.22.0"></a>
+# [10.22.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.21.3...v10.22.0) (2019-08-07)
+
+
+### Bug Fixes
+
+* **dedicated.server.traffic:** use correct filter name ([#1307](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1307)) ([eeffb32](https://github.com/ovh-ux/ovh-manager-dedicated/commit/eeffb32))
+
+
+### Features
+
+* **billing.autorenew:** remove HOSTING_DOMAIN grouping ([#1308](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1308)) ([3123f3d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3123f3d))
+
+
+
+<a name="10.21.3"></a>
+## [10.21.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.21.2...v10.21.3) (2019-08-06)
+
+
+### Bug Fixes
+
+* **dedicatedcloud.dashboard.options:** disable some actions ([#1303](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1303)) ([22079a5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/22079a5))
+
+
+
+<a name="10.21.2"></a>
+## [10.21.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.21.1...v10.21.2) (2019-08-06)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations [CDS 6] ([fd5415f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/fd5415f))
+
+
+
+<a name="10.21.1"></a>
+## [10.21.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.21.0...v10.21.1) (2019-08-06)
+
+
+
+<a name="10.21.0"></a>
+# [10.21.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.20.1...v10.21.0) (2019-08-05)
+
+
+### Bug Fixes
+
+* **dedicated.universe.components.price:** add asia gst price text ([#1245](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1245)) ([5969d3f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5969d3f))
+* **i18n:** add missing translations ([9b40dcd](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9b40dcd))
+* **i18n:** add missing translations ([9ec70fc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9ec70fc))
+* **i18n:** add missing translations [CDS 2] ([7ab19ed](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7ab19ed))
+* **i18n:** add missing translations [CDS 4] ([6a015c5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6a015c5))
+* **ip.reverse.add:** display error fields when value are invalid ([#1277](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1277)) ([9a17342](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9a17342))
+
+
+### Features
+
+* **billing.autorenew:** remove HOSTING_DOMAIN grouping ([#1255](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1255)) ([ff95fd6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ff95fd6))
+
+
+
 <a name="10.20.1"></a>
 ## [10.20.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.20.0...v10.20.1) (2019-07-30)
 
