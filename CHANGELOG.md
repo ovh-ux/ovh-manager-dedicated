@@ -1,3 +1,13 @@
+<a name="10.24.0"></a>
+# [10.24.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.23.0...v10.24.0) (2019-08-12)
+
+
+### Features
+
+* **billing.payment.method.add:** remove billingContactId ([#1285](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1285)) ([68a0149](https://github.com/ovh-ux/ovh-manager-dedicated/commit/68a0149))
+
+
+
 <a name="10.23.0"></a>
 # [10.23.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.22.2...v10.23.0) (2019-08-12)
 
