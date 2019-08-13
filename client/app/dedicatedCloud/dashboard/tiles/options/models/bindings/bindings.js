@@ -262,7 +262,7 @@ export default class {
     const whenThereIsNoPendingOrder = everytime
       && !this.model.pendingOrder.exists;
     const whenThereIsAPendingOrder = everytime
-    && this.model.pendingOrder.exists
+      && this.model.pendingOrder.exists
       && this.model.pendingOrder.status === ORDER_STATUS.notPaid
       && !this.model.pendingOrder.isInError
       && this.model.servicePacks.orderable.withOnlyBasicOptions.length > 1;
@@ -293,7 +293,8 @@ export default class {
     return {
       exists: this.model.pendingOrder.exists
         && this.model.pendingOrder.status === ORDER_STATUS.notPaid
-        && !this.model.pendingOrder.hasBeenPaid,
+        && !this.model.pendingOrder.hasBeenPaid
+        && this.model.servicePacks.ordered.certification.exists,
       url: this.model.pendingOrder.url,
     };
   }
