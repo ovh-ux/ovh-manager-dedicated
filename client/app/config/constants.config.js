@@ -446,7 +446,8 @@ const constants = {
       portal: 'https://www.ovh.com/manager/portal/index.html#/',
       web: 'https://www.ovh.com/manager/web/index.html#/',
       dedicated: 'https://www.ovh.com/manager/dedicated/index.html#/',
-      cloud: 'https://www.ovh.com/manager/cloud/index.html#/',
+      cloud: 'https://www.ovh.com/manager/cloud/repsac/index.html#/',
+      publicCloud: 'https://www.ovh.com/manager/public-cloud/index.html#/',
       telecom: 'https://www.ovhtelecom.fr/manager/index.html#/',
       sunrise: 'https://www.ovh.com/manager/sunrise/index.html#/',
       partners: 'https://www.ovh.com/manager/partners',
@@ -901,7 +902,8 @@ const constants = {
     },
     MANAGER_URLS: {
       dedicated: 'https://ca.ovh.com/manager/index.html#/',
-      cloud: 'https://ca.ovh.com/manager/cloud/index.html#/',
+      cloud: 'https://ca.ovh.com/manager/cloud/repsac/index.html#/',
+      publicCloud: 'https://ca.ovh.com/manager/public-cloud/index.html#/',
       sunrise: 'https://ca.ovh.com/manager/sunrise/index.html#/',
     },
     TOP_GUIDES: {},
@@ -1045,7 +1047,8 @@ const constants = {
     },
     MANAGER_URLS: {
       dedicated: 'https://www.us.ovhcloud.com/manager/dedicated/',
-      cloud: 'https://www.us.ovhcloud.com/manager/cloud/',
+      cloud: 'https://www.us.ovhcloud.com/manager/cloud/repsac',
+      publicCloud: 'https://www.us.ovhcloud.com/manager/public-cloud/index.html#/',
     },
     TOP_GUIDES: {
       sd: {

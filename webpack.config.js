@@ -73,11 +73,11 @@ module.exports = (env = {}) => {
       filename: '[name].[chunkhash].bundle.js',
     },
     resolve: {
+      symlinks: false,
       alias: {
         jquery: path.resolve(__dirname, 'node_modules/jquery'),
       },
       mainFields: ['module', 'browser', 'main'],
-      symlinks: false,
     },
     plugins: [
       new webpack.DefinePlugin({
