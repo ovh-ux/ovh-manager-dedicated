@@ -134,14 +134,23 @@ export const OptionsService = class OptionsService {
   getInitialData(serviceName, ovhSubsidiary, currentServicePackName) {
     return this
       .$q
-      .all({
-        pendingOrder: this
-          .getPendingOrder(serviceName),
-        currentOrFutureServicePack: this
-          .getCurrentOrFutureServicePack(serviceName),
-        servicePacks: this
-          .getServicePacks(serviceName, ovhSubsidiary),
-      })
+      .when(this
+        .getPendingOrder(serviceName)
+        .then(pendingOrder => (moment(pendingOrder.expirationDate).isBefore(moment())
+          ? this
+            .ovhManagerPccDashboardOptionsOrderService
+            .deleteServicePackOrder(serviceName)
+          : null)))
+      .then(() => this
+        .$q
+        .all({
+          pendingOrder: this
+            .getPendingOrder(serviceName),
+          currentOrFutureServicePack: this
+            .getCurrentOrFutureServicePack(serviceName),
+          servicePacks: this
+            .getServicePacks(serviceName, ovhSubsidiary),
+        }))
       .then(({
         pendingOrder,
         currentOrFutureServicePack,
