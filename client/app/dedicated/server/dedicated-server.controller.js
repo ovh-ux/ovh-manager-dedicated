@@ -12,6 +12,7 @@ angular.module('App').controller('ServerCtrl', (
   constants,
   coreConfig,
   dedicatedServerFeatureAvailability,
+  ovhPaymentMethod,
   ovhUserPref,
   Polling,
   Server,
@@ -198,7 +199,9 @@ angular.module('App').controller('ServerCtrl', (
     $q
       .all({
         user: User.getUser(),
-        paymentIds: coreConfig.getRegion() !== 'US' ? User.getValidPaymentMeansIds() : $q.when([]),
+        paymentIds: ovhPaymentMethod.getPaymentMethods({
+          onlyValid: true,
+        }),
       })
       .then((data) => {
         $scope.user = data.user;

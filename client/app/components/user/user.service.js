@@ -2,11 +2,12 @@ angular
   .module('services')
   .service('User', [
     '$http',
+    '$log',
     '$q',
     'constants',
     'Billing.constants',
     'OvhHttp',
-    function userF($http, $q, constants, billingConstants, OvhHttp) {
+    function userF($http, $log, $q, constants, billingConstants, OvhHttp) {
       const self = this;
       let user = null;
       let userPromise;
@@ -138,7 +139,11 @@ angular
         });
       };
 
+      /**
+       *  @deprecated - use @ovh-ux/ng-ovh-payment-method instead.
+       */
       this.payWithRegisteredPaymentMean = function payWithRegisteredPaymentMean(opts) {
+        $log.warn('payWithRegisteredPaymentMean is deprecated and will be removed. Please use @ovh-ux/ng-ovh-payment-method instead.');
         return OvhHttp.post('/me/order/{orderId}/payWithRegisteredPaymentMean', {
           rootPath: 'apiv6',
           urlParams: {
@@ -150,7 +155,11 @@ angular
         });
       };
 
+      /**
+       *  @deprecated - use @ovh-ux/ng-ovh-payment-method instead.
+       */
       this.getValidPaymentMeansIds = function getValidPaymentMeansIds() {
+        $log.warn('getValidPaymentMeansIds is deprecated and will be removed. Please use @ovh-ux/ng-ovh-payment-method instead.');
         const means = billingConstants.paymentMeans;
         const baseUrl = `${constants.swsProxyRootPath}me/paymentMean`;
         const meanRequests = [];
