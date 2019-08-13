@@ -163,8 +163,11 @@ export default class {
 
   computeOptionsBasicActionMenuItemsActivation() {
     return {
-      exists: !this.model.pendingOrder.exists
-        && !_.isEmpty(this.model.servicePacks.orderable.withOnlyBasicOptions),
+      exists: this.computeOptionsBasicActionMenuItemsPayCheckout().exists
+        || (
+          !this.model.pendingOrder.exists
+          && !_.isEmpty(this.model.servicePacks.orderable.withOnlyBasicOptions)
+        ),
       stateParams: {
         activationType: OPTION_TYPES.basic,
         orderableServicePacks: this.model.servicePacks.orderable.withOnlyBasicOptions,
@@ -179,7 +182,9 @@ export default class {
     return {
       ...base,
       exists: base.exists
-        && _.isEmpty(_.keys(this.model.servicePacks.current.basicOptions)),
+        && _.isEmpty(
+          _.keys(this.model.servicePacks.current.basicOptions),
+        ),
     };
   }
 
@@ -198,7 +203,9 @@ export default class {
     return {
       ...base,
       exists: base.exists
-        && !_.isEmpty(_.keys(this.model.servicePacks.current.basicOptions)),
+        && !_.isEmpty(
+          _.keys(this.model.servicePacks.current.basicOptions),
+        ),
     };
   }
 
@@ -264,10 +271,11 @@ export default class {
     const whenThereIsAPendingOrder = everytime
       && this.model.pendingOrder.exists
       && this.model.pendingOrder.status === ORDER_STATUS.notPaid
-      && !this.model.pendingOrder.isInError
-      && this.model.servicePacks.orderable.withOnlyBasicOptions.length > 1;
+      && !this.model.pendingOrder.isInError;
 
-    const exists = whenThereIsNoPendingOrder || whenThereIsAPendingOrder;
+    const exists = this.computeOptionsCertificationActionMenuItemsPayCheckout().exists
+      || whenThereIsNoPendingOrder
+      || whenThereIsAPendingOrder;
 
     return {
       exists,
