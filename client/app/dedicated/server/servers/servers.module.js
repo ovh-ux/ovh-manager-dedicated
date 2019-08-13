@@ -1,4 +1,3 @@
-// import angular from 'angular';
 import component from './servers.component';
 import routing from './servers.routing';
 

@@ -41,12 +41,7 @@ export default class ServersCtrl {
   }
 
   getSorting(property) {
-    console.log(property, this.sort, this.sortOrder);
-    if (this.sort === property) {
-      return this.sortOrder;
-    }
-
-    return '';
+    return this.sort === property ? this.sortOrder : '';
   }
 
   loadServers() {
