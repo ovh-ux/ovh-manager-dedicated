@@ -1,5 +1,6 @@
 import './newAccountForm/new-account-form.module';
 import config from '../../config/config';
+import './support-level/index.less';
 
 angular
   .module('UserAccount', [
