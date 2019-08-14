@@ -75,6 +75,13 @@ export default /* @ngInject */ ($stateProvider) => {
 
         return request.execute(null, true).$promise;
       },
+      dedicatedServersServices: /* @ngInject */ (iceberg) => {
+        const request = iceberg('/services?routes=%2Fdedicated%2Fserver')
+          .query()
+          .expand('CachedObjectList-Pages');
+
+        return request.execute(null, true).$promise;
+      },
       paginationNumber: /* @ngInject */ dedicatedServers => parseInt(
         _.get(dedicatedServers.headers, 'x-pagination-number'),
         10,

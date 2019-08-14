@@ -5,6 +5,7 @@ export default {
   bindings: {
     filter: '<',
     dedicatedServers: '<',
+    dedicatedServersServices: '<',
     orderUrl: '<',
     serverStateEnum: '<',
     datacenterEnum: '<',

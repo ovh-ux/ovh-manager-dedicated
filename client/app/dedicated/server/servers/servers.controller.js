@@ -48,8 +48,20 @@ export default class ServersCtrl {
     const currentOffset = this.paginationNumber * this.paginationSize;
     _.set(this.ouiDatagridService, 'datagrids.dg-servers.paging.offset', currentOffset < this.paginationTotalCount ? currentOffset : this.paginationTotalCount);
 
+    const data = _.get(this.dedicatedServers, 'data')
+      .map((server) => {
+        const service = _.find(
+          this.dedicatedServersServices.data, s => s.resource.name === server.name,
+        );
+
+        if (service) {
+          _.set(server, 'displayName', service.resource.displayName);
+        }
+        return server;
+      });
+
     return this.$q.resolve({
-      data: _.get(this.dedicatedServers, 'data'),
+      data,
       meta: {
         totalCount: this.paginationTotalCount,
       },
