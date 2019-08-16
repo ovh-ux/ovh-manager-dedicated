@@ -35,11 +35,17 @@ export default /* @ngInject */ ($stateProvider) => {
       getServerDashboardLink: /* @ngInject */ $state => server => $state.href('app.dedicated.server', { productId: server.name }),
       dedicatedServers: /* @ngInject */ (iceberg, $stateParams) => {
         const filters = JSON.parse($stateParams.filter);
+        let { page } = $stateParams;
+
+        if (filters.length > 0) {
+          page = 1;
+        }
+
         let request = iceberg('/dedicated/server')
           .query()
           .expand('CachedObjectList-Pages')
           .limit($stateParams.pageSize)
-          .offset($stateParams.page)
+          .offset(page)
           .sort($stateParams.sort, $stateParams.sortOrder);
 
         const FILTER_OPERATORS = {
