@@ -153,6 +153,7 @@ export default class AutorenewCtrl {
       filters: JSON.stringify(filters),
       selectedType: _.get(selectedType, 'value'),
       searchText: _.get(searchText, 'value'),
+      pageNumber: 1,
     });
   }
 
