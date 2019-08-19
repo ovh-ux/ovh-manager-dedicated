@@ -14,6 +14,7 @@ export default class {
 
     if (this.service.getRenew() === RENEWAL_TYPES.MANUAL) {
       _.remove(this.RENEWAL_TYPES, { type: RENEWAL_TYPES.MANUAL });
+      this.service.setAutomaticRenew();
     }
 
     this.model = {
