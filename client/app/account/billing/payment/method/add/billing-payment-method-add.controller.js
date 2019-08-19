@@ -66,7 +66,7 @@ export default class BillingPaymentMethodAddCtrl {
         position: 2,
         isLoading: false,
         isVisible: () => this.ovhPaymentMethod
-          .isPaymentMethodTypeRequireContactId(this.model.selectedPaymentMethodType),
+          .isPaymentMethodTypeRequiringContactId(this.model.selectedPaymentMethodType),
         isLastStep: () => false,
       },
       paymentMethod: {
@@ -167,7 +167,7 @@ export default class BillingPaymentMethodAddCtrl {
     const isRegisterable = this.ovhPaymentMethod
       .isPaymentMethodTypeRegisterableInContext(this.model.selectedPaymentMethodType);
     const isContactIdRequired = this.ovhPaymentMethod
-      .isPaymentMethodTypeRequireContactId(this.model.selectedPaymentMethodType);
+      .isPaymentMethodTypeRequiringContactId(this.model.selectedPaymentMethodType);
     let addParams = {
       default: !hasPaymentMethod || this.model.setAsDefault,
     };
