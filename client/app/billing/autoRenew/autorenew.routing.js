@@ -148,7 +148,7 @@ export default /* @ngInject */ ($stateProvider, coreConfigProvider) => {
         services,
       ) => BillingAutoRenew.getServicesTypes(services),
 
-      sort: /* @ngInject */ $transition$ => $transition$.params().sort,
+      sort: /* @ngInject */ $transition$ => JSON.parse($transition$.params().sort),
 
       terminateEmail: /* @ngInject */ $state => service => $state.go('app.account.billing.autorenew.terminateEmail', { serviceId: service.id, name: service.domain }),
       terminateHostingWeb: /* @ngInject */ $state => serviceId => $state.go('app.account.billing.autorenew.terminateHostingWeb', { serviceId }),
