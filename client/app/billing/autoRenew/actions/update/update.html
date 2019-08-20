@@ -27,8 +27,7 @@
            <billing-autorenew-update-automatic
                 data-ng-if="$ctrl.billingService.hasAutomaticRenew()"
                 data-service="$ctrl.service"
-                data-payment-mean="$ctrl.defaultPaymentMean"
-                data-renewal-period="$ctrl.model.period">
+                data-payment-mean="$ctrl.defaultPaymentMean">
             </billing-autorenew-update-automatic>
             <billing-autorenew-update-manual-payment
                 data-ng-if="!$ctrl.billingService.hasAutomaticRenew()"
