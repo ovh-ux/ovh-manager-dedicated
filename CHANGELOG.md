@@ -1,3 +1,23 @@
+<a name="10.25.0"></a>
+# [10.25.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.24.1...v10.25.0) (2019-08-20)
+
+
+### Bug Fixes
+
+* **dedicated.servers:** reset page number when filtering ([#1333](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1333)) ([d16eba0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d16eba0))
+* **i18n:** add missing translations [CDS 17] ([ba92ad8](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ba92ad8))
+* **ip:** add constants to fix game names in ip config ([#1317](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1317)) ([35fbc31](https://github.com/ovh-ux/ovh-manager-dedicated/commit/35fbc31))
+
+
+### Features
+
+* **billing.payment.method:** re-enable contactId for VANTIV_IFRAME ([#1336](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1336)) ([63a86a5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/63a86a5))
+* **dedicated.cloud:** add zerto on premises translations ([#1334](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1334)) ([2ad3562](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2ad3562))
+* **dedicated.server:** overview of all servers ([#1331](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1331)) ([88ae943](https://github.com/ovh-ux/ovh-manager-dedicated/commit/88ae943))
+* **dedicated.servers:** add order tracker ([cc9cfdf](https://github.com/ovh-ux/ovh-manager-dedicated/commit/cc9cfdf))
+
+
+
 <a name="10.24.1"></a>
 ## [10.24.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.24.0...v10.24.1) (2019-08-12)
 
