@@ -61,6 +61,14 @@ export default class BillingPaymentMethodAddCtrl {
         ) === 'bankAccount',
         isLastStep: () => true,
       },
+      billingAddress: {
+        name: 'billingAddress',
+        position: 2,
+        isLoading: false,
+        isVisible: () => this.ovhPaymentMethod
+          .isPaymentMethodTypeRequiringContactId(this.model.selectedPaymentMethodType),
+        isLastStep: () => false,
+      },
       paymentMethod: {
         name: 'paymentMethod',
         position: 3,
@@ -150,18 +158,45 @@ export default class BillingPaymentMethodAddCtrl {
   }
 
   onPaymentMethodAddStepperFinish() {
+    let contactPromise = this.$q.when(true);
+
     this.loading.add = true;
 
     // set default param
     const hasPaymentMethod = this.billingPaymentMethodSection.sharedPaymentMethods.length > 0;
     const isRegisterable = this.ovhPaymentMethod
       .isPaymentMethodTypeRegisterableInContext(this.model.selectedPaymentMethodType);
+    const isContactIdRequired = this.ovhPaymentMethod
+      .isPaymentMethodTypeRequiringContactId(this.model.selectedPaymentMethodType);
     let addParams = {
       default: !hasPaymentMethod || this.model.setAsDefault,
     };
 
     if (this.model.selectedPaymentMethodType.original) {
       addParams = _.merge(addParams, this.getLegacyAddParams());
+    }
+
+    if (isContactIdRequired) {
+      const paymentMethodContact = _.get(this.$state.current, 'sharedModel.billingAddress');
+
+      // if no id to contact, we need to create it first before adding payment method
+      if (!_.get(paymentMethodContact, 'id')) {
+        // force non needed value for contact creation
+        // this should be done in component
+        if (!paymentMethodContact.legalForm) {
+          paymentMethodContact.legalForm = 'individual';
+        }
+        if (!paymentMethodContact.language) {
+          paymentMethodContact.language = this.currentUser.language;
+        }
+        contactPromise = this.ovhContacts.createContact(paymentMethodContact)
+          .then((contact) => {
+            _.set(addParams, 'billingContactId', contact.id);
+            return contact;
+          });
+      } else {
+        _.set(addParams, 'billingContactId', paymentMethodContact.id);
+      }
     }
 
     if (!this.model.selectedPaymentMethodType.original) {
@@ -180,8 +215,9 @@ export default class BillingPaymentMethodAddCtrl {
 
     this.Alerter.resetMessage('billing_payment_method_add_alert');
 
-    return this.ovhPaymentMethod
-      .addPaymentMethod(this.model.selectedPaymentMethodType, addParams)
+    return contactPromise
+      .then(() => this.ovhPaymentMethod
+        .addPaymentMethod(this.model.selectedPaymentMethodType, addParams))
       .then((result) => {
         if (isRegisterable && this.registerInstance) {
           return this.registerInstance.submit(result);
