@@ -33,7 +33,7 @@ export default /* @ngInject */ ($stateProvider, coreConfigProvider) => {
         squash: true,
       },
       sort: {
-        value: JSON.stringify({ predicate: 'expiration', reverse: false }),
+        value: JSON.stringify({ predicate: 'serviceId', reverse: false }),
         squash: true,
       },
     },

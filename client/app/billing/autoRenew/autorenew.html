@@ -89,6 +89,7 @@
             data-on-row-select="$ctrl.onRowSelection($rows)"
             data-selectable-rows
             data-criteria="$ctrl.criteria"
+            data-columns="$ctrl.columnsConfig"
             data-on-criteria-change="$ctrl.onCriteriaChange($criteria)"
             data-on-page-change="$ctrl.onPageChange($pagination)"
             data-on-sort-change="$ctrl.onSortChange($sort)">
@@ -143,8 +144,7 @@
                 data-title="::'billing_autorenew_service' | translate"
                 data-type="options"
                 data-type-options="$ctrl.filtersOptions.serviceType"
-                data-filterable
-                data-sortable>
+                data-filterable>
                 <span data-ng-bind-html="('billing_autorenew_service_type_' + $row.serviceType) | translate"></span>
             </oui-column>
             <oui-column
