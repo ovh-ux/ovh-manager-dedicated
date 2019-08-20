@@ -12,8 +12,10 @@
   "dedicatedCloud_datacenter_drp_confirm_create_error": "Une erreur est survenue lors de l’activation de votre PRA.",
   "dedicatedCloud_datacenter_drp_confirm_summary_title": "Résumé de la configuration de votre PRA",
   "dedicatedCloud_datacenter_drp_confirm_summary_drp_type": "Type de plan de reprise d’activité",
-  "dedicatedCloud_datacenter_drp_confirm_summary_main_datacenter": "Datacenter principal",
-  "dedicatedCloud_datacenter_drp_confirm_summary_main_pcc": "Private Cloud principal",
+  "dedicatedCloud_datacenter_drp_confirm_summary_first_ovh_datacenter": "Datacenter principal",
+  "dedicatedCloud_datacenter_drp_confirm_summary_first_ovh_pcc": "Private Cloud principal",
+  "dedicatedCloud_datacenter_drp_confirm_summary_first_onPremise_datacenter": "Datacenter OVH",
+  "dedicatedCloud_datacenter_drp_confirm_summary_first_onPremise_pcc": "Private Cloud OVH",
   "dedicatedCloud_datacenter_drp_confirm_summary_secondary_datacenter": "Datacenter secondaire",
   "dedicatedCloud_datacenter_drp_confirm_summary_secondary_pcc": "Private Cloud secondaire",
   "dedicatedCloud_datacenter_drp_confirm_zssp_password_title": "Mot de passe ZSSP",
@@ -24,5 +26,16 @@
   "dedicatedCloud_datacenter_drp_confirm_delete_drp_modal_title": "Suppression du plan de reprise d’actitivé",
   "dedicatedCloud_datacenter_drp_confirm_delete_drp_modal_question": "Êtes-vous sûr(e) de vouloir supprimer le PRA ? Cette action est irréversible.",
   "dedicatedCloud_datacenter_drp_confirm_delete_drp_success": "Votre PRA Zerto est en cours de suppression. L’opération prendra quelques minutes",
-  "dedicatedCloud_datacenter_drp_confirm_delete_drp_error": "Une erreur est survenue lors de la suppression du plan de reprise d’activité"
+  "dedicatedCloud_datacenter_drp_confirm_delete_drp_error": "Une erreur est survenue lors de la suppression du plan de reprise d’activité",
+  "dedicatedCloud_datacenter_drp_required_vpn_configuration": "Pour finaliser l’activation de votre PRA Zerto, nous vous invitons à ajouter les IPs du VPN ci-dessous",
+
+  "dedicatedCloud_datacenter_drp_vpn_presharedkey": "Clé de chiffrement du VPN (PSK)",
+  "dedicatedCloud_datacenter_drp_vpn_remoteEndpointPublicIp": "IP publique du VPN distant",
+  "dedicatedCloud_datacenter_drp_vpn_remoteEndpointInternalIp": "IP privée du VPN distant",
+  "dedicatedCloud_datacenter_drp_vpn_remoteZvmInternalIp": "IP de votre Zvm",
+  "dedicatedCloud_datacenter_drp_vpn_validate": "Valider",
+  "dedicatedCloud_datacenter_drp_vpn_change_parameters": "Modifier les paramètres",
+  "dedicatedCloud_datacenter_drp_vpn_success": "La mise à jour de la configuration VPN a bien été effectuée",
+  "dedicatedCloud_datacenter_drp_vpn_error": "Une erreur est survenue lors de la mise à jour de la configuration VPN",
+  "dedicatedCloud_datacenter_drp_vpn_ip_invalid": "Veuillez saisir une adresse IPv4 valide (ex: 192.168.0.1)"
 }
