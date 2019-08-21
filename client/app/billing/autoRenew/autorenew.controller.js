@@ -48,6 +48,13 @@ export default class AutorenewCtrl {
     }));
 
     this.parseExtraCriteria();
+
+    if (this.sort.predicate === 'serviceId') {
+      // No need to set all columns, only the first is sortable
+      this.columnsConfig = [{
+        sortable: this.sort.reverse ? 'desc' : 'asc',
+      }];
+    }
   }
 
   getCriterionTitle(type, value) {
@@ -153,6 +160,7 @@ export default class AutorenewCtrl {
       filters: JSON.stringify(filters),
       selectedType: _.get(selectedType, 'value'),
       searchText: _.get(searchText, 'value'),
+      pageNumber: 1,
     });
   }
 
