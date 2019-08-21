@@ -3,7 +3,7 @@ angular.module('UserAccount').config(($stateProvider, $urlRouterProvider) => {
 
   $stateProvider.state(name, {
     url: '/contacts',
-    templateUrl: 'account/user/contacts/user-contacts.html',
+    templateUrl: 'account/contacts/user-contacts.html',
     controller: 'UserAccount.controllers.contactCtrl',
     controllerAs: 'contactCtrl',
     abstract: true,
