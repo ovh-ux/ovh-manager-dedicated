@@ -5,12 +5,15 @@
 
     <div data-ovh-alert></div>
 
-    <oui-stepper>
+    <oui-stepper
+        data-on-init="$ctrl.onFocus('autorenew::configure')"
+        data-on-finish="$ctrl.onFinish()">
         <oui-step-form
             data-header="{{:: 'billing_autorenew_service_update_title' | translate }}"
             data-submit-text="{{:: 'billing_autorenew_service_update_next' | translate}}"
             data-valid="$ctrl.model.agreements"
-            data-on-cancel="$ctrl.goBack()">
+            data-on-cancel="$ctrl.goBack()"
+            data-on-submit="$ctrl.onFocus('autorenew::validate-config')">
             <billing-autorenew-update-form
                 data-has-agreed="$ctrl.model.agreements"
                 data-autorenew-agreements="$ctrl.autorenewAgreements"

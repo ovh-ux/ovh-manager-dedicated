@@ -3,8 +3,9 @@ import BillingService from '../../BillingService.class';
 
 export default class {
   /* @ngInject */
-  constructor($translate, Alerter) {
+  constructor($translate, atInternet, Alerter) {
     this.$translate = $translate;
+    this.atInternet = atInternet;
     this.Alerter = Alerter;
   }
 
@@ -33,5 +34,19 @@ export default class {
       .finally(() => {
         this.isUpdating = false;
       });
+  }
+
+  onFocus(event) {
+    this.atInternet.trackEvent({
+      event,
+      page: `dedicated::billing::${event}`,
+    });
+  }
+
+  onFinish() {
+    this.atInternet.trackClick({
+      name: 'autorenew::validate-config',
+      type: 'action',
+    });
   }
 }

@@ -2,11 +2,17 @@ import _ from 'lodash';
 
 export default class {
   /* @ngInject */
-  constructor($translate) {
+  constructor($translate, atInternet) {
     this.$translate = $translate;
+    this.atInternet = atInternet;
   }
 
   activate() {
+    this.atInternet.trackClick({
+      name: 'autorenew::activate',
+      type: 'action',
+    });
+
     this.isActivating = true;
     return this.activateAutorenew()
       .then(() => this.goBack(
