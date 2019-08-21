@@ -25,7 +25,7 @@
                 class="oui-button oui-button_link m-0 py-0 pl-3"></button>
         </oui-message>
 
-        <div data-ng-if="!automaticRenewV2Mean.loading && automaticRenewV2Mean.available && (!automaticRenewV2Mean.allowed || (automaticRenewV2Mean.allowed && !nicRenew.active && nicRenew.initialized)) && !services.data.userSubsidiaryHasRecentAutorenew">
+        <div data-ng-if="!automaticRenewV2Mean.loading && automaticRenewV2Mean.available && (!automaticRenewV2Mean.allowed || (automaticRenewV2Mean.allowed && !nicRenew.active)) && !services.data.userSubsidiaryHasRecentAutorenew">
             <oui-message
                 data-ng-if="!automaticRenewV2Mean.allowed"
                 data-type="error"
@@ -36,7 +36,7 @@
                     type="button"
                     data-ng-click="setAction('active', { nicRenew: nicRenew }, 'autoRenew')"
                     data-translate="autorenew_service_active_title"
-                    data-ng-if="automaticRenewV2Mean.allowed && !nicRenew.active && nicRenew.initialized">
+                    data-ng-if="automaticRenewV2Mean.allowed && !nicRenew.active">
             </button>
         </div>
 
