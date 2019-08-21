@@ -1,7 +1,7 @@
 angular.module('UserAccount').config(($stateProvider, $urlRouterProvider) => {
   $stateProvider.state('app.account.useraccount.contacts.requests', {
     url: '/requests?taskId&token',
-    templateUrl: 'account/user/contacts/request/user-contacts-request.html',
+    templateUrl: 'account/contacts/request/user-contacts-request.html',
     controller: 'UserAccount.controllers.contacts.requests',
     controllerAs: 'ctrlContactRequests',
   });
