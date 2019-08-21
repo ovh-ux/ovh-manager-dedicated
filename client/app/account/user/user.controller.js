@@ -20,12 +20,16 @@ export default class UserAccountCtrl {
       this.$scope.setAction(false);
     }.bind(this);
 
-    this.$scope.setAction = function (action, data) {
+    this.$scope.setAction = function (action, data, basePath) {
       this.$scope.currentAction = action;
       this.$scope.currentActionData = data;
 
       if (action) {
-        this.$scope.stepPath = `${this.USERACCOUNT_BASE_URL}${this.$scope.currentAction}.html`;
+        if (basePath) {
+          this.$scope.stepPath = `${basePath}${this.$scope.currentAction}.html`;
+        } else {
+          this.$scope.stepPath = `${this.$scope.USERACCOUNT_BASE_URL}${this.$scope.currentAction}.html`;
+        }
         $('#currentAction').modal({
           keyboard: true,
           backdrop: 'static',
