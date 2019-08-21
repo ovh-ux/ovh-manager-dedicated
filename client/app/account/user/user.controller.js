@@ -25,11 +25,15 @@ angular.module('UserAccount').controller('UserAccount.controllers.main', [
       $scope.setAction(false);
     };
 
-    $scope.setAction = function (action, data) {
+    $scope.setAction = function (action, data, basePath) {
       $scope.currentAction = action;
       $scope.currentActionData = data;
       if (action) {
-        $scope.stepPath = `${$scope.USERACCOUNT_BASE_URL}${$scope.currentAction}.html`;
+        if (basePath) {
+          $scope.stepPath = `${basePath}${$scope.currentAction}.html`;
+        } else {
+          $scope.stepPath = `${$scope.USERACCOUNT_BASE_URL}${$scope.currentAction}.html`;
+        }
         $('#currentAction').modal({
           keyboard: true,
           backdrop: 'static',
