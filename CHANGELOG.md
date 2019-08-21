@@ -1,3 +1,13 @@
+<a name="10.26.0"></a>
+# [10.26.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.25.1...v10.26.0) (2019-08-21)
+
+
+### Features
+
+* **at-internet:** add missing data (country, currency) ([#1345](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1345)) ([c7ee0ba](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c7ee0ba))
+
+
+
 <a name="10.25.1"></a>
 ## [10.25.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.25.0...v10.25.1) (2019-08-20)
 
