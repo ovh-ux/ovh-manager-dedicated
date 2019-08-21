@@ -1,3 +1,13 @@
+<a name="10.26.1"></a>
+## [10.26.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.26.0...v10.26.1) (2019-08-21)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** handle if autorenew has never been active ([#1348](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1348)) ([d135d76](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d135d76))
+
+
+
 <a name="10.26.0"></a>
 # [10.26.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.25.1...v10.26.0) (2019-08-21)
 
