@@ -24,9 +24,14 @@
             <label
                 class="oui-select-picker__label-container orderSelection__product-content"
                 for="{{:: 'servicePackSelection' + $ctrl.servicePacks[i].name }}">
-                <span
-                    class="oui-select-picker__label orderSelection__product-label"
-                    data-ng-bind=":: $ctrl.servicePacks[i].displayName"></span>
+                <span class="oui-select-picker__label orderSelection__product-label">
+                    <span
+                        data-ng-bind=":: $ctrl.servicePacks[i].fullDisplayName"
+                        data-ng-if="$ctrl.servicePacks[i].type === $ctrl.OPTION_TYPES.certification"></span>
+                    <span
+                        data-ng-bind=":: $ctrl.servicePacks[i].displayName"
+                        data-ng-if="$ctrl.servicePacks[i].type !== $ctrl.OPTION_TYPES.certification"></span>
+                </span>
                 <p class="oui-select-picker__value-container oui-select-picker__section orderSelection__product-description">
                     <span
                         class="dedicatedCloud-servicePack-option-description"

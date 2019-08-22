@@ -1,5 +1,7 @@
 import _ from 'lodash';
 
+import { OPTION_TYPES } from '../../option/option.constants';
+
 export default class {
   /* @ngInject */
   constructor(
@@ -8,6 +10,8 @@ export default class {
   ) {
     this.$element = $element;
     this.$timeout = $timeout;
+
+    this.OPTION_TYPES = OPTION_TYPES;
   }
 
   $postLink() {
