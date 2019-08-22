@@ -1,0 +1,46 @@
+<form data-ng-submit="$ctrl.updateContacts()">
+    <oui-modal
+        data-heading="{{:: 'account_contacts_service_edit' | translate }}"
+        data-primary-label="{{:: 'account_contacts_service_edit_confirm' | translate }}"
+        data-secondary-action="$ctrl.goBack()"
+        data-secondary-label="{{:: 'account_contacts_service_edit_cancel' | translate }}"
+        data-loading="$ctrl.isUpdating"
+        data-on-dismiss="$ctrl.goBack()">
+        <p
+            data-translate="account_contacts_service_edit_description"
+            data-translate-values="{
+                service: $ctrl.service.serviceName
+            }">
+        </p>
+        <oui-field
+            data-label="{{:: 'account_contacts_service_edit_contact_admin' | translate }}">
+            <input
+                class="oui-input"
+                type="text"
+                id="contactAdmin"
+                name="contactAdmin"
+                data-ng-model="$ctrl.service.contactAdmin"
+                required>
+        </oui-field>
+        <oui-field
+            data-label="{{:: 'account_contacts_service_edit_contact_tech' | translate }}">
+            <input
+                class="oui-input"
+                type="text"
+                id="contactTech"
+                name="contactTech"
+                data-ng-model="$ctrl.service.contactTech"
+                required>
+        </oui-field>
+        <oui-field
+            data-label="{{:: 'account_contacts_service_edit_contact_billing' | translate }}">
+            <input
+                class="oui-input"
+                type="text"
+                id="contactBilling"
+                name="contactBilling"
+                data-ng-model="$ctrl.service.contactBilling"
+                required>
+        </oui-field>
+    </oui-modal>
+</form>
