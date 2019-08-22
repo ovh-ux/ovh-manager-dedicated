@@ -3,8 +3,9 @@ import BillingService from '../../BillingService.class';
 
 export default class {
   /* @ngInject */
-  constructor($translate, Alerter) {
+  constructor($translate, atInternet, Alerter) {
     this.$translate = $translate;
+    this.atInternet = atInternet;
     this.Alerter = Alerter;
   }
 
@@ -33,5 +34,25 @@ export default class {
       .finally(() => {
         this.isUpdating = false;
       });
+  }
+
+  onConfirmation() {
+    this.atInternet.trackEvent({
+      event: 'autorenew::validate-config',
+      page: 'dedicated::account::billing::autorenew::validate-config',
+      chapter1: 'dedicated',
+      chapter2: 'account',
+      chapter3: 'billing',
+    });
+  }
+
+  onFinish() {
+    this.atInternet.trackClick({
+      name: 'autorenew::validate-config',
+      type: 'action',
+      chapter1: 'dedicated',
+      chapter2: 'account',
+      chapter3: 'billing',
+    });
   }
 }

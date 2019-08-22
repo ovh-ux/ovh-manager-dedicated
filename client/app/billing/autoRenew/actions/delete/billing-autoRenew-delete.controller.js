@@ -2,11 +2,20 @@ import _ from 'lodash';
 
 export default class BillingAutoRenewDeleteCtrl {
   /* @ngInject */
-  constructor($translate) {
+  constructor($translate, atInternet) {
     this.$translate = $translate;
+    this.atInternet = atInternet;
   }
 
   deleteRenew() {
+    this.atInternet.trackClick({
+      name: 'autorenew::delete',
+      type: 'action',
+      chapter1: 'dedicated',
+      chapter2: 'account',
+      chapter3: 'billing',
+    });
+
     this.isDeleting = true;
     if (this.engagement) {
       return this.goBack();
