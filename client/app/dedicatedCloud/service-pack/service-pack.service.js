@@ -90,14 +90,25 @@ export const ServicePackService = class ServicePack {
 
     const buildFromChunk = chunk => ({
       ...chunk,
-      displayName: this.$translate.instant(`dedicatedCloudDashboardTilesOptionsServicePack_name_${chunk.name}`),
       description: this.$translate.instant(`dedicatedCloudDashboardTilesOptionsServicePack_description_${chunk.name}`),
+      displayName: this.$translate.instant(`dedicatedCloudDashboardTilesOptionsServicePack_displayName_${chunk.name}`),
+      fullDisplayName: this.$translate.instant(`dedicatedCloudDashboardTilesOptionsServicePack_fullDisplayName_${chunk.name}`),
+      type: ServicePack.computeType(chunk),
     });
 
     return this
       .getNamesForService(serviceName)
       .then(names => this.$q.all(names.map(buildChunkFromName)))
       .then(chunks => chunks.map(buildFromChunk));
+  }
+
+  static computeType(servicePack) {
+    return _.find(
+      servicePack.options,
+      option => option.type === OPTION_TYPES.certification,
+    )
+      ? OPTION_TYPES.certification
+      : OPTION_TYPES.basicOptions;
   }
 
   static removeCurrentServicePack(servicePacks, currentServicePackName) {
