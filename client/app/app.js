@@ -115,6 +115,7 @@ angular
     REDIRECT_URLS: config.constants.REDIRECT_URLS,
     DEFAULT_LANGUAGE: config.constants.DEFAULT_LANGUAGE,
     FALLBACK_LANGUAGE: config.constants.FALLBACK_LANGUAGE,
+    SUPPORT: config.constants.SUPPORT,
   })
   .constant('LANGUAGES', config.constants.LANGUAGES)
   .constant('website_url', config.constants.website_url)
@@ -169,6 +170,7 @@ angular
     });
 
     $state.defaultErrorHandler((error) => {
+      console.log(error);
       if (error.type === RejectType.ERROR) {
         $state.go('error', {
           detail: {
