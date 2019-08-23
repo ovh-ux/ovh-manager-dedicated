@@ -3,7 +3,9 @@ import template from './edit.html';
 
 export default {
   bindings: {
+    billLink: '<',
     changeContact: '<',
+    currentUser: '<',
     goBack: '<',
     service: '<',
   },
