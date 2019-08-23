@@ -5,11 +5,7 @@ export default /* @ngInject */ ($stateProvider) => {
     resolve: {
       editContacts: /* @ngInject */ $state => service => $state.go('app.account.useraccount.contacts.services.edit', { service: service.serviceName }),
       getServiceInfos: /* @ngInject */
-        AccountContactsService => service => AccountContactsService.getServiceInfos(service)
-          .then(serviceInfos => ({
-            ...service,
-            ...serviceInfos,
-          })),
+        AccountContactsService => service => AccountContactsService.getServiceInfos(service),
       goToContacts: /* @ngInject */ ($state, $timeout, Alerter) => (message = false, type = 'success') => {
         const reload = message && type === 'success';
 

@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import BillingService from '../../../models/BillingService.class';
 
 import { AVAILABLE_SERVICES } from './user-contacts.constants';
 
@@ -13,11 +14,15 @@ export default class {
   getServiceInfos(service) {
     return this.OvhHttp.get(`${service.path}/${service.serviceName}/serviceInfos`, {
       rootPath: 'apiv6',
-    });
+    })
+      .then(serviceInfos => new BillingService({
+        ...service,
+        ...serviceInfos,
+      }));
   }
 
   changeContact(service) {
-    return this.OvhHttp.post(`${service.path}/${service.serviceName}/changeContact'`, {
+    return this.OvhHttp.post(`${service.path}/${service.serviceName}/changeContact`, {
       rootPath: 'apiv6',
       data: {
         contactAdmin: service.contactAdmin,
@@ -29,10 +34,13 @@ export default class {
 
   getServices() {
     return this.OvhApiOvhProduct.Aapi().query().$promise
-      .then(services => _.filter(
-        services,
-        service => AVAILABLE_SERVICES.includes(service.category),
-      ));
+      .then((services) => {
+        const availableServices = _.filter(
+          services,
+          service => AVAILABLE_SERVICES.includes(service.category),
+        );
+        return availableServices.map(service => new BillingService(service));
+      });
   }
 
   static getAvailableCategories(services) {
