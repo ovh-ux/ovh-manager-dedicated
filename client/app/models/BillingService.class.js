@@ -121,6 +121,10 @@ export default class BillingService {
     return nichandle === this.contactBilling;
   }
 
+  hasAdminRights(nichandle) {
+    return nichandle === this.contactAdmin;
+  }
+
   getAutorenewCapability(nichandle) {
     if (this.hasDebt()) {
       return {
@@ -228,7 +232,7 @@ export default class BillingService {
   }
 
   canBeResiliated(nichandle) {
-    return this.canDeleteAtExpiration && this.hasResiliationRights(nichandle);
+    return this.canDeleteAtExpiration && this.hasAdminRights(nichandle);
   }
 
   hasResiliationRights(nichandle) {
