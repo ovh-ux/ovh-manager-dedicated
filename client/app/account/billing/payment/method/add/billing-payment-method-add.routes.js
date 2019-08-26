@@ -26,7 +26,7 @@ angular
         format: 'json',
       },
       views: {
-        '': {
+        '@app.account.billing.payment': {
           template,
           controller,
           controllerAs: '$ctrl',

@@ -10,15 +10,17 @@ import deleteModalController from './delete/billing-payment-method-delete.contro
 export default class BillingPaymentMethodCtrl {
   /* @ngInject */
 
-  constructor($q, $translate, $uibModal, Alerter, billingPaymentMethodSection,
-    ovhPaymentMethod, User) {
+  constructor($q, $state, $translate, $uibModal, Alerter, billingPaymentMethodSection, ovhPaymentMethod,
+    ovhPaymentMethodHelper, User) {
     // dependencies injections
     this.$q = $q;
+    this.$state = $state;
     this.$translate = $translate;
     this.$uibModal = $uibModal;
     this.Alerter = Alerter;
     this.billingPaymentMethodSection = billingPaymentMethodSection;
     this.ovhPaymentMethod = ovhPaymentMethod;
+    this.ovhPaymentMethodHelper = ovhPaymentMethodHelper;
     this.User = User;
 
     // other attributes used in views
@@ -194,21 +196,27 @@ export default class BillingPaymentMethodCtrl {
         },
       };
 
-      _.chain(paymentMethods).uniq('status.value').map('status').value()
-        .forEach((status) => {
-          _.set(this.tableFilterOptions.status.values, status.value, status.text);
-        });
+      _.uniq(paymentMethods, 'status').forEach((paymentMethod) => {
+        _.set(
+          this.tableFilterOptions.status.values,
+          paymentMethod.status,
+          this.ovhPaymentMethodHelper.getPaymentMethodStatusText(paymentMethod.status),
+        );
+      });
 
-      _.chain(paymentMethods).uniq('paymentType.value').map('paymentType').value()
-        .forEach((paymentType) => {
-          _.set(this.tableFilterOptions.type.values, paymentType.value, paymentType.text);
-        });
+      _.uniq(paymentMethods, 'paymentType').forEach((paymentMethod) => {
+        _.set(
+          this.tableFilterOptions.type.values,
+          paymentMethod.paymentType,
+          this.ovhPaymentMethodHelper.getPaymentMethodTypeText(paymentMethod.paymentType),
+        );
+      });
 
       // set guide url
       this.guide = _.get(guides, 'autoRenew', null);
 
       // set a warn message if a bankAccount is in pendingValidation state
-      this.hasPendingValidationBankAccount = _.some(paymentMethods, method => method.paymentType.value === 'bankAccount' && method.status.value === 'pendingValidation');
+      this.hasPendingValidationBankAccount = _.some(paymentMethods, method => method.paymentType === 'bankAccount' && method.status === 'pendingValidation');
     }).catch((error) => {
       this.Alerter.error([
         this.$translate.instant('billing_payment_method_load_error'),

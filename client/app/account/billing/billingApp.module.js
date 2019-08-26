@@ -1,5 +1,6 @@
 import ovhManagerCore from '@ovh-ux/manager-core';
 import config from '../../config/config';
+import ngUiRouterLayout from '@ovh-ux/ng-ui-router-layout'
 
 angular
   .module('Billing', [
@@ -15,6 +16,7 @@ angular
     'ovh-utils-angular',
     'ui.bootstrap',
     'ui.router',
+    ngUiRouterLayout,
   ])
   .constant('BILLING_BASE_URL', 'account/billing/')
   .constant('Billing.constants', {

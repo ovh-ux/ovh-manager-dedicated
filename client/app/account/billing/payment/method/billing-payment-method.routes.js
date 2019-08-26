@@ -11,6 +11,12 @@ angular
       translations: { value: ['./'], format: 'json' },
     });
 
+    // add an abstract state that will handle actions on payment method
+    $stateProvider.state(`${name}.action`, {
+      url: '/:paymentMethodId',
+      abstract: true,
+    });
+
     $urlRouterProvider.when(
       /^\/billing\/mean$/,
       ($location, $state) => $state.go(name),

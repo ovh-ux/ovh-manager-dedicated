@@ -1,5 +1,4 @@
-<div class="billing-payment-method"
-     data-ui-view>
+<div class="billing-payment-method">
 
     <div data-ovh-alert="billing_payment_method_alert"></div>
 
@@ -39,11 +38,12 @@
 
         <oui-datagrid data-rows="$ctrl.billingPaymentMethodSection.sharedPaymentMethods">
             <oui-column data-title=":: 'billing_payment_method_table_type' | translate"
-                        data-property="paymentType.text"
+                        data-property="paymentType"
                         data-type="options"
                         data-type-options="$ctrl.tableFilterOptions.type"
                         data-sortable="asc"
                         data-filterable>
+                <span data-ng-bind="$ctrl.ovhPaymentMethodHelper.getPaymentMethodTypeText($row)"></span>
             </oui-column>
             <oui-column data-title=":: 'billing_payment_method_table_label' | translate"
                         data-property="label"
@@ -84,11 +84,12 @@
                 </span>
             </oui-column>
             <oui-column data-title=":: 'billing_payment_method_table_state' | translate"
-                        data-property="status.text"
+                        data-property="status"
                         data-type="options"
                         data-type-options="$ctrl.tableFilterOptions.status"
                         data-sortable
                         data-filterable>
+                <span data-ng-bind="$ctrl.ovhPaymentMethodHelper.getPaymentMethodStatusText($row)"></span>
             </oui-column>
 
             <oui-action-menu data-align="end"
@@ -102,7 +103,7 @@
                 <oui-action-menu-divider data-ng-if="$row.paymentType.value === 'BANK_ACCOUNT' && $row.status.value === 'PENDING_VALIDATION'"></oui-action-menu-divider>
                 <oui-action-menu-item data-text="{{ :: 'billing_payment_method_table_action_description_edit' | translate }}"
                                       data-aria-label="{{ :: 'billing_payment_method_table_action_description_edit' | translate }}"
-                                      data-on-click="$ctrl.onPaymentMethodEditBtnClick($row)">
+                                      data-href="{{ $ctrl.$state.href('app.account.billing.payment.method.action.edit', { paymentMethodId: $row.paymentMethodId }) }}">
                 </oui-action-menu-item>
                 <oui-action-menu-item data-text="{{ :: 'billing_payment_method_table_action_set_default' | translate }}"
                                       data-aria-label="{{ :: 'billing_payment_method_table_action_set_default' | translate }}"
@@ -128,4 +129,5 @@
         </oui-datagrid>
 
     </div>
+    <div data-ui-view></div>
 </div>

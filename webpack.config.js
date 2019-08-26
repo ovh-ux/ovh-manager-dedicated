@@ -59,7 +59,7 @@ module.exports = (env = {}) => {
       '^/engine/apiv6/': '/',
     },
     headers: {
-      'X-Ovh-Nic': 'ls148374-ovh',
+      'X-Ovh-Nic': 'es102666-ovh',
     },
     secure: false,
     logLevel: 'debug',

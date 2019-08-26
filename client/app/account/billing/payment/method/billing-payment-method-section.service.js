@@ -34,10 +34,10 @@ export default class BillingPaymentMethodSection {
       })
       .then((paymentMethodsParams) => {
         this.sharedPaymentMethods = _.filter(paymentMethodsParams, ({ paymentType, status }) => {
-          if (paymentType.value !== 'BANK_ACCOUNT') {
+          if (paymentType !== 'BANK_ACCOUNT') {
             return true;
           }
-          return status.value !== 'BLOCKED_FOR_INCIDENTS';
+          return status !== 'BLOCKED_FOR_INCIDENTS';
         });
 
         this.loadDeferred.resolve(this.sharedPaymentMethods);
