@@ -25,6 +25,7 @@
         <div data-ovh-alert></div>
 
         <oui-message
+            class="mb-4"
             data-ng-if="$ctrl.BillingAutoRenew.isAutomaticRenewV2Available() && (
                 !$ctrl.defaultPaymentMean
                 || ($ctrl.defaultPaymentMean && $ctrl.currentUser.hasAutorenew2016() && !$ctrl.nicRenew.active)
