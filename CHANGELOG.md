@@ -1,3 +1,8 @@
+<a name="10.26.2"></a>
+## [10.26.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.26.1...v10.26.2) (2019-08-27)
+
+
+
 <a name="10.26.1"></a>
 ## [10.26.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.26.0...v10.26.1) (2019-08-21)
 
