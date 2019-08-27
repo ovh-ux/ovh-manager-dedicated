@@ -5,7 +5,18 @@ angular.module('UserAccount').controller('UserAccount.controllers.agreements.det
   'Alerter',
   '$translate',
   'User',
-  function ($stateParams, $q, Service, Alerter, $translate, User) {
+  'GDPR_AGREEMENTS_INFOS',
+  'AGREEMENT_GENERIC_MORE_INFORMATIONS_URL',
+  function (
+    $stateParams,
+    $q,
+    Service,
+    Alerter,
+    $translate,
+    User,
+    GDPR_AGREEMENTS_INFOS,
+    AGREEMENT_GENERIC_MORE_INFORMATIONS_URL,
+  ) {
     const CGV_AGREEMENT_ID = 1635;
 
     this.$ngInit = () => {
@@ -28,6 +39,12 @@ angular.module('UserAccount').controller('UserAccount.controllers.agreements.det
           this.confirmed = this.alreadyAccepted;
           this.accepted = this.alreadyAccepted;
           this.isCGVContract = this.agreement.contractId === CGV_AGREEMENT_ID;
+
+          this.appendicesLink = _.get(
+            _.filter(GDPR_AGREEMENTS_INFOS, el => el.subsidiary === user.ovhSubsidiary),
+            '[0].more_informations_url',
+            AGREEMENT_GENERIC_MORE_INFORMATIONS_URL,
+          );
         })
         .catch((err) => {
           Alerter.error($translate.instant('user_agreements_error'), 'agreements_details_alerter');
