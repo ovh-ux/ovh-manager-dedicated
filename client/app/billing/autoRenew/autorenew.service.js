@@ -15,6 +15,7 @@ export default class {
     DucUserContractService,
     OvhApiBillingAutorenewServices,
     OvhApiEmailExchange,
+    OvhApiMeAutorenew,
     OvhHttp,
     ovhPaymentMethod,
   ) {
@@ -28,6 +29,7 @@ export default class {
     this.OvhApiEmailExchange = OvhApiEmailExchange;
     this.OvhHttp = OvhHttp;
     this.ovhPaymentMethod = ovhPaymentMethod;
+    this.OvhApiMeAutorenew = OvhApiMeAutorenew;
 
     this.events = {
       AUTORENEW_CHANGES: AUTORENEW_EVENT,
@@ -109,11 +111,15 @@ export default class {
   }
 
   getAutorenew() {
-    return this.OvhHttp.get(NIC_URL, {
-      rootPath: 'apiv6',
-    });
+    return this.OvhApiMeAutorenew.v6().query()
+      .$promise
+      .catch((err) => {
+        if (err.status === 404) {
+          return null;
+        }
+        throw err;
+      });
   }
-
 
   putAutorenew(renewParam) {
     return this.OvhHttp.put(NIC_URL, {
