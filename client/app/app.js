@@ -170,7 +170,6 @@ angular
     });
 
     $state.defaultErrorHandler((error) => {
-      console.log(error);
       if (error.type === RejectType.ERROR) {
         $state.go('error', {
           detail: {
