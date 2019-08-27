@@ -50,16 +50,23 @@
         </div>
 
         <div data-ng-if="!ctrl.loading">
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox"
-                           data-ng-model="ctrl.confirmed"
-                           data-ng-disabled="ctrl.alreadyAccepted">
-                    <span data-ng-bind-html="'user_agreement_details_agreed' | translate:{ t0: ctrl.agreement.title || ctrl.contract.name }"></span>
+            <div class="oui-checkbox">
+                <input class="oui-checkbox__input" id="user-agreement" name="user-agreement" type="checkbox" data-ng-model="ctrl.confirmed" data-ng-disabled="ctrl.alreadyAccepted">
+                <label class="oui-checkbox__label-container" for="user-agreement">
+                    <span class="oui-checkbox__label">
+                        <span data-ng-bind-html="'user_agreement_details_agreed' | translate:{ t0: ctrl.agreement.title || ctrl.contract.name }"></span>
+                        <span class="oui-checkbox__icon">
+                            <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
+                            <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
+                            <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
+                            <span class="oui-icon oui-icon-checkbox-indeterminate" aria-hidden="true"></span>
+                        </span>
+                    </span>
+                    <span class="oui-checkbox__description" data-ng-bind-html="ctrl.appendicesLink ? ('user_agreement_appendices' | translate:{ t0: ctrl.appendicesLink }) : ''"></span>
                 </label>
             </div>
             <button type="button"
-                    class="oui-button oui-button_primary"
+                    class="oui-button oui-button_primary mt-4"
                     data-ng-disabled="!ctrl.confirmed || ctrl.accepted"
                     data-ng-click="ctrl.accept()"
                     data-translate="user_agreement_details_accept">
