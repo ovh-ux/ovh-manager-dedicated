@@ -446,7 +446,8 @@ const constants = {
       portal: 'https://www.ovh.com/manager/portal/index.html#/',
       web: 'https://www.ovh.com/manager/web/index.html#/',
       dedicated: 'https://www.ovh.com/manager/dedicated/index.html#/',
-      cloud: 'https://www.ovh.com/manager/cloud/index.html#/',
+      cloud: 'https://www.ovh.com/manager/cloud/repsac/index.html#/',
+      publicCloud: 'https://www.ovh.com/manager/public-cloud/index.html#/',
       telecom: 'https://www.ovhtelecom.fr/manager/index.html#/',
       sunrise: 'https://www.ovh.com/manager/sunrise/index.html#/',
       partners: 'https://www.ovh.com/manager/partners',
@@ -622,6 +623,20 @@ const constants = {
     },
     REDIRECT_URLS: {
       listTicket: 'https://www.ovh.com/manager/dedicated/index.html#/ticket',
+    },
+    SUPPORT: {
+      CZ: '+420 246 030 899',
+      DE: '+49 (0)681 906730',
+      ES: '902 106 113',
+      FI: '(09) 477 8910',
+      FR: '1007',
+      GB: '0333 370 0425',
+      IE: '+353 (0)1 293 7844',
+      IT: '02 5560 0423',
+      LT: '+370 5 243 00 10',
+      NL: '+31 (0)20 808 6057',
+      PL: '71 750 02 00',
+      PT: '+351 213 155 642',
     },
   },
   CA: {
@@ -901,7 +916,8 @@ const constants = {
     },
     MANAGER_URLS: {
       dedicated: 'https://ca.ovh.com/manager/index.html#/',
-      cloud: 'https://ca.ovh.com/manager/cloud/index.html#/',
+      cloud: 'https://ca.ovh.com/manager/cloud/repsac/index.html#/',
+      publicCloud: 'https://ca.ovh.com/manager/public-cloud/index.html#/',
       sunrise: 'https://ca.ovh.com/manager/sunrise/index.html#/',
     },
     TOP_GUIDES: {},
@@ -951,6 +967,15 @@ const constants = {
     },
     REDIRECT_URLS: {
       listTicket: 'https://ca.ovh.com/manager/index.html#/ticket',
+    },
+    SUPPORT: {
+      ASIA: '+65 3163 8340',
+      AU: '1300 OVH AUS (684 287)',
+      CA: '1-855-684-5463',
+      QC: '1-855-684-5463',
+      SG: '+65 3163 8340',
+      WE: '1-855-684-5463',
+      WS: '1-855-684-5463',
     },
   },
   US: {
@@ -1045,7 +1070,8 @@ const constants = {
     },
     MANAGER_URLS: {
       dedicated: 'https://www.us.ovhcloud.com/manager/dedicated/',
-      cloud: 'https://www.us.ovhcloud.com/manager/cloud/',
+      cloud: 'https://www.us.ovhcloud.com/manager/cloud/repsac',
+      publicCloud: 'https://www.us.ovhcloud.com/manager/public-cloud/index.html#/',
     },
     TOP_GUIDES: {
       sd: {
@@ -1085,6 +1111,9 @@ const constants = {
     },
     REDIRECT_URLS: {
       listTicket: 'https://us.ovhcloud.com/manager/dedicated/index.html#/ticket',
+    },
+    SUPPORT: {
+      US: '1-855-684-5463',
     },
   },
 };

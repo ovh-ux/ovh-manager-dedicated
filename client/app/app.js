@@ -14,18 +14,23 @@ import ngOvhUiRouterLayout from '@ovh-ux/ng-ui-router-layout';
 import ngOvhUserPref from '@ovh-ux/ng-ovh-user-pref';
 import ngOvhWebUniverseComponents from '@ovh-ux/ng-ovh-web-universe-components';
 import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
+import ngUirouterLineProgress from '@ovh-ux/ng-ui-router-line-progress';
 import ovhContacts from '@ovh-ux/ng-ovh-contacts';
 import ovhManagerCore from '@ovh-ux/manager-core';
 import ovhManagerNavbar from '@ovh-ux/manager-navbar';
 import ovhManagerServerSidebar from '@ovh-ux/manager-server-sidebar';
 import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
-import uiRouter from '@uirouter/angularjs';
+import uiRouter, { RejectType } from '@uirouter/angularjs';
 
 import config from './config/config';
 import dedicatedCloudDatacenterDrp from './dedicatedCloud/datacenter/drp';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
+import errorPage from './error/error.module';
 import ovhManagerPccDashboard from './dedicatedCloud/dashboard';
 import ovhManagerPccResourceUpgrade from './dedicatedCloud/resource/upgrade';
+import preload from './components/manager-preload/manager-preload.module';
+
+import dedicatedServerServers from './dedicated/server/servers/servers.module';
 
 Environment.setRegion(__WEBPACK_REGION__);
 
@@ -37,8 +42,10 @@ angular
     'chart.js',
     'controllers',
     dedicatedCloudDatacenterDrp,
+    dedicatedServerServers,
     dedicatedUniverseComponents,
     'directives',
+    errorPage,
     'filters',
     'internationalPhoneNumber',
     'Module.download',
@@ -64,6 +71,7 @@ angular
     'ngRoute',
     'ngSanitize',
     ngTranslateAsyncLoader,
+    ngUirouterLineProgress,
     'oui',
     'ovh-angular-export-csv',
     'ovh-angular-pagination-front',
@@ -79,6 +87,7 @@ angular
     ovhManagerNavbar,
     ovhPaymentMethod,
     'pascalprecht.translate',
+    preload,
     'services',
     'ui.bootstrap',
     'ui.router',
@@ -106,6 +115,7 @@ angular
     REDIRECT_URLS: config.constants.REDIRECT_URLS,
     DEFAULT_LANGUAGE: config.constants.DEFAULT_LANGUAGE,
     FALLBACK_LANGUAGE: config.constants.FALLBACK_LANGUAGE,
+    SUPPORT: config.constants.SUPPORT,
   })
   .constant('LANGUAGES', config.constants.LANGUAGES)
   .constant('website_url', config.constants.website_url)
@@ -130,14 +140,8 @@ angular
   })
   /* ========== AT-INTERNET ========== */
   .config((atInternetProvider, atInternetUiRouterPluginProvider, constants) => {
-    const level2 = constants.target === 'US' ? '57' : '10';
-
     atInternetProvider.setEnabled(constants.prodMode && window.location.port.length <= 3);
     atInternetProvider.setDebug(!constants.prodMode);
-
-    atInternetProvider.setDefaults({
-      level2,
-    });
 
     atInternetUiRouterPluginProvider.setTrackStateChange(constants.prodMode
       && window.location.port.length <= 3);
@@ -151,7 +155,7 @@ angular
   .run((ssoAuthentication, User) => {
     ssoAuthentication.login().then(() => User.getUser());
   })
-  .run(($transitions, $rootScope, $state, coreConfig) => {
+  .run(/* @ngInject */ ($rootScope, $state, $transitions, coreConfig) => {
     $rootScope.$on('$locationChangeStart', () => {
       delete $rootScope.isLeftMenuVisible; // eslint-disable-line
     });
@@ -162,6 +166,18 @@ angular
       const error = transition.error();
       if (_.get(error, 'status') === 403 && _.get(error, 'code') === 'FORBIDDEN_BILLING_ACCESS') {
         $state.go('app.error', { error });
+      }
+    });
+
+    $state.defaultErrorHandler((error) => {
+      console.log(error);
+      if (error.type === RejectType.ERROR) {
+        $state.go('error', {
+          detail: {
+            message: _.get(error.detail, 'data.message'),
+            code: _.has(error.detail, 'headers') ? error.detail.headers('x-ovh-queryId') : null,
+          },
+        }, { location: false });
       }
     });
 
@@ -190,5 +206,18 @@ angular
   })
   .run(($translate) => {
     moment.locale(_.first($translate.use().split('_')));
+  })
+  .run((constants, atInternet, OvhApiMe) => {
+    const level2 = constants.target === 'US' ? '57' : '10';
+
+    OvhApiMe.v6().get().$promise
+      .then((me) => {
+        atInternet.setDefaults({
+          level2,
+          countryCode: me.country,
+          currencyCode: me.currency && me.currency.code,
+          visitorId: me.customerCode,
+        });
+      });
   })
   .constant('UNIVERSE', 'DEDICATED');
