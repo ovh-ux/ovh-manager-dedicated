@@ -33,7 +33,7 @@
             <tbody>
                 <tr data-ng-repeat="agreement in toActivate.list.results track by $index">
                     <th scope="row">
-                        <a data-ui-sref="app.account.billing.agreements.agreement({ id: agreement.id })"
+                        <a data-ui-sref="app.account.billing.autorenew.agreements.agreement({ id: agreement.id })"
                             data-ng-bind-html="'user_agreements_agreed' | translate:{ t0: agreement.name }">
                         </a>
                     </th>
@@ -130,7 +130,7 @@
         <tbody data-ng-if="list.count > 0 && !loading">
             <tr data-ng-repeat="agreement in list.list.results track by $index">
                 <th scope="row">
-                    <a data-ui-sref="app.account.billing.agreements.agreement({ id: agreement.id })"
+                    <a data-ui-sref="app.account.billing.autorenew.agreements.agreement({ id: agreement.id })"
                         data-ng-bind="agreement.name">
                     </a>
                 </th>
