@@ -234,7 +234,7 @@ export default class BillingPaymentMethodAddCtrl {
 
     const isRegisterable = this.ovhPaymentMethod
       .isPaymentMethodTypeRegisterableInContext(this.model.selectedPaymentMethodType);
-    const addParams = this.getAddParams()
+    const addParams = this.getAddParams();
 
     this.Alerter.resetMessage('billing_payment_method_add_alert');
 

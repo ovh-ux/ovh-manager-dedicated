@@ -8,16 +8,12 @@ angular
 
     $stateProvider.state(name, {
       url: '/edit',
-      layout: {
-        name: 'modalTest',
-        modalOptions: {
-          template,
-          controller: () => {},
-          controllerAs: '$ctrl',
-          resolve: {
-            redirectTo: () => 'app.account.billing.payment.method',
-          },
-        },
+      template,
+      controller,
+      controllerAs: '$ctrl',
+      layout: 'modalTest',
+      resolve: {
+        redirectTo: () => 'app.account.billing.payment.method',
       },
       translations: { value: ['./'], format: 'json' },
     });
