@@ -23,7 +23,6 @@ angular
     paymentMeans: ['bankAccount', 'paypal', 'creditCard', 'deferredPaymentAccount'],
     target: config.target,
   })
-  .constant('LANGUAGES', config.constants.LANGUAGES)
   .constant('Billing.URLS', {
     renew: config.constants.billingRenew,
   })
