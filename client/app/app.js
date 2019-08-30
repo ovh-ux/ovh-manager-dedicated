@@ -113,10 +113,8 @@ angular
     vrackUrl: config.constants.vrackUrl,
     MANAGER_URLS: config.constants.MANAGER_URLS,
     REDIRECT_URLS: config.constants.REDIRECT_URLS,
-    DEFAULT_LANGUAGE: config.constants.DEFAULT_LANGUAGE,
-    FALLBACK_LANGUAGE: config.constants.FALLBACK_LANGUAGE,
+    SUPPORT: config.constants.SUPPORT,
   })
-  .constant('LANGUAGES', config.constants.LANGUAGES)
   .constant('website_url', config.constants.website_url)
   .config(/* @ngInject */(ovhProxyRequestProvider) => {
     ovhProxyRequestProvider.proxy('$http');
