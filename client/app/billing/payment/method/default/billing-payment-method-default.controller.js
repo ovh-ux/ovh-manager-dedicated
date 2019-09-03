@@ -1,17 +1,14 @@
 export default class BillingPaymentMethodDefaultCtrl {
   /* @ngInject */
 
-  constructor($injector, $q, $uibModalInstance, paymentMethodToEdit, ovhPaymentMethod) {
+  constructor($uibModalInstance, onDefaultValidate, paymentMethod) {
     // dependencies injections
-    this.$injector = $injector;
-    this.$q = $q;
     this.$uibModalInstance = $uibModalInstance;
-    this.paymentMethodToEdit = paymentMethodToEdit;
-    this.ovhPaymentMethod = ovhPaymentMethod;
+    this.onDefaultValidate = onDefaultValidate;
+    this.paymentMethod = paymentMethod;
 
     // other attributes used in view
     this.loading = {
-      translations: false,
       save: false,
     };
   }
@@ -19,22 +16,19 @@ export default class BillingPaymentMethodDefaultCtrl {
   onPrimaryActionClick() {
     this.loading.save = true;
 
-    return this.ovhPaymentMethod
-      .setPaymentMethodAsDefault(this.paymentMethodToEdit)
-      .then(() => this.$uibModalInstance.close('OK'))
-      .catch(error => this.$uibModalInstance.dismiss(error))
+    const redirectToParams = {
+      action: 'default',
+    };
+
+    return this.onDefaultValidate()
+      .then(() => this.$uibModalInstance.close(_.merge(redirectToParams, {
+        paymentMethod: this.paymentMethod,
+      })))
+      .catch(error => this.$uibModalInstance.dismiss(_.merge(redirectToParams, {
+        error,
+      })))
       .finally(() => {
         this.loading.save = false;
       });
-  }
-
-  $onInit() {
-    this.loading.translations = true;
-
-    return this.$injector.invoke(
-      /* @ngTranslationsInject:json ./translations */
-    ).finally(() => {
-      this.loading.translations = false;
-    });
   }
 }
