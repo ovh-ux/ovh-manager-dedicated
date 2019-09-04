@@ -1,19 +1,13 @@
 export default class BillingPaymentMethodEditCtrl {
   /* @ngInject */
-  constructor($uibModalInstance, onEditFormSubmit, ovhPaymentMethod, paymentMethod) {
-    // dependencies injections
-    this.$uibModalInstance = $uibModalInstance;
-    this.onEditFormSubmit = onEditFormSubmit;
-    this.ovhPaymentMethod = ovhPaymentMethod;
-    this.paymentMethod = paymentMethod;
-
+  constructor() {
     // other attribute used in view
     this.loading = {
       save: false,
     };
 
     this.model = {
-      description: paymentMethod.description,
+      description: null,
     };
   }
 
@@ -28,12 +22,12 @@ export default class BillingPaymentMethodEditCtrl {
       action: 'edit',
     };
 
-    return this.onEditFormSubmit(this.model.description)
-      .then(() => this.$uibModalInstance.close(_.merge(redirectToParams, {
+    return this.resolve.onEditFormSubmit(this.model.description)
+      .then(() => this.modalInstance.close(_.merge(redirectToParams, {
         description: this.model.description,
-        paymentMethod: this.paymentMethod,
+        paymentMethod: this.resolve.paymentMethod,
       })))
-      .catch(error => this.$uibModalInstance.dismiss(_.merge(redirectToParams, {
+      .catch(error => this.modalInstance.dismiss(_.merge(redirectToParams, {
         error,
       })))
       .finally(() => {
@@ -42,4 +36,15 @@ export default class BillingPaymentMethodEditCtrl {
   }
 
   /* -----  End of EVENTS  ------ */
+
+  /* ============================
+  =            Hooks            =
+  ============================= */
+
+  $onInit() {
+    // set model
+    this.model.description = this.resolve.paymentMethod.description;
+  }
+
+  /* -----  End of Hooks  ------ */
 }

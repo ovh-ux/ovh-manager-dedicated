@@ -1,12 +1,7 @@
 export default class BillingPaymentMethodDeleteCtrl {
   /* @ngInject */
 
-  constructor($q, $uibModalInstance, paymentMethod, ovhPaymentMethod) {
-    // dependencies injections
-    this.$uibModalInstance = $uibModalInstance;
-    this.ovhPaymentMethod = ovhPaymentMethod;
-    this.paymentMethod = paymentMethod;
-
+  constructor() {
     // other attribute used in view
     this.loading = {
       delete: false,
@@ -24,12 +19,11 @@ export default class BillingPaymentMethodDeleteCtrl {
       action: 'delete',
     };
 
-    return this.ovhPaymentMethod
-      .deletePaymentMethod(this.paymentMethod)
-      .then(() => this.$uibModalInstance.close(_.merge(redirectToParams, {
-        paymentMethod: this.paymentMethod,
+    return this.resolve.onDeleteValidate()
+      .then(() => this.modalInstance.close(_.merge(redirectToParams, {
+        paymentMethod: this.resolve.paymentMethod,
       })))
-      .catch(error => this.$uibModalInstance.dismiss(_.merge(redirectToParams, {
+      .catch(error => this.modalInstance.dismiss(_.merge(redirectToParams, {
         error,
       })))
       .finally(() => {

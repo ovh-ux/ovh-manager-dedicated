@@ -6,12 +6,12 @@
                data-primary-label="{{ 'common_confirm' | translate }}"
                data-primary-action="$ctrl.onPrimaryActionClick()"
                data-secondary-label="{{ 'common_cancel' | translate }}"
-               data-secondary-action="$ctrl.$uibModalInstance.dismiss()"
-               data-on-dismiss="$ctrl.$uibModalInstance.dismiss()"
+               data-secondary-action="$ctrl.modalInstance.dismiss()"
+               data-on-dismiss="$ctrl.modalInstance.dismiss()"
                data-loading="$ctrl.loading.save">
 
         <p data-translate="billing_payment_method_default_explain"
-           data-translate-values="{ label: $ctrl.paymentMethod.label }">
+           data-translate-values="{ label: $ctrl.resolve.paymentMethod.label }">
         </p>
         <p data-translate="billing_payment_method_default_question"></p>
 

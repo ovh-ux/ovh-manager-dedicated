@@ -2,24 +2,14 @@ import { ALERTER_ID } from './constants';
 
 export default class BillingPaymentMethodCtrl {
   /* @ngInject */
-
-  constructor($q, $state, $timeout, $translate, $uibModal, Alerter, guides, message,
-    OVH_PAYMENT_MEAN_STATUS, OVH_PAYMENT_METHOD_TYPE,
-    ovhPaymentMethod, ovhPaymentMethodHelper, paymentMethods) {
+  constructor($timeout, Alerter, OVH_PAYMENT_MEAN_STATUS, OVH_PAYMENT_METHOD_TYPE,
+    ovhPaymentMethodHelper) {
     // dependencies injections
-    this.$q = $q;
-    this.$state = $state;
     this.$timeout = $timeout;
-    this.$translate = $translate;
-    this.$uibModal = $uibModal;
     this.Alerter = Alerter;
-    this.guides = guides;
-    this.message = message;
     this.OVH_PAYMENT_MEAN_STATUS = OVH_PAYMENT_MEAN_STATUS;
     this.OVH_PAYMENT_METHOD_TYPE = OVH_PAYMENT_METHOD_TYPE;
-    this.ovhPaymentMethod = ovhPaymentMethod;
     this.ovhPaymentMethodHelper = ovhPaymentMethodHelper;
-    this.paymentMethods = paymentMethods;
 
     // other attributes used in views
     this.ALERTER_ID = ALERTER_ID;
@@ -79,7 +69,3 @@ export default class BillingPaymentMethodCtrl {
 
   /* -----  End of INITIALIZATION  ------ */
 }
-
-angular
-  .module('Billing')
-  .controller('BillingPaymentMethodCtrl', BillingPaymentMethodCtrl);
