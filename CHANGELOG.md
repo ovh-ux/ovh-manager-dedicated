@@ -1,3 +1,13 @@
+<a name="10.28.1"></a>
+## [10.28.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.0...v10.28.1) (2019-09-05)
+
+
+### Bug Fixes
+
+* redirect old aurorenew url ([1c296af](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1c296af))
+
+
+
 <a name="10.28.0"></a>
 # [10.28.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.27.0...v10.28.0) (2019-09-05)
 
