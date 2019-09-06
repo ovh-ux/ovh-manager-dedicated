@@ -1,3 +1,13 @@
+<a name="10.28.2"></a>
+## [10.28.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.1...v10.28.2) (2019-09-06)
+
+
+### Bug Fixes
+
+* pagination works correctly on services page ([f6f6110](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f6f6110))
+
+
+
 <a name="10.28.1"></a>
 ## [10.28.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.0...v10.28.1) (2019-09-05)
 
