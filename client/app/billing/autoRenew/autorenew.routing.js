@@ -139,7 +139,7 @@ export default /* @ngInject */ ($stateProvider, coreConfigProvider) => {
         sort,
       ) => BillingAutoRenew.getServices(
         pageSize,
-        pageNumber - 1,
+        pageSize * (pageNumber - 1),
         searchText,
         selectedType,
         filters.expiration,
