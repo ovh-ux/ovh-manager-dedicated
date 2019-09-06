@@ -19,13 +19,13 @@
         }"
         data-translate="{{ :: 'confirm_order_question_monthly_' + $ctrl.addingOrDeducting }}"
         data-translate-values=":: {
-            price: $ctrl.prices.monthly.display,
+            price: $ctrl.monthly,
         }"></p>
     <p
         data-ng-if=":: $ctrl.prices.hourly.exists"
         data-translate="{{ :: 'confirm_order_question_hourly_' + $ctrl.addingOrDeducting }}"
         data-translate-values=":: {
-            price: $ctrl.prices.hourly.display,
+            price: $ctrl.hourly,
         }"></p>
 
     <p data-translate="confirm_order_question_confirm"></p>

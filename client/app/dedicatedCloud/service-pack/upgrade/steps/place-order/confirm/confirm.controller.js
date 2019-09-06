@@ -24,10 +24,10 @@ export default class {
       ? 'adding'
       : 'deducting';
 
-    this.prices.hourly.display = this.prices.hourly.exists
+    this.hourly = this.prices.hourly.exists
       && this.prices.hourly.display.substr(1);
 
-    this.prices.monthly.display = this.prices.monthly.exists
+    this.monthly = this.prices.monthly.exists
       && this.prices.monthly.display.substr(1);
   }
 }

@@ -204,7 +204,10 @@ export const ServicePackService = class ServicePack {
           servicePacks,
           (servicePack) => {
             const price = _.reduce(
-              hosts,
+              _.filter(
+                hosts,
+                host => host.billingType !== 'freeSpare',
+              ),
               (acc, host) => {
                 const pricing = ServicePack.getPricingFromPricingsForServicePackName(
                   ServicePack.getPricingsFromAddonsForPlanCode(
