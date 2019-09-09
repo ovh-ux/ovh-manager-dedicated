@@ -8160,10 +8160,9 @@ ovh-module-exchange@^9.4.7:
     filesize "^3.6.1"
     lodash "~3.9.3"
 
-ovh-ui-angular@^3.7.4:
+"ovh-ui-angular@git+https://github.com/ovh-ux/ovh-ui-angular#fix/remove-href-otb":
   version "3.7.4"
-  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-3.7.4.tgz#fa211e2a4445c83fcf973ad596637be859a67d13"
-  integrity sha512-b6a0G4F1seoivqTY9sczjF8P2DlqZcqCdCSxFl6cq4HGVDqGcTZ/Su5gRGOsBP4CmmuvXjCsS7Veno8fPqISkw==
+  resolved "git+https://github.com/ovh-ux/ovh-ui-angular#14970fa015fed6133ac27d698a4fa5b334596639"
   dependencies:
     bloodhound-js "^1.2.3"
     clipboard "^2.0.1"
