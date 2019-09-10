@@ -1,3 +1,38 @@
+<a name="10.26.2"></a>
+## [10.26.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.26.1...v10.26.2) (2019-08-27)
+
+
+
+<a name="10.26.1"></a>
+## [10.26.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.26.0...v10.26.1) (2019-08-21)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** handle if autorenew has never been active ([#1348](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1348)) ([d135d76](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d135d76))
+
+
+
+<a name="10.26.0"></a>
+# [10.26.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.25.1...v10.26.0) (2019-08-21)
+
+
+### Features
+
+* **at-internet:** add missing data (country, currency) ([#1345](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1345)) ([c7ee0ba](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c7ee0ba))
+
+
+
+<a name="10.25.1"></a>
+## [10.25.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.25.0...v10.25.1) (2019-08-20)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations [CDS 23] ([2ff8c78](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2ff8c78))
+
+
+
 <a name="10.25.0"></a>
 # [10.25.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.24.1...v10.25.0) (2019-08-20)
 
