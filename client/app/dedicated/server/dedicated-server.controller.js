@@ -243,10 +243,10 @@ angular.module('App').controller('ServerCtrl', (
       .allSettled([
         Server.getSelected($stateParams.productId),
         Server.getServiceInfos($stateParams.productId),
+        Server.getVrackInfos($stateParams.productId),
       ])
       .then((data) => {
-        const server = data[0];
-        const serviceInfos = data[1];
+        const [server, serviceInfos, vrackInfos] = data;
 
         const expiration = moment.utc(server.expiration);
         _.set(server, 'expiration', moment([expiration.year(), expiration.month(), expiration.date()]).toDate());
@@ -266,6 +266,7 @@ angular.module('App').controller('ServerCtrl', (
           rack: $scope.server.rack,
           serverId: $scope.server.serverId,
         };
+        $scope.vrackInfos = vrackInfos;
 
         $scope.loadingServerInformations = false;
         $scope.isHousing = isHousing(server);
