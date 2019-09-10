@@ -1,14 +1,11 @@
-angular.module('Billing.services').service('BillingAutoRenew', [
-  '$q',
-  'OvhApiEmailExchange',
-  'OvhHttp',
-  function ($q, OvhApiEmailExchange, OvhHttp) {
+angular.module('Billing.services').service('BillingAutoRenew',
+  /* @ngInject */
+  function ($q, $rootScope, OvhApiEmailExchange, OvhHttp, OvhApiMeAutorenewV6) {
     const AUTORENEW_CONTRACT_CA = 1752;
     const AUTORENEW_CONTRACT_WE = 1754;
     const AUTORENEW_CONTRACT_WS = 1755;
     const AUTORENEW_CONTRACT_QC = 1753;
 
-    const nicRenewUrl = '/me/autorenew';
     const self = this;
 
     this.getAutorenewContractIds = () => [
@@ -112,22 +109,15 @@ angular.module('Billing.services').service('BillingAutoRenew', [
       return $q.reject(result);
     });
 
-    this.getAutorenew = () => OvhHttp.get(nicRenewUrl, {
-      rootPath: 'apiv6',
-    });
+    this.getAutorenew = () => OvhApiMeAutorenewV6.query().$promise;
 
-    this.putAutorenew = renewParam => OvhHttp.put(nicRenewUrl, {
-      rootPath: 'apiv6',
-      data: renewParam,
-      broadcast: self.events.AUTORENEW_CHANGED,
-    });
+    this.putAutorenew = renewParam => OvhApiMeAutorenewV6.update(renewParam).$promise
+      .then((result) => {
+        $rootScope.$broadcast(self.events.AUTORENEW_CHANGED);
+        return result;
+      });
 
-    this.enableAutorenew = renewDay => OvhHttp.post(nicRenewUrl, {
-      rootPath: 'apiv6',
-      data: {
-        renewDay,
-      },
-    });
+    this.enableAutorenew = renewDay => OvhApiMeAutorenewV6.create(renewDay).$promise;
 
     this.disableAutoRenewForDomains = () => OvhHttp.post('/me/manualDomainPayment', {
       rootPath: 'apiv6',
@@ -171,5 +161,4 @@ angular.module('Billing.services').service('BillingAutoRenew', [
         exchange,
       }).$promise
     );
-  },
-]);
+  });

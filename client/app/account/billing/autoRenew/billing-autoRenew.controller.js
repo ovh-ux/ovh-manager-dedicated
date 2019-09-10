@@ -166,12 +166,16 @@ angular.module('Billing.controllers').controller('Billing.controllers.AutoRenew'
 
           return AutoRenew.getAutorenew()
             .then(({ active, renewDay }) => {
-              $scope.nicRenew.initialized = true;
               $scope.nicRenew.active = active;
               $scope.nicRenew.renewDay = renewDay;
             })
             .catch((error) => {
-              $scope.nicRenew.error = error.statusText;
+              if (error.status === 404) {
+                $scope.nicRenew.initialized = true;
+                $scope.nicRenew.active = false;
+              } else {
+                $scope.nicRenew.error = error.statusText;
+              }
             })
             .finally(() => {
               $scope.nicRenew.loading = false;
