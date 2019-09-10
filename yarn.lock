@@ -4857,9 +4857,9 @@ forever-agent@~0.6.1:
   integrity sha1-+8cfDEGt6zf5bFd60e1C2P2sypE=
 
 form-data@^2.3.1:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/form-data/-/form-data-2.5.0.tgz#094ec359dc4b55e7d62e0db4acd76e89fe874d37"
-  integrity sha512-WXieX3G/8side6VIqx44ablyULoGruSde5PNTxoUyo5CeyAMX6nVWUd0rgist/EuX655cjhUhTo1Fo3tRYqbcA==
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/form-data/-/form-data-2.5.1.tgz#f2cbec57b5e59e23716e128fe44d4e5dd23895f4"
+  integrity sha512-m21N3WOmEEURgk6B9GLOE4RuWOFf28Lhh9qGYeNlGq4VDXUlJy2th2slBNU8Gp8EzloYZOibZJ7t5ecIrFSjVA==
   dependencies:
     asynckit "^0.4.0"
     combined-stream "^1.0.6"
@@ -8160,9 +8160,10 @@ ovh-module-exchange@^9.4.7:
     filesize "^3.6.1"
     lodash "~3.9.3"
 
-"ovh-ui-angular@git+https://github.com/ovh-ux/ovh-ui-angular#fix/remove-href-otb":
-  version "3.7.4"
-  resolved "git+https://github.com/ovh-ux/ovh-ui-angular#14970fa015fed6133ac27d698a4fa5b334596639"
+ovh-ui-angular@^3.7.6:
+  version "3.7.6"
+  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-3.7.6.tgz#542636e472426a1db07cbb4392d86d08e0c00e2f"
+  integrity sha512-Nq+BfbztNUB5cldCEDGazTS2lgtK21HUREkyZKlUxnyVW4DX2+MIUplABXrd1XXhv+cSCrTxgbSQz+Y8rMGCqw==
   dependencies:
     bloodhound-js "^1.2.3"
     clipboard "^2.0.1"
