@@ -1,0 +1,13 @@
+<div data-ng-controller="DedicatedServerInterfacesCtrl as $ctrl">
+    <h3>Physical interfaces</h3>
+    <div data-ng-repeat="interface in $ctrl.physicalInterfaces">
+        <span data-ng-bind="interface.mac"></span>&nbsp;
+        <span data-ng-bind="interface.linkType"></span>
+    </div>
+    <h3>Virtual interfaces</h3>
+    <div data-ng-repeat="interface in $ctrl.virtualInterfaces">
+        <span data-ng-bind="interface.uuid"></span>&nbsp;
+        <span data-ng-bind="interface.name"></span>&nbsp;
+        <span data-ng-bind="interface.mode"></span>
+    </div>
+</div>
