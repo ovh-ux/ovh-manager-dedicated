@@ -11,8 +11,6 @@ export const MIN_DOMAIN_LENGTH = 50;
 
 export const NIC_ALL = 'billing_autorenew_nic_all';
 
-export const NIC_URL = '/me/autorenew';
-
 export const RENEW_URL = {
   default: '/cgi-bin/order/renew.cgi?domainChooser=',
   CA: 'https://ca.ovh.com/fr/cgi-bin/order/renew.cgi?domainChooser=',
@@ -58,7 +56,6 @@ export default {
   CONTRACTS_IDS,
   MIN_DOMAIN_LENGTH,
   NIC_ALL,
-  NIC_URL,
   RENEW_URL,
   SERVICE_EXPIRATION,
   SERVICE_STATUS,
