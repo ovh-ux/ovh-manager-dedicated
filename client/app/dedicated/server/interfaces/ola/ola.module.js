@@ -4,7 +4,7 @@ import routing from './ola.routing';
 const moduleName = 'ovhManagerDedicatedServerInterfacesOla';
 
 angular
-  .module('App')
+  .module(moduleName, [])
   .config(routing)
   .component('dedicatedServerInterfacesOla', component);
 
