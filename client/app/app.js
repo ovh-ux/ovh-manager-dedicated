@@ -117,7 +117,6 @@ angular
     FALLBACK_LANGUAGE: config.constants.FALLBACK_LANGUAGE,
     SUPPORT: config.constants.SUPPORT,
   })
-  .constant('LANGUAGES', config.constants.LANGUAGES)
   .constant('website_url', config.constants.website_url)
   .config(/* @ngInject */(ovhProxyRequestProvider) => {
     ovhProxyRequestProvider.proxy('$http');
