@@ -7,7 +7,7 @@ export default class UserAccountDashoardCtrl {
   /* @ngInject */
 
   constructor($translate, lastBill, supportLevel, user) {
-    this.lastBill = _.first(lastBill);
+    this.lastBill = _.first(lastBill.data);
     this.supportLevel = supportLevel;
     this.user = user;
     this.$translate = $translate;

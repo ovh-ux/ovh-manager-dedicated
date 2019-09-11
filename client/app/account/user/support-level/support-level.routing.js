@@ -20,6 +20,10 @@ angular
           .v6()
           .supportLevel()
           .$promise,
+        me: /* @ngInject */ OvhApiMe => OvhApiMe
+          .v6()
+          .get()
+          .$promise,
         schema: /* @ngInject */ OvhApiMe => OvhApiMe
           .v6()
           .schema()
