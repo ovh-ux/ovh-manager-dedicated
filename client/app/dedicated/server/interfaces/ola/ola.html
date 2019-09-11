@@ -1,0 +1,144 @@
+<oui-back-button data-on-click="$ctrl.goBack()">
+    <span data-translate="dedicated_server_interfaces_ola_tile"></span>
+</oui-back-button>
+
+<p data-translate="dedicated_server_interfaces_ola_description"></p>
+
+<oui-message class="mb-3" data-type="info">
+    <p>
+        <span data-translate="dedicated_server_interfaces_ola_alert_configuration_needed"></span>
+        <a
+            data-ng-href=""
+            data-translate="dedicated_server_interfaces_ola_alert_configuration_needed_link">
+        </a>
+    </p>
+</oui-message>
+
+<oui-message class="mb-3" data-type="warning">
+    <p data-translate="dedicated_server_interfaces_ola_alert_configuration_reset"></p>
+</oui-message>
+
+<oui-stepper>
+    <oui-step-form
+        data-header="{{:: 'dedicated_server_interfaces_ola_step1_title' | translate }}"
+        data-description="{{:: 'dedicated_server_interfaces_ola_field_mode_description' | translate }}">
+        <oui-field data-label="{{:: 'dedicated_server_interfaces_ola_field_mode_label' | translate }}">
+            <div class="row">
+                <div class="col-md-4"
+                    data-ng-repeat="mode in $ctrl.olaModes track by $index">
+                    <oui-radio
+                        class="h-100"
+                        name="mode"
+                        data-description="{{:: 'dedicated_server_interfaces_ola_field_mode_choice_' + mode + '_description' | translate}}"
+                        data-model="$ctrl.configuration.mode"
+                        data-value="mode"
+                        data-thumbnail>
+                        <span data-translate="{{ 'dedicated_server_interfaces_ola_field_mode_choice_' + mode }}"></span>
+                    </oui-radio>
+                </div>
+            </div>
+        </oui-field>
+        <oui-field data-label="{{:: 'dedicated_server_interfaces_ola_field_name_label' | translate}}">
+            <input class="oui-input"
+                name="name"
+                type="text"
+                autocomplete="off"
+                placeholder="{{:: 'dedicated_server_interfaces_ola_field_name_placeholder' | translate }}"
+                data-ng-model="$ctrl.configuration.name"
+                data-required>
+        </oui-field>
+    </oui-step-form>
+    <oui-step-form
+        data-header="{{:: 'dedicated_server_interfaces_ola_step2_title' | translate }}"
+        data-description="{{:: 'dedicated_server_interfaces_ola_step2_description' | translate }}"
+        data-valid="!!$ctrl.selectedInterfaces.length"
+        data-prevent-next>
+        <oui-message class="mb-3"
+            data-type="warning">
+            <p data-translate="dedicated_server_interfaces_ola_alert_option_obsolete"></p>
+        </oui-message>
+
+        <oui-datagrid
+            data-rows="$ctrl.interfaces"
+            data-on-row-select="$ctrl.onRowSelect($rows)"
+            data-selectable-rows>
+            <oui-column
+                data-title=":: 'dedicated_server_interfaces_ola_column_name' | translate"
+                data-property="name">
+            </oui-column>
+            <oui-column
+                data-title=":: 'dedicated_server_interfaces_ola_column_current_mode' | translate"
+                data-property="mode">
+            </oui-column>
+            <oui-column
+                data-title=":: 'dedicated_server_interfaces_ola_column_network_offer' | translate"
+                data-property="offer">
+                <span class="oui-status oui-status_warning"
+                    data-ng-if="$row.mode === 'public' && $value !== 'included'">
+                    <span class="oui-icon oui-icon-warning_circle oui-color-warning-medium font-inherit"></span>
+                    <span data-ng-bind="'server_bandwidth_type_' + $value | translate"></span>
+                </span>
+                <span
+                    data-ng-if="$row.mode !== 'public' || $value === 'included'"
+                    data-ng-bind="'server_bandwidth_type_' + $value | translate">
+                </span>
+            </oui-column>
+            <oui-column
+                data-title=":: 'dedicated_server_interfaces_ola_column_bandwidth_outgoing' | translate"
+                data-property="bandwidth.outgoing">
+                <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
+                <span data-ng-bind="$row.bandwidth.outgoing | ducBandwidth"></span>
+            </oui-column>
+            <oui-column
+                data-title=":: 'dedicated_server_interfaces_ola_column_bandwidth_incoming' | translate"
+                data-property="bandwidth.incoming">
+                <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
+                <span data-ng-bind="$row.bandwidth.incoming | ducBandwidth"></span>
+            </oui-column>
+        </oui-datagrid>
+    </oui-step-form>
+    <oui-step-form
+        data-header="{{:: 'dedicated_server_interfaces_ola_step3_title' | translate }}">
+
+        <!-- Not a datgagrid component because rowspan -->
+        <table class="oui-datagrid">
+            <thead class="oui-datagrid__headers">
+                <tr>
+                    <th class="oui-datagrid__header"
+                        data-translate="dedicated_server_interfaces_ola_column_mode">
+                    </th>
+                    <th class="oui-datagrid__header"
+                        data-translate="dedicated_server_interfaces_ola_column_name">
+                    </th>
+                    <th class="oui-datagrid__header"
+                        data-translate="dedicated_server_interfaces_ola_column_bandwidth_outgoing">
+                    </th>
+                    <th class="oui-datagrid__header"
+                        data-translate="dedicated_server_interfaces_ola_column_bandwidth_incoming">
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="oui-datagrid__row"
+                    data-ng-repeat="interface in $ctrl.selectedInterfaces">
+                    <td class="oui-datagrid__cell"
+                        rowspan="{{ $ctrl.selectedInterfaces.length }}"
+                        data-ng-if="!$index"
+                        data-ng-bind="'dedicated_server_interfaces_ola_field_mode_choice_' + $ctrl.configuration.mode | translate">
+                    </td>
+                    <td class="oui-datagrid__cell"
+                        data-ng-bind="interface.name">
+                    </td>
+                    <td class="oui-datagrid__cell">
+                        <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
+                        <span data-ng-bind="interface.bandwidth.outgoing | ducBandwidth"></span>
+                    </td>
+                    <td class="oui-datagrid__cell">
+                        <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
+                        <span data-ng-bind="interface.bandwidth.incoming | ducBandwidth"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </oui-step-form>
+</oui-stepper>
