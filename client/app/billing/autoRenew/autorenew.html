@@ -169,7 +169,8 @@
                 data-property="status"
                 data-type="options"
                 data-type-options="$ctrl.filtersOptions.status"
-                data-filterable>
+                data-filterable
+>
                 <span class="oui-status oui-status_error"
                     data-ng-if="$row.hasDebt()"
                     data-translate="billing_autorenew_service_status_pending_debt">
@@ -184,7 +185,8 @@
                 data-property="expiration"
                 data-type="options"
                 data-type-options="$ctrl.filtersOptions.expiration"
-                data-filterable>
+                data-filterable
+                data-sortable>
                 <span data-ng-if="$row.isOneShot()">-</span>
                 <span
                     data-ng-if="$row.hasManualRenew() && !$row.isResiliated() || $row.hasDebt()"
