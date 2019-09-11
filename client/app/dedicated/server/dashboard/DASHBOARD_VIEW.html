@@ -539,9 +539,9 @@
                                     data-translate="server_bandwidth_option_released">
                                 </small>
                             </p>
-                            <p>
-                                <!-- Outgoing Bandwidth -->
-                                <span class="mr-3">
+                            <div class="row">
+                                <div class="col-6">
+                                    <!-- Outgoing Bandwidth -->
                                     <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
                                     <span data-ng-bind="bandwidth.bandwidth.OvhToInternet | ducBandwidth"></span>
                                     <span data-translate="server_bandwidth_outgoing"></span>
@@ -553,13 +553,14 @@
                                             data-oui-tooltip-placement="top">
                                         </span>
                                     </span>
-                                </span>
-
-                                <!-- Incoming Bandwidth -->
-                                <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
-                                <span data-ng-bind="bandwidth.bandwidth.InternetToOvh | ducBandwidth"></span>
-                                <span data-translate="server_bandwidth_incoming"></span>
-                            </p>
+                                </div>
+                                <div class="col-6">
+                                    <!-- Incoming Bandwidth -->
+                                    <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
+                                    <span data-ng-bind="bandwidth.bandwidth.InternetToOvh | ducBandwidth"></span>
+                                    <span data-translate="server_bandwidth_incoming"></span>
+                                </div>
+                            </div>
                         </oui-tile-description>
                        <oui-action-menu
                             aria-label="{{:: 'menu_action_label' | translate:{ t0: ('server_bandwidth_type' | translate) } }}"
@@ -593,23 +594,26 @@
                                 <strong data-translate="server_bandwidth_type"></strong>
                                 <span data-translate="{{:: 'server_bandwidth_type_' + bandwidth.vrack.type}}"></span>
                             </p>
-                            <p>
-                                <!-- Outgoing Bandwidth -->
-                                <span class="mr-3">
-                                    <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
+                            <div class="row">
+                                <div class="col-6">
+                                    <!-- Outgoing Bandwidth -->
+                                    <span class="mr-3">
+                                        <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
+                                        <span data-ng-bind="bandwidth.vrack.bandwidth | ducBandwidth"></span>
+                                        <span data-translate="server_bandwidth_outgoing"></span>
+                                        <small class="oui-tile__extra"
+                                            data-ng-if="bandwidthVrackOption === 'released'"
+                                            data-translate="server_bandwidth_vrack_option_released">
+                                        </small>
+                                    </span>
+                                </div>
+                                <div class="col-6">
+                                    <!-- Incoming Bandwidth -->
+                                    <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
                                     <span data-ng-bind="bandwidth.vrack.bandwidth | ducBandwidth"></span>
-                                    <span data-translate="server_bandwidth_outgoing"></span>
-                                    <small class="oui-tile__extra"
-                                        data-ng-if="bandwidthVrackOption === 'released'"
-                                        data-translate="server_bandwidth_vrack_option_released">
-                                    </small>
-                                </span>
-
-                                <!-- Incoming Bandwidth -->
-                                <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
-                                <span data-ng-bind="bandwidth.vrack.bandwidth | ducBandwidth"></span>
-                                <span data-translate="server_bandwidth_incoming"></span>
-                            </p>
+                                    <span data-translate="server_bandwidth_incoming"></span>
+                                </div>
+                            </div>
                         </oui-tile-description>
                         <oui-action-menu
                             aria-label="{{:: 'menu_action_label' | translate:{ t0: ('server_bandwidth_vrack' | translate) } }}"
@@ -689,13 +693,15 @@
                             <span data-ng-if="!vrackInfos.length"
                                 data-translate="server_vrack_none">
                             </span>
-                            <ul class="list-unstyled"
-                                data-ng-if="vrackInfos.length">
-                                <li data-ng-repeat="vrack in vrackInfos track by $index">
-                                    <span data-ng-bind="vrack.name || vrack.serviceName"></span>
-                                    (<span data-ng-bind="vrack.description"></span>)
-                                </li>
-                            </ul>
+                            <div class="oui-list">
+                                <ul class="oui-list__items"
+                                    data-ng-if="vrackInfos.length">
+                                    <li class="oui-list__item" data-ng-repeat="vrack in vrackInfos track by $index">
+                                        <span data-ng-bind="vrack.name || vrack.serviceName"></span>
+                                        (<span data-ng-bind="vrack.description"></span>)
+                                    </li>
+                                </ul>
+                            </div>
                         </oui-tile-description>
                     </oui-tile-definition>
 
