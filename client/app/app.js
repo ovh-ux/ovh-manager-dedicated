@@ -33,6 +33,7 @@ import ovhManagerPccResourceUpgrade from './dedicatedCloud/resource/upgrade';
 import preload from './components/manager-preload/manager-preload.module';
 
 import dedicatedServerServers from './dedicated/server/servers/servers.module';
+import dedicatedServerInterfaces from './dedicated/server/interfaces/interfaces.module';
 
 Environment.setRegion(__WEBPACK_REGION__);
 
@@ -46,6 +47,7 @@ angular
     contactsService,
     dedicatedCloudDatacenterDrp,
     dedicatedServerServers,
+    dedicatedServerInterfaces,
     dedicatedUniverseComponents,
     'directives',
     errorPage,
