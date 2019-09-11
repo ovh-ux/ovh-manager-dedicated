@@ -1,3 +1,21 @@
+<a name="10.28.3"></a>
+## [10.28.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.2...v10.28.3) (2019-09-11)
+
+
+### Bug Fixes
+
+* add missing translations for language fr_FR ([0c59cd1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0c59cd1))
+* **rtm:** add missing lodash import ([2151675](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2151675))
+
+
+### Features
+
+* **autorenew:** add manual renew action ([#1379](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1379)) ([bf79ccc](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bf79ccc))
+* add manager banner ([#1383](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1383)) ([d9b905d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/d9b905d))
+* allow sorting by effect date ([049435b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/049435b))
+
+
+
 <a name="10.28.2"></a>
 ## [10.28.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.1...v10.28.2) (2019-09-06)
 
