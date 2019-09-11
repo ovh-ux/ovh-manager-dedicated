@@ -1,13 +1,16 @@
 <div data-ng-controller="DedicatedServerInterfacesCtrl as $ctrl">
-    <h3>Physical interfaces</h3>
-    <div data-ng-repeat="interface in $ctrl.physicalInterfaces">
-        <span data-ng-bind="interface.mac"></span>&nbsp;
-        <span data-ng-bind="interface.linkType"></span>
-    </div>
-    <h3>Virtual interfaces</h3>
-    <div data-ng-repeat="interface in $ctrl.virtualInterfaces">
-        <span data-ng-bind="interface.uuid"></span>&nbsp;
-        <span data-ng-bind="interface.name"></span>&nbsp;
-        <span data-ng-bind="interface.mode"></span>
-    </div>
+    <oui-datagrid data-rows="$ctrl.interfaces">
+        <oui-column data-title="'Name'" data-property="name">
+            <span data-ng-bind="$row.name"></span>
+        </oui-column>
+        <oui-column data-title="'Type'" data-property="type">
+            <span data-ng-bind="$row.type"></span>
+        </oui-column>
+        <oui-column data-title="'Adresse MAC'" data-property="mac">
+            <span data-ng-bind="$row.mac"></span>
+        </oui-column>
+        <oui-column data-title="'Réseau privé'" data-property="vrack">
+            <span data-ng-bind="$row.vrack"></span>
+        </oui-column>
+    </oui-datagrid>
 </div>
