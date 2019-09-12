@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import Interface from './interface.class';
 
 export default class DedicatedServerInterfaceService {
@@ -26,7 +27,7 @@ export default class DedicatedServerInterfaceService {
         const vniUUids = _.uniq(
           _.map(
             nics.filter(
-              ({ virtualNetworkInterface }) => virtualNetworkInterface !== null,
+              ({ virtualNetworkInterface }) => _.isString(virtualNetworkInterface),
             ),
             'virtualNetworkInterface',
           ),
