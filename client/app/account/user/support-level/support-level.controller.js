@@ -1,22 +1,18 @@
 import _ from 'lodash';
 import { URLS } from './support-level.constants';
+import SupportLevel from './SupportLevel.class';
 
 export default class UserAccountSupportLevelCtrl {
-  /* @ngInject */
-
-  constructor(me, schema, supportLevel) {
-    this.supportLevelsEnum = _.get(schema.models, 'me.SupportLevel.LevelTypeEnum').enum;
-    this.supportLevel = supportLevel;
-    this.me = me;
-    this.supportLevels = this.supportLevelsEnum.map(level => ({
+  $onInit() {
+    this.supportLevelsEnum = _.get(this.schema.models, 'me.SupportLevel.LevelTypeEnum').enum;
+    this.supportLevels = this.supportLevelsEnum.map(level => new SupportLevel({
       name: level,
-      url: _.get(URLS, `${this.me.ovhSubsidiary.toUpperCase()}.${level}`, `FR.${level}`),
-      isRecommended: level === 'premium',
-      isActive: level !== 'premium-accredited',
+      url: _.get(URLS, `${this.currentUser.ovhSubsidiary.toUpperCase()}.${level}`, `FR.${level}`),
     }));
   }
 
-  $onInit() {
-    this.loading = false;
+  getRecommendedLevel() {
+    const currentLevelIndex = this.supportLevelsEnum.indexOf(this.supportLevel.level);
+    return _.get(_.find(_.slice(this.supportLevels, currentLevelIndex + 1), level => level.isAvailable()), 'name');
   }
 }
