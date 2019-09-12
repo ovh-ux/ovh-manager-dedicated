@@ -1,12 +1,139 @@
-<div class="ola-step-checker" data-ng-if="$ctrl.ola.available">
-    <h4 data-ng-translate="dedicated_server_interfaces_ola_title"></h4>
-    <div class="ola-step-checker__container">
-        <div class="ola-step-checker__step-container">
-            <div class="ola-step-checker__steps"></div>
-            <oui-button data-variant="primary"
-                        data-ng-translate="dedicated_server_interfaces_ola_activate">
-            </oui-button>
+<h2 data-translate="dedicated_server_interfaces_step_checker_title"></h2>
+
+<!-- Not activated -->
+<oui-tile class="mb-5">
+    <div class="row">
+        <div class="col-md-3">
+            <ul>
+                <li data-translate="dedicated_server_interfaces_step_checker_list_connectivity"></li>
+                <li data-translate="dedicated_server_interfaces_step_checker_list_security"></li>
+                <li data-translate="dedicated_server_interfaces_step_checker_list_reversible"></li>
+                <li data-translate="dedicated_server_interfaces_step_checker_list_free"></li>
+            </ul>
         </div>
-        <div class="ola-step-checker__page"></div>
+        <div class="col-md-9">
+            <p data-translate="dedicated_server_interfaces_step_checker_text1"></p>
+            <p data-translate="dedicated_server_interfaces_step_checker_text2"></p>
+            <p data-translate="dedicated_server_interfaces_step_checker_text3"></p>
+            <p data-translate="dedicated_server_interfaces_step_checker_text4"></p>
+            <p>
+                <oui-button data-variant="primary">
+                    <span data-translate="dedicated_server_interfaces_step_checker_activate"></span>
+                </oui-button>
+            </p>
+            <!-- Guides -->
+            <p>
+                <span data-translate="dedicated_server_interfaces_step_checker_guides_text"></span>
+                <a href="" data-translate="dedicated_server_interfaces_step_checker_guides_link"></a>
+            </p>
+        </div>
+    </div>
+</oui-tile>
+
+<!-- Step Checker -->
+<oui-tile class="mb-5">
+    <div class="row">
+        <div class="col-md-3">
+            <ul>
+                <li data-translate="dedicated_server_interfaces_step_checker_step1"></li>
+                <li data-translate="dedicated_server_interfaces_step_checker_step2"></li>
+                <li data-translate="dedicated_server_interfaces_step_checker_step3"></li>
+                <li data-translate="dedicated_server_interfaces_step_checker_step4"></li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+
+            <!-- Step 1: Network interfaces -->
+            <div>
+                <p data-translate="dedicated_server_interfaces_step_checker_step1_text1"></p>
+                <p data-translate="dedicated_server_interfaces_step_checker_step1_text2"></p>
+                <p>
+                    <oui-button data-variant="primary">
+                        <span data-translate="dedicated_server_interfaces_step_checker_step1_button"></span>
+                    </oui-button>
+                </p>
+            </div>
+
+            <!-- Step 2: Configuration -->
+            <div>
+                <p data-translate="dedicated_server_interfaces_step_checker_step2_text"></p>
+                <p>
+                    <oui-button data-variant="primary"
+                        data-on-click="$ctrl.goToOlaConfiguration()">
+                        <span data-translate="dedicated_server_interfaces_step_checker_step2_button"></span>
+                    </oui-button>
+                </p>
+            </div>
+
+            <!-- Step 3: KVM IPMI -->
+            <div>
+                <p data-translate="dedicated_server_interfaces_step_checker_step3_text1"></p>
+                <p data-translate="dedicated_server_interfaces_step_checker_step3_text2"></p>
+                <p>
+                    <oui-button data-variant="primary">
+                        <span data-translate="dedicated_server_interfaces_step_checker_step3_button"></span>
+                    </oui-button>
+                </p>
+            </div>
+
+            <!-- Step 4: Ready -->
+            <div>
+                <p data-translate="dedicated_server_interfaces_step_checker_step4_text1"></p>
+                <p data-translate="dedicated_server_interfaces_step_checker_step4_text2"></p>
+                <p>
+                    <oui-button data-variant="primary">
+                        <span data-translate="dedicated_server_interfaces_step_checker_step4_button"></span>
+                    </oui-button>
+                </p>
+            </div>
+
+            <!-- Guides -->
+            <p>
+                <span data-translate="dedicated_server_interfaces_step_checker_guides_text"></span>
+                <a href="" data-translate="dedicated_server_interfaces_step_checker_guides_link"></a>
+            </p>
+        </div>
+    </div>
+</oui-tile>
+
+<!-- Activated -->
+<div>
+    <oui-message class="mb-3" data-type="info">
+        <p>
+            <span data-translate="dedicated_server_interfaces_ola_alert_configuration_needed"></span>
+            <a
+                data-ng-href=""
+                data-translate="dedicated_server_interfaces_ola_alert_configuration_needed_link">
+            </a>
+        </p>
+    </oui-message>
+
+    <p>
+        <span data-translate="dedicated_server_interfaces_ola_activated_text"></span><br />
+        <a
+            data-ng-href=""
+            data-translate="dedicated_server_interfaces_ola_activated_link"></a>
+    </p>
+
+    <div class="row">
+        <div class="col-md-4">
+            <oui-tile class="mb-5">
+                <!-- OLA -->
+                <oui-tile-definition
+                    data-term="{{:: 'server_ola' | translate}}">
+                    <oui-tile-description>
+                        TODO
+                    </oui-tile-description>
+                </oui-tile-definition>
+
+                <!-- OLA -->
+                <oui-tile-definition
+                    data-term="{{:: 'server_ola_mode' | translate}}">
+                    <oui-tile-description>
+                        TODO
+                    </oui-tile-description>
+                </oui-tile-definition>
+            </oui-tile>
+        </div>
     </div>
 </div>

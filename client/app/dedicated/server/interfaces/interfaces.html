@@ -5,12 +5,31 @@
     <a data-translate="dedicated_server_interfaces_vrack_information_link_label"></a>
 </p>
 
-<ola-step-checker data-ola="{ available: true, supportedModes: [] }"></ola-step-checker>
+<ola-step-checker
+    data-ola="{ available: true, supportedModes: [] }">
+</ola-step-checker>
 
 <h2 data-translate="dedicated_server_interfaces_bandwith_title"></h2>
 <p data-translate="dedicated_server_interfaces_bandwith_description"></p>
-<p data-translate="dedicated_server_interfaces_bandwith_public"></p>
-<p data-translate="dedicated_server_interfaces_bandwith_private"></p>
+
+<div class="row">
+    <div class="col-md-4">
+        <oui-tile>
+            <oui-tile-definition
+                data-term="{{:: 'dedicated_server_interfaces_bandwith_public' | translate }}">
+                <oui-tile-description>
+                    TODO
+                </oui-tile-description>
+            </oui-tile-definition>
+            <oui-tile-definition
+                data-term="{{:: 'dedicated_server_interfaces_bandwith_private' | translate }}">
+                <oui-tile-description>
+                    TODO
+                </oui-tile-description>
+            </oui-tile-definition>
+        </oui-tile>
+    </div>
+</div>
 
 
 <h2 data-translate="dedicated_server_interfaces_list_title"></h2>
