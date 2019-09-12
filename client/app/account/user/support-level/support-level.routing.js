@@ -1,26 +1,22 @@
-import controller from './support-level.controller';
-import template from './support-level.html';
+export default /* @ngInject */ ($stateProvider) => {
+  const name = 'app.account.user.support-level';
 
-angular
-  .module('UserAccount')
-  .config(($stateProvider) => {
-    const name = 'app.account.user.support-level';
-
-    $stateProvider.state(name, {
-      url: '/support/level',
-      template,
-      controller,
-      controllerAs: '$ctrl',
-      translations: ['./'],
-      resolve: {
-        supportLevel: /* @ngInject */ OvhApiMe => OvhApiMe
-          .v6()
-          .supportLevel()
-          .$promise,
-        schema: /* @ngInject */ OvhApiMe => OvhApiMe
-          .v6()
-          .schema()
-          .$promise,
-      },
-    });
+  $stateProvider.state(name, {
+    url: '/support/level',
+    component: 'accountUserSupportLevel',
+    translations: {
+      format: 'json',
+      value: ['./'],
+    },
+    resolve: {
+      schema: /* @ngInject */ OvhApiMe => OvhApiMe
+        .v6()
+        .schema()
+        .$promise,
+      supportLevel: /* @ngInject */ OvhApiMe => OvhApiMe
+        .v6()
+        .supportLevel()
+        .$promise,
+    },
   });
+};

@@ -1,12 +1,13 @@
 import './newAccountForm/new-account-form.module';
 import config from '../../config/config';
-import './support-level/index.less';
+import supportLevel from './support-level/support-level.module';
 
 angular
   .module('UserAccount', [
     'ja.qr',
     'ovh-utils-angular',
     'ovhSignupApp',
+    supportLevel,
   ])
   .constant('UserAccount.constants', {
     aapiRootPath: config.aapiRootPath,
