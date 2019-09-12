@@ -13,8 +13,8 @@
 
                     <oui-tile class="col mb-4 mx-2 py-0"
                         data-ng-class="{'support-level-selected' : supportLevel.name === $ctrl.supportLevel.level}"
-                        data-ng-repeat="supportLevel in $ctrl.supportLevels track by $index"
-                        data-ng-if="supportLevel.isActive"
+                        data-ng-repeat="supportLevel in $ctrl.supportLevels track by supportLevel.name"
+                        data-ng-if="supportLevel.isActive()"
                         loading="$ctrl.loading">
 
                         <h4 class="mb-4 border-bottom"
@@ -26,8 +26,12 @@
                             data-translate="user_account_support_level_section_enabled">
                         </span>
                         <span class="oui-chip"
-                            data-ng-if="supportLevel.isRecommended"
+                            data-ng-if="$ctrl.getRecommendedLevel() === supportLevel.name"
                             data-translate="user_account_support_level_section_recommended">
+                        </span>
+                        <span class="oui-chip"
+                            data-ng-if="!supportLevel.isAvailable()"
+                            data-translate="user_account_support_level_section_coming_soon">
                         </span>
 
 
@@ -37,10 +41,14 @@
 
                         <p data-translate="{{ 'user_account_support_level_section_' + supportLevel.name + '_description' | translate}}"></p>
 
-                        <a class="oui-button oui-button_secondary mx-auto my-5 d-block"
-                            data-ng-if="supportLevel.name !== $ctrl.supportLevel.level"
+                        <a
+                            class="oui-button oui-button_secondary mx-auto my-5 d-block"
+                            data-ng-if="supportLevel.name !== $ctrl.supportLevel.level && supportLevel.isAvailable()"
                             data-ng-href="{{supportLevel.url}}"
-                            target="_blank">
+                            target="_blank"
+                            rel="noopener"
+                            data-track-on="click"
+                            data-track-name="{{:: 'user::account::support-level::' + supportLevel.name }}">
                             <span data-translate="user_account_support_level_section_discover"></span>
                             <span class="oui-icon oui-icon_circle oui-icon-chevron-right float-right" aria-hidden="true"></span>
                         </a>
