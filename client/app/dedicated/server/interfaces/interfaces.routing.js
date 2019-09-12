@@ -13,6 +13,10 @@ export default /* @ngInject */ ($stateProvider) => {
         serverName,
         DedicatedServerInterfacesService,
       ) => DedicatedServerInterfacesService.getInterfaces(serverName),
+      bandwidth: /* @ngInject */ (
+        serverName,
+        Server,
+      ) => Server.getBandwidth(serverName),
     },
   });
 };

@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import { OLA_MODES } from './ola.constants';
 
 export default class {
@@ -9,9 +10,22 @@ export default class {
     };
 
     this.selectedInterfaces = [];
+    this.notAllowedInterfaces = _.remove(
+      this.interfaces,
+      item => item.hasFailoverIps() || item.hasVrack(),
+    );
+  }
+
+  hasObsoleteBandwithOption() {
+    return this.bandwidth.bandwidth.type !== 'included';
   }
 
   onRowSelect(selectedRows) {
     this.selectedInterfaces = selectedRows;
+  }
+
+  onFinish() {
+    // TODO: Activate OLA
+    this.goBack();
   }
 }

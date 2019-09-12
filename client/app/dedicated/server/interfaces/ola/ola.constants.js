@@ -1,5 +1,5 @@
 export const OLA_MODES = [
-  'private',
+  'vrack_aggregation',
   'default',
 ];
 
