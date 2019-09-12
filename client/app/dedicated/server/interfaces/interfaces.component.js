@@ -6,6 +6,7 @@ export default {
   template,
   bindings: {
     serverName: '<',
+    bandwidth: '<',
     interfaces: '<',
   },
 };
