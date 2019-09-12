@@ -1,85 +1,83 @@
-<div>
-    <h1 data-translate="dedicated_server_interfaces_title"></h1>
-    <p data-translate="dedicated_server_interfaces_introduction"></p>
-    <p>
-        <span data-translate="dedicated_server_interfaces_vrack_information"></span>
-        <a data-translate="dedicated_server_interfaces_vrack_information_link_label"></a>
-    </p>
+<h1 data-translate="dedicated_server_interfaces_title"></h1>
+<p data-translate="dedicated_server_interfaces_introduction"></p>
+<p>
+    <span data-translate="dedicated_server_interfaces_vrack_information"></span>
+    <a data-translate="dedicated_server_interfaces_vrack_information_link_label"></a>
+</p>
 
 
-    <h2 data-translate="dedicated_server_interfaces_bandwith_title"></h2>
-    <p data-translate="dedicated_server_interfaces_bandwith_description"></p>
-    <p data-translate="dedicated_server_interfaces_bandwith_public"></p>
-    <p data-translate="dedicated_server_interfaces_bandwith_private"></p>
+<h2 data-translate="dedicated_server_interfaces_bandwith_title"></h2>
+<p data-translate="dedicated_server_interfaces_bandwith_description"></p>
+<p data-translate="dedicated_server_interfaces_bandwith_public"></p>
+<p data-translate="dedicated_server_interfaces_bandwith_private"></p>
 
 
-    <h2 data-translate="dedicated_server_interfaces_list_title"></h2>
-    <oui-datagrid data-rows="$ctrl.interfaces">
-        <oui-column
-            data-title="'dedicated_server_interfaces_name_label' | translate"
-            data-property="name">
-            <span data-ng-bind="$row.name"></span>
-        </oui-column>
-        <oui-column
-            data-title="'dedicated_server_interfaces_type_label' | translate"
-            data-property="type">
-            <span data-ng-if="$row.isPublic()" data-translate="dedicated_server_interfaces_type_public_label"></span>
-            <span data-ng-if="$row.isPrivate()" data-translate="dedicated_server_interfaces_type_private_label"></span>
-        </oui-column>
-        <oui-column
-            data-title="'dedicated_server_interfaces_mac_label' | translate"
-            data-property="mac">
-            <span data-ng-bind="$row.mac"></span>
-        </oui-column>
-        <oui-column
-            data-title="'dedicated_server_interfaces_bandwidth_label' | translate"
-            data-property="mac">
-            <span></span>
-        </oui-column>
-        <oui-column
-            data-title="'dedicated_server_interfaces_ip_label' | translate"
-            data-property="ip">
-            <oui-clipboard data-model="$row.mac"></oui-clipboard>
-        </oui-column>
-        <oui-column
-            data-title="'dedicated_server_interfaces_failover_ip_label' | translate"
-            data-property="mac">
-            <span></span>
-        </oui-column>
-        <oui-column
-            data-title="'dedicated_server_interfaces_vrack_label' | translate"
-            data-property="vrack">
-            <span
-                data-ng-if="$row.hasVrack()"
-                data-ng-bind="$row.vrack"></span>
-            <span
-                data-ng-if="!$row.hasVrack()">-</span>
-        </oui-column>
+<h2 data-translate="dedicated_server_interfaces_list_title"></h2>
+<oui-datagrid data-rows="$ctrl.interfaces">
+    <oui-column
+        data-title="'dedicated_server_interfaces_name_label' | translate"
+        data-property="name">
+        <span data-ng-bind="$row.name"></span>
+    </oui-column>
+    <oui-column
+        data-title="'dedicated_server_interfaces_type_label' | translate"
+        data-property="type">
+        <span data-ng-if="$row.isPublic()" data-translate="dedicated_server_interfaces_type_public_label"></span>
+        <span data-ng-if="$row.isPrivate()" data-translate="dedicated_server_interfaces_type_private_label"></span>
+    </oui-column>
+    <oui-column
+        data-title="'dedicated_server_interfaces_mac_label' | translate"
+        data-property="mac">
+        <span data-ng-bind="$row.mac"></span>
+    </oui-column>
+    <oui-column
+        data-title="'dedicated_server_interfaces_bandwidth_label' | translate"
+        data-property="mac">
+        <span></span>
+    </oui-column>
+    <oui-column
+        data-title="'dedicated_server_interfaces_ip_label' | translate"
+        data-property="ip">
+        <oui-clipboard data-model="$row.mac"></oui-clipboard>
+    </oui-column>
+    <oui-column
+        data-title="'dedicated_server_interfaces_failover_ip_label' | translate"
+        data-property="mac">
+        <span></span>
+    </oui-column>
+    <oui-column
+        data-title="'dedicated_server_interfaces_vrack_label' | translate"
+        data-property="vrack">
+        <span
+            data-ng-if="$row.hasVrack()"
+            data-ng-bind="$row.vrack"></span>
+        <span
+            data-ng-if="!$row.hasVrack()">-</span>
+    </oui-column>
 
-        <oui-action-menu data-align="end" data-compact>
-            <oui-action-menu-item>
-                <span data-translate="dedicated_server_interfaces_rename_label"></span>
-            </oui-action-menu-item>
-            <oui-action-menu-item
-                data-ng-if="$row.isPublic()">
-                <span data-translate="dedicated_server_interfaces_order_public_bandwidth_label"></span>
-            </oui-action-menu-item>
-            <oui-action-menu-item
-                data-ng-if="$row.isPrivate()">
-                <span data-translate="dedicated_server_interfaces_order_private_bandwidth_label"></span>
-            </oui-action-menu-item>
-            <oui-action-menu-item
-                data-ng-if="$row.isPublic()">
-                <span data-translate="dedicated_server_interfaces_manage_ips_label"></span>
-            </oui-action-menu-item>
-            <oui-action-menu-item
-                data-ng-if="$row.hasFailoverIps()">
-                <span data-translate="dedicated_server_interfaces_see_failover_ip_label"></span>
-            </oui-action-menu-item>
-            <oui-action-menu-item
-                data-ng-if="$row.hasVrack()">
-                <span data-translate="dedicated_server_interfaces_detach_private_network_label"></span>
-            </oui-action-menu-item>
-        </oui-action-menu>
-    </oui-datagrid>
-</div>
+    <oui-action-menu data-align="end" data-compact>
+        <oui-action-menu-item>
+            <span data-translate="dedicated_server_interfaces_rename_label"></span>
+        </oui-action-menu-item>
+        <oui-action-menu-item
+            data-ng-if="$row.isPublic()">
+            <span data-translate="dedicated_server_interfaces_order_public_bandwidth_label"></span>
+        </oui-action-menu-item>
+        <oui-action-menu-item
+            data-ng-if="$row.isPrivate()">
+            <span data-translate="dedicated_server_interfaces_order_private_bandwidth_label"></span>
+        </oui-action-menu-item>
+        <oui-action-menu-item
+            data-ng-if="$row.isPublic()">
+            <span data-translate="dedicated_server_interfaces_manage_ips_label"></span>
+        </oui-action-menu-item>
+        <oui-action-menu-item
+            data-ng-if="$row.hasFailoverIps()">
+            <span data-translate="dedicated_server_interfaces_see_failover_ip_label"></span>
+        </oui-action-menu-item>
+        <oui-action-menu-item
+            data-ng-if="$row.hasVrack()">
+            <span data-translate="dedicated_server_interfaces_detach_private_network_label"></span>
+        </oui-action-menu-item>
+    </oui-action-menu>
+</oui-datagrid>
