@@ -8,5 +8,9 @@ export default {
     serverName: '<',
     bandwidth: '<',
     interfaces: '<',
+    olaInfos: '<',
+
+    currentStep: '<',
+    showSteps: '<',
   },
 };

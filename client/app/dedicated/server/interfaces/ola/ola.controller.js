@@ -26,6 +26,9 @@ export default class {
 
   onFinish() {
     // TODO: Activate OLA
-    this.goBack();
+    this.goBack({
+      showSteps: true,
+      currentStep: 2,
+    });
   }
 }

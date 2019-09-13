@@ -36,7 +36,7 @@ export default class DedicatedServerInterfaceService {
         return this.$q.all(
           _.map(
             vniUUids,
-            uuid => this.OvhApiDedicatedServerVirtualInterface
+            uuid => this.VirtualInterface
               .v6()
               .get({
                 serverName,
@@ -74,5 +74,16 @@ export default class DedicatedServerInterfaceService {
           }),
         ),
       ]);
+  }
+
+  getOlaInfos() {
+    // TODO
+    console.log('getOlaInfos', this);
+
+    return {
+      isAvailable: true,
+      isActivated: false,
+      isConfigured: false,
+    };
   }
 }
