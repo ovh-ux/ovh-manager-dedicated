@@ -1,4 +1,4 @@
-export default ($stateProvider) => {
+export default /* @ngInject */ ($stateProvider) => {
   const name = 'app.account.user.support-level';
 
   $stateProvider.state(name, {
