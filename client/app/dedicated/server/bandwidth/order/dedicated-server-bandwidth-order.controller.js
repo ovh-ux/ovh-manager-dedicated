@@ -1,18 +1,17 @@
-class ServerOrderBandwidthCtrl {
+export default class {
   /* @ngInject */
-  constructor($scope, $stateParams, $translate, User, Server) {
+  constructor($scope, $state, $translate, Server) {
     this.$scope = $scope;
-    this.$stateParams = $stateParams;
+    this.$state = $state;
     this.$translate = $translate;
     this.Server = Server;
-    this.User = User;
   }
 
   $onInit() {
     this.model = {};
-    this.data = {};
     this.isLoading = false;
-    this.existingBandwidth = this.$scope.currentActionData.bandwidth.bandwidth.OvhToInternet.value;
+    this.existingBandwidth = this.bandwidth.bandwidth.OvhToInternet.value;
+
 
     this.steps = [
       {
@@ -21,12 +20,12 @@ class ServerOrderBandwidthCtrl {
         load: () => {
           this.isLoading = true;
           return this.Server
-            .getBareMetalPublicBandwidthOptions(this.$stateParams.productId, this.existingBandwidth)
+            .getBareMetalPublicBandwidthOptions(this.serverName, this.existingBandwidth)
             .then((plans) => {
               this.plans = this.Server.getValidBandwidthPlans(plans, this.existingBandwidth);
             })
             .catch((error) => {
-              this.$scope.resetAction();
+              this.$state.go('^');
               return this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_error'), error.data);
             })
             .finally(() => { this.isLoading = false; });
@@ -38,29 +37,30 @@ class ServerOrderBandwidthCtrl {
         load: () => {
           this.isLoading = true;
           return this.Server
-            .getBareMetalPublicBandwidthOrder(this.$stateParams.productId, this.model.plan)
+            .getBareMetalPublicBandwidthOrder(this.serverName, this.model.plan)
             .then((res) => {
               res.bandwidth = _.find(this.plans, 'planCode', this.model.plan).bandwidth;
               res.planCode = this.model.plan;
               this.provisionalPlan = res;
             })
             .catch((error) => {
-              this.$scope.resetAction();
+              this.$state.go('^');
               return this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_error'), error.data);
             }).finally(() => { this.isLoading = false; });
         },
       },
     ];
-    this.$scope.initFirstStep = this.steps[0].load.bind(this);
-    this.$scope.initSecondStep = this.steps[1].load.bind(this);
-    this.$scope.order = this.order.bind(this);
+    this.$scope.initFirstStep = () => this.steps[0].load();
+    this.$scope.initSecondStep = () => this.steps[1].load();
+    this.$scope.order = () => this.order();
+    this.$scope.cancel = () => this.$state.go('^');
   }
 
   order() {
     if (this.model.plan) {
       this.isLoading = true;
       this.Server.bareMetalPublicBandwidthPlaceOrder(
-        this.$stateParams.productId, this.model.plan, this.model.autoPay,
+        this.serverName, this.model.plan, this.model.autoPay,
       ).then((result) => {
         this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_vrack_success', {
           t0: result.order.url,
@@ -70,13 +70,12 @@ class ServerOrderBandwidthCtrl {
         this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_error'), error.data);
       }).finally(() => {
         this.isLoading = false;
-        this.$scope.resetAction();
+        this.$state.go('^');
       });
     }
   }
 
   close() {
-    this.$scope.resetAction();
+    this.$state.go('^');
   }
 }
-angular.module('App').controller('ServerOrderBandwidthCtrl', ServerOrderBandwidthCtrl);
