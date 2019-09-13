@@ -597,15 +597,13 @@
                             <div class="row">
                                 <div class="col-6">
                                     <!-- Outgoing Bandwidth -->
-                                    <span class="mr-3">
-                                        <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
-                                        <span data-ng-bind="bandwidth.vrack.bandwidth | ducBandwidth"></span>
-                                        <span data-translate="server_bandwidth_outgoing"></span>
-                                        <small class="oui-tile__extra"
-                                            data-ng-if="bandwidthVrackOption === 'released'"
-                                            data-translate="server_bandwidth_vrack_option_released">
-                                        </small>
-                                    </span>
+                                    <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
+                                    <span data-ng-bind="bandwidth.vrack.bandwidth | ducBandwidth"></span>
+                                    <span data-translate="server_bandwidth_outgoing"></span>
+                                    <small class="oui-tile__extra"
+                                        data-ng-if="bandwidthVrackOption === 'released'"
+                                        data-translate="server_bandwidth_vrack_option_released">
+                                    </small>
                                 </div>
                                 <div class="col-6">
                                     <!-- Incoming Bandwidth -->

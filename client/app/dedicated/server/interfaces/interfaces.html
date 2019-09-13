@@ -2,29 +2,100 @@
 <p data-translate="dedicated_server_interfaces_introduction"></p>
 <p>
     <span data-translate="dedicated_server_interfaces_vrack_information"></span>
-    <a data-translate="dedicated_server_interfaces_vrack_information_link_label"></a>
+    <a href="https://docs.ovh.com" data-translate="dedicated_server_interfaces_vrack_information_link_label"></a>
 </p>
 
-<ola-step-checker
-    data-ola="{ available: true, supportedModes: [] }">
-</ola-step-checker>
+<div class="row mb-5">
+    <div class="col-md-8"
+        data-ng-if="$ctrl.olaInfos.isAvailable && !$ctrl.olaInfos.isConfigured">
+        <ola-step-checker class="h-100 d-block"
+            data-show-steps="$ctrl.showSteps"
+            data-current-step="$ctrl.currentStep">
+        </ola-step-checker>
+    </div>
 
-<h2 data-translate="dedicated_server_interfaces_bandwith_title"></h2>
-<p data-translate="dedicated_server_interfaces_bandwith_description"></p>
+    <div class="col-md-4"
+        data-ng-if="$ctrl.olaInfos.isAvailable && $ctrl.olaInfos.isConfigured">
+        <oui-tile class="h-100"
+            data-heading="{{:: 'dedicated_server_interfaces_step_checker_title' | translate }}">
+            <oui-message class="mb-3" data-type="info">
+                <p>
+                    <span data-translate="dedicated_server_interfaces_ola_alert_configuration_needed"></span>
+                    <a href="https://docs.ovh.com" data-translate="dedicated_server_interfaces_ola_alert_configuration_needed_link"></a>
+                </p>
+            </oui-message>
 
-<div class="row">
+            <p>
+                <span data-translate="dedicated_server_interfaces_ola_activated_text"></span><br />
+                <a href="https://docs.ovh.com" data-translate="dedicated_server_interfaces_ola_activated_link"></a>
+            </p>
+
+            <!-- OLA -->
+            <oui-tile-definition
+                data-term="{{:: 'server_ola' | translate}}">
+                <oui-tile-description>
+                    TODO
+                </oui-tile-description>
+            </oui-tile-definition>
+
+            <!-- OLA Mode -->
+            <oui-tile-definition
+                data-term="{{:: 'server_ola_mode' | translate}}">
+                <oui-tile-description>
+                    TODO
+                </oui-tile-description>
+            </oui-tile-definition>
+        </oui-tile>
+    </div>
+
     <div class="col-md-4">
-        <oui-tile>
+        <oui-tile class="h-100"
+            data-heading="{{:: 'dedicated_server_interfaces_bandwith_title' | translate}}"
+            data-description="{{:: 'dedicated_server_interfaces_bandwith_description' | translate }}">
             <oui-tile-definition
                 data-term="{{:: 'dedicated_server_interfaces_bandwith_public' | translate }}">
                 <oui-tile-description>
-                    TODO
+                    <p>
+                        <strong data-translate="server_bandwidth_type"></strong>
+                        <span data-translate="{{:: 'server_bandwidth_type_' + $ctrl.bandwidth.bandwidth.type}}"></span>
+                    </p>
+                    <div class="row">
+                        <div class="col-6">
+                            <!-- Outgoing Bandwidth -->
+                            <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
+                            <span data-ng-bind="$ctrl.bandwidth.bandwidth.OvhToInternet | ducBandwidth"></span>
+                            <span data-translate="server_bandwidth_outgoing"></span>
+                        </div>
+                        <div class="col-6">
+                            <!-- Incoming Bandwidth -->
+                            <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
+                            <span data-ng-bind="$ctrl.bandwidth.bandwidth.InternetToOvh | ducBandwidth"></span>
+                            <span data-translate="server_bandwidth_incoming"></span>
+                        </div>
+                    </div>
                 </oui-tile-description>
             </oui-tile-definition>
             <oui-tile-definition
                 data-term="{{:: 'dedicated_server_interfaces_bandwith_private' | translate }}">
                 <oui-tile-description>
-                    TODO
+                    <p>
+                        <strong data-translate="server_bandwidth_type"></strong>
+                        <span data-translate="{{:: 'server_bandwidth_type_' + $ctrl.bandwidth.vrack.type}}"></span>
+                    </p>
+                    <div class="row">
+                        <div class="col-6">
+                            <!-- Outgoing Bandwidth -->
+                            <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
+                            <span data-ng-bind="$ctrl.bandwidth.vrack.bandwidth | ducBandwidth"></span>
+                            <span data-translate="server_bandwidth_outgoing"></span>
+                        </div>
+                        <div class="col-6">
+                            <!-- Incoming Bandwidth -->
+                            <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
+                            <span data-ng-bind="$ctrl.bandwidth.vrack.bandwidth | ducBandwidth"></span>
+                            <span data-translate="server_bandwidth_incoming"></span>
+                        </div>
+                    </div>
                 </oui-tile-description>
             </oui-tile-definition>
         </oui-tile>

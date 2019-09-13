@@ -1,87 +1,149 @@
-<h2 data-translate="dedicated_server_interfaces_step_checker_title"></h2>
-
 <!-- Not activated -->
-<oui-tile class="mb-5">
+<oui-tile class="h-100"
+    data-heading="{{:: 'dedicated_server_interfaces_step_checker_title' | translate }}"
+    data-ng-if="!$ctrl.showSteps">
     <div class="row">
-        <div class="col-md-3">
-            <ul>
-                <li data-translate="dedicated_server_interfaces_step_checker_list_connectivity"></li>
-                <li data-translate="dedicated_server_interfaces_step_checker_list_security"></li>
-                <li data-translate="dedicated_server_interfaces_step_checker_list_reversible"></li>
-                <li data-translate="dedicated_server_interfaces_step_checker_list_free"></li>
-            </ul>
+        <div class="col-md-4">
+            <div class="oui-progress-tracker oui-progress-tracker_vertical">
+                <ul class="oui-progress-tracker__steps">
+                    <li class="oui-progress-tracker__step oui-progress-tracker__step_complete">
+                        <span class="oui-progress-tracker__status">
+                            <span class="oui-progress-tracker__label"
+                                data-translate="dedicated_server_interfaces_step_checker_list_connectivity">
+                            </span>
+                        </span>
+                    </li>
+                    <li class="oui-progress-tracker__step oui-progress-tracker__step_complete">
+                        <span class="oui-progress-tracker__status">
+                            <span class="oui-progress-tracker__label"
+                                data-translate="dedicated_server_interfaces_step_checker_list_security">
+                            </span>
+                        </span>
+                    </li>
+                    <li class="oui-progress-tracker__step oui-progress-tracker__step_complete">
+                        <span class="oui-progress-tracker__status">
+                            <span class="oui-progress-tracker__label"
+                                data-translate="dedicated_server_interfaces_step_checker_list_reversible">
+                            </span>
+                        </span>
+                    </li>
+                    <li class="oui-progress-tracker__step oui-progress-tracker__step_complete">
+                        <span class="oui-progress-tracker__status">
+                            <span class="oui-progress-tracker__label"
+                                data-translate="dedicated_server_interfaces_step_checker_list_free">
+                            </span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-8">
             <p data-translate="dedicated_server_interfaces_step_checker_text1"></p>
             <p data-translate="dedicated_server_interfaces_step_checker_text2"></p>
             <p data-translate="dedicated_server_interfaces_step_checker_text3"></p>
             <p data-translate="dedicated_server_interfaces_step_checker_text4"></p>
             <p>
-                <oui-button data-variant="primary">
+                <oui-button data-variant="primary"
+                    data-on-click="$ctrl.activateOla()">
                     <span data-translate="dedicated_server_interfaces_step_checker_activate"></span>
                 </oui-button>
             </p>
             <!-- Guides -->
             <p>
                 <span data-translate="dedicated_server_interfaces_step_checker_guides_text"></span>
-                <a href="" data-translate="dedicated_server_interfaces_step_checker_guides_link"></a>
+                <a href="https://docs.ovh.com" data-translate="dedicated_server_interfaces_step_checker_guides_link"></a>
             </p>
         </div>
     </div>
 </oui-tile>
 
 <!-- Step Checker -->
-<oui-tile class="mb-5">
+<oui-tile class="h-100"
+    data-heading="{{:: 'dedicated_server_interfaces_step_checker_title' | translate }}"
+    data-ng-if="$ctrl.showSteps">
     <div class="row">
-        <div class="col-md-3">
-            <ul>
-                <li data-translate="dedicated_server_interfaces_step_checker_step1"></li>
-                <li data-translate="dedicated_server_interfaces_step_checker_step2"></li>
-                <li data-translate="dedicated_server_interfaces_step_checker_step3"></li>
-                <li data-translate="dedicated_server_interfaces_step_checker_step4"></li>
-            </ul>
+        <div class="col-md-4">
+            <div class="oui-progress-tracker oui-progress-tracker_vertical">
+                <ol class="oui-progress-tracker__steps">
+                    <li class="oui-progress-tracker__step"
+                        data-ng-class="$ctrl.getStepClassname(0)">
+                        <span class="oui-progress-tracker__status">
+                            <span class="oui-progress-tracker__label"
+                                data-translate="dedicated_server_interfaces_step_checker_step1">
+                            </span>
+                        </span>
+                    </li>
+                    <li class="oui-progress-tracker__step"
+                        data-ng-class="$ctrl.getStepClassname(1)">
+                        <span class="oui-progress-tracker__status">
+                            <span class="oui-progress-tracker__label"
+                                data-translate="dedicated_server_interfaces_step_checker_step2">
+                            </span>
+                        </span>
+                    </li>
+                    <li class="oui-progress-tracker__step"
+                        data-ng-class="$ctrl.getStepClassname(2)">
+                        <span class="oui-progress-tracker__status">
+                            <span class="oui-progress-tracker__label"
+                                data-translate="dedicated_server_interfaces_step_checker_step3">
+                            </span>
+                        </span>
+                    </li>
+                    <li class="oui-progress-tracker__step"
+                        data-ng-class="$ctrl.getStepClassname(3)">
+                        <span class="oui-progress-tracker__status">
+                            <span class="oui-progress-tracker__label"
+                                data-translate="dedicated_server_interfaces_step_checker_step4">
+                            </span>
+                        </span>
+                    </li>
+                </ol>
+            </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-8" data-ng-switch="$ctrl.currentStep">
 
             <!-- Step 1: Network interfaces -->
-            <div>
+            <div data-ng-switch-default>
                 <p data-translate="dedicated_server_interfaces_step_checker_step1_text1"></p>
                 <p data-translate="dedicated_server_interfaces_step_checker_step1_text2"></p>
                 <p>
-                    <oui-button data-variant="primary">
+                    <oui-button data-variant="primary"
+                        data-on-click="$ctrl.goToNextStep()">
                         <span data-translate="dedicated_server_interfaces_step_checker_step1_button"></span>
                     </oui-button>
                 </p>
             </div>
 
             <!-- Step 2: Configuration -->
-            <div>
+            <div data-ng-switch-when="1">
                 <p data-translate="dedicated_server_interfaces_step_checker_step2_text"></p>
                 <p>
                     <oui-button data-variant="primary"
-                        data-on-click="$ctrl.goToOlaConfiguration()">
+                        data-on-click="$ctrl.goToConfiguration()">
                         <span data-translate="dedicated_server_interfaces_step_checker_step2_button"></span>
                     </oui-button>
                 </p>
             </div>
 
             <!-- Step 3: KVM IPMI -->
-            <div>
+            <div data-ng-switch-when="2">
                 <p data-translate="dedicated_server_interfaces_step_checker_step3_text1"></p>
                 <p data-translate="dedicated_server_interfaces_step_checker_step3_text2"></p>
                 <p>
-                    <oui-button data-variant="primary">
+                    <oui-button data-variant="primary"
+                        data-on-click="$ctrl.goToNextStep()">
                         <span data-translate="dedicated_server_interfaces_step_checker_step3_button"></span>
                     </oui-button>
                 </p>
             </div>
 
             <!-- Step 4: Ready -->
-            <div>
+            <div data-ng-switch-when="3">
                 <p data-translate="dedicated_server_interfaces_step_checker_step4_text1"></p>
                 <p data-translate="dedicated_server_interfaces_step_checker_step4_text2"></p>
                 <p>
-                    <oui-button data-variant="primary">
+                    <oui-button data-variant="primary"
+                        data-on-click="$ctrl.closeSteps()">
                         <span data-translate="dedicated_server_interfaces_step_checker_step4_button"></span>
                     </oui-button>
                 </p>
@@ -90,50 +152,8 @@
             <!-- Guides -->
             <p>
                 <span data-translate="dedicated_server_interfaces_step_checker_guides_text"></span>
-                <a href="" data-translate="dedicated_server_interfaces_step_checker_guides_link"></a>
+                <a href="https://docs.ovh.com" data-translate="dedicated_server_interfaces_step_checker_guides_link"></a>
             </p>
         </div>
     </div>
 </oui-tile>
-
-<!-- Activated -->
-<div>
-    <oui-message class="mb-3" data-type="info">
-        <p>
-            <span data-translate="dedicated_server_interfaces_ola_alert_configuration_needed"></span>
-            <a
-                data-ng-href=""
-                data-translate="dedicated_server_interfaces_ola_alert_configuration_needed_link">
-            </a>
-        </p>
-    </oui-message>
-
-    <p>
-        <span data-translate="dedicated_server_interfaces_ola_activated_text"></span><br />
-        <a
-            data-ng-href=""
-            data-translate="dedicated_server_interfaces_ola_activated_link"></a>
-    </p>
-
-    <div class="row">
-        <div class="col-md-4">
-            <oui-tile class="mb-5">
-                <!-- OLA -->
-                <oui-tile-definition
-                    data-term="{{:: 'server_ola' | translate}}">
-                    <oui-tile-description>
-                        TODO
-                    </oui-tile-description>
-                </oui-tile-definition>
-
-                <!-- OLA -->
-                <oui-tile-definition
-                    data-term="{{:: 'server_ola_mode' | translate}}">
-                    <oui-tile-description>
-                        TODO
-                    </oui-tile-description>
-                </oui-tile-definition>
-            </oui-tile>
-        </div>
-    </div>
-</div>
