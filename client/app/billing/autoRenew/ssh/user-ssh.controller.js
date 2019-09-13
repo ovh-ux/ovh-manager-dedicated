@@ -1,7 +1,16 @@
 export default class UserAccountSshCtrl {
   /* @ngInject */
-
-  constructor($scope, $q, $translate, UseraccountSshService, User, constants, $log, Alerter) {
+  constructor(
+    $scope,
+    $q,
+    $timeout,
+    $translate,
+    UseraccountSshService,
+    User,
+    constants,
+    $log,
+    Alerter,
+  ) {
     this.$scope = $scope;
     this.$q = $q;
     this.$translate = $translate;
@@ -10,6 +19,7 @@ export default class UserAccountSshCtrl {
     this.constants = constants;
     this.$log = $log;
     this.Alerter = Alerter;
+    this.$timeout = $timeout;
   }
 
   $onInit() {
@@ -35,7 +45,7 @@ export default class UserAccountSshCtrl {
       } else {
         $('#sshAction').modal('hide');
 
-        $timeout(() => {
+        this.$timeout(() => {
           delete this.$scope.stepPath;
         }, 300);
       }
