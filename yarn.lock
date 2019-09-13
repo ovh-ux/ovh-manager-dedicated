@@ -948,6 +948,13 @@
     lodash "^4.17.14"
     moment "^2.24.0"
 
+"@ovh-ux/manager-navbar@git+https://github.com/ovh-ux/manager.git#split-navbar-assistance-menu":
+  version "1.3.1"
+  resolved "git+https://github.com/ovh-ux/manager.git#4e5dfde8a11a005e77ccbcc3c104875a63ef1482"
+  dependencies:
+    lodash "^4.17.15"
+    moment "^2.24.0"
+
 "@ovh-ux/manager-server-sidebar@^0.5.2":
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/@ovh-ux/manager-server-sidebar/-/manager-server-sidebar-0.5.2.tgz#6e2b7e135ccaf17a39daade7b88d388936d3361f"
@@ -8171,10 +8178,9 @@ ovh-module-exchange@^9.4.7:
     filesize "^3.6.1"
     lodash "~3.9.3"
 
-ovh-ui-angular@^3.7.6:
-  version "3.7.6"
-  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-3.7.6.tgz#542636e472426a1db07cbb4392d86d08e0c00e2f"
-  integrity sha512-Nq+BfbztNUB5cldCEDGazTS2lgtK21HUREkyZKlUxnyVW4DX2+MIUplABXrd1XXhv+cSCrTxgbSQz+Y8rMGCqw==
+"ovh-ui-angular@https://github.com/ovh-ux/ovh-ui-angular.git#build/navbar-header-link":
+  version "3.7.7"
+  resolved "https://github.com/ovh-ux/ovh-ui-angular.git#f430859b1da1461174bcbeea6d18b2ee2ba930c4"
   dependencies:
     bloodhound-js "^1.2.3"
     clipboard "^2.0.1"
