@@ -6,5 +6,10 @@ angular.module('App').config(($stateProvider) => {
     reloadOnSearch: false,
     translations: { value: ['.'], format: 'json' },
     redirectTo: 'app.dedicated.server.dashboard',
+    resolve: {
+      serverName: /* @ngInject */ $transition$ => $transition$.params().productId,
+      bandwidth: /* @ngInject */ (serverName, Server) => Server.getBandwidth(serverName),
+      user: /* @ngInject */ User => User.getUser(),
+    },
   });
 });

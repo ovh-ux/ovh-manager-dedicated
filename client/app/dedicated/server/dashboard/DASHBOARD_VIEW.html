@@ -580,7 +580,7 @@
                         data-ng-if="bandwidthOption === 'notSubscribed' && server.canOrderBandwith && dedicatedServerFeatureAvailability.allowDedicatedServerOrderBandwidthOption()"
                         data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
                         data-on-click="isFullAgora(server.commercialRange)
-                            ? setAction('bandwidth/order/dedicated-server-bandwidth-order', { bandwidth })
+                            ? $state.go('app.dedicated.server.dashboard.bandwidth')
                             : setAction('bandwidth/order-legacy/dedicated-server-bandwidth-order', server.name)">
                         <span data-translate="server_bandwidth_order_button"></span>
                     </oui-tile-button>

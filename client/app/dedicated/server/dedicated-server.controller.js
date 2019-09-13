@@ -60,6 +60,8 @@ angular.module('App').controller('ServerCtrl', (
   $scope.housingPhoneNumber = constants.urls.FR.housingPhoneSupport;
   $scope.isHousing = false;
 
+  $scope.$state = $state;
+
   $scope.setToBigModalDialog = (active) => {
     $scope.mediumModalDialog = false;
     $scope.bigModalDialog = active;

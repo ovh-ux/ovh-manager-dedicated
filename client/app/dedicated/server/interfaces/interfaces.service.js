@@ -4,22 +4,22 @@ import Interface from './interface.class';
 export default class DedicatedServerInterfaceService {
   constructor(
     $q,
-    OvhApiDedicatedServerNic,
-    OvhApiDedicatedServerVni,
+    OvhApiDedicatedServerPhysicalInterface,
+    OvhApiDedicatedServerVirtualInterface,
   ) {
     this.$q = $q;
-    this.OvhApiDedicatedServerNic = OvhApiDedicatedServerNic;
-    this.OvhApiDedicatedServerVni = OvhApiDedicatedServerVni;
+    this.PhysicalInterface = OvhApiDedicatedServerPhysicalInterface;
+    this.VirtualInterface = OvhApiDedicatedServerVirtualInterface;
   }
 
   getInterfaces(serverName) {
     let nics;
-    return this.OvhApiDedicatedServerNic
+    return this.PhysicalInterface
       .v6()
       .query({ serverName })
       .$promise
       .then(macs => this.$q.all(
-        macs.map(mac => this.OvhApiDedicatedServerNic.v6().get({ serverName, mac }).$promise),
+        macs.map(mac => this.PhysicalInterface.v6().get({ serverName, mac }).$promise),
       ))
       .then((results) => {
         nics = [...results];
@@ -36,7 +36,7 @@ export default class DedicatedServerInterfaceService {
         return this.$q.all(
           _.map(
             vniUUids,
-            uuid => this.OvhApiDedicatedServerVni
+            uuid => this.OvhApiDedicatedServerVirtualInterface
               .v6()
               .get({
                 serverName,
