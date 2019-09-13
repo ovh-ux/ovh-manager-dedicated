@@ -1,7 +1,17 @@
 export default class UserAccountSshCtrl {
   /* @ngInject */
 
-  constructor($scope, $q, $timeout, $translate, UseraccountSshService, User, constants, $log, Alerter) {
+  constructor(
+    $scope,
+    $q,
+    $timeout,
+    $translate,
+    UseraccountSshService,
+    User,
+    constants,
+    $log,
+    Alerter,
+  ) {
     this.$scope = $scope;
     this.$q = $q;
     this.$timeout = $timeout;
