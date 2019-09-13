@@ -43,7 +43,7 @@
 
                         <a
                             class="oui-button oui-button_secondary mx-auto my-5 d-block"
-                            data-ng-if="supportLevel.name !== $ctrl.supportLevel.level && !supportLevel.isAvailable()"
+                            data-ng-if="supportLevel.name !== $ctrl.supportLevel.level && supportLevel.isAvailable()"
                             data-ng-href="{{supportLevel.url}}"
                             target="_blank"
                             rel="noopener"
