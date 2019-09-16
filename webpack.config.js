@@ -73,7 +73,6 @@ module.exports = (env = {}) => {
       filename: '[name].[chunkhash].bundle.js',
     },
     resolve: {
-      symlinks: false,
       alias: {
         jquery: path.resolve(__dirname, 'node_modules/jquery'),
       },

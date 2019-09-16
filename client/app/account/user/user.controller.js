@@ -1,6 +1,5 @@
 export default class UserAccountCtrl {
   /* @ngInject */
-
   constructor($location, $scope, $state, $timeout, constants) {
     // dependencies injections
     this.$location = $location;
