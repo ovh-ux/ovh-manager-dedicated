@@ -5,7 +5,6 @@ export default {
   controller,
   template,
   bindings: {
-    showSteps: '<',
-    currentStep: '<',
+    ola: '<',
   },
 };

@@ -1,8 +1,8 @@
-import _ from 'lodash';
+import Ola from './ola.class';
 
 export default /* @ngInject */ ($stateProvider) => {
   $stateProvider.state('app.dedicated.server.interfaces', {
-    url: '/interfaces?showSteps&currentStep',
+    url: '/interfaces?configStep&isOlaActivated&isOlaConfigured', // TODO: isOlaActivated && isOlaConfigured are for mockup purpose
     views: {
       'tabView@app.dedicated.server': {
         component: 'dedicatedServerInterfaces',
@@ -15,16 +15,19 @@ export default /* @ngInject */ ($stateProvider) => {
         DedicatedServerInterfacesService,
       ) => DedicatedServerInterfacesService.getInterfaces(serverName),
 
-      bandwidth: /* @ngInject */ (
+      specifications: /* @ngInject */ (
         serverName,
         Server,
       ) => Server.getBandwidth(serverName),
 
-      olaInfos: /* @ngInject */ DedicatedServerInterfacesService => DedicatedServerInterfacesService.getOlaInfos(), // eslint-disable-line
-      currentStep: /* @ngInject */ $stateParams => (!_.isUndefined($stateParams.currentStep)
-        ? parseInt($stateParams.currentStep, 10)
-        : 0),
-      showSteps: /* @ngInject */ $stateParams => $stateParams.showSteps,
+      ola: /* @ngInject */ (
+        specifications,
+        $stateParams,
+      ) => new Ola({
+        ...specifications.ola,
+        ...$stateParams,
+      }),
+
     },
   });
 };
