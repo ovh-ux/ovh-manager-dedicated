@@ -570,7 +570,7 @@
                             <oui-action-menu-item
                                 data-text="{{:: 'server_bandwidth_cancel_button' | translate }}"
                                 aria-label="{{:: 'server_bandwidth_cancel_button' | translate }}"
-                                data-on-click="setAction('bandwidth/cancel/dedicated-server-bandwidth-cancel', server.name)"
+                                data-state="app.dedicated.server.dashboard.bandwidth-public-cancel"
                                 data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'">
                             </oui-action-menu-item>
                        </oui-action-menu>
@@ -580,8 +580,8 @@
                         data-ng-if="bandwidthOption === 'notSubscribed' && server.canOrderBandwith && dedicatedServerFeatureAvailability.allowDedicatedServerOrderBandwidthOption()"
                         data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
                         data-on-click="isFullAgora(server.commercialRange)
-                            ? $state.go('app.dedicated.server.dashboard.bandwidth')
-                            : setAction('bandwidth/order-legacy/dedicated-server-bandwidth-order', server.name)">
+                            ? $state.go('app.dedicated.server.dashboard.bandwidth-public')
+                            : setAction('bandwidth-legacy/order-public/dedicated-server-bandwidth-order', server.name)">
                         <span data-translate="server_bandwidth_order_button"></span>
                     </oui-tile-button>
 
@@ -621,7 +621,7 @@
                             <oui-action-menu-item
                                 data-text="{{:: 'server_bandwidth_vrack_cancel_button' | translate }}"
                                 aria-label="{{:: 'server_bandwidth_vrack_cancel_button' | translate }}"
-                                data-on-click="setAction('bandwidth-vrack/cancel/dedicated-server-bandwidth-vrack-cancel', server.name)"
+                                data-state="app.dedicated.server.dashboard.bandwidth-private-cancel"
                                 data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'">
                             </oui-action-menu-item>
                         </oui-action-menu>
@@ -631,8 +631,8 @@
                         data-ng-if="canOrderVrackBandwidth() && canOrderMoreVrackBandwidth()"
                         data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
                         data-on-click="isFullAgora(server.commercialRange)
-                            ? setAction('bandwidth-vrack/order/dedicated-server-bandwidth-vrack', { bandwidth })
-                            : setAction('bandwidth-vrack/order-legacy/dedicated-server-bandwidth-vrack-order', server)">
+                            ? $state.go('app.dedicated.server.dashboard.bandwidth-private')
+                            : setAction('bandwidth-legacy/order-private/dedicated-server-bandwidth-vrack-order', server)">
                         <span data-translate="{{ (bandwidthVrackOption !== 'subscribed' ? 'server_bandwidth_vrack_order_button' : 'server_bandwidth_vrack_change_button') | translate }}"></span>
                     </oui-tile-button>
 

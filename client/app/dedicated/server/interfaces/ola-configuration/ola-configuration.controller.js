@@ -17,7 +17,7 @@ export default class {
   }
 
   hasObsoleteBandwithOption() {
-    return this.bandwidth.bandwidth.type !== 'included';
+    return this.specifications.bandwidth.type !== 'included';
   }
 
   onRowSelect(selectedRows) {

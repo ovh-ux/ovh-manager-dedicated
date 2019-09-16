@@ -8,7 +8,7 @@ angular.module('App').config(($stateProvider) => {
     redirectTo: 'app.dedicated.server.dashboard',
     resolve: {
       serverName: /* @ngInject */ $transition$ => $transition$.params().productId,
-      bandwidth: /* @ngInject */ (serverName, Server) => Server.getBandwidth(serverName),
+      specifications: /* @ngInject */ (serverName, Server) => Server.getBandwidth(serverName),
       user: /* @ngInject */ User => User.getUser(),
     },
   });
