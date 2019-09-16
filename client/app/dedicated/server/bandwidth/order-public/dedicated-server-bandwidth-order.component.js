@@ -5,8 +5,8 @@ export default {
   controller,
   template,
   bindings: {
+    specifications: '<',
     serverName: '<',
-    bandwidth: '<',
     user: '<',
   },
 };

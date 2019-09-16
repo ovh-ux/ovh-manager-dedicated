@@ -1,6 +1,8 @@
-class ServerCancelBandwidthVrackCtrl {
-  constructor($scope, $stateParams, $rootScope, User, Server, BandwidthVrackOrderService) {
+export default class {
+  /* @ngInject */
+  constructor($scope, $state, $stateParams, $rootScope, User, Server, BandwidthVrackOrderService) {
     this.$scope = $scope;
+    this.$state = $state;
     this.$stateParams = $stateParams;
     this.$rootScope = $rootScope;
     this.User = User;
@@ -25,19 +27,16 @@ class ServerCancelBandwidthVrackCtrl {
       },
     ];
 
-    // Ugly patch... the wizard won't resolve its step-on-load event handler
-    // if it isn't on the scope..
-    this.$scope.initUser = this.steps[0].load.bind(this);
-
-    // Same thing for reset action and open openBC
-    this.$scope.cancelOption = this.cancelOption.bind(this);
+    this.$scope.initUser = () => this.steps[0].load();
+    this.$scope.cancelOption = () => this.cancelOption();
+    this.$scope.cancel = () => this.$state.go('^');
   }
 
   cancelOption() {
     this.handleAPIGet(() => this.BandwidthVrackOrderService
       .cancelBandwidthOption(this.$stateParams.productId), this.cancelAction)
       .then(() => this.$rootScope.$broadcast('dedicated.informations.bandwidth'))
-      .finally(() => this.$scope.resetAction());
+      .finally(() => this.$state.go('^'));
   }
 
   handleAPIGet(promise, loadIntoStruct) {
@@ -55,7 +54,7 @@ class ServerCancelBandwidthVrackCtrl {
         _.set(loadIntoStruct, 'hasError', true);
         _.set(loadIntoStruct, 'data', _.isArray(loadIntoStruct) ? [] : {});
 
-        this.$scope.resetAction();
+        this.$state.go('^');
         response.data.type = 'ERROR';
         this.$scope.setMessage(response.message, response.data);
       })
@@ -64,5 +63,3 @@ class ServerCancelBandwidthVrackCtrl {
       });
   }
 }
-
-angular.module('App').controller('ServerCancelBandwidthVrackCtrl', ServerCancelBandwidthVrackCtrl);

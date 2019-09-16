@@ -9,9 +9,18 @@ export default class {
 
   $onInit() {
     this.model = {};
+    this.plans = null;
     this.isLoading = false;
-    this.existingBandwidth = this.bandwidth.bandwidth.OvhToInternet.value;
+    this.existingBandwidth = _.get(this, 'specifications.vrack.bandwidth.value');
 
+    this.$scope.order = () => this.order();
+    this.$scope.cancel = () => this.$state.go('^');
+
+    if (!this.existingBandwidth) {
+      this.plans = [];
+      this.isLoading = false;
+      return;
+    }
 
     this.steps = [
       {
@@ -20,15 +29,14 @@ export default class {
         load: () => {
           this.isLoading = true;
           return this.Server
-            .getBareMetalPublicBandwidthOptions(this.serverName, this.existingBandwidth)
+            .getBareMetalPrivateBandwidthOptions(this.serverName, this.existingBandwidth)
             .then((plans) => {
               this.plans = this.Server.getValidBandwidthPlans(plans, this.existingBandwidth);
             })
             .catch((error) => {
               this.$state.go('^');
-              return this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_error'), error.data);
-            })
-            .finally(() => { this.isLoading = false; });
+              return this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_vrack_loading_error'), error.data);
+            }).finally(() => { this.isLoading = false; });
         },
       },
       {
@@ -37,7 +45,7 @@ export default class {
         load: () => {
           this.isLoading = true;
           return this.Server
-            .getBareMetalPublicBandwidthOrder(this.serverName, this.model.plan)
+            .getBareMetalPrivateBandwidthOrder(this.serverName, this.model.plan)
             .then((res) => {
               res.bandwidth = _.find(this.plans, 'planCode', this.model.plan).bandwidth;
               res.planCode = this.model.plan;
@@ -45,34 +53,37 @@ export default class {
             })
             .catch((error) => {
               this.$state.go('^');
-              return this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_error'), error.data);
+              return this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_vrack_loading_error'), error.data);
             }).finally(() => { this.isLoading = false; });
         },
       },
     ];
+
     this.$scope.initFirstStep = () => this.steps[0].load();
     this.$scope.initSecondStep = () => this.steps[1].load();
-    this.$scope.order = () => this.order();
-    this.$scope.cancel = () => this.$state.go('^');
   }
 
   order() {
     if (this.model.plan) {
       this.isLoading = true;
-      this.Server.bareMetalPublicBandwidthPlaceOrder(
-        this.serverName, this.model.plan, this.model.autoPay,
-      ).then((result) => {
-        this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_vrack_success', {
-          t0: result.order.url,
-        }), true);
-        window.open(result.order.url);
-      }).catch((error) => {
-        this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_error'), error.data);
-      }).finally(() => {
-        this.isLoading = false;
-        this.$state.go('^');
-      });
+      return this.Server.bareMetalPrivateBandwidthPlaceOrder(
+        this.serverName,
+        this.model.plan,
+        this.model.autoPay,
+      )
+        .then((result) => {
+          this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_vrack_success', {
+            t0: result.order.url,
+          }), true);
+          window.open(result.order.url);
+        }).catch((error) => {
+          this.$scope.setMessage(this.$translate.instant('server_cancel_bandwidth_cancel_vrack_error'), error.data);
+        }).finally(() => {
+          this.isLoading = false;
+          this.$state.go('^');
+        });
     }
+    return null;
   }
 
   close() {
