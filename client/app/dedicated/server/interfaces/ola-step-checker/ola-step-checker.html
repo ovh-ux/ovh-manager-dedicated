@@ -1,7 +1,7 @@
 <!-- Not activated -->
 <oui-tile class="h-100"
     data-heading="{{:: 'dedicated_server_interfaces_step_checker_title' | translate }}"
-    data-ng-if="!$ctrl.showSteps">
+    data-ng-if="!$ctrl.ola.isActivated()">
     <div class="row">
         <div class="col-md-4">
             <div class="oui-list">
@@ -48,7 +48,7 @@
 <!-- Step Checker -->
 <oui-tile class="h-100"
     data-heading="{{:: 'dedicated_server_interfaces_step_checker_title' | translate }}"
-    data-ng-if="$ctrl.showSteps">
+    data-ng-if="$ctrl.ola.isActivated() && !$ctrl.ola.isConfigured()">
     <div class="row">
         <div class="col-md-4">
             <div class="oui-progress-tracker oui-progress-tracker_vertical">
@@ -88,7 +88,7 @@
                 </ol>
             </div>
         </div>
-        <div class="col-md-8" data-ng-switch="$ctrl.currentStep">
+        <div class="col-md-8" data-ng-switch="$ctrl.ola.configStep">
 
             <!-- Step 1: Network interfaces -->
             <div data-ng-switch-default>

@@ -6,11 +6,8 @@ export default {
   template,
   bindings: {
     serverName: '<',
-    bandwidth: '<',
+    specifications: '<',
     interfaces: '<',
-    olaInfos: '<',
-
-    currentStep: '<',
-    showSteps: '<',
+    ola: '<',
   },
 };

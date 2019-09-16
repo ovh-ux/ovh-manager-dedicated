@@ -1,8 +1,8 @@
 export default class DedicatedServerInterfacesOlaActivationCtrl {
   activate() {
-    // TODO: Activate OLA
+    // TODO: API call for OLA activation
     this.goBack({
-      showSteps: true,
+      isOlaActivated: true, // For mockup
     });
   }
 }

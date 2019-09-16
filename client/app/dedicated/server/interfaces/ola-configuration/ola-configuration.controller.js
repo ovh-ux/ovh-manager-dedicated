@@ -25,10 +25,10 @@ export default class {
   }
 
   onFinish() {
-    // TODO: Activate OLA
+    // TODO: API call for OLA configuration
     this.goBack({
-      showSteps: true,
-      currentStep: 2,
+      isOlaActivated: true, // For mockup
+      configStep: 2,
     });
   }
 }

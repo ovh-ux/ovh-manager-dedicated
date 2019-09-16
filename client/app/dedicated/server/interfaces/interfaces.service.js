@@ -75,15 +75,4 @@ export default class DedicatedServerInterfaceService {
         ),
       ]);
   }
-
-  getOlaInfos() {
-    // TODO
-    console.log('getOlaInfos', this);
-
-    return {
-      isAvailable: true,
-      isActivated: false,
-      isConfigured: false,
-    };
-  }
 }

@@ -90,37 +90,37 @@
                 <span class="oui-status oui-status_warning"
                     data-ng-if="$row.isPublic() && $ctrl.hasObsoleteBandwithOption()">
                     <span class="oui-icon oui-icon-warning_circle oui-color-warning-medium font-inherit"></span>
-                    <span data-ng-bind="'server_bandwidth_type_' + $ctrl.bandwidth.bandwidth.type | translate"></span>
+                    <span data-ng-bind="'server_bandwidth_type_' + $ctrl.specifications.bandwidth.type | translate"></span>
                 </span>
                 <span
-                    data-ng-if="$row.isPublic() && $ctrl.bandwidth.bandwidth.type === 'included'"
-                    data-ng-bind="'server_bandwidth_type_' + $ctrl.bandwidth.bandwidth.type | translate">
+                    data-ng-if="$row.isPublic() && $ctrl.specifications.bandwidth.type === 'included'"
+                    data-ng-bind="'server_bandwidth_type_' + $ctrl.specifications.bandwidth.type | translate">
                 </span>
                 <span
                     data-ng-if="$row.isPrivate()"
-                    data-ng-bind="'server_bandwidth_type_' + $ctrl.bandwidth.vrack.type | translate">
+                    data-ng-bind="'server_bandwidth_type_' + $ctrl.specifications.vrack.type | translate">
                 </span>
             </oui-column>
             <oui-column data-title=":: 'dedicated_server_interfaces_ola_column_bandwidth_outgoing' | translate">
                 <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
                 <span
                     data-ng-if="$row.isPublic()"
-                    data-ng-bind="$ctrl.bandwidth.bandwidth.OvhToInternet | ducBandwidth">
+                    data-ng-bind="$ctrl.specifications.bandwidth.OvhToInternet | ducBandwidth">
                 </span>
                 <span
                     data-ng-if="$row.isPrivate()"
-                    data-ng-bind="$ctrl.bandwidth.vrack.bandwidth | ducBandwidth">
+                    data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth">
                 </span>
             </oui-column>
             <oui-column data-title=":: 'dedicated_server_interfaces_ola_column_bandwidth_incoming' | translate">
                 <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
                 <span
                     data-ng-if="$row.isPublic()"
-                    data-ng-bind="$ctrl.bandwidth.bandwidth.InternetToOvh | ducBandwidth">
+                    data-ng-bind="$ctrl.specifications.bandwidth.InternetToOvh | ducBandwidth">
                 </span>
                 <span
                     data-ng-if="$row.isPrivate()"
-                    data-ng-bind="$ctrl.bandwidth.vrack.bandwidth | ducBandwidth">
+                    data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth">
                 </span>
             </oui-column>
         </oui-datagrid>
@@ -161,22 +161,22 @@
                         <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
                         <span
                             data-ng-if="interface.isPublic()"
-                            data-ng-bind="$ctrl.bandwidth.bandwidth.OvhToInternet | ducBandwidth">
+                            data-ng-bind="$ctrl.specifications.bandwidth.OvhToInternet | ducBandwidth">
                         </span>
                         <span
                             data-ng-if="interface.isPrivate()"
-                            data-ng-bind="$ctrl.bandwidth.vrack.bandwidth | ducBandwidth">
+                            data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth">
                         </span>
                     </td>
                     <td class="oui-datagrid__cell">
                         <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
                         <span
                             data-ng-if="interface.isPublic()"
-                            data-ng-bind="$ctrl.bandwidth.bandwidth.InternetToOvh | ducBandwidth">
+                            data-ng-bind="$ctrl.specifications.bandwidth.InternetToOvh | ducBandwidth">
                         </span>
                         <span
                             data-ng-if="interface.isPrivate()"
-                            data-ng-bind="$ctrl.bandwidth.vrack.bandwidth | ducBandwidth">
+                            data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth">
                         </span>
                     </td>
                 </tr>

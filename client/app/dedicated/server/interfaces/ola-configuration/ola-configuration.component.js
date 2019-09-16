@@ -4,7 +4,7 @@ import template from './ola-configuration.html';
 export default {
   bindings: {
     goBack: '<',
-    bandwidth: '<',
+    specifications: '<',
     interfaces: '<',
   },
   controller,

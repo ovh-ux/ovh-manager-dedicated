@@ -8,15 +8,15 @@ export default class {
   }
 
   $onInit() {
-    if (!_.isNumber(this.currentStep)) {
-      this.currentStep = 0;
+    if (!_.isNumber(this.ola.configStep)) {
+      this.ola.configStep = 0;
     }
   }
 
   getStepClassname(step) {
     return {
-      'oui-progress-tracker__step_active': this.currentStep === step,
-      'oui-progress-tracker__step_complete': this.currentStep > step,
+      'oui-progress-tracker__step_active': this.ola.configStep === step,
+      'oui-progress-tracker__step_complete': this.ola.configStep > step,
     };
   }
 
@@ -25,13 +25,19 @@ export default class {
   }
 
   closeSteps() {
+    // For mockup
+    this.$state.go('app.dedicated.server.interfaces', {
+      isOlaActivated: true,
+      isOlaConfigured: true,
+    });
+
     // Clear query parameters then reload current state
-    this.$location.url(this.$location.path());
-    this.$state.reload();
+    // this.$location.url(this.$location.path());
+    // this.$state.reload();
   }
 
   goToNextStep() {
-    this.currentStep += 1;
+    this.ola.configStep += 1;
   }
 
   goToConfiguration() {
