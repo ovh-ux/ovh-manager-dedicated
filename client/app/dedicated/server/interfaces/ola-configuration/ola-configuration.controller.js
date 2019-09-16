@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { OLA_MODES } from './ola.constants';
+import { OLA_MODES } from './ola-configuration.constants';
 
 export default class {
   $onInit() {
