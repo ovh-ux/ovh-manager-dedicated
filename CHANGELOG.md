@@ -1,3 +1,15 @@
+<a name="10.28.4"></a>
+## [10.28.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.3...v10.28.4) (2019-09-16)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** allow to terminate non-engaged service ([#1389](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1389)) ([c977489](https://github.com/ovh-ux/ovh-manager-dedicated/commit/c977489))
+* **billing.autorenew:** fix capability check ([#1390](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1390)) ([5bdda6f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5bdda6f))
+* **billing.autorenew:** fix link to billing section ([#1392](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1392)) ([a5e726a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/a5e726a))
+
+
+
 <a name="10.28.3"></a>
 ## [10.28.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.2...v10.28.3) (2019-09-11)
 
