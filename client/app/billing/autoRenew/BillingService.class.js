@@ -114,7 +114,7 @@ export default class BillingService {
   }
 
   isAutomaticallyRenewed() {
-    return ['automaticV2014', 'automaticV2016', 'automaticForcedProduct'].includes(this.renewalType);
+    return ['automaticForcedProduct'].includes(this.renewalType);
   }
 
   hasBillingRights(nichandle) {
@@ -143,7 +143,7 @@ export default class BillingService {
       };
     }
 
-    if (this.hasBillingRights(nichandle)) {
+    if (!this.hasBillingRights(nichandle)) {
       return {
         availabilty: false,
         reason: 'nic_rights',
@@ -192,7 +192,7 @@ export default class BillingService {
       };
     }
 
-    if (this.hasBillingRights(nichandle)) {
+    if (!this.hasBillingRights(nichandle)) {
       return {
         availabilty: false,
         reason: 'nic_rights',
