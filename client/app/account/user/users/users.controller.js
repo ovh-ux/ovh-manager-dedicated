@@ -1,6 +1,5 @@
 export default class UserAccountUsersCtrl {
   /* @ngInject */
-
   constructor($scope, User, UseraccountUsersService, UseraccountGroupsService, $q, Alerter,
     $translate) {
     this.$scope = $scope;
