@@ -5,59 +5,60 @@
         <div class="row pt-4">
 
             <div class="col mb-4 mx-2">
-                <oui-tile heading="{{:: 'user_account_dashboard_shortcut' | translate }}">
-                    <oui-tile-button data-ng-repeat="shortcut in $ctrl.shortcuts track by $index"
-                        href="{{:: shortcut.href }}">
+                <oui-tile data-heading="{{:: 'user_account_dashboard_shortcut' | translate }}">
+                    <oui-tile-button
+                        data-ng-repeat="shortcut in $ctrl.shortcuts track by $index"
+                        data-href="{{:: shortcut.href }}">
                         <span data-translate="{{ 'user_account_dashboard_shortcut_' + shortcut.key | translate }}"></span>
                     </oui-tile-button>
                 </oui-tile>
             </div>
 
             <div class="col mb-4 mx-2">
-                <oui-tile heading="{{:: 'user_account_dashboard_last_bill' | translate }}">
-                    <oui-tile-definition term="{{:: 'user_account_dashboard_last_bill_reference' | translate }}"
-                        description="{{ $ctrl.lastBill.billId }}">
+                <oui-tile data-heading="{{:: 'user_account_dashboard_last_bill' | translate }}">
+                    <oui-tile-definition data-term="{{:: 'user_account_dashboard_last_bill_reference' | translate }}"
+                        data-description="{{:: $ctrl.lastBill.billId }}">
                     </oui-tile-definition>
-                    <oui-tile-definition term="{{:: 'user_account_dashboard_last_bill_date' | translate }}"
-                        description="{{ $ctrl.lastBill.date | date}}">
+                    <oui-tile-definition data-term="{{:: 'user_account_dashboard_last_bill_date' | translate }}"
+                        data-description="{{:: $ctrl.lastBill.date | date}}">
                     </oui-tile-definition>
-                    <oui-tile-definition term="{{:: 'user_account_dashboard_last_bill_amount' | translate }}"
-                        description="{{ $ctrl.lastBill.priceWithTax.text }}">
+                    <oui-tile-definition data-term="{{:: 'user_account_dashboard_last_bill_amount' | translate }}"
+                        data-description="{{:: $ctrl.lastBill.priceWithTax.text }}">
                     </oui-tile-definition>
-                    <a class="oui-button oui-button_secondary mx-auto my-5 d-block"
+                    <a
+                        class="oui-button oui-button_secondary mx-auto my-5 d-block"
                         data-ng-href="{{ $ctrl.lastBill.url }}"
                         target="_blank"
+                        rel="noopener"
                         data-translate="user_account_dashboard_last_bill_see">
                     </a>
                 </oui-tile>
             </div>
 
             <div class="col mb-4 mx-2">
-                <oui-tile heading="{{:: 'user_account_dashboard_profile' | translate }}">
+                <oui-tile data-heading="{{:: 'user_account_dashboard_profile' | translate }}">
                     <div class="row">
                         <div class="col-md-3">
-                            <span class="oui-icon oui-icon-user_extra-thin float-left w-25 h-25 d-block"
-                                style="font-size: 8rem">
-                            </span>
+                            <span class="oui-icon oui-icon-user_extra-thin"></span>
                         </div>
                         <div class="col-md-7">
                             <div class="mb-4">
                                 <p>
-                                    <strong>{{:: $ctrl.user.firstname}} {{:: $ctrl.user.name}}</strong>
+                                    <strong data-ng-bind=":: $ctrl.user.firstname + ' ' $ctrl.user.name"></strong>
                                 </p>
-                                <p>{{:: $ctrl.user.nichandle}}</p>
+                                <p data-ng-bind="::$ctrl.user.nichandle"></p>
                             </div>
-                            <p>{{:: $ctrl.user.address}}</p>
-                            <p>{{:: $ctrl.user.zip}} {{:: $ctrl.user.city}}</p>
-                            <p>{{:: $ctrl.user.phone}}</p>
-                            <p>{{:: $ctrl.user.email}}</p>
+                            <p data-ng-bind="::$ctrl.user.address"></p>
+                            <p data-ng-bind=":: $ctrl.user.zip + ' ' $ctrl.user.city"></p>
+                            <p data-ng-bind="::$ctrl.user.phone"></p>
+                            <p class="text-wrap" data-ng-bind="::$ctrl.user.email"></p>
                             <p>
                                 <span data-translate="user_account_dashboard_profile_support_level"></span>
                                 <span data-translate="{{ 'user_account_support_level_section_' + $ctrl.supportLevel.level | translate }}"></span>
                             </p>
                         </div>
                         <div class="col-md-2">
-                            <oui-action-menu data-compact align="end" class="float-right">
+                            <oui-action-menu data-compact data-align="end" class="float-right">
                                 <oui-action-menu-item
                                     text="{{:: 'user_account_dashboard_profile_edit' | translate}}"
                                     href="#/useraccount/infos">

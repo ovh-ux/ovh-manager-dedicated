@@ -690,33 +690,9 @@
   version "0.0.0"
   resolved "https://codeload.github.com/angular-ui/ui-utils/tar.gz/125cb72d692f9f116454f338f6a5471f3088f9b9"
 
-"@bower_components/angular-ui-validate@angular-ui/ui-validate#~1.2.2", angular-ui-validate@angular-ui/ui-validate#~1.2.2:
-  version "1.2.3"
-  resolved "https://codeload.github.com/angular-ui/ui-validate/tar.gz/0d982055360032be2421b969fa1c83bf053e735a"
-
-"@bower_components/bootstrap-datetimepicker@tarruda/bootstrap-datetimepicker#~0.0.11", bootstrap-datetimepicker@tarruda/bootstrap-datetimepicker#~0.0.11:
-  version "0.0.10"
-  resolved "https://codeload.github.com/tarruda/bootstrap-datetimepicker/tar.gz/c26217db8840e5aa8f56e343ce307581960543c9"
-
 "@bower_components/bootstrap4@twbs/bootstrap#v4.0.0":
   version "4.0.0"
   resolved "https://codeload.github.com/twbs/bootstrap/tar.gz/8a628b943cf31ca0a002c08af661a95772480225"
-
-"@bower_components/ckeditor@ckeditor/ckeditor-releases#^4.7.2":
-  version "4.12.1"
-  resolved "https://codeload.github.com/ckeditor/ckeditor-releases/tar.gz/b1a25e93ae0b038f45dcba458f4c2c18bd7318e5"
-
-"@bower_components/international-phone-number@mareczek/international-phone-number#^0.0.16", international-phone-number@mareczek/international-phone-number#^0.0.16:
-  version "0.0.11"
-  resolved "https://codeload.github.com/mareczek/international-phone-number/tar.gz/28055517d453a2f11e9035f2761243b6878df258"
-
-"@bower_components/lodash@lodash/lodash#~3.10.1", lodash@lodash/lodash#~3.10.1, lodash@~3.10.0:
-  version "3.10.1"
-  resolved "https://codeload.github.com/lodash/lodash/tar.gz/dfbd78f71de0550068fc82ce6e013d443e5037d7"
-
-"@bower_components/messenger@HubSpot/messenger#~1.4.1", messenger@HubSpot/messenger#~1.4.1:
-  version "1.4.2"
-  resolved "https://codeload.github.com/HubSpot/messenger/tar.gz/a3df9a62a1677af45fb130e226a6cbf98c0cecf0"
 
 "@bower_components/ng-ckeditor@esvit/ng-ckeditor#^0.2.1":
   version "0.2.0"
@@ -939,14 +915,6 @@
   dependencies:
     "@ovh-ux/ng-translate-async-loader" "^2.0.0"
     lodash "^4.17.15"
-
-"@ovh-ux/manager-navbar@^1.2.2":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-navbar/-/manager-navbar-1.2.3.tgz#a770c999684bdc8cf0540b67e518d321e6d4fe70"
-  integrity sha512-t9O5jrOkCv4uhFxUG5GqfhWVHSw+2KQAL3SDIaOeU98C9ajTEOBAkb8tco1/MC7iD0jtOYXMfRd4nri32dMKAQ==
-  dependencies:
-    lodash "^4.17.14"
-    moment "^2.24.0"
 
 "@ovh-ux/manager-navbar@git+https://github.com/ovh-ux/manager.git#split-navbar-assistance-menu":
   version "1.3.1"
@@ -1598,6 +1566,10 @@ angular-ui-bootstrap@1.3.3:
   resolved "https://registry.yarnpkg.com/angular-ui-bootstrap/-/angular-ui-bootstrap-1.3.3.tgz#4820f895d433c17abeb4ac7387f2f122cbf8c11c"
   integrity sha1-SCD4ldQzwXq+tKxzh/LxIsv4wRw=
 
+angular-ui-validate@angular-ui/ui-validate#~1.2.2:
+  version "1.2.3"
+  resolved "https://codeload.github.com/angular-ui/ui-validate/tar.gz/0d982055360032be2421b969fa1c83bf053e735a"
+
 angular-xeditable@^0.9.0:
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/angular-xeditable/-/angular-xeditable-0.9.0.tgz#5eaa143058959a985de4475ce1d7c7539b60ee8a"
@@ -2118,6 +2090,10 @@ boom@2.x.x:
   integrity sha1-OciRjO/1eZ+D+UkqhI9iWt0Mdm8=
   dependencies:
     hoek "2.x.x"
+
+bootstrap-datetimepicker@tarruda/bootstrap-datetimepicker#~0.0.11:
+  version "0.0.10"
+  resolved "https://codeload.github.com/tarruda/bootstrap-datetimepicker/tar.gz/c26217db8840e5aa8f56e343ce307581960543c9"
 
 bootstrap@~3.3.0, bootstrap@~3.3.7:
   version "3.3.7"
@@ -5907,6 +5883,10 @@ internal-ip@^3.0.1:
     default-gateway "^2.6.0"
     ipaddr.js "^1.5.2"
 
+international-phone-number@mareczek/international-phone-number#^0.0.16:
+  version "0.0.11"
+  resolved "https://codeload.github.com/mareczek/international-phone-number/tar.gz/28055517d453a2f11e9035f2761243b6878df258"
+
 interpret@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.1.0.tgz#7ed1b1410c6a0e0f78cf95d3b8440c63f78b8614"
@@ -7044,6 +7024,10 @@ lodash@^4.17.14:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.14.tgz#9ce487ae66c96254fe20b599f21b6816028078ba"
   integrity sha512-mmKYbW3GLuJeX+iGP+Y7Gp1AiGHGbXHCOh/jZmrawMmsE7MS4znI3RL2FsjbqOyMayHInjOeykW7PEajUk1/xw==
 
+lodash@lodash/lodash#~3.10.1, lodash@~3.10.0:
+  version "3.10.1"
+  resolved "https://codeload.github.com/lodash/lodash/tar.gz/dfbd78f71de0550068fc82ce6e013d443e5037d7"
+
 lodash@~3.9.3:
   version "3.9.3"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.9.3.tgz#0159e86832feffc6d61d852b12a953b99496bd32"
@@ -7280,6 +7264,10 @@ merge2@^1.2.1:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/merge2/-/merge2-1.2.3.tgz#7ee99dbd69bb6481689253f018488a1b902b0ed5"
   integrity sha512-gdUU1Fwj5ep4kplwcmftruWofEFt6lfpkkr3h860CXbAB9c3hGb55EOL2ali0Td5oebvW0E1+3Sr+Ur7XfKpRA==
+
+messenger@HubSpot/messenger#~1.4.1:
+  version "1.4.2"
+  resolved "https://codeload.github.com/HubSpot/messenger/tar.gz/a3df9a62a1677af45fb130e226a6cbf98c0cecf0"
 
 methods@^1.1.1, methods@~1.1.2:
   version "1.1.2"
@@ -8153,10 +8141,10 @@ ovh-angular-toaster@^0.8.0:
   resolved "https://registry.yarnpkg.com/ovh-angular-toaster/-/ovh-angular-toaster-0.8.0.tgz#7073201379ea196c721d583421c0cef1d04bdbdb"
   integrity sha1-cHMgE3nqGWxyHVg0IcDO8dBL29s=
 
-ovh-api-services@^9.8.0:
-  version "9.8.0"
-  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-9.8.0.tgz#9764da1793ba3bd01bf897c2be6298a9de6cc2cb"
-  integrity sha512-WI9TfBkxkR5TZvQU1Xx8NIRwpS3TVqa7gQwRye+3Wj+b2UIGKAOmf0/fjGTsXSQBPsnMo3U4P+9YmjSO0OX5/A==
+ovh-api-services@^9.10.0:
+  version "9.10.0"
+  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-9.10.0.tgz#b6111e0d5d4dc19d3a4a0004df6b67c7699a0138"
+  integrity sha512-WjtKwYhvhpnYSjepiPoBioFQwBbyvnfD8fBfUJLDKGhYf1PNqQW5B3Sy2Cgs/xXkQTu+St5OUntMkkQTN7V/KQ==
   dependencies:
     lodash "^4.17.15"
 
@@ -8178,9 +8166,10 @@ ovh-module-exchange@^9.4.7:
     filesize "^3.6.1"
     lodash "~3.9.3"
 
-"ovh-ui-angular@https://github.com/ovh-ux/ovh-ui-angular.git#build/navbar-header-link":
-  version "3.7.7"
-  resolved "https://github.com/ovh-ux/ovh-ui-angular.git#f430859b1da1461174bcbeea6d18b2ee2ba930c4"
+ovh-ui-angular@^3.8.0:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-3.8.0.tgz#90e73fdec25bea2a740c4291b87d7404560f7317"
+  integrity sha512-3TtJh7gTPKwQOCY1uGe11OrhXJsaiFHF25dwlMQ9cCQ7Yw+syYlIrrqmxjFCtClUXDMowzCZtIniD032SUjJGA==
   dependencies:
     bloodhound-js "^1.2.3"
     clipboard "^2.0.1"

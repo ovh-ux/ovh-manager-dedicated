@@ -1,6 +1,8 @@
 import controller from './user-dashboard.controller';
 import template from './user-dashboard.html';
 
+import './user-dashboard.less';
+
 angular
   .module('UserAccount')
   .config(($stateProvider) => {
@@ -24,7 +26,7 @@ angular
           .v6()
           .supportLevel()
           .$promise,
-        lastBill: /* @ngInject */ iceberg => iceberg('/me/bill')
+        lastBill: /* @ngInject */ OvhApiMeBillIceberg => OvhApiMeBillIceberg
           .query()
           .expand('CachedObjectList-Pages')
           .sort('date', 'DESC')
