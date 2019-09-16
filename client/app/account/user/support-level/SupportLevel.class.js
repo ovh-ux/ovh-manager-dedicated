@@ -6,10 +6,14 @@ export default class SupportLevel {
   }
 
   isAvailable() {
-    return AVAILABLE_SUPPORT_LEVEL.includes(this.name);
+    return AVAILABLE_SUPPORT_LEVEL.includes(this.level);
   }
 
   isActive() {
-    return !INACTIVE_SUPPORT_LEVEL.includes(this.name);
+    return !INACTIVE_SUPPORT_LEVEL.includes(this.level);
+  }
+
+  get name() {
+    return this.level;
   }
 }

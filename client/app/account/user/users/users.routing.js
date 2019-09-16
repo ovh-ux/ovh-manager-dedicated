@@ -3,7 +3,7 @@ import controller from './users.controller';
 
 angular
   .module('UserAccount')
-  .config(($stateProvider) => {
+  .config(/* @ngInject */ ($stateProvider) => {
     const name = 'app.account.user.users';
 
     $stateProvider.state(name, {

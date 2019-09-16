@@ -1,23 +1,23 @@
 export const USER_DASHBOARD_SHORTCUTS = [
   {
     key: 'ALL_BILLS',
-    href: '#/billing/history',
+    state: 'app.account.billing.main.history',
   },
   {
     key: 'PAYMENT_FOLLOW_UP',
-    href: '#/billing/payment/transactions',
+    state: 'app.account.billing.payment.transactions',
   },
   {
     key: 'ADD_PAYMENT_METHOD',
-    href: '#/billing/payment/method/add',
+    state: 'app.account.billing.payment.method.add',
   },
   {
     key: 'MANAGE_SERVICES',
-    href: '#/billing/autoRenew',
+    state: 'app.account.billing.autorenew',
   },
   {
     key: 'ADD_CONTACT',
-    href: '#/useraccount/contacts/services',
+    state: 'app.account.contacts.services',
   },
 ];
 

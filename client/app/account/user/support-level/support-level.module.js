@@ -2,7 +2,7 @@ import component from './support-level.component';
 
 import routing from './support-level.routing';
 
-import './index.less';
+import './index.scss';
 
 const moduleName = 'ovhManagerDedicatedAccountUserSupportLevel';
 

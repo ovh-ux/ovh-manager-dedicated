@@ -1,13 +1,13 @@
 export default class UserAccountCtrl {
   /* @ngInject */
-
-  constructor($location, $scope, $state, $timeout, constants) {
+  constructor($location, $scope, $state, $timeout, constants, supportLevel) {
     // dependencies injections
     this.$location = $location;
     this.$scope = $scope;
     this.$state = $state;
     this.$timeout = $timeout;
     this.constants = constants;
+    this.supportLevel = supportLevel;
     this.USERACCOUNT_BASE_URL = 'account/user/';
     this.originUrl = this.$location.search().redirectTo || this.$location.search().redirectto;
   }

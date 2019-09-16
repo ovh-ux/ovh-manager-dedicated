@@ -1,6 +1,8 @@
+export const API_MODEL_SUPPORT_LEVEL = 'me.SupportLevel.LevelTypeEnum';
+
 export const INACTIVE_SUPPORT_LEVEL = ['premium-accredited'];
 
-export const AVAILABLE_SUPPORT_LEVEL = ['standard', 'business', 'enterprise'];
+export const AVAILABLE_SUPPORT_LEVEL = ['business', 'enterprise'];
 
 export const URLS = {
   ASIA: {
@@ -144,6 +146,7 @@ export const URLS = {
 };
 
 export default {
+  API_MODEL_SUPPORT_LEVEL,
   AVAILABLE_SUPPORT_LEVEL,
   INACTIVE_SUPPORT_LEVEL,
   URLS,

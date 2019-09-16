@@ -8,15 +8,5 @@ export default /* @ngInject */ ($stateProvider) => {
       format: 'json',
       value: ['./'],
     },
-    resolve: {
-      schema: /* @ngInject */ OvhApiMe => OvhApiMe
-        .v6()
-        .schema()
-        .$promise,
-      supportLevel: /* @ngInject */ OvhApiMe => OvhApiMe
-        .v6()
-        .supportLevel()
-        .$promise,
-    },
   });
 };

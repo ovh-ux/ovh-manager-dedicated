@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 angular
   .module('UserAccount')
-  .config(($stateProvider, $urlRouterProvider, coreConfigProvider) => {
+  .config(/* @ngInject */($stateProvider, coreConfigProvider) => {
     const name = 'app.account.user.emails';
     const nameDetails = 'app.account.user.emailsDetails';
 

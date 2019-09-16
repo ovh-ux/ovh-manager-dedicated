@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 angular
   .module('UserAccount')
-  .config(($stateProvider, $urlRouterProvider, coreConfigProvider) => {
+  .config(/* @ngInject */($stateProvider, coreConfigProvider) => {
     const name = 'app.account.user.advanced';
 
     if (_.includes(['EU', 'CA'], coreConfigProvider.getRegion())) {

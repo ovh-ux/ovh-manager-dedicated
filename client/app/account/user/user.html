@@ -15,7 +15,8 @@
             </oui-header-tabs-item>
             <oui-header-tabs-item data-text="{{ 'user_account_support_level_title' | translate }}"
                                   data-href="{{ $ctrl.$state.href('app.account.user.support-level') }}"
-                                  data-active="$ctrl.$state.includes('app.account.user.support-level')">
+                                  data-active="$ctrl.$state.includes('app.account.user.support-level')"
+                                  data-ng-if="$ctrl.supportLevel">
             </oui-header-tabs-item>
             <oui-header-tabs-item data-text="{{ 'user_account_users_management_title' | translate }}"
                                   data-href="{{ $ctrl.$state.href('app.account.user.users') }}"
