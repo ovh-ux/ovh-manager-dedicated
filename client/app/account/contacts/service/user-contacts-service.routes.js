@@ -2,6 +2,10 @@ export default /* @ngInject */ ($stateProvider) => {
   $stateProvider.state('app.account.useraccount.contacts.services', {
     url: '/services?serviceName&category',
     component: 'accountContactsService',
+    translations: {
+      format: 'json',
+      value: ['.'],
+    },
     resolve: {
       editContacts: /* @ngInject */ $state => service => $state.go('app.account.useraccount.contacts.services.edit', { service: service.serviceName }),
       getServiceInfos: /* @ngInject */
