@@ -43,7 +43,7 @@ export default {
     updateExchangeBilling: '<',
     updateServices: '<',
     warnNicBilling: '<',
-    warnPendingDebt: '<',
+    warnNicPendingDebt: '<',
   },
   controller,
   template,
