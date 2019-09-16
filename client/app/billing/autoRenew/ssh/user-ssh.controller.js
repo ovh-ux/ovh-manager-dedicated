@@ -1,6 +1,5 @@
 export default class UserAccountSshCtrl {
   /* @ngInject */
-
   constructor(
     $scope,
     $q,

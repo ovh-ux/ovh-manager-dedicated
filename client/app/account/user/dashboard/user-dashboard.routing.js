@@ -1,5 +1,7 @@
-import controller from './user-dashboard.controller';
-import template from './user-dashboard.html';
+import _ from 'lodash';
+
+import component from './user-dasboard.component';
+import './user-dashboard.less';
 
 angular
   .module('UserAccount')
@@ -8,9 +10,7 @@ angular
 
     $stateProvider.state(name, {
       url: '/dashboard',
-      template,
-      controller,
-      controllerAs: '$ctrl',
+      component: 'userAccountDashboard',
       translations: {
         format: 'json',
         value: ['./', '../support-level'],
@@ -24,13 +24,15 @@ angular
           .v6()
           .supportLevel()
           .$promise,
-        lastBill: /* @ngInject */ iceberg => iceberg('/me/bill')
+        lastBill: /* @ngInject */ OvhApiMeBillIceberg => OvhApiMeBillIceberg
           .query()
           .expand('CachedObjectList-Pages')
           .sort('date', 'DESC')
           .limit(1)
           .execute(null, true)
-          .$promise,
+          .$promise
+          .then(lastBill => _.head(lastBill.data)),
       },
     });
-  });
+  })
+  .component('userAccountDashboard', component);
