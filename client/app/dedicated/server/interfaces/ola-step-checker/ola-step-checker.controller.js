@@ -2,7 +2,8 @@ import _ from 'lodash';
 
 export default class {
   /* @ngInject */
-  constructor($state) {
+  constructor($location, $state) {
+    this.$location = $location;
     this.$state = $state;
   }
 
@@ -20,15 +21,13 @@ export default class {
   }
 
   activateOla() {
-    // TODO: Modal for OLA activation
-    this.$state.go('app.dedicated.server.interfaces', {
-      showSteps: true,
-    });
+    this.$state.go('app.dedicated.server.interfaces.ola-activation');
   }
 
   closeSteps() {
-    // TODO
-    console.log('closeSteps', this);
+    // Clear query parameters then reload current state
+    this.$location.url(this.$location.path());
+    this.$state.reload();
   }
 
   goToNextStep() {
@@ -36,6 +35,6 @@ export default class {
   }
 
   goToConfiguration() {
-    this.$state.go('app.dedicated.server.interfaces.ola');
+    this.$state.go('app.dedicated.server.interfaces.ola-configuration');
   }
 }

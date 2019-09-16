@@ -122,19 +122,52 @@
         <span data-ng-bind="$row.mac"></span>
     </oui-column>
     <oui-column
-        data-title="'dedicated_server_interfaces_bandwidth_label' | translate"
-        data-property="mac">
-        <span></span>
+        data-title="'dedicated_server_interfaces_bandwidth_label' | translate">
+        <div class="row"
+            data-ng-if="$row.isPublic()">
+            <div class="col-6">
+                <!-- Outgoing Bandwidth -->
+                <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
+                <span data-ng-bind="$ctrl.bandwidth.bandwidth.OvhToInternet | ducBandwidth"></span>
+                <span data-translate="server_bandwidth_outgoing"></span>
+            </div>
+            <div class="col-6">
+                <!-- Incoming Bandwidth -->
+                <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
+                <span data-ng-bind="$ctrl.bandwidth.bandwidth.InternetToOvh | ducBandwidth"></span>
+                <span data-translate="server_bandwidth_incoming"></span>
+            </div>
+        </div>
+        <div class="row"
+            data-ng-if="!$row.isPublic()">
+            <div class="col-6">
+                <!-- Outgoing Bandwidth -->
+                <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
+                <span data-ng-bind="$ctrl.bandwidth.vrack.bandwidth | ducBandwidth"></span>
+                <span data-translate="server_bandwidth_outgoing"></span>
+            </div>
+            <div class="col-6">
+                <!-- Incoming Bandwidth -->
+                <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
+                <span data-ng-bind="$ctrl.bandwidth.vrack.bandwidth | ducBandwidth"></span>
+                <span data-translate="server_bandwidth_incoming"></span>
+            </div>
+        </div>
     </oui-column>
     <oui-column
-        data-title="'dedicated_server_interfaces_ip_label' | translate"
-        data-property="ip">
-        <oui-clipboard data-model="$row.mac"></oui-clipboard>
+        data-title="'dedicated_server_interfaces_ip_label' | translate">
+        <oui-clipboard class="m-0"
+            data-ng-if="$row.isPublic()"
+            data-model="$ctrl.bandwidth.routing.ipv4.ip">
+        </oui-clipboard>
+        <span data-ng-if="!$row.isPublic()">-</span>
     </oui-column>
     <oui-column
-        data-title="'dedicated_server_interfaces_failover_ip_label' | translate"
-        data-property="mac">
-        <span></span>
+        data-title="'dedicated_server_interfaces_failover_ip_label' | translate">
+        <span data-ng-if="$row.hasFailoverIps()"
+            data-ng-bind="$row.failoverIps">
+        </span>
+        <span data-ng-if="!$row.hasFailoverIps()">-</span>
     </oui-column>
     <oui-column
         data-title="'dedicated_server_interfaces_vrack_label' | translate"

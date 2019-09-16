@@ -1,10 +1,10 @@
 export default /* @ngInject */ ($stateProvider) => {
-  $stateProvider.state('app.dedicated.server.interfaces.ola', {
-    url: '/ola',
+  $stateProvider.state('app.dedicated.server.interfaces.ola-configuration', {
+    url: '/ola-configuration',
     translations: { value: ['.'], format: 'json' },
     views: {
       'tabView@app.dedicated.server': {
-        component: 'dedicatedServerInterfacesOla',
+        component: 'dedicatedServerInterfacesOlaConfiguration',
       },
     },
     resolve: {

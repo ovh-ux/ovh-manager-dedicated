@@ -1,5 +1,6 @@
 // import angular from 'angular';
-import ola from './ola/ola.module';
+import olaActivation from './ola-activation/ola-activation.module';
+import olaConfiguration from './ola-configuration/ola-configuration.module';
 
 import component from './interfaces.component';
 import routing from './interfaces.routing';
@@ -11,8 +12,10 @@ const moduleName = 'ovhManagerDedicatedServerInterfaces';
 
 angular
   .module(moduleName, [
-    ola,
+    olaActivation,
+    olaConfiguration,
     'ovh-api-services',
+    'ui.router',
   ])
   .component('dedicatedServerInterfaces', component)
   .component('olaStepChecker', stepCheckerComponent)

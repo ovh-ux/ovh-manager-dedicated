@@ -1,0 +1,16 @@
+<oui-modal
+    data-heading="{{:: 'dedicated_server_interfaces_ola_activation_title' | translate }}"
+    data-primary-action=":: $ctrl.activate()"
+    data-primary-label="{{:: 'dedicated_server_interfaces_ola_activation_confirm' | translate }}"
+    data-secondary-action=":: $ctrl.goBack()"
+    data-secondary-label="{{:: 'dedicated_server_interfaces_ola_activation_cancel' | translate }}"
+    data-loading="$ctrl.isActivating"
+    data-on-dismiss=":: $ctrl.goBack()">
+    <p data-translate="dedicated_server_interfaces_ola_activation_text"></p>
+    <p>
+        <strong data-translate="dedicated_server_interfaces_ola_activation_text_promotion"></strong>
+        <small data-translate="dedicated_server_interfaces_ola_activation_text_price"></small>
+    </p>
+    <p><em data-translate="dedicated_server_interfaces_ola_activation_text_once"></em></p>
+    <p data-translate="dedicated_server_interfaces_ola_activation_text_levy"></p>
+</oui-modal>
