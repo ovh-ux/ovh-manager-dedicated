@@ -6,6 +6,7 @@ import component from './interfaces.component';
 import routing from './interfaces.routing';
 import service from './interfaces.service';
 
+import attachComponent from './attach/interfaces-attach.component';
 import renameComponent from './rename/interfaces-rename.component';
 import stepCheckerComponent from './ola-step-checker/ola-step-checker.component';
 
@@ -19,6 +20,7 @@ angular
     'ui.router',
   ])
   .component('dedicatedServerInterfaces', component)
+  .component('dedicatedServerInterfacesAttach', attachComponent)
   .component('dedicatedServerInterfacesRename', renameComponent)
   .component('olaStepChecker', stepCheckerComponent)
   .service('DedicatedServerInterfacesService', service)
