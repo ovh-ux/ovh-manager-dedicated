@@ -4,16 +4,12 @@ import 'angular-translate';
 import 'ovh-ui-angular';
 import '@ovh-ux/ng-translate-async-loader';
 import '@ovh-ux/ng-ovh-payment-method';
-
-import addModule from './add';
-import defaultModule from './default';
-import deleteModule from './delete';
-import editModule from './edit';
+import '@ovh-ux/manager-core';
 
 import routing from './routing';
 import component from './component';
 
-const moduleName = 'ovhBillingPaymentMethod';
+const moduleName = 'ovhBillingPaymentMethodAdd';
 
 angular
   .module(moduleName, [
@@ -21,10 +17,7 @@ angular
     'ngTranslateAsyncLoader',
     'pascalprecht.translate',
     'ngOvhPaymentMethod',
-    addModule,
-    defaultModule,
-    deleteModule,
-    editModule,
+    'ovhManagerCore',
   ])
   .config(routing)
   .run(/* @ngTranslationsInject:json ./translations */)
