@@ -7,9 +7,9 @@
             <div class="col mb-4 mx-2">
                 <oui-tile data-heading="{{:: 'user_account_dashboard_shortcut' | translate }}">
                     <oui-tile-button
-                        data-ng-repeat="shortcut in $ctrl.shortcuts track by $index"
+                        data-ng-repeat="shortcut in ::$ctrl.shortcuts track by $index"
                         data-href="{{:: shortcut.href }}">
-                        <span data-translate="{{ 'user_account_dashboard_shortcut_' + shortcut.key | translate }}"></span>
+                        <span data-translate="{{:: 'user_account_dashboard_shortcut_' + shortcut.key }}"></span>
                     </oui-tile-button>
                 </oui-tile>
             </div>
@@ -43,25 +43,25 @@
                         </div>
                         <div class="col-md-7">
                             <div class="mb-4">
-                                <p>
-                                    <strong data-ng-bind=":: $ctrl.user.firstname + ' ' $ctrl.user.name"></strong>
-                                </p>
+                                <strong data-ng-bind=":: $ctrl.user.firstname + ' ' + $ctrl.user.name"></strong>
                                 <p data-ng-bind="::$ctrl.user.nichandle"></p>
                             </div>
-                            <p data-ng-bind="::$ctrl.user.address"></p>
-                            <p data-ng-bind=":: $ctrl.user.zip + ' ' $ctrl.user.city"></p>
+                            <address>
+                                <span data-ng-bind=":: $ctrl.user.address"></span><br>
+                                <span data-ng-bind=":: $ctrl.user.zip + ' ' + $ctrl.user.city"></span>
+                            </address>
                             <p data-ng-bind="::$ctrl.user.phone"></p>
                             <p class="text-wrap" data-ng-bind="::$ctrl.user.email"></p>
                             <p>
                                 <span data-translate="user_account_dashboard_profile_support_level"></span>
-                                <span data-translate="{{ 'user_account_support_level_section_' + $ctrl.supportLevel.level | translate }}"></span>
+                                <span data-translate="{{:: 'user_account_support_level_section_' + $ctrl.supportLevel.level}}"></span>
                             </p>
                         </div>
                         <div class="col-md-2">
                             <oui-action-menu data-compact data-align="end" class="float-right">
                                 <oui-action-menu-item
-                                    text="{{:: 'user_account_dashboard_profile_edit' | translate}}"
                                     href="#/useraccount/infos">
+                                    <span data-translate="user_account_dashboard_profile_edit"></span>
                                 </oui-action-menu-item>
                             </oui-action-menu>
                         </div>
