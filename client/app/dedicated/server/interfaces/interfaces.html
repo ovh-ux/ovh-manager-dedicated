@@ -8,7 +8,7 @@
 <div class="row">
     <div class="col-md-8 mb-5"
         data-ng-if="$ctrl.ola.isAvailable() && (!$ctrl.ola.isActivated() || !$ctrl.ola.isConfigured())">
-        <ola-step-checker class="h-100 step-checker"
+        <ola-step-checker class="h-100"
             data-ola="$ctrl.ola">
         </ola-step-checker>
     </div>
@@ -167,7 +167,7 @@
             data-ng-if="!$row.hasVrack()">-</span>
     </oui-column>
 
-    <oui-action-menu data-align="end" data-compact>
+    <oui-action-menu data-align="top-end" data-compact>
         <oui-action-menu-item
             data-ui-sref="app.dedicated.server.interfaces.rename({ interface: $row })"
             data-ng-if="$row.isVirtual()">
