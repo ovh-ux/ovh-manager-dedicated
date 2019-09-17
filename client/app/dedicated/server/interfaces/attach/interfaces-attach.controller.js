@@ -2,11 +2,11 @@ export default class {
   constructor(
     $state,
     $stateParams,
-    OvhApiDedicatedServerVirtualInterface,
+    OvhApiVrack,
   ) {
     this.$state = $state;
     this.$stateParams = $stateParams;
-    this.VirtualInterface = OvhApiDedicatedServerVirtualInterface;
+    this.Vrack = OvhApiVrack;
   }
 
   $onInit() {
@@ -16,12 +16,8 @@ export default class {
     }
   }
 
-  rename() {
-    return this.VirtualInterface.update({
-      serverName: this.serverName,
-      uuid: this.interface.uuid,
-      virtualNetworkInterface: this.interface,
-    });
+  attach() {
+    return this.Vrack.attach({ uuid: this.interface.uuid });
   }
 
   cancel() {
