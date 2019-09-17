@@ -2,6 +2,7 @@ import _ from 'lodash';
 import Interface from './interface.class';
 
 export default class DedicatedServerInterfaceService {
+  /* @ngInject */
   constructor(
     $q,
     OvhApiDedicatedServerPhysicalInterface,

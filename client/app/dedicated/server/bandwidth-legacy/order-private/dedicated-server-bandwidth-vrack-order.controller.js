@@ -1,4 +1,5 @@
 class ServerOrderLegacyBandwidthVrackCtrl {
+  /* @ngInject */
   constructor($scope, $stateParams, $translate, User, BandwidthVrackOrderService) {
     this.$scope = $scope;
     this.$stateParams = $stateParams;
