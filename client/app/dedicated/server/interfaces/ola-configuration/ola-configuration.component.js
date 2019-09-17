@@ -7,6 +7,7 @@ export default {
     specifications: '<',
     interfaces: '<',
     ola: '<',
+    urls: '<',
   },
   controller,
   template,

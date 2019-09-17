@@ -28,6 +28,10 @@ export default /* @ngInject */ ($stateProvider) => {
         ...$stateParams,
       }),
 
+      urls: /* @ngInject */ (
+        constants,
+        user,
+      ) => constants.urls[user.ovhSubsidiary],
     },
   });
   $stateProvider.state('app.dedicated.server.interfaces.rename', {

@@ -7,7 +7,7 @@
 <oui-message class="mb-3" data-type="info">
     <p class="mb-0">
         <span data-translate="dedicated_server_interfaces_ola_alert_configuration_needed"></span>
-        <a href="https://docs.ovh.com"
+        <a href="{{::$ctrl.urls.guides.home}}"
             data-translate="dedicated_server_interfaces_ola_alert_configuration_needed_link">
         </a>
     </p>
@@ -74,7 +74,7 @@
                 <p data-translate="dedicated_server_interfaces_ola_alert_not_allowed"></p>
                 <ul class="mb-0">
                     <li
-                        data-ng-repeat="interface in $ctrl.notAllowedInterfaces"
+                        data-ng-repeat="interface in $ctrl.notAllowedInterfaces track by $index"
                         data-ng-bind="interface.name">
                     </li>
                 </ul>
@@ -153,7 +153,7 @@
                 </thead>
                 <tbody>
                     <tr class="oui-datagrid__row"
-                        data-ng-repeat="interface in $ctrl.selectedInterfaces">
+                        data-ng-repeat="interface in $ctrl.selectedInterfaces track by interface.name">
                         <td class="oui-datagrid__cell"
                             data-ng-if="!$index"
                             data-ng-bind="'dedicated_server_interfaces_ola_field_mode_choice_' + $ctrl.configuration.mode | translate"

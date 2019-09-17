@@ -2,14 +2,15 @@
 <p data-translate="dedicated_server_interfaces_introduction"></p>
 <p>
     <span data-translate="dedicated_server_interfaces_vrack_information"></span>
-    <a href="https://docs.ovh.com" data-translate="dedicated_server_interfaces_vrack_information_link_label"></a>
+    <a href="{{::$ctrl.urls.guides.home}}" data-translate="dedicated_server_interfaces_vrack_information_link_label"></a>
 </p>
 
 <div class="row">
     <div class="col-md-8 mb-5"
         data-ng-if="$ctrl.ola.isAvailable() && (!$ctrl.ola.isActivated() || !$ctrl.ola.isConfigured())">
         <ola-step-checker class="h-100"
-            data-ola="$ctrl.ola">
+            data-ola="$ctrl.ola"
+            data-urls="$ctrl.urls">
         </ola-step-checker>
     </div>
 
@@ -20,13 +21,13 @@
             <oui-message class="mb-3" data-type="info">
                 <p class="mb-0">
                     <span data-translate="dedicated_server_interfaces_ola_alert_configuration_needed"></span>
-                    <a href="https://docs.ovh.com" data-translate="dedicated_server_interfaces_ola_alert_configuration_needed_link"></a>
+                    <a href="{{::$ctrl.urls.guides.home}}" data-translate="dedicated_server_interfaces_ola_alert_configuration_needed_link"></a>
                 </p>
             </oui-message>
 
             <p>
                 <span data-translate="dedicated_server_interfaces_ola_activated_text"></span><br />
-                <a href="https://docs.ovh.com" data-translate="dedicated_server_interfaces_ola_activated_link"></a>
+                <a href="{{::$ctrl.urls.guides.home}}" data-translate="dedicated_server_interfaces_ola_activated_link"></a>
             </p>
 
             <!-- OLA -->

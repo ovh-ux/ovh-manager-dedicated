@@ -7,5 +7,6 @@ export default {
     specifications: '<',
     interfaces: '<',
     ola: '<',
+    urls: '<',
   },
 };
