@@ -474,7 +474,7 @@
                     term="{{:: 'server_configuration_ipv4' | translate }}">
                     <oui-tile-description>
                         <oui-clipboard
-                            class="tile-clipboard"
+                            class="ip-clipboard"
                             data-model="server.ip">
                         </oui-clipboard>
                     </oui-tile-description>
@@ -494,7 +494,7 @@
                     term="{{:: 'server_configuration_ipv6' | translate }}">
                     <oui-tile-description>
                         <oui-clipboard
-                            class="tile-clipboard"
+                            class="ip-clipboard"
                             data-model="server.ipv6">
                         </oui-clipboard>
                     </oui-tile-description>
@@ -507,7 +507,7 @@
                         term="{{:: 'server_configuration_reverse' | translate }}">
                         <oui-tile-description>
                             <oui-clipboard
-                                class="tile-clipboard"
+                                class="ip-clipboard"
                                 data-model="server.reverse || ('server_configuration_reverse_not_configured' | translate)">
                             </oui-clipboard>
                         </oui-tile-description>
@@ -540,7 +540,7 @@
                                 </small>
                             </p>
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-md-6">
                                     <!-- Outgoing Bandwidth -->
                                     <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
                                     <span data-ng-bind="bandwidth.bandwidth.OvhToInternet | ducBandwidth"></span>
@@ -554,7 +554,7 @@
                                         </span>
                                     </span>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-md-6">
                                     <!-- Incoming Bandwidth -->
                                     <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
                                     <span data-ng-bind="bandwidth.bandwidth.InternetToOvh | ducBandwidth"></span>
@@ -595,7 +595,7 @@
                                 <span data-translate="{{:: 'server_bandwidth_type_' + bandwidth.vrack.type}}"></span>
                             </p>
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-md-6">
                                     <!-- Outgoing Bandwidth -->
                                     <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
                                     <span data-ng-bind="bandwidth.vrack.bandwidth | ducBandwidth"></span>
@@ -605,7 +605,7 @@
                                         data-translate="server_bandwidth_vrack_option_released">
                                     </small>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-md-6">
                                     <!-- Incoming Bandwidth -->
                                     <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
                                     <span data-ng-bind="bandwidth.vrack.bandwidth | ducBandwidth"></span>

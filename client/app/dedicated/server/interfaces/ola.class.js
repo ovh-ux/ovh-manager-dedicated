@@ -9,6 +9,12 @@ export default class Ola {
       : 0;
   }
 
+  getCurrentMode() {
+    return this.isConfigured()
+      ? 'vrack_aggregation'
+      : 'default';
+  }
+
   isActivated() {
     return !_.isEmpty(this.supportedModes) || this.isOlaActivated;
   }

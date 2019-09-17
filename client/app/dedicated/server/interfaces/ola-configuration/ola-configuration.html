@@ -5,17 +5,16 @@
 <p data-translate="dedicated_server_interfaces_ola_description"></p>
 
 <oui-message class="mb-3" data-type="info">
-    <p>
+    <p class="mb-0">
         <span data-translate="dedicated_server_interfaces_ola_alert_configuration_needed"></span>
-        <a
-            data-ng-href=""
+        <a href="https://docs.ovh.com"
             data-translate="dedicated_server_interfaces_ola_alert_configuration_needed_link">
         </a>
     </p>
 </oui-message>
 
 <oui-message class="mb-3" data-type="warning">
-    <p data-translate="dedicated_server_interfaces_ola_alert_configuration_reset"></p>
+    <p class="mb-0" data-translate="dedicated_server_interfaces_ola_alert_configuration_reset"></p>
 </oui-message>
 
 <oui-stepper
@@ -31,15 +30,18 @@
                         class="h-100"
                         name="mode"
                         data-description="{{:: 'dedicated_server_interfaces_ola_field_mode_choice_' + mode + '_description' | translate}}"
+                        data-disabled="$ctrl.isModeDisabled(mode)"
                         data-model="$ctrl.configuration.mode"
                         data-value="mode"
-                        data-thumbnail>
+                        data-thumbnail
+                        data-required>
                         <span data-translate="{{ 'dedicated_server_interfaces_ola_field_mode_choice_' + mode }}"></span>
                     </oui-radio>
                 </div>
             </div>
         </oui-field>
-        <oui-field data-label="{{:: 'dedicated_server_interfaces_ola_field_name_label' | translate}}">
+        <oui-field data-label="{{:: 'dedicated_server_interfaces_ola_field_name_label' | translate}}"
+            data-size="l">
             <input class="oui-input"
                 name="name"
                 type="text"
@@ -52,14 +54,14 @@
     <oui-step-form
         data-header="{{:: 'dedicated_server_interfaces_ola_step2_title' | translate }}"
         data-description="{{:: 'dedicated_server_interfaces_ola_step2_description' | translate }}"
-        data-valid="!!$ctrl.selectedInterfaces.length"
+        data-valid="!!$ctrl.selectedInterfaces.length && $ctrl.selectedInterfaces.length > 1"
         data-prevent-next>
 
         <!-- Obsolete bandwidth option -->
         <oui-message class="mb-3"
             data-ng-if="$ctrl.hasObsoleteBandwithOption()"
             data-type="warning">
-            <p data-translate="dedicated_server_interfaces_ola_alert_obsolete_option"></p>
+            <p class="mb-0" data-translate="dedicated_server_interfaces_ola_alert_obsolete_option"></p>
         </oui-message>
 
         <!-- Forbidden interface -->
@@ -67,7 +69,7 @@
             data-ng-if="$ctrl.notAllowedInterfaces.length"
             data-type="warning">
             <p data-translate="dedicated_server_interfaces_ola_alert_not_allowed"></p>
-            <ul>
+            <ul class="mb-0">
                 <li
                     data-ng-repeat="interface in $ctrl.notAllowedInterfaces"
                     data-ng-bind="interface.name">
