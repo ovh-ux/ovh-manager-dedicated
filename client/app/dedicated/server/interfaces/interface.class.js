@@ -12,6 +12,16 @@ export default class Interface {
     Object.assign(this, resource);
   }
 
+  isPhysical() {
+    return this.type === PHYSICAL_TYPE_PUBLIC
+      || this.type === PHYSICAL_TYPE_PRIVATE
+      || this.type === PHYSICAL_TYPE_PRIVATE_LAG;
+  }
+
+  isVirtual() {
+    return !this.isPhysical();
+  }
+
   isPublic() {
     return this.type === PHYSICAL_TYPE_PUBLIC
       || this.type === VIRTUAL_TYPE_PUBLIC;
