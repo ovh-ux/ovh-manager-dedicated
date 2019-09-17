@@ -7,12 +7,39 @@
     }
   }
 
-  .tile-clipboard {
-    width: rem-calc(300);
+  .ip-clipboard {
+    min-width: rem-calc(200);
+    max-width: rem-calc(300);
     margin: 0;
   }
 
   .font-inherit {
     font-size: inherit;
+  }
+
+  .step-checker {
+    display: block;
+
+    @media (min-width: 992px) {
+      .oui-tile {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .oui-tile__body {
+        flex: 1;
+
+        .row {
+          height: 100%;
+        }
+
+        .oui-list,
+        .oui-progress-tracker {
+          height: 100%;
+          margin: 0;
+          border-right: 1px solid #eaeaea;
+        }
+      }
+    }
   }
 }

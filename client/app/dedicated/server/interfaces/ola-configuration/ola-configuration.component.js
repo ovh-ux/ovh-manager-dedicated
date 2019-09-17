@@ -6,6 +6,7 @@ export default {
     goBack: '<',
     specifications: '<',
     interfaces: '<',
+    ola: '<',
   },
   controller,
   template,

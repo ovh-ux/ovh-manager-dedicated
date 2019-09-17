@@ -5,15 +5,17 @@ export default class {
   $onInit() {
     this.olaModes = OLA_MODES;
 
-    this.configuration = {
-      mode: this.olaModes[0],
-    };
+    this.configuration = {};
 
     this.selectedInterfaces = [];
     this.notAllowedInterfaces = _.remove(
       this.interfaces,
       item => item.hasFailoverIps() || item.hasVrack(),
     );
+  }
+
+  isModeDisabled(mode) {
+    return this.ola.getCurrentMode() === mode;
   }
 
   hasObsoleteBandwithOption() {

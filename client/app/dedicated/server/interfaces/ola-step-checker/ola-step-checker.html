@@ -3,7 +3,7 @@
     data-heading="{{:: 'dedicated_server_interfaces_step_checker_title' | translate }}"
     data-ng-if="!$ctrl.ola.isActivated()">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-lg-4">
             <div class="oui-list">
                 <ul class="oui-list__items">
                     <li class="oui-list__item">
@@ -25,7 +25,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-lg-8">
             <p data-translate="dedicated_server_interfaces_step_checker_text1"></p>
             <p data-translate="dedicated_server_interfaces_step_checker_text2"></p>
             <p data-translate="dedicated_server_interfaces_step_checker_text3"></p>
@@ -50,7 +50,7 @@
     data-heading="{{:: 'dedicated_server_interfaces_step_checker_title' | translate }}"
     data-ng-if="$ctrl.ola.isActivated() && !$ctrl.ola.isConfigured()">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-lg-4">
             <div class="oui-progress-tracker oui-progress-tracker_vertical">
                 <ol class="oui-progress-tracker__steps">
                     <li class="oui-progress-tracker__step"
@@ -88,7 +88,7 @@
                 </ol>
             </div>
         </div>
-        <div class="col-md-8" data-ng-switch="$ctrl.ola.configStep">
+        <div class="col-lg-8" data-ng-switch="$ctrl.ola.configStep">
 
             <!-- Step 1: Network interfaces -->
             <div data-ng-switch-default>

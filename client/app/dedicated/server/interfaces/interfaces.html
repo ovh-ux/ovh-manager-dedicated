@@ -5,20 +5,20 @@
     <a href="https://docs.ovh.com" data-translate="dedicated_server_interfaces_vrack_information_link_label"></a>
 </p>
 
-<div class="row mb-5">
-    <div class="col-md-8"
+<div class="row">
+    <div class="col-md-8 mb-5"
         data-ng-if="$ctrl.ola.isAvailable() && (!$ctrl.ola.isActivated() || !$ctrl.ola.isConfigured())">
-        <ola-step-checker class="h-100 d-block"
+        <ola-step-checker class="h-100 step-checker"
             data-ola="$ctrl.ola">
         </ola-step-checker>
     </div>
 
-    <div class="col-md-4"
+    <div class="col-md-4 mb-5"
         data-ng-if="$ctrl.ola.isAvailable() && $ctrl.ola.isActivated() && $ctrl.ola.isConfigured()">
         <oui-tile class="h-100"
             data-heading="{{:: 'dedicated_server_interfaces_step_checker_title' | translate }}">
             <oui-message class="mb-3" data-type="info">
-                <p>
+                <p class="mb-0">
                     <span data-translate="dedicated_server_interfaces_ola_alert_configuration_needed"></span>
                     <a href="https://docs.ovh.com" data-translate="dedicated_server_interfaces_ola_alert_configuration_needed_link"></a>
                 </p>
@@ -47,7 +47,7 @@
         </oui-tile>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-4 mb-5">
         <oui-tile class="h-100"
             data-heading="{{:: 'dedicated_server_interfaces_bandwith_title' | translate}}"
             data-description="{{:: 'dedicated_server_interfaces_bandwith_description' | translate }}">
@@ -59,13 +59,13 @@
                         <span data-translate="{{:: 'server_bandwidth_type_' + $ctrl.specifications.bandwidth.type}}"></span>
                     </p>
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <!-- Outgoing Bandwidth -->
                             <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
                             <span data-ng-bind="$ctrl.specifications.bandwidth.OvhToInternet | ducBandwidth"></span>
                             <span data-translate="server_bandwidth_outgoing"></span>
                         </div>
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <!-- Incoming Bandwidth -->
                             <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
                             <span data-ng-bind="$ctrl.specifications.bandwidth.InternetToOvh | ducBandwidth"></span>
@@ -82,13 +82,13 @@
                         <span data-translate="{{:: 'server_bandwidth_type_' + $ctrl.specifications.vrack.type}}"></span>
                     </p>
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <!-- Outgoing Bandwidth -->
                             <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
                             <span data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth"></span>
                             <span data-translate="server_bandwidth_outgoing"></span>
                         </div>
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <!-- Incoming Bandwidth -->
                             <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
                             <span data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth"></span>
@@ -121,41 +121,30 @@
         <span data-ng-bind="$row.mac"></span>
     </oui-column>
     <oui-column
-        data-title="'dedicated_server_interfaces_bandwidth_label' | translate">
-        <div class="row"
-            data-ng-if="$row.isPublic()">
-            <div class="col-6">
-                <!-- Outgoing Bandwidth -->
-                <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
-                <span data-ng-bind="$ctrl.specifications.bandwidth.OvhToInternet | ducBandwidth"></span>
-                <span data-translate="server_bandwidth_outgoing"></span>
-            </div>
-            <div class="col-6">
-                <!-- Incoming Bandwidth -->
-                <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
-                <span data-ng-bind="$ctrl.specifications.bandwidth.InternetToOvh | ducBandwidth"></span>
-                <span data-translate="server_bandwidth_incoming"></span>
-            </div>
+        data-title="'dedicated_server_interfaces_bandwidth_outgoing_label' | translate">
+        <div data-ng-if="$row.isPublic()">
+            <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
+            <span data-ng-bind="$ctrl.specifications.bandwidth.OvhToInternet | ducBandwidth"></span>
         </div>
-        <div class="row"
-            data-ng-if="!$row.isPublic()">
-            <div class="col-6">
-                <!-- Outgoing Bandwidth -->
-                <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
-                <span data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth"></span>
-                <span data-translate="server_bandwidth_outgoing"></span>
-            </div>
-            <div class="col-6">
-                <!-- Incoming Bandwidth -->
-                <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
-                <span data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth"></span>
-                <span data-translate="server_bandwidth_incoming"></span>
-            </div>
+        <div data-ng-if="!$row.isPublic()">
+            <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
+            <span data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth"></span>
+        </div>
+    </oui-column>
+    <oui-column
+        data-title="'dedicated_server_interfaces_bandwidth_incoming_label' | translate">
+        <div data-ng-if="$row.isPublic()">
+            <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
+            <span data-ng-bind="$ctrl.specifications.bandwidth.InternetToOvh | ducBandwidth"></span>
+        </div>
+        <div data-ng-if="!$row.isPublic()">
+            <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
+            <span data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth"></span>
         </div>
     </oui-column>
     <oui-column
         data-title="'dedicated_server_interfaces_ip_label' | translate">
-        <oui-clipboard class="m-0"
+        <oui-clipboard class="ip-clipboard"
             data-ng-if="$row.isPublic()"
             data-model="$ctrl.specifications.routing.ipv4.ip">
         </oui-clipboard>
