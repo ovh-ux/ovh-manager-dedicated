@@ -1,3 +1,13 @@
+<a name="10.28.5"></a>
+## [10.28.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.4...v10.28.5) (2019-09-18)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** display pop up to pay bill ([#1396](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1396)) ([b816b66](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b816b66))
+
+
+
 <a name="10.28.4"></a>
 ## [10.28.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.3...v10.28.4) (2019-09-16)
 
