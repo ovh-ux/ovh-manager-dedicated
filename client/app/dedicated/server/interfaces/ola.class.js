@@ -20,10 +20,10 @@ export default class Ola {
   }
 
   isAvailable() {
-    return this.available || true; // For mockup purpose
+    return this.available;
   }
 
   isConfigured() {
-    return this.isOlaConfigured; // TODO: Need to update when API is prodded
+    return this.isOlaConfigured;
   }
 }
