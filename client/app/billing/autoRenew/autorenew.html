@@ -219,7 +219,7 @@
 
                 <oui-action-menu-item
                     data-ng-if="$row.hasDebt() && $row.hasBillingRights($ctrl.currentUser.nichandle)"
-                    data-on-click="$ctrl.warnNicPendingDebt($row.domain)">
+                    data-href="{{:: $ctrl.payDebtLink }}">
                     <span data-translate="billing_autorenew_service_pay_debt"></span>
                 </oui-action-menu-item>
 
