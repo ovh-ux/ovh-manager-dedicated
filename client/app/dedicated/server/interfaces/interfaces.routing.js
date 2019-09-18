@@ -34,30 +34,4 @@ export default /* @ngInject */ ($stateProvider) => {
       ) => constants.urls[user.ovhSubsidiary],
     },
   });
-  $stateProvider.state('app.dedicated.server.interfaces.rename', {
-    url: '/rename',
-    views: {
-      modal: {
-        component: 'dedicatedServerInterfacesRename',
-      },
-    },
-    params: {
-      interface: null,
-    },
-    layout: 'modal',
-    translations: { value: ['.'], format: 'json' },
-  });
-  $stateProvider.state('app.dedicated.server.interfaces.attach', {
-    url: '/attach',
-    views: {
-      modal: {
-        component: 'dedicatedServerInterfacesAttach',
-      },
-    },
-    params: {
-      interface: null,
-    },
-    layout: 'modal',
-    translations: { value: ['.'], format: 'json' },
-  });
 };

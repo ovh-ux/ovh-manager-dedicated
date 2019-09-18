@@ -1,26 +1,18 @@
 export default class {
+  /* @ngInject */
   constructor(
-    $state,
-    $stateParams,
     OvhApiVrack,
   ) {
-    this.$state = $state;
-    this.$stateParams = $stateParams;
     this.Vrack = OvhApiVrack;
   }
 
   $onInit() {
-    this.interface = this.$stateParams.interface;
     if (!this.interface) {
-      this.$state.go('^');
+      this.goBack();
     }
   }
 
   attach() {
     return this.Vrack.attach({ uuid: this.interface.uuid });
-  }
-
-  cancel() {
-    this.$state.go('^');
   }
 }
