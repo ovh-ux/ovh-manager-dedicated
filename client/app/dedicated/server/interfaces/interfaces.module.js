@@ -1,4 +1,5 @@
-// import angular from 'angular';
+import interfaceAttach from './attach/interface-attach.module';
+import interfaceRename from './rename/interface-rename.module';
 import olaActivation from './ola-activation/ola-activation.module';
 import olaConfiguration from './ola-configuration/ola-configuration.module';
 
@@ -6,22 +7,20 @@ import component from './interfaces.component';
 import routing from './interfaces.routing';
 import service from './interfaces.service';
 
-import attachComponent from './attach/interfaces-attach.component';
-import renameComponent from './rename/interfaces-rename.component';
 import stepCheckerComponent from './ola-step-checker/ola-step-checker.component';
 
 const moduleName = 'ovhManagerDedicatedServerInterfaces';
 
 angular
   .module(moduleName, [
+    interfaceAttach,
+    interfaceRename,
     olaActivation,
     olaConfiguration,
     'ovh-api-services',
     'ui.router',
   ])
   .component('dedicatedServerInterfaces', component)
-  .component('dedicatedServerInterfacesAttach', attachComponent)
-  .component('dedicatedServerInterfacesRename', renameComponent)
   .component('olaStepChecker', stepCheckerComponent)
   .service('DedicatedServerInterfacesService', service)
   .config(routing);
