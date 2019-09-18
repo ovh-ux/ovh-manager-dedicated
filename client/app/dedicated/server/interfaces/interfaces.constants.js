@@ -1,20 +1,18 @@
-export const PHYSICAL_TYPE_PUBLIC = 'public';
-export const PHYSICAL_TYPE_PRIVATE = 'private';
-export const PHYSICAL_TYPE_PRIVATE_LAG = 'private_lag';
-export const PHYSICAL_TYPE_PROVISIONING = 'provisioning';
-export const PHYSICAL_TYPE_ISOLATED = 'isolated';
+export const PHYSICAL_TYPE = {
+  public: 'public',
+  private: 'private',
+  privateLag: 'private_lag',
+  provisioning: 'provisioning',
+  isolated: 'isolated',
+};
 
-export const VIRTUAL_TYPE_PUBLIC = 'public';
-export const VIRTUAL_TYPE_VRACK = 'vrack';
-export const VIRTUAL_TYPE_VRACK_AGGREGATION = 'vrack_aggregation';
+export const VIRTUAL_TYPE = {
+  public: 'public',
+  vrack: 'vrack',
+  vrackAggregation: 'vrack_aggregation',
+};
 
 export default {
-  PHYSICAL_TYPE_PUBLIC,
-  PHYSICAL_TYPE_PRIVATE,
-  PHYSICAL_TYPE_PRIVATE_LAG,
-  PHYSICAL_TYPE_PROVISIONING,
-  PHYSICAL_TYPE_ISOLATED,
-  VIRTUAL_TYPE_PUBLIC,
-  VIRTUAL_TYPE_VRACK,
-  VIRTUAL_TYPE_VRACK_AGGREGATION,
+  PHYSICAL_TYPE,
+  VIRTUAL_TYPE,
 };

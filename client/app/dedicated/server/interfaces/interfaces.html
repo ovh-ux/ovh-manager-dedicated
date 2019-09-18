@@ -106,23 +106,23 @@
 <h2 data-translate="dedicated_server_interfaces_list_title"></h2>
 <oui-datagrid data-rows="$ctrl.interfaces">
     <oui-column
-        data-title="'dedicated_server_interfaces_name_label' | translate"
+        data-title="::'dedicated_server_interfaces_name_label' | translate"
         data-property="name">
         <span data-ng-bind="$row.name"></span>
     </oui-column>
     <oui-column
-        data-title="'dedicated_server_interfaces_type_label' | translate"
+        data-title="::'dedicated_server_interfaces_type_label' | translate"
         data-property="type">
         <span data-ng-if="$row.isPublic()" data-translate="dedicated_server_interfaces_type_public_label"></span>
         <span data-ng-if="$row.isPrivate()" data-translate="dedicated_server_interfaces_type_private_label"></span>
     </oui-column>
     <oui-column
-        data-title="'dedicated_server_interfaces_mac_label' | translate"
+        data-title="::'dedicated_server_interfaces_mac_label' | translate"
         data-property="mac">
         <span data-ng-bind="$row.mac"></span>
     </oui-column>
     <oui-column
-        data-title="'dedicated_server_interfaces_bandwidth_outgoing_label' | translate">
+        data-title="::'dedicated_server_interfaces_bandwidth_outgoing_label' | translate">
         <div data-ng-if="$row.isPublic()">
             <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
             <span data-ng-bind="$ctrl.specifications.bandwidth.OvhToInternet | ducBandwidth"></span>
@@ -133,7 +133,7 @@
         </div>
     </oui-column>
     <oui-column
-        data-title="'dedicated_server_interfaces_bandwidth_incoming_label' | translate">
+        data-title="::'dedicated_server_interfaces_bandwidth_incoming_label' | translate">
         <div data-ng-if="$row.isPublic()">
             <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
             <span data-ng-bind="$ctrl.specifications.bandwidth.InternetToOvh | ducBandwidth"></span>
@@ -144,7 +144,7 @@
         </div>
     </oui-column>
     <oui-column
-        data-title="'dedicated_server_interfaces_ip_label' | translate">
+        data-title="::'dedicated_server_interfaces_ip_label' | translate">
         <oui-clipboard class="ip-clipboard"
             data-ng-if="$row.isPublic()"
             data-model="$ctrl.specifications.routing.ipv4.ip">
@@ -152,14 +152,14 @@
         <span data-ng-if="!$row.isPublic()">-</span>
     </oui-column>
     <oui-column
-        data-title="'dedicated_server_interfaces_failover_ip_label' | translate">
+        data-title="::'dedicated_server_interfaces_failover_ip_label' | translate">
         <span data-ng-if="$row.hasFailoverIps()"
             data-ng-bind="$row.failoverIps">
         </span>
         <span data-ng-if="!$row.hasFailoverIps()">-</span>
     </oui-column>
     <oui-column
-        data-title="'dedicated_server_interfaces_vrack_label' | translate"
+        data-title="::'dedicated_server_interfaces_vrack_label' | translate"
         data-property="vrack">
         <span
             data-ng-if="$row.hasVrack()"
@@ -175,12 +175,12 @@
             <span data-translate="dedicated_server_interfaces_rename_label"></span>
         </oui-action-menu-item>
         <oui-action-menu-item
-            data-ui-sref="app.dedicated.server.interfaces.bandwidth-public"
+            data-ui-sref="app.dedicated.server.interfaces.bandwidth-public-order"
             data-ng-if="$row.isPublic()">
             <span data-translate="dedicated_server_interfaces_order_public_bandwidth_label"></span>
         </oui-action-menu-item>
         <oui-action-menu-item
-            data-ui-sref="app.dedicated.server.interfaces.bandwidth-private"
+            data-ui-sref="app.dedicated.server.interfaces.bandwidth-private-order"
             data-ng-if="$row.isPrivate()">
             <span data-translate="dedicated_server_interfaces_order_private_bandwidth_label"></span>
         </oui-action-menu-item>

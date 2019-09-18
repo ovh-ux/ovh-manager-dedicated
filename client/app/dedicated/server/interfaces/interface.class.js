@@ -1,10 +1,6 @@
 import {
-  PHYSICAL_TYPE_PUBLIC,
-  PHYSICAL_TYPE_PRIVATE,
-  PHYSICAL_TYPE_PRIVATE_LAG,
-  VIRTUAL_TYPE_PUBLIC,
-  VIRTUAL_TYPE_VRACK,
-  VIRTUAL_TYPE_VRACK_AGGREGATION,
+  PHYSICAL_TYPE,
+  VIRTUAL_TYPE,
 } from './interfaces.constants';
 
 export default class Interface {
@@ -13,9 +9,9 @@ export default class Interface {
   }
 
   isPhysical() {
-    return this.type === PHYSICAL_TYPE_PUBLIC
-      || this.type === PHYSICAL_TYPE_PRIVATE
-      || this.type === PHYSICAL_TYPE_PRIVATE_LAG;
+    return this.type === PHYSICAL_TYPE.public
+      || this.type === PHYSICAL_TYPE.private
+      || this.type === PHYSICAL_TYPE.privateLag;
   }
 
   isVirtual() {
@@ -23,15 +19,15 @@ export default class Interface {
   }
 
   isPublic() {
-    return this.type === PHYSICAL_TYPE_PUBLIC
-      || this.type === VIRTUAL_TYPE_PUBLIC;
+    return this.type === PHYSICAL_TYPE.public
+      || this.type === VIRTUAL_TYPE.public;
   }
 
   isPrivate() {
-    return this.type === PHYSICAL_TYPE_PRIVATE
-      || this.type === PHYSICAL_TYPE_PRIVATE_LAG
-      || this.type === VIRTUAL_TYPE_VRACK
-      || this.type === VIRTUAL_TYPE_VRACK_AGGREGATION;
+    return this.type === PHYSICAL_TYPE.private
+      || this.type === PHYSICAL_TYPE.privateLag
+      || this.type === VIRTUAL_TYPE.vrack
+      || this.type === VIRTUAL_TYPE.vrackAggregation;
   }
 
   hasFailoverIps() {

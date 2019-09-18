@@ -1,82 +1,44 @@
 export default /* @ngInject */ ($stateProvider) => {
-  $stateProvider.state('app.dedicated.server.dashboard.bandwidth-public', {
-    url: '/bandwidth-public',
-    views: {
-      modal: {
-        component: 'dedicatedServerPublicBandwidthOrder',
-      },
-    },
-    layout: 'modal',
-    translations: { value: ['.'], format: 'json' },
-  });
-  $stateProvider.state('app.dedicated.server.dashboard.bandwidth-public-cancel', {
+  const parentStates = [
+    'app.dedicated.server.dashboard',
+    'app.dedicated.server.interfaces',
+  ];
+  const states = [{
+    name: 'bandwidth-public-order',
+    url: '/bandwidth-public-order',
+    component: 'dedicatedServerPublicBandwidthOrder',
+  }, {
+    name: 'bandwidth-public-cancel',
     url: '/bandwidth-public-cancel',
-    views: {
-      modal: {
-        component: 'dedicatedServerPublicBandwidthCancel',
-      },
-    },
-    layout: 'modal',
-    translations: { value: ['.'], format: 'json' },
-  });
-  $stateProvider.state('app.dedicated.server.dashboard.bandwidth-private', {
-    url: '/bandwidth-private',
-    views: {
-      modal: {
-        component: 'dedicatedServerPrivateBandwidthOrder',
-      },
-    },
-    layout: 'modal',
-    translations: { value: ['.'], format: 'json' },
-  });
-  $stateProvider.state('app.dedicated.server.dashboard.bandwidth-private-cancel', {
+    component: 'dedicatedServerPublicBandwidthCancel',
+  }, {
+    name: 'bandwidth-private-order',
+    url: '/bandwidth-private-order',
+    component: 'dedicatedServerPrivateBandwidthOrder',
+  }, {
+    name: 'bandwidth-private-cancel',
     url: '/bandwidth-private-cancel',
-    views: {
-      modal: {
-        component: 'dedicatedServerPrivateBandwidthCancel',
+    component: 'dedicatedServerPrivateBandwidthCancel',
+  }];
+
+  parentStates.forEach(
+    parent => states.forEach(
+      ({
+        name,
+        url,
+        component,
+      }) => {
+        $stateProvider.state(`${parent}.${name}`, {
+          url,
+          views: {
+            modal: {
+              component,
+            },
+          },
+          layout: 'modal',
+          translations: { value: ['.'], format: 'json' },
+        });
       },
-    },
-    layout: 'modal',
-    translations: { value: ['.'], format: 'json' },
-  });
-  $stateProvider.state('app.dedicated.server.interfaces.bandwidth-public', {
-    url: '/bandwidth-public',
-    views: {
-      modal: {
-        component: 'dedicatedServerPublicBandwidthOrder',
-      },
-    },
-    layout: 'modal',
-    translations: { value: ['.'], format: 'json' },
-  });
-  $stateProvider.state('app.dedicated.server.interfaces.bandwidth-public-cancel', {
-    url: '/bandwidth-public-cancel',
-    views: {
-      modal: {
-        component: 'dedicatedServerPublicBandwidthCancel',
-      },
-    },
-    layout: 'modal',
-    translations: { value: ['.'], format: 'json' },
-  });
-  $stateProvider.state('app.dedicated.server.interfaces.bandwidth-private', {
-    url: '/bandwidth-private',
-    views: {
-      modal: {
-        component: 'dedicatedServerPrivateBandwidthOrder',
-      },
-    },
-    layout: 'modal',
-    translations: { value: ['.'], format: 'json' },
-  });
-  $stateProvider.state('app.dedicated.server.interfaces.bandwidth-private-cancel', {
-    url: '/bandwidth-private-cancel',
-    views: {
-      modal: {
-        component: 'dedicatedServerPrivateBandwidthCancel',
-      },
-    },
-    layout: 'modal',
-    translations: { value: ['.'], format: 'json' },
-  });
+    ),
+  );
 };
