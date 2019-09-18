@@ -134,14 +134,14 @@
                                             action: 'ACCEPT',
                                             method: 'RECEIVED',
                                             task: task
-                                        })"
+                                        }, 'account/')"
                                         data-translate="useraccount_contacts_accept_request">
                                 </button>
                             </li>
                             <li role="menuitem">
                                 <button type="button"
                                         class="btn btn-link"
-                                        data-ng-click="setAction('contacts/request/change/user-contacts-request-change', { action: 'REFUSE', method: 'RECEIVED', task: task })"
+                                        data-ng-click="setAction('contacts/request/change/user-contacts-request-change', { action: 'REFUSE', method: 'RECEIVED', task: task }, 'account/')"
                                         data-translate="useraccount_contacts_refuse_request"
                                         title="{{ 'useraccount_contacts_refuse_request' | translate }}">
                                 </button>
@@ -149,7 +149,7 @@
                             <li role="menuitem">
                                 <button type="button"
                                         class="btn btn-link"
-                                        data-ng-click="setAction('contacts/request/change/user-contacts-request-change', { action: 'RESEND', method: 'RECEIVED', task: task })"
+                                        data-ng-click="setAction('contacts/request/change/user-contacts-request-change', { action: 'RESEND', method: 'RECEIVED', task: task }, 'account/')"
                                         data-translate="useraccount_contacts_resend_request"
                                         title="{{ 'useraccount_contacts_resend_request' | translate }}">
                                 </button>

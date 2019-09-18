@@ -1,16 +1,20 @@
 angular.module('UserAccount').config(($stateProvider, $urlRouterProvider) => {
-  const name = 'app.account.user.contacts';
+  const name = 'app.account.contacts';
 
   $stateProvider.state(name, {
     url: '/contacts',
-    templateUrl: 'account/user/contacts/user-contacts.html',
+    templateUrl: 'account/contacts/user-contacts.html',
     controller: 'UserAccount.controllers.contactCtrl',
     controllerAs: 'contactCtrl',
     abstract: true,
+    translations: {
+      format: 'json',
+      value: ['./'],
+    },
   });
 
   $urlRouterProvider.when(
-    /^\/useraccount\/contacts$/,
+    /^\/useraccount\/contacts/,
     ($location, $state) => $state.go(`${name}.services`, $location.search()),
   );
 });
