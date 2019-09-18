@@ -9,9 +9,11 @@ export default class Interface {
   }
 
   isPhysical() {
-    return this.type === PHYSICAL_TYPE.public
-      || this.type === PHYSICAL_TYPE.private
-      || this.type === PHYSICAL_TYPE.privateLag;
+    return [
+      PHYSICAL_TYPE.public,
+      PHYSICAL_TYPE.private,
+      PHYSICAL_TYPE.privateLag,
+    ].includes(this.type);
   }
 
   isVirtual() {
@@ -19,15 +21,19 @@ export default class Interface {
   }
 
   isPublic() {
-    return this.type === PHYSICAL_TYPE.public
-      || this.type === VIRTUAL_TYPE.public;
+    return [
+      PHYSICAL_TYPE.public,
+      VIRTUAL_TYPE.public,
+    ].includes(this.type);
   }
 
   isPrivate() {
-    return this.type === PHYSICAL_TYPE.private
-      || this.type === PHYSICAL_TYPE.privateLag
-      || this.type === VIRTUAL_TYPE.vrack
-      || this.type === VIRTUAL_TYPE.vrackAggregation;
+    return [
+      PHYSICAL_TYPE.private,
+      PHYSICAL_TYPE.privateLag,
+      VIRTUAL_TYPE.vrack,
+      VIRTUAL_TYPE.vrackAggregation,
+    ].includes(this.type);
   }
 
   hasFailoverIps() {

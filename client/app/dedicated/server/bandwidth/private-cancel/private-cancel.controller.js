@@ -1,8 +1,7 @@
 export default class {
   /* @ngInject */
-  constructor($scope, $state, $stateParams, $rootScope, User, Server, BandwidthVrackOrderService) {
-    this.$scope = $scope;
-    this.$state = $state;
+  constructor($scope, $stateParams, $rootScope, User, Server, BandwidthVrackOrderService) {
+    this.setMessage = $scope.setMessage;
     this.$stateParams = $stateParams;
     this.$rootScope = $rootScope;
     this.User = User;
@@ -26,17 +25,17 @@ export default class {
           .then(user => ({ data: user })), this.user),
       },
     ];
+  }
 
-    this.$scope.initUser = () => this.steps[0].load();
-    this.$scope.cancelOption = () => this.cancelOption();
-    this.$scope.cancel = () => this.$state.go('^');
+  initUser() {
+    return this.steps[0].load();
   }
 
   cancelOption() {
     this.handleAPIGet(() => this.BandwidthVrackOrderService
       .cancelBandwidthOption(this.$stateParams.productId), this.cancelAction)
       .then(() => this.$rootScope.$broadcast('dedicated.informations.bandwidth'))
-      .finally(() => this.$state.go('^'));
+      .finally(() => this.goBack());
   }
 
   handleAPIGet(promise, loadIntoStruct) {
@@ -47,16 +46,16 @@ export default class {
         _.set(loadIntoStruct, 'data', response.data);
 
         if (response.message) {
-          this.$scope.setMessage(response.message, true);
+          this.setMessage(response.message, true);
         }
       })
       .catch((response) => {
         _.set(loadIntoStruct, 'hasError', true);
         _.set(loadIntoStruct, 'data', _.isArray(loadIntoStruct) ? [] : {});
 
-        this.$state.go('^');
+        this.goBack();
         response.data.type = 'ERROR';
-        this.$scope.setMessage(response.message, response.data);
+        this.setMessage(response.message, response.data);
       })
       .finally(() => {
         _.set(loadIntoStruct, 'loading', false);

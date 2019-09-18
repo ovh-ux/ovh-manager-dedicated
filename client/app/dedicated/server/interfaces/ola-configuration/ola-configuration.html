@@ -131,7 +131,8 @@
             </oui-datagrid>
         </oui-step-form>
         <oui-step-form
-            data-header="{{:: 'dedicated_server_interfaces_ola_step3_title' | translate }}">
+            data-header="{{:: 'dedicated_server_interfaces_ola_step3_title' | translate }}"
+            data-submit-text="{{:: 'dedicated_server_interfaces_ola_step3_submit' | translate}}">
 
             <!-- Not a datgagrid component because rowspan -->
             <table class="oui-datagrid">
@@ -164,25 +165,11 @@
                         </td>
                         <td class="oui-datagrid__cell">
                             <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
-                            <span
-                                data-ng-if="interface.isPublic()"
-                                data-ng-bind="$ctrl.specifications.bandwidth.OvhToInternet | ducBandwidth">
-                            </span>
-                            <span
-                                data-ng-if="interface.isPrivate()"
-                                data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth">
-                            </span>
+                            <span data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth"></span>
                         </td>
                         <td class="oui-datagrid__cell">
                             <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
-                            <span
-                                data-ng-if="interface.isPublic()"
-                                data-ng-bind="$ctrl.specifications.bandwidth.InternetToOvh | ducBandwidth">
-                            </span>
-                            <span
-                                data-ng-if="interface.isPrivate()"
-                                data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth">
-                            </span>
+                            <span data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth"></span>
                         </td>
                     </tr>
                 </tbody>

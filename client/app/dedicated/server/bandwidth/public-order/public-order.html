@@ -1,13 +1,13 @@
 <div data-wizard
-     data-wizard-on-cancel="cancel"
-     data-wizard-on-finish="order"
+     data-wizard-on-cancel="$ctrl.goBack.bind($ctrl)"
+     data-wizard-on-finish="$ctrl.order.bind($ctrl)"
      data-wizard-title=":: 'server_order_bandwidth_title' | translate"
      data-wizard-bread-crumb
      data-wizard-confirm-button-text=":: 'wizard_pay' | translate">
 
     <div data-wizard-step
          data-wizard-step-valid="$ctrl.steps[0].isValid()"
-         data-wizard-step-on-load="initFirstStep">
+         data-wizard-step-on-load="$ctrl.initFirstStep.bind($ctrl)">
         <div class="text-center" data-ng-if="$ctrl.steps[0].isLoading()">
             <oui-spinner></oui-spinner>
             <span data-translate="server_order_bandwidth_load" class="d-block"></span>
@@ -33,7 +33,7 @@
     </div>
     <div data-wizard-step
          data-wizard-step-valid="$ctrl.steps[1].isValid()"
-         data-wizard-step-on-load="initSecondStep">
+         data-wizard-step-on-load="$ctrl.initSecondStep.bind($ctrl)">
         <div class="text-center" data-ng-if="$ctrl.steps[1].isLoading()">
             <oui-spinner></oui-spinner>
             <span data-translate="server_order_bandwidth_vrack_load" class="d-block"></span>
