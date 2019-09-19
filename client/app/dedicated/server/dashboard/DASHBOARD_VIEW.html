@@ -678,9 +678,13 @@
 
                     <!-- OLA -->
                     <oui-tile-definition
+                        data-ng-if="ola.isAvailable()"
                         data-term="{{:: 'server_ola' | translate}}">
                         <oui-tile-description>
-                            TODO
+                            <span data-ng-if="ola.isActivated()"
+                                  data-translate="server_ola_active"></span>
+                            <span data-ng-if="!ola.isActivated()"
+                                  data-translate="server_ola_inactive"></span>
                         </oui-tile-description>
                     </oui-tile-definition>
 

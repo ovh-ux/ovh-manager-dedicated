@@ -12,6 +12,7 @@ angular.module('App').controller('ServerCtrl', (
   constants,
   coreConfig,
   dedicatedServerFeatureAvailability,
+  ola,
   ovhUserPref,
   Polling,
   Server,
@@ -20,6 +21,8 @@ angular.module('App').controller('ServerCtrl', (
   WEATHERMAP_URL,
 ) => {
   const errorStatus = ['customer_error', 'ovh_error', 'error', 'cancelled'];
+
+  $scope.ola = ola;
 
   $scope.loadingServerInformations = true;
   $scope.loadingServerError = false;

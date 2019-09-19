@@ -1,3 +1,5 @@
+import Ola from './interfaces/ola.class';
+
 angular.module('App').config(($stateProvider) => {
   $stateProvider.state('app.dedicated.server', {
     url: '/configuration/server/:productId',
@@ -10,6 +12,13 @@ angular.module('App').config(($stateProvider) => {
       serverName: /* @ngInject */ $transition$ => $transition$.params().productId,
       specifications: /* @ngInject */ (serverName, Server) => Server.getBandwidth(serverName),
       user: /* @ngInject */ User => User.getUser(),
+      ola: /* @ngInject */ (
+        specifications,
+        $stateParams,
+      ) => new Ola({
+        ...specifications.ola,
+        ...$stateParams,
+      }),
     },
   });
 });
