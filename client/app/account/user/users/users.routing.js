@@ -11,6 +11,9 @@ angular
       template,
       controller,
       controllerAs: '$ctrl',
-      translations: ['./'],
+      translations: {
+        format: 'json',
+        value: ['.'],
+      },
     });
   });
