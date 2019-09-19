@@ -686,6 +686,7 @@
 
                     <!-- vRack -->
                     <oui-tile-definition
+                        data-ng-if="!!vrackInfos"
                         data-term="{{:: 'server_vrack' | translate}}">
                         <oui-tile-description>
                             <span data-ng-if="!vrackInfos.length"
