@@ -53,12 +53,12 @@ export default class {
         _.set(loadIntoStruct, 'hasError', true);
         _.set(loadIntoStruct, 'data', _.isArray(loadIntoStruct) ? [] : {});
 
-        this.goBack();
         response.data.type = 'ERROR';
         this.setMessage(response.message, response.data);
       })
       .finally(() => {
         _.set(loadIntoStruct, 'loading', false);
+        this.goBack();
       });
   }
 }

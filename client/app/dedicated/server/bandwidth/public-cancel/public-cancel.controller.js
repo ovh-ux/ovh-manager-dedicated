@@ -27,8 +27,8 @@ export default class {
         this.setMessage(this.$translate.instant('server_cancel_bandwidth_cancel_error'), data);
       })
       .finally(() => {
-        this.goBack();
         this.loader.loading = false;
+        this.goBack();
       });
   }
 }
