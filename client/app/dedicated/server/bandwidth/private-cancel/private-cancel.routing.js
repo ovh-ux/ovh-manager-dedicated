@@ -11,7 +11,7 @@ export default /* @ngInject */ ($stateProvider) => {
         url: '/bandwidth-private-cancel',
         views: {
           modal: {
-            component: 'dedicatedServerPrivateBandwidthCancel',
+            component: 'dedicatedServerBandwidthPrivateCancel',
           },
         },
         layout: 'modal',

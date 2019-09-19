@@ -31,10 +31,13 @@ export default class {
             .then((plans) => {
               this.plans = this.Server.getValidBandwidthPlans(plans, this.existingBandwidth);
             })
-            .catch((error) => {
+            .catch(error => this.setMessage(
+              this.$translate.instant('server_order_bandwidth_vrack_loading_error'),
+              error.data,
+            )).finally(() => {
+              this.isLoading = false;
               this.goBack();
-              return this.setMessage(this.$translate.instant('server_order_bandwidth_vrack_loading_error'), error.data);
-            }).finally(() => { this.isLoading = false; });
+            });
         },
       },
       {
@@ -49,10 +52,13 @@ export default class {
               res.planCode = this.model.plan;
               this.provisionalPlan = res;
             })
-            .catch((error) => {
+            .catch(error => this.setMessage(
+              this.$translate.instant('server_order_bandwidth_vrack_loading_error'),
+              error.data,
+            )).finally(() => {
+              this.isLoading = false;
               this.goBack();
-              return this.setMessage(this.$translate.instant('server_order_bandwidth_vrack_loading_error'), error.data);
-            }).finally(() => { this.isLoading = false; });
+            });
         },
       },
     ];

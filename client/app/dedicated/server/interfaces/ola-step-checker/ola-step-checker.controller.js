@@ -25,19 +25,16 @@ export default class {
   }
 
   closeSteps() {
-    // For mockup
-    this.$state.go('app.dedicated.server.interfaces', {
-      isOlaActivated: true,
-      isOlaConfigured: true,
-    });
-
     // Clear query parameters then reload current state
-    // this.$location.url(this.$location.path());
-    // this.$state.reload();
+    this.$location.url(this.$location.path());
+    this.$state.reload();
   }
 
   goToNextStep() {
     this.ola.configStep += 1;
+
+    // This parameter is dynamic. It must not reload the page
+    this.$location.search('configStep', this.ola.configStep);
   }
 
   goToConfiguration() {

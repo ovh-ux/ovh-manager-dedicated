@@ -2,13 +2,16 @@ import Ola from './ola.class';
 
 export default /* @ngInject */ ($stateProvider) => {
   $stateProvider.state('app.dedicated.server.interfaces', {
-    url: '/interfaces?configStep&isOlaActivated&isOlaConfigured', // TODO: isOlaActivated && isOlaConfigured are for mockup purpose
+    url: '/interfaces?:configStep',
     views: {
       'tabView@app.dedicated.server': {
         component: 'dedicatedServerInterfaces',
       },
     },
     translations: { value: ['.'], format: 'json' },
+    params: {
+      configStep: { dynamic: true },
+    },
     resolve: {
       interfaces: /* @ngInject */ (
         serverName,
@@ -33,34 +36,5 @@ export default /* @ngInject */ ($stateProvider) => {
         user,
       ) => constants.urls[user.ovhSubsidiary],
     },
-  });
-  $stateProvider.state('app.dedicated.server.interfaces.rename', {
-    url: '/rename',
-    views: {
-      modal: {
-        component: 'dedicatedServerInterfacesRename',
-      },
-    },
-    params: {
-      interface: null,
-    },
-    layout: 'modal',
-    translations: { value: ['.'], format: 'json' },
-  });
-  $stateProvider.state('app.dedicated.server.interfaces.attach', {
-    url: '/attach',
-    views: {
-      modal: {
-        component: 'dedicatedServerInterfacesAttach',
-      },
-    },
-    params: {
-      interface: null,
-    },
-    resolve: {
-      vracks: /* @ngInject */ OvhApiVrack => OvhApiVrack.v6().query(),
-    },
-    layout: 'modal',
-    translations: { value: ['.'], format: 'json' },
   });
 };

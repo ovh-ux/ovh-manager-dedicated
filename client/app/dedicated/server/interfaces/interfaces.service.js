@@ -13,39 +13,51 @@ export default class DedicatedServerInterfaceService {
     this.VirtualInterface = OvhApiDedicatedServerVirtualInterface;
   }
 
-  getInterfaces(serverName) {
-    let nics;
+  getNetworkInterfaceControllers(serverName) {
     return this.PhysicalInterface
       .v6()
       .query({ serverName })
       .$promise
       .then(macs => this.$q.all(
         macs.map(mac => this.PhysicalInterface.v6().get({ serverName, mac }).$promise),
-      ))
+      ));
+  }
+
+  getVirtualNetworkInterfaces(
+    nics,
+    serverName,
+  ) {
+    const vniUUids = _.uniq(
+      _.map(
+        nics.filter(
+          ({ virtualNetworkInterface }) => _.isString(virtualNetworkInterface),
+        ),
+        'virtualNetworkInterface',
+      ),
+    );
+
+    return this.$q.all(
+      _.map(
+        vniUUids,
+        uuid => this.VirtualInterface
+          .v6()
+          .get({
+            serverName,
+            uuid,
+          })
+          .$promise,
+      ),
+    );
+  }
+
+  getInterfaces(serverName) {
+    let nics;
+
+    return this.getNetworkInterfaceControllers(serverName)
       .then((results) => {
         nics = [...results];
 
-        const vniUUids = _.uniq(
-          _.map(
-            nics.filter(
-              ({ virtualNetworkInterface }) => _.isString(virtualNetworkInterface),
-            ),
-            'virtualNetworkInterface',
-          ),
-        );
-
-        return this.$q.all(
-          _.map(
-            vniUUids,
-            uuid => this.VirtualInterface
-              .v6()
-              .get({
-                serverName,
-                uuid,
-              })
-              .$promise,
-          ),
-        );
+        return this.getVirtualNetworkInterfaces(nics, serverName);
       })
       .then(vnis => [
         ..._.map(

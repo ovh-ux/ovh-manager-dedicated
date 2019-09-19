@@ -1,18 +1,14 @@
 export default class {
+  /* @ngInject */
   constructor(
-    $state,
-    $stateParams,
     OvhApiVrack,
   ) {
-    this.$state = $state;
-    this.$stateParams = $stateParams;
     this.Vrack = OvhApiVrack;
   }
 
   $onInit() {
-    this.interface = this.$stateParams.interface;
     if (!this.interface) {
-      this.$state.go('^');
+      this.goBack();
     }
   }
 
@@ -22,11 +18,7 @@ export default class {
     }, {
       dedicatedServerInterface: this.interface.id,
     }).$promise.then(() => {
-      this.$state.go('^');
+      this.goBack();
     });
-  }
-
-  cancel() {
-    this.$state.go('^');
   }
 }
