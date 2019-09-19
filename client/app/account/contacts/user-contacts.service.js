@@ -88,44 +88,6 @@ angular.module('UserAccount').service('UserAccount.services.Contacts', function 
     });
   };
 
-  self.getServices = function (forceRefresh) {
-    return OvhHttp.get('/sws/ovhProduct/services', {
-      rootPath: '2api',
-      clearAllCache: forceRefresh,
-      cache: cache.services,
-      params: {
-        universe: null,
-        worldpart: coreConfig.getRegion(),
-      },
-    });
-  };
-
-  self.getServiceInfos = function (opts) {
-    return OvhHttp.get([opts.path, '/{serviceName}/serviceInfos'].join(''), {
-      rootPath: 'apiv6',
-      cache: cache.servicesInfos,
-      urlParams: {
-        serviceName: opts.serviceName,
-      },
-    });
-  };
-
-  self.changeContact = function (opts) {
-    return OvhHttp.post([opts.service.path, '/{serviceName}/changeContact'].join(''), {
-      rootPath: 'apiv6',
-      urlParams: {
-        serviceName: opts.service.serviceName,
-      },
-      data: {
-        contactAdmin: opts.contactAdmin,
-        contactBilling: opts.contactBilling,
-        contactTech: opts.contactTech,
-      },
-      clearAllCache: cache.servicesInfos,
-      broadcast: 'useraccount.contact.changed',
-    });
-  };
-
   self.getPendingChanges = function (opts) {
     let ret = null;
     const pendingChanges = angular.fromJson(window.localStorage.getItem(opts.key) || []);

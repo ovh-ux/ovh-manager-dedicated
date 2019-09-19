@@ -13,7 +13,7 @@ angular
       controllerAs: '$ctrl',
       translations: {
         format: 'json',
-        value: ['./'],
+        value: ['.'],
       },
     });
   });

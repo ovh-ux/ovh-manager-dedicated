@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { DEBT_STATUS } from './billing-service.constants';
 
 export default class BillingService {
   constructor(service) {
@@ -65,7 +66,10 @@ export default class BillingService {
   }
 
   hasDebt() {
-    return _.includes(['PENDING_DEBT', 'UN_PAID'], this.status);
+    return _.includes(
+      DEBT_STATUS,
+      _.snakeCase(this.status).toUpperCase(),
+    );
   }
 
   hasEngagement() {
@@ -114,11 +118,15 @@ export default class BillingService {
   }
 
   isAutomaticallyRenewed() {
-    return ['automaticV2014', 'automaticV2016', 'automaticForcedProduct'].includes(this.renewalType);
+    return ['automaticForcedProduct'].includes(this.renewalType);
   }
 
   hasBillingRights(nichandle) {
     return nichandle === this.contactBilling;
+  }
+
+  hasAdminRights(nichandle) {
+    return nichandle === this.contactAdmin;
   }
 
   getAutorenewCapability(nichandle) {
@@ -143,7 +151,7 @@ export default class BillingService {
       };
     }
 
-    if (this.hasBillingRights(nichandle)) {
+    if (!this.hasBillingRights(nichandle)) {
       return {
         availabilty: false,
         reason: 'nic_rights',
@@ -192,7 +200,7 @@ export default class BillingService {
       };
     }
 
-    if (this.hasBillingRights(nichandle)) {
+    if (!this.hasBillingRights(nichandle)) {
       return {
         availabilty: false,
         reason: 'nic_rights',
@@ -228,7 +236,7 @@ export default class BillingService {
   }
 
   canBeResiliated(nichandle) {
-    return this.canDeleteAtExpiration && this.hasResiliationRights(nichandle);
+    return this.canDeleteAtExpiration && this.hasAdminRights(nichandle);
   }
 
   hasResiliationRights(nichandle) {

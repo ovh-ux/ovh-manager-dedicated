@@ -1,8 +1,31 @@
-angular.module('UserAccount').config(($stateProvider) => {
+
+export default /* @ngInject */ ($stateProvider) => {
   $stateProvider.state('app.account.contacts.services', {
     url: '/services?serviceName&category',
-    templateUrl: 'account/contacts/service/user-contacts-service.html',
-    controller: 'UserAccount.controllers.contactServices',
-    controllerAs: 'ctrlServices',
+    component: 'accountContactsService',
+    translations: {
+      format: 'json',
+      value: ['.'],
+    },
+    resolve: {
+      editContacts: /* @ngInject */ $state => service => $state.go('app.account.contacts.services.edit', { service: service.serviceName }),
+      getServiceInfos: /* @ngInject */
+        AccountContactsService => service => AccountContactsService.getServiceInfos(service),
+      goToContacts: /* @ngInject */ ($state, $timeout, Alerter) => (message = false, type = 'success') => {
+        const reload = message && type === 'success';
+
+        const promise = $state.go('app.account.contacts.services', {}, {
+          reload,
+        });
+
+        if (message) {
+          promise.then(() => $timeout(() => Alerter.set(`alert-${type}`, message, 'useraccount.alerts.dashboardContacts')));
+        }
+
+        return promise;
+      },
+
+      services: /* @ngInject */ AccountContactsService => AccountContactsService.getServices(),
+    },
   });
-});
+};

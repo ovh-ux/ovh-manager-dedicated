@@ -24,6 +24,7 @@ import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
 import uiRouter, { RejectType } from '@uirouter/angularjs';
 
 import config from './config/config';
+import contactsService from './account/contacts/service/contacts-service.module';
 import dedicatedCloudDatacenterDrp from './dedicatedCloud/datacenter/drp';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
 import errorPage from './error/error.module';
@@ -42,6 +43,7 @@ angular
     'Billing',
     'chart.js',
     'controllers',
+    contactsService,
     dedicatedCloudDatacenterDrp,
     dedicatedServerServers,
     dedicatedUniverseComponents,

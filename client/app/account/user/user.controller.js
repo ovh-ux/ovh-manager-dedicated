@@ -23,7 +23,6 @@ export default class UserAccountCtrl {
     this.$scope.setAction = function (action, data, basePath) {
       this.$scope.currentAction = action;
       this.$scope.currentActionData = data;
-
       if (action) {
         if (basePath) {
           this.$scope.stepPath = `${basePath}${this.$scope.currentAction}.html`;
