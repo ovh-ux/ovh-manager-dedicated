@@ -12,7 +12,7 @@ export default /* @ngInject */ ($stateProvider) => {
     layout: 'modal',
     translations: { value: ['.'], format: 'json' },
     resolve: {
-      goBack: $state => () => $state.go('^'),
+      goBack: /* @ngInject */ $state => () => $state.go('^'),
       interface: /* @ngInject */ $stateParams => $stateParams.interface,
     },
   });
