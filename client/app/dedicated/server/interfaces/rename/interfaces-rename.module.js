@@ -1,5 +1,5 @@
 import component from './interfaces-rename.component';
-import routing from './interface-rename.routing';
+import routing from './interfaces-rename.routing';
 
 const moduleName = 'ovhManagerDedicatedServerInterfacesRename';
 

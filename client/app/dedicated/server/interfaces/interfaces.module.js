@@ -1,5 +1,6 @@
-import interfaceAttach from './attach/interface-attach.module';
-import interfaceRename from './rename/interface-rename.module';
+import interfaceAttach from './attach/interfaces-attach.module';
+import interfaceDetach from './detach/interfaces-detach.module';
+import interfaceRename from './rename/interfaces-rename.module';
 import olaActivation from './ola-activation/ola-activation.module';
 import olaConfiguration from './ola-configuration/ola-configuration.module';
 
@@ -14,6 +15,7 @@ const moduleName = 'ovhManagerDedicatedServerInterfaces';
 angular
   .module(moduleName, [
     interfaceAttach,
+    interfaceDetach,
     interfaceRename,
     olaActivation,
     olaConfiguration,

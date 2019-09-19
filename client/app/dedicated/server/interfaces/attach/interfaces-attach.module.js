@@ -1,5 +1,5 @@
 import component from './interfaces-attach.component';
-import routing from './interface-attach.routing';
+import routing from './interfaces-attach.routing';
 
 const moduleName = 'ovhManagerDedicatedServerInterfacesAttach';
 
