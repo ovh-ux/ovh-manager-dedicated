@@ -11,7 +11,7 @@ export default /* @ngInject */ ($stateProvider) => {
         url: '/bandwidth-private-order',
         views: {
           modal: {
-            component: 'dedicatedServerPrivateBandwidthOrder',
+            component: 'dedicatedServerBandwidthPrivateOrder',
           },
         },
         layout: 'modal',
