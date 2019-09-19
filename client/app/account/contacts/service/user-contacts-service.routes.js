@@ -1,5 +1,5 @@
 export default /* @ngInject */ ($stateProvider) => {
-  $stateProvider.state('app.account.useraccount.contacts.services', {
+  $stateProvider.state('app.account.contacts.services', {
     url: '/services?serviceName&category',
     component: 'accountContactsService',
     translations: {
@@ -7,13 +7,13 @@ export default /* @ngInject */ ($stateProvider) => {
       value: ['.'],
     },
     resolve: {
-      editContacts: /* @ngInject */ $state => service => $state.go('app.account.useraccount.contacts.services.edit', { service: service.serviceName }),
+      editContacts: /* @ngInject */ $state => service => $state.go('app.account.contacts.services.edit', { service: service.serviceName }),
       getServiceInfos: /* @ngInject */
         AccountContactsService => service => AccountContactsService.getServiceInfos(service),
       goToContacts: /* @ngInject */ ($state, $timeout, Alerter) => (message = false, type = 'success') => {
         const reload = message && type === 'success';
 
-        const promise = $state.go('app.account.useraccount.contacts.services', {}, {
+        const promise = $state.go('app.account.contacts.services', {}, {
           reload,
         });
 
