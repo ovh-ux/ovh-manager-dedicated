@@ -2,13 +2,16 @@ import Ola from './ola.class';
 
 export default /* @ngInject */ ($stateProvider) => {
   $stateProvider.state('app.dedicated.server.interfaces', {
-    url: '/interfaces?configStep&isOlaActivated&isOlaConfigured', // TODO: isOlaActivated && isOlaConfigured are for mockup purpose
+    url: '/interfaces?:configStep',
     views: {
       'tabView@app.dedicated.server': {
         component: 'dedicatedServerInterfaces',
       },
     },
     translations: { value: ['.'], format: 'json' },
+    params: {
+      configStep: { dynamic: true },
+    },
     resolve: {
       interfaces: /* @ngInject */ (
         serverName,
