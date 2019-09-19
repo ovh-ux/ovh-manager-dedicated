@@ -13,10 +13,12 @@ export default class {
   }
 
   rename() {
-    return this.VirtualInterface.update({
+    return this.VirtualInterface.v6().update({
       serverName: this.serverName,
-      uuid: this.interface.uuid,
-      virtualNetworkInterface: this.interface,
+      uuid: this.interface.id,
+    }, {
+      mode: this.interface.type,
+      name: this.interface.name,
     });
   }
 }

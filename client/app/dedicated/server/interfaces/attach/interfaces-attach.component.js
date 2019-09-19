@@ -8,5 +8,6 @@ export default {
     goBack: '<',
     interface: '<',
     serverName: '<',
+    vracks: '<',
   },
 };

@@ -13,6 +13,12 @@ export default class {
   }
 
   attach() {
-    return this.Vrack.attach({ uuid: this.interface.uuid });
+    return this.Vrack.DedicatedServerInterface().v6().post({
+      serviceName: this.vrack,
+    }, {
+      dedicatedServerInterface: this.interface.id,
+    }).$promise.then(() => {
+      this.$state.go('^');
+    });
   }
 }

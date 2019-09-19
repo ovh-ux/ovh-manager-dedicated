@@ -69,6 +69,7 @@ export default class DedicatedServerInterfaceService {
             ),
           ),
           ({ mac, linkType: type }) => new Interface({
+            id: mac,
             name: mac,
             mac,
             type,
@@ -78,8 +79,9 @@ export default class DedicatedServerInterfaceService {
         ..._.map(
           vnis,
           ({
-            name, networkInterfaceController, mode: type, vrack,
+            uuid, name, networkInterfaceController, mode: type, vrack,
           }) => new Interface({
+            id: uuid,
             name,
             mac: networkInterfaceController.join(', '),
             type,
