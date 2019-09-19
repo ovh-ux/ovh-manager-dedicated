@@ -16,7 +16,7 @@ export default class Ola {
   }
 
   isActivated() {
-    return !_.isEmpty(this.supportedModes) || this.isOlaActivated;
+    return !_.isEmpty(this.supportedModes);
   }
 
   isAvailable() {
