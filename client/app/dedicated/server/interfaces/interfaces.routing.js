@@ -57,6 +57,9 @@ export default /* @ngInject */ ($stateProvider) => {
     params: {
       interface: null,
     },
+    resolve: {
+      vracks: /* @ngInject */ OvhApiVrack => OvhApiVrack.v6().query(),
+    },
     layout: 'modal',
     translations: { value: ['.'], format: 'json' },
   });
