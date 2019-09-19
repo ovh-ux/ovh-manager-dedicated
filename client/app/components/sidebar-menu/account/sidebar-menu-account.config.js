@@ -108,7 +108,7 @@ angular
             SidebarMenu.addMenuItem({
               name: 'billingContacts',
               title: $translate.instant('menu_contacts'),
-              state: 'app.account.useraccount.contacts.services',
+              state: 'app.account.contacts.services',
               namespace: 'account',
             });
           }

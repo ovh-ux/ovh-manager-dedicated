@@ -1,5 +1,5 @@
 angular.module('UserAccount').config(($stateProvider, $urlRouterProvider) => {
-  const name = 'app.account.useraccount.contacts';
+  const name = 'app.account.contacts';
 
   $stateProvider.state(name, {
     url: '/contacts',
@@ -10,7 +10,7 @@ angular.module('UserAccount').config(($stateProvider, $urlRouterProvider) => {
   });
 
   $urlRouterProvider.when(
-    /^\/useraccount\/contacts$/,
+    /^\/useraccount\/contacts/,
     ($location, $state) => $state.go(`${name}.services`, $location.search()),
   );
 });
