@@ -1,3 +1,13 @@
+<a name="10.28.6"></a>
+## [10.28.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.5...v10.28.6) (2019-09-19)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** fix bulk enable/disable ([#1400](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1400)) ([6c40e7f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6c40e7f))
+
+
+
 <a name="10.28.5"></a>
 ## [10.28.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.4...v10.28.5) (2019-09-18)
 
