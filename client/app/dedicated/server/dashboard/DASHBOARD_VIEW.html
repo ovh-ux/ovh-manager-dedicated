@@ -23,9 +23,9 @@
                                 data-align="end"
                                 data-compact>
                                 <oui-action-menu-item
-                                    data-text="{{:: 'server_configuration_displayname_edit_button' | translate }}"
-                                    aria-label="{{:: 'server_configuration_displayname_edit_button' | translate }}"
-                                    data-ui-sref="app.dedicated.server.dashboard.edit-display-name"></oui-action-menu-item>
+                                    data-ui-sref="app.dedicated.server.dashboard.edit-display-name">
+                                    <span data-translate="server_configuration_displayname_edit_button"></span>
+                                </oui-action-menu-item>
                             </oui-action-menu>
                         </div>
 
@@ -78,25 +78,22 @@
                                 data-align="end"
                                 data-compact>
                                 <oui-action-menu-item
-                                    data-text="{{:: 'server_configuration_installation_progress_button' | translate}}"
-                                    aria-label="{{:: 'server_configuration_installation_progress_button' | translate}}"
                                     data-on-click="setAction('installation/progress/dedicated-server-installation-progress', server)"
                                     data-disabled="disable.reboot || disable.byOtherTask"
                                     data-ng-if="disable.installationInProgress">
+                                    <span data-translate="server_configuration_installation_button"></span>
                                 </oui-action-menu-item>
                                 <oui-action-menu-item
-                                    data-text="{{:: 'server_configuration_reinstallation_button' | translate}}"
-                                    aria-label="{{:: 'server_configuration_reinstallation_button' | translate}}"
                                     data-on-click="setAction('installation/choice/dedicated-server-installation-choice', server)"
                                     data-disabled="disable.reboot || disable.byOtherTask"
                                     data-ng-if="server.os && !disable.installationInProgress">
+                                    <span data-translate="server_configuration_installation_button"></span>
                                 </oui-action-menu-item>
                                 <oui-action-menu-item
-                                    data-text="{{:: 'server_configuration_installation_button' | translate}}"
-                                    aria-label="{{:: 'server_configuration_installation_button' | translate}}"
                                     data-on-click="setAction('installation/choice/dedicated-server-installation-choice', server)"
                                     data-disabled="disable.reboot || disable.byOtherTask"
                                     data-ng-if="!server.os && !disable.installationInProgress">
+                                    <span data-translate="server_configuration_installation_button"></span>
                                 </oui-action-menu-item>
                             </oui-action-menu>
                         </div>
@@ -123,11 +120,10 @@
                                 data-align="end"
                                 data-compact>
                                 <oui-action-menu-item
-                                    data-text="{{:: 'server_configuration_netboot_title_button' | translate}}"
-                                    aria-label="{{:: 'server_configuration_netboot_title_button' | translate}}"
                                     data-on-click="setAction('netboot/dedicated-server-netboot')"
                                     data-disabled="disable.reboot || disable.byOtherTask || server.state === 'HACKED' || server.state === 'HACKED_BLOCKED' || (disable.installationInProgress
                                                && !disable.installationInProgressError)">
+                                    <span data-translate="server_configuration_netboot_title_button"></span>
                                 </oui-action-menu-item>
                             </oui-action-menu>
                         </div>
@@ -188,24 +184,21 @@
                                 aria-label="{{:: 'menu_action_label' | translate:{ t0: ('server_configuration_state_title' | translate)} }}"
                                 data-align="end">
                                 <oui-action-menu-item
-                                    data-text="{{:: 'server_configuration_reboot_title_button' | translate }}"
-                                    aria-label="{{:: 'server_configuration_reboot_title_button' | translate}}"
                                     data-on-click="rebootServer()"
                                     data-disabled="disable.reboot || disable.byOtherTask || disable.install"
                                     data-ng-if="!server.isExpired">
+                                    <span data-translate="server_configuration_reboot_title_button"></span>
                                 </oui-action-menu-item>
                                 <oui-action-menu-item
-                                    data-text="{{:: 'server_remove_hack_button' | translate}}"
-                                    aria-label="{{:: 'server_remove_hack_button' | translate}}"
                                     data-on-click="removeHack()"
                                     data-disabled="server.state === 'HACKED_BLOCKED'"
                                     data-ng-if="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'">
+                                    <span data-translate="server_remove_hack_button"></span>
                                 </oui-action-menu-item>
                                 <oui-action-menu-item
-                                    data-text="{{:: 'server_close_service' | translate}}"
-                                    aria-label="{{:: 'server_close_service' | translate}}"
                                     data-ng-click="setAction('terminate/dedicated-server-terminate', server)"
                                     data-if="!server.isExpired">
+                                    <span data-translate="server_close_service"></span>
                                 </oui-action-menu-item>
                             </oui-action-menu>
                         </div>
@@ -232,15 +225,15 @@
                                 data-align="end"
                                 data-compact>
                                 <oui-action-menu-item
-                                    data-text="{{:: 'server_configuration_monitoring_deactivate_title_button' | translate}}"
-                                    aria-label="{{:: 'server_configuration_monitoring_deactivate_title_button' | translate}}"
                                     data-ui-sref="app.dedicated.server.dashboard.monitoringUpdate"
-                                    data-ng-if="server.monitored"></oui-action-menu-item>
+                                    data-ng-if="server.monitored">
+                                    <span data-translate="server_configuration_monitoring_deactivate_title_button"></span>
+                                </oui-action-menu-item>
                                 <oui-action-menu-item
-                                    data-text="{{:: 'server_configuration_monitoring_activate_title_button' | translate}}"
-                                    aria-label="{{:: 'server_configuration_monitoring_activate_title_button' | translate}}"
                                     data-ui-sref="app.dedicated.server.dashboard.monitoringUpdate"
-                                    data-ng-if="!server.monitored"></oui-action-menu-item>
+                                    data-ng-if="!server.monitored">
+                                    <span data-translate="server_configuration_monitoring_activate_title_button"></span>
+                                </oui-action-menu-item>
                             </oui-action-menu>
                         </div>
                     </div>
@@ -258,13 +251,13 @@
                         <div class="oui-tile__actions"
                              data-ng-if="!server.isExpired">
                             <oui-action-menu
-                                aria-label="'menu_action_label' | translate:{t0: ('server_configuration_monitoring_services' | translate)}"
+                                aria-label="{{:: 'menu_action_label' | translate:{t0: ('server_configuration_monitoring_services' | translate)}"
                                 data-align="end"
                                 data-compact>
                                 <oui-action-menu-item
-                                    data-text="{{'server_configuration_monitoring_services_use' | translate }}"
-                                    aria-label="{{'server_configuration_monitoring_services_use' | translate}}"
-                                    data-on-click="currentView.value = 'SERVICES_MONITORING'"></oui-action-menu-item>
+                                    data-on-click="currentView.value = 'SERVICES_MONITORING'">
+                                    <span data-translate="server_configuration_monitoring_services_use"></span>
+                                </oui-action-menu-item>
                             </oui-action-menu>
                         </div>
                     </div>
@@ -398,15 +391,15 @@
                                 data-compact
                                 data-ng-if="dedicatedServerFeatureAvailability.hasContactChangement() && !server.isExpired">
                                 <oui-action-menu-item
-                                    data-text="{{:: 'contacts_management' | translate }}"
-                                    aria-label="{{:: 'contacts_management' | translate }}"
-                                    data-ui-sref="app.account.useraccount.contacts.services({ serviceName: server.name })"></oui-action-menu-item>
+                                    data-ui-sref="app.account.useraccount.contacts.services({ serviceName: server.name })">
+                                    <span data-translate="contacts_management"></span>
+                                </oui-action-menu-item>
                                  <oui-action-menu-item
-                                    data-text="{{:: 'core_change_owner' | translate }}"
-                                    aria-label="{{:: 'core_change_owner' | translate }}"
                                     data-href="{{:: changeOwnerUrl }}"
                                     data-external
-                                    data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"></oui-action-menu-item>
+                                    data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'">
+                                    <span data-translate="core_change_owner"></span>
+                                </oui-action-menu-item>
                             </oui-action-menu>
                         </div>
                     </div>
@@ -446,10 +439,9 @@
                                 data-align="end"
                                 data-compact>
                                 <oui-action-menu-item
-                                    data-text="{{:: 'server_configuration_profesionnal_use_order_button' | translate}}"
-                                    aria-label="{{:: 'server_configuration_profesionnal_use_order_button' | translate}}"
                                     data-on-click="setAction('pro-use/order/dedicated-server-pro-use-order', server.name)"
                                     data-disabled="server.order.indexOf('professionalUse') === -1">
+                                    <span data-translate="server_configuration_profesionnal_use_order_button"></span>
                                 </oui-action-menu-item>
                             </oui-action-menu>
                         </div>
@@ -483,9 +475,9 @@
                         data-align="end"
                         data-compact>
                         <oui-action-menu-item
-                            data-text="{{:: 'server_configuration_ipv4_manage' | translate }}"
-                            aria-label="{{:: 'server_configuration_ipv4_manage' | translate }}"
-                            data-ui-sref="app.ip({serviceName: server.name})"></oui-action-menu-item>
+                            data-ui-sref="app.ip({serviceName: server.name})">
+                            <span data-translate="server_configuration_ipv4_manage"></span>
+                        </oui-action-menu-item>
                     </oui-action-menu>
                 </oui-tile-definition>
 
@@ -516,14 +508,14 @@
                             data-align="end"
                             data-compact>
                             <oui-action-menu-item
-                                data-text="{{:: 'server_configuration_reverse_edit_button' | translate }}"
-                                aria-label="{{:: 'server_configuration_reverse_edit_button' | translate }}"
-                                data-ui-sref="app.dedicated.server.update-reverse-dns"></oui-action-menu-item>
+                                data-ui-sref="app.dedicated.server.update-reverse-dns">
+                                <span data-translate="server_configuration_reverse_edit_button"></span>
+                            </oui-action-menu-item>
                             <oui-action-menu-item
-                                data-text="{{:: 'common_delete' | translate }}"
-                                aria-label="{{:: 'common_delete' | translate }}"
                                 data-ui-sref="app.dedicated.server.delete-reverse-dns"
-                                data-ng-if="server.reverse"></oui-action-menu-item>
+                                data-ng-if="server.reverse">
+                                <span data-translate="common_delete"></span>
+                            </oui-action-menu-item>
                         </oui-action-menu>
                     </oui-tile-definition>
 
@@ -568,15 +560,13 @@
                             data-align="end"
                             data-compact>
                             <oui-action-menu-item
-                                data-text="{{:: 'server_bandwidth_cancel_button' | translate }}"
-                                aria-label="{{:: 'server_bandwidth_cancel_button' | translate }}"
                                 data-state="app.dedicated.server.dashboard.bandwidth-public-cancel"
                                 data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'">
+                                <span data-translate="server_bandwidth_cancel_button"></span>
                             </oui-action-menu-item>
                        </oui-action-menu>
                     </oui-tile-definition>
                     <oui-tile-button
-                        aria-label="{{:: 'server_bandwidth_order_button' | translate}}"
                         data-ng-if="bandwidthOption === 'notSubscribed' && server.canOrderBandwith && dedicatedServerFeatureAvailability.allowDedicatedServerOrderBandwidthOption()"
                         data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
                         data-on-click="isFullAgora(server.commercialRange)
@@ -619,15 +609,13 @@
                             data-align="end"
                             data-compact>
                             <oui-action-menu-item
-                                data-text="{{:: 'server_bandwidth_vrack_cancel_button' | translate }}"
-                                aria-label="{{:: 'server_bandwidth_vrack_cancel_button' | translate }}"
                                 data-state="app.dedicated.server.dashboard.bandwidth-private-cancel"
                                 data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'">
+                                <span data-translate="server_bandwidth_vrack_cancel_button"></span>
                             </oui-action-menu-item>
                         </oui-action-menu>
                     </oui-tile-definition>
                     <oui-tile-button
-                        aria-label="{{ (bandwidthVrackOption !== 'subscribed' ? 'server_bandwidth_vrack_order_button' : 'server_bandwidth_vrack_change_button') | translate}}"
                         data-ng-if="canOrderVrackBandwidth() && canOrderMoreVrackBandwidth()"
                         data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
                         data-on-click="isFullAgora(server.commercialRange)
@@ -660,18 +648,16 @@
                             data-align="end"
                             data-compact>
                             <oui-action-menu-item
-                                data-text="{{(trafficOption !== 'subscribed' ? 'server_traffic_order_button' : 'server_traffic_change_button') | translate}}"
-                                aria-label="{{:: 'server_traffic_order_button' | translate}}"
                                 data-on-click="setAction('traffic/order/dedicated-server-traffic-order', server.name)"
                                 data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
                                 data-ng-if="traffic.hasQuota && canOrderTraffic() && canOrderMoreTraffic()">
+                                <span data-ng-bind="{{(trafficOption !== 'subscribed' ? 'server_traffic_order_button' : 'server_traffic_change_button') | translate}}"></span>
                             </oui-action-menu-item>
                             <oui-action-menu-item
-                                data-text="{{:: 'server_traffic_cancel_button' | translate}}"
-                                aria-label="{{:: 'server_traffic_cancel_button' | translate}}"
                                 data-on-click="setAction('traffic/cancel/dedicated-server-traffic-cancel', server.name)"
                                 data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
                                 data-ng-if="!server.isExpired && trafficOption === 'subscribed'">
+                                <span data-translate="server_traffic_cancel_button"></span>
                             </oui-action-menu-item>
                         </oui-action-menu>
                     </oui-tile-definition>
@@ -692,15 +678,13 @@
                             data-compact>
                             <oui-action-menu-item
                                 data-ng-if="!ola.isActivated()"
-                                data-text="{{:: 'server_ola_activate' | translate }}"
-                                aria-label="{{:: 'server_ola_activate' | translate }}"
                                 data-ui-sref="app.dedicated.server.interfaces">
+                                <span data-translate="server_ola_activate"></span>
                             </oui-action-menu-item>
                             <oui-action-menu-item
                                 data-ng-if="ola.isActivated()"
-                                data-text="{{:: 'server_ola_configure' | translate }}"
-                                aria-label="{{:: 'server_ola_configure' | translate }}"
                                 data-ui-sref="app.dedicated.server.interfaces.ola-configuration">
+                                <span data-translate="server_ola_configure"></span>
                             </oui-action-menu-item>
                         </oui-action-menu>
                     </oui-tile-definition>

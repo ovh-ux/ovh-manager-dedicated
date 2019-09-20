@@ -55,10 +55,8 @@ export default class {
 
         response.data.type = 'ERROR';
         this.setMessage(response.message, response.data);
-      })
-      .finally(() => {
-        _.set(loadIntoStruct, 'loading', false);
         this.goBack();
-      });
+      })
+      .finally(() => _.set(loadIntoStruct, 'loading', false));
   }
 }
