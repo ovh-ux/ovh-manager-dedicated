@@ -1,3 +1,13 @@
+<a name="10.28.7"></a>
+## [10.28.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.6...v10.28.7) (2019-09-20)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** update autorenew activation condition ([#1403](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1403)) ([65d58da](https://github.com/ovh-ux/ovh-manager-dedicated/commit/65d58da))
+
+
+
 <a name="10.28.6"></a>
 ## [10.28.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.5...v10.28.6) (2019-09-19)
 
