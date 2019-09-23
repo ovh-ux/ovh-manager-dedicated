@@ -1,3 +1,13 @@
+<a name="10.28.8"></a>
+## [10.28.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.7...v10.28.8) (2019-09-23)
+
+
+### Bug Fixes
+
+* **account:** set right label for italianSDI field ([#1406](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1406)) ([3694c1f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3694c1f))
+
+
+
 <a name="10.28.7"></a>
 ## [10.28.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.6...v10.28.7) (2019-09-20)
 
