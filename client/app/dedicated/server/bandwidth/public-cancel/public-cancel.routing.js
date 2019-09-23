@@ -17,6 +17,10 @@ export default /* @ngInject */ ($stateProvider) => {
         layout: 'modal',
         translations: { value: ['.'], format: 'json' },
         resolve: {
+          cancelBandwidthOption: /* @ngInject */ (
+            serverName,
+            Server,
+          ) => () => Server.cancelBandwidthOption(serverName),
           goBack: /* @ngInject */ $state => () => $state.go('^'),
         },
       });

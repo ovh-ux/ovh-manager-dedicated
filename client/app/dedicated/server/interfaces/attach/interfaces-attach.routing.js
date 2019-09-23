@@ -13,7 +13,8 @@ export default /* @ngInject */ ($stateProvider) => {
     translations: { value: ['.'], format: 'json' },
     resolve: {
       goBack: /* @ngInject */ $state => () => $state.go('^'),
-      interface: /* @ngInject */ $stateParams => $stateParams.interface,
+      interface: /* @ngInject */ $transition$ => $transition$.params().interface,
+      vracks: /* @ngInject */ OvhApiVrack => OvhApiVrack.v6().query(),
     },
   });
 };

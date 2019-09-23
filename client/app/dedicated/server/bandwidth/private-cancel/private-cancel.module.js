@@ -7,7 +7,7 @@ angular
   .module(moduleName, [
     'ui.router',
   ])
-  .component('dedicatedServerBandwidthPublicCancel', component)
+  .component('dedicatedServerBandwidthPrivateCancel', component)
   .config(routing);
 
 export default moduleName;
