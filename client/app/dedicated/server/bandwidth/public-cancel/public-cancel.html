@@ -1,22 +1,10 @@
-<div data-wizard
-     data-wizard-on-cancel="$ctrl.goBack.bind($ctrl)"
-     data-wizard-on-finish="$ctrl.cancelOption.bind($ctrl)"
-     data-wizard-title=":: 'server_cancel_bandwidth_title' | translate"
-     data-wizard-confirm-button-text=":: 'common_confirm' | translate">
-
-    <div data-wizard-step
-         data-wizard-step-valid="!$ctrl.loader.loading">
-
-        <div data-ovh-alert="cancelBandwidthConfirmationError"></div>
-
-        <div class="text-center"
-                data-ng-if="$ctrl.loader.loading">
-            <oui-spinner></oui-spinner>
-        </div>
-
-        <div data-ng-if="!$ctrl.loader.loading">
-            <p data-translate="server_cancel_bandwidth_question"></p>
-            <p data-translate="server_cancel_bandwidth_information" data-translate-values="{ t0: user.email }"></p>
-        </div>
-    </div>
-</div>
+<oui-modal data-heading="{{:: 'server_cancel_bandwidth_title' | translate }}"
+    data-primary-action="$ctrl.cancelOption()"
+    data-primary-label="{{:: 'common_confirm' | translate }}"
+    data-secondary-action="$ctrl.goBack()"
+    data-secondary-label="{{:: 'common_cancel' | translate }}"
+    data-on-dismiss="$ctrl.goBack()"
+    data-loading="$ctrl.isLoading">
+    <p class="font-weight-bold" data-translate="server_cancel_bandwidth_question"></p>
+    <p data-translate="server_cancel_bandwidth_information" data-translate-values="{ t0: user.email }"></p>
+</oui-modal>

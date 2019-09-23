@@ -5,6 +5,7 @@ export default {
   controller,
   template,
   bindings: {
+    cancelBandwidthOption: '<',
     goBack: '<',
     serverName: '<',
   },

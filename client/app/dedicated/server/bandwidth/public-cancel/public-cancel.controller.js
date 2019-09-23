@@ -1,23 +1,15 @@
 export default class {
   /* @ngInject */
-  constructor($rootScope, $scope, $translate, Server, Alerter) {
+  constructor($rootScope, $scope, $translate) {
     this.setMessage = $scope.setMessage;
     this.$rootScope = $rootScope;
     this.$translate = $translate;
-    this.Server = Server;
-    this.Alerter = Alerter;
-  }
-
-  $onInit() {
-    this.loader = {
-      loading: true,
-    };
   }
 
   cancelOption() {
-    this.loader.loading = true;
+    this.isLoading = true;
 
-    this.Server.cancelBandwidthOption(this.serverName)
+    this.cancelBandwidthOption()
       .then(() => {
         this.setMessage(this.$translate.instant('server_cancel_bandwidth_cancel_success'), true);
         this.$rootScope.$broadcast('dedicated.informations.bandwidth');
@@ -27,7 +19,7 @@ export default class {
         this.setMessage(this.$translate.instant('server_cancel_bandwidth_cancel_error'), data);
       })
       .finally(() => {
-        this.loader.loading = false;
+        this.isLoading = false;
         this.goBack();
       });
   }

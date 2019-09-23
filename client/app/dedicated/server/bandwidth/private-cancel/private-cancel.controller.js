@@ -25,10 +25,8 @@ export default class {
           .then(user => ({ data: user })), this.user),
       },
     ];
-  }
 
-  initUser() {
-    return this.steps[0].load();
+    this.steps[0].load();
   }
 
   cancelOption() {
