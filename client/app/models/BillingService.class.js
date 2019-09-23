@@ -137,7 +137,7 @@ export default class BillingService {
       };
     }
 
-    if (this.hasAutomaticRenewal()) {
+    if (this.hasAutomaticRenewal() && !this.isResiliated()) {
       return {
         availabilty: false,
         reason: 'already_automatic',
@@ -158,14 +158,14 @@ export default class BillingService {
       };
     }
 
-    if (this.isResiliated()) {
+    if (this.hasPendingResiliation()) {
       return {
         availabilty: false,
         reason: 'resiliation_pending',
       };
     }
 
-    if (this.isExpired()) {
+    if (this.isResiliated()) {
       return {
         availabilty: false,
         reason: 'expired',
@@ -207,14 +207,14 @@ export default class BillingService {
       };
     }
 
-    if (this.isResiliated()) {
+    if (this.hasPendingResiliation()) {
       return {
         availabilty: false,
         reason: 'resiliation_pending',
       };
     }
 
-    if (this.isExpired()) {
+    if (this.isResiliated()) {
       return {
         availabilty: false,
         reason: 'expired',
@@ -254,6 +254,7 @@ export default class BillingService {
 
   hasPendingResiliation() {
     return this.shouldDeleteAtExpiration()
-    && !this.hasManualRenew();
+    && !this.hasManualRenew()
+    && !this.isResiliated();
   }
 }
