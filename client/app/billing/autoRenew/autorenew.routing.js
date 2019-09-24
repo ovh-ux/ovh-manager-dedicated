@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import BillingService from './BillingService.class';
+import BillingService from '../../models/BillingService.class';
 import { NIC_ALL } from './autorenew.constants';
 
 export default /* @ngInject */ ($stateProvider, coreConfigProvider) => {
@@ -119,7 +119,7 @@ export default /* @ngInject */ ($stateProvider, coreConfigProvider) => {
 
       pageNumber: /* @ngInject */ $transition$ => parseInt($transition$.params().pageNumber, 10),
       pageSize: /* @ngInject */ $transition$ => parseInt($transition$.params().pageSize, 10),
-
+      payDebtLink: /* @ngInject */ $state => $state.href('app.account.billing.main.history'),
       resiliateService: /* @ngInject */ $state => ({
         id,
       }) => $state.go('app.account.billing.autorenew.delete', { serviceId: id }),
@@ -166,7 +166,6 @@ export default /* @ngInject */ ($stateProvider, coreConfigProvider) => {
       },
 
       warnNicBilling: /* @ngInject */ $state => nic => $state.go('app.account.billing.autorenew.warnNic', { nic }),
-      warnNicPendingDebt: /* @ngInject */ $state => serviceName => $state.go('app.account.billing.autorenew.warnPendingDebt', { serviceName }),
     } : {})),
     redirectTo: /* @ngInject */ () => (coreConfigProvider.region === 'US' ? 'app.account.billing.autorenew.ssh' : false),
   });

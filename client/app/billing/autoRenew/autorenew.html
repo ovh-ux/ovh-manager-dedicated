@@ -28,8 +28,8 @@
             class="mb-4"
             data-ng-if="$ctrl.BillingAutoRenew.isAutomaticRenewV2Available() && (
                 !$ctrl.defaultPaymentMean
-                || ($ctrl.defaultPaymentMean && $ctrl.currentUser.hasAutorenew2016() && !$ctrl.nicRenew.active)
-            )"
+                || ($ctrl.defaultPaymentMean && !$ctrl.nicRenew.active))
+                && !$ctrl.currentUser.hasAutorenew2016()"
             data-type="error"
             data-dismissable>
             <p data-ng-if="!$ctrl.defaultPaymentMean" data-translate="billing_autorenew_service_renew_requires_mean_and_date"></p>
@@ -219,7 +219,7 @@
 
                 <oui-action-menu-item
                     data-ng-if="$row.hasDebt() && $row.hasBillingRights($ctrl.currentUser.nichandle)"
-                    data-on-click="$ctrl.warnNicPendingDebt($row.domain)">
+                    data-href="{{:: $ctrl.payDebtLink }}">
                     <span data-translate="billing_autorenew_service_pay_debt"></span>
                 </oui-action-menu-item>
 

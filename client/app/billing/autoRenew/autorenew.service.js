@@ -2,7 +2,7 @@ import {
   AUTORENEW_EVENT, CONTRACTS_IDS, NIC_URL, RENEW_URL, SERVICE_EXPIRATION, SERVICE_STATUS,
 } from './autorenew.constants';
 
-import BillingService from './BillingService.class';
+import BillingService from '../../models/BillingService.class';
 
 export default class {
   /* @ngInject */

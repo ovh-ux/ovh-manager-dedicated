@@ -1,3 +1,53 @@
+<a name="10.28.9"></a>
+## [10.28.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.8...v10.28.9) (2019-09-23)
+
+
+### Bug Fixes
+
+* **deps:** upgrade ovh-module-exchange to v9.4.8 ([44a6ba6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/44a6ba6))
+
+
+
+<a name="10.28.8"></a>
+## [10.28.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.7...v10.28.8) (2019-09-23)
+
+
+### Bug Fixes
+
+* **account:** set right label for italianSDI field ([#1406](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1406)) ([3694c1f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3694c1f))
+
+
+
+<a name="10.28.7"></a>
+## [10.28.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.6...v10.28.7) (2019-09-20)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** update autorenew activation condition ([#1403](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1403)) ([65d58da](https://github.com/ovh-ux/ovh-manager-dedicated/commit/65d58da))
+
+
+
+<a name="10.28.6"></a>
+## [10.28.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.5...v10.28.6) (2019-09-19)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** fix bulk enable/disable ([#1400](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1400)) ([6c40e7f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/6c40e7f))
+
+
+
+<a name="10.28.5"></a>
+## [10.28.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.4...v10.28.5) (2019-09-18)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** display pop up to pay bill ([#1396](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1396)) ([b816b66](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b816b66))
+
+
+
 <a name="10.28.4"></a>
 ## [10.28.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.3...v10.28.4) (2019-09-16)
 
