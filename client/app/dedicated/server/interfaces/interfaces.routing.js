@@ -11,16 +11,6 @@ export default /* @ngInject */ ($stateProvider) => {
       configStep: { dynamic: true },
     },
     resolve: {
-      interfaces: /* @ngInject */ (
-        serverName,
-        DedicatedServerInterfacesService,
-      ) => DedicatedServerInterfacesService.getInterfaces(serverName),
-
-      specifications: /* @ngInject */ (
-        serverName,
-        Server,
-      ) => Server.getBandwidth(serverName),
-
       urls: /* @ngInject */ (
         constants,
         user,

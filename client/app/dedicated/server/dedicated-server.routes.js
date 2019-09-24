@@ -9,13 +9,19 @@ angular.module('App').config(($stateProvider) => {
     translations: { value: ['.'], format: 'json' },
     redirectTo: 'app.dedicated.server.dashboard',
     resolve: {
-      serverName: /* @ngInject */ $transition$ => $transition$.params().productId,
-      specifications: /* @ngInject */ (serverName, Server) => Server.getBandwidth(serverName),
       user: /* @ngInject */ User => User.getUser(),
+      serverName: /* @ngInject */ $transition$ => $transition$.params().productId,
+      interfaces: /* @ngInject */ (
+        serverName,
+        DedicatedServerInterfacesService,
+      ) => DedicatedServerInterfacesService.getInterfaces(serverName),
+      specifications: /* @ngInject */ (serverName, Server) => Server.getBandwidth(serverName),
       ola: /* @ngInject */ (
+        interfaces,
         specifications,
         $stateParams,
       ) => new Ola({
+        interfaces,
         ...specifications.ola,
         ...$stateParams,
       }),

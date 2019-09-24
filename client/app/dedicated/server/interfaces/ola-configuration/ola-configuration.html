@@ -40,7 +40,9 @@
                 </div>
             </div>
         </oui-field>
-        <oui-field data-label="{{:: 'dedicated_server_interfaces_ola_field_name_label' | translate}}"
+        <oui-field
+            data-ng-if="$ctrl.isGrouping()"
+            data-label="{{:: 'dedicated_server_interfaces_ola_field_name_label' | translate}}"
             data-size="l">
             <input class="oui-input"
                 name="name"
@@ -52,177 +54,184 @@
         </oui-field>
     </oui-step-form>
 
-    <!-- Mode 'vrack_aggregation' -->
-    <div data-ng-if="$ctrl.configuration.mode === 'vrack_aggregation'">
-        <oui-step-form
-            data-header="{{:: 'dedicated_server_interfaces_ola_step2_title' | translate }}"
-            data-description="{{:: 'dedicated_server_interfaces_ola_step2_description' | translate }}"
-            data-valid="!!$ctrl.selectedInterfaces.length && $ctrl.selectedInterfaces.length > 1"
-            data-prevent-next>
+    <oui-step-form
+        data-header="{{:: 'dedicated_server_interfaces_ola_step2_title' | translate }}"
+        data-description="{{:: $ctrl.isGrouping() ? 'dedicated_server_interfaces_ola_step2_description_group' : 'dedicated_server_interfaces_ola_step2_description_ungroup' | translate }}"
+        data-valid="$ctrl.isSelectionValid()"
+        data-prevent-next>
 
-            <!-- Obsolete bandwidth option -->
-            <oui-message class="mb-3"
-                data-ng-if="$ctrl.hasObsoleteBandwithOption()"
-                data-type="warning">
-                <p class="mb-0" data-translate="dedicated_server_interfaces_ola_alert_obsolete_option"></p>
-            </oui-message>
+        <!-- Obsolete bandwidth option -->
+        <oui-message class="mb-3"
+            data-ng-if="$ctrl.hasObsoleteBandwithOption()"
+            data-type="warning">
+            <p class="mb-0" data-translate="dedicated_server_interfaces_ola_alert_obsolete_option"></p>
+        </oui-message>
 
-            <!-- Forbidden interface -->
-            <oui-message class="mb-3"
-                data-ng-if="$ctrl.notAllowedInterfaces.length"
-                data-type="warning">
-                <p data-translate="dedicated_server_interfaces_ola_alert_not_allowed"></p>
-                <ul class="mb-0">
-                    <li
-                        data-ng-repeat="interface in $ctrl.notAllowedInterfaces track by $index"
+        <!-- Forbidden interface -->
+        <oui-message class="mb-3"
+            data-ng-if="$ctrl.notAllowedInterfaces.length"
+            data-type="warning">
+            <p data-translate="dedicated_server_interfaces_ola_alert_not_allowed"></p>
+            <ul class="mb-0">
+                <li
+                    data-ng-repeat="interface in $ctrl.notAllowedInterfaces track by $index"
+                    data-ng-bind="interface.name">
+                </li>
+            </ul>
+        </oui-message>
+
+        <oui-datagrid
+            data-rows="$ctrl.interfaces"
+            data-on-row-select="$ctrl.onRowSelect($rows)"
+            data-selectable-rows>
+            <oui-column data-title=":: 'dedicated_server_interfaces_ola_column_name' | translate"
+                data-property="name">
+            </oui-column>
+            <oui-column data-title=":: 'dedicated_server_interfaces_ola_column_current_type' | translate"
+                data-property="type">
+                <span data-translate="{{ 'dedicated_server_interfaces_type_' + $value + '_label' }}"></span>
+            </oui-column>
+            <oui-column data-title=":: 'dedicated_server_interfaces_ola_column_network_offer' | translate">
+                <span class="oui-status oui-status_warning"
+                    data-ng-if="$row.isPublic() && $ctrl.hasObsoleteBandwithOption()">
+                    <span class="oui-icon oui-icon-warning_circle oui-color-warning-medium font-inherit"></span>
+                    <span data-ng-bind="'server_bandwidth_type_' + $ctrl.specifications.bandwidth.type | translate"></span>
+                </span>
+                <span
+                    data-ng-if="$row.isPublic() && $ctrl.specifications.bandwidth.type === 'included'"
+                    data-ng-bind="'server_bandwidth_type_' + $ctrl.specifications.bandwidth.type | translate">
+                </span>
+                <span
+                    data-ng-if="$row.isPrivate()"
+                    data-ng-bind="'server_bandwidth_type_' + $ctrl.specifications.vrack.type | translate">
+                </span>
+            </oui-column>
+            <oui-column data-title=":: 'dedicated_server_interfaces_ola_column_bandwidth_outgoing' | translate">
+                <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
+                <span
+                    data-ng-if="$row.isPublic()"
+                    data-ng-bind="$ctrl.specifications.bandwidth.OvhToInternet | ducBandwidth">
+                </span>
+                <span
+                    data-ng-if="$row.isPrivate()"
+                    data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth">
+                </span>
+            </oui-column>
+            <oui-column data-title=":: 'dedicated_server_interfaces_ola_column_bandwidth_incoming' | translate">
+                <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
+                <span
+                    data-ng-if="$row.isPublic()"
+                    data-ng-bind="$ctrl.specifications.bandwidth.InternetToOvh | ducBandwidth">
+                </span>
+                <span
+                    data-ng-if="$row.isPrivate()"
+                    data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth">
+                </span>
+            </oui-column>
+        </oui-datagrid>
+    </oui-step-form>
+
+    <oui-step-form
+        data-header="{{:: 'dedicated_server_interfaces_ola_step3_title' | translate }}"
+        data-submit-text="{{:: 'dedicated_server_interfaces_ola_step3_submit' | translate}}">
+
+        <!-- Not a datagrid component because rowspan -->
+
+        <!-- When grouping -->
+        <table
+            data-ng-if="$ctrl.isGrouping()"
+            class="oui-datagrid">
+            <thead class="oui-datagrid__headers">
+                <tr>
+                    <th class="oui-datagrid__header"
+                        data-translate="dedicated_server_interfaces_ola_column_mode">
+                    </th>
+                    <th class="oui-datagrid__header"
+                        data-translate="dedicated_server_interfaces_ola_column_name">
+                    </th>
+                    <th class="oui-datagrid__header"
+                        data-translate="dedicated_server_interfaces_ola_column_bandwidth_outgoing">
+                    </th>
+                    <th class="oui-datagrid__header"
+                        data-translate="dedicated_server_interfaces_ola_column_bandwidth_incoming">
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="oui-datagrid__row"
+                    data-ng-repeat="interface in $ctrl.selectedInterfaces track by interface.name">
+                    <td class="oui-datagrid__cell"
+                        data-ng-if="!$index"
+                        data-ng-bind="'dedicated_server_interfaces_ola_field_mode_choice_' + $ctrl.configuration.mode | translate"
+                        rowspan="{{ $ctrl.selectedInterfaces.length }}">
+                    </td>
+                    <td class="oui-datagrid__cell"
                         data-ng-bind="interface.name">
-                    </li>
-                </ul>
-            </oui-message>
+                    </td>
+                    <td class="oui-datagrid__cell">
+                        <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
+                        <span data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth"></span>
+                    </td>
+                    <td class="oui-datagrid__cell">
+                        <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
+                        <span data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
-            <oui-datagrid
-                data-rows="$ctrl.interfaces"
-                data-on-row-select="$ctrl.onRowSelect($rows)"
-                data-selectable-rows>
-                <oui-column data-title=":: 'dedicated_server_interfaces_ola_column_name' | translate"
-                    data-property="name">
-                </oui-column>
-                <oui-column data-title=":: 'dedicated_server_interfaces_ola_column_current_type' | translate"
-                    data-property="type">
-                    <span data-translate="{{ 'dedicated_server_interfaces_type_' + $value + '_label' }}"></span>
-                </oui-column>
-                <oui-column data-title=":: 'dedicated_server_interfaces_ola_column_network_offer' | translate">
-                    <span class="oui-status oui-status_warning"
-                        data-ng-if="$row.isPublic() && $ctrl.hasObsoleteBandwithOption()">
-                        <span class="oui-icon oui-icon-warning_circle oui-color-warning-medium font-inherit"></span>
-                        <span data-ng-bind="'server_bandwidth_type_' + $ctrl.specifications.bandwidth.type | translate"></span>
-                    </span>
-                    <span
-                        data-ng-if="$row.isPublic() && $ctrl.specifications.bandwidth.type === 'included'"
-                        data-ng-bind="'server_bandwidth_type_' + $ctrl.specifications.bandwidth.type | translate">
-                    </span>
-                    <span
-                        data-ng-if="$row.isPrivate()"
-                        data-ng-bind="'server_bandwidth_type_' + $ctrl.specifications.vrack.type | translate">
-                    </span>
-                </oui-column>
-                <oui-column data-title=":: 'dedicated_server_interfaces_ola_column_bandwidth_outgoing' | translate">
-                    <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
-                    <span
-                        data-ng-if="$row.isPublic()"
-                        data-ng-bind="$ctrl.specifications.bandwidth.OvhToInternet | ducBandwidth">
-                    </span>
-                    <span
-                        data-ng-if="$row.isPrivate()"
-                        data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth">
-                    </span>
-                </oui-column>
-                <oui-column data-title=":: 'dedicated_server_interfaces_ola_column_bandwidth_incoming' | translate">
-                    <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
-                    <span
-                        data-ng-if="$row.isPublic()"
-                        data-ng-bind="$ctrl.specifications.bandwidth.InternetToOvh | ducBandwidth">
-                    </span>
-                    <span
-                        data-ng-if="$row.isPrivate()"
-                        data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth">
-                    </span>
-                </oui-column>
-            </oui-datagrid>
-        </oui-step-form>
-        <oui-step-form
-            data-header="{{:: 'dedicated_server_interfaces_ola_step3_title' | translate }}"
-            data-submit-text="{{:: 'dedicated_server_interfaces_ola_step3_submit' | translate}}">
-
-            <!-- Not a datgagrid component because rowspan -->
-            <table class="oui-datagrid">
-                <thead class="oui-datagrid__headers">
-                    <tr>
-                        <th class="oui-datagrid__header"
-                            data-translate="dedicated_server_interfaces_ola_column_mode">
-                        </th>
-                        <th class="oui-datagrid__header"
-                            data-translate="dedicated_server_interfaces_ola_column_name">
-                        </th>
-                        <th class="oui-datagrid__header"
-                            data-translate="dedicated_server_interfaces_ola_column_bandwidth_outgoing">
-                        </th>
-                        <th class="oui-datagrid__header"
-                            data-translate="dedicated_server_interfaces_ola_column_bandwidth_incoming">
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="oui-datagrid__row"
-                        data-ng-repeat="interface in $ctrl.selectedInterfaces track by interface.name">
-                        <td class="oui-datagrid__cell"
-                            data-ng-if="!$index"
-                            data-ng-bind="'dedicated_server_interfaces_ola_field_mode_choice_' + $ctrl.configuration.mode | translate"
-                            rowspan="{{ $ctrl.selectedInterfaces.length }}">
-                        </td>
-                        <td class="oui-datagrid__cell"
-                            data-ng-bind="interface.name">
-                        </td>
-                        <td class="oui-datagrid__cell">
+        <!-- When ungrouping -->
+        <table
+            data-ng-if="!$ctrl.isGrouping()"
+            class="oui-datagrid">
+            <thead class="oui-datagrid__headers">
+                <tr>
+                    <th class="oui-datagrid__header"
+                        data-translate="dedicated_server_interfaces_ola_column_mode">
+                    </th>
+                    <th class="oui-datagrid__header"
+                        data-translate="dedicated_server_interfaces_ola_column_name">
+                    </th>
+                    <th class="oui-datagrid__header"
+                        data-translate="dedicated_server_interfaces_ola_column_bandwidth_outgoing">
+                    </th>
+                    <th class="oui-datagrid__header"
+                        data-translate="dedicated_server_interfaces_ola_column_bandwidth_incoming">
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="oui-datagrid__row"
+                    data-ng-repeat="interface in $ctrl.fakeInterfaces track by interface.name">
+                    <td class="oui-datagrid__cell">
+                        <span data-ng-if="interface.isPublic()" data-translate="dedicated_server_interfaces_type_public_label"></span>
+                        <span data-ng-if="interface.isPrivate()" data-translate="dedicated_server_interfaces_type_private_label"></span>
+                    </td>
+                    <td class="oui-datagrid__cell"
+                        data-ng-bind="interface.name">
+                    </td>
+                    <td class="oui-datagrid__cell">
+                        <div data-ng-if="interface.isPublic()">
+                            <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
+                            <span data-ng-bind="$ctrl.specifications.bandwidth.OvhToInternet | ducBandwidth"></span>
+                        </div>
+                        <div data-ng-if="!interface.isPublic()">
                             <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
                             <span data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth"></span>
-                        </td>
-                        <td class="oui-datagrid__cell">
+                        </div>
+                    </td>
+                    <td class="oui-datagrid__cell">
+                        <div data-ng-if="interface.isPublic()">
+                            <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
+                            <span data-ng-bind="$ctrl.specifications.bandwidth.InternetToOvh | ducBandwidth"></span>
+                        </div>
+                        <div data-ng-if="!interface.isPublic()">
                             <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
                             <span data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth"></span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </oui-step-form>
-    </div>
-
-    <!-- Mode 'default' -->
-    <div data-ng-if="$ctrl.configuration.mode !== 'vrack_aggregation'">
-        <oui-step-form
-            data-header="{{:: 'dedicated_server_interfaces_ola_step3_title' | translate }}">
-            <oui-datagrid
-                data-rows="$ctrl.interfaces">
-                <oui-column data-title=":: 'dedicated_server_interfaces_ola_column_name' | translate"
-                    data-property="name">
-                </oui-column>
-                <oui-column data-title=":: 'dedicated_server_interfaces_ola_column_current_type' | translate"
-                    data-property="type">
-                    <span data-translate="{{ 'dedicated_server_interfaces_type_' + $value + '_label' }}"></span>
-                </oui-column>
-                <oui-column data-title=":: 'dedicated_server_interfaces_ola_column_network_offer' | translate">
-                    <span
-                        data-ng-if="$row.isPublic()"
-                        data-ng-bind="'server_bandwidth_type_' + $ctrl.specifications.bandwidth.type | translate">
-                    </span>
-                    <span
-                        data-ng-if="$row.isPrivate()"
-                        data-ng-bind="'server_bandwidth_type_' + $ctrl.specifications.vrack.type | translate">
-                    </span>
-                </oui-column>
-                <oui-column data-title=":: 'dedicated_server_interfaces_ola_column_bandwidth_outgoing' | translate">
-                    <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
-                    <span
-                        data-ng-if="$row.isPublic()"
-                        data-ng-bind="$ctrl.specifications.bandwidth.OvhToInternet | ducBandwidth">
-                    </span>
-                    <span
-                        data-ng-if="$row.isPrivate()"
-                        data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth">
-                    </span>
-                </oui-column>
-                <oui-column data-title=":: 'dedicated_server_interfaces_ola_column_bandwidth_incoming' | translate">
-                    <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
-                    <span
-                        data-ng-if="$row.isPublic()"
-                        data-ng-bind="$ctrl.specifications.bandwidth.InternetToOvh | ducBandwidth">
-                    </span>
-                    <span
-                        data-ng-if="$row.isPrivate()"
-                        data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth">
-                    </span>
-                </oui-column>
-            </oui-datagrid>
-        </oui-step-form>
-    </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </oui-step-form>
 </oui-stepper>

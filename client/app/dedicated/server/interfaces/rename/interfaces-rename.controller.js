@@ -20,6 +20,7 @@ export default class {
       mode: this.interface.type,
       name: this.interface.name,
     }).$promise.then(() => {
+      this.VirtualInterface.v6().resetCache();
       this.goBack();
     });
   }

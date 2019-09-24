@@ -74,18 +74,20 @@ export default class DedicatedServerInterfaceService {
             mac,
             type,
             vrack: null,
+            enabled: true, // physical interface is always enabled
           }),
         ),
         ..._.map(
           vnis,
           ({
-            uuid, name, networkInterfaceController, mode: type, vrack,
+            uuid, name, networkInterfaceController, mode: type, vrack, enabled,
           }) => new Interface({
             id: uuid,
             name,
             mac: networkInterfaceController.join(', '),
             type,
             vrack,
+            enabled,
           }),
         ),
       ]);
