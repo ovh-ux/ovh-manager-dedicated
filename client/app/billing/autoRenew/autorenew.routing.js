@@ -114,6 +114,11 @@ export default /* @ngInject */ ($stateProvider, coreConfigProvider) => {
         services,
       ) => [$translate.instant(NIC_ALL), ..._.get(services, 'nicBilling', [])],
 
+      offset: /* @ngInject */ (
+        pageNumber,
+        pageSize,
+      ) => pageSize * (pageNumber - 1),
+
       onListParamChanges: /* @ngInject */ $state => params => $state.go('.', params,
         { notify: false }),
 
@@ -132,14 +137,14 @@ export default /* @ngInject */ ($stateProvider, coreConfigProvider) => {
         BillingAutoRenew,
         filters,
         nicBilling,
-        pageNumber,
         pageSize,
+        offset,
         searchText,
         selectedType,
         sort,
       ) => BillingAutoRenew.getServices(
         pageSize,
-        pageSize * (pageNumber - 1),
+        offset,
         searchText,
         selectedType,
         filters.expiration,
