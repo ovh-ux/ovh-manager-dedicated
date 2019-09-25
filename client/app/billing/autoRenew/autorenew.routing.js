@@ -1,8 +1,13 @@
 import _ from 'lodash';
-import BillingService from './BillingService.class';
+import BillingService from '../../models/BillingService.class';
 import { NIC_ALL } from './autorenew.constants';
 
 export default /* @ngInject */ ($stateProvider, coreConfigProvider) => {
+  $stateProvider.state('app.account.billing.autorenewRedirection', {
+    url: '/autoRenew?selectedType&pageSize&pageNumber&filters&searchText&nicBilling&sort',
+    redirectTo: 'app.account.billing.autorenew',
+  });
+
   $stateProvider.state('app.account.billing.autorenew', {
     url: '/autorenew?selectedType&pageSize&pageNumber&filters&searchText&nicBilling&sort',
     component: 'autoRenew',
@@ -114,7 +119,7 @@ export default /* @ngInject */ ($stateProvider, coreConfigProvider) => {
 
       pageNumber: /* @ngInject */ $transition$ => parseInt($transition$.params().pageNumber, 10),
       pageSize: /* @ngInject */ $transition$ => parseInt($transition$.params().pageSize, 10),
-
+      payDebtLink: /* @ngInject */ $state => $state.href('app.account.billing.main.history'),
       resiliateService: /* @ngInject */ $state => ({
         id,
       }) => $state.go('app.account.billing.autorenew.delete', { serviceId: id }),
@@ -134,7 +139,7 @@ export default /* @ngInject */ ($stateProvider, coreConfigProvider) => {
         sort,
       ) => BillingAutoRenew.getServices(
         pageSize,
-        pageNumber - 1,
+        pageSize * (pageNumber - 1),
         searchText,
         selectedType,
         filters.expiration,
@@ -161,7 +166,6 @@ export default /* @ngInject */ ($stateProvider, coreConfigProvider) => {
       },
 
       warnNicBilling: /* @ngInject */ $state => nic => $state.go('app.account.billing.autorenew.warnNic', { nic }),
-      warnNicPendingDebt: /* @ngInject */ $state => serviceName => $state.go('app.account.billing.autorenew.warnPendingDebt', { serviceName }),
     } : {})),
     redirectTo: /* @ngInject */ () => (coreConfigProvider.region === 'US' ? 'app.account.billing.autorenew.ssh' : false),
   });
