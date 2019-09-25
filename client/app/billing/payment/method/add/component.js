@@ -9,6 +9,7 @@ export default {
     addSteps: '<',
     currentUser: '<',
     isLastStep: '<',
+    isStepVisible: '<',
     getBackButtonHref: '<',
     model: '<',
     onPaymentMethodAdded: '<',

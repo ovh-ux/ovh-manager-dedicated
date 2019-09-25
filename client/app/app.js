@@ -33,8 +33,6 @@ import preload from './components/manager-preload/manager-preload.module';
 import dedicatedServerServers from './dedicated/server/servers/servers.module';
 
 Environment.setRegion(__WEBPACK_REGION__);
-console.log('Environment.setRegion', __WEBPACK_REGION__);
-console.log('Environment.getRegion', Environment.getRegion());
 
 angular
   .module('App', [

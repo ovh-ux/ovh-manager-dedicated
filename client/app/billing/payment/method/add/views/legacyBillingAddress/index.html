@@ -4,7 +4,7 @@
     <oui-field data-label="{{ :: 'billing_payment_method_add_bank_account_owner_name' | translate }}">
         <input type="text" class="oui-input"
                id="ownerName" name="ownerName"
-               data-ng-model="$ctrl.model.ownerName"
+               data-ng-model="$ctrl.model.billingAddress.ownerName"
                data-required
                data-ng-minlength="5"
                data-ng-maxlength="255" />
@@ -15,7 +15,7 @@
         <oui-field data-label="{{ :: 'billing_payment_method_add_bank_account_address_number' | translate }}">
             <input type="text" class="oui-input"
                    id="addressNumber" name="addressNumber"
-                   data-ng-model="$ctrl.model.addressNumber"
+                   data-ng-model="$ctrl.model.billingAddress.addressNumber"
                    data-ng-maxlength="255" />
         </oui-field> <!-- End of Address Number -->
 
@@ -23,7 +23,7 @@
         <oui-field data-label="{{ :: 'billing_payment_method_add_bank_account_address_street' | translate }}">
             <input type="text" class="oui-input"
                    id="addressStreet" name="addressStreet"
-                   data-ng-model="$ctrl.model.addressStreet"
+                   data-ng-model="$ctrl.model.billingAddress.addressStreet"
                    data-required
                    data-ng-maxlength="255" />
         </oui-field> <!-- End of Address Street -->
@@ -32,7 +32,7 @@
         <oui-field data-label="{{ :: 'billing_payment_method_add_bank_account_address_zip' | translate }}">
             <input type="text" class="oui-input"
                    id="addressZip" name="addressZip"
-                   data-ng-model="$ctrl.model.addressZip"
+                   data-ng-model="$ctrl.model.billingAddress.addressZip"
                    data-required
                    data-ng-pattern="/^\d{5}$/"
                    min="01000"
@@ -43,7 +43,7 @@
         <oui-field data-label="{{ :: 'billing_payment_method_add_bank_account_address_city' | translate }}">
             <input type="text" class="oui-input"
                    id="addressCity" name="addressCity"
-                   data-ng-model="$ctrl.model.addressCity"
+                   data-ng-model="$ctrl.model.billingAddress.addressCity"
                    data-required
                    data-ng-maxlength="255" />
         </oui-field> <!-- End of Address City -->
@@ -54,7 +54,7 @@
         <oui-field data-label="{{ :: 'billing_payment_method_add_bank_account_owner_address' | translate }}">
             <input type="text" class="oui-input"
                    id="fullAddress" name="fullAddress"
-                   data-ng-model="$ctrl.model.fullAddress"
+                   data-ng-model="$ctrl.model.billingAddress.fullAddress"
                    data-required
                    data-ng-maxlength="255" />
         </oui-field> <!-- End of Full address -->

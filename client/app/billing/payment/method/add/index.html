@@ -3,7 +3,7 @@
     <div data-ovh-alert="billing_payment_method_add_alert"></div>
 
     <oui-message class="mb-3"
-                 data-ng-if="$ctrl.addAlertMessage.message"
+                 data-ng-if="$ctrl.addAlertMessage.message && !$ctrl.loading.redirecting"
                  data-type="{{ $ctrl.addAlertMessage.type }}">
         <span data-ng-bind-html="$ctrl.addAlertMessage.message"></span>
     </oui-message>
@@ -26,7 +26,7 @@
                 <oui-step-form data-header="{{ :: 'billing_payment_method_add_choose_type' | translate }}"
                                data-submit-text="{{ $ctrl.isLastStep('paymentMethodType') ? 'common_add' : 'common_next' | translate }}"
                                data-disabled="$ctrl.loading.paymentMethodTypes"
-                               data-navigation="false">
+                               data-navigation="!$ctrl.isLastStep('paymentMethodType')">
 
                     <ovh-payment-method-register
                         data-model="$ctrl.model"
@@ -67,6 +67,7 @@
                     </ovh-payment-method-register>
 
                     <ovh-payment-method-integration
+                        data-ng-if="$ctrl.isLastStep('paymentMethodType')"
                         data-on-initialized="$ctrl.onPaymentMethodIntegrationInitialized.bind($ctrl)"
                         data-on-submit="$ctrl.onPaymentMethodIntegrationSubmit.bind($ctrl)"
                         data-on-submit-error="$ctrl.onPaymentMethodIntegrationSubmitError.bind($ctrl)"
@@ -80,7 +81,8 @@
                 <oui-step-form data-header="{{ :: 'billing_payment_method_add_bank_account_informations' | translate }}"
                                data-submit-text="{{ :: 'common_next' | translate }}"
                                data-position="{{ $ctrl.addSteps.legacyBankAccount.position }}"
-                               data-ng-if="$ctrl.addSteps.legacyBankAccount.isVisible()">
+                               data-on-focus="$ctrl.integrationSubmitFunction = null"
+                               data-ng-if="$ctrl.isStepVisible('legacyBankAccount')">
                     <div class="row">
                         <div class="col-md-6">
                             <div data-ui-view="legacyBankAccount"></div>
@@ -92,7 +94,7 @@
                 <oui-step-form data-header="{{ :: 'billing_payment_method_add_bank_account_address' | translate }}"
                                data-submit-text="{{ :: 'common_add' | translate }}"
                                data-position="{{ $ctrl.addSteps.legacyBankAccountOwner.position }}"
-                               data-ng-if="$ctrl.addSteps.legacyBankAccountOwner.isVisible()">
+                               data-ng-if="$ctrl.isStepVisible('legacyBankAccountOwner')">
                     <div class="row">
                         <div class="col-md-6">
                             <div data-ui-view="legacyBankAccountOwner"></div>
@@ -104,31 +106,29 @@
 
                 <!-- Billing contact -->
                 <oui-step-form data-header="{{ :: 'billing_payment_method_add_billing_address' | translate }}"
-                               data-submit-text="{{ $ctrl.addSteps.billingAddress.isLastStep() ? 'common_add' : 'common_next' | translate }}"
-                               data-position="{{ $ctrl.addSteps.billingAddress.position }}"
-                               data-navigation="!$ctrl.addSteps.billingAddress.isLoading"
-                               data-ng-if="$ctrl.addSteps.billingAddress.isVisible()">
+                               data-submit-text="{{ $ctrl.isLastStep('billingContact') ? 'common_add' : 'common_next' | translate }}"
+                               data-position="{{ $ctrl.addSteps.billingContact.position }}"
+                               data-navigation="!$ctrl.addSteps.billingContact.isLoading"
+                               data-ng-if="$ctrl.isStepVisible('billingContact')">
 
-                     <div data-ui-view="billingAddress"></div>
-
-                     <p data-ng-if="$ctrl.addSteps.billingAddress.isLastStep()"
-                       data-translate="billing_payment_method_add_selected_common_redirect">
-                    </p>
+                     <div data-ui-view="billingContact"></div>
 
                  </oui-step-form> <!-- End of Billing contact -->
 
                 <!-- Payment method -->
                 <oui-step-form data-header="{{ :: 'billing_payment_method_add_payment_method' | translate }}"
-                               data-submit-text="{{ $ctrl.addSteps.paymentMethod.isLastStep() ? 'common_add' : 'common_next' | translate }}"
+                               data-submit-text="{{ $ctrl.isLastStep('paymentMethodIntegration') ? 'common_add' : 'common_next' | translate }}"
                                data-position="{{ $ctrl.addSteps.paymentMethod.position }}"
                                data-on-focus="$ctrl.addSteps.paymentMethod.onFocus()"
-                               data-ng-if="$ctrl.addSteps.paymentMethod.isVisible()">
+                               data-ng-if="$ctrl.isStepVisible('paymentMethodIntegration')">
 
-                    <ovh-payment-method-register
-                        data-payment-method-type="$ctrl.model.selectedPaymentMethodType"
-                        data-on-init="$ctrl.onPaymentMethodRegisterInitialized(componentInstance)"
-                        data-get-add-params="$ctrl.getAddParams.bind($ctrl)">
-                    </ovh-payment-method-register>
+                    <ovh-payment-method-integration
+                        data-on-initialized="$ctrl.onPaymentMethodIntegrationInitialized.bind($ctrl)"
+                        data-on-submit="$ctrl.onPaymentMethodIntegrationSubmit.bind($ctrl)"
+                        data-on-submit-error="$ctrl.onPaymentMethodIntegrationSubmitError.bind($ctrl)"
+                        data-on-submit-success="$ctrl.onPaymentMethodIntegrationSuccess.bind($ctrl)"
+                        data-payment-method-type="$ctrl.model.selectedPaymentMethodType">
+                    </ovh-payment-method-integration>
 
                 </oui-step-form> <!-- End of Payment method -->
             </oui-stepper>

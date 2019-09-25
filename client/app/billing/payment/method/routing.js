@@ -32,15 +32,37 @@ export default ($stateProvider, $transitionsProvider, $urlRouterProvider) => {
           }
           return status !== OVH_PAYMENT_MEAN_STATUS.BLOCKED_FOR_INCIDENTS;
         })),
-      message: /* @ngInject */ ($transition$, $timeout, $translate) => {
+      message: /* @ngInject */ (
+        $transition$,
+        $timeout,
+        $translate,
+        OVH_PAYMENT_METHOD_TYPE,
+        paymentMethods,
+      ) => {
         const redirectToParams = _.get($transition$.params(), 'redirectToParams');
         if (redirectToParams) {
-          return {
-            type: redirectToParams.status,
-            text: $translate.instant(`billing_payment_method_${redirectToParams.data.action}_${redirectToParams.status}`, {
-              errorMessage: _.get(redirectToParams, 'data.error.data.message'),
-            }),
+          const { paymentMethod } = redirectToParams.data;
+          const paymentMethodId = _.has(paymentMethod, 'id')
+            ? paymentMethod.id
+            : paymentMethod.paymentMethodId;
+          const paymentMethodInstance = _.find(paymentMethods, {
+            paymentMethodId,
+          });
+          const messageObj = {
+            type: redirectToParams.status, // should be only a success message (for the moment :-))
           };
+
+          if (paymentMethodInstance.paymentType === OVH_PAYMENT_METHOD_TYPE.BANK_ACCOUNT) {
+            messageObj.text = $translate.instant('billing_payment_method_add_bank_account_success', {
+              t0: paymentMethod.url,
+            });
+          } else {
+            messageObj.text = $translate.instant(`billing_payment_method_${redirectToParams.data.action}_${redirectToParams.status}`, {
+              errorMessage: _.get(redirectToParams, 'data.error.data.message'),
+            });
+          }
+
+          return messageObj;
         }
 
         return null;

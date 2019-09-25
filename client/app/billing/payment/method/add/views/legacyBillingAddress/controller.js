@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 class LegacyBankAccountModel {
   constructor(country) {
     this.country = country;
@@ -26,19 +24,8 @@ class LegacyBankAccountModel {
   }
 }
 
-export default class PaymentMethodAddLegacyBankAccountCtrl {
-  /* @ngInject */
-
-  constructor($state, currentUser) {
-    // dependencies injections
-    this.$state = $state;
-    this.currentUser = currentUser; // from app route resolve
-
-    // other attribute used in views
-    this.model = new LegacyBankAccountModel(currentUser.billingCountry);
-  }
-
+export default class PaymentMethodAddLegacyBillingAddressCtrl {
   $onInit() {
-    _.set(this.$state.current, 'sharedModel.legacyBillingAddress', this.model);
+    this.model.billingAddress = new LegacyBankAccountModel(this.currentUser.billingCountry);
   }
 }

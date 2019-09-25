@@ -9,6 +9,10 @@ import '@ovh-ux/manager-core';
 import routing from './routing';
 import component from './component';
 
+import billingContactViewModule from './views/billingContact';
+import legacyBankAccountViewModule from './views/legacyBankAccount';
+import legacyBillingAddressViewModule from './views/legacyBillingAddress';
+
 const moduleName = 'ovhBillingPaymentMethodAdd';
 
 angular
@@ -18,6 +22,9 @@ angular
     'pascalprecht.translate',
     'ngOvhPaymentMethod',
     'ovhManagerCore',
+    billingContactViewModule,
+    legacyBankAccountViewModule,
+    legacyBillingAddressViewModule,
   ])
   .config(routing)
   .run(/* @ngTranslationsInject:json ./translations */)
