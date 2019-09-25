@@ -1,16 +1,20 @@
 import _ from 'lodash';
 import Interface from './interface.class';
 
-export default class DedicatedServerInterfaceService {
+export default class DedicatedServerInterfacesService {
   /* @ngInject */
   constructor(
     $q,
+    OvhApiDedicatedServerOla,
     OvhApiDedicatedServerPhysicalInterface,
     OvhApiDedicatedServerVirtualInterface,
+    Poller,
   ) {
     this.$q = $q;
+    this.Ola = OvhApiDedicatedServerOla;
     this.PhysicalInterface = OvhApiDedicatedServerPhysicalInterface;
     this.VirtualInterface = OvhApiDedicatedServerVirtualInterface;
+    this.Poller = Poller;
   }
 
   getNetworkInterfaceControllers(serverName) {
@@ -91,5 +95,37 @@ export default class DedicatedServerInterfaceService {
           }),
         ),
       ]);
+  }
+
+  disableInterfaces(serverName, interfaces) {
+    return this.$q.all(
+      interfaces
+        .filter(i => i.enabled === true)
+        .map(i => this.VirtualInterface.v6().disable({
+          serverName,
+          uuid: i.id,
+        }, {}).$promise),
+    ).then(tasks => this.waitAllTasks(serverName, tasks));
+  }
+
+  setPrivateAggregation(serverName, name, interfacesToGroup) {
+    return this.Ola.v6().group({ serverName }, {
+      name,
+      virtualNetworkInterfaces: _.map(interfacesToGroup, 'id'),
+    }).$promise.then(task => this.waitAllTasks(serverName, [task]));
+  }
+
+  setDefaultInterfaces(serverName, interfaceToUngroup) {
+    return this.Ola.v6().ungroup({ serverName }, {
+      virtualNetworkInterface: interfaceToUngroup.id,
+    }).$promise.then(tasks => this.waitAllTasks(serverName, tasks));
+  }
+
+  waitAllTasks(serverName, tasks) {
+    return this.$q.all(tasks.map(task => this.Poller.poll(
+      `/dedicated/server/${serverName}/task/${task.taskId}`,
+      null,
+      { namespace: 'dedicated.server.interfaces.ola', method: 'get' },
+    )));
   }
 }
