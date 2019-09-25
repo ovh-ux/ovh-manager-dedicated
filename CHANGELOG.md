@@ -1,3 +1,27 @@
+<a name="10.29.0"></a>
+# [10.29.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.9...v10.29.0) (2019-09-25)
+
+
+### Bug Fixes
+
+* **billing:** add comments title to confirm terminate page ([#1376](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1376)) ([cd8a018](https://github.com/ovh-ux/ovh-manager-dedicated/commit/cd8a018))
+* **billing:** return according capability for resiliated services ([e7ac877](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e7ac877))
+* **i18n:** add missing translations [CDS 48] ([fbc7a3e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/fbc7a3e))
+* **i18n:** add missing translations [CDS 50] ([0035fcf](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0035fcf))
+* **i18n:** add missing translations [CDS 54] ([b364c6d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b364c6d))
+* **i18n:** add missing translations [CDS 56] ([ded1cfb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ded1cfb))
+* **i18n:** add missing translations [CDS 59] ([151e2a5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/151e2a5))
+* **i18n:** add missing translations [CDS 62] ([57ef12c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/57ef12c))
+
+
+### Features
+
+* **account.contacts:**  prevent contact change for in debt services ([e9babbf](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e9babbf))
+* **account.suppport-level:** extract translations ([#1414](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1414)) ([427d676](https://github.com/ovh-ux/ovh-manager-dedicated/commit/427d676))
+* **dedicated.cloud:** enable service pack migration ([#1378](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1378)) ([1d11965](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1d11965))
+
+
+
 <a name="10.28.9"></a>
 ## [10.28.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.8...v10.28.9) (2019-09-23)
 
