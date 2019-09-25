@@ -158,7 +158,6 @@ export default /* @ngInject */ ($stateProvider, coreConfigProvider) => {
       terminateEmail: /* @ngInject */ $state => service => $state.go('app.account.billing.autorenew.terminateEmail', { serviceId: service.id, name: service.domain }),
       terminateHostingWeb: /* @ngInject */ $state => serviceId => $state.go('app.account.billing.autorenew.terminateHostingWeb', { serviceId }),
       terminatePrivateDatabase: /* @ngInject */ $state => serviceId => $state.go('app.account.billing.autorenew.terminatePrivateDatabase', { serviceId }),
-
       updateServices: /* @ngInject */ $state => ({ id }) => $state.go('app.account.billing.autorenew.update', { serviceId: id }),
       updateExchangeBilling: /* @ngInject */ $state => ({ serviceId }) => {
         const [organization, exchangeName] = serviceId.split('/service/');
