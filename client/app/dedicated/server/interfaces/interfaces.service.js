@@ -4,12 +4,14 @@ import Interface from './interface.class';
 export default class DedicatedServerInterfacesService {
   /* @ngInject */
   constructor(
+    $http,
     $q,
     OvhApiDedicatedServerOla,
     OvhApiDedicatedServerPhysicalInterface,
     OvhApiDedicatedServerVirtualInterface,
     Poller,
   ) {
+    this.$http = $http;
     this.$q = $q;
     this.Ola = OvhApiDedicatedServerOla;
     this.PhysicalInterface = OvhApiDedicatedServerPhysicalInterface;
@@ -97,6 +99,14 @@ export default class DedicatedServerInterfacesService {
       ]);
   }
 
+  getTasks(serverName) {
+    return this.$http.get(`/dedicated/server/${serverName}/task`)
+      .then(response => response.data, () => [])
+      .then(taskIds => ({
+        promise: this.waitAllTasks(serverName, taskIds.map(taskId => ({ taskId }))),
+      }));
+  }
+
   disableInterfaces(serverName, interfaces) {
     return this.$q.all(
       interfaces
@@ -122,6 +132,7 @@ export default class DedicatedServerInterfacesService {
   }
 
   waitAllTasks(serverName, tasks) {
+    // TODO: filter on 'INFRA_002_VirtualNetworkInterface'
     return this.$q.all(tasks.map(task => this.Poller.poll(
       `/dedicated/server/${serverName}/task/${task.taskId}`,
       null,

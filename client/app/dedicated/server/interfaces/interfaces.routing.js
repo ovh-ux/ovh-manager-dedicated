@@ -15,6 +15,10 @@ export default /* @ngInject */ ($stateProvider) => {
         constants,
         user,
       ) => constants.urls[user.ovhSubsidiary],
+      taskPolling: /* @ngInject */ (
+        DedicatedServerInterfacesService,
+        serverName,
+      ) => DedicatedServerInterfacesService.getTasks(serverName),
     },
   });
 };

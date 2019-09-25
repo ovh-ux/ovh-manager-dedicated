@@ -5,7 +5,7 @@
     <a href="{{::$ctrl.urls.guides.home}}" data-translate="dedicated_server_interfaces_vrack_information_link_label"></a>
 </p>
 
-<div class="row">
+<div class="row" data-ng-if="!$ctrl.loading">
     <div class="col-md-8 mb-5"
         data-ng-if="$ctrl.ola.isAvailable() && (!$ctrl.ola.isActivated() || !$ctrl.ola.isConfigured())">
         <ola-step-checker class="h-100"
@@ -110,7 +110,10 @@
 
 
 <h2 data-translate="dedicated_server_interfaces_list_title"></h2>
-<oui-datagrid data-rows="$ctrl.interfaces">
+
+<oui-spinner data-size="l" data-ng-if="$ctrl.loading"></oui-spinner>
+
+<oui-datagrid data-rows="$ctrl.interfaces" data-ng-if="!$ctrl.loading">
     <oui-column
         data-title="::'dedicated_server_interfaces_name_label' | translate"
         data-property="name">
