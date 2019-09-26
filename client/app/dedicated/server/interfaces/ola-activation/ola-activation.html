@@ -14,7 +14,9 @@
             &nbsp;
             <span data-ng-bind-html="$ctrl.prices | ducPrice:$ctrl.user.ovhSubsidiary"></span>
         </p>
-        <p data-translate="dedicated_server_interfaces_ola_activation_text_levy"></p>
+        <oui-checkbox data-model="$ctrl.autoPay" class="mt-3">
+            <span data-translate="server_order_bandwidth_auto_pay"></span>
+        </oui-checkbox>
     </div>
 
     <p data-ng-if="$ctrl.orderUrl"

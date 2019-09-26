@@ -7,6 +7,7 @@ export default class DedicatedServerInterfacesOlaActivationCtrl {
 
   $onInit() {
     this.cartId = null;
+    this.autoPay = false;
     this.orderUrl = null;
     this.loading = true;
 
@@ -41,7 +42,7 @@ export default class DedicatedServerInterfacesOlaActivationCtrl {
     this.loading = true;
     return this.cartPromise
       .then(() => this.CartService.v6().checkout({ cartId: this.cartId }, {
-        autoPayWithPreferredPaymentMethod: false,
+        autoPayWithPreferredPaymentMethod: this.autoPay,
       }).$promise)
       .then((order) => {
         this.orderUrl = order.url;
