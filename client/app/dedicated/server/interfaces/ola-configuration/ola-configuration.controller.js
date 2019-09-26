@@ -18,6 +18,11 @@ export default class {
   $onInit() {
     this.olaModes = Object.values(OLA_MODES);
 
+    this.loading = true;
+    this.taskPolling.promise.then(() => {
+      this.loading = false;
+    });
+
     this.configuration = {
       mode: this.ola.getCurrentMode() === OLA_MODES.DEFAULT
         ? OLA_MODES.VRACK_AGGREGATION
@@ -58,6 +63,7 @@ export default class {
   }
 
   onFinish() {
+    this.loading = true;
     return this.InterfaceService.disableInterfaces(
       this.serverName,
       this.selectedInterfaces,
@@ -86,6 +92,7 @@ export default class {
         } else {
           this.goBack();
         }
+        this.loading = false;
       });
   }
 }

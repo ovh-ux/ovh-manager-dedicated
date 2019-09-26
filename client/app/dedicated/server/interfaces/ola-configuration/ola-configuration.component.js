@@ -9,6 +9,7 @@ export default {
     interfaces: '<',
     ola: '<',
     urls: '<',
+    taskPolling: '<',
   },
   controller,
   template,
