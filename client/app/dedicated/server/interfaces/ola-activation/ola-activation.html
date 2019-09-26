@@ -1,16 +1,23 @@
 <oui-modal
     data-heading="{{:: 'dedicated_server_interfaces_ola_activation_title' | translate }}"
-    data-primary-action=":: $ctrl.activate()"
-    data-primary-label="{{:: 'dedicated_server_interfaces_ola_activation_confirm' | translate }}"
+    data-primary-action=":: $ctrl.currentAction()"
+    data-primary-label="{{ $ctrl.currentActionLabel() }}"
     data-secondary-action=":: $ctrl.goBack()"
-    data-secondary-label="{{:: 'dedicated_server_interfaces_ola_activation_cancel' | translate }}"
-    data-loading="$ctrl.isActivating"
+    data-secondary-label="{{ $ctrl.currentCancelLabel() }}"
+    data-loading="$ctrl.loading"
     data-on-dismiss=":: $ctrl.goBack()">
-    <p data-translate="dedicated_server_interfaces_ola_activation_text"></p>
-    <p>
-        <strong data-translate="dedicated_server_interfaces_ola_activation_text_promotion"></strong>
-        <small data-translate="dedicated_server_interfaces_ola_activation_text_price"></small>
+
+    <div data-ng-if="!$ctrl.orderUrl">
+        <p data-translate="dedicated_server_interfaces_ola_activation_text"></p>
+        <p>
+            <span data-translate="dedicated_server_interfaces_ola_activation_text_price"></span>
+            &nbsp;
+            <span data-ng-bind-html="$ctrl.prices | ducPrice:$ctrl.user.ovhSubsidiary"></span>
+        </p>
+        <p data-translate="dedicated_server_interfaces_ola_activation_text_levy"></p>
+    </div>
+
+    <p data-ng-if="$ctrl.orderUrl"
+       data-translate="dedicated_server_interfaces_ola_order_ready">
     </p>
-    <p><em data-translate="dedicated_server_interfaces_ola_activation_text_once"></em></p>
-    <p data-translate="dedicated_server_interfaces_ola_activation_text_levy"></p>
 </oui-modal>
