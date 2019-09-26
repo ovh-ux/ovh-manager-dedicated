@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import BillingService from '../../../../models/BillingService.class';
+import BillingService from '../../BillingService.class';
 
 export default class {
   /* @ngInject */

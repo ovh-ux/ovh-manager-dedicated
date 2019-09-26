@@ -31,9 +31,9 @@ angular.module('App').controller('DedicatedCloudMailingCtrl', class DedicatedClo
 
     return this.dedicatedCloudMailingList.postMailingList(this.model.email, this.pccMl).then(() => this.Alerter.success(this.$translate.instant('dedicatedCloud_subscribe_mailing_step2_success', {
       t0: this.model.email,
-    }))).catch(error => this.Alerter.error([this.$translate.instant('dedicatedCloud_subscribe_mailing_step2_error', {
+    }), 'dedicatedCloud')).catch(error => this.Alerter.error([this.$translate.instant('dedicatedCloud_subscribe_mailing_step2_error', {
       t0: this.model.email,
-    }), _.get(error, 'message')].join('. '))).finally(() => {
+    }), _.get(error, 'message')].join('. '), 'dedicatedCloud')).finally(() => {
       this.onWidzardCancel();
       this.loading.subscribe = false;
     });

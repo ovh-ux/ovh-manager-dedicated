@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import BillingService from '../../models/BillingService.class';
+import BillingService from './BillingService.class';
 import { NIC_ALL } from './autorenew.constants';
 
 export default /* @ngInject */ ($stateProvider, coreConfigProvider) => {
