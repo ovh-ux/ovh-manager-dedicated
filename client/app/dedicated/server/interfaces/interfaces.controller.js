@@ -1,4 +1,5 @@
 export default class {
+  /* @ngInject */
   constructor(DedicatedServerInterfacesService) {
     this.InterfaceService = DedicatedServerInterfacesService;
   }

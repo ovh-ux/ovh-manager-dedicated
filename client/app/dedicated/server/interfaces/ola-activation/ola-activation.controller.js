@@ -1,4 +1,5 @@
 export default class DedicatedServerInterfacesOlaActivationCtrl {
+  /* @ngInject */
   constructor($translate, $window, OvhApiOrderCart) {
     this.$translate = $translate;
     this.$window = $window;
