@@ -110,6 +110,9 @@ angular.module('Module.ip.controllers').controller('IpMoveIpBlockCtrl', ($scope,
       && $scope.model.nexthop;
     const nextHopSelectedOther = () => $scope.model.serviceName.serviceType !== 'dedicatedCloud';
 
+    // ((!$scope.model.serviceName.nexthop.length
+    //   && !$scope.model.nexthop
+    //   && $scope.model.serviceName.serviceType !== 'dedicatedCloud'));
     return serviceNameChoosed && (nextHopSelectedPCC() || nextHopSelectedOther());
   };
 

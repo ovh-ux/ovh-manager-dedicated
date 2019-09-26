@@ -22,7 +22,7 @@ angular
       return this.updateName()
         .then(() => {
           if (this.data.successText) {
-            this.Alerter.success(this.data.successText, this.data.destinationId);
+            this.Alerter.success(this.data.successText, this.data.destinationId || 'dedicatedCloud');
           }
 
           this.$uibModalInstance.close(this.newValue);
@@ -32,7 +32,7 @@ angular
             t0: this.newValue,
           });
           const errorMessage = _.get(err, 'message', '');
-          this.Alerter.error(`${message}. ${errorMessage}`.trim(), this.data.destinationId);
+          this.Alerter.error(`${message}. ${errorMessage}`.trim(), this.data.destinationId || 'dedicatedCloud');
           this.$uibModalInstance.dismiss();
         })
         .finally(() => {

@@ -16,7 +16,7 @@ angular.module('App').controller('DedicatedCloudOperationsCtrl', function ($q, $
         }
       });
     }).catch((err) => {
-      Alerter.alertFromSWS($translate.instant('dedicatedCloud_OPERATIONS_error'), err);
+      Alerter.alertFromSWS($translate.instant('dedicatedCloud_OPERATIONS_error'), err, 'dedicatedCloud_alert');
     }).finally(() => {
       self.loading = false;
     });
@@ -127,7 +127,7 @@ angular.module('App').controller('DedicatedCloudOperationsCtrl', function ($q, $
           action: () => BillingOrders.getOrder(operation.orderId).then((order) => {
             $window.open(order.url);
           }).catch((err) => {
-            Alerter.alertFromSWS($translate.instant('dedicatedCloud_OPERATIONS_error'), err);
+            Alerter.alertFromSWS($translate.instant('dedicatedCloud_OPERATIONS_error'), err, 'dedicatedCloud_alert');
           }),
           field,
         });
@@ -177,10 +177,10 @@ angular.module('App').controller('DedicatedCloudOperationsCtrl', function ($q, $
 
     return executionDateEditModal.result.then((error) => {
       if (!error) {
-        Alerter.success($translate.instant('dedicatedCloud_OPERATIONS_success'));
+        Alerter.success($translate.instant('dedicatedCloud_OPERATIONS_success'), 'dedicatedCloud_alert');
         ouiDatagridService.refresh('operationsDatagrid', true);
       } else {
-        Alerter.alertFromSWS($translate.instant('dedicatedCloud_OPERATIONS_error'), error);
+        Alerter.alertFromSWS($translate.instant('dedicatedCloud_OPERATIONS_error'), error, 'dedicatedCloud_alert');
       }
     });
   };
