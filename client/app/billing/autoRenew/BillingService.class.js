@@ -106,7 +106,7 @@ export default class BillingService {
   }
 
   setForResiliation() {
-    if (this.hasAutomaticRenew() && !this.isAutomaticallyRenewed()) {
+    if (this.hasAutomaticRenew() && !(this.isAutomaticallyRenewed() || ['automaticV2014', 'automaticV2016'].includes(this.renewalType))) {
       this.setManualRenew();
     }
 
