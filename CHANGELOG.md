@@ -1,3 +1,13 @@
+<a name="10.30.0"></a>
+# [10.30.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.29.0...v10.30.0) (2019-09-26)
+
+
+### Bug Fixes
+
+* **billing:** set only needed services to manual for resiliation ([15c9e12](https://github.com/ovh-ux/ovh-manager-dedicated/commit/15c9e12))
+
+
+
 <a name="10.29.0"></a>
 # [10.29.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.28.9...v10.29.0) (2019-09-25)
 
