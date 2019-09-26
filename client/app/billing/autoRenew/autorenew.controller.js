@@ -41,6 +41,10 @@ export default class AutorenewCtrl {
         hideOperators: true,
         values: this.BillingAutoRenew.getStatusTypes(),
       },
+      state: {
+        hideOperators: true,
+        values: this.BillingAutoRenew.getStatesTypes(),
+      },
       expiration: {
         hideOperators: true,
         values: this.BillingAutoRenew.getExpirationFilterTypes(),

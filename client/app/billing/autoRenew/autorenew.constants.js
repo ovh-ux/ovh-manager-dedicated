@@ -64,6 +64,11 @@ export const SERVICE_EXPIRATION = {
   RENEWED_IN_AMONTH: 'renew_month',
 };
 
+export const SERVICE_STATES = {
+  UP: 'UP',
+  EXPIRED: 'EXPIRED',
+};
+
 export const SERVICE_STATUS = {
   AUTOMATIC: 'auto',
   MANUAL: 'manual',
@@ -81,6 +86,7 @@ export default {
   NIC_ALL,
   RENEW_URL,
   SERVICE_EXPIRATION,
+  SERVICE_STATES,
   SERVICE_STATUS,
   URL_PARAMETER_SEPARATOR,
 };

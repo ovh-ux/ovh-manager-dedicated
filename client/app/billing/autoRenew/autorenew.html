@@ -158,7 +158,11 @@
                 <span data-ng-bind-html="('billing_autorenew_service_type_' + $row.serviceType) | translate"></span>
             </oui-column>
             <oui-column
-                data-title="::'billing_autorenew_service_state' | translate">
+                data-property="state"
+                data-title="::'billing_autorenew_criterion_state' | translate"
+                data-type="options"
+                data-type-options="$ctrl.filtersOptions.state"
+                data-filterable>
                 <span class="oui-icon oui-icon-success_circle oui-color-success-medium"
                     aria-label="{{:: 'billing_autorenew_service_state_UP' | translate }}"
                     title="{{:: 'billing_autorenew_service_state_UP' | translate }}"
