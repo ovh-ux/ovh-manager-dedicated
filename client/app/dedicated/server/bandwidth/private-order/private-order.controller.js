@@ -2,9 +2,8 @@ import _ from 'lodash';
 
 export default class {
   /* @ngInject */
-  constructor($scope, $translate, Server) {
-    this.setMessage = $scope.setMessage;
-    this.$translate = $translate;
+  constructor($window, Server) {
+    this.$window = $window;
     this.Server = Server;
   }
 
@@ -31,8 +30,7 @@ export default class {
             .then((plans) => {
               this.plans = this.Server.getValidBandwidthPlans(plans, this.existingBandwidth);
             })
-            .catch((error) => {
-              this.setMessage(this.$translate.instant('server_order_bandwidth_vrack_loading_error'), error.data);
+            .catch(() => {
               this.goBack();
             }).finally(() => {
               this.isLoading = false;
@@ -51,8 +49,7 @@ export default class {
               res.planCode = this.model.plan;
               this.provisionalPlan = res;
             })
-            .catch((error) => {
-              this.setMessage(this.$translate.instant('server_order_bandwidth_vrack_loading_error'), error.data);
+            .catch(() => {
               this.goBack();
             }).finally(() => {
               this.isLoading = false;
@@ -79,17 +76,16 @@ export default class {
         this.model.autoPay,
       )
         .then((result) => {
-          this.setMessage(this.$translate.instant('server_order_bandwidth_vrack_success', {
-            t0: result.order.url,
-          }), true);
-          window.open(result.order.url);
-        }).catch((error) => {
-          this.setMessage(this.$translate.instant('server_cancel_bandwidth_cancel_vrack_error'), error.data);
-        }).finally(() => {
-          this.goBack();
+          this.model.orderUrl = result.order.url;
+        })
+        .finally(() => {
           this.isLoading = false;
         });
     }
     return null;
+  }
+
+  seeOrder() {
+    this.$window.open(this.model.orderUrl, '_blank');
   }
 }

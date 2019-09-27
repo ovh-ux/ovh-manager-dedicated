@@ -2,9 +2,8 @@ import _ from 'lodash';
 
 export default class {
   /* @ngInject */
-  constructor($scope, $translate, Server) {
-    this.$scope = $scope.setMessage;
-    this.$translate = $translate;
+  constructor($window, Server) {
+    this.$window = $window;
     this.Server = Server;
   }
 
@@ -25,8 +24,7 @@ export default class {
             .then((plans) => {
               this.plans = this.Server.getValidBandwidthPlans(plans, this.existingBandwidth);
             })
-            .catch((error) => {
-              this.setMessage(this.$translate.instant('server_order_bandwidth_error'), error.data);
+            .catch(() => {
               this.goBack();
             })
             .finally(() => {
@@ -46,8 +44,7 @@ export default class {
               res.planCode = this.model.plan;
               this.provisionalPlan = res;
             })
-            .catch((error) => {
-              this.setMessage(this.$translate.instant('server_order_bandwidth_error'), error.data);
+            .catch(() => {
               this.goBack();
             })
             .finally(() => {
@@ -58,13 +55,9 @@ export default class {
     ];
   }
 
-  initFirstStep() {
-    this.steps[0].load();
-  }
+  initFirstStep() { this.steps[0].load(); }
 
-  initSecondStep() {
-    this.steps[1].load();
-  }
+  initSecondStep() { this.steps[1].load(); }
 
   order() {
     if (this.model.plan) {
@@ -72,16 +65,14 @@ export default class {
       this.Server.bareMetalPublicBandwidthPlaceOrder(
         this.serverName, this.model.plan, this.model.autoPay,
       ).then((result) => {
-        this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_vrack_success', {
-          t0: result.order.url,
-        }), true);
-        window.open(result.order.url);
-      }).catch((error) => {
-        this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_error'), error.data);
+        this.model.orderUrl = result.order.url;
       }).finally(() => {
         this.isLoading = false;
-        this.goBack();
       });
     }
+  }
+
+  seeOrder() {
+    this.$window.open(this.model.orderUrl, '_blank');
   }
 }
