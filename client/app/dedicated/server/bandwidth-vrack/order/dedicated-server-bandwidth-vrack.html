@@ -42,12 +42,11 @@
             <form data-ng-if="!ctrl.steps[1].isLoading()">
                 <p data-translate="select_bandwidth_plan_summary"></p>
                 <div class="row">
-                    <div class="col-md-8 pr-0">
-                        <oui-radio data-name="bandwidth-plan" data-model="ctrl.model.plan" data-value="ctrl.provisionalPlan.planCode">
-                            <span data-translate="{{:: 'plan_' + ctrl.provisionalPlan.planCode }}"></span>
-                        </oui-radio>
+                    <div
+                        class="col-md-8"
+                        data-translate="{{:: 'plan_' + ctrl.provisionalPlan.planCode }}">
                     </div>
-                    <div class="col-md-4 pl-0">
+                    <div class="col-md-4">
                         <span data-ng-bind-html="ctrl.provisionalPlan.order.prices | ducPrice:ctrl.user.ovhSubsidiary"></span>
                     </div>
                 </div>
