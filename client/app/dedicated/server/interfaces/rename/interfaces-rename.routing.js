@@ -12,7 +12,7 @@ export default /* @ngInject */ ($stateProvider) => {
     layout: 'modal',
     translations: { value: ['.'], format: 'json' },
     resolve: {
-      goBack: /* @ngInject */ $state => () => $state.go('^'),
+      goBack: /* @ngInject */ $state => (params, transitionParams) => $state.go('^', params, transitionParams),
       interface: /* @ngInject */ $transition$ => _.cloneDeep($transition$.params().interface),
     },
   });

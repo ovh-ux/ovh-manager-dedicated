@@ -7,12 +7,14 @@ export default class {
   }
 
   $onInit() {
+    this.loading = false;
     if (!this.interface) {
       this.goBack();
     }
   }
 
   rename() {
+    this.loading = true;
     return this.VirtualInterface.v6().update({
       serverName: this.serverName,
       uuid: this.interface.id,
@@ -21,7 +23,7 @@ export default class {
       name: this.interface.name,
     }).$promise.then(() => {
       this.VirtualInterface.v6().resetCache();
-      this.goBack();
+      this.goBack({}, { reload: true });
     });
   }
 }

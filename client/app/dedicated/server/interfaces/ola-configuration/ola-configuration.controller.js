@@ -8,11 +8,13 @@ export default class {
   constructor(
     $q,
     DedicatedServerInterfacesService,
+    OvhApiDedicatedServerPhysicalInterface,
     OvhApiDedicatedServerVirtualInterface,
   ) {
     this.$q = $q;
-    this.VirtualInterface = OvhApiDedicatedServerVirtualInterface;
     this.InterfaceService = DedicatedServerInterfacesService;
+    this.PhysicalInterface = OvhApiDedicatedServerPhysicalInterface;
+    this.VirtualInterface = OvhApiDedicatedServerVirtualInterface;
   }
 
   $onInit() {
@@ -86,13 +88,13 @@ export default class {
         }
       })
       .then(() => {
+        this.PhysicalInterface.v6().resetCache();
         this.VirtualInterface.v6().resetCache();
         if (this.isGrouping()) {
-          this.goBack({ configStep: 2 });
+          this.goBack({ configStep: 2 }, { reload: true });
         } else {
-          this.goBack();
+          this.goBack({}, { reload: true });
         }
-        this.loading = false;
       });
   }
 }
