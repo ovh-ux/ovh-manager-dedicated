@@ -11,6 +11,5 @@ export default class PaymentMethodAddLegacyBankAccountCtrl {
       iban: null,
       bic: null,
     };
-    // _.set(this.$state.current, 'sharedModel.legacyBankAccount', this.model);
   }
 }
