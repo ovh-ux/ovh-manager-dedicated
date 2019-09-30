@@ -60,17 +60,17 @@ export default /* @ngInject */ ($translate) => {
     const taxes = showTaxes[country];
     if (price.withTax.value !== 0) {
       if (taxes.withGST) {
-        return `<b class="red">${$translate.instant('price_price_gst_excl_label', { price: price.withoutTax.text })}</b><i class="small"> (${$translate.instant('price_price_gst_incl_label', { price: price.withTax.text })})</i>`;
+        return `<span class="font-weight-bold red">${$translate.instant('price_price_gst_excl_label', { price: price.withoutTax.text })}</span><span class="font-italic small"> (${$translate.instant('price_price_gst_incl_label', { price: price.withTax.text })})</span>`;
       }
       if (taxes.TTCOnly) {
-        return `<b class="red">${price.withTax.text}</b>`;
+        return `<span class="font-weight-bold red">${price.withTax.text}</span>`;
       }
       if (taxes.HTOnly) {
-        return `<b class="red">${price.withoutTax.text}</b>`;
+        return `<span class="font-weight-bold red">${price.withoutTax.text}</span>`;
       }
-      return `<b class="red">${$translate.instant('price_ht_label', { price: price.withoutTax.text })}</b><i class="small"> (${$translate.instant('price_ttc_label', { price: price.withTax.text })})</i>`;
+      return `<span class="font-weight-bold red">${$translate.instant('price_ht_label', { price: price.withoutTax.text })}</span><span class="font-italic small"> (${$translate.instant('price_ttc_label', { price: price.withTax.text })})</span>`;
     }
-    return `<b class="red">${$translate.instant('price_free')}</b>`;
+    return `<span class="font-weight-bold red">${$translate.instant('price_free')}</span>`;
   }
 
   return function priceFilter(price, ovhSubsidiary) {
