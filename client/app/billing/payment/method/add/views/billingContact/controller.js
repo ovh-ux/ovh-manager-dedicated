@@ -1,7 +1,6 @@
 export default class BillingPaymentMethodAddBillingContactViewCtrl {
   /* @ngInject */
   constructor(ovhContacts) {
-    // dependencies injections
     this.ovhContacts = ovhContacts;
 
     // attributes used in view

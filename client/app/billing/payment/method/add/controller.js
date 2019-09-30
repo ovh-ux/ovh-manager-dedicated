@@ -4,7 +4,6 @@ export default class BillingPaymentMethodAddCtrl {
   /* @ngInject */
   constructor($translate, Alerter, ovhContacts, ovhPaymentMethod,
     OVH_PAYMENT_METHOD_TYPE, OVH_PAYMENT_METHOD_INTEGRATION_TYPE) {
-    // dependencies injections
     this.$translate = $translate;
     this.Alerter = Alerter;
     this.ovhContacts = ovhContacts;

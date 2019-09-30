@@ -7,7 +7,7 @@ export default (($stateProvider) => {
   $stateProvider.state(name, {
     url: '/edit',
     component: component.name,
-    layout: 'modalTest',
+    layout: 'modalResolve',
     resolve: {
       redirectTo: () => 'app.account.billing.payment.method',
       onEditFormSubmit: /* @ngInject */ (

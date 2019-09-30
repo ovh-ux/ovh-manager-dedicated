@@ -84,5 +84,8 @@ module.exports = (env = {}) => {
         __WEBPACK_REGION__: `'${env.region.toUpperCase()}'`,
       }),
     ],
+    optimization: {
+      runtimeChunk: 'single',
+    },
   });
 };

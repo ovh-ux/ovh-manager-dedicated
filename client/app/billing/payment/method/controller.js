@@ -4,7 +4,6 @@ export default class BillingPaymentMethodCtrl {
   /* @ngInject */
   constructor($timeout, Alerter, OVH_PAYMENT_MEAN_STATUS, OVH_PAYMENT_METHOD_TYPE,
     ovhPaymentMethodHelper) {
-    // dependencies injections
     this.$timeout = $timeout;
     this.Alerter = Alerter;
     this.OVH_PAYMENT_MEAN_STATUS = OVH_PAYMENT_MEAN_STATUS;
