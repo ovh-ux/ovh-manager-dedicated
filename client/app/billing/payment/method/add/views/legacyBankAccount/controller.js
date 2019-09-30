@@ -1,6 +1,5 @@
 export default class PaymentMethodAddLegacyBankAccountCtrl {
   /* @ngInject */
-
   constructor(ovhPaymentMethodHelper) {
     // other attributes
     this.isValidIban = ovhPaymentMethodHelper.isValidIban;
