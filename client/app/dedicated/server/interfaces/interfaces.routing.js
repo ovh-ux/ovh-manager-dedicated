@@ -11,10 +11,13 @@ export default /* @ngInject */ ($stateProvider) => {
       configStep: { dynamic: true },
     },
     resolve: {
-      urls: /* @ngInject */ (
-        constants,
-        user,
-      ) => constants.urls[user.ovhSubsidiary],
+      failoverIps: /* @ngInject */ (
+        OvhApiIp,
+        serverName,
+      ) => OvhApiIp.v6().query({
+        'routedTo.serviceName': serverName,
+        type: 'failover',
+      }).$promise,
       taskPolling: /* @ngInject */ (
         DedicatedServerInterfacesService,
         serverName,
@@ -30,6 +33,10 @@ export default /* @ngInject */ ($stateProvider) => {
         DedicatedServerInterfacesService,
         serverName,
       ) => DedicatedServerInterfacesService.getOlaPrice(serverName),
+      urls: /* @ngInject */ (
+        constants,
+        user,
+      ) => constants.urls[user.ovhSubsidiary],
     },
   });
 };
