@@ -139,4 +139,12 @@ export default class DedicatedServerInterfacesService {
       { namespace: 'dedicated.server.interfaces.ola', method: 'get' },
     )));
   }
+
+  terminateOla(serverName) {
+    return this.$http.delete(`/dedicated/server/${serverName}/option/OLA`)
+      .then(
+        response => response.data,
+        (error) => { throw error; },
+      );
+  }
 }

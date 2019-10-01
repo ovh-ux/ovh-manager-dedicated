@@ -19,6 +19,13 @@ export default /* @ngInject */ ($stateProvider) => {
         DedicatedServerInterfacesService,
         serverName,
       ) => DedicatedServerInterfacesService.getTasks(serverName),
+      alertError: /* @ngInject */ (
+        $timeout,
+        $translate,
+        Alerter,
+      ) => (translateId, error) => $timeout(() => {
+        Alerter.error($translate.instant(translateId), error);
+      }),
     },
   });
 };
