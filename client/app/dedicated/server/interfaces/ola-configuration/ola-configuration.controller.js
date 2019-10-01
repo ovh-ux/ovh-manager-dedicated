@@ -1,7 +1,5 @@
 import _ from 'lodash';
-import Interface from '../interface.class';
 import { OLA_MODES } from './ola-configuration.constants';
-import { VIRTUAL_TYPE } from '../interfaces.constants';
 
 export default class {
   /* @ngInject */
@@ -31,11 +29,6 @@ export default class {
         : OLA_MODES.DEFAULT,
     };
 
-    this.fakeInterfaces = [
-      new Interface({ name: 'xx:xx:xx:xx:xx:xx', type: VIRTUAL_TYPE.public }),
-      new Interface({ name: 'yy:yy:yy:yy:yy:yy', type: VIRTUAL_TYPE.vrack }),
-    ];
-
     this.selectedInterfaces = [];
     this.notAllowedInterfaces = _.filter(
       this.interfaces,
@@ -63,6 +56,13 @@ export default class {
 
   onRowSelect(selectedRows) {
     this.selectedInterfaces = selectedRows;
+
+    if (this.configuration.mode === OLA_MODES.DEFAULT) {
+      this.networkInterfaces = _.flatten(_.map(
+        this.selectedInterfaces,
+        ({ mac }) => mac.split(','),
+      ));
+    }
   }
 
   onFinish() {

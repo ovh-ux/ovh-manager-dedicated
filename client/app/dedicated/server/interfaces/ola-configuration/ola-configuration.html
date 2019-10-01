@@ -201,9 +201,6 @@
                 <thead class="oui-datagrid__headers">
                     <tr>
                         <th class="oui-datagrid__header"
-                            data-translate="dedicated_server_interfaces_ola_column_mode">
-                        </th>
-                        <th class="oui-datagrid__header"
                             data-translate="dedicated_server_interfaces_ola_column_name">
                         </th>
                         <th class="oui-datagrid__header"
@@ -216,13 +213,9 @@
                 </thead>
                 <tbody>
                     <tr class="oui-datagrid__row"
-                        data-ng-repeat="interface in $ctrl.fakeInterfaces track by interface.name">
-                        <td class="oui-datagrid__cell">
-                            <span data-ng-if="interface.isPublic()" data-translate="dedicated_server_interfaces_type_public_label"></span>
-                            <span data-ng-if="interface.isPrivate()" data-translate="dedicated_server_interfaces_type_private_label"></span>
-                        </td>
+                        data-ng-repeat="mac in $ctrl.networkInterfaces track by mac">
                         <td class="oui-datagrid__cell"
-                            data-ng-bind="interface.name">
+                            data-ng-bind="mac">
                         </td>
                         <td class="oui-datagrid__cell">
                             <div data-ng-if="interface.isPublic()">
