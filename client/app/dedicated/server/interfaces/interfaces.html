@@ -178,10 +178,8 @@
     </oui-column>
     <oui-column
         data-title="::'dedicated_server_interfaces_failover_ip_label' | translate">
-        <span data-ng-if="$row.hasFailoverIps()"
-            data-ng-bind="$row.failoverIps">
-        </span>
-        <span data-ng-if="!$row.hasFailoverIps()">-</span>
+        <span data-ng-if="$row.isPublic()" data-ng-bind="$ctrl.failoverIps.length"></span>
+        <span data-ng-if="!$row.isPublic()">-</span>
     </oui-column>
     <oui-column
         data-title="::'dedicated_server_interfaces_vrack_label' | translate"
