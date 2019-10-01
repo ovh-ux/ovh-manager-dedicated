@@ -119,13 +119,18 @@
                         data-ng-click="$ctrl.trackCSVExport()">
                         <span data-translate="billing_export_csv"></span>
                     </button>
-                    <div data-ng-if="$ctrl.canDisableAllDomains">
-                        <oui-action-menu-divider></oui-action-menu-divider>
-                        <oui-action-menu-item
-                            data-on-click="$ctrl.disableAutorenewForDomains()">
-                            <span data-translate="billing_autorenew_service_disable_all_dom"></span>
-                        </oui-action-menu-item>
-                    </div>
+                    <oui-action-menu-divider data-ng-if="$ctrl.ALIGNMENT_URL || $ctrl.canDisableAllDomains"></oui-action-menu-divider>
+                    <oui-action-menu-item
+                        data-ng-if="$ctrl.ALIGNMENT_URL"
+                        data-href="{{ $ctrl.ALIGNMENT_URL }}"
+                        data-external>
+                        <span data-translate="billing_autorenew_service_align_renew"></span>
+                    </oui-action-menu-item>
+                    <oui-action-menu-item
+                        data-ng-if="$ctrl.canDisableAllDomains"
+                        data-on-click="$ctrl.disableAutorenewForDomains()">
+                        <span data-translate="billing_autorenew_service_disable_all_dom"></span>
+                    </oui-action-menu-item>
                 </oui-action-menu>
             </extra-top>
 
