@@ -1,3 +1,13 @@
+<a name="10.30.1"></a>
+## [10.30.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.30.0...v10.30.1) (2019-10-01)
+
+
+### Bug Fixes
+
+* **billing.autorenew:** allow immediate service termination ([7046276](https://github.com/ovh-ux/ovh-manager-dedicated/commit/7046276))
+
+
+
 <a name="10.30.0"></a>
 # [10.30.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.29.0...v10.30.0) (2019-09-26)
 
