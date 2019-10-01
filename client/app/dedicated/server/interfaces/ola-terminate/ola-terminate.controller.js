@@ -11,7 +11,7 @@ export default class {
         this.goBack();
       })
       .catch((error) => {
-        this.goBack().then(() => this.alertError('dedicated_server_error_ola_terminate', error.data));
+        this.goBack().then(() => this.alertError('server_error_ola_terminate', error.data));
       });
   }
 }

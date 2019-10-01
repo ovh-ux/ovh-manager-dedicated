@@ -24,7 +24,7 @@ export default /* @ngInject */ ($stateProvider) => {
         $translate,
         Alerter,
       ) => (translateId, error) => $timeout(() => {
-        Alerter.error($translate.instant(translateId), error);
+        Alerter.set('alert-danger', $translate.instant(translateId, { error: error.message }));
       }),
     },
   });
