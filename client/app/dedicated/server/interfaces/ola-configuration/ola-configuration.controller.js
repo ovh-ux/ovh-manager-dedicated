@@ -37,10 +37,11 @@ export default class {
     ];
 
     this.selectedInterfaces = [];
-    this.notAllowedInterfaces = _.remove(
+    this.notAllowedInterfaces = _.filter(
       this.interfaces,
       item => item.hasFailoverIps() || item.hasVrack(),
     );
+    this.allowedInterfaces = this.interfaces.filter(i => !this.notAllowedInterfaces.includes(i));
   }
 
   isGrouping() {
