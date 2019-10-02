@@ -17,8 +17,12 @@ export default class {
       serviceName: this.vrack,
     }, {
       dedicatedServerInterface: this.interface.id,
-    }).$promise.then(() => {
-      this.goBack();
-    });
+    }).$promise
+      .then(() => {
+        this.goBack();
+      })
+      .catch((error) => {
+        this.goBack().then(() => this.alertError('server_error_vrack_attach', error.data));
+      });
   }
 }
