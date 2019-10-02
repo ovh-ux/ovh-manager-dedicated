@@ -137,8 +137,7 @@
     <oui-column
         data-title="::'dedicated_server_interfaces_type_label' | translate"
         data-property="type">
-        <span data-ng-if="$row.isPublic()" data-translate="dedicated_server_interfaces_type_public_label"></span>
-        <span data-ng-if="$row.isPrivate()" data-translate="dedicated_server_interfaces_type_private_label"></span>
+        <span data-translate="{{ 'dedicated_server_interfaces_type_' + $row.type + '_label' }}"></span>
     </oui-column>
     <oui-column
         data-title="::'dedicated_server_interfaces_mac_label' | translate"
