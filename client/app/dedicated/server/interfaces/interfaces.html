@@ -66,56 +66,20 @@
         <oui-tile class="h-100"
             data-heading="{{:: 'dedicated_server_interfaces_bandwith_title' | translate}}"
             data-description="{{:: 'dedicated_server_interfaces_bandwith_description' | translate }}">
-            <oui-tile-definition
-                data-term="{{:: 'dedicated_server_interfaces_bandwith_public' | translate }}">
-                <oui-tile-description>
-                    <p>
-                        <strong data-translate="server_bandwidth_type"></strong>
-                        <span data-translate="{{:: 'server_bandwidth_type_' + $ctrl.specifications.bandwidth.type}}"></span>
-                    </p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <!-- Outgoing Bandwidth -->
-                            <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
-                            <span data-ng-bind="$ctrl.specifications.bandwidth.OvhToInternet | ducBandwidth"></span>
-                            <span data-translate="server_bandwidth_outgoing"></span>
-                        </div>
-                        <div class="col-md-6">
-                            <!-- Incoming Bandwidth -->
-                            <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
-                            <span data-ng-bind="$ctrl.specifications.bandwidth.InternetToOvh | ducBandwidth"></span>
-                            <span data-translate="server_bandwidth_incoming"></span>
-                        </div>
-                    </div>
-                </oui-tile-description>
-            </oui-tile-definition>
-            <oui-tile-definition
-                data-term="{{:: 'dedicated_server_interfaces_bandwith_private' | translate }}">
-                <oui-tile-description>
-                    <p>
-                        <strong data-translate="server_bandwidth_type"></strong>
-                        <span data-translate="{{:: 'server_bandwidth_type_' + $ctrl.specifications.vrack.type}}"></span>
-                    </p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <!-- Outgoing Bandwidth -->
-                            <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
-                            <span data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth"></span>
-                            <span data-translate="server_bandwidth_outgoing"></span>
-                        </div>
-                        <div class="col-md-6">
-                            <!-- Incoming Bandwidth -->
-                            <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
-                            <span data-ng-bind="$ctrl.specifications.vrack.bandwidth | ducBandwidth"></span>
-                            <span data-translate="server_bandwidth_incoming"></span>
-                        </div>
-                    </div>
-                </oui-tile-description>
-            </oui-tile-definition>
+            <dedicated-server-bandwidth-dashboard
+                data-bandwidth-option="$ctrl.bandwidthOption"
+                data-bandwidth-vrack-option="$ctrl.bandwidthVrackOptions"
+                data-bandwidth-vrack-order-option="$ctrl.bandwidthVrackOrderOptions"
+                data-order-private-link="$ctrl.orderPrivateBandwidthLink"
+                data-order-public-link="$ctrl.orderPublicBandwidthLink"
+                data-server="$ctrl.server"
+                data-specifications="$ctrl.specifications"
+                data-resiliate-private-link="$ctrl.resiliatePrivateBandwidthLink"
+                data-resiliate-public-link="$ctrl.resiliatePublicBandwidthLink">
+            </dedicated-server-bandwidth-dashboard>
         </oui-tile>
     </div>
 </div>
-
 
 <h2 data-translate="dedicated_server_interfaces_list_title"></h2>
 
