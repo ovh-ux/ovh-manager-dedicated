@@ -1,4 +1,4 @@
-angular.module('App').controller('ServerOrderLegacyBandwidthCtrl', ($scope, $stateParams, $translate, Server, User) => {
+angular.module('App').controller('ServerOrderLegacyBandwidthCtrl', ($scope, $state, $stateParams, $translate, Alerter, Server, User) => {
   $scope.orderable = null;
 
   $scope.orderableBandwidth = {
@@ -148,10 +148,8 @@ angular.module('App').controller('ServerOrderLegacyBandwidthCtrl', ($scope, $sta
 
         bcUrl = durations.url;
       },
-      (data) => {
-        $scope.resetAction();
-        _.set(data, 'data.type', 'ERROR');
-        $scope.setMessage($translate.instant('server_order_bandwidth_error'), data.data);
+      () => {
+        $state.go('^').then(() => Alerter.error($translate.instant('server_order_bandwidth_error'), 'server_dashboard_alert'));
       },
     );
   };
@@ -162,7 +160,11 @@ angular.module('App').controller('ServerOrderLegacyBandwidthCtrl', ($scope, $sta
     *
     */
   $scope.openBC = function () {
-    $scope.resetAction();
+    $state.go('^');
     window.open(bcUrl);
+  };
+
+  $scope.resetAction = function () {
+    $state.go('^');
   };
 });

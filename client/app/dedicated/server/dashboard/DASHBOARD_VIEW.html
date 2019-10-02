@@ -519,110 +519,17 @@
                         </oui-action-menu>
                     </oui-tile-definition>
 
-                    <!-- Public Bandwidth -->
-                    <oui-tile-definition
-                        data-term="{{:: 'server_bandwidth' | translate }}">
-                        <oui-tile-description>
-                            <p>
-                                <strong data-translate="server_bandwidth_type"></strong>
-                                <span data-translate="{{:: 'server_bandwidth_type_' + bandwidth.bandwidth.type}}"></span>
-                                <small class="oui-tile__extra"
-                                    data-ng-if="bandwidthOption === 'released'"
-                                    data-translate="server_bandwidth_option_released">
-                                </small>
-                            </p>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <!-- Outgoing Bandwidth -->
-                                    <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
-                                    <span data-ng-bind="bandwidth.bandwidth.OvhToInternet | ducBandwidth"></span>
-                                    <span data-translate="server_bandwidth_outgoing"></span>
-                                    <span class="text-danger" data-ng-if="traffic.usage.isThrottled">
-                                        -
-                                        <span data-translate="server_consumption_throttled"></span>
-                                        <span class="oui-icon oui-icon-help_circle" aria-hidden="true"
-                                            data-oui-tooltip="{{:: 'server_consumption_explanation' | translate}}"
-                                            data-oui-tooltip-placement="top">
-                                        </span>
-                                    </span>
-                                </div>
-                                <div class="col-md-6">
-                                    <!-- Incoming Bandwidth -->
-                                    <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
-                                    <span data-ng-bind="bandwidth.bandwidth.InternetToOvh | ducBandwidth"></span>
-                                    <span data-translate="server_bandwidth_incoming"></span>
-                                </div>
-                            </div>
-                        </oui-tile-description>
-                       <oui-action-menu
-                            aria-label="{{:: 'menu_action_label' | translate:{ t0: ('server_bandwidth_type' | translate) } }}"
-                            data-ng-if="bandwidthOption === 'subscribed' && dedicatedServerFeatureAvailability.allowDedicatedServerBandwidthOption()"
-                            data-align="end"
-                            data-compact>
-                            <oui-action-menu-item
-                                data-state="app.dedicated.server.dashboard.bandwidth-public-cancel"
-                                data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'">
-                                <span data-translate="server_bandwidth_cancel_button"></span>
-                            </oui-action-menu-item>
-                       </oui-action-menu>
-                    </oui-tile-definition>
-                    <oui-tile-button
-                        data-ng-if="bandwidthOption === 'notSubscribed' && server.canOrderBandwith && dedicatedServerFeatureAvailability.allowDedicatedServerOrderBandwidthOption()"
-                        data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
-                        data-on-click="isFullAgora(server.commercialRange)
-                            ? $state.go('app.dedicated.server.dashboard.bandwidth-public-order')
-                            : setAction('bandwidth-legacy/order-public/dedicated-server-bandwidth-order', server.name)">
-                        <span data-translate="server_bandwidth_order_button"></span>
-                    </oui-tile-button>
-
-                    <!-- Private Bandwidth -->
-                    <oui-tile-definition
-                        data-ng-if="bandwidth.vrack.bandwidth"
-                        data-term="{{:: 'server_bandwidth_vrack' | translate}}">
-                        <oui-tile-description>
-                            <p>
-                                <strong data-translate="server_bandwidth_type"></strong>
-                                <span data-translate="{{:: 'server_bandwidth_type_' + bandwidth.vrack.type}}"></span>
-                            </p>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <!-- Outgoing Bandwidth -->
-                                    <span class="oui-icon oui-icon-arrow-up font-inherit"></span>
-                                    <span data-ng-bind="bandwidth.vrack.bandwidth | ducBandwidth"></span>
-                                    <span data-translate="server_bandwidth_outgoing"></span>
-                                    <small class="oui-tile__extra"
-                                        data-ng-if="bandwidthVrackOption === 'released'"
-                                        data-translate="server_bandwidth_vrack_option_released">
-                                    </small>
-                                </div>
-                                <div class="col-md-6">
-                                    <!-- Incoming Bandwidth -->
-                                    <span class="oui-icon oui-icon-arrow-down font-inherit"></span>
-                                    <span data-ng-bind="bandwidth.vrack.bandwidth | ducBandwidth"></span>
-                                    <span data-translate="server_bandwidth_incoming"></span>
-                                </div>
-                            </div>
-                        </oui-tile-description>
-                        <oui-action-menu
-                            aria-label="{{:: 'menu_action_label' | translate:{ t0: ('server_bandwidth_vrack' | translate) } }}"
-                            data-ng-if="!server.isExpired && bandwidthVrackOption === 'subscribed'"
-                            data-align="end"
-                            data-compact>
-                            <oui-action-menu-item
-                                data-state="app.dedicated.server.dashboard.bandwidth-private-cancel"
-                                data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'">
-                                <span data-translate="server_bandwidth_vrack_cancel_button"></span>
-                            </oui-action-menu-item>
-                        </oui-action-menu>
-                    </oui-tile-definition>
-                    <oui-tile-button
-                        data-ng-if="canOrderVrackBandwidth() && canOrderMoreVrackBandwidth()"
-                        data-disabled="server.state === 'HACKED' || server.state === 'HACKED_BLOCKED'"
-                        data-on-click="isFullAgora(server.commercialRange)
-                            ? $state.go('app.dedicated.server.dashboard.bandwidth-private-order')
-                            : setAction('bandwidth-legacy/order-private/dedicated-server-bandwidth-vrack-order', server)">
-                        <span data-translate="{{ (bandwidthVrackOption !== 'subscribed' ? 'server_bandwidth_vrack_order_button' : 'server_bandwidth_vrack_change_button') | translate }}"></span>
-                    </oui-tile-button>
+                    <dedicated-server-bandwidth-dashboard
+                        data-bandwidth-option="bandwidthOption"
+                        data-bandwidth-vrack-option="bandwidthVrackOptions"
+                        data-bandwidth-vrack-order-option="bandwidthVrackOrderOptions"
+                        data-order-private-link="orderPrivateBandwidthLink"
+                        data-order-public-link="orderPublicBandwidthLink"
+                        data-server="server"
+                        data-specifications="specifications"
+                        data-resiliate-private-link="resiliatePrivateBandwidthLink"
+                        data-resiliate-public-link="resiliatePublicBandwidthLink">
+                    </dedicated-server-bandwidth-dashboard>
 
                     <!-- Traffic -->
                     <oui-tile-definition

@@ -1,9 +1,11 @@
 class ServerOrderLegacyBandwidthVrackCtrl {
   /* @ngInject */
-  constructor($scope, $stateParams, $translate, User, BandwidthVrackOrderService) {
+  constructor($scope, $state, $stateParams, $translate, Alerter, User, BandwidthVrackOrderService) {
     this.$scope = $scope;
+    this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
+    this.Alerter = Alerter;
     this.BandwidthVrackOrderService = BandwidthVrackOrderService;
     this.User = User;
 
@@ -74,17 +76,20 @@ class ServerOrderLegacyBandwidthVrackCtrl {
     this.$scope.initBandwidthOrderables = this.steps[0].load.bind(this);
     this.$scope.initBandwidthDurations = this.steps[1].load.bind(this);
     this.$scope.initBandwidthBC = this.steps[2].load.bind(this);
+    this.$scope.resetAction = () => this.$state.go('^');
 
     // Same thing for reset action and open openBC
     this.$scope.openBC = this.openBC.bind(this);
   }
 
   openBC() {
-    this.$scope.resetAction();
-    this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_vrack_success', {
-      t0: this.bc.data.url,
-    }), true);
-    window.open(this.bc.data.url);
+    this.$state.go('^')
+      .then(() => {
+        this.Alerter.success(this.$translate.instant('server_order_bandwidth_vrack_success', {
+          t0: this.bc.data.url,
+        }), 'server_dashboard_alert');
+        window.open(this.bc.data.url);
+      });
   }
 
   handleAPIGet(promise, loadIntoStruct) {
@@ -95,16 +100,17 @@ class ServerOrderLegacyBandwidthVrackCtrl {
         _.set(loadIntoStruct, 'data', response.data);
 
         if (response.message) {
-          this.$scope.setMessage(response.message, true);
+          this.Alerter.success(this.$translate.instant('server_order_bandwidth_vrack_success', {
+            t0: this.bc.data.url,
+          }), 'server_dashboard_alert');
         }
       })
       .catch((response) => {
         _.set(loadIntoStruct, 'hasError', true);
         _.set(loadIntoStruct, 'data', _.isArray(loadIntoStruct) ? [] : {});
 
-        this.$scope.resetAction();
-        response.data.type = 'ERROR';
-        this.$scope.setMessage(response.message, response.data);
+        this.$state.go('^')
+          .then(() => this.Alerter.error(response.message, 'server_dashboard_alert'));
       })
       .finally(() => {
         _.set(loadIntoStruct, 'loading', false);
