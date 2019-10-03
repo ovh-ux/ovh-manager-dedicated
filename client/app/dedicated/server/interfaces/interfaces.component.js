@@ -5,11 +5,13 @@ export default {
   template,
   controller,
   bindings: {
-    serverName: '<',
-    specifications: '<',
     interfaces: '<',
     ola: '<',
-    urls: '<',
+    optionPrice: '<',
+    serverName: '<',
+    specifications: '<',
     taskPolling: '<',
+    urls: '<',
+    user: '<',
   },
 };

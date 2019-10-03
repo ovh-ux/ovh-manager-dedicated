@@ -26,6 +26,10 @@ export default /* @ngInject */ ($stateProvider) => {
       ) => (translateId, error) => $timeout(() => {
         Alerter.set('alert-danger', $translate.instant(translateId, { error: error.message }));
       }),
+      optionPrice: /* @ngInject */ (
+        DedicatedServerInterfacesService,
+        serverName,
+      ) => DedicatedServerInterfacesService.getOlaPrice(serverName),
     },
   });
 };

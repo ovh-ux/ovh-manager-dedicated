@@ -11,8 +11,10 @@
     <div class="col-md-8 mb-5"
         data-ng-if="$ctrl.ola.isAvailable() && (!$ctrl.ola.isActivated() || !$ctrl.ola.isConfigured())">
         <ola-step-checker class="h-100"
+            data-price="$ctrl.optionPrice"
             data-ola="$ctrl.ola"
-            data-urls="$ctrl.urls">
+            data-urls="$ctrl.urls"
+            data-user="$ctrl.user">
         </ola-step-checker>
     </div>
 

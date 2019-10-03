@@ -40,4 +40,9 @@ export default class {
   goToConfiguration() {
     this.$state.go('app.dedicated.server.interfaces.ola-configuration');
   }
+
+  getPrice(price) {
+    const languageLocale = this.user.language.replace('_', '-');
+    return Intl.NumberFormat(languageLocale, { style: 'currency', currency: this.price.currencyCode, maximumSignificantDigits: 1 }).format(price);
+  }
 }
