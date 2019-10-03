@@ -48,6 +48,9 @@ export default class DedicatedServerInterfacesOlaActivationCtrl {
       .then((order) => {
         this.orderUrl = order.url;
         this.loading = false;
+      })
+      .catch((error) => {
+        this.goBack().then(() => this.alertError('server_error_ola_activation', error.data));
       });
   }
 
