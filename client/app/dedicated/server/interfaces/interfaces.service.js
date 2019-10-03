@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import Interface from './interface.class';
+import { OLA_PLAN_CODE } from './interfaces.constants';
 
 export default class DedicatedServerInterfacesService {
   /* @ngInject */
@@ -9,6 +10,7 @@ export default class DedicatedServerInterfacesService {
     OvhApiDedicatedServerOla,
     OvhApiDedicatedServerPhysicalInterface,
     OvhApiDedicatedServerVirtualInterface,
+    OvhApiOrderCartServiceOption,
     Poller,
   ) {
     this.$http = $http;
@@ -16,6 +18,7 @@ export default class DedicatedServerInterfacesService {
     this.Ola = OvhApiDedicatedServerOla;
     this.PhysicalInterface = OvhApiDedicatedServerPhysicalInterface;
     this.VirtualInterface = OvhApiDedicatedServerVirtualInterface;
+    this.OvhApiOrderCartServiceOption = OvhApiOrderCartServiceOption;
     this.Poller = Poller;
   }
 
@@ -146,5 +149,20 @@ export default class DedicatedServerInterfacesService {
         response => response.data,
         (error) => { throw error; },
       );
+  }
+
+  getOlaPrice(serviceName) {
+    return this.OvhApiOrderCartServiceOption.v6().get({
+      productName: 'baremetalServers',
+      serviceName,
+    }).$promise
+      .then((options) => {
+        const prices = _.get(
+          _.find(options, {
+            planCode: OLA_PLAN_CODE,
+          }), 'prices',
+        );
+        return _.get(_.find(prices, { pricingMode: 'default' }), 'price');
+      });
   }
 }

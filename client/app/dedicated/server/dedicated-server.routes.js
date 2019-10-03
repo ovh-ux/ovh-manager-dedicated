@@ -9,7 +9,7 @@ angular.module('App').config(($stateProvider) => {
     translations: { value: ['.'], format: 'json' },
     redirectTo: 'app.dedicated.server.dashboard',
     resolve: {
-      user: /* @ngInject */ User => User.getUser(),
+      user: /* @ngInject */ currentUser => currentUser,
       serverName: /* @ngInject */ $transition$ => $transition$.params().productId,
       interfaces: /* @ngInject */ (
         serverName,
