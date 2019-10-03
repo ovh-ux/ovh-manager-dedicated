@@ -12,6 +12,7 @@ class ServerOrderBandwidthVrackCtrl {
   $onInit() {
     this.model = {};
     this.isLoading = false;
+    this.isStep2Loading = true;
     this.existingBandwidth = this.$scope.currentActionData.bandwidth.vrack.bandwidth.value;
 
     this.steps = [
@@ -36,20 +37,23 @@ class ServerOrderBandwidthVrackCtrl {
       },
       {
         isValid: () => this.model.plan,
-        isLoading: () => this.isLoading,
+        isLoading: () => this.isStep2Loading,
         load: () => {
-          this.isLoading = true;
+          this.isStep2Loading = true;
           return this.Server
             .getBareMetalPrivateBandwidthOrder(this.$stateParams.productId, this.model.plan)
             .then((res) => {
               res.bandwidth = _.find(this.plans, 'planCode', this.model.plan).bandwidth;
               res.planCode = this.model.plan;
               this.provisionalPlan = res;
+              this.prices = res.order.prices;
             })
             .catch((error) => {
               this.$scope.resetAction();
               return this.$scope.setMessage(this.$translate.instant('server_order_bandwidth_vrack_loading_error'), error.data);
-            }).finally(() => { this.isLoading = false; });
+            }).finally(() => {
+              this.isStep2Loading = false;
+            });
         },
       },
     ];
@@ -57,6 +61,13 @@ class ServerOrderBandwidthVrackCtrl {
     this.$scope.initFirstStep = this.steps[0].load.bind(this);
     this.$scope.initSecondStep = this.steps[1].load.bind(this);
     this.$scope.order = this.order.bind(this);
+
+    this
+      .User
+      .getUser()
+      .then((user) => {
+        this.user = user;
+      });
   }
 
   order() {
