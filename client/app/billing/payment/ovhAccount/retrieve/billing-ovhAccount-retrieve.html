@@ -76,9 +76,11 @@
                 <oui-spinner data-ng-if="loading"></oui-spinner>
                 <div data-ng-if="!loading">
                     <span data-translate="ovhAccount_retrieve_resume_1"></span>
-                    <strong class="text-danger"
-                            data-ng-bind-html="retrieveOrder.prices | ducPrice:user.ovhSubsidiary">
-                    </strong>
+
+                    <duc-price
+                        data-ng-if="retrieveOrder.prices"
+                        data-ovh-subsidiary="user.ovhSubsidiary"
+                        data-price-display="retrieveOrder.prices"></duc-price>
                     <span data-translate="ovhAccount_retrieve_resume_2"></span>( <em data-ng-bind="retrieve.account.label"></em> ) ?
                     <p data-translate="ovhAccount_retrieve_tips"></p>
                 </div>

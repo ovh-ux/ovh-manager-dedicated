@@ -135,7 +135,11 @@
                                    data-ng-model="selected.duration"
                                    data-ng-change="selectDuration()"
                                    data-ng-disabled="loaders.prices || durations.available.length == 1">
-                            {{ duration | wucDuration:'longDate' }}&nbsp;:&nbsp;<span data-ng-bind-html="durations.details[duration].prices | ducPrice:user.ovhSubsidiary"></span>
+                            {{ duration | wucDuration:'longDate' }}&nbsp;:&nbsp;
+                            <duc-price
+                                data-ng-if="durations.details[duration].prices"
+                                data-ovh-subsidiary="user.ovhSubsidiary"
+                                data-price-display="durations.details[duration].prices"></duc-price>
                             <oui-spinner data-ng-hide="durations.details[duration]"
                                         data-inline="true"
                                         data-size="s">

@@ -183,7 +183,7 @@ angular.module('Module.license').controller('LicenseUpgradeCtrl', ($scope, $tran
   };
 
   $scope.getOptionVersions = function () {
-    return _.filter(
+    return $scope.types[$scope.license.type] && _.filter(
       $scope.types[$scope.license.type].options[0].options,
       version => $scope.license.version.value !== version.value,
     );

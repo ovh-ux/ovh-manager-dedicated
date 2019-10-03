@@ -119,7 +119,10 @@
                                data-ng-model="durations.selected"
                                data-ng-disabled="loaders.durations">
                         <span data-ng-bind="duration.durations | wucDuration:'shortDate'"></span>&nbsp;:&nbsp;
-                        <span data-ng-bind-html="duration.details.prices | ducPrice:user.value.ovhSubsidiary"></span>
+                        <duc-price
+                            data-ng-if="duration.details.prices"
+                            data-ovh-subsidiary="user.value.ovhSubsidiary"
+                            data-price-display="duration.details.prices"></duc-price>
                     </label>
                 </div>
             </form>
