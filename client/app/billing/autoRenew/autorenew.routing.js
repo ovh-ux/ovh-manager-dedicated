@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import BillingService from '../../models/BillingService.class';
+import BillingService from './BillingService.class';
 import { NIC_ALL } from './autorenew.constants';
 
 export default /* @ngInject */ ($stateProvider, coreConfigProvider) => {
@@ -155,7 +155,7 @@ export default /* @ngInject */ ($stateProvider, coreConfigProvider) => {
 
       sort: /* @ngInject */ $transition$ => JSON.parse($transition$.params().sort),
 
-      terminateEmail: /* @ngInject */ $state => service => $state.go('app.account.billing.autorenew.terminateEmail', { serviceId: service.id, name: service.domain }),
+      terminateEmail: /* @ngInject */ $state => service => $state.go('app.account.billing.autorenew.terminateEmail', { serviceId: service.serviceId, name: service.domain }),
       terminateHostingWeb: /* @ngInject */ $state => serviceId => $state.go('app.account.billing.autorenew.terminateHostingWeb', { serviceId }),
       terminatePrivateDatabase: /* @ngInject */ $state => serviceId => $state.go('app.account.billing.autorenew.terminatePrivateDatabase', { serviceId }),
       updateServices: /* @ngInject */ $state => ({ id }) => $state.go('app.account.billing.autorenew.update', { serviceId: id }),

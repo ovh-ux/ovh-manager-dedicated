@@ -34,24 +34,14 @@ angular
         serviceName: pccId,
       }).$promise)));
 
-    this.getSelected = (serviceName, forceRefresh) => OvhHttp
-      .get('/sws/dedicatedCloud/{serviceName}', {
-        rootPath: '2api',
-        urlParams: {
-          serviceName,
-        },
-        cache: dedicatedCloudCache.all,
-        clearAllCache: forceRefresh,
-      })
-      .then(service => (_.isString(service) || service.status === 'expired'
-        ? {
-          ...(_.isObject(service) ? service : undefined),
-          isExpired: true,
-        }
-        : {
-          ...service,
-          isExpired: false,
-        }));
+    this.getSelected = (serviceName, forceRefresh) => OvhHttp.get('/sws/dedicatedCloud/{serviceName}', {
+      rootPath: '2api',
+      urlParams: {
+        serviceName,
+      },
+      cache: dedicatedCloudCache.all,
+      clearAllCache: forceRefresh,
+    });
 
     this.getDescription = serviceName => OvhHttp.get('/dedicatedCloud/{serviceName}', {
       rootPath: 'apiv6',
