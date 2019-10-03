@@ -11,6 +11,7 @@ export default {
     failoverIps: '<',
     interfaces: '<',
     ola: '<',
+    optionPrice: '<',
     orderPrivateBandwidthLink: '<',
     orderPublicBandwidthLink: '<',
     server: '<',
@@ -20,5 +21,6 @@ export default {
     resiliatePrivateBandwidthLink: '<',
     taskPolling: '<',
     urls: '<',
+    user: '<',
   },
 };
