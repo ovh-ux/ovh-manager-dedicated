@@ -55,12 +55,14 @@ export default /* @ngInject */ ($translate) => {
     US: usTouch,
   };
 
-  function format(price, paramCountry) {
+  function format(price, paramCountry, isMonthly) {
     const country = (angular.isString(paramCountry) && paramCountry) || 'FR';
     const taxes = showTaxes[country];
+    const isMonthlySuffix = isMonthly ? '_isMonthly' : '';
+
     if (price.withTax.value !== 0) {
       if (taxes.withGST) {
-        return `<b class="red">${$translate.instant('price_price_gst_excl_label', { price: price.withoutTax.text })}</b><i class="small"> (${$translate.instant('price_price_gst_incl_label', { price: price.withTax.text })})</i>`;
+        return `<b class="red">${$translate.instant(`price_gst_excl_label${isMonthlySuffix}`, { price: price.withoutTax.text })}</b><i class="small"> (${$translate.instant(`price_gst_incl_label${isMonthlySuffix}`, { price: price.withTax.text })})</i>`;
       }
       if (taxes.TTCOnly) {
         return `<b class="red">${price.withTax.text}</b>`;
@@ -68,14 +70,14 @@ export default /* @ngInject */ ($translate) => {
       if (taxes.HTOnly) {
         return `<b class="red">${price.withoutTax.text}</b>`;
       }
-      return `<b class="red">${$translate.instant('price_ht_label', { price: price.withoutTax.text })}</b><i class="small"> (${$translate.instant('price_ttc_label', { price: price.withTax.text })})</i>`;
+      return `<b class="red">${$translate.instant(`price_ht_label${isMonthlySuffix}`, { price: price.withoutTax.text })}</b><i class="small"> (${$translate.instant(`price_ttc_label${isMonthlySuffix}`, { price: price.withTax.text })})</i>`;
     }
     return `<b class="red">${$translate.instant('price_free')}</b>`;
   }
 
-  return function priceFilter(price, ovhSubsidiary) {
+  return function priceFilter(price, ovhSubsidiary, isMonthly) {
     if (price !== undefined) {
-      return format(price, ovhSubsidiary);
+      return format(price, ovhSubsidiary, isMonthly);
     }
 
     return '<span/>';
