@@ -8,10 +8,10 @@ export default /* @ngInject */ ($stateProvider) => {
       },
     },
     resolve: {
-      goBack: /* @ngInject */ $state => (params, transitionParams) => $state.go(
+      goBack: /* @ngInject */ $state => params => $state.go(
         'app.dedicated.server.interfaces',
         params,
-        transitionParams,
+        { reload: true },
       ),
     },
   });
