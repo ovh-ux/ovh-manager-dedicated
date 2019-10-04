@@ -109,15 +109,15 @@
                     <span class="oui-status oui-status_warning"
                         data-ng-if="$row.isPublic() && $ctrl.hasObsoleteBandwithOption()">
                         <span class="oui-icon oui-icon-warning_circle oui-color-warning-medium font-inherit"></span>
-                        <span data-ng-bind="'server_bandwidth_type_' + $ctrl.specifications.bandwidth.type | translate"></span>
+                        <span data-ng-bind="'dedicated_server_bandwidth_type_' + $ctrl.specifications.bandwidth.type | translate"></span>
                     </span>
                     <span
                         data-ng-if="$row.isPublic() && $ctrl.specifications.bandwidth.type === 'included'"
-                        data-ng-bind="'server_bandwidth_type_' + $ctrl.specifications.bandwidth.type | translate">
+                        data-ng-bind="'dedicated_server_bandwidth_type_' + $ctrl.specifications.bandwidth.type | translate">
                     </span>
                     <span
                         data-ng-if="$row.isPrivate()"
-                        data-ng-bind="'server_bandwidth_type_' + $ctrl.specifications.vrack.type | translate">
+                        data-ng-bind="'dedicated_server_bandwidth_type_' + $ctrl.specifications.vrack.type | translate">
                     </span>
                 </oui-column>
                 <oui-column data-title=":: 'dedicated_server_interfaces_ola_column_bandwidth_outgoing' | translate">

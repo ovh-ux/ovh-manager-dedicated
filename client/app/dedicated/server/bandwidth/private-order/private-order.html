@@ -67,6 +67,7 @@
     data-primary-label="{{:: 'server_order_bandwidth_see_order' | translate }}"
     data-primary-action=":: $ctrl.seeOrder()"
     data-secondary-label="{{:: 'wizard_close' | translate }}"
-    data-secondary-action=":: $ctrl.goBack()">
+    data-secondary-action=":: $ctrl.goBack()"
+    data-on-dismiss="$ctrl.goBack()">
     <p data-translate="server_order_bandwidth_ready"></p>
 </oui-modal>
