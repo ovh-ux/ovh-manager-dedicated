@@ -51,7 +51,7 @@
                     </oui-radio>
                 </div>
                 <div class="col-md-4 pl-0">
-                    <span data-ng-bind-html="$ctrl.provisionalPlan.order.prices | ducPrice:$ctrl.user.ovhSubsidiary"></span>
+                    <span data-ng-bind-html="$ctrl.provisionalPlan.order.prices | ducPrice:$ctrl.user.ovhSubsidiary:true"></span>
                 </div>
             </div>
             <oui-checkbox data-model="$ctrl.model.autoPay" class="mt-3">
