@@ -6,6 +6,7 @@ export default class {
 
   terminate() {
     this.loading = true;
+    this.atTrack('terminate_ola');
     return this.InterfaceService.terminateOla(this.serverName)
       .then(() => {
         this.goBack();

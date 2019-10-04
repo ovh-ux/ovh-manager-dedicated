@@ -5,6 +5,7 @@ export default {
   bindings: {
     goBack: '<',
     alertError: '<',
+    atTrack: '<',
     serverName: '<',
   },
   controller,

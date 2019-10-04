@@ -68,6 +68,11 @@ angular.module('App').config(($stateProvider) => {
       serverName: /* @ngInject */ $transition$ => $transition$.params().productId,
       specifications: /* @ngInject */ (serverName, Server) => Server.getBandwidth(serverName),
       user: /* @ngInject */ currentUser => currentUser,
+      atTrack: /* @ngInject */ atInternet => name => atInternet.trackClick({
+        name,
+        type: 'action',
+        chapter1: 'dedicated',
+      }),
     },
   });
 });

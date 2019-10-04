@@ -41,6 +41,7 @@ export default class DedicatedServerInterfacesOlaActivationCtrl {
 
   activate() {
     this.loading = true;
+    this.atTrack('activate_ola');
     return this.cartPromise
       .then(() => this.CartService.v6().checkout({ cartId: this.cartId }, {
         autoPayWithPreferredPaymentMethod: this.autoPay,

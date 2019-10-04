@@ -67,6 +67,7 @@ export default class {
 
   onFinish() {
     this.loading = true;
+    this.atTrack('configure_ola');
     return this.InterfaceService.disableInterfaces(
       this.serverName,
       this.selectedInterfaces,
