@@ -1,8 +1,7 @@
 /**
  *  Class representing a Price
- *  This class exists for documentation value
  */
-export default class {
+export default class Price {
   /**
    * Create a price
    * @param {string} text - Text to display

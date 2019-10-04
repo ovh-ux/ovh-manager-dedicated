@@ -52,10 +52,10 @@
                                data-ng-value="duration" />
                         <span data-ng-bind="duration.durations | wucDuration:'longDate'"></span>
 
-                        <duc-price
+                        <duc-price-display
                             data-ng-if="duration.details.prices"
                             data-ovh-subsidiary="ctrl.user.value.ovhSubsidiary"
-                            data-price-display="duration.details.prices"></duc-price>
+                            data-price-display="duration.details.prices"></duc-price-display>
                     </label>
                 </div>
             </form>

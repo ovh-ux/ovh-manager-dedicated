@@ -28,11 +28,11 @@
                             value="{{ option.duration }}"
                             data-ng-model="order.durationSelected" />
                     <span>{{ option.duration | wucDuration:'longDate' }}</span>
-                    <duc-price
+                    <duc-price-display
                         class="float-right"
                         data-ng-if="option.prices"
                         data-ovh-subsidiary="user.ovhSubsidiary"
-                        data-price-display="option.prices"></duc-price>
+                        data-price-display="option.prices"></duc-price-display>
                 </label>
             </div>
 
@@ -57,10 +57,10 @@
                 </dd>
                 <dt data-translate="server_configuration_kvm_order_step2_price"></dt>
                 <dd>
-                    <duc-price
+                    <duc-price-display
                         data-ng-if="orderDetail.prices"
                         data-ovh-subsidiary="user.ovhSubsidiary"
-                        data-price-display="orderDetail.prices"></duc-price>
+                        data-price-display="orderDetail.prices"></duc-price-display>
                 </dd>
             </dl>
             <p data-ng-bind-html="'server_order_bandwidth_resume' | translate "></p>

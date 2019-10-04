@@ -13,10 +13,10 @@
                         data-ng-if="!durations.details[duration].prices"
                         data-translate="price_ht_label"
                         data-translate-values="{ 'price': durations.details[duration].price }"></span>
-                    <duc-price
+                    <duc-price-display
                         data-ng-if="durations.details[duration].prices"
                         data-ovh-subsidiary="user.ovhSubsidiary"
-                        data-price-display="durations.details[duration].prices"></duc-price>
+                        data-price-display="durations.details[duration].prices"></duc-price-display>
                     <oui-spinner
                         data-ng-if="!durations.details[duration]"
                         data-size="s"></oui-spinner>

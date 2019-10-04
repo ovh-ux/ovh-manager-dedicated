@@ -60,10 +60,10 @@
                                data-ng-disabled="loading.prices || durations.available.length == 1" />
                         <span data-ng-bind="duration | wucDuration:'longDate'"></span>
                         &nbsp;:&nbsp;
-                        <duc-price
+                        <duc-price-display
                             data-ng-if="durations.details[duration].prices"
                             data-ovh-subsidiary="ovhSubsidiary"
-                            data-price-display="durations.details[duration].prices"></duc-price>
+                            data-price-display="durations.details[duration].prices"></duc-price-display>
                         <oui-spinner data-ng-if="!durations.details[duration]"
                                     data-size="s"
                                     data-inline="true">

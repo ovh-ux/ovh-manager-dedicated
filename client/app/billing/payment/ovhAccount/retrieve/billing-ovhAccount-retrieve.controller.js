@@ -1,3 +1,6 @@
+import PriceDisplay from '../../../../dedicatedUniverseComponents/price/priceDisplay.class';
+import { PRICE_DISPLAY_TYPES } from '../../../../dedicatedUniverseComponents/price/price.constants';
+
 angular
   .module('Billing.controllers')
   .controller('Billing.controllers.OvhAccountRetrieve', (
@@ -10,9 +13,10 @@ angular
     Alerter,
     atInternet,
     BillingOvhAccount,
+    ducPriceDisplayService,
+    ovhPaymentMethod,
     User,
     OVH_ACCOUNT_EVENT,
-    ovhPaymentMethod,
   ) => {
     $scope.accountModel = $scope.currentActionData;
     $scope.retrieve = {
@@ -59,13 +63,10 @@ angular
         )
         .then((order) => {
           $scope.$emit(OVH_ACCOUNT_EVENT.TRANSFER_TO_BANK_ACCOUNT);
-          $scope.retrieveOrder = Object.assign({}, order, {
-            prices: {
-              withTax: order.priceWithTax,
-              withoutTax: order.priceWithoutTax,
-              tax: order.tax,
-            },
-          });
+          $scope.retrieveOrder = order;
+          $scope.priceDisplay = new PriceDisplay();
+          $scope.priceDisplay.addPrice(PRICE_DISPLAY_TYPES.WITH_TAX, order.priceWithTax);
+          $scope.priceDisplay.addPrice(PRICE_DISPLAY_TYPES.WITHOUT_TAX, order.priceWithoutTax);
         })
         .catch((err) => {
           Alerter.alertFromSWS($translate.instant('ovhAccount_retrieve_error'), err);

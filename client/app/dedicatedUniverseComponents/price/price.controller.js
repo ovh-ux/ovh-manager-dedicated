@@ -1,9 +1,7 @@
 import {
-  DEFAULT_OVH_SUBSIDIARY,
-  PRICE_DISPLAY_TYPES,
+  PERIODS,
 } from './price.constants';
 
-import Price from './price.class';
 import PriceService from './price.service';
 
 export default class {
@@ -11,62 +9,70 @@ export default class {
   constructor(
     $translate,
     ducPriceService,
+    ducPriceDisplayService,
   ) {
     this.$translate = $translate;
     this.ducPriceService = ducPriceService;
+    this.ducPriceDisplayService = ducPriceDisplayService;
   }
 
   $onInit() {
-    this.ovhSubsidiary = (this.ovhSubsidiary || DEFAULT_OVH_SUBSIDIARY).toUpperCase();
-    this.rules = this.rules || PriceService.getRules(this.ovhSubsidiary, this.priceDisplay);
-    this.period = _.isString(this.period) && PriceService.getPeriod(this.period);
+    this.computeInputs();
+    this.computeBindings();
+  }
 
-    if (_.isString(this.priceDisplay)
-      && this.priceDisplay.toUpperCase() === PRICE_DISPLAY_TYPES.included.toUpperCase()) {
-      this.priceDisplay = {
-        [PRICE_DISPLAY_TYPES.included]: new Price(
-          this.$translate.instant('duc_price_included'),
-          0,
-        ),
-      };
-    }
+  computeInputs() {
+    this.input = {
+      ovhSubsidiary: PriceService.getOvhSubsidiaryOrDefault(this.ovhSubsidiary),
+      period: this.period && PriceService.getPeriod(this.period),
+      priceDisplay: this.ducPriceDisplayService.computePriceDisplay(this.priceDisplay),
+    };
 
+    this.input.rules = this.rules
+        || PriceService.getRules(this.input.ovhSubsidiary, this.input.priceDisplay);
+  }
+
+  computeBindings() {
     this.bindings = {
-      period: {
-        exists: !!this.period,
-        value: this.period,
-      },
+      period: this.computePeriod(),
       primary: this.computePrimary(),
       secondary: this.computeSecondary(),
     };
   }
 
+  computePeriod() {
+    return {
+      exists: this.input.period !== PERIODS.none,
+      value: this.input.period,
+    };
+  }
+
   computePrimary() {
-    const primary = this.priceDisplay[this.rules.primary];
+    const primary = this.input.priceDisplay[_.camelCase(this.input.rules.primary)];
 
     return {
       ...primary,
       text: this.ducPriceService.translateTextWithPrice(
-        this.rules.primary,
+        this.input.rules.primary,
         primary.text,
-        this.period,
+        this.input.period,
       ),
     };
   }
 
   computeSecondary() {
-    const exists = !!this.rules.secondary;
+    const exists = _.isString(this.input.rules.secondary);
     const secondary = exists
-      && this.priceDisplay[this.rules.secondary];
+      && this.input.priceDisplay[_.camelCase(this.input.rules.secondary)];
 
     return {
       exists,
       ...(exists && secondary),
       text: exists
         && this.ducPriceService.translateTextWithPrice(
-          this.rules.secondary,
+          this.input.rules.secondary,
           secondary.text,
-          this.period,
+          this.input.period,
         ),
     };
   }

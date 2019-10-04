@@ -4,11 +4,11 @@
  *  All the prices are used to order a domain name, but expressed
  *  in more than one way (i.e. with or without taxes)
  */
-export default class {
+export default class PriceDisplay {
   /**
    * Add a price to display
-   * @param {PriceDisplayTypes}  - Should be a value of PRICE_DISPLAY_TYPES
-   * @param {Price}   - The price itself
+   * @param {PRICE_DISPLAY_TYPES} displayingType
+   * @param {DucPrice} price - The price itself
    */
   addPrice(displayingType, price) {
     this[displayingType] = price;

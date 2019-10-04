@@ -46,13 +46,12 @@
                         class="col-md-8"
                         data-translate="{{:: 'plan_' + ctrl.provisionalPlan.planCode }}">
                     </div>
-                    <duc-price
+                    <duc-price-display
                         class="col-md-4"
                         data-ng-if="ctrl.prices"
                         data-ovh-subsidiary="ctrl.user.ovhSubsidiary"
-                        data-period="'monthly'"
                         data-price-display="ctrl.prices">
-                    </duc-price>
+                    </duc-price-display>
                 </div>
                 <oui-checkbox data-model="ctrl.model.autoPay" class="mt-3">
                     <span data-translate="server_order_bandwidth_auto_pay"></span>

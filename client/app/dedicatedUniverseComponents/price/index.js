@@ -2,8 +2,10 @@ import angular from 'angular';
 import translate from 'angular-translate';
 import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
 
-import component from './price.component';
-import service from './price.service';
+import ducPriceDisplay from './price.component';
+import ducPriceFilter from './price.filter';
+import priceService from './price.service';
+import priceDisplayService from './priceDisplay.service';
 
 const moduleName = 'ducPrice';
 
@@ -12,8 +14,10 @@ angular
     ngTranslateAsyncLoader,
     translate,
   ])
-  .component('ducPrice', component)
+  .component('ducPriceDisplay', ducPriceDisplay)
+  .filter('ducPrice', ducPriceFilter)
   .run(/* @ngTranslationsInject:json ./translations */)
-  .service('ducPriceService', service);
+  .service('ducPriceService', priceService)
+  .service('ducPriceDisplayService', priceDisplayService);
 
 export default moduleName;

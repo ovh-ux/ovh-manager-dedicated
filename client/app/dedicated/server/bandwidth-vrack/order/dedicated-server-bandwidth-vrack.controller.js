@@ -1,10 +1,19 @@
 class ServerOrderBandwidthVrackCtrl {
   /* @ngInject */
-  constructor($scope, $stateParams, $translate, User, Server, BandwidthVrackOrderService) {
+  constructor(
+    $scope,
+    $stateParams,
+    $translate,
+    BandwidthVrackOrderService,
+    ducPriceDisplayService,
+    Server,
+    User,
+  ) {
     this.$scope = $scope;
-    this.BandwidthVrackOrderService = BandwidthVrackOrderService;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
+    this.BandwidthVrackOrderService = BandwidthVrackOrderService;
+    this.ducPriceDisplayService = ducPriceDisplayService;
     this.Server = Server;
     this.User = User;
   }
@@ -46,7 +55,7 @@ class ServerOrderBandwidthVrackCtrl {
               res.bandwidth = _.find(this.plans, 'planCode', this.model.plan).bandwidth;
               res.planCode = this.model.plan;
               this.provisionalPlan = res;
-              this.prices = res.order.prices;
+              this.prices = this.ducPriceDisplayService.buildFromCheckout(res);
             })
             .catch((error) => {
               this.$scope.resetAction();
