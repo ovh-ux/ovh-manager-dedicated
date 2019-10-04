@@ -130,12 +130,10 @@ export default class {
   }
 
   enableAutorenew(renewDay) {
-    return this.OvhHttp.post(NIC_URL, {
-      rootPath: 'apiv6',
-      data: {
+    return this.OvhApiMeAutorenew.v6()
+      .create({
         renewDay,
-      },
-    });
+      }).$promise;
   }
 
   disableAutoRenewForDomains() {
