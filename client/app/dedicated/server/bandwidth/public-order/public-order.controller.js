@@ -24,8 +24,8 @@ export default class {
             .then((plans) => {
               this.plans = this.Server.getValidBandwidthPlans(plans, this.existingBandwidth);
             })
-            .catch(() => {
-              this.goBack();
+            .catch((error) => {
+              this.goBack().then(() => this.alertError('server_error_bandwidth_order', error.data));
             })
             .finally(() => {
               this.isLoading = false;
@@ -44,8 +44,8 @@ export default class {
               res.planCode = this.model.plan;
               this.provisionalPlan = res;
             })
-            .catch(() => {
-              this.goBack();
+            .catch((error) => {
+              this.goBack().then(() => this.alertError('server_error_bandwidth_order', error.data));
             })
             .finally(() => {
               this.isLoading = false;
