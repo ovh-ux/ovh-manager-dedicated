@@ -1,3 +1,15 @@
+<a name="10.32.0"></a>
+# [10.32.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.31.0...v10.32.0) (2019-10-07)
+
+
+### Bug Fixes
+
+* **account.contacts:** load translations ([b2886b5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b2886b5))
+* **i18n:** add missing translations [CDS 67] ([946e920](https://github.com/ovh-ux/ovh-manager-dedicated/commit/946e920))
+* **i18n:** add missing translations [CDS 68] ([4d0076f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4d0076f))
+
+
+
 <a name="10.31.0"></a>
 # [10.31.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.30.1...v10.31.0) (2019-10-07)
 
