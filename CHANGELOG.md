@@ -1,3 +1,18 @@
+<a name="10.31.0"></a>
+# [10.31.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.30.1...v10.31.0) (2019-10-07)
+
+
+### Bug Fixes
+
+* use latest ng-ui-router-layout ([#1440](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1440)) ([724c272](https://github.com/ovh-ux/ovh-manager-dedicated/commit/724c272))
+
+
+### Features
+
+* enterprise cloud database ([#1431](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1431)) ([bd40c18](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bd40c18))
+
+
+
 <a name="10.30.1"></a>
 ## [10.30.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.30.0...v10.30.1) (2019-10-01)
 
