@@ -4,7 +4,7 @@ export default /* @ngInject */ ($stateProvider) => {
     component: 'accountContactsService',
     translations: {
       format: 'json',
-      value: ['.'],
+      value: ['.', '..'],
     },
     resolve: {
       editContacts: /* @ngInject */ $state => service => $state.go('app.account.contacts.services.edit', { service: service.serviceName }),
