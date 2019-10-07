@@ -5,11 +5,15 @@ export default class {
   /* @ngInject */
   constructor(
     $q,
+    $translate,
+    Alerter,
     DedicatedServerInterfacesService,
     OvhApiDedicatedServerPhysicalInterface,
     OvhApiDedicatedServerVirtualInterface,
   ) {
     this.$q = $q;
+    this.$translate = $translate;
+    this.Alerter = Alerter;
     this.InterfaceService = DedicatedServerInterfacesService;
     this.PhysicalInterface = OvhApiDedicatedServerPhysicalInterface;
     this.VirtualInterface = OvhApiDedicatedServerVirtualInterface;
@@ -18,9 +22,9 @@ export default class {
   $onInit() {
     this.olaModes = Object.values(OLA_MODES);
 
-    this.loading = true;
+    this.isPolling = true;
     this.taskPolling.promise.then(() => {
-      this.loading = false;
+      this.isPolling = false;
     });
 
     this.configuration = {
@@ -93,10 +97,11 @@ export default class {
         this.PhysicalInterface.v6().resetCache();
         this.VirtualInterface.v6().resetCache();
         if (this.isGrouping()) {
-          this.goBack({ configStep: 2 }, { reload: true });
-        } else {
-          this.goBack({}, { reload: true });
+          return this.goBack({ configStep: 2 });
         }
-      });
+
+        return this.goBack();
+      })
+      .catch(error => this.Alerter.error(this.$translate.instant('dedicated_server_interfaces_ola_error', { errorMessage: _.get(error, 'data.message') })));
   }
 }

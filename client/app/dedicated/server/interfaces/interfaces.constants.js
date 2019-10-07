@@ -1,3 +1,5 @@
+export const INTERFACE_TASK = 'INFRA_002_VirtualNetworkInterface';
+
 export const PHYSICAL_TYPE = {
   public: 'public',
   private: 'private',
@@ -15,6 +17,7 @@ export const VIRTUAL_TYPE = {
 };
 
 export default {
+  INTERFACE_TASK,
   PHYSICAL_TYPE,
   OLA_PLAN_CODE,
   VIRTUAL_TYPE,

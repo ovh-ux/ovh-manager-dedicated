@@ -1,13 +1,17 @@
 export default class {
   /* @ngInject */
-  constructor(DedicatedServerInterfacesService) {
+  constructor($translate, Alerter, DedicatedServerInterfacesService) {
+    this.$translate = $translate;
+    this.Alerter = Alerter;
     this.InterfaceService = DedicatedServerInterfacesService;
   }
 
   $onInit() {
     this.loading = true;
-    this.taskPolling.promise.then(() => {
-      this.loading = false;
-    });
+    this.taskPolling.promise
+      .catch(error => this.Alerter.error(this.$translate.instant('dedicated_server_interfaces_task_error', { errorMessage: _.get(error, 'comment') })))
+      .finally(() => {
+        this.loading = false;
+      });
   }
 }

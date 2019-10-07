@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import Interface from './interface.class';
-import { OLA_PLAN_CODE } from './interfaces.constants';
+import { INTERFACE_TASK, OLA_PLAN_CODE } from './interfaces.constants';
 
 export default class DedicatedServerInterfacesService {
   /* @ngInject */
@@ -103,7 +103,7 @@ export default class DedicatedServerInterfacesService {
   }
 
   getTasks(serverName) {
-    return this.$http.get(`/dedicated/server/${serverName}/task`)
+    return this.$http.get(`/dedicated/server/${serverName}/task?function=${INTERFACE_TASK}`)
       .then(response => response.data, () => [])
       .then(taskIds => ({
         promise: this.waitAllTasks(serverName, taskIds.map(taskId => ({ taskId }))),
@@ -125,17 +125,16 @@ export default class DedicatedServerInterfacesService {
     return this.Ola.v6().group({ serverName }, {
       name,
       virtualNetworkInterfaces: _.map(interfacesToGroup, 'id'),
-    }).$promise.then(task => this.waitAllTasks(serverName, [task]));
+    }).$promise;
   }
 
   setDefaultInterfaces(serverName, interfaceToUngroup) {
     return this.Ola.v6().ungroup({ serverName }, {
       virtualNetworkInterface: interfaceToUngroup.id,
-    }).$promise.then(tasks => this.waitAllTasks(serverName, tasks));
+    }).$promise;
   }
 
   waitAllTasks(serverName, tasks) {
-    // TODO: filter on 'INFRA_002_VirtualNetworkInterface'
     return this.$q.all(tasks.map(task => this.Poller.poll(
       `/dedicated/server/${serverName}/task/${task.taskId}`,
       null,
