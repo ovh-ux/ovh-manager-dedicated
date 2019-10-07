@@ -7,13 +7,50 @@ export default (($stateProvider) => {
   $stateProvider.state(name, {
     url: '/delete',
     component: component.name,
-    layout: 'modalResolve',
+    layout: 'ouiModal',
     resolve: {
       redirectTo: () => 'app.account.billing.payment.method',
-      onDeleteValidate: /* @ngInject */ (
+
+      loaders: () => ({
+        deleting: false,
+      }),
+
+      /* ----------  ouiModal layout resolves  ---------- */
+
+      heading: /* @ngInject */ $translate => $translate
+        .instant('billing_payment_method_delete_title'),
+
+      primaryLabel: /* @ngInject */ $translate => $translate
+        .instant('common_confirm'),
+
+      primaryAction: /* @ngInject */ (
+        $translate,
+        goPaymentList,
+        loaders,
         ovhPaymentMethod,
         paymentMethod,
-      ) => () => ovhPaymentMethod.deletePaymentMethod(paymentMethod),
+      ) => () => {
+        _.set(loaders, 'deleting', true);
+
+        return ovhPaymentMethod.deletePaymentMethod(paymentMethod)
+          .then(() => goPaymentList({
+            type: 'success',
+            text: $translate.instant('billing_payment_method_delete_success'),
+          }))
+          .catch(error => goPaymentList({
+            type: 'error',
+            text: $translate.instant('billing_payment_method_delete_error', {
+              errorMessage: _.get(error, 'data.message'),
+            }),
+          }));
+      },
+
+      secondaryLabel: /* @ngInject */ $translate => $translate
+        .instant('common_cancel'),
+
+      secondaryAction: /* @ngInject */ goPaymentList => goPaymentList,
+
+      loading: /* @ngInject */ loaders => () => loaders.deleting,
     },
   });
 });

@@ -5,11 +5,6 @@ export default ($stateProvider, $transitionsProvider, $urlRouterProvider) => {
 
   $stateProvider.state(name, {
     url: '/method',
-    params: {
-      redirectToParams: {
-        type: 'any',
-      },
-    },
     component: component.name,
     resolve: {
       getActionHref: /* @ngInject */ $state => (action, params = {}) => {
@@ -18,7 +13,9 @@ export default ($stateProvider, $transitionsProvider, $urlRouterProvider) => {
         }
         return $state.href(`${name}.${action}`, params);
       },
+
       guides: /* @ngInject */ User => User.getUrlOf('guides'),
+
       paymentMethods: /* @ngInject */ (
         OVH_PAYMENT_MEAN_STATUS,
         OVH_PAYMENT_METHOD_TYPE,
@@ -32,40 +29,23 @@ export default ($stateProvider, $transitionsProvider, $urlRouterProvider) => {
           }
           return status !== OVH_PAYMENT_MEAN_STATUS.BLOCKED_FOR_INCIDENTS;
         })),
-      message: /* @ngInject */ (
-        $transition$,
+
+      goPaymentList: /* @ngInject */ (
         $timeout,
-        $translate,
-        OVH_PAYMENT_METHOD_TYPE,
-        paymentMethods,
-      ) => {
-        const redirectToParams = _.get($transition$.params(), 'redirectToParams');
-        if (redirectToParams) {
-          const { paymentMethod } = redirectToParams.data;
-          const paymentMethodId = _.has(paymentMethod, 'id')
-            ? paymentMethod.id
-            : paymentMethod.paymentMethodId;
-          const paymentMethodInstance = _.find(paymentMethods, {
-            paymentMethodId,
+        Alerter,
+        $state,
+      ) => (message = null, altState = null) => {
+        const reload = message && message.type === 'success';
+
+        const stateGoPromise = $state.go(altState || name, {}, {
+          reload,
+        });
+
+        if (message) {
+          stateGoPromise.then(() => {
+            $timeout(() => Alerter[message.type](message.text, 'billing_payment_method_alert'));
           });
-          const messageObj = {
-            type: redirectToParams.status, // should be only a success message (for the moment :-))
-          };
-
-          if (paymentMethodInstance.paymentType === OVH_PAYMENT_METHOD_TYPE.BANK_ACCOUNT) {
-            messageObj.text = $translate.instant('billing_payment_method_add_bank_account_success', {
-              t0: paymentMethod.url,
-            });
-          } else {
-            messageObj.text = $translate.instant(`billing_payment_method_${redirectToParams.data.action}_${redirectToParams.status}`, {
-              errorMessage: _.get(redirectToParams, 'data.error.data.message'),
-            });
-          }
-
-          return messageObj;
         }
-
-        return null;
       },
     },
   });

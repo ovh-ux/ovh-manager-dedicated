@@ -7,13 +7,50 @@ export default (($stateProvider) => {
   $stateProvider.state(name, {
     url: '/default',
     component: component.name,
-    layout: 'modalResolve',
+    layout: 'ouiModal',
     resolve: {
       redirectTo: () => 'app.account.billing.payment.method',
-      onDefaultValidate: /* @ngInject */ (
+
+      loaders: () => ({
+        save: false,
+      }),
+
+      /* ----------  ouiModal layout resolves  ---------- */
+
+      heading: /* @ngInject */ $translate => $translate
+        .instant('billing_payment_method_default_title'),
+
+      primaryLabel: /* @ngInject */ $translate => $translate
+        .instant('common_confirm'),
+
+      primaryAction: /* @ngInject */ (
+        $translate,
+        goPaymentList,
+        loaders,
         ovhPaymentMethod,
         paymentMethod,
-      ) => () => ovhPaymentMethod.setPaymentMethodAsDefault(paymentMethod),
+      ) => () => {
+        _.set(loaders, 'save', true);
+
+        return ovhPaymentMethod.setPaymentMethodAsDefault(paymentMethod)
+          .then(() => goPaymentList({
+            type: 'success',
+            text: $translate.instant('billing_payment_method_default_success'),
+          }))
+          .catch(error => goPaymentList({
+            type: 'error',
+            text: $translate.instant('billing_payment_method_default_error', {
+              errorMessage: _.get(error, 'data.message'),
+            }),
+          }));
+      },
+
+      secondaryLabel: /* @ngInject */ $translate => $translate
+        .instant('common_cancel'),
+
+      secondaryAction: /* @ngInject */ goPaymentList => goPaymentList,
+
+      loading: /* @ngInject */ loaders => () => loaders.save,
     },
   });
 });

@@ -8,7 +8,6 @@ export default {
   bindings: {
     getActionHref: '<',
     guides: '<',
-    message: '<',
     paymentMethods: '<',
   },
 };

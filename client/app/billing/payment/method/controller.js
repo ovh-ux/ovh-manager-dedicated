@@ -22,13 +22,6 @@ export default class BillingPaymentMethodCtrl {
   ====================================== */
 
   $onInit() {
-    // TODO: create a component that handle message from ui router resolve
-    if (this.message) {
-      this.$timeout(() => {
-        _.get(this.Alerter, this.message.type)(this.message.text, 'billing_payment_method_alert');
-      });
-    }
-
     // set options for status filter
     this.tableFilterOptions = {
       status: {

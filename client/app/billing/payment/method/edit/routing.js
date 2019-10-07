@@ -7,15 +7,55 @@ export default (($stateProvider) => {
   $stateProvider.state(name, {
     url: '/edit',
     component: component.name,
-    layout: 'modalResolve',
+    layout: 'ouiModal',
     resolve: {
       redirectTo: () => 'app.account.billing.payment.method',
-      onEditFormSubmit: /* @ngInject */ (
+
+      model: /* @ngInject */ paymentMethod => ({
+        description: paymentMethod.description,
+      }),
+
+      loaders: () => ({
+        save: false,
+      }),
+
+      /* ----------  ouiModal layout resolves  ---------- */
+
+      heading: /* @ngInject */ $translate => $translate
+        .instant('billing_payment_method_edit_title'),
+
+      primaryLabel: /* @ngInject */ $translate => $translate
+        .instant('billing_payment_method_edit_action_save'),
+
+      primaryAction: /* @ngInject */ (
+        $translate,
+        goPaymentList,
+        loaders,
+        model,
         ovhPaymentMethod,
         paymentMethod,
-      ) => description => ovhPaymentMethod.editPaymentMethod(paymentMethod, {
-        description,
-      }),
+      ) => () => {
+        _.set(loaders, 'save', true);
+
+        return ovhPaymentMethod.editPaymentMethod(paymentMethod, {
+          description: model.description,
+        }).then(() => goPaymentList({
+          type: 'success',
+          text: $translate.instant('billing_payment_method_edit_success'),
+        })).catch(error => goPaymentList({
+          type: 'error',
+          text: $translate.instant('billing_payment_method_edit_error', {
+            errorMessage: _.get(error, 'data.message'),
+          }),
+        }));
+      },
+
+      secondaryLabel: /* @ngInject */ $translate => $translate
+        .instant('common_cancel'),
+
+      secondaryAction: /* @ngInject */ goPaymentList => goPaymentList,
+
+      loading: /* @ngInject */ loaders => () => loaders.save,
     },
   });
 });

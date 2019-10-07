@@ -67,7 +67,12 @@ export default (($stateProvider, $urlRouterProvider) => {
           isLastStep: () => true,
         },
       }),
-      getBackButtonHref: /**/ ($state, $transition$) => () => $state.href(_.get($transition$.params(), 'from', '^')),
+
+      getBackButtonHref: /* @ngInject */ (
+        $state,
+        $transition$,
+      ) => () => $state.href(_.get($transition$.params(), 'from', '^')),
+
       isLastStep: /* @ngInject */ (addSteps, model) => (stepName) => {
         const step = _.get(addSteps, stepName);
         if (step.loading || !model.selectedPaymentMethodType) {
@@ -76,6 +81,7 @@ export default (($stateProvider, $urlRouterProvider) => {
 
         return step.isLastStep();
       },
+
       isStepVisible: /* @ngInject */ (addSteps, model) => (stepName) => {
         const step = _.get(addSteps, stepName);
         if (!model.selectedPaymentMethodType) {
@@ -84,19 +90,17 @@ export default (($stateProvider, $urlRouterProvider) => {
 
         return step.isVisible();
       },
+
       model: () => ({}),
+
       onPaymentMethodAdded: /* @ngInject */ (
-        $state,
         $transition$,
-      ) => paymentMethod => $state.go(_.get($transition$.params(), 'from', '^'), {
-        redirectToParams: {
-          status: 'success',
-          data: {
-            action: 'add',
-            paymentMethod,
-          },
-        },
-      }),
+        $translate,
+        goPaymentList,
+      ) => () => goPaymentList({
+        type: 'success',
+        text: $translate.instant('billing_payment_method_add_success'),
+      }, _.get($transition$.params(), 'from', null)),
     },
   });
 

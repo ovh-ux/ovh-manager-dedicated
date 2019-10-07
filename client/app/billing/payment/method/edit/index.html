@@ -1,22 +1,12 @@
 <form class="billing-payment-method-edit"
       name="paymentMethodEditForm"
       novalidate
-      data-ng-submit="$ctrl.onPaymentMethodEditFormSubmit()">
+      data-ng-submit="$ctrl.resolve.primaryAction()">
 
-    <oui-modal data-ng-if="!$ctrl.loading.translations"
-               data-heading="{{ 'billing_payment_method_edit_title' | translate }}"
-               data-primary-label="{{ 'billing_payment_method_edit_action_save' | translate }}"
-               data-secondary-label="{{ 'common_cancel' | translate }}"
-               data-secondary-action="$ctrl.modalInstance.dismiss()"
-               data-on-dismiss="$ctrl.modalInstance.dismiss()"
-               data-loading="$ctrl.loading.save">
-
-         <oui-field data-label="{{ :: 'billing_payment_method_edit_description' | translate }}">
-            <input type="text" class="oui-input"
-                   id="description" name="description"
-                   data-ng-model="$ctrl.model.description" />
-         </oui-field>
-
-    </oui-modal>
+     <oui-field data-label="{{ :: 'billing_payment_method_edit_description' | translate }}">
+        <input type="text" class="oui-input"
+               id="description" name="description"
+               data-ng-model="$ctrl.resolve.model.description" />
+     </oui-field>
 
 </form>
