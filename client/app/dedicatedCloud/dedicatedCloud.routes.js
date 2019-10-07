@@ -41,6 +41,8 @@ angular
           }),
         datacenterList: /* @ngInject */ ($stateParams, DedicatedCloud) => DedicatedCloud
           .getDatacenters($stateParams.productId).then(({ results }) => results),
+
+        goToPccDashboard: /* @ngInject */ $state => (reload = false) => $state.go('app.dedicatedClouds', {}, { reload }),
       },
       url: '/configuration/dedicated_cloud/:productId',
       views: {

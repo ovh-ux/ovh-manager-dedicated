@@ -51,10 +51,6 @@ export default class {
       });
   }
 
-  deleteDrpModal() {
-    return this.$state.go('app.dedicatedClouds.datacenter.drp.summary.deleteDrp');
-  }
-
   isProvisionning() {
     return DEDICATEDCLOUD_DATACENTER_DRP_STATUS.delivering === this.currentDrp.state;
   }

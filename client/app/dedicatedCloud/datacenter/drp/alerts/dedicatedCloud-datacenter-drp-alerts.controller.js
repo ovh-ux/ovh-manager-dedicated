@@ -7,11 +7,9 @@ import {
 export default class {
   /* @ngInject */
   constructor(
-    $q,
     $state,
     dedicatedCloudDrp,
   ) {
-    this.$q = $q;
     this.$state = $state;
     this.dedicatedCloudDrp = dedicatedCloudDrp;
     this.DRP_OPTIONS = DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS;
@@ -24,7 +22,11 @@ export default class {
       return this.dedicatedCloudDrp.setDisableSuccessAlertPreference(this.currentDrp.serviceName);
     }
 
-    return this.$q.when(null);
+    return Promise.resolve(null);
+  }
+
+  disableSuccessAlert() {
+    return this.dedicatedCloudDrp.setDisableSuccessAlertPreference(this.currentDrp.serviceName);
   }
 
   isOnSummaryState() {

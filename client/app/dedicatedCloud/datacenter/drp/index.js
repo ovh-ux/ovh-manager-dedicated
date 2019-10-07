@@ -8,18 +8,16 @@ import {
   DEDICATEDCLOUD_DATACENTER_ZERTO,
 } from './dedicatedCloud-datacenter-drp.constants';
 
-import choiceTemplate from './configuration/dedicatedCloud-datacenter-drp-choice.html';
+
 import component from './dedicatedCloud-datacenter-drp.component';
-import controller from './dedicatedCloud-datacenter-drp.controller';
-import onPremiseTypeConfiguration from './configuration/steps/onPremise';
-import ovhTypeConfiguration from './configuration/steps/ovh';
+import onPremiseTypeConfiguration from './configuration/onPremise';
+import ovhTypeConfiguration from './configuration/ovh';
 import service from './dedicatedCloud-datacenter-drp.service';
 import summary from './summary';
 
-const componentName = 'dedicatedCloudDatacenterDrp';
-const controllerName = 'DedicatedCloudDatacenterDrpCtrl';
+import routing from './dedicatedCloud-datacenter-drp.routing';
+
 const moduleName = 'dedicatedCloudDatacenterDrp';
-const serviceName = 'dedicatedCloudDrp';
 
 const optionsConstantName = 'DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS';
 const orderOptionsConstantName = 'DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS';
@@ -35,7 +33,7 @@ angular
     ovhTypeConfiguration,
     summary,
   ])
-  .component(componentName, component)
+  .component(component.name, component)
   .constant(optionsConstantName, DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS)
   .constant(orderOptionsConstantName, DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS)
   .constant(rolesConstantName, DEDICATEDCLOUD_DATACENTER_DRP_ROLES)
@@ -44,34 +42,8 @@ angular
   .constant(vpnConfigurationStatusConstantName,
     DEDICATEDCLOUD_DATACENTER_DRP_VPN_CONFIGURATION_STATUS)
   .constant(zertoConstantName, DEDICATEDCLOUD_DATACENTER_ZERTO)
-  .controller(controllerName, controller)
-  .service(serviceName, service)
-  .config(/* @ngInject */ ($stateProvider) => {
-    $stateProvider.state('app.dedicatedClouds.datacenter.drp', {
-      url: '/drp',
-      views: {
-        'pccDatacenterView@app.dedicatedClouds.datacenter': 'dedicatedCloudDatacenterDrp',
-      },
-      params: {
-        selectedDrpType: null,
-      },
-      resolve: {
-        disableForUS: /* @ngInject */ ($q, coreConfig) => (coreConfig.getRegion() === 'US' ? $q.reject() : $q.when()),
-        datacenterHosts: /* @ngInject */ ($stateParams, DedicatedCloud) => DedicatedCloud
-          .getHosts($stateParams.productId, $stateParams.datacenterId),
-        datacenterList: /* @ngInject */ ($stateParams, DedicatedCloud) => DedicatedCloud
-          .getDatacenters($stateParams.productId).then(({ results }) => results),
-        pccList: /* @ngInject */ DedicatedCloud => DedicatedCloud.getAllPccs(),
-      },
-    })
-      .state('app.dedicatedClouds.datacenter.drp.choice', {
-        views: {
-          'choiceView@app.dedicatedClouds.datacenter.drp': {
-            template: choiceTemplate,
-          },
-        },
-      });
-  })
+  .service('dedicatedCloudDrp', service)
+  .config(routing)
   .run(/* @ngTranslationsInject:json ./translations */);
 
 export default moduleName;

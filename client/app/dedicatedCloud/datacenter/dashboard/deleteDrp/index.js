@@ -17,6 +17,8 @@ angular
         resolve: {
           drpInformations: /* @ngInject */ (currentDrp, dedicatedCloudDrp) => dedicatedCloudDrp
             .constructor.getPlanServiceInformations(currentDrp),
+
+          goBack: /* @ngInject */ $state => () => $state.go('^'),
         },
       });
   });

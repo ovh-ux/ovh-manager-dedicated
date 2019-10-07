@@ -7,17 +7,11 @@ import {
 export default class {
   /* @ngInject */
   constructor(
-    $q,
-    $state,
-    $stateParams,
     $transitions,
     $translate,
     Alerter,
     dedicatedCloudDrp,
   ) {
-    this.$q = $q;
-    this.$state = $state;
-    this.$stateParams = $stateParams;
     this.$transitions = $transitions;
     this.$translate = $translate;
     this.Alerter = Alerter;
@@ -25,8 +19,6 @@ export default class {
   }
 
   $onInit() {
-    this.loading = true;
-    this.selectedDrpType = { id: this.$stateParams.selectedDrpType };
     this.drpInformations = { };
     this.drpInformations.hasDatacenterWithoutHosts = this.datacenterHosts.length === 0;
 
@@ -40,38 +32,25 @@ export default class {
     this.isInstallationInError = this.currentDrp
       .state === DEDICATEDCLOUD_DATACENTER_DRP_STATUS.error;
 
-    return this.dedicatedCloudDrp.checkForZertoOptionOrder(this.$stateParams.productId)
-      .then((storedDrpInformations) => {
-        if (!this.isDisablingDrp) {
-          const drp = this.constructor
-            .isDeliveredOrDelivering(this.currentDrp.state) ? this.currentDrp : null;
-          const otherDrpInformations = drp !== null
-            ? this.formatPlanInformations(drp)
-            : storedDrpInformations;
+    if (!this.isDisablingDrp) {
+      const drp = this.constructor.isDeliveredOrDelivering(
+        this.currentDrp.state,
+      ) ? this.currentDrp : null;
+      const otherDrpInformations = drp !== null
+        ? this.formatPlanInformations(drp)
+        : this.storedDrpInformations;
 
-          if (otherDrpInformations != null) {
-            this.drpInformations = {
-              ...this.drpInformations,
-              ...otherDrpInformations,
-            };
+      if (otherDrpInformations != null) {
+        this.drpInformations = {
+          ...this.drpInformations,
+          ...otherDrpInformations,
+        };
 
-            return this.$state.go('app.dedicatedClouds.datacenter.drp.summary', {
-              drpInformations: this.drpInformations,
-            });
-          }
-        }
+        return this.goToSummary(this.drpInformations);
+      }
+    }
 
-        return this.$state.go('app.dedicatedClouds.datacenter.drp.choice');
-      })
-      .catch((error) => {
-        this.Alerter.error(
-          `${this.$translate.instant('dedicatedCloud_datacenter_drp_get_state_error')} ${_.get(error, 'data.message', error.message)}`,
-          'dedicatedCloudDatacenterAlert',
-        );
-      })
-      .finally(() => {
-        this.loading = false;
-      });
+    return null;
   }
 
   initializeTransitions() {
@@ -80,20 +59,14 @@ export default class {
     }, () => {
       this.Alerter.error(this.$translate.instant('ip_order_finish_error'), 'dedicatedCloudDatacenterDrpAlert');
     });
-
-    this.$transitions.onStart({
-      from: 'app.dedicatedClouds.datacenter.drp.**',
-      to: 'app.dedicatedClouds.datacenter.drp',
-    }, () => false);
   }
 
   selectDrpType() {
     this.drpInformations.drpType = this.selectedDrpType.id;
     const stateToGo = this.drpInformations.drpType === DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS.ovh
       ? 'ovh.mainPccStep' : 'onPremise.ovhPccStep';
-    return this.$state.go(`app.dedicatedClouds.datacenter.drp.${stateToGo}`, {
-      drpInformations: this.drpInformations,
-    });
+
+    return this.goToConfiguration(this.drpInformations, stateToGo);
   }
 
   formatPlanInformations({

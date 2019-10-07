@@ -2,10 +2,12 @@ import controller from './dedicatedCloud-datacenter-drp-summary-delete.controlle
 import template from './dedicatedCloud-datacenter-drp-summary-delete.html';
 
 export default {
-  controller,
-  template,
   bindings: {
     drpInformations: '<',
+    goBack: '<',
+    goToPccDashboard: '<',
   },
+  controller,
   name: 'dedicatedCloudDatacenterDrpDelete',
+  template,
 };

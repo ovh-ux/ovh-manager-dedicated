@@ -9,14 +9,12 @@ import {
 export default class {
   /* @ngInject */
   constructor(
-    $q,
     OvhApiDedicatedCloud,
     OvhApiMe,
     OvhApiOrder,
     ovhPaymentMethod,
     ovhUserPref,
   ) {
-    this.$q = $q;
     this.OvhApiDedicatedCloud = OvhApiDedicatedCloud;
     this.OvhApiMe = OvhApiMe;
     this.OvhApiOrder = OvhApiOrder;
@@ -45,20 +43,21 @@ export default class {
     return this.OvhApiDedicatedCloud.Datacenter().v6().query({
       serviceName,
     }).$promise
-      .then(datacenters => this.$q.all(datacenters
+      .then(datacenters => Promise.all(datacenters
         .map(datacenterId => this.getDrpState({
           serviceName,
           datacenterId,
         }))))
-      .catch(error => (DEDICATEDCLOUD_DATACENTER_PCC_UNAVAILABLE_CODES.includes(error.status)
-        ? this.$q.when([]) : this.$q.reject(error)));
+      .catch(error => (DEDICATEDCLOUD_DATACENTER_PCC_UNAVAILABLE_CODES
+        .includes(error.status)
+        ? Promise.resolve([]) : Promise.reject(error)));
   }
 
   getPccIpAddressesDetails(serviceName) {
     return this.OvhApiDedicatedCloud.Ip().v6().query({
       serviceName,
     }).$promise
-      .then(ipAddresses => this.$q.all(ipAddresses
+      .then(ipAddresses => Promise.all(ipAddresses
         .map(ipAddress => this.OvhApiDedicatedCloud.Ip().Details()
           .v6()
           .get({
@@ -160,7 +159,8 @@ export default class {
   createZertoOptionCart(drpInformations, zertoOption) {
     let zertoCartId;
     return this.OvhApiMe.v6().get().$promise
-      .then(({ ovhSubsidiary }) => this.OvhApiOrder.Cart().v6().post({}, { ovhSubsidiary })
+      .then(({ ovhSubsidiary }) => this.OvhApiOrder.Cart().v6()
+        .post({}, { ovhSubsidiary })
         .$promise)
       .then(({ cartId }) => {
         zertoCartId = cartId;
@@ -189,16 +189,23 @@ export default class {
 
   validateZertoOptionCart(cartId) {
     let autoPayWithPreferredPaymentMethod;
-    return this.$q.all({
+    return Promise.all({
       availableAutomaticPaymentsMean:
         this.OvhApiMe.AvailableAutomaticPaymentMeans().v6().get().$promise,
       allPaymentMethods:
-        this.ovhPaymentMethod.getAllPaymentMethods({ onlyValid: true, transform: true }),
+        this.ovhPaymentMethod
+          .getAllPaymentMethods({ onlyValid: true, transform: true }),
     })
       .then(({ availableAutomaticPaymentsMean, allPaymentMethods }) => {
-        const availablePaymentType = _(allPaymentMethods).map('paymentType').flatten().value();
+        const availablePaymentType = _.flatten(
+          allPaymentMethods.map(({ paymentType }) => paymentType),
+        );
         autoPayWithPreferredPaymentMethod = availablePaymentType
-          .some(({ value }) => _.get(availableAutomaticPaymentsMean, _.camelCase(value)));
+          .some(
+            ({ value }) => _.get(
+              availableAutomaticPaymentsMean, _.camelCase(value),
+            ),
+          );
 
         return this.OvhApiOrder.Cart().v6().checkout({
           cartId,
@@ -232,7 +239,7 @@ export default class {
   addCartZertoOptionConfiguration(cartId, itemId, drpInformations) {
     const parametersToSet = _.keys(drpInformations);
 
-    return this.$q.all(parametersToSet
+    return Promise.all(parametersToSet
       .map(parameter => this.OvhApiOrder.Cart().Item().Configuration().v6()
         .post({
           cartId,
@@ -256,7 +263,7 @@ export default class {
           return this.getZertoOptionOrderStatus(zertoOptionOrderId);
         }
 
-        return this.$q.when({});
+        return Promise.resolve({});
       })
       .then(({ status: zertoOrderStatus }) => {
         const pendingOrderStatus = [
@@ -266,9 +273,11 @@ export default class {
 
         return pendingOrderStatus != null
           ? { ...storedZertoOption, state: pendingOrderStatus }
-          : this.$q.when(null);
+          : Promise.resolve(null);
       })
-      .catch(error => (error.status === 404 ? this.$q.when(null) : this.$q.reject(error)));
+      .catch(error => (error.status === 404
+        ? Promise.resolve(null)
+        : Promise.reject(error)));
   }
 
   getZertoOptionOrderStatus(orderId) {
@@ -278,12 +287,14 @@ export default class {
   /* ------- Order ZERTO option ------ */
 
   disableDrp(drpInformations) {
-    const deleteDrpPromise = drpInformations.drpType === DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS.ovh
+    const deleteDrpPromise = drpInformations
+      .drpType === DEDICATEDCLOUD_DATACENTER_DRP_OPTIONS.ovh
       ? this.disableDrpOvh(drpInformations)
       : this.disableDrpOnPremise(drpInformations);
 
     return deleteDrpPromise.then(() => this
-      .deleteDisableSuccessAlertPreference(drpInformations.primaryPcc.serviceName));
+      .deleteDisableSuccessAlertPreference(drpInformations.primaryPcc
+        .serviceName));
   }
 
   disableDrpOvh({
@@ -339,21 +350,24 @@ export default class {
 
   getDisableSuccessAlertPreference(pccId) {
     const preferenceKey = this.constructor
-      .formatPreferenceKey(pccId, DEDICATEDCLOUD_DATACENTER_ZERTO.alertPreference);
+      .formatPreferenceKey(pccId, DEDICATEDCLOUD_DATACENTER_ZERTO
+        .alertPreference);
 
     return this.ovhUserPref.getValue(preferenceKey);
   }
 
   setDisableSuccessAlertPreference(pccId) {
     const preferenceKey = this.constructor
-      .formatPreferenceKey(pccId, DEDICATEDCLOUD_DATACENTER_ZERTO.alertPreference);
+      .formatPreferenceKey(pccId, DEDICATEDCLOUD_DATACENTER_ZERTO
+        .alertPreference);
 
     return this.ovhUserPref.create(preferenceKey, true);
   }
 
   deleteDisableSuccessAlertPreference(pccId) {
     const preferenceKey = this.constructor
-      .formatPreferenceKey(pccId, DEDICATEDCLOUD_DATACENTER_ZERTO.alertPreference);
+      .formatPreferenceKey(pccId, DEDICATEDCLOUD_DATACENTER_ZERTO
+        .alertPreference);
 
     return this.ovhUserPref.remove(preferenceKey, true);
   }
@@ -410,7 +424,8 @@ export default class {
   }
 
   static getZertoConfiguration(drpInformations, zertoOption) {
-    return zertoOption === DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS.zertoOption.ovh
+    return zertoOption === DEDICATEDCLOUD_DATACENTER_DRP_ORDER_OPTIONS
+      .zertoOption.ovh
       ? {
         datacenter_id: drpInformations.primaryDatacenter.id,
         primaryEndpointIp: drpInformations.primaryEndpointIp,

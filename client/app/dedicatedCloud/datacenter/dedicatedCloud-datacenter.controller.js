@@ -71,37 +71,7 @@ angular
       this.$scope.setMessage = (message, data) => this.setMessage(message, data);
       this.$scope.resetAction = () => this.resetAction();
 
-      this.initializeTransitions();
-
       return this.loadDatacenter();
-    }
-
-    initializeTransitions() {
-      this.$transitions.onStart({
-        to: 'app.dedicatedClouds.datacenter.drp.**',
-      }, () => {
-        this.$scope.loading = true;
-      });
-
-      this.$transitions.onError({
-        to: 'app.dedicatedClouds.datacenter.drp.**',
-      }, ($transition$) => {
-        const loadServiceError = _.get($transition$, '_error.detail.data.message', null);
-        this.$scope.loading = false;
-
-        if (loadServiceError !== null) {
-          this.Alerter.error(
-            `${this.$translate.instant('dedicatedCloud_datacenter_drp_get_state_error')} ${loadServiceError}`,
-            'dedicatedCloudDatacenterAlert',
-          );
-        }
-      });
-
-      this.$transitions.onSuccess({
-        to: 'app.dedicatedClouds.datacenter.drp.**',
-      }, () => {
-        this.$scope.loading = false;
-      });
     }
 
     loadDatacenter() {
