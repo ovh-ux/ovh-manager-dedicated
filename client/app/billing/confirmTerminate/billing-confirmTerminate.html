@@ -1,14 +1,14 @@
 <div>
 
-    <div data-ng-if="TerminateServiceCtrl.globalError">
+    <div data-ng-if="$ctrl.globalError">
         <div class="oui-message oui-message_error oui-message_l" role="alert">
             <i class="oui-message_l-icon" aria-hidden="true"></i>
             <h1 class="oui-message__title" data-translate="terminate_service_error"></h1>
         </div>
     </div>
 
-    <div data-ng-if="TerminateServiceCtrl.serviceState === 'suspending' ||
-                     TerminateServiceCtrl.serviceState === 'suspended'">
+    <div data-ng-if="$ctrl.serviceState === 'suspending' ||
+                     $ctrl.serviceState === 'suspended'">
         <div class="oui-message oui-message_success" role="alert">
             <i class="oui-icon oui-icon-success_circle oui-icon_bicolor" aria-hidden="true"></i>
             <p class="oui-message__body"
@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <div data-ng-if="TerminateServiceCtrl.error">
+    <div data-ng-if="$ctrl.error">
         <div class="oui-message oui-message_error"
              role="alert">
             <i class="oui-icon oui-icon-error_circle oui-icon_bicolor" aria-hidden="true"></i>
@@ -25,7 +25,7 @@
         </div>
     </div>
 
-    <div data-ng-if="!TerminateServiceCtrl.globalError">
+    <div data-ng-if="!$ctrl.globalError">
 
         <div class="page-header">
             <h1 data-translate="terminate_service_title"></h1>
@@ -33,22 +33,22 @@
 
         <div class="tab-content">
 
-            <div data-ng-if="!TerminateServiceCtrl.userLoading">
-                <oui-message data-type="warning" data-ng-if="TerminateServiceCtrl.USVersion"><span data-translate="terminate_service_information_text"></span></oui-message>
-                <oui-message data-type="warning" data-ng-if="!TerminateServiceCtrl.USVersion"><span data-translate="terminate_service_information_text_non_US"></span></oui-message>
-            </div>
+            <oui-message data-type="warning">
+                <span data-ng-if="$ctrl.USVersion" data-translate="terminate_service_information_text"></span>
+                <span data-ng-if="!$ctrl.USVersion" data-translate="terminate_service_information_text_non_US"></span>
+            </oui-message>
 
             <h4 class="oui-header_4 mt-5"
                 data-translate="terminate_service_services_title">
             </h4>
 
             <div class="text-center"
-                 data-ng-if="TerminateServiceCtrl.loading">
+                 data-ng-if="$ctrl.loading">
                 <oui-spinner></oui-spinner>
             </div>
 
             <div class="table-responsive"
-                 data-ng-if="!TerminateServiceCtrl.loading">
+                 data-ng-if="!$ctrl.loading">
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -65,33 +65,33 @@
                     <tbody>
                         <tr>
                             <th scope="row"
-                                data-translate="{{ 'terminate_service_type_' + TerminateServiceCtrl.serviceInfos.serviceType }}">
+                                data-translate="{{ 'terminate_service_type_' + $ctrl.serviceInfos.serviceType }}">
                             </th>
-                            <td data-ng-bind="TerminateServiceCtrl.serviceInfos.domain"></td>
+                            <td data-ng-bind="$ctrl.serviceInfos.domain"></td>
                             <td>
-                                <billing-renew-date data-service-infos="TerminateServiceCtrl.serviceInfos"></billing-renew-date>
+                                <billing-renew-date data-service-infos="$ctrl.serviceInfos"></billing-renew-date>
                             </td>
                             <td>
-                                <billing-renew-label data-service-infos="TerminateServiceCtrl.serviceInfos"></billing-renew-label>
+                                <billing-renew-label data-service-infos="$ctrl.serviceInfos"></billing-renew-label>
                             </td>
                           </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div class="mt-5" data-ng-if="!TerminateServiceCtrl.loading &&
-                             TerminateServiceCtrl.serviceState !== 'suspending' &&
-                             TerminateServiceCtrl.serviceState !== 'suspended'">
+            <div class="mt-5" data-ng-if="!$ctrl.loading &&
+                             $ctrl.serviceState !== 'suspending' &&
+                             $ctrl.serviceState !== 'suspended'">
 
                 <h4 class="oui-header_4"
                     data-translate="terminate_service_reason_title"></h4>
 
                 <div class="oui-radio"
-                     data-ng-repeat="reason in TerminateServiceCtrl.reasons">
+                     data-ng-repeat="reason in $ctrl.reasons">
                     <input class="oui-radio__input"
                            type="radio"
                            name="reason"
-                           data-ng-click="TerminateServiceCtrl.reason = reason"
+                           data-ng-click="$ctrl.reason = reason"
                            data-ng-value="reason"
                            id="reason-{{reason}}" />
                     <label class="oui-radio__label-container" for="reason-{{reason}}">
@@ -106,11 +106,11 @@
                     data-translate="terminate_service_next-steps_title"></h4>
 
                 <div class="oui-radio"
-                     data-ng-repeat="futureUse in TerminateServiceCtrl.futureUses">
+                     data-ng-repeat="futureUse in $ctrl.futureUses">
                     <input class="oui-radio__input"
                            type="radio"
                            name="futureUses"
-                           data-ng-click="TerminateServiceCtrl.futureUse = futureUse"
+                           data-ng-click="$ctrl.futureUse = futureUse"
                            data-ng-value="futureUse"
                            id="futureUse-{{::futureUse}}" />
                     <label class="oui-radio__label-container" for="futureUse-{{::futureUse}}">
@@ -128,7 +128,7 @@
                         <div class="oui-field-control oui-field-control_6">
                             <textarea class="oui-textarea"
                                       id="reason_text"
-                                      data-ng-model="TerminateServiceCtrl.commentary">
+                                      data-ng-model="$ctrl.commentary">
                             </textarea>
                         </div>
                     </div>
@@ -138,11 +138,10 @@
                     <button type="button"
                             class="oui-button oui-button_primary"
                             data-translate="terminate_service_confirm"
-                            data-ng-click="TerminateServiceCtrl.confirmTermination()"
-                            data-ng-disabled="TerminateServiceCtrl.loading ||
-                                              TerminateServiceCtrl.userLoading ||
-                                              !TerminateServiceCtrl.reason ||
-                                              TerminateServiceCtrl.terminating">
+                            data-ng-click="$ctrl.confirmTermination()"
+                            data-ng-disabled="$ctrl.loading ||
+                                              !$ctrl.reason ||
+                                              $ctrl.terminating">
                     </button>
                 </div>
             </div>
