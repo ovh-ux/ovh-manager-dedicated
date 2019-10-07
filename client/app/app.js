@@ -18,6 +18,7 @@ import ngUirouterLineProgress from '@ovh-ux/ng-ui-router-line-progress';
 import ovhContacts from '@ovh-ux/ng-ovh-contacts';
 import ovhManagerCore from '@ovh-ux/manager-core';
 import ovhManagerBanner from '@ovh-ux/manager-banner';
+import ovhManagerEnterpriseCloudDatabase from '@ovh-ux/manager-enterprise-cloud-database';
 import ovhManagerNavbar from '@ovh-ux/manager-navbar';
 import ovhManagerServerSidebar from '@ovh-ux/manager-server-sidebar';
 import ovhPaymentMethod from '@ovh-ux/ng-ovh-payment-method';
@@ -88,6 +89,7 @@ angular
     'ovhBrowserAlert',
     ovhContacts,
     ovhManagerBanner,
+    ovhManagerEnterpriseCloudDatabase,
     ovhManagerNavbar,
     ovhPaymentMethod,
     'pascalprecht.translate',

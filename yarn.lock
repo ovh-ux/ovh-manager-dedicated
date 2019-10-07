@@ -916,6 +916,16 @@
     "@ovh-ux/ng-translate-async-loader" "^2.0.0"
     lodash "^4.17.15"
 
+"@ovh-ux/manager-enterprise-cloud-database@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-enterprise-cloud-database/-/manager-enterprise-cloud-database-0.1.0.tgz#4e0f364dbeb5234b38543e1ab27675c8d2d155b7"
+  integrity sha512-jXXdBzv+yWJp6dBXCuB4yPMMug6jARDV3uR1bLovLxhMtAUcwPp6xGcvczMtYRvRblQnR5F3sXpqD9uHLqEgFg==
+  dependencies:
+    flag-icon-css "^3.2.0"
+    lodash "^4.17.14"
+    moment "^2.22.2"
+    zxcvbn "^4.4.2"
+
 "@ovh-ux/manager-navbar@^1.2.2":
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/@ovh-ux/manager-navbar/-/manager-navbar-1.2.3.tgz#a770c999684bdc8cf0540b67e518d321e6d4fe70"
@@ -924,11 +934,12 @@
     lodash "^4.17.14"
     moment "^2.24.0"
 
-"@ovh-ux/manager-server-sidebar@^0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-server-sidebar/-/manager-server-sidebar-0.5.2.tgz#6e2b7e135ccaf17a39daade7b88d388936d3361f"
-  integrity sha512-fR+Be8VgvgMMXMEciVpnRzNTnZKgjZeU6vbb8kvJWIQiE8xWd17dplc6CkpneljCec/zoINm6NaaeGnb7Q9rXw==
+"@ovh-ux/manager-server-sidebar@^0.6.2":
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-server-sidebar/-/manager-server-sidebar-0.6.2.tgz#ebc5559b4a729df6877f9b909d5ad88164201b11"
+  integrity sha512-JJ7RVK7CxCvZX6bPrgVIYwQvJeTuxSjXdFcvnbc28TFGoeJpNGsZ5J2hKjnExScpaDgp4zn+IOF+lkwFJCMM4A==
   dependencies:
+    font-awesome "~4.7.0"
     jsurl "^0.1.5"
     lodash "^4.17.15"
 
@@ -1038,6 +1049,13 @@
   integrity sha512-tbmn2tBgBk6FC1cgB6WlTSw1Z4p3fN9Jvg7Mfx4krbDBshTqlWnzD3r+6Hb/quoukTvePqRfbLRmdRx6x/E7bg==
   dependencies:
     lodash "^4.17.11"
+
+"@ovh-ux/ng-ovh-contracts@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-contracts/-/ng-ovh-contracts-3.0.0.tgz#6b8d5938f4018f357f6f23f1bfe0c28a31fe8486"
+  integrity sha512-Q3ysrz8a1bqUjRrZN6fy+YagLbEOsrGt29HI4d3c43TCoaoxrMMaJcB/aq4U3vRzysiyG0xsYhSE7TlnQIRR/Q==
+  dependencies:
+    animated-scroll-to "^1.2.2"
 
 "@ovh-ux/ng-ovh-http@^4.0.2":
   version "4.0.2"
@@ -1590,6 +1608,11 @@ animate.css@^3.7.2:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/animate.css/-/animate.css-3.7.2.tgz#e73e0d50e92cb1cfef1597d9b38a9481020e08ea"
   integrity sha512-0bE8zYo7C0KvgOYrSVfrzkbYk6IOTVPNqkiHg2cbyF4Pq/PXzilz4BRWA3hwEUBoMp5VBgrC29lQIZyhRWdBTw==
+
+animated-scroll-to@^1.2.2:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/animated-scroll-to/-/animated-scroll-to-1.3.1.tgz#8d585dc3479fcd08ec5b8f73cd23b4ffd2443942"
+  integrity sha512-LihfT808uwY1TmVw9CMemPKC2vMznSrR7O38hxjlZR/OvdI0Upc987AXIBexY9wT/cSDg7MFlME7hrsnI//DTQ==
 
 ansi-colors@^3.0.0:
   version "3.2.1"
@@ -4782,6 +4805,11 @@ find-up@^3.0.0:
   dependencies:
     locate-path "^3.0.0"
 
+flag-icon-css@^3.2.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/flag-icon-css/-/flag-icon-css-3.3.0.tgz#7772461e4480d3d86da5962f02120a2825688433"
+  integrity sha512-u5lCGVExrJJRykNGd//ZrBU5Bkt0LTZJFSuG+Az/pwcHgzDeFwomwFbsgVtI1aJd6ysyHsx+5UGrA+nhSGd4yw==
+
 flag-icon-css@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/flag-icon-css/-/flag-icon-css-3.2.1.tgz#ff269388e25e29d54b39699e88d76c3141a7cc70"
@@ -7481,7 +7509,7 @@ moment@^2.10.2, moment@^2.10.6, moment@^2.20.1:
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
   integrity sha1-PCV/mDn8DpP/UxSWMiOeuQeD/2Y=
 
-moment@^2.24.0:
+moment@^2.22.2, moment@^2.24.0:
   version "2.24.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
   integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
@@ -7963,6 +7991,11 @@ obuf@^1.0.0, obuf@^1.1.1:
   resolved "https://registry.yarnpkg.com/obuf/-/obuf-1.1.2.tgz#09bea3343d41859ebd446292d11c9d4db619084e"
   integrity sha512-PX1wu0AmAdPqOL1mWhqmlOd8kOIZQwGZw6rh7uby9fTc5lhaOWFLX3I6R1hrF9k3zUY40e6igsLGkDXK92LJNg==
 
+oclazyload@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/oclazyload/-/oclazyload-1.1.0.tgz#a9807322f190820a81c022f2ef1701d036d83e87"
+  integrity sha1-qYBzIvGQggqBwCLy7xcB0DbYPoc=
+
 office-ui-fabric-react@^4.35.2:
   version "4.51.1"
   resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-4.51.1.tgz#89922ab412af2f595b0e40e20e0636de1baaaf86"
@@ -8135,10 +8168,10 @@ ovh-angular-toaster@^0.8.0:
   resolved "https://registry.yarnpkg.com/ovh-angular-toaster/-/ovh-angular-toaster-0.8.0.tgz#7073201379ea196c721d583421c0cef1d04bdbdb"
   integrity sha1-cHMgE3nqGWxyHVg0IcDO8dBL29s=
 
-ovh-api-services@^9.8.0:
-  version "9.8.0"
-  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-9.8.0.tgz#9764da1793ba3bd01bf897c2be6298a9de6cc2cb"
-  integrity sha512-WI9TfBkxkR5TZvQU1Xx8NIRwpS3TVqa7gQwRye+3Wj+b2UIGKAOmf0/fjGTsXSQBPsnMo3U4P+9YmjSO0OX5/A==
+ovh-api-services@^9.18.2:
+  version "9.18.2"
+  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-9.18.2.tgz#174c5e831c1fe0515190b1570afb87aa1e996359"
+  integrity sha512-3vWgQ1Jve9nHzfFuEjGaXroexpqw8fN9SH30JI5sAwAGYFt9DDNcaUpDJrqGvhCrUSzUBj7ttKAc88IqKQfvKQ==
   dependencies:
     lodash "^4.17.15"
 
@@ -11844,3 +11877,8 @@ yauzl@2.4.1:
   integrity sha1-lSj0QtqxsihOWLQ3m7GU4i4MQAU=
   dependencies:
     fd-slicer "~1.0.1"
+
+zxcvbn@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/zxcvbn/-/zxcvbn-4.4.2.tgz#28ec17cf09743edcab056ddd8b1b06262cc73c30"
+  integrity sha1-KOwXzwl0PtyrBW3dixsGJizHPDA=

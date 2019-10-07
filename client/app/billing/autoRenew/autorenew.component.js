@@ -39,6 +39,7 @@ export default {
     sort: '<',
     sshLink: '<',
     terminateEmail: '<',
+    terminateEnterpriseCloudDatabase: '<',
     terminateHostingWeb: '<',
     terminatePrivateDatabase: '<',
     updateExchangeBilling: '<',
