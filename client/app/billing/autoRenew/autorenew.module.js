@@ -9,6 +9,7 @@ import exchangeRenew from './actions/exchange/exchange-renew.module';
 import enable from './enable/enable.module';
 import ssh from './ssh/ssh.module';
 import terminateEmail from './actions/terminateEmail/email.module';
+import terminateEnterpriseCloudDatabase from './actions/terminate-enterprise-cloud-database/terminate-enterprise-cloud-database.module';
 import terminateHostingWeb from './actions/terminateHostingWeb/hosting-web.module';
 import terminatePrivateDatabase from './actions/terminatePrivateDatabase/private-database.module';
 import update from './actions/update/update.module';
@@ -34,6 +35,7 @@ angular.module(moduleName, [
   enable,
   ssh,
   terminateEmail,
+  terminateEnterpriseCloudDatabase,
   terminateHostingWeb,
   terminatePrivateDatabase,
   update,

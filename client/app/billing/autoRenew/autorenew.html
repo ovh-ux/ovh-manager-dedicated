@@ -282,6 +282,14 @@
                 </oui-action-menu-item>
                 <!-- /MX Plan -->
 
+                <!-- ENTERPRISE_CLOUD_DATABASE -->
+                <oui-action-menu-item
+                    data-ng-if="$row.serviceType === 'ENTERPRISE_CLOUD_DATABASE' && !$row.isResiliated()"
+                    data-on-click="$ctrl.terminateEnterpriseCloudDatabase($row.serviceId)">
+                    <span data-translate="billing_autorenew_service_terminate_enterprise_cloud_database"></span>
+                </oui-action-menu-item>
+                <!-- /ENTERPRISE_CLOUD_DATABASE -->
+
                 <!-- HOSTING_WEB -->
                 <oui-action-menu-item
                     data-ng-if="$row.serviceType === 'HOSTING_WEB' && !$row.isResiliated()"
