@@ -1,3 +1,13 @@
+<a name="10.32.1"></a>
+## [10.32.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.0...v10.32.1) (2019-10-07)
+
+
+### Features
+
+* **account.suppport-level:** extract translations ([#1414](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1414)) ([dfe47f5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/dfe47f5))
+
+
+
 <a name="10.32.0"></a>
 # [10.32.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.31.0...v10.32.0) (2019-10-07)
 
