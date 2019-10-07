@@ -1,4 +1,5 @@
-angular.module('UserAccount').controller('UserAccountUsersCtrl', class UserAccountUsersCtrl {
+export default class UserAccountUsersCtrl {
+  /* @ngInject */
   constructor($scope, User, UseraccountUsersService, UseraccountGroupsService, $q, Alerter,
     $translate) {
     this.$scope = $scope;
@@ -60,4 +61,4 @@ angular.module('UserAccount').controller('UserAccountUsersCtrl', class UserAccou
   onTransformItemDone() {
     this.usersLoading = false;
   }
-});
+}

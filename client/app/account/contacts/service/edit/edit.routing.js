@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 export default /* @ngInject */ ($stateProvider) => {
-  $stateProvider.state('app.account.useraccount.contacts.services.edit', {
+  $stateProvider.state('app.account.contacts.services.edit', {
     url: '/edit?service',
     views: {
       modal: {

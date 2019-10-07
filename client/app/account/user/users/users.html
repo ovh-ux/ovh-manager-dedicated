@@ -1,8 +1,4 @@
-<div data-ng-controller="UserAccountUsersCtrl as $ctrl">
-
-    <div class="page-header">
-        <h1 data-translate="user_users_title"></h1>
-    </div>
+<div>
 
     <div class="tab-content">
 
@@ -23,7 +19,7 @@
         <button id="btnAddUser"
                 type="button"
                 class="btn btn-primary my-4"
-                data-ng-click="setAction('security/users/add/user-users-add', user)"
+                data-ng-click="setAction('users/add/user-users-add', user)"
                 data-ng-disabled="$ctrl.usersLoading"
                 data-ng-class="{'disabled': $ctrl.usersLoading}">
             <span data-translate="user_users_add_user"></span>
@@ -95,28 +91,28 @@
                                     <li>
                                         <button type="button"
                                                 class="btn btn-link"
-                                                data-ng-click="setAction('security/users/update/user-users-update', user)"
+                                                data-ng-click="setAction('users/update/user-users-update', user)"
                                                 data-translate="user_users_update">
                                         </button>
                                     </li>
                                     <li>
                                         <button type="button"
                                                 class="btn btn-link"
-                                                data-ng-click="setAction('security/users/delete/user-users-delete', user)"
+                                                data-ng-click="setAction('users/delete/user-users-delete', user)"
                                                 data-translate="user_users_delete">
                                         </button>
                                     </li>
                                     <li data-ng-if="user.status === 'DISABLED'">
                                         <button type="button"
                                                 class="btn btn-link"
-                                                data-ng-click="setAction('security/users/enable/user-users-enable', user)"
+                                                data-ng-click="setAction('users/enable/user-users-enable', user)"
                                                 data-translate="user_users_enable">
                                         </button>
                                     </li>
                                     <li data-ng-if="user.status === 'OK'">
                                         <button type="button"
                                                 class="btn btn-link"
-                                                data-ng-click="setAction('security/users/disable/user-users-disable', user)"
+                                                data-ng-click="setAction('users/disable/user-users-disable', user)"
                                                 data-translate="user_users_disable">
                                         </button>
                                     </li>
