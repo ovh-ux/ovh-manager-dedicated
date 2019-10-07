@@ -36,6 +36,9 @@ export default class DedicatedServerInterfacesOlaActivationCtrl {
       .then((summary) => {
         this.prices = summary.prices;
         this.loading = false;
+      })
+      .catch((error) => {
+        this.goBack().then(() => this.alertError('server_error_ola_activation', error.data));
       });
   }
 
