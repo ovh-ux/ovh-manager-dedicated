@@ -1,7 +1,7 @@
 
 import component from './component';
 
-export default (($stateProvider) => {
+export default /* @ngInject */ ($stateProvider) => {
   const name = 'app.account.billing.payment.method.action.edit';
 
   $stateProvider.state(name, {
@@ -58,4 +58,4 @@ export default (($stateProvider) => {
       loading: /* @ngInject */ loaders => () => loaders.save,
     },
   });
-});
+};

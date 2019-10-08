@@ -1,6 +1,6 @@
 import component from './component';
 
-export default ($stateProvider, $transitionsProvider, $urlRouterProvider) => {
+export default /* @ngInject */ ($stateProvider, $transitionsProvider, $urlRouterProvider) => {
   const name = 'app.account.billing.payment.method';
 
   $stateProvider.state(name, {

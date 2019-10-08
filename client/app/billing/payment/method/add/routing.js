@@ -1,6 +1,6 @@
 import component from './component';
 
-export default (($stateProvider, $urlRouterProvider) => {
+export default /* @ngInject */ ($stateProvider, $urlRouterProvider) => {
   const name = 'app.account.billing.payment.method.add';
 
   $stateProvider.state(name, {
@@ -108,4 +108,4 @@ export default (($stateProvider, $urlRouterProvider) => {
     /^\/billing\/mean\/add$/,
     ($location, $state) => $state.go(name),
   );
-});
+};
