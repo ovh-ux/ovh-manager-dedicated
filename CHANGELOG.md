@@ -1,3 +1,13 @@
+<a name="10.32.7"></a>
+## [10.32.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.6...v10.32.7) (2019-10-08)
+
+
+### Bug Fixes
+
+* **account.user.support.level:** use right URLs in constant file ([eee247c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/eee247c))
+
+
+
 <a name="10.32.6"></a>
 ## [10.32.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.5...v10.32.6) (2019-10-08)
 
