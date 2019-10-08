@@ -1,3 +1,13 @@
+<a name="10.32.5"></a>
+## [10.32.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.4...v10.32.5) (2019-10-08)
+
+
+### Bug Fixes
+
+* **billing.autorenew.ssh:** rename broken service name ([#1454](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1454)) ([f4cbd9f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f4cbd9f))
+
+
+
 <a name="10.32.4"></a>
 ## [10.32.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.3...v10.32.4) (2019-10-08)
 
