@@ -30,16 +30,16 @@ export const URLS = {
     enterprise: 'https://www.ovhcloud.com/en/support-levels/enterprise/',
   },
   DE: {
-    standard: 'https://www.ovhcloud.com/es-es/support-levels/standard/',
-    premium: 'https://www.ovhcloud.com/es-es/support-levels/premium/',
-    business: 'https://www.ovhcloud.com/es-es/support-levels/business/',
-    enterprise: 'https://www.ovhcloud.com/es-es/support-levels/enterprise/',
-  },
-  ES: {
     standard: 'https://www.ovhcloud.com/de/support-levels/standard/',
     premium: 'https://www.ovhcloud.com/de/support-levels/premium/',
     business: 'https://www.ovhcloud.com/de/support-levels/business/',
     enterprise: 'https://www.ovhcloud.com/de/support-levels/enterprise/',
+  },
+  ES: {
+    standard: 'https://www.ovhcloud.com/es-es/support-levels/standard/',
+    premium: 'https://www.ovhcloud.com/es-es/support-levels/premium/',
+    business: 'https://www.ovhcloud.com/es-es/support-levels/business/',
+    enterprise: 'https://www.ovhcloud.com/es-es/support-levels/enterprise/',
   },
   FI: {
     standard: 'https://www.ovhcloud.com/en/support-levels/standard/',
