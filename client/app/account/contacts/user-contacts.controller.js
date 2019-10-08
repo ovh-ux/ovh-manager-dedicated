@@ -1,10 +1,21 @@
 angular.module('UserAccount')
   .controller('UserAccount.controllers.contactCtrl', class AccountUserContactsController {
-    constructor($location, $q, $scope, $state, AccountCreationURLS, Alerter, atInternet, OvhApiMe) {
+    constructor(
+      $location,
+      $q,
+      $scope,
+      $state,
+      $timeout,
+      AccountCreationURLS,
+      Alerter,
+      atInternet,
+      OvhApiMe,
+    ) {
       this.$location = $location;
       this.$q = $q;
       this.$scope = $scope;
       this.$state = $state;
+      this.$timeout = $timeout;
       this.AccountCreationURLS = AccountCreationURLS;
       this.Alerter = Alerter;
       this.atInternet = atInternet;
@@ -17,6 +28,32 @@ angular.module('UserAccount')
       };
       this.user = null;
       this.loaders.init = true;
+
+
+      this.$scope.resetAction = () => {
+        this.$scope.setAction(false);
+      };
+
+      this.$scope.setAction = (action, data, basePath) => {
+        this.$scope.currentAction = action;
+        this.$scope.currentActionData = data;
+        if (action) {
+          if (basePath) {
+            this.$scope.stepPath = `${basePath}${this.$scope.currentAction}.html`;
+          }
+          $('#currentAction').modal({
+            keyboard: true,
+            backdrop: 'static',
+          });
+        } else {
+          $('#currentAction').modal('hide');
+          this.$scope.currentActionData = null;
+          this.$timeout(() => {
+            this.$scope.stepPath = '';
+          }, 300);
+        }
+      };
+
       return this.OvhApiMe.v6().get().$promise
         .then((user) => {
           this.user = user;
