@@ -1,3 +1,13 @@
+<a name="10.32.6"></a>
+## [10.32.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.5...v10.32.6) (2019-10-08)
+
+
+### Bug Fixes
+
+* **account.contacts:** restrict redirection for contact change ([44bf17e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/44bf17e))
+
+
+
 <a name="10.32.5"></a>
 ## [10.32.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.4...v10.32.5) (2019-10-08)
 
