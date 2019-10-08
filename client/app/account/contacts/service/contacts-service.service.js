@@ -17,7 +17,7 @@ export default class {
   }
 
   changeContact(service) {
-    return this.OvhHttp.post(`${service.path}/${service.serviceName}/changeContact'`, {
+    return this.OvhHttp.post(`${service.path}/${service.serviceName}/changeContact`, {
       rootPath: 'apiv6',
       data: {
         contactAdmin: service.contactAdmin,
