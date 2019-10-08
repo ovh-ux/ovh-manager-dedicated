@@ -1078,10 +1078,9 @@
     draggable "^4.2.0"
     lodash "^4.17.11"
 
-"@ovh-ux/ng-ovh-payment-method@^4.2.0":
+"@ovh-ux/ng-ovh-payment-method@git+https://github.com/ovh-ux/ng-ovh-payment-method.git#feat/handlePaypalInContext":
   version "4.2.0"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-payment-method/-/ng-ovh-payment-method-4.2.0.tgz#60a7da852a67f375ba2fe5bb81c53c0f14631432"
-  integrity sha512-p1UTXgW2XrhSHKjcs6GD0uGcYN5iYdNsnnAdAnO6FFM8njxWBNkfMHxOXOlOBtpaYKf6kOqaYJq3DIQb+Fao3A==
+  resolved "git+https://github.com/ovh-ux/ng-ovh-payment-method.git#483399eb7454dfa75aba8fc10ee0622d707be942"
   dependencies:
     lodash "^4.17.11"
 
@@ -1146,10 +1145,9 @@
   resolved "https://registry.yarnpkg.com/@ovh-ux/ng-translate-async-loader/-/ng-translate-async-loader-2.0.0.tgz#df0d155c6c2e38b53704ff4ca9b419f0695a88bf"
   integrity sha512-CmAT0/rTYN/Niwtuo1pcY+y46nqGCR2dO6+4twqGiRkqu/ksgklZ4weaqF9Xgl/KYLv+zcCmxZf0J1gfXs7kag==
 
-"@ovh-ux/ng-ui-router-layout@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ui-router-layout/-/ng-ui-router-layout-2.1.0.tgz#f6dcadc7b3ed2a0848b5ff62b8106ba6688e2083"
-  integrity sha512-fGIcPdmq4xy6QEbyyORHdLqwzFgLtnfLZjs+zUDP4EiySMsFRzUi0sDUjvwl0+6GvXFEviG9c4atXjLhxcCWBg==
+"@ovh-ux/ng-ui-router-layout@git+https://github.com/ovh-ux/manager.git#feat/ouiModalLayout":
+  version "2.0.0"
+  resolved "git+https://github.com/ovh-ux/manager.git#aec7d8e2ce07262bea4964b3398caa516ffe2043"
   dependencies:
     lodash "^4.17.15"
 
