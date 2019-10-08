@@ -7,6 +7,10 @@ angular.module('UserAccount').config(($stateProvider, $urlRouterProvider) => {
     controller: 'UserAccount.controllers.contactCtrl',
     controllerAs: 'contactCtrl',
     abstract: true,
+    translations: {
+      format: 'json',
+      value: ['../user'],
+    },
   });
 
   $urlRouterProvider.when(

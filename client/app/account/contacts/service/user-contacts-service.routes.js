@@ -4,12 +4,16 @@ export default /* @ngInject */ ($stateProvider) => {
     component: 'accountContactsService',
     translations: {
       format: 'json',
-      value: ['.'],
+      value: ['.', '..'],
     },
     resolve: {
       editContacts: /* @ngInject */ $state => service => $state.go('app.account.contacts.services.edit', { service: service.serviceName }),
       getServiceInfos: /* @ngInject */
-        AccountContactsService => service => AccountContactsService.getServiceInfos(service),
+        AccountContactsService => service => AccountContactsService.getServiceInfos(service)
+          .then(serviceInfos => ({
+            ...service,
+            ...serviceInfos,
+          })),
       goToContacts: /* @ngInject */ ($state, $timeout, Alerter) => (message = false, type = 'success') => {
         const reload = message && type === 'success';
 

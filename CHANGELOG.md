@@ -1,3 +1,54 @@
+<a name="10.32.2"></a>
+## [10.32.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.1...v10.32.2) (2019-10-08)
+
+
+### Bug Fixes
+
+* **account.contacts.service:** post to the right URL ([#1445](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1445)) ([1241ca4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1241ca4))
+* **account.user:** set the right base url for setAction ([#1446](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1446)) ([047f571](https://github.com/ovh-ux/ovh-manager-dedicated/commit/047f571))
+* **autorenew:** handle 404 errors for /me/autorenew ([0d29cac](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0d29cac))
+* **billing.autorenew:** set default renew day for activation ([5277173](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5277173))
+* **billing.autorenew:** update server sidebar to v0.6.3 ([#1442](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1442)) ([3b61b64](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3b61b64))
+
+
+
+<a name="10.32.1"></a>
+## [10.32.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.0...v10.32.1) (2019-10-07)
+
+
+### Features
+
+* **account.suppport-level:** extract translations ([#1414](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1414)) ([dfe47f5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/dfe47f5))
+
+
+
+<a name="10.32.0"></a>
+# [10.32.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.31.0...v10.32.0) (2019-10-07)
+
+
+### Bug Fixes
+
+* **account.contacts:** load translations ([b2886b5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b2886b5))
+* **i18n:** add missing translations [CDS 67] ([946e920](https://github.com/ovh-ux/ovh-manager-dedicated/commit/946e920))
+* **i18n:** add missing translations [CDS 68] ([4d0076f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4d0076f))
+
+
+
+<a name="10.31.0"></a>
+# [10.31.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.30.1...v10.31.0) (2019-10-07)
+
+
+### Bug Fixes
+
+* use latest ng-ui-router-layout ([#1440](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1440)) ([724c272](https://github.com/ovh-ux/ovh-manager-dedicated/commit/724c272))
+
+
+### Features
+
+* enterprise cloud database ([#1431](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1431)) ([bd40c18](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bd40c18))
+
+
+
 <a name="10.30.1"></a>
 ## [10.30.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.30.0...v10.30.1) (2019-10-01)
 
