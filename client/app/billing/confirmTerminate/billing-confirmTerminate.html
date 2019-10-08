@@ -4,6 +4,7 @@
         <div class="oui-message oui-message_error oui-message_l" role="alert">
             <i class="oui-message_l-icon" aria-hidden="true"></i>
             <h1 class="oui-message__title" data-translate="terminate_service_error"></h1>
+            <p data-ng-bind="$ctrl.currentError"></p>
         </div>
     </div>
 
@@ -21,7 +22,8 @@
              role="alert">
             <i class="oui-icon oui-icon-error_circle oui-icon_bicolor" aria-hidden="true"></i>
             <p class="oui-message__body"
-               data-translate="terminate_service_confirmation_error"></p>
+               data-translate="terminate_service_confirmation_error"
+               data-translate-values="{ error: $ctrl.currentError.message }"></p>
         </div>
     </div>
 

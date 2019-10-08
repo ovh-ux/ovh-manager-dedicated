@@ -42,28 +42,32 @@ export default class {
     this.terminating = false;
     this.error = false;
     this.globalError = null;
+    this.currentError = '';
 
     if (!this.token || !this.serviceId) {
       this.globalError = true;
       return;
     }
 
-    this.USVersion = this.currentUser && this.currentUser.ovhSubsidiary === 'US';
+    this.USVersion = _.get(this, 'currentUser.ovhSubsidiary') === 'US';
 
-    this.loadService().catch(() => {
+    this.loadService().catch((error) => {
       this.globalError = true;
+      this.currentError = error;
     });
   }
 
   loadService() {
-    return this.BillingTerminateLegacy
-      .getServiceInfo(this.serviceId)
+    return this.BillingTerminate
+      .getServiceApi(this.serviceId)
+      .catch(() => this.BillingTerminateLegacy.getServiceApi(this.serviceId))
+      .then((serviceApi) => {
+        this.serviceApi = serviceApi;
+        this.serviceState = _.get(serviceApi, 'resource.state');
+        return this.BillingTerminateLegacy.getServiceInfo(serviceApi);
+      })
       .then((serviceInfos) => {
         this.serviceInfos = serviceInfos;
-        return this.BillingTerminateLegacy.getServiceApi(serviceInfos.serviceId);
-      })
-      .then((service) => {
-        this.serviceState = _.get(service, 'resource.state');
       })
       .finally(() => {
         this.loading = false;
@@ -74,9 +78,7 @@ export default class {
     this.terminating = true;
     this.BillingTerminateLegacy
       .confirmTermination(
-        this.serviceId,
-        this.serviceInfos.domain,
-        this.futureUse,
+        this.serviceApi,
         this.reason,
         this.commentary,
         this.token,
@@ -85,8 +87,9 @@ export default class {
         this.error = false;
         this.serviceState = 'suspending';
       })
-      .catch(() => {
+      .catch((error) => {
         this.error = true;
+        this.currentError = error;
       })
       .finally(() => {
         this.terminating = false;

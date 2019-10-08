@@ -4,13 +4,6 @@ export default class {
     this.OvhHttp = OvhHttp;
   }
 
-  static getServiceTypeFromPrefix(serviceApiPrefix) {
-    return serviceApiPrefix
-      .replace(/^\//, '')
-      .replace(/\/\{.+$/, '')
-      .replace(/\//g, '_');
-  }
-
   getServiceApi(serviceId, forceRefresh) {
     const params = {
       rootPath: 'apiv6',
@@ -22,10 +15,10 @@ export default class {
     return this.OvhHttp.get(`/service/${serviceId}`, params);
   }
 
-  getServiceInfo(serviceId) {
+  getServiceInfo(serviceApi) {
     let serviceType;
-    return this.getServiceApi(serviceId)
-      .then((serviceApi) => {
+    return this.$q.when(true)
+      .then(() => {
         serviceType = this.constructor.getServiceTypeFromPrefix(serviceApi.route.path);
         return serviceApi.route.url;
       })
@@ -38,22 +31,30 @@ export default class {
   }
 
   confirmTermination(
-    serviceId,
-    serviceName,
-    futureUse,
+    serviceApi,
     reason,
     commentary,
     token,
   ) {
-    return this.getServiceApi(serviceId)
-      .then(serviceApi => serviceApi.route.url)
-      .then(url => this.OvhHttp.post(`${url}/confirmTermination`, {
-        rootPath: 'apiv6',
-        data: {
-          reason,
-          commentary,
-          token,
-        },
-      }));
+    return this.OvhHttp.post(`${serviceApi.route.url}/confirmTermination`, {
+      rootPath: 'apiv6',
+      data: {
+        reason,
+        commentary,
+        token,
+      },
+    });
+  }
+
+  /*
+    Extract service from API endpoint
+    Example:
+      "/dedicated/server/{serviceName}" => "dedicated_server"
+  */
+  static getServiceTypeFromPrefix(serviceApiPrefix) {
+    return serviceApiPrefix
+      .replace(/^\//, '')
+      .replace(/\/\{.+$/, '')
+      .replace(/\//g, '_');
   }
 }
