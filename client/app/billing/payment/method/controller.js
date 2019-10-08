@@ -2,10 +2,7 @@ import { ALERTER_ID } from './constants';
 
 export default class BillingPaymentMethodCtrl {
   /* @ngInject */
-  constructor($timeout, Alerter, OVH_PAYMENT_MEAN_STATUS, OVH_PAYMENT_METHOD_TYPE,
-    ovhPaymentMethodHelper) {
-    this.$timeout = $timeout;
-    this.Alerter = Alerter;
+  constructor(OVH_PAYMENT_MEAN_STATUS, OVH_PAYMENT_METHOD_TYPE, ovhPaymentMethodHelper) {
     this.OVH_PAYMENT_MEAN_STATUS = OVH_PAYMENT_MEAN_STATUS;
     this.OVH_PAYMENT_METHOD_TYPE = OVH_PAYMENT_METHOD_TYPE;
     this.ovhPaymentMethodHelper = ovhPaymentMethodHelper;
