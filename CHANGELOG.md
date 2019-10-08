@@ -1,3 +1,17 @@
+<a name="10.32.2"></a>
+## [10.32.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.1...v10.32.2) (2019-10-08)
+
+
+### Bug Fixes
+
+* **account.contacts.service:** post to the right URL ([#1445](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1445)) ([1241ca4](https://github.com/ovh-ux/ovh-manager-dedicated/commit/1241ca4))
+* **account.user:** set the right base url for setAction ([#1446](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1446)) ([047f571](https://github.com/ovh-ux/ovh-manager-dedicated/commit/047f571))
+* **autorenew:** handle 404 errors for /me/autorenew ([0d29cac](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0d29cac))
+* **billing.autorenew:** set default renew day for activation ([5277173](https://github.com/ovh-ux/ovh-manager-dedicated/commit/5277173))
+* **billing.autorenew:** update server sidebar to v0.6.3 ([#1442](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1442)) ([3b61b64](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3b61b64))
+
+
+
 <a name="10.32.1"></a>
 ## [10.32.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.0...v10.32.1) (2019-10-07)
 
