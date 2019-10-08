@@ -1,4 +1,6 @@
-import { NIC_ALL, RENEW_URL, URL_PARAMETER_SEPARATOR } from './autorenew.constants';
+import {
+  ALIGNMENT_URLS, NIC_ALL, RENEW_URL, URL_PARAMETER_SEPARATOR,
+} from './autorenew.constants';
 
 export default class AutorenewCtrl {
   /* @ngInject */
@@ -9,6 +11,7 @@ export default class AutorenewCtrl {
     atInternet,
     BillingAutoRenew,
     billingRenewHelper,
+    coreConfig,
     ouiDatagridService,
   ) {
     this.$filter = $filter;
@@ -17,10 +20,13 @@ export default class AutorenewCtrl {
     this.atInternet = atInternet;
     this.BillingAutoRenew = BillingAutoRenew;
     this.renewHelper = billingRenewHelper;
+    this.coreConfig = coreConfig;
     this.ouiDatagridService = ouiDatagridService;
   }
 
   $onInit() {
+    this.ALIGNMENT_URL = this.coreConfig.isRegion('EU') ? ALIGNMENT_URLS[this.currentUser.ovhSubsidiary] || ALIGNMENT_URLS.FR : null;
+
     this.selectedServices = [];
 
     this.nicBillingFilter = this.nicBilling || this.$translate.instant(NIC_ALL);
