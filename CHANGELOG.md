@@ -1,3 +1,13 @@
+<a name="10.32.3"></a>
+## [10.32.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.2...v10.32.3) (2019-10-08)
+
+
+### Bug Fixes
+
+* **deps:** upgrade ovh-module-exchange to v9.4.9 ([2f959bb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2f959bb))
+
+
+
 <a name="10.32.2"></a>
 ## [10.32.2](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.1...v10.32.2) (2019-10-08)
 
