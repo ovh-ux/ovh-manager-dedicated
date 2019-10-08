@@ -1,3 +1,14 @@
+<a name="10.32.4"></a>
+## [10.32.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.3...v10.32.4) (2019-10-08)
+
+
+### Bug Fixes
+
+* **account.contacts:** add setAction for contacts change ([00cc55b](https://github.com/ovh-ux/ovh-manager-dedicated/commit/00cc55b))
+* **account.contacts:** handle contact update ([adcf272](https://github.com/ovh-ux/ovh-manager-dedicated/commit/adcf272))
+
+
+
 <a name="10.32.3"></a>
 ## [10.32.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.2...v10.32.3) (2019-10-08)
 
