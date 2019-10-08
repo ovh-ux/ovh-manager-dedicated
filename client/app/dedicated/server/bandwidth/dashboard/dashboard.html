@@ -33,7 +33,8 @@
         data-compact>
         <oui-action-menu-item
             data-href="{{ $ctrl.resiliatePublicLink }}"
-            data-disabled="$ctrl.server.state === 'HACKED' || $ctrl.server.state === 'HACKED_BLOCKED'">
+            data-disabled="$ctrl.server.state === 'HACKED' || $ctrl.server.state === 'HACKED_BLOCKED'"
+            data-ng-if="$ctrl.server.canResiliateBandwidth">
             <span data-translate="dedicated_server_bandwidth_cancel_button"></span>
         </oui-action-menu-item>
     </oui-action-menu>
@@ -77,7 +78,8 @@
         data-compact>
         <oui-action-menu-item
             data-href="{{ $ctrl.resiliatePrivateLink }}"
-            data-disabled="$ctrl.server.state === 'HACKED' || $ctrl.server.state === 'HACKED_BLOCKED'">
+            data-disabled="$ctrl.server.state === 'HACKED' || $ctrl.server.state === 'HACKED_BLOCKED'"
+            data-ng-if="$ctrl.server.canResiliateVrackBandwidth">
             <span data-translate="dedicated_server_bandwidth_vrack_cancel_button"></span>
         </oui-action-menu-item>
     </oui-action-menu>
