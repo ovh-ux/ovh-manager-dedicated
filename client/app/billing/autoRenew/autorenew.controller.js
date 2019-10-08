@@ -130,8 +130,7 @@ export default class AutorenewCtrl {
 
   loadServices() {
     if (_.get(this.ouiDatagridService, 'datagrids.services')) {
-      const currentOffset = this.pageNumber * this.pageSize;
-      _.set(this.ouiDatagridService, 'datagrids.services.paging.offset', currentOffset < this.services.count ? currentOffset : this.services.count);
+      _.set(this.ouiDatagridService, 'datagrids.services.paging.offset', this.offset + 1);
     }
 
     return this.$q.resolve({
