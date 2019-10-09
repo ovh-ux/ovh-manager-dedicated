@@ -2033,6 +2033,13 @@ angular
             })));
 
           return $q.all(promises);
+        })
+        .catch((error) => {
+          if (error.status === 404) {
+            return null;
+          }
+
+          return $q.reject(error);
         });
     };
 
