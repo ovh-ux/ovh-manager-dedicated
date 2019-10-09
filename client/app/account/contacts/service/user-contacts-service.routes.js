@@ -23,7 +23,7 @@ export default /* @ngInject */ ($stateProvider) => {
         });
 
         if (message) {
-          promise.then(() => $timeout(() => Alerter.set(`alert-${type}`, message, 'useraccount.alerts.dashboardContacts')));
+          promise.then(() => $timeout(() => Alerter.set(`alert-${type}`, message, null)));
         }
 
         return promise;
