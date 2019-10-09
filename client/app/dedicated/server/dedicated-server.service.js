@@ -2021,6 +2021,21 @@ angular
       return self.getSelected(serviceName).then(selectedServer => $http.get(`apiv6/dedicated/server/${selectedServer.name}/vrack`).then(results => results.data));
     };
 
+    this.getVrackInfos = function getVrackInfos(serviceName) {
+      return self
+        .getVrack(serviceName)
+        .then((results) => {
+          const promises = results.map(vrack => $http
+            .get(`apiv6/vrack/${vrack}`)
+            .then(({ data }) => ({
+              serviceName: vrack,
+              ...data,
+            })));
+
+          return $q.all(promises);
+        });
+    };
+
     /* ------- Hard Raid -------*/
 
     this.getHardwareRaidProfile = function getHardwareRaidProfile(serviceName) {
