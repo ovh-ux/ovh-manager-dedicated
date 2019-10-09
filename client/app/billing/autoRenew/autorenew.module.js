@@ -12,6 +12,7 @@ import terminateEmail from './actions/terminateEmail/email.module';
 import terminateEnterpriseCloudDatabase from './actions/terminate-enterprise-cloud-database/terminate-enterprise-cloud-database.module';
 import terminateHostingWeb from './actions/terminateHostingWeb/hosting-web.module';
 import terminatePrivateDatabase from './actions/terminatePrivateDatabase/private-database.module';
+import terminateWebCoach from './actions/terminate-webcoach/terminate-webcoach.module';
 import update from './actions/update/update.module';
 import warnNicBilling from './actions/warnNicBilling/warnNicBilling.module';
 import warnPendingDebt from './actions/warnPendingDebt/pending-debt.module';
@@ -38,6 +39,7 @@ angular.module(moduleName, [
   terminateEnterpriseCloudDatabase,
   terminateHostingWeb,
   terminatePrivateDatabase,
+  terminateWebCoach,
   update,
   warnNicBilling,
   warnPendingDebt,

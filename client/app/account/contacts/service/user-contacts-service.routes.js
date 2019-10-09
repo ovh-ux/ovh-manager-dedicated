@@ -7,7 +7,8 @@ export default /* @ngInject */ ($stateProvider) => {
       value: ['.', '..'],
     },
     resolve: {
-      editContacts: /* @ngInject */ $state => service => $state.go('app.account.contacts.services.edit', { service: service.serviceName }),
+      category: /* @ngInject */ $transition$ => $transition$.params().category,
+      editContacts: /* @ngInject */ $state => service => $state.go('app.account.contacts.services.edit', { service: service.serviceName, category: service.category }),
       getServiceInfos: /* @ngInject */
         AccountContactsService => service => AccountContactsService.getServiceInfos(service)
           .then(serviceInfos => ({
