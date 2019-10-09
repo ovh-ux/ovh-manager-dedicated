@@ -26,6 +26,7 @@ export default {
     nicBilling: '<',
     nicRenew: '<',
     nics: '<',
+    offset: '<',
     onListParamChanges: '<',
     pageNumber: '<',
     pageSize: '<',

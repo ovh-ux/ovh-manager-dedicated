@@ -30,6 +30,7 @@ angular
                 firstName: result.me.firstname,
                 lastName: result.me.name,
                 billingCountry: result.me.country,
+                customerCode: result.me.customerCode,
                 isEnterprise: _.indexOf(result.certificates, 'enterprise') > -1,
                 isVATNeeded: ['CA', 'QC', 'WE', 'WS'].indexOf(result.me.ovhSubsidiary) === -1,
               };

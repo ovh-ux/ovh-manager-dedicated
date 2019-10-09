@@ -391,9 +391,9 @@
                                 data-compact
                                 data-ng-if="dedicatedServerFeatureAvailability.hasContactChangement() && !server.isExpired">
                                 <oui-action-menu-item
-                                    data-ui-sref="app.account.useraccount.contacts.services({ serviceName: server.name })">
-                                    <span data-translate="contacts_management"></span>
-                                </oui-action-menu-item>
+                                    data-text="{{:: 'contacts_management' | translate }}"
+                                    aria-label="{{:: 'contacts_management' | translate }}"
+                                    data-ui-sref="app.account.contacts.services({ serviceName: server.name })"></oui-action-menu-item>
                                  <oui-action-menu-item
                                     data-href="{{:: changeOwnerUrl }}"
                                     data-external
