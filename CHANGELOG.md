@@ -1,3 +1,13 @@
+<a name="10.32.9"></a>
+## [10.32.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.8...v10.32.9) (2019-10-09)
+
+
+### Bug Fixes
+
+* **dedicated.server:** catch 404 on vrack ([e10b764](https://github.com/ovh-ux/ovh-manager-dedicated/commit/e10b764))
+
+
+
 <a name="10.32.8"></a>
 ## [10.32.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.7...v10.32.8) (2019-10-09)
 
