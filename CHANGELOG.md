@@ -1,3 +1,26 @@
+<a name="10.32.8"></a>
+## [10.32.8](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.7...v10.32.8) (2019-10-09)
+
+
+### Bug Fixes
+
+* **account.contacts:** filter service on category ([#1467](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1467)) ([bc321ed](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bc321ed))
+* **account.user.advanced:** restore the activation button ([54f477c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/54f477c))
+* **billing.autorenew.ssh:** scope function binding ([#1472](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1472)) ([25ee239](https://github.com/ovh-ux/ovh-manager-dedicated/commit/25ee239))
+* **i18n:** add missing translations [CDS 75] ([aa019c5](https://github.com/ovh-ux/ovh-manager-dedicated/commit/aa019c5))
+* **i18n:** add missing translations [CDS 76] ([ff4b4df](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ff4b4df))
+* **i18n:** add missing translations [CDS 78] ([cd5602c](https://github.com/ovh-ux/ovh-manager-dedicated/commit/cd5602c))
+* **ola:** add translations ([#1428](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1428)) ([0bceb2a](https://github.com/ovh-ux/ovh-manager-dedicated/commit/0bceb2a))
+
+
+### Features
+
+* **autorenew:** add webcoach ([#1464](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1464)) ([b7413cb](https://github.com/ovh-ux/ovh-manager-dedicated/commit/b7413cb))
+* **dedicated.server:** extract translations ([#1430](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1430)) ([543e2f0](https://github.com/ovh-ux/ovh-manager-dedicated/commit/543e2f0))
+* **dedicated.server.interfaces:** add ona lag capacity ([#1397](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1397)) ([80aa12f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/80aa12f))
+
+
+
 <a name="10.32.7"></a>
 ## [10.32.7](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.6...v10.32.7) (2019-10-08)
 
