@@ -110,7 +110,7 @@ export default class BillingService {
   }
 
   setForResiliation() {
-    if (this.hasAutomaticRenew() && !this.isAutomaticallyRenewed()) {
+    if (this.hasAutomaticRenew() && !(this.isAutomaticallyRenewed() || ['automaticV2014', 'automaticV2016'].includes(this.renewalType))) {
       this.setManualRenew();
     }
 
@@ -132,48 +132,48 @@ export default class BillingService {
   getAutorenewCapability(nichandle) {
     if (this.hasDebt()) {
       return {
-        availabilty: false,
+        availability: false,
         reason: 'pending_debt',
       };
     }
 
-    if (this.hasAutomaticRenewal()) {
+    if (this.hasAutomaticRenewal() && !this.isResiliated()) {
       return {
-        availabilty: false,
+        availability: false,
         reason: 'already_automatic',
       };
     }
 
     if (this.renewalType === 'oneShot' || this.isAutomaticallyRenewed()) {
       return {
-        availabilty: false,
+        availability: false,
         reason: 'one_shot_automatic',
       };
     }
 
     if (!this.hasBillingRights(nichandle)) {
       return {
-        availabilty: false,
+        availability: false,
         reason: 'nic_rights',
+      };
+    }
+
+    if (this.hasPendingResiliation()) {
+      return {
+        availability: false,
+        reason: 'resiliation_pending',
       };
     }
 
     if (this.isResiliated()) {
       return {
-        availabilty: false,
-        reason: 'resiliation_pending',
-      };
-    }
-
-    if (this.isExpired()) {
-      return {
-        availabilty: false,
+        availability: false,
         reason: 'expired',
       };
     }
 
     return {
-      availabilty: true,
+      availability: true,
       reason: 'available',
     };
   }
@@ -181,48 +181,48 @@ export default class BillingService {
   getManualRenewCapability(nichandle) {
     if (this.hasDebt()) {
       return {
-        availabilty: false,
+        availability: false,
         reason: 'pending_debt',
       };
     }
 
     if (this.hasManualRenew()) {
       return {
-        availabilty: false,
+        availability: false,
         reason: 'already_manual',
       };
     }
 
     if (this.renewalType === 'oneShot' || this.isAutomaticallyRenewed()) {
       return {
-        availabilty: false,
+        availability: false,
         reason: 'one_shot_manual',
       };
     }
 
     if (!this.hasBillingRights(nichandle)) {
       return {
-        availabilty: false,
+        availability: false,
         reason: 'nic_rights',
+      };
+    }
+
+    if (this.hasPendingResiliation()) {
+      return {
+        availability: false,
+        reason: 'resiliation_pending',
       };
     }
 
     if (this.isResiliated()) {
       return {
-        availabilty: false,
-        reason: 'resiliation_pending',
-      };
-    }
-
-    if (this.isExpired()) {
-      return {
-        availabilty: false,
+        availability: false,
         reason: 'expired',
       };
     }
 
     return {
-      availabilty: true,
+      availability: true,
       reason: 'available',
     };
   }
@@ -254,6 +254,7 @@ export default class BillingService {
 
   hasPendingResiliation() {
     return this.shouldDeleteAtExpiration()
-    && !this.hasManualRenew();
+    && !this.hasManualRenew()
+    && !this.isResiliated();
   }
 }
