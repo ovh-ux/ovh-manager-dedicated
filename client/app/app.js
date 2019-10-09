@@ -33,6 +33,8 @@ import ovhManagerPccDashboard from './dedicatedCloud/dashboard';
 import ovhManagerPccResourceUpgrade from './dedicatedCloud/resource/upgrade';
 import preload from './components/manager-preload/manager-preload.module';
 
+import dedicatedServerBandwidth from './dedicated/server/bandwidth/bandwidth.module';
+import dedicatedServerInterfaces from './dedicated/server/interfaces/interfaces.module';
 import dedicatedServerServers from './dedicated/server/servers/servers.module';
 
 Environment.setRegion(__WEBPACK_REGION__);
@@ -46,6 +48,8 @@ angular
     'controllers',
     contactsService,
     dedicatedCloudDatacenterDrp,
+    dedicatedServerBandwidth,
+    dedicatedServerInterfaces,
     dedicatedServerServers,
     dedicatedUniverseComponents,
     'directives',

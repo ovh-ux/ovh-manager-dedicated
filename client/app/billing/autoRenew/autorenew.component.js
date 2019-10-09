@@ -42,6 +42,7 @@ export default {
     terminateEnterpriseCloudDatabase: '<',
     terminateHostingWeb: '<',
     terminatePrivateDatabase: '<',
+    terminateWebCoach: '<',
     updateExchangeBilling: '<',
     updateServices: '<',
     warnNicBilling: '<',
