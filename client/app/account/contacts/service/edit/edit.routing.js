@@ -14,10 +14,11 @@ export default /* @ngInject */ ($stateProvider) => {
         AccountContactsService => service => AccountContactsService.changeContact(service),
       goBack: /* @ngInject */ goToContacts => goToContacts,
       service: /* @ngInject */ (
+        category,
         getServiceInfos,
         serviceName,
         services,
-      ) => getServiceInfos(_.find(services, { serviceName })),
+      ) => getServiceInfos(_.find(services, { serviceName, category })),
       serviceName: /* @ngInject */ $transition$ => $transition$.params().service,
     },
   });
