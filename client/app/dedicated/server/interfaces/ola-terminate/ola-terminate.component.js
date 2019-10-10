@@ -4,6 +4,7 @@ import template from './ola-terminate.html';
 export default {
   bindings: {
     goBack: '<',
+    alertSuccess: '<',
     alertError: '<',
     atTrack: '<',
     serverName: '<',
