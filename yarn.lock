@@ -903,11 +903,6 @@
   dependencies:
     lodash "^4.17.15"
 
-"@ovh-ux/manager-cloud-styles@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-cloud-styles/-/manager-cloud-styles-0.3.0.tgz#84fecaa4da149c685ceb4a1471f4b7de042dddd3"
-  integrity sha512-GtNuq3Abc9BFBtXYdsrKlNH4oYJFowMgCPLaqM2vtRB+ebfxPI0AC3hG4Y0kZl64gHLW1jmUQbityu2ekAv/qw==
-
 "@ovh-ux/manager-config@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@ovh-ux/manager-config/-/manager-config-0.3.0.tgz#d3c444090ad42af74029184d0dcf4ca2c99f9f8d"
@@ -921,10 +916,9 @@
     "@ovh-ux/ng-translate-async-loader" "^2.0.0"
     lodash "^4.17.15"
 
-"@ovh-ux/manager-enterprise-cloud-database@^0.1.0":
+"@ovh-ux/manager-enterprise-cloud-database@git+https://github.com/ovh-ux/manager.git#fix/enterprise-cloud-database-split":
   version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-enterprise-cloud-database/-/manager-enterprise-cloud-database-0.1.0.tgz#4e0f364dbeb5234b38543e1ab27675c8d2d155b7"
-  integrity sha512-jXXdBzv+yWJp6dBXCuB4yPMMug6jARDV3uR1bLovLxhMtAUcwPp6xGcvczMtYRvRblQnR5F3sXpqD9uHLqEgFg==
+  resolved "git+https://github.com/ovh-ux/manager.git#481d5188dbe16b45c5e4cf1e984d7632cb24c362"
   dependencies:
     flag-icon-css "^3.2.0"
     lodash "^4.17.14"
