@@ -9,7 +9,7 @@ angular.module('UserAccount').config(($stateProvider, $urlRouterProvider) => {
   // ensure compatibility with links sended by emails
   // like #/useraccount/contacts/1124580?tab=REQUESTS&token=myToken
   // make a redirect to the new url of ui route
-  $urlRouterProvider.when(/^\/useraccount\/contacts\/[0-9]+$/, ($location) => {
+  $urlRouterProvider.when(/^\/useraccount\/contacts\/[0-9]+$/, ($location, $state) => {
     const hasToken = _.has($location.search(), 'token');
     const requestTabAsked = _.get($location.search(), 'tab') === 'REQUESTS';
 
@@ -20,6 +20,6 @@ angular.module('UserAccount').config(($stateProvider, $urlRouterProvider) => {
     const taskId = _.last($location.path().split('/'));
     const token = _.get($location.search(), 'token');
 
-    return `/useraccount/contacts/requests?taskId=${taskId}&token=${token}`;
+    return $state.go('app.account.contacts.requests', { taskId, token });
   });
 });
