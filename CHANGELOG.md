@@ -1,3 +1,14 @@
+<a name="10.32.10"></a>
+## [10.32.10](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.9...v10.32.10) (2019-10-10)
+
+
+### Bug Fixes
+
+* **account.contact:** display feedback message ([#1475](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1475)) ([ba32856](https://github.com/ovh-ux/ovh-manager-dedicated/commit/ba32856))
+* **account.contact:** fix email redirection ([#1479](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1479)) ([2bf2967](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2bf2967))
+
+
+
 <a name="10.32.9"></a>
 ## [10.32.9](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.8...v10.32.9) (2019-10-09)
 
