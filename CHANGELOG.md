@@ -1,3 +1,13 @@
+<a name="10.32.12"></a>
+## [10.32.12](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.11...v10.32.12) (2019-10-14)
+
+
+### Bug Fixes
+
+* **dedicated.server:** prevent dashboard error when option expired ([133be9f](https://github.com/ovh-ux/ovh-manager-dedicated/commit/133be9f))
+
+
+
 <a name="10.32.11"></a>
 ## [10.32.11](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.10...v10.32.11) (2019-10-14)
 
