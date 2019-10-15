@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import {
-  ALIGNMENT_URLS, NIC_ALL, RENEW_URL, URL_PARAMETER_SEPARATOR,
+  ALIGNMENT_URLS, COLUMNS_CONFIG, NIC_ALL, RENEW_URL, URL_PARAMETER_SEPARATOR,
 } from './autorenew.constants';
 
 export default class AutorenewCtrl {
@@ -60,11 +60,14 @@ export default class AutorenewCtrl {
 
     this.parseExtraCriteria();
 
-    if (this.sort.predicate === 'serviceId') {
-      // No need to set all columns, only the first is sortable
-      this.columnsConfig = [{
-        sortable: this.sort.reverse ? 'desc' : 'asc',
-      }];
+    if (this.sort.predicate) {
+      this.columnsConfig = _.map(
+        COLUMNS_CONFIG,
+        column => (column.property === this.sort.predicate ? ({
+          ...this.columnsConfig,
+          sortable: this.sort.reverse ? 'desc' : 'asc',
+        }) : column),
+      );
     }
   }
 
