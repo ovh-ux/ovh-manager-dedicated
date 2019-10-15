@@ -198,7 +198,7 @@
                 data-filterable
                 data-sortable>
                 <span data-ng-if="$row.hasDebt()" data-translate="billing_autorenew_service_date_now"></span>
-                <span data-ng-if="$row.isOneShot()">-</span>
+                <span data-ng-if="$row.isOneShot() && !$row.isResiliated() && !$row.hasPendingResiliation()">-</span>
                 <span
                     data-ng-if="$row.hasManualRenew() && !$row.isResiliated() && !$row.hasDebt()"
                     data-translate="billing_autorenew_service_date_before"
