@@ -114,6 +114,11 @@ export default /* @ngInject */ ($stateProvider, coreConfigProvider) => {
         services,
       ) => [$translate.instant(NIC_ALL), ..._.get(services, 'nicBilling', [])],
 
+      offset: /* @ngInject */ (
+        pageNumber,
+        pageSize,
+      ) => pageSize * (pageNumber - 1),
+
       onListParamChanges: /* @ngInject */ $state => params => $state.go('.', params,
         { notify: false }),
 
@@ -132,14 +137,14 @@ export default /* @ngInject */ ($stateProvider, coreConfigProvider) => {
         BillingAutoRenew,
         filters,
         nicBilling,
-        pageNumber,
         pageSize,
+        offset,
         searchText,
         selectedType,
         sort,
       ) => BillingAutoRenew.getServices(
         pageSize,
-        pageSize * (pageNumber - 1),
+        offset,
         searchText,
         selectedType,
         filters.expiration,
@@ -159,6 +164,7 @@ export default /* @ngInject */ ($stateProvider, coreConfigProvider) => {
       terminateEnterpriseCloudDatabase: /* @ngInject */ $state => serviceId => $state.go('app.account.billing.autorenew.terminateEnterpriseCloudDatabase', { serviceId }),
       terminateHostingWeb: /* @ngInject */ $state => serviceId => $state.go('app.account.billing.autorenew.terminateHostingWeb', { serviceId }),
       terminatePrivateDatabase: /* @ngInject */ $state => serviceId => $state.go('app.account.billing.autorenew.terminatePrivateDatabase', { serviceId }),
+      terminateWebCoach: /* @ngInject */ $state => serviceId => $state.go('app.account.billing.autorenew.terminateWebCoach', { serviceId }),
       updateServices: /* @ngInject */ $state => ({ id }) => $state.go('app.account.billing.autorenew.update', { serviceId: id }),
       updateExchangeBilling: /* @ngInject */ $state => ({ serviceId }) => {
         const [organization, exchangeName] = serviceId.split('/service/');

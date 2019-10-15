@@ -1,13 +1,57 @@
 export default /* @ngInject */ ($stateProvider) => {
-  $stateProvider.state('app.account.contacts.services', {
+  const stateName = 'app.account.contacts.services';
+
+  $stateProvider.state(stateName, {
     url: '/services?serviceName&category',
     component: 'accountContactsService',
     translations: {
       format: 'json',
       value: ['.', '..'],
     },
+    params: {
+      serviceName: {
+        value: null,
+        dynamic: true,
+      },
+      category: {
+        value: null,
+        dynamic: true,
+      },
+    },
     resolve: {
-      editContacts: /* @ngInject */ $state => service => $state.go('app.account.contacts.services.edit', { service: service.serviceName }),
+      criteria: ($transition$, $translate) => {
+        const criteria = [];
+
+        return $translate.refresh().then(() => {
+          if ($transition$.params().serviceName) {
+            criteria.push({
+              property: null,
+              operator: 'contains',
+              value: $transition$.params().serviceName,
+              title: $transition$.params().serviceName,
+            });
+          }
+
+          if ($transition$.params().category) {
+            criteria.push({
+              operator: 'is',
+              property: 'category',
+              value: $transition$.params().category,
+              title: $translate.instant(`account_contacts_service_category_${$transition$.params().category}`),
+            });
+          }
+
+          return criteria;
+        });
+      },
+      updateCriteria: $state => (criteria) => {
+        $state.go(stateName, {
+          serviceName: _.get(_.find(criteria, { property: null }), 'value', null),
+          category: _.get(_.find(criteria, { property: 'category' }), 'value', null),
+        });
+      },
+      category: /* @ngInject */ $transition$ => $transition$.params().category,
+      editContacts: /* @ngInject */ $state => service => $state.go(`${stateName}.edit`, { service: service.serviceName, categoryType: service.category }),
       getServiceInfos: /* @ngInject */
         AccountContactsService => service => AccountContactsService.getServiceInfos(service)
           .then(serviceInfos => ({
@@ -17,12 +61,12 @@ export default /* @ngInject */ ($stateProvider) => {
       goToContacts: /* @ngInject */ ($state, $timeout, Alerter) => (message = false, type = 'success') => {
         const reload = message && type === 'success';
 
-        const promise = $state.go('app.account.contacts.services', {}, {
+        const promise = $state.go(stateName, {}, {
           reload,
         });
 
         if (message) {
-          promise.then(() => $timeout(() => Alerter.set(`alert-${type}`, message, 'useraccount.alerts.dashboardContacts')));
+          promise.then(() => $timeout(() => Alerter.set(`alert-${type}`, message, null)));
         }
 
         return promise;

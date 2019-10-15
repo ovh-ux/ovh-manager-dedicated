@@ -31,7 +31,7 @@ export default class UserAccountSshCtrl {
       this.getSshKeys();
     });
 
-    this.$scope.setAction = function (action, data) {
+    this.$scope.setAction = (action, data) => {
       this.$scope.currentAction = action;
       this.$scope.currentActionData = data;
 
@@ -51,7 +51,7 @@ export default class UserAccountSshCtrl {
       }
     };
 
-    this.$scope.resetAction = function () {
+    this.$scope.resetAction = () => {
       this.$scope.setAction();
     };
   }
@@ -63,9 +63,10 @@ export default class UserAccountSshCtrl {
       .then((sshKeys) => {
         this.sshKeyList = sshKeys;
       })
-      .catch((err) => {
+      .catch(([sshKeys]) => {
+        this.sshKeyList = sshKeys;
         this.Alerter.error(
-          `${this.$translate.instant('user_ssh_error')} ${_.get(err, 'message') || err}`,
+          `${this.$translate.instant('user_ssh_error')}`,
           'userSsh',
         );
       })

@@ -174,8 +174,7 @@
                 data-property="status"
                 data-type="options"
                 data-type-options="$ctrl.filtersOptions.status"
-                data-filterable
->
+                data-filterable>
                 <span class="oui-status oui-status_error"
                     data-ng-if="$row.hasDebt()"
                     data-translate="billing_autorenew_service_status_pending_debt">
@@ -192,20 +191,25 @@
                 data-type-options="$ctrl.filtersOptions.expiration"
                 data-filterable
                 data-sortable>
+                <span data-ng-if="$row.hasDebt()" data-translate="billing_autorenew_service_date_now"></span>
                 <span data-ng-if="$row.isOneShot()">-</span>
                 <span
-                    data-ng-if="$row.hasManualRenew() && !$row.isResiliated() || $row.hasDebt()"
+                    data-ng-if="$row.hasManualRenew() && !$row.isResiliated() && !$row.hasDebt()"
                     data-translate="billing_autorenew_service_date_before"
                     data-translate-values="{
                         date: $row.formattedExpiration
                     }">
                 </span>
                 <span
-                    data-ng-if="($row.hasAutomaticRenewal() && !$row.isOneShot() && !$row.hasDebt()) || $row.isResiliated()"
+                    data-ng-if="$row.isResiliated() || $row.hasPendingResiliation()"
                     data-translate="billing_autorenew_service_date_renew"
                     data-translate-values="{
                         date: $row.formattedExpiration
                     }">
+                </span>
+                <span
+                    data-ng-if="$row.hasAutomaticRenewal() && !$row.isOneShot() && !$row.hasDebt() && !$row.isResiliated() && !$row.hasPendingResiliation()"
+                    data-ng-bind="$ctrl.getAutomaticExpirationDate($row)">
                 </span>
             </oui-column>
             <!-- /Columns -->
@@ -310,6 +314,14 @@
                     <span data-translate="billing_autorenew_service_terminate_hosting_private_database"></span>
                 </oui-action-menu-item>
                 <!-- /HOSTING_PRIVATE_DATABASE -->
+
+                <!-- WEBCOACH -->
+                <oui-action-menu-item
+                    data-ng-if="$row.serviceType === 'WEBCOACH' && !$row.isResiliated()"
+                    data-on-click="$ctrl.terminateWebCoach($row.serviceId)">
+                    <span data-translate="billing_autorenew_service_terminate_webcoach"></span>
+                </oui-action-menu-item>
+                <!-- /WEBCOACH -->
 
                 <!-- SMS -->
                 <div data-ng-if="$row.serviceType === 'SMS'">

@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import {
   ALIGNMENT_URLS, NIC_ALL, RENEW_URL, URL_PARAMETER_SEPARATOR,
 } from './autorenew.constants';
@@ -130,8 +131,7 @@ export default class AutorenewCtrl {
 
   loadServices() {
     if (_.get(this.ouiDatagridService, 'datagrids.services')) {
-      const currentOffset = this.pageNumber * this.pageSize;
-      _.set(this.ouiDatagridService, 'datagrids.services.paging.offset', currentOffset < this.services.count ? currentOffset : this.services.count);
+      _.set(this.ouiDatagridService, 'datagrids.services.paging.offset', this.offset + 1);
     }
 
     return this.$q.resolve({
@@ -202,5 +202,13 @@ export default class AutorenewCtrl {
       .join(URL_PARAMETER_SEPARATOR);
 
     return `${RENEW_URL[this.currentUser.ovhSubsidiary]}${urlParameterDomains}`;
+  }
+
+  getAutomaticExpirationDate(service) {
+    return _.capitalize(
+      new Intl.DateTimeFormat(
+        this.$translate.use().replace('_', '-'), { year: 'numeric', month: 'long' },
+      ).format(new Date(service.expiration)),
+    );
   }
 }

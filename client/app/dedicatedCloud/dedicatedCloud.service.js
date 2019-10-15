@@ -14,7 +14,8 @@ angular
     '2013v1': '2013',
   })
   .service('DedicatedCloud', function DedicatedCloudService($q, $cacheFactory, $rootScope,
-    OvhApiDedicatedCloud, OvhHttp, Poll, Poller, DEDICATED_CLOUD_CONSTANTS, VM_ENCRYPTION_KMS) {
+    OvhApiDedicatedCloud, OvhHttp, Poll, Poller,
+    DEDICATED_CLOUD_CONSTANTS, UNAVAILABLE_PCC_CODE, VM_ENCRYPTION_KMS) {
     const self = this;
     const dedicatedCloudCache = {
       all: 'UNIVERS_DEDICATED_CLOUD',
@@ -32,7 +33,9 @@ angular
     this.getAllPccs = () => OvhApiDedicatedCloud.v6().query().$promise
       .then(pccIds => $q.all(pccIds.map(pccId => OvhApiDedicatedCloud.v6().get({
         serviceName: pccId,
-      }).$promise)));
+      }).$promise
+        .catch(error => (error.status === UNAVAILABLE_PCC_CODE
+          ? undefined : $q.reject(error))))));
 
     this.getSelected = (serviceName, forceRefresh) => OvhHttp
       .get('/sws/dedicatedCloud/{serviceName}', {
