@@ -1078,9 +1078,9 @@
     draggable "^4.2.0"
     lodash "^4.17.11"
 
-"@ovh-ux/ng-ovh-payment-method@git+https://github.com/ovh-ux/ng-ovh-payment-method.git#feat/handlePaypalInContext":
+"@ovh-ux/ng-ovh-payment-method@git+https://github.com/ovh-ux/manager.git#feat/v5Preview":
   version "4.2.0"
-  resolved "git+https://github.com/ovh-ux/ng-ovh-payment-method.git#a98d45168e0b385dc58d7f14b8c86e864b2b1646"
+  resolved "git+https://github.com/ovh-ux/manager.git#e2cb3e3fe2de882df58303db506969d9462f7427"
   dependencies:
     lodash "^4.17.11"
 
@@ -6642,15 +6642,6 @@ less@^2.3.1, less@^2.7.1:
   version "2.7.3"
   resolved "https://registry.yarnpkg.com/less/-/less-2.7.3.tgz#cc1260f51c900a9ec0d91fb6998139e02507b63b"
   integrity sha512-KPdIJKWcEAb02TuJtaLrhue0krtRLoRoo7x6BNJIBelO00t/CCdJQUnHW5V34OnHMWzIktSalJxRO+FvytQlCQ==
-  optionalDependencies:
-    errno "^0.1.1"
-    graceful-fs "^4.1.2"
-    image-size "~0.5.0"
-    mime "^1.2.11"
-    mkdirp "^0.5.0"
-    promise "^7.1.1"
-    request "2.81.0"
-    source-map "^0.5.3"
 
 less@^3.8.1:
   version "3.8.1"
