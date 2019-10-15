@@ -1,6 +1,8 @@
 import ovhManagerCore from '@ovh-ux/manager-core';
 
 import autorenew from './autoRenew/autorenew.module';
+import featureAvailability from './billing-feature-availability';
+import order from './order/billing-order-tracking.module';
 import orders from './orders/orders.module';
 import sla from './sla/sla.module';
 import termination from './confirmTerminate/termination.module';
@@ -20,6 +22,7 @@ angular
     'Billing.services',
     'ngRoute',
     'ngSanitize',
+    order,
     orders,
     'ovh-angular-export-csv',
     'ovh-utils-angular',
@@ -41,6 +44,7 @@ angular
     renew: config.constants.billingRenew,
   })
   .config(routing)
+  .service('billingFeatureAvailability', featureAvailability)
   .run(/* @ngInject */ ($rootScope, coreConfig) => {
     _.set($rootScope, 'worldPart', coreConfig.getRegion());
   });

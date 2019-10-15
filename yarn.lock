@@ -690,7 +690,7 @@
   version "0.0.0"
   resolved "https://codeload.github.com/angular-ui/ui-utils/tar.gz/125cb72d692f9f116454f338f6a5471f3088f9b9"
 
-"@bower_components/bootstrap4@twbs/bootstrap#v4.0.0":
+"@bower_components/bootstrap4@twbs/bootstrap#v4.0.0", bootstrap4@twbs/bootstrap#v4.0.0:
   version "4.0.0"
   resolved "https://codeload.github.com/twbs/bootstrap/tar.gz/8a628b943cf31ca0a002c08af661a95772480225"
 
@@ -1164,6 +1164,13 @@
   integrity sha512-JwR20zLrBmr4uT9naK+HUMXIUZqOonOHphsp/ykUctEtvkLjgqUfi1KncSjQUt/C+BRHGSopvqg+9Tj3GxDQFw==
   dependencies:
     nprogress "^0.2.0"
+
+"@ovh-ux/order-tracking@git+https://github.com/ovh/manager.git#order-tracking-split":
+  version "0.0.0"
+  resolved "git+https://github.com/ovh/manager.git#4f05615440ebe479918da784e2914dfd81e47ef1"
+  dependencies:
+    bootstrap4 twbs/bootstrap#v4.0.0
+    lodash "^4.17.15"
 
 "@ovh-ux/ovh-utils-angular@^13.0.4":
   version "13.0.4"
