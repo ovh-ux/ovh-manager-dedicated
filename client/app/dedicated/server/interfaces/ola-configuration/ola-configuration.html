@@ -217,9 +217,9 @@
                 </thead>
                 <tbody>
                     <tr class="oui-datagrid__row"
-                        data-ng-repeat="mac in $ctrl.networkInterfaces track by mac">
+                        data-ng-repeat="interface in $ctrl.fakeNetworkInterfaces track by interface.mac">
                         <td class="oui-datagrid__cell"
-                            data-ng-bind="mac">
+                            data-ng-bind="interface.mac">
                         </td>
                         <td class="oui-datagrid__cell">
                             <div data-ng-if="interface.isPublic()">

@@ -1,4 +1,6 @@
 import _ from 'lodash';
+import Interface from '../interface.class';
+import { VIRTUAL_TYPE } from '../interfaces.constants';
 import { OLA_MODES } from './ola-configuration.constants';
 
 export default class {
@@ -62,10 +64,11 @@ export default class {
     this.selectedInterfaces = selectedRows;
 
     if (this.configuration.mode === OLA_MODES.DEFAULT) {
-      this.networkInterfaces = _.flatten(_.map(
-        this.selectedInterfaces,
-        ({ mac }) => mac.split(','),
-      ));
+      const macs = this.selectedInterfaces[0].mac.split(',');
+      this.fakeNetworkInterfaces = [
+        new Interface({ type: VIRTUAL_TYPE.public, mac: macs[0] }),
+        new Interface({ type: VIRTUAL_TYPE.private, mac: macs[1] }),
+      ];
     }
   }
 
