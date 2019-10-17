@@ -119,13 +119,18 @@
                         data-ng-click="$ctrl.trackCSVExport()">
                         <span data-translate="billing_export_csv"></span>
                     </button>
-                    <div data-ng-if="$ctrl.canDisableAllDomains">
-                        <oui-action-menu-divider></oui-action-menu-divider>
-                        <oui-action-menu-item
-                            data-on-click="$ctrl.disableAutorenewForDomains()">
-                            <span data-translate="billing_autorenew_service_disable_all_dom"></span>
-                        </oui-action-menu-item>
-                    </div>
+                    <oui-action-menu-divider data-ng-if="$ctrl.ALIGNMENT_URL || $ctrl.canDisableAllDomains"></oui-action-menu-divider>
+                    <oui-action-menu-item
+                        data-ng-if="$ctrl.ALIGNMENT_URL"
+                        data-href="{{ $ctrl.ALIGNMENT_URL }}"
+                        data-external>
+                        <span data-translate="billing_autorenew_service_align_renew"></span>
+                    </oui-action-menu-item>
+                    <oui-action-menu-item
+                        data-ng-if="$ctrl.canDisableAllDomains"
+                        data-on-click="$ctrl.disableAutorenewForDomains()">
+                        <span data-translate="billing_autorenew_service_disable_all_dom"></span>
+                    </oui-action-menu-item>
                 </oui-action-menu>
             </extra-top>
 
@@ -186,20 +191,25 @@
                 data-type-options="$ctrl.filtersOptions.expiration"
                 data-filterable
                 data-sortable>
+                <span data-ng-if="$row.hasDebt()" data-translate="billing_autorenew_service_date_now"></span>
                 <span data-ng-if="$row.isOneShot()">-</span>
                 <span
-                    data-ng-if="$row.hasManualRenew() && !$row.isResiliated() || $row.hasDebt()"
+                    data-ng-if="$row.hasManualRenew() && !$row.isResiliated() && !$row.hasDebt()"
                     data-translate="billing_autorenew_service_date_before"
                     data-translate-values="{
                         date: $row.formattedExpiration
                     }">
                 </span>
                 <span
-                    data-ng-if="($row.hasAutomaticRenewal() && !$row.isOneShot() && !$row.hasDebt()) || $row.isResiliated()"
+                    data-ng-if="$row.isResiliated() || $row.hasPendingResiliation()"
                     data-translate="billing_autorenew_service_date_renew"
                     data-translate-values="{
                         date: $row.formattedExpiration
                     }">
+                </span>
+                <span
+                    data-ng-if="$row.hasAutomaticRenewal() && !$row.isOneShot() && !$row.hasDebt() && !$row.isResiliated() && !$row.hasPendingResiliation()"
+                    data-ng-bind="$ctrl.getAutomaticExpirationDate($row)">
                 </span>
             </oui-column>
             <!-- /Columns -->

@@ -36,6 +36,7 @@
   "billing_autorenew_service_terminate_hosting_web" : "Supprimer immédiatement l'hébergement",
   "billing_autorenew_service_terminate_enterprise_cloud_database" : "Supprimer immédiatement l'enterprise cloud databases",
   "billing_autorenew_service_terminate_hosting_private_database" : "Supprimer mon hébergement SQL privé",
+  "billing_autorenew_service_terminate_webcoach": "Supprimer mon WebCoach",
   "billing_autorenew_service_action_menu_smsPack_credit": "Ajouter des crédits",
   "billing_autorenew_service_action_menu_smsPack_automaticRenew": "Configurer la recharge automatique",
   "billing_autorenew_service_canceldelete_button": "Annuler la résiliation du service",
@@ -54,6 +55,7 @@
   "billing_autorenew_service_state_OK": "Payé",
   "billing_autorenew_service_state_UN_PAID": "Non payé",
   "billing_autorenew_service_date": "Date d'effet",
+  "billing_autorenew_service_date_now": "Immédiatement",
   "billing_autorenew_service_date_before": "Avant le {{ date }}",
   "billing_autorenew_service_date_renew": "Le {{ date }}",
   "billing_autorenew_service_expiration_date": "Expire le",
@@ -137,8 +139,11 @@
   "billing_autorenew_service_type_METRICS": "Metrics",
   "billing_autorenew_service_type_kube": "Kubernetes",
   "billing_autorenew_service_type_cloud_project": "Projet Cloud",
+  "billing_autorenew_service_type_WEBCOACH": "WebCoach",
+  "billing_autorenew_service_type_webcoach": "WebCoach",
   "billing_export_csv": "Exporter en CSV",
   "billing_common_link_new_window": "(nouvelle fenêtre)",
+  "billing_autorenew_renew_action": "Renouveler",
 
   "billing_autorenew_service_renew_requires_mean_and_date": "Afin de finaliser l'activation du renouvellement automatique, veuillez ajouter un moyen de paiement et ensuite il vous sera possible de sélectionner votre date de prélèvement.",
   "billing_autorenew_service_activate_alert": "Vous avez au moins un service en renouvellement automatique mais vous n'avez pas encore autorisé cette option."
