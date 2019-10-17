@@ -1,3 +1,14 @@
+<a name="10.32.14"></a>
+## [10.32.14](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.13...v10.32.14) (2019-10-17)
+
+
+### Bug Fixes
+
+* **billing.orders.retraction:** add missing translations path ([#1495](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1495)) ([9ec1f24](https://github.com/ovh-ux/ovh-manager-dedicated/commit/9ec1f24))
+* **dedicated.server:** activate public bandwidth order ([#1494](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1494)) ([4281404](https://github.com/ovh-ux/ovh-manager-dedicated/commit/4281404))
+
+
+
 <a name="10.32.13"></a>
 ## [10.32.13](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.12...v10.32.13) (2019-10-15)
 
