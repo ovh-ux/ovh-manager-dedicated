@@ -65,7 +65,7 @@ export default class {
 
     if (this.configuration.mode === OLA_MODES.DEFAULT) {
       const macs = this.selectedInterfaces[0].mac.split(',');
-      this.fakeNetworkInterfaces = [
+      this.simulatedNetworkInterfaces = [
         new Interface({ type: VIRTUAL_TYPE.public, mac: macs[0] }),
         new Interface({ type: VIRTUAL_TYPE.private, mac: macs[1] }),
       ];

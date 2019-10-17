@@ -129,7 +129,7 @@ angular.module('controllers').controller('controllers.Server.Stats', (
           id: networkInterface.mac,
           linkType: networkInterface.linkType,
           displayName: $translate.instant(`server_tab_stats_network_${networkInterface.linkType}`, {
-            t0: networkInterface.mac,
+            interface: networkInterface.mac,
           }),
           disabled: networkInterface.disabled,
         }));
