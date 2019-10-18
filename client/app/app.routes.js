@@ -1,5 +1,6 @@
 import UserModel from './user/User.class';
 
+let alreadyShowMFA = false;
 angular
   .module('App')
   .config(/* @ngInject */ ($stateProvider) => {
@@ -8,6 +9,16 @@ angular
       resolve: {
         currentUser: /* @ngInject */ User => User.getUser()
           .then(user => new UserModel(user)),
+        enrollMFA: /* @ngInject */ ($state, OvhApiAuth) => OvhApiAuth.v6()
+          .shouldDisplayMFAEnrollment()
+          .$promise
+          .then((shouldDisplayMFA) => {
+            if (shouldDisplayMFA.value && !alreadyShowMFA) {
+              alreadyShowMFA = true;
+              $state.go('app.mfaEnrollment');
+            }
+          }),
+        rootState: () => 'app.configuration',
       },
       templateUrl: 'app.html',
       translations: { value: ['common', 'double-authentication', 'user-contracts'], format: 'json' },
