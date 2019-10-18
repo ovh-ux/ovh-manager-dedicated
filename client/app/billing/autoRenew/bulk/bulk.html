@@ -58,6 +58,20 @@
                 </ul>
             </li>
         </ul>
+        <div class="mb-4">
+            <button
+                type="button"
+                class="oui-link"
+                data-ng-click="$ctrl.expand.available = !$ctrl.expand.available"
+                data-ng-bind="($ctrl.expand.available ? 'billing_autorenew_bulk_available_less' : 'billing_autorenew_bulk_available_more') | translate">
+            </button>
+            <ul data-ng-if="$ctrl.expand.available" class="mb-3">
+                <li
+                    data-ng-repeat="service in ::$ctrl.availableServices track by service.id"
+                    data-ng-bind="service.domain">
+                </li>
+            </ul>
+        </div>
         <div>
             <oui-button
                 data-variant="secondary"
