@@ -1,7 +1,4 @@
-<form class="billing-payment-method-edit"
-      name="paymentMethodEditForm"
-      novalidate
-      data-ng-submit="$ctrl.resolve.primaryAction()">
+<div class="billing-payment-method-edit">
 
      <oui-field data-label="{{ :: 'billing_payment_method_edit_description' | translate }}">
         <input type="text" class="oui-input"
@@ -9,4 +6,4 @@
                data-ng-model="$ctrl.resolve.model.description" />
      </oui-field>
 
-</form>
+</div>
