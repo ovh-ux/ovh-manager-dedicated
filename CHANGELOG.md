@@ -1,3 +1,14 @@
+<a name="10.33.1"></a>
+## [10.33.1](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.33.0...v10.33.1) (2019-10-22)
+
+
+### Bug Fixes
+
+* **dedicatedcloud:** retrieve missing translations ([#1510](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1510)) ([3ad219e](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3ad219e))
+* **deps:** upgrade manager-server-sidebar to v0.6.7 ([#1507](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1507)) ([3b1c2ec](https://github.com/ovh-ux/ovh-manager-dedicated/commit/3b1c2ec))
+
+
+
 <a name="10.33.0"></a>
 # [10.33.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.32.14...v10.33.0) (2019-10-17)
 
