@@ -3,6 +3,7 @@ import template from './mfaEnrollment.html';
 
 export default {
   bindings: {
+    forced: '<',
     from: '<',
     rootState: '<',
   },

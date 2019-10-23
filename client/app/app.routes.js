@@ -9,15 +9,18 @@ angular
       resolve: {
         currentUser: /* @ngInject */ User => User.getUser()
           .then(user => new UserModel(user)),
-        enrollMFA: /* @ngInject */ ($state, OvhApiAuth) => OvhApiAuth.v6()
+        enrollMFA: /* @ngInject */ ($q, $state, OvhApiAuth) => OvhApiAuth.v6()
           .shouldDisplayMFAEnrollment()
           .$promise
           .then((shouldDisplayMFA) => {
-            if (shouldDisplayMFA.value && !alreadyShowMFA) {
+            if ((shouldDisplayMFA.value === 'true' || shouldDisplayMFA.value === 'forced')
+                && !alreadyShowMFA) {
               alreadyShowMFA = true;
-              $state.go('app.mfaEnrollment');
+              $state.go('app.mfaEnrollment', {
+                forced: shouldDisplayMFA.value === 'forced',
+              });
             }
-          }),
+          }).catch(() => $q.resolve()),
         rootState: () => 'app.configuration',
       },
       templateUrl: 'app.html',
