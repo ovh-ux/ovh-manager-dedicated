@@ -6,8 +6,14 @@ export default /* @ngInject */ ($stateProvider) => {
         component: 'mfaEnrollment',
       },
     },
+    params: {
+      forced: {
+        dynamic: true,
+      },
+    },
     translations: { value: ['.'], format: 'json' },
     resolve: {
+      forced: /* @ngInject */ $transition$ => $transition$.params().forced,
       from: /* @ngInject */ $transition$ => $transition$.$from().name,
     },
   });

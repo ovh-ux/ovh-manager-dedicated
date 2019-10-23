@@ -15,7 +15,9 @@
                 <p data-translate="mfa_enrollment_info2"></p>
 
                 <div class="mx-auto my-5 float-right">
-                    <oui-button class="m-2" on-click="$ctrl.goBack()">
+                    <oui-button class="m-2"
+                        data-ng-if="!$ctrl.forced"
+                        data-on-click="$ctrl.goBack()">
                         <span data-translate="mfa_enrollment_cancel"></span>
                     </oui-button>
 
