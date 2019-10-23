@@ -1,3 +1,14 @@
+<a name="10.33.4"></a>
+## [10.33.4](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.33.3...v10.33.4) (2019-10-23)
+
+
+### Bug Fixes
+
+* **mfa-enrollment:** manage the forced state & resolve on api error ([bb744ef](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bb744ef))
+* update getter to get function ([#1517](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1517)) ([8c0b0ba](https://github.com/ovh-ux/ovh-manager-dedicated/commit/8c0b0ba))
+
+
+
 <a name="10.33.3"></a>
 ## [10.33.3](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.33.2...v10.33.3) (2019-10-23)
 
