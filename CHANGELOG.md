@@ -1,3 +1,13 @@
+<a name="10.33.6"></a>
+## [10.33.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.33.5...v10.33.6) (2019-10-24)
+
+
+### Bug Fixes
+
+* **ola:** deactivate ola in US ([#1530](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1530)) ([fc6bd47](https://github.com/ovh-ux/ovh-manager-dedicated/commit/fc6bd47))
+
+
+
 <a name="10.33.5"></a>
 ## [10.33.5](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.33.4...v10.33.5) (2019-10-23)
 
