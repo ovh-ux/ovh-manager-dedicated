@@ -1,3 +1,18 @@
+<a name="10.34.0"></a>
+# [10.34.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.33.6...v10.34.0) (2019-10-24)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations [CDS 98] ([bcccf3d](https://github.com/ovh-ux/ovh-manager-dedicated/commit/bcccf3d))
+
+
+### Features
+
+* **billing.payment.method:** handle paypal in context ([#1375](https://github.com/ovh-ux/ovh-manager-dedicated/issues/1375)) ([f90c9e6](https://github.com/ovh-ux/ovh-manager-dedicated/commit/f90c9e6))
+
+
+
 <a name="10.33.6"></a>
 ## [10.33.6](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.33.5...v10.33.6) (2019-10-24)
 
