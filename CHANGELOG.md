@@ -1,3 +1,13 @@
+<a name="10.36.0"></a>
+# [10.36.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.35.0...v10.36.0) (2019-10-25)
+
+
+### Features
+
+* **user.security.2fa:** prevent closing modal by escape & backdrop ([2f17ee1](https://github.com/ovh-ux/ovh-manager-dedicated/commit/2f17ee1))
+
+
+
 <a name="10.35.0"></a>
 # [10.35.0](https://github.com/ovh-ux/ovh-manager-dedicated/compare/v10.34.2...v10.35.0) (2019-10-25)
 
