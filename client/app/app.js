@@ -3,7 +3,6 @@ import _ from 'lodash';
 import ngAtInternet from '@ovh-ux/ng-at-internet';
 import ngAtInternetUiRouterPlugin from '@ovh-ux/ng-at-internet-ui-router-plugin';
 import ngOvhApiWrappers from '@ovh-ux/ng-ovh-api-wrappers';
-import ngOvhChatbot from '@ovh-ux/ng-ovh-chatbot';
 import ngOvhHttp from '@ovh-ux/ng-ovh-http';
 import ngOvhOtrs from '@ovh-ux/ng-ovh-otrs';
 import ngOvhProxyRequest from '@ovh-ux/ng-ovh-proxy-request';
@@ -69,7 +68,6 @@ angular
     ngAtInternet,
     ngAtInternetUiRouterPlugin,
     ngOvhApiWrappers,
-    ngOvhChatbot,
     ngOvhHttp,
     ngOvhOtrs,
     ngOvhProxyRequest,

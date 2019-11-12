@@ -931,10 +931,9 @@
     moment "^2.22.2"
     zxcvbn "^4.4.2"
 
-"@ovh-ux/manager-navbar@^2.0.5":
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-navbar/-/manager-navbar-2.0.5.tgz#4d020615dba82785e4617ceb4b32e8c4d6615e69"
-  integrity sha512-JJnk1F9rWFvUxRURQvJ0xk+id0mKcubLjY35VOH1/6bP1hvRUoDRGGoZYnE9mItauknI/r4fNgfMFeN+92OkaQ==
+"@ovh-ux/manager-navbar@git+https://github.com/ovh-ux/manager.git#split/navbar":
+  version "2.0.3"
+  resolved "git+https://github.com/ovh-ux/manager.git#f04a48b7383bf7e3c97976910f4b81d52dd4a6f4"
   dependencies:
     lodash "^4.17.15"
     moment "^2.24.0"

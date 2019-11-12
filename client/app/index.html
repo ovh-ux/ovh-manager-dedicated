@@ -101,7 +101,14 @@
             </div>
         </div>
 
-        <ovh-chatbot></ovh-chatbot>
+        <ovh-chatbot
+            data-can-switch-to-livechat="true"
+            data-config="{
+                universe: 'DEDICATED',
+                language: $ctrl.currentLanguage,
+                country: $ctrl.user.ovhSubsidiary
+            }">
+        </ovh-chatbot>
         <div data-otrs-popup></div>
         <script>
             var CKEDITOR_BASEPATH = (window.location.pathname !== "/" ? window.location.pathname.split("/").splice(0, window.location.pathname.split("/").length - 1).join("/") : "") + '/ckeditor/';
